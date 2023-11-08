@@ -177,6 +177,39 @@ public interface AmazonWorkspaces {
 
     /**
      * <p>
+     * Associates the specified application to the specified WorkSpace.
+     * </p>
+     * 
+     * @param associateWorkspaceApplicationRequest
+     * @return Result of the AssociateWorkspaceApplication operation returned by the service.
+     * @throws AccessDeniedException
+     *         The user is not authorized to access a resource.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @throws OperationNotSupportedException
+     *         This operation is not supported.
+     * @throws ResourceAlreadyExistsException
+     *         The specified resource already exists.
+     * @throws ResourceInUseException
+     *         The specified resource is currently in use.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws ComputeNotCompatibleException
+     *         The compute type of the WorkSpace is not compatible with the application.
+     * @throws OperatingSystemNotCompatibleException
+     *         The operating system of the WorkSpace is not compatible with the application.
+     * @throws ApplicationNotSupportedException
+     *         The specified application is not supported.
+     * @throws IncompatibleApplicationsException
+     *         The specified application is not compatible with the resource.
+     * @sample AmazonWorkspaces.AssociateWorkspaceApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AssociateWorkspaceApplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AssociateWorkspaceApplicationResult associateWorkspaceApplication(AssociateWorkspaceApplicationRequest associateWorkspaceApplicationRequest);
+
+    /**
+     * <p>
      * Adds one or more rules to the specified IP access control group.
      * </p>
      * <p>
@@ -495,11 +528,21 @@ public interface AmazonWorkspaces {
      * This operation is asynchronous and returns before the WorkSpaces are created.
      * </p>
      * <note>
+     * <ul>
+     * <li>
      * <p>
      * The <code>MANUAL</code> running mode value is only supported by Amazon WorkSpaces Core. Contact your account team
      * to be allow-listed to use this value. For more information, see <a
      * href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You don't need to specify the <code>PCOIP</code> protocol for Linux bundles because <code>WSP</code> is the
+     * default protocol for those bundles.
+     * </p>
+     * </li>
+     * </ul>
      * </note>
      * 
      * @param createWorkspacesRequest
@@ -686,6 +729,31 @@ public interface AmazonWorkspaces {
 
     /**
      * <p>
+     * Deploys associated applications to the specified WorkSpace
+     * </p>
+     * 
+     * @param deployWorkspaceApplicationsRequest
+     * @return Result of the DeployWorkspaceApplications operation returned by the service.
+     * @throws AccessDeniedException
+     *         The user is not authorized to access a resource.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @throws OperationNotSupportedException
+     *         This operation is not supported.
+     * @throws ResourceInUseException
+     *         The specified resource is currently in use.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws IncompatibleApplicationsException
+     *         The specified application is not compatible with the resource.
+     * @sample AmazonWorkspaces.DeployWorkspaceApplications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeployWorkspaceApplications"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeployWorkspaceApplicationsResult deployWorkspaceApplications(DeployWorkspaceApplicationsRequest deployWorkspaceApplicationsRequest);
+
+    /**
+     * <p>
      * Deregisters the specified directory. This operation is asynchronous and returns before the WorkSpace directory is
      * deregistered. If any WorkSpaces are registered to this directory, you must remove them before you can deregister
      * the directory.
@@ -753,6 +821,70 @@ public interface AmazonWorkspaces {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeAccountModificationsResult describeAccountModifications(DescribeAccountModificationsRequest describeAccountModificationsRequest);
+
+    /**
+     * <p>
+     * Describes the associations between the application and the specified associated resources.
+     * </p>
+     * 
+     * @param describeApplicationAssociationsRequest
+     * @return Result of the DescribeApplicationAssociations operation returned by the service.
+     * @throws AccessDeniedException
+     *         The user is not authorized to access a resource.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @throws OperationNotSupportedException
+     *         This operation is not supported.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @sample AmazonWorkspaces.DescribeApplicationAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeApplicationAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeApplicationAssociationsResult describeApplicationAssociations(DescribeApplicationAssociationsRequest describeApplicationAssociationsRequest);
+
+    /**
+     * <p>
+     * Describes the specified applications by filtering based on their compute types, license availability, operating
+     * systems, and owners.
+     * </p>
+     * 
+     * @param describeApplicationsRequest
+     * @return Result of the DescribeApplications operation returned by the service.
+     * @throws AccessDeniedException
+     *         The user is not authorized to access a resource.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @throws OperationNotSupportedException
+     *         This operation is not supported.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @sample AmazonWorkspaces.DescribeApplications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeApplications"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeApplicationsResult describeApplications(DescribeApplicationsRequest describeApplicationsRequest);
+
+    /**
+     * <p>
+     * Describes the associations between the applications and the specified bundle.
+     * </p>
+     * 
+     * @param describeBundleAssociationsRequest
+     * @return Result of the DescribeBundleAssociations operation returned by the service.
+     * @throws AccessDeniedException
+     *         The user is not authorized to access a resource.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @throws OperationNotSupportedException
+     *         This operation is not supported.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @sample AmazonWorkspaces.DescribeBundleAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeBundleAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeBundleAssociationsResult describeBundleAssociations(DescribeBundleAssociationsRequest describeBundleAssociationsRequest);
 
     /**
      * <p>
@@ -866,6 +998,27 @@ public interface AmazonWorkspaces {
 
     /**
      * <p>
+     * Describes the associations between the applications and the specified image.
+     * </p>
+     * 
+     * @param describeImageAssociationsRequest
+     * @return Result of the DescribeImageAssociations operation returned by the service.
+     * @throws AccessDeniedException
+     *         The user is not authorized to access a resource.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @throws OperationNotSupportedException
+     *         This operation is not supported.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @sample AmazonWorkspaces.DescribeImageAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeImageAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeImageAssociationsResult describeImageAssociations(DescribeImageAssociationsRequest describeImageAssociationsRequest);
+
+    /**
+     * <p>
      * Describes one or more of your IP access control groups.
      * </p>
      * 
@@ -895,6 +1048,27 @@ public interface AmazonWorkspaces {
      *      Documentation</a>
      */
     DescribeTagsResult describeTags(DescribeTagsRequest describeTagsRequest);
+
+    /**
+     * <p>
+     * Describes the associations betweens applications and the specified WorkSpace.
+     * </p>
+     * 
+     * @param describeWorkspaceAssociationsRequest
+     * @return Result of the DescribeWorkspaceAssociations operation returned by the service.
+     * @throws AccessDeniedException
+     *         The user is not authorized to access a resource.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @throws OperationNotSupportedException
+     *         This operation is not supported.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @sample AmazonWorkspaces.DescribeWorkspaceAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeWorkspaceAssociationsResult describeWorkspaceAssociations(DescribeWorkspaceAssociationsRequest describeWorkspaceAssociationsRequest);
 
     /**
      * <p>
@@ -1096,6 +1270,29 @@ public interface AmazonWorkspaces {
      *      target="_top">AWS API Documentation</a>
      */
     DisassociateIpGroupsResult disassociateIpGroups(DisassociateIpGroupsRequest disassociateIpGroupsRequest);
+
+    /**
+     * <p>
+     * Disassociates the specified application from a WorkSpace.
+     * </p>
+     * 
+     * @param disassociateWorkspaceApplicationRequest
+     * @return Result of the DisassociateWorkspaceApplication operation returned by the service.
+     * @throws AccessDeniedException
+     *         The user is not authorized to access a resource.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @throws OperationNotSupportedException
+     *         This operation is not supported.
+     * @throws ResourceInUseException
+     *         The specified resource is currently in use.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @sample AmazonWorkspaces.DisassociateWorkspaceApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DisassociateWorkspaceApplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisassociateWorkspaceApplicationResult disassociateWorkspaceApplication(DisassociateWorkspaceApplicationRequest disassociateWorkspaceApplicationRequest);
 
     /**
      * <p>

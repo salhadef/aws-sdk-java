@@ -23,7 +23,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <note>
  * <p>
- * The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.
+ * The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and higher, excluding 5.0.x versions.
  * </p>
  * </note>
  * 
@@ -90,7 +90,7 @@ public class InstanceFleetConfig implements Serializable, Cloneable, StructuredP
     private Integer targetSpotCapacity;
     /**
      * <p>
-     * The instance type configurations that define the EC2 instances in the instance fleet.
+     * The instance type configurations that define the Amazon EC2 instances in the instance fleet.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InstanceTypeConfig> instanceTypeConfigs;
@@ -479,10 +479,10 @@ public class InstanceFleetConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The instance type configurations that define the EC2 instances in the instance fleet.
+     * The instance type configurations that define the Amazon EC2 instances in the instance fleet.
      * </p>
      * 
-     * @return The instance type configurations that define the EC2 instances in the instance fleet.
+     * @return The instance type configurations that define the Amazon EC2 instances in the instance fleet.
      */
 
     public java.util.List<InstanceTypeConfig> getInstanceTypeConfigs() {
@@ -494,11 +494,11 @@ public class InstanceFleetConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The instance type configurations that define the EC2 instances in the instance fleet.
+     * The instance type configurations that define the Amazon EC2 instances in the instance fleet.
      * </p>
      * 
      * @param instanceTypeConfigs
-     *        The instance type configurations that define the EC2 instances in the instance fleet.
+     *        The instance type configurations that define the Amazon EC2 instances in the instance fleet.
      */
 
     public void setInstanceTypeConfigs(java.util.Collection<InstanceTypeConfig> instanceTypeConfigs) {
@@ -512,7 +512,7 @@ public class InstanceFleetConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The instance type configurations that define the EC2 instances in the instance fleet.
+     * The instance type configurations that define the Amazon EC2 instances in the instance fleet.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -521,7 +521,7 @@ public class InstanceFleetConfig implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param instanceTypeConfigs
-     *        The instance type configurations that define the EC2 instances in the instance fleet.
+     *        The instance type configurations that define the Amazon EC2 instances in the instance fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -537,11 +537,11 @@ public class InstanceFleetConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The instance type configurations that define the EC2 instances in the instance fleet.
+     * The instance type configurations that define the Amazon EC2 instances in the instance fleet.
      * </p>
      * 
      * @param instanceTypeConfigs
-     *        The instance type configurations that define the EC2 instances in the instance fleet.
+     *        The instance type configurations that define the Amazon EC2 instances in the instance fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -29,6 +29,9 @@ public class CreateSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The Amazon S3 bucket and optional folder (object key prefix) where SimSpace Weaver creates the snapshot file.
      * </p>
+     * <p>
+     * The Amazon S3 bucket must be in the same Amazon Web Services Region as the simulation.
+     * </p>
      */
     private S3Destination destination;
     /**
@@ -42,10 +45,15 @@ public class CreateSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The Amazon S3 bucket and optional folder (object key prefix) where SimSpace Weaver creates the snapshot file.
      * </p>
+     * <p>
+     * The Amazon S3 bucket must be in the same Amazon Web Services Region as the simulation.
+     * </p>
      * 
      * @param destination
      *        The Amazon S3 bucket and optional folder (object key prefix) where SimSpace Weaver creates the snapshot
-     *        file.
+     *        file.</p>
+     *        <p>
+     *        The Amazon S3 bucket must be in the same Amazon Web Services Region as the simulation.
      */
 
     public void setDestination(S3Destination destination) {
@@ -56,9 +64,14 @@ public class CreateSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The Amazon S3 bucket and optional folder (object key prefix) where SimSpace Weaver creates the snapshot file.
      * </p>
+     * <p>
+     * The Amazon S3 bucket must be in the same Amazon Web Services Region as the simulation.
+     * </p>
      * 
      * @return The Amazon S3 bucket and optional folder (object key prefix) where SimSpace Weaver creates the snapshot
-     *         file.
+     *         file.</p>
+     *         <p>
+     *         The Amazon S3 bucket must be in the same Amazon Web Services Region as the simulation.
      */
 
     public S3Destination getDestination() {
@@ -69,10 +82,15 @@ public class CreateSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The Amazon S3 bucket and optional folder (object key prefix) where SimSpace Weaver creates the snapshot file.
      * </p>
+     * <p>
+     * The Amazon S3 bucket must be in the same Amazon Web Services Region as the simulation.
+     * </p>
      * 
      * @param destination
      *        The Amazon S3 bucket and optional folder (object key prefix) where SimSpace Weaver creates the snapshot
-     *        file.
+     *        file.</p>
+     *        <p>
+     *        The Amazon S3 bucket must be in the same Amazon Web Services Region as the simulation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

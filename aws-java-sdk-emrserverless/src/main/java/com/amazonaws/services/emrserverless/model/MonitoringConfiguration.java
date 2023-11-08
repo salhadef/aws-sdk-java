@@ -40,6 +40,13 @@ public class MonitoringConfiguration implements Serializable, Cloneable, Structu
      * </p>
      */
     private ManagedPersistenceMonitoringConfiguration managedPersistenceMonitoringConfiguration;
+    /**
+     * <p>
+     * The Amazon CloudWatch configuration for monitoring logs. You can configure your jobs to send log information to
+     * CloudWatch.
+     * </p>
+     */
+    private CloudWatchLoggingConfiguration cloudWatchLoggingConfiguration;
 
     /**
      * <p>
@@ -123,6 +130,52 @@ public class MonitoringConfiguration implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * The Amazon CloudWatch configuration for monitoring logs. You can configure your jobs to send log information to
+     * CloudWatch.
+     * </p>
+     * 
+     * @param cloudWatchLoggingConfiguration
+     *        The Amazon CloudWatch configuration for monitoring logs. You can configure your jobs to send log
+     *        information to CloudWatch.
+     */
+
+    public void setCloudWatchLoggingConfiguration(CloudWatchLoggingConfiguration cloudWatchLoggingConfiguration) {
+        this.cloudWatchLoggingConfiguration = cloudWatchLoggingConfiguration;
+    }
+
+    /**
+     * <p>
+     * The Amazon CloudWatch configuration for monitoring logs. You can configure your jobs to send log information to
+     * CloudWatch.
+     * </p>
+     * 
+     * @return The Amazon CloudWatch configuration for monitoring logs. You can configure your jobs to send log
+     *         information to CloudWatch.
+     */
+
+    public CloudWatchLoggingConfiguration getCloudWatchLoggingConfiguration() {
+        return this.cloudWatchLoggingConfiguration;
+    }
+
+    /**
+     * <p>
+     * The Amazon CloudWatch configuration for monitoring logs. You can configure your jobs to send log information to
+     * CloudWatch.
+     * </p>
+     * 
+     * @param cloudWatchLoggingConfiguration
+     *        The Amazon CloudWatch configuration for monitoring logs. You can configure your jobs to send log
+     *        information to CloudWatch.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MonitoringConfiguration withCloudWatchLoggingConfiguration(CloudWatchLoggingConfiguration cloudWatchLoggingConfiguration) {
+        setCloudWatchLoggingConfiguration(cloudWatchLoggingConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -137,7 +190,9 @@ public class MonitoringConfiguration implements Serializable, Cloneable, Structu
         if (getS3MonitoringConfiguration() != null)
             sb.append("S3MonitoringConfiguration: ").append(getS3MonitoringConfiguration()).append(",");
         if (getManagedPersistenceMonitoringConfiguration() != null)
-            sb.append("ManagedPersistenceMonitoringConfiguration: ").append(getManagedPersistenceMonitoringConfiguration());
+            sb.append("ManagedPersistenceMonitoringConfiguration: ").append(getManagedPersistenceMonitoringConfiguration()).append(",");
+        if (getCloudWatchLoggingConfiguration() != null)
+            sb.append("CloudWatchLoggingConfiguration: ").append(getCloudWatchLoggingConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -161,6 +216,11 @@ public class MonitoringConfiguration implements Serializable, Cloneable, Structu
         if (other.getManagedPersistenceMonitoringConfiguration() != null
                 && other.getManagedPersistenceMonitoringConfiguration().equals(this.getManagedPersistenceMonitoringConfiguration()) == false)
             return false;
+        if (other.getCloudWatchLoggingConfiguration() == null ^ this.getCloudWatchLoggingConfiguration() == null)
+            return false;
+        if (other.getCloudWatchLoggingConfiguration() != null
+                && other.getCloudWatchLoggingConfiguration().equals(this.getCloudWatchLoggingConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -172,6 +232,7 @@ public class MonitoringConfiguration implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getS3MonitoringConfiguration() == null) ? 0 : getS3MonitoringConfiguration().hashCode());
         hashCode = prime * hashCode
                 + ((getManagedPersistenceMonitoringConfiguration() == null) ? 0 : getManagedPersistenceMonitoringConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getCloudWatchLoggingConfiguration() == null) ? 0 : getCloudWatchLoggingConfiguration().hashCode());
         return hashCode;
     }
 

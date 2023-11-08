@@ -25,18 +25,18 @@ public class GetControlResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The name of the control that the <code>GetControl</code> API returned.
+     * The details of the control that the <code>GetControl</code> API returned.
      * </p>
      */
     private Control control;
 
     /**
      * <p>
-     * The name of the control that the <code>GetControl</code> API returned.
+     * The details of the control that the <code>GetControl</code> API returned.
      * </p>
      * 
      * @param control
-     *        The name of the control that the <code>GetControl</code> API returned.
+     *        The details of the control that the <code>GetControl</code> API returned.
      */
 
     public void setControl(Control control) {
@@ -45,10 +45,10 @@ public class GetControlResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The name of the control that the <code>GetControl</code> API returned.
+     * The details of the control that the <code>GetControl</code> API returned.
      * </p>
      * 
-     * @return The name of the control that the <code>GetControl</code> API returned.
+     * @return The details of the control that the <code>GetControl</code> API returned.
      */
 
     public Control getControl() {
@@ -57,11 +57,11 @@ public class GetControlResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The name of the control that the <code>GetControl</code> API returned.
+     * The details of the control that the <code>GetControl</code> API returned.
      * </p>
      * 
      * @param control
-     *        The name of the control that the <code>GetControl</code> API returned.
+     *        The details of the control that the <code>GetControl</code> API returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

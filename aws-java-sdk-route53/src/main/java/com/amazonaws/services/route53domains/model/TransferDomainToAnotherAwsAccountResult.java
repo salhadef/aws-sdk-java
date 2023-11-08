@@ -180,7 +180,7 @@ public class TransferDomainToAnotherAwsAccountResult extends com.amazonaws.Amazo
         if (getOperationId() != null)
             sb.append("OperationId: ").append(getOperationId()).append(",");
         if (getPassword() != null)
-            sb.append("Password: ").append(getPassword());
+            sb.append("Password: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The stage has failed in a later run of the pipeline and the pipelineExecutionId associated with the request is out of
- * date.
+ * The stage has failed in a later run of the pipeline and the <code>pipelineExecutionId</code> associated with the
+ * request is out of date.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

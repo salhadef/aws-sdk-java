@@ -100,6 +100,37 @@ public interface AWSWellArchitectedAsync extends AWSWellArchitected {
 
     /**
      * <p>
+     * Associate a profile with a workload.
+     * </p>
+     * 
+     * @param associateProfilesRequest
+     * @return A Java Future containing the result of the AssociateProfiles operation returned by the service.
+     * @sample AWSWellArchitectedAsync.AssociateProfiles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/AssociateProfiles"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateProfilesResult> associateProfilesAsync(AssociateProfilesRequest associateProfilesRequest);
+
+    /**
+     * <p>
+     * Associate a profile with a workload.
+     * </p>
+     * 
+     * @param associateProfilesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateProfiles operation returned by the service.
+     * @sample AWSWellArchitectedAsyncHandler.AssociateProfiles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/AssociateProfiles"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateProfilesResult> associateProfilesAsync(AssociateProfilesRequest associateProfilesRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateProfilesRequest, AssociateProfilesResult> asyncHandler);
+
+    /**
+     * <p>
      * Create a lens share.
      * </p>
      * <p>
@@ -267,6 +298,192 @@ public interface AWSWellArchitectedAsync extends AWSWellArchitected {
 
     /**
      * <p>
+     * Create a profile.
+     * </p>
+     * 
+     * @param createProfileRequest
+     * @return A Java Future containing the result of the CreateProfile operation returned by the service.
+     * @sample AWSWellArchitectedAsync.CreateProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateProfile" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateProfileResult> createProfileAsync(CreateProfileRequest createProfileRequest);
+
+    /**
+     * <p>
+     * Create a profile.
+     * </p>
+     * 
+     * @param createProfileRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateProfile operation returned by the service.
+     * @sample AWSWellArchitectedAsyncHandler.CreateProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateProfile" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateProfileResult> createProfileAsync(CreateProfileRequest createProfileRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateProfileRequest, CreateProfileResult> asyncHandler);
+
+    /**
+     * <p>
+     * Create a profile share.
+     * </p>
+     * 
+     * @param createProfileShareRequest
+     * @return A Java Future containing the result of the CreateProfileShare operation returned by the service.
+     * @sample AWSWellArchitectedAsync.CreateProfileShare
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateProfileShare"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateProfileShareResult> createProfileShareAsync(CreateProfileShareRequest createProfileShareRequest);
+
+    /**
+     * <p>
+     * Create a profile share.
+     * </p>
+     * 
+     * @param createProfileShareRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateProfileShare operation returned by the service.
+     * @sample AWSWellArchitectedAsyncHandler.CreateProfileShare
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateProfileShare"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateProfileShareResult> createProfileShareAsync(CreateProfileShareRequest createProfileShareRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateProfileShareRequest, CreateProfileShareResult> asyncHandler);
+
+    /**
+     * <p>
+     * Create a review template.
+     * </p>
+     * <note>
+     * <p>
+     * <b>Disclaimer</b>
+     * </p>
+     * <p>
+     * Do not include or gather personal identifiable information (PII) of end users or other identifiable individuals
+     * in or via your review templates. If your review template or those shared with you and used in your account do
+     * include or collect PII you are responsible for: ensuring that the included PII is processed in accordance with
+     * applicable law, providing adequate privacy notices, and obtaining necessary consents for processing such data.
+     * </p>
+     * </note>
+     * 
+     * @param createReviewTemplateRequest
+     * @return A Java Future containing the result of the CreateReviewTemplate operation returned by the service.
+     * @sample AWSWellArchitectedAsync.CreateReviewTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateReviewTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateReviewTemplateResult> createReviewTemplateAsync(CreateReviewTemplateRequest createReviewTemplateRequest);
+
+    /**
+     * <p>
+     * Create a review template.
+     * </p>
+     * <note>
+     * <p>
+     * <b>Disclaimer</b>
+     * </p>
+     * <p>
+     * Do not include or gather personal identifiable information (PII) of end users or other identifiable individuals
+     * in or via your review templates. If your review template or those shared with you and used in your account do
+     * include or collect PII you are responsible for: ensuring that the included PII is processed in accordance with
+     * applicable law, providing adequate privacy notices, and obtaining necessary consents for processing such data.
+     * </p>
+     * </note>
+     * 
+     * @param createReviewTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateReviewTemplate operation returned by the service.
+     * @sample AWSWellArchitectedAsyncHandler.CreateReviewTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateReviewTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateReviewTemplateResult> createReviewTemplateAsync(CreateReviewTemplateRequest createReviewTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateReviewTemplateRequest, CreateReviewTemplateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Create a review template share.
+     * </p>
+     * <p>
+     * The owner of a review template can share it with other Amazon Web Services accounts, users, an organization, and
+     * organizational units (OUs) in the same Amazon Web Services Region.
+     * </p>
+     * <p>
+     * Shared access to a review template is not removed until the review template share invitation is deleted.
+     * </p>
+     * <p>
+     * If you share a review template with an organization or OU, all accounts in the organization or OU are granted
+     * access to the review template.
+     * </p>
+     * <note>
+     * <p>
+     * <b>Disclaimer</b>
+     * </p>
+     * <p>
+     * By sharing your review template with other Amazon Web Services accounts, you acknowledge that Amazon Web Services
+     * will make your review template available to those other accounts.
+     * </p>
+     * </note>
+     * 
+     * @param createTemplateShareRequest
+     * @return A Java Future containing the result of the CreateTemplateShare operation returned by the service.
+     * @sample AWSWellArchitectedAsync.CreateTemplateShare
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateTemplateShare"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTemplateShareResult> createTemplateShareAsync(CreateTemplateShareRequest createTemplateShareRequest);
+
+    /**
+     * <p>
+     * Create a review template share.
+     * </p>
+     * <p>
+     * The owner of a review template can share it with other Amazon Web Services accounts, users, an organization, and
+     * organizational units (OUs) in the same Amazon Web Services Region.
+     * </p>
+     * <p>
+     * Shared access to a review template is not removed until the review template share invitation is deleted.
+     * </p>
+     * <p>
+     * If you share a review template with an organization or OU, all accounts in the organization or OU are granted
+     * access to the review template.
+     * </p>
+     * <note>
+     * <p>
+     * <b>Disclaimer</b>
+     * </p>
+     * <p>
+     * By sharing your review template with other Amazon Web Services accounts, you acknowledge that Amazon Web Services
+     * will make your review template available to those other accounts.
+     * </p>
+     * </note>
+     * 
+     * @param createTemplateShareRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateTemplateShare operation returned by the service.
+     * @sample AWSWellArchitectedAsyncHandler.CreateTemplateShare
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateTemplateShare"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTemplateShareResult> createTemplateShareAsync(CreateTemplateShareRequest createTemplateShareRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateTemplateShareRequest, CreateTemplateShareResult> asyncHandler);
+
+    /**
+     * <p>
      * Create a new workload.
      * </p>
      * <p>
@@ -288,6 +505,31 @@ public interface AWSWellArchitectedAsync extends AWSWellArchitected {
      * following section.
      * </p>
      * </important>
+     * <p>
+     * When creating a workload using a review template, you must have the following IAM permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>wellarchitected:GetReviewTemplate</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>wellarchitected:GetReviewTemplateAnswer</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>wellarchitected:ListReviewTemplateAnswers</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>wellarchitected:GetReviewTemplateLensReview</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param createWorkloadRequest
      *        Input for workload creation.
@@ -321,6 +563,31 @@ public interface AWSWellArchitectedAsync extends AWSWellArchitected {
      * following section.
      * </p>
      * </important>
+     * <p>
+     * When creating a workload using a review template, you must have the following IAM permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>wellarchitected:GetReviewTemplate</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>wellarchitected:GetReviewTemplateAnswer</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>wellarchitected:ListReviewTemplateAnswers</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>wellarchitected:GetReviewTemplateLensReview</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param createWorkloadRequest
      *        Input for workload creation.
@@ -521,6 +788,176 @@ public interface AWSWellArchitectedAsync extends AWSWellArchitected {
 
     /**
      * <p>
+     * Delete a profile.
+     * </p>
+     * <note>
+     * <p>
+     * <b>Disclaimer</b>
+     * </p>
+     * <p>
+     * By sharing your profile with other Amazon Web Services accounts, you acknowledge that Amazon Web Services will
+     * make your profile available to those other accounts. Those other accounts may continue to access and use your
+     * shared profile even if you delete the profile from your own Amazon Web Services account or terminate your Amazon
+     * Web Services account.
+     * </p>
+     * </note>
+     * 
+     * @param deleteProfileRequest
+     * @return A Java Future containing the result of the DeleteProfile operation returned by the service.
+     * @sample AWSWellArchitectedAsync.DeleteProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteProfile" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteProfileResult> deleteProfileAsync(DeleteProfileRequest deleteProfileRequest);
+
+    /**
+     * <p>
+     * Delete a profile.
+     * </p>
+     * <note>
+     * <p>
+     * <b>Disclaimer</b>
+     * </p>
+     * <p>
+     * By sharing your profile with other Amazon Web Services accounts, you acknowledge that Amazon Web Services will
+     * make your profile available to those other accounts. Those other accounts may continue to access and use your
+     * shared profile even if you delete the profile from your own Amazon Web Services account or terminate your Amazon
+     * Web Services account.
+     * </p>
+     * </note>
+     * 
+     * @param deleteProfileRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteProfile operation returned by the service.
+     * @sample AWSWellArchitectedAsyncHandler.DeleteProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteProfile" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteProfileResult> deleteProfileAsync(DeleteProfileRequest deleteProfileRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteProfileRequest, DeleteProfileResult> asyncHandler);
+
+    /**
+     * <p>
+     * Delete a profile share.
+     * </p>
+     * 
+     * @param deleteProfileShareRequest
+     * @return A Java Future containing the result of the DeleteProfileShare operation returned by the service.
+     * @sample AWSWellArchitectedAsync.DeleteProfileShare
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteProfileShare"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteProfileShareResult> deleteProfileShareAsync(DeleteProfileShareRequest deleteProfileShareRequest);
+
+    /**
+     * <p>
+     * Delete a profile share.
+     * </p>
+     * 
+     * @param deleteProfileShareRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteProfileShare operation returned by the service.
+     * @sample AWSWellArchitectedAsyncHandler.DeleteProfileShare
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteProfileShare"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteProfileShareResult> deleteProfileShareAsync(DeleteProfileShareRequest deleteProfileShareRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteProfileShareRequest, DeleteProfileShareResult> asyncHandler);
+
+    /**
+     * <p>
+     * Delete a review template.
+     * </p>
+     * <p>
+     * Only the owner of a review template can delete it.
+     * </p>
+     * <p>
+     * After the review template is deleted, Amazon Web Services accounts, users, organizations, and organizational
+     * units (OUs) that you shared the review template with will no longer be able to apply it to new workloads.
+     * </p>
+     * 
+     * @param deleteReviewTemplateRequest
+     * @return A Java Future containing the result of the DeleteReviewTemplate operation returned by the service.
+     * @sample AWSWellArchitectedAsync.DeleteReviewTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteReviewTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteReviewTemplateResult> deleteReviewTemplateAsync(DeleteReviewTemplateRequest deleteReviewTemplateRequest);
+
+    /**
+     * <p>
+     * Delete a review template.
+     * </p>
+     * <p>
+     * Only the owner of a review template can delete it.
+     * </p>
+     * <p>
+     * After the review template is deleted, Amazon Web Services accounts, users, organizations, and organizational
+     * units (OUs) that you shared the review template with will no longer be able to apply it to new workloads.
+     * </p>
+     * 
+     * @param deleteReviewTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteReviewTemplate operation returned by the service.
+     * @sample AWSWellArchitectedAsyncHandler.DeleteReviewTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteReviewTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteReviewTemplateResult> deleteReviewTemplateAsync(DeleteReviewTemplateRequest deleteReviewTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteReviewTemplateRequest, DeleteReviewTemplateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Delete a review template share.
+     * </p>
+     * <p>
+     * After the review template share is deleted, Amazon Web Services accounts, users, organizations, and
+     * organizational units (OUs) that you shared the review template with will no longer be able to apply it to new
+     * workloads.
+     * </p>
+     * 
+     * @param deleteTemplateShareRequest
+     * @return A Java Future containing the result of the DeleteTemplateShare operation returned by the service.
+     * @sample AWSWellArchitectedAsync.DeleteTemplateShare
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteTemplateShare"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTemplateShareResult> deleteTemplateShareAsync(DeleteTemplateShareRequest deleteTemplateShareRequest);
+
+    /**
+     * <p>
+     * Delete a review template share.
+     * </p>
+     * <p>
+     * After the review template share is deleted, Amazon Web Services accounts, users, organizations, and
+     * organizational units (OUs) that you shared the review template with will no longer be able to apply it to new
+     * workloads.
+     * </p>
+     * 
+     * @param deleteTemplateShareRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteTemplateShare operation returned by the service.
+     * @sample AWSWellArchitectedAsyncHandler.DeleteTemplateShare
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteTemplateShare"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTemplateShareResult> deleteTemplateShareAsync(DeleteTemplateShareRequest deleteTemplateShareRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteTemplateShareRequest, DeleteTemplateShareResult> asyncHandler);
+
+    /**
+     * <p>
      * Delete an existing workload.
      * </p>
      * 
@@ -635,6 +1072,37 @@ public interface AWSWellArchitectedAsync extends AWSWellArchitected {
      */
     java.util.concurrent.Future<DisassociateLensesResult> disassociateLensesAsync(DisassociateLensesRequest disassociateLensesRequest,
             com.amazonaws.handlers.AsyncHandler<DisassociateLensesRequest, DisassociateLensesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disassociate a profile from a workload.
+     * </p>
+     * 
+     * @param disassociateProfilesRequest
+     * @return A Java Future containing the result of the DisassociateProfiles operation returned by the service.
+     * @sample AWSWellArchitectedAsync.DisassociateProfiles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DisassociateProfiles"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateProfilesResult> disassociateProfilesAsync(DisassociateProfilesRequest disassociateProfilesRequest);
+
+    /**
+     * <p>
+     * Disassociate a profile from a workload.
+     * </p>
+     * 
+     * @param disassociateProfilesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateProfiles operation returned by the service.
+     * @sample AWSWellArchitectedAsyncHandler.DisassociateProfiles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DisassociateProfiles"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateProfilesResult> disassociateProfilesAsync(DisassociateProfilesRequest disassociateProfilesRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateProfilesRequest, DisassociateProfilesResult> asyncHandler);
 
     /**
      * <p>
@@ -937,6 +1405,163 @@ public interface AWSWellArchitectedAsync extends AWSWellArchitected {
      */
     java.util.concurrent.Future<GetMilestoneResult> getMilestoneAsync(GetMilestoneRequest getMilestoneRequest,
             com.amazonaws.handlers.AsyncHandler<GetMilestoneRequest, GetMilestoneResult> asyncHandler);
+
+    /**
+     * <p>
+     * Get profile information.
+     * </p>
+     * 
+     * @param getProfileRequest
+     * @return A Java Future containing the result of the GetProfile operation returned by the service.
+     * @sample AWSWellArchitectedAsync.GetProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetProfile" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetProfileResult> getProfileAsync(GetProfileRequest getProfileRequest);
+
+    /**
+     * <p>
+     * Get profile information.
+     * </p>
+     * 
+     * @param getProfileRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetProfile operation returned by the service.
+     * @sample AWSWellArchitectedAsyncHandler.GetProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetProfile" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetProfileResult> getProfileAsync(GetProfileRequest getProfileRequest,
+            com.amazonaws.handlers.AsyncHandler<GetProfileRequest, GetProfileResult> asyncHandler);
+
+    /**
+     * <p>
+     * Get profile template.
+     * </p>
+     * 
+     * @param getProfileTemplateRequest
+     * @return A Java Future containing the result of the GetProfileTemplate operation returned by the service.
+     * @sample AWSWellArchitectedAsync.GetProfileTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetProfileTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetProfileTemplateResult> getProfileTemplateAsync(GetProfileTemplateRequest getProfileTemplateRequest);
+
+    /**
+     * <p>
+     * Get profile template.
+     * </p>
+     * 
+     * @param getProfileTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetProfileTemplate operation returned by the service.
+     * @sample AWSWellArchitectedAsyncHandler.GetProfileTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetProfileTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetProfileTemplateResult> getProfileTemplateAsync(GetProfileTemplateRequest getProfileTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<GetProfileTemplateRequest, GetProfileTemplateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Get review template.
+     * </p>
+     * 
+     * @param getReviewTemplateRequest
+     * @return A Java Future containing the result of the GetReviewTemplate operation returned by the service.
+     * @sample AWSWellArchitectedAsync.GetReviewTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetReviewTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetReviewTemplateResult> getReviewTemplateAsync(GetReviewTemplateRequest getReviewTemplateRequest);
+
+    /**
+     * <p>
+     * Get review template.
+     * </p>
+     * 
+     * @param getReviewTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetReviewTemplate operation returned by the service.
+     * @sample AWSWellArchitectedAsyncHandler.GetReviewTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetReviewTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetReviewTemplateResult> getReviewTemplateAsync(GetReviewTemplateRequest getReviewTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<GetReviewTemplateRequest, GetReviewTemplateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Get review template answer.
+     * </p>
+     * 
+     * @param getReviewTemplateAnswerRequest
+     * @return A Java Future containing the result of the GetReviewTemplateAnswer operation returned by the service.
+     * @sample AWSWellArchitectedAsync.GetReviewTemplateAnswer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetReviewTemplateAnswer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetReviewTemplateAnswerResult> getReviewTemplateAnswerAsync(GetReviewTemplateAnswerRequest getReviewTemplateAnswerRequest);
+
+    /**
+     * <p>
+     * Get review template answer.
+     * </p>
+     * 
+     * @param getReviewTemplateAnswerRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetReviewTemplateAnswer operation returned by the service.
+     * @sample AWSWellArchitectedAsyncHandler.GetReviewTemplateAnswer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetReviewTemplateAnswer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetReviewTemplateAnswerResult> getReviewTemplateAnswerAsync(GetReviewTemplateAnswerRequest getReviewTemplateAnswerRequest,
+            com.amazonaws.handlers.AsyncHandler<GetReviewTemplateAnswerRequest, GetReviewTemplateAnswerResult> asyncHandler);
+
+    /**
+     * <p>
+     * Get a lens review associated with a review template.
+     * </p>
+     * 
+     * @param getReviewTemplateLensReviewRequest
+     * @return A Java Future containing the result of the GetReviewTemplateLensReview operation returned by the service.
+     * @sample AWSWellArchitectedAsync.GetReviewTemplateLensReview
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetReviewTemplateLensReview"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetReviewTemplateLensReviewResult> getReviewTemplateLensReviewAsync(
+            GetReviewTemplateLensReviewRequest getReviewTemplateLensReviewRequest);
+
+    /**
+     * <p>
+     * Get a lens review associated with a review template.
+     * </p>
+     * 
+     * @param getReviewTemplateLensReviewRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetReviewTemplateLensReview operation returned by the service.
+     * @sample AWSWellArchitectedAsyncHandler.GetReviewTemplateLensReview
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetReviewTemplateLensReview"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetReviewTemplateLensReviewResult> getReviewTemplateLensReviewAsync(
+            GetReviewTemplateLensReviewRequest getReviewTemplateLensReviewRequest,
+            com.amazonaws.handlers.AsyncHandler<GetReviewTemplateLensReviewRequest, GetReviewTemplateLensReviewResult> asyncHandler);
 
     /**
      * <p>
@@ -1349,7 +1974,169 @@ public interface AWSWellArchitectedAsync extends AWSWellArchitected {
 
     /**
      * <p>
-     * List the workload invitations.
+     * List profile notifications.
+     * </p>
+     * 
+     * @param listProfileNotificationsRequest
+     * @return A Java Future containing the result of the ListProfileNotifications operation returned by the service.
+     * @sample AWSWellArchitectedAsync.ListProfileNotifications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListProfileNotifications"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListProfileNotificationsResult> listProfileNotificationsAsync(ListProfileNotificationsRequest listProfileNotificationsRequest);
+
+    /**
+     * <p>
+     * List profile notifications.
+     * </p>
+     * 
+     * @param listProfileNotificationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListProfileNotifications operation returned by the service.
+     * @sample AWSWellArchitectedAsyncHandler.ListProfileNotifications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListProfileNotifications"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListProfileNotificationsResult> listProfileNotificationsAsync(ListProfileNotificationsRequest listProfileNotificationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListProfileNotificationsRequest, ListProfileNotificationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * List profile shares.
+     * </p>
+     * 
+     * @param listProfileSharesRequest
+     * @return A Java Future containing the result of the ListProfileShares operation returned by the service.
+     * @sample AWSWellArchitectedAsync.ListProfileShares
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListProfileShares"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListProfileSharesResult> listProfileSharesAsync(ListProfileSharesRequest listProfileSharesRequest);
+
+    /**
+     * <p>
+     * List profile shares.
+     * </p>
+     * 
+     * @param listProfileSharesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListProfileShares operation returned by the service.
+     * @sample AWSWellArchitectedAsyncHandler.ListProfileShares
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListProfileShares"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListProfileSharesResult> listProfileSharesAsync(ListProfileSharesRequest listProfileSharesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListProfileSharesRequest, ListProfileSharesResult> asyncHandler);
+
+    /**
+     * <p>
+     * List profiles.
+     * </p>
+     * 
+     * @param listProfilesRequest
+     * @return A Java Future containing the result of the ListProfiles operation returned by the service.
+     * @sample AWSWellArchitectedAsync.ListProfiles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListProfiles" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListProfilesResult> listProfilesAsync(ListProfilesRequest listProfilesRequest);
+
+    /**
+     * <p>
+     * List profiles.
+     * </p>
+     * 
+     * @param listProfilesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListProfiles operation returned by the service.
+     * @sample AWSWellArchitectedAsyncHandler.ListProfiles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListProfiles" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListProfilesResult> listProfilesAsync(ListProfilesRequest listProfilesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListProfilesRequest, ListProfilesResult> asyncHandler);
+
+    /**
+     * <p>
+     * List the answers of a review template.
+     * </p>
+     * 
+     * @param listReviewTemplateAnswersRequest
+     * @return A Java Future containing the result of the ListReviewTemplateAnswers operation returned by the service.
+     * @sample AWSWellArchitectedAsync.ListReviewTemplateAnswers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListReviewTemplateAnswers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListReviewTemplateAnswersResult> listReviewTemplateAnswersAsync(
+            ListReviewTemplateAnswersRequest listReviewTemplateAnswersRequest);
+
+    /**
+     * <p>
+     * List the answers of a review template.
+     * </p>
+     * 
+     * @param listReviewTemplateAnswersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListReviewTemplateAnswers operation returned by the service.
+     * @sample AWSWellArchitectedAsyncHandler.ListReviewTemplateAnswers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListReviewTemplateAnswers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListReviewTemplateAnswersResult> listReviewTemplateAnswersAsync(
+            ListReviewTemplateAnswersRequest listReviewTemplateAnswersRequest,
+            com.amazonaws.handlers.AsyncHandler<ListReviewTemplateAnswersRequest, ListReviewTemplateAnswersResult> asyncHandler);
+
+    /**
+     * <p>
+     * List review templates.
+     * </p>
+     * 
+     * @param listReviewTemplatesRequest
+     * @return A Java Future containing the result of the ListReviewTemplates operation returned by the service.
+     * @sample AWSWellArchitectedAsync.ListReviewTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListReviewTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListReviewTemplatesResult> listReviewTemplatesAsync(ListReviewTemplatesRequest listReviewTemplatesRequest);
+
+    /**
+     * <p>
+     * List review templates.
+     * </p>
+     * 
+     * @param listReviewTemplatesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListReviewTemplates operation returned by the service.
+     * @sample AWSWellArchitectedAsyncHandler.ListReviewTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListReviewTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListReviewTemplatesResult> listReviewTemplatesAsync(ListReviewTemplatesRequest listReviewTemplatesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListReviewTemplatesRequest, ListReviewTemplatesResult> asyncHandler);
+
+    /**
+     * <p>
+     * List the share invitations.
+     * </p>
+     * <p>
+     * <code>WorkloadNamePrefix</code>, <code>LensNamePrefix</code>, <code>ProfileNamePrefix</code>, and
+     * <code>TemplateNamePrefix</code> are mutually exclusive. Use the parameter that matches your
+     * <code>ShareResourceType</code>.
      * </p>
      * 
      * @param listShareInvitationsRequest
@@ -1363,7 +2150,12 @@ public interface AWSWellArchitectedAsync extends AWSWellArchitected {
 
     /**
      * <p>
-     * List the workload invitations.
+     * List the share invitations.
+     * </p>
+     * <p>
+     * <code>WorkloadNamePrefix</code>, <code>LensNamePrefix</code>, <code>ProfileNamePrefix</code>, and
+     * <code>TemplateNamePrefix</code> are mutually exclusive. Use the parameter that matches your
+     * <code>ShareResourceType</code>.
      * </p>
      * 
      * @param listShareInvitationsRequest
@@ -1386,7 +2178,7 @@ public interface AWSWellArchitectedAsync extends AWSWellArchitected {
      * </p>
      * <note>
      * <p>
-     * The WorkloadArn parameter can be either a workload ARN or a custom lens ARN.
+     * The WorkloadArn parameter can be a workload ARN, a custom lens ARN, a profile ARN, or review template ARN.
      * </p>
      * </note>
      * 
@@ -1404,7 +2196,7 @@ public interface AWSWellArchitectedAsync extends AWSWellArchitected {
      * </p>
      * <note>
      * <p>
-     * The WorkloadArn parameter can be either a workload ARN or a custom lens ARN.
+     * The WorkloadArn parameter can be a workload ARN, a custom lens ARN, a profile ARN, or review template ARN.
      * </p>
      * </note>
      * 
@@ -1420,6 +2212,37 @@ public interface AWSWellArchitectedAsync extends AWSWellArchitected {
      */
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * List review template shares.
+     * </p>
+     * 
+     * @param listTemplateSharesRequest
+     * @return A Java Future containing the result of the ListTemplateShares operation returned by the service.
+     * @sample AWSWellArchitectedAsync.ListTemplateShares
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListTemplateShares"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTemplateSharesResult> listTemplateSharesAsync(ListTemplateSharesRequest listTemplateSharesRequest);
+
+    /**
+     * <p>
+     * List review template shares.
+     * </p>
+     * 
+     * @param listTemplateSharesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTemplateShares operation returned by the service.
+     * @sample AWSWellArchitectedAsyncHandler.ListTemplateShares
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListTemplateShares"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTemplateSharesResult> listTemplateSharesAsync(ListTemplateSharesRequest listTemplateSharesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTemplateSharesRequest, ListTemplateSharesResult> asyncHandler);
 
     /**
      * <p>
@@ -1493,7 +2316,7 @@ public interface AWSWellArchitectedAsync extends AWSWellArchitected {
      * </p>
      * <note>
      * <p>
-     * The WorkloadArn parameter can be either a workload ARN or a custom lens ARN.
+     * The WorkloadArn parameter can be a workload ARN, a custom lens ARN, a profile ARN, or review template ARN.
      * </p>
      * </note>
      * 
@@ -1511,7 +2334,7 @@ public interface AWSWellArchitectedAsync extends AWSWellArchitected {
      * </p>
      * <note>
      * <p>
-     * The WorkloadArn parameter can be either a workload ARN or a custom lens ARN.
+     * The WorkloadArn parameter can be a workload ARN, a custom lens ARN, a profile ARN, or review template ARN.
      * </p>
      * </note>
      * 
@@ -1534,7 +2357,7 @@ public interface AWSWellArchitectedAsync extends AWSWellArchitected {
      * </p>
      * <note>
      * <p>
-     * The WorkloadArn parameter can be either a workload ARN or a custom lens ARN.
+     * The WorkloadArn parameter can be a workload ARN, a custom lens ARN, a profile ARN, or review template ARN.
      * </p>
      * </note>
      * <p>
@@ -1558,7 +2381,7 @@ public interface AWSWellArchitectedAsync extends AWSWellArchitected {
      * </p>
      * <note>
      * <p>
-     * The WorkloadArn parameter can be either a workload ARN or a custom lens ARN.
+     * The WorkloadArn parameter can be a workload ARN, a custom lens ARN, a profile ARN, or review template ARN.
      * </p>
      * </note>
      * <p>
@@ -1616,7 +2439,8 @@ public interface AWSWellArchitectedAsync extends AWSWellArchitected {
 
     /**
      * <p>
-     * Updates whether the Amazon Web Services account is opted into organization sharing features.
+     * Updates whether the Amazon Web Services account is opted into organization sharing and discovery integration
+     * features.
      * </p>
      * 
      * @param updateGlobalSettingsRequest
@@ -1629,7 +2453,8 @@ public interface AWSWellArchitectedAsync extends AWSWellArchitected {
 
     /**
      * <p>
-     * Updates whether the Amazon Web Services account is opted into organization sharing features.
+     * Updates whether the Amazon Web Services account is opted into organization sharing and discovery integration
+     * features.
      * </p>
      * 
      * @param updateGlobalSettingsRequest
@@ -1677,6 +2502,136 @@ public interface AWSWellArchitectedAsync extends AWSWellArchitected {
      */
     java.util.concurrent.Future<UpdateLensReviewResult> updateLensReviewAsync(UpdateLensReviewRequest updateLensReviewRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateLensReviewRequest, UpdateLensReviewResult> asyncHandler);
+
+    /**
+     * <p>
+     * Update a profile.
+     * </p>
+     * 
+     * @param updateProfileRequest
+     * @return A Java Future containing the result of the UpdateProfile operation returned by the service.
+     * @sample AWSWellArchitectedAsync.UpdateProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateProfile" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateProfileResult> updateProfileAsync(UpdateProfileRequest updateProfileRequest);
+
+    /**
+     * <p>
+     * Update a profile.
+     * </p>
+     * 
+     * @param updateProfileRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateProfile operation returned by the service.
+     * @sample AWSWellArchitectedAsyncHandler.UpdateProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateProfile" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateProfileResult> updateProfileAsync(UpdateProfileRequest updateProfileRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateProfileRequest, UpdateProfileResult> asyncHandler);
+
+    /**
+     * <p>
+     * Update a review template.
+     * </p>
+     * 
+     * @param updateReviewTemplateRequest
+     * @return A Java Future containing the result of the UpdateReviewTemplate operation returned by the service.
+     * @sample AWSWellArchitectedAsync.UpdateReviewTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateReviewTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateReviewTemplateResult> updateReviewTemplateAsync(UpdateReviewTemplateRequest updateReviewTemplateRequest);
+
+    /**
+     * <p>
+     * Update a review template.
+     * </p>
+     * 
+     * @param updateReviewTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateReviewTemplate operation returned by the service.
+     * @sample AWSWellArchitectedAsyncHandler.UpdateReviewTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateReviewTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateReviewTemplateResult> updateReviewTemplateAsync(UpdateReviewTemplateRequest updateReviewTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateReviewTemplateRequest, UpdateReviewTemplateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Update a review template answer.
+     * </p>
+     * 
+     * @param updateReviewTemplateAnswerRequest
+     * @return A Java Future containing the result of the UpdateReviewTemplateAnswer operation returned by the service.
+     * @sample AWSWellArchitectedAsync.UpdateReviewTemplateAnswer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateReviewTemplateAnswer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateReviewTemplateAnswerResult> updateReviewTemplateAnswerAsync(
+            UpdateReviewTemplateAnswerRequest updateReviewTemplateAnswerRequest);
+
+    /**
+     * <p>
+     * Update a review template answer.
+     * </p>
+     * 
+     * @param updateReviewTemplateAnswerRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateReviewTemplateAnswer operation returned by the service.
+     * @sample AWSWellArchitectedAsyncHandler.UpdateReviewTemplateAnswer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateReviewTemplateAnswer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateReviewTemplateAnswerResult> updateReviewTemplateAnswerAsync(
+            UpdateReviewTemplateAnswerRequest updateReviewTemplateAnswerRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateReviewTemplateAnswerRequest, UpdateReviewTemplateAnswerResult> asyncHandler);
+
+    /**
+     * <p>
+     * Update a lens review associated with a review template.
+     * </p>
+     * 
+     * @param updateReviewTemplateLensReviewRequest
+     * @return A Java Future containing the result of the UpdateReviewTemplateLensReview operation returned by the
+     *         service.
+     * @sample AWSWellArchitectedAsync.UpdateReviewTemplateLensReview
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateReviewTemplateLensReview"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateReviewTemplateLensReviewResult> updateReviewTemplateLensReviewAsync(
+            UpdateReviewTemplateLensReviewRequest updateReviewTemplateLensReviewRequest);
+
+    /**
+     * <p>
+     * Update a lens review associated with a review template.
+     * </p>
+     * 
+     * @param updateReviewTemplateLensReviewRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateReviewTemplateLensReview operation returned by the
+     *         service.
+     * @sample AWSWellArchitectedAsyncHandler.UpdateReviewTemplateLensReview
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateReviewTemplateLensReview"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateReviewTemplateLensReviewResult> updateReviewTemplateLensReviewAsync(
+            UpdateReviewTemplateLensReviewRequest updateReviewTemplateLensReviewRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateReviewTemplateLensReviewRequest, UpdateReviewTemplateLensReviewResult> asyncHandler);
 
     /**
      * <p>
@@ -1819,5 +2774,71 @@ public interface AWSWellArchitectedAsync extends AWSWellArchitected {
      */
     java.util.concurrent.Future<UpgradeLensReviewResult> upgradeLensReviewAsync(UpgradeLensReviewRequest upgradeLensReviewRequest,
             com.amazonaws.handlers.AsyncHandler<UpgradeLensReviewRequest, UpgradeLensReviewResult> asyncHandler);
+
+    /**
+     * <p>
+     * Upgrade a profile.
+     * </p>
+     * 
+     * @param upgradeProfileVersionRequest
+     * @return A Java Future containing the result of the UpgradeProfileVersion operation returned by the service.
+     * @sample AWSWellArchitectedAsync.UpgradeProfileVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpgradeProfileVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpgradeProfileVersionResult> upgradeProfileVersionAsync(UpgradeProfileVersionRequest upgradeProfileVersionRequest);
+
+    /**
+     * <p>
+     * Upgrade a profile.
+     * </p>
+     * 
+     * @param upgradeProfileVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpgradeProfileVersion operation returned by the service.
+     * @sample AWSWellArchitectedAsyncHandler.UpgradeProfileVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpgradeProfileVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpgradeProfileVersionResult> upgradeProfileVersionAsync(UpgradeProfileVersionRequest upgradeProfileVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<UpgradeProfileVersionRequest, UpgradeProfileVersionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Upgrade the lens review of a review template.
+     * </p>
+     * 
+     * @param upgradeReviewTemplateLensReviewRequest
+     * @return A Java Future containing the result of the UpgradeReviewTemplateLensReview operation returned by the
+     *         service.
+     * @sample AWSWellArchitectedAsync.UpgradeReviewTemplateLensReview
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpgradeReviewTemplateLensReview"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpgradeReviewTemplateLensReviewResult> upgradeReviewTemplateLensReviewAsync(
+            UpgradeReviewTemplateLensReviewRequest upgradeReviewTemplateLensReviewRequest);
+
+    /**
+     * <p>
+     * Upgrade the lens review of a review template.
+     * </p>
+     * 
+     * @param upgradeReviewTemplateLensReviewRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpgradeReviewTemplateLensReview operation returned by the
+     *         service.
+     * @sample AWSWellArchitectedAsyncHandler.UpgradeReviewTemplateLensReview
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpgradeReviewTemplateLensReview"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpgradeReviewTemplateLensReviewResult> upgradeReviewTemplateLensReviewAsync(
+            UpgradeReviewTemplateLensReviewRequest upgradeReviewTemplateLensReviewRequest,
+            com.amazonaws.handlers.AsyncHandler<UpgradeReviewTemplateLensReviewRequest, UpgradeReviewTemplateLensReviewResult> asyncHandler);
 
 }

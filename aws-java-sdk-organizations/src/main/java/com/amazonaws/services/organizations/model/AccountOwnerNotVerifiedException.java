@@ -19,7 +19,7 @@ import javax.annotation.Generated;
  * You can't invite an existing account to your organization until you verify that you own the email address associated
  * with the management account. For more information, see <a
  * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_create.html#about-email-verification"
- * >Email Address Verification</a> in the <i>Organizations User Guide.</i>
+ * >Email address verification</a> in the <i>Organizations User Guide</i>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

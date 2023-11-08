@@ -28,7 +28,17 @@ public class AbstractAWSCleanRooms implements AWSCleanRooms {
     }
 
     @Override
+    public BatchGetCollaborationAnalysisTemplateResult batchGetCollaborationAnalysisTemplate(BatchGetCollaborationAnalysisTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public BatchGetSchemaResult batchGetSchema(BatchGetSchemaRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateAnalysisTemplateResult createAnalysisTemplate(CreateAnalysisTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -54,6 +64,11 @@ public class AbstractAWSCleanRooms implements AWSCleanRooms {
 
     @Override
     public CreateMembershipResult createMembership(CreateMembershipRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteAnalysisTemplateResult deleteAnalysisTemplate(DeleteAnalysisTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -88,7 +103,17 @@ public class AbstractAWSCleanRooms implements AWSCleanRooms {
     }
 
     @Override
+    public GetAnalysisTemplateResult getAnalysisTemplate(GetAnalysisTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetCollaborationResult getCollaboration(GetCollaborationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetCollaborationAnalysisTemplateResult getCollaborationAnalysisTemplate(GetCollaborationAnalysisTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -124,6 +149,16 @@ public class AbstractAWSCleanRooms implements AWSCleanRooms {
 
     @Override
     public GetSchemaAnalysisRuleResult getSchemaAnalysisRule(GetSchemaAnalysisRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListAnalysisTemplatesResult listAnalysisTemplates(ListAnalysisTemplatesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListCollaborationAnalysisTemplatesResult listCollaborationAnalysisTemplates(ListCollaborationAnalysisTemplatesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -179,6 +214,11 @@ public class AbstractAWSCleanRooms implements AWSCleanRooms {
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateAnalysisTemplateResult updateAnalysisTemplate(UpdateAnalysisTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

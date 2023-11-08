@@ -72,9 +72,9 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
     private String privateIpAddress;
     /**
      * <p>
-     * Secondary EIP allocation IDs. For more information about secondary addresses, see <a
+     * Secondary EIP allocation IDs. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a NAT
-     * gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * gateway</a> in the <i>Amazon VPC User Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> secondaryAllocationIds;
@@ -82,7 +82,7 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
      * <p>
      * Secondary private IPv4 addresses. For more information about secondary addresses, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a NAT
-     * gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * gateway</a> in the <i>Amazon VPC User Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> secondaryPrivateIpAddresses;
@@ -91,7 +91,7 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
      * [Private NAT gateway only] The number of secondary private IPv4 addresses you want to assign to the NAT gateway.
      * For more information about secondary addresses, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a NAT
-     * gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * gateway</a> in the <i>Amazon VPC User Guide</i>.
      * </p>
      */
     private Integer secondaryPrivateIpAddressCount;
@@ -445,14 +445,14 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * Secondary EIP allocation IDs. For more information about secondary addresses, see <a
+     * Secondary EIP allocation IDs. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a NAT
-     * gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * gateway</a> in the <i>Amazon VPC User Guide</i>.
      * </p>
      * 
-     * @return Secondary EIP allocation IDs. For more information about secondary addresses, see <a
+     * @return Secondary EIP allocation IDs. For more information, see <a
      *         href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
-     *         a NAT gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     *         a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.
      */
 
     public java.util.List<String> getSecondaryAllocationIds() {
@@ -464,15 +464,15 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * Secondary EIP allocation IDs. For more information about secondary addresses, see <a
+     * Secondary EIP allocation IDs. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a NAT
-     * gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * gateway</a> in the <i>Amazon VPC User Guide</i>.
      * </p>
      * 
      * @param secondaryAllocationIds
-     *        Secondary EIP allocation IDs. For more information about secondary addresses, see <a
+     *        Secondary EIP allocation IDs. For more information, see <a
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a
-     *        NAT gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     *        NAT gateway</a> in the <i>Amazon VPC User Guide</i>.
      */
 
     public void setSecondaryAllocationIds(java.util.Collection<String> secondaryAllocationIds) {
@@ -486,9 +486,9 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * Secondary EIP allocation IDs. For more information about secondary addresses, see <a
+     * Secondary EIP allocation IDs. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a NAT
-     * gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * gateway</a> in the <i>Amazon VPC User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -497,9 +497,9 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
      * </p>
      * 
      * @param secondaryAllocationIds
-     *        Secondary EIP allocation IDs. For more information about secondary addresses, see <a
+     *        Secondary EIP allocation IDs. For more information, see <a
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a
-     *        NAT gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     *        NAT gateway</a> in the <i>Amazon VPC User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -515,15 +515,15 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * Secondary EIP allocation IDs. For more information about secondary addresses, see <a
+     * Secondary EIP allocation IDs. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a NAT
-     * gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * gateway</a> in the <i>Amazon VPC User Guide</i>.
      * </p>
      * 
      * @param secondaryAllocationIds
-     *        Secondary EIP allocation IDs. For more information about secondary addresses, see <a
+     *        Secondary EIP allocation IDs. For more information, see <a
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a
-     *        NAT gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     *        NAT gateway</a> in the <i>Amazon VPC User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -536,12 +536,12 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
      * <p>
      * Secondary private IPv4 addresses. For more information about secondary addresses, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a NAT
-     * gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * gateway</a> in the <i>Amazon VPC User Guide</i>.
      * </p>
      * 
      * @return Secondary private IPv4 addresses. For more information about secondary addresses, see <a
      *         href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
-     *         a NAT gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     *         a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.
      */
 
     public java.util.List<String> getSecondaryPrivateIpAddresses() {
@@ -555,13 +555,13 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
      * <p>
      * Secondary private IPv4 addresses. For more information about secondary addresses, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a NAT
-     * gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * gateway</a> in the <i>Amazon VPC User Guide</i>.
      * </p>
      * 
      * @param secondaryPrivateIpAddresses
      *        Secondary private IPv4 addresses. For more information about secondary addresses, see <a
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a
-     *        NAT gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     *        NAT gateway</a> in the <i>Amazon VPC User Guide</i>.
      */
 
     public void setSecondaryPrivateIpAddresses(java.util.Collection<String> secondaryPrivateIpAddresses) {
@@ -577,7 +577,7 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
      * <p>
      * Secondary private IPv4 addresses. For more information about secondary addresses, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a NAT
-     * gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * gateway</a> in the <i>Amazon VPC User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -588,7 +588,7 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
      * @param secondaryPrivateIpAddresses
      *        Secondary private IPv4 addresses. For more information about secondary addresses, see <a
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a
-     *        NAT gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     *        NAT gateway</a> in the <i>Amazon VPC User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -606,13 +606,13 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
      * <p>
      * Secondary private IPv4 addresses. For more information about secondary addresses, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a NAT
-     * gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * gateway</a> in the <i>Amazon VPC User Guide</i>.
      * </p>
      * 
      * @param secondaryPrivateIpAddresses
      *        Secondary private IPv4 addresses. For more information about secondary addresses, see <a
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a
-     *        NAT gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     *        NAT gateway</a> in the <i>Amazon VPC User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -626,14 +626,14 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
      * [Private NAT gateway only] The number of secondary private IPv4 addresses you want to assign to the NAT gateway.
      * For more information about secondary addresses, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a NAT
-     * gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * gateway</a> in the <i>Amazon VPC User Guide</i>.
      * </p>
      * 
      * @param secondaryPrivateIpAddressCount
      *        [Private NAT gateway only] The number of secondary private IPv4 addresses you want to assign to the NAT
      *        gateway. For more information about secondary addresses, see <a
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a
-     *        NAT gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     *        NAT gateway</a> in the <i>Amazon VPC User Guide</i>.
      */
 
     public void setSecondaryPrivateIpAddressCount(Integer secondaryPrivateIpAddressCount) {
@@ -645,13 +645,13 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
      * [Private NAT gateway only] The number of secondary private IPv4 addresses you want to assign to the NAT gateway.
      * For more information about secondary addresses, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a NAT
-     * gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * gateway</a> in the <i>Amazon VPC User Guide</i>.
      * </p>
      * 
      * @return [Private NAT gateway only] The number of secondary private IPv4 addresses you want to assign to the NAT
      *         gateway. For more information about secondary addresses, see <a
      *         href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
-     *         a NAT gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     *         a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.
      */
 
     public Integer getSecondaryPrivateIpAddressCount() {
@@ -663,14 +663,14 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
      * [Private NAT gateway only] The number of secondary private IPv4 addresses you want to assign to the NAT gateway.
      * For more information about secondary addresses, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a NAT
-     * gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * gateway</a> in the <i>Amazon VPC User Guide</i>.
      * </p>
      * 
      * @param secondaryPrivateIpAddressCount
      *        [Private NAT gateway only] The number of secondary private IPv4 addresses you want to assign to the NAT
      *        gateway. For more information about secondary addresses, see <a
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a
-     *        NAT gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     *        NAT gateway</a> in the <i>Amazon VPC User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

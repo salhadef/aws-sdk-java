@@ -471,6 +471,43 @@ public interface AWSSupport {
 
     /**
      * <p>
+     * Returns a list of CreateCaseOption types along with the corresponding supported hours and language availability.
+     * You can specify the <code>language</code> <code>categoryCode</code>, <code>issueType</code> and
+     * <code>serviceCode</code> used to retrieve the CreateCaseOptions.
+     * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the Amazon Web Services Support
+     * API.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you call the Amazon Web Services Support API from an account that doesn't have a Business, Enterprise On-Ramp,
+     * or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information
+     * about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services
+     * Support</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * 
+     * @param describeCreateCaseOptionsRequest
+     * @return Result of the DescribeCreateCaseOptions operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An internal server error occurred.
+     * @throws ThrottlingException
+     *         You have exceeded the maximum allowed TPS (Transactions Per Second) for the operations.
+     * @sample AWSSupport.DescribeCreateCaseOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeCreateCaseOptions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeCreateCaseOptionsResult describeCreateCaseOptions(DescribeCreateCaseOptionsRequest describeCreateCaseOptionsRequest);
+
+    /**
+     * <p>
      * Returns the current list of Amazon Web Services services and a list of service categories for each service. You
      * then use service names and categories in your <a>CreateCase</a> requests. Each Amazon Web Services service has
      * its own set of categories.
@@ -562,6 +599,43 @@ public interface AWSSupport {
 
     /**
      * <p>
+     * Returns a list of supported languages for a specified <code>categoryCode</code>, <code>issueType</code> and
+     * <code>serviceCode</code>. The returned supported languages will include a ISO 639-1 code for the
+     * <code>language</code>, and the language display name.
+     * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the Amazon Web Services Support
+     * API.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you call the Amazon Web Services Support API from an account that doesn't have a Business, Enterprise On-Ramp,
+     * or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information
+     * about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services
+     * Support</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * 
+     * @param describeSupportedLanguagesRequest
+     * @return Result of the DescribeSupportedLanguages operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An internal server error occurred.
+     * @throws ThrottlingException
+     *         You have exceeded the maximum allowed TPS (Transactions Per Second) for the operations.
+     * @sample AWSSupport.DescribeSupportedLanguages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeSupportedLanguages"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeSupportedLanguagesResult describeSupportedLanguages(DescribeSupportedLanguagesRequest describeSupportedLanguagesRequest);
+
+    /**
+     * <p>
      * Returns the refresh status of the Trusted Advisor checks that have the specified check IDs. You can get the check
      * IDs by calling the <a>DescribeTrustedAdvisorChecks</a> operation.
      * </p>
@@ -600,6 +674,8 @@ public interface AWSSupport {
      * @return Result of the DescribeTrustedAdvisorCheckRefreshStatuses operation returned by the service.
      * @throws InternalServerErrorException
      *         An internal server error occurred.
+     * @throws ThrottlingException
+     *         You have exceeded the maximum allowed TPS (Transactions Per Second) for the operations.
      * @sample AWSSupport.DescribeTrustedAdvisorCheckRefreshStatuses
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckRefreshStatuses"
@@ -684,6 +760,8 @@ public interface AWSSupport {
      * @return Result of the DescribeTrustedAdvisorCheckResult operation returned by the service.
      * @throws InternalServerErrorException
      *         An internal server error occurred.
+     * @throws ThrottlingException
+     *         You have exceeded the maximum allowed TPS (Transactions Per Second) for the operations.
      * @sample AWSSupport.DescribeTrustedAdvisorCheckResult
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckResult"
      *      target="_top">AWS API Documentation</a>
@@ -728,6 +806,8 @@ public interface AWSSupport {
      * @return Result of the DescribeTrustedAdvisorCheckSummaries operation returned by the service.
      * @throws InternalServerErrorException
      *         An internal server error occurred.
+     * @throws ThrottlingException
+     *         You have exceeded the maximum allowed TPS (Transactions Per Second) for the operations.
      * @sample AWSSupport.DescribeTrustedAdvisorCheckSummaries
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckSummaries"
      *      target="_top">AWS API Documentation</a>
@@ -780,6 +860,8 @@ public interface AWSSupport {
      * @return Result of the DescribeTrustedAdvisorChecks operation returned by the service.
      * @throws InternalServerErrorException
      *         An internal server error occurred.
+     * @throws ThrottlingException
+     *         You have exceeded the maximum allowed TPS (Transactions Per Second) for the operations.
      * @sample AWSSupport.DescribeTrustedAdvisorChecks
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorChecks"
      *      target="_top">AWS API Documentation</a>

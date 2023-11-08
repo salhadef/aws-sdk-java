@@ -76,6 +76,10 @@ public class SAPODataConnectorProfilePropertiesJsonUnmarshaller implements Unmar
                     context.nextToken();
                     sAPODataConnectorProfileProperties.setOAuthProperties(OAuthPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("disableSSO", targetDepth)) {
+                    context.nextToken();
+                    sAPODataConnectorProfileProperties.setDisableSSO(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -47,6 +47,8 @@ public class BillingGroupListElementMarshaller {
             .marshallLocationName("Status").build();
     private static final MarshallingInfo<String> STATUSREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatusReason").build();
+    private static final MarshallingInfo<StructuredPojo> ACCOUNTGROUPING_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AccountGrouping").build();
 
     private static final BillingGroupListElementMarshaller instance = new BillingGroupListElementMarshaller();
 
@@ -74,6 +76,7 @@ public class BillingGroupListElementMarshaller {
             protocolMarshaller.marshall(billingGroupListElement.getLastModifiedTime(), LASTMODIFIEDTIME_BINDING);
             protocolMarshaller.marshall(billingGroupListElement.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(billingGroupListElement.getStatusReason(), STATUSREASON_BINDING);
+            protocolMarshaller.marshall(billingGroupListElement.getAccountGrouping(), ACCOUNTGROUPING_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

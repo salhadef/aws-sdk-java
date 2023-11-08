@@ -109,6 +109,12 @@ public class GetDataQualityRulesetEvaluationRunResult extends com.amazonaws.Amaz
      * </p>
      */
     private java.util.List<String> resultIds;
+    /**
+     * <p>
+     * A map of reference strings to additional data sources you can specify for an evaluation run.
+     * </p>
+     */
+    private java.util.Map<String, DataSource> additionalDataSources;
 
     /**
      * <p>
@@ -756,6 +762,74 @@ public class GetDataQualityRulesetEvaluationRunResult extends com.amazonaws.Amaz
     }
 
     /**
+     * <p>
+     * A map of reference strings to additional data sources you can specify for an evaluation run.
+     * </p>
+     * 
+     * @return A map of reference strings to additional data sources you can specify for an evaluation run.
+     */
+
+    public java.util.Map<String, DataSource> getAdditionalDataSources() {
+        return additionalDataSources;
+    }
+
+    /**
+     * <p>
+     * A map of reference strings to additional data sources you can specify for an evaluation run.
+     * </p>
+     * 
+     * @param additionalDataSources
+     *        A map of reference strings to additional data sources you can specify for an evaluation run.
+     */
+
+    public void setAdditionalDataSources(java.util.Map<String, DataSource> additionalDataSources) {
+        this.additionalDataSources = additionalDataSources;
+    }
+
+    /**
+     * <p>
+     * A map of reference strings to additional data sources you can specify for an evaluation run.
+     * </p>
+     * 
+     * @param additionalDataSources
+     *        A map of reference strings to additional data sources you can specify for an evaluation run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDataQualityRulesetEvaluationRunResult withAdditionalDataSources(java.util.Map<String, DataSource> additionalDataSources) {
+        setAdditionalDataSources(additionalDataSources);
+        return this;
+    }
+
+    /**
+     * Add a single AdditionalDataSources entry
+     *
+     * @see GetDataQualityRulesetEvaluationRunResult#withAdditionalDataSources
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDataQualityRulesetEvaluationRunResult addAdditionalDataSourcesEntry(String key, DataSource value) {
+        if (null == this.additionalDataSources) {
+            this.additionalDataSources = new java.util.HashMap<String, DataSource>();
+        }
+        if (this.additionalDataSources.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.additionalDataSources.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into AdditionalDataSources.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDataQualityRulesetEvaluationRunResult clearAdditionalDataSourcesEntries() {
+        this.additionalDataSources = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -794,7 +868,9 @@ public class GetDataQualityRulesetEvaluationRunResult extends com.amazonaws.Amaz
         if (getRulesetNames() != null)
             sb.append("RulesetNames: ").append(getRulesetNames()).append(",");
         if (getResultIds() != null)
-            sb.append("ResultIds: ").append(getResultIds());
+            sb.append("ResultIds: ").append(getResultIds()).append(",");
+        if (getAdditionalDataSources() != null)
+            sb.append("AdditionalDataSources: ").append(getAdditionalDataSources());
         sb.append("}");
         return sb.toString();
     }
@@ -865,6 +941,10 @@ public class GetDataQualityRulesetEvaluationRunResult extends com.amazonaws.Amaz
             return false;
         if (other.getResultIds() != null && other.getResultIds().equals(this.getResultIds()) == false)
             return false;
+        if (other.getAdditionalDataSources() == null ^ this.getAdditionalDataSources() == null)
+            return false;
+        if (other.getAdditionalDataSources() != null && other.getAdditionalDataSources().equals(this.getAdditionalDataSources()) == false)
+            return false;
         return true;
     }
 
@@ -887,6 +967,7 @@ public class GetDataQualityRulesetEvaluationRunResult extends com.amazonaws.Amaz
         hashCode = prime * hashCode + ((getExecutionTime() == null) ? 0 : getExecutionTime().hashCode());
         hashCode = prime * hashCode + ((getRulesetNames() == null) ? 0 : getRulesetNames().hashCode());
         hashCode = prime * hashCode + ((getResultIds() == null) ? 0 : getResultIds().hashCode());
+        hashCode = prime * hashCode + ((getAdditionalDataSources() == null) ? 0 : getAdditionalDataSources().hashCode());
         return hashCode;
     }
 

@@ -27,7 +27,7 @@ public class DeleteBlueGreenDeploymentRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The blue/green deployment identifier of the deployment to be deleted. This parameter isn't case-sensitive.
+     * The unique identifier of the blue/green deployment to delete. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -43,8 +43,8 @@ public class DeleteBlueGreenDeploymentRequest extends com.amazonaws.AmazonWebSer
     private String blueGreenDeploymentIdentifier;
     /**
      * <p>
-     * A value that indicates whether to delete the resources in the green environment. You can't specify this option if
-     * the blue/green deployment <a
+     * Specifies whether to delete the resources in the green environment. You can't specify this option if the
+     * blue/green deployment <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_BlueGreenDeployment.html">status</a> is
      * <code>SWITCHOVER_COMPLETED</code>.
      * </p>
@@ -53,7 +53,7 @@ public class DeleteBlueGreenDeploymentRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The blue/green deployment identifier of the deployment to be deleted. This parameter isn't case-sensitive.
+     * The unique identifier of the blue/green deployment to delete. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -67,8 +67,7 @@ public class DeleteBlueGreenDeploymentRequest extends com.amazonaws.AmazonWebSer
      * </ul>
      * 
      * @param blueGreenDeploymentIdentifier
-     *        The blue/green deployment identifier of the deployment to be deleted. This parameter isn't
-     *        case-sensitive.</p>
+     *        The unique identifier of the blue/green deployment to delete. This parameter isn't case-sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -86,7 +85,7 @@ public class DeleteBlueGreenDeploymentRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The blue/green deployment identifier of the deployment to be deleted. This parameter isn't case-sensitive.
+     * The unique identifier of the blue/green deployment to delete. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -99,8 +98,7 @@ public class DeleteBlueGreenDeploymentRequest extends com.amazonaws.AmazonWebSer
      * </li>
      * </ul>
      * 
-     * @return The blue/green deployment identifier of the deployment to be deleted. This parameter isn't
-     *         case-sensitive.</p>
+     * @return The unique identifier of the blue/green deployment to delete. This parameter isn't case-sensitive.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -118,7 +116,7 @@ public class DeleteBlueGreenDeploymentRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The blue/green deployment identifier of the deployment to be deleted. This parameter isn't case-sensitive.
+     * The unique identifier of the blue/green deployment to delete. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -132,8 +130,7 @@ public class DeleteBlueGreenDeploymentRequest extends com.amazonaws.AmazonWebSer
      * </ul>
      * 
      * @param blueGreenDeploymentIdentifier
-     *        The blue/green deployment identifier of the deployment to be deleted. This parameter isn't
-     *        case-sensitive.</p>
+     *        The unique identifier of the blue/green deployment to delete. This parameter isn't case-sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -153,15 +150,15 @@ public class DeleteBlueGreenDeploymentRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A value that indicates whether to delete the resources in the green environment. You can't specify this option if
-     * the blue/green deployment <a
+     * Specifies whether to delete the resources in the green environment. You can't specify this option if the
+     * blue/green deployment <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_BlueGreenDeployment.html">status</a> is
      * <code>SWITCHOVER_COMPLETED</code>.
      * </p>
      * 
      * @param deleteTarget
-     *        A value that indicates whether to delete the resources in the green environment. You can't specify this
-     *        option if the blue/green deployment <a
+     *        Specifies whether to delete the resources in the green environment. You can't specify this option if the
+     *        blue/green deployment <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_BlueGreenDeployment.html">status</a>
      *        is <code>SWITCHOVER_COMPLETED</code>.
      */
@@ -172,14 +169,14 @@ public class DeleteBlueGreenDeploymentRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A value that indicates whether to delete the resources in the green environment. You can't specify this option if
-     * the blue/green deployment <a
+     * Specifies whether to delete the resources in the green environment. You can't specify this option if the
+     * blue/green deployment <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_BlueGreenDeployment.html">status</a> is
      * <code>SWITCHOVER_COMPLETED</code>.
      * </p>
      * 
-     * @return A value that indicates whether to delete the resources in the green environment. You can't specify this
-     *         option if the blue/green deployment <a
+     * @return Specifies whether to delete the resources in the green environment. You can't specify this option if the
+     *         blue/green deployment <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_BlueGreenDeployment.html">status</a>
      *         is <code>SWITCHOVER_COMPLETED</code>.
      */
@@ -190,15 +187,15 @@ public class DeleteBlueGreenDeploymentRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A value that indicates whether to delete the resources in the green environment. You can't specify this option if
-     * the blue/green deployment <a
+     * Specifies whether to delete the resources in the green environment. You can't specify this option if the
+     * blue/green deployment <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_BlueGreenDeployment.html">status</a> is
      * <code>SWITCHOVER_COMPLETED</code>.
      * </p>
      * 
      * @param deleteTarget
-     *        A value that indicates whether to delete the resources in the green environment. You can't specify this
-     *        option if the blue/green deployment <a
+     *        Specifies whether to delete the resources in the green environment. You can't specify this option if the
+     *        blue/green deployment <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_BlueGreenDeployment.html">status</a>
      *        is <code>SWITCHOVER_COMPLETED</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -211,14 +208,14 @@ public class DeleteBlueGreenDeploymentRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A value that indicates whether to delete the resources in the green environment. You can't specify this option if
-     * the blue/green deployment <a
+     * Specifies whether to delete the resources in the green environment. You can't specify this option if the
+     * blue/green deployment <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_BlueGreenDeployment.html">status</a> is
      * <code>SWITCHOVER_COMPLETED</code>.
      * </p>
      * 
-     * @return A value that indicates whether to delete the resources in the green environment. You can't specify this
-     *         option if the blue/green deployment <a
+     * @return Specifies whether to delete the resources in the green environment. You can't specify this option if the
+     *         blue/green deployment <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_BlueGreenDeployment.html">status</a>
      *         is <code>SWITCHOVER_COMPLETED</code>.
      */

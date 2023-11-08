@@ -19,9 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The configuration that consists of the <code>ScheduleExpression</code> and the <code>DurationInMinutesdetails</code>,
+ * The configuration that consists of the <code>ScheduleExpression</code> and the <code>DurationInMinutes</code> details
  * that specify the scheduling to record from a camera, or local media file, onto the Edge Agent. If the
- * <code>ScheduleExpression</code> is not provided, then the Edge Agent will always be in upload mode.
+ * <code>ScheduleConfig</code> is not provided in the <code>UploaderConfig</code>, then the Edge Agent will upload at
+ * regular intervals (every 1 hour).
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UploaderConfig" target="_top">AWS API
@@ -34,7 +35,8 @@ public class UploaderConfig implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The configuration that consists of the <code>ScheduleExpression</code> and the <code>DurationInMinutes</code>
      * details that specify the scheduling to record from a camera, or local media file, onto the Edge Agent. If the
-     * <code>ScheduleExpression</code> is not provided, then the Edge Agent will always be in recording mode.
+     * <code>ScheduleConfig</code> is not provided in this <code>UploaderConfig</code>, then the Edge Agent will upload
+     * at regular intervals (every 1 hour).
      * </p>
      */
     private ScheduleConfig scheduleConfig;
@@ -43,14 +45,15 @@ public class UploaderConfig implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The configuration that consists of the <code>ScheduleExpression</code> and the <code>DurationInMinutes</code>
      * details that specify the scheduling to record from a camera, or local media file, onto the Edge Agent. If the
-     * <code>ScheduleExpression</code> is not provided, then the Edge Agent will always be in recording mode.
+     * <code>ScheduleConfig</code> is not provided in this <code>UploaderConfig</code>, then the Edge Agent will upload
+     * at regular intervals (every 1 hour).
      * </p>
      * 
      * @param scheduleConfig
      *        The configuration that consists of the <code>ScheduleExpression</code> and the
-     *        <code>DurationInMinutes</code>details that specify the scheduling to record from a camera, or local media
-     *        file, onto the Edge Agent. If the <code>ScheduleExpression</code> is not provided, then the Edge Agent
-     *        will always be in recording mode.
+     *        <code>DurationInMinutes</code> details that specify the scheduling to record from a camera, or local media
+     *        file, onto the Edge Agent. If the <code>ScheduleConfig</code> is not provided in this
+     *        <code>UploaderConfig</code>, then the Edge Agent will upload at regular intervals (every 1 hour).
      */
 
     public void setScheduleConfig(ScheduleConfig scheduleConfig) {
@@ -61,13 +64,14 @@ public class UploaderConfig implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The configuration that consists of the <code>ScheduleExpression</code> and the <code>DurationInMinutes</code>
      * details that specify the scheduling to record from a camera, or local media file, onto the Edge Agent. If the
-     * <code>ScheduleExpression</code> is not provided, then the Edge Agent will always be in recording mode.
+     * <code>ScheduleConfig</code> is not provided in this <code>UploaderConfig</code>, then the Edge Agent will upload
+     * at regular intervals (every 1 hour).
      * </p>
      * 
      * @return The configuration that consists of the <code>ScheduleExpression</code> and the
-     *         <code>DurationInMinutes</code>details that specify the scheduling to record from a camera, or local media
-     *         file, onto the Edge Agent. If the <code>ScheduleExpression</code> is not provided, then the Edge Agent
-     *         will always be in recording mode.
+     *         <code>DurationInMinutes</code> details that specify the scheduling to record from a camera, or local
+     *         media file, onto the Edge Agent. If the <code>ScheduleConfig</code> is not provided in this
+     *         <code>UploaderConfig</code>, then the Edge Agent will upload at regular intervals (every 1 hour).
      */
 
     public ScheduleConfig getScheduleConfig() {
@@ -78,14 +82,15 @@ public class UploaderConfig implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The configuration that consists of the <code>ScheduleExpression</code> and the <code>DurationInMinutes</code>
      * details that specify the scheduling to record from a camera, or local media file, onto the Edge Agent. If the
-     * <code>ScheduleExpression</code> is not provided, then the Edge Agent will always be in recording mode.
+     * <code>ScheduleConfig</code> is not provided in this <code>UploaderConfig</code>, then the Edge Agent will upload
+     * at regular intervals (every 1 hour).
      * </p>
      * 
      * @param scheduleConfig
      *        The configuration that consists of the <code>ScheduleExpression</code> and the
-     *        <code>DurationInMinutes</code>details that specify the scheduling to record from a camera, or local media
-     *        file, onto the Edge Agent. If the <code>ScheduleExpression</code> is not provided, then the Edge Agent
-     *        will always be in recording mode.
+     *        <code>DurationInMinutes</code> details that specify the scheduling to record from a camera, or local media
+     *        file, onto the Edge Agent. If the <code>ScheduleConfig</code> is not provided in this
+     *        <code>UploaderConfig</code>, then the Edge Agent will upload at regular intervals (every 1 hour).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

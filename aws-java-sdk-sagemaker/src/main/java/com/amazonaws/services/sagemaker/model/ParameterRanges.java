@@ -64,6 +64,13 @@ public class ParameterRanges implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private java.util.List<CategoricalParameterRange> categoricalParameterRanges;
+    /**
+     * <p>
+     * A list containing hyperparameter names and example values to be used by Autotune to determine optimal ranges for
+     * your tuning job.
+     * </p>
+     */
+    private java.util.List<AutoParameter> autoParameters;
 
     /**
      * <p>
@@ -344,6 +351,84 @@ public class ParameterRanges implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * A list containing hyperparameter names and example values to be used by Autotune to determine optimal ranges for
+     * your tuning job.
+     * </p>
+     * 
+     * @return A list containing hyperparameter names and example values to be used by Autotune to determine optimal
+     *         ranges for your tuning job.
+     */
+
+    public java.util.List<AutoParameter> getAutoParameters() {
+        return autoParameters;
+    }
+
+    /**
+     * <p>
+     * A list containing hyperparameter names and example values to be used by Autotune to determine optimal ranges for
+     * your tuning job.
+     * </p>
+     * 
+     * @param autoParameters
+     *        A list containing hyperparameter names and example values to be used by Autotune to determine optimal
+     *        ranges for your tuning job.
+     */
+
+    public void setAutoParameters(java.util.Collection<AutoParameter> autoParameters) {
+        if (autoParameters == null) {
+            this.autoParameters = null;
+            return;
+        }
+
+        this.autoParameters = new java.util.ArrayList<AutoParameter>(autoParameters);
+    }
+
+    /**
+     * <p>
+     * A list containing hyperparameter names and example values to be used by Autotune to determine optimal ranges for
+     * your tuning job.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAutoParameters(java.util.Collection)} or {@link #withAutoParameters(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param autoParameters
+     *        A list containing hyperparameter names and example values to be used by Autotune to determine optimal
+     *        ranges for your tuning job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ParameterRanges withAutoParameters(AutoParameter... autoParameters) {
+        if (this.autoParameters == null) {
+            setAutoParameters(new java.util.ArrayList<AutoParameter>(autoParameters.length));
+        }
+        for (AutoParameter ele : autoParameters) {
+            this.autoParameters.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list containing hyperparameter names and example values to be used by Autotune to determine optimal ranges for
+     * your tuning job.
+     * </p>
+     * 
+     * @param autoParameters
+     *        A list containing hyperparameter names and example values to be used by Autotune to determine optimal
+     *        ranges for your tuning job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ParameterRanges withAutoParameters(java.util.Collection<AutoParameter> autoParameters) {
+        setAutoParameters(autoParameters);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -360,7 +445,9 @@ public class ParameterRanges implements Serializable, Cloneable, StructuredPojo 
         if (getContinuousParameterRanges() != null)
             sb.append("ContinuousParameterRanges: ").append(getContinuousParameterRanges()).append(",");
         if (getCategoricalParameterRanges() != null)
-            sb.append("CategoricalParameterRanges: ").append(getCategoricalParameterRanges());
+            sb.append("CategoricalParameterRanges: ").append(getCategoricalParameterRanges()).append(",");
+        if (getAutoParameters() != null)
+            sb.append("AutoParameters: ").append(getAutoParameters());
         sb.append("}");
         return sb.toString();
     }
@@ -387,6 +474,10 @@ public class ParameterRanges implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getCategoricalParameterRanges() != null && other.getCategoricalParameterRanges().equals(this.getCategoricalParameterRanges()) == false)
             return false;
+        if (other.getAutoParameters() == null ^ this.getAutoParameters() == null)
+            return false;
+        if (other.getAutoParameters() != null && other.getAutoParameters().equals(this.getAutoParameters()) == false)
+            return false;
         return true;
     }
 
@@ -398,6 +489,7 @@ public class ParameterRanges implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getIntegerParameterRanges() == null) ? 0 : getIntegerParameterRanges().hashCode());
         hashCode = prime * hashCode + ((getContinuousParameterRanges() == null) ? 0 : getContinuousParameterRanges().hashCode());
         hashCode = prime * hashCode + ((getCategoricalParameterRanges() == null) ? 0 : getCategoricalParameterRanges().hashCode());
+        hashCode = prime * hashCode + ((getAutoParameters() == null) ? 0 : getAutoParameters().hashCode());
         return hashCode;
     }
 

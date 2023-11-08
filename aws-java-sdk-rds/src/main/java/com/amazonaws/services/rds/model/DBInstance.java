@@ -35,25 +35,25 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains a user-supplied database identifier. This identifier is the unique key that identifies a DB instance.
+     * The user-supplied database identifier. This identifier is the unique key that identifies a DB instance.
      * </p>
      */
     private String dBInstanceIdentifier;
     /**
      * <p>
-     * Contains the name of the compute and memory capacity class of the DB instance.
+     * The name of the compute and memory capacity class of the DB instance.
      * </p>
      */
     private String dBInstanceClass;
     /**
      * <p>
-     * The name of the database engine to be used for this DB instance.
+     * The database engine used for this DB instance.
      * </p>
      */
     private String engine;
     /**
      * <p>
-     * Specifies the current state of this database.
+     * The current state of this database.
      * </p>
      * <p>
      * For information about DB instance statuses, see <a href=
@@ -70,66 +70,51 @@ public class DBInstance implements Serializable, Cloneable {
     private java.util.Date automaticRestartTime;
     /**
      * <p>
-     * Contains the master username for the DB instance.
+     * The master username for the DB instance.
      * </p>
      */
     private String masterUsername;
     /**
      * <p>
-     * The meaning of this parameter differs according to the database engine you use.
-     * </p>
-     * <p>
-     * <b>MySQL, MariaDB, SQL Server, PostgreSQL</b>
-     * </p>
-     * <p>
-     * Contains the name of the initial database of this instance that was provided at create time, if one was specified
-     * when the DB instance was created. This same name is returned for the life of the DB instance.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * <b>Oracle</b>
-     * </p>
-     * <p>
-     * Contains the Oracle System ID (SID) of the created DB instance. Not shown when the returned parameters do not
-     * apply to an Oracle DB instance.
+     * The initial database name that you provided (if required) when you created the DB instance. This name is returned
+     * for the life of your DB instance. For an RDS for Oracle CDB instance, the name identifies the PDB rather than the
+     * CDB.
      * </p>
      */
     private String dBName;
     /**
      * <p>
-     * Specifies the connection endpoint.
+     * The connection endpoint for the DB instance.
      * </p>
      * <note>
      * <p>
-     * The endpoint might not be shown for instances whose status is <code>creating</code>.
+     * The endpoint might not be shown for instances with the status of <code>creating</code>.
      * </p>
      * </note>
      */
     private Endpoint endpoint;
     /**
      * <p>
-     * Specifies the allocated storage size specified in gibibytes (GiB).
+     * The amount of storage in gibibytes (GiB) allocated for the DB instance.
      * </p>
      */
     private Integer allocatedStorage;
     /**
      * <p>
-     * Provides the date and time the DB instance was created.
+     * The date and time when the DB instance was created.
      * </p>
      */
     private java.util.Date instanceCreateTime;
     /**
      * <p>
-     * Specifies the daily time range during which automated backups are created if automated backups are enabled, as
-     * determined by the <code>BackupRetentionPeriod</code>.
+     * The daily time range during which automated backups are created if automated backups are enabled, as determined
+     * by the <code>BackupRetentionPeriod</code>.
      * </p>
      */
     private String preferredBackupWindow;
     /**
      * <p>
-     * Specifies the number of days for which automatic DB snapshots are retained.
+     * The number of days for which automatic DB snapshots are retained.
      * </p>
      */
     private Integer backupRetentionPeriod;
@@ -142,84 +127,84 @@ public class DBInstance implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<DBSecurityGroupMembership> dBSecurityGroups;
     /**
      * <p>
-     * Provides a list of VPC security group elements that the DB instance belongs to.
+     * The list of Amazon EC2 VPC security groups that the DB instance belongs to.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<VpcSecurityGroupMembership> vpcSecurityGroups;
     /**
      * <p>
-     * Provides the list of DB parameter groups applied to this DB instance.
+     * The list of DB parameter groups applied to this DB instance.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<DBParameterGroupStatus> dBParameterGroups;
     /**
      * <p>
-     * Specifies the name of the Availability Zone the DB instance is located in.
+     * The name of the Availability Zone where the DB instance is located.
      * </p>
      */
     private String availabilityZone;
     /**
      * <p>
-     * Specifies information on the subnet group associated with the DB instance, including the name, description, and
-     * subnets in the subnet group.
+     * Information about the subnet group associated with the DB instance, including the name, description, and subnets
+     * in the subnet group.
      * </p>
      */
     private DBSubnetGroup dBSubnetGroup;
     /**
      * <p>
-     * Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).
+     * The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).
      * </p>
      */
     private String preferredMaintenanceWindow;
     /**
      * <p>
-     * A value that specifies that changes to the DB instance are pending. This element is only included when changes
-     * are pending. Specific changes are identified by subelements.
+     * Information about pending changes to the DB instance. This information is returned only when there are pending
+     * changes. Specific changes are identified by subelements.
      * </p>
      */
     private PendingModifiedValues pendingModifiedValues;
     /**
      * <p>
-     * Specifies the latest time to which a database can be restored with point-in-time restore.
+     * The latest time to which a database in this DB instance can be restored with point-in-time restore.
      * </p>
      */
     private java.util.Date latestRestorableTime;
     /**
      * <p>
-     * Specifies if the DB instance is a Multi-AZ deployment. This setting doesn't apply to RDS Custom.
+     * Indicates whether the DB instance is a Multi-AZ deployment. This setting doesn't apply to RDS Custom DB
+     * instances.
      * </p>
      */
     private Boolean multiAZ;
     /**
      * <p>
-     * Indicates the database engine version.
+     * The version of the database engine.
      * </p>
      */
     private String engineVersion;
     /**
      * <p>
-     * A value that indicates that minor version patches are applied automatically.
+     * Indicates whether minor version patches are applied automatically.
      * </p>
      */
     private Boolean autoMinorVersionUpgrade;
     /**
      * <p>
-     * Contains the identifier of the source DB instance if this DB instance is a read replica.
+     * The identifier of the source DB instance if this DB instance is a read replica.
      * </p>
      */
     private String readReplicaSourceDBInstanceIdentifier;
     /**
      * <p>
-     * Contains one or more identifiers of the read replicas associated with this DB instance.
+     * The identifiers of the read replicas associated with this DB instance.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> readReplicaDBInstanceIdentifiers;
     /**
      * <p>
-     * Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a read
-     * replica. For example, when you create an Aurora read replica of an RDS for MySQL DB instance, the Aurora MySQL DB
-     * cluster for the Aurora read replica is shown. This output doesn't contain information about cross-Region Aurora
-     * read replicas.
+     * The identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a read replica. For example,
+     * when you create an Aurora read replica of an RDS for MySQL DB instance, the Aurora MySQL DB cluster for the
+     * Aurora read replica is shown. This output doesn't contain information about cross-Region Aurora read replicas.
      * </p>
      * <note>
      * <p>
@@ -243,19 +228,19 @@ public class DBInstance implements Serializable, Cloneable {
     private String replicaMode;
     /**
      * <p>
-     * License model information for this DB instance. This setting doesn't apply to RDS Custom.
+     * The license model information for this DB instance. This setting doesn't apply to RDS Custom DB instances.
      * </p>
      */
     private String licenseModel;
     /**
      * <p>
-     * Specifies the Provisioned IOPS (I/O operations per second) value.
+     * The Provisioned IOPS (I/O operations per second) value for the DB instance.
      * </p>
      */
     private Integer iops;
     /**
      * <p>
-     * Provides the list of option group memberships for this DB instance.
+     * The list of option group memberships for this DB instance.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<OptionGroupMembership> optionGroupMemberships;
@@ -280,7 +265,7 @@ public class DBInstance implements Serializable, Cloneable {
     private String secondaryAvailabilityZone;
     /**
      * <p>
-     * Specifies the accessibility options for the DB instance.
+     * Indicates whether the DB instance is publicly accessible.
      * </p>
      * <p>
      * When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP
@@ -299,13 +284,13 @@ public class DBInstance implements Serializable, Cloneable {
     private Boolean publiclyAccessible;
     /**
      * <p>
-     * The status of a read replica. If the instance isn't a read replica, this is blank.
+     * The status of a read replica. If the DB instance isn't a read replica, the value is blank.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<DBInstanceStatusInfo> statusInfos;
     /**
      * <p>
-     * Specifies the storage type associated with the DB instance.
+     * The storage type associated with the DB instance.
      * </p>
      */
     private String storageType;
@@ -317,27 +302,27 @@ public class DBInstance implements Serializable, Cloneable {
     private String tdeCredentialArn;
     /**
      * <p>
-     * Specifies the port that the DB instance listens on. If the DB instance is part of a DB cluster, this can be a
-     * different port than the DB cluster port.
+     * The port that the DB instance listens on. If the DB instance is part of a DB cluster, this can be a different
+     * port than the DB cluster port.
      * </p>
      */
     private Integer dbInstancePort;
     /**
      * <p>
-     * If the DB instance is a member of a DB cluster, contains the name of the DB cluster that the DB instance is a
+     * If the DB instance is a member of a DB cluster, indicates the name of the DB cluster that the DB instance is a
      * member of.
      * </p>
      */
     private String dBClusterIdentifier;
     /**
      * <p>
-     * Specifies whether the DB instance is encrypted.
+     * Indicates whether the DB instance is encrypted.
      * </p>
      */
     private Boolean storageEncrypted;
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB
+     * If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key identifier for the encrypted DB
      * instance.
      * </p>
      * <p>
@@ -374,14 +359,12 @@ public class DBInstance implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<DomainMembership> domainMemberships;
     /**
      * <p>
-     * Specifies whether tags are copied from the DB instance to snapshots of the DB instance.
+     * Indicates whether tags are copied from the DB instance to snapshots of the DB instance.
      * </p>
      * <p>
-     * <b>Amazon Aurora</b>
-     * </p>
-     * <p>
-     * Not applicable. Copying tags to snapshots is managed by the DB cluster. Setting this value for an Aurora DB
-     * instance has no effect on the DB cluster setting. For more information, see <code>DBCluster</code>.
+     * This setting doesn't apply to Amazon Aurora DB instances. Copying tags to snapshots is managed by the DB cluster.
+     * Setting this value for an Aurora DB instance has no effect on the DB cluster setting. For more information, see
+     * <code>DBCluster</code>.
      * </p>
      */
     private Boolean copyTagsToSnapshot;
@@ -406,9 +389,9 @@ public class DBInstance implements Serializable, Cloneable {
     private String monitoringRoleArn;
     /**
      * <p>
-     * A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a failure
-     * of the existing primary instance. For more information, see <a href=
-     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"
+     * The order of priority in which an Aurora Replica is promoted to the primary instance after a failure of the
+     * existing primary instance. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.AuroraHighAvailability.html#Aurora.Managing.FaultTolerance"
      * > Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      */
@@ -429,29 +412,21 @@ public class DBInstance implements Serializable, Cloneable {
     private String timezone;
     /**
      * <p>
-     * True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is
-     * enabled, and otherwise false.
+     * Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database
+     * accounts is enabled for the DB instance.
      * </p>
      * <p>
-     * IAM database authentication can be enabled for the following database engines:
+     * For a list of engine versions that support IAM database authentication, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RDS_Fea_Regions_DB-eng.Feature.IamDatabaseAuthentication.html"
+     * >IAM database authentication</a> in the <i>Amazon RDS User Guide</i> and <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.Aurora_Fea_Regions_DB-eng.Feature.IAMdbauth.html"
+     * >IAM database authentication in Aurora</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * For MySQL 5.7, minor version 5.7.16 or higher.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * For Amazon Aurora, all versions of Aurora MySQL and Aurora PostgreSQL.
-     * </p>
-     * </li>
-     * </ul>
      */
     private Boolean iAMDatabaseAuthenticationEnabled;
     /**
      * <p>
-     * True if Performance Insights is enabled for the DB instance, and otherwise false.
+     * Indicates whether Performance Insights is enabled for the DB instance.
      * </p>
      */
     private Boolean performanceInsightsEnabled;
@@ -466,50 +441,32 @@ public class DBInstance implements Serializable, Cloneable {
     private String performanceInsightsKMSKeyId;
     /**
      * <p>
-     * The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:
+     * The number of days to retain Performance Insights data.
+     * </p>
+     * <p>
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * 7
+     * <code>7</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
+     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31),
+     * <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 731
+     * <code>731</code>
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For example, the following values are valid:
+     * Default: <code>7</code> days
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * 93 (3 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 341 (11 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 589 (19 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 731
-     * </p>
-     * </li>
-     * </ul>
      */
     private Integer performanceInsightsRetentionPeriod;
     /**
@@ -518,8 +475,8 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      * <p>
      * Log types vary by DB engine. For information about the log types for each DB engine, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon RDS Database Log
-     * Files</a> in the <i>Amazon RDS User Guide.</i>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Monitoring Amazon RDS log
+     * files</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> enabledCloudwatchLogsExports;
@@ -531,7 +488,7 @@ public class DBInstance implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<ProcessorFeature> processorFeatures;
     /**
      * <p>
-     * Indicates if the DB instance has deletion protection enabled. The database can't be deleted when deletion
+     * Indicates whether the DB instance has deletion protection enabled. The database can't be deleted when deletion
      * protection is enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      * Instance</a>.
@@ -546,7 +503,7 @@ public class DBInstance implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<DBInstanceRole> associatedRoles;
     /**
      * <p>
-     * Specifies the listener connection endpoint for SQL Server Always On.
+     * The listener connection endpoint for SQL Server Always On.
      * </p>
      */
     private Endpoint listenerEndpoint;
@@ -566,7 +523,7 @@ public class DBInstance implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<DBInstanceAutomatedBackupsReplication> dBInstanceAutomatedBackupsReplications;
     /**
      * <p>
-     * Specifies whether a customer-owned IP address (CoIP) is enabled for an RDS on Outposts DB instance.
+     * Indicates whether a customer-owned IP address (CoIP) is enabled for an RDS on Outposts DB instance.
      * </p>
      * <p>
      * A <i>CoIP </i>provides local or external connectivity to resources in your Outpost subnets through your
@@ -669,8 +626,8 @@ public class DBInstance implements Serializable, Cloneable {
     private String customIamInstanceProfile;
     /**
      * <p>
-     * Specifies where automated backups and manual snapshots are stored: Amazon Web Services Outposts or the Amazon Web
-     * Services Region.
+     * The location where automated backups and manual snapshots are stored: Amazon Web Services Outposts or the Amazon
+     * Web Services Region.
      * </p>
      */
     private String backupTarget;
@@ -678,21 +635,6 @@ public class DBInstance implements Serializable, Cloneable {
      * <p>
      * The network type of the DB instance.
      * </p>
-     * <p>
-     * Valid values:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>IPV4</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>DUAL</code>
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A
      * <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (
@@ -705,6 +647,9 @@ public class DBInstance implements Serializable, Cloneable {
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
      * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
+     * <p>
+     * Valid Values: <code>IPV4 | DUAL</code>
+     * </p>
      */
     private String networkType;
     /**
@@ -715,7 +660,7 @@ public class DBInstance implements Serializable, Cloneable {
     private String activityStreamPolicyStatus;
     /**
      * <p>
-     * Specifies the storage throughput for the DB instance.
+     * The storage throughput for the DB instance.
      * </p>
      * <p>
      * This setting applies only to the <code>gp3</code> storage type.
@@ -725,13 +670,13 @@ public class DBInstance implements Serializable, Cloneable {
     /**
      * <p>
      * The Oracle system ID (Oracle SID) for a container database (CDB). The Oracle SID is also the name of the CDB.
-     * This setting is valid for RDS Custom only.
+     * This setting is only valid for RDS Custom DB instances.
      * </p>
      */
     private String dBSystemId;
     /**
      * <p>
-     * Contains the secret managed by RDS in Amazon Web Services Secrets Manager for the master user password.
+     * The secret managed by RDS in Amazon Web Services Secrets Manager for the master user password.
      * </p>
      * <p>
      * For more information, see <a
@@ -748,19 +693,47 @@ public class DBInstance implements Serializable, Cloneable {
     private CertificateDetails certificateDetails;
     /**
      * <p>
-     * Contains the identifier of the source DB cluster if this DB instance is a read replica.
+     * The identifier of the source DB cluster if this DB instance is a read replica.
      * </p>
      */
     private String readReplicaSourceDBClusterIdentifier;
+    /**
+     * <p>
+     * The progress of the storage optimization operation as a percentage.
+     * </p>
+     */
+    private String percentProgress;
+    /**
+     * <p>
+     * Indicates whether the DB instance has a dedicated log volume (DLV) enabled.
+     * </p>
+     */
+    private Boolean dedicatedLogVolume;
+    /**
+     * <p>
+     * Indicates whether an upgrade is recommended for the storage file system configuration on the DB instance. To
+     * migrate to the preferred configuration, you can either create a blue/green deployment, or create a read replica
+     * from the DB instance. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem"
+     * >Upgrading the storage file system for a DB instance</a>.
+     * </p>
+     */
+    private Boolean isStorageConfigUpgradeAvailable;
+    /**
+     * <p>
+     * Specifies whether the DB instance is in the multi-tenant configuration (TRUE) or the single-tenant configuration
+     * (FALSE).
+     * </p>
+     */
+    private Boolean multiTenant;
 
     /**
      * <p>
-     * Contains a user-supplied database identifier. This identifier is the unique key that identifies a DB instance.
+     * The user-supplied database identifier. This identifier is the unique key that identifies a DB instance.
      * </p>
      * 
      * @param dBInstanceIdentifier
-     *        Contains a user-supplied database identifier. This identifier is the unique key that identifies a DB
-     *        instance.
+     *        The user-supplied database identifier. This identifier is the unique key that identifies a DB instance.
      */
 
     public void setDBInstanceIdentifier(String dBInstanceIdentifier) {
@@ -769,11 +742,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains a user-supplied database identifier. This identifier is the unique key that identifies a DB instance.
+     * The user-supplied database identifier. This identifier is the unique key that identifies a DB instance.
      * </p>
      * 
-     * @return Contains a user-supplied database identifier. This identifier is the unique key that identifies a DB
-     *         instance.
+     * @return The user-supplied database identifier. This identifier is the unique key that identifies a DB instance.
      */
 
     public String getDBInstanceIdentifier() {
@@ -782,12 +754,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains a user-supplied database identifier. This identifier is the unique key that identifies a DB instance.
+     * The user-supplied database identifier. This identifier is the unique key that identifies a DB instance.
      * </p>
      * 
      * @param dBInstanceIdentifier
-     *        Contains a user-supplied database identifier. This identifier is the unique key that identifies a DB
-     *        instance.
+     *        The user-supplied database identifier. This identifier is the unique key that identifies a DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -798,11 +769,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the name of the compute and memory capacity class of the DB instance.
+     * The name of the compute and memory capacity class of the DB instance.
      * </p>
      * 
      * @param dBInstanceClass
-     *        Contains the name of the compute and memory capacity class of the DB instance.
+     *        The name of the compute and memory capacity class of the DB instance.
      */
 
     public void setDBInstanceClass(String dBInstanceClass) {
@@ -811,10 +782,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the name of the compute and memory capacity class of the DB instance.
+     * The name of the compute and memory capacity class of the DB instance.
      * </p>
      * 
-     * @return Contains the name of the compute and memory capacity class of the DB instance.
+     * @return The name of the compute and memory capacity class of the DB instance.
      */
 
     public String getDBInstanceClass() {
@@ -823,11 +794,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the name of the compute and memory capacity class of the DB instance.
+     * The name of the compute and memory capacity class of the DB instance.
      * </p>
      * 
      * @param dBInstanceClass
-     *        Contains the name of the compute and memory capacity class of the DB instance.
+     *        The name of the compute and memory capacity class of the DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -838,11 +809,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the database engine to be used for this DB instance.
+     * The database engine used for this DB instance.
      * </p>
      * 
      * @param engine
-     *        The name of the database engine to be used for this DB instance.
+     *        The database engine used for this DB instance.
      */
 
     public void setEngine(String engine) {
@@ -851,10 +822,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the database engine to be used for this DB instance.
+     * The database engine used for this DB instance.
      * </p>
      * 
-     * @return The name of the database engine to be used for this DB instance.
+     * @return The database engine used for this DB instance.
      */
 
     public String getEngine() {
@@ -863,11 +834,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the database engine to be used for this DB instance.
+     * The database engine used for this DB instance.
      * </p>
      * 
      * @param engine
-     *        The name of the database engine to be used for this DB instance.
+     *        The database engine used for this DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -878,7 +849,7 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the current state of this database.
+     * The current state of this database.
      * </p>
      * <p>
      * For information about DB instance statuses, see <a href=
@@ -887,7 +858,7 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      * 
      * @param dBInstanceStatus
-     *        Specifies the current state of this database.</p>
+     *        The current state of this database.</p>
      *        <p>
      *        For information about DB instance statuses, see <a href=
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status"
@@ -900,7 +871,7 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the current state of this database.
+     * The current state of this database.
      * </p>
      * <p>
      * For information about DB instance statuses, see <a href=
@@ -908,7 +879,7 @@ public class DBInstance implements Serializable, Cloneable {
      * >Viewing DB instance status</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
-     * @return Specifies the current state of this database.</p>
+     * @return The current state of this database.</p>
      *         <p>
      *         For information about DB instance statuses, see <a href=
      *         "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status"
@@ -921,7 +892,7 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the current state of this database.
+     * The current state of this database.
      * </p>
      * <p>
      * For information about DB instance statuses, see <a href=
@@ -930,7 +901,7 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      * 
      * @param dBInstanceStatus
-     *        Specifies the current state of this database.</p>
+     *        The current state of this database.</p>
      *        <p>
      *        For information about DB instance statuses, see <a href=
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status"
@@ -985,11 +956,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the master username for the DB instance.
+     * The master username for the DB instance.
      * </p>
      * 
      * @param masterUsername
-     *        Contains the master username for the DB instance.
+     *        The master username for the DB instance.
      */
 
     public void setMasterUsername(String masterUsername) {
@@ -998,10 +969,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the master username for the DB instance.
+     * The master username for the DB instance.
      * </p>
      * 
-     * @return Contains the master username for the DB instance.
+     * @return The master username for the DB instance.
      */
 
     public String getMasterUsername() {
@@ -1010,11 +981,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the master username for the DB instance.
+     * The master username for the DB instance.
      * </p>
      * 
      * @param masterUsername
-     *        Contains the master username for the DB instance.
+     *        The master username for the DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1025,44 +996,15 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The meaning of this parameter differs according to the database engine you use.
-     * </p>
-     * <p>
-     * <b>MySQL, MariaDB, SQL Server, PostgreSQL</b>
-     * </p>
-     * <p>
-     * Contains the name of the initial database of this instance that was provided at create time, if one was specified
-     * when the DB instance was created. This same name is returned for the life of the DB instance.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * <b>Oracle</b>
-     * </p>
-     * <p>
-     * Contains the Oracle System ID (SID) of the created DB instance. Not shown when the returned parameters do not
-     * apply to an Oracle DB instance.
+     * The initial database name that you provided (if required) when you created the DB instance. This name is returned
+     * for the life of your DB instance. For an RDS for Oracle CDB instance, the name identifies the PDB rather than the
+     * CDB.
      * </p>
      * 
      * @param dBName
-     *        The meaning of this parameter differs according to the database engine you use.</p>
-     *        <p>
-     *        <b>MySQL, MariaDB, SQL Server, PostgreSQL</b>
-     *        </p>
-     *        <p>
-     *        Contains the name of the initial database of this instance that was provided at create time, if one was
-     *        specified when the DB instance was created. This same name is returned for the life of the DB instance.
-     *        </p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        <b>Oracle</b>
-     *        </p>
-     *        <p>
-     *        Contains the Oracle System ID (SID) of the created DB instance. Not shown when the returned parameters do
-     *        not apply to an Oracle DB instance.
+     *        The initial database name that you provided (if required) when you created the DB instance. This name is
+     *        returned for the life of your DB instance. For an RDS for Oracle CDB instance, the name identifies the PDB
+     *        rather than the CDB.
      */
 
     public void setDBName(String dBName) {
@@ -1071,43 +1013,14 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The meaning of this parameter differs according to the database engine you use.
-     * </p>
-     * <p>
-     * <b>MySQL, MariaDB, SQL Server, PostgreSQL</b>
-     * </p>
-     * <p>
-     * Contains the name of the initial database of this instance that was provided at create time, if one was specified
-     * when the DB instance was created. This same name is returned for the life of the DB instance.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * <b>Oracle</b>
-     * </p>
-     * <p>
-     * Contains the Oracle System ID (SID) of the created DB instance. Not shown when the returned parameters do not
-     * apply to an Oracle DB instance.
+     * The initial database name that you provided (if required) when you created the DB instance. This name is returned
+     * for the life of your DB instance. For an RDS for Oracle CDB instance, the name identifies the PDB rather than the
+     * CDB.
      * </p>
      * 
-     * @return The meaning of this parameter differs according to the database engine you use.</p>
-     *         <p>
-     *         <b>MySQL, MariaDB, SQL Server, PostgreSQL</b>
-     *         </p>
-     *         <p>
-     *         Contains the name of the initial database of this instance that was provided at create time, if one was
-     *         specified when the DB instance was created. This same name is returned for the life of the DB instance.
-     *         </p>
-     *         <p>
-     *         Type: String
-     *         </p>
-     *         <p>
-     *         <b>Oracle</b>
-     *         </p>
-     *         <p>
-     *         Contains the Oracle System ID (SID) of the created DB instance. Not shown when the returned parameters do
-     *         not apply to an Oracle DB instance.
+     * @return The initial database name that you provided (if required) when you created the DB instance. This name is
+     *         returned for the life of your DB instance. For an RDS for Oracle CDB instance, the name identifies the
+     *         PDB rather than the CDB.
      */
 
     public String getDBName() {
@@ -1116,44 +1029,15 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The meaning of this parameter differs according to the database engine you use.
-     * </p>
-     * <p>
-     * <b>MySQL, MariaDB, SQL Server, PostgreSQL</b>
-     * </p>
-     * <p>
-     * Contains the name of the initial database of this instance that was provided at create time, if one was specified
-     * when the DB instance was created. This same name is returned for the life of the DB instance.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * <b>Oracle</b>
-     * </p>
-     * <p>
-     * Contains the Oracle System ID (SID) of the created DB instance. Not shown when the returned parameters do not
-     * apply to an Oracle DB instance.
+     * The initial database name that you provided (if required) when you created the DB instance. This name is returned
+     * for the life of your DB instance. For an RDS for Oracle CDB instance, the name identifies the PDB rather than the
+     * CDB.
      * </p>
      * 
      * @param dBName
-     *        The meaning of this parameter differs according to the database engine you use.</p>
-     *        <p>
-     *        <b>MySQL, MariaDB, SQL Server, PostgreSQL</b>
-     *        </p>
-     *        <p>
-     *        Contains the name of the initial database of this instance that was provided at create time, if one was
-     *        specified when the DB instance was created. This same name is returned for the life of the DB instance.
-     *        </p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        <b>Oracle</b>
-     *        </p>
-     *        <p>
-     *        Contains the Oracle System ID (SID) of the created DB instance. Not shown when the returned parameters do
-     *        not apply to an Oracle DB instance.
+     *        The initial database name that you provided (if required) when you created the DB instance. This name is
+     *        returned for the life of your DB instance. For an RDS for Oracle CDB instance, the name identifies the PDB
+     *        rather than the CDB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1164,18 +1048,18 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the connection endpoint.
+     * The connection endpoint for the DB instance.
      * </p>
      * <note>
      * <p>
-     * The endpoint might not be shown for instances whose status is <code>creating</code>.
+     * The endpoint might not be shown for instances with the status of <code>creating</code>.
      * </p>
      * </note>
      * 
      * @param endpoint
-     *        Specifies the connection endpoint.</p> <note>
+     *        The connection endpoint for the DB instance.</p> <note>
      *        <p>
-     *        The endpoint might not be shown for instances whose status is <code>creating</code>.
+     *        The endpoint might not be shown for instances with the status of <code>creating</code>.
      *        </p>
      */
 
@@ -1185,17 +1069,17 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the connection endpoint.
+     * The connection endpoint for the DB instance.
      * </p>
      * <note>
      * <p>
-     * The endpoint might not be shown for instances whose status is <code>creating</code>.
+     * The endpoint might not be shown for instances with the status of <code>creating</code>.
      * </p>
      * </note>
      * 
-     * @return Specifies the connection endpoint.</p> <note>
+     * @return The connection endpoint for the DB instance.</p> <note>
      *         <p>
-     *         The endpoint might not be shown for instances whose status is <code>creating</code>.
+     *         The endpoint might not be shown for instances with the status of <code>creating</code>.
      *         </p>
      */
 
@@ -1205,18 +1089,18 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the connection endpoint.
+     * The connection endpoint for the DB instance.
      * </p>
      * <note>
      * <p>
-     * The endpoint might not be shown for instances whose status is <code>creating</code>.
+     * The endpoint might not be shown for instances with the status of <code>creating</code>.
      * </p>
      * </note>
      * 
      * @param endpoint
-     *        Specifies the connection endpoint.</p> <note>
+     *        The connection endpoint for the DB instance.</p> <note>
      *        <p>
-     *        The endpoint might not be shown for instances whose status is <code>creating</code>.
+     *        The endpoint might not be shown for instances with the status of <code>creating</code>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1228,11 +1112,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the allocated storage size specified in gibibytes (GiB).
+     * The amount of storage in gibibytes (GiB) allocated for the DB instance.
      * </p>
      * 
      * @param allocatedStorage
-     *        Specifies the allocated storage size specified in gibibytes (GiB).
+     *        The amount of storage in gibibytes (GiB) allocated for the DB instance.
      */
 
     public void setAllocatedStorage(Integer allocatedStorage) {
@@ -1241,10 +1125,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the allocated storage size specified in gibibytes (GiB).
+     * The amount of storage in gibibytes (GiB) allocated for the DB instance.
      * </p>
      * 
-     * @return Specifies the allocated storage size specified in gibibytes (GiB).
+     * @return The amount of storage in gibibytes (GiB) allocated for the DB instance.
      */
 
     public Integer getAllocatedStorage() {
@@ -1253,11 +1137,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the allocated storage size specified in gibibytes (GiB).
+     * The amount of storage in gibibytes (GiB) allocated for the DB instance.
      * </p>
      * 
      * @param allocatedStorage
-     *        Specifies the allocated storage size specified in gibibytes (GiB).
+     *        The amount of storage in gibibytes (GiB) allocated for the DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1268,11 +1152,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the date and time the DB instance was created.
+     * The date and time when the DB instance was created.
      * </p>
      * 
      * @param instanceCreateTime
-     *        Provides the date and time the DB instance was created.
+     *        The date and time when the DB instance was created.
      */
 
     public void setInstanceCreateTime(java.util.Date instanceCreateTime) {
@@ -1281,10 +1165,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the date and time the DB instance was created.
+     * The date and time when the DB instance was created.
      * </p>
      * 
-     * @return Provides the date and time the DB instance was created.
+     * @return The date and time when the DB instance was created.
      */
 
     public java.util.Date getInstanceCreateTime() {
@@ -1293,11 +1177,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the date and time the DB instance was created.
+     * The date and time when the DB instance was created.
      * </p>
      * 
      * @param instanceCreateTime
-     *        Provides the date and time the DB instance was created.
+     *        The date and time when the DB instance was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1308,13 +1192,13 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the daily time range during which automated backups are created if automated backups are enabled, as
-     * determined by the <code>BackupRetentionPeriod</code>.
+     * The daily time range during which automated backups are created if automated backups are enabled, as determined
+     * by the <code>BackupRetentionPeriod</code>.
      * </p>
      * 
      * @param preferredBackupWindow
-     *        Specifies the daily time range during which automated backups are created if automated backups are
-     *        enabled, as determined by the <code>BackupRetentionPeriod</code>.
+     *        The daily time range during which automated backups are created if automated backups are enabled, as
+     *        determined by the <code>BackupRetentionPeriod</code>.
      */
 
     public void setPreferredBackupWindow(String preferredBackupWindow) {
@@ -1323,12 +1207,12 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the daily time range during which automated backups are created if automated backups are enabled, as
-     * determined by the <code>BackupRetentionPeriod</code>.
+     * The daily time range during which automated backups are created if automated backups are enabled, as determined
+     * by the <code>BackupRetentionPeriod</code>.
      * </p>
      * 
-     * @return Specifies the daily time range during which automated backups are created if automated backups are
-     *         enabled, as determined by the <code>BackupRetentionPeriod</code>.
+     * @return The daily time range during which automated backups are created if automated backups are enabled, as
+     *         determined by the <code>BackupRetentionPeriod</code>.
      */
 
     public String getPreferredBackupWindow() {
@@ -1337,13 +1221,13 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the daily time range during which automated backups are created if automated backups are enabled, as
-     * determined by the <code>BackupRetentionPeriod</code>.
+     * The daily time range during which automated backups are created if automated backups are enabled, as determined
+     * by the <code>BackupRetentionPeriod</code>.
      * </p>
      * 
      * @param preferredBackupWindow
-     *        Specifies the daily time range during which automated backups are created if automated backups are
-     *        enabled, as determined by the <code>BackupRetentionPeriod</code>.
+     *        The daily time range during which automated backups are created if automated backups are enabled, as
+     *        determined by the <code>BackupRetentionPeriod</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1354,11 +1238,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the number of days for which automatic DB snapshots are retained.
+     * The number of days for which automatic DB snapshots are retained.
      * </p>
      * 
      * @param backupRetentionPeriod
-     *        Specifies the number of days for which automatic DB snapshots are retained.
+     *        The number of days for which automatic DB snapshots are retained.
      */
 
     public void setBackupRetentionPeriod(Integer backupRetentionPeriod) {
@@ -1367,10 +1251,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the number of days for which automatic DB snapshots are retained.
+     * The number of days for which automatic DB snapshots are retained.
      * </p>
      * 
-     * @return Specifies the number of days for which automatic DB snapshots are retained.
+     * @return The number of days for which automatic DB snapshots are retained.
      */
 
     public Integer getBackupRetentionPeriod() {
@@ -1379,11 +1263,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the number of days for which automatic DB snapshots are retained.
+     * The number of days for which automatic DB snapshots are retained.
      * </p>
      * 
      * @param backupRetentionPeriod
-     *        Specifies the number of days for which automatic DB snapshots are retained.
+     *        The number of days for which automatic DB snapshots are retained.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1475,10 +1359,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides a list of VPC security group elements that the DB instance belongs to.
+     * The list of Amazon EC2 VPC security groups that the DB instance belongs to.
      * </p>
      * 
-     * @return Provides a list of VPC security group elements that the DB instance belongs to.
+     * @return The list of Amazon EC2 VPC security groups that the DB instance belongs to.
      */
 
     public java.util.List<VpcSecurityGroupMembership> getVpcSecurityGroups() {
@@ -1490,11 +1374,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides a list of VPC security group elements that the DB instance belongs to.
+     * The list of Amazon EC2 VPC security groups that the DB instance belongs to.
      * </p>
      * 
      * @param vpcSecurityGroups
-     *        Provides a list of VPC security group elements that the DB instance belongs to.
+     *        The list of Amazon EC2 VPC security groups that the DB instance belongs to.
      */
 
     public void setVpcSecurityGroups(java.util.Collection<VpcSecurityGroupMembership> vpcSecurityGroups) {
@@ -1508,7 +1392,7 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides a list of VPC security group elements that the DB instance belongs to.
+     * The list of Amazon EC2 VPC security groups that the DB instance belongs to.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1517,7 +1401,7 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      * 
      * @param vpcSecurityGroups
-     *        Provides a list of VPC security group elements that the DB instance belongs to.
+     *        The list of Amazon EC2 VPC security groups that the DB instance belongs to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1533,11 +1417,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides a list of VPC security group elements that the DB instance belongs to.
+     * The list of Amazon EC2 VPC security groups that the DB instance belongs to.
      * </p>
      * 
      * @param vpcSecurityGroups
-     *        Provides a list of VPC security group elements that the DB instance belongs to.
+     *        The list of Amazon EC2 VPC security groups that the DB instance belongs to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1548,10 +1432,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the list of DB parameter groups applied to this DB instance.
+     * The list of DB parameter groups applied to this DB instance.
      * </p>
      * 
-     * @return Provides the list of DB parameter groups applied to this DB instance.
+     * @return The list of DB parameter groups applied to this DB instance.
      */
 
     public java.util.List<DBParameterGroupStatus> getDBParameterGroups() {
@@ -1563,11 +1447,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the list of DB parameter groups applied to this DB instance.
+     * The list of DB parameter groups applied to this DB instance.
      * </p>
      * 
      * @param dBParameterGroups
-     *        Provides the list of DB parameter groups applied to this DB instance.
+     *        The list of DB parameter groups applied to this DB instance.
      */
 
     public void setDBParameterGroups(java.util.Collection<DBParameterGroupStatus> dBParameterGroups) {
@@ -1581,7 +1465,7 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the list of DB parameter groups applied to this DB instance.
+     * The list of DB parameter groups applied to this DB instance.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1590,7 +1474,7 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      * 
      * @param dBParameterGroups
-     *        Provides the list of DB parameter groups applied to this DB instance.
+     *        The list of DB parameter groups applied to this DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1606,11 +1490,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the list of DB parameter groups applied to this DB instance.
+     * The list of DB parameter groups applied to this DB instance.
      * </p>
      * 
      * @param dBParameterGroups
-     *        Provides the list of DB parameter groups applied to this DB instance.
+     *        The list of DB parameter groups applied to this DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1621,11 +1505,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the name of the Availability Zone the DB instance is located in.
+     * The name of the Availability Zone where the DB instance is located.
      * </p>
      * 
      * @param availabilityZone
-     *        Specifies the name of the Availability Zone the DB instance is located in.
+     *        The name of the Availability Zone where the DB instance is located.
      */
 
     public void setAvailabilityZone(String availabilityZone) {
@@ -1634,10 +1518,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the name of the Availability Zone the DB instance is located in.
+     * The name of the Availability Zone where the DB instance is located.
      * </p>
      * 
-     * @return Specifies the name of the Availability Zone the DB instance is located in.
+     * @return The name of the Availability Zone where the DB instance is located.
      */
 
     public String getAvailabilityZone() {
@@ -1646,11 +1530,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the name of the Availability Zone the DB instance is located in.
+     * The name of the Availability Zone where the DB instance is located.
      * </p>
      * 
      * @param availabilityZone
-     *        Specifies the name of the Availability Zone the DB instance is located in.
+     *        The name of the Availability Zone where the DB instance is located.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1661,13 +1545,13 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies information on the subnet group associated with the DB instance, including the name, description, and
-     * subnets in the subnet group.
+     * Information about the subnet group associated with the DB instance, including the name, description, and subnets
+     * in the subnet group.
      * </p>
      * 
      * @param dBSubnetGroup
-     *        Specifies information on the subnet group associated with the DB instance, including the name,
-     *        description, and subnets in the subnet group.
+     *        Information about the subnet group associated with the DB instance, including the name, description, and
+     *        subnets in the subnet group.
      */
 
     public void setDBSubnetGroup(DBSubnetGroup dBSubnetGroup) {
@@ -1676,12 +1560,12 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies information on the subnet group associated with the DB instance, including the name, description, and
-     * subnets in the subnet group.
+     * Information about the subnet group associated with the DB instance, including the name, description, and subnets
+     * in the subnet group.
      * </p>
      * 
-     * @return Specifies information on the subnet group associated with the DB instance, including the name,
-     *         description, and subnets in the subnet group.
+     * @return Information about the subnet group associated with the DB instance, including the name, description, and
+     *         subnets in the subnet group.
      */
 
     public DBSubnetGroup getDBSubnetGroup() {
@@ -1690,13 +1574,13 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies information on the subnet group associated with the DB instance, including the name, description, and
-     * subnets in the subnet group.
+     * Information about the subnet group associated with the DB instance, including the name, description, and subnets
+     * in the subnet group.
      * </p>
      * 
      * @param dBSubnetGroup
-     *        Specifies information on the subnet group associated with the DB instance, including the name,
-     *        description, and subnets in the subnet group.
+     *        Information about the subnet group associated with the DB instance, including the name, description, and
+     *        subnets in the subnet group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1707,12 +1591,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).
+     * The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).
      * </p>
      * 
      * @param preferredMaintenanceWindow
-     *        Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time
-     *        (UTC).
+     *        The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).
      */
 
     public void setPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
@@ -1721,11 +1604,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).
+     * The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).
      * </p>
      * 
-     * @return Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time
-     *         (UTC).
+     * @return The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).
      */
 
     public String getPreferredMaintenanceWindow() {
@@ -1734,12 +1616,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).
+     * The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).
      * </p>
      * 
      * @param preferredMaintenanceWindow
-     *        Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time
-     *        (UTC).
+     *        The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1750,13 +1631,13 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that specifies that changes to the DB instance are pending. This element is only included when changes
-     * are pending. Specific changes are identified by subelements.
+     * Information about pending changes to the DB instance. This information is returned only when there are pending
+     * changes. Specific changes are identified by subelements.
      * </p>
      * 
      * @param pendingModifiedValues
-     *        A value that specifies that changes to the DB instance are pending. This element is only included when
-     *        changes are pending. Specific changes are identified by subelements.
+     *        Information about pending changes to the DB instance. This information is returned only when there are
+     *        pending changes. Specific changes are identified by subelements.
      */
 
     public void setPendingModifiedValues(PendingModifiedValues pendingModifiedValues) {
@@ -1765,12 +1646,12 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that specifies that changes to the DB instance are pending. This element is only included when changes
-     * are pending. Specific changes are identified by subelements.
+     * Information about pending changes to the DB instance. This information is returned only when there are pending
+     * changes. Specific changes are identified by subelements.
      * </p>
      * 
-     * @return A value that specifies that changes to the DB instance are pending. This element is only included when
-     *         changes are pending. Specific changes are identified by subelements.
+     * @return Information about pending changes to the DB instance. This information is returned only when there are
+     *         pending changes. Specific changes are identified by subelements.
      */
 
     public PendingModifiedValues getPendingModifiedValues() {
@@ -1779,13 +1660,13 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that specifies that changes to the DB instance are pending. This element is only included when changes
-     * are pending. Specific changes are identified by subelements.
+     * Information about pending changes to the DB instance. This information is returned only when there are pending
+     * changes. Specific changes are identified by subelements.
      * </p>
      * 
      * @param pendingModifiedValues
-     *        A value that specifies that changes to the DB instance are pending. This element is only included when
-     *        changes are pending. Specific changes are identified by subelements.
+     *        Information about pending changes to the DB instance. This information is returned only when there are
+     *        pending changes. Specific changes are identified by subelements.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1796,11 +1677,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the latest time to which a database can be restored with point-in-time restore.
+     * The latest time to which a database in this DB instance can be restored with point-in-time restore.
      * </p>
      * 
      * @param latestRestorableTime
-     *        Specifies the latest time to which a database can be restored with point-in-time restore.
+     *        The latest time to which a database in this DB instance can be restored with point-in-time restore.
      */
 
     public void setLatestRestorableTime(java.util.Date latestRestorableTime) {
@@ -1809,10 +1690,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the latest time to which a database can be restored with point-in-time restore.
+     * The latest time to which a database in this DB instance can be restored with point-in-time restore.
      * </p>
      * 
-     * @return Specifies the latest time to which a database can be restored with point-in-time restore.
+     * @return The latest time to which a database in this DB instance can be restored with point-in-time restore.
      */
 
     public java.util.Date getLatestRestorableTime() {
@@ -1821,11 +1702,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the latest time to which a database can be restored with point-in-time restore.
+     * The latest time to which a database in this DB instance can be restored with point-in-time restore.
      * </p>
      * 
      * @param latestRestorableTime
-     *        Specifies the latest time to which a database can be restored with point-in-time restore.
+     *        The latest time to which a database in this DB instance can be restored with point-in-time restore.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1836,11 +1717,13 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies if the DB instance is a Multi-AZ deployment. This setting doesn't apply to RDS Custom.
+     * Indicates whether the DB instance is a Multi-AZ deployment. This setting doesn't apply to RDS Custom DB
+     * instances.
      * </p>
      * 
      * @param multiAZ
-     *        Specifies if the DB instance is a Multi-AZ deployment. This setting doesn't apply to RDS Custom.
+     *        Indicates whether the DB instance is a Multi-AZ deployment. This setting doesn't apply to RDS Custom DB
+     *        instances.
      */
 
     public void setMultiAZ(Boolean multiAZ) {
@@ -1849,10 +1732,12 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies if the DB instance is a Multi-AZ deployment. This setting doesn't apply to RDS Custom.
+     * Indicates whether the DB instance is a Multi-AZ deployment. This setting doesn't apply to RDS Custom DB
+     * instances.
      * </p>
      * 
-     * @return Specifies if the DB instance is a Multi-AZ deployment. This setting doesn't apply to RDS Custom.
+     * @return Indicates whether the DB instance is a Multi-AZ deployment. This setting doesn't apply to RDS Custom DB
+     *         instances.
      */
 
     public Boolean getMultiAZ() {
@@ -1861,11 +1746,13 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies if the DB instance is a Multi-AZ deployment. This setting doesn't apply to RDS Custom.
+     * Indicates whether the DB instance is a Multi-AZ deployment. This setting doesn't apply to RDS Custom DB
+     * instances.
      * </p>
      * 
      * @param multiAZ
-     *        Specifies if the DB instance is a Multi-AZ deployment. This setting doesn't apply to RDS Custom.
+     *        Indicates whether the DB instance is a Multi-AZ deployment. This setting doesn't apply to RDS Custom DB
+     *        instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1876,10 +1763,12 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies if the DB instance is a Multi-AZ deployment. This setting doesn't apply to RDS Custom.
+     * Indicates whether the DB instance is a Multi-AZ deployment. This setting doesn't apply to RDS Custom DB
+     * instances.
      * </p>
      * 
-     * @return Specifies if the DB instance is a Multi-AZ deployment. This setting doesn't apply to RDS Custom.
+     * @return Indicates whether the DB instance is a Multi-AZ deployment. This setting doesn't apply to RDS Custom DB
+     *         instances.
      */
 
     public Boolean isMultiAZ() {
@@ -1888,11 +1777,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates the database engine version.
+     * The version of the database engine.
      * </p>
      * 
      * @param engineVersion
-     *        Indicates the database engine version.
+     *        The version of the database engine.
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -1901,10 +1790,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates the database engine version.
+     * The version of the database engine.
      * </p>
      * 
-     * @return Indicates the database engine version.
+     * @return The version of the database engine.
      */
 
     public String getEngineVersion() {
@@ -1913,11 +1802,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates the database engine version.
+     * The version of the database engine.
      * </p>
      * 
      * @param engineVersion
-     *        Indicates the database engine version.
+     *        The version of the database engine.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1928,11 +1817,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates that minor version patches are applied automatically.
+     * Indicates whether minor version patches are applied automatically.
      * </p>
      * 
      * @param autoMinorVersionUpgrade
-     *        A value that indicates that minor version patches are applied automatically.
+     *        Indicates whether minor version patches are applied automatically.
      */
 
     public void setAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
@@ -1941,10 +1830,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates that minor version patches are applied automatically.
+     * Indicates whether minor version patches are applied automatically.
      * </p>
      * 
-     * @return A value that indicates that minor version patches are applied automatically.
+     * @return Indicates whether minor version patches are applied automatically.
      */
 
     public Boolean getAutoMinorVersionUpgrade() {
@@ -1953,11 +1842,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates that minor version patches are applied automatically.
+     * Indicates whether minor version patches are applied automatically.
      * </p>
      * 
      * @param autoMinorVersionUpgrade
-     *        A value that indicates that minor version patches are applied automatically.
+     *        Indicates whether minor version patches are applied automatically.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1968,10 +1857,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates that minor version patches are applied automatically.
+     * Indicates whether minor version patches are applied automatically.
      * </p>
      * 
-     * @return A value that indicates that minor version patches are applied automatically.
+     * @return Indicates whether minor version patches are applied automatically.
      */
 
     public Boolean isAutoMinorVersionUpgrade() {
@@ -1980,11 +1869,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the identifier of the source DB instance if this DB instance is a read replica.
+     * The identifier of the source DB instance if this DB instance is a read replica.
      * </p>
      * 
      * @param readReplicaSourceDBInstanceIdentifier
-     *        Contains the identifier of the source DB instance if this DB instance is a read replica.
+     *        The identifier of the source DB instance if this DB instance is a read replica.
      */
 
     public void setReadReplicaSourceDBInstanceIdentifier(String readReplicaSourceDBInstanceIdentifier) {
@@ -1993,10 +1882,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the identifier of the source DB instance if this DB instance is a read replica.
+     * The identifier of the source DB instance if this DB instance is a read replica.
      * </p>
      * 
-     * @return Contains the identifier of the source DB instance if this DB instance is a read replica.
+     * @return The identifier of the source DB instance if this DB instance is a read replica.
      */
 
     public String getReadReplicaSourceDBInstanceIdentifier() {
@@ -2005,11 +1894,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the identifier of the source DB instance if this DB instance is a read replica.
+     * The identifier of the source DB instance if this DB instance is a read replica.
      * </p>
      * 
      * @param readReplicaSourceDBInstanceIdentifier
-     *        Contains the identifier of the source DB instance if this DB instance is a read replica.
+     *        The identifier of the source DB instance if this DB instance is a read replica.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2020,10 +1909,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains one or more identifiers of the read replicas associated with this DB instance.
+     * The identifiers of the read replicas associated with this DB instance.
      * </p>
      * 
-     * @return Contains one or more identifiers of the read replicas associated with this DB instance.
+     * @return The identifiers of the read replicas associated with this DB instance.
      */
 
     public java.util.List<String> getReadReplicaDBInstanceIdentifiers() {
@@ -2035,11 +1924,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains one or more identifiers of the read replicas associated with this DB instance.
+     * The identifiers of the read replicas associated with this DB instance.
      * </p>
      * 
      * @param readReplicaDBInstanceIdentifiers
-     *        Contains one or more identifiers of the read replicas associated with this DB instance.
+     *        The identifiers of the read replicas associated with this DB instance.
      */
 
     public void setReadReplicaDBInstanceIdentifiers(java.util.Collection<String> readReplicaDBInstanceIdentifiers) {
@@ -2053,7 +1942,7 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains one or more identifiers of the read replicas associated with this DB instance.
+     * The identifiers of the read replicas associated with this DB instance.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -2062,7 +1951,7 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      * 
      * @param readReplicaDBInstanceIdentifiers
-     *        Contains one or more identifiers of the read replicas associated with this DB instance.
+     *        The identifiers of the read replicas associated with this DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2078,11 +1967,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains one or more identifiers of the read replicas associated with this DB instance.
+     * The identifiers of the read replicas associated with this DB instance.
      * </p>
      * 
      * @param readReplicaDBInstanceIdentifiers
-     *        Contains one or more identifiers of the read replicas associated with this DB instance.
+     *        The identifiers of the read replicas associated with this DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2093,10 +1982,9 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a read
-     * replica. For example, when you create an Aurora read replica of an RDS for MySQL DB instance, the Aurora MySQL DB
-     * cluster for the Aurora read replica is shown. This output doesn't contain information about cross-Region Aurora
-     * read replicas.
+     * The identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a read replica. For example,
+     * when you create an Aurora read replica of an RDS for MySQL DB instance, the Aurora MySQL DB cluster for the
+     * Aurora read replica is shown. This output doesn't contain information about cross-Region Aurora read replicas.
      * </p>
      * <note>
      * <p>
@@ -2104,10 +1992,10 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      * </note>
      * 
-     * @return Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a
-     *         read replica. For example, when you create an Aurora read replica of an RDS for MySQL DB instance, the
-     *         Aurora MySQL DB cluster for the Aurora read replica is shown. This output doesn't contain information
-     *         about cross-Region Aurora read replicas.</p> <note>
+     * @return The identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a read replica. For
+     *         example, when you create an Aurora read replica of an RDS for MySQL DB instance, the Aurora MySQL DB
+     *         cluster for the Aurora read replica is shown. This output doesn't contain information about cross-Region
+     *         Aurora read replicas.</p> <note>
      *         <p>
      *         Currently, each RDS DB instance can have only one Aurora read replica.
      *         </p>
@@ -2122,10 +2010,9 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a read
-     * replica. For example, when you create an Aurora read replica of an RDS for MySQL DB instance, the Aurora MySQL DB
-     * cluster for the Aurora read replica is shown. This output doesn't contain information about cross-Region Aurora
-     * read replicas.
+     * The identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a read replica. For example,
+     * when you create an Aurora read replica of an RDS for MySQL DB instance, the Aurora MySQL DB cluster for the
+     * Aurora read replica is shown. This output doesn't contain information about cross-Region Aurora read replicas.
      * </p>
      * <note>
      * <p>
@@ -2134,10 +2021,10 @@ public class DBInstance implements Serializable, Cloneable {
      * </note>
      * 
      * @param readReplicaDBClusterIdentifiers
-     *        Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a
-     *        read replica. For example, when you create an Aurora read replica of an RDS for MySQL DB instance, the
-     *        Aurora MySQL DB cluster for the Aurora read replica is shown. This output doesn't contain information
-     *        about cross-Region Aurora read replicas.</p> <note>
+     *        The identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a read replica. For
+     *        example, when you create an Aurora read replica of an RDS for MySQL DB instance, the Aurora MySQL DB
+     *        cluster for the Aurora read replica is shown. This output doesn't contain information about cross-Region
+     *        Aurora read replicas.</p> <note>
      *        <p>
      *        Currently, each RDS DB instance can have only one Aurora read replica.
      *        </p>
@@ -2154,10 +2041,9 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a read
-     * replica. For example, when you create an Aurora read replica of an RDS for MySQL DB instance, the Aurora MySQL DB
-     * cluster for the Aurora read replica is shown. This output doesn't contain information about cross-Region Aurora
-     * read replicas.
+     * The identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a read replica. For example,
+     * when you create an Aurora read replica of an RDS for MySQL DB instance, the Aurora MySQL DB cluster for the
+     * Aurora read replica is shown. This output doesn't contain information about cross-Region Aurora read replicas.
      * </p>
      * <note>
      * <p>
@@ -2171,10 +2057,10 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      * 
      * @param readReplicaDBClusterIdentifiers
-     *        Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a
-     *        read replica. For example, when you create an Aurora read replica of an RDS for MySQL DB instance, the
-     *        Aurora MySQL DB cluster for the Aurora read replica is shown. This output doesn't contain information
-     *        about cross-Region Aurora read replicas.</p> <note>
+     *        The identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a read replica. For
+     *        example, when you create an Aurora read replica of an RDS for MySQL DB instance, the Aurora MySQL DB
+     *        cluster for the Aurora read replica is shown. This output doesn't contain information about cross-Region
+     *        Aurora read replicas.</p> <note>
      *        <p>
      *        Currently, each RDS DB instance can have only one Aurora read replica.
      *        </p>
@@ -2193,10 +2079,9 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a read
-     * replica. For example, when you create an Aurora read replica of an RDS for MySQL DB instance, the Aurora MySQL DB
-     * cluster for the Aurora read replica is shown. This output doesn't contain information about cross-Region Aurora
-     * read replicas.
+     * The identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a read replica. For example,
+     * when you create an Aurora read replica of an RDS for MySQL DB instance, the Aurora MySQL DB cluster for the
+     * Aurora read replica is shown. This output doesn't contain information about cross-Region Aurora read replicas.
      * </p>
      * <note>
      * <p>
@@ -2205,10 +2090,10 @@ public class DBInstance implements Serializable, Cloneable {
      * </note>
      * 
      * @param readReplicaDBClusterIdentifiers
-     *        Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a
-     *        read replica. For example, when you create an Aurora read replica of an RDS for MySQL DB instance, the
-     *        Aurora MySQL DB cluster for the Aurora read replica is shown. This output doesn't contain information
-     *        about cross-Region Aurora read replicas.</p> <note>
+     *        The identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a read replica. For
+     *        example, when you create an Aurora read replica of an RDS for MySQL DB instance, the Aurora MySQL DB
+     *        cluster for the Aurora read replica is shown. This output doesn't contain information about cross-Region
+     *        Aurora read replicas.</p> <note>
      *        <p>
      *        Currently, each RDS DB instance can have only one Aurora read replica.
      *        </p>
@@ -2330,11 +2215,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * License model information for this DB instance. This setting doesn't apply to RDS Custom.
+     * The license model information for this DB instance. This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * 
      * @param licenseModel
-     *        License model information for this DB instance. This setting doesn't apply to RDS Custom.
+     *        The license model information for this DB instance. This setting doesn't apply to RDS Custom DB instances.
      */
 
     public void setLicenseModel(String licenseModel) {
@@ -2343,10 +2228,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * License model information for this DB instance. This setting doesn't apply to RDS Custom.
+     * The license model information for this DB instance. This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * 
-     * @return License model information for this DB instance. This setting doesn't apply to RDS Custom.
+     * @return The license model information for this DB instance. This setting doesn't apply to RDS Custom DB
+     *         instances.
      */
 
     public String getLicenseModel() {
@@ -2355,11 +2241,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * License model information for this DB instance. This setting doesn't apply to RDS Custom.
+     * The license model information for this DB instance. This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * 
      * @param licenseModel
-     *        License model information for this DB instance. This setting doesn't apply to RDS Custom.
+     *        The license model information for this DB instance. This setting doesn't apply to RDS Custom DB instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2370,11 +2256,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the Provisioned IOPS (I/O operations per second) value.
+     * The Provisioned IOPS (I/O operations per second) value for the DB instance.
      * </p>
      * 
      * @param iops
-     *        Specifies the Provisioned IOPS (I/O operations per second) value.
+     *        The Provisioned IOPS (I/O operations per second) value for the DB instance.
      */
 
     public void setIops(Integer iops) {
@@ -2383,10 +2269,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the Provisioned IOPS (I/O operations per second) value.
+     * The Provisioned IOPS (I/O operations per second) value for the DB instance.
      * </p>
      * 
-     * @return Specifies the Provisioned IOPS (I/O operations per second) value.
+     * @return The Provisioned IOPS (I/O operations per second) value for the DB instance.
      */
 
     public Integer getIops() {
@@ -2395,11 +2281,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the Provisioned IOPS (I/O operations per second) value.
+     * The Provisioned IOPS (I/O operations per second) value for the DB instance.
      * </p>
      * 
      * @param iops
-     *        Specifies the Provisioned IOPS (I/O operations per second) value.
+     *        The Provisioned IOPS (I/O operations per second) value for the DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2410,10 +2296,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the list of option group memberships for this DB instance.
+     * The list of option group memberships for this DB instance.
      * </p>
      * 
-     * @return Provides the list of option group memberships for this DB instance.
+     * @return The list of option group memberships for this DB instance.
      */
 
     public java.util.List<OptionGroupMembership> getOptionGroupMemberships() {
@@ -2425,11 +2311,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the list of option group memberships for this DB instance.
+     * The list of option group memberships for this DB instance.
      * </p>
      * 
      * @param optionGroupMemberships
-     *        Provides the list of option group memberships for this DB instance.
+     *        The list of option group memberships for this DB instance.
      */
 
     public void setOptionGroupMemberships(java.util.Collection<OptionGroupMembership> optionGroupMemberships) {
@@ -2443,7 +2329,7 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the list of option group memberships for this DB instance.
+     * The list of option group memberships for this DB instance.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -2452,7 +2338,7 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      * 
      * @param optionGroupMemberships
-     *        Provides the list of option group memberships for this DB instance.
+     *        The list of option group memberships for this DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2468,11 +2354,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the list of option group memberships for this DB instance.
+     * The list of option group memberships for this DB instance.
      * </p>
      * 
      * @param optionGroupMemberships
-     *        Provides the list of option group memberships for this DB instance.
+     *        The list of option group memberships for this DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2610,7 +2496,7 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the accessibility options for the DB instance.
+     * Indicates whether the DB instance is publicly accessible.
      * </p>
      * <p>
      * When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP
@@ -2627,7 +2513,7 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      * 
      * @param publiclyAccessible
-     *        Specifies the accessibility options for the DB instance.</p>
+     *        Indicates whether the DB instance is publicly accessible.</p>
      *        <p>
      *        When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private
      *        IP address from within the DB cluster's virtual private cloud (VPC). It resolves to the public IP address
@@ -2649,7 +2535,7 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the accessibility options for the DB instance.
+     * Indicates whether the DB instance is publicly accessible.
      * </p>
      * <p>
      * When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP
@@ -2665,7 +2551,7 @@ public class DBInstance implements Serializable, Cloneable {
      * For more information, see <a>CreateDBInstance</a>.
      * </p>
      * 
-     * @return Specifies the accessibility options for the DB instance.</p>
+     * @return Indicates whether the DB instance is publicly accessible.</p>
      *         <p>
      *         When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private
      *         IP address from within the DB cluster's virtual private cloud (VPC). It resolves to the public IP address
@@ -2687,7 +2573,7 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the accessibility options for the DB instance.
+     * Indicates whether the DB instance is publicly accessible.
      * </p>
      * <p>
      * When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP
@@ -2704,7 +2590,7 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      * 
      * @param publiclyAccessible
-     *        Specifies the accessibility options for the DB instance.</p>
+     *        Indicates whether the DB instance is publicly accessible.</p>
      *        <p>
      *        When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private
      *        IP address from within the DB cluster's virtual private cloud (VPC). It resolves to the public IP address
@@ -2728,7 +2614,7 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the accessibility options for the DB instance.
+     * Indicates whether the DB instance is publicly accessible.
      * </p>
      * <p>
      * When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP
@@ -2744,7 +2630,7 @@ public class DBInstance implements Serializable, Cloneable {
      * For more information, see <a>CreateDBInstance</a>.
      * </p>
      * 
-     * @return Specifies the accessibility options for the DB instance.</p>
+     * @return Indicates whether the DB instance is publicly accessible.</p>
      *         <p>
      *         When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private
      *         IP address from within the DB cluster's virtual private cloud (VPC). It resolves to the public IP address
@@ -2766,10 +2652,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of a read replica. If the instance isn't a read replica, this is blank.
+     * The status of a read replica. If the DB instance isn't a read replica, the value is blank.
      * </p>
      * 
-     * @return The status of a read replica. If the instance isn't a read replica, this is blank.
+     * @return The status of a read replica. If the DB instance isn't a read replica, the value is blank.
      */
 
     public java.util.List<DBInstanceStatusInfo> getStatusInfos() {
@@ -2781,11 +2667,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of a read replica. If the instance isn't a read replica, this is blank.
+     * The status of a read replica. If the DB instance isn't a read replica, the value is blank.
      * </p>
      * 
      * @param statusInfos
-     *        The status of a read replica. If the instance isn't a read replica, this is blank.
+     *        The status of a read replica. If the DB instance isn't a read replica, the value is blank.
      */
 
     public void setStatusInfos(java.util.Collection<DBInstanceStatusInfo> statusInfos) {
@@ -2799,7 +2685,7 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of a read replica. If the instance isn't a read replica, this is blank.
+     * The status of a read replica. If the DB instance isn't a read replica, the value is blank.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -2808,7 +2694,7 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      * 
      * @param statusInfos
-     *        The status of a read replica. If the instance isn't a read replica, this is blank.
+     *        The status of a read replica. If the DB instance isn't a read replica, the value is blank.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2824,11 +2710,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of a read replica. If the instance isn't a read replica, this is blank.
+     * The status of a read replica. If the DB instance isn't a read replica, the value is blank.
      * </p>
      * 
      * @param statusInfos
-     *        The status of a read replica. If the instance isn't a read replica, this is blank.
+     *        The status of a read replica. If the DB instance isn't a read replica, the value is blank.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2839,11 +2725,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the storage type associated with the DB instance.
+     * The storage type associated with the DB instance.
      * </p>
      * 
      * @param storageType
-     *        Specifies the storage type associated with the DB instance.
+     *        The storage type associated with the DB instance.
      */
 
     public void setStorageType(String storageType) {
@@ -2852,10 +2738,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the storage type associated with the DB instance.
+     * The storage type associated with the DB instance.
      * </p>
      * 
-     * @return Specifies the storage type associated with the DB instance.
+     * @return The storage type associated with the DB instance.
      */
 
     public String getStorageType() {
@@ -2864,11 +2750,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the storage type associated with the DB instance.
+     * The storage type associated with the DB instance.
      * </p>
      * 
      * @param storageType
-     *        Specifies the storage type associated with the DB instance.
+     *        The storage type associated with the DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2919,13 +2805,13 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the port that the DB instance listens on. If the DB instance is part of a DB cluster, this can be a
-     * different port than the DB cluster port.
+     * The port that the DB instance listens on. If the DB instance is part of a DB cluster, this can be a different
+     * port than the DB cluster port.
      * </p>
      * 
      * @param dbInstancePort
-     *        Specifies the port that the DB instance listens on. If the DB instance is part of a DB cluster, this can
-     *        be a different port than the DB cluster port.
+     *        The port that the DB instance listens on. If the DB instance is part of a DB cluster, this can be a
+     *        different port than the DB cluster port.
      */
 
     public void setDbInstancePort(Integer dbInstancePort) {
@@ -2934,12 +2820,12 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the port that the DB instance listens on. If the DB instance is part of a DB cluster, this can be a
-     * different port than the DB cluster port.
+     * The port that the DB instance listens on. If the DB instance is part of a DB cluster, this can be a different
+     * port than the DB cluster port.
      * </p>
      * 
-     * @return Specifies the port that the DB instance listens on. If the DB instance is part of a DB cluster, this can
-     *         be a different port than the DB cluster port.
+     * @return The port that the DB instance listens on. If the DB instance is part of a DB cluster, this can be a
+     *         different port than the DB cluster port.
      */
 
     public Integer getDbInstancePort() {
@@ -2948,13 +2834,13 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the port that the DB instance listens on. If the DB instance is part of a DB cluster, this can be a
-     * different port than the DB cluster port.
+     * The port that the DB instance listens on. If the DB instance is part of a DB cluster, this can be a different
+     * port than the DB cluster port.
      * </p>
      * 
      * @param dbInstancePort
-     *        Specifies the port that the DB instance listens on. If the DB instance is part of a DB cluster, this can
-     *        be a different port than the DB cluster port.
+     *        The port that the DB instance listens on. If the DB instance is part of a DB cluster, this can be a
+     *        different port than the DB cluster port.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2965,12 +2851,12 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the DB instance is a member of a DB cluster, contains the name of the DB cluster that the DB instance is a
+     * If the DB instance is a member of a DB cluster, indicates the name of the DB cluster that the DB instance is a
      * member of.
      * </p>
      * 
      * @param dBClusterIdentifier
-     *        If the DB instance is a member of a DB cluster, contains the name of the DB cluster that the DB instance
+     *        If the DB instance is a member of a DB cluster, indicates the name of the DB cluster that the DB instance
      *        is a member of.
      */
 
@@ -2980,11 +2866,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the DB instance is a member of a DB cluster, contains the name of the DB cluster that the DB instance is a
+     * If the DB instance is a member of a DB cluster, indicates the name of the DB cluster that the DB instance is a
      * member of.
      * </p>
      * 
-     * @return If the DB instance is a member of a DB cluster, contains the name of the DB cluster that the DB instance
+     * @return If the DB instance is a member of a DB cluster, indicates the name of the DB cluster that the DB instance
      *         is a member of.
      */
 
@@ -2994,12 +2880,12 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the DB instance is a member of a DB cluster, contains the name of the DB cluster that the DB instance is a
+     * If the DB instance is a member of a DB cluster, indicates the name of the DB cluster that the DB instance is a
      * member of.
      * </p>
      * 
      * @param dBClusterIdentifier
-     *        If the DB instance is a member of a DB cluster, contains the name of the DB cluster that the DB instance
+     *        If the DB instance is a member of a DB cluster, indicates the name of the DB cluster that the DB instance
      *        is a member of.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -3011,11 +2897,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the DB instance is encrypted.
+     * Indicates whether the DB instance is encrypted.
      * </p>
      * 
      * @param storageEncrypted
-     *        Specifies whether the DB instance is encrypted.
+     *        Indicates whether the DB instance is encrypted.
      */
 
     public void setStorageEncrypted(Boolean storageEncrypted) {
@@ -3024,10 +2910,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the DB instance is encrypted.
+     * Indicates whether the DB instance is encrypted.
      * </p>
      * 
-     * @return Specifies whether the DB instance is encrypted.
+     * @return Indicates whether the DB instance is encrypted.
      */
 
     public Boolean getStorageEncrypted() {
@@ -3036,11 +2922,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the DB instance is encrypted.
+     * Indicates whether the DB instance is encrypted.
      * </p>
      * 
      * @param storageEncrypted
-     *        Specifies whether the DB instance is encrypted.
+     *        Indicates whether the DB instance is encrypted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3051,10 +2937,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the DB instance is encrypted.
+     * Indicates whether the DB instance is encrypted.
      * </p>
      * 
-     * @return Specifies whether the DB instance is encrypted.
+     * @return Indicates whether the DB instance is encrypted.
      */
 
     public Boolean isStorageEncrypted() {
@@ -3063,7 +2949,7 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB
+     * If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key identifier for the encrypted DB
      * instance.
      * </p>
      * <p>
@@ -3071,8 +2957,8 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      * 
      * @param kmsKeyId
-     *        If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB
-     *        instance.</p>
+     *        If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key identifier for the encrypted
+     *        DB instance.</p>
      *        <p>
      *        The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
      *        key.
@@ -3084,15 +2970,15 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB
+     * If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key identifier for the encrypted DB
      * instance.
      * </p>
      * <p>
      * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.
      * </p>
      * 
-     * @return If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB
-     *         instance.</p>
+     * @return If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key identifier for the encrypted
+     *         DB instance.</p>
      *         <p>
      *         The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
      *         key.
@@ -3104,7 +2990,7 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB
+     * If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key identifier for the encrypted DB
      * instance.
      * </p>
      * <p>
@@ -3112,8 +2998,8 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      * 
      * @param kmsKeyId
-     *        If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB
-     *        instance.</p>
+     *        If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key identifier for the encrypted
+     *        DB instance.</p>
      *        <p>
      *        The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
      *        key.
@@ -3331,24 +3217,20 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether tags are copied from the DB instance to snapshots of the DB instance.
+     * Indicates whether tags are copied from the DB instance to snapshots of the DB instance.
      * </p>
      * <p>
-     * <b>Amazon Aurora</b>
-     * </p>
-     * <p>
-     * Not applicable. Copying tags to snapshots is managed by the DB cluster. Setting this value for an Aurora DB
-     * instance has no effect on the DB cluster setting. For more information, see <code>DBCluster</code>.
+     * This setting doesn't apply to Amazon Aurora DB instances. Copying tags to snapshots is managed by the DB cluster.
+     * Setting this value for an Aurora DB instance has no effect on the DB cluster setting. For more information, see
+     * <code>DBCluster</code>.
      * </p>
      * 
      * @param copyTagsToSnapshot
-     *        Specifies whether tags are copied from the DB instance to snapshots of the DB instance.</p>
+     *        Indicates whether tags are copied from the DB instance to snapshots of the DB instance.</p>
      *        <p>
-     *        <b>Amazon Aurora</b>
-     *        </p>
-     *        <p>
-     *        Not applicable. Copying tags to snapshots is managed by the DB cluster. Setting this value for an Aurora
-     *        DB instance has no effect on the DB cluster setting. For more information, see <code>DBCluster</code>.
+     *        This setting doesn't apply to Amazon Aurora DB instances. Copying tags to snapshots is managed by the DB
+     *        cluster. Setting this value for an Aurora DB instance has no effect on the DB cluster setting. For more
+     *        information, see <code>DBCluster</code>.
      */
 
     public void setCopyTagsToSnapshot(Boolean copyTagsToSnapshot) {
@@ -3357,23 +3239,19 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether tags are copied from the DB instance to snapshots of the DB instance.
+     * Indicates whether tags are copied from the DB instance to snapshots of the DB instance.
      * </p>
      * <p>
-     * <b>Amazon Aurora</b>
-     * </p>
-     * <p>
-     * Not applicable. Copying tags to snapshots is managed by the DB cluster. Setting this value for an Aurora DB
-     * instance has no effect on the DB cluster setting. For more information, see <code>DBCluster</code>.
+     * This setting doesn't apply to Amazon Aurora DB instances. Copying tags to snapshots is managed by the DB cluster.
+     * Setting this value for an Aurora DB instance has no effect on the DB cluster setting. For more information, see
+     * <code>DBCluster</code>.
      * </p>
      * 
-     * @return Specifies whether tags are copied from the DB instance to snapshots of the DB instance.</p>
+     * @return Indicates whether tags are copied from the DB instance to snapshots of the DB instance.</p>
      *         <p>
-     *         <b>Amazon Aurora</b>
-     *         </p>
-     *         <p>
-     *         Not applicable. Copying tags to snapshots is managed by the DB cluster. Setting this value for an Aurora
-     *         DB instance has no effect on the DB cluster setting. For more information, see <code>DBCluster</code>.
+     *         This setting doesn't apply to Amazon Aurora DB instances. Copying tags to snapshots is managed by the DB
+     *         cluster. Setting this value for an Aurora DB instance has no effect on the DB cluster setting. For more
+     *         information, see <code>DBCluster</code>.
      */
 
     public Boolean getCopyTagsToSnapshot() {
@@ -3382,24 +3260,20 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether tags are copied from the DB instance to snapshots of the DB instance.
+     * Indicates whether tags are copied from the DB instance to snapshots of the DB instance.
      * </p>
      * <p>
-     * <b>Amazon Aurora</b>
-     * </p>
-     * <p>
-     * Not applicable. Copying tags to snapshots is managed by the DB cluster. Setting this value for an Aurora DB
-     * instance has no effect on the DB cluster setting. For more information, see <code>DBCluster</code>.
+     * This setting doesn't apply to Amazon Aurora DB instances. Copying tags to snapshots is managed by the DB cluster.
+     * Setting this value for an Aurora DB instance has no effect on the DB cluster setting. For more information, see
+     * <code>DBCluster</code>.
      * </p>
      * 
      * @param copyTagsToSnapshot
-     *        Specifies whether tags are copied from the DB instance to snapshots of the DB instance.</p>
+     *        Indicates whether tags are copied from the DB instance to snapshots of the DB instance.</p>
      *        <p>
-     *        <b>Amazon Aurora</b>
-     *        </p>
-     *        <p>
-     *        Not applicable. Copying tags to snapshots is managed by the DB cluster. Setting this value for an Aurora
-     *        DB instance has no effect on the DB cluster setting. For more information, see <code>DBCluster</code>.
+     *        This setting doesn't apply to Amazon Aurora DB instances. Copying tags to snapshots is managed by the DB
+     *        cluster. Setting this value for an Aurora DB instance has no effect on the DB cluster setting. For more
+     *        information, see <code>DBCluster</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3410,23 +3284,19 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether tags are copied from the DB instance to snapshots of the DB instance.
+     * Indicates whether tags are copied from the DB instance to snapshots of the DB instance.
      * </p>
      * <p>
-     * <b>Amazon Aurora</b>
-     * </p>
-     * <p>
-     * Not applicable. Copying tags to snapshots is managed by the DB cluster. Setting this value for an Aurora DB
-     * instance has no effect on the DB cluster setting. For more information, see <code>DBCluster</code>.
+     * This setting doesn't apply to Amazon Aurora DB instances. Copying tags to snapshots is managed by the DB cluster.
+     * Setting this value for an Aurora DB instance has no effect on the DB cluster setting. For more information, see
+     * <code>DBCluster</code>.
      * </p>
      * 
-     * @return Specifies whether tags are copied from the DB instance to snapshots of the DB instance.</p>
+     * @return Indicates whether tags are copied from the DB instance to snapshots of the DB instance.</p>
      *         <p>
-     *         <b>Amazon Aurora</b>
-     *         </p>
-     *         <p>
-     *         Not applicable. Copying tags to snapshots is managed by the DB cluster. Setting this value for an Aurora
-     *         DB instance has no effect on the DB cluster setting. For more information, see <code>DBCluster</code>.
+     *         This setting doesn't apply to Amazon Aurora DB instances. Copying tags to snapshots is managed by the DB
+     *         cluster. Setting this value for an Aurora DB instance has no effect on the DB cluster setting. For more
+     *         information, see <code>DBCluster</code>.
      */
 
     public Boolean isCopyTagsToSnapshot() {
@@ -3564,16 +3434,16 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a failure
-     * of the existing primary instance. For more information, see <a href=
-     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"
+     * The order of priority in which an Aurora Replica is promoted to the primary instance after a failure of the
+     * existing primary instance. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.AuroraHighAvailability.html#Aurora.Managing.FaultTolerance"
      * > Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * 
      * @param promotionTier
-     *        A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a
-     *        failure of the existing primary instance. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"
+     *        The order of priority in which an Aurora Replica is promoted to the primary instance after a failure of
+     *        the existing primary instance. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.AuroraHighAvailability.html#Aurora.Managing.FaultTolerance"
      *        > Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
      */
 
@@ -3583,15 +3453,15 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a failure
-     * of the existing primary instance. For more information, see <a href=
-     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"
+     * The order of priority in which an Aurora Replica is promoted to the primary instance after a failure of the
+     * existing primary instance. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.AuroraHighAvailability.html#Aurora.Managing.FaultTolerance"
      * > Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * 
-     * @return A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a
-     *         failure of the existing primary instance. For more information, see <a href=
-     *         "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"
+     * @return The order of priority in which an Aurora Replica is promoted to the primary instance after a failure of
+     *         the existing primary instance. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.AuroraHighAvailability.html#Aurora.Managing.FaultTolerance"
      *         > Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
      */
 
@@ -3601,16 +3471,16 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a failure
-     * of the existing primary instance. For more information, see <a href=
-     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"
+     * The order of priority in which an Aurora Replica is promoted to the primary instance after a failure of the
+     * existing primary instance. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.AuroraHighAvailability.html#Aurora.Managing.FaultTolerance"
      * > Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * 
      * @param promotionTier
-     *        A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a
-     *        failure of the existing primary instance. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"
+     *        The order of priority in which an Aurora Replica is promoted to the primary instance after a failure of
+     *        the existing primary instance. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.AuroraHighAvailability.html#Aurora.Managing.FaultTolerance"
      *        > Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -3714,42 +3584,26 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is
-     * enabled, and otherwise false.
+     * Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database
+     * accounts is enabled for the DB instance.
      * </p>
      * <p>
-     * IAM database authentication can be enabled for the following database engines:
+     * For a list of engine versions that support IAM database authentication, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RDS_Fea_Regions_DB-eng.Feature.IamDatabaseAuthentication.html"
+     * >IAM database authentication</a> in the <i>Amazon RDS User Guide</i> and <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.Aurora_Fea_Regions_DB-eng.Feature.IAMdbauth.html"
+     * >IAM database authentication in Aurora</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * For MySQL 5.7, minor version 5.7.16 or higher.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * For Amazon Aurora, all versions of Aurora MySQL and Aurora PostgreSQL.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param iAMDatabaseAuthenticationEnabled
-     *        True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts
-     *        is enabled, and otherwise false.</p>
+     *        Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database
+     *        accounts is enabled for the DB instance.</p>
      *        <p>
-     *        IAM database authentication can be enabled for the following database engines:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        For MySQL 5.7, minor version 5.7.16 or higher.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        For Amazon Aurora, all versions of Aurora MySQL and Aurora PostgreSQL.
-     *        </p>
-     *        </li>
+     *        For a list of engine versions that support IAM database authentication, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RDS_Fea_Regions_DB-eng.Feature.IamDatabaseAuthentication.html"
+     *        >IAM database authentication</a> in the <i>Amazon RDS User Guide</i> and <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.Aurora_Fea_Regions_DB-eng.Feature.IAMdbauth.html"
+     *        >IAM database authentication in Aurora</a> in the <i>Amazon Aurora User Guide</i>.
      */
 
     public void setIAMDatabaseAuthenticationEnabled(Boolean iAMDatabaseAuthenticationEnabled) {
@@ -3758,41 +3612,25 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is
-     * enabled, and otherwise false.
+     * Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database
+     * accounts is enabled for the DB instance.
      * </p>
      * <p>
-     * IAM database authentication can be enabled for the following database engines:
+     * For a list of engine versions that support IAM database authentication, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RDS_Fea_Regions_DB-eng.Feature.IamDatabaseAuthentication.html"
+     * >IAM database authentication</a> in the <i>Amazon RDS User Guide</i> and <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.Aurora_Fea_Regions_DB-eng.Feature.IAMdbauth.html"
+     * >IAM database authentication in Aurora</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * For MySQL 5.7, minor version 5.7.16 or higher.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * For Amazon Aurora, all versions of Aurora MySQL and Aurora PostgreSQL.
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts
-     *         is enabled, and otherwise false.</p>
+     * @return Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to
+     *         database accounts is enabled for the DB instance.</p>
      *         <p>
-     *         IAM database authentication can be enabled for the following database engines:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         For MySQL 5.7, minor version 5.7.16 or higher.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         For Amazon Aurora, all versions of Aurora MySQL and Aurora PostgreSQL.
-     *         </p>
-     *         </li>
+     *         For a list of engine versions that support IAM database authentication, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RDS_Fea_Regions_DB-eng.Feature.IamDatabaseAuthentication.html"
+     *         >IAM database authentication</a> in the <i>Amazon RDS User Guide</i> and <a href=
+     *         "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.Aurora_Fea_Regions_DB-eng.Feature.IAMdbauth.html"
+     *         >IAM database authentication in Aurora</a> in the <i>Amazon Aurora User Guide</i>.
      */
 
     public Boolean getIAMDatabaseAuthenticationEnabled() {
@@ -3801,42 +3639,26 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is
-     * enabled, and otherwise false.
+     * Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database
+     * accounts is enabled for the DB instance.
      * </p>
      * <p>
-     * IAM database authentication can be enabled for the following database engines:
+     * For a list of engine versions that support IAM database authentication, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RDS_Fea_Regions_DB-eng.Feature.IamDatabaseAuthentication.html"
+     * >IAM database authentication</a> in the <i>Amazon RDS User Guide</i> and <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.Aurora_Fea_Regions_DB-eng.Feature.IAMdbauth.html"
+     * >IAM database authentication in Aurora</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * For MySQL 5.7, minor version 5.7.16 or higher.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * For Amazon Aurora, all versions of Aurora MySQL and Aurora PostgreSQL.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param iAMDatabaseAuthenticationEnabled
-     *        True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts
-     *        is enabled, and otherwise false.</p>
+     *        Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database
+     *        accounts is enabled for the DB instance.</p>
      *        <p>
-     *        IAM database authentication can be enabled for the following database engines:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        For MySQL 5.7, minor version 5.7.16 or higher.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        For Amazon Aurora, all versions of Aurora MySQL and Aurora PostgreSQL.
-     *        </p>
-     *        </li>
+     *        For a list of engine versions that support IAM database authentication, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RDS_Fea_Regions_DB-eng.Feature.IamDatabaseAuthentication.html"
+     *        >IAM database authentication</a> in the <i>Amazon RDS User Guide</i> and <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.Aurora_Fea_Regions_DB-eng.Feature.IAMdbauth.html"
+     *        >IAM database authentication in Aurora</a> in the <i>Amazon Aurora User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3847,41 +3669,25 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is
-     * enabled, and otherwise false.
+     * Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database
+     * accounts is enabled for the DB instance.
      * </p>
      * <p>
-     * IAM database authentication can be enabled for the following database engines:
+     * For a list of engine versions that support IAM database authentication, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RDS_Fea_Regions_DB-eng.Feature.IamDatabaseAuthentication.html"
+     * >IAM database authentication</a> in the <i>Amazon RDS User Guide</i> and <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.Aurora_Fea_Regions_DB-eng.Feature.IAMdbauth.html"
+     * >IAM database authentication in Aurora</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * For MySQL 5.7, minor version 5.7.16 or higher.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * For Amazon Aurora, all versions of Aurora MySQL and Aurora PostgreSQL.
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts
-     *         is enabled, and otherwise false.</p>
+     * @return Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to
+     *         database accounts is enabled for the DB instance.</p>
      *         <p>
-     *         IAM database authentication can be enabled for the following database engines:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         For MySQL 5.7, minor version 5.7.16 or higher.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         For Amazon Aurora, all versions of Aurora MySQL and Aurora PostgreSQL.
-     *         </p>
-     *         </li>
+     *         For a list of engine versions that support IAM database authentication, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RDS_Fea_Regions_DB-eng.Feature.IamDatabaseAuthentication.html"
+     *         >IAM database authentication</a> in the <i>Amazon RDS User Guide</i> and <a href=
+     *         "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.Aurora_Fea_Regions_DB-eng.Feature.IAMdbauth.html"
+     *         >IAM database authentication in Aurora</a> in the <i>Amazon Aurora User Guide</i>.
      */
 
     public Boolean isIAMDatabaseAuthenticationEnabled() {
@@ -3890,11 +3696,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if Performance Insights is enabled for the DB instance, and otherwise false.
+     * Indicates whether Performance Insights is enabled for the DB instance.
      * </p>
      * 
      * @param performanceInsightsEnabled
-     *        True if Performance Insights is enabled for the DB instance, and otherwise false.
+     *        Indicates whether Performance Insights is enabled for the DB instance.
      */
 
     public void setPerformanceInsightsEnabled(Boolean performanceInsightsEnabled) {
@@ -3903,10 +3709,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if Performance Insights is enabled for the DB instance, and otherwise false.
+     * Indicates whether Performance Insights is enabled for the DB instance.
      * </p>
      * 
-     * @return True if Performance Insights is enabled for the DB instance, and otherwise false.
+     * @return Indicates whether Performance Insights is enabled for the DB instance.
      */
 
     public Boolean getPerformanceInsightsEnabled() {
@@ -3915,11 +3721,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if Performance Insights is enabled for the DB instance, and otherwise false.
+     * Indicates whether Performance Insights is enabled for the DB instance.
      * </p>
      * 
      * @param performanceInsightsEnabled
-     *        True if Performance Insights is enabled for the DB instance, and otherwise false.
+     *        Indicates whether Performance Insights is enabled for the DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3930,10 +3736,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if Performance Insights is enabled for the DB instance, and otherwise false.
+     * Indicates whether Performance Insights is enabled for the DB instance.
      * </p>
      * 
-     * @return True if Performance Insights is enabled for the DB instance, and otherwise false.
+     * @return Indicates whether Performance Insights is enabled for the DB instance.
      */
 
     public Boolean isPerformanceInsightsEnabled() {
@@ -4000,95 +3806,58 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:
+     * The number of days to retain Performance Insights data.
+     * </p>
+     * <p>
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * 7
+     * <code>7</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
+     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31),
+     * <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 731
+     * <code>731</code>
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For example, the following values are valid:
+     * Default: <code>7</code> days
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * 93 (3 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 341 (11 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 589 (19 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 731
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param performanceInsightsRetentionPeriod
-     *        The number of days to retain Performance Insights data. The default is 7 days. The following values are
-     *        valid:</p>
+     *        The number of days to retain Performance Insights data.</p>
+     *        <p>
+     *        Valid Values:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        7
+     *        <code>7</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
+     *        <i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months
+     *        * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        731
+     *        <code>731</code>
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        For example, the following values are valid:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        93 (3 months * 31)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        341 (11 months * 31)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        589 (19 months * 31)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        731
-     *        </p>
-     *        </li>
+     *        Default: <code>7</code> days
      */
 
     public void setPerformanceInsightsRetentionPeriod(Integer performanceInsightsRetentionPeriod) {
@@ -4097,94 +3866,57 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:
+     * The number of days to retain Performance Insights data.
+     * </p>
+     * <p>
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * 7
+     * <code>7</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
+     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31),
+     * <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 731
+     * <code>731</code>
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For example, the following values are valid:
+     * Default: <code>7</code> days
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * 93 (3 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 341 (11 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 589 (19 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 731
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return The number of days to retain Performance Insights data. The default is 7 days. The following values are
-     *         valid:</p>
+     * @return The number of days to retain Performance Insights data.</p>
+     *         <p>
+     *         Valid Values:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         7
+     *         <code>7</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
+     *         <i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3
+     *         months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         731
+     *         <code>731</code>
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         For example, the following values are valid:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         93 (3 months * 31)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         341 (11 months * 31)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         589 (19 months * 31)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         731
-     *         </p>
-     *         </li>
+     *         Default: <code>7</code> days
      */
 
     public Integer getPerformanceInsightsRetentionPeriod() {
@@ -4193,95 +3925,58 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:
+     * The number of days to retain Performance Insights data.
+     * </p>
+     * <p>
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * 7
+     * <code>7</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
+     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31),
+     * <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 731
+     * <code>731</code>
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For example, the following values are valid:
+     * Default: <code>7</code> days
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * 93 (3 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 341 (11 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 589 (19 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 731
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param performanceInsightsRetentionPeriod
-     *        The number of days to retain Performance Insights data. The default is 7 days. The following values are
-     *        valid:</p>
+     *        The number of days to retain Performance Insights data.</p>
+     *        <p>
+     *        Valid Values:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        7
+     *        <code>7</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
+     *        <i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months
+     *        * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        731
+     *        <code>731</code>
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        For example, the following values are valid:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        93 (3 months * 31)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        341 (11 months * 31)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        589 (19 months * 31)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        731
-     *        </p>
-     *        </li>
+     *        Default: <code>7</code> days
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -4296,15 +3991,15 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      * <p>
      * Log types vary by DB engine. For information about the log types for each DB engine, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon RDS Database Log
-     * Files</a> in the <i>Amazon RDS User Guide.</i>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Monitoring Amazon RDS log
+     * files</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @return A list of log types that this DB instance is configured to export to CloudWatch Logs.</p>
      *         <p>
      *         Log types vary by DB engine. For information about the log types for each DB engine, see <a
-     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon RDS Database Log
-     *         Files</a> in the <i>Amazon RDS User Guide.</i>
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Monitoring Amazon RDS
+     *         log files</a> in the <i>Amazon RDS User Guide.</i>
      */
 
     public java.util.List<String> getEnabledCloudwatchLogsExports() {
@@ -4320,16 +4015,16 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      * <p>
      * Log types vary by DB engine. For information about the log types for each DB engine, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon RDS Database Log
-     * Files</a> in the <i>Amazon RDS User Guide.</i>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Monitoring Amazon RDS log
+     * files</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @param enabledCloudwatchLogsExports
      *        A list of log types that this DB instance is configured to export to CloudWatch Logs.</p>
      *        <p>
      *        Log types vary by DB engine. For information about the log types for each DB engine, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon RDS Database Log
-     *        Files</a> in the <i>Amazon RDS User Guide.</i>
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Monitoring Amazon RDS
+     *        log files</a> in the <i>Amazon RDS User Guide.</i>
      */
 
     public void setEnabledCloudwatchLogsExports(java.util.Collection<String> enabledCloudwatchLogsExports) {
@@ -4347,8 +4042,8 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      * <p>
      * Log types vary by DB engine. For information about the log types for each DB engine, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon RDS Database Log
-     * Files</a> in the <i>Amazon RDS User Guide.</i>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Monitoring Amazon RDS log
+     * files</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -4360,8 +4055,8 @@ public class DBInstance implements Serializable, Cloneable {
      *        A list of log types that this DB instance is configured to export to CloudWatch Logs.</p>
      *        <p>
      *        Log types vary by DB engine. For information about the log types for each DB engine, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon RDS Database Log
-     *        Files</a> in the <i>Amazon RDS User Guide.</i>
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Monitoring Amazon RDS
+     *        log files</a> in the <i>Amazon RDS User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -4381,16 +4076,16 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      * <p>
      * Log types vary by DB engine. For information about the log types for each DB engine, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon RDS Database Log
-     * Files</a> in the <i>Amazon RDS User Guide.</i>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Monitoring Amazon RDS log
+     * files</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @param enabledCloudwatchLogsExports
      *        A list of log types that this DB instance is configured to export to CloudWatch Logs.</p>
      *        <p>
      *        Log types vary by DB engine. For information about the log types for each DB engine, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon RDS Database Log
-     *        Files</a> in the <i>Amazon RDS User Guide.</i>
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Monitoring Amazon RDS
+     *        log files</a> in the <i>Amazon RDS User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -4474,15 +4169,15 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates if the DB instance has deletion protection enabled. The database can't be deleted when deletion
+     * Indicates whether the DB instance has deletion protection enabled. The database can't be deleted when deletion
      * protection is enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      * Instance</a>.
      * </p>
      * 
      * @param deletionProtection
-     *        Indicates if the DB instance has deletion protection enabled. The database can't be deleted when deletion
-     *        protection is enabled. For more information, see <a
+     *        Indicates whether the DB instance has deletion protection enabled. The database can't be deleted when
+     *        deletion protection is enabled. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      *        Instance</a>.
      */
@@ -4493,14 +4188,14 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates if the DB instance has deletion protection enabled. The database can't be deleted when deletion
+     * Indicates whether the DB instance has deletion protection enabled. The database can't be deleted when deletion
      * protection is enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      * Instance</a>.
      * </p>
      * 
-     * @return Indicates if the DB instance has deletion protection enabled. The database can't be deleted when deletion
-     *         protection is enabled. For more information, see <a
+     * @return Indicates whether the DB instance has deletion protection enabled. The database can't be deleted when
+     *         deletion protection is enabled. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      *         Instance</a>.
      */
@@ -4511,15 +4206,15 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates if the DB instance has deletion protection enabled. The database can't be deleted when deletion
+     * Indicates whether the DB instance has deletion protection enabled. The database can't be deleted when deletion
      * protection is enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      * Instance</a>.
      * </p>
      * 
      * @param deletionProtection
-     *        Indicates if the DB instance has deletion protection enabled. The database can't be deleted when deletion
-     *        protection is enabled. For more information, see <a
+     *        Indicates whether the DB instance has deletion protection enabled. The database can't be deleted when
+     *        deletion protection is enabled. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      *        Instance</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -4532,14 +4227,14 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates if the DB instance has deletion protection enabled. The database can't be deleted when deletion
+     * Indicates whether the DB instance has deletion protection enabled. The database can't be deleted when deletion
      * protection is enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      * Instance</a>.
      * </p>
      * 
-     * @return Indicates if the DB instance has deletion protection enabled. The database can't be deleted when deletion
-     *         protection is enabled. For more information, see <a
+     * @return Indicates whether the DB instance has deletion protection enabled. The database can't be deleted when
+     *         deletion protection is enabled. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      *         Instance</a>.
      */
@@ -4623,11 +4318,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the listener connection endpoint for SQL Server Always On.
+     * The listener connection endpoint for SQL Server Always On.
      * </p>
      * 
      * @param listenerEndpoint
-     *        Specifies the listener connection endpoint for SQL Server Always On.
+     *        The listener connection endpoint for SQL Server Always On.
      */
 
     public void setListenerEndpoint(Endpoint listenerEndpoint) {
@@ -4636,10 +4331,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the listener connection endpoint for SQL Server Always On.
+     * The listener connection endpoint for SQL Server Always On.
      * </p>
      * 
-     * @return Specifies the listener connection endpoint for SQL Server Always On.
+     * @return The listener connection endpoint for SQL Server Always On.
      */
 
     public Endpoint getListenerEndpoint() {
@@ -4648,11 +4343,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the listener connection endpoint for SQL Server Always On.
+     * The listener connection endpoint for SQL Server Always On.
      * </p>
      * 
      * @param listenerEndpoint
-     *        Specifies the listener connection endpoint for SQL Server Always On.
+     *        The listener connection endpoint for SQL Server Always On.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -4838,7 +4533,7 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether a customer-owned IP address (CoIP) is enabled for an RDS on Outposts DB instance.
+     * Indicates whether a customer-owned IP address (CoIP) is enabled for an RDS on Outposts DB instance.
      * </p>
      * <p>
      * A <i>CoIP </i>provides local or external connectivity to resources in your Outpost subnets through your
@@ -4857,7 +4552,7 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      * 
      * @param customerOwnedIpEnabled
-     *        Specifies whether a customer-owned IP address (CoIP) is enabled for an RDS on Outposts DB instance.</p>
+     *        Indicates whether a customer-owned IP address (CoIP) is enabled for an RDS on Outposts DB instance.</p>
      *        <p>
      *        A <i>CoIP </i>provides local or external connectivity to resources in your Outpost subnets through your
      *        on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB
@@ -4880,7 +4575,7 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether a customer-owned IP address (CoIP) is enabled for an RDS on Outposts DB instance.
+     * Indicates whether a customer-owned IP address (CoIP) is enabled for an RDS on Outposts DB instance.
      * </p>
      * <p>
      * A <i>CoIP </i>provides local or external connectivity to resources in your Outpost subnets through your
@@ -4898,7 +4593,7 @@ public class DBInstance implements Serializable, Cloneable {
      * addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      * </p>
      * 
-     * @return Specifies whether a customer-owned IP address (CoIP) is enabled for an RDS on Outposts DB instance.</p>
+     * @return Indicates whether a customer-owned IP address (CoIP) is enabled for an RDS on Outposts DB instance.</p>
      *         <p>
      *         A <i>CoIP </i>provides local or external connectivity to resources in your Outpost subnets through your
      *         on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB
@@ -4921,7 +4616,7 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether a customer-owned IP address (CoIP) is enabled for an RDS on Outposts DB instance.
+     * Indicates whether a customer-owned IP address (CoIP) is enabled for an RDS on Outposts DB instance.
      * </p>
      * <p>
      * A <i>CoIP </i>provides local or external connectivity to resources in your Outpost subnets through your
@@ -4940,7 +4635,7 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      * 
      * @param customerOwnedIpEnabled
-     *        Specifies whether a customer-owned IP address (CoIP) is enabled for an RDS on Outposts DB instance.</p>
+     *        Indicates whether a customer-owned IP address (CoIP) is enabled for an RDS on Outposts DB instance.</p>
      *        <p>
      *        A <i>CoIP </i>provides local or external connectivity to resources in your Outpost subnets through your
      *        on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB
@@ -4965,7 +4660,7 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether a customer-owned IP address (CoIP) is enabled for an RDS on Outposts DB instance.
+     * Indicates whether a customer-owned IP address (CoIP) is enabled for an RDS on Outposts DB instance.
      * </p>
      * <p>
      * A <i>CoIP </i>provides local or external connectivity to resources in your Outpost subnets through your
@@ -4983,7 +4678,7 @@ public class DBInstance implements Serializable, Cloneable {
      * addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      * </p>
      * 
-     * @return Specifies whether a customer-owned IP address (CoIP) is enabled for an RDS on Outposts DB instance.</p>
+     * @return Indicates whether a customer-owned IP address (CoIP) is enabled for an RDS on Outposts DB instance.</p>
      *         <p>
      *         A <i>CoIP </i>provides local or external connectivity to resources in your Outpost subnets through your
      *         on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB
@@ -5613,12 +5308,12 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies where automated backups and manual snapshots are stored: Amazon Web Services Outposts or the Amazon Web
-     * Services Region.
+     * The location where automated backups and manual snapshots are stored: Amazon Web Services Outposts or the Amazon
+     * Web Services Region.
      * </p>
      * 
      * @param backupTarget
-     *        Specifies where automated backups and manual snapshots are stored: Amazon Web Services Outposts or the
+     *        The location where automated backups and manual snapshots are stored: Amazon Web Services Outposts or the
      *        Amazon Web Services Region.
      */
 
@@ -5628,11 +5323,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies where automated backups and manual snapshots are stored: Amazon Web Services Outposts or the Amazon Web
-     * Services Region.
+     * The location where automated backups and manual snapshots are stored: Amazon Web Services Outposts or the Amazon
+     * Web Services Region.
      * </p>
      * 
-     * @return Specifies where automated backups and manual snapshots are stored: Amazon Web Services Outposts or the
+     * @return The location where automated backups and manual snapshots are stored: Amazon Web Services Outposts or the
      *         Amazon Web Services Region.
      */
 
@@ -5642,12 +5337,12 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies where automated backups and manual snapshots are stored: Amazon Web Services Outposts or the Amazon Web
-     * Services Region.
+     * The location where automated backups and manual snapshots are stored: Amazon Web Services Outposts or the Amazon
+     * Web Services Region.
      * </p>
      * 
      * @param backupTarget
-     *        Specifies where automated backups and manual snapshots are stored: Amazon Web Services Outposts or the
+     *        The location where automated backups and manual snapshots are stored: Amazon Web Services Outposts or the
      *        Amazon Web Services Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -5662,21 +5357,6 @@ public class DBInstance implements Serializable, Cloneable {
      * The network type of the DB instance.
      * </p>
      * <p>
-     * Valid values:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>IPV4</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>DUAL</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
      * The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A
      * <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (
      * <code>DUAL</code>).
@@ -5688,24 +5368,12 @@ public class DBInstance implements Serializable, Cloneable {
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
      * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
+     * <p>
+     * Valid Values: <code>IPV4 | DUAL</code>
+     * </p>
      * 
      * @param networkType
      *        The network type of the DB instance.</p>
-     *        <p>
-     *        Valid values:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>IPV4</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>DUAL</code>
-     *        </p>
-     *        </li>
-     *        </ul>
      *        <p>
      *        The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A
      *        <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (
@@ -5717,6 +5385,9 @@ public class DBInstance implements Serializable, Cloneable {
      *        Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i> and <a href=
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
      *        Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     *        </p>
+     *        <p>
+     *        Valid Values: <code>IPV4 | DUAL</code>
      */
 
     public void setNetworkType(String networkType) {
@@ -5728,21 +5399,6 @@ public class DBInstance implements Serializable, Cloneable {
      * The network type of the DB instance.
      * </p>
      * <p>
-     * Valid values:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>IPV4</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>DUAL</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
      * The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A
      * <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (
      * <code>DUAL</code>).
@@ -5754,23 +5410,11 @@ public class DBInstance implements Serializable, Cloneable {
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
      * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
+     * <p>
+     * Valid Values: <code>IPV4 | DUAL</code>
+     * </p>
      * 
      * @return The network type of the DB instance.</p>
-     *         <p>
-     *         Valid values:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>IPV4</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>DUAL</code>
-     *         </p>
-     *         </li>
-     *         </ul>
      *         <p>
      *         The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A
      *         <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (
@@ -5782,6 +5426,9 @@ public class DBInstance implements Serializable, Cloneable {
      *         Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i> and <a href=
      *         "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"
      *         > Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     *         </p>
+     *         <p>
+     *         Valid Values: <code>IPV4 | DUAL</code>
      */
 
     public String getNetworkType() {
@@ -5792,21 +5439,6 @@ public class DBInstance implements Serializable, Cloneable {
      * <p>
      * The network type of the DB instance.
      * </p>
-     * <p>
-     * Valid values:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>IPV4</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>DUAL</code>
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A
      * <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (
@@ -5819,24 +5451,12 @@ public class DBInstance implements Serializable, Cloneable {
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
      * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
+     * <p>
+     * Valid Values: <code>IPV4 | DUAL</code>
+     * </p>
      * 
      * @param networkType
      *        The network type of the DB instance.</p>
-     *        <p>
-     *        Valid values:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>IPV4</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>DUAL</code>
-     *        </p>
-     *        </li>
-     *        </ul>
      *        <p>
      *        The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A
      *        <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (
@@ -5848,6 +5468,9 @@ public class DBInstance implements Serializable, Cloneable {
      *        Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i> and <a href=
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
      *        Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     *        </p>
+     *        <p>
+     *        Valid Values: <code>IPV4 | DUAL</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -5917,14 +5540,14 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the storage throughput for the DB instance.
+     * The storage throughput for the DB instance.
      * </p>
      * <p>
      * This setting applies only to the <code>gp3</code> storage type.
      * </p>
      * 
      * @param storageThroughput
-     *        Specifies the storage throughput for the DB instance.</p>
+     *        The storage throughput for the DB instance.</p>
      *        <p>
      *        This setting applies only to the <code>gp3</code> storage type.
      */
@@ -5935,13 +5558,13 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the storage throughput for the DB instance.
+     * The storage throughput for the DB instance.
      * </p>
      * <p>
      * This setting applies only to the <code>gp3</code> storage type.
      * </p>
      * 
-     * @return Specifies the storage throughput for the DB instance.</p>
+     * @return The storage throughput for the DB instance.</p>
      *         <p>
      *         This setting applies only to the <code>gp3</code> storage type.
      */
@@ -5952,14 +5575,14 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the storage throughput for the DB instance.
+     * The storage throughput for the DB instance.
      * </p>
      * <p>
      * This setting applies only to the <code>gp3</code> storage type.
      * </p>
      * 
      * @param storageThroughput
-     *        Specifies the storage throughput for the DB instance.</p>
+     *        The storage throughput for the DB instance.</p>
      *        <p>
      *        This setting applies only to the <code>gp3</code> storage type.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -5973,12 +5596,12 @@ public class DBInstance implements Serializable, Cloneable {
     /**
      * <p>
      * The Oracle system ID (Oracle SID) for a container database (CDB). The Oracle SID is also the name of the CDB.
-     * This setting is valid for RDS Custom only.
+     * This setting is only valid for RDS Custom DB instances.
      * </p>
      * 
      * @param dBSystemId
      *        The Oracle system ID (Oracle SID) for a container database (CDB). The Oracle SID is also the name of the
-     *        CDB. This setting is valid for RDS Custom only.
+     *        CDB. This setting is only valid for RDS Custom DB instances.
      */
 
     public void setDBSystemId(String dBSystemId) {
@@ -5988,11 +5611,11 @@ public class DBInstance implements Serializable, Cloneable {
     /**
      * <p>
      * The Oracle system ID (Oracle SID) for a container database (CDB). The Oracle SID is also the name of the CDB.
-     * This setting is valid for RDS Custom only.
+     * This setting is only valid for RDS Custom DB instances.
      * </p>
      * 
      * @return The Oracle system ID (Oracle SID) for a container database (CDB). The Oracle SID is also the name of the
-     *         CDB. This setting is valid for RDS Custom only.
+     *         CDB. This setting is only valid for RDS Custom DB instances.
      */
 
     public String getDBSystemId() {
@@ -6002,12 +5625,12 @@ public class DBInstance implements Serializable, Cloneable {
     /**
      * <p>
      * The Oracle system ID (Oracle SID) for a container database (CDB). The Oracle SID is also the name of the CDB.
-     * This setting is valid for RDS Custom only.
+     * This setting is only valid for RDS Custom DB instances.
      * </p>
      * 
      * @param dBSystemId
      *        The Oracle system ID (Oracle SID) for a container database (CDB). The Oracle SID is also the name of the
-     *        CDB. This setting is valid for RDS Custom only.
+     *        CDB. This setting is only valid for RDS Custom DB instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -6018,7 +5641,7 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the secret managed by RDS in Amazon Web Services Secrets Manager for the master user password.
+     * The secret managed by RDS in Amazon Web Services Secrets Manager for the master user password.
      * </p>
      * <p>
      * For more information, see <a
@@ -6027,8 +5650,7 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      * 
      * @param masterUserSecret
-     *        Contains the secret managed by RDS in Amazon Web Services Secrets Manager for the master user
-     *        password.</p>
+     *        The secret managed by RDS in Amazon Web Services Secrets Manager for the master user password.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management
@@ -6041,7 +5663,7 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the secret managed by RDS in Amazon Web Services Secrets Manager for the master user password.
+     * The secret managed by RDS in Amazon Web Services Secrets Manager for the master user password.
      * </p>
      * <p>
      * For more information, see <a
@@ -6049,8 +5671,7 @@ public class DBInstance implements Serializable, Cloneable {
      * Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
-     * @return Contains the secret managed by RDS in Amazon Web Services Secrets Manager for the master user
-     *         password.</p>
+     * @return The secret managed by RDS in Amazon Web Services Secrets Manager for the master user password.</p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password
@@ -6063,7 +5684,7 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the secret managed by RDS in Amazon Web Services Secrets Manager for the master user password.
+     * The secret managed by RDS in Amazon Web Services Secrets Manager for the master user password.
      * </p>
      * <p>
      * For more information, see <a
@@ -6072,8 +5693,7 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      * 
      * @param masterUserSecret
-     *        Contains the secret managed by RDS in Amazon Web Services Secrets Manager for the master user
-     *        password.</p>
+     *        The secret managed by RDS in Amazon Web Services Secrets Manager for the master user password.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management
@@ -6128,11 +5748,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the identifier of the source DB cluster if this DB instance is a read replica.
+     * The identifier of the source DB cluster if this DB instance is a read replica.
      * </p>
      * 
      * @param readReplicaSourceDBClusterIdentifier
-     *        Contains the identifier of the source DB cluster if this DB instance is a read replica.
+     *        The identifier of the source DB cluster if this DB instance is a read replica.
      */
 
     public void setReadReplicaSourceDBClusterIdentifier(String readReplicaSourceDBClusterIdentifier) {
@@ -6141,10 +5761,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the identifier of the source DB cluster if this DB instance is a read replica.
+     * The identifier of the source DB cluster if this DB instance is a read replica.
      * </p>
      * 
-     * @return Contains the identifier of the source DB cluster if this DB instance is a read replica.
+     * @return The identifier of the source DB cluster if this DB instance is a read replica.
      */
 
     public String getReadReplicaSourceDBClusterIdentifier() {
@@ -6153,17 +5773,253 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the identifier of the source DB cluster if this DB instance is a read replica.
+     * The identifier of the source DB cluster if this DB instance is a read replica.
      * </p>
      * 
      * @param readReplicaSourceDBClusterIdentifier
-     *        Contains the identifier of the source DB cluster if this DB instance is a read replica.
+     *        The identifier of the source DB cluster if this DB instance is a read replica.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DBInstance withReadReplicaSourceDBClusterIdentifier(String readReplicaSourceDBClusterIdentifier) {
         setReadReplicaSourceDBClusterIdentifier(readReplicaSourceDBClusterIdentifier);
         return this;
+    }
+
+    /**
+     * <p>
+     * The progress of the storage optimization operation as a percentage.
+     * </p>
+     * 
+     * @param percentProgress
+     *        The progress of the storage optimization operation as a percentage.
+     */
+
+    public void setPercentProgress(String percentProgress) {
+        this.percentProgress = percentProgress;
+    }
+
+    /**
+     * <p>
+     * The progress of the storage optimization operation as a percentage.
+     * </p>
+     * 
+     * @return The progress of the storage optimization operation as a percentage.
+     */
+
+    public String getPercentProgress() {
+        return this.percentProgress;
+    }
+
+    /**
+     * <p>
+     * The progress of the storage optimization operation as a percentage.
+     * </p>
+     * 
+     * @param percentProgress
+     *        The progress of the storage optimization operation as a percentage.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withPercentProgress(String percentProgress) {
+        setPercentProgress(percentProgress);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the DB instance has a dedicated log volume (DLV) enabled.
+     * </p>
+     * 
+     * @param dedicatedLogVolume
+     *        Indicates whether the DB instance has a dedicated log volume (DLV) enabled.
+     */
+
+    public void setDedicatedLogVolume(Boolean dedicatedLogVolume) {
+        this.dedicatedLogVolume = dedicatedLogVolume;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the DB instance has a dedicated log volume (DLV) enabled.
+     * </p>
+     * 
+     * @return Indicates whether the DB instance has a dedicated log volume (DLV) enabled.
+     */
+
+    public Boolean getDedicatedLogVolume() {
+        return this.dedicatedLogVolume;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the DB instance has a dedicated log volume (DLV) enabled.
+     * </p>
+     * 
+     * @param dedicatedLogVolume
+     *        Indicates whether the DB instance has a dedicated log volume (DLV) enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withDedicatedLogVolume(Boolean dedicatedLogVolume) {
+        setDedicatedLogVolume(dedicatedLogVolume);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the DB instance has a dedicated log volume (DLV) enabled.
+     * </p>
+     * 
+     * @return Indicates whether the DB instance has a dedicated log volume (DLV) enabled.
+     */
+
+    public Boolean isDedicatedLogVolume() {
+        return this.dedicatedLogVolume;
+    }
+
+    /**
+     * <p>
+     * Indicates whether an upgrade is recommended for the storage file system configuration on the DB instance. To
+     * migrate to the preferred configuration, you can either create a blue/green deployment, or create a read replica
+     * from the DB instance. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem"
+     * >Upgrading the storage file system for a DB instance</a>.
+     * </p>
+     * 
+     * @param isStorageConfigUpgradeAvailable
+     *        Indicates whether an upgrade is recommended for the storage file system configuration on the DB instance.
+     *        To migrate to the preferred configuration, you can either create a blue/green deployment, or create a read
+     *        replica from the DB instance. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem"
+     *        >Upgrading the storage file system for a DB instance</a>.
+     */
+
+    public void setIsStorageConfigUpgradeAvailable(Boolean isStorageConfigUpgradeAvailable) {
+        this.isStorageConfigUpgradeAvailable = isStorageConfigUpgradeAvailable;
+    }
+
+    /**
+     * <p>
+     * Indicates whether an upgrade is recommended for the storage file system configuration on the DB instance. To
+     * migrate to the preferred configuration, you can either create a blue/green deployment, or create a read replica
+     * from the DB instance. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem"
+     * >Upgrading the storage file system for a DB instance</a>.
+     * </p>
+     * 
+     * @return Indicates whether an upgrade is recommended for the storage file system configuration on the DB instance.
+     *         To migrate to the preferred configuration, you can either create a blue/green deployment, or create a
+     *         read replica from the DB instance. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem"
+     *         >Upgrading the storage file system for a DB instance</a>.
+     */
+
+    public Boolean getIsStorageConfigUpgradeAvailable() {
+        return this.isStorageConfigUpgradeAvailable;
+    }
+
+    /**
+     * <p>
+     * Indicates whether an upgrade is recommended for the storage file system configuration on the DB instance. To
+     * migrate to the preferred configuration, you can either create a blue/green deployment, or create a read replica
+     * from the DB instance. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem"
+     * >Upgrading the storage file system for a DB instance</a>.
+     * </p>
+     * 
+     * @param isStorageConfigUpgradeAvailable
+     *        Indicates whether an upgrade is recommended for the storage file system configuration on the DB instance.
+     *        To migrate to the preferred configuration, you can either create a blue/green deployment, or create a read
+     *        replica from the DB instance. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem"
+     *        >Upgrading the storage file system for a DB instance</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withIsStorageConfigUpgradeAvailable(Boolean isStorageConfigUpgradeAvailable) {
+        setIsStorageConfigUpgradeAvailable(isStorageConfigUpgradeAvailable);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether an upgrade is recommended for the storage file system configuration on the DB instance. To
+     * migrate to the preferred configuration, you can either create a blue/green deployment, or create a read replica
+     * from the DB instance. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem"
+     * >Upgrading the storage file system for a DB instance</a>.
+     * </p>
+     * 
+     * @return Indicates whether an upgrade is recommended for the storage file system configuration on the DB instance.
+     *         To migrate to the preferred configuration, you can either create a blue/green deployment, or create a
+     *         read replica from the DB instance. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem"
+     *         >Upgrading the storage file system for a DB instance</a>.
+     */
+
+    public Boolean isStorageConfigUpgradeAvailable() {
+        return this.isStorageConfigUpgradeAvailable;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the DB instance is in the multi-tenant configuration (TRUE) or the single-tenant configuration
+     * (FALSE).
+     * </p>
+     * 
+     * @param multiTenant
+     *        Specifies whether the DB instance is in the multi-tenant configuration (TRUE) or the single-tenant
+     *        configuration (FALSE).
+     */
+
+    public void setMultiTenant(Boolean multiTenant) {
+        this.multiTenant = multiTenant;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the DB instance is in the multi-tenant configuration (TRUE) or the single-tenant configuration
+     * (FALSE).
+     * </p>
+     * 
+     * @return Specifies whether the DB instance is in the multi-tenant configuration (TRUE) or the single-tenant
+     *         configuration (FALSE).
+     */
+
+    public Boolean getMultiTenant() {
+        return this.multiTenant;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the DB instance is in the multi-tenant configuration (TRUE) or the single-tenant configuration
+     * (FALSE).
+     * </p>
+     * 
+     * @param multiTenant
+     *        Specifies whether the DB instance is in the multi-tenant configuration (TRUE) or the single-tenant
+     *        configuration (FALSE).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withMultiTenant(Boolean multiTenant) {
+        setMultiTenant(multiTenant);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the DB instance is in the multi-tenant configuration (TRUE) or the single-tenant configuration
+     * (FALSE).
+     * </p>
+     * 
+     * @return Specifies whether the DB instance is in the multi-tenant configuration (TRUE) or the single-tenant
+     *         configuration (FALSE).
+     */
+
+    public Boolean isMultiTenant() {
+        return this.multiTenant;
     }
 
     /**
@@ -6339,7 +6195,15 @@ public class DBInstance implements Serializable, Cloneable {
         if (getCertificateDetails() != null)
             sb.append("CertificateDetails: ").append(getCertificateDetails()).append(",");
         if (getReadReplicaSourceDBClusterIdentifier() != null)
-            sb.append("ReadReplicaSourceDBClusterIdentifier: ").append(getReadReplicaSourceDBClusterIdentifier());
+            sb.append("ReadReplicaSourceDBClusterIdentifier: ").append(getReadReplicaSourceDBClusterIdentifier()).append(",");
+        if (getPercentProgress() != null)
+            sb.append("PercentProgress: ").append(getPercentProgress()).append(",");
+        if (getDedicatedLogVolume() != null)
+            sb.append("DedicatedLogVolume: ").append(getDedicatedLogVolume()).append(",");
+        if (getIsStorageConfigUpgradeAvailable() != null)
+            sb.append("IsStorageConfigUpgradeAvailable: ").append(getIsStorageConfigUpgradeAvailable()).append(",");
+        if (getMultiTenant() != null)
+            sb.append("MultiTenant: ").append(getMultiTenant());
         sb.append("}");
         return sb.toString();
     }
@@ -6688,6 +6552,23 @@ public class DBInstance implements Serializable, Cloneable {
         if (other.getReadReplicaSourceDBClusterIdentifier() != null
                 && other.getReadReplicaSourceDBClusterIdentifier().equals(this.getReadReplicaSourceDBClusterIdentifier()) == false)
             return false;
+        if (other.getPercentProgress() == null ^ this.getPercentProgress() == null)
+            return false;
+        if (other.getPercentProgress() != null && other.getPercentProgress().equals(this.getPercentProgress()) == false)
+            return false;
+        if (other.getDedicatedLogVolume() == null ^ this.getDedicatedLogVolume() == null)
+            return false;
+        if (other.getDedicatedLogVolume() != null && other.getDedicatedLogVolume().equals(this.getDedicatedLogVolume()) == false)
+            return false;
+        if (other.getIsStorageConfigUpgradeAvailable() == null ^ this.getIsStorageConfigUpgradeAvailable() == null)
+            return false;
+        if (other.getIsStorageConfigUpgradeAvailable() != null
+                && other.getIsStorageConfigUpgradeAvailable().equals(this.getIsStorageConfigUpgradeAvailable()) == false)
+            return false;
+        if (other.getMultiTenant() == null ^ this.getMultiTenant() == null)
+            return false;
+        if (other.getMultiTenant() != null && other.getMultiTenant().equals(this.getMultiTenant()) == false)
+            return false;
         return true;
     }
 
@@ -6778,6 +6659,10 @@ public class DBInstance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getMasterUserSecret() == null) ? 0 : getMasterUserSecret().hashCode());
         hashCode = prime * hashCode + ((getCertificateDetails() == null) ? 0 : getCertificateDetails().hashCode());
         hashCode = prime * hashCode + ((getReadReplicaSourceDBClusterIdentifier() == null) ? 0 : getReadReplicaSourceDBClusterIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getPercentProgress() == null) ? 0 : getPercentProgress().hashCode());
+        hashCode = prime * hashCode + ((getDedicatedLogVolume() == null) ? 0 : getDedicatedLogVolume().hashCode());
+        hashCode = prime * hashCode + ((getIsStorageConfigUpgradeAvailable() == null) ? 0 : getIsStorageConfigUpgradeAvailable().hashCode());
+        hashCode = prime * hashCode + ((getMultiTenant() == null) ? 0 : getMultiTenant().hashCode());
         return hashCode;
     }
 

@@ -20,7 +20,13 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ComponentStatus {
 
-    ACTIVATED("ACTIVATED");
+    ACTIVATED("ACTIVATED"),
+    STARTING("STARTING"),
+    STOPPED("STOPPED"),
+    STOPPING("STOPPING"),
+    RUNNING("RUNNING"),
+    RUNNING_WITH_ERROR("RUNNING_WITH_ERROR"),
+    UNDEFINED("UNDEFINED");
 
     private String value;
 

@@ -39,6 +39,8 @@ public class ListPhoneNumbersSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PhoneNumberType").build();
     private static final MarshallingInfo<String> TARGETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("TargetArn").build();
+    private static final MarshallingInfo<String> INSTANCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceId").build();
 
     private static final ListPhoneNumbersSummaryMarshaller instance = new ListPhoneNumbersSummaryMarshaller();
 
@@ -62,6 +64,7 @@ public class ListPhoneNumbersSummaryMarshaller {
             protocolMarshaller.marshall(listPhoneNumbersSummary.getPhoneNumberCountryCode(), PHONENUMBERCOUNTRYCODE_BINDING);
             protocolMarshaller.marshall(listPhoneNumbersSummary.getPhoneNumberType(), PHONENUMBERTYPE_BINDING);
             protocolMarshaller.marshall(listPhoneNumbersSummary.getTargetArn(), TARGETARN_BINDING);
+            protocolMarshaller.marshall(listPhoneNumbersSummary.getInstanceId(), INSTANCEID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

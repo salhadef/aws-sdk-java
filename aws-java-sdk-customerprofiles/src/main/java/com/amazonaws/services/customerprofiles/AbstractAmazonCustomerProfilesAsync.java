@@ -41,6 +41,21 @@ public class AbstractAmazonCustomerProfilesAsync extends AbstractAmazonCustomerP
     }
 
     @Override
+    public java.util.concurrent.Future<CreateCalculatedAttributeDefinitionResult> createCalculatedAttributeDefinitionAsync(
+            CreateCalculatedAttributeDefinitionRequest request) {
+
+        return createCalculatedAttributeDefinitionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCalculatedAttributeDefinitionResult> createCalculatedAttributeDefinitionAsync(
+            CreateCalculatedAttributeDefinitionRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateCalculatedAttributeDefinitionRequest, CreateCalculatedAttributeDefinitionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDomainResult> createDomainAsync(CreateDomainRequest request) {
 
         return createDomainAsync(request, null);
@@ -49,6 +64,19 @@ public class AbstractAmazonCustomerProfilesAsync extends AbstractAmazonCustomerP
     @Override
     public java.util.concurrent.Future<CreateDomainResult> createDomainAsync(CreateDomainRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateDomainRequest, CreateDomainResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateEventStreamResult> createEventStreamAsync(CreateEventStreamRequest request) {
+
+        return createEventStreamAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateEventStreamResult> createEventStreamAsync(CreateEventStreamRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateEventStreamRequest, CreateEventStreamResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -80,6 +108,21 @@ public class AbstractAmazonCustomerProfilesAsync extends AbstractAmazonCustomerP
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteCalculatedAttributeDefinitionResult> deleteCalculatedAttributeDefinitionAsync(
+            DeleteCalculatedAttributeDefinitionRequest request) {
+
+        return deleteCalculatedAttributeDefinitionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCalculatedAttributeDefinitionResult> deleteCalculatedAttributeDefinitionAsync(
+            DeleteCalculatedAttributeDefinitionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteCalculatedAttributeDefinitionRequest, DeleteCalculatedAttributeDefinitionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDomainResult> deleteDomainAsync(DeleteDomainRequest request) {
 
         return deleteDomainAsync(request, null);
@@ -88,6 +131,19 @@ public class AbstractAmazonCustomerProfilesAsync extends AbstractAmazonCustomerP
     @Override
     public java.util.concurrent.Future<DeleteDomainResult> deleteDomainAsync(DeleteDomainRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteDomainRequest, DeleteDomainResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEventStreamResult> deleteEventStreamAsync(DeleteEventStreamRequest request) {
+
+        return deleteEventStreamAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEventStreamResult> deleteEventStreamAsync(DeleteEventStreamRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteEventStreamRequest, DeleteEventStreamResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -184,6 +240,36 @@ public class AbstractAmazonCustomerProfilesAsync extends AbstractAmazonCustomerP
     }
 
     @Override
+    public java.util.concurrent.Future<GetCalculatedAttributeDefinitionResult> getCalculatedAttributeDefinitionAsync(
+            GetCalculatedAttributeDefinitionRequest request) {
+
+        return getCalculatedAttributeDefinitionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCalculatedAttributeDefinitionResult> getCalculatedAttributeDefinitionAsync(
+            GetCalculatedAttributeDefinitionRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetCalculatedAttributeDefinitionRequest, GetCalculatedAttributeDefinitionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCalculatedAttributeForProfileResult> getCalculatedAttributeForProfileAsync(
+            GetCalculatedAttributeForProfileRequest request) {
+
+        return getCalculatedAttributeForProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCalculatedAttributeForProfileResult> getCalculatedAttributeForProfileAsync(
+            GetCalculatedAttributeForProfileRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetCalculatedAttributeForProfileRequest, GetCalculatedAttributeForProfileResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetDomainResult> getDomainAsync(GetDomainRequest request) {
 
         return getDomainAsync(request, null);
@@ -192,6 +278,19 @@ public class AbstractAmazonCustomerProfilesAsync extends AbstractAmazonCustomerP
     @Override
     public java.util.concurrent.Future<GetDomainResult> getDomainAsync(GetDomainRequest request,
             com.amazonaws.handlers.AsyncHandler<GetDomainRequest, GetDomainResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEventStreamResult> getEventStreamAsync(GetEventStreamRequest request) {
+
+        return getEventStreamAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEventStreamResult> getEventStreamAsync(GetEventStreamRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetEventStreamRequest, GetEventStreamResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -262,6 +361,19 @@ public class AbstractAmazonCustomerProfilesAsync extends AbstractAmazonCustomerP
     }
 
     @Override
+    public java.util.concurrent.Future<GetSimilarProfilesResult> getSimilarProfilesAsync(GetSimilarProfilesRequest request) {
+
+        return getSimilarProfilesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSimilarProfilesResult> getSimilarProfilesAsync(GetSimilarProfilesRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetSimilarProfilesRequest, GetSimilarProfilesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetWorkflowResult> getWorkflowAsync(GetWorkflowRequest request) {
 
         return getWorkflowAsync(request, null);
@@ -301,6 +413,36 @@ public class AbstractAmazonCustomerProfilesAsync extends AbstractAmazonCustomerP
     }
 
     @Override
+    public java.util.concurrent.Future<ListCalculatedAttributeDefinitionsResult> listCalculatedAttributeDefinitionsAsync(
+            ListCalculatedAttributeDefinitionsRequest request) {
+
+        return listCalculatedAttributeDefinitionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCalculatedAttributeDefinitionsResult> listCalculatedAttributeDefinitionsAsync(
+            ListCalculatedAttributeDefinitionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListCalculatedAttributeDefinitionsRequest, ListCalculatedAttributeDefinitionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCalculatedAttributesForProfileResult> listCalculatedAttributesForProfileAsync(
+            ListCalculatedAttributesForProfileRequest request) {
+
+        return listCalculatedAttributesForProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCalculatedAttributesForProfileResult> listCalculatedAttributesForProfileAsync(
+            ListCalculatedAttributesForProfileRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListCalculatedAttributesForProfileRequest, ListCalculatedAttributesForProfileResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDomainsResult> listDomainsAsync(ListDomainsRequest request) {
 
         return listDomainsAsync(request, null);
@@ -309,6 +451,19 @@ public class AbstractAmazonCustomerProfilesAsync extends AbstractAmazonCustomerP
     @Override
     public java.util.concurrent.Future<ListDomainsResult> listDomainsAsync(ListDomainsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListDomainsRequest, ListDomainsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEventStreamsResult> listEventStreamsAsync(ListEventStreamsRequest request) {
+
+        return listEventStreamsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEventStreamsResult> listEventStreamsAsync(ListEventStreamsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListEventStreamsRequest, ListEventStreamsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -374,6 +529,19 @@ public class AbstractAmazonCustomerProfilesAsync extends AbstractAmazonCustomerP
     @Override
     public java.util.concurrent.Future<ListProfileObjectsResult> listProfileObjectsAsync(ListProfileObjectsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListProfileObjectsRequest, ListProfileObjectsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRuleBasedMatchesResult> listRuleBasedMatchesAsync(ListRuleBasedMatchesRequest request) {
+
+        return listRuleBasedMatchesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRuleBasedMatchesResult> listRuleBasedMatchesAsync(ListRuleBasedMatchesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListRuleBasedMatchesRequest, ListRuleBasedMatchesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -491,6 +659,21 @@ public class AbstractAmazonCustomerProfilesAsync extends AbstractAmazonCustomerP
     @Override
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCalculatedAttributeDefinitionResult> updateCalculatedAttributeDefinitionAsync(
+            UpdateCalculatedAttributeDefinitionRequest request) {
+
+        return updateCalculatedAttributeDefinitionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCalculatedAttributeDefinitionResult> updateCalculatedAttributeDefinitionAsync(
+            UpdateCalculatedAttributeDefinitionRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateCalculatedAttributeDefinitionRequest, UpdateCalculatedAttributeDefinitionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

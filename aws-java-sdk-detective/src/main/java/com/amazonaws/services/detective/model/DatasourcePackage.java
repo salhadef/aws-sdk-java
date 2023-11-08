@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum DatasourcePackage {
 
     DETECTIVE_CORE("DETECTIVE_CORE"),
-    EKS_AUDIT("EKS_AUDIT");
+    EKS_AUDIT("EKS_AUDIT"),
+    ASFF_SECURITYHUB_FINDING("ASFF_SECURITYHUB_FINDING");
 
     private String value;
 

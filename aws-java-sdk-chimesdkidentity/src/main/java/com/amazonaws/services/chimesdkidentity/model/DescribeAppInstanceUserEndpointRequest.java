@@ -131,9 +131,9 @@ public class DescribeAppInstanceUserEndpointRequest extends com.amazonaws.Amazon
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAppInstanceUserArn() != null)
-            sb.append("AppInstanceUserArn: ").append("***Sensitive Data Redacted***").append(",");
+            sb.append("AppInstanceUserArn: ").append(getAppInstanceUserArn()).append(",");
         if (getEndpointId() != null)
-            sb.append("EndpointId: ").append("***Sensitive Data Redacted***");
+            sb.append("EndpointId: ").append(getEndpointId());
         sb.append("}");
         return sb.toString();
     }

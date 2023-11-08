@@ -52,6 +52,26 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      * <code>/images/daily-ad.jpg</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>JA3Fingerprint</code>: Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character
+     * hash derived from the TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for
+     * the client's TLS configuration. You can use this choice only with a string match <code>ByteMatchStatement</code>
+     * with the <code>PositionalConstraint</code> set to <code>EXACTLY</code>.
+     * </p>
+     * <p>
+     * You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the
+     * fingerprint, it includes it in the logs. For information about the logging fields, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF
+     * Developer Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HeaderOrder</code>: The list of header names to match for. WAF creates a string that contains the ordered
+     * list of header names, from the headers in the web request, and then matches against that string.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that the value is case sensitive.
@@ -86,9 +106,11 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to
-     * bypass detection. If you specify one or more transformations in a rule statement, WAF performs all
-     * transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from
-     * the lowest priority setting, before inspecting the content for a match.
+     * bypass detection. Text transformations are used in rule match statements, to transform the
+     * <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements,
+     * to transform request components before using them as custom aggregation keys. If you specify one or more
+     * transformations to apply, WAF performs all transformations on the specified content, starting from the lowest
+     * priority setting, and then uses the transformed component contents.
      * </p>
      */
     private java.util.List<TextTransformation> textTransformations;
@@ -170,6 +192,26 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      * <code>/images/daily-ad.jpg</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>JA3Fingerprint</code>: Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character
+     * hash derived from the TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for
+     * the client's TLS configuration. You can use this choice only with a string match <code>ByteMatchStatement</code>
+     * with the <code>PositionalConstraint</code> set to <code>EXACTLY</code>.
+     * </p>
+     * <p>
+     * You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the
+     * fingerprint, it includes it in the logs. For information about the logging fields, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF
+     * Developer Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HeaderOrder</code>: The list of header names to match for. WAF creates a string that contains the ordered
+     * list of header names, from the headers in the web request, and then matches against that string.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that the value is case sensitive.
@@ -221,6 +263,26 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      *        <p>
      *        <code>UriPath</code>: The value that you want WAF to search for in the URI path, for example,
      *        <code>/images/daily-ad.jpg</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>JA3Fingerprint</code>: Match against the request's JA3 fingerprint. The JA3 fingerprint is a
+     *        32-character hash derived from the TLS Client Hello of an incoming request. This fingerprint serves as a
+     *        unique identifier for the client's TLS configuration. You can use this choice only with a string match
+     *        <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set to <code>EXACTLY</code>.
+     *        </p>
+     *        <p>
+     *        You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate
+     *        the fingerprint, it includes it in the logs. For information about the logging fields, see <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the
+     *        <i>WAF Developer Guide</i>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>HeaderOrder</code>: The list of header names to match for. WAF creates a string that contains the
+     *        ordered list of header names, from the headers in the web request, and then matches against that string.
      *        </p>
      *        </li>
      *        </ul>
@@ -273,6 +335,26 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      * <code>/images/daily-ad.jpg</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>JA3Fingerprint</code>: Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character
+     * hash derived from the TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for
+     * the client's TLS configuration. You can use this choice only with a string match <code>ByteMatchStatement</code>
+     * with the <code>PositionalConstraint</code> set to <code>EXACTLY</code>.
+     * </p>
+     * <p>
+     * You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the
+     * fingerprint, it includes it in the logs. For information about the logging fields, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF
+     * Developer Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HeaderOrder</code>: The list of header names to match for. WAF creates a string that contains the ordered
+     * list of header names, from the headers in the web request, and then matches against that string.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that the value is case sensitive.
@@ -320,6 +402,26 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      *         <p>
      *         <code>UriPath</code>: The value that you want WAF to search for in the URI path, for example,
      *         <code>/images/daily-ad.jpg</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>JA3Fingerprint</code>: Match against the request's JA3 fingerprint. The JA3 fingerprint is a
+     *         32-character hash derived from the TLS Client Hello of an incoming request. This fingerprint serves as a
+     *         unique identifier for the client's TLS configuration. You can use this choice only with a string match
+     *         <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set to <code>EXACTLY</code>.
+     *         </p>
+     *         <p>
+     *         You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate
+     *         the fingerprint, it includes it in the logs. For information about the logging fields, see <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the
+     *         <i>WAF Developer Guide</i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>HeaderOrder</code>: The list of header names to match for. WAF creates a string that contains the
+     *         ordered list of header names, from the headers in the web request, and then matches against that string.
      *         </p>
      *         </li>
      *         </ul>
@@ -370,6 +472,26 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      * <p>
      * <code>UriPath</code>: The value that you want WAF to search for in the URI path, for example,
      * <code>/images/daily-ad.jpg</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>JA3Fingerprint</code>: Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character
+     * hash derived from the TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for
+     * the client's TLS configuration. You can use this choice only with a string match <code>ByteMatchStatement</code>
+     * with the <code>PositionalConstraint</code> set to <code>EXACTLY</code>.
+     * </p>
+     * <p>
+     * You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the
+     * fingerprint, it includes it in the logs. For information about the logging fields, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF
+     * Developer Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HeaderOrder</code>: The list of header names to match for. WAF creates a string that contains the ordered
+     * list of header names, from the headers in the web request, and then matches against that string.
      * </p>
      * </li>
      * </ul>
@@ -423,6 +545,26 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      *        <p>
      *        <code>UriPath</code>: The value that you want WAF to search for in the URI path, for example,
      *        <code>/images/daily-ad.jpg</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>JA3Fingerprint</code>: Match against the request's JA3 fingerprint. The JA3 fingerprint is a
+     *        32-character hash derived from the TLS Client Hello of an incoming request. This fingerprint serves as a
+     *        unique identifier for the client's TLS configuration. You can use this choice only with a string match
+     *        <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set to <code>EXACTLY</code>.
+     *        </p>
+     *        <p>
+     *        You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate
+     *        the fingerprint, it includes it in the logs. For information about the logging fields, see <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the
+     *        <i>WAF Developer Guide</i>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>HeaderOrder</code>: The list of header names to match for. WAF creates a string that contains the
+     *        ordered list of header names, from the headers in the web request, and then matches against that string.
      *        </p>
      *        </li>
      *        </ul>
@@ -499,15 +641,19 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to
-     * bypass detection. If you specify one or more transformations in a rule statement, WAF performs all
-     * transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from
-     * the lowest priority setting, before inspecting the content for a match.
+     * bypass detection. Text transformations are used in rule match statements, to transform the
+     * <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements,
+     * to transform request components before using them as custom aggregation keys. If you specify one or more
+     * transformations to apply, WAF performs all transformations on the specified content, starting from the lowest
+     * priority setting, and then uses the transformed component contents.
      * </p>
      * 
      * @return Text transformations eliminate some of the unusual formatting that attackers use in web requests in an
-     *         effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs
-     *         all transformations on the content of the request component identified by <code>FieldToMatch</code>,
-     *         starting from the lowest priority setting, before inspecting the content for a match.
+     *         effort to bypass detection. Text transformations are used in rule match statements, to transform the
+     *         <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule
+     *         statements, to transform request components before using them as custom aggregation keys. If you specify
+     *         one or more transformations to apply, WAF performs all transformations on the specified content, starting
+     *         from the lowest priority setting, and then uses the transformed component contents.
      */
 
     public java.util.List<TextTransformation> getTextTransformations() {
@@ -517,16 +663,20 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to
-     * bypass detection. If you specify one or more transformations in a rule statement, WAF performs all
-     * transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from
-     * the lowest priority setting, before inspecting the content for a match.
+     * bypass detection. Text transformations are used in rule match statements, to transform the
+     * <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements,
+     * to transform request components before using them as custom aggregation keys. If you specify one or more
+     * transformations to apply, WAF performs all transformations on the specified content, starting from the lowest
+     * priority setting, and then uses the transformed component contents.
      * </p>
      * 
      * @param textTransformations
      *        Text transformations eliminate some of the unusual formatting that attackers use in web requests in an
-     *        effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs
-     *        all transformations on the content of the request component identified by <code>FieldToMatch</code>,
-     *        starting from the lowest priority setting, before inspecting the content for a match.
+     *        effort to bypass detection. Text transformations are used in rule match statements, to transform the
+     *        <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule
+     *        statements, to transform request components before using them as custom aggregation keys. If you specify
+     *        one or more transformations to apply, WAF performs all transformations on the specified content, starting
+     *        from the lowest priority setting, and then uses the transformed component contents.
      */
 
     public void setTextTransformations(java.util.Collection<TextTransformation> textTransformations) {
@@ -541,9 +691,11 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to
-     * bypass detection. If you specify one or more transformations in a rule statement, WAF performs all
-     * transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from
-     * the lowest priority setting, before inspecting the content for a match.
+     * bypass detection. Text transformations are used in rule match statements, to transform the
+     * <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements,
+     * to transform request components before using them as custom aggregation keys. If you specify one or more
+     * transformations to apply, WAF performs all transformations on the specified content, starting from the lowest
+     * priority setting, and then uses the transformed component contents.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -553,9 +705,11 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      * 
      * @param textTransformations
      *        Text transformations eliminate some of the unusual formatting that attackers use in web requests in an
-     *        effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs
-     *        all transformations on the content of the request component identified by <code>FieldToMatch</code>,
-     *        starting from the lowest priority setting, before inspecting the content for a match.
+     *        effort to bypass detection. Text transformations are used in rule match statements, to transform the
+     *        <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule
+     *        statements, to transform request components before using them as custom aggregation keys. If you specify
+     *        one or more transformations to apply, WAF performs all transformations on the specified content, starting
+     *        from the lowest priority setting, and then uses the transformed component contents.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -572,16 +726,20 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to
-     * bypass detection. If you specify one or more transformations in a rule statement, WAF performs all
-     * transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from
-     * the lowest priority setting, before inspecting the content for a match.
+     * bypass detection. Text transformations are used in rule match statements, to transform the
+     * <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements,
+     * to transform request components before using them as custom aggregation keys. If you specify one or more
+     * transformations to apply, WAF performs all transformations on the specified content, starting from the lowest
+     * priority setting, and then uses the transformed component contents.
      * </p>
      * 
      * @param textTransformations
      *        Text transformations eliminate some of the unusual formatting that attackers use in web requests in an
-     *        effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs
-     *        all transformations on the content of the request component identified by <code>FieldToMatch</code>,
-     *        starting from the lowest priority setting, before inspecting the content for a match.
+     *        effort to bypass detection. Text transformations are used in rule match statements, to transform the
+     *        <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule
+     *        statements, to transform request components before using them as custom aggregation keys. If you specify
+     *        one or more transformations to apply, WAF performs all transformations on the specified content, starting
+     *        from the lowest priority setting, and then uses the transformed component contents.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

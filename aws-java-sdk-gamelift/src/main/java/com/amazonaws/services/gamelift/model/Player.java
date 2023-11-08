@@ -364,7 +364,7 @@ public class Player implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPlayerId() != null)
-            sb.append("PlayerId: ").append(getPlayerId()).append(",");
+            sb.append("PlayerId: ").append("***Sensitive Data Redacted***").append(",");
         if (getPlayerAttributes() != null)
             sb.append("PlayerAttributes: ").append(getPlayerAttributes()).append(",");
         if (getTeam() != null)

@@ -79,6 +79,13 @@ public class GetQuantumTaskResult extends com.amazonaws.AmazonWebServiceResult<c
     private String quantumTaskArn;
     /**
      * <p>
+     * Queue information for the requested quantum task. Only returned if <code>QueueInfo</code> is specified in the
+     * <code>additionalAttributeNames"</code> field in the <code>GetQuantumTask</code> API request.
+     * </p>
+     */
+    private QuantumTaskQueueInfo queueInfo;
+    /**
+     * <p>
      * The number of shots used in the task.
      * </p>
      */
@@ -478,6 +485,52 @@ public class GetQuantumTaskResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
+     * Queue information for the requested quantum task. Only returned if <code>QueueInfo</code> is specified in the
+     * <code>additionalAttributeNames"</code> field in the <code>GetQuantumTask</code> API request.
+     * </p>
+     * 
+     * @param queueInfo
+     *        Queue information for the requested quantum task. Only returned if <code>QueueInfo</code> is specified in
+     *        the <code>additionalAttributeNames"</code> field in the <code>GetQuantumTask</code> API request.
+     */
+
+    public void setQueueInfo(QuantumTaskQueueInfo queueInfo) {
+        this.queueInfo = queueInfo;
+    }
+
+    /**
+     * <p>
+     * Queue information for the requested quantum task. Only returned if <code>QueueInfo</code> is specified in the
+     * <code>additionalAttributeNames"</code> field in the <code>GetQuantumTask</code> API request.
+     * </p>
+     * 
+     * @return Queue information for the requested quantum task. Only returned if <code>QueueInfo</code> is specified in
+     *         the <code>additionalAttributeNames"</code> field in the <code>GetQuantumTask</code> API request.
+     */
+
+    public QuantumTaskQueueInfo getQueueInfo() {
+        return this.queueInfo;
+    }
+
+    /**
+     * <p>
+     * Queue information for the requested quantum task. Only returned if <code>QueueInfo</code> is specified in the
+     * <code>additionalAttributeNames"</code> field in the <code>GetQuantumTask</code> API request.
+     * </p>
+     * 
+     * @param queueInfo
+     *        Queue information for the requested quantum task. Only returned if <code>QueueInfo</code> is specified in
+     *        the <code>additionalAttributeNames"</code> field in the <code>GetQuantumTask</code> API request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetQuantumTaskResult withQueueInfo(QuantumTaskQueueInfo queueInfo) {
+        setQueueInfo(queueInfo);
+        return this;
+    }
+
+    /**
+     * <p>
      * The number of shots used in the task.
      * </p>
      * 
@@ -673,6 +726,8 @@ public class GetQuantumTaskResult extends com.amazonaws.AmazonWebServiceResult<c
             sb.append("OutputS3Directory: ").append(getOutputS3Directory()).append(",");
         if (getQuantumTaskArn() != null)
             sb.append("QuantumTaskArn: ").append(getQuantumTaskArn()).append(",");
+        if (getQueueInfo() != null)
+            sb.append("QueueInfo: ").append(getQueueInfo()).append(",");
         if (getShots() != null)
             sb.append("Shots: ").append(getShots()).append(",");
         if (getStatus() != null)
@@ -729,6 +784,10 @@ public class GetQuantumTaskResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getQuantumTaskArn() != null && other.getQuantumTaskArn().equals(this.getQuantumTaskArn()) == false)
             return false;
+        if (other.getQueueInfo() == null ^ this.getQueueInfo() == null)
+            return false;
+        if (other.getQueueInfo() != null && other.getQueueInfo().equals(this.getQueueInfo()) == false)
+            return false;
         if (other.getShots() == null ^ this.getShots() == null)
             return false;
         if (other.getShots() != null && other.getShots().equals(this.getShots()) == false)
@@ -758,6 +817,7 @@ public class GetQuantumTaskResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getOutputS3Bucket() == null) ? 0 : getOutputS3Bucket().hashCode());
         hashCode = prime * hashCode + ((getOutputS3Directory() == null) ? 0 : getOutputS3Directory().hashCode());
         hashCode = prime * hashCode + ((getQuantumTaskArn() == null) ? 0 : getQuantumTaskArn().hashCode());
+        hashCode = prime * hashCode + ((getQueueInfo() == null) ? 0 : getQueueInfo().hashCode());
         hashCode = prime * hashCode + ((getShots() == null) ? 0 : getShots().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());

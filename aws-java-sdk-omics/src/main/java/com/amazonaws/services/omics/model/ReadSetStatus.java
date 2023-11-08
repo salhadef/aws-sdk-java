@@ -24,7 +24,9 @@ public enum ReadSetStatus {
     ACTIVATING("ACTIVATING"),
     ACTIVE("ACTIVE"),
     DELETING("DELETING"),
-    DELETED("DELETED");
+    DELETED("DELETED"),
+    PROCESSING_UPLOAD("PROCESSING_UPLOAD"),
+    UPLOAD_FAILED("UPLOAD_FAILED");
 
     private String value;
 

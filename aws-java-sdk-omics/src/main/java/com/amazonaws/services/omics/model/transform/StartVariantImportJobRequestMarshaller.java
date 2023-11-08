@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.omics.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -30,12 +31,14 @@ public class StartVariantImportJobRequestMarshaller {
 
     private static final MarshallingInfo<String> DESTINATIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("destinationName").build();
-    private static final MarshallingInfo<List> ITEMS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("items").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("roleArn").build();
+    private static final MarshallingInfo<List> ITEMS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("items").build();
     private static final MarshallingInfo<Boolean> RUNLEFTNORMALIZATION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("runLeftNormalization").build();
+    private static final MarshallingInfo<Map> ANNOTATIONFIELDS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("annotationFields").build();
 
     private static final StartVariantImportJobRequestMarshaller instance = new StartVariantImportJobRequestMarshaller();
 
@@ -54,9 +57,10 @@ public class StartVariantImportJobRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(startVariantImportJobRequest.getDestinationName(), DESTINATIONNAME_BINDING);
-            protocolMarshaller.marshall(startVariantImportJobRequest.getItems(), ITEMS_BINDING);
             protocolMarshaller.marshall(startVariantImportJobRequest.getRoleArn(), ROLEARN_BINDING);
+            protocolMarshaller.marshall(startVariantImportJobRequest.getItems(), ITEMS_BINDING);
             protocolMarshaller.marshall(startVariantImportJobRequest.getRunLeftNormalization(), RUNLEFTNORMALIZATION_BINDING);
+            protocolMarshaller.marshall(startVariantImportJobRequest.getAnnotationFields(), ANNOTATIONFIELDS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

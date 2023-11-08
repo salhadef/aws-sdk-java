@@ -27,7 +27,7 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -119,7 +119,7 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
      * <p>
-     * One or more VPC IDs.
+     * The IDs of the VPCs.
      * </p>
      * <p>
      * Default: Describes all your VPCs.
@@ -144,7 +144,7 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -233,7 +233,7 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      * </li>
      * </ul>
      * 
-     * @return One or more filters.</p>
+     * @return The filters.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -330,7 +330,7 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -420,7 +420,7 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -519,7 +519,7 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -614,7 +614,7 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -715,7 +715,7 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -805,7 +805,7 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -901,13 +901,13 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * One or more VPC IDs.
+     * The IDs of the VPCs.
      * </p>
      * <p>
      * Default: Describes all your VPCs.
      * </p>
      * 
-     * @return One or more VPC IDs.</p>
+     * @return The IDs of the VPCs.</p>
      *         <p>
      *         Default: Describes all your VPCs.
      */
@@ -921,14 +921,14 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * One or more VPC IDs.
+     * The IDs of the VPCs.
      * </p>
      * <p>
      * Default: Describes all your VPCs.
      * </p>
      * 
      * @param vpcIds
-     *        One or more VPC IDs.</p>
+     *        The IDs of the VPCs.</p>
      *        <p>
      *        Default: Describes all your VPCs.
      */
@@ -944,7 +944,7 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * One or more VPC IDs.
+     * The IDs of the VPCs.
      * </p>
      * <p>
      * Default: Describes all your VPCs.
@@ -956,7 +956,7 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param vpcIds
-     *        One or more VPC IDs.</p>
+     *        The IDs of the VPCs.</p>
      *        <p>
      *        Default: Describes all your VPCs.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -974,14 +974,14 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * One or more VPC IDs.
+     * The IDs of the VPCs.
      * </p>
      * <p>
      * Default: Describes all your VPCs.
      * </p>
      * 
      * @param vpcIds
-     *        One or more VPC IDs.</p>
+     *        The IDs of the VPCs.</p>
      *        <p>
      *        Default: Describes all your VPCs.
      * @return Returns a reference to this object so that method calls can be chained together.

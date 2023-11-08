@@ -37,7 +37,7 @@ public class GetEventDataStoreResult extends com.amazonaws.AmazonWebServiceResul
     private String name;
     /**
      * <p>
-     * The status of an event data store. Values can be <code>ENABLED</code> and <code>PENDING_DELETION</code>.
+     * The status of an event data store.
      * </p>
      */
     private String status;
@@ -49,7 +49,7 @@ public class GetEventDataStoreResult extends com.amazonaws.AmazonWebServiceResul
     private com.amazonaws.internal.SdkInternalList<AdvancedEventSelector> advancedEventSelectors;
     /**
      * <p>
-     * Indicates whether the event data store includes events from all regions, or only from the region in which it was
+     * Indicates whether the event data store includes events from all Regions, or only from the Region in which it was
      * created.
      * </p>
      */
@@ -178,11 +178,11 @@ public class GetEventDataStoreResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The status of an event data store. Values can be <code>ENABLED</code> and <code>PENDING_DELETION</code>.
+     * The status of an event data store.
      * </p>
      * 
      * @param status
-     *        The status of an event data store. Values can be <code>ENABLED</code> and <code>PENDING_DELETION</code>.
+     *        The status of an event data store.
      * @see EventDataStoreStatus
      */
 
@@ -192,10 +192,10 @@ public class GetEventDataStoreResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The status of an event data store. Values can be <code>ENABLED</code> and <code>PENDING_DELETION</code>.
+     * The status of an event data store.
      * </p>
      * 
-     * @return The status of an event data store. Values can be <code>ENABLED</code> and <code>PENDING_DELETION</code>.
+     * @return The status of an event data store.
      * @see EventDataStoreStatus
      */
 
@@ -205,11 +205,11 @@ public class GetEventDataStoreResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The status of an event data store. Values can be <code>ENABLED</code> and <code>PENDING_DELETION</code>.
+     * The status of an event data store.
      * </p>
      * 
      * @param status
-     *        The status of an event data store. Values can be <code>ENABLED</code> and <code>PENDING_DELETION</code>.
+     *        The status of an event data store.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventDataStoreStatus
      */
@@ -221,11 +221,11 @@ public class GetEventDataStoreResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The status of an event data store. Values can be <code>ENABLED</code> and <code>PENDING_DELETION</code>.
+     * The status of an event data store.
      * </p>
      * 
      * @param status
-     *        The status of an event data store. Values can be <code>ENABLED</code> and <code>PENDING_DELETION</code>.
+     *        The status of an event data store.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventDataStoreStatus
      */
@@ -310,12 +310,12 @@ public class GetEventDataStoreResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Indicates whether the event data store includes events from all regions, or only from the region in which it was
+     * Indicates whether the event data store includes events from all Regions, or only from the Region in which it was
      * created.
      * </p>
      * 
      * @param multiRegionEnabled
-     *        Indicates whether the event data store includes events from all regions, or only from the region in which
+     *        Indicates whether the event data store includes events from all Regions, or only from the Region in which
      *        it was created.
      */
 
@@ -325,11 +325,11 @@ public class GetEventDataStoreResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Indicates whether the event data store includes events from all regions, or only from the region in which it was
+     * Indicates whether the event data store includes events from all Regions, or only from the Region in which it was
      * created.
      * </p>
      * 
-     * @return Indicates whether the event data store includes events from all regions, or only from the region in which
+     * @return Indicates whether the event data store includes events from all Regions, or only from the Region in which
      *         it was created.
      */
 
@@ -339,12 +339,12 @@ public class GetEventDataStoreResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Indicates whether the event data store includes events from all regions, or only from the region in which it was
+     * Indicates whether the event data store includes events from all Regions, or only from the Region in which it was
      * created.
      * </p>
      * 
      * @param multiRegionEnabled
-     *        Indicates whether the event data store includes events from all regions, or only from the region in which
+     *        Indicates whether the event data store includes events from all Regions, or only from the Region in which
      *        it was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -356,11 +356,11 @@ public class GetEventDataStoreResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Indicates whether the event data store includes events from all regions, or only from the region in which it was
+     * Indicates whether the event data store includes events from all Regions, or only from the Region in which it was
      * created.
      * </p>
      * 
-     * @return Indicates whether the event data store includes events from all regions, or only from the region in which
+     * @return Indicates whether the event data store includes events from all Regions, or only from the Region in which
      *         it was created.
      */
 

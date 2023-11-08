@@ -27,10 +27,10 @@ public class ListReadSetExportJobsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A filter to apply to the list.
+     * The jobs' sequence store ID.
      * </p>
      */
-    private ExportReadSetFilter filter;
+    private String sequenceStoreId;
     /**
      * <p>
      * The maximum number of jobs to return in one page of results.
@@ -45,48 +45,48 @@ public class ListReadSetExportJobsRequest extends com.amazonaws.AmazonWebService
     private String nextToken;
     /**
      * <p>
+     * A filter to apply to the list.
+     * </p>
+     */
+    private ExportReadSetFilter filter;
+
+    /**
+     * <p>
      * The jobs' sequence store ID.
      * </p>
-     */
-    private String sequenceStoreId;
-
-    /**
-     * <p>
-     * A filter to apply to the list.
-     * </p>
      * 
-     * @param filter
-     *        A filter to apply to the list.
+     * @param sequenceStoreId
+     *        The jobs' sequence store ID.
      */
 
-    public void setFilter(ExportReadSetFilter filter) {
-        this.filter = filter;
+    public void setSequenceStoreId(String sequenceStoreId) {
+        this.sequenceStoreId = sequenceStoreId;
     }
 
     /**
      * <p>
-     * A filter to apply to the list.
+     * The jobs' sequence store ID.
      * </p>
      * 
-     * @return A filter to apply to the list.
+     * @return The jobs' sequence store ID.
      */
 
-    public ExportReadSetFilter getFilter() {
-        return this.filter;
+    public String getSequenceStoreId() {
+        return this.sequenceStoreId;
     }
 
     /**
      * <p>
-     * A filter to apply to the list.
+     * The jobs' sequence store ID.
      * </p>
      * 
-     * @param filter
-     *        A filter to apply to the list.
+     * @param sequenceStoreId
+     *        The jobs' sequence store ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListReadSetExportJobsRequest withFilter(ExportReadSetFilter filter) {
-        setFilter(filter);
+    public ListReadSetExportJobsRequest withSequenceStoreId(String sequenceStoreId) {
+        setSequenceStoreId(sequenceStoreId);
         return this;
     }
 
@@ -172,41 +172,41 @@ public class ListReadSetExportJobsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The jobs' sequence store ID.
+     * A filter to apply to the list.
      * </p>
      * 
-     * @param sequenceStoreId
-     *        The jobs' sequence store ID.
+     * @param filter
+     *        A filter to apply to the list.
      */
 
-    public void setSequenceStoreId(String sequenceStoreId) {
-        this.sequenceStoreId = sequenceStoreId;
+    public void setFilter(ExportReadSetFilter filter) {
+        this.filter = filter;
     }
 
     /**
      * <p>
-     * The jobs' sequence store ID.
+     * A filter to apply to the list.
      * </p>
      * 
-     * @return The jobs' sequence store ID.
+     * @return A filter to apply to the list.
      */
 
-    public String getSequenceStoreId() {
-        return this.sequenceStoreId;
+    public ExportReadSetFilter getFilter() {
+        return this.filter;
     }
 
     /**
      * <p>
-     * The jobs' sequence store ID.
+     * A filter to apply to the list.
      * </p>
      * 
-     * @param sequenceStoreId
-     *        The jobs' sequence store ID.
+     * @param filter
+     *        A filter to apply to the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListReadSetExportJobsRequest withSequenceStoreId(String sequenceStoreId) {
-        setSequenceStoreId(sequenceStoreId);
+    public ListReadSetExportJobsRequest withFilter(ExportReadSetFilter filter) {
+        setFilter(filter);
         return this;
     }
 
@@ -222,14 +222,14 @@ public class ListReadSetExportJobsRequest extends com.amazonaws.AmazonWebService
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getFilter() != null)
-            sb.append("Filter: ").append(getFilter()).append(",");
+        if (getSequenceStoreId() != null)
+            sb.append("SequenceStoreId: ").append(getSequenceStoreId()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
-        if (getSequenceStoreId() != null)
-            sb.append("SequenceStoreId: ").append(getSequenceStoreId());
+        if (getFilter() != null)
+            sb.append("Filter: ").append(getFilter());
         sb.append("}");
         return sb.toString();
     }
@@ -244,9 +244,9 @@ public class ListReadSetExportJobsRequest extends com.amazonaws.AmazonWebService
         if (obj instanceof ListReadSetExportJobsRequest == false)
             return false;
         ListReadSetExportJobsRequest other = (ListReadSetExportJobsRequest) obj;
-        if (other.getFilter() == null ^ this.getFilter() == null)
+        if (other.getSequenceStoreId() == null ^ this.getSequenceStoreId() == null)
             return false;
-        if (other.getFilter() != null && other.getFilter().equals(this.getFilter()) == false)
+        if (other.getSequenceStoreId() != null && other.getSequenceStoreId().equals(this.getSequenceStoreId()) == false)
             return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
@@ -256,9 +256,9 @@ public class ListReadSetExportJobsRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
-        if (other.getSequenceStoreId() == null ^ this.getSequenceStoreId() == null)
+        if (other.getFilter() == null ^ this.getFilter() == null)
             return false;
-        if (other.getSequenceStoreId() != null && other.getSequenceStoreId().equals(this.getSequenceStoreId()) == false)
+        if (other.getFilter() != null && other.getFilter().equals(this.getFilter()) == false)
             return false;
         return true;
     }
@@ -268,10 +268,10 @@ public class ListReadSetExportJobsRequest extends com.amazonaws.AmazonWebService
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getFilter() == null) ? 0 : getFilter().hashCode());
+        hashCode = prime * hashCode + ((getSequenceStoreId() == null) ? 0 : getSequenceStoreId().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
-        hashCode = prime * hashCode + ((getSequenceStoreId() == null) ? 0 : getSequenceStoreId().hashCode());
+        hashCode = prime * hashCode + ((getFilter() == null) ? 0 : getFilter().hashCode());
         return hashCode;
     }
 

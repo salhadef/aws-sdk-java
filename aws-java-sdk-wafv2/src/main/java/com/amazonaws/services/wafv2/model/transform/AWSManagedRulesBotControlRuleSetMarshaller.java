@@ -29,6 +29,8 @@ public class AWSManagedRulesBotControlRuleSetMarshaller {
 
     private static final MarshallingInfo<String> INSPECTIONLEVEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InspectionLevel").build();
+    private static final MarshallingInfo<Boolean> ENABLEMACHINELEARNING_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnableMachineLearning").build();
 
     private static final AWSManagedRulesBotControlRuleSetMarshaller instance = new AWSManagedRulesBotControlRuleSetMarshaller();
 
@@ -47,6 +49,7 @@ public class AWSManagedRulesBotControlRuleSetMarshaller {
 
         try {
             protocolMarshaller.marshall(aWSManagedRulesBotControlRuleSet.getInspectionLevel(), INSPECTIONLEVEL_BINDING);
+            protocolMarshaller.marshall(aWSManagedRulesBotControlRuleSet.getEnableMachineLearning(), ENABLEMACHINELEARNING_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

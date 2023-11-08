@@ -111,8 +111,8 @@ public class CreateCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
     private com.amazonaws.internal.SdkInternalList<String> exportableLogTypes;
     /**
      * <p>
-     * A value that indicates whether the engine version supports exporting the log types specified by
-     * ExportableLogTypes to CloudWatch Logs.
+     * Indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to
+     * CloudWatch Logs.
      * </p>
      */
     private Boolean supportsLogExportsToCloudwatchLogs;
@@ -162,13 +162,13 @@ public class CreateCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
     private String status;
     /**
      * <p>
-     * A value that indicates whether you can use Aurora parallel query with a specific DB engine version.
+     * Indicates whether you can use Aurora parallel query with a specific DB engine version.
      * </p>
      */
     private Boolean supportsParallelQuery;
     /**
      * <p>
-     * A value that indicates whether you can use Aurora global databases with a specific DB engine version.
+     * Indicates whether you can use Aurora global databases with a specific DB engine version.
      * </p>
      */
     private Boolean supportsGlobalDatabases;
@@ -214,7 +214,7 @@ public class CreateCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
     private com.amazonaws.internal.SdkInternalList<Tag> tagList;
     /**
      * <p>
-     * A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
+     * Indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
      * </p>
      */
     private Boolean supportsBabelfish;
@@ -231,8 +231,7 @@ public class CreateCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
     private String customDBEngineVersionManifest;
     /**
      * <p>
-     * A value that indicates whether the engine version supports rotating the server certificate without rebooting the
-     * DB instance.
+     * Indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.
      * </p>
      */
     private Boolean supportsCertificateRotationWithoutRestart;
@@ -249,6 +248,22 @@ public class CreateCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> supportedCACertificateIdentifiers;
+    /**
+     * <p>
+     * Indicates whether the DB engine version supports forwarding write operations from reader DB instances to the
+     * writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.
+     * </p>
+     * <p>
+     * Valid for: Aurora DB clusters only
+     * </p>
+     */
+    private Boolean supportsLocalWriteForwarding;
+    /**
+     * <p>
+     * Indicates whether the DB engine version supports Aurora zero-ETL integrations with Amazon Redshift.
+     * </p>
+     */
+    private Boolean supportsIntegrations;
 
     /**
      * <p>
@@ -973,13 +988,13 @@ public class CreateCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A value that indicates whether the engine version supports exporting the log types specified by
-     * ExportableLogTypes to CloudWatch Logs.
+     * Indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to
+     * CloudWatch Logs.
      * </p>
      * 
      * @param supportsLogExportsToCloudwatchLogs
-     *        A value that indicates whether the engine version supports exporting the log types specified by
-     *        ExportableLogTypes to CloudWatch Logs.
+     *        Indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to
+     *        CloudWatch Logs.
      */
 
     public void setSupportsLogExportsToCloudwatchLogs(Boolean supportsLogExportsToCloudwatchLogs) {
@@ -988,12 +1003,12 @@ public class CreateCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A value that indicates whether the engine version supports exporting the log types specified by
-     * ExportableLogTypes to CloudWatch Logs.
+     * Indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to
+     * CloudWatch Logs.
      * </p>
      * 
-     * @return A value that indicates whether the engine version supports exporting the log types specified by
-     *         ExportableLogTypes to CloudWatch Logs.
+     * @return Indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to
+     *         CloudWatch Logs.
      */
 
     public Boolean getSupportsLogExportsToCloudwatchLogs() {
@@ -1002,13 +1017,13 @@ public class CreateCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A value that indicates whether the engine version supports exporting the log types specified by
-     * ExportableLogTypes to CloudWatch Logs.
+     * Indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to
+     * CloudWatch Logs.
      * </p>
      * 
      * @param supportsLogExportsToCloudwatchLogs
-     *        A value that indicates whether the engine version supports exporting the log types specified by
-     *        ExportableLogTypes to CloudWatch Logs.
+     *        Indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to
+     *        CloudWatch Logs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1019,12 +1034,12 @@ public class CreateCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A value that indicates whether the engine version supports exporting the log types specified by
-     * ExportableLogTypes to CloudWatch Logs.
+     * Indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to
+     * CloudWatch Logs.
      * </p>
      * 
-     * @return A value that indicates whether the engine version supports exporting the log types specified by
-     *         ExportableLogTypes to CloudWatch Logs.
+     * @return Indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to
+     *         CloudWatch Logs.
      */
 
     public Boolean isSupportsLogExportsToCloudwatchLogs() {
@@ -1427,11 +1442,11 @@ public class CreateCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A value that indicates whether you can use Aurora parallel query with a specific DB engine version.
+     * Indicates whether you can use Aurora parallel query with a specific DB engine version.
      * </p>
      * 
      * @param supportsParallelQuery
-     *        A value that indicates whether you can use Aurora parallel query with a specific DB engine version.
+     *        Indicates whether you can use Aurora parallel query with a specific DB engine version.
      */
 
     public void setSupportsParallelQuery(Boolean supportsParallelQuery) {
@@ -1440,10 +1455,10 @@ public class CreateCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A value that indicates whether you can use Aurora parallel query with a specific DB engine version.
+     * Indicates whether you can use Aurora parallel query with a specific DB engine version.
      * </p>
      * 
-     * @return A value that indicates whether you can use Aurora parallel query with a specific DB engine version.
+     * @return Indicates whether you can use Aurora parallel query with a specific DB engine version.
      */
 
     public Boolean getSupportsParallelQuery() {
@@ -1452,11 +1467,11 @@ public class CreateCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A value that indicates whether you can use Aurora parallel query with a specific DB engine version.
+     * Indicates whether you can use Aurora parallel query with a specific DB engine version.
      * </p>
      * 
      * @param supportsParallelQuery
-     *        A value that indicates whether you can use Aurora parallel query with a specific DB engine version.
+     *        Indicates whether you can use Aurora parallel query with a specific DB engine version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1467,10 +1482,10 @@ public class CreateCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A value that indicates whether you can use Aurora parallel query with a specific DB engine version.
+     * Indicates whether you can use Aurora parallel query with a specific DB engine version.
      * </p>
      * 
-     * @return A value that indicates whether you can use Aurora parallel query with a specific DB engine version.
+     * @return Indicates whether you can use Aurora parallel query with a specific DB engine version.
      */
 
     public Boolean isSupportsParallelQuery() {
@@ -1479,11 +1494,11 @@ public class CreateCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A value that indicates whether you can use Aurora global databases with a specific DB engine version.
+     * Indicates whether you can use Aurora global databases with a specific DB engine version.
      * </p>
      * 
      * @param supportsGlobalDatabases
-     *        A value that indicates whether you can use Aurora global databases with a specific DB engine version.
+     *        Indicates whether you can use Aurora global databases with a specific DB engine version.
      */
 
     public void setSupportsGlobalDatabases(Boolean supportsGlobalDatabases) {
@@ -1492,10 +1507,10 @@ public class CreateCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A value that indicates whether you can use Aurora global databases with a specific DB engine version.
+     * Indicates whether you can use Aurora global databases with a specific DB engine version.
      * </p>
      * 
-     * @return A value that indicates whether you can use Aurora global databases with a specific DB engine version.
+     * @return Indicates whether you can use Aurora global databases with a specific DB engine version.
      */
 
     public Boolean getSupportsGlobalDatabases() {
@@ -1504,11 +1519,11 @@ public class CreateCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A value that indicates whether you can use Aurora global databases with a specific DB engine version.
+     * Indicates whether you can use Aurora global databases with a specific DB engine version.
      * </p>
      * 
      * @param supportsGlobalDatabases
-     *        A value that indicates whether you can use Aurora global databases with a specific DB engine version.
+     *        Indicates whether you can use Aurora global databases with a specific DB engine version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1519,10 +1534,10 @@ public class CreateCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A value that indicates whether you can use Aurora global databases with a specific DB engine version.
+     * Indicates whether you can use Aurora global databases with a specific DB engine version.
      * </p>
      * 
-     * @return A value that indicates whether you can use Aurora global databases with a specific DB engine version.
+     * @return Indicates whether you can use Aurora global databases with a specific DB engine version.
      */
 
     public Boolean isSupportsGlobalDatabases() {
@@ -1838,11 +1853,11 @@ public class CreateCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
+     * Indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
      * </p>
      * 
      * @param supportsBabelfish
-     *        A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
+     *        Indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
      */
 
     public void setSupportsBabelfish(Boolean supportsBabelfish) {
@@ -1851,10 +1866,10 @@ public class CreateCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
+     * Indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
      * </p>
      * 
-     * @return A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
+     * @return Indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
      */
 
     public Boolean getSupportsBabelfish() {
@@ -1863,11 +1878,11 @@ public class CreateCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
+     * Indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
      * </p>
      * 
      * @param supportsBabelfish
-     *        A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
+     *        Indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1878,10 +1893,10 @@ public class CreateCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
+     * Indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
      * </p>
      * 
-     * @return A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
+     * @return Indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
      */
 
     public Boolean isSupportsBabelfish() {
@@ -1960,13 +1975,12 @@ public class CreateCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A value that indicates whether the engine version supports rotating the server certificate without rebooting the
-     * DB instance.
+     * Indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.
      * </p>
      * 
      * @param supportsCertificateRotationWithoutRestart
-     *        A value that indicates whether the engine version supports rotating the server certificate without
-     *        rebooting the DB instance.
+     *        Indicates whether the engine version supports rotating the server certificate without rebooting the DB
+     *        instance.
      */
 
     public void setSupportsCertificateRotationWithoutRestart(Boolean supportsCertificateRotationWithoutRestart) {
@@ -1975,12 +1989,11 @@ public class CreateCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A value that indicates whether the engine version supports rotating the server certificate without rebooting the
-     * DB instance.
+     * Indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.
      * </p>
      * 
-     * @return A value that indicates whether the engine version supports rotating the server certificate without
-     *         rebooting the DB instance.
+     * @return Indicates whether the engine version supports rotating the server certificate without rebooting the DB
+     *         instance.
      */
 
     public Boolean getSupportsCertificateRotationWithoutRestart() {
@@ -1989,13 +2002,12 @@ public class CreateCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A value that indicates whether the engine version supports rotating the server certificate without rebooting the
-     * DB instance.
+     * Indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.
      * </p>
      * 
      * @param supportsCertificateRotationWithoutRestart
-     *        A value that indicates whether the engine version supports rotating the server certificate without
-     *        rebooting the DB instance.
+     *        Indicates whether the engine version supports rotating the server certificate without rebooting the DB
+     *        instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2006,12 +2018,11 @@ public class CreateCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A value that indicates whether the engine version supports rotating the server certificate without rebooting the
-     * DB instance.
+     * Indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.
      * </p>
      * 
-     * @return A value that indicates whether the engine version supports rotating the server certificate without
-     *         rebooting the DB instance.
+     * @return Indicates whether the engine version supports rotating the server certificate without rebooting the DB
+     *         instance.
      */
 
     public Boolean isSupportsCertificateRotationWithoutRestart() {
@@ -2144,6 +2155,142 @@ public class CreateCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * Indicates whether the DB engine version supports forwarding write operations from reader DB instances to the
+     * writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.
+     * </p>
+     * <p>
+     * Valid for: Aurora DB clusters only
+     * </p>
+     * 
+     * @param supportsLocalWriteForwarding
+     *        Indicates whether the DB engine version supports forwarding write operations from reader DB instances to
+     *        the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB
+     *        instances.</p>
+     *        <p>
+     *        Valid for: Aurora DB clusters only
+     */
+
+    public void setSupportsLocalWriteForwarding(Boolean supportsLocalWriteForwarding) {
+        this.supportsLocalWriteForwarding = supportsLocalWriteForwarding;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the DB engine version supports forwarding write operations from reader DB instances to the
+     * writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.
+     * </p>
+     * <p>
+     * Valid for: Aurora DB clusters only
+     * </p>
+     * 
+     * @return Indicates whether the DB engine version supports forwarding write operations from reader DB instances to
+     *         the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB
+     *         instances.</p>
+     *         <p>
+     *         Valid for: Aurora DB clusters only
+     */
+
+    public Boolean getSupportsLocalWriteForwarding() {
+        return this.supportsLocalWriteForwarding;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the DB engine version supports forwarding write operations from reader DB instances to the
+     * writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.
+     * </p>
+     * <p>
+     * Valid for: Aurora DB clusters only
+     * </p>
+     * 
+     * @param supportsLocalWriteForwarding
+     *        Indicates whether the DB engine version supports forwarding write operations from reader DB instances to
+     *        the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB
+     *        instances.</p>
+     *        <p>
+     *        Valid for: Aurora DB clusters only
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCustomDBEngineVersionResult withSupportsLocalWriteForwarding(Boolean supportsLocalWriteForwarding) {
+        setSupportsLocalWriteForwarding(supportsLocalWriteForwarding);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the DB engine version supports forwarding write operations from reader DB instances to the
+     * writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.
+     * </p>
+     * <p>
+     * Valid for: Aurora DB clusters only
+     * </p>
+     * 
+     * @return Indicates whether the DB engine version supports forwarding write operations from reader DB instances to
+     *         the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB
+     *         instances.</p>
+     *         <p>
+     *         Valid for: Aurora DB clusters only
+     */
+
+    public Boolean isSupportsLocalWriteForwarding() {
+        return this.supportsLocalWriteForwarding;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the DB engine version supports Aurora zero-ETL integrations with Amazon Redshift.
+     * </p>
+     * 
+     * @param supportsIntegrations
+     *        Indicates whether the DB engine version supports Aurora zero-ETL integrations with Amazon Redshift.
+     */
+
+    public void setSupportsIntegrations(Boolean supportsIntegrations) {
+        this.supportsIntegrations = supportsIntegrations;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the DB engine version supports Aurora zero-ETL integrations with Amazon Redshift.
+     * </p>
+     * 
+     * @return Indicates whether the DB engine version supports Aurora zero-ETL integrations with Amazon Redshift.
+     */
+
+    public Boolean getSupportsIntegrations() {
+        return this.supportsIntegrations;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the DB engine version supports Aurora zero-ETL integrations with Amazon Redshift.
+     * </p>
+     * 
+     * @param supportsIntegrations
+     *        Indicates whether the DB engine version supports Aurora zero-ETL integrations with Amazon Redshift.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCustomDBEngineVersionResult withSupportsIntegrations(Boolean supportsIntegrations) {
+        setSupportsIntegrations(supportsIntegrations);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the DB engine version supports Aurora zero-ETL integrations with Amazon Redshift.
+     * </p>
+     * 
+     * @return Indicates whether the DB engine version supports Aurora zero-ETL integrations with Amazon Redshift.
+     */
+
+    public Boolean isSupportsIntegrations() {
+        return this.supportsIntegrations;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2216,7 +2363,11 @@ public class CreateCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
         if (getSupportsCertificateRotationWithoutRestart() != null)
             sb.append("SupportsCertificateRotationWithoutRestart: ").append(getSupportsCertificateRotationWithoutRestart()).append(",");
         if (getSupportedCACertificateIdentifiers() != null)
-            sb.append("SupportedCACertificateIdentifiers: ").append(getSupportedCACertificateIdentifiers());
+            sb.append("SupportedCACertificateIdentifiers: ").append(getSupportedCACertificateIdentifiers()).append(",");
+        if (getSupportsLocalWriteForwarding() != null)
+            sb.append("SupportsLocalWriteForwarding: ").append(getSupportsLocalWriteForwarding()).append(",");
+        if (getSupportsIntegrations() != null)
+            sb.append("SupportsIntegrations: ").append(getSupportsIntegrations());
         sb.append("}");
         return sb.toString();
     }
@@ -2361,6 +2512,14 @@ public class CreateCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
         if (other.getSupportedCACertificateIdentifiers() != null
                 && other.getSupportedCACertificateIdentifiers().equals(this.getSupportedCACertificateIdentifiers()) == false)
             return false;
+        if (other.getSupportsLocalWriteForwarding() == null ^ this.getSupportsLocalWriteForwarding() == null)
+            return false;
+        if (other.getSupportsLocalWriteForwarding() != null && other.getSupportsLocalWriteForwarding().equals(this.getSupportsLocalWriteForwarding()) == false)
+            return false;
+        if (other.getSupportsIntegrations() == null ^ this.getSupportsIntegrations() == null)
+            return false;
+        if (other.getSupportsIntegrations() != null && other.getSupportsIntegrations().equals(this.getSupportsIntegrations()) == false)
+            return false;
         return true;
     }
 
@@ -2401,6 +2560,8 @@ public class CreateCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode
                 + ((getSupportsCertificateRotationWithoutRestart() == null) ? 0 : getSupportsCertificateRotationWithoutRestart().hashCode());
         hashCode = prime * hashCode + ((getSupportedCACertificateIdentifiers() == null) ? 0 : getSupportedCACertificateIdentifiers().hashCode());
+        hashCode = prime * hashCode + ((getSupportsLocalWriteForwarding() == null) ? 0 : getSupportsLocalWriteForwarding().hashCode());
+        hashCode = prime * hashCode + ((getSupportsIntegrations() == null) ? 0 : getSupportsIntegrations().hashCode());
         return hashCode;
     }
 

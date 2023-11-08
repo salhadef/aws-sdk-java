@@ -104,7 +104,7 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>AWS::S3::Object</code>
+     * <code>AWS::DynamoDB::Table</code>
      * </p>
      * </li>
      * <li>
@@ -114,14 +114,16 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>AWS::DynamoDB::Table</code>
+     * <code>AWS::S3::Object</code>
      * </p>
      * </li>
      * </ul>
      * <p>
      * The following resource types are also available through <i>advanced</i> event selectors. Basic event selector
      * resource types are valid in advanced event selectors, but advanced event selector resource types are not valid in
-     * basic event selectors. For more information, see <a>AdvancedFieldSelector$Field</a>.
+     * basic event selectors. For more information, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html"
+     * >AdvancedFieldSelector</a>.
      * </p>
      * <ul>
      * <li>
@@ -131,27 +133,12 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>AWS::S3Outposts::Object</code>
+     * <code>AWS::CodeWhisperer::Profile</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>AWS::ManagedBlockchain::Node</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AWS::S3ObjectLambda::AccessPoint</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AWS::EC2::Snapshot</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AWS::S3::AccessPoint</code>
+     * <code>AWS::Cognito::IdentityPool</code>
      * </p>
      * </li>
      * <li>
@@ -161,12 +148,47 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>AWS::Glue::Table</code>
+     * <code>AWS::EC2::Snapshot</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::EMRWAL::Workspace</code>
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>AWS::FinSpace::Environment</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::Glue::Table</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::GuardDuty::Detector</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::KendraRanking::ExecutionPlan</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::ManagedBlockchain::Network</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::ManagedBlockchain::Node</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::MedicalImaging::Datastore</code>
      * </p>
      * </li>
      * <li>
@@ -177,6 +199,31 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>AWS::SageMaker::FeatureGroup</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::S3::AccessPoint</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::S3ObjectLambda::AccessPoint</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::S3Outposts::Object</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::SSMMessages::ControlChannel</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::VerifiedPermissions::PolicyStore</code>
      * </p>
      * </li>
      * </ul>
@@ -253,7 +300,7 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>AWS::S3::Object</code>
+     * <code>AWS::DynamoDB::Table</code>
      * </p>
      * </li>
      * <li>
@@ -263,14 +310,16 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>AWS::DynamoDB::Table</code>
+     * <code>AWS::S3::Object</code>
      * </p>
      * </li>
      * </ul>
      * <p>
      * The following resource types are also available through <i>advanced</i> event selectors. Basic event selector
      * resource types are valid in advanced event selectors, but advanced event selector resource types are not valid in
-     * basic event selectors. For more information, see <a>AdvancedFieldSelector$Field</a>.
+     * basic event selectors. For more information, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html"
+     * >AdvancedFieldSelector</a>.
      * </p>
      * <ul>
      * <li>
@@ -280,27 +329,12 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>AWS::S3Outposts::Object</code>
+     * <code>AWS::CodeWhisperer::Profile</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>AWS::ManagedBlockchain::Node</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AWS::S3ObjectLambda::AccessPoint</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AWS::EC2::Snapshot</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AWS::S3::AccessPoint</code>
+     * <code>AWS::Cognito::IdentityPool</code>
      * </p>
      * </li>
      * <li>
@@ -310,12 +344,47 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>AWS::Glue::Table</code>
+     * <code>AWS::EC2::Snapshot</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::EMRWAL::Workspace</code>
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>AWS::FinSpace::Environment</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::Glue::Table</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::GuardDuty::Detector</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::KendraRanking::ExecutionPlan</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::ManagedBlockchain::Network</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::ManagedBlockchain::Node</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::MedicalImaging::Datastore</code>
      * </p>
      * </li>
      * <li>
@@ -328,6 +397,31 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * <code>AWS::SageMaker::FeatureGroup</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>AWS::S3::AccessPoint</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::S3ObjectLambda::AccessPoint</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::S3Outposts::Object</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::SSMMessages::ControlChannel</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::VerifiedPermissions::PolicyStore</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param type
@@ -336,7 +430,7 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>AWS::S3::Object</code>
+     *        <code>AWS::DynamoDB::Table</code>
      *        </p>
      *        </li>
      *        <li>
@@ -346,14 +440,16 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>AWS::DynamoDB::Table</code>
+     *        <code>AWS::S3::Object</code>
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
      *        The following resource types are also available through <i>advanced</i> event selectors. Basic event
      *        selector resource types are valid in advanced event selectors, but advanced event selector resource types
-     *        are not valid in basic event selectors. For more information, see <a>AdvancedFieldSelector$Field</a>.
+     *        are not valid in basic event selectors. For more information, see <a
+     *        href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html"
+     *        >AdvancedFieldSelector</a>.
      *        </p>
      *        <ul>
      *        <li>
@@ -363,27 +459,12 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>AWS::S3Outposts::Object</code>
+     *        <code>AWS::CodeWhisperer::Profile</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>AWS::ManagedBlockchain::Node</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>AWS::S3ObjectLambda::AccessPoint</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>AWS::EC2::Snapshot</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>AWS::S3::AccessPoint</code>
+     *        <code>AWS::Cognito::IdentityPool</code>
      *        </p>
      *        </li>
      *        <li>
@@ -393,12 +474,47 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>AWS::Glue::Table</code>
+     *        <code>AWS::EC2::Snapshot</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::EMRWAL::Workspace</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>AWS::FinSpace::Environment</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::Glue::Table</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::GuardDuty::Detector</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::KendraRanking::ExecutionPlan</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::ManagedBlockchain::Network</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::ManagedBlockchain::Node</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::MedicalImaging::Datastore</code>
      *        </p>
      *        </li>
      *        <li>
@@ -409,6 +525,31 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>AWS::SageMaker::FeatureGroup</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::S3::AccessPoint</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::S3ObjectLambda::AccessPoint</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::S3Outposts::Object</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::SSMMessages::ControlChannel</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::VerifiedPermissions::PolicyStore</code>
      *        </p>
      *        </li>
      */
@@ -425,7 +566,7 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>AWS::S3::Object</code>
+     * <code>AWS::DynamoDB::Table</code>
      * </p>
      * </li>
      * <li>
@@ -435,14 +576,16 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>AWS::DynamoDB::Table</code>
+     * <code>AWS::S3::Object</code>
      * </p>
      * </li>
      * </ul>
      * <p>
      * The following resource types are also available through <i>advanced</i> event selectors. Basic event selector
      * resource types are valid in advanced event selectors, but advanced event selector resource types are not valid in
-     * basic event selectors. For more information, see <a>AdvancedFieldSelector$Field</a>.
+     * basic event selectors. For more information, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html"
+     * >AdvancedFieldSelector</a>.
      * </p>
      * <ul>
      * <li>
@@ -452,27 +595,12 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>AWS::S3Outposts::Object</code>
+     * <code>AWS::CodeWhisperer::Profile</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>AWS::ManagedBlockchain::Node</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AWS::S3ObjectLambda::AccessPoint</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AWS::EC2::Snapshot</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AWS::S3::AccessPoint</code>
+     * <code>AWS::Cognito::IdentityPool</code>
      * </p>
      * </li>
      * <li>
@@ -482,12 +610,47 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>AWS::Glue::Table</code>
+     * <code>AWS::EC2::Snapshot</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::EMRWAL::Workspace</code>
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>AWS::FinSpace::Environment</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::Glue::Table</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::GuardDuty::Detector</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::KendraRanking::ExecutionPlan</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::ManagedBlockchain::Network</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::ManagedBlockchain::Node</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::MedicalImaging::Datastore</code>
      * </p>
      * </li>
      * <li>
@@ -500,6 +663,31 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * <code>AWS::SageMaker::FeatureGroup</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>AWS::S3::AccessPoint</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::S3ObjectLambda::AccessPoint</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::S3Outposts::Object</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::SSMMessages::ControlChannel</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::VerifiedPermissions::PolicyStore</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The resource type in which you want to log data events. You can specify the following <i>basic</i> event
@@ -507,7 +695,7 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>AWS::S3::Object</code>
+     *         <code>AWS::DynamoDB::Table</code>
      *         </p>
      *         </li>
      *         <li>
@@ -517,14 +705,16 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>AWS::DynamoDB::Table</code>
+     *         <code>AWS::S3::Object</code>
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
      *         The following resource types are also available through <i>advanced</i> event selectors. Basic event
      *         selector resource types are valid in advanced event selectors, but advanced event selector resource types
-     *         are not valid in basic event selectors. For more information, see <a>AdvancedFieldSelector$Field</a>.
+     *         are not valid in basic event selectors. For more information, see <a
+     *         href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html"
+     *         >AdvancedFieldSelector</a>.
      *         </p>
      *         <ul>
      *         <li>
@@ -534,27 +724,12 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>AWS::S3Outposts::Object</code>
+     *         <code>AWS::CodeWhisperer::Profile</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>AWS::ManagedBlockchain::Node</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>AWS::S3ObjectLambda::AccessPoint</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>AWS::EC2::Snapshot</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>AWS::S3::AccessPoint</code>
+     *         <code>AWS::Cognito::IdentityPool</code>
      *         </p>
      *         </li>
      *         <li>
@@ -564,12 +739,47 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>AWS::Glue::Table</code>
+     *         <code>AWS::EC2::Snapshot</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWS::EMRWAL::Workspace</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <code>AWS::FinSpace::Environment</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWS::Glue::Table</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWS::GuardDuty::Detector</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWS::KendraRanking::ExecutionPlan</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWS::ManagedBlockchain::Network</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWS::ManagedBlockchain::Node</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWS::MedicalImaging::Datastore</code>
      *         </p>
      *         </li>
      *         <li>
@@ -580,6 +790,31 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         <code>AWS::SageMaker::FeatureGroup</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWS::S3::AccessPoint</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWS::S3ObjectLambda::AccessPoint</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWS::S3Outposts::Object</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWS::SSMMessages::ControlChannel</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWS::VerifiedPermissions::PolicyStore</code>
      *         </p>
      *         </li>
      */
@@ -596,7 +831,7 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>AWS::S3::Object</code>
+     * <code>AWS::DynamoDB::Table</code>
      * </p>
      * </li>
      * <li>
@@ -606,14 +841,16 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>AWS::DynamoDB::Table</code>
+     * <code>AWS::S3::Object</code>
      * </p>
      * </li>
      * </ul>
      * <p>
      * The following resource types are also available through <i>advanced</i> event selectors. Basic event selector
      * resource types are valid in advanced event selectors, but advanced event selector resource types are not valid in
-     * basic event selectors. For more information, see <a>AdvancedFieldSelector$Field</a>.
+     * basic event selectors. For more information, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html"
+     * >AdvancedFieldSelector</a>.
      * </p>
      * <ul>
      * <li>
@@ -623,27 +860,12 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>AWS::S3Outposts::Object</code>
+     * <code>AWS::CodeWhisperer::Profile</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>AWS::ManagedBlockchain::Node</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AWS::S3ObjectLambda::AccessPoint</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AWS::EC2::Snapshot</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AWS::S3::AccessPoint</code>
+     * <code>AWS::Cognito::IdentityPool</code>
      * </p>
      * </li>
      * <li>
@@ -653,12 +875,47 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>AWS::Glue::Table</code>
+     * <code>AWS::EC2::Snapshot</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::EMRWAL::Workspace</code>
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>AWS::FinSpace::Environment</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::Glue::Table</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::GuardDuty::Detector</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::KendraRanking::ExecutionPlan</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::ManagedBlockchain::Network</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::ManagedBlockchain::Node</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::MedicalImaging::Datastore</code>
      * </p>
      * </li>
      * <li>
@@ -671,6 +928,31 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * <code>AWS::SageMaker::FeatureGroup</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>AWS::S3::AccessPoint</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::S3ObjectLambda::AccessPoint</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::S3Outposts::Object</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::SSMMessages::ControlChannel</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::VerifiedPermissions::PolicyStore</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param type
@@ -679,7 +961,7 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>AWS::S3::Object</code>
+     *        <code>AWS::DynamoDB::Table</code>
      *        </p>
      *        </li>
      *        <li>
@@ -689,14 +971,16 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>AWS::DynamoDB::Table</code>
+     *        <code>AWS::S3::Object</code>
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
      *        The following resource types are also available through <i>advanced</i> event selectors. Basic event
      *        selector resource types are valid in advanced event selectors, but advanced event selector resource types
-     *        are not valid in basic event selectors. For more information, see <a>AdvancedFieldSelector$Field</a>.
+     *        are not valid in basic event selectors. For more information, see <a
+     *        href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html"
+     *        >AdvancedFieldSelector</a>.
      *        </p>
      *        <ul>
      *        <li>
@@ -706,27 +990,12 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>AWS::S3Outposts::Object</code>
+     *        <code>AWS::CodeWhisperer::Profile</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>AWS::ManagedBlockchain::Node</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>AWS::S3ObjectLambda::AccessPoint</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>AWS::EC2::Snapshot</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>AWS::S3::AccessPoint</code>
+     *        <code>AWS::Cognito::IdentityPool</code>
      *        </p>
      *        </li>
      *        <li>
@@ -736,12 +1005,47 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>AWS::Glue::Table</code>
+     *        <code>AWS::EC2::Snapshot</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::EMRWAL::Workspace</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>AWS::FinSpace::Environment</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::Glue::Table</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::GuardDuty::Detector</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::KendraRanking::ExecutionPlan</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::ManagedBlockchain::Network</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::ManagedBlockchain::Node</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::MedicalImaging::Datastore</code>
      *        </p>
      *        </li>
      *        <li>
@@ -752,6 +1056,31 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>AWS::SageMaker::FeatureGroup</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::S3::AccessPoint</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::S3ObjectLambda::AccessPoint</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::S3Outposts::Object</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::SSMMessages::ControlChannel</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::VerifiedPermissions::PolicyStore</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

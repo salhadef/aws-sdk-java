@@ -44,6 +44,7 @@ import com.amazonaws.services.computeoptimizer.AWSComputeOptimizerClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.computeoptimizer.model.*;
+
 import com.amazonaws.services.computeoptimizer.model.transform.*;
 
 /**
@@ -739,6 +740,90 @@ public class AWSComputeOptimizerClient extends AmazonWebServiceClient implements
             HttpResponseHandler<AmazonWebServiceResponse<ExportLambdaFunctionRecommendationsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ExportLambdaFunctionRecommendationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Export optimization recommendations for your licenses.
+     * </p>
+     * <p>
+     * Recommendations are exported in a comma-separated values (CSV) file, and its metadata in a JavaScript Object
+     * Notation (JSON) file, to an existing Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
+     * Recommendations</a> in the <i>Compute Optimizer User Guide</i>.
+     * </p>
+     * <p>
+     * You can have only one license export job in progress per Amazon Web Services Region.
+     * </p>
+     * 
+     * @param exportLicenseRecommendationsRequest
+     * @return Result of the ExportLicenseRecommendations operation returned by the service.
+     * @throws OptInRequiredException
+     *         The account is not opted in to Compute Optimizer.
+     * @throws InternalServerException
+     *         An internal error has occurred. Try your call again.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the server.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InvalidParameterValueException
+     *         The value supplied for the input parameter is out of range or not valid.
+     * @throws MissingAuthenticationTokenException
+     *         The request must contain either a valid (registered) Amazon Web Services access key ID or X.509
+     *         certificate.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws LimitExceededException
+     *         The request exceeds a limit of the service.
+     * @sample AWSComputeOptimizer.ExportLicenseRecommendations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportLicenseRecommendations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ExportLicenseRecommendationsResult exportLicenseRecommendations(ExportLicenseRecommendationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeExportLicenseRecommendations(request);
+    }
+
+    @SdkInternalApi
+    final ExportLicenseRecommendationsResult executeExportLicenseRecommendations(ExportLicenseRecommendationsRequest exportLicenseRecommendationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(exportLicenseRecommendationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ExportLicenseRecommendationsRequest> request = null;
+        Response<ExportLicenseRecommendationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ExportLicenseRecommendationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(exportLicenseRecommendationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Compute Optimizer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExportLicenseRecommendations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ExportLicenseRecommendationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ExportLicenseRecommendationsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1537,6 +1622,86 @@ public class AWSComputeOptimizerClient extends AmazonWebServiceClient implements
             HttpResponseHandler<AmazonWebServiceResponse<GetLambdaFunctionRecommendationsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetLambdaFunctionRecommendationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns license recommendations for Amazon EC2 instances that run on a specific license.
+     * </p>
+     * <p>
+     * Compute Optimizer generates recommendations for licenses that meet a specific set of requirements. For more
+     * information, see the <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported resources and
+     * requirements</a> in the <i>Compute Optimizer User Guide</i>.
+     * </p>
+     * 
+     * @param getLicenseRecommendationsRequest
+     * @return Result of the GetLicenseRecommendations operation returned by the service.
+     * @throws OptInRequiredException
+     *         The account is not opted in to Compute Optimizer.
+     * @throws InternalServerException
+     *         An internal error has occurred. Try your call again.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the server.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InvalidParameterValueException
+     *         The value supplied for the input parameter is out of range or not valid.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action doesn't exist.
+     * @throws MissingAuthenticationTokenException
+     *         The request must contain either a valid (registered) Amazon Web Services access key ID or X.509
+     *         certificate.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AWSComputeOptimizer.GetLicenseRecommendations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetLicenseRecommendations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetLicenseRecommendationsResult getLicenseRecommendations(GetLicenseRecommendationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetLicenseRecommendations(request);
+    }
+
+    @SdkInternalApi
+    final GetLicenseRecommendationsResult executeGetLicenseRecommendations(GetLicenseRecommendationsRequest getLicenseRecommendationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getLicenseRecommendationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetLicenseRecommendationsRequest> request = null;
+        Response<GetLicenseRecommendationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetLicenseRecommendationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getLicenseRecommendationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Compute Optimizer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLicenseRecommendations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetLicenseRecommendationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetLicenseRecommendationsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

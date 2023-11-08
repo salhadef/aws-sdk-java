@@ -30,18 +30,18 @@ public class DescribeAgentRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Specifies the Amazon Resource Name (ARN) of the DataSync agent to describe.
+     * Specifies the Amazon Resource Name (ARN) of the DataSync agent that you want information about.
      * </p>
      */
     private String agentArn;
 
     /**
      * <p>
-     * Specifies the Amazon Resource Name (ARN) of the DataSync agent to describe.
+     * Specifies the Amazon Resource Name (ARN) of the DataSync agent that you want information about.
      * </p>
      * 
      * @param agentArn
-     *        Specifies the Amazon Resource Name (ARN) of the DataSync agent to describe.
+     *        Specifies the Amazon Resource Name (ARN) of the DataSync agent that you want information about.
      */
 
     public void setAgentArn(String agentArn) {
@@ -50,10 +50,10 @@ public class DescribeAgentRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Specifies the Amazon Resource Name (ARN) of the DataSync agent to describe.
+     * Specifies the Amazon Resource Name (ARN) of the DataSync agent that you want information about.
      * </p>
      * 
-     * @return Specifies the Amazon Resource Name (ARN) of the DataSync agent to describe.
+     * @return Specifies the Amazon Resource Name (ARN) of the DataSync agent that you want information about.
      */
 
     public String getAgentArn() {
@@ -62,11 +62,11 @@ public class DescribeAgentRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Specifies the Amazon Resource Name (ARN) of the DataSync agent to describe.
+     * Specifies the Amazon Resource Name (ARN) of the DataSync agent that you want information about.
      * </p>
      * 
      * @param agentArn
-     *        Specifies the Amazon Resource Name (ARN) of the DataSync agent to describe.
+     *        Specifies the Amazon Resource Name (ARN) of the DataSync agent that you want information about.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

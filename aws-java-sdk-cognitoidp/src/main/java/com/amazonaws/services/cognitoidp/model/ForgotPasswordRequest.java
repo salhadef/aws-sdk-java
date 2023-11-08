@@ -640,7 +640,7 @@ public class ForgotPasswordRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getSecretHash() != null)
             sb.append("SecretHash: ").append("***Sensitive Data Redacted***").append(",");
         if (getUserContextData() != null)
-            sb.append("UserContextData: ").append(getUserContextData()).append(",");
+            sb.append("UserContextData: ").append("***Sensitive Data Redacted***").append(",");
         if (getUsername() != null)
             sb.append("Username: ").append("***Sensitive Data Redacted***").append(",");
         if (getAnalyticsMetadata() != null)

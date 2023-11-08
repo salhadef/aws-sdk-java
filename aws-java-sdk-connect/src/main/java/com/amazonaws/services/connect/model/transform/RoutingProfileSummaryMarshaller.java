@@ -33,6 +33,10 @@ public class RoutingProfileSummaryMarshaller {
             .marshallLocationName("Arn").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<java.util.Date> LASTMODIFIEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> LASTMODIFIEDREGION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedRegion").build();
 
     private static final RoutingProfileSummaryMarshaller instance = new RoutingProfileSummaryMarshaller();
 
@@ -53,6 +57,8 @@ public class RoutingProfileSummaryMarshaller {
             protocolMarshaller.marshall(routingProfileSummary.getId(), ID_BINDING);
             protocolMarshaller.marshall(routingProfileSummary.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(routingProfileSummary.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(routingProfileSummary.getLastModifiedTime(), LASTMODIFIEDTIME_BINDING);
+            protocolMarshaller.marshall(routingProfileSummary.getLastModifiedRegion(), LASTMODIFIEDREGION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

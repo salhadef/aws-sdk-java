@@ -56,6 +56,14 @@ public class BranchJsonUnmarshaller implements Unmarshaller<Branch, JsonUnmarsha
                     context.nextToken();
                     branch.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("deprecationMessage", targetDepth)) {
+                    context.nextToken();
+                    branch.setDeprecationMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("comment", targetDepth)) {
+                    context.nextToken();
+                    branch.setComment(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

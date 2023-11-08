@@ -29,6 +29,8 @@ public class ComputeCapacityMarshaller {
 
     private static final MarshallingInfo<Integer> DESIREDINSTANCES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DesiredInstances").build();
+    private static final MarshallingInfo<Integer> DESIREDSESSIONS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DesiredSessions").build();
 
     private static final ComputeCapacityMarshaller instance = new ComputeCapacityMarshaller();
 
@@ -47,6 +49,7 @@ public class ComputeCapacityMarshaller {
 
         try {
             protocolMarshaller.marshall(computeCapacity.getDesiredInstances(), DESIREDINSTANCES_BINDING);
+            protocolMarshaller.marshall(computeCapacity.getDesiredSessions(), DESIREDSESSIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

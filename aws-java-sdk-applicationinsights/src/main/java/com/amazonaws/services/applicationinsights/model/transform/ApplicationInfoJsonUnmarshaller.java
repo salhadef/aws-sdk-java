@@ -48,6 +48,10 @@ public class ApplicationInfoJsonUnmarshaller implements Unmarshaller<Application
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("AccountId", targetDepth)) {
+                    context.nextToken();
+                    applicationInfo.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("ResourceGroupName", targetDepth)) {
                     context.nextToken();
                     applicationInfo.setResourceGroupName(context.getUnmarshaller(String.class).unmarshall(context));
@@ -79,6 +83,10 @@ public class ApplicationInfoJsonUnmarshaller implements Unmarshaller<Application
                 if (context.testExpression("DiscoveryType", targetDepth)) {
                     context.nextToken();
                     applicationInfo.setDiscoveryType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("AttachMissingPermission", targetDepth)) {
+                    context.nextToken();
+                    applicationInfo.setAttachMissingPermission(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

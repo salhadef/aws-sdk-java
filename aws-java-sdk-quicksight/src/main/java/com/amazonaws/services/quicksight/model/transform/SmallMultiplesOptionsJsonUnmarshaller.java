@@ -60,6 +60,14 @@ public class SmallMultiplesOptionsJsonUnmarshaller implements Unmarshaller<Small
                     context.nextToken();
                     smallMultiplesOptions.setPanelConfiguration(PanelConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("XAxis", targetDepth)) {
+                    context.nextToken();
+                    smallMultiplesOptions.setXAxis(SmallMultiplesAxisPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("YAxis", targetDepth)) {
+                    context.nextToken();
+                    smallMultiplesOptions.setYAxis(SmallMultiplesAxisPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

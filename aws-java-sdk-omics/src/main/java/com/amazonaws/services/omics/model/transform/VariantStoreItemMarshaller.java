@@ -27,28 +27,28 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class VariantStoreItemMarshaller {
 
-    private static final MarshallingInfo<java.util.Date> CREATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationTime").timestampFormat("iso8601").build();
-    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("id").build();
-    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("name").build();
     private static final MarshallingInfo<StructuredPojo> REFERENCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("reference").build();
-    private static final MarshallingInfo<StructuredPojo> SSECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sseConfig").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
-    private static final MarshallingInfo<String> STATUSMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("statusMessage").build();
     private static final MarshallingInfo<String> STOREARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("storeArn").build();
-    private static final MarshallingInfo<Long> STORESIZEBYTES_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("storeSizeBytes").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<StructuredPojo> SSECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sseConfig").build();
+    private static final MarshallingInfo<java.util.Date> CREATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationTime").timestampFormat("iso8601").build();
     private static final MarshallingInfo<java.util.Date> UPDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("updateTime").timestampFormat("iso8601").build();
+    private static final MarshallingInfo<String> STATUSMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("statusMessage").build();
+    private static final MarshallingInfo<Long> STORESIZEBYTES_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("storeSizeBytes").build();
 
     private static final VariantStoreItemMarshaller instance = new VariantStoreItemMarshaller();
 
@@ -66,17 +66,17 @@ public class VariantStoreItemMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(variantStoreItem.getCreationTime(), CREATIONTIME_BINDING);
-            protocolMarshaller.marshall(variantStoreItem.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(variantStoreItem.getId(), ID_BINDING);
-            protocolMarshaller.marshall(variantStoreItem.getName(), NAME_BINDING);
             protocolMarshaller.marshall(variantStoreItem.getReference(), REFERENCE_BINDING);
-            protocolMarshaller.marshall(variantStoreItem.getSseConfig(), SSECONFIG_BINDING);
             protocolMarshaller.marshall(variantStoreItem.getStatus(), STATUS_BINDING);
-            protocolMarshaller.marshall(variantStoreItem.getStatusMessage(), STATUSMESSAGE_BINDING);
             protocolMarshaller.marshall(variantStoreItem.getStoreArn(), STOREARN_BINDING);
-            protocolMarshaller.marshall(variantStoreItem.getStoreSizeBytes(), STORESIZEBYTES_BINDING);
+            protocolMarshaller.marshall(variantStoreItem.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(variantStoreItem.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(variantStoreItem.getSseConfig(), SSECONFIG_BINDING);
+            protocolMarshaller.marshall(variantStoreItem.getCreationTime(), CREATIONTIME_BINDING);
             protocolMarshaller.marshall(variantStoreItem.getUpdateTime(), UPDATETIME_BINDING);
+            protocolMarshaller.marshall(variantStoreItem.getStatusMessage(), STATUSMESSAGE_BINDING);
+            protocolMarshaller.marshall(variantStoreItem.getStoreSizeBytes(), STORESIZEBYTES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

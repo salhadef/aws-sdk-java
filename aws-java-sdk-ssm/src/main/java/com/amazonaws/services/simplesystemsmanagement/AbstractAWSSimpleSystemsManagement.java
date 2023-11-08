@@ -129,6 +129,11 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
     }
 
     @Override
+    public DeleteOpsItemResult deleteOpsItem(DeleteOpsItemRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteOpsMetadataResult deleteOpsMetadata(DeleteOpsMetadataRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

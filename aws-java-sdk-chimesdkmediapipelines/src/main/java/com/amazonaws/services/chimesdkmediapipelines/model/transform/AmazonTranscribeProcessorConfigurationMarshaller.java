@@ -51,6 +51,16 @@ public class AmazonTranscribeProcessorConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LanguageModelName").build();
     private static final MarshallingInfo<Boolean> FILTERPARTIALRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FilterPartialResults").build();
+    private static final MarshallingInfo<Boolean> IDENTIFYLANGUAGE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdentifyLanguage").build();
+    private static final MarshallingInfo<String> LANGUAGEOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LanguageOptions").build();
+    private static final MarshallingInfo<String> PREFERREDLANGUAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PreferredLanguage").build();
+    private static final MarshallingInfo<String> VOCABULARYNAMES_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VocabularyNames").build();
+    private static final MarshallingInfo<String> VOCABULARYFILTERNAMES_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VocabularyFilterNames").build();
 
     private static final AmazonTranscribeProcessorConfigurationMarshaller instance = new AmazonTranscribeProcessorConfigurationMarshaller();
 
@@ -81,6 +91,11 @@ public class AmazonTranscribeProcessorConfigurationMarshaller {
             protocolMarshaller.marshall(amazonTranscribeProcessorConfiguration.getPiiEntityTypes(), PIIENTITYTYPES_BINDING);
             protocolMarshaller.marshall(amazonTranscribeProcessorConfiguration.getLanguageModelName(), LANGUAGEMODELNAME_BINDING);
             protocolMarshaller.marshall(amazonTranscribeProcessorConfiguration.getFilterPartialResults(), FILTERPARTIALRESULTS_BINDING);
+            protocolMarshaller.marshall(amazonTranscribeProcessorConfiguration.getIdentifyLanguage(), IDENTIFYLANGUAGE_BINDING);
+            protocolMarshaller.marshall(amazonTranscribeProcessorConfiguration.getLanguageOptions(), LANGUAGEOPTIONS_BINDING);
+            protocolMarshaller.marshall(amazonTranscribeProcessorConfiguration.getPreferredLanguage(), PREFERREDLANGUAGE_BINDING);
+            protocolMarshaller.marshall(amazonTranscribeProcessorConfiguration.getVocabularyNames(), VOCABULARYNAMES_BINDING);
+            protocolMarshaller.marshall(amazonTranscribeProcessorConfiguration.getVocabularyFilterNames(), VOCABULARYFILTERNAMES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -27,10 +27,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DialerConfigMarshaller {
 
-    private static final MarshallingInfo<StructuredPojo> PREDICTIVEDIALERCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("predictiveDialerConfig").build();
     private static final MarshallingInfo<StructuredPojo> PROGRESSIVEDIALERCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("progressiveDialerConfig").build();
+    private static final MarshallingInfo<StructuredPojo> PREDICTIVEDIALERCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("predictiveDialerConfig").build();
+    private static final MarshallingInfo<StructuredPojo> AGENTLESSDIALERCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("agentlessDialerConfig").build();
 
     private static final DialerConfigMarshaller instance = new DialerConfigMarshaller();
 
@@ -48,8 +50,9 @@ public class DialerConfigMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(dialerConfig.getPredictiveDialerConfig(), PREDICTIVEDIALERCONFIG_BINDING);
             protocolMarshaller.marshall(dialerConfig.getProgressiveDialerConfig(), PROGRESSIVEDIALERCONFIG_BINDING);
+            protocolMarshaller.marshall(dialerConfig.getPredictiveDialerConfig(), PREDICTIVEDIALERCONFIG_BINDING);
+            protocolMarshaller.marshall(dialerConfig.getAgentlessDialerConfig(), AGENTLESSDIALERCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

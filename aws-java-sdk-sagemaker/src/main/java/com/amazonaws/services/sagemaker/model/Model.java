@@ -79,6 +79,12 @@ public class Model implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * A set of recommended deployment configurations for the model.
+     * </p>
+     */
+    private DeploymentRecommendation deploymentRecommendation;
 
     /**
      * <p>
@@ -531,6 +537,46 @@ public class Model implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A set of recommended deployment configurations for the model.
+     * </p>
+     * 
+     * @param deploymentRecommendation
+     *        A set of recommended deployment configurations for the model.
+     */
+
+    public void setDeploymentRecommendation(DeploymentRecommendation deploymentRecommendation) {
+        this.deploymentRecommendation = deploymentRecommendation;
+    }
+
+    /**
+     * <p>
+     * A set of recommended deployment configurations for the model.
+     * </p>
+     * 
+     * @return A set of recommended deployment configurations for the model.
+     */
+
+    public DeploymentRecommendation getDeploymentRecommendation() {
+        return this.deploymentRecommendation;
+    }
+
+    /**
+     * <p>
+     * A set of recommended deployment configurations for the model.
+     * </p>
+     * 
+     * @param deploymentRecommendation
+     *        A set of recommended deployment configurations for the model.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Model withDeploymentRecommendation(DeploymentRecommendation deploymentRecommendation) {
+        setDeploymentRecommendation(deploymentRecommendation);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -561,7 +607,9 @@ public class Model implements Serializable, Cloneable, StructuredPojo {
         if (getEnableNetworkIsolation() != null)
             sb.append("EnableNetworkIsolation: ").append(getEnableNetworkIsolation()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getDeploymentRecommendation() != null)
+            sb.append("DeploymentRecommendation: ").append(getDeploymentRecommendation());
         sb.append("}");
         return sb.toString();
     }
@@ -616,6 +664,10 @@ public class Model implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getDeploymentRecommendation() == null ^ this.getDeploymentRecommendation() == null)
+            return false;
+        if (other.getDeploymentRecommendation() != null && other.getDeploymentRecommendation().equals(this.getDeploymentRecommendation()) == false)
+            return false;
         return true;
     }
 
@@ -634,6 +686,7 @@ public class Model implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getModelArn() == null) ? 0 : getModelArn().hashCode());
         hashCode = prime * hashCode + ((getEnableNetworkIsolation() == null) ? 0 : getEnableNetworkIsolation().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getDeploymentRecommendation() == null) ? 0 : getDeploymentRecommendation().hashCode());
         return hashCode;
     }
 

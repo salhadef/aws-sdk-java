@@ -21,11 +21,6 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * A list of information about the configuration.
  * </p>
- * <important>
- * <p>
- * Does not apply to RabbitMQ brokers.
- * </p>
- * </important>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ConfigurationId" target="_top">AWS API
  *      Documentation</a>

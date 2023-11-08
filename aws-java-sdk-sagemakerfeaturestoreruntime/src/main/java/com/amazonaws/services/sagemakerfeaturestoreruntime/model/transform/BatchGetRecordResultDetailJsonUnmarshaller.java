@@ -62,6 +62,10 @@ public class BatchGetRecordResultDetailJsonUnmarshaller implements Unmarshaller<
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("ExpiresAt", targetDepth)) {
+                    context.nextToken();
+                    batchGetRecordResultDetail.setExpiresAt(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

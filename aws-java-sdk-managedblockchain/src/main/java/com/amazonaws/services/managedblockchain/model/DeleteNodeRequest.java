@@ -43,11 +43,6 @@ public class DeleteNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <code>n-ethereum-goerli</code>
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>n-ethereum-rinkeby</code>
-     * </p>
-     * </li>
      * </ul>
      */
     private String networkId;
@@ -85,11 +80,6 @@ public class DeleteNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <code>n-ethereum-goerli</code>
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>n-ethereum-rinkeby</code>
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param networkId
@@ -106,11 +96,6 @@ public class DeleteNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <li>
      *        <p>
      *        <code>n-ethereum-goerli</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>n-ethereum-rinkeby</code>
      *        </p>
      *        </li>
      */
@@ -137,11 +122,6 @@ public class DeleteNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <code>n-ethereum-goerli</code>
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>n-ethereum-rinkeby</code>
-     * </p>
-     * </li>
      * </ul>
      * 
      * @return The unique identifier of the network that the node is on.</p>
@@ -157,11 +137,6 @@ public class DeleteNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         <li>
      *         <p>
      *         <code>n-ethereum-goerli</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>n-ethereum-rinkeby</code>
      *         </p>
      *         </li>
      */
@@ -188,11 +163,6 @@ public class DeleteNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <code>n-ethereum-goerli</code>
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>n-ethereum-rinkeby</code>
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param networkId
@@ -209,11 +179,6 @@ public class DeleteNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <li>
      *        <p>
      *        <code>n-ethereum-goerli</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>n-ethereum-rinkeby</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -22,7 +22,9 @@ public enum MemberType {
 
     DASHBOARD("DASHBOARD"),
     ANALYSIS("ANALYSIS"),
-    DATASET("DATASET");
+    DATASET("DATASET"),
+    DATASOURCE("DATASOURCE"),
+    TOPIC("TOPIC");
 
     private String value;
 

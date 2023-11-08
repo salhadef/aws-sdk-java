@@ -54,7 +54,13 @@ public class KinesisStreamingSourceOptions implements Serializable, Cloneable, S
     private String delimiter;
     /**
      * <p>
-     * The starting position in the Kinesis data stream to read data from. The possible values are <code>"latest"</code>, <code>"trim_horizon"</code>, or <code>"earliest"</code>. The default value is <code>"latest"</code>.
+     * The starting position in the Kinesis data stream to read data from. The possible values are <code>"latest"</code>, <code>"trim_horizon"</code>, <code>"earliest"</code>, or a timestamp string in UTC format in the pattern
+     * <code>yyyy-mm-ddTHH:MM:SSZ</code> (where <code>Z</code> represents a UTC timezone offset with a +/-. For example:
+     * "2023-04-04T08:00:00-04:00"). The default value is <code>"latest"</code>.
+     * </p>
+     * <p>
+     * Note: Using a value that is a timestamp string in UTC format for "startingPosition" is supported only for Glue
+     * version 4.0 or later.
      * </p>
      */
     private String startingPosition;
@@ -165,6 +171,14 @@ public class KinesisStreamingSourceOptions implements Serializable, Cloneable, S
      * </p>
      */
     private String emitConsumerLagMetrics;
+    /**
+     * <p>
+     * The timestamp of the record in the Kinesis data stream to start reading data from. The possible values are a
+     * timestamp string in UTC format of the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC
+     * timezone offset with a +/-. For example: "2023-04-04T08:00:00+08:00").
+     * </p>
+     */
+    private java.util.Date startingTimestamp;
 
     /**
      * <p>
@@ -328,13 +342,24 @@ public class KinesisStreamingSourceOptions implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The starting position in the Kinesis data stream to read data from. The possible values are <code>"latest"</code>, <code>"trim_horizon"</code>, or <code>"earliest"</code>. The default value is <code>"latest"</code>.
+     * The starting position in the Kinesis data stream to read data from. The possible values are <code>"latest"</code>, <code>"trim_horizon"</code>, <code>"earliest"</code>, or a timestamp string in UTC format in the pattern
+     * <code>yyyy-mm-ddTHH:MM:SSZ</code> (where <code>Z</code> represents a UTC timezone offset with a +/-. For example:
+     * "2023-04-04T08:00:00-04:00"). The default value is <code>"latest"</code>.
+     * </p>
+     * <p>
+     * Note: Using a value that is a timestamp string in UTC format for "startingPosition" is supported only for Glue
+     * version 4.0 or later.
      * </p>
      * 
      * @param startingPosition
      *        The starting position in the Kinesis data stream to read data from. The possible values are
-     *        <code>"latest"</code>, <code>"trim_horizon"</code>, or <code>"earliest"</code>. The default value is
-     *        <code>"latest"</code>.
+     *        <code>"latest"</code>, <code>"trim_horizon"</code>, <code>"earliest"</code>, or a timestamp string in UTC
+     *        format in the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where <code>Z</code> represents a UTC timezone
+     *        offset with a +/-. For example: "2023-04-04T08:00:00-04:00"). The default value is <code>"latest"</code>
+     *        .</p>
+     *        <p>
+     *        Note: Using a value that is a timestamp string in UTC format for "startingPosition" is supported only for
+     *        Glue version 4.0 or later.
      * @see StartingPosition
      */
 
@@ -344,12 +369,23 @@ public class KinesisStreamingSourceOptions implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The starting position in the Kinesis data stream to read data from. The possible values are <code>"latest"</code>, <code>"trim_horizon"</code>, or <code>"earliest"</code>. The default value is <code>"latest"</code>.
+     * The starting position in the Kinesis data stream to read data from. The possible values are <code>"latest"</code>, <code>"trim_horizon"</code>, <code>"earliest"</code>, or a timestamp string in UTC format in the pattern
+     * <code>yyyy-mm-ddTHH:MM:SSZ</code> (where <code>Z</code> represents a UTC timezone offset with a +/-. For example:
+     * "2023-04-04T08:00:00-04:00"). The default value is <code>"latest"</code>.
+     * </p>
+     * <p>
+     * Note: Using a value that is a timestamp string in UTC format for "startingPosition" is supported only for Glue
+     * version 4.0 or later.
      * </p>
      * 
      * @return The starting position in the Kinesis data stream to read data from. The possible values are
-     *         <code>"latest"</code>, <code>"trim_horizon"</code>, or <code>"earliest"</code>. The default value is
-     *         <code>"latest"</code>.
+     *         <code>"latest"</code>, <code>"trim_horizon"</code>, <code>"earliest"</code>, or a timestamp string in UTC
+     *         format in the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where <code>Z</code> represents a UTC timezone
+     *         offset with a +/-. For example: "2023-04-04T08:00:00-04:00"). The default value is <code>"latest"</code>
+     *         .</p>
+     *         <p>
+     *         Note: Using a value that is a timestamp string in UTC format for "startingPosition" is supported only for
+     *         Glue version 4.0 or later.
      * @see StartingPosition
      */
 
@@ -359,13 +395,24 @@ public class KinesisStreamingSourceOptions implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The starting position in the Kinesis data stream to read data from. The possible values are <code>"latest"</code>, <code>"trim_horizon"</code>, or <code>"earliest"</code>. The default value is <code>"latest"</code>.
+     * The starting position in the Kinesis data stream to read data from. The possible values are <code>"latest"</code>, <code>"trim_horizon"</code>, <code>"earliest"</code>, or a timestamp string in UTC format in the pattern
+     * <code>yyyy-mm-ddTHH:MM:SSZ</code> (where <code>Z</code> represents a UTC timezone offset with a +/-. For example:
+     * "2023-04-04T08:00:00-04:00"). The default value is <code>"latest"</code>.
+     * </p>
+     * <p>
+     * Note: Using a value that is a timestamp string in UTC format for "startingPosition" is supported only for Glue
+     * version 4.0 or later.
      * </p>
      * 
      * @param startingPosition
      *        The starting position in the Kinesis data stream to read data from. The possible values are
-     *        <code>"latest"</code>, <code>"trim_horizon"</code>, or <code>"earliest"</code>. The default value is
-     *        <code>"latest"</code>.
+     *        <code>"latest"</code>, <code>"trim_horizon"</code>, <code>"earliest"</code>, or a timestamp string in UTC
+     *        format in the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where <code>Z</code> represents a UTC timezone
+     *        offset with a +/-. For example: "2023-04-04T08:00:00-04:00"). The default value is <code>"latest"</code>
+     *        .</p>
+     *        <p>
+     *        Note: Using a value that is a timestamp string in UTC format for "startingPosition" is supported only for
+     *        Glue version 4.0 or later.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StartingPosition
      */
@@ -377,13 +424,24 @@ public class KinesisStreamingSourceOptions implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The starting position in the Kinesis data stream to read data from. The possible values are <code>"latest"</code>, <code>"trim_horizon"</code>, or <code>"earliest"</code>. The default value is <code>"latest"</code>.
+     * The starting position in the Kinesis data stream to read data from. The possible values are <code>"latest"</code>, <code>"trim_horizon"</code>, <code>"earliest"</code>, or a timestamp string in UTC format in the pattern
+     * <code>yyyy-mm-ddTHH:MM:SSZ</code> (where <code>Z</code> represents a UTC timezone offset with a +/-. For example:
+     * "2023-04-04T08:00:00-04:00"). The default value is <code>"latest"</code>.
+     * </p>
+     * <p>
+     * Note: Using a value that is a timestamp string in UTC format for "startingPosition" is supported only for Glue
+     * version 4.0 or later.
      * </p>
      * 
      * @param startingPosition
      *        The starting position in the Kinesis data stream to read data from. The possible values are
-     *        <code>"latest"</code>, <code>"trim_horizon"</code>, or <code>"earliest"</code>. The default value is
-     *        <code>"latest"</code>.
+     *        <code>"latest"</code>, <code>"trim_horizon"</code>, <code>"earliest"</code>, or a timestamp string in UTC
+     *        format in the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where <code>Z</code> represents a UTC timezone
+     *        offset with a +/-. For example: "2023-04-04T08:00:00-04:00"). The default value is <code>"latest"</code>
+     *        .</p>
+     *        <p>
+     *        Note: Using a value that is a timestamp string in UTC format for "startingPosition" is supported only for
+     *        Glue version 4.0 or later.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StartingPosition
      */
@@ -1127,6 +1185,58 @@ public class KinesisStreamingSourceOptions implements Serializable, Cloneable, S
     }
 
     /**
+     * <p>
+     * The timestamp of the record in the Kinesis data stream to start reading data from. The possible values are a
+     * timestamp string in UTC format of the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC
+     * timezone offset with a +/-. For example: "2023-04-04T08:00:00+08:00").
+     * </p>
+     * 
+     * @param startingTimestamp
+     *        The timestamp of the record in the Kinesis data stream to start reading data from. The possible values are
+     *        a timestamp string in UTC format of the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a
+     *        UTC timezone offset with a +/-. For example: "2023-04-04T08:00:00+08:00").
+     */
+
+    public void setStartingTimestamp(java.util.Date startingTimestamp) {
+        this.startingTimestamp = startingTimestamp;
+    }
+
+    /**
+     * <p>
+     * The timestamp of the record in the Kinesis data stream to start reading data from. The possible values are a
+     * timestamp string in UTC format of the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC
+     * timezone offset with a +/-. For example: "2023-04-04T08:00:00+08:00").
+     * </p>
+     * 
+     * @return The timestamp of the record in the Kinesis data stream to start reading data from. The possible values
+     *         are a timestamp string in UTC format of the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents
+     *         a UTC timezone offset with a +/-. For example: "2023-04-04T08:00:00+08:00").
+     */
+
+    public java.util.Date getStartingTimestamp() {
+        return this.startingTimestamp;
+    }
+
+    /**
+     * <p>
+     * The timestamp of the record in the Kinesis data stream to start reading data from. The possible values are a
+     * timestamp string in UTC format of the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC
+     * timezone offset with a +/-. For example: "2023-04-04T08:00:00+08:00").
+     * </p>
+     * 
+     * @param startingTimestamp
+     *        The timestamp of the record in the Kinesis data stream to start reading data from. The possible values are
+     *        a timestamp string in UTC format of the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a
+     *        UTC timezone offset with a +/-. For example: "2023-04-04T08:00:00+08:00").
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KinesisStreamingSourceOptions withStartingTimestamp(java.util.Date startingTimestamp) {
+        setStartingTimestamp(startingTimestamp);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1177,7 +1287,9 @@ public class KinesisStreamingSourceOptions implements Serializable, Cloneable, S
         if (getAddRecordTimestamp() != null)
             sb.append("AddRecordTimestamp: ").append(getAddRecordTimestamp()).append(",");
         if (getEmitConsumerLagMetrics() != null)
-            sb.append("EmitConsumerLagMetrics: ").append(getEmitConsumerLagMetrics());
+            sb.append("EmitConsumerLagMetrics: ").append(getEmitConsumerLagMetrics()).append(",");
+        if (getStartingTimestamp() != null)
+            sb.append("StartingTimestamp: ").append(getStartingTimestamp());
         sb.append("}");
         return sb.toString();
     }
@@ -1272,6 +1384,10 @@ public class KinesisStreamingSourceOptions implements Serializable, Cloneable, S
             return false;
         if (other.getEmitConsumerLagMetrics() != null && other.getEmitConsumerLagMetrics().equals(this.getEmitConsumerLagMetrics()) == false)
             return false;
+        if (other.getStartingTimestamp() == null ^ this.getStartingTimestamp() == null)
+            return false;
+        if (other.getStartingTimestamp() != null && other.getStartingTimestamp().equals(this.getStartingTimestamp()) == false)
+            return false;
         return true;
     }
 
@@ -1300,6 +1416,7 @@ public class KinesisStreamingSourceOptions implements Serializable, Cloneable, S
         hashCode = prime * hashCode + ((getRoleSessionName() == null) ? 0 : getRoleSessionName().hashCode());
         hashCode = prime * hashCode + ((getAddRecordTimestamp() == null) ? 0 : getAddRecordTimestamp().hashCode());
         hashCode = prime * hashCode + ((getEmitConsumerLagMetrics() == null) ? 0 : getEmitConsumerLagMetrics().hashCode());
+        hashCode = prime * hashCode + ((getStartingTimestamp() == null) ? 0 : getStartingTimestamp().hashCode());
         return hashCode;
     }
 

@@ -84,6 +84,10 @@ public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<Mod
             request.addParameter("PerformanceInsightsKMSKeyId", StringUtils.fromString(modifyDBInstanceRequest.getPerformanceInsightsKMSKeyId()));
         }
 
+        if (modifyDBInstanceRequest.getCertificateRotationRestart() != null) {
+            request.addParameter("CertificateRotationRestart", StringUtils.fromBoolean(modifyDBInstanceRequest.getCertificateRotationRestart()));
+        }
+
         return request;
     }
 

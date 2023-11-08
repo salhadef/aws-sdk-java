@@ -48,10 +48,6 @@ public class InputConfigInputJsonUnmarshaller implements Unmarshaller<InputConfi
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("DataSourceConfig", targetDepth)) {
-                    context.nextToken();
-                    inputConfigInput.setDataSourceConfig(EojDataSourceConfigInputJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("PreviousEarthObservationJobArn", targetDepth)) {
                     context.nextToken();
                     inputConfigInput.setPreviousEarthObservationJobArn(context.getUnmarshaller(String.class).unmarshall(context));

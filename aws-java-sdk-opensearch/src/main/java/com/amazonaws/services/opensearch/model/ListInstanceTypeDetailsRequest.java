@@ -22,14 +22,14 @@ public class ListInstanceTypeDetailsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest
-     * version of OpenSearch.
+     * The version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the
+     * latest version of OpenSearch.
      * </p>
      */
     private String engineVersion;
     /**
      * <p>
-     * Name of the domain to list instance type details for.
+     * The name of the domain.
      * </p>
      */
     private String domainName;
@@ -48,16 +48,28 @@ public class ListInstanceTypeDetailsRequest extends com.amazonaws.AmazonWebServi
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * An optional parameter that specifies the Availability Zones for the domain.
+     * </p>
+     */
+    private Boolean retrieveAZs;
+    /**
+     * <p>
+     * An optional parameter that lists information for a given instance type.
+     * </p>
+     */
+    private String instanceType;
 
     /**
      * <p>
-     * Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest
-     * version of OpenSearch.
+     * The version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the
+     * latest version of OpenSearch.
      * </p>
      * 
      * @param engineVersion
-     *        Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the
-     *        latest version of OpenSearch.
+     *        The version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to
+     *        the latest version of OpenSearch.
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -66,12 +78,12 @@ public class ListInstanceTypeDetailsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest
-     * version of OpenSearch.
+     * The version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the
+     * latest version of OpenSearch.
      * </p>
      * 
-     * @return Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to
-     *         the latest version of OpenSearch.
+     * @return The version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults
+     *         to the latest version of OpenSearch.
      */
 
     public String getEngineVersion() {
@@ -80,13 +92,13 @@ public class ListInstanceTypeDetailsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest
-     * version of OpenSearch.
+     * The version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the
+     * latest version of OpenSearch.
      * </p>
      * 
      * @param engineVersion
-     *        Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the
-     *        latest version of OpenSearch.
+     *        The version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to
+     *        the latest version of OpenSearch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +109,11 @@ public class ListInstanceTypeDetailsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Name of the domain to list instance type details for.
+     * The name of the domain.
      * </p>
      * 
      * @param domainName
-     *        Name of the domain to list instance type details for.
+     *        The name of the domain.
      */
 
     public void setDomainName(String domainName) {
@@ -110,10 +122,10 @@ public class ListInstanceTypeDetailsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Name of the domain to list instance type details for.
+     * The name of the domain.
      * </p>
      * 
-     * @return Name of the domain to list instance type details for.
+     * @return The name of the domain.
      */
 
     public String getDomainName() {
@@ -122,11 +134,11 @@ public class ListInstanceTypeDetailsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Name of the domain to list instance type details for.
+     * The name of the domain.
      * </p>
      * 
      * @param domainName
-     *        Name of the domain to list instance type details for.
+     *        The name of the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -234,6 +246,98 @@ public class ListInstanceTypeDetailsRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * An optional parameter that specifies the Availability Zones for the domain.
+     * </p>
+     * 
+     * @param retrieveAZs
+     *        An optional parameter that specifies the Availability Zones for the domain.
+     */
+
+    public void setRetrieveAZs(Boolean retrieveAZs) {
+        this.retrieveAZs = retrieveAZs;
+    }
+
+    /**
+     * <p>
+     * An optional parameter that specifies the Availability Zones for the domain.
+     * </p>
+     * 
+     * @return An optional parameter that specifies the Availability Zones for the domain.
+     */
+
+    public Boolean getRetrieveAZs() {
+        return this.retrieveAZs;
+    }
+
+    /**
+     * <p>
+     * An optional parameter that specifies the Availability Zones for the domain.
+     * </p>
+     * 
+     * @param retrieveAZs
+     *        An optional parameter that specifies the Availability Zones for the domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListInstanceTypeDetailsRequest withRetrieveAZs(Boolean retrieveAZs) {
+        setRetrieveAZs(retrieveAZs);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An optional parameter that specifies the Availability Zones for the domain.
+     * </p>
+     * 
+     * @return An optional parameter that specifies the Availability Zones for the domain.
+     */
+
+    public Boolean isRetrieveAZs() {
+        return this.retrieveAZs;
+    }
+
+    /**
+     * <p>
+     * An optional parameter that lists information for a given instance type.
+     * </p>
+     * 
+     * @param instanceType
+     *        An optional parameter that lists information for a given instance type.
+     */
+
+    public void setInstanceType(String instanceType) {
+        this.instanceType = instanceType;
+    }
+
+    /**
+     * <p>
+     * An optional parameter that lists information for a given instance type.
+     * </p>
+     * 
+     * @return An optional parameter that lists information for a given instance type.
+     */
+
+    public String getInstanceType() {
+        return this.instanceType;
+    }
+
+    /**
+     * <p>
+     * An optional parameter that lists information for a given instance type.
+     * </p>
+     * 
+     * @param instanceType
+     *        An optional parameter that lists information for a given instance type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListInstanceTypeDetailsRequest withInstanceType(String instanceType) {
+        setInstanceType(instanceType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -252,7 +356,11 @@ public class ListInstanceTypeDetailsRequest extends com.amazonaws.AmazonWebServi
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getRetrieveAZs() != null)
+            sb.append("RetrieveAZs: ").append(getRetrieveAZs()).append(",");
+        if (getInstanceType() != null)
+            sb.append("InstanceType: ").append(getInstanceType());
         sb.append("}");
         return sb.toString();
     }
@@ -283,6 +391,14 @@ public class ListInstanceTypeDetailsRequest extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getRetrieveAZs() == null ^ this.getRetrieveAZs() == null)
+            return false;
+        if (other.getRetrieveAZs() != null && other.getRetrieveAZs().equals(this.getRetrieveAZs()) == false)
+            return false;
+        if (other.getInstanceType() == null ^ this.getInstanceType() == null)
+            return false;
+        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
+            return false;
         return true;
     }
 
@@ -295,6 +411,8 @@ public class ListInstanceTypeDetailsRequest extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getRetrieveAZs() == null) ? 0 : getRetrieveAZs().hashCode());
+        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
         return hashCode;
     }
 

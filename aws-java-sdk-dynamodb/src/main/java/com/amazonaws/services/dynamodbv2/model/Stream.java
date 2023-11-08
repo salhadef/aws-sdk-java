@@ -52,7 +52,7 @@ public class Stream implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * the AWS customer ID.
+     * the Amazon Web Services customer ID.
      * </p>
      * </li>
      * <li>
@@ -161,7 +161,7 @@ public class Stream implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * the AWS customer ID.
+     * the Amazon Web Services customer ID.
      * </p>
      * </li>
      * <li>
@@ -186,7 +186,7 @@ public class Stream implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        the AWS customer ID.
+     *        the Amazon Web Services customer ID.
      *        </p>
      *        </li>
      *        <li>
@@ -217,7 +217,7 @@ public class Stream implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * the AWS customer ID.
+     * the Amazon Web Services customer ID.
      * </p>
      * </li>
      * <li>
@@ -241,7 +241,7 @@ public class Stream implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         the AWS customer ID.
+     *         the Amazon Web Services customer ID.
      *         </p>
      *         </li>
      *         <li>
@@ -272,7 +272,7 @@ public class Stream implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * the AWS customer ID.
+     * the Amazon Web Services customer ID.
      * </p>
      * </li>
      * <li>
@@ -297,7 +297,7 @@ public class Stream implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        the AWS customer ID.
+     *        the Amazon Web Services customer ID.
      *        </p>
      *        </li>
      *        <li>

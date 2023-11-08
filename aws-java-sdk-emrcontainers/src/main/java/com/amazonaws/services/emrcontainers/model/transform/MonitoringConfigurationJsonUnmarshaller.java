@@ -61,6 +61,11 @@ public class MonitoringConfigurationJsonUnmarshaller implements Unmarshaller<Mon
                     context.nextToken();
                     monitoringConfiguration.setS3MonitoringConfiguration(S3MonitoringConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("containerLogRotationConfiguration", targetDepth)) {
+                    context.nextToken();
+                    monitoringConfiguration.setContainerLogRotationConfiguration(ContainerLogRotationConfigurationJsonUnmarshaller.getInstance().unmarshall(
+                            context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

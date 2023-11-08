@@ -41,6 +41,12 @@ public class ActionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("kubernetesApiCallAction").build();
     private static final MarshallingInfo<StructuredPojo> RDSLOGINATTEMPTACTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("rdsLoginAttemptAction").build();
+    private static final MarshallingInfo<StructuredPojo> KUBERNETESPERMISSIONCHECKEDDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("kubernetesPermissionCheckedDetails").build();
+    private static final MarshallingInfo<StructuredPojo> KUBERNETESROLEBINDINGDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("kubernetesRoleBindingDetails").build();
+    private static final MarshallingInfo<StructuredPojo> KUBERNETESROLEDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("kubernetesRoleDetails").build();
 
     private static final ActionMarshaller instance = new ActionMarshaller();
 
@@ -65,6 +71,9 @@ public class ActionMarshaller {
             protocolMarshaller.marshall(action.getPortProbeAction(), PORTPROBEACTION_BINDING);
             protocolMarshaller.marshall(action.getKubernetesApiCallAction(), KUBERNETESAPICALLACTION_BINDING);
             protocolMarshaller.marshall(action.getRdsLoginAttemptAction(), RDSLOGINATTEMPTACTION_BINDING);
+            protocolMarshaller.marshall(action.getKubernetesPermissionCheckedDetails(), KUBERNETESPERMISSIONCHECKEDDETAILS_BINDING);
+            protocolMarshaller.marshall(action.getKubernetesRoleBindingDetails(), KUBERNETESROLEBINDINGDETAILS_BINDING);
+            protocolMarshaller.marshall(action.getKubernetesRoleDetails(), KUBERNETESROLEDETAILS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -155,6 +155,8 @@ public enum ElastiCacheActions implements Action {
     StartMigration("elasticache:StartMigration"),
     /** Action for the TestFailover operation. */
     TestFailover("elasticache:TestFailover"),
+    /** Action for the TestMigration operation. */
+    TestMigration("elasticache:TestMigration"),
 
     ;
 

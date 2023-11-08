@@ -56,6 +56,10 @@ public class ProductionVariantServerlessConfigJsonUnmarshaller implements Unmars
                     context.nextToken();
                     productionVariantServerlessConfig.setMaxConcurrency(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("ProvisionedConcurrency", targetDepth)) {
+                    context.nextToken();
+                    productionVariantServerlessConfig.setProvisionedConcurrency(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

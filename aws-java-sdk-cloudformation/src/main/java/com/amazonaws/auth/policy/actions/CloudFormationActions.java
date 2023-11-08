@@ -25,6 +25,8 @@ public enum CloudFormationActions implements Action {
     /** Represents any action executed on AWS CloudFormation. */
     AllCloudFormationActions("cloudformation:*"),
 
+    /** Action for the ActivateOrganizationsAccess operation. */
+    ActivateOrganizationsAccess("cloudformation:ActivateOrganizationsAccess"),
     /** Action for the ActivateType operation. */
     ActivateType("cloudformation:ActivateType"),
     /** Action for the BatchDescribeTypeConfigurations operation. */
@@ -41,6 +43,8 @@ public enum CloudFormationActions implements Action {
     CreateStackInstances("cloudformation:CreateStackInstances"),
     /** Action for the CreateStackSet operation. */
     CreateStackSet("cloudformation:CreateStackSet"),
+    /** Action for the DeactivateOrganizationsAccess operation. */
+    DeactivateOrganizationsAccess("cloudformation:DeactivateOrganizationsAccess"),
     /** Action for the DeactivateType operation. */
     DeactivateType("cloudformation:DeactivateType"),
     /** Action for the DeleteChangeSet operation. */
@@ -59,6 +63,8 @@ public enum CloudFormationActions implements Action {
     DescribeChangeSet("cloudformation:DescribeChangeSet"),
     /** Action for the DescribeChangeSetHooks operation. */
     DescribeChangeSetHooks("cloudformation:DescribeChangeSetHooks"),
+    /** Action for the DescribeOrganizationsAccess operation. */
+    DescribeOrganizationsAccess("cloudformation:DescribeOrganizationsAccess"),
     /** Action for the DescribePublisher operation. */
     DescribePublisher("cloudformation:DescribePublisher"),
     /** Action for the DescribeStackDriftDetectionStatus operation. */
@@ -107,6 +113,8 @@ public enum CloudFormationActions implements Action {
     ListExports("cloudformation:ListExports"),
     /** Action for the ListImports operation. */
     ListImports("cloudformation:ListImports"),
+    /** Action for the ListStackInstanceResourceDrifts operation. */
+    ListStackInstanceResourceDrifts("cloudformation:ListStackInstanceResourceDrifts"),
     /** Action for the ListStackInstances operation. */
     ListStackInstances("cloudformation:ListStackInstances"),
     /** Action for the ListStackResources operation. */

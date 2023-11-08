@@ -34,7 +34,7 @@ public class IncreaseNodeGroupsInGlobalReplicationGroupRequest extends com.amazo
     private String globalReplicationGroupId;
     /**
      * <p>
-     * The number of node groups you wish to add
+     * Total number of node groups you want
      * </p>
      */
     private Integer nodeGroupCount;
@@ -94,11 +94,11 @@ public class IncreaseNodeGroupsInGlobalReplicationGroupRequest extends com.amazo
 
     /**
      * <p>
-     * The number of node groups you wish to add
+     * Total number of node groups you want
      * </p>
      * 
      * @param nodeGroupCount
-     *        The number of node groups you wish to add
+     *        Total number of node groups you want
      */
 
     public void setNodeGroupCount(Integer nodeGroupCount) {
@@ -107,10 +107,10 @@ public class IncreaseNodeGroupsInGlobalReplicationGroupRequest extends com.amazo
 
     /**
      * <p>
-     * The number of node groups you wish to add
+     * Total number of node groups you want
      * </p>
      * 
-     * @return The number of node groups you wish to add
+     * @return Total number of node groups you want
      */
 
     public Integer getNodeGroupCount() {
@@ -119,11 +119,11 @@ public class IncreaseNodeGroupsInGlobalReplicationGroupRequest extends com.amazo
 
     /**
      * <p>
-     * The number of node groups you wish to add
+     * Total number of node groups you want
      * </p>
      * 
      * @param nodeGroupCount
-     *        The number of node groups you wish to add
+     *        Total number of node groups you want
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

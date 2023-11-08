@@ -242,6 +242,31 @@ public interface AWSLakeFormation {
 
     /**
      * <p>
+     * Enforce Lake Formation permissions for the given databases, tables, and principals.
+     * </p>
+     * 
+     * @param createLakeFormationOptInRequest
+     * @return Result of the CreateLakeFormationOptIn operation returned by the service.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist.
+     * @throws AccessDeniedException
+     *         Access to a resource was denied.
+     * @throws ConcurrentModificationException
+     *         Two processes are trying to modify a resource simultaneously.
+     * @sample AWSLakeFormation.CreateLakeFormationOptIn
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/CreateLakeFormationOptIn"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateLakeFormationOptInResult createLakeFormationOptIn(CreateLakeFormationOptInRequest createLakeFormationOptInRequest);
+
+    /**
+     * <p>
      * Deletes a data cell filter.
      * </p>
      * 
@@ -288,6 +313,31 @@ public interface AWSLakeFormation {
      *      Documentation</a>
      */
     DeleteLFTagResult deleteLFTag(DeleteLFTagRequest deleteLFTagRequest);
+
+    /**
+     * <p>
+     * Remove the Lake Formation permissions enforcement of the given databases, tables, and principals.
+     * </p>
+     * 
+     * @param deleteLakeFormationOptInRequest
+     * @return Result of the DeleteLakeFormationOptIn operation returned by the service.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist.
+     * @throws AccessDeniedException
+     *         Access to a resource was denied.
+     * @throws ConcurrentModificationException
+     *         Two processes are trying to modify a resource simultaneously.
+     * @sample AWSLakeFormation.DeleteLakeFormationOptIn
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteLakeFormationOptIn"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteLakeFormationOptInResult deleteLakeFormationOptIn(DeleteLakeFormationOptInRequest deleteLakeFormationOptInRequest);
 
     /**
      * <p>
@@ -792,6 +842,27 @@ public interface AWSLakeFormation {
 
     /**
      * <p>
+     * Retrieve the current list of resources and principals that are opt in to enforce Lake Formation permissions.
+     * </p>
+     * 
+     * @param listLakeFormationOptInsRequest
+     * @return Result of the ListLakeFormationOptIns operation returned by the service.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws AccessDeniedException
+     *         Access to a resource was denied.
+     * @sample AWSLakeFormation.ListLakeFormationOptIns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListLakeFormationOptIns"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListLakeFormationOptInsResult listLakeFormationOptIns(ListLakeFormationOptInsRequest listLakeFormationOptInsRequest);
+
+    /**
+     * <p>
      * Returns a list of the principal permissions on the resource, filtered by the permissions of the caller. For
      * example, if you are granted an ALTER permission, you are able to see only the principal permissions for ALTER.
      * </p>
@@ -800,7 +871,7 @@ public interface AWSLakeFormation {
      * </p>
      * <p>
      * For information about permissions, see <a
-     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control
      * to Metadata and Data</a>.
      * </p>
      * 

@@ -118,6 +118,11 @@ public class AbstractAmazonMQ implements AmazonMQ {
     }
 
     @Override
+    public PromoteResult promote(PromoteRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RebootBrokerResult rebootBroker(RebootBrokerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

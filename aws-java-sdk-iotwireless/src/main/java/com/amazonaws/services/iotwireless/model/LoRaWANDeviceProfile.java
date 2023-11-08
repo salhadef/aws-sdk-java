@@ -120,7 +120,7 @@ public class LoRaWANDeviceProfile implements Serializable, Cloneable, Structured
     private Integer maxEirp;
     /**
      * <p>
-     * The MaxDutyCycle value.
+     * The MaxDutyCycle value. It ranges from 0 to 15.
      * </p>
      */
     private Integer maxDutyCycle;
@@ -799,11 +799,11 @@ public class LoRaWANDeviceProfile implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The MaxDutyCycle value.
+     * The MaxDutyCycle value. It ranges from 0 to 15.
      * </p>
      * 
      * @param maxDutyCycle
-     *        The MaxDutyCycle value.
+     *        The MaxDutyCycle value. It ranges from 0 to 15.
      */
 
     public void setMaxDutyCycle(Integer maxDutyCycle) {
@@ -812,10 +812,10 @@ public class LoRaWANDeviceProfile implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The MaxDutyCycle value.
+     * The MaxDutyCycle value. It ranges from 0 to 15.
      * </p>
      * 
-     * @return The MaxDutyCycle value.
+     * @return The MaxDutyCycle value. It ranges from 0 to 15.
      */
 
     public Integer getMaxDutyCycle() {
@@ -824,11 +824,11 @@ public class LoRaWANDeviceProfile implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The MaxDutyCycle value.
+     * The MaxDutyCycle value. It ranges from 0 to 15.
      * </p>
      * 
      * @param maxDutyCycle
-     *        The MaxDutyCycle value.
+     *        The MaxDutyCycle value. It ranges from 0 to 15.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

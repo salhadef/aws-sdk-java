@@ -20,21 +20,21 @@ public class CreateProjectVersionResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the model version that was created. Use <code>DescribeProjectVersion</code> to get the current status
-     * of the training operation.
+     * The ARN of the model or the project version that was created. Use <code>DescribeProjectVersion</code> to get the
+     * current status of the training operation.
      * </p>
      */
     private String projectVersionArn;
 
     /**
      * <p>
-     * The ARN of the model version that was created. Use <code>DescribeProjectVersion</code> to get the current status
-     * of the training operation.
+     * The ARN of the model or the project version that was created. Use <code>DescribeProjectVersion</code> to get the
+     * current status of the training operation.
      * </p>
      * 
      * @param projectVersionArn
-     *        The ARN of the model version that was created. Use <code>DescribeProjectVersion</code> to get the current
-     *        status of the training operation.
+     *        The ARN of the model or the project version that was created. Use <code>DescribeProjectVersion</code> to
+     *        get the current status of the training operation.
      */
 
     public void setProjectVersionArn(String projectVersionArn) {
@@ -43,12 +43,12 @@ public class CreateProjectVersionResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the model version that was created. Use <code>DescribeProjectVersion</code> to get the current status
-     * of the training operation.
+     * The ARN of the model or the project version that was created. Use <code>DescribeProjectVersion</code> to get the
+     * current status of the training operation.
      * </p>
      * 
-     * @return The ARN of the model version that was created. Use <code>DescribeProjectVersion</code> to get the current
-     *         status of the training operation.
+     * @return The ARN of the model or the project version that was created. Use <code>DescribeProjectVersion</code> to
+     *         get the current status of the training operation.
      */
 
     public String getProjectVersionArn() {
@@ -57,13 +57,13 @@ public class CreateProjectVersionResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the model version that was created. Use <code>DescribeProjectVersion</code> to get the current status
-     * of the training operation.
+     * The ARN of the model or the project version that was created. Use <code>DescribeProjectVersion</code> to get the
+     * current status of the training operation.
      * </p>
      * 
      * @param projectVersionArn
-     *        The ARN of the model version that was created. Use <code>DescribeProjectVersion</code> to get the current
-     *        status of the training operation.
+     *        The ARN of the model or the project version that was created. Use <code>DescribeProjectVersion</code> to
+     *        get the current status of the training operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

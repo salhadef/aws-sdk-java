@@ -924,6 +924,29 @@ public interface AWSProton {
 
     /**
      * <p>
+     * Delete the deployment.
+     * </p>
+     * 
+     * @param deleteDeploymentRequest
+     * @return Result of the DeleteDeployment operation returned by the service.
+     * @throws ValidationException
+     *         The input is invalid or an out-of-range value was supplied for the input parameter.
+     * @throws AccessDeniedException
+     *         There <i>isn't</i> sufficient access for performing this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ResourceNotFoundException
+     *         The requested resource <i>wasn't</i> found.
+     * @throws InternalServerException
+     *         The request failed to register with the service.
+     * @sample AWSProton.DeleteDeployment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteDeployment" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteDeploymentResult deleteDeployment(DeleteDeploymentRequest deleteDeploymentRequest);
+
+    /**
+     * <p>
      * Delete an environment.
      * </p>
      * 
@@ -1260,6 +1283,29 @@ public interface AWSProton {
      *      Documentation</a>
      */
     GetComponentResult getComponent(GetComponentRequest getComponentRequest);
+
+    /**
+     * <p>
+     * Get detailed data for a deployment.
+     * </p>
+     * 
+     * @param getDeploymentRequest
+     * @return Result of the GetDeployment operation returned by the service.
+     * @throws ValidationException
+     *         The input is invalid or an out-of-range value was supplied for the input parameter.
+     * @throws AccessDeniedException
+     *         There <i>isn't</i> sufficient access for performing this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ResourceNotFoundException
+     *         The requested resource <i>wasn't</i> found.
+     * @throws InternalServerException
+     *         The request failed to register with the service.
+     * @sample AWSProton.GetDeployment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetDeployment" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetDeploymentResult getDeployment(GetDeploymentRequest getDeploymentRequest);
 
     /**
      * <p>
@@ -1748,6 +1794,29 @@ public interface AWSProton {
      *      Documentation</a>
      */
     ListComponentsResult listComponents(ListComponentsRequest listComponentsRequest);
+
+    /**
+     * <p>
+     * List deployments. You can filter the result list by environment, service, or a single service instance.
+     * </p>
+     * 
+     * @param listDeploymentsRequest
+     * @return Result of the ListDeployments operation returned by the service.
+     * @throws ValidationException
+     *         The input is invalid or an out-of-range value was supplied for the input parameter.
+     * @throws AccessDeniedException
+     *         There <i>isn't</i> sufficient access for performing this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ResourceNotFoundException
+     *         The requested resource <i>wasn't</i> found.
+     * @throws InternalServerException
+     *         The request failed to register with the service.
+     * @sample AWSProton.ListDeployments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListDeployments" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListDeploymentsResult listDeployments(ListDeploymentsRequest listDeploymentsRequest);
 
     /**
      * <p>

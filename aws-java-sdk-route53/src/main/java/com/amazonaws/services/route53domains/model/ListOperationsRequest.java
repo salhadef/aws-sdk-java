@@ -73,7 +73,7 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
     private String sortBy;
     /**
      * <p>
-     * The sort order ofr returned values, either ascending or descending.
+     * The sort order for returned values, either ascending or descending.
      * </p>
      */
     private String sortOrder;
@@ -506,11 +506,11 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The sort order ofr returned values, either ascending or descending.
+     * The sort order for returned values, either ascending or descending.
      * </p>
      * 
      * @param sortOrder
-     *        The sort order ofr returned values, either ascending or descending.
+     *        The sort order for returned values, either ascending or descending.
      * @see SortOrder
      */
 
@@ -520,10 +520,10 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The sort order ofr returned values, either ascending or descending.
+     * The sort order for returned values, either ascending or descending.
      * </p>
      * 
-     * @return The sort order ofr returned values, either ascending or descending.
+     * @return The sort order for returned values, either ascending or descending.
      * @see SortOrder
      */
 
@@ -533,11 +533,11 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The sort order ofr returned values, either ascending or descending.
+     * The sort order for returned values, either ascending or descending.
      * </p>
      * 
      * @param sortOrder
-     *        The sort order ofr returned values, either ascending or descending.
+     *        The sort order for returned values, either ascending or descending.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SortOrder
      */
@@ -549,11 +549,11 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The sort order ofr returned values, either ascending or descending.
+     * The sort order for returned values, either ascending or descending.
      * </p>
      * 
      * @param sortOrder
-     *        The sort order ofr returned values, either ascending or descending.
+     *        The sort order for returned values, either ascending or descending.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SortOrder
      */

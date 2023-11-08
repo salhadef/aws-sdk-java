@@ -52,6 +52,10 @@ public class FilterScopeConfigurationJsonUnmarshaller implements Unmarshaller<Fi
                     context.nextToken();
                     filterScopeConfiguration.setSelectedSheets(SelectedSheetsFilterScopeConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("AllSheets", targetDepth)) {
+                    context.nextToken();
+                    filterScopeConfiguration.setAllSheets(AllSheetsFilterScopeConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

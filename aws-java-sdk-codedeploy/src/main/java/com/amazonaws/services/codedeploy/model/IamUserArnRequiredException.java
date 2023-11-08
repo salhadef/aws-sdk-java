@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * An IAM user ARN was not specified.
+ * An user ARN was not specified.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

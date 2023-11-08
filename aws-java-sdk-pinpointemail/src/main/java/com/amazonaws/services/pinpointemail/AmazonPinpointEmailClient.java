@@ -44,6 +44,7 @@ import com.amazonaws.services.pinpointemail.AmazonPinpointEmailClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.pinpointemail.model.*;
+
 import com.amazonaws.services.pinpointemail.model.transform.*;
 
 /**

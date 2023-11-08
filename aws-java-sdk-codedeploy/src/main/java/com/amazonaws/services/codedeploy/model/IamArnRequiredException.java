@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * No IAM ARN was included in the request. You must use an IAM session ARN or IAM user ARN in the request.
+ * No IAM ARN was included in the request. You must use an IAM session ARN or user ARN in the request.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

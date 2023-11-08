@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The home region is not set. Set the home region to continue.
+ * The home Region is not set. Set the home Region to continue.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

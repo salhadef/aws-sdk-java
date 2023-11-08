@@ -119,12 +119,14 @@ public class AbstractAmazonMWAAAsync extends AbstractAmazonMWAA implements Amazo
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<PublishMetricsResult> publishMetricsAsync(PublishMetricsRequest request) {
 
         return publishMetricsAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<PublishMetricsResult> publishMetricsAsync(PublishMetricsRequest request,
             com.amazonaws.handlers.AsyncHandler<PublishMetricsRequest, PublishMetricsResult> asyncHandler) {
 

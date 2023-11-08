@@ -301,6 +301,32 @@ public class AbstractAWSIAMRolesAnywhereAsync extends AbstractAWSIAMRolesAnywher
     }
 
     @Override
+    public java.util.concurrent.Future<PutNotificationSettingsResult> putNotificationSettingsAsync(PutNotificationSettingsRequest request) {
+
+        return putNotificationSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutNotificationSettingsResult> putNotificationSettingsAsync(PutNotificationSettingsRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutNotificationSettingsRequest, PutNotificationSettingsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResetNotificationSettingsResult> resetNotificationSettingsAsync(ResetNotificationSettingsRequest request) {
+
+        return resetNotificationSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResetNotificationSettingsResult> resetNotificationSettingsAsync(ResetNotificationSettingsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ResetNotificationSettingsRequest, ResetNotificationSettingsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);

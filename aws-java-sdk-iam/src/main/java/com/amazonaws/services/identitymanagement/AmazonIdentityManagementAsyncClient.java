@@ -2519,6 +2519,39 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     }
 
     @Override
+    public java.util.concurrent.Future<GetMFADeviceResult> getMFADeviceAsync(GetMFADeviceRequest request) {
+
+        return getMFADeviceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMFADeviceResult> getMFADeviceAsync(final GetMFADeviceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetMFADeviceRequest, GetMFADeviceResult> asyncHandler) {
+        final GetMFADeviceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetMFADeviceResult>() {
+            @Override
+            public GetMFADeviceResult call() throws Exception {
+                GetMFADeviceResult result = null;
+
+                try {
+                    result = executeGetMFADevice(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetOpenIDConnectProviderResult> getOpenIDConnectProviderAsync(GetOpenIDConnectProviderRequest request) {
 
         return getOpenIDConnectProviderAsync(request, null);

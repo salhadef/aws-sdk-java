@@ -48,6 +48,10 @@ public class AvailSuppressionJsonUnmarshaller implements Unmarshaller<AvailSuppr
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("FillPolicy", targetDepth)) {
+                    context.nextToken();
+                    availSuppression.setFillPolicy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Mode", targetDepth)) {
                     context.nextToken();
                     availSuppression.setMode(context.getUnmarshaller(String.class).unmarshall(context));

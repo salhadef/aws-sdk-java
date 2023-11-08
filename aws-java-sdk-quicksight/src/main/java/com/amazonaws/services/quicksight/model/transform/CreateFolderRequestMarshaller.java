@@ -42,6 +42,8 @@ public class CreateFolderRequestMarshaller {
             .marshallLocationName("Permissions").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<String> SHARINGMODEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SharingModel").build();
 
     private static final CreateFolderRequestMarshaller instance = new CreateFolderRequestMarshaller();
 
@@ -66,6 +68,7 @@ public class CreateFolderRequestMarshaller {
             protocolMarshaller.marshall(createFolderRequest.getParentFolderArn(), PARENTFOLDERARN_BINDING);
             protocolMarshaller.marshall(createFolderRequest.getPermissions(), PERMISSIONS_BINDING);
             protocolMarshaller.marshall(createFolderRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createFolderRequest.getSharingModel(), SHARINGMODEL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

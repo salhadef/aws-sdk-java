@@ -330,6 +330,12 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private GcpMySQLSettings gcpMySQLSettings;
+    /**
+     * <p>
+     * Settings in JSON format for the target Amazon Timestream endpoint.
+     * </p>
+     */
+    private TimestreamSettings timestreamSettings;
 
     /**
      * <p>
@@ -2418,6 +2424,46 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Settings in JSON format for the target Amazon Timestream endpoint.
+     * </p>
+     * 
+     * @param timestreamSettings
+     *        Settings in JSON format for the target Amazon Timestream endpoint.
+     */
+
+    public void setTimestreamSettings(TimestreamSettings timestreamSettings) {
+        this.timestreamSettings = timestreamSettings;
+    }
+
+    /**
+     * <p>
+     * Settings in JSON format for the target Amazon Timestream endpoint.
+     * </p>
+     * 
+     * @return Settings in JSON format for the target Amazon Timestream endpoint.
+     */
+
+    public TimestreamSettings getTimestreamSettings() {
+        return this.timestreamSettings;
+    }
+
+    /**
+     * <p>
+     * Settings in JSON format for the target Amazon Timestream endpoint.
+     * </p>
+     * 
+     * @param timestreamSettings
+     *        Settings in JSON format for the target Amazon Timestream endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEndpointRequest withTimestreamSettings(TimestreamSettings timestreamSettings) {
+        setTimestreamSettings(timestreamSettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2496,7 +2542,9 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getRedisSettings() != null)
             sb.append("RedisSettings: ").append(getRedisSettings()).append(",");
         if (getGcpMySQLSettings() != null)
-            sb.append("GcpMySQLSettings: ").append(getGcpMySQLSettings());
+            sb.append("GcpMySQLSettings: ").append(getGcpMySQLSettings()).append(",");
+        if (getTimestreamSettings() != null)
+            sb.append("TimestreamSettings: ").append(getTimestreamSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -2647,6 +2695,10 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getGcpMySQLSettings() != null && other.getGcpMySQLSettings().equals(this.getGcpMySQLSettings()) == false)
             return false;
+        if (other.getTimestreamSettings() == null ^ this.getTimestreamSettings() == null)
+            return false;
+        if (other.getTimestreamSettings() != null && other.getTimestreamSettings().equals(this.getTimestreamSettings()) == false)
+            return false;
         return true;
     }
 
@@ -2689,6 +2741,7 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getDocDbSettings() == null) ? 0 : getDocDbSettings().hashCode());
         hashCode = prime * hashCode + ((getRedisSettings() == null) ? 0 : getRedisSettings().hashCode());
         hashCode = prime * hashCode + ((getGcpMySQLSettings() == null) ? 0 : getGcpMySQLSettings().hashCode());
+        hashCode = prime * hashCode + ((getTimestreamSettings() == null) ? 0 : getTimestreamSettings().hashCode());
         return hashCode;
     }
 

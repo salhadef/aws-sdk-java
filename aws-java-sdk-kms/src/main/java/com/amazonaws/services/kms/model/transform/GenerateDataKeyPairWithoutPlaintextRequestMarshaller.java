@@ -37,6 +37,8 @@ public class GenerateDataKeyPairWithoutPlaintextRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KeyPairSpec").build();
     private static final MarshallingInfo<List> GRANTTOKENS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("GrantTokens").build();
+    private static final MarshallingInfo<Boolean> DRYRUN_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("DryRun").build();
 
     private static final GenerateDataKeyPairWithoutPlaintextRequestMarshaller instance = new GenerateDataKeyPairWithoutPlaintextRequestMarshaller();
 
@@ -58,6 +60,7 @@ public class GenerateDataKeyPairWithoutPlaintextRequestMarshaller {
             protocolMarshaller.marshall(generateDataKeyPairWithoutPlaintextRequest.getKeyId(), KEYID_BINDING);
             protocolMarshaller.marshall(generateDataKeyPairWithoutPlaintextRequest.getKeyPairSpec(), KEYPAIRSPEC_BINDING);
             protocolMarshaller.marshall(generateDataKeyPairWithoutPlaintextRequest.getGrantTokens(), GRANTTOKENS_BINDING);
+            protocolMarshaller.marshall(generateDataKeyPairWithoutPlaintextRequest.getDryRun(), DRYRUN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

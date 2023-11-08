@@ -43,6 +43,8 @@ public class RegisterApplicationRequestMarshaller {
             .marshallLocationName("Tags").build();
     private static final MarshallingInfo<List> CREDENTIALS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Credentials").build();
+    private static final MarshallingInfo<String> DATABASEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DatabaseArn").build();
 
     private static final RegisterApplicationRequestMarshaller instance = new RegisterApplicationRequestMarshaller();
 
@@ -67,6 +69,7 @@ public class RegisterApplicationRequestMarshaller {
             protocolMarshaller.marshall(registerApplicationRequest.getSid(), SID_BINDING);
             protocolMarshaller.marshall(registerApplicationRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(registerApplicationRequest.getCredentials(), CREDENTIALS_BINDING);
+            protocolMarshaller.marshall(registerApplicationRequest.getDatabaseArn(), DATABASEARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

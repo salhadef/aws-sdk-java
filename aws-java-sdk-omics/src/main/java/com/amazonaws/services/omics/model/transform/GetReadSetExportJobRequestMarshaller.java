@@ -27,10 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class GetReadSetExportJobRequestMarshaller {
 
-    private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
-            .marshallLocationName("id").build();
     private static final MarshallingInfo<String> SEQUENCESTOREID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("sequenceStoreId").build();
+    private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("id").build();
 
     private static final GetReadSetExportJobRequestMarshaller instance = new GetReadSetExportJobRequestMarshaller();
 
@@ -48,8 +48,8 @@ public class GetReadSetExportJobRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(getReadSetExportJobRequest.getId(), ID_BINDING);
             protocolMarshaller.marshall(getReadSetExportJobRequest.getSequenceStoreId(), SEQUENCESTOREID_BINDING);
+            protocolMarshaller.marshall(getReadSetExportJobRequest.getId(), ID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ListSourceServerActionsRequestMarshaller {
 
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("accountID").build();
     private static final MarshallingInfo<StructuredPojo> FILTERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("filters").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -52,6 +54,7 @@ public class ListSourceServerActionsRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(listSourceServerActionsRequest.getAccountID(), ACCOUNTID_BINDING);
             protocolMarshaller.marshall(listSourceServerActionsRequest.getFilters(), FILTERS_BINDING);
             protocolMarshaller.marshall(listSourceServerActionsRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listSourceServerActionsRequest.getNextToken(), NEXTTOKEN_BINDING);

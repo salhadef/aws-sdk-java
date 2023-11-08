@@ -196,9 +196,9 @@ public class RoleValues implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAdmin() != null)
-            sb.append("Admin: ").append(getAdmin()).append(",");
+            sb.append("Admin: ").append("***Sensitive Data Redacted***").append(",");
         if (getEditor() != null)
-            sb.append("Editor: ").append(getEditor());
+            sb.append("Editor: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

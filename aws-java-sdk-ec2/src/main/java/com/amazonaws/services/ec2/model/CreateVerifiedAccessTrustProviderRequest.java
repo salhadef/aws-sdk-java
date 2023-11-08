@@ -86,6 +86,12 @@ public class CreateVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
      * </p>
      */
     private String clientToken;
+    /**
+     * <p>
+     * Options for server side encryption.
+     * </p>
+     */
+    private VerifiedAccessSseSpecificationRequest sseSpecification;
 
     /**
      * <p>
@@ -580,6 +586,46 @@ public class CreateVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * Options for server side encryption.
+     * </p>
+     * 
+     * @param sseSpecification
+     *        Options for server side encryption.
+     */
+
+    public void setSseSpecification(VerifiedAccessSseSpecificationRequest sseSpecification) {
+        this.sseSpecification = sseSpecification;
+    }
+
+    /**
+     * <p>
+     * Options for server side encryption.
+     * </p>
+     * 
+     * @return Options for server side encryption.
+     */
+
+    public VerifiedAccessSseSpecificationRequest getSseSpecification() {
+        return this.sseSpecification;
+    }
+
+    /**
+     * <p>
+     * Options for server side encryption.
+     * </p>
+     * 
+     * @param sseSpecification
+     *        Options for server side encryption.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateVerifiedAccessTrustProviderRequest withSseSpecification(VerifiedAccessSseSpecificationRequest sseSpecification) {
+        setSseSpecification(sseSpecification);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -619,7 +665,9 @@ public class CreateVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
         if (getTagSpecifications() != null)
             sb.append("TagSpecifications: ").append(getTagSpecifications()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken());
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getSseSpecification() != null)
+            sb.append("SseSpecification: ").append(getSseSpecification());
         sb.append("}");
         return sb.toString();
     }
@@ -670,6 +718,10 @@ public class CreateVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
+        if (other.getSseSpecification() == null ^ this.getSseSpecification() == null)
+            return false;
+        if (other.getSseSpecification() != null && other.getSseSpecification().equals(this.getSseSpecification()) == false)
+            return false;
         return true;
     }
 
@@ -687,6 +739,7 @@ public class CreateVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getSseSpecification() == null) ? 0 : getSseSpecification().hashCode());
         return hashCode;
     }
 

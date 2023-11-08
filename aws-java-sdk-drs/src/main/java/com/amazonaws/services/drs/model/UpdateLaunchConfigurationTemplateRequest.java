@@ -39,6 +39,12 @@ public class UpdateLaunchConfigurationTemplateRequest extends com.amazonaws.Amaz
     private Boolean copyTags;
     /**
      * <p>
+     * S3 bucket ARN to export Source Network templates.
+     * </p>
+     */
+    private String exportBucketArn;
+    /**
+     * <p>
      * Launch Configuration Template ID.
      * </p>
      */
@@ -51,10 +57,23 @@ public class UpdateLaunchConfigurationTemplateRequest extends com.amazonaws.Amaz
     private String launchDisposition;
     /**
      * <p>
+     * DRS will set the 'launch into instance ID' of any source server when performing a drill, recovery or failback to
+     * the previous region or availability zone, using the instance ID of the source instance.
+     * </p>
+     */
+    private Boolean launchIntoSourceInstance;
+    /**
+     * <p>
      * Licensing.
      * </p>
      */
     private Licensing licensing;
+    /**
+     * <p>
+     * Whether we want to activate post-launch actions.
+     * </p>
+     */
+    private Boolean postLaunchEnabled;
     /**
      * <p>
      * Target instance type right-sizing method.
@@ -168,6 +187,46 @@ public class UpdateLaunchConfigurationTemplateRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
+     * S3 bucket ARN to export Source Network templates.
+     * </p>
+     * 
+     * @param exportBucketArn
+     *        S3 bucket ARN to export Source Network templates.
+     */
+
+    public void setExportBucketArn(String exportBucketArn) {
+        this.exportBucketArn = exportBucketArn;
+    }
+
+    /**
+     * <p>
+     * S3 bucket ARN to export Source Network templates.
+     * </p>
+     * 
+     * @return S3 bucket ARN to export Source Network templates.
+     */
+
+    public String getExportBucketArn() {
+        return this.exportBucketArn;
+    }
+
+    /**
+     * <p>
+     * S3 bucket ARN to export Source Network templates.
+     * </p>
+     * 
+     * @param exportBucketArn
+     *        S3 bucket ARN to export Source Network templates.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateLaunchConfigurationTemplateRequest withExportBucketArn(String exportBucketArn) {
+        setExportBucketArn(exportBucketArn);
+        return this;
+    }
+
+    /**
+     * <p>
      * Launch Configuration Template ID.
      * </p>
      * 
@@ -267,6 +326,66 @@ public class UpdateLaunchConfigurationTemplateRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
+     * DRS will set the 'launch into instance ID' of any source server when performing a drill, recovery or failback to
+     * the previous region or availability zone, using the instance ID of the source instance.
+     * </p>
+     * 
+     * @param launchIntoSourceInstance
+     *        DRS will set the 'launch into instance ID' of any source server when performing a drill, recovery or
+     *        failback to the previous region or availability zone, using the instance ID of the source instance.
+     */
+
+    public void setLaunchIntoSourceInstance(Boolean launchIntoSourceInstance) {
+        this.launchIntoSourceInstance = launchIntoSourceInstance;
+    }
+
+    /**
+     * <p>
+     * DRS will set the 'launch into instance ID' of any source server when performing a drill, recovery or failback to
+     * the previous region or availability zone, using the instance ID of the source instance.
+     * </p>
+     * 
+     * @return DRS will set the 'launch into instance ID' of any source server when performing a drill, recovery or
+     *         failback to the previous region or availability zone, using the instance ID of the source instance.
+     */
+
+    public Boolean getLaunchIntoSourceInstance() {
+        return this.launchIntoSourceInstance;
+    }
+
+    /**
+     * <p>
+     * DRS will set the 'launch into instance ID' of any source server when performing a drill, recovery or failback to
+     * the previous region or availability zone, using the instance ID of the source instance.
+     * </p>
+     * 
+     * @param launchIntoSourceInstance
+     *        DRS will set the 'launch into instance ID' of any source server when performing a drill, recovery or
+     *        failback to the previous region or availability zone, using the instance ID of the source instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateLaunchConfigurationTemplateRequest withLaunchIntoSourceInstance(Boolean launchIntoSourceInstance) {
+        setLaunchIntoSourceInstance(launchIntoSourceInstance);
+        return this;
+    }
+
+    /**
+     * <p>
+     * DRS will set the 'launch into instance ID' of any source server when performing a drill, recovery or failback to
+     * the previous region or availability zone, using the instance ID of the source instance.
+     * </p>
+     * 
+     * @return DRS will set the 'launch into instance ID' of any source server when performing a drill, recovery or
+     *         failback to the previous region or availability zone, using the instance ID of the source instance.
+     */
+
+    public Boolean isLaunchIntoSourceInstance() {
+        return this.launchIntoSourceInstance;
+    }
+
+    /**
+     * <p>
      * Licensing.
      * </p>
      * 
@@ -303,6 +422,58 @@ public class UpdateLaunchConfigurationTemplateRequest extends com.amazonaws.Amaz
     public UpdateLaunchConfigurationTemplateRequest withLicensing(Licensing licensing) {
         setLicensing(licensing);
         return this;
+    }
+
+    /**
+     * <p>
+     * Whether we want to activate post-launch actions.
+     * </p>
+     * 
+     * @param postLaunchEnabled
+     *        Whether we want to activate post-launch actions.
+     */
+
+    public void setPostLaunchEnabled(Boolean postLaunchEnabled) {
+        this.postLaunchEnabled = postLaunchEnabled;
+    }
+
+    /**
+     * <p>
+     * Whether we want to activate post-launch actions.
+     * </p>
+     * 
+     * @return Whether we want to activate post-launch actions.
+     */
+
+    public Boolean getPostLaunchEnabled() {
+        return this.postLaunchEnabled;
+    }
+
+    /**
+     * <p>
+     * Whether we want to activate post-launch actions.
+     * </p>
+     * 
+     * @param postLaunchEnabled
+     *        Whether we want to activate post-launch actions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateLaunchConfigurationTemplateRequest withPostLaunchEnabled(Boolean postLaunchEnabled) {
+        setPostLaunchEnabled(postLaunchEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether we want to activate post-launch actions.
+     * </p>
+     * 
+     * @return Whether we want to activate post-launch actions.
+     */
+
+    public Boolean isPostLaunchEnabled() {
+        return this.postLaunchEnabled;
     }
 
     /**
@@ -381,12 +552,18 @@ public class UpdateLaunchConfigurationTemplateRequest extends com.amazonaws.Amaz
             sb.append("CopyPrivateIp: ").append(getCopyPrivateIp()).append(",");
         if (getCopyTags() != null)
             sb.append("CopyTags: ").append(getCopyTags()).append(",");
+        if (getExportBucketArn() != null)
+            sb.append("ExportBucketArn: ").append(getExportBucketArn()).append(",");
         if (getLaunchConfigurationTemplateID() != null)
             sb.append("LaunchConfigurationTemplateID: ").append(getLaunchConfigurationTemplateID()).append(",");
         if (getLaunchDisposition() != null)
             sb.append("LaunchDisposition: ").append(getLaunchDisposition()).append(",");
+        if (getLaunchIntoSourceInstance() != null)
+            sb.append("LaunchIntoSourceInstance: ").append(getLaunchIntoSourceInstance()).append(",");
         if (getLicensing() != null)
             sb.append("Licensing: ").append(getLicensing()).append(",");
+        if (getPostLaunchEnabled() != null)
+            sb.append("PostLaunchEnabled: ").append(getPostLaunchEnabled()).append(",");
         if (getTargetInstanceTypeRightSizingMethod() != null)
             sb.append("TargetInstanceTypeRightSizingMethod: ").append(getTargetInstanceTypeRightSizingMethod());
         sb.append("}");
@@ -411,6 +588,10 @@ public class UpdateLaunchConfigurationTemplateRequest extends com.amazonaws.Amaz
             return false;
         if (other.getCopyTags() != null && other.getCopyTags().equals(this.getCopyTags()) == false)
             return false;
+        if (other.getExportBucketArn() == null ^ this.getExportBucketArn() == null)
+            return false;
+        if (other.getExportBucketArn() != null && other.getExportBucketArn().equals(this.getExportBucketArn()) == false)
+            return false;
         if (other.getLaunchConfigurationTemplateID() == null ^ this.getLaunchConfigurationTemplateID() == null)
             return false;
         if (other.getLaunchConfigurationTemplateID() != null
@@ -420,9 +601,17 @@ public class UpdateLaunchConfigurationTemplateRequest extends com.amazonaws.Amaz
             return false;
         if (other.getLaunchDisposition() != null && other.getLaunchDisposition().equals(this.getLaunchDisposition()) == false)
             return false;
+        if (other.getLaunchIntoSourceInstance() == null ^ this.getLaunchIntoSourceInstance() == null)
+            return false;
+        if (other.getLaunchIntoSourceInstance() != null && other.getLaunchIntoSourceInstance().equals(this.getLaunchIntoSourceInstance()) == false)
+            return false;
         if (other.getLicensing() == null ^ this.getLicensing() == null)
             return false;
         if (other.getLicensing() != null && other.getLicensing().equals(this.getLicensing()) == false)
+            return false;
+        if (other.getPostLaunchEnabled() == null ^ this.getPostLaunchEnabled() == null)
+            return false;
+        if (other.getPostLaunchEnabled() != null && other.getPostLaunchEnabled().equals(this.getPostLaunchEnabled()) == false)
             return false;
         if (other.getTargetInstanceTypeRightSizingMethod() == null ^ this.getTargetInstanceTypeRightSizingMethod() == null)
             return false;
@@ -439,9 +628,12 @@ public class UpdateLaunchConfigurationTemplateRequest extends com.amazonaws.Amaz
 
         hashCode = prime * hashCode + ((getCopyPrivateIp() == null) ? 0 : getCopyPrivateIp().hashCode());
         hashCode = prime * hashCode + ((getCopyTags() == null) ? 0 : getCopyTags().hashCode());
+        hashCode = prime * hashCode + ((getExportBucketArn() == null) ? 0 : getExportBucketArn().hashCode());
         hashCode = prime * hashCode + ((getLaunchConfigurationTemplateID() == null) ? 0 : getLaunchConfigurationTemplateID().hashCode());
         hashCode = prime * hashCode + ((getLaunchDisposition() == null) ? 0 : getLaunchDisposition().hashCode());
+        hashCode = prime * hashCode + ((getLaunchIntoSourceInstance() == null) ? 0 : getLaunchIntoSourceInstance().hashCode());
         hashCode = prime * hashCode + ((getLicensing() == null) ? 0 : getLicensing().hashCode());
+        hashCode = prime * hashCode + ((getPostLaunchEnabled() == null) ? 0 : getPostLaunchEnabled().hashCode());
         hashCode = prime * hashCode + ((getTargetInstanceTypeRightSizingMethod() == null) ? 0 : getTargetInstanceTypeRightSizingMethod().hashCode());
         return hashCode;
     }

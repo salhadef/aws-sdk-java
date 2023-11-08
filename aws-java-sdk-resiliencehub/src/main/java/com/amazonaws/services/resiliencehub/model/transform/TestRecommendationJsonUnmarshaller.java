@@ -84,6 +84,10 @@ public class TestRecommendationJsonUnmarshaller implements Unmarshaller<TestReco
                     context.nextToken();
                     testRecommendation.setRecommendationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("recommendationStatus", targetDepth)) {
+                    context.nextToken();
+                    testRecommendation.setRecommendationStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("referenceId", targetDepth)) {
                     context.nextToken();
                     testRecommendation.setReferenceId(context.getUnmarshaller(String.class).unmarshall(context));

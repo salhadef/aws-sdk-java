@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The input properties for the preloaded Data Store. Only data preloaded from Synthea is supported.
+ * The input properties for the preloaded data store. Only data preloaded from Synthea is supported.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/PreloadDataConfig" target="_top">AWS API

@@ -146,7 +146,7 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Auto naming currently doesn't support creating alias records that route traffic to Amazon Web Services resources
+     * Cloud Map currently doesn't support creating alias records that route traffic to Amazon Web Services resources
      * other than Elastic Load Balancing load balancers.
      * </p>
      * </li>
@@ -682,7 +682,7 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Auto naming currently doesn't support creating alias records that route traffic to Amazon Web Services resources
+     * Cloud Map currently doesn't support creating alias records that route traffic to Amazon Web Services resources
      * other than Elastic Load Balancing load balancers.
      * </p>
      * </li>
@@ -829,7 +829,7 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         </li>
      *         <li>
      *         <p>
-     *         Auto naming currently doesn't support creating alias records that route traffic to Amazon Web Services
+     *         Cloud Map currently doesn't support creating alias records that route traffic to Amazon Web Services
      *         resources other than Elastic Load Balancing load balancers.
      *         </p>
      *         </li>
@@ -983,7 +983,7 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Auto naming currently doesn't support creating alias records that route traffic to Amazon Web Services resources
+     * Cloud Map currently doesn't support creating alias records that route traffic to Amazon Web Services resources
      * other than Elastic Load Balancing load balancers.
      * </p>
      * </li>
@@ -1131,7 +1131,7 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        Auto naming currently doesn't support creating alias records that route traffic to Amazon Web Services
+     *        Cloud Map currently doesn't support creating alias records that route traffic to Amazon Web Services
      *        resources other than Elastic Load Balancing load balancers.
      *        </p>
      *        </li>
@@ -1284,7 +1284,7 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Auto naming currently doesn't support creating alias records that route traffic to Amazon Web Services resources
+     * Cloud Map currently doesn't support creating alias records that route traffic to Amazon Web Services resources
      * other than Elastic Load Balancing load balancers.
      * </p>
      * </li>
@@ -1432,7 +1432,7 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        Auto naming currently doesn't support creating alias records that route traffic to Amazon Web Services
+     *        Cloud Map currently doesn't support creating alias records that route traffic to Amazon Web Services
      *        resources other than Elastic Load Balancing load balancers.
      *        </p>
      *        </li>

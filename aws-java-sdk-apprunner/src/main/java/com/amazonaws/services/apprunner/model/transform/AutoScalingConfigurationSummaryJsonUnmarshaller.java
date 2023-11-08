@@ -60,6 +60,22 @@ public class AutoScalingConfigurationSummaryJsonUnmarshaller implements Unmarsha
                     context.nextToken();
                     autoScalingConfigurationSummary.setAutoScalingConfigurationRevision(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("Status", targetDepth)) {
+                    context.nextToken();
+                    autoScalingConfigurationSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CreatedAt", targetDepth)) {
+                    context.nextToken();
+                    autoScalingConfigurationSummary.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("HasAssociatedService", targetDepth)) {
+                    context.nextToken();
+                    autoScalingConfigurationSummary.setHasAssociatedService(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("IsDefault", targetDepth)) {
+                    context.nextToken();
+                    autoScalingConfigurationSummary.setIsDefault(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

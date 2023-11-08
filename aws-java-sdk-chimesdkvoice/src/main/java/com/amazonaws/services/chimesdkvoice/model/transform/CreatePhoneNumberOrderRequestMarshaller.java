@@ -32,6 +32,8 @@ public class CreatePhoneNumberOrderRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProductType").build();
     private static final MarshallingInfo<List> E164PHONENUMBERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("E164PhoneNumbers").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
 
     private static final CreatePhoneNumberOrderRequestMarshaller instance = new CreatePhoneNumberOrderRequestMarshaller();
 
@@ -51,6 +53,7 @@ public class CreatePhoneNumberOrderRequestMarshaller {
         try {
             protocolMarshaller.marshall(createPhoneNumberOrderRequest.getProductType(), PRODUCTTYPE_BINDING);
             protocolMarshaller.marshall(createPhoneNumberOrderRequest.getE164PhoneNumbers(), E164PHONENUMBERS_BINDING);
+            protocolMarshaller.marshall(createPhoneNumberOrderRequest.getName(), NAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

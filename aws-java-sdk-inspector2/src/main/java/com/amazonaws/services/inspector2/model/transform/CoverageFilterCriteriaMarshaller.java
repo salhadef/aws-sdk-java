@@ -42,6 +42,8 @@ public class CoverageFilterCriteriaMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lambdaFunctionRuntime").build();
     private static final MarshallingInfo<List> LAMBDAFUNCTIONTAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lambdaFunctionTags").build();
+    private static final MarshallingInfo<List> LASTSCANNEDAT_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("lastScannedAt").build();
     private static final MarshallingInfo<List> RESOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("resourceId").build();
     private static final MarshallingInfo<List> RESOURCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -76,6 +78,7 @@ public class CoverageFilterCriteriaMarshaller {
             protocolMarshaller.marshall(coverageFilterCriteria.getLambdaFunctionName(), LAMBDAFUNCTIONNAME_BINDING);
             protocolMarshaller.marshall(coverageFilterCriteria.getLambdaFunctionRuntime(), LAMBDAFUNCTIONRUNTIME_BINDING);
             protocolMarshaller.marshall(coverageFilterCriteria.getLambdaFunctionTags(), LAMBDAFUNCTIONTAGS_BINDING);
+            protocolMarshaller.marshall(coverageFilterCriteria.getLastScannedAt(), LASTSCANNEDAT_BINDING);
             protocolMarshaller.marshall(coverageFilterCriteria.getResourceId(), RESOURCEID_BINDING);
             protocolMarshaller.marshall(coverageFilterCriteria.getResourceType(), RESOURCETYPE_BINDING);
             protocolMarshaller.marshall(coverageFilterCriteria.getScanStatusCode(), SCANSTATUSCODE_BINDING);

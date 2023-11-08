@@ -34,8 +34,8 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Tags to apply to the resource. For more information see <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">Tagging Personalize
-     * resources</a>.
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">Tagging Amazon Personalize
+     * recources</a>.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -83,13 +83,13 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Tags to apply to the resource. For more information see <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">Tagging Personalize
-     * resources</a>.
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">Tagging Amazon Personalize
+     * recources</a>.
      * </p>
      * 
      * @return Tags to apply to the resource. For more information see <a
-     *         href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">Tagging Personalize
-     *         resources</a>.
+     *         href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">Tagging Amazon
+     *         Personalize recources</a>.
      */
 
     public java.util.List<Tag> getTags() {
@@ -99,14 +99,14 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Tags to apply to the resource. For more information see <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">Tagging Personalize
-     * resources</a>.
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">Tagging Amazon Personalize
+     * recources</a>.
      * </p>
      * 
      * @param tags
      *        Tags to apply to the resource. For more information see <a
-     *        href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">Tagging Personalize
-     *        resources</a>.
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">Tagging Amazon Personalize
+     *        recources</a>.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -121,8 +121,8 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Tags to apply to the resource. For more information see <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">Tagging Personalize
-     * resources</a>.
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">Tagging Amazon Personalize
+     * recources</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -132,8 +132,8 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @param tags
      *        Tags to apply to the resource. For more information see <a
-     *        href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">Tagging Personalize
-     *        resources</a>.
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">Tagging Amazon Personalize
+     *        recources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -150,14 +150,14 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Tags to apply to the resource. For more information see <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">Tagging Personalize
-     * resources</a>.
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">Tagging Amazon Personalize
+     * recources</a>.
      * </p>
      * 
      * @param tags
      *        Tags to apply to the resource. For more information see <a
-     *        href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">Tagging Personalize
-     *        resources</a>.
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">Tagging Amazon Personalize
+     *        recources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

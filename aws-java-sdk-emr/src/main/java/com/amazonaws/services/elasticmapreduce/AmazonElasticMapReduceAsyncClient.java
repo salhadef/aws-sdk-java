@@ -1434,6 +1434,39 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
     }
 
     @Override
+    public java.util.concurrent.Future<ListSupportedInstanceTypesResult> listSupportedInstanceTypesAsync(ListSupportedInstanceTypesRequest request) {
+
+        return listSupportedInstanceTypesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSupportedInstanceTypesResult> listSupportedInstanceTypesAsync(final ListSupportedInstanceTypesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListSupportedInstanceTypesRequest, ListSupportedInstanceTypesResult> asyncHandler) {
+        final ListSupportedInstanceTypesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListSupportedInstanceTypesResult>() {
+            @Override
+            public ListSupportedInstanceTypesResult call() throws Exception {
+                ListSupportedInstanceTypesResult result = null;
+
+                try {
+                    result = executeListSupportedInstanceTypes(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ModifyClusterResult> modifyClusterAsync(ModifyClusterRequest request) {
 
         return modifyClusterAsync(request, null);

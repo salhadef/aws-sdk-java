@@ -62,6 +62,14 @@ public class RecordingGroupJsonUnmarshaller implements Unmarshaller<RecordingGro
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("exclusionByResourceTypes", targetDepth)) {
+                    context.nextToken();
+                    recordingGroup.setExclusionByResourceTypes(ExclusionByResourceTypesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("recordingStrategy", targetDepth)) {
+                    context.nextToken();
+                    recordingGroup.setRecordingStrategy(RecordingStrategyJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -45,6 +45,7 @@ import com.amazonaws.services.omics.waiters.AmazonOmicsWaiters;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.omics.model.*;
+
 import com.amazonaws.services.omics.model.transform.*;
 
 /**
@@ -52,8 +53,8 @@ import com.amazonaws.services.omics.model.transform.*;
  * the service call completes.
  * <p>
  * <p>
- * This is the <i>Amazon Omics API Reference</i>. For an introduction to the service, see <a
- * href="https://docs.aws.amazon.com/omics/latest/dev/">What is Amazon Omics?</a> in the <i>Amazon Omics Developer
+ * This is the <i>AWS HealthOmics API Reference</i>. For an introduction to the service, see <a
+ * href="https://docs.aws.amazon.com/omics/latest/dev/">What is AWS HealthOmics?</a> in the <i>AWS HealthOmics User
  * Guide</i>.
  * </p>
  */
@@ -103,6 +104,9 @@ public class AmazonOmicsClient extends AmazonWebServiceClient implements AmazonO
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
                                     com.amazonaws.services.omics.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("NotSupportedOperationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.omics.model.transform.NotSupportedOperationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.omics.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
@@ -155,6 +159,166 @@ public class AmazonOmicsClient extends AmazonWebServiceClient implements AmazonO
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain("/com/amazonaws/services/omics/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain("/com/amazonaws/services/omics/request.handler2s"));
         requestHandler2s.addAll(chainFactory.getGlobalHandlers());
+    }
+
+    /**
+     * <p>
+     * Stops a multipart upload.
+     * </p>
+     * 
+     * @param abortMultipartReadSetUploadRequest
+     * @return Result of the AbortMultipartReadSetUpload operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error occurred. Try the request again.
+     * @throws NotSupportedOperationException
+     *         The operation is not supported by Amazon Omics, or the API does not exist.
+     * @throws ServiceQuotaExceededException
+     *         The request exceeds a service quota.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ResourceNotFoundException
+     *         The target resource was not found in the current Region.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws RequestTimeoutException
+     *         The request timed out.
+     * @sample AmazonOmics.AbortMultipartReadSetUpload
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/AbortMultipartReadSetUpload"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AbortMultipartReadSetUploadResult abortMultipartReadSetUpload(AbortMultipartReadSetUploadRequest request) {
+        request = beforeClientExecution(request);
+        return executeAbortMultipartReadSetUpload(request);
+    }
+
+    @SdkInternalApi
+    final AbortMultipartReadSetUploadResult executeAbortMultipartReadSetUpload(AbortMultipartReadSetUploadRequest abortMultipartReadSetUploadRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(abortMultipartReadSetUploadRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AbortMultipartReadSetUploadRequest> request = null;
+        Response<AbortMultipartReadSetUploadResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AbortMultipartReadSetUploadRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(abortMultipartReadSetUploadRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Omics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AbortMultipartReadSetUpload");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "control-storage-";
+                String resolvedHostPrefix = String.format("control-storage-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AbortMultipartReadSetUploadResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AbortMultipartReadSetUploadResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Accepts a share for an analytics store.
+     * </p>
+     * 
+     * @param acceptShareRequest
+     * @return Result of the AcceptShare operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error occurred. Try the request again.
+     * @throws ServiceQuotaExceededException
+     *         The request exceeds a service quota.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ConflictException
+     *         The request cannot be applied to the target resource in its current state.
+     * @throws ResourceNotFoundException
+     *         The target resource was not found in the current Region.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AmazonOmics.AcceptShare
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/AcceptShare" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public AcceptShareResult acceptShare(AcceptShareRequest request) {
+        request = beforeClientExecution(request);
+        return executeAcceptShare(request);
+    }
+
+    @SdkInternalApi
+    final AcceptShareResult executeAcceptShare(AcceptShareRequest acceptShareRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(acceptShareRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AcceptShareRequest> request = null;
+        Response<AcceptShareResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AcceptShareRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(acceptShareRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Omics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AcceptShare");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "analytics-";
+                String resolvedHostPrefix = String.format("analytics-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AcceptShareResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AcceptShareResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -466,6 +630,88 @@ public class AmazonOmicsClient extends AmazonWebServiceClient implements AmazonO
 
     /**
      * <p>
+     * Concludes a multipart upload once you have uploaded all the components.
+     * </p>
+     * 
+     * @param completeMultipartReadSetUploadRequest
+     * @return Result of the CompleteMultipartReadSetUpload operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error occurred. Try the request again.
+     * @throws NotSupportedOperationException
+     *         The operation is not supported by Amazon Omics, or the API does not exist.
+     * @throws ServiceQuotaExceededException
+     *         The request exceeds a service quota.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ResourceNotFoundException
+     *         The target resource was not found in the current Region.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws RequestTimeoutException
+     *         The request timed out.
+     * @sample AmazonOmics.CompleteMultipartReadSetUpload
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CompleteMultipartReadSetUpload"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CompleteMultipartReadSetUploadResult completeMultipartReadSetUpload(CompleteMultipartReadSetUploadRequest request) {
+        request = beforeClientExecution(request);
+        return executeCompleteMultipartReadSetUpload(request);
+    }
+
+    @SdkInternalApi
+    final CompleteMultipartReadSetUploadResult executeCompleteMultipartReadSetUpload(CompleteMultipartReadSetUploadRequest completeMultipartReadSetUploadRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(completeMultipartReadSetUploadRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CompleteMultipartReadSetUploadRequest> request = null;
+        Response<CompleteMultipartReadSetUploadResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CompleteMultipartReadSetUploadRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(completeMultipartReadSetUploadRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Omics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CompleteMultipartReadSetUpload");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "storage-";
+                String resolvedHostPrefix = String.format("storage-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CompleteMultipartReadSetUploadResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CompleteMultipartReadSetUploadResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates an annotation store.
      * </p>
      * 
@@ -533,6 +779,168 @@ public class AmazonOmicsClient extends AmazonWebServiceClient implements AmazonO
             HttpResponseHandler<AmazonWebServiceResponse<CreateAnnotationStoreResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new CreateAnnotationStoreResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a new version of an annotation store.
+     * </p>
+     * 
+     * @param createAnnotationStoreVersionRequest
+     * @return Result of the CreateAnnotationStoreVersion operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error occurred. Try the request again.
+     * @throws ServiceQuotaExceededException
+     *         The request exceeds a service quota.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ConflictException
+     *         The request cannot be applied to the target resource in its current state.
+     * @throws ResourceNotFoundException
+     *         The target resource was not found in the current Region.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AmazonOmics.CreateAnnotationStoreVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateAnnotationStoreVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateAnnotationStoreVersionResult createAnnotationStoreVersion(CreateAnnotationStoreVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateAnnotationStoreVersion(request);
+    }
+
+    @SdkInternalApi
+    final CreateAnnotationStoreVersionResult executeCreateAnnotationStoreVersion(CreateAnnotationStoreVersionRequest createAnnotationStoreVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createAnnotationStoreVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateAnnotationStoreVersionRequest> request = null;
+        Response<CreateAnnotationStoreVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateAnnotationStoreVersionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createAnnotationStoreVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Omics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAnnotationStoreVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "analytics-";
+                String resolvedHostPrefix = String.format("analytics-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateAnnotationStoreVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateAnnotationStoreVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Begins a multipart read set upload.
+     * </p>
+     * 
+     * @param createMultipartReadSetUploadRequest
+     * @return Result of the CreateMultipartReadSetUpload operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error occurred. Try the request again.
+     * @throws NotSupportedOperationException
+     *         The operation is not supported by Amazon Omics, or the API does not exist.
+     * @throws ServiceQuotaExceededException
+     *         The request exceeds a service quota.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ResourceNotFoundException
+     *         The target resource was not found in the current Region.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws RequestTimeoutException
+     *         The request timed out.
+     * @sample AmazonOmics.CreateMultipartReadSetUpload
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateMultipartReadSetUpload"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateMultipartReadSetUploadResult createMultipartReadSetUpload(CreateMultipartReadSetUploadRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateMultipartReadSetUpload(request);
+    }
+
+    @SdkInternalApi
+    final CreateMultipartReadSetUploadResult executeCreateMultipartReadSetUpload(CreateMultipartReadSetUploadRequest createMultipartReadSetUploadRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createMultipartReadSetUploadRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateMultipartReadSetUploadRequest> request = null;
+        Response<CreateMultipartReadSetUploadResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateMultipartReadSetUploadRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createMultipartReadSetUploadRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Omics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateMultipartReadSetUpload");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "control-storage-";
+                String resolvedHostPrefix = String.format("control-storage-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateMultipartReadSetUploadResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateMultipartReadSetUploadResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();
@@ -777,6 +1185,85 @@ public class AmazonOmicsClient extends AmazonWebServiceClient implements AmazonO
 
     /**
      * <p>
+     * Creates a share offer that can be accepted outside the account by a subscriber. The share is created by the owner
+     * and accepted by the principal subscriber.
+     * </p>
+     * 
+     * @param createShareRequest
+     * @return Result of the CreateShare operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error occurred. Try the request again.
+     * @throws ServiceQuotaExceededException
+     *         The request exceeds a service quota.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ConflictException
+     *         The request cannot be applied to the target resource in its current state.
+     * @throws ResourceNotFoundException
+     *         The target resource was not found in the current Region.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AmazonOmics.CreateShare
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateShare" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateShareResult createShare(CreateShareRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateShare(request);
+    }
+
+    @SdkInternalApi
+    final CreateShareResult executeCreateShare(CreateShareRequest createShareRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createShareRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateShareRequest> request = null;
+        Response<CreateShareResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateShareRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createShareRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Omics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateShare");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "analytics-";
+                String resolvedHostPrefix = String.format("analytics-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateShareResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateShareResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a variant store.
      * </p>
      * 
@@ -1000,6 +1487,84 @@ public class AmazonOmicsClient extends AmazonWebServiceClient implements AmazonO
             HttpResponseHandler<AmazonWebServiceResponse<DeleteAnnotationStoreResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new DeleteAnnotationStoreResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes one or multiple versions of an annotation store.
+     * </p>
+     * 
+     * @param deleteAnnotationStoreVersionsRequest
+     * @return Result of the DeleteAnnotationStoreVersions operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error occurred. Try the request again.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ConflictException
+     *         The request cannot be applied to the target resource in its current state.
+     * @throws ResourceNotFoundException
+     *         The target resource was not found in the current Region.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AmazonOmics.DeleteAnnotationStoreVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteAnnotationStoreVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteAnnotationStoreVersionsResult deleteAnnotationStoreVersions(DeleteAnnotationStoreVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAnnotationStoreVersions(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAnnotationStoreVersionsResult executeDeleteAnnotationStoreVersions(DeleteAnnotationStoreVersionsRequest deleteAnnotationStoreVersionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteAnnotationStoreVersionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteAnnotationStoreVersionsRequest> request = null;
+        Response<DeleteAnnotationStoreVersionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteAnnotationStoreVersionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteAnnotationStoreVersionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Omics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAnnotationStoreVersions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "analytics-";
+                String resolvedHostPrefix = String.format("analytics-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteAnnotationStoreVersionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteAnnotationStoreVersionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();
@@ -1406,6 +1971,84 @@ public class AmazonOmicsClient extends AmazonWebServiceClient implements AmazonO
 
     /**
      * <p>
+     * Deletes a share of an analytics store.
+     * </p>
+     * 
+     * @param deleteShareRequest
+     * @return Result of the DeleteShare operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error occurred. Try the request again.
+     * @throws ServiceQuotaExceededException
+     *         The request exceeds a service quota.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ConflictException
+     *         The request cannot be applied to the target resource in its current state.
+     * @throws ResourceNotFoundException
+     *         The target resource was not found in the current Region.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AmazonOmics.DeleteShare
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteShare" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteShareResult deleteShare(DeleteShareRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteShare(request);
+    }
+
+    @SdkInternalApi
+    final DeleteShareResult executeDeleteShare(DeleteShareRequest deleteShareRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteShareRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteShareRequest> request = null;
+        Response<DeleteShareResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteShareRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteShareRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Omics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteShare");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "analytics-";
+                String resolvedHostPrefix = String.format("analytics-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteShareResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteShareResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a variant store.
      * </p>
      * 
@@ -1699,6 +2342,82 @@ public class AmazonOmicsClient extends AmazonWebServiceClient implements AmazonO
 
             HttpResponseHandler<AmazonWebServiceResponse<GetAnnotationStoreResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetAnnotationStoreResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the metadata for an annotation store version.
+     * </p>
+     * 
+     * @param getAnnotationStoreVersionRequest
+     * @return Result of the GetAnnotationStoreVersion operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error occurred. Try the request again.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ResourceNotFoundException
+     *         The target resource was not found in the current Region.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AmazonOmics.GetAnnotationStoreVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetAnnotationStoreVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetAnnotationStoreVersionResult getAnnotationStoreVersion(GetAnnotationStoreVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAnnotationStoreVersion(request);
+    }
+
+    @SdkInternalApi
+    final GetAnnotationStoreVersionResult executeGetAnnotationStoreVersion(GetAnnotationStoreVersionRequest getAnnotationStoreVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getAnnotationStoreVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAnnotationStoreVersionRequest> request = null;
+        Response<GetAnnotationStoreVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAnnotationStoreVersionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getAnnotationStoreVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Omics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAnnotationStoreVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "analytics-";
+                String resolvedHostPrefix = String.format("analytics-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetAnnotationStoreVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetAnnotationStoreVersionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();
@@ -2724,6 +3443,84 @@ public class AmazonOmicsClient extends AmazonWebServiceClient implements AmazonO
 
     /**
      * <p>
+     * Retrieves the metadata for a share.
+     * </p>
+     * 
+     * @param getShareRequest
+     * @return Result of the GetShare operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error occurred. Try the request again.
+     * @throws ServiceQuotaExceededException
+     *         The request exceeds a service quota.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ConflictException
+     *         The request cannot be applied to the target resource in its current state.
+     * @throws ResourceNotFoundException
+     *         The target resource was not found in the current Region.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AmazonOmics.GetShare
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetShare" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetShareResult getShare(GetShareRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetShare(request);
+    }
+
+    @SdkInternalApi
+    final GetShareResult executeGetShare(GetShareRequest getShareRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getShareRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetShareRequest> request = null;
+        Response<GetShareResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetShareRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getShareRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Omics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetShare");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "analytics-";
+                String resolvedHostPrefix = String.format("analytics-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetShareResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetShareResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets information about a variant import job.
      * </p>
      * 
@@ -3028,6 +3825,82 @@ public class AmazonOmicsClient extends AmazonWebServiceClient implements AmazonO
 
     /**
      * <p>
+     * Lists the versions of an annotation store.
+     * </p>
+     * 
+     * @param listAnnotationStoreVersionsRequest
+     * @return Result of the ListAnnotationStoreVersions operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error occurred. Try the request again.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ResourceNotFoundException
+     *         The target resource was not found in the current Region.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AmazonOmics.ListAnnotationStoreVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListAnnotationStoreVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListAnnotationStoreVersionsResult listAnnotationStoreVersions(ListAnnotationStoreVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAnnotationStoreVersions(request);
+    }
+
+    @SdkInternalApi
+    final ListAnnotationStoreVersionsResult executeListAnnotationStoreVersions(ListAnnotationStoreVersionsRequest listAnnotationStoreVersionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAnnotationStoreVersionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAnnotationStoreVersionsRequest> request = null;
+        Response<ListAnnotationStoreVersionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAnnotationStoreVersionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listAnnotationStoreVersionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Omics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAnnotationStoreVersions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "analytics-";
+                String resolvedHostPrefix = String.format("analytics-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAnnotationStoreVersionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListAnnotationStoreVersionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves a list of annotation stores.
      * </p>
      * 
@@ -3090,6 +3963,88 @@ public class AmazonOmicsClient extends AmazonWebServiceClient implements AmazonO
 
             HttpResponseHandler<AmazonWebServiceResponse<ListAnnotationStoresResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListAnnotationStoresResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all multipart read set uploads and their statuses.
+     * </p>
+     * 
+     * @param listMultipartReadSetUploadsRequest
+     * @return Result of the ListMultipartReadSetUploads operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error occurred. Try the request again.
+     * @throws NotSupportedOperationException
+     *         The operation is not supported by Amazon Omics, or the API does not exist.
+     * @throws ServiceQuotaExceededException
+     *         The request exceeds a service quota.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ResourceNotFoundException
+     *         The target resource was not found in the current Region.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws RequestTimeoutException
+     *         The request timed out.
+     * @sample AmazonOmics.ListMultipartReadSetUploads
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListMultipartReadSetUploads"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListMultipartReadSetUploadsResult listMultipartReadSetUploads(ListMultipartReadSetUploadsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListMultipartReadSetUploads(request);
+    }
+
+    @SdkInternalApi
+    final ListMultipartReadSetUploadsResult executeListMultipartReadSetUploads(ListMultipartReadSetUploadsRequest listMultipartReadSetUploadsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listMultipartReadSetUploadsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListMultipartReadSetUploadsRequest> request = null;
+        Response<ListMultipartReadSetUploadsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListMultipartReadSetUploadsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listMultipartReadSetUploadsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Omics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMultipartReadSetUploads");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "control-storage-";
+                String resolvedHostPrefix = String.format("control-storage-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListMultipartReadSetUploadsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListMultipartReadSetUploadsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();
@@ -3322,6 +4277,87 @@ public class AmazonOmicsClient extends AmazonWebServiceClient implements AmazonO
             HttpResponseHandler<AmazonWebServiceResponse<ListReadSetImportJobsResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new ListReadSetImportJobsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * This operation will list all parts in a requested multipart upload for a sequence store.
+     * </p>
+     * 
+     * @param listReadSetUploadPartsRequest
+     * @return Result of the ListReadSetUploadParts operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error occurred. Try the request again.
+     * @throws NotSupportedOperationException
+     *         The operation is not supported by Amazon Omics, or the API does not exist.
+     * @throws ServiceQuotaExceededException
+     *         The request exceeds a service quota.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ResourceNotFoundException
+     *         The target resource was not found in the current Region.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws RequestTimeoutException
+     *         The request timed out.
+     * @sample AmazonOmics.ListReadSetUploadParts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListReadSetUploadParts" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListReadSetUploadPartsResult listReadSetUploadParts(ListReadSetUploadPartsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListReadSetUploadParts(request);
+    }
+
+    @SdkInternalApi
+    final ListReadSetUploadPartsResult executeListReadSetUploadParts(ListReadSetUploadPartsRequest listReadSetUploadPartsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listReadSetUploadPartsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListReadSetUploadPartsRequest> request = null;
+        Response<ListReadSetUploadPartsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListReadSetUploadPartsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listReadSetUploadPartsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Omics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListReadSetUploadParts");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "control-storage-";
+                String resolvedHostPrefix = String.format("control-storage-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListReadSetUploadPartsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListReadSetUploadPartsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();
@@ -3940,6 +4976,84 @@ public class AmazonOmicsClient extends AmazonWebServiceClient implements AmazonO
 
             HttpResponseHandler<AmazonWebServiceResponse<ListSequenceStoresResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListSequenceStoresResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all shares associated with an account.
+     * </p>
+     * 
+     * @param listSharesRequest
+     * @return Result of the ListShares operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error occurred. Try the request again.
+     * @throws ServiceQuotaExceededException
+     *         The request exceeds a service quota.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ConflictException
+     *         The request cannot be applied to the target resource in its current state.
+     * @throws ResourceNotFoundException
+     *         The target resource was not found in the current Region.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AmazonOmics.ListShares
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListShares" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListSharesResult listShares(ListSharesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListShares(request);
+    }
+
+    @SdkInternalApi
+    final ListSharesResult executeListShares(ListSharesRequest listSharesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listSharesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListSharesRequest> request = null;
+        Response<ListSharesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListSharesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSharesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Omics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListShares");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "analytics-";
+                String resolvedHostPrefix = String.format("analytics-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListSharesResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListSharesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();
@@ -4657,7 +5771,13 @@ public class AmazonOmicsClient extends AmazonWebServiceClient implements AmazonO
 
     /**
      * <p>
-     * Starts a run.
+     * Starts a workflow run. To duplicate a run, specify the run's ID and a role ARN. The remaining parameters are
+     * copied from the previous run.
+     * </p>
+     * <p>
+     * The total number of runs in your account is subject to a quota per Region. To avoid needing to delete runs
+     * manually, you can set the retention mode to <code>REMOVE</code>. Runs with this setting are deleted automatically
+     * when the run quoata is exceeded.
      * </p>
      * 
      * @param startRunRequest
@@ -5049,6 +6169,82 @@ public class AmazonOmicsClient extends AmazonWebServiceClient implements AmazonO
 
     /**
      * <p>
+     * Updates the description of an annotation store version.
+     * </p>
+     * 
+     * @param updateAnnotationStoreVersionRequest
+     * @return Result of the UpdateAnnotationStoreVersion operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error occurred. Try the request again.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ResourceNotFoundException
+     *         The target resource was not found in the current Region.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AmazonOmics.UpdateAnnotationStoreVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateAnnotationStoreVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateAnnotationStoreVersionResult updateAnnotationStoreVersion(UpdateAnnotationStoreVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateAnnotationStoreVersion(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAnnotationStoreVersionResult executeUpdateAnnotationStoreVersion(UpdateAnnotationStoreVersionRequest updateAnnotationStoreVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateAnnotationStoreVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateAnnotationStoreVersionRequest> request = null;
+        Response<UpdateAnnotationStoreVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateAnnotationStoreVersionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateAnnotationStoreVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Omics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAnnotationStoreVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "analytics-";
+                String resolvedHostPrefix = String.format("analytics-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateAnnotationStoreVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateAnnotationStoreVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates a run group.
      * </p>
      * 
@@ -5271,6 +6467,90 @@ public class AmazonOmicsClient extends AmazonWebServiceClient implements AmazonO
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateWorkflowResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateWorkflowResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * This operation uploads a specific part of a read set. If you upload a new part using a previously used part
+     * number, the previously uploaded part will be overwritten.
+     * </p>
+     * 
+     * @param uploadReadSetPartRequest
+     * @return Result of the UploadReadSetPart operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error occurred. Try the request again.
+     * @throws NotSupportedOperationException
+     *         The operation is not supported by Amazon Omics, or the API does not exist.
+     * @throws ServiceQuotaExceededException
+     *         The request exceeds a service quota.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ResourceNotFoundException
+     *         The target resource was not found in the current Region.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws RequestTimeoutException
+     *         The request timed out.
+     * @sample AmazonOmics.UploadReadSetPart
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UploadReadSetPart" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UploadReadSetPartResult uploadReadSetPart(UploadReadSetPartRequest request) {
+        request = beforeClientExecution(request);
+        return executeUploadReadSetPart(request);
+    }
+
+    @SdkInternalApi
+    final UploadReadSetPartResult executeUploadReadSetPart(UploadReadSetPartRequest uploadReadSetPartRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(uploadReadSetPartRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UploadReadSetPartRequest> request = null;
+        Response<UploadReadSetPartResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UploadReadSetPartRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(uploadReadSetPartRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Omics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UploadReadSetPart");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+                request.addHandlerContext(HandlerContextKey.REQUIRES_LENGTH, Boolean.TRUE);
+                request.addHandlerContext(HandlerContextKey.HAS_STREAMING_INPUT, Boolean.TRUE);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "storage-";
+                String resolvedHostPrefix = String.format("storage-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UploadReadSetPartResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UploadReadSetPartResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();

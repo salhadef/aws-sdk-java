@@ -42,8 +42,7 @@ public class Schema implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<Column> partitionKeys;
     /**
      * <p>
-     * The analysis rule types associated with the schema. Valued values are LIST and AGGREGATION. Currently, only one
-     * entry is present.
+     * The analysis rule types associated with the schema. Currently, only one entry is present.
      * </p>
      */
     private java.util.List<String> analysisRuleTypes;
@@ -55,7 +54,7 @@ public class Schema implements Serializable, Cloneable, StructuredPojo {
     private String analysisMethod;
     /**
      * <p>
-     * The unique account ID for the AWS account that owns the schema.
+     * The unique account ID for the Amazon Web Services account that owns the schema.
      * </p>
      */
     private String creatorAccountId;
@@ -244,12 +243,10 @@ public class Schema implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The analysis rule types associated with the schema. Valued values are LIST and AGGREGATION. Currently, only one
-     * entry is present.
+     * The analysis rule types associated with the schema. Currently, only one entry is present.
      * </p>
      * 
-     * @return The analysis rule types associated with the schema. Valued values are LIST and AGGREGATION. Currently,
-     *         only one entry is present.
+     * @return The analysis rule types associated with the schema. Currently, only one entry is present.
      * @see AnalysisRuleType
      */
 
@@ -259,13 +256,11 @@ public class Schema implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The analysis rule types associated with the schema. Valued values are LIST and AGGREGATION. Currently, only one
-     * entry is present.
+     * The analysis rule types associated with the schema. Currently, only one entry is present.
      * </p>
      * 
      * @param analysisRuleTypes
-     *        The analysis rule types associated with the schema. Valued values are LIST and AGGREGATION. Currently,
-     *        only one entry is present.
+     *        The analysis rule types associated with the schema. Currently, only one entry is present.
      * @see AnalysisRuleType
      */
 
@@ -280,8 +275,7 @@ public class Schema implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The analysis rule types associated with the schema. Valued values are LIST and AGGREGATION. Currently, only one
-     * entry is present.
+     * The analysis rule types associated with the schema. Currently, only one entry is present.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -290,8 +284,7 @@ public class Schema implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param analysisRuleTypes
-     *        The analysis rule types associated with the schema. Valued values are LIST and AGGREGATION. Currently,
-     *        only one entry is present.
+     *        The analysis rule types associated with the schema. Currently, only one entry is present.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AnalysisRuleType
      */
@@ -308,13 +301,11 @@ public class Schema implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The analysis rule types associated with the schema. Valued values are LIST and AGGREGATION. Currently, only one
-     * entry is present.
+     * The analysis rule types associated with the schema. Currently, only one entry is present.
      * </p>
      * 
      * @param analysisRuleTypes
-     *        The analysis rule types associated with the schema. Valued values are LIST and AGGREGATION. Currently,
-     *        only one entry is present.
+     *        The analysis rule types associated with the schema. Currently, only one entry is present.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AnalysisRuleType
      */
@@ -326,13 +317,11 @@ public class Schema implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The analysis rule types associated with the schema. Valued values are LIST and AGGREGATION. Currently, only one
-     * entry is present.
+     * The analysis rule types associated with the schema. Currently, only one entry is present.
      * </p>
      * 
      * @param analysisRuleTypes
-     *        The analysis rule types associated with the schema. Valued values are LIST and AGGREGATION. Currently,
-     *        only one entry is present.
+     *        The analysis rule types associated with the schema. Currently, only one entry is present.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AnalysisRuleType
      */
@@ -411,11 +400,11 @@ public class Schema implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique account ID for the AWS account that owns the schema.
+     * The unique account ID for the Amazon Web Services account that owns the schema.
      * </p>
      * 
      * @param creatorAccountId
-     *        The unique account ID for the AWS account that owns the schema.
+     *        The unique account ID for the Amazon Web Services account that owns the schema.
      */
 
     public void setCreatorAccountId(String creatorAccountId) {
@@ -424,10 +413,10 @@ public class Schema implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique account ID for the AWS account that owns the schema.
+     * The unique account ID for the Amazon Web Services account that owns the schema.
      * </p>
      * 
-     * @return The unique account ID for the AWS account that owns the schema.
+     * @return The unique account ID for the Amazon Web Services account that owns the schema.
      */
 
     public String getCreatorAccountId() {
@@ -436,11 +425,11 @@ public class Schema implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique account ID for the AWS account that owns the schema.
+     * The unique account ID for the Amazon Web Services account that owns the schema.
      * </p>
      * 
      * @param creatorAccountId
-     *        The unique account ID for the AWS account that owns the schema.
+     *        The unique account ID for the Amazon Web Services account that owns the schema.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

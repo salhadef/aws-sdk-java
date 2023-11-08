@@ -34,6 +34,8 @@ public class FilterListConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CategoryValues").build();
     private static final MarshallingInfo<String> SELECTALLOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SelectAllOptions").build();
+    private static final MarshallingInfo<String> NULLOPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NullOption").build();
 
     private static final FilterListConfigurationMarshaller instance = new FilterListConfigurationMarshaller();
 
@@ -54,6 +56,7 @@ public class FilterListConfigurationMarshaller {
             protocolMarshaller.marshall(filterListConfiguration.getMatchOperator(), MATCHOPERATOR_BINDING);
             protocolMarshaller.marshall(filterListConfiguration.getCategoryValues(), CATEGORYVALUES_BINDING);
             protocolMarshaller.marshall(filterListConfiguration.getSelectAllOptions(), SELECTALLOPTIONS_BINDING);
+            protocolMarshaller.marshall(filterListConfiguration.getNullOption(), NULLOPTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

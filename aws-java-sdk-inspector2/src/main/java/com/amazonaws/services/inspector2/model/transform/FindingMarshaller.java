@@ -30,8 +30,12 @@ public class FindingMarshaller {
 
     private static final MarshallingInfo<String> AWSACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("awsAccountId").build();
+    private static final MarshallingInfo<StructuredPojo> CODEVULNERABILITYDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("codeVulnerabilityDetails").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<StructuredPojo> EPSS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("epss").build();
     private static final MarshallingInfo<String> EXPLOITAVAILABLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("exploitAvailable").build();
     private static final MarshallingInfo<StructuredPojo> EXPLOITABILITYDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -84,7 +88,9 @@ public class FindingMarshaller {
 
         try {
             protocolMarshaller.marshall(finding.getAwsAccountId(), AWSACCOUNTID_BINDING);
+            protocolMarshaller.marshall(finding.getCodeVulnerabilityDetails(), CODEVULNERABILITYDETAILS_BINDING);
             protocolMarshaller.marshall(finding.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(finding.getEpss(), EPSS_BINDING);
             protocolMarshaller.marshall(finding.getExploitAvailable(), EXPLOITAVAILABLE_BINDING);
             protocolMarshaller.marshall(finding.getExploitabilityDetails(), EXPLOITABILITYDETAILS_BINDING);
             protocolMarshaller.marshall(finding.getFindingArn(), FINDINGARN_BINDING);

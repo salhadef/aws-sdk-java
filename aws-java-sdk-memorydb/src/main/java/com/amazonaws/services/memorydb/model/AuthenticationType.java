@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum AuthenticationType {
 
     Password("password"),
-    NoPassword("no-password");
+    NoPassword("no-password"),
+    Iam("iam");
 
     private String value;
 

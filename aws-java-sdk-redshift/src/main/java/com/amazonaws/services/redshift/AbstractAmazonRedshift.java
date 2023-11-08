@@ -124,6 +124,11 @@ public class AbstractAmazonRedshift implements AmazonRedshift {
     }
 
     @Override
+    public CreateCustomDomainAssociationResult createCustomDomainAssociation(CreateCustomDomainAssociationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateEndpointAccessResult createEndpointAccess(CreateEndpointAccessRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -204,6 +209,11 @@ public class AbstractAmazonRedshift implements AmazonRedshift {
     }
 
     @Override
+    public DeleteCustomDomainAssociationResult deleteCustomDomainAssociation(DeleteCustomDomainAssociationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteEndpointAccessResult deleteEndpointAccess(DeleteEndpointAccessRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -225,6 +235,11 @@ public class AbstractAmazonRedshift implements AmazonRedshift {
 
     @Override
     public DeletePartnerResult deletePartner(DeletePartnerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteResourcePolicyResult deleteResourcePolicy(DeleteResourcePolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -339,6 +354,11 @@ public class AbstractAmazonRedshift implements AmazonRedshift {
     }
 
     @Override
+    public DescribeCustomDomainAssociationsResult describeCustomDomainAssociations(DescribeCustomDomainAssociationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeDataSharesResult describeDataShares(DescribeDataSharesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -416,6 +436,11 @@ public class AbstractAmazonRedshift implements AmazonRedshift {
     @Override
     public DescribeHsmConfigurationsResult describeHsmConfigurations() {
         return describeHsmConfigurations(new DescribeHsmConfigurationsRequest());
+    }
+
+    @Override
+    public DescribeInboundIntegrationsResult describeInboundIntegrations(DescribeInboundIntegrationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -549,6 +574,11 @@ public class AbstractAmazonRedshift implements AmazonRedshift {
     }
 
     @Override
+    public Cluster failoverPrimaryCompute(FailoverPrimaryComputeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetClusterCredentialsResult getClusterCredentials(GetClusterCredentialsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -566,6 +596,11 @@ public class AbstractAmazonRedshift implements AmazonRedshift {
 
     @Override
     public GetReservedNodeExchangeOfferingsResult getReservedNodeExchangeOfferings(GetReservedNodeExchangeOfferingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetResourcePolicyResult getResourcePolicy(GetResourcePolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -620,6 +655,11 @@ public class AbstractAmazonRedshift implements AmazonRedshift {
     }
 
     @Override
+    public ModifyCustomDomainAssociationResult modifyCustomDomainAssociation(ModifyCustomDomainAssociationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ModifyEndpointAccessResult modifyEndpointAccess(ModifyEndpointAccessRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -656,6 +696,11 @@ public class AbstractAmazonRedshift implements AmazonRedshift {
 
     @Override
     public ReservedNode purchaseReservedNodeOffering(PurchaseReservedNodeOfferingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutResourcePolicyResult putResourcePolicy(PutResourcePolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -348,6 +348,11 @@ public class AbstractAmazonPersonalize implements AmazonPersonalize {
     }
 
     @Override
+    public UpdateDatasetResult updateDataset(UpdateDatasetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateMetricAttributionResult updateMetricAttribution(UpdateMetricAttributionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

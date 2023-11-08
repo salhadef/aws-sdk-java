@@ -29,12 +29,6 @@ public class DeleteAwsLogSourceResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      */
     private java.util.List<String> failed;
-    /**
-     * <p>
-     * Deletion of the Amazon Web Services sources is in progress.
-     * </p>
-     */
-    private java.util.List<String> processing;
 
     /**
      * <p>
@@ -107,76 +101,6 @@ public class DeleteAwsLogSourceResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
-     * <p>
-     * Deletion of the Amazon Web Services sources is in progress.
-     * </p>
-     * 
-     * @return Deletion of the Amazon Web Services sources is in progress.
-     */
-
-    public java.util.List<String> getProcessing() {
-        return processing;
-    }
-
-    /**
-     * <p>
-     * Deletion of the Amazon Web Services sources is in progress.
-     * </p>
-     * 
-     * @param processing
-     *        Deletion of the Amazon Web Services sources is in progress.
-     */
-
-    public void setProcessing(java.util.Collection<String> processing) {
-        if (processing == null) {
-            this.processing = null;
-            return;
-        }
-
-        this.processing = new java.util.ArrayList<String>(processing);
-    }
-
-    /**
-     * <p>
-     * Deletion of the Amazon Web Services sources is in progress.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setProcessing(java.util.Collection)} or {@link #withProcessing(java.util.Collection)} if you want to
-     * override the existing values.
-     * </p>
-     * 
-     * @param processing
-     *        Deletion of the Amazon Web Services sources is in progress.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DeleteAwsLogSourceResult withProcessing(String... processing) {
-        if (this.processing == null) {
-            setProcessing(new java.util.ArrayList<String>(processing.length));
-        }
-        for (String ele : processing) {
-            this.processing.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * Deletion of the Amazon Web Services sources is in progress.
-     * </p>
-     * 
-     * @param processing
-     *        Deletion of the Amazon Web Services sources is in progress.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DeleteAwsLogSourceResult withProcessing(java.util.Collection<String> processing) {
-        setProcessing(processing);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -189,9 +113,7 @@ public class DeleteAwsLogSourceResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFailed() != null)
-            sb.append("Failed: ").append(getFailed()).append(",");
-        if (getProcessing() != null)
-            sb.append("Processing: ").append(getProcessing());
+            sb.append("Failed: ").append(getFailed());
         sb.append("}");
         return sb.toString();
     }
@@ -210,10 +132,6 @@ public class DeleteAwsLogSourceResult extends com.amazonaws.AmazonWebServiceResu
             return false;
         if (other.getFailed() != null && other.getFailed().equals(this.getFailed()) == false)
             return false;
-        if (other.getProcessing() == null ^ this.getProcessing() == null)
-            return false;
-        if (other.getProcessing() != null && other.getProcessing().equals(this.getProcessing()) == false)
-            return false;
         return true;
     }
 
@@ -223,7 +141,6 @@ public class DeleteAwsLogSourceResult extends com.amazonaws.AmazonWebServiceResu
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getFailed() == null) ? 0 : getFailed().hashCode());
-        hashCode = prime * hashCode + ((getProcessing() == null) ? 0 : getProcessing().hashCode());
         return hashCode;
     }
 

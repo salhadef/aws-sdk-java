@@ -433,13 +433,13 @@ public class AssessmentReportMetadata implements Serializable, Cloneable, Struct
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
+            sb.append("Description: ").append("***Sensitive Data Redacted***").append(",");
         if (getAssessmentId() != null)
             sb.append("AssessmentId: ").append(getAssessmentId()).append(",");
         if (getAssessmentName() != null)
-            sb.append("AssessmentName: ").append(getAssessmentName()).append(",");
+            sb.append("AssessmentName: ").append("***Sensitive Data Redacted***").append(",");
         if (getAuthor() != null)
-            sb.append("Author: ").append(getAuthor()).append(",");
+            sb.append("Author: ").append("***Sensitive Data Redacted***").append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getCreationTime() != null)

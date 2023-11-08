@@ -51,17 +51,13 @@ public class CreateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String name;
     /**
      * <p>
-     * Specifies whether instance properties are required in <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * requests with this profile.
+     * Specifies whether instance properties are required in temporary credential requests with this profile.
      * </p>
      */
     private Boolean requireInstanceProperties;
     /**
      * <p>
-     * A list of IAM roles that this profile can assume in a <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation.
+     * A list of IAM roles that this profile can assume in a temporary credential request.
      * </p>
      */
     private java.util.List<String> roleArns;
@@ -282,15 +278,11 @@ public class CreateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Specifies whether instance properties are required in <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * requests with this profile.
+     * Specifies whether instance properties are required in temporary credential requests with this profile.
      * </p>
      * 
      * @param requireInstanceProperties
-     *        Specifies whether instance properties are required in <a
-     *        href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html"
-     *        >CreateSession</a> requests with this profile.
+     *        Specifies whether instance properties are required in temporary credential requests with this profile.
      */
 
     public void setRequireInstanceProperties(Boolean requireInstanceProperties) {
@@ -299,14 +291,10 @@ public class CreateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Specifies whether instance properties are required in <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * requests with this profile.
+     * Specifies whether instance properties are required in temporary credential requests with this profile.
      * </p>
      * 
-     * @return Specifies whether instance properties are required in <a
-     *         href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html"
-     *         >CreateSession</a> requests with this profile.
+     * @return Specifies whether instance properties are required in temporary credential requests with this profile.
      */
 
     public Boolean getRequireInstanceProperties() {
@@ -315,15 +303,11 @@ public class CreateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Specifies whether instance properties are required in <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * requests with this profile.
+     * Specifies whether instance properties are required in temporary credential requests with this profile.
      * </p>
      * 
      * @param requireInstanceProperties
-     *        Specifies whether instance properties are required in <a
-     *        href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html"
-     *        >CreateSession</a> requests with this profile.
+     *        Specifies whether instance properties are required in temporary credential requests with this profile.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -334,14 +318,10 @@ public class CreateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Specifies whether instance properties are required in <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * requests with this profile.
+     * Specifies whether instance properties are required in temporary credential requests with this profile.
      * </p>
      * 
-     * @return Specifies whether instance properties are required in <a
-     *         href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html"
-     *         >CreateSession</a> requests with this profile.
+     * @return Specifies whether instance properties are required in temporary credential requests with this profile.
      */
 
     public Boolean isRequireInstanceProperties() {
@@ -350,14 +330,10 @@ public class CreateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of IAM roles that this profile can assume in a <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation.
+     * A list of IAM roles that this profile can assume in a temporary credential request.
      * </p>
      * 
-     * @return A list of IAM roles that this profile can assume in a <a
-     *         href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html"
-     *         >CreateSession</a> operation.
+     * @return A list of IAM roles that this profile can assume in a temporary credential request.
      */
 
     public java.util.List<String> getRoleArns() {
@@ -366,15 +342,11 @@ public class CreateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of IAM roles that this profile can assume in a <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation.
+     * A list of IAM roles that this profile can assume in a temporary credential request.
      * </p>
      * 
      * @param roleArns
-     *        A list of IAM roles that this profile can assume in a <a
-     *        href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html"
-     *        >CreateSession</a> operation.
+     *        A list of IAM roles that this profile can assume in a temporary credential request.
      */
 
     public void setRoleArns(java.util.Collection<String> roleArns) {
@@ -388,9 +360,7 @@ public class CreateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of IAM roles that this profile can assume in a <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation.
+     * A list of IAM roles that this profile can assume in a temporary credential request.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -399,9 +369,7 @@ public class CreateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param roleArns
-     *        A list of IAM roles that this profile can assume in a <a
-     *        href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html"
-     *        >CreateSession</a> operation.
+     *        A list of IAM roles that this profile can assume in a temporary credential request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -417,15 +385,11 @@ public class CreateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of IAM roles that this profile can assume in a <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation.
+     * A list of IAM roles that this profile can assume in a temporary credential request.
      * </p>
      * 
      * @param roleArns
-     *        A list of IAM roles that this profile can assume in a <a
-     *        href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html"
-     *        >CreateSession</a> operation.
+     *        A list of IAM roles that this profile can assume in a temporary credential request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

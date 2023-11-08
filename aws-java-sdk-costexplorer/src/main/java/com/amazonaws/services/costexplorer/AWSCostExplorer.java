@@ -561,6 +561,25 @@ public interface AWSCostExplorer {
 
     /**
      * <p>
+     * Retrieves the details for a Savings Plan recommendation. These details include the hourly data-points that
+     * construct the cost, coverage, and utilization charts.
+     * </p>
+     * 
+     * @param getSavingsPlanPurchaseRecommendationDetailsRequest
+     * @return Result of the GetSavingsPlanPurchaseRecommendationDetails operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @throws DataUnavailableException
+     *         The requested data is unavailable.
+     * @sample AWSCostExplorer.GetSavingsPlanPurchaseRecommendationDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlanPurchaseRecommendationDetails"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetSavingsPlanPurchaseRecommendationDetailsResult getSavingsPlanPurchaseRecommendationDetails(
+            GetSavingsPlanPurchaseRecommendationDetailsRequest getSavingsPlanPurchaseRecommendationDetailsRequest);
+
+    /**
+     * <p>
      * Retrieves the Savings Plans covered for your account. This enables you to see how much of your cost is covered by
      * a Savings Plan. An organization’s management account can see the coverage of the associated member accounts. This
      * supports dimensions, Cost Categories, and nested expressions. For any time period, you can filter data for
@@ -773,6 +792,8 @@ public interface AWSCostExplorer {
      *         You made too many calls in a short period of time. Try again later.
      * @throws InvalidNextTokenException
      *         The pagination token is invalid. Try again without a pagination token.
+     * @throws DataUnavailableException
+     *         The requested data is unavailable.
      * @sample AWSCostExplorer.ListSavingsPlansPurchaseRecommendationGeneration
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListSavingsPlansPurchaseRecommendationGeneration"
@@ -835,6 +856,8 @@ public interface AWSCostExplorer {
      *         resource.
      * @throws GenerationExistsException
      *         A request to generate a recommendation is already in progress.
+     * @throws DataUnavailableException
+     *         The requested data is unavailable.
      * @sample AWSCostExplorer.StartSavingsPlansPurchaseRecommendationGeneration
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/StartSavingsPlansPurchaseRecommendationGeneration"
@@ -910,8 +933,16 @@ public interface AWSCostExplorer {
 
     /**
      * <p>
-     * Updates an existing cost anomaly monitor subscription.
+     * Updates an existing cost anomaly subscription. Specify the fields that you want to update. Omitted fields are
+     * unchanged.
      * </p>
+     * <note>
+     * <p>
+     * The JSON below describes the generic construct for each type. See <a href=
+     * "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_UpdateAnomalySubscription.html#API_UpdateAnomalySubscription_RequestParameters"
+     * >Request Parameters</a> for possible values as they apply to <code>AnomalySubscription</code>.
+     * </p>
+     * </note>
      * 
      * @param updateAnomalySubscriptionRequest
      * @return Result of the UpdateAnomalySubscription operation returned by the service.

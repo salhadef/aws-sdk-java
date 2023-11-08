@@ -52,9 +52,9 @@ public class ConflictExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("resourceId", targetDepth)) {
+                if (context.testExpression("resourceName", targetDepth)) {
                     context.nextToken();
-                    conflictException.setResourceId(context.getUnmarshaller(String.class).unmarshall(context));
+                    conflictException.setResourceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceType", targetDepth)) {
                     context.nextToken();

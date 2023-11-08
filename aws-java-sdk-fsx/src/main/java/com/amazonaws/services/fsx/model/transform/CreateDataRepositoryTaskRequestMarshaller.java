@@ -45,6 +45,8 @@ public class CreateDataRepositoryTaskRequestMarshaller {
             .marshallLocationName("Tags").build();
     private static final MarshallingInfo<Long> CAPACITYTORELEASE_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CapacityToRelease").build();
+    private static final MarshallingInfo<StructuredPojo> RELEASECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReleaseConfiguration").build();
 
     private static final CreateDataRepositoryTaskRequestMarshaller instance = new CreateDataRepositoryTaskRequestMarshaller();
 
@@ -69,6 +71,7 @@ public class CreateDataRepositoryTaskRequestMarshaller {
             protocolMarshaller.marshall(createDataRepositoryTaskRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
             protocolMarshaller.marshall(createDataRepositoryTaskRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createDataRepositoryTaskRequest.getCapacityToRelease(), CAPACITYTORELEASE_BINDING);
+            protocolMarshaller.marshall(createDataRepositoryTaskRequest.getReleaseConfiguration(), RELEASECONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

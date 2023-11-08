@@ -121,7 +121,7 @@ public class FileSystemDescription implements Serializable, Cloneable, Structure
     private String throughputMode;
     /**
      * <p>
-     * The amount of provisioned throughput, measured in MiB/s, for the file system. Valid for file systems using
+     * The amount of provisioned throughput, measured in MiBps, for the file system. Valid for file systems using
      * <code>ThroughputMode</code> set to <code>provisioned</code>.
      * </p>
      */
@@ -873,12 +873,12 @@ public class FileSystemDescription implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The amount of provisioned throughput, measured in MiB/s, for the file system. Valid for file systems using
+     * The amount of provisioned throughput, measured in MiBps, for the file system. Valid for file systems using
      * <code>ThroughputMode</code> set to <code>provisioned</code>.
      * </p>
      * 
      * @param provisionedThroughputInMibps
-     *        The amount of provisioned throughput, measured in MiB/s, for the file system. Valid for file systems using
+     *        The amount of provisioned throughput, measured in MiBps, for the file system. Valid for file systems using
      *        <code>ThroughputMode</code> set to <code>provisioned</code>.
      */
 
@@ -888,11 +888,11 @@ public class FileSystemDescription implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The amount of provisioned throughput, measured in MiB/s, for the file system. Valid for file systems using
+     * The amount of provisioned throughput, measured in MiBps, for the file system. Valid for file systems using
      * <code>ThroughputMode</code> set to <code>provisioned</code>.
      * </p>
      * 
-     * @return The amount of provisioned throughput, measured in MiB/s, for the file system. Valid for file systems
+     * @return The amount of provisioned throughput, measured in MiBps, for the file system. Valid for file systems
      *         using <code>ThroughputMode</code> set to <code>provisioned</code>.
      */
 
@@ -902,12 +902,12 @@ public class FileSystemDescription implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The amount of provisioned throughput, measured in MiB/s, for the file system. Valid for file systems using
+     * The amount of provisioned throughput, measured in MiBps, for the file system. Valid for file systems using
      * <code>ThroughputMode</code> set to <code>provisioned</code>.
      * </p>
      * 
      * @param provisionedThroughputInMibps
-     *        The amount of provisioned throughput, measured in MiB/s, for the file system. Valid for file systems using
+     *        The amount of provisioned throughput, measured in MiBps, for the file system. Valid for file systems using
      *        <code>ThroughputMode</code> set to <code>provisioned</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

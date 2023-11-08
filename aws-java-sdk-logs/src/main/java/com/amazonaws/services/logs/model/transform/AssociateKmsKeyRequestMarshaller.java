@@ -31,6 +31,8 @@ public class AssociateKmsKeyRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logGroupName").build();
     private static final MarshallingInfo<String> KMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("kmsKeyId").build();
+    private static final MarshallingInfo<String> RESOURCEIDENTIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceIdentifier").build();
 
     private static final AssociateKmsKeyRequestMarshaller instance = new AssociateKmsKeyRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class AssociateKmsKeyRequestMarshaller {
         try {
             protocolMarshaller.marshall(associateKmsKeyRequest.getLogGroupName(), LOGGROUPNAME_BINDING);
             protocolMarshaller.marshall(associateKmsKeyRequest.getKmsKeyId(), KMSKEYID_BINDING);
+            protocolMarshaller.marshall(associateKmsKeyRequest.getResourceIdentifier(), RESOURCEIDENTIFIER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

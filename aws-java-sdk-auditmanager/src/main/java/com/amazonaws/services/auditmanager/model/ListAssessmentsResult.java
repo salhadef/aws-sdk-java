@@ -25,7 +25,7 @@ public class ListAssessmentsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The metadata that's associated with the assessment.
+     * The metadata that the <code>ListAssessments</code> API returns for each assessment.
      * </p>
      */
     private java.util.List<AssessmentMetadataItem> assessmentMetadata;
@@ -38,10 +38,10 @@ public class ListAssessmentsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The metadata that's associated with the assessment.
+     * The metadata that the <code>ListAssessments</code> API returns for each assessment.
      * </p>
      * 
-     * @return The metadata that's associated with the assessment.
+     * @return The metadata that the <code>ListAssessments</code> API returns for each assessment.
      */
 
     public java.util.List<AssessmentMetadataItem> getAssessmentMetadata() {
@@ -50,11 +50,11 @@ public class ListAssessmentsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The metadata that's associated with the assessment.
+     * The metadata that the <code>ListAssessments</code> API returns for each assessment.
      * </p>
      * 
      * @param assessmentMetadata
-     *        The metadata that's associated with the assessment.
+     *        The metadata that the <code>ListAssessments</code> API returns for each assessment.
      */
 
     public void setAssessmentMetadata(java.util.Collection<AssessmentMetadataItem> assessmentMetadata) {
@@ -68,7 +68,7 @@ public class ListAssessmentsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The metadata that's associated with the assessment.
+     * The metadata that the <code>ListAssessments</code> API returns for each assessment.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListAssessmentsResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      * 
      * @param assessmentMetadata
-     *        The metadata that's associated with the assessment.
+     *        The metadata that the <code>ListAssessments</code> API returns for each assessment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListAssessmentsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The metadata that's associated with the assessment.
+     * The metadata that the <code>ListAssessments</code> API returns for each assessment.
      * </p>
      * 
      * @param assessmentMetadata
-     *        The metadata that's associated with the assessment.
+     *        The metadata that the <code>ListAssessments</code> API returns for each assessment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -29,18 +29,18 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class WorkspaceSummaryMarshaller {
 
+    private static final MarshallingInfo<String> WORKSPACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("workspaceId").build();
     private static final MarshallingInfo<String> ALIAS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("alias").build();
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("arn").build();
-    private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<StructuredPojo> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("status").build();
+    private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
-    private static final MarshallingInfo<String> WORKSPACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("workspaceId").build();
 
     private static final WorkspaceSummaryMarshaller instance = new WorkspaceSummaryMarshaller();
 
@@ -58,12 +58,12 @@ public class WorkspaceSummaryMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(workspaceSummary.getWorkspaceId(), WORKSPACEID_BINDING);
             protocolMarshaller.marshall(workspaceSummary.getAlias(), ALIAS_BINDING);
             protocolMarshaller.marshall(workspaceSummary.getArn(), ARN_BINDING);
-            protocolMarshaller.marshall(workspaceSummary.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(workspaceSummary.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(workspaceSummary.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(workspaceSummary.getTags(), TAGS_BINDING);
-            protocolMarshaller.marshall(workspaceSummary.getWorkspaceId(), WORKSPACEID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -38,6 +38,8 @@ public class ApplicationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AppRegistryArn").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Status").build();
+    private static final MarshallingInfo<String> DISCOVERYSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DiscoveryStatus").build();
     private static final MarshallingInfo<List> COMPONENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Components").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATED_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -66,6 +68,7 @@ public class ApplicationMarshaller {
             protocolMarshaller.marshall(application.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(application.getAppRegistryArn(), APPREGISTRYARN_BINDING);
             protocolMarshaller.marshall(application.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(application.getDiscoveryStatus(), DISCOVERYSTATUS_BINDING);
             protocolMarshaller.marshall(application.getComponents(), COMPONENTS_BINDING);
             protocolMarshaller.marshall(application.getLastUpdated(), LASTUPDATED_BINDING);
             protocolMarshaller.marshall(application.getStatusMessage(), STATUSMESSAGE_BINDING);

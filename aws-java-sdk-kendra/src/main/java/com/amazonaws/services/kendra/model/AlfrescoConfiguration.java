@@ -23,8 +23,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <note>
  * <p>
- * Alfresco data source connector is currently in preview mode. Basic authentication is currently supported. If you
- * would like to use Alfresco connector in production, contact <a href="http://aws.amazon.com/contact-us/">Support</a>.
+ * Support for <code>AlfrescoConfiguration</code> ended May 2023. We recommend migrating to or using the Alfresco data
+ * source template schema / <a
+ * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html"
+ * >TemplateConfiguration</a> API.
  * </p>
  * </note>
  * 

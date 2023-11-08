@@ -41,7 +41,7 @@ public class CreateParticipantTokenRequest extends com.amazonaws.AmazonWebServic
     private java.util.List<String> capabilities;
     /**
      * <p>
-     * Duration (in minutes), after which the token expires. Default: 60 (1 hour).
+     * Duration (in minutes), after which the token expires. Default: 720 (12 hours).
      * </p>
      */
     private Integer duration;
@@ -248,11 +248,11 @@ public class CreateParticipantTokenRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Duration (in minutes), after which the token expires. Default: 60 (1 hour).
+     * Duration (in minutes), after which the token expires. Default: 720 (12 hours).
      * </p>
      * 
      * @param duration
-     *        Duration (in minutes), after which the token expires. Default: 60 (1 hour).
+     *        Duration (in minutes), after which the token expires. Default: 720 (12 hours).
      */
 
     public void setDuration(Integer duration) {
@@ -261,10 +261,10 @@ public class CreateParticipantTokenRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Duration (in minutes), after which the token expires. Default: 60 (1 hour).
+     * Duration (in minutes), after which the token expires. Default: 720 (12 hours).
      * </p>
      * 
-     * @return Duration (in minutes), after which the token expires. Default: 60 (1 hour).
+     * @return Duration (in minutes), after which the token expires. Default: 720 (12 hours).
      */
 
     public Integer getDuration() {
@@ -273,11 +273,11 @@ public class CreateParticipantTokenRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Duration (in minutes), after which the token expires. Default: 60 (1 hour).
+     * Duration (in minutes), after which the token expires. Default: 720 (12 hours).
      * </p>
      * 
      * @param duration
-     *        Duration (in minutes), after which the token expires. Default: 60 (1 hour).
+     *        Duration (in minutes), after which the token expires. Default: 720 (12 hours).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

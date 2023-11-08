@@ -36,6 +36,12 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
     private String id;
     /**
      * <p>
+     * The status of the latest discovery.
+     * </p>
+     */
+    private String discoveryStatus;
+    /**
+     * <p>
      * The type of the application.
      * </p>
      */
@@ -90,6 +96,65 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
 
     public ApplicationSummary withId(String id) {
         setId(id);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the latest discovery.
+     * </p>
+     * 
+     * @param discoveryStatus
+     *        The status of the latest discovery.
+     * @see ApplicationDiscoveryStatus
+     */
+
+    public void setDiscoveryStatus(String discoveryStatus) {
+        this.discoveryStatus = discoveryStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the latest discovery.
+     * </p>
+     * 
+     * @return The status of the latest discovery.
+     * @see ApplicationDiscoveryStatus
+     */
+
+    public String getDiscoveryStatus() {
+        return this.discoveryStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the latest discovery.
+     * </p>
+     * 
+     * @param discoveryStatus
+     *        The status of the latest discovery.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ApplicationDiscoveryStatus
+     */
+
+    public ApplicationSummary withDiscoveryStatus(String discoveryStatus) {
+        setDiscoveryStatus(discoveryStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the latest discovery.
+     * </p>
+     * 
+     * @param discoveryStatus
+     *        The status of the latest discovery.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ApplicationDiscoveryStatus
+     */
+
+    public ApplicationSummary withDiscoveryStatus(ApplicationDiscoveryStatus discoveryStatus) {
+        this.discoveryStatus = discoveryStatus.toString();
         return this;
     }
 
@@ -274,6 +339,8 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
         sb.append("{");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
+        if (getDiscoveryStatus() != null)
+            sb.append("DiscoveryStatus: ").append(getDiscoveryStatus()).append(",");
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
         if (getArn() != null)
@@ -298,6 +365,10 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
+        if (other.getDiscoveryStatus() == null ^ this.getDiscoveryStatus() == null)
+            return false;
+        if (other.getDiscoveryStatus() != null && other.getDiscoveryStatus().equals(this.getDiscoveryStatus()) == false)
+            return false;
         if (other.getType() == null ^ this.getType() == null)
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
@@ -319,6 +390,7 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getDiscoveryStatus() == null) ? 0 : getDiscoveryStatus().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());

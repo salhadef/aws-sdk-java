@@ -27,6 +27,12 @@ public class ListApplicationsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
+     * Applications list Account ID.
+     * </p>
+     */
+    private String accountID;
+    /**
+     * <p>
      * Applications list filters.
      * </p>
      */
@@ -43,6 +49,46 @@ public class ListApplicationsRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private String nextToken;
+
+    /**
+     * <p>
+     * Applications list Account ID.
+     * </p>
+     * 
+     * @param accountID
+     *        Applications list Account ID.
+     */
+
+    public void setAccountID(String accountID) {
+        this.accountID = accountID;
+    }
+
+    /**
+     * <p>
+     * Applications list Account ID.
+     * </p>
+     * 
+     * @return Applications list Account ID.
+     */
+
+    public String getAccountID() {
+        return this.accountID;
+    }
+
+    /**
+     * <p>
+     * Applications list Account ID.
+     * </p>
+     * 
+     * @param accountID
+     *        Applications list Account ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListApplicationsRequest withAccountID(String accountID) {
+        setAccountID(accountID);
+        return this;
+    }
 
     /**
      * <p>
@@ -176,6 +222,8 @@ public class ListApplicationsRequest extends com.amazonaws.AmazonWebServiceReque
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAccountID() != null)
+            sb.append("AccountID: ").append(getAccountID()).append(",");
         if (getFilters() != null)
             sb.append("Filters: ").append(getFilters()).append(",");
         if (getMaxResults() != null)
@@ -196,6 +244,10 @@ public class ListApplicationsRequest extends com.amazonaws.AmazonWebServiceReque
         if (obj instanceof ListApplicationsRequest == false)
             return false;
         ListApplicationsRequest other = (ListApplicationsRequest) obj;
+        if (other.getAccountID() == null ^ this.getAccountID() == null)
+            return false;
+        if (other.getAccountID() != null && other.getAccountID().equals(this.getAccountID()) == false)
+            return false;
         if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
         if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
@@ -216,6 +268,7 @@ public class ListApplicationsRequest extends com.amazonaws.AmazonWebServiceReque
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAccountID() == null) ? 0 : getAccountID().hashCode());
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());

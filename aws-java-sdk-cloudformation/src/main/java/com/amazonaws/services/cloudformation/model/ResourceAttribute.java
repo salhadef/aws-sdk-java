@@ -25,6 +25,7 @@ public enum ResourceAttribute {
     CreationPolicy("CreationPolicy"),
     UpdatePolicy("UpdatePolicy"),
     DeletionPolicy("DeletionPolicy"),
+    UpdateReplacePolicy("UpdateReplacePolicy"),
     Tags("Tags");
 
     private String value;

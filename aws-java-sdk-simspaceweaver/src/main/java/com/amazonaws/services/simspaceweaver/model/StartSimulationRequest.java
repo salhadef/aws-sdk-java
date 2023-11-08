@@ -89,6 +89,9 @@ public class StartSimulationRequest extends com.amazonaws.AmazonWebServiceReques
      * Provide a <code>SnapshotS3Location</code> to start your simulation from a snapshot.
      * </p>
      * <p>
+     * The Amazon S3 bucket must be in the same Amazon Web Services Region as the simulation.
+     * </p>
+     * <p>
      * If you provide a <code>SnapshotS3Location</code> then you can't provide a <code>SchemaS3Location</code>.
      * </p>
      */
@@ -460,6 +463,9 @@ public class StartSimulationRequest extends com.amazonaws.AmazonWebServiceReques
      * Provide a <code>SnapshotS3Location</code> to start your simulation from a snapshot.
      * </p>
      * <p>
+     * The Amazon S3 bucket must be in the same Amazon Web Services Region as the simulation.
+     * </p>
+     * <p>
      * If you provide a <code>SnapshotS3Location</code> then you can't provide a <code>SchemaS3Location</code>.
      * </p>
      * 
@@ -469,6 +475,9 @@ public class StartSimulationRequest extends com.amazonaws.AmazonWebServiceReques
      *        <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
      *        <p>
      *        Provide a <code>SnapshotS3Location</code> to start your simulation from a snapshot.
+     *        </p>
+     *        <p>
+     *        The Amazon S3 bucket must be in the same Amazon Web Services Region as the simulation.
      *        </p>
      *        <p>
      *        If you provide a <code>SnapshotS3Location</code> then you can't provide a <code>SchemaS3Location</code>.
@@ -488,6 +497,9 @@ public class StartSimulationRequest extends com.amazonaws.AmazonWebServiceReques
      * Provide a <code>SnapshotS3Location</code> to start your simulation from a snapshot.
      * </p>
      * <p>
+     * The Amazon S3 bucket must be in the same Amazon Web Services Region as the simulation.
+     * </p>
+     * <p>
      * If you provide a <code>SnapshotS3Location</code> then you can't provide a <code>SchemaS3Location</code>.
      * </p>
      * 
@@ -496,6 +508,9 @@ public class StartSimulationRequest extends com.amazonaws.AmazonWebServiceReques
      *         <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
      *         <p>
      *         Provide a <code>SnapshotS3Location</code> to start your simulation from a snapshot.
+     *         </p>
+     *         <p>
+     *         The Amazon S3 bucket must be in the same Amazon Web Services Region as the simulation.
      *         </p>
      *         <p>
      *         If you provide a <code>SnapshotS3Location</code> then you can't provide a <code>SchemaS3Location</code>.
@@ -515,6 +530,9 @@ public class StartSimulationRequest extends com.amazonaws.AmazonWebServiceReques
      * Provide a <code>SnapshotS3Location</code> to start your simulation from a snapshot.
      * </p>
      * <p>
+     * The Amazon S3 bucket must be in the same Amazon Web Services Region as the simulation.
+     * </p>
+     * <p>
      * If you provide a <code>SnapshotS3Location</code> then you can't provide a <code>SchemaS3Location</code>.
      * </p>
      * 
@@ -524,6 +542,9 @@ public class StartSimulationRequest extends com.amazonaws.AmazonWebServiceReques
      *        <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
      *        <p>
      *        Provide a <code>SnapshotS3Location</code> to start your simulation from a snapshot.
+     *        </p>
+     *        <p>
+     *        The Amazon S3 bucket must be in the same Amazon Web Services Region as the simulation.
      *        </p>
      *        <p>
      *        If you provide a <code>SnapshotS3Location</code> then you can't provide a <code>SchemaS3Location</code>.

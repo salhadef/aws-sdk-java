@@ -26,7 +26,7 @@ public class DescribeHyperParameterTuningJobResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The name of the tuning job.
+     * The name of the hyperparameter tuning job.
      * </p>
      */
     private String hyperParameterTuningJobName;
@@ -144,14 +144,20 @@ public class DescribeHyperParameterTuningJobResult extends com.amazonaws.AmazonW
     private HyperParameterTuningJobCompletionDetails tuningJobCompletionDetails;
 
     private HyperParameterTuningJobConsumedResources consumedResources;
+    /**
+     * <p>
+     * A flag to indicate if autotune is enabled for the hyperparameter tuning job.
+     * </p>
+     */
+    private Autotune autotune;
 
     /**
      * <p>
-     * The name of the tuning job.
+     * The name of the hyperparameter tuning job.
      * </p>
      * 
      * @param hyperParameterTuningJobName
-     *        The name of the tuning job.
+     *        The name of the hyperparameter tuning job.
      */
 
     public void setHyperParameterTuningJobName(String hyperParameterTuningJobName) {
@@ -160,10 +166,10 @@ public class DescribeHyperParameterTuningJobResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The name of the tuning job.
+     * The name of the hyperparameter tuning job.
      * </p>
      * 
-     * @return The name of the tuning job.
+     * @return The name of the hyperparameter tuning job.
      */
 
     public String getHyperParameterTuningJobName() {
@@ -172,11 +178,11 @@ public class DescribeHyperParameterTuningJobResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The name of the tuning job.
+     * The name of the hyperparameter tuning job.
      * </p>
      * 
      * @param hyperParameterTuningJobName
-     *        The name of the tuning job.
+     *        The name of the hyperparameter tuning job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1003,6 +1009,46 @@ public class DescribeHyperParameterTuningJobResult extends com.amazonaws.AmazonW
     }
 
     /**
+     * <p>
+     * A flag to indicate if autotune is enabled for the hyperparameter tuning job.
+     * </p>
+     * 
+     * @param autotune
+     *        A flag to indicate if autotune is enabled for the hyperparameter tuning job.
+     */
+
+    public void setAutotune(Autotune autotune) {
+        this.autotune = autotune;
+    }
+
+    /**
+     * <p>
+     * A flag to indicate if autotune is enabled for the hyperparameter tuning job.
+     * </p>
+     * 
+     * @return A flag to indicate if autotune is enabled for the hyperparameter tuning job.
+     */
+
+    public Autotune getAutotune() {
+        return this.autotune;
+    }
+
+    /**
+     * <p>
+     * A flag to indicate if autotune is enabled for the hyperparameter tuning job.
+     * </p>
+     * 
+     * @param autotune
+     *        A flag to indicate if autotune is enabled for the hyperparameter tuning job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeHyperParameterTuningJobResult withAutotune(Autotune autotune) {
+        setAutotune(autotune);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1047,7 +1093,9 @@ public class DescribeHyperParameterTuningJobResult extends com.amazonaws.AmazonW
         if (getTuningJobCompletionDetails() != null)
             sb.append("TuningJobCompletionDetails: ").append(getTuningJobCompletionDetails()).append(",");
         if (getConsumedResources() != null)
-            sb.append("ConsumedResources: ").append(getConsumedResources());
+            sb.append("ConsumedResources: ").append(getConsumedResources()).append(",");
+        if (getAutotune() != null)
+            sb.append("Autotune: ").append(getAutotune());
         sb.append("}");
         return sb.toString();
     }
@@ -1132,6 +1180,10 @@ public class DescribeHyperParameterTuningJobResult extends com.amazonaws.AmazonW
             return false;
         if (other.getConsumedResources() != null && other.getConsumedResources().equals(this.getConsumedResources()) == false)
             return false;
+        if (other.getAutotune() == null ^ this.getAutotune() == null)
+            return false;
+        if (other.getAutotune() != null && other.getAutotune().equals(this.getAutotune()) == false)
+            return false;
         return true;
     }
 
@@ -1157,6 +1209,7 @@ public class DescribeHyperParameterTuningJobResult extends com.amazonaws.AmazonW
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
         hashCode = prime * hashCode + ((getTuningJobCompletionDetails() == null) ? 0 : getTuningJobCompletionDetails().hashCode());
         hashCode = prime * hashCode + ((getConsumedResources() == null) ? 0 : getConsumedResources().hashCode());
+        hashCode = prime * hashCode + ((getAutotune() == null) ? 0 : getAutotune().hashCode());
         return hashCode;
     }
 

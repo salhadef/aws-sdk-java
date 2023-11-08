@@ -38,6 +38,8 @@ public class CreateTableRequestMarshaller {
             .marshallLocationName("Tags").build();
     private static final MarshallingInfo<StructuredPojo> MAGNETICSTOREWRITEPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MagneticStoreWriteProperties").build();
+    private static final MarshallingInfo<StructuredPojo> SCHEMA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Schema").build();
 
     private static final CreateTableRequestMarshaller instance = new CreateTableRequestMarshaller();
 
@@ -60,6 +62,7 @@ public class CreateTableRequestMarshaller {
             protocolMarshaller.marshall(createTableRequest.getRetentionProperties(), RETENTIONPROPERTIES_BINDING);
             protocolMarshaller.marshall(createTableRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createTableRequest.getMagneticStoreWriteProperties(), MAGNETICSTOREWRITEPROPERTIES_BINDING);
+            protocolMarshaller.marshall(createTableRequest.getSchema(), SCHEMA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

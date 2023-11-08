@@ -34,6 +34,8 @@ public class AnalysisRuleAggregationMarshaller {
             .marshallLocationName("joinColumns").build();
     private static final MarshallingInfo<String> JOINREQUIRED_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("joinRequired").build();
+    private static final MarshallingInfo<List> ALLOWEDJOINOPERATORS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("allowedJoinOperators").build();
     private static final MarshallingInfo<List> DIMENSIONCOLUMNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dimensionColumns").build();
     private static final MarshallingInfo<List> SCALARFUNCTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -60,6 +62,7 @@ public class AnalysisRuleAggregationMarshaller {
             protocolMarshaller.marshall(analysisRuleAggregation.getAggregateColumns(), AGGREGATECOLUMNS_BINDING);
             protocolMarshaller.marshall(analysisRuleAggregation.getJoinColumns(), JOINCOLUMNS_BINDING);
             protocolMarshaller.marshall(analysisRuleAggregation.getJoinRequired(), JOINREQUIRED_BINDING);
+            protocolMarshaller.marshall(analysisRuleAggregation.getAllowedJoinOperators(), ALLOWEDJOINOPERATORS_BINDING);
             protocolMarshaller.marshall(analysisRuleAggregation.getDimensionColumns(), DIMENSIONCOLUMNS_BINDING);
             protocolMarshaller.marshall(analysisRuleAggregation.getScalarFunctions(), SCALARFUNCTIONS_BINDING);
             protocolMarshaller.marshall(analysisRuleAggregation.getOutputConstraints(), OUTPUTCONSTRAINTS_BINDING);

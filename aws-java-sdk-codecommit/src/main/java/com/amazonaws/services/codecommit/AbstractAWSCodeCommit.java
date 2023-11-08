@@ -268,6 +268,11 @@ public class AbstractAWSCodeCommit implements AWSCodeCommit {
     }
 
     @Override
+    public ListFileCommitHistoryResult listFileCommitHistory(ListFileCommitHistoryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListPullRequestsResult listPullRequests(ListPullRequestsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

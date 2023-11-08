@@ -55,6 +55,12 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private MagneticStoreWriteProperties magneticStoreWriteProperties;
+    /**
+     * <p>
+     * The schema of the table.
+     * </p>
+     */
+    private Schema schema;
 
     /**
      * <p>
@@ -287,6 +293,46 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The schema of the table.
+     * </p>
+     * 
+     * @param schema
+     *        The schema of the table.
+     */
+
+    public void setSchema(Schema schema) {
+        this.schema = schema;
+    }
+
+    /**
+     * <p>
+     * The schema of the table.
+     * </p>
+     * 
+     * @return The schema of the table.
+     */
+
+    public Schema getSchema() {
+        return this.schema;
+    }
+
+    /**
+     * <p>
+     * The schema of the table.
+     * </p>
+     * 
+     * @param schema
+     *        The schema of the table.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTableRequest withSchema(Schema schema) {
+        setSchema(schema);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -307,7 +353,9 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getMagneticStoreWriteProperties() != null)
-            sb.append("MagneticStoreWriteProperties: ").append(getMagneticStoreWriteProperties());
+            sb.append("MagneticStoreWriteProperties: ").append(getMagneticStoreWriteProperties()).append(",");
+        if (getSchema() != null)
+            sb.append("Schema: ").append(getSchema());
         sb.append("}");
         return sb.toString();
     }
@@ -342,6 +390,10 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getMagneticStoreWriteProperties() != null && other.getMagneticStoreWriteProperties().equals(this.getMagneticStoreWriteProperties()) == false)
             return false;
+        if (other.getSchema() == null ^ this.getSchema() == null)
+            return false;
+        if (other.getSchema() != null && other.getSchema().equals(this.getSchema()) == false)
+            return false;
         return true;
     }
 
@@ -355,6 +407,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getRetentionProperties() == null) ? 0 : getRetentionProperties().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getMagneticStoreWriteProperties() == null) ? 0 : getMagneticStoreWriteProperties().hashCode());
+        hashCode = prime * hashCode + ((getSchema() == null) ? 0 : getSchema().hashCode());
         return hashCode;
     }
 

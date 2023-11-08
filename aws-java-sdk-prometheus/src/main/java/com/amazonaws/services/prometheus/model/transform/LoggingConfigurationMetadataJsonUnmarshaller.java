@@ -48,18 +48,6 @@ public class LoggingConfigurationMetadataJsonUnmarshaller implements Unmarshalle
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("createdAt", targetDepth)) {
-                    context.nextToken();
-                    loggingConfigurationMetadata.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
-                }
-                if (context.testExpression("logGroupArn", targetDepth)) {
-                    context.nextToken();
-                    loggingConfigurationMetadata.setLogGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("modifiedAt", targetDepth)) {
-                    context.nextToken();
-                    loggingConfigurationMetadata.setModifiedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
-                }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     loggingConfigurationMetadata.setStatus(LoggingConfigurationStatusJsonUnmarshaller.getInstance().unmarshall(context));
@@ -67,6 +55,18 @@ public class LoggingConfigurationMetadataJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("workspace", targetDepth)) {
                     context.nextToken();
                     loggingConfigurationMetadata.setWorkspace(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("logGroupArn", targetDepth)) {
+                    context.nextToken();
+                    loggingConfigurationMetadata.setLogGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("createdAt", targetDepth)) {
+                    context.nextToken();
+                    loggingConfigurationMetadata.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("modifiedAt", targetDepth)) {
+                    context.nextToken();
+                    loggingConfigurationMetadata.setModifiedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

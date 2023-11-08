@@ -83,6 +83,84 @@ public interface AWSOpenSearchServerlessAsync extends AWSOpenSearchServerless {
 
     /**
      * <p>
+     * Returns a list of successful and failed retrievals for the OpenSearch Serverless indexes. For more information,
+     * see <a href=
+     * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-list"
+     * >Viewing data lifecycle policies</a>.
+     * </p>
+     * 
+     * @param batchGetEffectiveLifecyclePolicyRequest
+     * @return A Java Future containing the result of the BatchGetEffectiveLifecyclePolicy operation returned by the
+     *         service.
+     * @sample AWSOpenSearchServerlessAsync.BatchGetEffectiveLifecyclePolicy
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/BatchGetEffectiveLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchGetEffectiveLifecyclePolicyResult> batchGetEffectiveLifecyclePolicyAsync(
+            BatchGetEffectiveLifecyclePolicyRequest batchGetEffectiveLifecyclePolicyRequest);
+
+    /**
+     * <p>
+     * Returns a list of successful and failed retrievals for the OpenSearch Serverless indexes. For more information,
+     * see <a href=
+     * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-list"
+     * >Viewing data lifecycle policies</a>.
+     * </p>
+     * 
+     * @param batchGetEffectiveLifecyclePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchGetEffectiveLifecyclePolicy operation returned by the
+     *         service.
+     * @sample AWSOpenSearchServerlessAsyncHandler.BatchGetEffectiveLifecyclePolicy
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/BatchGetEffectiveLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchGetEffectiveLifecyclePolicyResult> batchGetEffectiveLifecyclePolicyAsync(
+            BatchGetEffectiveLifecyclePolicyRequest batchGetEffectiveLifecyclePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchGetEffectiveLifecyclePolicyRequest, BatchGetEffectiveLifecyclePolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns one or more configured OpenSearch Serverless lifecycle policies. For more information, see <a href=
+     * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-list"
+     * >Viewing data lifecycle policies</a>.
+     * </p>
+     * 
+     * @param batchGetLifecyclePolicyRequest
+     * @return A Java Future containing the result of the BatchGetLifecyclePolicy operation returned by the service.
+     * @sample AWSOpenSearchServerlessAsync.BatchGetLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/BatchGetLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchGetLifecyclePolicyResult> batchGetLifecyclePolicyAsync(BatchGetLifecyclePolicyRequest batchGetLifecyclePolicyRequest);
+
+    /**
+     * <p>
+     * Returns one or more configured OpenSearch Serverless lifecycle policies. For more information, see <a href=
+     * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-list"
+     * >Viewing data lifecycle policies</a>.
+     * </p>
+     * 
+     * @param batchGetLifecyclePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchGetLifecyclePolicy operation returned by the service.
+     * @sample AWSOpenSearchServerlessAsyncHandler.BatchGetLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/BatchGetLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchGetLifecyclePolicyResult> batchGetLifecyclePolicyAsync(BatchGetLifecyclePolicyRequest batchGetLifecyclePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchGetLifecyclePolicyRequest, BatchGetLifecyclePolicyResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns attributes for one or more VPC endpoints associated with the current account. For more information, see
      * <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-vpc.html">Access Amazon
      * OpenSearch Serverless using an interface endpoint</a>.
@@ -189,6 +267,43 @@ public interface AWSOpenSearchServerlessAsync extends AWSOpenSearchServerless {
      */
     java.util.concurrent.Future<CreateCollectionResult> createCollectionAsync(CreateCollectionRequest createCollectionRequest,
             com.amazonaws.handlers.AsyncHandler<CreateCollectionRequest, CreateCollectionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a lifecyle policy to be applied to OpenSearch Serverless indexes. Lifecycle policies define the number of
+     * days or hours to retain the data on an OpenSearch Serverless index. For more information, see <a href=
+     * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-create"
+     * >Creating data lifecycle policies</a>.
+     * </p>
+     * 
+     * @param createLifecyclePolicyRequest
+     * @return A Java Future containing the result of the CreateLifecyclePolicy operation returned by the service.
+     * @sample AWSOpenSearchServerlessAsync.CreateLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CreateLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLifecyclePolicyResult> createLifecyclePolicyAsync(CreateLifecyclePolicyRequest createLifecyclePolicyRequest);
+
+    /**
+     * <p>
+     * Creates a lifecyle policy to be applied to OpenSearch Serverless indexes. Lifecycle policies define the number of
+     * days or hours to retain the data on an OpenSearch Serverless index. For more information, see <a href=
+     * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-create"
+     * >Creating data lifecycle policies</a>.
+     * </p>
+     * 
+     * @param createLifecyclePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateLifecyclePolicy operation returned by the service.
+     * @sample AWSOpenSearchServerlessAsyncHandler.CreateLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CreateLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLifecyclePolicyResult> createLifecyclePolicyAsync(CreateLifecyclePolicyRequest createLifecyclePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateLifecyclePolicyRequest, CreateLifecyclePolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -372,6 +487,41 @@ public interface AWSOpenSearchServerlessAsync extends AWSOpenSearchServerless {
      */
     java.util.concurrent.Future<DeleteCollectionResult> deleteCollectionAsync(DeleteCollectionRequest deleteCollectionRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteCollectionRequest, DeleteCollectionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an OpenSearch Serverless lifecycle policy. For more information, see <a href=
+     * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-delete"
+     * >Deleting data lifecycle policies</a>.
+     * </p>
+     * 
+     * @param deleteLifecyclePolicyRequest
+     * @return A Java Future containing the result of the DeleteLifecyclePolicy operation returned by the service.
+     * @sample AWSOpenSearchServerlessAsync.DeleteLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/DeleteLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLifecyclePolicyResult> deleteLifecyclePolicyAsync(DeleteLifecyclePolicyRequest deleteLifecyclePolicyRequest);
+
+    /**
+     * <p>
+     * Deletes an OpenSearch Serverless lifecycle policy. For more information, see <a href=
+     * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-delete"
+     * >Deleting data lifecycle policies</a>.
+     * </p>
+     * 
+     * @param deleteLifecyclePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteLifecyclePolicy operation returned by the service.
+     * @sample AWSOpenSearchServerlessAsyncHandler.DeleteLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/DeleteLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLifecyclePolicyResult> deleteLifecyclePolicyAsync(DeleteLifecyclePolicyRequest deleteLifecyclePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteLifecyclePolicyRequest, DeleteLifecyclePolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -725,6 +875,41 @@ public interface AWSOpenSearchServerlessAsync extends AWSOpenSearchServerless {
 
     /**
      * <p>
+     * Returns a list of OpenSearch Serverless lifecycle policies. For more information, see <a href=
+     * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-list"
+     * >Viewing data lifecycle policies</a>.
+     * </p>
+     * 
+     * @param listLifecyclePoliciesRequest
+     * @return A Java Future containing the result of the ListLifecyclePolicies operation returned by the service.
+     * @sample AWSOpenSearchServerlessAsync.ListLifecyclePolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/ListLifecyclePolicies"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListLifecyclePoliciesResult> listLifecyclePoliciesAsync(ListLifecyclePoliciesRequest listLifecyclePoliciesRequest);
+
+    /**
+     * <p>
+     * Returns a list of OpenSearch Serverless lifecycle policies. For more information, see <a href=
+     * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-list"
+     * >Viewing data lifecycle policies</a>.
+     * </p>
+     * 
+     * @param listLifecyclePoliciesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListLifecyclePolicies operation returned by the service.
+     * @sample AWSOpenSearchServerlessAsyncHandler.ListLifecyclePolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/ListLifecyclePolicies"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListLifecyclePoliciesResult> listLifecyclePoliciesAsync(ListLifecyclePoliciesRequest listLifecyclePoliciesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListLifecyclePoliciesRequest, ListLifecyclePoliciesResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns information about configured OpenSearch Serverless security configurations. For more information, see <a
      * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-saml.html">SAML
      * authentication for Amazon OpenSearch Serverless</a>.
@@ -1031,6 +1216,41 @@ public interface AWSOpenSearchServerlessAsync extends AWSOpenSearchServerless {
      */
     java.util.concurrent.Future<UpdateCollectionResult> updateCollectionAsync(UpdateCollectionRequest updateCollectionRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateCollectionRequest, UpdateCollectionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates an OpenSearch Serverless access policy. For more information, see <a href=
+     * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-update"
+     * >Updating data lifecycle policies</a>.
+     * </p>
+     * 
+     * @param updateLifecyclePolicyRequest
+     * @return A Java Future containing the result of the UpdateLifecyclePolicy operation returned by the service.
+     * @sample AWSOpenSearchServerlessAsync.UpdateLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/UpdateLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateLifecyclePolicyResult> updateLifecyclePolicyAsync(UpdateLifecyclePolicyRequest updateLifecyclePolicyRequest);
+
+    /**
+     * <p>
+     * Updates an OpenSearch Serverless access policy. For more information, see <a href=
+     * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-update"
+     * >Updating data lifecycle policies</a>.
+     * </p>
+     * 
+     * @param updateLifecyclePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateLifecyclePolicy operation returned by the service.
+     * @sample AWSOpenSearchServerlessAsyncHandler.UpdateLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/UpdateLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateLifecyclePolicyResult> updateLifecyclePolicyAsync(UpdateLifecyclePolicyRequest updateLifecyclePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateLifecyclePolicyRequest, UpdateLifecyclePolicyResult> asyncHandler);
 
     /**
      * <p>

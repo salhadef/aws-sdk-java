@@ -56,6 +56,8 @@ public class TranscriptionJobSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdentifiedLanguageScore").build();
     private static final MarshallingInfo<List> LANGUAGECODES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("LanguageCodes").build();
+    private static final MarshallingInfo<List> TOXICITYDETECTION_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ToxicityDetection").build();
 
     private static final TranscriptionJobSummaryMarshaller instance = new TranscriptionJobSummaryMarshaller();
 
@@ -87,6 +89,7 @@ public class TranscriptionJobSummaryMarshaller {
             protocolMarshaller.marshall(transcriptionJobSummary.getIdentifyMultipleLanguages(), IDENTIFYMULTIPLELANGUAGES_BINDING);
             protocolMarshaller.marshall(transcriptionJobSummary.getIdentifiedLanguageScore(), IDENTIFIEDLANGUAGESCORE_BINDING);
             protocolMarshaller.marshall(transcriptionJobSummary.getLanguageCodes(), LANGUAGECODES_BINDING);
+            protocolMarshaller.marshall(transcriptionJobSummary.getToxicityDetection(), TOXICITYDETECTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -32,7 +32,7 @@
  * <p>
  * CloudFormation makes use of other Amazon Web Services products. If you need additional technical information about a
  * specific Amazon Web Services product, you can find the product's technical documentation at <a
- * href="https://docs.aws.amazon.com/"> <code>docs.aws.amazon.com</code> </a>.
+ * href="https://docs.aws.amazon.com/">docs.aws.amazon.com</a>.
  * </p>
  */
 package com.amazonaws.services.cloudformation;

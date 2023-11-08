@@ -220,6 +220,21 @@ public class AmazonEC2Waiters {
     }
 
     /**
+     * Builds a StoreImageTaskComplete waiter by using custom parameters waiterParameters and other parameters defined
+     * in the waiters specification, and then polls until it determines whether the resource entered the desired state
+     * or not, where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<DescribeStoreImageTasksRequest> storeImageTaskComplete() {
+
+        return new WaiterBuilder<DescribeStoreImageTasksRequest, DescribeStoreImageTasksResult>()
+                .withSdkFunction(new DescribeStoreImageTasksFunction(client))
+                .withAcceptors(new StoreImageTaskComplete.IsCompletedMatcher(), new StoreImageTaskComplete.IsFailedMatcher(),
+                        new StoreImageTaskComplete.IsInProgressMatcher())
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(40), new FixedDelayStrategy(5)))
+                .withExecutorService(executorService).build();
+    }
+
+    /**
      * Builds a InternetGatewayExists waiter by using custom parameters waiterParameters and other parameters defined in
      * the waiters specification, and then polls until it determines whether the resource entered the desired state or
      * not, where polling criteria is bound by either default polling strategy or custom polling strategy.

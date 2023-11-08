@@ -418,6 +418,55 @@ public class CodeGenConfigurationNode implements Serializable, Cloneable, Struct
      * </p>
      */
     private S3DeltaDirectTarget s3DeltaDirectTarget;
+    /**
+     * <p>
+     * Specifies a target that writes to a data source in Amazon Redshift.
+     * </p>
+     */
+    private AmazonRedshiftSource amazonRedshiftSource;
+    /**
+     * <p>
+     * Specifies a target that writes to a data target in Amazon Redshift.
+     * </p>
+     */
+    private AmazonRedshiftTarget amazonRedshiftTarget;
+    /**
+     * <p>
+     * Specifies your data quality evaluation criteria. Allows multiple input data and returns a collection of Dynamic
+     * Frames.
+     * </p>
+     */
+    private EvaluateDataQualityMultiFrame evaluateDataQualityMultiFrame;
+    /**
+     * <p>
+     * Specifies a Glue DataBrew recipe node.
+     * </p>
+     */
+    private Recipe recipe;
+    /**
+     * <p>
+     * Specifies a Snowflake data source.
+     * </p>
+     */
+    private SnowflakeSource snowflakeSource;
+    /**
+     * <p>
+     * Specifies a target that writes to a Snowflake data source.
+     * </p>
+     */
+    private SnowflakeTarget snowflakeTarget;
+    /**
+     * <p>
+     * Specifies a source generated with standard connection options.
+     * </p>
+     */
+    private ConnectorDataSource connectorDataSource;
+    /**
+     * <p>
+     * Specifies a target generated with standard connection options.
+     * </p>
+     */
+    private ConnectorDataTarget connectorDataTarget;
 
     /**
      * <p>
@@ -3022,6 +3071,332 @@ public class CodeGenConfigurationNode implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * Specifies a target that writes to a data source in Amazon Redshift.
+     * </p>
+     * 
+     * @param amazonRedshiftSource
+     *        Specifies a target that writes to a data source in Amazon Redshift.
+     */
+
+    public void setAmazonRedshiftSource(AmazonRedshiftSource amazonRedshiftSource) {
+        this.amazonRedshiftSource = amazonRedshiftSource;
+    }
+
+    /**
+     * <p>
+     * Specifies a target that writes to a data source in Amazon Redshift.
+     * </p>
+     * 
+     * @return Specifies a target that writes to a data source in Amazon Redshift.
+     */
+
+    public AmazonRedshiftSource getAmazonRedshiftSource() {
+        return this.amazonRedshiftSource;
+    }
+
+    /**
+     * <p>
+     * Specifies a target that writes to a data source in Amazon Redshift.
+     * </p>
+     * 
+     * @param amazonRedshiftSource
+     *        Specifies a target that writes to a data source in Amazon Redshift.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CodeGenConfigurationNode withAmazonRedshiftSource(AmazonRedshiftSource amazonRedshiftSource) {
+        setAmazonRedshiftSource(amazonRedshiftSource);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies a target that writes to a data target in Amazon Redshift.
+     * </p>
+     * 
+     * @param amazonRedshiftTarget
+     *        Specifies a target that writes to a data target in Amazon Redshift.
+     */
+
+    public void setAmazonRedshiftTarget(AmazonRedshiftTarget amazonRedshiftTarget) {
+        this.amazonRedshiftTarget = amazonRedshiftTarget;
+    }
+
+    /**
+     * <p>
+     * Specifies a target that writes to a data target in Amazon Redshift.
+     * </p>
+     * 
+     * @return Specifies a target that writes to a data target in Amazon Redshift.
+     */
+
+    public AmazonRedshiftTarget getAmazonRedshiftTarget() {
+        return this.amazonRedshiftTarget;
+    }
+
+    /**
+     * <p>
+     * Specifies a target that writes to a data target in Amazon Redshift.
+     * </p>
+     * 
+     * @param amazonRedshiftTarget
+     *        Specifies a target that writes to a data target in Amazon Redshift.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CodeGenConfigurationNode withAmazonRedshiftTarget(AmazonRedshiftTarget amazonRedshiftTarget) {
+        setAmazonRedshiftTarget(amazonRedshiftTarget);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies your data quality evaluation criteria. Allows multiple input data and returns a collection of Dynamic
+     * Frames.
+     * </p>
+     * 
+     * @param evaluateDataQualityMultiFrame
+     *        Specifies your data quality evaluation criteria. Allows multiple input data and returns a collection of
+     *        Dynamic Frames.
+     */
+
+    public void setEvaluateDataQualityMultiFrame(EvaluateDataQualityMultiFrame evaluateDataQualityMultiFrame) {
+        this.evaluateDataQualityMultiFrame = evaluateDataQualityMultiFrame;
+    }
+
+    /**
+     * <p>
+     * Specifies your data quality evaluation criteria. Allows multiple input data and returns a collection of Dynamic
+     * Frames.
+     * </p>
+     * 
+     * @return Specifies your data quality evaluation criteria. Allows multiple input data and returns a collection of
+     *         Dynamic Frames.
+     */
+
+    public EvaluateDataQualityMultiFrame getEvaluateDataQualityMultiFrame() {
+        return this.evaluateDataQualityMultiFrame;
+    }
+
+    /**
+     * <p>
+     * Specifies your data quality evaluation criteria. Allows multiple input data and returns a collection of Dynamic
+     * Frames.
+     * </p>
+     * 
+     * @param evaluateDataQualityMultiFrame
+     *        Specifies your data quality evaluation criteria. Allows multiple input data and returns a collection of
+     *        Dynamic Frames.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CodeGenConfigurationNode withEvaluateDataQualityMultiFrame(EvaluateDataQualityMultiFrame evaluateDataQualityMultiFrame) {
+        setEvaluateDataQualityMultiFrame(evaluateDataQualityMultiFrame);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies a Glue DataBrew recipe node.
+     * </p>
+     * 
+     * @param recipe
+     *        Specifies a Glue DataBrew recipe node.
+     */
+
+    public void setRecipe(Recipe recipe) {
+        this.recipe = recipe;
+    }
+
+    /**
+     * <p>
+     * Specifies a Glue DataBrew recipe node.
+     * </p>
+     * 
+     * @return Specifies a Glue DataBrew recipe node.
+     */
+
+    public Recipe getRecipe() {
+        return this.recipe;
+    }
+
+    /**
+     * <p>
+     * Specifies a Glue DataBrew recipe node.
+     * </p>
+     * 
+     * @param recipe
+     *        Specifies a Glue DataBrew recipe node.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CodeGenConfigurationNode withRecipe(Recipe recipe) {
+        setRecipe(recipe);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies a Snowflake data source.
+     * </p>
+     * 
+     * @param snowflakeSource
+     *        Specifies a Snowflake data source.
+     */
+
+    public void setSnowflakeSource(SnowflakeSource snowflakeSource) {
+        this.snowflakeSource = snowflakeSource;
+    }
+
+    /**
+     * <p>
+     * Specifies a Snowflake data source.
+     * </p>
+     * 
+     * @return Specifies a Snowflake data source.
+     */
+
+    public SnowflakeSource getSnowflakeSource() {
+        return this.snowflakeSource;
+    }
+
+    /**
+     * <p>
+     * Specifies a Snowflake data source.
+     * </p>
+     * 
+     * @param snowflakeSource
+     *        Specifies a Snowflake data source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CodeGenConfigurationNode withSnowflakeSource(SnowflakeSource snowflakeSource) {
+        setSnowflakeSource(snowflakeSource);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies a target that writes to a Snowflake data source.
+     * </p>
+     * 
+     * @param snowflakeTarget
+     *        Specifies a target that writes to a Snowflake data source.
+     */
+
+    public void setSnowflakeTarget(SnowflakeTarget snowflakeTarget) {
+        this.snowflakeTarget = snowflakeTarget;
+    }
+
+    /**
+     * <p>
+     * Specifies a target that writes to a Snowflake data source.
+     * </p>
+     * 
+     * @return Specifies a target that writes to a Snowflake data source.
+     */
+
+    public SnowflakeTarget getSnowflakeTarget() {
+        return this.snowflakeTarget;
+    }
+
+    /**
+     * <p>
+     * Specifies a target that writes to a Snowflake data source.
+     * </p>
+     * 
+     * @param snowflakeTarget
+     *        Specifies a target that writes to a Snowflake data source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CodeGenConfigurationNode withSnowflakeTarget(SnowflakeTarget snowflakeTarget) {
+        setSnowflakeTarget(snowflakeTarget);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies a source generated with standard connection options.
+     * </p>
+     * 
+     * @param connectorDataSource
+     *        Specifies a source generated with standard connection options.
+     */
+
+    public void setConnectorDataSource(ConnectorDataSource connectorDataSource) {
+        this.connectorDataSource = connectorDataSource;
+    }
+
+    /**
+     * <p>
+     * Specifies a source generated with standard connection options.
+     * </p>
+     * 
+     * @return Specifies a source generated with standard connection options.
+     */
+
+    public ConnectorDataSource getConnectorDataSource() {
+        return this.connectorDataSource;
+    }
+
+    /**
+     * <p>
+     * Specifies a source generated with standard connection options.
+     * </p>
+     * 
+     * @param connectorDataSource
+     *        Specifies a source generated with standard connection options.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CodeGenConfigurationNode withConnectorDataSource(ConnectorDataSource connectorDataSource) {
+        setConnectorDataSource(connectorDataSource);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies a target generated with standard connection options.
+     * </p>
+     * 
+     * @param connectorDataTarget
+     *        Specifies a target generated with standard connection options.
+     */
+
+    public void setConnectorDataTarget(ConnectorDataTarget connectorDataTarget) {
+        this.connectorDataTarget = connectorDataTarget;
+    }
+
+    /**
+     * <p>
+     * Specifies a target generated with standard connection options.
+     * </p>
+     * 
+     * @return Specifies a target generated with standard connection options.
+     */
+
+    public ConnectorDataTarget getConnectorDataTarget() {
+        return this.connectorDataTarget;
+    }
+
+    /**
+     * <p>
+     * Specifies a target generated with standard connection options.
+     * </p>
+     * 
+     * @param connectorDataTarget
+     *        Specifies a target generated with standard connection options.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CodeGenConfigurationNode withConnectorDataTarget(ConnectorDataTarget connectorDataTarget) {
+        setConnectorDataTarget(connectorDataTarget);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -3158,7 +3533,23 @@ public class CodeGenConfigurationNode implements Serializable, Cloneable, Struct
         if (getS3DeltaCatalogTarget() != null)
             sb.append("S3DeltaCatalogTarget: ").append(getS3DeltaCatalogTarget()).append(",");
         if (getS3DeltaDirectTarget() != null)
-            sb.append("S3DeltaDirectTarget: ").append(getS3DeltaDirectTarget());
+            sb.append("S3DeltaDirectTarget: ").append(getS3DeltaDirectTarget()).append(",");
+        if (getAmazonRedshiftSource() != null)
+            sb.append("AmazonRedshiftSource: ").append(getAmazonRedshiftSource()).append(",");
+        if (getAmazonRedshiftTarget() != null)
+            sb.append("AmazonRedshiftTarget: ").append(getAmazonRedshiftTarget()).append(",");
+        if (getEvaluateDataQualityMultiFrame() != null)
+            sb.append("EvaluateDataQualityMultiFrame: ").append(getEvaluateDataQualityMultiFrame()).append(",");
+        if (getRecipe() != null)
+            sb.append("Recipe: ").append(getRecipe()).append(",");
+        if (getSnowflakeSource() != null)
+            sb.append("SnowflakeSource: ").append(getSnowflakeSource()).append(",");
+        if (getSnowflakeTarget() != null)
+            sb.append("SnowflakeTarget: ").append(getSnowflakeTarget()).append(",");
+        if (getConnectorDataSource() != null)
+            sb.append("ConnectorDataSource: ").append(getConnectorDataSource()).append(",");
+        if (getConnectorDataTarget() != null)
+            sb.append("ConnectorDataTarget: ").append(getConnectorDataTarget());
         sb.append("}");
         return sb.toString();
     }
@@ -3427,6 +3818,39 @@ public class CodeGenConfigurationNode implements Serializable, Cloneable, Struct
             return false;
         if (other.getS3DeltaDirectTarget() != null && other.getS3DeltaDirectTarget().equals(this.getS3DeltaDirectTarget()) == false)
             return false;
+        if (other.getAmazonRedshiftSource() == null ^ this.getAmazonRedshiftSource() == null)
+            return false;
+        if (other.getAmazonRedshiftSource() != null && other.getAmazonRedshiftSource().equals(this.getAmazonRedshiftSource()) == false)
+            return false;
+        if (other.getAmazonRedshiftTarget() == null ^ this.getAmazonRedshiftTarget() == null)
+            return false;
+        if (other.getAmazonRedshiftTarget() != null && other.getAmazonRedshiftTarget().equals(this.getAmazonRedshiftTarget()) == false)
+            return false;
+        if (other.getEvaluateDataQualityMultiFrame() == null ^ this.getEvaluateDataQualityMultiFrame() == null)
+            return false;
+        if (other.getEvaluateDataQualityMultiFrame() != null
+                && other.getEvaluateDataQualityMultiFrame().equals(this.getEvaluateDataQualityMultiFrame()) == false)
+            return false;
+        if (other.getRecipe() == null ^ this.getRecipe() == null)
+            return false;
+        if (other.getRecipe() != null && other.getRecipe().equals(this.getRecipe()) == false)
+            return false;
+        if (other.getSnowflakeSource() == null ^ this.getSnowflakeSource() == null)
+            return false;
+        if (other.getSnowflakeSource() != null && other.getSnowflakeSource().equals(this.getSnowflakeSource()) == false)
+            return false;
+        if (other.getSnowflakeTarget() == null ^ this.getSnowflakeTarget() == null)
+            return false;
+        if (other.getSnowflakeTarget() != null && other.getSnowflakeTarget().equals(this.getSnowflakeTarget()) == false)
+            return false;
+        if (other.getConnectorDataSource() == null ^ this.getConnectorDataSource() == null)
+            return false;
+        if (other.getConnectorDataSource() != null && other.getConnectorDataSource().equals(this.getConnectorDataSource()) == false)
+            return false;
+        if (other.getConnectorDataTarget() == null ^ this.getConnectorDataTarget() == null)
+            return false;
+        if (other.getConnectorDataTarget() != null && other.getConnectorDataTarget().equals(this.getConnectorDataTarget()) == false)
+            return false;
         return true;
     }
 
@@ -3498,6 +3922,14 @@ public class CodeGenConfigurationNode implements Serializable, Cloneable, Struct
         hashCode = prime * hashCode + ((getS3DeltaSource() == null) ? 0 : getS3DeltaSource().hashCode());
         hashCode = prime * hashCode + ((getS3DeltaCatalogTarget() == null) ? 0 : getS3DeltaCatalogTarget().hashCode());
         hashCode = prime * hashCode + ((getS3DeltaDirectTarget() == null) ? 0 : getS3DeltaDirectTarget().hashCode());
+        hashCode = prime * hashCode + ((getAmazonRedshiftSource() == null) ? 0 : getAmazonRedshiftSource().hashCode());
+        hashCode = prime * hashCode + ((getAmazonRedshiftTarget() == null) ? 0 : getAmazonRedshiftTarget().hashCode());
+        hashCode = prime * hashCode + ((getEvaluateDataQualityMultiFrame() == null) ? 0 : getEvaluateDataQualityMultiFrame().hashCode());
+        hashCode = prime * hashCode + ((getRecipe() == null) ? 0 : getRecipe().hashCode());
+        hashCode = prime * hashCode + ((getSnowflakeSource() == null) ? 0 : getSnowflakeSource().hashCode());
+        hashCode = prime * hashCode + ((getSnowflakeTarget() == null) ? 0 : getSnowflakeTarget().hashCode());
+        hashCode = prime * hashCode + ((getConnectorDataSource() == null) ? 0 : getConnectorDataSource().hashCode());
+        hashCode = prime * hashCode + ((getConnectorDataTarget() == null) ? 0 : getConnectorDataTarget().hashCode());
         return hashCode;
     }
 

@@ -47,6 +47,10 @@ public class FieldToMatchMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Headers").build();
     private static final MarshallingInfo<StructuredPojo> COOKIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Cookies").build();
+    private static final MarshallingInfo<StructuredPojo> HEADERORDER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HeaderOrder").build();
+    private static final MarshallingInfo<StructuredPojo> JA3FINGERPRINT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("JA3Fingerprint").build();
 
     private static final FieldToMatchMarshaller instance = new FieldToMatchMarshaller();
 
@@ -74,6 +78,8 @@ public class FieldToMatchMarshaller {
             protocolMarshaller.marshall(fieldToMatch.getJsonBody(), JSONBODY_BINDING);
             protocolMarshaller.marshall(fieldToMatch.getHeaders(), HEADERS_BINDING);
             protocolMarshaller.marshall(fieldToMatch.getCookies(), COOKIES_BINDING);
+            protocolMarshaller.marshall(fieldToMatch.getHeaderOrder(), HEADERORDER_BINDING);
+            protocolMarshaller.marshall(fieldToMatch.getJA3Fingerprint(), JA3FINGERPRINT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

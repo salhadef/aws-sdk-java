@@ -46,7 +46,8 @@ public class MeasureValue implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The value for the MeasureValue.
+     * The value for the MeasureValue. For information, see <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/writes.html#writes.data-types">Data types</a>.
      * </p>
      */
     private String value;
@@ -126,11 +127,14 @@ public class MeasureValue implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value for the MeasureValue.
+     * The value for the MeasureValue. For information, see <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/writes.html#writes.data-types">Data types</a>.
      * </p>
      * 
      * @param value
-     *        The value for the MeasureValue.
+     *        The value for the MeasureValue. For information, see <a
+     *        href="https://docs.aws.amazon.com/timestream/latest/developerguide/writes.html#writes.data-types">Data
+     *        types</a>.
      */
 
     public void setValue(String value) {
@@ -139,10 +143,13 @@ public class MeasureValue implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value for the MeasureValue.
+     * The value for the MeasureValue. For information, see <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/writes.html#writes.data-types">Data types</a>.
      * </p>
      * 
-     * @return The value for the MeasureValue.
+     * @return The value for the MeasureValue. For information, see <a
+     *         href="https://docs.aws.amazon.com/timestream/latest/developerguide/writes.html#writes.data-types">Data
+     *         types</a>.
      */
 
     public String getValue() {
@@ -151,11 +158,14 @@ public class MeasureValue implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value for the MeasureValue.
+     * The value for the MeasureValue. For information, see <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/writes.html#writes.data-types">Data types</a>.
      * </p>
      * 
      * @param value
-     *        The value for the MeasureValue.
+     *        The value for the MeasureValue. For information, see <a
+     *        href="https://docs.aws.amazon.com/timestream/latest/developerguide/writes.html#writes.data-types">Data
+     *        types</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

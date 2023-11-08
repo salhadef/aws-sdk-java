@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * The quota for retained automated backups was exceeded. This prevents you from retaining any additional automated
- * backups. The retained automated backups quota is the same as your DB Instance quota.
+ * backups. The retained automated backups quota is the same as your DB instance quota.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

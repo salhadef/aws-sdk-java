@@ -68,6 +68,10 @@ public class AccountInfoJsonUnmarshaller implements Unmarshaller<AccountInfo, Js
                     context.nextToken();
                     accountInfo.setAccountSubscriptionStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("IAMIdentityCenterInstanceArn", targetDepth)) {
+                    context.nextToken();
+                    accountInfo.setIAMIdentityCenterInstanceArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

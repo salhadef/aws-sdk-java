@@ -52,6 +52,10 @@ public class DeleteDBClusterRequestMarshaller implements Marshaller<Request<Dele
             request.addParameter("FinalDBSnapshotIdentifier", StringUtils.fromString(deleteDBClusterRequest.getFinalDBSnapshotIdentifier()));
         }
 
+        if (deleteDBClusterRequest.getDeleteAutomatedBackups() != null) {
+            request.addParameter("DeleteAutomatedBackups", StringUtils.fromBoolean(deleteDBClusterRequest.getDeleteAutomatedBackups()));
+        }
+
         return request;
     }
 

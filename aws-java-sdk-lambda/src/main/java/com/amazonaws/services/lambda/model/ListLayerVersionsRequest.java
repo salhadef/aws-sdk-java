@@ -29,6 +29,11 @@ public class ListLayerVersionsRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * A runtime identifier. For example, <code>go1.x</code>.
      * </p>
+     * <p>
+     * The following list includes deprecated runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.
+     * </p>
      */
     private String compatibleRuntime;
     /**
@@ -61,9 +66,18 @@ public class ListLayerVersionsRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * A runtime identifier. For example, <code>go1.x</code>.
      * </p>
+     * <p>
+     * The following list includes deprecated runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.
+     * </p>
      * 
      * @param compatibleRuntime
-     *        A runtime identifier. For example, <code>go1.x</code>.
+     *        A runtime identifier. For example, <code>go1.x</code>.</p>
+     *        <p>
+     *        The following list includes deprecated runtimes. For more information, see <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     *        deprecation policy</a>.
      * @see Runtime
      */
 
@@ -75,8 +89,17 @@ public class ListLayerVersionsRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * A runtime identifier. For example, <code>go1.x</code>.
      * </p>
+     * <p>
+     * The following list includes deprecated runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.
+     * </p>
      * 
-     * @return A runtime identifier. For example, <code>go1.x</code>.
+     * @return A runtime identifier. For example, <code>go1.x</code>.</p>
+     *         <p>
+     *         The following list includes deprecated runtimes. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     *         deprecation policy</a>.
      * @see Runtime
      */
 
@@ -88,9 +111,18 @@ public class ListLayerVersionsRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * A runtime identifier. For example, <code>go1.x</code>.
      * </p>
+     * <p>
+     * The following list includes deprecated runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.
+     * </p>
      * 
      * @param compatibleRuntime
-     *        A runtime identifier. For example, <code>go1.x</code>.
+     *        A runtime identifier. For example, <code>go1.x</code>.</p>
+     *        <p>
+     *        The following list includes deprecated runtimes. For more information, see <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     *        deprecation policy</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Runtime
      */
@@ -104,9 +136,18 @@ public class ListLayerVersionsRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * A runtime identifier. For example, <code>go1.x</code>.
      * </p>
+     * <p>
+     * The following list includes deprecated runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.
+     * </p>
      * 
      * @param compatibleRuntime
-     *        A runtime identifier. For example, <code>go1.x</code>.
+     *        A runtime identifier. For example, <code>go1.x</code>.</p>
+     *        <p>
+     *        The following list includes deprecated runtimes. For more information, see <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     *        deprecation policy</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Runtime
      */

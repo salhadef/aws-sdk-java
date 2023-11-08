@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about a CloudTrail trail, including the trail's name, home region, and Amazon Resource Name (ARN).
+ * Information about a CloudTrail trail, including the trail's name, home Region, and Amazon Resource Name (ARN).
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/TrailInfo" target="_top">AWS API

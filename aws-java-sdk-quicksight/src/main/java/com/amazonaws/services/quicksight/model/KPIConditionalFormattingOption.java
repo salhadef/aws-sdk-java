@@ -40,6 +40,18 @@ public class KPIConditionalFormattingOption implements Serializable, Cloneable, 
      * </p>
      */
     private KPIProgressBarConditionalFormatting progressBar;
+    /**
+     * <p>
+     * The conditional formatting for the actual value of a KPI visual.
+     * </p>
+     */
+    private KPIActualValueConditionalFormatting actualValue;
+    /**
+     * <p>
+     * The conditional formatting for the comparison value of a KPI visual.
+     * </p>
+     */
+    private KPIComparisonValueConditionalFormatting comparisonValue;
 
     /**
      * <p>
@@ -122,6 +134,86 @@ public class KPIConditionalFormattingOption implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * The conditional formatting for the actual value of a KPI visual.
+     * </p>
+     * 
+     * @param actualValue
+     *        The conditional formatting for the actual value of a KPI visual.
+     */
+
+    public void setActualValue(KPIActualValueConditionalFormatting actualValue) {
+        this.actualValue = actualValue;
+    }
+
+    /**
+     * <p>
+     * The conditional formatting for the actual value of a KPI visual.
+     * </p>
+     * 
+     * @return The conditional formatting for the actual value of a KPI visual.
+     */
+
+    public KPIActualValueConditionalFormatting getActualValue() {
+        return this.actualValue;
+    }
+
+    /**
+     * <p>
+     * The conditional formatting for the actual value of a KPI visual.
+     * </p>
+     * 
+     * @param actualValue
+     *        The conditional formatting for the actual value of a KPI visual.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KPIConditionalFormattingOption withActualValue(KPIActualValueConditionalFormatting actualValue) {
+        setActualValue(actualValue);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The conditional formatting for the comparison value of a KPI visual.
+     * </p>
+     * 
+     * @param comparisonValue
+     *        The conditional formatting for the comparison value of a KPI visual.
+     */
+
+    public void setComparisonValue(KPIComparisonValueConditionalFormatting comparisonValue) {
+        this.comparisonValue = comparisonValue;
+    }
+
+    /**
+     * <p>
+     * The conditional formatting for the comparison value of a KPI visual.
+     * </p>
+     * 
+     * @return The conditional formatting for the comparison value of a KPI visual.
+     */
+
+    public KPIComparisonValueConditionalFormatting getComparisonValue() {
+        return this.comparisonValue;
+    }
+
+    /**
+     * <p>
+     * The conditional formatting for the comparison value of a KPI visual.
+     * </p>
+     * 
+     * @param comparisonValue
+     *        The conditional formatting for the comparison value of a KPI visual.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KPIConditionalFormattingOption withComparisonValue(KPIComparisonValueConditionalFormatting comparisonValue) {
+        setComparisonValue(comparisonValue);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -136,7 +228,11 @@ public class KPIConditionalFormattingOption implements Serializable, Cloneable, 
         if (getPrimaryValue() != null)
             sb.append("PrimaryValue: ").append(getPrimaryValue()).append(",");
         if (getProgressBar() != null)
-            sb.append("ProgressBar: ").append(getProgressBar());
+            sb.append("ProgressBar: ").append(getProgressBar()).append(",");
+        if (getActualValue() != null)
+            sb.append("ActualValue: ").append(getActualValue()).append(",");
+        if (getComparisonValue() != null)
+            sb.append("ComparisonValue: ").append(getComparisonValue());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +255,14 @@ public class KPIConditionalFormattingOption implements Serializable, Cloneable, 
             return false;
         if (other.getProgressBar() != null && other.getProgressBar().equals(this.getProgressBar()) == false)
             return false;
+        if (other.getActualValue() == null ^ this.getActualValue() == null)
+            return false;
+        if (other.getActualValue() != null && other.getActualValue().equals(this.getActualValue()) == false)
+            return false;
+        if (other.getComparisonValue() == null ^ this.getComparisonValue() == null)
+            return false;
+        if (other.getComparisonValue() != null && other.getComparisonValue().equals(this.getComparisonValue()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +273,8 @@ public class KPIConditionalFormattingOption implements Serializable, Cloneable, 
 
         hashCode = prime * hashCode + ((getPrimaryValue() == null) ? 0 : getPrimaryValue().hashCode());
         hashCode = prime * hashCode + ((getProgressBar() == null) ? 0 : getProgressBar().hashCode());
+        hashCode = prime * hashCode + ((getActualValue() == null) ? 0 : getActualValue().hashCode());
+        hashCode = prime * hashCode + ((getComparisonValue() == null) ? 0 : getComparisonValue().hashCode());
         return hashCode;
     }
 

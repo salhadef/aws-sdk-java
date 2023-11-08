@@ -27,18 +27,18 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ImportReadSetJobItemMarshaller {
 
-    private static final MarshallingInfo<java.util.Date> COMPLETIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("completionTime").timestampFormat("iso8601").build();
-    private static final MarshallingInfo<java.util.Date> CREATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationTime").timestampFormat("iso8601").build();
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("id").build();
-    private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("roleArn").build();
     private static final MarshallingInfo<String> SEQUENCESTOREID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sequenceStoreId").build();
+    private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("roleArn").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
+    private static final MarshallingInfo<java.util.Date> CREATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationTime").timestampFormat("iso8601").build();
+    private static final MarshallingInfo<java.util.Date> COMPLETIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("completionTime").timestampFormat("iso8601").build();
 
     private static final ImportReadSetJobItemMarshaller instance = new ImportReadSetJobItemMarshaller();
 
@@ -56,12 +56,12 @@ public class ImportReadSetJobItemMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(importReadSetJobItem.getCompletionTime(), COMPLETIONTIME_BINDING);
-            protocolMarshaller.marshall(importReadSetJobItem.getCreationTime(), CREATIONTIME_BINDING);
             protocolMarshaller.marshall(importReadSetJobItem.getId(), ID_BINDING);
-            protocolMarshaller.marshall(importReadSetJobItem.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(importReadSetJobItem.getSequenceStoreId(), SEQUENCESTOREID_BINDING);
+            protocolMarshaller.marshall(importReadSetJobItem.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(importReadSetJobItem.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(importReadSetJobItem.getCreationTime(), CREATIONTIME_BINDING);
+            protocolMarshaller.marshall(importReadSetJobItem.getCompletionTime(), COMPLETIONTIME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

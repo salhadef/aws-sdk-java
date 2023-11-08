@@ -53,9 +53,9 @@ public class ResourceNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnma
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("resourceId", targetDepth)) {
+                if (context.testExpression("resourceName", targetDepth)) {
                     context.nextToken();
-                    resourceNotFoundException.setResourceId(context.getUnmarshaller(String.class).unmarshall(context));
+                    resourceNotFoundException.setResourceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceType", targetDepth)) {
                     context.nextToken();

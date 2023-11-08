@@ -60,6 +60,10 @@ public class CodeRepositoryJsonUnmarshaller implements Unmarshaller<CodeReposito
                     context.nextToken();
                     codeRepository.setCodeConfiguration(CodeConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("SourceDirectory", targetDepth)) {
+                    context.nextToken();
+                    codeRepository.setSourceDirectory(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

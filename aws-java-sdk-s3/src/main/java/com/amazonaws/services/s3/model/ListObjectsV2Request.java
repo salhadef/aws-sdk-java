@@ -17,6 +17,9 @@ package com.amazonaws.services.s3.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Request to retrieve a listing of objects in an S3 bucket.
@@ -109,6 +112,12 @@ public class ListObjectsV2Request extends AmazonWebServiceRequest implements Ser
     private boolean isRequesterPays;
 
     private String expectedBucketOwner;
+
+    /**
+     * Optional parameter indicating to include some attributes of an object in
+     * the response.
+     */
+    private List<String> optionalObjectAttributes;
 
     public String getExpectedBucketOwner() {
         return expectedBucketOwner;
@@ -306,7 +315,7 @@ public class ListObjectsV2Request extends AmazonWebServiceRequest implements Ser
      * same string between the prefix and the first occurrence of the delimiter
      * to be rolled up into a single result element in the
      * {@link ListObjectsV2Result#getCommonPrefixes()} list.
-     * Returns this {@link ListObjectsRequest}, enabling additional method
+     * Returns this {@link ListObjectsV2Request}, enabling additional method
      * calls to be chained together.
      *
      * @param delimiter
@@ -315,7 +324,7 @@ public class ListObjectsV2Request extends AmazonWebServiceRequest implements Ser
      *            the delimiter to be rolled up into a single result element in
      *            the {@link ListObjectsV2Result#getCommonPrefixes()} list.
      *
-     * @return This {@link ListObjectsRequest}, enabling additional method
+     * @return This {@link ListObjectsV2Request}, enabling additional method
      *         calls to be chained together.
      */
     public ListObjectsV2Request withDelimiter(String delimiter) {
@@ -623,5 +632,56 @@ public class ListObjectsV2Request extends AmazonWebServiceRequest implements Ser
     public ListObjectsV2Request withRequesterPays(boolean isRequesterPays) {
         setRequesterPays(isRequesterPays);
         return this;
+    }
+
+    /**
+     * Gets the optional object attribute parameter indicating that customer also need
+     * some extra information about an object in the response like Restore Status.
+     *
+     * @return The optional parameter indicating that customer also need
+     *      some extra information about an object on the response
+     *
+     * @see ListObjectsV2Request#setOptionalObjectAttributes(List)
+     * @see ListObjectsV2Request#withOptionalObjectAttributes(List)
+     */
+    public List<String> getOptionalObjectAttributes() {
+        if(optionalObjectAttributes != null) {
+            return Collections.unmodifiableList(optionalObjectAttributes);
+        }
+        return null;
+    }
+
+    /**
+     * Sets the optional object attribute parameter indicating that customer also need
+     * some extra information about an object in the response like Restore Status.
+     *
+     * @param optionalObjectAttributes
+     *                  The optional parameter indicating to include
+     *                  some extra object information in the response.
+     *                  Valid values: null or "RestoreStatus".
+     *
+     * @see ListObjectsV2Request#getOptionalObjectAttributes()
+     * @see ListObjectsV2Request#setOptionalObjectAttributes(List)
+     *
+     */
+    public ListObjectsV2Request withOptionalObjectAttributes(List<String> optionalObjectAttributes) {
+        this.optionalObjectAttributes = optionalObjectAttributes != null ? new ArrayList(optionalObjectAttributes) : null;
+        return this;
+    }
+
+    /**
+     * Sets the optional object attribute parameter indicating that customer also need
+     * some extra information about an object in the response like Restore Status.
+     *
+     * @param optionalObjectAttributes
+     *                  The optional parameter indicating to include
+     *                  some extra object information in the response.
+     *                  Valid values: null or "RestoreStatus".
+     *
+     * @see ListObjectsV2Request#getOptionalObjectAttributes()
+     * @see ListObjectsV2Request#withOptionalObjectAttributes(List)
+     */
+    public void setOptionalObjectAttributes(List<String> optionalObjectAttributes) {
+        withOptionalObjectAttributes(optionalObjectAttributes);
     }
 }

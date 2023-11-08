@@ -27,7 +27,7 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -181,7 +181,7 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
      * <p>
-     * One or more subnet IDs.
+     * The IDs of the subnets.
      * </p>
      * <p>
      * Default: Describes all your subnets.
@@ -206,7 +206,7 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -357,7 +357,7 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      * </li>
      * </ul>
      * 
-     * @return One or more filters.</p>
+     * @return The filters.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -518,7 +518,7 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -670,7 +670,7 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -833,7 +833,7 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -990,7 +990,7 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      * </p>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1155,7 +1155,7 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -1307,7 +1307,7 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1467,13 +1467,13 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * One or more subnet IDs.
+     * The IDs of the subnets.
      * </p>
      * <p>
      * Default: Describes all your subnets.
      * </p>
      * 
-     * @return One or more subnet IDs.</p>
+     * @return The IDs of the subnets.</p>
      *         <p>
      *         Default: Describes all your subnets.
      */
@@ -1487,14 +1487,14 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * One or more subnet IDs.
+     * The IDs of the subnets.
      * </p>
      * <p>
      * Default: Describes all your subnets.
      * </p>
      * 
      * @param subnetIds
-     *        One or more subnet IDs.</p>
+     *        The IDs of the subnets.</p>
      *        <p>
      *        Default: Describes all your subnets.
      */
@@ -1510,7 +1510,7 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * One or more subnet IDs.
+     * The IDs of the subnets.
      * </p>
      * <p>
      * Default: Describes all your subnets.
@@ -1522,7 +1522,7 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      * </p>
      * 
      * @param subnetIds
-     *        One or more subnet IDs.</p>
+     *        The IDs of the subnets.</p>
      *        <p>
      *        Default: Describes all your subnets.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1540,14 +1540,14 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * One or more subnet IDs.
+     * The IDs of the subnets.
      * </p>
      * <p>
      * Default: Describes all your subnets.
      * </p>
      * 
      * @param subnetIds
-     *        One or more subnet IDs.</p>
+     *        The IDs of the subnets.</p>
      *        <p>
      *        Default: Describes all your subnets.
      * @return Returns a reference to this object so that method calls can be chained together.

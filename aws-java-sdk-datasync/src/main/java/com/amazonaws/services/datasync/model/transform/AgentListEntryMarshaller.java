@@ -33,6 +33,8 @@ public class AgentListEntryMarshaller {
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Status").build();
+    private static final MarshallingInfo<StructuredPojo> PLATFORM_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Platform").build();
 
     private static final AgentListEntryMarshaller instance = new AgentListEntryMarshaller();
 
@@ -53,6 +55,7 @@ public class AgentListEntryMarshaller {
             protocolMarshaller.marshall(agentListEntry.getAgentArn(), AGENTARN_BINDING);
             protocolMarshaller.marshall(agentListEntry.getName(), NAME_BINDING);
             protocolMarshaller.marshall(agentListEntry.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(agentListEntry.getPlatform(), PLATFORM_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

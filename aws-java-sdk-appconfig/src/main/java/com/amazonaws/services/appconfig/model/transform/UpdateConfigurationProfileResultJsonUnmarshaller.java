@@ -82,6 +82,14 @@ public class UpdateConfigurationProfileResultJsonUnmarshaller implements Unmarsh
                     context.nextToken();
                     updateConfigurationProfileResult.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("KmsKeyArn", targetDepth)) {
+                    context.nextToken();
+                    updateConfigurationProfileResult.setKmsKeyArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("KmsKeyIdentifier", targetDepth)) {
+                    context.nextToken();
+                    updateConfigurationProfileResult.setKmsKeyIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

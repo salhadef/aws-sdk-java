@@ -33,9 +33,9 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
     private String restApiId;
     /**
      * <p>
-     * A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing DocumentationParts
-     * definition or to merge (<code>MERGE</code>) the new definition into the existing one. The default value is
-     * <code>MERGE</code>.
+     * A query parameter to indicate whether to overwrite (<code>overwrite</code>) any existing DocumentationParts
+     * definition or to merge (<code>merge</code>) the new definition into the existing one. The default value is
+     * <code>merge</code>.
      * </p>
      */
     private String mode;
@@ -96,15 +96,15 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing DocumentationParts
-     * definition or to merge (<code>MERGE</code>) the new definition into the existing one. The default value is
-     * <code>MERGE</code>.
+     * A query parameter to indicate whether to overwrite (<code>overwrite</code>) any existing DocumentationParts
+     * definition or to merge (<code>merge</code>) the new definition into the existing one. The default value is
+     * <code>merge</code>.
      * </p>
      * 
      * @param mode
-     *        A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing
-     *        DocumentationParts definition or to merge (<code>MERGE</code>) the new definition into the existing one.
-     *        The default value is <code>MERGE</code>.
+     *        A query parameter to indicate whether to overwrite (<code>overwrite</code>) any existing
+     *        DocumentationParts definition or to merge (<code>merge</code>) the new definition into the existing one.
+     *        The default value is <code>merge</code>.
      * @see PutMode
      */
 
@@ -114,14 +114,14 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing DocumentationParts
-     * definition or to merge (<code>MERGE</code>) the new definition into the existing one. The default value is
-     * <code>MERGE</code>.
+     * A query parameter to indicate whether to overwrite (<code>overwrite</code>) any existing DocumentationParts
+     * definition or to merge (<code>merge</code>) the new definition into the existing one. The default value is
+     * <code>merge</code>.
      * </p>
      * 
-     * @return A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing
-     *         DocumentationParts definition or to merge (<code>MERGE</code>) the new definition into the existing one.
-     *         The default value is <code>MERGE</code>.
+     * @return A query parameter to indicate whether to overwrite (<code>overwrite</code>) any existing
+     *         DocumentationParts definition or to merge (<code>merge</code>) the new definition into the existing one.
+     *         The default value is <code>merge</code>.
      * @see PutMode
      */
 
@@ -131,15 +131,15 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing DocumentationParts
-     * definition or to merge (<code>MERGE</code>) the new definition into the existing one. The default value is
-     * <code>MERGE</code>.
+     * A query parameter to indicate whether to overwrite (<code>overwrite</code>) any existing DocumentationParts
+     * definition or to merge (<code>merge</code>) the new definition into the existing one. The default value is
+     * <code>merge</code>.
      * </p>
      * 
      * @param mode
-     *        A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing
-     *        DocumentationParts definition or to merge (<code>MERGE</code>) the new definition into the existing one.
-     *        The default value is <code>MERGE</code>.
+     *        A query parameter to indicate whether to overwrite (<code>overwrite</code>) any existing
+     *        DocumentationParts definition or to merge (<code>merge</code>) the new definition into the existing one.
+     *        The default value is <code>merge</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PutMode
      */
@@ -151,15 +151,15 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing DocumentationParts
-     * definition or to merge (<code>MERGE</code>) the new definition into the existing one. The default value is
-     * <code>MERGE</code>.
+     * A query parameter to indicate whether to overwrite (<code>overwrite</code>) any existing DocumentationParts
+     * definition or to merge (<code>merge</code>) the new definition into the existing one. The default value is
+     * <code>merge</code>.
      * </p>
      * 
      * @param mode
-     *        A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing
-     *        DocumentationParts definition or to merge (<code>MERGE</code>) the new definition into the existing one.
-     *        The default value is <code>MERGE</code>.
+     *        A query parameter to indicate whether to overwrite (<code>overwrite</code>) any existing
+     *        DocumentationParts definition or to merge (<code>merge</code>) the new definition into the existing one.
+     *        The default value is <code>merge</code>.
      * @see PutMode
      */
 
@@ -169,15 +169,15 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing DocumentationParts
-     * definition or to merge (<code>MERGE</code>) the new definition into the existing one. The default value is
-     * <code>MERGE</code>.
+     * A query parameter to indicate whether to overwrite (<code>overwrite</code>) any existing DocumentationParts
+     * definition or to merge (<code>merge</code>) the new definition into the existing one. The default value is
+     * <code>merge</code>.
      * </p>
      * 
      * @param mode
-     *        A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing
-     *        DocumentationParts definition or to merge (<code>MERGE</code>) the new definition into the existing one.
-     *        The default value is <code>MERGE</code>.
+     *        A query parameter to indicate whether to overwrite (<code>overwrite</code>) any existing
+     *        DocumentationParts definition or to merge (<code>merge</code>) the new definition into the existing one.
+     *        The default value is <code>merge</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PutMode
      */

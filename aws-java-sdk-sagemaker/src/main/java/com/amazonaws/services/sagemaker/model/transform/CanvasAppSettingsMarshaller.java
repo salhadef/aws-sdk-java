@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.sagemaker.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,14 @@ public class CanvasAppSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TimeSeriesForecastingSettings").build();
     private static final MarshallingInfo<StructuredPojo> MODELREGISTERSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModelRegisterSettings").build();
+    private static final MarshallingInfo<StructuredPojo> WORKSPACESETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WorkspaceSettings").build();
+    private static final MarshallingInfo<List> IDENTITYPROVIDEROAUTHSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdentityProviderOAuthSettings").build();
+    private static final MarshallingInfo<StructuredPojo> KENDRASETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KendraSettings").build();
+    private static final MarshallingInfo<StructuredPojo> DIRECTDEPLOYSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DirectDeploySettings").build();
 
     private static final CanvasAppSettingsMarshaller instance = new CanvasAppSettingsMarshaller();
 
@@ -50,6 +59,10 @@ public class CanvasAppSettingsMarshaller {
         try {
             protocolMarshaller.marshall(canvasAppSettings.getTimeSeriesForecastingSettings(), TIMESERIESFORECASTINGSETTINGS_BINDING);
             protocolMarshaller.marshall(canvasAppSettings.getModelRegisterSettings(), MODELREGISTERSETTINGS_BINDING);
+            protocolMarshaller.marshall(canvasAppSettings.getWorkspaceSettings(), WORKSPACESETTINGS_BINDING);
+            protocolMarshaller.marshall(canvasAppSettings.getIdentityProviderOAuthSettings(), IDENTITYPROVIDEROAUTHSETTINGS_BINDING);
+            protocolMarshaller.marshall(canvasAppSettings.getKendraSettings(), KENDRASETTINGS_BINDING);
+            protocolMarshaller.marshall(canvasAppSettings.getDirectDeploySettings(), DIRECTDEPLOYSETTINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

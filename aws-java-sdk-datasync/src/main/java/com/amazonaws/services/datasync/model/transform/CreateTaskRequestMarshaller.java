@@ -46,6 +46,8 @@ public class CreateTaskRequestMarshaller {
             .marshallLocationName("Tags").build();
     private static final MarshallingInfo<List> INCLUDES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Includes").build();
+    private static final MarshallingInfo<StructuredPojo> TASKREPORTCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TaskReportConfig").build();
 
     private static final CreateTaskRequestMarshaller instance = new CreateTaskRequestMarshaller();
 
@@ -72,6 +74,7 @@ public class CreateTaskRequestMarshaller {
             protocolMarshaller.marshall(createTaskRequest.getSchedule(), SCHEDULE_BINDING);
             protocolMarshaller.marshall(createTaskRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createTaskRequest.getIncludes(), INCLUDES_BINDING);
+            protocolMarshaller.marshall(createTaskRequest.getTaskReportConfig(), TASKREPORTCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

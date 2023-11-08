@@ -34,6 +34,8 @@ public class GetMetricDataV2RequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> ENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<StructuredPojo> INTERVAL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Interval").build();
     private static final MarshallingInfo<List> FILTERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Filters").build();
     private static final MarshallingInfo<List> GROUPINGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -64,6 +66,7 @@ public class GetMetricDataV2RequestMarshaller {
             protocolMarshaller.marshall(getMetricDataV2Request.getResourceArn(), RESOURCEARN_BINDING);
             protocolMarshaller.marshall(getMetricDataV2Request.getStartTime(), STARTTIME_BINDING);
             protocolMarshaller.marshall(getMetricDataV2Request.getEndTime(), ENDTIME_BINDING);
+            protocolMarshaller.marshall(getMetricDataV2Request.getInterval(), INTERVAL_BINDING);
             protocolMarshaller.marshall(getMetricDataV2Request.getFilters(), FILTERS_BINDING);
             protocolMarshaller.marshall(getMetricDataV2Request.getGroupings(), GROUPINGS_BINDING);
             protocolMarshaller.marshall(getMetricDataV2Request.getMetrics(), METRICS_BINDING);

@@ -33,6 +33,8 @@ public class RetireGrantRequestMarshaller {
             .marshallLocationName("KeyId").build();
     private static final MarshallingInfo<String> GRANTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("GrantId").build();
+    private static final MarshallingInfo<Boolean> DRYRUN_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("DryRun").build();
 
     private static final RetireGrantRequestMarshaller instance = new RetireGrantRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class RetireGrantRequestMarshaller {
             protocolMarshaller.marshall(retireGrantRequest.getGrantToken(), GRANTTOKEN_BINDING);
             protocolMarshaller.marshall(retireGrantRequest.getKeyId(), KEYID_BINDING);
             protocolMarshaller.marshall(retireGrantRequest.getGrantId(), GRANTID_BINDING);
+            protocolMarshaller.marshall(retireGrantRequest.getDryRun(), DRYRUN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -30,11 +30,17 @@ public class AnalysisRuleList implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Columns that can be used to join a configured table with the table of the member who can query and another
-     * members' configured tables.
+     * Columns that can be used to join a configured table with the table of the member who can query and other members'
+     * configured tables.
      * </p>
      */
     private java.util.List<String> joinColumns;
+    /**
+     * <p>
+     * The logical operators (if any) that are to be used in an INNER JOIN match condition. Default is <code>AND</code>.
+     * </p>
+     */
+    private java.util.List<String> allowedJoinOperators;
     /**
      * <p>
      * Columns that can be listed in the output.
@@ -44,12 +50,12 @@ public class AnalysisRuleList implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Columns that can be used to join a configured table with the table of the member who can query and another
-     * members' configured tables.
+     * Columns that can be used to join a configured table with the table of the member who can query and other members'
+     * configured tables.
      * </p>
      * 
-     * @return Columns that can be used to join a configured table with the table of the member who can query and
-     *         another members' configured tables.
+     * @return Columns that can be used to join a configured table with the table of the member who can query and other
+     *         members' configured tables.
      */
 
     public java.util.List<String> getJoinColumns() {
@@ -58,12 +64,12 @@ public class AnalysisRuleList implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Columns that can be used to join a configured table with the table of the member who can query and another
-     * members' configured tables.
+     * Columns that can be used to join a configured table with the table of the member who can query and other members'
+     * configured tables.
      * </p>
      * 
      * @param joinColumns
-     *        Columns that can be used to join a configured table with the table of the member who can query and another
+     *        Columns that can be used to join a configured table with the table of the member who can query and other
      *        members' configured tables.
      */
 
@@ -78,8 +84,8 @@ public class AnalysisRuleList implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Columns that can be used to join a configured table with the table of the member who can query and another
-     * members' configured tables.
+     * Columns that can be used to join a configured table with the table of the member who can query and other members'
+     * configured tables.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -88,7 +94,7 @@ public class AnalysisRuleList implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param joinColumns
-     *        Columns that can be used to join a configured table with the table of the member who can query and another
+     *        Columns that can be used to join a configured table with the table of the member who can query and other
      *        members' configured tables.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -105,18 +111,121 @@ public class AnalysisRuleList implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Columns that can be used to join a configured table with the table of the member who can query and another
-     * members' configured tables.
+     * Columns that can be used to join a configured table with the table of the member who can query and other members'
+     * configured tables.
      * </p>
      * 
      * @param joinColumns
-     *        Columns that can be used to join a configured table with the table of the member who can query and another
+     *        Columns that can be used to join a configured table with the table of the member who can query and other
      *        members' configured tables.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AnalysisRuleList withJoinColumns(java.util.Collection<String> joinColumns) {
         setJoinColumns(joinColumns);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The logical operators (if any) that are to be used in an INNER JOIN match condition. Default is <code>AND</code>.
+     * </p>
+     * 
+     * @return The logical operators (if any) that are to be used in an INNER JOIN match condition. Default is
+     *         <code>AND</code>.
+     * @see JoinOperator
+     */
+
+    public java.util.List<String> getAllowedJoinOperators() {
+        return allowedJoinOperators;
+    }
+
+    /**
+     * <p>
+     * The logical operators (if any) that are to be used in an INNER JOIN match condition. Default is <code>AND</code>.
+     * </p>
+     * 
+     * @param allowedJoinOperators
+     *        The logical operators (if any) that are to be used in an INNER JOIN match condition. Default is
+     *        <code>AND</code>.
+     * @see JoinOperator
+     */
+
+    public void setAllowedJoinOperators(java.util.Collection<String> allowedJoinOperators) {
+        if (allowedJoinOperators == null) {
+            this.allowedJoinOperators = null;
+            return;
+        }
+
+        this.allowedJoinOperators = new java.util.ArrayList<String>(allowedJoinOperators);
+    }
+
+    /**
+     * <p>
+     * The logical operators (if any) that are to be used in an INNER JOIN match condition. Default is <code>AND</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAllowedJoinOperators(java.util.Collection)} or {@link #withAllowedJoinOperators(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param allowedJoinOperators
+     *        The logical operators (if any) that are to be used in an INNER JOIN match condition. Default is
+     *        <code>AND</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see JoinOperator
+     */
+
+    public AnalysisRuleList withAllowedJoinOperators(String... allowedJoinOperators) {
+        if (this.allowedJoinOperators == null) {
+            setAllowedJoinOperators(new java.util.ArrayList<String>(allowedJoinOperators.length));
+        }
+        for (String ele : allowedJoinOperators) {
+            this.allowedJoinOperators.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The logical operators (if any) that are to be used in an INNER JOIN match condition. Default is <code>AND</code>.
+     * </p>
+     * 
+     * @param allowedJoinOperators
+     *        The logical operators (if any) that are to be used in an INNER JOIN match condition. Default is
+     *        <code>AND</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see JoinOperator
+     */
+
+    public AnalysisRuleList withAllowedJoinOperators(java.util.Collection<String> allowedJoinOperators) {
+        setAllowedJoinOperators(allowedJoinOperators);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The logical operators (if any) that are to be used in an INNER JOIN match condition. Default is <code>AND</code>.
+     * </p>
+     * 
+     * @param allowedJoinOperators
+     *        The logical operators (if any) that are to be used in an INNER JOIN match condition. Default is
+     *        <code>AND</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see JoinOperator
+     */
+
+    public AnalysisRuleList withAllowedJoinOperators(JoinOperator... allowedJoinOperators) {
+        java.util.ArrayList<String> allowedJoinOperatorsCopy = new java.util.ArrayList<String>(allowedJoinOperators.length);
+        for (JoinOperator value : allowedJoinOperators) {
+            allowedJoinOperatorsCopy.add(value.toString());
+        }
+        if (getAllowedJoinOperators() == null) {
+            setAllowedJoinOperators(allowedJoinOperatorsCopy);
+        } else {
+            getAllowedJoinOperators().addAll(allowedJoinOperatorsCopy);
+        }
         return this;
     }
 
@@ -204,6 +313,8 @@ public class AnalysisRuleList implements Serializable, Cloneable, StructuredPojo
         sb.append("{");
         if (getJoinColumns() != null)
             sb.append("JoinColumns: ").append(getJoinColumns()).append(",");
+        if (getAllowedJoinOperators() != null)
+            sb.append("AllowedJoinOperators: ").append(getAllowedJoinOperators()).append(",");
         if (getListColumns() != null)
             sb.append("ListColumns: ").append(getListColumns());
         sb.append("}");
@@ -224,6 +335,10 @@ public class AnalysisRuleList implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getJoinColumns() != null && other.getJoinColumns().equals(this.getJoinColumns()) == false)
             return false;
+        if (other.getAllowedJoinOperators() == null ^ this.getAllowedJoinOperators() == null)
+            return false;
+        if (other.getAllowedJoinOperators() != null && other.getAllowedJoinOperators().equals(this.getAllowedJoinOperators()) == false)
+            return false;
         if (other.getListColumns() == null ^ this.getListColumns() == null)
             return false;
         if (other.getListColumns() != null && other.getListColumns().equals(this.getListColumns()) == false)
@@ -237,6 +352,7 @@ public class AnalysisRuleList implements Serializable, Cloneable, StructuredPojo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getJoinColumns() == null) ? 0 : getJoinColumns().hashCode());
+        hashCode = prime * hashCode + ((getAllowedJoinOperators() == null) ? 0 : getAllowedJoinOperators().hashCode());
         hashCode = prime * hashCode + ((getListColumns() == null) ? 0 : getListColumns().hashCode());
         return hashCode;
     }

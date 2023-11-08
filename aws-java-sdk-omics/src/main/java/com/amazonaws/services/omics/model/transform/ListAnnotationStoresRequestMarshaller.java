@@ -28,14 +28,14 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ListAnnotationStoresRequestMarshaller {
 
-    private static final MarshallingInfo<StructuredPojo> FILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("filter").build();
     private static final MarshallingInfo<List> IDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ids").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nextToken").build();
+    private static final MarshallingInfo<StructuredPojo> FILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("filter").build();
 
     private static final ListAnnotationStoresRequestMarshaller instance = new ListAnnotationStoresRequestMarshaller();
 
@@ -53,10 +53,10 @@ public class ListAnnotationStoresRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(listAnnotationStoresRequest.getFilter(), FILTER_BINDING);
             protocolMarshaller.marshall(listAnnotationStoresRequest.getIds(), IDS_BINDING);
             protocolMarshaller.marshall(listAnnotationStoresRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listAnnotationStoresRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listAnnotationStoresRequest.getFilter(), FILTER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

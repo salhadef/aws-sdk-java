@@ -27,6 +27,12 @@ public class DisassociateApplicationsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
+     * Account ID.
+     * </p>
+     */
+    private String accountID;
+    /**
+     * <p>
      * Application IDs list.
      * </p>
      */
@@ -37,6 +43,46 @@ public class DisassociateApplicationsRequest extends com.amazonaws.AmazonWebServ
      * </p>
      */
     private String waveID;
+
+    /**
+     * <p>
+     * Account ID.
+     * </p>
+     * 
+     * @param accountID
+     *        Account ID.
+     */
+
+    public void setAccountID(String accountID) {
+        this.accountID = accountID;
+    }
+
+    /**
+     * <p>
+     * Account ID.
+     * </p>
+     * 
+     * @return Account ID.
+     */
+
+    public String getAccountID() {
+        return this.accountID;
+    }
+
+    /**
+     * <p>
+     * Account ID.
+     * </p>
+     * 
+     * @param accountID
+     *        Account ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DisassociateApplicationsRequest withAccountID(String accountID) {
+        setAccountID(accountID);
+        return this;
+    }
 
     /**
      * <p>
@@ -160,6 +206,8 @@ public class DisassociateApplicationsRequest extends com.amazonaws.AmazonWebServ
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAccountID() != null)
+            sb.append("AccountID: ").append(getAccountID()).append(",");
         if (getApplicationIDs() != null)
             sb.append("ApplicationIDs: ").append(getApplicationIDs()).append(",");
         if (getWaveID() != null)
@@ -178,6 +226,10 @@ public class DisassociateApplicationsRequest extends com.amazonaws.AmazonWebServ
         if (obj instanceof DisassociateApplicationsRequest == false)
             return false;
         DisassociateApplicationsRequest other = (DisassociateApplicationsRequest) obj;
+        if (other.getAccountID() == null ^ this.getAccountID() == null)
+            return false;
+        if (other.getAccountID() != null && other.getAccountID().equals(this.getAccountID()) == false)
+            return false;
         if (other.getApplicationIDs() == null ^ this.getApplicationIDs() == null)
             return false;
         if (other.getApplicationIDs() != null && other.getApplicationIDs().equals(this.getApplicationIDs()) == false)
@@ -194,6 +246,7 @@ public class DisassociateApplicationsRequest extends com.amazonaws.AmazonWebServ
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAccountID() == null) ? 0 : getAccountID().hashCode());
         hashCode = prime * hashCode + ((getApplicationIDs() == null) ? 0 : getApplicationIDs().hashCode());
         hashCode = prime * hashCode + ((getWaveID() == null) ? 0 : getWaveID().hashCode());
         return hashCode;

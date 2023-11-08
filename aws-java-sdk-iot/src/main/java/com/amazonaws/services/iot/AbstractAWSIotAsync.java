@@ -423,6 +423,32 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreatePackageResult> createPackageAsync(CreatePackageRequest request) {
+
+        return createPackageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePackageResult> createPackageAsync(CreatePackageRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreatePackageRequest, CreatePackageResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePackageVersionResult> createPackageVersionAsync(CreatePackageVersionRequest request) {
+
+        return createPackageVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePackageVersionResult> createPackageVersionAsync(CreatePackageVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreatePackageVersionRequest, CreatePackageVersionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreatePolicyResult> createPolicyAsync(CreatePolicyRequest request) {
 
         return createPolicyAsync(request, null);
@@ -812,6 +838,32 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     @Override
     public java.util.concurrent.Future<DeleteOTAUpdateResult> deleteOTAUpdateAsync(DeleteOTAUpdateRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteOTAUpdateRequest, DeleteOTAUpdateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePackageResult> deletePackageAsync(DeletePackageRequest request) {
+
+        return deletePackageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePackageResult> deletePackageAsync(DeletePackageRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeletePackageRequest, DeletePackageResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePackageVersionResult> deletePackageVersionAsync(DeletePackageVersionRequest request) {
+
+        return deletePackageVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePackageVersionResult> deletePackageVersionAsync(DeletePackageVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeletePackageVersionRequest, DeletePackageVersionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1650,6 +1702,45 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetPackageResult> getPackageAsync(GetPackageRequest request) {
+
+        return getPackageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPackageResult> getPackageAsync(GetPackageRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetPackageRequest, GetPackageResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPackageConfigurationResult> getPackageConfigurationAsync(GetPackageConfigurationRequest request) {
+
+        return getPackageConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPackageConfigurationResult> getPackageConfigurationAsync(GetPackageConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetPackageConfigurationRequest, GetPackageConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPackageVersionResult> getPackageVersionAsync(GetPackageVersionRequest request) {
+
+        return getPackageVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPackageVersionResult> getPackageVersionAsync(GetPackageVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetPackageVersionRequest, GetPackageVersionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetPercentilesResult> getPercentilesAsync(GetPercentilesRequest request) {
 
         return getPercentilesAsync(request, null);
@@ -2121,6 +2212,32 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     @Override
     public java.util.concurrent.Future<ListOutgoingCertificatesResult> listOutgoingCertificatesAsync(ListOutgoingCertificatesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListOutgoingCertificatesRequest, ListOutgoingCertificatesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPackageVersionsResult> listPackageVersionsAsync(ListPackageVersionsRequest request) {
+
+        return listPackageVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPackageVersionsResult> listPackageVersionsAsync(ListPackageVersionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListPackageVersionsRequest, ListPackageVersionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPackagesResult> listPackagesAsync(ListPackagesRequest request) {
+
+        return listPackagesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPackagesResult> listPackagesAsync(ListPackagesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListPackagesRequest, ListPackagesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -3036,6 +3153,45 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     @Override
     public java.util.concurrent.Future<UpdateMitigationActionResult> updateMitigationActionAsync(UpdateMitigationActionRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateMitigationActionRequest, UpdateMitigationActionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePackageResult> updatePackageAsync(UpdatePackageRequest request) {
+
+        return updatePackageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePackageResult> updatePackageAsync(UpdatePackageRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdatePackageRequest, UpdatePackageResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePackageConfigurationResult> updatePackageConfigurationAsync(UpdatePackageConfigurationRequest request) {
+
+        return updatePackageConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePackageConfigurationResult> updatePackageConfigurationAsync(UpdatePackageConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdatePackageConfigurationRequest, UpdatePackageConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePackageVersionResult> updatePackageVersionAsync(UpdatePackageVersionRequest request) {
+
+        return updatePackageVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePackageVersionResult> updatePackageVersionAsync(UpdatePackageVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdatePackageVersionRequest, UpdatePackageVersionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

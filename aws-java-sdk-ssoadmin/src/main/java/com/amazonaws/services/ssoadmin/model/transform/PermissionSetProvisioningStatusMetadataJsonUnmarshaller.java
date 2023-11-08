@@ -48,17 +48,17 @@ public class PermissionSetProvisioningStatusMetadataJsonUnmarshaller implements 
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("Status", targetDepth)) {
+                if (context.testExpression("CreatedDate", targetDepth)) {
                     context.nextToken();
-                    permissionSetProvisioningStatusMetadata.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                    permissionSetProvisioningStatusMetadata.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("RequestId", targetDepth)) {
                     context.nextToken();
                     permissionSetProvisioningStatusMetadata.setRequestId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("CreatedDate", targetDepth)) {
+                if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
-                    permissionSetProvisioningStatusMetadata.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    permissionSetProvisioningStatusMetadata.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

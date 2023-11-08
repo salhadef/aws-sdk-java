@@ -56,6 +56,26 @@ public class GridViewConfigurationJsonUnmarshaller implements Unmarshaller<GridV
                     context.nextToken();
                     gridViewConfiguration.setPresenterOnlyConfiguration(PresenterOnlyConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ActiveSpeakerOnlyConfiguration", targetDepth)) {
+                    context.nextToken();
+                    gridViewConfiguration.setActiveSpeakerOnlyConfiguration(ActiveSpeakerOnlyConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("HorizontalLayoutConfiguration", targetDepth)) {
+                    context.nextToken();
+                    gridViewConfiguration.setHorizontalLayoutConfiguration(HorizontalLayoutConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("VerticalLayoutConfiguration", targetDepth)) {
+                    context.nextToken();
+                    gridViewConfiguration.setVerticalLayoutConfiguration(VerticalLayoutConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("VideoAttribute", targetDepth)) {
+                    context.nextToken();
+                    gridViewConfiguration.setVideoAttribute(VideoAttributeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("CanvasOrientation", targetDepth)) {
+                    context.nextToken();
+                    gridViewConfiguration.setCanvasOrientation(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

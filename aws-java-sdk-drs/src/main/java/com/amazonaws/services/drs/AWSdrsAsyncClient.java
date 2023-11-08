@@ -74,6 +74,39 @@ public class AWSdrsAsyncClient extends AWSdrsClient implements AWSdrsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateSourceNetworkStackResult> associateSourceNetworkStackAsync(AssociateSourceNetworkStackRequest request) {
+
+        return associateSourceNetworkStackAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateSourceNetworkStackResult> associateSourceNetworkStackAsync(final AssociateSourceNetworkStackRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateSourceNetworkStackRequest, AssociateSourceNetworkStackResult> asyncHandler) {
+        final AssociateSourceNetworkStackRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateSourceNetworkStackResult>() {
+            @Override
+            public AssociateSourceNetworkStackResult call() throws Exception {
+                AssociateSourceNetworkStackResult result = null;
+
+                try {
+                    result = executeAssociateSourceNetworkStack(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateExtendedSourceServerResult> createExtendedSourceServerAsync(CreateExtendedSourceServerRequest request) {
 
         return createExtendedSourceServerAsync(request, null);
@@ -177,6 +210,39 @@ public class AWSdrsAsyncClient extends AWSdrsClient implements AWSdrsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateSourceNetworkResult> createSourceNetworkAsync(CreateSourceNetworkRequest request) {
+
+        return createSourceNetworkAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSourceNetworkResult> createSourceNetworkAsync(final CreateSourceNetworkRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateSourceNetworkRequest, CreateSourceNetworkResult> asyncHandler) {
+        final CreateSourceNetworkRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateSourceNetworkResult>() {
+            @Override
+            public CreateSourceNetworkResult call() throws Exception {
+                CreateSourceNetworkResult result = null;
+
+                try {
+                    result = executeCreateSourceNetwork(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteJobResult> deleteJobAsync(DeleteJobRequest request) {
 
         return deleteJobAsync(request, null);
@@ -194,6 +260,39 @@ public class AWSdrsAsyncClient extends AWSdrsClient implements AWSdrsAsync {
 
                 try {
                     result = executeDeleteJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLaunchActionResult> deleteLaunchActionAsync(DeleteLaunchActionRequest request) {
+
+        return deleteLaunchActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLaunchActionResult> deleteLaunchActionAsync(final DeleteLaunchActionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteLaunchActionRequest, DeleteLaunchActionResult> asyncHandler) {
+        final DeleteLaunchActionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteLaunchActionResult>() {
+            @Override
+            public DeleteLaunchActionResult call() throws Exception {
+                DeleteLaunchActionResult result = null;
+
+                try {
+                    result = executeDeleteLaunchAction(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -297,6 +396,39 @@ public class AWSdrsAsyncClient extends AWSdrsClient implements AWSdrsAsync {
 
                 try {
                     result = executeDeleteReplicationConfigurationTemplate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSourceNetworkResult> deleteSourceNetworkAsync(DeleteSourceNetworkRequest request) {
+
+        return deleteSourceNetworkAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSourceNetworkResult> deleteSourceNetworkAsync(final DeleteSourceNetworkRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteSourceNetworkRequest, DeleteSourceNetworkResult> asyncHandler) {
+        final DeleteSourceNetworkRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteSourceNetworkResult>() {
+            @Override
+            public DeleteSourceNetworkResult call() throws Exception {
+                DeleteSourceNetworkResult result = null;
+
+                try {
+                    result = executeDeleteSourceNetwork(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -548,6 +680,39 @@ public class AWSdrsAsyncClient extends AWSdrsClient implements AWSdrsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeSourceNetworksResult> describeSourceNetworksAsync(DescribeSourceNetworksRequest request) {
+
+        return describeSourceNetworksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeSourceNetworksResult> describeSourceNetworksAsync(final DescribeSourceNetworksRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeSourceNetworksRequest, DescribeSourceNetworksResult> asyncHandler) {
+        final DescribeSourceNetworksRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeSourceNetworksResult>() {
+            @Override
+            public DescribeSourceNetworksResult call() throws Exception {
+                DescribeSourceNetworksResult result = null;
+
+                try {
+                    result = executeDescribeSourceNetworks(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeSourceServersResult> describeSourceServersAsync(DescribeSourceServersRequest request) {
 
         return describeSourceServersAsync(request, null);
@@ -631,6 +796,40 @@ public class AWSdrsAsyncClient extends AWSdrsClient implements AWSdrsAsync {
 
                 try {
                     result = executeDisconnectSourceServer(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportSourceNetworkCfnTemplateResult> exportSourceNetworkCfnTemplateAsync(ExportSourceNetworkCfnTemplateRequest request) {
+
+        return exportSourceNetworkCfnTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportSourceNetworkCfnTemplateResult> exportSourceNetworkCfnTemplateAsync(
+            final ExportSourceNetworkCfnTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ExportSourceNetworkCfnTemplateRequest, ExportSourceNetworkCfnTemplateResult> asyncHandler) {
+        final ExportSourceNetworkCfnTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ExportSourceNetworkCfnTemplateResult>() {
+            @Override
+            public ExportSourceNetworkCfnTemplateResult call() throws Exception {
+                ExportSourceNetworkCfnTemplateResult result = null;
+
+                try {
+                    result = executeExportSourceNetworkCfnTemplate(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -814,6 +1013,39 @@ public class AWSdrsAsyncClient extends AWSdrsClient implements AWSdrsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListLaunchActionsResult> listLaunchActionsAsync(ListLaunchActionsRequest request) {
+
+        return listLaunchActionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLaunchActionsResult> listLaunchActionsAsync(final ListLaunchActionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListLaunchActionsRequest, ListLaunchActionsResult> asyncHandler) {
+        final ListLaunchActionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListLaunchActionsResult>() {
+            @Override
+            public ListLaunchActionsResult call() throws Exception {
+                ListLaunchActionsResult result = null;
+
+                try {
+                    result = executeListLaunchActions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListStagingAccountsResult> listStagingAccountsAsync(ListStagingAccountsRequest request) {
 
         return listStagingAccountsAsync(request, null);
@@ -864,6 +1096,39 @@ public class AWSdrsAsyncClient extends AWSdrsClient implements AWSdrsAsync {
 
                 try {
                     result = executeListTagsForResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutLaunchActionResult> putLaunchActionAsync(PutLaunchActionRequest request) {
+
+        return putLaunchActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutLaunchActionResult> putLaunchActionAsync(final PutLaunchActionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutLaunchActionRequest, PutLaunchActionResult> asyncHandler) {
+        final PutLaunchActionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutLaunchActionResult>() {
+            @Override
+            public PutLaunchActionResult call() throws Exception {
+                PutLaunchActionResult result = null;
+
+                try {
+                    result = executePutLaunchAction(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1047,6 +1312,73 @@ public class AWSdrsAsyncClient extends AWSdrsClient implements AWSdrsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<StartSourceNetworkRecoveryResult> startSourceNetworkRecoveryAsync(StartSourceNetworkRecoveryRequest request) {
+
+        return startSourceNetworkRecoveryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartSourceNetworkRecoveryResult> startSourceNetworkRecoveryAsync(final StartSourceNetworkRecoveryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartSourceNetworkRecoveryRequest, StartSourceNetworkRecoveryResult> asyncHandler) {
+        final StartSourceNetworkRecoveryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartSourceNetworkRecoveryResult>() {
+            @Override
+            public StartSourceNetworkRecoveryResult call() throws Exception {
+                StartSourceNetworkRecoveryResult result = null;
+
+                try {
+                    result = executeStartSourceNetworkRecovery(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartSourceNetworkReplicationResult> startSourceNetworkReplicationAsync(StartSourceNetworkReplicationRequest request) {
+
+        return startSourceNetworkReplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartSourceNetworkReplicationResult> startSourceNetworkReplicationAsync(
+            final StartSourceNetworkReplicationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartSourceNetworkReplicationRequest, StartSourceNetworkReplicationResult> asyncHandler) {
+        final StartSourceNetworkReplicationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartSourceNetworkReplicationResult>() {
+            @Override
+            public StartSourceNetworkReplicationResult call() throws Exception {
+                StartSourceNetworkReplicationResult result = null;
+
+                try {
+                    result = executeStartSourceNetworkReplication(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StopFailbackResult> stopFailbackAsync(StopFailbackRequest request) {
 
         return stopFailbackAsync(request, null);
@@ -1097,6 +1429,39 @@ public class AWSdrsAsyncClient extends AWSdrsClient implements AWSdrsAsync {
 
                 try {
                     result = executeStopReplication(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopSourceNetworkReplicationResult> stopSourceNetworkReplicationAsync(StopSourceNetworkReplicationRequest request) {
+
+        return stopSourceNetworkReplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopSourceNetworkReplicationResult> stopSourceNetworkReplicationAsync(final StopSourceNetworkReplicationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopSourceNetworkReplicationRequest, StopSourceNetworkReplicationResult> asyncHandler) {
+        final StopSourceNetworkReplicationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopSourceNetworkReplicationResult>() {
+            @Override
+            public StopSourceNetworkReplicationResult call() throws Exception {
+                StopSourceNetworkReplicationResult result = null;
+
+                try {
+                    result = executeStopSourceNetworkReplication(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

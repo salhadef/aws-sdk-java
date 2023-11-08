@@ -51,6 +51,12 @@ public class DescribeEventTypesRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The maximum number of items to return in one batch, between 10 and 100, inclusive.
      * </p>
+     * <note>
+     * <p>
+     * If you don't specify the <code>maxResults</code> parameter, this operation returns a maximum of 30 items by
+     * default.
+     * </p>
+     * </note>
      */
     private Integer maxResults;
 
@@ -202,9 +208,19 @@ public class DescribeEventTypesRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The maximum number of items to return in one batch, between 10 and 100, inclusive.
      * </p>
+     * <note>
+     * <p>
+     * If you don't specify the <code>maxResults</code> parameter, this operation returns a maximum of 30 items by
+     * default.
+     * </p>
+     * </note>
      * 
      * @param maxResults
-     *        The maximum number of items to return in one batch, between 10 and 100, inclusive.
+     *        The maximum number of items to return in one batch, between 10 and 100, inclusive.</p> <note>
+     *        <p>
+     *        If you don't specify the <code>maxResults</code> parameter, this operation returns a maximum of 30 items
+     *        by default.
+     *        </p>
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -215,8 +231,18 @@ public class DescribeEventTypesRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The maximum number of items to return in one batch, between 10 and 100, inclusive.
      * </p>
+     * <note>
+     * <p>
+     * If you don't specify the <code>maxResults</code> parameter, this operation returns a maximum of 30 items by
+     * default.
+     * </p>
+     * </note>
      * 
-     * @return The maximum number of items to return in one batch, between 10 and 100, inclusive.
+     * @return The maximum number of items to return in one batch, between 10 and 100, inclusive.</p> <note>
+     *         <p>
+     *         If you don't specify the <code>maxResults</code> parameter, this operation returns a maximum of 30 items
+     *         by default.
+     *         </p>
      */
 
     public Integer getMaxResults() {
@@ -227,9 +253,19 @@ public class DescribeEventTypesRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The maximum number of items to return in one batch, between 10 and 100, inclusive.
      * </p>
+     * <note>
+     * <p>
+     * If you don't specify the <code>maxResults</code> parameter, this operation returns a maximum of 30 items by
+     * default.
+     * </p>
+     * </note>
      * 
      * @param maxResults
-     *        The maximum number of items to return in one batch, between 10 and 100, inclusive.
+     *        The maximum number of items to return in one batch, between 10 and 100, inclusive.</p> <note>
+     *        <p>
+     *        If you don't specify the <code>maxResults</code> parameter, this operation returns a maximum of 30 items
+     *        by default.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

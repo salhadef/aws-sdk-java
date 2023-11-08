@@ -27,14 +27,14 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class OutboundCallConfigMarshaller {
 
-    private static final MarshallingInfo<StructuredPojo> ANSWERMACHINEDETECTIONCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("answerMachineDetectionConfig").build();
     private static final MarshallingInfo<String> CONNECTCONTACTFLOWID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("connectContactFlowId").build();
-    private static final MarshallingInfo<String> CONNECTQUEUEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("connectQueueId").build();
     private static final MarshallingInfo<String> CONNECTSOURCEPHONENUMBER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("connectSourcePhoneNumber").build();
+    private static final MarshallingInfo<String> CONNECTQUEUEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("connectQueueId").build();
+    private static final MarshallingInfo<StructuredPojo> ANSWERMACHINEDETECTIONCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("answerMachineDetectionConfig").build();
 
     private static final OutboundCallConfigMarshaller instance = new OutboundCallConfigMarshaller();
 
@@ -52,10 +52,10 @@ public class OutboundCallConfigMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(outboundCallConfig.getAnswerMachineDetectionConfig(), ANSWERMACHINEDETECTIONCONFIG_BINDING);
             protocolMarshaller.marshall(outboundCallConfig.getConnectContactFlowId(), CONNECTCONTACTFLOWID_BINDING);
-            protocolMarshaller.marshall(outboundCallConfig.getConnectQueueId(), CONNECTQUEUEID_BINDING);
             protocolMarshaller.marshall(outboundCallConfig.getConnectSourcePhoneNumber(), CONNECTSOURCEPHONENUMBER_BINDING);
+            protocolMarshaller.marshall(outboundCallConfig.getConnectQueueId(), CONNECTQUEUEID_BINDING);
+            protocolMarshaller.marshall(outboundCallConfig.getAnswerMachineDetectionConfig(), ANSWERMACHINEDETECTIONCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

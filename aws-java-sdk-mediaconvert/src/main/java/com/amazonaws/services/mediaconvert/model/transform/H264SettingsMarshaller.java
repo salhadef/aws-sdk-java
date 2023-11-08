@@ -39,6 +39,8 @@ public class H264SettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("codecProfile").build();
     private static final MarshallingInfo<String> DYNAMICSUBGOP_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dynamicSubGop").build();
+    private static final MarshallingInfo<String> ENDOFSTREAMMARKERS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("endOfStreamMarkers").build();
     private static final MarshallingInfo<String> ENTROPYENCODING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("entropyEncoding").build();
     private static final MarshallingInfo<String> FIELDENCODING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -134,6 +136,7 @@ public class H264SettingsMarshaller {
             protocolMarshaller.marshall(h264Settings.getCodecLevel(), CODECLEVEL_BINDING);
             protocolMarshaller.marshall(h264Settings.getCodecProfile(), CODECPROFILE_BINDING);
             protocolMarshaller.marshall(h264Settings.getDynamicSubGop(), DYNAMICSUBGOP_BINDING);
+            protocolMarshaller.marshall(h264Settings.getEndOfStreamMarkers(), ENDOFSTREAMMARKERS_BINDING);
             protocolMarshaller.marshall(h264Settings.getEntropyEncoding(), ENTROPYENCODING_BINDING);
             protocolMarshaller.marshall(h264Settings.getFieldEncoding(), FIELDENCODING_BINDING);
             protocolMarshaller.marshall(h264Settings.getFlickerAdaptiveQuantization(), FLICKERADAPTIVEQUANTIZATION_BINDING);

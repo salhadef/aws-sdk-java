@@ -64,6 +64,14 @@ public class InferenceRecommendationJsonUnmarshaller implements Unmarshaller<Inf
                     context.nextToken();
                     inferenceRecommendation.setRecommendationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("InvocationEndTime", targetDepth)) {
+                    context.nextToken();
+                    inferenceRecommendation.setInvocationEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("InvocationStartTime", targetDepth)) {
+                    context.nextToken();
+                    inferenceRecommendation.setInvocationStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

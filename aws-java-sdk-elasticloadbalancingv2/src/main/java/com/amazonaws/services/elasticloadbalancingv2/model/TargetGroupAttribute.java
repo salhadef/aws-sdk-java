@@ -177,8 +177,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>deregistration_delay.connection_termination.enabled</code> - Indicates whether the load balancer terminates
-     * connections at the end of the deregistration timeout. The value is <code>true</code> or <code>false</code>. The
-     * default is <code>false</code>.
+     * connections at the end of the deregistration timeout. The value is <code>true</code> or <code>false</code>. For
+     * new UDP/TCP_UDP target groups the default is <code>true</code>. Otherwise, the default is <code>false</code>.
      * </p>
      * </li>
      * <li>
@@ -193,6 +193,13 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <p>
      * <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is enabled. The value is
      * <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>target_health_state.unhealthy.connection_termination.enabled</code> - Indicates whether the load balancer
+     * terminates connections to unhealthy targets. The value is <code>true</code> or <code>false</code>. The default is
+     * <code>true</code>.
      * </p>
      * </li>
      * </ul>
@@ -379,8 +386,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>deregistration_delay.connection_termination.enabled</code> - Indicates whether the load balancer terminates
-     * connections at the end of the deregistration timeout. The value is <code>true</code> or <code>false</code>. The
-     * default is <code>false</code>.
+     * connections at the end of the deregistration timeout. The value is <code>true</code> or <code>false</code>. For
+     * new UDP/TCP_UDP target groups the default is <code>true</code>. Otherwise, the default is <code>false</code>.
      * </p>
      * </li>
      * <li>
@@ -395,6 +402,13 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <p>
      * <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is enabled. The value is
      * <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>target_health_state.unhealthy.connection_termination.enabled</code> - Indicates whether the load balancer
+     * terminates connections to unhealthy targets. The value is <code>true</code> or <code>false</code>. The default is
+     * <code>true</code>.
      * </p>
      * </li>
      * </ul>
@@ -576,7 +590,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        <p>
      *        <code>deregistration_delay.connection_termination.enabled</code> - Indicates whether the load balancer
      *        terminates connections at the end of the deregistration timeout. The value is <code>true</code> or
-     *        <code>false</code>. The default is <code>false</code>.
+     *        <code>false</code>. For new UDP/TCP_UDP target groups the default is <code>true</code>. Otherwise, the
+     *        default is <code>false</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -591,6 +606,13 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        <p>
      *        <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is enabled. The value
      *        is <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>target_health_state.unhealthy.connection_termination.enabled</code> - Indicates whether the load
+     *        balancer terminates connections to unhealthy targets. The value is <code>true</code> or <code>false</code>
+     *        . The default is <code>true</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -773,8 +795,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>deregistration_delay.connection_termination.enabled</code> - Indicates whether the load balancer terminates
-     * connections at the end of the deregistration timeout. The value is <code>true</code> or <code>false</code>. The
-     * default is <code>false</code>.
+     * connections at the end of the deregistration timeout. The value is <code>true</code> or <code>false</code>. For
+     * new UDP/TCP_UDP target groups the default is <code>true</code>. Otherwise, the default is <code>false</code>.
      * </p>
      * </li>
      * <li>
@@ -789,6 +811,13 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <p>
      * <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is enabled. The value is
      * <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>target_health_state.unhealthy.connection_termination.enabled</code> - Indicates whether the load balancer
+     * terminates connections to unhealthy targets. The value is <code>true</code> or <code>false</code>. The default is
+     * <code>true</code>.
      * </p>
      * </li>
      * </ul>
@@ -969,7 +998,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *         <p>
      *         <code>deregistration_delay.connection_termination.enabled</code> - Indicates whether the load balancer
      *         terminates connections at the end of the deregistration timeout. The value is <code>true</code> or
-     *         <code>false</code>. The default is <code>false</code>.
+     *         <code>false</code>. For new UDP/TCP_UDP target groups the default is <code>true</code>. Otherwise, the
+     *         default is <code>false</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -984,6 +1014,13 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *         <p>
      *         <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is enabled. The value
      *         is <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>target_health_state.unhealthy.connection_termination.enabled</code> - Indicates whether the load
+     *         balancer terminates connections to unhealthy targets. The value is <code>true</code> or
+     *         <code>false</code>. The default is <code>true</code>.
      *         </p>
      *         </li>
      *         </ul>
@@ -1166,8 +1203,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>deregistration_delay.connection_termination.enabled</code> - Indicates whether the load balancer terminates
-     * connections at the end of the deregistration timeout. The value is <code>true</code> or <code>false</code>. The
-     * default is <code>false</code>.
+     * connections at the end of the deregistration timeout. The value is <code>true</code> or <code>false</code>. For
+     * new UDP/TCP_UDP target groups the default is <code>true</code>. Otherwise, the default is <code>false</code>.
      * </p>
      * </li>
      * <li>
@@ -1182,6 +1219,13 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <p>
      * <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is enabled. The value is
      * <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>target_health_state.unhealthy.connection_termination.enabled</code> - Indicates whether the load balancer
+     * terminates connections to unhealthy targets. The value is <code>true</code> or <code>false</code>. The default is
+     * <code>true</code>.
      * </p>
      * </li>
      * </ul>
@@ -1363,7 +1407,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        <p>
      *        <code>deregistration_delay.connection_termination.enabled</code> - Indicates whether the load balancer
      *        terminates connections at the end of the deregistration timeout. The value is <code>true</code> or
-     *        <code>false</code>. The default is <code>false</code>.
+     *        <code>false</code>. For new UDP/TCP_UDP target groups the default is <code>true</code>. Otherwise, the
+     *        default is <code>false</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -1378,6 +1423,13 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        <p>
      *        <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is enabled. The value
      *        is <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>target_health_state.unhealthy.connection_termination.enabled</code> - Indicates whether the load
+     *        balancer terminates connections to unhealthy targets. The value is <code>true</code> or <code>false</code>
+     *        . The default is <code>true</code>.
      *        </p>
      *        </li>
      *        </ul>

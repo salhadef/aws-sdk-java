@@ -305,6 +305,11 @@ public class DBClusterStaxUnmarshaller implements Unmarshaller<DBCluster, StaxUn
                     continue;
                 }
 
+                if (context.testExpression("RdsCustomClusterConfiguration", targetDepth)) {
+                    dBCluster.setRdsCustomClusterConfiguration(RdsCustomClusterConfigurationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("DeletionProtection", targetDepth)) {
                     dBCluster.setDeletionProtection(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -447,6 +452,21 @@ public class DBClusterStaxUnmarshaller implements Unmarshaller<DBCluster, StaxUn
 
                 if (context.testExpression("MasterUserSecret", targetDepth)) {
                     dBCluster.setMasterUserSecret(MasterUserSecretStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("IOOptimizedNextAllowedModificationTime", targetDepth)) {
+                    dBCluster.setIOOptimizedNextAllowedModificationTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("LocalWriteForwardingStatus", targetDepth)) {
+                    dBCluster.setLocalWriteForwardingStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("AwsBackupRecoveryPointArn", targetDepth)) {
+                    dBCluster.setAwsBackupRecoveryPointArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

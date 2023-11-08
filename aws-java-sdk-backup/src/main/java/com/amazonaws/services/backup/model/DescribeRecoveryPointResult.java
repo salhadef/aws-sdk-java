@@ -107,11 +107,16 @@ public class DescribeRecoveryPointResult extends com.amazonaws.AmazonWebServiceR
      * in a new continuous recovery point being created. The recovery points with STOPPED status do not need to be
      * deleted.
      * </p>
+     * <p>
+     * For SAP HANA on Amazon EC2 <code>STOPPED</code> status occurs due to user action, application misconfiguration,
+     * or backup failure. To ensure that future continuous backups succeed, refer to the recovery point status and check
+     * SAP HANA for details.
+     * </p>
      */
     private String status;
     /**
      * <p>
-     * A status message explaining the reason for the recovery point deletion failure.
+     * A status message explaining the status of the recovery point.
      * </p>
      */
     private String statusMessage;
@@ -626,6 +631,11 @@ public class DescribeRecoveryPointResult extends com.amazonaws.AmazonWebServiceR
      * in a new continuous recovery point being created. The recovery points with STOPPED status do not need to be
      * deleted.
      * </p>
+     * <p>
+     * For SAP HANA on Amazon EC2 <code>STOPPED</code> status occurs due to user action, application misconfiguration,
+     * or backup failure. To ensure that future continuous backups succeed, refer to the recovery point status and check
+     * SAP HANA for details.
+     * </p>
      * 
      * @param status
      *        A status code specifying the state of the recovery point.</p>
@@ -654,6 +664,11 @@ public class DescribeRecoveryPointResult extends com.amazonaws.AmazonWebServiceR
      *        versioning is enabled on the S3 bucket. Once these conditions are met, the next instance of a backup rule
      *        running will result in a new continuous recovery point being created. The recovery points with STOPPED
      *        status do not need to be deleted.
+     *        </p>
+     *        <p>
+     *        For SAP HANA on Amazon EC2 <code>STOPPED</code> status occurs due to user action, application
+     *        misconfiguration, or backup failure. To ensure that future continuous backups succeed, refer to the
+     *        recovery point status and check SAP HANA for details.
      * @see RecoveryPointStatus
      */
 
@@ -688,6 +703,11 @@ public class DescribeRecoveryPointResult extends com.amazonaws.AmazonWebServiceR
      * in a new continuous recovery point being created. The recovery points with STOPPED status do not need to be
      * deleted.
      * </p>
+     * <p>
+     * For SAP HANA on Amazon EC2 <code>STOPPED</code> status occurs due to user action, application misconfiguration,
+     * or backup failure. To ensure that future continuous backups succeed, refer to the recovery point status and check
+     * SAP HANA for details.
+     * </p>
      * 
      * @return A status code specifying the state of the recovery point.</p>
      *         <p>
@@ -716,6 +736,11 @@ public class DescribeRecoveryPointResult extends com.amazonaws.AmazonWebServiceR
      *         versioning is enabled on the S3 bucket. Once these conditions are met, the next instance of a backup rule
      *         running will result in a new continuous recovery point being created. The recovery points with STOPPED
      *         status do not need to be deleted.
+     *         </p>
+     *         <p>
+     *         For SAP HANA on Amazon EC2 <code>STOPPED</code> status occurs due to user action, application
+     *         misconfiguration, or backup failure. To ensure that future continuous backups succeed, refer to the
+     *         recovery point status and check SAP HANA for details.
      * @see RecoveryPointStatus
      */
 
@@ -750,6 +775,11 @@ public class DescribeRecoveryPointResult extends com.amazonaws.AmazonWebServiceR
      * in a new continuous recovery point being created. The recovery points with STOPPED status do not need to be
      * deleted.
      * </p>
+     * <p>
+     * For SAP HANA on Amazon EC2 <code>STOPPED</code> status occurs due to user action, application misconfiguration,
+     * or backup failure. To ensure that future continuous backups succeed, refer to the recovery point status and check
+     * SAP HANA for details.
+     * </p>
      * 
      * @param status
      *        A status code specifying the state of the recovery point.</p>
@@ -778,6 +808,11 @@ public class DescribeRecoveryPointResult extends com.amazonaws.AmazonWebServiceR
      *        versioning is enabled on the S3 bucket. Once these conditions are met, the next instance of a backup rule
      *        running will result in a new continuous recovery point being created. The recovery points with STOPPED
      *        status do not need to be deleted.
+     *        </p>
+     *        <p>
+     *        For SAP HANA on Amazon EC2 <code>STOPPED</code> status occurs due to user action, application
+     *        misconfiguration, or backup failure. To ensure that future continuous backups succeed, refer to the
+     *        recovery point status and check SAP HANA for details.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RecoveryPointStatus
      */
@@ -814,6 +849,11 @@ public class DescribeRecoveryPointResult extends com.amazonaws.AmazonWebServiceR
      * in a new continuous recovery point being created. The recovery points with STOPPED status do not need to be
      * deleted.
      * </p>
+     * <p>
+     * For SAP HANA on Amazon EC2 <code>STOPPED</code> status occurs due to user action, application misconfiguration,
+     * or backup failure. To ensure that future continuous backups succeed, refer to the recovery point status and check
+     * SAP HANA for details.
+     * </p>
      * 
      * @param status
      *        A status code specifying the state of the recovery point.</p>
@@ -842,6 +882,11 @@ public class DescribeRecoveryPointResult extends com.amazonaws.AmazonWebServiceR
      *        versioning is enabled on the S3 bucket. Once these conditions are met, the next instance of a backup rule
      *        running will result in a new continuous recovery point being created. The recovery points with STOPPED
      *        status do not need to be deleted.
+     *        </p>
+     *        <p>
+     *        For SAP HANA on Amazon EC2 <code>STOPPED</code> status occurs due to user action, application
+     *        misconfiguration, or backup failure. To ensure that future continuous backups succeed, refer to the
+     *        recovery point status and check SAP HANA for details.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RecoveryPointStatus
      */
@@ -853,11 +898,11 @@ public class DescribeRecoveryPointResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A status message explaining the reason for the recovery point deletion failure.
+     * A status message explaining the status of the recovery point.
      * </p>
      * 
      * @param statusMessage
-     *        A status message explaining the reason for the recovery point deletion failure.
+     *        A status message explaining the status of the recovery point.
      */
 
     public void setStatusMessage(String statusMessage) {
@@ -866,10 +911,10 @@ public class DescribeRecoveryPointResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A status message explaining the reason for the recovery point deletion failure.
+     * A status message explaining the status of the recovery point.
      * </p>
      * 
-     * @return A status message explaining the reason for the recovery point deletion failure.
+     * @return A status message explaining the status of the recovery point.
      */
 
     public String getStatusMessage() {
@@ -878,11 +923,11 @@ public class DescribeRecoveryPointResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A status message explaining the reason for the recovery point deletion failure.
+     * A status message explaining the status of the recovery point.
      * </p>
      * 
      * @param statusMessage
-     *        A status message explaining the reason for the recovery point deletion failure.
+     *        A status message explaining the status of the recovery point.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

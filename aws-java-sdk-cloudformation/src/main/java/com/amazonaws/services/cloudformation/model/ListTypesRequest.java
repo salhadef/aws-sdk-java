@@ -35,17 +35,17 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * <code>PRIVATE</code>: Extensions that are visible and usable within this account and region. This includes:
+     * <code>PRIVATE</code>: Extensions that are visible and usable within this account and Region. This includes:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Private extensions you have registered in this account and region.
+     * Private extensions you have registered in this account and Region.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Public extensions that you have activated in this account and region.
+     * Public extensions that you have activated in this account and Region.
      * </p>
      * </li>
      * </ul>
@@ -162,17 +162,17 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * <code>PRIVATE</code>: Extensions that are visible and usable within this account and region. This includes:
+     * <code>PRIVATE</code>: Extensions that are visible and usable within this account and Region. This includes:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Private extensions you have registered in this account and region.
+     * Private extensions you have registered in this account and Region.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Public extensions that you have activated in this account and region.
+     * Public extensions that you have activated in this account and Region.
      * </p>
      * </li>
      * </ul>
@@ -196,18 +196,18 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>PRIVATE</code>: Extensions that are visible and usable within this account and region. This
+     *        <code>PRIVATE</code>: Extensions that are visible and usable within this account and Region. This
      *        includes:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Private extensions you have registered in this account and region.
+     *        Private extensions you have registered in this account and Region.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Public extensions that you have activated in this account and region.
+     *        Public extensions that you have activated in this account and Region.
      *        </p>
      *        </li>
      *        </ul>
@@ -239,17 +239,17 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * <code>PRIVATE</code>: Extensions that are visible and usable within this account and region. This includes:
+     * <code>PRIVATE</code>: Extensions that are visible and usable within this account and Region. This includes:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Private extensions you have registered in this account and region.
+     * Private extensions you have registered in this account and Region.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Public extensions that you have activated in this account and region.
+     * Public extensions that you have activated in this account and Region.
      * </p>
      * </li>
      * </ul>
@@ -272,18 +272,18 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>PRIVATE</code>: Extensions that are visible and usable within this account and region. This
+     *         <code>PRIVATE</code>: Extensions that are visible and usable within this account and Region. This
      *         includes:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Private extensions you have registered in this account and region.
+     *         Private extensions you have registered in this account and Region.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Public extensions that you have activated in this account and region.
+     *         Public extensions that you have activated in this account and Region.
      *         </p>
      *         </li>
      *         </ul>
@@ -315,17 +315,17 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * <code>PRIVATE</code>: Extensions that are visible and usable within this account and region. This includes:
+     * <code>PRIVATE</code>: Extensions that are visible and usable within this account and Region. This includes:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Private extensions you have registered in this account and region.
+     * Private extensions you have registered in this account and Region.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Public extensions that you have activated in this account and region.
+     * Public extensions that you have activated in this account and Region.
      * </p>
      * </li>
      * </ul>
@@ -349,18 +349,18 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>PRIVATE</code>: Extensions that are visible and usable within this account and region. This
+     *        <code>PRIVATE</code>: Extensions that are visible and usable within this account and Region. This
      *        includes:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Private extensions you have registered in this account and region.
+     *        Private extensions you have registered in this account and Region.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Public extensions that you have activated in this account and region.
+     *        Public extensions that you have activated in this account and Region.
      *        </p>
      *        </li>
      *        </ul>
@@ -394,17 +394,17 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * <code>PRIVATE</code>: Extensions that are visible and usable within this account and region. This includes:
+     * <code>PRIVATE</code>: Extensions that are visible and usable within this account and Region. This includes:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Private extensions you have registered in this account and region.
+     * Private extensions you have registered in this account and Region.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Public extensions that you have activated in this account and region.
+     * Public extensions that you have activated in this account and Region.
      * </p>
      * </li>
      * </ul>
@@ -428,18 +428,18 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>PRIVATE</code>: Extensions that are visible and usable within this account and region. This
+     *        <code>PRIVATE</code>: Extensions that are visible and usable within this account and Region. This
      *        includes:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Private extensions you have registered in this account and region.
+     *        Private extensions you have registered in this account and Region.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Public extensions that you have activated in this account and region.
+     *        Public extensions that you have activated in this account and Region.
      *        </p>
      *        </li>
      *        </ul>

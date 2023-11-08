@@ -75,9 +75,9 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String description;
     /**
      * <p>
-     * The <a>Rule</a> statements used to identify the web requests that you want to allow, block, or count. Each rule
-     * includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how
-     * WAF handles them.
+     * The <a>Rule</a> statements used to identify the web requests that you want to manage. Each rule includes one
+     * top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles
+     * them.
      * </p>
      */
     private java.util.List<Rule> rules;
@@ -155,7 +155,7 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * Use this to customize the maximum size of the request body that your protected CloudFront distributions forward
-     * to WAF for inspection. The default is 16 KB (16,384 kilobytes).
+     * to WAF for inspection. The default is 16 KB (16,384 bytes).
      * </p>
      * <note>
      * <p>
@@ -533,14 +533,14 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The <a>Rule</a> statements used to identify the web requests that you want to allow, block, or count. Each rule
-     * includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how
-     * WAF handles them.
+     * The <a>Rule</a> statements used to identify the web requests that you want to manage. Each rule includes one
+     * top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles
+     * them.
      * </p>
      * 
-     * @return The <a>Rule</a> statements used to identify the web requests that you want to allow, block, or count.
-     *         Each rule includes one top-level statement that WAF uses to identify matching web requests, and
-     *         parameters that govern how WAF handles them.
+     * @return The <a>Rule</a> statements used to identify the web requests that you want to manage. Each rule includes
+     *         one top-level statement that WAF uses to identify matching web requests, and parameters that govern how
+     *         WAF handles them.
      */
 
     public java.util.List<Rule> getRules() {
@@ -549,15 +549,15 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The <a>Rule</a> statements used to identify the web requests that you want to allow, block, or count. Each rule
-     * includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how
-     * WAF handles them.
+     * The <a>Rule</a> statements used to identify the web requests that you want to manage. Each rule includes one
+     * top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles
+     * them.
      * </p>
      * 
      * @param rules
-     *        The <a>Rule</a> statements used to identify the web requests that you want to allow, block, or count. Each
-     *        rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that
-     *        govern how WAF handles them.
+     *        The <a>Rule</a> statements used to identify the web requests that you want to manage. Each rule includes
+     *        one top-level statement that WAF uses to identify matching web requests, and parameters that govern how
+     *        WAF handles them.
      */
 
     public void setRules(java.util.Collection<Rule> rules) {
@@ -571,9 +571,9 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The <a>Rule</a> statements used to identify the web requests that you want to allow, block, or count. Each rule
-     * includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how
-     * WAF handles them.
+     * The <a>Rule</a> statements used to identify the web requests that you want to manage. Each rule includes one
+     * top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles
+     * them.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -582,9 +582,9 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @param rules
-     *        The <a>Rule</a> statements used to identify the web requests that you want to allow, block, or count. Each
-     *        rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that
-     *        govern how WAF handles them.
+     *        The <a>Rule</a> statements used to identify the web requests that you want to manage. Each rule includes
+     *        one top-level statement that WAF uses to identify matching web requests, and parameters that govern how
+     *        WAF handles them.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -600,15 +600,15 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The <a>Rule</a> statements used to identify the web requests that you want to allow, block, or count. Each rule
-     * includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how
-     * WAF handles them.
+     * The <a>Rule</a> statements used to identify the web requests that you want to manage. Each rule includes one
+     * top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles
+     * them.
      * </p>
      * 
      * @param rules
-     *        The <a>Rule</a> statements used to identify the web requests that you want to allow, block, or count. Each
-     *        rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that
-     *        govern how WAF handles them.
+     *        The <a>Rule</a> statements used to identify the web requests that you want to manage. Each rule includes
+     *        one top-level statement that WAF uses to identify matching web requests, and parameters that govern how
+     *        WAF handles them.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1132,7 +1132,7 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * Use this to customize the maximum size of the request body that your protected CloudFront distributions forward
-     * to WAF for inspection. The default is 16 KB (16,384 kilobytes).
+     * to WAF for inspection. The default is 16 KB (16,384 bytes).
      * </p>
      * <note>
      * <p>
@@ -1145,7 +1145,7 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        Specifies custom configurations for the associations between the web ACL and protected resources. </p>
      *        <p>
      *        Use this to customize the maximum size of the request body that your protected CloudFront distributions
-     *        forward to WAF for inspection. The default is 16 KB (16,384 kilobytes).
+     *        forward to WAF for inspection. The default is 16 KB (16,384 bytes).
      *        </p>
      *        <note>
      *        <p>
@@ -1164,7 +1164,7 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * Use this to customize the maximum size of the request body that your protected CloudFront distributions forward
-     * to WAF for inspection. The default is 16 KB (16,384 kilobytes).
+     * to WAF for inspection. The default is 16 KB (16,384 bytes).
      * </p>
      * <note>
      * <p>
@@ -1176,7 +1176,7 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @return Specifies custom configurations for the associations between the web ACL and protected resources. </p>
      *         <p>
      *         Use this to customize the maximum size of the request body that your protected CloudFront distributions
-     *         forward to WAF for inspection. The default is 16 KB (16,384 kilobytes).
+     *         forward to WAF for inspection. The default is 16 KB (16,384 bytes).
      *         </p>
      *         <note>
      *         <p>
@@ -1195,7 +1195,7 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * Use this to customize the maximum size of the request body that your protected CloudFront distributions forward
-     * to WAF for inspection. The default is 16 KB (16,384 kilobytes).
+     * to WAF for inspection. The default is 16 KB (16,384 bytes).
      * </p>
      * <note>
      * <p>
@@ -1208,7 +1208,7 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        Specifies custom configurations for the associations between the web ACL and protected resources. </p>
      *        <p>
      *        Use this to customize the maximum size of the request body that your protected CloudFront distributions
-     *        forward to WAF for inspection. The default is 16 KB (16,384 kilobytes).
+     *        forward to WAF for inspection. The default is 16 KB (16,384 bytes).
      *        </p>
      *        <note>
      *        <p>

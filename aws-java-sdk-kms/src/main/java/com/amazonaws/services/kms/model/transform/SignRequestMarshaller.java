@@ -38,6 +38,8 @@ public class SignRequestMarshaller {
             .marshallLocationName("GrantTokens").build();
     private static final MarshallingInfo<String> SIGNINGALGORITHM_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SigningAlgorithm").build();
+    private static final MarshallingInfo<Boolean> DRYRUN_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("DryRun").build();
 
     private static final SignRequestMarshaller instance = new SignRequestMarshaller();
 
@@ -60,6 +62,7 @@ public class SignRequestMarshaller {
             protocolMarshaller.marshall(signRequest.getMessageType(), MESSAGETYPE_BINDING);
             protocolMarshaller.marshall(signRequest.getGrantTokens(), GRANTTOKENS_BINDING);
             protocolMarshaller.marshall(signRequest.getSigningAlgorithm(), SIGNINGALGORITHM_BINDING);
+            protocolMarshaller.marshall(signRequest.getDryRun(), DRYRUN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

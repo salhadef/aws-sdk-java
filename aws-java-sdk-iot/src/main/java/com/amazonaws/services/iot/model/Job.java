@@ -203,6 +203,16 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<ScheduledJobRollout> scheduledJobRollouts;
+    /**
+     * <p>
+     * The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully
+     * completes.
+     * </p>
+     * <p>
+     * <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.
+     * </p>
+     */
+    private java.util.List<String> destinationPackageVersions;
 
     /**
      * <p>
@@ -1537,6 +1547,104 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully
+     * completes.
+     * </p>
+     * <p>
+     * <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.
+     * </p>
+     * 
+     * @return The package version Amazon Resource Names (ARNs) that are installed on the device when the job
+     *         successfully completes. </p>
+     *         <p>
+     *         <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.
+     */
+
+    public java.util.List<String> getDestinationPackageVersions() {
+        return destinationPackageVersions;
+    }
+
+    /**
+     * <p>
+     * The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully
+     * completes.
+     * </p>
+     * <p>
+     * <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.
+     * </p>
+     * 
+     * @param destinationPackageVersions
+     *        The package version Amazon Resource Names (ARNs) that are installed on the device when the job
+     *        successfully completes. </p>
+     *        <p>
+     *        <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.
+     */
+
+    public void setDestinationPackageVersions(java.util.Collection<String> destinationPackageVersions) {
+        if (destinationPackageVersions == null) {
+            this.destinationPackageVersions = null;
+            return;
+        }
+
+        this.destinationPackageVersions = new java.util.ArrayList<String>(destinationPackageVersions);
+    }
+
+    /**
+     * <p>
+     * The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully
+     * completes.
+     * </p>
+     * <p>
+     * <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDestinationPackageVersions(java.util.Collection)} or
+     * {@link #withDestinationPackageVersions(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param destinationPackageVersions
+     *        The package version Amazon Resource Names (ARNs) that are installed on the device when the job
+     *        successfully completes. </p>
+     *        <p>
+     *        <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Job withDestinationPackageVersions(String... destinationPackageVersions) {
+        if (this.destinationPackageVersions == null) {
+            setDestinationPackageVersions(new java.util.ArrayList<String>(destinationPackageVersions.length));
+        }
+        for (String ele : destinationPackageVersions) {
+            this.destinationPackageVersions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully
+     * completes.
+     * </p>
+     * <p>
+     * <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.
+     * </p>
+     * 
+     * @param destinationPackageVersions
+     *        The package version Amazon Resource Names (ARNs) that are installed on the device when the job
+     *        successfully completes. </p>
+     *        <p>
+     *        <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Job withDestinationPackageVersions(java.util.Collection<String> destinationPackageVersions) {
+        setDestinationPackageVersions(destinationPackageVersions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1595,7 +1703,9 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         if (getSchedulingConfig() != null)
             sb.append("SchedulingConfig: ").append(getSchedulingConfig()).append(",");
         if (getScheduledJobRollouts() != null)
-            sb.append("ScheduledJobRollouts: ").append(getScheduledJobRollouts());
+            sb.append("ScheduledJobRollouts: ").append(getScheduledJobRollouts()).append(",");
+        if (getDestinationPackageVersions() != null)
+            sb.append("DestinationPackageVersions: ").append(getDestinationPackageVersions());
         sb.append("}");
         return sb.toString();
     }
@@ -1706,6 +1816,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getScheduledJobRollouts() != null && other.getScheduledJobRollouts().equals(this.getScheduledJobRollouts()) == false)
             return false;
+        if (other.getDestinationPackageVersions() == null ^ this.getDestinationPackageVersions() == null)
+            return false;
+        if (other.getDestinationPackageVersions() != null && other.getDestinationPackageVersions().equals(this.getDestinationPackageVersions()) == false)
+            return false;
         return true;
     }
 
@@ -1738,6 +1852,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getIsConcurrent() == null) ? 0 : getIsConcurrent().hashCode());
         hashCode = prime * hashCode + ((getSchedulingConfig() == null) ? 0 : getSchedulingConfig().hashCode());
         hashCode = prime * hashCode + ((getScheduledJobRollouts() == null) ? 0 : getScheduledJobRollouts().hashCode());
+        hashCode = prime * hashCode + ((getDestinationPackageVersions() == null) ? 0 : getDestinationPackageVersions().hashCode());
         return hashCode;
     }
 

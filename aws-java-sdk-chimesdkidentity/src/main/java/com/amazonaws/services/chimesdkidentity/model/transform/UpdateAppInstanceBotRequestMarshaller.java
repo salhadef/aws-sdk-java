@@ -33,6 +33,8 @@ public class UpdateAppInstanceBotRequestMarshaller {
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<String> METADATA_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Metadata").build();
+    private static final MarshallingInfo<StructuredPojo> CONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Configuration").build();
 
     private static final UpdateAppInstanceBotRequestMarshaller instance = new UpdateAppInstanceBotRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class UpdateAppInstanceBotRequestMarshaller {
             protocolMarshaller.marshall(updateAppInstanceBotRequest.getAppInstanceBotArn(), APPINSTANCEBOTARN_BINDING);
             protocolMarshaller.marshall(updateAppInstanceBotRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(updateAppInstanceBotRequest.getMetadata(), METADATA_BINDING);
+            protocolMarshaller.marshall(updateAppInstanceBotRequest.getConfiguration(), CONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

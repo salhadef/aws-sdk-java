@@ -25,7 +25,7 @@ public class CreateIAMPolicyAssignmentResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the assignment. This name must be unique within the Amazon Web Services account.
+     * The name of the assignment. The name must be unique within the Amazon Web Services account.
      * </p>
      */
     private String assignmentName;
@@ -86,11 +86,11 @@ public class CreateIAMPolicyAssignmentResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the assignment. This name must be unique within the Amazon Web Services account.
+     * The name of the assignment. The name must be unique within the Amazon Web Services account.
      * </p>
      * 
      * @param assignmentName
-     *        The name of the assignment. This name must be unique within the Amazon Web Services account.
+     *        The name of the assignment. The name must be unique within the Amazon Web Services account.
      */
 
     public void setAssignmentName(String assignmentName) {
@@ -99,10 +99,10 @@ public class CreateIAMPolicyAssignmentResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the assignment. This name must be unique within the Amazon Web Services account.
+     * The name of the assignment. The name must be unique within the Amazon Web Services account.
      * </p>
      * 
-     * @return The name of the assignment. This name must be unique within the Amazon Web Services account.
+     * @return The name of the assignment. The name must be unique within the Amazon Web Services account.
      */
 
     public String getAssignmentName() {
@@ -111,11 +111,11 @@ public class CreateIAMPolicyAssignmentResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the assignment. This name must be unique within the Amazon Web Services account.
+     * The name of the assignment. The name must be unique within the Amazon Web Services account.
      * </p>
      * 
      * @param assignmentName
-     *        The name of the assignment. This name must be unique within the Amazon Web Services account.
+     *        The name of the assignment. The name must be unique within the Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

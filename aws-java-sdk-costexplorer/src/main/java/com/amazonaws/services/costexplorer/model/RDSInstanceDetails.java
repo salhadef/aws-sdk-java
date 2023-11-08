@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Details about the Amazon RDS instances that Amazon Web Services recommends that you purchase.
+ * Details about the Amazon RDS reservations that Amazon Web Services recommends that you purchase.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/RDSInstanceDetails" target="_top">AWS API

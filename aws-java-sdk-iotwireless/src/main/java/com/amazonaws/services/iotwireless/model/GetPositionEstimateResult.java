@@ -25,18 +25,24 @@ public class GetPositionEstimateResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON format, which
-     * a format that's used to encode geographic data structures. For more information, see <a
-     * href="https://geojson.org/">GeoJSON</a>.
+     * The position information of the resource, displayed as a JSON payload. The payload is of type blob and uses the
+     * <a href="https://geojson.org/">GeoJSON</a> format, which a format that's used to encode geographic data
+     * structures. A sample payload contains the timestamp information, the WGS84 coordinates of the location, and the
+     * accuracy and confidence level. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/location-resolve-console.html">Resolve device
+     * location (console)</a>.
      * </p>
      */
     private java.nio.ByteBuffer geoJsonPayload;
 
     /**
      * <p>
-     * The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON format, which
-     * a format that's used to encode geographic data structures. For more information, see <a
-     * href="https://geojson.org/">GeoJSON</a>.
+     * The position information of the resource, displayed as a JSON payload. The payload is of type blob and uses the
+     * <a href="https://geojson.org/">GeoJSON</a> format, which a format that's used to encode geographic data
+     * structures. A sample payload contains the timestamp information, the WGS84 coordinates of the location, and the
+     * accuracy and confidence level. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/location-resolve-console.html">Resolve device
+     * location (console)</a>.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -50,9 +56,12 @@ public class GetPositionEstimateResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param geoJsonPayload
-     *        The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON
-     *        format, which a format that's used to encode geographic data structures. For more information, see <a
-     *        href="https://geojson.org/">GeoJSON</a>.
+     *        The position information of the resource, displayed as a JSON payload. The payload is of type blob and
+     *        uses the <a href="https://geojson.org/">GeoJSON</a> format, which a format that's used to encode
+     *        geographic data structures. A sample payload contains the timestamp information, the WGS84 coordinates of
+     *        the location, and the accuracy and confidence level. For more information and examples, see <a
+     *        href="https://docs.aws.amazon.com/iot/latest/developerguide/location-resolve-console.html">Resolve device
+     *        location (console)</a>.
      */
 
     public void setGeoJsonPayload(java.nio.ByteBuffer geoJsonPayload) {
@@ -61,9 +70,12 @@ public class GetPositionEstimateResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON format, which
-     * a format that's used to encode geographic data structures. For more information, see <a
-     * href="https://geojson.org/">GeoJSON</a>.
+     * The position information of the resource, displayed as a JSON payload. The payload is of type blob and uses the
+     * <a href="https://geojson.org/">GeoJSON</a> format, which a format that's used to encode geographic data
+     * structures. A sample payload contains the timestamp information, the WGS84 coordinates of the location, and the
+     * accuracy and confidence level. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/location-resolve-console.html">Resolve device
+     * location (console)</a>.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -73,9 +85,12 @@ public class GetPositionEstimateResult extends com.amazonaws.AmazonWebServiceRes
      * {@code position}.
      * </p>
      * 
-     * @return The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON
-     *         format, which a format that's used to encode geographic data structures. For more information, see <a
-     *         href="https://geojson.org/">GeoJSON</a>.
+     * @return The position information of the resource, displayed as a JSON payload. The payload is of type blob and
+     *         uses the <a href="https://geojson.org/">GeoJSON</a> format, which a format that's used to encode
+     *         geographic data structures. A sample payload contains the timestamp information, the WGS84 coordinates of
+     *         the location, and the accuracy and confidence level. For more information and examples, see <a
+     *         href="https://docs.aws.amazon.com/iot/latest/developerguide/location-resolve-console.html">Resolve device
+     *         location (console)</a>.
      */
 
     public java.nio.ByteBuffer getGeoJsonPayload() {
@@ -84,9 +99,12 @@ public class GetPositionEstimateResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON format, which
-     * a format that's used to encode geographic data structures. For more information, see <a
-     * href="https://geojson.org/">GeoJSON</a>.
+     * The position information of the resource, displayed as a JSON payload. The payload is of type blob and uses the
+     * <a href="https://geojson.org/">GeoJSON</a> format, which a format that's used to encode geographic data
+     * structures. A sample payload contains the timestamp information, the WGS84 coordinates of the location, and the
+     * accuracy and confidence level. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/location-resolve-console.html">Resolve device
+     * location (console)</a>.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -100,9 +118,12 @@ public class GetPositionEstimateResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param geoJsonPayload
-     *        The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON
-     *        format, which a format that's used to encode geographic data structures. For more information, see <a
-     *        href="https://geojson.org/">GeoJSON</a>.
+     *        The position information of the resource, displayed as a JSON payload. The payload is of type blob and
+     *        uses the <a href="https://geojson.org/">GeoJSON</a> format, which a format that's used to encode
+     *        geographic data structures. A sample payload contains the timestamp information, the WGS84 coordinates of
+     *        the location, and the accuracy and confidence level. For more information and examples, see <a
+     *        href="https://docs.aws.amazon.com/iot/latest/developerguide/location-resolve-console.html">Resolve device
+     *        location (console)</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

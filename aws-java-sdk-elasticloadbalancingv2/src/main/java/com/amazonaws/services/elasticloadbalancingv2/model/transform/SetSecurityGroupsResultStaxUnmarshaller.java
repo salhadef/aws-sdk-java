@@ -55,6 +55,10 @@ public class SetSecurityGroupsResultStaxUnmarshaller implements Unmarshaller<Set
                     continue;
                 }
 
+                if (context.testExpression("EnforceSecurityGroupInboundRulesOnPrivateLinkTraffic", targetDepth)) {
+                    setSecurityGroupsResult.setEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return setSecurityGroupsResult;

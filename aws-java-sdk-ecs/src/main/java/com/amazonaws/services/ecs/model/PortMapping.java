@@ -102,9 +102,9 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The default ephemeral port range for Docker version 1.6.0 and later is listed on the instance under
      * <code>/proc/sys/net/ipv4/ip_local_port_range</code>. If this kernel parameter is unavailable, the default
-     * ephemeral port range from 49153 through 65535 is used. Do not attempt to specify a host port in the ephemeral
-     * port range as these are reserved for automatic assignment. In general, ports below 32768 are outside of the
-     * ephemeral port range.
+     * ephemeral port range from 49153 through 65535 (Linux) or 49152 through 65535 (Windows) is used. Do not attempt to
+     * specify a host port in the ephemeral port range as these are reserved for automatic assignment. In general, ports
+     * below 32768 are outside of the ephemeral port range.
      * </p>
      * <p>
      * The default reserved ports are 22 for SSH, the Docker ports 2375 and 2376, and the Amazon ECS container agent
@@ -201,8 +201,8 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPort</code> is set to the same
-     * value as the <code>containerPort</code>. This is a static mapping strategy.
+     * For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPortRange</code> is set to the
+     * same value as the <code>containerPortRange</code>. This is a static mapping strategy.
      * </p>
      * </li>
      * <li>
@@ -392,9 +392,9 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The default ephemeral port range for Docker version 1.6.0 and later is listed on the instance under
      * <code>/proc/sys/net/ipv4/ip_local_port_range</code>. If this kernel parameter is unavailable, the default
-     * ephemeral port range from 49153 through 65535 is used. Do not attempt to specify a host port in the ephemeral
-     * port range as these are reserved for automatic assignment. In general, ports below 32768 are outside of the
-     * ephemeral port range.
+     * ephemeral port range from 49153 through 65535 (Linux) or 49152 through 65535 (Windows) is used. Do not attempt to
+     * specify a host port in the ephemeral port range as these are reserved for automatic assignment. In general, ports
+     * below 32768 are outside of the ephemeral port range.
      * </p>
      * <p>
      * The default reserved ports are 22 for SSH, the Docker ports 2375 and 2376, and the Amazon ECS container agent
@@ -440,9 +440,9 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        The default ephemeral port range for Docker version 1.6.0 and later is listed on the instance under
      *        <code>/proc/sys/net/ipv4/ip_local_port_range</code>. If this kernel parameter is unavailable, the default
-     *        ephemeral port range from 49153 through 65535 is used. Do not attempt to specify a host port in the
-     *        ephemeral port range as these are reserved for automatic assignment. In general, ports below 32768 are
-     *        outside of the ephemeral port range.
+     *        ephemeral port range from 49153 through 65535 (Linux) or 49152 through 65535 (Windows) is used. Do not
+     *        attempt to specify a host port in the ephemeral port range as these are reserved for automatic assignment.
+     *        In general, ports below 32768 are outside of the ephemeral port range.
      *        </p>
      *        <p>
      *        The default reserved ports are 22 for SSH, the Docker ports 2375 and 2376, and the Amazon ECS container
@@ -494,9 +494,9 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The default ephemeral port range for Docker version 1.6.0 and later is listed on the instance under
      * <code>/proc/sys/net/ipv4/ip_local_port_range</code>. If this kernel parameter is unavailable, the default
-     * ephemeral port range from 49153 through 65535 is used. Do not attempt to specify a host port in the ephemeral
-     * port range as these are reserved for automatic assignment. In general, ports below 32768 are outside of the
-     * ephemeral port range.
+     * ephemeral port range from 49153 through 65535 (Linux) or 49152 through 65535 (Windows) is used. Do not attempt to
+     * specify a host port in the ephemeral port range as these are reserved for automatic assignment. In general, ports
+     * below 32768 are outside of the ephemeral port range.
      * </p>
      * <p>
      * The default reserved ports are 22 for SSH, the Docker ports 2375 and 2376, and the Amazon ECS container agent
@@ -542,9 +542,9 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         The default ephemeral port range for Docker version 1.6.0 and later is listed on the instance under
      *         <code>/proc/sys/net/ipv4/ip_local_port_range</code>. If this kernel parameter is unavailable, the default
-     *         ephemeral port range from 49153 through 65535 is used. Do not attempt to specify a host port in the
-     *         ephemeral port range as these are reserved for automatic assignment. In general, ports below 32768 are
-     *         outside of the ephemeral port range.
+     *         ephemeral port range from 49153 through 65535 (Linux) or 49152 through 65535 (Windows) is used. Do not
+     *         attempt to specify a host port in the ephemeral port range as these are reserved for automatic
+     *         assignment. In general, ports below 32768 are outside of the ephemeral port range.
      *         </p>
      *         <p>
      *         The default reserved ports are 22 for SSH, the Docker ports 2375 and 2376, and the Amazon ECS container
@@ -596,9 +596,9 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The default ephemeral port range for Docker version 1.6.0 and later is listed on the instance under
      * <code>/proc/sys/net/ipv4/ip_local_port_range</code>. If this kernel parameter is unavailable, the default
-     * ephemeral port range from 49153 through 65535 is used. Do not attempt to specify a host port in the ephemeral
-     * port range as these are reserved for automatic assignment. In general, ports below 32768 are outside of the
-     * ephemeral port range.
+     * ephemeral port range from 49153 through 65535 (Linux) or 49152 through 65535 (Windows) is used. Do not attempt to
+     * specify a host port in the ephemeral port range as these are reserved for automatic assignment. In general, ports
+     * below 32768 are outside of the ephemeral port range.
      * </p>
      * <p>
      * The default reserved ports are 22 for SSH, the Docker ports 2375 and 2376, and the Amazon ECS container agent
@@ -644,9 +644,9 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        The default ephemeral port range for Docker version 1.6.0 and later is listed on the instance under
      *        <code>/proc/sys/net/ipv4/ip_local_port_range</code>. If this kernel parameter is unavailable, the default
-     *        ephemeral port range from 49153 through 65535 is used. Do not attempt to specify a host port in the
-     *        ephemeral port range as these are reserved for automatic assignment. In general, ports below 32768 are
-     *        outside of the ephemeral port range.
+     *        ephemeral port range from 49153 through 65535 (Linux) or 49152 through 65535 (Windows) is used. Do not
+     *        attempt to specify a host port in the ephemeral port range as these are reserved for automatic assignment.
+     *        In general, ports below 32768 are outside of the ephemeral port range.
      *        </p>
      *        <p>
      *        The default reserved ports are 22 for SSH, the Docker ports 2375 and 2376, and the Amazon ECS container
@@ -1097,8 +1097,8 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPort</code> is set to the same
-     * value as the <code>containerPort</code>. This is a static mapping strategy.
+     * For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPortRange</code> is set to the
+     * same value as the <code>containerPortRange</code>. This is a static mapping strategy.
      * </p>
      * </li>
      * <li>
@@ -1191,8 +1191,8 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPort</code> is set to
-     *        the same value as the <code>containerPort</code>. This is a static mapping strategy.
+     *        For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPortRange</code> is set
+     *        to the same value as the <code>containerPortRange</code>. This is a static mapping strategy.
      *        </p>
      *        </li>
      *        <li>
@@ -1290,8 +1290,8 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPort</code> is set to the same
-     * value as the <code>containerPort</code>. This is a static mapping strategy.
+     * For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPortRange</code> is set to the
+     * same value as the <code>containerPortRange</code>. This is a static mapping strategy.
      * </p>
      * </li>
      * <li>
@@ -1383,8 +1383,8 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPort</code> is set to
-     *         the same value as the <code>containerPort</code>. This is a static mapping strategy.
+     *         For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPortRange</code> is set
+     *         to the same value as the <code>containerPortRange</code>. This is a static mapping strategy.
      *         </p>
      *         </li>
      *         <li>
@@ -1482,8 +1482,8 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPort</code> is set to the same
-     * value as the <code>containerPort</code>. This is a static mapping strategy.
+     * For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPortRange</code> is set to the
+     * same value as the <code>containerPortRange</code>. This is a static mapping strategy.
      * </p>
      * </li>
      * <li>
@@ -1576,8 +1576,8 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPort</code> is set to
-     *        the same value as the <code>containerPort</code>. This is a static mapping strategy.
+     *        For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPortRange</code> is set
+     *        to the same value as the <code>containerPortRange</code>. This is a static mapping strategy.
      *        </p>
      *        </li>
      *        <li>

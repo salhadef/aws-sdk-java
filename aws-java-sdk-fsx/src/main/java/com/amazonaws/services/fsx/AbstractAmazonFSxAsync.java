@@ -462,6 +462,21 @@ public class AbstractAmazonFSxAsync extends AbstractAmazonFSx implements AmazonF
     }
 
     @Override
+    public java.util.concurrent.Future<StartMisconfiguredStateRecoveryResult> startMisconfiguredStateRecoveryAsync(
+            StartMisconfiguredStateRecoveryRequest request) {
+
+        return startMisconfiguredStateRecoveryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartMisconfiguredStateRecoveryResult> startMisconfiguredStateRecoveryAsync(
+            StartMisconfiguredStateRecoveryRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartMisconfiguredStateRecoveryRequest, StartMisconfiguredStateRecoveryResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);

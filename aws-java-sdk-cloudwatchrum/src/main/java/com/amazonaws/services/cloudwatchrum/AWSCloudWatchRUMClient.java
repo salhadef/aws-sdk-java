@@ -44,6 +44,7 @@ import com.amazonaws.services.cloudwatchrum.AWSCloudWatchRUMClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.cloudwatchrum.model.*;
+
 import com.amazonaws.services.cloudwatchrum.model.transform.*;
 
 /**

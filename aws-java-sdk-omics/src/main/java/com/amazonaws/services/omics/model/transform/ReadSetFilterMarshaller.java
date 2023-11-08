@@ -27,16 +27,24 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ReadSetFilterMarshaller {
 
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("status").build();
+    private static final MarshallingInfo<String> REFERENCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("referenceArn").build();
     private static final MarshallingInfo<java.util.Date> CREATEDAFTER_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAfter").timestampFormat("iso8601").build();
     private static final MarshallingInfo<java.util.Date> CREATEDBEFORE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdBefore").timestampFormat("iso8601").build();
-    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("name").build();
-    private static final MarshallingInfo<String> REFERENCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("referenceArn").build();
-    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("status").build();
+    private static final MarshallingInfo<String> SAMPLEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("sampleId").build();
+    private static final MarshallingInfo<String> SUBJECTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("subjectId").build();
+    private static final MarshallingInfo<String> GENERATEDFROM_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("generatedFrom").build();
+    private static final MarshallingInfo<String> CREATIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationType").build();
 
     private static final ReadSetFilterMarshaller instance = new ReadSetFilterMarshaller();
 
@@ -54,11 +62,15 @@ public class ReadSetFilterMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(readSetFilter.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(readSetFilter.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(readSetFilter.getReferenceArn(), REFERENCEARN_BINDING);
             protocolMarshaller.marshall(readSetFilter.getCreatedAfter(), CREATEDAFTER_BINDING);
             protocolMarshaller.marshall(readSetFilter.getCreatedBefore(), CREATEDBEFORE_BINDING);
-            protocolMarshaller.marshall(readSetFilter.getName(), NAME_BINDING);
-            protocolMarshaller.marshall(readSetFilter.getReferenceArn(), REFERENCEARN_BINDING);
-            protocolMarshaller.marshall(readSetFilter.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(readSetFilter.getSampleId(), SAMPLEID_BINDING);
+            protocolMarshaller.marshall(readSetFilter.getSubjectId(), SUBJECTID_BINDING);
+            protocolMarshaller.marshall(readSetFilter.getGeneratedFrom(), GENERATEDFROM_BINDING);
+            protocolMarshaller.marshall(readSetFilter.getCreationType(), CREATIONTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -40,6 +40,8 @@ public class UpdateSettingsRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("evidenceFinderEnabled").build();
     private static final MarshallingInfo<StructuredPojo> DEREGISTRATIONPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deregistrationPolicy").build();
+    private static final MarshallingInfo<StructuredPojo> DEFAULTEXPORTDESTINATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("defaultExportDestination").build();
 
     private static final UpdateSettingsRequestMarshaller instance = new UpdateSettingsRequestMarshaller();
 
@@ -63,6 +65,7 @@ public class UpdateSettingsRequestMarshaller {
             protocolMarshaller.marshall(updateSettingsRequest.getKmsKey(), KMSKEY_BINDING);
             protocolMarshaller.marshall(updateSettingsRequest.getEvidenceFinderEnabled(), EVIDENCEFINDERENABLED_BINDING);
             protocolMarshaller.marshall(updateSettingsRequest.getDeregistrationPolicy(), DEREGISTRATIONPOLICY_BINDING);
+            protocolMarshaller.marshall(updateSettingsRequest.getDefaultExportDestination(), DEFAULTEXPORTDESTINATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

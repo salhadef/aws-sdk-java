@@ -30,19 +30,19 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name for an Amplify app.
+     * The name of the Amplify app.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The description for an Amplify app.
+     * The description of the Amplify app.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The repository for an Amplify app.
+     * The Git repository for the Amplify app.
      * </p>
      */
     private String repository;
@@ -75,7 +75,7 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However, we
      * strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a href=
-     * "https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth"
+     * "https://docs.aws.amazon.com/amplify/latest/userguide/setting-up-GitHub-access.html#migrating-to-github-app-auth"
      * >Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .
      * </p>
      */
@@ -95,7 +95,7 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However, we
      * strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a href=
-     * "https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth"
+     * "https://docs.aws.amazon.com/amplify/latest/userguide/setting-up-GitHub-access.html#migrating-to-github-app-auth"
      * >Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .
      * </p>
      */
@@ -103,6 +103,11 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The environment variables map for an Amplify app.
+     * </p>
+     * <p>
+     * For a list of the environment variables that are accessible to Amplify by default, see <a
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/amplify-console-environment-variables.html">Amplify
+     * Environment variables</a> in the <i>Amplify Hosting User Guide</i>.
      * </p>
      */
     private java.util.Map<String, String> environmentVariables;
@@ -114,7 +119,7 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private Boolean enableBranchAutoBuild;
     /**
      * <p>
-     * Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository.
+     * Automatically disconnects a branch in the Amplify console when you delete a branch from your Git repository.
      * </p>
      */
     private Boolean enableBranchAutoDeletion;
@@ -176,11 +181,11 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name for an Amplify app.
+     * The name of the Amplify app.
      * </p>
      * 
      * @param name
-     *        The name for an Amplify app.
+     *        The name of the Amplify app.
      */
 
     public void setName(String name) {
@@ -189,10 +194,10 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name for an Amplify app.
+     * The name of the Amplify app.
      * </p>
      * 
-     * @return The name for an Amplify app.
+     * @return The name of the Amplify app.
      */
 
     public String getName() {
@@ -201,11 +206,11 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name for an Amplify app.
+     * The name of the Amplify app.
      * </p>
      * 
      * @param name
-     *        The name for an Amplify app.
+     *        The name of the Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -216,11 +221,11 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The description for an Amplify app.
+     * The description of the Amplify app.
      * </p>
      * 
      * @param description
-     *        The description for an Amplify app.
+     *        The description of the Amplify app.
      */
 
     public void setDescription(String description) {
@@ -229,10 +234,10 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The description for an Amplify app.
+     * The description of the Amplify app.
      * </p>
      * 
-     * @return The description for an Amplify app.
+     * @return The description of the Amplify app.
      */
 
     public String getDescription() {
@@ -241,11 +246,11 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The description for an Amplify app.
+     * The description of the Amplify app.
      * </p>
      * 
      * @param description
-     *        The description for an Amplify app.
+     *        The description of the Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -256,11 +261,11 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The repository for an Amplify app.
+     * The Git repository for the Amplify app.
      * </p>
      * 
      * @param repository
-     *        The repository for an Amplify app.
+     *        The Git repository for the Amplify app.
      */
 
     public void setRepository(String repository) {
@@ -269,10 +274,10 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The repository for an Amplify app.
+     * The Git repository for the Amplify app.
      * </p>
      * 
-     * @return The repository for an Amplify app.
+     * @return The Git repository for the Amplify app.
      */
 
     public String getRepository() {
@@ -281,11 +286,11 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The repository for an Amplify app.
+     * The Git repository for the Amplify app.
      * </p>
      * 
      * @param repository
-     *        The repository for an Amplify app.
+     *        The Git repository for the Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -424,7 +429,7 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However, we
      * strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a href=
-     * "https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth"
+     * "https://docs.aws.amazon.com/amplify/latest/userguide/setting-up-GitHub-access.html#migrating-to-github-app-auth"
      * >Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .
      * </p>
      * 
@@ -442,7 +447,7 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However,
      *        we strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a
      *        href=
-     *        "https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth"
+     *        "https://docs.aws.amazon.com/amplify/latest/userguide/setting-up-GitHub-access.html#migrating-to-github-app-auth"
      *        >Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .
      */
 
@@ -465,7 +470,7 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However, we
      * strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a href=
-     * "https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth"
+     * "https://docs.aws.amazon.com/amplify/latest/userguide/setting-up-GitHub-access.html#migrating-to-github-app-auth"
      * >Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .
      * </p>
      * 
@@ -482,7 +487,7 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However,
      *         we strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a
      *         href=
-     *         "https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth"
+     *         "https://docs.aws.amazon.com/amplify/latest/userguide/setting-up-GitHub-access.html#migrating-to-github-app-auth"
      *         >Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .
      */
 
@@ -505,7 +510,7 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However, we
      * strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a href=
-     * "https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth"
+     * "https://docs.aws.amazon.com/amplify/latest/userguide/setting-up-GitHub-access.html#migrating-to-github-app-auth"
      * >Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .
      * </p>
      * 
@@ -523,7 +528,7 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However,
      *        we strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a
      *        href=
-     *        "https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth"
+     *        "https://docs.aws.amazon.com/amplify/latest/userguide/setting-up-GitHub-access.html#migrating-to-github-app-auth"
      *        >Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -548,7 +553,7 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However, we
      * strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a href=
-     * "https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth"
+     * "https://docs.aws.amazon.com/amplify/latest/userguide/setting-up-GitHub-access.html#migrating-to-github-app-auth"
      * >Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .
      * </p>
      * 
@@ -566,7 +571,7 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However,
      *        we strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a
      *        href=
-     *        "https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth"
+     *        "https://docs.aws.amazon.com/amplify/latest/userguide/setting-up-GitHub-access.html#migrating-to-github-app-auth"
      *        >Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .
      */
 
@@ -589,7 +594,7 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However, we
      * strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a href=
-     * "https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth"
+     * "https://docs.aws.amazon.com/amplify/latest/userguide/setting-up-GitHub-access.html#migrating-to-github-app-auth"
      * >Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .
      * </p>
      * 
@@ -606,7 +611,7 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However,
      *         we strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a
      *         href=
-     *         "https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth"
+     *         "https://docs.aws.amazon.com/amplify/latest/userguide/setting-up-GitHub-access.html#migrating-to-github-app-auth"
      *         >Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .
      */
 
@@ -629,7 +634,7 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However, we
      * strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a href=
-     * "https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth"
+     * "https://docs.aws.amazon.com/amplify/latest/userguide/setting-up-GitHub-access.html#migrating-to-github-app-auth"
      * >Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .
      * </p>
      * 
@@ -647,7 +652,7 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However,
      *        we strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a
      *        href=
-     *        "https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth"
+     *        "https://docs.aws.amazon.com/amplify/latest/userguide/setting-up-GitHub-access.html#migrating-to-github-app-auth"
      *        >Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -661,8 +666,17 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The environment variables map for an Amplify app.
      * </p>
+     * <p>
+     * For a list of the environment variables that are accessible to Amplify by default, see <a
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/amplify-console-environment-variables.html">Amplify
+     * Environment variables</a> in the <i>Amplify Hosting User Guide</i>.
+     * </p>
      * 
-     * @return The environment variables map for an Amplify app.
+     * @return The environment variables map for an Amplify app. </p>
+     *         <p>
+     *         For a list of the environment variables that are accessible to Amplify by default, see <a
+     *         href="https://docs.aws.amazon.com/amplify/latest/userguide/amplify-console-environment-variables.html"
+     *         >Amplify Environment variables</a> in the <i>Amplify Hosting User Guide</i>.
      */
 
     public java.util.Map<String, String> getEnvironmentVariables() {
@@ -673,9 +687,18 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The environment variables map for an Amplify app.
      * </p>
+     * <p>
+     * For a list of the environment variables that are accessible to Amplify by default, see <a
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/amplify-console-environment-variables.html">Amplify
+     * Environment variables</a> in the <i>Amplify Hosting User Guide</i>.
+     * </p>
      * 
      * @param environmentVariables
-     *        The environment variables map for an Amplify app.
+     *        The environment variables map for an Amplify app. </p>
+     *        <p>
+     *        For a list of the environment variables that are accessible to Amplify by default, see <a
+     *        href="https://docs.aws.amazon.com/amplify/latest/userguide/amplify-console-environment-variables.html"
+     *        >Amplify Environment variables</a> in the <i>Amplify Hosting User Guide</i>.
      */
 
     public void setEnvironmentVariables(java.util.Map<String, String> environmentVariables) {
@@ -686,9 +709,18 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The environment variables map for an Amplify app.
      * </p>
+     * <p>
+     * For a list of the environment variables that are accessible to Amplify by default, see <a
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/amplify-console-environment-variables.html">Amplify
+     * Environment variables</a> in the <i>Amplify Hosting User Guide</i>.
+     * </p>
      * 
      * @param environmentVariables
-     *        The environment variables map for an Amplify app.
+     *        The environment variables map for an Amplify app. </p>
+     *        <p>
+     *        For a list of the environment variables that are accessible to Amplify by default, see <a
+     *        href="https://docs.aws.amazon.com/amplify/latest/userguide/amplify-console-environment-variables.html"
+     *        >Amplify Environment variables</a> in the <i>Amplify Hosting User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -779,11 +811,11 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository.
+     * Automatically disconnects a branch in the Amplify console when you delete a branch from your Git repository.
      * </p>
      * 
      * @param enableBranchAutoDeletion
-     *        Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git
+     *        Automatically disconnects a branch in the Amplify console when you delete a branch from your Git
      *        repository.
      */
 
@@ -793,10 +825,10 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository.
+     * Automatically disconnects a branch in the Amplify console when you delete a branch from your Git repository.
      * </p>
      * 
-     * @return Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git
+     * @return Automatically disconnects a branch in the Amplify console when you delete a branch from your Git
      *         repository.
      */
 
@@ -806,11 +838,11 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository.
+     * Automatically disconnects a branch in the Amplify console when you delete a branch from your Git repository.
      * </p>
      * 
      * @param enableBranchAutoDeletion
-     *        Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git
+     *        Automatically disconnects a branch in the Amplify console when you delete a branch from your Git
      *        repository.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -822,10 +854,10 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository.
+     * Automatically disconnects a branch in the Amplify console when you delete a branch from your Git repository.
      * </p>
      * 
-     * @return Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git
+     * @return Automatically disconnects a branch in the Amplify console when you delete a branch from your Git
      *         repository.
      */
 

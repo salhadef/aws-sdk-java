@@ -71,8 +71,8 @@ public class DomainPackageDetails implements Serializable, Cloneable, Structured
     private String packageVersion;
     /**
      * <p>
-     * Denotes the location of the package on the OpenSearch Service cluster nodes. It's the same as
-     * <code>synonym_path</code> for dictionary files.
+     * The relative path of the package on the OpenSearch Service cluster nodes. This is <code>synonym_path</code> when
+     * the package is for synonym files.
      * </p>
      */
     private String referencePath;
@@ -403,13 +403,13 @@ public class DomainPackageDetails implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Denotes the location of the package on the OpenSearch Service cluster nodes. It's the same as
-     * <code>synonym_path</code> for dictionary files.
+     * The relative path of the package on the OpenSearch Service cluster nodes. This is <code>synonym_path</code> when
+     * the package is for synonym files.
      * </p>
      * 
      * @param referencePath
-     *        Denotes the location of the package on the OpenSearch Service cluster nodes. It's the same as
-     *        <code>synonym_path</code> for dictionary files.
+     *        The relative path of the package on the OpenSearch Service cluster nodes. This is
+     *        <code>synonym_path</code> when the package is for synonym files.
      */
 
     public void setReferencePath(String referencePath) {
@@ -418,12 +418,12 @@ public class DomainPackageDetails implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Denotes the location of the package on the OpenSearch Service cluster nodes. It's the same as
-     * <code>synonym_path</code> for dictionary files.
+     * The relative path of the package on the OpenSearch Service cluster nodes. This is <code>synonym_path</code> when
+     * the package is for synonym files.
      * </p>
      * 
-     * @return Denotes the location of the package on the OpenSearch Service cluster nodes. It's the same as
-     *         <code>synonym_path</code> for dictionary files.
+     * @return The relative path of the package on the OpenSearch Service cluster nodes. This is
+     *         <code>synonym_path</code> when the package is for synonym files.
      */
 
     public String getReferencePath() {
@@ -432,13 +432,13 @@ public class DomainPackageDetails implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Denotes the location of the package on the OpenSearch Service cluster nodes. It's the same as
-     * <code>synonym_path</code> for dictionary files.
+     * The relative path of the package on the OpenSearch Service cluster nodes. This is <code>synonym_path</code> when
+     * the package is for synonym files.
      * </p>
      * 
      * @param referencePath
-     *        Denotes the location of the package on the OpenSearch Service cluster nodes. It's the same as
-     *        <code>synonym_path</code> for dictionary files.
+     *        The relative path of the package on the OpenSearch Service cluster nodes. This is
+     *        <code>synonym_path</code> when the package is for synonym files.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

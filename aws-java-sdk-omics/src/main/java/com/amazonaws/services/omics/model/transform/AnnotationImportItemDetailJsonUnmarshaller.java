@@ -48,13 +48,13 @@ public class AnnotationImportItemDetailJsonUnmarshaller implements Unmarshaller<
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("jobStatus", targetDepth)) {
-                    context.nextToken();
-                    annotationImportItemDetail.setJobStatus(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("source", targetDepth)) {
                     context.nextToken();
                     annotationImportItemDetail.setSource(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("jobStatus", targetDepth)) {
+                    context.nextToken();
+                    annotationImportItemDetail.setJobStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

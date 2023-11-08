@@ -329,6 +329,46 @@ public interface AWSComputeOptimizer {
 
     /**
      * <p>
+     * Export optimization recommendations for your licenses.
+     * </p>
+     * <p>
+     * Recommendations are exported in a comma-separated values (CSV) file, and its metadata in a JavaScript Object
+     * Notation (JSON) file, to an existing Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
+     * Recommendations</a> in the <i>Compute Optimizer User Guide</i>.
+     * </p>
+     * <p>
+     * You can have only one license export job in progress per Amazon Web Services Region.
+     * </p>
+     * 
+     * @param exportLicenseRecommendationsRequest
+     * @return Result of the ExportLicenseRecommendations operation returned by the service.
+     * @throws OptInRequiredException
+     *         The account is not opted in to Compute Optimizer.
+     * @throws InternalServerException
+     *         An internal error has occurred. Try your call again.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the server.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InvalidParameterValueException
+     *         The value supplied for the input parameter is out of range or not valid.
+     * @throws MissingAuthenticationTokenException
+     *         The request must contain either a valid (registered) Amazon Web Services access key ID or X.509
+     *         certificate.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws LimitExceededException
+     *         The request exceeds a limit of the service.
+     * @sample AWSComputeOptimizer.ExportLicenseRecommendations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportLicenseRecommendations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ExportLicenseRecommendationsResult exportLicenseRecommendations(ExportLicenseRecommendationsRequest exportLicenseRecommendationsRequest);
+
+    /**
+     * <p>
      * Returns Auto Scaling group recommendations.
      * </p>
      * <p>
@@ -684,6 +724,42 @@ public interface AWSComputeOptimizer {
      *      target="_top">AWS API Documentation</a>
      */
     GetLambdaFunctionRecommendationsResult getLambdaFunctionRecommendations(GetLambdaFunctionRecommendationsRequest getLambdaFunctionRecommendationsRequest);
+
+    /**
+     * <p>
+     * Returns license recommendations for Amazon EC2 instances that run on a specific license.
+     * </p>
+     * <p>
+     * Compute Optimizer generates recommendations for licenses that meet a specific set of requirements. For more
+     * information, see the <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported resources and
+     * requirements</a> in the <i>Compute Optimizer User Guide</i>.
+     * </p>
+     * 
+     * @param getLicenseRecommendationsRequest
+     * @return Result of the GetLicenseRecommendations operation returned by the service.
+     * @throws OptInRequiredException
+     *         The account is not opted in to Compute Optimizer.
+     * @throws InternalServerException
+     *         An internal error has occurred. Try your call again.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the server.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InvalidParameterValueException
+     *         The value supplied for the input parameter is out of range or not valid.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action doesn't exist.
+     * @throws MissingAuthenticationTokenException
+     *         The request must contain either a valid (registered) Amazon Web Services access key ID or X.509
+     *         certificate.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AWSComputeOptimizer.GetLicenseRecommendations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetLicenseRecommendations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetLicenseRecommendationsResult getLicenseRecommendations(GetLicenseRecommendationsRequest getLicenseRecommendationsRequest);
 
     /**
      * <p>

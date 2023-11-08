@@ -27,10 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class InstanceMetadataMarshaller {
 
-    private static final MarshallingInfo<String> INSTANCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceArn").build();
     private static final MarshallingInfo<String> IDENTITYSTOREID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdentityStoreId").build();
+    private static final MarshallingInfo<String> INSTANCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceArn").build();
 
     private static final InstanceMetadataMarshaller instance = new InstanceMetadataMarshaller();
 
@@ -48,8 +48,8 @@ public class InstanceMetadataMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(instanceMetadata.getInstanceArn(), INSTANCEARN_BINDING);
             protocolMarshaller.marshall(instanceMetadata.getIdentityStoreId(), IDENTITYSTOREID_BINDING);
+            protocolMarshaller.marshall(instanceMetadata.getInstanceArn(), INSTANCEARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

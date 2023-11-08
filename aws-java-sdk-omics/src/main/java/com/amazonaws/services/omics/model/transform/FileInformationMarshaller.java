@@ -27,12 +27,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class FileInformationMarshaller {
 
-    private static final MarshallingInfo<Long> CONTENTLENGTH_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("contentLength").build();
-    private static final MarshallingInfo<Long> PARTSIZE_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("partSize").build();
     private static final MarshallingInfo<Integer> TOTALPARTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("totalParts").build();
+    private static final MarshallingInfo<Long> PARTSIZE_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("partSize").build();
+    private static final MarshallingInfo<Long> CONTENTLENGTH_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("contentLength").build();
 
     private static final FileInformationMarshaller instance = new FileInformationMarshaller();
 
@@ -50,9 +50,9 @@ public class FileInformationMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(fileInformation.getContentLength(), CONTENTLENGTH_BINDING);
-            protocolMarshaller.marshall(fileInformation.getPartSize(), PARTSIZE_BINDING);
             protocolMarshaller.marshall(fileInformation.getTotalParts(), TOTALPARTS_BINDING);
+            protocolMarshaller.marshall(fileInformation.getPartSize(), PARTSIZE_BINDING);
+            protocolMarshaller.marshall(fileInformation.getContentLength(), CONTENTLENGTH_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

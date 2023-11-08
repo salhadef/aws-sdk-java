@@ -52,6 +52,8 @@ public class EncoderSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timecodeConfig").build();
     private static final MarshallingInfo<List> VIDEODESCRIPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("videoDescriptions").build();
+    private static final MarshallingInfo<StructuredPojo> THUMBNAILCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("thumbnailConfiguration").build();
 
     private static final EncoderSettingsMarshaller instance = new EncoderSettingsMarshaller();
 
@@ -81,6 +83,7 @@ public class EncoderSettingsMarshaller {
             protocolMarshaller.marshall(encoderSettings.getOutputGroups(), OUTPUTGROUPS_BINDING);
             protocolMarshaller.marshall(encoderSettings.getTimecodeConfig(), TIMECODECONFIG_BINDING);
             protocolMarshaller.marshall(encoderSettings.getVideoDescriptions(), VIDEODESCRIPTIONS_BINDING);
+            protocolMarshaller.marshall(encoderSettings.getThumbnailConfiguration(), THUMBNAILCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.cleanrooms.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -29,6 +30,8 @@ public class ProtectedQueryOutputMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> S3_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("s3").build();
+    private static final MarshallingInfo<List> MEMBERLIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("memberList").build();
 
     private static final ProtectedQueryOutputMarshaller instance = new ProtectedQueryOutputMarshaller();
 
@@ -47,6 +50,7 @@ public class ProtectedQueryOutputMarshaller {
 
         try {
             protocolMarshaller.marshall(protectedQueryOutput.getS3(), S3_BINDING);
+            protocolMarshaller.marshall(protectedQueryOutput.getMemberList(), MEMBERLIST_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

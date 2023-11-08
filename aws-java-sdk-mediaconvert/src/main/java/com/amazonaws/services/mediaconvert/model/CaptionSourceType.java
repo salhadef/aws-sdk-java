@@ -15,7 +15,7 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Use Source (SourceType) to identify the format of your input captions. The service cannot auto-detect caption format.
+ * Use Source to identify the format of your input captions. The service cannot auto-detect caption format.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum CaptionSourceType {

@@ -36,6 +36,8 @@ public class TargetGroupSummaryMarshaller {
             .marshallLocationName("id").build();
     private static final MarshallingInfo<String> IPADDRESSTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ipAddressType").build();
+    private static final MarshallingInfo<String> LAMBDAEVENTSTRUCTUREVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lambdaEventStructureVersion").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUpdatedAt").timestampFormat("iso8601").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -73,6 +75,7 @@ public class TargetGroupSummaryMarshaller {
             protocolMarshaller.marshall(targetGroupSummary.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(targetGroupSummary.getId(), ID_BINDING);
             protocolMarshaller.marshall(targetGroupSummary.getIpAddressType(), IPADDRESSTYPE_BINDING);
+            protocolMarshaller.marshall(targetGroupSummary.getLambdaEventStructureVersion(), LAMBDAEVENTSTRUCTUREVERSION_BINDING);
             protocolMarshaller.marshall(targetGroupSummary.getLastUpdatedAt(), LASTUPDATEDAT_BINDING);
             protocolMarshaller.marshall(targetGroupSummary.getName(), NAME_BINDING);
             protocolMarshaller.marshall(targetGroupSummary.getPort(), PORT_BINDING);

@@ -29,6 +29,10 @@ public class DatasetOrgAttributesMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> GDG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("gdg").build();
+    private static final MarshallingInfo<StructuredPojo> PO_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("po").build();
+    private static final MarshallingInfo<StructuredPojo> PS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ps").build();
     private static final MarshallingInfo<StructuredPojo> VSAM_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("vsam").build();
 
@@ -49,6 +53,8 @@ public class DatasetOrgAttributesMarshaller {
 
         try {
             protocolMarshaller.marshall(datasetOrgAttributes.getGdg(), GDG_BINDING);
+            protocolMarshaller.marshall(datasetOrgAttributes.getPo(), PO_BINDING);
+            protocolMarshaller.marshall(datasetOrgAttributes.getPs(), PS_BINDING);
             protocolMarshaller.marshall(datasetOrgAttributes.getVsam(), VSAM_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

@@ -54,55 +54,44 @@ public class AbstractAmazonSecurityLakeAsync extends AbstractAmazonSecurityLake 
     }
 
     @Override
-    public java.util.concurrent.Future<CreateDatalakeResult> createDatalakeAsync(CreateDatalakeRequest request) {
+    public java.util.concurrent.Future<CreateDataLakeResult> createDataLakeAsync(CreateDataLakeRequest request) {
 
-        return createDatalakeAsync(request, null);
+        return createDataLakeAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<CreateDatalakeResult> createDatalakeAsync(CreateDatalakeRequest request,
-            com.amazonaws.handlers.AsyncHandler<CreateDatalakeRequest, CreateDatalakeResult> asyncHandler) {
+    public java.util.concurrent.Future<CreateDataLakeResult> createDataLakeAsync(CreateDataLakeRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateDataLakeRequest, CreateDataLakeResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<CreateDatalakeAutoEnableResult> createDatalakeAutoEnableAsync(CreateDatalakeAutoEnableRequest request) {
+    public java.util.concurrent.Future<CreateDataLakeExceptionSubscriptionResult> createDataLakeExceptionSubscriptionAsync(
+            CreateDataLakeExceptionSubscriptionRequest request) {
 
-        return createDatalakeAutoEnableAsync(request, null);
+        return createDataLakeExceptionSubscriptionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<CreateDatalakeAutoEnableResult> createDatalakeAutoEnableAsync(CreateDatalakeAutoEnableRequest request,
-            com.amazonaws.handlers.AsyncHandler<CreateDatalakeAutoEnableRequest, CreateDatalakeAutoEnableResult> asyncHandler) {
+    public java.util.concurrent.Future<CreateDataLakeExceptionSubscriptionResult> createDataLakeExceptionSubscriptionAsync(
+            CreateDataLakeExceptionSubscriptionRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateDataLakeExceptionSubscriptionRequest, CreateDataLakeExceptionSubscriptionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<CreateDatalakeDelegatedAdminResult> createDatalakeDelegatedAdminAsync(CreateDatalakeDelegatedAdminRequest request) {
+    public java.util.concurrent.Future<CreateDataLakeOrganizationConfigurationResult> createDataLakeOrganizationConfigurationAsync(
+            CreateDataLakeOrganizationConfigurationRequest request) {
 
-        return createDatalakeDelegatedAdminAsync(request, null);
+        return createDataLakeOrganizationConfigurationAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<CreateDatalakeDelegatedAdminResult> createDatalakeDelegatedAdminAsync(CreateDatalakeDelegatedAdminRequest request,
-            com.amazonaws.handlers.AsyncHandler<CreateDatalakeDelegatedAdminRequest, CreateDatalakeDelegatedAdminResult> asyncHandler) {
-
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateDatalakeExceptionsSubscriptionResult> createDatalakeExceptionsSubscriptionAsync(
-            CreateDatalakeExceptionsSubscriptionRequest request) {
-
-        return createDatalakeExceptionsSubscriptionAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateDatalakeExceptionsSubscriptionResult> createDatalakeExceptionsSubscriptionAsync(
-            CreateDatalakeExceptionsSubscriptionRequest request,
-            com.amazonaws.handlers.AsyncHandler<CreateDatalakeExceptionsSubscriptionRequest, CreateDatalakeExceptionsSubscriptionResult> asyncHandler) {
+    public java.util.concurrent.Future<CreateDataLakeOrganizationConfigurationResult> createDataLakeOrganizationConfigurationAsync(
+            CreateDataLakeOrganizationConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateDataLakeOrganizationConfigurationRequest, CreateDataLakeOrganizationConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -121,16 +110,14 @@ public class AbstractAmazonSecurityLakeAsync extends AbstractAmazonSecurityLake 
     }
 
     @Override
-    public java.util.concurrent.Future<CreateSubscriptionNotificationConfigurationResult> createSubscriptionNotificationConfigurationAsync(
-            CreateSubscriptionNotificationConfigurationRequest request) {
+    public java.util.concurrent.Future<CreateSubscriberNotificationResult> createSubscriberNotificationAsync(CreateSubscriberNotificationRequest request) {
 
-        return createSubscriptionNotificationConfigurationAsync(request, null);
+        return createSubscriberNotificationAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<CreateSubscriptionNotificationConfigurationResult> createSubscriptionNotificationConfigurationAsync(
-            CreateSubscriptionNotificationConfigurationRequest request,
-            com.amazonaws.handlers.AsyncHandler<CreateSubscriptionNotificationConfigurationRequest, CreateSubscriptionNotificationConfigurationResult> asyncHandler) {
+    public java.util.concurrent.Future<CreateSubscriberNotificationResult> createSubscriberNotificationAsync(CreateSubscriberNotificationRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateSubscriberNotificationRequest, CreateSubscriberNotificationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -162,55 +149,44 @@ public class AbstractAmazonSecurityLakeAsync extends AbstractAmazonSecurityLake 
     }
 
     @Override
-    public java.util.concurrent.Future<DeleteDatalakeResult> deleteDatalakeAsync(DeleteDatalakeRequest request) {
+    public java.util.concurrent.Future<DeleteDataLakeResult> deleteDataLakeAsync(DeleteDataLakeRequest request) {
 
-        return deleteDatalakeAsync(request, null);
+        return deleteDataLakeAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<DeleteDatalakeResult> deleteDatalakeAsync(DeleteDatalakeRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteDatalakeRequest, DeleteDatalakeResult> asyncHandler) {
+    public java.util.concurrent.Future<DeleteDataLakeResult> deleteDataLakeAsync(DeleteDataLakeRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteDataLakeRequest, DeleteDataLakeResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<DeleteDatalakeAutoEnableResult> deleteDatalakeAutoEnableAsync(DeleteDatalakeAutoEnableRequest request) {
+    public java.util.concurrent.Future<DeleteDataLakeExceptionSubscriptionResult> deleteDataLakeExceptionSubscriptionAsync(
+            DeleteDataLakeExceptionSubscriptionRequest request) {
 
-        return deleteDatalakeAutoEnableAsync(request, null);
+        return deleteDataLakeExceptionSubscriptionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<DeleteDatalakeAutoEnableResult> deleteDatalakeAutoEnableAsync(DeleteDatalakeAutoEnableRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteDatalakeAutoEnableRequest, DeleteDatalakeAutoEnableResult> asyncHandler) {
+    public java.util.concurrent.Future<DeleteDataLakeExceptionSubscriptionResult> deleteDataLakeExceptionSubscriptionAsync(
+            DeleteDataLakeExceptionSubscriptionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteDataLakeExceptionSubscriptionRequest, DeleteDataLakeExceptionSubscriptionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<DeleteDatalakeDelegatedAdminResult> deleteDatalakeDelegatedAdminAsync(DeleteDatalakeDelegatedAdminRequest request) {
+    public java.util.concurrent.Future<DeleteDataLakeOrganizationConfigurationResult> deleteDataLakeOrganizationConfigurationAsync(
+            DeleteDataLakeOrganizationConfigurationRequest request) {
 
-        return deleteDatalakeDelegatedAdminAsync(request, null);
+        return deleteDataLakeOrganizationConfigurationAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<DeleteDatalakeDelegatedAdminResult> deleteDatalakeDelegatedAdminAsync(DeleteDatalakeDelegatedAdminRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteDatalakeDelegatedAdminRequest, DeleteDatalakeDelegatedAdminResult> asyncHandler) {
-
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteDatalakeExceptionsSubscriptionResult> deleteDatalakeExceptionsSubscriptionAsync(
-            DeleteDatalakeExceptionsSubscriptionRequest request) {
-
-        return deleteDatalakeExceptionsSubscriptionAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteDatalakeExceptionsSubscriptionResult> deleteDatalakeExceptionsSubscriptionAsync(
-            DeleteDatalakeExceptionsSubscriptionRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteDatalakeExceptionsSubscriptionRequest, DeleteDatalakeExceptionsSubscriptionResult> asyncHandler) {
+    public java.util.concurrent.Future<DeleteDataLakeOrganizationConfigurationResult> deleteDataLakeOrganizationConfigurationAsync(
+            DeleteDataLakeOrganizationConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteDataLakeOrganizationConfigurationRequest, DeleteDataLakeOrganizationConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -229,83 +205,72 @@ public class AbstractAmazonSecurityLakeAsync extends AbstractAmazonSecurityLake 
     }
 
     @Override
-    public java.util.concurrent.Future<DeleteSubscriptionNotificationConfigurationResult> deleteSubscriptionNotificationConfigurationAsync(
-            DeleteSubscriptionNotificationConfigurationRequest request) {
+    public java.util.concurrent.Future<DeleteSubscriberNotificationResult> deleteSubscriberNotificationAsync(DeleteSubscriberNotificationRequest request) {
 
-        return deleteSubscriptionNotificationConfigurationAsync(request, null);
+        return deleteSubscriberNotificationAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<DeleteSubscriptionNotificationConfigurationResult> deleteSubscriptionNotificationConfigurationAsync(
-            DeleteSubscriptionNotificationConfigurationRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteSubscriptionNotificationConfigurationRequest, DeleteSubscriptionNotificationConfigurationResult> asyncHandler) {
+    public java.util.concurrent.Future<DeleteSubscriberNotificationResult> deleteSubscriberNotificationAsync(DeleteSubscriberNotificationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteSubscriberNotificationRequest, DeleteSubscriberNotificationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<GetDatalakeResult> getDatalakeAsync(GetDatalakeRequest request) {
+    public java.util.concurrent.Future<DeregisterDataLakeDelegatedAdministratorResult> deregisterDataLakeDelegatedAdministratorAsync(
+            DeregisterDataLakeDelegatedAdministratorRequest request) {
 
-        return getDatalakeAsync(request, null);
+        return deregisterDataLakeDelegatedAdministratorAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<GetDatalakeResult> getDatalakeAsync(GetDatalakeRequest request,
-            com.amazonaws.handlers.AsyncHandler<GetDatalakeRequest, GetDatalakeResult> asyncHandler) {
+    public java.util.concurrent.Future<DeregisterDataLakeDelegatedAdministratorResult> deregisterDataLakeDelegatedAdministratorAsync(
+            DeregisterDataLakeDelegatedAdministratorRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeregisterDataLakeDelegatedAdministratorRequest, DeregisterDataLakeDelegatedAdministratorResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<GetDatalakeAutoEnableResult> getDatalakeAutoEnableAsync(GetDatalakeAutoEnableRequest request) {
+    public java.util.concurrent.Future<GetDataLakeExceptionSubscriptionResult> getDataLakeExceptionSubscriptionAsync(
+            GetDataLakeExceptionSubscriptionRequest request) {
 
-        return getDatalakeAutoEnableAsync(request, null);
+        return getDataLakeExceptionSubscriptionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<GetDatalakeAutoEnableResult> getDatalakeAutoEnableAsync(GetDatalakeAutoEnableRequest request,
-            com.amazonaws.handlers.AsyncHandler<GetDatalakeAutoEnableRequest, GetDatalakeAutoEnableResult> asyncHandler) {
+    public java.util.concurrent.Future<GetDataLakeExceptionSubscriptionResult> getDataLakeExceptionSubscriptionAsync(
+            GetDataLakeExceptionSubscriptionRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetDataLakeExceptionSubscriptionRequest, GetDataLakeExceptionSubscriptionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<GetDatalakeExceptionsExpiryResult> getDatalakeExceptionsExpiryAsync(GetDatalakeExceptionsExpiryRequest request) {
+    public java.util.concurrent.Future<GetDataLakeOrganizationConfigurationResult> getDataLakeOrganizationConfigurationAsync(
+            GetDataLakeOrganizationConfigurationRequest request) {
 
-        return getDatalakeExceptionsExpiryAsync(request, null);
+        return getDataLakeOrganizationConfigurationAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<GetDatalakeExceptionsExpiryResult> getDatalakeExceptionsExpiryAsync(GetDatalakeExceptionsExpiryRequest request,
-            com.amazonaws.handlers.AsyncHandler<GetDatalakeExceptionsExpiryRequest, GetDatalakeExceptionsExpiryResult> asyncHandler) {
+    public java.util.concurrent.Future<GetDataLakeOrganizationConfigurationResult> getDataLakeOrganizationConfigurationAsync(
+            GetDataLakeOrganizationConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetDataLakeOrganizationConfigurationRequest, GetDataLakeOrganizationConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<GetDatalakeExceptionsSubscriptionResult> getDatalakeExceptionsSubscriptionAsync(
-            GetDatalakeExceptionsSubscriptionRequest request) {
+    public java.util.concurrent.Future<GetDataLakeSourcesResult> getDataLakeSourcesAsync(GetDataLakeSourcesRequest request) {
 
-        return getDatalakeExceptionsSubscriptionAsync(request, null);
+        return getDataLakeSourcesAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<GetDatalakeExceptionsSubscriptionResult> getDatalakeExceptionsSubscriptionAsync(
-            GetDatalakeExceptionsSubscriptionRequest request,
-            com.amazonaws.handlers.AsyncHandler<GetDatalakeExceptionsSubscriptionRequest, GetDatalakeExceptionsSubscriptionResult> asyncHandler) {
-
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetDatalakeStatusResult> getDatalakeStatusAsync(GetDatalakeStatusRequest request) {
-
-        return getDatalakeStatusAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetDatalakeStatusResult> getDatalakeStatusAsync(GetDatalakeStatusRequest request,
-            com.amazonaws.handlers.AsyncHandler<GetDatalakeStatusRequest, GetDatalakeStatusResult> asyncHandler) {
+    public java.util.concurrent.Future<GetDataLakeSourcesResult> getDataLakeSourcesAsync(GetDataLakeSourcesRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetDataLakeSourcesRequest, GetDataLakeSourcesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -324,14 +289,27 @@ public class AbstractAmazonSecurityLakeAsync extends AbstractAmazonSecurityLake 
     }
 
     @Override
-    public java.util.concurrent.Future<ListDatalakeExceptionsResult> listDatalakeExceptionsAsync(ListDatalakeExceptionsRequest request) {
+    public java.util.concurrent.Future<ListDataLakeExceptionsResult> listDataLakeExceptionsAsync(ListDataLakeExceptionsRequest request) {
 
-        return listDatalakeExceptionsAsync(request, null);
+        return listDataLakeExceptionsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<ListDatalakeExceptionsResult> listDatalakeExceptionsAsync(ListDatalakeExceptionsRequest request,
-            com.amazonaws.handlers.AsyncHandler<ListDatalakeExceptionsRequest, ListDatalakeExceptionsResult> asyncHandler) {
+    public java.util.concurrent.Future<ListDataLakeExceptionsResult> listDataLakeExceptionsAsync(ListDataLakeExceptionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListDataLakeExceptionsRequest, ListDataLakeExceptionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDataLakesResult> listDataLakesAsync(ListDataLakesRequest request) {
+
+        return listDataLakesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDataLakesResult> listDataLakesAsync(ListDataLakesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListDataLakesRequest, ListDataLakesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -363,42 +341,83 @@ public class AbstractAmazonSecurityLakeAsync extends AbstractAmazonSecurityLake 
     }
 
     @Override
-    public java.util.concurrent.Future<UpdateDatalakeResult> updateDatalakeAsync(UpdateDatalakeRequest request) {
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
 
-        return updateDatalakeAsync(request, null);
+        return listTagsForResourceAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<UpdateDatalakeResult> updateDatalakeAsync(UpdateDatalakeRequest request,
-            com.amazonaws.handlers.AsyncHandler<UpdateDatalakeRequest, UpdateDatalakeResult> asyncHandler) {
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<UpdateDatalakeExceptionsExpiryResult> updateDatalakeExceptionsExpiryAsync(UpdateDatalakeExceptionsExpiryRequest request) {
+    public java.util.concurrent.Future<RegisterDataLakeDelegatedAdministratorResult> registerDataLakeDelegatedAdministratorAsync(
+            RegisterDataLakeDelegatedAdministratorRequest request) {
 
-        return updateDatalakeExceptionsExpiryAsync(request, null);
+        return registerDataLakeDelegatedAdministratorAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<UpdateDatalakeExceptionsExpiryResult> updateDatalakeExceptionsExpiryAsync(UpdateDatalakeExceptionsExpiryRequest request,
-            com.amazonaws.handlers.AsyncHandler<UpdateDatalakeExceptionsExpiryRequest, UpdateDatalakeExceptionsExpiryResult> asyncHandler) {
+    public java.util.concurrent.Future<RegisterDataLakeDelegatedAdministratorResult> registerDataLakeDelegatedAdministratorAsync(
+            RegisterDataLakeDelegatedAdministratorRequest request,
+            com.amazonaws.handlers.AsyncHandler<RegisterDataLakeDelegatedAdministratorRequest, RegisterDataLakeDelegatedAdministratorResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<UpdateDatalakeExceptionsSubscriptionResult> updateDatalakeExceptionsSubscriptionAsync(
-            UpdateDatalakeExceptionsSubscriptionRequest request) {
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
-        return updateDatalakeExceptionsSubscriptionAsync(request, null);
+        return tagResourceAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<UpdateDatalakeExceptionsSubscriptionResult> updateDatalakeExceptionsSubscriptionAsync(
-            UpdateDatalakeExceptionsSubscriptionRequest request,
-            com.amazonaws.handlers.AsyncHandler<UpdateDatalakeExceptionsSubscriptionRequest, UpdateDatalakeExceptionsSubscriptionResult> asyncHandler) {
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request) {
+
+        return untagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDataLakeResult> updateDataLakeAsync(UpdateDataLakeRequest request) {
+
+        return updateDataLakeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDataLakeResult> updateDataLakeAsync(UpdateDataLakeRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateDataLakeRequest, UpdateDataLakeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDataLakeExceptionSubscriptionResult> updateDataLakeExceptionSubscriptionAsync(
+            UpdateDataLakeExceptionSubscriptionRequest request) {
+
+        return updateDataLakeExceptionSubscriptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDataLakeExceptionSubscriptionResult> updateDataLakeExceptionSubscriptionAsync(
+            UpdateDataLakeExceptionSubscriptionRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateDataLakeExceptionSubscriptionRequest, UpdateDataLakeExceptionSubscriptionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -417,16 +436,14 @@ public class AbstractAmazonSecurityLakeAsync extends AbstractAmazonSecurityLake 
     }
 
     @Override
-    public java.util.concurrent.Future<UpdateSubscriptionNotificationConfigurationResult> updateSubscriptionNotificationConfigurationAsync(
-            UpdateSubscriptionNotificationConfigurationRequest request) {
+    public java.util.concurrent.Future<UpdateSubscriberNotificationResult> updateSubscriberNotificationAsync(UpdateSubscriberNotificationRequest request) {
 
-        return updateSubscriptionNotificationConfigurationAsync(request, null);
+        return updateSubscriberNotificationAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<UpdateSubscriptionNotificationConfigurationResult> updateSubscriptionNotificationConfigurationAsync(
-            UpdateSubscriptionNotificationConfigurationRequest request,
-            com.amazonaws.handlers.AsyncHandler<UpdateSubscriptionNotificationConfigurationRequest, UpdateSubscriptionNotificationConfigurationResult> asyncHandler) {
+    public java.util.concurrent.Future<UpdateSubscriberNotificationResult> updateSubscriberNotificationAsync(UpdateSubscriberNotificationRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateSubscriberNotificationRequest, UpdateSubscriberNotificationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

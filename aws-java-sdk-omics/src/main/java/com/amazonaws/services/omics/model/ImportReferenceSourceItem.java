@@ -30,18 +30,6 @@ public class ImportReferenceSourceItem implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The source's description.
-     * </p>
-     */
-    private String description;
-    /**
-     * <p>
-     * The source's name.
-     * </p>
-     */
-    private String name;
-    /**
-     * <p>
      * The source file's location in Amazon S3.
      * </p>
      */
@@ -60,90 +48,22 @@ public class ImportReferenceSourceItem implements Serializable, Cloneable, Struc
     private String statusMessage;
     /**
      * <p>
+     * The source's name.
+     * </p>
+     */
+    private String name;
+    /**
+     * <p>
+     * The source's description.
+     * </p>
+     */
+    private String description;
+    /**
+     * <p>
      * The source's tags.
      * </p>
      */
     private java.util.Map<String, String> tags;
-
-    /**
-     * <p>
-     * The source's description.
-     * </p>
-     * 
-     * @param description
-     *        The source's description.
-     */
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    /**
-     * <p>
-     * The source's description.
-     * </p>
-     * 
-     * @return The source's description.
-     */
-
-    public String getDescription() {
-        return this.description;
-    }
-
-    /**
-     * <p>
-     * The source's description.
-     * </p>
-     * 
-     * @param description
-     *        The source's description.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ImportReferenceSourceItem withDescription(String description) {
-        setDescription(description);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The source's name.
-     * </p>
-     * 
-     * @param name
-     *        The source's name.
-     */
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     * <p>
-     * The source's name.
-     * </p>
-     * 
-     * @return The source's name.
-     */
-
-    public String getName() {
-        return this.name;
-    }
-
-    /**
-     * <p>
-     * The source's name.
-     * </p>
-     * 
-     * @param name
-     *        The source's name.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ImportReferenceSourceItem withName(String name) {
-        setName(name);
-        return this;
-    }
 
     /**
      * <p>
@@ -286,6 +206,86 @@ public class ImportReferenceSourceItem implements Serializable, Cloneable, Struc
 
     /**
      * <p>
+     * The source's name.
+     * </p>
+     * 
+     * @param name
+     *        The source's name.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The source's name.
+     * </p>
+     * 
+     * @return The source's name.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The source's name.
+     * </p>
+     * 
+     * @param name
+     *        The source's name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportReferenceSourceItem withName(String name) {
+        setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The source's description.
+     * </p>
+     * 
+     * @param description
+     *        The source's description.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * The source's description.
+     * </p>
+     * 
+     * @return The source's description.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * The source's description.
+     * </p>
+     * 
+     * @param description
+     *        The source's description.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportReferenceSourceItem withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
      * The source's tags.
      * </p>
      * 
@@ -364,16 +364,16 @@ public class ImportReferenceSourceItem implements Serializable, Cloneable, Struc
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
-        if (getName() != null)
-            sb.append("Name: ").append(getName()).append(",");
         if (getSourceFile() != null)
             sb.append("SourceFile: ").append(getSourceFile()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusMessage() != null)
             sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -390,14 +390,6 @@ public class ImportReferenceSourceItem implements Serializable, Cloneable, Struc
         if (obj instanceof ImportReferenceSourceItem == false)
             return false;
         ImportReferenceSourceItem other = (ImportReferenceSourceItem) obj;
-        if (other.getDescription() == null ^ this.getDescription() == null)
-            return false;
-        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
-            return false;
-        if (other.getName() == null ^ this.getName() == null)
-            return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false)
-            return false;
         if (other.getSourceFile() == null ^ this.getSourceFile() == null)
             return false;
         if (other.getSourceFile() != null && other.getSourceFile().equals(this.getSourceFile()) == false)
@@ -409,6 +401,14 @@ public class ImportReferenceSourceItem implements Serializable, Cloneable, Struc
         if (other.getStatusMessage() == null ^ this.getStatusMessage() == null)
             return false;
         if (other.getStatusMessage() != null && other.getStatusMessage().equals(this.getStatusMessage()) == false)
+            return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
@@ -422,11 +422,11 @@ public class ImportReferenceSourceItem implements Serializable, Cloneable, Struc
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getSourceFile() == null) ? 0 : getSourceFile().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

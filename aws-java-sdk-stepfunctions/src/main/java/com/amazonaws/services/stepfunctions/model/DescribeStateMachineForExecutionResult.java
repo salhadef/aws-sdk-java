@@ -79,6 +79,17 @@ public class DescribeStateMachineForExecutionResult extends com.amazonaws.Amazon
      * </p>
      */
     private String label;
+    /**
+     * <p>
+     * The revision identifier for the state machine. The first revision ID when you create the state machine is null.
+     * </p>
+     * <p>
+     * Use the state machine <code>revisionId</code> parameter to compare the revision of a state machine with the
+     * configuration of the state machine used for executions without performing a diff of the properties, such as
+     * <code>definition</code> and <code>roleArn</code>.
+     * </p>
+     */
+    private String revisionId;
 
     /**
      * <p>
@@ -463,6 +474,76 @@ public class DescribeStateMachineForExecutionResult extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * The revision identifier for the state machine. The first revision ID when you create the state machine is null.
+     * </p>
+     * <p>
+     * Use the state machine <code>revisionId</code> parameter to compare the revision of a state machine with the
+     * configuration of the state machine used for executions without performing a diff of the properties, such as
+     * <code>definition</code> and <code>roleArn</code>.
+     * </p>
+     * 
+     * @param revisionId
+     *        The revision identifier for the state machine. The first revision ID when you create the state machine is
+     *        null.</p>
+     *        <p>
+     *        Use the state machine <code>revisionId</code> parameter to compare the revision of a state machine with
+     *        the configuration of the state machine used for executions without performing a diff of the properties,
+     *        such as <code>definition</code> and <code>roleArn</code>.
+     */
+
+    public void setRevisionId(String revisionId) {
+        this.revisionId = revisionId;
+    }
+
+    /**
+     * <p>
+     * The revision identifier for the state machine. The first revision ID when you create the state machine is null.
+     * </p>
+     * <p>
+     * Use the state machine <code>revisionId</code> parameter to compare the revision of a state machine with the
+     * configuration of the state machine used for executions without performing a diff of the properties, such as
+     * <code>definition</code> and <code>roleArn</code>.
+     * </p>
+     * 
+     * @return The revision identifier for the state machine. The first revision ID when you create the state machine is
+     *         null.</p>
+     *         <p>
+     *         Use the state machine <code>revisionId</code> parameter to compare the revision of a state machine with
+     *         the configuration of the state machine used for executions without performing a diff of the properties,
+     *         such as <code>definition</code> and <code>roleArn</code>.
+     */
+
+    public String getRevisionId() {
+        return this.revisionId;
+    }
+
+    /**
+     * <p>
+     * The revision identifier for the state machine. The first revision ID when you create the state machine is null.
+     * </p>
+     * <p>
+     * Use the state machine <code>revisionId</code> parameter to compare the revision of a state machine with the
+     * configuration of the state machine used for executions without performing a diff of the properties, such as
+     * <code>definition</code> and <code>roleArn</code>.
+     * </p>
+     * 
+     * @param revisionId
+     *        The revision identifier for the state machine. The first revision ID when you create the state machine is
+     *        null.</p>
+     *        <p>
+     *        Use the state machine <code>revisionId</code> parameter to compare the revision of a state machine with
+     *        the configuration of the state machine used for executions without performing a diff of the properties,
+     *        such as <code>definition</code> and <code>roleArn</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeStateMachineForExecutionResult withRevisionId(String revisionId) {
+        setRevisionId(revisionId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -491,7 +572,9 @@ public class DescribeStateMachineForExecutionResult extends com.amazonaws.Amazon
         if (getMapRunArn() != null)
             sb.append("MapRunArn: ").append(getMapRunArn()).append(",");
         if (getLabel() != null)
-            sb.append("Label: ").append(getLabel());
+            sb.append("Label: ").append(getLabel()).append(",");
+        if (getRevisionId() != null)
+            sb.append("RevisionId: ").append(getRevisionId());
         sb.append("}");
         return sb.toString();
     }
@@ -542,6 +625,10 @@ public class DescribeStateMachineForExecutionResult extends com.amazonaws.Amazon
             return false;
         if (other.getLabel() != null && other.getLabel().equals(this.getLabel()) == false)
             return false;
+        if (other.getRevisionId() == null ^ this.getRevisionId() == null)
+            return false;
+        if (other.getRevisionId() != null && other.getRevisionId().equals(this.getRevisionId()) == false)
+            return false;
         return true;
     }
 
@@ -559,6 +646,7 @@ public class DescribeStateMachineForExecutionResult extends com.amazonaws.Amazon
         hashCode = prime * hashCode + ((getTracingConfiguration() == null) ? 0 : getTracingConfiguration().hashCode());
         hashCode = prime * hashCode + ((getMapRunArn() == null) ? 0 : getMapRunArn().hashCode());
         hashCode = prime * hashCode + ((getLabel() == null) ? 0 : getLabel().hashCode());
+        hashCode = prime * hashCode + ((getRevisionId() == null) ? 0 : getRevisionId().hashCode());
         return hashCode;
     }
 

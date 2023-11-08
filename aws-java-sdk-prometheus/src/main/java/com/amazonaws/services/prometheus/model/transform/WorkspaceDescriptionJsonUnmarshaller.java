@@ -48,6 +48,10 @@ public class WorkspaceDescriptionJsonUnmarshaller implements Unmarshaller<Worksp
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("workspaceId", targetDepth)) {
+                    context.nextToken();
+                    workspaceDescription.setWorkspaceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("alias", targetDepth)) {
                     context.nextToken();
                     workspaceDescription.setAlias(context.getUnmarshaller(String.class).unmarshall(context));
@@ -56,26 +60,22 @@ public class WorkspaceDescriptionJsonUnmarshaller implements Unmarshaller<Worksp
                     context.nextToken();
                     workspaceDescription.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("createdAt", targetDepth)) {
+                if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
-                    workspaceDescription.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    workspaceDescription.setStatus(WorkspaceStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("prometheusEndpoint", targetDepth)) {
                     context.nextToken();
                     workspaceDescription.setPrometheusEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("status", targetDepth)) {
+                if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    workspaceDescription.setStatus(WorkspaceStatusJsonUnmarshaller.getInstance().unmarshall(context));
+                    workspaceDescription.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
                     workspaceDescription.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
-                }
-                if (context.testExpression("workspaceId", targetDepth)) {
-                    context.nextToken();
-                    workspaceDescription.setWorkspaceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -27,6 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class RestoreFromSnapshotRequestMarshaller {
 
+    private static final MarshallingInfo<String> ADMINPASSWORDSECRETKMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("adminPasswordSecretKmsKeyId").build();
+    private static final MarshallingInfo<Boolean> MANAGEADMINPASSWORD_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("manageAdminPassword").build();
     private static final MarshallingInfo<String> NAMESPACENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("namespaceName").build();
     private static final MarshallingInfo<String> OWNERACCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -54,6 +58,8 @@ public class RestoreFromSnapshotRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(restoreFromSnapshotRequest.getAdminPasswordSecretKmsKeyId(), ADMINPASSWORDSECRETKMSKEYID_BINDING);
+            protocolMarshaller.marshall(restoreFromSnapshotRequest.getManageAdminPassword(), MANAGEADMINPASSWORD_BINDING);
             protocolMarshaller.marshall(restoreFromSnapshotRequest.getNamespaceName(), NAMESPACENAME_BINDING);
             protocolMarshaller.marshall(restoreFromSnapshotRequest.getOwnerAccount(), OWNERACCOUNT_BINDING);
             protocolMarshaller.marshall(restoreFromSnapshotRequest.getSnapshotArn(), SNAPSHOTARN_BINDING);

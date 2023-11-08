@@ -80,6 +80,19 @@ public class AbstractAmazonIVSRealTimeAsync extends AbstractAmazonIVSRealTime im
     }
 
     @Override
+    public java.util.concurrent.Future<GetParticipantResult> getParticipantAsync(GetParticipantRequest request) {
+
+        return getParticipantAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetParticipantResult> getParticipantAsync(GetParticipantRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetParticipantRequest, GetParticipantResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetStageResult> getStageAsync(GetStageRequest request) {
 
         return getStageAsync(request, null);
@@ -88,6 +101,58 @@ public class AbstractAmazonIVSRealTimeAsync extends AbstractAmazonIVSRealTime im
     @Override
     public java.util.concurrent.Future<GetStageResult> getStageAsync(GetStageRequest request,
             com.amazonaws.handlers.AsyncHandler<GetStageRequest, GetStageResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetStageSessionResult> getStageSessionAsync(GetStageSessionRequest request) {
+
+        return getStageSessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetStageSessionResult> getStageSessionAsync(GetStageSessionRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetStageSessionRequest, GetStageSessionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListParticipantEventsResult> listParticipantEventsAsync(ListParticipantEventsRequest request) {
+
+        return listParticipantEventsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListParticipantEventsResult> listParticipantEventsAsync(ListParticipantEventsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListParticipantEventsRequest, ListParticipantEventsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListParticipantsResult> listParticipantsAsync(ListParticipantsRequest request) {
+
+        return listParticipantsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListParticipantsResult> listParticipantsAsync(ListParticipantsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListParticipantsRequest, ListParticipantsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStageSessionsResult> listStageSessionsAsync(ListStageSessionsRequest request) {
+
+        return listStageSessionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStageSessionsResult> listStageSessionsAsync(ListStageSessionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListStageSessionsRequest, ListStageSessionsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

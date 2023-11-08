@@ -263,7 +263,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * If an IAM user started the build, the user's name (for example, <code>MyUserName</code>).
+     * If a user started the build, the user's name (for example, <code>MyUserName</code>).
      * </p>
      * </li>
      * <li>
@@ -2130,7 +2130,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * If an IAM user started the build, the user's name (for example, <code>MyUserName</code>).
+     * If a user started the build, the user's name (for example, <code>MyUserName</code>).
      * </p>
      * </li>
      * <li>
@@ -2151,7 +2151,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        If an IAM user started the build, the user's name (for example, <code>MyUserName</code>).
+     *        If a user started the build, the user's name (for example, <code>MyUserName</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -2177,7 +2177,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * If an IAM user started the build, the user's name (for example, <code>MyUserName</code>).
+     * If a user started the build, the user's name (for example, <code>MyUserName</code>).
      * </p>
      * </li>
      * <li>
@@ -2197,7 +2197,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         If an IAM user started the build, the user's name (for example, <code>MyUserName</code>).
+     *         If a user started the build, the user's name (for example, <code>MyUserName</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -2223,7 +2223,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * If an IAM user started the build, the user's name (for example, <code>MyUserName</code>).
+     * If a user started the build, the user's name (for example, <code>MyUserName</code>).
      * </p>
      * </li>
      * <li>
@@ -2244,7 +2244,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        If an IAM user started the build, the user's name (for example, <code>MyUserName</code>).
+     *        If a user started the build, the user's name (for example, <code>MyUserName</code>).
      *        </p>
      *        </li>
      *        <li>

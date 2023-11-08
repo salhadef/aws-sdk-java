@@ -42,7 +42,7 @@ public class ListedConnector implements Serializable, Cloneable, StructuredPojo 
     private String connectorId;
     /**
      * <p>
-     * The URL of the partner's AS2 endpoint.
+     * The URL of the partner's AS2 or SFTP endpoint.
      * </p>
      */
     private String url;
@@ -129,11 +129,11 @@ public class ListedConnector implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The URL of the partner's AS2 endpoint.
+     * The URL of the partner's AS2 or SFTP endpoint.
      * </p>
      * 
      * @param url
-     *        The URL of the partner's AS2 endpoint.
+     *        The URL of the partner's AS2 or SFTP endpoint.
      */
 
     public void setUrl(String url) {
@@ -142,10 +142,10 @@ public class ListedConnector implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The URL of the partner's AS2 endpoint.
+     * The URL of the partner's AS2 or SFTP endpoint.
      * </p>
      * 
-     * @return The URL of the partner's AS2 endpoint.
+     * @return The URL of the partner's AS2 or SFTP endpoint.
      */
 
     public String getUrl() {
@@ -154,11 +154,11 @@ public class ListedConnector implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The URL of the partner's AS2 endpoint.
+     * The URL of the partner's AS2 or SFTP endpoint.
      * </p>
      * 
      * @param url
-     *        The URL of the partner's AS2 endpoint.
+     *        The URL of the partner's AS2 or SFTP endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

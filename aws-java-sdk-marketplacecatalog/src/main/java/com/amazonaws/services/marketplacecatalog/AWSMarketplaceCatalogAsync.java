@@ -75,7 +75,7 @@ public interface AWSMarketplaceCatalogAsync extends AWSMarketplaceCatalog {
 
     /**
      * <p>
-     * Deletes a resource-based policy on an Entity that is identified by its resource ARN.
+     * Deletes a resource-based policy on an entity that is identified by its resource ARN.
      * </p>
      * 
      * @param deleteResourcePolicyRequest
@@ -88,7 +88,7 @@ public interface AWSMarketplaceCatalogAsync extends AWSMarketplaceCatalog {
 
     /**
      * <p>
-     * Deletes a resource-based policy on an Entity that is identified by its resource ARN.
+     * Deletes a resource-based policy on an entity that is identified by its resource ARN.
      * </p>
      * 
      * @param deleteResourcePolicyRequest
@@ -168,7 +168,7 @@ public interface AWSMarketplaceCatalogAsync extends AWSMarketplaceCatalog {
 
     /**
      * <p>
-     * Gets a resource-based policy of an Entity that is identified by its resource ARN.
+     * Gets a resource-based policy of an entity that is identified by its resource ARN.
      * </p>
      * 
      * @param getResourcePolicyRequest
@@ -181,7 +181,7 @@ public interface AWSMarketplaceCatalogAsync extends AWSMarketplaceCatalog {
 
     /**
      * <p>
-     * Gets a resource-based policy of an Entity that is identified by its resource ARN.
+     * Gets a resource-based policy of an entity that is identified by its resource ARN.
      * </p>
      * 
      * @param getResourcePolicyRequest
@@ -310,7 +310,7 @@ public interface AWSMarketplaceCatalogAsync extends AWSMarketplaceCatalog {
 
     /**
      * <p>
-     * Attaches a resource-based policy to an Entity. Examples of an entity include: <code>AmiProduct</code> and
+     * Attaches a resource-based policy to an entity. Examples of an entity include: <code>AmiProduct</code> and
      * <code>ContainerProduct</code>.
      * </p>
      * 
@@ -324,7 +324,7 @@ public interface AWSMarketplaceCatalogAsync extends AWSMarketplaceCatalog {
 
     /**
      * <p>
-     * Attaches a resource-based policy to an Entity. Examples of an entity include: <code>AmiProduct</code> and
+     * Attaches a resource-based policy to an entity. Examples of an entity include: <code>AmiProduct</code> and
      * <code>ContainerProduct</code>.
      * </p>
      * 
@@ -358,10 +358,10 @@ public interface AWSMarketplaceCatalogAsync extends AWSMarketplaceCatalog {
      * <p>
      * For more information about working with change sets, see <a href=
      * "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets">
-     * Working with change sets</a>. For information on change types for single-AMI products, see <a href=
+     * Working with change sets</a>. For information about change types for single-AMI products, see <a href=
      * "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products"
-     * >Working with single-AMI products</a>. Als, for more information on change types available for container-based
-     * products, see <a href=
+     * >Working with single-AMI products</a>. Also, for more information about change types available for
+     * container-based products, see <a href=
      * "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products"
      * >Working with container products</a>.
      * </p>
@@ -391,10 +391,10 @@ public interface AWSMarketplaceCatalogAsync extends AWSMarketplaceCatalog {
      * <p>
      * For more information about working with change sets, see <a href=
      * "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets">
-     * Working with change sets</a>. For information on change types for single-AMI products, see <a href=
+     * Working with change sets</a>. For information about change types for single-AMI products, see <a href=
      * "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products"
-     * >Working with single-AMI products</a>. Als, for more information on change types available for container-based
-     * products, see <a href=
+     * >Working with single-AMI products</a>. Also, for more information about change types available for
+     * container-based products, see <a href=
      * "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products"
      * >Working with container products</a>.
      * </p>

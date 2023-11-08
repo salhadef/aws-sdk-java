@@ -27,12 +27,6 @@ public class ListRunGroupsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The maximum number of run groups to return in one page of results.
-     * </p>
-     */
-    private Integer maxResults;
-    /**
-     * <p>
      * The run groups' name.
      * </p>
      */
@@ -43,46 +37,12 @@ public class ListRunGroupsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private String startingToken;
-
     /**
      * <p>
      * The maximum number of run groups to return in one page of results.
      * </p>
-     * 
-     * @param maxResults
-     *        The maximum number of run groups to return in one page of results.
      */
-
-    public void setMaxResults(Integer maxResults) {
-        this.maxResults = maxResults;
-    }
-
-    /**
-     * <p>
-     * The maximum number of run groups to return in one page of results.
-     * </p>
-     * 
-     * @return The maximum number of run groups to return in one page of results.
-     */
-
-    public Integer getMaxResults() {
-        return this.maxResults;
-    }
-
-    /**
-     * <p>
-     * The maximum number of run groups to return in one page of results.
-     * </p>
-     * 
-     * @param maxResults
-     *        The maximum number of run groups to return in one page of results.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListRunGroupsRequest withMaxResults(Integer maxResults) {
-        setMaxResults(maxResults);
-        return this;
-    }
+    private Integer maxResults;
 
     /**
      * <p>
@@ -165,6 +125,46 @@ public class ListRunGroupsRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The maximum number of run groups to return in one page of results.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of run groups to return in one page of results.
+     */
+
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of run groups to return in one page of results.
+     * </p>
+     * 
+     * @return The maximum number of run groups to return in one page of results.
+     */
+
+    public Integer getMaxResults() {
+        return this.maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of run groups to return in one page of results.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of run groups to return in one page of results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListRunGroupsRequest withMaxResults(Integer maxResults) {
+        setMaxResults(maxResults);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -176,12 +176,12 @@ public class ListRunGroupsRequest extends com.amazonaws.AmazonWebServiceRequest 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getStartingToken() != null)
-            sb.append("StartingToken: ").append(getStartingToken());
+            sb.append("StartingToken: ").append(getStartingToken()).append(",");
+        if (getMaxResults() != null)
+            sb.append("MaxResults: ").append(getMaxResults());
         sb.append("}");
         return sb.toString();
     }
@@ -196,10 +196,6 @@ public class ListRunGroupsRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (obj instanceof ListRunGroupsRequest == false)
             return false;
         ListRunGroupsRequest other = (ListRunGroupsRequest) obj;
-        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
-            return false;
-        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
-            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
@@ -207,6 +203,10 @@ public class ListRunGroupsRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (other.getStartingToken() == null ^ this.getStartingToken() == null)
             return false;
         if (other.getStartingToken() != null && other.getStartingToken().equals(this.getStartingToken()) == false)
+            return false;
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
+            return false;
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
         return true;
     }
@@ -216,9 +216,9 @@ public class ListRunGroupsRequest extends com.amazonaws.AmazonWebServiceRequest 
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getStartingToken() == null) ? 0 : getStartingToken().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         return hashCode;
     }
 

@@ -27,10 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UpdateAnnotationStoreRequestMarshaller {
 
-    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
 
     private static final UpdateAnnotationStoreRequestMarshaller instance = new UpdateAnnotationStoreRequestMarshaller();
 
@@ -48,8 +48,8 @@ public class UpdateAnnotationStoreRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(updateAnnotationStoreRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(updateAnnotationStoreRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(updateAnnotationStoreRequest.getDescription(), DESCRIPTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

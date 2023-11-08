@@ -108,7 +108,8 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The entity that creates and manages the required security groups for inter-app communication in
      * <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code>
-     * and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.
+     * and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided. If setting up
+     * the domain for use with RStudio, this value must be set to <code>Service</code>.
      * </p>
      */
     private String appSecurityGroupManagement;
@@ -754,14 +755,16 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The entity that creates and manages the required security groups for inter-app communication in
      * <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code>
-     * and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.
+     * and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided. If setting up
+     * the domain for use with RStudio, this value must be set to <code>Service</code>.
      * </p>
      * 
      * @param appSecurityGroupManagement
      *        The entity that creates and manages the required security groups for inter-app communication in
      *        <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is
      *        <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
-     *        is provided.
+     *        is provided. If setting up the domain for use with RStudio, this value must be set to <code>Service</code>
+     *        .
      * @see AppSecurityGroupManagement
      */
 
@@ -773,13 +776,15 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The entity that creates and manages the required security groups for inter-app communication in
      * <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code>
-     * and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.
+     * and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided. If setting up
+     * the domain for use with RStudio, this value must be set to <code>Service</code>.
      * </p>
      * 
      * @return The entity that creates and manages the required security groups for inter-app communication in
      *         <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is
      *         <code>VPCOnly</code> and
-     *         <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.
+     *         <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided. If setting
+     *         up the domain for use with RStudio, this value must be set to <code>Service</code>.
      * @see AppSecurityGroupManagement
      */
 
@@ -791,14 +796,16 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The entity that creates and manages the required security groups for inter-app communication in
      * <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code>
-     * and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.
+     * and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided. If setting up
+     * the domain for use with RStudio, this value must be set to <code>Service</code>.
      * </p>
      * 
      * @param appSecurityGroupManagement
      *        The entity that creates and manages the required security groups for inter-app communication in
      *        <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is
      *        <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
-     *        is provided.
+     *        is provided. If setting up the domain for use with RStudio, this value must be set to <code>Service</code>
+     *        .
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AppSecurityGroupManagement
      */
@@ -812,14 +819,16 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The entity that creates and manages the required security groups for inter-app communication in
      * <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code>
-     * and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.
+     * and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided. If setting up
+     * the domain for use with RStudio, this value must be set to <code>Service</code>.
      * </p>
      * 
      * @param appSecurityGroupManagement
      *        The entity that creates and manages the required security groups for inter-app communication in
      *        <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is
      *        <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
-     *        is provided.
+     *        is provided. If setting up the domain for use with RStudio, this value must be set to <code>Service</code>
+     *        .
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AppSecurityGroupManagement
      */

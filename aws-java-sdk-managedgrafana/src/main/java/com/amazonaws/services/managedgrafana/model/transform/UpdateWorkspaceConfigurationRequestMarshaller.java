@@ -29,6 +29,8 @@ public class UpdateWorkspaceConfigurationRequestMarshaller {
 
     private static final MarshallingInfo<String> CONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.JSON_VALUE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("configuration").build();
+    private static final MarshallingInfo<String> GRAFANAVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("grafanaVersion").build();
     private static final MarshallingInfo<String> WORKSPACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("workspaceId").build();
 
@@ -49,6 +51,7 @@ public class UpdateWorkspaceConfigurationRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(updateWorkspaceConfigurationRequest.getConfiguration(), CONFIGURATION_BINDING);
+            protocolMarshaller.marshall(updateWorkspaceConfigurationRequest.getGrafanaVersion(), GRAFANAVERSION_BINDING);
             protocolMarshaller.marshall(updateWorkspaceConfigurationRequest.getWorkspaceId(), WORKSPACEID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

@@ -27,7 +27,7 @@ public class CreateInferenceSchedulerRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the previously trained ML model being used to create the inference scheduler.
+     * The name of the previously trained machine learning model being used to create the inference scheduler.
      * </p>
      */
     private String modelName;
@@ -108,11 +108,11 @@ public class CreateInferenceSchedulerRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the previously trained ML model being used to create the inference scheduler.
+     * The name of the previously trained machine learning model being used to create the inference scheduler.
      * </p>
      * 
      * @param modelName
-     *        The name of the previously trained ML model being used to create the inference scheduler.
+     *        The name of the previously trained machine learning model being used to create the inference scheduler.
      */
 
     public void setModelName(String modelName) {
@@ -121,10 +121,10 @@ public class CreateInferenceSchedulerRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the previously trained ML model being used to create the inference scheduler.
+     * The name of the previously trained machine learning model being used to create the inference scheduler.
      * </p>
      * 
-     * @return The name of the previously trained ML model being used to create the inference scheduler.
+     * @return The name of the previously trained machine learning model being used to create the inference scheduler.
      */
 
     public String getModelName() {
@@ -133,11 +133,11 @@ public class CreateInferenceSchedulerRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the previously trained ML model being used to create the inference scheduler.
+     * The name of the previously trained machine learning model being used to create the inference scheduler.
      * </p>
      * 
      * @param modelName
-     *        The name of the previously trained ML model being used to create the inference scheduler.
+     *        The name of the previously trained machine learning model being used to create the inference scheduler.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

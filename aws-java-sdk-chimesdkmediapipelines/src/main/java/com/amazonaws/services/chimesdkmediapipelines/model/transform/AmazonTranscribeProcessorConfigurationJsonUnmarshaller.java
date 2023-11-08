@@ -96,6 +96,26 @@ public class AmazonTranscribeProcessorConfigurationJsonUnmarshaller implements U
                     context.nextToken();
                     amazonTranscribeProcessorConfiguration.setFilterPartialResults(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("IdentifyLanguage", targetDepth)) {
+                    context.nextToken();
+                    amazonTranscribeProcessorConfiguration.setIdentifyLanguage(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("LanguageOptions", targetDepth)) {
+                    context.nextToken();
+                    amazonTranscribeProcessorConfiguration.setLanguageOptions(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("PreferredLanguage", targetDepth)) {
+                    context.nextToken();
+                    amazonTranscribeProcessorConfiguration.setPreferredLanguage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("VocabularyNames", targetDepth)) {
+                    context.nextToken();
+                    amazonTranscribeProcessorConfiguration.setVocabularyNames(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("VocabularyFilterNames", targetDepth)) {
+                    context.nextToken();
+                    amazonTranscribeProcessorConfiguration.setVocabularyFilterNames(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

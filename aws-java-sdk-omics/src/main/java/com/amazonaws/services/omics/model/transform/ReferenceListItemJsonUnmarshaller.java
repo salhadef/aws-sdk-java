@@ -48,37 +48,37 @@ public class ReferenceListItemJsonUnmarshaller implements Unmarshaller<Reference
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("arn", targetDepth)) {
-                    context.nextToken();
-                    referenceListItem.setArn(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("creationTime", targetDepth)) {
-                    context.nextToken();
-                    referenceListItem.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
-                }
-                if (context.testExpression("description", targetDepth)) {
-                    context.nextToken();
-                    referenceListItem.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
                     referenceListItem.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("md5", targetDepth)) {
+                if (context.testExpression("arn", targetDepth)) {
                     context.nextToken();
-                    referenceListItem.setMd5(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("name", targetDepth)) {
-                    context.nextToken();
-                    referenceListItem.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                    referenceListItem.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("referenceStoreId", targetDepth)) {
                     context.nextToken();
                     referenceListItem.setReferenceStoreId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("md5", targetDepth)) {
+                    context.nextToken();
+                    referenceListItem.setMd5(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     referenceListItem.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("name", targetDepth)) {
+                    context.nextToken();
+                    referenceListItem.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("description", targetDepth)) {
+                    context.nextToken();
+                    referenceListItem.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("creationTime", targetDepth)) {
+                    context.nextToken();
+                    referenceListItem.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("updateTime", targetDepth)) {
                     context.nextToken();

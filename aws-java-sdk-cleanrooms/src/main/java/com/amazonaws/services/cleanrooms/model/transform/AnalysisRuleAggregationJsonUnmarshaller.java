@@ -64,6 +64,12 @@ public class AnalysisRuleAggregationJsonUnmarshaller implements Unmarshaller<Ana
                     context.nextToken();
                     analysisRuleAggregation.setJoinRequired(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("allowedJoinOperators", targetDepth)) {
+                    context.nextToken();
+                    analysisRuleAggregation.setAllowedJoinOperators(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("dimensionColumns", targetDepth)) {
                     context.nextToken();
                     analysisRuleAggregation.setDimensionColumns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))

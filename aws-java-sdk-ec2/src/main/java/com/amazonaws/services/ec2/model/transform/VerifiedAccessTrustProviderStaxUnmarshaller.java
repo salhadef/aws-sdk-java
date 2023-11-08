@@ -105,6 +105,10 @@ public class VerifiedAccessTrustProviderStaxUnmarshaller implements Unmarshaller
                     continue;
                 }
 
+                if (context.testExpression("sseSpecification", targetDepth)) {
+                    verifiedAccessTrustProvider.setSseSpecification(VerifiedAccessSseSpecificationResponseStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return verifiedAccessTrustProvider;

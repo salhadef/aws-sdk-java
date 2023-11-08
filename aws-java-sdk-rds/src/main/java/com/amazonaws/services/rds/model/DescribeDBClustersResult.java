@@ -28,7 +28,7 @@ public class DescribeDBClustersResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A pagination token that can be used in a later DescribeDBClusters request.
+     * A pagination token that can be used in a later <code>DescribeDBClusters</code> request.
      * </p>
      */
     private String marker;
@@ -41,11 +41,11 @@ public class DescribeDBClustersResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A pagination token that can be used in a later DescribeDBClusters request.
+     * A pagination token that can be used in a later <code>DescribeDBClusters</code> request.
      * </p>
      * 
      * @param marker
-     *        A pagination token that can be used in a later DescribeDBClusters request.
+     *        A pagination token that can be used in a later <code>DescribeDBClusters</code> request.
      */
 
     public void setMarker(String marker) {
@@ -54,10 +54,10 @@ public class DescribeDBClustersResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A pagination token that can be used in a later DescribeDBClusters request.
+     * A pagination token that can be used in a later <code>DescribeDBClusters</code> request.
      * </p>
      * 
-     * @return A pagination token that can be used in a later DescribeDBClusters request.
+     * @return A pagination token that can be used in a later <code>DescribeDBClusters</code> request.
      */
 
     public String getMarker() {
@@ -66,11 +66,11 @@ public class DescribeDBClustersResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A pagination token that can be used in a later DescribeDBClusters request.
+     * A pagination token that can be used in a later <code>DescribeDBClusters</code> request.
      * </p>
      * 
      * @param marker
-     *        A pagination token that can be used in a later DescribeDBClusters request.
+     *        A pagination token that can be used in a later <code>DescribeDBClusters</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

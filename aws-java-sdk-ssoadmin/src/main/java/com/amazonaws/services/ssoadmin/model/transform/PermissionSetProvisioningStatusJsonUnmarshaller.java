@@ -48,29 +48,29 @@ public class PermissionSetProvisioningStatusJsonUnmarshaller implements Unmarsha
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("Status", targetDepth)) {
-                    context.nextToken();
-                    permissionSetProvisioningStatus.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("RequestId", targetDepth)) {
-                    context.nextToken();
-                    permissionSetProvisioningStatus.setRequestId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("AccountId", targetDepth)) {
                     context.nextToken();
                     permissionSetProvisioningStatus.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("PermissionSetArn", targetDepth)) {
+                if (context.testExpression("CreatedDate", targetDepth)) {
                     context.nextToken();
-                    permissionSetProvisioningStatus.setPermissionSetArn(context.getUnmarshaller(String.class).unmarshall(context));
+                    permissionSetProvisioningStatus.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("FailureReason", targetDepth)) {
                     context.nextToken();
                     permissionSetProvisioningStatus.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("CreatedDate", targetDepth)) {
+                if (context.testExpression("PermissionSetArn", targetDepth)) {
                     context.nextToken();
-                    permissionSetProvisioningStatus.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    permissionSetProvisioningStatus.setPermissionSetArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("RequestId", targetDepth)) {
+                    context.nextToken();
+                    permissionSetProvisioningStatus.setRequestId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Status", targetDepth)) {
+                    context.nextToken();
+                    permissionSetProvisioningStatus.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

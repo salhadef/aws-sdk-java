@@ -38,6 +38,11 @@ public class AbstractAmazonIVS implements AmazonIVS {
     }
 
     @Override
+    public BatchStartViewerSessionRevocationResult batchStartViewerSessionRevocation(BatchStartViewerSessionRevocationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateChannelResult createChannel(CreateChannelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -144,6 +149,11 @@ public class AbstractAmazonIVS implements AmazonIVS {
 
     @Override
     public PutMetadataResult putMetadata(PutMetadataRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartViewerSessionRevocationResult startViewerSessionRevocation(StartViewerSessionRevocationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

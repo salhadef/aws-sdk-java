@@ -33,6 +33,10 @@ public class CostAllocationTagMarshaller {
             .marshallLocationName("Type").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Status").build();
+    private static final MarshallingInfo<String> LASTUPDATEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastUpdatedDate").build();
+    private static final MarshallingInfo<String> LASTUSEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastUsedDate").build();
 
     private static final CostAllocationTagMarshaller instance = new CostAllocationTagMarshaller();
 
@@ -53,6 +57,8 @@ public class CostAllocationTagMarshaller {
             protocolMarshaller.marshall(costAllocationTag.getTagKey(), TAGKEY_BINDING);
             protocolMarshaller.marshall(costAllocationTag.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(costAllocationTag.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(costAllocationTag.getLastUpdatedDate(), LASTUPDATEDDATE_BINDING);
+            protocolMarshaller.marshall(costAllocationTag.getLastUsedDate(), LASTUSEDDATE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

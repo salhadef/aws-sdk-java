@@ -50,9 +50,8 @@ public class ImageGenerationConfiguration implements Serializable, Cloneable, St
     /**
      * <p>
      * The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum
-     * value that can be provided is 33 ms, because a camera that generates content at 30 FPS would create a frame every
-     * 33.3 ms. If the timestamp range is less than the sampling interval, the Image from the
-     * <code>StartTimestamp</code> will be returned if available.
+     * value that can be provided is 200 ms. If the timestamp range is less than the sampling interval, the Image from
+     * the <code>StartTimestamp</code> will be returned if available.
      * </p>
      */
     private Integer samplingInterval;
@@ -255,16 +254,14 @@ public class ImageGenerationConfiguration implements Serializable, Cloneable, St
     /**
      * <p>
      * The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum
-     * value that can be provided is 33 ms, because a camera that generates content at 30 FPS would create a frame every
-     * 33.3 ms. If the timestamp range is less than the sampling interval, the Image from the
-     * <code>StartTimestamp</code> will be returned if available.
+     * value that can be provided is 200 ms. If the timestamp range is less than the sampling interval, the Image from
+     * the <code>StartTimestamp</code> will be returned if available.
      * </p>
      * 
      * @param samplingInterval
      *        The time interval in milliseconds (ms) at which the images need to be generated from the stream. The
-     *        minimum value that can be provided is 33 ms, because a camera that generates content at 30 FPS would
-     *        create a frame every 33.3 ms. If the timestamp range is less than the sampling interval, the Image from
-     *        the <code>StartTimestamp</code> will be returned if available.
+     *        minimum value that can be provided is 200 ms. If the timestamp range is less than the sampling interval,
+     *        the Image from the <code>StartTimestamp</code> will be returned if available.
      */
 
     public void setSamplingInterval(Integer samplingInterval) {
@@ -274,15 +271,13 @@ public class ImageGenerationConfiguration implements Serializable, Cloneable, St
     /**
      * <p>
      * The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum
-     * value that can be provided is 33 ms, because a camera that generates content at 30 FPS would create a frame every
-     * 33.3 ms. If the timestamp range is less than the sampling interval, the Image from the
-     * <code>StartTimestamp</code> will be returned if available.
+     * value that can be provided is 200 ms. If the timestamp range is less than the sampling interval, the Image from
+     * the <code>StartTimestamp</code> will be returned if available.
      * </p>
      * 
      * @return The time interval in milliseconds (ms) at which the images need to be generated from the stream. The
-     *         minimum value that can be provided is 33 ms, because a camera that generates content at 30 FPS would
-     *         create a frame every 33.3 ms. If the timestamp range is less than the sampling interval, the Image from
-     *         the <code>StartTimestamp</code> will be returned if available.
+     *         minimum value that can be provided is 200 ms. If the timestamp range is less than the sampling interval,
+     *         the Image from the <code>StartTimestamp</code> will be returned if available.
      */
 
     public Integer getSamplingInterval() {
@@ -292,16 +287,14 @@ public class ImageGenerationConfiguration implements Serializable, Cloneable, St
     /**
      * <p>
      * The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum
-     * value that can be provided is 33 ms, because a camera that generates content at 30 FPS would create a frame every
-     * 33.3 ms. If the timestamp range is less than the sampling interval, the Image from the
-     * <code>StartTimestamp</code> will be returned if available.
+     * value that can be provided is 200 ms. If the timestamp range is less than the sampling interval, the Image from
+     * the <code>StartTimestamp</code> will be returned if available.
      * </p>
      * 
      * @param samplingInterval
      *        The time interval in milliseconds (ms) at which the images need to be generated from the stream. The
-     *        minimum value that can be provided is 33 ms, because a camera that generates content at 30 FPS would
-     *        create a frame every 33.3 ms. If the timestamp range is less than the sampling interval, the Image from
-     *        the <code>StartTimestamp</code> will be returned if available.
+     *        minimum value that can be provided is 200 ms. If the timestamp range is less than the sampling interval,
+     *        the Image from the <code>StartTimestamp</code> will be returned if available.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

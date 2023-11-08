@@ -22,7 +22,8 @@ public enum ImportResourceType {
 
     Bot("Bot"),
     BotLocale("BotLocale"),
-    CustomVocabulary("CustomVocabulary");
+    CustomVocabulary("CustomVocabulary"),
+    TestSet("TestSet");
 
     private String value;
 

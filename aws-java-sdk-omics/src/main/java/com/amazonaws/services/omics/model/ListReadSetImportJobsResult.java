@@ -25,16 +25,56 @@ public class ListReadSetImportJobsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of jobs.
-     * </p>
-     */
-    private java.util.List<ImportReadSetJobItem> importJobs;
-    /**
-     * <p>
      * A pagination token that's included if more results are available.
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * A list of jobs.
+     * </p>
+     */
+    private java.util.List<ImportReadSetJobItem> importJobs;
+
+    /**
+     * <p>
+     * A pagination token that's included if more results are available.
+     * </p>
+     * 
+     * @param nextToken
+     *        A pagination token that's included if more results are available.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * A pagination token that's included if more results are available.
+     * </p>
+     * 
+     * @return A pagination token that's included if more results are available.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * A pagination token that's included if more results are available.
+     * </p>
+     * 
+     * @param nextToken
+     *        A pagination token that's included if more results are available.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListReadSetImportJobsResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
 
     /**
      * <p>
@@ -107,46 +147,6 @@ public class ListReadSetImportJobsResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * <p>
-     * A pagination token that's included if more results are available.
-     * </p>
-     * 
-     * @param nextToken
-     *        A pagination token that's included if more results are available.
-     */
-
-    public void setNextToken(String nextToken) {
-        this.nextToken = nextToken;
-    }
-
-    /**
-     * <p>
-     * A pagination token that's included if more results are available.
-     * </p>
-     * 
-     * @return A pagination token that's included if more results are available.
-     */
-
-    public String getNextToken() {
-        return this.nextToken;
-    }
-
-    /**
-     * <p>
-     * A pagination token that's included if more results are available.
-     * </p>
-     * 
-     * @param nextToken
-     *        A pagination token that's included if more results are available.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListReadSetImportJobsResult withNextToken(String nextToken) {
-        setNextToken(nextToken);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -158,10 +158,10 @@ public class ListReadSetImportJobsResult extends com.amazonaws.AmazonWebServiceR
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getImportJobs() != null)
-            sb.append("ImportJobs: ").append(getImportJobs()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getImportJobs() != null)
+            sb.append("ImportJobs: ").append(getImportJobs());
         sb.append("}");
         return sb.toString();
     }
@@ -176,13 +176,13 @@ public class ListReadSetImportJobsResult extends com.amazonaws.AmazonWebServiceR
         if (obj instanceof ListReadSetImportJobsResult == false)
             return false;
         ListReadSetImportJobsResult other = (ListReadSetImportJobsResult) obj;
-        if (other.getImportJobs() == null ^ this.getImportJobs() == null)
-            return false;
-        if (other.getImportJobs() != null && other.getImportJobs().equals(this.getImportJobs()) == false)
-            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getImportJobs() == null ^ this.getImportJobs() == null)
+            return false;
+        if (other.getImportJobs() != null && other.getImportJobs().equals(this.getImportJobs()) == false)
             return false;
         return true;
     }
@@ -192,8 +192,8 @@ public class ListReadSetImportJobsResult extends com.amazonaws.AmazonWebServiceR
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getImportJobs() == null) ? 0 : getImportJobs().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getImportJobs() == null) ? 0 : getImportJobs().hashCode());
         return hashCode;
     }
 

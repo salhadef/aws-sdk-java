@@ -29,10 +29,10 @@ public class DetachManagedPolicyFromPermissionSetRequestMarshaller {
 
     private static final MarshallingInfo<String> INSTANCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceArn").build();
-    private static final MarshallingInfo<String> PERMISSIONSETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PermissionSetArn").build();
     private static final MarshallingInfo<String> MANAGEDPOLICYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ManagedPolicyArn").build();
+    private static final MarshallingInfo<String> PERMISSIONSETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PermissionSetArn").build();
 
     private static final DetachManagedPolicyFromPermissionSetRequestMarshaller instance = new DetachManagedPolicyFromPermissionSetRequestMarshaller();
 
@@ -51,8 +51,8 @@ public class DetachManagedPolicyFromPermissionSetRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(detachManagedPolicyFromPermissionSetRequest.getInstanceArn(), INSTANCEARN_BINDING);
-            protocolMarshaller.marshall(detachManagedPolicyFromPermissionSetRequest.getPermissionSetArn(), PERMISSIONSETARN_BINDING);
             protocolMarshaller.marshall(detachManagedPolicyFromPermissionSetRequest.getManagedPolicyArn(), MANAGEDPOLICYARN_BINDING);
+            protocolMarshaller.marshall(detachManagedPolicyFromPermissionSetRequest.getPermissionSetArn(), PERMISSIONSETARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

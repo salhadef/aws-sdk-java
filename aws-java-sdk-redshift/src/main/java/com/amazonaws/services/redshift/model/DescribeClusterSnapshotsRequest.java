@@ -85,7 +85,7 @@ public class DescribeClusterSnapshotsRequest extends com.amazonaws.AmazonWebServ
      * Default: <code>100</code>
      * </p>
      * <p>
-     * Constraints: minimum 20, maximum 500.
+     * Constraints: minimum 20, maximum 100.
      * </p>
      */
     private Integer maxRecords;
@@ -483,7 +483,7 @@ public class DescribeClusterSnapshotsRequest extends com.amazonaws.AmazonWebServ
      * Default: <code>100</code>
      * </p>
      * <p>
-     * Constraints: minimum 20, maximum 500.
+     * Constraints: minimum 20, maximum 100.
      * </p>
      * 
      * @param maxRecords
@@ -495,7 +495,7 @@ public class DescribeClusterSnapshotsRequest extends com.amazonaws.AmazonWebServ
      *        Default: <code>100</code>
      *        </p>
      *        <p>
-     *        Constraints: minimum 20, maximum 500.
+     *        Constraints: minimum 20, maximum 100.
      */
 
     public void setMaxRecords(Integer maxRecords) {
@@ -512,7 +512,7 @@ public class DescribeClusterSnapshotsRequest extends com.amazonaws.AmazonWebServ
      * Default: <code>100</code>
      * </p>
      * <p>
-     * Constraints: minimum 20, maximum 500.
+     * Constraints: minimum 20, maximum 100.
      * </p>
      * 
      * @return The maximum number of response records to return in each call. If the number of remaining response
@@ -523,7 +523,7 @@ public class DescribeClusterSnapshotsRequest extends com.amazonaws.AmazonWebServ
      *         Default: <code>100</code>
      *         </p>
      *         <p>
-     *         Constraints: minimum 20, maximum 500.
+     *         Constraints: minimum 20, maximum 100.
      */
 
     public Integer getMaxRecords() {
@@ -540,7 +540,7 @@ public class DescribeClusterSnapshotsRequest extends com.amazonaws.AmazonWebServ
      * Default: <code>100</code>
      * </p>
      * <p>
-     * Constraints: minimum 20, maximum 500.
+     * Constraints: minimum 20, maximum 100.
      * </p>
      * 
      * @param maxRecords
@@ -552,7 +552,7 @@ public class DescribeClusterSnapshotsRequest extends com.amazonaws.AmazonWebServ
      *        Default: <code>100</code>
      *        </p>
      *        <p>
-     *        Constraints: minimum 20, maximum 500.
+     *        Constraints: minimum 20, maximum 100.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

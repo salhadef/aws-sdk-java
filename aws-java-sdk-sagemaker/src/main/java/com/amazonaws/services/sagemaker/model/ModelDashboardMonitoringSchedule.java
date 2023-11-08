@@ -87,6 +87,8 @@ public class ModelDashboardMonitoringSchedule implements Serializable, Cloneable
 
     private MonitoringExecutionSummary lastMonitoringExecutionSummary;
 
+    private BatchTransformInput batchTransformInput;
+
     /**
      * <p>
      * The Amazon Resource Name (ARN) of a monitoring schedule.
@@ -568,6 +570,32 @@ public class ModelDashboardMonitoringSchedule implements Serializable, Cloneable
     }
 
     /**
+     * @param batchTransformInput
+     */
+
+    public void setBatchTransformInput(BatchTransformInput batchTransformInput) {
+        this.batchTransformInput = batchTransformInput;
+    }
+
+    /**
+     * @return
+     */
+
+    public BatchTransformInput getBatchTransformInput() {
+        return this.batchTransformInput;
+    }
+
+    /**
+     * @param batchTransformInput
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModelDashboardMonitoringSchedule withBatchTransformInput(BatchTransformInput batchTransformInput) {
+        setBatchTransformInput(batchTransformInput);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -600,7 +628,9 @@ public class ModelDashboardMonitoringSchedule implements Serializable, Cloneable
         if (getMonitoringAlertSummaries() != null)
             sb.append("MonitoringAlertSummaries: ").append(getMonitoringAlertSummaries()).append(",");
         if (getLastMonitoringExecutionSummary() != null)
-            sb.append("LastMonitoringExecutionSummary: ").append(getLastMonitoringExecutionSummary());
+            sb.append("LastMonitoringExecutionSummary: ").append(getLastMonitoringExecutionSummary()).append(",");
+        if (getBatchTransformInput() != null)
+            sb.append("BatchTransformInput: ").append(getBatchTransformInput());
         sb.append("}");
         return sb.toString();
     }
@@ -660,6 +690,10 @@ public class ModelDashboardMonitoringSchedule implements Serializable, Cloneable
         if (other.getLastMonitoringExecutionSummary() != null
                 && other.getLastMonitoringExecutionSummary().equals(this.getLastMonitoringExecutionSummary()) == false)
             return false;
+        if (other.getBatchTransformInput() == null ^ this.getBatchTransformInput() == null)
+            return false;
+        if (other.getBatchTransformInput() != null && other.getBatchTransformInput().equals(this.getBatchTransformInput()) == false)
+            return false;
         return true;
     }
 
@@ -679,6 +713,7 @@ public class ModelDashboardMonitoringSchedule implements Serializable, Cloneable
         hashCode = prime * hashCode + ((getEndpointName() == null) ? 0 : getEndpointName().hashCode());
         hashCode = prime * hashCode + ((getMonitoringAlertSummaries() == null) ? 0 : getMonitoringAlertSummaries().hashCode());
         hashCode = prime * hashCode + ((getLastMonitoringExecutionSummary() == null) ? 0 : getLastMonitoringExecutionSummary().hashCode());
+        hashCode = prime * hashCode + ((getBatchTransformInput() == null) ? 0 : getBatchTransformInput().hashCode());
         return hashCode;
     }
 

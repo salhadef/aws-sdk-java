@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class StartNetworkResourceUpdateRequestMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> COMMITMENTCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("commitmentConfiguration").build();
     private static final MarshallingInfo<String> NETWORKRESOURCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("networkResourceArn").build();
     private static final MarshallingInfo<String> RETURNREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -52,6 +54,7 @@ public class StartNetworkResourceUpdateRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(startNetworkResourceUpdateRequest.getCommitmentConfiguration(), COMMITMENTCONFIGURATION_BINDING);
             protocolMarshaller.marshall(startNetworkResourceUpdateRequest.getNetworkResourceArn(), NETWORKRESOURCEARN_BINDING);
             protocolMarshaller.marshall(startNetworkResourceUpdateRequest.getReturnReason(), RETURNREASON_BINDING);
             protocolMarshaller.marshall(startNetworkResourceUpdateRequest.getShippingAddress(), SHIPPINGADDRESS_BINDING);

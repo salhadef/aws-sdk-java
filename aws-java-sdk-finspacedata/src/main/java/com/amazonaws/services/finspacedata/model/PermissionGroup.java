@@ -112,17 +112,17 @@ public class PermissionGroup implements Serializable, Cloneable, StructuredPojo 
     private Long lastModifiedTime;
     /**
      * <p>
-     * Indicates the status of the user account within a permission group.
+     * Indicates the status of the user within a permission group.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.
+     * <code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the permission group.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.
+     * <code>ADDITION_SUCCESS</code> – The user is successfully added to the permission group.
      * </p>
      * </li>
      * <li>
@@ -895,17 +895,17 @@ public class PermissionGroup implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Indicates the status of the user account within a permission group.
+     * Indicates the status of the user within a permission group.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.
+     * <code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the permission group.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.
+     * <code>ADDITION_SUCCESS</code> – The user is successfully added to the permission group.
      * </p>
      * </li>
      * <li>
@@ -916,16 +916,16 @@ public class PermissionGroup implements Serializable, Cloneable, StructuredPojo 
      * </ul>
      * 
      * @param membershipStatus
-     *        Indicates the status of the user account within a permission group.</p>
+     *        Indicates the status of the user within a permission group.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.
+     *        <code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the permission group.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.
+     *        <code>ADDITION_SUCCESS</code> – The user is successfully added to the permission group.
      *        </p>
      *        </li>
      *        <li>
@@ -942,17 +942,17 @@ public class PermissionGroup implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Indicates the status of the user account within a permission group.
+     * Indicates the status of the user within a permission group.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.
+     * <code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the permission group.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.
+     * <code>ADDITION_SUCCESS</code> – The user is successfully added to the permission group.
      * </p>
      * </li>
      * <li>
@@ -962,16 +962,16 @@ public class PermissionGroup implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * </ul>
      * 
-     * @return Indicates the status of the user account within a permission group.</p>
+     * @return Indicates the status of the user within a permission group.</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.
+     *         <code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the permission group.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.
+     *         <code>ADDITION_SUCCESS</code> – The user is successfully added to the permission group.
      *         </p>
      *         </li>
      *         <li>
@@ -988,17 +988,17 @@ public class PermissionGroup implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Indicates the status of the user account within a permission group.
+     * Indicates the status of the user within a permission group.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.
+     * <code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the permission group.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.
+     * <code>ADDITION_SUCCESS</code> – The user is successfully added to the permission group.
      * </p>
      * </li>
      * <li>
@@ -1009,16 +1009,16 @@ public class PermissionGroup implements Serializable, Cloneable, StructuredPojo 
      * </ul>
      * 
      * @param membershipStatus
-     *        Indicates the status of the user account within a permission group.</p>
+     *        Indicates the status of the user within a permission group.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.
+     *        <code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the permission group.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.
+     *        <code>ADDITION_SUCCESS</code> – The user is successfully added to the permission group.
      *        </p>
      *        </li>
      *        <li>
@@ -1037,17 +1037,17 @@ public class PermissionGroup implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Indicates the status of the user account within a permission group.
+     * Indicates the status of the user within a permission group.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.
+     * <code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the permission group.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.
+     * <code>ADDITION_SUCCESS</code> – The user is successfully added to the permission group.
      * </p>
      * </li>
      * <li>
@@ -1058,16 +1058,16 @@ public class PermissionGroup implements Serializable, Cloneable, StructuredPojo 
      * </ul>
      * 
      * @param membershipStatus
-     *        Indicates the status of the user account within a permission group.</p>
+     *        Indicates the status of the user within a permission group.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.
+     *        <code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the permission group.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.
+     *        <code>ADDITION_SUCCESS</code> – The user is successfully added to the permission group.
      *        </p>
      *        </li>
      *        <li>

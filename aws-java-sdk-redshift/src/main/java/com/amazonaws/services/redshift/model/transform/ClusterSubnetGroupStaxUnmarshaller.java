@@ -85,6 +85,16 @@ public class ClusterSubnetGroupStaxUnmarshaller implements Unmarshaller<ClusterS
                     continue;
                 }
 
+                if (context.testExpression("SupportedClusterIpAddressTypes", targetDepth)) {
+                    clusterSubnetGroup.withSupportedClusterIpAddressTypes(new ArrayList<String>());
+                    continue;
+                }
+
+                if (context.testExpression("SupportedClusterIpAddressTypes/item", targetDepth)) {
+                    clusterSubnetGroup.withSupportedClusterIpAddressTypes(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return clusterSubnetGroup;

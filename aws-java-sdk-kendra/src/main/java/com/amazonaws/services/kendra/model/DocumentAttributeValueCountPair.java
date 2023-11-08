@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides the count of documents that match a particular attribute when doing a faceted search.
+ * Provides the count of documents that match a particular document attribute or field when doing a faceted search.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DocumentAttributeValueCountPair"
@@ -30,20 +30,20 @@ public class DocumentAttributeValueCountPair implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The value of the attribute. For example, "HR".
+     * The value of the attribute/field. For example, "HR".
      * </p>
      */
     private DocumentAttributeValue documentAttributeValue;
     /**
      * <p>
-     * The number of documents in the response that have the attribute value for the key.
+     * The number of documents in the response that have the attribute/field value for the key.
      * </p>
      */
     private Integer count;
     /**
      * <p>
-     * Contains the results of a document attribute that is a nested facet. A <code>FacetResult</code> contains the
-     * counts for each facet nested within a facet.
+     * Contains the results of a document attribute/field that is a nested facet. A <code>FacetResult</code> contains
+     * the counts for each facet nested within a facet.
      * </p>
      * <p>
      * For example, the document attribute or facet "Department" includes a value called "Engineering". In addition, the
@@ -59,11 +59,11 @@ public class DocumentAttributeValueCountPair implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The value of the attribute. For example, "HR".
+     * The value of the attribute/field. For example, "HR".
      * </p>
      * 
      * @param documentAttributeValue
-     *        The value of the attribute. For example, "HR".
+     *        The value of the attribute/field. For example, "HR".
      */
 
     public void setDocumentAttributeValue(DocumentAttributeValue documentAttributeValue) {
@@ -72,10 +72,10 @@ public class DocumentAttributeValueCountPair implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The value of the attribute. For example, "HR".
+     * The value of the attribute/field. For example, "HR".
      * </p>
      * 
-     * @return The value of the attribute. For example, "HR".
+     * @return The value of the attribute/field. For example, "HR".
      */
 
     public DocumentAttributeValue getDocumentAttributeValue() {
@@ -84,11 +84,11 @@ public class DocumentAttributeValueCountPair implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The value of the attribute. For example, "HR".
+     * The value of the attribute/field. For example, "HR".
      * </p>
      * 
      * @param documentAttributeValue
-     *        The value of the attribute. For example, "HR".
+     *        The value of the attribute/field. For example, "HR".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,11 +99,11 @@ public class DocumentAttributeValueCountPair implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The number of documents in the response that have the attribute value for the key.
+     * The number of documents in the response that have the attribute/field value for the key.
      * </p>
      * 
      * @param count
-     *        The number of documents in the response that have the attribute value for the key.
+     *        The number of documents in the response that have the attribute/field value for the key.
      */
 
     public void setCount(Integer count) {
@@ -112,10 +112,10 @@ public class DocumentAttributeValueCountPair implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The number of documents in the response that have the attribute value for the key.
+     * The number of documents in the response that have the attribute/field value for the key.
      * </p>
      * 
-     * @return The number of documents in the response that have the attribute value for the key.
+     * @return The number of documents in the response that have the attribute/field value for the key.
      */
 
     public Integer getCount() {
@@ -124,11 +124,11 @@ public class DocumentAttributeValueCountPair implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The number of documents in the response that have the attribute value for the key.
+     * The number of documents in the response that have the attribute/field value for the key.
      * </p>
      * 
      * @param count
-     *        The number of documents in the response that have the attribute value for the key.
+     *        The number of documents in the response that have the attribute/field value for the key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -139,8 +139,8 @@ public class DocumentAttributeValueCountPair implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Contains the results of a document attribute that is a nested facet. A <code>FacetResult</code> contains the
-     * counts for each facet nested within a facet.
+     * Contains the results of a document attribute/field that is a nested facet. A <code>FacetResult</code> contains
+     * the counts for each facet nested within a facet.
      * </p>
      * <p>
      * For example, the document attribute or facet "Department" includes a value called "Engineering". In addition, the
@@ -152,8 +152,8 @@ public class DocumentAttributeValueCountPair implements Serializable, Cloneable,
      * <p/>
      * <p/>
      * 
-     * @return Contains the results of a document attribute that is a nested facet. A <code>FacetResult</code> contains
-     *         the counts for each facet nested within a facet.
+     * @return Contains the results of a document attribute/field that is a nested facet. A <code>FacetResult</code>
+     *         contains the counts for each facet nested within a facet.
      *         </p>
      *         <p>
      *         For example, the document attribute or facet "Department" includes a value called "Engineering". In
@@ -172,8 +172,8 @@ public class DocumentAttributeValueCountPair implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Contains the results of a document attribute that is a nested facet. A <code>FacetResult</code> contains the
-     * counts for each facet nested within a facet.
+     * Contains the results of a document attribute/field that is a nested facet. A <code>FacetResult</code> contains
+     * the counts for each facet nested within a facet.
      * </p>
      * <p>
      * For example, the document attribute or facet "Department" includes a value called "Engineering". In addition, the
@@ -186,8 +186,8 @@ public class DocumentAttributeValueCountPair implements Serializable, Cloneable,
      * <p/>
      * 
      * @param facetResults
-     *        Contains the results of a document attribute that is a nested facet. A <code>FacetResult</code> contains
-     *        the counts for each facet nested within a facet.
+     *        Contains the results of a document attribute/field that is a nested facet. A <code>FacetResult</code>
+     *        contains the counts for each facet nested within a facet.
      *        </p>
      *        <p>
      *        For example, the document attribute or facet "Department" includes a value called "Engineering". In
@@ -210,8 +210,8 @@ public class DocumentAttributeValueCountPair implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Contains the results of a document attribute that is a nested facet. A <code>FacetResult</code> contains the
-     * counts for each facet nested within a facet.
+     * Contains the results of a document attribute/field that is a nested facet. A <code>FacetResult</code> contains
+     * the counts for each facet nested within a facet.
      * </p>
      * <p>
      * For example, the document attribute or facet "Department" includes a value called "Engineering". In addition, the
@@ -229,8 +229,8 @@ public class DocumentAttributeValueCountPair implements Serializable, Cloneable,
      * </p>
      * 
      * @param facetResults
-     *        Contains the results of a document attribute that is a nested facet. A <code>FacetResult</code> contains
-     *        the counts for each facet nested within a facet.</p>
+     *        Contains the results of a document attribute/field that is a nested facet. A <code>FacetResult</code>
+     *        contains the counts for each facet nested within a facet.</p>
      *        <p>
      *        For example, the document attribute or facet "Department" includes a value called "Engineering". In
      *        addition, the document attribute or facet "SubDepartment" includes the values "Frontend" and "Backend" for
@@ -254,8 +254,8 @@ public class DocumentAttributeValueCountPair implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Contains the results of a document attribute that is a nested facet. A <code>FacetResult</code> contains the
-     * counts for each facet nested within a facet.
+     * Contains the results of a document attribute/field that is a nested facet. A <code>FacetResult</code> contains
+     * the counts for each facet nested within a facet.
      * </p>
      * <p>
      * For example, the document attribute or facet "Department" includes a value called "Engineering". In addition, the
@@ -268,8 +268,8 @@ public class DocumentAttributeValueCountPair implements Serializable, Cloneable,
      * <p/>
      * 
      * @param facetResults
-     *        Contains the results of a document attribute that is a nested facet. A <code>FacetResult</code> contains
-     *        the counts for each facet nested within a facet.
+     *        Contains the results of a document attribute/field that is a nested facet. A <code>FacetResult</code>
+     *        contains the counts for each facet nested within a facet.
      *        </p>
      *        <p>
      *        For example, the document attribute or facet "Department" includes a value called "Engineering". In

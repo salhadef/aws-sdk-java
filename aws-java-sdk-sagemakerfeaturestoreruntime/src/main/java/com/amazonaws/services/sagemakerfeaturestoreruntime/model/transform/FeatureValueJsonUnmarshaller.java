@@ -56,6 +56,12 @@ public class FeatureValueJsonUnmarshaller implements Unmarshaller<FeatureValue, 
                     context.nextToken();
                     featureValue.setValueAsString(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ValueAsStringList", targetDepth)) {
+                    context.nextToken();
+                    featureValue.setValueAsStringList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -64,6 +64,10 @@ public class RecordingConfigurationJsonUnmarshaller implements Unmarshaller<Reco
                     context.nextToken();
                     recordingConfiguration.setRecordingReconnectWindowSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("renditionConfiguration", targetDepth)) {
+                    context.nextToken();
+                    recordingConfiguration.setRenditionConfiguration(RenditionConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("state", targetDepth)) {
                     context.nextToken();
                     recordingConfiguration.setState(context.getUnmarshaller(String.class).unmarshall(context));

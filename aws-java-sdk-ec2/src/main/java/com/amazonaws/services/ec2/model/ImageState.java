@@ -26,7 +26,8 @@ public enum ImageState {
     Deregistered("deregistered"),
     Transient("transient"),
     Failed("failed"),
-    Error("error");
+    Error("error"),
+    Disabled("disabled");
 
     private String value;
 

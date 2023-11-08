@@ -224,9 +224,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * For a list of valid engine versions, see <a
      * href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine Releases for Amazon
-     * Neptune</a>, or call <a
-     * href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions"
-     * >DescribeDBEngineVersions</a>.
+     * Neptune</a>, or call <a>DescribeDBEngineVersions</a>.
      * </p>
      */
     private String engineVersion;
@@ -284,7 +282,16 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private Boolean copyTagsToSnapshot;
-
+    /**
+     * <p>
+     * Contains the scaling configuration of a Neptune Serverless DB cluster.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune
+     * Serverless</a> in the <i>Amazon Neptune User Guide</i>.
+     * </p>
+     */
     private ServerlessV2ScalingConfiguration serverlessV2ScalingConfiguration;
 
     /**
@@ -1548,9 +1555,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * For a list of valid engine versions, see <a
      * href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine Releases for Amazon
-     * Neptune</a>, or call <a
-     * href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions"
-     * >DescribeDBEngineVersions</a>.
+     * Neptune</a>, or call <a>DescribeDBEngineVersions</a>.
      * </p>
      * 
      * @param engineVersion
@@ -1560,9 +1565,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        For a list of valid engine versions, see <a
      *        href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine Releases for
-     *        Amazon Neptune</a>, or call <a
-     *        href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions"
-     *        >DescribeDBEngineVersions</a>.
+     *        Amazon Neptune</a>, or call <a>DescribeDBEngineVersions</a>.
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -1578,9 +1581,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * For a list of valid engine versions, see <a
      * href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine Releases for Amazon
-     * Neptune</a>, or call <a
-     * href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions"
-     * >DescribeDBEngineVersions</a>.
+     * Neptune</a>, or call <a>DescribeDBEngineVersions</a>.
      * </p>
      * 
      * @return The version number of the database engine to which you want to upgrade. Changing this parameter results
@@ -1589,9 +1590,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         <p>
      *         For a list of valid engine versions, see <a
      *         href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine Releases for
-     *         Amazon Neptune</a>, or call <a href=
-     *         "https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions"
-     *         >DescribeDBEngineVersions</a>.
+     *         Amazon Neptune</a>, or call <a>DescribeDBEngineVersions</a>.
      */
 
     public String getEngineVersion() {
@@ -1607,9 +1606,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * For a list of valid engine versions, see <a
      * href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine Releases for Amazon
-     * Neptune</a>, or call <a
-     * href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions"
-     * >DescribeDBEngineVersions</a>.
+     * Neptune</a>, or call <a>DescribeDBEngineVersions</a>.
      * </p>
      * 
      * @param engineVersion
@@ -1619,9 +1616,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        For a list of valid engine versions, see <a
      *        href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine Releases for
-     *        Amazon Neptune</a>, or call <a
-     *        href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions"
-     *        >DescribeDBEngineVersions</a>.
+     *        Amazon Neptune</a>, or call <a>DescribeDBEngineVersions</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2011,7 +2006,21 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * Contains the scaling configuration of a Neptune Serverless DB cluster.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune
+     * Serverless</a> in the <i>Amazon Neptune User Guide</i>.
+     * </p>
+     * 
      * @param serverlessV2ScalingConfiguration
+     *        Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon
+     *        Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.
      */
 
     public void setServerlessV2ScalingConfiguration(ServerlessV2ScalingConfiguration serverlessV2ScalingConfiguration) {
@@ -2019,7 +2028,20 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * @return
+     * <p>
+     * Contains the scaling configuration of a Neptune Serverless DB cluster.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune
+     * Serverless</a> in the <i>Amazon Neptune User Guide</i>.
+     * </p>
+     * 
+     * @return Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon
+     *         Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.
      */
 
     public ServerlessV2ScalingConfiguration getServerlessV2ScalingConfiguration() {
@@ -2027,7 +2049,21 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * Contains the scaling configuration of a Neptune Serverless DB cluster.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune
+     * Serverless</a> in the <i>Amazon Neptune User Guide</i>.
+     * </p>
+     * 
      * @param serverlessV2ScalingConfiguration
+     *        Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon
+     *        Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

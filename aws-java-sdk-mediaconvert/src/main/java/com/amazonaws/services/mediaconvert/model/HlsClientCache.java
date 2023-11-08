@@ -16,8 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the default
- * value Enabled (ENABLED) and control caching in your video distribution set up. For example, use the Cache-Control
- * http header.
+ * value Enabled and control caching in your video distribution set up. For example, use the Cache-Control http header.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum HlsClientCache {

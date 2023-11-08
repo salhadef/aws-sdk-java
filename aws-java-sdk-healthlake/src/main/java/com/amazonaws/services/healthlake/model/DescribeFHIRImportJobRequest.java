@@ -27,7 +27,7 @@ public class DescribeFHIRImportJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The AWS-generated ID of the Data Store.
+     * The AWS-generated ID of the data store.
      * </p>
      */
     private String datastoreId;
@@ -40,11 +40,11 @@ public class DescribeFHIRImportJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The AWS-generated ID of the Data Store.
+     * The AWS-generated ID of the data store.
      * </p>
      * 
      * @param datastoreId
-     *        The AWS-generated ID of the Data Store.
+     *        The AWS-generated ID of the data store.
      */
 
     public void setDatastoreId(String datastoreId) {
@@ -53,10 +53,10 @@ public class DescribeFHIRImportJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The AWS-generated ID of the Data Store.
+     * The AWS-generated ID of the data store.
      * </p>
      * 
-     * @return The AWS-generated ID of the Data Store.
+     * @return The AWS-generated ID of the data store.
      */
 
     public String getDatastoreId() {
@@ -65,11 +65,11 @@ public class DescribeFHIRImportJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The AWS-generated ID of the Data Store.
+     * The AWS-generated ID of the data store.
      * </p>
      * 
      * @param datastoreId
-     *        The AWS-generated ID of the Data Store.
+     *        The AWS-generated ID of the data store.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

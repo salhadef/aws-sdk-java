@@ -159,6 +159,41 @@ public interface AmazonKinesisVideo {
 
     /**
      * <p>
+     * An asynchronous API that deletes a stream’s existing edge configuration, as well as the corresponding media from
+     * the Edge Agent.
+     * </p>
+     * <p>
+     * When you invoke this API, the sync status is set to <code>DELETING</code>. A deletion process starts, in which
+     * active edge jobs are stopped and all media is deleted from the edge device. The time to delete varies, depending
+     * on the total amount of stored media. If the deletion process fails, the sync status changes to
+     * <code>DELETE_FAILED</code>. You will need to re-try the deletion.
+     * </p>
+     * <p>
+     * When the deletion process has completed successfully, the edge configuration is no longer accessible.
+     * </p>
+     * 
+     * @param deleteEdgeConfigurationRequest
+     * @return Result of the DeleteEdgeConfiguration operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have required permissions to perform this operation.
+     * @throws ClientLimitExceededException
+     *         Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client
+     *         calls. Try making the call later.
+     * @throws InvalidArgumentException
+     *         The value for this input parameter is invalid.
+     * @throws ResourceNotFoundException
+     *         Amazon Kinesis Video Streams can't find the stream that you specified.
+     * @throws StreamEdgeConfigurationNotFoundException
+     *         The Exception rendered when the Amazon Kinesis Video Stream can't find a stream's edge configuration that
+     *         you specified.
+     * @sample AmazonKinesisVideo.DeleteEdgeConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DeleteEdgeConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteEdgeConfigurationResult deleteEdgeConfiguration(DeleteEdgeConfigurationRequest deleteEdgeConfigurationRequest);
+
+    /**
+     * <p>
      * Deletes a specified signaling channel. <code>DeleteSignalingChannel</code> is an asynchronous operation. If you
      * don't specify the channel's current version, the most recent version is deleted.
      * </p>
@@ -275,8 +310,10 @@ public interface AmazonKinesisVideo {
 
     /**
      * <p>
-     * Describes a stream’s edge configuration that was set using the <code>StartEdgeConfigurationUpdate</code> API. Use
-     * this API to get the status of the configuration if the configuration is in sync with the Edge Agent.
+     * Describes a stream’s edge configuration that was set using the <code>StartEdgeConfigurationUpdate</code> API and
+     * the latest status of the edge agent's recorder and uploader jobs. Use this API to get the status of the
+     * configuration to determine if the configuration is in sync with the Edge Agent. Use this API to evaluate the
+     * health of the Edge Agent.
      * </p>
      * 
      * @param describeEdgeConfigurationRequest
@@ -325,10 +362,6 @@ public interface AmazonKinesisVideo {
 
     /**
      * <p>
-     * Returns the most current information about the stream. Either streamName or streamARN should be provided in the
-     * input.
-     * </p>
-     * <p>
      * Returns the most current information about the stream. The <code>streamName</code> or <code>streamARN</code>
      * should be provided in the input.
      * </p>
@@ -352,6 +385,13 @@ public interface AmazonKinesisVideo {
             DescribeMappedResourceConfigurationRequest describeMappedResourceConfigurationRequest);
 
     /**
+     * <important>
+     * <p>
+     * This API is related to <a
+     * href="https://docs.aws.amazon.com/kinesisvideostreams-webrtc-dg/latest/devguide/webrtc-ingestion.html">WebRTC
+     * Ingestion</a> and is only available in the <code>us-west-2</code> region.
+     * </p>
+     * </important>
      * <p>
      * Returns the most current information about the channel. Specify the <code>ChannelName</code> or
      * <code>ChannelARN</code> in the input.
@@ -536,6 +576,29 @@ public interface AmazonKinesisVideo {
 
     /**
      * <p>
+     * Returns an array of edge configurations associated with the specified Edge Agent.
+     * </p>
+     * <p>
+     * In the request, you must specify the Edge Agent <code>HubDeviceArn</code>.
+     * </p>
+     * 
+     * @param listEdgeAgentConfigurationsRequest
+     * @return Result of the ListEdgeAgentConfigurations operation returned by the service.
+     * @throws NotAuthorizedException
+     *         The caller is not authorized to perform this operation.
+     * @throws ClientLimitExceededException
+     *         Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client
+     *         calls. Try making the call later.
+     * @throws InvalidArgumentException
+     *         The value for this input parameter is invalid.
+     * @sample AmazonKinesisVideo.ListEdgeAgentConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/ListEdgeAgentConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListEdgeAgentConfigurationsResult listEdgeAgentConfigurations(ListEdgeAgentConfigurationsRequest listEdgeAgentConfigurationsRequest);
+
+    /**
+     * <p>
      * Returns an array of <code>ChannelInfo</code> objects. Each object describes a signaling channel. To retrieve only
      * those channels that satisfy a specific condition, you can specify a <code>ChannelNameCondition</code>.
      * </p>
@@ -638,6 +701,10 @@ public interface AmazonKinesisVideo {
      * during the syncing process, a <code>ResourceInUseException</code> will be thrown. The connectivity of the
      * stream’s edge configuration and the Edge Agent will be retried for 15 minutes. After 15 minutes, the status will
      * transition into the <code>SYNC_FAILED</code> state.
+     * </p>
+     * <p>
+     * To move an edge configuration from one device to another, use <a>DeleteEdgeConfiguration</a> to delete the
+     * current edge configuration. You can then invoke StartEdgeConfigurationUpdate with an updated Hub Device ARN.
      * </p>
      * 
      * @param startEdgeConfigurationUpdateRequest
@@ -933,6 +1000,13 @@ public interface AmazonKinesisVideo {
             UpdateImageGenerationConfigurationRequest updateImageGenerationConfigurationRequest);
 
     /**
+     * <important>
+     * <p>
+     * This API is related to <a
+     * href="https://docs.aws.amazon.com/kinesisvideostreams-webrtc-dg/latest/devguide/webrtc-ingestion.html">WebRTC
+     * Ingestion</a> and is only available in the <code>us-west-2</code> region.
+     * </p>
+     * </important>
      * <p>
      * Associates a <code>SignalingChannel</code> to a stream to store the media. There are two signaling modes that can
      * specified :
@@ -950,6 +1024,13 @@ public interface AmazonKinesisVideo {
      * </p>
      * </li>
      * </ul>
+     * <important>
+     * <p>
+     * If <code>StorageStatus</code> is enabled, direct peer-to-peer (master-viewer) connections no longer occur. Peers
+     * connect directly to the storage session. You must call the <code>JoinStorageSession</code> API to trigger an SDP
+     * offer send and establish a connection between a peer and the storage session.
+     * </p>
+     * </important>
      * 
      * @param updateMediaStorageConfigurationRequest
      * @return Result of the UpdateMediaStorageConfiguration operation returned by the service.

@@ -125,6 +125,12 @@ public class CreateResourceShareRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private java.util.List<String> permissionArns;
+    /**
+     * <p>
+     * Specifies from which source accounts the service principal has access to the resources in this resource share.
+     * </p>
+     */
+    private java.util.List<String> sources;
 
     /**
      * <p>
@@ -978,6 +984,80 @@ public class CreateResourceShareRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * Specifies from which source accounts the service principal has access to the resources in this resource share.
+     * </p>
+     * 
+     * @return Specifies from which source accounts the service principal has access to the resources in this resource
+     *         share.
+     */
+
+    public java.util.List<String> getSources() {
+        return sources;
+    }
+
+    /**
+     * <p>
+     * Specifies from which source accounts the service principal has access to the resources in this resource share.
+     * </p>
+     * 
+     * @param sources
+     *        Specifies from which source accounts the service principal has access to the resources in this resource
+     *        share.
+     */
+
+    public void setSources(java.util.Collection<String> sources) {
+        if (sources == null) {
+            this.sources = null;
+            return;
+        }
+
+        this.sources = new java.util.ArrayList<String>(sources);
+    }
+
+    /**
+     * <p>
+     * Specifies from which source accounts the service principal has access to the resources in this resource share.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSources(java.util.Collection)} or {@link #withSources(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param sources
+     *        Specifies from which source accounts the service principal has access to the resources in this resource
+     *        share.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateResourceShareRequest withSources(String... sources) {
+        if (this.sources == null) {
+            setSources(new java.util.ArrayList<String>(sources.length));
+        }
+        for (String ele : sources) {
+            this.sources.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies from which source accounts the service principal has access to the resources in this resource share.
+     * </p>
+     * 
+     * @param sources
+     *        Specifies from which source accounts the service principal has access to the resources in this resource
+     *        share.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateResourceShareRequest withSources(java.util.Collection<String> sources) {
+        setSources(sources);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1002,7 +1082,9 @@ public class CreateResourceShareRequest extends com.amazonaws.AmazonWebServiceRe
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getPermissionArns() != null)
-            sb.append("PermissionArns: ").append(getPermissionArns());
+            sb.append("PermissionArns: ").append(getPermissionArns()).append(",");
+        if (getSources() != null)
+            sb.append("Sources: ").append(getSources());
         sb.append("}");
         return sb.toString();
     }
@@ -1045,6 +1127,10 @@ public class CreateResourceShareRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getPermissionArns() != null && other.getPermissionArns().equals(this.getPermissionArns()) == false)
             return false;
+        if (other.getSources() == null ^ this.getSources() == null)
+            return false;
+        if (other.getSources() != null && other.getSources().equals(this.getSources()) == false)
+            return false;
         return true;
     }
 
@@ -1060,6 +1146,7 @@ public class CreateResourceShareRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getAllowExternalPrincipals() == null) ? 0 : getAllowExternalPrincipals().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getPermissionArns() == null) ? 0 : getPermissionArns().hashCode());
+        hashCode = prime * hashCode + ((getSources() == null) ? 0 : getSources().hashCode());
         return hashCode;
     }
 

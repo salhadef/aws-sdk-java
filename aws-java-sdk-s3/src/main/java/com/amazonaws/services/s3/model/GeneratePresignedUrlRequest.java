@@ -671,10 +671,11 @@ public class GeneratePresignedUrlRequest extends AmazonWebServiceRequest
                 throw new IllegalArgumentException("KMS CMK is not applicable for SSE-C");
             }
         } else if (this.kmsCmkId != null) {
-            if (!SSEAlgorithm.KMS.getAlgorithm().equals(sseAlgorithm)) {
+            if (!SSEAlgorithm.DSSE.getAlgorithm().equals(sseAlgorithm) &&
+                    !SSEAlgorithm.KMS.getAlgorithm().equals(sseAlgorithm)) {
                 throw new IllegalArgumentException(
                         "For KMS server side encryption, the SSE algorithm must be set to "
-                                + SSEAlgorithm.KMS);
+                                + SSEAlgorithm.KMS + " or " + SSEAlgorithm.DSSE);
             }
         }
         /*

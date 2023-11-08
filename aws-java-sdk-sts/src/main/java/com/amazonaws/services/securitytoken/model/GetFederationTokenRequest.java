@@ -127,9 +127,8 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The duration, in seconds, that the session should last. Acceptable durations for federation sessions range from
      * 900 seconds (15 minutes) to 129,600 seconds (36 hours), with 43,200 seconds (12 hours) as the default. Sessions
-     * obtained using Amazon Web Services account root user credentials are restricted to a maximum of 3,600 seconds
-     * (one hour). If the specified duration is longer than one hour, the session obtained by using root user
-     * credentials defaults to one hour.
+     * obtained using root user credentials are restricted to a maximum of 3,600 seconds (one hour). If the specified
+     * duration is longer than one hour, the session obtained by using root user credentials defaults to one hour.
      * </p>
      */
     private Integer durationSeconds;
@@ -902,17 +901,16 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The duration, in seconds, that the session should last. Acceptable durations for federation sessions range from
      * 900 seconds (15 minutes) to 129,600 seconds (36 hours), with 43,200 seconds (12 hours) as the default. Sessions
-     * obtained using Amazon Web Services account root user credentials are restricted to a maximum of 3,600 seconds
-     * (one hour). If the specified duration is longer than one hour, the session obtained by using root user
-     * credentials defaults to one hour.
+     * obtained using root user credentials are restricted to a maximum of 3,600 seconds (one hour). If the specified
+     * duration is longer than one hour, the session obtained by using root user credentials defaults to one hour.
      * </p>
      * 
      * @param durationSeconds
      *        The duration, in seconds, that the session should last. Acceptable durations for federation sessions range
      *        from 900 seconds (15 minutes) to 129,600 seconds (36 hours), with 43,200 seconds (12 hours) as the
-     *        default. Sessions obtained using Amazon Web Services account root user credentials are restricted to a
-     *        maximum of 3,600 seconds (one hour). If the specified duration is longer than one hour, the session
-     *        obtained by using root user credentials defaults to one hour.
+     *        default. Sessions obtained using root user credentials are restricted to a maximum of 3,600 seconds (one
+     *        hour). If the specified duration is longer than one hour, the session obtained by using root user
+     *        credentials defaults to one hour.
      */
 
     public void setDurationSeconds(Integer durationSeconds) {
@@ -923,16 +921,15 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The duration, in seconds, that the session should last. Acceptable durations for federation sessions range from
      * 900 seconds (15 minutes) to 129,600 seconds (36 hours), with 43,200 seconds (12 hours) as the default. Sessions
-     * obtained using Amazon Web Services account root user credentials are restricted to a maximum of 3,600 seconds
-     * (one hour). If the specified duration is longer than one hour, the session obtained by using root user
-     * credentials defaults to one hour.
+     * obtained using root user credentials are restricted to a maximum of 3,600 seconds (one hour). If the specified
+     * duration is longer than one hour, the session obtained by using root user credentials defaults to one hour.
      * </p>
      * 
      * @return The duration, in seconds, that the session should last. Acceptable durations for federation sessions
      *         range from 900 seconds (15 minutes) to 129,600 seconds (36 hours), with 43,200 seconds (12 hours) as the
-     *         default. Sessions obtained using Amazon Web Services account root user credentials are restricted to a
-     *         maximum of 3,600 seconds (one hour). If the specified duration is longer than one hour, the session
-     *         obtained by using root user credentials defaults to one hour.
+     *         default. Sessions obtained using root user credentials are restricted to a maximum of 3,600 seconds (one
+     *         hour). If the specified duration is longer than one hour, the session obtained by using root user
+     *         credentials defaults to one hour.
      */
 
     public Integer getDurationSeconds() {
@@ -943,17 +940,16 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The duration, in seconds, that the session should last. Acceptable durations for federation sessions range from
      * 900 seconds (15 minutes) to 129,600 seconds (36 hours), with 43,200 seconds (12 hours) as the default. Sessions
-     * obtained using Amazon Web Services account root user credentials are restricted to a maximum of 3,600 seconds
-     * (one hour). If the specified duration is longer than one hour, the session obtained by using root user
-     * credentials defaults to one hour.
+     * obtained using root user credentials are restricted to a maximum of 3,600 seconds (one hour). If the specified
+     * duration is longer than one hour, the session obtained by using root user credentials defaults to one hour.
      * </p>
      * 
      * @param durationSeconds
      *        The duration, in seconds, that the session should last. Acceptable durations for federation sessions range
      *        from 900 seconds (15 minutes) to 129,600 seconds (36 hours), with 43,200 seconds (12 hours) as the
-     *        default. Sessions obtained using Amazon Web Services account root user credentials are restricted to a
-     *        maximum of 3,600 seconds (one hour). If the specified duration is longer than one hour, the session
-     *        obtained by using root user credentials defaults to one hour.
+     *        default. Sessions obtained using root user credentials are restricted to a maximum of 3,600 seconds (one
+     *        hour). If the specified duration is longer than one hour, the session obtained by using root user
+     *        credentials defaults to one hour.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

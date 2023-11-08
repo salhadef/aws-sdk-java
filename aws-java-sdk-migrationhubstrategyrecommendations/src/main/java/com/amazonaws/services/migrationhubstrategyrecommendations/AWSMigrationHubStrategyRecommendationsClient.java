@@ -44,6 +44,7 @@ import com.amazonaws.services.migrationhubstrategyrecommendations.AWSMigrationHu
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.migrationhubstrategyrecommendations.model.*;
+
 import com.amazonaws.services.migrationhubstrategyrecommendations.model.transform.*;
 
 /**
@@ -809,6 +810,72 @@ public class AWSMigrationHubStrategyRecommendationsClient extends AmazonWebServi
 
             HttpResponseHandler<AmazonWebServiceResponse<GetServerStrategiesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetServerStrategiesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves a list of all the servers fetched from customer vCenter using Strategy Recommendation Collector.
+     * </p>
+     * 
+     * @param listAnalyzableServersRequest
+     *        Represents input for ListAnalyzableServers operation.
+     * @return Result of the ListAnalyzableServers operation returned by the service.
+     * @throws AccessDeniedException
+     *         The user does not have permission to perform the action. Check the AWS Identity and Access Management
+     *         (IAM) policy associated with this user.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The request body isn't valid.
+     * @throws InternalServerException
+     *         The server experienced an internal error. Try again.
+     * @sample AWSMigrationHubStrategyRecommendations.ListAnalyzableServers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/ListAnalyzableServers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListAnalyzableServersResult listAnalyzableServers(ListAnalyzableServersRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAnalyzableServers(request);
+    }
+
+    @SdkInternalApi
+    final ListAnalyzableServersResult executeListAnalyzableServers(ListAnalyzableServersRequest listAnalyzableServersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAnalyzableServersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAnalyzableServersRequest> request = null;
+        Response<ListAnalyzableServersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAnalyzableServersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAnalyzableServersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MigrationHubStrategy");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAnalyzableServers");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAnalyzableServersResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ListAnalyzableServersResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

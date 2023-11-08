@@ -189,6 +189,31 @@ public class WriteJourneyRequest implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private ClosedDays closedDays;
+    /**
+     * <p>
+     * An array of time zone estimation methods, if any, to use for determining an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html"
+     * >Endpoints</a> time zone if the Endpoint does not have a value for the Demographic.Timezone attribute.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and Endpoint.Location.Country.
+     * </p>
+     * <note>
+     * <p>
+     * POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand, Canada,
+     * France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.
+     * </p>
+     * </note></li>
+     * </ul>
+     */
+    private java.util.List<String> timezoneEstimationMethods;
 
     /**
      * <p>
@@ -1362,6 +1387,295 @@ public class WriteJourneyRequest implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * An array of time zone estimation methods, if any, to use for determining an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html"
+     * >Endpoints</a> time zone if the Endpoint does not have a value for the Demographic.Timezone attribute.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and Endpoint.Location.Country.
+     * </p>
+     * <note>
+     * <p>
+     * POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand, Canada,
+     * France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.
+     * </p>
+     * </note></li>
+     * </ul>
+     * 
+     * @return An array of time zone estimation methods, if any, to use for determining an <a
+     *         href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html"
+     *         >Endpoints</a> time zone if the Endpoint does not have a value for the Demographic.Timezone
+     *         attribute.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and
+     *         Endpoint.Location.Country.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand,
+     *         Canada, France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.
+     *         </p>
+     *         </note></li>
+     * @see TimezoneEstimationMethodsElement
+     */
+
+    public java.util.List<String> getTimezoneEstimationMethods() {
+        return timezoneEstimationMethods;
+    }
+
+    /**
+     * <p>
+     * An array of time zone estimation methods, if any, to use for determining an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html"
+     * >Endpoints</a> time zone if the Endpoint does not have a value for the Demographic.Timezone attribute.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and Endpoint.Location.Country.
+     * </p>
+     * <note>
+     * <p>
+     * POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand, Canada,
+     * France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.
+     * </p>
+     * </note></li>
+     * </ul>
+     * 
+     * @param timezoneEstimationMethods
+     *        An array of time zone estimation methods, if any, to use for determining an <a href=
+     *        "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html"
+     *        >Endpoints</a> time zone if the Endpoint does not have a value for the Demographic.Timezone attribute.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and
+     *        Endpoint.Location.Country.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand,
+     *        Canada, France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.
+     *        </p>
+     *        </note></li>
+     * @see TimezoneEstimationMethodsElement
+     */
+
+    public void setTimezoneEstimationMethods(java.util.Collection<String> timezoneEstimationMethods) {
+        if (timezoneEstimationMethods == null) {
+            this.timezoneEstimationMethods = null;
+            return;
+        }
+
+        this.timezoneEstimationMethods = new java.util.ArrayList<String>(timezoneEstimationMethods);
+    }
+
+    /**
+     * <p>
+     * An array of time zone estimation methods, if any, to use for determining an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html"
+     * >Endpoints</a> time zone if the Endpoint does not have a value for the Demographic.Timezone attribute.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and Endpoint.Location.Country.
+     * </p>
+     * <note>
+     * <p>
+     * POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand, Canada,
+     * France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.
+     * </p>
+     * </note></li>
+     * </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTimezoneEstimationMethods(java.util.Collection)} or
+     * {@link #withTimezoneEstimationMethods(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param timezoneEstimationMethods
+     *        An array of time zone estimation methods, if any, to use for determining an <a href=
+     *        "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html"
+     *        >Endpoints</a> time zone if the Endpoint does not have a value for the Demographic.Timezone attribute.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and
+     *        Endpoint.Location.Country.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand,
+     *        Canada, France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.
+     *        </p>
+     *        </note></li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TimezoneEstimationMethodsElement
+     */
+
+    public WriteJourneyRequest withTimezoneEstimationMethods(String... timezoneEstimationMethods) {
+        if (this.timezoneEstimationMethods == null) {
+            setTimezoneEstimationMethods(new java.util.ArrayList<String>(timezoneEstimationMethods.length));
+        }
+        for (String ele : timezoneEstimationMethods) {
+            this.timezoneEstimationMethods.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of time zone estimation methods, if any, to use for determining an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html"
+     * >Endpoints</a> time zone if the Endpoint does not have a value for the Demographic.Timezone attribute.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and Endpoint.Location.Country.
+     * </p>
+     * <note>
+     * <p>
+     * POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand, Canada,
+     * France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.
+     * </p>
+     * </note></li>
+     * </ul>
+     * 
+     * @param timezoneEstimationMethods
+     *        An array of time zone estimation methods, if any, to use for determining an <a href=
+     *        "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html"
+     *        >Endpoints</a> time zone if the Endpoint does not have a value for the Demographic.Timezone attribute.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and
+     *        Endpoint.Location.Country.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand,
+     *        Canada, France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.
+     *        </p>
+     *        </note></li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TimezoneEstimationMethodsElement
+     */
+
+    public WriteJourneyRequest withTimezoneEstimationMethods(java.util.Collection<String> timezoneEstimationMethods) {
+        setTimezoneEstimationMethods(timezoneEstimationMethods);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of time zone estimation methods, if any, to use for determining an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html"
+     * >Endpoints</a> time zone if the Endpoint does not have a value for the Demographic.Timezone attribute.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and Endpoint.Location.Country.
+     * </p>
+     * <note>
+     * <p>
+     * POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand, Canada,
+     * France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.
+     * </p>
+     * </note></li>
+     * </ul>
+     * 
+     * @param timezoneEstimationMethods
+     *        An array of time zone estimation methods, if any, to use for determining an <a href=
+     *        "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html"
+     *        >Endpoints</a> time zone if the Endpoint does not have a value for the Demographic.Timezone attribute.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and
+     *        Endpoint.Location.Country.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand,
+     *        Canada, France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.
+     *        </p>
+     *        </note></li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TimezoneEstimationMethodsElement
+     */
+
+    public WriteJourneyRequest withTimezoneEstimationMethods(TimezoneEstimationMethodsElement... timezoneEstimationMethods) {
+        java.util.ArrayList<String> timezoneEstimationMethodsCopy = new java.util.ArrayList<String>(timezoneEstimationMethods.length);
+        for (TimezoneEstimationMethodsElement value : timezoneEstimationMethods) {
+            timezoneEstimationMethodsCopy.add(value.toString());
+        }
+        if (getTimezoneEstimationMethods() == null) {
+            setTimezoneEstimationMethods(timezoneEstimationMethodsCopy);
+        } else {
+            getTimezoneEstimationMethods().addAll(timezoneEstimationMethodsCopy);
+        }
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1408,7 +1722,9 @@ public class WriteJourneyRequest implements Serializable, Cloneable, StructuredP
         if (getOpenHours() != null)
             sb.append("OpenHours: ").append(getOpenHours()).append(",");
         if (getClosedDays() != null)
-            sb.append("ClosedDays: ").append(getClosedDays());
+            sb.append("ClosedDays: ").append(getClosedDays()).append(",");
+        if (getTimezoneEstimationMethods() != null)
+            sb.append("TimezoneEstimationMethods: ").append(getTimezoneEstimationMethods());
         sb.append("}");
         return sb.toString();
     }
@@ -1495,6 +1811,10 @@ public class WriteJourneyRequest implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getClosedDays() != null && other.getClosedDays().equals(this.getClosedDays()) == false)
             return false;
+        if (other.getTimezoneEstimationMethods() == null ^ this.getTimezoneEstimationMethods() == null)
+            return false;
+        if (other.getTimezoneEstimationMethods() != null && other.getTimezoneEstimationMethods().equals(this.getTimezoneEstimationMethods()) == false)
+            return false;
         return true;
     }
 
@@ -1521,6 +1841,7 @@ public class WriteJourneyRequest implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getSendingSchedule() == null) ? 0 : getSendingSchedule().hashCode());
         hashCode = prime * hashCode + ((getOpenHours() == null) ? 0 : getOpenHours().hashCode());
         hashCode = prime * hashCode + ((getClosedDays() == null) ? 0 : getClosedDays().hashCode());
+        hashCode = prime * hashCode + ((getTimezoneEstimationMethods() == null) ? 0 : getTimezoneEstimationMethods().hashCode());
         return hashCode;
     }
 

@@ -43,6 +43,21 @@ public class AmazonOmicsWaiters {
     }
 
     /**
+     * Builds a AnnotationStoreVersionDeleted waiter by using custom parameters waiterParameters and other parameters
+     * defined in the waiters specification, and then polls until it determines whether the resource entered the desired
+     * state or not, where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<GetAnnotationStoreVersionRequest> annotationStoreVersionDeleted() {
+
+        return new WaiterBuilder<GetAnnotationStoreVersionRequest, GetAnnotationStoreVersionResult>()
+                .withSdkFunction(new GetAnnotationStoreVersionFunction(client))
+                .withAcceptors(new AnnotationStoreVersionDeleted.IsDELETEDMatcher(), new AnnotationStoreVersionDeleted.IsResourceNotFoundExceptionMatcher(),
+                        new AnnotationStoreVersionDeleted.IsDELETINGMatcher())
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(20), new FixedDelayStrategy(30)))
+                .withExecutorService(executorService).build();
+    }
+
+    /**
      * Builds a RunRunning waiter by using custom parameters waiterParameters and other parameters defined in the
      * waiters specification, and then polls until it determines whether the resource entered the desired state or not,
      * where polling criteria is bound by either default polling strategy or custom polling strategy.
@@ -258,6 +273,21 @@ public class AmazonOmicsWaiters {
                 .withSdkFunction(new GetVariantStoreFunction(client))
                 .withAcceptors(new VariantStoreCreated.IsACTIVEMatcher(), new VariantStoreCreated.IsCREATINGMatcher(),
                         new VariantStoreCreated.IsUPDATINGMatcher(), new VariantStoreCreated.IsFAILEDMatcher())
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(20), new FixedDelayStrategy(30)))
+                .withExecutorService(executorService).build();
+    }
+
+    /**
+     * Builds a AnnotationStoreVersionCreated waiter by using custom parameters waiterParameters and other parameters
+     * defined in the waiters specification, and then polls until it determines whether the resource entered the desired
+     * state or not, where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<GetAnnotationStoreVersionRequest> annotationStoreVersionCreated() {
+
+        return new WaiterBuilder<GetAnnotationStoreVersionRequest, GetAnnotationStoreVersionResult>()
+                .withSdkFunction(new GetAnnotationStoreVersionFunction(client))
+                .withAcceptors(new AnnotationStoreVersionCreated.IsACTIVEMatcher(), new AnnotationStoreVersionCreated.IsCREATINGMatcher(),
+                        new AnnotationStoreVersionCreated.IsUPDATINGMatcher(), new AnnotationStoreVersionCreated.IsFAILEDMatcher())
                 .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(20), new FixedDelayStrategy(30)))
                 .withExecutorService(executorService).build();
     }

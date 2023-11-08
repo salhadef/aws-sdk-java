@@ -30,18 +30,18 @@ public class DescribeLocationNfsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the NFS location to describe.
+     * Specifies the Amazon Resource Name (ARN) of the NFS location that you want information about.
      * </p>
      */
     private String locationArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the NFS location to describe.
+     * Specifies the Amazon Resource Name (ARN) of the NFS location that you want information about.
      * </p>
      * 
      * @param locationArn
-     *        The Amazon Resource Name (ARN) of the NFS location to describe.
+     *        Specifies the Amazon Resource Name (ARN) of the NFS location that you want information about.
      */
 
     public void setLocationArn(String locationArn) {
@@ -50,10 +50,10 @@ public class DescribeLocationNfsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the NFS location to describe.
+     * Specifies the Amazon Resource Name (ARN) of the NFS location that you want information about.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the NFS location to describe.
+     * @return Specifies the Amazon Resource Name (ARN) of the NFS location that you want information about.
      */
 
     public String getLocationArn() {
@@ -62,11 +62,11 @@ public class DescribeLocationNfsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the NFS location to describe.
+     * Specifies the Amazon Resource Name (ARN) of the NFS location that you want information about.
      * </p>
      * 
      * @param locationArn
-     *        The Amazon Resource Name (ARN) of the NFS location to describe.
+     *        Specifies the Amazon Resource Name (ARN) of the NFS location that you want information about.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

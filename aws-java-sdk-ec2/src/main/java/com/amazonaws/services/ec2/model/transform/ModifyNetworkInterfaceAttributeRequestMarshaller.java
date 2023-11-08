@@ -96,6 +96,10 @@ public class ModifyNetworkInterfaceAttributeRequestMarshaller implements
             }
         }
 
+        if (modifyNetworkInterfaceAttributeRequest.getEnablePrimaryIpv6() != null) {
+            request.addParameter("EnablePrimaryIpv6", StringUtils.fromBoolean(modifyNetworkInterfaceAttributeRequest.getEnablePrimaryIpv6()));
+        }
+
         return request;
     }
 

@@ -133,6 +133,11 @@ public class AbstractAWSDataExchange implements AWSDataExchange {
     }
 
     @Override
+    public SendDataSetNotificationResult sendDataSetNotification(SendDataSetNotificationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartJobResult startJob(StartJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

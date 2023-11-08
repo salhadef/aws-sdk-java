@@ -92,6 +92,11 @@ import com.amazonaws.services.applicationautoscaling.model.*;
  * </li>
  * <li>
  * <p>
+ * Amazon SageMaker Serverless endpoint provisioned concurrency
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * Spot Fleets (Amazon EC2)
  * </p>
  * </li>

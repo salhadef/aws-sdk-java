@@ -62,6 +62,12 @@ public class VerifiedAccessInstance implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * Describes whether support for Federal Information Processing Standards (FIPS) is enabled on the instance.
+     * </p>
+     */
+    private Boolean fipsEnabled;
 
     /**
      * <p>
@@ -371,6 +377,58 @@ public class VerifiedAccessInstance implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Describes whether support for Federal Information Processing Standards (FIPS) is enabled on the instance.
+     * </p>
+     * 
+     * @param fipsEnabled
+     *        Describes whether support for Federal Information Processing Standards (FIPS) is enabled on the instance.
+     */
+
+    public void setFipsEnabled(Boolean fipsEnabled) {
+        this.fipsEnabled = fipsEnabled;
+    }
+
+    /**
+     * <p>
+     * Describes whether support for Federal Information Processing Standards (FIPS) is enabled on the instance.
+     * </p>
+     * 
+     * @return Describes whether support for Federal Information Processing Standards (FIPS) is enabled on the instance.
+     */
+
+    public Boolean getFipsEnabled() {
+        return this.fipsEnabled;
+    }
+
+    /**
+     * <p>
+     * Describes whether support for Federal Information Processing Standards (FIPS) is enabled on the instance.
+     * </p>
+     * 
+     * @param fipsEnabled
+     *        Describes whether support for Federal Information Processing Standards (FIPS) is enabled on the instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VerifiedAccessInstance withFipsEnabled(Boolean fipsEnabled) {
+        setFipsEnabled(fipsEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes whether support for Federal Information Processing Standards (FIPS) is enabled on the instance.
+     * </p>
+     * 
+     * @return Describes whether support for Federal Information Processing Standards (FIPS) is enabled on the instance.
+     */
+
+    public Boolean isFipsEnabled() {
+        return this.fipsEnabled;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -393,7 +451,9 @@ public class VerifiedAccessInstance implements Serializable, Cloneable {
         if (getLastUpdatedTime() != null)
             sb.append("LastUpdatedTime: ").append(getLastUpdatedTime()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getFipsEnabled() != null)
+            sb.append("FipsEnabled: ").append(getFipsEnabled());
         sb.append("}");
         return sb.toString();
     }
@@ -432,6 +492,10 @@ public class VerifiedAccessInstance implements Serializable, Cloneable {
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getFipsEnabled() == null ^ this.getFipsEnabled() == null)
+            return false;
+        if (other.getFipsEnabled() != null && other.getFipsEnabled().equals(this.getFipsEnabled()) == false)
+            return false;
         return true;
     }
 
@@ -446,6 +510,7 @@ public class VerifiedAccessInstance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedTime() == null) ? 0 : getLastUpdatedTime().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getFipsEnabled() == null) ? 0 : getFipsEnabled().hashCode());
         return hashCode;
     }
 

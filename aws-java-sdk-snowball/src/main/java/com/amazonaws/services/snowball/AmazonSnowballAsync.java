@@ -301,6 +301,11 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * This device is replaced with T98.
+     * </p>
+     * </note>
      * <p/></li>
      * <li>
      * <p>
@@ -346,21 +351,21 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
      * <p/></li>
      * <li>
      * <p>
-     * Device type: <b>V3_5C</b>
+     * Snow Family device type: <b>RACK_5U_C</b>
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Capacity: T32
+     * Capacity: T13
      * </p>
      * </li>
      * <li>
      * <p>
-     * Description: Snowball Edge Compute Optimized without GPU
+     * Description: Snowblade.
      * </p>
      * </li>
      * </ul>
-     * <p/></li>
+     * </li>
      * <li>
      * <p>
      * Device type: <b>V3_5S</b>
@@ -377,7 +382,7 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
      * </p>
      * </li>
      * </ul>
-     * <p/></li>
+     * </li>
      * </ul>
      * 
      * @param createJobRequest
@@ -515,6 +520,11 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * This device is replaced with T98.
+     * </p>
+     * </note>
      * <p/></li>
      * <li>
      * <p>
@@ -560,21 +570,21 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
      * <p/></li>
      * <li>
      * <p>
-     * Device type: <b>V3_5C</b>
+     * Snow Family device type: <b>RACK_5U_C</b>
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Capacity: T32
+     * Capacity: T13
      * </p>
      * </li>
      * <li>
      * <p>
-     * Description: Snowball Edge Compute Optimized without GPU
+     * Description: Snowblade.
      * </p>
      * </li>
      * </ul>
-     * <p/></li>
+     * </li>
      * <li>
      * <p>
      * Device type: <b>V3_5S</b>
@@ -591,7 +601,7 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
      * </p>
      * </li>
      * </ul>
-     * <p/></li>
+     * </li>
      * </ul>
      * 
      * @param createJobRequest
@@ -1108,11 +1118,11 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
 
     /**
      * <p>
-     * This action returns a list of the different Amazon EC2 Amazon Machine Images (AMIs) that are owned by your Amazon
-     * Web Services accountthat would be supported for use on a Snow device. Currently, supported AMIs are based on the
-     * Amazon Linux-2, Ubuntu 20.04 LTS - Focal, or Ubuntu 22.04 LTS - Jammy images, available on the Amazon Web
-     * Services Marketplace. Ubuntu 16.04 LTS - Xenial (HVM) images are no longer supported in the Market, but still
-     * supported for use on devices through Amazon EC2 VM Import/Export and running locally in AMIs.
+     * This action returns a list of the different Amazon EC2-compatible Amazon Machine Images (AMIs) that are owned by
+     * your Amazon Web Services accountthat would be supported for use on a Snow device. Currently, supported AMIs are
+     * based on the Amazon Linux-2, Ubuntu 20.04 LTS - Focal, or Ubuntu 22.04 LTS - Jammy images, available on the
+     * Amazon Web Services Marketplace. Ubuntu 16.04 LTS - Xenial (HVM) images are no longer supported in the Market,
+     * but still supported for use on devices through Amazon EC2 VM Import/Export and running locally in AMIs.
      * </p>
      * 
      * @param listCompatibleImagesRequest
@@ -1125,11 +1135,11 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
 
     /**
      * <p>
-     * This action returns a list of the different Amazon EC2 Amazon Machine Images (AMIs) that are owned by your Amazon
-     * Web Services accountthat would be supported for use on a Snow device. Currently, supported AMIs are based on the
-     * Amazon Linux-2, Ubuntu 20.04 LTS - Focal, or Ubuntu 22.04 LTS - Jammy images, available on the Amazon Web
-     * Services Marketplace. Ubuntu 16.04 LTS - Xenial (HVM) images are no longer supported in the Market, but still
-     * supported for use on devices through Amazon EC2 VM Import/Export and running locally in AMIs.
+     * This action returns a list of the different Amazon EC2-compatible Amazon Machine Images (AMIs) that are owned by
+     * your Amazon Web Services accountthat would be supported for use on a Snow device. Currently, supported AMIs are
+     * based on the Amazon Linux-2, Ubuntu 20.04 LTS - Focal, or Ubuntu 22.04 LTS - Jammy images, available on the
+     * Amazon Web Services Marketplace. Ubuntu 16.04 LTS - Xenial (HVM) images are no longer supported in the Market,
+     * but still supported for use on devices through Amazon EC2 VM Import/Export and running locally in AMIs.
      * </p>
      * 
      * @param listCompatibleImagesRequest
@@ -1212,6 +1222,37 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
      */
     java.util.concurrent.Future<ListLongTermPricingResult> listLongTermPricingAsync(ListLongTermPricingRequest listLongTermPricingRequest,
             com.amazonaws.handlers.AsyncHandler<ListLongTermPricingRequest, ListLongTermPricingResult> asyncHandler);
+
+    /**
+     * <p>
+     * A list of locations from which the customer can choose to pickup a device.
+     * </p>
+     * 
+     * @param listPickupLocationsRequest
+     * @return A Java Future containing the result of the ListPickupLocations operation returned by the service.
+     * @sample AmazonSnowballAsync.ListPickupLocations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListPickupLocations" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListPickupLocationsResult> listPickupLocationsAsync(ListPickupLocationsRequest listPickupLocationsRequest);
+
+    /**
+     * <p>
+     * A list of locations from which the customer can choose to pickup a device.
+     * </p>
+     * 
+     * @param listPickupLocationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListPickupLocations operation returned by the service.
+     * @sample AmazonSnowballAsyncHandler.ListPickupLocations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListPickupLocations" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListPickupLocationsResult> listPickupLocationsAsync(ListPickupLocationsRequest listPickupLocationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListPickupLocationsRequest, ListPickupLocationsResult> asyncHandler);
 
     /**
      * <p>

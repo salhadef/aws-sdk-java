@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.securitylake.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -27,14 +28,14 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CreateCustomLogSourceRequestMarshaller {
 
-    private static final MarshallingInfo<String> CUSTOMSOURCENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("customSourceName").build();
-    private static final MarshallingInfo<String> EVENTCLASS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("eventClass").build();
-    private static final MarshallingInfo<String> GLUEINVOCATIONROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("glueInvocationRoleArn").build();
-    private static final MarshallingInfo<String> LOGPROVIDERACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logProviderAccountId").build();
+    private static final MarshallingInfo<StructuredPojo> CONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("configuration").build();
+    private static final MarshallingInfo<List> EVENTCLASSES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("eventClasses").build();
+    private static final MarshallingInfo<String> SOURCENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceName").build();
+    private static final MarshallingInfo<String> SOURCEVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceVersion").build();
 
     private static final CreateCustomLogSourceRequestMarshaller instance = new CreateCustomLogSourceRequestMarshaller();
 
@@ -52,10 +53,10 @@ public class CreateCustomLogSourceRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(createCustomLogSourceRequest.getCustomSourceName(), CUSTOMSOURCENAME_BINDING);
-            protocolMarshaller.marshall(createCustomLogSourceRequest.getEventClass(), EVENTCLASS_BINDING);
-            protocolMarshaller.marshall(createCustomLogSourceRequest.getGlueInvocationRoleArn(), GLUEINVOCATIONROLEARN_BINDING);
-            protocolMarshaller.marshall(createCustomLogSourceRequest.getLogProviderAccountId(), LOGPROVIDERACCOUNTID_BINDING);
+            protocolMarshaller.marshall(createCustomLogSourceRequest.getConfiguration(), CONFIGURATION_BINDING);
+            protocolMarshaller.marshall(createCustomLogSourceRequest.getEventClasses(), EVENTCLASSES_BINDING);
+            protocolMarshaller.marshall(createCustomLogSourceRequest.getSourceName(), SOURCENAME_BINDING);
+            protocolMarshaller.marshall(createCustomLogSourceRequest.getSourceVersion(), SOURCEVERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

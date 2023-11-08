@@ -361,11 +361,11 @@ public class IpPermission implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFromPort() != null)
-            sb.append("FromPort: ").append(getFromPort()).append(",");
+            sb.append("FromPort: ").append("***Sensitive Data Redacted***").append(",");
         if (getToPort() != null)
-            sb.append("ToPort: ").append(getToPort()).append(",");
+            sb.append("ToPort: ").append("***Sensitive Data Redacted***").append(",");
         if (getIpRange() != null)
-            sb.append("IpRange: ").append(getIpRange()).append(",");
+            sb.append("IpRange: ").append("***Sensitive Data Redacted***").append(",");
         if (getProtocol() != null)
             sb.append("Protocol: ").append(getProtocol());
         sb.append("}");

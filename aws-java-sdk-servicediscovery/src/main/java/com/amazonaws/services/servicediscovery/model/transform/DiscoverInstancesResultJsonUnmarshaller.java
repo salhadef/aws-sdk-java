@@ -54,6 +54,10 @@ public class DiscoverInstancesResultJsonUnmarshaller implements Unmarshaller<Dis
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("InstancesRevision", targetDepth)) {
+                    context.nextToken();
+                    discoverInstancesResult.setInstancesRevision(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -1876,6 +1876,9 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * >Amazon Web Services service-linked role</a>.
      * </p>
      * <p>
+     * Each <code>PutMetricAlarm</code> action has a maximum uncompressed payload of 120 KB.
+     * </p>
+     * <p>
      * <b>Cross-account alarms</b>
      * </p>
      * <p>
@@ -1956,6 +1959,9 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * <code>AWSServiceRoleForCloudWatchAlarms_ActionSSM</code>. For more information, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role"
      * >Amazon Web Services service-linked role</a>.
+     * </p>
+     * <p>
+     * Each <code>PutMetricAlarm</code> action has a maximum uncompressed payload of 120 KB.
      * </p>
      * <p>
      * <b>Cross-account alarms</b>

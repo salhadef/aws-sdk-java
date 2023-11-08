@@ -29,16 +29,18 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CreateSequenceStoreRequestMarshaller {
 
-    private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken").build();
-    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<StructuredPojo> SSECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sseConfig").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken").build();
+    private static final MarshallingInfo<String> FALLBACKLOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fallbackLocation").build();
 
     private static final CreateSequenceStoreRequestMarshaller instance = new CreateSequenceStoreRequestMarshaller();
 
@@ -56,11 +58,12 @@ public class CreateSequenceStoreRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(createSequenceStoreRequest.getClientToken(), CLIENTTOKEN_BINDING);
-            protocolMarshaller.marshall(createSequenceStoreRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createSequenceStoreRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(createSequenceStoreRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createSequenceStoreRequest.getSseConfig(), SSECONFIG_BINDING);
             protocolMarshaller.marshall(createSequenceStoreRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createSequenceStoreRequest.getClientToken(), CLIENTTOKEN_BINDING);
+            protocolMarshaller.marshall(createSequenceStoreRequest.getFallbackLocation(), FALLBACKLOCATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

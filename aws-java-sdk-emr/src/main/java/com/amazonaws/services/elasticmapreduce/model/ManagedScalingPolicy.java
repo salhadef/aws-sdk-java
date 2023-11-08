@@ -32,24 +32,24 @@ public class ManagedScalingPolicy implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The EC2 unit limits for a managed scaling policy. The managed scaling activity of a cluster is not allowed to go
-     * above or below these limits. The limit only applies to the core and task nodes. The master node cannot be scaled
-     * after initial configuration.
+     * The Amazon EC2 unit limits for a managed scaling policy. The managed scaling activity of a cluster is not allowed
+     * to go above or below these limits. The limit only applies to the core and task nodes. The master node cannot be
+     * scaled after initial configuration.
      * </p>
      */
     private ComputeLimits computeLimits;
 
     /**
      * <p>
-     * The EC2 unit limits for a managed scaling policy. The managed scaling activity of a cluster is not allowed to go
-     * above or below these limits. The limit only applies to the core and task nodes. The master node cannot be scaled
-     * after initial configuration.
+     * The Amazon EC2 unit limits for a managed scaling policy. The managed scaling activity of a cluster is not allowed
+     * to go above or below these limits. The limit only applies to the core and task nodes. The master node cannot be
+     * scaled after initial configuration.
      * </p>
      * 
      * @param computeLimits
-     *        The EC2 unit limits for a managed scaling policy. The managed scaling activity of a cluster is not allowed
-     *        to go above or below these limits. The limit only applies to the core and task nodes. The master node
-     *        cannot be scaled after initial configuration.
+     *        The Amazon EC2 unit limits for a managed scaling policy. The managed scaling activity of a cluster is not
+     *        allowed to go above or below these limits. The limit only applies to the core and task nodes. The master
+     *        node cannot be scaled after initial configuration.
      */
 
     public void setComputeLimits(ComputeLimits computeLimits) {
@@ -58,12 +58,12 @@ public class ManagedScalingPolicy implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The EC2 unit limits for a managed scaling policy. The managed scaling activity of a cluster is not allowed to go
-     * above or below these limits. The limit only applies to the core and task nodes. The master node cannot be scaled
-     * after initial configuration.
+     * The Amazon EC2 unit limits for a managed scaling policy. The managed scaling activity of a cluster is not allowed
+     * to go above or below these limits. The limit only applies to the core and task nodes. The master node cannot be
+     * scaled after initial configuration.
      * </p>
      * 
-     * @return The EC2 unit limits for a managed scaling policy. The managed scaling activity of a cluster is not
+     * @return The Amazon EC2 unit limits for a managed scaling policy. The managed scaling activity of a cluster is not
      *         allowed to go above or below these limits. The limit only applies to the core and task nodes. The master
      *         node cannot be scaled after initial configuration.
      */
@@ -74,15 +74,15 @@ public class ManagedScalingPolicy implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The EC2 unit limits for a managed scaling policy. The managed scaling activity of a cluster is not allowed to go
-     * above or below these limits. The limit only applies to the core and task nodes. The master node cannot be scaled
-     * after initial configuration.
+     * The Amazon EC2 unit limits for a managed scaling policy. The managed scaling activity of a cluster is not allowed
+     * to go above or below these limits. The limit only applies to the core and task nodes. The master node cannot be
+     * scaled after initial configuration.
      * </p>
      * 
      * @param computeLimits
-     *        The EC2 unit limits for a managed scaling policy. The managed scaling activity of a cluster is not allowed
-     *        to go above or below these limits. The limit only applies to the core and task nodes. The master node
-     *        cannot be scaled after initial configuration.
+     *        The Amazon EC2 unit limits for a managed scaling policy. The managed scaling activity of a cluster is not
+     *        allowed to go above or below these limits. The limit only applies to the core and task nodes. The master
+     *        node cannot be scaled after initial configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

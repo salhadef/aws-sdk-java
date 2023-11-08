@@ -64,6 +64,10 @@ public class GetDataSetDetailsResultJsonUnmarshaller implements Unmarshaller<Get
                     context.nextToken();
                     getDataSetDetailsResult.setDataSetOrg(DatasetDetailOrgAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("fileSize", targetDepth)) {
+                    context.nextToken();
+                    getDataSetDetailsResult.setFileSize(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
                 if (context.testExpression("lastReferencedTime", targetDepth)) {
                     context.nextToken();
                     getDataSetDetailsResult.setLastReferencedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));

@@ -47,6 +47,11 @@ public class InstanceIpv6AddressStaxUnmarshaller implements Unmarshaller<Instanc
                     instanceIpv6Address.setIpv6Address(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("isPrimaryIpv6", targetDepth)) {
+                    instanceIpv6Address.setIsPrimaryIpv6(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return instanceIpv6Address;

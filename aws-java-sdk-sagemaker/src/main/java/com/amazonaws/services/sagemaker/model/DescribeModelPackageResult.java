@@ -170,6 +170,12 @@ public class DescribeModelPackageResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private java.util.List<AdditionalInferenceSpecificationDefinition> additionalInferenceSpecifications;
+    /**
+     * <p>
+     * Indicates if you want to skip model validation.
+     * </p>
+     */
+    private String skipModelValidation;
 
     /**
      * <p>
@@ -1297,6 +1303,65 @@ public class DescribeModelPackageResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * Indicates if you want to skip model validation.
+     * </p>
+     * 
+     * @param skipModelValidation
+     *        Indicates if you want to skip model validation.
+     * @see SkipModelValidation
+     */
+
+    public void setSkipModelValidation(String skipModelValidation) {
+        this.skipModelValidation = skipModelValidation;
+    }
+
+    /**
+     * <p>
+     * Indicates if you want to skip model validation.
+     * </p>
+     * 
+     * @return Indicates if you want to skip model validation.
+     * @see SkipModelValidation
+     */
+
+    public String getSkipModelValidation() {
+        return this.skipModelValidation;
+    }
+
+    /**
+     * <p>
+     * Indicates if you want to skip model validation.
+     * </p>
+     * 
+     * @param skipModelValidation
+     *        Indicates if you want to skip model validation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SkipModelValidation
+     */
+
+    public DescribeModelPackageResult withSkipModelValidation(String skipModelValidation) {
+        setSkipModelValidation(skipModelValidation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates if you want to skip model validation.
+     * </p>
+     * 
+     * @param skipModelValidation
+     *        Indicates if you want to skip model validation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SkipModelValidation
+     */
+
+    public DescribeModelPackageResult withSkipModelValidation(SkipModelValidation skipModelValidation) {
+        this.skipModelValidation = skipModelValidation.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1357,7 +1422,9 @@ public class DescribeModelPackageResult extends com.amazonaws.AmazonWebServiceRe
         if (getSamplePayloadUrl() != null)
             sb.append("SamplePayloadUrl: ").append(getSamplePayloadUrl()).append(",");
         if (getAdditionalInferenceSpecifications() != null)
-            sb.append("AdditionalInferenceSpecifications: ").append(getAdditionalInferenceSpecifications());
+            sb.append("AdditionalInferenceSpecifications: ").append(getAdditionalInferenceSpecifications()).append(",");
+        if (getSkipModelValidation() != null)
+            sb.append("SkipModelValidation: ").append(getSkipModelValidation());
         sb.append("}");
         return sb.toString();
     }
@@ -1473,6 +1540,10 @@ public class DescribeModelPackageResult extends com.amazonaws.AmazonWebServiceRe
         if (other.getAdditionalInferenceSpecifications() != null
                 && other.getAdditionalInferenceSpecifications().equals(this.getAdditionalInferenceSpecifications()) == false)
             return false;
+        if (other.getSkipModelValidation() == null ^ this.getSkipModelValidation() == null)
+            return false;
+        if (other.getSkipModelValidation() != null && other.getSkipModelValidation().equals(this.getSkipModelValidation()) == false)
+            return false;
         return true;
     }
 
@@ -1506,6 +1577,7 @@ public class DescribeModelPackageResult extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getTask() == null) ? 0 : getTask().hashCode());
         hashCode = prime * hashCode + ((getSamplePayloadUrl() == null) ? 0 : getSamplePayloadUrl().hashCode());
         hashCode = prime * hashCode + ((getAdditionalInferenceSpecifications() == null) ? 0 : getAdditionalInferenceSpecifications().hashCode());
+        hashCode = prime * hashCode + ((getSkipModelValidation() == null) ? 0 : getSkipModelValidation().hashCode());
         return hashCode;
     }
 

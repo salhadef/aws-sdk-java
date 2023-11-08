@@ -48,6 +48,8 @@ public class UpdateBrokerRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maintenanceWindowStartTime").build();
     private static final MarshallingInfo<List> SECURITYGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("securityGroups").build();
+    private static final MarshallingInfo<String> DATAREPLICATIONMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataReplicationMode").build();
 
     private static final UpdateBrokerRequestMarshaller instance = new UpdateBrokerRequestMarshaller();
 
@@ -75,6 +77,7 @@ public class UpdateBrokerRequestMarshaller {
             protocolMarshaller.marshall(updateBrokerRequest.getLogs(), LOGS_BINDING);
             protocolMarshaller.marshall(updateBrokerRequest.getMaintenanceWindowStartTime(), MAINTENANCEWINDOWSTARTTIME_BINDING);
             protocolMarshaller.marshall(updateBrokerRequest.getSecurityGroups(), SECURITYGROUPS_BINDING);
+            protocolMarshaller.marshall(updateBrokerRequest.getDataReplicationMode(), DATAREPLICATIONMODE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -52,6 +52,10 @@ public class TraceSummaryJsonUnmarshaller implements Unmarshaller<TraceSummary, 
                     context.nextToken();
                     traceSummary.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("StartTime", targetDepth)) {
+                    context.nextToken();
+                    traceSummary.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
                 if (context.testExpression("Duration", targetDepth)) {
                     context.nextToken();
                     traceSummary.setDuration(context.getUnmarshaller(Double.class).unmarshall(context));

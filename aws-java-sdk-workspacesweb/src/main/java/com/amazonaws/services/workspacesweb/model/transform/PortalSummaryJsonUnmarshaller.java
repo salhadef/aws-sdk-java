@@ -68,6 +68,10 @@ public class PortalSummaryJsonUnmarshaller implements Unmarshaller<PortalSummary
                     context.nextToken();
                     portalSummary.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ipAccessSettingsArn", targetDepth)) {
+                    context.nextToken();
+                    portalSummary.setIpAccessSettingsArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("networkSettingsArn", targetDepth)) {
                     context.nextToken();
                     portalSummary.setNetworkSettingsArn(context.getUnmarshaller(String.class).unmarshall(context));

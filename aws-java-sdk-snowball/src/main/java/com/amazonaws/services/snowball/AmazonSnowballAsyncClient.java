@@ -955,6 +955,39 @@ public class AmazonSnowballAsyncClient extends AmazonSnowballClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<ListPickupLocationsResult> listPickupLocationsAsync(ListPickupLocationsRequest request) {
+
+        return listPickupLocationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPickupLocationsResult> listPickupLocationsAsync(final ListPickupLocationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListPickupLocationsRequest, ListPickupLocationsResult> asyncHandler) {
+        final ListPickupLocationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListPickupLocationsResult>() {
+            @Override
+            public ListPickupLocationsResult call() throws Exception {
+                ListPickupLocationsResult result = null;
+
+                try {
+                    result = executeListPickupLocations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListServiceVersionsResult> listServiceVersionsAsync(ListServiceVersionsRequest request) {
 
         return listServiceVersionsAsync(request, null);

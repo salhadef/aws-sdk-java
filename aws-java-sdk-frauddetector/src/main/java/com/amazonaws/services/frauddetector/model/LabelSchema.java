@@ -59,8 +59,8 @@ public class LabelSchema implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * Use <code>LEGIT</code> f you want to categorize all unlabeled events as “Legit”. This is recommended when most of
-     * the events in your dataset are legitimate.
+     * Use <code>LEGIT</code> if you want to categorize all unlabeled events as “Legit”. This is recommended when most
+     * of the events in your dataset are legitimate.
      * </p>
      * </li>
      * <li>
@@ -202,8 +202,8 @@ public class LabelSchema implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * Use <code>LEGIT</code> f you want to categorize all unlabeled events as “Legit”. This is recommended when most of
-     * the events in your dataset are legitimate.
+     * Use <code>LEGIT</code> if you want to categorize all unlabeled events as “Legit”. This is recommended when most
+     * of the events in your dataset are legitimate.
      * </p>
      * </li>
      * <li>
@@ -234,7 +234,7 @@ public class LabelSchema implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        Use <code>LEGIT</code> f you want to categorize all unlabeled events as “Legit”. This is recommended when
+     *        Use <code>LEGIT</code> if you want to categorize all unlabeled events as “Legit”. This is recommended when
      *        most of the events in your dataset are legitimate.
      *        </p>
      *        </li>
@@ -273,8 +273,8 @@ public class LabelSchema implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * Use <code>LEGIT</code> f you want to categorize all unlabeled events as “Legit”. This is recommended when most of
-     * the events in your dataset are legitimate.
+     * Use <code>LEGIT</code> if you want to categorize all unlabeled events as “Legit”. This is recommended when most
+     * of the events in your dataset are legitimate.
      * </p>
      * </li>
      * <li>
@@ -304,8 +304,8 @@ public class LabelSchema implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         Use <code>LEGIT</code> f you want to categorize all unlabeled events as “Legit”. This is recommended when
-     *         most of the events in your dataset are legitimate.
+     *         Use <code>LEGIT</code> if you want to categorize all unlabeled events as “Legit”. This is recommended
+     *         when most of the events in your dataset are legitimate.
      *         </p>
      *         </li>
      *         <li>
@@ -343,8 +343,8 @@ public class LabelSchema implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * Use <code>LEGIT</code> f you want to categorize all unlabeled events as “Legit”. This is recommended when most of
-     * the events in your dataset are legitimate.
+     * Use <code>LEGIT</code> if you want to categorize all unlabeled events as “Legit”. This is recommended when most
+     * of the events in your dataset are legitimate.
      * </p>
      * </li>
      * <li>
@@ -375,7 +375,7 @@ public class LabelSchema implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        Use <code>LEGIT</code> f you want to categorize all unlabeled events as “Legit”. This is recommended when
+     *        Use <code>LEGIT</code> if you want to categorize all unlabeled events as “Legit”. This is recommended when
      *        most of the events in your dataset are legitimate.
      *        </p>
      *        </li>
@@ -416,8 +416,8 @@ public class LabelSchema implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * Use <code>LEGIT</code> f you want to categorize all unlabeled events as “Legit”. This is recommended when most of
-     * the events in your dataset are legitimate.
+     * Use <code>LEGIT</code> if you want to categorize all unlabeled events as “Legit”. This is recommended when most
+     * of the events in your dataset are legitimate.
      * </p>
      * </li>
      * <li>
@@ -448,7 +448,7 @@ public class LabelSchema implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        Use <code>LEGIT</code> f you want to categorize all unlabeled events as “Legit”. This is recommended when
+     *        Use <code>LEGIT</code> if you want to categorize all unlabeled events as “Legit”. This is recommended when
      *        most of the events in your dataset are legitimate.
      *        </p>
      *        </li>

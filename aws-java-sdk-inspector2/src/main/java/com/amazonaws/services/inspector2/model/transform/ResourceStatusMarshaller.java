@@ -33,6 +33,8 @@ public class ResourceStatusMarshaller {
             .marshallLocationName("ecr").build();
     private static final MarshallingInfo<String> LAMBDA_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("lambda").build();
+    private static final MarshallingInfo<String> LAMBDACODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lambdaCode").build();
 
     private static final ResourceStatusMarshaller instance = new ResourceStatusMarshaller();
 
@@ -53,6 +55,7 @@ public class ResourceStatusMarshaller {
             protocolMarshaller.marshall(resourceStatus.getEc2(), EC2_BINDING);
             protocolMarshaller.marshall(resourceStatus.getEcr(), ECR_BINDING);
             protocolMarshaller.marshall(resourceStatus.getLambda(), LAMBDA_BINDING);
+            protocolMarshaller.marshall(resourceStatus.getLambdaCode(), LAMBDACODE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

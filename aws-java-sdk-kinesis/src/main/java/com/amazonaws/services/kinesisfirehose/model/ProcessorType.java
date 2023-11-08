@@ -21,6 +21,7 @@ import javax.annotation.Generated;
 public enum ProcessorType {
 
     RecordDeAggregation("RecordDeAggregation"),
+    Decompression("Decompression"),
     Lambda("Lambda"),
     MetadataExtraction("MetadataExtraction"),
     AppendDelimiterToRecord("AppendDelimiterToRecord");

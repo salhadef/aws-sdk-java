@@ -80,6 +80,10 @@ public class RdsConfigurationJsonUnmarshaller implements Unmarshaller<RdsConfigu
                     context.nextToken();
                     rdsConfiguration.setDeploymentOption(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("EngineVersion", targetDepth)) {
+                    context.nextToken();
+                    rdsConfiguration.setEngineVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

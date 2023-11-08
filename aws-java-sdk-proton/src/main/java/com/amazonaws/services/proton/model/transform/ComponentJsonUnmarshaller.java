@@ -72,6 +72,10 @@ public class ComponentJsonUnmarshaller implements Unmarshaller<Component, JsonUn
                     context.nextToken();
                     component.setEnvironmentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("lastAttemptedDeploymentId", targetDepth)) {
+                    context.nextToken();
+                    component.setLastAttemptedDeploymentId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("lastClientRequestToken", targetDepth)) {
                     context.nextToken();
                     component.setLastClientRequestToken(context.getUnmarshaller(String.class).unmarshall(context));
@@ -87,6 +91,10 @@ public class ComponentJsonUnmarshaller implements Unmarshaller<Component, JsonUn
                 if (context.testExpression("lastModifiedAt", targetDepth)) {
                     context.nextToken();
                     component.setLastModifiedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("lastSucceededDeploymentId", targetDepth)) {
+                    context.nextToken();
+                    component.setLastSucceededDeploymentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();

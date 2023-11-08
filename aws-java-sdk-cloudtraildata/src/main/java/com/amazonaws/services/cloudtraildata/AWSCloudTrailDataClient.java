@@ -44,6 +44,7 @@ import com.amazonaws.services.cloudtraildata.AWSCloudTrailDataClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.cloudtraildata.model.*;
+
 import com.amazonaws.services.cloudtraildata.model.transform.*;
 
 /**

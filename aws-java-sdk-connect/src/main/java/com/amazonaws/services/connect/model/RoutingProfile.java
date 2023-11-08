@@ -91,6 +91,31 @@ public class RoutingProfile implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Long numberOfAssociatedUsers;
+    /**
+     * <p>
+     * Whether agents with this routing profile will have their routing order calculated based on <i>time since their
+     * last inbound contact</i> or <i>longest idle time</i>.
+     * </p>
+     */
+    private String agentAvailabilityTimer;
+    /**
+     * <p>
+     * The timestamp when this resource was last modified.
+     * </p>
+     */
+    private java.util.Date lastModifiedTime;
+    /**
+     * <p>
+     * The Amazon Web Services Region where this resource was last modified.
+     * </p>
+     */
+    private String lastModifiedRegion;
+    /**
+     * <p>
+     * Whether this a default routing profile.
+     * </p>
+     */
+    private Boolean isDefault;
 
     /**
      * <p>
@@ -569,6 +594,205 @@ public class RoutingProfile implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Whether agents with this routing profile will have their routing order calculated based on <i>time since their
+     * last inbound contact</i> or <i>longest idle time</i>.
+     * </p>
+     * 
+     * @param agentAvailabilityTimer
+     *        Whether agents with this routing profile will have their routing order calculated based on <i>time since
+     *        their last inbound contact</i> or <i>longest idle time</i>.
+     * @see AgentAvailabilityTimer
+     */
+
+    public void setAgentAvailabilityTimer(String agentAvailabilityTimer) {
+        this.agentAvailabilityTimer = agentAvailabilityTimer;
+    }
+
+    /**
+     * <p>
+     * Whether agents with this routing profile will have their routing order calculated based on <i>time since their
+     * last inbound contact</i> or <i>longest idle time</i>.
+     * </p>
+     * 
+     * @return Whether agents with this routing profile will have their routing order calculated based on <i>time since
+     *         their last inbound contact</i> or <i>longest idle time</i>.
+     * @see AgentAvailabilityTimer
+     */
+
+    public String getAgentAvailabilityTimer() {
+        return this.agentAvailabilityTimer;
+    }
+
+    /**
+     * <p>
+     * Whether agents with this routing profile will have their routing order calculated based on <i>time since their
+     * last inbound contact</i> or <i>longest idle time</i>.
+     * </p>
+     * 
+     * @param agentAvailabilityTimer
+     *        Whether agents with this routing profile will have their routing order calculated based on <i>time since
+     *        their last inbound contact</i> or <i>longest idle time</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AgentAvailabilityTimer
+     */
+
+    public RoutingProfile withAgentAvailabilityTimer(String agentAvailabilityTimer) {
+        setAgentAvailabilityTimer(agentAvailabilityTimer);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether agents with this routing profile will have their routing order calculated based on <i>time since their
+     * last inbound contact</i> or <i>longest idle time</i>.
+     * </p>
+     * 
+     * @param agentAvailabilityTimer
+     *        Whether agents with this routing profile will have their routing order calculated based on <i>time since
+     *        their last inbound contact</i> or <i>longest idle time</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AgentAvailabilityTimer
+     */
+
+    public RoutingProfile withAgentAvailabilityTimer(AgentAvailabilityTimer agentAvailabilityTimer) {
+        this.agentAvailabilityTimer = agentAvailabilityTimer.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The timestamp when this resource was last modified.
+     * </p>
+     * 
+     * @param lastModifiedTime
+     *        The timestamp when this resource was last modified.
+     */
+
+    public void setLastModifiedTime(java.util.Date lastModifiedTime) {
+        this.lastModifiedTime = lastModifiedTime;
+    }
+
+    /**
+     * <p>
+     * The timestamp when this resource was last modified.
+     * </p>
+     * 
+     * @return The timestamp when this resource was last modified.
+     */
+
+    public java.util.Date getLastModifiedTime() {
+        return this.lastModifiedTime;
+    }
+
+    /**
+     * <p>
+     * The timestamp when this resource was last modified.
+     * </p>
+     * 
+     * @param lastModifiedTime
+     *        The timestamp when this resource was last modified.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RoutingProfile withLastModifiedTime(java.util.Date lastModifiedTime) {
+        setLastModifiedTime(lastModifiedTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Web Services Region where this resource was last modified.
+     * </p>
+     * 
+     * @param lastModifiedRegion
+     *        The Amazon Web Services Region where this resource was last modified.
+     */
+
+    public void setLastModifiedRegion(String lastModifiedRegion) {
+        this.lastModifiedRegion = lastModifiedRegion;
+    }
+
+    /**
+     * <p>
+     * The Amazon Web Services Region where this resource was last modified.
+     * </p>
+     * 
+     * @return The Amazon Web Services Region where this resource was last modified.
+     */
+
+    public String getLastModifiedRegion() {
+        return this.lastModifiedRegion;
+    }
+
+    /**
+     * <p>
+     * The Amazon Web Services Region where this resource was last modified.
+     * </p>
+     * 
+     * @param lastModifiedRegion
+     *        The Amazon Web Services Region where this resource was last modified.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RoutingProfile withLastModifiedRegion(String lastModifiedRegion) {
+        setLastModifiedRegion(lastModifiedRegion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether this a default routing profile.
+     * </p>
+     * 
+     * @param isDefault
+     *        Whether this a default routing profile.
+     */
+
+    public void setIsDefault(Boolean isDefault) {
+        this.isDefault = isDefault;
+    }
+
+    /**
+     * <p>
+     * Whether this a default routing profile.
+     * </p>
+     * 
+     * @return Whether this a default routing profile.
+     */
+
+    public Boolean getIsDefault() {
+        return this.isDefault;
+    }
+
+    /**
+     * <p>
+     * Whether this a default routing profile.
+     * </p>
+     * 
+     * @param isDefault
+     *        Whether this a default routing profile.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RoutingProfile withIsDefault(Boolean isDefault) {
+        setIsDefault(isDefault);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether this a default routing profile.
+     * </p>
+     * 
+     * @return Whether this a default routing profile.
+     */
+
+    public Boolean isDefault() {
+        return this.isDefault;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -599,7 +823,15 @@ public class RoutingProfile implements Serializable, Cloneable, StructuredPojo {
         if (getNumberOfAssociatedQueues() != null)
             sb.append("NumberOfAssociatedQueues: ").append(getNumberOfAssociatedQueues()).append(",");
         if (getNumberOfAssociatedUsers() != null)
-            sb.append("NumberOfAssociatedUsers: ").append(getNumberOfAssociatedUsers());
+            sb.append("NumberOfAssociatedUsers: ").append(getNumberOfAssociatedUsers()).append(",");
+        if (getAgentAvailabilityTimer() != null)
+            sb.append("AgentAvailabilityTimer: ").append(getAgentAvailabilityTimer()).append(",");
+        if (getLastModifiedTime() != null)
+            sb.append("LastModifiedTime: ").append(getLastModifiedTime()).append(",");
+        if (getLastModifiedRegion() != null)
+            sb.append("LastModifiedRegion: ").append(getLastModifiedRegion()).append(",");
+        if (getIsDefault() != null)
+            sb.append("IsDefault: ").append(getIsDefault());
         sb.append("}");
         return sb.toString();
     }
@@ -654,6 +886,22 @@ public class RoutingProfile implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getNumberOfAssociatedUsers() != null && other.getNumberOfAssociatedUsers().equals(this.getNumberOfAssociatedUsers()) == false)
             return false;
+        if (other.getAgentAvailabilityTimer() == null ^ this.getAgentAvailabilityTimer() == null)
+            return false;
+        if (other.getAgentAvailabilityTimer() != null && other.getAgentAvailabilityTimer().equals(this.getAgentAvailabilityTimer()) == false)
+            return false;
+        if (other.getLastModifiedTime() == null ^ this.getLastModifiedTime() == null)
+            return false;
+        if (other.getLastModifiedTime() != null && other.getLastModifiedTime().equals(this.getLastModifiedTime()) == false)
+            return false;
+        if (other.getLastModifiedRegion() == null ^ this.getLastModifiedRegion() == null)
+            return false;
+        if (other.getLastModifiedRegion() != null && other.getLastModifiedRegion().equals(this.getLastModifiedRegion()) == false)
+            return false;
+        if (other.getIsDefault() == null ^ this.getIsDefault() == null)
+            return false;
+        if (other.getIsDefault() != null && other.getIsDefault().equals(this.getIsDefault()) == false)
+            return false;
         return true;
     }
 
@@ -672,6 +920,10 @@ public class RoutingProfile implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getNumberOfAssociatedQueues() == null) ? 0 : getNumberOfAssociatedQueues().hashCode());
         hashCode = prime * hashCode + ((getNumberOfAssociatedUsers() == null) ? 0 : getNumberOfAssociatedUsers().hashCode());
+        hashCode = prime * hashCode + ((getAgentAvailabilityTimer() == null) ? 0 : getAgentAvailabilityTimer().hashCode());
+        hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
+        hashCode = prime * hashCode + ((getLastModifiedRegion() == null) ? 0 : getLastModifiedRegion().hashCode());
+        hashCode = prime * hashCode + ((getIsDefault() == null) ? 0 : getIsDefault().hashCode());
         return hashCode;
     }
 

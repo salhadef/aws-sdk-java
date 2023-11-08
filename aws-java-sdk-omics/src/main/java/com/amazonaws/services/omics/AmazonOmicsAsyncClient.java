@@ -26,8 +26,8 @@ import java.util.concurrent.ExecutorService;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * This is the <i>Amazon Omics API Reference</i>. For an introduction to the service, see <a
- * href="https://docs.aws.amazon.com/omics/latest/dev/">What is Amazon Omics?</a> in the <i>Amazon Omics Developer
+ * This is the <i>AWS HealthOmics API Reference</i>. For an introduction to the service, see <a
+ * href="https://docs.aws.amazon.com/omics/latest/dev/">What is AWS HealthOmics?</a> in the <i>AWS HealthOmics User
  * Guide</i>.
  * </p>
  */
@@ -73,6 +73,72 @@ public class AmazonOmicsAsyncClient extends AmazonOmicsClient implements AmazonO
      */
     public ExecutorService getExecutorService() {
         return executorService;
+    }
+
+    @Override
+    public java.util.concurrent.Future<AbortMultipartReadSetUploadResult> abortMultipartReadSetUploadAsync(AbortMultipartReadSetUploadRequest request) {
+
+        return abortMultipartReadSetUploadAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AbortMultipartReadSetUploadResult> abortMultipartReadSetUploadAsync(final AbortMultipartReadSetUploadRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AbortMultipartReadSetUploadRequest, AbortMultipartReadSetUploadResult> asyncHandler) {
+        final AbortMultipartReadSetUploadRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AbortMultipartReadSetUploadResult>() {
+            @Override
+            public AbortMultipartReadSetUploadResult call() throws Exception {
+                AbortMultipartReadSetUploadResult result = null;
+
+                try {
+                    result = executeAbortMultipartReadSetUpload(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<AcceptShareResult> acceptShareAsync(AcceptShareRequest request) {
+
+        return acceptShareAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AcceptShareResult> acceptShareAsync(final AcceptShareRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AcceptShareRequest, AcceptShareResult> asyncHandler) {
+        final AcceptShareRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AcceptShareResult>() {
+            @Override
+            public AcceptShareResult call() throws Exception {
+                AcceptShareResult result = null;
+
+                try {
+                    result = executeAcceptShare(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
@@ -208,6 +274,40 @@ public class AmazonOmicsAsyncClient extends AmazonOmicsClient implements AmazonO
     }
 
     @Override
+    public java.util.concurrent.Future<CompleteMultipartReadSetUploadResult> completeMultipartReadSetUploadAsync(CompleteMultipartReadSetUploadRequest request) {
+
+        return completeMultipartReadSetUploadAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CompleteMultipartReadSetUploadResult> completeMultipartReadSetUploadAsync(
+            final CompleteMultipartReadSetUploadRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CompleteMultipartReadSetUploadRequest, CompleteMultipartReadSetUploadResult> asyncHandler) {
+        final CompleteMultipartReadSetUploadRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CompleteMultipartReadSetUploadResult>() {
+            @Override
+            public CompleteMultipartReadSetUploadResult call() throws Exception {
+                CompleteMultipartReadSetUploadResult result = null;
+
+                try {
+                    result = executeCompleteMultipartReadSetUpload(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateAnnotationStoreResult> createAnnotationStoreAsync(CreateAnnotationStoreRequest request) {
 
         return createAnnotationStoreAsync(request, null);
@@ -225,6 +325,72 @@ public class AmazonOmicsAsyncClient extends AmazonOmicsClient implements AmazonO
 
                 try {
                     result = executeCreateAnnotationStore(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAnnotationStoreVersionResult> createAnnotationStoreVersionAsync(CreateAnnotationStoreVersionRequest request) {
+
+        return createAnnotationStoreVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAnnotationStoreVersionResult> createAnnotationStoreVersionAsync(final CreateAnnotationStoreVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateAnnotationStoreVersionRequest, CreateAnnotationStoreVersionResult> asyncHandler) {
+        final CreateAnnotationStoreVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateAnnotationStoreVersionResult>() {
+            @Override
+            public CreateAnnotationStoreVersionResult call() throws Exception {
+                CreateAnnotationStoreVersionResult result = null;
+
+                try {
+                    result = executeCreateAnnotationStoreVersion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMultipartReadSetUploadResult> createMultipartReadSetUploadAsync(CreateMultipartReadSetUploadRequest request) {
+
+        return createMultipartReadSetUploadAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMultipartReadSetUploadResult> createMultipartReadSetUploadAsync(final CreateMultipartReadSetUploadRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateMultipartReadSetUploadRequest, CreateMultipartReadSetUploadResult> asyncHandler) {
+        final CreateMultipartReadSetUploadRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateMultipartReadSetUploadResult>() {
+            @Override
+            public CreateMultipartReadSetUploadResult call() throws Exception {
+                CreateMultipartReadSetUploadResult result = null;
+
+                try {
+                    result = executeCreateMultipartReadSetUpload(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -340,6 +506,39 @@ public class AmazonOmicsAsyncClient extends AmazonOmicsClient implements AmazonO
     }
 
     @Override
+    public java.util.concurrent.Future<CreateShareResult> createShareAsync(CreateShareRequest request) {
+
+        return createShareAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateShareResult> createShareAsync(final CreateShareRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateShareRequest, CreateShareResult> asyncHandler) {
+        final CreateShareRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateShareResult>() {
+            @Override
+            public CreateShareResult call() throws Exception {
+                CreateShareResult result = null;
+
+                try {
+                    result = executeCreateShare(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateVariantStoreResult> createVariantStoreAsync(CreateVariantStoreRequest request) {
 
         return createVariantStoreAsync(request, null);
@@ -423,6 +622,40 @@ public class AmazonOmicsAsyncClient extends AmazonOmicsClient implements AmazonO
 
                 try {
                     result = executeDeleteAnnotationStore(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAnnotationStoreVersionsResult> deleteAnnotationStoreVersionsAsync(DeleteAnnotationStoreVersionsRequest request) {
+
+        return deleteAnnotationStoreVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAnnotationStoreVersionsResult> deleteAnnotationStoreVersionsAsync(
+            final DeleteAnnotationStoreVersionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAnnotationStoreVersionsRequest, DeleteAnnotationStoreVersionsResult> asyncHandler) {
+        final DeleteAnnotationStoreVersionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteAnnotationStoreVersionsResult>() {
+            @Override
+            public DeleteAnnotationStoreVersionsResult call() throws Exception {
+                DeleteAnnotationStoreVersionsResult result = null;
+
+                try {
+                    result = executeDeleteAnnotationStoreVersions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -604,6 +837,39 @@ public class AmazonOmicsAsyncClient extends AmazonOmicsClient implements AmazonO
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteShareResult> deleteShareAsync(DeleteShareRequest request) {
+
+        return deleteShareAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteShareResult> deleteShareAsync(final DeleteShareRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteShareRequest, DeleteShareResult> asyncHandler) {
+        final DeleteShareRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteShareResult>() {
+            @Override
+            public DeleteShareResult call() throws Exception {
+                DeleteShareResult result = null;
+
+                try {
+                    result = executeDeleteShare(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteVariantStoreResult> deleteVariantStoreAsync(DeleteVariantStoreRequest request) {
 
         return deleteVariantStoreAsync(request, null);
@@ -720,6 +986,39 @@ public class AmazonOmicsAsyncClient extends AmazonOmicsClient implements AmazonO
 
                 try {
                     result = executeGetAnnotationStore(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAnnotationStoreVersionResult> getAnnotationStoreVersionAsync(GetAnnotationStoreVersionRequest request) {
+
+        return getAnnotationStoreVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAnnotationStoreVersionResult> getAnnotationStoreVersionAsync(final GetAnnotationStoreVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetAnnotationStoreVersionRequest, GetAnnotationStoreVersionResult> asyncHandler) {
+        final GetAnnotationStoreVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetAnnotationStoreVersionResult>() {
+            @Override
+            public GetAnnotationStoreVersionResult call() throws Exception {
+                GetAnnotationStoreVersionResult result = null;
+
+                try {
+                    result = executeGetAnnotationStoreVersion(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1165,6 +1464,39 @@ public class AmazonOmicsAsyncClient extends AmazonOmicsClient implements AmazonO
     }
 
     @Override
+    public java.util.concurrent.Future<GetShareResult> getShareAsync(GetShareRequest request) {
+
+        return getShareAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetShareResult> getShareAsync(final GetShareRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetShareRequest, GetShareResult> asyncHandler) {
+        final GetShareRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetShareResult>() {
+            @Override
+            public GetShareResult call() throws Exception {
+                GetShareResult result = null;
+
+                try {
+                    result = executeGetShare(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetVariantImportJobResult> getVariantImportJobAsync(GetVariantImportJobRequest request) {
 
         return getVariantImportJobAsync(request, null);
@@ -1297,6 +1629,39 @@ public class AmazonOmicsAsyncClient extends AmazonOmicsClient implements AmazonO
     }
 
     @Override
+    public java.util.concurrent.Future<ListAnnotationStoreVersionsResult> listAnnotationStoreVersionsAsync(ListAnnotationStoreVersionsRequest request) {
+
+        return listAnnotationStoreVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAnnotationStoreVersionsResult> listAnnotationStoreVersionsAsync(final ListAnnotationStoreVersionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAnnotationStoreVersionsRequest, ListAnnotationStoreVersionsResult> asyncHandler) {
+        final ListAnnotationStoreVersionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAnnotationStoreVersionsResult>() {
+            @Override
+            public ListAnnotationStoreVersionsResult call() throws Exception {
+                ListAnnotationStoreVersionsResult result = null;
+
+                try {
+                    result = executeListAnnotationStoreVersions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAnnotationStoresResult> listAnnotationStoresAsync(ListAnnotationStoresRequest request) {
 
         return listAnnotationStoresAsync(request, null);
@@ -1314,6 +1679,39 @@ public class AmazonOmicsAsyncClient extends AmazonOmicsClient implements AmazonO
 
                 try {
                     result = executeListAnnotationStores(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMultipartReadSetUploadsResult> listMultipartReadSetUploadsAsync(ListMultipartReadSetUploadsRequest request) {
+
+        return listMultipartReadSetUploadsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMultipartReadSetUploadsResult> listMultipartReadSetUploadsAsync(final ListMultipartReadSetUploadsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListMultipartReadSetUploadsRequest, ListMultipartReadSetUploadsResult> asyncHandler) {
+        final ListMultipartReadSetUploadsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListMultipartReadSetUploadsResult>() {
+            @Override
+            public ListMultipartReadSetUploadsResult call() throws Exception {
+                ListMultipartReadSetUploadsResult result = null;
+
+                try {
+                    result = executeListMultipartReadSetUploads(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1413,6 +1811,39 @@ public class AmazonOmicsAsyncClient extends AmazonOmicsClient implements AmazonO
 
                 try {
                     result = executeListReadSetImportJobs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListReadSetUploadPartsResult> listReadSetUploadPartsAsync(ListReadSetUploadPartsRequest request) {
+
+        return listReadSetUploadPartsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListReadSetUploadPartsResult> listReadSetUploadPartsAsync(final ListReadSetUploadPartsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListReadSetUploadPartsRequest, ListReadSetUploadPartsResult> asyncHandler) {
+        final ListReadSetUploadPartsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListReadSetUploadPartsResult>() {
+            @Override
+            public ListReadSetUploadPartsResult call() throws Exception {
+                ListReadSetUploadPartsResult result = null;
+
+                try {
+                    result = executeListReadSetUploadParts(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1677,6 +2108,39 @@ public class AmazonOmicsAsyncClient extends AmazonOmicsClient implements AmazonO
 
                 try {
                     result = executeListSequenceStores(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSharesResult> listSharesAsync(ListSharesRequest request) {
+
+        return listSharesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSharesResult> listSharesAsync(final ListSharesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListSharesRequest, ListSharesResult> asyncHandler) {
+        final ListSharesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListSharesResult>() {
+            @Override
+            public ListSharesResult call() throws Exception {
+                ListSharesResult result = null;
+
+                try {
+                    result = executeListShares(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2155,6 +2619,39 @@ public class AmazonOmicsAsyncClient extends AmazonOmicsClient implements AmazonO
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateAnnotationStoreVersionResult> updateAnnotationStoreVersionAsync(UpdateAnnotationStoreVersionRequest request) {
+
+        return updateAnnotationStoreVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAnnotationStoreVersionResult> updateAnnotationStoreVersionAsync(final UpdateAnnotationStoreVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateAnnotationStoreVersionRequest, UpdateAnnotationStoreVersionResult> asyncHandler) {
+        final UpdateAnnotationStoreVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateAnnotationStoreVersionResult>() {
+            @Override
+            public UpdateAnnotationStoreVersionResult call() throws Exception {
+                UpdateAnnotationStoreVersionResult result = null;
+
+                try {
+                    result = executeUpdateAnnotationStoreVersion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateRunGroupResult> updateRunGroupAsync(UpdateRunGroupRequest request) {
 
         return updateRunGroupAsync(request, null);
@@ -2238,6 +2735,39 @@ public class AmazonOmicsAsyncClient extends AmazonOmicsClient implements AmazonO
 
                 try {
                     result = executeUpdateWorkflow(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UploadReadSetPartResult> uploadReadSetPartAsync(UploadReadSetPartRequest request) {
+
+        return uploadReadSetPartAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UploadReadSetPartResult> uploadReadSetPartAsync(final UploadReadSetPartRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UploadReadSetPartRequest, UploadReadSetPartResult> asyncHandler) {
+        final UploadReadSetPartRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UploadReadSetPartResult>() {
+            @Override
+            public UploadReadSetPartResult call() throws Exception {
+                UploadReadSetPartResult result = null;
+
+                try {
+                    result = executeUploadReadSetPart(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

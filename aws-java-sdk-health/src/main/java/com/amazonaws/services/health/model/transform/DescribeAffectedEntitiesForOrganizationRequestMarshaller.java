@@ -36,6 +36,8 @@ public class DescribeAffectedEntitiesForOrganizationRequestMarshaller {
             .marshallLocationName("nextToken").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxResults").build();
+    private static final MarshallingInfo<List> ORGANIZATIONENTITYACCOUNTFILTERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("organizationEntityAccountFilters").build();
 
     private static final DescribeAffectedEntitiesForOrganizationRequestMarshaller instance = new DescribeAffectedEntitiesForOrganizationRequestMarshaller();
 
@@ -57,6 +59,8 @@ public class DescribeAffectedEntitiesForOrganizationRequestMarshaller {
             protocolMarshaller.marshall(describeAffectedEntitiesForOrganizationRequest.getLocale(), LOCALE_BINDING);
             protocolMarshaller.marshall(describeAffectedEntitiesForOrganizationRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(describeAffectedEntitiesForOrganizationRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(describeAffectedEntitiesForOrganizationRequest.getOrganizationEntityAccountFilters(),
+                    ORGANIZATIONENTITYACCOUNTFILTERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1081,31 +1081,31 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFirstName() != null)
-            sb.append("FirstName: ").append(getFirstName()).append(",");
+            sb.append("FirstName: ").append("***Sensitive Data Redacted***").append(",");
         if (getLastName() != null)
-            sb.append("LastName: ").append(getLastName()).append(",");
+            sb.append("LastName: ").append("***Sensitive Data Redacted***").append(",");
         if (getContactType() != null)
             sb.append("ContactType: ").append(getContactType()).append(",");
         if (getOrganizationName() != null)
-            sb.append("OrganizationName: ").append(getOrganizationName()).append(",");
+            sb.append("OrganizationName: ").append("***Sensitive Data Redacted***").append(",");
         if (getAddressLine1() != null)
-            sb.append("AddressLine1: ").append(getAddressLine1()).append(",");
+            sb.append("AddressLine1: ").append("***Sensitive Data Redacted***").append(",");
         if (getAddressLine2() != null)
-            sb.append("AddressLine2: ").append(getAddressLine2()).append(",");
+            sb.append("AddressLine2: ").append("***Sensitive Data Redacted***").append(",");
         if (getCity() != null)
-            sb.append("City: ").append(getCity()).append(",");
+            sb.append("City: ").append("***Sensitive Data Redacted***").append(",");
         if (getState() != null)
-            sb.append("State: ").append(getState()).append(",");
+            sb.append("State: ").append("***Sensitive Data Redacted***").append(",");
         if (getCountryCode() != null)
-            sb.append("CountryCode: ").append(getCountryCode()).append(",");
+            sb.append("CountryCode: ").append("***Sensitive Data Redacted***").append(",");
         if (getZipCode() != null)
-            sb.append("ZipCode: ").append(getZipCode()).append(",");
+            sb.append("ZipCode: ").append("***Sensitive Data Redacted***").append(",");
         if (getPhoneNumber() != null)
-            sb.append("PhoneNumber: ").append(getPhoneNumber()).append(",");
+            sb.append("PhoneNumber: ").append("***Sensitive Data Redacted***").append(",");
         if (getEmail() != null)
-            sb.append("Email: ").append(getEmail()).append(",");
+            sb.append("Email: ").append("***Sensitive Data Redacted***").append(",");
         if (getFax() != null)
-            sb.append("Fax: ").append(getFax()).append(",");
+            sb.append("Fax: ").append("***Sensitive Data Redacted***").append(",");
         if (getExtraParams() != null)
             sb.append("ExtraParams: ").append(getExtraParams());
         sb.append("}");

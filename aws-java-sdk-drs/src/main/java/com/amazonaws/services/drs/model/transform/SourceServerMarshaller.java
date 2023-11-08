@@ -45,6 +45,8 @@ public class SourceServerMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("reversedDirectionSourceServerArn").build();
     private static final MarshallingInfo<StructuredPojo> SOURCECLOUDPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceCloudProperties").build();
+    private static final MarshallingInfo<String> SOURCENETWORKID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceNetworkID").build();
     private static final MarshallingInfo<StructuredPojo> SOURCEPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceProperties").build();
     private static final MarshallingInfo<String> SOURCESERVERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -78,6 +80,7 @@ public class SourceServerMarshaller {
             protocolMarshaller.marshall(sourceServer.getReplicationDirection(), REPLICATIONDIRECTION_BINDING);
             protocolMarshaller.marshall(sourceServer.getReversedDirectionSourceServerArn(), REVERSEDDIRECTIONSOURCESERVERARN_BINDING);
             protocolMarshaller.marshall(sourceServer.getSourceCloudProperties(), SOURCECLOUDPROPERTIES_BINDING);
+            protocolMarshaller.marshall(sourceServer.getSourceNetworkID(), SOURCENETWORKID_BINDING);
             protocolMarshaller.marshall(sourceServer.getSourceProperties(), SOURCEPROPERTIES_BINDING);
             protocolMarshaller.marshall(sourceServer.getSourceServerID(), SOURCESERVERID_BINDING);
             protocolMarshaller.marshall(sourceServer.getStagingArea(), STAGINGAREA_BINDING);

@@ -84,6 +84,10 @@ public class GatingRuleJsonUnmarshaller implements Unmarshaller<GatingRule, Json
                     context.nextToken();
                     gatingRule.setWaitPeriodMs(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("Owner", targetDepth)) {
+                    context.nextToken();
+                    gatingRule.setOwner(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -108,6 +108,12 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date lastUpdatedDateTime;
+    /**
+     * <p>
+     * Describes the latest update to the dataset.
+     * </p>
+     */
+    private DatasetUpdateSummary latestDatasetUpdate;
 
     /**
      * <p>
@@ -616,6 +622,46 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Describes the latest update to the dataset.
+     * </p>
+     * 
+     * @param latestDatasetUpdate
+     *        Describes the latest update to the dataset.
+     */
+
+    public void setLatestDatasetUpdate(DatasetUpdateSummary latestDatasetUpdate) {
+        this.latestDatasetUpdate = latestDatasetUpdate;
+    }
+
+    /**
+     * <p>
+     * Describes the latest update to the dataset.
+     * </p>
+     * 
+     * @return Describes the latest update to the dataset.
+     */
+
+    public DatasetUpdateSummary getLatestDatasetUpdate() {
+        return this.latestDatasetUpdate;
+    }
+
+    /**
+     * <p>
+     * Describes the latest update to the dataset.
+     * </p>
+     * 
+     * @param latestDatasetUpdate
+     *        Describes the latest update to the dataset.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Dataset withLatestDatasetUpdate(DatasetUpdateSummary latestDatasetUpdate) {
+        setLatestDatasetUpdate(latestDatasetUpdate);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -642,7 +688,9 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
         if (getCreationDateTime() != null)
             sb.append("CreationDateTime: ").append(getCreationDateTime()).append(",");
         if (getLastUpdatedDateTime() != null)
-            sb.append("LastUpdatedDateTime: ").append(getLastUpdatedDateTime());
+            sb.append("LastUpdatedDateTime: ").append(getLastUpdatedDateTime()).append(",");
+        if (getLatestDatasetUpdate() != null)
+            sb.append("LatestDatasetUpdate: ").append(getLatestDatasetUpdate());
         sb.append("}");
         return sb.toString();
     }
@@ -689,6 +737,10 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLastUpdatedDateTime() != null && other.getLastUpdatedDateTime().equals(this.getLastUpdatedDateTime()) == false)
             return false;
+        if (other.getLatestDatasetUpdate() == null ^ this.getLatestDatasetUpdate() == null)
+            return false;
+        if (other.getLatestDatasetUpdate() != null && other.getLatestDatasetUpdate().equals(this.getLatestDatasetUpdate()) == false)
+            return false;
         return true;
     }
 
@@ -705,6 +757,7 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getCreationDateTime() == null) ? 0 : getCreationDateTime().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedDateTime() == null) ? 0 : getLastUpdatedDateTime().hashCode());
+        hashCode = prime * hashCode + ((getLatestDatasetUpdate() == null) ? 0 : getLatestDatasetUpdate().hashCode());
         return hashCode;
     }
 

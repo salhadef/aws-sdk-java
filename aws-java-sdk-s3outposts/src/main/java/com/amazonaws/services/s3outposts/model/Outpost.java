@@ -36,6 +36,12 @@ public class Outpost implements Serializable, Cloneable, StructuredPojo {
     private String outpostArn;
     /**
      * <p>
+     * Specifies the unique S3 on Outposts ARN for use with Resource Access Manager (RAM).
+     * </p>
+     */
+    private String s3OutpostArn;
+    /**
+     * <p>
      * Specifies the unique identifier for the outpost.
      * </p>
      */
@@ -91,6 +97,46 @@ public class Outpost implements Serializable, Cloneable, StructuredPojo {
 
     public Outpost withOutpostArn(String outpostArn) {
         setOutpostArn(outpostArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the unique S3 on Outposts ARN for use with Resource Access Manager (RAM).
+     * </p>
+     * 
+     * @param s3OutpostArn
+     *        Specifies the unique S3 on Outposts ARN for use with Resource Access Manager (RAM).
+     */
+
+    public void setS3OutpostArn(String s3OutpostArn) {
+        this.s3OutpostArn = s3OutpostArn;
+    }
+
+    /**
+     * <p>
+     * Specifies the unique S3 on Outposts ARN for use with Resource Access Manager (RAM).
+     * </p>
+     * 
+     * @return Specifies the unique S3 on Outposts ARN for use with Resource Access Manager (RAM).
+     */
+
+    public String getS3OutpostArn() {
+        return this.s3OutpostArn;
+    }
+
+    /**
+     * <p>
+     * Specifies the unique S3 on Outposts ARN for use with Resource Access Manager (RAM).
+     * </p>
+     * 
+     * @param s3OutpostArn
+     *        Specifies the unique S3 on Outposts ARN for use with Resource Access Manager (RAM).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Outpost withS3OutpostArn(String s3OutpostArn) {
+        setS3OutpostArn(s3OutpostArn);
         return this;
     }
 
@@ -234,6 +280,8 @@ public class Outpost implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getOutpostArn() != null)
             sb.append("OutpostArn: ").append(getOutpostArn()).append(",");
+        if (getS3OutpostArn() != null)
+            sb.append("S3OutpostArn: ").append(getS3OutpostArn()).append(",");
         if (getOutpostId() != null)
             sb.append("OutpostId: ").append(getOutpostId()).append(",");
         if (getOwnerId() != null)
@@ -258,6 +306,10 @@ public class Outpost implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getOutpostArn() != null && other.getOutpostArn().equals(this.getOutpostArn()) == false)
             return false;
+        if (other.getS3OutpostArn() == null ^ this.getS3OutpostArn() == null)
+            return false;
+        if (other.getS3OutpostArn() != null && other.getS3OutpostArn().equals(this.getS3OutpostArn()) == false)
+            return false;
         if (other.getOutpostId() == null ^ this.getOutpostId() == null)
             return false;
         if (other.getOutpostId() != null && other.getOutpostId().equals(this.getOutpostId()) == false)
@@ -279,6 +331,7 @@ public class Outpost implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getOutpostArn() == null) ? 0 : getOutpostArn().hashCode());
+        hashCode = prime * hashCode + ((getS3OutpostArn() == null) ? 0 : getS3OutpostArn().hashCode());
         hashCode = prime * hashCode + ((getOutpostId() == null) ? 0 : getOutpostId().hashCode());
         hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode());
         hashCode = prime * hashCode + ((getCapacityInBytes() == null) ? 0 : getCapacityInBytes().hashCode());

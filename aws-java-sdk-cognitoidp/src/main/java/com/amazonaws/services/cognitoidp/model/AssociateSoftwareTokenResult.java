@@ -138,7 +138,7 @@ public class AssociateSoftwareTokenResult extends com.amazonaws.AmazonWebService
         if (getSecretCode() != null)
             sb.append("SecretCode: ").append("***Sensitive Data Redacted***").append(",");
         if (getSession() != null)
-            sb.append("Session: ").append(getSession());
+            sb.append("Session: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

@@ -12,7 +12,6 @@
  */
 package com.amazonaws.services.securitylake.model.transform;
 
-import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -29,14 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CreateAwsLogSourceRequestMarshaller {
 
-    private static final MarshallingInfo<Map> ENABLEALLDIMENSIONS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("enableAllDimensions").build();
-    private static final MarshallingInfo<List> ENABLESINGLEDIMENSION_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("enableSingleDimension").build();
-    private static final MarshallingInfo<Map> ENABLETWODIMENSIONS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("enableTwoDimensions").build();
-    private static final MarshallingInfo<List> INPUTORDER_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("inputOrder").build();
+    private static final MarshallingInfo<List> SOURCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("sources").build();
 
     private static final CreateAwsLogSourceRequestMarshaller instance = new CreateAwsLogSourceRequestMarshaller();
 
@@ -54,10 +47,7 @@ public class CreateAwsLogSourceRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(createAwsLogSourceRequest.getEnableAllDimensions(), ENABLEALLDIMENSIONS_BINDING);
-            protocolMarshaller.marshall(createAwsLogSourceRequest.getEnableSingleDimension(), ENABLESINGLEDIMENSION_BINDING);
-            protocolMarshaller.marshall(createAwsLogSourceRequest.getEnableTwoDimensions(), ENABLETWODIMENSIONS_BINDING);
-            protocolMarshaller.marshall(createAwsLogSourceRequest.getInputOrder(), INPUTORDER_BINDING);
+            protocolMarshaller.marshall(createAwsLogSourceRequest.getSources(), SOURCES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

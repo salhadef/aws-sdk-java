@@ -22,7 +22,7 @@ import javax.annotation.Generated;
  * <p>
  * For information about quotas that affect Organizations, see <a
  * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
- * Organizations</a>in the <i>Organizations User Guide.</i>
+ * Organizations</a> in the <i>Organizations User Guide</i>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -46,13 +46,13 @@ public class BatchGetAssetPropertyValueHistoryRequest extends com.amazonaws.Amaz
      * <ul>
      * <li>
      * <p>
-     * The size of the result set is less than 1 MB.
+     * The size of the result set is equal to 4 MB.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The number of data points in the result set is less than the value of <code>maxResults</code>. The maximum value
-     * of <code>maxResults</code> is 4000.
+     * The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value
+     * of <code>maxResults</code> is 20000.
      * </p>
      * </li>
      * </ul>
@@ -185,13 +185,13 @@ public class BatchGetAssetPropertyValueHistoryRequest extends com.amazonaws.Amaz
      * <ul>
      * <li>
      * <p>
-     * The size of the result set is less than 1 MB.
+     * The size of the result set is equal to 4 MB.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The number of data points in the result set is less than the value of <code>maxResults</code>. The maximum value
-     * of <code>maxResults</code> is 4000.
+     * The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value
+     * of <code>maxResults</code> is 20000.
      * </p>
      * </li>
      * </ul>
@@ -202,13 +202,13 @@ public class BatchGetAssetPropertyValueHistoryRequest extends com.amazonaws.Amaz
      *        <ul>
      *        <li>
      *        <p>
-     *        The size of the result set is less than 1 MB.
+     *        The size of the result set is equal to 4 MB.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        The number of data points in the result set is less than the value of <code>maxResults</code>. The maximum
-     *        value of <code>maxResults</code> is 4000.
+     *        The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum
+     *        value of <code>maxResults</code> is 20000.
      *        </p>
      *        </li>
      */
@@ -225,13 +225,13 @@ public class BatchGetAssetPropertyValueHistoryRequest extends com.amazonaws.Amaz
      * <ul>
      * <li>
      * <p>
-     * The size of the result set is less than 1 MB.
+     * The size of the result set is equal to 4 MB.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The number of data points in the result set is less than the value of <code>maxResults</code>. The maximum value
-     * of <code>maxResults</code> is 4000.
+     * The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value
+     * of <code>maxResults</code> is 20000.
      * </p>
      * </li>
      * </ul>
@@ -241,13 +241,13 @@ public class BatchGetAssetPropertyValueHistoryRequest extends com.amazonaws.Amaz
      *         <ul>
      *         <li>
      *         <p>
-     *         The size of the result set is less than 1 MB.
+     *         The size of the result set is equal to 4 MB.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         The number of data points in the result set is less than the value of <code>maxResults</code>. The
-     *         maximum value of <code>maxResults</code> is 4000.
+     *         The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum
+     *         value of <code>maxResults</code> is 20000.
      *         </p>
      *         </li>
      */
@@ -264,13 +264,13 @@ public class BatchGetAssetPropertyValueHistoryRequest extends com.amazonaws.Amaz
      * <ul>
      * <li>
      * <p>
-     * The size of the result set is less than 1 MB.
+     * The size of the result set is equal to 4 MB.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The number of data points in the result set is less than the value of <code>maxResults</code>. The maximum value
-     * of <code>maxResults</code> is 4000.
+     * The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value
+     * of <code>maxResults</code> is 20000.
      * </p>
      * </li>
      * </ul>
@@ -281,13 +281,13 @@ public class BatchGetAssetPropertyValueHistoryRequest extends com.amazonaws.Amaz
      *        <ul>
      *        <li>
      *        <p>
-     *        The size of the result set is less than 1 MB.
+     *        The size of the result set is equal to 4 MB.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        The number of data points in the result set is less than the value of <code>maxResults</code>. The maximum
-     *        value of <code>maxResults</code> is 4000.
+     *        The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum
+     *        value of <code>maxResults</code> is 20000.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

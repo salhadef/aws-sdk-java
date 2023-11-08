@@ -48,17 +48,17 @@ public class GetCampaignStateBatchResultJsonUnmarshaller implements Unmarshaller
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("failedRequests", targetDepth)) {
-                    context.nextToken();
-                    getCampaignStateBatchResult.setFailedRequests(new ListUnmarshaller<FailedCampaignStateResponse>(FailedCampaignStateResponseJsonUnmarshaller
-                            .getInstance())
-
-                    .unmarshall(context));
-                }
                 if (context.testExpression("successfulRequests", targetDepth)) {
                     context.nextToken();
                     getCampaignStateBatchResult.setSuccessfulRequests(new ListUnmarshaller<SuccessfulCampaignStateResponse>(
                             SuccessfulCampaignStateResponseJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("failedRequests", targetDepth)) {
+                    context.nextToken();
+                    getCampaignStateBatchResult.setFailedRequests(new ListUnmarshaller<FailedCampaignStateResponse>(FailedCampaignStateResponseJsonUnmarshaller
+                            .getInstance())
 
                     .unmarshall(context));
                 }

@@ -56,6 +56,11 @@ public class BatchStatementErrorJsonUnmarshaller implements Unmarshaller<BatchSt
                     context.nextToken();
                     batchStatementError.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Item", targetDepth)) {
+                    context.nextToken();
+                    batchStatementError.setItem(new MapUnmarshaller<String, AttributeValue>(context.getUnmarshaller(String.class),
+                            AttributeValueJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

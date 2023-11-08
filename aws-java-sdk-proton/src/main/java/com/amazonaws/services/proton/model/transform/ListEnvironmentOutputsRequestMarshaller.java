@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ListEnvironmentOutputsRequestMarshaller {
 
+    private static final MarshallingInfo<String> DEPLOYMENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deploymentId").build();
     private static final MarshallingInfo<String> ENVIRONMENTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("environmentName").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -48,6 +50,7 @@ public class ListEnvironmentOutputsRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(listEnvironmentOutputsRequest.getDeploymentId(), DEPLOYMENTID_BINDING);
             protocolMarshaller.marshall(listEnvironmentOutputsRequest.getEnvironmentName(), ENVIRONMENTNAME_BINDING);
             protocolMarshaller.marshall(listEnvironmentOutputsRequest.getNextToken(), NEXTTOKEN_BINDING);
         } catch (Exception e) {

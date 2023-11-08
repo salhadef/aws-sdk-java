@@ -52,6 +52,10 @@ public class CoveredResourceJsonUnmarshaller implements Unmarshaller<CoveredReso
                     context.nextToken();
                     coveredResource.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("lastScannedAt", targetDepth)) {
+                    context.nextToken();
+                    coveredResource.setLastScannedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
                 if (context.testExpression("resourceId", targetDepth)) {
                     context.nextToken();
                     coveredResource.setResourceId(context.getUnmarshaller(String.class).unmarshall(context));

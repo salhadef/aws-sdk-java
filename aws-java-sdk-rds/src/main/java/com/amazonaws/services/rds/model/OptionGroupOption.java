@@ -58,7 +58,7 @@ public class OptionGroupOption implements Serializable, Cloneable {
     private String minimumRequiredMinorEngineVersion;
     /**
      * <p>
-     * Specifies whether the option requires a port.
+     * Indicates whether the option requires a port.
      * </p>
      */
     private Boolean portRequired;
@@ -130,7 +130,7 @@ public class OptionGroupOption implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<OptionVersion> optionGroupOptionVersions;
     /**
      * <p>
-     * Specifies whether the option can be copied across Amazon Web Services accounts.
+     * Indicates whether the option can be copied across Amazon Web Services accounts.
      * </p>
      */
     private Boolean copyableCrossAccount;
@@ -337,11 +337,11 @@ public class OptionGroupOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the option requires a port.
+     * Indicates whether the option requires a port.
      * </p>
      * 
      * @param portRequired
-     *        Specifies whether the option requires a port.
+     *        Indicates whether the option requires a port.
      */
 
     public void setPortRequired(Boolean portRequired) {
@@ -350,10 +350,10 @@ public class OptionGroupOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the option requires a port.
+     * Indicates whether the option requires a port.
      * </p>
      * 
-     * @return Specifies whether the option requires a port.
+     * @return Indicates whether the option requires a port.
      */
 
     public Boolean getPortRequired() {
@@ -362,11 +362,11 @@ public class OptionGroupOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the option requires a port.
+     * Indicates whether the option requires a port.
      * </p>
      * 
      * @param portRequired
-     *        Specifies whether the option requires a port.
+     *        Indicates whether the option requires a port.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -377,10 +377,10 @@ public class OptionGroupOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the option requires a port.
+     * Indicates whether the option requires a port.
      * </p>
      * 
-     * @return Specifies whether the option requires a port.
+     * @return Indicates whether the option requires a port.
      */
 
     public Boolean isPortRequired() {
@@ -1029,11 +1029,11 @@ public class OptionGroupOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the option can be copied across Amazon Web Services accounts.
+     * Indicates whether the option can be copied across Amazon Web Services accounts.
      * </p>
      * 
      * @param copyableCrossAccount
-     *        Specifies whether the option can be copied across Amazon Web Services accounts.
+     *        Indicates whether the option can be copied across Amazon Web Services accounts.
      */
 
     public void setCopyableCrossAccount(Boolean copyableCrossAccount) {
@@ -1042,10 +1042,10 @@ public class OptionGroupOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the option can be copied across Amazon Web Services accounts.
+     * Indicates whether the option can be copied across Amazon Web Services accounts.
      * </p>
      * 
-     * @return Specifies whether the option can be copied across Amazon Web Services accounts.
+     * @return Indicates whether the option can be copied across Amazon Web Services accounts.
      */
 
     public Boolean getCopyableCrossAccount() {
@@ -1054,11 +1054,11 @@ public class OptionGroupOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the option can be copied across Amazon Web Services accounts.
+     * Indicates whether the option can be copied across Amazon Web Services accounts.
      * </p>
      * 
      * @param copyableCrossAccount
-     *        Specifies whether the option can be copied across Amazon Web Services accounts.
+     *        Indicates whether the option can be copied across Amazon Web Services accounts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1069,10 +1069,10 @@ public class OptionGroupOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the option can be copied across Amazon Web Services accounts.
+     * Indicates whether the option can be copied across Amazon Web Services accounts.
      * </p>
      * 
-     * @return Specifies whether the option can be copied across Amazon Web Services accounts.
+     * @return Indicates whether the option can be copied across Amazon Web Services accounts.
      */
 
     public Boolean isCopyableCrossAccount() {

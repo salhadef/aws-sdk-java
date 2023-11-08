@@ -180,9 +180,9 @@ public class ControlComment implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAuthorName() != null)
-            sb.append("AuthorName: ").append(getAuthorName()).append(",");
+            sb.append("AuthorName: ").append("***Sensitive Data Redacted***").append(",");
         if (getCommentBody() != null)
-            sb.append("CommentBody: ").append(getCommentBody()).append(",");
+            sb.append("CommentBody: ").append("***Sensitive Data Redacted***").append(",");
         if (getPostedDate() != null)
             sb.append("PostedDate: ").append(getPostedDate());
         sb.append("}");

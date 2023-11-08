@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Cannot set a CloudWatch Logs delivery for this region.
+ * Cannot set a CloudWatch Logs delivery for this Region.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

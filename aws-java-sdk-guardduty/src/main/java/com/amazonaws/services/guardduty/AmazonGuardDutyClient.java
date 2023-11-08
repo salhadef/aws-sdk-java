@@ -44,6 +44,7 @@ import com.amazonaws.services.guardduty.AmazonGuardDutyClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.guardduty.model.*;
+
 import com.amazonaws.services.guardduty.model.transform.*;
 
 /**
@@ -94,6 +95,9 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .withContentTypeOverride("application/json")
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.guardduty.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
                                     com.amazonaws.services.guardduty.model.transform.ConflictExceptionUnmarshaller.getInstance()))
@@ -534,14 +538,23 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
      * through an organization.
      * </p>
      * <p>
-     * When using <code>Create Members</code> as an organizations delegated administrator this action will enable
-     * GuardDuty in the added member accounts, with the exception of the organization delegated administrator account,
-     * which must enable GuardDuty prior to being added as a member.
+     * As a delegated administrator, using <code>CreateMembers</code> will enable GuardDuty in the added member
+     * accounts, with the exception of the organization delegated administrator account. A delegated administrator must
+     * enable GuardDuty prior to being added as a member.
      * </p>
      * <p>
-     * If you are adding accounts by invitation, use this action after GuardDuty has bee enabled in potential member
-     * accounts and before using <a
-     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a>.
+     * If you are adding accounts by invitation, before using <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a>, use
+     * <code>CreateMembers</code> after GuardDuty has been enabled in potential member accounts.
+     * </p>
+     * <p>
+     * If you disassociate a member from a GuardDuty delegated administrator, the member account details obtained from
+     * this API, including the associated email addresses, will be retained. This is done so that the delegated
+     * administrator can invoke the <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a> API
+     * without the need to invoke the CreateMembers API again. To remove the details associated with a member account,
+     * the delegated administrator must invoke the <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteMembers.html">DeleteMembers</a> API.
      * </p>
      * 
      * @param createMembersRequest
@@ -1456,7 +1469,8 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Disables an Amazon Web Services account within the Organization as the GuardDuty delegated administrator.
+     * Removes the existing GuardDuty delegated administrator of the organization. Only the organization's management
+     * account can run this API operation.
      * </p>
      * 
      * @param disableOrganizationAdminAccountRequest
@@ -1519,6 +1533,17 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     /**
      * <p>
      * Disassociates the current GuardDuty member account from its administrator account.
+     * </p>
+     * <p>
+     * When you disassociate an invited member from a GuardDuty delegated administrator, the member account details
+     * obtained from the <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html">CreateMembers</a> API,
+     * including the associated email addresses, are retained. This is done so that the delegated administrator can
+     * invoke the <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a> API
+     * without the need to invoke the CreateMembers API again. To remove the details associated with a member account,
+     * the delegated administrator must invoke the <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteMembers.html">DeleteMembers</a> API.
      * </p>
      * <p>
      * With <code>autoEnableOrganizationMembers</code> configuration for your organization set to <code>ALL</code>,
@@ -1586,6 +1611,17 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
      * <p>
      * Disassociates the current GuardDuty member account from its administrator account.
      * </p>
+     * <p>
+     * When you disassociate an invited member from a GuardDuty delegated administrator, the member account details
+     * obtained from the <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html">CreateMembers</a> API,
+     * including the associated email addresses, are retained. This is done so that the delegated administrator can
+     * invoke the <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a> API
+     * without the need to invoke the CreateMembers API again. To remove the details associated with a member account,
+     * the delegated administrator must invoke the <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteMembers.html">DeleteMembers</a> API.
+     * </p>
      * 
      * @param disassociateFromMasterAccountRequest
      * @return Result of the DisassociateFromMasterAccount operation returned by the service.
@@ -1646,12 +1682,23 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Disassociates GuardDuty member accounts (to the current administrator account) specified by the account IDs.
+     * Disassociates GuardDuty member accounts (from the current administrator account) specified by the account IDs.
+     * </p>
+     * <p>
+     * When you disassociate an invited member from a GuardDuty delegated administrator, the member account details
+     * obtained from the <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html">CreateMembers</a> API,
+     * including the associated email addresses, are retained. This is done so that the delegated administrator can
+     * invoke the <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a> API
+     * without the need to invoke the CreateMembers API again. To remove the details associated with a member account,
+     * the delegated administrator must invoke the <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteMembers.html">DeleteMembers</a> API.
      * </p>
      * <p>
      * With <code>autoEnableOrganizationMembers</code> configuration for your organization set to <code>ALL</code>,
-     * you'll receive an error if you attempt to disassociate a member account before removing them from your Amazon Web
-     * Services organization.
+     * you'll receive an error if you attempt to disassociate a member account before removing them from your
+     * organization.
      * </p>
      * 
      * @param disassociateMembersRequest
@@ -1710,7 +1757,8 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Enables an Amazon Web Services account within the organization as the GuardDuty delegated administrator.
+     * Designates an Amazon Web Services account within the organization as your GuardDuty delegated administrator. Only
+     * the organization's management account can run this API operation.
      * </p>
      * 
      * @param enableOrganizationAdminAccountRequest
@@ -1771,9 +1819,14 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Provides the details for the GuardDuty administrator account associated with the current GuardDuty member
-     * account.
+     * Provides the details of the GuardDuty administrator account associated with the current GuardDuty member account.
      * </p>
+     * <note>
+     * <p>
+     * If the organization's management account or a delegated administrator runs this API, it will return success (
+     * <code>HTTP 200</code>) but no content.
+     * </p>
+     * </note>
      * 
      * @param getAdministratorAccountRequest
      * @return Result of the GetAdministratorAccount operation returned by the service.
@@ -2690,9 +2743,30 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Invites other Amazon Web Services accounts (created as members of the current Amazon Web Services account by
-     * CreateMembers) to enable GuardDuty, and allow the current Amazon Web Services account to view and manage these
-     * accounts' findings on their behalf as the GuardDuty administrator account.
+     * Invites Amazon Web Services accounts to become members of an organization administered by the Amazon Web Services
+     * account that invokes this API. If you are using Amazon Web Services Organizations to manage your GuardDuty
+     * environment, this step is not needed. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_organizations.html">Managing accounts with
+     * organizations</a>.
+     * </p>
+     * <p>
+     * To invite Amazon Web Services accounts, the first step is to ensure that GuardDuty has been enabled in the
+     * potential member accounts. You can now invoke this API to add accounts by invitation. The invited accounts can
+     * either accept or decline the invitation from their GuardDuty accounts. Each invited Amazon Web Services account
+     * can choose to accept the invitation from only one Amazon Web Services account. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_invitations.html">Managing GuardDuty accounts by
+     * invitation</a>.
+     * </p>
+     * <p>
+     * After the invite has been accepted and you choose to disassociate a member account (by using <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DisassociateMembers.html"
+     * >DisassociateMembers</a>) from your account, the details of the member account obtained by invoking <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html">CreateMembers</a>,
+     * including the associated email addresses, will be retained. This is done so that you can invoke InviteMembers
+     * without the need to invoke <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html">CreateMembers</a> again.
+     * To remove the details associated with a member account, you must also invoke <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteMembers.html">DeleteMembers</a>.
      * </p>
      * 
      * @param inviteMembersRequest
@@ -3169,7 +3243,8 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Lists the accounts configured as GuardDuty delegated administrators.
+     * Lists the accounts designated as GuardDuty delegated administrators. Only the organization's management account
+     * can run this API operation.
      * </p>
      * 
      * @param listOrganizationAdminAccountsRequest
@@ -3291,15 +3366,17 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Lists tags for a resource. Tagging is currently supported for detectors, finding filters, IP sets, and threat
-     * intel sets, with a limit of 50 tags per resource. When invoked, this operation returns all assigned tags for a
-     * given resource.
+     * Lists tags for a resource. Tagging is currently supported for detectors, finding filters, IP sets, threat intel
+     * sets, and publishing destination, with a limit of 50 tags per resource. When invoked, this operation returns all
+     * assigned tags for a given resource.
      * </p>
      * 
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
      * @throws BadRequestException
      *         A bad request exception object.
+     * @throws AccessDeniedException
+     *         An access denied exception object.
      * @throws InternalServerErrorException
      *         An internal server error exception object.
      * @sample AmazonGuardDuty.ListTagsForResource
@@ -3610,6 +3687,8 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
      * @return Result of the TagResource operation returned by the service.
      * @throws BadRequestException
      *         A bad request exception object.
+     * @throws AccessDeniedException
+     *         An access denied exception object.
      * @throws InternalServerErrorException
      *         An internal server error exception object.
      * @sample AmazonGuardDuty.TagResource
@@ -3728,6 +3807,8 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
      * @return Result of the UntagResource operation returned by the service.
      * @throws BadRequestException
      *         A bad request exception object.
+     * @throws AccessDeniedException
+     *         An access denied exception object.
      * @throws InternalServerErrorException
      *         An internal server error exception object.
      * @sample AmazonGuardDuty.UntagResource
@@ -4153,8 +4234,8 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Configures the delegated administrator account with the provided values. You must provide the value for either
-     * <code>autoEnableOrganizationMembers</code> or <code>autoEnable</code>.
+     * Configures the delegated administrator account with the provided values. You must provide a value for either
+     * <code>autoEnableOrganizationMembers</code> or <code>autoEnable</code>, but not both.
      * </p>
      * <p>
      * There might be regional differences because some data sources might not be available in all the Amazon Web

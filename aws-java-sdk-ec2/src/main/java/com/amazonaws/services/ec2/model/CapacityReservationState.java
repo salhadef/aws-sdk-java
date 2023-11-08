@@ -24,7 +24,10 @@ public enum CapacityReservationState {
     Expired("expired"),
     Cancelled("cancelled"),
     Pending("pending"),
-    Failed("failed");
+    Failed("failed"),
+    Scheduled("scheduled"),
+    PaymentPending("payment-pending"),
+    PaymentFailed("payment-failed");
 
     private String value;
 

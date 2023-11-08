@@ -80,6 +80,18 @@ public class KubernetesWorkloadDetailsJsonUnmarshaller implements Unmarshaller<K
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("serviceAccountName", targetDepth)) {
+                    context.nextToken();
+                    kubernetesWorkloadDetails.setServiceAccountName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("hostIPC", targetDepth)) {
+                    context.nextToken();
+                    kubernetesWorkloadDetails.setHostIPC(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("hostPID", targetDepth)) {
+                    context.nextToken();
+                    kubernetesWorkloadDetails.setHostPID(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

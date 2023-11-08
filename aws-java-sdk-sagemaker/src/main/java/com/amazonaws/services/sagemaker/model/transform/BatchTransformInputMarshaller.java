@@ -49,6 +49,8 @@ public class BatchTransformInputMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartTimeOffset").build();
     private static final MarshallingInfo<String> ENDTIMEOFFSET_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndTimeOffset").build();
+    private static final MarshallingInfo<String> EXCLUDEFEATURESATTRIBUTE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExcludeFeaturesAttribute").build();
 
     private static final BatchTransformInputMarshaller instance = new BatchTransformInputMarshaller();
 
@@ -77,6 +79,7 @@ public class BatchTransformInputMarshaller {
             protocolMarshaller.marshall(batchTransformInput.getProbabilityThresholdAttribute(), PROBABILITYTHRESHOLDATTRIBUTE_BINDING);
             protocolMarshaller.marshall(batchTransformInput.getStartTimeOffset(), STARTTIMEOFFSET_BINDING);
             protocolMarshaller.marshall(batchTransformInput.getEndTimeOffset(), ENDTIMEOFFSET_BINDING);
+            protocolMarshaller.marshall(batchTransformInput.getExcludeFeaturesAttribute(), EXCLUDEFEATURESATTRIBUTE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

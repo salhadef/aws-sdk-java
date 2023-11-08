@@ -19,13 +19,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A web ACL defines a collection of rules to use to inspect and control web requests. Each rule has an action defined
- * (allow, block, or count) for requests that match the statement of the rule. In the web ACL, you assign a default
- * action to take (allow, block) for any request that does not match any of the rules. The rules in a web ACL can be a
- * combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule group. You can associate a web ACL with one
- * or more Amazon Web Services resources to protect. The resources can be an Amazon CloudFront distribution, an Amazon
- * API Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, an Amazon Cognito user pool, an App
- * Runner service, or an Amazon Web Services Verified Access instance.
+ * A web ACL defines a collection of rules to use to inspect and control web requests. Each rule has a statement that
+ * defines what to look for in web requests and an action that WAF applies to requests that match the statement. In the
+ * web ACL, you assign a default action to take (allow, block) for any request that does not match any of the rules. The
+ * rules in a web ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule group. You can
+ * associate a web ACL with one or more Amazon Web Services resources to protect. The resources can be an Amazon
+ * CloudFront distribution, an Amazon API Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, an
+ * Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/WebACL" target="_top">AWS API Documentation</a>
@@ -66,9 +66,9 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
     private String description;
     /**
      * <p>
-     * The <a>Rule</a> statements used to identify the web requests that you want to allow, block, or count. Each rule
-     * includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how
-     * WAF handles them.
+     * The <a>Rule</a> statements used to identify the web requests that you want to manage. Each rule includes one
+     * top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles
+     * them.
      * </p>
      */
     private java.util.List<Rule> rules;
@@ -202,7 +202,7 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Use this to customize the maximum size of the request body that your protected CloudFront distributions forward
-     * to WAF for inspection. The default is 16 KB (16,384 kilobytes).
+     * to WAF for inspection. The default is 16 KB (16,384 bytes).
      * </p>
      * <note>
      * <p>
@@ -421,14 +421,14 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <a>Rule</a> statements used to identify the web requests that you want to allow, block, or count. Each rule
-     * includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how
-     * WAF handles them.
+     * The <a>Rule</a> statements used to identify the web requests that you want to manage. Each rule includes one
+     * top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles
+     * them.
      * </p>
      * 
-     * @return The <a>Rule</a> statements used to identify the web requests that you want to allow, block, or count.
-     *         Each rule includes one top-level statement that WAF uses to identify matching web requests, and
-     *         parameters that govern how WAF handles them.
+     * @return The <a>Rule</a> statements used to identify the web requests that you want to manage. Each rule includes
+     *         one top-level statement that WAF uses to identify matching web requests, and parameters that govern how
+     *         WAF handles them.
      */
 
     public java.util.List<Rule> getRules() {
@@ -437,15 +437,15 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <a>Rule</a> statements used to identify the web requests that you want to allow, block, or count. Each rule
-     * includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how
-     * WAF handles them.
+     * The <a>Rule</a> statements used to identify the web requests that you want to manage. Each rule includes one
+     * top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles
+     * them.
      * </p>
      * 
      * @param rules
-     *        The <a>Rule</a> statements used to identify the web requests that you want to allow, block, or count. Each
-     *        rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that
-     *        govern how WAF handles them.
+     *        The <a>Rule</a> statements used to identify the web requests that you want to manage. Each rule includes
+     *        one top-level statement that WAF uses to identify matching web requests, and parameters that govern how
+     *        WAF handles them.
      */
 
     public void setRules(java.util.Collection<Rule> rules) {
@@ -459,9 +459,9 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <a>Rule</a> statements used to identify the web requests that you want to allow, block, or count. Each rule
-     * includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how
-     * WAF handles them.
+     * The <a>Rule</a> statements used to identify the web requests that you want to manage. Each rule includes one
+     * top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles
+     * them.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -470,9 +470,9 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param rules
-     *        The <a>Rule</a> statements used to identify the web requests that you want to allow, block, or count. Each
-     *        rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that
-     *        govern how WAF handles them.
+     *        The <a>Rule</a> statements used to identify the web requests that you want to manage. Each rule includes
+     *        one top-level statement that WAF uses to identify matching web requests, and parameters that govern how
+     *        WAF handles them.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -488,15 +488,15 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <a>Rule</a> statements used to identify the web requests that you want to allow, block, or count. Each rule
-     * includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how
-     * WAF handles them.
+     * The <a>Rule</a> statements used to identify the web requests that you want to manage. Each rule includes one
+     * top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles
+     * them.
      * </p>
      * 
      * @param rules
-     *        The <a>Rule</a> statements used to identify the web requests that you want to allow, block, or count. Each
-     *        rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that
-     *        govern how WAF handles them.
+     *        The <a>Rule</a> statements used to identify the web requests that you want to manage. Each rule includes
+     *        one top-level statement that WAF uses to identify matching web requests, and parameters that govern how
+     *        WAF handles them.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1451,7 +1451,7 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Use this to customize the maximum size of the request body that your protected CloudFront distributions forward
-     * to WAF for inspection. The default is 16 KB (16,384 kilobytes).
+     * to WAF for inspection. The default is 16 KB (16,384 bytes).
      * </p>
      * <note>
      * <p>
@@ -1464,7 +1464,7 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
      *        Specifies custom configurations for the associations between the web ACL and protected resources. </p>
      *        <p>
      *        Use this to customize the maximum size of the request body that your protected CloudFront distributions
-     *        forward to WAF for inspection. The default is 16 KB (16,384 kilobytes).
+     *        forward to WAF for inspection. The default is 16 KB (16,384 bytes).
      *        </p>
      *        <note>
      *        <p>
@@ -1483,7 +1483,7 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Use this to customize the maximum size of the request body that your protected CloudFront distributions forward
-     * to WAF for inspection. The default is 16 KB (16,384 kilobytes).
+     * to WAF for inspection. The default is 16 KB (16,384 bytes).
      * </p>
      * <note>
      * <p>
@@ -1495,7 +1495,7 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
      * @return Specifies custom configurations for the associations between the web ACL and protected resources. </p>
      *         <p>
      *         Use this to customize the maximum size of the request body that your protected CloudFront distributions
-     *         forward to WAF for inspection. The default is 16 KB (16,384 kilobytes).
+     *         forward to WAF for inspection. The default is 16 KB (16,384 bytes).
      *         </p>
      *         <note>
      *         <p>
@@ -1514,7 +1514,7 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Use this to customize the maximum size of the request body that your protected CloudFront distributions forward
-     * to WAF for inspection. The default is 16 KB (16,384 kilobytes).
+     * to WAF for inspection. The default is 16 KB (16,384 bytes).
      * </p>
      * <note>
      * <p>
@@ -1527,7 +1527,7 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
      *        Specifies custom configurations for the associations between the web ACL and protected resources. </p>
      *        <p>
      *        Use this to customize the maximum size of the request body that your protected CloudFront distributions
-     *        forward to WAF for inspection. The default is 16 KB (16,384 kilobytes).
+     *        forward to WAF for inspection. The default is 16 KB (16,384 bytes).
      *        </p>
      *        <note>
      *        <p>

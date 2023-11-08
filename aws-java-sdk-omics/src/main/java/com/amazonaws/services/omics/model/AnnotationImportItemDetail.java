@@ -30,16 +30,56 @@ public class AnnotationImportItemDetail implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The item's job status.
-     * </p>
-     */
-    private String jobStatus;
-    /**
-     * <p>
      * The source file's location in Amazon S3.
      * </p>
      */
     private String source;
+    /**
+     * <p>
+     * The item's job status.
+     * </p>
+     */
+    private String jobStatus;
+
+    /**
+     * <p>
+     * The source file's location in Amazon S3.
+     * </p>
+     * 
+     * @param source
+     *        The source file's location in Amazon S3.
+     */
+
+    public void setSource(String source) {
+        this.source = source;
+    }
+
+    /**
+     * <p>
+     * The source file's location in Amazon S3.
+     * </p>
+     * 
+     * @return The source file's location in Amazon S3.
+     */
+
+    public String getSource() {
+        return this.source;
+    }
+
+    /**
+     * <p>
+     * The source file's location in Amazon S3.
+     * </p>
+     * 
+     * @param source
+     *        The source file's location in Amazon S3.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AnnotationImportItemDetail withSource(String source) {
+        setSource(source);
+        return this;
+    }
 
     /**
      * <p>
@@ -101,46 +141,6 @@ public class AnnotationImportItemDetail implements Serializable, Cloneable, Stru
     }
 
     /**
-     * <p>
-     * The source file's location in Amazon S3.
-     * </p>
-     * 
-     * @param source
-     *        The source file's location in Amazon S3.
-     */
-
-    public void setSource(String source) {
-        this.source = source;
-    }
-
-    /**
-     * <p>
-     * The source file's location in Amazon S3.
-     * </p>
-     * 
-     * @return The source file's location in Amazon S3.
-     */
-
-    public String getSource() {
-        return this.source;
-    }
-
-    /**
-     * <p>
-     * The source file's location in Amazon S3.
-     * </p>
-     * 
-     * @param source
-     *        The source file's location in Amazon S3.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AnnotationImportItemDetail withSource(String source) {
-        setSource(source);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -152,10 +152,10 @@ public class AnnotationImportItemDetail implements Serializable, Cloneable, Stru
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getJobStatus() != null)
-            sb.append("JobStatus: ").append(getJobStatus()).append(",");
         if (getSource() != null)
-            sb.append("Source: ").append(getSource());
+            sb.append("Source: ").append(getSource()).append(",");
+        if (getJobStatus() != null)
+            sb.append("JobStatus: ").append(getJobStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -170,13 +170,13 @@ public class AnnotationImportItemDetail implements Serializable, Cloneable, Stru
         if (obj instanceof AnnotationImportItemDetail == false)
             return false;
         AnnotationImportItemDetail other = (AnnotationImportItemDetail) obj;
-        if (other.getJobStatus() == null ^ this.getJobStatus() == null)
-            return false;
-        if (other.getJobStatus() != null && other.getJobStatus().equals(this.getJobStatus()) == false)
-            return false;
         if (other.getSource() == null ^ this.getSource() == null)
             return false;
         if (other.getSource() != null && other.getSource().equals(this.getSource()) == false)
+            return false;
+        if (other.getJobStatus() == null ^ this.getJobStatus() == null)
+            return false;
+        if (other.getJobStatus() != null && other.getJobStatus().equals(this.getJobStatus()) == false)
             return false;
         return true;
     }
@@ -186,8 +186,8 @@ public class AnnotationImportItemDetail implements Serializable, Cloneable, Stru
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getJobStatus() == null) ? 0 : getJobStatus().hashCode());
         hashCode = prime * hashCode + ((getSource() == null) ? 0 : getSource().hashCode());
+        hashCode = prime * hashCode + ((getJobStatus() == null) ? 0 : getJobStatus().hashCode());
         return hashCode;
     }
 

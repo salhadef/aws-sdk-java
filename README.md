@@ -1,4 +1,4 @@
-# AWS SDK for Java [![Build Status](https://travis-ci.org/aws/aws-sdk-java.png?branch=master)](https://travis-ci.org/aws/aws-sdk-java)
+# AWS SDK for Java
 
 The **AWS SDK for Java** enables Java developers to easily work with [Amazon Web Services][aws] and
 build scalable solutions with Amazon S3, Amazon DynamoDB, Amazon Glacier, and more. You can get
@@ -18,9 +18,6 @@ Changes to the SDK beginning with version 1.12.1 (June 2021) are tracked in [CHA
 
 Changes in the _retired_ 1.11.x series of the SDK, beginning with version 1.11.82, 
 are listed in the [CHANGELOG-1.11.x.md](./changelogs/CHANGELOG-1.11.x.md) file.
-
-Release notes for versions prior to 1.11.82 can still be found on the [AWS Release Notes
-Website][release-notes-catalog].
 
 ## Getting Started
 
@@ -50,7 +47,7 @@ dependencies.
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-bom</artifactId>
-      <version>1.12.461</version>
+      <version>1.12.584</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>

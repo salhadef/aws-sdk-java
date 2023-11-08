@@ -138,6 +138,39 @@ public class AmazonKinesisVideoAsyncClient extends AmazonKinesisVideoClient impl
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteEdgeConfigurationResult> deleteEdgeConfigurationAsync(DeleteEdgeConfigurationRequest request) {
+
+        return deleteEdgeConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEdgeConfigurationResult> deleteEdgeConfigurationAsync(final DeleteEdgeConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteEdgeConfigurationRequest, DeleteEdgeConfigurationResult> asyncHandler) {
+        final DeleteEdgeConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteEdgeConfigurationResult>() {
+            @Override
+            public DeleteEdgeConfigurationResult call() throws Exception {
+                DeleteEdgeConfigurationResult result = null;
+
+                try {
+                    result = executeDeleteEdgeConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteSignalingChannelResult> deleteSignalingChannelAsync(DeleteSignalingChannelRequest request) {
 
         return deleteSignalingChannelAsync(request, null);
@@ -493,6 +526,39 @@ public class AmazonKinesisVideoAsyncClient extends AmazonKinesisVideoClient impl
 
                 try {
                     result = executeGetSignalingChannelEndpoint(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEdgeAgentConfigurationsResult> listEdgeAgentConfigurationsAsync(ListEdgeAgentConfigurationsRequest request) {
+
+        return listEdgeAgentConfigurationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEdgeAgentConfigurationsResult> listEdgeAgentConfigurationsAsync(final ListEdgeAgentConfigurationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListEdgeAgentConfigurationsRequest, ListEdgeAgentConfigurationsResult> asyncHandler) {
+        final ListEdgeAgentConfigurationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListEdgeAgentConfigurationsResult>() {
+            @Override
+            public ListEdgeAgentConfigurationsResult call() throws Exception {
+                ListEdgeAgentConfigurationsResult result = null;
+
+                try {
+                    result = executeListEdgeAgentConfigurations(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

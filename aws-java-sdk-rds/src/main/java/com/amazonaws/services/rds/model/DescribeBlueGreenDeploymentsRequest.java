@@ -27,8 +27,8 @@ public class DescribeBlueGreenDeploymentsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The blue/green deployment identifier. If this parameter is specified, information from only the specific
-     * blue/green deployment is returned. This parameter isn't case-sensitive.
+     * The blue/green deployment identifier. If you specify this parameter, the response only includes information about
+     * the specific blue/green deployment. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -36,7 +36,7 @@ public class DescribeBlueGreenDeploymentsRequest extends com.amazonaws.AmazonWeb
      * <ul>
      * <li>
      * <p>
-     * If supplied, must match an existing blue/green deployment identifier.
+     * Must match an existing blue/green deployment identifier.
      * </p>
      * </li>
      * </ul>
@@ -47,7 +47,7 @@ public class DescribeBlueGreenDeploymentsRequest extends com.amazonaws.AmazonWeb
      * A filter that specifies one or more blue/green deployments to describe.
      * </p>
      * <p>
-     * Supported filters:
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
@@ -79,8 +79,8 @@ public class DescribeBlueGreenDeploymentsRequest extends com.amazonaws.AmazonWeb
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
      * <p>
-     * An optional pagination token provided by a previous <code>DescribeBlueGreenDeployments</code> request. If this
-     * parameter is specified, the response includes only records beyond the marker, up to the value specified by
+     * An optional pagination token provided by a previous <code>DescribeBlueGreenDeployments</code> request. If you
+     * specify this parameter, the response only includes records beyond the marker, up to the value specified by
      * <code>MaxRecords</code>.
      * </p>
      */
@@ -95,15 +95,27 @@ public class DescribeBlueGreenDeploymentsRequest extends com.amazonaws.AmazonWeb
      * Default: 100
      * </p>
      * <p>
-     * Constraints: Minimum 20, maximum 100.
+     * Constraints:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be a minimum of 20.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can't exceed 100.
+     * </p>
+     * </li>
+     * </ul>
      */
     private Integer maxRecords;
 
     /**
      * <p>
-     * The blue/green deployment identifier. If this parameter is specified, information from only the specific
-     * blue/green deployment is returned. This parameter isn't case-sensitive.
+     * The blue/green deployment identifier. If you specify this parameter, the response only includes information about
+     * the specific blue/green deployment. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -111,21 +123,21 @@ public class DescribeBlueGreenDeploymentsRequest extends com.amazonaws.AmazonWeb
      * <ul>
      * <li>
      * <p>
-     * If supplied, must match an existing blue/green deployment identifier.
+     * Must match an existing blue/green deployment identifier.
      * </p>
      * </li>
      * </ul>
      * 
      * @param blueGreenDeploymentIdentifier
-     *        The blue/green deployment identifier. If this parameter is specified, information from only the specific
-     *        blue/green deployment is returned. This parameter isn't case-sensitive.</p>
+     *        The blue/green deployment identifier. If you specify this parameter, the response only includes
+     *        information about the specific blue/green deployment. This parameter isn't case-sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        If supplied, must match an existing blue/green deployment identifier.
+     *        Must match an existing blue/green deployment identifier.
      *        </p>
      *        </li>
      */
@@ -136,8 +148,8 @@ public class DescribeBlueGreenDeploymentsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The blue/green deployment identifier. If this parameter is specified, information from only the specific
-     * blue/green deployment is returned. This parameter isn't case-sensitive.
+     * The blue/green deployment identifier. If you specify this parameter, the response only includes information about
+     * the specific blue/green deployment. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -145,20 +157,20 @@ public class DescribeBlueGreenDeploymentsRequest extends com.amazonaws.AmazonWeb
      * <ul>
      * <li>
      * <p>
-     * If supplied, must match an existing blue/green deployment identifier.
+     * Must match an existing blue/green deployment identifier.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The blue/green deployment identifier. If this parameter is specified, information from only the specific
-     *         blue/green deployment is returned. This parameter isn't case-sensitive.</p>
+     * @return The blue/green deployment identifier. If you specify this parameter, the response only includes
+     *         information about the specific blue/green deployment. This parameter isn't case-sensitive.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         If supplied, must match an existing blue/green deployment identifier.
+     *         Must match an existing blue/green deployment identifier.
      *         </p>
      *         </li>
      */
@@ -169,8 +181,8 @@ public class DescribeBlueGreenDeploymentsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The blue/green deployment identifier. If this parameter is specified, information from only the specific
-     * blue/green deployment is returned. This parameter isn't case-sensitive.
+     * The blue/green deployment identifier. If you specify this parameter, the response only includes information about
+     * the specific blue/green deployment. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -178,21 +190,21 @@ public class DescribeBlueGreenDeploymentsRequest extends com.amazonaws.AmazonWeb
      * <ul>
      * <li>
      * <p>
-     * If supplied, must match an existing blue/green deployment identifier.
+     * Must match an existing blue/green deployment identifier.
      * </p>
      * </li>
      * </ul>
      * 
      * @param blueGreenDeploymentIdentifier
-     *        The blue/green deployment identifier. If this parameter is specified, information from only the specific
-     *        blue/green deployment is returned. This parameter isn't case-sensitive.</p>
+     *        The blue/green deployment identifier. If you specify this parameter, the response only includes
+     *        information about the specific blue/green deployment. This parameter isn't case-sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        If supplied, must match an existing blue/green deployment identifier.
+     *        Must match an existing blue/green deployment identifier.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -208,7 +220,7 @@ public class DescribeBlueGreenDeploymentsRequest extends com.amazonaws.AmazonWeb
      * A filter that specifies one or more blue/green deployments to describe.
      * </p>
      * <p>
-     * Supported filters:
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
@@ -239,7 +251,7 @@ public class DescribeBlueGreenDeploymentsRequest extends com.amazonaws.AmazonWeb
      * 
      * @return A filter that specifies one or more blue/green deployments to describe.</p>
      *         <p>
-     *         Supported filters:
+     *         Valid Values:
      *         </p>
      *         <ul>
      *         <li>
@@ -281,7 +293,7 @@ public class DescribeBlueGreenDeploymentsRequest extends com.amazonaws.AmazonWeb
      * A filter that specifies one or more blue/green deployments to describe.
      * </p>
      * <p>
-     * Supported filters:
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
@@ -313,7 +325,7 @@ public class DescribeBlueGreenDeploymentsRequest extends com.amazonaws.AmazonWeb
      * @param filters
      *        A filter that specifies one or more blue/green deployments to describe.</p>
      *        <p>
-     *        Supported filters:
+     *        Valid Values:
      *        </p>
      *        <ul>
      *        <li>
@@ -357,7 +369,7 @@ public class DescribeBlueGreenDeploymentsRequest extends com.amazonaws.AmazonWeb
      * A filter that specifies one or more blue/green deployments to describe.
      * </p>
      * <p>
-     * Supported filters:
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
@@ -394,7 +406,7 @@ public class DescribeBlueGreenDeploymentsRequest extends com.amazonaws.AmazonWeb
      * @param filters
      *        A filter that specifies one or more blue/green deployments to describe.</p>
      *        <p>
-     *        Supported filters:
+     *        Valid Values:
      *        </p>
      *        <ul>
      *        <li>
@@ -440,7 +452,7 @@ public class DescribeBlueGreenDeploymentsRequest extends com.amazonaws.AmazonWeb
      * A filter that specifies one or more blue/green deployments to describe.
      * </p>
      * <p>
-     * Supported filters:
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
@@ -472,7 +484,7 @@ public class DescribeBlueGreenDeploymentsRequest extends com.amazonaws.AmazonWeb
      * @param filters
      *        A filter that specifies one or more blue/green deployments to describe.</p>
      *        <p>
-     *        Supported filters:
+     *        Valid Values:
      *        </p>
      *        <ul>
      *        <li>
@@ -510,14 +522,14 @@ public class DescribeBlueGreenDeploymentsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * An optional pagination token provided by a previous <code>DescribeBlueGreenDeployments</code> request. If this
-     * parameter is specified, the response includes only records beyond the marker, up to the value specified by
+     * An optional pagination token provided by a previous <code>DescribeBlueGreenDeployments</code> request. If you
+     * specify this parameter, the response only includes records beyond the marker, up to the value specified by
      * <code>MaxRecords</code>.
      * </p>
      * 
      * @param marker
      *        An optional pagination token provided by a previous <code>DescribeBlueGreenDeployments</code> request. If
-     *        this parameter is specified, the response includes only records beyond the marker, up to the value
+     *        you specify this parameter, the response only includes records beyond the marker, up to the value
      *        specified by <code>MaxRecords</code>.
      */
 
@@ -527,13 +539,13 @@ public class DescribeBlueGreenDeploymentsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * An optional pagination token provided by a previous <code>DescribeBlueGreenDeployments</code> request. If this
-     * parameter is specified, the response includes only records beyond the marker, up to the value specified by
+     * An optional pagination token provided by a previous <code>DescribeBlueGreenDeployments</code> request. If you
+     * specify this parameter, the response only includes records beyond the marker, up to the value specified by
      * <code>MaxRecords</code>.
      * </p>
      * 
      * @return An optional pagination token provided by a previous <code>DescribeBlueGreenDeployments</code> request. If
-     *         this parameter is specified, the response includes only records beyond the marker, up to the value
+     *         you specify this parameter, the response only includes records beyond the marker, up to the value
      *         specified by <code>MaxRecords</code>.
      */
 
@@ -543,14 +555,14 @@ public class DescribeBlueGreenDeploymentsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * An optional pagination token provided by a previous <code>DescribeBlueGreenDeployments</code> request. If this
-     * parameter is specified, the response includes only records beyond the marker, up to the value specified by
+     * An optional pagination token provided by a previous <code>DescribeBlueGreenDeployments</code> request. If you
+     * specify this parameter, the response only includes records beyond the marker, up to the value specified by
      * <code>MaxRecords</code>.
      * </p>
      * 
      * @param marker
      *        An optional pagination token provided by a previous <code>DescribeBlueGreenDeployments</code> request. If
-     *        this parameter is specified, the response includes only records beyond the marker, up to the value
+     *        you specify this parameter, the response only includes records beyond the marker, up to the value
      *        specified by <code>MaxRecords</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -570,8 +582,20 @@ public class DescribeBlueGreenDeploymentsRequest extends com.amazonaws.AmazonWeb
      * Default: 100
      * </p>
      * <p>
-     * Constraints: Minimum 20, maximum 100.
+     * Constraints:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be a minimum of 20.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can't exceed 100.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param maxRecords
      *        The maximum number of records to include in the response. If more records exist than the specified
@@ -581,7 +605,19 @@ public class DescribeBlueGreenDeploymentsRequest extends com.amazonaws.AmazonWeb
      *        Default: 100
      *        </p>
      *        <p>
-     *        Constraints: Minimum 20, maximum 100.
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Must be a minimum of 20.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can't exceed 100.
+     *        </p>
+     *        </li>
      */
 
     public void setMaxRecords(Integer maxRecords) {
@@ -598,8 +634,20 @@ public class DescribeBlueGreenDeploymentsRequest extends com.amazonaws.AmazonWeb
      * Default: 100
      * </p>
      * <p>
-     * Constraints: Minimum 20, maximum 100.
+     * Constraints:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be a minimum of 20.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can't exceed 100.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The maximum number of records to include in the response. If more records exist than the specified
      *         <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can
@@ -608,7 +656,19 @@ public class DescribeBlueGreenDeploymentsRequest extends com.amazonaws.AmazonWeb
      *         Default: 100
      *         </p>
      *         <p>
-     *         Constraints: Minimum 20, maximum 100.
+     *         Constraints:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Must be a minimum of 20.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Can't exceed 100.
+     *         </p>
+     *         </li>
      */
 
     public Integer getMaxRecords() {
@@ -625,8 +685,20 @@ public class DescribeBlueGreenDeploymentsRequest extends com.amazonaws.AmazonWeb
      * Default: 100
      * </p>
      * <p>
-     * Constraints: Minimum 20, maximum 100.
+     * Constraints:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be a minimum of 20.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can't exceed 100.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param maxRecords
      *        The maximum number of records to include in the response. If more records exist than the specified
@@ -636,7 +708,19 @@ public class DescribeBlueGreenDeploymentsRequest extends com.amazonaws.AmazonWeb
      *        Default: 100
      *        </p>
      *        <p>
-     *        Constraints: Minimum 20, maximum 100.
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Must be a minimum of 20.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can't exceed 100.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

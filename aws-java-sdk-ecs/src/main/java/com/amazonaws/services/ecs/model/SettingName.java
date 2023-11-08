@@ -26,7 +26,8 @@ public enum SettingName {
     AwsvpcTrunking("awsvpcTrunking"),
     ContainerInsights("containerInsights"),
     FargateFIPSMode("fargateFIPSMode"),
-    TagResourceAuthorization("tagResourceAuthorization");
+    TagResourceAuthorization("tagResourceAuthorization"),
+    FargateTaskRetirementWaitPeriod("fargateTaskRetirementWaitPeriod");
 
     private String value;
 

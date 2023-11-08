@@ -625,6 +625,19 @@ public class AbstractAWSCodeCommitAsync extends AbstractAWSCodeCommit implements
     }
 
     @Override
+    public java.util.concurrent.Future<ListFileCommitHistoryResult> listFileCommitHistoryAsync(ListFileCommitHistoryRequest request) {
+
+        return listFileCommitHistoryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFileCommitHistoryResult> listFileCommitHistoryAsync(ListFileCommitHistoryRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListFileCommitHistoryRequest, ListFileCommitHistoryResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListPullRequestsResult> listPullRequestsAsync(ListPullRequestsRequest request) {
 
         return listPullRequestsAsync(request, null);

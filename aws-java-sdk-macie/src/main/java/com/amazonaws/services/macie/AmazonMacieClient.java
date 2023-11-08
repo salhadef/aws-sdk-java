@@ -44,6 +44,7 @@ import com.amazonaws.services.macie.AmazonMacieClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.macie.model.*;
+
 import com.amazonaws.services.macie.model.transform.*;
 
 /**

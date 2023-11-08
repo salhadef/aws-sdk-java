@@ -36,6 +36,13 @@ public class NetworkResource implements Serializable, Cloneable, StructuredPojo 
     private java.util.List<NameValuePair> attributes;
     /**
      * <p>
+     * Information about the commitment period for the radio unit. Shows the duration, the date and time that the
+     * contract started and ends, and the renewal status of the commitment period.
+     * </p>
+     */
+    private CommitmentInformation commitmentInformation;
+    /**
+     * <p>
      * The creation time of the network resource.
      * </p>
      */
@@ -192,6 +199,52 @@ public class NetworkResource implements Serializable, Cloneable, StructuredPojo 
 
     public NetworkResource withAttributes(java.util.Collection<NameValuePair> attributes) {
         setAttributes(attributes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the commitment period for the radio unit. Shows the duration, the date and time that the
+     * contract started and ends, and the renewal status of the commitment period.
+     * </p>
+     * 
+     * @param commitmentInformation
+     *        Information about the commitment period for the radio unit. Shows the duration, the date and time that the
+     *        contract started and ends, and the renewal status of the commitment period.
+     */
+
+    public void setCommitmentInformation(CommitmentInformation commitmentInformation) {
+        this.commitmentInformation = commitmentInformation;
+    }
+
+    /**
+     * <p>
+     * Information about the commitment period for the radio unit. Shows the duration, the date and time that the
+     * contract started and ends, and the renewal status of the commitment period.
+     * </p>
+     * 
+     * @return Information about the commitment period for the radio unit. Shows the duration, the date and time that
+     *         the contract started and ends, and the renewal status of the commitment period.
+     */
+
+    public CommitmentInformation getCommitmentInformation() {
+        return this.commitmentInformation;
+    }
+
+    /**
+     * <p>
+     * Information about the commitment period for the radio unit. Shows the duration, the date and time that the
+     * contract started and ends, and the renewal status of the commitment period.
+     * </p>
+     * 
+     * @param commitmentInformation
+     *        Information about the commitment period for the radio unit. Shows the duration, the date and time that the
+     *        contract started and ends, and the renewal status of the commitment period.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkResource withCommitmentInformation(CommitmentInformation commitmentInformation) {
+        setCommitmentInformation(commitmentInformation);
         return this;
     }
 
@@ -866,6 +919,8 @@ public class NetworkResource implements Serializable, Cloneable, StructuredPojo 
         sb.append("{");
         if (getAttributes() != null)
             sb.append("Attributes: ").append(getAttributes()).append(",");
+        if (getCommitmentInformation() != null)
+            sb.append("CommitmentInformation: ").append(getCommitmentInformation()).append(",");
         if (getCreatedAt() != null)
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getDescription() != null)
@@ -913,6 +968,10 @@ public class NetworkResource implements Serializable, Cloneable, StructuredPojo 
         if (other.getAttributes() == null ^ this.getAttributes() == null)
             return false;
         if (other.getAttributes() != null && other.getAttributes().equals(this.getAttributes()) == false)
+            return false;
+        if (other.getCommitmentInformation() == null ^ this.getCommitmentInformation() == null)
+            return false;
+        if (other.getCommitmentInformation() != null && other.getCommitmentInformation().equals(this.getCommitmentInformation()) == false)
             return false;
         if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
             return false;
@@ -983,6 +1042,7 @@ public class NetworkResource implements Serializable, Cloneable, StructuredPojo 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
+        hashCode = prime * hashCode + ((getCommitmentInformation() == null) ? 0 : getCommitmentInformation().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getHealth() == null) ? 0 : getHealth().hashCode());

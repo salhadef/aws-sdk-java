@@ -32,6 +32,8 @@ public class MetricFilterV2Marshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MetricFilterKey").build();
     private static final MarshallingInfo<List> METRICFILTERVALUES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MetricFilterValues").build();
+    private static final MarshallingInfo<Boolean> NEGATE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Negate").build();
 
     private static final MetricFilterV2Marshaller instance = new MetricFilterV2Marshaller();
 
@@ -51,6 +53,7 @@ public class MetricFilterV2Marshaller {
         try {
             protocolMarshaller.marshall(metricFilterV2.getMetricFilterKey(), METRICFILTERKEY_BINDING);
             protocolMarshaller.marshall(metricFilterV2.getMetricFilterValues(), METRICFILTERVALUES_BINDING);
+            protocolMarshaller.marshall(metricFilterV2.getNegate(), NEGATE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

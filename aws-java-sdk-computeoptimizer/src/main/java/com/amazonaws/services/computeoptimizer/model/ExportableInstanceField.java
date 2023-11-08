@@ -74,7 +74,16 @@ public enum ExportableInstanceField {
     RecommendationOptionsMigrationEffort("RecommendationOptionsMigrationEffort"),
     EffectiveRecommendationPreferencesExternalMetricsSource("EffectiveRecommendationPreferencesExternalMetricsSource"),
     InstanceState("InstanceState"),
-    Tags("Tags");
+    Tags("Tags"),
+    ExternalMetricStatusCode("ExternalMetricStatusCode"),
+    ExternalMetricStatusReason("ExternalMetricStatusReason"),
+    CurrentInstanceGpuInfo("CurrentInstanceGpuInfo"),
+    RecommendationOptionsInstanceGpuInfo("RecommendationOptionsInstanceGpuInfo"),
+    UtilizationMetricsGpuPercentageMaximum("UtilizationMetricsGpuPercentageMaximum"),
+    UtilizationMetricsGpuMemoryPercentageMaximum("UtilizationMetricsGpuMemoryPercentageMaximum"),
+    RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum("RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum"),
+    RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum("RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum"),
+    Idle("Idle");
 
     private String value;
 

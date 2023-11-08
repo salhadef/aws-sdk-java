@@ -29,6 +29,8 @@ public class SliderControlDisplayOptionsMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> TITLEOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TitleOptions").build();
+    private static final MarshallingInfo<StructuredPojo> INFOICONLABELOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InfoIconLabelOptions").build();
 
     private static final SliderControlDisplayOptionsMarshaller instance = new SliderControlDisplayOptionsMarshaller();
 
@@ -47,6 +49,7 @@ public class SliderControlDisplayOptionsMarshaller {
 
         try {
             protocolMarshaller.marshall(sliderControlDisplayOptions.getTitleOptions(), TITLEOPTIONS_BINDING);
+            protocolMarshaller.marshall(sliderControlDisplayOptions.getInfoIconLabelOptions(), INFOICONLABELOPTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

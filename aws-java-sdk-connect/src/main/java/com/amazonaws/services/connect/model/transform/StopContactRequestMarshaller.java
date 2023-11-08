@@ -31,6 +31,8 @@ public class StopContactRequestMarshaller {
             .marshallLocationName("ContactId").build();
     private static final MarshallingInfo<String> INSTANCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceId").build();
+    private static final MarshallingInfo<StructuredPojo> DISCONNECTREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisconnectReason").build();
 
     private static final StopContactRequestMarshaller instance = new StopContactRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class StopContactRequestMarshaller {
         try {
             protocolMarshaller.marshall(stopContactRequest.getContactId(), CONTACTID_BINDING);
             protocolMarshaller.marshall(stopContactRequest.getInstanceId(), INSTANCEID_BINDING);
+            protocolMarshaller.marshall(stopContactRequest.getDisconnectReason(), DISCONNECTREASON_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

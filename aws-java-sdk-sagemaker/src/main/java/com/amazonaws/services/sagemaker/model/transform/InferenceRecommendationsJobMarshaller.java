@@ -47,6 +47,12 @@ public class InferenceRecommendationsJobMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> FAILUREREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FailureReason").build();
+    private static final MarshallingInfo<String> MODELNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ModelName").build();
+    private static final MarshallingInfo<String> SAMPLEPAYLOADURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SamplePayloadUrl").build();
+    private static final MarshallingInfo<String> MODELPACKAGEVERSIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModelPackageVersionArn").build();
 
     private static final InferenceRecommendationsJobMarshaller instance = new InferenceRecommendationsJobMarshaller();
 
@@ -74,6 +80,9 @@ public class InferenceRecommendationsJobMarshaller {
             protocolMarshaller.marshall(inferenceRecommendationsJob.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(inferenceRecommendationsJob.getLastModifiedTime(), LASTMODIFIEDTIME_BINDING);
             protocolMarshaller.marshall(inferenceRecommendationsJob.getFailureReason(), FAILUREREASON_BINDING);
+            protocolMarshaller.marshall(inferenceRecommendationsJob.getModelName(), MODELNAME_BINDING);
+            protocolMarshaller.marshall(inferenceRecommendationsJob.getSamplePayloadUrl(), SAMPLEPAYLOADURL_BINDING);
+            protocolMarshaller.marshall(inferenceRecommendationsJob.getModelPackageVersionArn(), MODELPACKAGEVERSIONARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

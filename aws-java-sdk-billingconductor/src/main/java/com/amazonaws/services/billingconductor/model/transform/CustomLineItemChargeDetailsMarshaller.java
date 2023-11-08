@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.billingconductor.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +34,8 @@ public class CustomLineItemChargeDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Percentage").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Type").build();
+    private static final MarshallingInfo<List> LINEITEMFILTERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LineItemFilters").build();
 
     private static final CustomLineItemChargeDetailsMarshaller instance = new CustomLineItemChargeDetailsMarshaller();
 
@@ -53,6 +56,7 @@ public class CustomLineItemChargeDetailsMarshaller {
             protocolMarshaller.marshall(customLineItemChargeDetails.getFlat(), FLAT_BINDING);
             protocolMarshaller.marshall(customLineItemChargeDetails.getPercentage(), PERCENTAGE_BINDING);
             protocolMarshaller.marshall(customLineItemChargeDetails.getType(), TYPE_BINDING);
+            protocolMarshaller.marshall(customLineItemChargeDetails.getLineItemFilters(), LINEITEMFILTERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

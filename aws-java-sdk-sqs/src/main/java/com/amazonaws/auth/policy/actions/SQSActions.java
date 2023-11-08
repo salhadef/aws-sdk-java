@@ -27,6 +27,8 @@ public enum SQSActions implements Action {
 
     /** Action for the AddPermission operation. */
     AddPermission("sqs:AddPermission"),
+    /** Action for the CancelMessageMoveTask operation. */
+    CancelMessageMoveTask("sqs:CancelMessageMoveTask"),
     /** Action for the ChangeMessageVisibility operation. */
     ChangeMessageVisibility("sqs:ChangeMessageVisibility"),
     /** Action for the ChangeMessageVisibilityBatch operation. */
@@ -45,6 +47,8 @@ public enum SQSActions implements Action {
     GetQueueUrl("sqs:GetQueueUrl"),
     /** Action for the ListDeadLetterSourceQueues operation. */
     ListDeadLetterSourceQueues("sqs:ListDeadLetterSourceQueues"),
+    /** Action for the ListMessageMoveTasks operation. */
+    ListMessageMoveTasks("sqs:ListMessageMoveTasks"),
     /** Action for the ListQueueTags operation. */
     ListQueueTags("sqs:ListQueueTags"),
     /** Action for the ListQueues operation. */
@@ -61,6 +65,8 @@ public enum SQSActions implements Action {
     SendMessageBatch("sqs:SendMessageBatch"),
     /** Action for the SetQueueAttributes operation. */
     SetQueueAttributes("sqs:SetQueueAttributes"),
+    /** Action for the StartMessageMoveTask operation. */
+    StartMessageMoveTask("sqs:StartMessageMoveTask"),
     /** Action for the TagQueue operation. */
     TagQueue("sqs:TagQueue"),
     /** Action for the UntagQueue operation. */

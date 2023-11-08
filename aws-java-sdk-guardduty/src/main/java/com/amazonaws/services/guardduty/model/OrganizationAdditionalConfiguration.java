@@ -36,8 +36,33 @@ public class OrganizationAdditionalConfiguration implements Serializable, Clonea
     private String name;
     /**
      * <p>
-     * The status of the additional configuration that will be configured for the organization.
+     * The status of the additional configuration that will be configured for the organization. Use one of the following
+     * values to configure the feature status for the entire organization:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NEW</code>: Indicates that when a new account joins the organization, they will have the additional
+     * configuration enabled automatically.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALL</code>: Indicates that all accounts in the organization have the additional configuration enabled
+     * automatically. This includes <code>NEW</code> accounts that join the organization and accounts that may have been
+     * suspended or removed from the organization in GuardDuty.
+     * </p>
+     * <p>
+     * It may take up to 24 hours to update the configuration for all the member accounts.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NONE</code>: Indicates that the additional configuration will not be automatically enabled for any account
+     * in the organization. The administrator must manage the additional configuration for each account individually.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String autoEnable;
 
@@ -102,11 +127,61 @@ public class OrganizationAdditionalConfiguration implements Serializable, Clonea
 
     /**
      * <p>
-     * The status of the additional configuration that will be configured for the organization.
+     * The status of the additional configuration that will be configured for the organization. Use one of the following
+     * values to configure the feature status for the entire organization:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NEW</code>: Indicates that when a new account joins the organization, they will have the additional
+     * configuration enabled automatically.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALL</code>: Indicates that all accounts in the organization have the additional configuration enabled
+     * automatically. This includes <code>NEW</code> accounts that join the organization and accounts that may have been
+     * suspended or removed from the organization in GuardDuty.
+     * </p>
+     * <p>
+     * It may take up to 24 hours to update the configuration for all the member accounts.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NONE</code>: Indicates that the additional configuration will not be automatically enabled for any account
+     * in the organization. The administrator must manage the additional configuration for each account individually.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param autoEnable
-     *        The status of the additional configuration that will be configured for the organization.
+     *        The status of the additional configuration that will be configured for the organization. Use one of the
+     *        following values to configure the feature status for the entire organization:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>NEW</code>: Indicates that when a new account joins the organization, they will have the additional
+     *        configuration enabled automatically.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ALL</code>: Indicates that all accounts in the organization have the additional configuration
+     *        enabled automatically. This includes <code>NEW</code> accounts that join the organization and accounts
+     *        that may have been suspended or removed from the organization in GuardDuty.
+     *        </p>
+     *        <p>
+     *        It may take up to 24 hours to update the configuration for all the member accounts.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NONE</code>: Indicates that the additional configuration will not be automatically enabled for any
+     *        account in the organization. The administrator must manage the additional configuration for each account
+     *        individually.
+     *        </p>
+     *        </li>
      * @see OrgFeatureStatus
      */
 
@@ -116,10 +191,60 @@ public class OrganizationAdditionalConfiguration implements Serializable, Clonea
 
     /**
      * <p>
-     * The status of the additional configuration that will be configured for the organization.
+     * The status of the additional configuration that will be configured for the organization. Use one of the following
+     * values to configure the feature status for the entire organization:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NEW</code>: Indicates that when a new account joins the organization, they will have the additional
+     * configuration enabled automatically.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALL</code>: Indicates that all accounts in the organization have the additional configuration enabled
+     * automatically. This includes <code>NEW</code> accounts that join the organization and accounts that may have been
+     * suspended or removed from the organization in GuardDuty.
+     * </p>
+     * <p>
+     * It may take up to 24 hours to update the configuration for all the member accounts.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NONE</code>: Indicates that the additional configuration will not be automatically enabled for any account
+     * in the organization. The administrator must manage the additional configuration for each account individually.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The status of the additional configuration that will be configured for the organization.
+     * @return The status of the additional configuration that will be configured for the organization. Use one of the
+     *         following values to configure the feature status for the entire organization:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>NEW</code>: Indicates that when a new account joins the organization, they will have the additional
+     *         configuration enabled automatically.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ALL</code>: Indicates that all accounts in the organization have the additional configuration
+     *         enabled automatically. This includes <code>NEW</code> accounts that join the organization and accounts
+     *         that may have been suspended or removed from the organization in GuardDuty.
+     *         </p>
+     *         <p>
+     *         It may take up to 24 hours to update the configuration for all the member accounts.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>NONE</code>: Indicates that the additional configuration will not be automatically enabled for any
+     *         account in the organization. The administrator must manage the additional configuration for each account
+     *         individually.
+     *         </p>
+     *         </li>
      * @see OrgFeatureStatus
      */
 
@@ -129,11 +254,61 @@ public class OrganizationAdditionalConfiguration implements Serializable, Clonea
 
     /**
      * <p>
-     * The status of the additional configuration that will be configured for the organization.
+     * The status of the additional configuration that will be configured for the organization. Use one of the following
+     * values to configure the feature status for the entire organization:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NEW</code>: Indicates that when a new account joins the organization, they will have the additional
+     * configuration enabled automatically.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALL</code>: Indicates that all accounts in the organization have the additional configuration enabled
+     * automatically. This includes <code>NEW</code> accounts that join the organization and accounts that may have been
+     * suspended or removed from the organization in GuardDuty.
+     * </p>
+     * <p>
+     * It may take up to 24 hours to update the configuration for all the member accounts.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NONE</code>: Indicates that the additional configuration will not be automatically enabled for any account
+     * in the organization. The administrator must manage the additional configuration for each account individually.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param autoEnable
-     *        The status of the additional configuration that will be configured for the organization.
+     *        The status of the additional configuration that will be configured for the organization. Use one of the
+     *        following values to configure the feature status for the entire organization:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>NEW</code>: Indicates that when a new account joins the organization, they will have the additional
+     *        configuration enabled automatically.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ALL</code>: Indicates that all accounts in the organization have the additional configuration
+     *        enabled automatically. This includes <code>NEW</code> accounts that join the organization and accounts
+     *        that may have been suspended or removed from the organization in GuardDuty.
+     *        </p>
+     *        <p>
+     *        It may take up to 24 hours to update the configuration for all the member accounts.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NONE</code>: Indicates that the additional configuration will not be automatically enabled for any
+     *        account in the organization. The administrator must manage the additional configuration for each account
+     *        individually.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OrgFeatureStatus
      */
@@ -145,11 +320,61 @@ public class OrganizationAdditionalConfiguration implements Serializable, Clonea
 
     /**
      * <p>
-     * The status of the additional configuration that will be configured for the organization.
+     * The status of the additional configuration that will be configured for the organization. Use one of the following
+     * values to configure the feature status for the entire organization:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NEW</code>: Indicates that when a new account joins the organization, they will have the additional
+     * configuration enabled automatically.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALL</code>: Indicates that all accounts in the organization have the additional configuration enabled
+     * automatically. This includes <code>NEW</code> accounts that join the organization and accounts that may have been
+     * suspended or removed from the organization in GuardDuty.
+     * </p>
+     * <p>
+     * It may take up to 24 hours to update the configuration for all the member accounts.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NONE</code>: Indicates that the additional configuration will not be automatically enabled for any account
+     * in the organization. The administrator must manage the additional configuration for each account individually.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param autoEnable
-     *        The status of the additional configuration that will be configured for the organization.
+     *        The status of the additional configuration that will be configured for the organization. Use one of the
+     *        following values to configure the feature status for the entire organization:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>NEW</code>: Indicates that when a new account joins the organization, they will have the additional
+     *        configuration enabled automatically.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ALL</code>: Indicates that all accounts in the organization have the additional configuration
+     *        enabled automatically. This includes <code>NEW</code> accounts that join the organization and accounts
+     *        that may have been suspended or removed from the organization in GuardDuty.
+     *        </p>
+     *        <p>
+     *        It may take up to 24 hours to update the configuration for all the member accounts.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NONE</code>: Indicates that the additional configuration will not be automatically enabled for any
+     *        account in the organization. The administrator must manage the additional configuration for each account
+     *        individually.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OrgFeatureStatus
      */

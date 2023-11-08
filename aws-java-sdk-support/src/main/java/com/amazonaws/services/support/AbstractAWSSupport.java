@@ -73,6 +73,11 @@ public class AbstractAWSSupport implements AWSSupport {
     }
 
     @Override
+    public DescribeCreateCaseOptionsResult describeCreateCaseOptions(DescribeCreateCaseOptionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeServicesResult describeServices(DescribeServicesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -90,6 +95,11 @@ public class AbstractAWSSupport implements AWSSupport {
     @Override
     public DescribeSeverityLevelsResult describeSeverityLevels() {
         return describeSeverityLevels(new DescribeSeverityLevelsRequest());
+    }
+
+    @Override
+    public DescribeSupportedLanguagesResult describeSupportedLanguages(DescribeSupportedLanguagesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

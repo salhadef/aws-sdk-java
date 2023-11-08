@@ -63,7 +63,7 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
      * Specifies the version of Grafana to support in the new workspace.
      * </p>
      * <p>
-     * Supported values are <code>8.4</code> and <code>9.4</code>.
+     * To get a list of supported version, use the <code>ListVersions</code> operation.
      * </p>
      */
     private String grafanaVersion;
@@ -131,6 +131,11 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.
      * </p>
+     * <note>
+     * <p>
+     * Connecting to a private VPC is not yet available in the Asia Pacific (Seoul) Region (ap-northeast-2).
+     * </p>
+     * </note>
      */
     private VpcConfiguration vpcConfiguration;
     /**
@@ -512,13 +517,13 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
      * Specifies the version of Grafana to support in the new workspace.
      * </p>
      * <p>
-     * Supported values are <code>8.4</code> and <code>9.4</code>.
+     * To get a list of supported version, use the <code>ListVersions</code> operation.
      * </p>
      * 
      * @param grafanaVersion
      *        Specifies the version of Grafana to support in the new workspace.</p>
      *        <p>
-     *        Supported values are <code>8.4</code> and <code>9.4</code>.
+     *        To get a list of supported version, use the <code>ListVersions</code> operation.
      */
 
     public void setGrafanaVersion(String grafanaVersion) {
@@ -530,12 +535,12 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
      * Specifies the version of Grafana to support in the new workspace.
      * </p>
      * <p>
-     * Supported values are <code>8.4</code> and <code>9.4</code>.
+     * To get a list of supported version, use the <code>ListVersions</code> operation.
      * </p>
      * 
      * @return Specifies the version of Grafana to support in the new workspace.</p>
      *         <p>
-     *         Supported values are <code>8.4</code> and <code>9.4</code>.
+     *         To get a list of supported version, use the <code>ListVersions</code> operation.
      */
 
     public String getGrafanaVersion() {
@@ -547,13 +552,13 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
      * Specifies the version of Grafana to support in the new workspace.
      * </p>
      * <p>
-     * Supported values are <code>8.4</code> and <code>9.4</code>.
+     * To get a list of supported version, use the <code>ListVersions</code> operation.
      * </p>
      * 
      * @param grafanaVersion
      *        Specifies the version of Grafana to support in the new workspace.</p>
      *        <p>
-     *        Supported values are <code>8.4</code> and <code>9.4</code>.
+     *        To get a list of supported version, use the <code>ListVersions</code> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1028,10 +1033,18 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.
      * </p>
+     * <note>
+     * <p>
+     * Connecting to a private VPC is not yet available in the Asia Pacific (Seoul) Region (ap-northeast-2).
+     * </p>
+     * </note>
      * 
      * @param vpcConfiguration
      *        The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to
-     *        connect to.
+     *        connect to.</p> <note>
+     *        <p>
+     *        Connecting to a private VPC is not yet available in the Asia Pacific (Seoul) Region (ap-northeast-2).
+     *        </p>
      */
 
     public void setVpcConfiguration(VpcConfiguration vpcConfiguration) {
@@ -1042,9 +1055,17 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.
      * </p>
+     * <note>
+     * <p>
+     * Connecting to a private VPC is not yet available in the Asia Pacific (Seoul) Region (ap-northeast-2).
+     * </p>
+     * </note>
      * 
      * @return The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to
-     *         connect to.
+     *         connect to.</p> <note>
+     *         <p>
+     *         Connecting to a private VPC is not yet available in the Asia Pacific (Seoul) Region (ap-northeast-2).
+     *         </p>
      */
 
     public VpcConfiguration getVpcConfiguration() {
@@ -1055,10 +1076,18 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.
      * </p>
+     * <note>
+     * <p>
+     * Connecting to a private VPC is not yet available in the Asia Pacific (Seoul) Region (ap-northeast-2).
+     * </p>
+     * </note>
      * 
      * @param vpcConfiguration
      *        The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to
-     *        connect to.
+     *        connect to.</p> <note>
+     *        <p>
+     *        Connecting to a private VPC is not yet available in the Asia Pacific (Seoul) Region (ap-northeast-2).
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

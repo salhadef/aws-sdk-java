@@ -56,6 +56,11 @@ public class RelativeDateTimeControlDisplayOptionsJsonUnmarshaller implements Un
                     context.nextToken();
                     relativeDateTimeControlDisplayOptions.setDateTimeFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("InfoIconLabelOptions", targetDepth)) {
+                    context.nextToken();
+                    relativeDateTimeControlDisplayOptions.setInfoIconLabelOptions(SheetControlInfoIconLabelOptionsJsonUnmarshaller.getInstance().unmarshall(
+                            context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -19,9 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * Settings for your Nielsen configuration. If you don't do Nielsen measurement and analytics, ignore these settings.
- * When you enable Nielsen configuration (nielsenConfiguration), MediaConvert enables PCM to ID3 tagging for all outputs
- * in the job. To enable Nielsen configuration programmatically, include an instance of nielsenConfiguration in your
- * JSON job specification. Even if you don't include any children of nielsenConfiguration, you still enable the setting.
+ * When you enable Nielsen configuration, MediaConvert enables PCM to ID3 tagging for all outputs in the job.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/NielsenConfiguration" target="_top">AWS
  *      API Documentation</a>
@@ -34,10 +32,7 @@ public class NielsenConfiguration implements Serializable, Cloneable, Structured
      * to zero.
      */
     private Integer breakoutCode;
-    /**
-     * Use Distributor ID (DistributorID) to specify the distributor ID that is assigned to your organization by
-     * Neilsen.
-     */
+    /** Use Distributor ID to specify the distributor ID that is assigned to your organization by Nielsen. */
     private String distributorId;
 
     /**
@@ -81,12 +76,10 @@ public class NielsenConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Use Distributor ID (DistributorID) to specify the distributor ID that is assigned to your organization by
-     * Neilsen.
+     * Use Distributor ID to specify the distributor ID that is assigned to your organization by Nielsen.
      * 
      * @param distributorId
-     *        Use Distributor ID (DistributorID) to specify the distributor ID that is assigned to your organization by
-     *        Neilsen.
+     *        Use Distributor ID to specify the distributor ID that is assigned to your organization by Nielsen.
      */
 
     public void setDistributorId(String distributorId) {
@@ -94,11 +87,9 @@ public class NielsenConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Use Distributor ID (DistributorID) to specify the distributor ID that is assigned to your organization by
-     * Neilsen.
+     * Use Distributor ID to specify the distributor ID that is assigned to your organization by Nielsen.
      * 
-     * @return Use Distributor ID (DistributorID) to specify the distributor ID that is assigned to your organization by
-     *         Neilsen.
+     * @return Use Distributor ID to specify the distributor ID that is assigned to your organization by Nielsen.
      */
 
     public String getDistributorId() {
@@ -106,12 +97,10 @@ public class NielsenConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Use Distributor ID (DistributorID) to specify the distributor ID that is assigned to your organization by
-     * Neilsen.
+     * Use Distributor ID to specify the distributor ID that is assigned to your organization by Nielsen.
      * 
      * @param distributorId
-     *        Use Distributor ID (DistributorID) to specify the distributor ID that is assigned to your organization by
-     *        Neilsen.
+     *        Use Distributor ID to specify the distributor ID that is assigned to your organization by Nielsen.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

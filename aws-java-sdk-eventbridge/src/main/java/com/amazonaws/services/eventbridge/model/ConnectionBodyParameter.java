@@ -195,7 +195,7 @@ public class ConnectionBodyParameter implements Serializable, Cloneable, Structu
         if (getKey() != null)
             sb.append("Key: ").append(getKey()).append(",");
         if (getValue() != null)
-            sb.append("Value: ").append(getValue()).append(",");
+            sb.append("Value: ").append("***Sensitive Data Redacted***").append(",");
         if (getIsValueSecret() != null)
             sb.append("IsValueSecret: ").append(getIsValueSecret());
         sb.append("}");

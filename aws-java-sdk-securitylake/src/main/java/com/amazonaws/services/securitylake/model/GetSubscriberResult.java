@@ -25,18 +25,18 @@ public class GetSubscriberResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The subscription information for the specified subscription ID.
+     * The subscriber information for the specified subscriber ID.
      * </p>
      */
     private SubscriberResource subscriber;
 
     /**
      * <p>
-     * The subscription information for the specified subscription ID.
+     * The subscriber information for the specified subscriber ID.
      * </p>
      * 
      * @param subscriber
-     *        The subscription information for the specified subscription ID.
+     *        The subscriber information for the specified subscriber ID.
      */
 
     public void setSubscriber(SubscriberResource subscriber) {
@@ -45,10 +45,10 @@ public class GetSubscriberResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The subscription information for the specified subscription ID.
+     * The subscriber information for the specified subscriber ID.
      * </p>
      * 
-     * @return The subscription information for the specified subscription ID.
+     * @return The subscriber information for the specified subscriber ID.
      */
 
     public SubscriberResource getSubscriber() {
@@ -57,11 +57,11 @@ public class GetSubscriberResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The subscription information for the specified subscription ID.
+     * The subscriber information for the specified subscriber ID.
      * </p>
      * 
      * @param subscriber
-     *        The subscription information for the specified subscription ID.
+     *        The subscriber information for the specified subscriber ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -92,6 +92,10 @@ public class ElasticsearchDestinationUpdateJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     elasticsearchDestinationUpdate.setCloudWatchLoggingOptions(CloudWatchLoggingOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("DocumentIdOptions", targetDepth)) {
+                    context.nextToken();
+                    elasticsearchDestinationUpdate.setDocumentIdOptions(DocumentIdOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

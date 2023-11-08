@@ -172,6 +172,10 @@ public class ContainerDetailJsonUnmarshaller implements Unmarshaller<ContainerDe
                     context.nextToken();
                     containerDetail.setEphemeralStorage(EphemeralStorageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("runtimePlatform", targetDepth)) {
+                    context.nextToken();
+                    containerDetail.setRuntimePlatform(RuntimePlatformJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

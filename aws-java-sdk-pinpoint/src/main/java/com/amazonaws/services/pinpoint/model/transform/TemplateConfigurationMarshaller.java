@@ -35,6 +35,8 @@ public class TemplateConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SMSTemplate").build();
     private static final MarshallingInfo<StructuredPojo> VOICETEMPLATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VoiceTemplate").build();
+    private static final MarshallingInfo<StructuredPojo> INAPPTEMPLATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InAppTemplate").build();
 
     private static final TemplateConfigurationMarshaller instance = new TemplateConfigurationMarshaller();
 
@@ -56,6 +58,7 @@ public class TemplateConfigurationMarshaller {
             protocolMarshaller.marshall(templateConfiguration.getPushTemplate(), PUSHTEMPLATE_BINDING);
             protocolMarshaller.marshall(templateConfiguration.getSMSTemplate(), SMSTEMPLATE_BINDING);
             protocolMarshaller.marshall(templateConfiguration.getVoiceTemplate(), VOICETEMPLATE_BINDING);
+            protocolMarshaller.marshall(templateConfiguration.getInAppTemplate(), INAPPTEMPLATE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

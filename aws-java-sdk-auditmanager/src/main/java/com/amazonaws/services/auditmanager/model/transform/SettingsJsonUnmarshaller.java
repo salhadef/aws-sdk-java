@@ -78,6 +78,10 @@ public class SettingsJsonUnmarshaller implements Unmarshaller<Settings, JsonUnma
                     context.nextToken();
                     settings.setDeregistrationPolicy(DeregistrationPolicyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("defaultExportDestination", targetDepth)) {
+                    context.nextToken();
+                    settings.setDefaultExportDestination(DefaultExportDestinationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

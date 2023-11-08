@@ -31,7 +31,7 @@ public class AmazonOpenSearchServerlessDestinationDescription implements Seriali
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS credentials.
+     * The Amazon Resource Name (ARN) of the Amazon Web Services credentials.
      * </p>
      */
     private String roleARN;
@@ -77,11 +77,11 @@ public class AmazonOpenSearchServerlessDestinationDescription implements Seriali
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS credentials.
+     * The Amazon Resource Name (ARN) of the Amazon Web Services credentials.
      * </p>
      * 
      * @param roleARN
-     *        The Amazon Resource Name (ARN) of the AWS credentials.
+     *        The Amazon Resource Name (ARN) of the Amazon Web Services credentials.
      */
 
     public void setRoleARN(String roleARN) {
@@ -90,10 +90,10 @@ public class AmazonOpenSearchServerlessDestinationDescription implements Seriali
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS credentials.
+     * The Amazon Resource Name (ARN) of the Amazon Web Services credentials.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the AWS credentials.
+     * @return The Amazon Resource Name (ARN) of the Amazon Web Services credentials.
      */
 
     public String getRoleARN() {
@@ -102,11 +102,11 @@ public class AmazonOpenSearchServerlessDestinationDescription implements Seriali
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS credentials.
+     * The Amazon Resource Name (ARN) of the Amazon Web Services credentials.
      * </p>
      * 
      * @param roleARN
-     *        The Amazon Resource Name (ARN) of the AWS credentials.
+     *        The Amazon Resource Name (ARN) of the Amazon Web Services credentials.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

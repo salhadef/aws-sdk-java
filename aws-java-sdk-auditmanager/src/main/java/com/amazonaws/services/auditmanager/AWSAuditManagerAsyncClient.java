@@ -1029,6 +1029,39 @@ public class AWSAuditManagerAsyncClient extends AWSAuditManagerClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<GetEvidenceFileUploadUrlResult> getEvidenceFileUploadUrlAsync(GetEvidenceFileUploadUrlRequest request) {
+
+        return getEvidenceFileUploadUrlAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEvidenceFileUploadUrlResult> getEvidenceFileUploadUrlAsync(final GetEvidenceFileUploadUrlRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetEvidenceFileUploadUrlRequest, GetEvidenceFileUploadUrlResult> asyncHandler) {
+        final GetEvidenceFileUploadUrlRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetEvidenceFileUploadUrlResult>() {
+            @Override
+            public GetEvidenceFileUploadUrlResult call() throws Exception {
+                GetEvidenceFileUploadUrlResult result = null;
+
+                try {
+                    result = executeGetEvidenceFileUploadUrl(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetEvidenceFolderResult> getEvidenceFolderAsync(GetEvidenceFolderRequest request) {
 
         return getEvidenceFolderAsync(request, null);

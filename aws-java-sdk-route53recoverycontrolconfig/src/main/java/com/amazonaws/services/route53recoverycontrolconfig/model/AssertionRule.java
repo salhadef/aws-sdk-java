@@ -81,6 +81,12 @@ public class AssertionRule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Integer waitPeriodMs;
+    /**
+     * <p>
+     * The Amazon Web Services account ID of the assertion rule owner.
+     * </p>
+     */
+    private String owner;
 
     /**
      * <p>
@@ -469,6 +475,46 @@ public class AssertionRule implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The Amazon Web Services account ID of the assertion rule owner.
+     * </p>
+     * 
+     * @param owner
+     *        The Amazon Web Services account ID of the assertion rule owner.
+     */
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
+    /**
+     * <p>
+     * The Amazon Web Services account ID of the assertion rule owner.
+     * </p>
+     * 
+     * @return The Amazon Web Services account ID of the assertion rule owner.
+     */
+
+    public String getOwner() {
+        return this.owner;
+    }
+
+    /**
+     * <p>
+     * The Amazon Web Services account ID of the assertion rule owner.
+     * </p>
+     * 
+     * @param owner
+     *        The Amazon Web Services account ID of the assertion rule owner.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssertionRule withOwner(String owner) {
+        setOwner(owner);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -493,7 +539,9 @@ public class AssertionRule implements Serializable, Cloneable, StructuredPojo {
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getWaitPeriodMs() != null)
-            sb.append("WaitPeriodMs: ").append(getWaitPeriodMs());
+            sb.append("WaitPeriodMs: ").append(getWaitPeriodMs()).append(",");
+        if (getOwner() != null)
+            sb.append("Owner: ").append(getOwner());
         sb.append("}");
         return sb.toString();
     }
@@ -536,6 +584,10 @@ public class AssertionRule implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getWaitPeriodMs() != null && other.getWaitPeriodMs().equals(this.getWaitPeriodMs()) == false)
             return false;
+        if (other.getOwner() == null ^ this.getOwner() == null)
+            return false;
+        if (other.getOwner() != null && other.getOwner().equals(this.getOwner()) == false)
+            return false;
         return true;
     }
 
@@ -551,6 +603,7 @@ public class AssertionRule implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSafetyRuleArn() == null) ? 0 : getSafetyRuleArn().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getWaitPeriodMs() == null) ? 0 : getWaitPeriodMs().hashCode());
+        hashCode = prime * hashCode + ((getOwner() == null) ? 0 : getOwner().hashCode());
         return hashCode;
     }
 

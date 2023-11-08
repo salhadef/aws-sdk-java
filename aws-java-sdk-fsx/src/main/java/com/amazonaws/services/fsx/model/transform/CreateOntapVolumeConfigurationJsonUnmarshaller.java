@@ -84,6 +84,10 @@ public class CreateOntapVolumeConfigurationJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     createOntapVolumeConfiguration.setCopyTagsToBackups(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("SnaplockConfiguration", targetDepth)) {
+                    context.nextToken();
+                    createOntapVolumeConfiguration.setSnaplockConfiguration(CreateSnaplockConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

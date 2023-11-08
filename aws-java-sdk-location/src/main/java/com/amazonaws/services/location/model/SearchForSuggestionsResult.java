@@ -30,8 +30,23 @@ public class SearchForSuggestionsResult implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place
-     * again later.
+     * The Amazon Location categories that describe the Place.
+     * </p>
+     * <p>
+     * For more information about using categories, including a list of Amazon Location categories, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and
+     * filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.
+     * </p>
+     */
+    private java.util.List<String> categories;
+    /**
+     * <p>
+     * The unique identifier of the Place. You can use this with the <code>GetPlace</code> operation to find the place
+     * again later, or to get full information for the Place.
+     * </p>
+     * <p>
+     * The <code>GetPlace</code> request must use the same <code>PlaceIndex</code> resource as the
+     * <code>SearchPlaceIndexForSuggestions</code> that generated the Place ID.
      * </p>
      * <note>
      * <p>
@@ -43,6 +58,12 @@ public class SearchForSuggestionsResult implements Serializable, Cloneable, Stru
     private String placeId;
     /**
      * <p>
+     * Categories from the data provider that describe the Place that are not mapped to any Amazon Location categories.
+     * </p>
+     */
+    private java.util.List<String> supplementalCategories;
+    /**
+     * <p>
      * The text of the place suggestion, typically formatted as an address string.
      * </p>
      */
@@ -50,8 +71,118 @@ public class SearchForSuggestionsResult implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place
-     * again later.
+     * The Amazon Location categories that describe the Place.
+     * </p>
+     * <p>
+     * For more information about using categories, including a list of Amazon Location categories, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and
+     * filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.
+     * </p>
+     * 
+     * @return The Amazon Location categories that describe the Place.</p>
+     *         <p>
+     *         For more information about using categories, including a list of Amazon Location categories, see <a
+     *         href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and
+     *         filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.
+     */
+
+    public java.util.List<String> getCategories() {
+        return categories;
+    }
+
+    /**
+     * <p>
+     * The Amazon Location categories that describe the Place.
+     * </p>
+     * <p>
+     * For more information about using categories, including a list of Amazon Location categories, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and
+     * filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param categories
+     *        The Amazon Location categories that describe the Place.</p>
+     *        <p>
+     *        For more information about using categories, including a list of Amazon Location categories, see <a
+     *        href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and
+     *        filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.
+     */
+
+    public void setCategories(java.util.Collection<String> categories) {
+        if (categories == null) {
+            this.categories = null;
+            return;
+        }
+
+        this.categories = new java.util.ArrayList<String>(categories);
+    }
+
+    /**
+     * <p>
+     * The Amazon Location categories that describe the Place.
+     * </p>
+     * <p>
+     * For more information about using categories, including a list of Amazon Location categories, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and
+     * filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCategories(java.util.Collection)} or {@link #withCategories(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param categories
+     *        The Amazon Location categories that describe the Place.</p>
+     *        <p>
+     *        For more information about using categories, including a list of Amazon Location categories, see <a
+     *        href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and
+     *        filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SearchForSuggestionsResult withCategories(String... categories) {
+        if (this.categories == null) {
+            setCategories(new java.util.ArrayList<String>(categories.length));
+        }
+        for (String ele : categories) {
+            this.categories.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Location categories that describe the Place.
+     * </p>
+     * <p>
+     * For more information about using categories, including a list of Amazon Location categories, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and
+     * filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param categories
+     *        The Amazon Location categories that describe the Place.</p>
+     *        <p>
+     *        For more information about using categories, including a list of Amazon Location categories, see <a
+     *        href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and
+     *        filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SearchForSuggestionsResult withCategories(java.util.Collection<String> categories) {
+        setCategories(categories);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The unique identifier of the Place. You can use this with the <code>GetPlace</code> operation to find the place
+     * again later, or to get full information for the Place.
+     * </p>
+     * <p>
+     * The <code>GetPlace</code> request must use the same <code>PlaceIndex</code> resource as the
+     * <code>SearchPlaceIndexForSuggestions</code> that generated the Place ID.
      * </p>
      * <note>
      * <p>
@@ -61,8 +192,13 @@ public class SearchForSuggestionsResult implements Serializable, Cloneable, Stru
      * </note>
      * 
      * @param placeId
-     *        The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the
-     *        place again later.</p> <note>
+     *        The unique identifier of the Place. You can use this with the <code>GetPlace</code> operation to find the
+     *        place again later, or to get full information for the Place.</p>
+     *        <p>
+     *        The <code>GetPlace</code> request must use the same <code>PlaceIndex</code> resource as the
+     *        <code>SearchPlaceIndexForSuggestions</code> that generated the Place ID.
+     *        </p>
+     *        <note>
      *        <p>
      *        For <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code> is returned by place
      *        indexes that use Esri, Grab, or HERE as data providers.
@@ -75,8 +211,12 @@ public class SearchForSuggestionsResult implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place
-     * again later.
+     * The unique identifier of the Place. You can use this with the <code>GetPlace</code> operation to find the place
+     * again later, or to get full information for the Place.
+     * </p>
+     * <p>
+     * The <code>GetPlace</code> request must use the same <code>PlaceIndex</code> resource as the
+     * <code>SearchPlaceIndexForSuggestions</code> that generated the Place ID.
      * </p>
      * <note>
      * <p>
@@ -85,8 +225,13 @@ public class SearchForSuggestionsResult implements Serializable, Cloneable, Stru
      * </p>
      * </note>
      * 
-     * @return The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the
-     *         place again later.</p> <note>
+     * @return The unique identifier of the Place. You can use this with the <code>GetPlace</code> operation to find the
+     *         place again later, or to get full information for the Place.</p>
+     *         <p>
+     *         The <code>GetPlace</code> request must use the same <code>PlaceIndex</code> resource as the
+     *         <code>SearchPlaceIndexForSuggestions</code> that generated the Place ID.
+     *         </p>
+     *         <note>
      *         <p>
      *         For <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code> is returned by place
      *         indexes that use Esri, Grab, or HERE as data providers.
@@ -99,8 +244,12 @@ public class SearchForSuggestionsResult implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place
-     * again later.
+     * The unique identifier of the Place. You can use this with the <code>GetPlace</code> operation to find the place
+     * again later, or to get full information for the Place.
+     * </p>
+     * <p>
+     * The <code>GetPlace</code> request must use the same <code>PlaceIndex</code> resource as the
+     * <code>SearchPlaceIndexForSuggestions</code> that generated the Place ID.
      * </p>
      * <note>
      * <p>
@@ -110,8 +259,13 @@ public class SearchForSuggestionsResult implements Serializable, Cloneable, Stru
      * </note>
      * 
      * @param placeId
-     *        The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the
-     *        place again later.</p> <note>
+     *        The unique identifier of the Place. You can use this with the <code>GetPlace</code> operation to find the
+     *        place again later, or to get full information for the Place.</p>
+     *        <p>
+     *        The <code>GetPlace</code> request must use the same <code>PlaceIndex</code> resource as the
+     *        <code>SearchPlaceIndexForSuggestions</code> that generated the Place ID.
+     *        </p>
+     *        <note>
      *        <p>
      *        For <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code> is returned by place
      *        indexes that use Esri, Grab, or HERE as data providers.
@@ -121,6 +275,80 @@ public class SearchForSuggestionsResult implements Serializable, Cloneable, Stru
 
     public SearchForSuggestionsResult withPlaceId(String placeId) {
         setPlaceId(placeId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Categories from the data provider that describe the Place that are not mapped to any Amazon Location categories.
+     * </p>
+     * 
+     * @return Categories from the data provider that describe the Place that are not mapped to any Amazon Location
+     *         categories.
+     */
+
+    public java.util.List<String> getSupplementalCategories() {
+        return supplementalCategories;
+    }
+
+    /**
+     * <p>
+     * Categories from the data provider that describe the Place that are not mapped to any Amazon Location categories.
+     * </p>
+     * 
+     * @param supplementalCategories
+     *        Categories from the data provider that describe the Place that are not mapped to any Amazon Location
+     *        categories.
+     */
+
+    public void setSupplementalCategories(java.util.Collection<String> supplementalCategories) {
+        if (supplementalCategories == null) {
+            this.supplementalCategories = null;
+            return;
+        }
+
+        this.supplementalCategories = new java.util.ArrayList<String>(supplementalCategories);
+    }
+
+    /**
+     * <p>
+     * Categories from the data provider that describe the Place that are not mapped to any Amazon Location categories.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSupplementalCategories(java.util.Collection)} or
+     * {@link #withSupplementalCategories(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param supplementalCategories
+     *        Categories from the data provider that describe the Place that are not mapped to any Amazon Location
+     *        categories.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SearchForSuggestionsResult withSupplementalCategories(String... supplementalCategories) {
+        if (this.supplementalCategories == null) {
+            setSupplementalCategories(new java.util.ArrayList<String>(supplementalCategories.length));
+        }
+        for (String ele : supplementalCategories) {
+            this.supplementalCategories.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Categories from the data provider that describe the Place that are not mapped to any Amazon Location categories.
+     * </p>
+     * 
+     * @param supplementalCategories
+     *        Categories from the data provider that describe the Place that are not mapped to any Amazon Location
+     *        categories.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SearchForSuggestionsResult withSupplementalCategories(java.util.Collection<String> supplementalCategories) {
+        setSupplementalCategories(supplementalCategories);
         return this;
     }
 
@@ -176,8 +404,12 @@ public class SearchForSuggestionsResult implements Serializable, Cloneable, Stru
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getCategories() != null)
+            sb.append("Categories: ").append(getCategories()).append(",");
         if (getPlaceId() != null)
             sb.append("PlaceId: ").append(getPlaceId()).append(",");
+        if (getSupplementalCategories() != null)
+            sb.append("SupplementalCategories: ").append(getSupplementalCategories()).append(",");
         if (getText() != null)
             sb.append("Text: ").append(getText());
         sb.append("}");
@@ -194,9 +426,17 @@ public class SearchForSuggestionsResult implements Serializable, Cloneable, Stru
         if (obj instanceof SearchForSuggestionsResult == false)
             return false;
         SearchForSuggestionsResult other = (SearchForSuggestionsResult) obj;
+        if (other.getCategories() == null ^ this.getCategories() == null)
+            return false;
+        if (other.getCategories() != null && other.getCategories().equals(this.getCategories()) == false)
+            return false;
         if (other.getPlaceId() == null ^ this.getPlaceId() == null)
             return false;
         if (other.getPlaceId() != null && other.getPlaceId().equals(this.getPlaceId()) == false)
+            return false;
+        if (other.getSupplementalCategories() == null ^ this.getSupplementalCategories() == null)
+            return false;
+        if (other.getSupplementalCategories() != null && other.getSupplementalCategories().equals(this.getSupplementalCategories()) == false)
             return false;
         if (other.getText() == null ^ this.getText() == null)
             return false;
@@ -210,7 +450,9 @@ public class SearchForSuggestionsResult implements Serializable, Cloneable, Stru
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getCategories() == null) ? 0 : getCategories().hashCode());
         hashCode = prime * hashCode + ((getPlaceId() == null) ? 0 : getPlaceId().hashCode());
+        hashCode = prime * hashCode + ((getSupplementalCategories() == null) ? 0 : getSupplementalCategories().hashCode());
         hashCode = prime * hashCode + ((getText() == null) ? 0 : getText().hashCode());
         return hashCode;
     }

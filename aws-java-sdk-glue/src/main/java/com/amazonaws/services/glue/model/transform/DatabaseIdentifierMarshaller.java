@@ -31,6 +31,8 @@ public class DatabaseIdentifierMarshaller {
             .marshallLocationName("CatalogId").build();
     private static final MarshallingInfo<String> DATABASENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DatabaseName").build();
+    private static final MarshallingInfo<String> REGION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Region").build();
 
     private static final DatabaseIdentifierMarshaller instance = new DatabaseIdentifierMarshaller();
 
@@ -50,6 +52,7 @@ public class DatabaseIdentifierMarshaller {
         try {
             protocolMarshaller.marshall(databaseIdentifier.getCatalogId(), CATALOGID_BINDING);
             protocolMarshaller.marshall(databaseIdentifier.getDatabaseName(), DATABASENAME_BINDING);
+            protocolMarshaller.marshall(databaseIdentifier.getRegion(), REGION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specification of the status of a CancelSteps request. Available only in Amazon EMR version 4.8.0 and later, excluding
- * version 5.0.0.
+ * Specification of the status of a CancelSteps request. Available only in Amazon EMR version 4.8.0 and higher,
+ * excluding version 5.0.0.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CancelStepsInfo" target="_top">AWS

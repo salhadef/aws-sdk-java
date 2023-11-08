@@ -571,6 +571,39 @@ public class AmazonTranslateAsyncClient extends AmazonTranslateClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<TranslateDocumentResult> translateDocumentAsync(TranslateDocumentRequest request) {
+
+        return translateDocumentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TranslateDocumentResult> translateDocumentAsync(final TranslateDocumentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<TranslateDocumentRequest, TranslateDocumentResult> asyncHandler) {
+        final TranslateDocumentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<TranslateDocumentResult>() {
+            @Override
+            public TranslateDocumentResult call() throws Exception {
+                TranslateDocumentResult result = null;
+
+                try {
+                    result = executeTranslateDocument(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<TranslateTextResult> translateTextAsync(TranslateTextRequest request) {
 
         return translateTextAsync(request, null);

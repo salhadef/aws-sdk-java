@@ -84,6 +84,12 @@ public class MediaInsightsPipelineConfigurationElement implements Serializable, 
      * </p>
      */
     private SnsTopicSinkConfiguration snsTopicSinkConfiguration;
+    /**
+     * <p>
+     * The configuration settings for voice enhancement sink in a media insights pipeline configuration element.
+     * </p>
+     */
+    private VoiceEnhancementSinkConfiguration voiceEnhancementSinkConfiguration;
 
     /**
      * <p>
@@ -485,6 +491,46 @@ public class MediaInsightsPipelineConfigurationElement implements Serializable, 
     }
 
     /**
+     * <p>
+     * The configuration settings for voice enhancement sink in a media insights pipeline configuration element.
+     * </p>
+     * 
+     * @param voiceEnhancementSinkConfiguration
+     *        The configuration settings for voice enhancement sink in a media insights pipeline configuration element.
+     */
+
+    public void setVoiceEnhancementSinkConfiguration(VoiceEnhancementSinkConfiguration voiceEnhancementSinkConfiguration) {
+        this.voiceEnhancementSinkConfiguration = voiceEnhancementSinkConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration settings for voice enhancement sink in a media insights pipeline configuration element.
+     * </p>
+     * 
+     * @return The configuration settings for voice enhancement sink in a media insights pipeline configuration element.
+     */
+
+    public VoiceEnhancementSinkConfiguration getVoiceEnhancementSinkConfiguration() {
+        return this.voiceEnhancementSinkConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration settings for voice enhancement sink in a media insights pipeline configuration element.
+     * </p>
+     * 
+     * @param voiceEnhancementSinkConfiguration
+     *        The configuration settings for voice enhancement sink in a media insights pipeline configuration element.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MediaInsightsPipelineConfigurationElement withVoiceEnhancementSinkConfiguration(VoiceEnhancementSinkConfiguration voiceEnhancementSinkConfiguration) {
+        setVoiceEnhancementSinkConfiguration(voiceEnhancementSinkConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -513,7 +559,9 @@ public class MediaInsightsPipelineConfigurationElement implements Serializable, 
         if (getSqsQueueSinkConfiguration() != null)
             sb.append("SqsQueueSinkConfiguration: ").append(getSqsQueueSinkConfiguration()).append(",");
         if (getSnsTopicSinkConfiguration() != null)
-            sb.append("SnsTopicSinkConfiguration: ").append(getSnsTopicSinkConfiguration());
+            sb.append("SnsTopicSinkConfiguration: ").append(getSnsTopicSinkConfiguration()).append(",");
+        if (getVoiceEnhancementSinkConfiguration() != null)
+            sb.append("VoiceEnhancementSinkConfiguration: ").append(getVoiceEnhancementSinkConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -569,6 +617,11 @@ public class MediaInsightsPipelineConfigurationElement implements Serializable, 
             return false;
         if (other.getSnsTopicSinkConfiguration() != null && other.getSnsTopicSinkConfiguration().equals(this.getSnsTopicSinkConfiguration()) == false)
             return false;
+        if (other.getVoiceEnhancementSinkConfiguration() == null ^ this.getVoiceEnhancementSinkConfiguration() == null)
+            return false;
+        if (other.getVoiceEnhancementSinkConfiguration() != null
+                && other.getVoiceEnhancementSinkConfiguration().equals(this.getVoiceEnhancementSinkConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -588,6 +641,7 @@ public class MediaInsightsPipelineConfigurationElement implements Serializable, 
         hashCode = prime * hashCode + ((getLambdaFunctionSinkConfiguration() == null) ? 0 : getLambdaFunctionSinkConfiguration().hashCode());
         hashCode = prime * hashCode + ((getSqsQueueSinkConfiguration() == null) ? 0 : getSqsQueueSinkConfiguration().hashCode());
         hashCode = prime * hashCode + ((getSnsTopicSinkConfiguration() == null) ? 0 : getSnsTopicSinkConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getVoiceEnhancementSinkConfiguration() == null) ? 0 : getVoiceEnhancementSinkConfiguration().hashCode());
         return hashCode;
     }
 

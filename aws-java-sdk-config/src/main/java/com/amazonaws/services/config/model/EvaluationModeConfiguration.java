@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The configuration object for Config rule evaluation mode. The Supported valid values are Detective or Proactive.
+ * The configuration object for Config rule evaluation mode. The supported valid values are Detective or Proactive.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/EvaluationModeConfiguration" target="_top">AWS

@@ -44,6 +44,7 @@ import com.amazonaws.services.cloudsearchv2.AmazonCloudSearchClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.cloudsearchv2.model.*;
+
 import com.amazonaws.services.cloudsearchv2.model.transform.*;
 
 /**

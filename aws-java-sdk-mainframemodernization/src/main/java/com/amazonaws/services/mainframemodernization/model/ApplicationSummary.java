@@ -90,6 +90,12 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
     private String name;
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the role associated with the application.
+     * </p>
+     */
+    private String roleArn;
+    /**
+     * <p>
      * The status of the application.
      * </p>
      */
@@ -541,6 +547,46 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the role associated with the application.
+     * </p>
+     * 
+     * @param roleArn
+     *        The Amazon Resource Name (ARN) of the role associated with the application.
+     */
+
+    public void setRoleArn(String roleArn) {
+        this.roleArn = roleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the role associated with the application.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the role associated with the application.
+     */
+
+    public String getRoleArn() {
+        return this.roleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the role associated with the application.
+     * </p>
+     * 
+     * @param roleArn
+     *        The Amazon Resource Name (ARN) of the role associated with the application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationSummary withRoleArn(String roleArn) {
+        setRoleArn(roleArn);
+        return this;
+    }
+
+    /**
+     * <p>
      * The status of the application.
      * </p>
      * 
@@ -689,6 +735,8 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
             sb.append("LastStartTime: ").append(getLastStartTime()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getRoleArn() != null)
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getVersionStatus() != null)
@@ -747,6 +795,10 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getRoleArn() == null ^ this.getRoleArn() == null)
+            return false;
+        if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
@@ -773,6 +825,7 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getEnvironmentId() == null) ? 0 : getEnvironmentId().hashCode());
         hashCode = prime * hashCode + ((getLastStartTime() == null) ? 0 : getLastStartTime().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getVersionStatus() == null) ? 0 : getVersionStatus().hashCode());
         return hashCode;

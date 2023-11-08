@@ -39,7 +39,7 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
     private String regionConcurrencyType;
     /**
      * <p>
-     * The order of the Regions in where you want to perform the stack operation.
+     * The order of the Regions where you want to perform the stack operation.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> regionOrder;
@@ -184,10 +184,10 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The order of the Regions in where you want to perform the stack operation.
+     * The order of the Regions where you want to perform the stack operation.
      * </p>
      * 
-     * @return The order of the Regions in where you want to perform the stack operation.
+     * @return The order of the Regions where you want to perform the stack operation.
      */
 
     public java.util.List<String> getRegionOrder() {
@@ -199,11 +199,11 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The order of the Regions in where you want to perform the stack operation.
+     * The order of the Regions where you want to perform the stack operation.
      * </p>
      * 
      * @param regionOrder
-     *        The order of the Regions in where you want to perform the stack operation.
+     *        The order of the Regions where you want to perform the stack operation.
      */
 
     public void setRegionOrder(java.util.Collection<String> regionOrder) {
@@ -217,7 +217,7 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The order of the Regions in where you want to perform the stack operation.
+     * The order of the Regions where you want to perform the stack operation.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -226,7 +226,7 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      * </p>
      * 
      * @param regionOrder
-     *        The order of the Regions in where you want to perform the stack operation.
+     *        The order of the Regions where you want to perform the stack operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -242,11 +242,11 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The order of the Regions in where you want to perform the stack operation.
+     * The order of the Regions where you want to perform the stack operation.
      * </p>
      * 
      * @param regionOrder
-     *        The order of the Regions in where you want to perform the stack operation.
+     *        The order of the Regions where you want to perform the stack operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

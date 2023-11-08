@@ -33,25 +33,11 @@ public class CreateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
     private java.util.List<String> accessTypes;
     /**
      * <p>
-     * The Amazon Web Services account ID used to access your data.
-     * </p>
-     */
-    private String accountId;
-    /**
-     * <p>
-     * The external ID of the subscriber. This lets the user that is assuming the role assert the circumstances in which
-     * they are operating. It also provides a way for the account owner to permit the role to be assumed only under
-     * specific circumstances.
-     * </p>
-     */
-    private String externalId;
-    /**
-     * <p>
      * The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and event
      * collection for natively supported Amazon Web Services.
      * </p>
      */
-    private java.util.List<SourceType> sourceTypes;
+    private java.util.List<LogSourceResource> sources;
     /**
      * <p>
      * The description for your subscriber account in Security Lake.
@@ -60,10 +46,23 @@ public class CreateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
     private String subscriberDescription;
     /**
      * <p>
+     * The AWS identity used to access your data.
+     * </p>
+     */
+    private AwsIdentity subscriberIdentity;
+    /**
+     * <p>
      * The name of your Security Lake subscriber account.
      * </p>
      */
     private String subscriberName;
+    /**
+     * <p>
+     * An array of objects, one for each tag to associate with the subscriber. For each tag, you must specify both a tag
+     * key and a tag value. A tag value cannot be null, but it can be an empty string.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -165,98 +164,6 @@ public class CreateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Web Services account ID used to access your data.
-     * </p>
-     * 
-     * @param accountId
-     *        The Amazon Web Services account ID used to access your data.
-     */
-
-    public void setAccountId(String accountId) {
-        this.accountId = accountId;
-    }
-
-    /**
-     * <p>
-     * The Amazon Web Services account ID used to access your data.
-     * </p>
-     * 
-     * @return The Amazon Web Services account ID used to access your data.
-     */
-
-    public String getAccountId() {
-        return this.accountId;
-    }
-
-    /**
-     * <p>
-     * The Amazon Web Services account ID used to access your data.
-     * </p>
-     * 
-     * @param accountId
-     *        The Amazon Web Services account ID used to access your data.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateSubscriberRequest withAccountId(String accountId) {
-        setAccountId(accountId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The external ID of the subscriber. This lets the user that is assuming the role assert the circumstances in which
-     * they are operating. It also provides a way for the account owner to permit the role to be assumed only under
-     * specific circumstances.
-     * </p>
-     * 
-     * @param externalId
-     *        The external ID of the subscriber. This lets the user that is assuming the role assert the circumstances
-     *        in which they are operating. It also provides a way for the account owner to permit the role to be assumed
-     *        only under specific circumstances.
-     */
-
-    public void setExternalId(String externalId) {
-        this.externalId = externalId;
-    }
-
-    /**
-     * <p>
-     * The external ID of the subscriber. This lets the user that is assuming the role assert the circumstances in which
-     * they are operating. It also provides a way for the account owner to permit the role to be assumed only under
-     * specific circumstances.
-     * </p>
-     * 
-     * @return The external ID of the subscriber. This lets the user that is assuming the role assert the circumstances
-     *         in which they are operating. It also provides a way for the account owner to permit the role to be
-     *         assumed only under specific circumstances.
-     */
-
-    public String getExternalId() {
-        return this.externalId;
-    }
-
-    /**
-     * <p>
-     * The external ID of the subscriber. This lets the user that is assuming the role assert the circumstances in which
-     * they are operating. It also provides a way for the account owner to permit the role to be assumed only under
-     * specific circumstances.
-     * </p>
-     * 
-     * @param externalId
-     *        The external ID of the subscriber. This lets the user that is assuming the role assert the circumstances
-     *        in which they are operating. It also provides a way for the account owner to permit the role to be assumed
-     *        only under specific circumstances.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateSubscriberRequest withExternalId(String externalId) {
-        setExternalId(externalId);
-        return this;
-    }
-
-    /**
-     * <p>
      * The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and event
      * collection for natively supported Amazon Web Services.
      * </p>
@@ -265,8 +172,8 @@ public class CreateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
      *         and event collection for natively supported Amazon Web Services.
      */
 
-    public java.util.List<SourceType> getSourceTypes() {
-        return sourceTypes;
+    public java.util.List<LogSourceResource> getSources() {
+        return sources;
     }
 
     /**
@@ -275,18 +182,18 @@ public class CreateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
      * collection for natively supported Amazon Web Services.
      * </p>
      * 
-     * @param sourceTypes
+     * @param sources
      *        The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and
      *        event collection for natively supported Amazon Web Services.
      */
 
-    public void setSourceTypes(java.util.Collection<SourceType> sourceTypes) {
-        if (sourceTypes == null) {
-            this.sourceTypes = null;
+    public void setSources(java.util.Collection<LogSourceResource> sources) {
+        if (sources == null) {
+            this.sources = null;
             return;
         }
 
-        this.sourceTypes = new java.util.ArrayList<SourceType>(sourceTypes);
+        this.sources = new java.util.ArrayList<LogSourceResource>(sources);
     }
 
     /**
@@ -296,22 +203,22 @@ public class CreateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setSourceTypes(java.util.Collection)} or {@link #withSourceTypes(java.util.Collection)} if you want to
-     * override the existing values.
+     * {@link #setSources(java.util.Collection)} or {@link #withSources(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
-     * @param sourceTypes
+     * @param sources
      *        The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and
      *        event collection for natively supported Amazon Web Services.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateSubscriberRequest withSourceTypes(SourceType... sourceTypes) {
-        if (this.sourceTypes == null) {
-            setSourceTypes(new java.util.ArrayList<SourceType>(sourceTypes.length));
+    public CreateSubscriberRequest withSources(LogSourceResource... sources) {
+        if (this.sources == null) {
+            setSources(new java.util.ArrayList<LogSourceResource>(sources.length));
         }
-        for (SourceType ele : sourceTypes) {
-            this.sourceTypes.add(ele);
+        for (LogSourceResource ele : sources) {
+            this.sources.add(ele);
         }
         return this;
     }
@@ -322,14 +229,14 @@ public class CreateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
      * collection for natively supported Amazon Web Services.
      * </p>
      * 
-     * @param sourceTypes
+     * @param sources
      *        The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and
      *        event collection for natively supported Amazon Web Services.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateSubscriberRequest withSourceTypes(java.util.Collection<SourceType> sourceTypes) {
-        setSourceTypes(sourceTypes);
+    public CreateSubscriberRequest withSources(java.util.Collection<LogSourceResource> sources) {
+        setSources(sources);
         return this;
     }
 
@@ -375,6 +282,46 @@ public class CreateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
+     * The AWS identity used to access your data.
+     * </p>
+     * 
+     * @param subscriberIdentity
+     *        The AWS identity used to access your data.
+     */
+
+    public void setSubscriberIdentity(AwsIdentity subscriberIdentity) {
+        this.subscriberIdentity = subscriberIdentity;
+    }
+
+    /**
+     * <p>
+     * The AWS identity used to access your data.
+     * </p>
+     * 
+     * @return The AWS identity used to access your data.
+     */
+
+    public AwsIdentity getSubscriberIdentity() {
+        return this.subscriberIdentity;
+    }
+
+    /**
+     * <p>
+     * The AWS identity used to access your data.
+     * </p>
+     * 
+     * @param subscriberIdentity
+     *        The AWS identity used to access your data.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSubscriberRequest withSubscriberIdentity(AwsIdentity subscriberIdentity) {
+        setSubscriberIdentity(subscriberIdentity);
+        return this;
+    }
+
+    /**
+     * <p>
      * The name of your Security Lake subscriber account.
      * </p>
      * 
@@ -414,6 +361,84 @@ public class CreateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * An array of objects, one for each tag to associate with the subscriber. For each tag, you must specify both a tag
+     * key and a tag value. A tag value cannot be null, but it can be an empty string.
+     * </p>
+     * 
+     * @return An array of objects, one for each tag to associate with the subscriber. For each tag, you must specify
+     *         both a tag key and a tag value. A tag value cannot be null, but it can be an empty string.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * An array of objects, one for each tag to associate with the subscriber. For each tag, you must specify both a tag
+     * key and a tag value. A tag value cannot be null, but it can be an empty string.
+     * </p>
+     * 
+     * @param tags
+     *        An array of objects, one for each tag to associate with the subscriber. For each tag, you must specify
+     *        both a tag key and a tag value. A tag value cannot be null, but it can be an empty string.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * An array of objects, one for each tag to associate with the subscriber. For each tag, you must specify both a tag
+     * key and a tag value. A tag value cannot be null, but it can be an empty string.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        An array of objects, one for each tag to associate with the subscriber. For each tag, you must specify
+     *        both a tag key and a tag value. A tag value cannot be null, but it can be an empty string.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSubscriberRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of objects, one for each tag to associate with the subscriber. For each tag, you must specify both a tag
+     * key and a tag value. A tag value cannot be null, but it can be an empty string.
+     * </p>
+     * 
+     * @param tags
+     *        An array of objects, one for each tag to associate with the subscriber. For each tag, you must specify
+     *        both a tag key and a tag value. A tag value cannot be null, but it can be an empty string.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSubscriberRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -427,16 +452,16 @@ public class CreateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
         sb.append("{");
         if (getAccessTypes() != null)
             sb.append("AccessTypes: ").append(getAccessTypes()).append(",");
-        if (getAccountId() != null)
-            sb.append("AccountId: ").append(getAccountId()).append(",");
-        if (getExternalId() != null)
-            sb.append("ExternalId: ").append(getExternalId()).append(",");
-        if (getSourceTypes() != null)
-            sb.append("SourceTypes: ").append(getSourceTypes()).append(",");
+        if (getSources() != null)
+            sb.append("Sources: ").append(getSources()).append(",");
         if (getSubscriberDescription() != null)
             sb.append("SubscriberDescription: ").append(getSubscriberDescription()).append(",");
+        if (getSubscriberIdentity() != null)
+            sb.append("SubscriberIdentity: ").append(getSubscriberIdentity()).append(",");
         if (getSubscriberName() != null)
-            sb.append("SubscriberName: ").append(getSubscriberName());
+            sb.append("SubscriberName: ").append(getSubscriberName()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -455,25 +480,25 @@ public class CreateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getAccessTypes() != null && other.getAccessTypes().equals(this.getAccessTypes()) == false)
             return false;
-        if (other.getAccountId() == null ^ this.getAccountId() == null)
+        if (other.getSources() == null ^ this.getSources() == null)
             return false;
-        if (other.getAccountId() != null && other.getAccountId().equals(this.getAccountId()) == false)
-            return false;
-        if (other.getExternalId() == null ^ this.getExternalId() == null)
-            return false;
-        if (other.getExternalId() != null && other.getExternalId().equals(this.getExternalId()) == false)
-            return false;
-        if (other.getSourceTypes() == null ^ this.getSourceTypes() == null)
-            return false;
-        if (other.getSourceTypes() != null && other.getSourceTypes().equals(this.getSourceTypes()) == false)
+        if (other.getSources() != null && other.getSources().equals(this.getSources()) == false)
             return false;
         if (other.getSubscriberDescription() == null ^ this.getSubscriberDescription() == null)
             return false;
         if (other.getSubscriberDescription() != null && other.getSubscriberDescription().equals(this.getSubscriberDescription()) == false)
             return false;
+        if (other.getSubscriberIdentity() == null ^ this.getSubscriberIdentity() == null)
+            return false;
+        if (other.getSubscriberIdentity() != null && other.getSubscriberIdentity().equals(this.getSubscriberIdentity()) == false)
+            return false;
         if (other.getSubscriberName() == null ^ this.getSubscriberName() == null)
             return false;
         if (other.getSubscriberName() != null && other.getSubscriberName().equals(this.getSubscriberName()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -484,11 +509,11 @@ public class CreateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAccessTypes() == null) ? 0 : getAccessTypes().hashCode());
-        hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
-        hashCode = prime * hashCode + ((getExternalId() == null) ? 0 : getExternalId().hashCode());
-        hashCode = prime * hashCode + ((getSourceTypes() == null) ? 0 : getSourceTypes().hashCode());
+        hashCode = prime * hashCode + ((getSources() == null) ? 0 : getSources().hashCode());
         hashCode = prime * hashCode + ((getSubscriberDescription() == null) ? 0 : getSubscriberDescription().hashCode());
+        hashCode = prime * hashCode + ((getSubscriberIdentity() == null) ? 0 : getSubscriberIdentity().hashCode());
         hashCode = prime * hashCode + ((getSubscriberName() == null) ? 0 : getSubscriberName().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

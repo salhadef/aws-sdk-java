@@ -49,6 +49,12 @@ public class Behavior implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The criteria that determine if a device is behaving normally in regard to the <code>metric</code>.
      * </p>
+     * <note>
+     * <p>
+     * In the IoT console, you can choose to be sent an alert through Amazon SNS when IoT Device Defender detects that a
+     * device is behaving anomalously.
+     * </p>
+     * </note>
      */
     private BehaviorCriteria criteria;
     /**
@@ -194,9 +200,20 @@ public class Behavior implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The criteria that determine if a device is behaving normally in regard to the <code>metric</code>.
      * </p>
+     * <note>
+     * <p>
+     * In the IoT console, you can choose to be sent an alert through Amazon SNS when IoT Device Defender detects that a
+     * device is behaving anomalously.
+     * </p>
+     * </note>
      * 
      * @param criteria
-     *        The criteria that determine if a device is behaving normally in regard to the <code>metric</code>.
+     *        The criteria that determine if a device is behaving normally in regard to the <code>metric</code>.</p>
+     *        <note>
+     *        <p>
+     *        In the IoT console, you can choose to be sent an alert through Amazon SNS when IoT Device Defender detects
+     *        that a device is behaving anomalously.
+     *        </p>
      */
 
     public void setCriteria(BehaviorCriteria criteria) {
@@ -207,8 +224,19 @@ public class Behavior implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The criteria that determine if a device is behaving normally in regard to the <code>metric</code>.
      * </p>
+     * <note>
+     * <p>
+     * In the IoT console, you can choose to be sent an alert through Amazon SNS when IoT Device Defender detects that a
+     * device is behaving anomalously.
+     * </p>
+     * </note>
      * 
-     * @return The criteria that determine if a device is behaving normally in regard to the <code>metric</code>.
+     * @return The criteria that determine if a device is behaving normally in regard to the <code>metric</code>.</p>
+     *         <note>
+     *         <p>
+     *         In the IoT console, you can choose to be sent an alert through Amazon SNS when IoT Device Defender
+     *         detects that a device is behaving anomalously.
+     *         </p>
      */
 
     public BehaviorCriteria getCriteria() {
@@ -219,9 +247,20 @@ public class Behavior implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The criteria that determine if a device is behaving normally in regard to the <code>metric</code>.
      * </p>
+     * <note>
+     * <p>
+     * In the IoT console, you can choose to be sent an alert through Amazon SNS when IoT Device Defender detects that a
+     * device is behaving anomalously.
+     * </p>
+     * </note>
      * 
      * @param criteria
-     *        The criteria that determine if a device is behaving normally in regard to the <code>metric</code>.
+     *        The criteria that determine if a device is behaving normally in regard to the <code>metric</code>.</p>
+     *        <note>
+     *        <p>
+     *        In the IoT console, you can choose to be sent an alert through Amazon SNS when IoT Device Defender detects
+     *        that a device is behaving anomalously.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

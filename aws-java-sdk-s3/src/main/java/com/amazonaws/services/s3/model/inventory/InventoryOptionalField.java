@@ -43,7 +43,11 @@ public enum InventoryOptionalField {
 
     IntelligentTieringAccessTier("IntelligentTieringAccessTier"),
 
-    BucketKeyStatus("BucketKeyStatus")
+    BucketKeyStatus("BucketKeyStatus"),
+
+    ObjectAccessControlList("ObjectAccessControlList"),
+
+    ObjectOwner("ObjectOwner")
     ;
 
     private final String field;

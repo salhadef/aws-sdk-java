@@ -385,7 +385,7 @@ public class DelegationMetadata implements Serializable, Cloneable, StructuredPo
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
         if (getAssessmentName() != null)
-            sb.append("AssessmentName: ").append(getAssessmentName()).append(",");
+            sb.append("AssessmentName: ").append("***Sensitive Data Redacted***").append(",");
         if (getAssessmentId() != null)
             sb.append("AssessmentId: ").append(getAssessmentId()).append(",");
         if (getStatus() != null)

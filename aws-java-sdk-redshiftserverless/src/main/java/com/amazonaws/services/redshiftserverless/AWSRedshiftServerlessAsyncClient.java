@@ -122,6 +122,40 @@ public class AWSRedshiftServerlessAsyncClient extends AWSRedshiftServerlessClien
     }
 
     @Override
+    public java.util.concurrent.Future<CreateCustomDomainAssociationResult> createCustomDomainAssociationAsync(CreateCustomDomainAssociationRequest request) {
+
+        return createCustomDomainAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCustomDomainAssociationResult> createCustomDomainAssociationAsync(
+            final CreateCustomDomainAssociationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateCustomDomainAssociationRequest, CreateCustomDomainAssociationResult> asyncHandler) {
+        final CreateCustomDomainAssociationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateCustomDomainAssociationResult>() {
+            @Override
+            public CreateCustomDomainAssociationResult call() throws Exception {
+                CreateCustomDomainAssociationResult result = null;
+
+                try {
+                    result = executeCreateCustomDomainAssociation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateEndpointAccessResult> createEndpointAccessAsync(CreateEndpointAccessRequest request) {
 
         return createEndpointAccessAsync(request, null);
@@ -271,6 +305,40 @@ public class AWSRedshiftServerlessAsyncClient extends AWSRedshiftServerlessClien
 
                 try {
                     result = executeCreateWorkgroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCustomDomainAssociationResult> deleteCustomDomainAssociationAsync(DeleteCustomDomainAssociationRequest request) {
+
+        return deleteCustomDomainAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCustomDomainAssociationResult> deleteCustomDomainAssociationAsync(
+            final DeleteCustomDomainAssociationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteCustomDomainAssociationRequest, DeleteCustomDomainAssociationResult> asyncHandler) {
+        final DeleteCustomDomainAssociationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteCustomDomainAssociationResult>() {
+            @Override
+            public DeleteCustomDomainAssociationResult call() throws Exception {
+                DeleteCustomDomainAssociationResult result = null;
+
+                try {
+                    result = executeDeleteCustomDomainAssociation(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -502,6 +570,39 @@ public class AWSRedshiftServerlessAsyncClient extends AWSRedshiftServerlessClien
 
                 try {
                     result = executeGetCredentials(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCustomDomainAssociationResult> getCustomDomainAssociationAsync(GetCustomDomainAssociationRequest request) {
+
+        return getCustomDomainAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCustomDomainAssociationResult> getCustomDomainAssociationAsync(final GetCustomDomainAssociationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCustomDomainAssociationRequest, GetCustomDomainAssociationResult> asyncHandler) {
+        final GetCustomDomainAssociationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetCustomDomainAssociationResult>() {
+            @Override
+            public GetCustomDomainAssociationResult call() throws Exception {
+                GetCustomDomainAssociationResult result = null;
+
+                try {
+                    result = executeGetCustomDomainAssociation(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -766,6 +867,39 @@ public class AWSRedshiftServerlessAsyncClient extends AWSRedshiftServerlessClien
 
                 try {
                     result = executeGetWorkgroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCustomDomainAssociationsResult> listCustomDomainAssociationsAsync(ListCustomDomainAssociationsRequest request) {
+
+        return listCustomDomainAssociationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCustomDomainAssociationsResult> listCustomDomainAssociationsAsync(final ListCustomDomainAssociationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListCustomDomainAssociationsRequest, ListCustomDomainAssociationsResult> asyncHandler) {
+        final ListCustomDomainAssociationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListCustomDomainAssociationsResult>() {
+            @Override
+            public ListCustomDomainAssociationsResult call() throws Exception {
+                ListCustomDomainAssociationsResult result = null;
+
+                try {
+                    result = executeListCustomDomainAssociations(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1228,6 +1362,40 @@ public class AWSRedshiftServerlessAsyncClient extends AWSRedshiftServerlessClien
 
                 try {
                     result = executeUntagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCustomDomainAssociationResult> updateCustomDomainAssociationAsync(UpdateCustomDomainAssociationRequest request) {
+
+        return updateCustomDomainAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCustomDomainAssociationResult> updateCustomDomainAssociationAsync(
+            final UpdateCustomDomainAssociationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateCustomDomainAssociationRequest, UpdateCustomDomainAssociationResult> asyncHandler) {
+        final UpdateCustomDomainAssociationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateCustomDomainAssociationResult>() {
+            @Override
+            public UpdateCustomDomainAssociationResult call() throws Exception {
+                UpdateCustomDomainAssociationResult result = null;
+
+                try {
+                    result = executeUpdateCustomDomainAssociation(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -64,6 +64,10 @@ public class RoutingControlJsonUnmarshaller implements Unmarshaller<RoutingContr
                     context.nextToken();
                     routingControl.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Owner", targetDepth)) {
+                    context.nextToken();
+                    routingControl.setOwner(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

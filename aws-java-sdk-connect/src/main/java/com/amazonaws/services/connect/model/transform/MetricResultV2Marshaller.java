@@ -31,6 +31,8 @@ public class MetricResultV2Marshaller {
 
     private static final MarshallingInfo<Map> DIMENSIONS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Dimensions").build();
+    private static final MarshallingInfo<StructuredPojo> METRICINTERVAL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MetricInterval").build();
     private static final MarshallingInfo<List> COLLECTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Collections").build();
 
@@ -51,6 +53,7 @@ public class MetricResultV2Marshaller {
 
         try {
             protocolMarshaller.marshall(metricResultV2.getDimensions(), DIMENSIONS_BINDING);
+            protocolMarshaller.marshall(metricResultV2.getMetricInterval(), METRICINTERVAL_BINDING);
             protocolMarshaller.marshall(metricResultV2.getCollections(), COLLECTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

@@ -27,7 +27,7 @@ public class DescribeModelCardRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the model card to describe.
+     * The name or Amazon Resource Name (ARN) of the model card to describe.
      * </p>
      */
     private String modelCardName;
@@ -41,11 +41,11 @@ public class DescribeModelCardRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the model card to describe.
+     * The name or Amazon Resource Name (ARN) of the model card to describe.
      * </p>
      * 
      * @param modelCardName
-     *        The name of the model card to describe.
+     *        The name or Amazon Resource Name (ARN) of the model card to describe.
      */
 
     public void setModelCardName(String modelCardName) {
@@ -54,10 +54,10 @@ public class DescribeModelCardRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the model card to describe.
+     * The name or Amazon Resource Name (ARN) of the model card to describe.
      * </p>
      * 
-     * @return The name of the model card to describe.
+     * @return The name or Amazon Resource Name (ARN) of the model card to describe.
      */
 
     public String getModelCardName() {
@@ -66,11 +66,11 @@ public class DescribeModelCardRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the model card to describe.
+     * The name or Amazon Resource Name (ARN) of the model card to describe.
      * </p>
      * 
      * @param modelCardName
-     *        The name of the model card to describe.
+     *        The name or Amazon Resource Name (ARN) of the model card to describe.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

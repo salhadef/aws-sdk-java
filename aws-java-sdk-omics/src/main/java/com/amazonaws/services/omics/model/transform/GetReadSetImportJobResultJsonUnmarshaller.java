@@ -48,31 +48,17 @@ public class GetReadSetImportJobResultJsonUnmarshaller implements Unmarshaller<G
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("completionTime", targetDepth)) {
-                    context.nextToken();
-                    getReadSetImportJobResult.setCompletionTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
-                }
-                if (context.testExpression("creationTime", targetDepth)) {
-                    context.nextToken();
-                    getReadSetImportJobResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
-                }
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
                     getReadSetImportJobResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("roleArn", targetDepth)) {
-                    context.nextToken();
-                    getReadSetImportJobResult.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sequenceStoreId", targetDepth)) {
                     context.nextToken();
                     getReadSetImportJobResult.setSequenceStoreId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("sources", targetDepth)) {
+                if (context.testExpression("roleArn", targetDepth)) {
                     context.nextToken();
-                    getReadSetImportJobResult.setSources(new ListUnmarshaller<ImportReadSetSourceItem>(ImportReadSetSourceItemJsonUnmarshaller.getInstance())
-
-                    .unmarshall(context));
+                    getReadSetImportJobResult.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
@@ -81,6 +67,20 @@ public class GetReadSetImportJobResultJsonUnmarshaller implements Unmarshaller<G
                 if (context.testExpression("statusMessage", targetDepth)) {
                     context.nextToken();
                     getReadSetImportJobResult.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("creationTime", targetDepth)) {
+                    context.nextToken();
+                    getReadSetImportJobResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (context.testExpression("completionTime", targetDepth)) {
+                    context.nextToken();
+                    getReadSetImportJobResult.setCompletionTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (context.testExpression("sources", targetDepth)) {
+                    context.nextToken();
+                    getReadSetImportJobResult.setSources(new ListUnmarshaller<ImportReadSetSourceItem>(ImportReadSetSourceItemJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

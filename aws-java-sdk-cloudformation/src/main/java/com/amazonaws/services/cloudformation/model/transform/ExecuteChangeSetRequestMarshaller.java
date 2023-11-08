@@ -56,6 +56,10 @@ public class ExecuteChangeSetRequestMarshaller implements Marshaller<Request<Exe
             request.addParameter("DisableRollback", StringUtils.fromBoolean(executeChangeSetRequest.getDisableRollback()));
         }
 
+        if (executeChangeSetRequest.getRetainExceptOnCreate() != null) {
+            request.addParameter("RetainExceptOnCreate", StringUtils.fromBoolean(executeChangeSetRequest.getRetainExceptOnCreate()));
+        }
+
         return request;
     }
 

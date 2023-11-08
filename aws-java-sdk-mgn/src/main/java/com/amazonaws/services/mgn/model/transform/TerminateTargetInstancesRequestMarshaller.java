@@ -29,6 +29,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class TerminateTargetInstancesRequestMarshaller {
 
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("accountID").build();
     private static final MarshallingInfo<List> SOURCESERVERIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceServerIDs").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
@@ -50,6 +52,7 @@ public class TerminateTargetInstancesRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(terminateTargetInstancesRequest.getAccountID(), ACCOUNTID_BINDING);
             protocolMarshaller.marshall(terminateTargetInstancesRequest.getSourceServerIDs(), SOURCESERVERIDS_BINDING);
             protocolMarshaller.marshall(terminateTargetInstancesRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {

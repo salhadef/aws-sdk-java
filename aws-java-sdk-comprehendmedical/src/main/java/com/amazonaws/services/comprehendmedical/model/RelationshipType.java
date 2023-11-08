@@ -39,7 +39,9 @@ public enum RelationshipType {
     TEST_UNIT("TEST_UNIT"),
     DIRECTION("DIRECTION"),
     SYSTEM_ORGAN_SITE("SYSTEM_ORGAN_SITE"),
-    AMOUNT("AMOUNT");
+    AMOUNT("AMOUNT"),
+    USAGE("USAGE"),
+    QUALITY("QUALITY");
 
     private String value;
 

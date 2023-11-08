@@ -52,6 +52,10 @@ public class PredictiveDialerConfigJsonUnmarshaller implements Unmarshaller<Pred
                     context.nextToken();
                     predictiveDialerConfig.setBandwidthAllocation(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
+                if (context.testExpression("dialingCapacity", targetDepth)) {
+                    context.nextToken();
+                    predictiveDialerConfig.setDialingCapacity(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

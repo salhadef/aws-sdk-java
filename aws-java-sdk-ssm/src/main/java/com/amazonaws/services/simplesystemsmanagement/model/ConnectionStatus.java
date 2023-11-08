@@ -20,8 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ConnectionStatus {
 
-    Connected("Connected"),
-    NotConnected("NotConnected");
+    Connected("connected"),
+    Notconnected("notconnected");
 
     private String value;
 

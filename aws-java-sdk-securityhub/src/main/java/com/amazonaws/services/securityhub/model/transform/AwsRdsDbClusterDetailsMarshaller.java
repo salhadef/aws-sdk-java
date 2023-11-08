@@ -102,6 +102,8 @@ public class AwsRdsDbClusterDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DbClusterMembers").build();
     private static final MarshallingInfo<Boolean> IAMDATABASEAUTHENTICATIONENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IamDatabaseAuthenticationEnabled").build();
+    private static final MarshallingInfo<Boolean> AUTOMINORVERSIONUPGRADE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutoMinorVersionUpgrade").build();
 
     private static final AwsRdsDbClusterDetailsMarshaller instance = new AwsRdsDbClusterDetailsMarshaller();
 
@@ -156,6 +158,7 @@ public class AwsRdsDbClusterDetailsMarshaller {
             protocolMarshaller.marshall(awsRdsDbClusterDetails.getDbClusterIdentifier(), DBCLUSTERIDENTIFIER_BINDING);
             protocolMarshaller.marshall(awsRdsDbClusterDetails.getDbClusterMembers(), DBCLUSTERMEMBERS_BINDING);
             protocolMarshaller.marshall(awsRdsDbClusterDetails.getIamDatabaseAuthenticationEnabled(), IAMDATABASEAUTHENTICATIONENABLED_BINDING);
+            protocolMarshaller.marshall(awsRdsDbClusterDetails.getAutoMinorVersionUpgrade(), AUTOMINORVERSIONUPGRADE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

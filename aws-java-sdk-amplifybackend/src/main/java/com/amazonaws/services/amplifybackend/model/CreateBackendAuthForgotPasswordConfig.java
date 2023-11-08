@@ -206,9 +206,9 @@ public class CreateBackendAuthForgotPasswordConfig implements Serializable, Clon
         if (getDeliveryMethod() != null)
             sb.append("DeliveryMethod: ").append(getDeliveryMethod()).append(",");
         if (getEmailSettings() != null)
-            sb.append("EmailSettings: ").append(getEmailSettings()).append(",");
+            sb.append("EmailSettings: ").append("***Sensitive Data Redacted***").append(",");
         if (getSmsSettings() != null)
-            sb.append("SmsSettings: ").append(getSmsSettings());
+            sb.append("SmsSettings: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

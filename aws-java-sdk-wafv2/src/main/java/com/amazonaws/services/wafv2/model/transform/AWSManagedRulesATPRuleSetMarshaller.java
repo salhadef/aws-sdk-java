@@ -33,6 +33,8 @@ public class AWSManagedRulesATPRuleSetMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RequestInspection").build();
     private static final MarshallingInfo<StructuredPojo> RESPONSEINSPECTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResponseInspection").build();
+    private static final MarshallingInfo<Boolean> ENABLEREGEXINPATH_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnableRegexInPath").build();
 
     private static final AWSManagedRulesATPRuleSetMarshaller instance = new AWSManagedRulesATPRuleSetMarshaller();
 
@@ -53,6 +55,7 @@ public class AWSManagedRulesATPRuleSetMarshaller {
             protocolMarshaller.marshall(aWSManagedRulesATPRuleSet.getLoginPath(), LOGINPATH_BINDING);
             protocolMarshaller.marshall(aWSManagedRulesATPRuleSet.getRequestInspection(), REQUESTINSPECTION_BINDING);
             protocolMarshaller.marshall(aWSManagedRulesATPRuleSet.getResponseInspection(), RESPONSEINSPECTION_BINDING);
+            protocolMarshaller.marshall(aWSManagedRulesATPRuleSet.getEnableRegexInPath(), ENABLEREGEXINPATH_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

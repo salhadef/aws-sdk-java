@@ -48,6 +48,8 @@ public class CreateDataSourceRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SslProperties").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<List> FOLDERARNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("FolderArns").build();
 
     private static final CreateDataSourceRequestMarshaller instance = new CreateDataSourceRequestMarshaller();
 
@@ -75,6 +77,7 @@ public class CreateDataSourceRequestMarshaller {
             protocolMarshaller.marshall(createDataSourceRequest.getVpcConnectionProperties(), VPCCONNECTIONPROPERTIES_BINDING);
             protocolMarshaller.marshall(createDataSourceRequest.getSslProperties(), SSLPROPERTIES_BINDING);
             protocolMarshaller.marshall(createDataSourceRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createDataSourceRequest.getFolderArns(), FOLDERARNS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

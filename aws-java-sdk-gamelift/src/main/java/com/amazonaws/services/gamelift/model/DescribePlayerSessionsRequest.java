@@ -531,7 +531,7 @@ public class DescribePlayerSessionsRequest extends com.amazonaws.AmazonWebServic
         if (getGameSessionId() != null)
             sb.append("GameSessionId: ").append(getGameSessionId()).append(",");
         if (getPlayerId() != null)
-            sb.append("PlayerId: ").append(getPlayerId()).append(",");
+            sb.append("PlayerId: ").append("***Sensitive Data Redacted***").append(",");
         if (getPlayerSessionId() != null)
             sb.append("PlayerSessionId: ").append(getPlayerSessionId()).append(",");
         if (getPlayerSessionStatusFilter() != null)

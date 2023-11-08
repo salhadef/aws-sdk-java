@@ -76,6 +76,11 @@ public class StartInstanceRefreshRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
+     * CloudWatch alarms
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Skip matching
      * </p>
      * </li>
@@ -317,6 +322,11 @@ public class StartInstanceRefreshRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
+     * CloudWatch alarms
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Skip matching
      * </p>
      * </li>
@@ -336,6 +346,11 @@ public class StartInstanceRefreshRequest extends com.amazonaws.AmazonWebServiceR
      *        <li>
      *        <p>
      *        Checkpoints
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CloudWatch alarms
      *        </p>
      *        </li>
      *        <li>
@@ -369,6 +384,11 @@ public class StartInstanceRefreshRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
+     * CloudWatch alarms
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Skip matching
      * </p>
      * </li>
@@ -387,6 +407,11 @@ public class StartInstanceRefreshRequest extends com.amazonaws.AmazonWebServiceR
      *         <li>
      *         <p>
      *         Checkpoints
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         CloudWatch alarms
      *         </p>
      *         </li>
      *         <li>
@@ -420,6 +445,11 @@ public class StartInstanceRefreshRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
+     * CloudWatch alarms
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Skip matching
      * </p>
      * </li>
@@ -439,6 +469,11 @@ public class StartInstanceRefreshRequest extends com.amazonaws.AmazonWebServiceR
      *        <li>
      *        <p>
      *        Checkpoints
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CloudWatch alarms
      *        </p>
      *        </li>
      *        <li>

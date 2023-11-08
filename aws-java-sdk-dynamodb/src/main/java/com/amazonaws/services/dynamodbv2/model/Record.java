@@ -71,7 +71,8 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
     private String eventVersion;
     /**
      * <p>
-     * The AWS service from which the stream record originated. For DynamoDB Streams, this is <code>aws:dynamodb</code>.
+     * The Amazon Web Services service from which the stream record originated. For DynamoDB Streams, this is
+     * <code>aws:dynamodb</code>.
      * </p>
      */
     private String eventSource;
@@ -465,11 +466,12 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS service from which the stream record originated. For DynamoDB Streams, this is <code>aws:dynamodb</code>.
+     * The Amazon Web Services service from which the stream record originated. For DynamoDB Streams, this is
+     * <code>aws:dynamodb</code>.
      * </p>
      * 
      * @param eventSource
-     *        The AWS service from which the stream record originated. For DynamoDB Streams, this is
+     *        The Amazon Web Services service from which the stream record originated. For DynamoDB Streams, this is
      *        <code>aws:dynamodb</code>.
      */
 
@@ -479,10 +481,11 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS service from which the stream record originated. For DynamoDB Streams, this is <code>aws:dynamodb</code>.
+     * The Amazon Web Services service from which the stream record originated. For DynamoDB Streams, this is
+     * <code>aws:dynamodb</code>.
      * </p>
      * 
-     * @return The AWS service from which the stream record originated. For DynamoDB Streams, this is
+     * @return The Amazon Web Services service from which the stream record originated. For DynamoDB Streams, this is
      *         <code>aws:dynamodb</code>.
      */
 
@@ -492,11 +495,12 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS service from which the stream record originated. For DynamoDB Streams, this is <code>aws:dynamodb</code>.
+     * The Amazon Web Services service from which the stream record originated. For DynamoDB Streams, this is
+     * <code>aws:dynamodb</code>.
      * </p>
      * 
      * @param eventSource
-     *        The AWS service from which the stream record originated. For DynamoDB Streams, this is
+     *        The Amazon Web Services service from which the stream record originated. For DynamoDB Streams, this is
      *        <code>aws:dynamodb</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

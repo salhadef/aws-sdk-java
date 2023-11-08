@@ -48,37 +48,37 @@ public class StartReadSetImportJobSourceItemJsonUnmarshaller implements Unmarsha
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("description", targetDepth)) {
+                if (context.testExpression("sourceFiles", targetDepth)) {
                     context.nextToken();
-                    startReadSetImportJobSourceItem.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("generatedFrom", targetDepth)) {
-                    context.nextToken();
-                    startReadSetImportJobSourceItem.setGeneratedFrom(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("name", targetDepth)) {
-                    context.nextToken();
-                    startReadSetImportJobSourceItem.setName(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("referenceArn", targetDepth)) {
-                    context.nextToken();
-                    startReadSetImportJobSourceItem.setReferenceArn(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("sampleId", targetDepth)) {
-                    context.nextToken();
-                    startReadSetImportJobSourceItem.setSampleId(context.getUnmarshaller(String.class).unmarshall(context));
+                    startReadSetImportJobSourceItem.setSourceFiles(SourceFilesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("sourceFileType", targetDepth)) {
                     context.nextToken();
                     startReadSetImportJobSourceItem.setSourceFileType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("sourceFiles", targetDepth)) {
-                    context.nextToken();
-                    startReadSetImportJobSourceItem.setSourceFiles(SourceFilesJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("subjectId", targetDepth)) {
                     context.nextToken();
                     startReadSetImportJobSourceItem.setSubjectId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("sampleId", targetDepth)) {
+                    context.nextToken();
+                    startReadSetImportJobSourceItem.setSampleId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("generatedFrom", targetDepth)) {
+                    context.nextToken();
+                    startReadSetImportJobSourceItem.setGeneratedFrom(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("referenceArn", targetDepth)) {
+                    context.nextToken();
+                    startReadSetImportJobSourceItem.setReferenceArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("name", targetDepth)) {
+                    context.nextToken();
+                    startReadSetImportJobSourceItem.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("description", targetDepth)) {
+                    context.nextToken();
+                    startReadSetImportJobSourceItem.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();

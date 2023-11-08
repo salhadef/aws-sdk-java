@@ -32,7 +32,7 @@ public class OffPeakWindowOptions implements Serializable, Cloneable, Structured
      * Whether to enable an off-peak window.
      * </p>
      * <p>
-     * This option is only available when modifying a domain created prior to February 13, 2023, not when creating a new
+     * This option is only available when modifying a domain created prior to February 16, 2023, not when creating a new
      * domain. All domains created after this date have the off-peak window enabled by default. You can't disable the
      * off-peak window after it's enabled for a domain.
      * </p>
@@ -50,7 +50,7 @@ public class OffPeakWindowOptions implements Serializable, Cloneable, Structured
      * Whether to enable an off-peak window.
      * </p>
      * <p>
-     * This option is only available when modifying a domain created prior to February 13, 2023, not when creating a new
+     * This option is only available when modifying a domain created prior to February 16, 2023, not when creating a new
      * domain. All domains created after this date have the off-peak window enabled by default. You can't disable the
      * off-peak window after it's enabled for a domain.
      * </p>
@@ -58,7 +58,7 @@ public class OffPeakWindowOptions implements Serializable, Cloneable, Structured
      * @param enabled
      *        Whether to enable an off-peak window.</p>
      *        <p>
-     *        This option is only available when modifying a domain created prior to February 13, 2023, not when
+     *        This option is only available when modifying a domain created prior to February 16, 2023, not when
      *        creating a new domain. All domains created after this date have the off-peak window enabled by default.
      *        You can't disable the off-peak window after it's enabled for a domain.
      */
@@ -72,14 +72,14 @@ public class OffPeakWindowOptions implements Serializable, Cloneable, Structured
      * Whether to enable an off-peak window.
      * </p>
      * <p>
-     * This option is only available when modifying a domain created prior to February 13, 2023, not when creating a new
+     * This option is only available when modifying a domain created prior to February 16, 2023, not when creating a new
      * domain. All domains created after this date have the off-peak window enabled by default. You can't disable the
      * off-peak window after it's enabled for a domain.
      * </p>
      * 
      * @return Whether to enable an off-peak window.</p>
      *         <p>
-     *         This option is only available when modifying a domain created prior to February 13, 2023, not when
+     *         This option is only available when modifying a domain created prior to February 16, 2023, not when
      *         creating a new domain. All domains created after this date have the off-peak window enabled by default.
      *         You can't disable the off-peak window after it's enabled for a domain.
      */
@@ -93,7 +93,7 @@ public class OffPeakWindowOptions implements Serializable, Cloneable, Structured
      * Whether to enable an off-peak window.
      * </p>
      * <p>
-     * This option is only available when modifying a domain created prior to February 13, 2023, not when creating a new
+     * This option is only available when modifying a domain created prior to February 16, 2023, not when creating a new
      * domain. All domains created after this date have the off-peak window enabled by default. You can't disable the
      * off-peak window after it's enabled for a domain.
      * </p>
@@ -101,7 +101,7 @@ public class OffPeakWindowOptions implements Serializable, Cloneable, Structured
      * @param enabled
      *        Whether to enable an off-peak window.</p>
      *        <p>
-     *        This option is only available when modifying a domain created prior to February 13, 2023, not when
+     *        This option is only available when modifying a domain created prior to February 16, 2023, not when
      *        creating a new domain. All domains created after this date have the off-peak window enabled by default.
      *        You can't disable the off-peak window after it's enabled for a domain.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -117,14 +117,14 @@ public class OffPeakWindowOptions implements Serializable, Cloneable, Structured
      * Whether to enable an off-peak window.
      * </p>
      * <p>
-     * This option is only available when modifying a domain created prior to February 13, 2023, not when creating a new
+     * This option is only available when modifying a domain created prior to February 16, 2023, not when creating a new
      * domain. All domains created after this date have the off-peak window enabled by default. You can't disable the
      * off-peak window after it's enabled for a domain.
      * </p>
      * 
      * @return Whether to enable an off-peak window.</p>
      *         <p>
-     *         This option is only available when modifying a domain created prior to February 13, 2023, not when
+     *         This option is only available when modifying a domain created prior to February 16, 2023, not when
      *         creating a new domain. All domains created after this date have the off-peak window enabled by default.
      *         You can't disable the off-peak window after it's enabled for a domain.
      */

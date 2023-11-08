@@ -68,12 +68,22 @@ public class AbstractAWSLakeFormation implements AWSLakeFormation {
     }
 
     @Override
+    public CreateLakeFormationOptInResult createLakeFormationOptIn(CreateLakeFormationOptInRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteDataCellsFilterResult deleteDataCellsFilter(DeleteDataCellsFilterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DeleteLFTagResult deleteLFTag(DeleteLFTagRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteLakeFormationOptInResult deleteLakeFormationOptIn(DeleteLakeFormationOptInRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -174,6 +184,11 @@ public class AbstractAWSLakeFormation implements AWSLakeFormation {
 
     @Override
     public ListLFTagsResult listLFTags(ListLFTagsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListLakeFormationOptInsResult listLakeFormationOptIns(ListLakeFormationOptInsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -47,17 +47,35 @@ public class ReferenceLineDataConfiguration implements Serializable, Cloneable, 
      * <ul>
      * <li>
      * <p>
-     * PrimaryY
+     * <code>PrimaryY</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * SecondaryY
+     * <code>SecondaryY</code>
      * </p>
      * </li>
      * </ul>
      */
     private String axisBinding;
+    /**
+     * <p>
+     * The series type of the reference line data configuration. Choose one of the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>BAR</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LINE</code>
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String seriesType;
 
     /**
      * <p>
@@ -146,12 +164,12 @@ public class ReferenceLineDataConfiguration implements Serializable, Cloneable, 
      * <ul>
      * <li>
      * <p>
-     * PrimaryY
+     * <code>PrimaryY</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * SecondaryY
+     * <code>SecondaryY</code>
      * </p>
      * </li>
      * </ul>
@@ -161,12 +179,12 @@ public class ReferenceLineDataConfiguration implements Serializable, Cloneable, 
      *        <ul>
      *        <li>
      *        <p>
-     *        PrimaryY
+     *        <code>PrimaryY</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        SecondaryY
+     *        <code>SecondaryY</code>
      *        </p>
      *        </li>
      * @see AxisBinding
@@ -183,12 +201,12 @@ public class ReferenceLineDataConfiguration implements Serializable, Cloneable, 
      * <ul>
      * <li>
      * <p>
-     * PrimaryY
+     * <code>PrimaryY</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * SecondaryY
+     * <code>SecondaryY</code>
      * </p>
      * </li>
      * </ul>
@@ -197,12 +215,12 @@ public class ReferenceLineDataConfiguration implements Serializable, Cloneable, 
      *         <ul>
      *         <li>
      *         <p>
-     *         PrimaryY
+     *         <code>PrimaryY</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         SecondaryY
+     *         <code>SecondaryY</code>
      *         </p>
      *         </li>
      * @see AxisBinding
@@ -219,12 +237,12 @@ public class ReferenceLineDataConfiguration implements Serializable, Cloneable, 
      * <ul>
      * <li>
      * <p>
-     * PrimaryY
+     * <code>PrimaryY</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * SecondaryY
+     * <code>SecondaryY</code>
      * </p>
      * </li>
      * </ul>
@@ -234,12 +252,12 @@ public class ReferenceLineDataConfiguration implements Serializable, Cloneable, 
      *        <ul>
      *        <li>
      *        <p>
-     *        PrimaryY
+     *        <code>PrimaryY</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        SecondaryY
+     *        <code>SecondaryY</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -258,12 +276,12 @@ public class ReferenceLineDataConfiguration implements Serializable, Cloneable, 
      * <ul>
      * <li>
      * <p>
-     * PrimaryY
+     * <code>PrimaryY</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * SecondaryY
+     * <code>SecondaryY</code>
      * </p>
      * </li>
      * </ul>
@@ -273,12 +291,12 @@ public class ReferenceLineDataConfiguration implements Serializable, Cloneable, 
      *        <ul>
      *        <li>
      *        <p>
-     *        PrimaryY
+     *        <code>PrimaryY</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        SecondaryY
+     *        <code>SecondaryY</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -287,6 +305,157 @@ public class ReferenceLineDataConfiguration implements Serializable, Cloneable, 
 
     public ReferenceLineDataConfiguration withAxisBinding(AxisBinding axisBinding) {
         this.axisBinding = axisBinding.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The series type of the reference line data configuration. Choose one of the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>BAR</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LINE</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param seriesType
+     *        The series type of the reference line data configuration. Choose one of the following options:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>BAR</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LINE</code>
+     *        </p>
+     *        </li>
+     * @see ReferenceLineSeriesType
+     */
+
+    public void setSeriesType(String seriesType) {
+        this.seriesType = seriesType;
+    }
+
+    /**
+     * <p>
+     * The series type of the reference line data configuration. Choose one of the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>BAR</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LINE</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The series type of the reference line data configuration. Choose one of the following options:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>BAR</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>LINE</code>
+     *         </p>
+     *         </li>
+     * @see ReferenceLineSeriesType
+     */
+
+    public String getSeriesType() {
+        return this.seriesType;
+    }
+
+    /**
+     * <p>
+     * The series type of the reference line data configuration. Choose one of the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>BAR</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LINE</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param seriesType
+     *        The series type of the reference line data configuration. Choose one of the following options:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>BAR</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LINE</code>
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReferenceLineSeriesType
+     */
+
+    public ReferenceLineDataConfiguration withSeriesType(String seriesType) {
+        setSeriesType(seriesType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The series type of the reference line data configuration. Choose one of the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>BAR</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LINE</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param seriesType
+     *        The series type of the reference line data configuration. Choose one of the following options:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>BAR</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LINE</code>
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReferenceLineSeriesType
+     */
+
+    public ReferenceLineDataConfiguration withSeriesType(ReferenceLineSeriesType seriesType) {
+        this.seriesType = seriesType.toString();
         return this;
     }
 
@@ -307,7 +476,9 @@ public class ReferenceLineDataConfiguration implements Serializable, Cloneable, 
         if (getDynamicConfiguration() != null)
             sb.append("DynamicConfiguration: ").append(getDynamicConfiguration()).append(",");
         if (getAxisBinding() != null)
-            sb.append("AxisBinding: ").append(getAxisBinding());
+            sb.append("AxisBinding: ").append(getAxisBinding()).append(",");
+        if (getSeriesType() != null)
+            sb.append("SeriesType: ").append(getSeriesType());
         sb.append("}");
         return sb.toString();
     }
@@ -334,6 +505,10 @@ public class ReferenceLineDataConfiguration implements Serializable, Cloneable, 
             return false;
         if (other.getAxisBinding() != null && other.getAxisBinding().equals(this.getAxisBinding()) == false)
             return false;
+        if (other.getSeriesType() == null ^ this.getSeriesType() == null)
+            return false;
+        if (other.getSeriesType() != null && other.getSeriesType().equals(this.getSeriesType()) == false)
+            return false;
         return true;
     }
 
@@ -345,6 +520,7 @@ public class ReferenceLineDataConfiguration implements Serializable, Cloneable, 
         hashCode = prime * hashCode + ((getStaticConfiguration() == null) ? 0 : getStaticConfiguration().hashCode());
         hashCode = prime * hashCode + ((getDynamicConfiguration() == null) ? 0 : getDynamicConfiguration().hashCode());
         hashCode = prime * hashCode + ((getAxisBinding() == null) ? 0 : getAxisBinding().hashCode());
+        hashCode = prime * hashCode + ((getSeriesType() == null) ? 0 : getSeriesType().hashCode());
         return hashCode;
     }
 

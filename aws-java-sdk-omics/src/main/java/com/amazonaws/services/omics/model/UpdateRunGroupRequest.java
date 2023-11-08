@@ -33,16 +33,16 @@ public class UpdateRunGroupRequest extends com.amazonaws.AmazonWebServiceRequest
     private String id;
     /**
      * <p>
+     * A name for the group.
+     * </p>
+     */
+    private String name;
+    /**
+     * <p>
      * The maximum number of CPUs to use.
      * </p>
      */
     private Integer maxCpus;
-    /**
-     * <p>
-     * A maximum run time for the group in minutes.
-     * </p>
-     */
-    private Integer maxDuration;
     /**
      * <p>
      * The maximum number of concurrent runs for the group.
@@ -51,10 +51,16 @@ public class UpdateRunGroupRequest extends com.amazonaws.AmazonWebServiceRequest
     private Integer maxRuns;
     /**
      * <p>
-     * A name for the group.
+     * A maximum run time for the group in minutes.
      * </p>
      */
-    private String name;
+    private Integer maxDuration;
+    /**
+     * <p>
+     * The maximum GPUs that can be used by a run group.
+     * </p>
+     */
+    private Integer maxGpus;
 
     /**
      * <p>
@@ -93,6 +99,46 @@ public class UpdateRunGroupRequest extends com.amazonaws.AmazonWebServiceRequest
 
     public UpdateRunGroupRequest withId(String id) {
         setId(id);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A name for the group.
+     * </p>
+     * 
+     * @param name
+     *        A name for the group.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * A name for the group.
+     * </p>
+     * 
+     * @return A name for the group.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * A name for the group.
+     * </p>
+     * 
+     * @param name
+     *        A name for the group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateRunGroupRequest withName(String name) {
+        setName(name);
         return this;
     }
 
@@ -138,46 +184,6 @@ public class UpdateRunGroupRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A maximum run time for the group in minutes.
-     * </p>
-     * 
-     * @param maxDuration
-     *        A maximum run time for the group in minutes.
-     */
-
-    public void setMaxDuration(Integer maxDuration) {
-        this.maxDuration = maxDuration;
-    }
-
-    /**
-     * <p>
-     * A maximum run time for the group in minutes.
-     * </p>
-     * 
-     * @return A maximum run time for the group in minutes.
-     */
-
-    public Integer getMaxDuration() {
-        return this.maxDuration;
-    }
-
-    /**
-     * <p>
-     * A maximum run time for the group in minutes.
-     * </p>
-     * 
-     * @param maxDuration
-     *        A maximum run time for the group in minutes.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateRunGroupRequest withMaxDuration(Integer maxDuration) {
-        setMaxDuration(maxDuration);
-        return this;
-    }
-
-    /**
-     * <p>
      * The maximum number of concurrent runs for the group.
      * </p>
      * 
@@ -218,41 +224,81 @@ public class UpdateRunGroupRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A name for the group.
+     * A maximum run time for the group in minutes.
      * </p>
      * 
-     * @param name
-     *        A name for the group.
+     * @param maxDuration
+     *        A maximum run time for the group in minutes.
      */
 
-    public void setName(String name) {
-        this.name = name;
+    public void setMaxDuration(Integer maxDuration) {
+        this.maxDuration = maxDuration;
     }
 
     /**
      * <p>
-     * A name for the group.
+     * A maximum run time for the group in minutes.
      * </p>
      * 
-     * @return A name for the group.
+     * @return A maximum run time for the group in minutes.
      */
 
-    public String getName() {
-        return this.name;
+    public Integer getMaxDuration() {
+        return this.maxDuration;
     }
 
     /**
      * <p>
-     * A name for the group.
+     * A maximum run time for the group in minutes.
      * </p>
      * 
-     * @param name
-     *        A name for the group.
+     * @param maxDuration
+     *        A maximum run time for the group in minutes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateRunGroupRequest withName(String name) {
-        setName(name);
+    public UpdateRunGroupRequest withMaxDuration(Integer maxDuration) {
+        setMaxDuration(maxDuration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum GPUs that can be used by a run group.
+     * </p>
+     * 
+     * @param maxGpus
+     *        The maximum GPUs that can be used by a run group.
+     */
+
+    public void setMaxGpus(Integer maxGpus) {
+        this.maxGpus = maxGpus;
+    }
+
+    /**
+     * <p>
+     * The maximum GPUs that can be used by a run group.
+     * </p>
+     * 
+     * @return The maximum GPUs that can be used by a run group.
+     */
+
+    public Integer getMaxGpus() {
+        return this.maxGpus;
+    }
+
+    /**
+     * <p>
+     * The maximum GPUs that can be used by a run group.
+     * </p>
+     * 
+     * @param maxGpus
+     *        The maximum GPUs that can be used by a run group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateRunGroupRequest withMaxGpus(Integer maxGpus) {
+        setMaxGpus(maxGpus);
         return this;
     }
 
@@ -270,14 +316,16 @@ public class UpdateRunGroupRequest extends com.amazonaws.AmazonWebServiceRequest
         sb.append("{");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
         if (getMaxCpus() != null)
             sb.append("MaxCpus: ").append(getMaxCpus()).append(",");
-        if (getMaxDuration() != null)
-            sb.append("MaxDuration: ").append(getMaxDuration()).append(",");
         if (getMaxRuns() != null)
             sb.append("MaxRuns: ").append(getMaxRuns()).append(",");
-        if (getName() != null)
-            sb.append("Name: ").append(getName());
+        if (getMaxDuration() != null)
+            sb.append("MaxDuration: ").append(getMaxDuration()).append(",");
+        if (getMaxGpus() != null)
+            sb.append("MaxGpus: ").append(getMaxGpus());
         sb.append("}");
         return sb.toString();
     }
@@ -296,21 +344,25 @@ public class UpdateRunGroupRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
         if (other.getMaxCpus() == null ^ this.getMaxCpus() == null)
             return false;
         if (other.getMaxCpus() != null && other.getMaxCpus().equals(this.getMaxCpus()) == false)
-            return false;
-        if (other.getMaxDuration() == null ^ this.getMaxDuration() == null)
-            return false;
-        if (other.getMaxDuration() != null && other.getMaxDuration().equals(this.getMaxDuration()) == false)
             return false;
         if (other.getMaxRuns() == null ^ this.getMaxRuns() == null)
             return false;
         if (other.getMaxRuns() != null && other.getMaxRuns().equals(this.getMaxRuns()) == false)
             return false;
-        if (other.getName() == null ^ this.getName() == null)
+        if (other.getMaxDuration() == null ^ this.getMaxDuration() == null)
             return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+        if (other.getMaxDuration() != null && other.getMaxDuration().equals(this.getMaxDuration()) == false)
+            return false;
+        if (other.getMaxGpus() == null ^ this.getMaxGpus() == null)
+            return false;
+        if (other.getMaxGpus() != null && other.getMaxGpus().equals(this.getMaxGpus()) == false)
             return false;
         return true;
     }
@@ -321,10 +373,11 @@ public class UpdateRunGroupRequest extends com.amazonaws.AmazonWebServiceRequest
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
-        hashCode = prime * hashCode + ((getMaxCpus() == null) ? 0 : getMaxCpus().hashCode());
-        hashCode = prime * hashCode + ((getMaxDuration() == null) ? 0 : getMaxDuration().hashCode());
-        hashCode = prime * hashCode + ((getMaxRuns() == null) ? 0 : getMaxRuns().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getMaxCpus() == null) ? 0 : getMaxCpus().hashCode());
+        hashCode = prime * hashCode + ((getMaxRuns() == null) ? 0 : getMaxRuns().hashCode());
+        hashCode = prime * hashCode + ((getMaxDuration() == null) ? 0 : getMaxDuration().hashCode());
+        hashCode = prime * hashCode + ((getMaxGpus() == null) ? 0 : getMaxGpus().hashCode());
         return hashCode;
     }
 

@@ -52,18 +52,6 @@ public class RuleGroupsNamespaceDescriptionJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     ruleGroupsNamespaceDescription.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("createdAt", targetDepth)) {
-                    context.nextToken();
-                    ruleGroupsNamespaceDescription.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
-                }
-                if (context.testExpression("data", targetDepth)) {
-                    context.nextToken();
-                    ruleGroupsNamespaceDescription.setData(context.getUnmarshaller(java.nio.ByteBuffer.class).unmarshall(context));
-                }
-                if (context.testExpression("modifiedAt", targetDepth)) {
-                    context.nextToken();
-                    ruleGroupsNamespaceDescription.setModifiedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
-                }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
                     ruleGroupsNamespaceDescription.setName(context.getUnmarshaller(String.class).unmarshall(context));
@@ -71,6 +59,18 @@ public class RuleGroupsNamespaceDescriptionJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     ruleGroupsNamespaceDescription.setStatus(RuleGroupsNamespaceStatusJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("data", targetDepth)) {
+                    context.nextToken();
+                    ruleGroupsNamespaceDescription.setData(context.getUnmarshaller(java.nio.ByteBuffer.class).unmarshall(context));
+                }
+                if (context.testExpression("createdAt", targetDepth)) {
+                    context.nextToken();
+                    ruleGroupsNamespaceDescription.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("modifiedAt", targetDepth)) {
+                    context.nextToken();
+                    ruleGroupsNamespaceDescription.setModifiedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();

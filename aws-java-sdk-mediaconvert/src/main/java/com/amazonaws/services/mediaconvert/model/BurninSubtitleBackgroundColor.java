@@ -15,8 +15,8 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Specify the color of the rectangle behind the captions. Leave background color (BackgroundColor) blank and set Style
- * passthrough (StylePassthrough) to enabled to use the background color data from your input captions, if present.
+ * Specify the color of the rectangle behind the captions. Leave background color blank and set Style passthrough to
+ * enabled to use the background color data from your input captions, if present.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum BurninSubtitleBackgroundColor {

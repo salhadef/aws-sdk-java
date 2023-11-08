@@ -374,11 +374,12 @@ public interface AWSNetworkFirewallAsync extends AWSNetworkFirewall {
 
     /**
      * <p>
-     * Creates an Network Firewall TLS inspection configuration. A TLS inspection configuration contains the Certificate
-     * Manager certificate references that Network Firewall uses to decrypt and re-encrypt inbound traffic.
+     * Creates an Network Firewall TLS inspection configuration. A TLS inspection configuration contains Certificate
+     * Manager certificate associations between and the scope configurations that Network Firewall uses to decrypt and
+     * re-encrypt traffic traveling through your firewall.
      * </p>
      * <p>
-     * After you create a TLS inspection configuration, you associate it with a firewall policy.
+     * After you create a TLS inspection configuration, you can associate it with a new firewall policy.
      * </p>
      * <p>
      * To update the settings for a TLS inspection configuration, use <a>UpdateTLSInspectionConfiguration</a>.
@@ -393,7 +394,7 @@ public interface AWSNetworkFirewallAsync extends AWSNetworkFirewall {
      * </p>
      * <p>
      * For more information about TLS inspection configurations, see <a
-     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection.html">Decrypting SSL/TLS
+     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection.html">Inspecting SSL/TLS
      * traffic with TLS inspection configurations</a> in the <i>Network Firewall Developer Guide</i>.
      * </p>
      * 
@@ -410,11 +411,12 @@ public interface AWSNetworkFirewallAsync extends AWSNetworkFirewall {
 
     /**
      * <p>
-     * Creates an Network Firewall TLS inspection configuration. A TLS inspection configuration contains the Certificate
-     * Manager certificate references that Network Firewall uses to decrypt and re-encrypt inbound traffic.
+     * Creates an Network Firewall TLS inspection configuration. A TLS inspection configuration contains Certificate
+     * Manager certificate associations between and the scope configurations that Network Firewall uses to decrypt and
+     * re-encrypt traffic traveling through your firewall.
      * </p>
      * <p>
-     * After you create a TLS inspection configuration, you associate it with a firewall policy.
+     * After you create a TLS inspection configuration, you can associate it with a new firewall policy.
      * </p>
      * <p>
      * To update the settings for a TLS inspection configuration, use <a>UpdateTLSInspectionConfiguration</a>.
@@ -429,7 +431,7 @@ public interface AWSNetworkFirewallAsync extends AWSNetworkFirewall {
      * </p>
      * <p>
      * For more information about TLS inspection configurations, see <a
-     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection.html">Decrypting SSL/TLS
+     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection.html">Inspecting SSL/TLS
      * traffic with TLS inspection configurations</a> in the <i>Network Firewall Developer Guide</i>.
      * </p>
      * 
@@ -1625,7 +1627,7 @@ public interface AWSNetworkFirewallAsync extends AWSNetworkFirewall {
     /**
      * <p>
      * Updates the TLS inspection configuration settings for the specified TLS inspection configuration. You use a TLS
-     * inspection configuration by reference in one or more firewall policies. When you modify a TLS inspection
+     * inspection configuration by referencing it in one or more firewall policies. When you modify a TLS inspection
      * configuration, you modify all firewall policies that use the TLS inspection configuration.
      * </p>
      * <p>
@@ -1648,7 +1650,7 @@ public interface AWSNetworkFirewallAsync extends AWSNetworkFirewall {
     /**
      * <p>
      * Updates the TLS inspection configuration settings for the specified TLS inspection configuration. You use a TLS
-     * inspection configuration by reference in one or more firewall policies. When you modify a TLS inspection
+     * inspection configuration by referencing it in one or more firewall policies. When you modify a TLS inspection
      * configuration, you modify all firewall policies that use the TLS inspection configuration.
      * </p>
      * <p>

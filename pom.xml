@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-pom</artifactId>
-  <version>1.12.462-SNAPSHOT</version>
+  <version>1.12.585-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>AWS SDK for Java</name>
   <description>The Amazon Web Services SDK for Java provides Java APIs
@@ -33,6 +33,21 @@
   </developers>
   <!-- The module section in pom.xml is auto generated. No manual changes are allowed -->
   <modules>
+    <module>aws-java-sdk-launchwizard</module>
+    <module>aws-java-sdk-datazoneexternal</module>
+    <module>aws-java-sdk-bedrock</module>
+    <module>aws-java-sdk-bedrockruntime</module>
+    <module>aws-java-sdk-neptunedata</module>
+    <module>aws-java-sdk-pcaconnectorad</module>
+    <module>aws-java-sdk-managedblockchainquery</module>
+    <module>aws-java-sdk-entityresolution</module>
+    <module>aws-java-sdk-medicalimaging</module>
+    <module>aws-java-sdk-appfabric</module>
+    <module>aws-java-sdk-verifiedpermissions</module>
+    <module>aws-java-sdk-codegurusecurity</module>
+    <module>aws-java-sdk-paymentcryptography</module>
+    <module>aws-java-sdk-paymentcryptographydata</module>
+    <module>aws-java-sdk-mediapackagev2</module>
     <module>aws-java-sdk-osis</module>
     <module>aws-java-sdk-vpclattice</module>
     <module>aws-java-sdk-ivsrealtime</module>
@@ -74,7 +89,6 @@
     <module>aws-java-sdk-chimesdkmediapipelines</module>
     <module>aws-java-sdk-ivschat</module>
     <module>aws-java-sdk-pinpointsmsvoicev2</module>
-    <module>aws-java-sdk-gamesparks</module>
     <module>aws-java-sdk-billingconductor</module>
     <module>aws-java-sdk-keyspaces</module>
     <module>aws-java-sdk-amplifyuibuilder</module>
@@ -417,7 +431,7 @@
       <cucumber.guice.version>4.2.3</cucumber.guice.version>
       <unitils.version>3.3</unitils.version>
       <!-- Netty is used by Kinesis Video -->
-      <netty.version>4.1.86.Final</netty.version>
+      <netty.version>4.1.94.Final</netty.version>
       <versions-maven-plugin.version>2.13.0</versions-maven-plugin.version>
   </properties>
   <dependencyManagement>

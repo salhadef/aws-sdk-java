@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum UpdateType {
 
     REPLACE("REPLACE"),
-    RETURN("RETURN");
+    RETURN("RETURN"),
+    COMMITMENT("COMMITMENT");
 
     private String value;
 

@@ -98,6 +98,31 @@ public interface AWSMigrationHubConfig {
 
     /**
      * <p>
+     * This operation deletes the home region configuration for the calling account. The operation does not delete
+     * discovery or migration tracking data in the home region.
+     * </p>
+     * 
+     * @param deleteHomeRegionControlRequest
+     * @return Result of the DeleteHomeRegionControl operation returned by the service.
+     * @throws InternalServerErrorException
+     *         Exception raised when an internal, configuration, or dependency error is encountered.
+     * @throws ServiceUnavailableException
+     *         Exception raised when a request fails due to temporary unavailability of the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InvalidInputException
+     *         Exception raised when the provided input violates a policy constraint or is entered in the wrong format
+     *         or data type.
+     * @sample AWSMigrationHubConfig.DeleteHomeRegionControl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/migrationhub-config-2019-06-30/DeleteHomeRegionControl"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteHomeRegionControlResult deleteHomeRegionControl(DeleteHomeRegionControlRequest deleteHomeRegionControlRequest);
+
+    /**
+     * <p>
      * This API permits filtering on the <code>ControlId</code> and <code>HomeRegion</code> fields.
      * </p>
      * 

@@ -563,6 +563,55 @@ public interface AmazonTranslateAsync extends AmazonTranslate {
 
     /**
      * <p>
+     * Translates the input document from the source language to the target language. This synchronous operation
+     * supports text, HTML, or Word documents as the input document. <code>TranslateDocument</code> supports
+     * translations from English to any supported language, and from any supported language to English. Therefore,
+     * specify either the source language code or the target language code as “en” (English).
+     * </p>
+     * <p>
+     * If you set the <code>Formality</code> parameter, the request will fail if the target language does not support
+     * formality. For a list of target languages that support formality, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-formality.html">Setting
+     * formality</a>.
+     * </p>
+     * 
+     * @param translateDocumentRequest
+     * @return A Java Future containing the result of the TranslateDocument operation returned by the service.
+     * @sample AmazonTranslateAsync.TranslateDocument
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/TranslateDocument" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<TranslateDocumentResult> translateDocumentAsync(TranslateDocumentRequest translateDocumentRequest);
+
+    /**
+     * <p>
+     * Translates the input document from the source language to the target language. This synchronous operation
+     * supports text, HTML, or Word documents as the input document. <code>TranslateDocument</code> supports
+     * translations from English to any supported language, and from any supported language to English. Therefore,
+     * specify either the source language code or the target language code as “en” (English).
+     * </p>
+     * <p>
+     * If you set the <code>Formality</code> parameter, the request will fail if the target language does not support
+     * formality. For a list of target languages that support formality, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-formality.html">Setting
+     * formality</a>.
+     * </p>
+     * 
+     * @param translateDocumentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TranslateDocument operation returned by the service.
+     * @sample AmazonTranslateAsyncHandler.TranslateDocument
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/TranslateDocument" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<TranslateDocumentResult> translateDocumentAsync(TranslateDocumentRequest translateDocumentRequest,
+            com.amazonaws.handlers.AsyncHandler<TranslateDocumentRequest, TranslateDocumentResult> asyncHandler);
+
+    /**
+     * <p>
      * Translates input text from the source language to the target language. For a list of available languages and
      * language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
      * languages</a>.

@@ -48,6 +48,10 @@ public class NetAppONTAPClusterMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Recommendations").build();
     private static final MarshallingInfo<String> RECOMMENDATIONSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RecommendationStatus").build();
+    private static final MarshallingInfo<Long> LUNCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("LunCount").build();
+    private static final MarshallingInfo<Long> CLUSTERCLOUDSTORAGEUSED_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClusterCloudStorageUsed").build();
 
     private static final NetAppONTAPClusterMarshaller instance = new NetAppONTAPClusterMarshaller();
 
@@ -75,6 +79,8 @@ public class NetAppONTAPClusterMarshaller {
             protocolMarshaller.marshall(netAppONTAPCluster.getClusterBlockStorageLogicalUsed(), CLUSTERBLOCKSTORAGELOGICALUSED_BINDING);
             protocolMarshaller.marshall(netAppONTAPCluster.getRecommendations(), RECOMMENDATIONS_BINDING);
             protocolMarshaller.marshall(netAppONTAPCluster.getRecommendationStatus(), RECOMMENDATIONSTATUS_BINDING);
+            protocolMarshaller.marshall(netAppONTAPCluster.getLunCount(), LUNCOUNT_BINDING);
+            protocolMarshaller.marshall(netAppONTAPCluster.getClusterCloudStorageUsed(), CLUSTERCLOUDSTORAGEUSED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

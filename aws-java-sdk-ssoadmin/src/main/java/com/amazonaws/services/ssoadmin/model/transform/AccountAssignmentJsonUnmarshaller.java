@@ -56,13 +56,13 @@ public class AccountAssignmentJsonUnmarshaller implements Unmarshaller<AccountAs
                     context.nextToken();
                     accountAssignment.setPermissionSetArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("PrincipalType", targetDepth)) {
-                    context.nextToken();
-                    accountAssignment.setPrincipalType(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("PrincipalId", targetDepth)) {
                     context.nextToken();
                     accountAssignment.setPrincipalId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("PrincipalType", targetDepth)) {
+                    context.nextToken();
+                    accountAssignment.setPrincipalType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

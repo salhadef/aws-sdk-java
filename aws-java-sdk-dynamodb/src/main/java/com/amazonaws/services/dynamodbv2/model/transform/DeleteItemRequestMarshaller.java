@@ -49,6 +49,8 @@ public class DeleteItemRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExpressionAttributeNames").build();
     private static final MarshallingInfo<Map> EXPRESSIONATTRIBUTEVALUES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExpressionAttributeValues").build();
+    private static final MarshallingInfo<String> RETURNVALUESONCONDITIONCHECKFAILURE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReturnValuesOnConditionCheckFailure").build();
 
     private static final DeleteItemRequestMarshaller instance = new DeleteItemRequestMarshaller();
 
@@ -76,6 +78,7 @@ public class DeleteItemRequestMarshaller {
             protocolMarshaller.marshall(deleteItemRequest.getConditionExpression(), CONDITIONEXPRESSION_BINDING);
             protocolMarshaller.marshall(deleteItemRequest.getExpressionAttributeNames(), EXPRESSIONATTRIBUTENAMES_BINDING);
             protocolMarshaller.marshall(deleteItemRequest.getExpressionAttributeValues(), EXPRESSIONATTRIBUTEVALUES_BINDING);
+            protocolMarshaller.marshall(deleteItemRequest.getReturnValuesOnConditionCheckFailure(), RETURNVALUESONCONDITIONCHECKFAILURE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

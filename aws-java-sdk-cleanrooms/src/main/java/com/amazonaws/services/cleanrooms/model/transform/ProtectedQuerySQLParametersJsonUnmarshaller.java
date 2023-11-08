@@ -52,6 +52,15 @@ public class ProtectedQuerySQLParametersJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     protectedQuerySQLParameters.setQueryString(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("analysisTemplateArn", targetDepth)) {
+                    context.nextToken();
+                    protectedQuerySQLParameters.setAnalysisTemplateArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("parameters", targetDepth)) {
+                    context.nextToken();
+                    protectedQuerySQLParameters.setParameters(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

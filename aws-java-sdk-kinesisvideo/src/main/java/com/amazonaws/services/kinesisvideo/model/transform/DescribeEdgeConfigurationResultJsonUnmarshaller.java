@@ -76,6 +76,10 @@ public class DescribeEdgeConfigurationResultJsonUnmarshaller implements Unmarsha
                     context.nextToken();
                     describeEdgeConfigurationResult.setEdgeConfig(EdgeConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("EdgeAgentStatus", targetDepth)) {
+                    context.nextToken();
+                    describeEdgeConfigurationResult.setEdgeAgentStatus(EdgeAgentStatusJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -544,7 +544,7 @@ public class CreateLaunchTemplateVersionRequest extends AmazonWebServiceRequest 
         if (getVersionDescription() != null)
             sb.append("VersionDescription: ").append(getVersionDescription()).append(",");
         if (getLaunchTemplateData() != null)
-            sb.append("LaunchTemplateData: ").append("***Sensitive Data Redacted***").append(",");
+            sb.append("LaunchTemplateData: ").append(getLaunchTemplateData()).append(",");
         if (getResolveAlias() != null)
             sb.append("ResolveAlias: ").append(getResolveAlias());
         sb.append("}");

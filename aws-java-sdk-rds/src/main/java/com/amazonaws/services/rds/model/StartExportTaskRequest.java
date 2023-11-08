@@ -161,8 +161,11 @@ public class StartExportTaskRequest extends com.amazonaws.AmazonWebServiceReques
     private String s3Prefix;
     /**
      * <p>
-     * The data to be exported from the snapshot or cluster. If this parameter is not provided, all of the data is
-     * exported. Valid values are the following:
+     * The data to be exported from the snapshot or cluster. If this parameter isn't provided, all of the data is
+     * exported.
+     * </p>
+     * <p>
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
@@ -1019,8 +1022,11 @@ public class StartExportTaskRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The data to be exported from the snapshot or cluster. If this parameter is not provided, all of the data is
-     * exported. Valid values are the following:
+     * The data to be exported from the snapshot or cluster. If this parameter isn't provided, all of the data is
+     * exported.
+     * </p>
+     * <p>
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
@@ -1048,8 +1054,11 @@ public class StartExportTaskRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * </ul>
      * 
-     * @return The data to be exported from the snapshot or cluster. If this parameter is not provided, all of the data
-     *         is exported. Valid values are the following:</p>
+     * @return The data to be exported from the snapshot or cluster. If this parameter isn't provided, all of the data
+     *         is exported.</p>
+     *         <p>
+     *         Valid Values:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -1085,8 +1094,11 @@ public class StartExportTaskRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The data to be exported from the snapshot or cluster. If this parameter is not provided, all of the data is
-     * exported. Valid values are the following:
+     * The data to be exported from the snapshot or cluster. If this parameter isn't provided, all of the data is
+     * exported.
+     * </p>
+     * <p>
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
@@ -1115,8 +1127,11 @@ public class StartExportTaskRequest extends com.amazonaws.AmazonWebServiceReques
      * </ul>
      * 
      * @param exportOnly
-     *        The data to be exported from the snapshot or cluster. If this parameter is not provided, all of the data
-     *        is exported. Valid values are the following:</p>
+     *        The data to be exported from the snapshot or cluster. If this parameter isn't provided, all of the data is
+     *        exported.</p>
+     *        <p>
+     *        Valid Values:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1154,8 +1169,11 @@ public class StartExportTaskRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The data to be exported from the snapshot or cluster. If this parameter is not provided, all of the data is
-     * exported. Valid values are the following:
+     * The data to be exported from the snapshot or cluster. If this parameter isn't provided, all of the data is
+     * exported.
+     * </p>
+     * <p>
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
@@ -1189,8 +1207,11 @@ public class StartExportTaskRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param exportOnly
-     *        The data to be exported from the snapshot or cluster. If this parameter is not provided, all of the data
-     *        is exported. Valid values are the following:</p>
+     *        The data to be exported from the snapshot or cluster. If this parameter isn't provided, all of the data is
+     *        exported.</p>
+     *        <p>
+     *        Valid Values:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1230,8 +1251,11 @@ public class StartExportTaskRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The data to be exported from the snapshot or cluster. If this parameter is not provided, all of the data is
-     * exported. Valid values are the following:
+     * The data to be exported from the snapshot or cluster. If this parameter isn't provided, all of the data is
+     * exported.
+     * </p>
+     * <p>
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
@@ -1260,8 +1284,11 @@ public class StartExportTaskRequest extends com.amazonaws.AmazonWebServiceReques
      * </ul>
      * 
      * @param exportOnly
-     *        The data to be exported from the snapshot or cluster. If this parameter is not provided, all of the data
-     *        is exported. Valid values are the following:</p>
+     *        The data to be exported from the snapshot or cluster. If this parameter isn't provided, all of the data is
+     *        exported.</p>
+     *        <p>
+     *        Valid Values:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>

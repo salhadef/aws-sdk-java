@@ -330,6 +330,30 @@ public interface AmazonManagedGrafana {
 
     /**
      * <p>
+     * Lists available versions of Grafana. These are available when calling <code>CreateWorkspace</code>. Optionally,
+     * include a workspace to list the versions to which it can be upgraded.
+     * </p>
+     * 
+     * @param listVersionsRequest
+     * @return Result of the ListVersions operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The request references a resource that does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because of request throttling. Retry the request.
+     * @throws ValidationException
+     *         The value of a parameter in the request caused an error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws InternalServerException
+     *         Unexpected error while processing the request. Retry the request.
+     * @sample AmazonManagedGrafana.ListVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/ListVersions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListVersionsResult listVersions(ListVersionsRequest listVersionsRequest);
+
+    /**
+     * <p>
      * Returns a list of Amazon Managed Grafana workspaces in the account, with some information about each workspace.
      * For more complete information about one workspace, use <a
      * href="https://docs.aws.amazon.com/AAMG/latest/APIReference/API_DescribeWorkspace.html">DescribeWorkspace</a>.

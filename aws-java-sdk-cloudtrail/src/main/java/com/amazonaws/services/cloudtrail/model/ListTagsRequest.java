@@ -33,6 +33,16 @@ public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * Specifies a list of trail, event data store, or channel ARNs whose tags will be listed. The list has a limit of
      * 20 ARNs.
      * </p>
+     * <p>
+     * Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
+     * </p>
+     * <p>
+     * Example event data store ARN format:
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     * </p>
+     * <p>
+     * Example channel ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code>
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> resourceIdList;
     /**
@@ -47,9 +57,28 @@ public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * Specifies a list of trail, event data store, or channel ARNs whose tags will be listed. The list has a limit of
      * 20 ARNs.
      * </p>
+     * <p>
+     * Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
+     * </p>
+     * <p>
+     * Example event data store ARN format:
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     * </p>
+     * <p>
+     * Example channel ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code>
+     * </p>
      * 
      * @return Specifies a list of trail, event data store, or channel ARNs whose tags will be listed. The list has a
-     *         limit of 20 ARNs.
+     *         limit of 20 ARNs.</p>
+     *         <p>
+     *         Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
+     *         </p>
+     *         <p>
+     *         Example event data store ARN format:
+     *         <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     *         </p>
+     *         <p>
+     *         Example channel ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code>
      */
 
     public java.util.List<String> getResourceIdList() {
@@ -64,10 +93,29 @@ public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * Specifies a list of trail, event data store, or channel ARNs whose tags will be listed. The list has a limit of
      * 20 ARNs.
      * </p>
+     * <p>
+     * Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
+     * </p>
+     * <p>
+     * Example event data store ARN format:
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     * </p>
+     * <p>
+     * Example channel ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code>
+     * </p>
      * 
      * @param resourceIdList
      *        Specifies a list of trail, event data store, or channel ARNs whose tags will be listed. The list has a
-     *        limit of 20 ARNs.
+     *        limit of 20 ARNs.</p>
+     *        <p>
+     *        Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
+     *        </p>
+     *        <p>
+     *        Example event data store ARN format:
+     *        <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     *        </p>
+     *        <p>
+     *        Example channel ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code>
      */
 
     public void setResourceIdList(java.util.Collection<String> resourceIdList) {
@@ -85,6 +133,16 @@ public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * 20 ARNs.
      * </p>
      * <p>
+     * Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
+     * </p>
+     * <p>
+     * Example event data store ARN format:
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     * </p>
+     * <p>
+     * Example channel ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code>
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setResourceIdList(java.util.Collection)} or {@link #withResourceIdList(java.util.Collection)} if you want
      * to override the existing values.
@@ -92,7 +150,16 @@ public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * 
      * @param resourceIdList
      *        Specifies a list of trail, event data store, or channel ARNs whose tags will be listed. The list has a
-     *        limit of 20 ARNs.
+     *        limit of 20 ARNs.</p>
+     *        <p>
+     *        Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
+     *        </p>
+     *        <p>
+     *        Example event data store ARN format:
+     *        <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     *        </p>
+     *        <p>
+     *        Example channel ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -111,10 +178,29 @@ public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * Specifies a list of trail, event data store, or channel ARNs whose tags will be listed. The list has a limit of
      * 20 ARNs.
      * </p>
+     * <p>
+     * Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
+     * </p>
+     * <p>
+     * Example event data store ARN format:
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     * </p>
+     * <p>
+     * Example channel ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code>
+     * </p>
      * 
      * @param resourceIdList
      *        Specifies a list of trail, event data store, or channel ARNs whose tags will be listed. The list has a
-     *        limit of 20 ARNs.
+     *        limit of 20 ARNs.</p>
+     *        <p>
+     *        Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
+     *        </p>
+     *        <p>
+     *        Example event data store ARN format:
+     *        <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     *        </p>
+     *        <p>
+     *        Example channel ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

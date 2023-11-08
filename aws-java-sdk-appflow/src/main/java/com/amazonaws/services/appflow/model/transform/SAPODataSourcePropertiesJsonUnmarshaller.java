@@ -52,6 +52,14 @@ public class SAPODataSourcePropertiesJsonUnmarshaller implements Unmarshaller<SA
                     context.nextToken();
                     sAPODataSourceProperties.setObjectPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("parallelismConfig", targetDepth)) {
+                    context.nextToken();
+                    sAPODataSourceProperties.setParallelismConfig(SAPODataParallelismConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("paginationConfig", targetDepth)) {
+                    context.nextToken();
+                    sAPODataSourceProperties.setPaginationConfig(SAPODataPaginationConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

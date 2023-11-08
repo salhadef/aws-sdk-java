@@ -51,6 +51,10 @@ public class DescribeLogGroupsRequest extends com.amazonaws.AmazonWebServiceRequ
      * <code>FooBar</code>, <code>aws/Foo</code>, and <code>GroupFoo</code> would match, but <code>foo</code>,
      * <code>F/o/o</code> and <code>Froo</code> would not match.
      * </p>
+     * <p>
+     * If you specify <code>logGroupNamePattern</code> in your request, then only <code>arn</code>,
+     * <code>creationTime</code>, and <code>logGroupName</code> are included in the response.
+     * </p>
      * <note>
      * <p>
      * <code>logGroupNamePattern</code> and <code>logGroupNamePrefix</code> are mutually exclusive. Only one of these
@@ -81,12 +85,6 @@ public class DescribeLogGroupsRequest extends com.amazonaws.AmazonWebServiceRequ
      * operation returns all log groups in the monitoring account and all log groups in all source accounts that are
      * linked to the monitoring account.
      * </p>
-     * <note>
-     * <p>
-     * If you specify <code>includeLinkedAccounts</code> in your request, then <code>metricFilterCount</code>,
-     * <code>retentionInDays</code>, and <code>storedBytes</code> are not included in the response.
-     * </p>
-     * </note>
      */
     private Boolean includeLinkedAccounts;
 
@@ -248,6 +246,10 @@ public class DescribeLogGroupsRequest extends com.amazonaws.AmazonWebServiceRequ
      * <code>FooBar</code>, <code>aws/Foo</code>, and <code>GroupFoo</code> would match, but <code>foo</code>,
      * <code>F/o/o</code> and <code>Froo</code> would not match.
      * </p>
+     * <p>
+     * If you specify <code>logGroupNamePattern</code> in your request, then only <code>arn</code>,
+     * <code>creationTime</code>, and <code>logGroupName</code> are included in the response.
+     * </p>
      * <note>
      * <p>
      * <code>logGroupNamePattern</code> and <code>logGroupNamePrefix</code> are mutually exclusive. Only one of these
@@ -259,7 +261,12 @@ public class DescribeLogGroupsRequest extends com.amazonaws.AmazonWebServiceRequ
      *        If you specify a string for this parameter, the operation returns only log groups that have names that
      *        match the string based on a case-sensitive substring search. For example, if you specify <code>Foo</code>,
      *        log groups named <code>FooBar</code>, <code>aws/Foo</code>, and <code>GroupFoo</code> would match, but
-     *        <code>foo</code>, <code>F/o/o</code> and <code>Froo</code> would not match.</p> <note>
+     *        <code>foo</code>, <code>F/o/o</code> and <code>Froo</code> would not match.</p>
+     *        <p>
+     *        If you specify <code>logGroupNamePattern</code> in your request, then only <code>arn</code>,
+     *        <code>creationTime</code>, and <code>logGroupName</code> are included in the response.
+     *        </p>
+     *        <note>
      *        <p>
      *        <code>logGroupNamePattern</code> and <code>logGroupNamePrefix</code> are mutually exclusive. Only one of
      *        these parameters can be passed.
@@ -277,6 +284,10 @@ public class DescribeLogGroupsRequest extends com.amazonaws.AmazonWebServiceRequ
      * <code>FooBar</code>, <code>aws/Foo</code>, and <code>GroupFoo</code> would match, but <code>foo</code>,
      * <code>F/o/o</code> and <code>Froo</code> would not match.
      * </p>
+     * <p>
+     * If you specify <code>logGroupNamePattern</code> in your request, then only <code>arn</code>,
+     * <code>creationTime</code>, and <code>logGroupName</code> are included in the response.
+     * </p>
      * <note>
      * <p>
      * <code>logGroupNamePattern</code> and <code>logGroupNamePrefix</code> are mutually exclusive. Only one of these
@@ -287,7 +298,12 @@ public class DescribeLogGroupsRequest extends com.amazonaws.AmazonWebServiceRequ
      * @return If you specify a string for this parameter, the operation returns only log groups that have names that
      *         match the string based on a case-sensitive substring search. For example, if you specify <code>Foo</code>
      *         , log groups named <code>FooBar</code>, <code>aws/Foo</code>, and <code>GroupFoo</code> would match, but
-     *         <code>foo</code>, <code>F/o/o</code> and <code>Froo</code> would not match.</p> <note>
+     *         <code>foo</code>, <code>F/o/o</code> and <code>Froo</code> would not match.</p>
+     *         <p>
+     *         If you specify <code>logGroupNamePattern</code> in your request, then only <code>arn</code>,
+     *         <code>creationTime</code>, and <code>logGroupName</code> are included in the response.
+     *         </p>
+     *         <note>
      *         <p>
      *         <code>logGroupNamePattern</code> and <code>logGroupNamePrefix</code> are mutually exclusive. Only one of
      *         these parameters can be passed.
@@ -305,6 +321,10 @@ public class DescribeLogGroupsRequest extends com.amazonaws.AmazonWebServiceRequ
      * <code>FooBar</code>, <code>aws/Foo</code>, and <code>GroupFoo</code> would match, but <code>foo</code>,
      * <code>F/o/o</code> and <code>Froo</code> would not match.
      * </p>
+     * <p>
+     * If you specify <code>logGroupNamePattern</code> in your request, then only <code>arn</code>,
+     * <code>creationTime</code>, and <code>logGroupName</code> are included in the response.
+     * </p>
      * <note>
      * <p>
      * <code>logGroupNamePattern</code> and <code>logGroupNamePrefix</code> are mutually exclusive. Only one of these
@@ -316,7 +336,12 @@ public class DescribeLogGroupsRequest extends com.amazonaws.AmazonWebServiceRequ
      *        If you specify a string for this parameter, the operation returns only log groups that have names that
      *        match the string based on a case-sensitive substring search. For example, if you specify <code>Foo</code>,
      *        log groups named <code>FooBar</code>, <code>aws/Foo</code>, and <code>GroupFoo</code> would match, but
-     *        <code>foo</code>, <code>F/o/o</code> and <code>Froo</code> would not match.</p> <note>
+     *        <code>foo</code>, <code>F/o/o</code> and <code>Froo</code> would not match.</p>
+     *        <p>
+     *        If you specify <code>logGroupNamePattern</code> in your request, then only <code>arn</code>,
+     *        <code>creationTime</code>, and <code>logGroupName</code> are included in the response.
+     *        </p>
+     *        <note>
      *        <p>
      *        <code>logGroupNamePattern</code> and <code>logGroupNamePrefix</code> are mutually exclusive. Only one of
      *        these parameters can be passed.
@@ -419,12 +444,6 @@ public class DescribeLogGroupsRequest extends com.amazonaws.AmazonWebServiceRequ
      * operation returns all log groups in the monitoring account and all log groups in all source accounts that are
      * linked to the monitoring account.
      * </p>
-     * <note>
-     * <p>
-     * If you specify <code>includeLinkedAccounts</code> in your request, then <code>metricFilterCount</code>,
-     * <code>retentionInDays</code>, and <code>storedBytes</code> are not included in the response.
-     * </p>
-     * </note>
      * 
      * @param includeLinkedAccounts
      *        If you are using a monitoring account, set this to <code>True</code> to have the operation return log
@@ -433,12 +452,6 @@ public class DescribeLogGroupsRequest extends com.amazonaws.AmazonWebServiceRequ
      *        If this parameter is set to <code>true</code> and <code>accountIdentifiers</code> contains a null value,
      *        the operation returns all log groups in the monitoring account and all log groups in all source accounts
      *        that are linked to the monitoring account.
-     *        </p>
-     *        <note>
-     *        <p>
-     *        If you specify <code>includeLinkedAccounts</code> in your request, then <code>metricFilterCount</code>,
-     *        <code>retentionInDays</code>, and <code>storedBytes</code> are not included in the response.
-     *        </p>
      */
 
     public void setIncludeLinkedAccounts(Boolean includeLinkedAccounts) {
@@ -455,12 +468,6 @@ public class DescribeLogGroupsRequest extends com.amazonaws.AmazonWebServiceRequ
      * operation returns all log groups in the monitoring account and all log groups in all source accounts that are
      * linked to the monitoring account.
      * </p>
-     * <note>
-     * <p>
-     * If you specify <code>includeLinkedAccounts</code> in your request, then <code>metricFilterCount</code>,
-     * <code>retentionInDays</code>, and <code>storedBytes</code> are not included in the response.
-     * </p>
-     * </note>
      * 
      * @return If you are using a monitoring account, set this to <code>True</code> to have the operation return log
      *         groups in the accounts listed in <code>accountIdentifiers</code>.</p>
@@ -468,12 +475,6 @@ public class DescribeLogGroupsRequest extends com.amazonaws.AmazonWebServiceRequ
      *         If this parameter is set to <code>true</code> and <code>accountIdentifiers</code> contains a null value,
      *         the operation returns all log groups in the monitoring account and all log groups in all source accounts
      *         that are linked to the monitoring account.
-     *         </p>
-     *         <note>
-     *         <p>
-     *         If you specify <code>includeLinkedAccounts</code> in your request, then <code>metricFilterCount</code>,
-     *         <code>retentionInDays</code>, and <code>storedBytes</code> are not included in the response.
-     *         </p>
      */
 
     public Boolean getIncludeLinkedAccounts() {
@@ -490,12 +491,6 @@ public class DescribeLogGroupsRequest extends com.amazonaws.AmazonWebServiceRequ
      * operation returns all log groups in the monitoring account and all log groups in all source accounts that are
      * linked to the monitoring account.
      * </p>
-     * <note>
-     * <p>
-     * If you specify <code>includeLinkedAccounts</code> in your request, then <code>metricFilterCount</code>,
-     * <code>retentionInDays</code>, and <code>storedBytes</code> are not included in the response.
-     * </p>
-     * </note>
      * 
      * @param includeLinkedAccounts
      *        If you are using a monitoring account, set this to <code>True</code> to have the operation return log
@@ -504,12 +499,6 @@ public class DescribeLogGroupsRequest extends com.amazonaws.AmazonWebServiceRequ
      *        If this parameter is set to <code>true</code> and <code>accountIdentifiers</code> contains a null value,
      *        the operation returns all log groups in the monitoring account and all log groups in all source accounts
      *        that are linked to the monitoring account.
-     *        </p>
-     *        <note>
-     *        <p>
-     *        If you specify <code>includeLinkedAccounts</code> in your request, then <code>metricFilterCount</code>,
-     *        <code>retentionInDays</code>, and <code>storedBytes</code> are not included in the response.
-     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -528,12 +517,6 @@ public class DescribeLogGroupsRequest extends com.amazonaws.AmazonWebServiceRequ
      * operation returns all log groups in the monitoring account and all log groups in all source accounts that are
      * linked to the monitoring account.
      * </p>
-     * <note>
-     * <p>
-     * If you specify <code>includeLinkedAccounts</code> in your request, then <code>metricFilterCount</code>,
-     * <code>retentionInDays</code>, and <code>storedBytes</code> are not included in the response.
-     * </p>
-     * </note>
      * 
      * @return If you are using a monitoring account, set this to <code>True</code> to have the operation return log
      *         groups in the accounts listed in <code>accountIdentifiers</code>.</p>
@@ -541,12 +524,6 @@ public class DescribeLogGroupsRequest extends com.amazonaws.AmazonWebServiceRequ
      *         If this parameter is set to <code>true</code> and <code>accountIdentifiers</code> contains a null value,
      *         the operation returns all log groups in the monitoring account and all log groups in all source accounts
      *         that are linked to the monitoring account.
-     *         </p>
-     *         <note>
-     *         <p>
-     *         If you specify <code>includeLinkedAccounts</code> in your request, then <code>metricFilterCount</code>,
-     *         <code>retentionInDays</code>, and <code>storedBytes</code> are not included in the response.
-     *         </p>
      */
 
     public Boolean isIncludeLinkedAccounts() {

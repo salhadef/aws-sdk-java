@@ -60,6 +60,13 @@ public class PivotTableCellConditionalFormattingJsonUnmarshaller implements Unma
                     context.nextToken();
                     pivotTableCellConditionalFormatting.setScope(PivotTableConditionalFormattingScopeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Scopes", targetDepth)) {
+                    context.nextToken();
+                    pivotTableCellConditionalFormatting.setScopes(new ListUnmarshaller<PivotTableConditionalFormattingScope>(
+                            PivotTableConditionalFormattingScopeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

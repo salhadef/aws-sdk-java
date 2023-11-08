@@ -32,6 +32,10 @@ public class ServerCertificateConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServerCertificates").build();
     private static final MarshallingInfo<List> SCOPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Scopes").build();
+    private static final MarshallingInfo<String> CERTIFICATEAUTHORITYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CertificateAuthorityArn").build();
+    private static final MarshallingInfo<StructuredPojo> CHECKCERTIFICATEREVOCATIONSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CheckCertificateRevocationStatus").build();
 
     private static final ServerCertificateConfigurationMarshaller instance = new ServerCertificateConfigurationMarshaller();
 
@@ -51,6 +55,8 @@ public class ServerCertificateConfigurationMarshaller {
         try {
             protocolMarshaller.marshall(serverCertificateConfiguration.getServerCertificates(), SERVERCERTIFICATES_BINDING);
             protocolMarshaller.marshall(serverCertificateConfiguration.getScopes(), SCOPES_BINDING);
+            protocolMarshaller.marshall(serverCertificateConfiguration.getCertificateAuthorityArn(), CERTIFICATEAUTHORITYARN_BINDING);
+            protocolMarshaller.marshall(serverCertificateConfiguration.getCheckCertificateRevocationStatus(), CHECKCERTIFICATEREVOCATIONSTATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -96,6 +96,10 @@ public class CreateFileSystemWindowsConfigurationJsonUnmarshaller implements Unm
                     createFileSystemWindowsConfiguration.setAuditLogConfiguration(WindowsAuditLogCreateConfigurationJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
+                if (context.testExpression("DiskIopsConfiguration", targetDepth)) {
+                    context.nextToken();
+                    createFileSystemWindowsConfiguration.setDiskIopsConfiguration(DiskIopsConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

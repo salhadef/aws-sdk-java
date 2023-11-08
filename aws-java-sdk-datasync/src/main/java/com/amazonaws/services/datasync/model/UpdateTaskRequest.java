@@ -73,6 +73,13 @@ public class UpdateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private java.util.List<FilterRule> includes;
+    /**
+     * <p>
+     * Specifies how you want to configure a task report, which provides detailed information about for your DataSync
+     * transfer.
+     * </p>
+     */
+    private TaskReportConfig taskReportConfig;
 
     /**
      * <p>
@@ -456,6 +463,52 @@ public class UpdateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * Specifies how you want to configure a task report, which provides detailed information about for your DataSync
+     * transfer.
+     * </p>
+     * 
+     * @param taskReportConfig
+     *        Specifies how you want to configure a task report, which provides detailed information about for your
+     *        DataSync transfer.
+     */
+
+    public void setTaskReportConfig(TaskReportConfig taskReportConfig) {
+        this.taskReportConfig = taskReportConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies how you want to configure a task report, which provides detailed information about for your DataSync
+     * transfer.
+     * </p>
+     * 
+     * @return Specifies how you want to configure a task report, which provides detailed information about for your
+     *         DataSync transfer.
+     */
+
+    public TaskReportConfig getTaskReportConfig() {
+        return this.taskReportConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies how you want to configure a task report, which provides detailed information about for your DataSync
+     * transfer.
+     * </p>
+     * 
+     * @param taskReportConfig
+     *        Specifies how you want to configure a task report, which provides detailed information about for your
+     *        DataSync transfer.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateTaskRequest withTaskReportConfig(TaskReportConfig taskReportConfig) {
+        setTaskReportConfig(taskReportConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -480,7 +533,9 @@ public class UpdateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getCloudWatchLogGroupArn() != null)
             sb.append("CloudWatchLogGroupArn: ").append(getCloudWatchLogGroupArn()).append(",");
         if (getIncludes() != null)
-            sb.append("Includes: ").append(getIncludes());
+            sb.append("Includes: ").append(getIncludes()).append(",");
+        if (getTaskReportConfig() != null)
+            sb.append("TaskReportConfig: ").append(getTaskReportConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -523,6 +578,10 @@ public class UpdateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getIncludes() != null && other.getIncludes().equals(this.getIncludes()) == false)
             return false;
+        if (other.getTaskReportConfig() == null ^ this.getTaskReportConfig() == null)
+            return false;
+        if (other.getTaskReportConfig() != null && other.getTaskReportConfig().equals(this.getTaskReportConfig()) == false)
+            return false;
         return true;
     }
 
@@ -538,6 +597,7 @@ public class UpdateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getCloudWatchLogGroupArn() == null) ? 0 : getCloudWatchLogGroupArn().hashCode());
         hashCode = prime * hashCode + ((getIncludes() == null) ? 0 : getIncludes().hashCode());
+        hashCode = prime * hashCode + ((getTaskReportConfig() == null) ? 0 : getTaskReportConfig().hashCode());
         return hashCode;
     }
 

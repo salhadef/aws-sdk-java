@@ -68,6 +68,12 @@ public class SolutionConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private OptimizationObjective optimizationObjective;
+    /**
+     * <p>
+     * Specifies the training data configuration to use when creating a custom solution version (trained model).
+     * </p>
+     */
+    private TrainingDataConfig trainingDataConfig;
 
     /**
      * <p>
@@ -390,6 +396,46 @@ public class SolutionConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Specifies the training data configuration to use when creating a custom solution version (trained model).
+     * </p>
+     * 
+     * @param trainingDataConfig
+     *        Specifies the training data configuration to use when creating a custom solution version (trained model).
+     */
+
+    public void setTrainingDataConfig(TrainingDataConfig trainingDataConfig) {
+        this.trainingDataConfig = trainingDataConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies the training data configuration to use when creating a custom solution version (trained model).
+     * </p>
+     * 
+     * @return Specifies the training data configuration to use when creating a custom solution version (trained model).
+     */
+
+    public TrainingDataConfig getTrainingDataConfig() {
+        return this.trainingDataConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies the training data configuration to use when creating a custom solution version (trained model).
+     * </p>
+     * 
+     * @param trainingDataConfig
+     *        Specifies the training data configuration to use when creating a custom solution version (trained model).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SolutionConfig withTrainingDataConfig(TrainingDataConfig trainingDataConfig) {
+        setTrainingDataConfig(trainingDataConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -412,7 +458,9 @@ public class SolutionConfig implements Serializable, Cloneable, StructuredPojo {
         if (getAutoMLConfig() != null)
             sb.append("AutoMLConfig: ").append(getAutoMLConfig()).append(",");
         if (getOptimizationObjective() != null)
-            sb.append("OptimizationObjective: ").append(getOptimizationObjective());
+            sb.append("OptimizationObjective: ").append(getOptimizationObjective()).append(",");
+        if (getTrainingDataConfig() != null)
+            sb.append("TrainingDataConfig: ").append(getTrainingDataConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -452,6 +500,10 @@ public class SolutionConfig implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getOptimizationObjective() != null && other.getOptimizationObjective().equals(this.getOptimizationObjective()) == false)
             return false;
+        if (other.getTrainingDataConfig() == null ^ this.getTrainingDataConfig() == null)
+            return false;
+        if (other.getTrainingDataConfig() != null && other.getTrainingDataConfig().equals(this.getTrainingDataConfig()) == false)
+            return false;
         return true;
     }
 
@@ -466,6 +518,7 @@ public class SolutionConfig implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getFeatureTransformationParameters() == null) ? 0 : getFeatureTransformationParameters().hashCode());
         hashCode = prime * hashCode + ((getAutoMLConfig() == null) ? 0 : getAutoMLConfig().hashCode());
         hashCode = prime * hashCode + ((getOptimizationObjective() == null) ? 0 : getOptimizationObjective().hashCode());
+        hashCode = prime * hashCode + ((getTrainingDataConfig() == null) ? 0 : getTrainingDataConfig().hashCode());
         return hashCode;
     }
 

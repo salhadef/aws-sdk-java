@@ -60,6 +60,10 @@ public class AddressJsonUnmarshaller implements Unmarshaller<Address, JsonUnmars
                     context.nextToken();
                     address.setCountry(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("emailAddress", targetDepth)) {
+                    context.nextToken();
+                    address.setEmailAddress(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
                     address.setName(context.getUnmarshaller(String.class).unmarshall(context));

@@ -56,6 +56,15 @@ public class KPIConditionalFormattingOptionJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     kPIConditionalFormattingOption.setProgressBar(KPIProgressBarConditionalFormattingJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ActualValue", targetDepth)) {
+                    context.nextToken();
+                    kPIConditionalFormattingOption.setActualValue(KPIActualValueConditionalFormattingJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ComparisonValue", targetDepth)) {
+                    context.nextToken();
+                    kPIConditionalFormattingOption
+                            .setComparisonValue(KPIComparisonValueConditionalFormattingJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

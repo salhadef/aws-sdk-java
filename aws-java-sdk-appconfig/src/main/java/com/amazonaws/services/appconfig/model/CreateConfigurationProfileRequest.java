@@ -61,7 +61,13 @@ public class CreateConfigurationProfileRequest extends com.amazonaws.AmazonWebSe
      * </li>
      * <li>
      * <p>
-     * For an Secrets Manager secret, specify the URI in the following format: <code>secrets-manager</code>://&lt;secret
+     * For an Amazon Web Services CodePipeline pipeline, specify the URI in the following format:
+     * <code>codepipeline</code>://&lt;pipeline name&gt;.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an Secrets Manager secret, specify the URI in the following format: <code>secretsmanager</code>://&lt;secret
      * name&gt;.
      * </p>
      * </li>
@@ -121,6 +127,16 @@ public class CreateConfigurationProfileRequest extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private String type;
+    /**
+     * <p>
+     * The identifier for an Key Management Service key to encrypt new configuration data versions in the AppConfig
+     * hosted configuration store. This attribute is only used for <code>hosted</code> configuration types. The
+     * identifier can be an KMS key ID, alias, or the Amazon Resource Name (ARN) of the key ID or alias. To encrypt data
+     * managed in other configuration stores, see the documentation for how to specify an KMS key for that particular
+     * service.
+     * </p>
+     */
+    private String kmsKeyIdentifier;
 
     /**
      * <p>
@@ -260,7 +276,13 @@ public class CreateConfigurationProfileRequest extends com.amazonaws.AmazonWebSe
      * </li>
      * <li>
      * <p>
-     * For an Secrets Manager secret, specify the URI in the following format: <code>secrets-manager</code>://&lt;secret
+     * For an Amazon Web Services CodePipeline pipeline, specify the URI in the following format:
+     * <code>codepipeline</code>://&lt;pipeline name&gt;.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an Secrets Manager secret, specify the URI in the following format: <code>secretsmanager</code>://&lt;secret
      * name&gt;.
      * </p>
      * </li>
@@ -295,7 +317,13 @@ public class CreateConfigurationProfileRequest extends com.amazonaws.AmazonWebSe
      *        </li>
      *        <li>
      *        <p>
-     *        For an Secrets Manager secret, specify the URI in the following format: <code>secrets-manager</code>
+     *        For an Amazon Web Services CodePipeline pipeline, specify the URI in the following format:
+     *        <code>codepipeline</code>://&lt;pipeline name&gt;.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For an Secrets Manager secret, specify the URI in the following format: <code>secretsmanager</code>
      *        ://&lt;secret name&gt;.
      *        </p>
      *        </li>
@@ -336,7 +364,13 @@ public class CreateConfigurationProfileRequest extends com.amazonaws.AmazonWebSe
      * </li>
      * <li>
      * <p>
-     * For an Secrets Manager secret, specify the URI in the following format: <code>secrets-manager</code>://&lt;secret
+     * For an Amazon Web Services CodePipeline pipeline, specify the URI in the following format:
+     * <code>codepipeline</code>://&lt;pipeline name&gt;.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an Secrets Manager secret, specify the URI in the following format: <code>secretsmanager</code>://&lt;secret
      * name&gt;.
      * </p>
      * </li>
@@ -370,7 +404,13 @@ public class CreateConfigurationProfileRequest extends com.amazonaws.AmazonWebSe
      *         </li>
      *         <li>
      *         <p>
-     *         For an Secrets Manager secret, specify the URI in the following format: <code>secrets-manager</code>
+     *         For an Amazon Web Services CodePipeline pipeline, specify the URI in the following format:
+     *         <code>codepipeline</code>://&lt;pipeline name&gt;.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For an Secrets Manager secret, specify the URI in the following format: <code>secretsmanager</code>
      *         ://&lt;secret name&gt;.
      *         </p>
      *         </li>
@@ -411,7 +451,13 @@ public class CreateConfigurationProfileRequest extends com.amazonaws.AmazonWebSe
      * </li>
      * <li>
      * <p>
-     * For an Secrets Manager secret, specify the URI in the following format: <code>secrets-manager</code>://&lt;secret
+     * For an Amazon Web Services CodePipeline pipeline, specify the URI in the following format:
+     * <code>codepipeline</code>://&lt;pipeline name&gt;.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an Secrets Manager secret, specify the URI in the following format: <code>secretsmanager</code>://&lt;secret
      * name&gt;.
      * </p>
      * </li>
@@ -446,7 +492,13 @@ public class CreateConfigurationProfileRequest extends com.amazonaws.AmazonWebSe
      *        </li>
      *        <li>
      *        <p>
-     *        For an Secrets Manager secret, specify the URI in the following format: <code>secrets-manager</code>
+     *        For an Amazon Web Services CodePipeline pipeline, specify the URI in the following format:
+     *        <code>codepipeline</code>://&lt;pipeline name&gt;.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For an Secrets Manager secret, specify the URI in the following format: <code>secretsmanager</code>
      *        ://&lt;secret name&gt;.
      *        </p>
      *        </li>
@@ -780,6 +832,70 @@ public class CreateConfigurationProfileRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * The identifier for an Key Management Service key to encrypt new configuration data versions in the AppConfig
+     * hosted configuration store. This attribute is only used for <code>hosted</code> configuration types. The
+     * identifier can be an KMS key ID, alias, or the Amazon Resource Name (ARN) of the key ID or alias. To encrypt data
+     * managed in other configuration stores, see the documentation for how to specify an KMS key for that particular
+     * service.
+     * </p>
+     * 
+     * @param kmsKeyIdentifier
+     *        The identifier for an Key Management Service key to encrypt new configuration data versions in the
+     *        AppConfig hosted configuration store. This attribute is only used for <code>hosted</code> configuration
+     *        types. The identifier can be an KMS key ID, alias, or the Amazon Resource Name (ARN) of the key ID or
+     *        alias. To encrypt data managed in other configuration stores, see the documentation for how to specify an
+     *        KMS key for that particular service.
+     */
+
+    public void setKmsKeyIdentifier(String kmsKeyIdentifier) {
+        this.kmsKeyIdentifier = kmsKeyIdentifier;
+    }
+
+    /**
+     * <p>
+     * The identifier for an Key Management Service key to encrypt new configuration data versions in the AppConfig
+     * hosted configuration store. This attribute is only used for <code>hosted</code> configuration types. The
+     * identifier can be an KMS key ID, alias, or the Amazon Resource Name (ARN) of the key ID or alias. To encrypt data
+     * managed in other configuration stores, see the documentation for how to specify an KMS key for that particular
+     * service.
+     * </p>
+     * 
+     * @return The identifier for an Key Management Service key to encrypt new configuration data versions in the
+     *         AppConfig hosted configuration store. This attribute is only used for <code>hosted</code> configuration
+     *         types. The identifier can be an KMS key ID, alias, or the Amazon Resource Name (ARN) of the key ID or
+     *         alias. To encrypt data managed in other configuration stores, see the documentation for how to specify an
+     *         KMS key for that particular service.
+     */
+
+    public String getKmsKeyIdentifier() {
+        return this.kmsKeyIdentifier;
+    }
+
+    /**
+     * <p>
+     * The identifier for an Key Management Service key to encrypt new configuration data versions in the AppConfig
+     * hosted configuration store. This attribute is only used for <code>hosted</code> configuration types. The
+     * identifier can be an KMS key ID, alias, or the Amazon Resource Name (ARN) of the key ID or alias. To encrypt data
+     * managed in other configuration stores, see the documentation for how to specify an KMS key for that particular
+     * service.
+     * </p>
+     * 
+     * @param kmsKeyIdentifier
+     *        The identifier for an Key Management Service key to encrypt new configuration data versions in the
+     *        AppConfig hosted configuration store. This attribute is only used for <code>hosted</code> configuration
+     *        types. The identifier can be an KMS key ID, alias, or the Amazon Resource Name (ARN) of the key ID or
+     *        alias. To encrypt data managed in other configuration stores, see the documentation for how to specify an
+     *        KMS key for that particular service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateConfigurationProfileRequest withKmsKeyIdentifier(String kmsKeyIdentifier) {
+        setKmsKeyIdentifier(kmsKeyIdentifier);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -806,7 +922,9 @@ public class CreateConfigurationProfileRequest extends com.amazonaws.AmazonWebSe
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getType() != null)
-            sb.append("Type: ").append(getType());
+            sb.append("Type: ").append(getType()).append(",");
+        if (getKmsKeyIdentifier() != null)
+            sb.append("KmsKeyIdentifier: ").append(getKmsKeyIdentifier());
         sb.append("}");
         return sb.toString();
     }
@@ -853,6 +971,10 @@ public class CreateConfigurationProfileRequest extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
+        if (other.getKmsKeyIdentifier() == null ^ this.getKmsKeyIdentifier() == null)
+            return false;
+        if (other.getKmsKeyIdentifier() != null && other.getKmsKeyIdentifier().equals(this.getKmsKeyIdentifier()) == false)
+            return false;
         return true;
     }
 
@@ -869,6 +991,7 @@ public class CreateConfigurationProfileRequest extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getValidators() == null) ? 0 : getValidators().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyIdentifier() == null) ? 0 : getKmsKeyIdentifier().hashCode());
         return hashCode;
     }
 

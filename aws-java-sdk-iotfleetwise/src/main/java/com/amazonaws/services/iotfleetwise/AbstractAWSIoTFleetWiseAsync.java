@@ -262,6 +262,19 @@ public class AbstractAWSIoTFleetWiseAsync extends AbstractAWSIoTFleetWise implem
     }
 
     @Override
+    public java.util.concurrent.Future<GetEncryptionConfigurationResult> getEncryptionConfigurationAsync(GetEncryptionConfigurationRequest request) {
+
+        return getEncryptionConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEncryptionConfigurationResult> getEncryptionConfigurationAsync(GetEncryptionConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetEncryptionConfigurationRequest, GetEncryptionConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetFleetResult> getFleetAsync(GetFleetRequest request) {
 
         return getFleetAsync(request, null);
@@ -545,6 +558,19 @@ public class AbstractAWSIoTFleetWiseAsync extends AbstractAWSIoTFleetWise implem
     @Override
     public java.util.concurrent.Future<ListVehiclesInFleetResult> listVehiclesInFleetAsync(ListVehiclesInFleetRequest request,
             com.amazonaws.handlers.AsyncHandler<ListVehiclesInFleetRequest, ListVehiclesInFleetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutEncryptionConfigurationResult> putEncryptionConfigurationAsync(PutEncryptionConfigurationRequest request) {
+
+        return putEncryptionConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutEncryptionConfigurationResult> putEncryptionConfigurationAsync(PutEncryptionConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutEncryptionConfigurationRequest, PutEncryptionConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

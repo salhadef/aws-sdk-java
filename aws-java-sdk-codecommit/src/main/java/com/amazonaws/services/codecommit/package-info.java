@@ -12,13 +12,13 @@
  */
 
 /**
- * <fullname>AWS CodeCommit</fullname>
+ * <fullname>CodeCommit</fullname>
  * <p>
- * This is the <i>AWS CodeCommit API Reference</i>. This reference provides descriptions of the operations and data
- * types for AWS CodeCommit API along with usage examples.
+ * This is the <i>CodeCommit API Reference</i>. This reference provides descriptions of the operations and data types
+ * for CodeCommit API along with usage examples.
  * </p>
  * <p>
- * You can use the AWS CodeCommit API to work with the following objects:
+ * You can use the CodeCommit API to work with the following objects:
  * </p>
  * <p>
  * Repositories, by calling the following:
@@ -26,18 +26,18 @@
  * <ul>
  * <li>
  * <p>
- * <a>BatchGetRepositories</a>, which returns information about one or more repositories associated with your AWS
- * account.
+ * <a>BatchGetRepositories</a>, which returns information about one or more repositories associated with your Amazon Web
+ * Services account.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>CreateRepository</a>, which creates an AWS CodeCommit repository.
+ * <a>CreateRepository</a>, which creates an CodeCommit repository.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DeleteRepository</a>, which deletes an AWS CodeCommit repository.
+ * <a>DeleteRepository</a>, which deletes an CodeCommit repository.
  * </p>
  * </li>
  * <li>
@@ -47,7 +47,7 @@
  * </li>
  * <li>
  * <p>
- * <a>ListRepositories</a>, which lists all AWS CodeCommit repositories associated with your AWS account.
+ * <a>ListRepositories</a>, which lists all CodeCommit repositories associated with your Amazon Web Services account.
  * </p>
  * </li>
  * <li>
@@ -114,6 +114,11 @@
  * <li>
  * <p>
  * <a>GetFolder</a>, which returns the contents of a specified folder or directory.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListFileCommitHistory</a>, which retrieves a list of commits and changes to a specified file.
  * </p>
  * </li>
  * <li>
@@ -276,7 +281,7 @@
  * </li>
  * <li>
  * <p>
- * <a>MergePullRequestByThreeWay</a>. which merges the source destination branch of a pull request into the specified
+ * <a>MergePullRequestByThreeWay</a>, which merges the source destination branch of a pull request into the specified
  * destination branch for that pull request using the three-way merge option.
  * </p>
  * </li>
@@ -323,15 +328,15 @@
  * <li>
  * <p>
  * <a>AssociateApprovalRuleTemplateWithRepository</a>, which associates a template with a specified repository. After
- * the template is associated with a repository, AWS CodeCommit creates approval rules that match the template
- * conditions on every pull request created in the specified repository.
+ * the template is associated with a repository, CodeCommit creates approval rules that match the template conditions on
+ * every pull request created in the specified repository.
  * </p>
  * </li>
  * <li>
  * <p>
  * <a>BatchAssociateApprovalRuleTemplateWithRepositories</a>, which associates a template with one or more specified
- * repositories. After the template is associated with a repository, AWS CodeCommit creates approval rules that match
- * the template conditions on every pull request created in the specified repositories.
+ * repositories. After the template is associated with a repository, CodeCommit creates approval rules that match the
+ * template conditions on every pull request created in the specified repositories.
  * </p>
  * </li>
  * <li>
@@ -344,7 +349,7 @@
  * <li>
  * <p>
  * <a>CreateApprovalRuleTemplate</a>, which creates a template for approval rules that can then be associated with one
- * or more repositories in your AWS account.
+ * or more repositories in your Amazon Web Services account.
  * </p>
  * </li>
  * <li>
@@ -367,7 +372,8 @@
  * </li>
  * <li>
  * <p>
- * <a>ListApprovalRuleTemplates</a>, which lists all approval rule templates in the AWS Region in your AWS account.
+ * <a>ListApprovalRuleTemplates</a>, which lists all approval rule templates in the Amazon Web Services Region in your
+ * Amazon Web Services account.
  * </p>
  * </li>
  * <li>
@@ -446,23 +452,23 @@
  * </li>
  * </ul>
  * <p>
- * Tags used to tag resources in AWS CodeCommit (not Git tags), by calling the following:
+ * Tags used to tag resources in CodeCommit (not Git tags), by calling the following:
  * </p>
  * <ul>
  * <li>
  * <p>
- * <a>ListTagsForResource</a>, which gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS
- * CodeCommit.
+ * <a>ListTagsForResource</a>, which gets information about Amazon Web Servicestags for a specified Amazon Resource Name
+ * (ARN) in CodeCommit.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>TagResource</a>, which adds or updates tags for a resource in AWS CodeCommit.
+ * <a>TagResource</a>, which adds or updates tags for a resource in CodeCommit.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>UntagResource</a>, which removes tags for a resource in AWS CodeCommit.
+ * <a>UntagResource</a>, which removes tags for a resource in CodeCommit.
  * </p>
  * </li>
  * </ul>
@@ -489,8 +495,8 @@
  * </li>
  * </ul>
  * <p>
- * For information about how to use AWS CodeCommit, see the <a
- * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit User Guide</a>.
+ * For information about how to use CodeCommit, see the <a
+ * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">CodeCommit User Guide</a>.
  * </p>
  */
 package com.amazonaws.services.codecommit;

@@ -51,6 +51,10 @@ public class ServiceQuotaMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Period").build();
     private static final MarshallingInfo<StructuredPojo> ERRORREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ErrorReason").build();
+    private static final MarshallingInfo<String> QUOTAAPPLIEDATLEVEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("QuotaAppliedAtLevel").build();
+    private static final MarshallingInfo<StructuredPojo> QUOTACONTEXT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("QuotaContext").build();
 
     private static final ServiceQuotaMarshaller instance = new ServiceQuotaMarshaller();
 
@@ -80,6 +84,8 @@ public class ServiceQuotaMarshaller {
             protocolMarshaller.marshall(serviceQuota.getUsageMetric(), USAGEMETRIC_BINDING);
             protocolMarshaller.marshall(serviceQuota.getPeriod(), PERIOD_BINDING);
             protocolMarshaller.marshall(serviceQuota.getErrorReason(), ERRORREASON_BINDING);
+            protocolMarshaller.marshall(serviceQuota.getQuotaAppliedAtLevel(), QUOTAAPPLIEDATLEVEL_BINDING);
+            protocolMarshaller.marshall(serviceQuota.getQuotaContext(), QUOTACONTEXT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

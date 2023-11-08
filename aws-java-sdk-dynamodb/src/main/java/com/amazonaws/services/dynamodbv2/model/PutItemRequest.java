@@ -256,6 +256,17 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      */
     private java.util.Map<String, AttributeValue> expressionAttributeValues;
+    /**
+     * <p>
+     * An optional parameter that returns the item attributes for a <code>PutItem</code> operation that failed a
+     * condition check.
+     * </p>
+     * <p>
+     * There is no additional cost associated with requesting a return value aside from the small network and processing
+     * overhead of receiving a larger response. No read capacity units are consumed.
+     * </p>
+     */
+    private String returnValuesOnConditionCheckFailure;
 
     /**
      * Default constructor for PutItemRequest object. Callers should use the setter or fluent setter (with...) methods
@@ -2212,6 +2223,124 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
     }
 
     /**
+     * <p>
+     * An optional parameter that returns the item attributes for a <code>PutItem</code> operation that failed a
+     * condition check.
+     * </p>
+     * <p>
+     * There is no additional cost associated with requesting a return value aside from the small network and processing
+     * overhead of receiving a larger response. No read capacity units are consumed.
+     * </p>
+     * 
+     * @param returnValuesOnConditionCheckFailure
+     *        An optional parameter that returns the item attributes for a <code>PutItem</code> operation that failed a
+     *        condition check.</p>
+     *        <p>
+     *        There is no additional cost associated with requesting a return value aside from the small network and
+     *        processing overhead of receiving a larger response. No read capacity units are consumed.
+     * @see ReturnValuesOnConditionCheckFailure
+     */
+
+    public void setReturnValuesOnConditionCheckFailure(String returnValuesOnConditionCheckFailure) {
+        this.returnValuesOnConditionCheckFailure = returnValuesOnConditionCheckFailure;
+    }
+
+    /**
+     * <p>
+     * An optional parameter that returns the item attributes for a <code>PutItem</code> operation that failed a
+     * condition check.
+     * </p>
+     * <p>
+     * There is no additional cost associated with requesting a return value aside from the small network and processing
+     * overhead of receiving a larger response. No read capacity units are consumed.
+     * </p>
+     * 
+     * @return An optional parameter that returns the item attributes for a <code>PutItem</code> operation that failed a
+     *         condition check.</p>
+     *         <p>
+     *         There is no additional cost associated with requesting a return value aside from the small network and
+     *         processing overhead of receiving a larger response. No read capacity units are consumed.
+     * @see ReturnValuesOnConditionCheckFailure
+     */
+
+    public String getReturnValuesOnConditionCheckFailure() {
+        return this.returnValuesOnConditionCheckFailure;
+    }
+
+    /**
+     * <p>
+     * An optional parameter that returns the item attributes for a <code>PutItem</code> operation that failed a
+     * condition check.
+     * </p>
+     * <p>
+     * There is no additional cost associated with requesting a return value aside from the small network and processing
+     * overhead of receiving a larger response. No read capacity units are consumed.
+     * </p>
+     * 
+     * @param returnValuesOnConditionCheckFailure
+     *        An optional parameter that returns the item attributes for a <code>PutItem</code> operation that failed a
+     *        condition check.</p>
+     *        <p>
+     *        There is no additional cost associated with requesting a return value aside from the small network and
+     *        processing overhead of receiving a larger response. No read capacity units are consumed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReturnValuesOnConditionCheckFailure
+     */
+
+    public PutItemRequest withReturnValuesOnConditionCheckFailure(String returnValuesOnConditionCheckFailure) {
+        setReturnValuesOnConditionCheckFailure(returnValuesOnConditionCheckFailure);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An optional parameter that returns the item attributes for a <code>PutItem</code> operation that failed a
+     * condition check.
+     * </p>
+     * <p>
+     * There is no additional cost associated with requesting a return value aside from the small network and processing
+     * overhead of receiving a larger response. No read capacity units are consumed.
+     * </p>
+     * 
+     * @param returnValuesOnConditionCheckFailure
+     *        An optional parameter that returns the item attributes for a <code>PutItem</code> operation that failed a
+     *        condition check.</p>
+     *        <p>
+     *        There is no additional cost associated with requesting a return value aside from the small network and
+     *        processing overhead of receiving a larger response. No read capacity units are consumed.
+     * @see ReturnValuesOnConditionCheckFailure
+     */
+
+    public void setReturnValuesOnConditionCheckFailure(ReturnValuesOnConditionCheckFailure returnValuesOnConditionCheckFailure) {
+        withReturnValuesOnConditionCheckFailure(returnValuesOnConditionCheckFailure);
+    }
+
+    /**
+     * <p>
+     * An optional parameter that returns the item attributes for a <code>PutItem</code> operation that failed a
+     * condition check.
+     * </p>
+     * <p>
+     * There is no additional cost associated with requesting a return value aside from the small network and processing
+     * overhead of receiving a larger response. No read capacity units are consumed.
+     * </p>
+     * 
+     * @param returnValuesOnConditionCheckFailure
+     *        An optional parameter that returns the item attributes for a <code>PutItem</code> operation that failed a
+     *        condition check.</p>
+     *        <p>
+     *        There is no additional cost associated with requesting a return value aside from the small network and
+     *        processing overhead of receiving a larger response. No read capacity units are consumed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReturnValuesOnConditionCheckFailure
+     */
+
+    public PutItemRequest withReturnValuesOnConditionCheckFailure(ReturnValuesOnConditionCheckFailure returnValuesOnConditionCheckFailure) {
+        this.returnValuesOnConditionCheckFailure = returnValuesOnConditionCheckFailure.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2242,7 +2371,9 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
         if (getExpressionAttributeNames() != null)
             sb.append("ExpressionAttributeNames: ").append(getExpressionAttributeNames()).append(",");
         if (getExpressionAttributeValues() != null)
-            sb.append("ExpressionAttributeValues: ").append(getExpressionAttributeValues());
+            sb.append("ExpressionAttributeValues: ").append(getExpressionAttributeValues()).append(",");
+        if (getReturnValuesOnConditionCheckFailure() != null)
+            sb.append("ReturnValuesOnConditionCheckFailure: ").append(getReturnValuesOnConditionCheckFailure());
         sb.append("}");
         return sb.toString();
     }
@@ -2297,6 +2428,11 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
             return false;
         if (other.getExpressionAttributeValues() != null && other.getExpressionAttributeValues().equals(this.getExpressionAttributeValues()) == false)
             return false;
+        if (other.getReturnValuesOnConditionCheckFailure() == null ^ this.getReturnValuesOnConditionCheckFailure() == null)
+            return false;
+        if (other.getReturnValuesOnConditionCheckFailure() != null
+                && other.getReturnValuesOnConditionCheckFailure().equals(this.getReturnValuesOnConditionCheckFailure()) == false)
+            return false;
         return true;
     }
 
@@ -2315,6 +2451,7 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
         hashCode = prime * hashCode + ((getConditionExpression() == null) ? 0 : getConditionExpression().hashCode());
         hashCode = prime * hashCode + ((getExpressionAttributeNames() == null) ? 0 : getExpressionAttributeNames().hashCode());
         hashCode = prime * hashCode + ((getExpressionAttributeValues() == null) ? 0 : getExpressionAttributeValues().hashCode());
+        hashCode = prime * hashCode + ((getReturnValuesOnConditionCheckFailure() == null) ? 0 : getReturnValuesOnConditionCheckFailure().hashCode());
         return hashCode;
     }
 

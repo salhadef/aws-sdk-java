@@ -81,11 +81,24 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
     private java.util.List<Tag> tags;
     /**
      * <p>
-     * For the endpoint type you can choose either IPv4, IPv6. or dual-stack. A dual-stack endpoint means that it will
+     * For the endpoint type you can choose either IPv4, IPv6, or dual-stack. A dual-stack endpoint means that it will
      * resolve via both IPv4 and IPv6. This endpoint type is applied to all IP addresses.
      * </p>
      */
     private String resolverEndpointType;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the
+     * <code>PreferredInstanceType</code>.
+     * </p>
+     */
+    private String outpostArn;
+    /**
+     * <p>
+     * The instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.
+     * </p>
+     */
+    private String preferredInstanceType;
 
     /**
      * <p>
@@ -581,12 +594,12 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * For the endpoint type you can choose either IPv4, IPv6. or dual-stack. A dual-stack endpoint means that it will
+     * For the endpoint type you can choose either IPv4, IPv6, or dual-stack. A dual-stack endpoint means that it will
      * resolve via both IPv4 and IPv6. This endpoint type is applied to all IP addresses.
      * </p>
      * 
      * @param resolverEndpointType
-     *        For the endpoint type you can choose either IPv4, IPv6. or dual-stack. A dual-stack endpoint means that it
+     *        For the endpoint type you can choose either IPv4, IPv6, or dual-stack. A dual-stack endpoint means that it
      *        will resolve via both IPv4 and IPv6. This endpoint type is applied to all IP addresses.
      * @see ResolverEndpointType
      */
@@ -597,11 +610,11 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * For the endpoint type you can choose either IPv4, IPv6. or dual-stack. A dual-stack endpoint means that it will
+     * For the endpoint type you can choose either IPv4, IPv6, or dual-stack. A dual-stack endpoint means that it will
      * resolve via both IPv4 and IPv6. This endpoint type is applied to all IP addresses.
      * </p>
      * 
-     * @return For the endpoint type you can choose either IPv4, IPv6. or dual-stack. A dual-stack endpoint means that
+     * @return For the endpoint type you can choose either IPv4, IPv6, or dual-stack. A dual-stack endpoint means that
      *         it will resolve via both IPv4 and IPv6. This endpoint type is applied to all IP addresses.
      * @see ResolverEndpointType
      */
@@ -612,12 +625,12 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * For the endpoint type you can choose either IPv4, IPv6. or dual-stack. A dual-stack endpoint means that it will
+     * For the endpoint type you can choose either IPv4, IPv6, or dual-stack. A dual-stack endpoint means that it will
      * resolve via both IPv4 and IPv6. This endpoint type is applied to all IP addresses.
      * </p>
      * 
      * @param resolverEndpointType
-     *        For the endpoint type you can choose either IPv4, IPv6. or dual-stack. A dual-stack endpoint means that it
+     *        For the endpoint type you can choose either IPv4, IPv6, or dual-stack. A dual-stack endpoint means that it
      *        will resolve via both IPv4 and IPv6. This endpoint type is applied to all IP addresses.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResolverEndpointType
@@ -630,12 +643,12 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * For the endpoint type you can choose either IPv4, IPv6. or dual-stack. A dual-stack endpoint means that it will
+     * For the endpoint type you can choose either IPv4, IPv6, or dual-stack. A dual-stack endpoint means that it will
      * resolve via both IPv4 and IPv6. This endpoint type is applied to all IP addresses.
      * </p>
      * 
      * @param resolverEndpointType
-     *        For the endpoint type you can choose either IPv4, IPv6. or dual-stack. A dual-stack endpoint means that it
+     *        For the endpoint type you can choose either IPv4, IPv6, or dual-stack. A dual-stack endpoint means that it
      *        will resolve via both IPv4 and IPv6. This endpoint type is applied to all IP addresses.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResolverEndpointType
@@ -643,6 +656,92 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
 
     public CreateResolverEndpointRequest withResolverEndpointType(ResolverEndpointType resolverEndpointType) {
         this.resolverEndpointType = resolverEndpointType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the
+     * <code>PreferredInstanceType</code>.
+     * </p>
+     * 
+     * @param outpostArn
+     *        The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the
+     *        <code>PreferredInstanceType</code>.
+     */
+
+    public void setOutpostArn(String outpostArn) {
+        this.outpostArn = outpostArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the
+     * <code>PreferredInstanceType</code>.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the
+     *         <code>PreferredInstanceType</code>.
+     */
+
+    public String getOutpostArn() {
+        return this.outpostArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the
+     * <code>PreferredInstanceType</code>.
+     * </p>
+     * 
+     * @param outpostArn
+     *        The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the
+     *        <code>PreferredInstanceType</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateResolverEndpointRequest withOutpostArn(String outpostArn) {
+        setOutpostArn(outpostArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.
+     * </p>
+     * 
+     * @param preferredInstanceType
+     *        The instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.
+     */
+
+    public void setPreferredInstanceType(String preferredInstanceType) {
+        this.preferredInstanceType = preferredInstanceType;
+    }
+
+    /**
+     * <p>
+     * The instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.
+     * </p>
+     * 
+     * @return The instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.
+     */
+
+    public String getPreferredInstanceType() {
+        return this.preferredInstanceType;
+    }
+
+    /**
+     * <p>
+     * The instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.
+     * </p>
+     * 
+     * @param preferredInstanceType
+     *        The instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateResolverEndpointRequest withPreferredInstanceType(String preferredInstanceType) {
+        setPreferredInstanceType(preferredInstanceType);
         return this;
     }
 
@@ -671,7 +770,11 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getResolverEndpointType() != null)
-            sb.append("ResolverEndpointType: ").append(getResolverEndpointType());
+            sb.append("ResolverEndpointType: ").append(getResolverEndpointType()).append(",");
+        if (getOutpostArn() != null)
+            sb.append("OutpostArn: ").append(getOutpostArn()).append(",");
+        if (getPreferredInstanceType() != null)
+            sb.append("PreferredInstanceType: ").append(getPreferredInstanceType());
         sb.append("}");
         return sb.toString();
     }
@@ -714,6 +817,14 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getResolverEndpointType() != null && other.getResolverEndpointType().equals(this.getResolverEndpointType()) == false)
             return false;
+        if (other.getOutpostArn() == null ^ this.getOutpostArn() == null)
+            return false;
+        if (other.getOutpostArn() != null && other.getOutpostArn().equals(this.getOutpostArn()) == false)
+            return false;
+        if (other.getPreferredInstanceType() == null ^ this.getPreferredInstanceType() == null)
+            return false;
+        if (other.getPreferredInstanceType() != null && other.getPreferredInstanceType().equals(this.getPreferredInstanceType()) == false)
+            return false;
         return true;
     }
 
@@ -729,6 +840,8 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getIpAddresses() == null) ? 0 : getIpAddresses().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getResolverEndpointType() == null) ? 0 : getResolverEndpointType().hashCode());
+        hashCode = prime * hashCode + ((getOutpostArn() == null) ? 0 : getOutpostArn().hashCode());
+        hashCode = prime * hashCode + ((getPreferredInstanceType() == null) ? 0 : getPreferredInstanceType().hashCode());
         return hashCode;
     }
 

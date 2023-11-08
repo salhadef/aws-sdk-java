@@ -28,7 +28,8 @@ public enum ProcessorParameterName {
     BufferSizeInMBs("BufferSizeInMBs"),
     BufferIntervalInSeconds("BufferIntervalInSeconds"),
     SubRecordType("SubRecordType"),
-    Delimiter("Delimiter");
+    Delimiter("Delimiter"),
+    CompressionFormat("CompressionFormat");
 
     private String value;
 

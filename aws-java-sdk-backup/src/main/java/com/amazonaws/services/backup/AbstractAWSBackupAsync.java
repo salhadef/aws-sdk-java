@@ -105,6 +105,21 @@ public class AbstractAWSBackupAsync extends AbstractAWSBackup implements AWSBack
     }
 
     @Override
+    public java.util.concurrent.Future<CreateLogicallyAirGappedBackupVaultResult> createLogicallyAirGappedBackupVaultAsync(
+            CreateLogicallyAirGappedBackupVaultRequest request) {
+
+        return createLogicallyAirGappedBackupVaultAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLogicallyAirGappedBackupVaultResult> createLogicallyAirGappedBackupVaultAsync(
+            CreateLogicallyAirGappedBackupVaultRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateLogicallyAirGappedBackupVaultRequest, CreateLogicallyAirGappedBackupVaultResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateReportPlanResult> createReportPlanAsync(CreateReportPlanRequest request) {
 
         return createReportPlanAsync(request, null);
@@ -665,6 +680,21 @@ public class AbstractAWSBackupAsync extends AbstractAWSBackup implements AWSBack
     @Override
     public java.util.concurrent.Future<ListProtectedResourcesResult> listProtectedResourcesAsync(ListProtectedResourcesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListProtectedResourcesRequest, ListProtectedResourcesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListProtectedResourcesByBackupVaultResult> listProtectedResourcesByBackupVaultAsync(
+            ListProtectedResourcesByBackupVaultRequest request) {
+
+        return listProtectedResourcesByBackupVaultAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListProtectedResourcesByBackupVaultResult> listProtectedResourcesByBackupVaultAsync(
+            ListProtectedResourcesByBackupVaultRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListProtectedResourcesByBackupVaultRequest, ListProtectedResourcesByBackupVaultResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

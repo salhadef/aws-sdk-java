@@ -29,12 +29,12 @@ public class ListRunTasksRequestMarshaller {
 
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("id").build();
-    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
-            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
-    private static final MarshallingInfo<String> STARTINGTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("startingToken").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("status").build();
+    private static final MarshallingInfo<String> STARTINGTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("startingToken").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
 
     private static final ListRunTasksRequestMarshaller instance = new ListRunTasksRequestMarshaller();
 
@@ -53,9 +53,9 @@ public class ListRunTasksRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(listRunTasksRequest.getId(), ID_BINDING);
-            protocolMarshaller.marshall(listRunTasksRequest.getMaxResults(), MAXRESULTS_BINDING);
-            protocolMarshaller.marshall(listRunTasksRequest.getStartingToken(), STARTINGTOKEN_BINDING);
             protocolMarshaller.marshall(listRunTasksRequest.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(listRunTasksRequest.getStartingToken(), STARTINGTOKEN_BINDING);
+            protocolMarshaller.marshall(listRunTasksRequest.getMaxResults(), MAXRESULTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

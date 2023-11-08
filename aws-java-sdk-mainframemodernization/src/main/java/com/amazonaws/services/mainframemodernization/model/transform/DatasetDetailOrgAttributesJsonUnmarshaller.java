@@ -52,6 +52,14 @@ public class DatasetDetailOrgAttributesJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     datasetDetailOrgAttributes.setGdg(GdgDetailAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("po", targetDepth)) {
+                    context.nextToken();
+                    datasetDetailOrgAttributes.setPo(PoDetailAttributesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ps", targetDepth)) {
+                    context.nextToken();
+                    datasetDetailOrgAttributes.setPs(PsDetailAttributesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("vsam", targetDepth)) {
                     context.nextToken();
                     datasetDetailOrgAttributes.setVsam(VsamDetailAttributesJsonUnmarshaller.getInstance().unmarshall(context));

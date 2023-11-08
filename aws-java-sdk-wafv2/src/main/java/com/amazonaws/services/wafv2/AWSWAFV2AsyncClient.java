@@ -613,6 +613,74 @@ public class AWSWAFV2AsyncClient extends AWSWAFV2Client implements AWSWAFV2Async
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeAllManagedProductsResult> describeAllManagedProductsAsync(DescribeAllManagedProductsRequest request) {
+
+        return describeAllManagedProductsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAllManagedProductsResult> describeAllManagedProductsAsync(final DescribeAllManagedProductsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeAllManagedProductsRequest, DescribeAllManagedProductsResult> asyncHandler) {
+        final DescribeAllManagedProductsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeAllManagedProductsResult>() {
+            @Override
+            public DescribeAllManagedProductsResult call() throws Exception {
+                DescribeAllManagedProductsResult result = null;
+
+                try {
+                    result = executeDescribeAllManagedProducts(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeManagedProductsByVendorResult> describeManagedProductsByVendorAsync(
+            DescribeManagedProductsByVendorRequest request) {
+
+        return describeManagedProductsByVendorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeManagedProductsByVendorResult> describeManagedProductsByVendorAsync(
+            final DescribeManagedProductsByVendorRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeManagedProductsByVendorRequest, DescribeManagedProductsByVendorResult> asyncHandler) {
+        final DescribeManagedProductsByVendorRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeManagedProductsByVendorResult>() {
+            @Override
+            public DescribeManagedProductsByVendorResult call() throws Exception {
+                DescribeManagedProductsByVendorResult result = null;
+
+                try {
+                    result = executeDescribeManagedProductsByVendor(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeManagedRuleGroupResult> describeManagedRuleGroupAsync(DescribeManagedRuleGroupRequest request) {
 
         return describeManagedRuleGroupAsync(request, null);

@@ -40,6 +40,12 @@ public class DataPathValue implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String fieldValue;
+    /**
+     * <p>
+     * The type configuration of the field.
+     * </p>
+     */
+    private DataPathType dataPathType;
 
     /**
      * <p>
@@ -122,6 +128,46 @@ public class DataPathValue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The type configuration of the field.
+     * </p>
+     * 
+     * @param dataPathType
+     *        The type configuration of the field.
+     */
+
+    public void setDataPathType(DataPathType dataPathType) {
+        this.dataPathType = dataPathType;
+    }
+
+    /**
+     * <p>
+     * The type configuration of the field.
+     * </p>
+     * 
+     * @return The type configuration of the field.
+     */
+
+    public DataPathType getDataPathType() {
+        return this.dataPathType;
+    }
+
+    /**
+     * <p>
+     * The type configuration of the field.
+     * </p>
+     * 
+     * @param dataPathType
+     *        The type configuration of the field.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataPathValue withDataPathType(DataPathType dataPathType) {
+        setDataPathType(dataPathType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -136,7 +182,9 @@ public class DataPathValue implements Serializable, Cloneable, StructuredPojo {
         if (getFieldId() != null)
             sb.append("FieldId: ").append(getFieldId()).append(",");
         if (getFieldValue() != null)
-            sb.append("FieldValue: ").append("***Sensitive Data Redacted***");
+            sb.append("FieldValue: ").append("***Sensitive Data Redacted***").append(",");
+        if (getDataPathType() != null)
+            sb.append("DataPathType: ").append(getDataPathType());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +207,10 @@ public class DataPathValue implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getFieldValue() != null && other.getFieldValue().equals(this.getFieldValue()) == false)
             return false;
+        if (other.getDataPathType() == null ^ this.getDataPathType() == null)
+            return false;
+        if (other.getDataPathType() != null && other.getDataPathType().equals(this.getDataPathType()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +221,7 @@ public class DataPathValue implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getFieldId() == null) ? 0 : getFieldId().hashCode());
         hashCode = prime * hashCode + ((getFieldValue() == null) ? 0 : getFieldValue().hashCode());
+        hashCode = prime * hashCode + ((getDataPathType() == null) ? 0 : getDataPathType().hashCode());
         return hashCode;
     }
 

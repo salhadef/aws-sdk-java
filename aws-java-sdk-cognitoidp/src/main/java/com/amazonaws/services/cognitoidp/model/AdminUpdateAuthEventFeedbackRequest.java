@@ -45,7 +45,11 @@ public class AdminUpdateAuthEventFeedbackRequest extends com.amazonaws.AmazonWeb
     private String eventId;
     /**
      * <p>
-     * The authentication event feedback value.
+     * The authentication event feedback value. When you provide a <code>FeedbackValue</code> value of
+     * <code>valid</code>, you tell Amazon Cognito that you trust a user session where Amazon Cognito has evaluated some
+     * level of risk. When you provide a <code>FeedbackValue</code> value of <code>invalid</code>, you tell Amazon
+     * Cognito that you don't trust a user session, or you don't believe that Amazon Cognito evaluated a high-enough
+     * risk level.
      * </p>
      */
     private String feedbackValue;
@@ -172,11 +176,19 @@ public class AdminUpdateAuthEventFeedbackRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The authentication event feedback value.
+     * The authentication event feedback value. When you provide a <code>FeedbackValue</code> value of
+     * <code>valid</code>, you tell Amazon Cognito that you trust a user session where Amazon Cognito has evaluated some
+     * level of risk. When you provide a <code>FeedbackValue</code> value of <code>invalid</code>, you tell Amazon
+     * Cognito that you don't trust a user session, or you don't believe that Amazon Cognito evaluated a high-enough
+     * risk level.
      * </p>
      * 
      * @param feedbackValue
-     *        The authentication event feedback value.
+     *        The authentication event feedback value. When you provide a <code>FeedbackValue</code> value of
+     *        <code>valid</code>, you tell Amazon Cognito that you trust a user session where Amazon Cognito has
+     *        evaluated some level of risk. When you provide a <code>FeedbackValue</code> value of <code>invalid</code>,
+     *        you tell Amazon Cognito that you don't trust a user session, or you don't believe that Amazon Cognito
+     *        evaluated a high-enough risk level.
      * @see FeedbackValueType
      */
 
@@ -186,10 +198,18 @@ public class AdminUpdateAuthEventFeedbackRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The authentication event feedback value.
+     * The authentication event feedback value. When you provide a <code>FeedbackValue</code> value of
+     * <code>valid</code>, you tell Amazon Cognito that you trust a user session where Amazon Cognito has evaluated some
+     * level of risk. When you provide a <code>FeedbackValue</code> value of <code>invalid</code>, you tell Amazon
+     * Cognito that you don't trust a user session, or you don't believe that Amazon Cognito evaluated a high-enough
+     * risk level.
      * </p>
      * 
-     * @return The authentication event feedback value.
+     * @return The authentication event feedback value. When you provide a <code>FeedbackValue</code> value of
+     *         <code>valid</code>, you tell Amazon Cognito that you trust a user session where Amazon Cognito has
+     *         evaluated some level of risk. When you provide a <code>FeedbackValue</code> value of <code>invalid</code>
+     *         , you tell Amazon Cognito that you don't trust a user session, or you don't believe that Amazon Cognito
+     *         evaluated a high-enough risk level.
      * @see FeedbackValueType
      */
 
@@ -199,11 +219,19 @@ public class AdminUpdateAuthEventFeedbackRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The authentication event feedback value.
+     * The authentication event feedback value. When you provide a <code>FeedbackValue</code> value of
+     * <code>valid</code>, you tell Amazon Cognito that you trust a user session where Amazon Cognito has evaluated some
+     * level of risk. When you provide a <code>FeedbackValue</code> value of <code>invalid</code>, you tell Amazon
+     * Cognito that you don't trust a user session, or you don't believe that Amazon Cognito evaluated a high-enough
+     * risk level.
      * </p>
      * 
      * @param feedbackValue
-     *        The authentication event feedback value.
+     *        The authentication event feedback value. When you provide a <code>FeedbackValue</code> value of
+     *        <code>valid</code>, you tell Amazon Cognito that you trust a user session where Amazon Cognito has
+     *        evaluated some level of risk. When you provide a <code>FeedbackValue</code> value of <code>invalid</code>,
+     *        you tell Amazon Cognito that you don't trust a user session, or you don't believe that Amazon Cognito
+     *        evaluated a high-enough risk level.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FeedbackValueType
      */
@@ -215,11 +243,19 @@ public class AdminUpdateAuthEventFeedbackRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The authentication event feedback value.
+     * The authentication event feedback value. When you provide a <code>FeedbackValue</code> value of
+     * <code>valid</code>, you tell Amazon Cognito that you trust a user session where Amazon Cognito has evaluated some
+     * level of risk. When you provide a <code>FeedbackValue</code> value of <code>invalid</code>, you tell Amazon
+     * Cognito that you don't trust a user session, or you don't believe that Amazon Cognito evaluated a high-enough
+     * risk level.
      * </p>
      * 
      * @param feedbackValue
-     *        The authentication event feedback value.
+     *        The authentication event feedback value. When you provide a <code>FeedbackValue</code> value of
+     *        <code>valid</code>, you tell Amazon Cognito that you trust a user session where Amazon Cognito has
+     *        evaluated some level of risk. When you provide a <code>FeedbackValue</code> value of <code>invalid</code>,
+     *        you tell Amazon Cognito that you don't trust a user session, or you don't believe that Amazon Cognito
+     *        evaluated a high-enough risk level.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FeedbackValueType
      */

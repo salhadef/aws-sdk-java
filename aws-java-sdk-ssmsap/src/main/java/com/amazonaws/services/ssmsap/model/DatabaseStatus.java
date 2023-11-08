@@ -24,7 +24,8 @@ public enum DatabaseStatus {
     STARTING("STARTING"),
     STOPPED("STOPPED"),
     WARNING("WARNING"),
-    UNKNOWN("UNKNOWN");
+    UNKNOWN("UNKNOWN"),
+    ERROR("ERROR");
 
     private String value;
 

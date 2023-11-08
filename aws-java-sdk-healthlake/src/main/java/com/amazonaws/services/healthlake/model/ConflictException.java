@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The Data Store is in a transition state and the user requested action can not be performed.
+ * The data store is in a transition state and the user requested action can not be performed.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -45,6 +45,7 @@ import com.amazonaws.services.elastictranscoder.waiters.AmazonElasticTranscoderW
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.elastictranscoder.model.*;
+
 import com.amazonaws.services.elastictranscoder.model.transform.*;
 
 /**

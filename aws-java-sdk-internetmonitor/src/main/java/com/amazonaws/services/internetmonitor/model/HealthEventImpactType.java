@@ -21,7 +21,9 @@ import javax.annotation.Generated;
 public enum HealthEventImpactType {
 
     AVAILABILITY("AVAILABILITY"),
-    PERFORMANCE("PERFORMANCE");
+    PERFORMANCE("PERFORMANCE"),
+    LOCAL_AVAILABILITY("LOCAL_AVAILABILITY"),
+    LOCAL_PERFORMANCE("LOCAL_PERFORMANCE");
 
     private String value;
 

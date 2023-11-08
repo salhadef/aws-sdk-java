@@ -96,6 +96,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * bucket to a local directory in the Docker container, or makes it available as input streams. For example, if you
      * specify an EFS location, input data files are available as input streams. They do not need to be downloaded.
      * </p>
+     * <p>
+     * Your input must be in the same Amazon Web Services region as your training job.
+     * </p>
      */
     private java.util.List<Channel> inputDataConfig;
     /**
@@ -610,6 +613,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * bucket to a local directory in the Docker container, or makes it available as input streams. For example, if you
      * specify an EFS location, input data files are available as input streams. They do not need to be downloaded.
      * </p>
+     * <p>
+     * Your input must be in the same Amazon Web Services region as your training job.
+     * </p>
      * 
      * @return An array of <code>Channel</code> objects. Each channel is a named input source.
      *         <code>InputDataConfig</code> describes the input data and its location. </p>
@@ -625,6 +631,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      *         S3 bucket to a local directory in the Docker container, or makes it available as input streams. For
      *         example, if you specify an EFS location, input data files are available as input streams. They do not
      *         need to be downloaded.
+     *         </p>
+     *         <p>
+     *         Your input must be in the same Amazon Web Services region as your training job.
      */
 
     public java.util.List<Channel> getInputDataConfig() {
@@ -647,6 +656,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * bucket to a local directory in the Docker container, or makes it available as input streams. For example, if you
      * specify an EFS location, input data files are available as input streams. They do not need to be downloaded.
      * </p>
+     * <p>
+     * Your input must be in the same Amazon Web Services region as your training job.
+     * </p>
      * 
      * @param inputDataConfig
      *        An array of <code>Channel</code> objects. Each channel is a named input source.
@@ -663,6 +675,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      *        S3 bucket to a local directory in the Docker container, or makes it available as input streams. For
      *        example, if you specify an EFS location, input data files are available as input streams. They do not need
      *        to be downloaded.
+     *        </p>
+     *        <p>
+     *        Your input must be in the same Amazon Web Services region as your training job.
      */
 
     public void setInputDataConfig(java.util.Collection<Channel> inputDataConfig) {
@@ -691,6 +706,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * specify an EFS location, input data files are available as input streams. They do not need to be downloaded.
      * </p>
      * <p>
+     * Your input must be in the same Amazon Web Services region as your training job.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setInputDataConfig(java.util.Collection)} or {@link #withInputDataConfig(java.util.Collection)} if you
      * want to override the existing values.
@@ -711,6 +729,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      *        S3 bucket to a local directory in the Docker container, or makes it available as input streams. For
      *        example, if you specify an EFS location, input data files are available as input streams. They do not need
      *        to be downloaded.
+     *        </p>
+     *        <p>
+     *        Your input must be in the same Amazon Web Services region as your training job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -740,6 +761,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * bucket to a local directory in the Docker container, or makes it available as input streams. For example, if you
      * specify an EFS location, input data files are available as input streams. They do not need to be downloaded.
      * </p>
+     * <p>
+     * Your input must be in the same Amazon Web Services region as your training job.
+     * </p>
      * 
      * @param inputDataConfig
      *        An array of <code>Channel</code> objects. Each channel is a named input source.
@@ -756,6 +780,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      *        S3 bucket to a local directory in the Docker container, or makes it available as input streams. For
      *        example, if you specify an EFS location, input data files are available as input streams. They do not need
      *        to be downloaded.
+     *        </p>
+     *        <p>
+     *        Your input must be in the same Amazon Web Services region as your training job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

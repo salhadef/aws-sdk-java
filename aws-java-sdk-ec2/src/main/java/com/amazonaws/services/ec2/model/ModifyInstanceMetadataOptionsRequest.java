@@ -82,8 +82,8 @@ public class ModifyInstanceMetadataOptionsRequest extends AmazonWebServiceReques
     private String httpEndpoint;
     /**
      * <p>
-     * Enables or disables the IPv6 endpoint for the instance metadata service. This setting applies only if you have
-     * enabled the HTTP metadata endpoint.
+     * Enables or disables the IPv6 endpoint for the instance metadata service. Applies only if you enabled the HTTP
+     * metadata endpoint.
      * </p>
      */
     private String httpProtocolIpv6;
@@ -522,13 +522,13 @@ public class ModifyInstanceMetadataOptionsRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * Enables or disables the IPv6 endpoint for the instance metadata service. This setting applies only if you have
-     * enabled the HTTP metadata endpoint.
+     * Enables or disables the IPv6 endpoint for the instance metadata service. Applies only if you enabled the HTTP
+     * metadata endpoint.
      * </p>
      * 
      * @param httpProtocolIpv6
-     *        Enables or disables the IPv6 endpoint for the instance metadata service. This setting applies only if you
-     *        have enabled the HTTP metadata endpoint.
+     *        Enables or disables the IPv6 endpoint for the instance metadata service. Applies only if you enabled the
+     *        HTTP metadata endpoint.
      * @see InstanceMetadataProtocolState
      */
 
@@ -538,12 +538,12 @@ public class ModifyInstanceMetadataOptionsRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * Enables or disables the IPv6 endpoint for the instance metadata service. This setting applies only if you have
-     * enabled the HTTP metadata endpoint.
+     * Enables or disables the IPv6 endpoint for the instance metadata service. Applies only if you enabled the HTTP
+     * metadata endpoint.
      * </p>
      * 
-     * @return Enables or disables the IPv6 endpoint for the instance metadata service. This setting applies only if you
-     *         have enabled the HTTP metadata endpoint.
+     * @return Enables or disables the IPv6 endpoint for the instance metadata service. Applies only if you enabled the
+     *         HTTP metadata endpoint.
      * @see InstanceMetadataProtocolState
      */
 
@@ -553,13 +553,13 @@ public class ModifyInstanceMetadataOptionsRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * Enables or disables the IPv6 endpoint for the instance metadata service. This setting applies only if you have
-     * enabled the HTTP metadata endpoint.
+     * Enables or disables the IPv6 endpoint for the instance metadata service. Applies only if you enabled the HTTP
+     * metadata endpoint.
      * </p>
      * 
      * @param httpProtocolIpv6
-     *        Enables or disables the IPv6 endpoint for the instance metadata service. This setting applies only if you
-     *        have enabled the HTTP metadata endpoint.
+     *        Enables or disables the IPv6 endpoint for the instance metadata service. Applies only if you enabled the
+     *        HTTP metadata endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceMetadataProtocolState
      */
@@ -571,13 +571,13 @@ public class ModifyInstanceMetadataOptionsRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * Enables or disables the IPv6 endpoint for the instance metadata service. This setting applies only if you have
-     * enabled the HTTP metadata endpoint.
+     * Enables or disables the IPv6 endpoint for the instance metadata service. Applies only if you enabled the HTTP
+     * metadata endpoint.
      * </p>
      * 
      * @param httpProtocolIpv6
-     *        Enables or disables the IPv6 endpoint for the instance metadata service. This setting applies only if you
-     *        have enabled the HTTP metadata endpoint.
+     *        Enables or disables the IPv6 endpoint for the instance metadata service. Applies only if you enabled the
+     *        HTTP metadata endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceMetadataProtocolState
      */

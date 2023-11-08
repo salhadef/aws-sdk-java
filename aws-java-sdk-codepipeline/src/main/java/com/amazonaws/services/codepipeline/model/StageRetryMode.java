@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum StageRetryMode {
 
-    FAILED_ACTIONS("FAILED_ACTIONS");
+    FAILED_ACTIONS("FAILED_ACTIONS"),
+    ALL_ACTIONS("ALL_ACTIONS");
 
     private String value;
 

@@ -68,6 +68,10 @@ public class TrafficDistributionGroupSummaryJsonUnmarshaller implements Unmarsha
                     context.nextToken();
                     trafficDistributionGroupSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("IsDefault", targetDepth)) {
+                    context.nextToken();
+                    trafficDistributionGroupSummary.setIsDefault(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

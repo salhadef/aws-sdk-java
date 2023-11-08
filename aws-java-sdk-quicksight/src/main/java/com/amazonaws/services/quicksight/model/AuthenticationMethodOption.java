@@ -22,7 +22,8 @@ public enum AuthenticationMethodOption {
 
     IAM_AND_QUICKSIGHT("IAM_AND_QUICKSIGHT"),
     IAM_ONLY("IAM_ONLY"),
-    ACTIVE_DIRECTORY("ACTIVE_DIRECTORY");
+    ACTIVE_DIRECTORY("ACTIVE_DIRECTORY"),
+    IAM_IDENTITY_CENTER("IAM_IDENTITY_CENTER");
 
     private String value;
 

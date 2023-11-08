@@ -54,6 +54,15 @@ public class RedshiftParameters implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private String clusterId;
+    /**
+     * <p>
+     * An optional parameter that uses IAM authentication to grant Amazon QuickSight access to your cluster. This
+     * parameter can be used instead of <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html"
+     * >DataSourceCredentials</a>.
+     * </p>
+     */
+    private RedshiftIAMParameters iAMParameters;
 
     /**
      * <p>
@@ -216,6 +225,64 @@ public class RedshiftParameters implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * An optional parameter that uses IAM authentication to grant Amazon QuickSight access to your cluster. This
+     * parameter can be used instead of <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html"
+     * >DataSourceCredentials</a>.
+     * </p>
+     * 
+     * @param iAMParameters
+     *        An optional parameter that uses IAM authentication to grant Amazon QuickSight access to your cluster. This
+     *        parameter can be used instead of <a
+     *        href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html"
+     *        >DataSourceCredentials</a>.
+     */
+
+    public void setIAMParameters(RedshiftIAMParameters iAMParameters) {
+        this.iAMParameters = iAMParameters;
+    }
+
+    /**
+     * <p>
+     * An optional parameter that uses IAM authentication to grant Amazon QuickSight access to your cluster. This
+     * parameter can be used instead of <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html"
+     * >DataSourceCredentials</a>.
+     * </p>
+     * 
+     * @return An optional parameter that uses IAM authentication to grant Amazon QuickSight access to your cluster.
+     *         This parameter can be used instead of <a
+     *         href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html"
+     *         >DataSourceCredentials</a>.
+     */
+
+    public RedshiftIAMParameters getIAMParameters() {
+        return this.iAMParameters;
+    }
+
+    /**
+     * <p>
+     * An optional parameter that uses IAM authentication to grant Amazon QuickSight access to your cluster. This
+     * parameter can be used instead of <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html"
+     * >DataSourceCredentials</a>.
+     * </p>
+     * 
+     * @param iAMParameters
+     *        An optional parameter that uses IAM authentication to grant Amazon QuickSight access to your cluster. This
+     *        parameter can be used instead of <a
+     *        href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html"
+     *        >DataSourceCredentials</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RedshiftParameters withIAMParameters(RedshiftIAMParameters iAMParameters) {
+        setIAMParameters(iAMParameters);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -234,7 +301,9 @@ public class RedshiftParameters implements Serializable, Cloneable, StructuredPo
         if (getDatabase() != null)
             sb.append("Database: ").append(getDatabase()).append(",");
         if (getClusterId() != null)
-            sb.append("ClusterId: ").append(getClusterId());
+            sb.append("ClusterId: ").append(getClusterId()).append(",");
+        if (getIAMParameters() != null)
+            sb.append("IAMParameters: ").append(getIAMParameters());
         sb.append("}");
         return sb.toString();
     }
@@ -265,6 +334,10 @@ public class RedshiftParameters implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getClusterId() != null && other.getClusterId().equals(this.getClusterId()) == false)
             return false;
+        if (other.getIAMParameters() == null ^ this.getIAMParameters() == null)
+            return false;
+        if (other.getIAMParameters() != null && other.getIAMParameters().equals(this.getIAMParameters()) == false)
+            return false;
         return true;
     }
 
@@ -277,6 +350,7 @@ public class RedshiftParameters implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
         hashCode = prime * hashCode + ((getDatabase() == null) ? 0 : getDatabase().hashCode());
         hashCode = prime * hashCode + ((getClusterId() == null) ? 0 : getClusterId().hashCode());
+        hashCode = prime * hashCode + ((getIAMParameters() == null) ? 0 : getIAMParameters().hashCode());
         return hashCode;
     }
 

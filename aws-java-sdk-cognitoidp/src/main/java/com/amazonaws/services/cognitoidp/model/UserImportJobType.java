@@ -54,7 +54,8 @@ public class UserImportJobType implements Serializable, Cloneable, StructuredPoj
     private String preSignedUrl;
     /**
      * <p>
-     * The date the user import job was created.
+     * The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when
+     * the item was created.
      * </p>
      */
     private java.util.Date creationDate;
@@ -313,11 +314,13 @@ public class UserImportJobType implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The date the user import job was created.
+     * The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when
+     * the item was created.
      * </p>
      * 
      * @param creationDate
-     *        The date the user import job was created.
+     *        The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     *        format, when the item was created.
      */
 
     public void setCreationDate(java.util.Date creationDate) {
@@ -326,10 +329,12 @@ public class UserImportJobType implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The date the user import job was created.
+     * The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when
+     * the item was created.
      * </p>
      * 
-     * @return The date the user import job was created.
+     * @return The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     *         format, when the item was created.
      */
 
     public java.util.Date getCreationDate() {
@@ -338,11 +343,13 @@ public class UserImportJobType implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The date the user import job was created.
+     * The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when
+     * the item was created.
      * </p>
      * 
      * @param creationDate
-     *        The date the user import job was created.
+     *        The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     *        format, when the item was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

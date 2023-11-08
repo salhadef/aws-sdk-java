@@ -52,6 +52,10 @@ public class UriPathRouteInputJsonUnmarshaller implements Unmarshaller<UriPathRo
                     context.nextToken();
                     uriPathRouteInput.setActivationState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("AppendSourcePath", targetDepth)) {
+                    context.nextToken();
+                    uriPathRouteInput.setAppendSourcePath(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("IncludeChildPaths", targetDepth)) {
                     context.nextToken();
                     uriPathRouteInput.setIncludeChildPaths(context.getUnmarshaller(Boolean.class).unmarshall(context));

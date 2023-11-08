@@ -35,6 +35,8 @@ public class EndpointOutputConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceType").build();
     private static final MarshallingInfo<Integer> INITIALINSTANCECOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InitialInstanceCount").build();
+    private static final MarshallingInfo<StructuredPojo> SERVERLESSCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServerlessConfig").build();
 
     private static final EndpointOutputConfigurationMarshaller instance = new EndpointOutputConfigurationMarshaller();
 
@@ -56,6 +58,7 @@ public class EndpointOutputConfigurationMarshaller {
             protocolMarshaller.marshall(endpointOutputConfiguration.getVariantName(), VARIANTNAME_BINDING);
             protocolMarshaller.marshall(endpointOutputConfiguration.getInstanceType(), INSTANCETYPE_BINDING);
             protocolMarshaller.marshall(endpointOutputConfiguration.getInitialInstanceCount(), INITIALINSTANCECOUNT_BINDING);
+            protocolMarshaller.marshall(endpointOutputConfiguration.getServerlessConfig(), SERVERLESSCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

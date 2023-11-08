@@ -27,11 +27,11 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CreateInstanceAccessControlAttributeConfigurationRequestMarshaller {
 
-    private static final MarshallingInfo<String> INSTANCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceArn").build();
     private static final MarshallingInfo<StructuredPojo> INSTANCEACCESSCONTROLATTRIBUTECONFIGURATION_BINDING = MarshallingInfo
             .builder(MarshallingType.STRUCTURED).marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceAccessControlAttributeConfiguration")
             .build();
+    private static final MarshallingInfo<String> INSTANCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceArn").build();
 
     private static final CreateInstanceAccessControlAttributeConfigurationRequestMarshaller instance = new CreateInstanceAccessControlAttributeConfigurationRequestMarshaller();
 
@@ -50,9 +50,9 @@ public class CreateInstanceAccessControlAttributeConfigurationRequestMarshaller 
         }
 
         try {
-            protocolMarshaller.marshall(createInstanceAccessControlAttributeConfigurationRequest.getInstanceArn(), INSTANCEARN_BINDING);
             protocolMarshaller.marshall(createInstanceAccessControlAttributeConfigurationRequest.getInstanceAccessControlAttributeConfiguration(),
                     INSTANCEACCESSCONTROLATTRIBUTECONFIGURATION_BINDING);
+            protocolMarshaller.marshall(createInstanceAccessControlAttributeConfigurationRequest.getInstanceArn(), INSTANCEARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

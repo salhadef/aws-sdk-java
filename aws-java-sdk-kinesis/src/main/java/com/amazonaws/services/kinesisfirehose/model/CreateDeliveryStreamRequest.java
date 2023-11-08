@@ -129,6 +129,8 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
      */
     private AmazonOpenSearchServerlessDestinationConfiguration amazonOpenSearchServerlessDestinationConfiguration;
 
+    private MSKSourceConfiguration mSKSourceConfiguration;
+
     /**
      * <p>
      * The name of the delivery stream. This name must be unique per Amazon Web Services account in the same Amazon Web
@@ -888,6 +890,32 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * @param mSKSourceConfiguration
+     */
+
+    public void setMSKSourceConfiguration(MSKSourceConfiguration mSKSourceConfiguration) {
+        this.mSKSourceConfiguration = mSKSourceConfiguration;
+    }
+
+    /**
+     * @return
+     */
+
+    public MSKSourceConfiguration getMSKSourceConfiguration() {
+        return this.mSKSourceConfiguration;
+    }
+
+    /**
+     * @param mSKSourceConfiguration
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDeliveryStreamRequest withMSKSourceConfiguration(MSKSourceConfiguration mSKSourceConfiguration) {
+        setMSKSourceConfiguration(mSKSourceConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -924,7 +952,9 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getAmazonOpenSearchServerlessDestinationConfiguration() != null)
-            sb.append("AmazonOpenSearchServerlessDestinationConfiguration: ").append(getAmazonOpenSearchServerlessDestinationConfiguration());
+            sb.append("AmazonOpenSearchServerlessDestinationConfiguration: ").append(getAmazonOpenSearchServerlessDestinationConfiguration()).append(",");
+        if (getMSKSourceConfiguration() != null)
+            sb.append("MSKSourceConfiguration: ").append(getMSKSourceConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -1000,6 +1030,10 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
         if (other.getAmazonOpenSearchServerlessDestinationConfiguration() != null
                 && other.getAmazonOpenSearchServerlessDestinationConfiguration().equals(this.getAmazonOpenSearchServerlessDestinationConfiguration()) == false)
             return false;
+        if (other.getMSKSourceConfiguration() == null ^ this.getMSKSourceConfiguration() == null)
+            return false;
+        if (other.getMSKSourceConfiguration() != null && other.getMSKSourceConfiguration().equals(this.getMSKSourceConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -1024,6 +1058,7 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode
                 + ((getAmazonOpenSearchServerlessDestinationConfiguration() == null) ? 0 : getAmazonOpenSearchServerlessDestinationConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getMSKSourceConfiguration() == null) ? 0 : getMSKSourceConfiguration().hashCode());
         return hashCode;
     }
 

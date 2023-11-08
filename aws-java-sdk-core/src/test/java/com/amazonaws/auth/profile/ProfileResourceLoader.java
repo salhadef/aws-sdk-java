@@ -141,6 +141,22 @@ public class ProfileResourceLoader {
         return new ProfileResourceLoader("ProfileWithProfilePrefix.tst");
     }
 
+    public static ProfileResourceLoader profileWithSubProperties() {
+        return new ProfileResourceLoader("ProfileWithSubProperties.tst");
+    }
+
+    public static ProfileResourceLoader profileWithDuplicateSubProperties() {
+        return new ProfileResourceLoader("ProfileWithDuplicateSubProperties.tst");
+    }
+
+    public static ProfileResourceLoader profileWithDuplicateProperties() {
+        return new ProfileResourceLoader("ProfileWithDuplicateProperties.tst");
+    }
+
+    public static ProfileResourceLoader profileWithServiceSection() {
+        return new ProfileResourceLoader("ProfileWithServiceSection.tst");
+    }
+
     public static ProfileResourceLoader duplicateProfileWithAndWithoutProfilePrefix() {
         return new ProfileResourceLoader("DuplicateProfileWithAndWithoutProfilePrefix.tst");
     }

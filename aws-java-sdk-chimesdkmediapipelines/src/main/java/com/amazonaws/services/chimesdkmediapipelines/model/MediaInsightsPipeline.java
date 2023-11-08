@@ -82,6 +82,12 @@ public class MediaInsightsPipeline implements Serializable, Cloneable, Structure
      * </p>
      */
     private java.util.Date createdTimestamp;
+    /**
+     * <p>
+     * The statuses that the elements in a media insights pipeline can have during data processing.
+     * </p>
+     */
+    private java.util.List<MediaInsightsPipelineElementStatus> elementStatuses;
 
     /**
      * <p>
@@ -494,6 +500,76 @@ public class MediaInsightsPipeline implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * The statuses that the elements in a media insights pipeline can have during data processing.
+     * </p>
+     * 
+     * @return The statuses that the elements in a media insights pipeline can have during data processing.
+     */
+
+    public java.util.List<MediaInsightsPipelineElementStatus> getElementStatuses() {
+        return elementStatuses;
+    }
+
+    /**
+     * <p>
+     * The statuses that the elements in a media insights pipeline can have during data processing.
+     * </p>
+     * 
+     * @param elementStatuses
+     *        The statuses that the elements in a media insights pipeline can have during data processing.
+     */
+
+    public void setElementStatuses(java.util.Collection<MediaInsightsPipelineElementStatus> elementStatuses) {
+        if (elementStatuses == null) {
+            this.elementStatuses = null;
+            return;
+        }
+
+        this.elementStatuses = new java.util.ArrayList<MediaInsightsPipelineElementStatus>(elementStatuses);
+    }
+
+    /**
+     * <p>
+     * The statuses that the elements in a media insights pipeline can have during data processing.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setElementStatuses(java.util.Collection)} or {@link #withElementStatuses(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param elementStatuses
+     *        The statuses that the elements in a media insights pipeline can have during data processing.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MediaInsightsPipeline withElementStatuses(MediaInsightsPipelineElementStatus... elementStatuses) {
+        if (this.elementStatuses == null) {
+            setElementStatuses(new java.util.ArrayList<MediaInsightsPipelineElementStatus>(elementStatuses.length));
+        }
+        for (MediaInsightsPipelineElementStatus ele : elementStatuses) {
+            this.elementStatuses.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The statuses that the elements in a media insights pipeline can have during data processing.
+     * </p>
+     * 
+     * @param elementStatuses
+     *        The statuses that the elements in a media insights pipeline can have during data processing.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MediaInsightsPipeline withElementStatuses(java.util.Collection<MediaInsightsPipelineElementStatus> elementStatuses) {
+        setElementStatuses(elementStatuses);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -522,7 +598,9 @@ public class MediaInsightsPipeline implements Serializable, Cloneable, Structure
         if (getS3RecordingSinkRuntimeConfiguration() != null)
             sb.append("S3RecordingSinkRuntimeConfiguration: ").append(getS3RecordingSinkRuntimeConfiguration()).append(",");
         if (getCreatedTimestamp() != null)
-            sb.append("CreatedTimestamp: ").append(getCreatedTimestamp());
+            sb.append("CreatedTimestamp: ").append(getCreatedTimestamp()).append(",");
+        if (getElementStatuses() != null)
+            sb.append("ElementStatuses: ").append(getElementStatuses());
         sb.append("}");
         return sb.toString();
     }
@@ -577,6 +655,10 @@ public class MediaInsightsPipeline implements Serializable, Cloneable, Structure
             return false;
         if (other.getCreatedTimestamp() != null && other.getCreatedTimestamp().equals(this.getCreatedTimestamp()) == false)
             return false;
+        if (other.getElementStatuses() == null ^ this.getElementStatuses() == null)
+            return false;
+        if (other.getElementStatuses() != null && other.getElementStatuses().equals(this.getElementStatuses()) == false)
+            return false;
         return true;
     }
 
@@ -598,6 +680,7 @@ public class MediaInsightsPipeline implements Serializable, Cloneable, Structure
                         .hashCode());
         hashCode = prime * hashCode + ((getS3RecordingSinkRuntimeConfiguration() == null) ? 0 : getS3RecordingSinkRuntimeConfiguration().hashCode());
         hashCode = prime * hashCode + ((getCreatedTimestamp() == null) ? 0 : getCreatedTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getElementStatuses() == null) ? 0 : getElementStatuses().hashCode());
         return hashCode;
     }
 

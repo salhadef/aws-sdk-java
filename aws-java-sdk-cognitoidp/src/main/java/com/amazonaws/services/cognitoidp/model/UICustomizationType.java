@@ -60,13 +60,15 @@ public class UICustomizationType implements Serializable, Cloneable, StructuredP
     private String cSSVersion;
     /**
      * <p>
-     * The last-modified date for the UI customization.
+     * The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when
+     * the item was modified.
      * </p>
      */
     private java.util.Date lastModifiedDate;
     /**
      * <p>
-     * The creation date for the UI customization.
+     * The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when
+     * the item was created.
      * </p>
      */
     private java.util.Date creationDate;
@@ -273,11 +275,13 @@ public class UICustomizationType implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The last-modified date for the UI customization.
+     * The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when
+     * the item was modified.
      * </p>
      * 
      * @param lastModifiedDate
-     *        The last-modified date for the UI customization.
+     *        The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     *        format, when the item was modified.
      */
 
     public void setLastModifiedDate(java.util.Date lastModifiedDate) {
@@ -286,10 +290,12 @@ public class UICustomizationType implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The last-modified date for the UI customization.
+     * The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when
+     * the item was modified.
      * </p>
      * 
-     * @return The last-modified date for the UI customization.
+     * @return The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     *         format, when the item was modified.
      */
 
     public java.util.Date getLastModifiedDate() {
@@ -298,11 +304,13 @@ public class UICustomizationType implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The last-modified date for the UI customization.
+     * The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when
+     * the item was modified.
      * </p>
      * 
      * @param lastModifiedDate
-     *        The last-modified date for the UI customization.
+     *        The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     *        format, when the item was modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -313,11 +321,13 @@ public class UICustomizationType implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The creation date for the UI customization.
+     * The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when
+     * the item was created.
      * </p>
      * 
      * @param creationDate
-     *        The creation date for the UI customization.
+     *        The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     *        format, when the item was created.
      */
 
     public void setCreationDate(java.util.Date creationDate) {
@@ -326,10 +336,12 @@ public class UICustomizationType implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The creation date for the UI customization.
+     * The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when
+     * the item was created.
      * </p>
      * 
-     * @return The creation date for the UI customization.
+     * @return The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     *         format, when the item was created.
      */
 
     public java.util.Date getCreationDate() {
@@ -338,11 +350,13 @@ public class UICustomizationType implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The creation date for the UI customization.
+     * The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when
+     * the item was created.
      * </p>
      * 
      * @param creationDate
-     *        The creation date for the UI customization.
+     *        The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     *        format, when the item was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

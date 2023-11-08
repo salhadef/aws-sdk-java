@@ -32,6 +32,8 @@ public class ParameterizedStatementMarshaller {
             .marshallLocationName("Statement").build();
     private static final MarshallingInfo<List> PARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Parameters").build();
+    private static final MarshallingInfo<String> RETURNVALUESONCONDITIONCHECKFAILURE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReturnValuesOnConditionCheckFailure").build();
 
     private static final ParameterizedStatementMarshaller instance = new ParameterizedStatementMarshaller();
 
@@ -51,6 +53,7 @@ public class ParameterizedStatementMarshaller {
         try {
             protocolMarshaller.marshall(parameterizedStatement.getStatement(), STATEMENT_BINDING);
             protocolMarshaller.marshall(parameterizedStatement.getParameters(), PARAMETERS_BINDING);
+            protocolMarshaller.marshall(parameterizedStatement.getReturnValuesOnConditionCheckFailure(), RETURNVALUESONCONDITIONCHECKFAILURE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

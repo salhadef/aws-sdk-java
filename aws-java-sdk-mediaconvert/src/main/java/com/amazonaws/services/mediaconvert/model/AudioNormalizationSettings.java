@@ -51,10 +51,9 @@ public class AudioNormalizationSettings implements Serializable, Cloneable, Stru
     /** If set to TRUE_PEAK, calculate and log the TruePeak for each output's audio track loudness. */
     private String peakCalculation;
     /**
-     * When you use Audio normalization (AudioNormalizationSettings), optionally use this setting to specify a target
-     * loudness. If you don't specify a value here, the encoder chooses a value for you, based on the algorithm that you
-     * choose for Algorithm (algorithm). If you choose algorithm 1770-1, the encoder will choose -24 LKFS; otherwise, the
-     * encoder will choose -23 LKFS.
+     * When you use Audio normalization, optionally use this setting to specify a target loudness. If you don't specify
+     * a value here, the encoder chooses a value for you, based on the algorithm that you choose for Algorithm. If you
+     * choose algorithm 1770-1, the encoder will choose -24 LKFS; otherwise, the encoder will choose -23 LKFS.
      */
     private Double targetLkfs;
     /**
@@ -365,16 +364,15 @@ public class AudioNormalizationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * When you use Audio normalization (AudioNormalizationSettings), optionally use this setting to specify a target
-     * loudness. If you don't specify a value here, the encoder chooses a value for you, based on the algorithm that you
-     * choose for Algorithm (algorithm). If you choose algorithm 1770-1, the encoder will choose -24 LKFS; otherwise, the
-     * encoder will choose -23 LKFS.
+     * When you use Audio normalization, optionally use this setting to specify a target loudness. If you don't specify
+     * a value here, the encoder chooses a value for you, based on the algorithm that you choose for Algorithm. If you
+     * choose algorithm 1770-1, the encoder will choose -24 LKFS; otherwise, the encoder will choose -23 LKFS.
      * 
      * @param targetLkfs
-     *        When you use Audio normalization (AudioNormalizationSettings), optionally use this setting to specify a
-     *        target loudness. If you don't specify a value here, the encoder chooses a value for you, based on the
-     *        algorithm that you choose for Algorithm (algorithm). If you choose algorithm 1770-1, the encoder will
-     *        choose -24 LKFS; otherwise, the encoder will choose -23 LKFS.
+     *        When you use Audio normalization, optionally use this setting to specify a target loudness. If you don't
+     *        specify a value here, the encoder chooses a value for you, based on the algorithm that you choose for
+     *        Algorithm. If you choose algorithm 1770-1, the encoder will choose -24 LKFS; otherwise, the encoder will
+     *        choose -23 LKFS.
      */
 
     public void setTargetLkfs(Double targetLkfs) {
@@ -382,15 +380,14 @@ public class AudioNormalizationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * When you use Audio normalization (AudioNormalizationSettings), optionally use this setting to specify a target
-     * loudness. If you don't specify a value here, the encoder chooses a value for you, based on the algorithm that you
-     * choose for Algorithm (algorithm). If you choose algorithm 1770-1, the encoder will choose -24 LKFS; otherwise, the
-     * encoder will choose -23 LKFS.
+     * When you use Audio normalization, optionally use this setting to specify a target loudness. If you don't specify
+     * a value here, the encoder chooses a value for you, based on the algorithm that you choose for Algorithm. If you
+     * choose algorithm 1770-1, the encoder will choose -24 LKFS; otherwise, the encoder will choose -23 LKFS.
      * 
-     * @return When you use Audio normalization (AudioNormalizationSettings), optionally use this setting to specify a
-     *         target loudness. If you don't specify a value here, the encoder chooses a value for you, based on the
-     *         algorithm that you choose for Algorithm (algorithm). If you choose algorithm 1770-1, the encoder will
-     *         choose -24 LKFS; otherwise, the encoder will choose -23 LKFS.
+     * @return When you use Audio normalization, optionally use this setting to specify a target loudness. If you don't
+     *         specify a value here, the encoder chooses a value for you, based on the algorithm that you choose for
+     *         Algorithm. If you choose algorithm 1770-1, the encoder will choose -24 LKFS; otherwise, the encoder will
+     *         choose -23 LKFS.
      */
 
     public Double getTargetLkfs() {
@@ -398,16 +395,15 @@ public class AudioNormalizationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * When you use Audio normalization (AudioNormalizationSettings), optionally use this setting to specify a target
-     * loudness. If you don't specify a value here, the encoder chooses a value for you, based on the algorithm that you
-     * choose for Algorithm (algorithm). If you choose algorithm 1770-1, the encoder will choose -24 LKFS; otherwise, the
-     * encoder will choose -23 LKFS.
+     * When you use Audio normalization, optionally use this setting to specify a target loudness. If you don't specify
+     * a value here, the encoder chooses a value for you, based on the algorithm that you choose for Algorithm. If you
+     * choose algorithm 1770-1, the encoder will choose -24 LKFS; otherwise, the encoder will choose -23 LKFS.
      * 
      * @param targetLkfs
-     *        When you use Audio normalization (AudioNormalizationSettings), optionally use this setting to specify a
-     *        target loudness. If you don't specify a value here, the encoder chooses a value for you, based on the
-     *        algorithm that you choose for Algorithm (algorithm). If you choose algorithm 1770-1, the encoder will
-     *        choose -24 LKFS; otherwise, the encoder will choose -23 LKFS.
+     *        When you use Audio normalization, optionally use this setting to specify a target loudness. If you don't
+     *        specify a value here, the encoder chooses a value for you, based on the algorithm that you choose for
+     *        Algorithm. If you choose algorithm 1770-1, the encoder will choose -24 LKFS; otherwise, the encoder will
+     *        choose -23 LKFS.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

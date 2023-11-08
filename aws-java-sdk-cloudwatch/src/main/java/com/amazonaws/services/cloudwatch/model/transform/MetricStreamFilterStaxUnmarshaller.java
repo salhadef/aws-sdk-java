@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.cloudwatch.model.transform;
 
+import java.util.ArrayList;
+
 import javax.xml.stream.events.XMLEvent;
 import javax.annotation.Generated;
 
@@ -47,6 +49,17 @@ public class MetricStreamFilterStaxUnmarshaller implements Unmarshaller<MetricSt
                     metricStreamFilter.setNamespace(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("MetricNames", targetDepth)) {
+                    metricStreamFilter.withMetricNames(new ArrayList<String>());
+                    continue;
+                }
+
+                if (context.testExpression("MetricNames/member", targetDepth)) {
+                    metricStreamFilter.withMetricNames(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return metricStreamFilter;

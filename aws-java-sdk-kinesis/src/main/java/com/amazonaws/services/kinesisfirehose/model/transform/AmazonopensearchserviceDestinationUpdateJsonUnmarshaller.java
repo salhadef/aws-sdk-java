@@ -97,6 +97,10 @@ public class AmazonopensearchserviceDestinationUpdateJsonUnmarshaller implements
                     amazonopensearchserviceDestinationUpdate.setCloudWatchLoggingOptions(CloudWatchLoggingOptionsJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
+                if (context.testExpression("DocumentIdOptions", targetDepth)) {
+                    context.nextToken();
+                    amazonopensearchserviceDestinationUpdate.setDocumentIdOptions(DocumentIdOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

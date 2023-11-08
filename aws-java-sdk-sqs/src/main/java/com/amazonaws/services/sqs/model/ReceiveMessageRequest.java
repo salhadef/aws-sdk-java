@@ -69,7 +69,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * For an IAM user, returns the IAM user ID, for example <code>ABCDEFGHI1JKLMNOPQ23R</code>.
+     * For a user, returns the user ID, for example <code>ABCDEFGHI1JKLMNOPQ23R</code>.
      * </p>
      * </li>
      * <li>
@@ -88,7 +88,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * <li>
      * <p>
      * <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using SQS owned encryption keys. Only
-     * one server-side encryption option is supported per queue (e.g. <a href=
+     * one server-side encryption option is supported per queue (for example, <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html"
      * >SSE-KMS</a> or <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html"
@@ -381,7 +381,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * For an IAM user, returns the IAM user ID, for example <code>ABCDEFGHI1JKLMNOPQ23R</code>.
+     * For a user, returns the user ID, for example <code>ABCDEFGHI1JKLMNOPQ23R</code>.
      * </p>
      * </li>
      * <li>
@@ -400,7 +400,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * <li>
      * <p>
      * <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using SQS owned encryption keys. Only
-     * one server-side encryption option is supported per queue (e.g. <a href=
+     * one server-side encryption option is supported per queue (for example, <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html"
      * >SSE-KMS</a> or <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html"
@@ -458,7 +458,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <ul>
      *         <li>
      *         <p>
-     *         For an IAM user, returns the IAM user ID, for example <code>ABCDEFGHI1JKLMNOPQ23R</code>.
+     *         For a user, returns the user ID, for example <code>ABCDEFGHI1JKLMNOPQ23R</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -477,7 +477,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <li>
      *         <p>
      *         <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using SQS owned encryption keys.
-     *         Only one server-side encryption option is supported per queue (e.g. <a href=
+     *         Only one server-side encryption option is supported per queue (for example, <a href=
      *         "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html"
      *         >SSE-KMS</a> or <a href=
      *         "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html"
@@ -546,7 +546,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * For an IAM user, returns the IAM user ID, for example <code>ABCDEFGHI1JKLMNOPQ23R</code>.
+     * For a user, returns the user ID, for example <code>ABCDEFGHI1JKLMNOPQ23R</code>.
      * </p>
      * </li>
      * <li>
@@ -565,7 +565,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * <li>
      * <p>
      * <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using SQS owned encryption keys. Only
-     * one server-side encryption option is supported per queue (e.g. <a href=
+     * one server-side encryption option is supported per queue (for example, <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html"
      * >SSE-KMS</a> or <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html"
@@ -624,7 +624,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        For an IAM user, returns the IAM user ID, for example <code>ABCDEFGHI1JKLMNOPQ23R</code>.
+     *        For a user, returns the user ID, for example <code>ABCDEFGHI1JKLMNOPQ23R</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -643,7 +643,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <li>
      *        <p>
      *        <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using SQS owned encryption keys.
-     *        Only one server-side encryption option is supported per queue (e.g. <a href=
+     *        Only one server-side encryption option is supported per queue (for example, <a href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html"
      *        >SSE-KMS</a> or <a href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html"
@@ -714,7 +714,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * For an IAM user, returns the IAM user ID, for example <code>ABCDEFGHI1JKLMNOPQ23R</code>.
+     * For a user, returns the user ID, for example <code>ABCDEFGHI1JKLMNOPQ23R</code>.
      * </p>
      * </li>
      * <li>
@@ -733,7 +733,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * <li>
      * <p>
      * <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using SQS owned encryption keys. Only
-     * one server-side encryption option is supported per queue (e.g. <a href=
+     * one server-side encryption option is supported per queue (for example, <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html"
      * >SSE-KMS</a> or <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html"
@@ -797,7 +797,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        For an IAM user, returns the IAM user ID, for example <code>ABCDEFGHI1JKLMNOPQ23R</code>.
+     *        For a user, returns the user ID, for example <code>ABCDEFGHI1JKLMNOPQ23R</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -816,7 +816,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <li>
      *        <p>
      *        <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using SQS owned encryption keys.
-     *        Only one server-side encryption option is supported per queue (e.g. <a href=
+     *        Only one server-side encryption option is supported per queue (for example, <a href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html"
      *        >SSE-KMS</a> or <a href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html"
@@ -889,7 +889,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * For an IAM user, returns the IAM user ID, for example <code>ABCDEFGHI1JKLMNOPQ23R</code>.
+     * For a user, returns the user ID, for example <code>ABCDEFGHI1JKLMNOPQ23R</code>.
      * </p>
      * </li>
      * <li>
@@ -908,7 +908,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * <li>
      * <p>
      * <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using SQS owned encryption keys. Only
-     * one server-side encryption option is supported per queue (e.g. <a href=
+     * one server-side encryption option is supported per queue (for example, <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html"
      * >SSE-KMS</a> or <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html"
@@ -967,7 +967,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        For an IAM user, returns the IAM user ID, for example <code>ABCDEFGHI1JKLMNOPQ23R</code>.
+     *        For a user, returns the user ID, for example <code>ABCDEFGHI1JKLMNOPQ23R</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -986,7 +986,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <li>
      *        <p>
      *        <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using SQS owned encryption keys.
-     *        Only one server-side encryption option is supported per queue (e.g. <a href=
+     *        Only one server-side encryption option is supported per queue (for example, <a href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html"
      *        >SSE-KMS</a> or <a href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html"
@@ -1054,7 +1054,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * For an IAM user, returns the IAM user ID, for example <code>ABCDEFGHI1JKLMNOPQ23R</code>.
+     * For a user, returns the user ID, for example <code>ABCDEFGHI1JKLMNOPQ23R</code>.
      * </p>
      * </li>
      * <li>
@@ -1073,7 +1073,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * <li>
      * <p>
      * <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using SQS owned encryption keys. Only
-     * one server-side encryption option is supported per queue (e.g. <a href=
+     * one server-side encryption option is supported per queue (for example, <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html"
      * >SSE-KMS</a> or <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html"
@@ -1132,7 +1132,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        For an IAM user, returns the IAM user ID, for example <code>ABCDEFGHI1JKLMNOPQ23R</code>.
+     *        For a user, returns the user ID, for example <code>ABCDEFGHI1JKLMNOPQ23R</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -1151,7 +1151,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <li>
      *        <p>
      *        <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using SQS owned encryption keys.
-     *        Only one server-side encryption option is supported per queue (e.g. <a href=
+     *        Only one server-side encryption option is supported per queue (for example, <a href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html"
      *        >SSE-KMS</a> or <a href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html"

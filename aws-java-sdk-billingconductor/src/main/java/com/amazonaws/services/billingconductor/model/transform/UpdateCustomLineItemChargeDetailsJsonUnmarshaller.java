@@ -57,6 +57,12 @@ public class UpdateCustomLineItemChargeDetailsJsonUnmarshaller implements Unmars
                     updateCustomLineItemChargeDetails.setPercentage(UpdateCustomLineItemPercentageChargeDetailsJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
+                if (context.testExpression("LineItemFilters", targetDepth)) {
+                    context.nextToken();
+                    updateCustomLineItemChargeDetails.setLineItemFilters(new ListUnmarshaller<LineItemFilter>(LineItemFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

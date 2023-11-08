@@ -60,6 +60,14 @@ public class ExecutionStartedEventDetailsJsonUnmarshaller implements Unmarshalle
                     context.nextToken();
                     executionStartedEventDetails.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("stateMachineAliasArn", targetDepth)) {
+                    context.nextToken();
+                    executionStartedEventDetails.setStateMachineAliasArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("stateMachineVersionArn", targetDepth)) {
+                    context.nextToken();
+                    executionStartedEventDetails.setStateMachineVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -94,6 +94,10 @@ public class AnalysisJsonUnmarshaller implements Unmarshaller<Analysis, JsonUnma
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("Options", targetDepth)) {
+                    context.nextToken();
+                    analysis.setOptions(AssetOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

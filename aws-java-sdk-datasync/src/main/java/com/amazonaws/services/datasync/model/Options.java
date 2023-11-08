@@ -19,13 +19,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Configures your DataSync task settings. These options include how DataSync handles files, objects, and their
- * associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task,
- * among other options.
+ * Indicates how your transfer task is configured. These options include how DataSync handles files, objects, and their
+ * associated metadata during your transfer. You also can specify how to verify data integrity, set bandwidth limits for
+ * your task, among other options.
  * </p>
  * <p>
- * Each task setting has a default value. Unless you need to, you don't have to configure any of these
- * <code>Options</code> before starting your task.
+ * Each option has a default value. Unless you need to, you don't have to configure any of these options before starting
+ * your task.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/Options" target="_top">AWS API
@@ -266,13 +266,9 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
     private Long bytesPerSecond;
     /**
      * <p>
-     * Specifies whether tasks should be queued before executing the tasks. The default is <code>ENABLED</code>, which
-     * means the tasks will be queued.
-     * </p>
-     * <p>
-     * If you use the same agent to run multiple tasks, you can enable the tasks to run in series. For more information,
-     * see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#queue-task-execution">Queueing
-     * task executions</a>.
+     * Specifies whether your transfer tasks should be put into a queue during certain scenarios when <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#running-multiple-tasks">running
+     * multiple tasks</a>. This is <code>ENABLED</code> by default.
      * </p>
      */
     private String taskQueueing;
@@ -2274,23 +2270,15 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether tasks should be queued before executing the tasks. The default is <code>ENABLED</code>, which
-     * means the tasks will be queued.
-     * </p>
-     * <p>
-     * If you use the same agent to run multiple tasks, you can enable the tasks to run in series. For more information,
-     * see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#queue-task-execution">Queueing
-     * task executions</a>.
+     * Specifies whether your transfer tasks should be put into a queue during certain scenarios when <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#running-multiple-tasks">running
+     * multiple tasks</a>. This is <code>ENABLED</code> by default.
      * </p>
      * 
      * @param taskQueueing
-     *        Specifies whether tasks should be queued before executing the tasks. The default is <code>ENABLED</code>,
-     *        which means the tasks will be queued.</p>
-     *        <p>
-     *        If you use the same agent to run multiple tasks, you can enable the tasks to run in series. For more
-     *        information, see <a
-     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#queue-task-execution">Queueing
-     *        task executions</a>.
+     *        Specifies whether your transfer tasks should be put into a queue during certain scenarios when <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#running-multiple-tasks">running
+     *        multiple tasks</a>. This is <code>ENABLED</code> by default.
      * @see TaskQueueing
      */
 
@@ -2300,22 +2288,14 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether tasks should be queued before executing the tasks. The default is <code>ENABLED</code>, which
-     * means the tasks will be queued.
-     * </p>
-     * <p>
-     * If you use the same agent to run multiple tasks, you can enable the tasks to run in series. For more information,
-     * see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#queue-task-execution">Queueing
-     * task executions</a>.
+     * Specifies whether your transfer tasks should be put into a queue during certain scenarios when <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#running-multiple-tasks">running
+     * multiple tasks</a>. This is <code>ENABLED</code> by default.
      * </p>
      * 
-     * @return Specifies whether tasks should be queued before executing the tasks. The default is <code>ENABLED</code>,
-     *         which means the tasks will be queued.</p>
-     *         <p>
-     *         If you use the same agent to run multiple tasks, you can enable the tasks to run in series. For more
-     *         information, see <a
-     *         href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#queue-task-execution">Queueing
-     *         task executions</a>.
+     * @return Specifies whether your transfer tasks should be put into a queue during certain scenarios when <a
+     *         href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#running-multiple-tasks">running
+     *         multiple tasks</a>. This is <code>ENABLED</code> by default.
      * @see TaskQueueing
      */
 
@@ -2325,23 +2305,15 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether tasks should be queued before executing the tasks. The default is <code>ENABLED</code>, which
-     * means the tasks will be queued.
-     * </p>
-     * <p>
-     * If you use the same agent to run multiple tasks, you can enable the tasks to run in series. For more information,
-     * see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#queue-task-execution">Queueing
-     * task executions</a>.
+     * Specifies whether your transfer tasks should be put into a queue during certain scenarios when <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#running-multiple-tasks">running
+     * multiple tasks</a>. This is <code>ENABLED</code> by default.
      * </p>
      * 
      * @param taskQueueing
-     *        Specifies whether tasks should be queued before executing the tasks. The default is <code>ENABLED</code>,
-     *        which means the tasks will be queued.</p>
-     *        <p>
-     *        If you use the same agent to run multiple tasks, you can enable the tasks to run in series. For more
-     *        information, see <a
-     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#queue-task-execution">Queueing
-     *        task executions</a>.
+     *        Specifies whether your transfer tasks should be put into a queue during certain scenarios when <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#running-multiple-tasks">running
+     *        multiple tasks</a>. This is <code>ENABLED</code> by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TaskQueueing
      */
@@ -2353,23 +2325,15 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether tasks should be queued before executing the tasks. The default is <code>ENABLED</code>, which
-     * means the tasks will be queued.
-     * </p>
-     * <p>
-     * If you use the same agent to run multiple tasks, you can enable the tasks to run in series. For more information,
-     * see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#queue-task-execution">Queueing
-     * task executions</a>.
+     * Specifies whether your transfer tasks should be put into a queue during certain scenarios when <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#running-multiple-tasks">running
+     * multiple tasks</a>. This is <code>ENABLED</code> by default.
      * </p>
      * 
      * @param taskQueueing
-     *        Specifies whether tasks should be queued before executing the tasks. The default is <code>ENABLED</code>,
-     *        which means the tasks will be queued.</p>
-     *        <p>
-     *        If you use the same agent to run multiple tasks, you can enable the tasks to run in series. For more
-     *        information, see <a
-     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#queue-task-execution">Queueing
-     *        task executions</a>.
+     *        Specifies whether your transfer tasks should be put into a queue during certain scenarios when <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#running-multiple-tasks">running
+     *        multiple tasks</a>. This is <code>ENABLED</code> by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TaskQueueing
      */

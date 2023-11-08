@@ -44,6 +44,8 @@ public class CreateApplicationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutoCreate").build();
     private static final MarshallingInfo<String> GROUPINGTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GroupingType").build();
+    private static final MarshallingInfo<Boolean> ATTACHMISSINGPERMISSION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AttachMissingPermission").build();
 
     private static final CreateApplicationRequestMarshaller instance = new CreateApplicationRequestMarshaller();
 
@@ -69,6 +71,7 @@ public class CreateApplicationRequestMarshaller {
             protocolMarshaller.marshall(createApplicationRequest.getAutoConfigEnabled(), AUTOCONFIGENABLED_BINDING);
             protocolMarshaller.marshall(createApplicationRequest.getAutoCreate(), AUTOCREATE_BINDING);
             protocolMarshaller.marshall(createApplicationRequest.getGroupingType(), GROUPINGTYPE_BINDING);
+            protocolMarshaller.marshall(createApplicationRequest.getAttachMissingPermission(), ATTACHMISSINGPERMISSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -366,6 +366,18 @@ public enum Region {
     ME_UAE("me-central-1"),
 
     /**
+     * The Israel (Tel Aviv) Region. This region uses Amazon S3 servers
+     * located in Tel Aviv, Israel.
+     * <p>
+     * When using buckets in this region, set the client endpoint to
+     * <code>s3-il-central-1.amazonaws.com</code> on all requests to these buckets
+     * to reduce any latency experienced after the first hour of creating a
+     * bucket in this region.
+     * </p>
+     */
+    IL_TelAviv("il-central-1"),
+
+    /**
      * The Africa South (Cape Town) Region. This region uses Amazon S3 servers
      * located in Cape Town.
      */

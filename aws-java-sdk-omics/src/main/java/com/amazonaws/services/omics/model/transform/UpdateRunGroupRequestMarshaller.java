@@ -29,14 +29,16 @@ public class UpdateRunGroupRequestMarshaller {
 
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("id").build();
-    private static final MarshallingInfo<Integer> MAXCPUS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("maxCpus").build();
-    private static final MarshallingInfo<Integer> MAXDURATION_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxDuration").build();
-    private static final MarshallingInfo<Integer> MAXRUNS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("maxRuns").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<Integer> MAXCPUS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("maxCpus").build();
+    private static final MarshallingInfo<Integer> MAXRUNS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("maxRuns").build();
+    private static final MarshallingInfo<Integer> MAXDURATION_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxDuration").build();
+    private static final MarshallingInfo<Integer> MAXGPUS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("maxGpus").build();
 
     private static final UpdateRunGroupRequestMarshaller instance = new UpdateRunGroupRequestMarshaller();
 
@@ -55,10 +57,11 @@ public class UpdateRunGroupRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(updateRunGroupRequest.getId(), ID_BINDING);
-            protocolMarshaller.marshall(updateRunGroupRequest.getMaxCpus(), MAXCPUS_BINDING);
-            protocolMarshaller.marshall(updateRunGroupRequest.getMaxDuration(), MAXDURATION_BINDING);
-            protocolMarshaller.marshall(updateRunGroupRequest.getMaxRuns(), MAXRUNS_BINDING);
             protocolMarshaller.marshall(updateRunGroupRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(updateRunGroupRequest.getMaxCpus(), MAXCPUS_BINDING);
+            protocolMarshaller.marshall(updateRunGroupRequest.getMaxRuns(), MAXRUNS_BINDING);
+            protocolMarshaller.marshall(updateRunGroupRequest.getMaxDuration(), MAXDURATION_BINDING);
+            protocolMarshaller.marshall(updateRunGroupRequest.getMaxGpus(), MAXGPUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -27,7 +27,7 @@ import java.util.concurrent.ExecutorService;
  * <p>
  * <p>
  * Amazon Inspector is a vulnerability discovery service that automates continuous scanning for security vulnerabilities
- * within your Amazon EC2 and Amazon ECR environments.
+ * within your Amazon EC2, Amazon ECR, and Amazon Web Services Lambda environments.
  * </p>
  */
 @ThreadSafe
@@ -141,6 +141,72 @@ public class AWSInspector2AsyncClient extends AWSInspector2Client implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<BatchGetCodeSnippetResult> batchGetCodeSnippetAsync(BatchGetCodeSnippetRequest request) {
+
+        return batchGetCodeSnippetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetCodeSnippetResult> batchGetCodeSnippetAsync(final BatchGetCodeSnippetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchGetCodeSnippetRequest, BatchGetCodeSnippetResult> asyncHandler) {
+        final BatchGetCodeSnippetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchGetCodeSnippetResult>() {
+            @Override
+            public BatchGetCodeSnippetResult call() throws Exception {
+                BatchGetCodeSnippetResult result = null;
+
+                try {
+                    result = executeBatchGetCodeSnippet(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetFindingDetailsResult> batchGetFindingDetailsAsync(BatchGetFindingDetailsRequest request) {
+
+        return batchGetFindingDetailsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetFindingDetailsResult> batchGetFindingDetailsAsync(final BatchGetFindingDetailsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchGetFindingDetailsRequest, BatchGetFindingDetailsResult> asyncHandler) {
+        final BatchGetFindingDetailsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchGetFindingDetailsResult>() {
+            @Override
+            public BatchGetFindingDetailsResult call() throws Exception {
+                BatchGetFindingDetailsResult result = null;
+
+                try {
+                    result = executeBatchGetFindingDetails(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchGetFreeTrialInfoResult> batchGetFreeTrialInfoAsync(BatchGetFreeTrialInfoRequest request) {
 
         return batchGetFreeTrialInfoAsync(request, null);
@@ -174,6 +240,76 @@ public class AWSInspector2AsyncClient extends AWSInspector2Client implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<BatchGetMemberEc2DeepInspectionStatusResult> batchGetMemberEc2DeepInspectionStatusAsync(
+            BatchGetMemberEc2DeepInspectionStatusRequest request) {
+
+        return batchGetMemberEc2DeepInspectionStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetMemberEc2DeepInspectionStatusResult> batchGetMemberEc2DeepInspectionStatusAsync(
+            final BatchGetMemberEc2DeepInspectionStatusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchGetMemberEc2DeepInspectionStatusRequest, BatchGetMemberEc2DeepInspectionStatusResult> asyncHandler) {
+        final BatchGetMemberEc2DeepInspectionStatusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchGetMemberEc2DeepInspectionStatusResult>() {
+            @Override
+            public BatchGetMemberEc2DeepInspectionStatusResult call() throws Exception {
+                BatchGetMemberEc2DeepInspectionStatusResult result = null;
+
+                try {
+                    result = executeBatchGetMemberEc2DeepInspectionStatus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchUpdateMemberEc2DeepInspectionStatusResult> batchUpdateMemberEc2DeepInspectionStatusAsync(
+            BatchUpdateMemberEc2DeepInspectionStatusRequest request) {
+
+        return batchUpdateMemberEc2DeepInspectionStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchUpdateMemberEc2DeepInspectionStatusResult> batchUpdateMemberEc2DeepInspectionStatusAsync(
+            final BatchUpdateMemberEc2DeepInspectionStatusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchUpdateMemberEc2DeepInspectionStatusRequest, BatchUpdateMemberEc2DeepInspectionStatusResult> asyncHandler) {
+        final BatchUpdateMemberEc2DeepInspectionStatusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchUpdateMemberEc2DeepInspectionStatusResult>() {
+            @Override
+            public BatchUpdateMemberEc2DeepInspectionStatusResult call() throws Exception {
+                BatchUpdateMemberEc2DeepInspectionStatusResult result = null;
+
+                try {
+                    result = executeBatchUpdateMemberEc2DeepInspectionStatus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CancelFindingsReportResult> cancelFindingsReportAsync(CancelFindingsReportRequest request) {
 
         return cancelFindingsReportAsync(request, null);
@@ -191,6 +327,39 @@ public class AWSInspector2AsyncClient extends AWSInspector2Client implements AWS
 
                 try {
                     result = executeCancelFindingsReport(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelSbomExportResult> cancelSbomExportAsync(CancelSbomExportRequest request) {
+
+        return cancelSbomExportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelSbomExportResult> cancelSbomExportAsync(final CancelSbomExportRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CancelSbomExportRequest, CancelSbomExportResult> asyncHandler) {
+        final CancelSbomExportRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CancelSbomExportResult>() {
+            @Override
+            public CancelSbomExportResult call() throws Exception {
+                CancelSbomExportResult result = null;
+
+                try {
+                    result = executeCancelSbomExport(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -257,6 +426,39 @@ public class AWSInspector2AsyncClient extends AWSInspector2Client implements AWS
 
                 try {
                     result = executeCreateFindingsReport(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSbomExportResult> createSbomExportAsync(CreateSbomExportRequest request) {
+
+        return createSbomExportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSbomExportResult> createSbomExportAsync(final CreateSbomExportRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateSbomExportRequest, CreateSbomExportResult> asyncHandler) {
+        final CreateSbomExportRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateSbomExportResult>() {
+            @Override
+            public CreateSbomExportResult call() throws Exception {
+                CreateSbomExportResult result = null;
+
+                try {
+                    result = executeCreateSbomExport(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -572,6 +774,74 @@ public class AWSInspector2AsyncClient extends AWSInspector2Client implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<GetEc2DeepInspectionConfigurationResult> getEc2DeepInspectionConfigurationAsync(
+            GetEc2DeepInspectionConfigurationRequest request) {
+
+        return getEc2DeepInspectionConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEc2DeepInspectionConfigurationResult> getEc2DeepInspectionConfigurationAsync(
+            final GetEc2DeepInspectionConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetEc2DeepInspectionConfigurationRequest, GetEc2DeepInspectionConfigurationResult> asyncHandler) {
+        final GetEc2DeepInspectionConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetEc2DeepInspectionConfigurationResult>() {
+            @Override
+            public GetEc2DeepInspectionConfigurationResult call() throws Exception {
+                GetEc2DeepInspectionConfigurationResult result = null;
+
+                try {
+                    result = executeGetEc2DeepInspectionConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEncryptionKeyResult> getEncryptionKeyAsync(GetEncryptionKeyRequest request) {
+
+        return getEncryptionKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEncryptionKeyResult> getEncryptionKeyAsync(final GetEncryptionKeyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetEncryptionKeyRequest, GetEncryptionKeyResult> asyncHandler) {
+        final GetEncryptionKeyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetEncryptionKeyResult>() {
+            @Override
+            public GetEncryptionKeyResult call() throws Exception {
+                GetEncryptionKeyResult result = null;
+
+                try {
+                    result = executeGetEncryptionKey(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetFindingsReportStatusResult> getFindingsReportStatusAsync(GetFindingsReportStatusRequest request) {
 
         return getFindingsReportStatusAsync(request, null);
@@ -622,6 +892,39 @@ public class AWSInspector2AsyncClient extends AWSInspector2Client implements AWS
 
                 try {
                     result = executeGetMember(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSbomExportResult> getSbomExportAsync(GetSbomExportRequest request) {
+
+        return getSbomExportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSbomExportResult> getSbomExportAsync(final GetSbomExportRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSbomExportRequest, GetSbomExportResult> asyncHandler) {
+        final GetSbomExportRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetSbomExportResult>() {
+            @Override
+            public GetSbomExportResult call() throws Exception {
+                GetSbomExportResult result = null;
+
+                try {
+                    result = executeGetSbomExport(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -968,6 +1271,72 @@ public class AWSInspector2AsyncClient extends AWSInspector2Client implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<ResetEncryptionKeyResult> resetEncryptionKeyAsync(ResetEncryptionKeyRequest request) {
+
+        return resetEncryptionKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResetEncryptionKeyResult> resetEncryptionKeyAsync(final ResetEncryptionKeyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ResetEncryptionKeyRequest, ResetEncryptionKeyResult> asyncHandler) {
+        final ResetEncryptionKeyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ResetEncryptionKeyResult>() {
+            @Override
+            public ResetEncryptionKeyResult call() throws Exception {
+                ResetEncryptionKeyResult result = null;
+
+                try {
+                    result = executeResetEncryptionKey(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchVulnerabilitiesResult> searchVulnerabilitiesAsync(SearchVulnerabilitiesRequest request) {
+
+        return searchVulnerabilitiesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchVulnerabilitiesResult> searchVulnerabilitiesAsync(final SearchVulnerabilitiesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SearchVulnerabilitiesRequest, SearchVulnerabilitiesResult> asyncHandler) {
+        final SearchVulnerabilitiesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SearchVulnerabilitiesResult>() {
+            @Override
+            public SearchVulnerabilitiesResult call() throws Exception {
+                SearchVulnerabilitiesResult result = null;
+
+                try {
+                    result = executeSearchVulnerabilities(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);
@@ -1067,6 +1436,74 @@ public class AWSInspector2AsyncClient extends AWSInspector2Client implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateEc2DeepInspectionConfigurationResult> updateEc2DeepInspectionConfigurationAsync(
+            UpdateEc2DeepInspectionConfigurationRequest request) {
+
+        return updateEc2DeepInspectionConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateEc2DeepInspectionConfigurationResult> updateEc2DeepInspectionConfigurationAsync(
+            final UpdateEc2DeepInspectionConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateEc2DeepInspectionConfigurationRequest, UpdateEc2DeepInspectionConfigurationResult> asyncHandler) {
+        final UpdateEc2DeepInspectionConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateEc2DeepInspectionConfigurationResult>() {
+            @Override
+            public UpdateEc2DeepInspectionConfigurationResult call() throws Exception {
+                UpdateEc2DeepInspectionConfigurationResult result = null;
+
+                try {
+                    result = executeUpdateEc2DeepInspectionConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateEncryptionKeyResult> updateEncryptionKeyAsync(UpdateEncryptionKeyRequest request) {
+
+        return updateEncryptionKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateEncryptionKeyResult> updateEncryptionKeyAsync(final UpdateEncryptionKeyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateEncryptionKeyRequest, UpdateEncryptionKeyResult> asyncHandler) {
+        final UpdateEncryptionKeyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateEncryptionKeyResult>() {
+            @Override
+            public UpdateEncryptionKeyResult call() throws Exception {
+                UpdateEncryptionKeyResult result = null;
+
+                try {
+                    result = executeUpdateEncryptionKey(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateFilterResult> updateFilterAsync(UpdateFilterRequest request) {
 
         return updateFilterAsync(request, null);
@@ -1084,6 +1521,41 @@ public class AWSInspector2AsyncClient extends AWSInspector2Client implements AWS
 
                 try {
                     result = executeUpdateFilter(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateOrgEc2DeepInspectionConfigurationResult> updateOrgEc2DeepInspectionConfigurationAsync(
+            UpdateOrgEc2DeepInspectionConfigurationRequest request) {
+
+        return updateOrgEc2DeepInspectionConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateOrgEc2DeepInspectionConfigurationResult> updateOrgEc2DeepInspectionConfigurationAsync(
+            final UpdateOrgEc2DeepInspectionConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateOrgEc2DeepInspectionConfigurationRequest, UpdateOrgEc2DeepInspectionConfigurationResult> asyncHandler) {
+        final UpdateOrgEc2DeepInspectionConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateOrgEc2DeepInspectionConfigurationResult>() {
+            @Override
+            public UpdateOrgEc2DeepInspectionConfigurationResult call() throws Exception {
+                UpdateOrgEc2DeepInspectionConfigurationResult result = null;
+
+                try {
+                    result = executeUpdateOrgEc2DeepInspectionConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

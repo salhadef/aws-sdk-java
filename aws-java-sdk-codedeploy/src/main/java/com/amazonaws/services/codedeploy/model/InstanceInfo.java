@@ -42,7 +42,7 @@ public class InstanceInfo implements Serializable, Cloneable, StructuredPojo {
     private String iamSessionArn;
     /**
      * <p>
-     * The IAM user ARN associated with the on-premises instance.
+     * The user ARN associated with the on-premises instance.
      * </p>
      */
     private String iamUserArn;
@@ -153,11 +153,11 @@ public class InstanceInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IAM user ARN associated with the on-premises instance.
+     * The user ARN associated with the on-premises instance.
      * </p>
      * 
      * @param iamUserArn
-     *        The IAM user ARN associated with the on-premises instance.
+     *        The user ARN associated with the on-premises instance.
      */
 
     public void setIamUserArn(String iamUserArn) {
@@ -166,10 +166,10 @@ public class InstanceInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IAM user ARN associated with the on-premises instance.
+     * The user ARN associated with the on-premises instance.
      * </p>
      * 
-     * @return The IAM user ARN associated with the on-premises instance.
+     * @return The user ARN associated with the on-premises instance.
      */
 
     public String getIamUserArn() {
@@ -178,11 +178,11 @@ public class InstanceInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IAM user ARN associated with the on-premises instance.
+     * The user ARN associated with the on-premises instance.
      * </p>
      * 
      * @param iamUserArn
-     *        The IAM user ARN associated with the on-premises instance.
+     *        The user ARN associated with the on-premises instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

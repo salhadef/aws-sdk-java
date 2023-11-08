@@ -48,6 +48,12 @@ public class AdBreakJsonUnmarshaller implements Unmarshaller<AdBreak, JsonUnmars
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("AdBreakMetadata", targetDepth)) {
+                    context.nextToken();
+                    adBreak.setAdBreakMetadata(new ListUnmarshaller<KeyValuePair>(KeyValuePairJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("MessageType", targetDepth)) {
                     context.nextToken();
                     adBreak.setMessageType(context.getUnmarshaller(String.class).unmarshall(context));

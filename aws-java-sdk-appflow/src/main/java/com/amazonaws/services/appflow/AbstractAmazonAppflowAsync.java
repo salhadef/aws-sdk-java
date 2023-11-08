@@ -236,6 +236,19 @@ public class AbstractAmazonAppflowAsync extends AbstractAmazonAppflow implements
     }
 
     @Override
+    public java.util.concurrent.Future<ResetConnectorMetadataCacheResult> resetConnectorMetadataCacheAsync(ResetConnectorMetadataCacheRequest request) {
+
+        return resetConnectorMetadataCacheAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResetConnectorMetadataCacheResult> resetConnectorMetadataCacheAsync(ResetConnectorMetadataCacheRequest request,
+            com.amazonaws.handlers.AsyncHandler<ResetConnectorMetadataCacheRequest, ResetConnectorMetadataCacheResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<StartFlowResult> startFlowAsync(StartFlowRequest request) {
 
         return startFlowAsync(request, null);

@@ -238,6 +238,12 @@ public class ModelPackage implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private DriftCheckBaselines driftCheckBaselines;
+    /**
+     * <p>
+     * Indicates if you want to skip model validation.
+     * </p>
+     */
+    private String skipModelValidation;
 
     /**
      * <p>
@@ -1835,6 +1841,65 @@ public class ModelPackage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Indicates if you want to skip model validation.
+     * </p>
+     * 
+     * @param skipModelValidation
+     *        Indicates if you want to skip model validation.
+     * @see SkipModelValidation
+     */
+
+    public void setSkipModelValidation(String skipModelValidation) {
+        this.skipModelValidation = skipModelValidation;
+    }
+
+    /**
+     * <p>
+     * Indicates if you want to skip model validation.
+     * </p>
+     * 
+     * @return Indicates if you want to skip model validation.
+     * @see SkipModelValidation
+     */
+
+    public String getSkipModelValidation() {
+        return this.skipModelValidation;
+    }
+
+    /**
+     * <p>
+     * Indicates if you want to skip model validation.
+     * </p>
+     * 
+     * @param skipModelValidation
+     *        Indicates if you want to skip model validation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SkipModelValidation
+     */
+
+    public ModelPackage withSkipModelValidation(String skipModelValidation) {
+        setSkipModelValidation(skipModelValidation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates if you want to skip model validation.
+     * </p>
+     * 
+     * @param skipModelValidation
+     *        Indicates if you want to skip model validation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SkipModelValidation
+     */
+
+    public ModelPackage withSkipModelValidation(SkipModelValidation skipModelValidation) {
+        this.skipModelValidation = skipModelValidation.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1897,7 +1962,9 @@ public class ModelPackage implements Serializable, Cloneable, StructuredPojo {
         if (getCustomerMetadataProperties() != null)
             sb.append("CustomerMetadataProperties: ").append(getCustomerMetadataProperties()).append(",");
         if (getDriftCheckBaselines() != null)
-            sb.append("DriftCheckBaselines: ").append(getDriftCheckBaselines());
+            sb.append("DriftCheckBaselines: ").append(getDriftCheckBaselines()).append(",");
+        if (getSkipModelValidation() != null)
+            sb.append("SkipModelValidation: ").append(getSkipModelValidation());
         sb.append("}");
         return sb.toString();
     }
@@ -2017,6 +2084,10 @@ public class ModelPackage implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDriftCheckBaselines() != null && other.getDriftCheckBaselines().equals(this.getDriftCheckBaselines()) == false)
             return false;
+        if (other.getSkipModelValidation() == null ^ this.getSkipModelValidation() == null)
+            return false;
+        if (other.getSkipModelValidation() != null && other.getSkipModelValidation().equals(this.getSkipModelValidation()) == false)
+            return false;
         return true;
     }
 
@@ -2051,6 +2122,7 @@ public class ModelPackage implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getCustomerMetadataProperties() == null) ? 0 : getCustomerMetadataProperties().hashCode());
         hashCode = prime * hashCode + ((getDriftCheckBaselines() == null) ? 0 : getDriftCheckBaselines().hashCode());
+        hashCode = prime * hashCode + ((getSkipModelValidation() == null) ? 0 : getSkipModelValidation().hashCode());
         return hashCode;
     }
 

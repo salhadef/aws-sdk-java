@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum DeliveryStreamType {
 
     DirectPut("DirectPut"),
-    KinesisStreamAsSource("KinesisStreamAsSource");
+    KinesisStreamAsSource("KinesisStreamAsSource"),
+    MSKAsSource("MSKAsSource");
 
     private String value;
 

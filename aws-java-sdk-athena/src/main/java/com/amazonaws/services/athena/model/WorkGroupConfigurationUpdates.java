@@ -87,7 +87,7 @@ public class WorkGroupConfigurationUpdates implements Serializable, Cloneable, S
     private EngineVersion engineVersion;
     /**
      * <p>
-     * Removes content encryption configuration for a workgroup.
+     * Removes content encryption configuration from an Apache Spark-enabled Athena workgroup.
      * </p>
      */
     private Boolean removeCustomerContentEncryptionConfiguration;
@@ -543,11 +543,11 @@ public class WorkGroupConfigurationUpdates implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Removes content encryption configuration for a workgroup.
+     * Removes content encryption configuration from an Apache Spark-enabled Athena workgroup.
      * </p>
      * 
      * @param removeCustomerContentEncryptionConfiguration
-     *        Removes content encryption configuration for a workgroup.
+     *        Removes content encryption configuration from an Apache Spark-enabled Athena workgroup.
      */
 
     public void setRemoveCustomerContentEncryptionConfiguration(Boolean removeCustomerContentEncryptionConfiguration) {
@@ -556,10 +556,10 @@ public class WorkGroupConfigurationUpdates implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Removes content encryption configuration for a workgroup.
+     * Removes content encryption configuration from an Apache Spark-enabled Athena workgroup.
      * </p>
      * 
-     * @return Removes content encryption configuration for a workgroup.
+     * @return Removes content encryption configuration from an Apache Spark-enabled Athena workgroup.
      */
 
     public Boolean getRemoveCustomerContentEncryptionConfiguration() {
@@ -568,11 +568,11 @@ public class WorkGroupConfigurationUpdates implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Removes content encryption configuration for a workgroup.
+     * Removes content encryption configuration from an Apache Spark-enabled Athena workgroup.
      * </p>
      * 
      * @param removeCustomerContentEncryptionConfiguration
-     *        Removes content encryption configuration for a workgroup.
+     *        Removes content encryption configuration from an Apache Spark-enabled Athena workgroup.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -583,10 +583,10 @@ public class WorkGroupConfigurationUpdates implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Removes content encryption configuration for a workgroup.
+     * Removes content encryption configuration from an Apache Spark-enabled Athena workgroup.
      * </p>
      * 
-     * @return Removes content encryption configuration for a workgroup.
+     * @return Removes content encryption configuration from an Apache Spark-enabled Athena workgroup.
      */
 
     public Boolean isRemoveCustomerContentEncryptionConfiguration() {

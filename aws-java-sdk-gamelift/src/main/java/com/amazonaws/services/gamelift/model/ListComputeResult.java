@@ -25,7 +25,7 @@ public class ListComputeResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A list of compute resources registered to the fleet you specified.
+     * A list of compute resources in the specified fleet.
      * </p>
      */
     private java.util.List<Compute> computeList;
@@ -39,10 +39,10 @@ public class ListComputeResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A list of compute resources registered to the fleet you specified.
+     * A list of compute resources in the specified fleet.
      * </p>
      * 
-     * @return A list of compute resources registered to the fleet you specified.
+     * @return A list of compute resources in the specified fleet.
      */
 
     public java.util.List<Compute> getComputeList() {
@@ -51,11 +51,11 @@ public class ListComputeResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A list of compute resources registered to the fleet you specified.
+     * A list of compute resources in the specified fleet.
      * </p>
      * 
      * @param computeList
-     *        A list of compute resources registered to the fleet you specified.
+     *        A list of compute resources in the specified fleet.
      */
 
     public void setComputeList(java.util.Collection<Compute> computeList) {
@@ -69,7 +69,7 @@ public class ListComputeResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A list of compute resources registered to the fleet you specified.
+     * A list of compute resources in the specified fleet.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +78,7 @@ public class ListComputeResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      * 
      * @param computeList
-     *        A list of compute resources registered to the fleet you specified.
+     *        A list of compute resources in the specified fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +94,11 @@ public class ListComputeResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A list of compute resources registered to the fleet you specified.
+     * A list of compute resources in the specified fleet.
      * </p>
      * 
      * @param computeList
-     *        A list of compute resources registered to the fleet you specified.
+     *        A list of compute resources in the specified fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

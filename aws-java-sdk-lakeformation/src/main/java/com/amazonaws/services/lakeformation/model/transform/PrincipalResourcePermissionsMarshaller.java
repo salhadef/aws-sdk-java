@@ -38,6 +38,10 @@ public class PrincipalResourcePermissionsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PermissionsWithGrantOption").build();
     private static final MarshallingInfo<StructuredPojo> ADDITIONALDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdditionalDetails").build();
+    private static final MarshallingInfo<java.util.Date> LASTUPDATED_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastUpdated").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> LASTUPDATEDBY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastUpdatedBy").build();
 
     private static final PrincipalResourcePermissionsMarshaller instance = new PrincipalResourcePermissionsMarshaller();
 
@@ -60,6 +64,8 @@ public class PrincipalResourcePermissionsMarshaller {
             protocolMarshaller.marshall(principalResourcePermissions.getPermissions(), PERMISSIONS_BINDING);
             protocolMarshaller.marshall(principalResourcePermissions.getPermissionsWithGrantOption(), PERMISSIONSWITHGRANTOPTION_BINDING);
             protocolMarshaller.marshall(principalResourcePermissions.getAdditionalDetails(), ADDITIONALDETAILS_BINDING);
+            protocolMarshaller.marshall(principalResourcePermissions.getLastUpdated(), LASTUPDATED_BINDING);
+            protocolMarshaller.marshall(principalResourcePermissions.getLastUpdatedBy(), LASTUPDATEDBY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

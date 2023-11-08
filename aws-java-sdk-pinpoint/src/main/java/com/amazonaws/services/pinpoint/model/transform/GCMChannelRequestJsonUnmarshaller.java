@@ -52,9 +52,17 @@ public class GCMChannelRequestJsonUnmarshaller implements Unmarshaller<GCMChanne
                     context.nextToken();
                     gCMChannelRequest.setApiKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DefaultAuthenticationMethod", targetDepth)) {
+                    context.nextToken();
+                    gCMChannelRequest.setDefaultAuthenticationMethod(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Enabled", targetDepth)) {
                     context.nextToken();
                     gCMChannelRequest.setEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("ServiceJson", targetDepth)) {
+                    context.nextToken();
+                    gCMChannelRequest.setServiceJson(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -46,6 +46,8 @@ public class DataLabelOptionsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LabelColor").build();
     private static final MarshallingInfo<String> OVERLAP_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Overlap").build();
+    private static final MarshallingInfo<String> TOTALSVISIBILITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TotalsVisibility").build();
 
     private static final DataLabelOptionsMarshaller instance = new DataLabelOptionsMarshaller();
 
@@ -72,6 +74,7 @@ public class DataLabelOptionsMarshaller {
             protocolMarshaller.marshall(dataLabelOptions.getLabelFontConfiguration(), LABELFONTCONFIGURATION_BINDING);
             protocolMarshaller.marshall(dataLabelOptions.getLabelColor(), LABELCOLOR_BINDING);
             protocolMarshaller.marshall(dataLabelOptions.getOverlap(), OVERLAP_BINDING);
+            protocolMarshaller.marshall(dataLabelOptions.getTotalsVisibility(), TOTALSVISIBILITY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

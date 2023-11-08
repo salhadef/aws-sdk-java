@@ -97,8 +97,8 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
      * an EC2 instance, use the Amazon EC2 <code>DescribeInstances</code> operation. For information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in
      * the <i>Amazon EC2 API Reference</i> or <a
-     * href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in the <i>Amazon
-     * Web Services CLI Command Reference</i>.
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a> in the
+     * <i>Amazon Web Services CLI Command Reference</i>.
      * </p>
      */
     private String iamRole;
@@ -127,8 +127,8 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
      * Amazon EC2 <code>DescribeInstances</code> operation. For information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in
      * the <i>Amazon EC2 API Reference</i> or <a
-     * href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in the <i>Amazon
-     * Web Services CLI Command Reference</i>.
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a> in the
+     * <i>Amazon Web Services CLI Command Reference</i>.
      * </p>
      */
     private String name;
@@ -689,8 +689,8 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
      * an EC2 instance, use the Amazon EC2 <code>DescribeInstances</code> operation. For information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in
      * the <i>Amazon EC2 API Reference</i> or <a
-     * href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in the <i>Amazon
-     * Web Services CLI Command Reference</i>.
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a> in the
+     * <i>Amazon Web Services CLI Command Reference</i>.
      * </p>
      * 
      * @param iamRole
@@ -700,8 +700,8 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
      *        information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html"
      *        >DescribeInstances</a> in the <i>Amazon EC2 API Reference</i> or <a
-     *        href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in the
-     *        <i>Amazon Web Services CLI Command Reference</i>.
+     *        href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a>
+     *        in the <i>Amazon Web Services CLI Command Reference</i>.
      */
 
     public void setIamRole(String iamRole) {
@@ -715,8 +715,8 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
      * an EC2 instance, use the Amazon EC2 <code>DescribeInstances</code> operation. For information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in
      * the <i>Amazon EC2 API Reference</i> or <a
-     * href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in the <i>Amazon
-     * Web Services CLI Command Reference</i>.
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a> in the
+     * <i>Amazon Web Services CLI Command Reference</i>.
      * </p>
      * 
      * @return The Identity and Access Management (IAM) role assigned to the on-premises Systems Manager managed node.
@@ -725,8 +725,8 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
      *         For information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html"
      *         >DescribeInstances</a> in the <i>Amazon EC2 API Reference</i> or <a
-     *         href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in the
-     *         <i>Amazon Web Services CLI Command Reference</i>.
+     *         href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html"
+     *         >describe-instances</a> in the <i>Amazon Web Services CLI Command Reference</i>.
      */
 
     public String getIamRole() {
@@ -740,8 +740,8 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
      * an EC2 instance, use the Amazon EC2 <code>DescribeInstances</code> operation. For information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in
      * the <i>Amazon EC2 API Reference</i> or <a
-     * href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in the <i>Amazon
-     * Web Services CLI Command Reference</i>.
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a> in the
+     * <i>Amazon Web Services CLI Command Reference</i>.
      * </p>
      * 
      * @param iamRole
@@ -751,8 +751,8 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
      *        information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html"
      *        >DescribeInstances</a> in the <i>Amazon EC2 API Reference</i> or <a
-     *        href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in the
-     *        <i>Amazon Web Services CLI Command Reference</i>.
+     *        href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a>
+     *        in the <i>Amazon Web Services CLI Command Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -887,8 +887,8 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
      * Amazon EC2 <code>DescribeInstances</code> operation. For information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in
      * the <i>Amazon EC2 API Reference</i> or <a
-     * href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in the <i>Amazon
-     * Web Services CLI Command Reference</i>.
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a> in the
+     * <i>Amazon Web Services CLI Command Reference</i>.
      * </p>
      * 
      * @param name
@@ -903,8 +903,8 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
      *        instance, use the Amazon EC2 <code>DescribeInstances</code> operation. For information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html"
      *        >DescribeInstances</a> in the <i>Amazon EC2 API Reference</i> or <a
-     *        href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in the
-     *        <i>Amazon Web Services CLI Command Reference</i>.
+     *        href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a>
+     *        in the <i>Amazon Web Services CLI Command Reference</i>.
      */
 
     public void setName(String name) {
@@ -924,8 +924,8 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
      * Amazon EC2 <code>DescribeInstances</code> operation. For information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in
      * the <i>Amazon EC2 API Reference</i> or <a
-     * href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in the <i>Amazon
-     * Web Services CLI Command Reference</i>.
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a> in the
+     * <i>Amazon Web Services CLI Command Reference</i>.
      * </p>
      * 
      * @return The name assigned to an on-premises server, edge device, or virtual machine (VM) when it is activated as
@@ -939,8 +939,8 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
      *         EC2 instance, use the Amazon EC2 <code>DescribeInstances</code> operation. For information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html"
      *         >DescribeInstances</a> in the <i>Amazon EC2 API Reference</i> or <a
-     *         href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in the
-     *         <i>Amazon Web Services CLI Command Reference</i>.
+     *         href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html"
+     *         >describe-instances</a> in the <i>Amazon Web Services CLI Command Reference</i>.
      */
 
     public String getName() {
@@ -960,8 +960,8 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
      * Amazon EC2 <code>DescribeInstances</code> operation. For information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in
      * the <i>Amazon EC2 API Reference</i> or <a
-     * href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in the <i>Amazon
-     * Web Services CLI Command Reference</i>.
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a> in the
+     * <i>Amazon Web Services CLI Command Reference</i>.
      * </p>
      * 
      * @param name
@@ -976,8 +976,8 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
      *        instance, use the Amazon EC2 <code>DescribeInstances</code> operation. For information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html"
      *        >DescribeInstances</a> in the <i>Amazon EC2 API Reference</i> or <a
-     *        href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in the
-     *        <i>Amazon Web Services CLI Command Reference</i>.
+     *        href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a>
+     *        in the <i>Amazon Web Services CLI Command Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

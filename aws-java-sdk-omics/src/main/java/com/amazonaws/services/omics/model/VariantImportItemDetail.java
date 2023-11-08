@@ -30,22 +30,62 @@ public class VariantImportItemDetail implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The item's job status.
-     * </p>
-     */
-    private String jobStatus;
-    /**
-     * <p>
      * The source file's location in Amazon S3.
      * </p>
      */
     private String source;
     /**
      * <p>
+     * The item's job status.
+     * </p>
+     */
+    private String jobStatus;
+    /**
+     * <p>
      * A message that provides additional context about a job
      * </p>
      */
     private String statusMessage;
+
+    /**
+     * <p>
+     * The source file's location in Amazon S3.
+     * </p>
+     * 
+     * @param source
+     *        The source file's location in Amazon S3.
+     */
+
+    public void setSource(String source) {
+        this.source = source;
+    }
+
+    /**
+     * <p>
+     * The source file's location in Amazon S3.
+     * </p>
+     * 
+     * @return The source file's location in Amazon S3.
+     */
+
+    public String getSource() {
+        return this.source;
+    }
+
+    /**
+     * <p>
+     * The source file's location in Amazon S3.
+     * </p>
+     * 
+     * @param source
+     *        The source file's location in Amazon S3.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VariantImportItemDetail withSource(String source) {
+        setSource(source);
+        return this;
+    }
 
     /**
      * <p>
@@ -108,46 +148,6 @@ public class VariantImportItemDetail implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The source file's location in Amazon S3.
-     * </p>
-     * 
-     * @param source
-     *        The source file's location in Amazon S3.
-     */
-
-    public void setSource(String source) {
-        this.source = source;
-    }
-
-    /**
-     * <p>
-     * The source file's location in Amazon S3.
-     * </p>
-     * 
-     * @return The source file's location in Amazon S3.
-     */
-
-    public String getSource() {
-        return this.source;
-    }
-
-    /**
-     * <p>
-     * The source file's location in Amazon S3.
-     * </p>
-     * 
-     * @param source
-     *        The source file's location in Amazon S3.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public VariantImportItemDetail withSource(String source) {
-        setSource(source);
-        return this;
-    }
-
-    /**
-     * <p>
      * A message that provides additional context about a job
      * </p>
      * 
@@ -198,10 +198,10 @@ public class VariantImportItemDetail implements Serializable, Cloneable, Structu
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getJobStatus() != null)
-            sb.append("JobStatus: ").append(getJobStatus()).append(",");
         if (getSource() != null)
             sb.append("Source: ").append(getSource()).append(",");
+        if (getJobStatus() != null)
+            sb.append("JobStatus: ").append(getJobStatus()).append(",");
         if (getStatusMessage() != null)
             sb.append("StatusMessage: ").append(getStatusMessage());
         sb.append("}");
@@ -218,13 +218,13 @@ public class VariantImportItemDetail implements Serializable, Cloneable, Structu
         if (obj instanceof VariantImportItemDetail == false)
             return false;
         VariantImportItemDetail other = (VariantImportItemDetail) obj;
-        if (other.getJobStatus() == null ^ this.getJobStatus() == null)
-            return false;
-        if (other.getJobStatus() != null && other.getJobStatus().equals(this.getJobStatus()) == false)
-            return false;
         if (other.getSource() == null ^ this.getSource() == null)
             return false;
         if (other.getSource() != null && other.getSource().equals(this.getSource()) == false)
+            return false;
+        if (other.getJobStatus() == null ^ this.getJobStatus() == null)
+            return false;
+        if (other.getJobStatus() != null && other.getJobStatus().equals(this.getJobStatus()) == false)
             return false;
         if (other.getStatusMessage() == null ^ this.getStatusMessage() == null)
             return false;
@@ -238,8 +238,8 @@ public class VariantImportItemDetail implements Serializable, Cloneable, Structu
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getJobStatus() == null) ? 0 : getJobStatus().hashCode());
         hashCode = prime * hashCode + ((getSource() == null) ? 0 : getSource().hashCode());
+        hashCode = prime * hashCode + ((getJobStatus() == null) ? 0 : getJobStatus().hashCode());
         hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
         return hashCode;
     }

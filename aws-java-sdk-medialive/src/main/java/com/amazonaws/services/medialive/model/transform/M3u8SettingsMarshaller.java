@@ -61,6 +61,10 @@ public class M3u8SettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("transportStreamId").build();
     private static final MarshallingInfo<String> VIDEOPID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("videoPid").build();
+    private static final MarshallingInfo<String> KLVBEHAVIOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("klvBehavior").build();
+    private static final MarshallingInfo<String> KLVDATAPIDS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("klvDataPids").build();
 
     private static final M3u8SettingsMarshaller instance = new M3u8SettingsMarshaller();
 
@@ -95,6 +99,8 @@ public class M3u8SettingsMarshaller {
             protocolMarshaller.marshall(m3u8Settings.getTimedMetadataPid(), TIMEDMETADATAPID_BINDING);
             protocolMarshaller.marshall(m3u8Settings.getTransportStreamId(), TRANSPORTSTREAMID_BINDING);
             protocolMarshaller.marshall(m3u8Settings.getVideoPid(), VIDEOPID_BINDING);
+            protocolMarshaller.marshall(m3u8Settings.getKlvBehavior(), KLVBEHAVIOR_BINDING);
+            protocolMarshaller.marshall(m3u8Settings.getKlvDataPids(), KLVDATAPIDS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

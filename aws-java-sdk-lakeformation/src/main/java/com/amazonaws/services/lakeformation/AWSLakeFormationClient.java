@@ -44,6 +44,7 @@ import com.amazonaws.services.lakeformation.AWSLakeFormationClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.lakeformation.model.*;
+
 import com.amazonaws.services.lakeformation.model.transform.*;
 
 /**
@@ -721,6 +722,75 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
+     * Enforce Lake Formation permissions for the given databases, tables, and principals.
+     * </p>
+     * 
+     * @param createLakeFormationOptInRequest
+     * @return Result of the CreateLakeFormationOptIn operation returned by the service.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist.
+     * @throws AccessDeniedException
+     *         Access to a resource was denied.
+     * @throws ConcurrentModificationException
+     *         Two processes are trying to modify a resource simultaneously.
+     * @sample AWSLakeFormation.CreateLakeFormationOptIn
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/CreateLakeFormationOptIn"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateLakeFormationOptInResult createLakeFormationOptIn(CreateLakeFormationOptInRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateLakeFormationOptIn(request);
+    }
+
+    @SdkInternalApi
+    final CreateLakeFormationOptInResult executeCreateLakeFormationOptIn(CreateLakeFormationOptInRequest createLakeFormationOptInRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createLakeFormationOptInRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateLakeFormationOptInRequest> request = null;
+        Response<CreateLakeFormationOptInResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateLakeFormationOptInRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createLakeFormationOptInRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLakeFormationOptIn");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateLakeFormationOptInResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateLakeFormationOptInResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a data cell filter.
      * </p>
      * 
@@ -843,6 +913,75 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteLFTagResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteLFTagResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Remove the Lake Formation permissions enforcement of the given databases, tables, and principals.
+     * </p>
+     * 
+     * @param deleteLakeFormationOptInRequest
+     * @return Result of the DeleteLakeFormationOptIn operation returned by the service.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist.
+     * @throws AccessDeniedException
+     *         Access to a resource was denied.
+     * @throws ConcurrentModificationException
+     *         Two processes are trying to modify a resource simultaneously.
+     * @sample AWSLakeFormation.DeleteLakeFormationOptIn
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteLakeFormationOptIn"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteLakeFormationOptInResult deleteLakeFormationOptIn(DeleteLakeFormationOptInRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteLakeFormationOptIn(request);
+    }
+
+    @SdkInternalApi
+    final DeleteLakeFormationOptInResult executeDeleteLakeFormationOptIn(DeleteLakeFormationOptInRequest deleteLakeFormationOptInRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteLakeFormationOptInRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteLakeFormationOptInRequest> request = null;
+        Response<DeleteLakeFormationOptInResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteLakeFormationOptInRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteLakeFormationOptInRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLakeFormationOptIn");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteLakeFormationOptInResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteLakeFormationOptInResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2242,6 +2381,71 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
+     * Retrieve the current list of resources and principals that are opt in to enforce Lake Formation permissions.
+     * </p>
+     * 
+     * @param listLakeFormationOptInsRequest
+     * @return Result of the ListLakeFormationOptIns operation returned by the service.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws AccessDeniedException
+     *         Access to a resource was denied.
+     * @sample AWSLakeFormation.ListLakeFormationOptIns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListLakeFormationOptIns"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListLakeFormationOptInsResult listLakeFormationOptIns(ListLakeFormationOptInsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListLakeFormationOptIns(request);
+    }
+
+    @SdkInternalApi
+    final ListLakeFormationOptInsResult executeListLakeFormationOptIns(ListLakeFormationOptInsRequest listLakeFormationOptInsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listLakeFormationOptInsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListLakeFormationOptInsRequest> request = null;
+        Response<ListLakeFormationOptInsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListLakeFormationOptInsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listLakeFormationOptInsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLakeFormationOptIns");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListLakeFormationOptInsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListLakeFormationOptInsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a list of the principal permissions on the resource, filtered by the permissions of the caller. For
      * example, if you are granted an ALTER permission, you are able to see only the principal permissions for ALTER.
      * </p>
@@ -2250,7 +2454,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * </p>
      * <p>
      * For information about permissions, see <a
-     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control
      * to Metadata and Data</a>.
      * </p>
      * 

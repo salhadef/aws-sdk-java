@@ -56,7 +56,7 @@ public class SearchProvisionedProductsRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>, <code>createdTime</code>,
      * <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>, <code>name</code>,
-     * <code>physicalId</code>, <code>productId</code>, <code>provisioningArtifact</code>, <code>type</code>,
+     * <code>physicalId</code>, <code>productId</code>, <code>provisioningArtifactId</code>, <code>type</code>,
      * <code>status</code>, <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>,
      * <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>,
      * and <code>provisioningArtifactName</code>.
@@ -248,7 +248,7 @@ public class SearchProvisionedProductsRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>, <code>createdTime</code>,
      * <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>, <code>name</code>,
-     * <code>physicalId</code>, <code>productId</code>, <code>provisioningArtifact</code>, <code>type</code>,
+     * <code>physicalId</code>, <code>productId</code>, <code>provisioningArtifactId</code>, <code>type</code>,
      * <code>status</code>, <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>,
      * <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>,
      * and <code>provisioningArtifactName</code>.
@@ -261,7 +261,7 @@ public class SearchProvisionedProductsRequest extends com.amazonaws.AmazonWebSer
      *         <p>
      *         When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>,
      *         <code>createdTime</code>, <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>,
-     *         <code>name</code>, <code>physicalId</code>, <code>productId</code>, <code>provisioningArtifact</code>,
+     *         <code>name</code>, <code>physicalId</code>, <code>productId</code>, <code>provisioningArtifactId</code>,
      *         <code>type</code>, <code>status</code>, <code>tags</code>, <code>userArn</code>,
      *         <code>userArnSession</code>, <code>lastProvisioningRecordId</code>,
      *         <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and
@@ -282,7 +282,7 @@ public class SearchProvisionedProductsRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>, <code>createdTime</code>,
      * <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>, <code>name</code>,
-     * <code>physicalId</code>, <code>productId</code>, <code>provisioningArtifact</code>, <code>type</code>,
+     * <code>physicalId</code>, <code>productId</code>, <code>provisioningArtifactId</code>, <code>type</code>,
      * <code>status</code>, <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>,
      * <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>,
      * and <code>provisioningArtifactName</code>.
@@ -296,7 +296,7 @@ public class SearchProvisionedProductsRequest extends com.amazonaws.AmazonWebSer
      *        <p>
      *        When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>,
      *        <code>createdTime</code>, <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>,
-     *        <code>name</code>, <code>physicalId</code>, <code>productId</code>, <code>provisioningArtifact</code>,
+     *        <code>name</code>, <code>physicalId</code>, <code>productId</code>, <code>provisioningArtifactId</code>,
      *        <code>type</code>, <code>status</code>, <code>tags</code>, <code>userArn</code>,
      *        <code>userArnSession</code>, <code>lastProvisioningRecordId</code>,
      *        <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and
@@ -317,7 +317,7 @@ public class SearchProvisionedProductsRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>, <code>createdTime</code>,
      * <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>, <code>name</code>,
-     * <code>physicalId</code>, <code>productId</code>, <code>provisioningArtifact</code>, <code>type</code>,
+     * <code>physicalId</code>, <code>productId</code>, <code>provisioningArtifactId</code>, <code>type</code>,
      * <code>status</code>, <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>,
      * <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>,
      * and <code>provisioningArtifactName</code>.
@@ -331,7 +331,7 @@ public class SearchProvisionedProductsRequest extends com.amazonaws.AmazonWebSer
      *        <p>
      *        When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>,
      *        <code>createdTime</code>, <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>,
-     *        <code>name</code>, <code>physicalId</code>, <code>productId</code>, <code>provisioningArtifact</code>,
+     *        <code>name</code>, <code>physicalId</code>, <code>productId</code>, <code>provisioningArtifactId</code>,
      *        <code>type</code>, <code>status</code>, <code>tags</code>, <code>userArn</code>,
      *        <code>userArnSession</code>, <code>lastProvisioningRecordId</code>,
      *        <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and

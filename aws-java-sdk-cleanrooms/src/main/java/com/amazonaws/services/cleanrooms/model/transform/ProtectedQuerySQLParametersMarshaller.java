@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.cleanrooms.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -29,6 +31,10 @@ public class ProtectedQuerySQLParametersMarshaller {
 
     private static final MarshallingInfo<String> QUERYSTRING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("queryString").build();
+    private static final MarshallingInfo<String> ANALYSISTEMPLATEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("analysisTemplateArn").build();
+    private static final MarshallingInfo<Map> PARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("parameters").build();
 
     private static final ProtectedQuerySQLParametersMarshaller instance = new ProtectedQuerySQLParametersMarshaller();
 
@@ -47,6 +53,8 @@ public class ProtectedQuerySQLParametersMarshaller {
 
         try {
             protocolMarshaller.marshall(protectedQuerySQLParameters.getQueryString(), QUERYSTRING_BINDING);
+            protocolMarshaller.marshall(protectedQuerySQLParameters.getAnalysisTemplateArn(), ANALYSISTEMPLATEARN_BINDING);
+            protocolMarshaller.marshall(protectedQuerySQLParameters.getParameters(), PARAMETERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

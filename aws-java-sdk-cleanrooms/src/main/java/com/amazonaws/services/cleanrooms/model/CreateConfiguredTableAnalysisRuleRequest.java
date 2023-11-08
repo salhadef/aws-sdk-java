@@ -34,7 +34,7 @@ public class CreateConfiguredTableAnalysisRuleRequest extends com.amazonaws.Amaz
     private String configuredTableIdentifier;
     /**
      * <p>
-     * The type of analysis rule. Valid values are AGGREGATION and LIST.
+     * The type of analysis rule.
      * </p>
      */
     private String analysisRuleType;
@@ -93,11 +93,11 @@ public class CreateConfiguredTableAnalysisRuleRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The type of analysis rule. Valid values are AGGREGATION and LIST.
+     * The type of analysis rule.
      * </p>
      * 
      * @param analysisRuleType
-     *        The type of analysis rule. Valid values are AGGREGATION and LIST.
+     *        The type of analysis rule.
      * @see ConfiguredTableAnalysisRuleType
      */
 
@@ -107,10 +107,10 @@ public class CreateConfiguredTableAnalysisRuleRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The type of analysis rule. Valid values are AGGREGATION and LIST.
+     * The type of analysis rule.
      * </p>
      * 
-     * @return The type of analysis rule. Valid values are AGGREGATION and LIST.
+     * @return The type of analysis rule.
      * @see ConfiguredTableAnalysisRuleType
      */
 
@@ -120,11 +120,11 @@ public class CreateConfiguredTableAnalysisRuleRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The type of analysis rule. Valid values are AGGREGATION and LIST.
+     * The type of analysis rule.
      * </p>
      * 
      * @param analysisRuleType
-     *        The type of analysis rule. Valid values are AGGREGATION and LIST.
+     *        The type of analysis rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConfiguredTableAnalysisRuleType
      */
@@ -136,11 +136,11 @@ public class CreateConfiguredTableAnalysisRuleRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The type of analysis rule. Valid values are AGGREGATION and LIST.
+     * The type of analysis rule.
      * </p>
      * 
      * @param analysisRuleType
-     *        The type of analysis rule. Valid values are AGGREGATION and LIST.
+     *        The type of analysis rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConfiguredTableAnalysisRuleType
      */

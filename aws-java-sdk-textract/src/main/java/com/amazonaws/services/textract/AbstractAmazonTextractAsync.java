@@ -67,6 +67,58 @@ public class AbstractAmazonTextractAsync extends AbstractAmazonTextract implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CreateAdapterResult> createAdapterAsync(CreateAdapterRequest request) {
+
+        return createAdapterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAdapterResult> createAdapterAsync(CreateAdapterRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateAdapterRequest, CreateAdapterResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAdapterVersionResult> createAdapterVersionAsync(CreateAdapterVersionRequest request) {
+
+        return createAdapterVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAdapterVersionResult> createAdapterVersionAsync(CreateAdapterVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateAdapterVersionRequest, CreateAdapterVersionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAdapterResult> deleteAdapterAsync(DeleteAdapterRequest request) {
+
+        return deleteAdapterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAdapterResult> deleteAdapterAsync(DeleteAdapterRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteAdapterRequest, DeleteAdapterResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAdapterVersionResult> deleteAdapterVersionAsync(DeleteAdapterVersionRequest request) {
+
+        return deleteAdapterVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAdapterVersionResult> deleteAdapterVersionAsync(DeleteAdapterVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteAdapterVersionRequest, DeleteAdapterVersionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DetectDocumentTextResult> detectDocumentTextAsync(DetectDocumentTextRequest request) {
 
         return detectDocumentTextAsync(request, null);
@@ -75,6 +127,32 @@ public class AbstractAmazonTextractAsync extends AbstractAmazonTextract implemen
     @Override
     public java.util.concurrent.Future<DetectDocumentTextResult> detectDocumentTextAsync(DetectDocumentTextRequest request,
             com.amazonaws.handlers.AsyncHandler<DetectDocumentTextRequest, DetectDocumentTextResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAdapterResult> getAdapterAsync(GetAdapterRequest request) {
+
+        return getAdapterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAdapterResult> getAdapterAsync(GetAdapterRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetAdapterRequest, GetAdapterResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAdapterVersionResult> getAdapterVersionAsync(GetAdapterVersionRequest request) {
+
+        return getAdapterVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAdapterVersionResult> getAdapterVersionAsync(GetAdapterVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetAdapterVersionRequest, GetAdapterVersionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -145,6 +223,45 @@ public class AbstractAmazonTextractAsync extends AbstractAmazonTextract implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListAdapterVersionsResult> listAdapterVersionsAsync(ListAdapterVersionsRequest request) {
+
+        return listAdapterVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAdapterVersionsResult> listAdapterVersionsAsync(ListAdapterVersionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAdapterVersionsRequest, ListAdapterVersionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAdaptersResult> listAdaptersAsync(ListAdaptersRequest request) {
+
+        return listAdaptersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAdaptersResult> listAdaptersAsync(ListAdaptersRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAdaptersRequest, ListAdaptersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
+
+        return listTagsForResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<StartDocumentAnalysisResult> startDocumentAnalysisAsync(StartDocumentAnalysisRequest request) {
 
         return startDocumentAnalysisAsync(request, null);
@@ -192,6 +309,45 @@ public class AbstractAmazonTextractAsync extends AbstractAmazonTextract implemen
     @Override
     public java.util.concurrent.Future<StartLendingAnalysisResult> startLendingAnalysisAsync(StartLendingAnalysisRequest request,
             com.amazonaws.handlers.AsyncHandler<StartLendingAnalysisRequest, StartLendingAnalysisResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
+
+        return tagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request) {
+
+        return untagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAdapterResult> updateAdapterAsync(UpdateAdapterRequest request) {
+
+        return updateAdapterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAdapterResult> updateAdapterAsync(UpdateAdapterRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateAdapterRequest, UpdateAdapterResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

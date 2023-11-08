@@ -69,12 +69,19 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      * the instance, you must specify a valid AMI alias or a valid Amazon EC2 Systems Manager (SSM) path.
      * </p>
      * <p>
-     * The default Amazon Linux AMI is currently used if the parameter isn't explicitly assigned a value in the request.
+     * From November 20, 2023, you will be required to include the <code>imageId</code> parameter for the
+     * <code>CreateEnvironmentEC2</code> action. This change will be reflected across all direct methods of
+     * communicating with the API, such as Amazon Web Services SDK, Amazon Web Services CLI and Amazon Web Services
+     * CloudFormation. This change will only affect direct API consumers, and not Cloud9 console users.
      * </p>
      * <p>
-     * In the future the parameter for Amazon Linux will no longer be available when you specify an AMI for your
-     * instance. Amazon Linux 2 will then become the default AMI, which is used to launch your instance if no parameter
-     * is explicitly defined.
+     * From January 22, 2024, Amazon Linux (AL1) will be removed from the list of available image IDs for Cloud9. This
+     * is necessary as AL1 will reach the end of maintenance support in December 2023, and as a result will no longer
+     * receive security updates. We recommend using Amazon Linux 2 as the AMI to create your environment as it is fully
+     * supported. This change will only affect direct API consumers, and not Cloud9 console users.
+     * </p>
+     * <p>
+     * Since Ubuntu 18.04 has ended standard support as of May 31, 2023, we recommend you choose Ubuntu 22.04.
      * </p>
      * <p>
      * <b>AMI aliases </b>
@@ -95,6 +102,11 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      * Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Ubuntu 22.04: <code>ubuntu-22.04-x86_64</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>SSM paths</b>
@@ -113,6 +125,11 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      * <li>
      * <p>
      * Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Ubuntu 22.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code>
      * </p>
      * </li>
      * </ul>
@@ -408,12 +425,19 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      * the instance, you must specify a valid AMI alias or a valid Amazon EC2 Systems Manager (SSM) path.
      * </p>
      * <p>
-     * The default Amazon Linux AMI is currently used if the parameter isn't explicitly assigned a value in the request.
+     * From November 20, 2023, you will be required to include the <code>imageId</code> parameter for the
+     * <code>CreateEnvironmentEC2</code> action. This change will be reflected across all direct methods of
+     * communicating with the API, such as Amazon Web Services SDK, Amazon Web Services CLI and Amazon Web Services
+     * CloudFormation. This change will only affect direct API consumers, and not Cloud9 console users.
      * </p>
      * <p>
-     * In the future the parameter for Amazon Linux will no longer be available when you specify an AMI for your
-     * instance. Amazon Linux 2 will then become the default AMI, which is used to launch your instance if no parameter
-     * is explicitly defined.
+     * From January 22, 2024, Amazon Linux (AL1) will be removed from the list of available image IDs for Cloud9. This
+     * is necessary as AL1 will reach the end of maintenance support in December 2023, and as a result will no longer
+     * receive security updates. We recommend using Amazon Linux 2 as the AMI to create your environment as it is fully
+     * supported. This change will only affect direct API consumers, and not Cloud9 console users.
+     * </p>
+     * <p>
+     * Since Ubuntu 18.04 has ended standard support as of May 31, 2023, we recommend you choose Ubuntu 22.04.
      * </p>
      * <p>
      * <b>AMI aliases </b>
@@ -432,6 +456,11 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      * <li>
      * <p>
      * Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Ubuntu 22.04: <code>ubuntu-22.04-x86_64</code>
      * </p>
      * </li>
      * </ul>
@@ -454,19 +483,31 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      * Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Ubuntu 22.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param imageId
      *        The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. To choose an AMI
      *        for the instance, you must specify a valid AMI alias or a valid Amazon EC2 Systems Manager (SSM) path.</p>
      *        <p>
-     *        The default Amazon Linux AMI is currently used if the parameter isn't explicitly assigned a value in the
-     *        request.
+     *        From November 20, 2023, you will be required to include the <code>imageId</code> parameter for the
+     *        <code>CreateEnvironmentEC2</code> action. This change will be reflected across all direct methods of
+     *        communicating with the API, such as Amazon Web Services SDK, Amazon Web Services CLI and Amazon Web
+     *        Services CloudFormation. This change will only affect direct API consumers, and not Cloud9 console users.
      *        </p>
      *        <p>
-     *        In the future the parameter for Amazon Linux will no longer be available when you specify an AMI for your
-     *        instance. Amazon Linux 2 will then become the default AMI, which is used to launch your instance if no
-     *        parameter is explicitly defined.
+     *        From January 22, 2024, Amazon Linux (AL1) will be removed from the list of available image IDs for Cloud9.
+     *        This is necessary as AL1 will reach the end of maintenance support in December 2023, and as a result will
+     *        no longer receive security updates. We recommend using Amazon Linux 2 as the AMI to create your
+     *        environment as it is fully supported. This change will only affect direct API consumers, and not Cloud9
+     *        console users.
+     *        </p>
+     *        <p>
+     *        Since Ubuntu 18.04 has ended standard support as of May 31, 2023, we recommend you choose Ubuntu 22.04.
      *        </p>
      *        <p>
      *        <b>AMI aliases </b>
@@ -485,6 +526,11 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      *        <li>
      *        <p>
      *        Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Ubuntu 22.04: <code>ubuntu-22.04-x86_64</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -507,6 +553,11 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      *        Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code>
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        Ubuntu 22.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code>
+     *        </p>
+     *        </li>
      */
 
     public void setImageId(String imageId) {
@@ -519,12 +570,19 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      * the instance, you must specify a valid AMI alias or a valid Amazon EC2 Systems Manager (SSM) path.
      * </p>
      * <p>
-     * The default Amazon Linux AMI is currently used if the parameter isn't explicitly assigned a value in the request.
+     * From November 20, 2023, you will be required to include the <code>imageId</code> parameter for the
+     * <code>CreateEnvironmentEC2</code> action. This change will be reflected across all direct methods of
+     * communicating with the API, such as Amazon Web Services SDK, Amazon Web Services CLI and Amazon Web Services
+     * CloudFormation. This change will only affect direct API consumers, and not Cloud9 console users.
      * </p>
      * <p>
-     * In the future the parameter for Amazon Linux will no longer be available when you specify an AMI for your
-     * instance. Amazon Linux 2 will then become the default AMI, which is used to launch your instance if no parameter
-     * is explicitly defined.
+     * From January 22, 2024, Amazon Linux (AL1) will be removed from the list of available image IDs for Cloud9. This
+     * is necessary as AL1 will reach the end of maintenance support in December 2023, and as a result will no longer
+     * receive security updates. We recommend using Amazon Linux 2 as the AMI to create your environment as it is fully
+     * supported. This change will only affect direct API consumers, and not Cloud9 console users.
+     * </p>
+     * <p>
+     * Since Ubuntu 18.04 has ended standard support as of May 31, 2023, we recommend you choose Ubuntu 22.04.
      * </p>
      * <p>
      * <b>AMI aliases </b>
@@ -543,6 +601,11 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      * <li>
      * <p>
      * Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Ubuntu 22.04: <code>ubuntu-22.04-x86_64</code>
      * </p>
      * </li>
      * </ul>
@@ -565,19 +628,31 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      * Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Ubuntu 22.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. To choose an
      *         AMI for the instance, you must specify a valid AMI alias or a valid Amazon EC2 Systems Manager (SSM)
      *         path.</p>
      *         <p>
-     *         The default Amazon Linux AMI is currently used if the parameter isn't explicitly assigned a value in the
-     *         request.
+     *         From November 20, 2023, you will be required to include the <code>imageId</code> parameter for the
+     *         <code>CreateEnvironmentEC2</code> action. This change will be reflected across all direct methods of
+     *         communicating with the API, such as Amazon Web Services SDK, Amazon Web Services CLI and Amazon Web
+     *         Services CloudFormation. This change will only affect direct API consumers, and not Cloud9 console users.
      *         </p>
      *         <p>
-     *         In the future the parameter for Amazon Linux will no longer be available when you specify an AMI for your
-     *         instance. Amazon Linux 2 will then become the default AMI, which is used to launch your instance if no
-     *         parameter is explicitly defined.
+     *         From January 22, 2024, Amazon Linux (AL1) will be removed from the list of available image IDs for
+     *         Cloud9. This is necessary as AL1 will reach the end of maintenance support in December 2023, and as a
+     *         result will no longer receive security updates. We recommend using Amazon Linux 2 as the AMI to create
+     *         your environment as it is fully supported. This change will only affect direct API consumers, and not
+     *         Cloud9 console users.
+     *         </p>
+     *         <p>
+     *         Since Ubuntu 18.04 has ended standard support as of May 31, 2023, we recommend you choose Ubuntu 22.04.
      *         </p>
      *         <p>
      *         <b>AMI aliases </b>
@@ -596,6 +671,11 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      *         <li>
      *         <p>
      *         Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Ubuntu 22.04: <code>ubuntu-22.04-x86_64</code>
      *         </p>
      *         </li>
      *         </ul>
@@ -618,6 +698,11 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      *         Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code>
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         Ubuntu 22.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code>
+     *         </p>
+     *         </li>
      */
 
     public String getImageId() {
@@ -630,12 +715,19 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      * the instance, you must specify a valid AMI alias or a valid Amazon EC2 Systems Manager (SSM) path.
      * </p>
      * <p>
-     * The default Amazon Linux AMI is currently used if the parameter isn't explicitly assigned a value in the request.
+     * From November 20, 2023, you will be required to include the <code>imageId</code> parameter for the
+     * <code>CreateEnvironmentEC2</code> action. This change will be reflected across all direct methods of
+     * communicating with the API, such as Amazon Web Services SDK, Amazon Web Services CLI and Amazon Web Services
+     * CloudFormation. This change will only affect direct API consumers, and not Cloud9 console users.
      * </p>
      * <p>
-     * In the future the parameter for Amazon Linux will no longer be available when you specify an AMI for your
-     * instance. Amazon Linux 2 will then become the default AMI, which is used to launch your instance if no parameter
-     * is explicitly defined.
+     * From January 22, 2024, Amazon Linux (AL1) will be removed from the list of available image IDs for Cloud9. This
+     * is necessary as AL1 will reach the end of maintenance support in December 2023, and as a result will no longer
+     * receive security updates. We recommend using Amazon Linux 2 as the AMI to create your environment as it is fully
+     * supported. This change will only affect direct API consumers, and not Cloud9 console users.
+     * </p>
+     * <p>
+     * Since Ubuntu 18.04 has ended standard support as of May 31, 2023, we recommend you choose Ubuntu 22.04.
      * </p>
      * <p>
      * <b>AMI aliases </b>
@@ -654,6 +746,11 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      * <li>
      * <p>
      * Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Ubuntu 22.04: <code>ubuntu-22.04-x86_64</code>
      * </p>
      * </li>
      * </ul>
@@ -676,19 +773,31 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      * Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Ubuntu 22.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param imageId
      *        The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. To choose an AMI
      *        for the instance, you must specify a valid AMI alias or a valid Amazon EC2 Systems Manager (SSM) path.</p>
      *        <p>
-     *        The default Amazon Linux AMI is currently used if the parameter isn't explicitly assigned a value in the
-     *        request.
+     *        From November 20, 2023, you will be required to include the <code>imageId</code> parameter for the
+     *        <code>CreateEnvironmentEC2</code> action. This change will be reflected across all direct methods of
+     *        communicating with the API, such as Amazon Web Services SDK, Amazon Web Services CLI and Amazon Web
+     *        Services CloudFormation. This change will only affect direct API consumers, and not Cloud9 console users.
      *        </p>
      *        <p>
-     *        In the future the parameter for Amazon Linux will no longer be available when you specify an AMI for your
-     *        instance. Amazon Linux 2 will then become the default AMI, which is used to launch your instance if no
-     *        parameter is explicitly defined.
+     *        From January 22, 2024, Amazon Linux (AL1) will be removed from the list of available image IDs for Cloud9.
+     *        This is necessary as AL1 will reach the end of maintenance support in December 2023, and as a result will
+     *        no longer receive security updates. We recommend using Amazon Linux 2 as the AMI to create your
+     *        environment as it is fully supported. This change will only affect direct API consumers, and not Cloud9
+     *        console users.
+     *        </p>
+     *        <p>
+     *        Since Ubuntu 18.04 has ended standard support as of May 31, 2023, we recommend you choose Ubuntu 22.04.
      *        </p>
      *        <p>
      *        <b>AMI aliases </b>
@@ -709,6 +818,11 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      *        Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code>
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        Ubuntu 22.04: <code>ubuntu-22.04-x86_64</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        <b>SSM paths</b>
@@ -727,6 +841,11 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      *        <li>
      *        <p>
      *        Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Ubuntu 22.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

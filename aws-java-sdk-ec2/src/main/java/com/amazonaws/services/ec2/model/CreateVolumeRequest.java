@@ -27,7 +27,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The Availability Zone in which to create the volume.
+     * The ID of the Availability Zone in which to create the volume. For example, <code>us-east-1a</code>.
      * </p>
      */
     private String availabilityZone;
@@ -295,7 +295,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *        </p>
      *        </li>
      * @param availabilityZone
-     *        The Availability Zone in which to create the volume.
+     *        The ID of the Availability Zone in which to create the volume. For example, <code>us-east-1a</code>.
      */
     public CreateVolumeRequest(Integer size, String availabilityZone) {
         setSize(size);
@@ -309,7 +309,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * @param snapshotId
      *        The snapshot from which to create the volume. You must specify either a snapshot ID or a volume size.
      * @param availabilityZone
-     *        The Availability Zone in which to create the volume.
+     *        The ID of the Availability Zone in which to create the volume. For example, <code>us-east-1a</code>.
      */
     public CreateVolumeRequest(String snapshotId, String availabilityZone) {
         setSnapshotId(snapshotId);
@@ -318,11 +318,11 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The Availability Zone in which to create the volume.
+     * The ID of the Availability Zone in which to create the volume. For example, <code>us-east-1a</code>.
      * </p>
      * 
      * @param availabilityZone
-     *        The Availability Zone in which to create the volume.
+     *        The ID of the Availability Zone in which to create the volume. For example, <code>us-east-1a</code>.
      */
 
     public void setAvailabilityZone(String availabilityZone) {
@@ -331,10 +331,10 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The Availability Zone in which to create the volume.
+     * The ID of the Availability Zone in which to create the volume. For example, <code>us-east-1a</code>.
      * </p>
      * 
-     * @return The Availability Zone in which to create the volume.
+     * @return The ID of the Availability Zone in which to create the volume. For example, <code>us-east-1a</code>.
      */
 
     public String getAvailabilityZone() {
@@ -343,11 +343,11 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The Availability Zone in which to create the volume.
+     * The ID of the Availability Zone in which to create the volume. For example, <code>us-east-1a</code>.
      * </p>
      * 
      * @param availabilityZone
-     *        The Availability Zone in which to create the volume.
+     *        The ID of the Availability Zone in which to create the volume. For example, <code>us-east-1a</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

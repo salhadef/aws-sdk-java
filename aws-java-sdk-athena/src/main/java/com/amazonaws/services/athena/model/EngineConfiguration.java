@@ -57,6 +57,13 @@ public class EngineConfiguration implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private java.util.Map<String, String> additionalConfigs;
+    /**
+     * <p>
+     * Specifies custom jar files and Spark properties for use cases like cluster encryption, table formats, and general
+     * Spark tuning.
+     * </p>
+     */
+    private java.util.Map<String, String> sparkProperties;
 
     /**
      * <p>
@@ -277,6 +284,80 @@ public class EngineConfiguration implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * Specifies custom jar files and Spark properties for use cases like cluster encryption, table formats, and general
+     * Spark tuning.
+     * </p>
+     * 
+     * @return Specifies custom jar files and Spark properties for use cases like cluster encryption, table formats, and
+     *         general Spark tuning.
+     */
+
+    public java.util.Map<String, String> getSparkProperties() {
+        return sparkProperties;
+    }
+
+    /**
+     * <p>
+     * Specifies custom jar files and Spark properties for use cases like cluster encryption, table formats, and general
+     * Spark tuning.
+     * </p>
+     * 
+     * @param sparkProperties
+     *        Specifies custom jar files and Spark properties for use cases like cluster encryption, table formats, and
+     *        general Spark tuning.
+     */
+
+    public void setSparkProperties(java.util.Map<String, String> sparkProperties) {
+        this.sparkProperties = sparkProperties;
+    }
+
+    /**
+     * <p>
+     * Specifies custom jar files and Spark properties for use cases like cluster encryption, table formats, and general
+     * Spark tuning.
+     * </p>
+     * 
+     * @param sparkProperties
+     *        Specifies custom jar files and Spark properties for use cases like cluster encryption, table formats, and
+     *        general Spark tuning.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EngineConfiguration withSparkProperties(java.util.Map<String, String> sparkProperties) {
+        setSparkProperties(sparkProperties);
+        return this;
+    }
+
+    /**
+     * Add a single SparkProperties entry
+     *
+     * @see EngineConfiguration#withSparkProperties
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EngineConfiguration addSparkPropertiesEntry(String key, String value) {
+        if (null == this.sparkProperties) {
+            this.sparkProperties = new java.util.HashMap<String, String>();
+        }
+        if (this.sparkProperties.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.sparkProperties.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into SparkProperties.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EngineConfiguration clearSparkPropertiesEntries() {
+        this.sparkProperties = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -295,7 +376,9 @@ public class EngineConfiguration implements Serializable, Cloneable, StructuredP
         if (getDefaultExecutorDpuSize() != null)
             sb.append("DefaultExecutorDpuSize: ").append(getDefaultExecutorDpuSize()).append(",");
         if (getAdditionalConfigs() != null)
-            sb.append("AdditionalConfigs: ").append(getAdditionalConfigs());
+            sb.append("AdditionalConfigs: ").append(getAdditionalConfigs()).append(",");
+        if (getSparkProperties() != null)
+            sb.append("SparkProperties: ").append(getSparkProperties());
         sb.append("}");
         return sb.toString();
     }
@@ -326,6 +409,10 @@ public class EngineConfiguration implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getAdditionalConfigs() != null && other.getAdditionalConfigs().equals(this.getAdditionalConfigs()) == false)
             return false;
+        if (other.getSparkProperties() == null ^ this.getSparkProperties() == null)
+            return false;
+        if (other.getSparkProperties() != null && other.getSparkProperties().equals(this.getSparkProperties()) == false)
+            return false;
         return true;
     }
 
@@ -338,6 +425,7 @@ public class EngineConfiguration implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getMaxConcurrentDpus() == null) ? 0 : getMaxConcurrentDpus().hashCode());
         hashCode = prime * hashCode + ((getDefaultExecutorDpuSize() == null) ? 0 : getDefaultExecutorDpuSize().hashCode());
         hashCode = prime * hashCode + ((getAdditionalConfigs() == null) ? 0 : getAdditionalConfigs().hashCode());
+        hashCode = prime * hashCode + ((getSparkProperties() == null) ? 0 : getSparkProperties().hashCode());
         return hashCode;
     }
 

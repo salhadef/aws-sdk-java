@@ -16,9 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * Enable this setting to insert I-frames at scene changes that the service automatically detects. This improves video
- * quality and is enabled by default. If this output uses QVBR, choose Transition detection (TRANSITION_DETECTION) for
- * further video quality improvement. For more information about QVBR, see
- * https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
+ * quality and is enabled by default. If this output uses QVBR, choose Transition detection for further video quality
+ * improvement. For more information about QVBR, see https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum H264SceneChangeDetect {

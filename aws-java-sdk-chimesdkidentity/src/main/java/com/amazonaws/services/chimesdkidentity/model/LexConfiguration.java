@@ -29,11 +29,22 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class LexConfiguration implements Serializable, Cloneable, StructuredPojo {
 
     /**
+     * <important>
+     * <p>
+     * <b>Deprecated</b>. Use <code>InvokedBy</code> instead.
+     * </p>
+     * </important>
      * <p>
      * Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.
      * </p>
      */
     private String respondsTo;
+    /**
+     * <p>
+     * Specifies the type of message that triggers a bot.
+     * </p>
+     */
+    private InvokedBy invokedBy;
     /**
      * <p>
      * The ARN of the Amazon Lex V2 bot's alias. The ARN uses this format:
@@ -58,11 +69,21 @@ public class LexConfiguration implements Serializable, Cloneable, StructuredPojo
     private String welcomeIntent;
 
     /**
+     * <important>
+     * <p>
+     * <b>Deprecated</b>. Use <code>InvokedBy</code> instead.
+     * </p>
+     * </important>
      * <p>
      * Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.
      * </p>
      * 
      * @param respondsTo
+     *        <p>
+     *        <b>Deprecated</b>. Use <code>InvokedBy</code> instead.
+     *        </p>
+     *        </important>
+     *        <p>
      *        Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not
      *        supported.
      * @see RespondsTo
@@ -73,11 +94,21 @@ public class LexConfiguration implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <important>
+     * <p>
+     * <b>Deprecated</b>. Use <code>InvokedBy</code> instead.
+     * </p>
+     * </important>
      * <p>
      * Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.
      * </p>
      * 
-     * @return Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not
+     * @return <p>
+     *         <b>Deprecated</b>. Use <code>InvokedBy</code> instead.
+     *         </p>
+     *         </important>
+     *         <p>
+     *         Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not
      *         supported.
      * @see RespondsTo
      */
@@ -87,11 +118,21 @@ public class LexConfiguration implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <important>
+     * <p>
+     * <b>Deprecated</b>. Use <code>InvokedBy</code> instead.
+     * </p>
+     * </important>
      * <p>
      * Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.
      * </p>
      * 
      * @param respondsTo
+     *        <p>
+     *        <b>Deprecated</b>. Use <code>InvokedBy</code> instead.
+     *        </p>
+     *        </important>
+     *        <p>
      *        Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not
      *        supported.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -104,11 +145,21 @@ public class LexConfiguration implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <important>
+     * <p>
+     * <b>Deprecated</b>. Use <code>InvokedBy</code> instead.
+     * </p>
+     * </important>
      * <p>
      * Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.
      * </p>
      * 
      * @param respondsTo
+     *        <p>
+     *        <b>Deprecated</b>. Use <code>InvokedBy</code> instead.
+     *        </p>
+     *        </important>
+     *        <p>
      *        Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not
      *        supported.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -117,6 +168,46 @@ public class LexConfiguration implements Serializable, Cloneable, StructuredPojo
 
     public LexConfiguration withRespondsTo(RespondsTo respondsTo) {
         this.respondsTo = respondsTo.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the type of message that triggers a bot.
+     * </p>
+     * 
+     * @param invokedBy
+     *        Specifies the type of message that triggers a bot.
+     */
+
+    public void setInvokedBy(InvokedBy invokedBy) {
+        this.invokedBy = invokedBy;
+    }
+
+    /**
+     * <p>
+     * Specifies the type of message that triggers a bot.
+     * </p>
+     * 
+     * @return Specifies the type of message that triggers a bot.
+     */
+
+    public InvokedBy getInvokedBy() {
+        return this.invokedBy;
+    }
+
+    /**
+     * <p>
+     * Specifies the type of message that triggers a bot.
+     * </p>
+     * 
+     * @param invokedBy
+     *        Specifies the type of message that triggers a bot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LexConfiguration withInvokedBy(InvokedBy invokedBy) {
+        setInvokedBy(invokedBy);
         return this;
     }
 
@@ -279,6 +370,8 @@ public class LexConfiguration implements Serializable, Cloneable, StructuredPojo
         sb.append("{");
         if (getRespondsTo() != null)
             sb.append("RespondsTo: ").append(getRespondsTo()).append(",");
+        if (getInvokedBy() != null)
+            sb.append("InvokedBy: ").append(getInvokedBy()).append(",");
         if (getLexBotAliasArn() != null)
             sb.append("LexBotAliasArn: ").append(getLexBotAliasArn()).append(",");
         if (getLocaleId() != null)
@@ -303,6 +396,10 @@ public class LexConfiguration implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getRespondsTo() != null && other.getRespondsTo().equals(this.getRespondsTo()) == false)
             return false;
+        if (other.getInvokedBy() == null ^ this.getInvokedBy() == null)
+            return false;
+        if (other.getInvokedBy() != null && other.getInvokedBy().equals(this.getInvokedBy()) == false)
+            return false;
         if (other.getLexBotAliasArn() == null ^ this.getLexBotAliasArn() == null)
             return false;
         if (other.getLexBotAliasArn() != null && other.getLexBotAliasArn().equals(this.getLexBotAliasArn()) == false)
@@ -324,6 +421,7 @@ public class LexConfiguration implements Serializable, Cloneable, StructuredPojo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getRespondsTo() == null) ? 0 : getRespondsTo().hashCode());
+        hashCode = prime * hashCode + ((getInvokedBy() == null) ? 0 : getInvokedBy().hashCode());
         hashCode = prime * hashCode + ((getLexBotAliasArn() == null) ? 0 : getLexBotAliasArn().hashCode());
         hashCode = prime * hashCode + ((getLocaleId() == null) ? 0 : getLocaleId().hashCode());
         hashCode = prime * hashCode + ((getWelcomeIntent() == null) ? 0 : getWelcomeIntent().hashCode());

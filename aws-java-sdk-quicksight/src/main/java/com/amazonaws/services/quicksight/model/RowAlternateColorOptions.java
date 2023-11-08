@@ -40,6 +40,12 @@ public class RowAlternateColorOptions implements Serializable, Cloneable, Struct
      * </p>
      */
     private java.util.List<String> rowAlternateColors;
+    /**
+     * <p>
+     * The primary background color options for alternate rows.
+     * </p>
+     */
+    private String usePrimaryBackgroundColor;
 
     /**
      * <p>
@@ -171,6 +177,65 @@ public class RowAlternateColorOptions implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * The primary background color options for alternate rows.
+     * </p>
+     * 
+     * @param usePrimaryBackgroundColor
+     *        The primary background color options for alternate rows.
+     * @see WidgetStatus
+     */
+
+    public void setUsePrimaryBackgroundColor(String usePrimaryBackgroundColor) {
+        this.usePrimaryBackgroundColor = usePrimaryBackgroundColor;
+    }
+
+    /**
+     * <p>
+     * The primary background color options for alternate rows.
+     * </p>
+     * 
+     * @return The primary background color options for alternate rows.
+     * @see WidgetStatus
+     */
+
+    public String getUsePrimaryBackgroundColor() {
+        return this.usePrimaryBackgroundColor;
+    }
+
+    /**
+     * <p>
+     * The primary background color options for alternate rows.
+     * </p>
+     * 
+     * @param usePrimaryBackgroundColor
+     *        The primary background color options for alternate rows.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WidgetStatus
+     */
+
+    public RowAlternateColorOptions withUsePrimaryBackgroundColor(String usePrimaryBackgroundColor) {
+        setUsePrimaryBackgroundColor(usePrimaryBackgroundColor);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The primary background color options for alternate rows.
+     * </p>
+     * 
+     * @param usePrimaryBackgroundColor
+     *        The primary background color options for alternate rows.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WidgetStatus
+     */
+
+    public RowAlternateColorOptions withUsePrimaryBackgroundColor(WidgetStatus usePrimaryBackgroundColor) {
+        this.usePrimaryBackgroundColor = usePrimaryBackgroundColor.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -185,7 +250,9 @@ public class RowAlternateColorOptions implements Serializable, Cloneable, Struct
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getRowAlternateColors() != null)
-            sb.append("RowAlternateColors: ").append(getRowAlternateColors());
+            sb.append("RowAlternateColors: ").append(getRowAlternateColors()).append(",");
+        if (getUsePrimaryBackgroundColor() != null)
+            sb.append("UsePrimaryBackgroundColor: ").append(getUsePrimaryBackgroundColor());
         sb.append("}");
         return sb.toString();
     }
@@ -208,6 +275,10 @@ public class RowAlternateColorOptions implements Serializable, Cloneable, Struct
             return false;
         if (other.getRowAlternateColors() != null && other.getRowAlternateColors().equals(this.getRowAlternateColors()) == false)
             return false;
+        if (other.getUsePrimaryBackgroundColor() == null ^ this.getUsePrimaryBackgroundColor() == null)
+            return false;
+        if (other.getUsePrimaryBackgroundColor() != null && other.getUsePrimaryBackgroundColor().equals(this.getUsePrimaryBackgroundColor()) == false)
+            return false;
         return true;
     }
 
@@ -218,6 +289,7 @@ public class RowAlternateColorOptions implements Serializable, Cloneable, Struct
 
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getRowAlternateColors() == null) ? 0 : getRowAlternateColors().hashCode());
+        hashCode = prime * hashCode + ((getUsePrimaryBackgroundColor() == null) ? 0 : getUsePrimaryBackgroundColor().hashCode());
         return hashCode;
     }
 

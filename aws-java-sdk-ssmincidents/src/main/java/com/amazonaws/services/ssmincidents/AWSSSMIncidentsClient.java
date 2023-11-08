@@ -45,6 +45,7 @@ import com.amazonaws.services.ssmincidents.waiters.AWSSSMIncidentsWaiters;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.ssmincidents.model.*;
+
 import com.amazonaws.services.ssmincidents.model.transform.*;
 
 /**

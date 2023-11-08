@@ -33,6 +33,8 @@ public class CapacityMarshaller {
             .marshallLocationName("Provisioned").build();
     private static final MarshallingInfo<Long> LOGICALUSED_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("LogicalUsed").build();
+    private static final MarshallingInfo<Long> CLUSTERCLOUDSTORAGEUSED_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClusterCloudStorageUsed").build();
 
     private static final CapacityMarshaller instance = new CapacityMarshaller();
 
@@ -53,6 +55,7 @@ public class CapacityMarshaller {
             protocolMarshaller.marshall(capacity.getUsed(), USED_BINDING);
             protocolMarshaller.marshall(capacity.getProvisioned(), PROVISIONED_BINDING);
             protocolMarshaller.marshall(capacity.getLogicalUsed(), LOGICALUSED_BINDING);
+            protocolMarshaller.marshall(capacity.getClusterCloudStorageUsed(), CLUSTERCLOUDSTORAGEUSED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -31,7 +31,7 @@ public class DescribeLabelResult extends com.amazonaws.AmazonWebServiceResult<co
     private String labelGroupName;
     /**
      * <p>
-     * The ARN of the requested label group.
+     * The Amazon Resource Name (ARN) of the requested label group.
      * </p>
      */
     private String labelGroupArn;
@@ -132,11 +132,11 @@ public class DescribeLabelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The ARN of the requested label group.
+     * The Amazon Resource Name (ARN) of the requested label group.
      * </p>
      * 
      * @param labelGroupArn
-     *        The ARN of the requested label group.
+     *        The Amazon Resource Name (ARN) of the requested label group.
      */
 
     public void setLabelGroupArn(String labelGroupArn) {
@@ -145,10 +145,10 @@ public class DescribeLabelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The ARN of the requested label group.
+     * The Amazon Resource Name (ARN) of the requested label group.
      * </p>
      * 
-     * @return The ARN of the requested label group.
+     * @return The Amazon Resource Name (ARN) of the requested label group.
      */
 
     public String getLabelGroupArn() {
@@ -157,11 +157,11 @@ public class DescribeLabelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The ARN of the requested label group.
+     * The Amazon Resource Name (ARN) of the requested label group.
      * </p>
      * 
      * @param labelGroupArn
-     *        The ARN of the requested label group.
+     *        The Amazon Resource Name (ARN) of the requested label group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

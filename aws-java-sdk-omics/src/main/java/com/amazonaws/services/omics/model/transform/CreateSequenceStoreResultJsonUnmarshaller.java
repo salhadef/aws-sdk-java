@@ -48,29 +48,33 @@ public class CreateSequenceStoreResultJsonUnmarshaller implements Unmarshaller<C
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("arn", targetDepth)) {
-                    context.nextToken();
-                    createSequenceStoreResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("creationTime", targetDepth)) {
-                    context.nextToken();
-                    createSequenceStoreResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
-                }
-                if (context.testExpression("description", targetDepth)) {
-                    context.nextToken();
-                    createSequenceStoreResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
                     createSequenceStoreResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("arn", targetDepth)) {
+                    context.nextToken();
+                    createSequenceStoreResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
                     createSequenceStoreResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("description", targetDepth)) {
+                    context.nextToken();
+                    createSequenceStoreResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("sseConfig", targetDepth)) {
                     context.nextToken();
                     createSequenceStoreResult.setSseConfig(SseConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("creationTime", targetDepth)) {
+                    context.nextToken();
+                    createSequenceStoreResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (context.testExpression("fallbackLocation", targetDepth)) {
+                    context.nextToken();
+                    createSequenceStoreResult.setFallbackLocation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

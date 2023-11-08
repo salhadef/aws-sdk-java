@@ -78,6 +78,22 @@ public class KubernetesApiCallActionJsonUnmarshaller implements Unmarshaller<Kub
                     context.nextToken();
                     kubernetesApiCallAction.setParameters(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("resource", targetDepth)) {
+                    context.nextToken();
+                    kubernetesApiCallAction.setResource(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("subresource", targetDepth)) {
+                    context.nextToken();
+                    kubernetesApiCallAction.setSubresource(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("namespace", targetDepth)) {
+                    context.nextToken();
+                    kubernetesApiCallAction.setNamespace(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("resourceName", targetDepth)) {
+                    context.nextToken();
+                    kubernetesApiCallAction.setResourceName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

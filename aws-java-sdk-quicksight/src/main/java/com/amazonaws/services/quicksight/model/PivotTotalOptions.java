@@ -70,6 +70,12 @@ public class PivotTotalOptions implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private TableCellStyle metricHeaderCellStyle;
+    /**
+     * <p>
+     * The total aggregation options for each value field.
+     * </p>
+     */
+    private java.util.List<TotalAggregationOption> totalAggregationOptions;
 
     /**
      * <p>
@@ -409,6 +415,76 @@ public class PivotTotalOptions implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The total aggregation options for each value field.
+     * </p>
+     * 
+     * @return The total aggregation options for each value field.
+     */
+
+    public java.util.List<TotalAggregationOption> getTotalAggregationOptions() {
+        return totalAggregationOptions;
+    }
+
+    /**
+     * <p>
+     * The total aggregation options for each value field.
+     * </p>
+     * 
+     * @param totalAggregationOptions
+     *        The total aggregation options for each value field.
+     */
+
+    public void setTotalAggregationOptions(java.util.Collection<TotalAggregationOption> totalAggregationOptions) {
+        if (totalAggregationOptions == null) {
+            this.totalAggregationOptions = null;
+            return;
+        }
+
+        this.totalAggregationOptions = new java.util.ArrayList<TotalAggregationOption>(totalAggregationOptions);
+    }
+
+    /**
+     * <p>
+     * The total aggregation options for each value field.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTotalAggregationOptions(java.util.Collection)} or
+     * {@link #withTotalAggregationOptions(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param totalAggregationOptions
+     *        The total aggregation options for each value field.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PivotTotalOptions withTotalAggregationOptions(TotalAggregationOption... totalAggregationOptions) {
+        if (this.totalAggregationOptions == null) {
+            setTotalAggregationOptions(new java.util.ArrayList<TotalAggregationOption>(totalAggregationOptions.length));
+        }
+        for (TotalAggregationOption ele : totalAggregationOptions) {
+            this.totalAggregationOptions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The total aggregation options for each value field.
+     * </p>
+     * 
+     * @param totalAggregationOptions
+     *        The total aggregation options for each value field.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PivotTotalOptions withTotalAggregationOptions(java.util.Collection<TotalAggregationOption> totalAggregationOptions) {
+        setTotalAggregationOptions(totalAggregationOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -433,7 +509,9 @@ public class PivotTotalOptions implements Serializable, Cloneable, StructuredPoj
         if (getValueCellStyle() != null)
             sb.append("ValueCellStyle: ").append(getValueCellStyle()).append(",");
         if (getMetricHeaderCellStyle() != null)
-            sb.append("MetricHeaderCellStyle: ").append(getMetricHeaderCellStyle());
+            sb.append("MetricHeaderCellStyle: ").append(getMetricHeaderCellStyle()).append(",");
+        if (getTotalAggregationOptions() != null)
+            sb.append("TotalAggregationOptions: ").append(getTotalAggregationOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -476,6 +554,10 @@ public class PivotTotalOptions implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getMetricHeaderCellStyle() != null && other.getMetricHeaderCellStyle().equals(this.getMetricHeaderCellStyle()) == false)
             return false;
+        if (other.getTotalAggregationOptions() == null ^ this.getTotalAggregationOptions() == null)
+            return false;
+        if (other.getTotalAggregationOptions() != null && other.getTotalAggregationOptions().equals(this.getTotalAggregationOptions()) == false)
+            return false;
         return true;
     }
 
@@ -491,6 +573,7 @@ public class PivotTotalOptions implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getTotalCellStyle() == null) ? 0 : getTotalCellStyle().hashCode());
         hashCode = prime * hashCode + ((getValueCellStyle() == null) ? 0 : getValueCellStyle().hashCode());
         hashCode = prime * hashCode + ((getMetricHeaderCellStyle() == null) ? 0 : getMetricHeaderCellStyle().hashCode());
+        hashCode = prime * hashCode + ((getTotalAggregationOptions() == null) ? 0 : getTotalAggregationOptions().hashCode());
         return hashCode;
     }
 

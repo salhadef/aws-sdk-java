@@ -70,6 +70,10 @@ public class CreateBrokerRequestMarshaller {
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<List> USERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("users").build();
+    private static final MarshallingInfo<String> DATAREPLICATIONMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataReplicationMode").build();
+    private static final MarshallingInfo<String> DATAREPLICATIONPRIMARYBROKERARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataReplicationPrimaryBrokerArn").build();
 
     private static final CreateBrokerRequestMarshaller instance = new CreateBrokerRequestMarshaller();
 
@@ -106,6 +110,8 @@ public class CreateBrokerRequestMarshaller {
             protocolMarshaller.marshall(createBrokerRequest.getSubnetIds(), SUBNETIDS_BINDING);
             protocolMarshaller.marshall(createBrokerRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createBrokerRequest.getUsers(), USERS_BINDING);
+            protocolMarshaller.marshall(createBrokerRequest.getDataReplicationMode(), DATAREPLICATIONMODE_BINDING);
+            protocolMarshaller.marshall(createBrokerRequest.getDataReplicationPrimaryBrokerArn(), DATAREPLICATIONPRIMARYBROKERARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

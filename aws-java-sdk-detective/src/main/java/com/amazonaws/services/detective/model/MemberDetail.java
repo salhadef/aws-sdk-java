@@ -1600,7 +1600,7 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
         if (getAccountId() != null)
             sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getEmailAddress() != null)
-            sb.append("EmailAddress: ").append(getEmailAddress()).append(",");
+            sb.append("EmailAddress: ").append("***Sensitive Data Redacted***").append(",");
         if (getGraphArn() != null)
             sb.append("GraphArn: ").append(getGraphArn()).append(",");
         if (getMasterId() != null)

@@ -39,7 +39,7 @@ import javax.annotation.Generated;
  * doesn't yet have enough information to exist as a standalone account. This account requires you to first complete
  * phone verification. Follow the steps at <a href=
  * "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
- * >Removing a member account from your organization</a> in the <i>Organizations User Guide.</i>
+ * >Removing a member account from your organization</a> in the <i>Organizations User Guide</i>.
  * </p>
  * </li>
  * <li>
@@ -56,8 +56,8 @@ import javax.annotation.Generated;
  * <li>
  * <p>
  * ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of accounts in an organization. If you
- * need more accounts, contact <a href="https://docs.aws.amazon.com/support/home#/">Amazon Web Services Support</a> to
- * request an increase in your limit.
+ * need more accounts, contact <a href="https://console.aws.amazon.com/support/home#/">Amazon Web Services Support</a>
+ * to request an increase in your limit.
  * </p>
  * <p>
  * Or the number of invitations that you tried to send would cause you to exceed the limit of accounts in your
@@ -72,9 +72,15 @@ import javax.annotation.Generated;
  * <p>
  * If you get this exception when running a command immediately after creating the organization, wait one hour and try
  * again. After an hour, if the command continues to fail with this error, contact <a
- * href="https://docs.aws.amazon.com/support/home#/">Amazon Web Services Support</a>.
+ * href="https://console.aws.amazon.com/support/home#/">Amazon Web Services Support</a>.
  * </p>
  * </important></li>
+ * <li>
+ * <p>
+ * CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register a suspended account as a delegated
+ * administrator.
+ * </p>
+ * </li>
  * <li>
  * <p>
  * CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of the
@@ -163,16 +169,15 @@ import javax.annotation.Generated;
  * MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an associated
  * account in the Amazon Web Services GovCloud (US-West) Region. For more information, see <a
  * href="https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">Organizations</a> in the
- * <i>Amazon Web Services GovCloud User Guide.</i>
+ * <i>Amazon Web Services GovCloud User Guide</i>.
  * </p>
  * </li>
  * <li>
  * <p>
  * MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you first must
- * associate a valid payment instrument, such as a credit card, with the account. Follow the steps at <a href=
- * "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
- * >To leave an organization when all required account information has not yet been provided</a> in the <i>Organizations
- * User Guide.</i>
+ * associate a valid payment instrument, such as a credit card, with the account. For more information, see <a
+ * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_account-before-remove.html"
+ * >Considerations before removing an account from an organization</a> in the <i>Organizations User Guide</i>.
  * </p>
  * </li>
  * <li>
@@ -195,10 +200,9 @@ import javax.annotation.Generated;
  * <li>
  * <p>
  * MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member account, you first must
- * associate a valid payment instrument, such as a credit card, with the account. Follow the steps at <a href=
- * "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
- * >To leave an organization when all required account information has not yet been provided</a> in the <i>Organizations
- * User Guide.</i>
+ * associate a valid payment instrument, such as a credit card, with the account. For more information, see <a
+ * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_account-before-remove.html"
+ * >Considerations before removing an account from an organization</a> in the <i>Organizations User Guide</i>.
  * </p>
  * </li>
  * <li>

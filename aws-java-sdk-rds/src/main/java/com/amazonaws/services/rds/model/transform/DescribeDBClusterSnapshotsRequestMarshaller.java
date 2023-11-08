@@ -101,6 +101,10 @@ public class DescribeDBClusterSnapshotsRequestMarshaller implements Marshaller<R
             request.addParameter("IncludePublic", StringUtils.fromBoolean(describeDBClusterSnapshotsRequest.getIncludePublic()));
         }
 
+        if (describeDBClusterSnapshotsRequest.getDbClusterResourceId() != null) {
+            request.addParameter("DbClusterResourceId", StringUtils.fromString(describeDBClusterSnapshotsRequest.getDbClusterResourceId()));
+        }
+
         return request;
     }
 

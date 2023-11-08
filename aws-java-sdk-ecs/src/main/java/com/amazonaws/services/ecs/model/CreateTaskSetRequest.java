@@ -48,7 +48,8 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String externalId;
     /**
      * <p>
-     * The task definition for the tasks in the task set to use.
+     * The task definition for the tasks in the task set to use. If a revision isn't specified, the latest
+     * <code>ACTIVE</code> revision is used.
      * </p>
      */
     private String taskDefinition;
@@ -325,11 +326,13 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The task definition for the tasks in the task set to use.
+     * The task definition for the tasks in the task set to use. If a revision isn't specified, the latest
+     * <code>ACTIVE</code> revision is used.
      * </p>
      * 
      * @param taskDefinition
-     *        The task definition for the tasks in the task set to use.
+     *        The task definition for the tasks in the task set to use. If a revision isn't specified, the latest
+     *        <code>ACTIVE</code> revision is used.
      */
 
     public void setTaskDefinition(String taskDefinition) {
@@ -338,10 +341,12 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The task definition for the tasks in the task set to use.
+     * The task definition for the tasks in the task set to use. If a revision isn't specified, the latest
+     * <code>ACTIVE</code> revision is used.
      * </p>
      * 
-     * @return The task definition for the tasks in the task set to use.
+     * @return The task definition for the tasks in the task set to use. If a revision isn't specified, the latest
+     *         <code>ACTIVE</code> revision is used.
      */
 
     public String getTaskDefinition() {
@@ -350,11 +355,13 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The task definition for the tasks in the task set to use.
+     * The task definition for the tasks in the task set to use. If a revision isn't specified, the latest
+     * <code>ACTIVE</code> revision is used.
      * </p>
      * 
      * @param taskDefinition
-     *        The task definition for the tasks in the task set to use.
+     *        The task definition for the tasks in the task set to use. If a revision isn't specified, the latest
+     *        <code>ACTIVE</code> revision is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

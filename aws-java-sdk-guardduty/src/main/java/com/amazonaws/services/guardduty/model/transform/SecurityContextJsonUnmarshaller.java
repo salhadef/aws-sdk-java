@@ -52,6 +52,10 @@ public class SecurityContextJsonUnmarshaller implements Unmarshaller<SecurityCon
                     context.nextToken();
                     securityContext.setPrivileged(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("allowPrivilegeEscalation", targetDepth)) {
+                    context.nextToken();
+                    securityContext.setAllowPrivilegeEscalation(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

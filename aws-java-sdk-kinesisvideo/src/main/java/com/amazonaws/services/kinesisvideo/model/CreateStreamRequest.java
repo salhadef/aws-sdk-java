@@ -66,7 +66,8 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The ID of the Key Management Service (KMS) key that you want Kinesis Video Streams to use to encrypt stream data.
      * </p>
      * <p>
-     * If no key ID is specified, the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.
+     * If no key ID is specified, the default, Kinesis Video-managed key (<code>Amazon Web Services/kinesisvideo</code>)
+     * is used.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -318,7 +319,8 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The ID of the Key Management Service (KMS) key that you want Kinesis Video Streams to use to encrypt stream data.
      * </p>
      * <p>
-     * If no key ID is specified, the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.
+     * If no key ID is specified, the default, Kinesis Video-managed key (<code>Amazon Web Services/kinesisvideo</code>)
+     * is used.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -330,7 +332,8 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        The ID of the Key Management Service (KMS) key that you want Kinesis Video Streams to use to encrypt
      *        stream data.</p>
      *        <p>
-     *        If no key ID is specified, the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.
+     *        If no key ID is specified, the default, Kinesis Video-managed key (
+     *        <code>Amazon Web Services/kinesisvideo</code>) is used.
      *        </p>
      *        <p>
      *        For more information, see <a href=
@@ -347,7 +350,8 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The ID of the Key Management Service (KMS) key that you want Kinesis Video Streams to use to encrypt stream data.
      * </p>
      * <p>
-     * If no key ID is specified, the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.
+     * If no key ID is specified, the default, Kinesis Video-managed key (<code>Amazon Web Services/kinesisvideo</code>)
+     * is used.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -358,8 +362,8 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @return The ID of the Key Management Service (KMS) key that you want Kinesis Video Streams to use to encrypt
      *         stream data.</p>
      *         <p>
-     *         If no key ID is specified, the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is
-     *         used.
+     *         If no key ID is specified, the default, Kinesis Video-managed key (
+     *         <code>Amazon Web Services/kinesisvideo</code>) is used.
      *         </p>
      *         <p>
      *         For more information, see <a href=
@@ -376,7 +380,8 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The ID of the Key Management Service (KMS) key that you want Kinesis Video Streams to use to encrypt stream data.
      * </p>
      * <p>
-     * If no key ID is specified, the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.
+     * If no key ID is specified, the default, Kinesis Video-managed key (<code>Amazon Web Services/kinesisvideo</code>)
+     * is used.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -388,7 +393,8 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        The ID of the Key Management Service (KMS) key that you want Kinesis Video Streams to use to encrypt
      *        stream data.</p>
      *        <p>
-     *        If no key ID is specified, the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.
+     *        If no key ID is specified, the default, Kinesis Video-managed key (
+     *        <code>Amazon Web Services/kinesisvideo</code>) is used.
      *        </p>
      *        <p>
      *        For more information, see <a href=

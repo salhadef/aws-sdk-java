@@ -24,7 +24,8 @@ public enum SpotInstanceState {
     Active("active"),
     Closed("closed"),
     Cancelled("cancelled"),
-    Failed("failed");
+    Failed("failed"),
+    Disabled("disabled");
 
     private String value;
 

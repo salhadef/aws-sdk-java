@@ -36,13 +36,13 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     /** Settings for F4v container */
     private F4vSettings f4vSettings;
     /**
-     * MPEG-2 TS container settings. These apply to outputs in a File output group when the output's container
-     * (ContainerType) is MPEG-2 Transport Stream (M2TS). In these assets, data is organized by the program map table
-     * (PMT). Each transport stream program contains subsets of data, including audio, video, and metadata. Each of these
-     * subsets of data has a numerical label called a packet identifier (PID). Each transport stream program corresponds
-     * to one MediaConvert output. The PMT lists the types of data in a program along with their PID. Downstream systems
-     * and players use the program map table to look up the PID for each type of data it accesses and then uses the PIDs
-     * to locate specific data within the asset.
+     * MPEG-2 TS container settings. These apply to outputs in a File output group when the output's container is MPEG-2
+     * Transport Stream (M2TS). In these assets, data is organized by the program map table (PMT). Each transport stream
+     * program contains subsets of data, including audio, video, and metadata. Each of these subsets of data has a
+     * numerical label called a packet identifier (PID). Each transport stream program corresponds to one MediaConvert
+     * output. The PMT lists the types of data in a program along with their PID. Downstream systems and players use the
+     * program map table to look up the PID for each type of data it accesses and then uses the PIDs to locate specific
+     * data within the asset.
      */
     private M2tsSettings m2tsSettings;
     /**
@@ -192,22 +192,22 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * MPEG-2 TS container settings. These apply to outputs in a File output group when the output's container
-     * (ContainerType) is MPEG-2 Transport Stream (M2TS). In these assets, data is organized by the program map table
-     * (PMT). Each transport stream program contains subsets of data, including audio, video, and metadata. Each of these
-     * subsets of data has a numerical label called a packet identifier (PID). Each transport stream program corresponds
-     * to one MediaConvert output. The PMT lists the types of data in a program along with their PID. Downstream systems
-     * and players use the program map table to look up the PID for each type of data it accesses and then uses the PIDs
-     * to locate specific data within the asset.
+     * MPEG-2 TS container settings. These apply to outputs in a File output group when the output's container is MPEG-2
+     * Transport Stream (M2TS). In these assets, data is organized by the program map table (PMT). Each transport stream
+     * program contains subsets of data, including audio, video, and metadata. Each of these subsets of data has a
+     * numerical label called a packet identifier (PID). Each transport stream program corresponds to one MediaConvert
+     * output. The PMT lists the types of data in a program along with their PID. Downstream systems and players use the
+     * program map table to look up the PID for each type of data it accesses and then uses the PIDs to locate specific
+     * data within the asset.
      * 
      * @param m2tsSettings
-     *        MPEG-2 TS container settings. These apply to outputs in a File output group when the output's container
-     *        (ContainerType) is MPEG-2 Transport Stream (M2TS). In these assets, data is organized by the program map
-     *        table (PMT). Each transport stream program contains subsets of data, including audio, video, and metadata.
-     *        Each of these subsets of data has a numerical label called a packet identifier (PID). Each transport
-     *        stream program corresponds to one MediaConvert output. The PMT lists the types of data in a program along
-     *        with their PID. Downstream systems and players use the program map table to look up the PID for each type
-     *        of data it accesses and then uses the PIDs to locate specific data within the asset.
+     *        MPEG-2 TS container settings. These apply to outputs in a File output group when the output's container is
+     *        MPEG-2 Transport Stream (M2TS). In these assets, data is organized by the program map table (PMT). Each
+     *        transport stream program contains subsets of data, including audio, video, and metadata. Each of these
+     *        subsets of data has a numerical label called a packet identifier (PID). Each transport stream program
+     *        corresponds to one MediaConvert output. The PMT lists the types of data in a program along with their PID.
+     *        Downstream systems and players use the program map table to look up the PID for each type of data it
+     *        accesses and then uses the PIDs to locate specific data within the asset.
      */
 
     public void setM2tsSettings(M2tsSettings m2tsSettings) {
@@ -215,21 +215,21 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * MPEG-2 TS container settings. These apply to outputs in a File output group when the output's container
-     * (ContainerType) is MPEG-2 Transport Stream (M2TS). In these assets, data is organized by the program map table
-     * (PMT). Each transport stream program contains subsets of data, including audio, video, and metadata. Each of these
-     * subsets of data has a numerical label called a packet identifier (PID). Each transport stream program corresponds
-     * to one MediaConvert output. The PMT lists the types of data in a program along with their PID. Downstream systems
-     * and players use the program map table to look up the PID for each type of data it accesses and then uses the PIDs
-     * to locate specific data within the asset.
+     * MPEG-2 TS container settings. These apply to outputs in a File output group when the output's container is MPEG-2
+     * Transport Stream (M2TS). In these assets, data is organized by the program map table (PMT). Each transport stream
+     * program contains subsets of data, including audio, video, and metadata. Each of these subsets of data has a
+     * numerical label called a packet identifier (PID). Each transport stream program corresponds to one MediaConvert
+     * output. The PMT lists the types of data in a program along with their PID. Downstream systems and players use the
+     * program map table to look up the PID for each type of data it accesses and then uses the PIDs to locate specific
+     * data within the asset.
      * 
      * @return MPEG-2 TS container settings. These apply to outputs in a File output group when the output's container
-     *         (ContainerType) is MPEG-2 Transport Stream (M2TS). In these assets, data is organized by the program map
-     *         table (PMT). Each transport stream program contains subsets of data, including audio, video, and
-     *         metadata. Each of these subsets of data has a numerical label called a packet identifier (PID). Each
-     *         transport stream program corresponds to one MediaConvert output. The PMT lists the types of data in a
-     *         program along with their PID. Downstream systems and players use the program map table to look up the PID
-     *         for each type of data it accesses and then uses the PIDs to locate specific data within the asset.
+     *         is MPEG-2 Transport Stream (M2TS). In these assets, data is organized by the program map table (PMT).
+     *         Each transport stream program contains subsets of data, including audio, video, and metadata. Each of
+     *         these subsets of data has a numerical label called a packet identifier (PID). Each transport stream
+     *         program corresponds to one MediaConvert output. The PMT lists the types of data in a program along with
+     *         their PID. Downstream systems and players use the program map table to look up the PID for each type of
+     *         data it accesses and then uses the PIDs to locate specific data within the asset.
      */
 
     public M2tsSettings getM2tsSettings() {
@@ -237,22 +237,22 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * MPEG-2 TS container settings. These apply to outputs in a File output group when the output's container
-     * (ContainerType) is MPEG-2 Transport Stream (M2TS). In these assets, data is organized by the program map table
-     * (PMT). Each transport stream program contains subsets of data, including audio, video, and metadata. Each of these
-     * subsets of data has a numerical label called a packet identifier (PID). Each transport stream program corresponds
-     * to one MediaConvert output. The PMT lists the types of data in a program along with their PID. Downstream systems
-     * and players use the program map table to look up the PID for each type of data it accesses and then uses the PIDs
-     * to locate specific data within the asset.
+     * MPEG-2 TS container settings. These apply to outputs in a File output group when the output's container is MPEG-2
+     * Transport Stream (M2TS). In these assets, data is organized by the program map table (PMT). Each transport stream
+     * program contains subsets of data, including audio, video, and metadata. Each of these subsets of data has a
+     * numerical label called a packet identifier (PID). Each transport stream program corresponds to one MediaConvert
+     * output. The PMT lists the types of data in a program along with their PID. Downstream systems and players use the
+     * program map table to look up the PID for each type of data it accesses and then uses the PIDs to locate specific
+     * data within the asset.
      * 
      * @param m2tsSettings
-     *        MPEG-2 TS container settings. These apply to outputs in a File output group when the output's container
-     *        (ContainerType) is MPEG-2 Transport Stream (M2TS). In these assets, data is organized by the program map
-     *        table (PMT). Each transport stream program contains subsets of data, including audio, video, and metadata.
-     *        Each of these subsets of data has a numerical label called a packet identifier (PID). Each transport
-     *        stream program corresponds to one MediaConvert output. The PMT lists the types of data in a program along
-     *        with their PID. Downstream systems and players use the program map table to look up the PID for each type
-     *        of data it accesses and then uses the PIDs to locate specific data within the asset.
+     *        MPEG-2 TS container settings. These apply to outputs in a File output group when the output's container is
+     *        MPEG-2 Transport Stream (M2TS). In these assets, data is organized by the program map table (PMT). Each
+     *        transport stream program contains subsets of data, including audio, video, and metadata. Each of these
+     *        subsets of data has a numerical label called a packet identifier (PID). Each transport stream program
+     *        corresponds to one MediaConvert output. The PMT lists the types of data in a program along with their PID.
+     *        Downstream systems and players use the program map table to look up the PID for each type of data it
+     *        accesses and then uses the PIDs to locate specific data within the asset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

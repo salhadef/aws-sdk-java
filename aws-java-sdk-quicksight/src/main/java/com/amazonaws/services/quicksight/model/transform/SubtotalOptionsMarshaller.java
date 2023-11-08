@@ -42,6 +42,8 @@ public class SubtotalOptionsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ValueCellStyle").build();
     private static final MarshallingInfo<StructuredPojo> METRICHEADERCELLSTYLE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MetricHeaderCellStyle").build();
+    private static final MarshallingInfo<List> STYLETARGETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("StyleTargets").build();
 
     private static final SubtotalOptionsMarshaller instance = new SubtotalOptionsMarshaller();
 
@@ -66,6 +68,7 @@ public class SubtotalOptionsMarshaller {
             protocolMarshaller.marshall(subtotalOptions.getTotalCellStyle(), TOTALCELLSTYLE_BINDING);
             protocolMarshaller.marshall(subtotalOptions.getValueCellStyle(), VALUECELLSTYLE_BINDING);
             protocolMarshaller.marshall(subtotalOptions.getMetricHeaderCellStyle(), METRICHEADERCELLSTYLE_BINDING);
+            protocolMarshaller.marshall(subtotalOptions.getStyleTargets(), STYLETARGETS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -36,7 +36,7 @@ public class StartDeploymentRequest extends com.amazonaws.AmazonWebServiceReques
     private String appId;
     /**
      * <p>
-     * The name for the branch, for the job.
+     * The name of the branch to use for the job.
      * </p>
      */
     private String branchName;
@@ -96,11 +96,11 @@ public class StartDeploymentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name for the branch, for the job.
+     * The name of the branch to use for the job.
      * </p>
      * 
      * @param branchName
-     *        The name for the branch, for the job.
+     *        The name of the branch to use for the job.
      */
 
     public void setBranchName(String branchName) {
@@ -109,10 +109,10 @@ public class StartDeploymentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name for the branch, for the job.
+     * The name of the branch to use for the job.
      * </p>
      * 
-     * @return The name for the branch, for the job.
+     * @return The name of the branch to use for the job.
      */
 
     public String getBranchName() {
@@ -121,11 +121,11 @@ public class StartDeploymentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name for the branch, for the job.
+     * The name of the branch to use for the job.
      * </p>
      * 
      * @param branchName
-     *        The name for the branch, for the job.
+     *        The name of the branch to use for the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

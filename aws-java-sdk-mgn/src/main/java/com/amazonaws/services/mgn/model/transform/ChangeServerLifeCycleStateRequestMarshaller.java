@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ChangeServerLifeCycleStateRequestMarshaller {
 
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("accountID").build();
     private static final MarshallingInfo<StructuredPojo> LIFECYCLE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lifeCycle").build();
     private static final MarshallingInfo<String> SOURCESERVERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -48,6 +50,7 @@ public class ChangeServerLifeCycleStateRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(changeServerLifeCycleStateRequest.getAccountID(), ACCOUNTID_BINDING);
             protocolMarshaller.marshall(changeServerLifeCycleStateRequest.getLifeCycle(), LIFECYCLE_BINDING);
             protocolMarshaller.marshall(changeServerLifeCycleStateRequest.getSourceServerID(), SOURCESERVERID_BINDING);
         } catch (Exception e) {

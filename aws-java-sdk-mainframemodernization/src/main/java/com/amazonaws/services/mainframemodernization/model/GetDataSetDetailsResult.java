@@ -49,6 +49,12 @@ public class GetDataSetDetailsResult extends com.amazonaws.AmazonWebServiceResul
     private DatasetDetailOrgAttributes dataSetOrg;
     /**
      * <p>
+     * File size of the dataset.
+     * </p>
+     */
+    private Long fileSize;
+    /**
+     * <p>
      * The last time the data set was referenced.
      * </p>
      */
@@ -234,6 +240,46 @@ public class GetDataSetDetailsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
+     * File size of the dataset.
+     * </p>
+     * 
+     * @param fileSize
+     *        File size of the dataset.
+     */
+
+    public void setFileSize(Long fileSize) {
+        this.fileSize = fileSize;
+    }
+
+    /**
+     * <p>
+     * File size of the dataset.
+     * </p>
+     * 
+     * @return File size of the dataset.
+     */
+
+    public Long getFileSize() {
+        return this.fileSize;
+    }
+
+    /**
+     * <p>
+     * File size of the dataset.
+     * </p>
+     * 
+     * @param fileSize
+     *        File size of the dataset.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDataSetDetailsResult withFileSize(Long fileSize) {
+        setFileSize(fileSize);
+        return this;
+    }
+
+    /**
+     * <p>
      * The last time the data set was referenced.
      * </p>
      * 
@@ -412,6 +458,8 @@ public class GetDataSetDetailsResult extends com.amazonaws.AmazonWebServiceResul
             sb.append("DataSetName: ").append(getDataSetName()).append(",");
         if (getDataSetOrg() != null)
             sb.append("DataSetOrg: ").append(getDataSetOrg()).append(",");
+        if (getFileSize() != null)
+            sb.append("FileSize: ").append(getFileSize()).append(",");
         if (getLastReferencedTime() != null)
             sb.append("LastReferencedTime: ").append(getLastReferencedTime()).append(",");
         if (getLastUpdatedTime() != null)
@@ -450,6 +498,10 @@ public class GetDataSetDetailsResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getDataSetOrg() != null && other.getDataSetOrg().equals(this.getDataSetOrg()) == false)
             return false;
+        if (other.getFileSize() == null ^ this.getFileSize() == null)
+            return false;
+        if (other.getFileSize() != null && other.getFileSize().equals(this.getFileSize()) == false)
+            return false;
         if (other.getLastReferencedTime() == null ^ this.getLastReferencedTime() == null)
             return false;
         if (other.getLastReferencedTime() != null && other.getLastReferencedTime().equals(this.getLastReferencedTime()) == false)
@@ -478,6 +530,7 @@ public class GetDataSetDetailsResult extends com.amazonaws.AmazonWebServiceResul
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getDataSetName() == null) ? 0 : getDataSetName().hashCode());
         hashCode = prime * hashCode + ((getDataSetOrg() == null) ? 0 : getDataSetOrg().hashCode());
+        hashCode = prime * hashCode + ((getFileSize() == null) ? 0 : getFileSize().hashCode());
         hashCode = prime * hashCode + ((getLastReferencedTime() == null) ? 0 : getLastReferencedTime().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedTime() == null) ? 0 : getLastUpdatedTime().hashCode());
         hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());

@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.ssmsap.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,8 @@ public class ListApplicationsRequestMarshaller {
             .marshallLocationName("NextToken").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
+    private static final MarshallingInfo<List> FILTERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Filters").build();
 
     private static final ListApplicationsRequestMarshaller instance = new ListApplicationsRequestMarshaller();
 
@@ -50,6 +53,7 @@ public class ListApplicationsRequestMarshaller {
         try {
             protocolMarshaller.marshall(listApplicationsRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listApplicationsRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(listApplicationsRequest.getFilters(), FILTERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -25,12 +25,6 @@ public class StartReadSetActivationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * When the job was created.
-     * </p>
-     */
-    private java.util.Date creationTime;
-    /**
-     * <p>
      * The job's ID.
      * </p>
      */
@@ -47,46 +41,12 @@ public class StartReadSetActivationJobResult extends com.amazonaws.AmazonWebServ
      * </p>
      */
     private String status;
-
     /**
      * <p>
      * When the job was created.
      * </p>
-     * 
-     * @param creationTime
-     *        When the job was created.
      */
-
-    public void setCreationTime(java.util.Date creationTime) {
-        this.creationTime = creationTime;
-    }
-
-    /**
-     * <p>
-     * When the job was created.
-     * </p>
-     * 
-     * @return When the job was created.
-     */
-
-    public java.util.Date getCreationTime() {
-        return this.creationTime;
-    }
-
-    /**
-     * <p>
-     * When the job was created.
-     * </p>
-     * 
-     * @param creationTime
-     *        When the job was created.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public StartReadSetActivationJobResult withCreationTime(java.util.Date creationTime) {
-        setCreationTime(creationTime);
-        return this;
-    }
+    private java.util.Date creationTime;
 
     /**
      * <p>
@@ -228,6 +188,46 @@ public class StartReadSetActivationJobResult extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * When the job was created.
+     * </p>
+     * 
+     * @param creationTime
+     *        When the job was created.
+     */
+
+    public void setCreationTime(java.util.Date creationTime) {
+        this.creationTime = creationTime;
+    }
+
+    /**
+     * <p>
+     * When the job was created.
+     * </p>
+     * 
+     * @return When the job was created.
+     */
+
+    public java.util.Date getCreationTime() {
+        return this.creationTime;
+    }
+
+    /**
+     * <p>
+     * When the job was created.
+     * </p>
+     * 
+     * @param creationTime
+     *        When the job was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartReadSetActivationJobResult withCreationTime(java.util.Date creationTime) {
+        setCreationTime(creationTime);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -239,14 +239,14 @@ public class StartReadSetActivationJobResult extends com.amazonaws.AmazonWebServ
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getCreationTime() != null)
-            sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
         if (getSequenceStoreId() != null)
             sb.append("SequenceStoreId: ").append(getSequenceStoreId()).append(",");
         if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getCreationTime() != null)
+            sb.append("CreationTime: ").append(getCreationTime());
         sb.append("}");
         return sb.toString();
     }
@@ -261,10 +261,6 @@ public class StartReadSetActivationJobResult extends com.amazonaws.AmazonWebServ
         if (obj instanceof StartReadSetActivationJobResult == false)
             return false;
         StartReadSetActivationJobResult other = (StartReadSetActivationJobResult) obj;
-        if (other.getCreationTime() == null ^ this.getCreationTime() == null)
-            return false;
-        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
-            return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
@@ -277,6 +273,10 @@ public class StartReadSetActivationJobResult extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getCreationTime() == null ^ this.getCreationTime() == null)
+            return false;
+        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
+            return false;
         return true;
     }
 
@@ -285,10 +285,10 @@ public class StartReadSetActivationJobResult extends com.amazonaws.AmazonWebServ
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getSequenceStoreId() == null) ? 0 : getSequenceStoreId().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         return hashCode;
     }
 

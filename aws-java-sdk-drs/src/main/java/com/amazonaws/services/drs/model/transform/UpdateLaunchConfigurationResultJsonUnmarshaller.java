@@ -64,6 +64,11 @@ public class UpdateLaunchConfigurationResultJsonUnmarshaller implements Unmarsha
                     context.nextToken();
                     updateLaunchConfigurationResult.setLaunchDisposition(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("launchIntoInstanceProperties", targetDepth)) {
+                    context.nextToken();
+                    updateLaunchConfigurationResult.setLaunchIntoInstanceProperties(LaunchIntoInstancePropertiesJsonUnmarshaller.getInstance().unmarshall(
+                            context));
+                }
                 if (context.testExpression("licensing", targetDepth)) {
                     context.nextToken();
                     updateLaunchConfigurationResult.setLicensing(LicensingJsonUnmarshaller.getInstance().unmarshall(context));
@@ -71,6 +76,10 @@ public class UpdateLaunchConfigurationResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
                     updateLaunchConfigurationResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("postLaunchEnabled", targetDepth)) {
+                    context.nextToken();
+                    updateLaunchConfigurationResult.setPostLaunchEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceServerID", targetDepth)) {
                     context.nextToken();

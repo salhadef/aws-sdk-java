@@ -52,6 +52,10 @@ public class AWSManagedRulesBotControlRuleSetJsonUnmarshaller implements Unmarsh
                     context.nextToken();
                     aWSManagedRulesBotControlRuleSet.setInspectionLevel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("EnableMachineLearning", targetDepth)) {
+                    context.nextToken();
+                    aWSManagedRulesBotControlRuleSet.setEnableMachineLearning(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

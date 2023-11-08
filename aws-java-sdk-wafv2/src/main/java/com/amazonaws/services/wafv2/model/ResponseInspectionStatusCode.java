@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Configures inspection of the response status code. This is part of the <code>ResponseInspection</code> configuration
- * for <code>AWSManagedRulesATPRuleSet</code>.
+ * for <code>AWSManagedRulesATPRuleSet</code> and <code>AWSManagedRulesACFPRuleSet</code>.
  * </p>
  * <note>
  * <p>
@@ -36,9 +36,9 @@ public class ResponseInspectionStatusCode implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Status codes in the response that indicate a successful login attempt. To be counted as a successful login, the
-     * response status code must match one of these. Each code must be unique among the success and failure status
-     * codes.
+     * Status codes in the response that indicate a successful login or account creation attempt. To be counted as a
+     * success, the response status code must match one of these. Each code must be unique among the success and failure
+     * status codes.
      * </p>
      * <p>
      * JSON example: <code>"SuccessCodes": [ 200, 201 ]</code>
@@ -47,8 +47,9 @@ public class ResponseInspectionStatusCode implements Serializable, Cloneable, St
     private java.util.List<Integer> successCodes;
     /**
      * <p>
-     * Status codes in the response that indicate a failed login attempt. To be counted as a failed login, the response
-     * status code must match one of these. Each code must be unique among the success and failure status codes.
+     * Status codes in the response that indicate a failed login or account creation attempt. To be counted as a
+     * failure, the response status code must match one of these. Each code must be unique among the success and failure
+     * status codes.
      * </p>
      * <p>
      * JSON example: <code>"FailureCodes": [ 400, 404 ]</code>
@@ -58,17 +59,17 @@ public class ResponseInspectionStatusCode implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Status codes in the response that indicate a successful login attempt. To be counted as a successful login, the
-     * response status code must match one of these. Each code must be unique among the success and failure status
-     * codes.
+     * Status codes in the response that indicate a successful login or account creation attempt. To be counted as a
+     * success, the response status code must match one of these. Each code must be unique among the success and failure
+     * status codes.
      * </p>
      * <p>
      * JSON example: <code>"SuccessCodes": [ 200, 201 ]</code>
      * </p>
      * 
-     * @return Status codes in the response that indicate a successful login attempt. To be counted as a successful
-     *         login, the response status code must match one of these. Each code must be unique among the success and
-     *         failure status codes. </p>
+     * @return Status codes in the response that indicate a successful login or account creation attempt. To be counted
+     *         as a success, the response status code must match one of these. Each code must be unique among the
+     *         success and failure status codes. </p>
      *         <p>
      *         JSON example: <code>"SuccessCodes": [ 200, 201 ]</code>
      */
@@ -79,18 +80,18 @@ public class ResponseInspectionStatusCode implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Status codes in the response that indicate a successful login attempt. To be counted as a successful login, the
-     * response status code must match one of these. Each code must be unique among the success and failure status
-     * codes.
+     * Status codes in the response that indicate a successful login or account creation attempt. To be counted as a
+     * success, the response status code must match one of these. Each code must be unique among the success and failure
+     * status codes.
      * </p>
      * <p>
      * JSON example: <code>"SuccessCodes": [ 200, 201 ]</code>
      * </p>
      * 
      * @param successCodes
-     *        Status codes in the response that indicate a successful login attempt. To be counted as a successful
-     *        login, the response status code must match one of these. Each code must be unique among the success and
-     *        failure status codes. </p>
+     *        Status codes in the response that indicate a successful login or account creation attempt. To be counted
+     *        as a success, the response status code must match one of these. Each code must be unique among the success
+     *        and failure status codes. </p>
      *        <p>
      *        JSON example: <code>"SuccessCodes": [ 200, 201 ]</code>
      */
@@ -106,9 +107,9 @@ public class ResponseInspectionStatusCode implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Status codes in the response that indicate a successful login attempt. To be counted as a successful login, the
-     * response status code must match one of these. Each code must be unique among the success and failure status
-     * codes.
+     * Status codes in the response that indicate a successful login or account creation attempt. To be counted as a
+     * success, the response status code must match one of these. Each code must be unique among the success and failure
+     * status codes.
      * </p>
      * <p>
      * JSON example: <code>"SuccessCodes": [ 200, 201 ]</code>
@@ -120,9 +121,9 @@ public class ResponseInspectionStatusCode implements Serializable, Cloneable, St
      * </p>
      * 
      * @param successCodes
-     *        Status codes in the response that indicate a successful login attempt. To be counted as a successful
-     *        login, the response status code must match one of these. Each code must be unique among the success and
-     *        failure status codes. </p>
+     *        Status codes in the response that indicate a successful login or account creation attempt. To be counted
+     *        as a success, the response status code must match one of these. Each code must be unique among the success
+     *        and failure status codes. </p>
      *        <p>
      *        JSON example: <code>"SuccessCodes": [ 200, 201 ]</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -140,18 +141,18 @@ public class ResponseInspectionStatusCode implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Status codes in the response that indicate a successful login attempt. To be counted as a successful login, the
-     * response status code must match one of these. Each code must be unique among the success and failure status
-     * codes.
+     * Status codes in the response that indicate a successful login or account creation attempt. To be counted as a
+     * success, the response status code must match one of these. Each code must be unique among the success and failure
+     * status codes.
      * </p>
      * <p>
      * JSON example: <code>"SuccessCodes": [ 200, 201 ]</code>
      * </p>
      * 
      * @param successCodes
-     *        Status codes in the response that indicate a successful login attempt. To be counted as a successful
-     *        login, the response status code must match one of these. Each code must be unique among the success and
-     *        failure status codes. </p>
+     *        Status codes in the response that indicate a successful login or account creation attempt. To be counted
+     *        as a success, the response status code must match one of these. Each code must be unique among the success
+     *        and failure status codes. </p>
      *        <p>
      *        JSON example: <code>"SuccessCodes": [ 200, 201 ]</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -164,16 +165,17 @@ public class ResponseInspectionStatusCode implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Status codes in the response that indicate a failed login attempt. To be counted as a failed login, the response
-     * status code must match one of these. Each code must be unique among the success and failure status codes.
+     * Status codes in the response that indicate a failed login or account creation attempt. To be counted as a
+     * failure, the response status code must match one of these. Each code must be unique among the success and failure
+     * status codes.
      * </p>
      * <p>
      * JSON example: <code>"FailureCodes": [ 400, 404 ]</code>
      * </p>
      * 
-     * @return Status codes in the response that indicate a failed login attempt. To be counted as a failed login, the
-     *         response status code must match one of these. Each code must be unique among the success and failure
-     *         status codes. </p>
+     * @return Status codes in the response that indicate a failed login or account creation attempt. To be counted as a
+     *         failure, the response status code must match one of these. Each code must be unique among the success and
+     *         failure status codes. </p>
      *         <p>
      *         JSON example: <code>"FailureCodes": [ 400, 404 ]</code>
      */
@@ -184,17 +186,18 @@ public class ResponseInspectionStatusCode implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Status codes in the response that indicate a failed login attempt. To be counted as a failed login, the response
-     * status code must match one of these. Each code must be unique among the success and failure status codes.
+     * Status codes in the response that indicate a failed login or account creation attempt. To be counted as a
+     * failure, the response status code must match one of these. Each code must be unique among the success and failure
+     * status codes.
      * </p>
      * <p>
      * JSON example: <code>"FailureCodes": [ 400, 404 ]</code>
      * </p>
      * 
      * @param failureCodes
-     *        Status codes in the response that indicate a failed login attempt. To be counted as a failed login, the
-     *        response status code must match one of these. Each code must be unique among the success and failure
-     *        status codes. </p>
+     *        Status codes in the response that indicate a failed login or account creation attempt. To be counted as a
+     *        failure, the response status code must match one of these. Each code must be unique among the success and
+     *        failure status codes. </p>
      *        <p>
      *        JSON example: <code>"FailureCodes": [ 400, 404 ]</code>
      */
@@ -210,8 +213,9 @@ public class ResponseInspectionStatusCode implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Status codes in the response that indicate a failed login attempt. To be counted as a failed login, the response
-     * status code must match one of these. Each code must be unique among the success and failure status codes.
+     * Status codes in the response that indicate a failed login or account creation attempt. To be counted as a
+     * failure, the response status code must match one of these. Each code must be unique among the success and failure
+     * status codes.
      * </p>
      * <p>
      * JSON example: <code>"FailureCodes": [ 400, 404 ]</code>
@@ -223,9 +227,9 @@ public class ResponseInspectionStatusCode implements Serializable, Cloneable, St
      * </p>
      * 
      * @param failureCodes
-     *        Status codes in the response that indicate a failed login attempt. To be counted as a failed login, the
-     *        response status code must match one of these. Each code must be unique among the success and failure
-     *        status codes. </p>
+     *        Status codes in the response that indicate a failed login or account creation attempt. To be counted as a
+     *        failure, the response status code must match one of these. Each code must be unique among the success and
+     *        failure status codes. </p>
      *        <p>
      *        JSON example: <code>"FailureCodes": [ 400, 404 ]</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -243,17 +247,18 @@ public class ResponseInspectionStatusCode implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Status codes in the response that indicate a failed login attempt. To be counted as a failed login, the response
-     * status code must match one of these. Each code must be unique among the success and failure status codes.
+     * Status codes in the response that indicate a failed login or account creation attempt. To be counted as a
+     * failure, the response status code must match one of these. Each code must be unique among the success and failure
+     * status codes.
      * </p>
      * <p>
      * JSON example: <code>"FailureCodes": [ 400, 404 ]</code>
      * </p>
      * 
      * @param failureCodes
-     *        Status codes in the response that indicate a failed login attempt. To be counted as a failed login, the
-     *        response status code must match one of these. Each code must be unique among the success and failure
-     *        status codes. </p>
+     *        Status codes in the response that indicate a failed login or account creation attempt. To be counted as a
+     *        failure, the response status code must match one of these. Each code must be unique among the success and
+     *        failure status codes. </p>
      *        <p>
      *        JSON example: <code>"FailureCodes": [ 400, 404 ]</code>
      * @return Returns a reference to this object so that method calls can be chained together.

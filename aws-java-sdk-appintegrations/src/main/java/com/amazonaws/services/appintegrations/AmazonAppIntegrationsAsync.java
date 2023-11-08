@@ -40,6 +40,43 @@ public interface AmazonAppIntegrationsAsync extends AmazonAppIntegrations {
 
     /**
      * <p>
+     * This API is in preview release and subject to change.
+     * </p>
+     * <p>
+     * Creates and persists an Application resource.
+     * </p>
+     * 
+     * @param createApplicationRequest
+     * @return A Java Future containing the result of the CreateApplication operation returned by the service.
+     * @sample AmazonAppIntegrationsAsync.CreateApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/CreateApplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(CreateApplicationRequest createApplicationRequest);
+
+    /**
+     * <p>
+     * This API is in preview release and subject to change.
+     * </p>
+     * <p>
+     * Creates and persists an Application resource.
+     * </p>
+     * 
+     * @param createApplicationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateApplication operation returned by the service.
+     * @sample AmazonAppIntegrationsAsyncHandler.CreateApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/CreateApplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(CreateApplicationRequest createApplicationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateApplicationRequest, CreateApplicationResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates and persists a DataIntegration resource.
      * </p>
      * <note>
@@ -200,6 +237,43 @@ public interface AmazonAppIntegrationsAsync extends AmazonAppIntegrations {
 
     /**
      * <p>
+     * This API is in preview release and subject to change.
+     * </p>
+     * <p>
+     * Get an Application resource.
+     * </p>
+     * 
+     * @param getApplicationRequest
+     * @return A Java Future containing the result of the GetApplication operation returned by the service.
+     * @sample AmazonAppIntegrationsAsync.GetApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/GetApplication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetApplicationResult> getApplicationAsync(GetApplicationRequest getApplicationRequest);
+
+    /**
+     * <p>
+     * This API is in preview release and subject to change.
+     * </p>
+     * <p>
+     * Get an Application resource.
+     * </p>
+     * 
+     * @param getApplicationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetApplication operation returned by the service.
+     * @sample AmazonAppIntegrationsAsyncHandler.GetApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/GetApplication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetApplicationResult> getApplicationAsync(GetApplicationRequest getApplicationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetApplicationRequest, GetApplicationResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns information about the DataIntegration.
      * </p>
      * <note>
@@ -275,6 +349,43 @@ public interface AmazonAppIntegrationsAsync extends AmazonAppIntegrations {
      */
     java.util.concurrent.Future<GetEventIntegrationResult> getEventIntegrationAsync(GetEventIntegrationRequest getEventIntegrationRequest,
             com.amazonaws.handlers.AsyncHandler<GetEventIntegrationRequest, GetEventIntegrationResult> asyncHandler);
+
+    /**
+     * <p>
+     * This API is in preview release and subject to change.
+     * </p>
+     * <p>
+     * Lists applications in the account.
+     * </p>
+     * 
+     * @param listApplicationsRequest
+     * @return A Java Future containing the result of the ListApplications operation returned by the service.
+     * @sample AmazonAppIntegrationsAsync.ListApplications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/ListApplications"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListApplicationsResult> listApplicationsAsync(ListApplicationsRequest listApplicationsRequest);
+
+    /**
+     * <p>
+     * This API is in preview release and subject to change.
+     * </p>
+     * <p>
+     * Lists applications in the account.
+     * </p>
+     * 
+     * @param listApplicationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListApplications operation returned by the service.
+     * @sample AmazonAppIntegrationsAsyncHandler.ListApplications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/ListApplications"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListApplicationsResult> listApplicationsAsync(ListApplicationsRequest listApplicationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListApplicationsRequest, ListApplicationsResult> asyncHandler);
 
     /**
      * <p>
@@ -532,6 +643,43 @@ public interface AmazonAppIntegrationsAsync extends AmazonAppIntegrations {
      */
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * This API is in preview release and subject to change.
+     * </p>
+     * <p>
+     * Updates and persists an Application resource.
+     * </p>
+     * 
+     * @param updateApplicationRequest
+     * @return A Java Future containing the result of the UpdateApplication operation returned by the service.
+     * @sample AmazonAppIntegrationsAsync.UpdateApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/UpdateApplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(UpdateApplicationRequest updateApplicationRequest);
+
+    /**
+     * <p>
+     * This API is in preview release and subject to change.
+     * </p>
+     * <p>
+     * Updates and persists an Application resource.
+     * </p>
+     * 
+     * @param updateApplicationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateApplication operation returned by the service.
+     * @sample AmazonAppIntegrationsAsyncHandler.UpdateApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/UpdateApplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(UpdateApplicationRequest updateApplicationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateApplicationRequest, UpdateApplicationResult> asyncHandler);
 
     /**
      * <p>

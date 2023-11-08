@@ -29,6 +29,12 @@ public class RecoveryPointMemberMarshaller {
 
     private static final MarshallingInfo<String> RECOVERYPOINTARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RecoveryPointArn").build();
+    private static final MarshallingInfo<String> RESOURCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceArn").build();
+    private static final MarshallingInfo<String> RESOURCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceType").build();
+    private static final MarshallingInfo<String> BACKUPVAULTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BackupVaultName").build();
 
     private static final RecoveryPointMemberMarshaller instance = new RecoveryPointMemberMarshaller();
 
@@ -47,6 +53,9 @@ public class RecoveryPointMemberMarshaller {
 
         try {
             protocolMarshaller.marshall(recoveryPointMember.getRecoveryPointArn(), RECOVERYPOINTARN_BINDING);
+            protocolMarshaller.marshall(recoveryPointMember.getResourceArn(), RESOURCEARN_BINDING);
+            protocolMarshaller.marshall(recoveryPointMember.getResourceType(), RESOURCETYPE_BINDING);
+            protocolMarshaller.marshall(recoveryPointMember.getBackupVaultName(), BACKUPVAULTNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -25,13 +25,6 @@ public class InternalServerException extends com.amazonaws.services.securitylake
     private static final long serialVersionUID = 1L;
 
     /**
-     * <p>
-     * Retry the request after the specified time.
-     * </p>
-     */
-    private Integer retryAfterSeconds;
-
-    /**
      * Constructs a new InternalServerException with the specified error message.
      *
      * @param message
@@ -39,48 +32,6 @@ public class InternalServerException extends com.amazonaws.services.securitylake
      */
     public InternalServerException(String message) {
         super(message);
-    }
-
-    /**
-     * <p>
-     * Retry the request after the specified time.
-     * </p>
-     * 
-     * @param retryAfterSeconds
-     *        Retry the request after the specified time.
-     */
-
-    @com.fasterxml.jackson.annotation.JsonProperty("Retry-After")
-    public void setRetryAfterSeconds(Integer retryAfterSeconds) {
-        this.retryAfterSeconds = retryAfterSeconds;
-    }
-
-    /**
-     * <p>
-     * Retry the request after the specified time.
-     * </p>
-     * 
-     * @return Retry the request after the specified time.
-     */
-
-    @com.fasterxml.jackson.annotation.JsonProperty("Retry-After")
-    public Integer getRetryAfterSeconds() {
-        return this.retryAfterSeconds;
-    }
-
-    /**
-     * <p>
-     * Retry the request after the specified time.
-     * </p>
-     * 
-     * @param retryAfterSeconds
-     *        Retry the request after the specified time.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public InternalServerException withRetryAfterSeconds(Integer retryAfterSeconds) {
-        setRetryAfterSeconds(retryAfterSeconds);
-        return this;
     }
 
 }

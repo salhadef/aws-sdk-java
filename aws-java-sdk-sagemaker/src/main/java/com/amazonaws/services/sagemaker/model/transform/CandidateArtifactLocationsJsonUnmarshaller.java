@@ -56,6 +56,10 @@ public class CandidateArtifactLocationsJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     candidateArtifactLocations.setModelInsights(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("BacktestResults", targetDepth)) {
+                    context.nextToken();
+                    candidateArtifactLocations.setBacktestResults(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

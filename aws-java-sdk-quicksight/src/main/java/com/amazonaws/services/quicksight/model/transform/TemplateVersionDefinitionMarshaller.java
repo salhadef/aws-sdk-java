@@ -42,6 +42,8 @@ public class TemplateVersionDefinitionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ColumnConfigurations").build();
     private static final MarshallingInfo<StructuredPojo> ANALYSISDEFAULTS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AnalysisDefaults").build();
+    private static final MarshallingInfo<StructuredPojo> OPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Options").build();
 
     private static final TemplateVersionDefinitionMarshaller instance = new TemplateVersionDefinitionMarshaller();
 
@@ -66,6 +68,7 @@ public class TemplateVersionDefinitionMarshaller {
             protocolMarshaller.marshall(templateVersionDefinition.getFilterGroups(), FILTERGROUPS_BINDING);
             protocolMarshaller.marshall(templateVersionDefinition.getColumnConfigurations(), COLUMNCONFIGURATIONS_BINDING);
             protocolMarshaller.marshall(templateVersionDefinition.getAnalysisDefaults(), ANALYSISDEFAULTS_BINDING);
+            protocolMarshaller.marshall(templateVersionDefinition.getOptions(), OPTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

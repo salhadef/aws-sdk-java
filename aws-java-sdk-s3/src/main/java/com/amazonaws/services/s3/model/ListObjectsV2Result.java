@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.s3.model;
 
+import com.amazonaws.services.s3.internal.S3RequesterChargedResult;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +23,7 @@ import java.util.List;
 /**
  * Results of a listing of objects from an S3 bucket.
  */
-public class ListObjectsV2Result implements Serializable {
+public class ListObjectsV2Result implements Serializable, S3RequesterChargedResult {
 
     /** A list of summary information describing the objects stored in the bucket */
     private List<S3ObjectSummary> objectSummaries = new ArrayList<S3ObjectSummary>();
@@ -91,6 +93,12 @@ public class ListObjectsV2Result implements Serializable {
      * from.  This can be any key in the bucket.
      */
     private String startAfter;
+
+    /**
+     * Indicate if the requester is charged for conducting this operation from
+     * Requester Pays Buckets.
+     */
+    private boolean isRequesterCharged;
 
     /**
      * Gets whether or not this object listing is complete.
@@ -453,4 +461,13 @@ public class ListObjectsV2Result implements Serializable {
         this.commonPrefixes = commonPrefixes;
     }
 
+    @Override
+    public boolean isRequesterCharged() {
+        return isRequesterCharged;
+    }
+
+    @Override
+    public void setRequesterCharged(boolean isRequesterCharged) {
+        this.isRequesterCharged = isRequesterCharged;
+    }
 }

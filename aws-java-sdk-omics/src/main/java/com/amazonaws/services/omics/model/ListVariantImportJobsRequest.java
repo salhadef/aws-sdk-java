@@ -27,10 +27,10 @@ public class ListVariantImportJobsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A filter to apply to the list.
+     * The maximum number of import jobs to return in one page of results.
      * </p>
      */
-    private ListVariantImportJobsFilter filter;
+    private Integer maxResults;
     /**
      * <p>
      * A list of job IDs.
@@ -39,54 +39,54 @@ public class ListVariantImportJobsRequest extends com.amazonaws.AmazonWebService
     private java.util.List<String> ids;
     /**
      * <p>
-     * The maximum number of import jobs to return in one page of results.
-     * </p>
-     */
-    private Integer maxResults;
-    /**
-     * <p>
      * Specify the pagination token from a previous request to retrieve the next page of results.
      * </p>
      */
     private String nextToken;
-
     /**
      * <p>
      * A filter to apply to the list.
      * </p>
+     */
+    private ListVariantImportJobsFilter filter;
+
+    /**
+     * <p>
+     * The maximum number of import jobs to return in one page of results.
+     * </p>
      * 
-     * @param filter
-     *        A filter to apply to the list.
+     * @param maxResults
+     *        The maximum number of import jobs to return in one page of results.
      */
 
-    public void setFilter(ListVariantImportJobsFilter filter) {
-        this.filter = filter;
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
     }
 
     /**
      * <p>
-     * A filter to apply to the list.
+     * The maximum number of import jobs to return in one page of results.
      * </p>
      * 
-     * @return A filter to apply to the list.
+     * @return The maximum number of import jobs to return in one page of results.
      */
 
-    public ListVariantImportJobsFilter getFilter() {
-        return this.filter;
+    public Integer getMaxResults() {
+        return this.maxResults;
     }
 
     /**
      * <p>
-     * A filter to apply to the list.
+     * The maximum number of import jobs to return in one page of results.
      * </p>
      * 
-     * @param filter
-     *        A filter to apply to the list.
+     * @param maxResults
+     *        The maximum number of import jobs to return in one page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListVariantImportJobsRequest withFilter(ListVariantImportJobsFilter filter) {
-        setFilter(filter);
+    public ListVariantImportJobsRequest withMaxResults(Integer maxResults) {
+        setMaxResults(maxResults);
         return this;
     }
 
@@ -162,46 +162,6 @@ public class ListVariantImportJobsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The maximum number of import jobs to return in one page of results.
-     * </p>
-     * 
-     * @param maxResults
-     *        The maximum number of import jobs to return in one page of results.
-     */
-
-    public void setMaxResults(Integer maxResults) {
-        this.maxResults = maxResults;
-    }
-
-    /**
-     * <p>
-     * The maximum number of import jobs to return in one page of results.
-     * </p>
-     * 
-     * @return The maximum number of import jobs to return in one page of results.
-     */
-
-    public Integer getMaxResults() {
-        return this.maxResults;
-    }
-
-    /**
-     * <p>
-     * The maximum number of import jobs to return in one page of results.
-     * </p>
-     * 
-     * @param maxResults
-     *        The maximum number of import jobs to return in one page of results.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListVariantImportJobsRequest withMaxResults(Integer maxResults) {
-        setMaxResults(maxResults);
-        return this;
-    }
-
-    /**
-     * <p>
      * Specify the pagination token from a previous request to retrieve the next page of results.
      * </p>
      * 
@@ -241,6 +201,46 @@ public class ListVariantImportJobsRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * A filter to apply to the list.
+     * </p>
+     * 
+     * @param filter
+     *        A filter to apply to the list.
+     */
+
+    public void setFilter(ListVariantImportJobsFilter filter) {
+        this.filter = filter;
+    }
+
+    /**
+     * <p>
+     * A filter to apply to the list.
+     * </p>
+     * 
+     * @return A filter to apply to the list.
+     */
+
+    public ListVariantImportJobsFilter getFilter() {
+        return this.filter;
+    }
+
+    /**
+     * <p>
+     * A filter to apply to the list.
+     * </p>
+     * 
+     * @param filter
+     *        A filter to apply to the list.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListVariantImportJobsRequest withFilter(ListVariantImportJobsFilter filter) {
+        setFilter(filter);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -252,14 +252,14 @@ public class ListVariantImportJobsRequest extends com.amazonaws.AmazonWebService
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getFilter() != null)
-            sb.append("Filter: ").append(getFilter()).append(",");
-        if (getIds() != null)
-            sb.append("Ids: ").append(getIds()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getIds() != null)
+            sb.append("Ids: ").append(getIds()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getFilter() != null)
+            sb.append("Filter: ").append(getFilter());
         sb.append("}");
         return sb.toString();
     }
@@ -274,21 +274,21 @@ public class ListVariantImportJobsRequest extends com.amazonaws.AmazonWebService
         if (obj instanceof ListVariantImportJobsRequest == false)
             return false;
         ListVariantImportJobsRequest other = (ListVariantImportJobsRequest) obj;
-        if (other.getFilter() == null ^ this.getFilter() == null)
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
-        if (other.getFilter() != null && other.getFilter().equals(this.getFilter()) == false)
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
         if (other.getIds() == null ^ this.getIds() == null)
             return false;
         if (other.getIds() != null && other.getIds().equals(this.getIds()) == false)
             return false;
-        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
-            return false;
-        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
-            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getFilter() == null ^ this.getFilter() == null)
+            return false;
+        if (other.getFilter() != null && other.getFilter().equals(this.getFilter()) == false)
             return false;
         return true;
     }
@@ -298,10 +298,10 @@ public class ListVariantImportJobsRequest extends com.amazonaws.AmazonWebService
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getFilter() == null) ? 0 : getFilter().hashCode());
-        hashCode = prime * hashCode + ((getIds() == null) ? 0 : getIds().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getIds() == null) ? 0 : getIds().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getFilter() == null) ? 0 : getFilter().hashCode());
         return hashCode;
     }
 

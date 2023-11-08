@@ -42,10 +42,16 @@ public class ResourceStatus implements Serializable, Cloneable, StructuredPojo {
     private String ecr;
     /**
      * <p>
-     * The status of Amazon Inspector scanning for AWS Lambda function resources.
+     * The status of Amazon Inspector scanning for AWS Lambda function.
      * </p>
      */
     private String lambda;
+    /**
+     * <p>
+     * The status of Amazon Inspector scanning for custom application code for Amazon Web Services Lambda functions.
+     * </p>
+     */
+    private String lambdaCode;
 
     /**
      * <p>
@@ -167,11 +173,11 @@ public class ResourceStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of Amazon Inspector scanning for AWS Lambda function resources.
+     * The status of Amazon Inspector scanning for AWS Lambda function.
      * </p>
      * 
      * @param lambda
-     *        The status of Amazon Inspector scanning for AWS Lambda function resources.
+     *        The status of Amazon Inspector scanning for AWS Lambda function.
      * @see Status
      */
 
@@ -181,10 +187,10 @@ public class ResourceStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of Amazon Inspector scanning for AWS Lambda function resources.
+     * The status of Amazon Inspector scanning for AWS Lambda function.
      * </p>
      * 
-     * @return The status of Amazon Inspector scanning for AWS Lambda function resources.
+     * @return The status of Amazon Inspector scanning for AWS Lambda function.
      * @see Status
      */
 
@@ -194,11 +200,11 @@ public class ResourceStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of Amazon Inspector scanning for AWS Lambda function resources.
+     * The status of Amazon Inspector scanning for AWS Lambda function.
      * </p>
      * 
      * @param lambda
-     *        The status of Amazon Inspector scanning for AWS Lambda function resources.
+     *        The status of Amazon Inspector scanning for AWS Lambda function.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Status
      */
@@ -210,17 +216,80 @@ public class ResourceStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of Amazon Inspector scanning for AWS Lambda function resources.
+     * The status of Amazon Inspector scanning for AWS Lambda function.
      * </p>
      * 
      * @param lambda
-     *        The status of Amazon Inspector scanning for AWS Lambda function resources.
+     *        The status of Amazon Inspector scanning for AWS Lambda function.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Status
      */
 
     public ResourceStatus withLambda(Status lambda) {
         this.lambda = lambda.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of Amazon Inspector scanning for custom application code for Amazon Web Services Lambda functions.
+     * </p>
+     * 
+     * @param lambdaCode
+     *        The status of Amazon Inspector scanning for custom application code for Amazon Web Services Lambda
+     *        functions.
+     * @see Status
+     */
+
+    public void setLambdaCode(String lambdaCode) {
+        this.lambdaCode = lambdaCode;
+    }
+
+    /**
+     * <p>
+     * The status of Amazon Inspector scanning for custom application code for Amazon Web Services Lambda functions.
+     * </p>
+     * 
+     * @return The status of Amazon Inspector scanning for custom application code for Amazon Web Services Lambda
+     *         functions.
+     * @see Status
+     */
+
+    public String getLambdaCode() {
+        return this.lambdaCode;
+    }
+
+    /**
+     * <p>
+     * The status of Amazon Inspector scanning for custom application code for Amazon Web Services Lambda functions.
+     * </p>
+     * 
+     * @param lambdaCode
+     *        The status of Amazon Inspector scanning for custom application code for Amazon Web Services Lambda
+     *        functions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Status
+     */
+
+    public ResourceStatus withLambdaCode(String lambdaCode) {
+        setLambdaCode(lambdaCode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of Amazon Inspector scanning for custom application code for Amazon Web Services Lambda functions.
+     * </p>
+     * 
+     * @param lambdaCode
+     *        The status of Amazon Inspector scanning for custom application code for Amazon Web Services Lambda
+     *        functions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Status
+     */
+
+    public ResourceStatus withLambdaCode(Status lambdaCode) {
+        this.lambdaCode = lambdaCode.toString();
         return this;
     }
 
@@ -241,7 +310,9 @@ public class ResourceStatus implements Serializable, Cloneable, StructuredPojo {
         if (getEcr() != null)
             sb.append("Ecr: ").append(getEcr()).append(",");
         if (getLambda() != null)
-            sb.append("Lambda: ").append(getLambda());
+            sb.append("Lambda: ").append(getLambda()).append(",");
+        if (getLambdaCode() != null)
+            sb.append("LambdaCode: ").append(getLambdaCode());
         sb.append("}");
         return sb.toString();
     }
@@ -268,6 +339,10 @@ public class ResourceStatus implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLambda() != null && other.getLambda().equals(this.getLambda()) == false)
             return false;
+        if (other.getLambdaCode() == null ^ this.getLambdaCode() == null)
+            return false;
+        if (other.getLambdaCode() != null && other.getLambdaCode().equals(this.getLambdaCode()) == false)
+            return false;
         return true;
     }
 
@@ -279,6 +354,7 @@ public class ResourceStatus implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getEc2() == null) ? 0 : getEc2().hashCode());
         hashCode = prime * hashCode + ((getEcr() == null) ? 0 : getEcr().hashCode());
         hashCode = prime * hashCode + ((getLambda() == null) ? 0 : getLambda().hashCode());
+        hashCode = prime * hashCode + ((getLambdaCode() == null) ? 0 : getLambdaCode().hashCode());
         return hashCode;
     }
 

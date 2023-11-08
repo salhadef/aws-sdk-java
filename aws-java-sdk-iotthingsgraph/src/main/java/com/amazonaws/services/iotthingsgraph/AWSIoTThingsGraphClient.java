@@ -44,6 +44,7 @@ import com.amazonaws.services.iotthingsgraph.AWSIoTThingsGraphClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.iotthingsgraph.model.*;
+
 import com.amazonaws.services.iotthingsgraph.model.transform.*;
 
 /**

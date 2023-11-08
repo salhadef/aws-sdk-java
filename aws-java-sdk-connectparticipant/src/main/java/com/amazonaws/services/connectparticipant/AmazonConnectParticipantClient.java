@@ -44,6 +44,7 @@ import com.amazonaws.services.connectparticipant.AmazonConnectParticipantClientB
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.connectparticipant.model.*;
+
 import com.amazonaws.services.connectparticipant.model.transform.*;
 
 /**
@@ -97,6 +98,9 @@ public class AmazonConnectParticipantClient extends AmazonWebServiceClient imple
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.connectparticipant.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.connectparticipant.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
                                     com.amazonaws.services.connectparticipant.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
@@ -329,6 +333,71 @@ public class AmazonConnectParticipantClient extends AmazonWebServiceClient imple
             HttpResponseHandler<AmazonWebServiceResponse<CreateParticipantConnectionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CreateParticipantConnectionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the view for the specified view token.
+     * </p>
+     * 
+     * @param describeViewRequest
+     * @return Result of the DescribeView operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the Amazon Connect service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ResourceNotFoundException
+     *         The resource was not found.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by Amazon Connect.
+     * @sample AmazonConnectParticipant.DescribeView
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/DescribeView"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeViewResult describeView(DescribeViewRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeView(request);
+    }
+
+    @SdkInternalApi
+    final DescribeViewResult executeDescribeView(DescribeViewRequest describeViewRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeViewRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeViewRequest> request = null;
+        Response<DescribeViewResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeViewRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeViewRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ConnectParticipant");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeView");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeViewResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeViewResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

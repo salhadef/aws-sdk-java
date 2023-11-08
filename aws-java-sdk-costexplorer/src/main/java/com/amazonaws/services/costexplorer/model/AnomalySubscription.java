@@ -19,9 +19,24 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The association between a monitor, threshold, and list of subscribers used to deliver notifications about anomalies
- * detected by a monitor that exceeds a threshold. The content consists of the detailed metadata and the current status
- * of the <code>AnomalySubscription</code> object.
+ * An <code>AnomalySubscription</code> resource (also referred to as an alert subscription) sends notifications about
+ * specific anomalies that meet an alerting criteria defined by you.
+ * </p>
+ * <p>
+ * You can specify the frequency of the alerts and the subscribers to notify.
+ * </p>
+ * <p>
+ * Anomaly subscriptions can be associated with one or more <a
+ * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalyMonitor.html">
+ * <code>AnomalyMonitor</code> </a> resources, and they only send notifications about anomalies detected by those
+ * associated monitors. You can also configure a threshold to further control which anomalies are included in the
+ * notifications.
+ * </p>
+ * <p>
+ * Anomalies that don’t exceed the chosen threshold and therefore don’t trigger notifications from an anomaly
+ * subscription will still be available on the console and from the <a
+ * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetAnomalies.html">
+ * <code>GetAnomalies</code> </a> API.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/AnomalySubscription" target="_top">AWS API
@@ -59,21 +74,26 @@ public class AnomalySubscription implements Serializable, Cloneable, StructuredP
      * (deprecated)
      * </p>
      * <p>
-     * The dollar value that triggers a notification if the threshold is exceeded.
+     * An absolute dollar value that must be exceeded by the anomaly's total impact (see <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Impact.html">Impact</a> for more
+     * details) for an anomaly notification to be generated.
      * </p>
      * <p>
      * This field has been deprecated. To specify a threshold, use ThresholdExpression. Continued use of Threshold will
      * be treated as shorthand syntax for a ThresholdExpression.
      * </p>
      * <p>
-     * One of Threshold or ThresholdExpression is required for this resource.
+     * One of Threshold or ThresholdExpression is required for this resource. You cannot specify both.
      * </p>
      */
     @Deprecated
     private Double threshold;
     /**
      * <p>
-     * The frequency that anomaly reports are sent over email.
+     * The frequency that anomaly notifications are sent. Notifications are sent either over email (for DAILY and WEEKLY
+     * frequencies) or SNS (for IMMEDIATE frequency). For more information, see <a
+     * href="https://docs.aws.amazon.com/cost-management/latest/userguide/ad-SNS.html">Creating an Amazon SNS topic for
+     * anomaly notifications</a>.
      * </p>
      */
     private String frequency;
@@ -89,12 +109,15 @@ public class AnomalySubscription implements Serializable, Cloneable, StructuredP
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object used to specify the anomalies that you want to generate alerts for. This supports dimensions and nested
      * expressions. The supported dimensions are <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and
-     * <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>. The supported nested expression types are <code>AND</code> and
-     * <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between
-     * 0 and 10,000,000,000.
+     * <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>, corresponding to an anomaly’s TotalImpact and
+     * TotalImpactPercentage, respectively (see <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Impact.html">Impact</a> for more
+     * details). The supported nested expression types are <code>AND</code> and <code>OR</code>. The match option
+     * <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0 and 10,000,000,000 in string
+     * format.
      * </p>
      * <p>
-     * One of Threshold or ThresholdExpression is required for this resource.
+     * One of Threshold or ThresholdExpression is required for this resource. You cannot specify both.
      * </p>
      * <p>
      * The following are examples of valid ThresholdExpressions:
@@ -353,27 +376,31 @@ public class AnomalySubscription implements Serializable, Cloneable, StructuredP
      * (deprecated)
      * </p>
      * <p>
-     * The dollar value that triggers a notification if the threshold is exceeded.
+     * An absolute dollar value that must be exceeded by the anomaly's total impact (see <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Impact.html">Impact</a> for more
+     * details) for an anomaly notification to be generated.
      * </p>
      * <p>
      * This field has been deprecated. To specify a threshold, use ThresholdExpression. Continued use of Threshold will
      * be treated as shorthand syntax for a ThresholdExpression.
      * </p>
      * <p>
-     * One of Threshold or ThresholdExpression is required for this resource.
+     * One of Threshold or ThresholdExpression is required for this resource. You cannot specify both.
      * </p>
      * 
      * @param threshold
      *        (deprecated)</p>
      *        <p>
-     *        The dollar value that triggers a notification if the threshold is exceeded.
+     *        An absolute dollar value that must be exceeded by the anomaly's total impact (see <a
+     *        href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Impact.html">Impact</a> for
+     *        more details) for an anomaly notification to be generated.
      *        </p>
      *        <p>
      *        This field has been deprecated. To specify a threshold, use ThresholdExpression. Continued use of
      *        Threshold will be treated as shorthand syntax for a ThresholdExpression.
      *        </p>
      *        <p>
-     *        One of Threshold or ThresholdExpression is required for this resource.
+     *        One of Threshold or ThresholdExpression is required for this resource. You cannot specify both.
      */
     @Deprecated
     public void setThreshold(Double threshold) {
@@ -385,26 +412,30 @@ public class AnomalySubscription implements Serializable, Cloneable, StructuredP
      * (deprecated)
      * </p>
      * <p>
-     * The dollar value that triggers a notification if the threshold is exceeded.
+     * An absolute dollar value that must be exceeded by the anomaly's total impact (see <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Impact.html">Impact</a> for more
+     * details) for an anomaly notification to be generated.
      * </p>
      * <p>
      * This field has been deprecated. To specify a threshold, use ThresholdExpression. Continued use of Threshold will
      * be treated as shorthand syntax for a ThresholdExpression.
      * </p>
      * <p>
-     * One of Threshold or ThresholdExpression is required for this resource.
+     * One of Threshold or ThresholdExpression is required for this resource. You cannot specify both.
      * </p>
      * 
      * @return (deprecated)</p>
      *         <p>
-     *         The dollar value that triggers a notification if the threshold is exceeded.
+     *         An absolute dollar value that must be exceeded by the anomaly's total impact (see <a
+     *         href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Impact.html">Impact</a> for
+     *         more details) for an anomaly notification to be generated.
      *         </p>
      *         <p>
      *         This field has been deprecated. To specify a threshold, use ThresholdExpression. Continued use of
      *         Threshold will be treated as shorthand syntax for a ThresholdExpression.
      *         </p>
      *         <p>
-     *         One of Threshold or ThresholdExpression is required for this resource.
+     *         One of Threshold or ThresholdExpression is required for this resource. You cannot specify both.
      */
     @Deprecated
     public Double getThreshold() {
@@ -416,27 +447,31 @@ public class AnomalySubscription implements Serializable, Cloneable, StructuredP
      * (deprecated)
      * </p>
      * <p>
-     * The dollar value that triggers a notification if the threshold is exceeded.
+     * An absolute dollar value that must be exceeded by the anomaly's total impact (see <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Impact.html">Impact</a> for more
+     * details) for an anomaly notification to be generated.
      * </p>
      * <p>
      * This field has been deprecated. To specify a threshold, use ThresholdExpression. Continued use of Threshold will
      * be treated as shorthand syntax for a ThresholdExpression.
      * </p>
      * <p>
-     * One of Threshold or ThresholdExpression is required for this resource.
+     * One of Threshold or ThresholdExpression is required for this resource. You cannot specify both.
      * </p>
      * 
      * @param threshold
      *        (deprecated)</p>
      *        <p>
-     *        The dollar value that triggers a notification if the threshold is exceeded.
+     *        An absolute dollar value that must be exceeded by the anomaly's total impact (see <a
+     *        href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Impact.html">Impact</a> for
+     *        more details) for an anomaly notification to be generated.
      *        </p>
      *        <p>
      *        This field has been deprecated. To specify a threshold, use ThresholdExpression. Continued use of
      *        Threshold will be treated as shorthand syntax for a ThresholdExpression.
      *        </p>
      *        <p>
-     *        One of Threshold or ThresholdExpression is required for this resource.
+     *        One of Threshold or ThresholdExpression is required for this resource. You cannot specify both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -447,11 +482,17 @@ public class AnomalySubscription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The frequency that anomaly reports are sent over email.
+     * The frequency that anomaly notifications are sent. Notifications are sent either over email (for DAILY and WEEKLY
+     * frequencies) or SNS (for IMMEDIATE frequency). For more information, see <a
+     * href="https://docs.aws.amazon.com/cost-management/latest/userguide/ad-SNS.html">Creating an Amazon SNS topic for
+     * anomaly notifications</a>.
      * </p>
      * 
      * @param frequency
-     *        The frequency that anomaly reports are sent over email.
+     *        The frequency that anomaly notifications are sent. Notifications are sent either over email (for DAILY and
+     *        WEEKLY frequencies) or SNS (for IMMEDIATE frequency). For more information, see <a
+     *        href="https://docs.aws.amazon.com/cost-management/latest/userguide/ad-SNS.html">Creating an Amazon SNS
+     *        topic for anomaly notifications</a>.
      * @see AnomalySubscriptionFrequency
      */
 
@@ -461,10 +502,16 @@ public class AnomalySubscription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The frequency that anomaly reports are sent over email.
+     * The frequency that anomaly notifications are sent. Notifications are sent either over email (for DAILY and WEEKLY
+     * frequencies) or SNS (for IMMEDIATE frequency). For more information, see <a
+     * href="https://docs.aws.amazon.com/cost-management/latest/userguide/ad-SNS.html">Creating an Amazon SNS topic for
+     * anomaly notifications</a>.
      * </p>
      * 
-     * @return The frequency that anomaly reports are sent over email.
+     * @return The frequency that anomaly notifications are sent. Notifications are sent either over email (for DAILY
+     *         and WEEKLY frequencies) or SNS (for IMMEDIATE frequency). For more information, see <a
+     *         href="https://docs.aws.amazon.com/cost-management/latest/userguide/ad-SNS.html">Creating an Amazon SNS
+     *         topic for anomaly notifications</a>.
      * @see AnomalySubscriptionFrequency
      */
 
@@ -474,11 +521,17 @@ public class AnomalySubscription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The frequency that anomaly reports are sent over email.
+     * The frequency that anomaly notifications are sent. Notifications are sent either over email (for DAILY and WEEKLY
+     * frequencies) or SNS (for IMMEDIATE frequency). For more information, see <a
+     * href="https://docs.aws.amazon.com/cost-management/latest/userguide/ad-SNS.html">Creating an Amazon SNS topic for
+     * anomaly notifications</a>.
      * </p>
      * 
      * @param frequency
-     *        The frequency that anomaly reports are sent over email.
+     *        The frequency that anomaly notifications are sent. Notifications are sent either over email (for DAILY and
+     *        WEEKLY frequencies) or SNS (for IMMEDIATE frequency). For more information, see <a
+     *        href="https://docs.aws.amazon.com/cost-management/latest/userguide/ad-SNS.html">Creating an Amazon SNS
+     *        topic for anomaly notifications</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AnomalySubscriptionFrequency
      */
@@ -490,11 +543,17 @@ public class AnomalySubscription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The frequency that anomaly reports are sent over email.
+     * The frequency that anomaly notifications are sent. Notifications are sent either over email (for DAILY and WEEKLY
+     * frequencies) or SNS (for IMMEDIATE frequency). For more information, see <a
+     * href="https://docs.aws.amazon.com/cost-management/latest/userguide/ad-SNS.html">Creating an Amazon SNS topic for
+     * anomaly notifications</a>.
      * </p>
      * 
      * @param frequency
-     *        The frequency that anomaly reports are sent over email.
+     *        The frequency that anomaly notifications are sent. Notifications are sent either over email (for DAILY and
+     *        WEEKLY frequencies) or SNS (for IMMEDIATE frequency). For more information, see <a
+     *        href="https://docs.aws.amazon.com/cost-management/latest/userguide/ad-SNS.html">Creating an Amazon SNS
+     *        topic for anomaly notifications</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AnomalySubscriptionFrequency
      */
@@ -550,12 +609,15 @@ public class AnomalySubscription implements Serializable, Cloneable, StructuredP
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object used to specify the anomalies that you want to generate alerts for. This supports dimensions and nested
      * expressions. The supported dimensions are <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and
-     * <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>. The supported nested expression types are <code>AND</code> and
-     * <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between
-     * 0 and 10,000,000,000.
+     * <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>, corresponding to an anomaly’s TotalImpact and
+     * TotalImpactPercentage, respectively (see <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Impact.html">Impact</a> for more
+     * details). The supported nested expression types are <code>AND</code> and <code>OR</code>. The match option
+     * <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0 and 10,000,000,000 in string
+     * format.
      * </p>
      * <p>
-     * One of Threshold or ThresholdExpression is required for this resource.
+     * One of Threshold or ThresholdExpression is required for this resource. You cannot specify both.
      * </p>
      * <p>
      * The following are examples of valid ThresholdExpressions:
@@ -591,11 +653,14 @@ public class AnomalySubscription implements Serializable, Cloneable, StructuredP
      *        An <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">
      *        Expression</a> object used to specify the anomalies that you want to generate alerts for. This supports
      *        dimensions and nested expressions. The supported dimensions are <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code>
-     *        and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>. The supported nested expression types are
-     *        <code>AND</code> and <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is required.
-     *        Values must be numbers between 0 and 10,000,000,000.</p>
+     *        and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>, corresponding to an anomaly’s TotalImpact and
+     *        TotalImpactPercentage, respectively (see <a
+     *        href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Impact.html">Impact</a> for
+     *        more details). The supported nested expression types are <code>AND</code> and <code>OR</code>. The match
+     *        option <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0 and 10,000,000,000
+     *        in string format.</p>
      *        <p>
-     *        One of Threshold or ThresholdExpression is required for this resource.
+     *        One of Threshold or ThresholdExpression is required for this resource. You cannot specify both.
      *        </p>
      *        <p>
      *        The following are examples of valid ThresholdExpressions:
@@ -637,12 +702,15 @@ public class AnomalySubscription implements Serializable, Cloneable, StructuredP
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object used to specify the anomalies that you want to generate alerts for. This supports dimensions and nested
      * expressions. The supported dimensions are <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and
-     * <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>. The supported nested expression types are <code>AND</code> and
-     * <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between
-     * 0 and 10,000,000,000.
+     * <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>, corresponding to an anomaly’s TotalImpact and
+     * TotalImpactPercentage, respectively (see <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Impact.html">Impact</a> for more
+     * details). The supported nested expression types are <code>AND</code> and <code>OR</code>. The match option
+     * <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0 and 10,000,000,000 in string
+     * format.
      * </p>
      * <p>
-     * One of Threshold or ThresholdExpression is required for this resource.
+     * One of Threshold or ThresholdExpression is required for this resource. You cannot specify both.
      * </p>
      * <p>
      * The following are examples of valid ThresholdExpressions:
@@ -678,11 +746,14 @@ public class AnomalySubscription implements Serializable, Cloneable, StructuredP
      *         href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression
      *         </a> object used to specify the anomalies that you want to generate alerts for. This supports dimensions
      *         and nested expressions. The supported dimensions are <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and
-     *         <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>. The supported nested expression types are <code>AND</code>
-     *         and <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be
-     *         numbers between 0 and 10,000,000,000.</p>
+     *         <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>, corresponding to an anomaly’s TotalImpact and
+     *         TotalImpactPercentage, respectively (see <a
+     *         href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Impact.html">Impact</a> for
+     *         more details). The supported nested expression types are <code>AND</code> and <code>OR</code>. The match
+     *         option <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0 and
+     *         10,000,000,000 in string format.</p>
      *         <p>
-     *         One of Threshold or ThresholdExpression is required for this resource.
+     *         One of Threshold or ThresholdExpression is required for this resource. You cannot specify both.
      *         </p>
      *         <p>
      *         The following are examples of valid ThresholdExpressions:
@@ -724,12 +795,15 @@ public class AnomalySubscription implements Serializable, Cloneable, StructuredP
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object used to specify the anomalies that you want to generate alerts for. This supports dimensions and nested
      * expressions. The supported dimensions are <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and
-     * <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>. The supported nested expression types are <code>AND</code> and
-     * <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between
-     * 0 and 10,000,000,000.
+     * <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>, corresponding to an anomaly’s TotalImpact and
+     * TotalImpactPercentage, respectively (see <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Impact.html">Impact</a> for more
+     * details). The supported nested expression types are <code>AND</code> and <code>OR</code>. The match option
+     * <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0 and 10,000,000,000 in string
+     * format.
      * </p>
      * <p>
-     * One of Threshold or ThresholdExpression is required for this resource.
+     * One of Threshold or ThresholdExpression is required for this resource. You cannot specify both.
      * </p>
      * <p>
      * The following are examples of valid ThresholdExpressions:
@@ -765,11 +839,14 @@ public class AnomalySubscription implements Serializable, Cloneable, StructuredP
      *        An <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">
      *        Expression</a> object used to specify the anomalies that you want to generate alerts for. This supports
      *        dimensions and nested expressions. The supported dimensions are <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code>
-     *        and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>. The supported nested expression types are
-     *        <code>AND</code> and <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is required.
-     *        Values must be numbers between 0 and 10,000,000,000.</p>
+     *        and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>, corresponding to an anomaly’s TotalImpact and
+     *        TotalImpactPercentage, respectively (see <a
+     *        href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Impact.html">Impact</a> for
+     *        more details). The supported nested expression types are <code>AND</code> and <code>OR</code>. The match
+     *        option <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0 and 10,000,000,000
+     *        in string format.</p>
      *        <p>
-     *        One of Threshold or ThresholdExpression is required for this resource.
+     *        One of Threshold or ThresholdExpression is required for this resource. You cannot specify both.
      *        </p>
      *        <p>
      *        The following are examples of valid ThresholdExpressions:

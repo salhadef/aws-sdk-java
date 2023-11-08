@@ -397,6 +397,17 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private java.util.Map<String, LanguageIdSettings> languageIdSettings;
+    /**
+     * <p>
+     * Enables toxic speech detection in your transcript. If you include <code>ToxicityDetection</code> in your request,
+     * you must also include <code>ToxicityCategories</code>.
+     * </p>
+     * <p>
+     * For information on the types of toxic speech Amazon Transcribe can detect, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/toxic-language.html">Detecting toxic speech</a>.
+     * </p>
+     */
+    private java.util.List<ToxicityDetectionSettings> toxicityDetection;
 
     /**
      * <p>
@@ -3073,6 +3084,112 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * Enables toxic speech detection in your transcript. If you include <code>ToxicityDetection</code> in your request,
+     * you must also include <code>ToxicityCategories</code>.
+     * </p>
+     * <p>
+     * For information on the types of toxic speech Amazon Transcribe can detect, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/toxic-language.html">Detecting toxic speech</a>.
+     * </p>
+     * 
+     * @return Enables toxic speech detection in your transcript. If you include <code>ToxicityDetection</code> in your
+     *         request, you must also include <code>ToxicityCategories</code>.</p>
+     *         <p>
+     *         For information on the types of toxic speech Amazon Transcribe can detect, see <a
+     *         href="https://docs.aws.amazon.com/transcribe/latest/dg/toxic-language.html">Detecting toxic speech</a>.
+     */
+
+    public java.util.List<ToxicityDetectionSettings> getToxicityDetection() {
+        return toxicityDetection;
+    }
+
+    /**
+     * <p>
+     * Enables toxic speech detection in your transcript. If you include <code>ToxicityDetection</code> in your request,
+     * you must also include <code>ToxicityCategories</code>.
+     * </p>
+     * <p>
+     * For information on the types of toxic speech Amazon Transcribe can detect, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/toxic-language.html">Detecting toxic speech</a>.
+     * </p>
+     * 
+     * @param toxicityDetection
+     *        Enables toxic speech detection in your transcript. If you include <code>ToxicityDetection</code> in your
+     *        request, you must also include <code>ToxicityCategories</code>.</p>
+     *        <p>
+     *        For information on the types of toxic speech Amazon Transcribe can detect, see <a
+     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/toxic-language.html">Detecting toxic speech</a>.
+     */
+
+    public void setToxicityDetection(java.util.Collection<ToxicityDetectionSettings> toxicityDetection) {
+        if (toxicityDetection == null) {
+            this.toxicityDetection = null;
+            return;
+        }
+
+        this.toxicityDetection = new java.util.ArrayList<ToxicityDetectionSettings>(toxicityDetection);
+    }
+
+    /**
+     * <p>
+     * Enables toxic speech detection in your transcript. If you include <code>ToxicityDetection</code> in your request,
+     * you must also include <code>ToxicityCategories</code>.
+     * </p>
+     * <p>
+     * For information on the types of toxic speech Amazon Transcribe can detect, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/toxic-language.html">Detecting toxic speech</a>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setToxicityDetection(java.util.Collection)} or {@link #withToxicityDetection(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param toxicityDetection
+     *        Enables toxic speech detection in your transcript. If you include <code>ToxicityDetection</code> in your
+     *        request, you must also include <code>ToxicityCategories</code>.</p>
+     *        <p>
+     *        For information on the types of toxic speech Amazon Transcribe can detect, see <a
+     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/toxic-language.html">Detecting toxic speech</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartTranscriptionJobRequest withToxicityDetection(ToxicityDetectionSettings... toxicityDetection) {
+        if (this.toxicityDetection == null) {
+            setToxicityDetection(new java.util.ArrayList<ToxicityDetectionSettings>(toxicityDetection.length));
+        }
+        for (ToxicityDetectionSettings ele : toxicityDetection) {
+            this.toxicityDetection.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Enables toxic speech detection in your transcript. If you include <code>ToxicityDetection</code> in your request,
+     * you must also include <code>ToxicityCategories</code>.
+     * </p>
+     * <p>
+     * For information on the types of toxic speech Amazon Transcribe can detect, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/toxic-language.html">Detecting toxic speech</a>.
+     * </p>
+     * 
+     * @param toxicityDetection
+     *        Enables toxic speech detection in your transcript. If you include <code>ToxicityDetection</code> in your
+     *        request, you must also include <code>ToxicityCategories</code>.</p>
+     *        <p>
+     *        For information on the types of toxic speech Amazon Transcribe can detect, see <a
+     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/toxic-language.html">Detecting toxic speech</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartTranscriptionJobRequest withToxicityDetection(java.util.Collection<ToxicityDetectionSettings> toxicityDetection) {
+        setToxicityDetection(toxicityDetection);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -3121,7 +3238,9 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getLanguageIdSettings() != null)
-            sb.append("LanguageIdSettings: ").append(getLanguageIdSettings());
+            sb.append("LanguageIdSettings: ").append(getLanguageIdSettings()).append(",");
+        if (getToxicityDetection() != null)
+            sb.append("ToxicityDetection: ").append(getToxicityDetection());
         sb.append("}");
         return sb.toString();
     }
@@ -3212,6 +3331,10 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getLanguageIdSettings() != null && other.getLanguageIdSettings().equals(this.getLanguageIdSettings()) == false)
             return false;
+        if (other.getToxicityDetection() == null ^ this.getToxicityDetection() == null)
+            return false;
+        if (other.getToxicityDetection() != null && other.getToxicityDetection().equals(this.getToxicityDetection()) == false)
+            return false;
         return true;
     }
 
@@ -3239,6 +3362,7 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getSubtitles() == null) ? 0 : getSubtitles().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getLanguageIdSettings() == null) ? 0 : getLanguageIdSettings().hashCode());
+        hashCode = prime * hashCode + ((getToxicityDetection() == null) ? 0 : getToxicityDetection().hashCode());
         return hashCode;
     }
 

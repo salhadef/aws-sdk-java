@@ -32,12 +32,15 @@ import com.amazonaws.services.signer.model.*;
  * AWS Signer supports the following applications:
  * </p>
  * <p>
- * With <i>code signing for AWS Lambda</i>, you can sign AWS Lambda deployment packages. Integrated support is provided
- * for Amazon S3, Amazon CloudWatch, and AWS CloudTrail. In order to sign code, you create a signing profile and then
- * use Signer to sign Lambda zip files in S3.
+ * With code signing for AWS Lambda, you can sign <a href="http://docs.aws.amazon.com/lambda/latest/dg/">AWS Lambda</a>
+ * deployment packages. Integrated support is provided for <a
+ * href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/">Amazon S3</a>, <a
+ * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/">Amazon CloudWatch</a>, and <a
+ * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/">AWS CloudTrail</a>. In order to sign code, you
+ * create a signing profile and then use Signer to sign Lambda zip files in S3.
  * </p>
  * <p>
- * With <i>code signing for IoT</i>, you can sign code for any IoT device that is supported by AWS. IoT code signing is
+ * With code signing for IoT, you can sign code for any IoT device that is supported by AWS. IoT code signing is
  * available for <a href="http://docs.aws.amazon.com/freertos/latest/userguide/">Amazon FreeRTOS</a> and <a
  * href="http://docs.aws.amazon.com/iot/latest/developerguide/">AWS IoT Device Management</a>, and is integrated with <a
  * href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager (ACM)</a>. In order to sign code, you
@@ -45,10 +48,12 @@ import com.amazonaws.services.signer.model.*;
  * Device Management.
  * </p>
  * <p>
- * For more information about AWS Signer, see the <a
- * href="http://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html">AWS Signer Developer Guide</a>.
+ * With code signing for containers …(TBD)
  * </p>
- * <p/>
+ * <p>
+ * For more information about AWS Signer, see the <a
+ * href="https://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html">AWS Signer Developer Guide</a>.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSsignerAsync extends AWSsigner {
@@ -151,6 +156,37 @@ public interface AWSsignerAsync extends AWSsigner {
      */
     java.util.concurrent.Future<DescribeSigningJobResult> describeSigningJobAsync(DescribeSigningJobRequest describeSigningJobRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeSigningJobRequest, DescribeSigningJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the revocation status of one or more of the signing profile, signing job, and signing certificate.
+     * </p>
+     * 
+     * @param getRevocationStatusRequest
+     * @return A Java Future containing the result of the GetRevocationStatus operation returned by the service.
+     * @sample AWSsignerAsync.GetRevocationStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/GetRevocationStatus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetRevocationStatusResult> getRevocationStatusAsync(GetRevocationStatusRequest getRevocationStatusRequest);
+
+    /**
+     * <p>
+     * Retrieves the revocation status of one or more of the signing profile, signing job, and signing certificate.
+     * </p>
+     * 
+     * @param getRevocationStatusRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetRevocationStatus operation returned by the service.
+     * @sample AWSsignerAsyncHandler.GetRevocationStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/GetRevocationStatus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetRevocationStatusResult> getRevocationStatusAsync(GetRevocationStatusRequest getRevocationStatusRequest,
+            com.amazonaws.handlers.AsyncHandler<GetRevocationStatusRequest, GetRevocationStatusResult> asyncHandler);
 
     /**
      * <p>
@@ -400,9 +436,7 @@ public interface AWSsignerAsync extends AWSsigner {
     /**
      * <p>
      * Creates a signing profile. A signing profile is a code signing template that can be used to carry out a
-     * pre-defined signing job. For more information, see <a
-     * href="http://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html"
-     * >http://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html</a>
+     * pre-defined signing job.
      * </p>
      * 
      * @param putSigningProfileRequest
@@ -416,9 +450,7 @@ public interface AWSsignerAsync extends AWSsigner {
     /**
      * <p>
      * Creates a signing profile. A signing profile is a code signing template that can be used to carry out a
-     * pre-defined signing job. For more information, see <a
-     * href="http://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html"
-     * >http://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html</a>
+     * pre-defined signing job.
      * </p>
      * 
      * @param putSigningProfileRequest
@@ -531,6 +563,37 @@ public interface AWSsignerAsync extends AWSsigner {
 
     /**
      * <p>
+     * Signs a binary payload and returns a signature envelope.
+     * </p>
+     * 
+     * @param signPayloadRequest
+     * @return A Java Future containing the result of the SignPayload operation returned by the service.
+     * @sample AWSsignerAsync.SignPayload
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/SignPayload" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<SignPayloadResult> signPayloadAsync(SignPayloadRequest signPayloadRequest);
+
+    /**
+     * <p>
+     * Signs a binary payload and returns a signature envelope.
+     * </p>
+     * 
+     * @param signPayloadRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SignPayload operation returned by the service.
+     * @sample AWSsignerAsyncHandler.SignPayload
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/SignPayload" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<SignPayloadResult> signPayloadAsync(SignPayloadRequest signPayloadRequest,
+            com.amazonaws.handlers.AsyncHandler<SignPayloadRequest, SignPayloadResult> asyncHandler);
+
+    /**
+     * <p>
      * Initiates a signing job to be performed on the code provided. Signing jobs are viewable by the
      * <code>ListSigningJobs</code> operation for two years after they are performed. Note the following requirements:
      * </p>
@@ -538,7 +601,7 @@ public interface AWSsignerAsync extends AWSsigner {
      * <li>
      * <p>
      * You must create an Amazon S3 source bucket. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html">Create a Bucket</a> in the <i>Amazon
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html">Creating a Bucket</a> in the <i>Amazon
      * S3 Getting Started Guide</i>.
      * </p>
      * </li>
@@ -570,7 +633,7 @@ public interface AWSsignerAsync extends AWSsigner {
      * </p>
      * <p>
      * For a Java example that shows how to use this action, see <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/">http://docs.aws.amazon.com/acm/latest/userguide/</a>
+     * href="https://docs.aws.amazon.com/signer/latest/developerguide/api-startsigningjob.html">StartSigningJob</a>.
      * </p>
      * 
      * @param startSigningJobRequest
@@ -590,7 +653,7 @@ public interface AWSsignerAsync extends AWSsigner {
      * <li>
      * <p>
      * You must create an Amazon S3 source bucket. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html">Create a Bucket</a> in the <i>Amazon
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html">Creating a Bucket</a> in the <i>Amazon
      * S3 Getting Started Guide</i>.
      * </p>
      * </li>
@@ -622,7 +685,7 @@ public interface AWSsignerAsync extends AWSsigner {
      * </p>
      * <p>
      * For a Java example that shows how to use this action, see <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/">http://docs.aws.amazon.com/acm/latest/userguide/</a>
+     * href="https://docs.aws.amazon.com/signer/latest/developerguide/api-startsigningjob.html">StartSigningJob</a>.
      * </p>
      * 
      * @param startSigningJobRequest

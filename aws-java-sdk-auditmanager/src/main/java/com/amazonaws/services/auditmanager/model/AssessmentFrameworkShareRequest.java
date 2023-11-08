@@ -779,7 +779,7 @@ public class AssessmentFrameworkShareRequest implements Serializable, Cloneable,
         if (getCustomControlsCount() != null)
             sb.append("CustomControlsCount: ").append(getCustomControlsCount()).append(",");
         if (getComplianceType() != null)
-            sb.append("ComplianceType: ").append(getComplianceType());
+            sb.append("ComplianceType: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

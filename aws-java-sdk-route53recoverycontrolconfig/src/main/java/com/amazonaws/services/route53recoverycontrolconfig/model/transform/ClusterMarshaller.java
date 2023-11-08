@@ -36,6 +36,8 @@ public class ClusterMarshaller {
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Status").build();
+    private static final MarshallingInfo<String> OWNER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Owner").build();
 
     private static final ClusterMarshaller instance = new ClusterMarshaller();
 
@@ -57,6 +59,7 @@ public class ClusterMarshaller {
             protocolMarshaller.marshall(cluster.getClusterEndpoints(), CLUSTERENDPOINTS_BINDING);
             protocolMarshaller.marshall(cluster.getName(), NAME_BINDING);
             protocolMarshaller.marshall(cluster.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(cluster.getOwner(), OWNER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

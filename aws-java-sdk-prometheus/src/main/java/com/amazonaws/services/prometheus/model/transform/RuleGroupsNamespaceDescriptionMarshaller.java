@@ -31,16 +31,16 @@ public class RuleGroupsNamespaceDescriptionMarshaller {
 
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("arn").build();
-    private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("unixTimestamp").build();
-    private static final MarshallingInfo<java.nio.ByteBuffer> DATA_BINDING = MarshallingInfo.builder(MarshallingType.BYTE_BUFFER)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("data").build();
-    private static final MarshallingInfo<java.util.Date> MODIFIEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("modifiedAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
     private static final MarshallingInfo<StructuredPojo> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("status").build();
+    private static final MarshallingInfo<java.nio.ByteBuffer> DATA_BINDING = MarshallingInfo.builder(MarshallingType.BYTE_BUFFER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("data").build();
+    private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<java.util.Date> MODIFIEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("modifiedAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
 
@@ -61,11 +61,11 @@ public class RuleGroupsNamespaceDescriptionMarshaller {
 
         try {
             protocolMarshaller.marshall(ruleGroupsNamespaceDescription.getArn(), ARN_BINDING);
-            protocolMarshaller.marshall(ruleGroupsNamespaceDescription.getCreatedAt(), CREATEDAT_BINDING);
-            protocolMarshaller.marshall(ruleGroupsNamespaceDescription.getData(), DATA_BINDING);
-            protocolMarshaller.marshall(ruleGroupsNamespaceDescription.getModifiedAt(), MODIFIEDAT_BINDING);
             protocolMarshaller.marshall(ruleGroupsNamespaceDescription.getName(), NAME_BINDING);
             protocolMarshaller.marshall(ruleGroupsNamespaceDescription.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(ruleGroupsNamespaceDescription.getData(), DATA_BINDING);
+            protocolMarshaller.marshall(ruleGroupsNamespaceDescription.getCreatedAt(), CREATEDAT_BINDING);
+            protocolMarshaller.marshall(ruleGroupsNamespaceDescription.getModifiedAt(), MODIFIEDAT_BINDING);
             protocolMarshaller.marshall(ruleGroupsNamespaceDescription.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

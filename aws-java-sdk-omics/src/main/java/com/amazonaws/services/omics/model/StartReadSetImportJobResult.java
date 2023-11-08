@@ -25,22 +25,10 @@ public class StartReadSetImportJobResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * When the job was created.
-     * </p>
-     */
-    private java.util.Date creationTime;
-    /**
-     * <p>
      * The job's ID.
      * </p>
      */
     private String id;
-    /**
-     * <p>
-     * The job's service role ARN.
-     * </p>
-     */
-    private String roleArn;
     /**
      * <p>
      * The read set's sequence store ID.
@@ -49,50 +37,22 @@ public class StartReadSetImportJobResult extends com.amazonaws.AmazonWebServiceR
     private String sequenceStoreId;
     /**
      * <p>
+     * The job's service role ARN.
+     * </p>
+     */
+    private String roleArn;
+    /**
+     * <p>
      * The job's status.
      * </p>
      */
     private String status;
-
     /**
      * <p>
      * When the job was created.
      * </p>
-     * 
-     * @param creationTime
-     *        When the job was created.
      */
-
-    public void setCreationTime(java.util.Date creationTime) {
-        this.creationTime = creationTime;
-    }
-
-    /**
-     * <p>
-     * When the job was created.
-     * </p>
-     * 
-     * @return When the job was created.
-     */
-
-    public java.util.Date getCreationTime() {
-        return this.creationTime;
-    }
-
-    /**
-     * <p>
-     * When the job was created.
-     * </p>
-     * 
-     * @param creationTime
-     *        When the job was created.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public StartReadSetImportJobResult withCreationTime(java.util.Date creationTime) {
-        setCreationTime(creationTime);
-        return this;
-    }
+    private java.util.Date creationTime;
 
     /**
      * <p>
@@ -136,46 +96,6 @@ public class StartReadSetImportJobResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The job's service role ARN.
-     * </p>
-     * 
-     * @param roleArn
-     *        The job's service role ARN.
-     */
-
-    public void setRoleArn(String roleArn) {
-        this.roleArn = roleArn;
-    }
-
-    /**
-     * <p>
-     * The job's service role ARN.
-     * </p>
-     * 
-     * @return The job's service role ARN.
-     */
-
-    public String getRoleArn() {
-        return this.roleArn;
-    }
-
-    /**
-     * <p>
-     * The job's service role ARN.
-     * </p>
-     * 
-     * @param roleArn
-     *        The job's service role ARN.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public StartReadSetImportJobResult withRoleArn(String roleArn) {
-        setRoleArn(roleArn);
-        return this;
-    }
-
-    /**
-     * <p>
      * The read set's sequence store ID.
      * </p>
      * 
@@ -211,6 +131,46 @@ public class StartReadSetImportJobResult extends com.amazonaws.AmazonWebServiceR
 
     public StartReadSetImportJobResult withSequenceStoreId(String sequenceStoreId) {
         setSequenceStoreId(sequenceStoreId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The job's service role ARN.
+     * </p>
+     * 
+     * @param roleArn
+     *        The job's service role ARN.
+     */
+
+    public void setRoleArn(String roleArn) {
+        this.roleArn = roleArn;
+    }
+
+    /**
+     * <p>
+     * The job's service role ARN.
+     * </p>
+     * 
+     * @return The job's service role ARN.
+     */
+
+    public String getRoleArn() {
+        return this.roleArn;
+    }
+
+    /**
+     * <p>
+     * The job's service role ARN.
+     * </p>
+     * 
+     * @param roleArn
+     *        The job's service role ARN.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartReadSetImportJobResult withRoleArn(String roleArn) {
+        setRoleArn(roleArn);
         return this;
     }
 
@@ -274,6 +234,46 @@ public class StartReadSetImportJobResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * When the job was created.
+     * </p>
+     * 
+     * @param creationTime
+     *        When the job was created.
+     */
+
+    public void setCreationTime(java.util.Date creationTime) {
+        this.creationTime = creationTime;
+    }
+
+    /**
+     * <p>
+     * When the job was created.
+     * </p>
+     * 
+     * @return When the job was created.
+     */
+
+    public java.util.Date getCreationTime() {
+        return this.creationTime;
+    }
+
+    /**
+     * <p>
+     * When the job was created.
+     * </p>
+     * 
+     * @param creationTime
+     *        When the job was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartReadSetImportJobResult withCreationTime(java.util.Date creationTime) {
+        setCreationTime(creationTime);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -285,16 +285,16 @@ public class StartReadSetImportJobResult extends com.amazonaws.AmazonWebServiceR
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getCreationTime() != null)
-            sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
-        if (getRoleArn() != null)
-            sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getSequenceStoreId() != null)
             sb.append("SequenceStoreId: ").append(getSequenceStoreId()).append(",");
+        if (getRoleArn() != null)
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getCreationTime() != null)
+            sb.append("CreationTime: ").append(getCreationTime());
         sb.append("}");
         return sb.toString();
     }
@@ -309,25 +309,25 @@ public class StartReadSetImportJobResult extends com.amazonaws.AmazonWebServiceR
         if (obj instanceof StartReadSetImportJobResult == false)
             return false;
         StartReadSetImportJobResult other = (StartReadSetImportJobResult) obj;
-        if (other.getCreationTime() == null ^ this.getCreationTime() == null)
-            return false;
-        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
-            return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
-            return false;
-        if (other.getRoleArn() == null ^ this.getRoleArn() == null)
-            return false;
-        if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
             return false;
         if (other.getSequenceStoreId() == null ^ this.getSequenceStoreId() == null)
             return false;
         if (other.getSequenceStoreId() != null && other.getSequenceStoreId().equals(this.getSequenceStoreId()) == false)
             return false;
+        if (other.getRoleArn() == null ^ this.getRoleArn() == null)
+            return false;
+        if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        if (other.getCreationTime() == null ^ this.getCreationTime() == null)
+            return false;
+        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
             return false;
         return true;
     }
@@ -337,11 +337,11 @@ public class StartReadSetImportJobResult extends com.amazonaws.AmazonWebServiceR
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
-        hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getSequenceStoreId() == null) ? 0 : getSequenceStoreId().hashCode());
+        hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         return hashCode;
     }
 

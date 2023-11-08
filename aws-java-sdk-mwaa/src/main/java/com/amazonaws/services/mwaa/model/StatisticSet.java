@@ -28,6 +28,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/StatisticSet" target="_top">AWS API
  *      Documentation</a>
  */
+@Deprecated
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class StatisticSet implements Serializable, Cloneable, StructuredPojo {
 

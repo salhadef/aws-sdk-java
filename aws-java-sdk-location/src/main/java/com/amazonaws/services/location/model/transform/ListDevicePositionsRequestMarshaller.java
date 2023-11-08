@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ListDevicePositionsRequestMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> FILTERGEOMETRY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FilterGeometry").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -50,6 +52,7 @@ public class ListDevicePositionsRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(listDevicePositionsRequest.getFilterGeometry(), FILTERGEOMETRY_BINDING);
             protocolMarshaller.marshall(listDevicePositionsRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listDevicePositionsRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listDevicePositionsRequest.getTrackerName(), TRACKERNAME_BINDING);

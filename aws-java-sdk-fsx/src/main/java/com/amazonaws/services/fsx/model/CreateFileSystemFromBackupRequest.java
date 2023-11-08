@@ -110,7 +110,7 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * Sets the version for the Amazon FSx for Lustre file system that you're creating from a backup. Valid values are
-     * <code>2.10</code> and <code>2.12</code>.
+     * <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>.
      * </p>
      * <p>
      * You don't need to specify <code>FileSystemTypeVersion</code> because it will be applied using the backup's
@@ -866,7 +866,7 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * Sets the version for the Amazon FSx for Lustre file system that you're creating from a backup. Valid values are
-     * <code>2.10</code> and <code>2.12</code>.
+     * <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>.
      * </p>
      * <p>
      * You don't need to specify <code>FileSystemTypeVersion</code> because it will be applied using the backup's
@@ -876,7 +876,7 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
      * 
      * @param fileSystemTypeVersion
      *        Sets the version for the Amazon FSx for Lustre file system that you're creating from a backup. Valid
-     *        values are <code>2.10</code> and <code>2.12</code>.</p>
+     *        values are <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>.</p>
      *        <p>
      *        You don't need to specify <code>FileSystemTypeVersion</code> because it will be applied using the backup's
      *        <code>FileSystemTypeVersion</code> setting. If you choose to specify <code>FileSystemTypeVersion</code>
@@ -890,7 +890,7 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * Sets the version for the Amazon FSx for Lustre file system that you're creating from a backup. Valid values are
-     * <code>2.10</code> and <code>2.12</code>.
+     * <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>.
      * </p>
      * <p>
      * You don't need to specify <code>FileSystemTypeVersion</code> because it will be applied using the backup's
@@ -899,7 +899,7 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @return Sets the version for the Amazon FSx for Lustre file system that you're creating from a backup. Valid
-     *         values are <code>2.10</code> and <code>2.12</code>.</p>
+     *         values are <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>.</p>
      *         <p>
      *         You don't need to specify <code>FileSystemTypeVersion</code> because it will be applied using the
      *         backup's <code>FileSystemTypeVersion</code> setting. If you choose to specify
@@ -914,7 +914,7 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * Sets the version for the Amazon FSx for Lustre file system that you're creating from a backup. Valid values are
-     * <code>2.10</code> and <code>2.12</code>.
+     * <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>.
      * </p>
      * <p>
      * You don't need to specify <code>FileSystemTypeVersion</code> because it will be applied using the backup's
@@ -924,7 +924,7 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
      * 
      * @param fileSystemTypeVersion
      *        Sets the version for the Amazon FSx for Lustre file system that you're creating from a backup. Valid
-     *        values are <code>2.10</code> and <code>2.12</code>.</p>
+     *        values are <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>.</p>
      *        <p>
      *        You don't need to specify <code>FileSystemTypeVersion</code> because it will be applied using the backup's
      *        <code>FileSystemTypeVersion</code> setting. If you choose to specify <code>FileSystemTypeVersion</code>

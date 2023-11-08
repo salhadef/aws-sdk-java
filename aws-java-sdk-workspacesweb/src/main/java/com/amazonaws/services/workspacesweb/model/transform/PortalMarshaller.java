@@ -37,6 +37,8 @@ public class PortalMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> DISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("displayName").build();
+    private static final MarshallingInfo<String> IPACCESSSETTINGSARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ipAccessSettingsArn").build();
     private static final MarshallingInfo<String> NETWORKSETTINGSARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("networkSettingsArn").build();
     private static final MarshallingInfo<String> PORTALARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -77,6 +79,7 @@ public class PortalMarshaller {
             protocolMarshaller.marshall(portal.getBrowserType(), BROWSERTYPE_BINDING);
             protocolMarshaller.marshall(portal.getCreationDate(), CREATIONDATE_BINDING);
             protocolMarshaller.marshall(portal.getDisplayName(), DISPLAYNAME_BINDING);
+            protocolMarshaller.marshall(portal.getIpAccessSettingsArn(), IPACCESSSETTINGSARN_BINDING);
             protocolMarshaller.marshall(portal.getNetworkSettingsArn(), NETWORKSETTINGSARN_BINDING);
             protocolMarshaller.marshall(portal.getPortalArn(), PORTALARN_BINDING);
             protocolMarshaller.marshall(portal.getPortalEndpoint(), PORTALENDPOINT_BINDING);

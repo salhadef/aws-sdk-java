@@ -33,7 +33,7 @@ public class UpdateIAMPolicyAssignmentRequest extends com.amazonaws.AmazonWebSer
     private String awsAccountId;
     /**
      * <p>
-     * The name of the assignment, also called a rule. This name must be unique within an Amazon Web Services account.
+     * The name of the assignment, also called a rule. The name must be unique within the Amazon Web Services account.
      * </p>
      */
     private String assignmentName;
@@ -121,11 +121,11 @@ public class UpdateIAMPolicyAssignmentRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the assignment, also called a rule. This name must be unique within an Amazon Web Services account.
+     * The name of the assignment, also called a rule. The name must be unique within the Amazon Web Services account.
      * </p>
      * 
      * @param assignmentName
-     *        The name of the assignment, also called a rule. This name must be unique within an Amazon Web Services
+     *        The name of the assignment, also called a rule. The name must be unique within the Amazon Web Services
      *        account.
      */
 
@@ -135,10 +135,10 @@ public class UpdateIAMPolicyAssignmentRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the assignment, also called a rule. This name must be unique within an Amazon Web Services account.
+     * The name of the assignment, also called a rule. The name must be unique within the Amazon Web Services account.
      * </p>
      * 
-     * @return The name of the assignment, also called a rule. This name must be unique within an Amazon Web Services
+     * @return The name of the assignment, also called a rule. The name must be unique within the Amazon Web Services
      *         account.
      */
 
@@ -148,11 +148,11 @@ public class UpdateIAMPolicyAssignmentRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the assignment, also called a rule. This name must be unique within an Amazon Web Services account.
+     * The name of the assignment, also called a rule. The name must be unique within the Amazon Web Services account.
      * </p>
      * 
      * @param assignmentName
-     *        The name of the assignment, also called a rule. This name must be unique within an Amazon Web Services
+     *        The name of the assignment, also called a rule. The name must be unique within the Amazon Web Services
      *        account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

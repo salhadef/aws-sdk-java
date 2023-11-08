@@ -40,6 +40,8 @@ public class UpdateConfigurationProfileRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RetrievalRoleArn").build();
     private static final MarshallingInfo<List> VALIDATORS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Validators").build();
+    private static final MarshallingInfo<String> KMSKEYIDENTIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KmsKeyIdentifier").build();
 
     private static final UpdateConfigurationProfileRequestMarshaller instance = new UpdateConfigurationProfileRequestMarshaller();
 
@@ -63,6 +65,7 @@ public class UpdateConfigurationProfileRequestMarshaller {
             protocolMarshaller.marshall(updateConfigurationProfileRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(updateConfigurationProfileRequest.getRetrievalRoleArn(), RETRIEVALROLEARN_BINDING);
             protocolMarshaller.marshall(updateConfigurationProfileRequest.getValidators(), VALIDATORS_BINDING);
+            protocolMarshaller.marshall(updateConfigurationProfileRequest.getKmsKeyIdentifier(), KMSKEYIDENTIFIER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

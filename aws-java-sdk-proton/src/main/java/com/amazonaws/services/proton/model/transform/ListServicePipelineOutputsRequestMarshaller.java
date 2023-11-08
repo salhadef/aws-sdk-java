@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ListServicePipelineOutputsRequestMarshaller {
 
+    private static final MarshallingInfo<String> DEPLOYMENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deploymentId").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("nextToken").build();
     private static final MarshallingInfo<String> SERVICENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -48,6 +50,7 @@ public class ListServicePipelineOutputsRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(listServicePipelineOutputsRequest.getDeploymentId(), DEPLOYMENTID_BINDING);
             protocolMarshaller.marshall(listServicePipelineOutputsRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listServicePipelineOutputsRequest.getServiceName(), SERVICENAME_BINDING);
         } catch (Exception e) {

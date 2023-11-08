@@ -24,7 +24,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * In addition to a workflow to execute when a file is uploaded completely, <code>WorkflowDetails</code> can also
  * contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs when
- * a file is open when the session disconnects.
+ * the server session disconnects while the file is still being uploaded.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/WorkflowDetail" target="_top">AWS API

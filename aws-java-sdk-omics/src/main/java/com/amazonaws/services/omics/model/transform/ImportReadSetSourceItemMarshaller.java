@@ -29,26 +29,26 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ImportReadSetSourceItemMarshaller {
 
-    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
-    private static final MarshallingInfo<String> GENERATEDFROM_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("generatedFrom").build();
-    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("name").build();
-    private static final MarshallingInfo<String> REFERENCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("referenceArn").build();
-    private static final MarshallingInfo<String> SAMPLEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("sampleId").build();
-    private static final MarshallingInfo<String> SOURCEFILETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceFileType").build();
     private static final MarshallingInfo<StructuredPojo> SOURCEFILES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceFiles").build();
+    private static final MarshallingInfo<String> SOURCEFILETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceFileType").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
     private static final MarshallingInfo<String> STATUSMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("statusMessage").build();
     private static final MarshallingInfo<String> SUBJECTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("subjectId").build();
+    private static final MarshallingInfo<String> SAMPLEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("sampleId").build();
+    private static final MarshallingInfo<String> GENERATEDFROM_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("generatedFrom").build();
+    private static final MarshallingInfo<String> REFERENCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("referenceArn").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
 
@@ -68,16 +68,16 @@ public class ImportReadSetSourceItemMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(importReadSetSourceItem.getDescription(), DESCRIPTION_BINDING);
-            protocolMarshaller.marshall(importReadSetSourceItem.getGeneratedFrom(), GENERATEDFROM_BINDING);
-            protocolMarshaller.marshall(importReadSetSourceItem.getName(), NAME_BINDING);
-            protocolMarshaller.marshall(importReadSetSourceItem.getReferenceArn(), REFERENCEARN_BINDING);
-            protocolMarshaller.marshall(importReadSetSourceItem.getSampleId(), SAMPLEID_BINDING);
-            protocolMarshaller.marshall(importReadSetSourceItem.getSourceFileType(), SOURCEFILETYPE_BINDING);
             protocolMarshaller.marshall(importReadSetSourceItem.getSourceFiles(), SOURCEFILES_BINDING);
+            protocolMarshaller.marshall(importReadSetSourceItem.getSourceFileType(), SOURCEFILETYPE_BINDING);
             protocolMarshaller.marshall(importReadSetSourceItem.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(importReadSetSourceItem.getStatusMessage(), STATUSMESSAGE_BINDING);
             protocolMarshaller.marshall(importReadSetSourceItem.getSubjectId(), SUBJECTID_BINDING);
+            protocolMarshaller.marshall(importReadSetSourceItem.getSampleId(), SAMPLEID_BINDING);
+            protocolMarshaller.marshall(importReadSetSourceItem.getGeneratedFrom(), GENERATEDFROM_BINDING);
+            protocolMarshaller.marshall(importReadSetSourceItem.getReferenceArn(), REFERENCEARN_BINDING);
+            protocolMarshaller.marshall(importReadSetSourceItem.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(importReadSetSourceItem.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(importReadSetSourceItem.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

@@ -44,6 +44,7 @@ import com.amazonaws.services.iotanalytics.AWSIoTAnalyticsClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.iotanalytics.model.*;
+
 import com.amazonaws.services.iotanalytics.model.transform.*;
 
 /**

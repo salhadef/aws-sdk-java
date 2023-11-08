@@ -54,17 +54,9 @@ public class SubscriberResourceJsonUnmarshaller implements Unmarshaller<Subscrib
 
                     .unmarshall(context));
                 }
-                if (context.testExpression("accountId", targetDepth)) {
-                    context.nextToken();
-                    subscriberResource.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
                     subscriberResource.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
-                }
-                if (context.testExpression("externalId", targetDepth)) {
-                    context.nextToken();
-                    subscriberResource.setExternalId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceShareArn", targetDepth)) {
                     context.nextToken();
@@ -82,39 +74,39 @@ public class SubscriberResourceJsonUnmarshaller implements Unmarshaller<Subscrib
                     context.nextToken();
                     subscriberResource.setS3BucketArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("snsArn", targetDepth)) {
+                if (context.testExpression("sources", targetDepth)) {
                     context.nextToken();
-                    subscriberResource.setSnsArn(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("sourceTypes", targetDepth)) {
-                    context.nextToken();
-                    subscriberResource.setSourceTypes(new ListUnmarshaller<SourceType>(SourceTypeJsonUnmarshaller.getInstance())
+                    subscriberResource.setSources(new ListUnmarshaller<LogSourceResource>(LogSourceResourceJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (context.testExpression("subscriberArn", targetDepth)) {
+                    context.nextToken();
+                    subscriberResource.setSubscriberArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("subscriberDescription", targetDepth)) {
                     context.nextToken();
                     subscriberResource.setSubscriberDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("subscriberEndpoint", targetDepth)) {
+                    context.nextToken();
+                    subscriberResource.setSubscriberEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("subscriberId", targetDepth)) {
+                    context.nextToken();
+                    subscriberResource.setSubscriberId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("subscriberIdentity", targetDepth)) {
+                    context.nextToken();
+                    subscriberResource.setSubscriberIdentity(AwsIdentityJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("subscriberName", targetDepth)) {
                     context.nextToken();
                     subscriberResource.setSubscriberName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("subscriptionEndpoint", targetDepth)) {
+                if (context.testExpression("subscriberStatus", targetDepth)) {
                     context.nextToken();
-                    subscriberResource.setSubscriptionEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("subscriptionId", targetDepth)) {
-                    context.nextToken();
-                    subscriberResource.setSubscriptionId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("subscriptionProtocol", targetDepth)) {
-                    context.nextToken();
-                    subscriberResource.setSubscriptionProtocol(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("subscriptionStatus", targetDepth)) {
-                    context.nextToken();
-                    subscriberResource.setSubscriptionStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                    subscriberResource.setSubscriberStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("updatedAt", targetDepth)) {
                     context.nextToken();

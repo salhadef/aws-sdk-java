@@ -42,8 +42,8 @@ public class SNOMEDCTConcept implements Serializable, Cloneable, StructuredPojo 
     private String code;
     /**
      * <p>
-     * The level of confidence Comprehend Medical has that the entity should be linked to the identified SNOMED-CT
-     * concept.
+     * The level of confidence Amazon Comprehend Medical has that the entity should be linked to the identified
+     * SNOMED-CT concept.
      * </p>
      */
     private Float score;
@@ -130,12 +130,12 @@ public class SNOMEDCTConcept implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The level of confidence Comprehend Medical has that the entity should be linked to the identified SNOMED-CT
-     * concept.
+     * The level of confidence Amazon Comprehend Medical has that the entity should be linked to the identified
+     * SNOMED-CT concept.
      * </p>
      * 
      * @param score
-     *        The level of confidence Comprehend Medical has that the entity should be linked to the identified
+     *        The level of confidence Amazon Comprehend Medical has that the entity should be linked to the identified
      *        SNOMED-CT concept.
      */
 
@@ -145,11 +145,11 @@ public class SNOMEDCTConcept implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The level of confidence Comprehend Medical has that the entity should be linked to the identified SNOMED-CT
-     * concept.
+     * The level of confidence Amazon Comprehend Medical has that the entity should be linked to the identified
+     * SNOMED-CT concept.
      * </p>
      * 
-     * @return The level of confidence Comprehend Medical has that the entity should be linked to the identified
+     * @return The level of confidence Amazon Comprehend Medical has that the entity should be linked to the identified
      *         SNOMED-CT concept.
      */
 
@@ -159,12 +159,12 @@ public class SNOMEDCTConcept implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The level of confidence Comprehend Medical has that the entity should be linked to the identified SNOMED-CT
-     * concept.
+     * The level of confidence Amazon Comprehend Medical has that the entity should be linked to the identified
+     * SNOMED-CT concept.
      * </p>
      * 
      * @param score
-     *        The level of confidence Comprehend Medical has that the entity should be linked to the identified
+     *        The level of confidence Amazon Comprehend Medical has that the entity should be linked to the identified
      *        SNOMED-CT concept.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

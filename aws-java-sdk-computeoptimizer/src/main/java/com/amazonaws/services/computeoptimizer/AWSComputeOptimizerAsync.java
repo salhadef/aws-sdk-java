@@ -418,6 +418,61 @@ public interface AWSComputeOptimizerAsync extends AWSComputeOptimizer {
 
     /**
      * <p>
+     * Export optimization recommendations for your licenses.
+     * </p>
+     * <p>
+     * Recommendations are exported in a comma-separated values (CSV) file, and its metadata in a JavaScript Object
+     * Notation (JSON) file, to an existing Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
+     * Recommendations</a> in the <i>Compute Optimizer User Guide</i>.
+     * </p>
+     * <p>
+     * You can have only one license export job in progress per Amazon Web Services Region.
+     * </p>
+     * 
+     * @param exportLicenseRecommendationsRequest
+     * @return A Java Future containing the result of the ExportLicenseRecommendations operation returned by the
+     *         service.
+     * @sample AWSComputeOptimizerAsync.ExportLicenseRecommendations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportLicenseRecommendations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ExportLicenseRecommendationsResult> exportLicenseRecommendationsAsync(
+            ExportLicenseRecommendationsRequest exportLicenseRecommendationsRequest);
+
+    /**
+     * <p>
+     * Export optimization recommendations for your licenses.
+     * </p>
+     * <p>
+     * Recommendations are exported in a comma-separated values (CSV) file, and its metadata in a JavaScript Object
+     * Notation (JSON) file, to an existing Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
+     * Recommendations</a> in the <i>Compute Optimizer User Guide</i>.
+     * </p>
+     * <p>
+     * You can have only one license export job in progress per Amazon Web Services Region.
+     * </p>
+     * 
+     * @param exportLicenseRecommendationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ExportLicenseRecommendations operation returned by the
+     *         service.
+     * @sample AWSComputeOptimizerAsyncHandler.ExportLicenseRecommendations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportLicenseRecommendations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ExportLicenseRecommendationsResult> exportLicenseRecommendationsAsync(
+            ExportLicenseRecommendationsRequest exportLicenseRecommendationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ExportLicenseRecommendationsRequest, ExportLicenseRecommendationsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns Auto Scaling group recommendations.
      * </p>
      * <p>
@@ -881,6 +936,51 @@ public interface AWSComputeOptimizerAsync extends AWSComputeOptimizer {
     java.util.concurrent.Future<GetLambdaFunctionRecommendationsResult> getLambdaFunctionRecommendationsAsync(
             GetLambdaFunctionRecommendationsRequest getLambdaFunctionRecommendationsRequest,
             com.amazonaws.handlers.AsyncHandler<GetLambdaFunctionRecommendationsRequest, GetLambdaFunctionRecommendationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns license recommendations for Amazon EC2 instances that run on a specific license.
+     * </p>
+     * <p>
+     * Compute Optimizer generates recommendations for licenses that meet a specific set of requirements. For more
+     * information, see the <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported resources and
+     * requirements</a> in the <i>Compute Optimizer User Guide</i>.
+     * </p>
+     * 
+     * @param getLicenseRecommendationsRequest
+     * @return A Java Future containing the result of the GetLicenseRecommendations operation returned by the service.
+     * @sample AWSComputeOptimizerAsync.GetLicenseRecommendations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetLicenseRecommendations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetLicenseRecommendationsResult> getLicenseRecommendationsAsync(
+            GetLicenseRecommendationsRequest getLicenseRecommendationsRequest);
+
+    /**
+     * <p>
+     * Returns license recommendations for Amazon EC2 instances that run on a specific license.
+     * </p>
+     * <p>
+     * Compute Optimizer generates recommendations for licenses that meet a specific set of requirements. For more
+     * information, see the <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported resources and
+     * requirements</a> in the <i>Compute Optimizer User Guide</i>.
+     * </p>
+     * 
+     * @param getLicenseRecommendationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetLicenseRecommendations operation returned by the service.
+     * @sample AWSComputeOptimizerAsyncHandler.GetLicenseRecommendations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetLicenseRecommendations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetLicenseRecommendationsResult> getLicenseRecommendationsAsync(
+            GetLicenseRecommendationsRequest getLicenseRecommendationsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetLicenseRecommendationsRequest, GetLicenseRecommendationsResult> asyncHandler);
 
     /**
      * <p>

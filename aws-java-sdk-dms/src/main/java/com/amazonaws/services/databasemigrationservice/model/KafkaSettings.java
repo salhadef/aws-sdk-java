@@ -170,6 +170,12 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String saslMechanism;
+    /**
+     * <p>
+     * Sets hostname verification for the certificate. This setting is supported in DMS version 3.5.1 and later.
+     * </p>
+     */
+    private String sslEndpointIdentificationAlgorithm;
 
     /**
      * <p>
@@ -1282,6 +1288,65 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Sets hostname verification for the certificate. This setting is supported in DMS version 3.5.1 and later.
+     * </p>
+     * 
+     * @param sslEndpointIdentificationAlgorithm
+     *        Sets hostname verification for the certificate. This setting is supported in DMS version 3.5.1 and later.
+     * @see KafkaSslEndpointIdentificationAlgorithm
+     */
+
+    public void setSslEndpointIdentificationAlgorithm(String sslEndpointIdentificationAlgorithm) {
+        this.sslEndpointIdentificationAlgorithm = sslEndpointIdentificationAlgorithm;
+    }
+
+    /**
+     * <p>
+     * Sets hostname verification for the certificate. This setting is supported in DMS version 3.5.1 and later.
+     * </p>
+     * 
+     * @return Sets hostname verification for the certificate. This setting is supported in DMS version 3.5.1 and later.
+     * @see KafkaSslEndpointIdentificationAlgorithm
+     */
+
+    public String getSslEndpointIdentificationAlgorithm() {
+        return this.sslEndpointIdentificationAlgorithm;
+    }
+
+    /**
+     * <p>
+     * Sets hostname verification for the certificate. This setting is supported in DMS version 3.5.1 and later.
+     * </p>
+     * 
+     * @param sslEndpointIdentificationAlgorithm
+     *        Sets hostname verification for the certificate. This setting is supported in DMS version 3.5.1 and later.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see KafkaSslEndpointIdentificationAlgorithm
+     */
+
+    public KafkaSettings withSslEndpointIdentificationAlgorithm(String sslEndpointIdentificationAlgorithm) {
+        setSslEndpointIdentificationAlgorithm(sslEndpointIdentificationAlgorithm);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Sets hostname verification for the certificate. This setting is supported in DMS version 3.5.1 and later.
+     * </p>
+     * 
+     * @param sslEndpointIdentificationAlgorithm
+     *        Sets hostname verification for the certificate. This setting is supported in DMS version 3.5.1 and later.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see KafkaSslEndpointIdentificationAlgorithm
+     */
+
+    public KafkaSettings withSslEndpointIdentificationAlgorithm(KafkaSslEndpointIdentificationAlgorithm sslEndpointIdentificationAlgorithm) {
+        this.sslEndpointIdentificationAlgorithm = sslEndpointIdentificationAlgorithm.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1330,7 +1395,9 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
         if (getNoHexPrefix() != null)
             sb.append("NoHexPrefix: ").append(getNoHexPrefix()).append(",");
         if (getSaslMechanism() != null)
-            sb.append("SaslMechanism: ").append(getSaslMechanism());
+            sb.append("SaslMechanism: ").append(getSaslMechanism()).append(",");
+        if (getSslEndpointIdentificationAlgorithm() != null)
+            sb.append("SslEndpointIdentificationAlgorithm: ").append(getSslEndpointIdentificationAlgorithm());
         sb.append("}");
         return sb.toString();
     }
@@ -1421,6 +1488,11 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSaslMechanism() != null && other.getSaslMechanism().equals(this.getSaslMechanism()) == false)
             return false;
+        if (other.getSslEndpointIdentificationAlgorithm() == null ^ this.getSslEndpointIdentificationAlgorithm() == null)
+            return false;
+        if (other.getSslEndpointIdentificationAlgorithm() != null
+                && other.getSslEndpointIdentificationAlgorithm().equals(this.getSslEndpointIdentificationAlgorithm()) == false)
+            return false;
         return true;
     }
 
@@ -1448,6 +1520,7 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSaslPassword() == null) ? 0 : getSaslPassword().hashCode());
         hashCode = prime * hashCode + ((getNoHexPrefix() == null) ? 0 : getNoHexPrefix().hashCode());
         hashCode = prime * hashCode + ((getSaslMechanism() == null) ? 0 : getSaslMechanism().hashCode());
+        hashCode = prime * hashCode + ((getSslEndpointIdentificationAlgorithm() == null) ? 0 : getSslEndpointIdentificationAlgorithm().hashCode());
         return hashCode;
     }
 

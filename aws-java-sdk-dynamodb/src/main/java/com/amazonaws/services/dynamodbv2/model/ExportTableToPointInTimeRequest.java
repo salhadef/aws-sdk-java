@@ -104,6 +104,20 @@ public class ExportTableToPointInTimeRequest extends com.amazonaws.AmazonWebServ
      * </p>
      */
     private String exportFormat;
+    /**
+     * <p>
+     * Choice of whether to execute as a full export or incremental export. Valid values are FULL_EXPORT or
+     * INCREMENTAL_EXPORT. The default value is FULL_EXPORT. If INCREMENTAL_EXPORT is provided, the
+     * IncrementalExportSpecification must also be used.
+     * </p>
+     */
+    private String exportType;
+    /**
+     * <p>
+     * Optional object containing the parameters specific to an incremental export.
+     * </p>
+     */
+    private IncrementalExportSpecification incrementalExportSpecification;
 
     /**
      * <p>
@@ -678,6 +692,121 @@ public class ExportTableToPointInTimeRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * Choice of whether to execute as a full export or incremental export. Valid values are FULL_EXPORT or
+     * INCREMENTAL_EXPORT. The default value is FULL_EXPORT. If INCREMENTAL_EXPORT is provided, the
+     * IncrementalExportSpecification must also be used.
+     * </p>
+     * 
+     * @param exportType
+     *        Choice of whether to execute as a full export or incremental export. Valid values are FULL_EXPORT or
+     *        INCREMENTAL_EXPORT. The default value is FULL_EXPORT. If INCREMENTAL_EXPORT is provided, the
+     *        IncrementalExportSpecification must also be used.
+     * @see ExportType
+     */
+
+    public void setExportType(String exportType) {
+        this.exportType = exportType;
+    }
+
+    /**
+     * <p>
+     * Choice of whether to execute as a full export or incremental export. Valid values are FULL_EXPORT or
+     * INCREMENTAL_EXPORT. The default value is FULL_EXPORT. If INCREMENTAL_EXPORT is provided, the
+     * IncrementalExportSpecification must also be used.
+     * </p>
+     * 
+     * @return Choice of whether to execute as a full export or incremental export. Valid values are FULL_EXPORT or
+     *         INCREMENTAL_EXPORT. The default value is FULL_EXPORT. If INCREMENTAL_EXPORT is provided, the
+     *         IncrementalExportSpecification must also be used.
+     * @see ExportType
+     */
+
+    public String getExportType() {
+        return this.exportType;
+    }
+
+    /**
+     * <p>
+     * Choice of whether to execute as a full export or incremental export. Valid values are FULL_EXPORT or
+     * INCREMENTAL_EXPORT. The default value is FULL_EXPORT. If INCREMENTAL_EXPORT is provided, the
+     * IncrementalExportSpecification must also be used.
+     * </p>
+     * 
+     * @param exportType
+     *        Choice of whether to execute as a full export or incremental export. Valid values are FULL_EXPORT or
+     *        INCREMENTAL_EXPORT. The default value is FULL_EXPORT. If INCREMENTAL_EXPORT is provided, the
+     *        IncrementalExportSpecification must also be used.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ExportType
+     */
+
+    public ExportTableToPointInTimeRequest withExportType(String exportType) {
+        setExportType(exportType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Choice of whether to execute as a full export or incremental export. Valid values are FULL_EXPORT or
+     * INCREMENTAL_EXPORT. The default value is FULL_EXPORT. If INCREMENTAL_EXPORT is provided, the
+     * IncrementalExportSpecification must also be used.
+     * </p>
+     * 
+     * @param exportType
+     *        Choice of whether to execute as a full export or incremental export. Valid values are FULL_EXPORT or
+     *        INCREMENTAL_EXPORT. The default value is FULL_EXPORT. If INCREMENTAL_EXPORT is provided, the
+     *        IncrementalExportSpecification must also be used.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ExportType
+     */
+
+    public ExportTableToPointInTimeRequest withExportType(ExportType exportType) {
+        this.exportType = exportType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Optional object containing the parameters specific to an incremental export.
+     * </p>
+     * 
+     * @param incrementalExportSpecification
+     *        Optional object containing the parameters specific to an incremental export.
+     */
+
+    public void setIncrementalExportSpecification(IncrementalExportSpecification incrementalExportSpecification) {
+        this.incrementalExportSpecification = incrementalExportSpecification;
+    }
+
+    /**
+     * <p>
+     * Optional object containing the parameters specific to an incremental export.
+     * </p>
+     * 
+     * @return Optional object containing the parameters specific to an incremental export.
+     */
+
+    public IncrementalExportSpecification getIncrementalExportSpecification() {
+        return this.incrementalExportSpecification;
+    }
+
+    /**
+     * <p>
+     * Optional object containing the parameters specific to an incremental export.
+     * </p>
+     * 
+     * @param incrementalExportSpecification
+     *        Optional object containing the parameters specific to an incremental export.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExportTableToPointInTimeRequest withIncrementalExportSpecification(IncrementalExportSpecification incrementalExportSpecification) {
+        setIncrementalExportSpecification(incrementalExportSpecification);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -706,7 +835,11 @@ public class ExportTableToPointInTimeRequest extends com.amazonaws.AmazonWebServ
         if (getS3SseKmsKeyId() != null)
             sb.append("S3SseKmsKeyId: ").append(getS3SseKmsKeyId()).append(",");
         if (getExportFormat() != null)
-            sb.append("ExportFormat: ").append(getExportFormat());
+            sb.append("ExportFormat: ").append(getExportFormat()).append(",");
+        if (getExportType() != null)
+            sb.append("ExportType: ").append(getExportType()).append(",");
+        if (getIncrementalExportSpecification() != null)
+            sb.append("IncrementalExportSpecification: ").append(getIncrementalExportSpecification());
         sb.append("}");
         return sb.toString();
     }
@@ -757,6 +890,15 @@ public class ExportTableToPointInTimeRequest extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getExportFormat() != null && other.getExportFormat().equals(this.getExportFormat()) == false)
             return false;
+        if (other.getExportType() == null ^ this.getExportType() == null)
+            return false;
+        if (other.getExportType() != null && other.getExportType().equals(this.getExportType()) == false)
+            return false;
+        if (other.getIncrementalExportSpecification() == null ^ this.getIncrementalExportSpecification() == null)
+            return false;
+        if (other.getIncrementalExportSpecification() != null
+                && other.getIncrementalExportSpecification().equals(this.getIncrementalExportSpecification()) == false)
+            return false;
         return true;
     }
 
@@ -774,6 +916,8 @@ public class ExportTableToPointInTimeRequest extends com.amazonaws.AmazonWebServ
         hashCode = prime * hashCode + ((getS3SseAlgorithm() == null) ? 0 : getS3SseAlgorithm().hashCode());
         hashCode = prime * hashCode + ((getS3SseKmsKeyId() == null) ? 0 : getS3SseKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getExportFormat() == null) ? 0 : getExportFormat().hashCode());
+        hashCode = prime * hashCode + ((getExportType() == null) ? 0 : getExportType().hashCode());
+        hashCode = prime * hashCode + ((getIncrementalExportSpecification() == null) ? 0 : getIncrementalExportSpecification().hashCode());
         return hashCode;
     }
 

@@ -43,6 +43,8 @@ public class GCMMessageMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ImageIconUrl").build();
     private static final MarshallingInfo<String> IMAGEURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ImageUrl").build();
+    private static final MarshallingInfo<String> PREFERREDAUTHENTICATIONMETHOD_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PreferredAuthenticationMethod").build();
     private static final MarshallingInfo<String> PRIORITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Priority").build();
     private static final MarshallingInfo<String> RAWCONTENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -87,6 +89,7 @@ public class GCMMessageMarshaller {
             protocolMarshaller.marshall(gCMMessage.getIconReference(), ICONREFERENCE_BINDING);
             protocolMarshaller.marshall(gCMMessage.getImageIconUrl(), IMAGEICONURL_BINDING);
             protocolMarshaller.marshall(gCMMessage.getImageUrl(), IMAGEURL_BINDING);
+            protocolMarshaller.marshall(gCMMessage.getPreferredAuthenticationMethod(), PREFERREDAUTHENTICATIONMETHOD_BINDING);
             protocolMarshaller.marshall(gCMMessage.getPriority(), PRIORITY_BINDING);
             protocolMarshaller.marshall(gCMMessage.getRawContent(), RAWCONTENT_BINDING);
             protocolMarshaller.marshall(gCMMessage.getRestrictedPackageName(), RESTRICTEDPACKAGENAME_BINDING);

@@ -52,29 +52,33 @@ public class RunGroupListItemJsonUnmarshaller implements Unmarshaller<RunGroupLi
                     context.nextToken();
                     runGroupListItem.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("creationTime", targetDepth)) {
-                    context.nextToken();
-                    runGroupListItem.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
-                }
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
                     runGroupListItem.setId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("name", targetDepth)) {
+                    context.nextToken();
+                    runGroupListItem.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("maxCpus", targetDepth)) {
                     context.nextToken();
                     runGroupListItem.setMaxCpus(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
-                if (context.testExpression("maxDuration", targetDepth)) {
-                    context.nextToken();
-                    runGroupListItem.setMaxDuration(context.getUnmarshaller(Integer.class).unmarshall(context));
-                }
                 if (context.testExpression("maxRuns", targetDepth)) {
                     context.nextToken();
                     runGroupListItem.setMaxRuns(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
-                if (context.testExpression("name", targetDepth)) {
+                if (context.testExpression("maxDuration", targetDepth)) {
                     context.nextToken();
-                    runGroupListItem.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                    runGroupListItem.setMaxDuration(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("creationTime", targetDepth)) {
+                    context.nextToken();
+                    runGroupListItem.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (context.testExpression("maxGpus", targetDepth)) {
+                    context.nextToken();
+                    runGroupListItem.setMaxGpus(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

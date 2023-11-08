@@ -209,11 +209,27 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private CloudwatchLogsExportConfiguration cloudwatchLogsExportConfiguration;
     /**
      * <p>
-     * The version number of the database engine to which you want to upgrade. Modifying engine version is not supported
-     * on Amazon DocumentDB.
+     * The version number of the database engine to which you want to upgrade. Changing this parameter results in an
+     * outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.
+     * </p>
+     * <p>
+     * To list all of the available engine versions for Amazon DocumentDB use the following command:
+     * </p>
+     * <p>
+     * <code>aws docdb describe-db-engine-versions --engine docdb --query "DBEngineVersions[].EngineVersion"</code>
      * </p>
      */
     private String engineVersion;
+    /**
+     * <p>
+     * A value that indicates whether major version upgrades are allowed.
+     * </p>
+     * <p>
+     * Constraints: You must allow major version upgrades when specifying a value for the <code>EngineVersion</code>
+     * parameter that is a different major version than the DB cluster's current version.
+     * </p>
+     */
+    private Boolean allowMajorVersionUpgrade;
     /**
      * <p>
      * Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot
@@ -1391,13 +1407,25 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The version number of the database engine to which you want to upgrade. Modifying engine version is not supported
-     * on Amazon DocumentDB.
+     * The version number of the database engine to which you want to upgrade. Changing this parameter results in an
+     * outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.
+     * </p>
+     * <p>
+     * To list all of the available engine versions for Amazon DocumentDB use the following command:
+     * </p>
+     * <p>
+     * <code>aws docdb describe-db-engine-versions --engine docdb --query "DBEngineVersions[].EngineVersion"</code>
      * </p>
      * 
      * @param engineVersion
-     *        The version number of the database engine to which you want to upgrade. Modifying engine version is not
-     *        supported on Amazon DocumentDB.
+     *        The version number of the database engine to which you want to upgrade. Changing this parameter results in
+     *        an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code>
+     *        is enabled.</p>
+     *        <p>
+     *        To list all of the available engine versions for Amazon DocumentDB use the following command:
+     *        </p>
+     *        <p>
+     *        <code>aws docdb describe-db-engine-versions --engine docdb --query "DBEngineVersions[].EngineVersion"</code>
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -1406,12 +1434,24 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The version number of the database engine to which you want to upgrade. Modifying engine version is not supported
-     * on Amazon DocumentDB.
+     * The version number of the database engine to which you want to upgrade. Changing this parameter results in an
+     * outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.
+     * </p>
+     * <p>
+     * To list all of the available engine versions for Amazon DocumentDB use the following command:
+     * </p>
+     * <p>
+     * <code>aws docdb describe-db-engine-versions --engine docdb --query "DBEngineVersions[].EngineVersion"</code>
      * </p>
      * 
-     * @return The version number of the database engine to which you want to upgrade. Modifying engine version is not
-     *         supported on Amazon DocumentDB.
+     * @return The version number of the database engine to which you want to upgrade. Changing this parameter results
+     *         in an outage. The change is applied during the next maintenance window unless
+     *         <code>ApplyImmediately</code> is enabled.</p>
+     *         <p>
+     *         To list all of the available engine versions for Amazon DocumentDB use the following command:
+     *         </p>
+     *         <p>
+     *         <code>aws docdb describe-db-engine-versions --engine docdb --query "DBEngineVersions[].EngineVersion"</code>
      */
 
     public String getEngineVersion() {
@@ -1420,19 +1460,115 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The version number of the database engine to which you want to upgrade. Modifying engine version is not supported
-     * on Amazon DocumentDB.
+     * The version number of the database engine to which you want to upgrade. Changing this parameter results in an
+     * outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.
+     * </p>
+     * <p>
+     * To list all of the available engine versions for Amazon DocumentDB use the following command:
+     * </p>
+     * <p>
+     * <code>aws docdb describe-db-engine-versions --engine docdb --query "DBEngineVersions[].EngineVersion"</code>
      * </p>
      * 
      * @param engineVersion
-     *        The version number of the database engine to which you want to upgrade. Modifying engine version is not
-     *        supported on Amazon DocumentDB.
+     *        The version number of the database engine to which you want to upgrade. Changing this parameter results in
+     *        an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code>
+     *        is enabled.</p>
+     *        <p>
+     *        To list all of the available engine versions for Amazon DocumentDB use the following command:
+     *        </p>
+     *        <p>
+     *        <code>aws docdb describe-db-engine-versions --engine docdb --query "DBEngineVersions[].EngineVersion"</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ModifyDBClusterRequest withEngineVersion(String engineVersion) {
         setEngineVersion(engineVersion);
         return this;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether major version upgrades are allowed.
+     * </p>
+     * <p>
+     * Constraints: You must allow major version upgrades when specifying a value for the <code>EngineVersion</code>
+     * parameter that is a different major version than the DB cluster's current version.
+     * </p>
+     * 
+     * @param allowMajorVersionUpgrade
+     *        A value that indicates whether major version upgrades are allowed.</p>
+     *        <p>
+     *        Constraints: You must allow major version upgrades when specifying a value for the
+     *        <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current
+     *        version.
+     */
+
+    public void setAllowMajorVersionUpgrade(Boolean allowMajorVersionUpgrade) {
+        this.allowMajorVersionUpgrade = allowMajorVersionUpgrade;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether major version upgrades are allowed.
+     * </p>
+     * <p>
+     * Constraints: You must allow major version upgrades when specifying a value for the <code>EngineVersion</code>
+     * parameter that is a different major version than the DB cluster's current version.
+     * </p>
+     * 
+     * @return A value that indicates whether major version upgrades are allowed.</p>
+     *         <p>
+     *         Constraints: You must allow major version upgrades when specifying a value for the
+     *         <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current
+     *         version.
+     */
+
+    public Boolean getAllowMajorVersionUpgrade() {
+        return this.allowMajorVersionUpgrade;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether major version upgrades are allowed.
+     * </p>
+     * <p>
+     * Constraints: You must allow major version upgrades when specifying a value for the <code>EngineVersion</code>
+     * parameter that is a different major version than the DB cluster's current version.
+     * </p>
+     * 
+     * @param allowMajorVersionUpgrade
+     *        A value that indicates whether major version upgrades are allowed.</p>
+     *        <p>
+     *        Constraints: You must allow major version upgrades when specifying a value for the
+     *        <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current
+     *        version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyDBClusterRequest withAllowMajorVersionUpgrade(Boolean allowMajorVersionUpgrade) {
+        setAllowMajorVersionUpgrade(allowMajorVersionUpgrade);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether major version upgrades are allowed.
+     * </p>
+     * <p>
+     * Constraints: You must allow major version upgrades when specifying a value for the <code>EngineVersion</code>
+     * parameter that is a different major version than the DB cluster's current version.
+     * </p>
+     * 
+     * @return A value that indicates whether major version upgrades are allowed.</p>
+     *         <p>
+     *         Constraints: You must allow major version upgrades when specifying a value for the
+     *         <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current
+     *         version.
+     */
+
+    public Boolean isAllowMajorVersionUpgrade() {
+        return this.allowMajorVersionUpgrade;
     }
 
     /**
@@ -1539,6 +1675,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
             sb.append("CloudwatchLogsExportConfiguration: ").append(getCloudwatchLogsExportConfiguration()).append(",");
         if (getEngineVersion() != null)
             sb.append("EngineVersion: ").append(getEngineVersion()).append(",");
+        if (getAllowMajorVersionUpgrade() != null)
+            sb.append("AllowMajorVersionUpgrade: ").append(getAllowMajorVersionUpgrade()).append(",");
         if (getDeletionProtection() != null)
             sb.append("DeletionProtection: ").append(getDeletionProtection());
         sb.append("}");
@@ -1604,6 +1742,10 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getEngineVersion() != null && other.getEngineVersion().equals(this.getEngineVersion()) == false)
             return false;
+        if (other.getAllowMajorVersionUpgrade() == null ^ this.getAllowMajorVersionUpgrade() == null)
+            return false;
+        if (other.getAllowMajorVersionUpgrade() != null && other.getAllowMajorVersionUpgrade().equals(this.getAllowMajorVersionUpgrade()) == false)
+            return false;
         if (other.getDeletionProtection() == null ^ this.getDeletionProtection() == null)
             return false;
         if (other.getDeletionProtection() != null && other.getDeletionProtection().equals(this.getDeletionProtection()) == false)
@@ -1628,6 +1770,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getPreferredMaintenanceWindow() == null) ? 0 : getPreferredMaintenanceWindow().hashCode());
         hashCode = prime * hashCode + ((getCloudwatchLogsExportConfiguration() == null) ? 0 : getCloudwatchLogsExportConfiguration().hashCode());
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());
+        hashCode = prime * hashCode + ((getAllowMajorVersionUpgrade() == null) ? 0 : getAllowMajorVersionUpgrade().hashCode());
         hashCode = prime * hashCode + ((getDeletionProtection() == null) ? 0 : getDeletionProtection().hashCode());
         return hashCode;
     }

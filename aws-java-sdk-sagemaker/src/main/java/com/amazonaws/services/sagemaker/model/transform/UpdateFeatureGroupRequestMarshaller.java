@@ -32,6 +32,8 @@ public class UpdateFeatureGroupRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FeatureGroupName").build();
     private static final MarshallingInfo<List> FEATUREADDITIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FeatureAdditions").build();
+    private static final MarshallingInfo<StructuredPojo> ONLINESTORECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OnlineStoreConfig").build();
 
     private static final UpdateFeatureGroupRequestMarshaller instance = new UpdateFeatureGroupRequestMarshaller();
 
@@ -51,6 +53,7 @@ public class UpdateFeatureGroupRequestMarshaller {
         try {
             protocolMarshaller.marshall(updateFeatureGroupRequest.getFeatureGroupName(), FEATUREGROUPNAME_BINDING);
             protocolMarshaller.marshall(updateFeatureGroupRequest.getFeatureAdditions(), FEATUREADDITIONS_BINDING);
+            protocolMarshaller.marshall(updateFeatureGroupRequest.getOnlineStoreConfig(), ONLINESTORECONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

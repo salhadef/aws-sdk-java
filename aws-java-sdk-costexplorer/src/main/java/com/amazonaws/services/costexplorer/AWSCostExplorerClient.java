@@ -44,6 +44,7 @@ import com.amazonaws.services.costexplorer.AWSCostExplorerClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.costexplorer.model.*;
+
 import com.amazonaws.services.costexplorer.model.transform.*;
 
 /**
@@ -1499,6 +1500,70 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
+     * Retrieves the details for a Savings Plan recommendation. These details include the hourly data-points that
+     * construct the cost, coverage, and utilization charts.
+     * </p>
+     * 
+     * @param getSavingsPlanPurchaseRecommendationDetailsRequest
+     * @return Result of the GetSavingsPlanPurchaseRecommendationDetails operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @throws DataUnavailableException
+     *         The requested data is unavailable.
+     * @sample AWSCostExplorer.GetSavingsPlanPurchaseRecommendationDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlanPurchaseRecommendationDetails"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetSavingsPlanPurchaseRecommendationDetailsResult getSavingsPlanPurchaseRecommendationDetails(
+            GetSavingsPlanPurchaseRecommendationDetailsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSavingsPlanPurchaseRecommendationDetails(request);
+    }
+
+    @SdkInternalApi
+    final GetSavingsPlanPurchaseRecommendationDetailsResult executeGetSavingsPlanPurchaseRecommendationDetails(
+            GetSavingsPlanPurchaseRecommendationDetailsRequest getSavingsPlanPurchaseRecommendationDetailsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getSavingsPlanPurchaseRecommendationDetailsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetSavingsPlanPurchaseRecommendationDetailsRequest> request = null;
+        Response<GetSavingsPlanPurchaseRecommendationDetailsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetSavingsPlanPurchaseRecommendationDetailsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getSavingsPlanPurchaseRecommendationDetailsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSavingsPlanPurchaseRecommendationDetails");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetSavingsPlanPurchaseRecommendationDetailsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new GetSavingsPlanPurchaseRecommendationDetailsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves the Savings Plans covered for your account. This enables you to see how much of your cost is covered by
      * a Savings Plan. An organization’s management account can see the coverage of the associated member accounts. This
      * supports dimensions, Cost Categories, and nested expressions. For any time period, you can filter data for
@@ -2059,6 +2124,8 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
      *         You made too many calls in a short period of time. Try again later.
      * @throws InvalidNextTokenException
      *         The pagination token is invalid. Try again without a pagination token.
+     * @throws DataUnavailableException
+     *         The requested data is unavailable.
      * @sample AWSCostExplorer.ListSavingsPlansPurchaseRecommendationGeneration
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListSavingsPlansPurchaseRecommendationGeneration"
@@ -2251,6 +2318,8 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
      *         resource.
      * @throws GenerationExistsException
      *         A request to generate a recommendation is already in progress.
+     * @throws DataUnavailableException
+     *         The requested data is unavailable.
      * @sample AWSCostExplorer.StartSavingsPlansPurchaseRecommendationGeneration
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/StartSavingsPlansPurchaseRecommendationGeneration"
@@ -2497,8 +2566,16 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Updates an existing cost anomaly monitor subscription.
+     * Updates an existing cost anomaly subscription. Specify the fields that you want to update. Omitted fields are
+     * unchanged.
      * </p>
+     * <note>
+     * <p>
+     * The JSON below describes the generic construct for each type. See <a href=
+     * "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_UpdateAnomalySubscription.html#API_UpdateAnomalySubscription_RequestParameters"
+     * >Request Parameters</a> for possible values as they apply to <code>AnomalySubscription</code>.
+     * </p>
+     * </note>
      * 
      * @param updateAnomalySubscriptionRequest
      * @return Result of the UpdateAnomalySubscription operation returned by the service.

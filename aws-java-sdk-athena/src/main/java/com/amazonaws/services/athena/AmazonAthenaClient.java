@@ -44,6 +44,7 @@ import com.amazonaws.services.athena.AmazonAthenaClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.athena.model.*;
+
 import com.amazonaws.services.athena.model.transform.*;
 
 /**
@@ -356,7 +357,9 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Cancels the capacity reservation with the specified name.
+     * Cancels the capacity reservation with the specified name. Cancelled reservations remain in your account and will
+     * be deleted 45 days after cancellation. During the 45 days, you cannot re-purpose or reuse a reservation that has
+     * been cancelled, but you can refer to its tags and view it for historical reference.
      * </p>
      * 
      * @param cancelCapacityReservationRequest
@@ -848,6 +851,71 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateWorkGroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateWorkGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a cancelled capacity reservation. A reservation must be cancelled before it can be deleted. A deleted
+     * reservation is immediately removed from your account and can no longer be referenced, including by its ARN. A
+     * deleted reservation cannot be called by <code>GetCapacityReservation</code>, and deleted reservations do not
+     * appear in the output of <code>ListCapacityReservations</code>.
+     * </p>
+     * 
+     * @param deleteCapacityReservationRequest
+     * @return Result of the DeleteCapacityReservation operation returned by the service.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @sample AmazonAthena.DeleteCapacityReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteCapacityReservation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteCapacityReservationResult deleteCapacityReservation(DeleteCapacityReservationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteCapacityReservation(request);
+    }
+
+    @SdkInternalApi
+    final DeleteCapacityReservationResult executeDeleteCapacityReservation(DeleteCapacityReservationRequest deleteCapacityReservationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteCapacityReservationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteCapacityReservationRequest> request = null;
+        Response<DeleteCapacityReservationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteCapacityReservationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteCapacityReservationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCapacityReservation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteCapacityReservationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteCapacityReservationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

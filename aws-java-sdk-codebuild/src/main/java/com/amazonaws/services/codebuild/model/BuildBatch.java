@@ -200,7 +200,7 @@ public class BuildBatch implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * If an IAM user started the build, the user's name.
+     * If a user started the build, the user's name.
      * </p>
      * </li>
      * <li>
@@ -1568,7 +1568,7 @@ public class BuildBatch implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * If an IAM user started the build, the user's name.
+     * If a user started the build, the user's name.
      * </p>
      * </li>
      * <li>
@@ -1589,7 +1589,7 @@ public class BuildBatch implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        If an IAM user started the build, the user's name.
+     *        If a user started the build, the user's name.
      *        </p>
      *        </li>
      *        <li>
@@ -1615,7 +1615,7 @@ public class BuildBatch implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * If an IAM user started the build, the user's name.
+     * If a user started the build, the user's name.
      * </p>
      * </li>
      * <li>
@@ -1635,7 +1635,7 @@ public class BuildBatch implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         If an IAM user started the build, the user's name.
+     *         If a user started the build, the user's name.
      *         </p>
      *         </li>
      *         <li>
@@ -1661,7 +1661,7 @@ public class BuildBatch implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * If an IAM user started the build, the user's name.
+     * If a user started the build, the user's name.
      * </p>
      * </li>
      * <li>
@@ -1682,7 +1682,7 @@ public class BuildBatch implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        If an IAM user started the build, the user's name.
+     *        If a user started the build, the user's name.
      *        </p>
      *        </li>
      *        <li>

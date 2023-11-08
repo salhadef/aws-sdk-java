@@ -35,6 +35,10 @@ public class QuickConnectSummaryMarshaller {
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<String> QUICKCONNECTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("QuickConnectType").build();
+    private static final MarshallingInfo<java.util.Date> LASTMODIFIEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> LASTMODIFIEDREGION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedRegion").build();
 
     private static final QuickConnectSummaryMarshaller instance = new QuickConnectSummaryMarshaller();
 
@@ -56,6 +60,8 @@ public class QuickConnectSummaryMarshaller {
             protocolMarshaller.marshall(quickConnectSummary.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(quickConnectSummary.getName(), NAME_BINDING);
             protocolMarshaller.marshall(quickConnectSummary.getQuickConnectType(), QUICKCONNECTTYPE_BINDING);
+            protocolMarshaller.marshall(quickConnectSummary.getLastModifiedTime(), LASTMODIFIEDTIME_BINDING);
+            protocolMarshaller.marshall(quickConnectSummary.getLastModifiedRegion(), LASTMODIFIEDREGION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

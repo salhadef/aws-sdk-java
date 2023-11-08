@@ -27,10 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UpdateCampaignDialerConfigRequestMarshaller {
 
-    private static final MarshallingInfo<StructuredPojo> DIALERCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dialerConfig").build();
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("id").build();
+    private static final MarshallingInfo<StructuredPojo> DIALERCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dialerConfig").build();
 
     private static final UpdateCampaignDialerConfigRequestMarshaller instance = new UpdateCampaignDialerConfigRequestMarshaller();
 
@@ -48,8 +48,8 @@ public class UpdateCampaignDialerConfigRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(updateCampaignDialerConfigRequest.getDialerConfig(), DIALERCONFIG_BINDING);
             protocolMarshaller.marshall(updateCampaignDialerConfigRequest.getId(), ID_BINDING);
+            protocolMarshaller.marshall(updateCampaignDialerConfigRequest.getDialerConfig(), DIALERCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

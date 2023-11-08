@@ -48,45 +48,57 @@ public class GetRunTaskResultJsonUnmarshaller implements Unmarshaller<GetRunTask
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("cpus", targetDepth)) {
+                if (context.testExpression("taskId", targetDepth)) {
                     context.nextToken();
-                    getRunTaskResult.setCpus(context.getUnmarshaller(Integer.class).unmarshall(context));
-                }
-                if (context.testExpression("creationTime", targetDepth)) {
-                    context.nextToken();
-                    getRunTaskResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
-                }
-                if (context.testExpression("logStream", targetDepth)) {
-                    context.nextToken();
-                    getRunTaskResult.setLogStream(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("memory", targetDepth)) {
-                    context.nextToken();
-                    getRunTaskResult.setMemory(context.getUnmarshaller(Integer.class).unmarshall(context));
-                }
-                if (context.testExpression("name", targetDepth)) {
-                    context.nextToken();
-                    getRunTaskResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("startTime", targetDepth)) {
-                    context.nextToken();
-                    getRunTaskResult.setStartTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                    getRunTaskResult.setTaskId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     getRunTaskResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("statusMessage", targetDepth)) {
+                if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
-                    getRunTaskResult.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                    getRunTaskResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("cpus", targetDepth)) {
+                    context.nextToken();
+                    getRunTaskResult.setCpus(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("memory", targetDepth)) {
+                    context.nextToken();
+                    getRunTaskResult.setMemory(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("creationTime", targetDepth)) {
+                    context.nextToken();
+                    getRunTaskResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (context.testExpression("startTime", targetDepth)) {
+                    context.nextToken();
+                    getRunTaskResult.setStartTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("stopTime", targetDepth)) {
                     context.nextToken();
                     getRunTaskResult.setStopTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
-                if (context.testExpression("taskId", targetDepth)) {
+                if (context.testExpression("statusMessage", targetDepth)) {
                     context.nextToken();
-                    getRunTaskResult.setTaskId(context.getUnmarshaller(String.class).unmarshall(context));
+                    getRunTaskResult.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("logStream", targetDepth)) {
+                    context.nextToken();
+                    getRunTaskResult.setLogStream(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("gpus", targetDepth)) {
+                    context.nextToken();
+                    getRunTaskResult.setGpus(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("instanceType", targetDepth)) {
+                    context.nextToken();
+                    getRunTaskResult.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("failureReason", targetDepth)) {
+                    context.nextToken();
+                    getRunTaskResult.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

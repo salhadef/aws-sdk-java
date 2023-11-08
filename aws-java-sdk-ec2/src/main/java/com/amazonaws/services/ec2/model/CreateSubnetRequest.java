@@ -41,9 +41,8 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * <p>
      * To create a subnet in a Local Zone, set this value to the Local Zone ID, for example
-     * <code>us-west-2-lax-1a</code>. For information about the Regions that support Local Zones, see <a href=
-     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions"
-     * >Available Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <code>us-west-2-lax-1a</code>. For information about the Regions that support Local Zones, see <a
+     * href="http://aws.amazon.com/about-aws/global-infrastructure/localzones/locations/">Local Zones locations</a>.
      * </p>
      * <p>
      * To create a subnet in an Outpost, set this value to the Availability Zone for the Outpost and specify the Outpost
@@ -205,9 +204,8 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * <p>
      * To create a subnet in a Local Zone, set this value to the Local Zone ID, for example
-     * <code>us-west-2-lax-1a</code>. For information about the Regions that support Local Zones, see <a href=
-     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions"
-     * >Available Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <code>us-west-2-lax-1a</code>. For information about the Regions that support Local Zones, see <a
+     * href="http://aws.amazon.com/about-aws/global-infrastructure/localzones/locations/">Local Zones locations</a>.
      * </p>
      * <p>
      * To create a subnet in an Outpost, set this value to the Availability Zone for the Outpost and specify the Outpost
@@ -222,9 +220,9 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
      *        </p>
      *        <p>
      *        To create a subnet in a Local Zone, set this value to the Local Zone ID, for example
-     *        <code>us-west-2-lax-1a</code>. For information about the Regions that support Local Zones, see <a href=
-     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions"
-     *        >Available Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        <code>us-west-2-lax-1a</code>. For information about the Regions that support Local Zones, see <a
+     *        href="http://aws.amazon.com/about-aws/global-infrastructure/localzones/locations/">Local Zones
+     *        locations</a>.
      *        </p>
      *        <p>
      *        To create a subnet in an Outpost, set this value to the Availability Zone for the Outpost and specify the
@@ -245,9 +243,8 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * <p>
      * To create a subnet in a Local Zone, set this value to the Local Zone ID, for example
-     * <code>us-west-2-lax-1a</code>. For information about the Regions that support Local Zones, see <a href=
-     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions"
-     * >Available Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <code>us-west-2-lax-1a</code>. For information about the Regions that support Local Zones, see <a
+     * href="http://aws.amazon.com/about-aws/global-infrastructure/localzones/locations/">Local Zones locations</a>.
      * </p>
      * <p>
      * To create a subnet in an Outpost, set this value to the Availability Zone for the Outpost and specify the Outpost
@@ -261,9 +258,9 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
      *         </p>
      *         <p>
      *         To create a subnet in a Local Zone, set this value to the Local Zone ID, for example
-     *         <code>us-west-2-lax-1a</code>. For information about the Regions that support Local Zones, see <a href=
-     *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions"
-     *         >Available Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         <code>us-west-2-lax-1a</code>. For information about the Regions that support Local Zones, see <a
+     *         href="http://aws.amazon.com/about-aws/global-infrastructure/localzones/locations/">Local Zones
+     *         locations</a>.
      *         </p>
      *         <p>
      *         To create a subnet in an Outpost, set this value to the Availability Zone for the Outpost and specify the
@@ -284,9 +281,8 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * <p>
      * To create a subnet in a Local Zone, set this value to the Local Zone ID, for example
-     * <code>us-west-2-lax-1a</code>. For information about the Regions that support Local Zones, see <a href=
-     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions"
-     * >Available Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <code>us-west-2-lax-1a</code>. For information about the Regions that support Local Zones, see <a
+     * href="http://aws.amazon.com/about-aws/global-infrastructure/localzones/locations/">Local Zones locations</a>.
      * </p>
      * <p>
      * To create a subnet in an Outpost, set this value to the Availability Zone for the Outpost and specify the Outpost
@@ -301,9 +297,9 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
      *        </p>
      *        <p>
      *        To create a subnet in a Local Zone, set this value to the Local Zone ID, for example
-     *        <code>us-west-2-lax-1a</code>. For information about the Regions that support Local Zones, see <a href=
-     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions"
-     *        >Available Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        <code>us-west-2-lax-1a</code>. For information about the Regions that support Local Zones, see <a
+     *        href="http://aws.amazon.com/about-aws/global-infrastructure/localzones/locations/">Local Zones
+     *        locations</a>.
      *        </p>
      *        <p>
      *        To create a subnet in an Outpost, set this value to the Availability Zone for the Outpost and specify the

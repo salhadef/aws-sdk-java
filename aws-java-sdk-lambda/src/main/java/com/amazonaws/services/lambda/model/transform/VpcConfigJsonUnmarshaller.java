@@ -60,6 +60,10 @@ public class VpcConfigJsonUnmarshaller implements Unmarshaller<VpcConfig, JsonUn
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("Ipv6AllowedForDualStack", targetDepth)) {
+                    context.nextToken();
+                    vpcConfig.setIpv6AllowedForDualStack(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

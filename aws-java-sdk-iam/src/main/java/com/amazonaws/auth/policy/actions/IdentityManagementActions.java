@@ -151,6 +151,8 @@ public enum IdentityManagementActions implements Action {
     GetInstanceProfile("iam:GetInstanceProfile"),
     /** Action for the GetLoginProfile operation. */
     GetLoginProfile("iam:GetLoginProfile"),
+    /** Action for the GetMFADevice operation. */
+    GetMFADevice("iam:GetMFADevice"),
     /** Action for the GetOpenIDConnectProvider operation. */
     GetOpenIDConnectProvider("iam:GetOpenIDConnectProvider"),
     /** Action for the GetOrganizationsAccessReport operation. */

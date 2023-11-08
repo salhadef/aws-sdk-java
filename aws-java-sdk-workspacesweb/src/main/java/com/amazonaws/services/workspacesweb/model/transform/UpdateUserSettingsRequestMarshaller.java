@@ -32,6 +32,8 @@ public class UpdateUserSettingsRequestMarshaller {
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
+    private static final MarshallingInfo<StructuredPojo> COOKIESYNCHRONIZATIONCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("cookieSynchronizationConfiguration").build();
     private static final MarshallingInfo<String> COPYALLOWED_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("copyAllowed").build();
     private static final MarshallingInfo<Integer> DISCONNECTTIMEOUTINMINUTES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -66,6 +68,7 @@ public class UpdateUserSettingsRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(updateUserSettingsRequest.getClientToken(), CLIENTTOKEN_BINDING);
+            protocolMarshaller.marshall(updateUserSettingsRequest.getCookieSynchronizationConfiguration(), COOKIESYNCHRONIZATIONCONFIGURATION_BINDING);
             protocolMarshaller.marshall(updateUserSettingsRequest.getCopyAllowed(), COPYALLOWED_BINDING);
             protocolMarshaller.marshall(updateUserSettingsRequest.getDisconnectTimeoutInMinutes(), DISCONNECTTIMEOUTINMINUTES_BINDING);
             protocolMarshaller.marshall(updateUserSettingsRequest.getDownloadAllowed(), DOWNLOADALLOWED_BINDING);

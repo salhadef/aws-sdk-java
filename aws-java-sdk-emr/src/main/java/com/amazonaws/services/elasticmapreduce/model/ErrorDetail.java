@@ -30,30 +30,30 @@ public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name or code that's associated with the error.
+     * The name or code associated with the error.
      * </p>
      */
     private String errorCode;
     /**
      * <p>
-     * A list of key value pairs that provide contextual information to explain why the error may have occured.
+     * A list of key value pairs that provides contextual information about why an error occured.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<java.util.Map<String, String>> errorData;
     /**
      * <p>
-     * A message describing the error that occured.
+     * A message that describes the error.
      * </p>
      */
     private String errorMessage;
 
     /**
      * <p>
-     * The name or code that's associated with the error.
+     * The name or code associated with the error.
      * </p>
      * 
      * @param errorCode
-     *        The name or code that's associated with the error.
+     *        The name or code associated with the error.
      */
 
     public void setErrorCode(String errorCode) {
@@ -62,10 +62,10 @@ public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name or code that's associated with the error.
+     * The name or code associated with the error.
      * </p>
      * 
-     * @return The name or code that's associated with the error.
+     * @return The name or code associated with the error.
      */
 
     public String getErrorCode() {
@@ -74,11 +74,11 @@ public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name or code that's associated with the error.
+     * The name or code associated with the error.
      * </p>
      * 
      * @param errorCode
-     *        The name or code that's associated with the error.
+     *        The name or code associated with the error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,10 +89,10 @@ public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of key value pairs that provide contextual information to explain why the error may have occured.
+     * A list of key value pairs that provides contextual information about why an error occured.
      * </p>
      * 
-     * @return A list of key value pairs that provide contextual information to explain why the error may have occured.
+     * @return A list of key value pairs that provides contextual information about why an error occured.
      */
 
     public java.util.List<java.util.Map<String, String>> getErrorData() {
@@ -104,11 +104,11 @@ public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of key value pairs that provide contextual information to explain why the error may have occured.
+     * A list of key value pairs that provides contextual information about why an error occured.
      * </p>
      * 
      * @param errorData
-     *        A list of key value pairs that provide contextual information to explain why the error may have occured.
+     *        A list of key value pairs that provides contextual information about why an error occured.
      */
 
     public void setErrorData(java.util.Collection<java.util.Map<String, String>> errorData) {
@@ -122,7 +122,7 @@ public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of key value pairs that provide contextual information to explain why the error may have occured.
+     * A list of key value pairs that provides contextual information about why an error occured.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -131,7 +131,7 @@ public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param errorData
-     *        A list of key value pairs that provide contextual information to explain why the error may have occured.
+     *        A list of key value pairs that provides contextual information about why an error occured.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,11 +147,11 @@ public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of key value pairs that provide contextual information to explain why the error may have occured.
+     * A list of key value pairs that provides contextual information about why an error occured.
      * </p>
      * 
      * @param errorData
-     *        A list of key value pairs that provide contextual information to explain why the error may have occured.
+     *        A list of key value pairs that provides contextual information about why an error occured.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -162,11 +162,11 @@ public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A message describing the error that occured.
+     * A message that describes the error.
      * </p>
      * 
      * @param errorMessage
-     *        A message describing the error that occured.
+     *        A message that describes the error.
      */
 
     public void setErrorMessage(String errorMessage) {
@@ -175,10 +175,10 @@ public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A message describing the error that occured.
+     * A message that describes the error.
      * </p>
      * 
-     * @return A message describing the error that occured.
+     * @return A message that describes the error.
      */
 
     public String getErrorMessage() {
@@ -187,11 +187,11 @@ public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A message describing the error that occured.
+     * A message that describes the error.
      * </p>
      * 
      * @param errorMessage
-     *        A message describing the error that occured.
+     *        A message that describes the error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

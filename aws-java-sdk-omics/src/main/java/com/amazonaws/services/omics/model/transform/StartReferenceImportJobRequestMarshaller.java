@@ -28,12 +28,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class StartReferenceImportJobRequestMarshaller {
 
-    private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken").build();
     private static final MarshallingInfo<String> REFERENCESTOREID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("referenceStoreId").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("roleArn").build();
+    private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken").build();
     private static final MarshallingInfo<List> SOURCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("sources").build();
 
@@ -53,9 +53,9 @@ public class StartReferenceImportJobRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(startReferenceImportJobRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(startReferenceImportJobRequest.getReferenceStoreId(), REFERENCESTOREID_BINDING);
             protocolMarshaller.marshall(startReferenceImportJobRequest.getRoleArn(), ROLEARN_BINDING);
+            protocolMarshaller.marshall(startReferenceImportJobRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(startReferenceImportJobRequest.getSources(), SOURCES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

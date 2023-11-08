@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum GeospatialSelectedPointStyle {
 
     POINT("POINT"),
-    CLUSTER("CLUSTER");
+    CLUSTER("CLUSTER"),
+    HEATMAP("HEATMAP");
 
     private String value;
 

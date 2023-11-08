@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.quicksight.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +34,8 @@ public class PivotTableCellConditionalFormattingMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TextFormat").build();
     private static final MarshallingInfo<StructuredPojo> SCOPE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Scope").build();
+    private static final MarshallingInfo<List> SCOPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Scopes").build();
 
     private static final PivotTableCellConditionalFormattingMarshaller instance = new PivotTableCellConditionalFormattingMarshaller();
 
@@ -53,6 +56,7 @@ public class PivotTableCellConditionalFormattingMarshaller {
             protocolMarshaller.marshall(pivotTableCellConditionalFormatting.getFieldId(), FIELDID_BINDING);
             protocolMarshaller.marshall(pivotTableCellConditionalFormatting.getTextFormat(), TEXTFORMAT_BINDING);
             protocolMarshaller.marshall(pivotTableCellConditionalFormatting.getScope(), SCOPE_BINDING);
+            protocolMarshaller.marshall(pivotTableCellConditionalFormatting.getScopes(), SCOPES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

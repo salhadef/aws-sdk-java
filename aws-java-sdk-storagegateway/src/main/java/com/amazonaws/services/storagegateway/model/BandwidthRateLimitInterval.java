@@ -73,6 +73,14 @@ public class BandwidthRateLimitInterval implements Serializable, Cloneable, Stru
      * The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does
      * not appear in the response if the upload rate limit is not set.
      * </p>
+     * <note>
+     * <p>
+     * For Tape Gateway and Volume Gateway, the minimum value is <code>51200</code>.
+     * </p>
+     * <p>
+     * For S3 File Gateway and FSx File Gateway, the minimum value is <code>104857600</code>.
+     * </p>
+     * </note>
      */
     private Long averageUploadRateLimitInBitsPerSec;
     /**
@@ -365,10 +373,24 @@ public class BandwidthRateLimitInterval implements Serializable, Cloneable, Stru
      * The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does
      * not appear in the response if the upload rate limit is not set.
      * </p>
+     * <note>
+     * <p>
+     * For Tape Gateway and Volume Gateway, the minimum value is <code>51200</code>.
+     * </p>
+     * <p>
+     * For S3 File Gateway and FSx File Gateway, the minimum value is <code>104857600</code>.
+     * </p>
+     * </note>
      * 
      * @param averageUploadRateLimitInBitsPerSec
      *        The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This
-     *        field does not appear in the response if the upload rate limit is not set.
+     *        field does not appear in the response if the upload rate limit is not set. </p> <note>
+     *        <p>
+     *        For Tape Gateway and Volume Gateway, the minimum value is <code>51200</code>.
+     *        </p>
+     *        <p>
+     *        For S3 File Gateway and FSx File Gateway, the minimum value is <code>104857600</code>.
+     *        </p>
      */
 
     public void setAverageUploadRateLimitInBitsPerSec(Long averageUploadRateLimitInBitsPerSec) {
@@ -380,9 +402,23 @@ public class BandwidthRateLimitInterval implements Serializable, Cloneable, Stru
      * The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does
      * not appear in the response if the upload rate limit is not set.
      * </p>
+     * <note>
+     * <p>
+     * For Tape Gateway and Volume Gateway, the minimum value is <code>51200</code>.
+     * </p>
+     * <p>
+     * For S3 File Gateway and FSx File Gateway, the minimum value is <code>104857600</code>.
+     * </p>
+     * </note>
      * 
      * @return The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This
-     *         field does not appear in the response if the upload rate limit is not set.
+     *         field does not appear in the response if the upload rate limit is not set. </p> <note>
+     *         <p>
+     *         For Tape Gateway and Volume Gateway, the minimum value is <code>51200</code>.
+     *         </p>
+     *         <p>
+     *         For S3 File Gateway and FSx File Gateway, the minimum value is <code>104857600</code>.
+     *         </p>
      */
 
     public Long getAverageUploadRateLimitInBitsPerSec() {
@@ -394,10 +430,24 @@ public class BandwidthRateLimitInterval implements Serializable, Cloneable, Stru
      * The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does
      * not appear in the response if the upload rate limit is not set.
      * </p>
+     * <note>
+     * <p>
+     * For Tape Gateway and Volume Gateway, the minimum value is <code>51200</code>.
+     * </p>
+     * <p>
+     * For S3 File Gateway and FSx File Gateway, the minimum value is <code>104857600</code>.
+     * </p>
+     * </note>
      * 
      * @param averageUploadRateLimitInBitsPerSec
      *        The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This
-     *        field does not appear in the response if the upload rate limit is not set.
+     *        field does not appear in the response if the upload rate limit is not set. </p> <note>
+     *        <p>
+     *        For Tape Gateway and Volume Gateway, the minimum value is <code>51200</code>.
+     *        </p>
+     *        <p>
+     *        For S3 File Gateway and FSx File Gateway, the minimum value is <code>104857600</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -185,9 +185,9 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region. To see
-     * the time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
-     * Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
+     * the time blocks available, see <a href=
+     * "https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window"
+     * >Neptune Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
      * </p>
      * <p>
      * Constraints:
@@ -225,9 +225,9 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region,
-     * occurring on a random day of the week. To see the time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
-     * Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
+     * occurring on a random day of the week. To see the time blocks available, see <a href=
+     * "https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window"
+     * >Neptune Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
      * </p>
      * <p>
      * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
@@ -322,7 +322,16 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private Boolean deletionProtection;
-
+    /**
+     * <p>
+     * Contains the scaling configuration of a Neptune Serverless DB cluster.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune
+     * Serverless</a> in the <i>Amazon Neptune User Guide</i>.
+     * </p>
+     */
     private ServerlessV2ScalingConfiguration serverlessV2ScalingConfiguration;
     /**
      * <p>
@@ -1369,9 +1378,9 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region. To see
-     * the time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
-     * Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
+     * the time blocks available, see <a href=
+     * "https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window"
+     * >Neptune Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
      * </p>
      * <p>
      * Constraints:
@@ -1404,9 +1413,9 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <code>BackupRetentionPeriod</code> parameter.</p>
      *        <p>
      *        The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region.
-     *        To see the time blocks available, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     *        Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
+     *        To see the time blocks available, see <a href=
+     *        "https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window"
+     *        >Neptune Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
      *        </p>
      *        <p>
      *        Constraints:
@@ -1445,9 +1454,9 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region. To see
-     * the time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
-     * Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
+     * the time blocks available, see <a href=
+     * "https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window"
+     * >Neptune Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
      * </p>
      * <p>
      * Constraints:
@@ -1479,9 +1488,9 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         the <code>BackupRetentionPeriod</code> parameter.</p>
      *         <p>
      *         The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region.
-     *         To see the time blocks available, see <a
-     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     *         Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
+     *         To see the time blocks available, see <a href=
+     *         "https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window"
+     *         >Neptune Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
      *         </p>
      *         <p>
      *         Constraints:
@@ -1520,9 +1529,9 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region. To see
-     * the time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
-     * Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
+     * the time blocks available, see <a href=
+     * "https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window"
+     * >Neptune Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
      * </p>
      * <p>
      * Constraints:
@@ -1555,9 +1564,9 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <code>BackupRetentionPeriod</code> parameter.</p>
      *        <p>
      *        The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region.
-     *        To see the time blocks available, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     *        Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
+     *        To see the time blocks available, see <a href=
+     *        "https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window"
+     *        >Neptune Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
      *        </p>
      *        <p>
      *        Constraints:
@@ -1600,9 +1609,9 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region,
-     * occurring on a random day of the week. To see the time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
-     * Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
+     * occurring on a random day of the week. To see the time blocks available, see <a href=
+     * "https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window"
+     * >Neptune Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
      * </p>
      * <p>
      * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
@@ -1618,9 +1627,9 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region,
-     *        occurring on a random day of the week. To see the time blocks available, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     *        Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
+     *        occurring on a random day of the week. To see the time blocks available, see <a href=
+     *        "https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window"
+     *        >Neptune Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
      *        </p>
      *        <p>
      *        Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
@@ -1642,9 +1651,9 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region,
-     * occurring on a random day of the week. To see the time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
-     * Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
+     * occurring on a random day of the week. To see the time blocks available, see <a href=
+     * "https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window"
+     * >Neptune Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
      * </p>
      * <p>
      * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
@@ -1659,9 +1668,9 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         </p>
      *         <p>
      *         The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region,
-     *         occurring on a random day of the week. To see the time blocks available, see <a
-     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     *         Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
+     *         occurring on a random day of the week. To see the time blocks available, see <a href=
+     *         "https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window"
+     *         >Neptune Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
      *         </p>
      *         <p>
      *         Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
@@ -1683,9 +1692,9 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region,
-     * occurring on a random day of the week. To see the time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
-     * Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
+     * occurring on a random day of the week. To see the time blocks available, see <a href=
+     * "https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window"
+     * >Neptune Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
      * </p>
      * <p>
      * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
@@ -1701,9 +1710,9 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region,
-     *        occurring on a random day of the week. To see the time blocks available, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     *        Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
+     *        occurring on a random day of the week. To see the time blocks available, see <a href=
+     *        "https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window"
+     *        >Neptune Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
      *        </p>
      *        <p>
      *        Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
@@ -2363,7 +2372,21 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * Contains the scaling configuration of a Neptune Serverless DB cluster.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune
+     * Serverless</a> in the <i>Amazon Neptune User Guide</i>.
+     * </p>
+     * 
      * @param serverlessV2ScalingConfiguration
+     *        Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon
+     *        Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.
      */
 
     public void setServerlessV2ScalingConfiguration(ServerlessV2ScalingConfiguration serverlessV2ScalingConfiguration) {
@@ -2371,7 +2394,20 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * @return
+     * <p>
+     * Contains the scaling configuration of a Neptune Serverless DB cluster.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune
+     * Serverless</a> in the <i>Amazon Neptune User Guide</i>.
+     * </p>
+     * 
+     * @return Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon
+     *         Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.
      */
 
     public ServerlessV2ScalingConfiguration getServerlessV2ScalingConfiguration() {
@@ -2379,7 +2415,21 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * Contains the scaling configuration of a Neptune Serverless DB cluster.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune
+     * Serverless</a> in the <i>Amazon Neptune User Guide</i>.
+     * </p>
+     * 
      * @param serverlessV2ScalingConfiguration
+     *        Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon
+     *        Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

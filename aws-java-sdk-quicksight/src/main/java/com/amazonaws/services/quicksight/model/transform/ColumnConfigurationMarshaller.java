@@ -33,6 +33,8 @@ public class ColumnConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FormatConfiguration").build();
     private static final MarshallingInfo<String> ROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Role").build();
+    private static final MarshallingInfo<StructuredPojo> COLORSCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ColorsConfiguration").build();
 
     private static final ColumnConfigurationMarshaller instance = new ColumnConfigurationMarshaller();
 
@@ -53,6 +55,7 @@ public class ColumnConfigurationMarshaller {
             protocolMarshaller.marshall(columnConfiguration.getColumn(), COLUMN_BINDING);
             protocolMarshaller.marshall(columnConfiguration.getFormatConfiguration(), FORMATCONFIGURATION_BINDING);
             protocolMarshaller.marshall(columnConfiguration.getRole(), ROLE_BINDING);
+            protocolMarshaller.marshall(columnConfiguration.getColorsConfiguration(), COLORSCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

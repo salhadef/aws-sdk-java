@@ -24,6 +24,13 @@ public class ConflictException extends com.amazonaws.services.iot.model.AWSIotEx
     private static final long serialVersionUID = 1L;
 
     /**
+     * <p>
+     * A resource with the same name already exists.
+     * </p>
+     */
+    private String resourceId;
+
+    /**
      * Constructs a new ConflictException with the specified error message.
      *
      * @param message
@@ -31,6 +38,48 @@ public class ConflictException extends com.amazonaws.services.iot.model.AWSIotEx
      */
     public ConflictException(String message) {
         super(message);
+    }
+
+    /**
+     * <p>
+     * A resource with the same name already exists.
+     * </p>
+     * 
+     * @param resourceId
+     *        A resource with the same name already exists.
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
+    public void setResourceId(String resourceId) {
+        this.resourceId = resourceId;
+    }
+
+    /**
+     * <p>
+     * A resource with the same name already exists.
+     * </p>
+     * 
+     * @return A resource with the same name already exists.
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
+    public String getResourceId() {
+        return this.resourceId;
+    }
+
+    /**
+     * <p>
+     * A resource with the same name already exists.
+     * </p>
+     * 
+     * @param resourceId
+     *        A resource with the same name already exists.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConflictException withResourceId(String resourceId) {
+        setResourceId(resourceId);
+        return this;
     }
 
 }

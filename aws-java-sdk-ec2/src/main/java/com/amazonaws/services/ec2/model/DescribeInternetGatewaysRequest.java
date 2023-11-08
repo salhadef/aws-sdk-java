@@ -28,7 +28,7 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -71,7 +71,7 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest imp
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
      * <p>
-     * One or more internet gateway IDs.
+     * The IDs of the internet gateways.
      * </p>
      * <p>
      * Default: Describes all your internet gateways.
@@ -96,7 +96,7 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -136,7 +136,7 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest imp
      * </li>
      * </ul>
      * 
-     * @return One or more filters.</p>
+     * @return The filters.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -184,7 +184,7 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -225,7 +225,7 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest imp
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -275,7 +275,7 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -321,7 +321,7 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest imp
      * </p>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -373,7 +373,7 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -414,7 +414,7 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest imp
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -461,13 +461,13 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * One or more internet gateway IDs.
+     * The IDs of the internet gateways.
      * </p>
      * <p>
      * Default: Describes all your internet gateways.
      * </p>
      * 
-     * @return One or more internet gateway IDs.</p>
+     * @return The IDs of the internet gateways.</p>
      *         <p>
      *         Default: Describes all your internet gateways.
      */
@@ -481,14 +481,14 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * One or more internet gateway IDs.
+     * The IDs of the internet gateways.
      * </p>
      * <p>
      * Default: Describes all your internet gateways.
      * </p>
      * 
      * @param internetGatewayIds
-     *        One or more internet gateway IDs.</p>
+     *        The IDs of the internet gateways.</p>
      *        <p>
      *        Default: Describes all your internet gateways.
      */
@@ -504,7 +504,7 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * One or more internet gateway IDs.
+     * The IDs of the internet gateways.
      * </p>
      * <p>
      * Default: Describes all your internet gateways.
@@ -516,7 +516,7 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest imp
      * </p>
      * 
      * @param internetGatewayIds
-     *        One or more internet gateway IDs.</p>
+     *        The IDs of the internet gateways.</p>
      *        <p>
      *        Default: Describes all your internet gateways.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -534,14 +534,14 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * One or more internet gateway IDs.
+     * The IDs of the internet gateways.
      * </p>
      * <p>
      * Default: Describes all your internet gateways.
      * </p>
      * 
      * @param internetGatewayIds
-     *        One or more internet gateway IDs.</p>
+     *        The IDs of the internet gateways.</p>
      *        <p>
      *        Default: Describes all your internet gateways.
      * @return Returns a reference to this object so that method calls can be chained together.

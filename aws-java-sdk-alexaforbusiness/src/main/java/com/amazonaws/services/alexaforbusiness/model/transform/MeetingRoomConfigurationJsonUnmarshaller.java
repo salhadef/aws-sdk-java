@@ -64,6 +64,10 @@ public class MeetingRoomConfigurationJsonUnmarshaller implements Unmarshaller<Me
                     context.nextToken();
                     meetingRoomConfiguration.setRequireCheckIn(RequireCheckInJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ProactiveJoin", targetDepth)) {
+                    context.nextToken();
+                    meetingRoomConfiguration.setProactiveJoin(ProactiveJoinJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

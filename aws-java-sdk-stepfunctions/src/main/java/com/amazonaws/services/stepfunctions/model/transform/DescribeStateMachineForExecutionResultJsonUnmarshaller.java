@@ -84,6 +84,10 @@ public class DescribeStateMachineForExecutionResultJsonUnmarshaller implements U
                     context.nextToken();
                     describeStateMachineForExecutionResult.setLabel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("revisionId", targetDepth)) {
+                    context.nextToken();
+                    describeStateMachineForExecutionResult.setRevisionId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -48,6 +48,10 @@ public class RouteSummaryJsonUnmarshaller implements Unmarshaller<RouteSummary, 
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("AppendSourcePath", targetDepth)) {
+                    context.nextToken();
+                    routeSummary.setAppendSourcePath(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("ApplicationId", targetDepth)) {
                     context.nextToken();
                     routeSummary.setApplicationId(context.getUnmarshaller(String.class).unmarshall(context));

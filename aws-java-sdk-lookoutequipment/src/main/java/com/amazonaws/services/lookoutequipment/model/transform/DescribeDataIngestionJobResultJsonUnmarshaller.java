@@ -101,6 +101,10 @@ public class DescribeDataIngestionJobResultJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     describeDataIngestionJobResult.setDataEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("SourceDatasetArn", targetDepth)) {
+                    context.nextToken();
+                    describeDataIngestionJobResult.setSourceDatasetArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

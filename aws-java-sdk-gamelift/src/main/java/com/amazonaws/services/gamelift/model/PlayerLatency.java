@@ -186,7 +186,7 @@ public class PlayerLatency implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPlayerId() != null)
-            sb.append("PlayerId: ").append(getPlayerId()).append(",");
+            sb.append("PlayerId: ").append("***Sensitive Data Redacted***").append(",");
         if (getRegionIdentifier() != null)
             sb.append("RegionIdentifier: ").append(getRegionIdentifier()).append(",");
         if (getLatencyInMilliseconds() != null)

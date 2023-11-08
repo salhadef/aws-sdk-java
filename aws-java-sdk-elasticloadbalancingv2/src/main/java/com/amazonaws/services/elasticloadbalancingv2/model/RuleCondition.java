@@ -25,6 +25,11 @@ import javax.annotation.Generated;
  * include one or more of each of the following conditions: <code>http-header</code> and <code>query-string</code>. Note
  * that the value for a condition cannot be empty.
  * </p>
+ * <p>
+ * For more information, see <a
+ * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Quotas for your
+ * Application Load Balancers</a>.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RuleCondition"
  *      target="_top">AWS API Documentation</a>

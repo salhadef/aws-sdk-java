@@ -44,6 +44,7 @@ import com.amazonaws.services.wafv2.AWSWAFV2ClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.wafv2.model.*;
+
 import com.amazonaws.services.wafv2.model.transform.*;
 
 /**
@@ -200,6 +201,9 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                             new JsonErrorShapeMetadata().withErrorCode("WAFInvalidOperationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.wafv2.model.transform.WAFInvalidOperationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("WAFUnsupportedAggregateKeyTypeException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.wafv2.model.transform.WAFUnsupportedAggregateKeyTypeExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("WAFExpiredManagedRuleGroupVersionException").withExceptionUnmarshaller(
                                     com.amazonaws.services.wafv2.model.transform.WAFExpiredManagedRuleGroupVersionExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -267,15 +271,49 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * >UpdateDistribution</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
-     * When you make changes to web ACLs or web ACL components, like rules and rule groups, WAF propagates the changes
-     * everywhere that the web ACL and its components are stored and used. Your changes are applied within seconds, but
-     * there might be a brief period of inconsistency when the changes have arrived in some places and not in others.
-     * So, for example, if you change a rule action setting, the action might be the old action in one area and the new
-     * action in another area. Or if you add an IP address to an IP set used in a blocking rule, the new address might
-     * briefly be blocked in one area while still allowed in another. This temporary inconsistency can occur when you
-     * first associate a web ACL with an Amazon Web Services resource and when you change a web ACL that is already
-     * associated with a resource. Generally, any inconsistencies of this type last only a few seconds.
+     * <b>Required permissions for customer-managed IAM policies</b>
      * </p>
+     * <p>
+     * This call requires permissions that are specific to the protected resource type. For details, see <a href=
+     * "https://docs.aws.amazon.com/waf/latest/developerguide/security_iam_service-with-iam.html#security_iam_action-AssociateWebACL"
+     * >Permissions for AssociateWebACL</a> in the <i>WAF Developer Guide</i>.
+     * </p>
+     * <p>
+     * <b>Temporary inconsistencies during updates</b>
+     * </p>
+     * <p>
+     * When you create or change a web ACL or other WAF resources, the changes take a small amount of time to propagate
+     * to all areas where the resources are stored. The propagation time can be from a few seconds to a number of
+     * minutes.
+     * </p>
+     * <p>
+     * The following are examples of the temporary inconsistencies that you might notice during change propagation:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * After you create a web ACL, if you try to associate it with a resource, you might get an exception indicating
+     * that the web ACL is unavailable.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * After you add a rule group to a web ACL, the new rule group rules might be in effect in one area where the web
+     * ACL is used and not in another.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * After you change a rule action setting, you might see the old action in some places and the new action in others.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * After you add an IP address to an IP set that is in use in a blocking rule, the new address might be blocked in
+     * one area while still allowed in another.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param associateWebACLRequest
      * @return Result of the AssociateWebACL operation returned by the service.
@@ -916,13 +954,14 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * Creates a <a>WebACL</a> per the specifications provided.
      * </p>
      * <p>
-     * A web ACL defines a collection of rules to use to inspect and control web requests. Each rule has an action
-     * defined (allow, block, or count) for requests that match the statement of the rule. In the web ACL, you assign a
-     * default action to take (allow, block) for any request that does not match any of the rules. The rules in a web
-     * ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule group. You can associate a
-     * web ACL with one or more Amazon Web Services resources to protect. The resources can be an Amazon CloudFront
-     * distribution, an Amazon API Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, an Amazon
-     * Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.
+     * A web ACL defines a collection of rules to use to inspect and control web requests. Each rule has a statement
+     * that defines what to look for in web requests and an action that WAF applies to requests that match the
+     * statement. In the web ACL, you assign a default action to take (allow, block) for any request that does not match
+     * any of the rules. The rules in a web ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and
+     * managed rule group. You can associate a web ACL with one or more Amazon Web Services resources to protect. The
+     * resources can be an Amazon CloudFront distribution, an Amazon API Gateway REST API, an Application Load Balancer,
+     * an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified
+     * Access instance.
      * </p>
      * 
      * @param createWebACLRequest
@@ -1791,6 +1830,157 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
 
     /**
      * <p>
+     * Provides high-level information for the Amazon Web Services Managed Rules rule groups and Amazon Web Services
+     * Marketplace managed rule groups.
+     * </p>
+     * 
+     * @param describeAllManagedProductsRequest
+     * @return Result of the DescribeAllManagedProducts operation returned by the service.
+     * @throws WAFInvalidOperationException
+     *         The operation isn't valid.
+     * @throws WAFInternalErrorException
+     *         Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your
+     *         request.
+     * @sample AWSWAFV2.DescribeAllManagedProducts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DescribeAllManagedProducts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeAllManagedProductsResult describeAllManagedProducts(DescribeAllManagedProductsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAllManagedProducts(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAllManagedProductsResult executeDescribeAllManagedProducts(DescribeAllManagedProductsRequest describeAllManagedProductsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeAllManagedProductsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAllManagedProductsRequest> request = null;
+        Response<DescribeAllManagedProductsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAllManagedProductsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeAllManagedProductsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAllManagedProducts");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeAllManagedProductsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeAllManagedProductsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Provides high-level information for the managed rule groups owned by a specific vendor.
+     * </p>
+     * 
+     * @param describeManagedProductsByVendorRequest
+     * @return Result of the DescribeManagedProductsByVendor operation returned by the service.
+     * @throws WAFInvalidOperationException
+     *         The operation isn't valid.
+     * @throws WAFInternalErrorException
+     *         Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your
+     *         request.
+     * @throws WAFInvalidParameterException
+     *         The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You specified a parameter name or value that isn't valid.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types
+     *         available at <a>DefaultAction</a>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't
+     *         be associated.
+     *         </p>
+     *         </li>
+     * @sample AWSWAFV2.DescribeManagedProductsByVendor
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DescribeManagedProductsByVendor"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeManagedProductsByVendorResult describeManagedProductsByVendor(DescribeManagedProductsByVendorRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeManagedProductsByVendor(request);
+    }
+
+    @SdkInternalApi
+    final DescribeManagedProductsByVendorResult executeDescribeManagedProductsByVendor(
+            DescribeManagedProductsByVendorRequest describeManagedProductsByVendorRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeManagedProductsByVendorRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeManagedProductsByVendorRequest> request = null;
+        Response<DescribeManagedProductsByVendorResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeManagedProductsByVendorRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeManagedProductsByVendorRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeManagedProductsByVendor");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeManagedProductsByVendorResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeManagedProductsByVendorResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Provides high-level information for a managed rule group, including descriptions of the rules.
      * </p>
      * 
@@ -1900,6 +2090,14 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * information, see <a
      * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">
      * UpdateDistribution</a> in the <i>Amazon CloudFront API Reference</i>.
+     * </p>
+     * <p>
+     * <b>Required permissions for customer-managed IAM policies</b>
+     * </p>
+     * <p>
+     * This call requires permissions that are specific to the protected resource type. For details, see <a href=
+     * "https://docs.aws.amazon.com/waf/latest/developerguide/security_iam_service-with-iam.html#security_iam_action-DisassociateWebACL"
+     * >Permissions for DisassociateWebACL</a> in the <i>WAF Developer Guide</i>.
      * </p>
      * 
      * @param disassociateWebACLRequest
@@ -2645,9 +2843,12 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
 
     /**
      * <p>
-     * Retrieves the keys that are currently blocked by a rate-based rule instance. The maximum number of managed keys
-     * that can be blocked for a single rate-based rule instance is 10,000. If more than 10,000 addresses exceed the
-     * rate limit, those with the highest rates are blocked.
+     * Retrieves the IP addresses that are currently blocked by a rate-based rule instance. This is only available for
+     * rate-based rules that aggregate solely on the IP address or on the forwarded IP address.
+     * </p>
+     * <p>
+     * The maximum number of addresses that can be blocked for a single rate-based rule instance is 10,000. If more than
+     * 10,000 addresses exceed the rate limit, those with the highest rates are blocked.
      * </p>
      * <p>
      * For a rate-based rule that you've defined inside a rule group, provide the name of the rule group reference
@@ -2697,6 +2898,10 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      *         seconds to a number of minutes for changes to propagate.
      * @throws WAFInvalidOperationException
      *         The operation isn't valid.
+     * @throws WAFUnsupportedAggregateKeyTypeException
+     *         The rule that you've named doesn't aggregate solely on the IP address or solely on the forwarded IP
+     *         address. This call is only available for rate-based rules with an <code>AggregateKeyType</code> setting
+     *         of <code>IP</code> or <code>FORWARDED_IP</code>.
      * @sample AWSWAFV2.GetRateBasedStatementManagedKeys
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetRateBasedStatementManagedKeys"
      *      target="_top">AWS API Documentation</a>
@@ -3113,6 +3318,25 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     /**
      * <p>
      * Retrieves the <a>WebACL</a> for the specified resource.
+     * </p>
+     * <p>
+     * This call uses <code>GetWebACL</code>, to verify that your account has permission to access the retrieved web
+     * ACL. If you get an error that indicates that your account isn't authorized to perform
+     * <code>wafv2:GetWebACL</code> on the resource, that error won't be included in your CloudTrail event history.
+     * </p>
+     * <p>
+     * For Amazon CloudFront, don't use this call. Instead, call the CloudFront action
+     * <code>GetDistributionConfig</code>. For information, see <a
+     * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistributionConfig.html"
+     * >GetDistributionConfig</a> in the <i>Amazon CloudFront API Reference</i>.
+     * </p>
+     * <p>
+     * <b>Required permissions for customer-managed IAM policies</b>
+     * </p>
+     * <p>
+     * This call requires permissions that are specific to the protected resource type. For details, see <a href=
+     * "https://docs.aws.amazon.com/waf/latest/developerguide/security_iam_service-with-iam.html#security_iam_action-GetWebACLForResource"
+     * >Permissions for GetWebACLForResource</a> in the <i>WAF Developer Guide</i>.
      * </p>
      * 
      * @param getWebACLForResourceRequest
@@ -3928,8 +4152,21 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     /**
      * <p>
      * Retrieves an array of the Amazon Resource Names (ARNs) for the regional resources that are associated with the
-     * specified web ACL. If you want the list of Amazon CloudFront resources, use the CloudFront call
-     * <code>ListDistributionsByWebACLId</code>.
+     * specified web ACL.
+     * </p>
+     * <p>
+     * For Amazon CloudFront, don't use this call. Instead, use the CloudFront call
+     * <code>ListDistributionsByWebACLId</code>. For information, see <a
+     * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByWebACLId.html"
+     * >ListDistributionsByWebACLId</a> in the <i>Amazon CloudFront API Reference</i>.
+     * </p>
+     * <p>
+     * <b>Required permissions for customer-managed IAM policies</b>
+     * </p>
+     * <p>
+     * This call requires permissions that are specific to the protected resource type. For details, see <a href=
+     * "https://docs.aws.amazon.com/waf/latest/developerguide/security_iam_service-with-iam.html#security_iam_action-ListResourcesForWebACL"
+     * >Permissions for ListResourcesForWebACL</a> in the <i>WAF Developer Guide</i>.
      * </p>
      * 
      * @param listResourcesForWebACLRequest
@@ -4963,15 +5200,41 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * </ol>
      * </note>
      * <p>
-     * When you make changes to web ACLs or web ACL components, like rules and rule groups, WAF propagates the changes
-     * everywhere that the web ACL and its components are stored and used. Your changes are applied within seconds, but
-     * there might be a brief period of inconsistency when the changes have arrived in some places and not in others.
-     * So, for example, if you change a rule action setting, the action might be the old action in one area and the new
-     * action in another area. Or if you add an IP address to an IP set used in a blocking rule, the new address might
-     * briefly be blocked in one area while still allowed in another. This temporary inconsistency can occur when you
-     * first associate a web ACL with an Amazon Web Services resource and when you change a web ACL that is already
-     * associated with a resource. Generally, any inconsistencies of this type last only a few seconds.
+     * <b>Temporary inconsistencies during updates</b>
      * </p>
+     * <p>
+     * When you create or change a web ACL or other WAF resources, the changes take a small amount of time to propagate
+     * to all areas where the resources are stored. The propagation time can be from a few seconds to a number of
+     * minutes.
+     * </p>
+     * <p>
+     * The following are examples of the temporary inconsistencies that you might notice during change propagation:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * After you create a web ACL, if you try to associate it with a resource, you might get an exception indicating
+     * that the web ACL is unavailable.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * After you add a rule group to a web ACL, the new rule group rules might be in effect in one area where the web
+     * ACL is used and not in another.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * After you change a rule action setting, you might see the old action in some places and the new action in others.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * After you add an IP address to an IP set that is in use in a blocking rule, the new address might be blocked in
+     * one area while still allowed in another.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param updateIPSetRequest
      * @return Result of the UpdateIPSet operation returned by the service.
@@ -5209,15 +5472,41 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * </ol>
      * </note>
      * <p>
-     * When you make changes to web ACLs or web ACL components, like rules and rule groups, WAF propagates the changes
-     * everywhere that the web ACL and its components are stored and used. Your changes are applied within seconds, but
-     * there might be a brief period of inconsistency when the changes have arrived in some places and not in others.
-     * So, for example, if you change a rule action setting, the action might be the old action in one area and the new
-     * action in another area. Or if you add an IP address to an IP set used in a blocking rule, the new address might
-     * briefly be blocked in one area while still allowed in another. This temporary inconsistency can occur when you
-     * first associate a web ACL with an Amazon Web Services resource and when you change a web ACL that is already
-     * associated with a resource. Generally, any inconsistencies of this type last only a few seconds.
+     * <b>Temporary inconsistencies during updates</b>
      * </p>
+     * <p>
+     * When you create or change a web ACL or other WAF resources, the changes take a small amount of time to propagate
+     * to all areas where the resources are stored. The propagation time can be from a few seconds to a number of
+     * minutes.
+     * </p>
+     * <p>
+     * The following are examples of the temporary inconsistencies that you might notice during change propagation:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * After you create a web ACL, if you try to associate it with a resource, you might get an exception indicating
+     * that the web ACL is unavailable.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * After you add a rule group to a web ACL, the new rule group rules might be in effect in one area where the web
+     * ACL is used and not in another.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * After you change a rule action setting, you might see the old action in some places and the new action in others.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * After you add an IP address to an IP set that is in use in a blocking rule, the new address might be blocked in
+     * one area while still allowed in another.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param updateRegexPatternSetRequest
      * @return Result of the UpdateRegexPatternSet operation returned by the service.
@@ -5347,21 +5636,47 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * </ol>
      * </note>
      * <p>
-     * When you make changes to web ACLs or web ACL components, like rules and rule groups, WAF propagates the changes
-     * everywhere that the web ACL and its components are stored and used. Your changes are applied within seconds, but
-     * there might be a brief period of inconsistency when the changes have arrived in some places and not in others.
-     * So, for example, if you change a rule action setting, the action might be the old action in one area and the new
-     * action in another area. Or if you add an IP address to an IP set used in a blocking rule, the new address might
-     * briefly be blocked in one area while still allowed in another. This temporary inconsistency can occur when you
-     * first associate a web ACL with an Amazon Web Services resource and when you change a web ACL that is already
-     * associated with a resource. Generally, any inconsistencies of this type last only a few seconds.
-     * </p>
-     * <p>
      * A rule group defines a collection of rules to inspect and control web requests that you can use in a
      * <a>WebACL</a>. When you create a rule group, you define an immutable capacity limit. If you update a rule group,
      * you must stay within the capacity. This allows others to reuse the rule group with confidence in its capacity
      * requirements.
      * </p>
+     * <p>
+     * <b>Temporary inconsistencies during updates</b>
+     * </p>
+     * <p>
+     * When you create or change a web ACL or other WAF resources, the changes take a small amount of time to propagate
+     * to all areas where the resources are stored. The propagation time can be from a few seconds to a number of
+     * minutes.
+     * </p>
+     * <p>
+     * The following are examples of the temporary inconsistencies that you might notice during change propagation:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * After you create a web ACL, if you try to associate it with a resource, you might get an exception indicating
+     * that the web ACL is unavailable.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * After you add a rule group to a web ACL, the new rule group rules might be in effect in one area where the web
+     * ACL is used and not in another.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * After you change a rule action setting, you might see the old action in some places and the new action in others.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * After you add an IP address to an IP set that is in use in a blocking rule, the new address might be blocked in
+     * one area while still allowed in another.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param updateRuleGroupRequest
      * @return Result of the UpdateRuleGroup operation returned by the service.
@@ -5512,24 +5827,51 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * </ol>
      * </note>
      * <p>
-     * When you make changes to web ACLs or web ACL components, like rules and rule groups, WAF propagates the changes
-     * everywhere that the web ACL and its components are stored and used. Your changes are applied within seconds, but
-     * there might be a brief period of inconsistency when the changes have arrived in some places and not in others.
-     * So, for example, if you change a rule action setting, the action might be the old action in one area and the new
-     * action in another area. Or if you add an IP address to an IP set used in a blocking rule, the new address might
-     * briefly be blocked in one area while still allowed in another. This temporary inconsistency can occur when you
-     * first associate a web ACL with an Amazon Web Services resource and when you change a web ACL that is already
-     * associated with a resource. Generally, any inconsistencies of this type last only a few seconds.
+     * A web ACL defines a collection of rules to use to inspect and control web requests. Each rule has a statement
+     * that defines what to look for in web requests and an action that WAF applies to requests that match the
+     * statement. In the web ACL, you assign a default action to take (allow, block) for any request that does not match
+     * any of the rules. The rules in a web ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and
+     * managed rule group. You can associate a web ACL with one or more Amazon Web Services resources to protect. The
+     * resources can be an Amazon CloudFront distribution, an Amazon API Gateway REST API, an Application Load Balancer,
+     * an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified
+     * Access instance.
      * </p>
      * <p>
-     * A web ACL defines a collection of rules to use to inspect and control web requests. Each rule has an action
-     * defined (allow, block, or count) for requests that match the statement of the rule. In the web ACL, you assign a
-     * default action to take (allow, block) for any request that does not match any of the rules. The rules in a web
-     * ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule group. You can associate a
-     * web ACL with one or more Amazon Web Services resources to protect. The resources can be an Amazon CloudFront
-     * distribution, an Amazon API Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, an Amazon
-     * Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.
+     * <b>Temporary inconsistencies during updates</b>
      * </p>
+     * <p>
+     * When you create or change a web ACL or other WAF resources, the changes take a small amount of time to propagate
+     * to all areas where the resources are stored. The propagation time can be from a few seconds to a number of
+     * minutes.
+     * </p>
+     * <p>
+     * The following are examples of the temporary inconsistencies that you might notice during change propagation:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * After you create a web ACL, if you try to associate it with a resource, you might get an exception indicating
+     * that the web ACL is unavailable.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * After you add a rule group to a web ACL, the new rule group rules might be in effect in one area where the web
+     * ACL is used and not in another.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * After you change a rule action setting, you might see the old action in some places and the new action in others.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * After you add an IP address to an IP set that is in use in a blocking rule, the new address might be blocked in
+     * one area while still allowed in another.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param updateWebACLRequest
      * @return Result of the UpdateWebACL operation returned by the service.

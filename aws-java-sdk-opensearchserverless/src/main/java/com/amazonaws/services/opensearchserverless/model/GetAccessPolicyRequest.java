@@ -33,7 +33,7 @@ public class GetAccessPolicyRequest extends com.amazonaws.AmazonWebServiceReques
     private String name;
     /**
      * <p>
-     * Tye type of policy. Currently the only supported value is <code>data</code>.
+     * Tye type of policy. Currently, the only supported value is <code>data</code>.
      * </p>
      */
     private String type;
@@ -80,11 +80,11 @@ public class GetAccessPolicyRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Tye type of policy. Currently the only supported value is <code>data</code>.
+     * Tye type of policy. Currently, the only supported value is <code>data</code>.
      * </p>
      * 
      * @param type
-     *        Tye type of policy. Currently the only supported value is <code>data</code>.
+     *        Tye type of policy. Currently, the only supported value is <code>data</code>.
      * @see AccessPolicyType
      */
 
@@ -94,10 +94,10 @@ public class GetAccessPolicyRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Tye type of policy. Currently the only supported value is <code>data</code>.
+     * Tye type of policy. Currently, the only supported value is <code>data</code>.
      * </p>
      * 
-     * @return Tye type of policy. Currently the only supported value is <code>data</code>.
+     * @return Tye type of policy. Currently, the only supported value is <code>data</code>.
      * @see AccessPolicyType
      */
 
@@ -107,11 +107,11 @@ public class GetAccessPolicyRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Tye type of policy. Currently the only supported value is <code>data</code>.
+     * Tye type of policy. Currently, the only supported value is <code>data</code>.
      * </p>
      * 
      * @param type
-     *        Tye type of policy. Currently the only supported value is <code>data</code>.
+     *        Tye type of policy. Currently, the only supported value is <code>data</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AccessPolicyType
      */
@@ -123,11 +123,11 @@ public class GetAccessPolicyRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Tye type of policy. Currently the only supported value is <code>data</code>.
+     * Tye type of policy. Currently, the only supported value is <code>data</code>.
      * </p>
      * 
      * @param type
-     *        Tye type of policy. Currently the only supported value is <code>data</code>.
+     *        Tye type of policy. Currently, the only supported value is <code>data</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AccessPolicyType
      */

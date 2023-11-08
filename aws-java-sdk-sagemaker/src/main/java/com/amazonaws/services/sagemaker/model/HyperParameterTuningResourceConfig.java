@@ -42,8 +42,8 @@ public class HyperParameterTuningResourceConfig implements Serializable, Cloneab
     /**
      * <p>
      * The instance type used to run hyperparameter optimization tuning jobs. See <a
-     * href="https://docs.aws.amazon.com/notebooks-available-instance-types.html"> descriptions of instance types</a>
-     * for more information.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebooks-available-instance-types.html"> descriptions of
+     * instance types</a> for more information.
      * </p>
      */
     private String instanceType;
@@ -135,14 +135,14 @@ public class HyperParameterTuningResourceConfig implements Serializable, Cloneab
     /**
      * <p>
      * The instance type used to run hyperparameter optimization tuning jobs. See <a
-     * href="https://docs.aws.amazon.com/notebooks-available-instance-types.html"> descriptions of instance types</a>
-     * for more information.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebooks-available-instance-types.html"> descriptions of
+     * instance types</a> for more information.
      * </p>
      * 
      * @param instanceType
      *        The instance type used to run hyperparameter optimization tuning jobs. See <a
-     *        href="https://docs.aws.amazon.com/notebooks-available-instance-types.html"> descriptions of instance
-     *        types</a> for more information.
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebooks-available-instance-types.html">
+     *        descriptions of instance types</a> for more information.
      * @see TrainingInstanceType
      */
 
@@ -153,13 +153,13 @@ public class HyperParameterTuningResourceConfig implements Serializable, Cloneab
     /**
      * <p>
      * The instance type used to run hyperparameter optimization tuning jobs. See <a
-     * href="https://docs.aws.amazon.com/notebooks-available-instance-types.html"> descriptions of instance types</a>
-     * for more information.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebooks-available-instance-types.html"> descriptions of
+     * instance types</a> for more information.
      * </p>
      * 
      * @return The instance type used to run hyperparameter optimization tuning jobs. See <a
-     *         href="https://docs.aws.amazon.com/notebooks-available-instance-types.html"> descriptions of instance
-     *         types</a> for more information.
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebooks-available-instance-types.html">
+     *         descriptions of instance types</a> for more information.
      * @see TrainingInstanceType
      */
 
@@ -170,14 +170,14 @@ public class HyperParameterTuningResourceConfig implements Serializable, Cloneab
     /**
      * <p>
      * The instance type used to run hyperparameter optimization tuning jobs. See <a
-     * href="https://docs.aws.amazon.com/notebooks-available-instance-types.html"> descriptions of instance types</a>
-     * for more information.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebooks-available-instance-types.html"> descriptions of
+     * instance types</a> for more information.
      * </p>
      * 
      * @param instanceType
      *        The instance type used to run hyperparameter optimization tuning jobs. See <a
-     *        href="https://docs.aws.amazon.com/notebooks-available-instance-types.html"> descriptions of instance
-     *        types</a> for more information.
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebooks-available-instance-types.html">
+     *        descriptions of instance types</a> for more information.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TrainingInstanceType
      */
@@ -190,14 +190,14 @@ public class HyperParameterTuningResourceConfig implements Serializable, Cloneab
     /**
      * <p>
      * The instance type used to run hyperparameter optimization tuning jobs. See <a
-     * href="https://docs.aws.amazon.com/notebooks-available-instance-types.html"> descriptions of instance types</a>
-     * for more information.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebooks-available-instance-types.html"> descriptions of
+     * instance types</a> for more information.
      * </p>
      * 
      * @param instanceType
      *        The instance type used to run hyperparameter optimization tuning jobs. See <a
-     *        href="https://docs.aws.amazon.com/notebooks-available-instance-types.html"> descriptions of instance
-     *        types</a> for more information.
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebooks-available-instance-types.html">
+     *        descriptions of instance types</a> for more information.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TrainingInstanceType
      */

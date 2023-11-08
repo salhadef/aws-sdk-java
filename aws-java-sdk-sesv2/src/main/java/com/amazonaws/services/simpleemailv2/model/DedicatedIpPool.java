@@ -41,12 +41,12 @@ public class DedicatedIpPool implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * <code>STANDARD</code> – A dedicated IP pool where the customer can control which IPs are part of the pool.
+     * <code>STANDARD</code> – A dedicated IP pool where you can control which IPs are part of the pool.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MANAGED</code> – A dedicated IP pool where the reputation and number of IPs is automatically managed by
+     * <code>MANAGED</code> – A dedicated IP pool where the reputation and number of IPs are automatically managed by
      * Amazon SES.
      * </p>
      * </li>
@@ -101,12 +101,12 @@ public class DedicatedIpPool implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * <code>STANDARD</code> – A dedicated IP pool where the customer can control which IPs are part of the pool.
+     * <code>STANDARD</code> – A dedicated IP pool where you can control which IPs are part of the pool.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MANAGED</code> – A dedicated IP pool where the reputation and number of IPs is automatically managed by
+     * <code>MANAGED</code> – A dedicated IP pool where the reputation and number of IPs are automatically managed by
      * Amazon SES.
      * </p>
      * </li>
@@ -117,13 +117,13 @@ public class DedicatedIpPool implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>STANDARD</code> – A dedicated IP pool where the customer can control which IPs are part of the pool.
+     *        <code>STANDARD</code> – A dedicated IP pool where you can control which IPs are part of the pool.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MANAGED</code> – A dedicated IP pool where the reputation and number of IPs is automatically managed
-     *        by Amazon SES.
+     *        <code>MANAGED</code> – A dedicated IP pool where the reputation and number of IPs are automatically
+     *        managed by Amazon SES.
      *        </p>
      *        </li>
      * @see ScalingMode
@@ -140,12 +140,12 @@ public class DedicatedIpPool implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * <code>STANDARD</code> – A dedicated IP pool where the customer can control which IPs are part of the pool.
+     * <code>STANDARD</code> – A dedicated IP pool where you can control which IPs are part of the pool.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MANAGED</code> – A dedicated IP pool where the reputation and number of IPs is automatically managed by
+     * <code>MANAGED</code> – A dedicated IP pool where the reputation and number of IPs are automatically managed by
      * Amazon SES.
      * </p>
      * </li>
@@ -155,13 +155,12 @@ public class DedicatedIpPool implements Serializable, Cloneable, StructuredPojo 
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>STANDARD</code> – A dedicated IP pool where the customer can control which IPs are part of the
-     *         pool.
+     *         <code>STANDARD</code> – A dedicated IP pool where you can control which IPs are part of the pool.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>MANAGED</code> – A dedicated IP pool where the reputation and number of IPs is automatically
+     *         <code>MANAGED</code> – A dedicated IP pool where the reputation and number of IPs are automatically
      *         managed by Amazon SES.
      *         </p>
      *         </li>
@@ -179,12 +178,12 @@ public class DedicatedIpPool implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * <code>STANDARD</code> – A dedicated IP pool where the customer can control which IPs are part of the pool.
+     * <code>STANDARD</code> – A dedicated IP pool where you can control which IPs are part of the pool.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MANAGED</code> – A dedicated IP pool where the reputation and number of IPs is automatically managed by
+     * <code>MANAGED</code> – A dedicated IP pool where the reputation and number of IPs are automatically managed by
      * Amazon SES.
      * </p>
      * </li>
@@ -195,13 +194,13 @@ public class DedicatedIpPool implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>STANDARD</code> – A dedicated IP pool where the customer can control which IPs are part of the pool.
+     *        <code>STANDARD</code> – A dedicated IP pool where you can control which IPs are part of the pool.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MANAGED</code> – A dedicated IP pool where the reputation and number of IPs is automatically managed
-     *        by Amazon SES.
+     *        <code>MANAGED</code> – A dedicated IP pool where the reputation and number of IPs are automatically
+     *        managed by Amazon SES.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -220,12 +219,12 @@ public class DedicatedIpPool implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * <code>STANDARD</code> – A dedicated IP pool where the customer can control which IPs are part of the pool.
+     * <code>STANDARD</code> – A dedicated IP pool where you can control which IPs are part of the pool.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MANAGED</code> – A dedicated IP pool where the reputation and number of IPs is automatically managed by
+     * <code>MANAGED</code> – A dedicated IP pool where the reputation and number of IPs are automatically managed by
      * Amazon SES.
      * </p>
      * </li>
@@ -236,13 +235,13 @@ public class DedicatedIpPool implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>STANDARD</code> – A dedicated IP pool where the customer can control which IPs are part of the pool.
+     *        <code>STANDARD</code> – A dedicated IP pool where you can control which IPs are part of the pool.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MANAGED</code> – A dedicated IP pool where the reputation and number of IPs is automatically managed
-     *        by Amazon SES.
+     *        <code>MANAGED</code> – A dedicated IP pool where the reputation and number of IPs are automatically
+     *        managed by Amazon SES.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

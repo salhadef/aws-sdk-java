@@ -28,8 +28,8 @@ import com.amazonaws.services.omics.waiters.AmazonOmicsWaiters;
  * </p>
  * <p>
  * <p>
- * This is the <i>Amazon Omics API Reference</i>. For an introduction to the service, see <a
- * href="https://docs.aws.amazon.com/omics/latest/dev/">What is Amazon Omics?</a> in the <i>Amazon Omics Developer
+ * This is the <i>AWS HealthOmics API Reference</i>. For an introduction to the service, see <a
+ * href="https://docs.aws.amazon.com/omics/latest/dev/">What is AWS HealthOmics?</a> in the <i>AWS HealthOmics User
  * Guide</i>.
  * </p>
  */
@@ -43,6 +43,62 @@ public interface AmazonOmics {
      * @see RegionUtils#getRegionsForService(String)
      */
     String ENDPOINT_PREFIX = "omics";
+
+    /**
+     * <p>
+     * Stops a multipart upload.
+     * </p>
+     * 
+     * @param abortMultipartReadSetUploadRequest
+     * @return Result of the AbortMultipartReadSetUpload operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error occurred. Try the request again.
+     * @throws NotSupportedOperationException
+     *         The operation is not supported by Amazon Omics, or the API does not exist.
+     * @throws ServiceQuotaExceededException
+     *         The request exceeds a service quota.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ResourceNotFoundException
+     *         The target resource was not found in the current Region.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws RequestTimeoutException
+     *         The request timed out.
+     * @sample AmazonOmics.AbortMultipartReadSetUpload
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/AbortMultipartReadSetUpload"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AbortMultipartReadSetUploadResult abortMultipartReadSetUpload(AbortMultipartReadSetUploadRequest abortMultipartReadSetUploadRequest);
+
+    /**
+     * <p>
+     * Accepts a share for an analytics store.
+     * </p>
+     * 
+     * @param acceptShareRequest
+     * @return Result of the AcceptShare operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error occurred. Try the request again.
+     * @throws ServiceQuotaExceededException
+     *         The request exceeds a service quota.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ConflictException
+     *         The request cannot be applied to the target resource in its current state.
+     * @throws ResourceNotFoundException
+     *         The target resource was not found in the current Region.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AmazonOmics.AcceptShare
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/AcceptShare" target="_top">AWS API
+     *      Documentation</a>
+     */
+    AcceptShareResult acceptShare(AcceptShareRequest acceptShareRequest);
 
     /**
      * <p>
@@ -146,6 +202,35 @@ public interface AmazonOmics {
 
     /**
      * <p>
+     * Concludes a multipart upload once you have uploaded all the components.
+     * </p>
+     * 
+     * @param completeMultipartReadSetUploadRequest
+     * @return Result of the CompleteMultipartReadSetUpload operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error occurred. Try the request again.
+     * @throws NotSupportedOperationException
+     *         The operation is not supported by Amazon Omics, or the API does not exist.
+     * @throws ServiceQuotaExceededException
+     *         The request exceeds a service quota.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ResourceNotFoundException
+     *         The target resource was not found in the current Region.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws RequestTimeoutException
+     *         The request timed out.
+     * @sample AmazonOmics.CompleteMultipartReadSetUpload
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CompleteMultipartReadSetUpload"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CompleteMultipartReadSetUploadResult completeMultipartReadSetUpload(CompleteMultipartReadSetUploadRequest completeMultipartReadSetUploadRequest);
+
+    /**
+     * <p>
      * Creates an annotation store.
      * </p>
      * 
@@ -170,6 +255,62 @@ public interface AmazonOmics {
      *      API Documentation</a>
      */
     CreateAnnotationStoreResult createAnnotationStore(CreateAnnotationStoreRequest createAnnotationStoreRequest);
+
+    /**
+     * <p>
+     * Creates a new version of an annotation store.
+     * </p>
+     * 
+     * @param createAnnotationStoreVersionRequest
+     * @return Result of the CreateAnnotationStoreVersion operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error occurred. Try the request again.
+     * @throws ServiceQuotaExceededException
+     *         The request exceeds a service quota.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ConflictException
+     *         The request cannot be applied to the target resource in its current state.
+     * @throws ResourceNotFoundException
+     *         The target resource was not found in the current Region.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AmazonOmics.CreateAnnotationStoreVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateAnnotationStoreVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateAnnotationStoreVersionResult createAnnotationStoreVersion(CreateAnnotationStoreVersionRequest createAnnotationStoreVersionRequest);
+
+    /**
+     * <p>
+     * Begins a multipart read set upload.
+     * </p>
+     * 
+     * @param createMultipartReadSetUploadRequest
+     * @return Result of the CreateMultipartReadSetUpload operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error occurred. Try the request again.
+     * @throws NotSupportedOperationException
+     *         The operation is not supported by Amazon Omics, or the API does not exist.
+     * @throws ServiceQuotaExceededException
+     *         The request exceeds a service quota.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ResourceNotFoundException
+     *         The target resource was not found in the current Region.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws RequestTimeoutException
+     *         The request timed out.
+     * @sample AmazonOmics.CreateMultipartReadSetUpload
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateMultipartReadSetUpload"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateMultipartReadSetUploadResult createMultipartReadSetUpload(CreateMultipartReadSetUploadRequest createMultipartReadSetUploadRequest);
 
     /**
      * <p>
@@ -252,6 +393,34 @@ public interface AmazonOmics {
 
     /**
      * <p>
+     * Creates a share offer that can be accepted outside the account by a subscriber. The share is created by the owner
+     * and accepted by the principal subscriber.
+     * </p>
+     * 
+     * @param createShareRequest
+     * @return Result of the CreateShare operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error occurred. Try the request again.
+     * @throws ServiceQuotaExceededException
+     *         The request exceeds a service quota.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ConflictException
+     *         The request cannot be applied to the target resource in its current state.
+     * @throws ResourceNotFoundException
+     *         The target resource was not found in the current Region.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AmazonOmics.CreateShare
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateShare" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateShareResult createShare(CreateShareRequest createShareRequest);
+
+    /**
+     * <p>
      * Creates a variant store.
      * </p>
      * 
@@ -330,6 +499,31 @@ public interface AmazonOmics {
      *      API Documentation</a>
      */
     DeleteAnnotationStoreResult deleteAnnotationStore(DeleteAnnotationStoreRequest deleteAnnotationStoreRequest);
+
+    /**
+     * <p>
+     * Deletes one or multiple versions of an annotation store.
+     * </p>
+     * 
+     * @param deleteAnnotationStoreVersionsRequest
+     * @return Result of the DeleteAnnotationStoreVersions operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error occurred. Try the request again.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ConflictException
+     *         The request cannot be applied to the target resource in its current state.
+     * @throws ResourceNotFoundException
+     *         The target resource was not found in the current Region.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AmazonOmics.DeleteAnnotationStoreVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteAnnotationStoreVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteAnnotationStoreVersionsResult deleteAnnotationStoreVersions(DeleteAnnotationStoreVersionsRequest deleteAnnotationStoreVersionsRequest);
 
     /**
      * <p>
@@ -472,6 +666,33 @@ public interface AmazonOmics {
 
     /**
      * <p>
+     * Deletes a share of an analytics store.
+     * </p>
+     * 
+     * @param deleteShareRequest
+     * @return Result of the DeleteShare operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error occurred. Try the request again.
+     * @throws ServiceQuotaExceededException
+     *         The request exceeds a service quota.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ConflictException
+     *         The request cannot be applied to the target resource in its current state.
+     * @throws ResourceNotFoundException
+     *         The target resource was not found in the current Region.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AmazonOmics.DeleteShare
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteShare" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteShareResult deleteShare(DeleteShareRequest deleteShareRequest);
+
+    /**
+     * <p>
      * Deletes a variant store.
      * </p>
      * 
@@ -569,6 +790,29 @@ public interface AmazonOmics {
      *      Documentation</a>
      */
     GetAnnotationStoreResult getAnnotationStore(GetAnnotationStoreRequest getAnnotationStoreRequest);
+
+    /**
+     * <p>
+     * Retrieves the metadata for an annotation store version.
+     * </p>
+     * 
+     * @param getAnnotationStoreVersionRequest
+     * @return Result of the GetAnnotationStoreVersion operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error occurred. Try the request again.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ResourceNotFoundException
+     *         The target resource was not found in the current Region.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AmazonOmics.GetAnnotationStoreVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetAnnotationStoreVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetAnnotationStoreVersionResult getAnnotationStoreVersion(GetAnnotationStoreVersionRequest getAnnotationStoreVersionRequest);
 
     /**
      * <p>
@@ -915,6 +1159,33 @@ public interface AmazonOmics {
 
     /**
      * <p>
+     * Retrieves the metadata for a share.
+     * </p>
+     * 
+     * @param getShareRequest
+     * @return Result of the GetShare operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error occurred. Try the request again.
+     * @throws ServiceQuotaExceededException
+     *         The request exceeds a service quota.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ConflictException
+     *         The request cannot be applied to the target resource in its current state.
+     * @throws ResourceNotFoundException
+     *         The target resource was not found in the current Region.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AmazonOmics.GetShare
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetShare" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetShareResult getShare(GetShareRequest getShareRequest);
+
+    /**
+     * <p>
      * Gets information about a variant import job.
      * </p>
      * 
@@ -1013,6 +1284,29 @@ public interface AmazonOmics {
 
     /**
      * <p>
+     * Lists the versions of an annotation store.
+     * </p>
+     * 
+     * @param listAnnotationStoreVersionsRequest
+     * @return Result of the ListAnnotationStoreVersions operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error occurred. Try the request again.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ResourceNotFoundException
+     *         The target resource was not found in the current Region.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AmazonOmics.ListAnnotationStoreVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListAnnotationStoreVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListAnnotationStoreVersionsResult listAnnotationStoreVersions(ListAnnotationStoreVersionsRequest listAnnotationStoreVersionsRequest);
+
+    /**
+     * <p>
      * Retrieves a list of annotation stores.
      * </p>
      * 
@@ -1033,6 +1327,35 @@ public interface AmazonOmics {
      *      Documentation</a>
      */
     ListAnnotationStoresResult listAnnotationStores(ListAnnotationStoresRequest listAnnotationStoresRequest);
+
+    /**
+     * <p>
+     * Lists all multipart read set uploads and their statuses.
+     * </p>
+     * 
+     * @param listMultipartReadSetUploadsRequest
+     * @return Result of the ListMultipartReadSetUploads operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error occurred. Try the request again.
+     * @throws NotSupportedOperationException
+     *         The operation is not supported by Amazon Omics, or the API does not exist.
+     * @throws ServiceQuotaExceededException
+     *         The request exceeds a service quota.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ResourceNotFoundException
+     *         The target resource was not found in the current Region.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws RequestTimeoutException
+     *         The request timed out.
+     * @sample AmazonOmics.ListMultipartReadSetUploads
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListMultipartReadSetUploads"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListMultipartReadSetUploadsResult listMultipartReadSetUploads(ListMultipartReadSetUploadsRequest listMultipartReadSetUploadsRequest);
 
     /**
      * <p>
@@ -1108,6 +1431,35 @@ public interface AmazonOmics {
      *      API Documentation</a>
      */
     ListReadSetImportJobsResult listReadSetImportJobs(ListReadSetImportJobsRequest listReadSetImportJobsRequest);
+
+    /**
+     * <p>
+     * This operation will list all parts in a requested multipart upload for a sequence store.
+     * </p>
+     * 
+     * @param listReadSetUploadPartsRequest
+     * @return Result of the ListReadSetUploadParts operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error occurred. Try the request again.
+     * @throws NotSupportedOperationException
+     *         The operation is not supported by Amazon Omics, or the API does not exist.
+     * @throws ServiceQuotaExceededException
+     *         The request exceeds a service quota.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ResourceNotFoundException
+     *         The target resource was not found in the current Region.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws RequestTimeoutException
+     *         The request timed out.
+     * @sample AmazonOmics.ListReadSetUploadParts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListReadSetUploadParts" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListReadSetUploadPartsResult listReadSetUploadParts(ListReadSetUploadPartsRequest listReadSetUploadPartsRequest);
 
     /**
      * <p>
@@ -1316,6 +1668,33 @@ public interface AmazonOmics {
      *      Documentation</a>
      */
     ListSequenceStoresResult listSequenceStores(ListSequenceStoresRequest listSequenceStoresRequest);
+
+    /**
+     * <p>
+     * Lists all shares associated with an account.
+     * </p>
+     * 
+     * @param listSharesRequest
+     * @return Result of the ListShares operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error occurred. Try the request again.
+     * @throws ServiceQuotaExceededException
+     *         The request exceeds a service quota.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ConflictException
+     *         The request cannot be applied to the target resource in its current state.
+     * @throws ResourceNotFoundException
+     *         The target resource was not found in the current Region.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AmazonOmics.ListShares
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListShares" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListSharesResult listShares(ListSharesRequest listSharesRequest);
 
     /**
      * <p>
@@ -1556,7 +1935,13 @@ public interface AmazonOmics {
 
     /**
      * <p>
-     * Starts a run.
+     * Starts a workflow run. To duplicate a run, specify the run's ID and a role ARN. The remaining parameters are
+     * copied from the previous run.
+     * </p>
+     * <p>
+     * The total number of runs in your account is subject to a quota per Region. To avoid needing to delete runs
+     * manually, you can set the retention mode to <code>REMOVE</code>. Runs with this setting are deleted automatically
+     * when the run quoata is exceeded.
      * </p>
      * 
      * @param startRunRequest
@@ -1691,6 +2076,29 @@ public interface AmazonOmics {
 
     /**
      * <p>
+     * Updates the description of an annotation store version.
+     * </p>
+     * 
+     * @param updateAnnotationStoreVersionRequest
+     * @return Result of the UpdateAnnotationStoreVersion operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error occurred. Try the request again.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ResourceNotFoundException
+     *         The target resource was not found in the current Region.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AmazonOmics.UpdateAnnotationStoreVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateAnnotationStoreVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateAnnotationStoreVersionResult updateAnnotationStoreVersion(UpdateAnnotationStoreVersionRequest updateAnnotationStoreVersionRequest);
+
+    /**
+     * <p>
      * Updates a run group.
      * </p>
      * 
@@ -1769,6 +2177,36 @@ public interface AmazonOmics {
      *      Documentation</a>
      */
     UpdateWorkflowResult updateWorkflow(UpdateWorkflowRequest updateWorkflowRequest);
+
+    /**
+     * <p>
+     * This operation uploads a specific part of a read set. If you upload a new part using a previously used part
+     * number, the previously uploaded part will be overwritten.
+     * </p>
+     * 
+     * @param uploadReadSetPartRequest
+     * @return Result of the UploadReadSetPart operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error occurred. Try the request again.
+     * @throws NotSupportedOperationException
+     *         The operation is not supported by Amazon Omics, or the API does not exist.
+     * @throws ServiceQuotaExceededException
+     *         The request exceeds a service quota.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ResourceNotFoundException
+     *         The target resource was not found in the current Region.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws RequestTimeoutException
+     *         The request timed out.
+     * @sample AmazonOmics.UploadReadSetPart
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UploadReadSetPart" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UploadReadSetPartResult uploadReadSetPart(UploadReadSetPartRequest uploadReadSetPartRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

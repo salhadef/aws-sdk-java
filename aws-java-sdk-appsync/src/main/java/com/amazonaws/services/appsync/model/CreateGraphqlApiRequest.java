@@ -80,6 +80,38 @@ public class CreateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private LambdaAuthorizerConfig lambdaAuthorizerConfig;
+    /**
+     * <p>
+     * Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no value
+     * is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be changed once the
+     * API has been created.
+     * </p>
+     */
+    private String visibility;
+    /**
+     * <p>
+     * The value that indicates whether the GraphQL API is a standard API (<code>GRAPHQL</code>) or merged API (
+     * <code>MERGED</code>).
+     * </p>
+     */
+    private String apiType;
+    /**
+     * <p>
+     * The Identity and Access Management service role ARN for a merged API. The AppSync service assumes this role on
+     * behalf of the Merged API to validate access to source APIs at runtime and to prompt the <code>AUTO_MERGE</code>
+     * to update the merged API endpoint with the source API changes automatically.
+     * </p>
+     */
+    private String mergedApiExecutionRoleArn;
+    /**
+     * <p>
+     * The owner contact information for an API resource.
+     * </p>
+     * <p>
+     * This field accepts any string input with a length of 0 - 256 characters.
+     * </p>
+     */
+    private String ownerContact;
 
     /**
      * <p>
@@ -540,6 +572,255 @@ public class CreateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no value
+     * is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be changed once the
+     * API has been created.
+     * </p>
+     * 
+     * @param visibility
+     *        Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no
+     *        value is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be
+     *        changed once the API has been created.
+     * @see GraphQLApiVisibility
+     */
+
+    public void setVisibility(String visibility) {
+        this.visibility = visibility;
+    }
+
+    /**
+     * <p>
+     * Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no value
+     * is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be changed once the
+     * API has been created.
+     * </p>
+     * 
+     * @return Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If
+     *         no value is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be
+     *         changed once the API has been created.
+     * @see GraphQLApiVisibility
+     */
+
+    public String getVisibility() {
+        return this.visibility;
+    }
+
+    /**
+     * <p>
+     * Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no value
+     * is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be changed once the
+     * API has been created.
+     * </p>
+     * 
+     * @param visibility
+     *        Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no
+     *        value is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be
+     *        changed once the API has been created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see GraphQLApiVisibility
+     */
+
+    public CreateGraphqlApiRequest withVisibility(String visibility) {
+        setVisibility(visibility);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no value
+     * is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be changed once the
+     * API has been created.
+     * </p>
+     * 
+     * @param visibility
+     *        Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no
+     *        value is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be
+     *        changed once the API has been created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see GraphQLApiVisibility
+     */
+
+    public CreateGraphqlApiRequest withVisibility(GraphQLApiVisibility visibility) {
+        this.visibility = visibility.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The value that indicates whether the GraphQL API is a standard API (<code>GRAPHQL</code>) or merged API (
+     * <code>MERGED</code>).
+     * </p>
+     * 
+     * @param apiType
+     *        The value that indicates whether the GraphQL API is a standard API (<code>GRAPHQL</code>) or merged API (
+     *        <code>MERGED</code>).
+     * @see GraphQLApiType
+     */
+
+    public void setApiType(String apiType) {
+        this.apiType = apiType;
+    }
+
+    /**
+     * <p>
+     * The value that indicates whether the GraphQL API is a standard API (<code>GRAPHQL</code>) or merged API (
+     * <code>MERGED</code>).
+     * </p>
+     * 
+     * @return The value that indicates whether the GraphQL API is a standard API (<code>GRAPHQL</code>) or merged API (
+     *         <code>MERGED</code>).
+     * @see GraphQLApiType
+     */
+
+    public String getApiType() {
+        return this.apiType;
+    }
+
+    /**
+     * <p>
+     * The value that indicates whether the GraphQL API is a standard API (<code>GRAPHQL</code>) or merged API (
+     * <code>MERGED</code>).
+     * </p>
+     * 
+     * @param apiType
+     *        The value that indicates whether the GraphQL API is a standard API (<code>GRAPHQL</code>) or merged API (
+     *        <code>MERGED</code>).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see GraphQLApiType
+     */
+
+    public CreateGraphqlApiRequest withApiType(String apiType) {
+        setApiType(apiType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The value that indicates whether the GraphQL API is a standard API (<code>GRAPHQL</code>) or merged API (
+     * <code>MERGED</code>).
+     * </p>
+     * 
+     * @param apiType
+     *        The value that indicates whether the GraphQL API is a standard API (<code>GRAPHQL</code>) or merged API (
+     *        <code>MERGED</code>).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see GraphQLApiType
+     */
+
+    public CreateGraphqlApiRequest withApiType(GraphQLApiType apiType) {
+        this.apiType = apiType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Identity and Access Management service role ARN for a merged API. The AppSync service assumes this role on
+     * behalf of the Merged API to validate access to source APIs at runtime and to prompt the <code>AUTO_MERGE</code>
+     * to update the merged API endpoint with the source API changes automatically.
+     * </p>
+     * 
+     * @param mergedApiExecutionRoleArn
+     *        The Identity and Access Management service role ARN for a merged API. The AppSync service assumes this
+     *        role on behalf of the Merged API to validate access to source APIs at runtime and to prompt the
+     *        <code>AUTO_MERGE</code> to update the merged API endpoint with the source API changes automatically.
+     */
+
+    public void setMergedApiExecutionRoleArn(String mergedApiExecutionRoleArn) {
+        this.mergedApiExecutionRoleArn = mergedApiExecutionRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Identity and Access Management service role ARN for a merged API. The AppSync service assumes this role on
+     * behalf of the Merged API to validate access to source APIs at runtime and to prompt the <code>AUTO_MERGE</code>
+     * to update the merged API endpoint with the source API changes automatically.
+     * </p>
+     * 
+     * @return The Identity and Access Management service role ARN for a merged API. The AppSync service assumes this
+     *         role on behalf of the Merged API to validate access to source APIs at runtime and to prompt the
+     *         <code>AUTO_MERGE</code> to update the merged API endpoint with the source API changes automatically.
+     */
+
+    public String getMergedApiExecutionRoleArn() {
+        return this.mergedApiExecutionRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Identity and Access Management service role ARN for a merged API. The AppSync service assumes this role on
+     * behalf of the Merged API to validate access to source APIs at runtime and to prompt the <code>AUTO_MERGE</code>
+     * to update the merged API endpoint with the source API changes automatically.
+     * </p>
+     * 
+     * @param mergedApiExecutionRoleArn
+     *        The Identity and Access Management service role ARN for a merged API. The AppSync service assumes this
+     *        role on behalf of the Merged API to validate access to source APIs at runtime and to prompt the
+     *        <code>AUTO_MERGE</code> to update the merged API endpoint with the source API changes automatically.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateGraphqlApiRequest withMergedApiExecutionRoleArn(String mergedApiExecutionRoleArn) {
+        setMergedApiExecutionRoleArn(mergedApiExecutionRoleArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The owner contact information for an API resource.
+     * </p>
+     * <p>
+     * This field accepts any string input with a length of 0 - 256 characters.
+     * </p>
+     * 
+     * @param ownerContact
+     *        The owner contact information for an API resource.</p>
+     *        <p>
+     *        This field accepts any string input with a length of 0 - 256 characters.
+     */
+
+    public void setOwnerContact(String ownerContact) {
+        this.ownerContact = ownerContact;
+    }
+
+    /**
+     * <p>
+     * The owner contact information for an API resource.
+     * </p>
+     * <p>
+     * This field accepts any string input with a length of 0 - 256 characters.
+     * </p>
+     * 
+     * @return The owner contact information for an API resource.</p>
+     *         <p>
+     *         This field accepts any string input with a length of 0 - 256 characters.
+     */
+
+    public String getOwnerContact() {
+        return this.ownerContact;
+    }
+
+    /**
+     * <p>
+     * The owner contact information for an API resource.
+     * </p>
+     * <p>
+     * This field accepts any string input with a length of 0 - 256 characters.
+     * </p>
+     * 
+     * @param ownerContact
+     *        The owner contact information for an API resource.</p>
+     *        <p>
+     *        This field accepts any string input with a length of 0 - 256 characters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateGraphqlApiRequest withOwnerContact(String ownerContact) {
+        setOwnerContact(ownerContact);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -568,7 +849,15 @@ public class CreateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
         if (getXrayEnabled() != null)
             sb.append("XrayEnabled: ").append(getXrayEnabled()).append(",");
         if (getLambdaAuthorizerConfig() != null)
-            sb.append("LambdaAuthorizerConfig: ").append(getLambdaAuthorizerConfig());
+            sb.append("LambdaAuthorizerConfig: ").append(getLambdaAuthorizerConfig()).append(",");
+        if (getVisibility() != null)
+            sb.append("Visibility: ").append(getVisibility()).append(",");
+        if (getApiType() != null)
+            sb.append("ApiType: ").append(getApiType()).append(",");
+        if (getMergedApiExecutionRoleArn() != null)
+            sb.append("MergedApiExecutionRoleArn: ").append(getMergedApiExecutionRoleArn()).append(",");
+        if (getOwnerContact() != null)
+            sb.append("OwnerContact: ").append(getOwnerContact());
         sb.append("}");
         return sb.toString();
     }
@@ -620,6 +909,22 @@ public class CreateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getLambdaAuthorizerConfig() != null && other.getLambdaAuthorizerConfig().equals(this.getLambdaAuthorizerConfig()) == false)
             return false;
+        if (other.getVisibility() == null ^ this.getVisibility() == null)
+            return false;
+        if (other.getVisibility() != null && other.getVisibility().equals(this.getVisibility()) == false)
+            return false;
+        if (other.getApiType() == null ^ this.getApiType() == null)
+            return false;
+        if (other.getApiType() != null && other.getApiType().equals(this.getApiType()) == false)
+            return false;
+        if (other.getMergedApiExecutionRoleArn() == null ^ this.getMergedApiExecutionRoleArn() == null)
+            return false;
+        if (other.getMergedApiExecutionRoleArn() != null && other.getMergedApiExecutionRoleArn().equals(this.getMergedApiExecutionRoleArn()) == false)
+            return false;
+        if (other.getOwnerContact() == null ^ this.getOwnerContact() == null)
+            return false;
+        if (other.getOwnerContact() != null && other.getOwnerContact().equals(this.getOwnerContact()) == false)
+            return false;
         return true;
     }
 
@@ -637,6 +942,10 @@ public class CreateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getAdditionalAuthenticationProviders() == null) ? 0 : getAdditionalAuthenticationProviders().hashCode());
         hashCode = prime * hashCode + ((getXrayEnabled() == null) ? 0 : getXrayEnabled().hashCode());
         hashCode = prime * hashCode + ((getLambdaAuthorizerConfig() == null) ? 0 : getLambdaAuthorizerConfig().hashCode());
+        hashCode = prime * hashCode + ((getVisibility() == null) ? 0 : getVisibility().hashCode());
+        hashCode = prime * hashCode + ((getApiType() == null) ? 0 : getApiType().hashCode());
+        hashCode = prime * hashCode + ((getMergedApiExecutionRoleArn() == null) ? 0 : getMergedApiExecutionRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getOwnerContact() == null) ? 0 : getOwnerContact().hashCode());
         return hashCode;
     }
 

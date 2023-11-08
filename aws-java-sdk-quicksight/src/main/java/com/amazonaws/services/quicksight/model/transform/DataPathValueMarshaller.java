@@ -31,6 +31,8 @@ public class DataPathValueMarshaller {
             .marshallLocationName("FieldId").build();
     private static final MarshallingInfo<String> FIELDVALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FieldValue").build();
+    private static final MarshallingInfo<StructuredPojo> DATAPATHTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataPathType").build();
 
     private static final DataPathValueMarshaller instance = new DataPathValueMarshaller();
 
@@ -50,6 +52,7 @@ public class DataPathValueMarshaller {
         try {
             protocolMarshaller.marshall(dataPathValue.getFieldId(), FIELDID_BINDING);
             protocolMarshaller.marshall(dataPathValue.getFieldValue(), FIELDVALUE_BINDING);
+            protocolMarshaller.marshall(dataPathValue.getDataPathType(), DATAPATHTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

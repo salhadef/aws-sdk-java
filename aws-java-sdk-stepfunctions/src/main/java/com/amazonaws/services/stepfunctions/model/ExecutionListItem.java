@@ -36,7 +36,7 @@ public class ExecutionListItem implements Serializable, Cloneable, StructuredPoj
     private String executionArn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the executed state machine.
+     * The Amazon Resource Name (ARN) of the state machine that ran the execution.
      * </p>
      */
     private String stateMachineArn;
@@ -114,6 +114,29 @@ public class ExecutionListItem implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private Integer itemCount;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the state machine version associated with the execution.
+     * </p>
+     * <p>
+     * If the state machine execution was started with an unqualified ARN, it returns null.
+     * </p>
+     * <p>
+     * If the execution was started using a <code>stateMachineAliasArn</code>, both the
+     * <code>stateMachineAliasArn</code> and <code>stateMachineVersionArn</code> parameters contain the respective
+     * values.
+     * </p>
+     */
+    private String stateMachineVersionArn;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the state machine alias used to start an execution.
+     * </p>
+     * <p>
+     * If the state machine execution was started with an unqualified ARN or a version ARN, it returns null.
+     * </p>
+     */
+    private String stateMachineAliasArn;
 
     /**
      * <p>
@@ -157,11 +180,11 @@ public class ExecutionListItem implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the executed state machine.
+     * The Amazon Resource Name (ARN) of the state machine that ran the execution.
      * </p>
      * 
      * @param stateMachineArn
-     *        The Amazon Resource Name (ARN) of the executed state machine.
+     *        The Amazon Resource Name (ARN) of the state machine that ran the execution.
      */
 
     public void setStateMachineArn(String stateMachineArn) {
@@ -170,10 +193,10 @@ public class ExecutionListItem implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the executed state machine.
+     * The Amazon Resource Name (ARN) of the state machine that ran the execution.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the executed state machine.
+     * @return The Amazon Resource Name (ARN) of the state machine that ran the execution.
      */
 
     public String getStateMachineArn() {
@@ -182,11 +205,11 @@ public class ExecutionListItem implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the executed state machine.
+     * The Amazon Resource Name (ARN) of the state machine that ran the execution.
      * </p>
      * 
      * @param stateMachineArn
-     *        The Amazon Resource Name (ARN) of the executed state machine.
+     *        The Amazon Resource Name (ARN) of the state machine that ran the execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -694,6 +717,146 @@ public class ExecutionListItem implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the state machine version associated with the execution.
+     * </p>
+     * <p>
+     * If the state machine execution was started with an unqualified ARN, it returns null.
+     * </p>
+     * <p>
+     * If the execution was started using a <code>stateMachineAliasArn</code>, both the
+     * <code>stateMachineAliasArn</code> and <code>stateMachineVersionArn</code> parameters contain the respective
+     * values.
+     * </p>
+     * 
+     * @param stateMachineVersionArn
+     *        The Amazon Resource Name (ARN) of the state machine version associated with the execution.</p>
+     *        <p>
+     *        If the state machine execution was started with an unqualified ARN, it returns null.
+     *        </p>
+     *        <p>
+     *        If the execution was started using a <code>stateMachineAliasArn</code>, both the
+     *        <code>stateMachineAliasArn</code> and <code>stateMachineVersionArn</code> parameters contain the
+     *        respective values.
+     */
+
+    public void setStateMachineVersionArn(String stateMachineVersionArn) {
+        this.stateMachineVersionArn = stateMachineVersionArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the state machine version associated with the execution.
+     * </p>
+     * <p>
+     * If the state machine execution was started with an unqualified ARN, it returns null.
+     * </p>
+     * <p>
+     * If the execution was started using a <code>stateMachineAliasArn</code>, both the
+     * <code>stateMachineAliasArn</code> and <code>stateMachineVersionArn</code> parameters contain the respective
+     * values.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the state machine version associated with the execution.</p>
+     *         <p>
+     *         If the state machine execution was started with an unqualified ARN, it returns null.
+     *         </p>
+     *         <p>
+     *         If the execution was started using a <code>stateMachineAliasArn</code>, both the
+     *         <code>stateMachineAliasArn</code> and <code>stateMachineVersionArn</code> parameters contain the
+     *         respective values.
+     */
+
+    public String getStateMachineVersionArn() {
+        return this.stateMachineVersionArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the state machine version associated with the execution.
+     * </p>
+     * <p>
+     * If the state machine execution was started with an unqualified ARN, it returns null.
+     * </p>
+     * <p>
+     * If the execution was started using a <code>stateMachineAliasArn</code>, both the
+     * <code>stateMachineAliasArn</code> and <code>stateMachineVersionArn</code> parameters contain the respective
+     * values.
+     * </p>
+     * 
+     * @param stateMachineVersionArn
+     *        The Amazon Resource Name (ARN) of the state machine version associated with the execution.</p>
+     *        <p>
+     *        If the state machine execution was started with an unqualified ARN, it returns null.
+     *        </p>
+     *        <p>
+     *        If the execution was started using a <code>stateMachineAliasArn</code>, both the
+     *        <code>stateMachineAliasArn</code> and <code>stateMachineVersionArn</code> parameters contain the
+     *        respective values.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExecutionListItem withStateMachineVersionArn(String stateMachineVersionArn) {
+        setStateMachineVersionArn(stateMachineVersionArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the state machine alias used to start an execution.
+     * </p>
+     * <p>
+     * If the state machine execution was started with an unqualified ARN or a version ARN, it returns null.
+     * </p>
+     * 
+     * @param stateMachineAliasArn
+     *        The Amazon Resource Name (ARN) of the state machine alias used to start an execution.</p>
+     *        <p>
+     *        If the state machine execution was started with an unqualified ARN or a version ARN, it returns null.
+     */
+
+    public void setStateMachineAliasArn(String stateMachineAliasArn) {
+        this.stateMachineAliasArn = stateMachineAliasArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the state machine alias used to start an execution.
+     * </p>
+     * <p>
+     * If the state machine execution was started with an unqualified ARN or a version ARN, it returns null.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the state machine alias used to start an execution.</p>
+     *         <p>
+     *         If the state machine execution was started with an unqualified ARN or a version ARN, it returns null.
+     */
+
+    public String getStateMachineAliasArn() {
+        return this.stateMachineAliasArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the state machine alias used to start an execution.
+     * </p>
+     * <p>
+     * If the state machine execution was started with an unqualified ARN or a version ARN, it returns null.
+     * </p>
+     * 
+     * @param stateMachineAliasArn
+     *        The Amazon Resource Name (ARN) of the state machine alias used to start an execution.</p>
+     *        <p>
+     *        If the state machine execution was started with an unqualified ARN or a version ARN, it returns null.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExecutionListItem withStateMachineAliasArn(String stateMachineAliasArn) {
+        setStateMachineAliasArn(stateMachineAliasArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -720,7 +883,11 @@ public class ExecutionListItem implements Serializable, Cloneable, StructuredPoj
         if (getMapRunArn() != null)
             sb.append("MapRunArn: ").append(getMapRunArn()).append(",");
         if (getItemCount() != null)
-            sb.append("ItemCount: ").append(getItemCount());
+            sb.append("ItemCount: ").append(getItemCount()).append(",");
+        if (getStateMachineVersionArn() != null)
+            sb.append("StateMachineVersionArn: ").append(getStateMachineVersionArn()).append(",");
+        if (getStateMachineAliasArn() != null)
+            sb.append("StateMachineAliasArn: ").append(getStateMachineAliasArn());
         sb.append("}");
         return sb.toString();
     }
@@ -767,6 +934,14 @@ public class ExecutionListItem implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getItemCount() != null && other.getItemCount().equals(this.getItemCount()) == false)
             return false;
+        if (other.getStateMachineVersionArn() == null ^ this.getStateMachineVersionArn() == null)
+            return false;
+        if (other.getStateMachineVersionArn() != null && other.getStateMachineVersionArn().equals(this.getStateMachineVersionArn()) == false)
+            return false;
+        if (other.getStateMachineAliasArn() == null ^ this.getStateMachineAliasArn() == null)
+            return false;
+        if (other.getStateMachineAliasArn() != null && other.getStateMachineAliasArn().equals(this.getStateMachineAliasArn()) == false)
+            return false;
         return true;
     }
 
@@ -783,6 +958,8 @@ public class ExecutionListItem implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getStopDate() == null) ? 0 : getStopDate().hashCode());
         hashCode = prime * hashCode + ((getMapRunArn() == null) ? 0 : getMapRunArn().hashCode());
         hashCode = prime * hashCode + ((getItemCount() == null) ? 0 : getItemCount().hashCode());
+        hashCode = prime * hashCode + ((getStateMachineVersionArn() == null) ? 0 : getStateMachineVersionArn().hashCode());
+        hashCode = prime * hashCode + ((getStateMachineAliasArn() == null) ? 0 : getStateMachineAliasArn().hashCode());
         return hashCode;
     }
 

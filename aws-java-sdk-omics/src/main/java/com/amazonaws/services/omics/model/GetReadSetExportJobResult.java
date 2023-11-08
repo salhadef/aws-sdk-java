@@ -25,40 +25,22 @@ public class GetReadSetExportJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * When the job completed.
-     * </p>
-     */
-    private java.util.Date completionTime;
-    /**
-     * <p>
-     * When the job was created.
-     * </p>
-     */
-    private java.util.Date creationTime;
-    /**
-     * <p>
-     * The job's destination in Amazon S3.
-     * </p>
-     */
-    private String destination;
-    /**
-     * <p>
      * The job's ID.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The job's read sets.
-     * </p>
-     */
-    private java.util.List<ExportReadSetDetail> readSets;
-    /**
-     * <p>
      * The job's sequence store ID.
      * </p>
      */
     private String sequenceStoreId;
+    /**
+     * <p>
+     * The job's destination in Amazon S3.
+     * </p>
+     */
+    private String destination;
     /**
      * <p>
      * The job's status.
@@ -71,126 +53,24 @@ public class GetReadSetExportJobResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      */
     private String statusMessage;
-
-    /**
-     * <p>
-     * When the job completed.
-     * </p>
-     * 
-     * @param completionTime
-     *        When the job completed.
-     */
-
-    public void setCompletionTime(java.util.Date completionTime) {
-        this.completionTime = completionTime;
-    }
-
-    /**
-     * <p>
-     * When the job completed.
-     * </p>
-     * 
-     * @return When the job completed.
-     */
-
-    public java.util.Date getCompletionTime() {
-        return this.completionTime;
-    }
-
-    /**
-     * <p>
-     * When the job completed.
-     * </p>
-     * 
-     * @param completionTime
-     *        When the job completed.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetReadSetExportJobResult withCompletionTime(java.util.Date completionTime) {
-        setCompletionTime(completionTime);
-        return this;
-    }
-
     /**
      * <p>
      * When the job was created.
      * </p>
-     * 
-     * @param creationTime
-     *        When the job was created.
      */
-
-    public void setCreationTime(java.util.Date creationTime) {
-        this.creationTime = creationTime;
-    }
-
+    private java.util.Date creationTime;
     /**
      * <p>
-     * When the job was created.
+     * When the job completed.
      * </p>
-     * 
-     * @return When the job was created.
      */
-
-    public java.util.Date getCreationTime() {
-        return this.creationTime;
-    }
-
+    private java.util.Date completionTime;
     /**
      * <p>
-     * When the job was created.
+     * The job's read sets.
      * </p>
-     * 
-     * @param creationTime
-     *        When the job was created.
-     * @return Returns a reference to this object so that method calls can be chained together.
      */
-
-    public GetReadSetExportJobResult withCreationTime(java.util.Date creationTime) {
-        setCreationTime(creationTime);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The job's destination in Amazon S3.
-     * </p>
-     * 
-     * @param destination
-     *        The job's destination in Amazon S3.
-     */
-
-    public void setDestination(String destination) {
-        this.destination = destination;
-    }
-
-    /**
-     * <p>
-     * The job's destination in Amazon S3.
-     * </p>
-     * 
-     * @return The job's destination in Amazon S3.
-     */
-
-    public String getDestination() {
-        return this.destination;
-    }
-
-    /**
-     * <p>
-     * The job's destination in Amazon S3.
-     * </p>
-     * 
-     * @param destination
-     *        The job's destination in Amazon S3.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetReadSetExportJobResult withDestination(String destination) {
-        setDestination(destination);
-        return this;
-    }
+    private java.util.List<ExportReadSetDetail> readSets;
 
     /**
      * <p>
@@ -234,76 +114,6 @@ public class GetReadSetExportJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The job's read sets.
-     * </p>
-     * 
-     * @return The job's read sets.
-     */
-
-    public java.util.List<ExportReadSetDetail> getReadSets() {
-        return readSets;
-    }
-
-    /**
-     * <p>
-     * The job's read sets.
-     * </p>
-     * 
-     * @param readSets
-     *        The job's read sets.
-     */
-
-    public void setReadSets(java.util.Collection<ExportReadSetDetail> readSets) {
-        if (readSets == null) {
-            this.readSets = null;
-            return;
-        }
-
-        this.readSets = new java.util.ArrayList<ExportReadSetDetail>(readSets);
-    }
-
-    /**
-     * <p>
-     * The job's read sets.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setReadSets(java.util.Collection)} or {@link #withReadSets(java.util.Collection)} if you want to override
-     * the existing values.
-     * </p>
-     * 
-     * @param readSets
-     *        The job's read sets.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetReadSetExportJobResult withReadSets(ExportReadSetDetail... readSets) {
-        if (this.readSets == null) {
-            setReadSets(new java.util.ArrayList<ExportReadSetDetail>(readSets.length));
-        }
-        for (ExportReadSetDetail ele : readSets) {
-            this.readSets.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * The job's read sets.
-     * </p>
-     * 
-     * @param readSets
-     *        The job's read sets.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetReadSetExportJobResult withReadSets(java.util.Collection<ExportReadSetDetail> readSets) {
-        setReadSets(readSets);
-        return this;
-    }
-
-    /**
-     * <p>
      * The job's sequence store ID.
      * </p>
      * 
@@ -339,6 +149,46 @@ public class GetReadSetExportJobResult extends com.amazonaws.AmazonWebServiceRes
 
     public GetReadSetExportJobResult withSequenceStoreId(String sequenceStoreId) {
         setSequenceStoreId(sequenceStoreId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The job's destination in Amazon S3.
+     * </p>
+     * 
+     * @param destination
+     *        The job's destination in Amazon S3.
+     */
+
+    public void setDestination(String destination) {
+        this.destination = destination;
+    }
+
+    /**
+     * <p>
+     * The job's destination in Amazon S3.
+     * </p>
+     * 
+     * @return The job's destination in Amazon S3.
+     */
+
+    public String getDestination() {
+        return this.destination;
+    }
+
+    /**
+     * <p>
+     * The job's destination in Amazon S3.
+     * </p>
+     * 
+     * @param destination
+     *        The job's destination in Amazon S3.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetReadSetExportJobResult withDestination(String destination) {
+        setDestination(destination);
         return this;
     }
 
@@ -442,6 +292,156 @@ public class GetReadSetExportJobResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * When the job was created.
+     * </p>
+     * 
+     * @param creationTime
+     *        When the job was created.
+     */
+
+    public void setCreationTime(java.util.Date creationTime) {
+        this.creationTime = creationTime;
+    }
+
+    /**
+     * <p>
+     * When the job was created.
+     * </p>
+     * 
+     * @return When the job was created.
+     */
+
+    public java.util.Date getCreationTime() {
+        return this.creationTime;
+    }
+
+    /**
+     * <p>
+     * When the job was created.
+     * </p>
+     * 
+     * @param creationTime
+     *        When the job was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetReadSetExportJobResult withCreationTime(java.util.Date creationTime) {
+        setCreationTime(creationTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When the job completed.
+     * </p>
+     * 
+     * @param completionTime
+     *        When the job completed.
+     */
+
+    public void setCompletionTime(java.util.Date completionTime) {
+        this.completionTime = completionTime;
+    }
+
+    /**
+     * <p>
+     * When the job completed.
+     * </p>
+     * 
+     * @return When the job completed.
+     */
+
+    public java.util.Date getCompletionTime() {
+        return this.completionTime;
+    }
+
+    /**
+     * <p>
+     * When the job completed.
+     * </p>
+     * 
+     * @param completionTime
+     *        When the job completed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetReadSetExportJobResult withCompletionTime(java.util.Date completionTime) {
+        setCompletionTime(completionTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The job's read sets.
+     * </p>
+     * 
+     * @return The job's read sets.
+     */
+
+    public java.util.List<ExportReadSetDetail> getReadSets() {
+        return readSets;
+    }
+
+    /**
+     * <p>
+     * The job's read sets.
+     * </p>
+     * 
+     * @param readSets
+     *        The job's read sets.
+     */
+
+    public void setReadSets(java.util.Collection<ExportReadSetDetail> readSets) {
+        if (readSets == null) {
+            this.readSets = null;
+            return;
+        }
+
+        this.readSets = new java.util.ArrayList<ExportReadSetDetail>(readSets);
+    }
+
+    /**
+     * <p>
+     * The job's read sets.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setReadSets(java.util.Collection)} or {@link #withReadSets(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param readSets
+     *        The job's read sets.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetReadSetExportJobResult withReadSets(ExportReadSetDetail... readSets) {
+        if (this.readSets == null) {
+            setReadSets(new java.util.ArrayList<ExportReadSetDetail>(readSets.length));
+        }
+        for (ExportReadSetDetail ele : readSets) {
+            this.readSets.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The job's read sets.
+     * </p>
+     * 
+     * @param readSets
+     *        The job's read sets.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetReadSetExportJobResult withReadSets(java.util.Collection<ExportReadSetDetail> readSets) {
+        setReadSets(readSets);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -453,22 +453,22 @@ public class GetReadSetExportJobResult extends com.amazonaws.AmazonWebServiceRes
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getCompletionTime() != null)
-            sb.append("CompletionTime: ").append(getCompletionTime()).append(",");
-        if (getCreationTime() != null)
-            sb.append("CreationTime: ").append(getCreationTime()).append(",");
-        if (getDestination() != null)
-            sb.append("Destination: ").append(getDestination()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
-        if (getReadSets() != null)
-            sb.append("ReadSets: ").append(getReadSets()).append(",");
         if (getSequenceStoreId() != null)
             sb.append("SequenceStoreId: ").append(getSequenceStoreId()).append(",");
+        if (getDestination() != null)
+            sb.append("Destination: ").append(getDestination()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusMessage() != null)
-            sb.append("StatusMessage: ").append(getStatusMessage());
+            sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
+        if (getCreationTime() != null)
+            sb.append("CreationTime: ").append(getCreationTime()).append(",");
+        if (getCompletionTime() != null)
+            sb.append("CompletionTime: ").append(getCompletionTime()).append(",");
+        if (getReadSets() != null)
+            sb.append("ReadSets: ").append(getReadSets());
         sb.append("}");
         return sb.toString();
     }
@@ -483,29 +483,17 @@ public class GetReadSetExportJobResult extends com.amazonaws.AmazonWebServiceRes
         if (obj instanceof GetReadSetExportJobResult == false)
             return false;
         GetReadSetExportJobResult other = (GetReadSetExportJobResult) obj;
-        if (other.getCompletionTime() == null ^ this.getCompletionTime() == null)
-            return false;
-        if (other.getCompletionTime() != null && other.getCompletionTime().equals(this.getCompletionTime()) == false)
-            return false;
-        if (other.getCreationTime() == null ^ this.getCreationTime() == null)
-            return false;
-        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
-            return false;
-        if (other.getDestination() == null ^ this.getDestination() == null)
-            return false;
-        if (other.getDestination() != null && other.getDestination().equals(this.getDestination()) == false)
-            return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
-        if (other.getReadSets() == null ^ this.getReadSets() == null)
-            return false;
-        if (other.getReadSets() != null && other.getReadSets().equals(this.getReadSets()) == false)
-            return false;
         if (other.getSequenceStoreId() == null ^ this.getSequenceStoreId() == null)
             return false;
         if (other.getSequenceStoreId() != null && other.getSequenceStoreId().equals(this.getSequenceStoreId()) == false)
+            return false;
+        if (other.getDestination() == null ^ this.getDestination() == null)
+            return false;
+        if (other.getDestination() != null && other.getDestination().equals(this.getDestination()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
@@ -515,6 +503,18 @@ public class GetReadSetExportJobResult extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getStatusMessage() != null && other.getStatusMessage().equals(this.getStatusMessage()) == false)
             return false;
+        if (other.getCreationTime() == null ^ this.getCreationTime() == null)
+            return false;
+        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
+            return false;
+        if (other.getCompletionTime() == null ^ this.getCompletionTime() == null)
+            return false;
+        if (other.getCompletionTime() != null && other.getCompletionTime().equals(this.getCompletionTime()) == false)
+            return false;
+        if (other.getReadSets() == null ^ this.getReadSets() == null)
+            return false;
+        if (other.getReadSets() != null && other.getReadSets().equals(this.getReadSets()) == false)
+            return false;
         return true;
     }
 
@@ -523,14 +523,14 @@ public class GetReadSetExportJobResult extends com.amazonaws.AmazonWebServiceRes
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getCompletionTime() == null) ? 0 : getCompletionTime().hashCode());
-        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
-        hashCode = prime * hashCode + ((getDestination() == null) ? 0 : getDestination().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
-        hashCode = prime * hashCode + ((getReadSets() == null) ? 0 : getReadSets().hashCode());
         hashCode = prime * hashCode + ((getSequenceStoreId() == null) ? 0 : getSequenceStoreId().hashCode());
+        hashCode = prime * hashCode + ((getDestination() == null) ? 0 : getDestination().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
+        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
+        hashCode = prime * hashCode + ((getCompletionTime() == null) ? 0 : getCompletionTime().hashCode());
+        hashCode = prime * hashCode + ((getReadSets() == null) ? 0 : getReadSets().hashCode());
         return hashCode;
     }
 

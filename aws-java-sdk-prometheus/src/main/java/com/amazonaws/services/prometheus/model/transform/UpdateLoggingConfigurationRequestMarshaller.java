@@ -29,13 +29,13 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UpdateLoggingConfigurationRequestMarshaller {
 
+    private static final MarshallingInfo<String> WORKSPACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("workspaceId").build();
+    private static final MarshallingInfo<String> LOGGROUPARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logGroupArn").build();
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
-    private static final MarshallingInfo<String> LOGGROUPARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logGroupArn").build();
-    private static final MarshallingInfo<String> WORKSPACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
-            .marshallLocationName("workspaceId").build();
 
     private static final UpdateLoggingConfigurationRequestMarshaller instance = new UpdateLoggingConfigurationRequestMarshaller();
 
@@ -53,9 +53,9 @@ public class UpdateLoggingConfigurationRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(updateLoggingConfigurationRequest.getClientToken(), CLIENTTOKEN_BINDING);
-            protocolMarshaller.marshall(updateLoggingConfigurationRequest.getLogGroupArn(), LOGGROUPARN_BINDING);
             protocolMarshaller.marshall(updateLoggingConfigurationRequest.getWorkspaceId(), WORKSPACEID_BINDING);
+            protocolMarshaller.marshall(updateLoggingConfigurationRequest.getLogGroupArn(), LOGGROUPARN_BINDING);
+            protocolMarshaller.marshall(updateLoggingConfigurationRequest.getClientToken(), CLIENTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

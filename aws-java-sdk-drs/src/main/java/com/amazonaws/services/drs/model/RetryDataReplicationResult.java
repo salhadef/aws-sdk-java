@@ -74,6 +74,12 @@ public class RetryDataReplicationResult extends com.amazonaws.AmazonWebServiceRe
     private SourceCloudProperties sourceCloudProperties;
     /**
      * <p>
+     * ID of the Source Network which is protecting this Source Server's network.
+     * </p>
+     */
+    private String sourceNetworkID;
+    /**
+     * <p>
      * The source properties of the Source Server.
      * </p>
      */
@@ -463,6 +469,46 @@ public class RetryDataReplicationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
+     * ID of the Source Network which is protecting this Source Server's network.
+     * </p>
+     * 
+     * @param sourceNetworkID
+     *        ID of the Source Network which is protecting this Source Server's network.
+     */
+
+    public void setSourceNetworkID(String sourceNetworkID) {
+        this.sourceNetworkID = sourceNetworkID;
+    }
+
+    /**
+     * <p>
+     * ID of the Source Network which is protecting this Source Server's network.
+     * </p>
+     * 
+     * @return ID of the Source Network which is protecting this Source Server's network.
+     */
+
+    public String getSourceNetworkID() {
+        return this.sourceNetworkID;
+    }
+
+    /**
+     * <p>
+     * ID of the Source Network which is protecting this Source Server's network.
+     * </p>
+     * 
+     * @param sourceNetworkID
+     *        ID of the Source Network which is protecting this Source Server's network.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RetryDataReplicationResult withSourceNetworkID(String sourceNetworkID) {
+        setSourceNetworkID(sourceNetworkID);
+        return this;
+    }
+
+    /**
+     * <p>
      * The source properties of the Source Server.
      * </p>
      * 
@@ -677,6 +723,8 @@ public class RetryDataReplicationResult extends com.amazonaws.AmazonWebServiceRe
             sb.append("ReversedDirectionSourceServerArn: ").append(getReversedDirectionSourceServerArn()).append(",");
         if (getSourceCloudProperties() != null)
             sb.append("SourceCloudProperties: ").append(getSourceCloudProperties()).append(",");
+        if (getSourceNetworkID() != null)
+            sb.append("SourceNetworkID: ").append(getSourceNetworkID()).append(",");
         if (getSourceProperties() != null)
             sb.append("SourceProperties: ").append(getSourceProperties()).append(",");
         if (getSourceServerID() != null)
@@ -732,6 +780,10 @@ public class RetryDataReplicationResult extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getSourceCloudProperties() != null && other.getSourceCloudProperties().equals(this.getSourceCloudProperties()) == false)
             return false;
+        if (other.getSourceNetworkID() == null ^ this.getSourceNetworkID() == null)
+            return false;
+        if (other.getSourceNetworkID() != null && other.getSourceNetworkID().equals(this.getSourceNetworkID()) == false)
+            return false;
         if (other.getSourceProperties() == null ^ this.getSourceProperties() == null)
             return false;
         if (other.getSourceProperties() != null && other.getSourceProperties().equals(this.getSourceProperties()) == false)
@@ -764,6 +816,7 @@ public class RetryDataReplicationResult extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getReplicationDirection() == null) ? 0 : getReplicationDirection().hashCode());
         hashCode = prime * hashCode + ((getReversedDirectionSourceServerArn() == null) ? 0 : getReversedDirectionSourceServerArn().hashCode());
         hashCode = prime * hashCode + ((getSourceCloudProperties() == null) ? 0 : getSourceCloudProperties().hashCode());
+        hashCode = prime * hashCode + ((getSourceNetworkID() == null) ? 0 : getSourceNetworkID().hashCode());
         hashCode = prime * hashCode + ((getSourceProperties() == null) ? 0 : getSourceProperties().hashCode());
         hashCode = prime * hashCode + ((getSourceServerID() == null) ? 0 : getSourceServerID().hashCode());
         hashCode = prime * hashCode + ((getStagingArea() == null) ? 0 : getStagingArea().hashCode());

@@ -29,7 +29,11 @@ public class GetBatchJobExecutionResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String applicationId;
-
+    /**
+     * <p>
+     * The unique identifier of this batch job.
+     * </p>
+     */
     private BatchJobIdentifier batchJobIdentifier;
     /**
      * <p>
@@ -67,7 +71,13 @@ public class GetBatchJobExecutionResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String jobUser;
-    /** <p/> */
+    /**
+     * <p>
+     * The batch job return code from either the Blu Age or Micro Focus runtime engines. For more information, see <a
+     * href="https://www.ibm.com/docs/en/was/8.5.5?topic=model-batch-return-codes">Batch return codes</a> in the <i>IBM
+     * WebSphere Application Server</i> documentation.
+     * </p>
+     */
     private String returnCode;
     /**
      * <p>
@@ -129,7 +139,12 @@ public class GetBatchJobExecutionResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The unique identifier of this batch job.
+     * </p>
+     * 
      * @param batchJobIdentifier
+     *        The unique identifier of this batch job.
      */
 
     public void setBatchJobIdentifier(BatchJobIdentifier batchJobIdentifier) {
@@ -137,7 +152,11 @@ public class GetBatchJobExecutionResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * @return
+     * <p>
+     * The unique identifier of this batch job.
+     * </p>
+     * 
+     * @return The unique identifier of this batch job.
      */
 
     public BatchJobIdentifier getBatchJobIdentifier() {
@@ -145,7 +164,12 @@ public class GetBatchJobExecutionResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The unique identifier of this batch job.
+     * </p>
+     * 
      * @param batchJobIdentifier
+     *        The unique identifier of this batch job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -414,9 +438,16 @@ public class GetBatchJobExecutionResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * <p/>
+     * <p>
+     * The batch job return code from either the Blu Age or Micro Focus runtime engines. For more information, see <a
+     * href="https://www.ibm.com/docs/en/was/8.5.5?topic=model-batch-return-codes">Batch return codes</a> in the <i>IBM
+     * WebSphere Application Server</i> documentation.
+     * </p>
      * 
      * @param returnCode
+     *        The batch job return code from either the Blu Age or Micro Focus runtime engines. For more information,
+     *        see <a href="https://www.ibm.com/docs/en/was/8.5.5?topic=model-batch-return-codes">Batch return codes</a>
+     *        in the <i>IBM WebSphere Application Server</i> documentation.
      */
 
     public void setReturnCode(String returnCode) {
@@ -424,9 +455,15 @@ public class GetBatchJobExecutionResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * <p/>
+     * <p>
+     * The batch job return code from either the Blu Age or Micro Focus runtime engines. For more information, see <a
+     * href="https://www.ibm.com/docs/en/was/8.5.5?topic=model-batch-return-codes">Batch return codes</a> in the <i>IBM
+     * WebSphere Application Server</i> documentation.
+     * </p>
      * 
-     * @return
+     * @return The batch job return code from either the Blu Age or Micro Focus runtime engines. For more information,
+     *         see <a href="https://www.ibm.com/docs/en/was/8.5.5?topic=model-batch-return-codes">Batch return codes</a>
+     *         in the <i>IBM WebSphere Application Server</i> documentation.
      */
 
     public String getReturnCode() {
@@ -434,9 +471,16 @@ public class GetBatchJobExecutionResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * <p/>
+     * <p>
+     * The batch job return code from either the Blu Age or Micro Focus runtime engines. For more information, see <a
+     * href="https://www.ibm.com/docs/en/was/8.5.5?topic=model-batch-return-codes">Batch return codes</a> in the <i>IBM
+     * WebSphere Application Server</i> documentation.
+     * </p>
      * 
      * @param returnCode
+     *        The batch job return code from either the Blu Age or Micro Focus runtime engines. For more information,
+     *        see <a href="https://www.ibm.com/docs/en/was/8.5.5?topic=model-batch-return-codes">Batch return codes</a>
+     *        in the <i>IBM WebSphere Application Server</i> documentation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

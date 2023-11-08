@@ -28,8 +28,8 @@ public class DescribeSeverityLevelsRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently
-     * supports English ("en") and Japanese ("ja"). You must specify the ISO 639-1 code for the <code>language</code>
-     * parameter if you want support in that language.
+     * supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code
+     * for the <code>language</code> parameter if you want support in that language.
      * </p>
      */
     private String language;
@@ -37,14 +37,14 @@ public class DescribeSeverityLevelsRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently
-     * supports English ("en") and Japanese ("ja"). You must specify the ISO 639-1 code for the <code>language</code>
-     * parameter if you want support in that language.
+     * supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code
+     * for the <code>language</code> parameter if you want support in that language.
      * </p>
      * 
      * @param language
      *        The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently
-     *        supports English ("en") and Japanese ("ja"). You must specify the ISO 639-1 code for the
-     *        <code>language</code> parameter if you want support in that language.
+     *        supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1
+     *        code for the <code>language</code> parameter if you want support in that language.
      */
 
     public void setLanguage(String language) {
@@ -54,13 +54,13 @@ public class DescribeSeverityLevelsRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently
-     * supports English ("en") and Japanese ("ja"). You must specify the ISO 639-1 code for the <code>language</code>
-     * parameter if you want support in that language.
+     * supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code
+     * for the <code>language</code> parameter if you want support in that language.
      * </p>
      * 
      * @return The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently
-     *         supports English ("en") and Japanese ("ja"). You must specify the ISO 639-1 code for the
-     *         <code>language</code> parameter if you want support in that language.
+     *         supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO
+     *         639-1 code for the <code>language</code> parameter if you want support in that language.
      */
 
     public String getLanguage() {
@@ -70,14 +70,14 @@ public class DescribeSeverityLevelsRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently
-     * supports English ("en") and Japanese ("ja"). You must specify the ISO 639-1 code for the <code>language</code>
-     * parameter if you want support in that language.
+     * supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code
+     * for the <code>language</code> parameter if you want support in that language.
      * </p>
      * 
      * @param language
      *        The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently
-     *        supports English ("en") and Japanese ("ja"). You must specify the ISO 639-1 code for the
-     *        <code>language</code> parameter if you want support in that language.
+     *        supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1
+     *        code for the <code>language</code> parameter if you want support in that language.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

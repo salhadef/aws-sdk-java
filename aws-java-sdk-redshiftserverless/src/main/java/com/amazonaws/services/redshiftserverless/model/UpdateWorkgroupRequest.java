@@ -52,6 +52,13 @@ public class UpdateWorkgroupRequest extends com.amazonaws.AmazonWebServiceReques
     private Boolean enhancedVpcRouting;
     /**
      * <p>
+     * The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve queries. The max capacity is
+     * specified in RPUs.
+     * </p>
+     */
+    private Integer maxCapacity;
+    /**
+     * <p>
      * The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default
      * is 5439.
      * </p>
@@ -298,6 +305,52 @@ public class UpdateWorkgroupRequest extends com.amazonaws.AmazonWebServiceReques
 
     public Boolean isEnhancedVpcRouting() {
         return this.enhancedVpcRouting;
+    }
+
+    /**
+     * <p>
+     * The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve queries. The max capacity is
+     * specified in RPUs.
+     * </p>
+     * 
+     * @param maxCapacity
+     *        The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve queries. The max capacity is
+     *        specified in RPUs.
+     */
+
+    public void setMaxCapacity(Integer maxCapacity) {
+        this.maxCapacity = maxCapacity;
+    }
+
+    /**
+     * <p>
+     * The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve queries. The max capacity is
+     * specified in RPUs.
+     * </p>
+     * 
+     * @return The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve queries. The max capacity is
+     *         specified in RPUs.
+     */
+
+    public Integer getMaxCapacity() {
+        return this.maxCapacity;
+    }
+
+    /**
+     * <p>
+     * The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve queries. The max capacity is
+     * specified in RPUs.
+     * </p>
+     * 
+     * @param maxCapacity
+     *        The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve queries. The max capacity is
+     *        specified in RPUs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateWorkgroupRequest withMaxCapacity(Integer maxCapacity) {
+        setMaxCapacity(maxCapacity);
+        return this;
     }
 
     /**
@@ -596,6 +649,8 @@ public class UpdateWorkgroupRequest extends com.amazonaws.AmazonWebServiceReques
             sb.append("ConfigParameters: ").append(getConfigParameters()).append(",");
         if (getEnhancedVpcRouting() != null)
             sb.append("EnhancedVpcRouting: ").append(getEnhancedVpcRouting()).append(",");
+        if (getMaxCapacity() != null)
+            sb.append("MaxCapacity: ").append(getMaxCapacity()).append(",");
         if (getPort() != null)
             sb.append("Port: ").append(getPort()).append(",");
         if (getPubliclyAccessible() != null)
@@ -632,6 +687,10 @@ public class UpdateWorkgroupRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getEnhancedVpcRouting() != null && other.getEnhancedVpcRouting().equals(this.getEnhancedVpcRouting()) == false)
             return false;
+        if (other.getMaxCapacity() == null ^ this.getMaxCapacity() == null)
+            return false;
+        if (other.getMaxCapacity() != null && other.getMaxCapacity().equals(this.getMaxCapacity()) == false)
+            return false;
         if (other.getPort() == null ^ this.getPort() == null)
             return false;
         if (other.getPort() != null && other.getPort().equals(this.getPort()) == false)
@@ -663,6 +722,7 @@ public class UpdateWorkgroupRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getBaseCapacity() == null) ? 0 : getBaseCapacity().hashCode());
         hashCode = prime * hashCode + ((getConfigParameters() == null) ? 0 : getConfigParameters().hashCode());
         hashCode = prime * hashCode + ((getEnhancedVpcRouting() == null) ? 0 : getEnhancedVpcRouting().hashCode());
+        hashCode = prime * hashCode + ((getMaxCapacity() == null) ? 0 : getMaxCapacity().hashCode());
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
         hashCode = prime * hashCode + ((getPubliclyAccessible() == null) ? 0 : getPubliclyAccessible().hashCode());
         hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode());

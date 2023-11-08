@@ -44,6 +44,7 @@ import com.amazonaws.services.sns.AmazonSNSClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.sns.model.*;
+
 import com.amazonaws.services.sns.model.transform.*;
 
 /**
@@ -350,6 +351,10 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
             exceptionUnmarshallersMap.put("InternalError", new InternalErrorExceptionUnmarshaller());
         }
         exceptionUnmarshallers.add(new InternalErrorExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("InvalidState") == null) {
+            exceptionUnmarshallersMap.put("InvalidState", new InvalidStateExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new InvalidStateExceptionUnmarshaller());
         if (exceptionUnmarshallersMap.get("EmptyBatchRequest") == null) {
             exceptionUnmarshallersMap.put("EmptyBatchRequest", new EmptyBatchRequestExceptionUnmarshaller());
         }
@@ -378,6 +383,10 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
             exceptionUnmarshallersMap.put("BatchRequestTooLong", new BatchRequestTooLongExceptionUnmarshaller());
         }
         exceptionUnmarshallers.add(new BatchRequestTooLongExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("ReplayLimitExceeded") == null) {
+            exceptionUnmarshallersMap.put("ReplayLimitExceeded", new ReplayLimitExceededExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new ReplayLimitExceededExceptionUnmarshaller());
         if (exceptionUnmarshallersMap.get("ValidationException") == null) {
             exceptionUnmarshallersMap.put("ValidationException", new ValidationExceptionUnmarshaller());
         }
@@ -600,6 +609,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @throws FilterPolicyLimitExceededException
      *         Indicates that the number of filter polices in your Amazon Web Services account exceeds the limit. To add
      *         more filter polices, submit an Amazon SNS Limit Increase case in the Amazon Web Services Support Center.
+     * @throws ReplayLimitExceededException
+     *         Indicates that the request parameter has exceeded the maximum number of concurrent message replays.
      * @sample AmazonSNS.ConfirmSubscription
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ConfirmSubscription" target="_top">AWS API
      *      Documentation</a>
@@ -1245,6 +1256,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @return Result of the DeleteTopic operation returned by the service.
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the associated constraints.
+     * @throws InvalidStateException
+     *         Indicates that the specified state is not a valid state for an event source.
      * @throws InternalErrorException
      *         Indicates an internal service error.
      * @throws AuthorizationErrorException
@@ -2596,11 +2609,11 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @throws AuthorizationErrorException
      *         Indicates that the user has been denied access to the requested resource.
      * @throws KMSDisabledException
-     *         The request was rejected because the specified customer master key (CMK) isn't enabled.
+     *         The request was rejected because the specified Amazon Web Services KMS key isn't enabled.
      * @throws KMSInvalidStateException
      *         The request was rejected because the state of the specified resource isn't valid for this request. For
-     *         more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-     *         Key State Affects Use of a Customer Master Key</a> in the <i>Key Management Service Developer Guide</i>.
+     *         more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+     *         states of Amazon Web Services KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
      * @throws KMSNotFoundException
      *         The request was rejected because the specified entity or resource can't be found.
      * @throws KMSOptInRequiredException
@@ -2736,11 +2749,11 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @throws TooManyEntriesInBatchRequestException
      *         The batch request contains more entries than permissible.
      * @throws KMSDisabledException
-     *         The request was rejected because the specified customer master key (CMK) isn't enabled.
+     *         The request was rejected because the specified Amazon Web Services KMS key isn't enabled.
      * @throws KMSInvalidStateException
      *         The request was rejected because the state of the specified resource isn't valid for this request. For
-     *         more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-     *         Key State Affects Use of a Customer Master Key</a> in the <i>Key Management Service Developer Guide</i>.
+     *         more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+     *         states of Amazon Web Services KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
      * @throws KMSNotFoundException
      *         The request was rejected because the specified entity or resource can't be found.
      * @throws KMSOptInRequiredException
@@ -3177,6 +3190,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @throws FilterPolicyLimitExceededException
      *         Indicates that the number of filter polices in your Amazon Web Services account exceeds the limit. To add
      *         more filter polices, submit an Amazon SNS Limit Increase case in the Amazon Web Services Support Center.
+     * @throws ReplayLimitExceededException
+     *         Indicates that the request parameter has exceeded the maximum number of concurrent message replays.
      * @throws InternalErrorException
      *         Indicates an internal service error.
      * @throws NotFoundException
@@ -3325,7 +3340,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * </p>
      * <p>
      * You call the <code>ConfirmSubscription</code> action with the token from the subscription response. Confirmation
-     * tokens are valid for three days.
+     * tokens are valid for two days.
      * </p>
      * <p>
      * This action is throttled at 100 transactions per second (TPS).
@@ -3339,6 +3354,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @throws FilterPolicyLimitExceededException
      *         Indicates that the number of filter polices in your Amazon Web Services account exceeds the limit. To add
      *         more filter polices, submit an Amazon SNS Limit Increase case in the Amazon Web Services Support Center.
+     * @throws ReplayLimitExceededException
+     *         Indicates that the request parameter has exceeded the maximum number of concurrent message replays.
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the associated constraints.
      * @throws InternalErrorException

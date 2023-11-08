@@ -100,9 +100,9 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify this token if you plan to retry
-     * requests so that CloudFormationknows that you're not attempting to continue the rollback to a stack with the same
-     * name. You might retry <code>ContinueUpdateRollback</code> requests to ensure that CloudFormation successfully
-     * received them.
+     * requests so that CloudFormation knows that you're not attempting to continue the rollback to a stack with the
+     * same name. You might retry <code>ContinueUpdateRollback</code> requests to ensure that CloudFormation
+     * successfully received them.
      * </p>
      */
     private String clientRequestToken;
@@ -631,14 +631,14 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify this token if you plan to retry
-     * requests so that CloudFormationknows that you're not attempting to continue the rollback to a stack with the same
-     * name. You might retry <code>ContinueUpdateRollback</code> requests to ensure that CloudFormation successfully
-     * received them.
+     * requests so that CloudFormation knows that you're not attempting to continue the rollback to a stack with the
+     * same name. You might retry <code>ContinueUpdateRollback</code> requests to ensure that CloudFormation
+     * successfully received them.
      * </p>
      * 
      * @param clientRequestToken
      *        A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify this token if you plan
-     *        to retry requests so that CloudFormationknows that you're not attempting to continue the rollback to a
+     *        to retry requests so that CloudFormation knows that you're not attempting to continue the rollback to a
      *        stack with the same name. You might retry <code>ContinueUpdateRollback</code> requests to ensure that
      *        CloudFormation successfully received them.
      */
@@ -650,13 +650,13 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify this token if you plan to retry
-     * requests so that CloudFormationknows that you're not attempting to continue the rollback to a stack with the same
-     * name. You might retry <code>ContinueUpdateRollback</code> requests to ensure that CloudFormation successfully
-     * received them.
+     * requests so that CloudFormation knows that you're not attempting to continue the rollback to a stack with the
+     * same name. You might retry <code>ContinueUpdateRollback</code> requests to ensure that CloudFormation
+     * successfully received them.
      * </p>
      * 
      * @return A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify this token if you plan
-     *         to retry requests so that CloudFormationknows that you're not attempting to continue the rollback to a
+     *         to retry requests so that CloudFormation knows that you're not attempting to continue the rollback to a
      *         stack with the same name. You might retry <code>ContinueUpdateRollback</code> requests to ensure that
      *         CloudFormation successfully received them.
      */
@@ -668,14 +668,14 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify this token if you plan to retry
-     * requests so that CloudFormationknows that you're not attempting to continue the rollback to a stack with the same
-     * name. You might retry <code>ContinueUpdateRollback</code> requests to ensure that CloudFormation successfully
-     * received them.
+     * requests so that CloudFormation knows that you're not attempting to continue the rollback to a stack with the
+     * same name. You might retry <code>ContinueUpdateRollback</code> requests to ensure that CloudFormation
+     * successfully received them.
      * </p>
      * 
      * @param clientRequestToken
      *        A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify this token if you plan
-     *        to retry requests so that CloudFormationknows that you're not attempting to continue the rollback to a
+     *        to retry requests so that CloudFormation knows that you're not attempting to continue the rollback to a
      *        stack with the same name. You might retry <code>ContinueUpdateRollback</code> requests to ensure that
      *        CloudFormation successfully received them.
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.glue.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -35,6 +37,8 @@ public class DataQualityRuleResultMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EvaluationMessage").build();
     private static final MarshallingInfo<String> RESULT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Result").build();
+    private static final MarshallingInfo<Map> EVALUATEDMETRICS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EvaluatedMetrics").build();
 
     private static final DataQualityRuleResultMarshaller instance = new DataQualityRuleResultMarshaller();
 
@@ -56,6 +60,7 @@ public class DataQualityRuleResultMarshaller {
             protocolMarshaller.marshall(dataQualityRuleResult.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(dataQualityRuleResult.getEvaluationMessage(), EVALUATIONMESSAGE_BINDING);
             protocolMarshaller.marshall(dataQualityRuleResult.getResult(), RESULT_BINDING);
+            protocolMarshaller.marshall(dataQualityRuleResult.getEvaluatedMetrics(), EVALUATEDMETRICS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

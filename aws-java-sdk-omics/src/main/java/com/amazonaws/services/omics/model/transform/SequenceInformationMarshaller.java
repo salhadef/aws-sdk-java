@@ -27,14 +27,14 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class SequenceInformationMarshaller {
 
-    private static final MarshallingInfo<String> ALIGNMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("alignment").build();
-    private static final MarshallingInfo<String> GENERATEDFROM_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("generatedFrom").build();
-    private static final MarshallingInfo<Long> TOTALBASECOUNT_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("totalBaseCount").build();
     private static final MarshallingInfo<Long> TOTALREADCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("totalReadCount").build();
+    private static final MarshallingInfo<Long> TOTALBASECOUNT_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("totalBaseCount").build();
+    private static final MarshallingInfo<String> GENERATEDFROM_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("generatedFrom").build();
+    private static final MarshallingInfo<String> ALIGNMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("alignment").build();
 
     private static final SequenceInformationMarshaller instance = new SequenceInformationMarshaller();
 
@@ -52,10 +52,10 @@ public class SequenceInformationMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(sequenceInformation.getAlignment(), ALIGNMENT_BINDING);
-            protocolMarshaller.marshall(sequenceInformation.getGeneratedFrom(), GENERATEDFROM_BINDING);
-            protocolMarshaller.marshall(sequenceInformation.getTotalBaseCount(), TOTALBASECOUNT_BINDING);
             protocolMarshaller.marshall(sequenceInformation.getTotalReadCount(), TOTALREADCOUNT_BINDING);
+            protocolMarshaller.marshall(sequenceInformation.getTotalBaseCount(), TOTALBASECOUNT_BINDING);
+            protocolMarshaller.marshall(sequenceInformation.getGeneratedFrom(), GENERATEDFROM_BINDING);
+            protocolMarshaller.marshall(sequenceInformation.getAlignment(), ALIGNMENT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

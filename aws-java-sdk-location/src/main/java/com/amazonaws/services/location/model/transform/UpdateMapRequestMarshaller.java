@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UpdateMapRequestMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> CONFIGURATIONUPDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConfigurationUpdate").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<String> MAPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
@@ -50,6 +52,7 @@ public class UpdateMapRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(updateMapRequest.getConfigurationUpdate(), CONFIGURATIONUPDATE_BINDING);
             protocolMarshaller.marshall(updateMapRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(updateMapRequest.getMapName(), MAPNAME_BINDING);
             protocolMarshaller.marshall(updateMapRequest.getPricingPlan(), PRICINGPLAN_BINDING);

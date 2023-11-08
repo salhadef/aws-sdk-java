@@ -83,6 +83,32 @@ public interface AWSRedshiftServerless {
 
     /**
      * <p>
+     * Creates a custom domain association for Amazon Redshift Serverless.
+     * </p>
+     * 
+     * @param createCustomDomainAssociationRequest
+     * @return Result of the CreateCustomDomainAssociation operation returned by the service.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws ConflictException
+     *         The submitted action has conflicts.
+     * @throws ValidationException
+     *         The input failed to satisfy the constraints specified by an AWS service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AWSRedshiftServerless.CreateCustomDomainAssociation
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateCustomDomainAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateCustomDomainAssociationResult createCustomDomainAssociation(CreateCustomDomainAssociationRequest createCustomDomainAssociationRequest);
+
+    /**
+     * <p>
      * Creates an Amazon Redshift Serverless managed VPC endpoint.
      * </p>
      * 
@@ -202,6 +228,32 @@ public interface AWSRedshiftServerless {
      *      target="_top">AWS API Documentation</a>
      */
     CreateWorkgroupResult createWorkgroup(CreateWorkgroupRequest createWorkgroupRequest);
+
+    /**
+     * <p>
+     * Deletes a custom domain association for Amazon Redshift Serverless.
+     * </p>
+     * 
+     * @param deleteCustomDomainAssociationRequest
+     * @return Result of the DeleteCustomDomainAssociation operation returned by the service.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws ConflictException
+     *         The submitted action has conflicts.
+     * @throws ValidationException
+     *         The input failed to satisfy the constraints specified by an AWS service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AWSRedshiftServerless.DeleteCustomDomainAssociation
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteCustomDomainAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteCustomDomainAssociationResult deleteCustomDomainAssociation(DeleteCustomDomainAssociationRequest deleteCustomDomainAssociationRequest);
 
     /**
      * <p>
@@ -358,6 +410,31 @@ public interface AWSRedshiftServerless {
 
     /**
      * <p>
+     * Gets information about a specific custom domain association.
+     * </p>
+     * 
+     * @param getCustomDomainAssociationRequest
+     * @return Result of the GetCustomDomainAssociation operation returned by the service.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws ConflictException
+     *         The submitted action has conflicts.
+     * @throws ValidationException
+     *         The input failed to satisfy the constraints specified by an AWS service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AWSRedshiftServerless.GetCustomDomainAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetCustomDomainAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetCustomDomainAssociationResult getCustomDomainAssociation(GetCustomDomainAssociationRequest getCustomDomainAssociationRequest);
+
+    /**
+     * <p>
      * Returns information, such as the name, about a VPC endpoint.
      * </p>
      * 
@@ -511,6 +588,29 @@ public interface AWSRedshiftServerless {
      *      target="_top">AWS API Documentation</a>
      */
     GetWorkgroupResult getWorkgroup(GetWorkgroupRequest getWorkgroupRequest);
+
+    /**
+     * <p>
+     * Lists custom domain associations for Amazon Redshift Serverless.
+     * </p>
+     * 
+     * @param listCustomDomainAssociationsRequest
+     * @return Result of the ListCustomDomainAssociations operation returned by the service.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @throws InvalidPaginationException
+     *         The provided pagination token is invalid.
+     * @throws ValidationException
+     *         The input failed to satisfy the constraints specified by an AWS service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AWSRedshiftServerless.ListCustomDomainAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListCustomDomainAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListCustomDomainAssociationsResult listCustomDomainAssociations(ListCustomDomainAssociationsRequest listCustomDomainAssociationsRequest);
 
     /**
      * <p>
@@ -801,6 +901,32 @@ public interface AWSRedshiftServerless {
      *      target="_top">AWS API Documentation</a>
      */
     UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Updates an Amazon Redshift Serverless certificate associated with a custom domain.
+     * </p>
+     * 
+     * @param updateCustomDomainAssociationRequest
+     * @return Result of the UpdateCustomDomainAssociation operation returned by the service.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws ConflictException
+     *         The submitted action has conflicts.
+     * @throws ValidationException
+     *         The input failed to satisfy the constraints specified by an AWS service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AWSRedshiftServerless.UpdateCustomDomainAssociation
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateCustomDomainAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateCustomDomainAssociationResult updateCustomDomainAssociation(UpdateCustomDomainAssociationRequest updateCustomDomainAssociationRequest);
 
     /**
      * <p>

@@ -27,14 +27,14 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class AlertManagerDefinitionDescriptionMarshaller {
 
-    private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("unixTimestamp").build();
-    private static final MarshallingInfo<java.nio.ByteBuffer> DATA_BINDING = MarshallingInfo.builder(MarshallingType.BYTE_BUFFER)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("data").build();
-    private static final MarshallingInfo<java.util.Date> MODIFIEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("modifiedAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<StructuredPojo> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("status").build();
+    private static final MarshallingInfo<java.nio.ByteBuffer> DATA_BINDING = MarshallingInfo.builder(MarshallingType.BYTE_BUFFER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("data").build();
+    private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<java.util.Date> MODIFIEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("modifiedAt").timestampFormat("unixTimestamp").build();
 
     private static final AlertManagerDefinitionDescriptionMarshaller instance = new AlertManagerDefinitionDescriptionMarshaller();
 
@@ -52,10 +52,10 @@ public class AlertManagerDefinitionDescriptionMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(alertManagerDefinitionDescription.getCreatedAt(), CREATEDAT_BINDING);
-            protocolMarshaller.marshall(alertManagerDefinitionDescription.getData(), DATA_BINDING);
-            protocolMarshaller.marshall(alertManagerDefinitionDescription.getModifiedAt(), MODIFIEDAT_BINDING);
             protocolMarshaller.marshall(alertManagerDefinitionDescription.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(alertManagerDefinitionDescription.getData(), DATA_BINDING);
+            protocolMarshaller.marshall(alertManagerDefinitionDescription.getCreatedAt(), CREATEDAT_BINDING);
+            protocolMarshaller.marshall(alertManagerDefinitionDescription.getModifiedAt(), MODIFIEDAT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

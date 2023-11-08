@@ -25,16 +25,10 @@ import java.util.concurrent.ExecutorService;
  * representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
  * <p>
- * <note>
- * <p>
- * Amazon Security Lake is in preview release. Your use of the Security Lake preview is subject to Section 2 of the <a
- * href="http://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>("Betas and Previews").
- * </p>
- * </note>
  * <p>
  * Amazon Security Lake is a fully managed security data lake service. You can use Security Lake to automatically
  * centralize security data from cloud, on-premises, and custom sources into a data lake that's stored in your Amazon
- * Web Servicesaccount. Amazon Web Services Organizations is an account management service that lets you consolidate
+ * Web Services account. Amazon Web Services Organizations is an account management service that lets you consolidate
  * multiple Amazon Web Services accounts into an organization that you create and centrally manage. With Organizations,
  * you can create member accounts and invite existing accounts to join your organization. Security Lake helps you
  * analyze security data for a more complete understanding of your security posture across the entire organization. It
@@ -46,7 +40,7 @@ import java.util.concurrent.ExecutorService;
  * </p>
  * <p>
  * Amazon Security Lake integrates with CloudTrail, a service that provides a record of actions taken by a user, role,
- * or an Amazon Web Services service in Security Lake CloudTrail captures API calls for Security Lake as events. The
+ * or an Amazon Web Services service. In Security Lake, CloudTrail captures API calls for Security Lake as events. The
  * calls captured include calls from the Security Lake console and code calls to the Security Lake API operations. If
  * you create a trail, you can enable continuous delivery of CloudTrail events to an Amazon S3 bucket, including events
  * for Security Lake. If you don't configure a trail, you can still view the most recent events in the CloudTrail
@@ -180,23 +174,23 @@ public class AmazonSecurityLakeAsyncClient extends AmazonSecurityLakeClient impl
     }
 
     @Override
-    public java.util.concurrent.Future<CreateDatalakeResult> createDatalakeAsync(CreateDatalakeRequest request) {
+    public java.util.concurrent.Future<CreateDataLakeResult> createDataLakeAsync(CreateDataLakeRequest request) {
 
-        return createDatalakeAsync(request, null);
+        return createDataLakeAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<CreateDatalakeResult> createDatalakeAsync(final CreateDatalakeRequest request,
-            final com.amazonaws.handlers.AsyncHandler<CreateDatalakeRequest, CreateDatalakeResult> asyncHandler) {
-        final CreateDatalakeRequest finalRequest = beforeClientExecution(request);
+    public java.util.concurrent.Future<CreateDataLakeResult> createDataLakeAsync(final CreateDataLakeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateDataLakeRequest, CreateDataLakeResult> asyncHandler) {
+        final CreateDataLakeRequest finalRequest = beforeClientExecution(request);
 
-        return executorService.submit(new java.util.concurrent.Callable<CreateDatalakeResult>() {
+        return executorService.submit(new java.util.concurrent.Callable<CreateDataLakeResult>() {
             @Override
-            public CreateDatalakeResult call() throws Exception {
-                CreateDatalakeResult result = null;
+            public CreateDataLakeResult call() throws Exception {
+                CreateDataLakeResult result = null;
 
                 try {
-                    result = executeCreateDatalake(finalRequest);
+                    result = executeCreateDataLake(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -213,23 +207,25 @@ public class AmazonSecurityLakeAsyncClient extends AmazonSecurityLakeClient impl
     }
 
     @Override
-    public java.util.concurrent.Future<CreateDatalakeAutoEnableResult> createDatalakeAutoEnableAsync(CreateDatalakeAutoEnableRequest request) {
+    public java.util.concurrent.Future<CreateDataLakeExceptionSubscriptionResult> createDataLakeExceptionSubscriptionAsync(
+            CreateDataLakeExceptionSubscriptionRequest request) {
 
-        return createDatalakeAutoEnableAsync(request, null);
+        return createDataLakeExceptionSubscriptionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<CreateDatalakeAutoEnableResult> createDatalakeAutoEnableAsync(final CreateDatalakeAutoEnableRequest request,
-            final com.amazonaws.handlers.AsyncHandler<CreateDatalakeAutoEnableRequest, CreateDatalakeAutoEnableResult> asyncHandler) {
-        final CreateDatalakeAutoEnableRequest finalRequest = beforeClientExecution(request);
+    public java.util.concurrent.Future<CreateDataLakeExceptionSubscriptionResult> createDataLakeExceptionSubscriptionAsync(
+            final CreateDataLakeExceptionSubscriptionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateDataLakeExceptionSubscriptionRequest, CreateDataLakeExceptionSubscriptionResult> asyncHandler) {
+        final CreateDataLakeExceptionSubscriptionRequest finalRequest = beforeClientExecution(request);
 
-        return executorService.submit(new java.util.concurrent.Callable<CreateDatalakeAutoEnableResult>() {
+        return executorService.submit(new java.util.concurrent.Callable<CreateDataLakeExceptionSubscriptionResult>() {
             @Override
-            public CreateDatalakeAutoEnableResult call() throws Exception {
-                CreateDatalakeAutoEnableResult result = null;
+            public CreateDataLakeExceptionSubscriptionResult call() throws Exception {
+                CreateDataLakeExceptionSubscriptionResult result = null;
 
                 try {
-                    result = executeCreateDatalakeAutoEnable(finalRequest);
+                    result = executeCreateDataLakeExceptionSubscription(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -246,58 +242,25 @@ public class AmazonSecurityLakeAsyncClient extends AmazonSecurityLakeClient impl
     }
 
     @Override
-    public java.util.concurrent.Future<CreateDatalakeDelegatedAdminResult> createDatalakeDelegatedAdminAsync(CreateDatalakeDelegatedAdminRequest request) {
+    public java.util.concurrent.Future<CreateDataLakeOrganizationConfigurationResult> createDataLakeOrganizationConfigurationAsync(
+            CreateDataLakeOrganizationConfigurationRequest request) {
 
-        return createDatalakeDelegatedAdminAsync(request, null);
+        return createDataLakeOrganizationConfigurationAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<CreateDatalakeDelegatedAdminResult> createDatalakeDelegatedAdminAsync(final CreateDatalakeDelegatedAdminRequest request,
-            final com.amazonaws.handlers.AsyncHandler<CreateDatalakeDelegatedAdminRequest, CreateDatalakeDelegatedAdminResult> asyncHandler) {
-        final CreateDatalakeDelegatedAdminRequest finalRequest = beforeClientExecution(request);
+    public java.util.concurrent.Future<CreateDataLakeOrganizationConfigurationResult> createDataLakeOrganizationConfigurationAsync(
+            final CreateDataLakeOrganizationConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateDataLakeOrganizationConfigurationRequest, CreateDataLakeOrganizationConfigurationResult> asyncHandler) {
+        final CreateDataLakeOrganizationConfigurationRequest finalRequest = beforeClientExecution(request);
 
-        return executorService.submit(new java.util.concurrent.Callable<CreateDatalakeDelegatedAdminResult>() {
+        return executorService.submit(new java.util.concurrent.Callable<CreateDataLakeOrganizationConfigurationResult>() {
             @Override
-            public CreateDatalakeDelegatedAdminResult call() throws Exception {
-                CreateDatalakeDelegatedAdminResult result = null;
+            public CreateDataLakeOrganizationConfigurationResult call() throws Exception {
+                CreateDataLakeOrganizationConfigurationResult result = null;
 
                 try {
-                    result = executeCreateDatalakeDelegatedAdmin(finalRequest);
-                } catch (Exception ex) {
-                    if (asyncHandler != null) {
-                        asyncHandler.onError(ex);
-                    }
-                    throw ex;
-                }
-
-                if (asyncHandler != null) {
-                    asyncHandler.onSuccess(finalRequest, result);
-                }
-                return result;
-            }
-        });
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateDatalakeExceptionsSubscriptionResult> createDatalakeExceptionsSubscriptionAsync(
-            CreateDatalakeExceptionsSubscriptionRequest request) {
-
-        return createDatalakeExceptionsSubscriptionAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateDatalakeExceptionsSubscriptionResult> createDatalakeExceptionsSubscriptionAsync(
-            final CreateDatalakeExceptionsSubscriptionRequest request,
-            final com.amazonaws.handlers.AsyncHandler<CreateDatalakeExceptionsSubscriptionRequest, CreateDatalakeExceptionsSubscriptionResult> asyncHandler) {
-        final CreateDatalakeExceptionsSubscriptionRequest finalRequest = beforeClientExecution(request);
-
-        return executorService.submit(new java.util.concurrent.Callable<CreateDatalakeExceptionsSubscriptionResult>() {
-            @Override
-            public CreateDatalakeExceptionsSubscriptionResult call() throws Exception {
-                CreateDatalakeExceptionsSubscriptionResult result = null;
-
-                try {
-                    result = executeCreateDatalakeExceptionsSubscription(finalRequest);
+                    result = executeCreateDataLakeOrganizationConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -347,25 +310,23 @@ public class AmazonSecurityLakeAsyncClient extends AmazonSecurityLakeClient impl
     }
 
     @Override
-    public java.util.concurrent.Future<CreateSubscriptionNotificationConfigurationResult> createSubscriptionNotificationConfigurationAsync(
-            CreateSubscriptionNotificationConfigurationRequest request) {
+    public java.util.concurrent.Future<CreateSubscriberNotificationResult> createSubscriberNotificationAsync(CreateSubscriberNotificationRequest request) {
 
-        return createSubscriptionNotificationConfigurationAsync(request, null);
+        return createSubscriberNotificationAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<CreateSubscriptionNotificationConfigurationResult> createSubscriptionNotificationConfigurationAsync(
-            final CreateSubscriptionNotificationConfigurationRequest request,
-            final com.amazonaws.handlers.AsyncHandler<CreateSubscriptionNotificationConfigurationRequest, CreateSubscriptionNotificationConfigurationResult> asyncHandler) {
-        final CreateSubscriptionNotificationConfigurationRequest finalRequest = beforeClientExecution(request);
+    public java.util.concurrent.Future<CreateSubscriberNotificationResult> createSubscriberNotificationAsync(final CreateSubscriberNotificationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateSubscriberNotificationRequest, CreateSubscriberNotificationResult> asyncHandler) {
+        final CreateSubscriberNotificationRequest finalRequest = beforeClientExecution(request);
 
-        return executorService.submit(new java.util.concurrent.Callable<CreateSubscriptionNotificationConfigurationResult>() {
+        return executorService.submit(new java.util.concurrent.Callable<CreateSubscriberNotificationResult>() {
             @Override
-            public CreateSubscriptionNotificationConfigurationResult call() throws Exception {
-                CreateSubscriptionNotificationConfigurationResult result = null;
+            public CreateSubscriberNotificationResult call() throws Exception {
+                CreateSubscriberNotificationResult result = null;
 
                 try {
-                    result = executeCreateSubscriptionNotificationConfiguration(finalRequest);
+                    result = executeCreateSubscriberNotification(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -448,23 +409,23 @@ public class AmazonSecurityLakeAsyncClient extends AmazonSecurityLakeClient impl
     }
 
     @Override
-    public java.util.concurrent.Future<DeleteDatalakeResult> deleteDatalakeAsync(DeleteDatalakeRequest request) {
+    public java.util.concurrent.Future<DeleteDataLakeResult> deleteDataLakeAsync(DeleteDataLakeRequest request) {
 
-        return deleteDatalakeAsync(request, null);
+        return deleteDataLakeAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<DeleteDatalakeResult> deleteDatalakeAsync(final DeleteDatalakeRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteDatalakeRequest, DeleteDatalakeResult> asyncHandler) {
-        final DeleteDatalakeRequest finalRequest = beforeClientExecution(request);
+    public java.util.concurrent.Future<DeleteDataLakeResult> deleteDataLakeAsync(final DeleteDataLakeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteDataLakeRequest, DeleteDataLakeResult> asyncHandler) {
+        final DeleteDataLakeRequest finalRequest = beforeClientExecution(request);
 
-        return executorService.submit(new java.util.concurrent.Callable<DeleteDatalakeResult>() {
+        return executorService.submit(new java.util.concurrent.Callable<DeleteDataLakeResult>() {
             @Override
-            public DeleteDatalakeResult call() throws Exception {
-                DeleteDatalakeResult result = null;
+            public DeleteDataLakeResult call() throws Exception {
+                DeleteDataLakeResult result = null;
 
                 try {
-                    result = executeDeleteDatalake(finalRequest);
+                    result = executeDeleteDataLake(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -481,23 +442,25 @@ public class AmazonSecurityLakeAsyncClient extends AmazonSecurityLakeClient impl
     }
 
     @Override
-    public java.util.concurrent.Future<DeleteDatalakeAutoEnableResult> deleteDatalakeAutoEnableAsync(DeleteDatalakeAutoEnableRequest request) {
+    public java.util.concurrent.Future<DeleteDataLakeExceptionSubscriptionResult> deleteDataLakeExceptionSubscriptionAsync(
+            DeleteDataLakeExceptionSubscriptionRequest request) {
 
-        return deleteDatalakeAutoEnableAsync(request, null);
+        return deleteDataLakeExceptionSubscriptionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<DeleteDatalakeAutoEnableResult> deleteDatalakeAutoEnableAsync(final DeleteDatalakeAutoEnableRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteDatalakeAutoEnableRequest, DeleteDatalakeAutoEnableResult> asyncHandler) {
-        final DeleteDatalakeAutoEnableRequest finalRequest = beforeClientExecution(request);
+    public java.util.concurrent.Future<DeleteDataLakeExceptionSubscriptionResult> deleteDataLakeExceptionSubscriptionAsync(
+            final DeleteDataLakeExceptionSubscriptionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteDataLakeExceptionSubscriptionRequest, DeleteDataLakeExceptionSubscriptionResult> asyncHandler) {
+        final DeleteDataLakeExceptionSubscriptionRequest finalRequest = beforeClientExecution(request);
 
-        return executorService.submit(new java.util.concurrent.Callable<DeleteDatalakeAutoEnableResult>() {
+        return executorService.submit(new java.util.concurrent.Callable<DeleteDataLakeExceptionSubscriptionResult>() {
             @Override
-            public DeleteDatalakeAutoEnableResult call() throws Exception {
-                DeleteDatalakeAutoEnableResult result = null;
+            public DeleteDataLakeExceptionSubscriptionResult call() throws Exception {
+                DeleteDataLakeExceptionSubscriptionResult result = null;
 
                 try {
-                    result = executeDeleteDatalakeAutoEnable(finalRequest);
+                    result = executeDeleteDataLakeExceptionSubscription(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -514,58 +477,25 @@ public class AmazonSecurityLakeAsyncClient extends AmazonSecurityLakeClient impl
     }
 
     @Override
-    public java.util.concurrent.Future<DeleteDatalakeDelegatedAdminResult> deleteDatalakeDelegatedAdminAsync(DeleteDatalakeDelegatedAdminRequest request) {
+    public java.util.concurrent.Future<DeleteDataLakeOrganizationConfigurationResult> deleteDataLakeOrganizationConfigurationAsync(
+            DeleteDataLakeOrganizationConfigurationRequest request) {
 
-        return deleteDatalakeDelegatedAdminAsync(request, null);
+        return deleteDataLakeOrganizationConfigurationAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<DeleteDatalakeDelegatedAdminResult> deleteDatalakeDelegatedAdminAsync(final DeleteDatalakeDelegatedAdminRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteDatalakeDelegatedAdminRequest, DeleteDatalakeDelegatedAdminResult> asyncHandler) {
-        final DeleteDatalakeDelegatedAdminRequest finalRequest = beforeClientExecution(request);
+    public java.util.concurrent.Future<DeleteDataLakeOrganizationConfigurationResult> deleteDataLakeOrganizationConfigurationAsync(
+            final DeleteDataLakeOrganizationConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteDataLakeOrganizationConfigurationRequest, DeleteDataLakeOrganizationConfigurationResult> asyncHandler) {
+        final DeleteDataLakeOrganizationConfigurationRequest finalRequest = beforeClientExecution(request);
 
-        return executorService.submit(new java.util.concurrent.Callable<DeleteDatalakeDelegatedAdminResult>() {
+        return executorService.submit(new java.util.concurrent.Callable<DeleteDataLakeOrganizationConfigurationResult>() {
             @Override
-            public DeleteDatalakeDelegatedAdminResult call() throws Exception {
-                DeleteDatalakeDelegatedAdminResult result = null;
+            public DeleteDataLakeOrganizationConfigurationResult call() throws Exception {
+                DeleteDataLakeOrganizationConfigurationResult result = null;
 
                 try {
-                    result = executeDeleteDatalakeDelegatedAdmin(finalRequest);
-                } catch (Exception ex) {
-                    if (asyncHandler != null) {
-                        asyncHandler.onError(ex);
-                    }
-                    throw ex;
-                }
-
-                if (asyncHandler != null) {
-                    asyncHandler.onSuccess(finalRequest, result);
-                }
-                return result;
-            }
-        });
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteDatalakeExceptionsSubscriptionResult> deleteDatalakeExceptionsSubscriptionAsync(
-            DeleteDatalakeExceptionsSubscriptionRequest request) {
-
-        return deleteDatalakeExceptionsSubscriptionAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteDatalakeExceptionsSubscriptionResult> deleteDatalakeExceptionsSubscriptionAsync(
-            final DeleteDatalakeExceptionsSubscriptionRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteDatalakeExceptionsSubscriptionRequest, DeleteDatalakeExceptionsSubscriptionResult> asyncHandler) {
-        final DeleteDatalakeExceptionsSubscriptionRequest finalRequest = beforeClientExecution(request);
-
-        return executorService.submit(new java.util.concurrent.Callable<DeleteDatalakeExceptionsSubscriptionResult>() {
-            @Override
-            public DeleteDatalakeExceptionsSubscriptionResult call() throws Exception {
-                DeleteDatalakeExceptionsSubscriptionResult result = null;
-
-                try {
-                    result = executeDeleteDatalakeExceptionsSubscription(finalRequest);
+                    result = executeDeleteDataLakeOrganizationConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -615,25 +545,23 @@ public class AmazonSecurityLakeAsyncClient extends AmazonSecurityLakeClient impl
     }
 
     @Override
-    public java.util.concurrent.Future<DeleteSubscriptionNotificationConfigurationResult> deleteSubscriptionNotificationConfigurationAsync(
-            DeleteSubscriptionNotificationConfigurationRequest request) {
+    public java.util.concurrent.Future<DeleteSubscriberNotificationResult> deleteSubscriberNotificationAsync(DeleteSubscriberNotificationRequest request) {
 
-        return deleteSubscriptionNotificationConfigurationAsync(request, null);
+        return deleteSubscriberNotificationAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<DeleteSubscriptionNotificationConfigurationResult> deleteSubscriptionNotificationConfigurationAsync(
-            final DeleteSubscriptionNotificationConfigurationRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteSubscriptionNotificationConfigurationRequest, DeleteSubscriptionNotificationConfigurationResult> asyncHandler) {
-        final DeleteSubscriptionNotificationConfigurationRequest finalRequest = beforeClientExecution(request);
+    public java.util.concurrent.Future<DeleteSubscriberNotificationResult> deleteSubscriberNotificationAsync(final DeleteSubscriberNotificationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteSubscriberNotificationRequest, DeleteSubscriberNotificationResult> asyncHandler) {
+        final DeleteSubscriberNotificationRequest finalRequest = beforeClientExecution(request);
 
-        return executorService.submit(new java.util.concurrent.Callable<DeleteSubscriptionNotificationConfigurationResult>() {
+        return executorService.submit(new java.util.concurrent.Callable<DeleteSubscriberNotificationResult>() {
             @Override
-            public DeleteSubscriptionNotificationConfigurationResult call() throws Exception {
-                DeleteSubscriptionNotificationConfigurationResult result = null;
+            public DeleteSubscriberNotificationResult call() throws Exception {
+                DeleteSubscriberNotificationResult result = null;
 
                 try {
-                    result = executeDeleteSubscriptionNotificationConfiguration(finalRequest);
+                    result = executeDeleteSubscriberNotification(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -650,23 +578,25 @@ public class AmazonSecurityLakeAsyncClient extends AmazonSecurityLakeClient impl
     }
 
     @Override
-    public java.util.concurrent.Future<GetDatalakeResult> getDatalakeAsync(GetDatalakeRequest request) {
+    public java.util.concurrent.Future<DeregisterDataLakeDelegatedAdministratorResult> deregisterDataLakeDelegatedAdministratorAsync(
+            DeregisterDataLakeDelegatedAdministratorRequest request) {
 
-        return getDatalakeAsync(request, null);
+        return deregisterDataLakeDelegatedAdministratorAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<GetDatalakeResult> getDatalakeAsync(final GetDatalakeRequest request,
-            final com.amazonaws.handlers.AsyncHandler<GetDatalakeRequest, GetDatalakeResult> asyncHandler) {
-        final GetDatalakeRequest finalRequest = beforeClientExecution(request);
+    public java.util.concurrent.Future<DeregisterDataLakeDelegatedAdministratorResult> deregisterDataLakeDelegatedAdministratorAsync(
+            final DeregisterDataLakeDelegatedAdministratorRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeregisterDataLakeDelegatedAdministratorRequest, DeregisterDataLakeDelegatedAdministratorResult> asyncHandler) {
+        final DeregisterDataLakeDelegatedAdministratorRequest finalRequest = beforeClientExecution(request);
 
-        return executorService.submit(new java.util.concurrent.Callable<GetDatalakeResult>() {
+        return executorService.submit(new java.util.concurrent.Callable<DeregisterDataLakeDelegatedAdministratorResult>() {
             @Override
-            public GetDatalakeResult call() throws Exception {
-                GetDatalakeResult result = null;
+            public DeregisterDataLakeDelegatedAdministratorResult call() throws Exception {
+                DeregisterDataLakeDelegatedAdministratorResult result = null;
 
                 try {
-                    result = executeGetDatalake(finalRequest);
+                    result = executeDeregisterDataLakeDelegatedAdministrator(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -683,23 +613,25 @@ public class AmazonSecurityLakeAsyncClient extends AmazonSecurityLakeClient impl
     }
 
     @Override
-    public java.util.concurrent.Future<GetDatalakeAutoEnableResult> getDatalakeAutoEnableAsync(GetDatalakeAutoEnableRequest request) {
+    public java.util.concurrent.Future<GetDataLakeExceptionSubscriptionResult> getDataLakeExceptionSubscriptionAsync(
+            GetDataLakeExceptionSubscriptionRequest request) {
 
-        return getDatalakeAutoEnableAsync(request, null);
+        return getDataLakeExceptionSubscriptionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<GetDatalakeAutoEnableResult> getDatalakeAutoEnableAsync(final GetDatalakeAutoEnableRequest request,
-            final com.amazonaws.handlers.AsyncHandler<GetDatalakeAutoEnableRequest, GetDatalakeAutoEnableResult> asyncHandler) {
-        final GetDatalakeAutoEnableRequest finalRequest = beforeClientExecution(request);
+    public java.util.concurrent.Future<GetDataLakeExceptionSubscriptionResult> getDataLakeExceptionSubscriptionAsync(
+            final GetDataLakeExceptionSubscriptionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDataLakeExceptionSubscriptionRequest, GetDataLakeExceptionSubscriptionResult> asyncHandler) {
+        final GetDataLakeExceptionSubscriptionRequest finalRequest = beforeClientExecution(request);
 
-        return executorService.submit(new java.util.concurrent.Callable<GetDatalakeAutoEnableResult>() {
+        return executorService.submit(new java.util.concurrent.Callable<GetDataLakeExceptionSubscriptionResult>() {
             @Override
-            public GetDatalakeAutoEnableResult call() throws Exception {
-                GetDatalakeAutoEnableResult result = null;
+            public GetDataLakeExceptionSubscriptionResult call() throws Exception {
+                GetDataLakeExceptionSubscriptionResult result = null;
 
                 try {
-                    result = executeGetDatalakeAutoEnable(finalRequest);
+                    result = executeGetDataLakeExceptionSubscription(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -716,23 +648,25 @@ public class AmazonSecurityLakeAsyncClient extends AmazonSecurityLakeClient impl
     }
 
     @Override
-    public java.util.concurrent.Future<GetDatalakeExceptionsExpiryResult> getDatalakeExceptionsExpiryAsync(GetDatalakeExceptionsExpiryRequest request) {
+    public java.util.concurrent.Future<GetDataLakeOrganizationConfigurationResult> getDataLakeOrganizationConfigurationAsync(
+            GetDataLakeOrganizationConfigurationRequest request) {
 
-        return getDatalakeExceptionsExpiryAsync(request, null);
+        return getDataLakeOrganizationConfigurationAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<GetDatalakeExceptionsExpiryResult> getDatalakeExceptionsExpiryAsync(final GetDatalakeExceptionsExpiryRequest request,
-            final com.amazonaws.handlers.AsyncHandler<GetDatalakeExceptionsExpiryRequest, GetDatalakeExceptionsExpiryResult> asyncHandler) {
-        final GetDatalakeExceptionsExpiryRequest finalRequest = beforeClientExecution(request);
+    public java.util.concurrent.Future<GetDataLakeOrganizationConfigurationResult> getDataLakeOrganizationConfigurationAsync(
+            final GetDataLakeOrganizationConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDataLakeOrganizationConfigurationRequest, GetDataLakeOrganizationConfigurationResult> asyncHandler) {
+        final GetDataLakeOrganizationConfigurationRequest finalRequest = beforeClientExecution(request);
 
-        return executorService.submit(new java.util.concurrent.Callable<GetDatalakeExceptionsExpiryResult>() {
+        return executorService.submit(new java.util.concurrent.Callable<GetDataLakeOrganizationConfigurationResult>() {
             @Override
-            public GetDatalakeExceptionsExpiryResult call() throws Exception {
-                GetDatalakeExceptionsExpiryResult result = null;
+            public GetDataLakeOrganizationConfigurationResult call() throws Exception {
+                GetDataLakeOrganizationConfigurationResult result = null;
 
                 try {
-                    result = executeGetDatalakeExceptionsExpiry(finalRequest);
+                    result = executeGetDataLakeOrganizationConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -749,58 +683,23 @@ public class AmazonSecurityLakeAsyncClient extends AmazonSecurityLakeClient impl
     }
 
     @Override
-    public java.util.concurrent.Future<GetDatalakeExceptionsSubscriptionResult> getDatalakeExceptionsSubscriptionAsync(
-            GetDatalakeExceptionsSubscriptionRequest request) {
+    public java.util.concurrent.Future<GetDataLakeSourcesResult> getDataLakeSourcesAsync(GetDataLakeSourcesRequest request) {
 
-        return getDatalakeExceptionsSubscriptionAsync(request, null);
+        return getDataLakeSourcesAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<GetDatalakeExceptionsSubscriptionResult> getDatalakeExceptionsSubscriptionAsync(
-            final GetDatalakeExceptionsSubscriptionRequest request,
-            final com.amazonaws.handlers.AsyncHandler<GetDatalakeExceptionsSubscriptionRequest, GetDatalakeExceptionsSubscriptionResult> asyncHandler) {
-        final GetDatalakeExceptionsSubscriptionRequest finalRequest = beforeClientExecution(request);
+    public java.util.concurrent.Future<GetDataLakeSourcesResult> getDataLakeSourcesAsync(final GetDataLakeSourcesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDataLakeSourcesRequest, GetDataLakeSourcesResult> asyncHandler) {
+        final GetDataLakeSourcesRequest finalRequest = beforeClientExecution(request);
 
-        return executorService.submit(new java.util.concurrent.Callable<GetDatalakeExceptionsSubscriptionResult>() {
+        return executorService.submit(new java.util.concurrent.Callable<GetDataLakeSourcesResult>() {
             @Override
-            public GetDatalakeExceptionsSubscriptionResult call() throws Exception {
-                GetDatalakeExceptionsSubscriptionResult result = null;
+            public GetDataLakeSourcesResult call() throws Exception {
+                GetDataLakeSourcesResult result = null;
 
                 try {
-                    result = executeGetDatalakeExceptionsSubscription(finalRequest);
-                } catch (Exception ex) {
-                    if (asyncHandler != null) {
-                        asyncHandler.onError(ex);
-                    }
-                    throw ex;
-                }
-
-                if (asyncHandler != null) {
-                    asyncHandler.onSuccess(finalRequest, result);
-                }
-                return result;
-            }
-        });
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetDatalakeStatusResult> getDatalakeStatusAsync(GetDatalakeStatusRequest request) {
-
-        return getDatalakeStatusAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetDatalakeStatusResult> getDatalakeStatusAsync(final GetDatalakeStatusRequest request,
-            final com.amazonaws.handlers.AsyncHandler<GetDatalakeStatusRequest, GetDatalakeStatusResult> asyncHandler) {
-        final GetDatalakeStatusRequest finalRequest = beforeClientExecution(request);
-
-        return executorService.submit(new java.util.concurrent.Callable<GetDatalakeStatusResult>() {
-            @Override
-            public GetDatalakeStatusResult call() throws Exception {
-                GetDatalakeStatusResult result = null;
-
-                try {
-                    result = executeGetDatalakeStatus(finalRequest);
+                    result = executeGetDataLakeSources(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -850,23 +749,56 @@ public class AmazonSecurityLakeAsyncClient extends AmazonSecurityLakeClient impl
     }
 
     @Override
-    public java.util.concurrent.Future<ListDatalakeExceptionsResult> listDatalakeExceptionsAsync(ListDatalakeExceptionsRequest request) {
+    public java.util.concurrent.Future<ListDataLakeExceptionsResult> listDataLakeExceptionsAsync(ListDataLakeExceptionsRequest request) {
 
-        return listDatalakeExceptionsAsync(request, null);
+        return listDataLakeExceptionsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<ListDatalakeExceptionsResult> listDatalakeExceptionsAsync(final ListDatalakeExceptionsRequest request,
-            final com.amazonaws.handlers.AsyncHandler<ListDatalakeExceptionsRequest, ListDatalakeExceptionsResult> asyncHandler) {
-        final ListDatalakeExceptionsRequest finalRequest = beforeClientExecution(request);
+    public java.util.concurrent.Future<ListDataLakeExceptionsResult> listDataLakeExceptionsAsync(final ListDataLakeExceptionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListDataLakeExceptionsRequest, ListDataLakeExceptionsResult> asyncHandler) {
+        final ListDataLakeExceptionsRequest finalRequest = beforeClientExecution(request);
 
-        return executorService.submit(new java.util.concurrent.Callable<ListDatalakeExceptionsResult>() {
+        return executorService.submit(new java.util.concurrent.Callable<ListDataLakeExceptionsResult>() {
             @Override
-            public ListDatalakeExceptionsResult call() throws Exception {
-                ListDatalakeExceptionsResult result = null;
+            public ListDataLakeExceptionsResult call() throws Exception {
+                ListDataLakeExceptionsResult result = null;
 
                 try {
-                    result = executeListDatalakeExceptions(finalRequest);
+                    result = executeListDataLakeExceptions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDataLakesResult> listDataLakesAsync(ListDataLakesRequest request) {
+
+        return listDataLakesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDataLakesResult> listDataLakesAsync(final ListDataLakesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListDataLakesRequest, ListDataLakesResult> asyncHandler) {
+        final ListDataLakesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListDataLakesResult>() {
+            @Override
+            public ListDataLakesResult call() throws Exception {
+                ListDataLakesResult result = null;
+
+                try {
+                    result = executeListDataLakes(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -949,23 +881,23 @@ public class AmazonSecurityLakeAsyncClient extends AmazonSecurityLakeClient impl
     }
 
     @Override
-    public java.util.concurrent.Future<UpdateDatalakeResult> updateDatalakeAsync(UpdateDatalakeRequest request) {
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
 
-        return updateDatalakeAsync(request, null);
+        return listTagsForResourceAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<UpdateDatalakeResult> updateDatalakeAsync(final UpdateDatalakeRequest request,
-            final com.amazonaws.handlers.AsyncHandler<UpdateDatalakeRequest, UpdateDatalakeResult> asyncHandler) {
-        final UpdateDatalakeRequest finalRequest = beforeClientExecution(request);
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(final ListTagsForResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+        final ListTagsForResourceRequest finalRequest = beforeClientExecution(request);
 
-        return executorService.submit(new java.util.concurrent.Callable<UpdateDatalakeResult>() {
+        return executorService.submit(new java.util.concurrent.Callable<ListTagsForResourceResult>() {
             @Override
-            public UpdateDatalakeResult call() throws Exception {
-                UpdateDatalakeResult result = null;
+            public ListTagsForResourceResult call() throws Exception {
+                ListTagsForResourceResult result = null;
 
                 try {
-                    result = executeUpdateDatalake(finalRequest);
+                    result = executeListTagsForResource(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -982,24 +914,25 @@ public class AmazonSecurityLakeAsyncClient extends AmazonSecurityLakeClient impl
     }
 
     @Override
-    public java.util.concurrent.Future<UpdateDatalakeExceptionsExpiryResult> updateDatalakeExceptionsExpiryAsync(UpdateDatalakeExceptionsExpiryRequest request) {
+    public java.util.concurrent.Future<RegisterDataLakeDelegatedAdministratorResult> registerDataLakeDelegatedAdministratorAsync(
+            RegisterDataLakeDelegatedAdministratorRequest request) {
 
-        return updateDatalakeExceptionsExpiryAsync(request, null);
+        return registerDataLakeDelegatedAdministratorAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<UpdateDatalakeExceptionsExpiryResult> updateDatalakeExceptionsExpiryAsync(
-            final UpdateDatalakeExceptionsExpiryRequest request,
-            final com.amazonaws.handlers.AsyncHandler<UpdateDatalakeExceptionsExpiryRequest, UpdateDatalakeExceptionsExpiryResult> asyncHandler) {
-        final UpdateDatalakeExceptionsExpiryRequest finalRequest = beforeClientExecution(request);
+    public java.util.concurrent.Future<RegisterDataLakeDelegatedAdministratorResult> registerDataLakeDelegatedAdministratorAsync(
+            final RegisterDataLakeDelegatedAdministratorRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RegisterDataLakeDelegatedAdministratorRequest, RegisterDataLakeDelegatedAdministratorResult> asyncHandler) {
+        final RegisterDataLakeDelegatedAdministratorRequest finalRequest = beforeClientExecution(request);
 
-        return executorService.submit(new java.util.concurrent.Callable<UpdateDatalakeExceptionsExpiryResult>() {
+        return executorService.submit(new java.util.concurrent.Callable<RegisterDataLakeDelegatedAdministratorResult>() {
             @Override
-            public UpdateDatalakeExceptionsExpiryResult call() throws Exception {
-                UpdateDatalakeExceptionsExpiryResult result = null;
+            public RegisterDataLakeDelegatedAdministratorResult call() throws Exception {
+                RegisterDataLakeDelegatedAdministratorResult result = null;
 
                 try {
-                    result = executeUpdateDatalakeExceptionsExpiry(finalRequest);
+                    result = executeRegisterDataLakeDelegatedAdministrator(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1016,25 +949,124 @@ public class AmazonSecurityLakeAsyncClient extends AmazonSecurityLakeClient impl
     }
 
     @Override
-    public java.util.concurrent.Future<UpdateDatalakeExceptionsSubscriptionResult> updateDatalakeExceptionsSubscriptionAsync(
-            UpdateDatalakeExceptionsSubscriptionRequest request) {
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
-        return updateDatalakeExceptionsSubscriptionAsync(request, null);
+        return tagResourceAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<UpdateDatalakeExceptionsSubscriptionResult> updateDatalakeExceptionsSubscriptionAsync(
-            final UpdateDatalakeExceptionsSubscriptionRequest request,
-            final com.amazonaws.handlers.AsyncHandler<UpdateDatalakeExceptionsSubscriptionRequest, UpdateDatalakeExceptionsSubscriptionResult> asyncHandler) {
-        final UpdateDatalakeExceptionsSubscriptionRequest finalRequest = beforeClientExecution(request);
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(final TagResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
+        final TagResourceRequest finalRequest = beforeClientExecution(request);
 
-        return executorService.submit(new java.util.concurrent.Callable<UpdateDatalakeExceptionsSubscriptionResult>() {
+        return executorService.submit(new java.util.concurrent.Callable<TagResourceResult>() {
             @Override
-            public UpdateDatalakeExceptionsSubscriptionResult call() throws Exception {
-                UpdateDatalakeExceptionsSubscriptionResult result = null;
+            public TagResourceResult call() throws Exception {
+                TagResourceResult result = null;
 
                 try {
-                    result = executeUpdateDatalakeExceptionsSubscription(finalRequest);
+                    result = executeTagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request) {
+
+        return untagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(final UntagResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+        final UntagResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UntagResourceResult>() {
+            @Override
+            public UntagResourceResult call() throws Exception {
+                UntagResourceResult result = null;
+
+                try {
+                    result = executeUntagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDataLakeResult> updateDataLakeAsync(UpdateDataLakeRequest request) {
+
+        return updateDataLakeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDataLakeResult> updateDataLakeAsync(final UpdateDataLakeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateDataLakeRequest, UpdateDataLakeResult> asyncHandler) {
+        final UpdateDataLakeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateDataLakeResult>() {
+            @Override
+            public UpdateDataLakeResult call() throws Exception {
+                UpdateDataLakeResult result = null;
+
+                try {
+                    result = executeUpdateDataLake(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDataLakeExceptionSubscriptionResult> updateDataLakeExceptionSubscriptionAsync(
+            UpdateDataLakeExceptionSubscriptionRequest request) {
+
+        return updateDataLakeExceptionSubscriptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDataLakeExceptionSubscriptionResult> updateDataLakeExceptionSubscriptionAsync(
+            final UpdateDataLakeExceptionSubscriptionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateDataLakeExceptionSubscriptionRequest, UpdateDataLakeExceptionSubscriptionResult> asyncHandler) {
+        final UpdateDataLakeExceptionSubscriptionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateDataLakeExceptionSubscriptionResult>() {
+            @Override
+            public UpdateDataLakeExceptionSubscriptionResult call() throws Exception {
+                UpdateDataLakeExceptionSubscriptionResult result = null;
+
+                try {
+                    result = executeUpdateDataLakeExceptionSubscription(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1084,25 +1116,23 @@ public class AmazonSecurityLakeAsyncClient extends AmazonSecurityLakeClient impl
     }
 
     @Override
-    public java.util.concurrent.Future<UpdateSubscriptionNotificationConfigurationResult> updateSubscriptionNotificationConfigurationAsync(
-            UpdateSubscriptionNotificationConfigurationRequest request) {
+    public java.util.concurrent.Future<UpdateSubscriberNotificationResult> updateSubscriberNotificationAsync(UpdateSubscriberNotificationRequest request) {
 
-        return updateSubscriptionNotificationConfigurationAsync(request, null);
+        return updateSubscriberNotificationAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<UpdateSubscriptionNotificationConfigurationResult> updateSubscriptionNotificationConfigurationAsync(
-            final UpdateSubscriptionNotificationConfigurationRequest request,
-            final com.amazonaws.handlers.AsyncHandler<UpdateSubscriptionNotificationConfigurationRequest, UpdateSubscriptionNotificationConfigurationResult> asyncHandler) {
-        final UpdateSubscriptionNotificationConfigurationRequest finalRequest = beforeClientExecution(request);
+    public java.util.concurrent.Future<UpdateSubscriberNotificationResult> updateSubscriberNotificationAsync(final UpdateSubscriberNotificationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateSubscriberNotificationRequest, UpdateSubscriberNotificationResult> asyncHandler) {
+        final UpdateSubscriberNotificationRequest finalRequest = beforeClientExecution(request);
 
-        return executorService.submit(new java.util.concurrent.Callable<UpdateSubscriptionNotificationConfigurationResult>() {
+        return executorService.submit(new java.util.concurrent.Callable<UpdateSubscriberNotificationResult>() {
             @Override
-            public UpdateSubscriptionNotificationConfigurationResult call() throws Exception {
-                UpdateSubscriptionNotificationConfigurationResult result = null;
+            public UpdateSubscriberNotificationResult call() throws Exception {
+                UpdateSubscriberNotificationResult result = null;
 
                 try {
-                    result = executeUpdateSubscriptionNotificationConfiguration(finalRequest);
+                    result = executeUpdateSubscriberNotification(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

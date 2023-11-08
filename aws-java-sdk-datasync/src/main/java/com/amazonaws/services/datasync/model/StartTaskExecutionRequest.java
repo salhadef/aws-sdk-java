@@ -61,6 +61,13 @@ public class StartTaskExecutionRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private java.util.List<TagListEntry> tags;
+    /**
+     * <p>
+     * Specifies how you want to configure a task report, which provides detailed information about for your DataSync
+     * transfer.
+     * </p>
+     */
+    private TaskReportConfig taskReportConfig;
 
     /**
      * <p>
@@ -395,6 +402,52 @@ public class StartTaskExecutionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * Specifies how you want to configure a task report, which provides detailed information about for your DataSync
+     * transfer.
+     * </p>
+     * 
+     * @param taskReportConfig
+     *        Specifies how you want to configure a task report, which provides detailed information about for your
+     *        DataSync transfer.
+     */
+
+    public void setTaskReportConfig(TaskReportConfig taskReportConfig) {
+        this.taskReportConfig = taskReportConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies how you want to configure a task report, which provides detailed information about for your DataSync
+     * transfer.
+     * </p>
+     * 
+     * @return Specifies how you want to configure a task report, which provides detailed information about for your
+     *         DataSync transfer.
+     */
+
+    public TaskReportConfig getTaskReportConfig() {
+        return this.taskReportConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies how you want to configure a task report, which provides detailed information about for your DataSync
+     * transfer.
+     * </p>
+     * 
+     * @param taskReportConfig
+     *        Specifies how you want to configure a task report, which provides detailed information about for your
+     *        DataSync transfer.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartTaskExecutionRequest withTaskReportConfig(TaskReportConfig taskReportConfig) {
+        setTaskReportConfig(taskReportConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -415,7 +468,9 @@ public class StartTaskExecutionRequest extends com.amazonaws.AmazonWebServiceReq
         if (getExcludes() != null)
             sb.append("Excludes: ").append(getExcludes()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getTaskReportConfig() != null)
+            sb.append("TaskReportConfig: ").append(getTaskReportConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -450,6 +505,10 @@ public class StartTaskExecutionRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getTaskReportConfig() == null ^ this.getTaskReportConfig() == null)
+            return false;
+        if (other.getTaskReportConfig() != null && other.getTaskReportConfig().equals(this.getTaskReportConfig()) == false)
+            return false;
         return true;
     }
 
@@ -463,6 +522,7 @@ public class StartTaskExecutionRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getIncludes() == null) ? 0 : getIncludes().hashCode());
         hashCode = prime * hashCode + ((getExcludes() == null) ? 0 : getExcludes().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getTaskReportConfig() == null) ? 0 : getTaskReportConfig().hashCode());
         return hashCode;
     }
 

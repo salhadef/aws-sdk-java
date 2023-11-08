@@ -147,6 +147,15 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecification implements Seri
      * </p>
      */
     private Integer ipv6PrefixCount;
+    /**
+     * <p>
+     * The primary IPv6 address of the network interface. When you enable an IPv6 GUA address to be a primary IPv6, the
+     * first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network interface is
+     * detached. For more information about primary IPv6 addresses, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.
+     * </p>
+     */
+    private Boolean primaryIpv6;
 
     /**
      * <p>
@@ -1154,6 +1163,82 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecification implements Seri
     }
 
     /**
+     * <p>
+     * The primary IPv6 address of the network interface. When you enable an IPv6 GUA address to be a primary IPv6, the
+     * first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network interface is
+     * detached. For more information about primary IPv6 addresses, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.
+     * </p>
+     * 
+     * @param primaryIpv6
+     *        The primary IPv6 address of the network interface. When you enable an IPv6 GUA address to be a primary
+     *        IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the
+     *        network interface is detached. For more information about primary IPv6 addresses, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.
+     */
+
+    public void setPrimaryIpv6(Boolean primaryIpv6) {
+        this.primaryIpv6 = primaryIpv6;
+    }
+
+    /**
+     * <p>
+     * The primary IPv6 address of the network interface. When you enable an IPv6 GUA address to be a primary IPv6, the
+     * first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network interface is
+     * detached. For more information about primary IPv6 addresses, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.
+     * </p>
+     * 
+     * @return The primary IPv6 address of the network interface. When you enable an IPv6 GUA address to be a primary
+     *         IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the
+     *         network interface is detached. For more information about primary IPv6 addresses, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.
+     */
+
+    public Boolean getPrimaryIpv6() {
+        return this.primaryIpv6;
+    }
+
+    /**
+     * <p>
+     * The primary IPv6 address of the network interface. When you enable an IPv6 GUA address to be a primary IPv6, the
+     * first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network interface is
+     * detached. For more information about primary IPv6 addresses, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.
+     * </p>
+     * 
+     * @param primaryIpv6
+     *        The primary IPv6 address of the network interface. When you enable an IPv6 GUA address to be a primary
+     *        IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the
+     *        network interface is detached. For more information about primary IPv6 addresses, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LaunchTemplateInstanceNetworkInterfaceSpecification withPrimaryIpv6(Boolean primaryIpv6) {
+        setPrimaryIpv6(primaryIpv6);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The primary IPv6 address of the network interface. When you enable an IPv6 GUA address to be a primary IPv6, the
+     * first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network interface is
+     * detached. For more information about primary IPv6 addresses, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.
+     * </p>
+     * 
+     * @return The primary IPv6 address of the network interface. When you enable an IPv6 GUA address to be a primary
+     *         IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the
+     *         network interface is detached. For more information about primary IPv6 addresses, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.
+     */
+
+    public Boolean isPrimaryIpv6() {
+        return this.primaryIpv6;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1202,7 +1287,9 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecification implements Seri
         if (getIpv6Prefixes() != null)
             sb.append("Ipv6Prefixes: ").append(getIpv6Prefixes()).append(",");
         if (getIpv6PrefixCount() != null)
-            sb.append("Ipv6PrefixCount: ").append(getIpv6PrefixCount());
+            sb.append("Ipv6PrefixCount: ").append(getIpv6PrefixCount()).append(",");
+        if (getPrimaryIpv6() != null)
+            sb.append("PrimaryIpv6: ").append(getPrimaryIpv6());
         sb.append("}");
         return sb.toString();
     }
@@ -1294,6 +1381,10 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecification implements Seri
             return false;
         if (other.getIpv6PrefixCount() != null && other.getIpv6PrefixCount().equals(this.getIpv6PrefixCount()) == false)
             return false;
+        if (other.getPrimaryIpv6() == null ^ this.getPrimaryIpv6() == null)
+            return false;
+        if (other.getPrimaryIpv6() != null && other.getPrimaryIpv6().equals(this.getPrimaryIpv6()) == false)
+            return false;
         return true;
     }
 
@@ -1321,6 +1412,7 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecification implements Seri
         hashCode = prime * hashCode + ((getIpv4PrefixCount() == null) ? 0 : getIpv4PrefixCount().hashCode());
         hashCode = prime * hashCode + ((getIpv6Prefixes() == null) ? 0 : getIpv6Prefixes().hashCode());
         hashCode = prime * hashCode + ((getIpv6PrefixCount() == null) ? 0 : getIpv6PrefixCount().hashCode());
+        hashCode = prime * hashCode + ((getPrimaryIpv6() == null) ? 0 : getPrimaryIpv6().hashCode());
         return hashCode;
     }
 

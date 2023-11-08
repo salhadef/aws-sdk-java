@@ -15,9 +15,9 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Choose how the service does stereo downmixing. Default value: Not indicated (ATMOS_STORAGE_DDP_DMIXMOD_NOT_INDICATED)
- * Related setting: To have MediaConvert use this value, keep the default value, Custom (SPECIFIED) for the setting
- * Downmix control (DownmixControl). Otherwise, MediaConvert ignores Stereo downmix (StereoDownmix).
+ * Choose how the service does stereo downmixing. Default value: Not indicated Related setting: To have MediaConvert use
+ * this value, keep the default value, Custom for the setting Downmix control. Otherwise, MediaConvert ignores Stereo
+ * downmix.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Eac3AtmosStereoDownmix {

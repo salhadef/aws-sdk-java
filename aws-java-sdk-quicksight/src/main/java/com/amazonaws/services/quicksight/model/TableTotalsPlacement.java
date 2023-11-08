@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum TableTotalsPlacement {
 
     START("START"),
-    END("END");
+    END("END"),
+    AUTO("AUTO");
 
     private String value;
 

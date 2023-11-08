@@ -30,9 +30,9 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      * The Amazon Resource Name (ARN) for the applied quota for which you want to list tags. You can get this
      * information by using the Service Quotas console, or by listing the quotas using the <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html"
-     * >list-service-quotas</a> AWS CLI command or the <a
+     * >list-service-quotas</a> CLI command or the <a
      * href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html"
-     * >ListServiceQuotas</a> AWS API operation.
+     * >ListServiceQuotas</a> Amazon Web Services API operation.
      * </p>
      */
     private String resourceARN;
@@ -42,18 +42,18 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      * The Amazon Resource Name (ARN) for the applied quota for which you want to list tags. You can get this
      * information by using the Service Quotas console, or by listing the quotas using the <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html"
-     * >list-service-quotas</a> AWS CLI command or the <a
+     * >list-service-quotas</a> CLI command or the <a
      * href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html"
-     * >ListServiceQuotas</a> AWS API operation.
+     * >ListServiceQuotas</a> Amazon Web Services API operation.
      * </p>
      * 
      * @param resourceARN
      *        The Amazon Resource Name (ARN) for the applied quota for which you want to list tags. You can get this
      *        information by using the Service Quotas console, or by listing the quotas using the <a
      *        href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html"
-     *        >list-service-quotas</a> AWS CLI command or the <a
+     *        >list-service-quotas</a> CLI command or the <a
      *        href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html"
-     *        >ListServiceQuotas</a> AWS API operation.
+     *        >ListServiceQuotas</a> Amazon Web Services API operation.
      */
 
     public void setResourceARN(String resourceARN) {
@@ -65,17 +65,17 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      * The Amazon Resource Name (ARN) for the applied quota for which you want to list tags. You can get this
      * information by using the Service Quotas console, or by listing the quotas using the <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html"
-     * >list-service-quotas</a> AWS CLI command or the <a
+     * >list-service-quotas</a> CLI command or the <a
      * href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html"
-     * >ListServiceQuotas</a> AWS API operation.
+     * >ListServiceQuotas</a> Amazon Web Services API operation.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) for the applied quota for which you want to list tags. You can get this
      *         information by using the Service Quotas console, or by listing the quotas using the <a
      *         href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html"
-     *         >list-service-quotas</a> AWS CLI command or the <a
+     *         >list-service-quotas</a> CLI command or the <a
      *         href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html"
-     *         >ListServiceQuotas</a> AWS API operation.
+     *         >ListServiceQuotas</a> Amazon Web Services API operation.
      */
 
     public String getResourceARN() {
@@ -87,18 +87,18 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      * The Amazon Resource Name (ARN) for the applied quota for which you want to list tags. You can get this
      * information by using the Service Quotas console, or by listing the quotas using the <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html"
-     * >list-service-quotas</a> AWS CLI command or the <a
+     * >list-service-quotas</a> CLI command or the <a
      * href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html"
-     * >ListServiceQuotas</a> AWS API operation.
+     * >ListServiceQuotas</a> Amazon Web Services API operation.
      * </p>
      * 
      * @param resourceARN
      *        The Amazon Resource Name (ARN) for the applied quota for which you want to list tags. You can get this
      *        information by using the Service Quotas console, or by listing the quotas using the <a
      *        href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html"
-     *        >list-service-quotas</a> AWS CLI command or the <a
+     *        >list-service-quotas</a> CLI command or the <a
      *        href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html"
-     *        >ListServiceQuotas</a> AWS API operation.
+     *        >ListServiceQuotas</a> Amazon Web Services API operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

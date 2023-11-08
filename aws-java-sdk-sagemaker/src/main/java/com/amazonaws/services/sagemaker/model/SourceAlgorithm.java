@@ -36,7 +36,7 @@ public class SourceAlgorithm implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * The model artifacts must be in an S3 bucket that is in the same region as the algorithm.
+     * The model artifacts must be in an S3 bucket that is in the same Amazon Web Services region as the algorithm.
      * </p>
      * </note>
      */
@@ -56,7 +56,7 @@ public class SourceAlgorithm implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * The model artifacts must be in an S3 bucket that is in the same region as the algorithm.
+     * The model artifacts must be in an S3 bucket that is in the same Amazon Web Services region as the algorithm.
      * </p>
      * </note>
      * 
@@ -64,7 +64,8 @@ public class SourceAlgorithm implements Serializable, Cloneable, StructuredPojo 
      *        The Amazon S3 path where the model artifacts, which result from model training, are stored. This path must
      *        point to a single <code>gzip</code> compressed tar archive (<code>.tar.gz</code> suffix).</p> <note>
      *        <p>
-     *        The model artifacts must be in an S3 bucket that is in the same region as the algorithm.
+     *        The model artifacts must be in an S3 bucket that is in the same Amazon Web Services region as the
+     *        algorithm.
      *        </p>
      */
 
@@ -79,14 +80,15 @@ public class SourceAlgorithm implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * The model artifacts must be in an S3 bucket that is in the same region as the algorithm.
+     * The model artifacts must be in an S3 bucket that is in the same Amazon Web Services region as the algorithm.
      * </p>
      * </note>
      * 
      * @return The Amazon S3 path where the model artifacts, which result from model training, are stored. This path
      *         must point to a single <code>gzip</code> compressed tar archive (<code>.tar.gz</code> suffix).</p> <note>
      *         <p>
-     *         The model artifacts must be in an S3 bucket that is in the same region as the algorithm.
+     *         The model artifacts must be in an S3 bucket that is in the same Amazon Web Services region as the
+     *         algorithm.
      *         </p>
      */
 
@@ -101,7 +103,7 @@ public class SourceAlgorithm implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * The model artifacts must be in an S3 bucket that is in the same region as the algorithm.
+     * The model artifacts must be in an S3 bucket that is in the same Amazon Web Services region as the algorithm.
      * </p>
      * </note>
      * 
@@ -109,7 +111,8 @@ public class SourceAlgorithm implements Serializable, Cloneable, StructuredPojo 
      *        The Amazon S3 path where the model artifacts, which result from model training, are stored. This path must
      *        point to a single <code>gzip</code> compressed tar archive (<code>.tar.gz</code> suffix).</p> <note>
      *        <p>
-     *        The model artifacts must be in an S3 bucket that is in the same region as the algorithm.
+     *        The model artifacts must be in an S3 bucket that is in the same Amazon Web Services region as the
+     *        algorithm.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

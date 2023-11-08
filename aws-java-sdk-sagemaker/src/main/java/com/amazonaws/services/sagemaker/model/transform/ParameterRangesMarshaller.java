@@ -34,6 +34,8 @@ public class ParameterRangesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ContinuousParameterRanges").build();
     private static final MarshallingInfo<List> CATEGORICALPARAMETERRANGES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CategoricalParameterRanges").build();
+    private static final MarshallingInfo<List> AUTOPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutoParameters").build();
 
     private static final ParameterRangesMarshaller instance = new ParameterRangesMarshaller();
 
@@ -54,6 +56,7 @@ public class ParameterRangesMarshaller {
             protocolMarshaller.marshall(parameterRanges.getIntegerParameterRanges(), INTEGERPARAMETERRANGES_BINDING);
             protocolMarshaller.marshall(parameterRanges.getContinuousParameterRanges(), CONTINUOUSPARAMETERRANGES_BINDING);
             protocolMarshaller.marshall(parameterRanges.getCategoricalParameterRanges(), CATEGORICALPARAMETERRANGES_BINDING);
+            protocolMarshaller.marshall(parameterRanges.getAutoParameters(), AUTOPARAMETERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

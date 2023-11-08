@@ -515,6 +515,26 @@ public class DBInstanceStaxUnmarshaller implements Unmarshaller<DBInstance, Stax
                     dBInstance.setReadReplicaSourceDBClusterIdentifier(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("PercentProgress", targetDepth)) {
+                    dBInstance.setPercentProgress(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("DedicatedLogVolume", targetDepth)) {
+                    dBInstance.setDedicatedLogVolume(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("IsStorageConfigUpgradeAvailable", targetDepth)) {
+                    dBInstance.setIsStorageConfigUpgradeAvailable(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("MultiTenant", targetDepth)) {
+                    dBInstance.setMultiTenant(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return dBInstance;

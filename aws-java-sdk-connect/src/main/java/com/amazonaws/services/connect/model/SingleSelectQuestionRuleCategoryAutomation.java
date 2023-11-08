@@ -44,7 +44,7 @@ public class SingleSelectQuestionRuleCategoryAutomation implements Serializable,
     private String condition;
     /**
      * <p>
-     * The identifier of the answer option tha
+     * The identifier of the answer option.
      * </p>
      */
     private String optionRefId;
@@ -166,11 +166,11 @@ public class SingleSelectQuestionRuleCategoryAutomation implements Serializable,
 
     /**
      * <p>
-     * The identifier of the answer option tha
+     * The identifier of the answer option.
      * </p>
      * 
      * @param optionRefId
-     *        The identifier of the answer option tha
+     *        The identifier of the answer option.
      */
 
     public void setOptionRefId(String optionRefId) {
@@ -179,10 +179,10 @@ public class SingleSelectQuestionRuleCategoryAutomation implements Serializable,
 
     /**
      * <p>
-     * The identifier of the answer option tha
+     * The identifier of the answer option.
      * </p>
      * 
-     * @return The identifier of the answer option tha
+     * @return The identifier of the answer option.
      */
 
     public String getOptionRefId() {
@@ -191,11 +191,11 @@ public class SingleSelectQuestionRuleCategoryAutomation implements Serializable,
 
     /**
      * <p>
-     * The identifier of the answer option tha
+     * The identifier of the answer option.
      * </p>
      * 
      * @param optionRefId
-     *        The identifier of the answer option tha
+     *        The identifier of the answer option.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

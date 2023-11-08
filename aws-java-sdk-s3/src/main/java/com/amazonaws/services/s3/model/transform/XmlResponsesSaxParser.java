@@ -640,6 +640,7 @@ public class XmlResponsesSaxParser {
 
         private S3ObjectSummary currentObject = null;
         private Owner currentOwner = null;
+        private RestoreStatus currentRestoreStatus = null;
         private String lastKey = null;
 
         public ListBucketHandler(final boolean shouldSDKDecodeResponse) {
@@ -667,6 +668,10 @@ public class XmlResponsesSaxParser {
             else if (in("ListBucketResult", "Contents")) {
                 if (name.equals("Owner")) {
                     currentOwner = new Owner();
+
+                } else if (name.equals("RestoreStatus")) {
+                    currentRestoreStatus = new RestoreStatus();
+
                 }
             }
         }
@@ -776,6 +781,19 @@ public class XmlResponsesSaxParser {
                 } else if (name.equals("Owner")) {
                     currentObject.setOwner(currentOwner);
                     currentOwner = null;
+
+                } else if (name.equals("RestoreStatus")) {
+                    currentObject.setRestoreStatus(currentRestoreStatus);
+                    currentRestoreStatus = null;
+                }
+            }
+
+            else if (in("ListBucketResult", "Contents", "RestoreStatus")) {
+                if (name.equals("IsRestoreInProgress")) {
+                    currentRestoreStatus.setIsRestoreInProgress(Boolean.parseBoolean(getText()));
+
+                } else if (name.equals("RestoreExpiryDate")) {
+                    currentRestoreStatus.setRestoreExpiryDate(ServiceUtils.parseIso8601Date(getText()));
                 }
             }
 
@@ -806,6 +824,7 @@ public class XmlResponsesSaxParser {
 
         private S3ObjectSummary currentObject = null;
         private Owner currentOwner = null;
+        private RestoreStatus currentRestoreStatus = null;
         private String lastKey = null;
 
         public ListObjectsV2Handler(final boolean shouldSDKDecodeResponse) {
@@ -833,6 +852,10 @@ public class XmlResponsesSaxParser {
             else if (in("ListBucketResult", "Contents")) {
                 if (name.equals("Owner")) {
                     currentOwner = new Owner();
+
+                } else if (name.equals("RestoreStatus")) {
+                    currentRestoreStatus = new RestoreStatus();
+
                 }
             }
         }
@@ -942,6 +965,19 @@ public class XmlResponsesSaxParser {
                 } else if (name.equals("Owner")) {
                     currentObject.setOwner(currentOwner);
                     currentOwner = null;
+
+                } else if (name.equals("RestoreStatus")) {
+                    currentObject.setRestoreStatus(currentRestoreStatus);
+                    currentRestoreStatus = null;
+                }
+            }
+
+            else if (in("ListBucketResult", "Contents", "RestoreStatus")) {
+                if (name.equals("IsRestoreInProgress")) {
+                    currentRestoreStatus.setIsRestoreInProgress(Boolean.parseBoolean(getText()));
+
+                } else if (name.equals("RestoreExpiryDate")) {
+                    currentRestoreStatus.setRestoreExpiryDate(ServiceUtils.parseIso8601Date(getText()));
                 }
             }
 
@@ -1390,6 +1426,7 @@ public class XmlResponsesSaxParser {
 
         private S3VersionSummary currentVersionSummary;
         private Owner currentOwner;
+        private RestoreStatus currentRestoreStatus;
 
         public ListVersionsHandler(final boolean shouldSDKDecodeResponse) {
             this.shouldSDKDecodeResponse = shouldSDKDecodeResponse;
@@ -1424,6 +1461,10 @@ public class XmlResponsesSaxParser {
                     || in("ListVersionsResult", "DeleteMarker")) {
                 if (name.equals("Owner")) {
                     currentOwner = new Owner();
+
+                } else if (name.equals("RestoreStatus")) {
+                    currentRestoreStatus = new RestoreStatus();
+
                 }
             }
         }
@@ -1516,6 +1557,18 @@ public class XmlResponsesSaxParser {
 
                 } else if (name.equals("StorageClass")) {
                     currentVersionSummary.setStorageClass(getText());
+
+                } else if (name.equals("RestoreStatus")) {
+                    currentVersionSummary.setRestoreStatus(currentRestoreStatus);
+                    currentRestoreStatus = null;
+                }
+            }
+
+            else if (in("ListVersionsResult", "Version", "RestoreStatus")) {
+                if (name.equals("IsRestoreInProgress")) {
+                    currentRestoreStatus.setIsRestoreInProgress(Boolean.parseBoolean(getText()));
+                } else if (name.equals("RestoreExpiryDate")) {
+                    currentRestoreStatus.setRestoreExpiryDate(ServiceUtils.parseIso8601Date(getText()));
                 }
             }
 

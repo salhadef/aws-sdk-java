@@ -58,7 +58,8 @@ public enum Regions {
     AF_SOUTH_1("af-south-1", "Africa (Cape Town)"),
     US_ISO_EAST_1("us-iso-east-1", "US ISO East"),
     US_ISOB_EAST_1("us-isob-east-1", "US ISOB East (Ohio)"),
-    US_ISO_WEST_1("us-iso-west-1", "US ISO West")
+    US_ISO_WEST_1("us-iso-west-1", "US ISO West"),
+    IL_CENTRAL_1("il-central-1", "Israel (Tel Aviv)")
     ;
 
     /**

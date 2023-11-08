@@ -42,6 +42,8 @@ public class CreateResourceShareRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken").build();
     private static final MarshallingInfo<List> PERMISSIONARNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("permissionArns").build();
+    private static final MarshallingInfo<List> SOURCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("sources").build();
 
     private static final CreateResourceShareRequestMarshaller instance = new CreateResourceShareRequestMarshaller();
 
@@ -66,6 +68,7 @@ public class CreateResourceShareRequestMarshaller {
             protocolMarshaller.marshall(createResourceShareRequest.getAllowExternalPrincipals(), ALLOWEXTERNALPRINCIPALS_BINDING);
             protocolMarshaller.marshall(createResourceShareRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(createResourceShareRequest.getPermissionArns(), PERMISSIONARNS_BINDING);
+            protocolMarshaller.marshall(createResourceShareRequest.getSources(), SOURCES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

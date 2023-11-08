@@ -114,6 +114,10 @@ public class GetApplicationResultJsonUnmarshaller implements Unmarshaller<GetApp
                     context.nextToken();
                     getApplicationResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("roleArn", targetDepth)) {
+                    context.nextToken();
+                    getApplicationResult.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     getApplicationResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));

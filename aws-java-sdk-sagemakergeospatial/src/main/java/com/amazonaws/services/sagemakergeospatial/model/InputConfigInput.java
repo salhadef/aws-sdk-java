@@ -30,12 +30,6 @@ public class InputConfigInput implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The location of the input data.&gt;
-     * </p>
-     */
-    private EojDataSourceConfigInput dataSourceConfig;
-    /**
-     * <p>
      * The Amazon Resource Name (ARN) of the previous Earth Observation job.
      * </p>
      */
@@ -47,46 +41,6 @@ public class InputConfigInput implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private RasterDataCollectionQueryInput rasterDataCollectionQuery;
-
-    /**
-     * <p>
-     * The location of the input data.&gt;
-     * </p>
-     * 
-     * @param dataSourceConfig
-     *        The location of the input data.&gt;
-     */
-
-    public void setDataSourceConfig(EojDataSourceConfigInput dataSourceConfig) {
-        this.dataSourceConfig = dataSourceConfig;
-    }
-
-    /**
-     * <p>
-     * The location of the input data.&gt;
-     * </p>
-     * 
-     * @return The location of the input data.&gt;
-     */
-
-    public EojDataSourceConfigInput getDataSourceConfig() {
-        return this.dataSourceConfig;
-    }
-
-    /**
-     * <p>
-     * The location of the input data.&gt;
-     * </p>
-     * 
-     * @param dataSourceConfig
-     *        The location of the input data.&gt;
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public InputConfigInput withDataSourceConfig(EojDataSourceConfigInput dataSourceConfig) {
-        setDataSourceConfig(dataSourceConfig);
-        return this;
-    }
 
     /**
      * <p>
@@ -186,8 +140,6 @@ public class InputConfigInput implements Serializable, Cloneable, StructuredPojo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDataSourceConfig() != null)
-            sb.append("DataSourceConfig: ").append(getDataSourceConfig()).append(",");
         if (getPreviousEarthObservationJobArn() != null)
             sb.append("PreviousEarthObservationJobArn: ").append(getPreviousEarthObservationJobArn()).append(",");
         if (getRasterDataCollectionQuery() != null)
@@ -206,10 +158,6 @@ public class InputConfigInput implements Serializable, Cloneable, StructuredPojo
         if (obj instanceof InputConfigInput == false)
             return false;
         InputConfigInput other = (InputConfigInput) obj;
-        if (other.getDataSourceConfig() == null ^ this.getDataSourceConfig() == null)
-            return false;
-        if (other.getDataSourceConfig() != null && other.getDataSourceConfig().equals(this.getDataSourceConfig()) == false)
-            return false;
         if (other.getPreviousEarthObservationJobArn() == null ^ this.getPreviousEarthObservationJobArn() == null)
             return false;
         if (other.getPreviousEarthObservationJobArn() != null
@@ -227,7 +175,6 @@ public class InputConfigInput implements Serializable, Cloneable, StructuredPojo
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getDataSourceConfig() == null) ? 0 : getDataSourceConfig().hashCode());
         hashCode = prime * hashCode + ((getPreviousEarthObservationJobArn() == null) ? 0 : getPreviousEarthObservationJobArn().hashCode());
         hashCode = prime * hashCode + ((getRasterDataCollectionQuery() == null) ? 0 : getRasterDataCollectionQuery().hashCode());
         return hashCode;

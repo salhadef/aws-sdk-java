@@ -54,6 +54,17 @@ public class CopyDistributionRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private String callerReference;
+    /**
+     * <p>
+     * A Boolean flag to specify the state of the staging distribution when it's created. When you set this value to
+     * <code>True</code>, the staging distribution is enabled. When you set this value to <code>False</code>, the
+     * staging distribution is disabled.
+     * </p>
+     * <p>
+     * If you omit this field, the default value is <code>True</code>.
+     * </p>
+     */
+    private Boolean enabled;
 
     /**
      * <p>
@@ -260,6 +271,94 @@ public class CopyDistributionRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * A Boolean flag to specify the state of the staging distribution when it's created. When you set this value to
+     * <code>True</code>, the staging distribution is enabled. When you set this value to <code>False</code>, the
+     * staging distribution is disabled.
+     * </p>
+     * <p>
+     * If you omit this field, the default value is <code>True</code>.
+     * </p>
+     * 
+     * @param enabled
+     *        A Boolean flag to specify the state of the staging distribution when it's created. When you set this value
+     *        to <code>True</code>, the staging distribution is enabled. When you set this value to <code>False</code>,
+     *        the staging distribution is disabled.</p>
+     *        <p>
+     *        If you omit this field, the default value is <code>True</code>.
+     */
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    /**
+     * <p>
+     * A Boolean flag to specify the state of the staging distribution when it's created. When you set this value to
+     * <code>True</code>, the staging distribution is enabled. When you set this value to <code>False</code>, the
+     * staging distribution is disabled.
+     * </p>
+     * <p>
+     * If you omit this field, the default value is <code>True</code>.
+     * </p>
+     * 
+     * @return A Boolean flag to specify the state of the staging distribution when it's created. When you set this
+     *         value to <code>True</code>, the staging distribution is enabled. When you set this value to
+     *         <code>False</code>, the staging distribution is disabled.</p>
+     *         <p>
+     *         If you omit this field, the default value is <code>True</code>.
+     */
+
+    public Boolean getEnabled() {
+        return this.enabled;
+    }
+
+    /**
+     * <p>
+     * A Boolean flag to specify the state of the staging distribution when it's created. When you set this value to
+     * <code>True</code>, the staging distribution is enabled. When you set this value to <code>False</code>, the
+     * staging distribution is disabled.
+     * </p>
+     * <p>
+     * If you omit this field, the default value is <code>True</code>.
+     * </p>
+     * 
+     * @param enabled
+     *        A Boolean flag to specify the state of the staging distribution when it's created. When you set this value
+     *        to <code>True</code>, the staging distribution is enabled. When you set this value to <code>False</code>,
+     *        the staging distribution is disabled.</p>
+     *        <p>
+     *        If you omit this field, the default value is <code>True</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CopyDistributionRequest withEnabled(Boolean enabled) {
+        setEnabled(enabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A Boolean flag to specify the state of the staging distribution when it's created. When you set this value to
+     * <code>True</code>, the staging distribution is enabled. When you set this value to <code>False</code>, the
+     * staging distribution is disabled.
+     * </p>
+     * <p>
+     * If you omit this field, the default value is <code>True</code>.
+     * </p>
+     * 
+     * @return A Boolean flag to specify the state of the staging distribution when it's created. When you set this
+     *         value to <code>True</code>, the staging distribution is enabled. When you set this value to
+     *         <code>False</code>, the staging distribution is disabled.</p>
+     *         <p>
+     *         If you omit this field, the default value is <code>True</code>.
+     */
+
+    public Boolean isEnabled() {
+        return this.enabled;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -278,7 +377,9 @@ public class CopyDistributionRequest extends com.amazonaws.AmazonWebServiceReque
         if (getIfMatch() != null)
             sb.append("IfMatch: ").append(getIfMatch()).append(",");
         if (getCallerReference() != null)
-            sb.append("CallerReference: ").append(getCallerReference());
+            sb.append("CallerReference: ").append(getCallerReference()).append(",");
+        if (getEnabled() != null)
+            sb.append("Enabled: ").append(getEnabled());
         sb.append("}");
         return sb.toString();
     }
@@ -309,6 +410,10 @@ public class CopyDistributionRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getCallerReference() != null && other.getCallerReference().equals(this.getCallerReference()) == false)
             return false;
+        if (other.getEnabled() == null ^ this.getEnabled() == null)
+            return false;
+        if (other.getEnabled() != null && other.getEnabled().equals(this.getEnabled()) == false)
+            return false;
         return true;
     }
 
@@ -321,6 +426,7 @@ public class CopyDistributionRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getStaging() == null) ? 0 : getStaging().hashCode());
         hashCode = prime * hashCode + ((getIfMatch() == null) ? 0 : getIfMatch().hashCode());
         hashCode = prime * hashCode + ((getCallerReference() == null) ? 0 : getCallerReference().hashCode());
+        hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
         return hashCode;
     }
 

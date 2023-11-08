@@ -27,7 +27,7 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Entity resource you want to associate with a resource policy.
+     * The Amazon Resource Name (ARN) of the entity resource you want to associate with a resource policy.
      * </p>
      */
     private String resourceArn;
@@ -40,11 +40,11 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Entity resource you want to associate with a resource policy.
+     * The Amazon Resource Name (ARN) of the entity resource you want to associate with a resource policy.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the Entity resource you want to associate with a resource policy.
+     *        The Amazon Resource Name (ARN) of the entity resource you want to associate with a resource policy.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -53,10 +53,10 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Entity resource you want to associate with a resource policy.
+     * The Amazon Resource Name (ARN) of the entity resource you want to associate with a resource policy.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Entity resource you want to associate with a resource policy.
+     * @return The Amazon Resource Name (ARN) of the entity resource you want to associate with a resource policy.
      */
 
     public String getResourceArn() {
@@ -65,11 +65,11 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Entity resource you want to associate with a resource policy.
+     * The Amazon Resource Name (ARN) of the entity resource you want to associate with a resource policy.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the Entity resource you want to associate with a resource policy.
+     *        The Amazon Resource Name (ARN) of the entity resource you want to associate with a resource policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

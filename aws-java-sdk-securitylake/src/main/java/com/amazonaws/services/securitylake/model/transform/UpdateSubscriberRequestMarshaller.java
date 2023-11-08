@@ -28,14 +28,14 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UpdateSubscriberRequestMarshaller {
 
-    private static final MarshallingInfo<String> EXTERNALID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("externalId").build();
-    private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
-            .marshallLocationName("id").build();
-    private static final MarshallingInfo<List> SOURCETYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("sourceTypes").build();
+    private static final MarshallingInfo<List> SOURCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("sources").build();
     private static final MarshallingInfo<String> SUBSCRIBERDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("subscriberDescription").build();
+    private static final MarshallingInfo<String> SUBSCRIBERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("subscriberId").build();
+    private static final MarshallingInfo<StructuredPojo> SUBSCRIBERIDENTITY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("subscriberIdentity").build();
     private static final MarshallingInfo<String> SUBSCRIBERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("subscriberName").build();
 
@@ -55,10 +55,10 @@ public class UpdateSubscriberRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(updateSubscriberRequest.getExternalId(), EXTERNALID_BINDING);
-            protocolMarshaller.marshall(updateSubscriberRequest.getId(), ID_BINDING);
-            protocolMarshaller.marshall(updateSubscriberRequest.getSourceTypes(), SOURCETYPES_BINDING);
+            protocolMarshaller.marshall(updateSubscriberRequest.getSources(), SOURCES_BINDING);
             protocolMarshaller.marshall(updateSubscriberRequest.getSubscriberDescription(), SUBSCRIBERDESCRIPTION_BINDING);
+            protocolMarshaller.marshall(updateSubscriberRequest.getSubscriberId(), SUBSCRIBERID_BINDING);
+            protocolMarshaller.marshall(updateSubscriberRequest.getSubscriberIdentity(), SUBSCRIBERIDENTITY_BINDING);
             protocolMarshaller.marshall(updateSubscriberRequest.getSubscriberName(), SUBSCRIBERNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

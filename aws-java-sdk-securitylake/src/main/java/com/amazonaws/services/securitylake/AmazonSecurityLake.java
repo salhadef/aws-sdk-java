@@ -26,16 +26,10 @@ import com.amazonaws.services.securitylake.model.*;
  * {@link com.amazonaws.services.securitylake.AbstractAmazonSecurityLake} instead.
  * </p>
  * <p>
- * <note>
- * <p>
- * Amazon Security Lake is in preview release. Your use of the Security Lake preview is subject to Section 2 of the <a
- * href="http://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>("Betas and Previews").
- * </p>
- * </note>
  * <p>
  * Amazon Security Lake is a fully managed security data lake service. You can use Security Lake to automatically
  * centralize security data from cloud, on-premises, and custom sources into a data lake that's stored in your Amazon
- * Web Servicesaccount. Amazon Web Services Organizations is an account management service that lets you consolidate
+ * Web Services account. Amazon Web Services Organizations is an account management service that lets you consolidate
  * multiple Amazon Web Services accounts into an organization that you create and centrally manage. With Organizations,
  * you can create member accounts and invite existing accounts to join your organization. Security Lake helps you
  * analyze security data for a more complete understanding of your security posture across the entire organization. It
@@ -47,7 +41,7 @@ import com.amazonaws.services.securitylake.model.*;
  * </p>
  * <p>
  * Amazon Security Lake integrates with CloudTrail, a service that provides a record of actions taken by a user, role,
- * or an Amazon Web Services service in Security Lake CloudTrail captures API calls for Security Lake as events. The
+ * or an Amazon Web Services service. In Security Lake, CloudTrail captures API calls for Security Lake as events. The
  * calls captured include calls from the Security Lake console and code calls to the Security Lake API operations. If
  * you create a trail, you can enable continuous delivery of CloudTrail events to an Amazon S3 bucket, including events
  * for Security Lake. If you don't configure a trail, you can still view the most recent events in the CloudTrail
@@ -83,16 +77,8 @@ public interface AmazonSecurityLake {
      * <p>
      * Adds a natively supported Amazon Web Service as an Amazon Security Lake source. Enables source types for member
      * accounts in required Amazon Web Services Regions, based on the parameters you specify. You can choose any source
-     * type in any Region for either accounts that are part of a trusted organization or standalone accounts. At least
-     * one of the three dimensions is a mandatory input to this API. However, you can supply any combination of the
-     * three dimensions to this API.
-     * </p>
-     * <p>
-     * By default, a dimension refers to the entire set. When you don't provide a dimension, Security Lake assumes that
-     * the missing dimension refers to the entire set. This is overridden when you supply any one of the inputs. For
-     * instance, when you do not specify members, the API enables all Security Lake member accounts for all sources.
-     * Similarly, when you do not specify Regions, Security Lake is enabled for all the Regions where Security Lake is
-     * available as a service.
+     * type in any Region for either accounts that are part of a trusted organization or standalone accounts. Once you
+     * add an Amazon Web Service as a source, Security Lake starts collecting logs and events from it.
      * </p>
      * <p>
      * You can use this API only to enable natively supported Amazon Web Services as a source. Use
@@ -101,26 +87,25 @@ public interface AmazonSecurityLake {
      * 
      * @param createAwsLogSourceRequest
      * @return Result of the CreateAwsLogSource operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InternalServerException
      *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
      *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
-     * @throws S3Exception
-     *         Provides an extension of the AmazonServiceException for errors reported by Amazon S3 while processing a
-     *         request. In particular, this class provides access to the Amazon S3 extended request ID. If Amazon S3 is
-     *         incorrectly handling a request and you need to contact Amazon, this extended request ID may provide
-     *         useful debugging information.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
      *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
      *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
      *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws ResourceNotFoundException
-     *         The resource could not be found.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
      * @sample AmazonSecurityLake.CreateAwsLogSource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateAwsLogSource"
      *      target="_top">AWS API Documentation</a>
@@ -133,30 +118,30 @@ public interface AmazonSecurityLake {
      * create a custom source. Security Lake can collect logs and events from third-party custom sources. After creating
      * the appropriate IAM role to invoke Glue crawler, use this API to add a custom source name in Security Lake. This
      * operation creates a partition in the Amazon S3 bucket for Security Lake as the target location for log files from
-     * the custom source in addition to an associated Glue table and an Glue crawler.
+     * the custom source. In addition, this operation also creates an associated Glue table and an Glue crawler.
      * </p>
      * 
      * @param createCustomLogSourceRequest
      * @return Result of the CreateCustomLogSource operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InternalServerException
      *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
      *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
-     * @throws ConflictSourceNamesException
-     *         There was a conflict when you attempted to modify a Security Lake source name.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
      *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
      *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
      *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws BucketNotFoundException
-     *         Amazon Security Lake generally returns 404 errors if the requested object is missing from the bucket.
-     * @throws ResourceNotFoundException
-     *         The resource could not be found.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
      * @sample AmazonSecurityLake.CreateCustomLogSource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateCustomLogSource"
      *      target="_top">AWS API Documentation</a>
@@ -167,12 +152,10 @@ public interface AmazonSecurityLake {
      * <p>
      * Initializes an Amazon Security Lake instance with the provided (or default) configuration. You can enable
      * Security Lake in Amazon Web Services Regions with customized settings before enabling log collection in Regions.
-     * You can either use the <code>enableAll</code> parameter to specify all Regions or specify the Regions where you
-     * want to enable Security Lake. To specify particular Regions, use the <code>Regions</code> parameter and then
-     * configure these Regions using the <code>configurations</code> parameter. If you have already enabled Security
-     * Lake in a Region when you call this command, the command will update the Region if you provide new configuration
-     * parameters. If you have not already enabled Security Lake in the Region when you call this API, it will set up
-     * the data lake in the Region with the specified configurations.
+     * To specify particular Regions, configure these Regions using the <code>configurations</code> parameter. If you
+     * have already enabled Security Lake in a Region when you call this command, the command will update the Region if
+     * you provide new configuration parameters. If you have not already enabled Security Lake in the Region when you
+     * call this API, it will set up the data lake in the Region with the specified configurations.
      * </p>
      * <p>
      * When you enable Security Lake, it starts ingesting security data after the <code>CreateAwsLogSource</code> call.
@@ -183,34 +166,65 @@ public interface AmazonSecurityLake {
      * Lake User Guide</a>.
      * </p>
      * 
-     * @param createDatalakeRequest
-     * @return Result of the CreateDatalake operation returned by the service.
-     * @throws ServiceQuotaExceededException
-     *         You have exceeded your service quota. To perform the requested action, remove some of the relevant
-     *         resources, or use Service Quotas to request a service quota increase.
-     * @throws ConflictException
-     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
-     *         previous write did not have time to propagate to the host serving the current request. A retry (with
-     *         appropriate backoff logic) is the recommended response to this exception.
+     * @param createDataLakeRequest
+     * @return Result of the CreateDataLake operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InternalServerException
      *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
      *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
-     * @throws ThrottlingException
-     *         The limit on the number of requests per second was exceeded.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
      *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
      *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
      *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws ResourceNotFoundException
-     *         The resource could not be found.
-     * @sample AmazonSecurityLake.CreateDatalake
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDatalake" target="_top">AWS
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @sample AmazonSecurityLake.CreateDataLake
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDataLake" target="_top">AWS
      *      API Documentation</a>
      */
-    CreateDatalakeResult createDatalake(CreateDatalakeRequest createDatalakeRequest);
+    CreateDataLakeResult createDataLake(CreateDataLakeRequest createDataLakeRequest);
+
+    /**
+     * <p>
+     * Creates the specified notification subscription in Amazon Security Lake for the organization you specify.
+     * </p>
+     * 
+     * @param createDataLakeExceptionSubscriptionRequest
+     * @return Result of the CreateDataLakeExceptionSubscription operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InternalServerException
+     *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
+     *         perform the operation again.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
+     *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
+     *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
+     *         when there is no applicable Deny statement and also no applicable Allow statement.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @sample AmazonSecurityLake.CreateDataLakeExceptionSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDataLakeExceptionSubscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateDataLakeExceptionSubscriptionResult createDataLakeExceptionSubscription(
+            CreateDataLakeExceptionSubscriptionRequest createDataLakeExceptionSubscriptionRequest);
 
     /**
      * <p>
@@ -218,81 +232,34 @@ public interface AmazonSecurityLake {
      * automatically enabled for any existing member accounts in your organization.
      * </p>
      * 
-     * @param createDatalakeAutoEnableRequest
-     * @return Result of the CreateDatalakeAutoEnable operation returned by the service.
+     * @param createDataLakeOrganizationConfigurationRequest
+     * @return Result of the CreateDataLakeOrganizationConfiguration operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InternalServerException
      *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
      *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
      *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
      *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
      *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
-     * @sample AmazonSecurityLake.CreateDatalakeAutoEnable
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDatalakeAutoEnable"
-     *      target="_top">AWS API Documentation</a>
-     */
-    CreateDatalakeAutoEnableResult createDatalakeAutoEnable(CreateDatalakeAutoEnableRequest createDatalakeAutoEnableRequest);
-
-    /**
-     * <p>
-     * Designates the Amazon Security Lake delegated administrator account for the organization. This API can only be
-     * called by the organization management account. The organization management account cannot be the delegated
-     * administrator account.
-     * </p>
-     * 
-     * @param createDatalakeDelegatedAdminRequest
-     * @return Result of the CreateDatalakeDelegatedAdmin operation returned by the service.
-     * @throws InternalServerException
-     *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
-     *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
      * @throws ThrottlingException
      *         The limit on the number of requests per second was exceeded.
-     * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
-     *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
-     *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
-     *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @sample AmazonSecurityLake.CreateDatalakeDelegatedAdmin
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDatalakeDelegatedAdmin"
-     *      target="_top">AWS API Documentation</a>
-     */
-    CreateDatalakeDelegatedAdminResult createDatalakeDelegatedAdmin(CreateDatalakeDelegatedAdminRequest createDatalakeDelegatedAdminRequest);
-
-    /**
-     * <p>
-     * Creates the specified notification subscription in Amazon Security Lake for the organization you specify.
-     * </p>
-     * 
-     * @param createDatalakeExceptionsSubscriptionRequest
-     * @return Result of the CreateDatalakeExceptionsSubscription operation returned by the service.
-     * @throws InternalServerException
-     *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
-     *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
-     * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
-     *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
-     *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
-     *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
-     * @sample AmazonSecurityLake.CreateDatalakeExceptionsSubscription
+     * @sample AmazonSecurityLake.CreateDataLakeOrganizationConfiguration
      * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDatalakeExceptionsSubscription"
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDataLakeOrganizationConfiguration"
      *      target="_top">AWS API Documentation</a>
      */
-    CreateDatalakeExceptionsSubscriptionResult createDatalakeExceptionsSubscription(
-            CreateDatalakeExceptionsSubscriptionRequest createDatalakeExceptionsSubscriptionRequest);
+    CreateDataLakeOrganizationConfigurationResult createDataLakeOrganizationConfiguration(
+            CreateDataLakeOrganizationConfigurationRequest createDataLakeOrganizationConfigurationRequest);
 
     /**
      * <p>
@@ -302,28 +269,25 @@ public interface AmazonSecurityLake {
      * 
      * @param createSubscriberRequest
      * @return Result of the CreateSubscriber operation returned by the service.
-     * @throws ConflictSubscriptionException
-     *         A conflicting subscription exception operation is in progress.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InternalServerException
      *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
      *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
      *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
      *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
      *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws BucketNotFoundException
-     *         Amazon Security Lake generally returns 404 errors if the requested object is missing from the bucket.
-     * @throws ResourceNotFoundException
-     *         The resource could not be found.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
-     * @throws InvalidInputException
-     *         The request was rejected because a value that's not valid or is out of range was supplied for an input
-     *         parameter.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
      * @sample AmazonSecurityLake.CreateSubscriber
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateSubscriber" target="_top">AWS
      *      API Documentation</a>
@@ -336,74 +300,66 @@ public interface AmazonSecurityLake {
      * Security Lake. You can create only one subscriber notification per subscriber.
      * </p>
      * 
-     * @param createSubscriptionNotificationConfigurationRequest
-     * @return Result of the CreateSubscriptionNotificationConfiguration operation returned by the service.
-     * @throws ConcurrentModificationException
-     *         More than one process tried to modify a resource at the same time.
+     * @param createSubscriberNotificationRequest
+     * @return Result of the CreateSubscriberNotification operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InternalServerException
      *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
      *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
      *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
      *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
      *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws ResourceNotFoundException
-     *         The resource could not be found.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
-     * @throws InvalidInputException
-     *         The request was rejected because a value that's not valid or is out of range was supplied for an input
-     *         parameter.
-     * @sample AmazonSecurityLake.CreateSubscriptionNotificationConfiguration
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateSubscriptionNotificationConfiguration"
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @sample AmazonSecurityLake.CreateSubscriberNotification
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateSubscriberNotification"
      *      target="_top">AWS API Documentation</a>
      */
-    CreateSubscriptionNotificationConfigurationResult createSubscriptionNotificationConfiguration(
-            CreateSubscriptionNotificationConfigurationRequest createSubscriptionNotificationConfigurationRequest);
+    CreateSubscriberNotificationResult createSubscriberNotification(CreateSubscriberNotificationRequest createSubscriberNotificationRequest);
 
     /**
      * <p>
-     * Removes a natively supported Amazon Web Service as an Amazon Security Lake source. When you remove the source,
-     * Security Lake stops collecting data from that source, and subscribers can no longer consume new data from the
-     * source. Subscribers can still consume data that Security Lake collected from the source before disablement.
+     * Removes a natively supported Amazon Web Service as an Amazon Security Lake source. You can remove a source for
+     * one or more Regions. When you remove the source, Security Lake stops collecting data from that source in the
+     * specified Regions and accounts, and subscribers can no longer consume new data from the source. However,
+     * subscribers can still consume data that Security Lake collected from the source before removal.
      * </p>
      * <p>
      * You can choose any source type in any Amazon Web Services Region for either accounts that are part of a trusted
-     * organization or standalone accounts. At least one of the three dimensions is a mandatory input to this API.
-     * However, you can supply any combination of the three dimensions to this API.
-     * </p>
-     * <p>
-     * By default, a dimension refers to the entire set. This is overridden when you supply any one of the inputs. For
-     * instance, when you do not specify members, the API disables all Security Lake member accounts for sources.
-     * Similarly, when you do not specify Regions, Security Lake is disabled for all the Regions where Security Lake is
-     * available as a service.
-     * </p>
-     * <p>
-     * When you don't provide a dimension, Security Lake assumes that the missing dimension refers to the entire set.
-     * For example, if you don't provide specific accounts, the API applies to the entire set of accounts in your
-     * organization.
+     * organization or standalone accounts.
      * </p>
      * 
      * @param deleteAwsLogSourceRequest
      * @return Result of the DeleteAwsLogSource operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InternalServerException
      *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
      *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
      *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
      *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
      *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
      * @sample AmazonSecurityLake.DeleteAwsLogSource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteAwsLogSource"
      *      target="_top">AWS API Documentation</a>
@@ -412,30 +368,31 @@ public interface AmazonSecurityLake {
 
     /**
      * <p>
-     * Removes a custom log source from Amazon Security Lake.
+     * Removes a custom log source from Amazon Security Lake, to stop sending data from the custom source to Security
+     * Lake.
      * </p>
      * 
      * @param deleteCustomLogSourceRequest
      * @return Result of the DeleteCustomLogSource operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InternalServerException
      *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
      *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
-     * @throws ConflictSourceNamesException
-     *         There was a conflict when you attempted to modify a Security Lake source name.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
      *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
      *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
      *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws BucketNotFoundException
-     *         Amazon Security Lake generally returns 404 errors if the requested object is missing from the bucket.
-     * @throws ResourceNotFoundException
-     *         The resource could not be found.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
      * @sample AmazonSecurityLake.DeleteCustomLogSource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteCustomLogSource"
      *      target="_top">AWS API Documentation</a>
@@ -444,162 +401,144 @@ public interface AmazonSecurityLake {
 
     /**
      * <p>
-     * When you delete Amazon Security Lake from your account, Security Lake is disabled in all Amazon Web Services
-     * Regions. Also, this API automatically takes steps to remove the account from Security Lake .
+     * When you disable Amazon Security Lake from your account, Security Lake is disabled in all Amazon Web Services
+     * Regions and it stops collecting data from your sources. Also, this API automatically takes steps to remove the
+     * account from Security Lake. However, Security Lake retains all of your existing settings and the resources that
+     * it created in your Amazon Web Services account in the current Amazon Web Services Region.
      * </p>
      * <p>
-     * This operation disables security data collection from sources, deletes data stored, and stops making data
-     * accessible to subscribers. Security Lake also deletes all the existing settings and resources that it stores or
-     * maintains for your Amazon Web Services account in the current Region, including security log and event data. The
-     * <code>DeleteDatalake</code> operation does not delete the Amazon S3 bucket, which is owned by your Amazon Web
-     * Services account. For more information, see the <a
+     * The <code>DeleteDataLake</code> operation does not delete the data that is stored in your Amazon S3 bucket, which
+     * is owned by your Amazon Web Services account. For more information, see the <a
      * href="https://docs.aws.amazon.com/security-lake/latest/userguide/disable-security-lake.html">Amazon Security Lake
      * User Guide</a>.
      * </p>
      * 
-     * @param deleteDatalakeRequest
-     * @return Result of the DeleteDatalake operation returned by the service.
-     * @throws ServiceQuotaExceededException
-     *         You have exceeded your service quota. To perform the requested action, remove some of the relevant
-     *         resources, or use Service Quotas to request a service quota increase.
+     * @param deleteDataLakeRequest
+     * @return Result of the DeleteDataLake operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InternalServerException
+     *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
+     *         perform the operation again.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
+     *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
+     *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
+     *         when there is no applicable Deny statement and also no applicable Allow statement.
      * @throws ConflictException
      *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
      *         previous write did not have time to propagate to the host serving the current request. A retry (with
      *         appropriate backoff logic) is the recommended response to this exception.
-     * @throws InternalServerException
-     *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
-     *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
      * @throws ThrottlingException
      *         The limit on the number of requests per second was exceeded.
-     * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
-     *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
-     *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
-     *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws ResourceNotFoundException
-     *         The resource could not be found.
-     * @sample AmazonSecurityLake.DeleteDatalake
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDatalake" target="_top">AWS
+     * @sample AmazonSecurityLake.DeleteDataLake
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDataLake" target="_top">AWS
      *      API Documentation</a>
      */
-    DeleteDatalakeResult deleteDatalake(DeleteDatalakeRequest deleteDatalakeRequest);
-
-    /**
-     * <p>
-     * <code>DeleteDatalakeAutoEnable</code> removes automatic enablement of configuration settings for new member
-     * accounts (but keeps settings for the delegated administrator) from Amazon Security Lake. You must run this API
-     * using credentials of the delegated administrator. When you run this API, new member accounts that are added after
-     * the organization enables Security Lake won't contribute to the data lake.
-     * </p>
-     * 
-     * @param deleteDatalakeAutoEnableRequest
-     * @return Result of the DeleteDatalakeAutoEnable operation returned by the service.
-     * @throws InternalServerException
-     *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
-     *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
-     * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
-     *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
-     *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
-     *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
-     * @sample AmazonSecurityLake.DeleteDatalakeAutoEnable
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDatalakeAutoEnable"
-     *      target="_top">AWS API Documentation</a>
-     */
-    DeleteDatalakeAutoEnableResult deleteDatalakeAutoEnable(DeleteDatalakeAutoEnableRequest deleteDatalakeAutoEnableRequest);
-
-    /**
-     * <p>
-     * Deletes the Amazon Security Lake delegated administrator account for the organization. This API can only be
-     * called by the organization management account. The organization management account cannot be the delegated
-     * administrator account.
-     * </p>
-     * 
-     * @param deleteDatalakeDelegatedAdminRequest
-     * @return Result of the DeleteDatalakeDelegatedAdmin operation returned by the service.
-     * @throws InternalServerException
-     *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
-     *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
-     * @throws ThrottlingException
-     *         The limit on the number of requests per second was exceeded.
-     * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
-     *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
-     *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
-     *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @sample AmazonSecurityLake.DeleteDatalakeDelegatedAdmin
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDatalakeDelegatedAdmin"
-     *      target="_top">AWS API Documentation</a>
-     */
-    DeleteDatalakeDelegatedAdminResult deleteDatalakeDelegatedAdmin(DeleteDatalakeDelegatedAdminRequest deleteDatalakeDelegatedAdminRequest);
+    DeleteDataLakeResult deleteDataLake(DeleteDataLakeRequest deleteDataLakeRequest);
 
     /**
      * <p>
      * Deletes the specified notification subscription in Amazon Security Lake for the organization you specify.
      * </p>
      * 
-     * @param deleteDatalakeExceptionsSubscriptionRequest
-     * @return Result of the DeleteDatalakeExceptionsSubscription operation returned by the service.
+     * @param deleteDataLakeExceptionSubscriptionRequest
+     * @return Result of the DeleteDataLakeExceptionSubscription operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InternalServerException
      *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
      *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
      *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
      *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
      *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
-     * @sample AmazonSecurityLake.DeleteDatalakeExceptionsSubscription
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDatalakeExceptionsSubscription"
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @sample AmazonSecurityLake.DeleteDataLakeExceptionSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDataLakeExceptionSubscription"
      *      target="_top">AWS API Documentation</a>
      */
-    DeleteDatalakeExceptionsSubscriptionResult deleteDatalakeExceptionsSubscription(
-            DeleteDatalakeExceptionsSubscriptionRequest deleteDatalakeExceptionsSubscriptionRequest);
+    DeleteDataLakeExceptionSubscriptionResult deleteDataLakeExceptionSubscription(
+            DeleteDataLakeExceptionSubscriptionRequest deleteDataLakeExceptionSubscriptionRequest);
 
     /**
      * <p>
-     * Deletes the subscription permission for accounts that are already enabled in Amazon Security Lake. You can delete
-     * a subscriber and remove access to data in the current Amazon Web Services Region.
+     * Turns off automatic enablement of Amazon Security Lake for member accounts that are added to an organization in
+     * Organizations. Only the delegated Security Lake administrator for an organization can perform this operation. If
+     * the delegated Security Lake administrator performs this operation, new member accounts won't automatically
+     * contribute data to the data lake.
+     * </p>
+     * 
+     * @param deleteDataLakeOrganizationConfigurationRequest
+     * @return Result of the DeleteDataLakeOrganizationConfiguration operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InternalServerException
+     *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
+     *         perform the operation again.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
+     *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
+     *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
+     *         when there is no applicable Deny statement and also no applicable Allow statement.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @sample AmazonSecurityLake.DeleteDataLakeOrganizationConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDataLakeOrganizationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteDataLakeOrganizationConfigurationResult deleteDataLakeOrganizationConfiguration(
+            DeleteDataLakeOrganizationConfigurationRequest deleteDataLakeOrganizationConfigurationRequest);
+
+    /**
+     * <p>
+     * Deletes the subscription permission and all notification settings for accounts that are already enabled in Amazon
+     * Security Lake. When you run <code>DeleteSubscriber</code>, the subscriber will no longer consume data from
+     * Security Lake and the subscriber is removed. This operation deletes the subscriber and removes access to data in
+     * the current Amazon Web Services Region.
      * </p>
      * 
      * @param deleteSubscriberRequest
      * @return Result of the DeleteSubscriber operation returned by the service.
-     * @throws ConcurrentModificationException
-     *         More than one process tried to modify a resource at the same time.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InternalServerException
      *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
      *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
      *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
      *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
      *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws BucketNotFoundException
-     *         Amazon Security Lake generally returns 404 errors if the requested object is missing from the bucket.
-     * @throws ResourceNotFoundException
-     *         The resource could not be found.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
-     * @throws InvalidInputException
-     *         The request was rejected because a value that's not valid or is out of range was supplied for an input
-     *         parameter.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
      * @sample AmazonSecurityLake.DeleteSubscriber
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteSubscriber" target="_top">AWS
      *      API Documentation</a>
@@ -611,65 +550,100 @@ public interface AmazonSecurityLake {
      * Deletes the specified notification subscription in Amazon Security Lake for the organization you specify.
      * </p>
      * 
-     * @param deleteSubscriptionNotificationConfigurationRequest
-     * @return Result of the DeleteSubscriptionNotificationConfiguration operation returned by the service.
-     * @throws ConcurrentModificationException
-     *         More than one process tried to modify a resource at the same time.
+     * @param deleteSubscriberNotificationRequest
+     * @return Result of the DeleteSubscriberNotification operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InternalServerException
      *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
      *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
      *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
      *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
      *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws ResourceNotFoundException
-     *         The resource could not be found.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
-     * @throws InvalidInputException
-     *         The request was rejected because a value that's not valid or is out of range was supplied for an input
-     *         parameter.
-     * @sample AmazonSecurityLake.DeleteSubscriptionNotificationConfiguration
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteSubscriptionNotificationConfiguration"
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @sample AmazonSecurityLake.DeleteSubscriberNotification
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteSubscriberNotification"
      *      target="_top">AWS API Documentation</a>
      */
-    DeleteSubscriptionNotificationConfigurationResult deleteSubscriptionNotificationConfiguration(
-            DeleteSubscriptionNotificationConfigurationRequest deleteSubscriptionNotificationConfigurationRequest);
+    DeleteSubscriberNotificationResult deleteSubscriberNotification(DeleteSubscriberNotificationRequest deleteSubscriberNotificationRequest);
 
     /**
      * <p>
-     * Retrieves the Amazon Security Lake configuration object for the specified Amazon Web Services account ID. You can
-     * use the <code>GetDatalake</code> API to know whether Security Lake is enabled for the current Region. This API
-     * does not take input parameters.
+     * Deletes the Amazon Security Lake delegated administrator account for the organization. This API can only be
+     * called by the organization management account. The organization management account cannot be the delegated
+     * administrator account.
      * </p>
      * 
-     * @param getDatalakeRequest
-     * @return Result of the GetDatalake operation returned by the service.
+     * @param deregisterDataLakeDelegatedAdministratorRequest
+     * @return Result of the DeregisterDataLakeDelegatedAdministrator operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InternalServerException
      *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
      *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
      *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
      *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
      *         when there is no applicable Deny statement and also no applicable Allow statement.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @sample AmazonSecurityLake.DeregisterDataLakeDelegatedAdministrator
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeregisterDataLakeDelegatedAdministrator"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeregisterDataLakeDelegatedAdministratorResult deregisterDataLakeDelegatedAdministrator(
+            DeregisterDataLakeDelegatedAdministratorRequest deregisterDataLakeDelegatedAdministratorRequest);
+
+    /**
+     * <p>
+     * Retrieves the details of exception notifications for the account in Amazon Security Lake.
+     * </p>
+     * 
+     * @param getDataLakeExceptionSubscriptionRequest
+     * @return Result of the GetDataLakeExceptionSubscription operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
      * @throws ResourceNotFoundException
      *         The resource could not be found.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
-     * @sample AmazonSecurityLake.GetDatalake
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDatalake" target="_top">AWS API
-     *      Documentation</a>
+     * @throws InternalServerException
+     *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
+     *         perform the operation again.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
+     *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
+     *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
+     *         when there is no applicable Deny statement and also no applicable Allow statement.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @sample AmazonSecurityLake.GetDataLakeExceptionSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDataLakeExceptionSubscription"
+     *      target="_top">AWS API Documentation</a>
      */
-    GetDatalakeResult getDatalake(GetDatalakeRequest getDatalakeRequest);
+    GetDataLakeExceptionSubscriptionResult getDataLakeExceptionSubscription(GetDataLakeExceptionSubscriptionRequest getDataLakeExceptionSubscriptionRequest);
 
     /**
      * <p>
@@ -677,80 +651,34 @@ public interface AmazonSecurityLake {
      * organization has onboarded to Amazon Security Lake. This API does not take input parameters.
      * </p>
      * 
-     * @param getDatalakeAutoEnableRequest
-     * @return Result of the GetDatalakeAutoEnable operation returned by the service.
+     * @param getDataLakeOrganizationConfigurationRequest
+     * @return Result of the GetDataLakeOrganizationConfiguration operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InternalServerException
      *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
      *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
      *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
      *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
      *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
-     * @sample AmazonSecurityLake.GetDatalakeAutoEnable
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDatalakeAutoEnable"
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @sample AmazonSecurityLake.GetDataLakeOrganizationConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDataLakeOrganizationConfiguration"
      *      target="_top">AWS API Documentation</a>
      */
-    GetDatalakeAutoEnableResult getDatalakeAutoEnable(GetDatalakeAutoEnableRequest getDatalakeAutoEnableRequest);
-
-    /**
-     * <p>
-     * Retrieves the expiration period and time-to-live (TTL) for which the exception message will remain. Exceptions
-     * are stored by default, for 2 weeks from when a record was created in Amazon Security Lake. This API does not take
-     * input parameters.
-     * </p>
-     * 
-     * @param getDatalakeExceptionsExpiryRequest
-     * @return Result of the GetDatalakeExceptionsExpiry operation returned by the service.
-     * @throws InternalServerException
-     *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
-     *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
-     * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
-     *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
-     *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
-     *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
-     * @sample AmazonSecurityLake.GetDatalakeExceptionsExpiry
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDatalakeExceptionsExpiry"
-     *      target="_top">AWS API Documentation</a>
-     */
-    GetDatalakeExceptionsExpiryResult getDatalakeExceptionsExpiry(GetDatalakeExceptionsExpiryRequest getDatalakeExceptionsExpiryRequest);
-
-    /**
-     * <p>
-     * Retrieves the details of exception notifications for the account in Amazon Security Lake.
-     * </p>
-     * 
-     * @param getDatalakeExceptionsSubscriptionRequest
-     * @return Result of the GetDatalakeExceptionsSubscription operation returned by the service.
-     * @throws InternalServerException
-     *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
-     *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
-     * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
-     *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
-     *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
-     *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
-     * @sample AmazonSecurityLake.GetDatalakeExceptionsSubscription
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDatalakeExceptionsSubscription"
-     *      target="_top">AWS API Documentation</a>
-     */
-    GetDatalakeExceptionsSubscriptionResult getDatalakeExceptionsSubscription(GetDatalakeExceptionsSubscriptionRequest getDatalakeExceptionsSubscriptionRequest);
+    GetDataLakeOrganizationConfigurationResult getDataLakeOrganizationConfiguration(
+            GetDataLakeOrganizationConfigurationRequest getDataLakeOrganizationConfigurationRequest);
 
     /**
      * <p>
@@ -758,26 +686,32 @@ public interface AmazonSecurityLake {
      * and which sources Security Lake is collecting data from.
      * </p>
      * 
-     * @param getDatalakeStatusRequest
-     * @return Result of the GetDatalakeStatus operation returned by the service.
+     * @param getDataLakeSourcesRequest
+     * @return Result of the GetDataLakeSources operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InternalServerException
      *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
      *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
      *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
      *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
      *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
-     * @sample AmazonSecurityLake.GetDatalakeStatus
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDatalakeStatus" target="_top">AWS
-     *      API Documentation</a>
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @sample AmazonSecurityLake.GetDataLakeSources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDataLakeSources"
+     *      target="_top">AWS API Documentation</a>
      */
-    GetDatalakeStatusResult getDatalakeStatus(GetDatalakeStatusRequest getDatalakeStatusRequest);
+    GetDataLakeSourcesResult getDataLakeSources(GetDataLakeSourcesRequest getDataLakeSourcesRequest);
 
     /**
      * <p>
@@ -787,6 +721,11 @@ public interface AmazonSecurityLake {
      * 
      * @param getSubscriberRequest
      * @return Result of the GetSubscriber operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InternalServerException
      *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
      *         perform the operation again.
@@ -795,14 +734,12 @@ public interface AmazonSecurityLake {
      *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
      *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
      *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws ResourceNotFoundException
-     *         The resource could not be found.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
-     * @throws InvalidInputException
-     *         The request was rejected because a value that's not valid or is out of range was supplied for an input
-     *         parameter.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
      * @sample AmazonSecurityLake.GetSubscriber
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetSubscriber" target="_top">AWS API
      *      Documentation</a>
@@ -814,26 +751,65 @@ public interface AmazonSecurityLake {
      * Lists the Amazon Security Lake exceptions that you can use to find the source of problems and fix them.
      * </p>
      * 
-     * @param listDatalakeExceptionsRequest
-     * @return Result of the ListDatalakeExceptions operation returned by the service.
+     * @param listDataLakeExceptionsRequest
+     * @return Result of the ListDataLakeExceptions operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InternalServerException
      *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
      *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
      *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
      *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
      *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
-     * @sample AmazonSecurityLake.ListDatalakeExceptions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ListDatalakeExceptions"
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @sample AmazonSecurityLake.ListDataLakeExceptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ListDataLakeExceptions"
      *      target="_top">AWS API Documentation</a>
      */
-    ListDatalakeExceptionsResult listDatalakeExceptions(ListDatalakeExceptionsRequest listDatalakeExceptionsRequest);
+    ListDataLakeExceptionsResult listDataLakeExceptions(ListDataLakeExceptionsRequest listDataLakeExceptionsRequest);
+
+    /**
+     * <p>
+     * Retrieves the Amazon Security Lake configuration object for the specified Amazon Web Services Regions. You can
+     * use this operation to determine whether Security Lake is enabled for a Region.
+     * </p>
+     * 
+     * @param listDataLakesRequest
+     * @return Result of the ListDataLakes operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InternalServerException
+     *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
+     *         perform the operation again.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
+     *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
+     *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
+     *         when there is no applicable Deny statement and also no applicable Allow statement.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @sample AmazonSecurityLake.ListDataLakes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ListDataLakes" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListDataLakesResult listDataLakes(ListDataLakesRequest listDataLakesRequest);
 
     /**
      * <p>
@@ -842,21 +818,25 @@ public interface AmazonSecurityLake {
      * 
      * @param listLogSourcesRequest
      * @return Result of the ListLogSources operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InternalServerException
      *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
      *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
      *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
      *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
      *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws ResourceNotFoundException
-     *         The resource could not be found.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
      * @sample AmazonSecurityLake.ListLogSources
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ListLogSources" target="_top">AWS
      *      API Documentation</a>
@@ -871,24 +851,25 @@ public interface AmazonSecurityLake {
      * 
      * @param listSubscribersRequest
      * @return Result of the ListSubscribers operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InternalServerException
      *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
      *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
      *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
      *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
      *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws ResourceNotFoundException
-     *         The resource could not be found.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
-     * @throws InvalidInputException
-     *         The request was rejected because a value that's not valid or is out of range was supplied for an input
-     *         parameter.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
      * @sample AmazonSecurityLake.ListSubscribers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ListSubscribers" target="_top">AWS
      *      API Documentation</a>
@@ -897,87 +878,211 @@ public interface AmazonSecurityLake {
 
     /**
      * <p>
+     * Retrieves the tags (keys and values) that are associated with an Amazon Security Lake resource: a subscriber, or
+     * the data lake configuration for your Amazon Web Services account in a particular Amazon Web Services Region.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InternalServerException
+     *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
+     *         perform the operation again.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
+     *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
+     *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
+     *         when there is no applicable Deny statement and also no applicable Allow statement.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @sample AmazonSecurityLake.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Designates the Amazon Security Lake delegated administrator account for the organization. This API can only be
+     * called by the organization management account. The organization management account cannot be the delegated
+     * administrator account.
+     * </p>
+     * 
+     * @param registerDataLakeDelegatedAdministratorRequest
+     * @return Result of the RegisterDataLakeDelegatedAdministrator operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InternalServerException
+     *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
+     *         perform the operation again.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
+     *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
+     *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
+     *         when there is no applicable Deny statement and also no applicable Allow statement.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @sample AmazonSecurityLake.RegisterDataLakeDelegatedAdministrator
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/RegisterDataLakeDelegatedAdministrator"
+     *      target="_top">AWS API Documentation</a>
+     */
+    RegisterDataLakeDelegatedAdministratorResult registerDataLakeDelegatedAdministrator(
+            RegisterDataLakeDelegatedAdministratorRequest registerDataLakeDelegatedAdministratorRequest);
+
+    /**
+     * <p>
+     * Adds or updates one or more tags that are associated with an Amazon Security Lake resource: a subscriber, or the
+     * data lake configuration for your Amazon Web Services account in a particular Amazon Web Services Region. A
+     * <i>tag</i> is a label that you can define and associate with Amazon Web Services resources. Each tag consists of
+     * a required <i>tag key</i> and an associated <i>tag value</i>. A <i>tag key</i> is a general label that acts as a
+     * category for a more specific tag value. A <i>tag value</i> acts as a descriptor for a tag key. Tags can help you
+     * identify, categorize, and manage resources in different ways, such as by owner, environment, or other criteria.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/tagging-resources.html">Tagging Amazon Security
+     * Lake resources</a> in the <i>Amazon Security Lake User Guide</i>.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InternalServerException
+     *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
+     *         perform the operation again.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
+     *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
+     *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
+     *         when there is no applicable Deny statement and also no applicable Allow statement.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @sample AmazonSecurityLake.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Removes one or more tags (keys and values) from an Amazon Security Lake resource: a subscriber, or the data lake
+     * configuration for your Amazon Web Services account in a particular Amazon Web Services Region.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InternalServerException
+     *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
+     *         perform the operation again.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
+     *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
+     *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
+     *         when there is no applicable Deny statement and also no applicable Allow statement.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @sample AmazonSecurityLake.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
      * Specifies where to store your security data and for how long. You can add a rollup Region to consolidate data
      * from multiple Amazon Web Services Regions.
      * </p>
      * 
-     * @param updateDatalakeRequest
-     * @return Result of the UpdateDatalake operation returned by the service.
-     * @throws EventBridgeException
-     *         Represents an error interacting with the Amazon EventBridge service.
-     * @throws InternalServerException
-     *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
-     *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
-     * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
-     *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
-     *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
-     *         when there is no applicable Deny statement and also no applicable Allow statement.
+     * @param updateDataLakeRequest
+     * @return Result of the UpdateDataLake operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
      * @throws ResourceNotFoundException
      *         The resource could not be found.
-     * @sample AmazonSecurityLake.UpdateDatalake
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateDatalake" target="_top">AWS
-     *      API Documentation</a>
-     */
-    UpdateDatalakeResult updateDatalake(UpdateDatalakeRequest updateDatalakeRequest);
-
-    /**
-     * <p>
-     * Update the expiration period for the exception message to your preferred time, and control the time-to-live (TTL)
-     * for the exception message to remain. Exceptions are stored by default for 2 weeks from when a record was created
-     * in Amazon Security Lake.
-     * </p>
-     * 
-     * @param updateDatalakeExceptionsExpiryRequest
-     * @return Result of the UpdateDatalakeExceptionsExpiry operation returned by the service.
      * @throws InternalServerException
      *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
      *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
      *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
      *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
      *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
-     * @sample AmazonSecurityLake.UpdateDatalakeExceptionsExpiry
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateDatalakeExceptionsExpiry"
-     *      target="_top">AWS API Documentation</a>
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @sample AmazonSecurityLake.UpdateDataLake
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateDataLake" target="_top">AWS
+     *      API Documentation</a>
      */
-    UpdateDatalakeExceptionsExpiryResult updateDatalakeExceptionsExpiry(UpdateDatalakeExceptionsExpiryRequest updateDatalakeExceptionsExpiryRequest);
+    UpdateDataLakeResult updateDataLake(UpdateDataLakeRequest updateDataLakeRequest);
 
     /**
      * <p>
      * Updates the specified notification subscription in Amazon Security Lake for the organization you specify.
      * </p>
      * 
-     * @param updateDatalakeExceptionsSubscriptionRequest
-     * @return Result of the UpdateDatalakeExceptionsSubscription operation returned by the service.
+     * @param updateDataLakeExceptionSubscriptionRequest
+     * @return Result of the UpdateDataLakeExceptionSubscription operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InternalServerException
      *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
      *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
      *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
      *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
      *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
-     * @sample AmazonSecurityLake.UpdateDatalakeExceptionsSubscription
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateDatalakeExceptionsSubscription"
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @sample AmazonSecurityLake.UpdateDataLakeExceptionSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateDataLakeExceptionSubscription"
      *      target="_top">AWS API Documentation</a>
      */
-    UpdateDatalakeExceptionsSubscriptionResult updateDatalakeExceptionsSubscription(
-            UpdateDatalakeExceptionsSubscriptionRequest updateDatalakeExceptionsSubscriptionRequest);
+    UpdateDataLakeExceptionSubscriptionResult updateDataLakeExceptionSubscription(
+            UpdateDataLakeExceptionSubscriptionRequest updateDataLakeExceptionSubscriptionRequest);
 
     /**
      * <p>
@@ -987,26 +1092,25 @@ public interface AmazonSecurityLake {
      * 
      * @param updateSubscriberRequest
      * @return Result of the UpdateSubscriber operation returned by the service.
-     * @throws ConflictSubscriptionException
-     *         A conflicting subscription exception operation is in progress.
-     * @throws ConcurrentModificationException
-     *         More than one process tried to modify a resource at the same time.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InternalServerException
      *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
      *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
      *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
      *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
      *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
-     * @throws InvalidInputException
-     *         The request was rejected because a value that's not valid or is out of range was supplied for an input
-     *         parameter.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
      * @sample AmazonSecurityLake.UpdateSubscriber
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateSubscriber" target="_top">AWS
      *      API Documentation</a>
@@ -1019,35 +1123,32 @@ public interface AmazonSecurityLake {
      * subscription endpoint for a subscriber.
      * </p>
      * 
-     * @param updateSubscriptionNotificationConfigurationRequest
-     * @return Result of the UpdateSubscriptionNotificationConfiguration operation returned by the service.
-     * @throws ConcurrentModificationException
-     *         More than one process tried to modify a resource at the same time.
+     * @param updateSubscriberNotificationRequest
+     * @return Result of the UpdateSubscriberNotification operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InternalServerException
      *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
      *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
      *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
      *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
      *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws ResourceNotFoundException
-     *         The resource could not be found.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
-     * @throws InvalidInputException
-     *         The request was rejected because a value that's not valid or is out of range was supplied for an input
-     *         parameter.
-     * @sample AmazonSecurityLake.UpdateSubscriptionNotificationConfiguration
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateSubscriptionNotificationConfiguration"
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @sample AmazonSecurityLake.UpdateSubscriberNotification
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateSubscriberNotification"
      *      target="_top">AWS API Documentation</a>
      */
-    UpdateSubscriptionNotificationConfigurationResult updateSubscriptionNotificationConfiguration(
-            UpdateSubscriptionNotificationConfigurationRequest updateSubscriptionNotificationConfigurationRequest);
+    UpdateSubscriberNotificationResult updateSubscriberNotification(UpdateSubscriberNotificationRequest updateSubscriberNotificationRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

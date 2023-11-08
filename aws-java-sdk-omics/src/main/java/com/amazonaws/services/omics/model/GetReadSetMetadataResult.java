@@ -25,16 +25,46 @@ public class GetReadSetMetadataResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
+     * The read set's ID.
+     * </p>
+     */
+    private String id;
+    /**
+     * <p>
      * The read set's ARN.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * When the read set was created.
+     * The read set's sequence store ID.
      * </p>
      */
-    private java.util.Date creationTime;
+    private String sequenceStoreId;
+    /**
+     * <p>
+     * The read set's subject ID.
+     * </p>
+     */
+    private String subjectId;
+    /**
+     * <p>
+     * The read set's sample ID.
+     * </p>
+     */
+    private String sampleId;
+    /**
+     * <p>
+     * The read set's status.
+     * </p>
+     */
+    private String status;
+    /**
+     * <p>
+     * The read set's name.
+     * </p>
+     */
+    private String name;
     /**
      * <p>
      * The read set's description.
@@ -49,34 +79,10 @@ public class GetReadSetMetadataResult extends com.amazonaws.AmazonWebServiceResu
     private String fileType;
     /**
      * <p>
-     * The read set's files.
+     * When the read set was created.
      * </p>
      */
-    private ReadSetFiles files;
-    /**
-     * <p>
-     * The read set's ID.
-     * </p>
-     */
-    private String id;
-    /**
-     * <p>
-     * The read set's name.
-     * </p>
-     */
-    private String name;
-    /**
-     * <p>
-     * The read set's genome reference ARN.
-     * </p>
-     */
-    private String referenceArn;
-    /**
-     * <p>
-     * The read set's sample ID.
-     * </p>
-     */
-    private String sampleId;
+    private java.util.Date creationTime;
     /**
      * <p>
      * The read set's sequence information.
@@ -85,22 +91,74 @@ public class GetReadSetMetadataResult extends com.amazonaws.AmazonWebServiceResu
     private SequenceInformation sequenceInformation;
     /**
      * <p>
-     * The read set's sequence store ID.
+     * The read set's genome reference ARN.
      * </p>
      */
-    private String sequenceStoreId;
+    private String referenceArn;
     /**
      * <p>
-     * The read set's status.
+     * The read set's files.
      * </p>
      */
-    private String status;
+    private ReadSetFiles files;
     /**
      * <p>
-     * The read set's subject ID.
+     * The status message for a read set. It provides more detail as to why the read set has a status.
      * </p>
      */
-    private String subjectId;
+    private String statusMessage;
+    /**
+     * <p>
+     * The creation type of the read set.
+     * </p>
+     */
+    private String creationType;
+    /**
+     * <p>
+     * The entity tag (ETag) is a hash of the object meant to represent its semantic content.
+     * </p>
+     */
+    private ETag etag;
+
+    /**
+     * <p>
+     * The read set's ID.
+     * </p>
+     * 
+     * @param id
+     *        The read set's ID.
+     */
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    /**
+     * <p>
+     * The read set's ID.
+     * </p>
+     * 
+     * @return The read set's ID.
+     */
+
+    public String getId() {
+        return this.id;
+    }
+
+    /**
+     * <p>
+     * The read set's ID.
+     * </p>
+     * 
+     * @param id
+     *        The read set's ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetReadSetMetadataResult withId(String id) {
+        setId(id);
+        return this;
+    }
 
     /**
      * <p>
@@ -144,41 +202,220 @@ public class GetReadSetMetadataResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * When the read set was created.
+     * The read set's sequence store ID.
      * </p>
      * 
-     * @param creationTime
-     *        When the read set was created.
+     * @param sequenceStoreId
+     *        The read set's sequence store ID.
      */
 
-    public void setCreationTime(java.util.Date creationTime) {
-        this.creationTime = creationTime;
+    public void setSequenceStoreId(String sequenceStoreId) {
+        this.sequenceStoreId = sequenceStoreId;
     }
 
     /**
      * <p>
-     * When the read set was created.
+     * The read set's sequence store ID.
      * </p>
      * 
-     * @return When the read set was created.
+     * @return The read set's sequence store ID.
      */
 
-    public java.util.Date getCreationTime() {
-        return this.creationTime;
+    public String getSequenceStoreId() {
+        return this.sequenceStoreId;
     }
 
     /**
      * <p>
-     * When the read set was created.
+     * The read set's sequence store ID.
      * </p>
      * 
-     * @param creationTime
-     *        When the read set was created.
+     * @param sequenceStoreId
+     *        The read set's sequence store ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetReadSetMetadataResult withCreationTime(java.util.Date creationTime) {
-        setCreationTime(creationTime);
+    public GetReadSetMetadataResult withSequenceStoreId(String sequenceStoreId) {
+        setSequenceStoreId(sequenceStoreId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The read set's subject ID.
+     * </p>
+     * 
+     * @param subjectId
+     *        The read set's subject ID.
+     */
+
+    public void setSubjectId(String subjectId) {
+        this.subjectId = subjectId;
+    }
+
+    /**
+     * <p>
+     * The read set's subject ID.
+     * </p>
+     * 
+     * @return The read set's subject ID.
+     */
+
+    public String getSubjectId() {
+        return this.subjectId;
+    }
+
+    /**
+     * <p>
+     * The read set's subject ID.
+     * </p>
+     * 
+     * @param subjectId
+     *        The read set's subject ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetReadSetMetadataResult withSubjectId(String subjectId) {
+        setSubjectId(subjectId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The read set's sample ID.
+     * </p>
+     * 
+     * @param sampleId
+     *        The read set's sample ID.
+     */
+
+    public void setSampleId(String sampleId) {
+        this.sampleId = sampleId;
+    }
+
+    /**
+     * <p>
+     * The read set's sample ID.
+     * </p>
+     * 
+     * @return The read set's sample ID.
+     */
+
+    public String getSampleId() {
+        return this.sampleId;
+    }
+
+    /**
+     * <p>
+     * The read set's sample ID.
+     * </p>
+     * 
+     * @param sampleId
+     *        The read set's sample ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetReadSetMetadataResult withSampleId(String sampleId) {
+        setSampleId(sampleId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The read set's status.
+     * </p>
+     * 
+     * @param status
+     *        The read set's status.
+     * @see ReadSetStatus
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * The read set's status.
+     * </p>
+     * 
+     * @return The read set's status.
+     * @see ReadSetStatus
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * The read set's status.
+     * </p>
+     * 
+     * @param status
+     *        The read set's status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReadSetStatus
+     */
+
+    public GetReadSetMetadataResult withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The read set's status.
+     * </p>
+     * 
+     * @param status
+     *        The read set's status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReadSetStatus
+     */
+
+    public GetReadSetMetadataResult withStatus(ReadSetStatus status) {
+        this.status = status.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The read set's name.
+     * </p>
+     * 
+     * @param name
+     *        The read set's name.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The read set's name.
+     * </p>
+     * 
+     * @return The read set's name.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The read set's name.
+     * </p>
+     * 
+     * @param name
+     *        The read set's name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetReadSetMetadataResult withName(String name) {
+        setName(name);
         return this;
     }
 
@@ -283,201 +520,41 @@ public class GetReadSetMetadataResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The read set's files.
+     * When the read set was created.
      * </p>
      * 
-     * @param files
-     *        The read set's files.
+     * @param creationTime
+     *        When the read set was created.
      */
 
-    public void setFiles(ReadSetFiles files) {
-        this.files = files;
+    public void setCreationTime(java.util.Date creationTime) {
+        this.creationTime = creationTime;
     }
 
     /**
      * <p>
-     * The read set's files.
+     * When the read set was created.
      * </p>
      * 
-     * @return The read set's files.
+     * @return When the read set was created.
      */
 
-    public ReadSetFiles getFiles() {
-        return this.files;
+    public java.util.Date getCreationTime() {
+        return this.creationTime;
     }
 
     /**
      * <p>
-     * The read set's files.
+     * When the read set was created.
      * </p>
      * 
-     * @param files
-     *        The read set's files.
+     * @param creationTime
+     *        When the read set was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetReadSetMetadataResult withFiles(ReadSetFiles files) {
-        setFiles(files);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The read set's ID.
-     * </p>
-     * 
-     * @param id
-     *        The read set's ID.
-     */
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    /**
-     * <p>
-     * The read set's ID.
-     * </p>
-     * 
-     * @return The read set's ID.
-     */
-
-    public String getId() {
-        return this.id;
-    }
-
-    /**
-     * <p>
-     * The read set's ID.
-     * </p>
-     * 
-     * @param id
-     *        The read set's ID.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetReadSetMetadataResult withId(String id) {
-        setId(id);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The read set's name.
-     * </p>
-     * 
-     * @param name
-     *        The read set's name.
-     */
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     * <p>
-     * The read set's name.
-     * </p>
-     * 
-     * @return The read set's name.
-     */
-
-    public String getName() {
-        return this.name;
-    }
-
-    /**
-     * <p>
-     * The read set's name.
-     * </p>
-     * 
-     * @param name
-     *        The read set's name.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetReadSetMetadataResult withName(String name) {
-        setName(name);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The read set's genome reference ARN.
-     * </p>
-     * 
-     * @param referenceArn
-     *        The read set's genome reference ARN.
-     */
-
-    public void setReferenceArn(String referenceArn) {
-        this.referenceArn = referenceArn;
-    }
-
-    /**
-     * <p>
-     * The read set's genome reference ARN.
-     * </p>
-     * 
-     * @return The read set's genome reference ARN.
-     */
-
-    public String getReferenceArn() {
-        return this.referenceArn;
-    }
-
-    /**
-     * <p>
-     * The read set's genome reference ARN.
-     * </p>
-     * 
-     * @param referenceArn
-     *        The read set's genome reference ARN.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetReadSetMetadataResult withReferenceArn(String referenceArn) {
-        setReferenceArn(referenceArn);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The read set's sample ID.
-     * </p>
-     * 
-     * @param sampleId
-     *        The read set's sample ID.
-     */
-
-    public void setSampleId(String sampleId) {
-        this.sampleId = sampleId;
-    }
-
-    /**
-     * <p>
-     * The read set's sample ID.
-     * </p>
-     * 
-     * @return The read set's sample ID.
-     */
-
-    public String getSampleId() {
-        return this.sampleId;
-    }
-
-    /**
-     * <p>
-     * The read set's sample ID.
-     * </p>
-     * 
-     * @param sampleId
-     *        The read set's sample ID.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetReadSetMetadataResult withSampleId(String sampleId) {
-        setSampleId(sampleId);
+    public GetReadSetMetadataResult withCreationTime(java.util.Date creationTime) {
+        setCreationTime(creationTime);
         return this;
     }
 
@@ -523,140 +600,220 @@ public class GetReadSetMetadataResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The read set's sequence store ID.
+     * The read set's genome reference ARN.
      * </p>
      * 
-     * @param sequenceStoreId
-     *        The read set's sequence store ID.
+     * @param referenceArn
+     *        The read set's genome reference ARN.
      */
 
-    public void setSequenceStoreId(String sequenceStoreId) {
-        this.sequenceStoreId = sequenceStoreId;
+    public void setReferenceArn(String referenceArn) {
+        this.referenceArn = referenceArn;
     }
 
     /**
      * <p>
-     * The read set's sequence store ID.
+     * The read set's genome reference ARN.
      * </p>
      * 
-     * @return The read set's sequence store ID.
+     * @return The read set's genome reference ARN.
      */
 
-    public String getSequenceStoreId() {
-        return this.sequenceStoreId;
+    public String getReferenceArn() {
+        return this.referenceArn;
     }
 
     /**
      * <p>
-     * The read set's sequence store ID.
+     * The read set's genome reference ARN.
      * </p>
      * 
-     * @param sequenceStoreId
-     *        The read set's sequence store ID.
+     * @param referenceArn
+     *        The read set's genome reference ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetReadSetMetadataResult withSequenceStoreId(String sequenceStoreId) {
-        setSequenceStoreId(sequenceStoreId);
+    public GetReadSetMetadataResult withReferenceArn(String referenceArn) {
+        setReferenceArn(referenceArn);
         return this;
     }
 
     /**
      * <p>
-     * The read set's status.
+     * The read set's files.
      * </p>
      * 
-     * @param status
-     *        The read set's status.
-     * @see ReadSetStatus
+     * @param files
+     *        The read set's files.
      */
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setFiles(ReadSetFiles files) {
+        this.files = files;
     }
 
     /**
      * <p>
-     * The read set's status.
+     * The read set's files.
      * </p>
      * 
-     * @return The read set's status.
-     * @see ReadSetStatus
+     * @return The read set's files.
      */
 
-    public String getStatus() {
-        return this.status;
+    public ReadSetFiles getFiles() {
+        return this.files;
     }
 
     /**
      * <p>
-     * The read set's status.
+     * The read set's files.
      * </p>
      * 
-     * @param status
-     *        The read set's status.
+     * @param files
+     *        The read set's files.
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see ReadSetStatus
      */
 
-    public GetReadSetMetadataResult withStatus(String status) {
-        setStatus(status);
+    public GetReadSetMetadataResult withFiles(ReadSetFiles files) {
+        setFiles(files);
         return this;
     }
 
     /**
      * <p>
-     * The read set's status.
+     * The status message for a read set. It provides more detail as to why the read set has a status.
      * </p>
      * 
-     * @param status
-     *        The read set's status.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see ReadSetStatus
+     * @param statusMessage
+     *        The status message for a read set. It provides more detail as to why the read set has a status.
      */
 
-    public GetReadSetMetadataResult withStatus(ReadSetStatus status) {
-        this.status = status.toString();
+    public void setStatusMessage(String statusMessage) {
+        this.statusMessage = statusMessage;
+    }
+
+    /**
+     * <p>
+     * The status message for a read set. It provides more detail as to why the read set has a status.
+     * </p>
+     * 
+     * @return The status message for a read set. It provides more detail as to why the read set has a status.
+     */
+
+    public String getStatusMessage() {
+        return this.statusMessage;
+    }
+
+    /**
+     * <p>
+     * The status message for a read set. It provides more detail as to why the read set has a status.
+     * </p>
+     * 
+     * @param statusMessage
+     *        The status message for a read set. It provides more detail as to why the read set has a status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetReadSetMetadataResult withStatusMessage(String statusMessage) {
+        setStatusMessage(statusMessage);
         return this;
     }
 
     /**
      * <p>
-     * The read set's subject ID.
+     * The creation type of the read set.
      * </p>
      * 
-     * @param subjectId
-     *        The read set's subject ID.
+     * @param creationType
+     *        The creation type of the read set.
+     * @see CreationType
      */
 
-    public void setSubjectId(String subjectId) {
-        this.subjectId = subjectId;
+    public void setCreationType(String creationType) {
+        this.creationType = creationType;
     }
 
     /**
      * <p>
-     * The read set's subject ID.
+     * The creation type of the read set.
      * </p>
      * 
-     * @return The read set's subject ID.
+     * @return The creation type of the read set.
+     * @see CreationType
      */
 
-    public String getSubjectId() {
-        return this.subjectId;
+    public String getCreationType() {
+        return this.creationType;
     }
 
     /**
      * <p>
-     * The read set's subject ID.
+     * The creation type of the read set.
      * </p>
      * 
-     * @param subjectId
-     *        The read set's subject ID.
+     * @param creationType
+     *        The creation type of the read set.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CreationType
+     */
+
+    public GetReadSetMetadataResult withCreationType(String creationType) {
+        setCreationType(creationType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The creation type of the read set.
+     * </p>
+     * 
+     * @param creationType
+     *        The creation type of the read set.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CreationType
+     */
+
+    public GetReadSetMetadataResult withCreationType(CreationType creationType) {
+        this.creationType = creationType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The entity tag (ETag) is a hash of the object meant to represent its semantic content.
+     * </p>
+     * 
+     * @param etag
+     *        The entity tag (ETag) is a hash of the object meant to represent its semantic content.
+     */
+
+    public void setEtag(ETag etag) {
+        this.etag = etag;
+    }
+
+    /**
+     * <p>
+     * The entity tag (ETag) is a hash of the object meant to represent its semantic content.
+     * </p>
+     * 
+     * @return The entity tag (ETag) is a hash of the object meant to represent its semantic content.
+     */
+
+    public ETag getEtag() {
+        return this.etag;
+    }
+
+    /**
+     * <p>
+     * The entity tag (ETag) is a hash of the object meant to represent its semantic content.
+     * </p>
+     * 
+     * @param etag
+     *        The entity tag (ETag) is a hash of the object meant to represent its semantic content.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetReadSetMetadataResult withSubjectId(String subjectId) {
-        setSubjectId(subjectId);
+    public GetReadSetMetadataResult withEtag(ETag etag) {
+        setEtag(etag);
         return this;
     }
 
@@ -672,32 +829,38 @@ public class GetReadSetMetadataResult extends com.amazonaws.AmazonWebServiceResu
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getId() != null)
+            sb.append("Id: ").append(getId()).append(",");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
-        if (getCreationTime() != null)
-            sb.append("CreationTime: ").append(getCreationTime()).append(",");
+        if (getSequenceStoreId() != null)
+            sb.append("SequenceStoreId: ").append(getSequenceStoreId()).append(",");
+        if (getSubjectId() != null)
+            sb.append("SubjectId: ").append(getSubjectId()).append(",");
+        if (getSampleId() != null)
+            sb.append("SampleId: ").append(getSampleId()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getFileType() != null)
             sb.append("FileType: ").append(getFileType()).append(",");
-        if (getFiles() != null)
-            sb.append("Files: ").append(getFiles()).append(",");
-        if (getId() != null)
-            sb.append("Id: ").append(getId()).append(",");
-        if (getName() != null)
-            sb.append("Name: ").append(getName()).append(",");
-        if (getReferenceArn() != null)
-            sb.append("ReferenceArn: ").append(getReferenceArn()).append(",");
-        if (getSampleId() != null)
-            sb.append("SampleId: ").append(getSampleId()).append(",");
+        if (getCreationTime() != null)
+            sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getSequenceInformation() != null)
             sb.append("SequenceInformation: ").append(getSequenceInformation()).append(",");
-        if (getSequenceStoreId() != null)
-            sb.append("SequenceStoreId: ").append(getSequenceStoreId()).append(",");
-        if (getStatus() != null)
-            sb.append("Status: ").append(getStatus()).append(",");
-        if (getSubjectId() != null)
-            sb.append("SubjectId: ").append(getSubjectId());
+        if (getReferenceArn() != null)
+            sb.append("ReferenceArn: ").append(getReferenceArn()).append(",");
+        if (getFiles() != null)
+            sb.append("Files: ").append(getFiles()).append(",");
+        if (getStatusMessage() != null)
+            sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
+        if (getCreationType() != null)
+            sb.append("CreationType: ").append(getCreationType()).append(",");
+        if (getEtag() != null)
+            sb.append("Etag: ").append(getEtag());
         sb.append("}");
         return sb.toString();
     }
@@ -712,13 +875,33 @@ public class GetReadSetMetadataResult extends com.amazonaws.AmazonWebServiceResu
         if (obj instanceof GetReadSetMetadataResult == false)
             return false;
         GetReadSetMetadataResult other = (GetReadSetMetadataResult) obj;
+        if (other.getId() == null ^ this.getId() == null)
+            return false;
+        if (other.getId() != null && other.getId().equals(this.getId()) == false)
+            return false;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
-        if (other.getCreationTime() == null ^ this.getCreationTime() == null)
+        if (other.getSequenceStoreId() == null ^ this.getSequenceStoreId() == null)
             return false;
-        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
+        if (other.getSequenceStoreId() != null && other.getSequenceStoreId().equals(this.getSequenceStoreId()) == false)
+            return false;
+        if (other.getSubjectId() == null ^ this.getSubjectId() == null)
+            return false;
+        if (other.getSubjectId() != null && other.getSubjectId().equals(this.getSubjectId()) == false)
+            return false;
+        if (other.getSampleId() == null ^ this.getSampleId() == null)
+            return false;
+        if (other.getSampleId() != null && other.getSampleId().equals(this.getSampleId()) == false)
+            return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
@@ -728,41 +911,33 @@ public class GetReadSetMetadataResult extends com.amazonaws.AmazonWebServiceResu
             return false;
         if (other.getFileType() != null && other.getFileType().equals(this.getFileType()) == false)
             return false;
-        if (other.getFiles() == null ^ this.getFiles() == null)
+        if (other.getCreationTime() == null ^ this.getCreationTime() == null)
             return false;
-        if (other.getFiles() != null && other.getFiles().equals(this.getFiles()) == false)
-            return false;
-        if (other.getId() == null ^ this.getId() == null)
-            return false;
-        if (other.getId() != null && other.getId().equals(this.getId()) == false)
-            return false;
-        if (other.getName() == null ^ this.getName() == null)
-            return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false)
-            return false;
-        if (other.getReferenceArn() == null ^ this.getReferenceArn() == null)
-            return false;
-        if (other.getReferenceArn() != null && other.getReferenceArn().equals(this.getReferenceArn()) == false)
-            return false;
-        if (other.getSampleId() == null ^ this.getSampleId() == null)
-            return false;
-        if (other.getSampleId() != null && other.getSampleId().equals(this.getSampleId()) == false)
+        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
             return false;
         if (other.getSequenceInformation() == null ^ this.getSequenceInformation() == null)
             return false;
         if (other.getSequenceInformation() != null && other.getSequenceInformation().equals(this.getSequenceInformation()) == false)
             return false;
-        if (other.getSequenceStoreId() == null ^ this.getSequenceStoreId() == null)
+        if (other.getReferenceArn() == null ^ this.getReferenceArn() == null)
             return false;
-        if (other.getSequenceStoreId() != null && other.getSequenceStoreId().equals(this.getSequenceStoreId()) == false)
+        if (other.getReferenceArn() != null && other.getReferenceArn().equals(this.getReferenceArn()) == false)
             return false;
-        if (other.getStatus() == null ^ this.getStatus() == null)
+        if (other.getFiles() == null ^ this.getFiles() == null)
             return false;
-        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getFiles() != null && other.getFiles().equals(this.getFiles()) == false)
             return false;
-        if (other.getSubjectId() == null ^ this.getSubjectId() == null)
+        if (other.getStatusMessage() == null ^ this.getStatusMessage() == null)
             return false;
-        if (other.getSubjectId() != null && other.getSubjectId().equals(this.getSubjectId()) == false)
+        if (other.getStatusMessage() != null && other.getStatusMessage().equals(this.getStatusMessage()) == false)
+            return false;
+        if (other.getCreationType() == null ^ this.getCreationType() == null)
+            return false;
+        if (other.getCreationType() != null && other.getCreationType().equals(this.getCreationType()) == false)
+            return false;
+        if (other.getEtag() == null ^ this.getEtag() == null)
+            return false;
+        if (other.getEtag() != null && other.getEtag().equals(this.getEtag()) == false)
             return false;
         return true;
     }
@@ -772,19 +947,22 @@ public class GetReadSetMetadataResult extends com.amazonaws.AmazonWebServiceResu
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
-        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
+        hashCode = prime * hashCode + ((getSequenceStoreId() == null) ? 0 : getSequenceStoreId().hashCode());
+        hashCode = prime * hashCode + ((getSubjectId() == null) ? 0 : getSubjectId().hashCode());
+        hashCode = prime * hashCode + ((getSampleId() == null) ? 0 : getSampleId().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getFileType() == null) ? 0 : getFileType().hashCode());
-        hashCode = prime * hashCode + ((getFiles() == null) ? 0 : getFiles().hashCode());
-        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode + ((getReferenceArn() == null) ? 0 : getReferenceArn().hashCode());
-        hashCode = prime * hashCode + ((getSampleId() == null) ? 0 : getSampleId().hashCode());
+        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getSequenceInformation() == null) ? 0 : getSequenceInformation().hashCode());
-        hashCode = prime * hashCode + ((getSequenceStoreId() == null) ? 0 : getSequenceStoreId().hashCode());
-        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime * hashCode + ((getSubjectId() == null) ? 0 : getSubjectId().hashCode());
+        hashCode = prime * hashCode + ((getReferenceArn() == null) ? 0 : getReferenceArn().hashCode());
+        hashCode = prime * hashCode + ((getFiles() == null) ? 0 : getFiles().hashCode());
+        hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
+        hashCode = prime * hashCode + ((getCreationType() == null) ? 0 : getCreationType().hashCode());
+        hashCode = prime * hashCode + ((getEtag() == null) ? 0 : getEtag().hashCode());
         return hashCode;
     }
 

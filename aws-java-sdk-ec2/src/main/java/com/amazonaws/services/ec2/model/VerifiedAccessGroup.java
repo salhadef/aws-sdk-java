@@ -80,6 +80,12 @@ public class VerifiedAccessGroup implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * Describes the options in use for server side encryption.
+     * </p>
+     */
+    private VerifiedAccessSseSpecificationResponse sseSpecification;
 
     /**
      * <p>
@@ -475,6 +481,46 @@ public class VerifiedAccessGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Describes the options in use for server side encryption.
+     * </p>
+     * 
+     * @param sseSpecification
+     *        Describes the options in use for server side encryption.
+     */
+
+    public void setSseSpecification(VerifiedAccessSseSpecificationResponse sseSpecification) {
+        this.sseSpecification = sseSpecification;
+    }
+
+    /**
+     * <p>
+     * Describes the options in use for server side encryption.
+     * </p>
+     * 
+     * @return Describes the options in use for server side encryption.
+     */
+
+    public VerifiedAccessSseSpecificationResponse getSseSpecification() {
+        return this.sseSpecification;
+    }
+
+    /**
+     * <p>
+     * Describes the options in use for server side encryption.
+     * </p>
+     * 
+     * @param sseSpecification
+     *        Describes the options in use for server side encryption.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VerifiedAccessGroup withSseSpecification(VerifiedAccessSseSpecificationResponse sseSpecification) {
+        setSseSpecification(sseSpecification);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -503,7 +549,9 @@ public class VerifiedAccessGroup implements Serializable, Cloneable {
         if (getDeletionTime() != null)
             sb.append("DeletionTime: ").append(getDeletionTime()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getSseSpecification() != null)
+            sb.append("SseSpecification: ").append(getSseSpecification());
         sb.append("}");
         return sb.toString();
     }
@@ -554,6 +602,10 @@ public class VerifiedAccessGroup implements Serializable, Cloneable {
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getSseSpecification() == null ^ this.getSseSpecification() == null)
+            return false;
+        if (other.getSseSpecification() != null && other.getSseSpecification().equals(this.getSseSpecification()) == false)
+            return false;
         return true;
     }
 
@@ -571,6 +623,7 @@ public class VerifiedAccessGroup implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getLastUpdatedTime() == null) ? 0 : getLastUpdatedTime().hashCode());
         hashCode = prime * hashCode + ((getDeletionTime() == null) ? 0 : getDeletionTime().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getSseSpecification() == null) ? 0 : getSseSpecification().hashCode());
         return hashCode;
     }
 

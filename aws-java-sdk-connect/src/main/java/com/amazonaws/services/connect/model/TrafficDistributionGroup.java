@@ -103,8 +103,8 @@ public class TrafficDistributionGroup implements Serializable, Cloneable, Struct
      * <li>
      * <p>
      * <code>UPDATE_IN_PROGRESS</code> means the previous <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistributionGroup.html"
-     * >UpdateTrafficDistributionGroup</a> operation is still in progress and has not yet completed.
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistribution.html"
+     * >UpdateTrafficDistribution</a> operation is still in progress and has not yet completed.
      * </p>
      * </li>
      * </ul>
@@ -117,6 +117,24 @@ public class TrafficDistributionGroup implements Serializable, Cloneable, Struct
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * Whether this is the default traffic distribution group created during instance replication. The default traffic
+     * distribution group cannot be deleted by the <code>DeleteTrafficDistributionGroup</code> API. The default traffic
+     * distribution group is deleted as part of the process for deleting a replica.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>SignInConfig</code> distribution is available only on a default <code>TrafficDistributionGroup</code>
+     * (see the <code>IsDefault</code> parameter in the <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html"
+     * >TrafficDistributionGroup</a> data type). If you call <code>UpdateTrafficDistribution</code> with a modified
+     * <code>SignInConfig</code> and a non-default <code>TrafficDistributionGroup</code>, an
+     * <code>InvalidRequestException</code> is returned.
+     * </p>
+     * </note>
+     */
+    private Boolean isDefault;
 
     /**
      * <p>
@@ -373,8 +391,8 @@ public class TrafficDistributionGroup implements Serializable, Cloneable, Struct
      * <li>
      * <p>
      * <code>UPDATE_IN_PROGRESS</code> means the previous <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistributionGroup.html"
-     * >UpdateTrafficDistributionGroup</a> operation is still in progress and has not yet completed.
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistribution.html"
+     * >UpdateTrafficDistribution</a> operation is still in progress and has not yet completed.
      * </p>
      * </li>
      * </ul>
@@ -420,8 +438,8 @@ public class TrafficDistributionGroup implements Serializable, Cloneable, Struct
      *        <li>
      *        <p>
      *        <code>UPDATE_IN_PROGRESS</code> means the previous <a
-     *        href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistributionGroup.html"
-     *        >UpdateTrafficDistributionGroup</a> operation is still in progress and has not yet completed.
+     *        href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistribution.html"
+     *        >UpdateTrafficDistribution</a> operation is still in progress and has not yet completed.
      *        </p>
      *        </li>
      * @see TrafficDistributionGroupStatus
@@ -474,8 +492,8 @@ public class TrafficDistributionGroup implements Serializable, Cloneable, Struct
      * <li>
      * <p>
      * <code>UPDATE_IN_PROGRESS</code> means the previous <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistributionGroup.html"
-     * >UpdateTrafficDistributionGroup</a> operation is still in progress and has not yet completed.
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistribution.html"
+     * >UpdateTrafficDistribution</a> operation is still in progress and has not yet completed.
      * </p>
      * </li>
      * </ul>
@@ -520,8 +538,8 @@ public class TrafficDistributionGroup implements Serializable, Cloneable, Struct
      *         <li>
      *         <p>
      *         <code>UPDATE_IN_PROGRESS</code> means the previous <a
-     *         href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistributionGroup.html"
-     *         >UpdateTrafficDistributionGroup</a> operation is still in progress and has not yet completed.
+     *         href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistribution.html"
+     *         >UpdateTrafficDistribution</a> operation is still in progress and has not yet completed.
      *         </p>
      *         </li>
      * @see TrafficDistributionGroupStatus
@@ -574,8 +592,8 @@ public class TrafficDistributionGroup implements Serializable, Cloneable, Struct
      * <li>
      * <p>
      * <code>UPDATE_IN_PROGRESS</code> means the previous <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistributionGroup.html"
-     * >UpdateTrafficDistributionGroup</a> operation is still in progress and has not yet completed.
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistribution.html"
+     * >UpdateTrafficDistribution</a> operation is still in progress and has not yet completed.
      * </p>
      * </li>
      * </ul>
@@ -621,8 +639,8 @@ public class TrafficDistributionGroup implements Serializable, Cloneable, Struct
      *        <li>
      *        <p>
      *        <code>UPDATE_IN_PROGRESS</code> means the previous <a
-     *        href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistributionGroup.html"
-     *        >UpdateTrafficDistributionGroup</a> operation is still in progress and has not yet completed.
+     *        href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistribution.html"
+     *        >UpdateTrafficDistribution</a> operation is still in progress and has not yet completed.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -677,8 +695,8 @@ public class TrafficDistributionGroup implements Serializable, Cloneable, Struct
      * <li>
      * <p>
      * <code>UPDATE_IN_PROGRESS</code> means the previous <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistributionGroup.html"
-     * >UpdateTrafficDistributionGroup</a> operation is still in progress and has not yet completed.
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistribution.html"
+     * >UpdateTrafficDistribution</a> operation is still in progress and has not yet completed.
      * </p>
      * </li>
      * </ul>
@@ -724,8 +742,8 @@ public class TrafficDistributionGroup implements Serializable, Cloneable, Struct
      *        <li>
      *        <p>
      *        <code>UPDATE_IN_PROGRESS</code> means the previous <a
-     *        href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistributionGroup.html"
-     *        >UpdateTrafficDistributionGroup</a> operation is still in progress and has not yet completed.
+     *        href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistribution.html"
+     *        >UpdateTrafficDistribution</a> operation is still in progress and has not yet completed.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -812,6 +830,146 @@ public class TrafficDistributionGroup implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * Whether this is the default traffic distribution group created during instance replication. The default traffic
+     * distribution group cannot be deleted by the <code>DeleteTrafficDistributionGroup</code> API. The default traffic
+     * distribution group is deleted as part of the process for deleting a replica.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>SignInConfig</code> distribution is available only on a default <code>TrafficDistributionGroup</code>
+     * (see the <code>IsDefault</code> parameter in the <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html"
+     * >TrafficDistributionGroup</a> data type). If you call <code>UpdateTrafficDistribution</code> with a modified
+     * <code>SignInConfig</code> and a non-default <code>TrafficDistributionGroup</code>, an
+     * <code>InvalidRequestException</code> is returned.
+     * </p>
+     * </note>
+     * 
+     * @param isDefault
+     *        Whether this is the default traffic distribution group created during instance replication. The default
+     *        traffic distribution group cannot be deleted by the <code>DeleteTrafficDistributionGroup</code> API. The
+     *        default traffic distribution group is deleted as part of the process for deleting a replica.</p> <note>
+     *        <p>
+     *        The <code>SignInConfig</code> distribution is available only on a default
+     *        <code>TrafficDistributionGroup</code> (see the <code>IsDefault</code> parameter in the <a
+     *        href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html"
+     *        >TrafficDistributionGroup</a> data type). If you call <code>UpdateTrafficDistribution</code> with a
+     *        modified <code>SignInConfig</code> and a non-default <code>TrafficDistributionGroup</code>, an
+     *        <code>InvalidRequestException</code> is returned.
+     *        </p>
+     */
+
+    public void setIsDefault(Boolean isDefault) {
+        this.isDefault = isDefault;
+    }
+
+    /**
+     * <p>
+     * Whether this is the default traffic distribution group created during instance replication. The default traffic
+     * distribution group cannot be deleted by the <code>DeleteTrafficDistributionGroup</code> API. The default traffic
+     * distribution group is deleted as part of the process for deleting a replica.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>SignInConfig</code> distribution is available only on a default <code>TrafficDistributionGroup</code>
+     * (see the <code>IsDefault</code> parameter in the <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html"
+     * >TrafficDistributionGroup</a> data type). If you call <code>UpdateTrafficDistribution</code> with a modified
+     * <code>SignInConfig</code> and a non-default <code>TrafficDistributionGroup</code>, an
+     * <code>InvalidRequestException</code> is returned.
+     * </p>
+     * </note>
+     * 
+     * @return Whether this is the default traffic distribution group created during instance replication. The default
+     *         traffic distribution group cannot be deleted by the <code>DeleteTrafficDistributionGroup</code> API. The
+     *         default traffic distribution group is deleted as part of the process for deleting a replica.</p> <note>
+     *         <p>
+     *         The <code>SignInConfig</code> distribution is available only on a default
+     *         <code>TrafficDistributionGroup</code> (see the <code>IsDefault</code> parameter in the <a
+     *         href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html"
+     *         >TrafficDistributionGroup</a> data type). If you call <code>UpdateTrafficDistribution</code> with a
+     *         modified <code>SignInConfig</code> and a non-default <code>TrafficDistributionGroup</code>, an
+     *         <code>InvalidRequestException</code> is returned.
+     *         </p>
+     */
+
+    public Boolean getIsDefault() {
+        return this.isDefault;
+    }
+
+    /**
+     * <p>
+     * Whether this is the default traffic distribution group created during instance replication. The default traffic
+     * distribution group cannot be deleted by the <code>DeleteTrafficDistributionGroup</code> API. The default traffic
+     * distribution group is deleted as part of the process for deleting a replica.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>SignInConfig</code> distribution is available only on a default <code>TrafficDistributionGroup</code>
+     * (see the <code>IsDefault</code> parameter in the <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html"
+     * >TrafficDistributionGroup</a> data type). If you call <code>UpdateTrafficDistribution</code> with a modified
+     * <code>SignInConfig</code> and a non-default <code>TrafficDistributionGroup</code>, an
+     * <code>InvalidRequestException</code> is returned.
+     * </p>
+     * </note>
+     * 
+     * @param isDefault
+     *        Whether this is the default traffic distribution group created during instance replication. The default
+     *        traffic distribution group cannot be deleted by the <code>DeleteTrafficDistributionGroup</code> API. The
+     *        default traffic distribution group is deleted as part of the process for deleting a replica.</p> <note>
+     *        <p>
+     *        The <code>SignInConfig</code> distribution is available only on a default
+     *        <code>TrafficDistributionGroup</code> (see the <code>IsDefault</code> parameter in the <a
+     *        href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html"
+     *        >TrafficDistributionGroup</a> data type). If you call <code>UpdateTrafficDistribution</code> with a
+     *        modified <code>SignInConfig</code> and a non-default <code>TrafficDistributionGroup</code>, an
+     *        <code>InvalidRequestException</code> is returned.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TrafficDistributionGroup withIsDefault(Boolean isDefault) {
+        setIsDefault(isDefault);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether this is the default traffic distribution group created during instance replication. The default traffic
+     * distribution group cannot be deleted by the <code>DeleteTrafficDistributionGroup</code> API. The default traffic
+     * distribution group is deleted as part of the process for deleting a replica.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>SignInConfig</code> distribution is available only on a default <code>TrafficDistributionGroup</code>
+     * (see the <code>IsDefault</code> parameter in the <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html"
+     * >TrafficDistributionGroup</a> data type). If you call <code>UpdateTrafficDistribution</code> with a modified
+     * <code>SignInConfig</code> and a non-default <code>TrafficDistributionGroup</code>, an
+     * <code>InvalidRequestException</code> is returned.
+     * </p>
+     * </note>
+     * 
+     * @return Whether this is the default traffic distribution group created during instance replication. The default
+     *         traffic distribution group cannot be deleted by the <code>DeleteTrafficDistributionGroup</code> API. The
+     *         default traffic distribution group is deleted as part of the process for deleting a replica.</p> <note>
+     *         <p>
+     *         The <code>SignInConfig</code> distribution is available only on a default
+     *         <code>TrafficDistributionGroup</code> (see the <code>IsDefault</code> parameter in the <a
+     *         href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html"
+     *         >TrafficDistributionGroup</a> data type). If you call <code>UpdateTrafficDistribution</code> with a
+     *         modified <code>SignInConfig</code> and a non-default <code>TrafficDistributionGroup</code>, an
+     *         <code>InvalidRequestException</code> is returned.
+     *         </p>
+     */
+
+    public Boolean isDefault() {
+        return this.isDefault;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -836,7 +994,9 @@ public class TrafficDistributionGroup implements Serializable, Cloneable, Struct
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getIsDefault() != null)
+            sb.append("IsDefault: ").append(getIsDefault());
         sb.append("}");
         return sb.toString();
     }
@@ -879,6 +1039,10 @@ public class TrafficDistributionGroup implements Serializable, Cloneable, Struct
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getIsDefault() == null ^ this.getIsDefault() == null)
+            return false;
+        if (other.getIsDefault() != null && other.getIsDefault().equals(this.getIsDefault()) == false)
+            return false;
         return true;
     }
 
@@ -894,6 +1058,7 @@ public class TrafficDistributionGroup implements Serializable, Cloneable, Struct
         hashCode = prime * hashCode + ((getInstanceArn() == null) ? 0 : getInstanceArn().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getIsDefault() == null) ? 0 : getIsDefault().hashCode());
         return hashCode;
     }
 

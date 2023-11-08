@@ -48,12 +48,12 @@ public class SlotValueRegexFilter implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
-     * Unicode characters ("\ u&lt;Unicode&gt;")
+     * Unicode characters ("\⁠u&lt;Unicode&gt;")
      * </p>
      * </li>
      * </ul>
      * <p>
-     * Represent Unicode characters with four digits, for example "\u0041" or "\u005A".
+     * Represent Unicode characters with four digits, for example "\⁠u0041" or "\⁠u005A".
      * </p>
      * <p>
      * The following regular expression operators are not supported:
@@ -93,12 +93,12 @@ public class SlotValueRegexFilter implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
-     * Unicode characters ("\ u&lt;Unicode&gt;")
+     * Unicode characters ("\⁠u&lt;Unicode&gt;")
      * </p>
      * </li>
      * </ul>
      * <p>
-     * Represent Unicode characters with four digits, for example "\u0041" or "\u005A".
+     * Represent Unicode characters with four digits, for example "\⁠u0041" or "\⁠u005A".
      * </p>
      * <p>
      * The following regular expression operators are not supported:
@@ -134,12 +134,12 @@ public class SlotValueRegexFilter implements Serializable, Cloneable, Structured
      *        </li>
      *        <li>
      *        <p>
-     *        Unicode characters ("\ u&lt;Unicode&gt;")
+     *        Unicode characters ("\⁠u&lt;Unicode&gt;")
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        Represent Unicode characters with four digits, for example "\u0041" or "\u005A".
+     *        Represent Unicode characters with four digits, for example "\⁠u0041" or "\⁠u005A".
      *        </p>
      *        <p>
      *        The following regular expression operators are not supported:
@@ -181,12 +181,12 @@ public class SlotValueRegexFilter implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
-     * Unicode characters ("\ u&lt;Unicode&gt;")
+     * Unicode characters ("\⁠u&lt;Unicode&gt;")
      * </p>
      * </li>
      * </ul>
      * <p>
-     * Represent Unicode characters with four digits, for example "\u0041" or "\u005A".
+     * Represent Unicode characters with four digits, for example "\⁠u0041" or "\⁠u005A".
      * </p>
      * <p>
      * The following regular expression operators are not supported:
@@ -222,12 +222,12 @@ public class SlotValueRegexFilter implements Serializable, Cloneable, Structured
      *         </li>
      *         <li>
      *         <p>
-     *         Unicode characters ("\ u&lt;Unicode&gt;")
+     *         Unicode characters ("\⁠u&lt;Unicode&gt;")
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         Represent Unicode characters with four digits, for example "\u0041" or "\u005A".
+     *         Represent Unicode characters with four digits, for example "\⁠u0041" or "\⁠u005A".
      *         </p>
      *         <p>
      *         The following regular expression operators are not supported:
@@ -269,12 +269,12 @@ public class SlotValueRegexFilter implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
-     * Unicode characters ("\ u&lt;Unicode&gt;")
+     * Unicode characters ("\⁠u&lt;Unicode&gt;")
      * </p>
      * </li>
      * </ul>
      * <p>
-     * Represent Unicode characters with four digits, for example "\u0041" or "\u005A".
+     * Represent Unicode characters with four digits, for example "\⁠u0041" or "\⁠u005A".
      * </p>
      * <p>
      * The following regular expression operators are not supported:
@@ -310,12 +310,12 @@ public class SlotValueRegexFilter implements Serializable, Cloneable, Structured
      *        </li>
      *        <li>
      *        <p>
-     *        Unicode characters ("\ u&lt;Unicode&gt;")
+     *        Unicode characters ("\⁠u&lt;Unicode&gt;")
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        Represent Unicode characters with four digits, for example "\u0041" or "\u005A".
+     *        Represent Unicode characters with four digits, for example "\⁠u0041" or "\⁠u005A".
      *        </p>
      *        <p>
      *        The following regular expression operators are not supported:

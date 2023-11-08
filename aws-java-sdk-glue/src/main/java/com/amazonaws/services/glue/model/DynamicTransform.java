@@ -70,6 +70,12 @@ public class DynamicTransform implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String version;
+    /**
+     * <p>
+     * Specifies the data schema for the dynamic transform.
+     * </p>
+     */
+    private java.util.List<GlueSchema> outputSchemas;
 
     /**
      * <p>
@@ -412,6 +418,76 @@ public class DynamicTransform implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * Specifies the data schema for the dynamic transform.
+     * </p>
+     * 
+     * @return Specifies the data schema for the dynamic transform.
+     */
+
+    public java.util.List<GlueSchema> getOutputSchemas() {
+        return outputSchemas;
+    }
+
+    /**
+     * <p>
+     * Specifies the data schema for the dynamic transform.
+     * </p>
+     * 
+     * @param outputSchemas
+     *        Specifies the data schema for the dynamic transform.
+     */
+
+    public void setOutputSchemas(java.util.Collection<GlueSchema> outputSchemas) {
+        if (outputSchemas == null) {
+            this.outputSchemas = null;
+            return;
+        }
+
+        this.outputSchemas = new java.util.ArrayList<GlueSchema>(outputSchemas);
+    }
+
+    /**
+     * <p>
+     * Specifies the data schema for the dynamic transform.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setOutputSchemas(java.util.Collection)} or {@link #withOutputSchemas(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param outputSchemas
+     *        Specifies the data schema for the dynamic transform.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DynamicTransform withOutputSchemas(GlueSchema... outputSchemas) {
+        if (this.outputSchemas == null) {
+            setOutputSchemas(new java.util.ArrayList<GlueSchema>(outputSchemas.length));
+        }
+        for (GlueSchema ele : outputSchemas) {
+            this.outputSchemas.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the data schema for the dynamic transform.
+     * </p>
+     * 
+     * @param outputSchemas
+     *        Specifies the data schema for the dynamic transform.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DynamicTransform withOutputSchemas(java.util.Collection<GlueSchema> outputSchemas) {
+        setOutputSchemas(outputSchemas);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -436,7 +512,9 @@ public class DynamicTransform implements Serializable, Cloneable, StructuredPojo
         if (getPath() != null)
             sb.append("Path: ").append(getPath()).append(",");
         if (getVersion() != null)
-            sb.append("Version: ").append(getVersion());
+            sb.append("Version: ").append(getVersion()).append(",");
+        if (getOutputSchemas() != null)
+            sb.append("OutputSchemas: ").append(getOutputSchemas());
         sb.append("}");
         return sb.toString();
     }
@@ -479,6 +557,10 @@ public class DynamicTransform implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false)
             return false;
+        if (other.getOutputSchemas() == null ^ this.getOutputSchemas() == null)
+            return false;
+        if (other.getOutputSchemas() != null && other.getOutputSchemas().equals(this.getOutputSchemas()) == false)
+            return false;
         return true;
     }
 
@@ -494,6 +576,7 @@ public class DynamicTransform implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getFunctionName() == null) ? 0 : getFunctionName().hashCode());
         hashCode = prime * hashCode + ((getPath() == null) ? 0 : getPath().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
+        hashCode = prime * hashCode + ((getOutputSchemas() == null) ? 0 : getOutputSchemas().hashCode());
         return hashCode;
     }
 

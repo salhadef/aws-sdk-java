@@ -36,18 +36,6 @@ public class WorkflowListItem implements Serializable, Cloneable, StructuredPojo
     private String arn;
     /**
      * <p>
-     * When the workflow was created.
-     * </p>
-     */
-    private java.util.Date creationTime;
-    /**
-     * <p>
-     * The workflow's digest.
-     * </p>
-     */
-    private String digest;
-    /**
-     * <p>
      * The workflow's ID.
      * </p>
      */
@@ -70,6 +58,25 @@ public class WorkflowListItem implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String type;
+    /**
+     * <p>
+     * The workflow's digest.
+     * </p>
+     */
+    private String digest;
+    /**
+     * <p>
+     * When the workflow was created.
+     * </p>
+     */
+    private java.util.Date creationTime;
+    /**
+     * <p>
+     * Any metadata available for workflow. The information listed may vary depending on the workflow, and there may
+     * also be no metadata to return.
+     * </p>
+     */
+    private java.util.Map<String, String> metadata;
 
     /**
      * <p>
@@ -108,86 +115,6 @@ public class WorkflowListItem implements Serializable, Cloneable, StructuredPojo
 
     public WorkflowListItem withArn(String arn) {
         setArn(arn);
-        return this;
-    }
-
-    /**
-     * <p>
-     * When the workflow was created.
-     * </p>
-     * 
-     * @param creationTime
-     *        When the workflow was created.
-     */
-
-    public void setCreationTime(java.util.Date creationTime) {
-        this.creationTime = creationTime;
-    }
-
-    /**
-     * <p>
-     * When the workflow was created.
-     * </p>
-     * 
-     * @return When the workflow was created.
-     */
-
-    public java.util.Date getCreationTime() {
-        return this.creationTime;
-    }
-
-    /**
-     * <p>
-     * When the workflow was created.
-     * </p>
-     * 
-     * @param creationTime
-     *        When the workflow was created.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public WorkflowListItem withCreationTime(java.util.Date creationTime) {
-        setCreationTime(creationTime);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The workflow's digest.
-     * </p>
-     * 
-     * @param digest
-     *        The workflow's digest.
-     */
-
-    public void setDigest(String digest) {
-        this.digest = digest;
-    }
-
-    /**
-     * <p>
-     * The workflow's digest.
-     * </p>
-     * 
-     * @return The workflow's digest.
-     */
-
-    public String getDigest() {
-        return this.digest;
-    }
-
-    /**
-     * <p>
-     * The workflow's digest.
-     * </p>
-     * 
-     * @param digest
-     *        The workflow's digest.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public WorkflowListItem withDigest(String digest) {
-        setDigest(digest);
         return this;
     }
 
@@ -390,6 +317,160 @@ public class WorkflowListItem implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The workflow's digest.
+     * </p>
+     * 
+     * @param digest
+     *        The workflow's digest.
+     */
+
+    public void setDigest(String digest) {
+        this.digest = digest;
+    }
+
+    /**
+     * <p>
+     * The workflow's digest.
+     * </p>
+     * 
+     * @return The workflow's digest.
+     */
+
+    public String getDigest() {
+        return this.digest;
+    }
+
+    /**
+     * <p>
+     * The workflow's digest.
+     * </p>
+     * 
+     * @param digest
+     *        The workflow's digest.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkflowListItem withDigest(String digest) {
+        setDigest(digest);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When the workflow was created.
+     * </p>
+     * 
+     * @param creationTime
+     *        When the workflow was created.
+     */
+
+    public void setCreationTime(java.util.Date creationTime) {
+        this.creationTime = creationTime;
+    }
+
+    /**
+     * <p>
+     * When the workflow was created.
+     * </p>
+     * 
+     * @return When the workflow was created.
+     */
+
+    public java.util.Date getCreationTime() {
+        return this.creationTime;
+    }
+
+    /**
+     * <p>
+     * When the workflow was created.
+     * </p>
+     * 
+     * @param creationTime
+     *        When the workflow was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkflowListItem withCreationTime(java.util.Date creationTime) {
+        setCreationTime(creationTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Any metadata available for workflow. The information listed may vary depending on the workflow, and there may
+     * also be no metadata to return.
+     * </p>
+     * 
+     * @return Any metadata available for workflow. The information listed may vary depending on the workflow, and there
+     *         may also be no metadata to return.
+     */
+
+    public java.util.Map<String, String> getMetadata() {
+        return metadata;
+    }
+
+    /**
+     * <p>
+     * Any metadata available for workflow. The information listed may vary depending on the workflow, and there may
+     * also be no metadata to return.
+     * </p>
+     * 
+     * @param metadata
+     *        Any metadata available for workflow. The information listed may vary depending on the workflow, and there
+     *        may also be no metadata to return.
+     */
+
+    public void setMetadata(java.util.Map<String, String> metadata) {
+        this.metadata = metadata;
+    }
+
+    /**
+     * <p>
+     * Any metadata available for workflow. The information listed may vary depending on the workflow, and there may
+     * also be no metadata to return.
+     * </p>
+     * 
+     * @param metadata
+     *        Any metadata available for workflow. The information listed may vary depending on the workflow, and there
+     *        may also be no metadata to return.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkflowListItem withMetadata(java.util.Map<String, String> metadata) {
+        setMetadata(metadata);
+        return this;
+    }
+
+    /**
+     * Add a single Metadata entry
+     *
+     * @see WorkflowListItem#withMetadata
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkflowListItem addMetadataEntry(String key, String value) {
+        if (null == this.metadata) {
+            this.metadata = new java.util.HashMap<String, String>();
+        }
+        if (this.metadata.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.metadata.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Metadata.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkflowListItem clearMetadataEntries() {
+        this.metadata = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -403,10 +484,6 @@ public class WorkflowListItem implements Serializable, Cloneable, StructuredPojo
         sb.append("{");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
-        if (getCreationTime() != null)
-            sb.append("CreationTime: ").append(getCreationTime()).append(",");
-        if (getDigest() != null)
-            sb.append("Digest: ").append(getDigest()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
         if (getName() != null)
@@ -414,7 +491,13 @@ public class WorkflowListItem implements Serializable, Cloneable, StructuredPojo
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getType() != null)
-            sb.append("Type: ").append(getType());
+            sb.append("Type: ").append(getType()).append(",");
+        if (getDigest() != null)
+            sb.append("Digest: ").append(getDigest()).append(",");
+        if (getCreationTime() != null)
+            sb.append("CreationTime: ").append(getCreationTime()).append(",");
+        if (getMetadata() != null)
+            sb.append("Metadata: ").append(getMetadata());
         sb.append("}");
         return sb.toString();
     }
@@ -433,14 +516,6 @@ public class WorkflowListItem implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
-        if (other.getCreationTime() == null ^ this.getCreationTime() == null)
-            return false;
-        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
-            return false;
-        if (other.getDigest() == null ^ this.getDigest() == null)
-            return false;
-        if (other.getDigest() != null && other.getDigest().equals(this.getDigest()) == false)
-            return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
@@ -457,6 +532,18 @@ public class WorkflowListItem implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
+        if (other.getDigest() == null ^ this.getDigest() == null)
+            return false;
+        if (other.getDigest() != null && other.getDigest().equals(this.getDigest()) == false)
+            return false;
+        if (other.getCreationTime() == null ^ this.getCreationTime() == null)
+            return false;
+        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
+            return false;
+        if (other.getMetadata() == null ^ this.getMetadata() == null)
+            return false;
+        if (other.getMetadata() != null && other.getMetadata().equals(this.getMetadata()) == false)
+            return false;
         return true;
     }
 
@@ -466,12 +553,13 @@ public class WorkflowListItem implements Serializable, Cloneable, StructuredPojo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
-        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
-        hashCode = prime * hashCode + ((getDigest() == null) ? 0 : getDigest().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getDigest() == null) ? 0 : getDigest().hashCode());
+        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
+        hashCode = prime * hashCode + ((getMetadata() == null) ? 0 : getMetadata().hashCode());
         return hashCode;
     }
 

@@ -27,12 +27,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class AccountAssignmentOperationStatusMetadataMarshaller {
 
-    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("Status").build();
-    private static final MarshallingInfo<String> REQUESTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("RequestId").build();
     private static final MarshallingInfo<java.util.Date> CREATEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedDate").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> REQUESTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("RequestId").build();
+    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Status").build();
 
     private static final AccountAssignmentOperationStatusMetadataMarshaller instance = new AccountAssignmentOperationStatusMetadataMarshaller();
 
@@ -50,9 +50,9 @@ public class AccountAssignmentOperationStatusMetadataMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(accountAssignmentOperationStatusMetadata.getStatus(), STATUS_BINDING);
-            protocolMarshaller.marshall(accountAssignmentOperationStatusMetadata.getRequestId(), REQUESTID_BINDING);
             protocolMarshaller.marshall(accountAssignmentOperationStatusMetadata.getCreatedDate(), CREATEDDATE_BINDING);
+            protocolMarshaller.marshall(accountAssignmentOperationStatusMetadata.getRequestId(), REQUESTID_BINDING);
+            protocolMarshaller.marshall(accountAssignmentOperationStatusMetadata.getStatus(), STATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

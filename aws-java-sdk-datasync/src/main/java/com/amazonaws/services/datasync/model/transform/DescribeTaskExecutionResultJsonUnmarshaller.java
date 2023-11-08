@@ -104,6 +104,30 @@ public class DescribeTaskExecutionResultJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     describeTaskExecutionResult.setBytesCompressed(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("TaskReportConfig", targetDepth)) {
+                    context.nextToken();
+                    describeTaskExecutionResult.setTaskReportConfig(TaskReportConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("FilesDeleted", targetDepth)) {
+                    context.nextToken();
+                    describeTaskExecutionResult.setFilesDeleted(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("FilesSkipped", targetDepth)) {
+                    context.nextToken();
+                    describeTaskExecutionResult.setFilesSkipped(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("FilesVerified", targetDepth)) {
+                    context.nextToken();
+                    describeTaskExecutionResult.setFilesVerified(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("ReportResult", targetDepth)) {
+                    context.nextToken();
+                    describeTaskExecutionResult.setReportResult(ReportResultJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("EstimatedFilesToDelete", targetDepth)) {
+                    context.nextToken();
+                    describeTaskExecutionResult.setEstimatedFilesToDelete(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

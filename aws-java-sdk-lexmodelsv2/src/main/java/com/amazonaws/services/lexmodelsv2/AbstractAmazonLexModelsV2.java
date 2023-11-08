@@ -99,6 +99,11 @@ public class AbstractAmazonLexModelsV2 implements AmazonLexModelsV2 {
     }
 
     @Override
+    public CreateTestSetDiscrepancyReportResult createTestSetDiscrepancyReport(CreateTestSetDiscrepancyReportRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateUploadUrlResult createUploadUrl(CreateUploadUrlRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -160,6 +165,11 @@ public class AbstractAmazonLexModelsV2 implements AmazonLexModelsV2 {
 
     @Override
     public DeleteSlotTypeResult deleteSlotType(DeleteSlotTypeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteTestSetResult deleteTestSet(DeleteTestSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -229,6 +239,31 @@ public class AbstractAmazonLexModelsV2 implements AmazonLexModelsV2 {
     }
 
     @Override
+    public DescribeTestExecutionResult describeTestExecution(DescribeTestExecutionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeTestSetResult describeTestSet(DescribeTestSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeTestSetDiscrepancyReportResult describeTestSetDiscrepancyReport(DescribeTestSetDiscrepancyReportRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeTestSetGenerationResult describeTestSetGeneration(DescribeTestSetGenerationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetTestExecutionArtifactsUrlResult getTestExecutionArtifactsUrl(GetTestExecutionArtifactsUrlRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListAggregatedUtterancesResult listAggregatedUtterances(ListAggregatedUtterancesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -284,12 +319,37 @@ public class AbstractAmazonLexModelsV2 implements AmazonLexModelsV2 {
     }
 
     @Override
+    public ListIntentMetricsResult listIntentMetrics(ListIntentMetricsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListIntentPathsResult listIntentPaths(ListIntentPathsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListIntentStageMetricsResult listIntentStageMetrics(ListIntentStageMetricsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListIntentsResult listIntents(ListIntentsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public ListRecommendedIntentsResult listRecommendedIntents(ListRecommendedIntentsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListSessionAnalyticsDataResult listSessionAnalyticsData(ListSessionAnalyticsDataRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListSessionMetricsResult listSessionMetrics(ListSessionMetricsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -309,6 +369,36 @@ public class AbstractAmazonLexModelsV2 implements AmazonLexModelsV2 {
     }
 
     @Override
+    public ListTestExecutionResultItemsResult listTestExecutionResultItems(ListTestExecutionResultItemsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListTestExecutionsResult listTestExecutions(ListTestExecutionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListTestSetRecordsResult listTestSetRecords(ListTestSetRecordsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListTestSetsResult listTestSets(ListTestSetsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListUtteranceAnalyticsDataResult listUtteranceAnalyticsData(ListUtteranceAnalyticsDataRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListUtteranceMetricsResult listUtteranceMetrics(ListUtteranceMetricsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public SearchAssociatedTranscriptsResult searchAssociatedTranscripts(SearchAssociatedTranscriptsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -320,6 +410,16 @@ public class AbstractAmazonLexModelsV2 implements AmazonLexModelsV2 {
 
     @Override
     public StartImportResult startImport(StartImportRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartTestExecutionResult startTestExecution(StartTestExecutionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartTestSetGenerationResult startTestSetGeneration(StartTestSetGenerationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -380,6 +480,11 @@ public class AbstractAmazonLexModelsV2 implements AmazonLexModelsV2 {
 
     @Override
     public UpdateSlotTypeResult updateSlotType(UpdateSlotTypeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateTestSetResult updateTestSet(UpdateTestSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

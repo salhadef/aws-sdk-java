@@ -62,6 +62,11 @@ public class SetSecurityGroupsRequestMarshaller implements Marshaller<Request<Se
             }
         }
 
+        if (setSecurityGroupsRequest.getEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic() != null) {
+            request.addParameter("EnforceSecurityGroupInboundRulesOnPrivateLinkTraffic",
+                    StringUtils.fromString(setSecurityGroupsRequest.getEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic()));
+        }
+
         return request;
     }
 

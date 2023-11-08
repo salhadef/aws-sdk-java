@@ -60,6 +60,10 @@ public class AssistantSummaryJsonUnmarshaller implements Unmarshaller<AssistantS
                     context.nextToken();
                     assistantSummary.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("integrationConfiguration", targetDepth)) {
+                    context.nextToken();
+                    assistantSummary.setIntegrationConfiguration(AssistantIntegrationConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
                     assistantSummary.setName(context.getUnmarshaller(String.class).unmarshall(context));

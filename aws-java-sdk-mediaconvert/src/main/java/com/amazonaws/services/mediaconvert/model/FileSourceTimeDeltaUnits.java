@@ -15,9 +15,9 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * When you use the setting Time delta (TimeDelta) to adjust the sync between your sidecar captions and your video, use
- * this setting to specify the units for the delta that you specify. When you don't specify a value for Time delta units
- * (TimeDeltaUnits), MediaConvert uses seconds by default.
+ * When you use the setting Time delta to adjust the sync between your sidecar captions and your video, use this setting
+ * to specify the units for the delta that you specify. When you don't specify a value for Time delta units,
+ * MediaConvert uses seconds by default.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum FileSourceTimeDeltaUnits {

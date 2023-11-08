@@ -52,6 +52,10 @@ public class OutpostJsonUnmarshaller implements Unmarshaller<Outpost, JsonUnmars
                     context.nextToken();
                     outpost.setOutpostArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("S3OutpostArn", targetDepth)) {
+                    context.nextToken();
+                    outpost.setS3OutpostArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("OutpostId", targetDepth)) {
                     context.nextToken();
                     outpost.setOutpostId(context.getUnmarshaller(String.class).unmarshall(context));

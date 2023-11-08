@@ -44,6 +44,7 @@ import com.amazonaws.services.cloudsearchdomain.AmazonCloudSearchDomainClientBui
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.cloudsearchdomain.model.*;
+
 import com.amazonaws.services.cloudsearchdomain.model.transform.*;
 
 /**

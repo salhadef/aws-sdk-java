@@ -401,15 +401,15 @@ public class CreateAssessmentRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: ").append(getName()).append(",");
+            sb.append("Name: ").append("***Sensitive Data Redacted***").append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
+            sb.append("Description: ").append("***Sensitive Data Redacted***").append(",");
         if (getAssessmentReportsDestination() != null)
-            sb.append("AssessmentReportsDestination: ").append(getAssessmentReportsDestination()).append(",");
+            sb.append("AssessmentReportsDestination: ").append("***Sensitive Data Redacted***").append(",");
         if (getScope() != null)
-            sb.append("Scope: ").append(getScope()).append(",");
+            sb.append("Scope: ").append("***Sensitive Data Redacted***").append(",");
         if (getRoles() != null)
-            sb.append("Roles: ").append(getRoles()).append(",");
+            sb.append("Roles: ").append("***Sensitive Data Redacted***").append(",");
         if (getFrameworkId() != null)
             sb.append("FrameworkId: ").append(getFrameworkId()).append(",");
         if (getTags() != null)

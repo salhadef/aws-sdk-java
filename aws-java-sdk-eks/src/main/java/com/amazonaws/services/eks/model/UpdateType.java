@@ -27,7 +27,8 @@ public enum UpdateType {
     AssociateIdentityProviderConfig("AssociateIdentityProviderConfig"),
     DisassociateIdentityProviderConfig("DisassociateIdentityProviderConfig"),
     AssociateEncryptionConfig("AssociateEncryptionConfig"),
-    AddonUpdate("AddonUpdate");
+    AddonUpdate("AddonUpdate"),
+    VpcConfigUpdate("VpcConfigUpdate");
 
     private String value;
 

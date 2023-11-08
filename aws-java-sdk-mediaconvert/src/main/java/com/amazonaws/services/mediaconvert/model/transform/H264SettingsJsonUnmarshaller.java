@@ -72,6 +72,10 @@ public class H264SettingsJsonUnmarshaller implements Unmarshaller<H264Settings, 
                     context.nextToken();
                     h264Settings.setDynamicSubGop(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("endOfStreamMarkers", targetDepth)) {
+                    context.nextToken();
+                    h264Settings.setEndOfStreamMarkers(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("entropyEncoding", targetDepth)) {
                     context.nextToken();
                     h264Settings.setEntropyEncoding(context.getUnmarshaller(String.class).unmarshall(context));

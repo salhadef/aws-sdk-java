@@ -64,6 +64,14 @@ public class JourneyLimitsJsonUnmarshaller implements Unmarshaller<JourneyLimits
                     context.nextToken();
                     journeyLimits.setEndpointReentryInterval(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("TimeframeCap", targetDepth)) {
+                    context.nextToken();
+                    journeyLimits.setTimeframeCap(JourneyTimeframeCapJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("TotalCap", targetDepth)) {
+                    context.nextToken();
+                    journeyLimits.setTotalCap(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

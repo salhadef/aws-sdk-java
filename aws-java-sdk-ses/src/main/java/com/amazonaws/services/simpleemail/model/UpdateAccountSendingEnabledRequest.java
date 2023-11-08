@@ -30,19 +30,21 @@ public class UpdateAccountSendingEnabledRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Describes whether email sending is enabled or disabled for your Amazon SES account in the current AWS Region.
+     * Describes whether email sending is enabled or disabled for your Amazon SES account in the current Amazon Web
+     * Services Region.
      * </p>
      */
     private Boolean enabled;
 
     /**
      * <p>
-     * Describes whether email sending is enabled or disabled for your Amazon SES account in the current AWS Region.
+     * Describes whether email sending is enabled or disabled for your Amazon SES account in the current Amazon Web
+     * Services Region.
      * </p>
      * 
      * @param enabled
-     *        Describes whether email sending is enabled or disabled for your Amazon SES account in the current AWS
-     *        Region.
+     *        Describes whether email sending is enabled or disabled for your Amazon SES account in the current Amazon
+     *        Web Services Region.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -51,11 +53,12 @@ public class UpdateAccountSendingEnabledRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Describes whether email sending is enabled or disabled for your Amazon SES account in the current AWS Region.
+     * Describes whether email sending is enabled or disabled for your Amazon SES account in the current Amazon Web
+     * Services Region.
      * </p>
      * 
-     * @return Describes whether email sending is enabled or disabled for your Amazon SES account in the current AWS
-     *         Region.
+     * @return Describes whether email sending is enabled or disabled for your Amazon SES account in the current Amazon
+     *         Web Services Region.
      */
 
     public Boolean getEnabled() {
@@ -64,12 +67,13 @@ public class UpdateAccountSendingEnabledRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Describes whether email sending is enabled or disabled for your Amazon SES account in the current AWS Region.
+     * Describes whether email sending is enabled or disabled for your Amazon SES account in the current Amazon Web
+     * Services Region.
      * </p>
      * 
      * @param enabled
-     *        Describes whether email sending is enabled or disabled for your Amazon SES account in the current AWS
-     *        Region.
+     *        Describes whether email sending is enabled or disabled for your Amazon SES account in the current Amazon
+     *        Web Services Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +84,12 @@ public class UpdateAccountSendingEnabledRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Describes whether email sending is enabled or disabled for your Amazon SES account in the current AWS Region.
+     * Describes whether email sending is enabled or disabled for your Amazon SES account in the current Amazon Web
+     * Services Region.
      * </p>
      * 
-     * @return Describes whether email sending is enabled or disabled for your Amazon SES account in the current AWS
-     *         Region.
+     * @return Describes whether email sending is enabled or disabled for your Amazon SES account in the current Amazon
+     *         Web Services Region.
      */
 
     public Boolean isEnabled() {

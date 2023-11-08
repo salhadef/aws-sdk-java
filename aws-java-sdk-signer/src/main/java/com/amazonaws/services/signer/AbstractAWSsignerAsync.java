@@ -66,6 +66,19 @@ public class AbstractAWSsignerAsync extends AbstractAWSsigner implements AWSsign
     }
 
     @Override
+    public java.util.concurrent.Future<GetRevocationStatusResult> getRevocationStatusAsync(GetRevocationStatusRequest request) {
+
+        return getRevocationStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRevocationStatusResult> getRevocationStatusAsync(GetRevocationStatusRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetRevocationStatusRequest, GetRevocationStatusResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetSigningPlatformResult> getSigningPlatformAsync(GetSigningPlatformRequest request) {
 
         return getSigningPlatformAsync(request, null);
@@ -204,6 +217,19 @@ public class AbstractAWSsignerAsync extends AbstractAWSsigner implements AWSsign
     @Override
     public java.util.concurrent.Future<RevokeSigningProfileResult> revokeSigningProfileAsync(RevokeSigningProfileRequest request,
             com.amazonaws.handlers.AsyncHandler<RevokeSigningProfileRequest, RevokeSigningProfileResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<SignPayloadResult> signPayloadAsync(SignPayloadRequest request) {
+
+        return signPayloadAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SignPayloadResult> signPayloadAsync(SignPayloadRequest request,
+            com.amazonaws.handlers.AsyncHandler<SignPayloadRequest, SignPayloadResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

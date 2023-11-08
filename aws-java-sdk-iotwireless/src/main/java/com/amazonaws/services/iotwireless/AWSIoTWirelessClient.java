@@ -44,6 +44,7 @@ import com.amazonaws.services.iotwireless.AWSIoTWirelessClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.iotwireless.model.*;
+
 import com.amazonaws.services.iotwireless.model.transform.*;
 
 /**

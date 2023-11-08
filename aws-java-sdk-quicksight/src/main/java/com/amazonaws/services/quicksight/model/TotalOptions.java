@@ -58,6 +58,12 @@ public class TotalOptions implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private TableCellStyle totalCellStyle;
+    /**
+     * <p>
+     * The total aggregation settings for each value field.
+     * </p>
+     */
+    private java.util.List<TotalAggregationOption> totalAggregationOptions;
 
     /**
      * <p>
@@ -317,6 +323,76 @@ public class TotalOptions implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The total aggregation settings for each value field.
+     * </p>
+     * 
+     * @return The total aggregation settings for each value field.
+     */
+
+    public java.util.List<TotalAggregationOption> getTotalAggregationOptions() {
+        return totalAggregationOptions;
+    }
+
+    /**
+     * <p>
+     * The total aggregation settings for each value field.
+     * </p>
+     * 
+     * @param totalAggregationOptions
+     *        The total aggregation settings for each value field.
+     */
+
+    public void setTotalAggregationOptions(java.util.Collection<TotalAggregationOption> totalAggregationOptions) {
+        if (totalAggregationOptions == null) {
+            this.totalAggregationOptions = null;
+            return;
+        }
+
+        this.totalAggregationOptions = new java.util.ArrayList<TotalAggregationOption>(totalAggregationOptions);
+    }
+
+    /**
+     * <p>
+     * The total aggregation settings for each value field.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTotalAggregationOptions(java.util.Collection)} or
+     * {@link #withTotalAggregationOptions(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param totalAggregationOptions
+     *        The total aggregation settings for each value field.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TotalOptions withTotalAggregationOptions(TotalAggregationOption... totalAggregationOptions) {
+        if (this.totalAggregationOptions == null) {
+            setTotalAggregationOptions(new java.util.ArrayList<TotalAggregationOption>(totalAggregationOptions.length));
+        }
+        for (TotalAggregationOption ele : totalAggregationOptions) {
+            this.totalAggregationOptions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The total aggregation settings for each value field.
+     * </p>
+     * 
+     * @param totalAggregationOptions
+     *        The total aggregation settings for each value field.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TotalOptions withTotalAggregationOptions(java.util.Collection<TotalAggregationOption> totalAggregationOptions) {
+        setTotalAggregationOptions(totalAggregationOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -337,7 +413,9 @@ public class TotalOptions implements Serializable, Cloneable, StructuredPojo {
         if (getCustomLabel() != null)
             sb.append("CustomLabel: ").append(getCustomLabel()).append(",");
         if (getTotalCellStyle() != null)
-            sb.append("TotalCellStyle: ").append(getTotalCellStyle());
+            sb.append("TotalCellStyle: ").append(getTotalCellStyle()).append(",");
+        if (getTotalAggregationOptions() != null)
+            sb.append("TotalAggregationOptions: ").append(getTotalAggregationOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -372,6 +450,10 @@ public class TotalOptions implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTotalCellStyle() != null && other.getTotalCellStyle().equals(this.getTotalCellStyle()) == false)
             return false;
+        if (other.getTotalAggregationOptions() == null ^ this.getTotalAggregationOptions() == null)
+            return false;
+        if (other.getTotalAggregationOptions() != null && other.getTotalAggregationOptions().equals(this.getTotalAggregationOptions()) == false)
+            return false;
         return true;
     }
 
@@ -385,6 +467,7 @@ public class TotalOptions implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getScrollStatus() == null) ? 0 : getScrollStatus().hashCode());
         hashCode = prime * hashCode + ((getCustomLabel() == null) ? 0 : getCustomLabel().hashCode());
         hashCode = prime * hashCode + ((getTotalCellStyle() == null) ? 0 : getTotalCellStyle().hashCode());
+        hashCode = prime * hashCode + ((getTotalAggregationOptions() == null) ? 0 : getTotalAggregationOptions().hashCode());
         return hashCode;
     }
 

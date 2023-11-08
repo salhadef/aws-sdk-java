@@ -39,6 +39,8 @@ public class ControlPanelMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RoutingControlCount").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Status").build();
+    private static final MarshallingInfo<String> OWNER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Owner").build();
 
     private static final ControlPanelMarshaller instance = new ControlPanelMarshaller();
 
@@ -62,6 +64,7 @@ public class ControlPanelMarshaller {
             protocolMarshaller.marshall(controlPanel.getName(), NAME_BINDING);
             protocolMarshaller.marshall(controlPanel.getRoutingControlCount(), ROUTINGCONTROLCOUNT_BINDING);
             protocolMarshaller.marshall(controlPanel.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(controlPanel.getOwner(), OWNER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

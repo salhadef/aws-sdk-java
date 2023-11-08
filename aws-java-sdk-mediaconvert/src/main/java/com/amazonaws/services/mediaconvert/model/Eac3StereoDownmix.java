@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * Choose how the service does stereo downmixing. This setting only applies if you keep the default value of 3/2 - L, R,
- * C, Ls, Rs (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a different value for Coding
- * mode, the service ignores Stereo downmix (Eac3StereoDownmix).
+ * C, Ls, Rs for the setting Coding mode. If you choose a different value for Coding mode, the service ignores Stereo
+ * downmix.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Eac3StereoDownmix {

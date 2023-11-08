@@ -42,6 +42,12 @@ public class VpcConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> securityGroupIds;
+    /**
+     * <p>
+     * Allows outbound IPv6 traffic on VPC functions that are connected to dual-stack subnets.
+     * </p>
+     */
+    private Boolean ipv6AllowedForDualStack;
 
     /**
      * <p>
@@ -190,6 +196,58 @@ public class VpcConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Allows outbound IPv6 traffic on VPC functions that are connected to dual-stack subnets.
+     * </p>
+     * 
+     * @param ipv6AllowedForDualStack
+     *        Allows outbound IPv6 traffic on VPC functions that are connected to dual-stack subnets.
+     */
+
+    public void setIpv6AllowedForDualStack(Boolean ipv6AllowedForDualStack) {
+        this.ipv6AllowedForDualStack = ipv6AllowedForDualStack;
+    }
+
+    /**
+     * <p>
+     * Allows outbound IPv6 traffic on VPC functions that are connected to dual-stack subnets.
+     * </p>
+     * 
+     * @return Allows outbound IPv6 traffic on VPC functions that are connected to dual-stack subnets.
+     */
+
+    public Boolean getIpv6AllowedForDualStack() {
+        return this.ipv6AllowedForDualStack;
+    }
+
+    /**
+     * <p>
+     * Allows outbound IPv6 traffic on VPC functions that are connected to dual-stack subnets.
+     * </p>
+     * 
+     * @param ipv6AllowedForDualStack
+     *        Allows outbound IPv6 traffic on VPC functions that are connected to dual-stack subnets.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpcConfig withIpv6AllowedForDualStack(Boolean ipv6AllowedForDualStack) {
+        setIpv6AllowedForDualStack(ipv6AllowedForDualStack);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Allows outbound IPv6 traffic on VPC functions that are connected to dual-stack subnets.
+     * </p>
+     * 
+     * @return Allows outbound IPv6 traffic on VPC functions that are connected to dual-stack subnets.
+     */
+
+    public Boolean isIpv6AllowedForDualStack() {
+        return this.ipv6AllowedForDualStack;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -204,7 +262,9 @@ public class VpcConfig implements Serializable, Cloneable, StructuredPojo {
         if (getSubnetIds() != null)
             sb.append("SubnetIds: ").append(getSubnetIds()).append(",");
         if (getSecurityGroupIds() != null)
-            sb.append("SecurityGroupIds: ").append(getSecurityGroupIds());
+            sb.append("SecurityGroupIds: ").append(getSecurityGroupIds()).append(",");
+        if (getIpv6AllowedForDualStack() != null)
+            sb.append("Ipv6AllowedForDualStack: ").append(getIpv6AllowedForDualStack());
         sb.append("}");
         return sb.toString();
     }
@@ -227,6 +287,10 @@ public class VpcConfig implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSecurityGroupIds() != null && other.getSecurityGroupIds().equals(this.getSecurityGroupIds()) == false)
             return false;
+        if (other.getIpv6AllowedForDualStack() == null ^ this.getIpv6AllowedForDualStack() == null)
+            return false;
+        if (other.getIpv6AllowedForDualStack() != null && other.getIpv6AllowedForDualStack().equals(this.getIpv6AllowedForDualStack()) == false)
+            return false;
         return true;
     }
 
@@ -237,6 +301,7 @@ public class VpcConfig implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());
         hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode());
+        hashCode = prime * hashCode + ((getIpv6AllowedForDualStack() == null) ? 0 : getIpv6AllowedForDualStack().hashCode());
         return hashCode;
     }
 

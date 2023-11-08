@@ -36,6 +36,8 @@ public class ScatterPlotCategoricallyAggregatedFieldWellsMarshaller {
             .marshallLocationName("Category").build();
     private static final MarshallingInfo<List> SIZE_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Size").build();
+    private static final MarshallingInfo<List> LABEL_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Label").build();
 
     private static final ScatterPlotCategoricallyAggregatedFieldWellsMarshaller instance = new ScatterPlotCategoricallyAggregatedFieldWellsMarshaller();
 
@@ -57,6 +59,7 @@ public class ScatterPlotCategoricallyAggregatedFieldWellsMarshaller {
             protocolMarshaller.marshall(scatterPlotCategoricallyAggregatedFieldWells.getYAxis(), YAXIS_BINDING);
             protocolMarshaller.marshall(scatterPlotCategoricallyAggregatedFieldWells.getCategory(), CATEGORY_BINDING);
             protocolMarshaller.marshall(scatterPlotCategoricallyAggregatedFieldWells.getSize(), SIZE_BINDING);
+            protocolMarshaller.marshall(scatterPlotCategoricallyAggregatedFieldWells.getLabel(), LABEL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

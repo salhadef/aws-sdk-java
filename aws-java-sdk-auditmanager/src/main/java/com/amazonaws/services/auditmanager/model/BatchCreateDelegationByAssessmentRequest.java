@@ -161,7 +161,7 @@ public class BatchCreateDelegationByAssessmentRequest extends com.amazonaws.Amaz
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCreateDelegationRequests() != null)
-            sb.append("CreateDelegationRequests: ").append(getCreateDelegationRequests()).append(",");
+            sb.append("CreateDelegationRequests: ").append("***Sensitive Data Redacted***").append(",");
         if (getAssessmentId() != null)
             sb.append("AssessmentId: ").append(getAssessmentId());
         sb.append("}");

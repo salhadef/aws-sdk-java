@@ -32,10 +32,14 @@ public class SearchPlaceIndexForTextRequestMarshaller {
             .marshallLocationName("BiasPosition").build();
     private static final MarshallingInfo<List> FILTERBBOX_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("FilterBBox").build();
+    private static final MarshallingInfo<List> FILTERCATEGORIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FilterCategories").build();
     private static final MarshallingInfo<List> FILTERCOUNTRIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FilterCountries").build();
     private static final MarshallingInfo<String> INDEXNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("IndexName").build();
+    private static final MarshallingInfo<String> KEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.QUERY_PARAM)
+            .marshallLocationName("key").build();
     private static final MarshallingInfo<String> LANGUAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Language").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -61,8 +65,10 @@ public class SearchPlaceIndexForTextRequestMarshaller {
         try {
             protocolMarshaller.marshall(searchPlaceIndexForTextRequest.getBiasPosition(), BIASPOSITION_BINDING);
             protocolMarshaller.marshall(searchPlaceIndexForTextRequest.getFilterBBox(), FILTERBBOX_BINDING);
+            protocolMarshaller.marshall(searchPlaceIndexForTextRequest.getFilterCategories(), FILTERCATEGORIES_BINDING);
             protocolMarshaller.marshall(searchPlaceIndexForTextRequest.getFilterCountries(), FILTERCOUNTRIES_BINDING);
             protocolMarshaller.marshall(searchPlaceIndexForTextRequest.getIndexName(), INDEXNAME_BINDING);
+            protocolMarshaller.marshall(searchPlaceIndexForTextRequest.getKey(), KEY_BINDING);
             protocolMarshaller.marshall(searchPlaceIndexForTextRequest.getLanguage(), LANGUAGE_BINDING);
             protocolMarshaller.marshall(searchPlaceIndexForTextRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(searchPlaceIndexForTextRequest.getText(), TEXT_BINDING);

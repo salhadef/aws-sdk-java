@@ -28,6 +28,11 @@ public class AbstractAmazonApplicationInsights implements AmazonApplicationInsig
     }
 
     @Override
+    public AddWorkloadResult addWorkload(AddWorkloadRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateApplicationResult createApplication(CreateApplicationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -99,6 +104,11 @@ public class AbstractAmazonApplicationInsights implements AmazonApplicationInsig
     }
 
     @Override
+    public DescribeWorkloadResult describeWorkload(DescribeWorkloadRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListApplicationsResult listApplications(ListApplicationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -134,6 +144,16 @@ public class AbstractAmazonApplicationInsights implements AmazonApplicationInsig
     }
 
     @Override
+    public ListWorkloadsResult listWorkloads(ListWorkloadsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RemoveWorkloadResult removeWorkload(RemoveWorkloadRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public TagResourceResult tagResource(TagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -160,6 +180,16 @@ public class AbstractAmazonApplicationInsights implements AmazonApplicationInsig
 
     @Override
     public UpdateLogPatternResult updateLogPattern(UpdateLogPatternRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateProblemResult updateProblem(UpdateProblemRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateWorkloadResult updateWorkload(UpdateWorkloadRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -55,6 +55,12 @@ public class TargetGroupSummary implements Serializable, Cloneable, StructuredPo
     private String ipAddressType;
     /**
      * <p>
+     * Lambda event structure version
+     * </p>
+     */
+    private String lambdaEventStructureVersion;
+    /**
+     * <p>
      * The date and time that the target group was last updated, specified in ISO-8601 format.
      * </p>
      */
@@ -290,6 +296,65 @@ public class TargetGroupSummary implements Serializable, Cloneable, StructuredPo
 
     public TargetGroupSummary withIpAddressType(IpAddressType ipAddressType) {
         this.ipAddressType = ipAddressType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Lambda event structure version
+     * </p>
+     * 
+     * @param lambdaEventStructureVersion
+     *        Lambda event structure version
+     * @see LambdaEventStructureVersion
+     */
+
+    public void setLambdaEventStructureVersion(String lambdaEventStructureVersion) {
+        this.lambdaEventStructureVersion = lambdaEventStructureVersion;
+    }
+
+    /**
+     * <p>
+     * Lambda event structure version
+     * </p>
+     * 
+     * @return Lambda event structure version
+     * @see LambdaEventStructureVersion
+     */
+
+    public String getLambdaEventStructureVersion() {
+        return this.lambdaEventStructureVersion;
+    }
+
+    /**
+     * <p>
+     * Lambda event structure version
+     * </p>
+     * 
+     * @param lambdaEventStructureVersion
+     *        Lambda event structure version
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LambdaEventStructureVersion
+     */
+
+    public TargetGroupSummary withLambdaEventStructureVersion(String lambdaEventStructureVersion) {
+        setLambdaEventStructureVersion(lambdaEventStructureVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Lambda event structure version
+     * </p>
+     * 
+     * @param lambdaEventStructureVersion
+     *        Lambda event structure version
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LambdaEventStructureVersion
+     */
+
+    public TargetGroupSummary withLambdaEventStructureVersion(LambdaEventStructureVersion lambdaEventStructureVersion) {
+        this.lambdaEventStructureVersion = lambdaEventStructureVersion.toString();
         return this;
     }
 
@@ -720,6 +785,8 @@ public class TargetGroupSummary implements Serializable, Cloneable, StructuredPo
             sb.append("Id: ").append(getId()).append(",");
         if (getIpAddressType() != null)
             sb.append("IpAddressType: ").append(getIpAddressType()).append(",");
+        if (getLambdaEventStructureVersion() != null)
+            sb.append("LambdaEventStructureVersion: ").append(getLambdaEventStructureVersion()).append(",");
         if (getLastUpdatedAt() != null)
             sb.append("LastUpdatedAt: ").append(getLastUpdatedAt()).append(",");
         if (getName() != null)
@@ -766,6 +833,10 @@ public class TargetGroupSummary implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getIpAddressType() != null && other.getIpAddressType().equals(this.getIpAddressType()) == false)
             return false;
+        if (other.getLambdaEventStructureVersion() == null ^ this.getLambdaEventStructureVersion() == null)
+            return false;
+        if (other.getLambdaEventStructureVersion() != null && other.getLambdaEventStructureVersion().equals(this.getLambdaEventStructureVersion()) == false)
+            return false;
         if (other.getLastUpdatedAt() == null ^ this.getLastUpdatedAt() == null)
             return false;
         if (other.getLastUpdatedAt() != null && other.getLastUpdatedAt().equals(this.getLastUpdatedAt()) == false)
@@ -810,6 +881,7 @@ public class TargetGroupSummary implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getIpAddressType() == null) ? 0 : getIpAddressType().hashCode());
+        hashCode = prime * hashCode + ((getLambdaEventStructureVersion() == null) ? 0 : getLambdaEventStructureVersion().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedAt() == null) ? 0 : getLastUpdatedAt().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());

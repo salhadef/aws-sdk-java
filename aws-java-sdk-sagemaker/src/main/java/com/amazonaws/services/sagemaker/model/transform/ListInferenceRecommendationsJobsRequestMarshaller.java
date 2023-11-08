@@ -47,6 +47,10 @@ public class ListInferenceRecommendationsJobsRequestMarshaller {
             .marshallLocationName("NextToken").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
+    private static final MarshallingInfo<String> MODELNAMEEQUALS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModelNameEquals").build();
+    private static final MarshallingInfo<String> MODELPACKAGEVERSIONARNEQUALS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModelPackageVersionArnEquals").build();
 
     private static final ListInferenceRecommendationsJobsRequestMarshaller instance = new ListInferenceRecommendationsJobsRequestMarshaller();
 
@@ -74,6 +78,8 @@ public class ListInferenceRecommendationsJobsRequestMarshaller {
             protocolMarshaller.marshall(listInferenceRecommendationsJobsRequest.getSortOrder(), SORTORDER_BINDING);
             protocolMarshaller.marshall(listInferenceRecommendationsJobsRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listInferenceRecommendationsJobsRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(listInferenceRecommendationsJobsRequest.getModelNameEquals(), MODELNAMEEQUALS_BINDING);
+            protocolMarshaller.marshall(listInferenceRecommendationsJobsRequest.getModelPackageVersionArnEquals(), MODELPACKAGEVERSIONARNEQUALS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

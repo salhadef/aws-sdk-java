@@ -33,6 +33,8 @@ public class ReferenceLineDataConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DynamicConfiguration").build();
     private static final MarshallingInfo<String> AXISBINDING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AxisBinding").build();
+    private static final MarshallingInfo<String> SERIESTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SeriesType").build();
 
     private static final ReferenceLineDataConfigurationMarshaller instance = new ReferenceLineDataConfigurationMarshaller();
 
@@ -53,6 +55,7 @@ public class ReferenceLineDataConfigurationMarshaller {
             protocolMarshaller.marshall(referenceLineDataConfiguration.getStaticConfiguration(), STATICCONFIGURATION_BINDING);
             protocolMarshaller.marshall(referenceLineDataConfiguration.getDynamicConfiguration(), DYNAMICCONFIGURATION_BINDING);
             protocolMarshaller.marshall(referenceLineDataConfiguration.getAxisBinding(), AXISBINDING_BINDING);
+            protocolMarshaller.marshall(referenceLineDataConfiguration.getSeriesType(), SERIESTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

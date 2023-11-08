@@ -27,12 +27,6 @@ public class ListReadSetImportJobsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A filter to apply to the list.
-     * </p>
-     */
-    private ImportReadSetFilter filter;
-    /**
-     * <p>
      * The maximum number of jobs to return in one page of results.
      * </p>
      */
@@ -49,46 +43,12 @@ public class ListReadSetImportJobsRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private String sequenceStoreId;
-
     /**
      * <p>
      * A filter to apply to the list.
      * </p>
-     * 
-     * @param filter
-     *        A filter to apply to the list.
      */
-
-    public void setFilter(ImportReadSetFilter filter) {
-        this.filter = filter;
-    }
-
-    /**
-     * <p>
-     * A filter to apply to the list.
-     * </p>
-     * 
-     * @return A filter to apply to the list.
-     */
-
-    public ImportReadSetFilter getFilter() {
-        return this.filter;
-    }
-
-    /**
-     * <p>
-     * A filter to apply to the list.
-     * </p>
-     * 
-     * @param filter
-     *        A filter to apply to the list.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListReadSetImportJobsRequest withFilter(ImportReadSetFilter filter) {
-        setFilter(filter);
-        return this;
-    }
+    private ImportReadSetFilter filter;
 
     /**
      * <p>
@@ -211,6 +171,46 @@ public class ListReadSetImportJobsRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * A filter to apply to the list.
+     * </p>
+     * 
+     * @param filter
+     *        A filter to apply to the list.
+     */
+
+    public void setFilter(ImportReadSetFilter filter) {
+        this.filter = filter;
+    }
+
+    /**
+     * <p>
+     * A filter to apply to the list.
+     * </p>
+     * 
+     * @return A filter to apply to the list.
+     */
+
+    public ImportReadSetFilter getFilter() {
+        return this.filter;
+    }
+
+    /**
+     * <p>
+     * A filter to apply to the list.
+     * </p>
+     * 
+     * @param filter
+     *        A filter to apply to the list.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListReadSetImportJobsRequest withFilter(ImportReadSetFilter filter) {
+        setFilter(filter);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -222,14 +222,14 @@ public class ListReadSetImportJobsRequest extends com.amazonaws.AmazonWebService
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getFilter() != null)
-            sb.append("Filter: ").append(getFilter()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getSequenceStoreId() != null)
-            sb.append("SequenceStoreId: ").append(getSequenceStoreId());
+            sb.append("SequenceStoreId: ").append(getSequenceStoreId()).append(",");
+        if (getFilter() != null)
+            sb.append("Filter: ").append(getFilter());
         sb.append("}");
         return sb.toString();
     }
@@ -244,10 +244,6 @@ public class ListReadSetImportJobsRequest extends com.amazonaws.AmazonWebService
         if (obj instanceof ListReadSetImportJobsRequest == false)
             return false;
         ListReadSetImportJobsRequest other = (ListReadSetImportJobsRequest) obj;
-        if (other.getFilter() == null ^ this.getFilter() == null)
-            return false;
-        if (other.getFilter() != null && other.getFilter().equals(this.getFilter()) == false)
-            return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
@@ -260,6 +256,10 @@ public class ListReadSetImportJobsRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getSequenceStoreId() != null && other.getSequenceStoreId().equals(this.getSequenceStoreId()) == false)
             return false;
+        if (other.getFilter() == null ^ this.getFilter() == null)
+            return false;
+        if (other.getFilter() != null && other.getFilter().equals(this.getFilter()) == false)
+            return false;
         return true;
     }
 
@@ -268,10 +268,10 @@ public class ListReadSetImportJobsRequest extends com.amazonaws.AmazonWebService
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getFilter() == null) ? 0 : getFilter().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getSequenceStoreId() == null) ? 0 : getSequenceStoreId().hashCode());
+        hashCode = prime * hashCode + ((getFilter() == null) ? 0 : getFilter().hashCode());
         return hashCode;
     }
 

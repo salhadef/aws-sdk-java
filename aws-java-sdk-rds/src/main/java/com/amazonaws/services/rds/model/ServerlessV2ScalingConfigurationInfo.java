@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Shows the scaling configuration for an Aurora Serverless v2 DB cluster.
+ * The scaling configuration for an Aurora Serverless v2 DB cluster.
  * </p>
  * <p>
  * For more information, see <a

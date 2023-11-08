@@ -27,8 +27,13 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Information about the OpsItem.
+     * User-defined text that contains information about the OpsItem, in Markdown format.
      * </p>
+     * <note>
+     * <p>
+     * Provide enough information so that users viewing this OpsItem for the first time understand the issue.
+     * </p>
+     * </note>
      */
     private String description;
     /**
@@ -87,8 +92,8 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the
      * <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view
-     * Amazon Web Services CLI example commands that use these keys, see <a href=
-     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
+     * Amazon Web Services CLI example commands that use these keys, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-manually-create-OpsItems.html"
      * >Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      */
@@ -133,10 +138,7 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String title;
     /**
      * <p>
-     * Optional metadata that you assign to a resource. You can restrict access to OpsItems by using an inline IAM
-     * policy that specifies tags. For more information, see <a href=
-     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions"
-     * >Getting started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * Optional metadata that you assign to a resource.
      * </p>
      * <p>
      * Tags use a key-value pair. For example:
@@ -195,21 +197,28 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The target Amazon Web Services account where you want to create an OpsItem. To make this call, your account must
-     * be configured to work with OpsItems across accounts. For more information, see <a href=
-     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-OpsCenter-multiple-accounts.html"
-     * >Setting up OpsCenter to work with OpsItems across accounts</a> in the <i>Amazon Web Services Systems Manager
-     * User Guide</i>.
+     * be configured to work with OpsItems across accounts. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-setup.html">Set up OpsCenter</a> in
+     * the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      */
     private String accountId;
 
     /**
      * <p>
-     * Information about the OpsItem.
+     * User-defined text that contains information about the OpsItem, in Markdown format.
      * </p>
+     * <note>
+     * <p>
+     * Provide enough information so that users viewing this OpsItem for the first time understand the issue.
+     * </p>
+     * </note>
      * 
      * @param description
-     *        Information about the OpsItem.
+     *        User-defined text that contains information about the OpsItem, in Markdown format. </p> <note>
+     *        <p>
+     *        Provide enough information so that users viewing this OpsItem for the first time understand the issue.
+     *        </p>
      */
 
     public void setDescription(String description) {
@@ -218,10 +227,18 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Information about the OpsItem.
+     * User-defined text that contains information about the OpsItem, in Markdown format.
      * </p>
+     * <note>
+     * <p>
+     * Provide enough information so that users viewing this OpsItem for the first time understand the issue.
+     * </p>
+     * </note>
      * 
-     * @return Information about the OpsItem.
+     * @return User-defined text that contains information about the OpsItem, in Markdown format. </p> <note>
+     *         <p>
+     *         Provide enough information so that users viewing this OpsItem for the first time understand the issue.
+     *         </p>
      */
 
     public String getDescription() {
@@ -230,11 +247,19 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Information about the OpsItem.
+     * User-defined text that contains information about the OpsItem, in Markdown format.
      * </p>
+     * <note>
+     * <p>
+     * Provide enough information so that users viewing this OpsItem for the first time understand the issue.
+     * </p>
+     * </note>
      * 
      * @param description
-     *        Information about the OpsItem.
+     *        User-defined text that contains information about the OpsItem, in Markdown format. </p> <note>
+     *        <p>
+     *        Provide enough information so that users viewing this OpsItem for the first time understand the issue.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -460,8 +485,8 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the
      * <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view
-     * Amazon Web Services CLI example commands that use these keys, see <a href=
-     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
+     * Amazon Web Services CLI example commands that use these keys, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-manually-create-OpsItems.html"
      * >Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
@@ -486,7 +511,7 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request.
      *         Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the
      *         OpsItem. To view Amazon Web Services CLI example commands that use these keys, see <a href=
-     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
+     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-manually-create-OpsItems.html"
      *         >Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      */
 
@@ -518,8 +543,8 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the
      * <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view
-     * Amazon Web Services CLI example commands that use these keys, see <a href=
-     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
+     * Amazon Web Services CLI example commands that use these keys, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-manually-create-OpsItems.html"
      * >Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
@@ -545,7 +570,7 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request.
      *        Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the
      *        OpsItem. To view Amazon Web Services CLI example commands that use these keys, see <a href=
-     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-manually-create-OpsItems.html"
      *        >Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      */
 
@@ -577,8 +602,8 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the
      * <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view
-     * Amazon Web Services CLI example commands that use these keys, see <a href=
-     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
+     * Amazon Web Services CLI example commands that use these keys, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-manually-create-OpsItems.html"
      * >Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
@@ -604,7 +629,7 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request.
      *        Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the
      *        OpsItem. To view Amazon Web Services CLI example commands that use these keys, see <a href=
-     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-manually-create-OpsItems.html"
      *        >Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -960,10 +985,7 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Optional metadata that you assign to a resource. You can restrict access to OpsItems by using an inline IAM
-     * policy that specifies tags. For more information, see <a href=
-     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions"
-     * >Getting started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * Optional metadata that you assign to a resource.
      * </p>
      * <p>
      * Tags use a key-value pair. For example:
@@ -979,10 +1001,7 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * </important>
      * 
-     * @return Optional metadata that you assign to a resource. You can restrict access to OpsItems by using an inline
-     *         IAM policy that specifies tags. For more information, see <a href=
-     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions"
-     *         >Getting started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+     * @return Optional metadata that you assign to a resource.</p>
      *         <p>
      *         Tags use a key-value pair. For example:
      *         </p>
@@ -1006,10 +1025,7 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Optional metadata that you assign to a resource. You can restrict access to OpsItems by using an inline IAM
-     * policy that specifies tags. For more information, see <a href=
-     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions"
-     * >Getting started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * Optional metadata that you assign to a resource.
      * </p>
      * <p>
      * Tags use a key-value pair. For example:
@@ -1026,10 +1042,7 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </important>
      * 
      * @param tags
-     *        Optional metadata that you assign to a resource. You can restrict access to OpsItems by using an inline
-     *        IAM policy that specifies tags. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions"
-     *        >Getting started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+     *        Optional metadata that you assign to a resource.</p>
      *        <p>
      *        Tags use a key-value pair. For example:
      *        </p>
@@ -1055,10 +1068,7 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Optional metadata that you assign to a resource. You can restrict access to OpsItems by using an inline IAM
-     * policy that specifies tags. For more information, see <a href=
-     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions"
-     * >Getting started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * Optional metadata that you assign to a resource.
      * </p>
      * <p>
      * Tags use a key-value pair. For example:
@@ -1080,10 +1090,7 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param tags
-     *        Optional metadata that you assign to a resource. You can restrict access to OpsItems by using an inline
-     *        IAM policy that specifies tags. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions"
-     *        >Getting started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+     *        Optional metadata that you assign to a resource.</p>
      *        <p>
      *        Tags use a key-value pair. For example:
      *        </p>
@@ -1111,10 +1118,7 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Optional metadata that you assign to a resource. You can restrict access to OpsItems by using an inline IAM
-     * policy that specifies tags. For more information, see <a href=
-     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions"
-     * >Getting started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * Optional metadata that you assign to a resource.
      * </p>
      * <p>
      * Tags use a key-value pair. For example:
@@ -1131,10 +1135,7 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </important>
      * 
      * @param tags
-     *        Optional metadata that you assign to a resource. You can restrict access to OpsItems by using an inline
-     *        IAM policy that specifies tags. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions"
-     *        >Getting started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+     *        Optional metadata that you assign to a resource.</p>
      *        <p>
      *        Tags use a key-value pair. For example:
      *        </p>
@@ -1419,18 +1420,16 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The target Amazon Web Services account where you want to create an OpsItem. To make this call, your account must
-     * be configured to work with OpsItems across accounts. For more information, see <a href=
-     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-OpsCenter-multiple-accounts.html"
-     * >Setting up OpsCenter to work with OpsItems across accounts</a> in the <i>Amazon Web Services Systems Manager
-     * User Guide</i>.
+     * be configured to work with OpsItems across accounts. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-setup.html">Set up OpsCenter</a> in
+     * the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param accountId
      *        The target Amazon Web Services account where you want to create an OpsItem. To make this call, your
-     *        account must be configured to work with OpsItems across accounts. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-OpsCenter-multiple-accounts.html"
-     *        >Setting up OpsCenter to work with OpsItems across accounts</a> in the <i>Amazon Web Services Systems
-     *        Manager User Guide</i>.
+     *        account must be configured to work with OpsItems across accounts. For more information, see <a
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-setup.html">Set up
+     *        OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      */
 
     public void setAccountId(String accountId) {
@@ -1440,17 +1439,15 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The target Amazon Web Services account where you want to create an OpsItem. To make this call, your account must
-     * be configured to work with OpsItems across accounts. For more information, see <a href=
-     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-OpsCenter-multiple-accounts.html"
-     * >Setting up OpsCenter to work with OpsItems across accounts</a> in the <i>Amazon Web Services Systems Manager
-     * User Guide</i>.
+     * be configured to work with OpsItems across accounts. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-setup.html">Set up OpsCenter</a> in
+     * the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @return The target Amazon Web Services account where you want to create an OpsItem. To make this call, your
-     *         account must be configured to work with OpsItems across accounts. For more information, see <a href=
-     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-OpsCenter-multiple-accounts.html"
-     *         >Setting up OpsCenter to work with OpsItems across accounts</a> in the <i>Amazon Web Services Systems
-     *         Manager User Guide</i>.
+     *         account must be configured to work with OpsItems across accounts. For more information, see <a
+     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-setup.html">Set up
+     *         OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      */
 
     public String getAccountId() {
@@ -1460,18 +1457,16 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The target Amazon Web Services account where you want to create an OpsItem. To make this call, your account must
-     * be configured to work with OpsItems across accounts. For more information, see <a href=
-     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-OpsCenter-multiple-accounts.html"
-     * >Setting up OpsCenter to work with OpsItems across accounts</a> in the <i>Amazon Web Services Systems Manager
-     * User Guide</i>.
+     * be configured to work with OpsItems across accounts. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-setup.html">Set up OpsCenter</a> in
+     * the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param accountId
      *        The target Amazon Web Services account where you want to create an OpsItem. To make this call, your
-     *        account must be configured to work with OpsItems across accounts. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-OpsCenter-multiple-accounts.html"
-     *        >Setting up OpsCenter to work with OpsItems across accounts</a> in the <i>Amazon Web Services Systems
-     *        Manager User Guide</i>.
+     *        account must be configured to work with OpsItems across accounts. For more information, see <a
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-setup.html">Set up
+     *        OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

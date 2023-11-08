@@ -34,7 +34,8 @@ public class DetectLabelsRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Maximum number of labels you want the service to return in the response. The service returns the specified number
-     * of highest confidence labels.
+     * of highest confidence labels. Only valid when GENERAL_LABELS is specified as a feature type in the Feature input
+     * parameter.
      * </p>
      */
     private Integer maxLabels;
@@ -45,7 +46,8 @@ public class DetectLabelsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values greater
-     * than or equal to 55 percent.
+     * than or equal to 55 percent. Only valid when GENERAL_LABELS is specified as a feature type in the Feature input
+     * parameter.
      * </p>
      */
     private Float minConfidence;
@@ -143,12 +145,14 @@ public class DetectLabelsRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Maximum number of labels you want the service to return in the response. The service returns the specified number
-     * of highest confidence labels.
+     * of highest confidence labels. Only valid when GENERAL_LABELS is specified as a feature type in the Feature input
+     * parameter.
      * </p>
      * 
      * @param maxLabels
      *        Maximum number of labels you want the service to return in the response. The service returns the specified
-     *        number of highest confidence labels.
+     *        number of highest confidence labels. Only valid when GENERAL_LABELS is specified as a feature type in the
+     *        Feature input parameter.
      */
 
     public void setMaxLabels(Integer maxLabels) {
@@ -158,11 +162,13 @@ public class DetectLabelsRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Maximum number of labels you want the service to return in the response. The service returns the specified number
-     * of highest confidence labels.
+     * of highest confidence labels. Only valid when GENERAL_LABELS is specified as a feature type in the Feature input
+     * parameter.
      * </p>
      * 
      * @return Maximum number of labels you want the service to return in the response. The service returns the
-     *         specified number of highest confidence labels.
+     *         specified number of highest confidence labels. Only valid when GENERAL_LABELS is specified as a feature
+     *         type in the Feature input parameter.
      */
 
     public Integer getMaxLabels() {
@@ -172,12 +178,14 @@ public class DetectLabelsRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Maximum number of labels you want the service to return in the response. The service returns the specified number
-     * of highest confidence labels.
+     * of highest confidence labels. Only valid when GENERAL_LABELS is specified as a feature type in the Feature input
+     * parameter.
      * </p>
      * 
      * @param maxLabels
      *        Maximum number of labels you want the service to return in the response. The service returns the specified
-     *        number of highest confidence labels.
+     *        number of highest confidence labels. Only valid when GENERAL_LABELS is specified as a feature type in the
+     *        Feature input parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -193,7 +201,8 @@ public class DetectLabelsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values greater
-     * than or equal to 55 percent.
+     * than or equal to 55 percent. Only valid when GENERAL_LABELS is specified as a feature type in the Feature input
+     * parameter.
      * </p>
      * 
      * @param minConfidence
@@ -201,7 +210,8 @@ public class DetectLabelsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        labels with confidence lower than this specified value.</p>
      *        <p>
      *        If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values
-     *        greater than or equal to 55 percent.
+     *        greater than or equal to 55 percent. Only valid when GENERAL_LABELS is specified as a feature type in the
+     *        Feature input parameter.
      */
 
     public void setMinConfidence(Float minConfidence) {
@@ -215,14 +225,16 @@ public class DetectLabelsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values greater
-     * than or equal to 55 percent.
+     * than or equal to 55 percent. Only valid when GENERAL_LABELS is specified as a feature type in the Feature input
+     * parameter.
      * </p>
      * 
      * @return Specifies the minimum confidence level for the labels to return. Amazon Rekognition doesn't return any
      *         labels with confidence lower than this specified value.</p>
      *         <p>
      *         If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values
-     *         greater than or equal to 55 percent.
+     *         greater than or equal to 55 percent. Only valid when GENERAL_LABELS is specified as a feature type in the
+     *         Feature input parameter.
      */
 
     public Float getMinConfidence() {
@@ -236,7 +248,8 @@ public class DetectLabelsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values greater
-     * than or equal to 55 percent.
+     * than or equal to 55 percent. Only valid when GENERAL_LABELS is specified as a feature type in the Feature input
+     * parameter.
      * </p>
      * 
      * @param minConfidence
@@ -244,7 +257,8 @@ public class DetectLabelsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        labels with confidence lower than this specified value.</p>
      *        <p>
      *        If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values
-     *        greater than or equal to 55 percent.
+     *        greater than or equal to 55 percent. Only valid when GENERAL_LABELS is specified as a feature type in the
+     *        Feature input parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

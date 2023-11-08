@@ -62,8 +62,8 @@ public class RecommendationSummary implements Serializable, Cloneable, Structure
     /**
      * <p>
      * An array of objects that describes the estimated monthly saving amounts for the instances running on the
-     * specified <code>inferredWorkloadTypes</code>. The array contains the top three savings opportunites for the
-     * instances running inferred workload types.
+     * specified <code>inferredWorkloadTypes</code>. The array contains the top five savings opportunites for the
+     * instances that run inferred workload types.
      * </p>
      */
     private java.util.List<InferredWorkloadSaving> inferredWorkloadSavings;
@@ -326,13 +326,13 @@ public class RecommendationSummary implements Serializable, Cloneable, Structure
     /**
      * <p>
      * An array of objects that describes the estimated monthly saving amounts for the instances running on the
-     * specified <code>inferredWorkloadTypes</code>. The array contains the top three savings opportunites for the
-     * instances running inferred workload types.
+     * specified <code>inferredWorkloadTypes</code>. The array contains the top five savings opportunites for the
+     * instances that run inferred workload types.
      * </p>
      * 
      * @return An array of objects that describes the estimated monthly saving amounts for the instances running on the
-     *         specified <code>inferredWorkloadTypes</code>. The array contains the top three savings opportunites for
-     *         the instances running inferred workload types.
+     *         specified <code>inferredWorkloadTypes</code>. The array contains the top five savings opportunites for
+     *         the instances that run inferred workload types.
      */
 
     public java.util.List<InferredWorkloadSaving> getInferredWorkloadSavings() {
@@ -342,14 +342,14 @@ public class RecommendationSummary implements Serializable, Cloneable, Structure
     /**
      * <p>
      * An array of objects that describes the estimated monthly saving amounts for the instances running on the
-     * specified <code>inferredWorkloadTypes</code>. The array contains the top three savings opportunites for the
-     * instances running inferred workload types.
+     * specified <code>inferredWorkloadTypes</code>. The array contains the top five savings opportunites for the
+     * instances that run inferred workload types.
      * </p>
      * 
      * @param inferredWorkloadSavings
      *        An array of objects that describes the estimated monthly saving amounts for the instances running on the
-     *        specified <code>inferredWorkloadTypes</code>. The array contains the top three savings opportunites for
-     *        the instances running inferred workload types.
+     *        specified <code>inferredWorkloadTypes</code>. The array contains the top five savings opportunites for the
+     *        instances that run inferred workload types.
      */
 
     public void setInferredWorkloadSavings(java.util.Collection<InferredWorkloadSaving> inferredWorkloadSavings) {
@@ -364,8 +364,8 @@ public class RecommendationSummary implements Serializable, Cloneable, Structure
     /**
      * <p>
      * An array of objects that describes the estimated monthly saving amounts for the instances running on the
-     * specified <code>inferredWorkloadTypes</code>. The array contains the top three savings opportunites for the
-     * instances running inferred workload types.
+     * specified <code>inferredWorkloadTypes</code>. The array contains the top five savings opportunites for the
+     * instances that run inferred workload types.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -375,8 +375,8 @@ public class RecommendationSummary implements Serializable, Cloneable, Structure
      * 
      * @param inferredWorkloadSavings
      *        An array of objects that describes the estimated monthly saving amounts for the instances running on the
-     *        specified <code>inferredWorkloadTypes</code>. The array contains the top three savings opportunites for
-     *        the instances running inferred workload types.
+     *        specified <code>inferredWorkloadTypes</code>. The array contains the top five savings opportunites for the
+     *        instances that run inferred workload types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -393,14 +393,14 @@ public class RecommendationSummary implements Serializable, Cloneable, Structure
     /**
      * <p>
      * An array of objects that describes the estimated monthly saving amounts for the instances running on the
-     * specified <code>inferredWorkloadTypes</code>. The array contains the top three savings opportunites for the
-     * instances running inferred workload types.
+     * specified <code>inferredWorkloadTypes</code>. The array contains the top five savings opportunites for the
+     * instances that run inferred workload types.
      * </p>
      * 
      * @param inferredWorkloadSavings
      *        An array of objects that describes the estimated monthly saving amounts for the instances running on the
-     *        specified <code>inferredWorkloadTypes</code>. The array contains the top three savings opportunites for
-     *        the instances running inferred workload types.
+     *        specified <code>inferredWorkloadTypes</code>. The array contains the top five savings opportunites for the
+     *        instances that run inferred workload types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

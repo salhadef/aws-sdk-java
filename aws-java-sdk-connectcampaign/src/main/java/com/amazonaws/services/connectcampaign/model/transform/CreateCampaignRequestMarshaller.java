@@ -29,12 +29,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CreateCampaignRequestMarshaller {
 
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("name").build();
     private static final MarshallingInfo<String> CONNECTINSTANCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("connectInstanceId").build();
     private static final MarshallingInfo<StructuredPojo> DIALERCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dialerConfig").build();
-    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("name").build();
     private static final MarshallingInfo<StructuredPojo> OUTBOUNDCALLCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("outboundCallConfig").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
@@ -56,9 +56,9 @@ public class CreateCampaignRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(createCampaignRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(createCampaignRequest.getConnectInstanceId(), CONNECTINSTANCEID_BINDING);
             protocolMarshaller.marshall(createCampaignRequest.getDialerConfig(), DIALERCONFIG_BINDING);
-            protocolMarshaller.marshall(createCampaignRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(createCampaignRequest.getOutboundCallConfig(), OUTBOUNDCALLCONFIG_BINDING);
             protocolMarshaller.marshall(createCampaignRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {

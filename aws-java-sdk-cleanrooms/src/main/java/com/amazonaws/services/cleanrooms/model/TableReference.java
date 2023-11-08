@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A pointer to the dataset that underlies this table. Currently, this can only be an AWS Glue table.
+ * A pointer to the dataset that underlies this table. Currently, this can only be an Glue table.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/TableReference" target="_top">AWS API
@@ -30,18 +30,18 @@ public class TableReference implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If present, a reference to the AWS Glue table referred to by this table reference.
+     * If present, a reference to the Glue table referred to by this table reference.
      * </p>
      */
     private GlueTableReference glue;
 
     /**
      * <p>
-     * If present, a reference to the AWS Glue table referred to by this table reference.
+     * If present, a reference to the Glue table referred to by this table reference.
      * </p>
      * 
      * @param glue
-     *        If present, a reference to the AWS Glue table referred to by this table reference.
+     *        If present, a reference to the Glue table referred to by this table reference.
      */
 
     public void setGlue(GlueTableReference glue) {
@@ -50,10 +50,10 @@ public class TableReference implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If present, a reference to the AWS Glue table referred to by this table reference.
+     * If present, a reference to the Glue table referred to by this table reference.
      * </p>
      * 
-     * @return If present, a reference to the AWS Glue table referred to by this table reference.
+     * @return If present, a reference to the Glue table referred to by this table reference.
      */
 
     public GlueTableReference getGlue() {
@@ -62,11 +62,11 @@ public class TableReference implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If present, a reference to the AWS Glue table referred to by this table reference.
+     * If present, a reference to the Glue table referred to by this table reference.
      * </p>
      * 
      * @param glue
-     *        If present, a reference to the AWS Glue table referred to by this table reference.
+     *        If present, a reference to the Glue table referred to by this table reference.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

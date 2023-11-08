@@ -99,6 +99,10 @@ public class GetMonitorResultJsonUnmarshaller implements Unmarshaller<GetMonitor
                     context.nextToken();
                     getMonitorResult.setTrafficPercentageToMonitor(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("HealthEventsConfig", targetDepth)) {
+                    context.nextToken();
+                    getMonitorResult.setHealthEventsConfig(HealthEventsConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

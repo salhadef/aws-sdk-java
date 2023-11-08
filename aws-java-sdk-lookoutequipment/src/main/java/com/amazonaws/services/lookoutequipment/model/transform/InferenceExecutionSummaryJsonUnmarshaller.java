@@ -96,6 +96,14 @@ public class InferenceExecutionSummaryJsonUnmarshaller implements Unmarshaller<I
                     context.nextToken();
                     inferenceExecutionSummary.setFailedReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ModelVersion", targetDepth)) {
+                    context.nextToken();
+                    inferenceExecutionSummary.setModelVersion(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("ModelVersionArn", targetDepth)) {
+                    context.nextToken();
+                    inferenceExecutionSummary.setModelVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

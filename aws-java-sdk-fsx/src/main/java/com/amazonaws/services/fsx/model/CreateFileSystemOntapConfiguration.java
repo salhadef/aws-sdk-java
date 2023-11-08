@@ -87,9 +87,9 @@ public class CreateFileSystemOntapConfiguration implements Serializable, Cloneab
     private String preferredSubnetId;
     /**
      * <p>
-     * (Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in which your file system's endpoints will
-     * be created. You should specify all VPC route tables associated with the subnets in which your clients are
-     * located. By default, Amazon FSx selects your VPC's default route table.
+     * (Multi-AZ only) Specifies the route tables in which Amazon FSx creates the rules for routing traffic to the
+     * correct file server. You should specify all virtual private cloud (VPC) route tables associated with the subnets
+     * in which your clients are located. By default, Amazon FSx selects your VPC's default route table.
      * </p>
      */
     private java.util.List<String> routeTableIds;
@@ -555,14 +555,15 @@ public class CreateFileSystemOntapConfiguration implements Serializable, Cloneab
 
     /**
      * <p>
-     * (Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in which your file system's endpoints will
-     * be created. You should specify all VPC route tables associated with the subnets in which your clients are
-     * located. By default, Amazon FSx selects your VPC's default route table.
+     * (Multi-AZ only) Specifies the route tables in which Amazon FSx creates the rules for routing traffic to the
+     * correct file server. You should specify all virtual private cloud (VPC) route tables associated with the subnets
+     * in which your clients are located. By default, Amazon FSx selects your VPC's default route table.
      * </p>
      * 
-     * @return (Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in which your file system's
-     *         endpoints will be created. You should specify all VPC route tables associated with the subnets in which
-     *         your clients are located. By default, Amazon FSx selects your VPC's default route table.
+     * @return (Multi-AZ only) Specifies the route tables in which Amazon FSx creates the rules for routing traffic to
+     *         the correct file server. You should specify all virtual private cloud (VPC) route tables associated with
+     *         the subnets in which your clients are located. By default, Amazon FSx selects your VPC's default route
+     *         table.
      */
 
     public java.util.List<String> getRouteTableIds() {
@@ -571,15 +572,16 @@ public class CreateFileSystemOntapConfiguration implements Serializable, Cloneab
 
     /**
      * <p>
-     * (Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in which your file system's endpoints will
-     * be created. You should specify all VPC route tables associated with the subnets in which your clients are
-     * located. By default, Amazon FSx selects your VPC's default route table.
+     * (Multi-AZ only) Specifies the route tables in which Amazon FSx creates the rules for routing traffic to the
+     * correct file server. You should specify all virtual private cloud (VPC) route tables associated with the subnets
+     * in which your clients are located. By default, Amazon FSx selects your VPC's default route table.
      * </p>
      * 
      * @param routeTableIds
-     *        (Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in which your file system's
-     *        endpoints will be created. You should specify all VPC route tables associated with the subnets in which
-     *        your clients are located. By default, Amazon FSx selects your VPC's default route table.
+     *        (Multi-AZ only) Specifies the route tables in which Amazon FSx creates the rules for routing traffic to
+     *        the correct file server. You should specify all virtual private cloud (VPC) route tables associated with
+     *        the subnets in which your clients are located. By default, Amazon FSx selects your VPC's default route
+     *        table.
      */
 
     public void setRouteTableIds(java.util.Collection<String> routeTableIds) {
@@ -593,9 +595,9 @@ public class CreateFileSystemOntapConfiguration implements Serializable, Cloneab
 
     /**
      * <p>
-     * (Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in which your file system's endpoints will
-     * be created. You should specify all VPC route tables associated with the subnets in which your clients are
-     * located. By default, Amazon FSx selects your VPC's default route table.
+     * (Multi-AZ only) Specifies the route tables in which Amazon FSx creates the rules for routing traffic to the
+     * correct file server. You should specify all virtual private cloud (VPC) route tables associated with the subnets
+     * in which your clients are located. By default, Amazon FSx selects your VPC's default route table.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -604,9 +606,10 @@ public class CreateFileSystemOntapConfiguration implements Serializable, Cloneab
      * </p>
      * 
      * @param routeTableIds
-     *        (Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in which your file system's
-     *        endpoints will be created. You should specify all VPC route tables associated with the subnets in which
-     *        your clients are located. By default, Amazon FSx selects your VPC's default route table.
+     *        (Multi-AZ only) Specifies the route tables in which Amazon FSx creates the rules for routing traffic to
+     *        the correct file server. You should specify all virtual private cloud (VPC) route tables associated with
+     *        the subnets in which your clients are located. By default, Amazon FSx selects your VPC's default route
+     *        table.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -622,15 +625,16 @@ public class CreateFileSystemOntapConfiguration implements Serializable, Cloneab
 
     /**
      * <p>
-     * (Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in which your file system's endpoints will
-     * be created. You should specify all VPC route tables associated with the subnets in which your clients are
-     * located. By default, Amazon FSx selects your VPC's default route table.
+     * (Multi-AZ only) Specifies the route tables in which Amazon FSx creates the rules for routing traffic to the
+     * correct file server. You should specify all virtual private cloud (VPC) route tables associated with the subnets
+     * in which your clients are located. By default, Amazon FSx selects your VPC's default route table.
      * </p>
      * 
      * @param routeTableIds
-     *        (Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in which your file system's
-     *        endpoints will be created. You should specify all VPC route tables associated with the subnets in which
-     *        your clients are located. By default, Amazon FSx selects your VPC's default route table.
+     *        (Multi-AZ only) Specifies the route tables in which Amazon FSx creates the rules for routing traffic to
+     *        the correct file server. You should specify all virtual private cloud (VPC) route tables associated with
+     *        the subnets in which your clients are located. By default, Amazon FSx selects your VPC's default route
+     *        table.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

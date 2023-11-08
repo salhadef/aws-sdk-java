@@ -1138,4 +1138,17 @@ public class AbstractAmazonElastiCacheAsync extends AbstractAmazonElastiCache im
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @Override
+    public java.util.concurrent.Future<ReplicationGroup> testMigrationAsync(TestMigrationRequest request) {
+
+        return testMigrationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ReplicationGroup> testMigrationAsync(TestMigrationRequest request,
+            com.amazonaws.handlers.AsyncHandler<TestMigrationRequest, ReplicationGroup> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
 }

@@ -44,6 +44,7 @@ import com.amazonaws.services.iot1clickdevices.AWSIoT1ClickDevicesClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.iot1clickdevices.model.*;
+
 import com.amazonaws.services.iot1clickdevices.model.transform.*;
 
 /**

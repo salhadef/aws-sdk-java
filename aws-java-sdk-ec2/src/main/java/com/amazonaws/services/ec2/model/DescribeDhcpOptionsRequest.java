@@ -36,7 +36,7 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest implemen
     private com.amazonaws.internal.SdkInternalList<String> dhcpOptionsIds;
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -187,7 +187,7 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -226,7 +226,7 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest implemen
      * </li>
      * </ul>
      * 
-     * @return One or more filters.</p>
+     * @return The filters.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -273,7 +273,7 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -313,7 +313,7 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest implemen
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -362,7 +362,7 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -407,7 +407,7 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest implemen
      * </p>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -458,7 +458,7 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -498,7 +498,7 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest implemen
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>

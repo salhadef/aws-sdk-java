@@ -240,6 +240,10 @@ public class RestoreDBClusterFromS3RequestMarshaller implements Marshaller<Reque
             request.addParameter("MasterUserSecretKmsKeyId", StringUtils.fromString(restoreDBClusterFromS3Request.getMasterUserSecretKmsKeyId()));
         }
 
+        if (restoreDBClusterFromS3Request.getStorageType() != null) {
+            request.addParameter("StorageType", StringUtils.fromString(restoreDBClusterFromS3Request.getStorageType()));
+        }
+
         return request;
     }
 

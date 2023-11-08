@@ -56,6 +56,10 @@ public class CreateStateMachineResultJsonUnmarshaller implements Unmarshaller<Cr
                     context.nextToken();
                     createStateMachineResult.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("stateMachineVersionArn", targetDepth)) {
+                    context.nextToken();
+                    createStateMachineResult.setStateMachineVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

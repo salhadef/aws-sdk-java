@@ -31,6 +31,8 @@ public class GetRecoveryPointRestoreMetadataRequestMarshaller {
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("backupVaultName").build();
     private static final MarshallingInfo<String> RECOVERYPOINTARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("recoveryPointArn").build();
+    private static final MarshallingInfo<String> BACKUPVAULTACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("backupVaultAccountId").build();
 
     private static final GetRecoveryPointRestoreMetadataRequestMarshaller instance = new GetRecoveryPointRestoreMetadataRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class GetRecoveryPointRestoreMetadataRequestMarshaller {
         try {
             protocolMarshaller.marshall(getRecoveryPointRestoreMetadataRequest.getBackupVaultName(), BACKUPVAULTNAME_BINDING);
             protocolMarshaller.marshall(getRecoveryPointRestoreMetadataRequest.getRecoveryPointArn(), RECOVERYPOINTARN_BINDING);
+            protocolMarshaller.marshall(getRecoveryPointRestoreMetadataRequest.getBackupVaultAccountId(), BACKUPVAULTACCOUNTID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -43,7 +43,7 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends AmazonWebServiceReq
     private String nextToken;
     /**
      * <p>
-     * One or more VPC IDs.
+     * The IDs of the VPCs.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> vpcIds;
@@ -151,10 +151,10 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends AmazonWebServiceReq
 
     /**
      * <p>
-     * One or more VPC IDs.
+     * The IDs of the VPCs.
      * </p>
      * 
-     * @return One or more VPC IDs.
+     * @return The IDs of the VPCs.
      */
 
     public java.util.List<String> getVpcIds() {
@@ -166,11 +166,11 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends AmazonWebServiceReq
 
     /**
      * <p>
-     * One or more VPC IDs.
+     * The IDs of the VPCs.
      * </p>
      * 
      * @param vpcIds
-     *        One or more VPC IDs.
+     *        The IDs of the VPCs.
      */
 
     public void setVpcIds(java.util.Collection<String> vpcIds) {
@@ -184,7 +184,7 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends AmazonWebServiceReq
 
     /**
      * <p>
-     * One or more VPC IDs.
+     * The IDs of the VPCs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -193,7 +193,7 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends AmazonWebServiceReq
      * </p>
      * 
      * @param vpcIds
-     *        One or more VPC IDs.
+     *        The IDs of the VPCs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -209,11 +209,11 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends AmazonWebServiceReq
 
     /**
      * <p>
-     * One or more VPC IDs.
+     * The IDs of the VPCs.
      * </p>
      * 
      * @param vpcIds
-     *        One or more VPC IDs.
+     *        The IDs of the VPCs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

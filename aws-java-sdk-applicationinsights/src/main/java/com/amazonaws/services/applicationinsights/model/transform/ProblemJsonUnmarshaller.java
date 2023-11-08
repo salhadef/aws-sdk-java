@@ -80,6 +80,10 @@ public class ProblemJsonUnmarshaller implements Unmarshaller<Problem, JsonUnmars
                     context.nextToken();
                     problem.setSeverityLevel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("AccountId", targetDepth)) {
+                    context.nextToken();
+                    problem.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("ResourceGroupName", targetDepth)) {
                     context.nextToken();
                     problem.setResourceGroupName(context.getUnmarshaller(String.class).unmarshall(context));
@@ -96,6 +100,14 @@ public class ProblemJsonUnmarshaller implements Unmarshaller<Problem, JsonUnmars
                 if (context.testExpression("LastRecurrenceTime", targetDepth)) {
                     context.nextToken();
                     problem.setLastRecurrenceTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("Visibility", targetDepth)) {
+                    context.nextToken();
+                    problem.setVisibility(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ResolutionMethod", targetDepth)) {
+                    context.nextToken();
+                    problem.setResolutionMethod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

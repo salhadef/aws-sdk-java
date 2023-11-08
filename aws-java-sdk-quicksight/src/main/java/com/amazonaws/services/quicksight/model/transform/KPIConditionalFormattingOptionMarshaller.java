@@ -31,6 +31,10 @@ public class KPIConditionalFormattingOptionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PrimaryValue").build();
     private static final MarshallingInfo<StructuredPojo> PROGRESSBAR_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProgressBar").build();
+    private static final MarshallingInfo<StructuredPojo> ACTUALVALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ActualValue").build();
+    private static final MarshallingInfo<StructuredPojo> COMPARISONVALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ComparisonValue").build();
 
     private static final KPIConditionalFormattingOptionMarshaller instance = new KPIConditionalFormattingOptionMarshaller();
 
@@ -50,6 +54,8 @@ public class KPIConditionalFormattingOptionMarshaller {
         try {
             protocolMarshaller.marshall(kPIConditionalFormattingOption.getPrimaryValue(), PRIMARYVALUE_BINDING);
             protocolMarshaller.marshall(kPIConditionalFormattingOption.getProgressBar(), PROGRESSBAR_BINDING);
+            protocolMarshaller.marshall(kPIConditionalFormattingOption.getActualValue(), ACTUALVALUE_BINDING);
+            protocolMarshaller.marshall(kPIConditionalFormattingOption.getComparisonValue(), COMPARISONVALUE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

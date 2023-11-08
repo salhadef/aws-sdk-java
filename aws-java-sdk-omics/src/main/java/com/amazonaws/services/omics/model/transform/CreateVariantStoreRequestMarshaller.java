@@ -29,16 +29,16 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CreateVariantStoreRequestMarshaller {
 
-    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
-    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("name").build();
     private static final MarshallingInfo<StructuredPojo> REFERENCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("reference").build();
-    private static final MarshallingInfo<StructuredPojo> SSECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sseConfig").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<StructuredPojo> SSECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sseConfig").build();
 
     private static final CreateVariantStoreRequestMarshaller instance = new CreateVariantStoreRequestMarshaller();
 
@@ -56,11 +56,11 @@ public class CreateVariantStoreRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(createVariantStoreRequest.getDescription(), DESCRIPTION_BINDING);
-            protocolMarshaller.marshall(createVariantStoreRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(createVariantStoreRequest.getReference(), REFERENCE_BINDING);
-            protocolMarshaller.marshall(createVariantStoreRequest.getSseConfig(), SSECONFIG_BINDING);
+            protocolMarshaller.marshall(createVariantStoreRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(createVariantStoreRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createVariantStoreRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createVariantStoreRequest.getSseConfig(), SSECONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

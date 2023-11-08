@@ -64,6 +64,10 @@ public class ServicePipelineJsonUnmarshaller implements Unmarshaller<ServicePipe
                     context.nextToken();
                     servicePipeline.setDeploymentStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("lastAttemptedDeploymentId", targetDepth)) {
+                    context.nextToken();
+                    servicePipeline.setLastAttemptedDeploymentId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("lastDeploymentAttemptedAt", targetDepth)) {
                     context.nextToken();
                     servicePipeline.setLastDeploymentAttemptedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
@@ -71,6 +75,10 @@ public class ServicePipelineJsonUnmarshaller implements Unmarshaller<ServicePipe
                 if (context.testExpression("lastDeploymentSucceededAt", targetDepth)) {
                     context.nextToken();
                     servicePipeline.setLastDeploymentSucceededAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("lastSucceededDeploymentId", targetDepth)) {
+                    context.nextToken();
+                    servicePipeline.setLastSucceededDeploymentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("spec", targetDepth)) {
                     context.nextToken();

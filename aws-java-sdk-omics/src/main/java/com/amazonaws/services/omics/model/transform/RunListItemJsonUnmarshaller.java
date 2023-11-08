@@ -52,13 +52,17 @@ public class RunListItemJsonUnmarshaller implements Unmarshaller<RunListItem, Js
                     context.nextToken();
                     runListItem.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("creationTime", targetDepth)) {
-                    context.nextToken();
-                    runListItem.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
-                }
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
                     runListItem.setId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("status", targetDepth)) {
+                    context.nextToken();
+                    runListItem.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("workflowId", targetDepth)) {
+                    context.nextToken();
+                    runListItem.setWorkflowId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
@@ -68,25 +72,21 @@ public class RunListItemJsonUnmarshaller implements Unmarshaller<RunListItem, Js
                     context.nextToken();
                     runListItem.setPriority(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
-                if (context.testExpression("startTime", targetDepth)) {
-                    context.nextToken();
-                    runListItem.setStartTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
-                }
-                if (context.testExpression("status", targetDepth)) {
-                    context.nextToken();
-                    runListItem.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("stopTime", targetDepth)) {
-                    context.nextToken();
-                    runListItem.setStopTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
-                }
                 if (context.testExpression("storageCapacity", targetDepth)) {
                     context.nextToken();
                     runListItem.setStorageCapacity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
-                if (context.testExpression("workflowId", targetDepth)) {
+                if (context.testExpression("creationTime", targetDepth)) {
                     context.nextToken();
-                    runListItem.setWorkflowId(context.getUnmarshaller(String.class).unmarshall(context));
+                    runListItem.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (context.testExpression("startTime", targetDepth)) {
+                    context.nextToken();
+                    runListItem.setStartTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (context.testExpression("stopTime", targetDepth)) {
+                    context.nextToken();
+                    runListItem.setStopTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

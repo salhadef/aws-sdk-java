@@ -45,6 +45,7 @@ import com.amazonaws.services.timestreamquery.AmazonTimestreamQueryClientBuilder
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.timestreamquery.model.*;
+
 import com.amazonaws.services.timestreamquery.model.transform.*;
 
 /**

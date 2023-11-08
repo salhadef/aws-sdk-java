@@ -48,6 +48,10 @@ public class MapConfigurationJsonUnmarshaller implements Unmarshaller<MapConfigu
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("PoliticalView", targetDepth)) {
+                    context.nextToken();
+                    mapConfiguration.setPoliticalView(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Style", targetDepth)) {
                     context.nextToken();
                     mapConfiguration.setStyle(context.getUnmarshaller(String.class).unmarshall(context));

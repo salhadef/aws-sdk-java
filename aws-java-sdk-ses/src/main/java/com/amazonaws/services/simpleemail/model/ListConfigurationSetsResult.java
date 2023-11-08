@@ -17,10 +17,9 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A list of configuration sets associated with your AWS account. Configuration sets enable you to publish email sending
- * events. For information about using configuration sets, see the <a
- * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
- * Guide</a>.
+ * A list of configuration sets associated with your Amazon Web Services account. Configuration sets enable you to
+ * publish email sending events. For information about using configuration sets, see the <a
+ * href="https://docs.aws.amazon.com/ses/latest/dg/monitor-sending-activity.html">Amazon SES Developer Guide</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListConfigurationSets" target="_top">AWS API

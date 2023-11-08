@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum InstanceLifecycleType {
 
     Spot("spot"),
-    Scheduled("scheduled");
+    Scheduled("scheduled"),
+    CapacityBlock("capacity-block");
 
     private String value;
 

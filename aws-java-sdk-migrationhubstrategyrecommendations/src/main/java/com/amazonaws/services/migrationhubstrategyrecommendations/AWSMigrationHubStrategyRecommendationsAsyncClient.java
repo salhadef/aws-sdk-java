@@ -418,6 +418,39 @@ public class AWSMigrationHubStrategyRecommendationsAsyncClient extends AWSMigrat
     }
 
     @Override
+    public java.util.concurrent.Future<ListAnalyzableServersResult> listAnalyzableServersAsync(ListAnalyzableServersRequest request) {
+
+        return listAnalyzableServersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAnalyzableServersResult> listAnalyzableServersAsync(final ListAnalyzableServersRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAnalyzableServersRequest, ListAnalyzableServersResult> asyncHandler) {
+        final ListAnalyzableServersRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAnalyzableServersResult>() {
+            @Override
+            public ListAnalyzableServersResult call() throws Exception {
+                ListAnalyzableServersResult result = null;
+
+                try {
+                    result = executeListAnalyzableServers(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListApplicationComponentsResult> listApplicationComponentsAsync(ListApplicationComponentsRequest request) {
 
         return listApplicationComponentsAsync(request, null);

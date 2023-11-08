@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Indicates that the provided AWS Lambda function is invalid, or that Amazon SES could not execute the provided
- * function, possibly due to permissions issues. For information about giving permissions, see the <a
+ * Indicates that the provided Amazon Web Services Lambda function is invalid, or that Amazon SES could not execute the
+ * provided function, possibly due to permissions issues. For information about giving permissions, see the <a
  * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer
  * Guide</a>.
  * </p>

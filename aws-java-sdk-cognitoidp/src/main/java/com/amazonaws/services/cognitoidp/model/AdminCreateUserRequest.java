@@ -36,9 +36,30 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
     private String userPoolId;
     /**
      * <p>
-     * The username for the user. Must be unique within the user pool. Must be a UTF-8 string between 1 and 128
-     * characters. After the user is created, the username can't be changed.
+     * The value that you want to set as the username sign-in attribute. The following conditions apply to the username
+     * parameter.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The username can't be a duplicate of another username in the same user pool.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can't change the value of a username after you create it.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can only provide a value if usernames are a valid sign-in attribute for your user pool. If your user pool
+     * only supports phone numbers or email addresses as sign-in attributes, Amazon Cognito automatically generates a
+     * username value. For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#user-pool-settings-aliases"
+     * >Customizing sign-in attributes</a>.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String username;
     /**
@@ -111,9 +132,9 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
      * This parameter isn't required. If you don't specify a value, Amazon Cognito generates one for you.
      * </p>
      * <p>
-     * The temporary password can only be used until the user account expiration limit that you specified when you
-     * created the user pool. To reset the account after that time limit, you must call <code>AdminCreateUser</code>
-     * again, specifying <code>"RESEND"</code> for the <code>MessageAction</code> parameter.
+     * The temporary password can only be used until the user account expiration limit that you set for your user pool.
+     * To reset the account after that time limit, you must call <code>AdminCreateUser</code> again and specify
+     * <code>RESEND</code> for the <code>MessageAction</code> parameter.
      * </p>
      */
     private String temporaryPassword;
@@ -235,13 +256,54 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The username for the user. Must be unique within the user pool. Must be a UTF-8 string between 1 and 128
-     * characters. After the user is created, the username can't be changed.
+     * The value that you want to set as the username sign-in attribute. The following conditions apply to the username
+     * parameter.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The username can't be a duplicate of another username in the same user pool.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can't change the value of a username after you create it.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can only provide a value if usernames are a valid sign-in attribute for your user pool. If your user pool
+     * only supports phone numbers or email addresses as sign-in attributes, Amazon Cognito automatically generates a
+     * username value. For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#user-pool-settings-aliases"
+     * >Customizing sign-in attributes</a>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param username
-     *        The username for the user. Must be unique within the user pool. Must be a UTF-8 string between 1 and 128
-     *        characters. After the user is created, the username can't be changed.
+     *        The value that you want to set as the username sign-in attribute. The following conditions apply to the
+     *        username parameter.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The username can't be a duplicate of another username in the same user pool.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        You can't change the value of a username after you create it.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        You can only provide a value if usernames are a valid sign-in attribute for your user pool. If your user
+     *        pool only supports phone numbers or email addresses as sign-in attributes, Amazon Cognito automatically
+     *        generates a username value. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#user-pool-settings-aliases"
+     *        >Customizing sign-in attributes</a>.
+     *        </p>
+     *        </li>
      */
 
     public void setUsername(String username) {
@@ -250,12 +312,53 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The username for the user. Must be unique within the user pool. Must be a UTF-8 string between 1 and 128
-     * characters. After the user is created, the username can't be changed.
+     * The value that you want to set as the username sign-in attribute. The following conditions apply to the username
+     * parameter.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The username can't be a duplicate of another username in the same user pool.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can't change the value of a username after you create it.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can only provide a value if usernames are a valid sign-in attribute for your user pool. If your user pool
+     * only supports phone numbers or email addresses as sign-in attributes, Amazon Cognito automatically generates a
+     * username value. For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#user-pool-settings-aliases"
+     * >Customizing sign-in attributes</a>.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The username for the user. Must be unique within the user pool. Must be a UTF-8 string between 1 and 128
-     *         characters. After the user is created, the username can't be changed.
+     * @return The value that you want to set as the username sign-in attribute. The following conditions apply to the
+     *         username parameter.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The username can't be a duplicate of another username in the same user pool.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You can't change the value of a username after you create it.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You can only provide a value if usernames are a valid sign-in attribute for your user pool. If your user
+     *         pool only supports phone numbers or email addresses as sign-in attributes, Amazon Cognito automatically
+     *         generates a username value. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#user-pool-settings-aliases"
+     *         >Customizing sign-in attributes</a>.
+     *         </p>
+     *         </li>
      */
 
     public String getUsername() {
@@ -264,13 +367,54 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The username for the user. Must be unique within the user pool. Must be a UTF-8 string between 1 and 128
-     * characters. After the user is created, the username can't be changed.
+     * The value that you want to set as the username sign-in attribute. The following conditions apply to the username
+     * parameter.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The username can't be a duplicate of another username in the same user pool.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can't change the value of a username after you create it.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can only provide a value if usernames are a valid sign-in attribute for your user pool. If your user pool
+     * only supports phone numbers or email addresses as sign-in attributes, Amazon Cognito automatically generates a
+     * username value. For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#user-pool-settings-aliases"
+     * >Customizing sign-in attributes</a>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param username
-     *        The username for the user. Must be unique within the user pool. Must be a UTF-8 string between 1 and 128
-     *        characters. After the user is created, the username can't be changed.
+     *        The value that you want to set as the username sign-in attribute. The following conditions apply to the
+     *        username parameter.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The username can't be a duplicate of another username in the same user pool.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        You can't change the value of a username after you create it.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        You can only provide a value if usernames are a valid sign-in attribute for your user pool. If your user
+     *        pool only supports phone numbers or email addresses as sign-in attributes, Amazon Cognito automatically
+     *        generates a username value. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#user-pool-settings-aliases"
+     *        >Customizing sign-in attributes</a>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -792,9 +936,9 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
      * This parameter isn't required. If you don't specify a value, Amazon Cognito generates one for you.
      * </p>
      * <p>
-     * The temporary password can only be used until the user account expiration limit that you specified when you
-     * created the user pool. To reset the account after that time limit, you must call <code>AdminCreateUser</code>
-     * again, specifying <code>"RESEND"</code> for the <code>MessageAction</code> parameter.
+     * The temporary password can only be used until the user account expiration limit that you set for your user pool.
+     * To reset the account after that time limit, you must call <code>AdminCreateUser</code> again and specify
+     * <code>RESEND</code> for the <code>MessageAction</code> parameter.
      * </p>
      * 
      * @param temporaryPassword
@@ -808,10 +952,9 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
      *        This parameter isn't required. If you don't specify a value, Amazon Cognito generates one for you.
      *        </p>
      *        <p>
-     *        The temporary password can only be used until the user account expiration limit that you specified when
-     *        you created the user pool. To reset the account after that time limit, you must call
-     *        <code>AdminCreateUser</code> again, specifying <code>"RESEND"</code> for the <code>MessageAction</code>
-     *        parameter.
+     *        The temporary password can only be used until the user account expiration limit that you set for your user
+     *        pool. To reset the account after that time limit, you must call <code>AdminCreateUser</code> again and
+     *        specify <code>RESEND</code> for the <code>MessageAction</code> parameter.
      */
 
     public void setTemporaryPassword(String temporaryPassword) {
@@ -831,9 +974,9 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
      * This parameter isn't required. If you don't specify a value, Amazon Cognito generates one for you.
      * </p>
      * <p>
-     * The temporary password can only be used until the user account expiration limit that you specified when you
-     * created the user pool. To reset the account after that time limit, you must call <code>AdminCreateUser</code>
-     * again, specifying <code>"RESEND"</code> for the <code>MessageAction</code> parameter.
+     * The temporary password can only be used until the user account expiration limit that you set for your user pool.
+     * To reset the account after that time limit, you must call <code>AdminCreateUser</code> again and specify
+     * <code>RESEND</code> for the <code>MessageAction</code> parameter.
      * </p>
      * 
      * @return The user's temporary password. This password must conform to the password policy that you specified when
@@ -846,10 +989,9 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
      *         This parameter isn't required. If you don't specify a value, Amazon Cognito generates one for you.
      *         </p>
      *         <p>
-     *         The temporary password can only be used until the user account expiration limit that you specified when
-     *         you created the user pool. To reset the account after that time limit, you must call
-     *         <code>AdminCreateUser</code> again, specifying <code>"RESEND"</code> for the <code>MessageAction</code>
-     *         parameter.
+     *         The temporary password can only be used until the user account expiration limit that you set for your
+     *         user pool. To reset the account after that time limit, you must call <code>AdminCreateUser</code> again
+     *         and specify <code>RESEND</code> for the <code>MessageAction</code> parameter.
      */
 
     public String getTemporaryPassword() {
@@ -869,9 +1011,9 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
      * This parameter isn't required. If you don't specify a value, Amazon Cognito generates one for you.
      * </p>
      * <p>
-     * The temporary password can only be used until the user account expiration limit that you specified when you
-     * created the user pool. To reset the account after that time limit, you must call <code>AdminCreateUser</code>
-     * again, specifying <code>"RESEND"</code> for the <code>MessageAction</code> parameter.
+     * The temporary password can only be used until the user account expiration limit that you set for your user pool.
+     * To reset the account after that time limit, you must call <code>AdminCreateUser</code> again and specify
+     * <code>RESEND</code> for the <code>MessageAction</code> parameter.
      * </p>
      * 
      * @param temporaryPassword
@@ -885,10 +1027,9 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
      *        This parameter isn't required. If you don't specify a value, Amazon Cognito generates one for you.
      *        </p>
      *        <p>
-     *        The temporary password can only be used until the user account expiration limit that you specified when
-     *        you created the user pool. To reset the account after that time limit, you must call
-     *        <code>AdminCreateUser</code> again, specifying <code>"RESEND"</code> for the <code>MessageAction</code>
-     *        parameter.
+     *        The temporary password can only be used until the user account expiration limit that you set for your user
+     *        pool. To reset the account after that time limit, you must call <code>AdminCreateUser</code> again and
+     *        specify <code>RESEND</code> for the <code>MessageAction</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

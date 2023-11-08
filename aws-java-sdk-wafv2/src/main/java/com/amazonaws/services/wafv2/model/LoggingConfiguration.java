@@ -90,13 +90,21 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
     private java.util.List<String> logDestinationConfigs;
     /**
      * <p>
-     * The parts of the request that you want to keep out of the logs. For example, if you redact the
-     * <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be <code>REDACTED</code>.
+     * The parts of the request that you want to keep out of the logs.
+     * </p>
+     * <p>
+     * For example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be
+     * <code>REDACTED</code> for all rules that use the <code>SingleHeader</code> <code>FieldToMatch</code> setting.
+     * </p>
+     * <p>
+     * Redaction applies only to the component that's specified in the rule's <code>FieldToMatch</code> setting, so the
+     * <code>SingleHeader</code> redaction doesn't apply to rules that use the <code>Headers</code>
+     * <code>FieldToMatch</code>.
      * </p>
      * <note>
      * <p>
      * You can specify only the following fields for redaction: <code>UriPath</code>, <code>QueryString</code>,
-     * <code>SingleHeader</code>, <code>Method</code>, and <code>JsonBody</code>.
+     * <code>SingleHeader</code>, and <code>Method</code>.
      * </p>
      * </note>
      */
@@ -263,22 +271,39 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The parts of the request that you want to keep out of the logs. For example, if you redact the
-     * <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be <code>REDACTED</code>.
+     * The parts of the request that you want to keep out of the logs.
+     * </p>
+     * <p>
+     * For example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be
+     * <code>REDACTED</code> for all rules that use the <code>SingleHeader</code> <code>FieldToMatch</code> setting.
+     * </p>
+     * <p>
+     * Redaction applies only to the component that's specified in the rule's <code>FieldToMatch</code> setting, so the
+     * <code>SingleHeader</code> redaction doesn't apply to rules that use the <code>Headers</code>
+     * <code>FieldToMatch</code>.
      * </p>
      * <note>
      * <p>
      * You can specify only the following fields for redaction: <code>UriPath</code>, <code>QueryString</code>,
-     * <code>SingleHeader</code>, <code>Method</code>, and <code>JsonBody</code>.
+     * <code>SingleHeader</code>, and <code>Method</code>.
      * </p>
      * </note>
      * 
-     * @return The parts of the request that you want to keep out of the logs. For example, if you redact the
-     *         <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be <code>REDACTED</code>.
-     *         </p> <note>
+     * @return The parts of the request that you want to keep out of the logs.</p>
+     *         <p>
+     *         For example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs
+     *         will be <code>REDACTED</code> for all rules that use the <code>SingleHeader</code>
+     *         <code>FieldToMatch</code> setting.
+     *         </p>
+     *         <p>
+     *         Redaction applies only to the component that's specified in the rule's <code>FieldToMatch</code> setting,
+     *         so the <code>SingleHeader</code> redaction doesn't apply to rules that use the <code>Headers</code>
+     *         <code>FieldToMatch</code>.
+     *         </p>
+     *         <note>
      *         <p>
      *         You can specify only the following fields for redaction: <code>UriPath</code>, <code>QueryString</code>,
-     *         <code>SingleHeader</code>, <code>Method</code>, and <code>JsonBody</code>.
+     *         <code>SingleHeader</code>, and <code>Method</code>.
      *         </p>
      */
 
@@ -288,23 +313,40 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The parts of the request that you want to keep out of the logs. For example, if you redact the
-     * <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be <code>REDACTED</code>.
+     * The parts of the request that you want to keep out of the logs.
+     * </p>
+     * <p>
+     * For example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be
+     * <code>REDACTED</code> for all rules that use the <code>SingleHeader</code> <code>FieldToMatch</code> setting.
+     * </p>
+     * <p>
+     * Redaction applies only to the component that's specified in the rule's <code>FieldToMatch</code> setting, so the
+     * <code>SingleHeader</code> redaction doesn't apply to rules that use the <code>Headers</code>
+     * <code>FieldToMatch</code>.
      * </p>
      * <note>
      * <p>
      * You can specify only the following fields for redaction: <code>UriPath</code>, <code>QueryString</code>,
-     * <code>SingleHeader</code>, <code>Method</code>, and <code>JsonBody</code>.
+     * <code>SingleHeader</code>, and <code>Method</code>.
      * </p>
      * </note>
      * 
      * @param redactedFields
-     *        The parts of the request that you want to keep out of the logs. For example, if you redact the
-     *        <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be <code>REDACTED</code>.
-     *        </p> <note>
+     *        The parts of the request that you want to keep out of the logs.</p>
+     *        <p>
+     *        For example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs
+     *        will be <code>REDACTED</code> for all rules that use the <code>SingleHeader</code>
+     *        <code>FieldToMatch</code> setting.
+     *        </p>
+     *        <p>
+     *        Redaction applies only to the component that's specified in the rule's <code>FieldToMatch</code> setting,
+     *        so the <code>SingleHeader</code> redaction doesn't apply to rules that use the <code>Headers</code>
+     *        <code>FieldToMatch</code>.
+     *        </p>
+     *        <note>
      *        <p>
      *        You can specify only the following fields for redaction: <code>UriPath</code>, <code>QueryString</code>,
-     *        <code>SingleHeader</code>, <code>Method</code>, and <code>JsonBody</code>.
+     *        <code>SingleHeader</code>, and <code>Method</code>.
      *        </p>
      */
 
@@ -319,13 +361,21 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The parts of the request that you want to keep out of the logs. For example, if you redact the
-     * <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be <code>REDACTED</code>.
+     * The parts of the request that you want to keep out of the logs.
+     * </p>
+     * <p>
+     * For example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be
+     * <code>REDACTED</code> for all rules that use the <code>SingleHeader</code> <code>FieldToMatch</code> setting.
+     * </p>
+     * <p>
+     * Redaction applies only to the component that's specified in the rule's <code>FieldToMatch</code> setting, so the
+     * <code>SingleHeader</code> redaction doesn't apply to rules that use the <code>Headers</code>
+     * <code>FieldToMatch</code>.
      * </p>
      * <note>
      * <p>
      * You can specify only the following fields for redaction: <code>UriPath</code>, <code>QueryString</code>,
-     * <code>SingleHeader</code>, <code>Method</code>, and <code>JsonBody</code>.
+     * <code>SingleHeader</code>, and <code>Method</code>.
      * </p>
      * </note>
      * <p>
@@ -335,12 +385,21 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @param redactedFields
-     *        The parts of the request that you want to keep out of the logs. For example, if you redact the
-     *        <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be <code>REDACTED</code>.
-     *        </p> <note>
+     *        The parts of the request that you want to keep out of the logs.</p>
+     *        <p>
+     *        For example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs
+     *        will be <code>REDACTED</code> for all rules that use the <code>SingleHeader</code>
+     *        <code>FieldToMatch</code> setting.
+     *        </p>
+     *        <p>
+     *        Redaction applies only to the component that's specified in the rule's <code>FieldToMatch</code> setting,
+     *        so the <code>SingleHeader</code> redaction doesn't apply to rules that use the <code>Headers</code>
+     *        <code>FieldToMatch</code>.
+     *        </p>
+     *        <note>
      *        <p>
      *        You can specify only the following fields for redaction: <code>UriPath</code>, <code>QueryString</code>,
-     *        <code>SingleHeader</code>, <code>Method</code>, and <code>JsonBody</code>.
+     *        <code>SingleHeader</code>, and <code>Method</code>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -357,23 +416,40 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The parts of the request that you want to keep out of the logs. For example, if you redact the
-     * <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be <code>REDACTED</code>.
+     * The parts of the request that you want to keep out of the logs.
+     * </p>
+     * <p>
+     * For example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be
+     * <code>REDACTED</code> for all rules that use the <code>SingleHeader</code> <code>FieldToMatch</code> setting.
+     * </p>
+     * <p>
+     * Redaction applies only to the component that's specified in the rule's <code>FieldToMatch</code> setting, so the
+     * <code>SingleHeader</code> redaction doesn't apply to rules that use the <code>Headers</code>
+     * <code>FieldToMatch</code>.
      * </p>
      * <note>
      * <p>
      * You can specify only the following fields for redaction: <code>UriPath</code>, <code>QueryString</code>,
-     * <code>SingleHeader</code>, <code>Method</code>, and <code>JsonBody</code>.
+     * <code>SingleHeader</code>, and <code>Method</code>.
      * </p>
      * </note>
      * 
      * @param redactedFields
-     *        The parts of the request that you want to keep out of the logs. For example, if you redact the
-     *        <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be <code>REDACTED</code>.
-     *        </p> <note>
+     *        The parts of the request that you want to keep out of the logs.</p>
+     *        <p>
+     *        For example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs
+     *        will be <code>REDACTED</code> for all rules that use the <code>SingleHeader</code>
+     *        <code>FieldToMatch</code> setting.
+     *        </p>
+     *        <p>
+     *        Redaction applies only to the component that's specified in the rule's <code>FieldToMatch</code> setting,
+     *        so the <code>SingleHeader</code> redaction doesn't apply to rules that use the <code>Headers</code>
+     *        <code>FieldToMatch</code>.
+     *        </p>
+     *        <note>
      *        <p>
      *        You can specify only the following fields for redaction: <code>UriPath</code>, <code>QueryString</code>,
-     *        <code>SingleHeader</code>, <code>Method</code>, and <code>JsonBody</code>.
+     *        <code>SingleHeader</code>, and <code>Method</code>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

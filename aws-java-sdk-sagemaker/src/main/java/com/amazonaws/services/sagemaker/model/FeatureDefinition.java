@@ -42,6 +42,37 @@ public class FeatureDefinition implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private String featureType;
+    /**
+     * <p>
+     * A grouping of elements where each element within the collection must have the same feature type (
+     * <code>String</code>, <code>Integral</code>, or <code>Fractional</code>).
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>List</code>: An ordered collection of elements.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Set</code>: An unordered collection of unique elements.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Vector</code>: A specialized list that represents a fixed-size array of elements. The vector dimension is
+     * determined by you. Must have elements with fractional feature types.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String collectionType;
+    /**
+     * <p>
+     * Configuration for your collection.
+     * </p>
+     */
+    private CollectionConfig collectionConfig;
 
     /**
      * <p>
@@ -149,6 +180,253 @@ public class FeatureDefinition implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * A grouping of elements where each element within the collection must have the same feature type (
+     * <code>String</code>, <code>Integral</code>, or <code>Fractional</code>).
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>List</code>: An ordered collection of elements.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Set</code>: An unordered collection of unique elements.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Vector</code>: A specialized list that represents a fixed-size array of elements. The vector dimension is
+     * determined by you. Must have elements with fractional feature types.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param collectionType
+     *        A grouping of elements where each element within the collection must have the same feature type (
+     *        <code>String</code>, <code>Integral</code>, or <code>Fractional</code>).</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>List</code>: An ordered collection of elements.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Set</code>: An unordered collection of unique elements.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Vector</code>: A specialized list that represents a fixed-size array of elements. The vector
+     *        dimension is determined by you. Must have elements with fractional feature types.
+     *        </p>
+     *        </li>
+     * @see CollectionType
+     */
+
+    public void setCollectionType(String collectionType) {
+        this.collectionType = collectionType;
+    }
+
+    /**
+     * <p>
+     * A grouping of elements where each element within the collection must have the same feature type (
+     * <code>String</code>, <code>Integral</code>, or <code>Fractional</code>).
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>List</code>: An ordered collection of elements.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Set</code>: An unordered collection of unique elements.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Vector</code>: A specialized list that represents a fixed-size array of elements. The vector dimension is
+     * determined by you. Must have elements with fractional feature types.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return A grouping of elements where each element within the collection must have the same feature type (
+     *         <code>String</code>, <code>Integral</code>, or <code>Fractional</code>).</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>List</code>: An ordered collection of elements.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Set</code>: An unordered collection of unique elements.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Vector</code>: A specialized list that represents a fixed-size array of elements. The vector
+     *         dimension is determined by you. Must have elements with fractional feature types.
+     *         </p>
+     *         </li>
+     * @see CollectionType
+     */
+
+    public String getCollectionType() {
+        return this.collectionType;
+    }
+
+    /**
+     * <p>
+     * A grouping of elements where each element within the collection must have the same feature type (
+     * <code>String</code>, <code>Integral</code>, or <code>Fractional</code>).
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>List</code>: An ordered collection of elements.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Set</code>: An unordered collection of unique elements.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Vector</code>: A specialized list that represents a fixed-size array of elements. The vector dimension is
+     * determined by you. Must have elements with fractional feature types.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param collectionType
+     *        A grouping of elements where each element within the collection must have the same feature type (
+     *        <code>String</code>, <code>Integral</code>, or <code>Fractional</code>).</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>List</code>: An ordered collection of elements.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Set</code>: An unordered collection of unique elements.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Vector</code>: A specialized list that represents a fixed-size array of elements. The vector
+     *        dimension is determined by you. Must have elements with fractional feature types.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CollectionType
+     */
+
+    public FeatureDefinition withCollectionType(String collectionType) {
+        setCollectionType(collectionType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A grouping of elements where each element within the collection must have the same feature type (
+     * <code>String</code>, <code>Integral</code>, or <code>Fractional</code>).
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>List</code>: An ordered collection of elements.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Set</code>: An unordered collection of unique elements.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Vector</code>: A specialized list that represents a fixed-size array of elements. The vector dimension is
+     * determined by you. Must have elements with fractional feature types.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param collectionType
+     *        A grouping of elements where each element within the collection must have the same feature type (
+     *        <code>String</code>, <code>Integral</code>, or <code>Fractional</code>).</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>List</code>: An ordered collection of elements.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Set</code>: An unordered collection of unique elements.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Vector</code>: A specialized list that represents a fixed-size array of elements. The vector
+     *        dimension is determined by you. Must have elements with fractional feature types.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CollectionType
+     */
+
+    public FeatureDefinition withCollectionType(CollectionType collectionType) {
+        this.collectionType = collectionType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Configuration for your collection.
+     * </p>
+     * 
+     * @param collectionConfig
+     *        Configuration for your collection.
+     */
+
+    public void setCollectionConfig(CollectionConfig collectionConfig) {
+        this.collectionConfig = collectionConfig;
+    }
+
+    /**
+     * <p>
+     * Configuration for your collection.
+     * </p>
+     * 
+     * @return Configuration for your collection.
+     */
+
+    public CollectionConfig getCollectionConfig() {
+        return this.collectionConfig;
+    }
+
+    /**
+     * <p>
+     * Configuration for your collection.
+     * </p>
+     * 
+     * @param collectionConfig
+     *        Configuration for your collection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FeatureDefinition withCollectionConfig(CollectionConfig collectionConfig) {
+        setCollectionConfig(collectionConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -163,7 +441,11 @@ public class FeatureDefinition implements Serializable, Cloneable, StructuredPoj
         if (getFeatureName() != null)
             sb.append("FeatureName: ").append(getFeatureName()).append(",");
         if (getFeatureType() != null)
-            sb.append("FeatureType: ").append(getFeatureType());
+            sb.append("FeatureType: ").append(getFeatureType()).append(",");
+        if (getCollectionType() != null)
+            sb.append("CollectionType: ").append(getCollectionType()).append(",");
+        if (getCollectionConfig() != null)
+            sb.append("CollectionConfig: ").append(getCollectionConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -186,6 +468,14 @@ public class FeatureDefinition implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getFeatureType() != null && other.getFeatureType().equals(this.getFeatureType()) == false)
             return false;
+        if (other.getCollectionType() == null ^ this.getCollectionType() == null)
+            return false;
+        if (other.getCollectionType() != null && other.getCollectionType().equals(this.getCollectionType()) == false)
+            return false;
+        if (other.getCollectionConfig() == null ^ this.getCollectionConfig() == null)
+            return false;
+        if (other.getCollectionConfig() != null && other.getCollectionConfig().equals(this.getCollectionConfig()) == false)
+            return false;
         return true;
     }
 
@@ -196,6 +486,8 @@ public class FeatureDefinition implements Serializable, Cloneable, StructuredPoj
 
         hashCode = prime * hashCode + ((getFeatureName() == null) ? 0 : getFeatureName().hashCode());
         hashCode = prime * hashCode + ((getFeatureType() == null) ? 0 : getFeatureType().hashCode());
+        hashCode = prime * hashCode + ((getCollectionType() == null) ? 0 : getCollectionType().hashCode());
+        hashCode = prime * hashCode + ((getCollectionConfig() == null) ? 0 : getCollectionConfig().hashCode());
         return hashCode;
     }
 

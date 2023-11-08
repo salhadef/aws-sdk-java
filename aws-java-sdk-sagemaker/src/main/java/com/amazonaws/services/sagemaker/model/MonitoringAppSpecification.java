@@ -49,8 +49,8 @@ public class MonitoringAppSpecification implements Serializable, Cloneable, Stru
     /**
      * <p>
      * An Amazon S3 URI to a script that is called per row prior to running analysis. It can base64 decode the payload
-     * and convert it into a flatted json so that the built-in container can use the converted data. Applicable only for
-     * the built-in (first party) containers.
+     * and convert it into a flattened JSON so that the built-in container can use the converted data. Applicable only
+     * for the built-in (first party) containers.
      * </p>
      */
     private String recordPreprocessorSourceUri;
@@ -245,13 +245,13 @@ public class MonitoringAppSpecification implements Serializable, Cloneable, Stru
     /**
      * <p>
      * An Amazon S3 URI to a script that is called per row prior to running analysis. It can base64 decode the payload
-     * and convert it into a flatted json so that the built-in container can use the converted data. Applicable only for
-     * the built-in (first party) containers.
+     * and convert it into a flattened JSON so that the built-in container can use the converted data. Applicable only
+     * for the built-in (first party) containers.
      * </p>
      * 
      * @param recordPreprocessorSourceUri
      *        An Amazon S3 URI to a script that is called per row prior to running analysis. It can base64 decode the
-     *        payload and convert it into a flatted json so that the built-in container can use the converted data.
+     *        payload and convert it into a flattened JSON so that the built-in container can use the converted data.
      *        Applicable only for the built-in (first party) containers.
      */
 
@@ -262,12 +262,12 @@ public class MonitoringAppSpecification implements Serializable, Cloneable, Stru
     /**
      * <p>
      * An Amazon S3 URI to a script that is called per row prior to running analysis. It can base64 decode the payload
-     * and convert it into a flatted json so that the built-in container can use the converted data. Applicable only for
-     * the built-in (first party) containers.
+     * and convert it into a flattened JSON so that the built-in container can use the converted data. Applicable only
+     * for the built-in (first party) containers.
      * </p>
      * 
      * @return An Amazon S3 URI to a script that is called per row prior to running analysis. It can base64 decode the
-     *         payload and convert it into a flatted json so that the built-in container can use the converted data.
+     *         payload and convert it into a flattened JSON so that the built-in container can use the converted data.
      *         Applicable only for the built-in (first party) containers.
      */
 
@@ -278,13 +278,13 @@ public class MonitoringAppSpecification implements Serializable, Cloneable, Stru
     /**
      * <p>
      * An Amazon S3 URI to a script that is called per row prior to running analysis. It can base64 decode the payload
-     * and convert it into a flatted json so that the built-in container can use the converted data. Applicable only for
-     * the built-in (first party) containers.
+     * and convert it into a flattened JSON so that the built-in container can use the converted data. Applicable only
+     * for the built-in (first party) containers.
      * </p>
      * 
      * @param recordPreprocessorSourceUri
      *        An Amazon S3 URI to a script that is called per row prior to running analysis. It can base64 decode the
-     *        payload and convert it into a flatted json so that the built-in container can use the converted data.
+     *        payload and convert it into a flattened JSON so that the built-in container can use the converted data.
      *        Applicable only for the built-in (first party) containers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

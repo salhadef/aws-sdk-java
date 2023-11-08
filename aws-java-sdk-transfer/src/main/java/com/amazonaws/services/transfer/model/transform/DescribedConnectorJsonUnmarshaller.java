@@ -78,6 +78,10 @@ public class DescribedConnectorJsonUnmarshaller implements Unmarshaller<Describe
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("SftpConfig", targetDepth)) {
+                    context.nextToken();
+                    describedConnector.setSftpConfig(SftpConnectorConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

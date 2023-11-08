@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum AnalysisRuleType {
 
     AGGREGATION("AGGREGATION"),
-    LIST("LIST");
+    LIST("LIST"),
+    CUSTOM("CUSTOM");
 
     private String value;
 

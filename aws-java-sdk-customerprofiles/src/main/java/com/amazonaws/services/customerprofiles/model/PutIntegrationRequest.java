@@ -410,7 +410,7 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getFlowDefinition() != null)
-            sb.append("FlowDefinition: ").append(getFlowDefinition()).append(",");
+            sb.append("FlowDefinition: ").append("***Sensitive Data Redacted***").append(",");
         if (getObjectTypeNames() != null)
             sb.append("ObjectTypeNames: ").append(getObjectTypeNames());
         sb.append("}");

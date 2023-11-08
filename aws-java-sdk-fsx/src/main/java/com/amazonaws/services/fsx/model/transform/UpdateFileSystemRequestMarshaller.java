@@ -44,6 +44,8 @@ public class UpdateFileSystemRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OntapConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> OPENZFSCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OpenZFSConfiguration").build();
+    private static final MarshallingInfo<String> STORAGETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StorageType").build();
 
     private static final UpdateFileSystemRequestMarshaller instance = new UpdateFileSystemRequestMarshaller();
 
@@ -68,6 +70,7 @@ public class UpdateFileSystemRequestMarshaller {
             protocolMarshaller.marshall(updateFileSystemRequest.getLustreConfiguration(), LUSTRECONFIGURATION_BINDING);
             protocolMarshaller.marshall(updateFileSystemRequest.getOntapConfiguration(), ONTAPCONFIGURATION_BINDING);
             protocolMarshaller.marshall(updateFileSystemRequest.getOpenZFSConfiguration(), OPENZFSCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(updateFileSystemRequest.getStorageType(), STORAGETYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

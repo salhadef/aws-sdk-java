@@ -88,7 +88,13 @@ public enum InstanceType {
     MlG516xlarge("ml.g5.16xlarge"),
     MlG512xlarge("ml.g5.12xlarge"),
     MlG524xlarge("ml.g5.24xlarge"),
-    MlG548xlarge("ml.g5.48xlarge");
+    MlG548xlarge("ml.g5.48xlarge"),
+    MlInf1Xlarge("ml.inf1.xlarge"),
+    MlInf12xlarge("ml.inf1.2xlarge"),
+    MlInf16xlarge("ml.inf1.6xlarge"),
+    MlInf124xlarge("ml.inf1.24xlarge"),
+    MlP4d24xlarge("ml.p4d.24xlarge"),
+    MlP4de24xlarge("ml.p4de.24xlarge");
 
     private String value;
 

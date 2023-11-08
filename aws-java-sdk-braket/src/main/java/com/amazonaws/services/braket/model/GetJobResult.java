@@ -112,6 +112,13 @@ public class GetJobResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     private JobOutputDataConfig outputDataConfig;
     /**
      * <p>
+     * Queue information for the requested job. Only returned if <code>QueueInfo</code> is specified in the
+     * <code>additionalAttributeNames"</code> field in the <code>GetJob</code> API request.
+     * </p>
+     */
+    private HybridJobQueueInfo queueInfo;
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user.
      * It can access user resources, run an Amazon Braket job container on behalf of user, and output resources to the
      * s3 buckets of a user.
@@ -815,6 +822,52 @@ public class GetJobResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
+     * Queue information for the requested job. Only returned if <code>QueueInfo</code> is specified in the
+     * <code>additionalAttributeNames"</code> field in the <code>GetJob</code> API request.
+     * </p>
+     * 
+     * @param queueInfo
+     *        Queue information for the requested job. Only returned if <code>QueueInfo</code> is specified in the
+     *        <code>additionalAttributeNames"</code> field in the <code>GetJob</code> API request.
+     */
+
+    public void setQueueInfo(HybridJobQueueInfo queueInfo) {
+        this.queueInfo = queueInfo;
+    }
+
+    /**
+     * <p>
+     * Queue information for the requested job. Only returned if <code>QueueInfo</code> is specified in the
+     * <code>additionalAttributeNames"</code> field in the <code>GetJob</code> API request.
+     * </p>
+     * 
+     * @return Queue information for the requested job. Only returned if <code>QueueInfo</code> is specified in the
+     *         <code>additionalAttributeNames"</code> field in the <code>GetJob</code> API request.
+     */
+
+    public HybridJobQueueInfo getQueueInfo() {
+        return this.queueInfo;
+    }
+
+    /**
+     * <p>
+     * Queue information for the requested job. Only returned if <code>QueueInfo</code> is specified in the
+     * <code>additionalAttributeNames"</code> field in the <code>GetJob</code> API request.
+     * </p>
+     * 
+     * @param queueInfo
+     *        Queue information for the requested job. Only returned if <code>QueueInfo</code> is specified in the
+     *        <code>additionalAttributeNames"</code> field in the <code>GetJob</code> API request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetJobResult withQueueInfo(HybridJobQueueInfo queueInfo) {
+        setQueueInfo(queueInfo);
+        return this;
+    }
+
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user.
      * It can access user resources, run an Amazon Braket job container on behalf of user, and output resources to the
      * s3 buckets of a user.
@@ -1115,6 +1168,8 @@ public class GetJobResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
             sb.append("JobName: ").append(getJobName()).append(",");
         if (getOutputDataConfig() != null)
             sb.append("OutputDataConfig: ").append(getOutputDataConfig()).append(",");
+        if (getQueueInfo() != null)
+            sb.append("QueueInfo: ").append(getQueueInfo()).append(",");
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getStartedAt() != null)
@@ -1195,6 +1250,10 @@ public class GetJobResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
             return false;
         if (other.getOutputDataConfig() != null && other.getOutputDataConfig().equals(this.getOutputDataConfig()) == false)
             return false;
+        if (other.getQueueInfo() == null ^ this.getQueueInfo() == null)
+            return false;
+        if (other.getQueueInfo() != null && other.getQueueInfo().equals(this.getQueueInfo()) == false)
+            return false;
         if (other.getRoleArn() == null ^ this.getRoleArn() == null)
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
@@ -1237,6 +1296,7 @@ public class GetJobResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
         hashCode = prime * hashCode + ((getJobArn() == null) ? 0 : getJobArn().hashCode());
         hashCode = prime * hashCode + ((getJobName() == null) ? 0 : getJobName().hashCode());
         hashCode = prime * hashCode + ((getOutputDataConfig() == null) ? 0 : getOutputDataConfig().hashCode());
+        hashCode = prime * hashCode + ((getQueueInfo() == null) ? 0 : getQueueInfo().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getStartedAt() == null) ? 0 : getStartedAt().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());

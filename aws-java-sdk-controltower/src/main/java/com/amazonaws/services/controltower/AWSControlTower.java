@@ -28,7 +28,7 @@ import com.amazonaws.services.controltower.model.*;
  * <p>
  * <p>
  * These interfaces allow you to apply the AWS library of pre-defined <i>controls</i> to your organizational units,
- * programmatically. In this context, controls are the same as AWS Control Tower guardrails.
+ * programmatically. In AWS Control Tower, the terms "control" and "guardrail" are synonyms. .
  * </p>
  * <p>
  * To call these APIs, you'll need to know:
@@ -36,25 +36,36 @@ import com.amazonaws.services.controltower.model.*;
  * <ul>
  * <li>
  * <p>
- * the <code>ControlARN</code> for the control--that is, the guardrail--you are targeting,
+ * the <code>controlIdentifier</code> for the control--or guardrail--you are targeting.
  * </p>
  * </li>
  * <li>
  * <p>
- * and the ARN associated with the target organizational unit (OU).
+ * the ARN associated with the target organizational unit (OU), which we call the <code>targetIdentifier</code>.
  * </p>
  * </li>
  * </ul>
  * <p>
- * <b>To get the <code>ControlARN</code> for your AWS Control Tower guardrail:</b>
+ * <b>To get the <code>controlIdentifier</code> for your AWS Control Tower control:</b>
  * </p>
  * <p>
- * The <code>ControlARN</code> contains the control name which is specified in each guardrail. For a list of control
- * names for <i>Strongly recommended</i> and <i>Elective</i> guardrails, see <a
+ * The <code>controlIdentifier</code> is an ARN that is specified for each control. You can view the
+ * <code>controlIdentifier</code> in the console on the <b>Control details</b> page, as well as in the documentation.
+ * </p>
+ * <p>
+ * The <code>controlIdentifier</code> is unique in each AWS Region for each control. You can find the
+ * <code>controlIdentifier</code> for each Region and control in the <a
+ * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-metadata-tables.html">Tables of control
+ * metadata</a> in the <i>AWS Control Tower User Guide.</i>
+ * </p>
+ * <p>
+ * A quick-reference list of control identifers for the AWS Control Tower legacy <i>Strongly recommended</i> and
+ * <i>Elective</i> controls is given in <a
  * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-identifiers.html.html">Resource identifiers
  * for APIs and guardrails</a> in the <a
- * href="https://docs.aws.amazon.com/controltower/latest/userguide/automating-tasks.html">Automating tasks section</a>
- * of the AWS Control Tower User Guide. Remember that <i>Mandatory</i> guardrails cannot be added or removed.
+ * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-identifiers.html">Controls reference guide
+ * section</a> of the <i>AWS Control Tower User Guide</i>. Remember that <i>Mandatory</i> controls cannot be added or
+ * removed.
  * </p>
  * <note>
  * <p>
@@ -68,7 +79,10 @@ import com.amazonaws.services.controltower.model.*;
  * </p>
  * </note>
  * <p>
- * <b>To get the ARN for an OU:</b>
+ * <b>To get the <code>targetIdentifier</code>:</b>
+ * </p>
+ * <p>
+ * The <code>targetIdentifier</code> is the ARN for an OU.
  * </p>
  * <p>
  * In the AWS Organizations console, you can find the ARN for the OU on the <b>Organizational unit details</b> page
@@ -88,20 +102,37 @@ import com.amazonaws.services.controltower.model.*;
  * <ul>
  * <li>
  * <p>
- * <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-identifiers.html">List of resource
- * identifiers for APIs and guardrails</a>
+ * <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">Control API input
+ * and output examples with CLI</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="https://docs.aws.amazon.com/controltower/latest/userguide/guardrail-api-examples-short.html">Guardrail API
- * examples (CLI)</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/controltower/latest/userguide/enable-controls.html">Enable controls with AWS
+ * <a href="https://docs.aws.amazon.com/controltower/latest/userguide/enable-controls.html">Enable controls with
  * CloudFormation</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-metadata-tables.html">Control metadata
+ * tables</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-identifiers.html">List of identifiers for
+ * legacy controls</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/controltower/latest/userguide/controls.html">Controls reference guide</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/controltower/latest/userguide/controls-reference.html">Controls library
+ * groupings</a>
  * </p>
  * </li>
  * <li>
@@ -144,7 +175,9 @@ public interface AWSControlTower {
      * <p>
      * This API call turns off a control. It starts an asynchronous operation that deletes AWS resources on the
      * specified organizational unit and the accounts it contains. The resources will vary according to the control that
-     * you specify.
+     * you specify. For usage examples, see <a
+     * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html"> <i>the AWS
+     * Control Tower User Guide</i> </a>.
      * </p>
      * 
      * @param disableControlRequest
@@ -173,7 +206,9 @@ public interface AWSControlTower {
      * <p>
      * This API call activates a control. It starts an asynchronous operation that creates AWS resources on the
      * specified organizational unit and the accounts it contains. The resources created will vary according to the
-     * control that you specify.
+     * control that you specify. For usage examples, see <a
+     * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html"> <i>the AWS
+     * Control Tower User Guide</i> </a>
      * </p>
      * 
      * @param enableControlRequest
@@ -201,7 +236,9 @@ public interface AWSControlTower {
     /**
      * <p>
      * Returns the status of a particular <code>EnableControl</code> or <code>DisableControl</code> operation. Displays
-     * a message in case of error. Details for an operation are available for 90 days.
+     * a message in case of error. Details for an operation are available for 90 days. For usage examples, see <a
+     * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html"> <i>the AWS
+     * Control Tower User Guide</i> </a>
      * </p>
      * 
      * @param getControlOperationRequest
@@ -224,8 +261,55 @@ public interface AWSControlTower {
 
     /**
      * <p>
+     * Provides details about the enabled control. For usage examples, see <a
+     * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html"> <i>the AWS
+     * Control Tower User Guide</i> </a>.
+     * </p>
+     * <p class="title">
+     * <b>Returned values</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * TargetRegions: Shows target AWS Regions where the enabled control is available to be deployed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * StatusSummary: Provides a detailed summary of the deployment status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DriftSummary: Provides a detailed summary of the drifted status.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param getEnabledControlRequest
+     * @return Result of the GetEnabledControl operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws AccessDeniedException
+     *         User does not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @sample AWSControlTower.GetEnabledControl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/GetEnabledControl" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetEnabledControlResult getEnabledControl(GetEnabledControlRequest getEnabledControlRequest);
+
+    /**
+     * <p>
      * Lists the controls enabled by AWS Control Tower on the specified organizational unit and the accounts it
-     * contains.
+     * contains. For usage examples, see <a
+     * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html"> <i>the AWS
+     * Control Tower User Guide</i> </a>
      * </p>
      * 
      * @param listEnabledControlsRequest

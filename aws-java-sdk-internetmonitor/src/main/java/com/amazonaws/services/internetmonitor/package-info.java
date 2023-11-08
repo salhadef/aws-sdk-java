@@ -14,12 +14,12 @@
 /**
  * <p>
  * Amazon CloudWatch Internet Monitor provides visibility into how internet issues impact the performance and
- * availability between your applications hosted on Amazon Web Services and your end users. It reduces the time it takes
- * for you to diagnose internet issues from days to minutes. Internet Monitor uses the connectivity data that Amazon Web
- * Services captures from its global networking footprint to calculate a baseline of performance and availability for
- * internet traffic. This is the same data that Amazon Web Services uses to monitor internet uptime and availability.
- * With those measurements as a baseline, Internet Monitor raises awareness for you when there are significant problems
- * for your end users in the different geographic locations where your application runs.
+ * availability between your applications hosted on Amazon Web Services and your end users. It can reduce the time it
+ * takes for you to diagnose internet issues from days to minutes. Internet Monitor uses the connectivity data that
+ * Amazon Web Services captures from its global networking footprint to calculate a baseline of performance and
+ * availability for internet traffic. This is the same data that Amazon Web Services uses to monitor internet uptime and
+ * availability. With those measurements as a baseline, Internet Monitor raises awareness for you when there are
+ * significant problems for your end users in the different geographic locations where your application runs.
  * </p>
  * <p>
  * Internet Monitor publishes internet measurements to CloudWatch Logs and CloudWatch Metrics, to easily support using
@@ -29,10 +29,10 @@
  * steps that Amazon Web Services is taking to mitigate the problem.
  * </p>
  * <p>
- * To use Internet Monitor, you create a <i>monitor</i> and associate your application's resources with it, VPCs,
- * CloudFront distributions, or WorkSpaces directories, to enable Internet Monitor to know where your application's
+ * To use Internet Monitor, you create a <i>monitor</i> and associate your application's resources with it - VPCs, NLBs,
+ * CloudFront distributions, or WorkSpaces directories - so Internet Monitor can determine where your application's
  * internet traffic is. Internet Monitor then provides internet measurements from Amazon Web Services that are specific
- * to the locations and networks that communicate with your application.
+ * to the locations and ASNs (typically, internet service providers or ISPs) that communicate with your application.
  * </p>
  * <p>
  * For more information, see <a

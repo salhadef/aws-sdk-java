@@ -35,6 +35,8 @@ public class AssistantSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("assistantId").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<StructuredPojo> INTEGRATIONCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("integrationConfiguration").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
     private static final MarshallingInfo<StructuredPojo> SERVERSIDEENCRYPTIONCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -65,6 +67,7 @@ public class AssistantSummaryMarshaller {
             protocolMarshaller.marshall(assistantSummary.getAssistantArn(), ASSISTANTARN_BINDING);
             protocolMarshaller.marshall(assistantSummary.getAssistantId(), ASSISTANTID_BINDING);
             protocolMarshaller.marshall(assistantSummary.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(assistantSummary.getIntegrationConfiguration(), INTEGRATIONCONFIGURATION_BINDING);
             protocolMarshaller.marshall(assistantSummary.getName(), NAME_BINDING);
             protocolMarshaller.marshall(assistantSummary.getServerSideEncryptionConfiguration(), SERVERSIDEENCRYPTIONCONFIGURATION_BINDING);
             protocolMarshaller.marshall(assistantSummary.getStatus(), STATUS_BINDING);

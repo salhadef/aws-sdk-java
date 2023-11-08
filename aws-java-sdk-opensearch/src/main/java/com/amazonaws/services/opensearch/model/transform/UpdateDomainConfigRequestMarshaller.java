@@ -45,6 +45,8 @@ public class UpdateDomainConfigRequestMarshaller {
             .marshallLocationName("AdvancedOptions").build();
     private static final MarshallingInfo<String> ACCESSPOLICIES_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AccessPolicies").build();
+    private static final MarshallingInfo<String> IPADDRESSTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IPAddressType").build();
     private static final MarshallingInfo<Map> LOGPUBLISHINGOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LogPublishingOptions").build();
     private static final MarshallingInfo<StructuredPojo> ENCRYPTIONATRESTOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -90,6 +92,7 @@ public class UpdateDomainConfigRequestMarshaller {
             protocolMarshaller.marshall(updateDomainConfigRequest.getCognitoOptions(), COGNITOOPTIONS_BINDING);
             protocolMarshaller.marshall(updateDomainConfigRequest.getAdvancedOptions(), ADVANCEDOPTIONS_BINDING);
             protocolMarshaller.marshall(updateDomainConfigRequest.getAccessPolicies(), ACCESSPOLICIES_BINDING);
+            protocolMarshaller.marshall(updateDomainConfigRequest.getIPAddressType(), IPADDRESSTYPE_BINDING);
             protocolMarshaller.marshall(updateDomainConfigRequest.getLogPublishingOptions(), LOGPUBLISHINGOPTIONS_BINDING);
             protocolMarshaller.marshall(updateDomainConfigRequest.getEncryptionAtRestOptions(), ENCRYPTIONATRESTOPTIONS_BINDING);
             protocolMarshaller.marshall(updateDomainConfigRequest.getDomainEndpointOptions(), DOMAINENDPOINTOPTIONS_BINDING);

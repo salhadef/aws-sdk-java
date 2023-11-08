@@ -72,6 +72,14 @@ public class NotebookExecutionSummaryJsonUnmarshaller implements Unmarshaller<No
                     context.nextToken();
                     notebookExecutionSummary.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("NotebookS3Location", targetDepth)) {
+                    context.nextToken();
+                    notebookExecutionSummary.setNotebookS3Location(NotebookS3LocationForOutputJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ExecutionEngineId", targetDepth)) {
+                    context.nextToken();
+                    notebookExecutionSummary.setExecutionEngineId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

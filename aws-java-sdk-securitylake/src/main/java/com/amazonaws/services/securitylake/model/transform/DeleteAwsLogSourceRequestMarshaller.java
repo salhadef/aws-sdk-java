@@ -12,7 +12,6 @@
  */
 package com.amazonaws.services.securitylake.model.transform;
 
-import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -29,14 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DeleteAwsLogSourceRequestMarshaller {
 
-    private static final MarshallingInfo<Map> DISABLEALLDIMENSIONS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("disableAllDimensions").build();
-    private static final MarshallingInfo<List> DISABLESINGLEDIMENSION_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("disableSingleDimension").build();
-    private static final MarshallingInfo<Map> DISABLETWODIMENSIONS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("disableTwoDimensions").build();
-    private static final MarshallingInfo<List> INPUTORDER_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("inputOrder").build();
+    private static final MarshallingInfo<List> SOURCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("sources").build();
 
     private static final DeleteAwsLogSourceRequestMarshaller instance = new DeleteAwsLogSourceRequestMarshaller();
 
@@ -54,10 +47,7 @@ public class DeleteAwsLogSourceRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(deleteAwsLogSourceRequest.getDisableAllDimensions(), DISABLEALLDIMENSIONS_BINDING);
-            protocolMarshaller.marshall(deleteAwsLogSourceRequest.getDisableSingleDimension(), DISABLESINGLEDIMENSION_BINDING);
-            protocolMarshaller.marshall(deleteAwsLogSourceRequest.getDisableTwoDimensions(), DISABLETWODIMENSIONS_BINDING);
-            protocolMarshaller.marshall(deleteAwsLogSourceRequest.getInputOrder(), INPUTORDER_BINDING);
+            protocolMarshaller.marshall(deleteAwsLogSourceRequest.getSources(), SOURCES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

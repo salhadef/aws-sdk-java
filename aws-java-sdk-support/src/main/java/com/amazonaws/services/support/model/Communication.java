@@ -44,9 +44,9 @@ public class Communication implements Serializable, Cloneable, StructuredPojo {
     private String body;
     /**
      * <p>
-     * The identity of the account that submitted, or responded to, the support case. Customer entries include the role
-     * or IAM user as well as the email address. For example,
-     * "AdminRole (Role) &lt;janedoe@example.com&gt;. Entries from the Amazon Web Services Support team display "Amazon
+     * The identity of the account that submitted, or responded to, the support case. Customer entries include the IAM
+     * role as well as the email address (for example,
+     * "AdminRole (Role) &lt;janedoe@example.com&gt;). Entries from the Amazon Web Services Support team display "Amazon
      * Web Services," and don't show an email address.
      * </p>
      */
@@ -152,16 +152,16 @@ public class Communication implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identity of the account that submitted, or responded to, the support case. Customer entries include the role
-     * or IAM user as well as the email address. For example,
-     * "AdminRole (Role) &lt;janedoe@example.com&gt;. Entries from the Amazon Web Services Support team display "Amazon
+     * The identity of the account that submitted, or responded to, the support case. Customer entries include the IAM
+     * role as well as the email address (for example,
+     * "AdminRole (Role) &lt;janedoe@example.com&gt;). Entries from the Amazon Web Services Support team display "Amazon
      * Web Services," and don't show an email address.
      * </p>
      * 
      * @param submittedBy
      *        The identity of the account that submitted, or responded to, the support case. Customer entries include
-     *        the role or IAM user as well as the email address. For example,
-     *        "AdminRole (Role) &lt;janedoe@example.com&gt;. Entries from the Amazon Web Services Support team display "
+     *        the IAM role as well as the email address (for example,
+     *        "AdminRole (Role) &lt;janedoe@example.com&gt;). Entries from the Amazon Web Services Support team display "
      *        Amazon Web Services," and don't show an email address.
      */
 
@@ -171,15 +171,15 @@ public class Communication implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identity of the account that submitted, or responded to, the support case. Customer entries include the role
-     * or IAM user as well as the email address. For example,
-     * "AdminRole (Role) &lt;janedoe@example.com&gt;. Entries from the Amazon Web Services Support team display "Amazon
+     * The identity of the account that submitted, or responded to, the support case. Customer entries include the IAM
+     * role as well as the email address (for example,
+     * "AdminRole (Role) &lt;janedoe@example.com&gt;). Entries from the Amazon Web Services Support team display "Amazon
      * Web Services," and don't show an email address.
      * </p>
      * 
      * @return The identity of the account that submitted, or responded to, the support case. Customer entries include
-     *         the role or IAM user as well as the email address. For example,
-     *         "AdminRole (Role) &lt;janedoe@example.com&gt;. Entries from the Amazon Web Services Support team display "
+     *         the IAM role as well as the email address (for example,
+     *         "AdminRole (Role) &lt;janedoe@example.com&gt;). Entries from the Amazon Web Services Support team display "
      *         Amazon Web Services," and don't show an email address.
      */
 
@@ -189,16 +189,16 @@ public class Communication implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identity of the account that submitted, or responded to, the support case. Customer entries include the role
-     * or IAM user as well as the email address. For example,
-     * "AdminRole (Role) &lt;janedoe@example.com&gt;. Entries from the Amazon Web Services Support team display "Amazon
+     * The identity of the account that submitted, or responded to, the support case. Customer entries include the IAM
+     * role as well as the email address (for example,
+     * "AdminRole (Role) &lt;janedoe@example.com&gt;). Entries from the Amazon Web Services Support team display "Amazon
      * Web Services," and don't show an email address.
      * </p>
      * 
      * @param submittedBy
      *        The identity of the account that submitted, or responded to, the support case. Customer entries include
-     *        the role or IAM user as well as the email address. For example,
-     *        "AdminRole (Role) &lt;janedoe@example.com&gt;. Entries from the Amazon Web Services Support team display "
+     *        the IAM role as well as the email address (for example,
+     *        "AdminRole (Role) &lt;janedoe@example.com&gt;). Entries from the Amazon Web Services Support team display "
      *        Amazon Web Services," and don't show an email address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

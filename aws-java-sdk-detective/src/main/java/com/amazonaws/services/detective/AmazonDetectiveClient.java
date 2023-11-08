@@ -44,6 +44,7 @@ import com.amazonaws.services.detective.AmazonDetectiveClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.detective.model.*;
+
 import com.amazonaws.services.detective.model.transform.*;
 
 /**

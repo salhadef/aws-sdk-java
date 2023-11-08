@@ -54,7 +54,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
     /**
      * <p>
      * The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In
-     * various security-findings providers' solutions, this generator can be called a rule, a check, a detector, a
+     * various security findings providers' solutions, this generator can be called a rule, a check, a detector, a
      * plugin, etc.
      * </p>
      */
@@ -73,7 +73,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
     private java.util.List<StringFilter> type;
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider first observed the potential
+     * An ISO8601-formatted timestamp that indicates when the security findings provider first observed the potential
      * security issue that a finding captured.
      * </p>
      * <p>
@@ -85,7 +85,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
     private java.util.List<DateFilter> firstObservedAt;
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider most recently observed the
+     * An ISO8601-formatted timestamp that indicates when the security findings provider most recently observed the
      * potential security issue that a finding captured.
      * </p>
      * <p>
@@ -97,7 +97,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
     private java.util.List<DateFilter> lastObservedAt;
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider captured the potential security
+     * An ISO8601-formatted timestamp that indicates when the security findings provider captured the potential security
      * issue that a finding captured.
      * </p>
      * <p>
@@ -109,7 +109,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
     private java.util.List<DateFilter> createdAt;
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider last updated the finding
+     * An ISO8601-formatted timestamp that indicates when the security findings provider last updated the finding
      * record.
      * </p>
      * <p>
@@ -121,7 +121,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
     private java.util.List<DateFilter> updatedAt;
     /**
      * <p>
-     * The native severity as defined by the security-findings provider's solution that generated the finding.
+     * The native severity as defined by the security findings provider's solution that generated the finding.
      * </p>
      */
     @Deprecated
@@ -180,13 +180,13 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
     private java.util.List<StringFilter> recommendationText;
     /**
      * <p>
-     * A URL that links to a page about the current finding in the security-findings provider's solution.
+     * A URL that links to a page about the current finding in the security findings provider's solution.
      * </p>
      */
     private java.util.List<StringFilter> sourceUrl;
     /**
      * <p>
-     * A data type where security-findings providers can include additional solution-specific details that aren't part
+     * A data type where security findings providers can include additional solution-specific details that aren't part
      * of the defined <code>AwsSecurityFinding</code> format.
      * </p>
      */
@@ -1004,12 +1004,12 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
     /**
      * <p>
      * The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In
-     * various security-findings providers' solutions, this generator can be called a rule, a check, a detector, a
+     * various security findings providers' solutions, this generator can be called a rule, a check, a detector, a
      * plugin, etc.
      * </p>
      * 
      * @return The identifier for the solution-specific component (a discrete unit of logic) that generated a finding.
-     *         In various security-findings providers' solutions, this generator can be called a rule, a check, a
+     *         In various security findings providers' solutions, this generator can be called a rule, a check, a
      *         detector, a plugin, etc.
      */
 
@@ -1020,13 +1020,13 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
     /**
      * <p>
      * The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In
-     * various security-findings providers' solutions, this generator can be called a rule, a check, a detector, a
+     * various security findings providers' solutions, this generator can be called a rule, a check, a detector, a
      * plugin, etc.
      * </p>
      * 
      * @param generatorId
      *        The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In
-     *        various security-findings providers' solutions, this generator can be called a rule, a check, a detector,
+     *        various security findings providers' solutions, this generator can be called a rule, a check, a detector,
      *        a plugin, etc.
      */
 
@@ -1042,7 +1042,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
     /**
      * <p>
      * The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In
-     * various security-findings providers' solutions, this generator can be called a rule, a check, a detector, a
+     * various security findings providers' solutions, this generator can be called a rule, a check, a detector, a
      * plugin, etc.
      * </p>
      * <p>
@@ -1053,7 +1053,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * 
      * @param generatorId
      *        The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In
-     *        various security-findings providers' solutions, this generator can be called a rule, a check, a detector,
+     *        various security findings providers' solutions, this generator can be called a rule, a check, a detector,
      *        a plugin, etc.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1071,13 +1071,13 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
     /**
      * <p>
      * The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In
-     * various security-findings providers' solutions, this generator can be called a rule, a check, a detector, a
+     * various security findings providers' solutions, this generator can be called a rule, a check, a detector, a
      * plugin, etc.
      * </p>
      * 
      * @param generatorId
      *        The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In
-     *        various security-findings providers' solutions, this generator can be called a rule, a check, a detector,
+     *        various security findings providers' solutions, this generator can be called a rule, a check, a detector,
      *        a plugin, etc.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1229,7 +1229,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider first observed the potential
+     * An ISO8601-formatted timestamp that indicates when the security findings provider first observed the potential
      * security issue that a finding captured.
      * </p>
      * <p>
@@ -1238,7 +1238,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.
      * </p>
      * 
-     * @return An ISO8601-formatted timestamp that indicates when the security-findings provider first observed the
+     * @return An ISO8601-formatted timestamp that indicates when the security findings provider first observed the
      *         potential security issue that a finding captured.</p>
      *         <p>
      *         A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces,
@@ -1253,7 +1253,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider first observed the potential
+     * An ISO8601-formatted timestamp that indicates when the security findings provider first observed the potential
      * security issue that a finding captured.
      * </p>
      * <p>
@@ -1263,7 +1263,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param firstObservedAt
-     *        An ISO8601-formatted timestamp that indicates when the security-findings provider first observed the
+     *        An ISO8601-formatted timestamp that indicates when the security findings provider first observed the
      *        potential security issue that a finding captured.</p>
      *        <p>
      *        A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces,
@@ -1283,7 +1283,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider first observed the potential
+     * An ISO8601-formatted timestamp that indicates when the security findings provider first observed the potential
      * security issue that a finding captured.
      * </p>
      * <p>
@@ -1298,7 +1298,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param firstObservedAt
-     *        An ISO8601-formatted timestamp that indicates when the security-findings provider first observed the
+     *        An ISO8601-formatted timestamp that indicates when the security findings provider first observed the
      *        potential security issue that a finding captured.</p>
      *        <p>
      *        A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces,
@@ -1320,7 +1320,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider first observed the potential
+     * An ISO8601-formatted timestamp that indicates when the security findings provider first observed the potential
      * security issue that a finding captured.
      * </p>
      * <p>
@@ -1330,7 +1330,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param firstObservedAt
-     *        An ISO8601-formatted timestamp that indicates when the security-findings provider first observed the
+     *        An ISO8601-formatted timestamp that indicates when the security findings provider first observed the
      *        potential security issue that a finding captured.</p>
      *        <p>
      *        A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces,
@@ -1347,7 +1347,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider most recently observed the
+     * An ISO8601-formatted timestamp that indicates when the security findings provider most recently observed the
      * potential security issue that a finding captured.
      * </p>
      * <p>
@@ -1356,7 +1356,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.
      * </p>
      * 
-     * @return An ISO8601-formatted timestamp that indicates when the security-findings provider most recently observed
+     * @return An ISO8601-formatted timestamp that indicates when the security findings provider most recently observed
      *         the potential security issue that a finding captured.</p>
      *         <p>
      *         A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces,
@@ -1371,7 +1371,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider most recently observed the
+     * An ISO8601-formatted timestamp that indicates when the security findings provider most recently observed the
      * potential security issue that a finding captured.
      * </p>
      * <p>
@@ -1381,7 +1381,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param lastObservedAt
-     *        An ISO8601-formatted timestamp that indicates when the security-findings provider most recently observed
+     *        An ISO8601-formatted timestamp that indicates when the security findings provider most recently observed
      *        the potential security issue that a finding captured.</p>
      *        <p>
      *        A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces,
@@ -1401,7 +1401,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider most recently observed the
+     * An ISO8601-formatted timestamp that indicates when the security findings provider most recently observed the
      * potential security issue that a finding captured.
      * </p>
      * <p>
@@ -1416,7 +1416,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param lastObservedAt
-     *        An ISO8601-formatted timestamp that indicates when the security-findings provider most recently observed
+     *        An ISO8601-formatted timestamp that indicates when the security findings provider most recently observed
      *        the potential security issue that a finding captured.</p>
      *        <p>
      *        A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces,
@@ -1438,7 +1438,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider most recently observed the
+     * An ISO8601-formatted timestamp that indicates when the security findings provider most recently observed the
      * potential security issue that a finding captured.
      * </p>
      * <p>
@@ -1448,7 +1448,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param lastObservedAt
-     *        An ISO8601-formatted timestamp that indicates when the security-findings provider most recently observed
+     *        An ISO8601-formatted timestamp that indicates when the security findings provider most recently observed
      *        the potential security issue that a finding captured.</p>
      *        <p>
      *        A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces,
@@ -1465,7 +1465,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider captured the potential security
+     * An ISO8601-formatted timestamp that indicates when the security findings provider captured the potential security
      * issue that a finding captured.
      * </p>
      * <p>
@@ -1474,7 +1474,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.
      * </p>
      * 
-     * @return An ISO8601-formatted timestamp that indicates when the security-findings provider captured the potential
+     * @return An ISO8601-formatted timestamp that indicates when the security findings provider captured the potential
      *         security issue that a finding captured.</p>
      *         <p>
      *         A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces,
@@ -1489,7 +1489,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider captured the potential security
+     * An ISO8601-formatted timestamp that indicates when the security findings provider captured the potential security
      * issue that a finding captured.
      * </p>
      * <p>
@@ -1499,7 +1499,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param createdAt
-     *        An ISO8601-formatted timestamp that indicates when the security-findings provider captured the potential
+     *        An ISO8601-formatted timestamp that indicates when the security findings provider captured the potential
      *        security issue that a finding captured.</p>
      *        <p>
      *        A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces,
@@ -1519,7 +1519,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider captured the potential security
+     * An ISO8601-formatted timestamp that indicates when the security findings provider captured the potential security
      * issue that a finding captured.
      * </p>
      * <p>
@@ -1534,7 +1534,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param createdAt
-     *        An ISO8601-formatted timestamp that indicates when the security-findings provider captured the potential
+     *        An ISO8601-formatted timestamp that indicates when the security findings provider captured the potential
      *        security issue that a finding captured.</p>
      *        <p>
      *        A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces,
@@ -1556,7 +1556,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider captured the potential security
+     * An ISO8601-formatted timestamp that indicates when the security findings provider captured the potential security
      * issue that a finding captured.
      * </p>
      * <p>
@@ -1566,7 +1566,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param createdAt
-     *        An ISO8601-formatted timestamp that indicates when the security-findings provider captured the potential
+     *        An ISO8601-formatted timestamp that indicates when the security findings provider captured the potential
      *        security issue that a finding captured.</p>
      *        <p>
      *        A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces,
@@ -1583,7 +1583,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider last updated the finding
+     * An ISO8601-formatted timestamp that indicates when the security findings provider last updated the finding
      * record.
      * </p>
      * <p>
@@ -1592,7 +1592,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.
      * </p>
      * 
-     * @return An ISO8601-formatted timestamp that indicates when the security-findings provider last updated the
+     * @return An ISO8601-formatted timestamp that indicates when the security findings provider last updated the
      *         finding record. </p>
      *         <p>
      *         A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces,
@@ -1607,7 +1607,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider last updated the finding
+     * An ISO8601-formatted timestamp that indicates when the security findings provider last updated the finding
      * record.
      * </p>
      * <p>
@@ -1617,7 +1617,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param updatedAt
-     *        An ISO8601-formatted timestamp that indicates when the security-findings provider last updated the finding
+     *        An ISO8601-formatted timestamp that indicates when the security findings provider last updated the finding
      *        record. </p>
      *        <p>
      *        A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces,
@@ -1637,7 +1637,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider last updated the finding
+     * An ISO8601-formatted timestamp that indicates when the security findings provider last updated the finding
      * record.
      * </p>
      * <p>
@@ -1652,7 +1652,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param updatedAt
-     *        An ISO8601-formatted timestamp that indicates when the security-findings provider last updated the finding
+     *        An ISO8601-formatted timestamp that indicates when the security findings provider last updated the finding
      *        record. </p>
      *        <p>
      *        A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces,
@@ -1674,7 +1674,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider last updated the finding
+     * An ISO8601-formatted timestamp that indicates when the security findings provider last updated the finding
      * record.
      * </p>
      * <p>
@@ -1684,7 +1684,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param updatedAt
-     *        An ISO8601-formatted timestamp that indicates when the security-findings provider last updated the finding
+     *        An ISO8601-formatted timestamp that indicates when the security findings provider last updated the finding
      *        record. </p>
      *        <p>
      *        A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces,
@@ -1701,10 +1701,10 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The native severity as defined by the security-findings provider's solution that generated the finding.
+     * The native severity as defined by the security findings provider's solution that generated the finding.
      * </p>
      * 
-     * @return The native severity as defined by the security-findings provider's solution that generated the finding.
+     * @return The native severity as defined by the security findings provider's solution that generated the finding.
      */
     @Deprecated
     public java.util.List<NumberFilter> getSeverityProduct() {
@@ -1713,11 +1713,11 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The native severity as defined by the security-findings provider's solution that generated the finding.
+     * The native severity as defined by the security findings provider's solution that generated the finding.
      * </p>
      * 
      * @param severityProduct
-     *        The native severity as defined by the security-findings provider's solution that generated the finding.
+     *        The native severity as defined by the security findings provider's solution that generated the finding.
      */
     @Deprecated
     public void setSeverityProduct(java.util.Collection<NumberFilter> severityProduct) {
@@ -1731,7 +1731,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The native severity as defined by the security-findings provider's solution that generated the finding.
+     * The native severity as defined by the security findings provider's solution that generated the finding.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1740,7 +1740,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param severityProduct
-     *        The native severity as defined by the security-findings provider's solution that generated the finding.
+     *        The native severity as defined by the security findings provider's solution that generated the finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -1756,11 +1756,11 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The native severity as defined by the security-findings provider's solution that generated the finding.
+     * The native severity as defined by the security findings provider's solution that generated the finding.
      * </p>
      * 
      * @param severityProduct
-     *        The native severity as defined by the security-findings provider's solution that generated the finding.
+     *        The native severity as defined by the security findings provider's solution that generated the finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -2325,10 +2325,10 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A URL that links to a page about the current finding in the security-findings provider's solution.
+     * A URL that links to a page about the current finding in the security findings provider's solution.
      * </p>
      * 
-     * @return A URL that links to a page about the current finding in the security-findings provider's solution.
+     * @return A URL that links to a page about the current finding in the security findings provider's solution.
      */
 
     public java.util.List<StringFilter> getSourceUrl() {
@@ -2337,11 +2337,11 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A URL that links to a page about the current finding in the security-findings provider's solution.
+     * A URL that links to a page about the current finding in the security findings provider's solution.
      * </p>
      * 
      * @param sourceUrl
-     *        A URL that links to a page about the current finding in the security-findings provider's solution.
+     *        A URL that links to a page about the current finding in the security findings provider's solution.
      */
 
     public void setSourceUrl(java.util.Collection<StringFilter> sourceUrl) {
@@ -2355,7 +2355,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A URL that links to a page about the current finding in the security-findings provider's solution.
+     * A URL that links to a page about the current finding in the security findings provider's solution.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -2364,7 +2364,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param sourceUrl
-     *        A URL that links to a page about the current finding in the security-findings provider's solution.
+     *        A URL that links to a page about the current finding in the security findings provider's solution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2380,11 +2380,11 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A URL that links to a page about the current finding in the security-findings provider's solution.
+     * A URL that links to a page about the current finding in the security findings provider's solution.
      * </p>
      * 
      * @param sourceUrl
-     *        A URL that links to a page about the current finding in the security-findings provider's solution.
+     *        A URL that links to a page about the current finding in the security findings provider's solution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2395,11 +2395,11 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A data type where security-findings providers can include additional solution-specific details that aren't part
+     * A data type where security findings providers can include additional solution-specific details that aren't part
      * of the defined <code>AwsSecurityFinding</code> format.
      * </p>
      * 
-     * @return A data type where security-findings providers can include additional solution-specific details that
+     * @return A data type where security findings providers can include additional solution-specific details that
      *         aren't part of the defined <code>AwsSecurityFinding</code> format.
      */
 
@@ -2409,12 +2409,12 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A data type where security-findings providers can include additional solution-specific details that aren't part
+     * A data type where security findings providers can include additional solution-specific details that aren't part
      * of the defined <code>AwsSecurityFinding</code> format.
      * </p>
      * 
      * @param productFields
-     *        A data type where security-findings providers can include additional solution-specific details that aren't
+     *        A data type where security findings providers can include additional solution-specific details that aren't
      *        part of the defined <code>AwsSecurityFinding</code> format.
      */
 
@@ -2429,7 +2429,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A data type where security-findings providers can include additional solution-specific details that aren't part
+     * A data type where security findings providers can include additional solution-specific details that aren't part
      * of the defined <code>AwsSecurityFinding</code> format.
      * </p>
      * <p>
@@ -2439,7 +2439,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param productFields
-     *        A data type where security-findings providers can include additional solution-specific details that aren't
+     *        A data type where security findings providers can include additional solution-specific details that aren't
      *        part of the defined <code>AwsSecurityFinding</code> format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2456,12 +2456,12 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A data type where security-findings providers can include additional solution-specific details that aren't part
+     * A data type where security findings providers can include additional solution-specific details that aren't part
      * of the defined <code>AwsSecurityFinding</code> format.
      * </p>
      * 
      * @param productFields
-     *        A data type where security-findings providers can include additional solution-specific details that aren't
+     *        A data type where security findings providers can include additional solution-specific details that aren't
      *        part of the defined <code>AwsSecurityFinding</code> format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -27,10 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ReadSetBatchErrorMarshaller {
 
-    private static final MarshallingInfo<String> CODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("code").build();
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("id").build();
+    private static final MarshallingInfo<String> CODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("code").build();
     private static final MarshallingInfo<String> MESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("message").build();
 
@@ -50,8 +50,8 @@ public class ReadSetBatchErrorMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(readSetBatchError.getCode(), CODE_BINDING);
             protocolMarshaller.marshall(readSetBatchError.getId(), ID_BINDING);
+            protocolMarshaller.marshall(readSetBatchError.getCode(), CODE_BINDING);
             protocolMarshaller.marshall(readSetBatchError.getMessage(), MESSAGE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

@@ -318,6 +318,8 @@ public interface AWSRAM {
      *         Quotas console</a>.
      * @throws TagPolicyViolationException
      *         The operation failed because the specified tag key is a reserved word and can't be used.
+     * @throws TagLimitExceededException
+     *         The operation failed because it would exceed the limit for tags for your Amazon Web Services account.
      * @throws ServerInternalException
      *         The operation failed because the service could not respond to the request due to an internal problem. Try
      *         again later.

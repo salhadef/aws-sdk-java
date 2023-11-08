@@ -48,6 +48,14 @@ public class ConfigurationEventJsonUnmarshaller implements Unmarshaller<Configur
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("ResourceGroupName", targetDepth)) {
+                    context.nextToken();
+                    configurationEvent.setResourceGroupName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("AccountId", targetDepth)) {
+                    context.nextToken();
+                    configurationEvent.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("MonitoredResourceARN", targetDepth)) {
                     context.nextToken();
                     configurationEvent.setMonitoredResourceARN(context.getUnmarshaller(String.class).unmarshall(context));

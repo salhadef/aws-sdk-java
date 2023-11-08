@@ -33,12 +33,12 @@ public class TypeFilters implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>REGISTERED</code>: Private extensions that have been registered for this account and region.
+     * <code>REGISTERED</code>: Private extensions that have been registered for this account and Region.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ACTIVATED</code>: Public extensions that have been activated for this account and region.
+     * <code>ACTIVATED</code>: Public extensions that have been activated for this account and Region.
      * </p>
      * </li>
      * <li>
@@ -90,12 +90,12 @@ public class TypeFilters implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>REGISTERED</code>: Private extensions that have been registered for this account and region.
+     * <code>REGISTERED</code>: Private extensions that have been registered for this account and Region.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ACTIVATED</code>: Public extensions that have been activated for this account and region.
+     * <code>ACTIVATED</code>: Public extensions that have been activated for this account and Region.
      * </p>
      * </li>
      * <li>
@@ -127,12 +127,12 @@ public class TypeFilters implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>REGISTERED</code>: Private extensions that have been registered for this account and region.
+     *        <code>REGISTERED</code>: Private extensions that have been registered for this account and Region.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ACTIVATED</code>: Public extensions that have been activated for this account and region.
+     *        <code>ACTIVATED</code>: Public extensions that have been activated for this account and Region.
      *        </p>
      *        </li>
      *        <li>
@@ -171,12 +171,12 @@ public class TypeFilters implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>REGISTERED</code>: Private extensions that have been registered for this account and region.
+     * <code>REGISTERED</code>: Private extensions that have been registered for this account and Region.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ACTIVATED</code>: Public extensions that have been activated for this account and region.
+     * <code>ACTIVATED</code>: Public extensions that have been activated for this account and Region.
      * </p>
      * </li>
      * <li>
@@ -207,12 +207,12 @@ public class TypeFilters implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>REGISTERED</code>: Private extensions that have been registered for this account and region.
+     *         <code>REGISTERED</code>: Private extensions that have been registered for this account and Region.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ACTIVATED</code>: Public extensions that have been activated for this account and region.
+     *         <code>ACTIVATED</code>: Public extensions that have been activated for this account and Region.
      *         </p>
      *         </li>
      *         <li>
@@ -251,12 +251,12 @@ public class TypeFilters implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>REGISTERED</code>: Private extensions that have been registered for this account and region.
+     * <code>REGISTERED</code>: Private extensions that have been registered for this account and Region.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ACTIVATED</code>: Public extensions that have been activated for this account and region.
+     * <code>ACTIVATED</code>: Public extensions that have been activated for this account and Region.
      * </p>
      * </li>
      * <li>
@@ -288,12 +288,12 @@ public class TypeFilters implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>REGISTERED</code>: Private extensions that have been registered for this account and region.
+     *        <code>REGISTERED</code>: Private extensions that have been registered for this account and Region.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ACTIVATED</code>: Public extensions that have been activated for this account and region.
+     *        <code>ACTIVATED</code>: Public extensions that have been activated for this account and Region.
      *        </p>
      *        </li>
      *        <li>
@@ -334,12 +334,12 @@ public class TypeFilters implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>REGISTERED</code>: Private extensions that have been registered for this account and region.
+     * <code>REGISTERED</code>: Private extensions that have been registered for this account and Region.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ACTIVATED</code>: Public extensions that have been activated for this account and region.
+     * <code>ACTIVATED</code>: Public extensions that have been activated for this account and Region.
      * </p>
      * </li>
      * <li>
@@ -371,12 +371,12 @@ public class TypeFilters implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>REGISTERED</code>: Private extensions that have been registered for this account and region.
+     *        <code>REGISTERED</code>: Private extensions that have been registered for this account and Region.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ACTIVATED</code>: Public extensions that have been activated for this account and region.
+     *        <code>ACTIVATED</code>: Public extensions that have been activated for this account and Region.
      *        </p>
      *        </li>
      *        <li>

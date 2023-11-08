@@ -27,7 +27,7 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -149,7 +149,7 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
      * <p>
-     * One or more route table IDs.
+     * The IDs of the route tables.
      * </p>
      * <p>
      * Default: Describes all your route tables.
@@ -174,7 +174,7 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -293,7 +293,7 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * </li>
      * </ul>
      * 
-     * @return One or more filters.</p>
+     * @return The filters.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -422,7 +422,7 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -542,7 +542,7 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -673,7 +673,7 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -798,7 +798,7 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * </p>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -931,7 +931,7 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -1051,7 +1051,7 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1179,13 +1179,13 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more route table IDs.
+     * The IDs of the route tables.
      * </p>
      * <p>
      * Default: Describes all your route tables.
      * </p>
      * 
-     * @return One or more route table IDs.</p>
+     * @return The IDs of the route tables.</p>
      *         <p>
      *         Default: Describes all your route tables.
      */
@@ -1199,14 +1199,14 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more route table IDs.
+     * The IDs of the route tables.
      * </p>
      * <p>
      * Default: Describes all your route tables.
      * </p>
      * 
      * @param routeTableIds
-     *        One or more route table IDs.</p>
+     *        The IDs of the route tables.</p>
      *        <p>
      *        Default: Describes all your route tables.
      */
@@ -1222,7 +1222,7 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more route table IDs.
+     * The IDs of the route tables.
      * </p>
      * <p>
      * Default: Describes all your route tables.
@@ -1234,7 +1234,7 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * </p>
      * 
      * @param routeTableIds
-     *        One or more route table IDs.</p>
+     *        The IDs of the route tables.</p>
      *        <p>
      *        Default: Describes all your route tables.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1252,14 +1252,14 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more route table IDs.
+     * The IDs of the route tables.
      * </p>
      * <p>
      * Default: Describes all your route tables.
      * </p>
      * 
      * @param routeTableIds
-     *        One or more route table IDs.</p>
+     *        The IDs of the route tables.</p>
      *        <p>
      *        Default: Describes all your route tables.
      * @return Returns a reference to this object so that method calls can be chained together.

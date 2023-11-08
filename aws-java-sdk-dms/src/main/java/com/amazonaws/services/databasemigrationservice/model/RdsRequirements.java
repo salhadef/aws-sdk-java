@@ -65,6 +65,12 @@ public class RdsRequirements implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private String deploymentOption;
+    /**
+     * <p>
+     * The required target Amazon RDS engine version.
+     * </p>
+     */
+    private String engineVersion;
 
     /**
      * <p>
@@ -313,6 +319,46 @@ public class RdsRequirements implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The required target Amazon RDS engine version.
+     * </p>
+     * 
+     * @param engineVersion
+     *        The required target Amazon RDS engine version.
+     */
+
+    public void setEngineVersion(String engineVersion) {
+        this.engineVersion = engineVersion;
+    }
+
+    /**
+     * <p>
+     * The required target Amazon RDS engine version.
+     * </p>
+     * 
+     * @return The required target Amazon RDS engine version.
+     */
+
+    public String getEngineVersion() {
+        return this.engineVersion;
+    }
+
+    /**
+     * <p>
+     * The required target Amazon RDS engine version.
+     * </p>
+     * 
+     * @param engineVersion
+     *        The required target Amazon RDS engine version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RdsRequirements withEngineVersion(String engineVersion) {
+        setEngineVersion(engineVersion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -335,7 +381,9 @@ public class RdsRequirements implements Serializable, Cloneable, StructuredPojo 
         if (getStorageIops() != null)
             sb.append("StorageIops: ").append(getStorageIops()).append(",");
         if (getDeploymentOption() != null)
-            sb.append("DeploymentOption: ").append(getDeploymentOption());
+            sb.append("DeploymentOption: ").append(getDeploymentOption()).append(",");
+        if (getEngineVersion() != null)
+            sb.append("EngineVersion: ").append(getEngineVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -374,6 +422,10 @@ public class RdsRequirements implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getDeploymentOption() != null && other.getDeploymentOption().equals(this.getDeploymentOption()) == false)
             return false;
+        if (other.getEngineVersion() == null ^ this.getEngineVersion() == null)
+            return false;
+        if (other.getEngineVersion() != null && other.getEngineVersion().equals(this.getEngineVersion()) == false)
+            return false;
         return true;
     }
 
@@ -388,6 +440,7 @@ public class RdsRequirements implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getStorageSize() == null) ? 0 : getStorageSize().hashCode());
         hashCode = prime * hashCode + ((getStorageIops() == null) ? 0 : getStorageIops().hashCode());
         hashCode = prime * hashCode + ((getDeploymentOption() == null) ? 0 : getDeploymentOption().hashCode());
+        hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());
         return hashCode;
     }
 

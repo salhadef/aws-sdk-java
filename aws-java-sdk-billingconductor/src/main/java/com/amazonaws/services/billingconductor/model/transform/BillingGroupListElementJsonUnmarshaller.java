@@ -88,6 +88,10 @@ public class BillingGroupListElementJsonUnmarshaller implements Unmarshaller<Bil
                     context.nextToken();
                     billingGroupListElement.setStatusReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("AccountGrouping", targetDepth)) {
+                    context.nextToken();
+                    billingGroupListElement.setAccountGrouping(ListBillingGroupAccountGroupingJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -2133,7 +2133,7 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
         if (getTunnelInsideIpv6Cidr() != null)
             sb.append("TunnelInsideIpv6Cidr: ").append(getTunnelInsideIpv6Cidr()).append(",");
         if (getPreSharedKey() != null)
-            sb.append("PreSharedKey: ").append(getPreSharedKey()).append(",");
+            sb.append("PreSharedKey: ").append("***Sensitive Data Redacted***").append(",");
         if (getPhase1LifetimeSeconds() != null)
             sb.append("Phase1LifetimeSeconds: ").append(getPhase1LifetimeSeconds()).append(",");
         if (getPhase2LifetimeSeconds() != null)

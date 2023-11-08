@@ -60,6 +60,10 @@ public class PipelineMetadataJsonUnmarshaller implements Unmarshaller<PipelineMe
                     context.nextToken();
                     pipelineMetadata.setUpdated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("pollingDisabledAt", targetDepth)) {
+                    context.nextToken();
+                    pipelineMetadata.setPollingDisabledAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

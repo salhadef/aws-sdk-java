@@ -1107,6 +1107,9 @@ public interface AmazonCloudWatch {
      * >Amazon Web Services service-linked role</a>.
      * </p>
      * <p>
+     * Each <code>PutMetricAlarm</code> action has a maximum uncompressed payload of 120 KB.
+     * </p>
+     * <p>
      * <b>Cross-account alarms</b>
      * </p>
      * <p>

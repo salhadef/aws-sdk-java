@@ -48,6 +48,14 @@ public class ReferenceFilterJsonUnmarshaller implements Unmarshaller<ReferenceFi
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("name", targetDepth)) {
+                    context.nextToken();
+                    referenceFilter.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("md5", targetDepth)) {
+                    context.nextToken();
+                    referenceFilter.setMd5(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("createdAfter", targetDepth)) {
                     context.nextToken();
                     referenceFilter.setCreatedAfter(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
@@ -55,14 +63,6 @@ public class ReferenceFilterJsonUnmarshaller implements Unmarshaller<ReferenceFi
                 if (context.testExpression("createdBefore", targetDepth)) {
                     context.nextToken();
                     referenceFilter.setCreatedBefore(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
-                }
-                if (context.testExpression("md5", targetDepth)) {
-                    context.nextToken();
-                    referenceFilter.setMd5(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("name", targetDepth)) {
-                    context.nextToken();
-                    referenceFilter.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

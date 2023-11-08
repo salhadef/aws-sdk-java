@@ -32,6 +32,12 @@ public class ListExecutionsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.
      * </p>
+     * <p>
+     * You can also return a list of executions associated with a specific <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a> or <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>, by
+     * specifying an alias ARN or a version ARN in the <code>stateMachineArn</code> parameter.
+     * </p>
      */
     private String stateMachineArn;
     /**
@@ -81,11 +87,24 @@ public class ListExecutionsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.
      * </p>
+     * <p>
+     * You can also return a list of executions associated with a specific <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a> or <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>, by
+     * specifying an alias ARN or a version ARN in the <code>stateMachineArn</code> parameter.
+     * </p>
      * 
      * @param stateMachineArn
      *        The Amazon Resource Name (ARN) of the state machine whose executions is listed.</p>
      *        <p>
      *        You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.
+     *        </p>
+     *        <p>
+     *        You can also return a list of executions associated with a specific <a
+     *        href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a> or
+     *        <a
+     *        href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version<
+     *        /a>, by specifying an alias ARN or a version ARN in the <code>stateMachineArn</code> parameter.
      */
 
     public void setStateMachineArn(String stateMachineArn) {
@@ -99,10 +118,23 @@ public class ListExecutionsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.
      * </p>
+     * <p>
+     * You can also return a list of executions associated with a specific <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a> or <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>, by
+     * specifying an alias ARN or a version ARN in the <code>stateMachineArn</code> parameter.
+     * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the state machine whose executions is listed.</p>
      *         <p>
      *         You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.
+     *         </p>
+     *         <p>
+     *         You can also return a list of executions associated with a specific <a
+     *         href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a>
+     *         or <a
+     *         href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version
+     *         </a>, by specifying an alias ARN or a version ARN in the <code>stateMachineArn</code> parameter.
      */
 
     public String getStateMachineArn() {
@@ -116,11 +148,24 @@ public class ListExecutionsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.
      * </p>
+     * <p>
+     * You can also return a list of executions associated with a specific <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a> or <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>, by
+     * specifying an alias ARN or a version ARN in the <code>stateMachineArn</code> parameter.
+     * </p>
      * 
      * @param stateMachineArn
      *        The Amazon Resource Name (ARN) of the state machine whose executions is listed.</p>
      *        <p>
      *        You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.
+     *        </p>
+     *        <p>
+     *        You can also return a list of executions associated with a specific <a
+     *        href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a> or
+     *        <a
+     *        href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version<
+     *        /a>, by specifying an alias ARN or a version ARN in the <code>stateMachineArn</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

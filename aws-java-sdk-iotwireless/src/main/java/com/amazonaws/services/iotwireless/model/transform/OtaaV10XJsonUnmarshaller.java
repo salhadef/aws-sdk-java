@@ -56,6 +56,10 @@ public class OtaaV10XJsonUnmarshaller implements Unmarshaller<OtaaV10X, JsonUnma
                     context.nextToken();
                     otaaV10X.setAppEui(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("JoinEui", targetDepth)) {
+                    context.nextToken();
+                    otaaV10X.setJoinEui(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("GenAppKey", targetDepth)) {
                     context.nextToken();
                     otaaV10X.setGenAppKey(context.getUnmarshaller(String.class).unmarshall(context));

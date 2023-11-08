@@ -72,6 +72,10 @@ public class DescribeGroupResultJsonUnmarshaller implements Unmarshaller<Describ
                     context.nextToken();
                     describeGroupResult.setDisabledDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("HiddenFromGlobalAddressList", targetDepth)) {
+                    context.nextToken();
+                    describeGroupResult.setHiddenFromGlobalAddressList(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

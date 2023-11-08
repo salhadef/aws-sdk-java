@@ -30,6 +30,12 @@ public class ActivateReadSetFilter implements Serializable, Cloneable, Structure
 
     /**
      * <p>
+     * The filter's status.
+     * </p>
+     */
+    private String status;
+    /**
+     * <p>
      * The filter's start date.
      * </p>
      */
@@ -40,12 +46,65 @@ public class ActivateReadSetFilter implements Serializable, Cloneable, Structure
      * </p>
      */
     private java.util.Date createdBefore;
+
     /**
      * <p>
      * The filter's status.
      * </p>
+     * 
+     * @param status
+     *        The filter's status.
+     * @see ReadSetActivationJobStatus
      */
-    private String status;
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * The filter's status.
+     * </p>
+     * 
+     * @return The filter's status.
+     * @see ReadSetActivationJobStatus
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * The filter's status.
+     * </p>
+     * 
+     * @param status
+     *        The filter's status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReadSetActivationJobStatus
+     */
+
+    public ActivateReadSetFilter withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The filter's status.
+     * </p>
+     * 
+     * @param status
+     *        The filter's status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReadSetActivationJobStatus
+     */
+
+    public ActivateReadSetFilter withStatus(ReadSetActivationJobStatus status) {
+        this.status = status.toString();
+        return this;
+    }
 
     /**
      * <p>
@@ -128,65 +187,6 @@ public class ActivateReadSetFilter implements Serializable, Cloneable, Structure
     }
 
     /**
-     * <p>
-     * The filter's status.
-     * </p>
-     * 
-     * @param status
-     *        The filter's status.
-     * @see ReadSetActivationJobStatus
-     */
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    /**
-     * <p>
-     * The filter's status.
-     * </p>
-     * 
-     * @return The filter's status.
-     * @see ReadSetActivationJobStatus
-     */
-
-    public String getStatus() {
-        return this.status;
-    }
-
-    /**
-     * <p>
-     * The filter's status.
-     * </p>
-     * 
-     * @param status
-     *        The filter's status.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see ReadSetActivationJobStatus
-     */
-
-    public ActivateReadSetFilter withStatus(String status) {
-        setStatus(status);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The filter's status.
-     * </p>
-     * 
-     * @param status
-     *        The filter's status.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see ReadSetActivationJobStatus
-     */
-
-    public ActivateReadSetFilter withStatus(ReadSetActivationJobStatus status) {
-        this.status = status.toString();
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -198,12 +198,12 @@ public class ActivateReadSetFilter implements Serializable, Cloneable, Structure
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getCreatedAfter() != null)
             sb.append("CreatedAfter: ").append(getCreatedAfter()).append(",");
         if (getCreatedBefore() != null)
-            sb.append("CreatedBefore: ").append(getCreatedBefore()).append(",");
-        if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("CreatedBefore: ").append(getCreatedBefore());
         sb.append("}");
         return sb.toString();
     }
@@ -218,6 +218,10 @@ public class ActivateReadSetFilter implements Serializable, Cloneable, Structure
         if (obj instanceof ActivateReadSetFilter == false)
             return false;
         ActivateReadSetFilter other = (ActivateReadSetFilter) obj;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
         if (other.getCreatedAfter() == null ^ this.getCreatedAfter() == null)
             return false;
         if (other.getCreatedAfter() != null && other.getCreatedAfter().equals(this.getCreatedAfter()) == false)
@@ -225,10 +229,6 @@ public class ActivateReadSetFilter implements Serializable, Cloneable, Structure
         if (other.getCreatedBefore() == null ^ this.getCreatedBefore() == null)
             return false;
         if (other.getCreatedBefore() != null && other.getCreatedBefore().equals(this.getCreatedBefore()) == false)
-            return false;
-        if (other.getStatus() == null ^ this.getStatus() == null)
-            return false;
-        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         return true;
     }
@@ -238,9 +238,9 @@ public class ActivateReadSetFilter implements Serializable, Cloneable, Structure
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getCreatedAfter() == null) ? 0 : getCreatedAfter().hashCode());
         hashCode = prime * hashCode + ((getCreatedBefore() == null) ? 0 : getCreatedBefore().hashCode());
-        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;
     }
 

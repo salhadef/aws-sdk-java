@@ -84,6 +84,10 @@ public class CreateVerifiedAccessInstanceRequestMarshaller implements
 
         request.addParameter("ClientToken", IdempotentUtils.resolveString(createVerifiedAccessInstanceRequest.getClientToken()));
 
+        if (createVerifiedAccessInstanceRequest.getFIPSEnabled() != null) {
+            request.addParameter("FIPSEnabled", StringUtils.fromBoolean(createVerifiedAccessInstanceRequest.getFIPSEnabled()));
+        }
+
         return request;
     }
 

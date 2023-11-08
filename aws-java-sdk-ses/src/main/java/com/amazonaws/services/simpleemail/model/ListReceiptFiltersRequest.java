@@ -19,10 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents a request to list the IP address filters that exist under your AWS account. You use IP address filters
- * when you receive email with Amazon SES. For more information, see the <a
- * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer
- * Guide</a>.
+ * Represents a request to list the IP address filters that exist under your Amazon Web Services account. You use IP
+ * address filters when you receive email with Amazon SES. For more information, see the <a
+ * href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-concepts.html">Amazon SES Developer Guide</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListReceiptFilters" target="_top">AWS API

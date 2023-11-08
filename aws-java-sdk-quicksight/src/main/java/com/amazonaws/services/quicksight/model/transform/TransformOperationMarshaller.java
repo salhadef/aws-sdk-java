@@ -41,6 +41,8 @@ public class TransformOperationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TagColumnOperation").build();
     private static final MarshallingInfo<StructuredPojo> UNTAGCOLUMNOPERATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UntagColumnOperation").build();
+    private static final MarshallingInfo<StructuredPojo> OVERRIDEDATASETPARAMETEROPERATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OverrideDatasetParameterOperation").build();
 
     private static final TransformOperationMarshaller instance = new TransformOperationMarshaller();
 
@@ -65,6 +67,7 @@ public class TransformOperationMarshaller {
             protocolMarshaller.marshall(transformOperation.getCastColumnTypeOperation(), CASTCOLUMNTYPEOPERATION_BINDING);
             protocolMarshaller.marshall(transformOperation.getTagColumnOperation(), TAGCOLUMNOPERATION_BINDING);
             protocolMarshaller.marshall(transformOperation.getUntagColumnOperation(), UNTAGCOLUMNOPERATION_BINDING);
+            protocolMarshaller.marshall(transformOperation.getOverrideDatasetParameterOperation(), OVERRIDEDATASETPARAMETEROPERATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

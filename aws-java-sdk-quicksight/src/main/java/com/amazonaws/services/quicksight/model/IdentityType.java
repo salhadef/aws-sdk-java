@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum IdentityType {
 
     IAM("IAM"),
-    QUICKSIGHT("QUICKSIGHT");
+    QUICKSIGHT("QUICKSIGHT"),
+    IAM_IDENTITY_CENTER("IAM_IDENTITY_CENTER");
 
     private String value;
 

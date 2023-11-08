@@ -32,6 +32,11 @@ public class MetricV2 implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The name of the metric.
      * </p>
+     * <important>
+     * <p>
+     * This parameter is required. The following Required = No is incorrect.
+     * </p>
+     * </important>
      */
     private String name;
     /**
@@ -51,9 +56,17 @@ public class MetricV2 implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The name of the metric.
      * </p>
+     * <important>
+     * <p>
+     * This parameter is required. The following Required = No is incorrect.
+     * </p>
+     * </important>
      * 
      * @param name
-     *        The name of the metric.
+     *        The name of the metric.</p> <important>
+     *        <p>
+     *        This parameter is required. The following Required = No is incorrect.
+     *        </p>
      */
 
     public void setName(String name) {
@@ -64,8 +77,16 @@ public class MetricV2 implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The name of the metric.
      * </p>
+     * <important>
+     * <p>
+     * This parameter is required. The following Required = No is incorrect.
+     * </p>
+     * </important>
      * 
-     * @return The name of the metric.
+     * @return The name of the metric.</p> <important>
+     *         <p>
+     *         This parameter is required. The following Required = No is incorrect.
+     *         </p>
      */
 
     public String getName() {
@@ -76,9 +97,17 @@ public class MetricV2 implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The name of the metric.
      * </p>
+     * <important>
+     * <p>
+     * This parameter is required. The following Required = No is incorrect.
+     * </p>
+     * </important>
      * 
      * @param name
-     *        The name of the metric.
+     *        The name of the metric.</p> <important>
+     *        <p>
+     *        This parameter is required. The following Required = No is incorrect.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

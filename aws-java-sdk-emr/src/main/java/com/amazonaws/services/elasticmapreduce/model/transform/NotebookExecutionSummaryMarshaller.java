@@ -39,6 +39,10 @@ public class NotebookExecutionSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> ENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<StructuredPojo> NOTEBOOKS3LOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NotebookS3Location").build();
+    private static final MarshallingInfo<String> EXECUTIONENGINEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExecutionEngineId").build();
 
     private static final NotebookExecutionSummaryMarshaller instance = new NotebookExecutionSummaryMarshaller();
 
@@ -62,6 +66,8 @@ public class NotebookExecutionSummaryMarshaller {
             protocolMarshaller.marshall(notebookExecutionSummary.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(notebookExecutionSummary.getStartTime(), STARTTIME_BINDING);
             protocolMarshaller.marshall(notebookExecutionSummary.getEndTime(), ENDTIME_BINDING);
+            protocolMarshaller.marshall(notebookExecutionSummary.getNotebookS3Location(), NOTEBOOKS3LOCATION_BINDING);
+            protocolMarshaller.marshall(notebookExecutionSummary.getExecutionEngineId(), EXECUTIONENGINEID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

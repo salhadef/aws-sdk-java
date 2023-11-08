@@ -30,7 +30,8 @@ public class MemberSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier used to reference members of the collaboration. Currently only supports AWS Account ID.
+     * The identifier used to reference members of the collaboration. Currently only supports Amazon Web Services
+     * account ID.
      * </p>
      */
     private String accountId;
@@ -79,11 +80,13 @@ public class MemberSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier used to reference members of the collaboration. Currently only supports AWS Account ID.
+     * The identifier used to reference members of the collaboration. Currently only supports Amazon Web Services
+     * account ID.
      * </p>
      * 
      * @param accountId
-     *        The identifier used to reference members of the collaboration. Currently only supports AWS Account ID.
+     *        The identifier used to reference members of the collaboration. Currently only supports Amazon Web Services
+     *        account ID.
      */
 
     public void setAccountId(String accountId) {
@@ -92,10 +95,12 @@ public class MemberSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier used to reference members of the collaboration. Currently only supports AWS Account ID.
+     * The identifier used to reference members of the collaboration. Currently only supports Amazon Web Services
+     * account ID.
      * </p>
      * 
-     * @return The identifier used to reference members of the collaboration. Currently only supports AWS Account ID.
+     * @return The identifier used to reference members of the collaboration. Currently only supports Amazon Web
+     *         Services account ID.
      */
 
     public String getAccountId() {
@@ -104,11 +109,13 @@ public class MemberSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier used to reference members of the collaboration. Currently only supports AWS Account ID.
+     * The identifier used to reference members of the collaboration. Currently only supports Amazon Web Services
+     * account ID.
      * </p>
      * 
      * @param accountId
-     *        The identifier used to reference members of the collaboration. Currently only supports AWS Account ID.
+     *        The identifier used to reference members of the collaboration. Currently only supports Amazon Web Services
+     *        account ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

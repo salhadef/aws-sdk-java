@@ -126,9 +126,8 @@ public interface AmazonSageMakerRuntimeAsync extends AmazonSageMakerRuntime {
      * contain the result of the inference request but contain information about where you can locate it.
      * </p>
      * <p>
-     * Amazon SageMaker strips all <code>POST</code> headers except those supported by the API. Amazon SageMaker might
-     * add additional headers. You should not rely on the behavior of headers outside those enumerated in the request
-     * syntax.
+     * Amazon SageMaker strips all POST headers except those supported by the API. Amazon SageMaker might add additional
+     * headers. You should not rely on the behavior of headers outside those enumerated in the request syntax.
      * </p>
      * <p>
      * Calls to <code>InvokeEndpointAsync</code> are authenticated by using Amazon Web Services Signature Version 4. For
@@ -156,9 +155,8 @@ public interface AmazonSageMakerRuntimeAsync extends AmazonSageMakerRuntime {
      * contain the result of the inference request but contain information about where you can locate it.
      * </p>
      * <p>
-     * Amazon SageMaker strips all <code>POST</code> headers except those supported by the API. Amazon SageMaker might
-     * add additional headers. You should not rely on the behavior of headers outside those enumerated in the request
-     * syntax.
+     * Amazon SageMaker strips all POST headers except those supported by the API. Amazon SageMaker might add additional
+     * headers. You should not rely on the behavior of headers outside those enumerated in the request syntax.
      * </p>
      * <p>
      * Calls to <code>InvokeEndpointAsync</code> are authenticated by using Amazon Web Services Signature Version 4. For

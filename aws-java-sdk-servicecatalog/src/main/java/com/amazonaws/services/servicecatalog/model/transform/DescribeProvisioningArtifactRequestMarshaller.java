@@ -39,6 +39,8 @@ public class DescribeProvisioningArtifactRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProductName").build();
     private static final MarshallingInfo<Boolean> VERBOSE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Verbose").build();
+    private static final MarshallingInfo<Boolean> INCLUDEPROVISIONINGARTIFACTPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IncludeProvisioningArtifactParameters").build();
 
     private static final DescribeProvisioningArtifactRequestMarshaller instance = new DescribeProvisioningArtifactRequestMarshaller();
 
@@ -62,6 +64,8 @@ public class DescribeProvisioningArtifactRequestMarshaller {
             protocolMarshaller.marshall(describeProvisioningArtifactRequest.getProvisioningArtifactName(), PROVISIONINGARTIFACTNAME_BINDING);
             protocolMarshaller.marshall(describeProvisioningArtifactRequest.getProductName(), PRODUCTNAME_BINDING);
             protocolMarshaller.marshall(describeProvisioningArtifactRequest.getVerbose(), VERBOSE_BINDING);
+            protocolMarshaller.marshall(describeProvisioningArtifactRequest.getIncludeProvisioningArtifactParameters(),
+                    INCLUDEPROVISIONINGARTIFACTPARAMETERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

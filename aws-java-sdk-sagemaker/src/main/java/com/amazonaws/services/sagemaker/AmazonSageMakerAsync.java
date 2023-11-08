@@ -425,17 +425,32 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Creates an Autopilot job.
+     * Creates an Autopilot job also referred to as Autopilot experiment or AutoML job.
+     * </p>
+     * <note>
+     * <p>
+     * We recommend using the new versions <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>
+     * and <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJobV2.html">
+     * DescribeAutoMLJobV2</a>, which offer backward compatibility.
      * </p>
      * <p>
-     * Find the best-performing model after you run an Autopilot job by calling <a
+     * <code>CreateAutoMLJobV2</code> can manage tabular problem types identical to those of its previous version
+     * <code>CreateAutoMLJob</code>, as well as time-series forecasting, non-tabular problem types such as image or text
+     * classification, and text generation (LLMs fine-tuning).
+     * </p>
+     * <p>
+     * Find guidelines about how to migrate a <code>CreateAutoMLJob</code> to <code>CreateAutoMLJobV2</code> in <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-create-experiment-api.html#autopilot-create-experiment-api-migrate-v1-v2"
+     * >Migrate a CreateAutoMLJob to CreateAutoMLJobV2</a>.
+     * </p>
+     * </note>
+     * <p>
+     * You can find the best-performing model after you run an AutoML job by calling <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJobV2.html"
+     * >DescribeAutoMLJobV2</a> (recommended) or <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJob.html"
      * >DescribeAutoMLJob</a>.
-     * </p>
-     * <p>
-     * For information about how to use Autopilot, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development.html">Automate Model
-     * Development with Amazon SageMaker Autopilot</a>.
      * </p>
      * 
      * @param createAutoMLJobRequest
@@ -448,17 +463,32 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Creates an Autopilot job.
+     * Creates an Autopilot job also referred to as Autopilot experiment or AutoML job.
+     * </p>
+     * <note>
+     * <p>
+     * We recommend using the new versions <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>
+     * and <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJobV2.html">
+     * DescribeAutoMLJobV2</a>, which offer backward compatibility.
      * </p>
      * <p>
-     * Find the best-performing model after you run an Autopilot job by calling <a
+     * <code>CreateAutoMLJobV2</code> can manage tabular problem types identical to those of its previous version
+     * <code>CreateAutoMLJob</code>, as well as time-series forecasting, non-tabular problem types such as image or text
+     * classification, and text generation (LLMs fine-tuning).
+     * </p>
+     * <p>
+     * Find guidelines about how to migrate a <code>CreateAutoMLJob</code> to <code>CreateAutoMLJobV2</code> in <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-create-experiment-api.html#autopilot-create-experiment-api-migrate-v1-v2"
+     * >Migrate a CreateAutoMLJob to CreateAutoMLJobV2</a>.
+     * </p>
+     * </note>
+     * <p>
+     * You can find the best-performing model after you run an AutoML job by calling <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJobV2.html"
+     * >DescribeAutoMLJobV2</a> (recommended) or <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJob.html"
      * >DescribeAutoMLJob</a>.
-     * </p>
-     * <p>
-     * For information about how to use Autopilot, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development.html">Automate Model
-     * Development with Amazon SageMaker Autopilot</a>.
      * </p>
      * 
      * @param createAutoMLJobRequest
@@ -476,24 +506,40 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Creates an Amazon SageMaker AutoML job that uses non-tabular data such as images or text for Computer Vision or
-     * Natural Language Processing problems.
-     * </p>
-     * <p>
-     * Find the resulting model after you run an AutoML job V2 by calling <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJobV2.html"
-     * >DescribeAutoMLJobV2</a>.
-     * </p>
-     * <p>
-     * To create an <code>AutoMLJob</code> using tabular data, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html">CreateAutoMLJob</a>.
+     * Creates an Autopilot job also referred to as Autopilot experiment or AutoML job V2.
      * </p>
      * <note>
      * <p>
-     * This API action is callable through SageMaker Canvas only. Calling it directly from the CLI or an SDK results in
-     * an error.
+     * <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>
+     * and <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJobV2.html">
+     * DescribeAutoMLJobV2</a> are new versions of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html">CreateAutoMLJob</a> and
+     * <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJob.html">DescribeAutoMLJob</a>
+     * which offer backward compatibility.
+     * </p>
+     * <p>
+     * <code>CreateAutoMLJobV2</code> can manage tabular problem types identical to those of its previous version
+     * <code>CreateAutoMLJob</code>, as well as time-series forecasting, non-tabular problem types such as image or text
+     * classification, and text generation (LLMs fine-tuning).
+     * </p>
+     * <p>
+     * Find guidelines about how to migrate a <code>CreateAutoMLJob</code> to <code>CreateAutoMLJobV2</code> in <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-create-experiment-api.html#autopilot-create-experiment-api-migrate-v1-v2"
+     * >Migrate a CreateAutoMLJob to CreateAutoMLJobV2</a>.
      * </p>
      * </note>
+     * <p>
+     * For the list of available problem types supported by <code>CreateAutoMLJobV2</code>, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLProblemTypeConfig.html"
+     * >AutoMLProblemTypeConfig</a>.
+     * </p>
+     * <p>
+     * You can find the best-performing model after you run an AutoML job V2 by calling <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJobV2.html"
+     * >DescribeAutoMLJobV2</a>.
+     * </p>
      * 
      * @param createAutoMLJobV2Request
      * @return A Java Future containing the result of the CreateAutoMLJobV2 operation returned by the service.
@@ -505,24 +551,40 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Creates an Amazon SageMaker AutoML job that uses non-tabular data such as images or text for Computer Vision or
-     * Natural Language Processing problems.
-     * </p>
-     * <p>
-     * Find the resulting model after you run an AutoML job V2 by calling <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJobV2.html"
-     * >DescribeAutoMLJobV2</a>.
-     * </p>
-     * <p>
-     * To create an <code>AutoMLJob</code> using tabular data, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html">CreateAutoMLJob</a>.
+     * Creates an Autopilot job also referred to as Autopilot experiment or AutoML job V2.
      * </p>
      * <note>
      * <p>
-     * This API action is callable through SageMaker Canvas only. Calling it directly from the CLI or an SDK results in
-     * an error.
+     * <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>
+     * and <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJobV2.html">
+     * DescribeAutoMLJobV2</a> are new versions of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html">CreateAutoMLJob</a> and
+     * <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJob.html">DescribeAutoMLJob</a>
+     * which offer backward compatibility.
+     * </p>
+     * <p>
+     * <code>CreateAutoMLJobV2</code> can manage tabular problem types identical to those of its previous version
+     * <code>CreateAutoMLJob</code>, as well as time-series forecasting, non-tabular problem types such as image or text
+     * classification, and text generation (LLMs fine-tuning).
+     * </p>
+     * <p>
+     * Find guidelines about how to migrate a <code>CreateAutoMLJob</code> to <code>CreateAutoMLJobV2</code> in <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-create-experiment-api.html#autopilot-create-experiment-api-migrate-v1-v2"
+     * >Migrate a CreateAutoMLJob to CreateAutoMLJobV2</a>.
      * </p>
      * </note>
+     * <p>
+     * For the list of available problem types supported by <code>CreateAutoMLJobV2</code>, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLProblemTypeConfig.html"
+     * >AutoMLProblemTypeConfig</a>.
+     * </p>
+     * <p>
+     * You can find the best-performing model after you run an AutoML job V2 by calling <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJobV2.html"
+     * >DescribeAutoMLJobV2</a>.
+     * </p>
      * 
      * @param createAutoMLJobV2Request
      * @param asyncHandler
@@ -1064,11 +1126,6 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * <p>
      * Use this API to deploy models using SageMaker hosting services.
      * </p>
-     * <p>
-     * For an example that calls this method when deploying a model to SageMaker hosting services, see the <a href=
-     * "https://github.com/aws/amazon-sagemaker-examples/blob/master/sagemaker-fundamentals/create-endpoint/create_endpoint.ipynb"
-     * >Create Endpoint example notebook.</a>
-     * </p>
      * <note>
      * <p>
      * You must not delete an <code>EndpointConfig</code> that is in use by an endpoint that is live or while the
@@ -1177,11 +1234,6 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * </p>
      * <p>
      * Use this API to deploy models using SageMaker hosting services.
-     * </p>
-     * <p>
-     * For an example that calls this method when deploying a model to SageMaker hosting services, see the <a href=
-     * "https://github.com/aws/amazon-sagemaker-examples/blob/master/sagemaker-fundamentals/create-endpoint/create_endpoint.ipynb"
-     * >Create Endpoint example notebook.</a>
      * </p>
      * <note>
      * <p>
@@ -1505,12 +1557,16 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * in the <code>FeatureStore</code> to describe a <code>Record</code>.
      * </p>
      * <p>
-     * The <code>FeatureGroup</code> defines the schema and features contained in the FeatureGroup. A
+     * The <code>FeatureGroup</code> defines the schema and features contained in the <code>FeatureGroup</code>. A
      * <code>FeatureGroup</code> definition is composed of a list of <code>Features</code>, a
      * <code>RecordIdentifierFeatureName</code>, an <code>EventTimeFeatureName</code> and configurations for its
      * <code>OnlineStore</code> and <code>OfflineStore</code>. Check <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">Amazon Web Services service
      * quotas</a> to see the <code>FeatureGroup</code>s quota for your Amazon Web Services account.
+     * </p>
+     * <p>
+     * Note that it can take approximately 10-15 minutes to provision an <code>OnlineStore</code>
+     * <code>FeatureGroup</code> with the <code>InMemory</code> <code>StorageType</code>.
      * </p>
      * <important>
      * <p>
@@ -1533,12 +1589,16 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * in the <code>FeatureStore</code> to describe a <code>Record</code>.
      * </p>
      * <p>
-     * The <code>FeatureGroup</code> defines the schema and features contained in the FeatureGroup. A
+     * The <code>FeatureGroup</code> defines the schema and features contained in the <code>FeatureGroup</code>. A
      * <code>FeatureGroup</code> definition is composed of a list of <code>Features</code>, a
      * <code>RecordIdentifierFeatureName</code>, an <code>EventTimeFeatureName</code> and configurations for its
      * <code>OnlineStore</code> and <code>OfflineStore</code>. Check <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">Amazon Web Services service
      * quotas</a> to see the <code>FeatureGroup</code>s quota for your Amazon Web Services account.
+     * </p>
+     * <p>
+     * Note that it can take approximately 10-15 minutes to provision an <code>OnlineStore</code>
+     * <code>FeatureGroup</code> with the <code>InMemory</code> <code>StorageType</code>.
      * </p>
      * <important>
      * <p>
@@ -4118,6 +4178,10 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * Data written into the <code>OfflineStore</code> will not be deleted. The Amazon Web Services Glue database and
      * tables that are automatically created for your <code>OfflineStore</code> are not deleted.
      * </p>
+     * <p>
+     * Note that it can take approximately 10-15 minutes to delete an <code>OnlineStore</code> <code>FeatureGroup</code>
+     * with the <code>InMemory</code> <code>StorageType</code>.
+     * </p>
      * 
      * @param deleteFeatureGroupRequest
      * @return A Java Future containing the result of the DeleteFeatureGroup operation returned by the service.
@@ -4136,6 +4200,10 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * <p>
      * Data written into the <code>OfflineStore</code> will not be deleted. The Amazon Web Services Glue database and
      * tables that are automatically created for your <code>OfflineStore</code> are not deleted.
+     * </p>
+     * <p>
+     * Note that it can take approximately 10-15 minutes to delete an <code>OnlineStore</code> <code>FeatureGroup</code>
+     * with the <code>InMemory</code> <code>StorageType</code>.
      * </p>
      * 
      * @param deleteFeatureGroupRequest
@@ -5377,8 +5445,16 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Returns information about an Amazon SageMaker AutoML job.
+     * Returns information about an AutoML job created by calling <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html">CreateAutoMLJob</a>.
      * </p>
+     * <note>
+     * <p>
+     * AutoML jobs created by calling <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>
+     * cannot be described by <code>DescribeAutoMLJob</code>.
+     * </p>
+     * </note>
      * 
      * @param describeAutoMLJobRequest
      * @return A Java Future containing the result of the DescribeAutoMLJob operation returned by the service.
@@ -5390,8 +5466,16 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Returns information about an Amazon SageMaker AutoML job.
+     * Returns information about an AutoML job created by calling <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html">CreateAutoMLJob</a>.
      * </p>
+     * <note>
+     * <p>
+     * AutoML jobs created by calling <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>
+     * cannot be described by <code>DescribeAutoMLJob</code>.
+     * </p>
+     * </note>
      * 
      * @param describeAutoMLJobRequest
      * @param asyncHandler
@@ -5408,14 +5492,11 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Returns information about an Amazon SageMaker AutoML V2 job.
+     * Returns information about an AutoML job created by calling <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html">CreateAutoMLJob</a>.
      * </p>
-     * <note>
-     * <p>
-     * This API action is callable through SageMaker Canvas only. Calling it directly from the CLI or an SDK results in
-     * an error.
-     * </p>
-     * </note>
      * 
      * @param describeAutoMLJobV2Request
      * @return A Java Future containing the result of the DescribeAutoMLJobV2 operation returned by the service.
@@ -5427,14 +5508,11 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Returns information about an Amazon SageMaker AutoML V2 job.
+     * Returns information about an AutoML job created by calling <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html">CreateAutoMLJob</a>.
      * </p>
-     * <note>
-     * <p>
-     * This API action is callable through SageMaker Canvas only. Calling it directly from the CLI or an SDK results in
-     * an error.
-     * </p>
-     * </note>
      * 
      * @param describeAutoMLJobV2Request
      * @param asyncHandler
@@ -6051,7 +6129,8 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Gets a description of a hyperparameter tuning job.
+     * Returns a description of a hyperparameter tuning job, depending on the fields selected. These fields can include
+     * the name, Amazon Resource Name (ARN), job status of your tuning job and more.
      * </p>
      * 
      * @param describeHyperParameterTuningJobRequest
@@ -6066,7 +6145,8 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Gets a description of a hyperparameter tuning job.
+     * Returns a description of a hyperparameter tuning job, depending on the fields selected. These fields can include
+     * the name, Amazon Resource Name (ARN), job status of your tuning job and more.
      * </p>
      * 
      * @param describeHyperParameterTuningJobRequest
@@ -7436,6 +7516,43 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
     java.util.concurrent.Future<GetSagemakerServicecatalogPortfolioStatusResult> getSagemakerServicecatalogPortfolioStatusAsync(
             GetSagemakerServicecatalogPortfolioStatusRequest getSagemakerServicecatalogPortfolioStatusRequest,
             com.amazonaws.handlers.AsyncHandler<GetSagemakerServicecatalogPortfolioStatusRequest, GetSagemakerServicecatalogPortfolioStatusResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts an Amazon SageMaker Inference Recommender autoscaling recommendation job. Returns recommendations for
+     * autoscaling policies that you can apply to your SageMaker endpoint.
+     * </p>
+     * 
+     * @param getScalingConfigurationRecommendationRequest
+     * @return A Java Future containing the result of the GetScalingConfigurationRecommendation operation returned by
+     *         the service.
+     * @sample AmazonSageMakerAsync.GetScalingConfigurationRecommendation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetScalingConfigurationRecommendation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetScalingConfigurationRecommendationResult> getScalingConfigurationRecommendationAsync(
+            GetScalingConfigurationRecommendationRequest getScalingConfigurationRecommendationRequest);
+
+    /**
+     * <p>
+     * Starts an Amazon SageMaker Inference Recommender autoscaling recommendation job. Returns recommendations for
+     * autoscaling policies that you can apply to your SageMaker endpoint.
+     * </p>
+     * 
+     * @param getScalingConfigurationRecommendationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetScalingConfigurationRecommendation operation returned by
+     *         the service.
+     * @sample AmazonSageMakerAsyncHandler.GetScalingConfigurationRecommendation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetScalingConfigurationRecommendation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetScalingConfigurationRecommendationResult> getScalingConfigurationRecommendationAsync(
+            GetScalingConfigurationRecommendationRequest getScalingConfigurationRecommendationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetScalingConfigurationRecommendationRequest, GetScalingConfigurationRecommendationResult> asyncHandler);
 
     /**
      * <p>
@@ -9427,6 +9544,39 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
+     * Lists Amazon SageMaker Catalogs based on given filters and orders. The maximum number of
+     * <code>ResourceCatalog</code>s viewable is 1000.
+     * </p>
+     * 
+     * @param listResourceCatalogsRequest
+     * @return A Java Future containing the result of the ListResourceCatalogs operation returned by the service.
+     * @sample AmazonSageMakerAsync.ListResourceCatalogs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListResourceCatalogs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListResourceCatalogsResult> listResourceCatalogsAsync(ListResourceCatalogsRequest listResourceCatalogsRequest);
+
+    /**
+     * <p>
+     * Lists Amazon SageMaker Catalogs based on given filters and orders. The maximum number of
+     * <code>ResourceCatalog</code>s viewable is 1000.
+     * </p>
+     * 
+     * @param listResourceCatalogsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListResourceCatalogs operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.ListResourceCatalogs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListResourceCatalogs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListResourceCatalogsResult> listResourceCatalogsAsync(ListResourceCatalogsRequest listResourceCatalogsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListResourceCatalogsRequest, ListResourceCatalogsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists spaces.
      * </p>
      * 
@@ -11366,7 +11516,19 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Updates the feature group.
+     * Updates the feature group by either adding features or updating the online store configuration. Use one of the
+     * following request parameters at a time while using the <code>UpdateFeatureGroup</code> API.
+     * </p>
+     * <p>
+     * You can add features for your feature group using the <code>FeatureAdditions</code> request parameter. Features
+     * cannot be removed from a feature group.
+     * </p>
+     * <p>
+     * You can update the online store configuration by using the <code>OnlineStoreConfig</code> request parameter. If a
+     * <code>TtlDuration</code> is specified, the default <code>TtlDuration</code> applies for all records added to the
+     * feature group <i>after the feature group is updated</i>. If a record level <code>TtlDuration</code> exists from
+     * using the <code>PutRecord</code> API, the record level <code>TtlDuration</code> applies to that record instead of
+     * the default <code>TtlDuration</code>.
      * </p>
      * 
      * @param updateFeatureGroupRequest
@@ -11379,7 +11541,19 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Updates the feature group.
+     * Updates the feature group by either adding features or updating the online store configuration. Use one of the
+     * following request parameters at a time while using the <code>UpdateFeatureGroup</code> API.
+     * </p>
+     * <p>
+     * You can add features for your feature group using the <code>FeatureAdditions</code> request parameter. Features
+     * cannot be removed from a feature group.
+     * </p>
+     * <p>
+     * You can update the online store configuration by using the <code>OnlineStoreConfig</code> request parameter. If a
+     * <code>TtlDuration</code> is specified, the default <code>TtlDuration</code> applies for all records added to the
+     * feature group <i>after the feature group is updated</i>. If a record level <code>TtlDuration</code> exists from
+     * using the <code>PutRecord</code> API, the record level <code>TtlDuration</code> applies to that record instead of
+     * the default <code>TtlDuration</code>.
      * </p>
      * 
      * @param updateFeatureGroupRequest

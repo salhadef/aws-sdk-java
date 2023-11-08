@@ -47,6 +47,11 @@ public class NetworkInterfaceIpv6AddressStaxUnmarshaller implements Unmarshaller
                     networkInterfaceIpv6Address.setIpv6Address(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("isPrimaryIpv6", targetDepth)) {
+                    networkInterfaceIpv6Address.setIsPrimaryIpv6(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return networkInterfaceIpv6Address;

@@ -49,6 +49,34 @@ public interface AmazonAppIntegrations {
 
     /**
      * <p>
+     * This API is in preview release and subject to change.
+     * </p>
+     * <p>
+     * Creates and persists an Application resource.
+     * </p>
+     * 
+     * @param createApplicationRequest
+     * @return Result of the CreateApplication operation returned by the service.
+     * @throws InternalServiceErrorException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws ResourceQuotaExceededException
+     *         The allowed quota for the resource has been exceeded.
+     * @throws DuplicateResourceException
+     *         A resource with the specified name already exists.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AmazonAppIntegrations.CreateApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/CreateApplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateApplicationResult createApplication(CreateApplicationRequest createApplicationRequest);
+
+    /**
+     * <p>
      * Creates and persists a DataIntegration resource.
      * </p>
      * <note>
@@ -163,6 +191,32 @@ public interface AmazonAppIntegrations {
 
     /**
      * <p>
+     * This API is in preview release and subject to change.
+     * </p>
+     * <p>
+     * Get an Application resource.
+     * </p>
+     * 
+     * @param getApplicationRequest
+     * @return Result of the GetApplication operation returned by the service.
+     * @throws InternalServiceErrorException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AmazonAppIntegrations.GetApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/GetApplication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetApplicationResult getApplication(GetApplicationRequest getApplicationRequest);
+
+    /**
+     * <p>
      * Returns information about the DataIntegration.
      * </p>
      * <note>
@@ -214,6 +268,30 @@ public interface AmazonAppIntegrations {
      *      target="_top">AWS API Documentation</a>
      */
     GetEventIntegrationResult getEventIntegration(GetEventIntegrationRequest getEventIntegrationRequest);
+
+    /**
+     * <p>
+     * This API is in preview release and subject to change.
+     * </p>
+     * <p>
+     * Lists applications in the account.
+     * </p>
+     * 
+     * @param listApplicationsRequest
+     * @return Result of the ListApplications operation returned by the service.
+     * @throws InternalServiceErrorException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AmazonAppIntegrations.ListApplications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/ListApplications"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListApplicationsResult listApplications(ListApplicationsRequest listApplicationsRequest);
 
     /**
      * <p>
@@ -381,6 +459,32 @@ public interface AmazonAppIntegrations {
      *      API Documentation</a>
      */
     UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * This API is in preview release and subject to change.
+     * </p>
+     * <p>
+     * Updates and persists an Application resource.
+     * </p>
+     * 
+     * @param updateApplicationRequest
+     * @return Result of the UpdateApplication operation returned by the service.
+     * @throws InternalServiceErrorException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AmazonAppIntegrations.UpdateApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/UpdateApplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateApplicationResult updateApplication(UpdateApplicationRequest updateApplicationRequest);
 
     /**
      * <p>

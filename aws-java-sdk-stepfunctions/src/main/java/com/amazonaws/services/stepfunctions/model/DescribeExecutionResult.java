@@ -88,7 +88,7 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
     private java.util.Date startDate;
     /**
      * <p>
-     * If the execution has already ended, the date the execution stopped.
+     * If the execution ended, the date the execution stopped.
      * </p>
      */
     private java.util.Date stopDate;
@@ -139,6 +139,30 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      */
     private String cause;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the state machine version associated with the execution. The version ARN is a
+     * combination of state machine ARN and the version number separated by a colon (:). For example,
+     * <code>stateMachineARN:1</code>.
+     * </p>
+     * <p>
+     * If you start an execution from a <code>StartExecution</code> request without specifying a state machine version
+     * or alias ARN, Step Functions returns a null value.
+     * </p>
+     */
+    private String stateMachineVersionArn;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the state machine alias associated with the execution. The alias ARN is a
+     * combination of state machine ARN and the alias name separated by a colon (:). For example,
+     * <code>stateMachineARN:PROD</code>.
+     * </p>
+     * <p>
+     * If you start an execution from a <code>StartExecution</code> request with a state machine version ARN, this field
+     * will be null.
+     * </p>
+     */
+    private String stateMachineAliasArn;
 
     /**
      * <p>
@@ -570,11 +594,11 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * If the execution has already ended, the date the execution stopped.
+     * If the execution ended, the date the execution stopped.
      * </p>
      * 
      * @param stopDate
-     *        If the execution has already ended, the date the execution stopped.
+     *        If the execution ended, the date the execution stopped.
      */
 
     public void setStopDate(java.util.Date stopDate) {
@@ -583,10 +607,10 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * If the execution has already ended, the date the execution stopped.
+     * If the execution ended, the date the execution stopped.
      * </p>
      * 
-     * @return If the execution has already ended, the date the execution stopped.
+     * @return If the execution ended, the date the execution stopped.
      */
 
     public java.util.Date getStopDate() {
@@ -595,11 +619,11 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * If the execution has already ended, the date the execution stopped.
+     * If the execution ended, the date the execution stopped.
      * </p>
      * 
      * @param stopDate
-     *        If the execution has already ended, the date the execution stopped.
+     *        If the execution ended, the date the execution stopped.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -937,6 +961,152 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the state machine version associated with the execution. The version ARN is a
+     * combination of state machine ARN and the version number separated by a colon (:). For example,
+     * <code>stateMachineARN:1</code>.
+     * </p>
+     * <p>
+     * If you start an execution from a <code>StartExecution</code> request without specifying a state machine version
+     * or alias ARN, Step Functions returns a null value.
+     * </p>
+     * 
+     * @param stateMachineVersionArn
+     *        The Amazon Resource Name (ARN) of the state machine version associated with the execution. The version ARN
+     *        is a combination of state machine ARN and the version number separated by a colon (:). For example,
+     *        <code>stateMachineARN:1</code>.</p>
+     *        <p>
+     *        If you start an execution from a <code>StartExecution</code> request without specifying a state machine
+     *        version or alias ARN, Step Functions returns a null value.
+     */
+
+    public void setStateMachineVersionArn(String stateMachineVersionArn) {
+        this.stateMachineVersionArn = stateMachineVersionArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the state machine version associated with the execution. The version ARN is a
+     * combination of state machine ARN and the version number separated by a colon (:). For example,
+     * <code>stateMachineARN:1</code>.
+     * </p>
+     * <p>
+     * If you start an execution from a <code>StartExecution</code> request without specifying a state machine version
+     * or alias ARN, Step Functions returns a null value.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the state machine version associated with the execution. The version
+     *         ARN is a combination of state machine ARN and the version number separated by a colon (:). For example,
+     *         <code>stateMachineARN:1</code>.</p>
+     *         <p>
+     *         If you start an execution from a <code>StartExecution</code> request without specifying a state machine
+     *         version or alias ARN, Step Functions returns a null value.
+     */
+
+    public String getStateMachineVersionArn() {
+        return this.stateMachineVersionArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the state machine version associated with the execution. The version ARN is a
+     * combination of state machine ARN and the version number separated by a colon (:). For example,
+     * <code>stateMachineARN:1</code>.
+     * </p>
+     * <p>
+     * If you start an execution from a <code>StartExecution</code> request without specifying a state machine version
+     * or alias ARN, Step Functions returns a null value.
+     * </p>
+     * 
+     * @param stateMachineVersionArn
+     *        The Amazon Resource Name (ARN) of the state machine version associated with the execution. The version ARN
+     *        is a combination of state machine ARN and the version number separated by a colon (:). For example,
+     *        <code>stateMachineARN:1</code>.</p>
+     *        <p>
+     *        If you start an execution from a <code>StartExecution</code> request without specifying a state machine
+     *        version or alias ARN, Step Functions returns a null value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeExecutionResult withStateMachineVersionArn(String stateMachineVersionArn) {
+        setStateMachineVersionArn(stateMachineVersionArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the state machine alias associated with the execution. The alias ARN is a
+     * combination of state machine ARN and the alias name separated by a colon (:). For example,
+     * <code>stateMachineARN:PROD</code>.
+     * </p>
+     * <p>
+     * If you start an execution from a <code>StartExecution</code> request with a state machine version ARN, this field
+     * will be null.
+     * </p>
+     * 
+     * @param stateMachineAliasArn
+     *        The Amazon Resource Name (ARN) of the state machine alias associated with the execution. The alias ARN is
+     *        a combination of state machine ARN and the alias name separated by a colon (:). For example,
+     *        <code>stateMachineARN:PROD</code>.</p>
+     *        <p>
+     *        If you start an execution from a <code>StartExecution</code> request with a state machine version ARN,
+     *        this field will be null.
+     */
+
+    public void setStateMachineAliasArn(String stateMachineAliasArn) {
+        this.stateMachineAliasArn = stateMachineAliasArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the state machine alias associated with the execution. The alias ARN is a
+     * combination of state machine ARN and the alias name separated by a colon (:). For example,
+     * <code>stateMachineARN:PROD</code>.
+     * </p>
+     * <p>
+     * If you start an execution from a <code>StartExecution</code> request with a state machine version ARN, this field
+     * will be null.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the state machine alias associated with the execution. The alias ARN is
+     *         a combination of state machine ARN and the alias name separated by a colon (:). For example,
+     *         <code>stateMachineARN:PROD</code>.</p>
+     *         <p>
+     *         If you start an execution from a <code>StartExecution</code> request with a state machine version ARN,
+     *         this field will be null.
+     */
+
+    public String getStateMachineAliasArn() {
+        return this.stateMachineAliasArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the state machine alias associated with the execution. The alias ARN is a
+     * combination of state machine ARN and the alias name separated by a colon (:). For example,
+     * <code>stateMachineARN:PROD</code>.
+     * </p>
+     * <p>
+     * If you start an execution from a <code>StartExecution</code> request with a state machine version ARN, this field
+     * will be null.
+     * </p>
+     * 
+     * @param stateMachineAliasArn
+     *        The Amazon Resource Name (ARN) of the state machine alias associated with the execution. The alias ARN is
+     *        a combination of state machine ARN and the alias name separated by a colon (:). For example,
+     *        <code>stateMachineARN:PROD</code>.</p>
+     *        <p>
+     *        If you start an execution from a <code>StartExecution</code> request with a state machine version ARN,
+     *        this field will be null.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeExecutionResult withStateMachineAliasArn(String stateMachineAliasArn) {
+        setStateMachineAliasArn(stateMachineAliasArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -975,7 +1145,11 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
         if (getError() != null)
             sb.append("Error: ").append("***Sensitive Data Redacted***").append(",");
         if (getCause() != null)
-            sb.append("Cause: ").append("***Sensitive Data Redacted***");
+            sb.append("Cause: ").append("***Sensitive Data Redacted***").append(",");
+        if (getStateMachineVersionArn() != null)
+            sb.append("StateMachineVersionArn: ").append(getStateMachineVersionArn()).append(",");
+        if (getStateMachineAliasArn() != null)
+            sb.append("StateMachineAliasArn: ").append(getStateMachineAliasArn());
         sb.append("}");
         return sb.toString();
     }
@@ -1046,6 +1220,14 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getCause() != null && other.getCause().equals(this.getCause()) == false)
             return false;
+        if (other.getStateMachineVersionArn() == null ^ this.getStateMachineVersionArn() == null)
+            return false;
+        if (other.getStateMachineVersionArn() != null && other.getStateMachineVersionArn().equals(this.getStateMachineVersionArn()) == false)
+            return false;
+        if (other.getStateMachineAliasArn() == null ^ this.getStateMachineAliasArn() == null)
+            return false;
+        if (other.getStateMachineAliasArn() != null && other.getStateMachineAliasArn().equals(this.getStateMachineAliasArn()) == false)
+            return false;
         return true;
     }
 
@@ -1068,6 +1250,8 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
         hashCode = prime * hashCode + ((getMapRunArn() == null) ? 0 : getMapRunArn().hashCode());
         hashCode = prime * hashCode + ((getError() == null) ? 0 : getError().hashCode());
         hashCode = prime * hashCode + ((getCause() == null) ? 0 : getCause().hashCode());
+        hashCode = prime * hashCode + ((getStateMachineVersionArn() == null) ? 0 : getStateMachineVersionArn().hashCode());
+        hashCode = prime * hashCode + ((getStateMachineAliasArn() == null) ? 0 : getStateMachineAliasArn().hashCode());
         return hashCode;
     }
 

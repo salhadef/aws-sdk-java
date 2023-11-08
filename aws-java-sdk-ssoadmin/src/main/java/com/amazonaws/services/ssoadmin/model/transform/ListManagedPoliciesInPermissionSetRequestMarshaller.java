@@ -29,12 +29,12 @@ public class ListManagedPoliciesInPermissionSetRequestMarshaller {
 
     private static final MarshallingInfo<String> INSTANCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceArn").build();
-    private static final MarshallingInfo<String> PERMISSIONSETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PermissionSetArn").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("NextToken").build();
+    private static final MarshallingInfo<String> PERMISSIONSETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PermissionSetArn").build();
 
     private static final ListManagedPoliciesInPermissionSetRequestMarshaller instance = new ListManagedPoliciesInPermissionSetRequestMarshaller();
 
@@ -53,9 +53,9 @@ public class ListManagedPoliciesInPermissionSetRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(listManagedPoliciesInPermissionSetRequest.getInstanceArn(), INSTANCEARN_BINDING);
-            protocolMarshaller.marshall(listManagedPoliciesInPermissionSetRequest.getPermissionSetArn(), PERMISSIONSETARN_BINDING);
             protocolMarshaller.marshall(listManagedPoliciesInPermissionSetRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listManagedPoliciesInPermissionSetRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listManagedPoliciesInPermissionSetRequest.getPermissionSetArn(), PERMISSIONSETARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

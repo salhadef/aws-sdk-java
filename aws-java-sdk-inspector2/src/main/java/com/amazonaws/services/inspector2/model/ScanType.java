@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum ScanType {
 
     NETWORK("NETWORK"),
-    PACKAGE("PACKAGE");
+    PACKAGE("PACKAGE"),
+    CODE("CODE");
 
     private String value;
 

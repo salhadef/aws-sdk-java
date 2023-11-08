@@ -74,10 +74,7 @@ public class SecurityControl implements Serializable, Cloneable, StructuredPojo 
     private String severityRating;
     /**
      * <p>
-     * The status of a security control based on the compliance status of its findings. For more information about how
-     * control status is determined, see <a
-     * href="https://docs.aws.amazon.com/securityhub/latest/userguide/controls-overall-status.html">Determining the
-     * overall status of a control from its findings</a> in the <i>Security Hub User Guide</i>.
+     * The enablement status of a security control in a specific standard.
      * </p>
      */
     private String securityControlStatus;
@@ -400,17 +397,11 @@ public class SecurityControl implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The status of a security control based on the compliance status of its findings. For more information about how
-     * control status is determined, see <a
-     * href="https://docs.aws.amazon.com/securityhub/latest/userguide/controls-overall-status.html">Determining the
-     * overall status of a control from its findings</a> in the <i>Security Hub User Guide</i>.
+     * The enablement status of a security control in a specific standard.
      * </p>
      * 
      * @param securityControlStatus
-     *        The status of a security control based on the compliance status of its findings. For more information
-     *        about how control status is determined, see <a
-     *        href="https://docs.aws.amazon.com/securityhub/latest/userguide/controls-overall-status.html">Determining
-     *        the overall status of a control from its findings</a> in the <i>Security Hub User Guide</i>.
+     *        The enablement status of a security control in a specific standard.
      * @see ControlStatus
      */
 
@@ -420,16 +411,10 @@ public class SecurityControl implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The status of a security control based on the compliance status of its findings. For more information about how
-     * control status is determined, see <a
-     * href="https://docs.aws.amazon.com/securityhub/latest/userguide/controls-overall-status.html">Determining the
-     * overall status of a control from its findings</a> in the <i>Security Hub User Guide</i>.
+     * The enablement status of a security control in a specific standard.
      * </p>
      * 
-     * @return The status of a security control based on the compliance status of its findings. For more information
-     *         about how control status is determined, see <a
-     *         href="https://docs.aws.amazon.com/securityhub/latest/userguide/controls-overall-status.html">Determining
-     *         the overall status of a control from its findings</a> in the <i>Security Hub User Guide</i>.
+     * @return The enablement status of a security control in a specific standard.
      * @see ControlStatus
      */
 
@@ -439,17 +424,11 @@ public class SecurityControl implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The status of a security control based on the compliance status of its findings. For more information about how
-     * control status is determined, see <a
-     * href="https://docs.aws.amazon.com/securityhub/latest/userguide/controls-overall-status.html">Determining the
-     * overall status of a control from its findings</a> in the <i>Security Hub User Guide</i>.
+     * The enablement status of a security control in a specific standard.
      * </p>
      * 
      * @param securityControlStatus
-     *        The status of a security control based on the compliance status of its findings. For more information
-     *        about how control status is determined, see <a
-     *        href="https://docs.aws.amazon.com/securityhub/latest/userguide/controls-overall-status.html">Determining
-     *        the overall status of a control from its findings</a> in the <i>Security Hub User Guide</i>.
+     *        The enablement status of a security control in a specific standard.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ControlStatus
      */
@@ -461,17 +440,11 @@ public class SecurityControl implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The status of a security control based on the compliance status of its findings. For more information about how
-     * control status is determined, see <a
-     * href="https://docs.aws.amazon.com/securityhub/latest/userguide/controls-overall-status.html">Determining the
-     * overall status of a control from its findings</a> in the <i>Security Hub User Guide</i>.
+     * The enablement status of a security control in a specific standard.
      * </p>
      * 
      * @param securityControlStatus
-     *        The status of a security control based on the compliance status of its findings. For more information
-     *        about how control status is determined, see <a
-     *        href="https://docs.aws.amazon.com/securityhub/latest/userguide/controls-overall-status.html">Determining
-     *        the overall status of a control from its findings</a> in the <i>Security Hub User Guide</i>.
+     *        The enablement status of a security control in a specific standard.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ControlStatus
      */

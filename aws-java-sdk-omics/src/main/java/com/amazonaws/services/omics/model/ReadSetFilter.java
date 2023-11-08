@@ -30,6 +30,24 @@ public class ReadSetFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * A name to filter on.
+     * </p>
+     */
+    private String name;
+    /**
+     * <p>
+     * A status to filter on.
+     * </p>
+     */
+    private String status;
+    /**
+     * <p>
+     * A genome reference ARN to filter on.
+     * </p>
+     */
+    private String referenceArn;
+    /**
+     * <p>
      * The filter's start date.
      * </p>
      */
@@ -42,22 +60,167 @@ public class ReadSetFilter implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date createdBefore;
     /**
      * <p>
-     * A name to filter on.
+     * The read set source's sample ID.
      * </p>
      */
-    private String name;
+    private String sampleId;
     /**
      * <p>
-     * A genome reference ARN to filter on.
+     * The read set source's subject ID.
      * </p>
      */
-    private String referenceArn;
+    private String subjectId;
+    /**
+     * <p>
+     * Where the source originated.
+     * </p>
+     */
+    private String generatedFrom;
+    /**
+     * <p>
+     * The creation type of the read set.
+     * </p>
+     */
+    private String creationType;
+
+    /**
+     * <p>
+     * A name to filter on.
+     * </p>
+     * 
+     * @param name
+     *        A name to filter on.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * A name to filter on.
+     * </p>
+     * 
+     * @return A name to filter on.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * A name to filter on.
+     * </p>
+     * 
+     * @param name
+     *        A name to filter on.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReadSetFilter withName(String name) {
+        setName(name);
+        return this;
+    }
+
     /**
      * <p>
      * A status to filter on.
      * </p>
+     * 
+     * @param status
+     *        A status to filter on.
+     * @see ReadSetStatus
      */
-    private String status;
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * A status to filter on.
+     * </p>
+     * 
+     * @return A status to filter on.
+     * @see ReadSetStatus
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * A status to filter on.
+     * </p>
+     * 
+     * @param status
+     *        A status to filter on.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReadSetStatus
+     */
+
+    public ReadSetFilter withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A status to filter on.
+     * </p>
+     * 
+     * @param status
+     *        A status to filter on.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReadSetStatus
+     */
+
+    public ReadSetFilter withStatus(ReadSetStatus status) {
+        this.status = status.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * A genome reference ARN to filter on.
+     * </p>
+     * 
+     * @param referenceArn
+     *        A genome reference ARN to filter on.
+     */
+
+    public void setReferenceArn(String referenceArn) {
+        this.referenceArn = referenceArn;
+    }
+
+    /**
+     * <p>
+     * A genome reference ARN to filter on.
+     * </p>
+     * 
+     * @return A genome reference ARN to filter on.
+     */
+
+    public String getReferenceArn() {
+        return this.referenceArn;
+    }
+
+    /**
+     * <p>
+     * A genome reference ARN to filter on.
+     * </p>
+     * 
+     * @param referenceArn
+     *        A genome reference ARN to filter on.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReadSetFilter withReferenceArn(String referenceArn) {
+        setReferenceArn(referenceArn);
+        return this;
+    }
 
     /**
      * <p>
@@ -141,140 +304,180 @@ public class ReadSetFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A name to filter on.
+     * The read set source's sample ID.
      * </p>
      * 
-     * @param name
-     *        A name to filter on.
+     * @param sampleId
+     *        The read set source's sample ID.
      */
 
-    public void setName(String name) {
-        this.name = name;
+    public void setSampleId(String sampleId) {
+        this.sampleId = sampleId;
     }
 
     /**
      * <p>
-     * A name to filter on.
+     * The read set source's sample ID.
      * </p>
      * 
-     * @return A name to filter on.
+     * @return The read set source's sample ID.
      */
 
-    public String getName() {
-        return this.name;
+    public String getSampleId() {
+        return this.sampleId;
     }
 
     /**
      * <p>
-     * A name to filter on.
+     * The read set source's sample ID.
      * </p>
      * 
-     * @param name
-     *        A name to filter on.
+     * @param sampleId
+     *        The read set source's sample ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ReadSetFilter withName(String name) {
-        setName(name);
+    public ReadSetFilter withSampleId(String sampleId) {
+        setSampleId(sampleId);
         return this;
     }
 
     /**
      * <p>
-     * A genome reference ARN to filter on.
+     * The read set source's subject ID.
      * </p>
      * 
-     * @param referenceArn
-     *        A genome reference ARN to filter on.
+     * @param subjectId
+     *        The read set source's subject ID.
      */
 
-    public void setReferenceArn(String referenceArn) {
-        this.referenceArn = referenceArn;
+    public void setSubjectId(String subjectId) {
+        this.subjectId = subjectId;
     }
 
     /**
      * <p>
-     * A genome reference ARN to filter on.
+     * The read set source's subject ID.
      * </p>
      * 
-     * @return A genome reference ARN to filter on.
+     * @return The read set source's subject ID.
      */
 
-    public String getReferenceArn() {
-        return this.referenceArn;
+    public String getSubjectId() {
+        return this.subjectId;
     }
 
     /**
      * <p>
-     * A genome reference ARN to filter on.
+     * The read set source's subject ID.
      * </p>
      * 
-     * @param referenceArn
-     *        A genome reference ARN to filter on.
+     * @param subjectId
+     *        The read set source's subject ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ReadSetFilter withReferenceArn(String referenceArn) {
-        setReferenceArn(referenceArn);
+    public ReadSetFilter withSubjectId(String subjectId) {
+        setSubjectId(subjectId);
         return this;
     }
 
     /**
      * <p>
-     * A status to filter on.
+     * Where the source originated.
      * </p>
      * 
-     * @param status
-     *        A status to filter on.
-     * @see ReadSetStatus
+     * @param generatedFrom
+     *        Where the source originated.
      */
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setGeneratedFrom(String generatedFrom) {
+        this.generatedFrom = generatedFrom;
     }
 
     /**
      * <p>
-     * A status to filter on.
+     * Where the source originated.
      * </p>
      * 
-     * @return A status to filter on.
-     * @see ReadSetStatus
+     * @return Where the source originated.
      */
 
-    public String getStatus() {
-        return this.status;
+    public String getGeneratedFrom() {
+        return this.generatedFrom;
     }
 
     /**
      * <p>
-     * A status to filter on.
+     * Where the source originated.
      * </p>
      * 
-     * @param status
-     *        A status to filter on.
+     * @param generatedFrom
+     *        Where the source originated.
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see ReadSetStatus
      */
 
-    public ReadSetFilter withStatus(String status) {
-        setStatus(status);
+    public ReadSetFilter withGeneratedFrom(String generatedFrom) {
+        setGeneratedFrom(generatedFrom);
         return this;
     }
 
     /**
      * <p>
-     * A status to filter on.
+     * The creation type of the read set.
      * </p>
      * 
-     * @param status
-     *        A status to filter on.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see ReadSetStatus
+     * @param creationType
+     *        The creation type of the read set.
+     * @see CreationType
      */
 
-    public ReadSetFilter withStatus(ReadSetStatus status) {
-        this.status = status.toString();
+    public void setCreationType(String creationType) {
+        this.creationType = creationType;
+    }
+
+    /**
+     * <p>
+     * The creation type of the read set.
+     * </p>
+     * 
+     * @return The creation type of the read set.
+     * @see CreationType
+     */
+
+    public String getCreationType() {
+        return this.creationType;
+    }
+
+    /**
+     * <p>
+     * The creation type of the read set.
+     * </p>
+     * 
+     * @param creationType
+     *        The creation type of the read set.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CreationType
+     */
+
+    public ReadSetFilter withCreationType(String creationType) {
+        setCreationType(creationType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The creation type of the read set.
+     * </p>
+     * 
+     * @param creationType
+     *        The creation type of the read set.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CreationType
+     */
+
+    public ReadSetFilter withCreationType(CreationType creationType) {
+        this.creationType = creationType.toString();
         return this;
     }
 
@@ -290,16 +493,24 @@ public class ReadSetFilter implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getReferenceArn() != null)
+            sb.append("ReferenceArn: ").append(getReferenceArn()).append(",");
         if (getCreatedAfter() != null)
             sb.append("CreatedAfter: ").append(getCreatedAfter()).append(",");
         if (getCreatedBefore() != null)
             sb.append("CreatedBefore: ").append(getCreatedBefore()).append(",");
-        if (getName() != null)
-            sb.append("Name: ").append(getName()).append(",");
-        if (getReferenceArn() != null)
-            sb.append("ReferenceArn: ").append(getReferenceArn()).append(",");
-        if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+        if (getSampleId() != null)
+            sb.append("SampleId: ").append(getSampleId()).append(",");
+        if (getSubjectId() != null)
+            sb.append("SubjectId: ").append(getSubjectId()).append(",");
+        if (getGeneratedFrom() != null)
+            sb.append("GeneratedFrom: ").append(getGeneratedFrom()).append(",");
+        if (getCreationType() != null)
+            sb.append("CreationType: ").append(getCreationType());
         sb.append("}");
         return sb.toString();
     }
@@ -314,6 +525,18 @@ public class ReadSetFilter implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof ReadSetFilter == false)
             return false;
         ReadSetFilter other = (ReadSetFilter) obj;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        if (other.getReferenceArn() == null ^ this.getReferenceArn() == null)
+            return false;
+        if (other.getReferenceArn() != null && other.getReferenceArn().equals(this.getReferenceArn()) == false)
+            return false;
         if (other.getCreatedAfter() == null ^ this.getCreatedAfter() == null)
             return false;
         if (other.getCreatedAfter() != null && other.getCreatedAfter().equals(this.getCreatedAfter()) == false)
@@ -322,17 +545,21 @@ public class ReadSetFilter implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCreatedBefore() != null && other.getCreatedBefore().equals(this.getCreatedBefore()) == false)
             return false;
-        if (other.getName() == null ^ this.getName() == null)
+        if (other.getSampleId() == null ^ this.getSampleId() == null)
             return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+        if (other.getSampleId() != null && other.getSampleId().equals(this.getSampleId()) == false)
             return false;
-        if (other.getReferenceArn() == null ^ this.getReferenceArn() == null)
+        if (other.getSubjectId() == null ^ this.getSubjectId() == null)
             return false;
-        if (other.getReferenceArn() != null && other.getReferenceArn().equals(this.getReferenceArn()) == false)
+        if (other.getSubjectId() != null && other.getSubjectId().equals(this.getSubjectId()) == false)
             return false;
-        if (other.getStatus() == null ^ this.getStatus() == null)
+        if (other.getGeneratedFrom() == null ^ this.getGeneratedFrom() == null)
             return false;
-        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getGeneratedFrom() != null && other.getGeneratedFrom().equals(this.getGeneratedFrom()) == false)
+            return false;
+        if (other.getCreationType() == null ^ this.getCreationType() == null)
+            return false;
+        if (other.getCreationType() != null && other.getCreationType().equals(this.getCreationType()) == false)
             return false;
         return true;
     }
@@ -342,11 +569,15 @@ public class ReadSetFilter implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getReferenceArn() == null) ? 0 : getReferenceArn().hashCode());
         hashCode = prime * hashCode + ((getCreatedAfter() == null) ? 0 : getCreatedAfter().hashCode());
         hashCode = prime * hashCode + ((getCreatedBefore() == null) ? 0 : getCreatedBefore().hashCode());
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode + ((getReferenceArn() == null) ? 0 : getReferenceArn().hashCode());
-        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getSampleId() == null) ? 0 : getSampleId().hashCode());
+        hashCode = prime * hashCode + ((getSubjectId() == null) ? 0 : getSubjectId().hashCode());
+        hashCode = prime * hashCode + ((getGeneratedFrom() == null) ? 0 : getGeneratedFrom().hashCode());
+        hashCode = prime * hashCode + ((getCreationType() == null) ? 0 : getCreationType().hashCode());
         return hashCode;
     }
 

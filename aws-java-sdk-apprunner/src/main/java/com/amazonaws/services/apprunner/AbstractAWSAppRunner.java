@@ -153,6 +153,11 @@ public class AbstractAWSAppRunner implements AWSAppRunner {
     }
 
     @Override
+    public ListServicesForAutoScalingConfigurationResult listServicesForAutoScalingConfiguration(ListServicesForAutoScalingConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -189,6 +194,11 @@ public class AbstractAWSAppRunner implements AWSAppRunner {
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateDefaultAutoScalingConfigurationResult updateDefaultAutoScalingConfiguration(UpdateDefaultAutoScalingConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

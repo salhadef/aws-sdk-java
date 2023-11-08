@@ -79,11 +79,6 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      * </p>
      * </li>
      * </ul>
-     * <note>
-     * <p>
-     * The CIs do not incur any cost.
-     * </p>
-     * </note>
      */
     private String configurationItemStatus;
     /**
@@ -341,11 +336,6 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      * </p>
      * </li>
      * </ul>
-     * <note>
-     * <p>
-     * The CIs do not incur any cost.
-     * </p>
-     * </note>
      * 
      * @param configurationItemStatus
      *        The configuration item status. The valid values are:</p>
@@ -377,11 +367,6 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      *        recorder excludes the recording of resources of this type
      *        </p>
      *        </li>
-     *        </ul>
-     *        <note>
-     *        <p>
-     *        The CIs do not incur any cost.
-     *        </p>
      * @see ConfigurationItemStatus
      */
 
@@ -422,11 +407,6 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      * </p>
      * </li>
      * </ul>
-     * <note>
-     * <p>
-     * The CIs do not incur any cost.
-     * </p>
-     * </note>
      * 
      * @return The configuration item status. The valid values are:</p>
      *         <ul>
@@ -457,11 +437,6 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      *         recorder excludes the recording of resources of this type
      *         </p>
      *         </li>
-     *         </ul>
-     *         <note>
-     *         <p>
-     *         The CIs do not incur any cost.
-     *         </p>
      * @see ConfigurationItemStatus
      */
 
@@ -502,11 +477,6 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      * </p>
      * </li>
      * </ul>
-     * <note>
-     * <p>
-     * The CIs do not incur any cost.
-     * </p>
-     * </note>
      * 
      * @param configurationItemStatus
      *        The configuration item status. The valid values are:</p>
@@ -538,11 +508,6 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      *        recorder excludes the recording of resources of this type
      *        </p>
      *        </li>
-     *        </ul>
-     *        <note>
-     *        <p>
-     *        The CIs do not incur any cost.
-     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConfigurationItemStatus
      */
@@ -585,11 +550,6 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      * </p>
      * </li>
      * </ul>
-     * <note>
-     * <p>
-     * The CIs do not incur any cost.
-     * </p>
-     * </note>
      * 
      * @param configurationItemStatus
      *        The configuration item status. The valid values are:</p>
@@ -621,11 +581,6 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      *        recorder excludes the recording of resources of this type
      *        </p>
      *        </li>
-     *        </ul>
-     *        <note>
-     *        <p>
-     *        The CIs do not incur any cost.
-     *        </p>
      * @see ConfigurationItemStatus
      */
 
@@ -666,11 +621,6 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      * </p>
      * </li>
      * </ul>
-     * <note>
-     * <p>
-     * The CIs do not incur any cost.
-     * </p>
-     * </note>
      * 
      * @param configurationItemStatus
      *        The configuration item status. The valid values are:</p>
@@ -702,11 +652,6 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      *        recorder excludes the recording of resources of this type
      *        </p>
      *        </li>
-     *        </ul>
-     *        <note>
-     *        <p>
-     *        The CIs do not incur any cost.
-     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConfigurationItemStatus
      */

@@ -78,6 +78,11 @@ public class AbstractAWSMigrationHubStrategyRecommendations implements AWSMigrat
     }
 
     @Override
+    public ListAnalyzableServersResult listAnalyzableServers(ListAnalyzableServersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListApplicationComponentsResult listApplicationComponents(ListApplicationComponentsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

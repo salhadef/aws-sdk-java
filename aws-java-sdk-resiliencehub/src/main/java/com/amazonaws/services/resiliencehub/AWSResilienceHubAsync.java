@@ -37,8 +37,11 @@ public interface AWSResilienceHubAsync extends AWSResilienceHub {
 
     /**
      * <p>
-     * Adds the resource mapping for the draft application version. You can also update an existing resource mapping to
-     * a new physical resource.
+     * Adds the source of resource-maps to the draft version of an application. During assessment, Resilience Hub will
+     * use these resource-maps to resolve the latest physical ID for each resource in the application template. For more
+     * information about different types of resources suported by Resilience Hub and how to add them in your
+     * application, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/how-app-manage.html">Step
+     * 2: How is your application managed?</a> in the Resilience Hub User Guide.
      * </p>
      * 
      * @param addDraftAppVersionResourceMappingsRequest
@@ -53,8 +56,11 @@ public interface AWSResilienceHubAsync extends AWSResilienceHub {
 
     /**
      * <p>
-     * Adds the resource mapping for the draft application version. You can also update an existing resource mapping to
-     * a new physical resource.
+     * Adds the source of resource-maps to the draft version of an application. During assessment, Resilience Hub will
+     * use these resource-maps to resolve the latest physical ID for each resource in the application template. For more
+     * information about different types of resources suported by Resilience Hub and how to add them in your
+     * application, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/how-app-manage.html">Step
+     * 2: How is your application managed?</a> in the Resilience Hub User Guide.
      * </p>
      * 
      * @param addDraftAppVersionResourceMappingsRequest
@@ -74,12 +80,48 @@ public interface AWSResilienceHubAsync extends AWSResilienceHub {
 
     /**
      * <p>
+     * Enables you to include or exclude one or more operational recommendations.
+     * </p>
+     * 
+     * @param batchUpdateRecommendationStatusRequest
+     * @return A Java Future containing the result of the BatchUpdateRecommendationStatus operation returned by the
+     *         service.
+     * @sample AWSResilienceHubAsync.BatchUpdateRecommendationStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/BatchUpdateRecommendationStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchUpdateRecommendationStatusResult> batchUpdateRecommendationStatusAsync(
+            BatchUpdateRecommendationStatusRequest batchUpdateRecommendationStatusRequest);
+
+    /**
+     * <p>
+     * Enables you to include or exclude one or more operational recommendations.
+     * </p>
+     * 
+     * @param batchUpdateRecommendationStatusRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchUpdateRecommendationStatus operation returned by the
+     *         service.
+     * @sample AWSResilienceHubAsyncHandler.BatchUpdateRecommendationStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/BatchUpdateRecommendationStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchUpdateRecommendationStatusResult> batchUpdateRecommendationStatusAsync(
+            BatchUpdateRecommendationStatusRequest batchUpdateRecommendationStatusRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchUpdateRecommendationStatusRequest, BatchUpdateRecommendationStatusResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates an Resilience Hub application. An Resilience Hub application is a collection of Amazon Web Services
-     * resources structured to prevent and recover Amazon Web Services application disruptions. To describe an
-     * Resilience Hub application, you provide an application name, resources from one or more CloudFormation stacks,
-     * Resource Groups, Terraform state files, AppRegistry applications, and an appropriate resiliency policy. For more
-     * information about the number of resources supported per application, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/resiliencehub.html#limits_resiliencehub">Service Quotas</a>.
+     * resources structured to prevent and recover Amazon Web Services application disruptions. To describe a Resilience
+     * Hub application, you provide an application name, resources from one or more CloudFormation stacks, Resource
+     * Groups, Terraform state files, AppRegistry applications, and an appropriate resiliency policy. In addition, you
+     * can also add resources that are located on Amazon Elastic Kubernetes Service (Amazon EKS) clusters as optional
+     * resources. For more information about the number of resources supported per application, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/resiliencehub.html#limits_resiliencehub">Service quotas</a>.
      * </p>
      * <p>
      * After you create an Resilience Hub application, you publish it so that you can run a resiliency assessment on it.
@@ -99,11 +141,12 @@ public interface AWSResilienceHubAsync extends AWSResilienceHub {
     /**
      * <p>
      * Creates an Resilience Hub application. An Resilience Hub application is a collection of Amazon Web Services
-     * resources structured to prevent and recover Amazon Web Services application disruptions. To describe an
-     * Resilience Hub application, you provide an application name, resources from one or more CloudFormation stacks,
-     * Resource Groups, Terraform state files, AppRegistry applications, and an appropriate resiliency policy. For more
-     * information about the number of resources supported per application, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/resiliencehub.html#limits_resiliencehub">Service Quotas</a>.
+     * resources structured to prevent and recover Amazon Web Services application disruptions. To describe a Resilience
+     * Hub application, you provide an application name, resources from one or more CloudFormation stacks, Resource
+     * Groups, Terraform state files, AppRegistry applications, and an appropriate resiliency policy. In addition, you
+     * can also add resources that are located on Amazon Elastic Kubernetes Service (Amazon EKS) clusters as optional
+     * resources. For more information about the number of resources supported per application, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/resiliencehub.html#limits_resiliencehub">Service quotas</a>.
      * </p>
      * <p>
      * After you create an Resilience Hub application, you publish it so that you can run a resiliency assessment on it.
@@ -286,6 +329,15 @@ public interface AWSResilienceHubAsync extends AWSResilienceHub {
      * <p>
      * Creates a resiliency policy for an application.
      * </p>
+     * <note>
+     * <p>
+     * Resilience Hub allows you to provide a value of zero for <code>rtoInSecs</code> and <code>rpoInSecs</code> of
+     * your resiliency policy. But, while assessing your application, the lowest possible assessment result is near
+     * zero. Hence, if you provide value zero for <code>rtoInSecs</code> and <code>rpoInSecs</code>, the estimated
+     * workload RTO and estimated workload RPO result will be near zero and the <b>Compliance status</b> for your
+     * application will be set to <b>Policy breached</b>.
+     * </p>
+     * </note>
      * 
      * @param createResiliencyPolicyRequest
      * @return A Java Future containing the result of the CreateResiliencyPolicy operation returned by the service.
@@ -299,6 +351,15 @@ public interface AWSResilienceHubAsync extends AWSResilienceHub {
      * <p>
      * Creates a resiliency policy for an application.
      * </p>
+     * <note>
+     * <p>
+     * Resilience Hub allows you to provide a value of zero for <code>rtoInSecs</code> and <code>rpoInSecs</code> of
+     * your resiliency policy. But, while assessing your application, the lowest possible assessment result is near
+     * zero. Hence, if you provide value zero for <code>rtoInSecs</code> and <code>rpoInSecs</code>, the estimated
+     * workload RTO and estimated workload RPO result will be near zero and the <b>Compliance status</b> for your
+     * application will be set to <b>Policy breached</b>.
+     * </p>
+     * </note>
      * 
      * @param createResiliencyPolicyRequest
      * @param asyncHandler
@@ -1044,6 +1105,41 @@ public interface AWSResilienceHubAsync extends AWSResilienceHub {
      */
     java.util.concurrent.Future<ListAlarmRecommendationsResult> listAlarmRecommendationsAsync(ListAlarmRecommendationsRequest listAlarmRecommendationsRequest,
             com.amazonaws.handlers.AsyncHandler<ListAlarmRecommendationsRequest, ListAlarmRecommendationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * List of compliance drifts that were detected while running an assessment.
+     * </p>
+     * 
+     * @param listAppAssessmentComplianceDriftsRequest
+     * @return A Java Future containing the result of the ListAppAssessmentComplianceDrifts operation returned by the
+     *         service.
+     * @sample AWSResilienceHubAsync.ListAppAssessmentComplianceDrifts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppAssessmentComplianceDrifts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAppAssessmentComplianceDriftsResult> listAppAssessmentComplianceDriftsAsync(
+            ListAppAssessmentComplianceDriftsRequest listAppAssessmentComplianceDriftsRequest);
+
+    /**
+     * <p>
+     * List of compliance drifts that were detected while running an assessment.
+     * </p>
+     * 
+     * @param listAppAssessmentComplianceDriftsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAppAssessmentComplianceDrifts operation returned by the
+     *         service.
+     * @sample AWSResilienceHubAsyncHandler.ListAppAssessmentComplianceDrifts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppAssessmentComplianceDrifts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAppAssessmentComplianceDriftsResult> listAppAssessmentComplianceDriftsAsync(
+            ListAppAssessmentComplianceDriftsRequest listAppAssessmentComplianceDriftsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAppAssessmentComplianceDriftsRequest, ListAppAssessmentComplianceDriftsResult> asyncHandler);
 
     /**
      * <p>
@@ -2018,6 +2114,15 @@ public interface AWSResilienceHubAsync extends AWSResilienceHub {
      * <p>
      * Updates a resiliency policy.
      * </p>
+     * <note>
+     * <p>
+     * Resilience Hub allows you to provide a value of zero for <code>rtoInSecs</code> and <code>rpoInSecs</code> of
+     * your resiliency policy. But, while assessing your application, the lowest possible assessment result is near
+     * zero. Hence, if you provide value zero for <code>rtoInSecs</code> and <code>rpoInSecs</code>, the estimated
+     * workload RTO and estimated workload RPO result will be near zero and the <b>Compliance status</b> for your
+     * application will be set to <b>Policy breached</b>.
+     * </p>
+     * </note>
      * 
      * @param updateResiliencyPolicyRequest
      * @return A Java Future containing the result of the UpdateResiliencyPolicy operation returned by the service.
@@ -2031,6 +2136,15 @@ public interface AWSResilienceHubAsync extends AWSResilienceHub {
      * <p>
      * Updates a resiliency policy.
      * </p>
+     * <note>
+     * <p>
+     * Resilience Hub allows you to provide a value of zero for <code>rtoInSecs</code> and <code>rpoInSecs</code> of
+     * your resiliency policy. But, while assessing your application, the lowest possible assessment result is near
+     * zero. Hence, if you provide value zero for <code>rtoInSecs</code> and <code>rpoInSecs</code>, the estimated
+     * workload RTO and estimated workload RPO result will be near zero and the <b>Compliance status</b> for your
+     * application will be set to <b>Policy breached</b>.
+     * </p>
+     * </note>
      * 
      * @param updateResiliencyPolicyRequest
      * @param asyncHandler

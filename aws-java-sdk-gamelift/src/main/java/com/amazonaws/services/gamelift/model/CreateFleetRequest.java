@@ -41,7 +41,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The unique identifier for a custom game server build to be deployed on fleet instances. You can use either the
      * build ID or ARN. The build must be uploaded to Amazon GameLift and in <code>READY</code> status. This fleet
-     * property cannot be changed later.
+     * property can't be changed after the fleet is created.
      * </p>
      */
     private String buildId;
@@ -49,7 +49,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The unique identifier for a Realtime configuration script to be deployed on fleet instances. You can use either
      * the script ID or ARN. Scripts must be uploaded to Amazon GameLift prior to creating the fleet. This fleet
-     * property cannot be changed later.
+     * property can't be changed after the fleet is created.
      * </p>
      */
     private String scriptId;
@@ -168,19 +168,19 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * Indicates whether to use On-Demand or Spot instances for this fleet. By default, this property is set to
      * <code>ON_DEMAND</code>. Learn more about when to use <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
-     * > On-Demand versus Spot Instances</a>. This property cannot be changed after the fleet is created.
+     * > On-Demand versus Spot Instances</a>. This fleet property can't be changed after the fleet is created.
      * </p>
      */
     private String fleetType;
     /**
      * <p>
-     * A unique identifier for an IAM role that manages access to your Amazon Web Services services. With an instance
-     * role ARN set, any application that runs on an instance in this fleet can assume the role, including install
-     * scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN by using the
-     * <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the Amazon Web Services Management Console.
-     * Learn more about using on-box credentials for your game servers at <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access
-     * external resources from a game server</a>. This property cannot be changed after the fleet is created.
+     * A unique identifier for an IAM role with access permissions to other Amazon Web Services services. Any
+     * application that runs on an instance in the fleet--including install scripts, server processes, and other
+     * processes--can use these permissions to interact with Amazon Web Services resources that you own or have access
+     * to. For more information about using the role with your game server builds, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Communicate
+     * with other Amazon Web Services resources from your fleets</a>. This fleet property can't be changed after the
+     * fleet is created.
      * </p>
      */
     private String instanceRoleArn;
@@ -242,6 +242,17 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private AnywhereConfiguration anywhereConfiguration;
+    /**
+     * <p>
+     * Prompts Amazon GameLift to generate a shared credentials file for the IAM role defined in
+     * <code>InstanceRoleArn</code>. The shared credentials file is stored on each fleet instance and refreshed as
+     * needed. Use shared credentials for applications that are deployed along with the game server executable, if the
+     * game server is integrated with server SDK version 5.x. For more information about using shared credentials, see
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+     * Communicate with other Amazon Web Services resources from your fleets</a>.
+     * </p>
+     */
+    private String instanceRoleCredentialsProvider;
 
     /**
      * <p>
@@ -327,13 +338,13 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The unique identifier for a custom game server build to be deployed on fleet instances. You can use either the
      * build ID or ARN. The build must be uploaded to Amazon GameLift and in <code>READY</code> status. This fleet
-     * property cannot be changed later.
+     * property can't be changed after the fleet is created.
      * </p>
      * 
      * @param buildId
      *        The unique identifier for a custom game server build to be deployed on fleet instances. You can use either
      *        the build ID or ARN. The build must be uploaded to Amazon GameLift and in <code>READY</code> status. This
-     *        fleet property cannot be changed later.
+     *        fleet property can't be changed after the fleet is created.
      */
 
     public void setBuildId(String buildId) {
@@ -344,12 +355,12 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The unique identifier for a custom game server build to be deployed on fleet instances. You can use either the
      * build ID or ARN. The build must be uploaded to Amazon GameLift and in <code>READY</code> status. This fleet
-     * property cannot be changed later.
+     * property can't be changed after the fleet is created.
      * </p>
      * 
      * @return The unique identifier for a custom game server build to be deployed on fleet instances. You can use
      *         either the build ID or ARN. The build must be uploaded to Amazon GameLift and in <code>READY</code>
-     *         status. This fleet property cannot be changed later.
+     *         status. This fleet property can't be changed after the fleet is created.
      */
 
     public String getBuildId() {
@@ -360,13 +371,13 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The unique identifier for a custom game server build to be deployed on fleet instances. You can use either the
      * build ID or ARN. The build must be uploaded to Amazon GameLift and in <code>READY</code> status. This fleet
-     * property cannot be changed later.
+     * property can't be changed after the fleet is created.
      * </p>
      * 
      * @param buildId
      *        The unique identifier for a custom game server build to be deployed on fleet instances. You can use either
      *        the build ID or ARN. The build must be uploaded to Amazon GameLift and in <code>READY</code> status. This
-     *        fleet property cannot be changed later.
+     *        fleet property can't be changed after the fleet is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -379,13 +390,13 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The unique identifier for a Realtime configuration script to be deployed on fleet instances. You can use either
      * the script ID or ARN. Scripts must be uploaded to Amazon GameLift prior to creating the fleet. This fleet
-     * property cannot be changed later.
+     * property can't be changed after the fleet is created.
      * </p>
      * 
      * @param scriptId
      *        The unique identifier for a Realtime configuration script to be deployed on fleet instances. You can use
      *        either the script ID or ARN. Scripts must be uploaded to Amazon GameLift prior to creating the fleet. This
-     *        fleet property cannot be changed later.
+     *        fleet property can't be changed after the fleet is created.
      */
 
     public void setScriptId(String scriptId) {
@@ -396,12 +407,12 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The unique identifier for a Realtime configuration script to be deployed on fleet instances. You can use either
      * the script ID or ARN. Scripts must be uploaded to Amazon GameLift prior to creating the fleet. This fleet
-     * property cannot be changed later.
+     * property can't be changed after the fleet is created.
      * </p>
      * 
      * @return The unique identifier for a Realtime configuration script to be deployed on fleet instances. You can use
      *         either the script ID or ARN. Scripts must be uploaded to Amazon GameLift prior to creating the fleet.
-     *         This fleet property cannot be changed later.
+     *         This fleet property can't be changed after the fleet is created.
      */
 
     public String getScriptId() {
@@ -412,13 +423,13 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The unique identifier for a Realtime configuration script to be deployed on fleet instances. You can use either
      * the script ID or ARN. Scripts must be uploaded to Amazon GameLift prior to creating the fleet. This fleet
-     * property cannot be changed later.
+     * property can't be changed after the fleet is created.
      * </p>
      * 
      * @param scriptId
      *        The unique identifier for a Realtime configuration script to be deployed on fleet instances. You can use
      *        either the script ID or ARN. Scripts must be uploaded to Amazon GameLift prior to creating the fleet. This
-     *        fleet property cannot be changed later.
+     *        fleet property can't be changed after the fleet is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1384,14 +1395,14 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * Indicates whether to use On-Demand or Spot instances for this fleet. By default, this property is set to
      * <code>ON_DEMAND</code>. Learn more about when to use <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
-     * > On-Demand versus Spot Instances</a>. This property cannot be changed after the fleet is created.
+     * > On-Demand versus Spot Instances</a>. This fleet property can't be changed after the fleet is created.
      * </p>
      * 
      * @param fleetType
      *        Indicates whether to use On-Demand or Spot instances for this fleet. By default, this property is set to
      *        <code>ON_DEMAND</code>. Learn more about when to use <a href=
      *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
-     *        > On-Demand versus Spot Instances</a>. This property cannot be changed after the fleet is created.
+     *        > On-Demand versus Spot Instances</a>. This fleet property can't be changed after the fleet is created.
      * @see FleetType
      */
 
@@ -1404,13 +1415,13 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * Indicates whether to use On-Demand or Spot instances for this fleet. By default, this property is set to
      * <code>ON_DEMAND</code>. Learn more about when to use <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
-     * > On-Demand versus Spot Instances</a>. This property cannot be changed after the fleet is created.
+     * > On-Demand versus Spot Instances</a>. This fleet property can't be changed after the fleet is created.
      * </p>
      * 
      * @return Indicates whether to use On-Demand or Spot instances for this fleet. By default, this property is set to
      *         <code>ON_DEMAND</code>. Learn more about when to use <a href=
      *         "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
-     *         > On-Demand versus Spot Instances</a>. This property cannot be changed after the fleet is created.
+     *         > On-Demand versus Spot Instances</a>. This fleet property can't be changed after the fleet is created.
      * @see FleetType
      */
 
@@ -1423,14 +1434,14 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * Indicates whether to use On-Demand or Spot instances for this fleet. By default, this property is set to
      * <code>ON_DEMAND</code>. Learn more about when to use <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
-     * > On-Demand versus Spot Instances</a>. This property cannot be changed after the fleet is created.
+     * > On-Demand versus Spot Instances</a>. This fleet property can't be changed after the fleet is created.
      * </p>
      * 
      * @param fleetType
      *        Indicates whether to use On-Demand or Spot instances for this fleet. By default, this property is set to
      *        <code>ON_DEMAND</code>. Learn more about when to use <a href=
      *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
-     *        > On-Demand versus Spot Instances</a>. This property cannot be changed after the fleet is created.
+     *        > On-Demand versus Spot Instances</a>. This fleet property can't be changed after the fleet is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FleetType
      */
@@ -1445,14 +1456,14 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * Indicates whether to use On-Demand or Spot instances for this fleet. By default, this property is set to
      * <code>ON_DEMAND</code>. Learn more about when to use <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
-     * > On-Demand versus Spot Instances</a>. This property cannot be changed after the fleet is created.
+     * > On-Demand versus Spot Instances</a>. This fleet property can't be changed after the fleet is created.
      * </p>
      * 
      * @param fleetType
      *        Indicates whether to use On-Demand or Spot instances for this fleet. By default, this property is set to
      *        <code>ON_DEMAND</code>. Learn more about when to use <a href=
      *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
-     *        > On-Demand versus Spot Instances</a>. This property cannot be changed after the fleet is created.
+     *        > On-Demand versus Spot Instances</a>. This fleet property can't be changed after the fleet is created.
      * @see FleetType
      */
 
@@ -1465,14 +1476,14 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * Indicates whether to use On-Demand or Spot instances for this fleet. By default, this property is set to
      * <code>ON_DEMAND</code>. Learn more about when to use <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
-     * > On-Demand versus Spot Instances</a>. This property cannot be changed after the fleet is created.
+     * > On-Demand versus Spot Instances</a>. This fleet property can't be changed after the fleet is created.
      * </p>
      * 
      * @param fleetType
      *        Indicates whether to use On-Demand or Spot instances for this fleet. By default, this property is set to
      *        <code>ON_DEMAND</code>. Learn more about when to use <a href=
      *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
-     *        > On-Demand versus Spot Instances</a>. This property cannot be changed after the fleet is created.
+     *        > On-Demand versus Spot Instances</a>. This fleet property can't be changed after the fleet is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FleetType
      */
@@ -1484,24 +1495,23 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A unique identifier for an IAM role that manages access to your Amazon Web Services services. With an instance
-     * role ARN set, any application that runs on an instance in this fleet can assume the role, including install
-     * scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN by using the
-     * <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the Amazon Web Services Management Console.
-     * Learn more about using on-box credentials for your game servers at <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access
-     * external resources from a game server</a>. This property cannot be changed after the fleet is created.
+     * A unique identifier for an IAM role with access permissions to other Amazon Web Services services. Any
+     * application that runs on an instance in the fleet--including install scripts, server processes, and other
+     * processes--can use these permissions to interact with Amazon Web Services resources that you own or have access
+     * to. For more information about using the role with your game server builds, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Communicate
+     * with other Amazon Web Services resources from your fleets</a>. This fleet property can't be changed after the
+     * fleet is created.
      * </p>
      * 
      * @param instanceRoleArn
-     *        A unique identifier for an IAM role that manages access to your Amazon Web Services services. With an
-     *        instance role ARN set, any application that runs on an instance in this fleet can assume the role,
-     *        including install scripts, server processes, and daemons (background processes). Create a role or look up
-     *        a role's ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the Amazon
-     *        Web Services Management Console. Learn more about using on-box credentials for your game servers at <a
+     *        A unique identifier for an IAM role with access permissions to other Amazon Web Services services. Any
+     *        application that runs on an instance in the fleet--including install scripts, server processes, and other
+     *        processes--can use these permissions to interact with Amazon Web Services resources that you own or have
+     *        access to. For more information about using the role with your game server builds, see <a
      *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     *        Access external resources from a game server</a>. This property cannot be changed after the fleet is
-     *        created.
+     *        Communicate with other Amazon Web Services resources from your fleets</a>. This fleet property can't be
+     *        changed after the fleet is created.
      */
 
     public void setInstanceRoleArn(String instanceRoleArn) {
@@ -1510,23 +1520,22 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A unique identifier for an IAM role that manages access to your Amazon Web Services services. With an instance
-     * role ARN set, any application that runs on an instance in this fleet can assume the role, including install
-     * scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN by using the
-     * <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the Amazon Web Services Management Console.
-     * Learn more about using on-box credentials for your game servers at <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access
-     * external resources from a game server</a>. This property cannot be changed after the fleet is created.
+     * A unique identifier for an IAM role with access permissions to other Amazon Web Services services. Any
+     * application that runs on an instance in the fleet--including install scripts, server processes, and other
+     * processes--can use these permissions to interact with Amazon Web Services resources that you own or have access
+     * to. For more information about using the role with your game server builds, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Communicate
+     * with other Amazon Web Services resources from your fleets</a>. This fleet property can't be changed after the
+     * fleet is created.
      * </p>
      * 
-     * @return A unique identifier for an IAM role that manages access to your Amazon Web Services services. With an
-     *         instance role ARN set, any application that runs on an instance in this fleet can assume the role,
-     *         including install scripts, server processes, and daemons (background processes). Create a role or look up
-     *         a role's ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the Amazon
-     *         Web Services Management Console. Learn more about using on-box credentials for your game servers at <a
+     * @return A unique identifier for an IAM role with access permissions to other Amazon Web Services services. Any
+     *         application that runs on an instance in the fleet--including install scripts, server processes, and other
+     *         processes--can use these permissions to interact with Amazon Web Services resources that you own or have
+     *         access to. For more information about using the role with your game server builds, see <a
      *         href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     *         Access external resources from a game server</a>. This property cannot be changed after the fleet is
-     *         created.
+     *         Communicate with other Amazon Web Services resources from your fleets</a>. This fleet property can't be
+     *         changed after the fleet is created.
      */
 
     public String getInstanceRoleArn() {
@@ -1535,24 +1544,23 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A unique identifier for an IAM role that manages access to your Amazon Web Services services. With an instance
-     * role ARN set, any application that runs on an instance in this fleet can assume the role, including install
-     * scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN by using the
-     * <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the Amazon Web Services Management Console.
-     * Learn more about using on-box credentials for your game servers at <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access
-     * external resources from a game server</a>. This property cannot be changed after the fleet is created.
+     * A unique identifier for an IAM role with access permissions to other Amazon Web Services services. Any
+     * application that runs on an instance in the fleet--including install scripts, server processes, and other
+     * processes--can use these permissions to interact with Amazon Web Services resources that you own or have access
+     * to. For more information about using the role with your game server builds, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Communicate
+     * with other Amazon Web Services resources from your fleets</a>. This fleet property can't be changed after the
+     * fleet is created.
      * </p>
      * 
      * @param instanceRoleArn
-     *        A unique identifier for an IAM role that manages access to your Amazon Web Services services. With an
-     *        instance role ARN set, any application that runs on an instance in this fleet can assume the role,
-     *        including install scripts, server processes, and daemons (background processes). Create a role or look up
-     *        a role's ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the Amazon
-     *        Web Services Management Console. Learn more about using on-box credentials for your game servers at <a
+     *        A unique identifier for an IAM role with access permissions to other Amazon Web Services services. Any
+     *        application that runs on an instance in the fleet--including install scripts, server processes, and other
+     *        processes--can use these permissions to interact with Amazon Web Services resources that you own or have
+     *        access to. For more information about using the role with your game server builds, see <a
      *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     *        Access external resources from a game server</a>. This property cannot be changed after the fleet is
-     *        created.
+     *        Communicate with other Amazon Web Services resources from your fleets</a>. This fleet property can't be
+     *        changed after the fleet is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2047,6 +2055,134 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * Prompts Amazon GameLift to generate a shared credentials file for the IAM role defined in
+     * <code>InstanceRoleArn</code>. The shared credentials file is stored on each fleet instance and refreshed as
+     * needed. Use shared credentials for applications that are deployed along with the game server executable, if the
+     * game server is integrated with server SDK version 5.x. For more information about using shared credentials, see
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+     * Communicate with other Amazon Web Services resources from your fleets</a>.
+     * </p>
+     * 
+     * @param instanceRoleCredentialsProvider
+     *        Prompts Amazon GameLift to generate a shared credentials file for the IAM role defined in
+     *        <code>InstanceRoleArn</code>. The shared credentials file is stored on each fleet instance and refreshed
+     *        as needed. Use shared credentials for applications that are deployed along with the game server
+     *        executable, if the game server is integrated with server SDK version 5.x. For more information about using
+     *        shared credentials, see <a
+     *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+     *        Communicate with other Amazon Web Services resources from your fleets</a>.
+     * @see InstanceRoleCredentialsProvider
+     */
+
+    public void setInstanceRoleCredentialsProvider(String instanceRoleCredentialsProvider) {
+        this.instanceRoleCredentialsProvider = instanceRoleCredentialsProvider;
+    }
+
+    /**
+     * <p>
+     * Prompts Amazon GameLift to generate a shared credentials file for the IAM role defined in
+     * <code>InstanceRoleArn</code>. The shared credentials file is stored on each fleet instance and refreshed as
+     * needed. Use shared credentials for applications that are deployed along with the game server executable, if the
+     * game server is integrated with server SDK version 5.x. For more information about using shared credentials, see
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+     * Communicate with other Amazon Web Services resources from your fleets</a>.
+     * </p>
+     * 
+     * @return Prompts Amazon GameLift to generate a shared credentials file for the IAM role defined in
+     *         <code>InstanceRoleArn</code>. The shared credentials file is stored on each fleet instance and refreshed
+     *         as needed. Use shared credentials for applications that are deployed along with the game server
+     *         executable, if the game server is integrated with server SDK version 5.x. For more information about
+     *         using shared credentials, see <a
+     *         href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+     *         Communicate with other Amazon Web Services resources from your fleets</a>.
+     * @see InstanceRoleCredentialsProvider
+     */
+
+    public String getInstanceRoleCredentialsProvider() {
+        return this.instanceRoleCredentialsProvider;
+    }
+
+    /**
+     * <p>
+     * Prompts Amazon GameLift to generate a shared credentials file for the IAM role defined in
+     * <code>InstanceRoleArn</code>. The shared credentials file is stored on each fleet instance and refreshed as
+     * needed. Use shared credentials for applications that are deployed along with the game server executable, if the
+     * game server is integrated with server SDK version 5.x. For more information about using shared credentials, see
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+     * Communicate with other Amazon Web Services resources from your fleets</a>.
+     * </p>
+     * 
+     * @param instanceRoleCredentialsProvider
+     *        Prompts Amazon GameLift to generate a shared credentials file for the IAM role defined in
+     *        <code>InstanceRoleArn</code>. The shared credentials file is stored on each fleet instance and refreshed
+     *        as needed. Use shared credentials for applications that are deployed along with the game server
+     *        executable, if the game server is integrated with server SDK version 5.x. For more information about using
+     *        shared credentials, see <a
+     *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+     *        Communicate with other Amazon Web Services resources from your fleets</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InstanceRoleCredentialsProvider
+     */
+
+    public CreateFleetRequest withInstanceRoleCredentialsProvider(String instanceRoleCredentialsProvider) {
+        setInstanceRoleCredentialsProvider(instanceRoleCredentialsProvider);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Prompts Amazon GameLift to generate a shared credentials file for the IAM role defined in
+     * <code>InstanceRoleArn</code>. The shared credentials file is stored on each fleet instance and refreshed as
+     * needed. Use shared credentials for applications that are deployed along with the game server executable, if the
+     * game server is integrated with server SDK version 5.x. For more information about using shared credentials, see
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+     * Communicate with other Amazon Web Services resources from your fleets</a>.
+     * </p>
+     * 
+     * @param instanceRoleCredentialsProvider
+     *        Prompts Amazon GameLift to generate a shared credentials file for the IAM role defined in
+     *        <code>InstanceRoleArn</code>. The shared credentials file is stored on each fleet instance and refreshed
+     *        as needed. Use shared credentials for applications that are deployed along with the game server
+     *        executable, if the game server is integrated with server SDK version 5.x. For more information about using
+     *        shared credentials, see <a
+     *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+     *        Communicate with other Amazon Web Services resources from your fleets</a>.
+     * @see InstanceRoleCredentialsProvider
+     */
+
+    public void setInstanceRoleCredentialsProvider(InstanceRoleCredentialsProvider instanceRoleCredentialsProvider) {
+        withInstanceRoleCredentialsProvider(instanceRoleCredentialsProvider);
+    }
+
+    /**
+     * <p>
+     * Prompts Amazon GameLift to generate a shared credentials file for the IAM role defined in
+     * <code>InstanceRoleArn</code>. The shared credentials file is stored on each fleet instance and refreshed as
+     * needed. Use shared credentials for applications that are deployed along with the game server executable, if the
+     * game server is integrated with server SDK version 5.x. For more information about using shared credentials, see
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+     * Communicate with other Amazon Web Services resources from your fleets</a>.
+     * </p>
+     * 
+     * @param instanceRoleCredentialsProvider
+     *        Prompts Amazon GameLift to generate a shared credentials file for the IAM role defined in
+     *        <code>InstanceRoleArn</code>. The shared credentials file is stored on each fleet instance and refreshed
+     *        as needed. Use shared credentials for applications that are deployed along with the game server
+     *        executable, if the game server is integrated with server SDK version 5.x. For more information about using
+     *        shared credentials, see <a
+     *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+     *        Communicate with other Amazon Web Services resources from your fleets</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InstanceRoleCredentialsProvider
+     */
+
+    public CreateFleetRequest withInstanceRoleCredentialsProvider(InstanceRoleCredentialsProvider instanceRoleCredentialsProvider) {
+        this.instanceRoleCredentialsProvider = instanceRoleCredentialsProvider.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2101,7 +2237,9 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getComputeType() != null)
             sb.append("ComputeType: ").append(getComputeType()).append(",");
         if (getAnywhereConfiguration() != null)
-            sb.append("AnywhereConfiguration: ").append(getAnywhereConfiguration());
+            sb.append("AnywhereConfiguration: ").append(getAnywhereConfiguration()).append(",");
+        if (getInstanceRoleCredentialsProvider() != null)
+            sb.append("InstanceRoleCredentialsProvider: ").append(getInstanceRoleCredentialsProvider());
         sb.append("}");
         return sb.toString();
     }
@@ -2205,6 +2343,11 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getAnywhereConfiguration() != null && other.getAnywhereConfiguration().equals(this.getAnywhereConfiguration()) == false)
             return false;
+        if (other.getInstanceRoleCredentialsProvider() == null ^ this.getInstanceRoleCredentialsProvider() == null)
+            return false;
+        if (other.getInstanceRoleCredentialsProvider() != null
+                && other.getInstanceRoleCredentialsProvider().equals(this.getInstanceRoleCredentialsProvider()) == false)
+            return false;
         return true;
     }
 
@@ -2235,6 +2378,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getComputeType() == null) ? 0 : getComputeType().hashCode());
         hashCode = prime * hashCode + ((getAnywhereConfiguration() == null) ? 0 : getAnywhereConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getInstanceRoleCredentialsProvider() == null) ? 0 : getInstanceRoleCredentialsProvider().hashCode());
         return hashCode;
     }
 

@@ -18,9 +18,6 @@ import com.amazonaws.SdkClientException;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.util.StringUtils;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -153,12 +150,6 @@ public class BasicProfileConfigLoader {
                                          String propertyValue, boolean isSupportedProperty,
                                          String line) {
             Map<String, String> properties = allProfileProperties.get(profileName);
-
-            if (properties.containsKey(propertyKey)) {
-                throw new IllegalArgumentException(
-                        "Duplicate property values for [" + propertyKey + "].");
-            }
-
             properties.put(propertyKey, propertyValue);
         }
 

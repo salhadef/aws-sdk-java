@@ -29,6 +29,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class PutSourceServerActionRequestMarshaller {
 
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("accountID").build();
     private static final MarshallingInfo<String> ACTIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("actionID").build();
     private static final MarshallingInfo<String> ACTIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -72,6 +74,7 @@ public class PutSourceServerActionRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(putSourceServerActionRequest.getAccountID(), ACCOUNTID_BINDING);
             protocolMarshaller.marshall(putSourceServerActionRequest.getActionID(), ACTIONID_BINDING);
             protocolMarshaller.marshall(putSourceServerActionRequest.getActionName(), ACTIONNAME_BINDING);
             protocolMarshaller.marshall(putSourceServerActionRequest.getActive(), ACTIVE_BINDING);

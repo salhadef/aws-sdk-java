@@ -31,11 +31,13 @@ public class ListPriceListsRequest extends com.amazonaws.AmazonWebServiceRequest
      * get the list of applicable Amazon EC2 price lists, use <code>AmazonEC2</code>. For a full list of service codes
      * containing On-Demand and Reserved Instance (RI) pricing, use the <a href=
      * "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_DescribeServices.html#awscostmanagement-pricing_DescribeServices-request-FormatVersion"
-     * > <code>DescribeServices</code> </a> API.
+     * >DescribeServices</a> API.
      * </p>
      * <p>
-     * To retrieve the Compute Savings Plan price lists, use <code>ComputeSavingsPlans</code>. To retrieve Machine
-     * Learning Savings Plans price lists, use <code>MachineLearningSavingsPlans</code>.
+     * To retrieve the Reserved Instance and Compute Savings Plan price lists, use <code>ComputeSavingsPlans</code>.
+     * </p>
+     * <p>
+     * To retrieve Machine Learning Savings Plans price lists, use <code>MachineLearningSavingsPlans</code>.
      * </p>
      */
     private String serviceCode;
@@ -50,8 +52,8 @@ public class ListPriceListsRequest extends com.amazonaws.AmazonWebServiceRequest
      * This is used to filter the Price List by Amazon Web Services Region. For example, to get the price list only for
      * the <code>US East (N. Virginia)</code> Region, use <code>us-east-1</code>. If nothing is specified, you retrieve
      * price lists for all applicable Regions. The available <code>RegionCode</code> list can be retrieved from <a
-     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetAttributeValues.html">
-     * <code>GetAttributeValues</code> </a> API.
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetAttributeValues.html"
+     * >GetAttributeValues</a> API.
      * </p>
      */
     private String regionCode;
@@ -80,11 +82,13 @@ public class ListPriceListsRequest extends com.amazonaws.AmazonWebServiceRequest
      * get the list of applicable Amazon EC2 price lists, use <code>AmazonEC2</code>. For a full list of service codes
      * containing On-Demand and Reserved Instance (RI) pricing, use the <a href=
      * "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_DescribeServices.html#awscostmanagement-pricing_DescribeServices-request-FormatVersion"
-     * > <code>DescribeServices</code> </a> API.
+     * >DescribeServices</a> API.
      * </p>
      * <p>
-     * To retrieve the Compute Savings Plan price lists, use <code>ComputeSavingsPlans</code>. To retrieve Machine
-     * Learning Savings Plans price lists, use <code>MachineLearningSavingsPlans</code>.
+     * To retrieve the Reserved Instance and Compute Savings Plan price lists, use <code>ComputeSavingsPlans</code>.
+     * </p>
+     * <p>
+     * To retrieve Machine Learning Savings Plans price lists, use <code>MachineLearningSavingsPlans</code>.
      * </p>
      * 
      * @param serviceCode
@@ -92,10 +96,13 @@ public class ListPriceListsRequest extends com.amazonaws.AmazonWebServiceRequest
      *        example, to get the list of applicable Amazon EC2 price lists, use <code>AmazonEC2</code>. For a full list
      *        of service codes containing On-Demand and Reserved Instance (RI) pricing, use the <a href=
      *        "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_DescribeServices.html#awscostmanagement-pricing_DescribeServices-request-FormatVersion"
-     *        > <code>DescribeServices</code> </a> API.</p>
+     *        >DescribeServices</a> API.</p>
      *        <p>
-     *        To retrieve the Compute Savings Plan price lists, use <code>ComputeSavingsPlans</code>. To retrieve
-     *        Machine Learning Savings Plans price lists, use <code>MachineLearningSavingsPlans</code>.
+     *        To retrieve the Reserved Instance and Compute Savings Plan price lists, use
+     *        <code>ComputeSavingsPlans</code>.
+     *        </p>
+     *        <p>
+     *        To retrieve Machine Learning Savings Plans price lists, use <code>MachineLearningSavingsPlans</code>.
      */
 
     public void setServiceCode(String serviceCode) {
@@ -108,21 +115,26 @@ public class ListPriceListsRequest extends com.amazonaws.AmazonWebServiceRequest
      * get the list of applicable Amazon EC2 price lists, use <code>AmazonEC2</code>. For a full list of service codes
      * containing On-Demand and Reserved Instance (RI) pricing, use the <a href=
      * "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_DescribeServices.html#awscostmanagement-pricing_DescribeServices-request-FormatVersion"
-     * > <code>DescribeServices</code> </a> API.
+     * >DescribeServices</a> API.
      * </p>
      * <p>
-     * To retrieve the Compute Savings Plan price lists, use <code>ComputeSavingsPlans</code>. To retrieve Machine
-     * Learning Savings Plans price lists, use <code>MachineLearningSavingsPlans</code>.
+     * To retrieve the Reserved Instance and Compute Savings Plan price lists, use <code>ComputeSavingsPlans</code>.
+     * </p>
+     * <p>
+     * To retrieve Machine Learning Savings Plans price lists, use <code>MachineLearningSavingsPlans</code>.
      * </p>
      * 
      * @return The service code or the Savings Plan service code for the attributes that you want to retrieve. For
      *         example, to get the list of applicable Amazon EC2 price lists, use <code>AmazonEC2</code>. For a full
      *         list of service codes containing On-Demand and Reserved Instance (RI) pricing, use the <a href=
      *         "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_DescribeServices.html#awscostmanagement-pricing_DescribeServices-request-FormatVersion"
-     *         > <code>DescribeServices</code> </a> API.</p>
+     *         >DescribeServices</a> API.</p>
      *         <p>
-     *         To retrieve the Compute Savings Plan price lists, use <code>ComputeSavingsPlans</code>. To retrieve
-     *         Machine Learning Savings Plans price lists, use <code>MachineLearningSavingsPlans</code>.
+     *         To retrieve the Reserved Instance and Compute Savings Plan price lists, use
+     *         <code>ComputeSavingsPlans</code>.
+     *         </p>
+     *         <p>
+     *         To retrieve Machine Learning Savings Plans price lists, use <code>MachineLearningSavingsPlans</code>.
      */
 
     public String getServiceCode() {
@@ -135,11 +147,13 @@ public class ListPriceListsRequest extends com.amazonaws.AmazonWebServiceRequest
      * get the list of applicable Amazon EC2 price lists, use <code>AmazonEC2</code>. For a full list of service codes
      * containing On-Demand and Reserved Instance (RI) pricing, use the <a href=
      * "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_DescribeServices.html#awscostmanagement-pricing_DescribeServices-request-FormatVersion"
-     * > <code>DescribeServices</code> </a> API.
+     * >DescribeServices</a> API.
      * </p>
      * <p>
-     * To retrieve the Compute Savings Plan price lists, use <code>ComputeSavingsPlans</code>. To retrieve Machine
-     * Learning Savings Plans price lists, use <code>MachineLearningSavingsPlans</code>.
+     * To retrieve the Reserved Instance and Compute Savings Plan price lists, use <code>ComputeSavingsPlans</code>.
+     * </p>
+     * <p>
+     * To retrieve Machine Learning Savings Plans price lists, use <code>MachineLearningSavingsPlans</code>.
      * </p>
      * 
      * @param serviceCode
@@ -147,10 +161,13 @@ public class ListPriceListsRequest extends com.amazonaws.AmazonWebServiceRequest
      *        example, to get the list of applicable Amazon EC2 price lists, use <code>AmazonEC2</code>. For a full list
      *        of service codes containing On-Demand and Reserved Instance (RI) pricing, use the <a href=
      *        "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_DescribeServices.html#awscostmanagement-pricing_DescribeServices-request-FormatVersion"
-     *        > <code>DescribeServices</code> </a> API.</p>
+     *        >DescribeServices</a> API.</p>
      *        <p>
-     *        To retrieve the Compute Savings Plan price lists, use <code>ComputeSavingsPlans</code>. To retrieve
-     *        Machine Learning Savings Plans price lists, use <code>MachineLearningSavingsPlans</code>.
+     *        To retrieve the Reserved Instance and Compute Savings Plan price lists, use
+     *        <code>ComputeSavingsPlans</code>.
+     *        </p>
+     *        <p>
+     *        To retrieve Machine Learning Savings Plans price lists, use <code>MachineLearningSavingsPlans</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -204,8 +221,8 @@ public class ListPriceListsRequest extends com.amazonaws.AmazonWebServiceRequest
      * This is used to filter the Price List by Amazon Web Services Region. For example, to get the price list only for
      * the <code>US East (N. Virginia)</code> Region, use <code>us-east-1</code>. If nothing is specified, you retrieve
      * price lists for all applicable Regions. The available <code>RegionCode</code> list can be retrieved from <a
-     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetAttributeValues.html">
-     * <code>GetAttributeValues</code> </a> API.
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetAttributeValues.html"
+     * >GetAttributeValues</a> API.
      * </p>
      * 
      * @param regionCode
@@ -213,8 +230,8 @@ public class ListPriceListsRequest extends com.amazonaws.AmazonWebServiceRequest
      *        only for the <code>US East (N. Virginia)</code> Region, use <code>us-east-1</code>. If nothing is
      *        specified, you retrieve price lists for all applicable Regions. The available <code>RegionCode</code> list
      *        can be retrieved from <a href=
-     *        "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetAttributeValues.html">
-     *        <code>GetAttributeValues</code> </a> API.
+     *        "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetAttributeValues.html"
+     *        >GetAttributeValues</a> API.
      */
 
     public void setRegionCode(String regionCode) {
@@ -226,8 +243,8 @@ public class ListPriceListsRequest extends com.amazonaws.AmazonWebServiceRequest
      * This is used to filter the Price List by Amazon Web Services Region. For example, to get the price list only for
      * the <code>US East (N. Virginia)</code> Region, use <code>us-east-1</code>. If nothing is specified, you retrieve
      * price lists for all applicable Regions. The available <code>RegionCode</code> list can be retrieved from <a
-     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetAttributeValues.html">
-     * <code>GetAttributeValues</code> </a> API.
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetAttributeValues.html"
+     * >GetAttributeValues</a> API.
      * </p>
      * 
      * @return This is used to filter the Price List by Amazon Web Services Region. For example, to get the price list
@@ -235,7 +252,7 @@ public class ListPriceListsRequest extends com.amazonaws.AmazonWebServiceRequest
      *         specified, you retrieve price lists for all applicable Regions. The available <code>RegionCode</code>
      *         list can be retrieved from <a href=
      *         "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetAttributeValues.html"
-     *         > <code>GetAttributeValues</code> </a> API.
+     *         >GetAttributeValues</a> API.
      */
 
     public String getRegionCode() {
@@ -247,8 +264,8 @@ public class ListPriceListsRequest extends com.amazonaws.AmazonWebServiceRequest
      * This is used to filter the Price List by Amazon Web Services Region. For example, to get the price list only for
      * the <code>US East (N. Virginia)</code> Region, use <code>us-east-1</code>. If nothing is specified, you retrieve
      * price lists for all applicable Regions. The available <code>RegionCode</code> list can be retrieved from <a
-     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetAttributeValues.html">
-     * <code>GetAttributeValues</code> </a> API.
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetAttributeValues.html"
+     * >GetAttributeValues</a> API.
      * </p>
      * 
      * @param regionCode
@@ -256,8 +273,8 @@ public class ListPriceListsRequest extends com.amazonaws.AmazonWebServiceRequest
      *        only for the <code>US East (N. Virginia)</code> Region, use <code>us-east-1</code>. If nothing is
      *        specified, you retrieve price lists for all applicable Regions. The available <code>RegionCode</code> list
      *        can be retrieved from <a href=
-     *        "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetAttributeValues.html">
-     *        <code>GetAttributeValues</code> </a> API.
+     *        "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetAttributeValues.html"
+     *        >GetAttributeValues</a> API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

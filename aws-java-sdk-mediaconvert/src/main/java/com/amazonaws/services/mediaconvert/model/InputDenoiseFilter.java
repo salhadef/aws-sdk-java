@@ -15,8 +15,8 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is disabled. Only applicable to MPEG2,
- * H.264, H.265, and uncompressed video inputs.
+ * Enable Denoise to filter noise from the input. Default is disabled. Only applicable to MPEG2, H.264, H.265, and
+ * uncompressed video inputs.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum InputDenoiseFilter {

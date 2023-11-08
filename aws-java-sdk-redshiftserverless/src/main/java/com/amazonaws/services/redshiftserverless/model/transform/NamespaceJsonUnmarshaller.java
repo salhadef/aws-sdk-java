@@ -48,6 +48,14 @@ public class NamespaceJsonUnmarshaller implements Unmarshaller<Namespace, JsonUn
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("adminPasswordSecretArn", targetDepth)) {
+                    context.nextToken();
+                    namespace.setAdminPasswordSecretArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("adminPasswordSecretKmsKeyId", targetDepth)) {
+                    context.nextToken();
+                    namespace.setAdminPasswordSecretKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("adminUsername", targetDepth)) {
                     context.nextToken();
                     namespace.setAdminUsername(context.getUnmarshaller(String.class).unmarshall(context));

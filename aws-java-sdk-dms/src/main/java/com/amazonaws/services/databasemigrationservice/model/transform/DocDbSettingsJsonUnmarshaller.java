@@ -92,6 +92,14 @@ public class DocDbSettingsJsonUnmarshaller implements Unmarshaller<DocDbSettings
                     context.nextToken();
                     docDbSettings.setSecretsManagerSecretId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("UseUpdateLookUp", targetDepth)) {
+                    context.nextToken();
+                    docDbSettings.setUseUpdateLookUp(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("ReplicateShardCollections", targetDepth)) {
+                    context.nextToken();
+                    docDbSettings.setReplicateShardCollections(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

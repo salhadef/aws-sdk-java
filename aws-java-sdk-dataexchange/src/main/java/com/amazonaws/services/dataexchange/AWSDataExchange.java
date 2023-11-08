@@ -524,6 +524,31 @@ public interface AWSDataExchange {
 
     /**
      * <p>
+     * The type of event associated with the data set.
+     * </p>
+     * 
+     * @param sendDataSetNotificationRequest
+     * @return Result of the SendDataSetNotification operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource couldn't be found.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws AccessDeniedException
+     *         Access to the resource is denied.
+     * @throws ConflictException
+     *         The request couldn't be completed because it conflicted with the current state of the resource.
+     * @throws ValidationException
+     *         The request was invalid.
+     * @throws InternalServerException
+     *         An exception occurred with the service.
+     * @sample AWSDataExchange.SendDataSetNotification
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/SendDataSetNotification"
+     *      target="_top">AWS API Documentation</a>
+     */
+    SendDataSetNotificationResult sendDataSetNotification(SendDataSetNotificationRequest sendDataSetNotificationRequest);
+
+    /**
+     * <p>
      * This operation starts a job.
      * </p>
      * 

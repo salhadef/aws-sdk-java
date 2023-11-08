@@ -310,6 +310,11 @@ public class CreateLaunchTemplateRequestMarshaller implements Marshaller<Request
                         request.addParameter("LaunchTemplateData.NetworkInterface." + networkInterfacesListIndex + ".Ipv6PrefixCount",
                                 StringUtils.fromInteger(requestLaunchTemplateDataNetworkInterfacesListValue.getIpv6PrefixCount()));
                     }
+
+                    if (requestLaunchTemplateDataNetworkInterfacesListValue.getPrimaryIpv6() != null) {
+                        request.addParameter("LaunchTemplateData.NetworkInterface." + networkInterfacesListIndex + ".PrimaryIpv6",
+                                StringUtils.fromBoolean(requestLaunchTemplateDataNetworkInterfacesListValue.getPrimaryIpv6()));
+                    }
                     networkInterfacesListIndex++;
                 }
             }

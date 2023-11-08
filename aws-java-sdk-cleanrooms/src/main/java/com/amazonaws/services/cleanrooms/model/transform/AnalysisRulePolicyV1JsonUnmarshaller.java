@@ -56,6 +56,10 @@ public class AnalysisRulePolicyV1JsonUnmarshaller implements Unmarshaller<Analys
                     context.nextToken();
                     analysisRulePolicyV1.setAggregation(AnalysisRuleAggregationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("custom", targetDepth)) {
+                    context.nextToken();
+                    analysisRulePolicyV1.setCustom(AnalysisRuleCustomJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

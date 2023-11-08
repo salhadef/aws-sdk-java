@@ -48,53 +48,53 @@ public class AnnotationStoreItemJsonUnmarshaller implements Unmarshaller<Annotat
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("creationTime", targetDepth)) {
-                    context.nextToken();
-                    annotationStoreItem.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
-                }
-                if (context.testExpression("description", targetDepth)) {
-                    context.nextToken();
-                    annotationStoreItem.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
                     annotationStoreItem.setId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("name", targetDepth)) {
-                    context.nextToken();
-                    annotationStoreItem.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("reference", targetDepth)) {
                     context.nextToken();
                     annotationStoreItem.setReference(ReferenceItemJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context.testExpression("sseConfig", targetDepth)) {
-                    context.nextToken();
-                    annotationStoreItem.setSseConfig(SseConfigJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     annotationStoreItem.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("statusMessage", targetDepth)) {
-                    context.nextToken();
-                    annotationStoreItem.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("storeArn", targetDepth)) {
                     context.nextToken();
                     annotationStoreItem.setStoreArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("name", targetDepth)) {
+                    context.nextToken();
+                    annotationStoreItem.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("storeFormat", targetDepth)) {
                     context.nextToken();
                     annotationStoreItem.setStoreFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("storeSizeBytes", targetDepth)) {
+                if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
-                    annotationStoreItem.setStoreSizeBytes(context.getUnmarshaller(Long.class).unmarshall(context));
+                    annotationStoreItem.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("sseConfig", targetDepth)) {
+                    context.nextToken();
+                    annotationStoreItem.setSseConfig(SseConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("creationTime", targetDepth)) {
+                    context.nextToken();
+                    annotationStoreItem.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("updateTime", targetDepth)) {
                     context.nextToken();
                     annotationStoreItem.setUpdateTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (context.testExpression("statusMessage", targetDepth)) {
+                    context.nextToken();
+                    annotationStoreItem.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("storeSizeBytes", targetDepth)) {
+                    context.nextToken();
+                    annotationStoreItem.setStoreSizeBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

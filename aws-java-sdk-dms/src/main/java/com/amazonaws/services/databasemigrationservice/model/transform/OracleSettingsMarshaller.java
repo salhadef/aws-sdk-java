@@ -112,6 +112,8 @@ public class OracleSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TrimSpaceInChar").build();
     private static final MarshallingInfo<Boolean> CONVERTTIMESTAMPWITHZONETOUTC_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConvertTimestampWithZoneToUTC").build();
+    private static final MarshallingInfo<Integer> OPENTRANSACTIONWINDOW_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OpenTransactionWindow").build();
 
     private static final OracleSettingsMarshaller instance = new OracleSettingsMarshaller();
 
@@ -171,6 +173,7 @@ public class OracleSettingsMarshaller {
             protocolMarshaller.marshall(oracleSettings.getSecretsManagerOracleAsmSecretId(), SECRETSMANAGERORACLEASMSECRETID_BINDING);
             protocolMarshaller.marshall(oracleSettings.getTrimSpaceInChar(), TRIMSPACEINCHAR_BINDING);
             protocolMarshaller.marshall(oracleSettings.getConvertTimestampWithZoneToUTC(), CONVERTTIMESTAMPWITHZONETOUTC_BINDING);
+            protocolMarshaller.marshall(oracleSettings.getOpenTransactionWindow(), OPENTRANSACTIONWINDOW_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

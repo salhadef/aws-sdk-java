@@ -26,16 +26,20 @@ import java.util.concurrent.ExecutorService;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * Welcome to the <i>AWS Clean Rooms API Reference</i>.
+ * Welcome to the <i>Clean Rooms API Reference</i>.
  * </p>
  * <p>
- * AWS Clean Rooms is an AWS service that helps multiple parties to join their data together in a secure collaboration
- * workspace. In the collaboration, members who can query and receive results can get insights into the collective
- * datasets without either party getting access to the other party's raw data.
+ * Clean Rooms is an Amazon Web Services service that helps multiple parties to join their data together in a secure
+ * collaboration workspace. In the collaboration, members who can query and receive results can get insights into the
+ * collective datasets without either party getting access to the other party's raw data.
  * </p>
  * <p>
- * To learn more about AWS Clean Rooms concepts, procedures, and best practices, see the <a
- * href="https://docs.aws.amazon.com/clean-rooms/latest/userguide/what-is.html">AWS Clean Rooms User Guide</a>.
+ * To learn more about Clean Rooms concepts, procedures, and best practices, see the <a
+ * href="https://docs.aws.amazon.com/clean-rooms/latest/userguide/what-is.html">Clean Rooms User Guide</a>.
+ * </p>
+ * <p>
+ * To learn more about SQL commands, functions, and conditions supported in Clean Rooms, see the <a
+ * href="https://docs.aws.amazon.com/clean-rooms/latest/sql-reference/sql-reference.html">Clean Rooms SQL Reference</a>.
  * </p>
  */
 @ThreadSafe
@@ -85,6 +89,41 @@ public class AWSCleanRoomsAsyncClient extends AWSCleanRoomsClient implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<BatchGetCollaborationAnalysisTemplateResult> batchGetCollaborationAnalysisTemplateAsync(
+            BatchGetCollaborationAnalysisTemplateRequest request) {
+
+        return batchGetCollaborationAnalysisTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetCollaborationAnalysisTemplateResult> batchGetCollaborationAnalysisTemplateAsync(
+            final BatchGetCollaborationAnalysisTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchGetCollaborationAnalysisTemplateRequest, BatchGetCollaborationAnalysisTemplateResult> asyncHandler) {
+        final BatchGetCollaborationAnalysisTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchGetCollaborationAnalysisTemplateResult>() {
+            @Override
+            public BatchGetCollaborationAnalysisTemplateResult call() throws Exception {
+                BatchGetCollaborationAnalysisTemplateResult result = null;
+
+                try {
+                    result = executeBatchGetCollaborationAnalysisTemplate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchGetSchemaResult> batchGetSchemaAsync(BatchGetSchemaRequest request) {
 
         return batchGetSchemaAsync(request, null);
@@ -102,6 +141,39 @@ public class AWSCleanRoomsAsyncClient extends AWSCleanRoomsClient implements AWS
 
                 try {
                     result = executeBatchGetSchema(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAnalysisTemplateResult> createAnalysisTemplateAsync(CreateAnalysisTemplateRequest request) {
+
+        return createAnalysisTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAnalysisTemplateResult> createAnalysisTemplateAsync(final CreateAnalysisTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateAnalysisTemplateRequest, CreateAnalysisTemplateResult> asyncHandler) {
+        final CreateAnalysisTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateAnalysisTemplateResult>() {
+            @Override
+            public CreateAnalysisTemplateResult call() throws Exception {
+                CreateAnalysisTemplateResult result = null;
+
+                try {
+                    result = executeCreateAnalysisTemplate(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -271,6 +343,39 @@ public class AWSCleanRoomsAsyncClient extends AWSCleanRoomsClient implements AWS
 
                 try {
                     result = executeCreateMembership(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAnalysisTemplateResult> deleteAnalysisTemplateAsync(DeleteAnalysisTemplateRequest request) {
+
+        return deleteAnalysisTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAnalysisTemplateResult> deleteAnalysisTemplateAsync(final DeleteAnalysisTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAnalysisTemplateRequest, DeleteAnalysisTemplateResult> asyncHandler) {
+        final DeleteAnalysisTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteAnalysisTemplateResult>() {
+            @Override
+            public DeleteAnalysisTemplateResult call() throws Exception {
+                DeleteAnalysisTemplateResult result = null;
+
+                try {
+                    result = executeDeleteAnalysisTemplate(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -489,6 +594,39 @@ public class AWSCleanRoomsAsyncClient extends AWSCleanRoomsClient implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<GetAnalysisTemplateResult> getAnalysisTemplateAsync(GetAnalysisTemplateRequest request) {
+
+        return getAnalysisTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAnalysisTemplateResult> getAnalysisTemplateAsync(final GetAnalysisTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetAnalysisTemplateRequest, GetAnalysisTemplateResult> asyncHandler) {
+        final GetAnalysisTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetAnalysisTemplateResult>() {
+            @Override
+            public GetAnalysisTemplateResult call() throws Exception {
+                GetAnalysisTemplateResult result = null;
+
+                try {
+                    result = executeGetAnalysisTemplate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetCollaborationResult> getCollaborationAsync(GetCollaborationRequest request) {
 
         return getCollaborationAsync(request, null);
@@ -506,6 +644,41 @@ public class AWSCleanRoomsAsyncClient extends AWSCleanRoomsClient implements AWS
 
                 try {
                     result = executeGetCollaboration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCollaborationAnalysisTemplateResult> getCollaborationAnalysisTemplateAsync(
+            GetCollaborationAnalysisTemplateRequest request) {
+
+        return getCollaborationAnalysisTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCollaborationAnalysisTemplateResult> getCollaborationAnalysisTemplateAsync(
+            final GetCollaborationAnalysisTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCollaborationAnalysisTemplateRequest, GetCollaborationAnalysisTemplateResult> asyncHandler) {
+        final GetCollaborationAnalysisTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetCollaborationAnalysisTemplateResult>() {
+            @Override
+            public GetCollaborationAnalysisTemplateResult call() throws Exception {
+                GetCollaborationAnalysisTemplateResult result = null;
+
+                try {
+                    result = executeGetCollaborationAnalysisTemplate(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -739,6 +912,74 @@ public class AWSCleanRoomsAsyncClient extends AWSCleanRoomsClient implements AWS
 
                 try {
                     result = executeGetSchemaAnalysisRule(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAnalysisTemplatesResult> listAnalysisTemplatesAsync(ListAnalysisTemplatesRequest request) {
+
+        return listAnalysisTemplatesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAnalysisTemplatesResult> listAnalysisTemplatesAsync(final ListAnalysisTemplatesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAnalysisTemplatesRequest, ListAnalysisTemplatesResult> asyncHandler) {
+        final ListAnalysisTemplatesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAnalysisTemplatesResult>() {
+            @Override
+            public ListAnalysisTemplatesResult call() throws Exception {
+                ListAnalysisTemplatesResult result = null;
+
+                try {
+                    result = executeListAnalysisTemplates(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCollaborationAnalysisTemplatesResult> listCollaborationAnalysisTemplatesAsync(
+            ListCollaborationAnalysisTemplatesRequest request) {
+
+        return listCollaborationAnalysisTemplatesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCollaborationAnalysisTemplatesResult> listCollaborationAnalysisTemplatesAsync(
+            final ListCollaborationAnalysisTemplatesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListCollaborationAnalysisTemplatesRequest, ListCollaborationAnalysisTemplatesResult> asyncHandler) {
+        final ListCollaborationAnalysisTemplatesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListCollaborationAnalysisTemplatesResult>() {
+            @Override
+            public ListCollaborationAnalysisTemplatesResult call() throws Exception {
+                ListCollaborationAnalysisTemplatesResult result = null;
+
+                try {
+                    result = executeListCollaborationAnalysisTemplates(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1104,6 +1345,39 @@ public class AWSCleanRoomsAsyncClient extends AWSCleanRoomsClient implements AWS
 
                 try {
                     result = executeUntagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAnalysisTemplateResult> updateAnalysisTemplateAsync(UpdateAnalysisTemplateRequest request) {
+
+        return updateAnalysisTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAnalysisTemplateResult> updateAnalysisTemplateAsync(final UpdateAnalysisTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateAnalysisTemplateRequest, UpdateAnalysisTemplateResult> asyncHandler) {
+        final UpdateAnalysisTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateAnalysisTemplateResult>() {
+            @Override
+            public UpdateAnalysisTemplateResult call() throws Exception {
+                UpdateAnalysisTemplateResult result = null;
+
+                try {
+                    result = executeUpdateAnalysisTemplate(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

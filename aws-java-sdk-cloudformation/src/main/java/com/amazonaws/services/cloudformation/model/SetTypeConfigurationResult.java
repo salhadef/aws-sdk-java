@@ -25,7 +25,7 @@ public class SetTypeConfigurationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the configuration data, in this account and region.
+     * The Amazon Resource Name (ARN) for the configuration data, in this account and Region.
      * </p>
      * <p>
      * Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code> and <code>TypeName</code>.
@@ -35,14 +35,14 @@ public class SetTypeConfigurationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the configuration data, in this account and region.
+     * The Amazon Resource Name (ARN) for the configuration data, in this account and Region.
      * </p>
      * <p>
      * Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code> and <code>TypeName</code>.
      * </p>
      * 
      * @param configurationArn
-     *        The Amazon Resource Name (ARN) for the configuration data, in this account and region.</p>
+     *        The Amazon Resource Name (ARN) for the configuration data, in this account and Region.</p>
      *        <p>
      *        Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code> and
      *        <code>TypeName</code>.
@@ -54,13 +54,13 @@ public class SetTypeConfigurationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the configuration data, in this account and region.
+     * The Amazon Resource Name (ARN) for the configuration data, in this account and Region.
      * </p>
      * <p>
      * Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code> and <code>TypeName</code>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) for the configuration data, in this account and region.</p>
+     * @return The Amazon Resource Name (ARN) for the configuration data, in this account and Region.</p>
      *         <p>
      *         Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code> and
      *         <code>TypeName</code>.
@@ -72,14 +72,14 @@ public class SetTypeConfigurationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the configuration data, in this account and region.
+     * The Amazon Resource Name (ARN) for the configuration data, in this account and Region.
      * </p>
      * <p>
      * Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code> and <code>TypeName</code>.
      * </p>
      * 
      * @param configurationArn
-     *        The Amazon Resource Name (ARN) for the configuration data, in this account and region.</p>
+     *        The Amazon Resource Name (ARN) for the configuration data, in this account and Region.</p>
      *        <p>
      *        Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code> and
      *        <code>TypeName</code>.

@@ -126,7 +126,9 @@ public interface AmazonAthena {
 
     /**
      * <p>
-     * Cancels the capacity reservation with the specified name.
+     * Cancels the capacity reservation with the specified name. Cancelled reservations remain in your account and will
+     * be deleted 45 days after cancellation. During the 45 days, you cannot re-purpose or reuse a reservation that has
+     * been cancelled, but you can refer to its tags and view it for historical reference.
      * </p>
      * 
      * @param cancelCapacityReservationRequest
@@ -283,6 +285,27 @@ public interface AmazonAthena {
      *      Documentation</a>
      */
     CreateWorkGroupResult createWorkGroup(CreateWorkGroupRequest createWorkGroupRequest);
+
+    /**
+     * <p>
+     * Deletes a cancelled capacity reservation. A reservation must be cancelled before it can be deleted. A deleted
+     * reservation is immediately removed from your account and can no longer be referenced, including by its ARN. A
+     * deleted reservation cannot be called by <code>GetCapacityReservation</code>, and deleted reservations do not
+     * appear in the output of <code>ListCapacityReservations</code>.
+     * </p>
+     * 
+     * @param deleteCapacityReservationRequest
+     * @return Result of the DeleteCapacityReservation operation returned by the service.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @sample AmazonAthena.DeleteCapacityReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteCapacityReservation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteCapacityReservationResult deleteCapacityReservation(DeleteCapacityReservationRequest deleteCapacityReservationRequest);
 
     /**
      * <p>

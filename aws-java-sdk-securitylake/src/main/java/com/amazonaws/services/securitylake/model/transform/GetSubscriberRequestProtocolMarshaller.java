@@ -32,8 +32,9 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class GetSubscriberRequestProtocolMarshaller implements Marshaller<Request<GetSubscriberRequest>, GetSubscriberRequest> {
 
-    private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/v1/subscribers/{id}")
-            .httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false).hasPayloadMembers(false).serviceName("AmazonSecurityLake").build();
+    private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
+            .requestUri("/v1/subscribers/{subscriberId}").httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false).hasPayloadMembers(false)
+            .serviceName("AmazonSecurityLake").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

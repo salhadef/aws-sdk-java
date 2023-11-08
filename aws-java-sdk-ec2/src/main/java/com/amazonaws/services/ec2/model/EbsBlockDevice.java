@@ -152,8 +152,8 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * The ARN of the Outpost on which the snapshot is stored.
      * </p>
      * <p>
-     * This parameter is only supported on <code>BlockDeviceMapping</code> objects called by <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html"> CreateImage</a>.
+     * This parameter is not supported when using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.
      * </p>
      */
     private String outpostArn;
@@ -1028,15 +1028,15 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * The ARN of the Outpost on which the snapshot is stored.
      * </p>
      * <p>
-     * This parameter is only supported on <code>BlockDeviceMapping</code> objects called by <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html"> CreateImage</a>.
+     * This parameter is not supported when using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.
      * </p>
      * 
      * @param outpostArn
      *        The ARN of the Outpost on which the snapshot is stored.</p>
      *        <p>
-     *        This parameter is only supported on <code>BlockDeviceMapping</code> objects called by <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html"> CreateImage</a>.
+     *        This parameter is not supported when using <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.
      */
 
     public void setOutpostArn(String outpostArn) {
@@ -1048,14 +1048,14 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * The ARN of the Outpost on which the snapshot is stored.
      * </p>
      * <p>
-     * This parameter is only supported on <code>BlockDeviceMapping</code> objects called by <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html"> CreateImage</a>.
+     * This parameter is not supported when using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.
      * </p>
      * 
      * @return The ARN of the Outpost on which the snapshot is stored.</p>
      *         <p>
-     *         This parameter is only supported on <code>BlockDeviceMapping</code> objects called by <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html"> CreateImage</a>.
+     *         This parameter is not supported when using <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.
      */
 
     public String getOutpostArn() {
@@ -1067,15 +1067,15 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * The ARN of the Outpost on which the snapshot is stored.
      * </p>
      * <p>
-     * This parameter is only supported on <code>BlockDeviceMapping</code> objects called by <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html"> CreateImage</a>.
+     * This parameter is not supported when using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.
      * </p>
      * 
      * @param outpostArn
      *        The ARN of the Outpost on which the snapshot is stored.</p>
      *        <p>
-     *        This parameter is only supported on <code>BlockDeviceMapping</code> objects called by <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html"> CreateImage</a>.
+     *        This parameter is not supported when using <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

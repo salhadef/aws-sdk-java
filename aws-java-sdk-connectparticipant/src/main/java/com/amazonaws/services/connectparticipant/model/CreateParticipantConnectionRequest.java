@@ -27,8 +27,8 @@ public class CreateParticipantConnectionRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Type of connection information required. This can be omitted if <code>ConnectParticipant</code> is
-     * <code>true</code>.
+     * Type of connection information required. If you need <code>CONNECTION_CREDENTIALS</code> along with marking
+     * participant as connected, pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.
      * </p>
      */
     private java.util.List<String> type;
@@ -53,12 +53,12 @@ public class CreateParticipantConnectionRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Type of connection information required. This can be omitted if <code>ConnectParticipant</code> is
-     * <code>true</code>.
+     * Type of connection information required. If you need <code>CONNECTION_CREDENTIALS</code> along with marking
+     * participant as connected, pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.
      * </p>
      * 
-     * @return Type of connection information required. This can be omitted if <code>ConnectParticipant</code> is
-     *         <code>true</code>.
+     * @return Type of connection information required. If you need <code>CONNECTION_CREDENTIALS</code> along with
+     *         marking participant as connected, pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.
      * @see ConnectionType
      */
 
@@ -68,13 +68,13 @@ public class CreateParticipantConnectionRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Type of connection information required. This can be omitted if <code>ConnectParticipant</code> is
-     * <code>true</code>.
+     * Type of connection information required. If you need <code>CONNECTION_CREDENTIALS</code> along with marking
+     * participant as connected, pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.
      * </p>
      * 
      * @param type
-     *        Type of connection information required. This can be omitted if <code>ConnectParticipant</code> is
-     *        <code>true</code>.
+     *        Type of connection information required. If you need <code>CONNECTION_CREDENTIALS</code> along with
+     *        marking participant as connected, pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.
      * @see ConnectionType
      */
 
@@ -89,8 +89,8 @@ public class CreateParticipantConnectionRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Type of connection information required. This can be omitted if <code>ConnectParticipant</code> is
-     * <code>true</code>.
+     * Type of connection information required. If you need <code>CONNECTION_CREDENTIALS</code> along with marking
+     * participant as connected, pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -99,8 +99,8 @@ public class CreateParticipantConnectionRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param type
-     *        Type of connection information required. This can be omitted if <code>ConnectParticipant</code> is
-     *        <code>true</code>.
+     *        Type of connection information required. If you need <code>CONNECTION_CREDENTIALS</code> along with
+     *        marking participant as connected, pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConnectionType
      */
@@ -117,13 +117,13 @@ public class CreateParticipantConnectionRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Type of connection information required. This can be omitted if <code>ConnectParticipant</code> is
-     * <code>true</code>.
+     * Type of connection information required. If you need <code>CONNECTION_CREDENTIALS</code> along with marking
+     * participant as connected, pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.
      * </p>
      * 
      * @param type
-     *        Type of connection information required. This can be omitted if <code>ConnectParticipant</code> is
-     *        <code>true</code>.
+     *        Type of connection information required. If you need <code>CONNECTION_CREDENTIALS</code> along with
+     *        marking participant as connected, pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConnectionType
      */
@@ -135,13 +135,13 @@ public class CreateParticipantConnectionRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Type of connection information required. This can be omitted if <code>ConnectParticipant</code> is
-     * <code>true</code>.
+     * Type of connection information required. If you need <code>CONNECTION_CREDENTIALS</code> along with marking
+     * participant as connected, pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.
      * </p>
      * 
      * @param type
-     *        Type of connection information required. This can be omitted if <code>ConnectParticipant</code> is
-     *        <code>true</code>.
+     *        Type of connection information required. If you need <code>CONNECTION_CREDENTIALS</code> along with
+     *        marking participant as connected, pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConnectionType
      */

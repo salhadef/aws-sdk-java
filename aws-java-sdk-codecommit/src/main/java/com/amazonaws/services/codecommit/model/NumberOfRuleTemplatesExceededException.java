@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The maximum number of approval rule templates has been exceeded for this AWS Region.
+ * The maximum number of approval rule templates has been exceeded for this Amazon Web Services Region.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

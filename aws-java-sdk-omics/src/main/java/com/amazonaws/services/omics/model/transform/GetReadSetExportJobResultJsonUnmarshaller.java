@@ -48,31 +48,17 @@ public class GetReadSetExportJobResultJsonUnmarshaller implements Unmarshaller<G
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("completionTime", targetDepth)) {
-                    context.nextToken();
-                    getReadSetExportJobResult.setCompletionTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
-                }
-                if (context.testExpression("creationTime", targetDepth)) {
-                    context.nextToken();
-                    getReadSetExportJobResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
-                }
-                if (context.testExpression("destination", targetDepth)) {
-                    context.nextToken();
-                    getReadSetExportJobResult.setDestination(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
                     getReadSetExportJobResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("readSets", targetDepth)) {
-                    context.nextToken();
-                    getReadSetExportJobResult.setReadSets(new ListUnmarshaller<ExportReadSetDetail>(ExportReadSetDetailJsonUnmarshaller.getInstance())
-
-                    .unmarshall(context));
-                }
                 if (context.testExpression("sequenceStoreId", targetDepth)) {
                     context.nextToken();
                     getReadSetExportJobResult.setSequenceStoreId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("destination", targetDepth)) {
+                    context.nextToken();
+                    getReadSetExportJobResult.setDestination(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
@@ -81,6 +67,20 @@ public class GetReadSetExportJobResultJsonUnmarshaller implements Unmarshaller<G
                 if (context.testExpression("statusMessage", targetDepth)) {
                     context.nextToken();
                     getReadSetExportJobResult.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("creationTime", targetDepth)) {
+                    context.nextToken();
+                    getReadSetExportJobResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (context.testExpression("completionTime", targetDepth)) {
+                    context.nextToken();
+                    getReadSetExportJobResult.setCompletionTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (context.testExpression("readSets", targetDepth)) {
+                    context.nextToken();
+                    getReadSetExportJobResult.setReadSets(new ListUnmarshaller<ExportReadSetDetail>(ExportReadSetDetailJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

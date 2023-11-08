@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UnarchiveApplicationRequestMarshaller {
 
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("accountID").build();
     private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("applicationID").build();
 
@@ -46,6 +48,7 @@ public class UnarchiveApplicationRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(unarchiveApplicationRequest.getAccountID(), ACCOUNTID_BINDING);
             protocolMarshaller.marshall(unarchiveApplicationRequest.getApplicationID(), APPLICATIONID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

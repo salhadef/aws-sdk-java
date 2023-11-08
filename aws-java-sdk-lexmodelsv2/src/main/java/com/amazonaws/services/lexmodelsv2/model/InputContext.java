@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The name of a context that must be active for an intent to be selected by Amazon Lex.
+ * A context that must be active for an intent to be selected by Amazon Lex.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/InputContext" target="_top">AWS API

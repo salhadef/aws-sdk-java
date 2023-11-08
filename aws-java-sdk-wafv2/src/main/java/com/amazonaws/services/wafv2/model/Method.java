@@ -23,7 +23,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * origin to perform.
  * </p>
  * <p>
- * This is used only in the <a>FieldToMatch</a> specification for some web request component types.
+ * This is used in the <a>FieldToMatch</a> specification for some web request component types.
  * </p>
  * <p>
  * JSON specification: <code>"Method": {}</code>

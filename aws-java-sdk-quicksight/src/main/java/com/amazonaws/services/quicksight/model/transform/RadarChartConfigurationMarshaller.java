@@ -55,6 +55,8 @@ public class RadarChartConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ColorLabelOptions").build();
     private static final MarshallingInfo<StructuredPojo> LEGEND_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Legend").build();
+    private static final MarshallingInfo<String> AXESRANGESCALE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AxesRangeScale").build();
 
     private static final RadarChartConfigurationMarshaller instance = new RadarChartConfigurationMarshaller();
 
@@ -86,6 +88,7 @@ public class RadarChartConfigurationMarshaller {
             protocolMarshaller.marshall(radarChartConfiguration.getColorAxis(), COLORAXIS_BINDING);
             protocolMarshaller.marshall(radarChartConfiguration.getColorLabelOptions(), COLORLABELOPTIONS_BINDING);
             protocolMarshaller.marshall(radarChartConfiguration.getLegend(), LEGEND_BINDING);
+            protocolMarshaller.marshall(radarChartConfiguration.getAxesRangeScale(), AXESRANGESCALE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

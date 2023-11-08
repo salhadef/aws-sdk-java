@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum StackInstanceFilterName {
 
     DETAILED_STATUS("DETAILED_STATUS"),
-    LAST_OPERATION_ID("LAST_OPERATION_ID");
+    LAST_OPERATION_ID("LAST_OPERATION_ID"),
+    DRIFT_STATUS("DRIFT_STATUS");
 
     private String value;
 

@@ -39,6 +39,20 @@ public class ModelSummaryMarshaller {
             .marshallLocationName("Status").build();
     private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedAt").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<Long> ACTIVEMODELVERSION_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ActiveModelVersion").build();
+    private static final MarshallingInfo<String> ACTIVEMODELVERSIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ActiveModelVersionArn").build();
+    private static final MarshallingInfo<String> LATESTSCHEDULEDRETRAININGSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LatestScheduledRetrainingStatus").build();
+    private static final MarshallingInfo<Long> LATESTSCHEDULEDRETRAININGMODELVERSION_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LatestScheduledRetrainingModelVersion").build();
+    private static final MarshallingInfo<java.util.Date> LATESTSCHEDULEDRETRAININGSTARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LatestScheduledRetrainingStartTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<java.util.Date> NEXTSCHEDULEDRETRAININGSTARTDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NextScheduledRetrainingStartDate").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> RETRAININGSCHEDULERSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RetrainingSchedulerStatus").build();
 
     private static final ModelSummaryMarshaller instance = new ModelSummaryMarshaller();
 
@@ -62,6 +76,13 @@ public class ModelSummaryMarshaller {
             protocolMarshaller.marshall(modelSummary.getDatasetArn(), DATASETARN_BINDING);
             protocolMarshaller.marshall(modelSummary.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(modelSummary.getCreatedAt(), CREATEDAT_BINDING);
+            protocolMarshaller.marshall(modelSummary.getActiveModelVersion(), ACTIVEMODELVERSION_BINDING);
+            protocolMarshaller.marshall(modelSummary.getActiveModelVersionArn(), ACTIVEMODELVERSIONARN_BINDING);
+            protocolMarshaller.marshall(modelSummary.getLatestScheduledRetrainingStatus(), LATESTSCHEDULEDRETRAININGSTATUS_BINDING);
+            protocolMarshaller.marshall(modelSummary.getLatestScheduledRetrainingModelVersion(), LATESTSCHEDULEDRETRAININGMODELVERSION_BINDING);
+            protocolMarshaller.marshall(modelSummary.getLatestScheduledRetrainingStartTime(), LATESTSCHEDULEDRETRAININGSTARTTIME_BINDING);
+            protocolMarshaller.marshall(modelSummary.getNextScheduledRetrainingStartDate(), NEXTSCHEDULEDRETRAININGSTARTDATE_BINDING);
+            protocolMarshaller.marshall(modelSummary.getRetrainingSchedulerStatus(), RETRAININGSCHEDULERSTATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

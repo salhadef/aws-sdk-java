@@ -30,7 +30,8 @@ public class DomainSettingsForUpdate implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A collection of <code>RStudioServerPro</code> Domain-level app settings to update.
+     * A collection of <code>RStudioServerPro</code> Domain-level app settings to update. A single
+     * <code>RStudioServerPro</code> application is created for a domain.
      * </p>
      */
     private RStudioServerProDomainSettingsForUpdate rStudioServerProDomainSettingsForUpdate;
@@ -53,11 +54,13 @@ public class DomainSettingsForUpdate implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A collection of <code>RStudioServerPro</code> Domain-level app settings to update.
+     * A collection of <code>RStudioServerPro</code> Domain-level app settings to update. A single
+     * <code>RStudioServerPro</code> application is created for a domain.
      * </p>
      * 
      * @param rStudioServerProDomainSettingsForUpdate
-     *        A collection of <code>RStudioServerPro</code> Domain-level app settings to update.
+     *        A collection of <code>RStudioServerPro</code> Domain-level app settings to update. A single
+     *        <code>RStudioServerPro</code> application is created for a domain.
      */
 
     public void setRStudioServerProDomainSettingsForUpdate(RStudioServerProDomainSettingsForUpdate rStudioServerProDomainSettingsForUpdate) {
@@ -66,10 +69,12 @@ public class DomainSettingsForUpdate implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A collection of <code>RStudioServerPro</code> Domain-level app settings to update.
+     * A collection of <code>RStudioServerPro</code> Domain-level app settings to update. A single
+     * <code>RStudioServerPro</code> application is created for a domain.
      * </p>
      * 
-     * @return A collection of <code>RStudioServerPro</code> Domain-level app settings to update.
+     * @return A collection of <code>RStudioServerPro</code> Domain-level app settings to update. A single
+     *         <code>RStudioServerPro</code> application is created for a domain.
      */
 
     public RStudioServerProDomainSettingsForUpdate getRStudioServerProDomainSettingsForUpdate() {
@@ -78,11 +83,13 @@ public class DomainSettingsForUpdate implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A collection of <code>RStudioServerPro</code> Domain-level app settings to update.
+     * A collection of <code>RStudioServerPro</code> Domain-level app settings to update. A single
+     * <code>RStudioServerPro</code> application is created for a domain.
      * </p>
      * 
      * @param rStudioServerProDomainSettingsForUpdate
-     *        A collection of <code>RStudioServerPro</code> Domain-level app settings to update.
+     *        A collection of <code>RStudioServerPro</code> Domain-level app settings to update. A single
+     *        <code>RStudioServerPro</code> application is created for a domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -49,6 +49,10 @@ public class LensReviewMarshaller {
             .marshallLocationName("RiskCounts").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("NextToken").build();
+    private static final MarshallingInfo<List> PROFILES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Profiles").build();
+    private static final MarshallingInfo<Map> PRIORITIZEDRISKCOUNTS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PrioritizedRiskCounts").build();
 
     private static final LensReviewMarshaller instance = new LensReviewMarshaller();
 
@@ -76,6 +80,8 @@ public class LensReviewMarshaller {
             protocolMarshaller.marshall(lensReview.getNotes(), NOTES_BINDING);
             protocolMarshaller.marshall(lensReview.getRiskCounts(), RISKCOUNTS_BINDING);
             protocolMarshaller.marshall(lensReview.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(lensReview.getProfiles(), PROFILES_BINDING);
+            protocolMarshaller.marshall(lensReview.getPrioritizedRiskCounts(), PRIORITIZEDRISKCOUNTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -44,6 +44,7 @@ import com.amazonaws.services.sagemakerfeaturestoreruntime.AmazonSageMakerFeatur
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.sagemakerfeaturestoreruntime.model.*;
+
 import com.amazonaws.services.sagemakerfeaturestoreruntime.model.transform.*;
 
 /**
@@ -240,9 +241,9 @@ public class AmazonSageMakerFeatureStoreRuntimeClient extends AmazonWebServiceCl
     /**
      * <p>
      * Deletes a <code>Record</code> from a <code>FeatureGroup</code> in the <code>OnlineStore</code>. Feature Store
-     * supports both <code>SOFT_DELETE</code> and <code>HARD_DELETE</code>. For <code>SOFT_DELETE</code> (default),
-     * feature columns are set to <code>null</code> and the record is no longer retrievable by <code>GetRecord</code> or
-     * <code>BatchGetRecord</code>. For<code> HARD_DELETE</code>, the complete <code>Record</code> is removed from the
+     * supports both <code>SoftDelete</code> and <code>HardDelete</code>. For <code>SoftDelete</code> (default), feature
+     * columns are set to <code>null</code> and the record is no longer retrievable by <code>GetRecord</code> or
+     * <code>BatchGetRecord</code>. For <code>HardDelete</code>, the complete <code>Record</code> is removed from the
      * <code>OnlineStore</code>. In both cases, Feature Store appends the deleted record marker to the
      * <code>OfflineStore</code> with feature values set to <code>null</code>, <code>is_deleted</code> value set to
      * <code>True</code>, and <code>EventTime</code> set to the delete input <code>EventTime</code>.
@@ -255,14 +256,14 @@ public class AmazonSageMakerFeatureStoreRuntimeClient extends AmazonWebServiceCl
      * <ul>
      * <li>
      * <p>
-     * For <code>SOFT_DELETE</code>, the existing (undeleted) record remains in the <code>OnlineStore</code>, though the
+     * For <code>SoftDelete</code>, the existing (undeleted) record remains in the <code>OnlineStore</code>, though the
      * delete record marker is still written to the <code>OfflineStore</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>HARD_DELETE</code> returns <code>EventTime</code>: <code>400 ValidationException</code> to indicate that
-     * the delete operation failed. No delete record marker is written to the <code>OfflineStore</code>.
+     * <code>HardDelete</code> returns <code>EventTime</code>: <code>400 ValidationException</code> to indicate that the
+     * delete operation failed. No delete record marker is written to the <code>OfflineStore</code>.
      * </p>
      * </li>
      * </ul>
@@ -396,11 +397,25 @@ public class AmazonSageMakerFeatureStoreRuntimeClient extends AmazonWebServiceCl
 
     /**
      * <p>
-     * Used for data ingestion into the <code>FeatureStore</code>. The <code>PutRecord</code> API writes to both the
-     * <code>OnlineStore</code> and <code>OfflineStore</code>. If the record is the latest record for the
-     * <code>recordIdentifier</code>, the record is written to both the <code>OnlineStore</code> and
-     * <code>OfflineStore</code>. If the record is a historic record, it is written only to the
-     * <code>OfflineStore</code>.
+     * The <code>PutRecord</code> API is used to ingest a list of <code>Records</code> into your feature group.
+     * </p>
+     * <p>
+     * If a new record’s <code>EventTime</code> is greater, the new record is written to both the
+     * <code>OnlineStore</code> and <code>OfflineStore</code>. Otherwise, the record is a historic record and it is
+     * written only to the <code>OfflineStore</code>.
+     * </p>
+     * <p>
+     * You can specify the ingestion to be applied to the <code>OnlineStore</code>, <code>OfflineStore</code>, or both
+     * by using the <code>TargetStores</code> request parameter.
+     * </p>
+     * <p>
+     * You can set the ingested record to expire at a given time to live (TTL) duration after the record’s event time,
+     * <code>ExpiresAt</code> = <code>EventTime</code> + <code>TtlDuration</code>, by specifying the
+     * <code>TtlDuration</code> parameter. A record level <code>TtlDuration</code> is set when specifying the
+     * <code>TtlDuration</code> parameter using the <code>PutRecord</code> API call. If the input
+     * <code>TtlDuration</code> is <code>null</code> or unspecified, <code>TtlDuration</code> is set to the default
+     * feature group level <code>TtlDuration</code>. A record level <code>TtlDuration</code> supersedes the group level
+     * <code>TtlDuration</code>.
      * </p>
      * 
      * @param putRecordRequest

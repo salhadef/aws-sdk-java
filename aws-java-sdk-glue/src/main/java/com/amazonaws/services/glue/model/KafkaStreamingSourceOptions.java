@@ -156,6 +156,17 @@ public class KafkaStreamingSourceOptions implements Serializable, Cloneable, Str
      * </p>
      */
     private String emitConsumerLagMetrics;
+    /**
+     * <p>
+     * The timestamp of the record in the Kafka topic to start reading data from. The possible values are a timestamp
+     * string in UTC format of the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC timezone offset
+     * with a +/-. For example: "2023-04-04T08:00:00+08:00").
+     * </p>
+     * <p>
+     * Only one of <code>StartingTimestamp</code> or <code>StartingOffsets</code> must be set.
+     * </p>
+     */
+    private java.util.Date startingTimestamp;
 
     /**
      * <p>
@@ -1019,6 +1030,73 @@ public class KafkaStreamingSourceOptions implements Serializable, Cloneable, Str
     }
 
     /**
+     * <p>
+     * The timestamp of the record in the Kafka topic to start reading data from. The possible values are a timestamp
+     * string in UTC format of the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC timezone offset
+     * with a +/-. For example: "2023-04-04T08:00:00+08:00").
+     * </p>
+     * <p>
+     * Only one of <code>StartingTimestamp</code> or <code>StartingOffsets</code> must be set.
+     * </p>
+     * 
+     * @param startingTimestamp
+     *        The timestamp of the record in the Kafka topic to start reading data from. The possible values are a
+     *        timestamp string in UTC format of the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC
+     *        timezone offset with a +/-. For example: "2023-04-04T08:00:00+08:00"). </p>
+     *        <p>
+     *        Only one of <code>StartingTimestamp</code> or <code>StartingOffsets</code> must be set.
+     */
+
+    public void setStartingTimestamp(java.util.Date startingTimestamp) {
+        this.startingTimestamp = startingTimestamp;
+    }
+
+    /**
+     * <p>
+     * The timestamp of the record in the Kafka topic to start reading data from. The possible values are a timestamp
+     * string in UTC format of the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC timezone offset
+     * with a +/-. For example: "2023-04-04T08:00:00+08:00").
+     * </p>
+     * <p>
+     * Only one of <code>StartingTimestamp</code> or <code>StartingOffsets</code> must be set.
+     * </p>
+     * 
+     * @return The timestamp of the record in the Kafka topic to start reading data from. The possible values are a
+     *         timestamp string in UTC format of the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC
+     *         timezone offset with a +/-. For example: "2023-04-04T08:00:00+08:00"). </p>
+     *         <p>
+     *         Only one of <code>StartingTimestamp</code> or <code>StartingOffsets</code> must be set.
+     */
+
+    public java.util.Date getStartingTimestamp() {
+        return this.startingTimestamp;
+    }
+
+    /**
+     * <p>
+     * The timestamp of the record in the Kafka topic to start reading data from. The possible values are a timestamp
+     * string in UTC format of the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC timezone offset
+     * with a +/-. For example: "2023-04-04T08:00:00+08:00").
+     * </p>
+     * <p>
+     * Only one of <code>StartingTimestamp</code> or <code>StartingOffsets</code> must be set.
+     * </p>
+     * 
+     * @param startingTimestamp
+     *        The timestamp of the record in the Kafka topic to start reading data from. The possible values are a
+     *        timestamp string in UTC format of the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC
+     *        timezone offset with a +/-. For example: "2023-04-04T08:00:00+08:00"). </p>
+     *        <p>
+     *        Only one of <code>StartingTimestamp</code> or <code>StartingOffsets</code> must be set.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KafkaStreamingSourceOptions withStartingTimestamp(java.util.Date startingTimestamp) {
+        setStartingTimestamp(startingTimestamp);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1065,7 +1143,9 @@ public class KafkaStreamingSourceOptions implements Serializable, Cloneable, Str
         if (getAddRecordTimestamp() != null)
             sb.append("AddRecordTimestamp: ").append(getAddRecordTimestamp()).append(",");
         if (getEmitConsumerLagMetrics() != null)
-            sb.append("EmitConsumerLagMetrics: ").append(getEmitConsumerLagMetrics());
+            sb.append("EmitConsumerLagMetrics: ").append(getEmitConsumerLagMetrics()).append(",");
+        if (getStartingTimestamp() != null)
+            sb.append("StartingTimestamp: ").append(getStartingTimestamp());
         sb.append("}");
         return sb.toString();
     }
@@ -1152,6 +1232,10 @@ public class KafkaStreamingSourceOptions implements Serializable, Cloneable, Str
             return false;
         if (other.getEmitConsumerLagMetrics() != null && other.getEmitConsumerLagMetrics().equals(this.getEmitConsumerLagMetrics()) == false)
             return false;
+        if (other.getStartingTimestamp() == null ^ this.getStartingTimestamp() == null)
+            return false;
+        if (other.getStartingTimestamp() != null && other.getStartingTimestamp().equals(this.getStartingTimestamp()) == false)
+            return false;
         return true;
     }
 
@@ -1178,6 +1262,7 @@ public class KafkaStreamingSourceOptions implements Serializable, Cloneable, Str
         hashCode = prime * hashCode + ((getIncludeHeaders() == null) ? 0 : getIncludeHeaders().hashCode());
         hashCode = prime * hashCode + ((getAddRecordTimestamp() == null) ? 0 : getAddRecordTimestamp().hashCode());
         hashCode = prime * hashCode + ((getEmitConsumerLagMetrics() == null) ? 0 : getEmitConsumerLagMetrics().hashCode());
+        hashCode = prime * hashCode + ((getStartingTimestamp() == null) ? 0 : getStartingTimestamp().hashCode());
         return hashCode;
     }
 

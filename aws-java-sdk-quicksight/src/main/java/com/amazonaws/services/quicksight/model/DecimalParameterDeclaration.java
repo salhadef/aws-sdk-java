@@ -55,6 +55,8 @@ public class DecimalParameterDeclaration implements Serializable, Cloneable, Str
      */
     private DecimalValueWhenUnsetConfiguration valueWhenUnset;
 
+    private java.util.List<MappedDataSetParameter> mappedDataSetParameters;
+
     /**
      * <p>
      * The value type determines whether the parameter is a single-value or multi-value parameter.
@@ -247,6 +249,58 @@ public class DecimalParameterDeclaration implements Serializable, Cloneable, Str
     }
 
     /**
+     * @return
+     */
+
+    public java.util.List<MappedDataSetParameter> getMappedDataSetParameters() {
+        return mappedDataSetParameters;
+    }
+
+    /**
+     * @param mappedDataSetParameters
+     */
+
+    public void setMappedDataSetParameters(java.util.Collection<MappedDataSetParameter> mappedDataSetParameters) {
+        if (mappedDataSetParameters == null) {
+            this.mappedDataSetParameters = null;
+            return;
+        }
+
+        this.mappedDataSetParameters = new java.util.ArrayList<MappedDataSetParameter>(mappedDataSetParameters);
+    }
+
+    /**
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setMappedDataSetParameters(java.util.Collection)} or
+     * {@link #withMappedDataSetParameters(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param mappedDataSetParameters
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DecimalParameterDeclaration withMappedDataSetParameters(MappedDataSetParameter... mappedDataSetParameters) {
+        if (this.mappedDataSetParameters == null) {
+            setMappedDataSetParameters(new java.util.ArrayList<MappedDataSetParameter>(mappedDataSetParameters.length));
+        }
+        for (MappedDataSetParameter ele : mappedDataSetParameters) {
+            this.mappedDataSetParameters.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * @param mappedDataSetParameters
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DecimalParameterDeclaration withMappedDataSetParameters(java.util.Collection<MappedDataSetParameter> mappedDataSetParameters) {
+        setMappedDataSetParameters(mappedDataSetParameters);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -265,7 +319,9 @@ public class DecimalParameterDeclaration implements Serializable, Cloneable, Str
         if (getDefaultValues() != null)
             sb.append("DefaultValues: ").append(getDefaultValues()).append(",");
         if (getValueWhenUnset() != null)
-            sb.append("ValueWhenUnset: ").append(getValueWhenUnset());
+            sb.append("ValueWhenUnset: ").append(getValueWhenUnset()).append(",");
+        if (getMappedDataSetParameters() != null)
+            sb.append("MappedDataSetParameters: ").append(getMappedDataSetParameters());
         sb.append("}");
         return sb.toString();
     }
@@ -296,6 +352,10 @@ public class DecimalParameterDeclaration implements Serializable, Cloneable, Str
             return false;
         if (other.getValueWhenUnset() != null && other.getValueWhenUnset().equals(this.getValueWhenUnset()) == false)
             return false;
+        if (other.getMappedDataSetParameters() == null ^ this.getMappedDataSetParameters() == null)
+            return false;
+        if (other.getMappedDataSetParameters() != null && other.getMappedDataSetParameters().equals(this.getMappedDataSetParameters()) == false)
+            return false;
         return true;
     }
 
@@ -308,6 +368,7 @@ public class DecimalParameterDeclaration implements Serializable, Cloneable, Str
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDefaultValues() == null) ? 0 : getDefaultValues().hashCode());
         hashCode = prime * hashCode + ((getValueWhenUnset() == null) ? 0 : getValueWhenUnset().hashCode());
+        hashCode = prime * hashCode + ((getMappedDataSetParameters() == null) ? 0 : getMappedDataSetParameters().hashCode());
         return hashCode;
     }
 

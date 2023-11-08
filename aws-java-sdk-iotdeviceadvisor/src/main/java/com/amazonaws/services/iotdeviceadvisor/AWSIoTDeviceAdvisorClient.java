@@ -44,6 +44,7 @@ import com.amazonaws.services.iotdeviceadvisor.AWSIoTDeviceAdvisorClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.iotdeviceadvisor.model.*;
+
 import com.amazonaws.services.iotdeviceadvisor.model.transform.*;
 
 /**

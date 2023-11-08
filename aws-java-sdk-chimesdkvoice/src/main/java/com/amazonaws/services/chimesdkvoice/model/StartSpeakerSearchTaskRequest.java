@@ -49,6 +49,12 @@ public class StartSpeakerSearchTaskRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private String clientRequestToken;
+    /**
+     * <p>
+     * Specifies which call leg to stream for speaker search.
+     * </p>
+     */
+    private String callLeg;
 
     /**
      * <p>
@@ -211,6 +217,65 @@ public class StartSpeakerSearchTaskRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * Specifies which call leg to stream for speaker search.
+     * </p>
+     * 
+     * @param callLeg
+     *        Specifies which call leg to stream for speaker search.
+     * @see CallLegType
+     */
+
+    public void setCallLeg(String callLeg) {
+        this.callLeg = callLeg;
+    }
+
+    /**
+     * <p>
+     * Specifies which call leg to stream for speaker search.
+     * </p>
+     * 
+     * @return Specifies which call leg to stream for speaker search.
+     * @see CallLegType
+     */
+
+    public String getCallLeg() {
+        return this.callLeg;
+    }
+
+    /**
+     * <p>
+     * Specifies which call leg to stream for speaker search.
+     * </p>
+     * 
+     * @param callLeg
+     *        Specifies which call leg to stream for speaker search.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CallLegType
+     */
+
+    public StartSpeakerSearchTaskRequest withCallLeg(String callLeg) {
+        setCallLeg(callLeg);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies which call leg to stream for speaker search.
+     * </p>
+     * 
+     * @param callLeg
+     *        Specifies which call leg to stream for speaker search.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CallLegType
+     */
+
+    public StartSpeakerSearchTaskRequest withCallLeg(CallLegType callLeg) {
+        this.callLeg = callLeg.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -229,7 +294,9 @@ public class StartSpeakerSearchTaskRequest extends com.amazonaws.AmazonWebServic
         if (getVoiceProfileDomainId() != null)
             sb.append("VoiceProfileDomainId: ").append(getVoiceProfileDomainId()).append(",");
         if (getClientRequestToken() != null)
-            sb.append("ClientRequestToken: ").append(getClientRequestToken());
+            sb.append("ClientRequestToken: ").append(getClientRequestToken()).append(",");
+        if (getCallLeg() != null)
+            sb.append("CallLeg: ").append(getCallLeg());
         sb.append("}");
         return sb.toString();
     }
@@ -260,6 +327,10 @@ public class StartSpeakerSearchTaskRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getClientRequestToken() != null && other.getClientRequestToken().equals(this.getClientRequestToken()) == false)
             return false;
+        if (other.getCallLeg() == null ^ this.getCallLeg() == null)
+            return false;
+        if (other.getCallLeg() != null && other.getCallLeg().equals(this.getCallLeg()) == false)
+            return false;
         return true;
     }
 
@@ -272,6 +343,7 @@ public class StartSpeakerSearchTaskRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getTransactionId() == null) ? 0 : getTransactionId().hashCode());
         hashCode = prime * hashCode + ((getVoiceProfileDomainId() == null) ? 0 : getVoiceProfileDomainId().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
+        hashCode = prime * hashCode + ((getCallLeg() == null) ? 0 : getCallLeg().hashCode());
         return hashCode;
     }
 

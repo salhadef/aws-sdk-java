@@ -143,6 +143,11 @@ public class AbstractAmazonSnowball implements AmazonSnowball {
     }
 
     @Override
+    public ListPickupLocationsResult listPickupLocations(ListPickupLocationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListServiceVersionsResult listServiceVersions(ListServiceVersionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

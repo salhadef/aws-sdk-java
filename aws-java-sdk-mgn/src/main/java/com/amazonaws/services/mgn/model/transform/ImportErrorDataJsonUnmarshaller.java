@@ -48,6 +48,10 @@ public class ImportErrorDataJsonUnmarshaller implements Unmarshaller<ImportError
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("accountID", targetDepth)) {
+                    context.nextToken();
+                    importErrorData.setAccountID(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("applicationID", targetDepth)) {
                     context.nextToken();
                     importErrorData.setApplicationID(context.getUnmarshaller(String.class).unmarshall(context));

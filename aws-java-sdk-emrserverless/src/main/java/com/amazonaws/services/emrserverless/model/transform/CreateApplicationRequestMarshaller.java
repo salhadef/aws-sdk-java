@@ -13,7 +13,7 @@
 package com.amazonaws.services.emrserverless.model.transform;
 
 import java.util.Map;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -58,6 +58,10 @@ public class CreateApplicationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imageConfiguration").build();
     private static final MarshallingInfo<Map> WORKERTYPESPECIFICATIONS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("workerTypeSpecifications").build();
+    private static final MarshallingInfo<List> RUNTIMECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("runtimeConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> MONITORINGCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("monitoringConfiguration").build();
 
     private static final CreateApplicationRequestMarshaller instance = new CreateApplicationRequestMarshaller();
 
@@ -88,6 +92,8 @@ public class CreateApplicationRequestMarshaller {
             protocolMarshaller.marshall(createApplicationRequest.getArchitecture(), ARCHITECTURE_BINDING);
             protocolMarshaller.marshall(createApplicationRequest.getImageConfiguration(), IMAGECONFIGURATION_BINDING);
             protocolMarshaller.marshall(createApplicationRequest.getWorkerTypeSpecifications(), WORKERTYPESPECIFICATIONS_BINDING);
+            protocolMarshaller.marshall(createApplicationRequest.getRuntimeConfiguration(), RUNTIMECONFIGURATION_BINDING);
+            protocolMarshaller.marshall(createApplicationRequest.getMonitoringConfiguration(), MONITORINGCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

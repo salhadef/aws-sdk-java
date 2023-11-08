@@ -12,32 +12,63 @@
  */
 package com.amazonaws.services.sqs.model.transform;
 
-import org.w3c.dom.Node;
+import java.math.*;
+
 import javax.annotation.Generated;
 
-import com.amazonaws.AmazonServiceException;
+import com.amazonaws.services.sqs.model.*;
+import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
+import com.amazonaws.transform.*;
 
-import com.amazonaws.transform.StandardErrorUnmarshaller;
+import com.fasterxml.jackson.core.JsonToken;
+import static com.fasterxml.jackson.core.JsonToken.*;
 
-import com.amazonaws.services.sqs.model.ReceiptHandleIsInvalidException;
-
+/**
+ * ReceiptHandleIsInvalidException JSON Unmarshaller
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ReceiptHandleIsInvalidExceptionUnmarshaller extends StandardErrorUnmarshaller {
-
-    public ReceiptHandleIsInvalidExceptionUnmarshaller() {
-        super(ReceiptHandleIsInvalidException.class);
+public class ReceiptHandleIsInvalidExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
+    private ReceiptHandleIsInvalidExceptionUnmarshaller() {
+        super(com.amazonaws.services.sqs.model.ReceiptHandleIsInvalidException.class, "ReceiptHandleIsInvalid");
     }
 
     @Override
-    public AmazonServiceException unmarshall(Node node) throws Exception {
-        // Bail out if this isn't the right error code that this
-        // marshaller understands
-        String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("ReceiptHandleIsInvalid"))
+    public com.amazonaws.services.sqs.model.ReceiptHandleIsInvalidException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
+        com.amazonaws.services.sqs.model.ReceiptHandleIsInvalidException receiptHandleIsInvalidException = new com.amazonaws.services.sqs.model.ReceiptHandleIsInvalidException(
+                null);
+
+        int originalDepth = context.getCurrentDepth();
+        String currentParentElement = context.getCurrentParentElement();
+        int targetDepth = originalDepth + 1;
+
+        JsonToken token = context.getCurrentToken();
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL) {
             return null;
+        }
 
-        ReceiptHandleIsInvalidException e = (ReceiptHandleIsInvalidException) super.unmarshall(node);
+        while (true) {
+            if (token == null)
+                break;
 
-        return e;
+            if (token == FIELD_NAME || token == START_OBJECT) {
+            } else if (token == END_ARRAY || token == END_OBJECT) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
+                }
+            }
+            token = context.nextToken();
+        }
+        return receiptHandleIsInvalidException;
+    }
+
+    private static ReceiptHandleIsInvalidExceptionUnmarshaller instance;
+
+    public static ReceiptHandleIsInvalidExceptionUnmarshaller getInstance() {
+        if (instance == null)
+            instance = new ReceiptHandleIsInvalidExceptionUnmarshaller();
+        return instance;
     }
 }

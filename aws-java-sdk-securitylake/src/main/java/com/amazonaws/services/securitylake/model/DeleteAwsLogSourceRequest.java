@@ -27,346 +27,78 @@ public class DeleteAwsLogSourceRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Removes the specific Amazon Web Services sources from specific accounts and specific Regions.
+     * Specify the natively-supported Amazon Web Services service to remove as a source in Security Lake.
      * </p>
      */
-    private java.util.Map<String, java.util.Map<String, java.util.List<String>>> disableAllDimensions;
-    /**
-     * <p>
-     * Removes all Amazon Web Services sources from specific accounts or Regions.
-     * </p>
-     */
-    private java.util.List<String> disableSingleDimension;
-    /**
-     * <p>
-     * Remove a specific Amazon Web Services source from specific accounts or Regions.
-     * </p>
-     */
-    private java.util.Map<String, java.util.List<String>> disableTwoDimensions;
-    /**
-     * <p>
-     * This is a mandatory input. Specify the input order to disable dimensions in Security Lake, namely Region (Amazon
-     * Web Services Region code, source type, and member (account ID of a specific Amazon Web Services account).
-     * </p>
-     */
-    private java.util.List<String> inputOrder;
+    private java.util.List<AwsLogSourceConfiguration> sources;
 
     /**
      * <p>
-     * Removes the specific Amazon Web Services sources from specific accounts and specific Regions.
+     * Specify the natively-supported Amazon Web Services service to remove as a source in Security Lake.
      * </p>
      * 
-     * @return Removes the specific Amazon Web Services sources from specific accounts and specific Regions.
+     * @return Specify the natively-supported Amazon Web Services service to remove as a source in Security Lake.
      */
 
-    public java.util.Map<String, java.util.Map<String, java.util.List<String>>> getDisableAllDimensions() {
-        return disableAllDimensions;
+    public java.util.List<AwsLogSourceConfiguration> getSources() {
+        return sources;
     }
 
     /**
      * <p>
-     * Removes the specific Amazon Web Services sources from specific accounts and specific Regions.
+     * Specify the natively-supported Amazon Web Services service to remove as a source in Security Lake.
      * </p>
      * 
-     * @param disableAllDimensions
-     *        Removes the specific Amazon Web Services sources from specific accounts and specific Regions.
+     * @param sources
+     *        Specify the natively-supported Amazon Web Services service to remove as a source in Security Lake.
      */
 
-    public void setDisableAllDimensions(java.util.Map<String, java.util.Map<String, java.util.List<String>>> disableAllDimensions) {
-        this.disableAllDimensions = disableAllDimensions;
-    }
-
-    /**
-     * <p>
-     * Removes the specific Amazon Web Services sources from specific accounts and specific Regions.
-     * </p>
-     * 
-     * @param disableAllDimensions
-     *        Removes the specific Amazon Web Services sources from specific accounts and specific Regions.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DeleteAwsLogSourceRequest withDisableAllDimensions(java.util.Map<String, java.util.Map<String, java.util.List<String>>> disableAllDimensions) {
-        setDisableAllDimensions(disableAllDimensions);
-        return this;
-    }
-
-    /**
-     * Add a single DisableAllDimensions entry
-     *
-     * @see DeleteAwsLogSourceRequest#withDisableAllDimensions
-     * @returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DeleteAwsLogSourceRequest addDisableAllDimensionsEntry(String key, java.util.Map<String, java.util.List<String>> value) {
-        if (null == this.disableAllDimensions) {
-            this.disableAllDimensions = new java.util.HashMap<String, java.util.Map<String, java.util.List<String>>>();
-        }
-        if (this.disableAllDimensions.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.disableAllDimensions.put(key, value);
-        return this;
-    }
-
-    /**
-     * Removes all the entries added into DisableAllDimensions.
-     *
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DeleteAwsLogSourceRequest clearDisableAllDimensionsEntries() {
-        this.disableAllDimensions = null;
-        return this;
-    }
-
-    /**
-     * <p>
-     * Removes all Amazon Web Services sources from specific accounts or Regions.
-     * </p>
-     * 
-     * @return Removes all Amazon Web Services sources from specific accounts or Regions.
-     */
-
-    public java.util.List<String> getDisableSingleDimension() {
-        return disableSingleDimension;
-    }
-
-    /**
-     * <p>
-     * Removes all Amazon Web Services sources from specific accounts or Regions.
-     * </p>
-     * 
-     * @param disableSingleDimension
-     *        Removes all Amazon Web Services sources from specific accounts or Regions.
-     */
-
-    public void setDisableSingleDimension(java.util.Collection<String> disableSingleDimension) {
-        if (disableSingleDimension == null) {
-            this.disableSingleDimension = null;
+    public void setSources(java.util.Collection<AwsLogSourceConfiguration> sources) {
+        if (sources == null) {
+            this.sources = null;
             return;
         }
 
-        this.disableSingleDimension = new java.util.ArrayList<String>(disableSingleDimension);
+        this.sources = new java.util.ArrayList<AwsLogSourceConfiguration>(sources);
     }
 
     /**
      * <p>
-     * Removes all Amazon Web Services sources from specific accounts or Regions.
+     * Specify the natively-supported Amazon Web Services service to remove as a source in Security Lake.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setDisableSingleDimension(java.util.Collection)} or
-     * {@link #withDisableSingleDimension(java.util.Collection)} if you want to override the existing values.
+     * {@link #setSources(java.util.Collection)} or {@link #withSources(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
-     * @param disableSingleDimension
-     *        Removes all Amazon Web Services sources from specific accounts or Regions.
+     * @param sources
+     *        Specify the natively-supported Amazon Web Services service to remove as a source in Security Lake.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DeleteAwsLogSourceRequest withDisableSingleDimension(String... disableSingleDimension) {
-        if (this.disableSingleDimension == null) {
-            setDisableSingleDimension(new java.util.ArrayList<String>(disableSingleDimension.length));
+    public DeleteAwsLogSourceRequest withSources(AwsLogSourceConfiguration... sources) {
+        if (this.sources == null) {
+            setSources(new java.util.ArrayList<AwsLogSourceConfiguration>(sources.length));
         }
-        for (String ele : disableSingleDimension) {
-            this.disableSingleDimension.add(ele);
+        for (AwsLogSourceConfiguration ele : sources) {
+            this.sources.add(ele);
         }
         return this;
     }
 
     /**
      * <p>
-     * Removes all Amazon Web Services sources from specific accounts or Regions.
+     * Specify the natively-supported Amazon Web Services service to remove as a source in Security Lake.
      * </p>
      * 
-     * @param disableSingleDimension
-     *        Removes all Amazon Web Services sources from specific accounts or Regions.
+     * @param sources
+     *        Specify the natively-supported Amazon Web Services service to remove as a source in Security Lake.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DeleteAwsLogSourceRequest withDisableSingleDimension(java.util.Collection<String> disableSingleDimension) {
-        setDisableSingleDimension(disableSingleDimension);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Remove a specific Amazon Web Services source from specific accounts or Regions.
-     * </p>
-     * 
-     * @return Remove a specific Amazon Web Services source from specific accounts or Regions.
-     */
-
-    public java.util.Map<String, java.util.List<String>> getDisableTwoDimensions() {
-        return disableTwoDimensions;
-    }
-
-    /**
-     * <p>
-     * Remove a specific Amazon Web Services source from specific accounts or Regions.
-     * </p>
-     * 
-     * @param disableTwoDimensions
-     *        Remove a specific Amazon Web Services source from specific accounts or Regions.
-     */
-
-    public void setDisableTwoDimensions(java.util.Map<String, java.util.List<String>> disableTwoDimensions) {
-        this.disableTwoDimensions = disableTwoDimensions;
-    }
-
-    /**
-     * <p>
-     * Remove a specific Amazon Web Services source from specific accounts or Regions.
-     * </p>
-     * 
-     * @param disableTwoDimensions
-     *        Remove a specific Amazon Web Services source from specific accounts or Regions.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DeleteAwsLogSourceRequest withDisableTwoDimensions(java.util.Map<String, java.util.List<String>> disableTwoDimensions) {
-        setDisableTwoDimensions(disableTwoDimensions);
-        return this;
-    }
-
-    /**
-     * Add a single DisableTwoDimensions entry
-     *
-     * @see DeleteAwsLogSourceRequest#withDisableTwoDimensions
-     * @returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DeleteAwsLogSourceRequest addDisableTwoDimensionsEntry(String key, java.util.List<String> value) {
-        if (null == this.disableTwoDimensions) {
-            this.disableTwoDimensions = new java.util.HashMap<String, java.util.List<String>>();
-        }
-        if (this.disableTwoDimensions.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.disableTwoDimensions.put(key, value);
-        return this;
-    }
-
-    /**
-     * Removes all the entries added into DisableTwoDimensions.
-     *
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DeleteAwsLogSourceRequest clearDisableTwoDimensionsEntries() {
-        this.disableTwoDimensions = null;
-        return this;
-    }
-
-    /**
-     * <p>
-     * This is a mandatory input. Specify the input order to disable dimensions in Security Lake, namely Region (Amazon
-     * Web Services Region code, source type, and member (account ID of a specific Amazon Web Services account).
-     * </p>
-     * 
-     * @return This is a mandatory input. Specify the input order to disable dimensions in Security Lake, namely Region
-     *         (Amazon Web Services Region code, source type, and member (account ID of a specific Amazon Web Services
-     *         account).
-     * @see Dimension
-     */
-
-    public java.util.List<String> getInputOrder() {
-        return inputOrder;
-    }
-
-    /**
-     * <p>
-     * This is a mandatory input. Specify the input order to disable dimensions in Security Lake, namely Region (Amazon
-     * Web Services Region code, source type, and member (account ID of a specific Amazon Web Services account).
-     * </p>
-     * 
-     * @param inputOrder
-     *        This is a mandatory input. Specify the input order to disable dimensions in Security Lake, namely Region
-     *        (Amazon Web Services Region code, source type, and member (account ID of a specific Amazon Web Services
-     *        account).
-     * @see Dimension
-     */
-
-    public void setInputOrder(java.util.Collection<String> inputOrder) {
-        if (inputOrder == null) {
-            this.inputOrder = null;
-            return;
-        }
-
-        this.inputOrder = new java.util.ArrayList<String>(inputOrder);
-    }
-
-    /**
-     * <p>
-     * This is a mandatory input. Specify the input order to disable dimensions in Security Lake, namely Region (Amazon
-     * Web Services Region code, source type, and member (account ID of a specific Amazon Web Services account).
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setInputOrder(java.util.Collection)} or {@link #withInputOrder(java.util.Collection)} if you want to
-     * override the existing values.
-     * </p>
-     * 
-     * @param inputOrder
-     *        This is a mandatory input. Specify the input order to disable dimensions in Security Lake, namely Region
-     *        (Amazon Web Services Region code, source type, and member (account ID of a specific Amazon Web Services
-     *        account).
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see Dimension
-     */
-
-    public DeleteAwsLogSourceRequest withInputOrder(String... inputOrder) {
-        if (this.inputOrder == null) {
-            setInputOrder(new java.util.ArrayList<String>(inputOrder.length));
-        }
-        for (String ele : inputOrder) {
-            this.inputOrder.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * This is a mandatory input. Specify the input order to disable dimensions in Security Lake, namely Region (Amazon
-     * Web Services Region code, source type, and member (account ID of a specific Amazon Web Services account).
-     * </p>
-     * 
-     * @param inputOrder
-     *        This is a mandatory input. Specify the input order to disable dimensions in Security Lake, namely Region
-     *        (Amazon Web Services Region code, source type, and member (account ID of a specific Amazon Web Services
-     *        account).
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see Dimension
-     */
-
-    public DeleteAwsLogSourceRequest withInputOrder(java.util.Collection<String> inputOrder) {
-        setInputOrder(inputOrder);
-        return this;
-    }
-
-    /**
-     * <p>
-     * This is a mandatory input. Specify the input order to disable dimensions in Security Lake, namely Region (Amazon
-     * Web Services Region code, source type, and member (account ID of a specific Amazon Web Services account).
-     * </p>
-     * 
-     * @param inputOrder
-     *        This is a mandatory input. Specify the input order to disable dimensions in Security Lake, namely Region
-     *        (Amazon Web Services Region code, source type, and member (account ID of a specific Amazon Web Services
-     *        account).
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see Dimension
-     */
-
-    public DeleteAwsLogSourceRequest withInputOrder(Dimension... inputOrder) {
-        java.util.ArrayList<String> inputOrderCopy = new java.util.ArrayList<String>(inputOrder.length);
-        for (Dimension value : inputOrder) {
-            inputOrderCopy.add(value.toString());
-        }
-        if (getInputOrder() == null) {
-            setInputOrder(inputOrderCopy);
-        } else {
-            getInputOrder().addAll(inputOrderCopy);
-        }
+    public DeleteAwsLogSourceRequest withSources(java.util.Collection<AwsLogSourceConfiguration> sources) {
+        setSources(sources);
         return this;
     }
 
@@ -382,14 +114,8 @@ public class DeleteAwsLogSourceRequest extends com.amazonaws.AmazonWebServiceReq
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDisableAllDimensions() != null)
-            sb.append("DisableAllDimensions: ").append(getDisableAllDimensions()).append(",");
-        if (getDisableSingleDimension() != null)
-            sb.append("DisableSingleDimension: ").append(getDisableSingleDimension()).append(",");
-        if (getDisableTwoDimensions() != null)
-            sb.append("DisableTwoDimensions: ").append(getDisableTwoDimensions()).append(",");
-        if (getInputOrder() != null)
-            sb.append("InputOrder: ").append(getInputOrder());
+        if (getSources() != null)
+            sb.append("Sources: ").append(getSources());
         sb.append("}");
         return sb.toString();
     }
@@ -404,21 +130,9 @@ public class DeleteAwsLogSourceRequest extends com.amazonaws.AmazonWebServiceReq
         if (obj instanceof DeleteAwsLogSourceRequest == false)
             return false;
         DeleteAwsLogSourceRequest other = (DeleteAwsLogSourceRequest) obj;
-        if (other.getDisableAllDimensions() == null ^ this.getDisableAllDimensions() == null)
+        if (other.getSources() == null ^ this.getSources() == null)
             return false;
-        if (other.getDisableAllDimensions() != null && other.getDisableAllDimensions().equals(this.getDisableAllDimensions()) == false)
-            return false;
-        if (other.getDisableSingleDimension() == null ^ this.getDisableSingleDimension() == null)
-            return false;
-        if (other.getDisableSingleDimension() != null && other.getDisableSingleDimension().equals(this.getDisableSingleDimension()) == false)
-            return false;
-        if (other.getDisableTwoDimensions() == null ^ this.getDisableTwoDimensions() == null)
-            return false;
-        if (other.getDisableTwoDimensions() != null && other.getDisableTwoDimensions().equals(this.getDisableTwoDimensions()) == false)
-            return false;
-        if (other.getInputOrder() == null ^ this.getInputOrder() == null)
-            return false;
-        if (other.getInputOrder() != null && other.getInputOrder().equals(this.getInputOrder()) == false)
+        if (other.getSources() != null && other.getSources().equals(this.getSources()) == false)
             return false;
         return true;
     }
@@ -428,10 +142,7 @@ public class DeleteAwsLogSourceRequest extends com.amazonaws.AmazonWebServiceReq
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getDisableAllDimensions() == null) ? 0 : getDisableAllDimensions().hashCode());
-        hashCode = prime * hashCode + ((getDisableSingleDimension() == null) ? 0 : getDisableSingleDimension().hashCode());
-        hashCode = prime * hashCode + ((getDisableTwoDimensions() == null) ? 0 : getDisableTwoDimensions().hashCode());
-        hashCode = prime * hashCode + ((getInputOrder() == null) ? 0 : getInputOrder().hashCode());
+        hashCode = prime * hashCode + ((getSources() == null) ? 0 : getSources().hashCode());
         return hashCode;
     }
 

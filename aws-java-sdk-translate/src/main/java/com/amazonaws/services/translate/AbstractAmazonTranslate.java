@@ -103,6 +103,11 @@ public class AbstractAmazonTranslate implements AmazonTranslate {
     }
 
     @Override
+    public TranslateDocumentResult translateDocument(TranslateDocumentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public TranslateTextResult translateText(TranslateTextRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

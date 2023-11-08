@@ -370,6 +370,39 @@ public interface AWSMigrationHubStrategyRecommendationsAsync extends AWSMigratio
 
     /**
      * <p>
+     * Retrieves a list of all the servers fetched from customer vCenter using Strategy Recommendation Collector.
+     * </p>
+     * 
+     * @param listAnalyzableServersRequest
+     *        Represents input for ListAnalyzableServers operation.
+     * @return A Java Future containing the result of the ListAnalyzableServers operation returned by the service.
+     * @sample AWSMigrationHubStrategyRecommendationsAsync.ListAnalyzableServers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/ListAnalyzableServers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAnalyzableServersResult> listAnalyzableServersAsync(ListAnalyzableServersRequest listAnalyzableServersRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of all the servers fetched from customer vCenter using Strategy Recommendation Collector.
+     * </p>
+     * 
+     * @param listAnalyzableServersRequest
+     *        Represents input for ListAnalyzableServers operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAnalyzableServers operation returned by the service.
+     * @sample AWSMigrationHubStrategyRecommendationsAsyncHandler.ListAnalyzableServers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/ListAnalyzableServers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAnalyzableServersResult> listAnalyzableServersAsync(ListAnalyzableServersRequest listAnalyzableServersRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAnalyzableServersRequest, ListAnalyzableServersResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves a list of all the application components (processes).
      * </p>
      * 

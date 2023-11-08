@@ -43,6 +43,12 @@ public class TargetGroupConfig implements Serializable, Cloneable, StructuredPoj
     private String ipAddressType;
     /**
      * <p>
+     * Lambda event structure version
+     * </p>
+     */
+    private String lambdaEventStructureVersion;
+    /**
+     * <p>
      * The port on which the targets are listening. For HTTP, the default is <code>80</code>. For HTTPS, the default is
      * <code>443</code>
      * </p>
@@ -175,6 +181,65 @@ public class TargetGroupConfig implements Serializable, Cloneable, StructuredPoj
 
     public TargetGroupConfig withIpAddressType(IpAddressType ipAddressType) {
         this.ipAddressType = ipAddressType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Lambda event structure version
+     * </p>
+     * 
+     * @param lambdaEventStructureVersion
+     *        Lambda event structure version
+     * @see LambdaEventStructureVersion
+     */
+
+    public void setLambdaEventStructureVersion(String lambdaEventStructureVersion) {
+        this.lambdaEventStructureVersion = lambdaEventStructureVersion;
+    }
+
+    /**
+     * <p>
+     * Lambda event structure version
+     * </p>
+     * 
+     * @return Lambda event structure version
+     * @see LambdaEventStructureVersion
+     */
+
+    public String getLambdaEventStructureVersion() {
+        return this.lambdaEventStructureVersion;
+    }
+
+    /**
+     * <p>
+     * Lambda event structure version
+     * </p>
+     * 
+     * @param lambdaEventStructureVersion
+     *        Lambda event structure version
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LambdaEventStructureVersion
+     */
+
+    public TargetGroupConfig withLambdaEventStructureVersion(String lambdaEventStructureVersion) {
+        setLambdaEventStructureVersion(lambdaEventStructureVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Lambda event structure version
+     * </p>
+     * 
+     * @param lambdaEventStructureVersion
+     *        Lambda event structure version
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LambdaEventStructureVersion
+     */
+
+    public TargetGroupConfig withLambdaEventStructureVersion(LambdaEventStructureVersion lambdaEventStructureVersion) {
+        this.lambdaEventStructureVersion = lambdaEventStructureVersion.toString();
         return this;
     }
 
@@ -398,6 +463,8 @@ public class TargetGroupConfig implements Serializable, Cloneable, StructuredPoj
             sb.append("HealthCheck: ").append(getHealthCheck()).append(",");
         if (getIpAddressType() != null)
             sb.append("IpAddressType: ").append(getIpAddressType()).append(",");
+        if (getLambdaEventStructureVersion() != null)
+            sb.append("LambdaEventStructureVersion: ").append(getLambdaEventStructureVersion()).append(",");
         if (getPort() != null)
             sb.append("Port: ").append(getPort()).append(",");
         if (getProtocol() != null)
@@ -428,6 +495,10 @@ public class TargetGroupConfig implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getIpAddressType() != null && other.getIpAddressType().equals(this.getIpAddressType()) == false)
             return false;
+        if (other.getLambdaEventStructureVersion() == null ^ this.getLambdaEventStructureVersion() == null)
+            return false;
+        if (other.getLambdaEventStructureVersion() != null && other.getLambdaEventStructureVersion().equals(this.getLambdaEventStructureVersion()) == false)
+            return false;
         if (other.getPort() == null ^ this.getPort() == null)
             return false;
         if (other.getPort() != null && other.getPort().equals(this.getPort()) == false)
@@ -454,6 +525,7 @@ public class TargetGroupConfig implements Serializable, Cloneable, StructuredPoj
 
         hashCode = prime * hashCode + ((getHealthCheck() == null) ? 0 : getHealthCheck().hashCode());
         hashCode = prime * hashCode + ((getIpAddressType() == null) ? 0 : getIpAddressType().hashCode());
+        hashCode = prime * hashCode + ((getLambdaEventStructureVersion() == null) ? 0 : getLambdaEventStructureVersion().hashCode());
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
         hashCode = prime * hashCode + ((getProtocol() == null) ? 0 : getProtocol().hashCode());
         hashCode = prime * hashCode + ((getProtocolVersion() == null) ? 0 : getProtocolVersion().hashCode());

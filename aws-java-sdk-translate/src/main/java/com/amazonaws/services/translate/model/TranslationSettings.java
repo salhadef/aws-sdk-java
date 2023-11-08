@@ -19,9 +19,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Optional settings that configure the translation output. Use these settings for real time translations and
- * asynchronous translation jobs.
+ * Settings to configure your translation output. You can configure the following options:
  * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * Brevity: reduces the length of the translation output for most translations. Available for <code>TranslateText</code>
+ * only.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Formality: sets the formality level of the translation output.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Profanity: masks profane words and phrases in the translation output.
+ * </p>
+ * </li>
+ * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/TranslationSettings" target="_top">AWS API
  *      Documentation</a>
@@ -31,8 +48,8 @@ public class TranslationSettings implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * You can optionally specify the desired level of formality for translations to supported target languages. The
-     * formality setting controls the level of formal language usage (also known as <a
+     * You can specify the desired level of formality for translations to supported target languages. The formality
+     * setting controls the level of formal language usage (also known as <a
      * href="https://en.wikipedia.org/wiki/Register_(sociolinguistics)">register</a>) in the translation output. You can
      * set the value to informal or formal. If you don't specify a value for formality, or if the target language
      * doesn't support formality, the translation will ignore the formality setting.
@@ -50,8 +67,7 @@ public class TranslationSettings implements Serializable, Cloneable, StructuredP
     private String formality;
     /**
      * <p>
-     * Enable the profanity setting if you want Amazon Translate to mask profane words and phrases in your translation
-     * output.
+     * You can enable the profanity setting if you want to mask profane words and phrases in your translation output.
      * </p>
      * <p>
      * To mask profane words and phrases, Amazon Translate replaces them with the grawlix string “?$#@$“. This
@@ -70,11 +86,27 @@ public class TranslationSettings implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private String profanity;
+    /**
+     * <p>
+     * When you turn on brevity, Amazon Translate reduces the length of the translation output for most translations
+     * (when compared with the same translation with brevity turned off). By default, brevity is turned off.
+     * </p>
+     * <p>
+     * If you turn on brevity for a translation request with an unsupported language pair, the translation proceeds with
+     * the brevity setting turned off.
+     * </p>
+     * <p>
+     * For the language pairs that brevity supports, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-brevity">Using brevity</a> in the
+     * Amazon Translate Developer Guide.
+     * </p>
+     */
+    private String brevity;
 
     /**
      * <p>
-     * You can optionally specify the desired level of formality for translations to supported target languages. The
-     * formality setting controls the level of formal language usage (also known as <a
+     * You can specify the desired level of formality for translations to supported target languages. The formality
+     * setting controls the level of formal language usage (also known as <a
      * href="https://en.wikipedia.org/wiki/Register_(sociolinguistics)">register</a>) in the translation output. You can
      * set the value to informal or formal. If you don't specify a value for formality, or if the target language
      * doesn't support formality, the translation will ignore the formality setting.
@@ -90,8 +122,8 @@ public class TranslationSettings implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param formality
-     *        You can optionally specify the desired level of formality for translations to supported target languages.
-     *        The formality setting controls the level of formal language usage (also known as <a
+     *        You can specify the desired level of formality for translations to supported target languages. The
+     *        formality setting controls the level of formal language usage (also known as <a
      *        href="https://en.wikipedia.org/wiki/Register_(sociolinguistics)">register</a>) in the translation output.
      *        You can set the value to informal or formal. If you don't specify a value for formality, or if the target
      *        language doesn't support formality, the translation will ignore the formality setting.</p>
@@ -112,8 +144,8 @@ public class TranslationSettings implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * You can optionally specify the desired level of formality for translations to supported target languages. The
-     * formality setting controls the level of formal language usage (also known as <a
+     * You can specify the desired level of formality for translations to supported target languages. The formality
+     * setting controls the level of formal language usage (also known as <a
      * href="https://en.wikipedia.org/wiki/Register_(sociolinguistics)">register</a>) in the translation output. You can
      * set the value to informal or formal. If you don't specify a value for formality, or if the target language
      * doesn't support formality, the translation will ignore the formality setting.
@@ -128,8 +160,8 @@ public class TranslationSettings implements Serializable, Cloneable, StructuredP
      * >Supported languages</a> in the Amazon Translate Developer Guide.
      * </p>
      * 
-     * @return You can optionally specify the desired level of formality for translations to supported target languages.
-     *         The formality setting controls the level of formal language usage (also known as <a
+     * @return You can specify the desired level of formality for translations to supported target languages. The
+     *         formality setting controls the level of formal language usage (also known as <a
      *         href="https://en.wikipedia.org/wiki/Register_(sociolinguistics)">register</a>) in the translation output.
      *         You can set the value to informal or formal. If you don't specify a value for formality, or if the target
      *         language doesn't support formality, the translation will ignore the formality setting.</p>
@@ -150,8 +182,8 @@ public class TranslationSettings implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * You can optionally specify the desired level of formality for translations to supported target languages. The
-     * formality setting controls the level of formal language usage (also known as <a
+     * You can specify the desired level of formality for translations to supported target languages. The formality
+     * setting controls the level of formal language usage (also known as <a
      * href="https://en.wikipedia.org/wiki/Register_(sociolinguistics)">register</a>) in the translation output. You can
      * set the value to informal or formal. If you don't specify a value for formality, or if the target language
      * doesn't support formality, the translation will ignore the formality setting.
@@ -167,8 +199,8 @@ public class TranslationSettings implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param formality
-     *        You can optionally specify the desired level of formality for translations to supported target languages.
-     *        The formality setting controls the level of formal language usage (also known as <a
+     *        You can specify the desired level of formality for translations to supported target languages. The
+     *        formality setting controls the level of formal language usage (also known as <a
      *        href="https://en.wikipedia.org/wiki/Register_(sociolinguistics)">register</a>) in the translation output.
      *        You can set the value to informal or formal. If you don't specify a value for formality, or if the target
      *        language doesn't support formality, the translation will ignore the formality setting.</p>
@@ -191,8 +223,8 @@ public class TranslationSettings implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * You can optionally specify the desired level of formality for translations to supported target languages. The
-     * formality setting controls the level of formal language usage (also known as <a
+     * You can specify the desired level of formality for translations to supported target languages. The formality
+     * setting controls the level of formal language usage (also known as <a
      * href="https://en.wikipedia.org/wiki/Register_(sociolinguistics)">register</a>) in the translation output. You can
      * set the value to informal or formal. If you don't specify a value for formality, or if the target language
      * doesn't support formality, the translation will ignore the formality setting.
@@ -208,8 +240,8 @@ public class TranslationSettings implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param formality
-     *        You can optionally specify the desired level of formality for translations to supported target languages.
-     *        The formality setting controls the level of formal language usage (also known as <a
+     *        You can specify the desired level of formality for translations to supported target languages. The
+     *        formality setting controls the level of formal language usage (also known as <a
      *        href="https://en.wikipedia.org/wiki/Register_(sociolinguistics)">register</a>) in the translation output.
      *        You can set the value to informal or formal. If you don't specify a value for formality, or if the target
      *        language doesn't support formality, the translation will ignore the formality setting.</p>
@@ -232,8 +264,7 @@ public class TranslationSettings implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Enable the profanity setting if you want Amazon Translate to mask profane words and phrases in your translation
-     * output.
+     * You can enable the profanity setting if you want to mask profane words and phrases in your translation output.
      * </p>
      * <p>
      * To mask profane words and phrases, Amazon Translate replaces them with the grawlix string “?$#@$“. This
@@ -252,8 +283,8 @@ public class TranslationSettings implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param profanity
-     *        Enable the profanity setting if you want Amazon Translate to mask profane words and phrases in your
-     *        translation output.</p>
+     *        You can enable the profanity setting if you want to mask profane words and phrases in your translation
+     *        output.</p>
      *        <p>
      *        To mask profane words and phrases, Amazon Translate replaces them with the grawlix string “?$#@$“. This
      *        5-character sequence is used for each profane word or phrase, regardless of the length or number of words.
@@ -277,8 +308,7 @@ public class TranslationSettings implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Enable the profanity setting if you want Amazon Translate to mask profane words and phrases in your translation
-     * output.
+     * You can enable the profanity setting if you want to mask profane words and phrases in your translation output.
      * </p>
      * <p>
      * To mask profane words and phrases, Amazon Translate replaces them with the grawlix string “?$#@$“. This
@@ -296,8 +326,8 @@ public class TranslationSettings implements Serializable, Cloneable, StructuredP
      * target language.
      * </p>
      * 
-     * @return Enable the profanity setting if you want Amazon Translate to mask profane words and phrases in your
-     *         translation output.</p>
+     * @return You can enable the profanity setting if you want to mask profane words and phrases in your translation
+     *         output.</p>
      *         <p>
      *         To mask profane words and phrases, Amazon Translate replaces them with the grawlix string “?$#@$“. This
      *         5-character sequence is used for each profane word or phrase, regardless of the length or number of
@@ -322,8 +352,7 @@ public class TranslationSettings implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Enable the profanity setting if you want Amazon Translate to mask profane words and phrases in your translation
-     * output.
+     * You can enable the profanity setting if you want to mask profane words and phrases in your translation output.
      * </p>
      * <p>
      * To mask profane words and phrases, Amazon Translate replaces them with the grawlix string “?$#@$“. This
@@ -342,8 +371,8 @@ public class TranslationSettings implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param profanity
-     *        Enable the profanity setting if you want Amazon Translate to mask profane words and phrases in your
-     *        translation output.</p>
+     *        You can enable the profanity setting if you want to mask profane words and phrases in your translation
+     *        output.</p>
      *        <p>
      *        To mask profane words and phrases, Amazon Translate replaces them with the grawlix string “?$#@$“. This
      *        5-character sequence is used for each profane word or phrase, regardless of the length or number of words.
@@ -369,8 +398,7 @@ public class TranslationSettings implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Enable the profanity setting if you want Amazon Translate to mask profane words and phrases in your translation
-     * output.
+     * You can enable the profanity setting if you want to mask profane words and phrases in your translation output.
      * </p>
      * <p>
      * To mask profane words and phrases, Amazon Translate replaces them with the grawlix string “?$#@$“. This
@@ -389,8 +417,8 @@ public class TranslationSettings implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param profanity
-     *        Enable the profanity setting if you want Amazon Translate to mask profane words and phrases in your
-     *        translation output.</p>
+     *        You can enable the profanity setting if you want to mask profane words and phrases in your translation
+     *        output.</p>
      *        <p>
      *        To mask profane words and phrases, Amazon Translate replaces them with the grawlix string “?$#@$“. This
      *        5-character sequence is used for each profane word or phrase, regardless of the length or number of words.
@@ -415,6 +443,145 @@ public class TranslationSettings implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * When you turn on brevity, Amazon Translate reduces the length of the translation output for most translations
+     * (when compared with the same translation with brevity turned off). By default, brevity is turned off.
+     * </p>
+     * <p>
+     * If you turn on brevity for a translation request with an unsupported language pair, the translation proceeds with
+     * the brevity setting turned off.
+     * </p>
+     * <p>
+     * For the language pairs that brevity supports, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-brevity">Using brevity</a> in the
+     * Amazon Translate Developer Guide.
+     * </p>
+     * 
+     * @param brevity
+     *        When you turn on brevity, Amazon Translate reduces the length of the translation output for most
+     *        translations (when compared with the same translation with brevity turned off). By default, brevity is
+     *        turned off.</p>
+     *        <p>
+     *        If you turn on brevity for a translation request with an unsupported language pair, the translation
+     *        proceeds with the brevity setting turned off.
+     *        </p>
+     *        <p>
+     *        For the language pairs that brevity supports, see <a
+     *        href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-brevity">Using brevity</a>
+     *        in the Amazon Translate Developer Guide.
+     * @see Brevity
+     */
+
+    public void setBrevity(String brevity) {
+        this.brevity = brevity;
+    }
+
+    /**
+     * <p>
+     * When you turn on brevity, Amazon Translate reduces the length of the translation output for most translations
+     * (when compared with the same translation with brevity turned off). By default, brevity is turned off.
+     * </p>
+     * <p>
+     * If you turn on brevity for a translation request with an unsupported language pair, the translation proceeds with
+     * the brevity setting turned off.
+     * </p>
+     * <p>
+     * For the language pairs that brevity supports, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-brevity">Using brevity</a> in the
+     * Amazon Translate Developer Guide.
+     * </p>
+     * 
+     * @return When you turn on brevity, Amazon Translate reduces the length of the translation output for most
+     *         translations (when compared with the same translation with brevity turned off). By default, brevity is
+     *         turned off.</p>
+     *         <p>
+     *         If you turn on brevity for a translation request with an unsupported language pair, the translation
+     *         proceeds with the brevity setting turned off.
+     *         </p>
+     *         <p>
+     *         For the language pairs that brevity supports, see <a
+     *         href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-brevity">Using brevity</a>
+     *         in the Amazon Translate Developer Guide.
+     * @see Brevity
+     */
+
+    public String getBrevity() {
+        return this.brevity;
+    }
+
+    /**
+     * <p>
+     * When you turn on brevity, Amazon Translate reduces the length of the translation output for most translations
+     * (when compared with the same translation with brevity turned off). By default, brevity is turned off.
+     * </p>
+     * <p>
+     * If you turn on brevity for a translation request with an unsupported language pair, the translation proceeds with
+     * the brevity setting turned off.
+     * </p>
+     * <p>
+     * For the language pairs that brevity supports, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-brevity">Using brevity</a> in the
+     * Amazon Translate Developer Guide.
+     * </p>
+     * 
+     * @param brevity
+     *        When you turn on brevity, Amazon Translate reduces the length of the translation output for most
+     *        translations (when compared with the same translation with brevity turned off). By default, brevity is
+     *        turned off.</p>
+     *        <p>
+     *        If you turn on brevity for a translation request with an unsupported language pair, the translation
+     *        proceeds with the brevity setting turned off.
+     *        </p>
+     *        <p>
+     *        For the language pairs that brevity supports, see <a
+     *        href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-brevity">Using brevity</a>
+     *        in the Amazon Translate Developer Guide.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Brevity
+     */
+
+    public TranslationSettings withBrevity(String brevity) {
+        setBrevity(brevity);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When you turn on brevity, Amazon Translate reduces the length of the translation output for most translations
+     * (when compared with the same translation with brevity turned off). By default, brevity is turned off.
+     * </p>
+     * <p>
+     * If you turn on brevity for a translation request with an unsupported language pair, the translation proceeds with
+     * the brevity setting turned off.
+     * </p>
+     * <p>
+     * For the language pairs that brevity supports, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-brevity">Using brevity</a> in the
+     * Amazon Translate Developer Guide.
+     * </p>
+     * 
+     * @param brevity
+     *        When you turn on brevity, Amazon Translate reduces the length of the translation output for most
+     *        translations (when compared with the same translation with brevity turned off). By default, brevity is
+     *        turned off.</p>
+     *        <p>
+     *        If you turn on brevity for a translation request with an unsupported language pair, the translation
+     *        proceeds with the brevity setting turned off.
+     *        </p>
+     *        <p>
+     *        For the language pairs that brevity supports, see <a
+     *        href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-brevity">Using brevity</a>
+     *        in the Amazon Translate Developer Guide.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Brevity
+     */
+
+    public TranslationSettings withBrevity(Brevity brevity) {
+        this.brevity = brevity.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -429,7 +596,9 @@ public class TranslationSettings implements Serializable, Cloneable, StructuredP
         if (getFormality() != null)
             sb.append("Formality: ").append(getFormality()).append(",");
         if (getProfanity() != null)
-            sb.append("Profanity: ").append(getProfanity());
+            sb.append("Profanity: ").append(getProfanity()).append(",");
+        if (getBrevity() != null)
+            sb.append("Brevity: ").append(getBrevity());
         sb.append("}");
         return sb.toString();
     }
@@ -452,6 +621,10 @@ public class TranslationSettings implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getProfanity() != null && other.getProfanity().equals(this.getProfanity()) == false)
             return false;
+        if (other.getBrevity() == null ^ this.getBrevity() == null)
+            return false;
+        if (other.getBrevity() != null && other.getBrevity().equals(this.getBrevity()) == false)
+            return false;
         return true;
     }
 
@@ -462,6 +635,7 @@ public class TranslationSettings implements Serializable, Cloneable, StructuredP
 
         hashCode = prime * hashCode + ((getFormality() == null) ? 0 : getFormality().hashCode());
         hashCode = prime * hashCode + ((getProfanity() == null) ? 0 : getProfanity().hashCode());
+        hashCode = prime * hashCode + ((getBrevity() == null) ? 0 : getBrevity().hashCode());
         return hashCode;
     }
 

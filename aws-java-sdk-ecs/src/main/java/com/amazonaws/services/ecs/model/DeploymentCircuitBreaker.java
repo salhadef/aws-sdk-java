@@ -32,6 +32,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html">Rolling update</a> in the
  * <i>Amazon Elastic Container Service Developer Guide</i>.
  * </p>
+ * <p>
+ * For more information about API failure reasons, see <a
+ * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html">API failure reasons</a>
+ * in the <i>Amazon Elastic Container Service Developer Guide</i>.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeploymentCircuitBreaker" target="_top">AWS API
  *      Documentation</a>

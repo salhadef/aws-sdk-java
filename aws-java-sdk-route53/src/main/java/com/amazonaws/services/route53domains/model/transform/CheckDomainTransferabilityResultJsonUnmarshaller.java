@@ -52,6 +52,10 @@ public class CheckDomainTransferabilityResultJsonUnmarshaller implements Unmarsh
                     context.nextToken();
                     checkDomainTransferabilityResult.setTransferability(DomainTransferabilityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Message", targetDepth)) {
+                    context.nextToken();
+                    checkDomainTransferabilityResult.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

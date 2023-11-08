@@ -314,6 +314,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      */
     private EphemeralStorage ephemeralStorage;
 
+    private RuntimePlatform runtimePlatform;
+
     /**
      * <p>
      * The image used to start a container. This string is passed directly to the Docker daemon. Images in the Docker
@@ -2400,6 +2402,32 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * @param runtimePlatform
+     */
+
+    public void setRuntimePlatform(RuntimePlatform runtimePlatform) {
+        this.runtimePlatform = runtimePlatform;
+    }
+
+    /**
+     * @return
+     */
+
+    public RuntimePlatform getRuntimePlatform() {
+        return this.runtimePlatform;
+    }
+
+    /**
+     * @param runtimePlatform
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerProperties withRuntimePlatform(RuntimePlatform runtimePlatform) {
+        setRuntimePlatform(runtimePlatform);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2452,7 +2480,9 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
         if (getFargatePlatformConfiguration() != null)
             sb.append("FargatePlatformConfiguration: ").append(getFargatePlatformConfiguration()).append(",");
         if (getEphemeralStorage() != null)
-            sb.append("EphemeralStorage: ").append(getEphemeralStorage());
+            sb.append("EphemeralStorage: ").append(getEphemeralStorage()).append(",");
+        if (getRuntimePlatform() != null)
+            sb.append("RuntimePlatform: ").append(getRuntimePlatform());
         sb.append("}");
         return sb.toString();
     }
@@ -2551,6 +2581,10 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getEphemeralStorage() != null && other.getEphemeralStorage().equals(this.getEphemeralStorage()) == false)
             return false;
+        if (other.getRuntimePlatform() == null ^ this.getRuntimePlatform() == null)
+            return false;
+        if (other.getRuntimePlatform() != null && other.getRuntimePlatform().equals(this.getRuntimePlatform()) == false)
+            return false;
         return true;
     }
 
@@ -2580,6 +2614,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getNetworkConfiguration() == null) ? 0 : getNetworkConfiguration().hashCode());
         hashCode = prime * hashCode + ((getFargatePlatformConfiguration() == null) ? 0 : getFargatePlatformConfiguration().hashCode());
         hashCode = prime * hashCode + ((getEphemeralStorage() == null) ? 0 : getEphemeralStorage().hashCode());
+        hashCode = prime * hashCode + ((getRuntimePlatform() == null) ? 0 : getRuntimePlatform().hashCode());
         return hashCode;
     }
 

@@ -93,6 +93,13 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String s3OutputPath;
+    /**
+     * <p>
+     * The model output compression type. Select <code>None</code> to output an uncompressed model, recommended for
+     * large model outputs. Defaults to gzip.
+     * </p>
+     */
+    private String compressionType;
 
     /**
      * <p>
@@ -494,6 +501,73 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The model output compression type. Select <code>None</code> to output an uncompressed model, recommended for
+     * large model outputs. Defaults to gzip.
+     * </p>
+     * 
+     * @param compressionType
+     *        The model output compression type. Select <code>None</code> to output an uncompressed model, recommended
+     *        for large model outputs. Defaults to gzip.
+     * @see OutputCompressionType
+     */
+
+    public void setCompressionType(String compressionType) {
+        this.compressionType = compressionType;
+    }
+
+    /**
+     * <p>
+     * The model output compression type. Select <code>None</code> to output an uncompressed model, recommended for
+     * large model outputs. Defaults to gzip.
+     * </p>
+     * 
+     * @return The model output compression type. Select <code>None</code> to output an uncompressed model, recommended
+     *         for large model outputs. Defaults to gzip.
+     * @see OutputCompressionType
+     */
+
+    public String getCompressionType() {
+        return this.compressionType;
+    }
+
+    /**
+     * <p>
+     * The model output compression type. Select <code>None</code> to output an uncompressed model, recommended for
+     * large model outputs. Defaults to gzip.
+     * </p>
+     * 
+     * @param compressionType
+     *        The model output compression type. Select <code>None</code> to output an uncompressed model, recommended
+     *        for large model outputs. Defaults to gzip.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OutputCompressionType
+     */
+
+    public OutputDataConfig withCompressionType(String compressionType) {
+        setCompressionType(compressionType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The model output compression type. Select <code>None</code> to output an uncompressed model, recommended for
+     * large model outputs. Defaults to gzip.
+     * </p>
+     * 
+     * @param compressionType
+     *        The model output compression type. Select <code>None</code> to output an uncompressed model, recommended
+     *        for large model outputs. Defaults to gzip.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OutputCompressionType
+     */
+
+    public OutputDataConfig withCompressionType(OutputCompressionType compressionType) {
+        this.compressionType = compressionType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -508,7 +582,9 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
         if (getKmsKeyId() != null)
             sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getS3OutputPath() != null)
-            sb.append("S3OutputPath: ").append(getS3OutputPath());
+            sb.append("S3OutputPath: ").append(getS3OutputPath()).append(",");
+        if (getCompressionType() != null)
+            sb.append("CompressionType: ").append(getCompressionType());
         sb.append("}");
         return sb.toString();
     }
@@ -531,6 +607,10 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getS3OutputPath() != null && other.getS3OutputPath().equals(this.getS3OutputPath()) == false)
             return false;
+        if (other.getCompressionType() == null ^ this.getCompressionType() == null)
+            return false;
+        if (other.getCompressionType() != null && other.getCompressionType().equals(this.getCompressionType()) == false)
+            return false;
         return true;
     }
 
@@ -541,6 +621,7 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
 
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getS3OutputPath() == null) ? 0 : getS3OutputPath().hashCode());
+        hashCode = prime * hashCode + ((getCompressionType() == null) ? 0 : getCompressionType().hashCode());
         return hashCode;
     }
 

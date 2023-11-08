@@ -23,7 +23,9 @@ public enum StringFilterComparison {
     EQUALS("EQUALS"),
     PREFIX("PREFIX"),
     NOT_EQUALS("NOT_EQUALS"),
-    PREFIX_NOT_EQUALS("PREFIX_NOT_EQUALS");
+    PREFIX_NOT_EQUALS("PREFIX_NOT_EQUALS"),
+    CONTAINS("CONTAINS"),
+    NOT_CONTAINS("NOT_CONTAINS");
 
     private String value;
 

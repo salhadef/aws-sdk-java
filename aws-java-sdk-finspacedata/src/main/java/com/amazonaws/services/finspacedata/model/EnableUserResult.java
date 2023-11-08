@@ -25,18 +25,18 @@ public class EnableUserResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The unique identifier for the enabled user account.
+     * The unique identifier for the active user.
      * </p>
      */
     private String userId;
 
     /**
      * <p>
-     * The unique identifier for the enabled user account.
+     * The unique identifier for the active user.
      * </p>
      * 
      * @param userId
-     *        The unique identifier for the enabled user account.
+     *        The unique identifier for the active user.
      */
 
     public void setUserId(String userId) {
@@ -45,10 +45,10 @@ public class EnableUserResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The unique identifier for the enabled user account.
+     * The unique identifier for the active user.
      * </p>
      * 
-     * @return The unique identifier for the enabled user account.
+     * @return The unique identifier for the active user.
      */
 
     public String getUserId() {
@@ -57,11 +57,11 @@ public class EnableUserResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The unique identifier for the enabled user account.
+     * The unique identifier for the active user.
      * </p>
      * 
      * @param userId
-     *        The unique identifier for the enabled user account.
+     *        The unique identifier for the active user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

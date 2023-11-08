@@ -450,6 +450,39 @@ public class AmazonManagedGrafanaAsyncClient extends AmazonManagedGrafanaClient 
     }
 
     @Override
+    public java.util.concurrent.Future<ListVersionsResult> listVersionsAsync(ListVersionsRequest request) {
+
+        return listVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVersionsResult> listVersionsAsync(final ListVersionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListVersionsRequest, ListVersionsResult> asyncHandler) {
+        final ListVersionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListVersionsResult>() {
+            @Override
+            public ListVersionsResult call() throws Exception {
+                ListVersionsResult result = null;
+
+                try {
+                    result = executeListVersions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListWorkspacesResult> listWorkspacesAsync(ListWorkspacesRequest request) {
 
         return listWorkspacesAsync(request, null);

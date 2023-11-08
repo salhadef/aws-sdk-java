@@ -61,6 +61,15 @@ public class ServerCertificateConfigurationJsonUnmarshaller implements Unmarshal
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("CertificateAuthorityArn", targetDepth)) {
+                    context.nextToken();
+                    serverCertificateConfiguration.setCertificateAuthorityArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CheckCertificateRevocationStatus", targetDepth)) {
+                    context.nextToken();
+                    serverCertificateConfiguration.setCheckCertificateRevocationStatus(CheckCertificateRevocationStatusActionsJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

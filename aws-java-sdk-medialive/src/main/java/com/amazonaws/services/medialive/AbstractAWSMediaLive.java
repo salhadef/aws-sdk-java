@@ -139,6 +139,11 @@ public class AbstractAWSMediaLive implements AWSMediaLive {
     }
 
     @Override
+    public DescribeAccountConfigurationResult describeAccountConfiguration(DescribeAccountConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeChannelResult describeChannel(DescribeChannelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -185,6 +190,11 @@ public class AbstractAWSMediaLive implements AWSMediaLive {
 
     @Override
     public DescribeScheduleResult describeSchedule(DescribeScheduleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeThumbnailsResult describeThumbnails(DescribeThumbnailsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -259,6 +269,11 @@ public class AbstractAWSMediaLive implements AWSMediaLive {
     }
 
     @Override
+    public StartInputDeviceResult startInputDevice(StartInputDeviceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartInputDeviceMaintenanceWindowResult startInputDeviceMaintenanceWindow(StartInputDeviceMaintenanceWindowRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -274,12 +289,22 @@ public class AbstractAWSMediaLive implements AWSMediaLive {
     }
 
     @Override
+    public StopInputDeviceResult stopInputDevice(StopInputDeviceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StopMultiplexResult stopMultiplex(StopMultiplexRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public TransferInputDeviceResult transferInputDevice(TransferInputDeviceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateAccountConfigurationResult updateAccountConfiguration(UpdateAccountConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

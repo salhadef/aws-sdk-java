@@ -121,13 +121,13 @@ public class TransferDomainRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS
-     * ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or
-     * for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return
-     * the information that you entered for the admin contact.
+     * ("who is") queries return contact information for the registrar, the phrase "REDACTED FOR PRIVACY", or
+     * "On behalf of &lt;domain name&gt; owner.".
      * </p>
      * <note>
      * <p>
-     * You must specify the same privacy setting for the administrative, registrant, and technical contacts.
+     * While some domains may allow different privacy settings per contact, we recommend specifying the same privacy
+     * setting for all contacts.
      * </p>
      * </note>
      * <p>
@@ -792,13 +792,13 @@ public class TransferDomainRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS
-     * ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or
-     * for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return
-     * the information that you entered for the admin contact.
+     * ("who is") queries return contact information for the registrar, the phrase "REDACTED FOR PRIVACY", or
+     * "On behalf of &lt;domain name&gt; owner.".
      * </p>
      * <note>
      * <p>
-     * You must specify the same privacy setting for the administrative, registrant, and technical contacts.
+     * While some domains may allow different privacy settings per contact, we recommend specifying the same privacy
+     * setting for all contacts.
      * </p>
      * </note>
      * <p>
@@ -807,11 +807,11 @@ public class TransferDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param privacyProtectAdminContact
      *        Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
-     *        WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org
-     *        domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
-     *        WHOIS queries return the information that you entered for the admin contact.</p> <note>
+     *        WHOIS ("who is") queries return contact information for the registrar, the phrase "REDACTED FOR PRIVACY",
+     *        or "On behalf of &lt;domain name&gt; owner.".</p> <note>
      *        <p>
-     *        You must specify the same privacy setting for the administrative, registrant, and technical contacts.
+     *        While some domains may allow different privacy settings per contact, we recommend specifying the same
+     *        privacy setting for all contacts.
      *        </p>
      *        </note>
      *        <p>
@@ -825,13 +825,13 @@ public class TransferDomainRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS
-     * ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or
-     * for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return
-     * the information that you entered for the admin contact.
+     * ("who is") queries return contact information for the registrar, the phrase "REDACTED FOR PRIVACY", or
+     * "On behalf of &lt;domain name&gt; owner.".
      * </p>
      * <note>
      * <p>
-     * You must specify the same privacy setting for the administrative, registrant, and technical contacts.
+     * While some domains may allow different privacy settings per contact, we recommend specifying the same privacy
+     * setting for all contacts.
      * </p>
      * </note>
      * <p>
@@ -839,11 +839,11 @@ public class TransferDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @return Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
-     *         WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org
-     *         domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
-     *         WHOIS queries return the information that you entered for the admin contact.</p> <note>
+     *         WHOIS ("who is") queries return contact information for the registrar, the phrase "REDACTED FOR PRIVACY",
+     *         or "On behalf of &lt;domain name&gt; owner.".</p> <note>
      *         <p>
-     *         You must specify the same privacy setting for the administrative, registrant, and technical contacts.
+     *         While some domains may allow different privacy settings per contact, we recommend specifying the same
+     *         privacy setting for all contacts.
      *         </p>
      *         </note>
      *         <p>
@@ -857,13 +857,13 @@ public class TransferDomainRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS
-     * ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or
-     * for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return
-     * the information that you entered for the admin contact.
+     * ("who is") queries return contact information for the registrar, the phrase "REDACTED FOR PRIVACY", or
+     * "On behalf of &lt;domain name&gt; owner.".
      * </p>
      * <note>
      * <p>
-     * You must specify the same privacy setting for the administrative, registrant, and technical contacts.
+     * While some domains may allow different privacy settings per contact, we recommend specifying the same privacy
+     * setting for all contacts.
      * </p>
      * </note>
      * <p>
@@ -872,11 +872,11 @@ public class TransferDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param privacyProtectAdminContact
      *        Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
-     *        WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org
-     *        domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
-     *        WHOIS queries return the information that you entered for the admin contact.</p> <note>
+     *        WHOIS ("who is") queries return contact information for the registrar, the phrase "REDACTED FOR PRIVACY",
+     *        or "On behalf of &lt;domain name&gt; owner.".</p> <note>
      *        <p>
-     *        You must specify the same privacy setting for the administrative, registrant, and technical contacts.
+     *        While some domains may allow different privacy settings per contact, we recommend specifying the same
+     *        privacy setting for all contacts.
      *        </p>
      *        </note>
      *        <p>
@@ -892,13 +892,13 @@ public class TransferDomainRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS
-     * ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or
-     * for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return
-     * the information that you entered for the admin contact.
+     * ("who is") queries return contact information for the registrar, the phrase "REDACTED FOR PRIVACY", or
+     * "On behalf of &lt;domain name&gt; owner.".
      * </p>
      * <note>
      * <p>
-     * You must specify the same privacy setting for the administrative, registrant, and technical contacts.
+     * While some domains may allow different privacy settings per contact, we recommend specifying the same privacy
+     * setting for all contacts.
      * </p>
      * </note>
      * <p>
@@ -906,11 +906,11 @@ public class TransferDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @return Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
-     *         WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org
-     *         domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
-     *         WHOIS queries return the information that you entered for the admin contact.</p> <note>
+     *         WHOIS ("who is") queries return contact information for the registrar, the phrase "REDACTED FOR PRIVACY",
+     *         or "On behalf of &lt;domain name&gt; owner.".</p> <note>
      *         <p>
-     *         You must specify the same privacy setting for the administrative, registrant, and technical contacts.
+     *         While some domains may allow different privacy settings per contact, we recommend specifying the same
+     *         privacy setting for all contacts.
      *         </p>
      *         </note>
      *         <p>

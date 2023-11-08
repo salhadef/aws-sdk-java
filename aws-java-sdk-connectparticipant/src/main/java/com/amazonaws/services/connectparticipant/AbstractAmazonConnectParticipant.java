@@ -38,6 +38,11 @@ public class AbstractAmazonConnectParticipant implements AmazonConnectParticipan
     }
 
     @Override
+    public DescribeViewResult describeView(DescribeViewRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DisconnectParticipantResult disconnectParticipant(DisconnectParticipantRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

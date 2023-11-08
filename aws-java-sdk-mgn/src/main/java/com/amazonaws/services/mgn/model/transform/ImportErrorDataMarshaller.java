@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ImportErrorDataMarshaller {
 
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("accountID").build();
     private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("applicationID").build();
     private static final MarshallingInfo<String> EC2LAUNCHTEMPLATEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -56,6 +58,7 @@ public class ImportErrorDataMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(importErrorData.getAccountID(), ACCOUNTID_BINDING);
             protocolMarshaller.marshall(importErrorData.getApplicationID(), APPLICATIONID_BINDING);
             protocolMarshaller.marshall(importErrorData.getEc2LaunchTemplateID(), EC2LAUNCHTEMPLATEID_BINDING);
             protocolMarshaller.marshall(importErrorData.getRawError(), RAWERROR_BINDING);

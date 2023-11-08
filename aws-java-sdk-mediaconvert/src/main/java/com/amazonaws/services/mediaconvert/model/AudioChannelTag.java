@@ -35,7 +35,20 @@ public enum AudioChannelTag {
     TCS("TCS"),
     VHL("VHL"),
     VHC("VHC"),
-    VHR("VHR");
+    VHR("VHR"),
+    TBL("TBL"),
+    TBC("TBC"),
+    TBR("TBR"),
+    RSL("RSL"),
+    RSR("RSR"),
+    LW("LW"),
+    RW("RW"),
+    LFE2("LFE2"),
+    LT("LT"),
+    RT("RT"),
+    HI("HI"),
+    NAR("NAR"),
+    M("M");
 
     private String value;
 

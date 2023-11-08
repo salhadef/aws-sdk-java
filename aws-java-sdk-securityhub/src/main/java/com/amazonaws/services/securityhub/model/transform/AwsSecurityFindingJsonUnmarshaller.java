@@ -230,6 +230,10 @@ public class AwsSecurityFindingJsonUnmarshaller implements Unmarshaller<AwsSecur
                     context.nextToken();
                     awsSecurityFinding.setSample(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("GeneratorDetails", targetDepth)) {
+                    context.nextToken();
+                    awsSecurityFinding.setGeneratorDetails(GeneratorDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

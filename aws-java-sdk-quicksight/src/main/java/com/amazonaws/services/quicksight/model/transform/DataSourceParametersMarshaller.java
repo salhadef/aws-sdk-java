@@ -73,6 +73,10 @@ public class DataSourceParametersMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExasolParameters").build();
     private static final MarshallingInfo<StructuredPojo> DATABRICKSPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DatabricksParameters").build();
+    private static final MarshallingInfo<StructuredPojo> STARBURSTPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StarburstParameters").build();
+    private static final MarshallingInfo<StructuredPojo> TRINOPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TrinoParameters").build();
 
     private static final DataSourceParametersMarshaller instance = new DataSourceParametersMarshaller();
 
@@ -113,6 +117,8 @@ public class DataSourceParametersMarshaller {
             protocolMarshaller.marshall(dataSourceParameters.getAmazonOpenSearchParameters(), AMAZONOPENSEARCHPARAMETERS_BINDING);
             protocolMarshaller.marshall(dataSourceParameters.getExasolParameters(), EXASOLPARAMETERS_BINDING);
             protocolMarshaller.marshall(dataSourceParameters.getDatabricksParameters(), DATABRICKSPARAMETERS_BINDING);
+            protocolMarshaller.marshall(dataSourceParameters.getStarburstParameters(), STARBURSTPARAMETERS_BINDING);
+            protocolMarshaller.marshall(dataSourceParameters.getTrinoParameters(), TRINOPARAMETERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

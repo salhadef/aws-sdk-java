@@ -25,13 +25,13 @@ import com.amazonaws.services.codecommit.model.*;
  * {@link com.amazonaws.services.codecommit.AbstractAWSCodeCommitAsync} instead.
  * </p>
  * <p>
- * <fullname>AWS CodeCommit</fullname>
+ * <fullname>CodeCommit</fullname>
  * <p>
- * This is the <i>AWS CodeCommit API Reference</i>. This reference provides descriptions of the operations and data
- * types for AWS CodeCommit API along with usage examples.
+ * This is the <i>CodeCommit API Reference</i>. This reference provides descriptions of the operations and data types
+ * for CodeCommit API along with usage examples.
  * </p>
  * <p>
- * You can use the AWS CodeCommit API to work with the following objects:
+ * You can use the CodeCommit API to work with the following objects:
  * </p>
  * <p>
  * Repositories, by calling the following:
@@ -39,18 +39,18 @@ import com.amazonaws.services.codecommit.model.*;
  * <ul>
  * <li>
  * <p>
- * <a>BatchGetRepositories</a>, which returns information about one or more repositories associated with your AWS
- * account.
+ * <a>BatchGetRepositories</a>, which returns information about one or more repositories associated with your Amazon Web
+ * Services account.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>CreateRepository</a>, which creates an AWS CodeCommit repository.
+ * <a>CreateRepository</a>, which creates an CodeCommit repository.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DeleteRepository</a>, which deletes an AWS CodeCommit repository.
+ * <a>DeleteRepository</a>, which deletes an CodeCommit repository.
  * </p>
  * </li>
  * <li>
@@ -60,7 +60,7 @@ import com.amazonaws.services.codecommit.model.*;
  * </li>
  * <li>
  * <p>
- * <a>ListRepositories</a>, which lists all AWS CodeCommit repositories associated with your AWS account.
+ * <a>ListRepositories</a>, which lists all CodeCommit repositories associated with your Amazon Web Services account.
  * </p>
  * </li>
  * <li>
@@ -127,6 +127,11 @@ import com.amazonaws.services.codecommit.model.*;
  * <li>
  * <p>
  * <a>GetFolder</a>, which returns the contents of a specified folder or directory.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListFileCommitHistory</a>, which retrieves a list of commits and changes to a specified file.
  * </p>
  * </li>
  * <li>
@@ -289,7 +294,7 @@ import com.amazonaws.services.codecommit.model.*;
  * </li>
  * <li>
  * <p>
- * <a>MergePullRequestByThreeWay</a>. which merges the source destination branch of a pull request into the specified
+ * <a>MergePullRequestByThreeWay</a>, which merges the source destination branch of a pull request into the specified
  * destination branch for that pull request using the three-way merge option.
  * </p>
  * </li>
@@ -336,15 +341,15 @@ import com.amazonaws.services.codecommit.model.*;
  * <li>
  * <p>
  * <a>AssociateApprovalRuleTemplateWithRepository</a>, which associates a template with a specified repository. After
- * the template is associated with a repository, AWS CodeCommit creates approval rules that match the template
- * conditions on every pull request created in the specified repository.
+ * the template is associated with a repository, CodeCommit creates approval rules that match the template conditions on
+ * every pull request created in the specified repository.
  * </p>
  * </li>
  * <li>
  * <p>
  * <a>BatchAssociateApprovalRuleTemplateWithRepositories</a>, which associates a template with one or more specified
- * repositories. After the template is associated with a repository, AWS CodeCommit creates approval rules that match
- * the template conditions on every pull request created in the specified repositories.
+ * repositories. After the template is associated with a repository, CodeCommit creates approval rules that match the
+ * template conditions on every pull request created in the specified repositories.
  * </p>
  * </li>
  * <li>
@@ -357,7 +362,7 @@ import com.amazonaws.services.codecommit.model.*;
  * <li>
  * <p>
  * <a>CreateApprovalRuleTemplate</a>, which creates a template for approval rules that can then be associated with one
- * or more repositories in your AWS account.
+ * or more repositories in your Amazon Web Services account.
  * </p>
  * </li>
  * <li>
@@ -380,7 +385,8 @@ import com.amazonaws.services.codecommit.model.*;
  * </li>
  * <li>
  * <p>
- * <a>ListApprovalRuleTemplates</a>, which lists all approval rule templates in the AWS Region in your AWS account.
+ * <a>ListApprovalRuleTemplates</a>, which lists all approval rule templates in the Amazon Web Services Region in your
+ * Amazon Web Services account.
  * </p>
  * </li>
  * <li>
@@ -459,23 +465,23 @@ import com.amazonaws.services.codecommit.model.*;
  * </li>
  * </ul>
  * <p>
- * Tags used to tag resources in AWS CodeCommit (not Git tags), by calling the following:
+ * Tags used to tag resources in CodeCommit (not Git tags), by calling the following:
  * </p>
  * <ul>
  * <li>
  * <p>
- * <a>ListTagsForResource</a>, which gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS
- * CodeCommit.
+ * <a>ListTagsForResource</a>, which gets information about Amazon Web Servicestags for a specified Amazon Resource Name
+ * (ARN) in CodeCommit.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>TagResource</a>, which adds or updates tags for a resource in AWS CodeCommit.
+ * <a>TagResource</a>, which adds or updates tags for a resource in CodeCommit.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>UntagResource</a>, which removes tags for a resource in AWS CodeCommit.
+ * <a>UntagResource</a>, which removes tags for a resource in CodeCommit.
  * </p>
  * </li>
  * </ul>
@@ -502,8 +508,8 @@ import com.amazonaws.services.codecommit.model.*;
  * </li>
  * </ul>
  * <p>
- * For information about how to use AWS CodeCommit, see the <a
- * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit User Guide</a>.
+ * For information about how to use CodeCommit, see the <a
+ * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">CodeCommit User Guide</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -745,9 +751,9 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
 
     /**
      * <p>
-     * Creates a template for approval rules that can then be associated with one or more repositories in your AWS
-     * account. When you associate a template with a repository, AWS CodeCommit creates an approval rule that matches
-     * the conditions of the template for all pull requests that meet the conditions of the template. For more
+     * Creates a template for approval rules that can then be associated with one or more repositories in your Amazon
+     * Web Services account. When you associate a template with a repository, CodeCommit creates an approval rule that
+     * matches the conditions of the template for all pull requests that meet the conditions of the template. For more
      * information, see <a>AssociateApprovalRuleTemplateWithRepository</a>.
      * </p>
      * 
@@ -762,9 +768,9 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
 
     /**
      * <p>
-     * Creates a template for approval rules that can then be associated with one or more repositories in your AWS
-     * account. When you associate a template with a repository, AWS CodeCommit creates an approval rule that matches
-     * the conditions of the template for all pull requests that meet the conditions of the template. For more
+     * Creates a template for approval rules that can then be associated with one or more repositories in your Amazon
+     * Web Services account. When you associate a template with a repository, CodeCommit creates an approval rule that
+     * matches the conditions of the template for all pull requests that meet the conditions of the template. For more
      * information, see <a>AssociateApprovalRuleTemplateWithRepository</a>.
      * </p>
      * 
@@ -2049,8 +2055,9 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
 
     /**
      * <p>
-     * Lists all approval rule templates in the specified AWS Region in your AWS account. If an AWS Region is not
-     * specified, the AWS Region where you are signed in is used.
+     * Lists all approval rule templates in the specified Amazon Web Services Region in your Amazon Web Services
+     * account. If an Amazon Web Services Region is not specified, the Amazon Web Services Region where you are signed
+     * in is used.
      * </p>
      * 
      * @param listApprovalRuleTemplatesRequest
@@ -2064,8 +2071,9 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
 
     /**
      * <p>
-     * Lists all approval rule templates in the specified AWS Region in your AWS account. If an AWS Region is not
-     * specified, the AWS Region where you are signed in is used.
+     * Lists all approval rule templates in the specified Amazon Web Services Region in your Amazon Web Services
+     * account. If an Amazon Web Services Region is not specified, the Amazon Web Services Region where you are signed
+     * in is used.
      * </p>
      * 
      * @param listApprovalRuleTemplatesRequest
@@ -2151,6 +2159,37 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      */
     java.util.concurrent.Future<ListBranchesResult> listBranchesAsync(ListBranchesRequest listBranchesRequest,
             com.amazonaws.handlers.AsyncHandler<ListBranchesRequest, ListBranchesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a list of commits and changes to a specified file.
+     * </p>
+     * 
+     * @param listFileCommitHistoryRequest
+     * @return A Java Future containing the result of the ListFileCommitHistory operation returned by the service.
+     * @sample AWSCodeCommitAsync.ListFileCommitHistory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListFileCommitHistory"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListFileCommitHistoryResult> listFileCommitHistoryAsync(ListFileCommitHistoryRequest listFileCommitHistoryRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of commits and changes to a specified file.
+     * </p>
+     * 
+     * @param listFileCommitHistoryRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListFileCommitHistory operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.ListFileCommitHistory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListFileCommitHistory"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListFileCommitHistoryResult> listFileCommitHistoryAsync(ListFileCommitHistoryRequest listFileCommitHistoryRequest,
+            com.amazonaws.handlers.AsyncHandler<ListFileCommitHistoryRequest, ListFileCommitHistoryResult> asyncHandler);
 
     /**
      * <p>
@@ -2257,10 +2296,10 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
 
     /**
      * <p>
-     * Gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS CodeCommit. For a list of valid
-     * resources in AWS CodeCommit, see <a href=
+     * Gets information about Amazon Web Servicestags for a specified Amazon Resource Name (ARN) in CodeCommit. For a
+     * list of valid resources in CodeCommit, see <a href=
      * "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
-     * >CodeCommit Resources and Operations</a> in the<i> AWS CodeCommit User Guide</i>.
+     * >CodeCommit Resources and Operations</a> in the<i> CodeCommit User Guide</i>.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -2273,10 +2312,10 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
 
     /**
      * <p>
-     * Gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS CodeCommit. For a list of valid
-     * resources in AWS CodeCommit, see <a href=
+     * Gets information about Amazon Web Servicestags for a specified Amazon Resource Name (ARN) in CodeCommit. For a
+     * list of valid resources in CodeCommit, see <a href=
      * "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
-     * >CodeCommit Resources and Operations</a> in the<i> AWS CodeCommit User Guide</i>.
+     * >CodeCommit Resources and Operations</a> in the<i> CodeCommit User Guide</i>.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -2665,8 +2704,8 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
 
     /**
      * <p>
-     * Adds or updates a file in a branch in an AWS CodeCommit repository, and generates a commit for the addition in
-     * the specified branch.
+     * Adds or updates a file in a branch in an CodeCommit repository, and generates a commit for the addition in the
+     * specified branch.
      * </p>
      * 
      * @param putFileRequest
@@ -2679,8 +2718,8 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
 
     /**
      * <p>
-     * Adds or updates a file in a branch in an AWS CodeCommit repository, and generates a commit for the addition in
-     * the specified branch.
+     * Adds or updates a file in a branch in an CodeCommit repository, and generates a commit for the addition in the
+     * specified branch.
      * </p>
      * 
      * @param putFileRequest
@@ -2731,10 +2770,9 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
 
     /**
      * <p>
-     * Adds or updates tags for a resource in AWS CodeCommit. For a list of valid resources in AWS CodeCommit, see <a
-     * href=
+     * Adds or updates tags for a resource in CodeCommit. For a list of valid resources in CodeCommit, see <a href=
      * "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
-     * >CodeCommit Resources and Operations</a> in the <i>AWS CodeCommit User Guide</i>.
+     * >CodeCommit Resources and Operations</a> in the <i>CodeCommit User Guide</i>.
      * </p>
      * 
      * @param tagResourceRequest
@@ -2747,10 +2785,9 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
 
     /**
      * <p>
-     * Adds or updates tags for a resource in AWS CodeCommit. For a list of valid resources in AWS CodeCommit, see <a
-     * href=
+     * Adds or updates tags for a resource in CodeCommit. For a list of valid resources in CodeCommit, see <a href=
      * "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
-     * >CodeCommit Resources and Operations</a> in the <i>AWS CodeCommit User Guide</i>.
+     * >CodeCommit Resources and Operations</a> in the <i>CodeCommit User Guide</i>.
      * </p>
      * 
      * @param tagResourceRequest
@@ -2805,9 +2842,9 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
 
     /**
      * <p>
-     * Removes tags for a resource in AWS CodeCommit. For a list of valid resources in AWS CodeCommit, see <a href=
+     * Removes tags for a resource in CodeCommit. For a list of valid resources in CodeCommit, see <a href=
      * "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
-     * >CodeCommit Resources and Operations</a> in the <i>AWS CodeCommit User Guide</i>.
+     * >CodeCommit Resources and Operations</a> in the <i>CodeCommit User Guide</i>.
      * </p>
      * 
      * @param untagResourceRequest
@@ -2820,9 +2857,9 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
 
     /**
      * <p>
-     * Removes tags for a resource in AWS CodeCommit. For a list of valid resources in AWS CodeCommit, see <a href=
+     * Removes tags for a resource in CodeCommit. For a list of valid resources in CodeCommit, see <a href=
      * "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
-     * >CodeCommit Resources and Operations</a> in the <i>AWS CodeCommit User Guide</i>.
+     * >CodeCommit Resources and Operations</a> in the <i>CodeCommit User Guide</i>.
      * </p>
      * 
      * @param untagResourceRequest
@@ -3245,10 +3282,10 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
 
     /**
      * <p>
-     * Renames a repository. The repository name must be unique across the calling AWS account. Repository names are
-     * limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters. The suffix
-     * .git is prohibited. For more information about the limits on repository names, see <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a> in the AWS CodeCommit User
+     * Renames a repository. The repository name must be unique across the calling Amazon Web Services account.
+     * Repository names are limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain
+     * characters. The suffix .git is prohibited. For more information about the limits on repository names, see <a
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a> in the CodeCommit User
      * Guide.
      * </p>
      * 
@@ -3263,10 +3300,10 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
 
     /**
      * <p>
-     * Renames a repository. The repository name must be unique across the calling AWS account. Repository names are
-     * limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters. The suffix
-     * .git is prohibited. For more information about the limits on repository names, see <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a> in the AWS CodeCommit User
+     * Renames a repository. The repository name must be unique across the calling Amazon Web Services account.
+     * Repository names are limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain
+     * characters. The suffix .git is prohibited. For more information about the limits on repository names, see <a
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a> in the CodeCommit User
      * Guide.
      * </p>
      * 

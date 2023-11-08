@@ -24,7 +24,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <code>DurationInMinutes</code> attributes.
  * </p>
  * <p>
- * If the <code>ScheduleExpression</code> is not provided, then the Edge Agent will always be set to recording mode.
+ * If the <code>ScheduleConfig</code> is not provided in the <code>RecorderConfig</code>, then the Edge Agent will
+ * always be set to recording mode.
+ * </p>
+ * <p>
+ * If the <code>ScheduleConfig</code> is not provided in the <code>UploaderConfig</code>, then the Edge Agent will
+ * upload at regular intervals (every 1 hour).
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/ScheduleConfig" target="_top">AWS API

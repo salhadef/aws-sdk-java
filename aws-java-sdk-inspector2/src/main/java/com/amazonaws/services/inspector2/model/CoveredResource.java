@@ -36,6 +36,12 @@ public class CoveredResource implements Serializable, Cloneable, StructuredPojo 
     private String accountId;
     /**
      * <p>
+     * The date and time the resource was last checked for vulnerabilities.
+     * </p>
+     */
+    private java.util.Date lastScannedAt;
+    /**
+     * <p>
      * The ID of the covered resource.
      * </p>
      */
@@ -102,6 +108,46 @@ public class CoveredResource implements Serializable, Cloneable, StructuredPojo 
 
     public CoveredResource withAccountId(String accountId) {
         setAccountId(accountId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date and time the resource was last checked for vulnerabilities.
+     * </p>
+     * 
+     * @param lastScannedAt
+     *        The date and time the resource was last checked for vulnerabilities.
+     */
+
+    public void setLastScannedAt(java.util.Date lastScannedAt) {
+        this.lastScannedAt = lastScannedAt;
+    }
+
+    /**
+     * <p>
+     * The date and time the resource was last checked for vulnerabilities.
+     * </p>
+     * 
+     * @return The date and time the resource was last checked for vulnerabilities.
+     */
+
+    public java.util.Date getLastScannedAt() {
+        return this.lastScannedAt;
+    }
+
+    /**
+     * <p>
+     * The date and time the resource was last checked for vulnerabilities.
+     * </p>
+     * 
+     * @param lastScannedAt
+     *        The date and time the resource was last checked for vulnerabilities.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CoveredResource withLastScannedAt(java.util.Date lastScannedAt) {
+        setLastScannedAt(lastScannedAt);
         return this;
     }
 
@@ -357,6 +403,8 @@ public class CoveredResource implements Serializable, Cloneable, StructuredPojo 
         sb.append("{");
         if (getAccountId() != null)
             sb.append("AccountId: ").append(getAccountId()).append(",");
+        if (getLastScannedAt() != null)
+            sb.append("LastScannedAt: ").append(getLastScannedAt()).append(",");
         if (getResourceId() != null)
             sb.append("ResourceId: ").append(getResourceId()).append(",");
         if (getResourceMetadata() != null)
@@ -384,6 +432,10 @@ public class CoveredResource implements Serializable, Cloneable, StructuredPojo 
         if (other.getAccountId() == null ^ this.getAccountId() == null)
             return false;
         if (other.getAccountId() != null && other.getAccountId().equals(this.getAccountId()) == false)
+            return false;
+        if (other.getLastScannedAt() == null ^ this.getLastScannedAt() == null)
+            return false;
+        if (other.getLastScannedAt() != null && other.getLastScannedAt().equals(this.getLastScannedAt()) == false)
             return false;
         if (other.getResourceId() == null ^ this.getResourceId() == null)
             return false;
@@ -414,6 +466,7 @@ public class CoveredResource implements Serializable, Cloneable, StructuredPojo 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
+        hashCode = prime * hashCode + ((getLastScannedAt() == null) ? 0 : getLastScannedAt().hashCode());
         hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
         hashCode = prime * hashCode + ((getResourceMetadata() == null) ? 0 : getResourceMetadata().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());

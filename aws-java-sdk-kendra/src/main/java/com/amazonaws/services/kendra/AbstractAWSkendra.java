@@ -288,6 +288,11 @@ public class AbstractAWSkendra implements AWSkendra {
     }
 
     @Override
+    public RetrieveResult retrieve(RetrieveRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartDataSourceSyncJobResult startDataSourceSyncJob(StartDataSourceSyncJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Information about a job run. A job run is a unit of work, such as a Spark JAR, Hive query, or SparkSQL query, that
- * you submit to an EMR Serverless application.
+ * you submit to an Amazon EMR Serverless application.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/JobRun" target="_top">AWS API
@@ -91,7 +91,7 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
     private String stateDetails;
     /**
      * <p>
-     * The EMR release associated with the application your job is running on.
+     * The Amazon EMR release associated with the application your job is running on.
      * </p>
      */
     private String releaseLabel;
@@ -138,9 +138,9 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
     private Long executionTimeoutMinutes;
     /**
      * <p>
-     * The aggregate vCPU, memory, and storage that AWS has billed for the job run. The billed resources include a
-     * 1-minute minimum usage for workers, plus additional storage over 20 GB per worker. Note that billed resources do
-     * not include usage for idle pre-initialized workers.
+     * The aggregate vCPU, memory, and storage that Amazon Web Services has billed for the job run. The billed resources
+     * include a 1-minute minimum usage for workers, plus additional storage over 20 GB per worker. Note that billed
+     * resources do not include usage for idle pre-initialized workers.
      * </p>
      */
     private ResourceUtilization billedResourceUtilization;
@@ -566,11 +566,11 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The EMR release associated with the application your job is running on.
+     * The Amazon EMR release associated with the application your job is running on.
      * </p>
      * 
      * @param releaseLabel
-     *        The EMR release associated with the application your job is running on.
+     *        The Amazon EMR release associated with the application your job is running on.
      */
 
     public void setReleaseLabel(String releaseLabel) {
@@ -579,10 +579,10 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The EMR release associated with the application your job is running on.
+     * The Amazon EMR release associated with the application your job is running on.
      * </p>
      * 
-     * @return The EMR release associated with the application your job is running on.
+     * @return The Amazon EMR release associated with the application your job is running on.
      */
 
     public String getReleaseLabel() {
@@ -591,11 +591,11 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The EMR release associated with the application your job is running on.
+     * The Amazon EMR release associated with the application your job is running on.
      * </p>
      * 
      * @param releaseLabel
-     *        The EMR release associated with the application your job is running on.
+     *        The Amazon EMR release associated with the application your job is running on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -918,15 +918,15 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The aggregate vCPU, memory, and storage that AWS has billed for the job run. The billed resources include a
-     * 1-minute minimum usage for workers, plus additional storage over 20 GB per worker. Note that billed resources do
-     * not include usage for idle pre-initialized workers.
+     * The aggregate vCPU, memory, and storage that Amazon Web Services has billed for the job run. The billed resources
+     * include a 1-minute minimum usage for workers, plus additional storage over 20 GB per worker. Note that billed
+     * resources do not include usage for idle pre-initialized workers.
      * </p>
      * 
      * @param billedResourceUtilization
-     *        The aggregate vCPU, memory, and storage that AWS has billed for the job run. The billed resources include
-     *        a 1-minute minimum usage for workers, plus additional storage over 20 GB per worker. Note that billed
-     *        resources do not include usage for idle pre-initialized workers.
+     *        The aggregate vCPU, memory, and storage that Amazon Web Services has billed for the job run. The billed
+     *        resources include a 1-minute minimum usage for workers, plus additional storage over 20 GB per worker.
+     *        Note that billed resources do not include usage for idle pre-initialized workers.
      */
 
     public void setBilledResourceUtilization(ResourceUtilization billedResourceUtilization) {
@@ -935,14 +935,14 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The aggregate vCPU, memory, and storage that AWS has billed for the job run. The billed resources include a
-     * 1-minute minimum usage for workers, plus additional storage over 20 GB per worker. Note that billed resources do
-     * not include usage for idle pre-initialized workers.
+     * The aggregate vCPU, memory, and storage that Amazon Web Services has billed for the job run. The billed resources
+     * include a 1-minute minimum usage for workers, plus additional storage over 20 GB per worker. Note that billed
+     * resources do not include usage for idle pre-initialized workers.
      * </p>
      * 
-     * @return The aggregate vCPU, memory, and storage that AWS has billed for the job run. The billed resources include
-     *         a 1-minute minimum usage for workers, plus additional storage over 20 GB per worker. Note that billed
-     *         resources do not include usage for idle pre-initialized workers.
+     * @return The aggregate vCPU, memory, and storage that Amazon Web Services has billed for the job run. The billed
+     *         resources include a 1-minute minimum usage for workers, plus additional storage over 20 GB per worker.
+     *         Note that billed resources do not include usage for idle pre-initialized workers.
      */
 
     public ResourceUtilization getBilledResourceUtilization() {
@@ -951,15 +951,15 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The aggregate vCPU, memory, and storage that AWS has billed for the job run. The billed resources include a
-     * 1-minute minimum usage for workers, plus additional storage over 20 GB per worker. Note that billed resources do
-     * not include usage for idle pre-initialized workers.
+     * The aggregate vCPU, memory, and storage that Amazon Web Services has billed for the job run. The billed resources
+     * include a 1-minute minimum usage for workers, plus additional storage over 20 GB per worker. Note that billed
+     * resources do not include usage for idle pre-initialized workers.
      * </p>
      * 
      * @param billedResourceUtilization
-     *        The aggregate vCPU, memory, and storage that AWS has billed for the job run. The billed resources include
-     *        a 1-minute minimum usage for workers, plus additional storage over 20 GB per worker. Note that billed
-     *        resources do not include usage for idle pre-initialized workers.
+     *        The aggregate vCPU, memory, and storage that Amazon Web Services has billed for the job run. The billed
+     *        resources include a 1-minute minimum usage for workers, plus additional storage over 20 GB per worker.
+     *        Note that billed resources do not include usage for idle pre-initialized workers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

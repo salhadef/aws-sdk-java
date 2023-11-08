@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ApplicationType {
 
-    HANA("HANA");
+    HANA("HANA"),
+    SAP_ABAP("SAP_ABAP");
 
     private String value;
 

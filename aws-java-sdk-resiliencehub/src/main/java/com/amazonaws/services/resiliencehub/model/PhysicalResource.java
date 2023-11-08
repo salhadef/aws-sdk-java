@@ -64,19 +64,19 @@ public class PhysicalResource implements Serializable, Cloneable, StructuredPojo
     private Boolean excluded;
     /**
      * <p>
-     * The logical identifier of the resource.
+     * Logical identifier of the resource.
      * </p>
      */
     private LogicalResourceId logicalResourceId;
     /**
      * <p>
-     * The name of the parent resource.
+     * Name of the parent resource.
      * </p>
      */
     private String parentResourceName;
     /**
      * <p>
-     * The physical identifier of the resource.
+     * Identifier of the physical resource.
      * </p>
      */
     private PhysicalResourceId physicalResourceId;
@@ -94,7 +94,7 @@ public class PhysicalResource implements Serializable, Cloneable, StructuredPojo
     private String resourceType;
     /**
      * <p>
-     * The type of input source.
+     * Type of input source.
      * </p>
      */
     private String sourceType;
@@ -375,11 +375,11 @@ public class PhysicalResource implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The logical identifier of the resource.
+     * Logical identifier of the resource.
      * </p>
      * 
      * @param logicalResourceId
-     *        The logical identifier of the resource.
+     *        Logical identifier of the resource.
      */
 
     public void setLogicalResourceId(LogicalResourceId logicalResourceId) {
@@ -388,10 +388,10 @@ public class PhysicalResource implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The logical identifier of the resource.
+     * Logical identifier of the resource.
      * </p>
      * 
-     * @return The logical identifier of the resource.
+     * @return Logical identifier of the resource.
      */
 
     public LogicalResourceId getLogicalResourceId() {
@@ -400,11 +400,11 @@ public class PhysicalResource implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The logical identifier of the resource.
+     * Logical identifier of the resource.
      * </p>
      * 
      * @param logicalResourceId
-     *        The logical identifier of the resource.
+     *        Logical identifier of the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -415,11 +415,11 @@ public class PhysicalResource implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the parent resource.
+     * Name of the parent resource.
      * </p>
      * 
      * @param parentResourceName
-     *        The name of the parent resource.
+     *        Name of the parent resource.
      */
 
     public void setParentResourceName(String parentResourceName) {
@@ -428,10 +428,10 @@ public class PhysicalResource implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the parent resource.
+     * Name of the parent resource.
      * </p>
      * 
-     * @return The name of the parent resource.
+     * @return Name of the parent resource.
      */
 
     public String getParentResourceName() {
@@ -440,11 +440,11 @@ public class PhysicalResource implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the parent resource.
+     * Name of the parent resource.
      * </p>
      * 
      * @param parentResourceName
-     *        The name of the parent resource.
+     *        Name of the parent resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -455,11 +455,11 @@ public class PhysicalResource implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The physical identifier of the resource.
+     * Identifier of the physical resource.
      * </p>
      * 
      * @param physicalResourceId
-     *        The physical identifier of the resource.
+     *        Identifier of the physical resource.
      */
 
     public void setPhysicalResourceId(PhysicalResourceId physicalResourceId) {
@@ -468,10 +468,10 @@ public class PhysicalResource implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The physical identifier of the resource.
+     * Identifier of the physical resource.
      * </p>
      * 
-     * @return The physical identifier of the resource.
+     * @return Identifier of the physical resource.
      */
 
     public PhysicalResourceId getPhysicalResourceId() {
@@ -480,11 +480,11 @@ public class PhysicalResource implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The physical identifier of the resource.
+     * Identifier of the physical resource.
      * </p>
      * 
      * @param physicalResourceId
-     *        The physical identifier of the resource.
+     *        Identifier of the physical resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -575,11 +575,11 @@ public class PhysicalResource implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The type of input source.
+     * Type of input source.
      * </p>
      * 
      * @param sourceType
-     *        The type of input source.
+     *        Type of input source.
      * @see ResourceSourceType
      */
 
@@ -589,10 +589,10 @@ public class PhysicalResource implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The type of input source.
+     * Type of input source.
      * </p>
      * 
-     * @return The type of input source.
+     * @return Type of input source.
      * @see ResourceSourceType
      */
 
@@ -602,11 +602,11 @@ public class PhysicalResource implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The type of input source.
+     * Type of input source.
      * </p>
      * 
      * @param sourceType
-     *        The type of input source.
+     *        Type of input source.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceSourceType
      */
@@ -618,11 +618,11 @@ public class PhysicalResource implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The type of input source.
+     * Type of input source.
      * </p>
      * 
      * @param sourceType
-     *        The type of input source.
+     *        Type of input source.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceSourceType
      */

@@ -269,6 +269,11 @@ public class AbstractAWSTransfer implements AWSTransfer {
     }
 
     @Override
+    public TestConnectionResult testConnection(TestConnectionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public TestIdentityProviderResult testIdentityProvider(TestIdentityProviderRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

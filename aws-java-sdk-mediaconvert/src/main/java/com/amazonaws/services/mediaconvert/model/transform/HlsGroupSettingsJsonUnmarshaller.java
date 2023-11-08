@@ -143,6 +143,10 @@ public class HlsGroupSettingsJsonUnmarshaller implements Unmarshaller<HlsGroupSe
                     context.nextToken();
                     hlsGroupSettings.setProgramDateTimePeriod(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("progressiveWriteHlsManifest", targetDepth)) {
+                    context.nextToken();
+                    hlsGroupSettings.setProgressiveWriteHlsManifest(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("segmentControl", targetDepth)) {
                     context.nextToken();
                     hlsGroupSettings.setSegmentControl(context.getUnmarshaller(String.class).unmarshall(context));

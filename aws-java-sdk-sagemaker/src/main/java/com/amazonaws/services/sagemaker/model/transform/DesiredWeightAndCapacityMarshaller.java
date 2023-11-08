@@ -33,6 +33,8 @@ public class DesiredWeightAndCapacityMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DesiredWeight").build();
     private static final MarshallingInfo<Integer> DESIREDINSTANCECOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DesiredInstanceCount").build();
+    private static final MarshallingInfo<StructuredPojo> SERVERLESSUPDATECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServerlessUpdateConfig").build();
 
     private static final DesiredWeightAndCapacityMarshaller instance = new DesiredWeightAndCapacityMarshaller();
 
@@ -53,6 +55,7 @@ public class DesiredWeightAndCapacityMarshaller {
             protocolMarshaller.marshall(desiredWeightAndCapacity.getVariantName(), VARIANTNAME_BINDING);
             protocolMarshaller.marshall(desiredWeightAndCapacity.getDesiredWeight(), DESIREDWEIGHT_BINDING);
             protocolMarshaller.marshall(desiredWeightAndCapacity.getDesiredInstanceCount(), DESIREDINSTANCECOUNT_BINDING);
+            protocolMarshaller.marshall(desiredWeightAndCapacity.getServerlessUpdateConfig(), SERVERLESSUPDATECONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

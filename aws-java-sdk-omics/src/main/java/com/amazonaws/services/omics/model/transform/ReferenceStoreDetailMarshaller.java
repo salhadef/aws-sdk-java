@@ -29,16 +29,16 @@ public class ReferenceStoreDetailMarshaller {
 
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("arn").build();
-    private static final MarshallingInfo<java.util.Date> CREATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationTime").timestampFormat("iso8601").build();
-    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("id").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<StructuredPojo> SSECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sseConfig").build();
+    private static final MarshallingInfo<java.util.Date> CREATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationTime").timestampFormat("iso8601").build();
 
     private static final ReferenceStoreDetailMarshaller instance = new ReferenceStoreDetailMarshaller();
 
@@ -57,11 +57,11 @@ public class ReferenceStoreDetailMarshaller {
 
         try {
             protocolMarshaller.marshall(referenceStoreDetail.getArn(), ARN_BINDING);
-            protocolMarshaller.marshall(referenceStoreDetail.getCreationTime(), CREATIONTIME_BINDING);
-            protocolMarshaller.marshall(referenceStoreDetail.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(referenceStoreDetail.getId(), ID_BINDING);
             protocolMarshaller.marshall(referenceStoreDetail.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(referenceStoreDetail.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(referenceStoreDetail.getSseConfig(), SSECONFIG_BINDING);
+            protocolMarshaller.marshall(referenceStoreDetail.getCreationTime(), CREATIONTIME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

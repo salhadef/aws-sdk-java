@@ -649,6 +649,39 @@ public class AmazonAppflowAsyncClient extends AmazonAppflowClient implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<ResetConnectorMetadataCacheResult> resetConnectorMetadataCacheAsync(ResetConnectorMetadataCacheRequest request) {
+
+        return resetConnectorMetadataCacheAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResetConnectorMetadataCacheResult> resetConnectorMetadataCacheAsync(final ResetConnectorMetadataCacheRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ResetConnectorMetadataCacheRequest, ResetConnectorMetadataCacheResult> asyncHandler) {
+        final ResetConnectorMetadataCacheRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ResetConnectorMetadataCacheResult>() {
+            @Override
+            public ResetConnectorMetadataCacheResult call() throws Exception {
+                ResetConnectorMetadataCacheResult result = null;
+
+                try {
+                    result = executeResetConnectorMetadataCache(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StartFlowResult> startFlowAsync(StartFlowRequest request) {
 
         return startFlowAsync(request, null);

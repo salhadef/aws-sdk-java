@@ -27,12 +27,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ListSequenceStoresRequestMarshaller {
 
-    private static final MarshallingInfo<StructuredPojo> FILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("filter").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nextToken").build();
+    private static final MarshallingInfo<StructuredPojo> FILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("filter").build();
 
     private static final ListSequenceStoresRequestMarshaller instance = new ListSequenceStoresRequestMarshaller();
 
@@ -50,9 +50,9 @@ public class ListSequenceStoresRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(listSequenceStoresRequest.getFilter(), FILTER_BINDING);
             protocolMarshaller.marshall(listSequenceStoresRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listSequenceStoresRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listSequenceStoresRequest.getFilter(), FILTER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

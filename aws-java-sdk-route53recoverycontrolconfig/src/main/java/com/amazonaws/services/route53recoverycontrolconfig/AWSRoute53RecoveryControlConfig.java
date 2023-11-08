@@ -392,6 +392,24 @@ public interface AWSRoute53RecoveryControlConfig {
 
     /**
      * <p>
+     * Get information about the resource policy for a cluster.
+     * </p>
+     * 
+     * @param getResourcePolicyRequest
+     * @return Result of the GetResourcePolicy operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         404 response - MalformedQueryString. The query string contains a syntax error or resource not found.
+     * @throws InternalServerException
+     *         500 response - InternalServiceError. Temporary service error. Retry the request.
+     * @sample AWSRoute53RecoveryControlConfig.GetResourcePolicy
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/GetResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetResourcePolicyResult getResourcePolicy(GetResourcePolicyRequest getResourcePolicyRequest);
+
+    /**
+     * <p>
      * Returns an array of all Amazon Route 53 health checks associated with a specific routing control.
      * </p>
      * 

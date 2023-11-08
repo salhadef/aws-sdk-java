@@ -24,7 +24,8 @@ public enum ResiliencyPolicyTier {
     Critical("Critical"),
     Important("Important"),
     CoreServices("CoreServices"),
-    NonCritical("NonCritical");
+    NonCritical("NonCritical"),
+    NotApplicable("NotApplicable");
 
     private String value;
 

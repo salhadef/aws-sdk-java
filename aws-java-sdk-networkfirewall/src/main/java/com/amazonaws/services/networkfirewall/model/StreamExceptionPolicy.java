@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum StreamExceptionPolicy {
 
     DROP("DROP"),
-    CONTINUE("CONTINUE");
+    CONTINUE("CONTINUE"),
+    REJECT("REJECT");
 
     private String value;
 

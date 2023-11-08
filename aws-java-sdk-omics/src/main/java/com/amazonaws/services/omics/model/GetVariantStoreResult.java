@@ -25,28 +25,10 @@ public class GetVariantStoreResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * When the store was created.
-     * </p>
-     */
-    private java.util.Date creationTime;
-    /**
-     * <p>
-     * The store's description.
-     * </p>
-     */
-    private String description;
-    /**
-     * <p>
      * The store's ID.
      * </p>
      */
     private String id;
-    /**
-     * <p>
-     * The store's name.
-     * </p>
-     */
-    private String name;
     /**
      * <p>
      * The store's genome reference.
@@ -55,22 +37,10 @@ public class GetVariantStoreResult extends com.amazonaws.AmazonWebServiceResult<
     private ReferenceItem reference;
     /**
      * <p>
-     * The store's server-side encryption (SSE) settings.
-     * </p>
-     */
-    private SseConfig sseConfig;
-    /**
-     * <p>
      * The store's status.
      * </p>
      */
     private String status;
-    /**
-     * <p>
-     * The store's status message.
-     * </p>
-     */
-    private String statusMessage;
     /**
      * <p>
      * The store's ARN.
@@ -79,10 +49,34 @@ public class GetVariantStoreResult extends com.amazonaws.AmazonWebServiceResult<
     private String storeArn;
     /**
      * <p>
-     * The store's size in bytes.
+     * The store's name.
      * </p>
      */
-    private Long storeSizeBytes;
+    private String name;
+    /**
+     * <p>
+     * The store's description.
+     * </p>
+     */
+    private String description;
+    /**
+     * <p>
+     * The store's server-side encryption (SSE) settings.
+     * </p>
+     */
+    private SseConfig sseConfig;
+    /**
+     * <p>
+     * When the store was created.
+     * </p>
+     */
+    private java.util.Date creationTime;
+    /**
+     * <p>
+     * When the store was updated.
+     * </p>
+     */
+    private java.util.Date updateTime;
     /**
      * <p>
      * The store's tags.
@@ -91,90 +85,16 @@ public class GetVariantStoreResult extends com.amazonaws.AmazonWebServiceResult<
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * When the store was updated.
+     * The store's status message.
      * </p>
      */
-    private java.util.Date updateTime;
-
+    private String statusMessage;
     /**
      * <p>
-     * When the store was created.
+     * The store's size in bytes.
      * </p>
-     * 
-     * @param creationTime
-     *        When the store was created.
      */
-
-    public void setCreationTime(java.util.Date creationTime) {
-        this.creationTime = creationTime;
-    }
-
-    /**
-     * <p>
-     * When the store was created.
-     * </p>
-     * 
-     * @return When the store was created.
-     */
-
-    public java.util.Date getCreationTime() {
-        return this.creationTime;
-    }
-
-    /**
-     * <p>
-     * When the store was created.
-     * </p>
-     * 
-     * @param creationTime
-     *        When the store was created.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetVariantStoreResult withCreationTime(java.util.Date creationTime) {
-        setCreationTime(creationTime);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The store's description.
-     * </p>
-     * 
-     * @param description
-     *        The store's description.
-     */
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    /**
-     * <p>
-     * The store's description.
-     * </p>
-     * 
-     * @return The store's description.
-     */
-
-    public String getDescription() {
-        return this.description;
-    }
-
-    /**
-     * <p>
-     * The store's description.
-     * </p>
-     * 
-     * @param description
-     *        The store's description.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetVariantStoreResult withDescription(String description) {
-        setDescription(description);
-        return this;
-    }
+    private Long storeSizeBytes;
 
     /**
      * <p>
@@ -218,46 +138,6 @@ public class GetVariantStoreResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The store's name.
-     * </p>
-     * 
-     * @param name
-     *        The store's name.
-     */
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     * <p>
-     * The store's name.
-     * </p>
-     * 
-     * @return The store's name.
-     */
-
-    public String getName() {
-        return this.name;
-    }
-
-    /**
-     * <p>
-     * The store's name.
-     * </p>
-     * 
-     * @param name
-     *        The store's name.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetVariantStoreResult withName(String name) {
-        setName(name);
-        return this;
-    }
-
-    /**
-     * <p>
      * The store's genome reference.
      * </p>
      * 
@@ -293,46 +173,6 @@ public class GetVariantStoreResult extends com.amazonaws.AmazonWebServiceResult<
 
     public GetVariantStoreResult withReference(ReferenceItem reference) {
         setReference(reference);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The store's server-side encryption (SSE) settings.
-     * </p>
-     * 
-     * @param sseConfig
-     *        The store's server-side encryption (SSE) settings.
-     */
-
-    public void setSseConfig(SseConfig sseConfig) {
-        this.sseConfig = sseConfig;
-    }
-
-    /**
-     * <p>
-     * The store's server-side encryption (SSE) settings.
-     * </p>
-     * 
-     * @return The store's server-side encryption (SSE) settings.
-     */
-
-    public SseConfig getSseConfig() {
-        return this.sseConfig;
-    }
-
-    /**
-     * <p>
-     * The store's server-side encryption (SSE) settings.
-     * </p>
-     * 
-     * @param sseConfig
-     *        The store's server-side encryption (SSE) settings.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetVariantStoreResult withSseConfig(SseConfig sseConfig) {
-        setSseConfig(sseConfig);
         return this;
     }
 
@@ -397,46 +237,6 @@ public class GetVariantStoreResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The store's status message.
-     * </p>
-     * 
-     * @param statusMessage
-     *        The store's status message.
-     */
-
-    public void setStatusMessage(String statusMessage) {
-        this.statusMessage = statusMessage;
-    }
-
-    /**
-     * <p>
-     * The store's status message.
-     * </p>
-     * 
-     * @return The store's status message.
-     */
-
-    public String getStatusMessage() {
-        return this.statusMessage;
-    }
-
-    /**
-     * <p>
-     * The store's status message.
-     * </p>
-     * 
-     * @param statusMessage
-     *        The store's status message.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetVariantStoreResult withStatusMessage(String statusMessage) {
-        setStatusMessage(statusMessage);
-        return this;
-    }
-
-    /**
-     * <p>
      * The store's ARN.
      * </p>
      * 
@@ -477,41 +277,201 @@ public class GetVariantStoreResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The store's size in bytes.
+     * The store's name.
      * </p>
      * 
-     * @param storeSizeBytes
-     *        The store's size in bytes.
+     * @param name
+     *        The store's name.
      */
 
-    public void setStoreSizeBytes(Long storeSizeBytes) {
-        this.storeSizeBytes = storeSizeBytes;
+    public void setName(String name) {
+        this.name = name;
     }
 
     /**
      * <p>
-     * The store's size in bytes.
+     * The store's name.
      * </p>
      * 
-     * @return The store's size in bytes.
+     * @return The store's name.
      */
 
-    public Long getStoreSizeBytes() {
-        return this.storeSizeBytes;
+    public String getName() {
+        return this.name;
     }
 
     /**
      * <p>
-     * The store's size in bytes.
+     * The store's name.
      * </p>
      * 
-     * @param storeSizeBytes
-     *        The store's size in bytes.
+     * @param name
+     *        The store's name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetVariantStoreResult withStoreSizeBytes(Long storeSizeBytes) {
-        setStoreSizeBytes(storeSizeBytes);
+    public GetVariantStoreResult withName(String name) {
+        setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The store's description.
+     * </p>
+     * 
+     * @param description
+     *        The store's description.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * The store's description.
+     * </p>
+     * 
+     * @return The store's description.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * The store's description.
+     * </p>
+     * 
+     * @param description
+     *        The store's description.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetVariantStoreResult withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The store's server-side encryption (SSE) settings.
+     * </p>
+     * 
+     * @param sseConfig
+     *        The store's server-side encryption (SSE) settings.
+     */
+
+    public void setSseConfig(SseConfig sseConfig) {
+        this.sseConfig = sseConfig;
+    }
+
+    /**
+     * <p>
+     * The store's server-side encryption (SSE) settings.
+     * </p>
+     * 
+     * @return The store's server-side encryption (SSE) settings.
+     */
+
+    public SseConfig getSseConfig() {
+        return this.sseConfig;
+    }
+
+    /**
+     * <p>
+     * The store's server-side encryption (SSE) settings.
+     * </p>
+     * 
+     * @param sseConfig
+     *        The store's server-side encryption (SSE) settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetVariantStoreResult withSseConfig(SseConfig sseConfig) {
+        setSseConfig(sseConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When the store was created.
+     * </p>
+     * 
+     * @param creationTime
+     *        When the store was created.
+     */
+
+    public void setCreationTime(java.util.Date creationTime) {
+        this.creationTime = creationTime;
+    }
+
+    /**
+     * <p>
+     * When the store was created.
+     * </p>
+     * 
+     * @return When the store was created.
+     */
+
+    public java.util.Date getCreationTime() {
+        return this.creationTime;
+    }
+
+    /**
+     * <p>
+     * When the store was created.
+     * </p>
+     * 
+     * @param creationTime
+     *        When the store was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetVariantStoreResult withCreationTime(java.util.Date creationTime) {
+        setCreationTime(creationTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When the store was updated.
+     * </p>
+     * 
+     * @param updateTime
+     *        When the store was updated.
+     */
+
+    public void setUpdateTime(java.util.Date updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    /**
+     * <p>
+     * When the store was updated.
+     * </p>
+     * 
+     * @return When the store was updated.
+     */
+
+    public java.util.Date getUpdateTime() {
+        return this.updateTime;
+    }
+
+    /**
+     * <p>
+     * When the store was updated.
+     * </p>
+     * 
+     * @param updateTime
+     *        When the store was updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetVariantStoreResult withUpdateTime(java.util.Date updateTime) {
+        setUpdateTime(updateTime);
         return this;
     }
 
@@ -585,41 +545,81 @@ public class GetVariantStoreResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * When the store was updated.
+     * The store's status message.
      * </p>
      * 
-     * @param updateTime
-     *        When the store was updated.
+     * @param statusMessage
+     *        The store's status message.
      */
 
-    public void setUpdateTime(java.util.Date updateTime) {
-        this.updateTime = updateTime;
+    public void setStatusMessage(String statusMessage) {
+        this.statusMessage = statusMessage;
     }
 
     /**
      * <p>
-     * When the store was updated.
+     * The store's status message.
      * </p>
      * 
-     * @return When the store was updated.
+     * @return The store's status message.
      */
 
-    public java.util.Date getUpdateTime() {
-        return this.updateTime;
+    public String getStatusMessage() {
+        return this.statusMessage;
     }
 
     /**
      * <p>
-     * When the store was updated.
+     * The store's status message.
      * </p>
      * 
-     * @param updateTime
-     *        When the store was updated.
+     * @param statusMessage
+     *        The store's status message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetVariantStoreResult withUpdateTime(java.util.Date updateTime) {
-        setUpdateTime(updateTime);
+    public GetVariantStoreResult withStatusMessage(String statusMessage) {
+        setStatusMessage(statusMessage);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The store's size in bytes.
+     * </p>
+     * 
+     * @param storeSizeBytes
+     *        The store's size in bytes.
+     */
+
+    public void setStoreSizeBytes(Long storeSizeBytes) {
+        this.storeSizeBytes = storeSizeBytes;
+    }
+
+    /**
+     * <p>
+     * The store's size in bytes.
+     * </p>
+     * 
+     * @return The store's size in bytes.
+     */
+
+    public Long getStoreSizeBytes() {
+        return this.storeSizeBytes;
+    }
+
+    /**
+     * <p>
+     * The store's size in bytes.
+     * </p>
+     * 
+     * @param storeSizeBytes
+     *        The store's size in bytes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetVariantStoreResult withStoreSizeBytes(Long storeSizeBytes) {
+        setStoreSizeBytes(storeSizeBytes);
         return this;
     }
 
@@ -635,30 +635,30 @@ public class GetVariantStoreResult extends com.amazonaws.AmazonWebServiceResult<
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getCreationTime() != null)
-            sb.append("CreationTime: ").append(getCreationTime()).append(",");
-        if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
-        if (getName() != null)
-            sb.append("Name: ").append(getName()).append(",");
         if (getReference() != null)
             sb.append("Reference: ").append(getReference()).append(",");
-        if (getSseConfig() != null)
-            sb.append("SseConfig: ").append(getSseConfig()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
-        if (getStatusMessage() != null)
-            sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
         if (getStoreArn() != null)
             sb.append("StoreArn: ").append(getStoreArn()).append(",");
-        if (getStoreSizeBytes() != null)
-            sb.append("StoreSizeBytes: ").append(getStoreSizeBytes()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getSseConfig() != null)
+            sb.append("SseConfig: ").append(getSseConfig()).append(",");
+        if (getCreationTime() != null)
+            sb.append("CreationTime: ").append(getCreationTime()).append(",");
+        if (getUpdateTime() != null)
+            sb.append("UpdateTime: ").append(getUpdateTime()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
-        if (getUpdateTime() != null)
-            sb.append("UpdateTime: ").append(getUpdateTime());
+        if (getStatusMessage() != null)
+            sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
+        if (getStoreSizeBytes() != null)
+            sb.append("StoreSizeBytes: ").append(getStoreSizeBytes());
         sb.append("}");
         return sb.toString();
     }
@@ -673,53 +673,53 @@ public class GetVariantStoreResult extends com.amazonaws.AmazonWebServiceResult<
         if (obj instanceof GetVariantStoreResult == false)
             return false;
         GetVariantStoreResult other = (GetVariantStoreResult) obj;
-        if (other.getCreationTime() == null ^ this.getCreationTime() == null)
-            return false;
-        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
-            return false;
-        if (other.getDescription() == null ^ this.getDescription() == null)
-            return false;
-        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
-            return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
-            return false;
-        if (other.getName() == null ^ this.getName() == null)
-            return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getReference() == null ^ this.getReference() == null)
             return false;
         if (other.getReference() != null && other.getReference().equals(this.getReference()) == false)
             return false;
-        if (other.getSseConfig() == null ^ this.getSseConfig() == null)
-            return false;
-        if (other.getSseConfig() != null && other.getSseConfig().equals(this.getSseConfig()) == false)
-            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
-            return false;
-        if (other.getStatusMessage() == null ^ this.getStatusMessage() == null)
-            return false;
-        if (other.getStatusMessage() != null && other.getStatusMessage().equals(this.getStatusMessage()) == false)
             return false;
         if (other.getStoreArn() == null ^ this.getStoreArn() == null)
             return false;
         if (other.getStoreArn() != null && other.getStoreArn().equals(this.getStoreArn()) == false)
             return false;
-        if (other.getStoreSizeBytes() == null ^ this.getStoreSizeBytes() == null)
+        if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getStoreSizeBytes() != null && other.getStoreSizeBytes().equals(this.getStoreSizeBytes()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getSseConfig() == null ^ this.getSseConfig() == null)
+            return false;
+        if (other.getSseConfig() != null && other.getSseConfig().equals(this.getSseConfig()) == false)
+            return false;
+        if (other.getCreationTime() == null ^ this.getCreationTime() == null)
+            return false;
+        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
+            return false;
+        if (other.getUpdateTime() == null ^ this.getUpdateTime() == null)
+            return false;
+        if (other.getUpdateTime() != null && other.getUpdateTime().equals(this.getUpdateTime()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
-        if (other.getUpdateTime() == null ^ this.getUpdateTime() == null)
+        if (other.getStatusMessage() == null ^ this.getStatusMessage() == null)
             return false;
-        if (other.getUpdateTime() != null && other.getUpdateTime().equals(this.getUpdateTime()) == false)
+        if (other.getStatusMessage() != null && other.getStatusMessage().equals(this.getStatusMessage()) == false)
+            return false;
+        if (other.getStoreSizeBytes() == null ^ this.getStoreSizeBytes() == null)
+            return false;
+        if (other.getStoreSizeBytes() != null && other.getStoreSizeBytes().equals(this.getStoreSizeBytes()) == false)
             return false;
         return true;
     }
@@ -729,18 +729,18 @@ public class GetVariantStoreResult extends com.amazonaws.AmazonWebServiceResult<
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getReference() == null) ? 0 : getReference().hashCode());
-        hashCode = prime * hashCode + ((getSseConfig() == null) ? 0 : getSseConfig().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
         hashCode = prime * hashCode + ((getStoreArn() == null) ? 0 : getStoreArn().hashCode());
-        hashCode = prime * hashCode + ((getStoreSizeBytes() == null) ? 0 : getStoreSizeBytes().hashCode());
-        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getSseConfig() == null) ? 0 : getSseConfig().hashCode());
+        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getUpdateTime() == null) ? 0 : getUpdateTime().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
+        hashCode = prime * hashCode + ((getStoreSizeBytes() == null) ? 0 : getStoreSizeBytes().hashCode());
         return hashCode;
     }
 

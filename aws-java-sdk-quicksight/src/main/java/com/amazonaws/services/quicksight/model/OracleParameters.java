@@ -36,13 +36,13 @@ public class OracleParameters implements Serializable, Cloneable, StructuredPojo
     private String host;
     /**
      * <p>
-     * Port.
+     * The port.
      * </p>
      */
     private Integer port;
     /**
      * <p>
-     * Database.
+     * The database.
      * </p>
      */
     private String database;
@@ -89,11 +89,11 @@ public class OracleParameters implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Port.
+     * The port.
      * </p>
      * 
      * @param port
-     *        Port.
+     *        The port.
      */
 
     public void setPort(Integer port) {
@@ -102,10 +102,10 @@ public class OracleParameters implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Port.
+     * The port.
      * </p>
      * 
-     * @return Port.
+     * @return The port.
      */
 
     public Integer getPort() {
@@ -114,11 +114,11 @@ public class OracleParameters implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Port.
+     * The port.
      * </p>
      * 
      * @param port
-     *        Port.
+     *        The port.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +129,11 @@ public class OracleParameters implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Database.
+     * The database.
      * </p>
      * 
      * @param database
-     *        Database.
+     *        The database.
      */
 
     public void setDatabase(String database) {
@@ -142,10 +142,10 @@ public class OracleParameters implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Database.
+     * The database.
      * </p>
      * 
-     * @return Database.
+     * @return The database.
      */
 
     public String getDatabase() {
@@ -154,11 +154,11 @@ public class OracleParameters implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Database.
+     * The database.
      * </p>
      * 
      * @param database
-     *        Database.
+     *        The database.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

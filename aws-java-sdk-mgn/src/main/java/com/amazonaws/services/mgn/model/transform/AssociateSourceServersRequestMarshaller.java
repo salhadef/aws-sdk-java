@@ -28,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class AssociateSourceServersRequestMarshaller {
 
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("accountID").build();
     private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("applicationID").build();
     private static final MarshallingInfo<List> SOURCESERVERIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -49,6 +51,7 @@ public class AssociateSourceServersRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(associateSourceServersRequest.getAccountID(), ACCOUNTID_BINDING);
             protocolMarshaller.marshall(associateSourceServersRequest.getApplicationID(), APPLICATIONID_BINDING);
             protocolMarshaller.marshall(associateSourceServersRequest.getSourceServerIDs(), SOURCESERVERIDS_BINDING);
         } catch (Exception e) {

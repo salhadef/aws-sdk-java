@@ -34,6 +34,8 @@ public class PutRecordRequestMarshaller {
             .marshallLocationName("Record").build();
     private static final MarshallingInfo<List> TARGETSTORES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("TargetStores").build();
+    private static final MarshallingInfo<StructuredPojo> TTLDURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TtlDuration").build();
 
     private static final PutRecordRequestMarshaller instance = new PutRecordRequestMarshaller();
 
@@ -54,6 +56,7 @@ public class PutRecordRequestMarshaller {
             protocolMarshaller.marshall(putRecordRequest.getFeatureGroupName(), FEATUREGROUPNAME_BINDING);
             protocolMarshaller.marshall(putRecordRequest.getRecord(), RECORD_BINDING);
             protocolMarshaller.marshall(putRecordRequest.getTargetStores(), TARGETSTORES_BINDING);
+            protocolMarshaller.marshall(putRecordRequest.getTtlDuration(), TTLDURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

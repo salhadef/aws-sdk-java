@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP8.
+ * Required when you set Codec to the value VP8.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Vp8Settings" target="_top">AWS API
  *      Documentation</a>
@@ -32,11 +32,7 @@ public class Vp8Settings implements Serializable, Cloneable, StructuredPojo {
      * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to
      * keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion,
      * choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal
-     * approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your
-     * transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the
-     * service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the
-     * frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the
-     * settings FramerateNumerator and FramerateDenominator.
+     * approximations of fractions. If you choose Custom, specify your frame rate as a fraction.
      */
     private String framerateControl;
     /**
@@ -76,29 +72,28 @@ public class Vp8Settings implements Serializable, Cloneable, StructuredPojo {
     private Integer maxBitrate;
     /**
      * Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior,
-     * Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a
-     * different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the
-     * JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values
-     * for the parNumerator and parDenominator settings.
+     * Follow source, uses the PAR from your input video for your output. To specify a different PAR in the console,
+     * choose any value other than Follow source. When you choose SPECIFIED for this setting, you must also specify
+     * values for the parNumerator and parDenominator settings.
      */
     private String parControl;
     /**
-     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value
-     * other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input
-     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio
-     * 40:33. In this example, the value for parDenominator is 33.
+     * Required when you set Pixel aspect ratio to SPECIFIED. On the console, this corresponds to any value other than
+     * Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR,
+     * provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In
+     * this example, the value for parDenominator is 33.
      */
     private Integer parDenominator;
     /**
-     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value
-     * other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input
-     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio
-     * 40:33. In this example, the value for parNumerator is 40.
+     * Required when you set Pixel aspect ratio to SPECIFIED. On the console, this corresponds to any value other than
+     * Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR,
+     * provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In
+     * this example, the value for parNumerator is 40.
      */
     private Integer parNumerator;
     /**
-     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for
-     * output video quality. The default behavior is faster, lower quality, multi-pass encoding.
+     * Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video quality.
+     * The default behavior is faster, lower quality, multi-pass encoding.
      */
     private String qualityTuningLevel;
     /** With the VP8 codec, you can use only the variable bitrate (VBR) rate control mode. */
@@ -142,22 +137,14 @@ public class Vp8Settings implements Serializable, Cloneable, StructuredPojo {
      * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to
      * keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion,
      * choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal
-     * approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your
-     * transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the
-     * service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the
-     * frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the
-     * settings FramerateNumerator and FramerateDenominator.
+     * approximations of fractions. If you choose Custom, specify your frame rate as a fraction.
      * 
      * @param framerateControl
      *        If you are using the console, use the Framerate setting to specify the frame rate for this output. If you
      *        want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate
      *        conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the
      *        dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a
-     *        fraction. If you are creating your transcoding job specification as a JSON file without the console, use
-     *        FramerateControl to specify which value the service uses for the frame rate for this output. Choose
-     *        INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if
-     *        you want the service to use the frame rate you specify in the settings FramerateNumerator and
-     *        FramerateDenominator.
+     *        fraction.
      * @see Vp8FramerateControl
      */
 
@@ -169,21 +156,13 @@ public class Vp8Settings implements Serializable, Cloneable, StructuredPojo {
      * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to
      * keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion,
      * choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal
-     * approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your
-     * transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the
-     * service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the
-     * frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the
-     * settings FramerateNumerator and FramerateDenominator.
+     * approximations of fractions. If you choose Custom, specify your frame rate as a fraction.
      * 
      * @return If you are using the console, use the Framerate setting to specify the frame rate for this output. If you
      *         want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate
      *         conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the
      *         dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a
-     *         fraction. If you are creating your transcoding job specification as a JSON file without the console, use
-     *         FramerateControl to specify which value the service uses for the frame rate for this output. Choose
-     *         INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if
-     *         you want the service to use the frame rate you specify in the settings FramerateNumerator and
-     *         FramerateDenominator.
+     *         fraction.
      * @see Vp8FramerateControl
      */
 
@@ -195,22 +174,14 @@ public class Vp8Settings implements Serializable, Cloneable, StructuredPojo {
      * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to
      * keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion,
      * choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal
-     * approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your
-     * transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the
-     * service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the
-     * frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the
-     * settings FramerateNumerator and FramerateDenominator.
+     * approximations of fractions. If you choose Custom, specify your frame rate as a fraction.
      * 
      * @param framerateControl
      *        If you are using the console, use the Framerate setting to specify the frame rate for this output. If you
      *        want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate
      *        conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the
      *        dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a
-     *        fraction. If you are creating your transcoding job specification as a JSON file without the console, use
-     *        FramerateControl to specify which value the service uses for the frame rate for this output. Choose
-     *        INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if
-     *        you want the service to use the frame rate you specify in the settings FramerateNumerator and
-     *        FramerateDenominator.
+     *        fraction.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Vp8FramerateControl
      */
@@ -224,22 +195,14 @@ public class Vp8Settings implements Serializable, Cloneable, StructuredPojo {
      * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to
      * keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion,
      * choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal
-     * approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your
-     * transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the
-     * service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the
-     * frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the
-     * settings FramerateNumerator and FramerateDenominator.
+     * approximations of fractions. If you choose Custom, specify your frame rate as a fraction.
      * 
      * @param framerateControl
      *        If you are using the console, use the Framerate setting to specify the frame rate for this output. If you
      *        want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate
      *        conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the
      *        dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a
-     *        fraction. If you are creating your transcoding job specification as a JSON file without the console, use
-     *        FramerateControl to specify which value the service uses for the frame rate for this output. Choose
-     *        INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if
-     *        you want the service to use the frame rate you specify in the settings FramerateNumerator and
-     *        FramerateDenominator.
+     *        fraction.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Vp8FramerateControl
      */
@@ -582,17 +545,15 @@ public class Vp8Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior,
-     * Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a
-     * different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the
-     * JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values
-     * for the parNumerator and parDenominator settings.
+     * Follow source, uses the PAR from your input video for your output. To specify a different PAR in the console,
+     * choose any value other than Follow source. When you choose SPECIFIED for this setting, you must also specify
+     * values for the parNumerator and parDenominator settings.
      * 
      * @param parControl
      *        Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default
-     *        behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To
-     *        specify a different PAR in the console, choose any value other than Follow source. To specify a different
-     *        PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting,
-     *        you must also specify values for the parNumerator and parDenominator settings.
+     *        behavior, Follow source, uses the PAR from your input video for your output. To specify a different PAR in
+     *        the console, choose any value other than Follow source. When you choose SPECIFIED for this setting, you
+     *        must also specify values for the parNumerator and parDenominator settings.
      * @see Vp8ParControl
      */
 
@@ -602,15 +563,13 @@ public class Vp8Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior,
-     * Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a
-     * different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the
-     * JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values
-     * for the parNumerator and parDenominator settings.
+     * Follow source, uses the PAR from your input video for your output. To specify a different PAR in the console,
+     * choose any value other than Follow source. When you choose SPECIFIED for this setting, you must also specify
+     * values for the parNumerator and parDenominator settings.
      * 
      * @return Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default
-     *         behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To
-     *         specify a different PAR in the console, choose any value other than Follow source. To specify a different
-     *         PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting,
+     *         behavior, Follow source, uses the PAR from your input video for your output. To specify a different PAR
+     *         in the console, choose any value other than Follow source. When you choose SPECIFIED for this setting,
      *         you must also specify values for the parNumerator and parDenominator settings.
      * @see Vp8ParControl
      */
@@ -621,17 +580,15 @@ public class Vp8Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior,
-     * Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a
-     * different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the
-     * JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values
-     * for the parNumerator and parDenominator settings.
+     * Follow source, uses the PAR from your input video for your output. To specify a different PAR in the console,
+     * choose any value other than Follow source. When you choose SPECIFIED for this setting, you must also specify
+     * values for the parNumerator and parDenominator settings.
      * 
      * @param parControl
      *        Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default
-     *        behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To
-     *        specify a different PAR in the console, choose any value other than Follow source. To specify a different
-     *        PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting,
-     *        you must also specify values for the parNumerator and parDenominator settings.
+     *        behavior, Follow source, uses the PAR from your input video for your output. To specify a different PAR in
+     *        the console, choose any value other than Follow source. When you choose SPECIFIED for this setting, you
+     *        must also specify values for the parNumerator and parDenominator settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Vp8ParControl
      */
@@ -643,17 +600,15 @@ public class Vp8Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior,
-     * Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a
-     * different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the
-     * JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values
-     * for the parNumerator and parDenominator settings.
+     * Follow source, uses the PAR from your input video for your output. To specify a different PAR in the console,
+     * choose any value other than Follow source. When you choose SPECIFIED for this setting, you must also specify
+     * values for the parNumerator and parDenominator settings.
      * 
      * @param parControl
      *        Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default
-     *        behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To
-     *        specify a different PAR in the console, choose any value other than Follow source. To specify a different
-     *        PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting,
-     *        you must also specify values for the parNumerator and parDenominator settings.
+     *        behavior, Follow source, uses the PAR from your input video for your output. To specify a different PAR in
+     *        the console, choose any value other than Follow source. When you choose SPECIFIED for this setting, you
+     *        must also specify values for the parNumerator and parDenominator settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Vp8ParControl
      */
@@ -664,16 +619,16 @@ public class Vp8Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value
-     * other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input
-     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio
-     * 40:33. In this example, the value for parDenominator is 33.
+     * Required when you set Pixel aspect ratio to SPECIFIED. On the console, this corresponds to any value other than
+     * Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR,
+     * provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In
+     * this example, the value for parDenominator is 33.
      * 
      * @param parDenominator
-     *        Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to
-     *        any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different
-     *        from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you
-     *        would specify the ratio 40:33. In this example, the value for parDenominator is 33.
+     *        Required when you set Pixel aspect ratio to SPECIFIED. On the console, this corresponds to any value other
+     *        than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input
+     *        video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify
+     *        the ratio 40:33. In this example, the value for parDenominator is 33.
      */
 
     public void setParDenominator(Integer parDenominator) {
@@ -681,15 +636,15 @@ public class Vp8Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value
-     * other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input
-     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio
-     * 40:33. In this example, the value for parDenominator is 33.
+     * Required when you set Pixel aspect ratio to SPECIFIED. On the console, this corresponds to any value other than
+     * Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR,
+     * provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In
+     * this example, the value for parDenominator is 33.
      * 
-     * @return Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to
-     *         any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different
-     *         from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen,
-     *         you would specify the ratio 40:33. In this example, the value for parDenominator is 33.
+     * @return Required when you set Pixel aspect ratio to SPECIFIED. On the console, this corresponds to any value
+     *         other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your
+     *         input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would
+     *         specify the ratio 40:33. In this example, the value for parDenominator is 33.
      */
 
     public Integer getParDenominator() {
@@ -697,16 +652,16 @@ public class Vp8Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value
-     * other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input
-     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio
-     * 40:33. In this example, the value for parDenominator is 33.
+     * Required when you set Pixel aspect ratio to SPECIFIED. On the console, this corresponds to any value other than
+     * Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR,
+     * provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In
+     * this example, the value for parDenominator is 33.
      * 
      * @param parDenominator
-     *        Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to
-     *        any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different
-     *        from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you
-     *        would specify the ratio 40:33. In this example, the value for parDenominator is 33.
+     *        Required when you set Pixel aspect ratio to SPECIFIED. On the console, this corresponds to any value other
+     *        than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input
+     *        video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify
+     *        the ratio 40:33. In this example, the value for parDenominator is 33.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -716,16 +671,16 @@ public class Vp8Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value
-     * other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input
-     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio
-     * 40:33. In this example, the value for parNumerator is 40.
+     * Required when you set Pixel aspect ratio to SPECIFIED. On the console, this corresponds to any value other than
+     * Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR,
+     * provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In
+     * this example, the value for parNumerator is 40.
      * 
      * @param parNumerator
-     *        Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to
-     *        any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different
-     *        from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you
-     *        would specify the ratio 40:33. In this example, the value for parNumerator is 40.
+     *        Required when you set Pixel aspect ratio to SPECIFIED. On the console, this corresponds to any value other
+     *        than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input
+     *        video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify
+     *        the ratio 40:33. In this example, the value for parNumerator is 40.
      */
 
     public void setParNumerator(Integer parNumerator) {
@@ -733,15 +688,15 @@ public class Vp8Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value
-     * other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input
-     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio
-     * 40:33. In this example, the value for parNumerator is 40.
+     * Required when you set Pixel aspect ratio to SPECIFIED. On the console, this corresponds to any value other than
+     * Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR,
+     * provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In
+     * this example, the value for parNumerator is 40.
      * 
-     * @return Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to
-     *         any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different
-     *         from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen,
-     *         you would specify the ratio 40:33. In this example, the value for parNumerator is 40.
+     * @return Required when you set Pixel aspect ratio to SPECIFIED. On the console, this corresponds to any value
+     *         other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your
+     *         input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would
+     *         specify the ratio 40:33. In this example, the value for parNumerator is 40.
      */
 
     public Integer getParNumerator() {
@@ -749,16 +704,16 @@ public class Vp8Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value
-     * other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input
-     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio
-     * 40:33. In this example, the value for parNumerator is 40.
+     * Required when you set Pixel aspect ratio to SPECIFIED. On the console, this corresponds to any value other than
+     * Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR,
+     * provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In
+     * this example, the value for parNumerator is 40.
      * 
      * @param parNumerator
-     *        Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to
-     *        any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different
-     *        from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you
-     *        would specify the ratio 40:33. In this example, the value for parNumerator is 40.
+     *        Required when you set Pixel aspect ratio to SPECIFIED. On the console, this corresponds to any value other
+     *        than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input
+     *        video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify
+     *        the ratio 40:33. In this example, the value for parNumerator is 40.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -768,12 +723,12 @@ public class Vp8Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for
-     * output video quality. The default behavior is faster, lower quality, multi-pass encoding.
+     * Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video quality.
+     * The default behavior is faster, lower quality, multi-pass encoding.
      * 
      * @param qualityTuningLevel
-     *        Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed
-     *        for output video quality. The default behavior is faster, lower quality, multi-pass encoding.
+     *        Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video
+     *        quality. The default behavior is faster, lower quality, multi-pass encoding.
      * @see Vp8QualityTuningLevel
      */
 
@@ -782,11 +737,11 @@ public class Vp8Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for
-     * output video quality. The default behavior is faster, lower quality, multi-pass encoding.
+     * Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video quality.
+     * The default behavior is faster, lower quality, multi-pass encoding.
      * 
-     * @return Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding
-     *         speed for output video quality. The default behavior is faster, lower quality, multi-pass encoding.
+     * @return Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video
+     *         quality. The default behavior is faster, lower quality, multi-pass encoding.
      * @see Vp8QualityTuningLevel
      */
 
@@ -795,12 +750,12 @@ public class Vp8Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for
-     * output video quality. The default behavior is faster, lower quality, multi-pass encoding.
+     * Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video quality.
+     * The default behavior is faster, lower quality, multi-pass encoding.
      * 
      * @param qualityTuningLevel
-     *        Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed
-     *        for output video quality. The default behavior is faster, lower quality, multi-pass encoding.
+     *        Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video
+     *        quality. The default behavior is faster, lower quality, multi-pass encoding.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Vp8QualityTuningLevel
      */
@@ -811,12 +766,12 @@ public class Vp8Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for
-     * output video quality. The default behavior is faster, lower quality, multi-pass encoding.
+     * Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video quality.
+     * The default behavior is faster, lower quality, multi-pass encoding.
      * 
      * @param qualityTuningLevel
-     *        Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed
-     *        for output video quality. The default behavior is faster, lower quality, multi-pass encoding.
+     *        Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video
+     *        quality. The default behavior is faster, lower quality, multi-pass encoding.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Vp8QualityTuningLevel
      */

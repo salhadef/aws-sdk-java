@@ -15,8 +15,8 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Keep the default value (DEFAULT) unless you know that your audio EBP markers are incorrectly appearing before your
- * video EBP markers. To correct this problem, set this value to Force (FORCE).
+ * Keep the default value unless you know that your audio EBP markers are incorrectly appearing before your video EBP
+ * markers. To correct this problem, set this value to Force.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum M2tsForceTsVideoEbpOrder {

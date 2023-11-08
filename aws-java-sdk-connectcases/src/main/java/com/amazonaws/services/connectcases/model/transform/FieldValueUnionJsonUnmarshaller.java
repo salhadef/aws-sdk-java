@@ -56,6 +56,10 @@ public class FieldValueUnionJsonUnmarshaller implements Unmarshaller<FieldValueU
                     context.nextToken();
                     fieldValueUnion.setDoubleValue(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
+                if (context.testExpression("emptyValue", targetDepth)) {
+                    context.nextToken();
+                    fieldValueUnion.setEmptyValue(EmptyFieldValueJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("stringValue", targetDepth)) {
                     context.nextToken();
                     fieldValueUnion.setStringValue(context.getUnmarshaller(String.class).unmarshall(context));

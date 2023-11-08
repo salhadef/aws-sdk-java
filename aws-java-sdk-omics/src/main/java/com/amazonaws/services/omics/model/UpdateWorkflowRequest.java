@@ -27,12 +27,6 @@ public class UpdateWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A description for the workflow.
-     * </p>
-     */
-    private String description;
-    /**
-     * <p>
      * The workflow's ID.
      * </p>
      */
@@ -43,46 +37,12 @@ public class UpdateWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String name;
-
     /**
      * <p>
      * A description for the workflow.
      * </p>
-     * 
-     * @param description
-     *        A description for the workflow.
      */
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    /**
-     * <p>
-     * A description for the workflow.
-     * </p>
-     * 
-     * @return A description for the workflow.
-     */
-
-    public String getDescription() {
-        return this.description;
-    }
-
-    /**
-     * <p>
-     * A description for the workflow.
-     * </p>
-     * 
-     * @param description
-     *        A description for the workflow.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateWorkflowRequest withDescription(String description) {
-        setDescription(description);
-        return this;
-    }
+    private String description;
 
     /**
      * <p>
@@ -165,6 +125,46 @@ public class UpdateWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * A description for the workflow.
+     * </p>
+     * 
+     * @param description
+     *        A description for the workflow.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * A description for the workflow.
+     * </p>
+     * 
+     * @return A description for the workflow.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * A description for the workflow.
+     * </p>
+     * 
+     * @param description
+     *        A description for the workflow.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateWorkflowRequest withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -176,12 +176,12 @@ public class UpdateWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
         if (getName() != null)
-            sb.append("Name: ").append(getName());
+            sb.append("Name: ").append(getName()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription());
         sb.append("}");
         return sb.toString();
     }
@@ -196,10 +196,6 @@ public class UpdateWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest
         if (obj instanceof UpdateWorkflowRequest == false)
             return false;
         UpdateWorkflowRequest other = (UpdateWorkflowRequest) obj;
-        if (other.getDescription() == null ^ this.getDescription() == null)
-            return false;
-        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
-            return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
@@ -207,6 +203,10 @@ public class UpdateWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         return true;
     }
@@ -216,9 +216,9 @@ public class UpdateWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         return hashCode;
     }
 

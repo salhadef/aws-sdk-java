@@ -162,6 +162,17 @@ public class WorkloadJsonUnmarshaller implements Unmarshaller<Workload, JsonUnma
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("Profiles", targetDepth)) {
+                    context.nextToken();
+                    workload.setProfiles(new ListUnmarshaller<WorkloadProfile>(WorkloadProfileJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("PrioritizedRiskCounts", targetDepth)) {
+                    context.nextToken();
+                    workload.setPrioritizedRiskCounts(new MapUnmarshaller<String, Integer>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(Integer.class)).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

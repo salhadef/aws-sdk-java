@@ -22,7 +22,8 @@ public enum StartingPosition {
 
     Latest("latest"),
     Trim_horizon("trim_horizon"),
-    Earliest("earliest");
+    Earliest("earliest"),
+    Timestamp("timestamp");
 
     private String value;
 

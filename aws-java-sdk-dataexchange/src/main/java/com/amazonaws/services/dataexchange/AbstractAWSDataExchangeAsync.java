@@ -301,6 +301,19 @@ public class AbstractAWSDataExchangeAsync extends AbstractAWSDataExchange implem
     }
 
     @Override
+    public java.util.concurrent.Future<SendDataSetNotificationResult> sendDataSetNotificationAsync(SendDataSetNotificationRequest request) {
+
+        return sendDataSetNotificationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SendDataSetNotificationResult> sendDataSetNotificationAsync(SendDataSetNotificationRequest request,
+            com.amazonaws.handlers.AsyncHandler<SendDataSetNotificationRequest, SendDataSetNotificationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<StartJobResult> startJobAsync(StartJobRequest request) {
 
         return startJobAsync(request, null);

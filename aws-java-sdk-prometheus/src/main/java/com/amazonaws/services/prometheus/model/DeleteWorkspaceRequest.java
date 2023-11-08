@@ -30,56 +30,16 @@ public class DeleteWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-     * </p>
-     */
-    private String clientToken;
-    /**
-     * <p>
      * The ID of the workspace to delete.
      * </p>
      */
     private String workspaceId;
-
     /**
      * <p>
      * Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
      * </p>
-     * 
-     * @param clientToken
-     *        Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
      */
-
-    public void setClientToken(String clientToken) {
-        this.clientToken = clientToken;
-    }
-
-    /**
-     * <p>
-     * Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-     * </p>
-     * 
-     * @return Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-     */
-
-    public String getClientToken() {
-        return this.clientToken;
-    }
-
-    /**
-     * <p>
-     * Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-     * </p>
-     * 
-     * @param clientToken
-     *        Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DeleteWorkspaceRequest withClientToken(String clientToken) {
-        setClientToken(clientToken);
-        return this;
-    }
+    private String clientToken;
 
     /**
      * <p>
@@ -122,6 +82,46 @@ public class DeleteWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     * </p>
+     * 
+     * @param clientToken
+     *        Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     */
+
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
+    }
+
+    /**
+     * <p>
+     * Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     * </p>
+     * 
+     * @return Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     */
+
+    public String getClientToken() {
+        return this.clientToken;
+    }
+
+    /**
+     * <p>
+     * Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     * </p>
+     * 
+     * @param clientToken
+     *        Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteWorkspaceRequest withClientToken(String clientToken) {
+        setClientToken(clientToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -133,10 +133,10 @@ public class DeleteWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getWorkspaceId() != null)
-            sb.append("WorkspaceId: ").append(getWorkspaceId());
+            sb.append("WorkspaceId: ").append(getWorkspaceId()).append(",");
+        if (getClientToken() != null)
+            sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");
         return sb.toString();
     }
@@ -151,13 +151,13 @@ public class DeleteWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
         if (obj instanceof DeleteWorkspaceRequest == false)
             return false;
         DeleteWorkspaceRequest other = (DeleteWorkspaceRequest) obj;
-        if (other.getClientToken() == null ^ this.getClientToken() == null)
-            return false;
-        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
-            return false;
         if (other.getWorkspaceId() == null ^ this.getWorkspaceId() == null)
             return false;
         if (other.getWorkspaceId() != null && other.getWorkspaceId().equals(this.getWorkspaceId()) == false)
+            return false;
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
+            return false;
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
         return true;
     }
@@ -167,8 +167,8 @@ public class DeleteWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getWorkspaceId() == null) ? 0 : getWorkspaceId().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         return hashCode;
     }
 

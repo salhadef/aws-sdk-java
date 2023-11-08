@@ -80,7 +80,7 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
      * <p>
      * To remove Auto Scaling groups, specify a non-null empty list of Auto Scaling group names to detach all
      * CodeDeploy-managed Auto Scaling lifecycle hooks. For examples, see <a href=
-     * "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat"
+     * "https://docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat"
      * >Amazon EC2 instances in an Amazon EC2 Auto Scaling group fail to launch and receive the error
      * "Heartbeat Timeout"</a> in the <i>CodeDeploy User Guide</i>.
      * </p>
@@ -507,7 +507,7 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
      * <p>
      * To remove Auto Scaling groups, specify a non-null empty list of Auto Scaling group names to detach all
      * CodeDeploy-managed Auto Scaling lifecycle hooks. For examples, see <a href=
-     * "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat"
+     * "https://docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat"
      * >Amazon EC2 instances in an Amazon EC2 Auto Scaling group fail to launch and receive the error
      * "Heartbeat Timeout"</a> in the <i>CodeDeploy User Guide</i>.
      * </p>
@@ -526,7 +526,7 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
      *         <p>
      *         To remove Auto Scaling groups, specify a non-null empty list of Auto Scaling group names to detach all
      *         CodeDeploy-managed Auto Scaling lifecycle hooks. For examples, see <a href=
-     *         "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat"
+     *         "https://docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat"
      *         >Amazon EC2 instances in an Amazon EC2 Auto Scaling group fail to launch and receive the error
      *         "Heartbeat Timeout"</a> in the <i>CodeDeploy User Guide</i>.
      *         </p>
@@ -554,7 +554,7 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
      * <p>
      * To remove Auto Scaling groups, specify a non-null empty list of Auto Scaling group names to detach all
      * CodeDeploy-managed Auto Scaling lifecycle hooks. For examples, see <a href=
-     * "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat"
+     * "https://docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat"
      * >Amazon EC2 instances in an Amazon EC2 Auto Scaling group fail to launch and receive the error
      * "Heartbeat Timeout"</a> in the <i>CodeDeploy User Guide</i>.
      * </p>
@@ -574,7 +574,7 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
      *        <p>
      *        To remove Auto Scaling groups, specify a non-null empty list of Auto Scaling group names to detach all
      *        CodeDeploy-managed Auto Scaling lifecycle hooks. For examples, see <a href=
-     *        "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat"
+     *        "https://docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat"
      *        >Amazon EC2 instances in an Amazon EC2 Auto Scaling group fail to launch and receive the error
      *        "Heartbeat Timeout"</a> in the <i>CodeDeploy User Guide</i>.
      *        </p>
@@ -604,7 +604,7 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
      * <p>
      * To remove Auto Scaling groups, specify a non-null empty list of Auto Scaling group names to detach all
      * CodeDeploy-managed Auto Scaling lifecycle hooks. For examples, see <a href=
-     * "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat"
+     * "https://docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat"
      * >Amazon EC2 instances in an Amazon EC2 Auto Scaling group fail to launch and receive the error
      * "Heartbeat Timeout"</a> in the <i>CodeDeploy User Guide</i>.
      * </p>
@@ -629,7 +629,7 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
      *        <p>
      *        To remove Auto Scaling groups, specify a non-null empty list of Auto Scaling group names to detach all
      *        CodeDeploy-managed Auto Scaling lifecycle hooks. For examples, see <a href=
-     *        "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat"
+     *        "https://docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat"
      *        >Amazon EC2 instances in an Amazon EC2 Auto Scaling group fail to launch and receive the error
      *        "Heartbeat Timeout"</a> in the <i>CodeDeploy User Guide</i>.
      *        </p>
@@ -661,7 +661,7 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
      * <p>
      * To remove Auto Scaling groups, specify a non-null empty list of Auto Scaling group names to detach all
      * CodeDeploy-managed Auto Scaling lifecycle hooks. For examples, see <a href=
-     * "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat"
+     * "https://docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat"
      * >Amazon EC2 instances in an Amazon EC2 Auto Scaling group fail to launch and receive the error
      * "Heartbeat Timeout"</a> in the <i>CodeDeploy User Guide</i>.
      * </p>
@@ -681,7 +681,7 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
      *        <p>
      *        To remove Auto Scaling groups, specify a non-null empty list of Auto Scaling group names to detach all
      *        CodeDeploy-managed Auto Scaling lifecycle hooks. For examples, see <a href=
-     *        "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat"
+     *        "https://docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat"
      *        >Amazon EC2 instances in an Amazon EC2 Auto Scaling group fail to launch and receive the error
      *        "Heartbeat Timeout"</a> in the <i>CodeDeploy User Guide</i>.
      *        </p>

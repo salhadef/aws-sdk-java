@@ -91,6 +91,10 @@ public class TemplateVersionDefinitionJsonUnmarshaller implements Unmarshaller<T
                     context.nextToken();
                     templateVersionDefinition.setAnalysisDefaults(AnalysisDefaultsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Options", targetDepth)) {
+                    context.nextToken();
+                    templateVersionDefinition.setOptions(AssetOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

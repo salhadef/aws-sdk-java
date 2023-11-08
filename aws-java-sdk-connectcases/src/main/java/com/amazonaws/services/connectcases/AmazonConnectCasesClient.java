@@ -44,6 +44,7 @@ import com.amazonaws.services.connectcases.AmazonConnectCasesClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.connectcases.model.*;
+
 import com.amazonaws.services.connectcases.model.transform.*;
 
 /**
@@ -291,13 +292,12 @@ public class AmazonConnectCasesClient extends AmazonWebServiceClient implements 
      * Creates a case in the specified Cases domain. Case system and custom fields are taken as an array id/value pairs
      * with a declared data types.
      * </p>
-     * <note>
      * <p>
      * The following fields are required when creating a case:
      * </p>
      * 
      * <pre>
-     * <code> &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;customer_id&lt;/code&gt; - You must provide the full customer profile ARN in this format: &lt;code&gt;arn:aws:profile:your AWS Region:your AWS account ID:domains/profiles domain name/profiles/profile ID&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;title&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;/note&gt; </code>
+     * <code> &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;customer_id&lt;/code&gt; - You must provide the full customer profile ARN in this format: &lt;code&gt;arn:aws:profile:your_AWS_Region:your_AWS_account ID:domains/your_profiles_domain_name/profiles/profile_ID&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;title&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; </code>
      * </pre>
      * 
      * @param createCaseRequest
@@ -379,7 +379,10 @@ public class AmazonConnectCasesClient extends AmazonWebServiceClient implements 
      * "https://docs.aws.amazon.com/connect/latest/adminguide/required-permissions-iam-cases.html#onboard-cases-iam"
      * >Onboard to Cases</a>.
      * </p>
-     * </important>
+     * 
+     * <pre>
+     * <code> &lt;/important&gt; </code>
+     * </pre>
      * 
      * @param createDomainRequest
      * @return Result of the CreateDomain operation returned by the service.
@@ -619,13 +622,27 @@ public class AmazonConnectCasesClient extends AmazonWebServiceClient implements 
      * Creates a related item (comments, tasks, and contacts) and associates it with a case.
      * </p>
      * <note>
+     * <ul>
+     * <li>
      * <p>
      * A Related Item is a resource that is associated with a case. It may or may not have an external identifier
      * linking it to an external resource (for example, a <code>contactArn</code>). All Related Items have their own
      * internal identifier, the <code>relatedItemArn</code>. Examples of related items include <code>comments</code> and
      * <code>contacts</code>.
      * </p>
-     * </note>
+     * </li>
+     * <li>
+     * <p>
+     * If you provide a value for <code>performedBy.userArn</code> you must also have <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">DescribeUser</a> permission
+     * on the ARN of the user that you provide.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * <pre>
+     * <code> &lt;/note&gt; </code>
+     * </pre>
      * 
      * @param createRelatedItemRequest
      * @return Result of the CreateRelatedItem operation returned by the service.
@@ -772,8 +789,12 @@ public class AmazonConnectCasesClient extends AmazonWebServiceClient implements 
 
     /**
      * <p>
-     * Deletes a domain.
+     * Deletes a Cases domain.
      * </p>
+     * 
+     * <pre>
+     * <code> &lt;note&gt; &lt;p&gt;After deleting your domain you must disassociate the deleted domain from your Amazon Connect instance with another API call before being able to use Cases again with this Amazon Connect instance. See &lt;a href=&quot;https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteIntegrationAssociation.html&quot;&gt;DeleteIntegrationAssociation&lt;/a&gt;.&lt;/p&gt; &lt;/note&gt; </code>
+     * </pre>
      * 
      * @param deleteDomainRequest
      * @return Result of the DeleteDomain operation returned by the service.
@@ -1634,7 +1655,9 @@ public class AmazonConnectCasesClient extends AmazonWebServiceClient implements 
 
     /**
      * <p>
-     * API for adding case event publishing configuration
+     * Adds case event publishing configuration. For a complete list of fields you can add to the event message, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/case-fields.html">Create case fields</a> in the
+     * <i>Amazon Connect Administrator Guide</i>
      * </p>
      * 
      * @param putCaseEventConfigurationRequest

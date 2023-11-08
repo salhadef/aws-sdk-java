@@ -29,6 +29,8 @@ public enum TargetDevice {
     Ml_p3("ml_p3"),
     Ml_g4dn("ml_g4dn"),
     Ml_inf1("ml_inf1"),
+    Ml_inf2("ml_inf2"),
+    Ml_trn1("ml_trn1"),
     Ml_eia2("ml_eia2"),
     Jetson_tx1("jetson_tx1"),
     Jetson_tx2("jetson_tx2"),

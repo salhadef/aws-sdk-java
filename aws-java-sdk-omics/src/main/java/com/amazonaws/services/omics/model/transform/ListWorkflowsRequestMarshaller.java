@@ -27,14 +27,14 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ListWorkflowsRequestMarshaller {
 
-    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
-            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
+    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.QUERY_PARAM)
+            .marshallLocationName("type").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.QUERY_PARAM)
             .marshallLocationName("name").build();
     private static final MarshallingInfo<String> STARTINGTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("startingToken").build();
-    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.QUERY_PARAM)
-            .marshallLocationName("type").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
 
     private static final ListWorkflowsRequestMarshaller instance = new ListWorkflowsRequestMarshaller();
 
@@ -52,10 +52,10 @@ public class ListWorkflowsRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(listWorkflowsRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(listWorkflowsRequest.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(listWorkflowsRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(listWorkflowsRequest.getStartingToken(), STARTINGTOKEN_BINDING);
-            protocolMarshaller.marshall(listWorkflowsRequest.getType(), TYPE_BINDING);
+            protocolMarshaller.marshall(listWorkflowsRequest.getMaxResults(), MAXRESULTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

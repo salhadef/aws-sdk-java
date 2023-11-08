@@ -59,6 +59,12 @@ public class ScatterPlotCategoricallyAggregatedFieldWells implements Serializabl
      * </p>
      */
     private java.util.List<MeasureField> size;
+    /**
+     * <p>
+     * The label field well of a scatter plot.
+     * </p>
+     */
+    private java.util.List<DimensionField> label;
 
     /**
      * <p>
@@ -381,6 +387,76 @@ public class ScatterPlotCategoricallyAggregatedFieldWells implements Serializabl
     }
 
     /**
+     * <p>
+     * The label field well of a scatter plot.
+     * </p>
+     * 
+     * @return The label field well of a scatter plot.
+     */
+
+    public java.util.List<DimensionField> getLabel() {
+        return label;
+    }
+
+    /**
+     * <p>
+     * The label field well of a scatter plot.
+     * </p>
+     * 
+     * @param label
+     *        The label field well of a scatter plot.
+     */
+
+    public void setLabel(java.util.Collection<DimensionField> label) {
+        if (label == null) {
+            this.label = null;
+            return;
+        }
+
+        this.label = new java.util.ArrayList<DimensionField>(label);
+    }
+
+    /**
+     * <p>
+     * The label field well of a scatter plot.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLabel(java.util.Collection)} or {@link #withLabel(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param label
+     *        The label field well of a scatter plot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScatterPlotCategoricallyAggregatedFieldWells withLabel(DimensionField... label) {
+        if (this.label == null) {
+            setLabel(new java.util.ArrayList<DimensionField>(label.length));
+        }
+        for (DimensionField ele : label) {
+            this.label.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The label field well of a scatter plot.
+     * </p>
+     * 
+     * @param label
+     *        The label field well of a scatter plot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScatterPlotCategoricallyAggregatedFieldWells withLabel(java.util.Collection<DimensionField> label) {
+        setLabel(label);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -399,7 +475,9 @@ public class ScatterPlotCategoricallyAggregatedFieldWells implements Serializabl
         if (getCategory() != null)
             sb.append("Category: ").append(getCategory()).append(",");
         if (getSize() != null)
-            sb.append("Size: ").append(getSize());
+            sb.append("Size: ").append(getSize()).append(",");
+        if (getLabel() != null)
+            sb.append("Label: ").append(getLabel());
         sb.append("}");
         return sb.toString();
     }
@@ -430,6 +508,10 @@ public class ScatterPlotCategoricallyAggregatedFieldWells implements Serializabl
             return false;
         if (other.getSize() != null && other.getSize().equals(this.getSize()) == false)
             return false;
+        if (other.getLabel() == null ^ this.getLabel() == null)
+            return false;
+        if (other.getLabel() != null && other.getLabel().equals(this.getLabel()) == false)
+            return false;
         return true;
     }
 
@@ -442,6 +524,7 @@ public class ScatterPlotCategoricallyAggregatedFieldWells implements Serializabl
         hashCode = prime * hashCode + ((getYAxis() == null) ? 0 : getYAxis().hashCode());
         hashCode = prime * hashCode + ((getCategory() == null) ? 0 : getCategory().hashCode());
         hashCode = prime * hashCode + ((getSize() == null) ? 0 : getSize().hashCode());
+        hashCode = prime * hashCode + ((getLabel() == null) ? 0 : getLabel().hashCode());
         return hashCode;
     }
 

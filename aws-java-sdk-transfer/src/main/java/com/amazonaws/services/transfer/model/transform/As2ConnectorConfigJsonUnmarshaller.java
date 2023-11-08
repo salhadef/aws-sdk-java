@@ -80,6 +80,10 @@ public class As2ConnectorConfigJsonUnmarshaller implements Unmarshaller<As2Conne
                     context.nextToken();
                     as2ConnectorConfig.setMdnResponse(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("BasicAuthSecretId", targetDepth)) {
+                    context.nextToken();
+                    as2ConnectorConfig.setBasicAuthSecretId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

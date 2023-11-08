@@ -27,7 +27,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -136,7 +136,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
      * <p>
-     * One or more network ACL IDs.
+     * The IDs of the network ACLs.
      * </p>
      * <p>
      * Default: Describes all your network ACLs.
@@ -161,7 +161,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -267,7 +267,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      * </li>
      * </ul>
      * 
-     * @return One or more filters.</p>
+     * @return The filters.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -382,7 +382,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -489,7 +489,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -606,7 +606,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -718,7 +718,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      * </p>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -837,7 +837,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -944,7 +944,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1058,13 +1058,13 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more network ACL IDs.
+     * The IDs of the network ACLs.
      * </p>
      * <p>
      * Default: Describes all your network ACLs.
      * </p>
      * 
-     * @return One or more network ACL IDs.</p>
+     * @return The IDs of the network ACLs.</p>
      *         <p>
      *         Default: Describes all your network ACLs.
      */
@@ -1078,14 +1078,14 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more network ACL IDs.
+     * The IDs of the network ACLs.
      * </p>
      * <p>
      * Default: Describes all your network ACLs.
      * </p>
      * 
      * @param networkAclIds
-     *        One or more network ACL IDs.</p>
+     *        The IDs of the network ACLs.</p>
      *        <p>
      *        Default: Describes all your network ACLs.
      */
@@ -1101,7 +1101,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more network ACL IDs.
+     * The IDs of the network ACLs.
      * </p>
      * <p>
      * Default: Describes all your network ACLs.
@@ -1113,7 +1113,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      * </p>
      * 
      * @param networkAclIds
-     *        One or more network ACL IDs.</p>
+     *        The IDs of the network ACLs.</p>
      *        <p>
      *        Default: Describes all your network ACLs.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1131,14 +1131,14 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more network ACL IDs.
+     * The IDs of the network ACLs.
      * </p>
      * <p>
      * Default: Describes all your network ACLs.
      * </p>
      * 
      * @param networkAclIds
-     *        One or more network ACL IDs.</p>
+     *        The IDs of the network ACLs.</p>
      *        <p>
      *        Default: Describes all your network ACLs.
      * @return Returns a reference to this object so that method calls can be chained together.

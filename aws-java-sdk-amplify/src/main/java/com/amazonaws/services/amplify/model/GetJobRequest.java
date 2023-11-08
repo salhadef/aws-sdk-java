@@ -36,7 +36,7 @@ public class GetJobRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     private String appId;
     /**
      * <p>
-     * The branch name for the job.
+     * The name of the branch to use for the job.
      * </p>
      */
     private String branchName;
@@ -89,11 +89,11 @@ public class GetJobRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The branch name for the job.
+     * The name of the branch to use for the job.
      * </p>
      * 
      * @param branchName
-     *        The branch name for the job.
+     *        The name of the branch to use for the job.
      */
 
     public void setBranchName(String branchName) {
@@ -102,10 +102,10 @@ public class GetJobRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The branch name for the job.
+     * The name of the branch to use for the job.
      * </p>
      * 
-     * @return The branch name for the job.
+     * @return The name of the branch to use for the job.
      */
 
     public String getBranchName() {
@@ -114,11 +114,11 @@ public class GetJobRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The branch name for the job.
+     * The name of the branch to use for the job.
      * </p>
      * 
      * @param branchName
-     *        The branch name for the job.
+     *        The name of the branch to use for the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

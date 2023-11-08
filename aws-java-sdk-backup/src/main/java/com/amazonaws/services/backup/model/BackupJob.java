@@ -86,7 +86,7 @@ public class BackupJob implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date completionDate;
     /**
      * <p>
-     * The current state of a resource recovery point.
+     * The current state of a backup job.
      * </p>
      */
     private String state;
@@ -565,11 +565,11 @@ public class BackupJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current state of a resource recovery point.
+     * The current state of a backup job.
      * </p>
      * 
      * @param state
-     *        The current state of a resource recovery point.
+     *        The current state of a backup job.
      * @see BackupJobState
      */
 
@@ -579,10 +579,10 @@ public class BackupJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current state of a resource recovery point.
+     * The current state of a backup job.
      * </p>
      * 
-     * @return The current state of a resource recovery point.
+     * @return The current state of a backup job.
      * @see BackupJobState
      */
 
@@ -592,11 +592,11 @@ public class BackupJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current state of a resource recovery point.
+     * The current state of a backup job.
      * </p>
      * 
      * @param state
-     *        The current state of a resource recovery point.
+     *        The current state of a backup job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BackupJobState
      */
@@ -608,11 +608,11 @@ public class BackupJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current state of a resource recovery point.
+     * The current state of a backup job.
      * </p>
      * 
      * @param state
-     *        The current state of a resource recovery point.
+     *        The current state of a backup job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BackupJobState
      */

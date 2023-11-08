@@ -33,6 +33,8 @@ public class ListControlDisplayOptionsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SelectAllOptions").build();
     private static final MarshallingInfo<StructuredPojo> TITLEOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TitleOptions").build();
+    private static final MarshallingInfo<StructuredPojo> INFOICONLABELOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InfoIconLabelOptions").build();
 
     private static final ListControlDisplayOptionsMarshaller instance = new ListControlDisplayOptionsMarshaller();
 
@@ -53,6 +55,7 @@ public class ListControlDisplayOptionsMarshaller {
             protocolMarshaller.marshall(listControlDisplayOptions.getSearchOptions(), SEARCHOPTIONS_BINDING);
             protocolMarshaller.marshall(listControlDisplayOptions.getSelectAllOptions(), SELECTALLOPTIONS_BINDING);
             protocolMarshaller.marshall(listControlDisplayOptions.getTitleOptions(), TITLEOPTIONS_BINDING);
+            protocolMarshaller.marshall(listControlDisplayOptions.getInfoIconLabelOptions(), INFOICONLABELOPTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

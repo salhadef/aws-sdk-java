@@ -33,7 +33,11 @@ public class UpdateFileSystemOntapConfiguration implements Serializable, Cloneab
     private String dailyAutomaticBackupStartTime;
     /**
      * <p>
-     * The ONTAP administrative password for the <code>fsxadmin</code> user.
+     * Update the password for the <code>fsxadmin</code> user by entering a new password. You use the
+     * <code>fsxadmin</code> user to access the NetApp ONTAP CLI and REST API to manage your file system resources. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-resources-ontap-apps.html">Managing resources
+     * using NetApp Applicaton</a>.
      * </p>
      */
     private String fsxAdminPassword;
@@ -41,17 +45,22 @@ public class UpdateFileSystemOntapConfiguration implements Serializable, Cloneab
     private String weeklyMaintenanceStartTime;
     /**
      * <p>
-     * The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP file system.
+     * The SSD IOPS (input output operations per second) configuration for an Amazon FSx for NetApp ONTAP file system.
      * The default is 3 IOPS per GB of storage capacity, but you can provision additional IOPS per GB of storage. The
      * configuration consists of an IOPS mode (<code>AUTOMATIC</code> or <code>USER_PROVISIONED</code>), and in the case
-     * of <code>USER_PROVISIONED</code> IOPS, the total number of SSD IOPS provisioned.
+     * of <code>USER_PROVISIONED</code> IOPS, the total number of SSD IOPS provisioned. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/increase-primary-storage.html">Updating SSD storage
+     * capacity and IOPS</a>.
      * </p>
      */
     private DiskIopsConfiguration diskIopsConfiguration;
     /**
      * <p>
-     * Specifies the throughput of an FSx for NetApp ONTAP file system, measured in megabytes per second (MBps). Valid
-     * values are 128, 256, 512, 1024, 2048, and 4096 MBps.
+     * Enter a new value to change the amount of throughput capacity for the file system. Throughput capacity is
+     * measured in megabytes per second (MBps). Valid values are 128, 256, 512, 1024, 2048, and 4096 MBps. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-throughput-capacity.html">Managing throughput
+     * capacity</a> in the FSx for ONTAP User Guide.
      * </p>
      */
     private Integer throughputCapacity;
@@ -125,11 +134,19 @@ public class UpdateFileSystemOntapConfiguration implements Serializable, Cloneab
 
     /**
      * <p>
-     * The ONTAP administrative password for the <code>fsxadmin</code> user.
+     * Update the password for the <code>fsxadmin</code> user by entering a new password. You use the
+     * <code>fsxadmin</code> user to access the NetApp ONTAP CLI and REST API to manage your file system resources. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-resources-ontap-apps.html">Managing resources
+     * using NetApp Applicaton</a>.
      * </p>
      * 
      * @param fsxAdminPassword
-     *        The ONTAP administrative password for the <code>fsxadmin</code> user.
+     *        Update the password for the <code>fsxadmin</code> user by entering a new password. You use the
+     *        <code>fsxadmin</code> user to access the NetApp ONTAP CLI and REST API to manage your file system
+     *        resources. For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-resources-ontap-apps.html">Managing
+     *        resources using NetApp Applicaton</a>.
      */
 
     public void setFsxAdminPassword(String fsxAdminPassword) {
@@ -138,10 +155,18 @@ public class UpdateFileSystemOntapConfiguration implements Serializable, Cloneab
 
     /**
      * <p>
-     * The ONTAP administrative password for the <code>fsxadmin</code> user.
+     * Update the password for the <code>fsxadmin</code> user by entering a new password. You use the
+     * <code>fsxadmin</code> user to access the NetApp ONTAP CLI and REST API to manage your file system resources. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-resources-ontap-apps.html">Managing resources
+     * using NetApp Applicaton</a>.
      * </p>
      * 
-     * @return The ONTAP administrative password for the <code>fsxadmin</code> user.
+     * @return Update the password for the <code>fsxadmin</code> user by entering a new password. You use the
+     *         <code>fsxadmin</code> user to access the NetApp ONTAP CLI and REST API to manage your file system
+     *         resources. For more information, see <a
+     *         href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-resources-ontap-apps.html">Managing
+     *         resources using NetApp Applicaton</a>.
      */
 
     public String getFsxAdminPassword() {
@@ -150,11 +175,19 @@ public class UpdateFileSystemOntapConfiguration implements Serializable, Cloneab
 
     /**
      * <p>
-     * The ONTAP administrative password for the <code>fsxadmin</code> user.
+     * Update the password for the <code>fsxadmin</code> user by entering a new password. You use the
+     * <code>fsxadmin</code> user to access the NetApp ONTAP CLI and REST API to manage your file system resources. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-resources-ontap-apps.html">Managing resources
+     * using NetApp Applicaton</a>.
      * </p>
      * 
      * @param fsxAdminPassword
-     *        The ONTAP administrative password for the <code>fsxadmin</code> user.
+     *        Update the password for the <code>fsxadmin</code> user by entering a new password. You use the
+     *        <code>fsxadmin</code> user to access the NetApp ONTAP CLI and REST API to manage your file system
+     *        resources. For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-resources-ontap-apps.html">Managing
+     *        resources using NetApp Applicaton</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -191,18 +224,22 @@ public class UpdateFileSystemOntapConfiguration implements Serializable, Cloneab
 
     /**
      * <p>
-     * The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP file system.
+     * The SSD IOPS (input output operations per second) configuration for an Amazon FSx for NetApp ONTAP file system.
      * The default is 3 IOPS per GB of storage capacity, but you can provision additional IOPS per GB of storage. The
      * configuration consists of an IOPS mode (<code>AUTOMATIC</code> or <code>USER_PROVISIONED</code>), and in the case
-     * of <code>USER_PROVISIONED</code> IOPS, the total number of SSD IOPS provisioned.
+     * of <code>USER_PROVISIONED</code> IOPS, the total number of SSD IOPS provisioned. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/increase-primary-storage.html">Updating SSD storage
+     * capacity and IOPS</a>.
      * </p>
      * 
      * @param diskIopsConfiguration
-     *        The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP file
+     *        The SSD IOPS (input output operations per second) configuration for an Amazon FSx for NetApp ONTAP file
      *        system. The default is 3 IOPS per GB of storage capacity, but you can provision additional IOPS per GB of
      *        storage. The configuration consists of an IOPS mode (<code>AUTOMATIC</code> or
      *        <code>USER_PROVISIONED</code>), and in the case of <code>USER_PROVISIONED</code> IOPS, the total number of
-     *        SSD IOPS provisioned.
+     *        SSD IOPS provisioned. For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/increase-primary-storage.html">Updating SSD
+     *        storage capacity and IOPS</a>.
      */
 
     public void setDiskIopsConfiguration(DiskIopsConfiguration diskIopsConfiguration) {
@@ -211,17 +248,21 @@ public class UpdateFileSystemOntapConfiguration implements Serializable, Cloneab
 
     /**
      * <p>
-     * The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP file system.
+     * The SSD IOPS (input output operations per second) configuration for an Amazon FSx for NetApp ONTAP file system.
      * The default is 3 IOPS per GB of storage capacity, but you can provision additional IOPS per GB of storage. The
      * configuration consists of an IOPS mode (<code>AUTOMATIC</code> or <code>USER_PROVISIONED</code>), and in the case
-     * of <code>USER_PROVISIONED</code> IOPS, the total number of SSD IOPS provisioned.
+     * of <code>USER_PROVISIONED</code> IOPS, the total number of SSD IOPS provisioned. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/increase-primary-storage.html">Updating SSD storage
+     * capacity and IOPS</a>.
      * </p>
      * 
-     * @return The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP file
+     * @return The SSD IOPS (input output operations per second) configuration for an Amazon FSx for NetApp ONTAP file
      *         system. The default is 3 IOPS per GB of storage capacity, but you can provision additional IOPS per GB of
      *         storage. The configuration consists of an IOPS mode (<code>AUTOMATIC</code> or
      *         <code>USER_PROVISIONED</code>), and in the case of <code>USER_PROVISIONED</code> IOPS, the total number
-     *         of SSD IOPS provisioned.
+     *         of SSD IOPS provisioned. For more information, see <a
+     *         href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/increase-primary-storage.html">Updating SSD
+     *         storage capacity and IOPS</a>.
      */
 
     public DiskIopsConfiguration getDiskIopsConfiguration() {
@@ -230,18 +271,22 @@ public class UpdateFileSystemOntapConfiguration implements Serializable, Cloneab
 
     /**
      * <p>
-     * The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP file system.
+     * The SSD IOPS (input output operations per second) configuration for an Amazon FSx for NetApp ONTAP file system.
      * The default is 3 IOPS per GB of storage capacity, but you can provision additional IOPS per GB of storage. The
      * configuration consists of an IOPS mode (<code>AUTOMATIC</code> or <code>USER_PROVISIONED</code>), and in the case
-     * of <code>USER_PROVISIONED</code> IOPS, the total number of SSD IOPS provisioned.
+     * of <code>USER_PROVISIONED</code> IOPS, the total number of SSD IOPS provisioned. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/increase-primary-storage.html">Updating SSD storage
+     * capacity and IOPS</a>.
      * </p>
      * 
      * @param diskIopsConfiguration
-     *        The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP file
+     *        The SSD IOPS (input output operations per second) configuration for an Amazon FSx for NetApp ONTAP file
      *        system. The default is 3 IOPS per GB of storage capacity, but you can provision additional IOPS per GB of
      *        storage. The configuration consists of an IOPS mode (<code>AUTOMATIC</code> or
      *        <code>USER_PROVISIONED</code>), and in the case of <code>USER_PROVISIONED</code> IOPS, the total number of
-     *        SSD IOPS provisioned.
+     *        SSD IOPS provisioned. For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/increase-primary-storage.html">Updating SSD
+     *        storage capacity and IOPS</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -252,13 +297,19 @@ public class UpdateFileSystemOntapConfiguration implements Serializable, Cloneab
 
     /**
      * <p>
-     * Specifies the throughput of an FSx for NetApp ONTAP file system, measured in megabytes per second (MBps). Valid
-     * values are 128, 256, 512, 1024, 2048, and 4096 MBps.
+     * Enter a new value to change the amount of throughput capacity for the file system. Throughput capacity is
+     * measured in megabytes per second (MBps). Valid values are 128, 256, 512, 1024, 2048, and 4096 MBps. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-throughput-capacity.html">Managing throughput
+     * capacity</a> in the FSx for ONTAP User Guide.
      * </p>
      * 
      * @param throughputCapacity
-     *        Specifies the throughput of an FSx for NetApp ONTAP file system, measured in megabytes per second (MBps).
-     *        Valid values are 128, 256, 512, 1024, 2048, and 4096 MBps.
+     *        Enter a new value to change the amount of throughput capacity for the file system. Throughput capacity is
+     *        measured in megabytes per second (MBps). Valid values are 128, 256, 512, 1024, 2048, and 4096 MBps. For
+     *        more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-throughput-capacity.html">Managing
+     *        throughput capacity</a> in the FSx for ONTAP User Guide.
      */
 
     public void setThroughputCapacity(Integer throughputCapacity) {
@@ -267,12 +318,18 @@ public class UpdateFileSystemOntapConfiguration implements Serializable, Cloneab
 
     /**
      * <p>
-     * Specifies the throughput of an FSx for NetApp ONTAP file system, measured in megabytes per second (MBps). Valid
-     * values are 128, 256, 512, 1024, 2048, and 4096 MBps.
+     * Enter a new value to change the amount of throughput capacity for the file system. Throughput capacity is
+     * measured in megabytes per second (MBps). Valid values are 128, 256, 512, 1024, 2048, and 4096 MBps. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-throughput-capacity.html">Managing throughput
+     * capacity</a> in the FSx for ONTAP User Guide.
      * </p>
      * 
-     * @return Specifies the throughput of an FSx for NetApp ONTAP file system, measured in megabytes per second (MBps).
-     *         Valid values are 128, 256, 512, 1024, 2048, and 4096 MBps.
+     * @return Enter a new value to change the amount of throughput capacity for the file system. Throughput capacity is
+     *         measured in megabytes per second (MBps). Valid values are 128, 256, 512, 1024, 2048, and 4096 MBps. For
+     *         more information, see <a
+     *         href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-throughput-capacity.html">Managing
+     *         throughput capacity</a> in the FSx for ONTAP User Guide.
      */
 
     public Integer getThroughputCapacity() {
@@ -281,13 +338,19 @@ public class UpdateFileSystemOntapConfiguration implements Serializable, Cloneab
 
     /**
      * <p>
-     * Specifies the throughput of an FSx for NetApp ONTAP file system, measured in megabytes per second (MBps). Valid
-     * values are 128, 256, 512, 1024, 2048, and 4096 MBps.
+     * Enter a new value to change the amount of throughput capacity for the file system. Throughput capacity is
+     * measured in megabytes per second (MBps). Valid values are 128, 256, 512, 1024, 2048, and 4096 MBps. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-throughput-capacity.html">Managing throughput
+     * capacity</a> in the FSx for ONTAP User Guide.
      * </p>
      * 
      * @param throughputCapacity
-     *        Specifies the throughput of an FSx for NetApp ONTAP file system, measured in megabytes per second (MBps).
-     *        Valid values are 128, 256, 512, 1024, 2048, and 4096 MBps.
+     *        Enter a new value to change the amount of throughput capacity for the file system. Throughput capacity is
+     *        measured in megabytes per second (MBps). Valid values are 128, 256, 512, 1024, 2048, and 4096 MBps. For
+     *        more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-throughput-capacity.html">Managing
+     *        throughput capacity</a> in the FSx for ONTAP User Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

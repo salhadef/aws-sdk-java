@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientMutationMethods", "ClientConstructors" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "EnumSetterOverload", "ClientConstructors" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -10218,7 +10218,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "EmailSettings",
-        "sensitive" : false,
+        "sensitive" : true,
         "setterDocumentation" : "/**<p><b>(DEPRECATED)</b> The configuration for the email sent when an app user forgets their password.</p>\n@param emailSettings (DEPRECATED)*/",
         "setterMethodName" : "setEmailSettings",
         "setterModel" : {
@@ -10287,7 +10287,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "SmsSettings",
-        "sensitive" : false,
+        "sensitive" : true,
         "setterDocumentation" : "/**<p><b>(DEPRECATED)</b> The configuration for the SMS message sent when an app user forgets their password.</p>\n@param smsSettings (DEPRECATED)*/",
         "setterMethodName" : "setSmsSettings",
         "setterModel" : {
@@ -10428,7 +10428,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "EmailSettings",
-          "sensitive" : false,
+          "sensitive" : true,
           "setterDocumentation" : "/**<p><b>(DEPRECATED)</b> The configuration for the email sent when an app user forgets their password.</p>\n@param emailSettings (DEPRECATED)*/",
           "setterMethodName" : "setEmailSettings",
           "setterModel" : {
@@ -10498,7 +10498,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "SmsSettings",
-          "sensitive" : false,
+          "sensitive" : true,
           "setterDocumentation" : "/**<p><b>(DEPRECATED)</b> The configuration for the SMS message sent when an app user forgets their password.</p>\n@param smsSettings (DEPRECATED)*/",
           "setterMethodName" : "setSmsSettings",
           "setterModel" : {
@@ -16610,7 +16610,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "EmailSettings",
-        "sensitive" : false,
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The settings for the email message.</p>\n@param emailSettings The settings for the email message.*/",
         "setterMethodName" : "setEmailSettings",
         "setterModel" : {
@@ -16679,7 +16679,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "SmsSettings",
-        "sensitive" : false,
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The settings for the SMS message.</p>\n@param smsSettings The settings for the SMS message.*/",
         "setterMethodName" : "setSmsSettings",
         "setterModel" : {
@@ -16820,7 +16820,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "EmailSettings",
-          "sensitive" : false,
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The settings for the email message.</p>\n@param emailSettings The settings for the email message.*/",
           "setterMethodName" : "setEmailSettings",
           "setterModel" : {
@@ -16890,7 +16890,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "SmsSettings",
-          "sensitive" : false,
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The settings for the SMS message.</p>\n@param smsSettings The settings for the SMS message.*/",
           "setterMethodName" : "setSmsSettings",
           "setterModel" : {
@@ -47725,7 +47725,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Facebook",
-        "sensitive" : false,
+        "sensitive" : true,
         "setterDocumentation" : "/**\n@param facebook */",
         "setterMethodName" : "setFacebook",
         "setterModel" : {
@@ -47794,7 +47794,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Google",
-        "sensitive" : false,
+        "sensitive" : true,
         "setterDocumentation" : "/**\n@param google */",
         "setterMethodName" : "setGoogle",
         "setterModel" : {
@@ -47863,7 +47863,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "LoginWithAmazon",
-        "sensitive" : false,
+        "sensitive" : true,
         "setterDocumentation" : "/**\n@param loginWithAmazon */",
         "setterMethodName" : "setLoginWithAmazon",
         "setterModel" : {
@@ -47932,7 +47932,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "SignInWithApple",
-        "sensitive" : false,
+        "sensitive" : true,
         "setterDocumentation" : "/**\n@param signInWithApple */",
         "setterMethodName" : "setSignInWithApple",
         "setterModel" : {
@@ -48003,7 +48003,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Facebook",
-          "sensitive" : false,
+          "sensitive" : true,
           "setterDocumentation" : "/**\n@param facebook */",
           "setterMethodName" : "setFacebook",
           "setterModel" : {
@@ -48073,7 +48073,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Google",
-          "sensitive" : false,
+          "sensitive" : true,
           "setterDocumentation" : "/**\n@param google */",
           "setterMethodName" : "setGoogle",
           "setterModel" : {
@@ -48143,7 +48143,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "LoginWithAmazon",
-          "sensitive" : false,
+          "sensitive" : true,
           "setterDocumentation" : "/**\n@param loginWithAmazon */",
           "setterMethodName" : "setLoginWithAmazon",
           "setterModel" : {
@@ -48213,7 +48213,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "SignInWithApple",
-          "sensitive" : false,
+          "sensitive" : true,
           "setterDocumentation" : "/**\n@param signInWithApple */",
           "setterMethodName" : "setSignInWithApple",
           "setterModel" : {
@@ -50163,7 +50163,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "EmailSettings",
-        "sensitive" : false,
+        "sensitive" : true,
         "setterDocumentation" : "/**<p><b>(DEPRECATED)</b> The configuration for the email sent when an app user forgets their password.</p>\n@param emailSettings (DEPRECATED)*/",
         "setterMethodName" : "setEmailSettings",
         "setterModel" : {
@@ -50232,7 +50232,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "SmsSettings",
-        "sensitive" : false,
+        "sensitive" : true,
         "setterDocumentation" : "/**<p><b>(DEPRECATED)</b> The configuration for the SMS message sent when an Amplify app user forgets their password.</p>\n@param smsSettings (DEPRECATED)*/",
         "setterMethodName" : "setSmsSettings",
         "setterModel" : {
@@ -50373,7 +50373,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "EmailSettings",
-          "sensitive" : false,
+          "sensitive" : true,
           "setterDocumentation" : "/**<p><b>(DEPRECATED)</b> The configuration for the email sent when an app user forgets their password.</p>\n@param emailSettings (DEPRECATED)*/",
           "setterMethodName" : "setEmailSettings",
           "setterModel" : {
@@ -50443,7 +50443,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "SmsSettings",
-          "sensitive" : false,
+          "sensitive" : true,
           "setterDocumentation" : "/**<p><b>(DEPRECATED)</b> The configuration for the SMS message sent when an Amplify app user forgets their password.</p>\n@param smsSettings (DEPRECATED)*/",
           "setterMethodName" : "setSmsSettings",
           "setterModel" : {
@@ -55831,7 +55831,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "EmailSettings",
-        "sensitive" : false,
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The settings for the email message.</p>\n@param emailSettings The settings for the email message.*/",
         "setterMethodName" : "setEmailSettings",
         "setterModel" : {
@@ -55900,7 +55900,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "SmsSettings",
-        "sensitive" : false,
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The settings for the SMS message.</p>\n@param smsSettings The settings for the SMS message.*/",
         "setterMethodName" : "setSmsSettings",
         "setterModel" : {
@@ -56041,7 +56041,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "EmailSettings",
-          "sensitive" : false,
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The settings for the email message.</p>\n@param emailSettings The settings for the email message.*/",
           "setterMethodName" : "setEmailSettings",
           "setterModel" : {
@@ -56111,7 +56111,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "SmsSettings",
-          "sensitive" : false,
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The settings for the SMS message.</p>\n@param smsSettings The settings for the SMS message.*/",
           "setterMethodName" : "setSmsSettings",
           "setterModel" : {
@@ -60528,6 +60528,7 @@
   },
   "exceptionUnmarshallerImpl" : null,
   "fileHeader" : "/*\n * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
+  "hasShapes" : true,
   "hasWaiters" : false,
   "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AWSAmplifyBackendException",

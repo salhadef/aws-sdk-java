@@ -43,9 +43,9 @@ public class Deinterlacer implements Serializable, Cloneable, StructuredPojo {
      */
     private String control;
     /**
-     * Use Deinterlacer (DeinterlaceMode) to choose how the service will do deinterlacing. Default is Deinterlace. -
-     * Deinterlace converts interlaced to progressive. - Inverse telecine converts Hard Telecine 29.97i to progressive
-     * 23.976p. - Adaptive auto-detects and converts to progressive.
+     * Use Deinterlacer to choose how the service will do deinterlacing. Default is Deinterlace. - Deinterlace converts
+     * interlaced to progressive. - Inverse telecine converts Hard Telecine 29.97i to progressive 23.976p. - Adaptive
+     * auto-detects and converts to progressive.
      */
     private String mode;
 
@@ -220,14 +220,14 @@ public class Deinterlacer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Deinterlacer (DeinterlaceMode) to choose how the service will do deinterlacing. Default is Deinterlace. -
-     * Deinterlace converts interlaced to progressive. - Inverse telecine converts Hard Telecine 29.97i to progressive
-     * 23.976p. - Adaptive auto-detects and converts to progressive.
+     * Use Deinterlacer to choose how the service will do deinterlacing. Default is Deinterlace. - Deinterlace converts
+     * interlaced to progressive. - Inverse telecine converts Hard Telecine 29.97i to progressive 23.976p. - Adaptive
+     * auto-detects and converts to progressive.
      * 
      * @param mode
-     *        Use Deinterlacer (DeinterlaceMode) to choose how the service will do deinterlacing. Default is
-     *        Deinterlace. - Deinterlace converts interlaced to progressive. - Inverse telecine converts Hard Telecine
-     *        29.97i to progressive 23.976p. - Adaptive auto-detects and converts to progressive.
+     *        Use Deinterlacer to choose how the service will do deinterlacing. Default is Deinterlace. - Deinterlace
+     *        converts interlaced to progressive. - Inverse telecine converts Hard Telecine 29.97i to progressive
+     *        23.976p. - Adaptive auto-detects and converts to progressive.
      * @see DeinterlacerMode
      */
 
@@ -236,13 +236,13 @@ public class Deinterlacer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Deinterlacer (DeinterlaceMode) to choose how the service will do deinterlacing. Default is Deinterlace. -
-     * Deinterlace converts interlaced to progressive. - Inverse telecine converts Hard Telecine 29.97i to progressive
-     * 23.976p. - Adaptive auto-detects and converts to progressive.
+     * Use Deinterlacer to choose how the service will do deinterlacing. Default is Deinterlace. - Deinterlace converts
+     * interlaced to progressive. - Inverse telecine converts Hard Telecine 29.97i to progressive 23.976p. - Adaptive
+     * auto-detects and converts to progressive.
      * 
-     * @return Use Deinterlacer (DeinterlaceMode) to choose how the service will do deinterlacing. Default is
-     *         Deinterlace. - Deinterlace converts interlaced to progressive. - Inverse telecine converts Hard Telecine
-     *         29.97i to progressive 23.976p. - Adaptive auto-detects and converts to progressive.
+     * @return Use Deinterlacer to choose how the service will do deinterlacing. Default is Deinterlace. - Deinterlace
+     *         converts interlaced to progressive. - Inverse telecine converts Hard Telecine 29.97i to progressive
+     *         23.976p. - Adaptive auto-detects and converts to progressive.
      * @see DeinterlacerMode
      */
 
@@ -251,14 +251,14 @@ public class Deinterlacer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Deinterlacer (DeinterlaceMode) to choose how the service will do deinterlacing. Default is Deinterlace. -
-     * Deinterlace converts interlaced to progressive. - Inverse telecine converts Hard Telecine 29.97i to progressive
-     * 23.976p. - Adaptive auto-detects and converts to progressive.
+     * Use Deinterlacer to choose how the service will do deinterlacing. Default is Deinterlace. - Deinterlace converts
+     * interlaced to progressive. - Inverse telecine converts Hard Telecine 29.97i to progressive 23.976p. - Adaptive
+     * auto-detects and converts to progressive.
      * 
      * @param mode
-     *        Use Deinterlacer (DeinterlaceMode) to choose how the service will do deinterlacing. Default is
-     *        Deinterlace. - Deinterlace converts interlaced to progressive. - Inverse telecine converts Hard Telecine
-     *        29.97i to progressive 23.976p. - Adaptive auto-detects and converts to progressive.
+     *        Use Deinterlacer to choose how the service will do deinterlacing. Default is Deinterlace. - Deinterlace
+     *        converts interlaced to progressive. - Inverse telecine converts Hard Telecine 29.97i to progressive
+     *        23.976p. - Adaptive auto-detects and converts to progressive.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeinterlacerMode
      */
@@ -269,14 +269,14 @@ public class Deinterlacer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Deinterlacer (DeinterlaceMode) to choose how the service will do deinterlacing. Default is Deinterlace. -
-     * Deinterlace converts interlaced to progressive. - Inverse telecine converts Hard Telecine 29.97i to progressive
-     * 23.976p. - Adaptive auto-detects and converts to progressive.
+     * Use Deinterlacer to choose how the service will do deinterlacing. Default is Deinterlace. - Deinterlace converts
+     * interlaced to progressive. - Inverse telecine converts Hard Telecine 29.97i to progressive 23.976p. - Adaptive
+     * auto-detects and converts to progressive.
      * 
      * @param mode
-     *        Use Deinterlacer (DeinterlaceMode) to choose how the service will do deinterlacing. Default is
-     *        Deinterlace. - Deinterlace converts interlaced to progressive. - Inverse telecine converts Hard Telecine
-     *        29.97i to progressive 23.976p. - Adaptive auto-detects and converts to progressive.
+     *        Use Deinterlacer to choose how the service will do deinterlacing. Default is Deinterlace. - Deinterlace
+     *        converts interlaced to progressive. - Inverse telecine converts Hard Telecine 29.97i to progressive
+     *        23.976p. - Adaptive auto-detects and converts to progressive.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeinterlacerMode
      */

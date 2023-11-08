@@ -141,6 +141,12 @@ public class FirewallPolicy implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String tLSInspectionConfigurationArn;
+    /**
+     * <p>
+     * Contains variables that you can use to override default Suricata settings in your firewall policy.
+     * </p>
+     */
+    private PolicyVariables policyVariables;
 
     /**
      * <p>
@@ -1113,6 +1119,46 @@ public class FirewallPolicy implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Contains variables that you can use to override default Suricata settings in your firewall policy.
+     * </p>
+     * 
+     * @param policyVariables
+     *        Contains variables that you can use to override default Suricata settings in your firewall policy.
+     */
+
+    public void setPolicyVariables(PolicyVariables policyVariables) {
+        this.policyVariables = policyVariables;
+    }
+
+    /**
+     * <p>
+     * Contains variables that you can use to override default Suricata settings in your firewall policy.
+     * </p>
+     * 
+     * @return Contains variables that you can use to override default Suricata settings in your firewall policy.
+     */
+
+    public PolicyVariables getPolicyVariables() {
+        return this.policyVariables;
+    }
+
+    /**
+     * <p>
+     * Contains variables that you can use to override default Suricata settings in your firewall policy.
+     * </p>
+     * 
+     * @param policyVariables
+     *        Contains variables that you can use to override default Suricata settings in your firewall policy.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FirewallPolicy withPolicyVariables(PolicyVariables policyVariables) {
+        setPolicyVariables(policyVariables);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1139,7 +1185,9 @@ public class FirewallPolicy implements Serializable, Cloneable, StructuredPojo {
         if (getStatefulEngineOptions() != null)
             sb.append("StatefulEngineOptions: ").append(getStatefulEngineOptions()).append(",");
         if (getTLSInspectionConfigurationArn() != null)
-            sb.append("TLSInspectionConfigurationArn: ").append(getTLSInspectionConfigurationArn());
+            sb.append("TLSInspectionConfigurationArn: ").append(getTLSInspectionConfigurationArn()).append(",");
+        if (getPolicyVariables() != null)
+            sb.append("PolicyVariables: ").append(getPolicyVariables());
         sb.append("}");
         return sb.toString();
     }
@@ -1188,6 +1236,10 @@ public class FirewallPolicy implements Serializable, Cloneable, StructuredPojo {
         if (other.getTLSInspectionConfigurationArn() != null
                 && other.getTLSInspectionConfigurationArn().equals(this.getTLSInspectionConfigurationArn()) == false)
             return false;
+        if (other.getPolicyVariables() == null ^ this.getPolicyVariables() == null)
+            return false;
+        if (other.getPolicyVariables() != null && other.getPolicyVariables().equals(this.getPolicyVariables()) == false)
+            return false;
         return true;
     }
 
@@ -1204,6 +1256,7 @@ public class FirewallPolicy implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getStatefulDefaultActions() == null) ? 0 : getStatefulDefaultActions().hashCode());
         hashCode = prime * hashCode + ((getStatefulEngineOptions() == null) ? 0 : getStatefulEngineOptions().hashCode());
         hashCode = prime * hashCode + ((getTLSInspectionConfigurationArn() == null) ? 0 : getTLSInspectionConfigurationArn().hashCode());
+        hashCode = prime * hashCode + ((getPolicyVariables() == null) ? 0 : getPolicyVariables().hashCode());
         return hashCode;
     }
 

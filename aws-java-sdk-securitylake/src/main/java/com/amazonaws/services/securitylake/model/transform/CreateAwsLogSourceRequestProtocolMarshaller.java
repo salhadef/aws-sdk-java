@@ -32,7 +32,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CreateAwsLogSourceRequestProtocolMarshaller implements Marshaller<Request<CreateAwsLogSourceRequest>, CreateAwsLogSourceRequest> {
 
-    private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/v1/logsources/aws")
+    private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/v1/datalake/logsources/aws")
             .httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(false).hasPayloadMembers(true).serviceName("AmazonSecurityLake").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;

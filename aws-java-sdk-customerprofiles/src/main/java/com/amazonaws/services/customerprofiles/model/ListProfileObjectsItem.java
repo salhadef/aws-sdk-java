@@ -184,7 +184,7 @@ public class ListProfileObjectsItem implements Serializable, Cloneable, Structur
         if (getProfileObjectUniqueKey() != null)
             sb.append("ProfileObjectUniqueKey: ").append(getProfileObjectUniqueKey()).append(",");
         if (getObject() != null)
-            sb.append("Object: ").append(getObject());
+            sb.append("Object: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

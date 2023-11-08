@@ -27,6 +27,12 @@ public class PutSourceServerActionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
+     * Source server post migration custom account ID.
+     * </p>
+     */
+    private String accountID;
+    /**
+     * <p>
      * Source server post migration custom action ID.
      * </p>
      */
@@ -103,6 +109,46 @@ public class PutSourceServerActionRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private Integer timeoutSeconds;
+
+    /**
+     * <p>
+     * Source server post migration custom account ID.
+     * </p>
+     * 
+     * @param accountID
+     *        Source server post migration custom account ID.
+     */
+
+    public void setAccountID(String accountID) {
+        this.accountID = accountID;
+    }
+
+    /**
+     * <p>
+     * Source server post migration custom account ID.
+     * </p>
+     * 
+     * @return Source server post migration custom account ID.
+     */
+
+    public String getAccountID() {
+        return this.accountID;
+    }
+
+    /**
+     * <p>
+     * Source server post migration custom account ID.
+     * </p>
+     * 
+     * @param accountID
+     *        Source server post migration custom account ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutSourceServerActionRequest withAccountID(String accountID) {
+        setAccountID(accountID);
+        return this;
+    }
 
     /**
      * <p>
@@ -735,6 +781,8 @@ public class PutSourceServerActionRequest extends com.amazonaws.AmazonWebService
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAccountID() != null)
+            sb.append("AccountID: ").append(getAccountID()).append(",");
         if (getActionID() != null)
             sb.append("ActionID: ").append(getActionID()).append(",");
         if (getActionName() != null)
@@ -775,6 +823,10 @@ public class PutSourceServerActionRequest extends com.amazonaws.AmazonWebService
         if (obj instanceof PutSourceServerActionRequest == false)
             return false;
         PutSourceServerActionRequest other = (PutSourceServerActionRequest) obj;
+        if (other.getAccountID() == null ^ this.getAccountID() == null)
+            return false;
+        if (other.getAccountID() != null && other.getAccountID().equals(this.getAccountID()) == false)
+            return false;
         if (other.getActionID() == null ^ this.getActionID() == null)
             return false;
         if (other.getActionID() != null && other.getActionID().equals(this.getActionID()) == false)
@@ -835,6 +887,7 @@ public class PutSourceServerActionRequest extends com.amazonaws.AmazonWebService
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAccountID() == null) ? 0 : getAccountID().hashCode());
         hashCode = prime * hashCode + ((getActionID() == null) ? 0 : getActionID().hashCode());
         hashCode = prime * hashCode + ((getActionName() == null) ? 0 : getActionName().hashCode());
         hashCode = prime * hashCode + ((getActive() == null) ? 0 : getActive().hashCode());

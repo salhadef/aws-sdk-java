@@ -29,6 +29,8 @@ public class ListComponentOutputsRequestMarshaller {
 
     private static final MarshallingInfo<String> COMPONENTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("componentName").build();
+    private static final MarshallingInfo<String> DEPLOYMENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deploymentId").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("nextToken").build();
 
@@ -49,6 +51,7 @@ public class ListComponentOutputsRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(listComponentOutputsRequest.getComponentName(), COMPONENTNAME_BINDING);
+            protocolMarshaller.marshall(listComponentOutputsRequest.getDeploymentId(), DEPLOYMENTID_BINDING);
             protocolMarshaller.marshall(listComponentOutputsRequest.getNextToken(), NEXTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

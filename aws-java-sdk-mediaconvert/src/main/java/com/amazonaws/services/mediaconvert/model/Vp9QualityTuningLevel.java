@@ -15,8 +15,8 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output
- * video quality. The default behavior is faster, lower quality, multi-pass encoding.
+ * Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video quality. The
+ * default behavior is faster, lower quality, multi-pass encoding.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Vp9QualityTuningLevel {

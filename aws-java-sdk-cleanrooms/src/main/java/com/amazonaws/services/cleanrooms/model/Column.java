@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A column within a schema relation, derived from the underlying AWS Glue table.
+ * A column within a schema relation, derived from the underlying Glue table.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/Column" target="_top">AWS API

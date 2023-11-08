@@ -63,7 +63,8 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * <code>/aws/ssm/MyGroup/appmanager</code>.
      * </p>
      * <p>
-     * For the <code>Document</code> and <code>Parameter</code> values, use the name of the resource.
+     * For the <code>Document</code> and <code>Parameter</code> values, use the name of the resource. If you're tagging
+     * a shared document, you must use the full ARN of the document.
      * </p>
      * <p>
      * <code>ManagedInstance</code>: <code>mi-012345abcde</code>
@@ -247,7 +248,8 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * <code>/aws/ssm/MyGroup/appmanager</code>.
      * </p>
      * <p>
-     * For the <code>Document</code> and <code>Parameter</code> values, use the name of the resource.
+     * For the <code>Document</code> and <code>Parameter</code> values, use the name of the resource. If you're tagging
+     * a shared document, you must use the full ARN of the document.
      * </p>
      * <p>
      * <code>ManagedInstance</code>: <code>mi-012345abcde</code>
@@ -283,7 +285,8 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <code>/aws/ssm/MyGroup/appmanager</code>.
      *        </p>
      *        <p>
-     *        For the <code>Document</code> and <code>Parameter</code> values, use the name of the resource.
+     *        For the <code>Document</code> and <code>Parameter</code> values, use the name of the resource. If you're
+     *        tagging a shared document, you must use the full ARN of the document.
      *        </p>
      *        <p>
      *        <code>ManagedInstance</code>: <code>mi-012345abcde</code>
@@ -325,7 +328,8 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * <code>/aws/ssm/MyGroup/appmanager</code>.
      * </p>
      * <p>
-     * For the <code>Document</code> and <code>Parameter</code> values, use the name of the resource.
+     * For the <code>Document</code> and <code>Parameter</code> values, use the name of the resource. If you're tagging
+     * a shared document, you must use the full ARN of the document.
      * </p>
      * <p>
      * <code>ManagedInstance</code>: <code>mi-012345abcde</code>
@@ -360,7 +364,8 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      *         <code>/aws/ssm/MyGroup/appmanager</code>.
      *         </p>
      *         <p>
-     *         For the <code>Document</code> and <code>Parameter</code> values, use the name of the resource.
+     *         For the <code>Document</code> and <code>Parameter</code> values, use the name of the resource. If you're
+     *         tagging a shared document, you must use the full ARN of the document.
      *         </p>
      *         <p>
      *         <code>ManagedInstance</code>: <code>mi-012345abcde</code>
@@ -402,7 +407,8 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * <code>/aws/ssm/MyGroup/appmanager</code>.
      * </p>
      * <p>
-     * For the <code>Document</code> and <code>Parameter</code> values, use the name of the resource.
+     * For the <code>Document</code> and <code>Parameter</code> values, use the name of the resource. If you're tagging
+     * a shared document, you must use the full ARN of the document.
      * </p>
      * <p>
      * <code>ManagedInstance</code>: <code>mi-012345abcde</code>
@@ -438,7 +444,8 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <code>/aws/ssm/MyGroup/appmanager</code>.
      *        </p>
      *        <p>
-     *        For the <code>Document</code> and <code>Parameter</code> values, use the name of the resource.
+     *        For the <code>Document</code> and <code>Parameter</code> values, use the name of the resource. If you're
+     *        tagging a shared document, you must use the full ARN of the document.
      *        </p>
      *        <p>
      *        <code>ManagedInstance</code>: <code>mi-012345abcde</code>

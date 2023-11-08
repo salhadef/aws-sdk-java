@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The comment is too large. Comments are limited to 1,000 characters.
+ * The comment is too large. Comments are limited to 10,240 characters.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

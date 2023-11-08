@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class MapConfigurationMarshaller {
 
+    private static final MarshallingInfo<String> POLITICALVIEW_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PoliticalView").build();
     private static final MarshallingInfo<String> STYLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Style").build();
 
@@ -46,6 +48,7 @@ public class MapConfigurationMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(mapConfiguration.getPoliticalView(), POLITICALVIEW_BINDING);
             protocolMarshaller.marshall(mapConfiguration.getStyle(), STYLE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

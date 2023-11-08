@@ -27,16 +27,10 @@ public class CreateWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The URI of a definition for the workflow.
+     * A name for the workflow.
      * </p>
      */
-    private String definitionUri;
-    /**
-     * <p>
-     * A ZIP archive for the workflow.
-     * </p>
-     */
-    private java.nio.ByteBuffer definitionZip;
+    private String name;
     /**
      * <p>
      * A description for the workflow.
@@ -51,28 +45,28 @@ public class CreateWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest
     private String engine;
     /**
      * <p>
+     * A ZIP archive for the workflow.
+     * </p>
+     */
+    private java.nio.ByteBuffer definitionZip;
+    /**
+     * <p>
+     * The URI of a definition for the workflow.
+     * </p>
+     */
+    private String definitionUri;
+    /**
+     * <p>
      * The path of the main definition file for the workflow.
      * </p>
      */
     private String main;
     /**
      * <p>
-     * A name for the workflow.
-     * </p>
-     */
-    private String name;
-    /**
-     * <p>
      * A parameter template for the workflow.
      * </p>
      */
     private java.util.Map<String, WorkflowParameter> parameterTemplate;
-    /**
-     * <p>
-     * To ensure that requests don't run multiple times, specify a unique ID for each request.
-     * </p>
-     */
-    private String requestId;
     /**
      * <p>
      * A storage capacity for the workflow in gigabytes.
@@ -85,111 +79,56 @@ public class CreateWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * To ensure that requests don't run multiple times, specify a unique ID for each request.
+     * </p>
+     */
+    private String requestId;
+    /**
+     * <p>
+     * The computational accelerator specified to run the workflow.
+     * </p>
+     */
+    private String accelerators;
 
     /**
      * <p>
-     * The URI of a definition for the workflow.
+     * A name for the workflow.
      * </p>
      * 
-     * @param definitionUri
-     *        The URI of a definition for the workflow.
+     * @param name
+     *        A name for the workflow.
      */
 
-    public void setDefinitionUri(String definitionUri) {
-        this.definitionUri = definitionUri;
+    public void setName(String name) {
+        this.name = name;
     }
 
     /**
      * <p>
-     * The URI of a definition for the workflow.
+     * A name for the workflow.
      * </p>
      * 
-     * @return The URI of a definition for the workflow.
+     * @return A name for the workflow.
      */
 
-    public String getDefinitionUri() {
-        return this.definitionUri;
+    public String getName() {
+        return this.name;
     }
 
     /**
      * <p>
-     * The URI of a definition for the workflow.
+     * A name for the workflow.
      * </p>
      * 
-     * @param definitionUri
-     *        The URI of a definition for the workflow.
+     * @param name
+     *        A name for the workflow.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateWorkflowRequest withDefinitionUri(String definitionUri) {
-        setDefinitionUri(definitionUri);
-        return this;
-    }
-
-    /**
-     * <p>
-     * A ZIP archive for the workflow.
-     * </p>
-     * <p>
-     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
-     * Users of the SDK should not perform Base64 encoding on this field.
-     * </p>
-     * <p>
-     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
-     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
-     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
-     * major version of the SDK.
-     * </p>
-     * 
-     * @param definitionZip
-     *        A ZIP archive for the workflow.
-     */
-
-    public void setDefinitionZip(java.nio.ByteBuffer definitionZip) {
-        this.definitionZip = definitionZip;
-    }
-
-    /**
-     * <p>
-     * A ZIP archive for the workflow.
-     * </p>
-     * <p>
-     * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
-     * using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent
-     * {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}.
-     * Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the
-     * {@code position}.
-     * </p>
-     * 
-     * @return A ZIP archive for the workflow.
-     */
-
-    public java.nio.ByteBuffer getDefinitionZip() {
-        return this.definitionZip;
-    }
-
-    /**
-     * <p>
-     * A ZIP archive for the workflow.
-     * </p>
-     * <p>
-     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
-     * Users of the SDK should not perform Base64 encoding on this field.
-     * </p>
-     * <p>
-     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
-     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
-     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
-     * major version of the SDK.
-     * </p>
-     * 
-     * @param definitionZip
-     *        A ZIP archive for the workflow.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateWorkflowRequest withDefinitionZip(java.nio.ByteBuffer definitionZip) {
-        setDefinitionZip(definitionZip);
+    public CreateWorkflowRequest withName(String name) {
+        setName(name);
         return this;
     }
 
@@ -294,6 +233,113 @@ public class CreateWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
+     * A ZIP archive for the workflow.
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
+     * </p>
+     * 
+     * @param definitionZip
+     *        A ZIP archive for the workflow.
+     */
+
+    public void setDefinitionZip(java.nio.ByteBuffer definitionZip) {
+        this.definitionZip = definitionZip;
+    }
+
+    /**
+     * <p>
+     * A ZIP archive for the workflow.
+     * </p>
+     * <p>
+     * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
+     * using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent
+     * {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}.
+     * Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the
+     * {@code position}.
+     * </p>
+     * 
+     * @return A ZIP archive for the workflow.
+     */
+
+    public java.nio.ByteBuffer getDefinitionZip() {
+        return this.definitionZip;
+    }
+
+    /**
+     * <p>
+     * A ZIP archive for the workflow.
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
+     * </p>
+     * 
+     * @param definitionZip
+     *        A ZIP archive for the workflow.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWorkflowRequest withDefinitionZip(java.nio.ByteBuffer definitionZip) {
+        setDefinitionZip(definitionZip);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The URI of a definition for the workflow.
+     * </p>
+     * 
+     * @param definitionUri
+     *        The URI of a definition for the workflow.
+     */
+
+    public void setDefinitionUri(String definitionUri) {
+        this.definitionUri = definitionUri;
+    }
+
+    /**
+     * <p>
+     * The URI of a definition for the workflow.
+     * </p>
+     * 
+     * @return The URI of a definition for the workflow.
+     */
+
+    public String getDefinitionUri() {
+        return this.definitionUri;
+    }
+
+    /**
+     * <p>
+     * The URI of a definition for the workflow.
+     * </p>
+     * 
+     * @param definitionUri
+     *        The URI of a definition for the workflow.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWorkflowRequest withDefinitionUri(String definitionUri) {
+        setDefinitionUri(definitionUri);
+        return this;
+    }
+
+    /**
+     * <p>
      * The path of the main definition file for the workflow.
      * </p>
      * 
@@ -329,46 +375,6 @@ public class CreateWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest
 
     public CreateWorkflowRequest withMain(String main) {
         setMain(main);
-        return this;
-    }
-
-    /**
-     * <p>
-     * A name for the workflow.
-     * </p>
-     * 
-     * @param name
-     *        A name for the workflow.
-     */
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     * <p>
-     * A name for the workflow.
-     * </p>
-     * 
-     * @return A name for the workflow.
-     */
-
-    public String getName() {
-        return this.name;
-    }
-
-    /**
-     * <p>
-     * A name for the workflow.
-     * </p>
-     * 
-     * @param name
-     *        A name for the workflow.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateWorkflowRequest withName(String name) {
-        setName(name);
         return this;
     }
 
@@ -437,46 +443,6 @@ public class CreateWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest
 
     public CreateWorkflowRequest clearParameterTemplateEntries() {
         this.parameterTemplate = null;
-        return this;
-    }
-
-    /**
-     * <p>
-     * To ensure that requests don't run multiple times, specify a unique ID for each request.
-     * </p>
-     * 
-     * @param requestId
-     *        To ensure that requests don't run multiple times, specify a unique ID for each request.
-     */
-
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
-
-    /**
-     * <p>
-     * To ensure that requests don't run multiple times, specify a unique ID for each request.
-     * </p>
-     * 
-     * @return To ensure that requests don't run multiple times, specify a unique ID for each request.
-     */
-
-    public String getRequestId() {
-        return this.requestId;
-    }
-
-    /**
-     * <p>
-     * To ensure that requests don't run multiple times, specify a unique ID for each request.
-     * </p>
-     * 
-     * @param requestId
-     *        To ensure that requests don't run multiple times, specify a unique ID for each request.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateWorkflowRequest withRequestId(String requestId) {
-        setRequestId(requestId);
         return this;
     }
 
@@ -589,6 +555,105 @@ public class CreateWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * To ensure that requests don't run multiple times, specify a unique ID for each request.
+     * </p>
+     * 
+     * @param requestId
+     *        To ensure that requests don't run multiple times, specify a unique ID for each request.
+     */
+
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
+
+    /**
+     * <p>
+     * To ensure that requests don't run multiple times, specify a unique ID for each request.
+     * </p>
+     * 
+     * @return To ensure that requests don't run multiple times, specify a unique ID for each request.
+     */
+
+    public String getRequestId() {
+        return this.requestId;
+    }
+
+    /**
+     * <p>
+     * To ensure that requests don't run multiple times, specify a unique ID for each request.
+     * </p>
+     * 
+     * @param requestId
+     *        To ensure that requests don't run multiple times, specify a unique ID for each request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWorkflowRequest withRequestId(String requestId) {
+        setRequestId(requestId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The computational accelerator specified to run the workflow.
+     * </p>
+     * 
+     * @param accelerators
+     *        The computational accelerator specified to run the workflow.
+     * @see Accelerators
+     */
+
+    public void setAccelerators(String accelerators) {
+        this.accelerators = accelerators;
+    }
+
+    /**
+     * <p>
+     * The computational accelerator specified to run the workflow.
+     * </p>
+     * 
+     * @return The computational accelerator specified to run the workflow.
+     * @see Accelerators
+     */
+
+    public String getAccelerators() {
+        return this.accelerators;
+    }
+
+    /**
+     * <p>
+     * The computational accelerator specified to run the workflow.
+     * </p>
+     * 
+     * @param accelerators
+     *        The computational accelerator specified to run the workflow.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Accelerators
+     */
+
+    public CreateWorkflowRequest withAccelerators(String accelerators) {
+        setAccelerators(accelerators);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The computational accelerator specified to run the workflow.
+     * </p>
+     * 
+     * @param accelerators
+     *        The computational accelerator specified to run the workflow.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Accelerators
+     */
+
+    public CreateWorkflowRequest withAccelerators(Accelerators accelerators) {
+        this.accelerators = accelerators.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -600,26 +665,28 @@ public class CreateWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDefinitionUri() != null)
-            sb.append("DefinitionUri: ").append(getDefinitionUri()).append(",");
-        if (getDefinitionZip() != null)
-            sb.append("DefinitionZip: ").append(getDefinitionZip()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getEngine() != null)
             sb.append("Engine: ").append(getEngine()).append(",");
+        if (getDefinitionZip() != null)
+            sb.append("DefinitionZip: ").append(getDefinitionZip()).append(",");
+        if (getDefinitionUri() != null)
+            sb.append("DefinitionUri: ").append(getDefinitionUri()).append(",");
         if (getMain() != null)
             sb.append("Main: ").append(getMain()).append(",");
-        if (getName() != null)
-            sb.append("Name: ").append(getName()).append(",");
         if (getParameterTemplate() != null)
             sb.append("ParameterTemplate: ").append(getParameterTemplate()).append(",");
-        if (getRequestId() != null)
-            sb.append("RequestId: ").append(getRequestId()).append(",");
         if (getStorageCapacity() != null)
             sb.append("StorageCapacity: ").append(getStorageCapacity()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getRequestId() != null)
+            sb.append("RequestId: ").append(getRequestId()).append(",");
+        if (getAccelerators() != null)
+            sb.append("Accelerators: ").append(getAccelerators());
         sb.append("}");
         return sb.toString();
     }
@@ -634,13 +701,9 @@ public class CreateWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest
         if (obj instanceof CreateWorkflowRequest == false)
             return false;
         CreateWorkflowRequest other = (CreateWorkflowRequest) obj;
-        if (other.getDefinitionUri() == null ^ this.getDefinitionUri() == null)
+        if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getDefinitionUri() != null && other.getDefinitionUri().equals(this.getDefinitionUri()) == false)
-            return false;
-        if (other.getDefinitionZip() == null ^ this.getDefinitionZip() == null)
-            return false;
-        if (other.getDefinitionZip() != null && other.getDefinitionZip().equals(this.getDefinitionZip()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
@@ -650,21 +713,21 @@ public class CreateWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getEngine() != null && other.getEngine().equals(this.getEngine()) == false)
             return false;
+        if (other.getDefinitionZip() == null ^ this.getDefinitionZip() == null)
+            return false;
+        if (other.getDefinitionZip() != null && other.getDefinitionZip().equals(this.getDefinitionZip()) == false)
+            return false;
+        if (other.getDefinitionUri() == null ^ this.getDefinitionUri() == null)
+            return false;
+        if (other.getDefinitionUri() != null && other.getDefinitionUri().equals(this.getDefinitionUri()) == false)
+            return false;
         if (other.getMain() == null ^ this.getMain() == null)
             return false;
         if (other.getMain() != null && other.getMain().equals(this.getMain()) == false)
             return false;
-        if (other.getName() == null ^ this.getName() == null)
-            return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false)
-            return false;
         if (other.getParameterTemplate() == null ^ this.getParameterTemplate() == null)
             return false;
         if (other.getParameterTemplate() != null && other.getParameterTemplate().equals(this.getParameterTemplate()) == false)
-            return false;
-        if (other.getRequestId() == null ^ this.getRequestId() == null)
-            return false;
-        if (other.getRequestId() != null && other.getRequestId().equals(this.getRequestId()) == false)
             return false;
         if (other.getStorageCapacity() == null ^ this.getStorageCapacity() == null)
             return false;
@@ -674,6 +737,14 @@ public class CreateWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getRequestId() == null ^ this.getRequestId() == null)
+            return false;
+        if (other.getRequestId() != null && other.getRequestId().equals(this.getRequestId()) == false)
+            return false;
+        if (other.getAccelerators() == null ^ this.getAccelerators() == null)
+            return false;
+        if (other.getAccelerators() != null && other.getAccelerators().equals(this.getAccelerators()) == false)
+            return false;
         return true;
     }
 
@@ -682,16 +753,17 @@ public class CreateWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getDefinitionUri() == null) ? 0 : getDefinitionUri().hashCode());
-        hashCode = prime * hashCode + ((getDefinitionZip() == null) ? 0 : getDefinitionZip().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getEngine() == null) ? 0 : getEngine().hashCode());
+        hashCode = prime * hashCode + ((getDefinitionZip() == null) ? 0 : getDefinitionZip().hashCode());
+        hashCode = prime * hashCode + ((getDefinitionUri() == null) ? 0 : getDefinitionUri().hashCode());
         hashCode = prime * hashCode + ((getMain() == null) ? 0 : getMain().hashCode());
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getParameterTemplate() == null) ? 0 : getParameterTemplate().hashCode());
-        hashCode = prime * hashCode + ((getRequestId() == null) ? 0 : getRequestId().hashCode());
         hashCode = prime * hashCode + ((getStorageCapacity() == null) ? 0 : getStorageCapacity().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getRequestId() == null) ? 0 : getRequestId().hashCode());
+        hashCode = prime * hashCode + ((getAccelerators() == null) ? 0 : getAccelerators().hashCode());
         return hashCode;
     }
 

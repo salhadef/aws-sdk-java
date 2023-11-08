@@ -155,6 +155,31 @@ public class ModifyVpcEndpointRequestMarshaller implements Marshaller<Request<Mo
             request.addParameter("PrivateDnsEnabled", StringUtils.fromBoolean(modifyVpcEndpointRequest.getPrivateDnsEnabled()));
         }
 
+        com.amazonaws.internal.SdkInternalList<SubnetConfiguration> modifyVpcEndpointRequestSubnetConfigurationsList = (com.amazonaws.internal.SdkInternalList<SubnetConfiguration>) modifyVpcEndpointRequest
+                .getSubnetConfigurations();
+        if (!modifyVpcEndpointRequestSubnetConfigurationsList.isEmpty() || !modifyVpcEndpointRequestSubnetConfigurationsList.isAutoConstruct()) {
+            int subnetConfigurationsListIndex = 1;
+
+            for (SubnetConfiguration modifyVpcEndpointRequestSubnetConfigurationsListValue : modifyVpcEndpointRequestSubnetConfigurationsList) {
+
+                if (modifyVpcEndpointRequestSubnetConfigurationsListValue.getSubnetId() != null) {
+                    request.addParameter("SubnetConfiguration." + subnetConfigurationsListIndex + ".SubnetId",
+                            StringUtils.fromString(modifyVpcEndpointRequestSubnetConfigurationsListValue.getSubnetId()));
+                }
+
+                if (modifyVpcEndpointRequestSubnetConfigurationsListValue.getIpv4() != null) {
+                    request.addParameter("SubnetConfiguration." + subnetConfigurationsListIndex + ".Ipv4",
+                            StringUtils.fromString(modifyVpcEndpointRequestSubnetConfigurationsListValue.getIpv4()));
+                }
+
+                if (modifyVpcEndpointRequestSubnetConfigurationsListValue.getIpv6() != null) {
+                    request.addParameter("SubnetConfiguration." + subnetConfigurationsListIndex + ".Ipv6",
+                            StringUtils.fromString(modifyVpcEndpointRequestSubnetConfigurationsListValue.getIpv6()));
+                }
+                subnetConfigurationsListIndex++;
+            }
+        }
+
         return request;
     }
 

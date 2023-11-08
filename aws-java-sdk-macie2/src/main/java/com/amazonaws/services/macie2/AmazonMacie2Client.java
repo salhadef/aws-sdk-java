@@ -45,6 +45,7 @@ import com.amazonaws.services.macie2.waiters.AmazonMacie2Waiters;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.macie2.model.*;
+
 import com.amazonaws.services.macie2.model.transform.*;
 
 /**

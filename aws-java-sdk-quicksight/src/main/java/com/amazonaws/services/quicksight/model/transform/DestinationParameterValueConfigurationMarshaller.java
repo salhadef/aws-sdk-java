@@ -35,6 +35,8 @@ public class DestinationParameterValueConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceParameterName").build();
     private static final MarshallingInfo<String> SOURCEFIELD_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceField").build();
+    private static final MarshallingInfo<StructuredPojo> SOURCECOLUMN_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceColumn").build();
 
     private static final DestinationParameterValueConfigurationMarshaller instance = new DestinationParameterValueConfigurationMarshaller();
 
@@ -56,6 +58,7 @@ public class DestinationParameterValueConfigurationMarshaller {
             protocolMarshaller.marshall(destinationParameterValueConfiguration.getSelectAllValueOptions(), SELECTALLVALUEOPTIONS_BINDING);
             protocolMarshaller.marshall(destinationParameterValueConfiguration.getSourceParameterName(), SOURCEPARAMETERNAME_BINDING);
             protocolMarshaller.marshall(destinationParameterValueConfiguration.getSourceField(), SOURCEFIELD_BINDING);
+            protocolMarshaller.marshall(destinationParameterValueConfiguration.getSourceColumn(), SOURCECOLUMN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

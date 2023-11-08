@@ -104,6 +104,14 @@ public class DescribeExecutionResultJsonUnmarshaller implements Unmarshaller<Des
                     context.nextToken();
                     describeExecutionResult.setCause(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("stateMachineVersionArn", targetDepth)) {
+                    context.nextToken();
+                    describeExecutionResult.setStateMachineVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("stateMachineAliasArn", targetDepth)) {
+                    context.nextToken();
+                    describeExecutionResult.setStateMachineAliasArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

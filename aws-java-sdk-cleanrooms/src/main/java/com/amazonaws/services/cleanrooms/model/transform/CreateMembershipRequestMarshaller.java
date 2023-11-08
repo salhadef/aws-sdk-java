@@ -35,6 +35,8 @@ public class CreateMembershipRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("queryLogStatus").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<StructuredPojo> DEFAULTRESULTCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("defaultResultConfiguration").build();
 
     private static final CreateMembershipRequestMarshaller instance = new CreateMembershipRequestMarshaller();
 
@@ -55,6 +57,7 @@ public class CreateMembershipRequestMarshaller {
             protocolMarshaller.marshall(createMembershipRequest.getCollaborationIdentifier(), COLLABORATIONIDENTIFIER_BINDING);
             protocolMarshaller.marshall(createMembershipRequest.getQueryLogStatus(), QUERYLOGSTATUS_BINDING);
             protocolMarshaller.marshall(createMembershipRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createMembershipRequest.getDefaultResultConfiguration(), DEFAULTRESULTCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

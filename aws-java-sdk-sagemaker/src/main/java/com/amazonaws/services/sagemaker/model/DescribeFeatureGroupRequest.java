@@ -27,7 +27,7 @@ public class DescribeFeatureGroupRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the <code>FeatureGroup</code> you want described.
+     * The name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code> you want described.
      * </p>
      */
     private String featureGroupName;
@@ -41,11 +41,11 @@ public class DescribeFeatureGroupRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the <code>FeatureGroup</code> you want described.
+     * The name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code> you want described.
      * </p>
      * 
      * @param featureGroupName
-     *        The name of the <code>FeatureGroup</code> you want described.
+     *        The name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code> you want described.
      */
 
     public void setFeatureGroupName(String featureGroupName) {
@@ -54,10 +54,10 @@ public class DescribeFeatureGroupRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the <code>FeatureGroup</code> you want described.
+     * The name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code> you want described.
      * </p>
      * 
-     * @return The name of the <code>FeatureGroup</code> you want described.
+     * @return The name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code> you want described.
      */
 
     public String getFeatureGroupName() {
@@ -66,11 +66,11 @@ public class DescribeFeatureGroupRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the <code>FeatureGroup</code> you want described.
+     * The name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code> you want described.
      * </p>
      * 
      * @param featureGroupName
-     *        The name of the <code>FeatureGroup</code> you want described.
+     *        The name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code> you want described.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

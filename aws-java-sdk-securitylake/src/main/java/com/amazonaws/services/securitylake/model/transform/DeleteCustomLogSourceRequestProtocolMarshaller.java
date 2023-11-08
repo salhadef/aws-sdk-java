@@ -32,8 +32,9 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DeleteCustomLogSourceRequestProtocolMarshaller implements Marshaller<Request<DeleteCustomLogSourceRequest>, DeleteCustomLogSourceRequest> {
 
-    private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/v1/logsources/custom")
-            .httpMethodName(HttpMethodName.DELETE).hasExplicitPayloadMember(false).hasPayloadMembers(false).serviceName("AmazonSecurityLake").build();
+    private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
+            .requestUri("/v1/datalake/logsources/custom/{sourceName}").httpMethodName(HttpMethodName.DELETE).hasExplicitPayloadMember(false)
+            .hasPayloadMembers(false).serviceName("AmazonSecurityLake").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

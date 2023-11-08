@@ -45,6 +45,8 @@ public class CreateConnectPeerRequestMarshaller {
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
+    private static final MarshallingInfo<String> SUBNETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SubnetArn").build();
 
     private static final CreateConnectPeerRequestMarshaller instance = new CreateConnectPeerRequestMarshaller();
 
@@ -69,6 +71,7 @@ public class CreateConnectPeerRequestMarshaller {
             protocolMarshaller.marshall(createConnectPeerRequest.getInsideCidrBlocks(), INSIDECIDRBLOCKS_BINDING);
             protocolMarshaller.marshall(createConnectPeerRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createConnectPeerRequest.getClientToken(), CLIENTTOKEN_BINDING);
+            protocolMarshaller.marshall(createConnectPeerRequest.getSubnetArn(), SUBNETARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

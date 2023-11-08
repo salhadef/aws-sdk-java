@@ -62,6 +62,13 @@ public class DescribeProvisioningArtifactResultJsonUnmarshaller implements Unmar
                     context.nextToken();
                     describeProvisioningArtifactResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ProvisioningArtifactParameters", targetDepth)) {
+                    context.nextToken();
+                    describeProvisioningArtifactResult.setProvisioningArtifactParameters(new ListUnmarshaller<ProvisioningArtifactParameter>(
+                            ProvisioningArtifactParameterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

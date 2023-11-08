@@ -48,7 +48,8 @@ public class ProviderDescription implements Serializable, Cloneable, StructuredP
     private java.util.Date lastModifiedDate;
     /**
      * <p>
-     * The date the provider was added to the user pool.
+     * The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when
+     * the item was created.
      * </p>
      */
     private java.util.Date creationDate;
@@ -208,11 +209,13 @@ public class ProviderDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The date the provider was added to the user pool.
+     * The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when
+     * the item was created.
      * </p>
      * 
      * @param creationDate
-     *        The date the provider was added to the user pool.
+     *        The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     *        format, when the item was created.
      */
 
     public void setCreationDate(java.util.Date creationDate) {
@@ -221,10 +224,12 @@ public class ProviderDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The date the provider was added to the user pool.
+     * The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when
+     * the item was created.
      * </p>
      * 
-     * @return The date the provider was added to the user pool.
+     * @return The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     *         format, when the item was created.
      */
 
     public java.util.Date getCreationDate() {
@@ -233,11 +238,13 @@ public class ProviderDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The date the provider was added to the user pool.
+     * The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when
+     * the item was created.
      * </p>
      * 
      * @param creationDate
-     *        The date the provider was added to the user pool.
+     *        The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     *        format, when the item was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

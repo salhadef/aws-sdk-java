@@ -88,6 +88,10 @@ public class ApplicationSummaryJsonUnmarshaller implements Unmarshaller<Applicat
                     context.nextToken();
                     applicationSummary.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("roleArn", targetDepth)) {
+                    context.nextToken();
+                    applicationSummary.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     applicationSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));

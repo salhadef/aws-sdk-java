@@ -30,62 +30,22 @@ public class ReadSetBatchError implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The error's code.
-     * </p>
-     */
-    private String code;
-    /**
-     * <p>
      * The error's ID.
      * </p>
      */
     private String id;
     /**
      * <p>
+     * The error's code.
+     * </p>
+     */
+    private String code;
+    /**
+     * <p>
      * The error's message.
      * </p>
      */
     private String message;
-
-    /**
-     * <p>
-     * The error's code.
-     * </p>
-     * 
-     * @param code
-     *        The error's code.
-     */
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    /**
-     * <p>
-     * The error's code.
-     * </p>
-     * 
-     * @return The error's code.
-     */
-
-    public String getCode() {
-        return this.code;
-    }
-
-    /**
-     * <p>
-     * The error's code.
-     * </p>
-     * 
-     * @param code
-     *        The error's code.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ReadSetBatchError withCode(String code) {
-        setCode(code);
-        return this;
-    }
 
     /**
      * <p>
@@ -124,6 +84,46 @@ public class ReadSetBatchError implements Serializable, Cloneable, StructuredPoj
 
     public ReadSetBatchError withId(String id) {
         setId(id);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The error's code.
+     * </p>
+     * 
+     * @param code
+     *        The error's code.
+     */
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    /**
+     * <p>
+     * The error's code.
+     * </p>
+     * 
+     * @return The error's code.
+     */
+
+    public String getCode() {
+        return this.code;
+    }
+
+    /**
+     * <p>
+     * The error's code.
+     * </p>
+     * 
+     * @param code
+     *        The error's code.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReadSetBatchError withCode(String code) {
+        setCode(code);
         return this;
     }
 
@@ -179,10 +179,10 @@ public class ReadSetBatchError implements Serializable, Cloneable, StructuredPoj
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getCode() != null)
-            sb.append("Code: ").append(getCode()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
+        if (getCode() != null)
+            sb.append("Code: ").append(getCode()).append(",");
         if (getMessage() != null)
             sb.append("Message: ").append(getMessage());
         sb.append("}");
@@ -199,13 +199,13 @@ public class ReadSetBatchError implements Serializable, Cloneable, StructuredPoj
         if (obj instanceof ReadSetBatchError == false)
             return false;
         ReadSetBatchError other = (ReadSetBatchError) obj;
-        if (other.getCode() == null ^ this.getCode() == null)
-            return false;
-        if (other.getCode() != null && other.getCode().equals(this.getCode()) == false)
-            return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
+            return false;
+        if (other.getCode() == null ^ this.getCode() == null)
+            return false;
+        if (other.getCode() != null && other.getCode().equals(this.getCode()) == false)
             return false;
         if (other.getMessage() == null ^ this.getMessage() == null)
             return false;
@@ -219,8 +219,8 @@ public class ReadSetBatchError implements Serializable, Cloneable, StructuredPoj
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getCode() == null) ? 0 : getCode().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getCode() == null) ? 0 : getCode().hashCode());
         hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
         return hashCode;
     }

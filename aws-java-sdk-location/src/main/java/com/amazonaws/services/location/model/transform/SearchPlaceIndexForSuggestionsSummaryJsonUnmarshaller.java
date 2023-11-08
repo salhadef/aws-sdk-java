@@ -64,6 +64,12 @@ public class SearchPlaceIndexForSuggestionsSummaryJsonUnmarshaller implements Un
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("FilterCategories", targetDepth)) {
+                    context.nextToken();
+                    searchPlaceIndexForSuggestionsSummary.setFilterCategories(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("FilterCountries", targetDepth)) {
                     context.nextToken();
                     searchPlaceIndexForSuggestionsSummary.setFilterCountries(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))

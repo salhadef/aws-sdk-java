@@ -68,30 +68,31 @@ public class ResourceStatistics implements Serializable, Cloneable, StructuredPo
     private Long totalItemsSensitive;
     /**
      * <p>
-     * The total number of objects that Amazon Macie hasn't analyzed in the bucket due to an error or issue. For
-     * example, the object is a malformed file. This value includes objects that Macie hasn't analyzed for reasons
-     * reported by other statistics in the ResourceStatistics object.
+     * The total number of objects that Amazon Macie wasn't able to analyze in the bucket due to an object-level issue
+     * or error. For example, the object is a malformed file. This value includes objects that Macie wasn't able to
+     * analyze for reasons reported by other statistics in the ResourceStatistics object.
      * </p>
      */
     private Long totalItemsSkipped;
     /**
      * <p>
-     * The total number of objects that Amazon Macie hasn't analyzed in the bucket because the objects are encrypted
-     * with a key that Macie isn't allowed to use.
+     * The total number of objects that Amazon Macie wasn't able to analyze in the bucket because the objects are
+     * encrypted with a key that Macie can't access. The objects use server-side encryption with customer-provided keys
+     * (SSE-C).
      * </p>
      */
     private Long totalItemsSkippedInvalidEncryption;
     /**
      * <p>
-     * The total number of objects that Amazon Macie hasn't analyzed in the bucket because the objects are encrypted
-     * with an KMS key that was disabled or deleted.
+     * The total number of objects that Amazon Macie wasn't able to analyze in the bucket because the objects are
+     * encrypted with KMS keys that were disabled, are scheduled for deletion, or were deleted.
      * </p>
      */
     private Long totalItemsSkippedInvalidKms;
     /**
      * <p>
-     * The total number of objects that Amazon Macie hasn't analyzed in the bucket because Macie isn't allowed to access
-     * the objects.
+     * The total number of objects that Amazon Macie wasn't able to analyze in the bucket due to the permissions
+     * settings for the objects or the permissions settings for the keys that were used to encrypt the objects.
      * </p>
      */
     private Long totalItemsSkippedPermissionDenied;
@@ -328,15 +329,15 @@ public class ResourceStatistics implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The total number of objects that Amazon Macie hasn't analyzed in the bucket due to an error or issue. For
-     * example, the object is a malformed file. This value includes objects that Macie hasn't analyzed for reasons
-     * reported by other statistics in the ResourceStatistics object.
+     * The total number of objects that Amazon Macie wasn't able to analyze in the bucket due to an object-level issue
+     * or error. For example, the object is a malformed file. This value includes objects that Macie wasn't able to
+     * analyze for reasons reported by other statistics in the ResourceStatistics object.
      * </p>
      * 
      * @param totalItemsSkipped
-     *        The total number of objects that Amazon Macie hasn't analyzed in the bucket due to an error or issue. For
-     *        example, the object is a malformed file. This value includes objects that Macie hasn't analyzed for
-     *        reasons reported by other statistics in the ResourceStatistics object.
+     *        The total number of objects that Amazon Macie wasn't able to analyze in the bucket due to an object-level
+     *        issue or error. For example, the object is a malformed file. This value includes objects that Macie wasn't
+     *        able to analyze for reasons reported by other statistics in the ResourceStatistics object.
      */
 
     public void setTotalItemsSkipped(Long totalItemsSkipped) {
@@ -345,14 +346,14 @@ public class ResourceStatistics implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The total number of objects that Amazon Macie hasn't analyzed in the bucket due to an error or issue. For
-     * example, the object is a malformed file. This value includes objects that Macie hasn't analyzed for reasons
-     * reported by other statistics in the ResourceStatistics object.
+     * The total number of objects that Amazon Macie wasn't able to analyze in the bucket due to an object-level issue
+     * or error. For example, the object is a malformed file. This value includes objects that Macie wasn't able to
+     * analyze for reasons reported by other statistics in the ResourceStatistics object.
      * </p>
      * 
-     * @return The total number of objects that Amazon Macie hasn't analyzed in the bucket due to an error or issue. For
-     *         example, the object is a malformed file. This value includes objects that Macie hasn't analyzed for
-     *         reasons reported by other statistics in the ResourceStatistics object.
+     * @return The total number of objects that Amazon Macie wasn't able to analyze in the bucket due to an object-level
+     *         issue or error. For example, the object is a malformed file. This value includes objects that Macie
+     *         wasn't able to analyze for reasons reported by other statistics in the ResourceStatistics object.
      */
 
     public Long getTotalItemsSkipped() {
@@ -361,15 +362,15 @@ public class ResourceStatistics implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The total number of objects that Amazon Macie hasn't analyzed in the bucket due to an error or issue. For
-     * example, the object is a malformed file. This value includes objects that Macie hasn't analyzed for reasons
-     * reported by other statistics in the ResourceStatistics object.
+     * The total number of objects that Amazon Macie wasn't able to analyze in the bucket due to an object-level issue
+     * or error. For example, the object is a malformed file. This value includes objects that Macie wasn't able to
+     * analyze for reasons reported by other statistics in the ResourceStatistics object.
      * </p>
      * 
      * @param totalItemsSkipped
-     *        The total number of objects that Amazon Macie hasn't analyzed in the bucket due to an error or issue. For
-     *        example, the object is a malformed file. This value includes objects that Macie hasn't analyzed for
-     *        reasons reported by other statistics in the ResourceStatistics object.
+     *        The total number of objects that Amazon Macie wasn't able to analyze in the bucket due to an object-level
+     *        issue or error. For example, the object is a malformed file. This value includes objects that Macie wasn't
+     *        able to analyze for reasons reported by other statistics in the ResourceStatistics object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -380,13 +381,15 @@ public class ResourceStatistics implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The total number of objects that Amazon Macie hasn't analyzed in the bucket because the objects are encrypted
-     * with a key that Macie isn't allowed to use.
+     * The total number of objects that Amazon Macie wasn't able to analyze in the bucket because the objects are
+     * encrypted with a key that Macie can't access. The objects use server-side encryption with customer-provided keys
+     * (SSE-C).
      * </p>
      * 
      * @param totalItemsSkippedInvalidEncryption
-     *        The total number of objects that Amazon Macie hasn't analyzed in the bucket because the objects are
-     *        encrypted with a key that Macie isn't allowed to use.
+     *        The total number of objects that Amazon Macie wasn't able to analyze in the bucket because the objects are
+     *        encrypted with a key that Macie can't access. The objects use server-side encryption with
+     *        customer-provided keys (SSE-C).
      */
 
     public void setTotalItemsSkippedInvalidEncryption(Long totalItemsSkippedInvalidEncryption) {
@@ -395,12 +398,14 @@ public class ResourceStatistics implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The total number of objects that Amazon Macie hasn't analyzed in the bucket because the objects are encrypted
-     * with a key that Macie isn't allowed to use.
+     * The total number of objects that Amazon Macie wasn't able to analyze in the bucket because the objects are
+     * encrypted with a key that Macie can't access. The objects use server-side encryption with customer-provided keys
+     * (SSE-C).
      * </p>
      * 
-     * @return The total number of objects that Amazon Macie hasn't analyzed in the bucket because the objects are
-     *         encrypted with a key that Macie isn't allowed to use.
+     * @return The total number of objects that Amazon Macie wasn't able to analyze in the bucket because the objects
+     *         are encrypted with a key that Macie can't access. The objects use server-side encryption with
+     *         customer-provided keys (SSE-C).
      */
 
     public Long getTotalItemsSkippedInvalidEncryption() {
@@ -409,13 +414,15 @@ public class ResourceStatistics implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The total number of objects that Amazon Macie hasn't analyzed in the bucket because the objects are encrypted
-     * with a key that Macie isn't allowed to use.
+     * The total number of objects that Amazon Macie wasn't able to analyze in the bucket because the objects are
+     * encrypted with a key that Macie can't access. The objects use server-side encryption with customer-provided keys
+     * (SSE-C).
      * </p>
      * 
      * @param totalItemsSkippedInvalidEncryption
-     *        The total number of objects that Amazon Macie hasn't analyzed in the bucket because the objects are
-     *        encrypted with a key that Macie isn't allowed to use.
+     *        The total number of objects that Amazon Macie wasn't able to analyze in the bucket because the objects are
+     *        encrypted with a key that Macie can't access. The objects use server-side encryption with
+     *        customer-provided keys (SSE-C).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -426,13 +433,13 @@ public class ResourceStatistics implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The total number of objects that Amazon Macie hasn't analyzed in the bucket because the objects are encrypted
-     * with an KMS key that was disabled or deleted.
+     * The total number of objects that Amazon Macie wasn't able to analyze in the bucket because the objects are
+     * encrypted with KMS keys that were disabled, are scheduled for deletion, or were deleted.
      * </p>
      * 
      * @param totalItemsSkippedInvalidKms
-     *        The total number of objects that Amazon Macie hasn't analyzed in the bucket because the objects are
-     *        encrypted with an KMS key that was disabled or deleted.
+     *        The total number of objects that Amazon Macie wasn't able to analyze in the bucket because the objects are
+     *        encrypted with KMS keys that were disabled, are scheduled for deletion, or were deleted.
      */
 
     public void setTotalItemsSkippedInvalidKms(Long totalItemsSkippedInvalidKms) {
@@ -441,12 +448,12 @@ public class ResourceStatistics implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The total number of objects that Amazon Macie hasn't analyzed in the bucket because the objects are encrypted
-     * with an KMS key that was disabled or deleted.
+     * The total number of objects that Amazon Macie wasn't able to analyze in the bucket because the objects are
+     * encrypted with KMS keys that were disabled, are scheduled for deletion, or were deleted.
      * </p>
      * 
-     * @return The total number of objects that Amazon Macie hasn't analyzed in the bucket because the objects are
-     *         encrypted with an KMS key that was disabled or deleted.
+     * @return The total number of objects that Amazon Macie wasn't able to analyze in the bucket because the objects
+     *         are encrypted with KMS keys that were disabled, are scheduled for deletion, or were deleted.
      */
 
     public Long getTotalItemsSkippedInvalidKms() {
@@ -455,13 +462,13 @@ public class ResourceStatistics implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The total number of objects that Amazon Macie hasn't analyzed in the bucket because the objects are encrypted
-     * with an KMS key that was disabled or deleted.
+     * The total number of objects that Amazon Macie wasn't able to analyze in the bucket because the objects are
+     * encrypted with KMS keys that were disabled, are scheduled for deletion, or were deleted.
      * </p>
      * 
      * @param totalItemsSkippedInvalidKms
-     *        The total number of objects that Amazon Macie hasn't analyzed in the bucket because the objects are
-     *        encrypted with an KMS key that was disabled or deleted.
+     *        The total number of objects that Amazon Macie wasn't able to analyze in the bucket because the objects are
+     *        encrypted with KMS keys that were disabled, are scheduled for deletion, or were deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -472,13 +479,13 @@ public class ResourceStatistics implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The total number of objects that Amazon Macie hasn't analyzed in the bucket because Macie isn't allowed to access
-     * the objects.
+     * The total number of objects that Amazon Macie wasn't able to analyze in the bucket due to the permissions
+     * settings for the objects or the permissions settings for the keys that were used to encrypt the objects.
      * </p>
      * 
      * @param totalItemsSkippedPermissionDenied
-     *        The total number of objects that Amazon Macie hasn't analyzed in the bucket because Macie isn't allowed to
-     *        access the objects.
+     *        The total number of objects that Amazon Macie wasn't able to analyze in the bucket due to the permissions
+     *        settings for the objects or the permissions settings for the keys that were used to encrypt the objects.
      */
 
     public void setTotalItemsSkippedPermissionDenied(Long totalItemsSkippedPermissionDenied) {
@@ -487,12 +494,12 @@ public class ResourceStatistics implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The total number of objects that Amazon Macie hasn't analyzed in the bucket because Macie isn't allowed to access
-     * the objects.
+     * The total number of objects that Amazon Macie wasn't able to analyze in the bucket due to the permissions
+     * settings for the objects or the permissions settings for the keys that were used to encrypt the objects.
      * </p>
      * 
-     * @return The total number of objects that Amazon Macie hasn't analyzed in the bucket because Macie isn't allowed
-     *         to access the objects.
+     * @return The total number of objects that Amazon Macie wasn't able to analyze in the bucket due to the permissions
+     *         settings for the objects or the permissions settings for the keys that were used to encrypt the objects.
      */
 
     public Long getTotalItemsSkippedPermissionDenied() {
@@ -501,13 +508,13 @@ public class ResourceStatistics implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The total number of objects that Amazon Macie hasn't analyzed in the bucket because Macie isn't allowed to access
-     * the objects.
+     * The total number of objects that Amazon Macie wasn't able to analyze in the bucket due to the permissions
+     * settings for the objects or the permissions settings for the keys that were used to encrypt the objects.
      * </p>
      * 
      * @param totalItemsSkippedPermissionDenied
-     *        The total number of objects that Amazon Macie hasn't analyzed in the bucket because Macie isn't allowed to
-     *        access the objects.
+     *        The total number of objects that Amazon Macie wasn't able to analyze in the bucket due to the permissions
+     *        settings for the objects or the permissions settings for the keys that were used to encrypt the objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

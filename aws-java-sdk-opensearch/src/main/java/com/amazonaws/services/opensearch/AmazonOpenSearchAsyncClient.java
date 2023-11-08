@@ -680,6 +680,72 @@ public class AmazonOpenSearchAsyncClient extends AmazonOpenSearchClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeDomainHealthResult> describeDomainHealthAsync(DescribeDomainHealthRequest request) {
+
+        return describeDomainHealthAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDomainHealthResult> describeDomainHealthAsync(final DescribeDomainHealthRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeDomainHealthRequest, DescribeDomainHealthResult> asyncHandler) {
+        final DescribeDomainHealthRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeDomainHealthResult>() {
+            @Override
+            public DescribeDomainHealthResult call() throws Exception {
+                DescribeDomainHealthResult result = null;
+
+                try {
+                    result = executeDescribeDomainHealth(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDomainNodesResult> describeDomainNodesAsync(DescribeDomainNodesRequest request) {
+
+        return describeDomainNodesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDomainNodesResult> describeDomainNodesAsync(final DescribeDomainNodesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeDomainNodesRequest, DescribeDomainNodesResult> asyncHandler) {
+        final DescribeDomainNodesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeDomainNodesResult>() {
+            @Override
+            public DescribeDomainNodesResult call() throws Exception {
+                DescribeDomainNodesResult result = null;
+
+                try {
+                    result = executeDescribeDomainNodes(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeDomainsResult> describeDomainsAsync(DescribeDomainsRequest request) {
 
         return describeDomainsAsync(request, null);
@@ -1045,6 +1111,39 @@ public class AmazonOpenSearchAsyncClient extends AmazonOpenSearchClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<GetDomainMaintenanceStatusResult> getDomainMaintenanceStatusAsync(GetDomainMaintenanceStatusRequest request) {
+
+        return getDomainMaintenanceStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDomainMaintenanceStatusResult> getDomainMaintenanceStatusAsync(final GetDomainMaintenanceStatusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDomainMaintenanceStatusRequest, GetDomainMaintenanceStatusResult> asyncHandler) {
+        final GetDomainMaintenanceStatusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetDomainMaintenanceStatusResult>() {
+            @Override
+            public GetDomainMaintenanceStatusResult call() throws Exception {
+                GetDomainMaintenanceStatusResult result = null;
+
+                try {
+                    result = executeGetDomainMaintenanceStatus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetPackageVersionHistoryResult> getPackageVersionHistoryAsync(GetPackageVersionHistoryRequest request) {
 
         return getPackageVersionHistoryAsync(request, null);
@@ -1128,6 +1227,39 @@ public class AmazonOpenSearchAsyncClient extends AmazonOpenSearchClient implemen
 
                 try {
                     result = executeGetUpgradeStatus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDomainMaintenancesResult> listDomainMaintenancesAsync(ListDomainMaintenancesRequest request) {
+
+        return listDomainMaintenancesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDomainMaintenancesResult> listDomainMaintenancesAsync(final ListDomainMaintenancesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListDomainMaintenancesRequest, ListDomainMaintenancesResult> asyncHandler) {
+        final ListDomainMaintenancesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListDomainMaintenancesResult>() {
+            @Override
+            public ListDomainMaintenancesResult call() throws Exception {
+                ListDomainMaintenancesResult result = null;
+
+                try {
+                    result = executeListDomainMaintenances(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1592,6 +1724,39 @@ public class AmazonOpenSearchAsyncClient extends AmazonOpenSearchClient implemen
 
                 try {
                     result = executeRevokeVpcEndpointAccess(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartDomainMaintenanceResult> startDomainMaintenanceAsync(StartDomainMaintenanceRequest request) {
+
+        return startDomainMaintenanceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartDomainMaintenanceResult> startDomainMaintenanceAsync(final StartDomainMaintenanceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartDomainMaintenanceRequest, StartDomainMaintenanceResult> asyncHandler) {
+        final StartDomainMaintenanceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartDomainMaintenanceResult>() {
+            @Override
+            public StartDomainMaintenanceResult call() throws Exception {
+                StartDomainMaintenanceResult result = null;
+
+                try {
+                    result = executeStartDomainMaintenance(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

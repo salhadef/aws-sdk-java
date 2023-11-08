@@ -24,7 +24,9 @@ public enum RequestStatus {
     CASE_OPENED("CASE_OPENED"),
     APPROVED("APPROVED"),
     DENIED("DENIED"),
-    CASE_CLOSED("CASE_CLOSED");
+    CASE_CLOSED("CASE_CLOSED"),
+    NOT_APPROVED("NOT_APPROVED"),
+    INVALID_REQUEST("INVALID_REQUEST");
 
     private String value;
 

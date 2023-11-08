@@ -274,6 +274,29 @@ public interface AWSMigrationHubStrategyRecommendations {
 
     /**
      * <p>
+     * Retrieves a list of all the servers fetched from customer vCenter using Strategy Recommendation Collector.
+     * </p>
+     * 
+     * @param listAnalyzableServersRequest
+     *        Represents input for ListAnalyzableServers operation.
+     * @return Result of the ListAnalyzableServers operation returned by the service.
+     * @throws AccessDeniedException
+     *         The user does not have permission to perform the action. Check the AWS Identity and Access Management
+     *         (IAM) policy associated with this user.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The request body isn't valid.
+     * @throws InternalServerException
+     *         The server experienced an internal error. Try again.
+     * @sample AWSMigrationHubStrategyRecommendations.ListAnalyzableServers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/ListAnalyzableServers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListAnalyzableServersResult listAnalyzableServers(ListAnalyzableServersRequest listAnalyzableServersRequest);
+
+    /**
+     * <p>
      * Retrieves a list of all the application components (processes).
      * </p>
      * 

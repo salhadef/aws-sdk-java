@@ -37,6 +37,12 @@ public class CreatePhoneNumberOrderRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private java.util.List<String> e164PhoneNumbers;
+    /**
+     * <p>
+     * Specifies the name assigned to one or more phone numbers.
+     * </p>
+     */
+    private String name;
 
     /**
      * <p>
@@ -168,6 +174,46 @@ public class CreatePhoneNumberOrderRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * Specifies the name assigned to one or more phone numbers.
+     * </p>
+     * 
+     * @param name
+     *        Specifies the name assigned to one or more phone numbers.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * Specifies the name assigned to one or more phone numbers.
+     * </p>
+     * 
+     * @return Specifies the name assigned to one or more phone numbers.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * Specifies the name assigned to one or more phone numbers.
+     * </p>
+     * 
+     * @param name
+     *        Specifies the name assigned to one or more phone numbers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreatePhoneNumberOrderRequest withName(String name) {
+        setName(name);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -182,7 +228,9 @@ public class CreatePhoneNumberOrderRequest extends com.amazonaws.AmazonWebServic
         if (getProductType() != null)
             sb.append("ProductType: ").append(getProductType()).append(",");
         if (getE164PhoneNumbers() != null)
-            sb.append("E164PhoneNumbers: ").append("***Sensitive Data Redacted***");
+            sb.append("E164PhoneNumbers: ").append("***Sensitive Data Redacted***").append(",");
+        if (getName() != null)
+            sb.append("Name: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }
@@ -205,6 +253,10 @@ public class CreatePhoneNumberOrderRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getE164PhoneNumbers() != null && other.getE164PhoneNumbers().equals(this.getE164PhoneNumbers()) == false)
             return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
         return true;
     }
 
@@ -215,6 +267,7 @@ public class CreatePhoneNumberOrderRequest extends com.amazonaws.AmazonWebServic
 
         hashCode = prime * hashCode + ((getProductType() == null) ? 0 : getProductType().hashCode());
         hashCode = prime * hashCode + ((getE164PhoneNumbers() == null) ? 0 : getE164PhoneNumbers().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         return hashCode;
     }
 

@@ -27,6 +27,12 @@ public class UpdateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
+     * Update Launch configuration Account ID.
+     * </p>
+     */
+    private String accountID;
+    /**
+     * <p>
      * Update Launch configuration boot mode request.
      * </p>
      */
@@ -87,6 +93,46 @@ public class UpdateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * </p>
      */
     private String targetInstanceTypeRightSizingMethod;
+
+    /**
+     * <p>
+     * Update Launch configuration Account ID.
+     * </p>
+     * 
+     * @param accountID
+     *        Update Launch configuration Account ID.
+     */
+
+    public void setAccountID(String accountID) {
+        this.accountID = accountID;
+    }
+
+    /**
+     * <p>
+     * Update Launch configuration Account ID.
+     * </p>
+     * 
+     * @return Update Launch configuration Account ID.
+     */
+
+    public String getAccountID() {
+        return this.accountID;
+    }
+
+    /**
+     * <p>
+     * Update Launch configuration Account ID.
+     * </p>
+     * 
+     * @param accountID
+     *        Update Launch configuration Account ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateLaunchConfigurationRequest withAccountID(String accountID) {
+        setAccountID(accountID);
+        return this;
+    }
 
     /**
      * <p>
@@ -619,6 +665,8 @@ public class UpdateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAccountID() != null)
+            sb.append("AccountID: ").append(getAccountID()).append(",");
         if (getBootMode() != null)
             sb.append("BootMode: ").append(getBootMode()).append(",");
         if (getCopyPrivateIp() != null)
@@ -655,6 +703,10 @@ public class UpdateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
         if (obj instanceof UpdateLaunchConfigurationRequest == false)
             return false;
         UpdateLaunchConfigurationRequest other = (UpdateLaunchConfigurationRequest) obj;
+        if (other.getAccountID() == null ^ this.getAccountID() == null)
+            return false;
+        if (other.getAccountID() != null && other.getAccountID().equals(this.getAccountID()) == false)
+            return false;
         if (other.getBootMode() == null ^ this.getBootMode() == null)
             return false;
         if (other.getBootMode() != null && other.getBootMode().equals(this.getBootMode()) == false)
@@ -708,6 +760,7 @@ public class UpdateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAccountID() == null) ? 0 : getAccountID().hashCode());
         hashCode = prime * hashCode + ((getBootMode() == null) ? 0 : getBootMode().hashCode());
         hashCode = prime * hashCode + ((getCopyPrivateIp() == null) ? 0 : getCopyPrivateIp().hashCode());
         hashCode = prime * hashCode + ((getCopyTags() == null) ? 0 : getCopyTags().hashCode());

@@ -24,7 +24,8 @@ public enum PackageFormat {
     Pypi("pypi"),
     Maven("maven"),
     Nuget("nuget"),
-    Generic("generic");
+    Generic("generic"),
+    Swift("swift");
 
     private String value;
 

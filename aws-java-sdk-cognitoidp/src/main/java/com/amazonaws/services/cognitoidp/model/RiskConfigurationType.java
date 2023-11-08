@@ -62,7 +62,8 @@ public class RiskConfigurationType implements Serializable, Cloneable, Structure
     private RiskExceptionConfigurationType riskExceptionConfiguration;
     /**
      * <p>
-     * The last modified date.
+     * The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when
+     * the item was modified.
      * </p>
      */
     private java.util.Date lastModifiedDate;
@@ -281,11 +282,13 @@ public class RiskConfigurationType implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The last modified date.
+     * The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when
+     * the item was modified.
      * </p>
      * 
      * @param lastModifiedDate
-     *        The last modified date.
+     *        The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     *        format, when the item was modified.
      */
 
     public void setLastModifiedDate(java.util.Date lastModifiedDate) {
@@ -294,10 +297,12 @@ public class RiskConfigurationType implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The last modified date.
+     * The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when
+     * the item was modified.
      * </p>
      * 
-     * @return The last modified date.
+     * @return The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     *         format, when the item was modified.
      */
 
     public java.util.Date getLastModifiedDate() {
@@ -306,11 +311,13 @@ public class RiskConfigurationType implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The last modified date.
+     * The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when
+     * the item was modified.
      * </p>
      * 
      * @param lastModifiedDate
-     *        The last modified date.
+     *        The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     *        format, when the item was modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -96,6 +96,8 @@ public class TLSInspectionConfigurationResponse implements Serializable, Cloneab
      */
     private java.util.List<TlsCertificateData> certificates;
 
+    private TlsCertificateData certificateAuthority;
+
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the TLS inspection configuration.
@@ -610,6 +612,32 @@ public class TLSInspectionConfigurationResponse implements Serializable, Cloneab
     }
 
     /**
+     * @param certificateAuthority
+     */
+
+    public void setCertificateAuthority(TlsCertificateData certificateAuthority) {
+        this.certificateAuthority = certificateAuthority;
+    }
+
+    /**
+     * @return
+     */
+
+    public TlsCertificateData getCertificateAuthority() {
+        return this.certificateAuthority;
+    }
+
+    /**
+     * @param certificateAuthority
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TLSInspectionConfigurationResponse withCertificateAuthority(TlsCertificateData certificateAuthority) {
+        setCertificateAuthority(certificateAuthority);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -640,7 +668,9 @@ public class TLSInspectionConfigurationResponse implements Serializable, Cloneab
         if (getEncryptionConfiguration() != null)
             sb.append("EncryptionConfiguration: ").append(getEncryptionConfiguration()).append(",");
         if (getCertificates() != null)
-            sb.append("Certificates: ").append(getCertificates());
+            sb.append("Certificates: ").append(getCertificates()).append(",");
+        if (getCertificateAuthority() != null)
+            sb.append("CertificateAuthority: ").append(getCertificateAuthority());
         sb.append("}");
         return sb.toString();
     }
@@ -698,6 +728,10 @@ public class TLSInspectionConfigurationResponse implements Serializable, Cloneab
             return false;
         if (other.getCertificates() != null && other.getCertificates().equals(this.getCertificates()) == false)
             return false;
+        if (other.getCertificateAuthority() == null ^ this.getCertificateAuthority() == null)
+            return false;
+        if (other.getCertificateAuthority() != null && other.getCertificateAuthority().equals(this.getCertificateAuthority()) == false)
+            return false;
         return true;
     }
 
@@ -716,6 +750,7 @@ public class TLSInspectionConfigurationResponse implements Serializable, Cloneab
         hashCode = prime * hashCode + ((getNumberOfAssociations() == null) ? 0 : getNumberOfAssociations().hashCode());
         hashCode = prime * hashCode + ((getEncryptionConfiguration() == null) ? 0 : getEncryptionConfiguration().hashCode());
         hashCode = prime * hashCode + ((getCertificates() == null) ? 0 : getCertificates().hashCode());
+        hashCode = prime * hashCode + ((getCertificateAuthority() == null) ? 0 : getCertificateAuthority().hashCode());
         return hashCode;
     }
 

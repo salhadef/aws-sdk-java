@@ -683,7 +683,7 @@ public class Delegation implements Serializable, Cloneable, StructuredPojo {
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
         if (getAssessmentName() != null)
-            sb.append("AssessmentName: ").append(getAssessmentName()).append(",");
+            sb.append("AssessmentName: ").append("***Sensitive Data Redacted***").append(",");
         if (getAssessmentId() != null)
             sb.append("AssessmentId: ").append(getAssessmentId()).append(",");
         if (getStatus() != null)
@@ -699,9 +699,9 @@ public class Delegation implements Serializable, Cloneable, StructuredPojo {
         if (getControlSetId() != null)
             sb.append("ControlSetId: ").append(getControlSetId()).append(",");
         if (getComment() != null)
-            sb.append("Comment: ").append(getComment()).append(",");
+            sb.append("Comment: ").append("***Sensitive Data Redacted***").append(",");
         if (getCreatedBy() != null)
-            sb.append("CreatedBy: ").append(getCreatedBy());
+            sb.append("CreatedBy: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

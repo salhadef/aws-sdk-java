@@ -99,7 +99,7 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A list of values for the parameters in a query. The values are applied sequentially to the parameters in the
-     * query in the order in which the parameters occur.
+     * query in the order in which the parameters occur. The list of parameters is not returned in the response.
      * </p>
      */
     private java.util.List<String> executionParameters;
@@ -586,11 +586,12 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A list of values for the parameters in a query. The values are applied sequentially to the parameters in the
-     * query in the order in which the parameters occur.
+     * query in the order in which the parameters occur. The list of parameters is not returned in the response.
      * </p>
      * 
      * @return A list of values for the parameters in a query. The values are applied sequentially to the parameters in
-     *         the query in the order in which the parameters occur.
+     *         the query in the order in which the parameters occur. The list of parameters is not returned in the
+     *         response.
      */
 
     public java.util.List<String> getExecutionParameters() {
@@ -600,12 +601,13 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A list of values for the parameters in a query. The values are applied sequentially to the parameters in the
-     * query in the order in which the parameters occur.
+     * query in the order in which the parameters occur. The list of parameters is not returned in the response.
      * </p>
      * 
      * @param executionParameters
      *        A list of values for the parameters in a query. The values are applied sequentially to the parameters in
-     *        the query in the order in which the parameters occur.
+     *        the query in the order in which the parameters occur. The list of parameters is not returned in the
+     *        response.
      */
 
     public void setExecutionParameters(java.util.Collection<String> executionParameters) {
@@ -620,7 +622,7 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A list of values for the parameters in a query. The values are applied sequentially to the parameters in the
-     * query in the order in which the parameters occur.
+     * query in the order in which the parameters occur. The list of parameters is not returned in the response.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -630,7 +632,8 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param executionParameters
      *        A list of values for the parameters in a query. The values are applied sequentially to the parameters in
-     *        the query in the order in which the parameters occur.
+     *        the query in the order in which the parameters occur. The list of parameters is not returned in the
+     *        response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -647,12 +650,13 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A list of values for the parameters in a query. The values are applied sequentially to the parameters in the
-     * query in the order in which the parameters occur.
+     * query in the order in which the parameters occur. The list of parameters is not returned in the response.
      * </p>
      * 
      * @param executionParameters
      *        A list of values for the parameters in a query. The values are applied sequentially to the parameters in
-     *        the query in the order in which the parameters occur.
+     *        the query in the order in which the parameters occur. The list of parameters is not returned in the
+     *        response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

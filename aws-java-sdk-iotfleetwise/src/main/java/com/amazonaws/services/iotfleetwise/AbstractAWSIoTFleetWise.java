@@ -118,6 +118,11 @@ public class AbstractAWSIoTFleetWise implements AWSIoTFleetWise {
     }
 
     @Override
+    public GetEncryptionConfigurationResult getEncryptionConfiguration(GetEncryptionConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetFleetResult getFleet(GetFleetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -224,6 +229,11 @@ public class AbstractAWSIoTFleetWise implements AWSIoTFleetWise {
 
     @Override
     public ListVehiclesInFleetResult listVehiclesInFleet(ListVehiclesInFleetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutEncryptionConfigurationResult putEncryptionConfiguration(PutEncryptionConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

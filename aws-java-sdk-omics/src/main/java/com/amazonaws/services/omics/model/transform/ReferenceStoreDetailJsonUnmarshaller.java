@@ -52,14 +52,6 @@ public class ReferenceStoreDetailJsonUnmarshaller implements Unmarshaller<Refere
                     context.nextToken();
                     referenceStoreDetail.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("creationTime", targetDepth)) {
-                    context.nextToken();
-                    referenceStoreDetail.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
-                }
-                if (context.testExpression("description", targetDepth)) {
-                    context.nextToken();
-                    referenceStoreDetail.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
                     referenceStoreDetail.setId(context.getUnmarshaller(String.class).unmarshall(context));
@@ -68,9 +60,17 @@ public class ReferenceStoreDetailJsonUnmarshaller implements Unmarshaller<Refere
                     context.nextToken();
                     referenceStoreDetail.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("description", targetDepth)) {
+                    context.nextToken();
+                    referenceStoreDetail.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("sseConfig", targetDepth)) {
                     context.nextToken();
                     referenceStoreDetail.setSseConfig(SseConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("creationTime", targetDepth)) {
+                    context.nextToken();
+                    referenceStoreDetail.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -130,7 +130,7 @@ public class GetExternalDataViewAccessDetailsResult extends com.amazonaws.Amazon
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCredentials() != null)
-            sb.append("Credentials: ").append(getCredentials()).append(",");
+            sb.append("Credentials: ").append("***Sensitive Data Redacted***").append(",");
         if (getS3Location() != null)
             sb.append("S3Location: ").append(getS3Location());
         sb.append("}");

@@ -22,7 +22,8 @@ public enum DeploymentLifecycle {
 
     Deploying("Deploying"),
     Succeeded("Succeeded"),
-    Failed("Failed");
+    Failed("Failed"),
+    UpdatingDeployment("Updating Deployment");
 
     private String value;
 

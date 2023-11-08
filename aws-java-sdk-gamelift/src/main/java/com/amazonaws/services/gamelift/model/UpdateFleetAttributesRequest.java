@@ -45,8 +45,8 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
     private String description;
     /**
      * <p>
-     * The game session protection policy to apply to all new instances created in this fleet. Instances that already
-     * exist are not affected. You can set protection for individual instances using <a
+     * The game session protection policy to apply to all new game sessions created in this fleet. Game sessions that
+     * already exist are not affected. You can set protection for individual game sessions using <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>
      * .
      * </p>
@@ -211,8 +211,8 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The game session protection policy to apply to all new instances created in this fleet. Instances that already
-     * exist are not affected. You can set protection for individual instances using <a
+     * The game session protection policy to apply to all new game sessions created in this fleet. Game sessions that
+     * already exist are not affected. You can set protection for individual game sessions using <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>
      * .
      * </p>
@@ -231,8 +231,8 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
      * </ul>
      * 
      * @param newGameSessionProtectionPolicy
-     *        The game session protection policy to apply to all new instances created in this fleet. Instances that
-     *        already exist are not affected. You can set protection for individual instances using <a
+     *        The game session protection policy to apply to all new game sessions created in this fleet. Game sessions
+     *        that already exist are not affected. You can set protection for individual game sessions using <a
      *        href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html"
      *        >UpdateGameSession</a> .</p>
      *        <ul>
@@ -256,8 +256,8 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The game session protection policy to apply to all new instances created in this fleet. Instances that already
-     * exist are not affected. You can set protection for individual instances using <a
+     * The game session protection policy to apply to all new game sessions created in this fleet. Game sessions that
+     * already exist are not affected. You can set protection for individual game sessions using <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>
      * .
      * </p>
@@ -275,8 +275,8 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
      * </li>
      * </ul>
      * 
-     * @return The game session protection policy to apply to all new instances created in this fleet. Instances that
-     *         already exist are not affected. You can set protection for individual instances using <a
+     * @return The game session protection policy to apply to all new game sessions created in this fleet. Game sessions
+     *         that already exist are not affected. You can set protection for individual game sessions using <a
      *         href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html"
      *         >UpdateGameSession</a> .</p>
      *         <ul>
@@ -300,8 +300,8 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The game session protection policy to apply to all new instances created in this fleet. Instances that already
-     * exist are not affected. You can set protection for individual instances using <a
+     * The game session protection policy to apply to all new game sessions created in this fleet. Game sessions that
+     * already exist are not affected. You can set protection for individual game sessions using <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>
      * .
      * </p>
@@ -320,8 +320,8 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
      * </ul>
      * 
      * @param newGameSessionProtectionPolicy
-     *        The game session protection policy to apply to all new instances created in this fleet. Instances that
-     *        already exist are not affected. You can set protection for individual instances using <a
+     *        The game session protection policy to apply to all new game sessions created in this fleet. Game sessions
+     *        that already exist are not affected. You can set protection for individual game sessions using <a
      *        href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html"
      *        >UpdateGameSession</a> .</p>
      *        <ul>
@@ -347,8 +347,8 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The game session protection policy to apply to all new instances created in this fleet. Instances that already
-     * exist are not affected. You can set protection for individual instances using <a
+     * The game session protection policy to apply to all new game sessions created in this fleet. Game sessions that
+     * already exist are not affected. You can set protection for individual game sessions using <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>
      * .
      * </p>
@@ -367,8 +367,8 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
      * </ul>
      * 
      * @param newGameSessionProtectionPolicy
-     *        The game session protection policy to apply to all new instances created in this fleet. Instances that
-     *        already exist are not affected. You can set protection for individual instances using <a
+     *        The game session protection policy to apply to all new game sessions created in this fleet. Game sessions
+     *        that already exist are not affected. You can set protection for individual game sessions using <a
      *        href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html"
      *        >UpdateGameSession</a> .</p>
      *        <ul>
@@ -392,8 +392,8 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The game session protection policy to apply to all new instances created in this fleet. Instances that already
-     * exist are not affected. You can set protection for individual instances using <a
+     * The game session protection policy to apply to all new game sessions created in this fleet. Game sessions that
+     * already exist are not affected. You can set protection for individual game sessions using <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>
      * .
      * </p>
@@ -412,8 +412,8 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
      * </ul>
      * 
      * @param newGameSessionProtectionPolicy
-     *        The game session protection policy to apply to all new instances created in this fleet. Instances that
-     *        already exist are not affected. You can set protection for individual instances using <a
+     *        The game session protection policy to apply to all new game sessions created in this fleet. Game sessions
+     *        that already exist are not affected. You can set protection for individual game sessions using <a
      *        href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html"
      *        >UpdateGameSession</a> .</p>
      *        <ul>

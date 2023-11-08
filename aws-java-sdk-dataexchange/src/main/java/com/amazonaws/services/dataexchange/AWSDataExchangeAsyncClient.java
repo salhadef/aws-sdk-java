@@ -788,6 +788,39 @@ public class AWSDataExchangeAsyncClient extends AWSDataExchangeClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<SendDataSetNotificationResult> sendDataSetNotificationAsync(SendDataSetNotificationRequest request) {
+
+        return sendDataSetNotificationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SendDataSetNotificationResult> sendDataSetNotificationAsync(final SendDataSetNotificationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SendDataSetNotificationRequest, SendDataSetNotificationResult> asyncHandler) {
+        final SendDataSetNotificationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SendDataSetNotificationResult>() {
+            @Override
+            public SendDataSetNotificationResult call() throws Exception {
+                SendDataSetNotificationResult result = null;
+
+                try {
+                    result = executeSendDataSetNotification(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StartJobResult> startJobAsync(StartJobRequest request) {
 
         return startJobAsync(request, null);

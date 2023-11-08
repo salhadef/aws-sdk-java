@@ -98,6 +98,12 @@ public class AutoScalingGroupRecommendationOption implements Serializable, Clone
      * </p>
      */
     private String migrationEffort;
+    /**
+     * <p>
+     * Describes the GPU accelerator settings for the recommended instance type of the Auto Scaling group.
+     * </p>
+     */
+    private GpuInfo instanceGpuInfo;
 
     /**
      * <p>
@@ -609,6 +615,46 @@ public class AutoScalingGroupRecommendationOption implements Serializable, Clone
     }
 
     /**
+     * <p>
+     * Describes the GPU accelerator settings for the recommended instance type of the Auto Scaling group.
+     * </p>
+     * 
+     * @param instanceGpuInfo
+     *        Describes the GPU accelerator settings for the recommended instance type of the Auto Scaling group.
+     */
+
+    public void setInstanceGpuInfo(GpuInfo instanceGpuInfo) {
+        this.instanceGpuInfo = instanceGpuInfo;
+    }
+
+    /**
+     * <p>
+     * Describes the GPU accelerator settings for the recommended instance type of the Auto Scaling group.
+     * </p>
+     * 
+     * @return Describes the GPU accelerator settings for the recommended instance type of the Auto Scaling group.
+     */
+
+    public GpuInfo getInstanceGpuInfo() {
+        return this.instanceGpuInfo;
+    }
+
+    /**
+     * <p>
+     * Describes the GPU accelerator settings for the recommended instance type of the Auto Scaling group.
+     * </p>
+     * 
+     * @param instanceGpuInfo
+     *        Describes the GPU accelerator settings for the recommended instance type of the Auto Scaling group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutoScalingGroupRecommendationOption withInstanceGpuInfo(GpuInfo instanceGpuInfo) {
+        setInstanceGpuInfo(instanceGpuInfo);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -631,7 +677,9 @@ public class AutoScalingGroupRecommendationOption implements Serializable, Clone
         if (getSavingsOpportunity() != null)
             sb.append("SavingsOpportunity: ").append(getSavingsOpportunity()).append(",");
         if (getMigrationEffort() != null)
-            sb.append("MigrationEffort: ").append(getMigrationEffort());
+            sb.append("MigrationEffort: ").append(getMigrationEffort()).append(",");
+        if (getInstanceGpuInfo() != null)
+            sb.append("InstanceGpuInfo: ").append(getInstanceGpuInfo());
         sb.append("}");
         return sb.toString();
     }
@@ -670,6 +718,10 @@ public class AutoScalingGroupRecommendationOption implements Serializable, Clone
             return false;
         if (other.getMigrationEffort() != null && other.getMigrationEffort().equals(this.getMigrationEffort()) == false)
             return false;
+        if (other.getInstanceGpuInfo() == null ^ this.getInstanceGpuInfo() == null)
+            return false;
+        if (other.getInstanceGpuInfo() != null && other.getInstanceGpuInfo().equals(this.getInstanceGpuInfo()) == false)
+            return false;
         return true;
     }
 
@@ -684,6 +736,7 @@ public class AutoScalingGroupRecommendationOption implements Serializable, Clone
         hashCode = prime * hashCode + ((getRank() == null) ? 0 : getRank().hashCode());
         hashCode = prime * hashCode + ((getSavingsOpportunity() == null) ? 0 : getSavingsOpportunity().hashCode());
         hashCode = prime * hashCode + ((getMigrationEffort() == null) ? 0 : getMigrationEffort().hashCode());
+        hashCode = prime * hashCode + ((getInstanceGpuInfo() == null) ? 0 : getInstanceGpuInfo().hashCode());
         return hashCode;
     }
 

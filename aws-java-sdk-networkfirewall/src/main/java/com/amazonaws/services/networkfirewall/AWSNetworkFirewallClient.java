@@ -44,6 +44,7 @@ import com.amazonaws.services.networkfirewall.AWSNetworkFirewallClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.networkfirewall.model.*;
+
 import com.amazonaws.services.networkfirewall.model.transform.*;
 
 /**
@@ -299,7 +300,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      *         </p>
      *         </li>
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws ResourceNotFoundException
      *         Unable to locate a resource using the parameters that you provided.
@@ -393,7 +394,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      *         </p>
      *         </li>
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws ResourceNotFoundException
      *         Unable to locate a resource using the parameters that you provided.
@@ -503,7 +504,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      * @throws LimitExceededException
      *         Unable to perform the operation because doing so would violate a limit setting.
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws ThrottlingException
      *         Unable to process the request due to throttling limitations.
@@ -596,7 +597,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      * @throws ThrottlingException
      *         Unable to process the request due to throttling limitations.
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws InsufficientCapacityException
      *         Amazon Web Services doesn't currently have enough available capacity to fulfill your request. Try your
@@ -685,7 +686,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      * @throws ThrottlingException
      *         Unable to process the request due to throttling limitations.
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws InsufficientCapacityException
      *         Amazon Web Services doesn't currently have enough available capacity to fulfill your request. Try your
@@ -740,11 +741,12 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
 
     /**
      * <p>
-     * Creates an Network Firewall TLS inspection configuration. A TLS inspection configuration contains the Certificate
-     * Manager certificate references that Network Firewall uses to decrypt and re-encrypt inbound traffic.
+     * Creates an Network Firewall TLS inspection configuration. A TLS inspection configuration contains Certificate
+     * Manager certificate associations between and the scope configurations that Network Firewall uses to decrypt and
+     * re-encrypt traffic traveling through your firewall.
      * </p>
      * <p>
-     * After you create a TLS inspection configuration, you associate it with a firewall policy.
+     * After you create a TLS inspection configuration, you can associate it with a new firewall policy.
      * </p>
      * <p>
      * To update the settings for a TLS inspection configuration, use <a>UpdateTLSInspectionConfiguration</a>.
@@ -759,7 +761,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      * </p>
      * <p>
      * For more information about TLS inspection configurations, see <a
-     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection.html">Decrypting SSL/TLS
+     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection.html">Inspecting SSL/TLS
      * traffic with TLS inspection configurations</a> in the <i>Network Firewall Developer Guide</i>.
      * </p>
      * 
@@ -787,8 +789,13 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      * @throws ThrottlingException
      *         Unable to process the request due to throttling limitations.
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
+     * @throws LimitExceededException
+     *         Unable to perform the operation because doing so would violate a limit setting.
+     * @throws InsufficientCapacityException
+     *         Amazon Web Services doesn't currently have enough available capacity to fulfill your request. Try your
+     *         request later.
      * @sample AWSNetworkFirewall.CreateTLSInspectionConfiguration
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateTLSInspectionConfiguration"
@@ -880,7 +887,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      *         </p>
      *         </li>
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws ResourceNotFoundException
      *         Unable to locate a resource using the parameters that you provided.
@@ -970,7 +977,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      * @throws ThrottlingException
      *         Unable to process the request due to throttling limitations.
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws UnsupportedOperationException
      *         The operation you requested isn't supported by Network Firewall.
@@ -1052,7 +1059,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      *         </p>
      *         </li>
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws ResourceNotFoundException
      *         Unable to locate a resource using the parameters that you provided.
@@ -1139,7 +1146,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      * @throws ThrottlingException
      *         Unable to process the request due to throttling limitations.
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws UnsupportedOperationException
      *         The operation you requested isn't supported by Network Firewall.
@@ -1221,7 +1228,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      *         </p>
      *         </li>
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws ResourceNotFoundException
      *         Unable to locate a resource using the parameters that you provided.
@@ -1309,7 +1316,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      *         </p>
      *         </li>
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws ResourceNotFoundException
      *         Unable to locate a resource using the parameters that you provided.
@@ -1394,7 +1401,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      * @throws ThrottlingException
      *         Unable to process the request due to throttling limitations.
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @sample AWSNetworkFirewall.DescribeFirewallPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeFirewallPolicy"
@@ -1472,7 +1479,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      *         </p>
      *         </li>
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws ResourceNotFoundException
      *         Unable to locate a resource using the parameters that you provided.
@@ -1555,7 +1562,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      *         </p>
      *         </li>
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws ResourceNotFoundException
      *         Unable to locate a resource using the parameters that you provided.
@@ -1641,7 +1648,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      * @throws ThrottlingException
      *         Unable to process the request due to throttling limitations.
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @sample AWSNetworkFirewall.DescribeRuleGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeRuleGroup"
@@ -1724,7 +1731,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      * @throws ThrottlingException
      *         Unable to process the request due to throttling limitations.
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @sample AWSNetworkFirewall.DescribeRuleGroupMetadata
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeRuleGroupMetadata"
@@ -1803,7 +1810,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      *         </p>
      *         </li>
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws ResourceNotFoundException
      *         Unable to locate a resource using the parameters that you provided.
@@ -1889,7 +1896,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      *         </p>
      *         </li>
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws ResourceNotFoundException
      *         Unable to locate a resource using the parameters that you provided.
@@ -1978,7 +1985,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      * @throws ThrottlingException
      *         Unable to process the request due to throttling limitations.
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @sample AWSNetworkFirewall.ListFirewallPolicies
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListFirewallPolicies"
@@ -2060,7 +2067,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      *         </p>
      *         </li>
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws ThrottlingException
      *         Unable to process the request due to throttling limitations.
@@ -2142,7 +2149,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      * @throws ThrottlingException
      *         Unable to process the request due to throttling limitations.
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @sample AWSNetworkFirewall.ListRuleGroups
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListRuleGroups"
@@ -2220,7 +2227,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      *         </p>
      *         </li>
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws ThrottlingException
      *         Unable to process the request due to throttling limitations.
@@ -2292,7 +2299,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      * @throws ThrottlingException
      *         Unable to process the request due to throttling limitations.
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws ResourceNotFoundException
      *         Unable to locate a resource using the parameters that you provided.
@@ -2419,7 +2426,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      *         </p>
      *         </li>
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws ResourceNotFoundException
      *         Unable to locate a resource using the parameters that you provided.
@@ -2492,7 +2499,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      * @throws ThrottlingException
      *         Unable to process the request due to throttling limitations.
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws ResourceNotFoundException
      *         Unable to locate a resource using the parameters that you provided.
@@ -2580,7 +2587,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      * @throws ThrottlingException
      *         Unable to process the request due to throttling limitations.
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws ResourceNotFoundException
      *         Unable to locate a resource using the parameters that you provided.
@@ -2680,7 +2687,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      *         </p>
      *         </li>
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws ResourceNotFoundException
      *         Unable to locate a resource using the parameters that you provided.
@@ -2768,7 +2775,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      *         </p>
      *         </li>
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws ResourceNotFoundException
      *         Unable to locate a resource using the parameters that you provided.
@@ -2853,7 +2860,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      *         </p>
      *         </li>
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws ResourceNotFoundException
      *         Unable to locate a resource using the parameters that you provided.
@@ -2946,7 +2953,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      * @throws ThrottlingException
      *         Unable to process the request due to throttling limitations.
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws InvalidTokenException
      *         The token you provided is stale or isn't valid for the operation.
@@ -3027,7 +3034,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      *         </p>
      *         </li>
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws ResourceNotFoundException
      *         Unable to locate a resource using the parameters that you provided.
@@ -3149,7 +3156,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      *         </p>
      *         </li>
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws ResourceNotFoundException
      *         Unable to locate a resource using the parameters that you provided.
@@ -3245,7 +3252,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      * @throws ThrottlingException
      *         Unable to process the request due to throttling limitations.
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws InvalidTokenException
      *         The token you provided is stale or isn't valid for the operation.
@@ -3323,7 +3330,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      *         </p>
      *         </li>
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws ResourceNotFoundException
      *         Unable to locate a resource using the parameters that you provided.
@@ -3386,7 +3393,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
     /**
      * <p>
      * Updates the TLS inspection configuration settings for the specified TLS inspection configuration. You use a TLS
-     * inspection configuration by reference in one or more firewall policies. When you modify a TLS inspection
+     * inspection configuration by referencing it in one or more firewall policies. When you modify a TLS inspection
      * configuration, you modify all firewall policies that use the TLS inspection configuration.
      * </p>
      * <p>
@@ -3421,7 +3428,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      * @throws ThrottlingException
      *         Unable to process the request due to throttling limitations.
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws InvalidTokenException
      *         The token you provided is stale or isn't valid for the operation.

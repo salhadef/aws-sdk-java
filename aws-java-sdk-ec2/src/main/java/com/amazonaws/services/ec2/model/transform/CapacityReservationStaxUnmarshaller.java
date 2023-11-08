@@ -170,6 +170,10 @@ public class CapacityReservationStaxUnmarshaller implements Unmarshaller<Capacit
                     continue;
                 }
 
+                if (context.testExpression("reservationType", targetDepth)) {
+                    capacityReservation.setReservationType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return capacityReservation;

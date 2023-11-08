@@ -149,6 +149,12 @@ public class JobJsonUnmarshaller implements Unmarshaller<Job, JsonUnmarshallerCo
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("destinationPackageVersions", targetDepth)) {
+                    context.nextToken();
+                    job.setDestinationPackageVersions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

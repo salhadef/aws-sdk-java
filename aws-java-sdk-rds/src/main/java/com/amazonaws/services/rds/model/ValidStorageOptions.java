@@ -54,7 +54,8 @@ public class ValidStorageOptions implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<DoubleRange> iopsToStorageRatio;
     /**
      * <p>
-     * Whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance class.
+     * Indicates whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance
+     * class.
      * </p>
      */
     private Boolean supportsStorageAutoscaling;
@@ -340,12 +341,13 @@ public class ValidStorageOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance class.
+     * Indicates whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance
+     * class.
      * </p>
      * 
      * @param supportsStorageAutoscaling
-     *        Whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance
-     *        class.
+     *        Indicates whether or not Amazon RDS can automatically scale storage for DB instances that use the new
+     *        instance class.
      */
 
     public void setSupportsStorageAutoscaling(Boolean supportsStorageAutoscaling) {
@@ -354,11 +356,12 @@ public class ValidStorageOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance class.
+     * Indicates whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance
+     * class.
      * </p>
      * 
-     * @return Whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance
-     *         class.
+     * @return Indicates whether or not Amazon RDS can automatically scale storage for DB instances that use the new
+     *         instance class.
      */
 
     public Boolean getSupportsStorageAutoscaling() {
@@ -367,12 +370,13 @@ public class ValidStorageOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance class.
+     * Indicates whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance
+     * class.
      * </p>
      * 
      * @param supportsStorageAutoscaling
-     *        Whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance
-     *        class.
+     *        Indicates whether or not Amazon RDS can automatically scale storage for DB instances that use the new
+     *        instance class.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -383,11 +387,12 @@ public class ValidStorageOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance class.
+     * Indicates whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance
+     * class.
      * </p>
      * 
-     * @return Whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance
-     *         class.
+     * @return Indicates whether or not Amazon RDS can automatically scale storage for DB instances that use the new
+     *         instance class.
      */
 
     public Boolean isSupportsStorageAutoscaling() {

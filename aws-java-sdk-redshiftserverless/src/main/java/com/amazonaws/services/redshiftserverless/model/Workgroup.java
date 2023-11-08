@@ -54,6 +54,24 @@ public class Workgroup implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date creationDate;
     /**
      * <p>
+     * The custom domain name’s certificate Amazon resource name (ARN).
+     * </p>
+     */
+    private String customDomainCertificateArn;
+    /**
+     * <p>
+     * The expiration time for the certificate.
+     * </p>
+     */
+    private java.util.Date customDomainCertificateExpiryTime;
+    /**
+     * <p>
+     * The custom domain name associated with the workgroup.
+     * </p>
+     */
+    private String customDomainName;
+    /**
+     * <p>
      * The endpoint that is created from the workgroup.
      * </p>
      */
@@ -67,10 +85,25 @@ public class Workgroup implements Serializable, Cloneable, StructuredPojo {
     private Boolean enhancedVpcRouting;
     /**
      * <p>
+     * The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve queries. The max capacity is
+     * specified in RPUs.
+     * </p>
+     */
+    private Integer maxCapacity;
+    /**
+     * <p>
      * The namespace the workgroup is associated with.
      * </p>
      */
     private String namespaceName;
+    /**
+     * <p>
+     * The patch version of your Amazon Redshift Serverless workgroup. For more information about patch versions, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster versions for Amazon
+     * Redshift</a>.
+     * </p>
+     */
+    private String patchVersion;
     /**
      * <p>
      * The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default
@@ -120,6 +153,14 @@ public class Workgroup implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String workgroupName;
+    /**
+     * <p>
+     * The Amazon Redshift Serverless version of your workgroup. For more information about Amazon Redshift Serverless
+     * versions, see<a href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster versions
+     * for Amazon Redshift</a>.
+     * </p>
+     */
+    private String workgroupVersion;
 
     /**
      * <p>
@@ -321,6 +362,126 @@ public class Workgroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The custom domain name’s certificate Amazon resource name (ARN).
+     * </p>
+     * 
+     * @param customDomainCertificateArn
+     *        The custom domain name’s certificate Amazon resource name (ARN).
+     */
+
+    public void setCustomDomainCertificateArn(String customDomainCertificateArn) {
+        this.customDomainCertificateArn = customDomainCertificateArn;
+    }
+
+    /**
+     * <p>
+     * The custom domain name’s certificate Amazon resource name (ARN).
+     * </p>
+     * 
+     * @return The custom domain name’s certificate Amazon resource name (ARN).
+     */
+
+    public String getCustomDomainCertificateArn() {
+        return this.customDomainCertificateArn;
+    }
+
+    /**
+     * <p>
+     * The custom domain name’s certificate Amazon resource name (ARN).
+     * </p>
+     * 
+     * @param customDomainCertificateArn
+     *        The custom domain name’s certificate Amazon resource name (ARN).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Workgroup withCustomDomainCertificateArn(String customDomainCertificateArn) {
+        setCustomDomainCertificateArn(customDomainCertificateArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The expiration time for the certificate.
+     * </p>
+     * 
+     * @param customDomainCertificateExpiryTime
+     *        The expiration time for the certificate.
+     */
+
+    public void setCustomDomainCertificateExpiryTime(java.util.Date customDomainCertificateExpiryTime) {
+        this.customDomainCertificateExpiryTime = customDomainCertificateExpiryTime;
+    }
+
+    /**
+     * <p>
+     * The expiration time for the certificate.
+     * </p>
+     * 
+     * @return The expiration time for the certificate.
+     */
+
+    public java.util.Date getCustomDomainCertificateExpiryTime() {
+        return this.customDomainCertificateExpiryTime;
+    }
+
+    /**
+     * <p>
+     * The expiration time for the certificate.
+     * </p>
+     * 
+     * @param customDomainCertificateExpiryTime
+     *        The expiration time for the certificate.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Workgroup withCustomDomainCertificateExpiryTime(java.util.Date customDomainCertificateExpiryTime) {
+        setCustomDomainCertificateExpiryTime(customDomainCertificateExpiryTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The custom domain name associated with the workgroup.
+     * </p>
+     * 
+     * @param customDomainName
+     *        The custom domain name associated with the workgroup.
+     */
+
+    public void setCustomDomainName(String customDomainName) {
+        this.customDomainName = customDomainName;
+    }
+
+    /**
+     * <p>
+     * The custom domain name associated with the workgroup.
+     * </p>
+     * 
+     * @return The custom domain name associated with the workgroup.
+     */
+
+    public String getCustomDomainName() {
+        return this.customDomainName;
+    }
+
+    /**
+     * <p>
+     * The custom domain name associated with the workgroup.
+     * </p>
+     * 
+     * @param customDomainName
+     *        The custom domain name associated with the workgroup.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Workgroup withCustomDomainName(String customDomainName) {
+        setCustomDomainName(customDomainName);
+        return this;
+    }
+
+    /**
+     * <p>
      * The endpoint that is created from the workgroup.
      * </p>
      * 
@@ -421,6 +582,52 @@ public class Workgroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve queries. The max capacity is
+     * specified in RPUs.
+     * </p>
+     * 
+     * @param maxCapacity
+     *        The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve queries. The max capacity is
+     *        specified in RPUs.
+     */
+
+    public void setMaxCapacity(Integer maxCapacity) {
+        this.maxCapacity = maxCapacity;
+    }
+
+    /**
+     * <p>
+     * The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve queries. The max capacity is
+     * specified in RPUs.
+     * </p>
+     * 
+     * @return The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve queries. The max capacity is
+     *         specified in RPUs.
+     */
+
+    public Integer getMaxCapacity() {
+        return this.maxCapacity;
+    }
+
+    /**
+     * <p>
+     * The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve queries. The max capacity is
+     * specified in RPUs.
+     * </p>
+     * 
+     * @param maxCapacity
+     *        The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve queries. The max capacity is
+     *        specified in RPUs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Workgroup withMaxCapacity(Integer maxCapacity) {
+        setMaxCapacity(maxCapacity);
+        return this;
+    }
+
+    /**
+     * <p>
      * The namespace the workgroup is associated with.
      * </p>
      * 
@@ -456,6 +663,58 @@ public class Workgroup implements Serializable, Cloneable, StructuredPojo {
 
     public Workgroup withNamespaceName(String namespaceName) {
         setNamespaceName(namespaceName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The patch version of your Amazon Redshift Serverless workgroup. For more information about patch versions, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster versions for Amazon
+     * Redshift</a>.
+     * </p>
+     * 
+     * @param patchVersion
+     *        The patch version of your Amazon Redshift Serverless workgroup. For more information about patch versions,
+     *        see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster versions for
+     *        Amazon Redshift</a>.
+     */
+
+    public void setPatchVersion(String patchVersion) {
+        this.patchVersion = patchVersion;
+    }
+
+    /**
+     * <p>
+     * The patch version of your Amazon Redshift Serverless workgroup. For more information about patch versions, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster versions for Amazon
+     * Redshift</a>.
+     * </p>
+     * 
+     * @return The patch version of your Amazon Redshift Serverless workgroup. For more information about patch
+     *         versions, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster
+     *         versions for Amazon Redshift</a>.
+     */
+
+    public String getPatchVersion() {
+        return this.patchVersion;
+    }
+
+    /**
+     * <p>
+     * The patch version of your Amazon Redshift Serverless workgroup. For more information about patch versions, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster versions for Amazon
+     * Redshift</a>.
+     * </p>
+     * 
+     * @param patchVersion
+     *        The patch version of your Amazon Redshift Serverless workgroup. For more information about patch versions,
+     *        see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster versions for
+     *        Amazon Redshift</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Workgroup withPatchVersion(String patchVersion) {
+        setPatchVersion(patchVersion);
         return this;
     }
 
@@ -877,6 +1136,61 @@ public class Workgroup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The Amazon Redshift Serverless version of your workgroup. For more information about Amazon Redshift Serverless
+     * versions, see<a href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster versions
+     * for Amazon Redshift</a>.
+     * </p>
+     * 
+     * @param workgroupVersion
+     *        The Amazon Redshift Serverless version of your workgroup. For more information about Amazon Redshift
+     *        Serverless versions, see<a
+     *        href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster versions for Amazon
+     *        Redshift</a>.
+     */
+
+    public void setWorkgroupVersion(String workgroupVersion) {
+        this.workgroupVersion = workgroupVersion;
+    }
+
+    /**
+     * <p>
+     * The Amazon Redshift Serverless version of your workgroup. For more information about Amazon Redshift Serverless
+     * versions, see<a href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster versions
+     * for Amazon Redshift</a>.
+     * </p>
+     * 
+     * @return The Amazon Redshift Serverless version of your workgroup. For more information about Amazon Redshift
+     *         Serverless versions, see<a
+     *         href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster versions for Amazon
+     *         Redshift</a>.
+     */
+
+    public String getWorkgroupVersion() {
+        return this.workgroupVersion;
+    }
+
+    /**
+     * <p>
+     * The Amazon Redshift Serverless version of your workgroup. For more information about Amazon Redshift Serverless
+     * versions, see<a href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster versions
+     * for Amazon Redshift</a>.
+     * </p>
+     * 
+     * @param workgroupVersion
+     *        The Amazon Redshift Serverless version of your workgroup. For more information about Amazon Redshift
+     *        Serverless versions, see<a
+     *        href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster versions for Amazon
+     *        Redshift</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Workgroup withWorkgroupVersion(String workgroupVersion) {
+        setWorkgroupVersion(workgroupVersion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -894,12 +1208,22 @@ public class Workgroup implements Serializable, Cloneable, StructuredPojo {
             sb.append("ConfigParameters: ").append(getConfigParameters()).append(",");
         if (getCreationDate() != null)
             sb.append("CreationDate: ").append(getCreationDate()).append(",");
+        if (getCustomDomainCertificateArn() != null)
+            sb.append("CustomDomainCertificateArn: ").append(getCustomDomainCertificateArn()).append(",");
+        if (getCustomDomainCertificateExpiryTime() != null)
+            sb.append("CustomDomainCertificateExpiryTime: ").append(getCustomDomainCertificateExpiryTime()).append(",");
+        if (getCustomDomainName() != null)
+            sb.append("CustomDomainName: ").append(getCustomDomainName()).append(",");
         if (getEndpoint() != null)
             sb.append("Endpoint: ").append(getEndpoint()).append(",");
         if (getEnhancedVpcRouting() != null)
             sb.append("EnhancedVpcRouting: ").append(getEnhancedVpcRouting()).append(",");
+        if (getMaxCapacity() != null)
+            sb.append("MaxCapacity: ").append(getMaxCapacity()).append(",");
         if (getNamespaceName() != null)
             sb.append("NamespaceName: ").append(getNamespaceName()).append(",");
+        if (getPatchVersion() != null)
+            sb.append("PatchVersion: ").append(getPatchVersion()).append(",");
         if (getPort() != null)
             sb.append("Port: ").append(getPort()).append(",");
         if (getPubliclyAccessible() != null)
@@ -915,7 +1239,9 @@ public class Workgroup implements Serializable, Cloneable, StructuredPojo {
         if (getWorkgroupId() != null)
             sb.append("WorkgroupId: ").append(getWorkgroupId()).append(",");
         if (getWorkgroupName() != null)
-            sb.append("WorkgroupName: ").append(getWorkgroupName());
+            sb.append("WorkgroupName: ").append(getWorkgroupName()).append(",");
+        if (getWorkgroupVersion() != null)
+            sb.append("WorkgroupVersion: ").append(getWorkgroupVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -942,6 +1268,19 @@ public class Workgroup implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCreationDate() != null && other.getCreationDate().equals(this.getCreationDate()) == false)
             return false;
+        if (other.getCustomDomainCertificateArn() == null ^ this.getCustomDomainCertificateArn() == null)
+            return false;
+        if (other.getCustomDomainCertificateArn() != null && other.getCustomDomainCertificateArn().equals(this.getCustomDomainCertificateArn()) == false)
+            return false;
+        if (other.getCustomDomainCertificateExpiryTime() == null ^ this.getCustomDomainCertificateExpiryTime() == null)
+            return false;
+        if (other.getCustomDomainCertificateExpiryTime() != null
+                && other.getCustomDomainCertificateExpiryTime().equals(this.getCustomDomainCertificateExpiryTime()) == false)
+            return false;
+        if (other.getCustomDomainName() == null ^ this.getCustomDomainName() == null)
+            return false;
+        if (other.getCustomDomainName() != null && other.getCustomDomainName().equals(this.getCustomDomainName()) == false)
+            return false;
         if (other.getEndpoint() == null ^ this.getEndpoint() == null)
             return false;
         if (other.getEndpoint() != null && other.getEndpoint().equals(this.getEndpoint()) == false)
@@ -950,9 +1289,17 @@ public class Workgroup implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getEnhancedVpcRouting() != null && other.getEnhancedVpcRouting().equals(this.getEnhancedVpcRouting()) == false)
             return false;
+        if (other.getMaxCapacity() == null ^ this.getMaxCapacity() == null)
+            return false;
+        if (other.getMaxCapacity() != null && other.getMaxCapacity().equals(this.getMaxCapacity()) == false)
+            return false;
         if (other.getNamespaceName() == null ^ this.getNamespaceName() == null)
             return false;
         if (other.getNamespaceName() != null && other.getNamespaceName().equals(this.getNamespaceName()) == false)
+            return false;
+        if (other.getPatchVersion() == null ^ this.getPatchVersion() == null)
+            return false;
+        if (other.getPatchVersion() != null && other.getPatchVersion().equals(this.getPatchVersion()) == false)
             return false;
         if (other.getPort() == null ^ this.getPort() == null)
             return false;
@@ -986,6 +1333,10 @@ public class Workgroup implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getWorkgroupName() != null && other.getWorkgroupName().equals(this.getWorkgroupName()) == false)
             return false;
+        if (other.getWorkgroupVersion() == null ^ this.getWorkgroupVersion() == null)
+            return false;
+        if (other.getWorkgroupVersion() != null && other.getWorkgroupVersion().equals(this.getWorkgroupVersion()) == false)
+            return false;
         return true;
     }
 
@@ -997,9 +1348,14 @@ public class Workgroup implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getBaseCapacity() == null) ? 0 : getBaseCapacity().hashCode());
         hashCode = prime * hashCode + ((getConfigParameters() == null) ? 0 : getConfigParameters().hashCode());
         hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
+        hashCode = prime * hashCode + ((getCustomDomainCertificateArn() == null) ? 0 : getCustomDomainCertificateArn().hashCode());
+        hashCode = prime * hashCode + ((getCustomDomainCertificateExpiryTime() == null) ? 0 : getCustomDomainCertificateExpiryTime().hashCode());
+        hashCode = prime * hashCode + ((getCustomDomainName() == null) ? 0 : getCustomDomainName().hashCode());
         hashCode = prime * hashCode + ((getEndpoint() == null) ? 0 : getEndpoint().hashCode());
         hashCode = prime * hashCode + ((getEnhancedVpcRouting() == null) ? 0 : getEnhancedVpcRouting().hashCode());
+        hashCode = prime * hashCode + ((getMaxCapacity() == null) ? 0 : getMaxCapacity().hashCode());
         hashCode = prime * hashCode + ((getNamespaceName() == null) ? 0 : getNamespaceName().hashCode());
+        hashCode = prime * hashCode + ((getPatchVersion() == null) ? 0 : getPatchVersion().hashCode());
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
         hashCode = prime * hashCode + ((getPubliclyAccessible() == null) ? 0 : getPubliclyAccessible().hashCode());
         hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode());
@@ -1008,6 +1364,7 @@ public class Workgroup implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getWorkgroupArn() == null) ? 0 : getWorkgroupArn().hashCode());
         hashCode = prime * hashCode + ((getWorkgroupId() == null) ? 0 : getWorkgroupId().hashCode());
         hashCode = prime * hashCode + ((getWorkgroupName() == null) ? 0 : getWorkgroupName().hashCode());
+        hashCode = prime * hashCode + ((getWorkgroupVersion() == null) ? 0 : getWorkgroupVersion().hashCode());
         return hashCode;
     }
 

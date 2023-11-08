@@ -27,10 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class VariantImportItemDetailMarshaller {
 
-    private static final MarshallingInfo<String> JOBSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("jobStatus").build();
     private static final MarshallingInfo<String> SOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("source").build();
+    private static final MarshallingInfo<String> JOBSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("jobStatus").build();
     private static final MarshallingInfo<String> STATUSMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("statusMessage").build();
 
@@ -50,8 +50,8 @@ public class VariantImportItemDetailMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(variantImportItemDetail.getJobStatus(), JOBSTATUS_BINDING);
             protocolMarshaller.marshall(variantImportItemDetail.getSource(), SOURCE_BINDING);
+            protocolMarshaller.marshall(variantImportItemDetail.getJobStatus(), JOBSTATUS_BINDING);
             protocolMarshaller.marshall(variantImportItemDetail.getStatusMessage(), STATUSMESSAGE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

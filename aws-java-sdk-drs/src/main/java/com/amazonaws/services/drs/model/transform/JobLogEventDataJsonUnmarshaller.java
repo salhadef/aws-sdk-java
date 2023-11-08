@@ -56,6 +56,10 @@ public class JobLogEventDataJsonUnmarshaller implements Unmarshaller<JobLogEvent
                     context.nextToken();
                     jobLogEventData.setConversionServerID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("eventResourceData", targetDepth)) {
+                    context.nextToken();
+                    jobLogEventData.setEventResourceData(EventResourceDataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("rawError", targetDepth)) {
                     context.nextToken();
                     jobLogEventData.setRawError(context.getUnmarshaller(String.class).unmarshall(context));

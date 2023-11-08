@@ -173,6 +173,19 @@ public class AbstractAmazonManagedGrafanaAsync extends AbstractAmazonManagedGraf
     }
 
     @Override
+    public java.util.concurrent.Future<ListVersionsResult> listVersionsAsync(ListVersionsRequest request) {
+
+        return listVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVersionsResult> listVersionsAsync(ListVersionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListVersionsRequest, ListVersionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListWorkspacesResult> listWorkspacesAsync(ListWorkspacesRequest request) {
 
         return listWorkspacesAsync(request, null);

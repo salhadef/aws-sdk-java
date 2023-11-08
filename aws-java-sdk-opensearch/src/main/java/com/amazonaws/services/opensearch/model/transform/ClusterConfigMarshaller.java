@@ -49,6 +49,8 @@ public class ClusterConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WarmCount").build();
     private static final MarshallingInfo<StructuredPojo> COLDSTORAGEOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ColdStorageOptions").build();
+    private static final MarshallingInfo<Boolean> MULTIAZWITHSTANDBYENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MultiAZWithStandbyEnabled").build();
 
     private static final ClusterConfigMarshaller instance = new ClusterConfigMarshaller();
 
@@ -77,6 +79,7 @@ public class ClusterConfigMarshaller {
             protocolMarshaller.marshall(clusterConfig.getWarmType(), WARMTYPE_BINDING);
             protocolMarshaller.marshall(clusterConfig.getWarmCount(), WARMCOUNT_BINDING);
             protocolMarshaller.marshall(clusterConfig.getColdStorageOptions(), COLDSTORAGEOPTIONS_BINDING);
+            protocolMarshaller.marshall(clusterConfig.getMultiAZWithStandbyEnabled(), MULTIAZWITHSTANDBYENABLED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -57,6 +57,8 @@ public class DestinationParameterValueConfiguration implements Serializable, Clo
      */
     private String sourceField;
 
+    private ColumnIdentifier sourceColumn;
+
     /**
      * <p>
      * The configuration of custom values for destination parameter in
@@ -243,6 +245,32 @@ public class DestinationParameterValueConfiguration implements Serializable, Clo
     }
 
     /**
+     * @param sourceColumn
+     */
+
+    public void setSourceColumn(ColumnIdentifier sourceColumn) {
+        this.sourceColumn = sourceColumn;
+    }
+
+    /**
+     * @return
+     */
+
+    public ColumnIdentifier getSourceColumn() {
+        return this.sourceColumn;
+    }
+
+    /**
+     * @param sourceColumn
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DestinationParameterValueConfiguration withSourceColumn(ColumnIdentifier sourceColumn) {
+        setSourceColumn(sourceColumn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -261,7 +289,9 @@ public class DestinationParameterValueConfiguration implements Serializable, Clo
         if (getSourceParameterName() != null)
             sb.append("SourceParameterName: ").append(getSourceParameterName()).append(",");
         if (getSourceField() != null)
-            sb.append("SourceField: ").append(getSourceField());
+            sb.append("SourceField: ").append(getSourceField()).append(",");
+        if (getSourceColumn() != null)
+            sb.append("SourceColumn: ").append(getSourceColumn());
         sb.append("}");
         return sb.toString();
     }
@@ -292,6 +322,10 @@ public class DestinationParameterValueConfiguration implements Serializable, Clo
             return false;
         if (other.getSourceField() != null && other.getSourceField().equals(this.getSourceField()) == false)
             return false;
+        if (other.getSourceColumn() == null ^ this.getSourceColumn() == null)
+            return false;
+        if (other.getSourceColumn() != null && other.getSourceColumn().equals(this.getSourceColumn()) == false)
+            return false;
         return true;
     }
 
@@ -304,6 +338,7 @@ public class DestinationParameterValueConfiguration implements Serializable, Clo
         hashCode = prime * hashCode + ((getSelectAllValueOptions() == null) ? 0 : getSelectAllValueOptions().hashCode());
         hashCode = prime * hashCode + ((getSourceParameterName() == null) ? 0 : getSourceParameterName().hashCode());
         hashCode = prime * hashCode + ((getSourceField() == null) ? 0 : getSourceField().hashCode());
+        hashCode = prime * hashCode + ((getSourceColumn() == null) ? 0 : getSourceColumn().hashCode());
         return hashCode;
     }
 

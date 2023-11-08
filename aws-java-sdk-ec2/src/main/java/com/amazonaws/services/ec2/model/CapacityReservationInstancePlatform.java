@@ -36,7 +36,8 @@ public enum CapacityReservationInstancePlatform {
     RHELWithSQLServerWeb("RHEL with SQL Server Web"),
     RHELWithHA("RHEL with HA"),
     RHELWithHAAndSQLServerStandard("RHEL with HA and SQL Server Standard"),
-    RHELWithHAAndSQLServerEnterprise("RHEL with HA and SQL Server Enterprise");
+    RHELWithHAAndSQLServerEnterprise("RHEL with HA and SQL Server Enterprise"),
+    UbuntuPro("Ubuntu Pro");
 
     private String value;
 

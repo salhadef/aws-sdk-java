@@ -19,12 +19,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Configures the associated Certificate Manager Secure Sockets Layer/Transport Layer Security (SSL/TLS) server
- * certificates and scope settings Network Firewall uses to decrypt traffic in a <a>TLSInspectionConfiguration</a>. For
- * information about working with SSL/TLS certificates for TLS inspection, see <a href=
+ * Configures the Certificate Manager certificates and scope that Network Firewall uses to decrypt and re-encrypt
+ * traffic using a <a>TLSInspectionConfiguration</a>. You can configure <code>ServerCertificates</code> for inbound
+ * SSL/TLS inspection, a <code>CertificateAuthorityArn</code> for outbound SSL/TLS inspection, or both. For information
+ * about working with certificates for TLS inspection, see <a href=
  * "https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection-certificate-requirements.html">
- * Requirements for using SSL/TLS server certficiates with TLS inspection configurations</a> in the <i>Network Firewall
- * Developer Guide</i>.
+ * Using SSL/TLS server certficiates with TLS inspection configurations</a> in the <i>Network Firewall Developer
+ * Guide</i>.
  * </p>
  * <note>
  * <p>
@@ -41,23 +42,65 @@ public class ServerCertificateConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The list of a server certificate configuration's Certificate Manager SSL/TLS certificates.
+     * The list of server certificates to use for inbound SSL/TLS inspection.
      * </p>
      */
     private java.util.List<ServerCertificate> serverCertificates;
     /**
      * <p>
-     * A list of a server certificate configuration's scopes.
+     * A list of scopes.
      * </p>
      */
     private java.util.List<ServerCertificateScope> scopes;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the imported certificate authority (CA) certificate within Certificate Manager
+     * (ACM) to use for outbound SSL/TLS inspection.
+     * </p>
+     * <p>
+     * The following limitations apply:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You can use CA certificates that you imported into ACM, but you can't generate CA certificates with ACM.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can't use certificates issued by Private Certificate Authority.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about configuring certificates for outbound inspection, see <a href=
+     * "https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection-certificate-requirements.html"
+     * >Using SSL/TLS certificates with certificates with TLS inspection configurations</a> in the <i>Network Firewall
+     * Developer Guide</i>.
+     * </p>
+     * <p>
+     * For information about working with certificates in ACM, see <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates</a> in the
+     * <i>Certificate Manager User Guide</i>.
+     * </p>
+     */
+    private String certificateAuthorityArn;
+    /**
+     * <p>
+     * When enabled, Network Firewall checks if the server certificate presented by the server in the SSL/TLS connection
+     * has a revoked or unkown status. If the certificate has an unknown or revoked status, you must specify the actions
+     * that Network Firewall takes on outbound traffic. To check the certificate revocation status, you must also
+     * specify a <code>CertificateAuthorityArn</code> in <a>ServerCertificateConfiguration</a>.
+     * </p>
+     */
+    private CheckCertificateRevocationStatusActions checkCertificateRevocationStatus;
 
     /**
      * <p>
-     * The list of a server certificate configuration's Certificate Manager SSL/TLS certificates.
+     * The list of server certificates to use for inbound SSL/TLS inspection.
      * </p>
      * 
-     * @return The list of a server certificate configuration's Certificate Manager SSL/TLS certificates.
+     * @return The list of server certificates to use for inbound SSL/TLS inspection.
      */
 
     public java.util.List<ServerCertificate> getServerCertificates() {
@@ -66,11 +109,11 @@ public class ServerCertificateConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The list of a server certificate configuration's Certificate Manager SSL/TLS certificates.
+     * The list of server certificates to use for inbound SSL/TLS inspection.
      * </p>
      * 
      * @param serverCertificates
-     *        The list of a server certificate configuration's Certificate Manager SSL/TLS certificates.
+     *        The list of server certificates to use for inbound SSL/TLS inspection.
      */
 
     public void setServerCertificates(java.util.Collection<ServerCertificate> serverCertificates) {
@@ -84,7 +127,7 @@ public class ServerCertificateConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The list of a server certificate configuration's Certificate Manager SSL/TLS certificates.
+     * The list of server certificates to use for inbound SSL/TLS inspection.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -93,7 +136,7 @@ public class ServerCertificateConfiguration implements Serializable, Cloneable, 
      * </p>
      * 
      * @param serverCertificates
-     *        The list of a server certificate configuration's Certificate Manager SSL/TLS certificates.
+     *        The list of server certificates to use for inbound SSL/TLS inspection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -109,11 +152,11 @@ public class ServerCertificateConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The list of a server certificate configuration's Certificate Manager SSL/TLS certificates.
+     * The list of server certificates to use for inbound SSL/TLS inspection.
      * </p>
      * 
      * @param serverCertificates
-     *        The list of a server certificate configuration's Certificate Manager SSL/TLS certificates.
+     *        The list of server certificates to use for inbound SSL/TLS inspection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -124,10 +167,10 @@ public class ServerCertificateConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * A list of a server certificate configuration's scopes.
+     * A list of scopes.
      * </p>
      * 
-     * @return A list of a server certificate configuration's scopes.
+     * @return A list of scopes.
      */
 
     public java.util.List<ServerCertificateScope> getScopes() {
@@ -136,11 +179,11 @@ public class ServerCertificateConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * A list of a server certificate configuration's scopes.
+     * A list of scopes.
      * </p>
      * 
      * @param scopes
-     *        A list of a server certificate configuration's scopes.
+     *        A list of scopes.
      */
 
     public void setScopes(java.util.Collection<ServerCertificateScope> scopes) {
@@ -154,7 +197,7 @@ public class ServerCertificateConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * A list of a server certificate configuration's scopes.
+     * A list of scopes.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -163,7 +206,7 @@ public class ServerCertificateConfiguration implements Serializable, Cloneable, 
      * </p>
      * 
      * @param scopes
-     *        A list of a server certificate configuration's scopes.
+     *        A list of scopes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,16 +222,276 @@ public class ServerCertificateConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * A list of a server certificate configuration's scopes.
+     * A list of scopes.
      * </p>
      * 
      * @param scopes
-     *        A list of a server certificate configuration's scopes.
+     *        A list of scopes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ServerCertificateConfiguration withScopes(java.util.Collection<ServerCertificateScope> scopes) {
         setScopes(scopes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the imported certificate authority (CA) certificate within Certificate Manager
+     * (ACM) to use for outbound SSL/TLS inspection.
+     * </p>
+     * <p>
+     * The following limitations apply:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You can use CA certificates that you imported into ACM, but you can't generate CA certificates with ACM.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can't use certificates issued by Private Certificate Authority.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about configuring certificates for outbound inspection, see <a href=
+     * "https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection-certificate-requirements.html"
+     * >Using SSL/TLS certificates with certificates with TLS inspection configurations</a> in the <i>Network Firewall
+     * Developer Guide</i>.
+     * </p>
+     * <p>
+     * For information about working with certificates in ACM, see <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates</a> in the
+     * <i>Certificate Manager User Guide</i>.
+     * </p>
+     * 
+     * @param certificateAuthorityArn
+     *        The Amazon Resource Name (ARN) of the imported certificate authority (CA) certificate within Certificate
+     *        Manager (ACM) to use for outbound SSL/TLS inspection.</p>
+     *        <p>
+     *        The following limitations apply:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        You can use CA certificates that you imported into ACM, but you can't generate CA certificates with ACM.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        You can't use certificates issued by Private Certificate Authority.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information about configuring certificates for outbound inspection, see <a href=
+     *        "https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection-certificate-requirements.html"
+     *        >Using SSL/TLS certificates with certificates with TLS inspection configurations</a> in the <i>Network
+     *        Firewall Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        For information about working with certificates in ACM, see <a
+     *        href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates</a>
+     *        in the <i>Certificate Manager User Guide</i>.
+     */
+
+    public void setCertificateAuthorityArn(String certificateAuthorityArn) {
+        this.certificateAuthorityArn = certificateAuthorityArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the imported certificate authority (CA) certificate within Certificate Manager
+     * (ACM) to use for outbound SSL/TLS inspection.
+     * </p>
+     * <p>
+     * The following limitations apply:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You can use CA certificates that you imported into ACM, but you can't generate CA certificates with ACM.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can't use certificates issued by Private Certificate Authority.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about configuring certificates for outbound inspection, see <a href=
+     * "https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection-certificate-requirements.html"
+     * >Using SSL/TLS certificates with certificates with TLS inspection configurations</a> in the <i>Network Firewall
+     * Developer Guide</i>.
+     * </p>
+     * <p>
+     * For information about working with certificates in ACM, see <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates</a> in the
+     * <i>Certificate Manager User Guide</i>.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the imported certificate authority (CA) certificate within Certificate
+     *         Manager (ACM) to use for outbound SSL/TLS inspection.</p>
+     *         <p>
+     *         The following limitations apply:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You can use CA certificates that you imported into ACM, but you can't generate CA certificates with ACM.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You can't use certificates issued by Private Certificate Authority.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For more information about configuring certificates for outbound inspection, see <a href=
+     *         "https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection-certificate-requirements.html"
+     *         >Using SSL/TLS certificates with certificates with TLS inspection configurations</a> in the <i>Network
+     *         Firewall Developer Guide</i>.
+     *         </p>
+     *         <p>
+     *         For information about working with certificates in ACM, see <a
+     *         href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
+     *         certificates</a> in the <i>Certificate Manager User Guide</i>.
+     */
+
+    public String getCertificateAuthorityArn() {
+        return this.certificateAuthorityArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the imported certificate authority (CA) certificate within Certificate Manager
+     * (ACM) to use for outbound SSL/TLS inspection.
+     * </p>
+     * <p>
+     * The following limitations apply:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You can use CA certificates that you imported into ACM, but you can't generate CA certificates with ACM.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can't use certificates issued by Private Certificate Authority.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about configuring certificates for outbound inspection, see <a href=
+     * "https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection-certificate-requirements.html"
+     * >Using SSL/TLS certificates with certificates with TLS inspection configurations</a> in the <i>Network Firewall
+     * Developer Guide</i>.
+     * </p>
+     * <p>
+     * For information about working with certificates in ACM, see <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates</a> in the
+     * <i>Certificate Manager User Guide</i>.
+     * </p>
+     * 
+     * @param certificateAuthorityArn
+     *        The Amazon Resource Name (ARN) of the imported certificate authority (CA) certificate within Certificate
+     *        Manager (ACM) to use for outbound SSL/TLS inspection.</p>
+     *        <p>
+     *        The following limitations apply:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        You can use CA certificates that you imported into ACM, but you can't generate CA certificates with ACM.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        You can't use certificates issued by Private Certificate Authority.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information about configuring certificates for outbound inspection, see <a href=
+     *        "https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection-certificate-requirements.html"
+     *        >Using SSL/TLS certificates with certificates with TLS inspection configurations</a> in the <i>Network
+     *        Firewall Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        For information about working with certificates in ACM, see <a
+     *        href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates</a>
+     *        in the <i>Certificate Manager User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ServerCertificateConfiguration withCertificateAuthorityArn(String certificateAuthorityArn) {
+        setCertificateAuthorityArn(certificateAuthorityArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When enabled, Network Firewall checks if the server certificate presented by the server in the SSL/TLS connection
+     * has a revoked or unkown status. If the certificate has an unknown or revoked status, you must specify the actions
+     * that Network Firewall takes on outbound traffic. To check the certificate revocation status, you must also
+     * specify a <code>CertificateAuthorityArn</code> in <a>ServerCertificateConfiguration</a>.
+     * </p>
+     * 
+     * @param checkCertificateRevocationStatus
+     *        When enabled, Network Firewall checks if the server certificate presented by the server in the SSL/TLS
+     *        connection has a revoked or unkown status. If the certificate has an unknown or revoked status, you must
+     *        specify the actions that Network Firewall takes on outbound traffic. To check the certificate revocation
+     *        status, you must also specify a <code>CertificateAuthorityArn</code> in
+     *        <a>ServerCertificateConfiguration</a>.
+     */
+
+    public void setCheckCertificateRevocationStatus(CheckCertificateRevocationStatusActions checkCertificateRevocationStatus) {
+        this.checkCertificateRevocationStatus = checkCertificateRevocationStatus;
+    }
+
+    /**
+     * <p>
+     * When enabled, Network Firewall checks if the server certificate presented by the server in the SSL/TLS connection
+     * has a revoked or unkown status. If the certificate has an unknown or revoked status, you must specify the actions
+     * that Network Firewall takes on outbound traffic. To check the certificate revocation status, you must also
+     * specify a <code>CertificateAuthorityArn</code> in <a>ServerCertificateConfiguration</a>.
+     * </p>
+     * 
+     * @return When enabled, Network Firewall checks if the server certificate presented by the server in the SSL/TLS
+     *         connection has a revoked or unkown status. If the certificate has an unknown or revoked status, you must
+     *         specify the actions that Network Firewall takes on outbound traffic. To check the certificate revocation
+     *         status, you must also specify a <code>CertificateAuthorityArn</code> in
+     *         <a>ServerCertificateConfiguration</a>.
+     */
+
+    public CheckCertificateRevocationStatusActions getCheckCertificateRevocationStatus() {
+        return this.checkCertificateRevocationStatus;
+    }
+
+    /**
+     * <p>
+     * When enabled, Network Firewall checks if the server certificate presented by the server in the SSL/TLS connection
+     * has a revoked or unkown status. If the certificate has an unknown or revoked status, you must specify the actions
+     * that Network Firewall takes on outbound traffic. To check the certificate revocation status, you must also
+     * specify a <code>CertificateAuthorityArn</code> in <a>ServerCertificateConfiguration</a>.
+     * </p>
+     * 
+     * @param checkCertificateRevocationStatus
+     *        When enabled, Network Firewall checks if the server certificate presented by the server in the SSL/TLS
+     *        connection has a revoked or unkown status. If the certificate has an unknown or revoked status, you must
+     *        specify the actions that Network Firewall takes on outbound traffic. To check the certificate revocation
+     *        status, you must also specify a <code>CertificateAuthorityArn</code> in
+     *        <a>ServerCertificateConfiguration</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ServerCertificateConfiguration withCheckCertificateRevocationStatus(CheckCertificateRevocationStatusActions checkCertificateRevocationStatus) {
+        setCheckCertificateRevocationStatus(checkCertificateRevocationStatus);
         return this;
     }
 
@@ -207,7 +510,11 @@ public class ServerCertificateConfiguration implements Serializable, Cloneable, 
         if (getServerCertificates() != null)
             sb.append("ServerCertificates: ").append(getServerCertificates()).append(",");
         if (getScopes() != null)
-            sb.append("Scopes: ").append(getScopes());
+            sb.append("Scopes: ").append(getScopes()).append(",");
+        if (getCertificateAuthorityArn() != null)
+            sb.append("CertificateAuthorityArn: ").append(getCertificateAuthorityArn()).append(",");
+        if (getCheckCertificateRevocationStatus() != null)
+            sb.append("CheckCertificateRevocationStatus: ").append(getCheckCertificateRevocationStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -230,6 +537,15 @@ public class ServerCertificateConfiguration implements Serializable, Cloneable, 
             return false;
         if (other.getScopes() != null && other.getScopes().equals(this.getScopes()) == false)
             return false;
+        if (other.getCertificateAuthorityArn() == null ^ this.getCertificateAuthorityArn() == null)
+            return false;
+        if (other.getCertificateAuthorityArn() != null && other.getCertificateAuthorityArn().equals(this.getCertificateAuthorityArn()) == false)
+            return false;
+        if (other.getCheckCertificateRevocationStatus() == null ^ this.getCheckCertificateRevocationStatus() == null)
+            return false;
+        if (other.getCheckCertificateRevocationStatus() != null
+                && other.getCheckCertificateRevocationStatus().equals(this.getCheckCertificateRevocationStatus()) == false)
+            return false;
         return true;
     }
 
@@ -240,6 +556,8 @@ public class ServerCertificateConfiguration implements Serializable, Cloneable, 
 
         hashCode = prime * hashCode + ((getServerCertificates() == null) ? 0 : getServerCertificates().hashCode());
         hashCode = prime * hashCode + ((getScopes() == null) ? 0 : getScopes().hashCode());
+        hashCode = prime * hashCode + ((getCertificateAuthorityArn() == null) ? 0 : getCertificateAuthorityArn().hashCode());
+        hashCode = prime * hashCode + ((getCheckCertificateRevocationStatus() == null) ? 0 : getCheckCertificateRevocationStatus().hashCode());
         return hashCode;
     }
 

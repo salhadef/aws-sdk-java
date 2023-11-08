@@ -35,6 +35,14 @@ public class ComputeCapacityStatusMarshaller {
             .marshallLocationName("InUse").build();
     private static final MarshallingInfo<Integer> AVAILABLE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Available").build();
+    private static final MarshallingInfo<Integer> DESIREDUSERSESSIONS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DesiredUserSessions").build();
+    private static final MarshallingInfo<Integer> AVAILABLEUSERSESSIONS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AvailableUserSessions").build();
+    private static final MarshallingInfo<Integer> ACTIVEUSERSESSIONS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ActiveUserSessions").build();
+    private static final MarshallingInfo<Integer> ACTUALUSERSESSIONS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ActualUserSessions").build();
 
     private static final ComputeCapacityStatusMarshaller instance = new ComputeCapacityStatusMarshaller();
 
@@ -56,6 +64,10 @@ public class ComputeCapacityStatusMarshaller {
             protocolMarshaller.marshall(computeCapacityStatus.getRunning(), RUNNING_BINDING);
             protocolMarshaller.marshall(computeCapacityStatus.getInUse(), INUSE_BINDING);
             protocolMarshaller.marshall(computeCapacityStatus.getAvailable(), AVAILABLE_BINDING);
+            protocolMarshaller.marshall(computeCapacityStatus.getDesiredUserSessions(), DESIREDUSERSESSIONS_BINDING);
+            protocolMarshaller.marshall(computeCapacityStatus.getAvailableUserSessions(), AVAILABLEUSERSESSIONS_BINDING);
+            protocolMarshaller.marshall(computeCapacityStatus.getActiveUserSessions(), ACTIVEUSERSESSIONS_BINDING);
+            protocolMarshaller.marshall(computeCapacityStatus.getActualUserSessions(), ACTUALUSERSESSIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

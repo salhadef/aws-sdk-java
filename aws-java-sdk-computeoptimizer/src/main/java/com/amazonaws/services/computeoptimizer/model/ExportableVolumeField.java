@@ -49,7 +49,8 @@ public enum ExportableVolumeField {
     RecommendationOptionsEstimatedMonthlySavingsCurrency("RecommendationOptionsEstimatedMonthlySavingsCurrency"),
     RecommendationOptionsEstimatedMonthlySavingsValue("RecommendationOptionsEstimatedMonthlySavingsValue"),
     RootVolume("RootVolume"),
-    Tags("Tags");
+    Tags("Tags"),
+    CurrentConfigurationRootVolume("CurrentConfigurationRootVolume");
 
     private String value;
 

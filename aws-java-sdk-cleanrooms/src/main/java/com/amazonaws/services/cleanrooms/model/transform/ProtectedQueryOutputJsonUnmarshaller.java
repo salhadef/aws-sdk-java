@@ -52,6 +52,13 @@ public class ProtectedQueryOutputJsonUnmarshaller implements Unmarshaller<Protec
                     context.nextToken();
                     protectedQueryOutput.setS3(ProtectedQueryS3OutputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("memberList", targetDepth)) {
+                    context.nextToken();
+                    protectedQueryOutput.setMemberList(new ListUnmarshaller<ProtectedQuerySingleMemberOutput>(ProtectedQuerySingleMemberOutputJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

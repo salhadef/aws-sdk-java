@@ -36,7 +36,7 @@ public class AnalysisRule implements Serializable, Cloneable, StructuredPojo {
     private String collaborationId;
     /**
      * <p>
-     * The type of analysis rule. Valid values are `AGGREGATION` and `LIST`.
+     * The type of analysis rule.
      * </p>
      */
     private String type;
@@ -107,11 +107,11 @@ public class AnalysisRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of analysis rule. Valid values are `AGGREGATION` and `LIST`.
+     * The type of analysis rule.
      * </p>
      * 
      * @param type
-     *        The type of analysis rule. Valid values are `AGGREGATION` and `LIST`.
+     *        The type of analysis rule.
      * @see AnalysisRuleType
      */
 
@@ -121,10 +121,10 @@ public class AnalysisRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of analysis rule. Valid values are `AGGREGATION` and `LIST`.
+     * The type of analysis rule.
      * </p>
      * 
-     * @return The type of analysis rule. Valid values are `AGGREGATION` and `LIST`.
+     * @return The type of analysis rule.
      * @see AnalysisRuleType
      */
 
@@ -134,11 +134,11 @@ public class AnalysisRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of analysis rule. Valid values are `AGGREGATION` and `LIST`.
+     * The type of analysis rule.
      * </p>
      * 
      * @param type
-     *        The type of analysis rule. Valid values are `AGGREGATION` and `LIST`.
+     *        The type of analysis rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AnalysisRuleType
      */
@@ -150,11 +150,11 @@ public class AnalysisRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of analysis rule. Valid values are `AGGREGATION` and `LIST`.
+     * The type of analysis rule.
      * </p>
      * 
      * @param type
-     *        The type of analysis rule. Valid values are `AGGREGATION` and `LIST`.
+     *        The type of analysis rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AnalysisRuleType
      */

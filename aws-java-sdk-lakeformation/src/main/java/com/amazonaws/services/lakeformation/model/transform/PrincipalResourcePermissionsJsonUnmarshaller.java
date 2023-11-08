@@ -72,6 +72,14 @@ public class PrincipalResourcePermissionsJsonUnmarshaller implements Unmarshalle
                     context.nextToken();
                     principalResourcePermissions.setAdditionalDetails(DetailsMapJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("LastUpdated", targetDepth)) {
+                    context.nextToken();
+                    principalResourcePermissions.setLastUpdated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("LastUpdatedBy", targetDepth)) {
+                    context.nextToken();
+                    principalResourcePermissions.setLastUpdatedBy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -37,7 +37,9 @@ public class ConfirmForgotPasswordRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and
-     * username plus the client ID in the message.
+     * username plus the client ID in the message. For more information about <code>SecretHash</code>, see <a href=
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash"
+     * >Computing secret hash values</a>.
      * </p>
      */
     private String secretHash;
@@ -162,12 +164,17 @@ public class ConfirmForgotPasswordRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and
-     * username plus the client ID in the message.
+     * username plus the client ID in the message. For more information about <code>SecretHash</code>, see <a href=
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash"
+     * >Computing secret hash values</a>.
      * </p>
      * 
      * @param secretHash
      *        A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and
-     *        username plus the client ID in the message.
+     *        username plus the client ID in the message. For more information about <code>SecretHash</code>, see <a
+     *        href=
+     *        "https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash"
+     *        >Computing secret hash values</a>.
      */
 
     public void setSecretHash(String secretHash) {
@@ -177,11 +184,16 @@ public class ConfirmForgotPasswordRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and
-     * username plus the client ID in the message.
+     * username plus the client ID in the message. For more information about <code>SecretHash</code>, see <a href=
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash"
+     * >Computing secret hash values</a>.
      * </p>
      * 
      * @return A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and
-     *         username plus the client ID in the message.
+     *         username plus the client ID in the message. For more information about <code>SecretHash</code>, see <a
+     *         href=
+     *         "https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash"
+     *         >Computing secret hash values</a>.
      */
 
     public String getSecretHash() {
@@ -191,12 +203,17 @@ public class ConfirmForgotPasswordRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and
-     * username plus the client ID in the message.
+     * username plus the client ID in the message. For more information about <code>SecretHash</code>, see <a href=
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash"
+     * >Computing secret hash values</a>.
      * </p>
      * 
      * @param secretHash
      *        A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and
-     *        username plus the client ID in the message.
+     *        username plus the client ID in the message. For more information about <code>SecretHash</code>, see <a
+     *        href=
+     *        "https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash"
+     *        >Computing secret hash values</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -751,7 +768,7 @@ public class ConfirmForgotPasswordRequest extends com.amazonaws.AmazonWebService
         if (getAnalyticsMetadata() != null)
             sb.append("AnalyticsMetadata: ").append(getAnalyticsMetadata()).append(",");
         if (getUserContextData() != null)
-            sb.append("UserContextData: ").append(getUserContextData()).append(",");
+            sb.append("UserContextData: ").append("***Sensitive Data Redacted***").append(",");
         if (getClientMetadata() != null)
             sb.append("ClientMetadata: ").append(getClientMetadata());
         sb.append("}");

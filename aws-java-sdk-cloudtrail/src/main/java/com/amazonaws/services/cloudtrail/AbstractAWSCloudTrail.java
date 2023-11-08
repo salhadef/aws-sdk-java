@@ -233,6 +233,11 @@ public class AbstractAWSCloudTrail implements AWSCloudTrail {
     }
 
     @Override
+    public StartEventDataStoreIngestionResult startEventDataStoreIngestion(StartEventDataStoreIngestionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartImportResult startImport(StartImportRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -244,6 +249,11 @@ public class AbstractAWSCloudTrail implements AWSCloudTrail {
 
     @Override
     public StartQueryResult startQuery(StartQueryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopEventDataStoreIngestionResult stopEventDataStoreIngestion(StopEventDataStoreIngestionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

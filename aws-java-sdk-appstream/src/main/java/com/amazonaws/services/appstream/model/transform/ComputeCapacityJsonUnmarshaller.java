@@ -52,6 +52,10 @@ public class ComputeCapacityJsonUnmarshaller implements Unmarshaller<ComputeCapa
                     context.nextToken();
                     computeCapacity.setDesiredInstances(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("DesiredSessions", targetDepth)) {
+                    context.nextToken();
+                    computeCapacity.setDesiredSessions(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

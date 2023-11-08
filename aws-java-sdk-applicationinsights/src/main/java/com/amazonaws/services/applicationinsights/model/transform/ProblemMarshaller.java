@@ -45,6 +45,8 @@ public class ProblemMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> SEVERITYLEVEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SeverityLevel").build();
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("AccountId").build();
     private static final MarshallingInfo<String> RESOURCEGROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceGroupName").build();
     private static final MarshallingInfo<Map> FEEDBACK_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
@@ -53,6 +55,10 @@ public class ProblemMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RecurringCount").build();
     private static final MarshallingInfo<java.util.Date> LASTRECURRENCETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastRecurrenceTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> VISIBILITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Visibility").build();
+    private static final MarshallingInfo<String> RESOLUTIONMETHOD_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResolutionMethod").build();
 
     private static final ProblemMarshaller instance = new ProblemMarshaller();
 
@@ -78,10 +84,13 @@ public class ProblemMarshaller {
             protocolMarshaller.marshall(problem.getStartTime(), STARTTIME_BINDING);
             protocolMarshaller.marshall(problem.getEndTime(), ENDTIME_BINDING);
             protocolMarshaller.marshall(problem.getSeverityLevel(), SEVERITYLEVEL_BINDING);
+            protocolMarshaller.marshall(problem.getAccountId(), ACCOUNTID_BINDING);
             protocolMarshaller.marshall(problem.getResourceGroupName(), RESOURCEGROUPNAME_BINDING);
             protocolMarshaller.marshall(problem.getFeedback(), FEEDBACK_BINDING);
             protocolMarshaller.marshall(problem.getRecurringCount(), RECURRINGCOUNT_BINDING);
             protocolMarshaller.marshall(problem.getLastRecurrenceTime(), LASTRECURRENCETIME_BINDING);
+            protocolMarshaller.marshall(problem.getVisibility(), VISIBILITY_BINDING);
+            protocolMarshaller.marshall(problem.getResolutionMethod(), RESOLUTIONMETHOD_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

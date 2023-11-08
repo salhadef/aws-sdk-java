@@ -627,23 +627,23 @@ public class AssessmentMetadata implements Serializable, Cloneable, StructuredPo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: ").append(getName()).append(",");
+            sb.append("Name: ").append("***Sensitive Data Redacted***").append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
+            sb.append("Description: ").append("***Sensitive Data Redacted***").append(",");
         if (getComplianceType() != null)
-            sb.append("ComplianceType: ").append(getComplianceType()).append(",");
+            sb.append("ComplianceType: ").append("***Sensitive Data Redacted***").append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getAssessmentReportsDestination() != null)
-            sb.append("AssessmentReportsDestination: ").append(getAssessmentReportsDestination()).append(",");
+            sb.append("AssessmentReportsDestination: ").append("***Sensitive Data Redacted***").append(",");
         if (getScope() != null)
-            sb.append("Scope: ").append(getScope()).append(",");
+            sb.append("Scope: ").append("***Sensitive Data Redacted***").append(",");
         if (getRoles() != null)
-            sb.append("Roles: ").append(getRoles()).append(",");
+            sb.append("Roles: ").append("***Sensitive Data Redacted***").append(",");
         if (getDelegations() != null)
-            sb.append("Delegations: ").append(getDelegations()).append(",");
+            sb.append("Delegations: ").append("***Sensitive Data Redacted***").append(",");
         if (getCreationTime() != null)
             sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getLastUpdated() != null)

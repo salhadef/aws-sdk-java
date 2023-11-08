@@ -52,17 +52,25 @@ public class HostJsonUnmarshaller implements Unmarshaller<Host, JsonUnmarshaller
                     context.nextToken();
                     host.setHostName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("HostRole", targetDepth)) {
-                    context.nextToken();
-                    host.setHostRole(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("HostIp", targetDepth)) {
                     context.nextToken();
                     host.setHostIp(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("EC2InstanceId", targetDepth)) {
+                    context.nextToken();
+                    host.setEC2InstanceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("InstanceId", targetDepth)) {
                     context.nextToken();
                     host.setInstanceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("HostRole", targetDepth)) {
+                    context.nextToken();
+                    host.setHostRole(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("OsVersion", targetDepth)) {
+                    context.nextToken();
+                    host.setOsVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -58,12 +58,14 @@ public class UpdateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>SUSPEND</code> - To suspend collecting signal data.
+     * <code>SUSPEND</code> - To suspend collecting signal data. The campaign is deleted from vehicles and all vehicles
+     * in the suspended campaign will stop sending data.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>RESUME</code> - To resume collecting signal data.
+     * <code>RESUME</code> - To reactivate the <code>SUSPEND</code> campaign. The campaign is redeployed to all vehicles
+     * and the vehicles will resume sending data.
      * </p>
      * </li>
      * <li>
@@ -257,12 +259,14 @@ public class UpdateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>SUSPEND</code> - To suspend collecting signal data.
+     * <code>SUSPEND</code> - To suspend collecting signal data. The campaign is deleted from vehicles and all vehicles
+     * in the suspended campaign will stop sending data.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>RESUME</code> - To resume collecting signal data.
+     * <code>RESUME</code> - To reactivate the <code>SUSPEND</code> campaign. The campaign is redeployed to all vehicles
+     * and the vehicles will resume sending data.
      * </p>
      * </li>
      * <li>
@@ -282,12 +286,14 @@ public class UpdateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SUSPEND</code> - To suspend collecting signal data.
+     *        <code>SUSPEND</code> - To suspend collecting signal data. The campaign is deleted from vehicles and all
+     *        vehicles in the suspended campaign will stop sending data.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>RESUME</code> - To resume collecting signal data.
+     *        <code>RESUME</code> - To reactivate the <code>SUSPEND</code> campaign. The campaign is redeployed to all
+     *        vehicles and the vehicles will resume sending data.
      *        </p>
      *        </li>
      *        <li>
@@ -314,12 +320,14 @@ public class UpdateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>SUSPEND</code> - To suspend collecting signal data.
+     * <code>SUSPEND</code> - To suspend collecting signal data. The campaign is deleted from vehicles and all vehicles
+     * in the suspended campaign will stop sending data.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>RESUME</code> - To resume collecting signal data.
+     * <code>RESUME</code> - To reactivate the <code>SUSPEND</code> campaign. The campaign is redeployed to all vehicles
+     * and the vehicles will resume sending data.
      * </p>
      * </li>
      * <li>
@@ -338,12 +346,14 @@ public class UpdateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
      *         </li>
      *         <li>
      *         <p>
-     *         <code>SUSPEND</code> - To suspend collecting signal data.
+     *         <code>SUSPEND</code> - To suspend collecting signal data. The campaign is deleted from vehicles and all
+     *         vehicles in the suspended campaign will stop sending data.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>RESUME</code> - To resume collecting signal data.
+     *         <code>RESUME</code> - To reactivate the <code>SUSPEND</code> campaign. The campaign is redeployed to all
+     *         vehicles and the vehicles will resume sending data.
      *         </p>
      *         </li>
      *         <li>
@@ -370,12 +380,14 @@ public class UpdateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>SUSPEND</code> - To suspend collecting signal data.
+     * <code>SUSPEND</code> - To suspend collecting signal data. The campaign is deleted from vehicles and all vehicles
+     * in the suspended campaign will stop sending data.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>RESUME</code> - To resume collecting signal data.
+     * <code>RESUME</code> - To reactivate the <code>SUSPEND</code> campaign. The campaign is redeployed to all vehicles
+     * and the vehicles will resume sending data.
      * </p>
      * </li>
      * <li>
@@ -395,12 +407,14 @@ public class UpdateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SUSPEND</code> - To suspend collecting signal data.
+     *        <code>SUSPEND</code> - To suspend collecting signal data. The campaign is deleted from vehicles and all
+     *        vehicles in the suspended campaign will stop sending data.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>RESUME</code> - To resume collecting signal data.
+     *        <code>RESUME</code> - To reactivate the <code>SUSPEND</code> campaign. The campaign is redeployed to all
+     *        vehicles and the vehicles will resume sending data.
      *        </p>
      *        </li>
      *        <li>
@@ -429,12 +443,14 @@ public class UpdateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>SUSPEND</code> - To suspend collecting signal data.
+     * <code>SUSPEND</code> - To suspend collecting signal data. The campaign is deleted from vehicles and all vehicles
+     * in the suspended campaign will stop sending data.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>RESUME</code> - To resume collecting signal data.
+     * <code>RESUME</code> - To reactivate the <code>SUSPEND</code> campaign. The campaign is redeployed to all vehicles
+     * and the vehicles will resume sending data.
      * </p>
      * </li>
      * <li>
@@ -454,12 +470,14 @@ public class UpdateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SUSPEND</code> - To suspend collecting signal data.
+     *        <code>SUSPEND</code> - To suspend collecting signal data. The campaign is deleted from vehicles and all
+     *        vehicles in the suspended campaign will stop sending data.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>RESUME</code> - To resume collecting signal data.
+     *        <code>RESUME</code> - To reactivate the <code>SUSPEND</code> campaign. The campaign is redeployed to all
+     *        vehicles and the vehicles will resume sending data.
      *        </p>
      *        </li>
      *        <li>

@@ -64,6 +64,22 @@ public class ComputeCapacityStatusJsonUnmarshaller implements Unmarshaller<Compu
                     context.nextToken();
                     computeCapacityStatus.setAvailable(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("DesiredUserSessions", targetDepth)) {
+                    context.nextToken();
+                    computeCapacityStatus.setDesiredUserSessions(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("AvailableUserSessions", targetDepth)) {
+                    context.nextToken();
+                    computeCapacityStatus.setAvailableUserSessions(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("ActiveUserSessions", targetDepth)) {
+                    context.nextToken();
+                    computeCapacityStatus.setActiveUserSessions(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("ActualUserSessions", targetDepth)) {
+                    context.nextToken();
+                    computeCapacityStatus.setActualUserSessions(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

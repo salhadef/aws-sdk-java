@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.quicksight.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -35,6 +36,8 @@ public class DateTimeParameterDeclarationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TimeGranularity").build();
     private static final MarshallingInfo<StructuredPojo> VALUEWHENUNSET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ValueWhenUnset").build();
+    private static final MarshallingInfo<List> MAPPEDDATASETPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MappedDataSetParameters").build();
 
     private static final DateTimeParameterDeclarationMarshaller instance = new DateTimeParameterDeclarationMarshaller();
 
@@ -56,6 +59,7 @@ public class DateTimeParameterDeclarationMarshaller {
             protocolMarshaller.marshall(dateTimeParameterDeclaration.getDefaultValues(), DEFAULTVALUES_BINDING);
             protocolMarshaller.marshall(dateTimeParameterDeclaration.getTimeGranularity(), TIMEGRANULARITY_BINDING);
             protocolMarshaller.marshall(dateTimeParameterDeclaration.getValueWhenUnset(), VALUEWHENUNSET_BINDING);
+            protocolMarshaller.marshall(dateTimeParameterDeclaration.getMappedDataSetParameters(), MAPPEDDATASETPARAMETERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

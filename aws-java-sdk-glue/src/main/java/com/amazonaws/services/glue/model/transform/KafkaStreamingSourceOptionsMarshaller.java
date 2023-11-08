@@ -63,6 +63,8 @@ public class KafkaStreamingSourceOptionsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AddRecordTimestamp").build();
     private static final MarshallingInfo<String> EMITCONSUMERLAGMETRICS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EmitConsumerLagMetrics").build();
+    private static final MarshallingInfo<java.util.Date> STARTINGTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartingTimestamp").timestampFormat("iso8601").build();
 
     private static final KafkaStreamingSourceOptionsMarshaller instance = new KafkaStreamingSourceOptionsMarshaller();
 
@@ -98,6 +100,7 @@ public class KafkaStreamingSourceOptionsMarshaller {
             protocolMarshaller.marshall(kafkaStreamingSourceOptions.getIncludeHeaders(), INCLUDEHEADERS_BINDING);
             protocolMarshaller.marshall(kafkaStreamingSourceOptions.getAddRecordTimestamp(), ADDRECORDTIMESTAMP_BINDING);
             protocolMarshaller.marshall(kafkaStreamingSourceOptions.getEmitConsumerLagMetrics(), EMITCONSUMERLAGMETRICS_BINDING);
+            protocolMarshaller.marshall(kafkaStreamingSourceOptions.getStartingTimestamp(), STARTINGTIMESTAMP_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

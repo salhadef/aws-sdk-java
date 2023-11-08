@@ -76,6 +76,10 @@ public class ClaimedPhoneNumberSummaryJsonUnmarshaller implements Unmarshaller<C
                     context.nextToken();
                     claimedPhoneNumberSummary.setTargetArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("InstanceId", targetDepth)) {
+                    context.nextToken();
+                    claimedPhoneNumberSummary.setInstanceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
                     claimedPhoneNumberSummary.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context

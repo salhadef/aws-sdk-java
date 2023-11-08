@@ -44,6 +44,7 @@ import com.amazonaws.services.snowball.AmazonSnowballClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.snowball.model.*;
+
 import com.amazonaws.services.snowball.model.transform.*;
 
 /**
@@ -703,6 +704,11 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * This device is replaced with T98.
+     * </p>
+     * </note>
      * <p/></li>
      * <li>
      * <p>
@@ -748,21 +754,21 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      * <p/></li>
      * <li>
      * <p>
-     * Device type: <b>V3_5C</b>
+     * Snow Family device type: <b>RACK_5U_C</b>
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Capacity: T32
+     * Capacity: T13
      * </p>
      * </li>
      * <li>
      * <p>
-     * Description: Snowball Edge Compute Optimized without GPU
+     * Description: Snowblade.
      * </p>
      * </li>
      * </ul>
-     * <p/></li>
+     * </li>
      * <li>
      * <p>
      * Device type: <b>V3_5S</b>
@@ -779,7 +785,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      * </p>
      * </li>
      * </ul>
-     * <p/></li>
+     * </li>
      * </ul>
      * 
      * @param createJobRequest
@@ -1681,11 +1687,11 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * This action returns a list of the different Amazon EC2 Amazon Machine Images (AMIs) that are owned by your Amazon
-     * Web Services accountthat would be supported for use on a Snow device. Currently, supported AMIs are based on the
-     * Amazon Linux-2, Ubuntu 20.04 LTS - Focal, or Ubuntu 22.04 LTS - Jammy images, available on the Amazon Web
-     * Services Marketplace. Ubuntu 16.04 LTS - Xenial (HVM) images are no longer supported in the Market, but still
-     * supported for use on devices through Amazon EC2 VM Import/Export and running locally in AMIs.
+     * This action returns a list of the different Amazon EC2-compatible Amazon Machine Images (AMIs) that are owned by
+     * your Amazon Web Services accountthat would be supported for use on a Snow device. Currently, supported AMIs are
+     * based on the Amazon Linux-2, Ubuntu 20.04 LTS - Focal, or Ubuntu 22.04 LTS - Jammy images, available on the
+     * Amazon Web Services Marketplace. Ubuntu 16.04 LTS - Xenial (HVM) images are no longer supported in the Market,
+     * but still supported for use on devices through Amazon EC2 VM Import/Export and running locally in AMIs.
      * </p>
      * 
      * @param listCompatibleImagesRequest
@@ -1855,6 +1861,64 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<ListLongTermPricingResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListLongTermPricingResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * A list of locations from which the customer can choose to pickup a device.
+     * </p>
+     * 
+     * @param listPickupLocationsRequest
+     * @return Result of the ListPickupLocations operation returned by the service.
+     * @throws InvalidResourceException
+     *         The specified resource can't be found. Check the information you provided in your last request, and try
+     *         again.
+     * @sample AmazonSnowball.ListPickupLocations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListPickupLocations" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListPickupLocationsResult listPickupLocations(ListPickupLocationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListPickupLocations(request);
+    }
+
+    @SdkInternalApi
+    final ListPickupLocationsResult executeListPickupLocations(ListPickupLocationsRequest listPickupLocationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listPickupLocationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListPickupLocationsRequest> request = null;
+        Response<ListPickupLocationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListPickupLocationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPickupLocationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Snowball");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPickupLocations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListPickupLocationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListPickupLocationsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -139,7 +139,7 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
      * The type of network interface. The default is <code>interface</code>.
      * </p>
      * <p>
-     * The only supported values are <code>efa</code> and <code>trunk</code>.
+     * The only supported values are <code>interface</code>, <code>efa</code>, and <code>trunk</code>.
      * </p>
      */
     private String interfaceType;
@@ -164,6 +164,20 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
      * </p>
      */
     private String clientToken;
+    /**
+     * <p>
+     * If you’re creating a network interface in a dual-stack or IPv6-only subnet, you have the option to assign a
+     * primary IPv6 IP address. A primary IPv6 address is an IPv6 GUA address associated with an ENI that you have
+     * enabled to use a primary IPv6 address. Use this option if the instance that this ENI will be attached to relies
+     * on its IPv6 address not changing. Amazon Web Services will automatically assign an IPv6 address associated with
+     * the ENI attached to your instance to be the primary IPv6 address. Once you enable an IPv6 GUA address to be a
+     * primary IPv6, you cannot disable it. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA
+     * will be made the primary IPv6 address until the instance is terminated or the network interface is detached. If
+     * you have multiple IPv6 addresses associated with an ENI attached to your instance and you enable a primary IPv6
+     * address, the first IPv6 GUA address associated with the ENI becomes the primary IPv6 address.
+     * </p>
+     */
+    private Boolean enablePrimaryIpv6;
 
     /**
      * <p>
@@ -1034,13 +1048,13 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
      * The type of network interface. The default is <code>interface</code>.
      * </p>
      * <p>
-     * The only supported values are <code>efa</code> and <code>trunk</code>.
+     * The only supported values are <code>interface</code>, <code>efa</code>, and <code>trunk</code>.
      * </p>
      * 
      * @param interfaceType
      *        The type of network interface. The default is <code>interface</code>.</p>
      *        <p>
-     *        The only supported values are <code>efa</code> and <code>trunk</code>.
+     *        The only supported values are <code>interface</code>, <code>efa</code>, and <code>trunk</code>.
      * @see NetworkInterfaceCreationType
      */
 
@@ -1053,12 +1067,12 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
      * The type of network interface. The default is <code>interface</code>.
      * </p>
      * <p>
-     * The only supported values are <code>efa</code> and <code>trunk</code>.
+     * The only supported values are <code>interface</code>, <code>efa</code>, and <code>trunk</code>.
      * </p>
      * 
      * @return The type of network interface. The default is <code>interface</code>.</p>
      *         <p>
-     *         The only supported values are <code>efa</code> and <code>trunk</code>.
+     *         The only supported values are <code>interface</code>, <code>efa</code>, and <code>trunk</code>.
      * @see NetworkInterfaceCreationType
      */
 
@@ -1071,13 +1085,13 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
      * The type of network interface. The default is <code>interface</code>.
      * </p>
      * <p>
-     * The only supported values are <code>efa</code> and <code>trunk</code>.
+     * The only supported values are <code>interface</code>, <code>efa</code>, and <code>trunk</code>.
      * </p>
      * 
      * @param interfaceType
      *        The type of network interface. The default is <code>interface</code>.</p>
      *        <p>
-     *        The only supported values are <code>efa</code> and <code>trunk</code>.
+     *        The only supported values are <code>interface</code>, <code>efa</code>, and <code>trunk</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NetworkInterfaceCreationType
      */
@@ -1092,13 +1106,13 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
      * The type of network interface. The default is <code>interface</code>.
      * </p>
      * <p>
-     * The only supported values are <code>efa</code> and <code>trunk</code>.
+     * The only supported values are <code>interface</code>, <code>efa</code>, and <code>trunk</code>.
      * </p>
      * 
      * @param interfaceType
      *        The type of network interface. The default is <code>interface</code>.</p>
      *        <p>
-     *        The only supported values are <code>efa</code> and <code>trunk</code>.
+     *        The only supported values are <code>interface</code>, <code>efa</code>, and <code>trunk</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NetworkInterfaceCreationType
      */
@@ -1280,6 +1294,126 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
     }
 
     /**
+     * <p>
+     * If you’re creating a network interface in a dual-stack or IPv6-only subnet, you have the option to assign a
+     * primary IPv6 IP address. A primary IPv6 address is an IPv6 GUA address associated with an ENI that you have
+     * enabled to use a primary IPv6 address. Use this option if the instance that this ENI will be attached to relies
+     * on its IPv6 address not changing. Amazon Web Services will automatically assign an IPv6 address associated with
+     * the ENI attached to your instance to be the primary IPv6 address. Once you enable an IPv6 GUA address to be a
+     * primary IPv6, you cannot disable it. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA
+     * will be made the primary IPv6 address until the instance is terminated or the network interface is detached. If
+     * you have multiple IPv6 addresses associated with an ENI attached to your instance and you enable a primary IPv6
+     * address, the first IPv6 GUA address associated with the ENI becomes the primary IPv6 address.
+     * </p>
+     * 
+     * @param enablePrimaryIpv6
+     *        If you’re creating a network interface in a dual-stack or IPv6-only subnet, you have the option to assign
+     *        a primary IPv6 IP address. A primary IPv6 address is an IPv6 GUA address associated with an ENI that you
+     *        have enabled to use a primary IPv6 address. Use this option if the instance that this ENI will be attached
+     *        to relies on its IPv6 address not changing. Amazon Web Services will automatically assign an IPv6 address
+     *        associated with the ENI attached to your instance to be the primary IPv6 address. Once you enable an IPv6
+     *        GUA address to be a primary IPv6, you cannot disable it. When you enable an IPv6 GUA address to be a
+     *        primary IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or
+     *        the network interface is detached. If you have multiple IPv6 addresses associated with an ENI attached to
+     *        your instance and you enable a primary IPv6 address, the first IPv6 GUA address associated with the ENI
+     *        becomes the primary IPv6 address.
+     */
+
+    public void setEnablePrimaryIpv6(Boolean enablePrimaryIpv6) {
+        this.enablePrimaryIpv6 = enablePrimaryIpv6;
+    }
+
+    /**
+     * <p>
+     * If you’re creating a network interface in a dual-stack or IPv6-only subnet, you have the option to assign a
+     * primary IPv6 IP address. A primary IPv6 address is an IPv6 GUA address associated with an ENI that you have
+     * enabled to use a primary IPv6 address. Use this option if the instance that this ENI will be attached to relies
+     * on its IPv6 address not changing. Amazon Web Services will automatically assign an IPv6 address associated with
+     * the ENI attached to your instance to be the primary IPv6 address. Once you enable an IPv6 GUA address to be a
+     * primary IPv6, you cannot disable it. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA
+     * will be made the primary IPv6 address until the instance is terminated or the network interface is detached. If
+     * you have multiple IPv6 addresses associated with an ENI attached to your instance and you enable a primary IPv6
+     * address, the first IPv6 GUA address associated with the ENI becomes the primary IPv6 address.
+     * </p>
+     * 
+     * @return If you’re creating a network interface in a dual-stack or IPv6-only subnet, you have the option to assign
+     *         a primary IPv6 IP address. A primary IPv6 address is an IPv6 GUA address associated with an ENI that you
+     *         have enabled to use a primary IPv6 address. Use this option if the instance that this ENI will be
+     *         attached to relies on its IPv6 address not changing. Amazon Web Services will automatically assign an
+     *         IPv6 address associated with the ENI attached to your instance to be the primary IPv6 address. Once you
+     *         enable an IPv6 GUA address to be a primary IPv6, you cannot disable it. When you enable an IPv6 GUA
+     *         address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance
+     *         is terminated or the network interface is detached. If you have multiple IPv6 addresses associated with
+     *         an ENI attached to your instance and you enable a primary IPv6 address, the first IPv6 GUA address
+     *         associated with the ENI becomes the primary IPv6 address.
+     */
+
+    public Boolean getEnablePrimaryIpv6() {
+        return this.enablePrimaryIpv6;
+    }
+
+    /**
+     * <p>
+     * If you’re creating a network interface in a dual-stack or IPv6-only subnet, you have the option to assign a
+     * primary IPv6 IP address. A primary IPv6 address is an IPv6 GUA address associated with an ENI that you have
+     * enabled to use a primary IPv6 address. Use this option if the instance that this ENI will be attached to relies
+     * on its IPv6 address not changing. Amazon Web Services will automatically assign an IPv6 address associated with
+     * the ENI attached to your instance to be the primary IPv6 address. Once you enable an IPv6 GUA address to be a
+     * primary IPv6, you cannot disable it. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA
+     * will be made the primary IPv6 address until the instance is terminated or the network interface is detached. If
+     * you have multiple IPv6 addresses associated with an ENI attached to your instance and you enable a primary IPv6
+     * address, the first IPv6 GUA address associated with the ENI becomes the primary IPv6 address.
+     * </p>
+     * 
+     * @param enablePrimaryIpv6
+     *        If you’re creating a network interface in a dual-stack or IPv6-only subnet, you have the option to assign
+     *        a primary IPv6 IP address. A primary IPv6 address is an IPv6 GUA address associated with an ENI that you
+     *        have enabled to use a primary IPv6 address. Use this option if the instance that this ENI will be attached
+     *        to relies on its IPv6 address not changing. Amazon Web Services will automatically assign an IPv6 address
+     *        associated with the ENI attached to your instance to be the primary IPv6 address. Once you enable an IPv6
+     *        GUA address to be a primary IPv6, you cannot disable it. When you enable an IPv6 GUA address to be a
+     *        primary IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or
+     *        the network interface is detached. If you have multiple IPv6 addresses associated with an ENI attached to
+     *        your instance and you enable a primary IPv6 address, the first IPv6 GUA address associated with the ENI
+     *        becomes the primary IPv6 address.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateNetworkInterfaceRequest withEnablePrimaryIpv6(Boolean enablePrimaryIpv6) {
+        setEnablePrimaryIpv6(enablePrimaryIpv6);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If you’re creating a network interface in a dual-stack or IPv6-only subnet, you have the option to assign a
+     * primary IPv6 IP address. A primary IPv6 address is an IPv6 GUA address associated with an ENI that you have
+     * enabled to use a primary IPv6 address. Use this option if the instance that this ENI will be attached to relies
+     * on its IPv6 address not changing. Amazon Web Services will automatically assign an IPv6 address associated with
+     * the ENI attached to your instance to be the primary IPv6 address. Once you enable an IPv6 GUA address to be a
+     * primary IPv6, you cannot disable it. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA
+     * will be made the primary IPv6 address until the instance is terminated or the network interface is detached. If
+     * you have multiple IPv6 addresses associated with an ENI attached to your instance and you enable a primary IPv6
+     * address, the first IPv6 GUA address associated with the ENI becomes the primary IPv6 address.
+     * </p>
+     * 
+     * @return If you’re creating a network interface in a dual-stack or IPv6-only subnet, you have the option to assign
+     *         a primary IPv6 IP address. A primary IPv6 address is an IPv6 GUA address associated with an ENI that you
+     *         have enabled to use a primary IPv6 address. Use this option if the instance that this ENI will be
+     *         attached to relies on its IPv6 address not changing. Amazon Web Services will automatically assign an
+     *         IPv6 address associated with the ENI attached to your instance to be the primary IPv6 address. Once you
+     *         enable an IPv6 GUA address to be a primary IPv6, you cannot disable it. When you enable an IPv6 GUA
+     *         address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance
+     *         is terminated or the network interface is detached. If you have multiple IPv6 addresses associated with
+     *         an ENI attached to your instance and you enable a primary IPv6 address, the first IPv6 GUA address
+     *         associated with the ENI becomes the primary IPv6 address.
+     */
+
+    public Boolean isEnablePrimaryIpv6() {
+        return this.enablePrimaryIpv6;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -1331,7 +1465,9 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
         if (getTagSpecifications() != null)
             sb.append("TagSpecifications: ").append(getTagSpecifications()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken());
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getEnablePrimaryIpv6() != null)
+            sb.append("EnablePrimaryIpv6: ").append(getEnablePrimaryIpv6());
         sb.append("}");
         return sb.toString();
     }
@@ -1407,6 +1543,10 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
+        if (other.getEnablePrimaryIpv6() == null ^ this.getEnablePrimaryIpv6() == null)
+            return false;
+        if (other.getEnablePrimaryIpv6() != null && other.getEnablePrimaryIpv6().equals(this.getEnablePrimaryIpv6()) == false)
+            return false;
         return true;
     }
 
@@ -1430,6 +1570,7 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
         hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
         hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getEnablePrimaryIpv6() == null) ? 0 : getEnablePrimaryIpv6().hashCode());
         return hashCode;
     }
 

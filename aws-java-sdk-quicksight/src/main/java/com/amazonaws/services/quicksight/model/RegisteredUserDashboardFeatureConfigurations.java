@@ -35,6 +35,12 @@ public class RegisteredUserDashboardFeatureConfigurations implements Serializabl
      * </p>
      */
     private StatePersistenceConfigurations statePersistence;
+    /**
+     * <p>
+     * The bookmarks configuration for an embedded dashboard in Amazon QuickSight.
+     * </p>
+     */
+    private BookmarksConfigurations bookmarks;
 
     /**
      * <p>
@@ -77,6 +83,46 @@ public class RegisteredUserDashboardFeatureConfigurations implements Serializabl
     }
 
     /**
+     * <p>
+     * The bookmarks configuration for an embedded dashboard in Amazon QuickSight.
+     * </p>
+     * 
+     * @param bookmarks
+     *        The bookmarks configuration for an embedded dashboard in Amazon QuickSight.
+     */
+
+    public void setBookmarks(BookmarksConfigurations bookmarks) {
+        this.bookmarks = bookmarks;
+    }
+
+    /**
+     * <p>
+     * The bookmarks configuration for an embedded dashboard in Amazon QuickSight.
+     * </p>
+     * 
+     * @return The bookmarks configuration for an embedded dashboard in Amazon QuickSight.
+     */
+
+    public BookmarksConfigurations getBookmarks() {
+        return this.bookmarks;
+    }
+
+    /**
+     * <p>
+     * The bookmarks configuration for an embedded dashboard in Amazon QuickSight.
+     * </p>
+     * 
+     * @param bookmarks
+     *        The bookmarks configuration for an embedded dashboard in Amazon QuickSight.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisteredUserDashboardFeatureConfigurations withBookmarks(BookmarksConfigurations bookmarks) {
+        setBookmarks(bookmarks);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -89,7 +135,9 @@ public class RegisteredUserDashboardFeatureConfigurations implements Serializabl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStatePersistence() != null)
-            sb.append("StatePersistence: ").append(getStatePersistence());
+            sb.append("StatePersistence: ").append(getStatePersistence()).append(",");
+        if (getBookmarks() != null)
+            sb.append("Bookmarks: ").append(getBookmarks());
         sb.append("}");
         return sb.toString();
     }
@@ -108,6 +156,10 @@ public class RegisteredUserDashboardFeatureConfigurations implements Serializabl
             return false;
         if (other.getStatePersistence() != null && other.getStatePersistence().equals(this.getStatePersistence()) == false)
             return false;
+        if (other.getBookmarks() == null ^ this.getBookmarks() == null)
+            return false;
+        if (other.getBookmarks() != null && other.getBookmarks().equals(this.getBookmarks()) == false)
+            return false;
         return true;
     }
 
@@ -117,6 +169,7 @@ public class RegisteredUserDashboardFeatureConfigurations implements Serializabl
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getStatePersistence() == null) ? 0 : getStatePersistence().hashCode());
+        hashCode = prime * hashCode + ((getBookmarks() == null) ? 0 : getBookmarks().hashCode());
         return hashCode;
     }
 

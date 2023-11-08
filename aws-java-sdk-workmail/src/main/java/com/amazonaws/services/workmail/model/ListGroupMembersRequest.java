@@ -35,6 +35,27 @@ public class ListGroupMembersRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The identifier for the group to which the members (users or groups) are associated.
      * </p>
+     * <p>
+     * The identifier can accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The following identity formats are
+     * available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Email address: group@domain.tld
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Group name: group
+     * </p>
+     * </li>
+     * </ul>
      */
     private String groupId;
     /**
@@ -94,9 +115,50 @@ public class ListGroupMembersRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The identifier for the group to which the members (users or groups) are associated.
      * </p>
+     * <p>
+     * The identifier can accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The following identity formats are
+     * available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Email address: group@domain.tld
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Group name: group
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param groupId
-     *        The identifier for the group to which the members (users or groups) are associated.
+     *        The identifier for the group to which the members (users or groups) are associated.</p>
+     *        <p>
+     *        The identifier can accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The following identity
+     *        formats are available:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Email address: group@domain.tld
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Group name: group
+     *        </p>
+     *        </li>
      */
 
     public void setGroupId(String groupId) {
@@ -107,8 +169,49 @@ public class ListGroupMembersRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The identifier for the group to which the members (users or groups) are associated.
      * </p>
+     * <p>
+     * The identifier can accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The following identity formats are
+     * available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Email address: group@domain.tld
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Group name: group
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The identifier for the group to which the members (users or groups) are associated.
+     * @return The identifier for the group to which the members (users or groups) are associated.</p>
+     *         <p>
+     *         The identifier can accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The following identity
+     *         formats are available:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Email address: group@domain.tld
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Group name: group
+     *         </p>
+     *         </li>
      */
 
     public String getGroupId() {
@@ -119,9 +222,50 @@ public class ListGroupMembersRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The identifier for the group to which the members (users or groups) are associated.
      * </p>
+     * <p>
+     * The identifier can accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The following identity formats are
+     * available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Email address: group@domain.tld
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Group name: group
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param groupId
-     *        The identifier for the group to which the members (users or groups) are associated.
+     *        The identifier for the group to which the members (users or groups) are associated.</p>
+     *        <p>
+     *        The identifier can accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The following identity
+     *        formats are available:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Email address: group@domain.tld
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Group name: group
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

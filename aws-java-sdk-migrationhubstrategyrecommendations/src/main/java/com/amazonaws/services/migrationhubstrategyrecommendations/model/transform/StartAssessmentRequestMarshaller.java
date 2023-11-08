@@ -28,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class StartAssessmentRequestMarshaller {
 
+    private static final MarshallingInfo<String> ASSESSMENTDATASOURCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("assessmentDataSourceType").build();
     private static final MarshallingInfo<List> ASSESSMENTTARGETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("assessmentTargets").build();
     private static final MarshallingInfo<String> S3BUCKETFORANALYSISDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -51,6 +53,7 @@ public class StartAssessmentRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(startAssessmentRequest.getAssessmentDataSourceType(), ASSESSMENTDATASOURCETYPE_BINDING);
             protocolMarshaller.marshall(startAssessmentRequest.getAssessmentTargets(), ASSESSMENTTARGETS_BINDING);
             protocolMarshaller.marshall(startAssessmentRequest.getS3bucketForAnalysisData(), S3BUCKETFORANALYSISDATA_BINDING);
             protocolMarshaller.marshall(startAssessmentRequest.getS3bucketForReportData(), S3BUCKETFORREPORTDATA_BINDING);

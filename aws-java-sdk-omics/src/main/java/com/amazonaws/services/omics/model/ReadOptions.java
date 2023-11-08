@@ -30,40 +30,16 @@ public class ReadOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The file's comment character.
+     * The file's field separator.
      * </p>
      */
-    private String comment;
+    private String sep;
     /**
      * <p>
      * The file's encoding.
      * </p>
      */
     private String encoding;
-    /**
-     * <p>
-     * A character for escaping quotes in the file.
-     * </p>
-     */
-    private String escape;
-    /**
-     * <p>
-     * Whether quotes need to be escaped in the file.
-     * </p>
-     */
-    private Boolean escapeQuotes;
-    /**
-     * <p>
-     * Whether the file has a header row.
-     * </p>
-     */
-    private Boolean header;
-    /**
-     * <p>
-     * A line separator for the file.
-     * </p>
-     */
-    private String lineSep;
     /**
      * <p>
      * The file's quote character.
@@ -78,48 +54,72 @@ public class ReadOptions implements Serializable, Cloneable, StructuredPojo {
     private Boolean quoteAll;
     /**
      * <p>
+     * A character for escaping quotes in the file.
+     * </p>
+     */
+    private String escape;
+    /**
+     * <p>
+     * Whether quotes need to be escaped in the file.
+     * </p>
+     */
+    private Boolean escapeQuotes;
+    /**
+     * <p>
+     * The file's comment character.
+     * </p>
+     */
+    private String comment;
+    /**
+     * <p>
+     * Whether the file has a header row.
+     * </p>
+     */
+    private Boolean header;
+    /**
+     * <p>
+     * A line separator for the file.
+     * </p>
+     */
+    private String lineSep;
+
+    /**
+     * <p>
      * The file's field separator.
      * </p>
-     */
-    private String sep;
-
-    /**
-     * <p>
-     * The file's comment character.
-     * </p>
      * 
-     * @param comment
-     *        The file's comment character.
+     * @param sep
+     *        The file's field separator.
      */
 
-    public void setComment(String comment) {
-        this.comment = comment;
+    public void setSep(String sep) {
+        this.sep = sep;
     }
 
     /**
      * <p>
-     * The file's comment character.
+     * The file's field separator.
      * </p>
      * 
-     * @return The file's comment character.
+     * @return The file's field separator.
      */
 
-    public String getComment() {
-        return this.comment;
+    public String getSep() {
+        return this.sep;
     }
 
     /**
      * <p>
-     * The file's comment character.
+     * The file's field separator.
      * </p>
      * 
-     * @param comment
-     *        The file's comment character.
+     * @param sep
+     *        The file's field separator.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ReadOptions withComment(String comment) {
-        setComment(comment);
+    public ReadOptions withSep(String sep) {
+        setSep(sep);
         return this;
     }
 
@@ -160,190 +160,6 @@ public class ReadOptions implements Serializable, Cloneable, StructuredPojo {
 
     public ReadOptions withEncoding(String encoding) {
         setEncoding(encoding);
-        return this;
-    }
-
-    /**
-     * <p>
-     * A character for escaping quotes in the file.
-     * </p>
-     * 
-     * @param escape
-     *        A character for escaping quotes in the file.
-     */
-
-    public void setEscape(String escape) {
-        this.escape = escape;
-    }
-
-    /**
-     * <p>
-     * A character for escaping quotes in the file.
-     * </p>
-     * 
-     * @return A character for escaping quotes in the file.
-     */
-
-    public String getEscape() {
-        return this.escape;
-    }
-
-    /**
-     * <p>
-     * A character for escaping quotes in the file.
-     * </p>
-     * 
-     * @param escape
-     *        A character for escaping quotes in the file.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ReadOptions withEscape(String escape) {
-        setEscape(escape);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Whether quotes need to be escaped in the file.
-     * </p>
-     * 
-     * @param escapeQuotes
-     *        Whether quotes need to be escaped in the file.
-     */
-
-    public void setEscapeQuotes(Boolean escapeQuotes) {
-        this.escapeQuotes = escapeQuotes;
-    }
-
-    /**
-     * <p>
-     * Whether quotes need to be escaped in the file.
-     * </p>
-     * 
-     * @return Whether quotes need to be escaped in the file.
-     */
-
-    public Boolean getEscapeQuotes() {
-        return this.escapeQuotes;
-    }
-
-    /**
-     * <p>
-     * Whether quotes need to be escaped in the file.
-     * </p>
-     * 
-     * @param escapeQuotes
-     *        Whether quotes need to be escaped in the file.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ReadOptions withEscapeQuotes(Boolean escapeQuotes) {
-        setEscapeQuotes(escapeQuotes);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Whether quotes need to be escaped in the file.
-     * </p>
-     * 
-     * @return Whether quotes need to be escaped in the file.
-     */
-
-    public Boolean isEscapeQuotes() {
-        return this.escapeQuotes;
-    }
-
-    /**
-     * <p>
-     * Whether the file has a header row.
-     * </p>
-     * 
-     * @param header
-     *        Whether the file has a header row.
-     */
-
-    public void setHeader(Boolean header) {
-        this.header = header;
-    }
-
-    /**
-     * <p>
-     * Whether the file has a header row.
-     * </p>
-     * 
-     * @return Whether the file has a header row.
-     */
-
-    public Boolean getHeader() {
-        return this.header;
-    }
-
-    /**
-     * <p>
-     * Whether the file has a header row.
-     * </p>
-     * 
-     * @param header
-     *        Whether the file has a header row.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ReadOptions withHeader(Boolean header) {
-        setHeader(header);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Whether the file has a header row.
-     * </p>
-     * 
-     * @return Whether the file has a header row.
-     */
-
-    public Boolean isHeader() {
-        return this.header;
-    }
-
-    /**
-     * <p>
-     * A line separator for the file.
-     * </p>
-     * 
-     * @param lineSep
-     *        A line separator for the file.
-     */
-
-    public void setLineSep(String lineSep) {
-        this.lineSep = lineSep;
-    }
-
-    /**
-     * <p>
-     * A line separator for the file.
-     * </p>
-     * 
-     * @return A line separator for the file.
-     */
-
-    public String getLineSep() {
-        return this.lineSep;
-    }
-
-    /**
-     * <p>
-     * A line separator for the file.
-     * </p>
-     * 
-     * @param lineSep
-     *        A line separator for the file.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ReadOptions withLineSep(String lineSep) {
-        setLineSep(lineSep);
         return this;
     }
 
@@ -441,41 +257,225 @@ public class ReadOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The file's field separator.
+     * A character for escaping quotes in the file.
      * </p>
      * 
-     * @param sep
-     *        The file's field separator.
+     * @param escape
+     *        A character for escaping quotes in the file.
      */
 
-    public void setSep(String sep) {
-        this.sep = sep;
+    public void setEscape(String escape) {
+        this.escape = escape;
     }
 
     /**
      * <p>
-     * The file's field separator.
+     * A character for escaping quotes in the file.
      * </p>
      * 
-     * @return The file's field separator.
+     * @return A character for escaping quotes in the file.
      */
 
-    public String getSep() {
-        return this.sep;
+    public String getEscape() {
+        return this.escape;
     }
 
     /**
      * <p>
-     * The file's field separator.
+     * A character for escaping quotes in the file.
      * </p>
      * 
-     * @param sep
-     *        The file's field separator.
+     * @param escape
+     *        A character for escaping quotes in the file.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ReadOptions withSep(String sep) {
-        setSep(sep);
+    public ReadOptions withEscape(String escape) {
+        setEscape(escape);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether quotes need to be escaped in the file.
+     * </p>
+     * 
+     * @param escapeQuotes
+     *        Whether quotes need to be escaped in the file.
+     */
+
+    public void setEscapeQuotes(Boolean escapeQuotes) {
+        this.escapeQuotes = escapeQuotes;
+    }
+
+    /**
+     * <p>
+     * Whether quotes need to be escaped in the file.
+     * </p>
+     * 
+     * @return Whether quotes need to be escaped in the file.
+     */
+
+    public Boolean getEscapeQuotes() {
+        return this.escapeQuotes;
+    }
+
+    /**
+     * <p>
+     * Whether quotes need to be escaped in the file.
+     * </p>
+     * 
+     * @param escapeQuotes
+     *        Whether quotes need to be escaped in the file.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReadOptions withEscapeQuotes(Boolean escapeQuotes) {
+        setEscapeQuotes(escapeQuotes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether quotes need to be escaped in the file.
+     * </p>
+     * 
+     * @return Whether quotes need to be escaped in the file.
+     */
+
+    public Boolean isEscapeQuotes() {
+        return this.escapeQuotes;
+    }
+
+    /**
+     * <p>
+     * The file's comment character.
+     * </p>
+     * 
+     * @param comment
+     *        The file's comment character.
+     */
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
+    /**
+     * <p>
+     * The file's comment character.
+     * </p>
+     * 
+     * @return The file's comment character.
+     */
+
+    public String getComment() {
+        return this.comment;
+    }
+
+    /**
+     * <p>
+     * The file's comment character.
+     * </p>
+     * 
+     * @param comment
+     *        The file's comment character.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReadOptions withComment(String comment) {
+        setComment(comment);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether the file has a header row.
+     * </p>
+     * 
+     * @param header
+     *        Whether the file has a header row.
+     */
+
+    public void setHeader(Boolean header) {
+        this.header = header;
+    }
+
+    /**
+     * <p>
+     * Whether the file has a header row.
+     * </p>
+     * 
+     * @return Whether the file has a header row.
+     */
+
+    public Boolean getHeader() {
+        return this.header;
+    }
+
+    /**
+     * <p>
+     * Whether the file has a header row.
+     * </p>
+     * 
+     * @param header
+     *        Whether the file has a header row.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReadOptions withHeader(Boolean header) {
+        setHeader(header);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether the file has a header row.
+     * </p>
+     * 
+     * @return Whether the file has a header row.
+     */
+
+    public Boolean isHeader() {
+        return this.header;
+    }
+
+    /**
+     * <p>
+     * A line separator for the file.
+     * </p>
+     * 
+     * @param lineSep
+     *        A line separator for the file.
+     */
+
+    public void setLineSep(String lineSep) {
+        this.lineSep = lineSep;
+    }
+
+    /**
+     * <p>
+     * A line separator for the file.
+     * </p>
+     * 
+     * @return A line separator for the file.
+     */
+
+    public String getLineSep() {
+        return this.lineSep;
+    }
+
+    /**
+     * <p>
+     * A line separator for the file.
+     * </p>
+     * 
+     * @param lineSep
+     *        A line separator for the file.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReadOptions withLineSep(String lineSep) {
+        setLineSep(lineSep);
         return this;
     }
 
@@ -491,24 +491,24 @@ public class ReadOptions implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getComment() != null)
-            sb.append("Comment: ").append(getComment()).append(",");
+        if (getSep() != null)
+            sb.append("Sep: ").append(getSep()).append(",");
         if (getEncoding() != null)
             sb.append("Encoding: ").append(getEncoding()).append(",");
-        if (getEscape() != null)
-            sb.append("Escape: ").append(getEscape()).append(",");
-        if (getEscapeQuotes() != null)
-            sb.append("EscapeQuotes: ").append(getEscapeQuotes()).append(",");
-        if (getHeader() != null)
-            sb.append("Header: ").append(getHeader()).append(",");
-        if (getLineSep() != null)
-            sb.append("LineSep: ").append(getLineSep()).append(",");
         if (getQuote() != null)
             sb.append("Quote: ").append(getQuote()).append(",");
         if (getQuoteAll() != null)
             sb.append("QuoteAll: ").append(getQuoteAll()).append(",");
-        if (getSep() != null)
-            sb.append("Sep: ").append(getSep());
+        if (getEscape() != null)
+            sb.append("Escape: ").append(getEscape()).append(",");
+        if (getEscapeQuotes() != null)
+            sb.append("EscapeQuotes: ").append(getEscapeQuotes()).append(",");
+        if (getComment() != null)
+            sb.append("Comment: ").append(getComment()).append(",");
+        if (getHeader() != null)
+            sb.append("Header: ").append(getHeader()).append(",");
+        if (getLineSep() != null)
+            sb.append("LineSep: ").append(getLineSep());
         sb.append("}");
         return sb.toString();
     }
@@ -523,29 +523,13 @@ public class ReadOptions implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof ReadOptions == false)
             return false;
         ReadOptions other = (ReadOptions) obj;
-        if (other.getComment() == null ^ this.getComment() == null)
+        if (other.getSep() == null ^ this.getSep() == null)
             return false;
-        if (other.getComment() != null && other.getComment().equals(this.getComment()) == false)
+        if (other.getSep() != null && other.getSep().equals(this.getSep()) == false)
             return false;
         if (other.getEncoding() == null ^ this.getEncoding() == null)
             return false;
         if (other.getEncoding() != null && other.getEncoding().equals(this.getEncoding()) == false)
-            return false;
-        if (other.getEscape() == null ^ this.getEscape() == null)
-            return false;
-        if (other.getEscape() != null && other.getEscape().equals(this.getEscape()) == false)
-            return false;
-        if (other.getEscapeQuotes() == null ^ this.getEscapeQuotes() == null)
-            return false;
-        if (other.getEscapeQuotes() != null && other.getEscapeQuotes().equals(this.getEscapeQuotes()) == false)
-            return false;
-        if (other.getHeader() == null ^ this.getHeader() == null)
-            return false;
-        if (other.getHeader() != null && other.getHeader().equals(this.getHeader()) == false)
-            return false;
-        if (other.getLineSep() == null ^ this.getLineSep() == null)
-            return false;
-        if (other.getLineSep() != null && other.getLineSep().equals(this.getLineSep()) == false)
             return false;
         if (other.getQuote() == null ^ this.getQuote() == null)
             return false;
@@ -555,9 +539,25 @@ public class ReadOptions implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getQuoteAll() != null && other.getQuoteAll().equals(this.getQuoteAll()) == false)
             return false;
-        if (other.getSep() == null ^ this.getSep() == null)
+        if (other.getEscape() == null ^ this.getEscape() == null)
             return false;
-        if (other.getSep() != null && other.getSep().equals(this.getSep()) == false)
+        if (other.getEscape() != null && other.getEscape().equals(this.getEscape()) == false)
+            return false;
+        if (other.getEscapeQuotes() == null ^ this.getEscapeQuotes() == null)
+            return false;
+        if (other.getEscapeQuotes() != null && other.getEscapeQuotes().equals(this.getEscapeQuotes()) == false)
+            return false;
+        if (other.getComment() == null ^ this.getComment() == null)
+            return false;
+        if (other.getComment() != null && other.getComment().equals(this.getComment()) == false)
+            return false;
+        if (other.getHeader() == null ^ this.getHeader() == null)
+            return false;
+        if (other.getHeader() != null && other.getHeader().equals(this.getHeader()) == false)
+            return false;
+        if (other.getLineSep() == null ^ this.getLineSep() == null)
+            return false;
+        if (other.getLineSep() != null && other.getLineSep().equals(this.getLineSep()) == false)
             return false;
         return true;
     }
@@ -567,15 +567,15 @@ public class ReadOptions implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getComment() == null) ? 0 : getComment().hashCode());
+        hashCode = prime * hashCode + ((getSep() == null) ? 0 : getSep().hashCode());
         hashCode = prime * hashCode + ((getEncoding() == null) ? 0 : getEncoding().hashCode());
-        hashCode = prime * hashCode + ((getEscape() == null) ? 0 : getEscape().hashCode());
-        hashCode = prime * hashCode + ((getEscapeQuotes() == null) ? 0 : getEscapeQuotes().hashCode());
-        hashCode = prime * hashCode + ((getHeader() == null) ? 0 : getHeader().hashCode());
-        hashCode = prime * hashCode + ((getLineSep() == null) ? 0 : getLineSep().hashCode());
         hashCode = prime * hashCode + ((getQuote() == null) ? 0 : getQuote().hashCode());
         hashCode = prime * hashCode + ((getQuoteAll() == null) ? 0 : getQuoteAll().hashCode());
-        hashCode = prime * hashCode + ((getSep() == null) ? 0 : getSep().hashCode());
+        hashCode = prime * hashCode + ((getEscape() == null) ? 0 : getEscape().hashCode());
+        hashCode = prime * hashCode + ((getEscapeQuotes() == null) ? 0 : getEscapeQuotes().hashCode());
+        hashCode = prime * hashCode + ((getComment() == null) ? 0 : getComment().hashCode());
+        hashCode = prime * hashCode + ((getHeader() == null) ? 0 : getHeader().hashCode());
+        hashCode = prime * hashCode + ((getLineSep() == null) ? 0 : getLineSep().hashCode());
         return hashCode;
     }
 

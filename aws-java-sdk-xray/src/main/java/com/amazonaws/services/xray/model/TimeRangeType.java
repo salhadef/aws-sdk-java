@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum TimeRangeType {
 
     TraceId("TraceId"),
-    Event("Event");
+    Event("Event"),
+    Service("Service");
 
     private String value;
 

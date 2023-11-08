@@ -322,8 +322,9 @@ public interface AmazonLocationAsync extends AmazonLocation {
 
     /**
      * <p>
-     * Uploads position update data for one or more devices to a tracker resource. Amazon Location uses the data when it
-     * reports the last known device position and position history. Amazon Location retains location data for 30 days.
+     * Uploads position update data for one or more devices to a tracker resource (up to 10 devices per batch). Amazon
+     * Location uses the data when it reports the last known device position and position history. Amazon Location
+     * retains location data for 30 days.
      * </p>
      * <note>
      * <p>
@@ -358,8 +359,9 @@ public interface AmazonLocationAsync extends AmazonLocation {
 
     /**
      * <p>
-     * Uploads position update data for one or more devices to a tracker resource. Amazon Location uses the data when it
-     * reports the last known device position and position history. Amazon Location retains location data for 30 days.
+     * Uploads position update data for one or more devices to a tracker resource (up to 10 devices per batch). Amazon
+     * Location uses the data when it reports the last known device position and position history. Amazon Location
+     * retains location data for 30 days.
      * </p>
      * <note>
      * <p>
@@ -660,16 +662,15 @@ public interface AmazonLocationAsync extends AmazonLocation {
 
     /**
      * <p>
-     * Creates an API key resource in your Amazon Web Services account, which lets you grant <code>geo:GetMap*</code>
-     * actions for Amazon Location Map resources to the API key bearer.
+     * Creates an API key resource in your Amazon Web Services account, which lets you grant actions for Amazon Location
+     * resources to the API key bearer.
      * </p>
-     * <important>
+     * <note>
      * <p>
-     * The API keys feature is in preview. We may add, change, or remove features before announcing general
-     * availability. For more information, see <a
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Using API keys</a>.
      * </p>
-     * </important>
+     * </note>
      * 
      * @param createKeyRequest
      * @return A Java Future containing the result of the CreateKey operation returned by the service.
@@ -681,16 +682,15 @@ public interface AmazonLocationAsync extends AmazonLocation {
 
     /**
      * <p>
-     * Creates an API key resource in your Amazon Web Services account, which lets you grant <code>geo:GetMap*</code>
-     * actions for Amazon Location Map resources to the API key bearer.
+     * Creates an API key resource in your Amazon Web Services account, which lets you grant actions for Amazon Location
+     * resources to the API key bearer.
      * </p>
-     * <important>
+     * <note>
      * <p>
-     * The API keys feature is in preview. We may add, change, or remove features before announcing general
-     * availability. For more information, see <a
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Using API keys</a>.
      * </p>
-     * </important>
+     * </note>
      * 
      * @param createKeyRequest
      * @param asyncHandler
@@ -1168,13 +1168,6 @@ public interface AmazonLocationAsync extends AmazonLocation {
      * <p>
      * Retrieves the API key resource details.
      * </p>
-     * <important>
-     * <p>
-     * The API keys feature is in preview. We may add, change, or remove features before announcing general
-     * availability. For more information, see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Using API keys</a>.
-     * </p>
-     * </important>
      * 
      * @param describeKeyRequest
      * @return A Java Future containing the result of the DescribeKey operation returned by the service.
@@ -1188,13 +1181,6 @@ public interface AmazonLocationAsync extends AmazonLocation {
      * <p>
      * Retrieves the API key resource details.
      * </p>
-     * <important>
-     * <p>
-     * The API keys feature is in preview. We may add, change, or remove features before announcing general
-     * availability. For more information, see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Using API keys</a>.
-     * </p>
-     * </important>
      * 
      * @param describeKeyRequest
      * @param asyncHandler
@@ -1813,13 +1799,6 @@ public interface AmazonLocationAsync extends AmazonLocation {
      * <p>
      * Lists API key resources in your Amazon Web Services account.
      * </p>
-     * <important>
-     * <p>
-     * The API keys feature is in preview. We may add, change, or remove features before announcing general
-     * availability. For more information, see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Using API keys</a>.
-     * </p>
-     * </important>
      * 
      * @param listKeysRequest
      * @return A Java Future containing the result of the ListKeys operation returned by the service.
@@ -1833,13 +1812,6 @@ public interface AmazonLocationAsync extends AmazonLocation {
      * <p>
      * Lists API key resources in your Amazon Web Services account.
      * </p>
-     * <important>
-     * <p>
-     * The API keys feature is in preview. We may add, change, or remove features before announcing general
-     * availability. For more information, see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Using API keys</a>.
-     * </p>
-     * </important>
      * 
      * @param listKeysRequest
      * @param asyncHandler
@@ -2349,13 +2321,6 @@ public interface AmazonLocationAsync extends AmazonLocation {
      * <p>
      * Updates the specified properties of a given API key resource.
      * </p>
-     * <important>
-     * <p>
-     * The API keys feature is in preview. We may add, change, or remove features before announcing general
-     * availability. For more information, see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Using API keys</a>.
-     * </p>
-     * </important>
      * 
      * @param updateKeyRequest
      * @return A Java Future containing the result of the UpdateKey operation returned by the service.
@@ -2369,13 +2334,6 @@ public interface AmazonLocationAsync extends AmazonLocation {
      * <p>
      * Updates the specified properties of a given API key resource.
      * </p>
-     * <important>
-     * <p>
-     * The API keys feature is in preview. We may add, change, or remove features before announcing general
-     * availability. For more information, see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Using API keys</a>.
-     * </p>
-     * </important>
      * 
      * @param updateKeyRequest
      * @param asyncHandler

@@ -48,13 +48,13 @@ public class SseConfigJsonUnmarshaller implements Unmarshaller<SseConfig, JsonUn
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("keyArn", targetDepth)) {
-                    context.nextToken();
-                    sseConfig.setKeyArn(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("type", targetDepth)) {
                     context.nextToken();
                     sseConfig.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("keyArn", targetDepth)) {
+                    context.nextToken();
+                    sseConfig.setKeyArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

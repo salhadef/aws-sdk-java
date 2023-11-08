@@ -63,6 +63,8 @@ public class UpdateBranchRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pullRequestEnvironmentName").build();
     private static final MarshallingInfo<String> BACKENDENVIRONMENTARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("backendEnvironmentArn").build();
+    private static final MarshallingInfo<StructuredPojo> BACKEND_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("backend").build();
 
     private static final UpdateBranchRequestMarshaller instance = new UpdateBranchRequestMarshaller();
 
@@ -97,6 +99,7 @@ public class UpdateBranchRequestMarshaller {
             protocolMarshaller.marshall(updateBranchRequest.getEnablePullRequestPreview(), ENABLEPULLREQUESTPREVIEW_BINDING);
             protocolMarshaller.marshall(updateBranchRequest.getPullRequestEnvironmentName(), PULLREQUESTENVIRONMENTNAME_BINDING);
             protocolMarshaller.marshall(updateBranchRequest.getBackendEnvironmentArn(), BACKENDENVIRONMENTARN_BINDING);
+            protocolMarshaller.marshall(updateBranchRequest.getBackend(), BACKEND_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

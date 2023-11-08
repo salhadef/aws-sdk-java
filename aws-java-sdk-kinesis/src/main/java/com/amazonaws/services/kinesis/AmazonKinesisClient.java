@@ -45,6 +45,7 @@ import com.amazonaws.services.kinesis.waiters.AmazonKinesisWaiters;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.kinesis.model.*;
+
 import com.amazonaws.services.kinesis.model.transform.*;
 
 /**

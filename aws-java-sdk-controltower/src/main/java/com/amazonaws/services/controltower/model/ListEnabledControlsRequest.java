@@ -39,7 +39,8 @@ public class ListEnabledControlsRequest extends com.amazonaws.AmazonWebServiceRe
     private String nextToken;
     /**
      * <p>
-     * The ARN of the organizational unit.
+     * The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a
+     * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.
      * </p>
      */
     private String targetIdentifier;
@@ -126,11 +127,13 @@ public class ListEnabledControlsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the organizational unit.
+     * The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a
+     * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.
      * </p>
      * 
      * @param targetIdentifier
-     *        The ARN of the organizational unit.
+     *        The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see
+     *        <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.
      */
 
     public void setTargetIdentifier(String targetIdentifier) {
@@ -139,10 +142,13 @@ public class ListEnabledControlsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the organizational unit.
+     * The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a
+     * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.
      * </p>
      * 
-     * @return The ARN of the organizational unit.
+     * @return The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see
+     *         <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview
+     *         page</a>.
      */
 
     public String getTargetIdentifier() {
@@ -151,11 +157,13 @@ public class ListEnabledControlsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the organizational unit.
+     * The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a
+     * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.
      * </p>
      * 
      * @param targetIdentifier
-     *        The ARN of the organizational unit.
+     *        The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see
+     *        <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

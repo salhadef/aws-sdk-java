@@ -31,6 +31,8 @@ public class ExportSummaryMarshaller {
             .marshallLocationName("ExportArn").build();
     private static final MarshallingInfo<String> EXPORTSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExportStatus").build();
+    private static final MarshallingInfo<String> EXPORTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExportType").build();
 
     private static final ExportSummaryMarshaller instance = new ExportSummaryMarshaller();
 
@@ -50,6 +52,7 @@ public class ExportSummaryMarshaller {
         try {
             protocolMarshaller.marshall(exportSummary.getExportArn(), EXPORTARN_BINDING);
             protocolMarshaller.marshall(exportSummary.getExportStatus(), EXPORTSTATUS_BINDING);
+            protocolMarshaller.marshall(exportSummary.getExportType(), EXPORTTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

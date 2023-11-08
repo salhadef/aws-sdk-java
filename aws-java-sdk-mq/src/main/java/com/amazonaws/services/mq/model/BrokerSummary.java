@@ -42,9 +42,9 @@ public class BrokerSummary implements Serializable, Cloneable, StructuredPojo {
     private String brokerId;
     /**
      * <p>
-     * The broker's name. This value is unique in your AWS account, 1-50 characters long, and containing only letters,
-     * numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special
-     * characters.
+     * The broker's name. This value is unique in your Amazon Web Services account, 1-50 characters long, and containing
+     * only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters,
+     * or special characters.
      * </p>
      */
     private String brokerName;
@@ -161,15 +161,15 @@ public class BrokerSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The broker's name. This value is unique in your AWS account, 1-50 characters long, and containing only letters,
-     * numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special
-     * characters.
+     * The broker's name. This value is unique in your Amazon Web Services account, 1-50 characters long, and containing
+     * only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters,
+     * or special characters.
      * </p>
      * 
      * @param brokerName
-     *        The broker's name. This value is unique in your AWS account, 1-50 characters long, and containing only
-     *        letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard
-     *        characters, or special characters.
+     *        The broker's name. This value is unique in your Amazon Web Services account, 1-50 characters long, and
+     *        containing only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets,
+     *        wildcard characters, or special characters.
      */
 
     public void setBrokerName(String brokerName) {
@@ -178,14 +178,14 @@ public class BrokerSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The broker's name. This value is unique in your AWS account, 1-50 characters long, and containing only letters,
-     * numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special
-     * characters.
+     * The broker's name. This value is unique in your Amazon Web Services account, 1-50 characters long, and containing
+     * only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters,
+     * or special characters.
      * </p>
      * 
-     * @return The broker's name. This value is unique in your AWS account, 1-50 characters long, and containing only
-     *         letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard
-     *         characters, or special characters.
+     * @return The broker's name. This value is unique in your Amazon Web Services account, 1-50 characters long, and
+     *         containing only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets,
+     *         wildcard characters, or special characters.
      */
 
     public String getBrokerName() {
@@ -194,15 +194,15 @@ public class BrokerSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The broker's name. This value is unique in your AWS account, 1-50 characters long, and containing only letters,
-     * numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special
-     * characters.
+     * The broker's name. This value is unique in your Amazon Web Services account, 1-50 characters long, and containing
+     * only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters,
+     * or special characters.
      * </p>
      * 
      * @param brokerName
-     *        The broker's name. This value is unique in your AWS account, 1-50 characters long, and containing only
-     *        letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard
-     *        characters, or special characters.
+     *        The broker's name. This value is unique in your Amazon Web Services account, 1-50 characters long, and
+     *        containing only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets,
+     *        wildcard characters, or special characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -193,8 +193,8 @@ public class UpdateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
      * &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append, overwrite or remove.
      * For values, you can provide static values, or map request data, stage variables, or context variables that are
      * evaluated at runtime. To learn more, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.">Transforming API
-     * requests and responses</a>.
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming
+     * API requests and responses</a>.
      * </p>
      */
     private java.util.Map<String, String> requestParameters;
@@ -1354,8 +1354,8 @@ public class UpdateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
      * &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append, overwrite or remove.
      * For values, you can provide static values, or map request data, stage variables, or context variables that are
      * evaluated at runtime. To learn more, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.">Transforming API
-     * requests and responses</a>.
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming
+     * API requests and responses</a>.
      * </p>
      * 
      * @return For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request
@@ -1379,7 +1379,7 @@ public class UpdateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
      *         pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append,
      *         overwrite or remove. For values, you can provide static values, or map request data, stage variables, or
      *         context variables that are evaluated at runtime. To learn more, see <a
-     *         href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping."
+     *         href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html"
      *         >Transforming API requests and responses</a>.
      */
 
@@ -1410,8 +1410,8 @@ public class UpdateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
      * &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append, overwrite or remove.
      * For values, you can provide static values, or map request data, stage variables, or context variables that are
      * evaluated at runtime. To learn more, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.">Transforming API
-     * requests and responses</a>.
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming
+     * API requests and responses</a>.
      * </p>
      * 
      * @param requestParameters
@@ -1436,7 +1436,7 @@ public class UpdateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
      *        pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append,
      *        overwrite or remove. For values, you can provide static values, or map request data, stage variables, or
      *        context variables that are evaluated at runtime. To learn more, see <a
-     *        href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping."
+     *        href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html"
      *        >Transforming API requests and responses</a>.
      */
 
@@ -1467,8 +1467,8 @@ public class UpdateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
      * &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append, overwrite or remove.
      * For values, you can provide static values, or map request data, stage variables, or context variables that are
      * evaluated at runtime. To learn more, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.">Transforming API
-     * requests and responses</a>.
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming
+     * API requests and responses</a>.
      * </p>
      * 
      * @param requestParameters
@@ -1493,7 +1493,7 @@ public class UpdateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
      *        pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append,
      *        overwrite or remove. For values, you can provide static values, or map request data, stage variables, or
      *        context variables that are evaluated at runtime. To learn more, see <a
-     *        href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping."
+     *        href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html"
      *        >Transforming API requests and responses</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

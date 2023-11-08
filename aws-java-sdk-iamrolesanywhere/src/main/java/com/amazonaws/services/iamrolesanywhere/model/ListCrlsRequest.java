@@ -27,8 +27,8 @@ public class ListCrlsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * A token that indicates where the output should continue from, if a previous operation did not show all results.
-     * To get the next results, call the operation again with this value.
+     * A token that indicates where the output should continue from, if a previous request did not show all results. To
+     * get the next results, make the request again with this value.
      * </p>
      */
     private String nextToken;
@@ -41,13 +41,13 @@ public class ListCrlsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * A token that indicates where the output should continue from, if a previous operation did not show all results.
-     * To get the next results, call the operation again with this value.
+     * A token that indicates where the output should continue from, if a previous request did not show all results. To
+     * get the next results, make the request again with this value.
      * </p>
      * 
      * @param nextToken
-     *        A token that indicates where the output should continue from, if a previous operation did not show all
-     *        results. To get the next results, call the operation again with this value.
+     *        A token that indicates where the output should continue from, if a previous request did not show all
+     *        results. To get the next results, make the request again with this value.
      */
 
     public void setNextToken(String nextToken) {
@@ -56,12 +56,12 @@ public class ListCrlsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * A token that indicates where the output should continue from, if a previous operation did not show all results.
-     * To get the next results, call the operation again with this value.
+     * A token that indicates where the output should continue from, if a previous request did not show all results. To
+     * get the next results, make the request again with this value.
      * </p>
      * 
-     * @return A token that indicates where the output should continue from, if a previous operation did not show all
-     *         results. To get the next results, call the operation again with this value.
+     * @return A token that indicates where the output should continue from, if a previous request did not show all
+     *         results. To get the next results, make the request again with this value.
      */
 
     public String getNextToken() {
@@ -70,13 +70,13 @@ public class ListCrlsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * A token that indicates where the output should continue from, if a previous operation did not show all results.
-     * To get the next results, call the operation again with this value.
+     * A token that indicates where the output should continue from, if a previous request did not show all results. To
+     * get the next results, make the request again with this value.
      * </p>
      * 
      * @param nextToken
-     *        A token that indicates where the output should continue from, if a previous operation did not show all
-     *        results. To get the next results, call the operation again with this value.
+     *        A token that indicates where the output should continue from, if a previous request did not show all
+     *        results. To get the next results, make the request again with this value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

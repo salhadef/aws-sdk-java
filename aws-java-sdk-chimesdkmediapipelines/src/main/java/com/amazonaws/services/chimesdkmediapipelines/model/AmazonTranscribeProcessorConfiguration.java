@@ -186,6 +186,36 @@ public class AmazonTranscribeProcessorConfiguration implements Serializable, Clo
      * </p>
      */
     private Boolean filterPartialResults;
+    /**
+     * <p>
+     * Turns language identification on or off.
+     * </p>
+     */
+    private Boolean identifyLanguage;
+    /**
+     * <p>
+     * The language options for the transcription, such as automatic language detection.
+     * </p>
+     */
+    private String languageOptions;
+    /**
+     * <p>
+     * The preferred language for the transcription.
+     * </p>
+     */
+    private String preferredLanguage;
+    /**
+     * <p>
+     * The names of the custom vocabulary or vocabularies used during transcription.
+     * </p>
+     */
+    private String vocabularyNames;
+    /**
+     * <p>
+     * The names of the custom vocabulary filter or filters using during transcription.
+     * </p>
+     */
+    private String vocabularyFilterNames;
 
     /**
      * <p>
@@ -1397,6 +1427,237 @@ public class AmazonTranscribeProcessorConfiguration implements Serializable, Clo
     }
 
     /**
+     * <p>
+     * Turns language identification on or off.
+     * </p>
+     * 
+     * @param identifyLanguage
+     *        Turns language identification on or off.
+     */
+
+    public void setIdentifyLanguage(Boolean identifyLanguage) {
+        this.identifyLanguage = identifyLanguage;
+    }
+
+    /**
+     * <p>
+     * Turns language identification on or off.
+     * </p>
+     * 
+     * @return Turns language identification on or off.
+     */
+
+    public Boolean getIdentifyLanguage() {
+        return this.identifyLanguage;
+    }
+
+    /**
+     * <p>
+     * Turns language identification on or off.
+     * </p>
+     * 
+     * @param identifyLanguage
+     *        Turns language identification on or off.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AmazonTranscribeProcessorConfiguration withIdentifyLanguage(Boolean identifyLanguage) {
+        setIdentifyLanguage(identifyLanguage);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Turns language identification on or off.
+     * </p>
+     * 
+     * @return Turns language identification on or off.
+     */
+
+    public Boolean isIdentifyLanguage() {
+        return this.identifyLanguage;
+    }
+
+    /**
+     * <p>
+     * The language options for the transcription, such as automatic language detection.
+     * </p>
+     * 
+     * @param languageOptions
+     *        The language options for the transcription, such as automatic language detection.
+     */
+
+    public void setLanguageOptions(String languageOptions) {
+        this.languageOptions = languageOptions;
+    }
+
+    /**
+     * <p>
+     * The language options for the transcription, such as automatic language detection.
+     * </p>
+     * 
+     * @return The language options for the transcription, such as automatic language detection.
+     */
+
+    public String getLanguageOptions() {
+        return this.languageOptions;
+    }
+
+    /**
+     * <p>
+     * The language options for the transcription, such as automatic language detection.
+     * </p>
+     * 
+     * @param languageOptions
+     *        The language options for the transcription, such as automatic language detection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AmazonTranscribeProcessorConfiguration withLanguageOptions(String languageOptions) {
+        setLanguageOptions(languageOptions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The preferred language for the transcription.
+     * </p>
+     * 
+     * @param preferredLanguage
+     *        The preferred language for the transcription.
+     * @see CallAnalyticsLanguageCode
+     */
+
+    public void setPreferredLanguage(String preferredLanguage) {
+        this.preferredLanguage = preferredLanguage;
+    }
+
+    /**
+     * <p>
+     * The preferred language for the transcription.
+     * </p>
+     * 
+     * @return The preferred language for the transcription.
+     * @see CallAnalyticsLanguageCode
+     */
+
+    public String getPreferredLanguage() {
+        return this.preferredLanguage;
+    }
+
+    /**
+     * <p>
+     * The preferred language for the transcription.
+     * </p>
+     * 
+     * @param preferredLanguage
+     *        The preferred language for the transcription.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CallAnalyticsLanguageCode
+     */
+
+    public AmazonTranscribeProcessorConfiguration withPreferredLanguage(String preferredLanguage) {
+        setPreferredLanguage(preferredLanguage);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The preferred language for the transcription.
+     * </p>
+     * 
+     * @param preferredLanguage
+     *        The preferred language for the transcription.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CallAnalyticsLanguageCode
+     */
+
+    public AmazonTranscribeProcessorConfiguration withPreferredLanguage(CallAnalyticsLanguageCode preferredLanguage) {
+        this.preferredLanguage = preferredLanguage.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The names of the custom vocabulary or vocabularies used during transcription.
+     * </p>
+     * 
+     * @param vocabularyNames
+     *        The names of the custom vocabulary or vocabularies used during transcription.
+     */
+
+    public void setVocabularyNames(String vocabularyNames) {
+        this.vocabularyNames = vocabularyNames;
+    }
+
+    /**
+     * <p>
+     * The names of the custom vocabulary or vocabularies used during transcription.
+     * </p>
+     * 
+     * @return The names of the custom vocabulary or vocabularies used during transcription.
+     */
+
+    public String getVocabularyNames() {
+        return this.vocabularyNames;
+    }
+
+    /**
+     * <p>
+     * The names of the custom vocabulary or vocabularies used during transcription.
+     * </p>
+     * 
+     * @param vocabularyNames
+     *        The names of the custom vocabulary or vocabularies used during transcription.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AmazonTranscribeProcessorConfiguration withVocabularyNames(String vocabularyNames) {
+        setVocabularyNames(vocabularyNames);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The names of the custom vocabulary filter or filters using during transcription.
+     * </p>
+     * 
+     * @param vocabularyFilterNames
+     *        The names of the custom vocabulary filter or filters using during transcription.
+     */
+
+    public void setVocabularyFilterNames(String vocabularyFilterNames) {
+        this.vocabularyFilterNames = vocabularyFilterNames;
+    }
+
+    /**
+     * <p>
+     * The names of the custom vocabulary filter or filters using during transcription.
+     * </p>
+     * 
+     * @return The names of the custom vocabulary filter or filters using during transcription.
+     */
+
+    public String getVocabularyFilterNames() {
+        return this.vocabularyFilterNames;
+    }
+
+    /**
+     * <p>
+     * The names of the custom vocabulary filter or filters using during transcription.
+     * </p>
+     * 
+     * @param vocabularyFilterNames
+     *        The names of the custom vocabulary filter or filters using during transcription.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AmazonTranscribeProcessorConfiguration withVocabularyFilterNames(String vocabularyFilterNames) {
+        setVocabularyFilterNames(vocabularyFilterNames);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1431,7 +1692,17 @@ public class AmazonTranscribeProcessorConfiguration implements Serializable, Clo
         if (getLanguageModelName() != null)
             sb.append("LanguageModelName: ").append(getLanguageModelName()).append(",");
         if (getFilterPartialResults() != null)
-            sb.append("FilterPartialResults: ").append(getFilterPartialResults());
+            sb.append("FilterPartialResults: ").append(getFilterPartialResults()).append(",");
+        if (getIdentifyLanguage() != null)
+            sb.append("IdentifyLanguage: ").append(getIdentifyLanguage()).append(",");
+        if (getLanguageOptions() != null)
+            sb.append("LanguageOptions: ").append(getLanguageOptions()).append(",");
+        if (getPreferredLanguage() != null)
+            sb.append("PreferredLanguage: ").append(getPreferredLanguage()).append(",");
+        if (getVocabularyNames() != null)
+            sb.append("VocabularyNames: ").append(getVocabularyNames()).append(",");
+        if (getVocabularyFilterNames() != null)
+            sb.append("VocabularyFilterNames: ").append(getVocabularyFilterNames());
         sb.append("}");
         return sb.toString();
     }
@@ -1495,6 +1766,26 @@ public class AmazonTranscribeProcessorConfiguration implements Serializable, Clo
             return false;
         if (other.getFilterPartialResults() != null && other.getFilterPartialResults().equals(this.getFilterPartialResults()) == false)
             return false;
+        if (other.getIdentifyLanguage() == null ^ this.getIdentifyLanguage() == null)
+            return false;
+        if (other.getIdentifyLanguage() != null && other.getIdentifyLanguage().equals(this.getIdentifyLanguage()) == false)
+            return false;
+        if (other.getLanguageOptions() == null ^ this.getLanguageOptions() == null)
+            return false;
+        if (other.getLanguageOptions() != null && other.getLanguageOptions().equals(this.getLanguageOptions()) == false)
+            return false;
+        if (other.getPreferredLanguage() == null ^ this.getPreferredLanguage() == null)
+            return false;
+        if (other.getPreferredLanguage() != null && other.getPreferredLanguage().equals(this.getPreferredLanguage()) == false)
+            return false;
+        if (other.getVocabularyNames() == null ^ this.getVocabularyNames() == null)
+            return false;
+        if (other.getVocabularyNames() != null && other.getVocabularyNames().equals(this.getVocabularyNames()) == false)
+            return false;
+        if (other.getVocabularyFilterNames() == null ^ this.getVocabularyFilterNames() == null)
+            return false;
+        if (other.getVocabularyFilterNames() != null && other.getVocabularyFilterNames().equals(this.getVocabularyFilterNames()) == false)
+            return false;
         return true;
     }
 
@@ -1515,6 +1806,11 @@ public class AmazonTranscribeProcessorConfiguration implements Serializable, Clo
         hashCode = prime * hashCode + ((getPiiEntityTypes() == null) ? 0 : getPiiEntityTypes().hashCode());
         hashCode = prime * hashCode + ((getLanguageModelName() == null) ? 0 : getLanguageModelName().hashCode());
         hashCode = prime * hashCode + ((getFilterPartialResults() == null) ? 0 : getFilterPartialResults().hashCode());
+        hashCode = prime * hashCode + ((getIdentifyLanguage() == null) ? 0 : getIdentifyLanguage().hashCode());
+        hashCode = prime * hashCode + ((getLanguageOptions() == null) ? 0 : getLanguageOptions().hashCode());
+        hashCode = prime * hashCode + ((getPreferredLanguage() == null) ? 0 : getPreferredLanguage().hashCode());
+        hashCode = prime * hashCode + ((getVocabularyNames() == null) ? 0 : getVocabularyNames().hashCode());
+        hashCode = prime * hashCode + ((getVocabularyFilterNames() == null) ? 0 : getVocabularyFilterNames().hashCode());
         return hashCode;
     }
 

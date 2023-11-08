@@ -29,13 +29,13 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UpdateWorkspaceAliasRequestMarshaller {
 
+    private static final MarshallingInfo<String> WORKSPACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("workspaceId").build();
     private static final MarshallingInfo<String> ALIAS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("alias").build();
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
-    private static final MarshallingInfo<String> WORKSPACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
-            .marshallLocationName("workspaceId").build();
 
     private static final UpdateWorkspaceAliasRequestMarshaller instance = new UpdateWorkspaceAliasRequestMarshaller();
 
@@ -53,9 +53,9 @@ public class UpdateWorkspaceAliasRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(updateWorkspaceAliasRequest.getWorkspaceId(), WORKSPACEID_BINDING);
             protocolMarshaller.marshall(updateWorkspaceAliasRequest.getAlias(), ALIAS_BINDING);
             protocolMarshaller.marshall(updateWorkspaceAliasRequest.getClientToken(), CLIENTTOKEN_BINDING);
-            protocolMarshaller.marshall(updateWorkspaceAliasRequest.getWorkspaceId(), WORKSPACEID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

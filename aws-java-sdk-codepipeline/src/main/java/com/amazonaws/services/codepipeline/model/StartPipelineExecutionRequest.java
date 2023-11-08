@@ -36,6 +36,13 @@ public class StartPipelineExecutionRequest extends com.amazonaws.AmazonWebServic
     private String name;
     /**
      * <p>
+     * A list that overrides pipeline variables for a pipeline execution that's being started. Variable names must match
+     * <code>[A-Za-z0-9@\-_]+</code>, and the values can be anything except an empty string.
+     * </p>
+     */
+    private java.util.List<PipelineVariable> variables;
+    /**
+     * <p>
      * The system-generated unique ID used to identify a unique execution request.
      * </p>
      */
@@ -78,6 +85,84 @@ public class StartPipelineExecutionRequest extends com.amazonaws.AmazonWebServic
 
     public StartPipelineExecutionRequest withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list that overrides pipeline variables for a pipeline execution that's being started. Variable names must match
+     * <code>[A-Za-z0-9@\-_]+</code>, and the values can be anything except an empty string.
+     * </p>
+     * 
+     * @return A list that overrides pipeline variables for a pipeline execution that's being started. Variable names
+     *         must match <code>[A-Za-z0-9@\-_]+</code>, and the values can be anything except an empty string.
+     */
+
+    public java.util.List<PipelineVariable> getVariables() {
+        return variables;
+    }
+
+    /**
+     * <p>
+     * A list that overrides pipeline variables for a pipeline execution that's being started. Variable names must match
+     * <code>[A-Za-z0-9@\-_]+</code>, and the values can be anything except an empty string.
+     * </p>
+     * 
+     * @param variables
+     *        A list that overrides pipeline variables for a pipeline execution that's being started. Variable names
+     *        must match <code>[A-Za-z0-9@\-_]+</code>, and the values can be anything except an empty string.
+     */
+
+    public void setVariables(java.util.Collection<PipelineVariable> variables) {
+        if (variables == null) {
+            this.variables = null;
+            return;
+        }
+
+        this.variables = new java.util.ArrayList<PipelineVariable>(variables);
+    }
+
+    /**
+     * <p>
+     * A list that overrides pipeline variables for a pipeline execution that's being started. Variable names must match
+     * <code>[A-Za-z0-9@\-_]+</code>, and the values can be anything except an empty string.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVariables(java.util.Collection)} or {@link #withVariables(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param variables
+     *        A list that overrides pipeline variables for a pipeline execution that's being started. Variable names
+     *        must match <code>[A-Za-z0-9@\-_]+</code>, and the values can be anything except an empty string.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartPipelineExecutionRequest withVariables(PipelineVariable... variables) {
+        if (this.variables == null) {
+            setVariables(new java.util.ArrayList<PipelineVariable>(variables.length));
+        }
+        for (PipelineVariable ele : variables) {
+            this.variables.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list that overrides pipeline variables for a pipeline execution that's being started. Variable names must match
+     * <code>[A-Za-z0-9@\-_]+</code>, and the values can be anything except an empty string.
+     * </p>
+     * 
+     * @param variables
+     *        A list that overrides pipeline variables for a pipeline execution that's being started. Variable names
+     *        must match <code>[A-Za-z0-9@\-_]+</code>, and the values can be anything except an empty string.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartPipelineExecutionRequest withVariables(java.util.Collection<PipelineVariable> variables) {
+        setVariables(variables);
         return this;
     }
 
@@ -135,6 +220,8 @@ public class StartPipelineExecutionRequest extends com.amazonaws.AmazonWebServic
         sb.append("{");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getVariables() != null)
+            sb.append("Variables: ").append(getVariables()).append(",");
         if (getClientRequestToken() != null)
             sb.append("ClientRequestToken: ").append(getClientRequestToken());
         sb.append("}");
@@ -155,6 +242,10 @@ public class StartPipelineExecutionRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getVariables() == null ^ this.getVariables() == null)
+            return false;
+        if (other.getVariables() != null && other.getVariables().equals(this.getVariables()) == false)
+            return false;
         if (other.getClientRequestToken() == null ^ this.getClientRequestToken() == null)
             return false;
         if (other.getClientRequestToken() != null && other.getClientRequestToken().equals(this.getClientRequestToken()) == false)
@@ -168,6 +259,7 @@ public class StartPipelineExecutionRequest extends com.amazonaws.AmazonWebServic
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getVariables() == null) ? 0 : getVariables().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
         return hashCode;
     }

@@ -27,7 +27,7 @@ public class EnableOrganizationAdminAccountRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The Amazon Web Services Account ID for the organization account to be enabled as a GuardDuty delegated
+     * The Amazon Web Services account ID for the organization account to be enabled as a GuardDuty delegated
      * administrator.
      * </p>
      */
@@ -35,12 +35,12 @@ public class EnableOrganizationAdminAccountRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The Amazon Web Services Account ID for the organization account to be enabled as a GuardDuty delegated
+     * The Amazon Web Services account ID for the organization account to be enabled as a GuardDuty delegated
      * administrator.
      * </p>
      * 
      * @param adminAccountId
-     *        The Amazon Web Services Account ID for the organization account to be enabled as a GuardDuty delegated
+     *        The Amazon Web Services account ID for the organization account to be enabled as a GuardDuty delegated
      *        administrator.
      */
 
@@ -50,11 +50,11 @@ public class EnableOrganizationAdminAccountRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The Amazon Web Services Account ID for the organization account to be enabled as a GuardDuty delegated
+     * The Amazon Web Services account ID for the organization account to be enabled as a GuardDuty delegated
      * administrator.
      * </p>
      * 
-     * @return The Amazon Web Services Account ID for the organization account to be enabled as a GuardDuty delegated
+     * @return The Amazon Web Services account ID for the organization account to be enabled as a GuardDuty delegated
      *         administrator.
      */
 
@@ -64,12 +64,12 @@ public class EnableOrganizationAdminAccountRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The Amazon Web Services Account ID for the organization account to be enabled as a GuardDuty delegated
+     * The Amazon Web Services account ID for the organization account to be enabled as a GuardDuty delegated
      * administrator.
      * </p>
      * 
      * @param adminAccountId
-     *        The Amazon Web Services Account ID for the organization account to be enabled as a GuardDuty delegated
+     *        The Amazon Web Services account ID for the organization account to be enabled as a GuardDuty delegated
      *        administrator.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

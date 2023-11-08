@@ -221,6 +221,32 @@ public class CreateDBInstanceReadReplicaRequestMarshaller implements
             request.addParameter("DomainIAMRoleName", StringUtils.fromString(createDBInstanceReadReplicaRequest.getDomainIAMRoleName()));
         }
 
+        if (createDBInstanceReadReplicaRequest.getDomainFqdn() != null) {
+            request.addParameter("DomainFqdn", StringUtils.fromString(createDBInstanceReadReplicaRequest.getDomainFqdn()));
+        }
+
+        if (createDBInstanceReadReplicaRequest.getDomainOu() != null) {
+            request.addParameter("DomainOu", StringUtils.fromString(createDBInstanceReadReplicaRequest.getDomainOu()));
+        }
+
+        if (createDBInstanceReadReplicaRequest.getDomainAuthSecretArn() != null) {
+            request.addParameter("DomainAuthSecretArn", StringUtils.fromString(createDBInstanceReadReplicaRequest.getDomainAuthSecretArn()));
+        }
+
+        if (!createDBInstanceReadReplicaRequest.getDomainDnsIps().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createDBInstanceReadReplicaRequest.getDomainDnsIps()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> domainDnsIpsList = (com.amazonaws.internal.SdkInternalList<String>) createDBInstanceReadReplicaRequest
+                    .getDomainDnsIps();
+            int domainDnsIpsListIndex = 1;
+
+            for (String domainDnsIpsListValue : domainDnsIpsList) {
+                if (domainDnsIpsListValue != null) {
+                    request.addParameter("DomainDnsIps.member." + domainDnsIpsListIndex, StringUtils.fromString(domainDnsIpsListValue));
+                }
+                domainDnsIpsListIndex++;
+            }
+        }
+
         if (createDBInstanceReadReplicaRequest.getReplicaMode() != null) {
             request.addParameter("ReplicaMode", StringUtils.fromString(createDBInstanceReadReplicaRequest.getReplicaMode()));
         }
@@ -251,6 +277,14 @@ public class CreateDBInstanceReadReplicaRequestMarshaller implements
 
         if (createDBInstanceReadReplicaRequest.getSourceDBClusterIdentifier() != null) {
             request.addParameter("SourceDBClusterIdentifier", StringUtils.fromString(createDBInstanceReadReplicaRequest.getSourceDBClusterIdentifier()));
+        }
+
+        if (createDBInstanceReadReplicaRequest.getDedicatedLogVolume() != null) {
+            request.addParameter("DedicatedLogVolume", StringUtils.fromBoolean(createDBInstanceReadReplicaRequest.getDedicatedLogVolume()));
+        }
+
+        if (createDBInstanceReadReplicaRequest.getUpgradeStorageConfig() != null) {
+            request.addParameter("UpgradeStorageConfig", StringUtils.fromBoolean(createDBInstanceReadReplicaRequest.getUpgradeStorageConfig()));
         }
 
         if (createDBInstanceReadReplicaRequest.getSourceRegion() != null) {

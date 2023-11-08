@@ -140,7 +140,7 @@ public class AssociateSoftwareTokenRequest extends com.amazonaws.AmazonWebServic
         if (getAccessToken() != null)
             sb.append("AccessToken: ").append("***Sensitive Data Redacted***").append(",");
         if (getSession() != null)
-            sb.append("Session: ").append(getSession());
+            sb.append("Session: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

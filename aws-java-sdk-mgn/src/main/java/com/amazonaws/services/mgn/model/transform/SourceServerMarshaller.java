@@ -33,6 +33,8 @@ public class SourceServerMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("applicationID").build();
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("arn").build();
+    private static final MarshallingInfo<StructuredPojo> CONNECTORACTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("connectorAction").build();
     private static final MarshallingInfo<StructuredPojo> DATAREPLICATIONINFO_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataReplicationInfo").build();
     private static final MarshallingInfo<String> FQDNFORACTIONFRAMEWORK_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -74,6 +76,7 @@ public class SourceServerMarshaller {
         try {
             protocolMarshaller.marshall(sourceServer.getApplicationID(), APPLICATIONID_BINDING);
             protocolMarshaller.marshall(sourceServer.getArn(), ARN_BINDING);
+            protocolMarshaller.marshall(sourceServer.getConnectorAction(), CONNECTORACTION_BINDING);
             protocolMarshaller.marshall(sourceServer.getDataReplicationInfo(), DATAREPLICATIONINFO_BINDING);
             protocolMarshaller.marshall(sourceServer.getFqdnForActionFramework(), FQDNFORACTIONFRAMEWORK_BINDING);
             protocolMarshaller.marshall(sourceServer.getIsArchived(), ISARCHIVED_BINDING);

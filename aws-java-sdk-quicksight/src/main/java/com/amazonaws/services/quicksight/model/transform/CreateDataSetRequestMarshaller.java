@@ -57,6 +57,10 @@ public class CreateDataSetRequestMarshaller {
             .marshallLocationName("Tags").build();
     private static final MarshallingInfo<StructuredPojo> DATASETUSAGECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataSetUsageConfiguration").build();
+    private static final MarshallingInfo<List> DATASETPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DatasetParameters").build();
+    private static final MarshallingInfo<List> FOLDERARNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("FolderArns").build();
 
     private static final CreateDataSetRequestMarshaller instance = new CreateDataSetRequestMarshaller();
 
@@ -88,6 +92,8 @@ public class CreateDataSetRequestMarshaller {
             protocolMarshaller.marshall(createDataSetRequest.getColumnLevelPermissionRules(), COLUMNLEVELPERMISSIONRULES_BINDING);
             protocolMarshaller.marshall(createDataSetRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createDataSetRequest.getDataSetUsageConfiguration(), DATASETUSAGECONFIGURATION_BINDING);
+            protocolMarshaller.marshall(createDataSetRequest.getDatasetParameters(), DATASETPARAMETERS_BINDING);
+            protocolMarshaller.marshall(createDataSetRequest.getFolderArns(), FOLDERARNS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

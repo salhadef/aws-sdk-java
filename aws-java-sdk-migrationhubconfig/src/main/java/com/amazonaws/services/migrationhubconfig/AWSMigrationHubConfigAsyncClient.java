@@ -137,6 +137,39 @@ public class AWSMigrationHubConfigAsyncClient extends AWSMigrationHubConfigClien
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteHomeRegionControlResult> deleteHomeRegionControlAsync(DeleteHomeRegionControlRequest request) {
+
+        return deleteHomeRegionControlAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteHomeRegionControlResult> deleteHomeRegionControlAsync(final DeleteHomeRegionControlRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteHomeRegionControlRequest, DeleteHomeRegionControlResult> asyncHandler) {
+        final DeleteHomeRegionControlRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteHomeRegionControlResult>() {
+            @Override
+            public DeleteHomeRegionControlResult call() throws Exception {
+                DeleteHomeRegionControlResult result = null;
+
+                try {
+                    result = executeDeleteHomeRegionControl(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeHomeRegionControlsResult> describeHomeRegionControlsAsync(DescribeHomeRegionControlsRequest request) {
 
         return describeHomeRegionControlsAsync(request, null);

@@ -64,6 +64,10 @@ public class EndpointOutputConfigurationJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     endpointOutputConfiguration.setInitialInstanceCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("ServerlessConfig", targetDepth)) {
+                    context.nextToken();
+                    endpointOutputConfiguration.setServerlessConfig(ProductionVariantServerlessConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

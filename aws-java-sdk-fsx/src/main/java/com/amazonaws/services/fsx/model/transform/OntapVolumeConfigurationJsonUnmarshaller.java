@@ -96,6 +96,10 @@ public class OntapVolumeConfigurationJsonUnmarshaller implements Unmarshaller<On
                     context.nextToken();
                     ontapVolumeConfiguration.setCopyTagsToBackups(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("SnaplockConfiguration", targetDepth)) {
+                    context.nextToken();
+                    ontapVolumeConfiguration.setSnaplockConfiguration(SnaplockConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

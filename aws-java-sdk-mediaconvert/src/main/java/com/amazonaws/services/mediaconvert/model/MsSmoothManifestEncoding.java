@@ -15,8 +15,8 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Use Manifest encoding (MsSmoothManifestEncoding) to specify the encoding format for the server and client manifest.
- * Valid options are utf8 and utf16.
+ * Use Manifest encoding to specify the encoding format for the server and client manifest. Valid options are utf8 and
+ * utf16.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum MsSmoothManifestEncoding {

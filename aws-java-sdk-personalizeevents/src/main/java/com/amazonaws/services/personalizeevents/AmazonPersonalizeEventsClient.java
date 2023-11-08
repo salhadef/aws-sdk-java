@@ -44,6 +44,7 @@ import com.amazonaws.services.personalizeevents.AmazonPersonalizeEventsClientBui
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.personalizeevents.model.*;
+
 import com.amazonaws.services.personalizeevents.model.transform.*;
 
 /**

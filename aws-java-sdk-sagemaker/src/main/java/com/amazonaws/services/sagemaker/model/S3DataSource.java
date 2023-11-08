@@ -21,6 +21,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Describes the S3 data source.
  * </p>
+ * <p>
+ * Your input bucket must be in the same Amazon Web Services region as your training job.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/S3DataSource" target="_top">AWS API
  *      Documentation</a>
@@ -108,6 +111,9 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Your input bucket must be located in same Amazon Web Services region as your training job.
+     * </p>
      */
     private String s3Uri;
     /**
@@ -345,6 +351,9 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Your input bucket must be located in same Amazon Web Services region as your training job.
+     * </p>
      * 
      * @param s3Uri
      *        Depending on the value specified for the <code>S3DataType</code>, identifies either a key name prefix or a
@@ -408,6 +417,9 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      *        uses to perform tasks on your behalf.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        Your input bucket must be located in same Amazon Web Services region as your training job.
      */
 
     public void setS3Uri(String s3Uri) {
@@ -478,6 +490,9 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Your input bucket must be located in same Amazon Web Services region as your training job.
+     * </p>
      * 
      * @return Depending on the value specified for the <code>S3DataType</code>, identifies either a key name prefix or
      *         a manifest. For example: </p>
@@ -540,6 +555,9 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      *         uses to perform tasks on your behalf.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         Your input bucket must be located in same Amazon Web Services region as your training job.
      */
 
     public String getS3Uri() {
@@ -610,6 +628,9 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Your input bucket must be located in same Amazon Web Services region as your training job.
+     * </p>
      * 
      * @param s3Uri
      *        Depending on the value specified for the <code>S3DataType</code>, identifies either a key name prefix or a
@@ -673,6 +694,9 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      *        uses to perform tasks on your behalf.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        Your input bucket must be located in same Amazon Web Services region as your training job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

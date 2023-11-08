@@ -139,6 +139,21 @@ public class CreateCustomDBEngineVersionRequest extends com.amazonaws.AmazonWebS
     private String manifest;
 
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * The ARN of a CEV to use as a source for creating a new CEV. You can specify a different Amazon Machine Imagine
+     * (AMI) by using either <code>Source</code> or <code>UseAwsProvidedLatestImage</code>. You can't specify a
+     * different JSON manifest when you specify <code>SourceCustomDbEngineVersionIdentifier</code>.
+     * </p>
+     */
+    private String sourceCustomDbEngineVersionIdentifier;
+    /**
+     * <p>
+     * Specifies whether to use the latest service-provided Amazon Machine Image (AMI) for the CEV. If you specify
+     * <code>UseAwsProvidedLatestImage</code>, you can't also specify <code>ImageId</code>.
+     * </p>
+     */
+    private Boolean useAwsProvidedLatestImage;
 
     /**
      * <p>
@@ -897,6 +912,118 @@ public class CreateCustomDBEngineVersionRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * The ARN of a CEV to use as a source for creating a new CEV. You can specify a different Amazon Machine Imagine
+     * (AMI) by using either <code>Source</code> or <code>UseAwsProvidedLatestImage</code>. You can't specify a
+     * different JSON manifest when you specify <code>SourceCustomDbEngineVersionIdentifier</code>.
+     * </p>
+     * 
+     * @param sourceCustomDbEngineVersionIdentifier
+     *        The ARN of a CEV to use as a source for creating a new CEV. You can specify a different Amazon Machine
+     *        Imagine (AMI) by using either <code>Source</code> or <code>UseAwsProvidedLatestImage</code>. You can't
+     *        specify a different JSON manifest when you specify <code>SourceCustomDbEngineVersionIdentifier</code>.
+     */
+
+    public void setSourceCustomDbEngineVersionIdentifier(String sourceCustomDbEngineVersionIdentifier) {
+        this.sourceCustomDbEngineVersionIdentifier = sourceCustomDbEngineVersionIdentifier;
+    }
+
+    /**
+     * <p>
+     * The ARN of a CEV to use as a source for creating a new CEV. You can specify a different Amazon Machine Imagine
+     * (AMI) by using either <code>Source</code> or <code>UseAwsProvidedLatestImage</code>. You can't specify a
+     * different JSON manifest when you specify <code>SourceCustomDbEngineVersionIdentifier</code>.
+     * </p>
+     * 
+     * @return The ARN of a CEV to use as a source for creating a new CEV. You can specify a different Amazon Machine
+     *         Imagine (AMI) by using either <code>Source</code> or <code>UseAwsProvidedLatestImage</code>. You can't
+     *         specify a different JSON manifest when you specify <code>SourceCustomDbEngineVersionIdentifier</code>.
+     */
+
+    public String getSourceCustomDbEngineVersionIdentifier() {
+        return this.sourceCustomDbEngineVersionIdentifier;
+    }
+
+    /**
+     * <p>
+     * The ARN of a CEV to use as a source for creating a new CEV. You can specify a different Amazon Machine Imagine
+     * (AMI) by using either <code>Source</code> or <code>UseAwsProvidedLatestImage</code>. You can't specify a
+     * different JSON manifest when you specify <code>SourceCustomDbEngineVersionIdentifier</code>.
+     * </p>
+     * 
+     * @param sourceCustomDbEngineVersionIdentifier
+     *        The ARN of a CEV to use as a source for creating a new CEV. You can specify a different Amazon Machine
+     *        Imagine (AMI) by using either <code>Source</code> or <code>UseAwsProvidedLatestImage</code>. You can't
+     *        specify a different JSON manifest when you specify <code>SourceCustomDbEngineVersionIdentifier</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCustomDBEngineVersionRequest withSourceCustomDbEngineVersionIdentifier(String sourceCustomDbEngineVersionIdentifier) {
+        setSourceCustomDbEngineVersionIdentifier(sourceCustomDbEngineVersionIdentifier);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to use the latest service-provided Amazon Machine Image (AMI) for the CEV. If you specify
+     * <code>UseAwsProvidedLatestImage</code>, you can't also specify <code>ImageId</code>.
+     * </p>
+     * 
+     * @param useAwsProvidedLatestImage
+     *        Specifies whether to use the latest service-provided Amazon Machine Image (AMI) for the CEV. If you
+     *        specify <code>UseAwsProvidedLatestImage</code>, you can't also specify <code>ImageId</code>.
+     */
+
+    public void setUseAwsProvidedLatestImage(Boolean useAwsProvidedLatestImage) {
+        this.useAwsProvidedLatestImage = useAwsProvidedLatestImage;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to use the latest service-provided Amazon Machine Image (AMI) for the CEV. If you specify
+     * <code>UseAwsProvidedLatestImage</code>, you can't also specify <code>ImageId</code>.
+     * </p>
+     * 
+     * @return Specifies whether to use the latest service-provided Amazon Machine Image (AMI) for the CEV. If you
+     *         specify <code>UseAwsProvidedLatestImage</code>, you can't also specify <code>ImageId</code>.
+     */
+
+    public Boolean getUseAwsProvidedLatestImage() {
+        return this.useAwsProvidedLatestImage;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to use the latest service-provided Amazon Machine Image (AMI) for the CEV. If you specify
+     * <code>UseAwsProvidedLatestImage</code>, you can't also specify <code>ImageId</code>.
+     * </p>
+     * 
+     * @param useAwsProvidedLatestImage
+     *        Specifies whether to use the latest service-provided Amazon Machine Image (AMI) for the CEV. If you
+     *        specify <code>UseAwsProvidedLatestImage</code>, you can't also specify <code>ImageId</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCustomDBEngineVersionRequest withUseAwsProvidedLatestImage(Boolean useAwsProvidedLatestImage) {
+        setUseAwsProvidedLatestImage(useAwsProvidedLatestImage);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to use the latest service-provided Amazon Machine Image (AMI) for the CEV. If you specify
+     * <code>UseAwsProvidedLatestImage</code>, you can't also specify <code>ImageId</code>.
+     * </p>
+     * 
+     * @return Specifies whether to use the latest service-provided Amazon Machine Image (AMI) for the CEV. If you
+     *         specify <code>UseAwsProvidedLatestImage</code>, you can't also specify <code>ImageId</code>.
+     */
+
+    public Boolean isUseAwsProvidedLatestImage() {
+        return this.useAwsProvidedLatestImage;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -925,7 +1052,11 @@ public class CreateCustomDBEngineVersionRequest extends com.amazonaws.AmazonWebS
         if (getManifest() != null)
             sb.append("Manifest: ").append(getManifest()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getSourceCustomDbEngineVersionIdentifier() != null)
+            sb.append("SourceCustomDbEngineVersionIdentifier: ").append(getSourceCustomDbEngineVersionIdentifier()).append(",");
+        if (getUseAwsProvidedLatestImage() != null)
+            sb.append("UseAwsProvidedLatestImage: ").append(getUseAwsProvidedLatestImage());
         sb.append("}");
         return sb.toString();
     }
@@ -978,6 +1109,15 @@ public class CreateCustomDBEngineVersionRequest extends com.amazonaws.AmazonWebS
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getSourceCustomDbEngineVersionIdentifier() == null ^ this.getSourceCustomDbEngineVersionIdentifier() == null)
+            return false;
+        if (other.getSourceCustomDbEngineVersionIdentifier() != null
+                && other.getSourceCustomDbEngineVersionIdentifier().equals(this.getSourceCustomDbEngineVersionIdentifier()) == false)
+            return false;
+        if (other.getUseAwsProvidedLatestImage() == null ^ this.getUseAwsProvidedLatestImage() == null)
+            return false;
+        if (other.getUseAwsProvidedLatestImage() != null && other.getUseAwsProvidedLatestImage().equals(this.getUseAwsProvidedLatestImage()) == false)
+            return false;
         return true;
     }
 
@@ -995,6 +1135,8 @@ public class CreateCustomDBEngineVersionRequest extends com.amazonaws.AmazonWebS
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getManifest() == null) ? 0 : getManifest().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getSourceCustomDbEngineVersionIdentifier() == null) ? 0 : getSourceCustomDbEngineVersionIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getUseAwsProvidedLatestImage() == null) ? 0 : getUseAwsProvidedLatestImage().hashCode());
         return hashCode;
     }
 

@@ -83,6 +83,21 @@ public class AbstractAWSHealthAsync extends AbstractAWSHealth implements AWSHeal
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeEntityAggregatesForOrganizationResult> describeEntityAggregatesForOrganizationAsync(
+            DescribeEntityAggregatesForOrganizationRequest request) {
+
+        return describeEntityAggregatesForOrganizationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEntityAggregatesForOrganizationResult> describeEntityAggregatesForOrganizationAsync(
+            DescribeEntityAggregatesForOrganizationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeEntityAggregatesForOrganizationRequest, DescribeEntityAggregatesForOrganizationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeEventAggregatesResult> describeEventAggregatesAsync(DescribeEventAggregatesRequest request) {
 
         return describeEventAggregatesAsync(request, null);

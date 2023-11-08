@@ -19,11 +19,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * <b>[Snapshot and AMI policies only]</b> Specifies a cross-Region copy rule for snapshot and AMI policies.
+ * <b>[Snapshot and AMI policies only]</b> Specifies a cross-Region copy rule for a snapshot and AMI policies.
  * </p>
  * <note>
  * <p>
- * To specify a cross-Region copy action for event-based polices, use <a>CrossRegionCopyAction</a>.
+ * To specify a cross-Region copy action for event-based polices, use <a
+ * href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_CrossRegionCopyAction.html">CrossRegionCopyAction</a>.
  * </p>
  * </note>
  * 
@@ -36,22 +37,27 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
     /**
      * <note>
      * <p>
-     * Avoid using this parameter when creating new policies. Instead, use <b>Target</b> to specify a target Region or a
-     * target Outpost for snapshot copies.
+     * Use this parameter for AMI policies only. For snapshot policies, use <b>Target</b> instead. For snapshot policies
+     * created before the <b>Target</b> parameter was introduced, this parameter indicates the target Region for
+     * snapshot copies.
      * </p>
-     * <p>
-     * For policies created before the <b>Target</b> parameter was introduced, this parameter indicates the target
-     * Region for snapshot copies.
-     * </p>
+     * <p/>
      * </note>
+     * <p>
+     * <b>[AMI policies only]</b> The target Region or the Amazon Resource Name (ARN) of the target Outpost for the
+     * snapshot copies.
+     * </p>
      */
     private String targetRegion;
     /**
+     * <note>
      * <p>
-     * The target Region or the Amazon Resource Name (ARN) of the target Outpost for the snapshot copies.
+     * Use this parameter for snapshot policies only. For AMI policies, use <b>TargetRegion</b> instead.
      * </p>
+     * </note>
      * <p>
-     * Use this parameter instead of <b>TargetRegion</b>. Do not specify both.
+     * <b>[Snapshot policies only]</b> The target Region or the Amazon Resource Name (ARN) of the target Outpost for the
+     * snapshot copies.
      * </p>
      */
     private String target;
@@ -93,24 +99,28 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
     /**
      * <note>
      * <p>
-     * Avoid using this parameter when creating new policies. Instead, use <b>Target</b> to specify a target Region or a
-     * target Outpost for snapshot copies.
+     * Use this parameter for AMI policies only. For snapshot policies, use <b>Target</b> instead. For snapshot policies
+     * created before the <b>Target</b> parameter was introduced, this parameter indicates the target Region for
+     * snapshot copies.
      * </p>
-     * <p>
-     * For policies created before the <b>Target</b> parameter was introduced, this parameter indicates the target
-     * Region for snapshot copies.
-     * </p>
+     * <p/>
      * </note>
+     * <p>
+     * <b>[AMI policies only]</b> The target Region or the Amazon Resource Name (ARN) of the target Outpost for the
+     * snapshot copies.
+     * </p>
      * 
      * @param targetRegion
      *        <p>
-     *        Avoid using this parameter when creating new policies. Instead, use <b>Target</b> to specify a target
-     *        Region or a target Outpost for snapshot copies.
+     *        Use this parameter for AMI policies only. For snapshot policies, use <b>Target</b> instead. For snapshot
+     *        policies created before the <b>Target</b> parameter was introduced, this parameter indicates the target
+     *        Region for snapshot copies.
      *        </p>
+     *        <p/>
+     *        </note>
      *        <p>
-     *        For policies created before the <b>Target</b> parameter was introduced, this parameter indicates the
-     *        target Region for snapshot copies.
-     *        </p>
+     *        <b>[AMI policies only]</b> The target Region or the Amazon Resource Name (ARN) of the target Outpost for
+     *        the snapshot copies.
      */
 
     public void setTargetRegion(String targetRegion) {
@@ -120,23 +130,27 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
     /**
      * <note>
      * <p>
-     * Avoid using this parameter when creating new policies. Instead, use <b>Target</b> to specify a target Region or a
-     * target Outpost for snapshot copies.
+     * Use this parameter for AMI policies only. For snapshot policies, use <b>Target</b> instead. For snapshot policies
+     * created before the <b>Target</b> parameter was introduced, this parameter indicates the target Region for
+     * snapshot copies.
      * </p>
-     * <p>
-     * For policies created before the <b>Target</b> parameter was introduced, this parameter indicates the target
-     * Region for snapshot copies.
-     * </p>
+     * <p/>
      * </note>
+     * <p>
+     * <b>[AMI policies only]</b> The target Region or the Amazon Resource Name (ARN) of the target Outpost for the
+     * snapshot copies.
+     * </p>
      * 
      * @return <p>
-     *         Avoid using this parameter when creating new policies. Instead, use <b>Target</b> to specify a target
-     *         Region or a target Outpost for snapshot copies.
+     *         Use this parameter for AMI policies only. For snapshot policies, use <b>Target</b> instead. For snapshot
+     *         policies created before the <b>Target</b> parameter was introduced, this parameter indicates the target
+     *         Region for snapshot copies.
      *         </p>
+     *         <p/>
+     *         </note>
      *         <p>
-     *         For policies created before the <b>Target</b> parameter was introduced, this parameter indicates the
-     *         target Region for snapshot copies.
-     *         </p>
+     *         <b>[AMI policies only]</b> The target Region or the Amazon Resource Name (ARN) of the target Outpost for
+     *         the snapshot copies.
      */
 
     public String getTargetRegion() {
@@ -146,24 +160,28 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
     /**
      * <note>
      * <p>
-     * Avoid using this parameter when creating new policies. Instead, use <b>Target</b> to specify a target Region or a
-     * target Outpost for snapshot copies.
+     * Use this parameter for AMI policies only. For snapshot policies, use <b>Target</b> instead. For snapshot policies
+     * created before the <b>Target</b> parameter was introduced, this parameter indicates the target Region for
+     * snapshot copies.
      * </p>
-     * <p>
-     * For policies created before the <b>Target</b> parameter was introduced, this parameter indicates the target
-     * Region for snapshot copies.
-     * </p>
+     * <p/>
      * </note>
+     * <p>
+     * <b>[AMI policies only]</b> The target Region or the Amazon Resource Name (ARN) of the target Outpost for the
+     * snapshot copies.
+     * </p>
      * 
      * @param targetRegion
      *        <p>
-     *        Avoid using this parameter when creating new policies. Instead, use <b>Target</b> to specify a target
-     *        Region or a target Outpost for snapshot copies.
+     *        Use this parameter for AMI policies only. For snapshot policies, use <b>Target</b> instead. For snapshot
+     *        policies created before the <b>Target</b> parameter was introduced, this parameter indicates the target
+     *        Region for snapshot copies.
      *        </p>
+     *        <p/>
+     *        </note>
      *        <p>
-     *        For policies created before the <b>Target</b> parameter was introduced, this parameter indicates the
-     *        target Region for snapshot copies.
-     *        </p>
+     *        <b>[AMI policies only]</b> The target Region or the Amazon Resource Name (ARN) of the target Outpost for
+     *        the snapshot copies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -173,17 +191,24 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <note>
      * <p>
-     * The target Region or the Amazon Resource Name (ARN) of the target Outpost for the snapshot copies.
+     * Use this parameter for snapshot policies only. For AMI policies, use <b>TargetRegion</b> instead.
      * </p>
+     * </note>
      * <p>
-     * Use this parameter instead of <b>TargetRegion</b>. Do not specify both.
+     * <b>[Snapshot policies only]</b> The target Region or the Amazon Resource Name (ARN) of the target Outpost for the
+     * snapshot copies.
      * </p>
      * 
      * @param target
-     *        The target Region or the Amazon Resource Name (ARN) of the target Outpost for the snapshot copies.</p>
      *        <p>
-     *        Use this parameter instead of <b>TargetRegion</b>. Do not specify both.
+     *        Use this parameter for snapshot policies only. For AMI policies, use <b>TargetRegion</b> instead.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        <b>[Snapshot policies only]</b> The target Region or the Amazon Resource Name (ARN) of the target Outpost
+     *        for the snapshot copies.
      */
 
     public void setTarget(String target) {
@@ -191,16 +216,23 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <note>
      * <p>
-     * The target Region or the Amazon Resource Name (ARN) of the target Outpost for the snapshot copies.
+     * Use this parameter for snapshot policies only. For AMI policies, use <b>TargetRegion</b> instead.
      * </p>
+     * </note>
      * <p>
-     * Use this parameter instead of <b>TargetRegion</b>. Do not specify both.
+     * <b>[Snapshot policies only]</b> The target Region or the Amazon Resource Name (ARN) of the target Outpost for the
+     * snapshot copies.
      * </p>
      * 
-     * @return The target Region or the Amazon Resource Name (ARN) of the target Outpost for the snapshot copies.</p>
+     * @return <p>
+     *         Use this parameter for snapshot policies only. For AMI policies, use <b>TargetRegion</b> instead.
+     *         </p>
+     *         </note>
      *         <p>
-     *         Use this parameter instead of <b>TargetRegion</b>. Do not specify both.
+     *         <b>[Snapshot policies only]</b> The target Region or the Amazon Resource Name (ARN) of the target Outpost
+     *         for the snapshot copies.
      */
 
     public String getTarget() {
@@ -208,17 +240,24 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <note>
      * <p>
-     * The target Region or the Amazon Resource Name (ARN) of the target Outpost for the snapshot copies.
+     * Use this parameter for snapshot policies only. For AMI policies, use <b>TargetRegion</b> instead.
      * </p>
+     * </note>
      * <p>
-     * Use this parameter instead of <b>TargetRegion</b>. Do not specify both.
+     * <b>[Snapshot policies only]</b> The target Region or the Amazon Resource Name (ARN) of the target Outpost for the
+     * snapshot copies.
      * </p>
      * 
      * @param target
-     *        The target Region or the Amazon Resource Name (ARN) of the target Outpost for the snapshot copies.</p>
      *        <p>
-     *        Use this parameter instead of <b>TargetRegion</b>. Do not specify both.
+     *        Use this parameter for snapshot policies only. For AMI policies, use <b>TargetRegion</b> instead.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        <b>[Snapshot policies only]</b> The target Region or the Amazon Resource Name (ARN) of the target Outpost
+     *        for the snapshot copies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

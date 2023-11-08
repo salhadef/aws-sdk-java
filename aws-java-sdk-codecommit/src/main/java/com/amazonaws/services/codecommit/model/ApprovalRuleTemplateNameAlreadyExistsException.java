@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * You cannot create an approval rule template with that name because a template with that name already exists in this
- * AWS Region for your AWS account. Approval rule template names must be unique.
+ * Amazon Web Services Region for your Amazon Web Services account. Approval rule template names must be unique.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

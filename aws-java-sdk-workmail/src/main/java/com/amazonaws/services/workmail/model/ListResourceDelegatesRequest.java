@@ -35,6 +35,27 @@ public class ListResourceDelegatesRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The identifier for the resource whose delegates are listed.
      * </p>
+     * <p>
+     * The identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>. The following identity formats
+     * are available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Resource ID: r-0123456789a0123456789b0123456789
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Email address: resource@domain.tld
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Resource name: resource
+     * </p>
+     * </li>
+     * </ul>
      */
     private String resourceId;
     /**
@@ -94,9 +115,50 @@ public class ListResourceDelegatesRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The identifier for the resource whose delegates are listed.
      * </p>
+     * <p>
+     * The identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>. The following identity formats
+     * are available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Resource ID: r-0123456789a0123456789b0123456789
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Email address: resource@domain.tld
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Resource name: resource
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourceId
-     *        The identifier for the resource whose delegates are listed.
+     *        The identifier for the resource whose delegates are listed.</p>
+     *        <p>
+     *        The identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>. The following identity
+     *        formats are available:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Resource ID: r-0123456789a0123456789b0123456789
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Email address: resource@domain.tld
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Resource name: resource
+     *        </p>
+     *        </li>
      */
 
     public void setResourceId(String resourceId) {
@@ -107,8 +169,49 @@ public class ListResourceDelegatesRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The identifier for the resource whose delegates are listed.
      * </p>
+     * <p>
+     * The identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>. The following identity formats
+     * are available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Resource ID: r-0123456789a0123456789b0123456789
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Email address: resource@domain.tld
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Resource name: resource
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The identifier for the resource whose delegates are listed.
+     * @return The identifier for the resource whose delegates are listed.</p>
+     *         <p>
+     *         The identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>. The following identity
+     *         formats are available:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Resource ID: r-0123456789a0123456789b0123456789
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Email address: resource@domain.tld
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Resource name: resource
+     *         </p>
+     *         </li>
      */
 
     public String getResourceId() {
@@ -119,9 +222,50 @@ public class ListResourceDelegatesRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The identifier for the resource whose delegates are listed.
      * </p>
+     * <p>
+     * The identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>. The following identity formats
+     * are available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Resource ID: r-0123456789a0123456789b0123456789
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Email address: resource@domain.tld
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Resource name: resource
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourceId
-     *        The identifier for the resource whose delegates are listed.
+     *        The identifier for the resource whose delegates are listed.</p>
+     *        <p>
+     *        The identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>. The following identity
+     *        formats are available:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Resource ID: r-0123456789a0123456789b0123456789
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Email address: resource@domain.tld
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Resource name: resource
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

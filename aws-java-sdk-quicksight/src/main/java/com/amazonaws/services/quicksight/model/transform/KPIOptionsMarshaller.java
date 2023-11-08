@@ -41,6 +41,10 @@ public class KPIOptionsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PrimaryValueFontConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> SECONDARYVALUEFONTCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecondaryValueFontConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> SPARKLINE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Sparkline").build();
+    private static final MarshallingInfo<StructuredPojo> VISUALLAYOUTOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VisualLayoutOptions").build();
 
     private static final KPIOptionsMarshaller instance = new KPIOptionsMarshaller();
 
@@ -65,6 +69,8 @@ public class KPIOptionsMarshaller {
             protocolMarshaller.marshall(kPIOptions.getPrimaryValueDisplayType(), PRIMARYVALUEDISPLAYTYPE_BINDING);
             protocolMarshaller.marshall(kPIOptions.getPrimaryValueFontConfiguration(), PRIMARYVALUEFONTCONFIGURATION_BINDING);
             protocolMarshaller.marshall(kPIOptions.getSecondaryValueFontConfiguration(), SECONDARYVALUEFONTCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(kPIOptions.getSparkline(), SPARKLINE_BINDING);
+            protocolMarshaller.marshall(kPIOptions.getVisualLayoutOptions(), VISUALLAYOUTOPTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -57,6 +57,10 @@ public class MonitoringConfigurationJsonUnmarshaller implements Unmarshaller<Mon
                     monitoringConfiguration.setManagedPersistenceMonitoringConfiguration(ManagedPersistenceMonitoringConfigurationJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
+                if (context.testExpression("cloudWatchLoggingConfiguration", targetDepth)) {
+                    context.nextToken();
+                    monitoringConfiguration.setCloudWatchLoggingConfiguration(CloudWatchLoggingConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

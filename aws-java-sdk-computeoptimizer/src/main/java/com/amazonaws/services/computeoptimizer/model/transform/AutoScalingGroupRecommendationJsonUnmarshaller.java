@@ -105,6 +105,10 @@ public class AutoScalingGroupRecommendationJsonUnmarshaller implements Unmarshal
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("currentInstanceGpuInfo", targetDepth)) {
+                    context.nextToken();
+                    autoScalingGroupRecommendation.setCurrentInstanceGpuInfo(GpuInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -72,13 +72,13 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
     private com.amazonaws.internal.SdkInternalList<String> removeSubnetIds;
     /**
      * <p>
-     * (Interface endpoint) The IDs of the security groups to associate with the network interface.
+     * (Interface endpoint) The IDs of the security groups to associate with the endpoint network interfaces.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> addSecurityGroupIds;
     /**
      * <p>
-     * (Interface endpoint) The IDs of the security groups to disassociate from the network interface.
+     * (Interface endpoint) The IDs of the security groups to disassociate from the endpoint network interfaces.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> removeSecurityGroupIds;
@@ -100,6 +100,12 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
      * </p>
      */
     private Boolean privateDnsEnabled;
+    /**
+     * <p>
+     * The subnet configurations for the endpoint.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<SubnetConfiguration> subnetConfigurations;
 
     /**
      * <p>
@@ -549,10 +555,10 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * (Interface endpoint) The IDs of the security groups to associate with the network interface.
+     * (Interface endpoint) The IDs of the security groups to associate with the endpoint network interfaces.
      * </p>
      * 
-     * @return (Interface endpoint) The IDs of the security groups to associate with the network interface.
+     * @return (Interface endpoint) The IDs of the security groups to associate with the endpoint network interfaces.
      */
 
     public java.util.List<String> getAddSecurityGroupIds() {
@@ -564,11 +570,11 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * (Interface endpoint) The IDs of the security groups to associate with the network interface.
+     * (Interface endpoint) The IDs of the security groups to associate with the endpoint network interfaces.
      * </p>
      * 
      * @param addSecurityGroupIds
-     *        (Interface endpoint) The IDs of the security groups to associate with the network interface.
+     *        (Interface endpoint) The IDs of the security groups to associate with the endpoint network interfaces.
      */
 
     public void setAddSecurityGroupIds(java.util.Collection<String> addSecurityGroupIds) {
@@ -582,7 +588,7 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * (Interface endpoint) The IDs of the security groups to associate with the network interface.
+     * (Interface endpoint) The IDs of the security groups to associate with the endpoint network interfaces.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -591,7 +597,7 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param addSecurityGroupIds
-     *        (Interface endpoint) The IDs of the security groups to associate with the network interface.
+     *        (Interface endpoint) The IDs of the security groups to associate with the endpoint network interfaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -607,11 +613,11 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * (Interface endpoint) The IDs of the security groups to associate with the network interface.
+     * (Interface endpoint) The IDs of the security groups to associate with the endpoint network interfaces.
      * </p>
      * 
      * @param addSecurityGroupIds
-     *        (Interface endpoint) The IDs of the security groups to associate with the network interface.
+     *        (Interface endpoint) The IDs of the security groups to associate with the endpoint network interfaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -622,10 +628,10 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * (Interface endpoint) The IDs of the security groups to disassociate from the network interface.
+     * (Interface endpoint) The IDs of the security groups to disassociate from the endpoint network interfaces.
      * </p>
      * 
-     * @return (Interface endpoint) The IDs of the security groups to disassociate from the network interface.
+     * @return (Interface endpoint) The IDs of the security groups to disassociate from the endpoint network interfaces.
      */
 
     public java.util.List<String> getRemoveSecurityGroupIds() {
@@ -637,11 +643,11 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * (Interface endpoint) The IDs of the security groups to disassociate from the network interface.
+     * (Interface endpoint) The IDs of the security groups to disassociate from the endpoint network interfaces.
      * </p>
      * 
      * @param removeSecurityGroupIds
-     *        (Interface endpoint) The IDs of the security groups to disassociate from the network interface.
+     *        (Interface endpoint) The IDs of the security groups to disassociate from the endpoint network interfaces.
      */
 
     public void setRemoveSecurityGroupIds(java.util.Collection<String> removeSecurityGroupIds) {
@@ -655,7 +661,7 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * (Interface endpoint) The IDs of the security groups to disassociate from the network interface.
+     * (Interface endpoint) The IDs of the security groups to disassociate from the endpoint network interfaces.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -664,7 +670,7 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param removeSecurityGroupIds
-     *        (Interface endpoint) The IDs of the security groups to disassociate from the network interface.
+     *        (Interface endpoint) The IDs of the security groups to disassociate from the endpoint network interfaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -680,11 +686,11 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * (Interface endpoint) The IDs of the security groups to disassociate from the network interface.
+     * (Interface endpoint) The IDs of the security groups to disassociate from the endpoint network interfaces.
      * </p>
      * 
      * @param removeSecurityGroupIds
-     *        (Interface endpoint) The IDs of the security groups to disassociate from the network interface.
+     *        (Interface endpoint) The IDs of the security groups to disassociate from the endpoint network interfaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -845,6 +851,79 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * The subnet configurations for the endpoint.
+     * </p>
+     * 
+     * @return The subnet configurations for the endpoint.
+     */
+
+    public java.util.List<SubnetConfiguration> getSubnetConfigurations() {
+        if (subnetConfigurations == null) {
+            subnetConfigurations = new com.amazonaws.internal.SdkInternalList<SubnetConfiguration>();
+        }
+        return subnetConfigurations;
+    }
+
+    /**
+     * <p>
+     * The subnet configurations for the endpoint.
+     * </p>
+     * 
+     * @param subnetConfigurations
+     *        The subnet configurations for the endpoint.
+     */
+
+    public void setSubnetConfigurations(java.util.Collection<SubnetConfiguration> subnetConfigurations) {
+        if (subnetConfigurations == null) {
+            this.subnetConfigurations = null;
+            return;
+        }
+
+        this.subnetConfigurations = new com.amazonaws.internal.SdkInternalList<SubnetConfiguration>(subnetConfigurations);
+    }
+
+    /**
+     * <p>
+     * The subnet configurations for the endpoint.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSubnetConfigurations(java.util.Collection)} or {@link #withSubnetConfigurations(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param subnetConfigurations
+     *        The subnet configurations for the endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyVpcEndpointRequest withSubnetConfigurations(SubnetConfiguration... subnetConfigurations) {
+        if (this.subnetConfigurations == null) {
+            setSubnetConfigurations(new com.amazonaws.internal.SdkInternalList<SubnetConfiguration>(subnetConfigurations.length));
+        }
+        for (SubnetConfiguration ele : subnetConfigurations) {
+            this.subnetConfigurations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The subnet configurations for the endpoint.
+     * </p>
+     * 
+     * @param subnetConfigurations
+     *        The subnet configurations for the endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyVpcEndpointRequest withSubnetConfigurations(java.util.Collection<SubnetConfiguration> subnetConfigurations) {
+        setSubnetConfigurations(subnetConfigurations);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -890,7 +969,9 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
         if (getDnsOptions() != null)
             sb.append("DnsOptions: ").append(getDnsOptions()).append(",");
         if (getPrivateDnsEnabled() != null)
-            sb.append("PrivateDnsEnabled: ").append(getPrivateDnsEnabled());
+            sb.append("PrivateDnsEnabled: ").append(getPrivateDnsEnabled()).append(",");
+        if (getSubnetConfigurations() != null)
+            sb.append("SubnetConfigurations: ").append(getSubnetConfigurations());
         sb.append("}");
         return sb.toString();
     }
@@ -953,6 +1034,10 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
             return false;
         if (other.getPrivateDnsEnabled() != null && other.getPrivateDnsEnabled().equals(this.getPrivateDnsEnabled()) == false)
             return false;
+        if (other.getSubnetConfigurations() == null ^ this.getSubnetConfigurations() == null)
+            return false;
+        if (other.getSubnetConfigurations() != null && other.getSubnetConfigurations().equals(this.getSubnetConfigurations()) == false)
+            return false;
         return true;
     }
 
@@ -973,6 +1058,7 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
         hashCode = prime * hashCode + ((getIpAddressType() == null) ? 0 : getIpAddressType().hashCode());
         hashCode = prime * hashCode + ((getDnsOptions() == null) ? 0 : getDnsOptions().hashCode());
         hashCode = prime * hashCode + ((getPrivateDnsEnabled() == null) ? 0 : getPrivateDnsEnabled().hashCode());
+        hashCode = prime * hashCode + ((getSubnetConfigurations() == null) ? 0 : getSubnetConfigurations().hashCode());
         return hashCode;
     }
 

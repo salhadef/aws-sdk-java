@@ -193,6 +193,11 @@ public class AbstractAmazonFSx implements AmazonFSx {
     }
 
     @Override
+    public StartMisconfiguredStateRecoveryResult startMisconfiguredStateRecovery(StartMisconfiguredStateRecoveryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public TagResourceResult tagResource(TagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

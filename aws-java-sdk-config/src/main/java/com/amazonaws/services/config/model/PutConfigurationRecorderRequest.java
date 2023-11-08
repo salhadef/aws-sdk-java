@@ -30,18 +30,18 @@ public class PutConfigurationRecorderRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The configuration recorder object that records each configuration change made to the resources.
+     * An object for the configuration recorder to record configuration changes for specified resource types.
      * </p>
      */
     private ConfigurationRecorder configurationRecorder;
 
     /**
      * <p>
-     * The configuration recorder object that records each configuration change made to the resources.
+     * An object for the configuration recorder to record configuration changes for specified resource types.
      * </p>
      * 
      * @param configurationRecorder
-     *        The configuration recorder object that records each configuration change made to the resources.
+     *        An object for the configuration recorder to record configuration changes for specified resource types.
      */
 
     public void setConfigurationRecorder(ConfigurationRecorder configurationRecorder) {
@@ -50,10 +50,10 @@ public class PutConfigurationRecorderRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The configuration recorder object that records each configuration change made to the resources.
+     * An object for the configuration recorder to record configuration changes for specified resource types.
      * </p>
      * 
-     * @return The configuration recorder object that records each configuration change made to the resources.
+     * @return An object for the configuration recorder to record configuration changes for specified resource types.
      */
 
     public ConfigurationRecorder getConfigurationRecorder() {
@@ -62,11 +62,11 @@ public class PutConfigurationRecorderRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The configuration recorder object that records each configuration change made to the resources.
+     * An object for the configuration recorder to record configuration changes for specified resource types.
      * </p>
      * 
      * @param configurationRecorder
-     *        The configuration recorder object that records each configuration change made to the resources.
+     *        An object for the configuration recorder to record configuration changes for specified resource types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

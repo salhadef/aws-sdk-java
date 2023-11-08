@@ -104,6 +104,10 @@ public class RadarChartConfigurationJsonUnmarshaller implements Unmarshaller<Rad
                     context.nextToken();
                     radarChartConfiguration.setLegend(LegendOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("AxesRangeScale", targetDepth)) {
+                    context.nextToken();
+                    radarChartConfiguration.setAxesRangeScale(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

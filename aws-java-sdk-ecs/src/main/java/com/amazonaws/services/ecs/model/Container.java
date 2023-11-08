@@ -56,12 +56,6 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The container image manifest digest.
      * </p>
-     * <note>
-     * <p>
-     * The <code>imageDigest</code> is only returned if the container is using an image hosted in Amazon ECR, otherwise
-     * it is omitted.
-     * </p>
-     * </note>
      */
     private String imageDigest;
     /**
@@ -304,19 +298,9 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The container image manifest digest.
      * </p>
-     * <note>
-     * <p>
-     * The <code>imageDigest</code> is only returned if the container is using an image hosted in Amazon ECR, otherwise
-     * it is omitted.
-     * </p>
-     * </note>
      * 
      * @param imageDigest
-     *        The container image manifest digest.</p> <note>
-     *        <p>
-     *        The <code>imageDigest</code> is only returned if the container is using an image hosted in Amazon ECR,
-     *        otherwise it is omitted.
-     *        </p>
+     *        The container image manifest digest.
      */
 
     public void setImageDigest(String imageDigest) {
@@ -327,18 +311,8 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The container image manifest digest.
      * </p>
-     * <note>
-     * <p>
-     * The <code>imageDigest</code> is only returned if the container is using an image hosted in Amazon ECR, otherwise
-     * it is omitted.
-     * </p>
-     * </note>
      * 
-     * @return The container image manifest digest.</p> <note>
-     *         <p>
-     *         The <code>imageDigest</code> is only returned if the container is using an image hosted in Amazon ECR,
-     *         otherwise it is omitted.
-     *         </p>
+     * @return The container image manifest digest.
      */
 
     public String getImageDigest() {
@@ -349,19 +323,9 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The container image manifest digest.
      * </p>
-     * <note>
-     * <p>
-     * The <code>imageDigest</code> is only returned if the container is using an image hosted in Amazon ECR, otherwise
-     * it is omitted.
-     * </p>
-     * </note>
      * 
      * @param imageDigest
-     *        The container image manifest digest.</p> <note>
-     *        <p>
-     *        The <code>imageDigest</code> is only returned if the container is using an image hosted in Amazon ECR,
-     *        otherwise it is omitted.
-     *        </p>
+     *        The container image manifest digest.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

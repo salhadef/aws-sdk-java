@@ -43,6 +43,8 @@ public class As2ConnectorConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MdnSigningAlgorithm").build();
     private static final MarshallingInfo<String> MDNRESPONSE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MdnResponse").build();
+    private static final MarshallingInfo<String> BASICAUTHSECRETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BasicAuthSecretId").build();
 
     private static final As2ConnectorConfigMarshaller instance = new As2ConnectorConfigMarshaller();
 
@@ -68,6 +70,7 @@ public class As2ConnectorConfigMarshaller {
             protocolMarshaller.marshall(as2ConnectorConfig.getSigningAlgorithm(), SIGNINGALGORITHM_BINDING);
             protocolMarshaller.marshall(as2ConnectorConfig.getMdnSigningAlgorithm(), MDNSIGNINGALGORITHM_BINDING);
             protocolMarshaller.marshall(as2ConnectorConfig.getMdnResponse(), MDNRESPONSE_BINDING);
+            protocolMarshaller.marshall(as2ConnectorConfig.getBasicAuthSecretId(), BASICAUTHSECRETID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

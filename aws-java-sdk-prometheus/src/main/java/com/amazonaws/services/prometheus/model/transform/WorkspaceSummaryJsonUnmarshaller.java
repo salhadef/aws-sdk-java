@@ -48,6 +48,10 @@ public class WorkspaceSummaryJsonUnmarshaller implements Unmarshaller<WorkspaceS
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("workspaceId", targetDepth)) {
+                    context.nextToken();
+                    workspaceSummary.setWorkspaceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("alias", targetDepth)) {
                     context.nextToken();
                     workspaceSummary.setAlias(context.getUnmarshaller(String.class).unmarshall(context));
@@ -56,22 +60,18 @@ public class WorkspaceSummaryJsonUnmarshaller implements Unmarshaller<WorkspaceS
                     context.nextToken();
                     workspaceSummary.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("createdAt", targetDepth)) {
-                    context.nextToken();
-                    workspaceSummary.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
-                }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     workspaceSummary.setStatus(WorkspaceStatusJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("createdAt", targetDepth)) {
+                    context.nextToken();
+                    workspaceSummary.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
                     workspaceSummary.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
-                }
-                if (context.testExpression("workspaceId", targetDepth)) {
-                    context.nextToken();
-                    workspaceSummary.setWorkspaceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

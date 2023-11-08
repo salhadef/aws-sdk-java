@@ -141,6 +141,12 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
      * </p>
      */
     private NeoVpcConfig vpcConfig;
+    /**
+     * <p>
+     * Information that SageMaker Neo automatically derived about the model.
+     * </p>
+     */
+    private DerivedInformation derivedInformation;
 
     /**
      * <p>
@@ -942,6 +948,46 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * Information that SageMaker Neo automatically derived about the model.
+     * </p>
+     * 
+     * @param derivedInformation
+     *        Information that SageMaker Neo automatically derived about the model.
+     */
+
+    public void setDerivedInformation(DerivedInformation derivedInformation) {
+        this.derivedInformation = derivedInformation;
+    }
+
+    /**
+     * <p>
+     * Information that SageMaker Neo automatically derived about the model.
+     * </p>
+     * 
+     * @return Information that SageMaker Neo automatically derived about the model.
+     */
+
+    public DerivedInformation getDerivedInformation() {
+        return this.derivedInformation;
+    }
+
+    /**
+     * <p>
+     * Information that SageMaker Neo automatically derived about the model.
+     * </p>
+     * 
+     * @param derivedInformation
+     *        Information that SageMaker Neo automatically derived about the model.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeCompilationJobResult withDerivedInformation(DerivedInformation derivedInformation) {
+        setDerivedInformation(derivedInformation);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -986,7 +1032,9 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
         if (getOutputConfig() != null)
             sb.append("OutputConfig: ").append(getOutputConfig()).append(",");
         if (getVpcConfig() != null)
-            sb.append("VpcConfig: ").append(getVpcConfig());
+            sb.append("VpcConfig: ").append(getVpcConfig()).append(",");
+        if (getDerivedInformation() != null)
+            sb.append("DerivedInformation: ").append(getDerivedInformation());
         sb.append("}");
         return sb.toString();
     }
@@ -1069,6 +1117,10 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
             return false;
         if (other.getVpcConfig() != null && other.getVpcConfig().equals(this.getVpcConfig()) == false)
             return false;
+        if (other.getDerivedInformation() == null ^ this.getDerivedInformation() == null)
+            return false;
+        if (other.getDerivedInformation() != null && other.getDerivedInformation().equals(this.getDerivedInformation()) == false)
+            return false;
         return true;
     }
 
@@ -1094,6 +1146,7 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getInputConfig() == null) ? 0 : getInputConfig().hashCode());
         hashCode = prime * hashCode + ((getOutputConfig() == null) ? 0 : getOutputConfig().hashCode());
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
+        hashCode = prime * hashCode + ((getDerivedInformation() == null) ? 0 : getDerivedInformation().hashCode());
         return hashCode;
     }
 

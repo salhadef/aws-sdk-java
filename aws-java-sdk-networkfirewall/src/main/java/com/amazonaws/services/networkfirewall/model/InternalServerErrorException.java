@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your
+ * Your request is valid, but Network Firewall couldn't perform the operation because of a system problem. Retry your
  * request.
  * </p>
  */

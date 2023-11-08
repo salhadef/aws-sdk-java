@@ -48,6 +48,8 @@ public class HealthEventMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PercentOfTotalTrafficImpacted").build();
     private static final MarshallingInfo<String> IMPACTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ImpactType").build();
+    private static final MarshallingInfo<Double> HEALTHSCORETHRESHOLD_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HealthScoreThreshold").build();
 
     private static final HealthEventMarshaller instance = new HealthEventMarshaller();
 
@@ -75,6 +77,7 @@ public class HealthEventMarshaller {
             protocolMarshaller.marshall(healthEvent.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(healthEvent.getPercentOfTotalTrafficImpacted(), PERCENTOFTOTALTRAFFICIMPACTED_BINDING);
             protocolMarshaller.marshall(healthEvent.getImpactType(), IMPACTTYPE_BINDING);
+            protocolMarshaller.marshall(healthEvent.getHealthScoreThreshold(), HEALTHSCORETHRESHOLD_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -147,6 +147,12 @@ public class InputJsonUnmarshaller implements Unmarshaller<Input, JsonUnmarshall
                     context.nextToken();
                     input.setVideoGenerator(InputVideoGeneratorJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("videoOverlays", targetDepth)) {
+                    context.nextToken();
+                    input.setVideoOverlays(new ListUnmarshaller<VideoOverlay>(VideoOverlayJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("videoSelector", targetDepth)) {
                     context.nextToken();
                     input.setVideoSelector(VideoSelectorJsonUnmarshaller.getInstance().unmarshall(context));

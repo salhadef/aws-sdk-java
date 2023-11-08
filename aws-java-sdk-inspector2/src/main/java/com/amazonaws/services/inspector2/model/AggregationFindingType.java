@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum AggregationFindingType {
 
     NETWORK_REACHABILITY("NETWORK_REACHABILITY"),
-    PACKAGE_VULNERABILITY("PACKAGE_VULNERABILITY");
+    PACKAGE_VULNERABILITY("PACKAGE_VULNERABILITY"),
+    CODE_VULNERABILITY("CODE_VULNERABILITY");
 
     private String value;
 

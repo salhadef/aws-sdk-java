@@ -27,7 +27,7 @@ public class PutManagedScalingPolicyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Specifies the ID of an EMR cluster where the managed scaling policy is attached.
+     * Specifies the ID of an Amazon EMR cluster where the managed scaling policy is attached.
      * </p>
      */
     private String clusterId;
@@ -40,11 +40,11 @@ public class PutManagedScalingPolicyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Specifies the ID of an EMR cluster where the managed scaling policy is attached.
+     * Specifies the ID of an Amazon EMR cluster where the managed scaling policy is attached.
      * </p>
      * 
      * @param clusterId
-     *        Specifies the ID of an EMR cluster where the managed scaling policy is attached.
+     *        Specifies the ID of an Amazon EMR cluster where the managed scaling policy is attached.
      */
 
     public void setClusterId(String clusterId) {
@@ -53,10 +53,10 @@ public class PutManagedScalingPolicyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Specifies the ID of an EMR cluster where the managed scaling policy is attached.
+     * Specifies the ID of an Amazon EMR cluster where the managed scaling policy is attached.
      * </p>
      * 
-     * @return Specifies the ID of an EMR cluster where the managed scaling policy is attached.
+     * @return Specifies the ID of an Amazon EMR cluster where the managed scaling policy is attached.
      */
 
     public String getClusterId() {
@@ -65,11 +65,11 @@ public class PutManagedScalingPolicyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Specifies the ID of an EMR cluster where the managed scaling policy is attached.
+     * Specifies the ID of an Amazon EMR cluster where the managed scaling policy is attached.
      * </p>
      * 
      * @param clusterId
-     *        Specifies the ID of an EMR cluster where the managed scaling policy is attached.
+     *        Specifies the ID of an Amazon EMR cluster where the managed scaling policy is attached.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

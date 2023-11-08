@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The account making this call is not a member of an organization.
+ * The Amazon Web Services account making this call is not a member of an organization.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

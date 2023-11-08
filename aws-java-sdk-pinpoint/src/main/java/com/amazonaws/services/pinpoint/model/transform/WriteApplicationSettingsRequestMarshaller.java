@@ -37,6 +37,8 @@ public class WriteApplicationSettingsRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Limits").build();
     private static final MarshallingInfo<StructuredPojo> QUIETTIME_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("QuietTime").build();
+    private static final MarshallingInfo<StructuredPojo> JOURNEYLIMITS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("JourneyLimits").build();
 
     private static final WriteApplicationSettingsRequestMarshaller instance = new WriteApplicationSettingsRequestMarshaller();
 
@@ -59,6 +61,7 @@ public class WriteApplicationSettingsRequestMarshaller {
             protocolMarshaller.marshall(writeApplicationSettingsRequest.getEventTaggingEnabled(), EVENTTAGGINGENABLED_BINDING);
             protocolMarshaller.marshall(writeApplicationSettingsRequest.getLimits(), LIMITS_BINDING);
             protocolMarshaller.marshall(writeApplicationSettingsRequest.getQuietTime(), QUIETTIME_BINDING);
+            protocolMarshaller.marshall(writeApplicationSettingsRequest.getJourneyLimits(), JOURNEYLIMITS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

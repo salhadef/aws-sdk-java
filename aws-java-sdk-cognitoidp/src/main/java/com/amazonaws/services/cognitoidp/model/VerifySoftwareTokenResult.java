@@ -150,7 +150,7 @@ public class VerifySoftwareTokenResult extends com.amazonaws.AmazonWebServiceRes
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getSession() != null)
-            sb.append("Session: ").append(getSession());
+            sb.append("Session: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

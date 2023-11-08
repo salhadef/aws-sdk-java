@@ -106,6 +106,10 @@ public class AmazonopensearchserviceDestinationConfigurationJsonUnmarshaller imp
                     context.nextToken();
                     amazonopensearchserviceDestinationConfiguration.setVpcConfiguration(VpcConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("DocumentIdOptions", targetDepth)) {
+                    context.nextToken();
+                    amazonopensearchserviceDestinationConfiguration.setDocumentIdOptions(DocumentIdOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

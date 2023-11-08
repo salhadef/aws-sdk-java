@@ -22,7 +22,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum SchemaElement {
 
-    RESOURCES("RESOURCES");
+    RESOURCES("RESOURCES"),
+    SPLIT_COST_ALLOCATION_DATA("SPLIT_COST_ALLOCATION_DATA");
 
     private String value;
 

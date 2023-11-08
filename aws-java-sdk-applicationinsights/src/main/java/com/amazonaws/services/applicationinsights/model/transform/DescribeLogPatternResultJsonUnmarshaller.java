@@ -52,6 +52,10 @@ public class DescribeLogPatternResultJsonUnmarshaller implements Unmarshaller<De
                     context.nextToken();
                     describeLogPatternResult.setResourceGroupName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("AccountId", targetDepth)) {
+                    context.nextToken();
+                    describeLogPatternResult.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("LogPattern", targetDepth)) {
                     context.nextToken();
                     describeLogPatternResult.setLogPattern(LogPatternJsonUnmarshaller.getInstance().unmarshall(context));

@@ -35,8 +35,8 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters,
      * accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created
-     * and stored as an attribute of the user object in the identity store. "Administrator" and "AWSAdministrators" are
-     * reserved names and can't be used for users or groups.
+     * and stored as an attribute of the user object in the identity store. <code>Administrator</code> and
+     * <code>AWSAdministrators</code> are reserved names and can't be used for users or groups.
      * </p>
      */
     private String userName;
@@ -160,15 +160,16 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters,
      * accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created
-     * and stored as an attribute of the user object in the identity store. "Administrator" and "AWSAdministrators" are
-     * reserved names and can't be used for users or groups.
+     * and stored as an attribute of the user object in the identity store. <code>Administrator</code> and
+     * <code>AWSAdministrators</code> are reserved names and can't be used for users or groups.
      * </p>
      * 
      * @param userName
      *        A unique string used to identify the user. The length limit is 128 characters. This value can consist of
      *        letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the
-     *        user is created and stored as an attribute of the user object in the identity store. "Administrator" and
-     *        "AWSAdministrators" are reserved names and can't be used for users or groups.
+     *        user is created and stored as an attribute of the user object in the identity store.
+     *        <code>Administrator</code> and <code>AWSAdministrators</code> are reserved names and can't be used for
+     *        users or groups.
      */
 
     public void setUserName(String userName) {
@@ -179,14 +180,15 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters,
      * accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created
-     * and stored as an attribute of the user object in the identity store. "Administrator" and "AWSAdministrators" are
-     * reserved names and can't be used for users or groups.
+     * and stored as an attribute of the user object in the identity store. <code>Administrator</code> and
+     * <code>AWSAdministrators</code> are reserved names and can't be used for users or groups.
      * </p>
      * 
      * @return A unique string used to identify the user. The length limit is 128 characters. This value can consist of
      *         letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the
-     *         user is created and stored as an attribute of the user object in the identity store. "Administrator" and
-     *         "AWSAdministrators" are reserved names and can't be used for users or groups.
+     *         user is created and stored as an attribute of the user object in the identity store.
+     *         <code>Administrator</code> and <code>AWSAdministrators</code> are reserved names and can't be used for
+     *         users or groups.
      */
 
     public String getUserName() {
@@ -197,15 +199,16 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters,
      * accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created
-     * and stored as an attribute of the user object in the identity store. "Administrator" and "AWSAdministrators" are
-     * reserved names and can't be used for users or groups.
+     * and stored as an attribute of the user object in the identity store. <code>Administrator</code> and
+     * <code>AWSAdministrators</code> are reserved names and can't be used for users or groups.
      * </p>
      * 
      * @param userName
      *        A unique string used to identify the user. The length limit is 128 characters. This value can consist of
      *        letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the
-     *        user is created and stored as an attribute of the user object in the identity store. "Administrator" and
-     *        "AWSAdministrators" are reserved names and can't be used for users or groups.
+     *        user is created and stored as an attribute of the user object in the identity store.
+     *        <code>Administrator</code> and <code>AWSAdministrators</code> are reserved names and can't be used for
+     *        users or groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

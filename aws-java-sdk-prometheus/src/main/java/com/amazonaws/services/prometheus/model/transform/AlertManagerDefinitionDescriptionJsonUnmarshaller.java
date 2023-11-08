@@ -48,21 +48,21 @@ public class AlertManagerDefinitionDescriptionJsonUnmarshaller implements Unmars
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("createdAt", targetDepth)) {
+                if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
-                    alertManagerDefinitionDescription.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    alertManagerDefinitionDescription.setStatus(AlertManagerDefinitionStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("data", targetDepth)) {
                     context.nextToken();
                     alertManagerDefinitionDescription.setData(context.getUnmarshaller(java.nio.ByteBuffer.class).unmarshall(context));
                 }
+                if (context.testExpression("createdAt", targetDepth)) {
+                    context.nextToken();
+                    alertManagerDefinitionDescription.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
                 if (context.testExpression("modifiedAt", targetDepth)) {
                     context.nextToken();
                     alertManagerDefinitionDescription.setModifiedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
-                }
-                if (context.testExpression("status", targetDepth)) {
-                    context.nextToken();
-                    alertManagerDefinitionDescription.setStatus(AlertManagerDefinitionStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -39,6 +39,8 @@ public class CreateDomainRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EBSOptions").build();
     private static final MarshallingInfo<String> ACCESSPOLICIES_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AccessPolicies").build();
+    private static final MarshallingInfo<String> IPADDRESSTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IPAddressType").build();
     private static final MarshallingInfo<StructuredPojo> SNAPSHOTOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SnapshotOptions").build();
     private static final MarshallingInfo<StructuredPojo> VPCOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -87,6 +89,7 @@ public class CreateDomainRequestMarshaller {
             protocolMarshaller.marshall(createDomainRequest.getClusterConfig(), CLUSTERCONFIG_BINDING);
             protocolMarshaller.marshall(createDomainRequest.getEBSOptions(), EBSOPTIONS_BINDING);
             protocolMarshaller.marshall(createDomainRequest.getAccessPolicies(), ACCESSPOLICIES_BINDING);
+            protocolMarshaller.marshall(createDomainRequest.getIPAddressType(), IPADDRESSTYPE_BINDING);
             protocolMarshaller.marshall(createDomainRequest.getSnapshotOptions(), SNAPSHOTOPTIONS_BINDING);
             protocolMarshaller.marshall(createDomainRequest.getVPCOptions(), VPCOPTIONS_BINDING);
             protocolMarshaller.marshall(createDomainRequest.getCognitoOptions(), COGNITOOPTIONS_BINDING);

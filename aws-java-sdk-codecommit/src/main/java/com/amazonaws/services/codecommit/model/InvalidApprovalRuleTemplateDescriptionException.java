@@ -17,8 +17,9 @@ import javax.annotation.Generated;
 /**
  * <p>
  * The description for the approval rule template is not valid because it exceeds the maximum characters allowed for a
- * description. For more information about limits in AWS CodeCommit, see <a
- * href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.
+ * description. For more information about limits in CodeCommit, see <a
+ * href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a> in the <i>CodeCommit User
+ * Guide</i>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

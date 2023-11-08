@@ -874,6 +874,11 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public GetScalingConfigurationRecommendationResult getScalingConfigurationRecommendation(GetScalingConfigurationRecommendationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetSearchSuggestionsResult getSearchSuggestions(GetSearchSuggestionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1170,6 +1175,11 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
 
     @Override
     public ListProjectsResult listProjects(ListProjectsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListResourceCatalogsResult listResourceCatalogs(ListResourceCatalogsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

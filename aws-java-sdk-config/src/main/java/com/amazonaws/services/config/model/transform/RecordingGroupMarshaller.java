@@ -34,6 +34,10 @@ public class RecordingGroupMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("includeGlobalResourceTypes").build();
     private static final MarshallingInfo<List> RESOURCETYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("resourceTypes").build();
+    private static final MarshallingInfo<StructuredPojo> EXCLUSIONBYRESOURCETYPES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("exclusionByResourceTypes").build();
+    private static final MarshallingInfo<StructuredPojo> RECORDINGSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("recordingStrategy").build();
 
     private static final RecordingGroupMarshaller instance = new RecordingGroupMarshaller();
 
@@ -54,6 +58,8 @@ public class RecordingGroupMarshaller {
             protocolMarshaller.marshall(recordingGroup.getAllSupported(), ALLSUPPORTED_BINDING);
             protocolMarshaller.marshall(recordingGroup.getIncludeGlobalResourceTypes(), INCLUDEGLOBALRESOURCETYPES_BINDING);
             protocolMarshaller.marshall(recordingGroup.getResourceTypes(), RESOURCETYPES_BINDING);
+            protocolMarshaller.marshall(recordingGroup.getExclusionByResourceTypes(), EXCLUSIONBYRESOURCETYPES_BINDING);
+            protocolMarshaller.marshall(recordingGroup.getRecordingStrategy(), RECORDINGSTRATEGY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

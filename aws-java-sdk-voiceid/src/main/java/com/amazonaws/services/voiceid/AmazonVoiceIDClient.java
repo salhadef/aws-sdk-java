@@ -44,6 +44,7 @@ import com.amazonaws.services.voiceid.AmazonVoiceIDClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.voiceid.model.*;
+
 import com.amazonaws.services.voiceid.model.transform.*;
 
 /**

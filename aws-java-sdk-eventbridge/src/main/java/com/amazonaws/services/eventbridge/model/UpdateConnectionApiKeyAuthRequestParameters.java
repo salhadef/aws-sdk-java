@@ -137,7 +137,7 @@ public class UpdateConnectionApiKeyAuthRequestParameters implements Serializable
         if (getApiKeyName() != null)
             sb.append("ApiKeyName: ").append(getApiKeyName()).append(",");
         if (getApiKeyValue() != null)
-            sb.append("ApiKeyValue: ").append(getApiKeyValue());
+            sb.append("ApiKeyValue: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

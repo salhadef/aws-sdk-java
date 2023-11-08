@@ -44,6 +44,7 @@ import com.amazonaws.services.personalizeruntime.AmazonPersonalizeRuntimeClientB
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.personalizeruntime.model.*;
+
 import com.amazonaws.services.personalizeruntime.model.transform.*;
 
 /**

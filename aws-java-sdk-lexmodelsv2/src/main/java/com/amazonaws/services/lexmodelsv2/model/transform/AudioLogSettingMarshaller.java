@@ -31,6 +31,8 @@ public class AudioLogSettingMarshaller {
             .marshallLocationName("enabled").build();
     private static final MarshallingInfo<StructuredPojo> DESTINATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("destination").build();
+    private static final MarshallingInfo<Boolean> SELECTIVELOGGINGENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("selectiveLoggingEnabled").build();
 
     private static final AudioLogSettingMarshaller instance = new AudioLogSettingMarshaller();
 
@@ -50,6 +52,7 @@ public class AudioLogSettingMarshaller {
         try {
             protocolMarshaller.marshall(audioLogSetting.getEnabled(), ENABLED_BINDING);
             protocolMarshaller.marshall(audioLogSetting.getDestination(), DESTINATION_BINDING);
+            protocolMarshaller.marshall(audioLogSetting.getSelectiveLoggingEnabled(), SELECTIVELOGGINGENABLED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

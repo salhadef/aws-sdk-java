@@ -64,6 +64,10 @@ public class DescribeCollectionResultJsonUnmarshaller implements Unmarshaller<De
                     context.nextToken();
                     describeCollectionResult.setCreationTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("UserCount", targetDepth)) {
+                    context.nextToken();
+                    describeCollectionResult.setUserCount(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

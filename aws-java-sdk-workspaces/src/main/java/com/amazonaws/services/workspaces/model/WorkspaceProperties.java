@@ -100,6 +100,12 @@ public class WorkspaceProperties implements Serializable, Cloneable, StructuredP
      * </note>
      */
     private com.amazonaws.internal.SdkInternalList<String> protocols;
+    /**
+     * <p>
+     * The name of the operating system.
+     * </p>
+     */
+    private String operatingSystemName;
 
     /**
      * <p>
@@ -807,6 +813,79 @@ public class WorkspaceProperties implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The name of the operating system.
+     * </p>
+     * 
+     * @param operatingSystemName
+     *        The name of the operating system.
+     * @see OperatingSystemName
+     */
+
+    public void setOperatingSystemName(String operatingSystemName) {
+        this.operatingSystemName = operatingSystemName;
+    }
+
+    /**
+     * <p>
+     * The name of the operating system.
+     * </p>
+     * 
+     * @return The name of the operating system.
+     * @see OperatingSystemName
+     */
+
+    public String getOperatingSystemName() {
+        return this.operatingSystemName;
+    }
+
+    /**
+     * <p>
+     * The name of the operating system.
+     * </p>
+     * 
+     * @param operatingSystemName
+     *        The name of the operating system.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OperatingSystemName
+     */
+
+    public WorkspaceProperties withOperatingSystemName(String operatingSystemName) {
+        setOperatingSystemName(operatingSystemName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the operating system.
+     * </p>
+     * 
+     * @param operatingSystemName
+     *        The name of the operating system.
+     * @see OperatingSystemName
+     */
+
+    public void setOperatingSystemName(OperatingSystemName operatingSystemName) {
+        withOperatingSystemName(operatingSystemName);
+    }
+
+    /**
+     * <p>
+     * The name of the operating system.
+     * </p>
+     * 
+     * @param operatingSystemName
+     *        The name of the operating system.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OperatingSystemName
+     */
+
+    public WorkspaceProperties withOperatingSystemName(OperatingSystemName operatingSystemName) {
+        this.operatingSystemName = operatingSystemName.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -829,7 +908,9 @@ public class WorkspaceProperties implements Serializable, Cloneable, StructuredP
         if (getComputeTypeName() != null)
             sb.append("ComputeTypeName: ").append(getComputeTypeName()).append(",");
         if (getProtocols() != null)
-            sb.append("Protocols: ").append(getProtocols());
+            sb.append("Protocols: ").append(getProtocols()).append(",");
+        if (getOperatingSystemName() != null)
+            sb.append("OperatingSystemName: ").append(getOperatingSystemName());
         sb.append("}");
         return sb.toString();
     }
@@ -869,6 +950,10 @@ public class WorkspaceProperties implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getProtocols() != null && other.getProtocols().equals(this.getProtocols()) == false)
             return false;
+        if (other.getOperatingSystemName() == null ^ this.getOperatingSystemName() == null)
+            return false;
+        if (other.getOperatingSystemName() != null && other.getOperatingSystemName().equals(this.getOperatingSystemName()) == false)
+            return false;
         return true;
     }
 
@@ -883,6 +968,7 @@ public class WorkspaceProperties implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getUserVolumeSizeGib() == null) ? 0 : getUserVolumeSizeGib().hashCode());
         hashCode = prime * hashCode + ((getComputeTypeName() == null) ? 0 : getComputeTypeName().hashCode());
         hashCode = prime * hashCode + ((getProtocols() == null) ? 0 : getProtocols().hashCode());
+        hashCode = prime * hashCode + ((getOperatingSystemName() == null) ? 0 : getOperatingSystemName().hashCode());
         return hashCode;
     }
 

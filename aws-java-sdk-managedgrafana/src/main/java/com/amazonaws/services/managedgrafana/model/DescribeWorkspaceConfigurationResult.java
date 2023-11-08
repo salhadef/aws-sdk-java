@@ -33,6 +33,12 @@ public class DescribeWorkspaceConfigurationResult extends com.amazonaws.AmazonWe
      * </p>
      */
     private String configuration;
+    /**
+     * <p>
+     * The supported Grafana version for the workspace.
+     * </p>
+     */
+    private String grafanaVersion;
 
     /**
      * <p>
@@ -113,6 +119,46 @@ public class DescribeWorkspaceConfigurationResult extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
+     * The supported Grafana version for the workspace.
+     * </p>
+     * 
+     * @param grafanaVersion
+     *        The supported Grafana version for the workspace.
+     */
+
+    public void setGrafanaVersion(String grafanaVersion) {
+        this.grafanaVersion = grafanaVersion;
+    }
+
+    /**
+     * <p>
+     * The supported Grafana version for the workspace.
+     * </p>
+     * 
+     * @return The supported Grafana version for the workspace.
+     */
+
+    public String getGrafanaVersion() {
+        return this.grafanaVersion;
+    }
+
+    /**
+     * <p>
+     * The supported Grafana version for the workspace.
+     * </p>
+     * 
+     * @param grafanaVersion
+     *        The supported Grafana version for the workspace.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeWorkspaceConfigurationResult withGrafanaVersion(String grafanaVersion) {
+        setGrafanaVersion(grafanaVersion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -125,7 +171,9 @@ public class DescribeWorkspaceConfigurationResult extends com.amazonaws.AmazonWe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConfiguration() != null)
-            sb.append("Configuration: ").append(getConfiguration());
+            sb.append("Configuration: ").append(getConfiguration()).append(",");
+        if (getGrafanaVersion() != null)
+            sb.append("GrafanaVersion: ").append(getGrafanaVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -144,6 +192,10 @@ public class DescribeWorkspaceConfigurationResult extends com.amazonaws.AmazonWe
             return false;
         if (other.getConfiguration() != null && other.getConfiguration().equals(this.getConfiguration()) == false)
             return false;
+        if (other.getGrafanaVersion() == null ^ this.getGrafanaVersion() == null)
+            return false;
+        if (other.getGrafanaVersion() != null && other.getGrafanaVersion().equals(this.getGrafanaVersion()) == false)
+            return false;
         return true;
     }
 
@@ -153,6 +205,7 @@ public class DescribeWorkspaceConfigurationResult extends com.amazonaws.AmazonWe
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getGrafanaVersion() == null) ? 0 : getGrafanaVersion().hashCode());
         return hashCode;
     }
 

@@ -76,6 +76,18 @@ public class UpdateFileSystemOpenZFSConfigurationJsonUnmarshaller implements Unm
                     context.nextToken();
                     updateFileSystemOpenZFSConfiguration.setDiskIopsConfiguration(DiskIopsConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("AddRouteTableIds", targetDepth)) {
+                    context.nextToken();
+                    updateFileSystemOpenZFSConfiguration.setAddRouteTableIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("RemoveRouteTableIds", targetDepth)) {
+                    context.nextToken();
+                    updateFileSystemOpenZFSConfiguration.setRemoveRouteTableIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

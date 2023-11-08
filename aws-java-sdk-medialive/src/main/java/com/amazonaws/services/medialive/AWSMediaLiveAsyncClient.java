@@ -798,6 +798,39 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeAccountConfigurationResult> describeAccountConfigurationAsync(DescribeAccountConfigurationRequest request) {
+
+        return describeAccountConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAccountConfigurationResult> describeAccountConfigurationAsync(final DescribeAccountConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeAccountConfigurationRequest, DescribeAccountConfigurationResult> asyncHandler) {
+        final DescribeAccountConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeAccountConfigurationResult>() {
+            @Override
+            public DescribeAccountConfigurationResult call() throws Exception {
+                DescribeAccountConfigurationResult result = null;
+
+                try {
+                    result = executeDescribeAccountConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeChannelResult> describeChannelAsync(DescribeChannelRequest request) {
 
         return describeChannelAsync(request, null);
@@ -1112,6 +1145,39 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
 
                 try {
                     result = executeDescribeSchedule(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeThumbnailsResult> describeThumbnailsAsync(DescribeThumbnailsRequest request) {
+
+        return describeThumbnailsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeThumbnailsResult> describeThumbnailsAsync(final DescribeThumbnailsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeThumbnailsRequest, DescribeThumbnailsResult> asyncHandler) {
+        final DescribeThumbnailsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeThumbnailsResult>() {
+            @Override
+            public DescribeThumbnailsResult call() throws Exception {
+                DescribeThumbnailsResult result = null;
+
+                try {
+                    result = executeDescribeThumbnails(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1590,6 +1656,39 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
     }
 
     @Override
+    public java.util.concurrent.Future<StartInputDeviceResult> startInputDeviceAsync(StartInputDeviceRequest request) {
+
+        return startInputDeviceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartInputDeviceResult> startInputDeviceAsync(final StartInputDeviceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartInputDeviceRequest, StartInputDeviceResult> asyncHandler) {
+        final StartInputDeviceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartInputDeviceResult>() {
+            @Override
+            public StartInputDeviceResult call() throws Exception {
+                StartInputDeviceResult result = null;
+
+                try {
+                    result = executeStartInputDevice(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StartInputDeviceMaintenanceWindowResult> startInputDeviceMaintenanceWindowAsync(
             StartInputDeviceMaintenanceWindowRequest request) {
 
@@ -1691,6 +1790,39 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
     }
 
     @Override
+    public java.util.concurrent.Future<StopInputDeviceResult> stopInputDeviceAsync(StopInputDeviceRequest request) {
+
+        return stopInputDeviceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopInputDeviceResult> stopInputDeviceAsync(final StopInputDeviceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopInputDeviceRequest, StopInputDeviceResult> asyncHandler) {
+        final StopInputDeviceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopInputDeviceResult>() {
+            @Override
+            public StopInputDeviceResult call() throws Exception {
+                StopInputDeviceResult result = null;
+
+                try {
+                    result = executeStopInputDevice(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StopMultiplexResult> stopMultiplexAsync(StopMultiplexRequest request) {
 
         return stopMultiplexAsync(request, null);
@@ -1741,6 +1873,39 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
 
                 try {
                     result = executeTransferInputDevice(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAccountConfigurationResult> updateAccountConfigurationAsync(UpdateAccountConfigurationRequest request) {
+
+        return updateAccountConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAccountConfigurationResult> updateAccountConfigurationAsync(final UpdateAccountConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateAccountConfigurationRequest, UpdateAccountConfigurationResult> asyncHandler) {
+        final UpdateAccountConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateAccountConfigurationResult>() {
+            @Override
+            public UpdateAccountConfigurationResult call() throws Exception {
+                UpdateAccountConfigurationResult result = null;
+
+                try {
+                    result = executeUpdateAccountConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

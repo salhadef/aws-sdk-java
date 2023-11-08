@@ -52,13 +52,13 @@ public class InstanceConfigJsonUnmarshaller implements Unmarshaller<InstanceConf
                     context.nextToken();
                     instanceConfig.setConnectInstanceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("encryptionConfig", targetDepth)) {
-                    context.nextToken();
-                    instanceConfig.setEncryptionConfig(EncryptionConfigJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("serviceLinkedRoleArn", targetDepth)) {
                     context.nextToken();
                     instanceConfig.setServiceLinkedRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("encryptionConfig", targetDepth)) {
+                    context.nextToken();
+                    instanceConfig.setEncryptionConfig(EncryptionConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -43,6 +43,8 @@ public class StartPipelineExecutionRequestMarshaller {
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
     private static final MarshallingInfo<StructuredPojo> PARALLELISMCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ParallelismConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> SELECTIVEEXECUTIONCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SelectiveExecutionConfig").build();
 
     private static final StartPipelineExecutionRequestMarshaller instance = new StartPipelineExecutionRequestMarshaller();
 
@@ -66,6 +68,7 @@ public class StartPipelineExecutionRequestMarshaller {
             protocolMarshaller.marshall(startPipelineExecutionRequest.getPipelineExecutionDescription(), PIPELINEEXECUTIONDESCRIPTION_BINDING);
             protocolMarshaller.marshall(startPipelineExecutionRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
             protocolMarshaller.marshall(startPipelineExecutionRequest.getParallelismConfiguration(), PARALLELISMCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(startPipelineExecutionRequest.getSelectiveExecutionConfig(), SELECTIVEEXECUTIONCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

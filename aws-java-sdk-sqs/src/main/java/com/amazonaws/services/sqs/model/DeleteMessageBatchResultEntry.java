@@ -14,6 +14,8 @@ package com.amazonaws.services.sqs.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteMessageBatchResultEntry implements Serializable, Cloneable {
+public class DeleteMessageBatchResultEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -126,4 +128,9 @@ public class DeleteMessageBatchResultEntry implements Serializable, Cloneable {
         }
     }
 
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.sqs.model.transform.DeleteMessageBatchResultEntryMarshaller.getInstance().marshall(this, protocolMarshaller);
+    }
 }

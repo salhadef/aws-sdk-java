@@ -28,7 +28,7 @@ public class DisassociateNatGatewayAddressRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * The NAT gateway ID.
+     * The ID of the NAT gateway.
      * </p>
      */
     private String natGatewayId;
@@ -48,11 +48,11 @@ public class DisassociateNatGatewayAddressRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * The NAT gateway ID.
+     * The ID of the NAT gateway.
      * </p>
      * 
      * @param natGatewayId
-     *        The NAT gateway ID.
+     *        The ID of the NAT gateway.
      */
 
     public void setNatGatewayId(String natGatewayId) {
@@ -61,10 +61,10 @@ public class DisassociateNatGatewayAddressRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * The NAT gateway ID.
+     * The ID of the NAT gateway.
      * </p>
      * 
-     * @return The NAT gateway ID.
+     * @return The ID of the NAT gateway.
      */
 
     public String getNatGatewayId() {
@@ -73,11 +73,11 @@ public class DisassociateNatGatewayAddressRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * The NAT gateway ID.
+     * The ID of the NAT gateway.
      * </p>
      * 
      * @param natGatewayId
-     *        The NAT gateway ID.
+     *        The ID of the NAT gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

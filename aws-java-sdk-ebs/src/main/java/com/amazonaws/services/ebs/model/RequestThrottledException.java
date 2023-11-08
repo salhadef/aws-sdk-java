@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The number of API requests has exceed the maximum allowed API request throttling limit.
+ * The number of API requests has exceeded the maximum allowed API request throttling limit for the snapshot. For more
+ * information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error retries</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

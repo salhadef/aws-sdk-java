@@ -810,6 +810,19 @@ public class AbstractAWSCognitoIdentityProviderAsync extends AbstractAWSCognitoI
     }
 
     @Override
+    public java.util.concurrent.Future<GetLogDeliveryConfigurationResult> getLogDeliveryConfigurationAsync(GetLogDeliveryConfigurationRequest request) {
+
+        return getLogDeliveryConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLogDeliveryConfigurationResult> getLogDeliveryConfigurationAsync(GetLogDeliveryConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetLogDeliveryConfigurationRequest, GetLogDeliveryConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetSigningCertificateResult> getSigningCertificateAsync(GetSigningCertificateRequest request) {
 
         return getSigningCertificateAsync(request, null);
@@ -1067,6 +1080,19 @@ public class AbstractAWSCognitoIdentityProviderAsync extends AbstractAWSCognitoI
     @Override
     public java.util.concurrent.Future<RevokeTokenResult> revokeTokenAsync(RevokeTokenRequest request,
             com.amazonaws.handlers.AsyncHandler<RevokeTokenRequest, RevokeTokenResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetLogDeliveryConfigurationResult> setLogDeliveryConfigurationAsync(SetLogDeliveryConfigurationRequest request) {
+
+        return setLogDeliveryConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetLogDeliveryConfigurationResult> setLogDeliveryConfigurationAsync(SetLogDeliveryConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<SetLogDeliveryConfigurationRequest, SetLogDeliveryConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -173,6 +173,18 @@ public class CreateVerifiedAccessEndpointRequestMarshaller implements
 
         request.addParameter("ClientToken", IdempotentUtils.resolveString(createVerifiedAccessEndpointRequest.getClientToken()));
 
+        VerifiedAccessSseSpecificationRequest sseSpecification = createVerifiedAccessEndpointRequest.getSseSpecification();
+        if (sseSpecification != null) {
+
+            if (sseSpecification.getCustomerManagedKeyEnabled() != null) {
+                request.addParameter("SseSpecification.CustomerManagedKeyEnabled", StringUtils.fromBoolean(sseSpecification.getCustomerManagedKeyEnabled()));
+            }
+
+            if (sseSpecification.getKmsKeyArn() != null) {
+                request.addParameter("SseSpecification.KmsKeyArn", StringUtils.fromString(sseSpecification.getKmsKeyArn()));
+            }
+        }
+
         return request;
     }
 

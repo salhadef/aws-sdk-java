@@ -24,6 +24,13 @@ public class DuplicateRequestException extends com.amazonaws.services.route53dom
     private static final long serialVersionUID = 1L;
 
     /**
+     * <p>
+     * ID of the request operation.
+     * </p>
+     */
+    private String requestId;
+
+    /**
      * Constructs a new DuplicateRequestException with the specified error message.
      *
      * @param message
@@ -31,6 +38,48 @@ public class DuplicateRequestException extends com.amazonaws.services.route53dom
      */
     public DuplicateRequestException(String message) {
         super(message);
+    }
+
+    /**
+     * <p>
+     * ID of the request operation.
+     * </p>
+     * 
+     * @param requestId
+     *        ID of the request operation.
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("requestId")
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
+
+    /**
+     * <p>
+     * ID of the request operation.
+     * </p>
+     * 
+     * @return ID of the request operation.
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("requestId")
+    public String getRequestId() {
+        return this.requestId;
+    }
+
+    /**
+     * <p>
+     * ID of the request operation.
+     * </p>
+     * 
+     * @param requestId
+     *        ID of the request operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DuplicateRequestException withRequestId(String requestId) {
+        setRequestId(requestId);
+        return this;
     }
 
 }

@@ -62,7 +62,14 @@ public class ListEntitiesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private Integer maxResults;
-
+    /**
+     * <p>
+     * Filters the returned set of entities based on their owner. The default is <code>SELF</code>. To list entities
+     * shared with you through AWS Resource Access Manager (AWS RAM), set to <code>SHARED</code>. Entities shared
+     * through the AWS Marketplace Catalog API <code>PutResourcePolicy</code> operation can't be discovered through the
+     * <code>SHARED</code> parameter.
+     * </p>
+     */
     private String ownershipType;
 
     /**
@@ -347,7 +354,18 @@ public class ListEntitiesRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * Filters the returned set of entities based on their owner. The default is <code>SELF</code>. To list entities
+     * shared with you through AWS Resource Access Manager (AWS RAM), set to <code>SHARED</code>. Entities shared
+     * through the AWS Marketplace Catalog API <code>PutResourcePolicy</code> operation can't be discovered through the
+     * <code>SHARED</code> parameter.
+     * </p>
+     * 
      * @param ownershipType
+     *        Filters the returned set of entities based on their owner. The default is <code>SELF</code>. To list
+     *        entities shared with you through AWS Resource Access Manager (AWS RAM), set to <code>SHARED</code>.
+     *        Entities shared through the AWS Marketplace Catalog API <code>PutResourcePolicy</code> operation can't be
+     *        discovered through the <code>SHARED</code> parameter.
      * @see OwnershipType
      */
 
@@ -356,7 +374,17 @@ public class ListEntitiesRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * @return
+     * <p>
+     * Filters the returned set of entities based on their owner. The default is <code>SELF</code>. To list entities
+     * shared with you through AWS Resource Access Manager (AWS RAM), set to <code>SHARED</code>. Entities shared
+     * through the AWS Marketplace Catalog API <code>PutResourcePolicy</code> operation can't be discovered through the
+     * <code>SHARED</code> parameter.
+     * </p>
+     * 
+     * @return Filters the returned set of entities based on their owner. The default is <code>SELF</code>. To list
+     *         entities shared with you through AWS Resource Access Manager (AWS RAM), set to <code>SHARED</code>.
+     *         Entities shared through the AWS Marketplace Catalog API <code>PutResourcePolicy</code> operation can't be
+     *         discovered through the <code>SHARED</code> parameter.
      * @see OwnershipType
      */
 
@@ -365,7 +393,18 @@ public class ListEntitiesRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * Filters the returned set of entities based on their owner. The default is <code>SELF</code>. To list entities
+     * shared with you through AWS Resource Access Manager (AWS RAM), set to <code>SHARED</code>. Entities shared
+     * through the AWS Marketplace Catalog API <code>PutResourcePolicy</code> operation can't be discovered through the
+     * <code>SHARED</code> parameter.
+     * </p>
+     * 
      * @param ownershipType
+     *        Filters the returned set of entities based on their owner. The default is <code>SELF</code>. To list
+     *        entities shared with you through AWS Resource Access Manager (AWS RAM), set to <code>SHARED</code>.
+     *        Entities shared through the AWS Marketplace Catalog API <code>PutResourcePolicy</code> operation can't be
+     *        discovered through the <code>SHARED</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OwnershipType
      */
@@ -376,7 +415,18 @@ public class ListEntitiesRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * Filters the returned set of entities based on their owner. The default is <code>SELF</code>. To list entities
+     * shared with you through AWS Resource Access Manager (AWS RAM), set to <code>SHARED</code>. Entities shared
+     * through the AWS Marketplace Catalog API <code>PutResourcePolicy</code> operation can't be discovered through the
+     * <code>SHARED</code> parameter.
+     * </p>
+     * 
      * @param ownershipType
+     *        Filters the returned set of entities based on their owner. The default is <code>SELF</code>. To list
+     *        entities shared with you through AWS Resource Access Manager (AWS RAM), set to <code>SHARED</code>.
+     *        Entities shared through the AWS Marketplace Catalog API <code>PutResourcePolicy</code> operation can't be
+     *        discovered through the <code>SHARED</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OwnershipType
      */

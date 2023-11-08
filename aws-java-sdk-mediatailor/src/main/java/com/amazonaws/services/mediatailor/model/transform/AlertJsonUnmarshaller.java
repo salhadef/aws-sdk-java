@@ -56,6 +56,10 @@ public class AlertJsonUnmarshaller implements Unmarshaller<Alert, JsonUnmarshall
                     context.nextToken();
                     alert.setAlertMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Category", targetDepth)) {
+                    context.nextToken();
+                    alert.setCategory(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
                     context.nextToken();
                     alert.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));

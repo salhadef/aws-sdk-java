@@ -28,7 +28,7 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The user name of the user you want to retrieve from the get user request.
+     * The username of the user that you requested.
      * </p>
      */
     private String username;
@@ -65,11 +65,11 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The user name of the user you want to retrieve from the get user request.
+     * The username of the user that you requested.
      * </p>
      * 
      * @param username
-     *        The user name of the user you want to retrieve from the get user request.
+     *        The username of the user that you requested.
      */
 
     public void setUsername(String username) {
@@ -78,10 +78,10 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The user name of the user you want to retrieve from the get user request.
+     * The username of the user that you requested.
      * </p>
      * 
-     * @return The user name of the user you want to retrieve from the get user request.
+     * @return The username of the user that you requested.
      */
 
     public String getUsername() {
@@ -90,11 +90,11 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The user name of the user you want to retrieve from the get user request.
+     * The username of the user that you requested.
      * </p>
      * 
      * @param username
-     *        The user name of the user you want to retrieve from the get user request.
+     *        The username of the user that you requested.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

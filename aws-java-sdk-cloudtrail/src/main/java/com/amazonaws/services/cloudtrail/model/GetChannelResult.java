@@ -47,7 +47,7 @@ public class GetChannelResult extends com.amazonaws.AmazonWebServiceResult<com.a
     /**
      * <p>
      * Provides information about the advanced event selectors configured for the channel, and whether the channel
-     * applies to all regions or a single region.
+     * applies to all Regions or a single Region.
      * </p>
      */
     private SourceConfig sourceConfig;
@@ -207,12 +207,12 @@ public class GetChannelResult extends com.amazonaws.AmazonWebServiceResult<com.a
     /**
      * <p>
      * Provides information about the advanced event selectors configured for the channel, and whether the channel
-     * applies to all regions or a single region.
+     * applies to all Regions or a single Region.
      * </p>
      * 
      * @param sourceConfig
      *        Provides information about the advanced event selectors configured for the channel, and whether the
-     *        channel applies to all regions or a single region.
+     *        channel applies to all Regions or a single Region.
      */
 
     public void setSourceConfig(SourceConfig sourceConfig) {
@@ -222,11 +222,11 @@ public class GetChannelResult extends com.amazonaws.AmazonWebServiceResult<com.a
     /**
      * <p>
      * Provides information about the advanced event selectors configured for the channel, and whether the channel
-     * applies to all regions or a single region.
+     * applies to all Regions or a single Region.
      * </p>
      * 
      * @return Provides information about the advanced event selectors configured for the channel, and whether the
-     *         channel applies to all regions or a single region.
+     *         channel applies to all Regions or a single Region.
      */
 
     public SourceConfig getSourceConfig() {
@@ -236,12 +236,12 @@ public class GetChannelResult extends com.amazonaws.AmazonWebServiceResult<com.a
     /**
      * <p>
      * Provides information about the advanced event selectors configured for the channel, and whether the channel
-     * applies to all regions or a single region.
+     * applies to all Regions or a single Region.
      * </p>
      * 
      * @param sourceConfig
      *        Provides information about the advanced event selectors configured for the channel, and whether the
-     *        channel applies to all regions or a single region.
+     *        channel applies to all Regions or a single Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

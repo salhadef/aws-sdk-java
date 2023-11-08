@@ -39,6 +39,9 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * allowed. This name is referenced in the <code>sourceVolume</code> parameter of container definition
      * <code>mountPoints</code>.
      * </p>
+     * <p>
+     * This is required wwhen you use an Amazon EFS volume.
+     * </p>
      */
     private String name;
     /**
@@ -90,11 +93,16 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * allowed. This name is referenced in the <code>sourceVolume</code> parameter of container definition
      * <code>mountPoints</code>.
      * </p>
+     * <p>
+     * This is required wwhen you use an Amazon EFS volume.
+     * </p>
      * 
      * @param name
      *        The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are
      *        allowed. This name is referenced in the <code>sourceVolume</code> parameter of container definition
-     *        <code>mountPoints</code>.
+     *        <code>mountPoints</code>.</p>
+     *        <p>
+     *        This is required wwhen you use an Amazon EFS volume.
      */
 
     public void setName(String name) {
@@ -107,10 +115,15 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * allowed. This name is referenced in the <code>sourceVolume</code> parameter of container definition
      * <code>mountPoints</code>.
      * </p>
+     * <p>
+     * This is required wwhen you use an Amazon EFS volume.
+     * </p>
      * 
      * @return The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens
      *         are allowed. This name is referenced in the <code>sourceVolume</code> parameter of container definition
-     *         <code>mountPoints</code>.
+     *         <code>mountPoints</code>.</p>
+     *         <p>
+     *         This is required wwhen you use an Amazon EFS volume.
      */
 
     public String getName() {
@@ -123,11 +136,16 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * allowed. This name is referenced in the <code>sourceVolume</code> parameter of container definition
      * <code>mountPoints</code>.
      * </p>
+     * <p>
+     * This is required wwhen you use an Amazon EFS volume.
+     * </p>
      * 
      * @param name
      *        The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are
      *        allowed. This name is referenced in the <code>sourceVolume</code> parameter of container definition
-     *        <code>mountPoints</code>.
+     *        <code>mountPoints</code>.</p>
+     *        <p>
+     *        This is required wwhen you use an Amazon EFS volume.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -64,6 +64,10 @@ public class ListBillingGroupsFilterJsonUnmarshaller implements Unmarshaller<Lis
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("AutoAssociate", targetDepth)) {
+                    context.nextToken();
+                    listBillingGroupsFilter.setAutoAssociate(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

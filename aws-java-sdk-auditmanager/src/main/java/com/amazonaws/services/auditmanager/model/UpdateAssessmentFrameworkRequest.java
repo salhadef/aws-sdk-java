@@ -305,7 +305,7 @@ public class UpdateAssessmentFrameworkRequest extends com.amazonaws.AmazonWebSer
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getComplianceType() != null)
-            sb.append("ComplianceType: ").append(getComplianceType()).append(",");
+            sb.append("ComplianceType: ").append("***Sensitive Data Redacted***").append(",");
         if (getControlSets() != null)
             sb.append("ControlSets: ").append(getControlSets());
         sb.append("}");

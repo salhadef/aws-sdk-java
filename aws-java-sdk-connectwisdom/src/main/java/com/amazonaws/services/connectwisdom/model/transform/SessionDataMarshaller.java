@@ -31,6 +31,8 @@ public class SessionDataMarshaller {
 
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<StructuredPojo> INTEGRATIONCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("integrationConfiguration").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
     private static final MarshallingInfo<String> SESSIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -57,6 +59,7 @@ public class SessionDataMarshaller {
 
         try {
             protocolMarshaller.marshall(sessionData.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(sessionData.getIntegrationConfiguration(), INTEGRATIONCONFIGURATION_BINDING);
             protocolMarshaller.marshall(sessionData.getName(), NAME_BINDING);
             protocolMarshaller.marshall(sessionData.getSessionArn(), SESSIONARN_BINDING);
             protocolMarshaller.marshall(sessionData.getSessionId(), SESSIONID_BINDING);

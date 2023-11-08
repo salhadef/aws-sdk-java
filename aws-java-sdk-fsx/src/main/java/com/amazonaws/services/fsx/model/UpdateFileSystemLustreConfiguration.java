@@ -37,7 +37,12 @@ public class UpdateFileSystemLustreConfiguration implements Serializable, Clonea
     private String weeklyMaintenanceStartTime;
 
     private String dailyAutomaticBackupStartTime;
-
+    /**
+     * <p>
+     * The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic
+     * backups. You can retain automatic backups for a maximum of 90 days. The default is <code>0</code>.
+     * </p>
+     */
     private Integer automaticBackupRetentionDays;
     /**
      * <p>
@@ -195,7 +200,14 @@ public class UpdateFileSystemLustreConfiguration implements Serializable, Clonea
     }
 
     /**
+     * <p>
+     * The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic
+     * backups. You can retain automatic backups for a maximum of 90 days. The default is <code>0</code>.
+     * </p>
+     * 
      * @param automaticBackupRetentionDays
+     *        The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic
+     *        backups. You can retain automatic backups for a maximum of 90 days. The default is <code>0</code>.
      */
 
     public void setAutomaticBackupRetentionDays(Integer automaticBackupRetentionDays) {
@@ -203,7 +215,14 @@ public class UpdateFileSystemLustreConfiguration implements Serializable, Clonea
     }
 
     /**
-     * @return
+     * <p>
+     * The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic
+     * backups. You can retain automatic backups for a maximum of 90 days. The default is <code>0</code>.
+     * </p>
+     * 
+     * @return The number of days to retain automatic backups. Setting this property to <code>0</code> disables
+     *         automatic backups. You can retain automatic backups for a maximum of 90 days. The default is
+     *         <code>0</code>.
      */
 
     public Integer getAutomaticBackupRetentionDays() {
@@ -211,7 +230,14 @@ public class UpdateFileSystemLustreConfiguration implements Serializable, Clonea
     }
 
     /**
+     * <p>
+     * The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic
+     * backups. You can retain automatic backups for a maximum of 90 days. The default is <code>0</code>.
+     * </p>
+     * 
      * @param automaticBackupRetentionDays
+     *        The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic
+     *        backups. You can retain automatic backups for a maximum of 90 days. The default is <code>0</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

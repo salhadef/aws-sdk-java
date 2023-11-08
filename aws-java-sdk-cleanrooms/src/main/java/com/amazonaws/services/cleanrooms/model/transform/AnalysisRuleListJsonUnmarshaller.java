@@ -54,6 +54,12 @@ public class AnalysisRuleListJsonUnmarshaller implements Unmarshaller<AnalysisRu
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("allowedJoinOperators", targetDepth)) {
+                    context.nextToken();
+                    analysisRuleList.setAllowedJoinOperators(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("listColumns", targetDepth)) {
                     context.nextToken();
                     analysisRuleList.setListColumns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))

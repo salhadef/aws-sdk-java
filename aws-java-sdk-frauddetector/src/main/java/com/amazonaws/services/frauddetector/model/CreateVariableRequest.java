@@ -33,7 +33,7 @@ public class CreateVariableRequest extends com.amazonaws.AmazonWebServiceRequest
     private String name;
     /**
      * <p>
-     * The data type.
+     * The data type of the variable.
      * </p>
      */
     private String dataType;
@@ -116,11 +116,11 @@ public class CreateVariableRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The data type.
+     * The data type of the variable.
      * </p>
      * 
      * @param dataType
-     *        The data type.
+     *        The data type of the variable.
      * @see DataType
      */
 
@@ -130,10 +130,10 @@ public class CreateVariableRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The data type.
+     * The data type of the variable.
      * </p>
      * 
-     * @return The data type.
+     * @return The data type of the variable.
      * @see DataType
      */
 
@@ -143,11 +143,11 @@ public class CreateVariableRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The data type.
+     * The data type of the variable.
      * </p>
      * 
      * @param dataType
-     *        The data type.
+     *        The data type of the variable.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataType
      */
@@ -159,11 +159,11 @@ public class CreateVariableRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The data type.
+     * The data type of the variable.
      * </p>
      * 
      * @param dataType
-     *        The data type.
+     *        The data type of the variable.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataType
      */

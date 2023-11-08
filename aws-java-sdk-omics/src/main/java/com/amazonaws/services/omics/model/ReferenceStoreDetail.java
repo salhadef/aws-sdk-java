@@ -36,18 +36,6 @@ public class ReferenceStoreDetail implements Serializable, Cloneable, Structured
     private String arn;
     /**
      * <p>
-     * When the store was created.
-     * </p>
-     */
-    private java.util.Date creationTime;
-    /**
-     * <p>
-     * The store's description.
-     * </p>
-     */
-    private String description;
-    /**
-     * <p>
      * The store's ID.
      * </p>
      */
@@ -60,10 +48,22 @@ public class ReferenceStoreDetail implements Serializable, Cloneable, Structured
     private String name;
     /**
      * <p>
+     * The store's description.
+     * </p>
+     */
+    private String description;
+    /**
+     * <p>
      * The store's server-side encryption (SSE) settings.
      * </p>
      */
     private SseConfig sseConfig;
+    /**
+     * <p>
+     * When the store was created.
+     * </p>
+     */
+    private java.util.Date creationTime;
 
     /**
      * <p>
@@ -102,86 +102,6 @@ public class ReferenceStoreDetail implements Serializable, Cloneable, Structured
 
     public ReferenceStoreDetail withArn(String arn) {
         setArn(arn);
-        return this;
-    }
-
-    /**
-     * <p>
-     * When the store was created.
-     * </p>
-     * 
-     * @param creationTime
-     *        When the store was created.
-     */
-
-    public void setCreationTime(java.util.Date creationTime) {
-        this.creationTime = creationTime;
-    }
-
-    /**
-     * <p>
-     * When the store was created.
-     * </p>
-     * 
-     * @return When the store was created.
-     */
-
-    public java.util.Date getCreationTime() {
-        return this.creationTime;
-    }
-
-    /**
-     * <p>
-     * When the store was created.
-     * </p>
-     * 
-     * @param creationTime
-     *        When the store was created.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ReferenceStoreDetail withCreationTime(java.util.Date creationTime) {
-        setCreationTime(creationTime);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The store's description.
-     * </p>
-     * 
-     * @param description
-     *        The store's description.
-     */
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    /**
-     * <p>
-     * The store's description.
-     * </p>
-     * 
-     * @return The store's description.
-     */
-
-    public String getDescription() {
-        return this.description;
-    }
-
-    /**
-     * <p>
-     * The store's description.
-     * </p>
-     * 
-     * @param description
-     *        The store's description.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ReferenceStoreDetail withDescription(String description) {
-        setDescription(description);
         return this;
     }
 
@@ -267,6 +187,46 @@ public class ReferenceStoreDetail implements Serializable, Cloneable, Structured
 
     /**
      * <p>
+     * The store's description.
+     * </p>
+     * 
+     * @param description
+     *        The store's description.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * The store's description.
+     * </p>
+     * 
+     * @return The store's description.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * The store's description.
+     * </p>
+     * 
+     * @param description
+     *        The store's description.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReferenceStoreDetail withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
      * The store's server-side encryption (SSE) settings.
      * </p>
      * 
@@ -306,6 +266,46 @@ public class ReferenceStoreDetail implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * When the store was created.
+     * </p>
+     * 
+     * @param creationTime
+     *        When the store was created.
+     */
+
+    public void setCreationTime(java.util.Date creationTime) {
+        this.creationTime = creationTime;
+    }
+
+    /**
+     * <p>
+     * When the store was created.
+     * </p>
+     * 
+     * @return When the store was created.
+     */
+
+    public java.util.Date getCreationTime() {
+        return this.creationTime;
+    }
+
+    /**
+     * <p>
+     * When the store was created.
+     * </p>
+     * 
+     * @param creationTime
+     *        When the store was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReferenceStoreDetail withCreationTime(java.util.Date creationTime) {
+        setCreationTime(creationTime);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -319,16 +319,16 @@ public class ReferenceStoreDetail implements Serializable, Cloneable, Structured
         sb.append("{");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
-        if (getCreationTime() != null)
-            sb.append("CreationTime: ").append(getCreationTime()).append(",");
-        if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getSseConfig() != null)
-            sb.append("SseConfig: ").append(getSseConfig());
+            sb.append("SseConfig: ").append(getSseConfig()).append(",");
+        if (getCreationTime() != null)
+            sb.append("CreationTime: ").append(getCreationTime());
         sb.append("}");
         return sb.toString();
     }
@@ -347,14 +347,6 @@ public class ReferenceStoreDetail implements Serializable, Cloneable, Structured
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
-        if (other.getCreationTime() == null ^ this.getCreationTime() == null)
-            return false;
-        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
-            return false;
-        if (other.getDescription() == null ^ this.getDescription() == null)
-            return false;
-        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
-            return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
@@ -363,9 +355,17 @@ public class ReferenceStoreDetail implements Serializable, Cloneable, Structured
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
         if (other.getSseConfig() == null ^ this.getSseConfig() == null)
             return false;
         if (other.getSseConfig() != null && other.getSseConfig().equals(this.getSseConfig()) == false)
+            return false;
+        if (other.getCreationTime() == null ^ this.getCreationTime() == null)
+            return false;
+        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
             return false;
         return true;
     }
@@ -376,11 +376,11 @@ public class ReferenceStoreDetail implements Serializable, Cloneable, Structured
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
-        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getSseConfig() == null) ? 0 : getSseConfig().hashCode());
+        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         return hashCode;
     }
 

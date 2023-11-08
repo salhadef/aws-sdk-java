@@ -32,6 +32,8 @@ public class TableFieldOptionsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SelectedFieldOptions").build();
     private static final MarshallingInfo<List> ORDER_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Order").build();
+    private static final MarshallingInfo<StructuredPojo> PINNEDFIELDOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PinnedFieldOptions").build();
 
     private static final TableFieldOptionsMarshaller instance = new TableFieldOptionsMarshaller();
 
@@ -51,6 +53,7 @@ public class TableFieldOptionsMarshaller {
         try {
             protocolMarshaller.marshall(tableFieldOptions.getSelectedFieldOptions(), SELECTEDFIELDOPTIONS_BINDING);
             protocolMarshaller.marshall(tableFieldOptions.getOrder(), ORDER_BINDING);
+            protocolMarshaller.marshall(tableFieldOptions.getPinnedFieldOptions(), PINNEDFIELDOPTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -44,6 +44,7 @@ import com.amazonaws.services.connectcontactlens.AmazonConnectContactLensClientB
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.connectcontactlens.model.*;
+
 import com.amazonaws.services.connectcontactlens.model.transform.*;
 
 /**

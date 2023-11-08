@@ -27,14 +27,14 @@ public class SetTypeConfigurationRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the extension, in this account and region.
+     * The Amazon Resource Name (ARN) for the extension, in this account and Region.
      * </p>
      * <p>
      * For public extensions, this will be the ARN assigned when you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate the
-     * type</a> in this account and region. For private extensions, this will be the ARN assigned when you <a
+     * type</a> in this account and Region. For private extensions, this will be the ARN assigned when you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register the
-     * type</a> in this account and region.
+     * type</a> in this account and Region.
      * </p>
      * <p>
      * Do not include the extension versions suffix at the end of the ARN. You can set the configuration for an
@@ -44,13 +44,13 @@ public class SetTypeConfigurationRequest extends com.amazonaws.AmazonWebServiceR
     private String typeArn;
     /**
      * <p>
-     * The configuration data for the extension, in this account and region.
+     * The configuration data for the extension, in this account and Region.
      * </p>
      * <p>
      * The configuration data must be formatted as JSON, and validate against the schema returned in the
      * <code>ConfigurationSchema</code> response element of <a
-     * href="AWSCloudFormation/latest/APIReference/API_DescribeType.html">API_DescribeType</a>. For more information,
-     * see <a href=
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
+     * For more information, see <a href=
      * "https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-model.html#resource-type-howto-configuration"
      * >Defining account-level configuration data for an extension</a> in the <i>CloudFormation CLI User Guide</i>.
      * </p>
@@ -87,14 +87,14 @@ public class SetTypeConfigurationRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the extension, in this account and region.
+     * The Amazon Resource Name (ARN) for the extension, in this account and Region.
      * </p>
      * <p>
      * For public extensions, this will be the ARN assigned when you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate the
-     * type</a> in this account and region. For private extensions, this will be the ARN assigned when you <a
+     * type</a> in this account and Region. For private extensions, this will be the ARN assigned when you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register the
-     * type</a> in this account and region.
+     * type</a> in this account and Region.
      * </p>
      * <p>
      * Do not include the extension versions suffix at the end of the ARN. You can set the configuration for an
@@ -102,13 +102,13 @@ public class SetTypeConfigurationRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param typeArn
-     *        The Amazon Resource Name (ARN) for the extension, in this account and region.</p>
+     *        The Amazon Resource Name (ARN) for the extension, in this account and Region.</p>
      *        <p>
      *        For public extensions, this will be the ARN assigned when you <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate
-     *        the type</a> in this account and region. For private extensions, this will be the ARN assigned when you <a
+     *        the type</a> in this account and Region. For private extensions, this will be the ARN assigned when you <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register
-     *        the type</a> in this account and region.
+     *        the type</a> in this account and Region.
      *        </p>
      *        <p>
      *        Do not include the extension versions suffix at the end of the ARN. You can set the configuration for an
@@ -121,28 +121,28 @@ public class SetTypeConfigurationRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the extension, in this account and region.
+     * The Amazon Resource Name (ARN) for the extension, in this account and Region.
      * </p>
      * <p>
      * For public extensions, this will be the ARN assigned when you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate the
-     * type</a> in this account and region. For private extensions, this will be the ARN assigned when you <a
+     * type</a> in this account and Region. For private extensions, this will be the ARN assigned when you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register the
-     * type</a> in this account and region.
+     * type</a> in this account and Region.
      * </p>
      * <p>
      * Do not include the extension versions suffix at the end of the ARN. You can set the configuration for an
      * extension, but not for a specific extension version.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) for the extension, in this account and region.</p>
+     * @return The Amazon Resource Name (ARN) for the extension, in this account and Region.</p>
      *         <p>
      *         For public extensions, this will be the ARN assigned when you <a
      *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate
-     *         the type</a> in this account and region. For private extensions, this will be the ARN assigned when you
+     *         the type</a> in this account and Region. For private extensions, this will be the ARN assigned when you
      *         <a
      *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register
-     *         the type</a> in this account and region.
+     *         the type</a> in this account and Region.
      *         </p>
      *         <p>
      *         Do not include the extension versions suffix at the end of the ARN. You can set the configuration for an
@@ -155,14 +155,14 @@ public class SetTypeConfigurationRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the extension, in this account and region.
+     * The Amazon Resource Name (ARN) for the extension, in this account and Region.
      * </p>
      * <p>
      * For public extensions, this will be the ARN assigned when you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate the
-     * type</a> in this account and region. For private extensions, this will be the ARN assigned when you <a
+     * type</a> in this account and Region. For private extensions, this will be the ARN assigned when you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register the
-     * type</a> in this account and region.
+     * type</a> in this account and Region.
      * </p>
      * <p>
      * Do not include the extension versions suffix at the end of the ARN. You can set the configuration for an
@@ -170,13 +170,13 @@ public class SetTypeConfigurationRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param typeArn
-     *        The Amazon Resource Name (ARN) for the extension, in this account and region.</p>
+     *        The Amazon Resource Name (ARN) for the extension, in this account and Region.</p>
      *        <p>
      *        For public extensions, this will be the ARN assigned when you <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate
-     *        the type</a> in this account and region. For private extensions, this will be the ARN assigned when you <a
+     *        the type</a> in this account and Region. For private extensions, this will be the ARN assigned when you <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register
-     *        the type</a> in this account and region.
+     *        the type</a> in this account and Region.
      *        </p>
      *        <p>
      *        Do not include the extension versions suffix at the end of the ARN. You can set the configuration for an
@@ -191,24 +191,24 @@ public class SetTypeConfigurationRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The configuration data for the extension, in this account and region.
+     * The configuration data for the extension, in this account and Region.
      * </p>
      * <p>
      * The configuration data must be formatted as JSON, and validate against the schema returned in the
      * <code>ConfigurationSchema</code> response element of <a
-     * href="AWSCloudFormation/latest/APIReference/API_DescribeType.html">API_DescribeType</a>. For more information,
-     * see <a href=
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
+     * For more information, see <a href=
      * "https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-model.html#resource-type-howto-configuration"
      * >Defining account-level configuration data for an extension</a> in the <i>CloudFormation CLI User Guide</i>.
      * </p>
      * 
      * @param configuration
-     *        The configuration data for the extension, in this account and region.</p>
+     *        The configuration data for the extension, in this account and Region.</p>
      *        <p>
      *        The configuration data must be formatted as JSON, and validate against the schema returned in the
      *        <code>ConfigurationSchema</code> response element of <a
-     *        href="AWSCloudFormation/latest/APIReference/API_DescribeType.html">API_DescribeType</a>. For more
-     *        information, see <a href=
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html"
+     *        >DescribeType</a>. For more information, see <a href=
      *        "https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-model.html#resource-type-howto-configuration"
      *        >Defining account-level configuration data for an extension</a> in the <i>CloudFormation CLI User
      *        Guide</i>.
@@ -220,23 +220,23 @@ public class SetTypeConfigurationRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The configuration data for the extension, in this account and region.
+     * The configuration data for the extension, in this account and Region.
      * </p>
      * <p>
      * The configuration data must be formatted as JSON, and validate against the schema returned in the
      * <code>ConfigurationSchema</code> response element of <a
-     * href="AWSCloudFormation/latest/APIReference/API_DescribeType.html">API_DescribeType</a>. For more information,
-     * see <a href=
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
+     * For more information, see <a href=
      * "https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-model.html#resource-type-howto-configuration"
      * >Defining account-level configuration data for an extension</a> in the <i>CloudFormation CLI User Guide</i>.
      * </p>
      * 
-     * @return The configuration data for the extension, in this account and region.</p>
+     * @return The configuration data for the extension, in this account and Region.</p>
      *         <p>
      *         The configuration data must be formatted as JSON, and validate against the schema returned in the
      *         <code>ConfigurationSchema</code> response element of <a
-     *         href="AWSCloudFormation/latest/APIReference/API_DescribeType.html">API_DescribeType</a>. For more
-     *         information, see <a href=
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html"
+     *         >DescribeType</a>. For more information, see <a href=
      *         "https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-model.html#resource-type-howto-configuration"
      *         >Defining account-level configuration data for an extension</a> in the <i>CloudFormation CLI User
      *         Guide</i>.
@@ -248,24 +248,24 @@ public class SetTypeConfigurationRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The configuration data for the extension, in this account and region.
+     * The configuration data for the extension, in this account and Region.
      * </p>
      * <p>
      * The configuration data must be formatted as JSON, and validate against the schema returned in the
      * <code>ConfigurationSchema</code> response element of <a
-     * href="AWSCloudFormation/latest/APIReference/API_DescribeType.html">API_DescribeType</a>. For more information,
-     * see <a href=
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
+     * For more information, see <a href=
      * "https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-model.html#resource-type-howto-configuration"
      * >Defining account-level configuration data for an extension</a> in the <i>CloudFormation CLI User Guide</i>.
      * </p>
      * 
      * @param configuration
-     *        The configuration data for the extension, in this account and region.</p>
+     *        The configuration data for the extension, in this account and Region.</p>
      *        <p>
      *        The configuration data must be formatted as JSON, and validate against the schema returned in the
      *        <code>ConfigurationSchema</code> response element of <a
-     *        href="AWSCloudFormation/latest/APIReference/API_DescribeType.html">API_DescribeType</a>. For more
-     *        information, see <a href=
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html"
+     *        >DescribeType</a>. For more information, see <a href=
      *        "https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-model.html#resource-type-howto-configuration"
      *        >Defining account-level configuration data for an extension</a> in the <i>CloudFormation CLI User
      *        Guide</i>.

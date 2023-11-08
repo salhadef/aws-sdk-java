@@ -39,6 +39,8 @@ public class StartRestoreJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdempotencyToken").build();
     private static final MarshallingInfo<String> RESOURCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceType").build();
+    private static final MarshallingInfo<Boolean> COPYSOURCETAGSTORESTOREDRESOURCE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CopySourceTagsToRestoredResource").build();
 
     private static final StartRestoreJobRequestMarshaller instance = new StartRestoreJobRequestMarshaller();
 
@@ -61,6 +63,7 @@ public class StartRestoreJobRequestMarshaller {
             protocolMarshaller.marshall(startRestoreJobRequest.getIamRoleArn(), IAMROLEARN_BINDING);
             protocolMarshaller.marshall(startRestoreJobRequest.getIdempotencyToken(), IDEMPOTENCYTOKEN_BINDING);
             protocolMarshaller.marshall(startRestoreJobRequest.getResourceType(), RESOURCETYPE_BINDING);
+            protocolMarshaller.marshall(startRestoreJobRequest.getCopySourceTagsToRestoredResource(), COPYSOURCETAGSTORESTOREDRESOURCE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -45,6 +45,7 @@ import com.amazonaws.services.transfer.waiters.AWSTransferWaiters;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.transfer.model.*;
+
 import com.amazonaws.services.transfer.model.transform.*;
 
 /**
@@ -171,16 +172,17 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param createAccessRequest
      * @return Result of the CreateAccess operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
-     * @throws ResourceExistsException
-     *         The requested resource does not exist.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
+     * @throws ResourceExistsException
+     *         The requested resource does not exist, or exists in a region other than the one specified for the
+     *         command.
      * @sample AWSTransfer.CreateAccess
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateAccess" target="_top">AWS API
      *      Documentation</a>
@@ -243,18 +245,19 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param createAgreementRequest
      * @return Result of the CreateAgreement operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
-     * @throws ResourceExistsException
-     *         The requested resource does not exist.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
+     * @throws ResourceExistsException
+     *         The requested resource does not exist, or exists in a region other than the one specified for the
+     *         command.
      * @sample AWSTransfer.CreateAgreement
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateAgreement" target="_top">AWS API
      *      Documentation</a>
@@ -305,27 +308,37 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
 
     /**
      * <p>
-     * Creates the connector, which captures the parameters for an outbound connection for the AS2 protocol. The
-     * connector is required for sending files to an externally hosted AS2 server. For more details about connectors,
+     * Creates the connector, which captures the parameters for a connection for the AS2 or SFTP protocol. For AS2, the
+     * connector is required for sending files to an externally hosted AS2 server. For SFTP, the connector is required
+     * when sending files to an SFTP server or receiving files from an SFTP server. For more details about connectors,
      * see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html#configure-as2-connector"
-     * >Create AS2 connectors</a>.
+     * >Create AS2 connectors</a> and <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/configure-sftp-connector.html">Create SFTP
+     * connectors</a>.
      * </p>
+     * <note>
+     * <p>
+     * You must specify exactly one configuration object: either for AS2 (<code>As2Config</code>) or SFTP (
+     * <code>SftpConfig</code>).
+     * </p>
+     * </note>
      * 
      * @param createConnectorRequest
      * @return Result of the CreateConnector operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
-     * @throws ResourceExistsException
-     *         The requested resource does not exist.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
+     * @throws ResourceExistsException
+     *         The requested resource does not exist, or exists in a region other than the one specified for the
+     *         command.
      * @sample AWSTransfer.CreateConnector
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateConnector" target="_top">AWS API
      *      Documentation</a>
@@ -381,16 +394,16 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param createProfileRequest
      * @return Result of the CreateProfile operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
      * @sample AWSTransfer.CreateProfile
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateProfile" target="_top">AWS API
      *      Documentation</a>
@@ -448,20 +461,21 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param createServerRequest
      * @return Result of the CreateServer operation returned by the service.
-     * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
-     * @throws ResourceExistsException
-     *         The requested resource does not exist.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
+     * @throws ResourceExistsException
+     *         The requested resource does not exist, or exists in a region other than the one specified for the
+     *         command.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
      * @sample AWSTransfer.CreateServer
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateServer" target="_top">AWS API
      *      Documentation</a>
@@ -522,16 +536,17 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param createUserRequest
      * @return Result of the CreateUser operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
-     * @throws ResourceExistsException
-     *         The requested resource does not exist.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
+     * @throws ResourceExistsException
+     *         The requested resource does not exist, or exists in a region other than the one specified for the
+     *         command.
      * @sample AWSTransfer.CreateUser
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateUser" target="_top">AWS API
      *      Documentation</a>
@@ -590,18 +605,19 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param createWorkflowRequest
      * @return Result of the CreateWorkflow operation returned by the service.
-     * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
      * @throws InvalidRequestException
      *         This exception is thrown when the client submits a malformed request.
-     * @throws ResourceExistsException
-     *         The requested resource does not exist.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
+     * @throws ResourceExistsException
+     *         The requested resource does not exist, or exists in a region other than the one specified for the
+     *         command.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
      * @sample AWSTransfer.CreateWorkflow
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateWorkflow" target="_top">AWS API
      *      Documentation</a>
@@ -657,14 +673,14 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param deleteAccessRequest
      * @return Result of the DeleteAccess operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
      * @sample AWSTransfer.DeleteAccess
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteAccess" target="_top">AWS API
      *      Documentation</a>
@@ -720,14 +736,14 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param deleteAgreementRequest
      * @return Result of the DeleteAgreement operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
      * @sample AWSTransfer.DeleteAgreement
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteAgreement" target="_top">AWS API
      *      Documentation</a>
@@ -783,14 +799,14 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param deleteCertificateRequest
      * @return Result of the DeleteCertificate operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
      * @sample AWSTransfer.DeleteCertificate
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteCertificate" target="_top">AWS API
      *      Documentation</a>
@@ -841,19 +857,19 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
 
     /**
      * <p>
-     * Deletes the agreement that's specified in the provided <code>ConnectorId</code>.
+     * Deletes the connector that's specified in the provided <code>ConnectorId</code>.
      * </p>
      * 
      * @param deleteConnectorRequest
      * @return Result of the DeleteConnector operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
      * @sample AWSTransfer.DeleteConnector
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteConnector" target="_top">AWS API
      *      Documentation</a>
@@ -904,21 +920,21 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
 
     /**
      * <p>
-     * Deletes the host key that's specified in the <code>HoskKeyId</code> parameter.
+     * Deletes the host key that's specified in the <code>HostKeyId</code> parameter.
      * </p>
      * 
      * @param deleteHostKeyRequest
      * @return Result of the DeleteHostKey operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
      * @sample AWSTransfer.DeleteHostKey
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteHostKey" target="_top">AWS API
      *      Documentation</a>
@@ -974,14 +990,14 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param deleteProfileRequest
      * @return Result of the DeleteProfile operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
      * @sample AWSTransfer.DeleteProfile
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteProfile" target="_top">AWS API
      *      Documentation</a>
@@ -1040,16 +1056,16 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param deleteServerRequest
      * @return Result of the DeleteServer operation returned by the service.
-     * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
      * @sample AWSTransfer.DeleteServer
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteServer" target="_top">AWS API
      *      Documentation</a>
@@ -1105,16 +1121,16 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param deleteSshPublicKeyRequest
      * @return Result of the DeleteSshPublicKey operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
      * @sample AWSTransfer.DeleteSshPublicKey
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteSshPublicKey" target="_top">AWS
      *      API Documentation</a>
@@ -1178,14 +1194,14 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param deleteUserRequest
      * @return Result of the DeleteUser operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
      * @sample AWSTransfer.DeleteUser
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteUser" target="_top">AWS API
      *      Documentation</a>
@@ -1241,16 +1257,16 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param deleteWorkflowRequest
      * @return Result of the DeleteWorkflow operation returned by the service.
-     * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
      * @sample AWSTransfer.DeleteWorkflow
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteWorkflow" target="_top">AWS API
      *      Documentation</a>
@@ -1311,14 +1327,14 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param describeAccessRequest
      * @return Result of the DescribeAccess operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
      * @sample AWSTransfer.DescribeAccess
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeAccess" target="_top">AWS API
      *      Documentation</a>
@@ -1374,14 +1390,14 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param describeAgreementRequest
      * @return Result of the DescribeAgreement operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
      * @sample AWSTransfer.DescribeAgreement
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeAgreement" target="_top">AWS API
      *      Documentation</a>
@@ -1437,14 +1453,14 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param describeCertificateRequest
      * @return Result of the DescribeCertificate operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
      * @sample AWSTransfer.DescribeCertificate
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeCertificate" target="_top">AWS
      *      API Documentation</a>
@@ -1500,14 +1516,14 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param describeConnectorRequest
      * @return Result of the DescribeConnector operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
      * @sample AWSTransfer.DescribeConnector
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeConnector" target="_top">AWS API
      *      Documentation</a>
@@ -1560,17 +1576,26 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * <p>
      * You can use <code>DescribeExecution</code> to check the details of the execution of the specified workflow.
      * </p>
+     * <note>
+     * <p>
+     * This API call only returns details for in-progress workflows.
+     * </p>
+     * <p>
+     * If you provide an ID for an execution that is not in progress, or if the execution doesn't match the specified
+     * workflow ID, you receive a <code>ResourceNotFound</code> exception.
+     * </p>
+     * </note>
      * 
      * @param describeExecutionRequest
      * @return Result of the DescribeExecution operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
      * @sample AWSTransfer.DescribeExecution
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeExecution" target="_top">AWS API
      *      Documentation</a>
@@ -1626,14 +1651,14 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param describeHostKeyRequest
      * @return Result of the DescribeHostKey operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
      * @sample AWSTransfer.DescribeHostKey
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeHostKey" target="_top">AWS API
      *      Documentation</a>
@@ -1689,14 +1714,14 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param describeProfileRequest
      * @return Result of the DescribeProfile operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
      * @sample AWSTransfer.DescribeProfile
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeProfile" target="_top">AWS API
      *      Documentation</a>
@@ -1755,14 +1780,14 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param describeSecurityPolicyRequest
      * @return Result of the DescribeSecurityPolicy operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
      * @sample AWSTransfer.DescribeSecurityPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeSecurityPolicy"
      *      target="_top">AWS API Documentation</a>
@@ -1824,14 +1849,14 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param describeServerRequest
      * @return Result of the DescribeServer operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
      * @sample AWSTransfer.DescribeServer
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeServer" target="_top">AWS API
      *      Documentation</a>
@@ -1892,14 +1917,14 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param describeUserRequest
      * @return Result of the DescribeUser operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
      * @sample AWSTransfer.DescribeUser
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeUser" target="_top">AWS API
      *      Documentation</a>
@@ -1955,14 +1980,14 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param describeWorkflowRequest
      * @return Result of the DescribeWorkflow operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
      * @sample AWSTransfer.DescribeWorkflow
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeWorkflow" target="_top">AWS API
      *      Documentation</a>
@@ -2019,14 +2044,14 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param importCertificateRequest
      * @return Result of the ImportCertificate operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
      * @sample AWSTransfer.ImportCertificate
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ImportCertificate" target="_top">AWS API
      *      Documentation</a>
@@ -2082,18 +2107,19 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param importHostKeyRequest
      * @return Result of the ImportHostKey operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
-     * @throws ResourceExistsException
-     *         The requested resource does not exist.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
+     * @throws ResourceExistsException
+     *         The requested resource does not exist, or exists in a region other than the one specified for the
+     *         command.
      * @sample AWSTransfer.ImportHostKey
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ImportHostKey" target="_top">AWS API
      *      Documentation</a>
@@ -2144,8 +2170,8 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
 
     /**
      * <p>
-     * Adds a Secure Shell (SSH) public key to a user account identified by a <code>UserName</code> value assigned to
-     * the specific file transfer protocol-enabled server, identified by <code>ServerId</code>.
+     * Adds a Secure Shell (SSH) public key to a Transfer Family user identified by a <code>UserName</code> value
+     * assigned to the specific file transfer protocol-enabled server, identified by <code>ServerId</code>.
      * </p>
      * <p>
      * The response returns the <code>UserName</code> value, the <code>ServerId</code> value, and the name of the
@@ -2154,18 +2180,19 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param importSshPublicKeyRequest
      * @return Result of the ImportSshPublicKey operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
-     * @throws ResourceExistsException
-     *         The requested resource does not exist.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
+     * @throws ResourceExistsException
+     *         The requested resource does not exist, or exists in a region other than the one specified for the
+     *         command.
      * @sample AWSTransfer.ImportSshPublicKey
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ImportSshPublicKey" target="_top">AWS
      *      API Documentation</a>
@@ -2221,16 +2248,16 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param listAccessesRequest
      * @return Result of the ListAccesses operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidNextTokenException
-     *         The <code>NextToken</code> parameter that was passed is invalid.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> parameter that was passed is invalid.
      * @sample AWSTransfer.ListAccesses
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListAccesses" target="_top">AWS API
      *      Documentation</a>
@@ -2289,16 +2316,16 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param listAgreementsRequest
      * @return Result of the ListAgreements operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidNextTokenException
-     *         The <code>NextToken</code> parameter that was passed is invalid.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> parameter that was passed is invalid.
      * @sample AWSTransfer.ListAgreements
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListAgreements" target="_top">AWS API
      *      Documentation</a>
@@ -2357,16 +2384,16 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param listCertificatesRequest
      * @return Result of the ListCertificates operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidNextTokenException
-     *         The <code>NextToken</code> parameter that was passed is invalid.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> parameter that was passed is invalid.
      * @sample AWSTransfer.ListCertificates
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListCertificates" target="_top">AWS API
      *      Documentation</a>
@@ -2422,16 +2449,16 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param listConnectorsRequest
      * @return Result of the ListConnectors operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidNextTokenException
-     *         The <code>NextToken</code> parameter that was passed is invalid.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> parameter that was passed is invalid.
      * @sample AWSTransfer.ListConnectors
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListConnectors" target="_top">AWS API
      *      Documentation</a>
@@ -2482,21 +2509,27 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
 
     /**
      * <p>
-     * Lists all executions for the specified workflow.
+     * Lists all in-progress executions for the specified workflow.
      * </p>
+     * <note>
+     * <p>
+     * If the specified workflow ID cannot be found, <code>ListExecutions</code> returns a <code>ResourceNotFound</code>
+     * exception.
+     * </p>
+     * </note>
      * 
      * @param listExecutionsRequest
      * @return Result of the ListExecutions operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidNextTokenException
-     *         The <code>NextToken</code> parameter that was passed is invalid.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> parameter that was passed is invalid.
      * @sample AWSTransfer.ListExecutions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListExecutions" target="_top">AWS API
      *      Documentation</a>
@@ -2552,16 +2585,16 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param listHostKeysRequest
      * @return Result of the ListHostKeys operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidNextTokenException
-     *         The <code>NextToken</code> parameter that was passed is invalid.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> parameter that was passed is invalid.
      * @sample AWSTransfer.ListHostKeys
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListHostKeys" target="_top">AWS API
      *      Documentation</a>
@@ -2619,16 +2652,16 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param listProfilesRequest
      * @return Result of the ListProfiles operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidNextTokenException
-     *         The <code>NextToken</code> parameter that was passed is invalid.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> parameter that was passed is invalid.
      * @sample AWSTransfer.ListProfiles
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListProfiles" target="_top">AWS API
      *      Documentation</a>
@@ -2684,14 +2717,14 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param listSecurityPoliciesRequest
      * @return Result of the ListSecurityPolicies operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidNextTokenException
-     *         The <code>NextToken</code> parameter that was passed is invalid.
      * @throws InvalidRequestException
      *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> parameter that was passed is invalid.
      * @sample AWSTransfer.ListSecurityPolicies
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListSecurityPolicies" target="_top">AWS
      *      API Documentation</a>
@@ -2747,14 +2780,14 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param listServersRequest
      * @return Result of the ListServers operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidNextTokenException
-     *         The <code>NextToken</code> parameter that was passed is invalid.
      * @throws InvalidRequestException
      *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> parameter that was passed is invalid.
      * @sample AWSTransfer.ListServers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListServers" target="_top">AWS API
      *      Documentation</a>
@@ -2811,14 +2844,14 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidNextTokenException
-     *         The <code>NextToken</code> parameter that was passed is invalid.
      * @throws InvalidRequestException
      *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> parameter that was passed is invalid.
      * @sample AWSTransfer.ListTagsForResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListTagsForResource" target="_top">AWS
      *      API Documentation</a>
@@ -2875,16 +2908,16 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param listUsersRequest
      * @return Result of the ListUsers operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidNextTokenException
-     *         The <code>NextToken</code> parameter that was passed is invalid.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> parameter that was passed is invalid.
      * @sample AWSTransfer.ListUsers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListUsers" target="_top">AWS API
      *      Documentation</a>
@@ -2935,19 +2968,19 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
 
     /**
      * <p>
-     * Lists all of your workflows.
+     * Lists all workflows associated with your Amazon Web Services account for your current region.
      * </p>
      * 
      * @param listWorkflowsRequest
      * @return Result of the ListWorkflows operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidNextTokenException
-     *         The <code>NextToken</code> parameter that was passed is invalid.
      * @throws InvalidRequestException
      *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> parameter that was passed is invalid.
      * @sample AWSTransfer.ListWorkflows
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListWorkflows" target="_top">AWS API
      *      Documentation</a>
@@ -3008,18 +3041,18 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param sendWorkflowStepStateRequest
      * @return Result of the SendWorkflowStepState operation returned by the service.
-     * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
      * @sample AWSTransfer.SendWorkflowStepState
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/SendWorkflowStepState" target="_top">AWS
      *      API Documentation</a>
@@ -3071,22 +3104,51 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
 
     /**
      * <p>
-     * Begins an outbound file transfer to a remote AS2 server. You specify the <code>ConnectorId</code> and the file
-     * paths for where to send the files.
+     * Begins a file transfer between local Amazon Web Services storage and a remote AS2 or SFTP server.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For an AS2 connector, you specify the <code>ConnectorId</code> and one or more <code>SendFilePaths</code> to
+     * identify the files you want to transfer.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an SFTP connector, the file transfer can be either outbound or inbound. In both cases, you specify the
+     * <code>ConnectorId</code>. Depending on the direction of the transfer, you also specify the following items:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you are transferring file from a partner's SFTP server to Amazon Web Services storage, you specify one or more
+     * <code>RetreiveFilePaths</code> to identify the files you want to transfer, and a <code>LocalDirectoryPath</code>
+     * to specify the destination folder.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you are transferring file to a partner's SFTP server from Amazon Web Services storage, you specify one or more
+     * <code>SendFilePaths</code> to identify the files you want to transfer, and a <code>RemoteDirectoryPath</code> to
+     * specify the destination folder.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      * 
      * @param startFileTransferRequest
      * @return Result of the StartFileTransfer operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
      * @sample AWSTransfer.StartFileTransfer
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StartFileTransfer" target="_top">AWS API
      *      Documentation</a>
@@ -3151,16 +3213,16 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param startServerRequest
      * @return Result of the StartServer operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
      * @sample AWSTransfer.StartServer
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StartServer" target="_top">AWS API
      *      Documentation</a>
@@ -3231,16 +3293,16 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param stopServerRequest
      * @return Result of the StopServer operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
      * @sample AWSTransfer.StopServer
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StopServer" target="_top">AWS API
      *      Documentation</a>
@@ -3300,14 +3362,14 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
      * @sample AWSTransfer.TagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/TagResource" target="_top">AWS API
      *      Documentation</a>
@@ -3358,6 +3420,71 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
 
     /**
      * <p>
+     * Tests whether your SFTP connector is set up successfully. We highly recommend that you call this operation to
+     * test your ability to transfer files between local Amazon Web Services storage and a trading partner's SFTP
+     * server.
+     * </p>
+     * 
+     * @param testConnectionRequest
+     * @return Result of the TestConnection operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
+     * @sample AWSTransfer.TestConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/TestConnection" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public TestConnectionResult testConnection(TestConnectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeTestConnection(request);
+    }
+
+    @SdkInternalApi
+    final TestConnectionResult executeTestConnection(TestConnectionRequest testConnectionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(testConnectionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TestConnectionRequest> request = null;
+        Response<TestConnectionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TestConnectionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(testConnectionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transfer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TestConnection");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TestConnectionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TestConnectionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * If the <code>IdentityProviderType</code> of a file transfer protocol-enabled server is
      * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_Gateway</code>, tests whether your identity provider is set up
      * successfully. We highly recommend that you call this operation to test your authentication method as soon as you
@@ -3368,13 +3495,27 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * The <code>ServerId</code> and <code>UserName</code> parameters are required. The <code>ServerProtocol</code>,
      * <code>SourceIp</code>, and <code>UserPassword</code> are all optional.
      * </p>
-     * <note>
+     * <p>
+     * Note the following:
+     * </p>
+     * <ul>
+     * <li>
      * <p>
      * You cannot use <code>TestIdentityProvider</code> if the <code>IdentityProviderType</code> of your server is
      * <code>SERVICE_MANAGED</code>.
      * </p>
-     * </note>
-     * <ul>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TestIdentityProvider</code> does not work with keys: it only accepts passwords.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TestIdentityProvider</code> can test the password operation for a custom Identity Provider that handles
+     * keys and passwords.
+     * </p>
+     * </li>
      * <li>
      * <p>
      * If you provide any incorrect values for any parameters, the <code>Response</code> field is empty.
@@ -3395,20 +3536,26 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * </p>
      * <p>
      * <code>An error occurred (ResourceNotFoundException) when calling the TestIdentityProvider operation: Unknown server</code>
+     * .
+     * </p>
+     * <p>
+     * It is possible your sever is in a different region. You can specify a region by adding the following:
+     * <code>--region region-code</code>, such as <code>--region us-east-2</code> to specify a server in <b>US East
+     * (Ohio)</b>.
      * </p>
      * </li>
      * </ul>
      * 
      * @param testIdentityProviderRequest
      * @return Result of the TestIdentityProvider operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
      * @sample AWSTransfer.TestIdentityProvider
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/TestIdentityProvider" target="_top">AWS
      *      API Documentation</a>
@@ -3468,14 +3615,14 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
      * @sample AWSTransfer.UntagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UntagResource" target="_top">AWS API
      *      Documentation</a>
@@ -3532,18 +3679,19 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param updateAccessRequest
      * @return Result of the UpdateAccess operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
-     * @throws ResourceExistsException
-     *         The requested resource does not exist.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
+     * @throws ResourceExistsException
+     *         The requested resource does not exist, or exists in a region other than the one specified for the
+     *         command.
      * @sample AWSTransfer.UpdateAccess
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateAccess" target="_top">AWS API
      *      Documentation</a>
@@ -3601,18 +3749,19 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param updateAgreementRequest
      * @return Result of the UpdateAgreement operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
-     * @throws ResourceExistsException
-     *         The requested resource does not exist.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
+     * @throws ResourceExistsException
+     *         The requested resource does not exist, or exists in a region other than the one specified for the
+     *         command.
      * @sample AWSTransfer.UpdateAgreement
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateAgreement" target="_top">AWS API
      *      Documentation</a>
@@ -3668,16 +3817,16 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param updateCertificateRequest
      * @return Result of the UpdateCertificate operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
      * @sample AWSTransfer.UpdateCertificate
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateCertificate" target="_top">AWS API
      *      Documentation</a>
@@ -3734,18 +3883,19 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param updateConnectorRequest
      * @return Result of the UpdateConnector operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
-     * @throws ResourceExistsException
-     *         The requested resource does not exist.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
+     * @throws ResourceExistsException
+     *         The requested resource does not exist, or exists in a region other than the one specified for the
+     *         command.
      * @sample AWSTransfer.UpdateConnector
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateConnector" target="_top">AWS API
      *      Documentation</a>
@@ -3802,16 +3952,16 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param updateHostKeyRequest
      * @return Result of the UpdateHostKey operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
      * @sample AWSTransfer.UpdateHostKey
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateHostKey" target="_top">AWS API
      *      Documentation</a>
@@ -3868,16 +4018,16 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param updateProfileRequest
      * @return Result of the UpdateProfile operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
      * @sample AWSTransfer.UpdateProfile
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateProfile" target="_top">AWS API
      *      Documentation</a>
@@ -3936,24 +4086,25 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param updateServerRequest
      * @return Result of the UpdateServer operation returned by the service.
-     * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
      * @throws ConflictException
      *         This exception is thrown when the <code>UpdateServer</code> is called for a file transfer
      *         protocol-enabled server that has VPC as the endpoint type and the server's <code>VpcEndpointID</code> is
      *         not in the available state.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
-     * @throws ResourceExistsException
-     *         The requested resource does not exist.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
+     * @throws ResourceExistsException
+     *         The requested resource does not exist, or exists in a region other than the one specified for the
+     *         command.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
      * @sample AWSTransfer.UpdateServer
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateServer" target="_top">AWS API
      *      Documentation</a>
@@ -4013,16 +4164,16 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * 
      * @param updateUserRequest
      * @return Result of the UpdateUser operation returned by the service.
-     * @throws ServiceUnavailableException
-     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
-     * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
-     * @throws InvalidRequestException
-     *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Transfer Family service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
      * @sample AWSTransfer.UpdateUser
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateUser" target="_top">AWS API
      *      Documentation</a>

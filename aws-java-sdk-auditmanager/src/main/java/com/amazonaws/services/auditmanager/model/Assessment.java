@@ -307,7 +307,7 @@ public class Assessment implements Serializable, Cloneable, StructuredPojo {
         if (getMetadata() != null)
             sb.append("Metadata: ").append(getMetadata()).append(",");
         if (getFramework() != null)
-            sb.append("Framework: ").append(getFramework()).append(",");
+            sb.append("Framework: ").append("***Sensitive Data Redacted***").append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");

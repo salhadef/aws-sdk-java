@@ -27,12 +27,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ReferenceStoreFilterMarshaller {
 
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("name").build();
     private static final MarshallingInfo<java.util.Date> CREATEDAFTER_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAfter").timestampFormat("iso8601").build();
     private static final MarshallingInfo<java.util.Date> CREATEDBEFORE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdBefore").timestampFormat("iso8601").build();
-    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("name").build();
 
     private static final ReferenceStoreFilterMarshaller instance = new ReferenceStoreFilterMarshaller();
 
@@ -50,9 +50,9 @@ public class ReferenceStoreFilterMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(referenceStoreFilter.getName(), NAME_BINDING);
             protocolMarshaller.marshall(referenceStoreFilter.getCreatedAfter(), CREATEDAFTER_BINDING);
             protocolMarshaller.marshall(referenceStoreFilter.getCreatedBefore(), CREATEDBEFORE_BINDING);
-            protocolMarshaller.marshall(referenceStoreFilter.getName(), NAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

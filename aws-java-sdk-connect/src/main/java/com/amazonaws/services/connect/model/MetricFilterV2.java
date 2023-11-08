@@ -59,6 +59,13 @@ public class MetricFilterV2 implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<String> metricFilterValues;
+    /**
+     * <p>
+     * The flag to use to filter on requested metric filter values or to not filter on requested metric filter values.
+     * By default the negate is <code>false</code>, which indicates to filter on the requested metric filter.
+     * </p>
+     */
+    private Boolean negate;
 
     /**
      * <p>
@@ -290,6 +297,70 @@ public class MetricFilterV2 implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The flag to use to filter on requested metric filter values or to not filter on requested metric filter values.
+     * By default the negate is <code>false</code>, which indicates to filter on the requested metric filter.
+     * </p>
+     * 
+     * @param negate
+     *        The flag to use to filter on requested metric filter values or to not filter on requested metric filter
+     *        values. By default the negate is <code>false</code>, which indicates to filter on the requested metric
+     *        filter.
+     */
+
+    public void setNegate(Boolean negate) {
+        this.negate = negate;
+    }
+
+    /**
+     * <p>
+     * The flag to use to filter on requested metric filter values or to not filter on requested metric filter values.
+     * By default the negate is <code>false</code>, which indicates to filter on the requested metric filter.
+     * </p>
+     * 
+     * @return The flag to use to filter on requested metric filter values or to not filter on requested metric filter
+     *         values. By default the negate is <code>false</code>, which indicates to filter on the requested metric
+     *         filter.
+     */
+
+    public Boolean getNegate() {
+        return this.negate;
+    }
+
+    /**
+     * <p>
+     * The flag to use to filter on requested metric filter values or to not filter on requested metric filter values.
+     * By default the negate is <code>false</code>, which indicates to filter on the requested metric filter.
+     * </p>
+     * 
+     * @param negate
+     *        The flag to use to filter on requested metric filter values or to not filter on requested metric filter
+     *        values. By default the negate is <code>false</code>, which indicates to filter on the requested metric
+     *        filter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MetricFilterV2 withNegate(Boolean negate) {
+        setNegate(negate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The flag to use to filter on requested metric filter values or to not filter on requested metric filter values.
+     * By default the negate is <code>false</code>, which indicates to filter on the requested metric filter.
+     * </p>
+     * 
+     * @return The flag to use to filter on requested metric filter values or to not filter on requested metric filter
+     *         values. By default the negate is <code>false</code>, which indicates to filter on the requested metric
+     *         filter.
+     */
+
+    public Boolean isNegate() {
+        return this.negate;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -304,7 +375,9 @@ public class MetricFilterV2 implements Serializable, Cloneable, StructuredPojo {
         if (getMetricFilterKey() != null)
             sb.append("MetricFilterKey: ").append(getMetricFilterKey()).append(",");
         if (getMetricFilterValues() != null)
-            sb.append("MetricFilterValues: ").append(getMetricFilterValues());
+            sb.append("MetricFilterValues: ").append(getMetricFilterValues()).append(",");
+        if (getNegate() != null)
+            sb.append("Negate: ").append(getNegate());
         sb.append("}");
         return sb.toString();
     }
@@ -327,6 +400,10 @@ public class MetricFilterV2 implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getMetricFilterValues() != null && other.getMetricFilterValues().equals(this.getMetricFilterValues()) == false)
             return false;
+        if (other.getNegate() == null ^ this.getNegate() == null)
+            return false;
+        if (other.getNegate() != null && other.getNegate().equals(this.getNegate()) == false)
+            return false;
         return true;
     }
 
@@ -337,6 +414,7 @@ public class MetricFilterV2 implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getMetricFilterKey() == null) ? 0 : getMetricFilterKey().hashCode());
         hashCode = prime * hashCode + ((getMetricFilterValues() == null) ? 0 : getMetricFilterValues().hashCode());
+        hashCode = prime * hashCode + ((getNegate() == null) ? 0 : getNegate().hashCode());
         return hashCode;
     }
 

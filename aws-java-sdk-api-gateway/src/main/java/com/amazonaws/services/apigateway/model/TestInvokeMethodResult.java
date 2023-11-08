@@ -55,7 +55,7 @@ public class TestInvokeMethodResult extends com.amazonaws.AmazonWebServiceResult
     private String log;
     /**
      * <p>
-     * The execution latency of the test invoke request.
+     * The execution latency, in ms, of the test invoke request.
      * </p>
      */
     private Long latency;
@@ -318,11 +318,11 @@ public class TestInvokeMethodResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The execution latency of the test invoke request.
+     * The execution latency, in ms, of the test invoke request.
      * </p>
      * 
      * @param latency
-     *        The execution latency of the test invoke request.
+     *        The execution latency, in ms, of the test invoke request.
      */
 
     public void setLatency(Long latency) {
@@ -331,10 +331,10 @@ public class TestInvokeMethodResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The execution latency of the test invoke request.
+     * The execution latency, in ms, of the test invoke request.
      * </p>
      * 
-     * @return The execution latency of the test invoke request.
+     * @return The execution latency, in ms, of the test invoke request.
      */
 
     public Long getLatency() {
@@ -343,11 +343,11 @@ public class TestInvokeMethodResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The execution latency of the test invoke request.
+     * The execution latency, in ms, of the test invoke request.
      * </p>
      * 
      * @param latency
-     *        The execution latency of the test invoke request.
+     *        The execution latency, in ms, of the test invoke request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

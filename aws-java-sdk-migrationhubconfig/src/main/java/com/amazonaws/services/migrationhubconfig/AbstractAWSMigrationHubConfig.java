@@ -33,6 +33,11 @@ public class AbstractAWSMigrationHubConfig implements AWSMigrationHubConfig {
     }
 
     @Override
+    public DeleteHomeRegionControlResult deleteHomeRegionControl(DeleteHomeRegionControlRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeHomeRegionControlsResult describeHomeRegionControls(DescribeHomeRegionControlsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

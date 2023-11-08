@@ -19,13 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The criteria for inspecting responses to login requests, used by the ATP rule group to track login failure rates.
- * </p>
- * <p>
- * The ATP rule group evaluates the responses that your protected resources send back to client login attempts, keeping
- * count of successful and failed attempts from each IP address and client session. Using this information, the rule
- * group labels and mitigates requests from client sessions and IP addresses that submit too many failed login attempts
- * in a short amount of time.
+ * The criteria for inspecting responses to login requests and account creation requests, used by the ATP and ACFP rule
+ * groups to track login and account creation success and failure rates.
  * </p>
  * <note>
  * <p>
@@ -33,11 +28,19 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * </note>
  * <p>
- * This is part of the <code>AWSManagedRulesATPRuleSet</code> configuration in <code>ManagedRuleGroupConfig</code>.
+ * The rule groups evaluates the responses that your protected resources send back to client login and account creation
+ * attempts, keeping count of successful and failed attempts from each IP address and client session. Using this
+ * information, the rule group labels and mitigates requests from client sessions and IP addresses with too much
+ * suspicious activity in a short amount of time.
  * </p>
  * <p>
- * Enable login response inspection by configuring exactly one component of the response to inspect. You can't configure
- * more than one. If you don't configure any of the response inspection options, response inspection is disabled.
+ * This is part of the <code>AWSManagedRulesATPRuleSet</code> and <code>AWSManagedRulesACFPRuleSet</code> configurations
+ * in <code>ManagedRuleGroupConfig</code>.
+ * </p>
+ * <p>
+ * Enable response inspection by configuring exactly one component of the response to inspect, for example,
+ * <code>Header</code> or <code>StatusCode</code>. You can't configure more than one component for inspection. If you
+ * don't configure any of the response inspection options, response inspection is disabled.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ResponseInspection" target="_top">AWS API
@@ -48,36 +51,38 @@ public class ResponseInspection implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Configures inspection of the response status code.
+     * Configures inspection of the response status code for success and failure indicators.
      * </p>
      */
     private ResponseInspectionStatusCode statusCode;
     /**
      * <p>
-     * Configures inspection of the response header.
+     * Configures inspection of the response header for success and failure indicators.
      * </p>
      */
     private ResponseInspectionHeader header;
     /**
      * <p>
-     * Configures inspection of the response body. WAF can inspect the first 65,536 bytes (64 KB) of the response body.
+     * Configures inspection of the response body for success and failure indicators. WAF can inspect the first 65,536
+     * bytes (64 KB) of the response body.
      * </p>
      */
     private ResponseInspectionBodyContains bodyContains;
     /**
      * <p>
-     * Configures inspection of the response JSON. WAF can inspect the first 65,536 bytes (64 KB) of the response JSON.
+     * Configures inspection of the response JSON for success and failure indicators. WAF can inspect the first 65,536
+     * bytes (64 KB) of the response JSON.
      * </p>
      */
     private ResponseInspectionJson json;
 
     /**
      * <p>
-     * Configures inspection of the response status code.
+     * Configures inspection of the response status code for success and failure indicators.
      * </p>
      * 
      * @param statusCode
-     *        Configures inspection of the response status code.
+     *        Configures inspection of the response status code for success and failure indicators.
      */
 
     public void setStatusCode(ResponseInspectionStatusCode statusCode) {
@@ -86,10 +91,10 @@ public class ResponseInspection implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Configures inspection of the response status code.
+     * Configures inspection of the response status code for success and failure indicators.
      * </p>
      * 
-     * @return Configures inspection of the response status code.
+     * @return Configures inspection of the response status code for success and failure indicators.
      */
 
     public ResponseInspectionStatusCode getStatusCode() {
@@ -98,11 +103,11 @@ public class ResponseInspection implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Configures inspection of the response status code.
+     * Configures inspection of the response status code for success and failure indicators.
      * </p>
      * 
      * @param statusCode
-     *        Configures inspection of the response status code.
+     *        Configures inspection of the response status code for success and failure indicators.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,11 +118,11 @@ public class ResponseInspection implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Configures inspection of the response header.
+     * Configures inspection of the response header for success and failure indicators.
      * </p>
      * 
      * @param header
-     *        Configures inspection of the response header.
+     *        Configures inspection of the response header for success and failure indicators.
      */
 
     public void setHeader(ResponseInspectionHeader header) {
@@ -126,10 +131,10 @@ public class ResponseInspection implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Configures inspection of the response header.
+     * Configures inspection of the response header for success and failure indicators.
      * </p>
      * 
-     * @return Configures inspection of the response header.
+     * @return Configures inspection of the response header for success and failure indicators.
      */
 
     public ResponseInspectionHeader getHeader() {
@@ -138,11 +143,11 @@ public class ResponseInspection implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Configures inspection of the response header.
+     * Configures inspection of the response header for success and failure indicators.
      * </p>
      * 
      * @param header
-     *        Configures inspection of the response header.
+     *        Configures inspection of the response header for success and failure indicators.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -153,12 +158,13 @@ public class ResponseInspection implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Configures inspection of the response body. WAF can inspect the first 65,536 bytes (64 KB) of the response body.
+     * Configures inspection of the response body for success and failure indicators. WAF can inspect the first 65,536
+     * bytes (64 KB) of the response body.
      * </p>
      * 
      * @param bodyContains
-     *        Configures inspection of the response body. WAF can inspect the first 65,536 bytes (64 KB) of the response
-     *        body.
+     *        Configures inspection of the response body for success and failure indicators. WAF can inspect the first
+     *        65,536 bytes (64 KB) of the response body.
      */
 
     public void setBodyContains(ResponseInspectionBodyContains bodyContains) {
@@ -167,11 +173,12 @@ public class ResponseInspection implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Configures inspection of the response body. WAF can inspect the first 65,536 bytes (64 KB) of the response body.
+     * Configures inspection of the response body for success and failure indicators. WAF can inspect the first 65,536
+     * bytes (64 KB) of the response body.
      * </p>
      * 
-     * @return Configures inspection of the response body. WAF can inspect the first 65,536 bytes (64 KB) of the
-     *         response body.
+     * @return Configures inspection of the response body for success and failure indicators. WAF can inspect the first
+     *         65,536 bytes (64 KB) of the response body.
      */
 
     public ResponseInspectionBodyContains getBodyContains() {
@@ -180,12 +187,13 @@ public class ResponseInspection implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Configures inspection of the response body. WAF can inspect the first 65,536 bytes (64 KB) of the response body.
+     * Configures inspection of the response body for success and failure indicators. WAF can inspect the first 65,536
+     * bytes (64 KB) of the response body.
      * </p>
      * 
      * @param bodyContains
-     *        Configures inspection of the response body. WAF can inspect the first 65,536 bytes (64 KB) of the response
-     *        body.
+     *        Configures inspection of the response body for success and failure indicators. WAF can inspect the first
+     *        65,536 bytes (64 KB) of the response body.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -196,12 +204,13 @@ public class ResponseInspection implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Configures inspection of the response JSON. WAF can inspect the first 65,536 bytes (64 KB) of the response JSON.
+     * Configures inspection of the response JSON for success and failure indicators. WAF can inspect the first 65,536
+     * bytes (64 KB) of the response JSON.
      * </p>
      * 
      * @param json
-     *        Configures inspection of the response JSON. WAF can inspect the first 65,536 bytes (64 KB) of the response
-     *        JSON.
+     *        Configures inspection of the response JSON for success and failure indicators. WAF can inspect the first
+     *        65,536 bytes (64 KB) of the response JSON.
      */
 
     public void setJson(ResponseInspectionJson json) {
@@ -210,11 +219,12 @@ public class ResponseInspection implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Configures inspection of the response JSON. WAF can inspect the first 65,536 bytes (64 KB) of the response JSON.
+     * Configures inspection of the response JSON for success and failure indicators. WAF can inspect the first 65,536
+     * bytes (64 KB) of the response JSON.
      * </p>
      * 
-     * @return Configures inspection of the response JSON. WAF can inspect the first 65,536 bytes (64 KB) of the
-     *         response JSON.
+     * @return Configures inspection of the response JSON for success and failure indicators. WAF can inspect the first
+     *         65,536 bytes (64 KB) of the response JSON.
      */
 
     public ResponseInspectionJson getJson() {
@@ -223,12 +233,13 @@ public class ResponseInspection implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Configures inspection of the response JSON. WAF can inspect the first 65,536 bytes (64 KB) of the response JSON.
+     * Configures inspection of the response JSON for success and failure indicators. WAF can inspect the first 65,536
+     * bytes (64 KB) of the response JSON.
      * </p>
      * 
      * @param json
-     *        Configures inspection of the response JSON. WAF can inspect the first 65,536 bytes (64 KB) of the response
-     *        JSON.
+     *        Configures inspection of the response JSON for success and failure indicators. WAF can inspect the first
+     *        65,536 bytes (64 KB) of the response JSON.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

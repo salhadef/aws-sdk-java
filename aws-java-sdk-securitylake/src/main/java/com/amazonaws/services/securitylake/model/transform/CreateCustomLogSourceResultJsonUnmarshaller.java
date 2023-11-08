@@ -48,25 +48,9 @@ public class CreateCustomLogSourceResultJsonUnmarshaller implements Unmarshaller
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("customDataLocation", targetDepth)) {
+                if (context.testExpression("source", targetDepth)) {
                     context.nextToken();
-                    createCustomLogSourceResult.setCustomDataLocation(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("glueCrawlerName", targetDepth)) {
-                    context.nextToken();
-                    createCustomLogSourceResult.setGlueCrawlerName(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("glueDatabaseName", targetDepth)) {
-                    context.nextToken();
-                    createCustomLogSourceResult.setGlueDatabaseName(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("glueTableName", targetDepth)) {
-                    context.nextToken();
-                    createCustomLogSourceResult.setGlueTableName(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("logProviderAccessRoleArn", targetDepth)) {
-                    context.nextToken();
-                    createCustomLogSourceResult.setLogProviderAccessRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                    createCustomLogSourceResult.setSource(CustomLogSourceResourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

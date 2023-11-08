@@ -222,6 +222,22 @@ public class CreateClusterRequestMarshaller implements Marshaller<Request<Create
             request.addParameter("LoadSampleData", StringUtils.fromString(createClusterRequest.getLoadSampleData()));
         }
 
+        if (createClusterRequest.getManageMasterPassword() != null) {
+            request.addParameter("ManageMasterPassword", StringUtils.fromBoolean(createClusterRequest.getManageMasterPassword()));
+        }
+
+        if (createClusterRequest.getMasterPasswordSecretKmsKeyId() != null) {
+            request.addParameter("MasterPasswordSecretKmsKeyId", StringUtils.fromString(createClusterRequest.getMasterPasswordSecretKmsKeyId()));
+        }
+
+        if (createClusterRequest.getIpAddressType() != null) {
+            request.addParameter("IpAddressType", StringUtils.fromString(createClusterRequest.getIpAddressType()));
+        }
+
+        if (createClusterRequest.getMultiAZ() != null) {
+            request.addParameter("MultiAZ", StringUtils.fromBoolean(createClusterRequest.getMultiAZ()));
+        }
+
         return request;
     }
 

@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.omics.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -30,14 +31,18 @@ public class StartAnnotationImportJobRequestMarshaller {
 
     private static final MarshallingInfo<String> DESTINATIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("destinationName").build();
-    private static final MarshallingInfo<StructuredPojo> FORMATOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("formatOptions").build();
-    private static final MarshallingInfo<List> ITEMS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("items").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("roleArn").build();
+    private static final MarshallingInfo<List> ITEMS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("items").build();
+    private static final MarshallingInfo<String> VERSIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("versionName").build();
+    private static final MarshallingInfo<StructuredPojo> FORMATOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("formatOptions").build();
     private static final MarshallingInfo<Boolean> RUNLEFTNORMALIZATION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("runLeftNormalization").build();
+    private static final MarshallingInfo<Map> ANNOTATIONFIELDS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("annotationFields").build();
 
     private static final StartAnnotationImportJobRequestMarshaller instance = new StartAnnotationImportJobRequestMarshaller();
 
@@ -56,10 +61,12 @@ public class StartAnnotationImportJobRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(startAnnotationImportJobRequest.getDestinationName(), DESTINATIONNAME_BINDING);
-            protocolMarshaller.marshall(startAnnotationImportJobRequest.getFormatOptions(), FORMATOPTIONS_BINDING);
-            protocolMarshaller.marshall(startAnnotationImportJobRequest.getItems(), ITEMS_BINDING);
             protocolMarshaller.marshall(startAnnotationImportJobRequest.getRoleArn(), ROLEARN_BINDING);
+            protocolMarshaller.marshall(startAnnotationImportJobRequest.getItems(), ITEMS_BINDING);
+            protocolMarshaller.marshall(startAnnotationImportJobRequest.getVersionName(), VERSIONNAME_BINDING);
+            protocolMarshaller.marshall(startAnnotationImportJobRequest.getFormatOptions(), FORMATOPTIONS_BINDING);
             protocolMarshaller.marshall(startAnnotationImportJobRequest.getRunLeftNormalization(), RUNLEFTNORMALIZATION_BINDING);
+            protocolMarshaller.marshall(startAnnotationImportJobRequest.getAnnotationFields(), ANNOTATIONFIELDS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

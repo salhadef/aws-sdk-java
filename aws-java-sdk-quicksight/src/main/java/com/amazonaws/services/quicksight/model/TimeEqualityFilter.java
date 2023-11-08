@@ -45,7 +45,7 @@ public class TimeEqualityFilter implements Serializable, Cloneable, StructuredPo
      * The value of a <code>TimeEquality</code> filter.
      * </p>
      * <p>
-     * This field is mutually exclusive to <code>ParameterName</code>.
+     * This field is mutually exclusive to <code>RollingDate</code> and <code>ParameterName</code>.
      * </p>
      */
     private java.util.Date value;
@@ -54,7 +54,7 @@ public class TimeEqualityFilter implements Serializable, Cloneable, StructuredPo
      * The parameter whose value should be used for the filter value.
      * </p>
      * <p>
-     * This field is mutually exclusive to <code>Value</code>.
+     * This field is mutually exclusive to <code>Value</code> and <code>RollingDate</code>.
      * </p>
      */
     private String parameterName;
@@ -64,6 +64,15 @@ public class TimeEqualityFilter implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private String timeGranularity;
+    /**
+     * <p>
+     * The rolling date input for the <code>TimeEquality</code> filter.
+     * </p>
+     * <p>
+     * This field is mutually exclusive to <code>Value</code> and <code>ParameterName</code>.
+     * </p>
+     */
+    private RollingDateConfiguration rollingDate;
 
     /**
      * <p>
@@ -150,13 +159,13 @@ public class TimeEqualityFilter implements Serializable, Cloneable, StructuredPo
      * The value of a <code>TimeEquality</code> filter.
      * </p>
      * <p>
-     * This field is mutually exclusive to <code>ParameterName</code>.
+     * This field is mutually exclusive to <code>RollingDate</code> and <code>ParameterName</code>.
      * </p>
      * 
      * @param value
      *        The value of a <code>TimeEquality</code> filter.</p>
      *        <p>
-     *        This field is mutually exclusive to <code>ParameterName</code>.
+     *        This field is mutually exclusive to <code>RollingDate</code> and <code>ParameterName</code>.
      */
 
     public void setValue(java.util.Date value) {
@@ -168,12 +177,12 @@ public class TimeEqualityFilter implements Serializable, Cloneable, StructuredPo
      * The value of a <code>TimeEquality</code> filter.
      * </p>
      * <p>
-     * This field is mutually exclusive to <code>ParameterName</code>.
+     * This field is mutually exclusive to <code>RollingDate</code> and <code>ParameterName</code>.
      * </p>
      * 
      * @return The value of a <code>TimeEquality</code> filter.</p>
      *         <p>
-     *         This field is mutually exclusive to <code>ParameterName</code>.
+     *         This field is mutually exclusive to <code>RollingDate</code> and <code>ParameterName</code>.
      */
 
     public java.util.Date getValue() {
@@ -185,13 +194,13 @@ public class TimeEqualityFilter implements Serializable, Cloneable, StructuredPo
      * The value of a <code>TimeEquality</code> filter.
      * </p>
      * <p>
-     * This field is mutually exclusive to <code>ParameterName</code>.
+     * This field is mutually exclusive to <code>RollingDate</code> and <code>ParameterName</code>.
      * </p>
      * 
      * @param value
      *        The value of a <code>TimeEquality</code> filter.</p>
      *        <p>
-     *        This field is mutually exclusive to <code>ParameterName</code>.
+     *        This field is mutually exclusive to <code>RollingDate</code> and <code>ParameterName</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -205,13 +214,13 @@ public class TimeEqualityFilter implements Serializable, Cloneable, StructuredPo
      * The parameter whose value should be used for the filter value.
      * </p>
      * <p>
-     * This field is mutually exclusive to <code>Value</code>.
+     * This field is mutually exclusive to <code>Value</code> and <code>RollingDate</code>.
      * </p>
      * 
      * @param parameterName
      *        The parameter whose value should be used for the filter value.</p>
      *        <p>
-     *        This field is mutually exclusive to <code>Value</code>.
+     *        This field is mutually exclusive to <code>Value</code> and <code>RollingDate</code>.
      */
 
     public void setParameterName(String parameterName) {
@@ -223,12 +232,12 @@ public class TimeEqualityFilter implements Serializable, Cloneable, StructuredPo
      * The parameter whose value should be used for the filter value.
      * </p>
      * <p>
-     * This field is mutually exclusive to <code>Value</code>.
+     * This field is mutually exclusive to <code>Value</code> and <code>RollingDate</code>.
      * </p>
      * 
      * @return The parameter whose value should be used for the filter value.</p>
      *         <p>
-     *         This field is mutually exclusive to <code>Value</code>.
+     *         This field is mutually exclusive to <code>Value</code> and <code>RollingDate</code>.
      */
 
     public String getParameterName() {
@@ -240,13 +249,13 @@ public class TimeEqualityFilter implements Serializable, Cloneable, StructuredPo
      * The parameter whose value should be used for the filter value.
      * </p>
      * <p>
-     * This field is mutually exclusive to <code>Value</code>.
+     * This field is mutually exclusive to <code>Value</code> and <code>RollingDate</code>.
      * </p>
      * 
      * @param parameterName
      *        The parameter whose value should be used for the filter value.</p>
      *        <p>
-     *        This field is mutually exclusive to <code>Value</code>.
+     *        This field is mutually exclusive to <code>Value</code> and <code>RollingDate</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -315,6 +324,61 @@ public class TimeEqualityFilter implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The rolling date input for the <code>TimeEquality</code> filter.
+     * </p>
+     * <p>
+     * This field is mutually exclusive to <code>Value</code> and <code>ParameterName</code>.
+     * </p>
+     * 
+     * @param rollingDate
+     *        The rolling date input for the <code>TimeEquality</code> filter.</p>
+     *        <p>
+     *        This field is mutually exclusive to <code>Value</code> and <code>ParameterName</code>.
+     */
+
+    public void setRollingDate(RollingDateConfiguration rollingDate) {
+        this.rollingDate = rollingDate;
+    }
+
+    /**
+     * <p>
+     * The rolling date input for the <code>TimeEquality</code> filter.
+     * </p>
+     * <p>
+     * This field is mutually exclusive to <code>Value</code> and <code>ParameterName</code>.
+     * </p>
+     * 
+     * @return The rolling date input for the <code>TimeEquality</code> filter.</p>
+     *         <p>
+     *         This field is mutually exclusive to <code>Value</code> and <code>ParameterName</code>.
+     */
+
+    public RollingDateConfiguration getRollingDate() {
+        return this.rollingDate;
+    }
+
+    /**
+     * <p>
+     * The rolling date input for the <code>TimeEquality</code> filter.
+     * </p>
+     * <p>
+     * This field is mutually exclusive to <code>Value</code> and <code>ParameterName</code>.
+     * </p>
+     * 
+     * @param rollingDate
+     *        The rolling date input for the <code>TimeEquality</code> filter.</p>
+     *        <p>
+     *        This field is mutually exclusive to <code>Value</code> and <code>ParameterName</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TimeEqualityFilter withRollingDate(RollingDateConfiguration rollingDate) {
+        setRollingDate(rollingDate);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -335,7 +399,9 @@ public class TimeEqualityFilter implements Serializable, Cloneable, StructuredPo
         if (getParameterName() != null)
             sb.append("ParameterName: ").append(getParameterName()).append(",");
         if (getTimeGranularity() != null)
-            sb.append("TimeGranularity: ").append(getTimeGranularity());
+            sb.append("TimeGranularity: ").append(getTimeGranularity()).append(",");
+        if (getRollingDate() != null)
+            sb.append("RollingDate: ").append(getRollingDate());
         sb.append("}");
         return sb.toString();
     }
@@ -370,6 +436,10 @@ public class TimeEqualityFilter implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getTimeGranularity() != null && other.getTimeGranularity().equals(this.getTimeGranularity()) == false)
             return false;
+        if (other.getRollingDate() == null ^ this.getRollingDate() == null)
+            return false;
+        if (other.getRollingDate() != null && other.getRollingDate().equals(this.getRollingDate()) == false)
+            return false;
         return true;
     }
 
@@ -383,6 +453,7 @@ public class TimeEqualityFilter implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode());
         hashCode = prime * hashCode + ((getParameterName() == null) ? 0 : getParameterName().hashCode());
         hashCode = prime * hashCode + ((getTimeGranularity() == null) ? 0 : getTimeGranularity().hashCode());
+        hashCode = prime * hashCode + ((getRollingDate() == null) ? 0 : getRollingDate().hashCode());
         return hashCode;
     }
 

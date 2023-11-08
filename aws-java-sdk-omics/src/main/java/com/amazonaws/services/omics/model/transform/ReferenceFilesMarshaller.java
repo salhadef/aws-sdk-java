@@ -27,10 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ReferenceFilesMarshaller {
 
-    private static final MarshallingInfo<StructuredPojo> INDEX_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("index").build();
     private static final MarshallingInfo<StructuredPojo> SOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("source").build();
+    private static final MarshallingInfo<StructuredPojo> INDEX_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("index").build();
 
     private static final ReferenceFilesMarshaller instance = new ReferenceFilesMarshaller();
 
@@ -48,8 +48,8 @@ public class ReferenceFilesMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(referenceFiles.getIndex(), INDEX_BINDING);
             protocolMarshaller.marshall(referenceFiles.getSource(), SOURCE_BINDING);
+            protocolMarshaller.marshall(referenceFiles.getIndex(), INDEX_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

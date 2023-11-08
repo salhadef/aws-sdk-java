@@ -120,6 +120,12 @@ public class NetAppONTAPVolume implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private String recommendationStatus;
+    /**
+     * <p>
+     * The number of LUNs (logical unit numbers) in the volume.
+     * </p>
+     */
+    private Long lunCount;
 
     /**
      * <p>
@@ -807,6 +813,46 @@ public class NetAppONTAPVolume implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The number of LUNs (logical unit numbers) in the volume.
+     * </p>
+     * 
+     * @param lunCount
+     *        The number of LUNs (logical unit numbers) in the volume.
+     */
+
+    public void setLunCount(Long lunCount) {
+        this.lunCount = lunCount;
+    }
+
+    /**
+     * <p>
+     * The number of LUNs (logical unit numbers) in the volume.
+     * </p>
+     * 
+     * @return The number of LUNs (logical unit numbers) in the volume.
+     */
+
+    public Long getLunCount() {
+        return this.lunCount;
+    }
+
+    /**
+     * <p>
+     * The number of LUNs (logical unit numbers) in the volume.
+     * </p>
+     * 
+     * @param lunCount
+     *        The number of LUNs (logical unit numbers) in the volume.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetAppONTAPVolume withLunCount(Long lunCount) {
+        setLunCount(lunCount);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -845,7 +891,9 @@ public class NetAppONTAPVolume implements Serializable, Cloneable, StructuredPoj
         if (getRecommendations() != null)
             sb.append("Recommendations: ").append(getRecommendations()).append(",");
         if (getRecommendationStatus() != null)
-            sb.append("RecommendationStatus: ").append(getRecommendationStatus());
+            sb.append("RecommendationStatus: ").append(getRecommendationStatus()).append(",");
+        if (getLunCount() != null)
+            sb.append("LunCount: ").append(getLunCount());
         sb.append("}");
         return sb.toString();
     }
@@ -916,6 +964,10 @@ public class NetAppONTAPVolume implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getRecommendationStatus() != null && other.getRecommendationStatus().equals(this.getRecommendationStatus()) == false)
             return false;
+        if (other.getLunCount() == null ^ this.getLunCount() == null)
+            return false;
+        if (other.getLunCount() != null && other.getLunCount().equals(this.getLunCount()) == false)
+            return false;
         return true;
     }
 
@@ -938,6 +990,7 @@ public class NetAppONTAPVolume implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getMaxP95Performance() == null) ? 0 : getMaxP95Performance().hashCode());
         hashCode = prime * hashCode + ((getRecommendations() == null) ? 0 : getRecommendations().hashCode());
         hashCode = prime * hashCode + ((getRecommendationStatus() == null) ? 0 : getRecommendationStatus().hashCode());
+        hashCode = prime * hashCode + ((getLunCount() == null) ? 0 : getLunCount().hashCode());
         return hashCode;
     }
 

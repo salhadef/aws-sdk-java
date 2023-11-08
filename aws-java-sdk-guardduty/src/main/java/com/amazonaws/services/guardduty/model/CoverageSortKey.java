@@ -25,7 +25,8 @@ public enum CoverageSortKey {
     COVERAGE_STATUS("COVERAGE_STATUS"),
     ISSUE("ISSUE"),
     ADDON_VERSION("ADDON_VERSION"),
-    UPDATED_AT("UPDATED_AT");
+    UPDATED_AT("UPDATED_AT"),
+    EKS_CLUSTER_NAME("EKS_CLUSTER_NAME");
 
     private String value;
 

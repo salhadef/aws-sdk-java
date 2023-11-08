@@ -68,14 +68,14 @@ public class AutoMLJobConfig implements Serializable, Cloneable, StructuredPojo 
      * predictive model. It then uses a stacking ensemble method to combine predictions from contributing members. A
      * multi-stack ensemble model can provide better performance over a single model by combining the predictive
      * capabilities of multiple models. See <a href=
-     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt"
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support"
      * >Autopilot algorithm support</a> for a list of algorithms supported by <code>ENSEMBLING</code> mode.
      * </p>
      * <p>
      * The <code>HYPERPARAMETER_TUNING</code> (HPO) mode uses the best hyperparameters to train the best version of a
      * model. HPO automatically selects an algorithm for the type of problem you want to solve. Then HPO finds the best
      * hyperparameters according to your objective metric. See <a href=
-     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt"
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support"
      * >Autopilot algorithm support</a> for a list of algorithms supported by <code>HYPERPARAMETER_TUNING</code> mode.
      * </p>
      */
@@ -269,14 +269,14 @@ public class AutoMLJobConfig implements Serializable, Cloneable, StructuredPojo 
      * predictive model. It then uses a stacking ensemble method to combine predictions from contributing members. A
      * multi-stack ensemble model can provide better performance over a single model by combining the predictive
      * capabilities of multiple models. See <a href=
-     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt"
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support"
      * >Autopilot algorithm support</a> for a list of algorithms supported by <code>ENSEMBLING</code> mode.
      * </p>
      * <p>
      * The <code>HYPERPARAMETER_TUNING</code> (HPO) mode uses the best hyperparameters to train the best version of a
      * model. HPO automatically selects an algorithm for the type of problem you want to solve. Then HPO finds the best
      * hyperparameters according to your objective metric. See <a href=
-     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt"
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support"
      * >Autopilot algorithm support</a> for a list of algorithms supported by <code>HYPERPARAMETER_TUNING</code> mode.
      * </p>
      * 
@@ -291,14 +291,14 @@ public class AutoMLJobConfig implements Serializable, Cloneable, StructuredPojo 
      *        produce an optimal predictive model. It then uses a stacking ensemble method to combine predictions from
      *        contributing members. A multi-stack ensemble model can provide better performance over a single model by
      *        combining the predictive capabilities of multiple models. See <a href=
-     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt"
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support"
      *        >Autopilot algorithm support</a> for a list of algorithms supported by <code>ENSEMBLING</code> mode.
      *        </p>
      *        <p>
      *        The <code>HYPERPARAMETER_TUNING</code> (HPO) mode uses the best hyperparameters to train the best version
      *        of a model. HPO automatically selects an algorithm for the type of problem you want to solve. Then HPO
      *        finds the best hyperparameters according to your objective metric. See <a href=
-     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt"
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support"
      *        >Autopilot algorithm support</a> for a list of algorithms supported by <code>HYPERPARAMETER_TUNING</code>
      *        mode.
      * @see AutoMLMode
@@ -321,14 +321,14 @@ public class AutoMLJobConfig implements Serializable, Cloneable, StructuredPojo 
      * predictive model. It then uses a stacking ensemble method to combine predictions from contributing members. A
      * multi-stack ensemble model can provide better performance over a single model by combining the predictive
      * capabilities of multiple models. See <a href=
-     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt"
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support"
      * >Autopilot algorithm support</a> for a list of algorithms supported by <code>ENSEMBLING</code> mode.
      * </p>
      * <p>
      * The <code>HYPERPARAMETER_TUNING</code> (HPO) mode uses the best hyperparameters to train the best version of a
      * model. HPO automatically selects an algorithm for the type of problem you want to solve. Then HPO finds the best
      * hyperparameters according to your objective metric. See <a href=
-     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt"
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support"
      * >Autopilot algorithm support</a> for a list of algorithms supported by <code>HYPERPARAMETER_TUNING</code> mode.
      * </p>
      * 
@@ -342,14 +342,14 @@ public class AutoMLJobConfig implements Serializable, Cloneable, StructuredPojo 
      *         produce an optimal predictive model. It then uses a stacking ensemble method to combine predictions from
      *         contributing members. A multi-stack ensemble model can provide better performance over a single model by
      *         combining the predictive capabilities of multiple models. See <a href=
-     *         "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt"
+     *         "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support"
      *         >Autopilot algorithm support</a> for a list of algorithms supported by <code>ENSEMBLING</code> mode.
      *         </p>
      *         <p>
      *         The <code>HYPERPARAMETER_TUNING</code> (HPO) mode uses the best hyperparameters to train the best version
      *         of a model. HPO automatically selects an algorithm for the type of problem you want to solve. Then HPO
      *         finds the best hyperparameters according to your objective metric. See <a href=
-     *         "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt"
+     *         "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support"
      *         >Autopilot algorithm support</a> for a list of algorithms supported by <code>HYPERPARAMETER_TUNING</code>
      *         mode.
      * @see AutoMLMode
@@ -372,14 +372,14 @@ public class AutoMLJobConfig implements Serializable, Cloneable, StructuredPojo 
      * predictive model. It then uses a stacking ensemble method to combine predictions from contributing members. A
      * multi-stack ensemble model can provide better performance over a single model by combining the predictive
      * capabilities of multiple models. See <a href=
-     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt"
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support"
      * >Autopilot algorithm support</a> for a list of algorithms supported by <code>ENSEMBLING</code> mode.
      * </p>
      * <p>
      * The <code>HYPERPARAMETER_TUNING</code> (HPO) mode uses the best hyperparameters to train the best version of a
      * model. HPO automatically selects an algorithm for the type of problem you want to solve. Then HPO finds the best
      * hyperparameters according to your objective metric. See <a href=
-     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt"
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support"
      * >Autopilot algorithm support</a> for a list of algorithms supported by <code>HYPERPARAMETER_TUNING</code> mode.
      * </p>
      * 
@@ -394,14 +394,14 @@ public class AutoMLJobConfig implements Serializable, Cloneable, StructuredPojo 
      *        produce an optimal predictive model. It then uses a stacking ensemble method to combine predictions from
      *        contributing members. A multi-stack ensemble model can provide better performance over a single model by
      *        combining the predictive capabilities of multiple models. See <a href=
-     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt"
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support"
      *        >Autopilot algorithm support</a> for a list of algorithms supported by <code>ENSEMBLING</code> mode.
      *        </p>
      *        <p>
      *        The <code>HYPERPARAMETER_TUNING</code> (HPO) mode uses the best hyperparameters to train the best version
      *        of a model. HPO automatically selects an algorithm for the type of problem you want to solve. Then HPO
      *        finds the best hyperparameters according to your objective metric. See <a href=
-     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt"
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support"
      *        >Autopilot algorithm support</a> for a list of algorithms supported by <code>HYPERPARAMETER_TUNING</code>
      *        mode.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -426,14 +426,14 @@ public class AutoMLJobConfig implements Serializable, Cloneable, StructuredPojo 
      * predictive model. It then uses a stacking ensemble method to combine predictions from contributing members. A
      * multi-stack ensemble model can provide better performance over a single model by combining the predictive
      * capabilities of multiple models. See <a href=
-     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt"
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support"
      * >Autopilot algorithm support</a> for a list of algorithms supported by <code>ENSEMBLING</code> mode.
      * </p>
      * <p>
      * The <code>HYPERPARAMETER_TUNING</code> (HPO) mode uses the best hyperparameters to train the best version of a
      * model. HPO automatically selects an algorithm for the type of problem you want to solve. Then HPO finds the best
      * hyperparameters according to your objective metric. See <a href=
-     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt"
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support"
      * >Autopilot algorithm support</a> for a list of algorithms supported by <code>HYPERPARAMETER_TUNING</code> mode.
      * </p>
      * 
@@ -448,14 +448,14 @@ public class AutoMLJobConfig implements Serializable, Cloneable, StructuredPojo 
      *        produce an optimal predictive model. It then uses a stacking ensemble method to combine predictions from
      *        contributing members. A multi-stack ensemble model can provide better performance over a single model by
      *        combining the predictive capabilities of multiple models. See <a href=
-     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt"
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support"
      *        >Autopilot algorithm support</a> for a list of algorithms supported by <code>ENSEMBLING</code> mode.
      *        </p>
      *        <p>
      *        The <code>HYPERPARAMETER_TUNING</code> (HPO) mode uses the best hyperparameters to train the best version
      *        of a model. HPO automatically selects an algorithm for the type of problem you want to solve. Then HPO
      *        finds the best hyperparameters according to your objective metric. See <a href=
-     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt"
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support"
      *        >Autopilot algorithm support</a> for a list of algorithms supported by <code>HYPERPARAMETER_TUNING</code>
      *        mode.
      * @return Returns a reference to this object so that method calls can be chained together.

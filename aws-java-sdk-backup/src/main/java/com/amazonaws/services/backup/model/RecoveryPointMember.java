@@ -36,6 +36,24 @@ public class RecoveryPointMember implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private String recoveryPointArn;
+    /**
+     * <p>
+     * This is the Amazon Resource Name (ARN) that uniquely identifies a saved resource.
+     * </p>
+     */
+    private String resourceArn;
+    /**
+     * <p>
+     * This is the Amazon Web Services resource type that is saved as a recovery point.
+     * </p>
+     */
+    private String resourceType;
+    /**
+     * <p>
+     * This is the name of the backup vault (the logical container in which backups are stored).
+     * </p>
+     */
+    private String backupVaultName;
 
     /**
      * <p>
@@ -78,6 +96,126 @@ public class RecoveryPointMember implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * This is the Amazon Resource Name (ARN) that uniquely identifies a saved resource.
+     * </p>
+     * 
+     * @param resourceArn
+     *        This is the Amazon Resource Name (ARN) that uniquely identifies a saved resource.
+     */
+
+    public void setResourceArn(String resourceArn) {
+        this.resourceArn = resourceArn;
+    }
+
+    /**
+     * <p>
+     * This is the Amazon Resource Name (ARN) that uniquely identifies a saved resource.
+     * </p>
+     * 
+     * @return This is the Amazon Resource Name (ARN) that uniquely identifies a saved resource.
+     */
+
+    public String getResourceArn() {
+        return this.resourceArn;
+    }
+
+    /**
+     * <p>
+     * This is the Amazon Resource Name (ARN) that uniquely identifies a saved resource.
+     * </p>
+     * 
+     * @param resourceArn
+     *        This is the Amazon Resource Name (ARN) that uniquely identifies a saved resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RecoveryPointMember withResourceArn(String resourceArn) {
+        setResourceArn(resourceArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This is the Amazon Web Services resource type that is saved as a recovery point.
+     * </p>
+     * 
+     * @param resourceType
+     *        This is the Amazon Web Services resource type that is saved as a recovery point.
+     */
+
+    public void setResourceType(String resourceType) {
+        this.resourceType = resourceType;
+    }
+
+    /**
+     * <p>
+     * This is the Amazon Web Services resource type that is saved as a recovery point.
+     * </p>
+     * 
+     * @return This is the Amazon Web Services resource type that is saved as a recovery point.
+     */
+
+    public String getResourceType() {
+        return this.resourceType;
+    }
+
+    /**
+     * <p>
+     * This is the Amazon Web Services resource type that is saved as a recovery point.
+     * </p>
+     * 
+     * @param resourceType
+     *        This is the Amazon Web Services resource type that is saved as a recovery point.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RecoveryPointMember withResourceType(String resourceType) {
+        setResourceType(resourceType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This is the name of the backup vault (the logical container in which backups are stored).
+     * </p>
+     * 
+     * @param backupVaultName
+     *        This is the name of the backup vault (the logical container in which backups are stored).
+     */
+
+    public void setBackupVaultName(String backupVaultName) {
+        this.backupVaultName = backupVaultName;
+    }
+
+    /**
+     * <p>
+     * This is the name of the backup vault (the logical container in which backups are stored).
+     * </p>
+     * 
+     * @return This is the name of the backup vault (the logical container in which backups are stored).
+     */
+
+    public String getBackupVaultName() {
+        return this.backupVaultName;
+    }
+
+    /**
+     * <p>
+     * This is the name of the backup vault (the logical container in which backups are stored).
+     * </p>
+     * 
+     * @param backupVaultName
+     *        This is the name of the backup vault (the logical container in which backups are stored).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RecoveryPointMember withBackupVaultName(String backupVaultName) {
+        setBackupVaultName(backupVaultName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -90,7 +228,13 @@ public class RecoveryPointMember implements Serializable, Cloneable, StructuredP
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRecoveryPointArn() != null)
-            sb.append("RecoveryPointArn: ").append(getRecoveryPointArn());
+            sb.append("RecoveryPointArn: ").append(getRecoveryPointArn()).append(",");
+        if (getResourceArn() != null)
+            sb.append("ResourceArn: ").append(getResourceArn()).append(",");
+        if (getResourceType() != null)
+            sb.append("ResourceType: ").append(getResourceType()).append(",");
+        if (getBackupVaultName() != null)
+            sb.append("BackupVaultName: ").append(getBackupVaultName());
         sb.append("}");
         return sb.toString();
     }
@@ -109,6 +253,18 @@ public class RecoveryPointMember implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getRecoveryPointArn() != null && other.getRecoveryPointArn().equals(this.getRecoveryPointArn()) == false)
             return false;
+        if (other.getResourceArn() == null ^ this.getResourceArn() == null)
+            return false;
+        if (other.getResourceArn() != null && other.getResourceArn().equals(this.getResourceArn()) == false)
+            return false;
+        if (other.getResourceType() == null ^ this.getResourceType() == null)
+            return false;
+        if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false)
+            return false;
+        if (other.getBackupVaultName() == null ^ this.getBackupVaultName() == null)
+            return false;
+        if (other.getBackupVaultName() != null && other.getBackupVaultName().equals(this.getBackupVaultName()) == false)
+            return false;
         return true;
     }
 
@@ -118,6 +274,9 @@ public class RecoveryPointMember implements Serializable, Cloneable, StructuredP
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getRecoveryPointArn() == null) ? 0 : getRecoveryPointArn().hashCode());
+        hashCode = prime * hashCode + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());
+        hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
+        hashCode = prime * hashCode + ((getBackupVaultName() == null) ? 0 : getBackupVaultName().hashCode());
         return hashCode;
     }
 

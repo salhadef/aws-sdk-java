@@ -50,11 +50,6 @@ public class PutResolverQueryLogConfigPolicyRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
-     * <code>route53resolver:ListResolverQueryLogConfigAssociations</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>route53resolver:ListResolverQueryLogConfigs</code>
      * </p>
      * </li>
@@ -125,11 +120,6 @@ public class PutResolverQueryLogConfigPolicyRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
-     * <code>route53resolver:ListResolverQueryLogConfigAssociations</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>route53resolver:ListResolverQueryLogConfigs</code>
      * </p>
      * </li>
@@ -153,11 +143,6 @@ public class PutResolverQueryLogConfigPolicyRequest extends com.amazonaws.Amazon
      *        <li>
      *        <p>
      *        <code>route53resolver:DisassociateResolverQueryLogConfig</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>route53resolver:ListResolverQueryLogConfigAssociations</code>
      *        </p>
      *        </li>
      *        <li>
@@ -194,11 +179,6 @@ public class PutResolverQueryLogConfigPolicyRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
-     * <code>route53resolver:ListResolverQueryLogConfigAssociations</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>route53resolver:ListResolverQueryLogConfigs</code>
      * </p>
      * </li>
@@ -221,11 +201,6 @@ public class PutResolverQueryLogConfigPolicyRequest extends com.amazonaws.Amazon
      *         <li>
      *         <p>
      *         <code>route53resolver:DisassociateResolverQueryLogConfig</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>route53resolver:ListResolverQueryLogConfigAssociations</code>
      *         </p>
      *         </li>
      *         <li>
@@ -262,11 +237,6 @@ public class PutResolverQueryLogConfigPolicyRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
-     * <code>route53resolver:ListResolverQueryLogConfigAssociations</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>route53resolver:ListResolverQueryLogConfigs</code>
      * </p>
      * </li>
@@ -290,11 +260,6 @@ public class PutResolverQueryLogConfigPolicyRequest extends com.amazonaws.Amazon
      *        <li>
      *        <p>
      *        <code>route53resolver:DisassociateResolverQueryLogConfig</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>route53resolver:ListResolverQueryLogConfigAssociations</code>
      *        </p>
      *        </li>
      *        <li>

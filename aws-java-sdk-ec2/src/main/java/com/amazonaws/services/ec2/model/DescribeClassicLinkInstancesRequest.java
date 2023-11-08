@@ -28,7 +28,7 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -59,16 +59,13 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
      * <p>
      * <code>vpc-id</code> - The ID of the VPC to which the instance is linked.
      * </p>
-     * <p>
-     * <code>vpc-id</code> - The ID of the VPC that the instance is linked to.
-     * </p>
      * </li>
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
      * <p>
-     * One or more instance IDs. Must be instances linked to a VPC through ClassicLink.
+     * The instance IDs. Must be instances linked to a VPC through ClassicLink.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> instanceIds;
@@ -93,7 +90,7 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -124,13 +121,10 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
      * <p>
      * <code>vpc-id</code> - The ID of the VPC to which the instance is linked.
      * </p>
-     * <p>
-     * <code>vpc-id</code> - The ID of the VPC that the instance is linked to.
-     * </p>
      * </li>
      * </ul>
      * 
-     * @return One or more filters.</p>
+     * @return The filters.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -160,9 +154,6 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
      *         <p>
      *         <code>vpc-id</code> - The ID of the VPC to which the instance is linked.
      *         </p>
-     *         <p>
-     *         <code>vpc-id</code> - The ID of the VPC that the instance is linked to.
-     *         </p>
      *         </li>
      */
 
@@ -175,7 +166,7 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -206,14 +197,11 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
      * <p>
      * <code>vpc-id</code> - The ID of the VPC to which the instance is linked.
      * </p>
-     * <p>
-     * <code>vpc-id</code> - The ID of the VPC that the instance is linked to.
-     * </p>
      * </li>
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -242,9 +230,6 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
      *        <li>
      *        <p>
      *        <code>vpc-id</code> - The ID of the VPC to which the instance is linked.
-     *        </p>
-     *        <p>
-     *        <code>vpc-id</code> - The ID of the VPC that the instance is linked to.
      *        </p>
      *        </li>
      */
@@ -260,7 +245,7 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -291,9 +276,6 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
      * <p>
      * <code>vpc-id</code> - The ID of the VPC to which the instance is linked.
      * </p>
-     * <p>
-     * <code>vpc-id</code> - The ID of the VPC that the instance is linked to.
-     * </p>
      * </li>
      * </ul>
      * <p>
@@ -303,7 +285,7 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -332,9 +314,6 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
      *        <li>
      *        <p>
      *        <code>vpc-id</code> - The ID of the VPC to which the instance is linked.
-     *        </p>
-     *        <p>
-     *        <code>vpc-id</code> - The ID of the VPC that the instance is linked to.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -352,7 +331,7 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -383,14 +362,11 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
      * <p>
      * <code>vpc-id</code> - The ID of the VPC to which the instance is linked.
      * </p>
-     * <p>
-     * <code>vpc-id</code> - The ID of the VPC that the instance is linked to.
-     * </p>
      * </li>
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -420,9 +396,6 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
      *        <p>
      *        <code>vpc-id</code> - The ID of the VPC to which the instance is linked.
      *        </p>
-     *        <p>
-     *        <code>vpc-id</code> - The ID of the VPC that the instance is linked to.
-     *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -434,10 +407,10 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * One or more instance IDs. Must be instances linked to a VPC through ClassicLink.
+     * The instance IDs. Must be instances linked to a VPC through ClassicLink.
      * </p>
      * 
-     * @return One or more instance IDs. Must be instances linked to a VPC through ClassicLink.
+     * @return The instance IDs. Must be instances linked to a VPC through ClassicLink.
      */
 
     public java.util.List<String> getInstanceIds() {
@@ -449,11 +422,11 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * One or more instance IDs. Must be instances linked to a VPC through ClassicLink.
+     * The instance IDs. Must be instances linked to a VPC through ClassicLink.
      * </p>
      * 
      * @param instanceIds
-     *        One or more instance IDs. Must be instances linked to a VPC through ClassicLink.
+     *        The instance IDs. Must be instances linked to a VPC through ClassicLink.
      */
 
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
@@ -467,7 +440,7 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * One or more instance IDs. Must be instances linked to a VPC through ClassicLink.
+     * The instance IDs. Must be instances linked to a VPC through ClassicLink.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -476,7 +449,7 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param instanceIds
-     *        One or more instance IDs. Must be instances linked to a VPC through ClassicLink.
+     *        The instance IDs. Must be instances linked to a VPC through ClassicLink.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -492,11 +465,11 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * One or more instance IDs. Must be instances linked to a VPC through ClassicLink.
+     * The instance IDs. Must be instances linked to a VPC through ClassicLink.
      * </p>
      * 
      * @param instanceIds
-     *        One or more instance IDs. Must be instances linked to a VPC through ClassicLink.
+     *        The instance IDs. Must be instances linked to a VPC through ClassicLink.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

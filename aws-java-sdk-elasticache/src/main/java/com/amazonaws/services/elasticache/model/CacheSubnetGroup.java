@@ -72,7 +72,7 @@ public class CacheSubnetGroup implements Serializable, Cloneable {
      * <p>
      * Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using
      * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a
-     * href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> supportedNetworkTypes;
@@ -314,12 +314,12 @@ public class CacheSubnetGroup implements Serializable, Cloneable {
      * <p>
      * Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using
      * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a
-     * href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
      * </p>
      * 
      * @return Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads
      *         using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a
-     *         href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     *         href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
      * @see NetworkType
      */
 
@@ -334,13 +334,13 @@ public class CacheSubnetGroup implements Serializable, Cloneable {
      * <p>
      * Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using
      * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a
-     * href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
      * </p>
      * 
      * @param supportedNetworkTypes
      *        Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads
      *        using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a
-     *        href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     *        href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
      * @see NetworkType
      */
 
@@ -357,7 +357,7 @@ public class CacheSubnetGroup implements Serializable, Cloneable {
      * <p>
      * Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using
      * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a
-     * href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -368,7 +368,7 @@ public class CacheSubnetGroup implements Serializable, Cloneable {
      * @param supportedNetworkTypes
      *        Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads
      *        using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a
-     *        href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     *        href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NetworkType
      */
@@ -387,13 +387,13 @@ public class CacheSubnetGroup implements Serializable, Cloneable {
      * <p>
      * Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using
      * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a
-     * href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
      * </p>
      * 
      * @param supportedNetworkTypes
      *        Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads
      *        using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a
-     *        href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     *        href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NetworkType
      */
@@ -407,13 +407,13 @@ public class CacheSubnetGroup implements Serializable, Cloneable {
      * <p>
      * Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using
      * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a
-     * href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
      * </p>
      * 
      * @param supportedNetworkTypes
      *        Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads
      *        using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a
-     *        href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     *        href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NetworkType
      */

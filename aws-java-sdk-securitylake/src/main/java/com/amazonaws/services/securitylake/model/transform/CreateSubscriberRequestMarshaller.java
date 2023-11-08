@@ -30,16 +30,16 @@ public class CreateSubscriberRequestMarshaller {
 
     private static final MarshallingInfo<List> ACCESSTYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("accessTypes").build();
-    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("accountId").build();
-    private static final MarshallingInfo<String> EXTERNALID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("externalId").build();
-    private static final MarshallingInfo<List> SOURCETYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("sourceTypes").build();
+    private static final MarshallingInfo<List> SOURCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("sources").build();
     private static final MarshallingInfo<String> SUBSCRIBERDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("subscriberDescription").build();
+    private static final MarshallingInfo<StructuredPojo> SUBSCRIBERIDENTITY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("subscriberIdentity").build();
     private static final MarshallingInfo<String> SUBSCRIBERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("subscriberName").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final CreateSubscriberRequestMarshaller instance = new CreateSubscriberRequestMarshaller();
 
@@ -58,11 +58,11 @@ public class CreateSubscriberRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(createSubscriberRequest.getAccessTypes(), ACCESSTYPES_BINDING);
-            protocolMarshaller.marshall(createSubscriberRequest.getAccountId(), ACCOUNTID_BINDING);
-            protocolMarshaller.marshall(createSubscriberRequest.getExternalId(), EXTERNALID_BINDING);
-            protocolMarshaller.marshall(createSubscriberRequest.getSourceTypes(), SOURCETYPES_BINDING);
+            protocolMarshaller.marshall(createSubscriberRequest.getSources(), SOURCES_BINDING);
             protocolMarshaller.marshall(createSubscriberRequest.getSubscriberDescription(), SUBSCRIBERDESCRIPTION_BINDING);
+            protocolMarshaller.marshall(createSubscriberRequest.getSubscriberIdentity(), SUBSCRIBERIDENTITY_BINDING);
             protocolMarshaller.marshall(createSubscriberRequest.getSubscriberName(), SUBSCRIBERNAME_BINDING);
+            protocolMarshaller.marshall(createSubscriberRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -48,29 +48,9 @@ public class CreateSubscriberResultJsonUnmarshaller implements Unmarshaller<Crea
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("resourceShareArn", targetDepth)) {
+                if (context.testExpression("subscriber", targetDepth)) {
                     context.nextToken();
-                    createSubscriberResult.setResourceShareArn(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("resourceShareName", targetDepth)) {
-                    context.nextToken();
-                    createSubscriberResult.setResourceShareName(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("roleArn", targetDepth)) {
-                    context.nextToken();
-                    createSubscriberResult.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("s3BucketArn", targetDepth)) {
-                    context.nextToken();
-                    createSubscriberResult.setS3BucketArn(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("snsArn", targetDepth)) {
-                    context.nextToken();
-                    createSubscriberResult.setSnsArn(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("subscriptionId", targetDepth)) {
-                    context.nextToken();
-                    createSubscriberResult.setSubscriptionId(context.getUnmarshaller(String.class).unmarshall(context));
+                    createSubscriberResult.setSubscriber(SubscriberResourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

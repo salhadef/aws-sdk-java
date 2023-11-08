@@ -486,7 +486,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is
      * supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances
-     * built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
      * </p>
      */
     private String ipDiscovery;
@@ -4044,13 +4044,13 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is
      * supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances
-     * built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
      * </p>
      * 
      * @param ipDiscovery
      *        The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6
      *        is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
-     *        instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     *        instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
      * @see IpDiscovery
      */
 
@@ -4062,12 +4062,12 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is
      * supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances
-     * built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
      * </p>
      * 
      * @return The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6
      *         is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
-     *         instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     *         instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
      * @see IpDiscovery
      */
 
@@ -4079,13 +4079,13 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is
      * supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances
-     * built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
      * </p>
      * 
      * @param ipDiscovery
      *        The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6
      *        is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
-     *        instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     *        instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IpDiscovery
      */
@@ -4099,13 +4099,13 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is
      * supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances
-     * built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
      * </p>
      * 
      * @param ipDiscovery
      *        The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6
      *        is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
-     *        instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     *        instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
      * @see IpDiscovery
      */
 
@@ -4117,13 +4117,13 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is
      * supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances
-     * built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
      * </p>
      * 
      * @param ipDiscovery
      *        The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6
      *        is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
-     *        instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     *        instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IpDiscovery
      */

@@ -55,6 +55,8 @@ public class ServiceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ebsVolumeScanDetails").build();
     private static final MarshallingInfo<StructuredPojo> RUNTIMEDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("runtimeDetails").build();
+    private static final MarshallingInfo<StructuredPojo> DETECTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("detection").build();
 
     private static final ServiceMarshaller instance = new ServiceMarshaller();
 
@@ -86,6 +88,7 @@ public class ServiceMarshaller {
             protocolMarshaller.marshall(service.getFeatureName(), FEATURENAME_BINDING);
             protocolMarshaller.marshall(service.getEbsVolumeScanDetails(), EBSVOLUMESCANDETAILS_BINDING);
             protocolMarshaller.marshall(service.getRuntimeDetails(), RUNTIMEDETAILS_BINDING);
+            protocolMarshaller.marshall(service.getDetection(), DETECTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

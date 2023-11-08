@@ -36,16 +36,29 @@ public class OrganizationFeatureConfigurationResult implements Serializable, Clo
     private String name;
     /**
      * <p>
-     * Describes how The status of the feature that are configured for the member accounts within the organization.
+     * Describes the status of the feature that is configured for the member accounts within the organization.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * If you set <code>AutoEnable</code> to <code>NEW</code>, a feature will be configured for only the new accounts
-     * when they join the organization.
+     * <code>NEW</code>: Indicates that when a new account joins the organization, they will have the feature enabled
+     * automatically.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * If you set <code>AutoEnable</code> to <code>NONE</code>, no feature will be configured for the accounts when they
-     * join the organization.
+     * <code>ALL</code>: Indicates that all accounts in the organization have the feature enabled automatically. This
+     * includes <code>NEW</code> accounts that join the organization and accounts that may have been suspended or
+     * removed from the organization in GuardDuty.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NONE</code>: Indicates that the feature will not be automatically enabled for any account in the
+     * organization. In this case, each account will be managed individually by the administrator.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String autoEnable;
     /**
@@ -116,27 +129,53 @@ public class OrganizationFeatureConfigurationResult implements Serializable, Clo
 
     /**
      * <p>
-     * Describes how The status of the feature that are configured for the member accounts within the organization.
+     * Describes the status of the feature that is configured for the member accounts within the organization.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * If you set <code>AutoEnable</code> to <code>NEW</code>, a feature will be configured for only the new accounts
-     * when they join the organization.
+     * <code>NEW</code>: Indicates that when a new account joins the organization, they will have the feature enabled
+     * automatically.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * If you set <code>AutoEnable</code> to <code>NONE</code>, no feature will be configured for the accounts when they
-     * join the organization.
+     * <code>ALL</code>: Indicates that all accounts in the organization have the feature enabled automatically. This
+     * includes <code>NEW</code> accounts that join the organization and accounts that may have been suspended or
+     * removed from the organization in GuardDuty.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NONE</code>: Indicates that the feature will not be automatically enabled for any account in the
+     * organization. In this case, each account will be managed individually by the administrator.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param autoEnable
-     *        Describes how The status of the feature that are configured for the member accounts within the
+     *        Describes the status of the feature that is configured for the member accounts within the
      *        organization.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        If you set <code>AutoEnable</code> to <code>NEW</code>, a feature will be configured for only the new
-     *        accounts when they join the organization.
+     *        <code>NEW</code>: Indicates that when a new account joins the organization, they will have the feature
+     *        enabled automatically.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        If you set <code>AutoEnable</code> to <code>NONE</code>, no feature will be configured for the accounts
-     *        when they join the organization.
+     *        <code>ALL</code>: Indicates that all accounts in the organization have the feature enabled automatically.
+     *        This includes <code>NEW</code> accounts that join the organization and accounts that may have been
+     *        suspended or removed from the organization in GuardDuty.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NONE</code>: Indicates that the feature will not be automatically enabled for any account in the
+     *        organization. In this case, each account will be managed individually by the administrator.
+     *        </p>
+     *        </li>
      * @see OrgFeatureStatus
      */
 
@@ -146,26 +185,52 @@ public class OrganizationFeatureConfigurationResult implements Serializable, Clo
 
     /**
      * <p>
-     * Describes how The status of the feature that are configured for the member accounts within the organization.
+     * Describes the status of the feature that is configured for the member accounts within the organization.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * If you set <code>AutoEnable</code> to <code>NEW</code>, a feature will be configured for only the new accounts
-     * when they join the organization.
+     * <code>NEW</code>: Indicates that when a new account joins the organization, they will have the feature enabled
+     * automatically.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * If you set <code>AutoEnable</code> to <code>NONE</code>, no feature will be configured for the accounts when they
-     * join the organization.
+     * <code>ALL</code>: Indicates that all accounts in the organization have the feature enabled automatically. This
+     * includes <code>NEW</code> accounts that join the organization and accounts that may have been suspended or
+     * removed from the organization in GuardDuty.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NONE</code>: Indicates that the feature will not be automatically enabled for any account in the
+     * organization. In this case, each account will be managed individually by the administrator.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return Describes how The status of the feature that are configured for the member accounts within the
+     * @return Describes the status of the feature that is configured for the member accounts within the
      *         organization.</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         If you set <code>AutoEnable</code> to <code>NEW</code>, a feature will be configured for only the new
-     *         accounts when they join the organization.
+     *         <code>NEW</code>: Indicates that when a new account joins the organization, they will have the feature
+     *         enabled automatically.
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
-     *         If you set <code>AutoEnable</code> to <code>NONE</code>, no feature will be configured for the accounts
-     *         when they join the organization.
+     *         <code>ALL</code>: Indicates that all accounts in the organization have the feature enabled automatically.
+     *         This includes <code>NEW</code> accounts that join the organization and accounts that may have been
+     *         suspended or removed from the organization in GuardDuty.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>NONE</code>: Indicates that the feature will not be automatically enabled for any account in the
+     *         organization. In this case, each account will be managed individually by the administrator.
+     *         </p>
+     *         </li>
      * @see OrgFeatureStatus
      */
 
@@ -175,27 +240,53 @@ public class OrganizationFeatureConfigurationResult implements Serializable, Clo
 
     /**
      * <p>
-     * Describes how The status of the feature that are configured for the member accounts within the organization.
+     * Describes the status of the feature that is configured for the member accounts within the organization.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * If you set <code>AutoEnable</code> to <code>NEW</code>, a feature will be configured for only the new accounts
-     * when they join the organization.
+     * <code>NEW</code>: Indicates that when a new account joins the organization, they will have the feature enabled
+     * automatically.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * If you set <code>AutoEnable</code> to <code>NONE</code>, no feature will be configured for the accounts when they
-     * join the organization.
+     * <code>ALL</code>: Indicates that all accounts in the organization have the feature enabled automatically. This
+     * includes <code>NEW</code> accounts that join the organization and accounts that may have been suspended or
+     * removed from the organization in GuardDuty.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NONE</code>: Indicates that the feature will not be automatically enabled for any account in the
+     * organization. In this case, each account will be managed individually by the administrator.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param autoEnable
-     *        Describes how The status of the feature that are configured for the member accounts within the
+     *        Describes the status of the feature that is configured for the member accounts within the
      *        organization.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        If you set <code>AutoEnable</code> to <code>NEW</code>, a feature will be configured for only the new
-     *        accounts when they join the organization.
+     *        <code>NEW</code>: Indicates that when a new account joins the organization, they will have the feature
+     *        enabled automatically.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        If you set <code>AutoEnable</code> to <code>NONE</code>, no feature will be configured for the accounts
-     *        when they join the organization.
+     *        <code>ALL</code>: Indicates that all accounts in the organization have the feature enabled automatically.
+     *        This includes <code>NEW</code> accounts that join the organization and accounts that may have been
+     *        suspended or removed from the organization in GuardDuty.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NONE</code>: Indicates that the feature will not be automatically enabled for any account in the
+     *        organization. In this case, each account will be managed individually by the administrator.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OrgFeatureStatus
      */
@@ -207,27 +298,53 @@ public class OrganizationFeatureConfigurationResult implements Serializable, Clo
 
     /**
      * <p>
-     * Describes how The status of the feature that are configured for the member accounts within the organization.
+     * Describes the status of the feature that is configured for the member accounts within the organization.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * If you set <code>AutoEnable</code> to <code>NEW</code>, a feature will be configured for only the new accounts
-     * when they join the organization.
+     * <code>NEW</code>: Indicates that when a new account joins the organization, they will have the feature enabled
+     * automatically.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * If you set <code>AutoEnable</code> to <code>NONE</code>, no feature will be configured for the accounts when they
-     * join the organization.
+     * <code>ALL</code>: Indicates that all accounts in the organization have the feature enabled automatically. This
+     * includes <code>NEW</code> accounts that join the organization and accounts that may have been suspended or
+     * removed from the organization in GuardDuty.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NONE</code>: Indicates that the feature will not be automatically enabled for any account in the
+     * organization. In this case, each account will be managed individually by the administrator.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param autoEnable
-     *        Describes how The status of the feature that are configured for the member accounts within the
+     *        Describes the status of the feature that is configured for the member accounts within the
      *        organization.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        If you set <code>AutoEnable</code> to <code>NEW</code>, a feature will be configured for only the new
-     *        accounts when they join the organization.
+     *        <code>NEW</code>: Indicates that when a new account joins the organization, they will have the feature
+     *        enabled automatically.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        If you set <code>AutoEnable</code> to <code>NONE</code>, no feature will be configured for the accounts
-     *        when they join the organization.
+     *        <code>ALL</code>: Indicates that all accounts in the organization have the feature enabled automatically.
+     *        This includes <code>NEW</code> accounts that join the organization and accounts that may have been
+     *        suspended or removed from the organization in GuardDuty.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NONE</code>: Indicates that the feature will not be automatically enabled for any account in the
+     *        organization. In this case, each account will be managed individually by the administrator.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OrgFeatureStatus
      */

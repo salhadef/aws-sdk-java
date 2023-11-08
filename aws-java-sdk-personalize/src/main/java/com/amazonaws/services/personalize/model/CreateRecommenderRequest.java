@@ -55,8 +55,8 @@ public class CreateRecommenderRequest extends com.amazonaws.AmazonWebServiceRequ
     private RecommenderConfig recommenderConfig;
     /**
      * <p>
-     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply
-     * to the recommender.
+     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to
+     * the recommender.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -247,11 +247,11 @@ public class CreateRecommenderRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply
-     * to the recommender.
+     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to
+     * the recommender.
      * </p>
      * 
-     * @return A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to
+     * @return A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to
      *         apply to the recommender.
      */
 
@@ -261,12 +261,12 @@ public class CreateRecommenderRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply
-     * to the recommender.
+     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to
+     * the recommender.
      * </p>
      * 
      * @param tags
-     *        A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to
+     *        A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to
      *        apply to the recommender.
      */
 
@@ -281,8 +281,8 @@ public class CreateRecommenderRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply
-     * to the recommender.
+     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to
+     * the recommender.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -291,7 +291,7 @@ public class CreateRecommenderRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param tags
-     *        A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to
+     *        A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to
      *        apply to the recommender.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -308,12 +308,12 @@ public class CreateRecommenderRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply
-     * to the recommender.
+     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to
+     * the recommender.
      * </p>
      * 
      * @param tags
-     *        A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to
+     *        A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to
      *        apply to the recommender.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

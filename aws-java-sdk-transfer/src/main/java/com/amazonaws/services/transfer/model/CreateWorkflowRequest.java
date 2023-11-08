@@ -81,8 +81,8 @@ public class CreateWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <note>
      * <p>
-     * For custom steps, the lambda function needs to send <code>FAILURE</code> to the call back API to kick off the
-     * exception steps. Additionally, if the lambda does not send <code>SUCCESS</code> before it times out, the
+     * For custom steps, the Lambda function needs to send <code>FAILURE</code> to the call back API to kick off the
+     * exception steps. Additionally, if the Lambda does not send <code>SUCCESS</code> before it times out, the
      * exception steps are executed.
      * </p>
      * </note>
@@ -516,8 +516,8 @@ public class CreateWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <note>
      * <p>
-     * For custom steps, the lambda function needs to send <code>FAILURE</code> to the call back API to kick off the
-     * exception steps. Additionally, if the lambda does not send <code>SUCCESS</code> before it times out, the
+     * For custom steps, the Lambda function needs to send <code>FAILURE</code> to the call back API to kick off the
+     * exception steps. Additionally, if the Lambda does not send <code>SUCCESS</code> before it times out, the
      * exception steps are executed.
      * </p>
      * </note>
@@ -525,8 +525,8 @@ public class CreateWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest
      * @return Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p>
      *         <note>
      *         <p>
-     *         For custom steps, the lambda function needs to send <code>FAILURE</code> to the call back API to kick off
-     *         the exception steps. Additionally, if the lambda does not send <code>SUCCESS</code> before it times out,
+     *         For custom steps, the Lambda function needs to send <code>FAILURE</code> to the call back API to kick off
+     *         the exception steps. Additionally, if the Lambda does not send <code>SUCCESS</code> before it times out,
      *         the exception steps are executed.
      *         </p>
      */
@@ -541,8 +541,8 @@ public class CreateWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <note>
      * <p>
-     * For custom steps, the lambda function needs to send <code>FAILURE</code> to the call back API to kick off the
-     * exception steps. Additionally, if the lambda does not send <code>SUCCESS</code> before it times out, the
+     * For custom steps, the Lambda function needs to send <code>FAILURE</code> to the call back API to kick off the
+     * exception steps. Additionally, if the Lambda does not send <code>SUCCESS</code> before it times out, the
      * exception steps are executed.
      * </p>
      * </note>
@@ -551,8 +551,8 @@ public class CreateWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p>
      *        <note>
      *        <p>
-     *        For custom steps, the lambda function needs to send <code>FAILURE</code> to the call back API to kick off
-     *        the exception steps. Additionally, if the lambda does not send <code>SUCCESS</code> before it times out,
+     *        For custom steps, the Lambda function needs to send <code>FAILURE</code> to the call back API to kick off
+     *        the exception steps. Additionally, if the Lambda does not send <code>SUCCESS</code> before it times out,
      *        the exception steps are executed.
      *        </p>
      */
@@ -572,8 +572,8 @@ public class CreateWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <note>
      * <p>
-     * For custom steps, the lambda function needs to send <code>FAILURE</code> to the call back API to kick off the
-     * exception steps. Additionally, if the lambda does not send <code>SUCCESS</code> before it times out, the
+     * For custom steps, the Lambda function needs to send <code>FAILURE</code> to the call back API to kick off the
+     * exception steps. Additionally, if the Lambda does not send <code>SUCCESS</code> before it times out, the
      * exception steps are executed.
      * </p>
      * </note>
@@ -587,8 +587,8 @@ public class CreateWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p>
      *        <note>
      *        <p>
-     *        For custom steps, the lambda function needs to send <code>FAILURE</code> to the call back API to kick off
-     *        the exception steps. Additionally, if the lambda does not send <code>SUCCESS</code> before it times out,
+     *        For custom steps, the Lambda function needs to send <code>FAILURE</code> to the call back API to kick off
+     *        the exception steps. Additionally, if the Lambda does not send <code>SUCCESS</code> before it times out,
      *        the exception steps are executed.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -610,8 +610,8 @@ public class CreateWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <note>
      * <p>
-     * For custom steps, the lambda function needs to send <code>FAILURE</code> to the call back API to kick off the
-     * exception steps. Additionally, if the lambda does not send <code>SUCCESS</code> before it times out, the
+     * For custom steps, the Lambda function needs to send <code>FAILURE</code> to the call back API to kick off the
+     * exception steps. Additionally, if the Lambda does not send <code>SUCCESS</code> before it times out, the
      * exception steps are executed.
      * </p>
      * </note>
@@ -620,8 +620,8 @@ public class CreateWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p>
      *        <note>
      *        <p>
-     *        For custom steps, the lambda function needs to send <code>FAILURE</code> to the call back API to kick off
-     *        the exception steps. Additionally, if the lambda does not send <code>SUCCESS</code> before it times out,
+     *        For custom steps, the Lambda function needs to send <code>FAILURE</code> to the call back API to kick off
+     *        the exception steps. Additionally, if the Lambda does not send <code>SUCCESS</code> before it times out,
      *        the exception steps are executed.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.

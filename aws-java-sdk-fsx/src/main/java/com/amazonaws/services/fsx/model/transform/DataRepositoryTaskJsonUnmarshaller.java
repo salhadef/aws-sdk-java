@@ -112,6 +112,10 @@ public class DataRepositoryTaskJsonUnmarshaller implements Unmarshaller<DataRepo
                     context.nextToken();
                     dataRepositoryTask.setFileCacheId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ReleaseConfiguration", targetDepth)) {
+                    context.nextToken();
+                    dataRepositoryTask.setReleaseConfiguration(ReleaseConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

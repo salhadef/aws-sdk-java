@@ -129,6 +129,12 @@ public class InputTemplateJsonUnmarshaller implements Unmarshaller<InputTemplate
                     context.nextToken();
                     inputTemplate.setTimecodeStart(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("videoOverlays", targetDepth)) {
+                    context.nextToken();
+                    inputTemplate.setVideoOverlays(new ListUnmarshaller<VideoOverlay>(VideoOverlayJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("videoSelector", targetDepth)) {
                     context.nextToken();
                     inputTemplate.setVideoSelector(VideoSelectorJsonUnmarshaller.getInstance().unmarshall(context));

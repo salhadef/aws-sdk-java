@@ -28,6 +28,21 @@ public class AbstractAWSCleanRoomsAsync extends AbstractAWSCleanRooms implements
     }
 
     @Override
+    public java.util.concurrent.Future<BatchGetCollaborationAnalysisTemplateResult> batchGetCollaborationAnalysisTemplateAsync(
+            BatchGetCollaborationAnalysisTemplateRequest request) {
+
+        return batchGetCollaborationAnalysisTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetCollaborationAnalysisTemplateResult> batchGetCollaborationAnalysisTemplateAsync(
+            BatchGetCollaborationAnalysisTemplateRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchGetCollaborationAnalysisTemplateRequest, BatchGetCollaborationAnalysisTemplateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchGetSchemaResult> batchGetSchemaAsync(BatchGetSchemaRequest request) {
 
         return batchGetSchemaAsync(request, null);
@@ -36,6 +51,19 @@ public class AbstractAWSCleanRoomsAsync extends AbstractAWSCleanRooms implements
     @Override
     public java.util.concurrent.Future<BatchGetSchemaResult> batchGetSchemaAsync(BatchGetSchemaRequest request,
             com.amazonaws.handlers.AsyncHandler<BatchGetSchemaRequest, BatchGetSchemaResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAnalysisTemplateResult> createAnalysisTemplateAsync(CreateAnalysisTemplateRequest request) {
+
+        return createAnalysisTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAnalysisTemplateResult> createAnalysisTemplateAsync(CreateAnalysisTemplateRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateAnalysisTemplateRequest, CreateAnalysisTemplateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -105,6 +133,19 @@ public class AbstractAWSCleanRoomsAsync extends AbstractAWSCleanRooms implements
     @Override
     public java.util.concurrent.Future<CreateMembershipResult> createMembershipAsync(CreateMembershipRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateMembershipRequest, CreateMembershipResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAnalysisTemplateResult> deleteAnalysisTemplateAsync(DeleteAnalysisTemplateRequest request) {
+
+        return deleteAnalysisTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAnalysisTemplateResult> deleteAnalysisTemplateAsync(DeleteAnalysisTemplateRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteAnalysisTemplateRequest, DeleteAnalysisTemplateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -192,6 +233,19 @@ public class AbstractAWSCleanRoomsAsync extends AbstractAWSCleanRooms implements
     }
 
     @Override
+    public java.util.concurrent.Future<GetAnalysisTemplateResult> getAnalysisTemplateAsync(GetAnalysisTemplateRequest request) {
+
+        return getAnalysisTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAnalysisTemplateResult> getAnalysisTemplateAsync(GetAnalysisTemplateRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetAnalysisTemplateRequest, GetAnalysisTemplateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetCollaborationResult> getCollaborationAsync(GetCollaborationRequest request) {
 
         return getCollaborationAsync(request, null);
@@ -200,6 +254,21 @@ public class AbstractAWSCleanRoomsAsync extends AbstractAWSCleanRooms implements
     @Override
     public java.util.concurrent.Future<GetCollaborationResult> getCollaborationAsync(GetCollaborationRequest request,
             com.amazonaws.handlers.AsyncHandler<GetCollaborationRequest, GetCollaborationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCollaborationAnalysisTemplateResult> getCollaborationAnalysisTemplateAsync(
+            GetCollaborationAnalysisTemplateRequest request) {
+
+        return getCollaborationAnalysisTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCollaborationAnalysisTemplateResult> getCollaborationAnalysisTemplateAsync(
+            GetCollaborationAnalysisTemplateRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetCollaborationAnalysisTemplateRequest, GetCollaborationAnalysisTemplateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -291,6 +360,34 @@ public class AbstractAWSCleanRoomsAsync extends AbstractAWSCleanRooms implements
     @Override
     public java.util.concurrent.Future<GetSchemaAnalysisRuleResult> getSchemaAnalysisRuleAsync(GetSchemaAnalysisRuleRequest request,
             com.amazonaws.handlers.AsyncHandler<GetSchemaAnalysisRuleRequest, GetSchemaAnalysisRuleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAnalysisTemplatesResult> listAnalysisTemplatesAsync(ListAnalysisTemplatesRequest request) {
+
+        return listAnalysisTemplatesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAnalysisTemplatesResult> listAnalysisTemplatesAsync(ListAnalysisTemplatesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAnalysisTemplatesRequest, ListAnalysisTemplatesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCollaborationAnalysisTemplatesResult> listCollaborationAnalysisTemplatesAsync(
+            ListCollaborationAnalysisTemplatesRequest request) {
+
+        return listCollaborationAnalysisTemplatesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCollaborationAnalysisTemplatesResult> listCollaborationAnalysisTemplatesAsync(
+            ListCollaborationAnalysisTemplatesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListCollaborationAnalysisTemplatesRequest, ListCollaborationAnalysisTemplatesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -436,6 +533,19 @@ public class AbstractAWSCleanRoomsAsync extends AbstractAWSCleanRooms implements
     @Override
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAnalysisTemplateResult> updateAnalysisTemplateAsync(UpdateAnalysisTemplateRequest request) {
+
+        return updateAnalysisTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAnalysisTemplateResult> updateAnalysisTemplateAsync(UpdateAnalysisTemplateRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateAnalysisTemplateRequest, UpdateAnalysisTemplateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

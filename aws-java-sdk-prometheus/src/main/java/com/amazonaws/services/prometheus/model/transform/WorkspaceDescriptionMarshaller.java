@@ -29,20 +29,20 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class WorkspaceDescriptionMarshaller {
 
+    private static final MarshallingInfo<String> WORKSPACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("workspaceId").build();
     private static final MarshallingInfo<String> ALIAS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("alias").build();
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("arn").build();
-    private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("unixTimestamp").build();
-    private static final MarshallingInfo<String> PROMETHEUSENDPOINT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("prometheusEndpoint").build();
     private static final MarshallingInfo<StructuredPojo> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("status").build();
+    private static final MarshallingInfo<String> PROMETHEUSENDPOINT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("prometheusEndpoint").build();
+    private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
-    private static final MarshallingInfo<String> WORKSPACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("workspaceId").build();
 
     private static final WorkspaceDescriptionMarshaller instance = new WorkspaceDescriptionMarshaller();
 
@@ -60,13 +60,13 @@ public class WorkspaceDescriptionMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(workspaceDescription.getWorkspaceId(), WORKSPACEID_BINDING);
             protocolMarshaller.marshall(workspaceDescription.getAlias(), ALIAS_BINDING);
             protocolMarshaller.marshall(workspaceDescription.getArn(), ARN_BINDING);
-            protocolMarshaller.marshall(workspaceDescription.getCreatedAt(), CREATEDAT_BINDING);
-            protocolMarshaller.marshall(workspaceDescription.getPrometheusEndpoint(), PROMETHEUSENDPOINT_BINDING);
             protocolMarshaller.marshall(workspaceDescription.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(workspaceDescription.getPrometheusEndpoint(), PROMETHEUSENDPOINT_BINDING);
+            protocolMarshaller.marshall(workspaceDescription.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(workspaceDescription.getTags(), TAGS_BINDING);
-            protocolMarshaller.marshall(workspaceDescription.getWorkspaceId(), WORKSPACEID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

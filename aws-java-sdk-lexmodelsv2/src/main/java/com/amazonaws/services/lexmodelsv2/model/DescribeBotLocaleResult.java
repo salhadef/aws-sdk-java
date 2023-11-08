@@ -31,7 +31,7 @@ public class DescribeBotLocaleResult extends com.amazonaws.AmazonWebServiceResul
     private String botId;
     /**
      * <p>
-     * The identifier of the version of the bot associated with the locale.
+     * The version of the bot associated with the locale.
      * </p>
      */
     private String botVersion;
@@ -164,11 +164,11 @@ public class DescribeBotLocaleResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The identifier of the version of the bot associated with the locale.
+     * The version of the bot associated with the locale.
      * </p>
      * 
      * @param botVersion
-     *        The identifier of the version of the bot associated with the locale.
+     *        The version of the bot associated with the locale.
      */
 
     public void setBotVersion(String botVersion) {
@@ -177,10 +177,10 @@ public class DescribeBotLocaleResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The identifier of the version of the bot associated with the locale.
+     * The version of the bot associated with the locale.
      * </p>
      * 
-     * @return The identifier of the version of the bot associated with the locale.
+     * @return The version of the bot associated with the locale.
      */
 
     public String getBotVersion() {
@@ -189,11 +189,11 @@ public class DescribeBotLocaleResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The identifier of the version of the bot associated with the locale.
+     * The version of the bot associated with the locale.
      * </p>
      * 
      * @param botVersion
-     *        The identifier of the version of the bot associated with the locale.
+     *        The version of the bot associated with the locale.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

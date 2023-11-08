@@ -30,46 +30,16 @@ public class ImportReadSetSourceItem implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The source's description.
+     * The source files' location in Amazon S3.
      * </p>
      */
-    private String description;
-    /**
-     * <p>
-     * Where the source originated.
-     * </p>
-     */
-    private String generatedFrom;
-    /**
-     * <p>
-     * The source's name.
-     * </p>
-     */
-    private String name;
-    /**
-     * <p>
-     * The source's genome reference ARN.
-     * </p>
-     */
-    private String referenceArn;
-    /**
-     * <p>
-     * The source's sample ID.
-     * </p>
-     */
-    private String sampleId;
+    private SourceFiles sourceFiles;
     /**
      * <p>
      * The source's file type.
      * </p>
      */
     private String sourceFileType;
-    /**
-     * <p>
-     * The source files' location in Amazon S3.
-     * </p>
-     */
-    private SourceFiles sourceFiles;
     /**
      * <p>
      * The source's status.
@@ -90,6 +60,36 @@ public class ImportReadSetSourceItem implements Serializable, Cloneable, Structu
     private String subjectId;
     /**
      * <p>
+     * The source's sample ID.
+     * </p>
+     */
+    private String sampleId;
+    /**
+     * <p>
+     * Where the source originated.
+     * </p>
+     */
+    private String generatedFrom;
+    /**
+     * <p>
+     * The source's genome reference ARN.
+     * </p>
+     */
+    private String referenceArn;
+    /**
+     * <p>
+     * The source's name.
+     * </p>
+     */
+    private String name;
+    /**
+     * <p>
+     * The source's description.
+     * </p>
+     */
+    private String description;
+    /**
+     * <p>
      * The source's tags.
      * </p>
      */
@@ -97,201 +97,41 @@ public class ImportReadSetSourceItem implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The source's description.
+     * The source files' location in Amazon S3.
      * </p>
      * 
-     * @param description
-     *        The source's description.
+     * @param sourceFiles
+     *        The source files' location in Amazon S3.
      */
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setSourceFiles(SourceFiles sourceFiles) {
+        this.sourceFiles = sourceFiles;
     }
 
     /**
      * <p>
-     * The source's description.
+     * The source files' location in Amazon S3.
      * </p>
      * 
-     * @return The source's description.
+     * @return The source files' location in Amazon S3.
      */
 
-    public String getDescription() {
-        return this.description;
+    public SourceFiles getSourceFiles() {
+        return this.sourceFiles;
     }
 
     /**
      * <p>
-     * The source's description.
+     * The source files' location in Amazon S3.
      * </p>
      * 
-     * @param description
-     *        The source's description.
+     * @param sourceFiles
+     *        The source files' location in Amazon S3.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ImportReadSetSourceItem withDescription(String description) {
-        setDescription(description);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Where the source originated.
-     * </p>
-     * 
-     * @param generatedFrom
-     *        Where the source originated.
-     */
-
-    public void setGeneratedFrom(String generatedFrom) {
-        this.generatedFrom = generatedFrom;
-    }
-
-    /**
-     * <p>
-     * Where the source originated.
-     * </p>
-     * 
-     * @return Where the source originated.
-     */
-
-    public String getGeneratedFrom() {
-        return this.generatedFrom;
-    }
-
-    /**
-     * <p>
-     * Where the source originated.
-     * </p>
-     * 
-     * @param generatedFrom
-     *        Where the source originated.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ImportReadSetSourceItem withGeneratedFrom(String generatedFrom) {
-        setGeneratedFrom(generatedFrom);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The source's name.
-     * </p>
-     * 
-     * @param name
-     *        The source's name.
-     */
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     * <p>
-     * The source's name.
-     * </p>
-     * 
-     * @return The source's name.
-     */
-
-    public String getName() {
-        return this.name;
-    }
-
-    /**
-     * <p>
-     * The source's name.
-     * </p>
-     * 
-     * @param name
-     *        The source's name.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ImportReadSetSourceItem withName(String name) {
-        setName(name);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The source's genome reference ARN.
-     * </p>
-     * 
-     * @param referenceArn
-     *        The source's genome reference ARN.
-     */
-
-    public void setReferenceArn(String referenceArn) {
-        this.referenceArn = referenceArn;
-    }
-
-    /**
-     * <p>
-     * The source's genome reference ARN.
-     * </p>
-     * 
-     * @return The source's genome reference ARN.
-     */
-
-    public String getReferenceArn() {
-        return this.referenceArn;
-    }
-
-    /**
-     * <p>
-     * The source's genome reference ARN.
-     * </p>
-     * 
-     * @param referenceArn
-     *        The source's genome reference ARN.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ImportReadSetSourceItem withReferenceArn(String referenceArn) {
-        setReferenceArn(referenceArn);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The source's sample ID.
-     * </p>
-     * 
-     * @param sampleId
-     *        The source's sample ID.
-     */
-
-    public void setSampleId(String sampleId) {
-        this.sampleId = sampleId;
-    }
-
-    /**
-     * <p>
-     * The source's sample ID.
-     * </p>
-     * 
-     * @return The source's sample ID.
-     */
-
-    public String getSampleId() {
-        return this.sampleId;
-    }
-
-    /**
-     * <p>
-     * The source's sample ID.
-     * </p>
-     * 
-     * @param sampleId
-     *        The source's sample ID.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ImportReadSetSourceItem withSampleId(String sampleId) {
-        setSampleId(sampleId);
+    public ImportReadSetSourceItem withSourceFiles(SourceFiles sourceFiles) {
+        setSourceFiles(sourceFiles);
         return this;
     }
 
@@ -351,46 +191,6 @@ public class ImportReadSetSourceItem implements Serializable, Cloneable, Structu
 
     public ImportReadSetSourceItem withSourceFileType(FileType sourceFileType) {
         this.sourceFileType = sourceFileType.toString();
-        return this;
-    }
-
-    /**
-     * <p>
-     * The source files' location in Amazon S3.
-     * </p>
-     * 
-     * @param sourceFiles
-     *        The source files' location in Amazon S3.
-     */
-
-    public void setSourceFiles(SourceFiles sourceFiles) {
-        this.sourceFiles = sourceFiles;
-    }
-
-    /**
-     * <p>
-     * The source files' location in Amazon S3.
-     * </p>
-     * 
-     * @return The source files' location in Amazon S3.
-     */
-
-    public SourceFiles getSourceFiles() {
-        return this.sourceFiles;
-    }
-
-    /**
-     * <p>
-     * The source files' location in Amazon S3.
-     * </p>
-     * 
-     * @param sourceFiles
-     *        The source files' location in Amazon S3.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ImportReadSetSourceItem withSourceFiles(SourceFiles sourceFiles) {
-        setSourceFiles(sourceFiles);
         return this;
     }
 
@@ -535,6 +335,206 @@ public class ImportReadSetSourceItem implements Serializable, Cloneable, Structu
 
     /**
      * <p>
+     * The source's sample ID.
+     * </p>
+     * 
+     * @param sampleId
+     *        The source's sample ID.
+     */
+
+    public void setSampleId(String sampleId) {
+        this.sampleId = sampleId;
+    }
+
+    /**
+     * <p>
+     * The source's sample ID.
+     * </p>
+     * 
+     * @return The source's sample ID.
+     */
+
+    public String getSampleId() {
+        return this.sampleId;
+    }
+
+    /**
+     * <p>
+     * The source's sample ID.
+     * </p>
+     * 
+     * @param sampleId
+     *        The source's sample ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportReadSetSourceItem withSampleId(String sampleId) {
+        setSampleId(sampleId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Where the source originated.
+     * </p>
+     * 
+     * @param generatedFrom
+     *        Where the source originated.
+     */
+
+    public void setGeneratedFrom(String generatedFrom) {
+        this.generatedFrom = generatedFrom;
+    }
+
+    /**
+     * <p>
+     * Where the source originated.
+     * </p>
+     * 
+     * @return Where the source originated.
+     */
+
+    public String getGeneratedFrom() {
+        return this.generatedFrom;
+    }
+
+    /**
+     * <p>
+     * Where the source originated.
+     * </p>
+     * 
+     * @param generatedFrom
+     *        Where the source originated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportReadSetSourceItem withGeneratedFrom(String generatedFrom) {
+        setGeneratedFrom(generatedFrom);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The source's genome reference ARN.
+     * </p>
+     * 
+     * @param referenceArn
+     *        The source's genome reference ARN.
+     */
+
+    public void setReferenceArn(String referenceArn) {
+        this.referenceArn = referenceArn;
+    }
+
+    /**
+     * <p>
+     * The source's genome reference ARN.
+     * </p>
+     * 
+     * @return The source's genome reference ARN.
+     */
+
+    public String getReferenceArn() {
+        return this.referenceArn;
+    }
+
+    /**
+     * <p>
+     * The source's genome reference ARN.
+     * </p>
+     * 
+     * @param referenceArn
+     *        The source's genome reference ARN.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportReadSetSourceItem withReferenceArn(String referenceArn) {
+        setReferenceArn(referenceArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The source's name.
+     * </p>
+     * 
+     * @param name
+     *        The source's name.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The source's name.
+     * </p>
+     * 
+     * @return The source's name.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The source's name.
+     * </p>
+     * 
+     * @param name
+     *        The source's name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportReadSetSourceItem withName(String name) {
+        setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The source's description.
+     * </p>
+     * 
+     * @param description
+     *        The source's description.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * The source's description.
+     * </p>
+     * 
+     * @return The source's description.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * The source's description.
+     * </p>
+     * 
+     * @param description
+     *        The source's description.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportReadSetSourceItem withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
      * The source's tags.
      * </p>
      * 
@@ -613,26 +613,26 @@ public class ImportReadSetSourceItem implements Serializable, Cloneable, Structu
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
-        if (getGeneratedFrom() != null)
-            sb.append("GeneratedFrom: ").append(getGeneratedFrom()).append(",");
-        if (getName() != null)
-            sb.append("Name: ").append(getName()).append(",");
-        if (getReferenceArn() != null)
-            sb.append("ReferenceArn: ").append(getReferenceArn()).append(",");
-        if (getSampleId() != null)
-            sb.append("SampleId: ").append(getSampleId()).append(",");
-        if (getSourceFileType() != null)
-            sb.append("SourceFileType: ").append(getSourceFileType()).append(",");
         if (getSourceFiles() != null)
             sb.append("SourceFiles: ").append(getSourceFiles()).append(",");
+        if (getSourceFileType() != null)
+            sb.append("SourceFileType: ").append(getSourceFileType()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusMessage() != null)
             sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
         if (getSubjectId() != null)
             sb.append("SubjectId: ").append(getSubjectId()).append(",");
+        if (getSampleId() != null)
+            sb.append("SampleId: ").append(getSampleId()).append(",");
+        if (getGeneratedFrom() != null)
+            sb.append("GeneratedFrom: ").append(getGeneratedFrom()).append(",");
+        if (getReferenceArn() != null)
+            sb.append("ReferenceArn: ").append(getReferenceArn()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -649,33 +649,13 @@ public class ImportReadSetSourceItem implements Serializable, Cloneable, Structu
         if (obj instanceof ImportReadSetSourceItem == false)
             return false;
         ImportReadSetSourceItem other = (ImportReadSetSourceItem) obj;
-        if (other.getDescription() == null ^ this.getDescription() == null)
+        if (other.getSourceFiles() == null ^ this.getSourceFiles() == null)
             return false;
-        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
-            return false;
-        if (other.getGeneratedFrom() == null ^ this.getGeneratedFrom() == null)
-            return false;
-        if (other.getGeneratedFrom() != null && other.getGeneratedFrom().equals(this.getGeneratedFrom()) == false)
-            return false;
-        if (other.getName() == null ^ this.getName() == null)
-            return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false)
-            return false;
-        if (other.getReferenceArn() == null ^ this.getReferenceArn() == null)
-            return false;
-        if (other.getReferenceArn() != null && other.getReferenceArn().equals(this.getReferenceArn()) == false)
-            return false;
-        if (other.getSampleId() == null ^ this.getSampleId() == null)
-            return false;
-        if (other.getSampleId() != null && other.getSampleId().equals(this.getSampleId()) == false)
+        if (other.getSourceFiles() != null && other.getSourceFiles().equals(this.getSourceFiles()) == false)
             return false;
         if (other.getSourceFileType() == null ^ this.getSourceFileType() == null)
             return false;
         if (other.getSourceFileType() != null && other.getSourceFileType().equals(this.getSourceFileType()) == false)
-            return false;
-        if (other.getSourceFiles() == null ^ this.getSourceFiles() == null)
-            return false;
-        if (other.getSourceFiles() != null && other.getSourceFiles().equals(this.getSourceFiles()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
@@ -689,6 +669,26 @@ public class ImportReadSetSourceItem implements Serializable, Cloneable, Structu
             return false;
         if (other.getSubjectId() != null && other.getSubjectId().equals(this.getSubjectId()) == false)
             return false;
+        if (other.getSampleId() == null ^ this.getSampleId() == null)
+            return false;
+        if (other.getSampleId() != null && other.getSampleId().equals(this.getSampleId()) == false)
+            return false;
+        if (other.getGeneratedFrom() == null ^ this.getGeneratedFrom() == null)
+            return false;
+        if (other.getGeneratedFrom() != null && other.getGeneratedFrom().equals(this.getGeneratedFrom()) == false)
+            return false;
+        if (other.getReferenceArn() == null ^ this.getReferenceArn() == null)
+            return false;
+        if (other.getReferenceArn() != null && other.getReferenceArn().equals(this.getReferenceArn()) == false)
+            return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -701,16 +701,16 @@ public class ImportReadSetSourceItem implements Serializable, Cloneable, Structu
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode + ((getGeneratedFrom() == null) ? 0 : getGeneratedFrom().hashCode());
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode + ((getReferenceArn() == null) ? 0 : getReferenceArn().hashCode());
-        hashCode = prime * hashCode + ((getSampleId() == null) ? 0 : getSampleId().hashCode());
-        hashCode = prime * hashCode + ((getSourceFileType() == null) ? 0 : getSourceFileType().hashCode());
         hashCode = prime * hashCode + ((getSourceFiles() == null) ? 0 : getSourceFiles().hashCode());
+        hashCode = prime * hashCode + ((getSourceFileType() == null) ? 0 : getSourceFileType().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
         hashCode = prime * hashCode + ((getSubjectId() == null) ? 0 : getSubjectId().hashCode());
+        hashCode = prime * hashCode + ((getSampleId() == null) ? 0 : getSampleId().hashCode());
+        hashCode = prime * hashCode + ((getGeneratedFrom() == null) ? 0 : getGeneratedFrom().hashCode());
+        hashCode = prime * hashCode + ((getReferenceArn() == null) ? 0 : getReferenceArn().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

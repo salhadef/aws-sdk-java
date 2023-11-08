@@ -29,6 +29,12 @@ public class GetComponentResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      */
     private Component component;
+    /**
+     * <p>
+     * The tags of a component.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
      * <p>
@@ -71,6 +77,74 @@ public class GetComponentResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
+     * The tags of a component.
+     * </p>
+     * 
+     * @return The tags of a component.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags of a component.
+     * </p>
+     * 
+     * @param tags
+     *        The tags of a component.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The tags of a component.
+     * </p>
+     * 
+     * @param tags
+     *        The tags of a component.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetComponentResult withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see GetComponentResult#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetComponentResult addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetComponentResult clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -83,7 +157,9 @@ public class GetComponentResult extends com.amazonaws.AmazonWebServiceResult<com
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getComponent() != null)
-            sb.append("Component: ").append(getComponent());
+            sb.append("Component: ").append(getComponent()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -102,6 +178,10 @@ public class GetComponentResult extends com.amazonaws.AmazonWebServiceResult<com
             return false;
         if (other.getComponent() != null && other.getComponent().equals(this.getComponent()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -111,6 +191,7 @@ public class GetComponentResult extends com.amazonaws.AmazonWebServiceResult<com
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getComponent() == null) ? 0 : getComponent().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

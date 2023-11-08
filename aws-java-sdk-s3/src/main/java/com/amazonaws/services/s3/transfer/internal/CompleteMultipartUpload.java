@@ -87,6 +87,7 @@ public class CompleteMultipartUpload implements Callable<UploadResult> {
                     origReq.getBucketName(), origReq.getKey(), uploadId,
                     collectPartETags())
                     .withRequesterPays(origReq.isRequesterPays())
+                    .withSSECustomerKey(origReq.getSSECustomerKey())
                 .withGeneralProgressListener(origReq.getGeneralProgressListener())
                 .withRequestMetricCollector(origReq.getRequestMetricCollector())
                 .withRequestCredentialsProvider(origReq.getRequestCredentialsProvider())

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.dynamodbv2.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +33,8 @@ public class BatchStatementErrorMarshaller {
             .marshallLocationName("Code").build();
     private static final MarshallingInfo<String> MESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Message").build();
+    private static final MarshallingInfo<Map> ITEM_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Item").build();
 
     private static final BatchStatementErrorMarshaller instance = new BatchStatementErrorMarshaller();
 
@@ -50,6 +54,7 @@ public class BatchStatementErrorMarshaller {
         try {
             protocolMarshaller.marshall(batchStatementError.getCode(), CODE_BINDING);
             protocolMarshaller.marshall(batchStatementError.getMessage(), MESSAGE_BINDING);
+            protocolMarshaller.marshall(batchStatementError.getItem(), ITEM_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -36,7 +36,7 @@ public class RecommendationJobInputConfig implements Serializable, Cloneable, St
     private String modelPackageVersionArn;
     /**
      * <p>
-     * Specifies the maximum duration of the job, in seconds.&gt;
+     * Specifies the maximum duration of the job, in seconds. The maximum value is 18,000 seconds.
      * </p>
      */
     private Integer jobDurationInSeconds;
@@ -182,11 +182,11 @@ public class RecommendationJobInputConfig implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Specifies the maximum duration of the job, in seconds.&gt;
+     * Specifies the maximum duration of the job, in seconds. The maximum value is 18,000 seconds.
      * </p>
      * 
      * @param jobDurationInSeconds
-     *        Specifies the maximum duration of the job, in seconds.&gt;
+     *        Specifies the maximum duration of the job, in seconds. The maximum value is 18,000 seconds.
      */
 
     public void setJobDurationInSeconds(Integer jobDurationInSeconds) {
@@ -195,10 +195,10 @@ public class RecommendationJobInputConfig implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Specifies the maximum duration of the job, in seconds.&gt;
+     * Specifies the maximum duration of the job, in seconds. The maximum value is 18,000 seconds.
      * </p>
      * 
-     * @return Specifies the maximum duration of the job, in seconds.&gt;
+     * @return Specifies the maximum duration of the job, in seconds. The maximum value is 18,000 seconds.
      */
 
     public Integer getJobDurationInSeconds() {
@@ -207,11 +207,11 @@ public class RecommendationJobInputConfig implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Specifies the maximum duration of the job, in seconds.&gt;
+     * Specifies the maximum duration of the job, in seconds. The maximum value is 18,000 seconds.
      * </p>
      * 
      * @param jobDurationInSeconds
-     *        Specifies the maximum duration of the job, in seconds.&gt;
+     *        Specifies the maximum duration of the job, in seconds. The maximum value is 18,000 seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -114,6 +114,41 @@ public class AWSResilienceHubAsyncClient extends AWSResilienceHubClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<BatchUpdateRecommendationStatusResult> batchUpdateRecommendationStatusAsync(
+            BatchUpdateRecommendationStatusRequest request) {
+
+        return batchUpdateRecommendationStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchUpdateRecommendationStatusResult> batchUpdateRecommendationStatusAsync(
+            final BatchUpdateRecommendationStatusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchUpdateRecommendationStatusRequest, BatchUpdateRecommendationStatusResult> asyncHandler) {
+        final BatchUpdateRecommendationStatusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchUpdateRecommendationStatusResult>() {
+            @Override
+            public BatchUpdateRecommendationStatusResult call() throws Exception {
+                BatchUpdateRecommendationStatusResult result = null;
+
+                try {
+                    result = executeBatchUpdateRecommendationStatus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateAppResult> createAppAsync(CreateAppRequest request) {
 
         return createAppAsync(request, null);
@@ -864,6 +899,41 @@ public class AWSResilienceHubAsyncClient extends AWSResilienceHubClient implemen
 
                 try {
                     result = executeListAlarmRecommendations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAppAssessmentComplianceDriftsResult> listAppAssessmentComplianceDriftsAsync(
+            ListAppAssessmentComplianceDriftsRequest request) {
+
+        return listAppAssessmentComplianceDriftsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAppAssessmentComplianceDriftsResult> listAppAssessmentComplianceDriftsAsync(
+            final ListAppAssessmentComplianceDriftsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAppAssessmentComplianceDriftsRequest, ListAppAssessmentComplianceDriftsResult> asyncHandler) {
+        final ListAppAssessmentComplianceDriftsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAppAssessmentComplianceDriftsResult>() {
+            @Override
+            public ListAppAssessmentComplianceDriftsResult call() throws Exception {
+                ListAppAssessmentComplianceDriftsResult result = null;
+
+                try {
+                    result = executeListAppAssessmentComplianceDrifts(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

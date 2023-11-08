@@ -60,6 +60,14 @@ public class DecisionTaskCompletedEventAttributesJsonUnmarshaller implements Unm
                     context.nextToken();
                     decisionTaskCompletedEventAttributes.setStartedEventId(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("taskList", targetDepth)) {
+                    context.nextToken();
+                    decisionTaskCompletedEventAttributes.setTaskList(TaskListJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("taskListScheduleToStartTimeout", targetDepth)) {
+                    context.nextToken();
+                    decisionTaskCompletedEventAttributes.setTaskListScheduleToStartTimeout(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -132,6 +132,19 @@ public class AbstractAWSServiceDiscoveryAsync extends AbstractAWSServiceDiscover
     }
 
     @Override
+    public java.util.concurrent.Future<DiscoverInstancesRevisionResult> discoverInstancesRevisionAsync(DiscoverInstancesRevisionRequest request) {
+
+        return discoverInstancesRevisionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DiscoverInstancesRevisionResult> discoverInstancesRevisionAsync(DiscoverInstancesRevisionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DiscoverInstancesRevisionRequest, DiscoverInstancesRevisionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetInstanceResult> getInstanceAsync(GetInstanceRequest request) {
 
         return getInstanceAsync(request, null);

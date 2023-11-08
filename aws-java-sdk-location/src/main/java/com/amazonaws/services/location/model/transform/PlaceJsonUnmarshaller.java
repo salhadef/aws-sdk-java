@@ -52,6 +52,12 @@ public class PlaceJsonUnmarshaller implements Unmarshaller<Place, JsonUnmarshall
                     context.nextToken();
                     place.setAddressNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Categories", targetDepth)) {
+                    context.nextToken();
+                    place.setCategories(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("Country", targetDepth)) {
                     context.nextToken();
                     place.setCountry(context.getUnmarshaller(String.class).unmarshall(context));
@@ -91,6 +97,12 @@ public class PlaceJsonUnmarshaller implements Unmarshaller<Place, JsonUnmarshall
                 if (context.testExpression("SubRegion", targetDepth)) {
                     context.nextToken();
                     place.setSubRegion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("SupplementalCategories", targetDepth)) {
+                    context.nextToken();
+                    place.setSupplementalCategories(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("TimeZone", targetDepth)) {
                     context.nextToken();

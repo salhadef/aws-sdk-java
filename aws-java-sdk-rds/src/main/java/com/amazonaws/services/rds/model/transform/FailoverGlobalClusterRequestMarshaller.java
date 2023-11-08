@@ -48,6 +48,14 @@ public class FailoverGlobalClusterRequestMarshaller implements Marshaller<Reques
             request.addParameter("TargetDbClusterIdentifier", StringUtils.fromString(failoverGlobalClusterRequest.getTargetDbClusterIdentifier()));
         }
 
+        if (failoverGlobalClusterRequest.getAllowDataLoss() != null) {
+            request.addParameter("AllowDataLoss", StringUtils.fromBoolean(failoverGlobalClusterRequest.getAllowDataLoss()));
+        }
+
+        if (failoverGlobalClusterRequest.getSwitchover() != null) {
+            request.addParameter("Switchover", StringUtils.fromBoolean(failoverGlobalClusterRequest.getSwitchover()));
+        }
+
         return request;
     }
 

@@ -671,6 +671,79 @@ public interface AWSSupportAsync extends AWSSupport {
 
     /**
      * <p>
+     * Returns a list of CreateCaseOption types along with the corresponding supported hours and language availability.
+     * You can specify the <code>language</code> <code>categoryCode</code>, <code>issueType</code> and
+     * <code>serviceCode</code> used to retrieve the CreateCaseOptions.
+     * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the Amazon Web Services Support
+     * API.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you call the Amazon Web Services Support API from an account that doesn't have a Business, Enterprise On-Ramp,
+     * or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information
+     * about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services
+     * Support</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * 
+     * @param describeCreateCaseOptionsRequest
+     * @return A Java Future containing the result of the DescribeCreateCaseOptions operation returned by the service.
+     * @sample AWSSupportAsync.DescribeCreateCaseOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeCreateCaseOptions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeCreateCaseOptionsResult> describeCreateCaseOptionsAsync(
+            DescribeCreateCaseOptionsRequest describeCreateCaseOptionsRequest);
+
+    /**
+     * <p>
+     * Returns a list of CreateCaseOption types along with the corresponding supported hours and language availability.
+     * You can specify the <code>language</code> <code>categoryCode</code>, <code>issueType</code> and
+     * <code>serviceCode</code> used to retrieve the CreateCaseOptions.
+     * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the Amazon Web Services Support
+     * API.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you call the Amazon Web Services Support API from an account that doesn't have a Business, Enterprise On-Ramp,
+     * or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information
+     * about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services
+     * Support</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * 
+     * @param describeCreateCaseOptionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeCreateCaseOptions operation returned by the service.
+     * @sample AWSSupportAsyncHandler.DescribeCreateCaseOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeCreateCaseOptions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeCreateCaseOptionsResult> describeCreateCaseOptionsAsync(
+            DescribeCreateCaseOptionsRequest describeCreateCaseOptionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeCreateCaseOptionsRequest, DescribeCreateCaseOptionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns the current list of Amazon Web Services services and a list of service categories for each service. You
      * then use service names and categories in your <a>CreateCase</a> requests. Each Amazon Web Services service has
      * its own set of categories.
@@ -854,6 +927,79 @@ public interface AWSSupportAsync extends AWSSupport {
      */
     java.util.concurrent.Future<DescribeSeverityLevelsResult> describeSeverityLevelsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeSeverityLevelsRequest, DescribeSeverityLevelsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of supported languages for a specified <code>categoryCode</code>, <code>issueType</code> and
+     * <code>serviceCode</code>. The returned supported languages will include a ISO 639-1 code for the
+     * <code>language</code>, and the language display name.
+     * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the Amazon Web Services Support
+     * API.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you call the Amazon Web Services Support API from an account that doesn't have a Business, Enterprise On-Ramp,
+     * or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information
+     * about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services
+     * Support</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * 
+     * @param describeSupportedLanguagesRequest
+     * @return A Java Future containing the result of the DescribeSupportedLanguages operation returned by the service.
+     * @sample AWSSupportAsync.DescribeSupportedLanguages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeSupportedLanguages"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeSupportedLanguagesResult> describeSupportedLanguagesAsync(
+            DescribeSupportedLanguagesRequest describeSupportedLanguagesRequest);
+
+    /**
+     * <p>
+     * Returns a list of supported languages for a specified <code>categoryCode</code>, <code>issueType</code> and
+     * <code>serviceCode</code>. The returned supported languages will include a ISO 639-1 code for the
+     * <code>language</code>, and the language display name.
+     * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the Amazon Web Services Support
+     * API.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you call the Amazon Web Services Support API from an account that doesn't have a Business, Enterprise On-Ramp,
+     * or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information
+     * about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services
+     * Support</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * 
+     * @param describeSupportedLanguagesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeSupportedLanguages operation returned by the service.
+     * @sample AWSSupportAsyncHandler.DescribeSupportedLanguages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeSupportedLanguages"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeSupportedLanguagesResult> describeSupportedLanguagesAsync(
+            DescribeSupportedLanguagesRequest describeSupportedLanguagesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeSupportedLanguagesRequest, DescribeSupportedLanguagesResult> asyncHandler);
 
     /**
      * <p>

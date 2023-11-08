@@ -27,34 +27,22 @@ public class StartRunRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * A log level for the run.
+     * The run's workflow ID.
      * </p>
      */
-    private String logLevel;
+    private String workflowId;
     /**
      * <p>
-     * A name for the run.
+     * The run's workflow type.
      * </p>
      */
-    private String name;
+    private String workflowType;
     /**
      * <p>
-     * An output URI for the run.
+     * The ID of a run to duplicate.
      * </p>
      */
-    private String outputUri;
-    /**
-     * <p>
-     * A priority for the run.
-     * </p>
-     */
-    private Integer priority;
-    /**
-     * <p>
-     * To ensure that requests don't run multiple times, specify a unique ID for each request.
-     * </p>
-     */
-    private String requestId;
+    private String runId;
     /**
      * <p>
      * A service role for the run.
@@ -63,16 +51,22 @@ public class StartRunRequest extends com.amazonaws.AmazonWebServiceRequest imple
     private String roleArn;
     /**
      * <p>
+     * A name for the run.
+     * </p>
+     */
+    private String name;
+    /**
+     * <p>
      * The run's group ID.
      * </p>
      */
     private String runGroupId;
     /**
      * <p>
-     * The run's ID.
+     * A priority for the run.
      * </p>
      */
-    private String runId;
+    private Integer priority;
     /**
      * <p>
      * A storage capacity for the run in gigabytes.
@@ -81,22 +75,413 @@ public class StartRunRequest extends com.amazonaws.AmazonWebServiceRequest imple
     private Integer storageCapacity;
     /**
      * <p>
+     * An output URI for the run.
+     * </p>
+     */
+    private String outputUri;
+    /**
+     * <p>
+     * A log level for the run.
+     * </p>
+     */
+    private String logLevel;
+    /**
+     * <p>
      * Tags for the run.
      * </p>
      */
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * The run's workflow ID.
+     * To ensure that requests don't run multiple times, specify a unique ID for each request.
      * </p>
      */
-    private String workflowId;
+    private String requestId;
     /**
      * <p>
-     * The run's workflows type.
+     * The retention mode for the run.
      * </p>
      */
-    private String workflowType;
+    private String retentionMode;
+
+    /**
+     * <p>
+     * The run's workflow ID.
+     * </p>
+     * 
+     * @param workflowId
+     *        The run's workflow ID.
+     */
+
+    public void setWorkflowId(String workflowId) {
+        this.workflowId = workflowId;
+    }
+
+    /**
+     * <p>
+     * The run's workflow ID.
+     * </p>
+     * 
+     * @return The run's workflow ID.
+     */
+
+    public String getWorkflowId() {
+        return this.workflowId;
+    }
+
+    /**
+     * <p>
+     * The run's workflow ID.
+     * </p>
+     * 
+     * @param workflowId
+     *        The run's workflow ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartRunRequest withWorkflowId(String workflowId) {
+        setWorkflowId(workflowId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The run's workflow type.
+     * </p>
+     * 
+     * @param workflowType
+     *        The run's workflow type.
+     * @see WorkflowType
+     */
+
+    public void setWorkflowType(String workflowType) {
+        this.workflowType = workflowType;
+    }
+
+    /**
+     * <p>
+     * The run's workflow type.
+     * </p>
+     * 
+     * @return The run's workflow type.
+     * @see WorkflowType
+     */
+
+    public String getWorkflowType() {
+        return this.workflowType;
+    }
+
+    /**
+     * <p>
+     * The run's workflow type.
+     * </p>
+     * 
+     * @param workflowType
+     *        The run's workflow type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WorkflowType
+     */
+
+    public StartRunRequest withWorkflowType(String workflowType) {
+        setWorkflowType(workflowType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The run's workflow type.
+     * </p>
+     * 
+     * @param workflowType
+     *        The run's workflow type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WorkflowType
+     */
+
+    public StartRunRequest withWorkflowType(WorkflowType workflowType) {
+        this.workflowType = workflowType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of a run to duplicate.
+     * </p>
+     * 
+     * @param runId
+     *        The ID of a run to duplicate.
+     */
+
+    public void setRunId(String runId) {
+        this.runId = runId;
+    }
+
+    /**
+     * <p>
+     * The ID of a run to duplicate.
+     * </p>
+     * 
+     * @return The ID of a run to duplicate.
+     */
+
+    public String getRunId() {
+        return this.runId;
+    }
+
+    /**
+     * <p>
+     * The ID of a run to duplicate.
+     * </p>
+     * 
+     * @param runId
+     *        The ID of a run to duplicate.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartRunRequest withRunId(String runId) {
+        setRunId(runId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A service role for the run.
+     * </p>
+     * 
+     * @param roleArn
+     *        A service role for the run.
+     */
+
+    public void setRoleArn(String roleArn) {
+        this.roleArn = roleArn;
+    }
+
+    /**
+     * <p>
+     * A service role for the run.
+     * </p>
+     * 
+     * @return A service role for the run.
+     */
+
+    public String getRoleArn() {
+        return this.roleArn;
+    }
+
+    /**
+     * <p>
+     * A service role for the run.
+     * </p>
+     * 
+     * @param roleArn
+     *        A service role for the run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartRunRequest withRoleArn(String roleArn) {
+        setRoleArn(roleArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A name for the run.
+     * </p>
+     * 
+     * @param name
+     *        A name for the run.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * A name for the run.
+     * </p>
+     * 
+     * @return A name for the run.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * A name for the run.
+     * </p>
+     * 
+     * @param name
+     *        A name for the run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartRunRequest withName(String name) {
+        setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The run's group ID.
+     * </p>
+     * 
+     * @param runGroupId
+     *        The run's group ID.
+     */
+
+    public void setRunGroupId(String runGroupId) {
+        this.runGroupId = runGroupId;
+    }
+
+    /**
+     * <p>
+     * The run's group ID.
+     * </p>
+     * 
+     * @return The run's group ID.
+     */
+
+    public String getRunGroupId() {
+        return this.runGroupId;
+    }
+
+    /**
+     * <p>
+     * The run's group ID.
+     * </p>
+     * 
+     * @param runGroupId
+     *        The run's group ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartRunRequest withRunGroupId(String runGroupId) {
+        setRunGroupId(runGroupId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A priority for the run.
+     * </p>
+     * 
+     * @param priority
+     *        A priority for the run.
+     */
+
+    public void setPriority(Integer priority) {
+        this.priority = priority;
+    }
+
+    /**
+     * <p>
+     * A priority for the run.
+     * </p>
+     * 
+     * @return A priority for the run.
+     */
+
+    public Integer getPriority() {
+        return this.priority;
+    }
+
+    /**
+     * <p>
+     * A priority for the run.
+     * </p>
+     * 
+     * @param priority
+     *        A priority for the run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartRunRequest withPriority(Integer priority) {
+        setPriority(priority);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A storage capacity for the run in gigabytes.
+     * </p>
+     * 
+     * @param storageCapacity
+     *        A storage capacity for the run in gigabytes.
+     */
+
+    public void setStorageCapacity(Integer storageCapacity) {
+        this.storageCapacity = storageCapacity;
+    }
+
+    /**
+     * <p>
+     * A storage capacity for the run in gigabytes.
+     * </p>
+     * 
+     * @return A storage capacity for the run in gigabytes.
+     */
+
+    public Integer getStorageCapacity() {
+        return this.storageCapacity;
+    }
+
+    /**
+     * <p>
+     * A storage capacity for the run in gigabytes.
+     * </p>
+     * 
+     * @param storageCapacity
+     *        A storage capacity for the run in gigabytes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartRunRequest withStorageCapacity(Integer storageCapacity) {
+        setStorageCapacity(storageCapacity);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An output URI for the run.
+     * </p>
+     * 
+     * @param outputUri
+     *        An output URI for the run.
+     */
+
+    public void setOutputUri(String outputUri) {
+        this.outputUri = outputUri;
+    }
+
+    /**
+     * <p>
+     * An output URI for the run.
+     * </p>
+     * 
+     * @return An output URI for the run.
+     */
+
+    public String getOutputUri() {
+        return this.outputUri;
+    }
+
+    /**
+     * <p>
+     * An output URI for the run.
+     * </p>
+     * 
+     * @param outputUri
+     *        An output URI for the run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartRunRequest withOutputUri(String outputUri) {
+        setOutputUri(outputUri);
+        return this;
+    }
 
     /**
      * <p>
@@ -154,326 +539,6 @@ public class StartRunRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     public StartRunRequest withLogLevel(RunLogLevel logLevel) {
         this.logLevel = logLevel.toString();
-        return this;
-    }
-
-    /**
-     * <p>
-     * A name for the run.
-     * </p>
-     * 
-     * @param name
-     *        A name for the run.
-     */
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     * <p>
-     * A name for the run.
-     * </p>
-     * 
-     * @return A name for the run.
-     */
-
-    public String getName() {
-        return this.name;
-    }
-
-    /**
-     * <p>
-     * A name for the run.
-     * </p>
-     * 
-     * @param name
-     *        A name for the run.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public StartRunRequest withName(String name) {
-        setName(name);
-        return this;
-    }
-
-    /**
-     * <p>
-     * An output URI for the run.
-     * </p>
-     * 
-     * @param outputUri
-     *        An output URI for the run.
-     */
-
-    public void setOutputUri(String outputUri) {
-        this.outputUri = outputUri;
-    }
-
-    /**
-     * <p>
-     * An output URI for the run.
-     * </p>
-     * 
-     * @return An output URI for the run.
-     */
-
-    public String getOutputUri() {
-        return this.outputUri;
-    }
-
-    /**
-     * <p>
-     * An output URI for the run.
-     * </p>
-     * 
-     * @param outputUri
-     *        An output URI for the run.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public StartRunRequest withOutputUri(String outputUri) {
-        setOutputUri(outputUri);
-        return this;
-    }
-
-    /**
-     * <p>
-     * A priority for the run.
-     * </p>
-     * 
-     * @param priority
-     *        A priority for the run.
-     */
-
-    public void setPriority(Integer priority) {
-        this.priority = priority;
-    }
-
-    /**
-     * <p>
-     * A priority for the run.
-     * </p>
-     * 
-     * @return A priority for the run.
-     */
-
-    public Integer getPriority() {
-        return this.priority;
-    }
-
-    /**
-     * <p>
-     * A priority for the run.
-     * </p>
-     * 
-     * @param priority
-     *        A priority for the run.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public StartRunRequest withPriority(Integer priority) {
-        setPriority(priority);
-        return this;
-    }
-
-    /**
-     * <p>
-     * To ensure that requests don't run multiple times, specify a unique ID for each request.
-     * </p>
-     * 
-     * @param requestId
-     *        To ensure that requests don't run multiple times, specify a unique ID for each request.
-     */
-
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
-
-    /**
-     * <p>
-     * To ensure that requests don't run multiple times, specify a unique ID for each request.
-     * </p>
-     * 
-     * @return To ensure that requests don't run multiple times, specify a unique ID for each request.
-     */
-
-    public String getRequestId() {
-        return this.requestId;
-    }
-
-    /**
-     * <p>
-     * To ensure that requests don't run multiple times, specify a unique ID for each request.
-     * </p>
-     * 
-     * @param requestId
-     *        To ensure that requests don't run multiple times, specify a unique ID for each request.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public StartRunRequest withRequestId(String requestId) {
-        setRequestId(requestId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * A service role for the run.
-     * </p>
-     * 
-     * @param roleArn
-     *        A service role for the run.
-     */
-
-    public void setRoleArn(String roleArn) {
-        this.roleArn = roleArn;
-    }
-
-    /**
-     * <p>
-     * A service role for the run.
-     * </p>
-     * 
-     * @return A service role for the run.
-     */
-
-    public String getRoleArn() {
-        return this.roleArn;
-    }
-
-    /**
-     * <p>
-     * A service role for the run.
-     * </p>
-     * 
-     * @param roleArn
-     *        A service role for the run.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public StartRunRequest withRoleArn(String roleArn) {
-        setRoleArn(roleArn);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The run's group ID.
-     * </p>
-     * 
-     * @param runGroupId
-     *        The run's group ID.
-     */
-
-    public void setRunGroupId(String runGroupId) {
-        this.runGroupId = runGroupId;
-    }
-
-    /**
-     * <p>
-     * The run's group ID.
-     * </p>
-     * 
-     * @return The run's group ID.
-     */
-
-    public String getRunGroupId() {
-        return this.runGroupId;
-    }
-
-    /**
-     * <p>
-     * The run's group ID.
-     * </p>
-     * 
-     * @param runGroupId
-     *        The run's group ID.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public StartRunRequest withRunGroupId(String runGroupId) {
-        setRunGroupId(runGroupId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The run's ID.
-     * </p>
-     * 
-     * @param runId
-     *        The run's ID.
-     */
-
-    public void setRunId(String runId) {
-        this.runId = runId;
-    }
-
-    /**
-     * <p>
-     * The run's ID.
-     * </p>
-     * 
-     * @return The run's ID.
-     */
-
-    public String getRunId() {
-        return this.runId;
-    }
-
-    /**
-     * <p>
-     * The run's ID.
-     * </p>
-     * 
-     * @param runId
-     *        The run's ID.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public StartRunRequest withRunId(String runId) {
-        setRunId(runId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * A storage capacity for the run in gigabytes.
-     * </p>
-     * 
-     * @param storageCapacity
-     *        A storage capacity for the run in gigabytes.
-     */
-
-    public void setStorageCapacity(Integer storageCapacity) {
-        this.storageCapacity = storageCapacity;
-    }
-
-    /**
-     * <p>
-     * A storage capacity for the run in gigabytes.
-     * </p>
-     * 
-     * @return A storage capacity for the run in gigabytes.
-     */
-
-    public Integer getStorageCapacity() {
-        return this.storageCapacity;
-    }
-
-    /**
-     * <p>
-     * A storage capacity for the run in gigabytes.
-     * </p>
-     * 
-     * @param storageCapacity
-     *        A storage capacity for the run in gigabytes.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public StartRunRequest withStorageCapacity(Integer storageCapacity) {
-        setStorageCapacity(storageCapacity);
         return this;
     }
 
@@ -547,100 +612,100 @@ public class StartRunRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The run's workflow ID.
+     * To ensure that requests don't run multiple times, specify a unique ID for each request.
      * </p>
      * 
-     * @param workflowId
-     *        The run's workflow ID.
+     * @param requestId
+     *        To ensure that requests don't run multiple times, specify a unique ID for each request.
      */
 
-    public void setWorkflowId(String workflowId) {
-        this.workflowId = workflowId;
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
     }
 
     /**
      * <p>
-     * The run's workflow ID.
+     * To ensure that requests don't run multiple times, specify a unique ID for each request.
      * </p>
      * 
-     * @return The run's workflow ID.
+     * @return To ensure that requests don't run multiple times, specify a unique ID for each request.
      */
 
-    public String getWorkflowId() {
-        return this.workflowId;
+    public String getRequestId() {
+        return this.requestId;
     }
 
     /**
      * <p>
-     * The run's workflow ID.
+     * To ensure that requests don't run multiple times, specify a unique ID for each request.
      * </p>
      * 
-     * @param workflowId
-     *        The run's workflow ID.
+     * @param requestId
+     *        To ensure that requests don't run multiple times, specify a unique ID for each request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public StartRunRequest withWorkflowId(String workflowId) {
-        setWorkflowId(workflowId);
+    public StartRunRequest withRequestId(String requestId) {
+        setRequestId(requestId);
         return this;
     }
 
     /**
      * <p>
-     * The run's workflows type.
+     * The retention mode for the run.
      * </p>
      * 
-     * @param workflowType
-     *        The run's workflows type.
-     * @see WorkflowType
+     * @param retentionMode
+     *        The retention mode for the run.
+     * @see RunRetentionMode
      */
 
-    public void setWorkflowType(String workflowType) {
-        this.workflowType = workflowType;
+    public void setRetentionMode(String retentionMode) {
+        this.retentionMode = retentionMode;
     }
 
     /**
      * <p>
-     * The run's workflows type.
+     * The retention mode for the run.
      * </p>
      * 
-     * @return The run's workflows type.
-     * @see WorkflowType
+     * @return The retention mode for the run.
+     * @see RunRetentionMode
      */
 
-    public String getWorkflowType() {
-        return this.workflowType;
+    public String getRetentionMode() {
+        return this.retentionMode;
     }
 
     /**
      * <p>
-     * The run's workflows type.
+     * The retention mode for the run.
      * </p>
      * 
-     * @param workflowType
-     *        The run's workflows type.
+     * @param retentionMode
+     *        The retention mode for the run.
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see WorkflowType
+     * @see RunRetentionMode
      */
 
-    public StartRunRequest withWorkflowType(String workflowType) {
-        setWorkflowType(workflowType);
+    public StartRunRequest withRetentionMode(String retentionMode) {
+        setRetentionMode(retentionMode);
         return this;
     }
 
     /**
      * <p>
-     * The run's workflows type.
+     * The retention mode for the run.
      * </p>
      * 
-     * @param workflowType
-     *        The run's workflows type.
+     * @param retentionMode
+     *        The retention mode for the run.
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see WorkflowType
+     * @see RunRetentionMode
      */
 
-    public StartRunRequest withWorkflowType(WorkflowType workflowType) {
-        this.workflowType = workflowType.toString();
+    public StartRunRequest withRetentionMode(RunRetentionMode retentionMode) {
+        this.retentionMode = retentionMode.toString();
         return this;
     }
 
@@ -656,30 +721,32 @@ public class StartRunRequest extends com.amazonaws.AmazonWebServiceRequest imple
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getLogLevel() != null)
-            sb.append("LogLevel: ").append(getLogLevel()).append(",");
-        if (getName() != null)
-            sb.append("Name: ").append(getName()).append(",");
-        if (getOutputUri() != null)
-            sb.append("OutputUri: ").append(getOutputUri()).append(",");
-        if (getPriority() != null)
-            sb.append("Priority: ").append(getPriority()).append(",");
-        if (getRequestId() != null)
-            sb.append("RequestId: ").append(getRequestId()).append(",");
-        if (getRoleArn() != null)
-            sb.append("RoleArn: ").append(getRoleArn()).append(",");
-        if (getRunGroupId() != null)
-            sb.append("RunGroupId: ").append(getRunGroupId()).append(",");
-        if (getRunId() != null)
-            sb.append("RunId: ").append(getRunId()).append(",");
-        if (getStorageCapacity() != null)
-            sb.append("StorageCapacity: ").append(getStorageCapacity()).append(",");
-        if (getTags() != null)
-            sb.append("Tags: ").append(getTags()).append(",");
         if (getWorkflowId() != null)
             sb.append("WorkflowId: ").append(getWorkflowId()).append(",");
         if (getWorkflowType() != null)
-            sb.append("WorkflowType: ").append(getWorkflowType());
+            sb.append("WorkflowType: ").append(getWorkflowType()).append(",");
+        if (getRunId() != null)
+            sb.append("RunId: ").append(getRunId()).append(",");
+        if (getRoleArn() != null)
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
+        if (getRunGroupId() != null)
+            sb.append("RunGroupId: ").append(getRunGroupId()).append(",");
+        if (getPriority() != null)
+            sb.append("Priority: ").append(getPriority()).append(",");
+        if (getStorageCapacity() != null)
+            sb.append("StorageCapacity: ").append(getStorageCapacity()).append(",");
+        if (getOutputUri() != null)
+            sb.append("OutputUri: ").append(getOutputUri()).append(",");
+        if (getLogLevel() != null)
+            sb.append("LogLevel: ").append(getLogLevel()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getRequestId() != null)
+            sb.append("RequestId: ").append(getRequestId()).append(",");
+        if (getRetentionMode() != null)
+            sb.append("RetentionMode: ").append(getRetentionMode());
         sb.append("}");
         return sb.toString();
     }
@@ -694,46 +761,6 @@ public class StartRunRequest extends com.amazonaws.AmazonWebServiceRequest imple
         if (obj instanceof StartRunRequest == false)
             return false;
         StartRunRequest other = (StartRunRequest) obj;
-        if (other.getLogLevel() == null ^ this.getLogLevel() == null)
-            return false;
-        if (other.getLogLevel() != null && other.getLogLevel().equals(this.getLogLevel()) == false)
-            return false;
-        if (other.getName() == null ^ this.getName() == null)
-            return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false)
-            return false;
-        if (other.getOutputUri() == null ^ this.getOutputUri() == null)
-            return false;
-        if (other.getOutputUri() != null && other.getOutputUri().equals(this.getOutputUri()) == false)
-            return false;
-        if (other.getPriority() == null ^ this.getPriority() == null)
-            return false;
-        if (other.getPriority() != null && other.getPriority().equals(this.getPriority()) == false)
-            return false;
-        if (other.getRequestId() == null ^ this.getRequestId() == null)
-            return false;
-        if (other.getRequestId() != null && other.getRequestId().equals(this.getRequestId()) == false)
-            return false;
-        if (other.getRoleArn() == null ^ this.getRoleArn() == null)
-            return false;
-        if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
-            return false;
-        if (other.getRunGroupId() == null ^ this.getRunGroupId() == null)
-            return false;
-        if (other.getRunGroupId() != null && other.getRunGroupId().equals(this.getRunGroupId()) == false)
-            return false;
-        if (other.getRunId() == null ^ this.getRunId() == null)
-            return false;
-        if (other.getRunId() != null && other.getRunId().equals(this.getRunId()) == false)
-            return false;
-        if (other.getStorageCapacity() == null ^ this.getStorageCapacity() == null)
-            return false;
-        if (other.getStorageCapacity() != null && other.getStorageCapacity().equals(this.getStorageCapacity()) == false)
-            return false;
-        if (other.getTags() == null ^ this.getTags() == null)
-            return false;
-        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
-            return false;
         if (other.getWorkflowId() == null ^ this.getWorkflowId() == null)
             return false;
         if (other.getWorkflowId() != null && other.getWorkflowId().equals(this.getWorkflowId()) == false)
@@ -741,6 +768,50 @@ public class StartRunRequest extends com.amazonaws.AmazonWebServiceRequest imple
         if (other.getWorkflowType() == null ^ this.getWorkflowType() == null)
             return false;
         if (other.getWorkflowType() != null && other.getWorkflowType().equals(this.getWorkflowType()) == false)
+            return false;
+        if (other.getRunId() == null ^ this.getRunId() == null)
+            return false;
+        if (other.getRunId() != null && other.getRunId().equals(this.getRunId()) == false)
+            return false;
+        if (other.getRoleArn() == null ^ this.getRoleArn() == null)
+            return false;
+        if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
+            return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getRunGroupId() == null ^ this.getRunGroupId() == null)
+            return false;
+        if (other.getRunGroupId() != null && other.getRunGroupId().equals(this.getRunGroupId()) == false)
+            return false;
+        if (other.getPriority() == null ^ this.getPriority() == null)
+            return false;
+        if (other.getPriority() != null && other.getPriority().equals(this.getPriority()) == false)
+            return false;
+        if (other.getStorageCapacity() == null ^ this.getStorageCapacity() == null)
+            return false;
+        if (other.getStorageCapacity() != null && other.getStorageCapacity().equals(this.getStorageCapacity()) == false)
+            return false;
+        if (other.getOutputUri() == null ^ this.getOutputUri() == null)
+            return false;
+        if (other.getOutputUri() != null && other.getOutputUri().equals(this.getOutputUri()) == false)
+            return false;
+        if (other.getLogLevel() == null ^ this.getLogLevel() == null)
+            return false;
+        if (other.getLogLevel() != null && other.getLogLevel().equals(this.getLogLevel()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
+        if (other.getRequestId() == null ^ this.getRequestId() == null)
+            return false;
+        if (other.getRequestId() != null && other.getRequestId().equals(this.getRequestId()) == false)
+            return false;
+        if (other.getRetentionMode() == null ^ this.getRetentionMode() == null)
+            return false;
+        if (other.getRetentionMode() != null && other.getRetentionMode().equals(this.getRetentionMode()) == false)
             return false;
         return true;
     }
@@ -750,18 +821,19 @@ public class StartRunRequest extends com.amazonaws.AmazonWebServiceRequest imple
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getLogLevel() == null) ? 0 : getLogLevel().hashCode());
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode + ((getOutputUri() == null) ? 0 : getOutputUri().hashCode());
-        hashCode = prime * hashCode + ((getPriority() == null) ? 0 : getPriority().hashCode());
-        hashCode = prime * hashCode + ((getRequestId() == null) ? 0 : getRequestId().hashCode());
-        hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
-        hashCode = prime * hashCode + ((getRunGroupId() == null) ? 0 : getRunGroupId().hashCode());
-        hashCode = prime * hashCode + ((getRunId() == null) ? 0 : getRunId().hashCode());
-        hashCode = prime * hashCode + ((getStorageCapacity() == null) ? 0 : getStorageCapacity().hashCode());
-        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getWorkflowId() == null) ? 0 : getWorkflowId().hashCode());
         hashCode = prime * hashCode + ((getWorkflowType() == null) ? 0 : getWorkflowType().hashCode());
+        hashCode = prime * hashCode + ((getRunId() == null) ? 0 : getRunId().hashCode());
+        hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getRunGroupId() == null) ? 0 : getRunGroupId().hashCode());
+        hashCode = prime * hashCode + ((getPriority() == null) ? 0 : getPriority().hashCode());
+        hashCode = prime * hashCode + ((getStorageCapacity() == null) ? 0 : getStorageCapacity().hashCode());
+        hashCode = prime * hashCode + ((getOutputUri() == null) ? 0 : getOutputUri().hashCode());
+        hashCode = prime * hashCode + ((getLogLevel() == null) ? 0 : getLogLevel().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getRequestId() == null) ? 0 : getRequestId().hashCode());
+        hashCode = prime * hashCode + ((getRetentionMode() == null) ? 0 : getRetentionMode().hashCode());
         return hashCode;
     }
 

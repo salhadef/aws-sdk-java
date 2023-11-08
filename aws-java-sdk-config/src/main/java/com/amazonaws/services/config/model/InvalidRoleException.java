@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You have provided a null or empty role ARN.
+ * You have provided a null or empty Amazon Resource Name (ARN) for the IAM role assumed by Config and used by the
+ * configuration recorder.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

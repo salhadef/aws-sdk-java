@@ -48,49 +48,49 @@ public class VariantStoreItemJsonUnmarshaller implements Unmarshaller<VariantSto
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("creationTime", targetDepth)) {
-                    context.nextToken();
-                    variantStoreItem.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
-                }
-                if (context.testExpression("description", targetDepth)) {
-                    context.nextToken();
-                    variantStoreItem.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
                     variantStoreItem.setId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("name", targetDepth)) {
-                    context.nextToken();
-                    variantStoreItem.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("reference", targetDepth)) {
                     context.nextToken();
                     variantStoreItem.setReference(ReferenceItemJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context.testExpression("sseConfig", targetDepth)) {
-                    context.nextToken();
-                    variantStoreItem.setSseConfig(SseConfigJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     variantStoreItem.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("statusMessage", targetDepth)) {
-                    context.nextToken();
-                    variantStoreItem.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("storeArn", targetDepth)) {
                     context.nextToken();
                     variantStoreItem.setStoreArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("storeSizeBytes", targetDepth)) {
+                if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
-                    variantStoreItem.setStoreSizeBytes(context.getUnmarshaller(Long.class).unmarshall(context));
+                    variantStoreItem.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("description", targetDepth)) {
+                    context.nextToken();
+                    variantStoreItem.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("sseConfig", targetDepth)) {
+                    context.nextToken();
+                    variantStoreItem.setSseConfig(SseConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("creationTime", targetDepth)) {
+                    context.nextToken();
+                    variantStoreItem.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("updateTime", targetDepth)) {
                     context.nextToken();
                     variantStoreItem.setUpdateTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (context.testExpression("statusMessage", targetDepth)) {
+                    context.nextToken();
+                    variantStoreItem.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("storeSizeBytes", targetDepth)) {
+                    context.nextToken();
+                    variantStoreItem.setStoreSizeBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

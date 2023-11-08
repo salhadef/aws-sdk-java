@@ -78,8 +78,12 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     private String name;
     /**
      * <p>
-     * Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random
-     * system-generated value will be assigned.
+     * Configures the maintenance window that you want for the runtime environment. The maintenance window must have the
+     * format <code>ddd:hh24:mi-ddd:hh24:mi</code> and must be less than 24 hours. The following two examples are valid
+     * maintenance windows: <code>sun:23:45-mon:00:15</code> or <code>sat:01:00-sat:03:00</code>.
+     * </p>
+     * <p>
+     * If you do not provide a value, a random system-generated value will be assigned.
      * </p>
      */
     private String preferredMaintenanceWindow;
@@ -473,13 +477,21 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random
-     * system-generated value will be assigned.
+     * Configures the maintenance window that you want for the runtime environment. The maintenance window must have the
+     * format <code>ddd:hh24:mi-ddd:hh24:mi</code> and must be less than 24 hours. The following two examples are valid
+     * maintenance windows: <code>sun:23:45-mon:00:15</code> or <code>sat:01:00-sat:03:00</code>.
+     * </p>
+     * <p>
+     * If you do not provide a value, a random system-generated value will be assigned.
      * </p>
      * 
      * @param preferredMaintenanceWindow
-     *        Configures the maintenance window you want for the runtime environment. If you do not provide a value, a
-     *        random system-generated value will be assigned.
+     *        Configures the maintenance window that you want for the runtime environment. The maintenance window must
+     *        have the format <code>ddd:hh24:mi-ddd:hh24:mi</code> and must be less than 24 hours. The following two
+     *        examples are valid maintenance windows: <code>sun:23:45-mon:00:15</code> or
+     *        <code>sat:01:00-sat:03:00</code>. </p>
+     *        <p>
+     *        If you do not provide a value, a random system-generated value will be assigned.
      */
 
     public void setPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
@@ -488,12 +500,20 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random
-     * system-generated value will be assigned.
+     * Configures the maintenance window that you want for the runtime environment. The maintenance window must have the
+     * format <code>ddd:hh24:mi-ddd:hh24:mi</code> and must be less than 24 hours. The following two examples are valid
+     * maintenance windows: <code>sun:23:45-mon:00:15</code> or <code>sat:01:00-sat:03:00</code>.
+     * </p>
+     * <p>
+     * If you do not provide a value, a random system-generated value will be assigned.
      * </p>
      * 
-     * @return Configures the maintenance window you want for the runtime environment. If you do not provide a value, a
-     *         random system-generated value will be assigned.
+     * @return Configures the maintenance window that you want for the runtime environment. The maintenance window must
+     *         have the format <code>ddd:hh24:mi-ddd:hh24:mi</code> and must be less than 24 hours. The following two
+     *         examples are valid maintenance windows: <code>sun:23:45-mon:00:15</code> or
+     *         <code>sat:01:00-sat:03:00</code>. </p>
+     *         <p>
+     *         If you do not provide a value, a random system-generated value will be assigned.
      */
 
     public String getPreferredMaintenanceWindow() {
@@ -502,13 +522,21 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random
-     * system-generated value will be assigned.
+     * Configures the maintenance window that you want for the runtime environment. The maintenance window must have the
+     * format <code>ddd:hh24:mi-ddd:hh24:mi</code> and must be less than 24 hours. The following two examples are valid
+     * maintenance windows: <code>sun:23:45-mon:00:15</code> or <code>sat:01:00-sat:03:00</code>.
+     * </p>
+     * <p>
+     * If you do not provide a value, a random system-generated value will be assigned.
      * </p>
      * 
      * @param preferredMaintenanceWindow
-     *        Configures the maintenance window you want for the runtime environment. If you do not provide a value, a
-     *        random system-generated value will be assigned.
+     *        Configures the maintenance window that you want for the runtime environment. The maintenance window must
+     *        have the format <code>ddd:hh24:mi-ddd:hh24:mi</code> and must be less than 24 hours. The following two
+     *        examples are valid maintenance windows: <code>sun:23:45-mon:00:15</code> or
+     *        <code>sat:01:00-sat:03:00</code>. </p>
+     *        <p>
+     *        If you do not provide a value, a random system-generated value will be assigned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

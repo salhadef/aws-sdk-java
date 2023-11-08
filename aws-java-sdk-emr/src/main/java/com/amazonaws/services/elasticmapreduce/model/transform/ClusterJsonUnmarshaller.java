@@ -180,6 +180,14 @@ public class ClusterJsonUnmarshaller implements Unmarshaller<Cluster, JsonUnmars
                     context.nextToken();
                     cluster.setOSReleaseLabel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("EbsRootVolumeIops", targetDepth)) {
+                    context.nextToken();
+                    cluster.setEbsRootVolumeIops(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("EbsRootVolumeThroughput", targetDepth)) {
+                    context.nextToken();
+                    cluster.setEbsRootVolumeThroughput(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

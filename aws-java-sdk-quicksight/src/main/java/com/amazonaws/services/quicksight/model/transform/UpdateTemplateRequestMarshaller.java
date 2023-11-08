@@ -39,6 +39,8 @@ public class UpdateTemplateRequestMarshaller {
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<StructuredPojo> DEFINITION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Definition").build();
+    private static final MarshallingInfo<StructuredPojo> VALIDATIONSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ValidationStrategy").build();
 
     private static final UpdateTemplateRequestMarshaller instance = new UpdateTemplateRequestMarshaller();
 
@@ -62,6 +64,7 @@ public class UpdateTemplateRequestMarshaller {
             protocolMarshaller.marshall(updateTemplateRequest.getVersionDescription(), VERSIONDESCRIPTION_BINDING);
             protocolMarshaller.marshall(updateTemplateRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(updateTemplateRequest.getDefinition(), DEFINITION_BINDING);
+            protocolMarshaller.marshall(updateTemplateRequest.getValidationStrategy(), VALIDATIONSTRATEGY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

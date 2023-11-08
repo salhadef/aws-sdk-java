@@ -52,6 +52,18 @@ public class RecoveryPointMemberJsonUnmarshaller implements Unmarshaller<Recover
                     context.nextToken();
                     recoveryPointMember.setRecoveryPointArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ResourceArn", targetDepth)) {
+                    context.nextToken();
+                    recoveryPointMember.setResourceArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ResourceType", targetDepth)) {
+                    context.nextToken();
+                    recoveryPointMember.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("BackupVaultName", targetDepth)) {
+                    context.nextToken();
+                    recoveryPointMember.setBackupVaultName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

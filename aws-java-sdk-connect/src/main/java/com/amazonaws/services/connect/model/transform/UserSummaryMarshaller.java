@@ -33,6 +33,10 @@ public class UserSummaryMarshaller {
             .marshallLocationName("Arn").build();
     private static final MarshallingInfo<String> USERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Username").build();
+    private static final MarshallingInfo<java.util.Date> LASTMODIFIEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> LASTMODIFIEDREGION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedRegion").build();
 
     private static final UserSummaryMarshaller instance = new UserSummaryMarshaller();
 
@@ -53,6 +57,8 @@ public class UserSummaryMarshaller {
             protocolMarshaller.marshall(userSummary.getId(), ID_BINDING);
             protocolMarshaller.marshall(userSummary.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(userSummary.getUsername(), USERNAME_BINDING);
+            protocolMarshaller.marshall(userSummary.getLastModifiedTime(), LASTMODIFIEDTIME_BINDING);
+            protocolMarshaller.marshall(userSummary.getLastModifiedRegion(), LASTMODIFIEDREGION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

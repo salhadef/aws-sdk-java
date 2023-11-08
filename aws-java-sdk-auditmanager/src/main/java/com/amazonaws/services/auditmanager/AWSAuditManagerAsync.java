@@ -260,19 +260,22 @@ public interface AWSAuditManagerAsync extends AWSAuditManager {
 
     /**
      * <p>
-     * Uploads one or more pieces of evidence to a control in an Audit Manager assessment. You can upload manual
-     * evidence from any Amazon Simple Storage Service (Amazon S3) bucket by specifying the S3 URI of the evidence.
+     * Adds one or more pieces of evidence to a control in an Audit Manager assessment.
      * </p>
      * <p>
-     * You must upload manual evidence to your S3 bucket before you can upload it to your assessment. For instructions,
-     * see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a> and <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a> in the <i>Amazon Simple
-     * Storage Service API Reference.</i>
+     * You can import manual evidence from any S3 bucket by specifying the S3 URI of the object. You can also upload a
+     * file from your browser, or enter plain text in response to a risk assessment question.
      * </p>
      * <p>
      * The following restrictions apply to this action:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>manualEvidence</code> can be only one of the following: <code>evidenceFileName</code>,
+     * <code>s3ResourcePath</code>, or <code>textResponse</code>
+     * </p>
+     * </li>
      * <li>
      * <p>
      * Maximum size of an individual evidence file: 100 MB
@@ -310,19 +313,22 @@ public interface AWSAuditManagerAsync extends AWSAuditManager {
 
     /**
      * <p>
-     * Uploads one or more pieces of evidence to a control in an Audit Manager assessment. You can upload manual
-     * evidence from any Amazon Simple Storage Service (Amazon S3) bucket by specifying the S3 URI of the evidence.
+     * Adds one or more pieces of evidence to a control in an Audit Manager assessment.
      * </p>
      * <p>
-     * You must upload manual evidence to your S3 bucket before you can upload it to your assessment. For instructions,
-     * see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a> and <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a> in the <i>Amazon Simple
-     * Storage Service API Reference.</i>
+     * You can import manual evidence from any S3 bucket by specifying the S3 URI of the object. You can also upload a
+     * file from your browser, or enter plain text in response to a risk assessment question.
      * </p>
      * <p>
      * The following restrictions apply to this action:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>manualEvidence</code> can be only one of the following: <code>evidenceFileName</code>,
+     * <code>s3ResourcePath</code>, or <code>textResponse</code>
+     * </p>
+     * </li>
      * <li>
      * <p>
      * Maximum size of an individual evidence file: 100 MB
@@ -687,6 +693,13 @@ public interface AWSAuditManagerAsync extends AWSAuditManager {
      * <p>
      * Deletes a custom control in Audit Manager.
      * </p>
+     * <important>
+     * <p>
+     * When you invoke this operation, the custom control is deleted from any frameworks or assessments that it’s
+     * currently part of. As a result, Audit Manager will stop collecting evidence for that custom control in all of
+     * your assessments. This includes assessments that you previously created before you deleted the custom control.
+     * </p>
+     * </important>
      * 
      * @param deleteControlRequest
      * @return A Java Future containing the result of the DeleteControl operation returned by the service.
@@ -700,6 +713,13 @@ public interface AWSAuditManagerAsync extends AWSAuditManager {
      * <p>
      * Deletes a custom control in Audit Manager.
      * </p>
+     * <important>
+     * <p>
+     * When you invoke this operation, the custom control is deleted from any frameworks or assessments that it’s
+     * currently part of. As a result, Audit Manager will stop collecting evidence for that custom control in all of
+     * your assessments. This includes assessments that you previously created before you deleted the custom control.
+     * </p>
+     * </important>
      * 
      * @param deleteControlRequest
      * @param asyncHandler
@@ -1009,7 +1029,7 @@ public interface AWSAuditManagerAsync extends AWSAuditManager {
 
     /**
      * <p>
-     * Returns the registration status of an account in Audit Manager.
+     * Gets the registration status of an account in Audit Manager.
      * </p>
      * 
      * @param getAccountStatusRequest
@@ -1022,7 +1042,7 @@ public interface AWSAuditManagerAsync extends AWSAuditManager {
 
     /**
      * <p>
-     * Returns the registration status of an account in Audit Manager.
+     * Gets the registration status of an account in Audit Manager.
      * </p>
      * 
      * @param getAccountStatusRequest
@@ -1040,7 +1060,7 @@ public interface AWSAuditManagerAsync extends AWSAuditManager {
 
     /**
      * <p>
-     * Returns an assessment from Audit Manager.
+     * Gets information about a specified assessment.
      * </p>
      * 
      * @param getAssessmentRequest
@@ -1053,7 +1073,7 @@ public interface AWSAuditManagerAsync extends AWSAuditManager {
 
     /**
      * <p>
-     * Returns an assessment from Audit Manager.
+     * Gets information about a specified assessment.
      * </p>
      * 
      * @param getAssessmentRequest
@@ -1071,7 +1091,7 @@ public interface AWSAuditManagerAsync extends AWSAuditManager {
 
     /**
      * <p>
-     * Returns a framework from Audit Manager.
+     * Gets information about a specified framework.
      * </p>
      * 
      * @param getAssessmentFrameworkRequest
@@ -1084,7 +1104,7 @@ public interface AWSAuditManagerAsync extends AWSAuditManager {
 
     /**
      * <p>
-     * Returns a framework from Audit Manager.
+     * Gets information about a specified framework.
      * </p>
      * 
      * @param getAssessmentFrameworkRequest
@@ -1102,7 +1122,7 @@ public interface AWSAuditManagerAsync extends AWSAuditManager {
 
     /**
      * <p>
-     * Returns the URL of an assessment report in Audit Manager.
+     * Gets the URL of an assessment report in Audit Manager.
      * </p>
      * 
      * @param getAssessmentReportUrlRequest
@@ -1115,7 +1135,7 @@ public interface AWSAuditManagerAsync extends AWSAuditManager {
 
     /**
      * <p>
-     * Returns the URL of an assessment report in Audit Manager.
+     * Gets the URL of an assessment report in Audit Manager.
      * </p>
      * 
      * @param getAssessmentReportUrlRequest
@@ -1133,7 +1153,7 @@ public interface AWSAuditManagerAsync extends AWSAuditManager {
 
     /**
      * <p>
-     * Returns a list of changelogs from Audit Manager.
+     * Gets a list of changelogs from Audit Manager.
      * </p>
      * 
      * @param getChangeLogsRequest
@@ -1146,7 +1166,7 @@ public interface AWSAuditManagerAsync extends AWSAuditManager {
 
     /**
      * <p>
-     * Returns a list of changelogs from Audit Manager.
+     * Gets a list of changelogs from Audit Manager.
      * </p>
      * 
      * @param getChangeLogsRequest
@@ -1164,7 +1184,7 @@ public interface AWSAuditManagerAsync extends AWSAuditManager {
 
     /**
      * <p>
-     * Returns a control from Audit Manager.
+     * Gets information about a specified control.
      * </p>
      * 
      * @param getControlRequest
@@ -1177,7 +1197,7 @@ public interface AWSAuditManagerAsync extends AWSAuditManager {
 
     /**
      * <p>
-     * Returns a control from Audit Manager.
+     * Gets information about a specified control.
      * </p>
      * 
      * @param getControlRequest
@@ -1195,7 +1215,7 @@ public interface AWSAuditManagerAsync extends AWSAuditManager {
 
     /**
      * <p>
-     * Returns a list of delegations from an audit owner to a delegate.
+     * Gets a list of delegations from an audit owner to a delegate.
      * </p>
      * 
      * @param getDelegationsRequest
@@ -1208,7 +1228,7 @@ public interface AWSAuditManagerAsync extends AWSAuditManager {
 
     /**
      * <p>
-     * Returns a list of delegations from an audit owner to a delegate.
+     * Gets a list of delegations from an audit owner to a delegate.
      * </p>
      * 
      * @param getDelegationsRequest
@@ -1226,7 +1246,7 @@ public interface AWSAuditManagerAsync extends AWSAuditManager {
 
     /**
      * <p>
-     * Returns evidence from Audit Manager.
+     * Gets information about a specified evidence item.
      * </p>
      * 
      * @param getEvidenceRequest
@@ -1239,7 +1259,7 @@ public interface AWSAuditManagerAsync extends AWSAuditManager {
 
     /**
      * <p>
-     * Returns evidence from Audit Manager.
+     * Gets information about a specified evidence item.
      * </p>
      * 
      * @param getEvidenceRequest
@@ -1257,7 +1277,7 @@ public interface AWSAuditManagerAsync extends AWSAuditManager {
 
     /**
      * <p>
-     * Returns all evidence from a specified evidence folder in Audit Manager.
+     * Gets all evidence from a specified evidence folder in Audit Manager.
      * </p>
      * 
      * @param getEvidenceByEvidenceFolderRequest
@@ -1271,7 +1291,7 @@ public interface AWSAuditManagerAsync extends AWSAuditManager {
 
     /**
      * <p>
-     * Returns all evidence from a specified evidence folder in Audit Manager.
+     * Gets all evidence from a specified evidence folder in Audit Manager.
      * </p>
      * 
      * @param getEvidenceByEvidenceFolderRequest
@@ -1290,7 +1310,98 @@ public interface AWSAuditManagerAsync extends AWSAuditManager {
 
     /**
      * <p>
-     * Returns an evidence folder from the specified assessment in Audit Manager.
+     * Creates a presigned Amazon S3 URL that can be used to upload a file as manual evidence. For instructions on how
+     * to use this operation, see <a href=
+     * "https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#how-to-upload-manual-evidence-files"
+     * >Upload a file from your browser </a> in the <i>Audit Manager User Guide</i>.
+     * </p>
+     * <p>
+     * The following restrictions apply to this operation:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum size of an individual evidence file: 100 MB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Number of daily manual evidence uploads per control: 100
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Supported file formats: See <a href=
+     * "https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files"
+     * >Supported file types for manual evidence</a> in the <i>Audit Manager User Guide</i>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about Audit Manager service restrictions, see <a
+     * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html">Quotas and restrictions for
+     * Audit Manager</a>.
+     * </p>
+     * 
+     * @param getEvidenceFileUploadUrlRequest
+     * @return A Java Future containing the result of the GetEvidenceFileUploadUrl operation returned by the service.
+     * @sample AWSAuditManagerAsync.GetEvidenceFileUploadUrl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetEvidenceFileUploadUrl"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetEvidenceFileUploadUrlResult> getEvidenceFileUploadUrlAsync(GetEvidenceFileUploadUrlRequest getEvidenceFileUploadUrlRequest);
+
+    /**
+     * <p>
+     * Creates a presigned Amazon S3 URL that can be used to upload a file as manual evidence. For instructions on how
+     * to use this operation, see <a href=
+     * "https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#how-to-upload-manual-evidence-files"
+     * >Upload a file from your browser </a> in the <i>Audit Manager User Guide</i>.
+     * </p>
+     * <p>
+     * The following restrictions apply to this operation:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum size of an individual evidence file: 100 MB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Number of daily manual evidence uploads per control: 100
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Supported file formats: See <a href=
+     * "https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files"
+     * >Supported file types for manual evidence</a> in the <i>Audit Manager User Guide</i>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about Audit Manager service restrictions, see <a
+     * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html">Quotas and restrictions for
+     * Audit Manager</a>.
+     * </p>
+     * 
+     * @param getEvidenceFileUploadUrlRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetEvidenceFileUploadUrl operation returned by the service.
+     * @sample AWSAuditManagerAsyncHandler.GetEvidenceFileUploadUrl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetEvidenceFileUploadUrl"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetEvidenceFileUploadUrlResult> getEvidenceFileUploadUrlAsync(GetEvidenceFileUploadUrlRequest getEvidenceFileUploadUrlRequest,
+            com.amazonaws.handlers.AsyncHandler<GetEvidenceFileUploadUrlRequest, GetEvidenceFileUploadUrlResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets an evidence folder from a specified assessment in Audit Manager.
      * </p>
      * 
      * @param getEvidenceFolderRequest
@@ -1303,7 +1414,7 @@ public interface AWSAuditManagerAsync extends AWSAuditManager {
 
     /**
      * <p>
-     * Returns an evidence folder from the specified assessment in Audit Manager.
+     * Gets an evidence folder from a specified assessment in Audit Manager.
      * </p>
      * 
      * @param getEvidenceFolderRequest
@@ -1321,7 +1432,7 @@ public interface AWSAuditManagerAsync extends AWSAuditManager {
 
     /**
      * <p>
-     * Returns the evidence folders from a specified assessment in Audit Manager.
+     * Gets the evidence folders from a specified assessment in Audit Manager.
      * </p>
      * 
      * @param getEvidenceFoldersByAssessmentRequest
@@ -1336,7 +1447,7 @@ public interface AWSAuditManagerAsync extends AWSAuditManager {
 
     /**
      * <p>
-     * Returns the evidence folders from a specified assessment in Audit Manager.
+     * Gets the evidence folders from a specified assessment in Audit Manager.
      * </p>
      * 
      * @param getEvidenceFoldersByAssessmentRequest
@@ -1356,7 +1467,7 @@ public interface AWSAuditManagerAsync extends AWSAuditManager {
 
     /**
      * <p>
-     * Returns a list of evidence folders that are associated with a specified control in an Audit Manager assessment.
+     * Gets a list of evidence folders that are associated with a specified control in an Audit Manager assessment.
      * </p>
      * 
      * @param getEvidenceFoldersByAssessmentControlRequest
@@ -1372,7 +1483,7 @@ public interface AWSAuditManagerAsync extends AWSAuditManager {
 
     /**
      * <p>
-     * Returns a list of evidence folders that are associated with a specified control in an Audit Manager assessment.
+     * Gets a list of evidence folders that are associated with a specified control in an Audit Manager assessment.
      * </p>
      * 
      * @param getEvidenceFoldersByAssessmentControlRequest
@@ -1455,7 +1566,7 @@ public interface AWSAuditManagerAsync extends AWSAuditManager {
 
     /**
      * <p>
-     * Returns the name of the delegated Amazon Web Services administrator account for the organization.
+     * Gets the name of the delegated Amazon Web Services administrator account for a specified organization.
      * </p>
      * 
      * @param getOrganizationAdminAccountRequest
@@ -1469,7 +1580,7 @@ public interface AWSAuditManagerAsync extends AWSAuditManager {
 
     /**
      * <p>
-     * Returns the name of the delegated Amazon Web Services administrator account for the organization.
+     * Gets the name of the delegated Amazon Web Services administrator account for a specified organization.
      * </p>
      * 
      * @param getOrganizationAdminAccountRequest
@@ -1488,7 +1599,7 @@ public interface AWSAuditManagerAsync extends AWSAuditManager {
 
     /**
      * <p>
-     * Returns a list of all of the Amazon Web Services that you can choose to include in your assessment. When you <a
+     * Gets a list of all of the Amazon Web Services that you can choose to include in your assessment. When you <a
      * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_CreateAssessment.html">create an
      * assessment</a>, specify which of these services you want to include to narrow the assessment's <a
      * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_Scope.html">scope</a>.
@@ -1504,7 +1615,7 @@ public interface AWSAuditManagerAsync extends AWSAuditManager {
 
     /**
      * <p>
-     * Returns a list of all of the Amazon Web Services that you can choose to include in your assessment. When you <a
+     * Gets a list of all of the Amazon Web Services that you can choose to include in your assessment. When you <a
      * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_CreateAssessment.html">create an
      * assessment</a>, specify which of these services you want to include to narrow the assessment's <a
      * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_Scope.html">scope</a>.
@@ -1525,7 +1636,7 @@ public interface AWSAuditManagerAsync extends AWSAuditManager {
 
     /**
      * <p>
-     * Returns the settings for the specified Amazon Web Services account.
+     * Gets the settings for a specified Amazon Web Services account.
      * </p>
      * 
      * @param getSettingsRequest
@@ -1538,7 +1649,7 @@ public interface AWSAuditManagerAsync extends AWSAuditManager {
 
     /**
      * <p>
-     * Returns the settings for the specified Amazon Web Services account.
+     * Gets the settings for a specified Amazon Web Services account.
      * </p>
      * 
      * @param getSettingsRequest

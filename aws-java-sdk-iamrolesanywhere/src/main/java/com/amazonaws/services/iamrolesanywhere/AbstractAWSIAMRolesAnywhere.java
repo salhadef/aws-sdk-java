@@ -133,6 +133,16 @@ public class AbstractAWSIAMRolesAnywhere implements AWSIAMRolesAnywhere {
     }
 
     @Override
+    public PutNotificationSettingsResult putNotificationSettings(PutNotificationSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ResetNotificationSettingsResult resetNotificationSettings(ResetNotificationSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public TagResourceResult tagResource(TagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You are already running the maximum number of concurrent queries. Wait a minute for some queries to finish, and then
- * run the query again.
+ * You are already running the maximum number of concurrent queries. The maximum number of concurrent queries is 10.
+ * Wait a minute for some queries to finish, and then run the query again.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

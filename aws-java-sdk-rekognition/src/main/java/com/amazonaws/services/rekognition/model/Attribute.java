@@ -21,7 +21,19 @@ import javax.annotation.Generated;
 public enum Attribute {
 
     DEFAULT("DEFAULT"),
-    ALL("ALL");
+    ALL("ALL"),
+    AGE_RANGE("AGE_RANGE"),
+    BEARD("BEARD"),
+    EMOTIONS("EMOTIONS"),
+    EYE_DIRECTION("EYE_DIRECTION"),
+    EYEGLASSES("EYEGLASSES"),
+    EYES_OPEN("EYES_OPEN"),
+    GENDER("GENDER"),
+    MOUTH_OPEN("MOUTH_OPEN"),
+    MUSTACHE("MUSTACHE"),
+    FACE_OCCLUDED("FACE_OCCLUDED"),
+    SMILE("SMILE"),
+    SUNGLASSES("SUNGLASSES");
 
     private String value;
 

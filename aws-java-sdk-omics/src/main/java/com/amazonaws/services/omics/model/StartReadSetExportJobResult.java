@@ -25,18 +25,6 @@ public class StartReadSetExportJobResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * When the job was created.
-     * </p>
-     */
-    private java.util.Date creationTime;
-    /**
-     * <p>
-     * The job's output location.
-     * </p>
-     */
-    private String destination;
-    /**
-     * <p>
      * The job's ID.
      * </p>
      */
@@ -49,90 +37,22 @@ public class StartReadSetExportJobResult extends com.amazonaws.AmazonWebServiceR
     private String sequenceStoreId;
     /**
      * <p>
+     * The job's output location.
+     * </p>
+     */
+    private String destination;
+    /**
+     * <p>
      * The job's status.
      * </p>
      */
     private String status;
-
     /**
      * <p>
      * When the job was created.
      * </p>
-     * 
-     * @param creationTime
-     *        When the job was created.
      */
-
-    public void setCreationTime(java.util.Date creationTime) {
-        this.creationTime = creationTime;
-    }
-
-    /**
-     * <p>
-     * When the job was created.
-     * </p>
-     * 
-     * @return When the job was created.
-     */
-
-    public java.util.Date getCreationTime() {
-        return this.creationTime;
-    }
-
-    /**
-     * <p>
-     * When the job was created.
-     * </p>
-     * 
-     * @param creationTime
-     *        When the job was created.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public StartReadSetExportJobResult withCreationTime(java.util.Date creationTime) {
-        setCreationTime(creationTime);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The job's output location.
-     * </p>
-     * 
-     * @param destination
-     *        The job's output location.
-     */
-
-    public void setDestination(String destination) {
-        this.destination = destination;
-    }
-
-    /**
-     * <p>
-     * The job's output location.
-     * </p>
-     * 
-     * @return The job's output location.
-     */
-
-    public String getDestination() {
-        return this.destination;
-    }
-
-    /**
-     * <p>
-     * The job's output location.
-     * </p>
-     * 
-     * @param destination
-     *        The job's output location.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public StartReadSetExportJobResult withDestination(String destination) {
-        setDestination(destination);
-        return this;
-    }
+    private java.util.Date creationTime;
 
     /**
      * <p>
@@ -216,6 +136,46 @@ public class StartReadSetExportJobResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
+     * The job's output location.
+     * </p>
+     * 
+     * @param destination
+     *        The job's output location.
+     */
+
+    public void setDestination(String destination) {
+        this.destination = destination;
+    }
+
+    /**
+     * <p>
+     * The job's output location.
+     * </p>
+     * 
+     * @return The job's output location.
+     */
+
+    public String getDestination() {
+        return this.destination;
+    }
+
+    /**
+     * <p>
+     * The job's output location.
+     * </p>
+     * 
+     * @param destination
+     *        The job's output location.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartReadSetExportJobResult withDestination(String destination) {
+        setDestination(destination);
+        return this;
+    }
+
+    /**
+     * <p>
      * The job's status.
      * </p>
      * 
@@ -274,6 +234,46 @@ public class StartReadSetExportJobResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * When the job was created.
+     * </p>
+     * 
+     * @param creationTime
+     *        When the job was created.
+     */
+
+    public void setCreationTime(java.util.Date creationTime) {
+        this.creationTime = creationTime;
+    }
+
+    /**
+     * <p>
+     * When the job was created.
+     * </p>
+     * 
+     * @return When the job was created.
+     */
+
+    public java.util.Date getCreationTime() {
+        return this.creationTime;
+    }
+
+    /**
+     * <p>
+     * When the job was created.
+     * </p>
+     * 
+     * @param creationTime
+     *        When the job was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartReadSetExportJobResult withCreationTime(java.util.Date creationTime) {
+        setCreationTime(creationTime);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -285,16 +285,16 @@ public class StartReadSetExportJobResult extends com.amazonaws.AmazonWebServiceR
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getCreationTime() != null)
-            sb.append("CreationTime: ").append(getCreationTime()).append(",");
-        if (getDestination() != null)
-            sb.append("Destination: ").append(getDestination()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
         if (getSequenceStoreId() != null)
             sb.append("SequenceStoreId: ").append(getSequenceStoreId()).append(",");
+        if (getDestination() != null)
+            sb.append("Destination: ").append(getDestination()).append(",");
         if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getCreationTime() != null)
+            sb.append("CreationTime: ").append(getCreationTime());
         sb.append("}");
         return sb.toString();
     }
@@ -309,14 +309,6 @@ public class StartReadSetExportJobResult extends com.amazonaws.AmazonWebServiceR
         if (obj instanceof StartReadSetExportJobResult == false)
             return false;
         StartReadSetExportJobResult other = (StartReadSetExportJobResult) obj;
-        if (other.getCreationTime() == null ^ this.getCreationTime() == null)
-            return false;
-        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
-            return false;
-        if (other.getDestination() == null ^ this.getDestination() == null)
-            return false;
-        if (other.getDestination() != null && other.getDestination().equals(this.getDestination()) == false)
-            return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
@@ -325,9 +317,17 @@ public class StartReadSetExportJobResult extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getSequenceStoreId() != null && other.getSequenceStoreId().equals(this.getSequenceStoreId()) == false)
             return false;
+        if (other.getDestination() == null ^ this.getDestination() == null)
+            return false;
+        if (other.getDestination() != null && other.getDestination().equals(this.getDestination()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        if (other.getCreationTime() == null ^ this.getCreationTime() == null)
+            return false;
+        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
             return false;
         return true;
     }
@@ -337,11 +337,11 @@ public class StartReadSetExportJobResult extends com.amazonaws.AmazonWebServiceR
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
-        hashCode = prime * hashCode + ((getDestination() == null) ? 0 : getDestination().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getSequenceStoreId() == null) ? 0 : getSequenceStoreId().hashCode());
+        hashCode = prime * hashCode + ((getDestination() == null) ? 0 : getDestination().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         return hashCode;
     }
 

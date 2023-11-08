@@ -39,7 +39,7 @@ public class TargetDescription implements Serializable, Cloneable {
      * <p>
      * The port on which the target is listening. If the target group protocol is GENEVE, the supported port is 6081. If
      * the target type is <code>alb</code>, the targeted Application Load Balancer must have at least one listener whose
-     * port matches the target group port. Not used if the target is a Lambda function.
+     * port matches the target group port. This parameter is not used if the target is a Lambda function.
      * </p>
      */
     private Integer port;
@@ -135,13 +135,14 @@ public class TargetDescription implements Serializable, Cloneable {
      * <p>
      * The port on which the target is listening. If the target group protocol is GENEVE, the supported port is 6081. If
      * the target type is <code>alb</code>, the targeted Application Load Balancer must have at least one listener whose
-     * port matches the target group port. Not used if the target is a Lambda function.
+     * port matches the target group port. This parameter is not used if the target is a Lambda function.
      * </p>
      * 
      * @param port
      *        The port on which the target is listening. If the target group protocol is GENEVE, the supported port is
      *        6081. If the target type is <code>alb</code>, the targeted Application Load Balancer must have at least
-     *        one listener whose port matches the target group port. Not used if the target is a Lambda function.
+     *        one listener whose port matches the target group port. This parameter is not used if the target is a
+     *        Lambda function.
      */
 
     public void setPort(Integer port) {
@@ -152,12 +153,13 @@ public class TargetDescription implements Serializable, Cloneable {
      * <p>
      * The port on which the target is listening. If the target group protocol is GENEVE, the supported port is 6081. If
      * the target type is <code>alb</code>, the targeted Application Load Balancer must have at least one listener whose
-     * port matches the target group port. Not used if the target is a Lambda function.
+     * port matches the target group port. This parameter is not used if the target is a Lambda function.
      * </p>
      * 
      * @return The port on which the target is listening. If the target group protocol is GENEVE, the supported port is
      *         6081. If the target type is <code>alb</code>, the targeted Application Load Balancer must have at least
-     *         one listener whose port matches the target group port. Not used if the target is a Lambda function.
+     *         one listener whose port matches the target group port. This parameter is not used if the target is a
+     *         Lambda function.
      */
 
     public Integer getPort() {
@@ -168,13 +170,14 @@ public class TargetDescription implements Serializable, Cloneable {
      * <p>
      * The port on which the target is listening. If the target group protocol is GENEVE, the supported port is 6081. If
      * the target type is <code>alb</code>, the targeted Application Load Balancer must have at least one listener whose
-     * port matches the target group port. Not used if the target is a Lambda function.
+     * port matches the target group port. This parameter is not used if the target is a Lambda function.
      * </p>
      * 
      * @param port
      *        The port on which the target is listening. If the target group protocol is GENEVE, the supported port is
      *        6081. If the target type is <code>alb</code>, the targeted Application Load Balancer must have at least
-     *        one listener whose port matches the target group port. Not used if the target is a Lambda function.
+     *        one listener whose port matches the target group port. This parameter is not used if the target is a
+     *        Lambda function.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

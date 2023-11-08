@@ -34,6 +34,8 @@ public class NotificationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("JobStatesToNotify").build();
     private static final MarshallingInfo<Boolean> NOTIFYALL_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NotifyAll").build();
+    private static final MarshallingInfo<String> DEVICEPICKUPSNSTOPICARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DevicePickupSnsTopicARN").build();
 
     private static final NotificationMarshaller instance = new NotificationMarshaller();
 
@@ -54,6 +56,7 @@ public class NotificationMarshaller {
             protocolMarshaller.marshall(notification.getSnsTopicARN(), SNSTOPICARN_BINDING);
             protocolMarshaller.marshall(notification.getJobStatesToNotify(), JOBSTATESTONOTIFY_BINDING);
             protocolMarshaller.marshall(notification.getNotifyAll(), NOTIFYALL_BINDING);
+            protocolMarshaller.marshall(notification.getDevicePickupSnsTopicARN(), DEVICEPICKUPSNSTOPICARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

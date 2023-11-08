@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * Specify an H.264 level that is consistent with your output video settings. If you aren't sure what level to specify,
- * choose Auto (AUTO).
+ * choose Auto.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum H264CodecLevel {

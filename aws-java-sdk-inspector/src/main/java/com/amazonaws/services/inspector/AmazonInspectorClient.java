@@ -44,6 +44,7 @@ import com.amazonaws.services.inspector.AmazonInspectorClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.inspector.model.*;
+
 import com.amazonaws.services.inspector.model.transform.*;
 
 /**

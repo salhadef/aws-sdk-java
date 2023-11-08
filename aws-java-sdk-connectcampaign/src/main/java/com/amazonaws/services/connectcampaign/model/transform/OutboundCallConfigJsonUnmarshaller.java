@@ -48,21 +48,21 @@ public class OutboundCallConfigJsonUnmarshaller implements Unmarshaller<Outbound
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("answerMachineDetectionConfig", targetDepth)) {
-                    context.nextToken();
-                    outboundCallConfig.setAnswerMachineDetectionConfig(AnswerMachineDetectionConfigJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("connectContactFlowId", targetDepth)) {
                     context.nextToken();
                     outboundCallConfig.setConnectContactFlowId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("connectSourcePhoneNumber", targetDepth)) {
+                    context.nextToken();
+                    outboundCallConfig.setConnectSourcePhoneNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("connectQueueId", targetDepth)) {
                     context.nextToken();
                     outboundCallConfig.setConnectQueueId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("connectSourcePhoneNumber", targetDepth)) {
+                if (context.testExpression("answerMachineDetectionConfig", targetDepth)) {
                     context.nextToken();
-                    outboundCallConfig.setConnectSourcePhoneNumber(context.getUnmarshaller(String.class).unmarshall(context));
+                    outboundCallConfig.setAnswerMachineDetectionConfig(AnswerMachineDetectionConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

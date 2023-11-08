@@ -43,6 +43,8 @@ public class RdsConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StorageIops").build();
     private static final MarshallingInfo<String> DEPLOYMENTOPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeploymentOption").build();
+    private static final MarshallingInfo<String> ENGINEVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EngineVersion").build();
 
     private static final RdsConfigurationMarshaller instance = new RdsConfigurationMarshaller();
 
@@ -68,6 +70,7 @@ public class RdsConfigurationMarshaller {
             protocolMarshaller.marshall(rdsConfiguration.getStorageSize(), STORAGESIZE_BINDING);
             protocolMarshaller.marshall(rdsConfiguration.getStorageIops(), STORAGEIOPS_BINDING);
             protocolMarshaller.marshall(rdsConfiguration.getDeploymentOption(), DEPLOYMENTOPTION_BINDING);
+            protocolMarshaller.marshall(rdsConfiguration.getEngineVersion(), ENGINEVERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

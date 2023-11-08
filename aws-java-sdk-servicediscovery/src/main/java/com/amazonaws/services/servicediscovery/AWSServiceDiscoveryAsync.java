@@ -413,8 +413,9 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
     /**
      * <p>
      * Discovers registered instances for a specified namespace and service. You can use <code>DiscoverInstances</code>
-     * to discover instances for any type of namespace. For public and private DNS namespaces, you can also use DNS
-     * queries to discover instances.
+     * to discover instances for any type of namespace. <code>DiscoverInstances</code> returns a randomized list of
+     * instances allowing customers to distribute traffic evenly across instances. For public and private DNS
+     * namespaces, you can also use DNS queries to discover instances.
      * </p>
      * 
      * @param discoverInstancesRequest
@@ -428,8 +429,9 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
     /**
      * <p>
      * Discovers registered instances for a specified namespace and service. You can use <code>DiscoverInstances</code>
-     * to discover instances for any type of namespace. For public and private DNS namespaces, you can also use DNS
-     * queries to discover instances.
+     * to discover instances for any type of namespace. <code>DiscoverInstances</code> returns a randomized list of
+     * instances allowing customers to distribute traffic evenly across instances. For public and private DNS
+     * namespaces, you can also use DNS queries to discover instances.
      * </p>
      * 
      * @param discoverInstancesRequest
@@ -444,6 +446,39 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      */
     java.util.concurrent.Future<DiscoverInstancesResult> discoverInstancesAsync(DiscoverInstancesRequest discoverInstancesRequest,
             com.amazonaws.handlers.AsyncHandler<DiscoverInstancesRequest, DiscoverInstancesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Discovers the increasing revision associated with an instance.
+     * </p>
+     * 
+     * @param discoverInstancesRevisionRequest
+     * @return A Java Future containing the result of the DiscoverInstancesRevision operation returned by the service.
+     * @sample AWSServiceDiscoveryAsync.DiscoverInstancesRevision
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/DiscoverInstancesRevision"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DiscoverInstancesRevisionResult> discoverInstancesRevisionAsync(
+            DiscoverInstancesRevisionRequest discoverInstancesRevisionRequest);
+
+    /**
+     * <p>
+     * Discovers the increasing revision associated with an instance.
+     * </p>
+     * 
+     * @param discoverInstancesRevisionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DiscoverInstancesRevision operation returned by the service.
+     * @sample AWSServiceDiscoveryAsyncHandler.DiscoverInstancesRevision
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/DiscoverInstancesRevision"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DiscoverInstancesRevisionResult> discoverInstancesRevisionAsync(
+            DiscoverInstancesRevisionRequest discoverInstancesRevisionRequest,
+            com.amazonaws.handlers.AsyncHandler<DiscoverInstancesRevisionRequest, DiscoverInstancesRevisionResult> asyncHandler);
 
     /**
      * <p>
@@ -555,7 +590,7 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
     /**
      * <p>
      * Gets information about any operation that returns an operation ID in the response, such as a
-     * <code>CreateService</code> request.
+     * <code>CreateHttpNamespace</code> request.
      * </p>
      * <note>
      * <p>
@@ -575,7 +610,7 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
     /**
      * <p>
      * Gets information about any operation that returns an operation ID in the response, such as a
-     * <code>CreateService</code> request.
+     * <code>CreateHttpNamespace</code> request.
      * </p>
      * <note>
      * <p>

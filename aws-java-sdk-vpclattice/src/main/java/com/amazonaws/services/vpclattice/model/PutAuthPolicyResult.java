@@ -25,16 +25,16 @@ public class PutAuthPolicyResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The auth policy. The policy string in JSON must not contain newlines or blank lines.
+     * The auth policy.
      * </p>
      */
     private String policy;
     /**
      * <p>
-     * The state of the auth policy. The auth policy is only active when the auth type is set to <code>AWS_IAM</code>.
-     * If you provide a policy, then authentication and authorization decisions are made based on this policy and the
-     * client's IAM policy. If the Auth type is <code>NONE</code>, then, any auth policy you provide will remain
-     * inactive. For more information, see <a
+     * The state of the auth policy. The auth policy is only active when the auth type is set to
+     * <code>Amazon Web Services_IAM</code>. If you provide a policy, then authentication and authorization decisions
+     * are made based on this policy and the client's IAM policy. If the Auth type is <code>NONE</code>, then, any auth
+     * policy you provide will remain inactive. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-networks.html#create-service-network">Create a
      * service network</a> in the <i>Amazon VPC Lattice User Guide</i>.
      * </p>
@@ -43,11 +43,11 @@ public class PutAuthPolicyResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The auth policy. The policy string in JSON must not contain newlines or blank lines.
+     * The auth policy.
      * </p>
      * 
      * @param policy
-     *        The auth policy. The policy string in JSON must not contain newlines or blank lines.
+     *        The auth policy.
      */
 
     public void setPolicy(String policy) {
@@ -56,10 +56,10 @@ public class PutAuthPolicyResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The auth policy. The policy string in JSON must not contain newlines or blank lines.
+     * The auth policy.
      * </p>
      * 
-     * @return The auth policy. The policy string in JSON must not contain newlines or blank lines.
+     * @return The auth policy.
      */
 
     public String getPolicy() {
@@ -68,11 +68,11 @@ public class PutAuthPolicyResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The auth policy. The policy string in JSON must not contain newlines or blank lines.
+     * The auth policy.
      * </p>
      * 
      * @param policy
-     *        The auth policy. The policy string in JSON must not contain newlines or blank lines.
+     *        The auth policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,19 +83,19 @@ public class PutAuthPolicyResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The state of the auth policy. The auth policy is only active when the auth type is set to <code>AWS_IAM</code>.
-     * If you provide a policy, then authentication and authorization decisions are made based on this policy and the
-     * client's IAM policy. If the Auth type is <code>NONE</code>, then, any auth policy you provide will remain
-     * inactive. For more information, see <a
+     * The state of the auth policy. The auth policy is only active when the auth type is set to
+     * <code>Amazon Web Services_IAM</code>. If you provide a policy, then authentication and authorization decisions
+     * are made based on this policy and the client's IAM policy. If the Auth type is <code>NONE</code>, then, any auth
+     * policy you provide will remain inactive. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-networks.html#create-service-network">Create a
      * service network</a> in the <i>Amazon VPC Lattice User Guide</i>.
      * </p>
      * 
      * @param state
      *        The state of the auth policy. The auth policy is only active when the auth type is set to
-     *        <code>AWS_IAM</code>. If you provide a policy, then authentication and authorization decisions are made
-     *        based on this policy and the client's IAM policy. If the Auth type is <code>NONE</code>, then, any auth
-     *        policy you provide will remain inactive. For more information, see <a
+     *        <code>Amazon Web Services_IAM</code>. If you provide a policy, then authentication and authorization
+     *        decisions are made based on this policy and the client's IAM policy. If the Auth type is <code>NONE</code>
+     *        , then, any auth policy you provide will remain inactive. For more information, see <a
      *        href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-networks.html#create-service-network"
      *        >Create a service network</a> in the <i>Amazon VPC Lattice User Guide</i>.
      * @see AuthPolicyState
@@ -107,20 +107,21 @@ public class PutAuthPolicyResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The state of the auth policy. The auth policy is only active when the auth type is set to <code>AWS_IAM</code>.
-     * If you provide a policy, then authentication and authorization decisions are made based on this policy and the
-     * client's IAM policy. If the Auth type is <code>NONE</code>, then, any auth policy you provide will remain
-     * inactive. For more information, see <a
+     * The state of the auth policy. The auth policy is only active when the auth type is set to
+     * <code>Amazon Web Services_IAM</code>. If you provide a policy, then authentication and authorization decisions
+     * are made based on this policy and the client's IAM policy. If the Auth type is <code>NONE</code>, then, any auth
+     * policy you provide will remain inactive. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-networks.html#create-service-network">Create a
      * service network</a> in the <i>Amazon VPC Lattice User Guide</i>.
      * </p>
      * 
      * @return The state of the auth policy. The auth policy is only active when the auth type is set to
-     *         <code>AWS_IAM</code>. If you provide a policy, then authentication and authorization decisions are made
-     *         based on this policy and the client's IAM policy. If the Auth type is <code>NONE</code>, then, any auth
-     *         policy you provide will remain inactive. For more information, see <a
-     *         href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-networks.html#create-service-network"
-     *         >Create a service network</a> in the <i>Amazon VPC Lattice User Guide</i>.
+     *         <code>Amazon Web Services_IAM</code>. If you provide a policy, then authentication and authorization
+     *         decisions are made based on this policy and the client's IAM policy. If the Auth type is
+     *         <code>NONE</code>, then, any auth policy you provide will remain inactive. For more information, see <a
+     *         href
+     *         ="https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-networks.html#create-service-network">Create
+     *         a service network</a> in the <i>Amazon VPC Lattice User Guide</i>.
      * @see AuthPolicyState
      */
 
@@ -130,19 +131,19 @@ public class PutAuthPolicyResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The state of the auth policy. The auth policy is only active when the auth type is set to <code>AWS_IAM</code>.
-     * If you provide a policy, then authentication and authorization decisions are made based on this policy and the
-     * client's IAM policy. If the Auth type is <code>NONE</code>, then, any auth policy you provide will remain
-     * inactive. For more information, see <a
+     * The state of the auth policy. The auth policy is only active when the auth type is set to
+     * <code>Amazon Web Services_IAM</code>. If you provide a policy, then authentication and authorization decisions
+     * are made based on this policy and the client's IAM policy. If the Auth type is <code>NONE</code>, then, any auth
+     * policy you provide will remain inactive. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-networks.html#create-service-network">Create a
      * service network</a> in the <i>Amazon VPC Lattice User Guide</i>.
      * </p>
      * 
      * @param state
      *        The state of the auth policy. The auth policy is only active when the auth type is set to
-     *        <code>AWS_IAM</code>. If you provide a policy, then authentication and authorization decisions are made
-     *        based on this policy and the client's IAM policy. If the Auth type is <code>NONE</code>, then, any auth
-     *        policy you provide will remain inactive. For more information, see <a
+     *        <code>Amazon Web Services_IAM</code>. If you provide a policy, then authentication and authorization
+     *        decisions are made based on this policy and the client's IAM policy. If the Auth type is <code>NONE</code>
+     *        , then, any auth policy you provide will remain inactive. For more information, see <a
      *        href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-networks.html#create-service-network"
      *        >Create a service network</a> in the <i>Amazon VPC Lattice User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -156,19 +157,19 @@ public class PutAuthPolicyResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The state of the auth policy. The auth policy is only active when the auth type is set to <code>AWS_IAM</code>.
-     * If you provide a policy, then authentication and authorization decisions are made based on this policy and the
-     * client's IAM policy. If the Auth type is <code>NONE</code>, then, any auth policy you provide will remain
-     * inactive. For more information, see <a
+     * The state of the auth policy. The auth policy is only active when the auth type is set to
+     * <code>Amazon Web Services_IAM</code>. If you provide a policy, then authentication and authorization decisions
+     * are made based on this policy and the client's IAM policy. If the Auth type is <code>NONE</code>, then, any auth
+     * policy you provide will remain inactive. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-networks.html#create-service-network">Create a
      * service network</a> in the <i>Amazon VPC Lattice User Guide</i>.
      * </p>
      * 
      * @param state
      *        The state of the auth policy. The auth policy is only active when the auth type is set to
-     *        <code>AWS_IAM</code>. If you provide a policy, then authentication and authorization decisions are made
-     *        based on this policy and the client's IAM policy. If the Auth type is <code>NONE</code>, then, any auth
-     *        policy you provide will remain inactive. For more information, see <a
+     *        <code>Amazon Web Services_IAM</code>. If you provide a policy, then authentication and authorization
+     *        decisions are made based on this policy and the client's IAM policy. If the Auth type is <code>NONE</code>
+     *        , then, any auth policy you provide will remain inactive. For more information, see <a
      *        href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-networks.html#create-service-network"
      *        >Create a service network</a> in the <i>Amazon VPC Lattice User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.

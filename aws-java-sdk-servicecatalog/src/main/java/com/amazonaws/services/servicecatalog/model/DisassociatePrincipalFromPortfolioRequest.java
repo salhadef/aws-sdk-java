@@ -51,15 +51,15 @@ public class DisassociatePrincipalFromPortfolioRequest extends com.amazonaws.Ama
     private String portfolioId;
     /**
      * <p>
-     * The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> if
-     * <code>PrincipalType</code> is <code>IAM_PATTERN</code>.
+     * The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> with or
+     * without wildcard characters if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.
      * </p>
      */
     private String principalARN;
     /**
      * <p>
-     * The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you use no
-     * <code>accountID</code>.
+     * The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you
+     * specify an <code>IAM</code> ARN with no AccountId, with or without wildcard characters.
      * </p>
      */
     private String principalType;
@@ -215,13 +215,13 @@ public class DisassociatePrincipalFromPortfolioRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> if
-     * <code>PrincipalType</code> is <code>IAM_PATTERN</code>.
+     * The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> with or
+     * without wildcard characters if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.
      * </p>
      * 
      * @param principalARN
      *        The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code>
-     *        if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.
+     *        with or without wildcard characters if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.
      */
 
     public void setPrincipalARN(String principalARN) {
@@ -230,12 +230,12 @@ public class DisassociatePrincipalFromPortfolioRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> if
-     * <code>PrincipalType</code> is <code>IAM_PATTERN</code>.
+     * The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> with or
+     * without wildcard characters if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.
      * </p>
      * 
      * @return The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code>
-     *         if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.
+     *         with or without wildcard characters if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.
      */
 
     public String getPrincipalARN() {
@@ -244,13 +244,13 @@ public class DisassociatePrincipalFromPortfolioRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> if
-     * <code>PrincipalType</code> is <code>IAM_PATTERN</code>.
+     * The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> with or
+     * without wildcard characters if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.
      * </p>
      * 
      * @param principalARN
      *        The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code>
-     *        if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.
+     *        with or without wildcard characters if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -261,13 +261,13 @@ public class DisassociatePrincipalFromPortfolioRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you use no
-     * <code>accountID</code>.
+     * The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you
+     * specify an <code>IAM</code> ARN with no AccountId, with or without wildcard characters.
      * </p>
      * 
      * @param principalType
      *        The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you
-     *        use no <code>accountID</code>.
+     *        specify an <code>IAM</code> ARN with no AccountId, with or without wildcard characters.
      * @see PrincipalType
      */
 
@@ -277,12 +277,12 @@ public class DisassociatePrincipalFromPortfolioRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you use no
-     * <code>accountID</code>.
+     * The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you
+     * specify an <code>IAM</code> ARN with no AccountId, with or without wildcard characters.
      * </p>
      * 
      * @return The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if
-     *         you use no <code>accountID</code>.
+     *         you specify an <code>IAM</code> ARN with no AccountId, with or without wildcard characters.
      * @see PrincipalType
      */
 
@@ -292,13 +292,13 @@ public class DisassociatePrincipalFromPortfolioRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you use no
-     * <code>accountID</code>.
+     * The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you
+     * specify an <code>IAM</code> ARN with no AccountId, with or without wildcard characters.
      * </p>
      * 
      * @param principalType
      *        The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you
-     *        use no <code>accountID</code>.
+     *        specify an <code>IAM</code> ARN with no AccountId, with or without wildcard characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PrincipalType
      */
@@ -310,13 +310,13 @@ public class DisassociatePrincipalFromPortfolioRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you use no
-     * <code>accountID</code>.
+     * The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you
+     * specify an <code>IAM</code> ARN with no AccountId, with or without wildcard characters.
      * </p>
      * 
      * @param principalType
      *        The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you
-     *        use no <code>accountID</code>.
+     *        specify an <code>IAM</code> ARN with no AccountId, with or without wildcard characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PrincipalType
      */

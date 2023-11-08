@@ -363,6 +363,21 @@ public class AbstractAWSAppRunnerAsync extends AbstractAWSAppRunner implements A
     }
 
     @Override
+    public java.util.concurrent.Future<ListServicesForAutoScalingConfigurationResult> listServicesForAutoScalingConfigurationAsync(
+            ListServicesForAutoScalingConfigurationRequest request) {
+
+        return listServicesForAutoScalingConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListServicesForAutoScalingConfigurationResult> listServicesForAutoScalingConfigurationAsync(
+            ListServicesForAutoScalingConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListServicesForAutoScalingConfigurationRequest, ListServicesForAutoScalingConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
 
         return listTagsForResourceAsync(request, null);
@@ -462,6 +477,21 @@ public class AbstractAWSAppRunnerAsync extends AbstractAWSAppRunner implements A
     @Override
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDefaultAutoScalingConfigurationResult> updateDefaultAutoScalingConfigurationAsync(
+            UpdateDefaultAutoScalingConfigurationRequest request) {
+
+        return updateDefaultAutoScalingConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDefaultAutoScalingConfigurationResult> updateDefaultAutoScalingConfigurationAsync(
+            UpdateDefaultAutoScalingConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateDefaultAutoScalingConfigurationRequest, UpdateDefaultAutoScalingConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -28,9 +28,8 @@ import com.amazonaws.services.datasync.model.*;
  * <p>
  * <fullname>DataSync</fullname>
  * <p>
- * DataSync is a managed data transfer service that makes it simpler for you to automate moving data between on-premises
- * storage and Amazon Web Services storage services. You also can use DataSync to transfer data between other cloud
- * providers and Amazon Web Services storage services.
+ * DataSync is an online data movement and discovery service that simplifies data migration and helps you quickly,
+ * easily, and securely transfer your file or object data to, from, and between Amazon Web Services storage services.
  * </p>
  * <p>
  * This API interface reference includes documentation for using DataSync programmatically. For complete information,
@@ -94,25 +93,29 @@ public interface AWSDataSync {
 
     /**
      * <p>
-     * Activates an DataSync agent that you have deployed in your storage environment. The activation process associates
-     * your agent with your account. In the activation process, you specify information such as the Amazon Web Services
-     * Region that you want to activate the agent in. You activate the agent in the Amazon Web Services Region where
-     * your target locations (in Amazon S3 or Amazon EFS) reside. Your tasks are created in this Amazon Web Services
-     * Region.
+     * Activates an DataSync agent that you've deployed in your storage environment. The activation process associates
+     * the agent with your Amazon Web Services account.
      * </p>
      * <p>
-     * You can activate the agent in a VPC (virtual private cloud) or provide the agent access to a VPC endpoint so you
-     * can run tasks without going over the public internet.
+     * If you haven't deployed an agent yet, see the following topics to learn more:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * You can use an agent for more than one location. If a task uses multiple agents, all of them need to have status
-     * AVAILABLE for the task to run. If you use multiple agents for a source location, the status of all the agents
-     * must be AVAILABLE for the task to run.
+     * <a href="https://docs.aws.amazon.com/datasync/latest/userguide/agent-requirements.html">Agent requirements</a>
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * Agents are automatically updated by Amazon Web Services on a regular basis, using a mechanism that ensures
-     * minimal interruption to your tasks.
+     * <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-agent.html">Create an agent</a>
      * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * If you're transferring between Amazon Web Services storage services, you don't need a DataSync agent.
+     * </p>
+     * </note>
      * 
      * @param createAgentRequest
      *        CreateAgentRequest
@@ -126,6 +129,35 @@ public interface AWSDataSync {
      *      Documentation</a>
      */
     CreateAgentResult createAgent(CreateAgentRequest createAgentRequest);
+
+    /**
+     * <p>
+     * Creates an endpoint for a Microsoft Azure Blob Storage container that DataSync can use as a transfer source or
+     * destination.
+     * </p>
+     * <p>
+     * Before you begin, make sure you know <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-access">how
+     * DataSync accesses Azure Blob Storage</a> and works with <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-access-tiers"
+     * >access tiers</a> and <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#blob-types">blob
+     * types</a>. You also need a <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-creating-agent"
+     * >DataSync agent</a> that can connect to your container.
+     * </p>
+     * 
+     * @param createLocationAzureBlobRequest
+     * @return Result of the CreateLocationAzureBlob operation returned by the service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalException
+     *         This exception is thrown when an error occurs in the DataSync service.
+     * @sample AWSDataSync.CreateLocationAzureBlob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationAzureBlob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateLocationAzureBlobResult createLocationAzureBlob(CreateLocationAzureBlobRequest createLocationAzureBlobRequest);
 
     /**
      * <p>
@@ -166,10 +198,12 @@ public interface AWSDataSync {
 
     /**
      * <p>
-     * Creates an endpoint for an Amazon FSx for NetApp ONTAP file system that DataSync can access for a transfer. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-ontap-location.html">Creating a location for
-     * FSx for ONTAP</a>.
+     * Creates an endpoint for an Amazon FSx for NetApp ONTAP file system that DataSync can use for a data transfer.
+     * </p>
+     * <p>
+     * Before you begin, make sure that you understand how DataSync <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/create-ontap-location.html#create-ontap-location-access"
+     * >accesses an FSx for ONTAP file system</a>.
      * </p>
      * 
      * @param createLocationFsxOntapRequest
@@ -212,7 +246,13 @@ public interface AWSDataSync {
 
     /**
      * <p>
-     * Creates an endpoint for an Amazon FSx for Windows File Server file system.
+     * Creates an endpoint for an Amazon FSx for Windows File Server file system that DataSync can use for a data
+     * transfer.
+     * </p>
+     * <p>
+     * Before you begin, make sure that you understand how DataSync <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-location-access"
+     * >accesses an FSx for Windows File Server</a>.
      * </p>
      * 
      * @param createLocationFsxWindowsRequest
@@ -246,8 +286,21 @@ public interface AWSDataSync {
 
     /**
      * <p>
-     * Defines a file system on a Network File System (NFS) server that can be read from or written to.
+     * Creates an endpoint for a Network File System (NFS) file server that DataSync can use for a data transfer.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html">Configuring transfers to or
+     * from an NFS file server</a>.
+     * </p>
+     * <note>
+     * <p>
+     * If you're copying data to or from an Snowcone device, you can also use <code>CreateLocationNfs</code> to create
+     * your transfer location. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/nfs-on-snowcone.html">Configuring transfers with
+     * Snowcone</a>.
+     * </p>
+     * </note>
      * 
      * @param createLocationNfsRequest
      *        CreateLocationNfsRequest
@@ -328,10 +381,12 @@ public interface AWSDataSync {
 
     /**
      * <p>
-     * Creates an endpoint for a Server Message Block (SMB) file server that DataSync can access for a transfer. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html">Creating an SMB
-     * location</a>.
+     * Creates an endpoint for a Server Message Block (SMB) file server that DataSync can use for a data transfer.
+     * </p>
+     * <p>
+     * Before you begin, make sure that you understand how DataSync <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html">accesses an SMB file
+     * server</a>.
      * </p>
      * 
      * @param createLocationSmbRequest
@@ -349,11 +404,11 @@ public interface AWSDataSync {
 
     /**
      * <p>
-     * Configures a task, which defines where and how DataSync transfers your data.
+     * Configures a transfer task, which defines where and how DataSync moves your data.
      * </p>
      * <p>
-     * A task includes a source location, a destination location, and the preferences for how and when you want to
-     * transfer your data (such as bandwidth limits, scheduling, among other options).
+     * A task includes a source location, destination location, and the options for how and when you want to transfer
+     * your data (such as bandwidth limits, scheduling, among other options).
      * </p>
      * <important>
      * <p>
@@ -379,9 +434,13 @@ public interface AWSDataSync {
 
     /**
      * <p>
-     * Deletes an agent. To specify which agent to delete, use the Amazon Resource Name (ARN) of the agent in your
-     * request. The operation disassociates the agent from your Amazon Web Services account. However, it doesn't delete
-     * the agent virtual machine (VM) from your on-premises environment.
+     * Removes an DataSync agent resource from your Amazon Web Services account.
+     * </p>
+     * <p>
+     * Keep in mind that this operation (which can't be undone) doesn't remove the agent's virtual machine (VM) or
+     * Amazon EC2 instance from your storage environment. For next steps, you can delete the VM or instance from your
+     * storage environment or reuse it to <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/activate-agent.html">activate a new agent</a>.
      * </p>
      * 
      * @param deleteAgentRequest
@@ -417,7 +476,7 @@ public interface AWSDataSync {
 
     /**
      * <p>
-     * Deletes an DataSync task.
+     * Deletes an DataSync transfer task.
      * </p>
      * 
      * @param deleteTaskRequest
@@ -435,7 +494,7 @@ public interface AWSDataSync {
 
     /**
      * <p>
-     * Returns metadata about an DataSync agent, such as its name, endpoint type, and status.
+     * Returns information about an DataSync agent, such as its name, service endpoint type, and status.
      * </p>
      * 
      * @param describeAgentRequest
@@ -467,6 +526,23 @@ public interface AWSDataSync {
      *      API Documentation</a>
      */
     DescribeDiscoveryJobResult describeDiscoveryJob(DescribeDiscoveryJobRequest describeDiscoveryJobRequest);
+
+    /**
+     * <p>
+     * Provides details about how an DataSync transfer location for Microsoft Azure Blob Storage is configured.
+     * </p>
+     * 
+     * @param describeLocationAzureBlobRequest
+     * @return Result of the DescribeLocationAzureBlob operation returned by the service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalException
+     *         This exception is thrown when an error occurs in the DataSync service.
+     * @sample AWSDataSync.DescribeLocationAzureBlob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationAzureBlob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeLocationAzureBlobResult describeLocationAzureBlob(DescribeLocationAzureBlobRequest describeLocationAzureBlobRequest);
 
     /**
      * <p>
@@ -586,7 +662,8 @@ public interface AWSDataSync {
 
     /**
      * <p>
-     * Returns metadata, such as the path information, about an NFS location.
+     * Provides details about how an DataSync transfer location for a Network File System (NFS) file server is
+     * configured.
      * </p>
      * 
      * @param describeLocationNfsRequest
@@ -711,7 +788,7 @@ public interface AWSDataSync {
 
     /**
      * <p>
-     * Returns metadata about a task.
+     * Provides information about an DataSync transfer task.
      * </p>
      * 
      * @param describeTaskRequest
@@ -729,7 +806,8 @@ public interface AWSDataSync {
 
     /**
      * <p>
-     * Returns detailed metadata about a task that is being executed.
+     * Provides information about an execution of your DataSync task. You can use this operation to help monitor the
+     * progress of an ongoing transfer or check the results of the transfer.
      * </p>
      * 
      * @param describeTaskExecutionRequest
@@ -758,14 +836,6 @@ public interface AWSDataSync {
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeStorageSystemResources.html"
      * >DescribeStorageSystemResources</a> operation.
      * </p>
-     * <note>
-     * <p>
-     * If your <a href=
-     * "https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-statuses.html#discovery-job-statuses-table"
-     * >discovery job completes successfully</a>, you don't need to use this operation. DataSync Discovery generates the
-     * recommendations for you automatically.
-     * </p>
-     * </note>
      * 
      * @param generateRecommendationsRequest
      * @return Result of the GenerateRecommendations operation returned by the service.
@@ -963,7 +1033,7 @@ public interface AWSDataSync {
 
     /**
      * <p>
-     * Starts an DataSync task. For each task, you can only run one task execution at a time.
+     * Starts an DataSync transfer task. For each task, you can only run one task execution at a time.
      * </p>
      * <p>
      * There are several phases to a task execution. For more information, see <a href=
@@ -1057,7 +1127,7 @@ public interface AWSDataSync {
 
     /**
      * <p>
-     * Updates the name of an agent.
+     * Updates the name of an DataSync agent.
      * </p>
      * 
      * @param updateAgentRequest
@@ -1092,6 +1162,24 @@ public interface AWSDataSync {
 
     /**
      * <p>
+     * Modifies some configurations of the Microsoft Azure Blob Storage transfer location that you're using with
+     * DataSync.
+     * </p>
+     * 
+     * @param updateLocationAzureBlobRequest
+     * @return Result of the UpdateLocationAzureBlob operation returned by the service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalException
+     *         This exception is thrown when an error occurs in the DataSync service.
+     * @sample AWSDataSync.UpdateLocationAzureBlob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationAzureBlob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateLocationAzureBlobResult updateLocationAzureBlob(UpdateLocationAzureBlobRequest updateLocationAzureBlobRequest);
+
+    /**
+     * <p>
      * Updates some parameters of a previously created location for a Hadoop Distributed File System cluster.
      * </p>
      * 
@@ -1109,10 +1197,12 @@ public interface AWSDataSync {
 
     /**
      * <p>
-     * Updates some of the parameters of a previously created location for Network File System (NFS) access. For
-     * information about creating an NFS location, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html">Creating a location for
-     * NFS</a>.
+     * Modifies some configurations of the Network File System (NFS) transfer location that you're using with DataSync.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html">Configuring transfers to or
+     * from an NFS file server</a>.
      * </p>
      * 
      * @param updateLocationNfsRequest
@@ -1149,10 +1239,8 @@ public interface AWSDataSync {
 
     /**
      * <p>
-     * Updates some of the parameters of a previously created location for Server Message Block (SMB) file system
-     * access. For information about creating an SMB location, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html">Creating a location for
-     * SMB</a>.
+     * Updates some of the parameters of a Server Message Block (SMB) file server location that you can use for DataSync
+     * transfers.
      * </p>
      * 
      * @param updateLocationSmbRequest
@@ -1186,7 +1274,7 @@ public interface AWSDataSync {
 
     /**
      * <p>
-     * Updates the metadata associated with a task.
+     * Updates the configuration of a DataSync transfer task.
      * </p>
      * 
      * @param updateTaskRequest
@@ -1204,13 +1292,13 @@ public interface AWSDataSync {
 
     /**
      * <p>
-     * Modifies a running DataSync task.
+     * Updates the configuration of a running DataSync task execution.
      * </p>
      * <note>
      * <p>
      * Currently, the only <code>Option</code> that you can modify with <code>UpdateTaskExecution</code> is
      * <code> <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Options.html#DataSync-Type-Options-BytesPerSecond">BytesPerSecond</a> </code>
-     * , which throttles bandwidth for a running or queued task.
+     * , which throttles bandwidth for a running or queued task execution.
      * </p>
      * </note>
      * 

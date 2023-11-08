@@ -29,6 +29,8 @@ public class LexConfigurationMarshaller {
 
     private static final MarshallingInfo<String> RESPONDSTO_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RespondsTo").build();
+    private static final MarshallingInfo<StructuredPojo> INVOKEDBY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InvokedBy").build();
     private static final MarshallingInfo<String> LEXBOTALIASARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LexBotAliasArn").build();
     private static final MarshallingInfo<String> LOCALEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -53,6 +55,7 @@ public class LexConfigurationMarshaller {
 
         try {
             protocolMarshaller.marshall(lexConfiguration.getRespondsTo(), RESPONDSTO_BINDING);
+            protocolMarshaller.marshall(lexConfiguration.getInvokedBy(), INVOKEDBY_BINDING);
             protocolMarshaller.marshall(lexConfiguration.getLexBotAliasArn(), LEXBOTALIASARN_BINDING);
             protocolMarshaller.marshall(lexConfiguration.getLocaleId(), LOCALEID_BINDING);
             protocolMarshaller.marshall(lexConfiguration.getWelcomeIntent(), WELCOMEINTENT_BINDING);

@@ -34,9 +34,6 @@ public class InputDataConfig implements Serializable, Cloneable, StructuredPojo 
      * The URI of the S3 bucket that contains the input data. The bucket must be in the same region as the API endpoint
      * that you are calling.
      * </p>
-     * <p>
-     * Each file in the document collection must be less than 40 KB. You can store a maximum of 30 GB in the bucket.
-     * </p>
      */
     private String s3Bucket;
     /**
@@ -51,16 +48,10 @@ public class InputDataConfig implements Serializable, Cloneable, StructuredPojo 
      * The URI of the S3 bucket that contains the input data. The bucket must be in the same region as the API endpoint
      * that you are calling.
      * </p>
-     * <p>
-     * Each file in the document collection must be less than 40 KB. You can store a maximum of 30 GB in the bucket.
-     * </p>
      * 
      * @param s3Bucket
      *        The URI of the S3 bucket that contains the input data. The bucket must be in the same region as the API
-     *        endpoint that you are calling.</p>
-     *        <p>
-     *        Each file in the document collection must be less than 40 KB. You can store a maximum of 30 GB in the
-     *        bucket.
+     *        endpoint that you are calling.
      */
 
     public void setS3Bucket(String s3Bucket) {
@@ -72,15 +63,9 @@ public class InputDataConfig implements Serializable, Cloneable, StructuredPojo 
      * The URI of the S3 bucket that contains the input data. The bucket must be in the same region as the API endpoint
      * that you are calling.
      * </p>
-     * <p>
-     * Each file in the document collection must be less than 40 KB. You can store a maximum of 30 GB in the bucket.
-     * </p>
      * 
      * @return The URI of the S3 bucket that contains the input data. The bucket must be in the same region as the API
-     *         endpoint that you are calling.</p>
-     *         <p>
-     *         Each file in the document collection must be less than 40 KB. You can store a maximum of 30 GB in the
-     *         bucket.
+     *         endpoint that you are calling.
      */
 
     public String getS3Bucket() {
@@ -92,16 +77,10 @@ public class InputDataConfig implements Serializable, Cloneable, StructuredPojo 
      * The URI of the S3 bucket that contains the input data. The bucket must be in the same region as the API endpoint
      * that you are calling.
      * </p>
-     * <p>
-     * Each file in the document collection must be less than 40 KB. You can store a maximum of 30 GB in the bucket.
-     * </p>
      * 
      * @param s3Bucket
      *        The URI of the S3 bucket that contains the input data. The bucket must be in the same region as the API
-     *        endpoint that you are calling.</p>
-     *        <p>
-     *        Each file in the document collection must be less than 40 KB. You can store a maximum of 30 GB in the
-     *        bucket.
+     *        endpoint that you are calling.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

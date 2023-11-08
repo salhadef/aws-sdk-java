@@ -58,12 +58,17 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
      * </li>
      * <li>
      * <p>
-     * <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
+     * <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
+     * <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXTERNAL</code> - External configuration file
      * </p>
      * </li>
      * </ul>
@@ -234,12 +239,17 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
      * </li>
      * <li>
      * <p>
-     * <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
+     * <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
+     * <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXTERNAL</code> - External configuration file
      * </p>
      * </li>
      * </ul>
@@ -254,12 +264,17 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
+     *        <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
+     *        <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EXTERNAL</code> - External configuration file
      *        </p>
      *        </li>
      * @see ProvisioningArtifactType
@@ -281,12 +296,17 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
      * </li>
      * <li>
      * <p>
-     * <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
+     * <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
+     * <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXTERNAL</code> - External configuration file
      * </p>
      * </li>
      * </ul>
@@ -300,12 +320,17 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
      *         </li>
      *         <li>
      *         <p>
-     *         <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
+     *         <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
+     *         <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>EXTERNAL</code> - External configuration file
      *         </p>
      *         </li>
      * @see ProvisioningArtifactType
@@ -327,12 +352,17 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
      * </li>
      * <li>
      * <p>
-     * <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
+     * <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
+     * <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXTERNAL</code> - External configuration file
      * </p>
      * </li>
      * </ul>
@@ -347,12 +377,17 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
+     *        <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
+     *        <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EXTERNAL</code> - External configuration file
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -376,12 +411,17 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
      * </li>
      * <li>
      * <p>
-     * <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
+     * <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
+     * <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXTERNAL</code> - External configuration file
      * </p>
      * </li>
      * </ul>
@@ -396,12 +436,17 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
+     *        <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
+     *        <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EXTERNAL</code> - External configuration file
      *        </p>
      *        </li>
      * @see ProvisioningArtifactType
@@ -423,12 +468,17 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
      * </li>
      * <li>
      * <p>
-     * <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
+     * <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
+     * <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXTERNAL</code> - External configuration file
      * </p>
      * </li>
      * </ul>
@@ -443,12 +493,17 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
+     *        <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
+     *        <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EXTERNAL</code> - External configuration file
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

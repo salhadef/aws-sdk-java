@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The request processing has failed because you provided an invalid pagination token.
+ * Request processing failed because you provided an invalid pagination token.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

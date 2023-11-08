@@ -104,7 +104,8 @@ public enum ResourceType {
     VpnConnectionDeviceType("vpn-connection-device-type"),
     VpcBlockPublicAccessExclusion("vpc-block-public-access-exclusion"),
     IpamResourceDiscovery("ipam-resource-discovery"),
-    IpamResourceDiscoveryAssociation("ipam-resource-discovery-association");
+    IpamResourceDiscoveryAssociation("ipam-resource-discovery-association"),
+    InstanceConnectEndpoint("instance-connect-endpoint");
 
     private String value;
 

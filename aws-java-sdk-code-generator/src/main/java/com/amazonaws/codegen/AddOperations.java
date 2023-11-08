@@ -136,7 +136,11 @@ final class AddOperations {
         // We skip operations with event stream inputs or outputs
         boolean hasEventStreamInput = inputPayloadShape != null && inputPayloadShape.isEventStream();
         boolean hasEventStreamOutput = outputPayloadShape != null && outputPayloadShape.isEventStream();
-        return hasEventStreamInput || hasEventStreamOutput;
+
+        boolean hasStringPayloadInput = inputPayloadShape != null && "String".equals(inputPayloadShape.getType());
+        boolean hasStringPayloadOutput = outputPayloadShape != null && "String".equals(outputPayloadShape.getType());
+
+        return hasEventStreamInput || hasEventStreamOutput || hasStringPayloadInput || hasStringPayloadOutput;
     }
 
     /**

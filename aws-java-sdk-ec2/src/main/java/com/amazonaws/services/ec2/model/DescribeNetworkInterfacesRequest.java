@@ -35,25 +35,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>addresses.private-ip-address</code> - The private IPv4 addresses associated with the network interface.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>addresses.primary</code> - Whether the private IPv4 address is the primary IP address associated with the
-     * network interface.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>addresses.association.public-ip</code> - The association ID returned when the network interface was
-     * associated with the Elastic IP address (IPv4).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>addresses.association.owner-id</code> - The owner ID of the addresses associated with the network
-     * interface.
+     * <code>association.allocation-id</code> - The allocation ID returned when you allocated the Elastic IP address
+     * (IPv4) for your network interface.
      * </p>
      * </li>
      * <li>
@@ -64,8 +47,25 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>association.allocation-id</code> - The allocation ID returned when you allocated the Elastic IP address
-     * (IPv4) for your network interface.
+     * <code>addresses.association.owner-id</code> - The owner ID of the addresses associated with the network
+     * interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>addresses.association.public-ip</code> - The association ID returned when the network interface was
+     * associated with the Elastic IP address (IPv4).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>addresses.primary</code> - Whether the private IPv4 address is the primary IP address associated with the
+     * network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>addresses.private-ip-address</code> - The private IPv4 addresses associated with the network interface.
      * </p>
      * </li>
      * <li>
@@ -86,12 +86,12 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>attachment.attachment-id</code> - The ID of the interface attachment.
+     * <code>attachment.attach-time</code> - The time that the network interface was attached to an instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>attachment.attach-time</code> - The time that the network interface was attached to an instance.
+     * <code>attachment.attachment-id</code> - The ID of the interface attachment.
      * </p>
      * </li>
      * <li>
@@ -139,22 +139,18 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>group-name</code> - The name of a security group associated with the network interface.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>ipv6-addresses.ipv6-address</code> - An IPv6 address associated with the network interface.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>interface-type</code> - The type of network interface (<code>api_gateway_managed</code> |
-     * <code>aws_codestar_connections_managed</code> | <code>branch</code> | <code>efa</code> |
-     * <code>gateway_load_balancer</code> | <code>gateway_load_balancer_endpoint</code> |
-     * <code>global_accelerator_managed</code> | <code>interface</code> | <code>iot_rules_managed</code> |
-     * <code>lambda</code> | <code>load_balancer</code> | <code>nat_gateway</code> | <code>network_load_balancer</code>
-     * | <code>quicksight</code> | <code>transit_gateway</code> | <code>trunk</code> | <code>vpc_endpoint</code>).
+     * <code>aws_codestar_connections_managed</code> | <code>branch</code> | <code>ec2_instance_connect_endpoint</code>
+     * | <code>efa</code> | <code>efs</code> | <code>gateway_load_balancer</code> |
+     * <code>gateway_load_balancer_endpoint</code> | <code>global_accelerator_managed</code> | <code>interface</code> |
+     * <code>iot_rules_managed</code> | <code>lambda</code> | <code>load_balancer</code> | <code>nat_gateway</code> |
+     * <code>network_load_balancer</code> | <code>quicksight</code> | <code>transit_gateway</code> | <code>trunk</code>
+     * | <code>vpc_endpoint</code>).
      * </p>
      * </li>
      * <li>
@@ -174,12 +170,12 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>private-ip-address</code> - The private IPv4 address or addresses of the network interface.
+     * <code>private-dns-name</code> - The private DNS name of the network interface (IPv4).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>private-dns-name</code> - The private DNS name of the network interface (IPv4).
+     * <code>private-ip-address</code> - The private IPv4 address or addresses of the network interface.
      * </p>
      * </li>
      * <li>
@@ -269,25 +265,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>addresses.private-ip-address</code> - The private IPv4 addresses associated with the network interface.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>addresses.primary</code> - Whether the private IPv4 address is the primary IP address associated with the
-     * network interface.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>addresses.association.public-ip</code> - The association ID returned when the network interface was
-     * associated with the Elastic IP address (IPv4).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>addresses.association.owner-id</code> - The owner ID of the addresses associated with the network
-     * interface.
+     * <code>association.allocation-id</code> - The allocation ID returned when you allocated the Elastic IP address
+     * (IPv4) for your network interface.
      * </p>
      * </li>
      * <li>
@@ -298,8 +277,25 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>association.allocation-id</code> - The allocation ID returned when you allocated the Elastic IP address
-     * (IPv4) for your network interface.
+     * <code>addresses.association.owner-id</code> - The owner ID of the addresses associated with the network
+     * interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>addresses.association.public-ip</code> - The association ID returned when the network interface was
+     * associated with the Elastic IP address (IPv4).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>addresses.primary</code> - Whether the private IPv4 address is the primary IP address associated with the
+     * network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>addresses.private-ip-address</code> - The private IPv4 addresses associated with the network interface.
      * </p>
      * </li>
      * <li>
@@ -320,12 +316,12 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>attachment.attachment-id</code> - The ID of the interface attachment.
+     * <code>attachment.attach-time</code> - The time that the network interface was attached to an instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>attachment.attach-time</code> - The time that the network interface was attached to an instance.
+     * <code>attachment.attachment-id</code> - The ID of the interface attachment.
      * </p>
      * </li>
      * <li>
@@ -373,22 +369,18 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>group-name</code> - The name of a security group associated with the network interface.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>ipv6-addresses.ipv6-address</code> - An IPv6 address associated with the network interface.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>interface-type</code> - The type of network interface (<code>api_gateway_managed</code> |
-     * <code>aws_codestar_connections_managed</code> | <code>branch</code> | <code>efa</code> |
-     * <code>gateway_load_balancer</code> | <code>gateway_load_balancer_endpoint</code> |
-     * <code>global_accelerator_managed</code> | <code>interface</code> | <code>iot_rules_managed</code> |
-     * <code>lambda</code> | <code>load_balancer</code> | <code>nat_gateway</code> | <code>network_load_balancer</code>
-     * | <code>quicksight</code> | <code>transit_gateway</code> | <code>trunk</code> | <code>vpc_endpoint</code>).
+     * <code>aws_codestar_connections_managed</code> | <code>branch</code> | <code>ec2_instance_connect_endpoint</code>
+     * | <code>efa</code> | <code>efs</code> | <code>gateway_load_balancer</code> |
+     * <code>gateway_load_balancer_endpoint</code> | <code>global_accelerator_managed</code> | <code>interface</code> |
+     * <code>iot_rules_managed</code> | <code>lambda</code> | <code>load_balancer</code> | <code>nat_gateway</code> |
+     * <code>network_load_balancer</code> | <code>quicksight</code> | <code>transit_gateway</code> | <code>trunk</code>
+     * | <code>vpc_endpoint</code>).
      * </p>
      * </li>
      * <li>
@@ -408,12 +400,12 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>private-ip-address</code> - The private IPv4 address or addresses of the network interface.
+     * <code>private-dns-name</code> - The private DNS name of the network interface (IPv4).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>private-dns-name</code> - The private DNS name of the network interface (IPv4).
+     * <code>private-ip-address</code> - The private IPv4 address or addresses of the network interface.
      * </p>
      * </li>
      * <li>
@@ -473,26 +465,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>addresses.private-ip-address</code> - The private IPv4 addresses associated with the network
-     *         interface.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>addresses.primary</code> - Whether the private IPv4 address is the primary IP address associated
-     *         with the network interface.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>addresses.association.public-ip</code> - The association ID returned when the network interface was
-     *         associated with the Elastic IP address (IPv4).
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>addresses.association.owner-id</code> - The owner ID of the addresses associated with the network
-     *         interface.
+     *         <code>association.allocation-id</code> - The allocation ID returned when you allocated the Elastic IP
+     *         address (IPv4) for your network interface.
      *         </p>
      *         </li>
      *         <li>
@@ -503,8 +477,26 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *         </li>
      *         <li>
      *         <p>
-     *         <code>association.allocation-id</code> - The allocation ID returned when you allocated the Elastic IP
-     *         address (IPv4) for your network interface.
+     *         <code>addresses.association.owner-id</code> - The owner ID of the addresses associated with the network
+     *         interface.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>addresses.association.public-ip</code> - The association ID returned when the network interface was
+     *         associated with the Elastic IP address (IPv4).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>addresses.primary</code> - Whether the private IPv4 address is the primary IP address associated
+     *         with the network interface.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>addresses.private-ip-address</code> - The private IPv4 addresses associated with the network
+     *         interface.
      *         </p>
      *         </li>
      *         <li>
@@ -526,12 +518,12 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *         </li>
      *         <li>
      *         <p>
-     *         <code>attachment.attachment-id</code> - The ID of the interface attachment.
+     *         <code>attachment.attach-time</code> - The time that the network interface was attached to an instance.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>attachment.attach-time</code> - The time that the network interface was attached to an instance.
+     *         <code>attachment.attachment-id</code> - The ID of the interface attachment.
      *         </p>
      *         </li>
      *         <li>
@@ -579,18 +571,14 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *         </li>
      *         <li>
      *         <p>
-     *         <code>group-name</code> - The name of a security group associated with the network interface.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
      *         <code>ipv6-addresses.ipv6-address</code> - An IPv6 address associated with the network interface.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <code>interface-type</code> - The type of network interface (<code>api_gateway_managed</code> |
-     *         <code>aws_codestar_connections_managed</code> | <code>branch</code> | <code>efa</code> |
+     *         <code>aws_codestar_connections_managed</code> | <code>branch</code> |
+     *         <code>ec2_instance_connect_endpoint</code> | <code>efa</code> | <code>efs</code> |
      *         <code>gateway_load_balancer</code> | <code>gateway_load_balancer_endpoint</code> |
      *         <code>global_accelerator_managed</code> | <code>interface</code> | <code>iot_rules_managed</code> |
      *         <code>lambda</code> | <code>load_balancer</code> | <code>nat_gateway</code> |
@@ -615,12 +603,12 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *         </li>
      *         <li>
      *         <p>
-     *         <code>private-ip-address</code> - The private IPv4 address or addresses of the network interface.
+     *         <code>private-dns-name</code> - The private DNS name of the network interface (IPv4).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>private-dns-name</code> - The private DNS name of the network interface (IPv4).
+     *         <code>private-ip-address</code> - The private IPv4 address or addresses of the network interface.
      *         </p>
      *         </li>
      *         <li>
@@ -690,25 +678,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>addresses.private-ip-address</code> - The private IPv4 addresses associated with the network interface.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>addresses.primary</code> - Whether the private IPv4 address is the primary IP address associated with the
-     * network interface.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>addresses.association.public-ip</code> - The association ID returned when the network interface was
-     * associated with the Elastic IP address (IPv4).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>addresses.association.owner-id</code> - The owner ID of the addresses associated with the network
-     * interface.
+     * <code>association.allocation-id</code> - The allocation ID returned when you allocated the Elastic IP address
+     * (IPv4) for your network interface.
      * </p>
      * </li>
      * <li>
@@ -719,8 +690,25 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>association.allocation-id</code> - The allocation ID returned when you allocated the Elastic IP address
-     * (IPv4) for your network interface.
+     * <code>addresses.association.owner-id</code> - The owner ID of the addresses associated with the network
+     * interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>addresses.association.public-ip</code> - The association ID returned when the network interface was
+     * associated with the Elastic IP address (IPv4).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>addresses.primary</code> - Whether the private IPv4 address is the primary IP address associated with the
+     * network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>addresses.private-ip-address</code> - The private IPv4 addresses associated with the network interface.
      * </p>
      * </li>
      * <li>
@@ -741,12 +729,12 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>attachment.attachment-id</code> - The ID of the interface attachment.
+     * <code>attachment.attach-time</code> - The time that the network interface was attached to an instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>attachment.attach-time</code> - The time that the network interface was attached to an instance.
+     * <code>attachment.attachment-id</code> - The ID of the interface attachment.
      * </p>
      * </li>
      * <li>
@@ -794,22 +782,18 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>group-name</code> - The name of a security group associated with the network interface.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>ipv6-addresses.ipv6-address</code> - An IPv6 address associated with the network interface.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>interface-type</code> - The type of network interface (<code>api_gateway_managed</code> |
-     * <code>aws_codestar_connections_managed</code> | <code>branch</code> | <code>efa</code> |
-     * <code>gateway_load_balancer</code> | <code>gateway_load_balancer_endpoint</code> |
-     * <code>global_accelerator_managed</code> | <code>interface</code> | <code>iot_rules_managed</code> |
-     * <code>lambda</code> | <code>load_balancer</code> | <code>nat_gateway</code> | <code>network_load_balancer</code>
-     * | <code>quicksight</code> | <code>transit_gateway</code> | <code>trunk</code> | <code>vpc_endpoint</code>).
+     * <code>aws_codestar_connections_managed</code> | <code>branch</code> | <code>ec2_instance_connect_endpoint</code>
+     * | <code>efa</code> | <code>efs</code> | <code>gateway_load_balancer</code> |
+     * <code>gateway_load_balancer_endpoint</code> | <code>global_accelerator_managed</code> | <code>interface</code> |
+     * <code>iot_rules_managed</code> | <code>lambda</code> | <code>load_balancer</code> | <code>nat_gateway</code> |
+     * <code>network_load_balancer</code> | <code>quicksight</code> | <code>transit_gateway</code> | <code>trunk</code>
+     * | <code>vpc_endpoint</code>).
      * </p>
      * </li>
      * <li>
@@ -829,12 +813,12 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>private-ip-address</code> - The private IPv4 address or addresses of the network interface.
+     * <code>private-dns-name</code> - The private DNS name of the network interface (IPv4).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>private-dns-name</code> - The private DNS name of the network interface (IPv4).
+     * <code>private-ip-address</code> - The private IPv4 address or addresses of the network interface.
      * </p>
      * </li>
      * <li>
@@ -895,26 +879,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>addresses.private-ip-address</code> - The private IPv4 addresses associated with the network
-     *        interface.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>addresses.primary</code> - Whether the private IPv4 address is the primary IP address associated
-     *        with the network interface.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>addresses.association.public-ip</code> - The association ID returned when the network interface was
-     *        associated with the Elastic IP address (IPv4).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>addresses.association.owner-id</code> - The owner ID of the addresses associated with the network
-     *        interface.
+     *        <code>association.allocation-id</code> - The allocation ID returned when you allocated the Elastic IP
+     *        address (IPv4) for your network interface.
      *        </p>
      *        </li>
      *        <li>
@@ -925,8 +891,26 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>association.allocation-id</code> - The allocation ID returned when you allocated the Elastic IP
-     *        address (IPv4) for your network interface.
+     *        <code>addresses.association.owner-id</code> - The owner ID of the addresses associated with the network
+     *        interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>addresses.association.public-ip</code> - The association ID returned when the network interface was
+     *        associated with the Elastic IP address (IPv4).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>addresses.primary</code> - Whether the private IPv4 address is the primary IP address associated
+     *        with the network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>addresses.private-ip-address</code> - The private IPv4 addresses associated with the network
+     *        interface.
      *        </p>
      *        </li>
      *        <li>
@@ -948,12 +932,12 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>attachment.attachment-id</code> - The ID of the interface attachment.
+     *        <code>attachment.attach-time</code> - The time that the network interface was attached to an instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>attachment.attach-time</code> - The time that the network interface was attached to an instance.
+     *        <code>attachment.attachment-id</code> - The ID of the interface attachment.
      *        </p>
      *        </li>
      *        <li>
@@ -1001,18 +985,14 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>group-name</code> - The name of a security group associated with the network interface.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        <code>ipv6-addresses.ipv6-address</code> - An IPv6 address associated with the network interface.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>interface-type</code> - The type of network interface (<code>api_gateway_managed</code> |
-     *        <code>aws_codestar_connections_managed</code> | <code>branch</code> | <code>efa</code> |
+     *        <code>aws_codestar_connections_managed</code> | <code>branch</code> |
+     *        <code>ec2_instance_connect_endpoint</code> | <code>efa</code> | <code>efs</code> |
      *        <code>gateway_load_balancer</code> | <code>gateway_load_balancer_endpoint</code> |
      *        <code>global_accelerator_managed</code> | <code>interface</code> | <code>iot_rules_managed</code> |
      *        <code>lambda</code> | <code>load_balancer</code> | <code>nat_gateway</code> |
@@ -1037,12 +1017,12 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>private-ip-address</code> - The private IPv4 address or addresses of the network interface.
+     *        <code>private-dns-name</code> - The private DNS name of the network interface (IPv4).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>private-dns-name</code> - The private DNS name of the network interface (IPv4).
+     *        <code>private-ip-address</code> - The private IPv4 address or addresses of the network interface.
      *        </p>
      *        </li>
      *        <li>
@@ -1114,25 +1094,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>addresses.private-ip-address</code> - The private IPv4 addresses associated with the network interface.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>addresses.primary</code> - Whether the private IPv4 address is the primary IP address associated with the
-     * network interface.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>addresses.association.public-ip</code> - The association ID returned when the network interface was
-     * associated with the Elastic IP address (IPv4).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>addresses.association.owner-id</code> - The owner ID of the addresses associated with the network
-     * interface.
+     * <code>association.allocation-id</code> - The allocation ID returned when you allocated the Elastic IP address
+     * (IPv4) for your network interface.
      * </p>
      * </li>
      * <li>
@@ -1143,8 +1106,25 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>association.allocation-id</code> - The allocation ID returned when you allocated the Elastic IP address
-     * (IPv4) for your network interface.
+     * <code>addresses.association.owner-id</code> - The owner ID of the addresses associated with the network
+     * interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>addresses.association.public-ip</code> - The association ID returned when the network interface was
+     * associated with the Elastic IP address (IPv4).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>addresses.primary</code> - Whether the private IPv4 address is the primary IP address associated with the
+     * network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>addresses.private-ip-address</code> - The private IPv4 addresses associated with the network interface.
      * </p>
      * </li>
      * <li>
@@ -1165,12 +1145,12 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>attachment.attachment-id</code> - The ID of the interface attachment.
+     * <code>attachment.attach-time</code> - The time that the network interface was attached to an instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>attachment.attach-time</code> - The time that the network interface was attached to an instance.
+     * <code>attachment.attachment-id</code> - The ID of the interface attachment.
      * </p>
      * </li>
      * <li>
@@ -1218,22 +1198,18 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>group-name</code> - The name of a security group associated with the network interface.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>ipv6-addresses.ipv6-address</code> - An IPv6 address associated with the network interface.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>interface-type</code> - The type of network interface (<code>api_gateway_managed</code> |
-     * <code>aws_codestar_connections_managed</code> | <code>branch</code> | <code>efa</code> |
-     * <code>gateway_load_balancer</code> | <code>gateway_load_balancer_endpoint</code> |
-     * <code>global_accelerator_managed</code> | <code>interface</code> | <code>iot_rules_managed</code> |
-     * <code>lambda</code> | <code>load_balancer</code> | <code>nat_gateway</code> | <code>network_load_balancer</code>
-     * | <code>quicksight</code> | <code>transit_gateway</code> | <code>trunk</code> | <code>vpc_endpoint</code>).
+     * <code>aws_codestar_connections_managed</code> | <code>branch</code> | <code>ec2_instance_connect_endpoint</code>
+     * | <code>efa</code> | <code>efs</code> | <code>gateway_load_balancer</code> |
+     * <code>gateway_load_balancer_endpoint</code> | <code>global_accelerator_managed</code> | <code>interface</code> |
+     * <code>iot_rules_managed</code> | <code>lambda</code> | <code>load_balancer</code> | <code>nat_gateway</code> |
+     * <code>network_load_balancer</code> | <code>quicksight</code> | <code>transit_gateway</code> | <code>trunk</code>
+     * | <code>vpc_endpoint</code>).
      * </p>
      * </li>
      * <li>
@@ -1253,12 +1229,12 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>private-ip-address</code> - The private IPv4 address or addresses of the network interface.
+     * <code>private-dns-name</code> - The private DNS name of the network interface (IPv4).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>private-dns-name</code> - The private DNS name of the network interface (IPv4).
+     * <code>private-ip-address</code> - The private IPv4 address or addresses of the network interface.
      * </p>
      * </li>
      * <li>
@@ -1324,26 +1300,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>addresses.private-ip-address</code> - The private IPv4 addresses associated with the network
-     *        interface.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>addresses.primary</code> - Whether the private IPv4 address is the primary IP address associated
-     *        with the network interface.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>addresses.association.public-ip</code> - The association ID returned when the network interface was
-     *        associated with the Elastic IP address (IPv4).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>addresses.association.owner-id</code> - The owner ID of the addresses associated with the network
-     *        interface.
+     *        <code>association.allocation-id</code> - The allocation ID returned when you allocated the Elastic IP
+     *        address (IPv4) for your network interface.
      *        </p>
      *        </li>
      *        <li>
@@ -1354,8 +1312,26 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>association.allocation-id</code> - The allocation ID returned when you allocated the Elastic IP
-     *        address (IPv4) for your network interface.
+     *        <code>addresses.association.owner-id</code> - The owner ID of the addresses associated with the network
+     *        interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>addresses.association.public-ip</code> - The association ID returned when the network interface was
+     *        associated with the Elastic IP address (IPv4).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>addresses.primary</code> - Whether the private IPv4 address is the primary IP address associated
+     *        with the network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>addresses.private-ip-address</code> - The private IPv4 addresses associated with the network
+     *        interface.
      *        </p>
      *        </li>
      *        <li>
@@ -1377,12 +1353,12 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>attachment.attachment-id</code> - The ID of the interface attachment.
+     *        <code>attachment.attach-time</code> - The time that the network interface was attached to an instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>attachment.attach-time</code> - The time that the network interface was attached to an instance.
+     *        <code>attachment.attachment-id</code> - The ID of the interface attachment.
      *        </p>
      *        </li>
      *        <li>
@@ -1430,18 +1406,14 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>group-name</code> - The name of a security group associated with the network interface.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        <code>ipv6-addresses.ipv6-address</code> - An IPv6 address associated with the network interface.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>interface-type</code> - The type of network interface (<code>api_gateway_managed</code> |
-     *        <code>aws_codestar_connections_managed</code> | <code>branch</code> | <code>efa</code> |
+     *        <code>aws_codestar_connections_managed</code> | <code>branch</code> |
+     *        <code>ec2_instance_connect_endpoint</code> | <code>efa</code> | <code>efs</code> |
      *        <code>gateway_load_balancer</code> | <code>gateway_load_balancer_endpoint</code> |
      *        <code>global_accelerator_managed</code> | <code>interface</code> | <code>iot_rules_managed</code> |
      *        <code>lambda</code> | <code>load_balancer</code> | <code>nat_gateway</code> |
@@ -1466,12 +1438,12 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>private-ip-address</code> - The private IPv4 address or addresses of the network interface.
+     *        <code>private-dns-name</code> - The private DNS name of the network interface (IPv4).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>private-dns-name</code> - The private DNS name of the network interface (IPv4).
+     *        <code>private-ip-address</code> - The private IPv4 address or addresses of the network interface.
      *        </p>
      *        </li>
      *        <li>
@@ -1545,25 +1517,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>addresses.private-ip-address</code> - The private IPv4 addresses associated with the network interface.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>addresses.primary</code> - Whether the private IPv4 address is the primary IP address associated with the
-     * network interface.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>addresses.association.public-ip</code> - The association ID returned when the network interface was
-     * associated with the Elastic IP address (IPv4).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>addresses.association.owner-id</code> - The owner ID of the addresses associated with the network
-     * interface.
+     * <code>association.allocation-id</code> - The allocation ID returned when you allocated the Elastic IP address
+     * (IPv4) for your network interface.
      * </p>
      * </li>
      * <li>
@@ -1574,8 +1529,25 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>association.allocation-id</code> - The allocation ID returned when you allocated the Elastic IP address
-     * (IPv4) for your network interface.
+     * <code>addresses.association.owner-id</code> - The owner ID of the addresses associated with the network
+     * interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>addresses.association.public-ip</code> - The association ID returned when the network interface was
+     * associated with the Elastic IP address (IPv4).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>addresses.primary</code> - Whether the private IPv4 address is the primary IP address associated with the
+     * network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>addresses.private-ip-address</code> - The private IPv4 addresses associated with the network interface.
      * </p>
      * </li>
      * <li>
@@ -1596,12 +1568,12 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>attachment.attachment-id</code> - The ID of the interface attachment.
+     * <code>attachment.attach-time</code> - The time that the network interface was attached to an instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>attachment.attach-time</code> - The time that the network interface was attached to an instance.
+     * <code>attachment.attachment-id</code> - The ID of the interface attachment.
      * </p>
      * </li>
      * <li>
@@ -1649,22 +1621,18 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>group-name</code> - The name of a security group associated with the network interface.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>ipv6-addresses.ipv6-address</code> - An IPv6 address associated with the network interface.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>interface-type</code> - The type of network interface (<code>api_gateway_managed</code> |
-     * <code>aws_codestar_connections_managed</code> | <code>branch</code> | <code>efa</code> |
-     * <code>gateway_load_balancer</code> | <code>gateway_load_balancer_endpoint</code> |
-     * <code>global_accelerator_managed</code> | <code>interface</code> | <code>iot_rules_managed</code> |
-     * <code>lambda</code> | <code>load_balancer</code> | <code>nat_gateway</code> | <code>network_load_balancer</code>
-     * | <code>quicksight</code> | <code>transit_gateway</code> | <code>trunk</code> | <code>vpc_endpoint</code>).
+     * <code>aws_codestar_connections_managed</code> | <code>branch</code> | <code>ec2_instance_connect_endpoint</code>
+     * | <code>efa</code> | <code>efs</code> | <code>gateway_load_balancer</code> |
+     * <code>gateway_load_balancer_endpoint</code> | <code>global_accelerator_managed</code> | <code>interface</code> |
+     * <code>iot_rules_managed</code> | <code>lambda</code> | <code>load_balancer</code> | <code>nat_gateway</code> |
+     * <code>network_load_balancer</code> | <code>quicksight</code> | <code>transit_gateway</code> | <code>trunk</code>
+     * | <code>vpc_endpoint</code>).
      * </p>
      * </li>
      * <li>
@@ -1684,12 +1652,12 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>private-ip-address</code> - The private IPv4 address or addresses of the network interface.
+     * <code>private-dns-name</code> - The private DNS name of the network interface (IPv4).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>private-dns-name</code> - The private DNS name of the network interface (IPv4).
+     * <code>private-ip-address</code> - The private IPv4 address or addresses of the network interface.
      * </p>
      * </li>
      * <li>
@@ -1750,26 +1718,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>addresses.private-ip-address</code> - The private IPv4 addresses associated with the network
-     *        interface.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>addresses.primary</code> - Whether the private IPv4 address is the primary IP address associated
-     *        with the network interface.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>addresses.association.public-ip</code> - The association ID returned when the network interface was
-     *        associated with the Elastic IP address (IPv4).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>addresses.association.owner-id</code> - The owner ID of the addresses associated with the network
-     *        interface.
+     *        <code>association.allocation-id</code> - The allocation ID returned when you allocated the Elastic IP
+     *        address (IPv4) for your network interface.
      *        </p>
      *        </li>
      *        <li>
@@ -1780,8 +1730,26 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>association.allocation-id</code> - The allocation ID returned when you allocated the Elastic IP
-     *        address (IPv4) for your network interface.
+     *        <code>addresses.association.owner-id</code> - The owner ID of the addresses associated with the network
+     *        interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>addresses.association.public-ip</code> - The association ID returned when the network interface was
+     *        associated with the Elastic IP address (IPv4).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>addresses.primary</code> - Whether the private IPv4 address is the primary IP address associated
+     *        with the network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>addresses.private-ip-address</code> - The private IPv4 addresses associated with the network
+     *        interface.
      *        </p>
      *        </li>
      *        <li>
@@ -1803,12 +1771,12 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>attachment.attachment-id</code> - The ID of the interface attachment.
+     *        <code>attachment.attach-time</code> - The time that the network interface was attached to an instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>attachment.attach-time</code> - The time that the network interface was attached to an instance.
+     *        <code>attachment.attachment-id</code> - The ID of the interface attachment.
      *        </p>
      *        </li>
      *        <li>
@@ -1856,18 +1824,14 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>group-name</code> - The name of a security group associated with the network interface.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        <code>ipv6-addresses.ipv6-address</code> - An IPv6 address associated with the network interface.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>interface-type</code> - The type of network interface (<code>api_gateway_managed</code> |
-     *        <code>aws_codestar_connections_managed</code> | <code>branch</code> | <code>efa</code> |
+     *        <code>aws_codestar_connections_managed</code> | <code>branch</code> |
+     *        <code>ec2_instance_connect_endpoint</code> | <code>efa</code> | <code>efs</code> |
      *        <code>gateway_load_balancer</code> | <code>gateway_load_balancer_endpoint</code> |
      *        <code>global_accelerator_managed</code> | <code>interface</code> | <code>iot_rules_managed</code> |
      *        <code>lambda</code> | <code>load_balancer</code> | <code>nat_gateway</code> |
@@ -1892,12 +1856,12 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>private-ip-address</code> - The private IPv4 address or addresses of the network interface.
+     *        <code>private-dns-name</code> - The private DNS name of the network interface (IPv4).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>private-dns-name</code> - The private DNS name of the network interface (IPv4).
+     *        <code>private-ip-address</code> - The private IPv4 address or addresses of the network interface.
      *        </p>
      *        </li>
      *        <li>

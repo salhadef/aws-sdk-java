@@ -27,7 +27,7 @@ public class UpdateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the feature group that you're updating.
+     * The name or Amazon Resource Name (ARN) of the feature group that you're updating.
      * </p>
      */
     private String featureGroupName;
@@ -39,14 +39,20 @@ public class UpdateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private java.util.List<FeatureDefinition> featureAdditions;
+    /**
+     * <p>
+     * Updates the feature group online store configuration.
+     * </p>
+     */
+    private OnlineStoreConfigUpdate onlineStoreConfig;
 
     /**
      * <p>
-     * The name of the feature group that you're updating.
+     * The name or Amazon Resource Name (ARN) of the feature group that you're updating.
      * </p>
      * 
      * @param featureGroupName
-     *        The name of the feature group that you're updating.
+     *        The name or Amazon Resource Name (ARN) of the feature group that you're updating.
      */
 
     public void setFeatureGroupName(String featureGroupName) {
@@ -55,10 +61,10 @@ public class UpdateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the feature group that you're updating.
+     * The name or Amazon Resource Name (ARN) of the feature group that you're updating.
      * </p>
      * 
-     * @return The name of the feature group that you're updating.
+     * @return The name or Amazon Resource Name (ARN) of the feature group that you're updating.
      */
 
     public String getFeatureGroupName() {
@@ -67,11 +73,11 @@ public class UpdateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the feature group that you're updating.
+     * The name or Amazon Resource Name (ARN) of the feature group that you're updating.
      * </p>
      * 
      * @param featureGroupName
-     *        The name of the feature group that you're updating.
+     *        The name or Amazon Resource Name (ARN) of the feature group that you're updating.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -167,6 +173,46 @@ public class UpdateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * Updates the feature group online store configuration.
+     * </p>
+     * 
+     * @param onlineStoreConfig
+     *        Updates the feature group online store configuration.
+     */
+
+    public void setOnlineStoreConfig(OnlineStoreConfigUpdate onlineStoreConfig) {
+        this.onlineStoreConfig = onlineStoreConfig;
+    }
+
+    /**
+     * <p>
+     * Updates the feature group online store configuration.
+     * </p>
+     * 
+     * @return Updates the feature group online store configuration.
+     */
+
+    public OnlineStoreConfigUpdate getOnlineStoreConfig() {
+        return this.onlineStoreConfig;
+    }
+
+    /**
+     * <p>
+     * Updates the feature group online store configuration.
+     * </p>
+     * 
+     * @param onlineStoreConfig
+     *        Updates the feature group online store configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFeatureGroupRequest withOnlineStoreConfig(OnlineStoreConfigUpdate onlineStoreConfig) {
+        setOnlineStoreConfig(onlineStoreConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -181,7 +227,9 @@ public class UpdateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
         if (getFeatureGroupName() != null)
             sb.append("FeatureGroupName: ").append(getFeatureGroupName()).append(",");
         if (getFeatureAdditions() != null)
-            sb.append("FeatureAdditions: ").append(getFeatureAdditions());
+            sb.append("FeatureAdditions: ").append(getFeatureAdditions()).append(",");
+        if (getOnlineStoreConfig() != null)
+            sb.append("OnlineStoreConfig: ").append(getOnlineStoreConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -204,6 +252,10 @@ public class UpdateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getFeatureAdditions() != null && other.getFeatureAdditions().equals(this.getFeatureAdditions()) == false)
             return false;
+        if (other.getOnlineStoreConfig() == null ^ this.getOnlineStoreConfig() == null)
+            return false;
+        if (other.getOnlineStoreConfig() != null && other.getOnlineStoreConfig().equals(this.getOnlineStoreConfig()) == false)
+            return false;
         return true;
     }
 
@@ -214,6 +266,7 @@ public class UpdateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
 
         hashCode = prime * hashCode + ((getFeatureGroupName() == null) ? 0 : getFeatureGroupName().hashCode());
         hashCode = prime * hashCode + ((getFeatureAdditions() == null) ? 0 : getFeatureAdditions().hashCode());
+        hashCode = prime * hashCode + ((getOnlineStoreConfig() == null) ? 0 : getOnlineStoreConfig().hashCode());
         return hashCode;
     }
 

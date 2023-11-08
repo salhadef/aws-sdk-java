@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Controls on the query specifications that can be run on configured table..
+ * Controls on the query specifications that can be run on configured table.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/AnalysisRulePolicy" target="_top">AWS API
@@ -30,18 +30,18 @@ public class AnalysisRulePolicy implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Controls on the query specifications that can be run on configured table..
+     * Controls on the query specifications that can be run on configured table.
      * </p>
      */
     private AnalysisRulePolicyV1 v1;
 
     /**
      * <p>
-     * Controls on the query specifications that can be run on configured table..
+     * Controls on the query specifications that can be run on configured table.
      * </p>
      * 
      * @param v1
-     *        Controls on the query specifications that can be run on configured table..
+     *        Controls on the query specifications that can be run on configured table.
      */
 
     public void setV1(AnalysisRulePolicyV1 v1) {
@@ -50,10 +50,10 @@ public class AnalysisRulePolicy implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Controls on the query specifications that can be run on configured table..
+     * Controls on the query specifications that can be run on configured table.
      * </p>
      * 
-     * @return Controls on the query specifications that can be run on configured table..
+     * @return Controls on the query specifications that can be run on configured table.
      */
 
     public AnalysisRulePolicyV1 getV1() {
@@ -62,11 +62,11 @@ public class AnalysisRulePolicy implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Controls on the query specifications that can be run on configured table..
+     * Controls on the query specifications that can be run on configured table.
      * </p>
      * 
      * @param v1
-     *        Controls on the query specifications that can be run on configured table..
+     *        Controls on the query specifications that can be run on configured table.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

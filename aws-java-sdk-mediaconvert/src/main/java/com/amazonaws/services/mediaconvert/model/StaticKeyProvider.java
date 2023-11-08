@@ -36,7 +36,7 @@ public class StaticKeyProvider implements Serializable, Cloneable, StructuredPoj
      * version values (1/2/3).
      */
     private String keyFormatVersions;
-    /** Relates to DRM implementation. Use a 32-character hexidecimal string to specify Key Value (StaticKeyValue). */
+    /** Relates to DRM implementation. Use a 32-character hexidecimal string to specify Key Value. */
     private String staticKeyValue;
     /** Relates to DRM implementation. The location of the license server used for protecting content. */
     private String url;
@@ -122,11 +122,10 @@ public class StaticKeyProvider implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Relates to DRM implementation. Use a 32-character hexidecimal string to specify Key Value (StaticKeyValue).
+     * Relates to DRM implementation. Use a 32-character hexidecimal string to specify Key Value.
      * 
      * @param staticKeyValue
-     *        Relates to DRM implementation. Use a 32-character hexidecimal string to specify Key Value
-     *        (StaticKeyValue).
+     *        Relates to DRM implementation. Use a 32-character hexidecimal string to specify Key Value.
      */
 
     public void setStaticKeyValue(String staticKeyValue) {
@@ -134,10 +133,9 @@ public class StaticKeyProvider implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Relates to DRM implementation. Use a 32-character hexidecimal string to specify Key Value (StaticKeyValue).
+     * Relates to DRM implementation. Use a 32-character hexidecimal string to specify Key Value.
      * 
-     * @return Relates to DRM implementation. Use a 32-character hexidecimal string to specify Key Value
-     *         (StaticKeyValue).
+     * @return Relates to DRM implementation. Use a 32-character hexidecimal string to specify Key Value.
      */
 
     public String getStaticKeyValue() {
@@ -145,11 +143,10 @@ public class StaticKeyProvider implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Relates to DRM implementation. Use a 32-character hexidecimal string to specify Key Value (StaticKeyValue).
+     * Relates to DRM implementation. Use a 32-character hexidecimal string to specify Key Value.
      * 
      * @param staticKeyValue
-     *        Relates to DRM implementation. Use a 32-character hexidecimal string to specify Key Value
-     *        (StaticKeyValue).
+     *        Relates to DRM implementation. Use a 32-character hexidecimal string to specify Key Value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

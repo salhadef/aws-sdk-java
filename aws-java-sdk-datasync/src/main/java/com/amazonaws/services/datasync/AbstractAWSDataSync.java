@@ -43,6 +43,11 @@ public class AbstractAWSDataSync implements AWSDataSync {
     }
 
     @Override
+    public CreateLocationAzureBlobResult createLocationAzureBlob(CreateLocationAzureBlobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateLocationEfsResult createLocationEfs(CreateLocationEfsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -119,6 +124,11 @@ public class AbstractAWSDataSync implements AWSDataSync {
 
     @Override
     public DescribeDiscoveryJobResult describeDiscoveryJob(DescribeDiscoveryJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeLocationAzureBlobResult describeLocationAzureBlob(DescribeLocationAzureBlobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -274,6 +284,11 @@ public class AbstractAWSDataSync implements AWSDataSync {
 
     @Override
     public UpdateDiscoveryJobResult updateDiscoveryJob(UpdateDiscoveryJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateLocationAzureBlobResult updateLocationAzureBlob(UpdateLocationAzureBlobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -22,7 +22,8 @@ public enum LocationType {
 
     Region("region"),
     AvailabilityZone("availability-zone"),
-    AvailabilityZoneId("availability-zone-id");
+    AvailabilityZoneId("availability-zone-id"),
+    Outpost("outpost");
 
     private String value;
 

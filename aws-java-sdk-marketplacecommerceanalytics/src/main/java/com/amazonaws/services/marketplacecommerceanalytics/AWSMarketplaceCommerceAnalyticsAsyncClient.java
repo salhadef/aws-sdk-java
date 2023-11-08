@@ -298,12 +298,14 @@ public class AWSMarketplaceCommerceAnalyticsAsyncClient extends AWSMarketplaceCo
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<StartSupportDataExportResult> startSupportDataExportAsync(StartSupportDataExportRequest request) {
 
         return startSupportDataExportAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<StartSupportDataExportResult> startSupportDataExportAsync(final StartSupportDataExportRequest request,
             final com.amazonaws.handlers.AsyncHandler<StartSupportDataExportRequest, StartSupportDataExportResult> asyncHandler) {
         final StartSupportDataExportRequest finalRequest = beforeClientExecution(request);

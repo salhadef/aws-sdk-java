@@ -27,7 +27,7 @@ public class CreateHostRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name of the host to be created. The name must be unique in the calling AWS account.
+     * The name of the host to be created.
      * </p>
      */
     private String name;
@@ -56,11 +56,11 @@ public class CreateHostRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name of the host to be created. The name must be unique in the calling AWS account.
+     * The name of the host to be created.
      * </p>
      * 
      * @param name
-     *        The name of the host to be created. The name must be unique in the calling AWS account.
+     *        The name of the host to be created.
      */
 
     public void setName(String name) {
@@ -69,10 +69,10 @@ public class CreateHostRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name of the host to be created. The name must be unique in the calling AWS account.
+     * The name of the host to be created.
      * </p>
      * 
-     * @return The name of the host to be created. The name must be unique in the calling AWS account.
+     * @return The name of the host to be created.
      */
 
     public String getName() {
@@ -81,11 +81,11 @@ public class CreateHostRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name of the host to be created. The name must be unique in the calling AWS account.
+     * The name of the host to be created.
      * </p>
      * 
      * @param name
-     *        The name of the host to be created. The name must be unique in the calling AWS account.
+     *        The name of the host to be created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

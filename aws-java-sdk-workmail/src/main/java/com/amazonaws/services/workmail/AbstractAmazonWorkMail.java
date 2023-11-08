@@ -168,6 +168,11 @@ public class AbstractAmazonWorkMail implements AmazonWorkMail {
     }
 
     @Override
+    public DescribeEntityResult describeEntity(DescribeEntityRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeGroupResult describeGroup(DescribeGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -269,6 +274,11 @@ public class AbstractAmazonWorkMail implements AmazonWorkMail {
 
     @Override
     public ListGroupsResult listGroups(ListGroupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListGroupsForEntityResult listGroupsForEntity(ListGroupsForEntityRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -403,6 +413,11 @@ public class AbstractAmazonWorkMail implements AmazonWorkMail {
     }
 
     @Override
+    public UpdateGroupResult updateGroup(UpdateGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateImpersonationRoleResult updateImpersonationRole(UpdateImpersonationRoleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -424,6 +439,11 @@ public class AbstractAmazonWorkMail implements AmazonWorkMail {
 
     @Override
     public UpdateResourceResult updateResource(UpdateResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateUserResult updateUser(UpdateUserRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

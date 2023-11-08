@@ -29,6 +29,8 @@ public class RegisteredUserDashboardFeatureConfigurationsMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> STATEPERSISTENCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatePersistence").build();
+    private static final MarshallingInfo<StructuredPojo> BOOKMARKS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Bookmarks").build();
 
     private static final RegisteredUserDashboardFeatureConfigurationsMarshaller instance = new RegisteredUserDashboardFeatureConfigurationsMarshaller();
 
@@ -47,6 +49,7 @@ public class RegisteredUserDashboardFeatureConfigurationsMarshaller {
 
         try {
             protocolMarshaller.marshall(registeredUserDashboardFeatureConfigurations.getStatePersistence(), STATEPERSISTENCE_BINDING);
+            protocolMarshaller.marshall(registeredUserDashboardFeatureConfigurations.getBookmarks(), BOOKMARKS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -35,7 +35,8 @@ public enum PackageManager {
     PIP("PIP"),
     PYTHONPKG("PYTHONPKG"),
     NODEPKG("NODEPKG"),
-    POM("POM");
+    POM("POM"),
+    GEMSPEC("GEMSPEC");
 
     private String value;
 

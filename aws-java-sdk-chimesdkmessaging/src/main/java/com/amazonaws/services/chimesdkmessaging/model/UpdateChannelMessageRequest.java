@@ -39,7 +39,7 @@ public class UpdateChannelMessageRequest extends com.amazonaws.AmazonWebServiceR
     private String messageId;
     /**
      * <p>
-     * The content of the message being updated.
+     * The content of the channel message.
      * </p>
      */
     private String content;
@@ -155,11 +155,11 @@ public class UpdateChannelMessageRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The content of the message being updated.
+     * The content of the channel message.
      * </p>
      * 
      * @param content
-     *        The content of the message being updated.
+     *        The content of the channel message.
      */
 
     public void setContent(String content) {
@@ -168,10 +168,10 @@ public class UpdateChannelMessageRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The content of the message being updated.
+     * The content of the channel message.
      * </p>
      * 
-     * @return The content of the message being updated.
+     * @return The content of the channel message.
      */
 
     public String getContent() {
@@ -180,11 +180,11 @@ public class UpdateChannelMessageRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The content of the message being updated.
+     * The content of the channel message.
      * </p>
      * 
      * @param content
-     *        The content of the message being updated.
+     *        The content of the channel message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

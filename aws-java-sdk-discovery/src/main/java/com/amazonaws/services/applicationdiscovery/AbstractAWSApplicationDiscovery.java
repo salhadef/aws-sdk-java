@@ -43,6 +43,11 @@ public class AbstractAWSApplicationDiscovery implements AWSApplicationDiscovery 
     }
 
     @Override
+    public BatchDeleteAgentsResult batchDeleteAgents(BatchDeleteAgentsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public BatchDeleteImportDataResult batchDeleteImportData(BatchDeleteImportDataRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -69,6 +74,11 @@ public class AbstractAWSApplicationDiscovery implements AWSApplicationDiscovery 
 
     @Override
     public DescribeAgentsResult describeAgents(DescribeAgentsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeBatchDeleteConfigurationTaskResult describeBatchDeleteConfigurationTask(DescribeBatchDeleteConfigurationTaskRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -127,6 +137,11 @@ public class AbstractAWSApplicationDiscovery implements AWSApplicationDiscovery 
 
     @Override
     public ListServerNeighborsResult listServerNeighbors(ListServerNeighborsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartBatchDeleteConfigurationTaskResult startBatchDeleteConfigurationTask(StartBatchDeleteConfigurationTaskRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

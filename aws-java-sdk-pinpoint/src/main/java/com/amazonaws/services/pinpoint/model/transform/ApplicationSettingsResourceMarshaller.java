@@ -37,6 +37,8 @@ public class ApplicationSettingsResourceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Limits").build();
     private static final MarshallingInfo<StructuredPojo> QUIETTIME_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("QuietTime").build();
+    private static final MarshallingInfo<StructuredPojo> JOURNEYLIMITS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("JourneyLimits").build();
 
     private static final ApplicationSettingsResourceMarshaller instance = new ApplicationSettingsResourceMarshaller();
 
@@ -59,6 +61,7 @@ public class ApplicationSettingsResourceMarshaller {
             protocolMarshaller.marshall(applicationSettingsResource.getLastModifiedDate(), LASTMODIFIEDDATE_BINDING);
             protocolMarshaller.marshall(applicationSettingsResource.getLimits(), LIMITS_BINDING);
             protocolMarshaller.marshall(applicationSettingsResource.getQuietTime(), QUIETTIME_BINDING);
+            protocolMarshaller.marshall(applicationSettingsResource.getJourneyLimits(), JOURNEYLIMITS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

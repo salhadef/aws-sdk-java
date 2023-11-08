@@ -48,6 +48,8 @@ public class TLSInspectionConfigurationResponseMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EncryptionConfiguration").build();
     private static final MarshallingInfo<List> CERTIFICATES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Certificates").build();
+    private static final MarshallingInfo<StructuredPojo> CERTIFICATEAUTHORITY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CertificateAuthority").build();
 
     private static final TLSInspectionConfigurationResponseMarshaller instance = new TLSInspectionConfigurationResponseMarshaller();
 
@@ -75,6 +77,7 @@ public class TLSInspectionConfigurationResponseMarshaller {
             protocolMarshaller.marshall(tLSInspectionConfigurationResponse.getNumberOfAssociations(), NUMBEROFASSOCIATIONS_BINDING);
             protocolMarshaller.marshall(tLSInspectionConfigurationResponse.getEncryptionConfiguration(), ENCRYPTIONCONFIGURATION_BINDING);
             protocolMarshaller.marshall(tLSInspectionConfigurationResponse.getCertificates(), CERTIFICATES_BINDING);
+            protocolMarshaller.marshall(tLSInspectionConfigurationResponse.getCertificateAuthority(), CERTIFICATEAUTHORITY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -306,7 +306,7 @@ public class S3Storage implements Serializable, Cloneable {
         if (getUploadPolicy() != null)
             sb.append("UploadPolicy: ").append(getUploadPolicy()).append(",");
         if (getUploadPolicySignature() != null)
-            sb.append("UploadPolicySignature: ").append(getUploadPolicySignature());
+            sb.append("UploadPolicySignature: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

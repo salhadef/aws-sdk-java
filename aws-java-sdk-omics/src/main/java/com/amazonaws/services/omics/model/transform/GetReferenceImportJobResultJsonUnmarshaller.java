@@ -48,14 +48,6 @@ public class GetReferenceImportJobResultJsonUnmarshaller implements Unmarshaller
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("completionTime", targetDepth)) {
-                    context.nextToken();
-                    getReferenceImportJobResult.setCompletionTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
-                }
-                if (context.testExpression("creationTime", targetDepth)) {
-                    context.nextToken();
-                    getReferenceImportJobResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
-                }
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
                     getReferenceImportJobResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
@@ -68,13 +60,6 @@ public class GetReferenceImportJobResultJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     getReferenceImportJobResult.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("sources", targetDepth)) {
-                    context.nextToken();
-                    getReferenceImportJobResult.setSources(new ListUnmarshaller<ImportReferenceSourceItem>(ImportReferenceSourceItemJsonUnmarshaller
-                            .getInstance())
-
-                    .unmarshall(context));
-                }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     getReferenceImportJobResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
@@ -82,6 +67,21 @@ public class GetReferenceImportJobResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("statusMessage", targetDepth)) {
                     context.nextToken();
                     getReferenceImportJobResult.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("creationTime", targetDepth)) {
+                    context.nextToken();
+                    getReferenceImportJobResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (context.testExpression("completionTime", targetDepth)) {
+                    context.nextToken();
+                    getReferenceImportJobResult.setCompletionTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (context.testExpression("sources", targetDepth)) {
+                    context.nextToken();
+                    getReferenceImportJobResult.setSources(new ListUnmarshaller<ImportReferenceSourceItem>(ImportReferenceSourceItemJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

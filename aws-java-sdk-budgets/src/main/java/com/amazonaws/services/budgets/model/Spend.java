@@ -22,7 +22,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * The amount of cost or usage that's measured for a budget.
  * </p>
  * <p>
- * For example, a <code>Spend</code> for <code>3 GB</code> of S3 usage has the following parameters:
+ * <i>Cost example:</i> A <code>Spend</code> for <code>3 USD</code> of costs has the following parameters:
  * </p>
  * <ul>
  * <li>
@@ -32,7 +32,22 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </li>
  * <li>
  * <p>
- * A <code>unit</code> of <code>GB</code>
+ * A <code>Unit</code> of <code>USD</code>
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * <i>Usage example:</i> A <code>Spend</code> for <code>3 GB</code> of S3 usage has the following parameters:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * An <code>Amount</code> of <code>3</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * A <code>Unit</code> of <code>GB</code>
  * </p>
  * </li>
  * </ul>
@@ -48,8 +63,7 @@ public class Spend implements Serializable, Cloneable, StructuredPojo {
     private java.math.BigDecimal amount;
     /**
      * <p>
-     * The unit of measurement that's used for the budget forecast, actual spend, or budget threshold, such as USD or
-     * GBP.
+     * The unit of measurement that's used for the budget forecast, actual spend, or budget threshold.
      * </p>
      */
     private String unit;
@@ -96,13 +110,11 @@ public class Spend implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unit of measurement that's used for the budget forecast, actual spend, or budget threshold, such as USD or
-     * GBP.
+     * The unit of measurement that's used for the budget forecast, actual spend, or budget threshold.
      * </p>
      * 
      * @param unit
-     *        The unit of measurement that's used for the budget forecast, actual spend, or budget threshold, such as
-     *        USD or GBP.
+     *        The unit of measurement that's used for the budget forecast, actual spend, or budget threshold.
      */
 
     public void setUnit(String unit) {
@@ -111,12 +123,10 @@ public class Spend implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unit of measurement that's used for the budget forecast, actual spend, or budget threshold, such as USD or
-     * GBP.
+     * The unit of measurement that's used for the budget forecast, actual spend, or budget threshold.
      * </p>
      * 
-     * @return The unit of measurement that's used for the budget forecast, actual spend, or budget threshold, such as
-     *         USD or GBP.
+     * @return The unit of measurement that's used for the budget forecast, actual spend, or budget threshold.
      */
 
     public String getUnit() {
@@ -125,13 +135,11 @@ public class Spend implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unit of measurement that's used for the budget forecast, actual spend, or budget threshold, such as USD or
-     * GBP.
+     * The unit of measurement that's used for the budget forecast, actual spend, or budget threshold.
      * </p>
      * 
      * @param unit
-     *        The unit of measurement that's used for the budget forecast, actual spend, or budget threshold, such as
-     *        USD or GBP.
+     *        The unit of measurement that's used for the budget forecast, actual spend, or budget threshold.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

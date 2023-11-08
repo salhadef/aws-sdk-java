@@ -24,7 +24,8 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
 
     /**
      * <p>
-     * The identifier for the search. You use <code>QueryId</code> to identify the search when using the feedback API.
+     * The identifier for the search. You also use <code>QueryId</code> to identify the search when using the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_SubmitFeedback.html">SubmitFeedback</a> API.
      * </p>
      */
     private String queryId;
@@ -36,14 +37,14 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
     private java.util.List<QueryResultItem> resultItems;
     /**
      * <p>
-     * Contains the facet results. A <code>FacetResult</code> contains the counts for each attribute key that was
+     * Contains the facet results. A <code>FacetResult</code> contains the counts for each field/attribute key that was
      * specified in the <code>Facets</code> input parameter.
      * </p>
      */
     private java.util.List<FacetResult> facetResults;
     /**
      * <p>
-     * The total number of items found by the search; however, you can only retrieve up to 100 items. For example, if
+     * The total number of items found by the search. However, you can only retrieve up to 100 items. For example, if
      * the search found 192 items, you can only retrieve the first 100 of the items.
      * </p>
      */
@@ -77,11 +78,13 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
 
     /**
      * <p>
-     * The identifier for the search. You use <code>QueryId</code> to identify the search when using the feedback API.
+     * The identifier for the search. You also use <code>QueryId</code> to identify the search when using the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_SubmitFeedback.html">SubmitFeedback</a> API.
      * </p>
      * 
      * @param queryId
-     *        The identifier for the search. You use <code>QueryId</code> to identify the search when using the feedback
+     *        The identifier for the search. You also use <code>QueryId</code> to identify the search when using the <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_SubmitFeedback.html">SubmitFeedback</a>
      *        API.
      */
 
@@ -91,11 +94,13 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
 
     /**
      * <p>
-     * The identifier for the search. You use <code>QueryId</code> to identify the search when using the feedback API.
+     * The identifier for the search. You also use <code>QueryId</code> to identify the search when using the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_SubmitFeedback.html">SubmitFeedback</a> API.
      * </p>
      * 
-     * @return The identifier for the search. You use <code>QueryId</code> to identify the search when using the
-     *         feedback API.
+     * @return The identifier for the search. You also use <code>QueryId</code> to identify the search when using the <a
+     *         href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_SubmitFeedback.html">SubmitFeedback</a>
+     *         API.
      */
 
     public String getQueryId() {
@@ -104,11 +109,13 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
 
     /**
      * <p>
-     * The identifier for the search. You use <code>QueryId</code> to identify the search when using the feedback API.
+     * The identifier for the search. You also use <code>QueryId</code> to identify the search when using the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_SubmitFeedback.html">SubmitFeedback</a> API.
      * </p>
      * 
      * @param queryId
-     *        The identifier for the search. You use <code>QueryId</code> to identify the search when using the feedback
+     *        The identifier for the search. You also use <code>QueryId</code> to identify the search when using the <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_SubmitFeedback.html">SubmitFeedback</a>
      *        API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -190,12 +197,12 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
 
     /**
      * <p>
-     * Contains the facet results. A <code>FacetResult</code> contains the counts for each attribute key that was
+     * Contains the facet results. A <code>FacetResult</code> contains the counts for each field/attribute key that was
      * specified in the <code>Facets</code> input parameter.
      * </p>
      * 
-     * @return Contains the facet results. A <code>FacetResult</code> contains the counts for each attribute key that
-     *         was specified in the <code>Facets</code> input parameter.
+     * @return Contains the facet results. A <code>FacetResult</code> contains the counts for each field/attribute key
+     *         that was specified in the <code>Facets</code> input parameter.
      */
 
     public java.util.List<FacetResult> getFacetResults() {
@@ -204,13 +211,13 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
 
     /**
      * <p>
-     * Contains the facet results. A <code>FacetResult</code> contains the counts for each attribute key that was
+     * Contains the facet results. A <code>FacetResult</code> contains the counts for each field/attribute key that was
      * specified in the <code>Facets</code> input parameter.
      * </p>
      * 
      * @param facetResults
-     *        Contains the facet results. A <code>FacetResult</code> contains the counts for each attribute key that was
-     *        specified in the <code>Facets</code> input parameter.
+     *        Contains the facet results. A <code>FacetResult</code> contains the counts for each field/attribute key
+     *        that was specified in the <code>Facets</code> input parameter.
      */
 
     public void setFacetResults(java.util.Collection<FacetResult> facetResults) {
@@ -224,7 +231,7 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
 
     /**
      * <p>
-     * Contains the facet results. A <code>FacetResult</code> contains the counts for each attribute key that was
+     * Contains the facet results. A <code>FacetResult</code> contains the counts for each field/attribute key that was
      * specified in the <code>Facets</code> input parameter.
      * </p>
      * <p>
@@ -234,8 +241,8 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
      * </p>
      * 
      * @param facetResults
-     *        Contains the facet results. A <code>FacetResult</code> contains the counts for each attribute key that was
-     *        specified in the <code>Facets</code> input parameter.
+     *        Contains the facet results. A <code>FacetResult</code> contains the counts for each field/attribute key
+     *        that was specified in the <code>Facets</code> input parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -251,13 +258,13 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
 
     /**
      * <p>
-     * Contains the facet results. A <code>FacetResult</code> contains the counts for each attribute key that was
+     * Contains the facet results. A <code>FacetResult</code> contains the counts for each field/attribute key that was
      * specified in the <code>Facets</code> input parameter.
      * </p>
      * 
      * @param facetResults
-     *        Contains the facet results. A <code>FacetResult</code> contains the counts for each attribute key that was
-     *        specified in the <code>Facets</code> input parameter.
+     *        Contains the facet results. A <code>FacetResult</code> contains the counts for each field/attribute key
+     *        that was specified in the <code>Facets</code> input parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -268,12 +275,12 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
 
     /**
      * <p>
-     * The total number of items found by the search; however, you can only retrieve up to 100 items. For example, if
+     * The total number of items found by the search. However, you can only retrieve up to 100 items. For example, if
      * the search found 192 items, you can only retrieve the first 100 of the items.
      * </p>
      * 
      * @param totalNumberOfResults
-     *        The total number of items found by the search; however, you can only retrieve up to 100 items. For
+     *        The total number of items found by the search. However, you can only retrieve up to 100 items. For
      *        example, if the search found 192 items, you can only retrieve the first 100 of the items.
      */
 
@@ -283,11 +290,11 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
 
     /**
      * <p>
-     * The total number of items found by the search; however, you can only retrieve up to 100 items. For example, if
+     * The total number of items found by the search. However, you can only retrieve up to 100 items. For example, if
      * the search found 192 items, you can only retrieve the first 100 of the items.
      * </p>
      * 
-     * @return The total number of items found by the search; however, you can only retrieve up to 100 items. For
+     * @return The total number of items found by the search. However, you can only retrieve up to 100 items. For
      *         example, if the search found 192 items, you can only retrieve the first 100 of the items.
      */
 
@@ -297,12 +304,12 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
 
     /**
      * <p>
-     * The total number of items found by the search; however, you can only retrieve up to 100 items. For example, if
+     * The total number of items found by the search. However, you can only retrieve up to 100 items. For example, if
      * the search found 192 items, you can only retrieve the first 100 of the items.
      * </p>
      * 
      * @param totalNumberOfResults
-     *        The total number of items found by the search; however, you can only retrieve up to 100 items. For
+     *        The total number of items found by the search. However, you can only retrieve up to 100 items. For
      *        example, if the search found 192 items, you can only retrieve the first 100 of the items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

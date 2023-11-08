@@ -34,19 +34,35 @@ public class CreateAutoMLJobV2Request extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * An array of channel objects describing the input data and their location. Each channel is a named input source.
-     * Similar to <a href=
+     * Similar to the <a href=
      * "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html#sagemaker-CreateAutoMLJob-request-InputDataConfig"
-     * >InputDataConfig</a> supported by <code>CreateAutoMLJob</code>. The supported formats depend on the problem type:
+     * >InputDataConfig</a> attribute in the <code>CreateAutoMLJob</code> input parameters. The supported formats depend
+     * on the problem type:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * ImageClassification: S3Prefix, <code>ManifestFile</code>, <code>AugmentedManifestFile</code>
+     * For tabular problem types: <code>S3Prefix</code>, <code>ManifestFile</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * TextClassification: S3Prefix
+     * For image classification: <code>S3Prefix</code>, <code>ManifestFile</code>, <code>AugmentedManifestFile</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For text classification: <code>S3Prefix</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For time-series forecasting: <code>S3Prefix</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For text generation (LLMs fine-tuning): <code>S3Prefix</code>.
      * </p>
      * </li>
      * </ul>
@@ -87,10 +103,33 @@ public class CreateAutoMLJobV2Request extends com.amazonaws.AmazonWebServiceRequ
     private AutoMLSecurityConfig securityConfig;
     /**
      * <p>
-     * Specifies a metric to minimize or maximize as the objective of a job. For <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html"
-     * >CreateAutoMLJobV2</a>, only <code>Accuracy</code> is supported.
+     * Specifies a metric to minimize or maximize as the objective of a job. If not specified, the default objective
+     * metric depends on the problem type. For the list of default values per problem type, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html"
+     * >AutoMLJobObjective</a>.
      * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * For tabular problem types: You must either provide both the <code>AutoMLJobObjective</code> and indicate the type
+     * of supervised learning problem in <code>AutoMLProblemTypeConfig</code> (<code>TabularJobConfig.ProblemType</code>
+     * ), or none at all.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For text generation problem types (LLMs fine-tuning): Fine-tuning language models in Autopilot does not require
+     * setting the <code>AutoMLJobObjective</code> field. Autopilot fine-tunes LLMs without requiring multiple
+     * candidates to be trained and evaluated. Instead, using your dataset, Autopilot directly fine-tunes your target
+     * model to enhance a default objective metric, the cross-entropy loss. After fine-tuning a language model, you can
+     * evaluate the quality of its generated text using different metrics. For a list of the available metrics, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/llms-finetuning-models.html">Metrics for fine-tuning LLMs
+     * in Autopilot</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      */
     private AutoMLJobObjective autoMLJobObjective;
     /**
@@ -104,11 +143,15 @@ public class CreateAutoMLJobV2Request extends com.amazonaws.AmazonWebServiceRequ
      * This structure specifies how to split the data into train and validation datasets.
      * </p>
      * <p>
-     * If you are using the V1 API (for example <code>CreateAutoMLJob</code>) or the V2 API for Natural Language
-     * Processing problems (for example <code>CreateAutoMLJobV2</code> with a <code>TextClassificationJobConfig</code>
-     * problem type), the validation and training datasets must contain the same headers. Also, for V1 API jobs, the
-     * validation dataset must be less than 2 GB in size.
+     * The validation and training datasets must contain the same headers. For jobs created by calling
+     * <code>CreateAutoMLJob</code>, the validation dataset must be less than 2 GB in size.
      * </p>
+     * <note>
+     * <p>
+     * This attribute must not be set for the time-series forecasting problem type, as Autopilot automatically splits
+     * the input dataset into training and validation sets.
+     * </p>
+     * </note>
      */
     private AutoMLDataSplitConfig dataSplitConfig;
 
@@ -155,37 +198,69 @@ public class CreateAutoMLJobV2Request extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * An array of channel objects describing the input data and their location. Each channel is a named input source.
-     * Similar to <a href=
+     * Similar to the <a href=
      * "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html#sagemaker-CreateAutoMLJob-request-InputDataConfig"
-     * >InputDataConfig</a> supported by <code>CreateAutoMLJob</code>. The supported formats depend on the problem type:
+     * >InputDataConfig</a> attribute in the <code>CreateAutoMLJob</code> input parameters. The supported formats depend
+     * on the problem type:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * ImageClassification: S3Prefix, <code>ManifestFile</code>, <code>AugmentedManifestFile</code>
+     * For tabular problem types: <code>S3Prefix</code>, <code>ManifestFile</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * TextClassification: S3Prefix
+     * For image classification: <code>S3Prefix</code>, <code>ManifestFile</code>, <code>AugmentedManifestFile</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For text classification: <code>S3Prefix</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For time-series forecasting: <code>S3Prefix</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For text generation (LLMs fine-tuning): <code>S3Prefix</code>.
      * </p>
      * </li>
      * </ul>
      * 
      * @return An array of channel objects describing the input data and their location. Each channel is a named input
-     *         source. Similar to <a href=
+     *         source. Similar to the <a href=
      *         "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html#sagemaker-CreateAutoMLJob-request-InputDataConfig"
-     *         >InputDataConfig</a> supported by <code>CreateAutoMLJob</code>. The supported formats depend on the
-     *         problem type:</p>
+     *         >InputDataConfig</a> attribute in the <code>CreateAutoMLJob</code> input parameters. The supported
+     *         formats depend on the problem type:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         ImageClassification: S3Prefix, <code>ManifestFile</code>, <code>AugmentedManifestFile</code>
+     *         For tabular problem types: <code>S3Prefix</code>, <code>ManifestFile</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         TextClassification: S3Prefix
+     *         For image classification: <code>S3Prefix</code>, <code>ManifestFile</code>,
+     *         <code>AugmentedManifestFile</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For text classification: <code>S3Prefix</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For time-series forecasting: <code>S3Prefix</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For text generation (LLMs fine-tuning): <code>S3Prefix</code>.
      *         </p>
      *         </li>
      */
@@ -197,38 +272,70 @@ public class CreateAutoMLJobV2Request extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * An array of channel objects describing the input data and their location. Each channel is a named input source.
-     * Similar to <a href=
+     * Similar to the <a href=
      * "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html#sagemaker-CreateAutoMLJob-request-InputDataConfig"
-     * >InputDataConfig</a> supported by <code>CreateAutoMLJob</code>. The supported formats depend on the problem type:
+     * >InputDataConfig</a> attribute in the <code>CreateAutoMLJob</code> input parameters. The supported formats depend
+     * on the problem type:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * ImageClassification: S3Prefix, <code>ManifestFile</code>, <code>AugmentedManifestFile</code>
+     * For tabular problem types: <code>S3Prefix</code>, <code>ManifestFile</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * TextClassification: S3Prefix
+     * For image classification: <code>S3Prefix</code>, <code>ManifestFile</code>, <code>AugmentedManifestFile</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For text classification: <code>S3Prefix</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For time-series forecasting: <code>S3Prefix</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For text generation (LLMs fine-tuning): <code>S3Prefix</code>.
      * </p>
      * </li>
      * </ul>
      * 
      * @param autoMLJobInputDataConfig
      *        An array of channel objects describing the input data and their location. Each channel is a named input
-     *        source. Similar to <a href=
+     *        source. Similar to the <a href=
      *        "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html#sagemaker-CreateAutoMLJob-request-InputDataConfig"
-     *        >InputDataConfig</a> supported by <code>CreateAutoMLJob</code>. The supported formats depend on the
-     *        problem type:</p>
+     *        >InputDataConfig</a> attribute in the <code>CreateAutoMLJob</code> input parameters. The supported formats
+     *        depend on the problem type:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        ImageClassification: S3Prefix, <code>ManifestFile</code>, <code>AugmentedManifestFile</code>
+     *        For tabular problem types: <code>S3Prefix</code>, <code>ManifestFile</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        TextClassification: S3Prefix
+     *        For image classification: <code>S3Prefix</code>, <code>ManifestFile</code>,
+     *        <code>AugmentedManifestFile</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For text classification: <code>S3Prefix</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For time-series forecasting: <code>S3Prefix</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For text generation (LLMs fine-tuning): <code>S3Prefix</code>.
      *        </p>
      *        </li>
      */
@@ -245,19 +352,35 @@ public class CreateAutoMLJobV2Request extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * An array of channel objects describing the input data and their location. Each channel is a named input source.
-     * Similar to <a href=
+     * Similar to the <a href=
      * "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html#sagemaker-CreateAutoMLJob-request-InputDataConfig"
-     * >InputDataConfig</a> supported by <code>CreateAutoMLJob</code>. The supported formats depend on the problem type:
+     * >InputDataConfig</a> attribute in the <code>CreateAutoMLJob</code> input parameters. The supported formats depend
+     * on the problem type:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * ImageClassification: S3Prefix, <code>ManifestFile</code>, <code>AugmentedManifestFile</code>
+     * For tabular problem types: <code>S3Prefix</code>, <code>ManifestFile</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * TextClassification: S3Prefix
+     * For image classification: <code>S3Prefix</code>, <code>ManifestFile</code>, <code>AugmentedManifestFile</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For text classification: <code>S3Prefix</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For time-series forecasting: <code>S3Prefix</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For text generation (LLMs fine-tuning): <code>S3Prefix</code>.
      * </p>
      * </li>
      * </ul>
@@ -269,19 +392,35 @@ public class CreateAutoMLJobV2Request extends com.amazonaws.AmazonWebServiceRequ
      * 
      * @param autoMLJobInputDataConfig
      *        An array of channel objects describing the input data and their location. Each channel is a named input
-     *        source. Similar to <a href=
+     *        source. Similar to the <a href=
      *        "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html#sagemaker-CreateAutoMLJob-request-InputDataConfig"
-     *        >InputDataConfig</a> supported by <code>CreateAutoMLJob</code>. The supported formats depend on the
-     *        problem type:</p>
+     *        >InputDataConfig</a> attribute in the <code>CreateAutoMLJob</code> input parameters. The supported formats
+     *        depend on the problem type:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        ImageClassification: S3Prefix, <code>ManifestFile</code>, <code>AugmentedManifestFile</code>
+     *        For tabular problem types: <code>S3Prefix</code>, <code>ManifestFile</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        TextClassification: S3Prefix
+     *        For image classification: <code>S3Prefix</code>, <code>ManifestFile</code>,
+     *        <code>AugmentedManifestFile</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For text classification: <code>S3Prefix</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For time-series forecasting: <code>S3Prefix</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For text generation (LLMs fine-tuning): <code>S3Prefix</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -300,38 +439,70 @@ public class CreateAutoMLJobV2Request extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * An array of channel objects describing the input data and their location. Each channel is a named input source.
-     * Similar to <a href=
+     * Similar to the <a href=
      * "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html#sagemaker-CreateAutoMLJob-request-InputDataConfig"
-     * >InputDataConfig</a> supported by <code>CreateAutoMLJob</code>. The supported formats depend on the problem type:
+     * >InputDataConfig</a> attribute in the <code>CreateAutoMLJob</code> input parameters. The supported formats depend
+     * on the problem type:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * ImageClassification: S3Prefix, <code>ManifestFile</code>, <code>AugmentedManifestFile</code>
+     * For tabular problem types: <code>S3Prefix</code>, <code>ManifestFile</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * TextClassification: S3Prefix
+     * For image classification: <code>S3Prefix</code>, <code>ManifestFile</code>, <code>AugmentedManifestFile</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For text classification: <code>S3Prefix</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For time-series forecasting: <code>S3Prefix</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For text generation (LLMs fine-tuning): <code>S3Prefix</code>.
      * </p>
      * </li>
      * </ul>
      * 
      * @param autoMLJobInputDataConfig
      *        An array of channel objects describing the input data and their location. Each channel is a named input
-     *        source. Similar to <a href=
+     *        source. Similar to the <a href=
      *        "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html#sagemaker-CreateAutoMLJob-request-InputDataConfig"
-     *        >InputDataConfig</a> supported by <code>CreateAutoMLJob</code>. The supported formats depend on the
-     *        problem type:</p>
+     *        >InputDataConfig</a> attribute in the <code>CreateAutoMLJob</code> input parameters. The supported formats
+     *        depend on the problem type:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        ImageClassification: S3Prefix, <code>ManifestFile</code>, <code>AugmentedManifestFile</code>
+     *        For tabular problem types: <code>S3Prefix</code>, <code>ManifestFile</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        TextClassification: S3Prefix
+     *        For image classification: <code>S3Prefix</code>, <code>ManifestFile</code>,
+     *        <code>AugmentedManifestFile</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For text classification: <code>S3Prefix</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For time-series forecasting: <code>S3Prefix</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For text generation (LLMs fine-tuning): <code>S3Prefix</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -601,15 +772,60 @@ public class CreateAutoMLJobV2Request extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies a metric to minimize or maximize as the objective of a job. For <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html"
-     * >CreateAutoMLJobV2</a>, only <code>Accuracy</code> is supported.
+     * Specifies a metric to minimize or maximize as the objective of a job. If not specified, the default objective
+     * metric depends on the problem type. For the list of default values per problem type, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html"
+     * >AutoMLJobObjective</a>.
      * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * For tabular problem types: You must either provide both the <code>AutoMLJobObjective</code> and indicate the type
+     * of supervised learning problem in <code>AutoMLProblemTypeConfig</code> (<code>TabularJobConfig.ProblemType</code>
+     * ), or none at all.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For text generation problem types (LLMs fine-tuning): Fine-tuning language models in Autopilot does not require
+     * setting the <code>AutoMLJobObjective</code> field. Autopilot fine-tunes LLMs without requiring multiple
+     * candidates to be trained and evaluated. Instead, using your dataset, Autopilot directly fine-tunes your target
+     * model to enhance a default objective metric, the cross-entropy loss. After fine-tuning a language model, you can
+     * evaluate the quality of its generated text using different metrics. For a list of the available metrics, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/llms-finetuning-models.html">Metrics for fine-tuning LLMs
+     * in Autopilot</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @param autoMLJobObjective
-     *        Specifies a metric to minimize or maximize as the objective of a job. For <a
-     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html"
-     *        >CreateAutoMLJobV2</a>, only <code>Accuracy</code> is supported.
+     *        Specifies a metric to minimize or maximize as the objective of a job. If not specified, the default
+     *        objective metric depends on the problem type. For the list of default values per problem type, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">
+     *        AutoMLJobObjective</a>.</p> <note>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For tabular problem types: You must either provide both the <code>AutoMLJobObjective</code> and indicate
+     *        the type of supervised learning problem in <code>AutoMLProblemTypeConfig</code> (
+     *        <code>TabularJobConfig.ProblemType</code>), or none at all.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For text generation problem types (LLMs fine-tuning): Fine-tuning language models in Autopilot does not
+     *        require setting the <code>AutoMLJobObjective</code> field. Autopilot fine-tunes LLMs without requiring
+     *        multiple candidates to be trained and evaluated. Instead, using your dataset, Autopilot directly
+     *        fine-tunes your target model to enhance a default objective metric, the cross-entropy loss. After
+     *        fine-tuning a language model, you can evaluate the quality of its generated text using different metrics.
+     *        For a list of the available metrics, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/llms-finetuning-models.html">Metrics for fine-tuning
+     *        LLMs in Autopilot</a>.
+     *        </p>
+     *        </li>
+     *        </ul>
      */
 
     public void setAutoMLJobObjective(AutoMLJobObjective autoMLJobObjective) {
@@ -618,14 +834,59 @@ public class CreateAutoMLJobV2Request extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies a metric to minimize or maximize as the objective of a job. For <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html"
-     * >CreateAutoMLJobV2</a>, only <code>Accuracy</code> is supported.
+     * Specifies a metric to minimize or maximize as the objective of a job. If not specified, the default objective
+     * metric depends on the problem type. For the list of default values per problem type, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html"
+     * >AutoMLJobObjective</a>.
      * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * For tabular problem types: You must either provide both the <code>AutoMLJobObjective</code> and indicate the type
+     * of supervised learning problem in <code>AutoMLProblemTypeConfig</code> (<code>TabularJobConfig.ProblemType</code>
+     * ), or none at all.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For text generation problem types (LLMs fine-tuning): Fine-tuning language models in Autopilot does not require
+     * setting the <code>AutoMLJobObjective</code> field. Autopilot fine-tunes LLMs without requiring multiple
+     * candidates to be trained and evaluated. Instead, using your dataset, Autopilot directly fine-tunes your target
+     * model to enhance a default objective metric, the cross-entropy loss. After fine-tuning a language model, you can
+     * evaluate the quality of its generated text using different metrics. For a list of the available metrics, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/llms-finetuning-models.html">Metrics for fine-tuning LLMs
+     * in Autopilot</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
-     * @return Specifies a metric to minimize or maximize as the objective of a job. For <a
-     *         href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html"
-     *         >CreateAutoMLJobV2</a>, only <code>Accuracy</code> is supported.
+     * @return Specifies a metric to minimize or maximize as the objective of a job. If not specified, the default
+     *         objective metric depends on the problem type. For the list of default values per problem type, see <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">
+     *         AutoMLJobObjective</a>.</p> <note>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For tabular problem types: You must either provide both the <code>AutoMLJobObjective</code> and indicate
+     *         the type of supervised learning problem in <code>AutoMLProblemTypeConfig</code> (
+     *         <code>TabularJobConfig.ProblemType</code>), or none at all.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For text generation problem types (LLMs fine-tuning): Fine-tuning language models in Autopilot does not
+     *         require setting the <code>AutoMLJobObjective</code> field. Autopilot fine-tunes LLMs without requiring
+     *         multiple candidates to be trained and evaluated. Instead, using your dataset, Autopilot directly
+     *         fine-tunes your target model to enhance a default objective metric, the cross-entropy loss. After
+     *         fine-tuning a language model, you can evaluate the quality of its generated text using different metrics.
+     *         For a list of the available metrics, see <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/llms-finetuning-models.html">Metrics for
+     *         fine-tuning LLMs in Autopilot</a>.
+     *         </p>
+     *         </li>
+     *         </ul>
      */
 
     public AutoMLJobObjective getAutoMLJobObjective() {
@@ -634,15 +895,60 @@ public class CreateAutoMLJobV2Request extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies a metric to minimize or maximize as the objective of a job. For <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html"
-     * >CreateAutoMLJobV2</a>, only <code>Accuracy</code> is supported.
+     * Specifies a metric to minimize or maximize as the objective of a job. If not specified, the default objective
+     * metric depends on the problem type. For the list of default values per problem type, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html"
+     * >AutoMLJobObjective</a>.
      * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * For tabular problem types: You must either provide both the <code>AutoMLJobObjective</code> and indicate the type
+     * of supervised learning problem in <code>AutoMLProblemTypeConfig</code> (<code>TabularJobConfig.ProblemType</code>
+     * ), or none at all.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For text generation problem types (LLMs fine-tuning): Fine-tuning language models in Autopilot does not require
+     * setting the <code>AutoMLJobObjective</code> field. Autopilot fine-tunes LLMs without requiring multiple
+     * candidates to be trained and evaluated. Instead, using your dataset, Autopilot directly fine-tunes your target
+     * model to enhance a default objective metric, the cross-entropy loss. After fine-tuning a language model, you can
+     * evaluate the quality of its generated text using different metrics. For a list of the available metrics, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/llms-finetuning-models.html">Metrics for fine-tuning LLMs
+     * in Autopilot</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @param autoMLJobObjective
-     *        Specifies a metric to minimize or maximize as the objective of a job. For <a
-     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html"
-     *        >CreateAutoMLJobV2</a>, only <code>Accuracy</code> is supported.
+     *        Specifies a metric to minimize or maximize as the objective of a job. If not specified, the default
+     *        objective metric depends on the problem type. For the list of default values per problem type, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">
+     *        AutoMLJobObjective</a>.</p> <note>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For tabular problem types: You must either provide both the <code>AutoMLJobObjective</code> and indicate
+     *        the type of supervised learning problem in <code>AutoMLProblemTypeConfig</code> (
+     *        <code>TabularJobConfig.ProblemType</code>), or none at all.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For text generation problem types (LLMs fine-tuning): Fine-tuning language models in Autopilot does not
+     *        require setting the <code>AutoMLJobObjective</code> field. Autopilot fine-tunes LLMs without requiring
+     *        multiple candidates to be trained and evaluated. Instead, using your dataset, Autopilot directly
+     *        fine-tunes your target model to enhance a default objective metric, the cross-entropy loss. After
+     *        fine-tuning a language model, you can evaluate the quality of its generated text using different metrics.
+     *        For a list of the available metrics, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/llms-finetuning-models.html">Metrics for fine-tuning
+     *        LLMs in Autopilot</a>.
+     *        </p>
+     *        </li>
+     *        </ul>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -696,19 +1002,27 @@ public class CreateAutoMLJobV2Request extends com.amazonaws.AmazonWebServiceRequ
      * This structure specifies how to split the data into train and validation datasets.
      * </p>
      * <p>
-     * If you are using the V1 API (for example <code>CreateAutoMLJob</code>) or the V2 API for Natural Language
-     * Processing problems (for example <code>CreateAutoMLJobV2</code> with a <code>TextClassificationJobConfig</code>
-     * problem type), the validation and training datasets must contain the same headers. Also, for V1 API jobs, the
-     * validation dataset must be less than 2 GB in size.
+     * The validation and training datasets must contain the same headers. For jobs created by calling
+     * <code>CreateAutoMLJob</code>, the validation dataset must be less than 2 GB in size.
      * </p>
+     * <note>
+     * <p>
+     * This attribute must not be set for the time-series forecasting problem type, as Autopilot automatically splits
+     * the input dataset into training and validation sets.
+     * </p>
+     * </note>
      * 
      * @param dataSplitConfig
      *        This structure specifies how to split the data into train and validation datasets.</p>
      *        <p>
-     *        If you are using the V1 API (for example <code>CreateAutoMLJob</code>) or the V2 API for Natural Language
-     *        Processing problems (for example <code>CreateAutoMLJobV2</code> with a
-     *        <code>TextClassificationJobConfig</code> problem type), the validation and training datasets must contain
-     *        the same headers. Also, for V1 API jobs, the validation dataset must be less than 2 GB in size.
+     *        The validation and training datasets must contain the same headers. For jobs created by calling
+     *        <code>CreateAutoMLJob</code>, the validation dataset must be less than 2 GB in size.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        This attribute must not be set for the time-series forecasting problem type, as Autopilot automatically
+     *        splits the input dataset into training and validation sets.
+     *        </p>
      */
 
     public void setDataSplitConfig(AutoMLDataSplitConfig dataSplitConfig) {
@@ -720,18 +1034,26 @@ public class CreateAutoMLJobV2Request extends com.amazonaws.AmazonWebServiceRequ
      * This structure specifies how to split the data into train and validation datasets.
      * </p>
      * <p>
-     * If you are using the V1 API (for example <code>CreateAutoMLJob</code>) or the V2 API for Natural Language
-     * Processing problems (for example <code>CreateAutoMLJobV2</code> with a <code>TextClassificationJobConfig</code>
-     * problem type), the validation and training datasets must contain the same headers. Also, for V1 API jobs, the
-     * validation dataset must be less than 2 GB in size.
+     * The validation and training datasets must contain the same headers. For jobs created by calling
+     * <code>CreateAutoMLJob</code>, the validation dataset must be less than 2 GB in size.
      * </p>
+     * <note>
+     * <p>
+     * This attribute must not be set for the time-series forecasting problem type, as Autopilot automatically splits
+     * the input dataset into training and validation sets.
+     * </p>
+     * </note>
      * 
      * @return This structure specifies how to split the data into train and validation datasets.</p>
      *         <p>
-     *         If you are using the V1 API (for example <code>CreateAutoMLJob</code>) or the V2 API for Natural Language
-     *         Processing problems (for example <code>CreateAutoMLJobV2</code> with a
-     *         <code>TextClassificationJobConfig</code> problem type), the validation and training datasets must contain
-     *         the same headers. Also, for V1 API jobs, the validation dataset must be less than 2 GB in size.
+     *         The validation and training datasets must contain the same headers. For jobs created by calling
+     *         <code>CreateAutoMLJob</code>, the validation dataset must be less than 2 GB in size.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         This attribute must not be set for the time-series forecasting problem type, as Autopilot automatically
+     *         splits the input dataset into training and validation sets.
+     *         </p>
      */
 
     public AutoMLDataSplitConfig getDataSplitConfig() {
@@ -743,19 +1065,27 @@ public class CreateAutoMLJobV2Request extends com.amazonaws.AmazonWebServiceRequ
      * This structure specifies how to split the data into train and validation datasets.
      * </p>
      * <p>
-     * If you are using the V1 API (for example <code>CreateAutoMLJob</code>) or the V2 API for Natural Language
-     * Processing problems (for example <code>CreateAutoMLJobV2</code> with a <code>TextClassificationJobConfig</code>
-     * problem type), the validation and training datasets must contain the same headers. Also, for V1 API jobs, the
-     * validation dataset must be less than 2 GB in size.
+     * The validation and training datasets must contain the same headers. For jobs created by calling
+     * <code>CreateAutoMLJob</code>, the validation dataset must be less than 2 GB in size.
      * </p>
+     * <note>
+     * <p>
+     * This attribute must not be set for the time-series forecasting problem type, as Autopilot automatically splits
+     * the input dataset into training and validation sets.
+     * </p>
+     * </note>
      * 
      * @param dataSplitConfig
      *        This structure specifies how to split the data into train and validation datasets.</p>
      *        <p>
-     *        If you are using the V1 API (for example <code>CreateAutoMLJob</code>) or the V2 API for Natural Language
-     *        Processing problems (for example <code>CreateAutoMLJobV2</code> with a
-     *        <code>TextClassificationJobConfig</code> problem type), the validation and training datasets must contain
-     *        the same headers. Also, for V1 API jobs, the validation dataset must be less than 2 GB in size.
+     *        The validation and training datasets must contain the same headers. For jobs created by calling
+     *        <code>CreateAutoMLJob</code>, the validation dataset must be less than 2 GB in size.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        This attribute must not be set for the time-series forecasting problem type, as Autopilot automatically
+     *        splits the input dataset into training and validation sets.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

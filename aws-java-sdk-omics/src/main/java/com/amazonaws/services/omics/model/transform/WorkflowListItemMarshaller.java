@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.omics.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -29,10 +31,6 @@ public class WorkflowListItemMarshaller {
 
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("arn").build();
-    private static final MarshallingInfo<java.util.Date> CREATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationTime").timestampFormat("iso8601").build();
-    private static final MarshallingInfo<String> DIGEST_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("digest").build();
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("id").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -41,6 +39,12 @@ public class WorkflowListItemMarshaller {
             .marshallLocationName("status").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("type").build();
+    private static final MarshallingInfo<String> DIGEST_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("digest").build();
+    private static final MarshallingInfo<java.util.Date> CREATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationTime").timestampFormat("iso8601").build();
+    private static final MarshallingInfo<Map> METADATA_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("metadata").build();
 
     private static final WorkflowListItemMarshaller instance = new WorkflowListItemMarshaller();
 
@@ -59,12 +63,13 @@ public class WorkflowListItemMarshaller {
 
         try {
             protocolMarshaller.marshall(workflowListItem.getArn(), ARN_BINDING);
-            protocolMarshaller.marshall(workflowListItem.getCreationTime(), CREATIONTIME_BINDING);
-            protocolMarshaller.marshall(workflowListItem.getDigest(), DIGEST_BINDING);
             protocolMarshaller.marshall(workflowListItem.getId(), ID_BINDING);
             protocolMarshaller.marshall(workflowListItem.getName(), NAME_BINDING);
             protocolMarshaller.marshall(workflowListItem.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(workflowListItem.getType(), TYPE_BINDING);
+            protocolMarshaller.marshall(workflowListItem.getDigest(), DIGEST_BINDING);
+            protocolMarshaller.marshall(workflowListItem.getCreationTime(), CREATIONTIME_BINDING);
+            protocolMarshaller.marshall(workflowListItem.getMetadata(), METADATA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

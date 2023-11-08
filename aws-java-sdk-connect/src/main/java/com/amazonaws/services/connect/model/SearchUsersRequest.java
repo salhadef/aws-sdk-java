@@ -31,6 +31,11 @@ public class SearchUsersRequest extends com.amazonaws.AmazonWebServiceRequest im
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
      * the Amazon Resource Name (ARN) of the instance.
      * </p>
+     * <note>
+     * <p>
+     * InstanceID is a required field. The "Required: No" below is incorrect.
+     * </p>
+     * </note>
      */
     private String instanceId;
     /**
@@ -61,11 +66,19 @@ public class SearchUsersRequest extends com.amazonaws.AmazonWebServiceRequest im
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
      * the Amazon Resource Name (ARN) of the instance.
      * </p>
+     * <note>
+     * <p>
+     * InstanceID is a required field. The "Required: No" below is incorrect.
+     * </p>
+     * </note>
      * 
      * @param instanceId
      *        The identifier of the Amazon Connect instance. You can <a
      *        href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance
-     *        ID</a> in the Amazon Resource Name (ARN) of the instance.
+     *        ID</a> in the Amazon Resource Name (ARN) of the instance.</p> <note>
+     *        <p>
+     *        InstanceID is a required field. The "Required: No" below is incorrect.
+     *        </p>
      */
 
     public void setInstanceId(String instanceId) {
@@ -78,10 +91,18 @@ public class SearchUsersRequest extends com.amazonaws.AmazonWebServiceRequest im
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
      * the Amazon Resource Name (ARN) of the instance.
      * </p>
+     * <note>
+     * <p>
+     * InstanceID is a required field. The "Required: No" below is incorrect.
+     * </p>
+     * </note>
      * 
      * @return The identifier of the Amazon Connect instance. You can <a
      *         href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance
-     *         ID</a> in the Amazon Resource Name (ARN) of the instance.
+     *         ID</a> in the Amazon Resource Name (ARN) of the instance.</p> <note>
+     *         <p>
+     *         InstanceID is a required field. The "Required: No" below is incorrect.
+     *         </p>
      */
 
     public String getInstanceId() {
@@ -94,11 +115,19 @@ public class SearchUsersRequest extends com.amazonaws.AmazonWebServiceRequest im
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
      * the Amazon Resource Name (ARN) of the instance.
      * </p>
+     * <note>
+     * <p>
+     * InstanceID is a required field. The "Required: No" below is incorrect.
+     * </p>
+     * </note>
      * 
      * @param instanceId
      *        The identifier of the Amazon Connect instance. You can <a
      *        href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance
-     *        ID</a> in the Amazon Resource Name (ARN) of the instance.
+     *        ID</a> in the Amazon Resource Name (ARN) of the instance.</p> <note>
+     *        <p>
+     *        InstanceID is a required field. The "Required: No" below is incorrect.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

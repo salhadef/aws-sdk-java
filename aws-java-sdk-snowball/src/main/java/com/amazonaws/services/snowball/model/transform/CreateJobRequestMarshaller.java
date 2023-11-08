@@ -61,6 +61,10 @@ public class CreateJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RemoteManagement").build();
     private static final MarshallingInfo<String> LONGTERMPRICINGID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LongTermPricingId").build();
+    private static final MarshallingInfo<String> IMPACTLEVEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ImpactLevel").build();
+    private static final MarshallingInfo<StructuredPojo> PICKUPDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PickupDetails").build();
 
     private static final CreateJobRequestMarshaller instance = new CreateJobRequestMarshaller();
 
@@ -95,6 +99,8 @@ public class CreateJobRequestMarshaller {
             protocolMarshaller.marshall(createJobRequest.getDeviceConfiguration(), DEVICECONFIGURATION_BINDING);
             protocolMarshaller.marshall(createJobRequest.getRemoteManagement(), REMOTEMANAGEMENT_BINDING);
             protocolMarshaller.marshall(createJobRequest.getLongTermPricingId(), LONGTERMPRICINGID_BINDING);
+            protocolMarshaller.marshall(createJobRequest.getImpactLevel(), IMPACTLEVEL_BINDING);
+            protocolMarshaller.marshall(createJobRequest.getPickupDetails(), PICKUPDETAILS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

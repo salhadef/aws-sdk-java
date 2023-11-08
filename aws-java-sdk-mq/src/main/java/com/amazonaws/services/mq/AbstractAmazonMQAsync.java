@@ -261,6 +261,19 @@ public class AbstractAmazonMQAsync extends AbstractAmazonMQ implements AmazonMQA
     }
 
     @Override
+    public java.util.concurrent.Future<PromoteResult> promoteAsync(PromoteRequest request) {
+
+        return promoteAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PromoteResult> promoteAsync(PromoteRequest request,
+            com.amazonaws.handlers.AsyncHandler<PromoteRequest, PromoteResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<RebootBrokerResult> rebootBrokerAsync(RebootBrokerRequest request) {
 
         return rebootBrokerAsync(request, null);

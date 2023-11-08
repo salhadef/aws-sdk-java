@@ -44,6 +44,7 @@ import com.amazonaws.services.devopsguru.AmazonDevOpsGuruClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.devopsguru.model.*;
+
 import com.amazonaws.services.devopsguru.model.transform.*;
 
 /**
@@ -169,15 +170,10 @@ public class AmazonDevOpsGuruClient extends AmazonWebServiceClient implements Am
      * </p>
      * <p>
      * If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru
-     * permission to it notifications. DevOps Guru adds the required policy on your behalf to send notifications using
-     * Amazon SNS in your account. DevOps Guru only supports standard SNS topics. For more information, see <a
+     * permission to send it notifications. DevOps Guru adds the required policy on your behalf to send notifications
+     * using Amazon SNS in your account. DevOps Guru only supports standard SNS topics. For more information, see <a
      * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions for
-     * cross account Amazon SNS topics</a>.
-     * </p>
-     * <p>
-     * If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru
-     * permission to it notifications. DevOps Guru adds the required policy on your behalf to send notifications using
-     * Amazon SNS in your account. For more information, see Permissions for cross account Amazon SNS topics.
+     * Amazon SNS topics</a>.
      * </p>
      * <p>
      * If you use an Amazon SNS topic that is encrypted by an Amazon Web Services Key Management Service

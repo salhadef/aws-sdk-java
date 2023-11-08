@@ -119,7 +119,8 @@ public interface AmazonDLMAsync extends AmazonDLM {
      * Gets summary information about all or the specified data lifecycle policies.
      * </p>
      * <p>
-     * To get complete information about a policy, use <a>GetLifecyclePolicy</a>.
+     * To get complete information about a policy, use <a
+     * href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_GetLifecyclePolicy.html">GetLifecyclePolicy</a>.
      * </p>
      * 
      * @param getLifecyclePoliciesRequest
@@ -135,7 +136,8 @@ public interface AmazonDLMAsync extends AmazonDLM {
      * Gets summary information about all or the specified data lifecycle policies.
      * </p>
      * <p>
-     * To get complete information about a policy, use <a>GetLifecyclePolicy</a>.
+     * To get complete information about a policy, use <a
+     * href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_GetLifecyclePolicy.html">GetLifecyclePolicy</a>.
      * </p>
      * 
      * @param getLifecyclePoliciesRequest

@@ -25,7 +25,7 @@ public class ListEventDataStoresResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Contains information about event data stores in the account, in the current region.
+     * Contains information about event data stores in the account, in the current Region.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<EventDataStore> eventDataStores;
@@ -38,10 +38,10 @@ public class ListEventDataStoresResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Contains information about event data stores in the account, in the current region.
+     * Contains information about event data stores in the account, in the current Region.
      * </p>
      * 
-     * @return Contains information about event data stores in the account, in the current region.
+     * @return Contains information about event data stores in the account, in the current Region.
      */
 
     public java.util.List<EventDataStore> getEventDataStores() {
@@ -53,11 +53,11 @@ public class ListEventDataStoresResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Contains information about event data stores in the account, in the current region.
+     * Contains information about event data stores in the account, in the current Region.
      * </p>
      * 
      * @param eventDataStores
-     *        Contains information about event data stores in the account, in the current region.
+     *        Contains information about event data stores in the account, in the current Region.
      */
 
     public void setEventDataStores(java.util.Collection<EventDataStore> eventDataStores) {
@@ -71,7 +71,7 @@ public class ListEventDataStoresResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Contains information about event data stores in the account, in the current region.
+     * Contains information about event data stores in the account, in the current Region.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -80,7 +80,7 @@ public class ListEventDataStoresResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param eventDataStores
-     *        Contains information about event data stores in the account, in the current region.
+     *        Contains information about event data stores in the account, in the current Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,11 +96,11 @@ public class ListEventDataStoresResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Contains information about event data stores in the account, in the current region.
+     * Contains information about event data stores in the account, in the current Region.
      * </p>
      * 
      * @param eventDataStores
-     *        Contains information about event data stores in the account, in the current region.
+     *        Contains information about event data stores in the account, in the current Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

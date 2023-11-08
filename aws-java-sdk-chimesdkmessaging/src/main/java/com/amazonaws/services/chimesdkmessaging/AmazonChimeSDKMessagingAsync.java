@@ -26,8 +26,8 @@ import com.amazonaws.services.chimesdkmessaging.model.*;
  * </p>
  * <p>
  * <p>
- * The Amazon Chime SDK Messaging APIs in this section allow software developers to send and receive messages in custom
- * messaging applications. These APIs depend on the frameworks provided by the Amazon Chime SDK Identity APIs. For more
+ * The Amazon Chime SDK messaging APIs in this section allow software developers to send and receive messages in custom
+ * messaging applications. These APIs depend on the frameworks provided by the Amazon Chime SDK identity APIs. For more
  * information about the messaging APIs, see <a
  * href="https://docs.aws.amazon.com/chime/latest/APIReference/API_Operations_Amazon_Chime_SDK_Messaging.html">Amazon
  * Chime SDK messaging</a>.
@@ -120,8 +120,8 @@ public interface AmazonChimeSDKMessagingAsync extends AmazonChimeSDKMessaging {
 
     /**
      * <p>
-     * Calls back Chime SDK Messaging with a processing response message. This should be invoked from the processor
-     * Lambda. This is a developer API.
+     * Calls back Amazon Chime SDK messaging with a processing response message. This should be invoked from the
+     * processor Lambda. This is a developer API.
      * </p>
      * <p>
      * You can return one of the following processing responses:
@@ -154,8 +154,8 @@ public interface AmazonChimeSDKMessagingAsync extends AmazonChimeSDKMessaging {
 
     /**
      * <p>
-     * Calls back Chime SDK Messaging with a processing response message. This should be invoked from the processor
-     * Lambda. This is a developer API.
+     * Calls back Amazon Chime SDK messaging with a processing response message. This should be invoked from the
+     * processor Lambda. This is a developer API.
      * </p>
      * <p>
      * You can return one of the following processing responses:
@@ -322,7 +322,7 @@ public interface AmazonChimeSDKMessagingAsync extends AmazonChimeSDKMessaging {
      * <note>
      * <p>
      * Channel flows don't process Control or System messages. For more information about the message types provided by
-     * Chime SDK Messaging, refer to <a
+     * Chime SDK messaging, refer to <a
      * href="https://docs.aws.amazon.com/chime/latest/dg/using-the-messaging-sdk.html#msg-types">Message types</a> in
      * the <i>Amazon Chime developer guide</i>.
      * </p>
@@ -365,7 +365,7 @@ public interface AmazonChimeSDKMessagingAsync extends AmazonChimeSDKMessaging {
      * <note>
      * <p>
      * Channel flows don't process Control or System messages. For more information about the message types provided by
-     * Chime SDK Messaging, refer to <a
+     * Chime SDK messaging, refer to <a
      * href="https://docs.aws.amazon.com/chime/latest/dg/using-the-messaging-sdk.html#msg-types">Message types</a> in
      * the <i>Amazon Chime developer guide</i>.
      * </p>
@@ -1280,7 +1280,7 @@ public interface AmazonChimeSDKMessagingAsync extends AmazonChimeSDKMessaging {
     /**
      * <p>
      * Gets the membership preferences of an <code>AppInstanceUser</code> or <code>AppInstanceBot</code> for the
-     * specified channel. A user or a bot must be a member of the channel and own the membership to be able to retrieve
+     * specified channel. A user or a bot must be a member of the channel and own the membership in order to retrieve
      * membership preferences. Users or bots in the <code>AppInstanceAdmin</code> and channel moderator roles can't
      * retrieve preferences for other users or bots. Banned users or bots can't retrieve membership preferences for the
      * channel from which they are banned.
@@ -1306,7 +1306,7 @@ public interface AmazonChimeSDKMessagingAsync extends AmazonChimeSDKMessaging {
     /**
      * <p>
      * Gets the membership preferences of an <code>AppInstanceUser</code> or <code>AppInstanceBot</code> for the
-     * specified channel. A user or a bot must be a member of the channel and own the membership to be able to retrieve
+     * specified channel. A user or a bot must be a member of the channel and own the membership in order to retrieve
      * membership preferences. Users or bots in the <code>AppInstanceAdmin</code> and channel moderator roles can't
      * retrieve preferences for other users or bots. Banned users or bots can't retrieve membership preferences for the
      * channel from which they are banned.
@@ -1408,7 +1408,7 @@ public interface AmazonChimeSDKMessagingAsync extends AmazonChimeSDKMessaging {
      * <dt>DENIED</dt>
      * <dd>
      * <p>
-     * Messasge denied by the processor
+     * Message denied by the processor
      * </p>
      * </dd>
      * </dl>
@@ -1473,7 +1473,7 @@ public interface AmazonChimeSDKMessagingAsync extends AmazonChimeSDKMessaging {
      * <dt>DENIED</dt>
      * <dd>
      * <p>
-     * Messasge denied by the processor
+     * Message denied by the processor
      * </p>
      * </dd>
      * </dl>
@@ -1715,7 +1715,7 @@ public interface AmazonChimeSDKMessagingAsync extends AmazonChimeSDKMessaging {
 
     /**
      * <p>
-     * Lists all channels that anr <code>AppInstanceUser</code> or <code>AppInstanceBot</code> is a part of. Only an
+     * Lists all channels that an <code>AppInstanceUser</code> or <code>AppInstanceBot</code> is a part of. Only an
      * <code>AppInstanceAdmin</code> can call the API with a user ARN that is not their own.
      * </p>
      * <note>
@@ -1738,7 +1738,7 @@ public interface AmazonChimeSDKMessagingAsync extends AmazonChimeSDKMessaging {
 
     /**
      * <p>
-     * Lists all channels that anr <code>AppInstanceUser</code> or <code>AppInstanceBot</code> is a part of. Only an
+     * Lists all channels that an <code>AppInstanceUser</code> or <code>AppInstanceBot</code> is a part of. Only an
      * <code>AppInstanceAdmin</code> can call the API with a user ARN that is not their own.
      * </p>
      * <note>
@@ -2168,11 +2168,11 @@ public interface AmazonChimeSDKMessagingAsync extends AmazonChimeSDKMessaging {
 
     /**
      * <p>
-     * Sets the membership preferences of an <code>AppInstanceUser</code> or <code>AppIntanceBot</code> for the
+     * Sets the membership preferences of an <code>AppInstanceUser</code> or <code>AppInstanceBot</code> for the
      * specified channel. The user or bot must be a member of the channel. Only the user or bot who owns the membership
      * can set preferences. Users or bots in the <code>AppInstanceAdmin</code> and channel moderator roles can't set
-     * preferences for other users or users. Banned users or bots can't set membership preferences for the channel from
-     * which they are banned.
+     * preferences for other users. Banned users or bots can't set membership preferences for the channel from which
+     * they are banned.
      * </p>
      * <note>
      * <p>
@@ -2194,11 +2194,11 @@ public interface AmazonChimeSDKMessagingAsync extends AmazonChimeSDKMessaging {
 
     /**
      * <p>
-     * Sets the membership preferences of an <code>AppInstanceUser</code> or <code>AppIntanceBot</code> for the
+     * Sets the membership preferences of an <code>AppInstanceUser</code> or <code>AppInstanceBot</code> for the
      * specified channel. The user or bot must be a member of the channel. Only the user or bot who owns the membership
      * can set preferences. Users or bots in the <code>AppInstanceAdmin</code> and channel moderator roles can't set
-     * preferences for other users or users. Banned users or bots can't set membership preferences for the channel from
-     * which they are banned.
+     * preferences for other users. Banned users or bots can't set membership preferences for the channel from which
+     * they are banned.
      * </p>
      * <note>
      * <p>
@@ -2360,8 +2360,11 @@ public interface AmazonChimeSDKMessagingAsync extends AmazonChimeSDKMessaging {
      * or <code>AppInstanceBot</code> that makes the API call as the value in the header.
      * </p>
      * <p>
-     * Also, <code>STANDARD</code> messages can contain 4KB of data and the 1KB of metadata. <code>CONTROL</code>
-     * messages can contain 30 bytes of data and no metadata.
+     * Also, <code>STANDARD</code> messages can be up to 4KB in size and contain metadata. Metadata is arbitrary, and
+     * you can use it in a variety of ways, such as containing a link to an attachment.
+     * </p>
+     * <p>
+     * <code>CONTROL</code> messages are limited to 30 bytes and do not contain metadata.
      * </p>
      * </note>
      * 
@@ -2383,8 +2386,11 @@ public interface AmazonChimeSDKMessagingAsync extends AmazonChimeSDKMessaging {
      * or <code>AppInstanceBot</code> that makes the API call as the value in the header.
      * </p>
      * <p>
-     * Also, <code>STANDARD</code> messages can contain 4KB of data and the 1KB of metadata. <code>CONTROL</code>
-     * messages can contain 30 bytes of data and no metadata.
+     * Also, <code>STANDARD</code> messages can be up to 4KB in size and contain metadata. Metadata is arbitrary, and
+     * you can use it in a variety of ways, such as containing a link to an attachment.
+     * </p>
+     * <p>
+     * <code>CONTROL</code> messages are limited to 30 bytes and do not contain metadata.
      * </p>
      * </note>
      * 

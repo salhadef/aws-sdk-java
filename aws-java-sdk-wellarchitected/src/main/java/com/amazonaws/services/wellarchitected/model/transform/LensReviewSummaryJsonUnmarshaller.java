@@ -77,6 +77,17 @@ public class LensReviewSummaryJsonUnmarshaller implements Unmarshaller<LensRevie
                     lensReviewSummary.setRiskCounts(new MapUnmarshaller<String, Integer>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(Integer.class)).unmarshall(context));
                 }
+                if (context.testExpression("Profiles", targetDepth)) {
+                    context.nextToken();
+                    lensReviewSummary.setProfiles(new ListUnmarshaller<WorkloadProfile>(WorkloadProfileJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("PrioritizedRiskCounts", targetDepth)) {
+                    context.nextToken();
+                    lensReviewSummary.setPrioritizedRiskCounts(new MapUnmarshaller<String, Integer>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(Integer.class)).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

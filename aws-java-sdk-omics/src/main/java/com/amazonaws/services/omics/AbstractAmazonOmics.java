@@ -29,6 +29,16 @@ public class AbstractAmazonOmics implements AmazonOmics {
     }
 
     @Override
+    public AbortMultipartReadSetUploadResult abortMultipartReadSetUpload(AbortMultipartReadSetUploadRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AcceptShareResult acceptShare(AcceptShareRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public BatchDeleteReadSetResult batchDeleteReadSet(BatchDeleteReadSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -49,7 +59,22 @@ public class AbstractAmazonOmics implements AmazonOmics {
     }
 
     @Override
+    public CompleteMultipartReadSetUploadResult completeMultipartReadSetUpload(CompleteMultipartReadSetUploadRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateAnnotationStoreResult createAnnotationStore(CreateAnnotationStoreRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateAnnotationStoreVersionResult createAnnotationStoreVersion(CreateAnnotationStoreVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateMultipartReadSetUploadResult createMultipartReadSetUpload(CreateMultipartReadSetUploadRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -69,6 +94,11 @@ public class AbstractAmazonOmics implements AmazonOmics {
     }
 
     @Override
+    public CreateShareResult createShare(CreateShareRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateVariantStoreResult createVariantStore(CreateVariantStoreRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -80,6 +110,11 @@ public class AbstractAmazonOmics implements AmazonOmics {
 
     @Override
     public DeleteAnnotationStoreResult deleteAnnotationStore(DeleteAnnotationStoreRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteAnnotationStoreVersionsResult deleteAnnotationStoreVersions(DeleteAnnotationStoreVersionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -109,6 +144,11 @@ public class AbstractAmazonOmics implements AmazonOmics {
     }
 
     @Override
+    public DeleteShareResult deleteShare(DeleteShareRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteVariantStoreResult deleteVariantStore(DeleteVariantStoreRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -125,6 +165,11 @@ public class AbstractAmazonOmics implements AmazonOmics {
 
     @Override
     public GetAnnotationStoreResult getAnnotationStore(GetAnnotationStoreRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetAnnotationStoreVersionResult getAnnotationStoreVersion(GetAnnotationStoreVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -194,6 +239,11 @@ public class AbstractAmazonOmics implements AmazonOmics {
     }
 
     @Override
+    public GetShareResult getShare(GetShareRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetVariantImportJobResult getVariantImportJob(GetVariantImportJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -214,7 +264,17 @@ public class AbstractAmazonOmics implements AmazonOmics {
     }
 
     @Override
+    public ListAnnotationStoreVersionsResult listAnnotationStoreVersions(ListAnnotationStoreVersionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListAnnotationStoresResult listAnnotationStores(ListAnnotationStoresRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListMultipartReadSetUploadsResult listMultipartReadSetUploads(ListMultipartReadSetUploadsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -230,6 +290,11 @@ public class AbstractAmazonOmics implements AmazonOmics {
 
     @Override
     public ListReadSetImportJobsResult listReadSetImportJobs(ListReadSetImportJobsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListReadSetUploadPartsResult listReadSetUploadParts(ListReadSetUploadPartsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -270,6 +335,11 @@ public class AbstractAmazonOmics implements AmazonOmics {
 
     @Override
     public ListSequenceStoresResult listSequenceStores(ListSequenceStoresRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListSharesResult listShares(ListSharesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -344,6 +414,11 @@ public class AbstractAmazonOmics implements AmazonOmics {
     }
 
     @Override
+    public UpdateAnnotationStoreVersionResult updateAnnotationStoreVersion(UpdateAnnotationStoreVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateRunGroupResult updateRunGroup(UpdateRunGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -355,6 +430,11 @@ public class AbstractAmazonOmics implements AmazonOmics {
 
     @Override
     public UpdateWorkflowResult updateWorkflow(UpdateWorkflowRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UploadReadSetPartResult uploadReadSetPart(UploadReadSetPartRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

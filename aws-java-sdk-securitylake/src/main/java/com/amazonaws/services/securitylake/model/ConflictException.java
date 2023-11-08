@@ -27,10 +27,10 @@ public class ConflictException extends com.amazonaws.services.securitylake.model
 
     /**
      * <p>
-     * A conflict occurred when prompting for the Resource ID.
+     * The resource name.
      * </p>
      */
-    private String resourceId;
+    private String resourceName;
     /**
      * <p>
      * The resource type.
@@ -50,43 +50,43 @@ public class ConflictException extends com.amazonaws.services.securitylake.model
 
     /**
      * <p>
-     * A conflict occurred when prompting for the Resource ID.
+     * The resource name.
      * </p>
      * 
-     * @param resourceId
-     *        A conflict occurred when prompting for the Resource ID.
+     * @param resourceName
+     *        The resource name.
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
-    public void setResourceId(String resourceId) {
-        this.resourceId = resourceId;
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
+    public void setResourceName(String resourceName) {
+        this.resourceName = resourceName;
     }
 
     /**
      * <p>
-     * A conflict occurred when prompting for the Resource ID.
+     * The resource name.
      * </p>
      * 
-     * @return A conflict occurred when prompting for the Resource ID.
+     * @return The resource name.
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
-    public String getResourceId() {
-        return this.resourceId;
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
+    public String getResourceName() {
+        return this.resourceName;
     }
 
     /**
      * <p>
-     * A conflict occurred when prompting for the Resource ID.
+     * The resource name.
      * </p>
      * 
-     * @param resourceId
-     *        A conflict occurred when prompting for the Resource ID.
+     * @param resourceName
+     *        The resource name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ConflictException withResourceId(String resourceId) {
-        setResourceId(resourceId);
+    public ConflictException withResourceName(String resourceName) {
+        setResourceName(resourceName);
         return this;
     }
 

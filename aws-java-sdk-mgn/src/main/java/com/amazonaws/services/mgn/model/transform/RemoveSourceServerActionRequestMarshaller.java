@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class RemoveSourceServerActionRequestMarshaller {
 
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("accountID").build();
     private static final MarshallingInfo<String> ACTIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("actionID").build();
     private static final MarshallingInfo<String> SOURCESERVERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -48,6 +50,7 @@ public class RemoveSourceServerActionRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(removeSourceServerActionRequest.getAccountID(), ACCOUNTID_BINDING);
             protocolMarshaller.marshall(removeSourceServerActionRequest.getActionID(), ACTIONID_BINDING);
             protocolMarshaller.marshall(removeSourceServerActionRequest.getSourceServerID(), SOURCESERVERID_BINDING);
         } catch (Exception e) {

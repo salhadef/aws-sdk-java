@@ -32,7 +32,11 @@ public enum AutoMLMetricEnum {
     Precision("Precision"),
     PrecisionMacro("PrecisionMacro"),
     Recall("Recall"),
-    RecallMacro("RecallMacro");
+    RecallMacro("RecallMacro"),
+    MAPE("MAPE"),
+    MASE("MASE"),
+    WAPE("WAPE"),
+    AverageWeightedQuantileLoss("AverageWeightedQuantileLoss");
 
     private String value;
 

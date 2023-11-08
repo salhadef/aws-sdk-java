@@ -341,6 +341,39 @@ public class AWSLakeFormationAsyncClient extends AWSLakeFormationClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CreateLakeFormationOptInResult> createLakeFormationOptInAsync(CreateLakeFormationOptInRequest request) {
+
+        return createLakeFormationOptInAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLakeFormationOptInResult> createLakeFormationOptInAsync(final CreateLakeFormationOptInRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateLakeFormationOptInRequest, CreateLakeFormationOptInResult> asyncHandler) {
+        final CreateLakeFormationOptInRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateLakeFormationOptInResult>() {
+            @Override
+            public CreateLakeFormationOptInResult call() throws Exception {
+                CreateLakeFormationOptInResult result = null;
+
+                try {
+                    result = executeCreateLakeFormationOptIn(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDataCellsFilterResult> deleteDataCellsFilterAsync(DeleteDataCellsFilterRequest request) {
 
         return deleteDataCellsFilterAsync(request, null);
@@ -391,6 +424,39 @@ public class AWSLakeFormationAsyncClient extends AWSLakeFormationClient implemen
 
                 try {
                     result = executeDeleteLFTag(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLakeFormationOptInResult> deleteLakeFormationOptInAsync(DeleteLakeFormationOptInRequest request) {
+
+        return deleteLakeFormationOptInAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLakeFormationOptInResult> deleteLakeFormationOptInAsync(final DeleteLakeFormationOptInRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteLakeFormationOptInRequest, DeleteLakeFormationOptInResult> asyncHandler) {
+        final DeleteLakeFormationOptInRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteLakeFormationOptInResult>() {
+            @Override
+            public DeleteLakeFormationOptInResult call() throws Exception {
+                DeleteLakeFormationOptInResult result = null;
+
+                try {
+                    result = executeDeleteLakeFormationOptIn(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1056,6 +1122,39 @@ public class AWSLakeFormationAsyncClient extends AWSLakeFormationClient implemen
 
                 try {
                     result = executeListLFTags(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLakeFormationOptInsResult> listLakeFormationOptInsAsync(ListLakeFormationOptInsRequest request) {
+
+        return listLakeFormationOptInsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLakeFormationOptInsResult> listLakeFormationOptInsAsync(final ListLakeFormationOptInsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListLakeFormationOptInsRequest, ListLakeFormationOptInsResult> asyncHandler) {
+        final ListLakeFormationOptInsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListLakeFormationOptInsResult>() {
+            @Override
+            public ListLakeFormationOptInsResult call() throws Exception {
+                ListLakeFormationOptInsResult result = null;
+
+                try {
+                    result = executeListLakeFormationOptIns(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

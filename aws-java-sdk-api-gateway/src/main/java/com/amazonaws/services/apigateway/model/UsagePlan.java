@@ -68,7 +68,8 @@ public class UsagePlan implements Serializable, Cloneable, StructuredPojo {
     private QuotaSettings quota;
     /**
      * <p>
-     * The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS Marketplace.
+     * The Amazon Web Services Marketplace product identifier to associate with the usage plan as a SaaS product on the
+     * Amazon Web Services Marketplace.
      * </p>
      */
     private String productCode;
@@ -351,12 +352,13 @@ public class UsagePlan implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS Marketplace.
+     * The Amazon Web Services Marketplace product identifier to associate with the usage plan as a SaaS product on the
+     * Amazon Web Services Marketplace.
      * </p>
      * 
      * @param productCode
-     *        The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS
-     *        Marketplace.
+     *        The Amazon Web Services Marketplace product identifier to associate with the usage plan as a SaaS product
+     *        on the Amazon Web Services Marketplace.
      */
 
     public void setProductCode(String productCode) {
@@ -365,11 +367,12 @@ public class UsagePlan implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS Marketplace.
+     * The Amazon Web Services Marketplace product identifier to associate with the usage plan as a SaaS product on the
+     * Amazon Web Services Marketplace.
      * </p>
      * 
-     * @return The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS
-     *         Marketplace.
+     * @return The Amazon Web Services Marketplace product identifier to associate with the usage plan as a SaaS product
+     *         on the Amazon Web Services Marketplace.
      */
 
     public String getProductCode() {
@@ -378,12 +381,13 @@ public class UsagePlan implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS Marketplace.
+     * The Amazon Web Services Marketplace product identifier to associate with the usage plan as a SaaS product on the
+     * Amazon Web Services Marketplace.
      * </p>
      * 
      * @param productCode
-     *        The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS
-     *        Marketplace.
+     *        The Amazon Web Services Marketplace product identifier to associate with the usage plan as a SaaS product
+     *        on the Amazon Web Services Marketplace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

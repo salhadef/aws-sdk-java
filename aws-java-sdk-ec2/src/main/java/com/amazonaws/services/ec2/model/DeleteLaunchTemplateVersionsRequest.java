@@ -46,7 +46,8 @@ public class DeleteLaunchTemplateVersionsRequest extends AmazonWebServiceRequest
     private String launchTemplateName;
     /**
      * <p>
-     * The version numbers of one or more launch template versions to delete.
+     * The version numbers of one or more launch template versions to delete. You can specify up to 200 launch template
+     * version numbers.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> versions;
@@ -169,10 +170,12 @@ public class DeleteLaunchTemplateVersionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The version numbers of one or more launch template versions to delete.
+     * The version numbers of one or more launch template versions to delete. You can specify up to 200 launch template
+     * version numbers.
      * </p>
      * 
-     * @return The version numbers of one or more launch template versions to delete.
+     * @return The version numbers of one or more launch template versions to delete. You can specify up to 200 launch
+     *         template version numbers.
      */
 
     public java.util.List<String> getVersions() {
@@ -184,11 +187,13 @@ public class DeleteLaunchTemplateVersionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The version numbers of one or more launch template versions to delete.
+     * The version numbers of one or more launch template versions to delete. You can specify up to 200 launch template
+     * version numbers.
      * </p>
      * 
      * @param versions
-     *        The version numbers of one or more launch template versions to delete.
+     *        The version numbers of one or more launch template versions to delete. You can specify up to 200 launch
+     *        template version numbers.
      */
 
     public void setVersions(java.util.Collection<String> versions) {
@@ -202,7 +207,8 @@ public class DeleteLaunchTemplateVersionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The version numbers of one or more launch template versions to delete.
+     * The version numbers of one or more launch template versions to delete. You can specify up to 200 launch template
+     * version numbers.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -211,7 +217,8 @@ public class DeleteLaunchTemplateVersionsRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param versions
-     *        The version numbers of one or more launch template versions to delete.
+     *        The version numbers of one or more launch template versions to delete. You can specify up to 200 launch
+     *        template version numbers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -227,11 +234,13 @@ public class DeleteLaunchTemplateVersionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The version numbers of one or more launch template versions to delete.
+     * The version numbers of one or more launch template versions to delete. You can specify up to 200 launch template
+     * version numbers.
      * </p>
      * 
      * @param versions
-     *        The version numbers of one or more launch template versions to delete.
+     *        The version numbers of one or more launch template versions to delete. You can specify up to 200 launch
+     *        template version numbers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

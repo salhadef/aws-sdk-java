@@ -37,6 +37,10 @@ public class ShareInvitationMarshaller {
             .marshallLocationName("LensAlias").build();
     private static final MarshallingInfo<String> LENSARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("LensArn").build();
+    private static final MarshallingInfo<String> PROFILEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProfileArn").build();
+    private static final MarshallingInfo<String> TEMPLATEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TemplateArn").build();
 
     private static final ShareInvitationMarshaller instance = new ShareInvitationMarshaller();
 
@@ -59,6 +63,8 @@ public class ShareInvitationMarshaller {
             protocolMarshaller.marshall(shareInvitation.getWorkloadId(), WORKLOADID_BINDING);
             protocolMarshaller.marshall(shareInvitation.getLensAlias(), LENSALIAS_BINDING);
             protocolMarshaller.marshall(shareInvitation.getLensArn(), LENSARN_BINDING);
+            protocolMarshaller.marshall(shareInvitation.getProfileArn(), PROFILEARN_BINDING);
+            protocolMarshaller.marshall(shareInvitation.getTemplateArn(), TEMPLATEARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

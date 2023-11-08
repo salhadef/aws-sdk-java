@@ -44,8 +44,11 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String jobQueue;
     /**
      * <p>
-     * The share identifier for the job. If the job queue doesn't have a scheduling policy, then this parameter must not
-     * be specified. If the job queue has a scheduling policy, then this parameter must be specified.
+     * The share identifier for the job. Don't specify this parameter if the job queue doesn't have a scheduling policy.
+     * If the job queue has a scheduling policy, then this parameter must be specified.
+     * </p>
+     * <p>
+     * This string is limited to 255 alphanumeric characters, and can be followed by an asterisk (*).
      * </p>
      */
     private String shareIdentifier;
@@ -262,13 +265,18 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The share identifier for the job. If the job queue doesn't have a scheduling policy, then this parameter must not
-     * be specified. If the job queue has a scheduling policy, then this parameter must be specified.
+     * The share identifier for the job. Don't specify this parameter if the job queue doesn't have a scheduling policy.
+     * If the job queue has a scheduling policy, then this parameter must be specified.
+     * </p>
+     * <p>
+     * This string is limited to 255 alphanumeric characters, and can be followed by an asterisk (*).
      * </p>
      * 
      * @param shareIdentifier
-     *        The share identifier for the job. If the job queue doesn't have a scheduling policy, then this parameter
-     *        must not be specified. If the job queue has a scheduling policy, then this parameter must be specified.
+     *        The share identifier for the job. Don't specify this parameter if the job queue doesn't have a scheduling
+     *        policy. If the job queue has a scheduling policy, then this parameter must be specified.</p>
+     *        <p>
+     *        This string is limited to 255 alphanumeric characters, and can be followed by an asterisk (*).
      */
 
     public void setShareIdentifier(String shareIdentifier) {
@@ -277,12 +285,17 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The share identifier for the job. If the job queue doesn't have a scheduling policy, then this parameter must not
-     * be specified. If the job queue has a scheduling policy, then this parameter must be specified.
+     * The share identifier for the job. Don't specify this parameter if the job queue doesn't have a scheduling policy.
+     * If the job queue has a scheduling policy, then this parameter must be specified.
+     * </p>
+     * <p>
+     * This string is limited to 255 alphanumeric characters, and can be followed by an asterisk (*).
      * </p>
      * 
-     * @return The share identifier for the job. If the job queue doesn't have a scheduling policy, then this parameter
-     *         must not be specified. If the job queue has a scheduling policy, then this parameter must be specified.
+     * @return The share identifier for the job. Don't specify this parameter if the job queue doesn't have a scheduling
+     *         policy. If the job queue has a scheduling policy, then this parameter must be specified.</p>
+     *         <p>
+     *         This string is limited to 255 alphanumeric characters, and can be followed by an asterisk (*).
      */
 
     public String getShareIdentifier() {
@@ -291,13 +304,18 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The share identifier for the job. If the job queue doesn't have a scheduling policy, then this parameter must not
-     * be specified. If the job queue has a scheduling policy, then this parameter must be specified.
+     * The share identifier for the job. Don't specify this parameter if the job queue doesn't have a scheduling policy.
+     * If the job queue has a scheduling policy, then this parameter must be specified.
+     * </p>
+     * <p>
+     * This string is limited to 255 alphanumeric characters, and can be followed by an asterisk (*).
      * </p>
      * 
      * @param shareIdentifier
-     *        The share identifier for the job. If the job queue doesn't have a scheduling policy, then this parameter
-     *        must not be specified. If the job queue has a scheduling policy, then this parameter must be specified.
+     *        The share identifier for the job. Don't specify this parameter if the job queue doesn't have a scheduling
+     *        policy. If the job queue has a scheduling policy, then this parameter must be specified.</p>
+     *        <p>
+     *        This string is limited to 255 alphanumeric characters, and can be followed by an asterisk (*).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

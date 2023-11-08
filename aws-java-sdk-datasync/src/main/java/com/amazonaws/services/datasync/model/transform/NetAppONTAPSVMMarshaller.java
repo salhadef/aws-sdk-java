@@ -54,6 +54,8 @@ public class NetAppONTAPSVMMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RecommendationStatus").build();
     private static final MarshallingInfo<Long> TOTALSNAPSHOTCAPACITYUSED_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TotalSnapshotCapacityUsed").build();
+    private static final MarshallingInfo<Long> LUNCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("LunCount").build();
 
     private static final NetAppONTAPSVMMarshaller instance = new NetAppONTAPSVMMarshaller();
 
@@ -84,6 +86,7 @@ public class NetAppONTAPSVMMarshaller {
             protocolMarshaller.marshall(netAppONTAPSVM.getNfsExportedVolumes(), NFSEXPORTEDVOLUMES_BINDING);
             protocolMarshaller.marshall(netAppONTAPSVM.getRecommendationStatus(), RECOMMENDATIONSTATUS_BINDING);
             protocolMarshaller.marshall(netAppONTAPSVM.getTotalSnapshotCapacityUsed(), TOTALSNAPSHOTCAPACITYUSED_BINDING);
+            protocolMarshaller.marshall(netAppONTAPSVM.getLunCount(), LUNCOUNT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

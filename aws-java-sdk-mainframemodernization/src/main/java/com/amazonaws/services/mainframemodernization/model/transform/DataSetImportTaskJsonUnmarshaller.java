@@ -52,6 +52,10 @@ public class DataSetImportTaskJsonUnmarshaller implements Unmarshaller<DataSetIm
                     context.nextToken();
                     dataSetImportTask.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("statusReason", targetDepth)) {
+                    context.nextToken();
+                    dataSetImportTask.setStatusReason(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("summary", targetDepth)) {
                     context.nextToken();
                     dataSetImportTask.setSummary(DataSetImportSummaryJsonUnmarshaller.getInstance().unmarshall(context));

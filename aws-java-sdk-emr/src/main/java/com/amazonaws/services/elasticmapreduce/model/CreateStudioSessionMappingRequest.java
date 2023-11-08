@@ -65,8 +65,8 @@ public class CreateStudioSessionMappingRequest extends com.amazonaws.AmazonWebSe
      * The Amazon Resource Name (ARN) for the session policy that will be applied to the user or group. You should
      * specify the ARN for the session policy that you want to apply, not the ARN of your user role. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an EMR Studio User
-     * Role with Session Policies</a>.
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an Amazon EMR
+     * Studio User Role with Session Policies</a>.
      * </p>
      */
     private String sessionPolicyArn;
@@ -321,16 +321,16 @@ public class CreateStudioSessionMappingRequest extends com.amazonaws.AmazonWebSe
      * The Amazon Resource Name (ARN) for the session policy that will be applied to the user or group. You should
      * specify the ARN for the session policy that you want to apply, not the ARN of your user role. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an EMR Studio User
-     * Role with Session Policies</a>.
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an Amazon EMR
+     * Studio User Role with Session Policies</a>.
      * </p>
      * 
      * @param sessionPolicyArn
      *        The Amazon Resource Name (ARN) for the session policy that will be applied to the user or group. You
      *        should specify the ARN for the session policy that you want to apply, not the ARN of your user role. For
      *        more information, see <a
-     *        href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an EMR
-     *        Studio User Role with Session Policies</a>.
+     *        href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an Amazon
+     *        EMR Studio User Role with Session Policies</a>.
      */
 
     public void setSessionPolicyArn(String sessionPolicyArn) {
@@ -342,15 +342,15 @@ public class CreateStudioSessionMappingRequest extends com.amazonaws.AmazonWebSe
      * The Amazon Resource Name (ARN) for the session policy that will be applied to the user or group. You should
      * specify the ARN for the session policy that you want to apply, not the ARN of your user role. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an EMR Studio User
-     * Role with Session Policies</a>.
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an Amazon EMR
+     * Studio User Role with Session Policies</a>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) for the session policy that will be applied to the user or group. You
      *         should specify the ARN for the session policy that you want to apply, not the ARN of your user role. For
      *         more information, see <a
-     *         href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an EMR
-     *         Studio User Role with Session Policies</a>.
+     *         href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an Amazon
+     *         EMR Studio User Role with Session Policies</a>.
      */
 
     public String getSessionPolicyArn() {
@@ -362,16 +362,16 @@ public class CreateStudioSessionMappingRequest extends com.amazonaws.AmazonWebSe
      * The Amazon Resource Name (ARN) for the session policy that will be applied to the user or group. You should
      * specify the ARN for the session policy that you want to apply, not the ARN of your user role. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an EMR Studio User
-     * Role with Session Policies</a>.
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an Amazon EMR
+     * Studio User Role with Session Policies</a>.
      * </p>
      * 
      * @param sessionPolicyArn
      *        The Amazon Resource Name (ARN) for the session policy that will be applied to the user or group. You
      *        should specify the ARN for the session policy that you want to apply, not the ARN of your user role. For
      *        more information, see <a
-     *        href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an EMR
-     *        Studio User Role with Session Policies</a>.
+     *        href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an Amazon
+     *        EMR Studio User Role with Session Policies</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

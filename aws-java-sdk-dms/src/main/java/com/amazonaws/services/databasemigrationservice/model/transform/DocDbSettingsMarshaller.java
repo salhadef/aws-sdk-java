@@ -49,6 +49,10 @@ public class DocDbSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecretsManagerAccessRoleArn").build();
     private static final MarshallingInfo<String> SECRETSMANAGERSECRETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecretsManagerSecretId").build();
+    private static final MarshallingInfo<Boolean> USEUPDATELOOKUP_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UseUpdateLookUp").build();
+    private static final MarshallingInfo<Boolean> REPLICATESHARDCOLLECTIONS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReplicateShardCollections").build();
 
     private static final DocDbSettingsMarshaller instance = new DocDbSettingsMarshaller();
 
@@ -77,6 +81,8 @@ public class DocDbSettingsMarshaller {
             protocolMarshaller.marshall(docDbSettings.getKmsKeyId(), KMSKEYID_BINDING);
             protocolMarshaller.marshall(docDbSettings.getSecretsManagerAccessRoleArn(), SECRETSMANAGERACCESSROLEARN_BINDING);
             protocolMarshaller.marshall(docDbSettings.getSecretsManagerSecretId(), SECRETSMANAGERSECRETID_BINDING);
+            protocolMarshaller.marshall(docDbSettings.getUseUpdateLookUp(), USEUPDATELOOKUP_BINDING);
+            protocolMarshaller.marshall(docDbSettings.getReplicateShardCollections(), REPLICATESHARDCOLLECTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

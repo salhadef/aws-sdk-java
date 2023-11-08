@@ -94,6 +94,11 @@ public class MediaInsightsPipelineConfigurationElementJsonUnmarshaller implement
                     mediaInsightsPipelineConfigurationElement.setSnsTopicSinkConfiguration(SnsTopicSinkConfigurationJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
+                if (context.testExpression("VoiceEnhancementSinkConfiguration", targetDepth)) {
+                    context.nextToken();
+                    mediaInsightsPipelineConfigurationElement.setVoiceEnhancementSinkConfiguration(VoiceEnhancementSinkConfigurationJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

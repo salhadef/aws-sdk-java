@@ -52,6 +52,12 @@ public class WorkloadDiscoveryConfigJsonUnmarshaller implements Unmarshaller<Wor
                     context.nextToken();
                     workloadDiscoveryConfig.setTrustedAdvisorIntegrationStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("WorkloadResourceDefinition", targetDepth)) {
+                    context.nextToken();
+                    workloadDiscoveryConfig.setWorkloadResourceDefinition(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

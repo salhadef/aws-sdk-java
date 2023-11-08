@@ -29,10 +29,10 @@ public class InstanceOnboardingJobStatusMarshaller {
 
     private static final MarshallingInfo<String> CONNECTINSTANCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("connectInstanceId").build();
-    private static final MarshallingInfo<String> FAILURECODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("failureCode").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
+    private static final MarshallingInfo<String> FAILURECODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("failureCode").build();
 
     private static final InstanceOnboardingJobStatusMarshaller instance = new InstanceOnboardingJobStatusMarshaller();
 
@@ -51,8 +51,8 @@ public class InstanceOnboardingJobStatusMarshaller {
 
         try {
             protocolMarshaller.marshall(instanceOnboardingJobStatus.getConnectInstanceId(), CONNECTINSTANCEID_BINDING);
-            protocolMarshaller.marshall(instanceOnboardingJobStatus.getFailureCode(), FAILURECODE_BINDING);
             protocolMarshaller.marshall(instanceOnboardingJobStatus.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(instanceOnboardingJobStatus.getFailureCode(), FAILURECODE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

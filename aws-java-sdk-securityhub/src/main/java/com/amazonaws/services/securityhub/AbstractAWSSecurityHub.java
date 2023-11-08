@@ -39,12 +39,22 @@ public class AbstractAWSSecurityHub implements AWSSecurityHub {
     }
 
     @Override
+    public BatchDeleteAutomationRulesResult batchDeleteAutomationRules(BatchDeleteAutomationRulesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public BatchDisableStandardsResult batchDisableStandards(BatchDisableStandardsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public BatchEnableStandardsResult batchEnableStandards(BatchEnableStandardsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public BatchGetAutomationRulesResult batchGetAutomationRules(BatchGetAutomationRulesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -64,6 +74,11 @@ public class AbstractAWSSecurityHub implements AWSSecurityHub {
     }
 
     @Override
+    public BatchUpdateAutomationRulesResult batchUpdateAutomationRules(BatchUpdateAutomationRulesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public BatchUpdateFindingsResult batchUpdateFindings(BatchUpdateFindingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -75,6 +90,11 @@ public class AbstractAWSSecurityHub implements AWSSecurityHub {
 
     @Override
     public CreateActionTargetResult createActionTarget(CreateActionTargetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateAutomationRuleResult createAutomationRule(CreateAutomationRuleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -215,6 +235,11 @@ public class AbstractAWSSecurityHub implements AWSSecurityHub {
     }
 
     @Override
+    public GetFindingHistoryResult getFindingHistory(GetFindingHistoryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetFindingsResult getFindings(GetFindingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -247,6 +272,11 @@ public class AbstractAWSSecurityHub implements AWSSecurityHub {
 
     @Override
     public InviteMembersResult inviteMembers(InviteMembersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListAutomationRulesResult listAutomationRules(ListAutomationRulesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

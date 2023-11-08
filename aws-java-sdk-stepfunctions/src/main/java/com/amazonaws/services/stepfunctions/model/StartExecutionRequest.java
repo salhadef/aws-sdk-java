@@ -29,11 +29,55 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The Amazon Resource Name (ARN) of the state machine to execute.
      * </p>
+     * <p>
+     * The <code>stateMachineArn</code> parameter accepts one of the following inputs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>An unqualified state machine ARN</b> – Refers to a state machine ARN that isn't qualified with a version or
+     * alias ARN. The following is an example of an unqualified state machine ARN.
+     * </p>
+     * <p>
+     * <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;</code>
+     * </p>
+     * <p>
+     * Step Functions doesn't associate state machine executions that you start with an unqualified ARN with a version.
+     * This is true even if that version uses the same revision that the execution used.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>A state machine version ARN</b> – Refers to a version ARN, which is a combination of state machine ARN and the
+     * version number separated by a colon (:). The following is an example of the ARN for version 10.
+     * </p>
+     * <p>
+     * <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;:10</code>
+     * </p>
+     * <p>
+     * Step Functions doesn't associate executions that you start with a version ARN with any aliases that point to that
+     * version.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>A state machine alias ARN</b> – Refers to an alias ARN, which is a combination of state machine ARN and the
+     * alias name separated by a colon (:). The following is an example of the ARN for an alias named <code>PROD</code>.
+     * </p>
+     * <p>
+     * <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine:PROD&gt;</code>
+     * </p>
+     * <p>
+     * Step Functions associates executions that you start with an alias ARN with that alias and the state machine
+     * version used for that execution.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String stateMachineArn;
     /**
      * <p>
-     * The name of the execution. This name must be unique for your Amazon Web Services account, region, and state
+     * Optional name of the execution. This name must be unique for your Amazon Web Services account, Region, and state
      * machine for 90 days. For more information, see <a
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
      * Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.
@@ -102,9 +146,97 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The Amazon Resource Name (ARN) of the state machine to execute.
      * </p>
+     * <p>
+     * The <code>stateMachineArn</code> parameter accepts one of the following inputs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>An unqualified state machine ARN</b> – Refers to a state machine ARN that isn't qualified with a version or
+     * alias ARN. The following is an example of an unqualified state machine ARN.
+     * </p>
+     * <p>
+     * <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;</code>
+     * </p>
+     * <p>
+     * Step Functions doesn't associate state machine executions that you start with an unqualified ARN with a version.
+     * This is true even if that version uses the same revision that the execution used.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>A state machine version ARN</b> – Refers to a version ARN, which is a combination of state machine ARN and the
+     * version number separated by a colon (:). The following is an example of the ARN for version 10.
+     * </p>
+     * <p>
+     * <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;:10</code>
+     * </p>
+     * <p>
+     * Step Functions doesn't associate executions that you start with a version ARN with any aliases that point to that
+     * version.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>A state machine alias ARN</b> – Refers to an alias ARN, which is a combination of state machine ARN and the
+     * alias name separated by a colon (:). The following is an example of the ARN for an alias named <code>PROD</code>.
+     * </p>
+     * <p>
+     * <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine:PROD&gt;</code>
+     * </p>
+     * <p>
+     * Step Functions associates executions that you start with an alias ARN with that alias and the state machine
+     * version used for that execution.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param stateMachineArn
-     *        The Amazon Resource Name (ARN) of the state machine to execute.
+     *        The Amazon Resource Name (ARN) of the state machine to execute.</p>
+     *        <p>
+     *        The <code>stateMachineArn</code> parameter accepts one of the following inputs:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>An unqualified state machine ARN</b> – Refers to a state machine ARN that isn't qualified with a
+     *        version or alias ARN. The following is an example of an unqualified state machine ARN.
+     *        </p>
+     *        <p>
+     *        <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;</code>
+     *        </p>
+     *        <p>
+     *        Step Functions doesn't associate state machine executions that you start with an unqualified ARN with a
+     *        version. This is true even if that version uses the same revision that the execution used.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>A state machine version ARN</b> – Refers to a version ARN, which is a combination of state machine ARN
+     *        and the version number separated by a colon (:). The following is an example of the ARN for version 10.
+     *        </p>
+     *        <p>
+     *        <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;:10</code>
+     *        </p>
+     *        <p>
+     *        Step Functions doesn't associate executions that you start with a version ARN with any aliases that point
+     *        to that version.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>A state machine alias ARN</b> – Refers to an alias ARN, which is a combination of state machine ARN and
+     *        the alias name separated by a colon (:). The following is an example of the ARN for an alias named
+     *        <code>PROD</code>.
+     *        </p>
+     *        <p>
+     *        <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine:PROD&gt;</code>
+     *        </p>
+     *        <p>
+     *        Step Functions associates executions that you start with an alias ARN with that alias and the state
+     *        machine version used for that execution.
+     *        </p>
+     *        </li>
      */
 
     public void setStateMachineArn(String stateMachineArn) {
@@ -115,8 +247,96 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The Amazon Resource Name (ARN) of the state machine to execute.
      * </p>
+     * <p>
+     * The <code>stateMachineArn</code> parameter accepts one of the following inputs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>An unqualified state machine ARN</b> – Refers to a state machine ARN that isn't qualified with a version or
+     * alias ARN. The following is an example of an unqualified state machine ARN.
+     * </p>
+     * <p>
+     * <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;</code>
+     * </p>
+     * <p>
+     * Step Functions doesn't associate state machine executions that you start with an unqualified ARN with a version.
+     * This is true even if that version uses the same revision that the execution used.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>A state machine version ARN</b> – Refers to a version ARN, which is a combination of state machine ARN and the
+     * version number separated by a colon (:). The following is an example of the ARN for version 10.
+     * </p>
+     * <p>
+     * <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;:10</code>
+     * </p>
+     * <p>
+     * Step Functions doesn't associate executions that you start with a version ARN with any aliases that point to that
+     * version.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>A state machine alias ARN</b> – Refers to an alias ARN, which is a combination of state machine ARN and the
+     * alias name separated by a colon (:). The following is an example of the ARN for an alias named <code>PROD</code>.
+     * </p>
+     * <p>
+     * <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine:PROD&gt;</code>
+     * </p>
+     * <p>
+     * Step Functions associates executions that you start with an alias ARN with that alias and the state machine
+     * version used for that execution.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The Amazon Resource Name (ARN) of the state machine to execute.
+     * @return The Amazon Resource Name (ARN) of the state machine to execute.</p>
+     *         <p>
+     *         The <code>stateMachineArn</code> parameter accepts one of the following inputs:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>An unqualified state machine ARN</b> – Refers to a state machine ARN that isn't qualified with a
+     *         version or alias ARN. The following is an example of an unqualified state machine ARN.
+     *         </p>
+     *         <p>
+     *         <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;</code>
+     *         </p>
+     *         <p>
+     *         Step Functions doesn't associate state machine executions that you start with an unqualified ARN with a
+     *         version. This is true even if that version uses the same revision that the execution used.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>A state machine version ARN</b> – Refers to a version ARN, which is a combination of state machine ARN
+     *         and the version number separated by a colon (:). The following is an example of the ARN for version 10.
+     *         </p>
+     *         <p>
+     *         <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;:10</code>
+     *         </p>
+     *         <p>
+     *         Step Functions doesn't associate executions that you start with a version ARN with any aliases that point
+     *         to that version.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>A state machine alias ARN</b> – Refers to an alias ARN, which is a combination of state machine ARN
+     *         and the alias name separated by a colon (:). The following is an example of the ARN for an alias named
+     *         <code>PROD</code>.
+     *         </p>
+     *         <p>
+     *         <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine:PROD&gt;</code>
+     *         </p>
+     *         <p>
+     *         Step Functions associates executions that you start with an alias ARN with that alias and the state
+     *         machine version used for that execution.
+     *         </p>
+     *         </li>
      */
 
     public String getStateMachineArn() {
@@ -127,9 +347,97 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The Amazon Resource Name (ARN) of the state machine to execute.
      * </p>
+     * <p>
+     * The <code>stateMachineArn</code> parameter accepts one of the following inputs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>An unqualified state machine ARN</b> – Refers to a state machine ARN that isn't qualified with a version or
+     * alias ARN. The following is an example of an unqualified state machine ARN.
+     * </p>
+     * <p>
+     * <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;</code>
+     * </p>
+     * <p>
+     * Step Functions doesn't associate state machine executions that you start with an unqualified ARN with a version.
+     * This is true even if that version uses the same revision that the execution used.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>A state machine version ARN</b> – Refers to a version ARN, which is a combination of state machine ARN and the
+     * version number separated by a colon (:). The following is an example of the ARN for version 10.
+     * </p>
+     * <p>
+     * <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;:10</code>
+     * </p>
+     * <p>
+     * Step Functions doesn't associate executions that you start with a version ARN with any aliases that point to that
+     * version.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>A state machine alias ARN</b> – Refers to an alias ARN, which is a combination of state machine ARN and the
+     * alias name separated by a colon (:). The following is an example of the ARN for an alias named <code>PROD</code>.
+     * </p>
+     * <p>
+     * <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine:PROD&gt;</code>
+     * </p>
+     * <p>
+     * Step Functions associates executions that you start with an alias ARN with that alias and the state machine
+     * version used for that execution.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param stateMachineArn
-     *        The Amazon Resource Name (ARN) of the state machine to execute.
+     *        The Amazon Resource Name (ARN) of the state machine to execute.</p>
+     *        <p>
+     *        The <code>stateMachineArn</code> parameter accepts one of the following inputs:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>An unqualified state machine ARN</b> – Refers to a state machine ARN that isn't qualified with a
+     *        version or alias ARN. The following is an example of an unqualified state machine ARN.
+     *        </p>
+     *        <p>
+     *        <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;</code>
+     *        </p>
+     *        <p>
+     *        Step Functions doesn't associate state machine executions that you start with an unqualified ARN with a
+     *        version. This is true even if that version uses the same revision that the execution used.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>A state machine version ARN</b> – Refers to a version ARN, which is a combination of state machine ARN
+     *        and the version number separated by a colon (:). The following is an example of the ARN for version 10.
+     *        </p>
+     *        <p>
+     *        <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;:10</code>
+     *        </p>
+     *        <p>
+     *        Step Functions doesn't associate executions that you start with a version ARN with any aliases that point
+     *        to that version.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>A state machine alias ARN</b> – Refers to an alias ARN, which is a combination of state machine ARN and
+     *        the alias name separated by a colon (:). The following is an example of the ARN for an alias named
+     *        <code>PROD</code>.
+     *        </p>
+     *        <p>
+     *        <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine:PROD&gt;</code>
+     *        </p>
+     *        <p>
+     *        Step Functions associates executions that you start with an alias ARN with that alias and the state
+     *        machine version used for that execution.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -140,7 +448,7 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the execution. This name must be unique for your Amazon Web Services account, region, and state
+     * Optional name of the execution. This name must be unique for your Amazon Web Services account, Region, and state
      * machine for 90 days. For more information, see <a
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
      * Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.
@@ -180,7 +488,7 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param name
-     *        The name of the execution. This name must be unique for your Amazon Web Services account, region, and
+     *        Optional name of the execution. This name must be unique for your Amazon Web Services account, Region, and
      *        state machine for 90 days. For more information, see <a href=
      *        "https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"
      *        > Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p>
@@ -224,7 +532,7 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the execution. This name must be unique for your Amazon Web Services account, region, and state
+     * Optional name of the execution. This name must be unique for your Amazon Web Services account, Region, and state
      * machine for 90 days. For more information, see <a
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
      * Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.
@@ -263,8 +571,8 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
      * To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.
      * </p>
      * 
-     * @return The name of the execution. This name must be unique for your Amazon Web Services account, region, and
-     *         state machine for 90 days. For more information, see <a href=
+     * @return Optional name of the execution. This name must be unique for your Amazon Web Services account, Region,
+     *         and state machine for 90 days. For more information, see <a href=
      *         "https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"
      *         > Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p>
      *         <p>
@@ -307,7 +615,7 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the execution. This name must be unique for your Amazon Web Services account, region, and state
+     * Optional name of the execution. This name must be unique for your Amazon Web Services account, Region, and state
      * machine for 90 days. For more information, see <a
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
      * Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.
@@ -347,7 +655,7 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param name
-     *        The name of the execution. This name must be unique for your Amazon Web Services account, region, and
+     *        Optional name of the execution. This name must be unique for your Amazon Web Services account, Region, and
      *        state machine for 90 days. For more information, see <a href=
      *        "https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"
      *        > Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p>

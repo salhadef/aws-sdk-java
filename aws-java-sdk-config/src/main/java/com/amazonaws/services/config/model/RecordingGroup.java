@@ -19,51 +19,45 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies which Amazon Web Services resource types Config records for configuration changes. In the recording group,
- * you specify whether you want to record all supported resource types or only specific types of resources.
+ * Specifies which resource types Config records for configuration changes. By default, Config records configuration
+ * changes for all current and future supported resource types in the Amazon Web Services Region where you have enabled
+ * Config (excluding the globally recorded IAM resource types: IAM users, groups, roles, and customer managed policies).
  * </p>
  * <p>
- * By default, Config records the configuration changes for all supported types of <i>regional resources</i> that Config
- * discovers in the region in which it is running. Regional resources are tied to a region and can be used only in that
- * region. Examples of regional resources are EC2 instances and EBS volumes.
+ * In the recording group, you specify whether you want to record all supported current and future supported resource
+ * types or to include or exclude specific resources types. For a list of supported resource types, see <a
+ * href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources"
+ * >Supported Resource Types</a> in the <i>Config developer guide</i>.
  * </p>
  * <p>
- * You can also have Config record supported types of <i>global resources</i>. Global resources are not tied to a
- * specific region and can be used in all regions. The global resource types that Config supports include IAM users,
- * groups, roles, and customer managed policies.
+ * If you don't want Config to record all current and future supported resource types, use one of the following
+ * recording strategies:
  * </p>
+ * <ol>
+ * <li>
+ * <p>
+ * <b>Record all current and future resource types with exclusions</b> (<code>EXCLUSION_BY_RESOURCE_TYPES</code>), or
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>Record specific resource types</b> (<code>INCLUSION_BY_RESOURCE_TYPES</code>).
+ * </p>
+ * </li>
+ * </ol>
  * <important>
  * <p>
- * Global resource types onboarded to Config recording after February 2022 will only be recorded in the service's home
- * region for the commercial partition and Amazon Web Services GovCloud (US) West for the GovCloud partition. You can
- * view the Configuration Items for these new global resource types only in their home region and Amazon Web Services
- * GovCloud (US) West.
+ * <b>Aurora global clusters are automatically globally recorded</b>
  * </p>
  * <p>
- * Supported global resource types onboarded before February 2022 such as <code>AWS::IAM::Group</code>,
- * <code>AWS::IAM::Policy</code>, <code>AWS::IAM::Role</code>, <code>AWS::IAM::User</code> remain unchanged, and they
- * will continue to deliver Configuration Items in all supported regions in Config. The change will only affect new
- * global resource types onboarded after February 2022.
+ * The <code>AWS::RDS::GlobalCluster</code> resource type will be recorded in all supported Config Regions where the
+ * configuration recorder is enabled.
  * </p>
  * <p>
- * To record global resource types onboarded after February 2022, enable All Supported Resource Types in the home region
- * of the global resource type you want to record.
+ * If you do not want to record <code>AWS::RDS::GlobalCluster</code> in all enabled Regions, use the
+ * <code>EXCLUSION_BY_RESOURCE_TYPES</code> or <code>INCLUSION_BY_RESOURCE_TYPES</code> recording strategy.
  * </p>
  * </important>
- * <p>
- * If you don't want Config to record all resources, you can specify which types of resources it will record with the
- * <code>resourceTypes</code> parameter.
- * </p>
- * <p>
- * For a list of supported resource types, see <a
- * href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources"
- * >Supported Resource Types</a>.
- * </p>
- * <p>
- * For more information and a table of the Home Regions for Global Resource Types Onboarded after February 2022, see <a
- * href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html">Selecting Which Resources
- * Config Records</a>.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/RecordingGroup" target="_top">AWS API
  *      Documentation</a>
@@ -73,77 +67,354 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether Config records configuration changes for every supported type of regional resource.
+     * Specifies whether Config records configuration changes for all supported regionally recorded resource types.
      * </p>
      * <p>
-     * If you set this option to <code>true</code>, when Config adds support for a new type of regional resource, it
-     * starts recording resources of that type automatically.
+     * If you set this field to <code>true</code>, when Config adds support for a new regionally recorded resource type,
+     * Config starts recording resources of that type automatically.
      * </p>
      * <p>
-     * If you set this option to <code>true</code>, you cannot enumerate a list of <code>resourceTypes</code>.
+     * If you set this field to <code>true</code>, you cannot enumerate specific resource types to record in the
+     * <code>resourceTypes</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>, or to
+     * exclude in the <code>resourceTypes</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_ExclusionByResourceTypes.html"
+     * >ExclusionByResourceTypes</a>.
      * </p>
+     * <note>
+     * <p>
+     * <b>Region Availability</b>
+     * </p>
+     * <p>
+     * Check <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/what-is-resource-config-coverage.html">Resource
+     * Coverage by Region Availability</a> to see if a resource type is supported in the Amazon Web Services Region
+     * where you set up Config.
+     * </p>
+     * </note>
      */
     private Boolean allSupported;
     /**
      * <p>
-     * Specifies whether Config includes all supported types of global resources (for example, IAM resources) with the
-     * resources that it records.
+     * A legacy field which <b>only applies to the globally recorded IAM resource types</b>: IAM users, groups, roles,
+     * and customer managed policies. If you select this option, these resource types will be recorded in all enabled
+     * Config regions where Config was available before February 2022. This list does not include the following Regions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Asia Pacific (Hyderabad)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Asia Pacific (Melbourne)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Europe (Spain)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Europe (Zurich)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Israel (Tel Aviv)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Middle East (UAE)
+     * </p>
+     * </li>
+     * </ul>
+     * <important>
+     * <p>
+     * <b>Aurora global clusters are automatically globally recorded</b>
      * </p>
      * <p>
-     * Before you can set this option to <code>true</code>, you must set the <code>allSupported</code> option to
-     * <code>true</code>.
+     * The <code>AWS::RDS::GlobalCluster</code> resource type will be recorded in all supported Config Regions where the
+     * configuration recorder is enabled, even if <code>includeGlobalResourceTypes</code> is not set to
+     * <code>true</code>. <code>includeGlobalResourceTypes</code> is a legacy field which only applies to IAM users,
+     * groups, roles, and customer managed policies.
      * </p>
      * <p>
-     * If you set this option to <code>true</code>, when Config adds support for a new type of global resource, it
-     * starts recording resources of that type automatically.
+     * If you do not want to record <code>AWS::RDS::GlobalCluster</code> in all enabled Regions, use one of the
+     * following recording strategies:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * <b>Record all current and future resource types with exclusions</b> (<code>EXCLUSION_BY_RESOURCE_TYPES</code>),
+     * or
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Record specific resource types</b> (<code>INCLUSION_BY_RESOURCE_TYPES</code>).
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-all"
+     * >Selecting Which Resources are Recorded</a> in the <i>Config developer guide</i>.
+     * </p>
+     * </important> <note>
+     * <p>
+     * <b>Required and optional fields</b>
      * </p>
      * <p>
-     * The configuration details for any global resource are the same in all regions. To prevent duplicate configuration
-     * items, you should consider customizing Config in only one region to record global resources.
+     * Before you set this field to <code>true</code>, set the <code>allSupported</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a> to
+     * <code>true</code>. Optionally, you can set the <code>useOnly</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a> to
+     * <code>ALL_SUPPORTED_RESOURCE_TYPES</code>.
      * </p>
+     * </note> <note>
+     * <p>
+     * <b>Overriding fields</b>
+     * </p>
+     * <p>
+     * If you set this field to <code>false</code> but list globally recorded IAM resource types in the
+     * <code>resourceTypes</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>, Config
+     * will still record configuration changes for those specified resource types <i>regardless</i> of if you set the
+     * <code>includeGlobalResourceTypes</code> field to false.
+     * </p>
+     * <p>
+     * If you do not want to record configuration changes to the globally recorded IAM resource types (IAM users,
+     * groups, roles, and customer managed policies), make sure to not list them in the <code>resourceTypes</code> field
+     * in addition to setting the <code>includeGlobalResourceTypes</code> field to false.
+     * </p>
+     * </note>
      */
     private Boolean includeGlobalResourceTypes;
     /**
      * <p>
-     * A comma-separated list that specifies the types of Amazon Web Services resources for which Config records
-     * configuration changes (for example, <code>AWS::EC2::Instance</code> or <code>AWS::CloudTrail::Trail</code>).
+     * A comma-separated list that specifies which resource types Config records.
      * </p>
      * <p>
-     * To record all configuration changes, you must set the <code>allSupported</code> option to <code>true</code>.
+     * Optionally, you can set the <code>useOnly</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a> to
+     * <code>INCLUSION_BY_RESOURCE_TYPES</code>.
      * </p>
      * <p>
-     * If you set the <code>AllSupported</code> option to false and populate the <code>ResourceTypes</code> option with
-     * values, when Config adds support for a new type of resource, it will not record resources of that type unless you
-     * manually add that type to your recording group.
+     * To record all configuration changes, set the <code>allSupported</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a> to
+     * <code>true</code>, and either omit this field or don't specify any resource types in this field. If you set the
+     * <code>allSupported</code> field to <code>false</code> and specify values for <code>resourceTypes</code>, when
+     * Config adds support for a new type of resource, it will not record resources of that type unless you manually add
+     * that type to your recording group.
      * </p>
      * <p>
-     * For a list of valid <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in <a href=
+     * For a list of valid <code>resourceTypes</code> values, see the <b>Resource Type Value</b> column in <a href=
      * "https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources"
-     * >Supported Amazon Web Services resource Types</a>.
+     * >Supported Amazon Web Services resource Types</a> in the <i>Config developer guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * <b>Region Availability</b>
+     * </p>
+     * <p>
+     * Before specifying a resource type for Config to track, check <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/what-is-resource-config-coverage.html">Resource
+     * Coverage by Region Availability</a> to see if the resource type is supported in the Amazon Web Services Region
+     * where you set up Config. If a resource type is supported by Config in at least one Region, you can enable the
+     * recording of that resource type in all Regions supported by Config, even if the specified resource type is not
+     * supported in the Amazon Web Services Region where you set up Config.
+     * </p>
+     * </note>
      */
     private com.amazonaws.internal.SdkInternalList<String> resourceTypes;
+    /**
+     * <p>
+     * An object that specifies how Config excludes resource types from being recorded by the configuration recorder.
+     * </p>
+     * <p>
+     * To use this option, you must set the <code>useOnly</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a> to
+     * <code>EXCLUSION_BY_RESOURCE_TYPES</code>.
+     * </p>
+     */
+    private ExclusionByResourceTypes exclusionByResourceTypes;
+    /**
+     * <p>
+     * An object that specifies the recording strategy for the configuration recorder.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you set the <code>useOnly</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a> to
+     * <code>ALL_SUPPORTED_RESOURCE_TYPES</code>, Config records configuration changes for all supported regionally
+     * recorded resource types. You also must set the <code>allSupported</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a> to
+     * <code>true</code>. When Config adds support for a new regionally recorded resource type, Config automatically
+     * starts recording resources of that type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you set the <code>useOnly</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a> to
+     * <code>INCLUSION_BY_RESOURCE_TYPES</code>, Config records configuration changes for only the resource types you
+     * specify in the <code>resourceTypes</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you set the <code>useOnly</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a> to
+     * <code>EXCLUSION_BY_RESOURCE_TYPES</code>, Config records configuration changes for all supported resource types
+     * except the resource types that you specify to exclude from being recorded in the <code>resourceTypes</code> field
+     * of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_ExclusionByResourceTypes.html">
+     * ExclusionByResourceTypes</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * <b>Required and optional fields</b>
+     * </p>
+     * <p>
+     * The <code>recordingStrategy</code> field is optional when you set the <code>allSupported</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a> to
+     * <code>true</code>.
+     * </p>
+     * <p>
+     * The <code>recordingStrategy</code> field is optional when you list resource types in the
+     * <code>resourceTypes</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>.
+     * </p>
+     * <p>
+     * The <code>recordingStrategy</code> field is required if you list resource types to exclude from recording in the
+     * <code>resourceTypes</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_ExclusionByResourceTypes.html"
+     * >ExclusionByResourceTypes</a>.
+     * </p>
+     * </note> <note>
+     * <p>
+     * <b>Overriding fields</b>
+     * </p>
+     * <p>
+     * If you choose <code>EXCLUSION_BY_RESOURCE_TYPES</code> for the recording strategy, the
+     * <code>exclusionByResourceTypes</code> field will override other properties in the request.
+     * </p>
+     * <p>
+     * For example, even if you set <code>includeGlobalResourceTypes</code> to false, globally recorded IAM resource
+     * types will still be automatically recorded in this option unless those resource types are specifically listed as
+     * exclusions in the <code>resourceTypes</code> field of <code>exclusionByResourceTypes</code>.
+     * </p>
+     * </note> <note>
+     * <p>
+     * <b>Global resources types and the resource exclusion recording strategy</b>
+     * </p>
+     * <p>
+     * By default, if you choose the <code>EXCLUSION_BY_RESOURCE_TYPES</code> recording strategy, when Config adds
+     * support for a new resource type in the Region where you set up the configuration recorder, including global
+     * resource types, Config starts recording resources of that type automatically.
+     * </p>
+     * <p>
+     * In addition, unless specifically listed as exclusions, <code>AWS::RDS::GlobalCluster</code> will be recorded
+     * automatically in all supported Config Regions were the configuration recorder is enabled. IAM users, groups,
+     * roles, and customer managed policies will be recorded automatically in all enabled Config Regions where Config
+     * was available before February 2022. This list does not include the following Regions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Asia Pacific (Hyderabad)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Asia Pacific (Melbourne)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Europe (Spain)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Europe (Zurich)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Israel (Tel Aviv)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Middle East (UAE)
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     */
+    private RecordingStrategy recordingStrategy;
 
     /**
      * <p>
-     * Specifies whether Config records configuration changes for every supported type of regional resource.
+     * Specifies whether Config records configuration changes for all supported regionally recorded resource types.
      * </p>
      * <p>
-     * If you set this option to <code>true</code>, when Config adds support for a new type of regional resource, it
-     * starts recording resources of that type automatically.
+     * If you set this field to <code>true</code>, when Config adds support for a new regionally recorded resource type,
+     * Config starts recording resources of that type automatically.
      * </p>
      * <p>
-     * If you set this option to <code>true</code>, you cannot enumerate a list of <code>resourceTypes</code>.
+     * If you set this field to <code>true</code>, you cannot enumerate specific resource types to record in the
+     * <code>resourceTypes</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>, or to
+     * exclude in the <code>resourceTypes</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_ExclusionByResourceTypes.html"
+     * >ExclusionByResourceTypes</a>.
      * </p>
+     * <note>
+     * <p>
+     * <b>Region Availability</b>
+     * </p>
+     * <p>
+     * Check <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/what-is-resource-config-coverage.html">Resource
+     * Coverage by Region Availability</a> to see if a resource type is supported in the Amazon Web Services Region
+     * where you set up Config.
+     * </p>
+     * </note>
      * 
      * @param allSupported
-     *        Specifies whether Config records configuration changes for every supported type of regional resource.</p>
+     *        Specifies whether Config records configuration changes for all supported regionally recorded resource
+     *        types.</p>
      *        <p>
-     *        If you set this option to <code>true</code>, when Config adds support for a new type of regional resource,
-     *        it starts recording resources of that type automatically.
+     *        If you set this field to <code>true</code>, when Config adds support for a new regionally recorded
+     *        resource type, Config starts recording resources of that type automatically.
      *        </p>
      *        <p>
-     *        If you set this option to <code>true</code>, you cannot enumerate a list of <code>resourceTypes</code>.
+     *        If you set this field to <code>true</code>, you cannot enumerate specific resource types to record in the
+     *        <code>resourceTypes</code> field of <a
+     *        href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>,
+     *        or to exclude in the <code>resourceTypes</code> field of <a
+     *        href="https://docs.aws.amazon.com/config/latest/APIReference/API_ExclusionByResourceTypes.html"
+     *        >ExclusionByResourceTypes</a>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        <b>Region Availability</b>
+     *        </p>
+     *        <p>
+     *        Check <a
+     *        href="https://docs.aws.amazon.com/config/latest/developerguide/what-is-resource-config-coverage.html"
+     *        >Resource Coverage by Region Availability</a> to see if a resource type is supported in the Amazon Web
+     *        Services Region where you set up Config.
+     *        </p>
      */
 
     public void setAllSupported(Boolean allSupported) {
@@ -152,23 +423,56 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether Config records configuration changes for every supported type of regional resource.
+     * Specifies whether Config records configuration changes for all supported regionally recorded resource types.
      * </p>
      * <p>
-     * If you set this option to <code>true</code>, when Config adds support for a new type of regional resource, it
-     * starts recording resources of that type automatically.
+     * If you set this field to <code>true</code>, when Config adds support for a new regionally recorded resource type,
+     * Config starts recording resources of that type automatically.
      * </p>
      * <p>
-     * If you set this option to <code>true</code>, you cannot enumerate a list of <code>resourceTypes</code>.
+     * If you set this field to <code>true</code>, you cannot enumerate specific resource types to record in the
+     * <code>resourceTypes</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>, or to
+     * exclude in the <code>resourceTypes</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_ExclusionByResourceTypes.html"
+     * >ExclusionByResourceTypes</a>.
      * </p>
+     * <note>
+     * <p>
+     * <b>Region Availability</b>
+     * </p>
+     * <p>
+     * Check <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/what-is-resource-config-coverage.html">Resource
+     * Coverage by Region Availability</a> to see if a resource type is supported in the Amazon Web Services Region
+     * where you set up Config.
+     * </p>
+     * </note>
      * 
-     * @return Specifies whether Config records configuration changes for every supported type of regional resource.</p>
+     * @return Specifies whether Config records configuration changes for all supported regionally recorded resource
+     *         types.</p>
      *         <p>
-     *         If you set this option to <code>true</code>, when Config adds support for a new type of regional
-     *         resource, it starts recording resources of that type automatically.
+     *         If you set this field to <code>true</code>, when Config adds support for a new regionally recorded
+     *         resource type, Config starts recording resources of that type automatically.
      *         </p>
      *         <p>
-     *         If you set this option to <code>true</code>, you cannot enumerate a list of <code>resourceTypes</code>.
+     *         If you set this field to <code>true</code>, you cannot enumerate specific resource types to record in the
+     *         <code>resourceTypes</code> field of <a
+     *         href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>,
+     *         or to exclude in the <code>resourceTypes</code> field of <a
+     *         href="https://docs.aws.amazon.com/config/latest/APIReference/API_ExclusionByResourceTypes.html"
+     *         >ExclusionByResourceTypes</a>.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         <b>Region Availability</b>
+     *         </p>
+     *         <p>
+     *         Check <a
+     *         href="https://docs.aws.amazon.com/config/latest/developerguide/what-is-resource-config-coverage.html"
+     *         >Resource Coverage by Region Availability</a> to see if a resource type is supported in the Amazon Web
+     *         Services Region where you set up Config.
+     *         </p>
      */
 
     public Boolean getAllSupported() {
@@ -177,24 +481,57 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether Config records configuration changes for every supported type of regional resource.
+     * Specifies whether Config records configuration changes for all supported regionally recorded resource types.
      * </p>
      * <p>
-     * If you set this option to <code>true</code>, when Config adds support for a new type of regional resource, it
-     * starts recording resources of that type automatically.
+     * If you set this field to <code>true</code>, when Config adds support for a new regionally recorded resource type,
+     * Config starts recording resources of that type automatically.
      * </p>
      * <p>
-     * If you set this option to <code>true</code>, you cannot enumerate a list of <code>resourceTypes</code>.
+     * If you set this field to <code>true</code>, you cannot enumerate specific resource types to record in the
+     * <code>resourceTypes</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>, or to
+     * exclude in the <code>resourceTypes</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_ExclusionByResourceTypes.html"
+     * >ExclusionByResourceTypes</a>.
      * </p>
+     * <note>
+     * <p>
+     * <b>Region Availability</b>
+     * </p>
+     * <p>
+     * Check <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/what-is-resource-config-coverage.html">Resource
+     * Coverage by Region Availability</a> to see if a resource type is supported in the Amazon Web Services Region
+     * where you set up Config.
+     * </p>
+     * </note>
      * 
      * @param allSupported
-     *        Specifies whether Config records configuration changes for every supported type of regional resource.</p>
+     *        Specifies whether Config records configuration changes for all supported regionally recorded resource
+     *        types.</p>
      *        <p>
-     *        If you set this option to <code>true</code>, when Config adds support for a new type of regional resource,
-     *        it starts recording resources of that type automatically.
+     *        If you set this field to <code>true</code>, when Config adds support for a new regionally recorded
+     *        resource type, Config starts recording resources of that type automatically.
      *        </p>
      *        <p>
-     *        If you set this option to <code>true</code>, you cannot enumerate a list of <code>resourceTypes</code>.
+     *        If you set this field to <code>true</code>, you cannot enumerate specific resource types to record in the
+     *        <code>resourceTypes</code> field of <a
+     *        href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>,
+     *        or to exclude in the <code>resourceTypes</code> field of <a
+     *        href="https://docs.aws.amazon.com/config/latest/APIReference/API_ExclusionByResourceTypes.html"
+     *        >ExclusionByResourceTypes</a>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        <b>Region Availability</b>
+     *        </p>
+     *        <p>
+     *        Check <a
+     *        href="https://docs.aws.amazon.com/config/latest/developerguide/what-is-resource-config-coverage.html"
+     *        >Resource Coverage by Region Availability</a> to see if a resource type is supported in the Amazon Web
+     *        Services Region where you set up Config.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -205,23 +542,56 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether Config records configuration changes for every supported type of regional resource.
+     * Specifies whether Config records configuration changes for all supported regionally recorded resource types.
      * </p>
      * <p>
-     * If you set this option to <code>true</code>, when Config adds support for a new type of regional resource, it
-     * starts recording resources of that type automatically.
+     * If you set this field to <code>true</code>, when Config adds support for a new regionally recorded resource type,
+     * Config starts recording resources of that type automatically.
      * </p>
      * <p>
-     * If you set this option to <code>true</code>, you cannot enumerate a list of <code>resourceTypes</code>.
+     * If you set this field to <code>true</code>, you cannot enumerate specific resource types to record in the
+     * <code>resourceTypes</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>, or to
+     * exclude in the <code>resourceTypes</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_ExclusionByResourceTypes.html"
+     * >ExclusionByResourceTypes</a>.
      * </p>
+     * <note>
+     * <p>
+     * <b>Region Availability</b>
+     * </p>
+     * <p>
+     * Check <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/what-is-resource-config-coverage.html">Resource
+     * Coverage by Region Availability</a> to see if a resource type is supported in the Amazon Web Services Region
+     * where you set up Config.
+     * </p>
+     * </note>
      * 
-     * @return Specifies whether Config records configuration changes for every supported type of regional resource.</p>
+     * @return Specifies whether Config records configuration changes for all supported regionally recorded resource
+     *         types.</p>
      *         <p>
-     *         If you set this option to <code>true</code>, when Config adds support for a new type of regional
-     *         resource, it starts recording resources of that type automatically.
+     *         If you set this field to <code>true</code>, when Config adds support for a new regionally recorded
+     *         resource type, Config starts recording resources of that type automatically.
      *         </p>
      *         <p>
-     *         If you set this option to <code>true</code>, you cannot enumerate a list of <code>resourceTypes</code>.
+     *         If you set this field to <code>true</code>, you cannot enumerate specific resource types to record in the
+     *         <code>resourceTypes</code> field of <a
+     *         href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>,
+     *         or to exclude in the <code>resourceTypes</code> field of <a
+     *         href="https://docs.aws.amazon.com/config/latest/APIReference/API_ExclusionByResourceTypes.html"
+     *         >ExclusionByResourceTypes</a>.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         <b>Region Availability</b>
+     *         </p>
+     *         <p>
+     *         Check <a
+     *         href="https://docs.aws.amazon.com/config/latest/developerguide/what-is-resource-config-coverage.html"
+     *         >Resource Coverage by Region Availability</a> to see if a resource type is supported in the Amazon Web
+     *         Services Region where you set up Config.
+     *         </p>
      */
 
     public Boolean isAllSupported() {
@@ -230,36 +600,200 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether Config includes all supported types of global resources (for example, IAM resources) with the
-     * resources that it records.
+     * A legacy field which <b>only applies to the globally recorded IAM resource types</b>: IAM users, groups, roles,
+     * and customer managed policies. If you select this option, these resource types will be recorded in all enabled
+     * Config regions where Config was available before February 2022. This list does not include the following Regions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Asia Pacific (Hyderabad)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Asia Pacific (Melbourne)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Europe (Spain)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Europe (Zurich)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Israel (Tel Aviv)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Middle East (UAE)
+     * </p>
+     * </li>
+     * </ul>
+     * <important>
+     * <p>
+     * <b>Aurora global clusters are automatically globally recorded</b>
      * </p>
      * <p>
-     * Before you can set this option to <code>true</code>, you must set the <code>allSupported</code> option to
-     * <code>true</code>.
+     * The <code>AWS::RDS::GlobalCluster</code> resource type will be recorded in all supported Config Regions where the
+     * configuration recorder is enabled, even if <code>includeGlobalResourceTypes</code> is not set to
+     * <code>true</code>. <code>includeGlobalResourceTypes</code> is a legacy field which only applies to IAM users,
+     * groups, roles, and customer managed policies.
      * </p>
      * <p>
-     * If you set this option to <code>true</code>, when Config adds support for a new type of global resource, it
-     * starts recording resources of that type automatically.
+     * If you do not want to record <code>AWS::RDS::GlobalCluster</code> in all enabled Regions, use one of the
+     * following recording strategies:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * <b>Record all current and future resource types with exclusions</b> (<code>EXCLUSION_BY_RESOURCE_TYPES</code>),
+     * or
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Record specific resource types</b> (<code>INCLUSION_BY_RESOURCE_TYPES</code>).
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-all"
+     * >Selecting Which Resources are Recorded</a> in the <i>Config developer guide</i>.
+     * </p>
+     * </important> <note>
+     * <p>
+     * <b>Required and optional fields</b>
      * </p>
      * <p>
-     * The configuration details for any global resource are the same in all regions. To prevent duplicate configuration
-     * items, you should consider customizing Config in only one region to record global resources.
+     * Before you set this field to <code>true</code>, set the <code>allSupported</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a> to
+     * <code>true</code>. Optionally, you can set the <code>useOnly</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a> to
+     * <code>ALL_SUPPORTED_RESOURCE_TYPES</code>.
      * </p>
+     * </note> <note>
+     * <p>
+     * <b>Overriding fields</b>
+     * </p>
+     * <p>
+     * If you set this field to <code>false</code> but list globally recorded IAM resource types in the
+     * <code>resourceTypes</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>, Config
+     * will still record configuration changes for those specified resource types <i>regardless</i> of if you set the
+     * <code>includeGlobalResourceTypes</code> field to false.
+     * </p>
+     * <p>
+     * If you do not want to record configuration changes to the globally recorded IAM resource types (IAM users,
+     * groups, roles, and customer managed policies), make sure to not list them in the <code>resourceTypes</code> field
+     * in addition to setting the <code>includeGlobalResourceTypes</code> field to false.
+     * </p>
+     * </note>
      * 
      * @param includeGlobalResourceTypes
-     *        Specifies whether Config includes all supported types of global resources (for example, IAM resources)
-     *        with the resources that it records.</p>
+     *        A legacy field which <b>only applies to the globally recorded IAM resource types</b>: IAM users, groups,
+     *        roles, and customer managed policies. If you select this option, these resource types will be recorded in
+     *        all enabled Config regions where Config was available before February 2022. This list does not include the
+     *        following Regions:</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        Before you can set this option to <code>true</code>, you must set the <code>allSupported</code> option to
-     *        <code>true</code>.
+     *        Asia Pacific (Hyderabad)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Asia Pacific (Melbourne)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Europe (Spain)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Europe (Zurich)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Israel (Tel Aviv)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Middle East (UAE)
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <important>
+     *        <p>
+     *        <b>Aurora global clusters are automatically globally recorded</b>
      *        </p>
      *        <p>
-     *        If you set this option to <code>true</code>, when Config adds support for a new type of global resource,
-     *        it starts recording resources of that type automatically.
+     *        The <code>AWS::RDS::GlobalCluster</code> resource type will be recorded in all supported Config Regions
+     *        where the configuration recorder is enabled, even if <code>includeGlobalResourceTypes</code> is not set to
+     *        <code>true</code>. <code>includeGlobalResourceTypes</code> is a legacy field which only applies to IAM
+     *        users, groups, roles, and customer managed policies.
      *        </p>
      *        <p>
-     *        The configuration details for any global resource are the same in all regions. To prevent duplicate
-     *        configuration items, you should consider customizing Config in only one region to record global resources.
+     *        If you do not want to record <code>AWS::RDS::GlobalCluster</code> in all enabled Regions, use one of the
+     *        following recording strategies:
+     *        </p>
+     *        <ol>
+     *        <li>
+     *        <p>
+     *        <b>Record all current and future resource types with exclusions</b> (
+     *        <code>EXCLUSION_BY_RESOURCE_TYPES</code>), or
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Record specific resource types</b> (<code>INCLUSION_BY_RESOURCE_TYPES</code>).
+     *        </p>
+     *        </li>
+     *        </ol>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-all"
+     *        >Selecting Which Resources are Recorded</a> in the <i>Config developer guide</i>.
+     *        </p>
+     *        </important> <note>
+     *        <p>
+     *        <b>Required and optional fields</b>
+     *        </p>
+     *        <p>
+     *        Before you set this field to <code>true</code>, set the <code>allSupported</code> field of <a
+     *        href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>
+     *        to <code>true</code>. Optionally, you can set the <code>useOnly</code> field of <a
+     *        href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html"
+     *        >RecordingStrategy</a> to <code>ALL_SUPPORTED_RESOURCE_TYPES</code>.
+     *        </p>
+     *        </note> <note>
+     *        <p>
+     *        <b>Overriding fields</b>
+     *        </p>
+     *        <p>
+     *        If you set this field to <code>false</code> but list globally recorded IAM resource types in the
+     *        <code>resourceTypes</code> field of <a
+     *        href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>,
+     *        Config will still record configuration changes for those specified resource types <i>regardless</i> of if
+     *        you set the <code>includeGlobalResourceTypes</code> field to false.
+     *        </p>
+     *        <p>
+     *        If you do not want to record configuration changes to the globally recorded IAM resource types (IAM users,
+     *        groups, roles, and customer managed policies), make sure to not list them in the
+     *        <code>resourceTypes</code> field in addition to setting the <code>includeGlobalResourceTypes</code> field
+     *        to false.
+     *        </p>
      */
 
     public void setIncludeGlobalResourceTypes(Boolean includeGlobalResourceTypes) {
@@ -268,36 +802,199 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether Config includes all supported types of global resources (for example, IAM resources) with the
-     * resources that it records.
+     * A legacy field which <b>only applies to the globally recorded IAM resource types</b>: IAM users, groups, roles,
+     * and customer managed policies. If you select this option, these resource types will be recorded in all enabled
+     * Config regions where Config was available before February 2022. This list does not include the following Regions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Asia Pacific (Hyderabad)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Asia Pacific (Melbourne)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Europe (Spain)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Europe (Zurich)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Israel (Tel Aviv)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Middle East (UAE)
+     * </p>
+     * </li>
+     * </ul>
+     * <important>
+     * <p>
+     * <b>Aurora global clusters are automatically globally recorded</b>
      * </p>
      * <p>
-     * Before you can set this option to <code>true</code>, you must set the <code>allSupported</code> option to
-     * <code>true</code>.
+     * The <code>AWS::RDS::GlobalCluster</code> resource type will be recorded in all supported Config Regions where the
+     * configuration recorder is enabled, even if <code>includeGlobalResourceTypes</code> is not set to
+     * <code>true</code>. <code>includeGlobalResourceTypes</code> is a legacy field which only applies to IAM users,
+     * groups, roles, and customer managed policies.
      * </p>
      * <p>
-     * If you set this option to <code>true</code>, when Config adds support for a new type of global resource, it
-     * starts recording resources of that type automatically.
+     * If you do not want to record <code>AWS::RDS::GlobalCluster</code> in all enabled Regions, use one of the
+     * following recording strategies:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * <b>Record all current and future resource types with exclusions</b> (<code>EXCLUSION_BY_RESOURCE_TYPES</code>),
+     * or
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Record specific resource types</b> (<code>INCLUSION_BY_RESOURCE_TYPES</code>).
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-all"
+     * >Selecting Which Resources are Recorded</a> in the <i>Config developer guide</i>.
+     * </p>
+     * </important> <note>
+     * <p>
+     * <b>Required and optional fields</b>
      * </p>
      * <p>
-     * The configuration details for any global resource are the same in all regions. To prevent duplicate configuration
-     * items, you should consider customizing Config in only one region to record global resources.
+     * Before you set this field to <code>true</code>, set the <code>allSupported</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a> to
+     * <code>true</code>. Optionally, you can set the <code>useOnly</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a> to
+     * <code>ALL_SUPPORTED_RESOURCE_TYPES</code>.
      * </p>
+     * </note> <note>
+     * <p>
+     * <b>Overriding fields</b>
+     * </p>
+     * <p>
+     * If you set this field to <code>false</code> but list globally recorded IAM resource types in the
+     * <code>resourceTypes</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>, Config
+     * will still record configuration changes for those specified resource types <i>regardless</i> of if you set the
+     * <code>includeGlobalResourceTypes</code> field to false.
+     * </p>
+     * <p>
+     * If you do not want to record configuration changes to the globally recorded IAM resource types (IAM users,
+     * groups, roles, and customer managed policies), make sure to not list them in the <code>resourceTypes</code> field
+     * in addition to setting the <code>includeGlobalResourceTypes</code> field to false.
+     * </p>
+     * </note>
      * 
-     * @return Specifies whether Config includes all supported types of global resources (for example, IAM resources)
-     *         with the resources that it records.</p>
+     * @return A legacy field which <b>only applies to the globally recorded IAM resource types</b>: IAM users, groups,
+     *         roles, and customer managed policies. If you select this option, these resource types will be recorded in
+     *         all enabled Config regions where Config was available before February 2022. This list does not include
+     *         the following Regions:</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         Before you can set this option to <code>true</code>, you must set the <code>allSupported</code> option to
-     *         <code>true</code>.
+     *         Asia Pacific (Hyderabad)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Asia Pacific (Melbourne)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Europe (Spain)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Europe (Zurich)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Israel (Tel Aviv)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Middle East (UAE)
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <important>
+     *         <p>
+     *         <b>Aurora global clusters are automatically globally recorded</b>
      *         </p>
      *         <p>
-     *         If you set this option to <code>true</code>, when Config adds support for a new type of global resource,
-     *         it starts recording resources of that type automatically.
+     *         The <code>AWS::RDS::GlobalCluster</code> resource type will be recorded in all supported Config Regions
+     *         where the configuration recorder is enabled, even if <code>includeGlobalResourceTypes</code> is not set
+     *         to <code>true</code>. <code>includeGlobalResourceTypes</code> is a legacy field which only applies to IAM
+     *         users, groups, roles, and customer managed policies.
      *         </p>
      *         <p>
-     *         The configuration details for any global resource are the same in all regions. To prevent duplicate
-     *         configuration items, you should consider customizing Config in only one region to record global
-     *         resources.
+     *         If you do not want to record <code>AWS::RDS::GlobalCluster</code> in all enabled Regions, use one of the
+     *         following recording strategies:
+     *         </p>
+     *         <ol>
+     *         <li>
+     *         <p>
+     *         <b>Record all current and future resource types with exclusions</b> (
+     *         <code>EXCLUSION_BY_RESOURCE_TYPES</code>), or
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Record specific resource types</b> (<code>INCLUSION_BY_RESOURCE_TYPES</code>).
+     *         </p>
+     *         </li>
+     *         </ol>
+     *         <p>
+     *         For more information, see <a href=
+     *         "https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-all"
+     *         >Selecting Which Resources are Recorded</a> in the <i>Config developer guide</i>.
+     *         </p>
+     *         </important> <note>
+     *         <p>
+     *         <b>Required and optional fields</b>
+     *         </p>
+     *         <p>
+     *         Before you set this field to <code>true</code>, set the <code>allSupported</code> field of <a
+     *         href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>
+     *         to <code>true</code>. Optionally, you can set the <code>useOnly</code> field of <a
+     *         href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html"
+     *         >RecordingStrategy</a> to <code>ALL_SUPPORTED_RESOURCE_TYPES</code>.
+     *         </p>
+     *         </note> <note>
+     *         <p>
+     *         <b>Overriding fields</b>
+     *         </p>
+     *         <p>
+     *         If you set this field to <code>false</code> but list globally recorded IAM resource types in the
+     *         <code>resourceTypes</code> field of <a
+     *         href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>,
+     *         Config will still record configuration changes for those specified resource types <i>regardless</i> of if
+     *         you set the <code>includeGlobalResourceTypes</code> field to false.
+     *         </p>
+     *         <p>
+     *         If you do not want to record configuration changes to the globally recorded IAM resource types (IAM
+     *         users, groups, roles, and customer managed policies), make sure to not list them in the
+     *         <code>resourceTypes</code> field in addition to setting the <code>includeGlobalResourceTypes</code> field
+     *         to false.
+     *         </p>
      */
 
     public Boolean getIncludeGlobalResourceTypes() {
@@ -306,36 +1003,200 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether Config includes all supported types of global resources (for example, IAM resources) with the
-     * resources that it records.
+     * A legacy field which <b>only applies to the globally recorded IAM resource types</b>: IAM users, groups, roles,
+     * and customer managed policies. If you select this option, these resource types will be recorded in all enabled
+     * Config regions where Config was available before February 2022. This list does not include the following Regions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Asia Pacific (Hyderabad)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Asia Pacific (Melbourne)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Europe (Spain)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Europe (Zurich)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Israel (Tel Aviv)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Middle East (UAE)
+     * </p>
+     * </li>
+     * </ul>
+     * <important>
+     * <p>
+     * <b>Aurora global clusters are automatically globally recorded</b>
      * </p>
      * <p>
-     * Before you can set this option to <code>true</code>, you must set the <code>allSupported</code> option to
-     * <code>true</code>.
+     * The <code>AWS::RDS::GlobalCluster</code> resource type will be recorded in all supported Config Regions where the
+     * configuration recorder is enabled, even if <code>includeGlobalResourceTypes</code> is not set to
+     * <code>true</code>. <code>includeGlobalResourceTypes</code> is a legacy field which only applies to IAM users,
+     * groups, roles, and customer managed policies.
      * </p>
      * <p>
-     * If you set this option to <code>true</code>, when Config adds support for a new type of global resource, it
-     * starts recording resources of that type automatically.
+     * If you do not want to record <code>AWS::RDS::GlobalCluster</code> in all enabled Regions, use one of the
+     * following recording strategies:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * <b>Record all current and future resource types with exclusions</b> (<code>EXCLUSION_BY_RESOURCE_TYPES</code>),
+     * or
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Record specific resource types</b> (<code>INCLUSION_BY_RESOURCE_TYPES</code>).
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-all"
+     * >Selecting Which Resources are Recorded</a> in the <i>Config developer guide</i>.
+     * </p>
+     * </important> <note>
+     * <p>
+     * <b>Required and optional fields</b>
      * </p>
      * <p>
-     * The configuration details for any global resource are the same in all regions. To prevent duplicate configuration
-     * items, you should consider customizing Config in only one region to record global resources.
+     * Before you set this field to <code>true</code>, set the <code>allSupported</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a> to
+     * <code>true</code>. Optionally, you can set the <code>useOnly</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a> to
+     * <code>ALL_SUPPORTED_RESOURCE_TYPES</code>.
      * </p>
+     * </note> <note>
+     * <p>
+     * <b>Overriding fields</b>
+     * </p>
+     * <p>
+     * If you set this field to <code>false</code> but list globally recorded IAM resource types in the
+     * <code>resourceTypes</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>, Config
+     * will still record configuration changes for those specified resource types <i>regardless</i> of if you set the
+     * <code>includeGlobalResourceTypes</code> field to false.
+     * </p>
+     * <p>
+     * If you do not want to record configuration changes to the globally recorded IAM resource types (IAM users,
+     * groups, roles, and customer managed policies), make sure to not list them in the <code>resourceTypes</code> field
+     * in addition to setting the <code>includeGlobalResourceTypes</code> field to false.
+     * </p>
+     * </note>
      * 
      * @param includeGlobalResourceTypes
-     *        Specifies whether Config includes all supported types of global resources (for example, IAM resources)
-     *        with the resources that it records.</p>
+     *        A legacy field which <b>only applies to the globally recorded IAM resource types</b>: IAM users, groups,
+     *        roles, and customer managed policies. If you select this option, these resource types will be recorded in
+     *        all enabled Config regions where Config was available before February 2022. This list does not include the
+     *        following Regions:</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        Before you can set this option to <code>true</code>, you must set the <code>allSupported</code> option to
-     *        <code>true</code>.
+     *        Asia Pacific (Hyderabad)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Asia Pacific (Melbourne)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Europe (Spain)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Europe (Zurich)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Israel (Tel Aviv)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Middle East (UAE)
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <important>
+     *        <p>
+     *        <b>Aurora global clusters are automatically globally recorded</b>
      *        </p>
      *        <p>
-     *        If you set this option to <code>true</code>, when Config adds support for a new type of global resource,
-     *        it starts recording resources of that type automatically.
+     *        The <code>AWS::RDS::GlobalCluster</code> resource type will be recorded in all supported Config Regions
+     *        where the configuration recorder is enabled, even if <code>includeGlobalResourceTypes</code> is not set to
+     *        <code>true</code>. <code>includeGlobalResourceTypes</code> is a legacy field which only applies to IAM
+     *        users, groups, roles, and customer managed policies.
      *        </p>
      *        <p>
-     *        The configuration details for any global resource are the same in all regions. To prevent duplicate
-     *        configuration items, you should consider customizing Config in only one region to record global resources.
+     *        If you do not want to record <code>AWS::RDS::GlobalCluster</code> in all enabled Regions, use one of the
+     *        following recording strategies:
+     *        </p>
+     *        <ol>
+     *        <li>
+     *        <p>
+     *        <b>Record all current and future resource types with exclusions</b> (
+     *        <code>EXCLUSION_BY_RESOURCE_TYPES</code>), or
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Record specific resource types</b> (<code>INCLUSION_BY_RESOURCE_TYPES</code>).
+     *        </p>
+     *        </li>
+     *        </ol>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-all"
+     *        >Selecting Which Resources are Recorded</a> in the <i>Config developer guide</i>.
+     *        </p>
+     *        </important> <note>
+     *        <p>
+     *        <b>Required and optional fields</b>
+     *        </p>
+     *        <p>
+     *        Before you set this field to <code>true</code>, set the <code>allSupported</code> field of <a
+     *        href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>
+     *        to <code>true</code>. Optionally, you can set the <code>useOnly</code> field of <a
+     *        href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html"
+     *        >RecordingStrategy</a> to <code>ALL_SUPPORTED_RESOURCE_TYPES</code>.
+     *        </p>
+     *        </note> <note>
+     *        <p>
+     *        <b>Overriding fields</b>
+     *        </p>
+     *        <p>
+     *        If you set this field to <code>false</code> but list globally recorded IAM resource types in the
+     *        <code>resourceTypes</code> field of <a
+     *        href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>,
+     *        Config will still record configuration changes for those specified resource types <i>regardless</i> of if
+     *        you set the <code>includeGlobalResourceTypes</code> field to false.
+     *        </p>
+     *        <p>
+     *        If you do not want to record configuration changes to the globally recorded IAM resource types (IAM users,
+     *        groups, roles, and customer managed policies), make sure to not list them in the
+     *        <code>resourceTypes</code> field in addition to setting the <code>includeGlobalResourceTypes</code> field
+     *        to false.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -346,36 +1207,199 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether Config includes all supported types of global resources (for example, IAM resources) with the
-     * resources that it records.
+     * A legacy field which <b>only applies to the globally recorded IAM resource types</b>: IAM users, groups, roles,
+     * and customer managed policies. If you select this option, these resource types will be recorded in all enabled
+     * Config regions where Config was available before February 2022. This list does not include the following Regions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Asia Pacific (Hyderabad)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Asia Pacific (Melbourne)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Europe (Spain)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Europe (Zurich)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Israel (Tel Aviv)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Middle East (UAE)
+     * </p>
+     * </li>
+     * </ul>
+     * <important>
+     * <p>
+     * <b>Aurora global clusters are automatically globally recorded</b>
      * </p>
      * <p>
-     * Before you can set this option to <code>true</code>, you must set the <code>allSupported</code> option to
-     * <code>true</code>.
+     * The <code>AWS::RDS::GlobalCluster</code> resource type will be recorded in all supported Config Regions where the
+     * configuration recorder is enabled, even if <code>includeGlobalResourceTypes</code> is not set to
+     * <code>true</code>. <code>includeGlobalResourceTypes</code> is a legacy field which only applies to IAM users,
+     * groups, roles, and customer managed policies.
      * </p>
      * <p>
-     * If you set this option to <code>true</code>, when Config adds support for a new type of global resource, it
-     * starts recording resources of that type automatically.
+     * If you do not want to record <code>AWS::RDS::GlobalCluster</code> in all enabled Regions, use one of the
+     * following recording strategies:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * <b>Record all current and future resource types with exclusions</b> (<code>EXCLUSION_BY_RESOURCE_TYPES</code>),
+     * or
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Record specific resource types</b> (<code>INCLUSION_BY_RESOURCE_TYPES</code>).
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-all"
+     * >Selecting Which Resources are Recorded</a> in the <i>Config developer guide</i>.
+     * </p>
+     * </important> <note>
+     * <p>
+     * <b>Required and optional fields</b>
      * </p>
      * <p>
-     * The configuration details for any global resource are the same in all regions. To prevent duplicate configuration
-     * items, you should consider customizing Config in only one region to record global resources.
+     * Before you set this field to <code>true</code>, set the <code>allSupported</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a> to
+     * <code>true</code>. Optionally, you can set the <code>useOnly</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a> to
+     * <code>ALL_SUPPORTED_RESOURCE_TYPES</code>.
      * </p>
+     * </note> <note>
+     * <p>
+     * <b>Overriding fields</b>
+     * </p>
+     * <p>
+     * If you set this field to <code>false</code> but list globally recorded IAM resource types in the
+     * <code>resourceTypes</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>, Config
+     * will still record configuration changes for those specified resource types <i>regardless</i> of if you set the
+     * <code>includeGlobalResourceTypes</code> field to false.
+     * </p>
+     * <p>
+     * If you do not want to record configuration changes to the globally recorded IAM resource types (IAM users,
+     * groups, roles, and customer managed policies), make sure to not list them in the <code>resourceTypes</code> field
+     * in addition to setting the <code>includeGlobalResourceTypes</code> field to false.
+     * </p>
+     * </note>
      * 
-     * @return Specifies whether Config includes all supported types of global resources (for example, IAM resources)
-     *         with the resources that it records.</p>
+     * @return A legacy field which <b>only applies to the globally recorded IAM resource types</b>: IAM users, groups,
+     *         roles, and customer managed policies. If you select this option, these resource types will be recorded in
+     *         all enabled Config regions where Config was available before February 2022. This list does not include
+     *         the following Regions:</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         Before you can set this option to <code>true</code>, you must set the <code>allSupported</code> option to
-     *         <code>true</code>.
+     *         Asia Pacific (Hyderabad)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Asia Pacific (Melbourne)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Europe (Spain)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Europe (Zurich)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Israel (Tel Aviv)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Middle East (UAE)
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <important>
+     *         <p>
+     *         <b>Aurora global clusters are automatically globally recorded</b>
      *         </p>
      *         <p>
-     *         If you set this option to <code>true</code>, when Config adds support for a new type of global resource,
-     *         it starts recording resources of that type automatically.
+     *         The <code>AWS::RDS::GlobalCluster</code> resource type will be recorded in all supported Config Regions
+     *         where the configuration recorder is enabled, even if <code>includeGlobalResourceTypes</code> is not set
+     *         to <code>true</code>. <code>includeGlobalResourceTypes</code> is a legacy field which only applies to IAM
+     *         users, groups, roles, and customer managed policies.
      *         </p>
      *         <p>
-     *         The configuration details for any global resource are the same in all regions. To prevent duplicate
-     *         configuration items, you should consider customizing Config in only one region to record global
-     *         resources.
+     *         If you do not want to record <code>AWS::RDS::GlobalCluster</code> in all enabled Regions, use one of the
+     *         following recording strategies:
+     *         </p>
+     *         <ol>
+     *         <li>
+     *         <p>
+     *         <b>Record all current and future resource types with exclusions</b> (
+     *         <code>EXCLUSION_BY_RESOURCE_TYPES</code>), or
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Record specific resource types</b> (<code>INCLUSION_BY_RESOURCE_TYPES</code>).
+     *         </p>
+     *         </li>
+     *         </ol>
+     *         <p>
+     *         For more information, see <a href=
+     *         "https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-all"
+     *         >Selecting Which Resources are Recorded</a> in the <i>Config developer guide</i>.
+     *         </p>
+     *         </important> <note>
+     *         <p>
+     *         <b>Required and optional fields</b>
+     *         </p>
+     *         <p>
+     *         Before you set this field to <code>true</code>, set the <code>allSupported</code> field of <a
+     *         href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>
+     *         to <code>true</code>. Optionally, you can set the <code>useOnly</code> field of <a
+     *         href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html"
+     *         >RecordingStrategy</a> to <code>ALL_SUPPORTED_RESOURCE_TYPES</code>.
+     *         </p>
+     *         </note> <note>
+     *         <p>
+     *         <b>Overriding fields</b>
+     *         </p>
+     *         <p>
+     *         If you set this field to <code>false</code> but list globally recorded IAM resource types in the
+     *         <code>resourceTypes</code> field of <a
+     *         href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>,
+     *         Config will still record configuration changes for those specified resource types <i>regardless</i> of if
+     *         you set the <code>includeGlobalResourceTypes</code> field to false.
+     *         </p>
+     *         <p>
+     *         If you do not want to record configuration changes to the globally recorded IAM resource types (IAM
+     *         users, groups, roles, and customer managed policies), make sure to not list them in the
+     *         <code>resourceTypes</code> field in addition to setting the <code>includeGlobalResourceTypes</code> field
+     *         to false.
+     *         </p>
      */
 
     public Boolean isIncludeGlobalResourceTypes() {
@@ -384,40 +1408,72 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A comma-separated list that specifies the types of Amazon Web Services resources for which Config records
-     * configuration changes (for example, <code>AWS::EC2::Instance</code> or <code>AWS::CloudTrail::Trail</code>).
+     * A comma-separated list that specifies which resource types Config records.
      * </p>
      * <p>
-     * To record all configuration changes, you must set the <code>allSupported</code> option to <code>true</code>.
+     * Optionally, you can set the <code>useOnly</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a> to
+     * <code>INCLUSION_BY_RESOURCE_TYPES</code>.
      * </p>
      * <p>
-     * If you set the <code>AllSupported</code> option to false and populate the <code>ResourceTypes</code> option with
-     * values, when Config adds support for a new type of resource, it will not record resources of that type unless you
-     * manually add that type to your recording group.
+     * To record all configuration changes, set the <code>allSupported</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a> to
+     * <code>true</code>, and either omit this field or don't specify any resource types in this field. If you set the
+     * <code>allSupported</code> field to <code>false</code> and specify values for <code>resourceTypes</code>, when
+     * Config adds support for a new type of resource, it will not record resources of that type unless you manually add
+     * that type to your recording group.
      * </p>
      * <p>
-     * For a list of valid <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in <a href=
+     * For a list of valid <code>resourceTypes</code> values, see the <b>Resource Type Value</b> column in <a href=
      * "https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources"
-     * >Supported Amazon Web Services resource Types</a>.
+     * >Supported Amazon Web Services resource Types</a> in the <i>Config developer guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * <b>Region Availability</b>
+     * </p>
+     * <p>
+     * Before specifying a resource type for Config to track, check <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/what-is-resource-config-coverage.html">Resource
+     * Coverage by Region Availability</a> to see if the resource type is supported in the Amazon Web Services Region
+     * where you set up Config. If a resource type is supported by Config in at least one Region, you can enable the
+     * recording of that resource type in all Regions supported by Config, even if the specified resource type is not
+     * supported in the Amazon Web Services Region where you set up Config.
+     * </p>
+     * </note>
      * 
-     * @return A comma-separated list that specifies the types of Amazon Web Services resources for which Config records
-     *         configuration changes (for example, <code>AWS::EC2::Instance</code> or
-     *         <code>AWS::CloudTrail::Trail</code>).</p>
+     * @return A comma-separated list that specifies which resource types Config records.</p>
      *         <p>
-     *         To record all configuration changes, you must set the <code>allSupported</code> option to
-     *         <code>true</code>.
+     *         Optionally, you can set the <code>useOnly</code> field of <a
+     *         href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html"
+     *         >RecordingStrategy</a> to <code>INCLUSION_BY_RESOURCE_TYPES</code>.
      *         </p>
      *         <p>
-     *         If you set the <code>AllSupported</code> option to false and populate the <code>ResourceTypes</code>
-     *         option with values, when Config adds support for a new type of resource, it will not record resources of
-     *         that type unless you manually add that type to your recording group.
+     *         To record all configuration changes, set the <code>allSupported</code> field of <a
+     *         href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>
+     *         to <code>true</code>, and either omit this field or don't specify any resource types in this field. If
+     *         you set the <code>allSupported</code> field to <code>false</code> and specify values for
+     *         <code>resourceTypes</code>, when Config adds support for a new type of resource, it will not record
+     *         resources of that type unless you manually add that type to your recording group.
      *         </p>
      *         <p>
-     *         For a list of valid <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in <a
+     *         For a list of valid <code>resourceTypes</code> values, see the <b>Resource Type Value</b> column in <a
      *         href=
      *         "https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources"
-     *         >Supported Amazon Web Services resource Types</a>.
+     *         >Supported Amazon Web Services resource Types</a> in the <i>Config developer guide</i>.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         <b>Region Availability</b>
+     *         </p>
+     *         <p>
+     *         Before specifying a resource type for Config to track, check <a
+     *         href="https://docs.aws.amazon.com/config/latest/developerguide/what-is-resource-config-coverage.html"
+     *         >Resource Coverage by Region Availability</a> to see if the resource type is supported in the Amazon Web
+     *         Services Region where you set up Config. If a resource type is supported by Config in at least one
+     *         Region, you can enable the recording of that resource type in all Regions supported by Config, even if
+     *         the specified resource type is not supported in the Amazon Web Services Region where you set up Config.
+     *         </p>
      * @see ResourceType
      */
 
@@ -430,41 +1486,73 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A comma-separated list that specifies the types of Amazon Web Services resources for which Config records
-     * configuration changes (for example, <code>AWS::EC2::Instance</code> or <code>AWS::CloudTrail::Trail</code>).
+     * A comma-separated list that specifies which resource types Config records.
      * </p>
      * <p>
-     * To record all configuration changes, you must set the <code>allSupported</code> option to <code>true</code>.
+     * Optionally, you can set the <code>useOnly</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a> to
+     * <code>INCLUSION_BY_RESOURCE_TYPES</code>.
      * </p>
      * <p>
-     * If you set the <code>AllSupported</code> option to false and populate the <code>ResourceTypes</code> option with
-     * values, when Config adds support for a new type of resource, it will not record resources of that type unless you
-     * manually add that type to your recording group.
+     * To record all configuration changes, set the <code>allSupported</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a> to
+     * <code>true</code>, and either omit this field or don't specify any resource types in this field. If you set the
+     * <code>allSupported</code> field to <code>false</code> and specify values for <code>resourceTypes</code>, when
+     * Config adds support for a new type of resource, it will not record resources of that type unless you manually add
+     * that type to your recording group.
      * </p>
      * <p>
-     * For a list of valid <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in <a href=
+     * For a list of valid <code>resourceTypes</code> values, see the <b>Resource Type Value</b> column in <a href=
      * "https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources"
-     * >Supported Amazon Web Services resource Types</a>.
+     * >Supported Amazon Web Services resource Types</a> in the <i>Config developer guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * <b>Region Availability</b>
+     * </p>
+     * <p>
+     * Before specifying a resource type for Config to track, check <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/what-is-resource-config-coverage.html">Resource
+     * Coverage by Region Availability</a> to see if the resource type is supported in the Amazon Web Services Region
+     * where you set up Config. If a resource type is supported by Config in at least one Region, you can enable the
+     * recording of that resource type in all Regions supported by Config, even if the specified resource type is not
+     * supported in the Amazon Web Services Region where you set up Config.
+     * </p>
+     * </note>
      * 
      * @param resourceTypes
-     *        A comma-separated list that specifies the types of Amazon Web Services resources for which Config records
-     *        configuration changes (for example, <code>AWS::EC2::Instance</code> or <code>AWS::CloudTrail::Trail</code>
-     *        ).</p>
+     *        A comma-separated list that specifies which resource types Config records.</p>
      *        <p>
-     *        To record all configuration changes, you must set the <code>allSupported</code> option to
-     *        <code>true</code>.
+     *        Optionally, you can set the <code>useOnly</code> field of <a
+     *        href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html"
+     *        >RecordingStrategy</a> to <code>INCLUSION_BY_RESOURCE_TYPES</code>.
      *        </p>
      *        <p>
-     *        If you set the <code>AllSupported</code> option to false and populate the <code>ResourceTypes</code>
-     *        option with values, when Config adds support for a new type of resource, it will not record resources of
-     *        that type unless you manually add that type to your recording group.
+     *        To record all configuration changes, set the <code>allSupported</code> field of <a
+     *        href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>
+     *        to <code>true</code>, and either omit this field or don't specify any resource types in this field. If you
+     *        set the <code>allSupported</code> field to <code>false</code> and specify values for
+     *        <code>resourceTypes</code>, when Config adds support for a new type of resource, it will not record
+     *        resources of that type unless you manually add that type to your recording group.
      *        </p>
      *        <p>
-     *        For a list of valid <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in <a
+     *        For a list of valid <code>resourceTypes</code> values, see the <b>Resource Type Value</b> column in <a
      *        href=
      *        "https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources"
-     *        >Supported Amazon Web Services resource Types</a>.
+     *        >Supported Amazon Web Services resource Types</a> in the <i>Config developer guide</i>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        <b>Region Availability</b>
+     *        </p>
+     *        <p>
+     *        Before specifying a resource type for Config to track, check <a
+     *        href="https://docs.aws.amazon.com/config/latest/developerguide/what-is-resource-config-coverage.html"
+     *        >Resource Coverage by Region Availability</a> to see if the resource type is supported in the Amazon Web
+     *        Services Region where you set up Config. If a resource type is supported by Config in at least one Region,
+     *        you can enable the recording of that resource type in all Regions supported by Config, even if the
+     *        specified resource type is not supported in the Amazon Web Services Region where you set up Config.
+     *        </p>
      * @see ResourceType
      */
 
@@ -479,22 +1567,39 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A comma-separated list that specifies the types of Amazon Web Services resources for which Config records
-     * configuration changes (for example, <code>AWS::EC2::Instance</code> or <code>AWS::CloudTrail::Trail</code>).
+     * A comma-separated list that specifies which resource types Config records.
      * </p>
      * <p>
-     * To record all configuration changes, you must set the <code>allSupported</code> option to <code>true</code>.
+     * Optionally, you can set the <code>useOnly</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a> to
+     * <code>INCLUSION_BY_RESOURCE_TYPES</code>.
      * </p>
      * <p>
-     * If you set the <code>AllSupported</code> option to false and populate the <code>ResourceTypes</code> option with
-     * values, when Config adds support for a new type of resource, it will not record resources of that type unless you
-     * manually add that type to your recording group.
+     * To record all configuration changes, set the <code>allSupported</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a> to
+     * <code>true</code>, and either omit this field or don't specify any resource types in this field. If you set the
+     * <code>allSupported</code> field to <code>false</code> and specify values for <code>resourceTypes</code>, when
+     * Config adds support for a new type of resource, it will not record resources of that type unless you manually add
+     * that type to your recording group.
      * </p>
      * <p>
-     * For a list of valid <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in <a href=
+     * For a list of valid <code>resourceTypes</code> values, see the <b>Resource Type Value</b> column in <a href=
      * "https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources"
-     * >Supported Amazon Web Services resource Types</a>.
+     * >Supported Amazon Web Services resource Types</a> in the <i>Config developer guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * <b>Region Availability</b>
+     * </p>
+     * <p>
+     * Before specifying a resource type for Config to track, check <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/what-is-resource-config-coverage.html">Resource
+     * Coverage by Region Availability</a> to see if the resource type is supported in the Amazon Web Services Region
+     * where you set up Config. If a resource type is supported by Config in at least one Region, you can enable the
+     * recording of that resource type in all Regions supported by Config, even if the specified resource type is not
+     * supported in the Amazon Web Services Region where you set up Config.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setResourceTypes(java.util.Collection)} or {@link #withResourceTypes(java.util.Collection)} if you want
@@ -502,23 +1607,38 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param resourceTypes
-     *        A comma-separated list that specifies the types of Amazon Web Services resources for which Config records
-     *        configuration changes (for example, <code>AWS::EC2::Instance</code> or <code>AWS::CloudTrail::Trail</code>
-     *        ).</p>
+     *        A comma-separated list that specifies which resource types Config records.</p>
      *        <p>
-     *        To record all configuration changes, you must set the <code>allSupported</code> option to
-     *        <code>true</code>.
+     *        Optionally, you can set the <code>useOnly</code> field of <a
+     *        href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html"
+     *        >RecordingStrategy</a> to <code>INCLUSION_BY_RESOURCE_TYPES</code>.
      *        </p>
      *        <p>
-     *        If you set the <code>AllSupported</code> option to false and populate the <code>ResourceTypes</code>
-     *        option with values, when Config adds support for a new type of resource, it will not record resources of
-     *        that type unless you manually add that type to your recording group.
+     *        To record all configuration changes, set the <code>allSupported</code> field of <a
+     *        href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>
+     *        to <code>true</code>, and either omit this field or don't specify any resource types in this field. If you
+     *        set the <code>allSupported</code> field to <code>false</code> and specify values for
+     *        <code>resourceTypes</code>, when Config adds support for a new type of resource, it will not record
+     *        resources of that type unless you manually add that type to your recording group.
      *        </p>
      *        <p>
-     *        For a list of valid <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in <a
+     *        For a list of valid <code>resourceTypes</code> values, see the <b>Resource Type Value</b> column in <a
      *        href=
      *        "https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources"
-     *        >Supported Amazon Web Services resource Types</a>.
+     *        >Supported Amazon Web Services resource Types</a> in the <i>Config developer guide</i>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        <b>Region Availability</b>
+     *        </p>
+     *        <p>
+     *        Before specifying a resource type for Config to track, check <a
+     *        href="https://docs.aws.amazon.com/config/latest/developerguide/what-is-resource-config-coverage.html"
+     *        >Resource Coverage by Region Availability</a> to see if the resource type is supported in the Amazon Web
+     *        Services Region where you set up Config. If a resource type is supported by Config in at least one Region,
+     *        you can enable the recording of that resource type in all Regions supported by Config, even if the
+     *        specified resource type is not supported in the Amazon Web Services Region where you set up Config.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */
@@ -535,41 +1655,73 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A comma-separated list that specifies the types of Amazon Web Services resources for which Config records
-     * configuration changes (for example, <code>AWS::EC2::Instance</code> or <code>AWS::CloudTrail::Trail</code>).
+     * A comma-separated list that specifies which resource types Config records.
      * </p>
      * <p>
-     * To record all configuration changes, you must set the <code>allSupported</code> option to <code>true</code>.
+     * Optionally, you can set the <code>useOnly</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a> to
+     * <code>INCLUSION_BY_RESOURCE_TYPES</code>.
      * </p>
      * <p>
-     * If you set the <code>AllSupported</code> option to false and populate the <code>ResourceTypes</code> option with
-     * values, when Config adds support for a new type of resource, it will not record resources of that type unless you
-     * manually add that type to your recording group.
+     * To record all configuration changes, set the <code>allSupported</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a> to
+     * <code>true</code>, and either omit this field or don't specify any resource types in this field. If you set the
+     * <code>allSupported</code> field to <code>false</code> and specify values for <code>resourceTypes</code>, when
+     * Config adds support for a new type of resource, it will not record resources of that type unless you manually add
+     * that type to your recording group.
      * </p>
      * <p>
-     * For a list of valid <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in <a href=
+     * For a list of valid <code>resourceTypes</code> values, see the <b>Resource Type Value</b> column in <a href=
      * "https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources"
-     * >Supported Amazon Web Services resource Types</a>.
+     * >Supported Amazon Web Services resource Types</a> in the <i>Config developer guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * <b>Region Availability</b>
+     * </p>
+     * <p>
+     * Before specifying a resource type for Config to track, check <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/what-is-resource-config-coverage.html">Resource
+     * Coverage by Region Availability</a> to see if the resource type is supported in the Amazon Web Services Region
+     * where you set up Config. If a resource type is supported by Config in at least one Region, you can enable the
+     * recording of that resource type in all Regions supported by Config, even if the specified resource type is not
+     * supported in the Amazon Web Services Region where you set up Config.
+     * </p>
+     * </note>
      * 
      * @param resourceTypes
-     *        A comma-separated list that specifies the types of Amazon Web Services resources for which Config records
-     *        configuration changes (for example, <code>AWS::EC2::Instance</code> or <code>AWS::CloudTrail::Trail</code>
-     *        ).</p>
+     *        A comma-separated list that specifies which resource types Config records.</p>
      *        <p>
-     *        To record all configuration changes, you must set the <code>allSupported</code> option to
-     *        <code>true</code>.
+     *        Optionally, you can set the <code>useOnly</code> field of <a
+     *        href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html"
+     *        >RecordingStrategy</a> to <code>INCLUSION_BY_RESOURCE_TYPES</code>.
      *        </p>
      *        <p>
-     *        If you set the <code>AllSupported</code> option to false and populate the <code>ResourceTypes</code>
-     *        option with values, when Config adds support for a new type of resource, it will not record resources of
-     *        that type unless you manually add that type to your recording group.
+     *        To record all configuration changes, set the <code>allSupported</code> field of <a
+     *        href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>
+     *        to <code>true</code>, and either omit this field or don't specify any resource types in this field. If you
+     *        set the <code>allSupported</code> field to <code>false</code> and specify values for
+     *        <code>resourceTypes</code>, when Config adds support for a new type of resource, it will not record
+     *        resources of that type unless you manually add that type to your recording group.
      *        </p>
      *        <p>
-     *        For a list of valid <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in <a
+     *        For a list of valid <code>resourceTypes</code> values, see the <b>Resource Type Value</b> column in <a
      *        href=
      *        "https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources"
-     *        >Supported Amazon Web Services resource Types</a>.
+     *        >Supported Amazon Web Services resource Types</a> in the <i>Config developer guide</i>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        <b>Region Availability</b>
+     *        </p>
+     *        <p>
+     *        Before specifying a resource type for Config to track, check <a
+     *        href="https://docs.aws.amazon.com/config/latest/developerguide/what-is-resource-config-coverage.html"
+     *        >Resource Coverage by Region Availability</a> to see if the resource type is supported in the Amazon Web
+     *        Services Region where you set up Config. If a resource type is supported by Config in at least one Region,
+     *        you can enable the recording of that resource type in all Regions supported by Config, even if the
+     *        specified resource type is not supported in the Amazon Web Services Region where you set up Config.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */
@@ -581,41 +1733,73 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A comma-separated list that specifies the types of Amazon Web Services resources for which Config records
-     * configuration changes (for example, <code>AWS::EC2::Instance</code> or <code>AWS::CloudTrail::Trail</code>).
+     * A comma-separated list that specifies which resource types Config records.
      * </p>
      * <p>
-     * To record all configuration changes, you must set the <code>allSupported</code> option to <code>true</code>.
+     * Optionally, you can set the <code>useOnly</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a> to
+     * <code>INCLUSION_BY_RESOURCE_TYPES</code>.
      * </p>
      * <p>
-     * If you set the <code>AllSupported</code> option to false and populate the <code>ResourceTypes</code> option with
-     * values, when Config adds support for a new type of resource, it will not record resources of that type unless you
-     * manually add that type to your recording group.
+     * To record all configuration changes, set the <code>allSupported</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a> to
+     * <code>true</code>, and either omit this field or don't specify any resource types in this field. If you set the
+     * <code>allSupported</code> field to <code>false</code> and specify values for <code>resourceTypes</code>, when
+     * Config adds support for a new type of resource, it will not record resources of that type unless you manually add
+     * that type to your recording group.
      * </p>
      * <p>
-     * For a list of valid <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in <a href=
+     * For a list of valid <code>resourceTypes</code> values, see the <b>Resource Type Value</b> column in <a href=
      * "https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources"
-     * >Supported Amazon Web Services resource Types</a>.
+     * >Supported Amazon Web Services resource Types</a> in the <i>Config developer guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * <b>Region Availability</b>
+     * </p>
+     * <p>
+     * Before specifying a resource type for Config to track, check <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/what-is-resource-config-coverage.html">Resource
+     * Coverage by Region Availability</a> to see if the resource type is supported in the Amazon Web Services Region
+     * where you set up Config. If a resource type is supported by Config in at least one Region, you can enable the
+     * recording of that resource type in all Regions supported by Config, even if the specified resource type is not
+     * supported in the Amazon Web Services Region where you set up Config.
+     * </p>
+     * </note>
      * 
      * @param resourceTypes
-     *        A comma-separated list that specifies the types of Amazon Web Services resources for which Config records
-     *        configuration changes (for example, <code>AWS::EC2::Instance</code> or <code>AWS::CloudTrail::Trail</code>
-     *        ).</p>
+     *        A comma-separated list that specifies which resource types Config records.</p>
      *        <p>
-     *        To record all configuration changes, you must set the <code>allSupported</code> option to
-     *        <code>true</code>.
+     *        Optionally, you can set the <code>useOnly</code> field of <a
+     *        href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html"
+     *        >RecordingStrategy</a> to <code>INCLUSION_BY_RESOURCE_TYPES</code>.
      *        </p>
      *        <p>
-     *        If you set the <code>AllSupported</code> option to false and populate the <code>ResourceTypes</code>
-     *        option with values, when Config adds support for a new type of resource, it will not record resources of
-     *        that type unless you manually add that type to your recording group.
+     *        To record all configuration changes, set the <code>allSupported</code> field of <a
+     *        href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>
+     *        to <code>true</code>, and either omit this field or don't specify any resource types in this field. If you
+     *        set the <code>allSupported</code> field to <code>false</code> and specify values for
+     *        <code>resourceTypes</code>, when Config adds support for a new type of resource, it will not record
+     *        resources of that type unless you manually add that type to your recording group.
      *        </p>
      *        <p>
-     *        For a list of valid <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in <a
+     *        For a list of valid <code>resourceTypes</code> values, see the <b>Resource Type Value</b> column in <a
      *        href=
      *        "https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources"
-     *        >Supported Amazon Web Services resource Types</a>.
+     *        >Supported Amazon Web Services resource Types</a> in the <i>Config developer guide</i>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        <b>Region Availability</b>
+     *        </p>
+     *        <p>
+     *        Before specifying a resource type for Config to track, check <a
+     *        href="https://docs.aws.amazon.com/config/latest/developerguide/what-is-resource-config-coverage.html"
+     *        >Resource Coverage by Region Availability</a> to see if the resource type is supported in the Amazon Web
+     *        Services Region where you set up Config. If a resource type is supported by Config in at least one Region,
+     *        you can enable the recording of that resource type in all Regions supported by Config, even if the
+     *        specified resource type is not supported in the Amazon Web Services Region where you set up Config.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */
@@ -630,6 +1814,804 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
         } else {
             getResourceTypes().addAll(resourceTypesCopy);
         }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An object that specifies how Config excludes resource types from being recorded by the configuration recorder.
+     * </p>
+     * <p>
+     * To use this option, you must set the <code>useOnly</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a> to
+     * <code>EXCLUSION_BY_RESOURCE_TYPES</code>.
+     * </p>
+     * 
+     * @param exclusionByResourceTypes
+     *        An object that specifies how Config excludes resource types from being recorded by the configuration
+     *        recorder.</p>
+     *        <p>
+     *        To use this option, you must set the <code>useOnly</code> field of <a
+     *        href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html"
+     *        >RecordingStrategy</a> to <code>EXCLUSION_BY_RESOURCE_TYPES</code>.
+     */
+
+    public void setExclusionByResourceTypes(ExclusionByResourceTypes exclusionByResourceTypes) {
+        this.exclusionByResourceTypes = exclusionByResourceTypes;
+    }
+
+    /**
+     * <p>
+     * An object that specifies how Config excludes resource types from being recorded by the configuration recorder.
+     * </p>
+     * <p>
+     * To use this option, you must set the <code>useOnly</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a> to
+     * <code>EXCLUSION_BY_RESOURCE_TYPES</code>.
+     * </p>
+     * 
+     * @return An object that specifies how Config excludes resource types from being recorded by the configuration
+     *         recorder.</p>
+     *         <p>
+     *         To use this option, you must set the <code>useOnly</code> field of <a
+     *         href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html"
+     *         >RecordingStrategy</a> to <code>EXCLUSION_BY_RESOURCE_TYPES</code>.
+     */
+
+    public ExclusionByResourceTypes getExclusionByResourceTypes() {
+        return this.exclusionByResourceTypes;
+    }
+
+    /**
+     * <p>
+     * An object that specifies how Config excludes resource types from being recorded by the configuration recorder.
+     * </p>
+     * <p>
+     * To use this option, you must set the <code>useOnly</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a> to
+     * <code>EXCLUSION_BY_RESOURCE_TYPES</code>.
+     * </p>
+     * 
+     * @param exclusionByResourceTypes
+     *        An object that specifies how Config excludes resource types from being recorded by the configuration
+     *        recorder.</p>
+     *        <p>
+     *        To use this option, you must set the <code>useOnly</code> field of <a
+     *        href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html"
+     *        >RecordingStrategy</a> to <code>EXCLUSION_BY_RESOURCE_TYPES</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RecordingGroup withExclusionByResourceTypes(ExclusionByResourceTypes exclusionByResourceTypes) {
+        setExclusionByResourceTypes(exclusionByResourceTypes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An object that specifies the recording strategy for the configuration recorder.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you set the <code>useOnly</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a> to
+     * <code>ALL_SUPPORTED_RESOURCE_TYPES</code>, Config records configuration changes for all supported regionally
+     * recorded resource types. You also must set the <code>allSupported</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a> to
+     * <code>true</code>. When Config adds support for a new regionally recorded resource type, Config automatically
+     * starts recording resources of that type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you set the <code>useOnly</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a> to
+     * <code>INCLUSION_BY_RESOURCE_TYPES</code>, Config records configuration changes for only the resource types you
+     * specify in the <code>resourceTypes</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you set the <code>useOnly</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a> to
+     * <code>EXCLUSION_BY_RESOURCE_TYPES</code>, Config records configuration changes for all supported resource types
+     * except the resource types that you specify to exclude from being recorded in the <code>resourceTypes</code> field
+     * of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_ExclusionByResourceTypes.html">
+     * ExclusionByResourceTypes</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * <b>Required and optional fields</b>
+     * </p>
+     * <p>
+     * The <code>recordingStrategy</code> field is optional when you set the <code>allSupported</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a> to
+     * <code>true</code>.
+     * </p>
+     * <p>
+     * The <code>recordingStrategy</code> field is optional when you list resource types in the
+     * <code>resourceTypes</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>.
+     * </p>
+     * <p>
+     * The <code>recordingStrategy</code> field is required if you list resource types to exclude from recording in the
+     * <code>resourceTypes</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_ExclusionByResourceTypes.html"
+     * >ExclusionByResourceTypes</a>.
+     * </p>
+     * </note> <note>
+     * <p>
+     * <b>Overriding fields</b>
+     * </p>
+     * <p>
+     * If you choose <code>EXCLUSION_BY_RESOURCE_TYPES</code> for the recording strategy, the
+     * <code>exclusionByResourceTypes</code> field will override other properties in the request.
+     * </p>
+     * <p>
+     * For example, even if you set <code>includeGlobalResourceTypes</code> to false, globally recorded IAM resource
+     * types will still be automatically recorded in this option unless those resource types are specifically listed as
+     * exclusions in the <code>resourceTypes</code> field of <code>exclusionByResourceTypes</code>.
+     * </p>
+     * </note> <note>
+     * <p>
+     * <b>Global resources types and the resource exclusion recording strategy</b>
+     * </p>
+     * <p>
+     * By default, if you choose the <code>EXCLUSION_BY_RESOURCE_TYPES</code> recording strategy, when Config adds
+     * support for a new resource type in the Region where you set up the configuration recorder, including global
+     * resource types, Config starts recording resources of that type automatically.
+     * </p>
+     * <p>
+     * In addition, unless specifically listed as exclusions, <code>AWS::RDS::GlobalCluster</code> will be recorded
+     * automatically in all supported Config Regions were the configuration recorder is enabled. IAM users, groups,
+     * roles, and customer managed policies will be recorded automatically in all enabled Config Regions where Config
+     * was available before February 2022. This list does not include the following Regions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Asia Pacific (Hyderabad)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Asia Pacific (Melbourne)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Europe (Spain)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Europe (Zurich)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Israel (Tel Aviv)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Middle East (UAE)
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * 
+     * @param recordingStrategy
+     *        An object that specifies the recording strategy for the configuration recorder.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If you set the <code>useOnly</code> field of <a
+     *        href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html"
+     *        >RecordingStrategy</a> to <code>ALL_SUPPORTED_RESOURCE_TYPES</code>, Config records configuration changes
+     *        for all supported regionally recorded resource types. You also must set the <code>allSupported</code>
+     *        field of <a
+     *        href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>
+     *        to <code>true</code>. When Config adds support for a new regionally recorded resource type, Config
+     *        automatically starts recording resources of that type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you set the <code>useOnly</code> field of <a
+     *        href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html"
+     *        >RecordingStrategy</a> to <code>INCLUSION_BY_RESOURCE_TYPES</code>, Config records configuration changes
+     *        for only the resource types you specify in the <code>resourceTypes</code> field of <a
+     *        href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you set the <code>useOnly</code> field of <a
+     *        href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html"
+     *        >RecordingStrategy</a> to <code>EXCLUSION_BY_RESOURCE_TYPES</code>, Config records configuration changes
+     *        for all supported resource types except the resource types that you specify to exclude from being recorded
+     *        in the <code>resourceTypes</code> field of <a
+     *        href="https://docs.aws.amazon.com/config/latest/APIReference/API_ExclusionByResourceTypes.html"
+     *        >ExclusionByResourceTypes</a>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        <b>Required and optional fields</b>
+     *        </p>
+     *        <p>
+     *        The <code>recordingStrategy</code> field is optional when you set the <code>allSupported</code> field of
+     *        <a
+     *        href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>
+     *        to <code>true</code>.
+     *        </p>
+     *        <p>
+     *        The <code>recordingStrategy</code> field is optional when you list resource types in the
+     *        <code>resourceTypes</code> field of <a
+     *        href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>.
+     *        </p>
+     *        <p>
+     *        The <code>recordingStrategy</code> field is required if you list resource types to exclude from recording
+     *        in the <code>resourceTypes</code> field of <a
+     *        href="https://docs.aws.amazon.com/config/latest/APIReference/API_ExclusionByResourceTypes.html"
+     *        >ExclusionByResourceTypes</a>.
+     *        </p>
+     *        </note> <note>
+     *        <p>
+     *        <b>Overriding fields</b>
+     *        </p>
+     *        <p>
+     *        If you choose <code>EXCLUSION_BY_RESOURCE_TYPES</code> for the recording strategy, the
+     *        <code>exclusionByResourceTypes</code> field will override other properties in the request.
+     *        </p>
+     *        <p>
+     *        For example, even if you set <code>includeGlobalResourceTypes</code> to false, globally recorded IAM
+     *        resource types will still be automatically recorded in this option unless those resource types are
+     *        specifically listed as exclusions in the <code>resourceTypes</code> field of
+     *        <code>exclusionByResourceTypes</code>.
+     *        </p>
+     *        </note> <note>
+     *        <p>
+     *        <b>Global resources types and the resource exclusion recording strategy</b>
+     *        </p>
+     *        <p>
+     *        By default, if you choose the <code>EXCLUSION_BY_RESOURCE_TYPES</code> recording strategy, when Config
+     *        adds support for a new resource type in the Region where you set up the configuration recorder, including
+     *        global resource types, Config starts recording resources of that type automatically.
+     *        </p>
+     *        <p>
+     *        In addition, unless specifically listed as exclusions, <code>AWS::RDS::GlobalCluster</code> will be
+     *        recorded automatically in all supported Config Regions were the configuration recorder is enabled. IAM
+     *        users, groups, roles, and customer managed policies will be recorded automatically in all enabled Config
+     *        Regions where Config was available before February 2022. This list does not include the following Regions:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Asia Pacific (Hyderabad)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Asia Pacific (Melbourne)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Europe (Spain)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Europe (Zurich)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Israel (Tel Aviv)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Middle East (UAE)
+     *        </p>
+     *        </li>
+     *        </ul>
+     */
+
+    public void setRecordingStrategy(RecordingStrategy recordingStrategy) {
+        this.recordingStrategy = recordingStrategy;
+    }
+
+    /**
+     * <p>
+     * An object that specifies the recording strategy for the configuration recorder.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you set the <code>useOnly</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a> to
+     * <code>ALL_SUPPORTED_RESOURCE_TYPES</code>, Config records configuration changes for all supported regionally
+     * recorded resource types. You also must set the <code>allSupported</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a> to
+     * <code>true</code>. When Config adds support for a new regionally recorded resource type, Config automatically
+     * starts recording resources of that type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you set the <code>useOnly</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a> to
+     * <code>INCLUSION_BY_RESOURCE_TYPES</code>, Config records configuration changes for only the resource types you
+     * specify in the <code>resourceTypes</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you set the <code>useOnly</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a> to
+     * <code>EXCLUSION_BY_RESOURCE_TYPES</code>, Config records configuration changes for all supported resource types
+     * except the resource types that you specify to exclude from being recorded in the <code>resourceTypes</code> field
+     * of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_ExclusionByResourceTypes.html">
+     * ExclusionByResourceTypes</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * <b>Required and optional fields</b>
+     * </p>
+     * <p>
+     * The <code>recordingStrategy</code> field is optional when you set the <code>allSupported</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a> to
+     * <code>true</code>.
+     * </p>
+     * <p>
+     * The <code>recordingStrategy</code> field is optional when you list resource types in the
+     * <code>resourceTypes</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>.
+     * </p>
+     * <p>
+     * The <code>recordingStrategy</code> field is required if you list resource types to exclude from recording in the
+     * <code>resourceTypes</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_ExclusionByResourceTypes.html"
+     * >ExclusionByResourceTypes</a>.
+     * </p>
+     * </note> <note>
+     * <p>
+     * <b>Overriding fields</b>
+     * </p>
+     * <p>
+     * If you choose <code>EXCLUSION_BY_RESOURCE_TYPES</code> for the recording strategy, the
+     * <code>exclusionByResourceTypes</code> field will override other properties in the request.
+     * </p>
+     * <p>
+     * For example, even if you set <code>includeGlobalResourceTypes</code> to false, globally recorded IAM resource
+     * types will still be automatically recorded in this option unless those resource types are specifically listed as
+     * exclusions in the <code>resourceTypes</code> field of <code>exclusionByResourceTypes</code>.
+     * </p>
+     * </note> <note>
+     * <p>
+     * <b>Global resources types and the resource exclusion recording strategy</b>
+     * </p>
+     * <p>
+     * By default, if you choose the <code>EXCLUSION_BY_RESOURCE_TYPES</code> recording strategy, when Config adds
+     * support for a new resource type in the Region where you set up the configuration recorder, including global
+     * resource types, Config starts recording resources of that type automatically.
+     * </p>
+     * <p>
+     * In addition, unless specifically listed as exclusions, <code>AWS::RDS::GlobalCluster</code> will be recorded
+     * automatically in all supported Config Regions were the configuration recorder is enabled. IAM users, groups,
+     * roles, and customer managed policies will be recorded automatically in all enabled Config Regions where Config
+     * was available before February 2022. This list does not include the following Regions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Asia Pacific (Hyderabad)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Asia Pacific (Melbourne)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Europe (Spain)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Europe (Zurich)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Israel (Tel Aviv)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Middle East (UAE)
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * 
+     * @return An object that specifies the recording strategy for the configuration recorder.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         If you set the <code>useOnly</code> field of <a
+     *         href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html"
+     *         >RecordingStrategy</a> to <code>ALL_SUPPORTED_RESOURCE_TYPES</code>, Config records configuration changes
+     *         for all supported regionally recorded resource types. You also must set the <code>allSupported</code>
+     *         field of <a
+     *         href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>
+     *         to <code>true</code>. When Config adds support for a new regionally recorded resource type, Config
+     *         automatically starts recording resources of that type.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If you set the <code>useOnly</code> field of <a
+     *         href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html"
+     *         >RecordingStrategy</a> to <code>INCLUSION_BY_RESOURCE_TYPES</code>, Config records configuration changes
+     *         for only the resource types you specify in the <code>resourceTypes</code> field of <a
+     *         href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If you set the <code>useOnly</code> field of <a
+     *         href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html"
+     *         >RecordingStrategy</a> to <code>EXCLUSION_BY_RESOURCE_TYPES</code>, Config records configuration changes
+     *         for all supported resource types except the resource types that you specify to exclude from being
+     *         recorded in the <code>resourceTypes</code> field of <a
+     *         href="https://docs.aws.amazon.com/config/latest/APIReference/API_ExclusionByResourceTypes.html"
+     *         >ExclusionByResourceTypes</a>.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <note>
+     *         <p>
+     *         <b>Required and optional fields</b>
+     *         </p>
+     *         <p>
+     *         The <code>recordingStrategy</code> field is optional when you set the <code>allSupported</code> field of
+     *         <a
+     *         href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>
+     *         to <code>true</code>.
+     *         </p>
+     *         <p>
+     *         The <code>recordingStrategy</code> field is optional when you list resource types in the
+     *         <code>resourceTypes</code> field of <a
+     *         href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>.
+     *         </p>
+     *         <p>
+     *         The <code>recordingStrategy</code> field is required if you list resource types to exclude from recording
+     *         in the <code>resourceTypes</code> field of <a
+     *         href="https://docs.aws.amazon.com/config/latest/APIReference/API_ExclusionByResourceTypes.html"
+     *         >ExclusionByResourceTypes</a>.
+     *         </p>
+     *         </note> <note>
+     *         <p>
+     *         <b>Overriding fields</b>
+     *         </p>
+     *         <p>
+     *         If you choose <code>EXCLUSION_BY_RESOURCE_TYPES</code> for the recording strategy, the
+     *         <code>exclusionByResourceTypes</code> field will override other properties in the request.
+     *         </p>
+     *         <p>
+     *         For example, even if you set <code>includeGlobalResourceTypes</code> to false, globally recorded IAM
+     *         resource types will still be automatically recorded in this option unless those resource types are
+     *         specifically listed as exclusions in the <code>resourceTypes</code> field of
+     *         <code>exclusionByResourceTypes</code>.
+     *         </p>
+     *         </note> <note>
+     *         <p>
+     *         <b>Global resources types and the resource exclusion recording strategy</b>
+     *         </p>
+     *         <p>
+     *         By default, if you choose the <code>EXCLUSION_BY_RESOURCE_TYPES</code> recording strategy, when Config
+     *         adds support for a new resource type in the Region where you set up the configuration recorder, including
+     *         global resource types, Config starts recording resources of that type automatically.
+     *         </p>
+     *         <p>
+     *         In addition, unless specifically listed as exclusions, <code>AWS::RDS::GlobalCluster</code> will be
+     *         recorded automatically in all supported Config Regions were the configuration recorder is enabled. IAM
+     *         users, groups, roles, and customer managed policies will be recorded automatically in all enabled Config
+     *         Regions where Config was available before February 2022. This list does not include the following
+     *         Regions:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Asia Pacific (Hyderabad)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Asia Pacific (Melbourne)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Europe (Spain)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Europe (Zurich)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Israel (Tel Aviv)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Middle East (UAE)
+     *         </p>
+     *         </li>
+     *         </ul>
+     */
+
+    public RecordingStrategy getRecordingStrategy() {
+        return this.recordingStrategy;
+    }
+
+    /**
+     * <p>
+     * An object that specifies the recording strategy for the configuration recorder.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you set the <code>useOnly</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a> to
+     * <code>ALL_SUPPORTED_RESOURCE_TYPES</code>, Config records configuration changes for all supported regionally
+     * recorded resource types. You also must set the <code>allSupported</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a> to
+     * <code>true</code>. When Config adds support for a new regionally recorded resource type, Config automatically
+     * starts recording resources of that type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you set the <code>useOnly</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a> to
+     * <code>INCLUSION_BY_RESOURCE_TYPES</code>, Config records configuration changes for only the resource types you
+     * specify in the <code>resourceTypes</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you set the <code>useOnly</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a> to
+     * <code>EXCLUSION_BY_RESOURCE_TYPES</code>, Config records configuration changes for all supported resource types
+     * except the resource types that you specify to exclude from being recorded in the <code>resourceTypes</code> field
+     * of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_ExclusionByResourceTypes.html">
+     * ExclusionByResourceTypes</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * <b>Required and optional fields</b>
+     * </p>
+     * <p>
+     * The <code>recordingStrategy</code> field is optional when you set the <code>allSupported</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a> to
+     * <code>true</code>.
+     * </p>
+     * <p>
+     * The <code>recordingStrategy</code> field is optional when you list resource types in the
+     * <code>resourceTypes</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>.
+     * </p>
+     * <p>
+     * The <code>recordingStrategy</code> field is required if you list resource types to exclude from recording in the
+     * <code>resourceTypes</code> field of <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_ExclusionByResourceTypes.html"
+     * >ExclusionByResourceTypes</a>.
+     * </p>
+     * </note> <note>
+     * <p>
+     * <b>Overriding fields</b>
+     * </p>
+     * <p>
+     * If you choose <code>EXCLUSION_BY_RESOURCE_TYPES</code> for the recording strategy, the
+     * <code>exclusionByResourceTypes</code> field will override other properties in the request.
+     * </p>
+     * <p>
+     * For example, even if you set <code>includeGlobalResourceTypes</code> to false, globally recorded IAM resource
+     * types will still be automatically recorded in this option unless those resource types are specifically listed as
+     * exclusions in the <code>resourceTypes</code> field of <code>exclusionByResourceTypes</code>.
+     * </p>
+     * </note> <note>
+     * <p>
+     * <b>Global resources types and the resource exclusion recording strategy</b>
+     * </p>
+     * <p>
+     * By default, if you choose the <code>EXCLUSION_BY_RESOURCE_TYPES</code> recording strategy, when Config adds
+     * support for a new resource type in the Region where you set up the configuration recorder, including global
+     * resource types, Config starts recording resources of that type automatically.
+     * </p>
+     * <p>
+     * In addition, unless specifically listed as exclusions, <code>AWS::RDS::GlobalCluster</code> will be recorded
+     * automatically in all supported Config Regions were the configuration recorder is enabled. IAM users, groups,
+     * roles, and customer managed policies will be recorded automatically in all enabled Config Regions where Config
+     * was available before February 2022. This list does not include the following Regions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Asia Pacific (Hyderabad)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Asia Pacific (Melbourne)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Europe (Spain)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Europe (Zurich)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Israel (Tel Aviv)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Middle East (UAE)
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * 
+     * @param recordingStrategy
+     *        An object that specifies the recording strategy for the configuration recorder.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If you set the <code>useOnly</code> field of <a
+     *        href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html"
+     *        >RecordingStrategy</a> to <code>ALL_SUPPORTED_RESOURCE_TYPES</code>, Config records configuration changes
+     *        for all supported regionally recorded resource types. You also must set the <code>allSupported</code>
+     *        field of <a
+     *        href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>
+     *        to <code>true</code>. When Config adds support for a new regionally recorded resource type, Config
+     *        automatically starts recording resources of that type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you set the <code>useOnly</code> field of <a
+     *        href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html"
+     *        >RecordingStrategy</a> to <code>INCLUSION_BY_RESOURCE_TYPES</code>, Config records configuration changes
+     *        for only the resource types you specify in the <code>resourceTypes</code> field of <a
+     *        href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you set the <code>useOnly</code> field of <a
+     *        href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html"
+     *        >RecordingStrategy</a> to <code>EXCLUSION_BY_RESOURCE_TYPES</code>, Config records configuration changes
+     *        for all supported resource types except the resource types that you specify to exclude from being recorded
+     *        in the <code>resourceTypes</code> field of <a
+     *        href="https://docs.aws.amazon.com/config/latest/APIReference/API_ExclusionByResourceTypes.html"
+     *        >ExclusionByResourceTypes</a>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        <b>Required and optional fields</b>
+     *        </p>
+     *        <p>
+     *        The <code>recordingStrategy</code> field is optional when you set the <code>allSupported</code> field of
+     *        <a
+     *        href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>
+     *        to <code>true</code>.
+     *        </p>
+     *        <p>
+     *        The <code>recordingStrategy</code> field is optional when you list resource types in the
+     *        <code>resourceTypes</code> field of <a
+     *        href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>.
+     *        </p>
+     *        <p>
+     *        The <code>recordingStrategy</code> field is required if you list resource types to exclude from recording
+     *        in the <code>resourceTypes</code> field of <a
+     *        href="https://docs.aws.amazon.com/config/latest/APIReference/API_ExclusionByResourceTypes.html"
+     *        >ExclusionByResourceTypes</a>.
+     *        </p>
+     *        </note> <note>
+     *        <p>
+     *        <b>Overriding fields</b>
+     *        </p>
+     *        <p>
+     *        If you choose <code>EXCLUSION_BY_RESOURCE_TYPES</code> for the recording strategy, the
+     *        <code>exclusionByResourceTypes</code> field will override other properties in the request.
+     *        </p>
+     *        <p>
+     *        For example, even if you set <code>includeGlobalResourceTypes</code> to false, globally recorded IAM
+     *        resource types will still be automatically recorded in this option unless those resource types are
+     *        specifically listed as exclusions in the <code>resourceTypes</code> field of
+     *        <code>exclusionByResourceTypes</code>.
+     *        </p>
+     *        </note> <note>
+     *        <p>
+     *        <b>Global resources types and the resource exclusion recording strategy</b>
+     *        </p>
+     *        <p>
+     *        By default, if you choose the <code>EXCLUSION_BY_RESOURCE_TYPES</code> recording strategy, when Config
+     *        adds support for a new resource type in the Region where you set up the configuration recorder, including
+     *        global resource types, Config starts recording resources of that type automatically.
+     *        </p>
+     *        <p>
+     *        In addition, unless specifically listed as exclusions, <code>AWS::RDS::GlobalCluster</code> will be
+     *        recorded automatically in all supported Config Regions were the configuration recorder is enabled. IAM
+     *        users, groups, roles, and customer managed policies will be recorded automatically in all enabled Config
+     *        Regions where Config was available before February 2022. This list does not include the following Regions:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Asia Pacific (Hyderabad)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Asia Pacific (Melbourne)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Europe (Spain)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Europe (Zurich)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Israel (Tel Aviv)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Middle East (UAE)
+     *        </p>
+     *        </li>
+     *        </ul>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RecordingGroup withRecordingStrategy(RecordingStrategy recordingStrategy) {
+        setRecordingStrategy(recordingStrategy);
         return this;
     }
 
@@ -650,7 +2632,11 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
         if (getIncludeGlobalResourceTypes() != null)
             sb.append("IncludeGlobalResourceTypes: ").append(getIncludeGlobalResourceTypes()).append(",");
         if (getResourceTypes() != null)
-            sb.append("ResourceTypes: ").append(getResourceTypes());
+            sb.append("ResourceTypes: ").append(getResourceTypes()).append(",");
+        if (getExclusionByResourceTypes() != null)
+            sb.append("ExclusionByResourceTypes: ").append(getExclusionByResourceTypes()).append(",");
+        if (getRecordingStrategy() != null)
+            sb.append("RecordingStrategy: ").append(getRecordingStrategy());
         sb.append("}");
         return sb.toString();
     }
@@ -677,6 +2663,14 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getResourceTypes() != null && other.getResourceTypes().equals(this.getResourceTypes()) == false)
             return false;
+        if (other.getExclusionByResourceTypes() == null ^ this.getExclusionByResourceTypes() == null)
+            return false;
+        if (other.getExclusionByResourceTypes() != null && other.getExclusionByResourceTypes().equals(this.getExclusionByResourceTypes()) == false)
+            return false;
+        if (other.getRecordingStrategy() == null ^ this.getRecordingStrategy() == null)
+            return false;
+        if (other.getRecordingStrategy() != null && other.getRecordingStrategy().equals(this.getRecordingStrategy()) == false)
+            return false;
         return true;
     }
 
@@ -688,6 +2682,8 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAllSupported() == null) ? 0 : getAllSupported().hashCode());
         hashCode = prime * hashCode + ((getIncludeGlobalResourceTypes() == null) ? 0 : getIncludeGlobalResourceTypes().hashCode());
         hashCode = prime * hashCode + ((getResourceTypes() == null) ? 0 : getResourceTypes().hashCode());
+        hashCode = prime * hashCode + ((getExclusionByResourceTypes() == null) ? 0 : getExclusionByResourceTypes().hashCode());
+        hashCode = prime * hashCode + ((getRecordingStrategy() == null) ? 0 : getRecordingStrategy().hashCode());
         return hashCode;
     }
 

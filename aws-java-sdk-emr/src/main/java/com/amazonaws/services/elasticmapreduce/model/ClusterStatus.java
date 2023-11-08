@@ -48,8 +48,8 @@ public class ClusterStatus implements Serializable, Cloneable, StructuredPojo {
     private ClusterTimeline timeline;
     /**
      * <p>
-     * A list of tuples that provide information about the errors that caused a cluster termination. This structure may
-     * have up to 10 different <code>ErrorDetail</code> tuples.
+     * A list of tuples that provides information about the errors that caused a cluster to terminate. This structure
+     * can contain up to 10 different <code>ErrorDetail</code> tuples.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ErrorDetail> errorDetails;
@@ -209,12 +209,12 @@ public class ClusterStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of tuples that provide information about the errors that caused a cluster termination. This structure may
-     * have up to 10 different <code>ErrorDetail</code> tuples.
+     * A list of tuples that provides information about the errors that caused a cluster to terminate. This structure
+     * can contain up to 10 different <code>ErrorDetail</code> tuples.
      * </p>
      * 
-     * @return A list of tuples that provide information about the errors that caused a cluster termination. This
-     *         structure may have up to 10 different <code>ErrorDetail</code> tuples.
+     * @return A list of tuples that provides information about the errors that caused a cluster to terminate. This
+     *         structure can contain up to 10 different <code>ErrorDetail</code> tuples.
      */
 
     public java.util.List<ErrorDetail> getErrorDetails() {
@@ -226,13 +226,13 @@ public class ClusterStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of tuples that provide information about the errors that caused a cluster termination. This structure may
-     * have up to 10 different <code>ErrorDetail</code> tuples.
+     * A list of tuples that provides information about the errors that caused a cluster to terminate. This structure
+     * can contain up to 10 different <code>ErrorDetail</code> tuples.
      * </p>
      * 
      * @param errorDetails
-     *        A list of tuples that provide information about the errors that caused a cluster termination. This
-     *        structure may have up to 10 different <code>ErrorDetail</code> tuples.
+     *        A list of tuples that provides information about the errors that caused a cluster to terminate. This
+     *        structure can contain up to 10 different <code>ErrorDetail</code> tuples.
      */
 
     public void setErrorDetails(java.util.Collection<ErrorDetail> errorDetails) {
@@ -246,8 +246,8 @@ public class ClusterStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of tuples that provide information about the errors that caused a cluster termination. This structure may
-     * have up to 10 different <code>ErrorDetail</code> tuples.
+     * A list of tuples that provides information about the errors that caused a cluster to terminate. This structure
+     * can contain up to 10 different <code>ErrorDetail</code> tuples.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -256,8 +256,8 @@ public class ClusterStatus implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param errorDetails
-     *        A list of tuples that provide information about the errors that caused a cluster termination. This
-     *        structure may have up to 10 different <code>ErrorDetail</code> tuples.
+     *        A list of tuples that provides information about the errors that caused a cluster to terminate. This
+     *        structure can contain up to 10 different <code>ErrorDetail</code> tuples.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -273,13 +273,13 @@ public class ClusterStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of tuples that provide information about the errors that caused a cluster termination. This structure may
-     * have up to 10 different <code>ErrorDetail</code> tuples.
+     * A list of tuples that provides information about the errors that caused a cluster to terminate. This structure
+     * can contain up to 10 different <code>ErrorDetail</code> tuples.
      * </p>
      * 
      * @param errorDetails
-     *        A list of tuples that provide information about the errors that caused a cluster termination. This
-     *        structure may have up to 10 different <code>ErrorDetail</code> tuples.
+     *        A list of tuples that provides information about the errors that caused a cluster to terminate. This
+     *        structure can contain up to 10 different <code>ErrorDetail</code> tuples.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

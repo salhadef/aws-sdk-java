@@ -45,6 +45,7 @@ import com.amazonaws.services.lexmodelsv2.waiters.AmazonLexModelsV2Waiters;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.lexmodelsv2.model.*;
+
 import com.amazonaws.services.lexmodelsv2.model.transform.*;
 
 /**
@@ -85,20 +86,20 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
                                     com.amazonaws.services.lexmodelsv2.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.lexmodelsv2.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.lexmodelsv2.model.transform.ValidationExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("PreconditionFailedException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.lexmodelsv2.model.transform.PreconditionFailedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
                                     com.amazonaws.services.lexmodelsv2.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
                                     com.amazonaws.services.lexmodelsv2.model.transform.ConflictExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lexmodelsv2.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("PreconditionFailedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lexmodelsv2.model.transform.PreconditionFailedExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.lexmodelsv2.model.AmazonLexModelsV2Exception.class));
 
     public static AmazonLexModelsV2ClientBuilder builder() {
@@ -1195,6 +1196,77 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Create a report that describes the differences between the bot and the test set.
+     * </p>
+     * 
+     * @param createTestSetDiscrepancyReportRequest
+     * @return Result of the CreateTestSetDiscrepancyReport operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws ConflictException
+     *         The action that you tried to perform couldn't be completed because the resource is in a conflicting
+     *         state. For example, deleting a bot that is in the CREATING state. Try your request again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @throws ResourceNotFoundException
+     *         You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try
+     *         again.
+     * @sample AmazonLexModelsV2.CreateTestSetDiscrepancyReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateTestSetDiscrepancyReport"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateTestSetDiscrepancyReportResult createTestSetDiscrepancyReport(CreateTestSetDiscrepancyReportRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateTestSetDiscrepancyReport(request);
+    }
+
+    @SdkInternalApi
+    final CreateTestSetDiscrepancyReportResult executeCreateTestSetDiscrepancyReport(CreateTestSetDiscrepancyReportRequest createTestSetDiscrepancyReportRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createTestSetDiscrepancyReportRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateTestSetDiscrepancyReportRequest> request = null;
+        Response<CreateTestSetDiscrepancyReportResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateTestSetDiscrepancyReportRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createTestSetDiscrepancyReportRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTestSetDiscrepancyReport");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateTestSetDiscrepancyReportResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateTestSetDiscrepancyReportResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets a pre-signed S3 write URL that you use to upload the zip archive when importing a bot or a bot locale.
      * </p>
      * 
@@ -2103,6 +2175,75 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * The action to delete the selected test set.
+     * </p>
+     * 
+     * @param deleteTestSetRequest
+     * @return Result of the DeleteTestSet operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws ConflictException
+     *         The action that you tried to perform couldn't be completed because the resource is in a conflicting
+     *         state. For example, deleting a bot that is in the CREATING state. Try your request again.
+     * @throws PreconditionFailedException
+     *         Your request couldn't be completed because one or more request fields aren't valid. Check the fields in
+     *         your request and try again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.DeleteTestSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteTestSet" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteTestSetResult deleteTestSet(DeleteTestSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteTestSet(request);
+    }
+
+    @SdkInternalApi
+    final DeleteTestSetResult executeDeleteTestSet(DeleteTestSetRequest deleteTestSetRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteTestSetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteTestSetRequest> request = null;
+        Response<DeleteTestSetResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteTestSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTestSetRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTestSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteTestSetResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteTestSetResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes stored utterances.
      * </p>
      * <p>
@@ -2966,6 +3107,344 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Gets metadata information about the test execution.
+     * </p>
+     * 
+     * @param describeTestExecutionRequest
+     * @return Result of the DescribeTestExecution operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws ResourceNotFoundException
+     *         You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try
+     *         again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.DescribeTestExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeTestExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeTestExecutionResult describeTestExecution(DescribeTestExecutionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTestExecution(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTestExecutionResult executeDescribeTestExecution(DescribeTestExecutionRequest describeTestExecutionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeTestExecutionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeTestExecutionRequest> request = null;
+        Response<DescribeTestExecutionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeTestExecutionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTestExecutionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTestExecution");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeTestExecutionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DescribeTestExecutionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets metadata information about the test set.
+     * </p>
+     * 
+     * @param describeTestSetRequest
+     * @return Result of the DescribeTestSet operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws ResourceNotFoundException
+     *         You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try
+     *         again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.DescribeTestSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeTestSet" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeTestSetResult describeTestSet(DescribeTestSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTestSet(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTestSetResult executeDescribeTestSet(DescribeTestSetRequest describeTestSetRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeTestSetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeTestSetRequest> request = null;
+        Response<DescribeTestSetResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeTestSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTestSetRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTestSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeTestSetResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeTestSetResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets metadata information about the test set discrepancy report.
+     * </p>
+     * 
+     * @param describeTestSetDiscrepancyReportRequest
+     * @return Result of the DescribeTestSetDiscrepancyReport operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws ResourceNotFoundException
+     *         You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try
+     *         again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.DescribeTestSetDiscrepancyReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeTestSetDiscrepancyReport"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeTestSetDiscrepancyReportResult describeTestSetDiscrepancyReport(DescribeTestSetDiscrepancyReportRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTestSetDiscrepancyReport(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTestSetDiscrepancyReportResult executeDescribeTestSetDiscrepancyReport(
+            DescribeTestSetDiscrepancyReportRequest describeTestSetDiscrepancyReportRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeTestSetDiscrepancyReportRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeTestSetDiscrepancyReportRequest> request = null;
+        Response<DescribeTestSetDiscrepancyReportResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeTestSetDiscrepancyReportRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeTestSetDiscrepancyReportRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTestSetDiscrepancyReport");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeTestSetDiscrepancyReportResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeTestSetDiscrepancyReportResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets metadata information about the test set generation.
+     * </p>
+     * 
+     * @param describeTestSetGenerationRequest
+     * @return Result of the DescribeTestSetGeneration operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws ResourceNotFoundException
+     *         You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try
+     *         again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.DescribeTestSetGeneration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeTestSetGeneration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeTestSetGenerationResult describeTestSetGeneration(DescribeTestSetGenerationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTestSetGeneration(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTestSetGenerationResult executeDescribeTestSetGeneration(DescribeTestSetGenerationRequest describeTestSetGenerationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeTestSetGenerationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeTestSetGenerationRequest> request = null;
+        Response<DescribeTestSetGenerationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeTestSetGenerationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeTestSetGenerationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTestSetGeneration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeTestSetGenerationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeTestSetGenerationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * The pre-signed Amazon S3 URL to download the test execution result artifacts.
+     * </p>
+     * 
+     * @param getTestExecutionArtifactsUrlRequest
+     * @return Result of the GetTestExecutionArtifactsUrl operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws ResourceNotFoundException
+     *         You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try
+     *         again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.GetTestExecutionArtifactsUrl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/GetTestExecutionArtifactsUrl"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetTestExecutionArtifactsUrlResult getTestExecutionArtifactsUrl(GetTestExecutionArtifactsUrlRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetTestExecutionArtifactsUrl(request);
+    }
+
+    @SdkInternalApi
+    final GetTestExecutionArtifactsUrlResult executeGetTestExecutionArtifactsUrl(GetTestExecutionArtifactsUrlRequest getTestExecutionArtifactsUrlRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getTestExecutionArtifactsUrlRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetTestExecutionArtifactsUrlRequest> request = null;
+        Response<GetTestExecutionArtifactsUrlResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetTestExecutionArtifactsUrlRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getTestExecutionArtifactsUrlRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTestExecutionArtifactsUrl");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetTestExecutionArtifactsUrlResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetTestExecutionArtifactsUrlResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Provides a list of utterances that users have sent to the bot.
      * </p>
      * <p>
@@ -3711,6 +4190,307 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Retrieves summary metrics for the intents in your bot. The following fields are required:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>metrics</code> – A list of <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsIntentMetric.html"
+     * >AnalyticsIntentMetric</a> objects. In each object, use the <code>name</code> field to specify the metric to
+     * calculate, the <code>statistic</code> field to specify whether to calculate the <code>Sum</code>,
+     * <code>Average</code>, or <code>Max</code> number, and the <code>order</code> field to specify whether to sort the
+     * results in <code>Ascending</code> or <code>Descending</code> order.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for which you want to retrieve
+     * results.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Of the optional fields, you can organize the results in the following ways:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use the <code>filters</code> field to filter the results, the <code>groupBy</code> field to specify categories by
+     * which to group the results, and the <code>binBy</code> field to specify time intervals by which to group the
+     * results.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use the <code>maxResults</code> field to limit the number of results to return in a single response and the
+     * <code>nextToken</code> field to return the next batch of results if the response does not return the full set of
+     * results.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Note that an <code>order</code> field exists in both <code>binBy</code> and <code>metrics</code>. You can specify
+     * only one <code>order</code> in a given request.
+     * </p>
+     * 
+     * @param listIntentMetricsRequest
+     * @return Result of the ListIntentMetrics operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws PreconditionFailedException
+     *         Your request couldn't be completed because one or more request fields aren't valid. Check the fields in
+     *         your request and try again.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.ListIntentMetrics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListIntentMetrics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListIntentMetricsResult listIntentMetrics(ListIntentMetricsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListIntentMetrics(request);
+    }
+
+    @SdkInternalApi
+    final ListIntentMetricsResult executeListIntentMetrics(ListIntentMetricsRequest listIntentMetricsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listIntentMetricsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListIntentMetricsRequest> request = null;
+        Response<ListIntentMetricsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListIntentMetricsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listIntentMetricsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListIntentMetrics");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListIntentMetricsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListIntentMetricsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves summary statistics for a path of intents that users take over sessions with your bot. The following
+     * fields are required:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for which you want to retrieve
+     * results.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>intentPath</code> – Define an order of intents for which you want to retrieve metrics. Separate intents in
+     * the path with a forward slash. For example, populate the <code>intentPath</code> field with
+     * <code>/BookCar/BookHotel</code> to see details about how many times users invoked the <code>BookCar</code> and
+     * <code>BookHotel</code> intents in that order.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Use the optional <code>filters</code> field to filter the results.
+     * </p>
+     * 
+     * @param listIntentPathsRequest
+     * @return Result of the ListIntentPaths operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws PreconditionFailedException
+     *         Your request couldn't be completed because one or more request fields aren't valid. Check the fields in
+     *         your request and try again.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.ListIntentPaths
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListIntentPaths" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListIntentPathsResult listIntentPaths(ListIntentPathsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListIntentPaths(request);
+    }
+
+    @SdkInternalApi
+    final ListIntentPathsResult executeListIntentPaths(ListIntentPathsRequest listIntentPathsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listIntentPathsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListIntentPathsRequest> request = null;
+        Response<ListIntentPathsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListIntentPathsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listIntentPathsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListIntentPaths");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListIntentPathsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListIntentPathsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves summary metrics for the stages within intents in your bot. The following fields are required:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>metrics</code> – A list of <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsIntentStageMetric.html"
+     * >AnalyticsIntentStageMetric</a> objects. In each object, use the <code>name</code> field to specify the metric to
+     * calculate, the <code>statistic</code> field to specify whether to calculate the <code>Sum</code>,
+     * <code>Average</code>, or <code>Max</code> number, and the <code>order</code> field to specify whether to sort the
+     * results in <code>Ascending</code> or <code>Descending</code> order.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for which you want to retrieve
+     * results.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Of the optional fields, you can organize the results in the following ways:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use the <code>filters</code> field to filter the results, the <code>groupBy</code> field to specify categories by
+     * which to group the results, and the <code>binBy</code> field to specify time intervals by which to group the
+     * results.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use the <code>maxResults</code> field to limit the number of results to return in a single response and the
+     * <code>nextToken</code> field to return the next batch of results if the response does not return the full set of
+     * results.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Note that an <code>order</code> field exists in both <code>binBy</code> and <code>metrics</code>. You can only
+     * specify one <code>order</code> in a given request.
+     * </p>
+     * 
+     * @param listIntentStageMetricsRequest
+     * @return Result of the ListIntentStageMetrics operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws PreconditionFailedException
+     *         Your request couldn't be completed because one or more request fields aren't valid. Check the fields in
+     *         your request and try again.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.ListIntentStageMetrics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListIntentStageMetrics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListIntentStageMetricsResult listIntentStageMetrics(ListIntentStageMetricsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListIntentStageMetrics(request);
+    }
+
+    @SdkInternalApi
+    final ListIntentStageMetricsResult executeListIntentStageMetrics(ListIntentStageMetricsRequest listIntentStageMetricsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listIntentStageMetricsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListIntentStageMetricsRequest> request = null;
+        Response<ListIntentStageMetricsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListIntentStageMetricsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listIntentStageMetricsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListIntentStageMetrics");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListIntentStageMetricsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListIntentStageMetricsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Get a list of intents that meet the specified criteria.
      * </p>
      * 
@@ -3830,6 +4610,198 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
             HttpResponseHandler<AmazonWebServiceResponse<ListRecommendedIntentsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListRecommendedIntentsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves a list of metadata for individual user sessions with your bot. The <code>startDateTime</code> and
+     * <code>endDateTime</code> fields are required. These fields define a time range for which you want to retrieve
+     * results. Of the optional fields, you can organize the results in the following ways:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use the <code>filters</code> field to filter the results and the <code>sortBy</code> field to specify the values
+     * by which to sort the results.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use the <code>maxResults</code> field to limit the number of results to return in a single response and the
+     * <code>nextToken</code> field to return the next batch of results if the response does not return the full set of
+     * results.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param listSessionAnalyticsDataRequest
+     * @return Result of the ListSessionAnalyticsData operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws PreconditionFailedException
+     *         Your request couldn't be completed because one or more request fields aren't valid. Check the fields in
+     *         your request and try again.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.ListSessionAnalyticsData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListSessionAnalyticsData"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListSessionAnalyticsDataResult listSessionAnalyticsData(ListSessionAnalyticsDataRequest request) {
+        request = beforeClientExecution(request);
+        return executeListSessionAnalyticsData(request);
+    }
+
+    @SdkInternalApi
+    final ListSessionAnalyticsDataResult executeListSessionAnalyticsData(ListSessionAnalyticsDataRequest listSessionAnalyticsDataRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listSessionAnalyticsDataRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListSessionAnalyticsDataRequest> request = null;
+        Response<ListSessionAnalyticsDataResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListSessionAnalyticsDataRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listSessionAnalyticsDataRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSessionAnalyticsData");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListSessionAnalyticsDataResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListSessionAnalyticsDataResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves summary metrics for the user sessions with your bot. The following fields are required:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>metrics</code> – A list of <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsSessionMetric.html"
+     * >AnalyticsSessionMetric</a> objects. In each object, use the <code>name</code> field to specify the metric to
+     * calculate, the <code>statistic</code> field to specify whether to calculate the <code>Sum</code>,
+     * <code>Average</code>, or <code>Max</code> number, and the <code>order</code> field to specify whether to sort the
+     * results in <code>Ascending</code> or <code>Descending</code> order.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for which you want to retrieve
+     * results.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Of the optional fields, you can organize the results in the following ways:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use the <code>filters</code> field to filter the results, the <code>groupBy</code> field to specify categories by
+     * which to group the results, and the <code>binBy</code> field to specify time intervals by which to group the
+     * results.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use the <code>maxResults</code> field to limit the number of results to return in a single response and the
+     * <code>nextToken</code> field to return the next batch of results if the response does not return the full set of
+     * results.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Note that an <code>order</code> field exists in both <code>binBy</code> and <code>metrics</code>. Currently, you
+     * can specify it in either field, but not in both.
+     * </p>
+     * 
+     * @param listSessionMetricsRequest
+     * @return Result of the ListSessionMetrics operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws PreconditionFailedException
+     *         Your request couldn't be completed because one or more request fields aren't valid. Check the fields in
+     *         your request and try again.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.ListSessionMetrics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListSessionMetrics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListSessionMetricsResult listSessionMetrics(ListSessionMetricsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListSessionMetrics(request);
+    }
+
+    @SdkInternalApi
+    final ListSessionMetricsResult executeListSessionMetrics(ListSessionMetricsRequest listSessionMetricsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listSessionMetricsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListSessionMetricsRequest> request = null;
+        Response<ListSessionMetricsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListSessionMetricsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSessionMetricsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSessionMetrics");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListSessionMetricsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListSessionMetricsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4021,6 +4993,485 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets a list of test execution result items.
+     * </p>
+     * 
+     * @param listTestExecutionResultItemsRequest
+     * @return Result of the ListTestExecutionResultItems operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws ResourceNotFoundException
+     *         You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try
+     *         again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.ListTestExecutionResultItems
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListTestExecutionResultItems"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListTestExecutionResultItemsResult listTestExecutionResultItems(ListTestExecutionResultItemsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTestExecutionResultItems(request);
+    }
+
+    @SdkInternalApi
+    final ListTestExecutionResultItemsResult executeListTestExecutionResultItems(ListTestExecutionResultItemsRequest listTestExecutionResultItemsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTestExecutionResultItemsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTestExecutionResultItemsRequest> request = null;
+        Response<ListTestExecutionResultItemsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTestExecutionResultItemsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listTestExecutionResultItemsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTestExecutionResultItems");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTestExecutionResultItemsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListTestExecutionResultItemsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * The list of test set executions.
+     * </p>
+     * 
+     * @param listTestExecutionsRequest
+     * @return Result of the ListTestExecutions operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.ListTestExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListTestExecutions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListTestExecutionsResult listTestExecutions(ListTestExecutionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTestExecutions(request);
+    }
+
+    @SdkInternalApi
+    final ListTestExecutionsResult executeListTestExecutions(ListTestExecutionsRequest listTestExecutionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTestExecutionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTestExecutionsRequest> request = null;
+        Response<ListTestExecutionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTestExecutionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTestExecutionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTestExecutions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTestExecutionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTestExecutionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * The list of test set records.
+     * </p>
+     * 
+     * @param listTestSetRecordsRequest
+     * @return Result of the ListTestSetRecords operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws ResourceNotFoundException
+     *         You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try
+     *         again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.ListTestSetRecords
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListTestSetRecords"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListTestSetRecordsResult listTestSetRecords(ListTestSetRecordsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTestSetRecords(request);
+    }
+
+    @SdkInternalApi
+    final ListTestSetRecordsResult executeListTestSetRecords(ListTestSetRecordsRequest listTestSetRecordsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTestSetRecordsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTestSetRecordsRequest> request = null;
+        Response<ListTestSetRecordsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTestSetRecordsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTestSetRecordsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTestSetRecords");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTestSetRecordsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTestSetRecordsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * The list of the test sets
+     * </p>
+     * 
+     * @param listTestSetsRequest
+     * @return Result of the ListTestSets operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.ListTestSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListTestSets" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListTestSetsResult listTestSets(ListTestSetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTestSets(request);
+    }
+
+    @SdkInternalApi
+    final ListTestSetsResult executeListTestSets(ListTestSetsRequest listTestSetsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTestSetsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTestSetsRequest> request = null;
+        Response<ListTestSetsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTestSetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTestSetsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTestSets");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTestSetsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTestSetsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <note>
+     * <p>
+     * To use this API operation, your IAM role must have permissions to perform the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListAggregatedUtterances.html"
+     * >ListAggregatedUtterances</a> operation, which provides access to utterance-related analytics. See <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/monitoring-utterances.html">Viewing utterance statistics</a>
+     * for the IAM policy to apply to the IAM role.
+     * </p>
+     * </note>
+     * <p>
+     * Retrieves a list of metadata for individual user utterances to your bot. The following fields are required:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for which you want to retrieve
+     * results.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Of the optional fields, you can organize the results in the following ways:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use the <code>filters</code> field to filter the results and the <code>sortBy</code> field to specify the values
+     * by which to sort the results.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use the <code>maxResults</code> field to limit the number of results to return in a single response and the
+     * <code>nextToken</code> field to return the next batch of results if the response does not return the full set of
+     * results.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param listUtteranceAnalyticsDataRequest
+     * @return Result of the ListUtteranceAnalyticsData operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws PreconditionFailedException
+     *         Your request couldn't be completed because one or more request fields aren't valid. Check the fields in
+     *         your request and try again.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.ListUtteranceAnalyticsData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListUtteranceAnalyticsData"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListUtteranceAnalyticsDataResult listUtteranceAnalyticsData(ListUtteranceAnalyticsDataRequest request) {
+        request = beforeClientExecution(request);
+        return executeListUtteranceAnalyticsData(request);
+    }
+
+    @SdkInternalApi
+    final ListUtteranceAnalyticsDataResult executeListUtteranceAnalyticsData(ListUtteranceAnalyticsDataRequest listUtteranceAnalyticsDataRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listUtteranceAnalyticsDataRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListUtteranceAnalyticsDataRequest> request = null;
+        Response<ListUtteranceAnalyticsDataResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListUtteranceAnalyticsDataRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listUtteranceAnalyticsDataRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUtteranceAnalyticsData");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListUtteranceAnalyticsDataResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListUtteranceAnalyticsDataResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <note>
+     * <p>
+     * To use this API operation, your IAM role must have permissions to perform the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListAggregatedUtterances.html"
+     * >ListAggregatedUtterances</a> operation, which provides access to utterance-related analytics. See <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/monitoring-utterances.html">Viewing utterance statistics</a>
+     * for the IAM policy to apply to the IAM role.
+     * </p>
+     * </note>
+     * <p>
+     * Retrieves summary metrics for the utterances in your bot. The following fields are required:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>metrics</code> – A list of <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsUtteranceMetric.html"
+     * >AnalyticsUtteranceMetric</a> objects. In each object, use the <code>name</code> field to specify the metric to
+     * calculate, the <code>statistic</code> field to specify whether to calculate the <code>Sum</code>,
+     * <code>Average</code>, or <code>Max</code> number, and the <code>order</code> field to specify whether to sort the
+     * results in <code>Ascending</code> or <code>Descending</code> order.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for which you want to retrieve
+     * results.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Of the optional fields, you can organize the results in the following ways:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use the <code>filters</code> field to filter the results, the <code>groupBy</code> field to specify categories by
+     * which to group the results, and the <code>binBy</code> field to specify time intervals by which to group the
+     * results.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use the <code>maxResults</code> field to limit the number of results to return in a single response and the
+     * <code>nextToken</code> field to return the next batch of results if the response does not return the full set of
+     * results.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Note that an <code>order</code> field exists in both <code>binBy</code> and <code>metrics</code>. Currently, you
+     * can specify it in either field, but not in both.
+     * </p>
+     * 
+     * @param listUtteranceMetricsRequest
+     * @return Result of the ListUtteranceMetrics operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws PreconditionFailedException
+     *         Your request couldn't be completed because one or more request fields aren't valid. Check the fields in
+     *         your request and try again.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.ListUtteranceMetrics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListUtteranceMetrics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListUtteranceMetricsResult listUtteranceMetrics(ListUtteranceMetricsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListUtteranceMetrics(request);
+    }
+
+    @SdkInternalApi
+    final ListUtteranceMetricsResult executeListUtteranceMetrics(ListUtteranceMetricsRequest listUtteranceMetricsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listUtteranceMetricsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListUtteranceMetricsRequest> request = null;
+        Response<ListUtteranceMetricsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListUtteranceMetricsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listUtteranceMetricsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUtteranceMetrics");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListUtteranceMetricsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListUtteranceMetricsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4234,6 +5685,145 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<StartImportResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartImportResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * The action to start test set execution.
+     * </p>
+     * 
+     * @param startTestExecutionRequest
+     * @return Result of the StartTestExecution operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ResourceNotFoundException
+     *         You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try
+     *         again.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws ConflictException
+     *         The action that you tried to perform couldn't be completed because the resource is in a conflicting
+     *         state. For example, deleting a bot that is in the CREATING state. Try your request again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.StartTestExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StartTestExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartTestExecutionResult startTestExecution(StartTestExecutionRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartTestExecution(request);
+    }
+
+    @SdkInternalApi
+    final StartTestExecutionResult executeStartTestExecution(StartTestExecutionRequest startTestExecutionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startTestExecutionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartTestExecutionRequest> request = null;
+        Response<StartTestExecutionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartTestExecutionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startTestExecutionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartTestExecution");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartTestExecutionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartTestExecutionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * The action to start the generation of test set.
+     * </p>
+     * 
+     * @param startTestSetGenerationRequest
+     * @return Result of the StartTestSetGeneration operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws ConflictException
+     *         The action that you tried to perform couldn't be completed because the resource is in a conflicting
+     *         state. For example, deleting a bot that is in the CREATING state. Try your request again.
+     * @throws ResourceNotFoundException
+     *         You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try
+     *         again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.StartTestSetGeneration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StartTestSetGeneration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartTestSetGenerationResult startTestSetGeneration(StartTestSetGenerationRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartTestSetGeneration(request);
+    }
+
+    @SdkInternalApi
+    final StartTestSetGenerationResult executeStartTestSetGeneration(StartTestSetGenerationRequest startTestSetGenerationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startTestSetGenerationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartTestSetGenerationRequest> request = null;
+        Response<StartTestSetGenerationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartTestSetGenerationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startTestSetGenerationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartTestSetGeneration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartTestSetGenerationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartTestSetGenerationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5075,6 +6665,75 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateSlotTypeResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateSlotTypeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * The action to update the test set.
+     * </p>
+     * 
+     * @param updateTestSetRequest
+     * @return Result of the UpdateTestSet operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws PreconditionFailedException
+     *         Your request couldn't be completed because one or more request fields aren't valid. Check the fields in
+     *         your request and try again.
+     * @throws ConflictException
+     *         The action that you tried to perform couldn't be completed because the resource is in a conflicting
+     *         state. For example, deleting a bot that is in the CREATING state. Try your request again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.UpdateTestSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/UpdateTestSet" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdateTestSetResult updateTestSet(UpdateTestSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateTestSet(request);
+    }
+
+    @SdkInternalApi
+    final UpdateTestSetResult executeUpdateTestSet(UpdateTestSetRequest updateTestSetRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateTestSetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateTestSetRequest> request = null;
+        Response<UpdateTestSetResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateTestSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateTestSetRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTestSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateTestSetResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateTestSetResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

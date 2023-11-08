@@ -31,6 +31,8 @@ public class ServiceIntegrationConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OpsCenter").build();
     private static final MarshallingInfo<StructuredPojo> LOGSANOMALYDETECTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LogsAnomalyDetection").build();
+    private static final MarshallingInfo<StructuredPojo> KMSSERVERSIDEENCRYPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KMSServerSideEncryption").build();
 
     private static final ServiceIntegrationConfigMarshaller instance = new ServiceIntegrationConfigMarshaller();
 
@@ -50,6 +52,7 @@ public class ServiceIntegrationConfigMarshaller {
         try {
             protocolMarshaller.marshall(serviceIntegrationConfig.getOpsCenter(), OPSCENTER_BINDING);
             protocolMarshaller.marshall(serviceIntegrationConfig.getLogsAnomalyDetection(), LOGSANOMALYDETECTION_BINDING);
+            protocolMarshaller.marshall(serviceIntegrationConfig.getKMSServerSideEncryption(), KMSSERVERSIDEENCRYPTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

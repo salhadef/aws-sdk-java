@@ -12,32 +12,63 @@
  */
 package com.amazonaws.services.sqs.model.transform;
 
-import org.w3c.dom.Node;
+import java.math.*;
+
 import javax.annotation.Generated;
 
-import com.amazonaws.AmazonServiceException;
+import com.amazonaws.services.sqs.model.*;
+import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
+import com.amazonaws.transform.*;
 
-import com.amazonaws.transform.StandardErrorUnmarshaller;
+import com.fasterxml.jackson.core.JsonToken;
+import static com.fasterxml.jackson.core.JsonToken.*;
 
-import com.amazonaws.services.sqs.model.BatchRequestTooLongException;
-
+/**
+ * BatchRequestTooLongException JSON Unmarshaller
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class BatchRequestTooLongExceptionUnmarshaller extends StandardErrorUnmarshaller {
-
-    public BatchRequestTooLongExceptionUnmarshaller() {
-        super(BatchRequestTooLongException.class);
+public class BatchRequestTooLongExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
+    private BatchRequestTooLongExceptionUnmarshaller() {
+        super(com.amazonaws.services.sqs.model.BatchRequestTooLongException.class, "BatchRequestTooLong");
     }
 
     @Override
-    public AmazonServiceException unmarshall(Node node) throws Exception {
-        // Bail out if this isn't the right error code that this
-        // marshaller understands
-        String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("AWS.SimpleQueueService.BatchRequestTooLong"))
+    public com.amazonaws.services.sqs.model.BatchRequestTooLongException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
+        com.amazonaws.services.sqs.model.BatchRequestTooLongException batchRequestTooLongException = new com.amazonaws.services.sqs.model.BatchRequestTooLongException(
+                null);
+
+        int originalDepth = context.getCurrentDepth();
+        String currentParentElement = context.getCurrentParentElement();
+        int targetDepth = originalDepth + 1;
+
+        JsonToken token = context.getCurrentToken();
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL) {
             return null;
+        }
 
-        BatchRequestTooLongException e = (BatchRequestTooLongException) super.unmarshall(node);
+        while (true) {
+            if (token == null)
+                break;
 
-        return e;
+            if (token == FIELD_NAME || token == START_OBJECT) {
+            } else if (token == END_ARRAY || token == END_OBJECT) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
+                }
+            }
+            token = context.nextToken();
+        }
+        return batchRequestTooLongException;
+    }
+
+    private static BatchRequestTooLongExceptionUnmarshaller instance;
+
+    public static BatchRequestTooLongExceptionUnmarshaller getInstance() {
+        if (instance == null)
+            instance = new BatchRequestTooLongExceptionUnmarshaller();
+        return instance;
     }
 }

@@ -50,6 +50,8 @@ public class ModelDashboardMonitoringScheduleMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MonitoringAlertSummaries").build();
     private static final MarshallingInfo<StructuredPojo> LASTMONITORINGEXECUTIONSUMMARY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastMonitoringExecutionSummary").build();
+    private static final MarshallingInfo<StructuredPojo> BATCHTRANSFORMINPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BatchTransformInput").build();
 
     private static final ModelDashboardMonitoringScheduleMarshaller instance = new ModelDashboardMonitoringScheduleMarshaller();
 
@@ -78,6 +80,7 @@ public class ModelDashboardMonitoringScheduleMarshaller {
             protocolMarshaller.marshall(modelDashboardMonitoringSchedule.getEndpointName(), ENDPOINTNAME_BINDING);
             protocolMarshaller.marshall(modelDashboardMonitoringSchedule.getMonitoringAlertSummaries(), MONITORINGALERTSUMMARIES_BINDING);
             protocolMarshaller.marshall(modelDashboardMonitoringSchedule.getLastMonitoringExecutionSummary(), LASTMONITORINGEXECUTIONSUMMARY_BINDING);
+            protocolMarshaller.marshall(modelDashboardMonitoringSchedule.getBatchTransformInput(), BATCHTRANSFORMINPUT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

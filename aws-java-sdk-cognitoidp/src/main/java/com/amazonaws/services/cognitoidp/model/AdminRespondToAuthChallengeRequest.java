@@ -105,6 +105,13 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
      * actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute. This happens even if you specified
      * an alias in your call to <code>AdminInitiateAuth</code>.
      * </p>
+     * <p>
+     * For more information about <code>SECRET_HASH</code>, see <a href=
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash"
+     * >Computing secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html"
+     * >Working with user devices in your user pool</a>.
+     * </p>
      */
     private java.util.Map<String, String> challengeResponses;
     /**
@@ -449,6 +456,13 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
      * actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute. This happens even if you specified
      * an alias in your call to <code>AdminInitiateAuth</code>.
      * </p>
+     * <p>
+     * For more information about <code>SECRET_HASH</code>, see <a href=
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash"
+     * >Computing secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html"
+     * >Working with user devices in your user pool</a>.
+     * </p>
      * 
      * @return The challenge responses. These are inputs corresponding to the value of <code>ChallengeName</code>, for
      *         example:</p>
@@ -504,6 +518,13 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
      *         as an email address or phone number). To make this simpler, the <code>AdminInitiateAuth</code> response
      *         includes the actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute. This happens
      *         even if you specified an alias in your call to <code>AdminInitiateAuth</code>.
+     *         </p>
+     *         <p>
+     *         For more information about <code>SECRET_HASH</code>, see <a href=
+     *         "https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash"
+     *         >Computing secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     *         href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html"
+     *         >Working with user devices in your user pool</a>.
      */
 
     public java.util.Map<String, String> getChallengeResponses() {
@@ -567,6 +588,13 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
      * actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute. This happens even if you specified
      * an alias in your call to <code>AdminInitiateAuth</code>.
      * </p>
+     * <p>
+     * For more information about <code>SECRET_HASH</code>, see <a href=
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash"
+     * >Computing secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html"
+     * >Working with user devices in your user pool</a>.
+     * </p>
      * 
      * @param challengeResponses
      *        The challenge responses. These are inputs corresponding to the value of <code>ChallengeName</code>, for
@@ -623,6 +651,13 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
      *        an email address or phone number). To make this simpler, the <code>AdminInitiateAuth</code> response
      *        includes the actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute. This happens
      *        even if you specified an alias in your call to <code>AdminInitiateAuth</code>.
+     *        </p>
+     *        <p>
+     *        For more information about <code>SECRET_HASH</code>, see <a href=
+     *        "https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash"
+     *        >Computing secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     *        href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html"
+     *        >Working with user devices in your user pool</a>.
      */
 
     public void setChallengeResponses(java.util.Map<String, String> challengeResponses) {
@@ -686,6 +721,13 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
      * actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute. This happens even if you specified
      * an alias in your call to <code>AdminInitiateAuth</code>.
      * </p>
+     * <p>
+     * For more information about <code>SECRET_HASH</code>, see <a href=
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash"
+     * >Computing secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html"
+     * >Working with user devices in your user pool</a>.
+     * </p>
      * 
      * @param challengeResponses
      *        The challenge responses. These are inputs corresponding to the value of <code>ChallengeName</code>, for
@@ -742,6 +784,13 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
      *        an email address or phone number). To make this simpler, the <code>AdminInitiateAuth</code> response
      *        includes the actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute. This happens
      *        even if you specified an alias in your call to <code>AdminInitiateAuth</code>.
+     *        </p>
+     *        <p>
+     *        For more information about <code>SECRET_HASH</code>, see <a href=
+     *        "https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash"
+     *        >Computing secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     *        href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html"
+     *        >Working with user devices in your user pool</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1513,9 +1562,9 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
         if (getChallengeName() != null)
             sb.append("ChallengeName: ").append(getChallengeName()).append(",");
         if (getChallengeResponses() != null)
-            sb.append("ChallengeResponses: ").append(getChallengeResponses()).append(",");
+            sb.append("ChallengeResponses: ").append("***Sensitive Data Redacted***").append(",");
         if (getSession() != null)
-            sb.append("Session: ").append(getSession()).append(",");
+            sb.append("Session: ").append("***Sensitive Data Redacted***").append(",");
         if (getAnalyticsMetadata() != null)
             sb.append("AnalyticsMetadata: ").append(getAnalyticsMetadata()).append(",");
         if (getContextData() != null)

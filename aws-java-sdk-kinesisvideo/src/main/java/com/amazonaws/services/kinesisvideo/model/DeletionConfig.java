@@ -50,7 +50,7 @@ public class DeletionConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Since the default value is set to <code>true</code>, configure the uploader schedule such that the media files
-     * are not being deleted before they are initially uploaded to AWS cloud.
+     * are not being deleted before they are initially uploaded to the Amazon Web Services cloud.
      * </p>
      */
     private Boolean deleteAfterUpload;
@@ -150,7 +150,7 @@ public class DeletionConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Since the default value is set to <code>true</code>, configure the uploader schedule such that the media files
-     * are not being deleted before they are initially uploaded to AWS cloud.
+     * are not being deleted before they are initially uploaded to the Amazon Web Services cloud.
      * </p>
      * 
      * @param deleteAfterUpload
@@ -160,7 +160,7 @@ public class DeletionConfig implements Serializable, Cloneable, StructuredPojo {
      *        <code>EdgeRetentionInHours</code>, or the <code>MaxLocalMediaSizeInMB</code>, has been reached. </p>
      *        <p>
      *        Since the default value is set to <code>true</code>, configure the uploader schedule such that the media
-     *        files are not being deleted before they are initially uploaded to AWS cloud.
+     *        files are not being deleted before they are initially uploaded to the Amazon Web Services cloud.
      */
 
     public void setDeleteAfterUpload(Boolean deleteAfterUpload) {
@@ -176,7 +176,7 @@ public class DeletionConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Since the default value is set to <code>true</code>, configure the uploader schedule such that the media files
-     * are not being deleted before they are initially uploaded to AWS cloud.
+     * are not being deleted before they are initially uploaded to the Amazon Web Services cloud.
      * </p>
      * 
      * @return The <code>boolean</code> value used to indicate whether or not you want to mark the media for deletion,
@@ -185,7 +185,7 @@ public class DeletionConfig implements Serializable, Cloneable, StructuredPojo {
      *         <code>EdgeRetentionInHours</code>, or the <code>MaxLocalMediaSizeInMB</code>, has been reached. </p>
      *         <p>
      *         Since the default value is set to <code>true</code>, configure the uploader schedule such that the media
-     *         files are not being deleted before they are initially uploaded to AWS cloud.
+     *         files are not being deleted before they are initially uploaded to the Amazon Web Services cloud.
      */
 
     public Boolean getDeleteAfterUpload() {
@@ -201,7 +201,7 @@ public class DeletionConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Since the default value is set to <code>true</code>, configure the uploader schedule such that the media files
-     * are not being deleted before they are initially uploaded to AWS cloud.
+     * are not being deleted before they are initially uploaded to the Amazon Web Services cloud.
      * </p>
      * 
      * @param deleteAfterUpload
@@ -211,7 +211,7 @@ public class DeletionConfig implements Serializable, Cloneable, StructuredPojo {
      *        <code>EdgeRetentionInHours</code>, or the <code>MaxLocalMediaSizeInMB</code>, has been reached. </p>
      *        <p>
      *        Since the default value is set to <code>true</code>, configure the uploader schedule such that the media
-     *        files are not being deleted before they are initially uploaded to AWS cloud.
+     *        files are not being deleted before they are initially uploaded to the Amazon Web Services cloud.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -229,7 +229,7 @@ public class DeletionConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Since the default value is set to <code>true</code>, configure the uploader schedule such that the media files
-     * are not being deleted before they are initially uploaded to AWS cloud.
+     * are not being deleted before they are initially uploaded to the Amazon Web Services cloud.
      * </p>
      * 
      * @return The <code>boolean</code> value used to indicate whether or not you want to mark the media for deletion,
@@ -238,7 +238,7 @@ public class DeletionConfig implements Serializable, Cloneable, StructuredPojo {
      *         <code>EdgeRetentionInHours</code>, or the <code>MaxLocalMediaSizeInMB</code>, has been reached. </p>
      *         <p>
      *         Since the default value is set to <code>true</code>, configure the uploader schedule such that the media
-     *         files are not being deleted before they are initially uploaded to AWS cloud.
+     *         files are not being deleted before they are initially uploaded to the Amazon Web Services cloud.
      */
 
     public Boolean isDeleteAfterUpload() {

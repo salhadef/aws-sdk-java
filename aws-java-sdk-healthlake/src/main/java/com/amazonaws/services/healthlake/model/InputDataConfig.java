@@ -30,18 +30,18 @@ public class InputDataConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The S3Uri is the user specified S3 location of the FHIR data to be imported into Amazon HealthLake.
+     * The S3Uri is the user specified S3 location of the FHIR data to be imported into AWS HealthLake.
      * </p>
      */
     private String s3Uri;
 
     /**
      * <p>
-     * The S3Uri is the user specified S3 location of the FHIR data to be imported into Amazon HealthLake.
+     * The S3Uri is the user specified S3 location of the FHIR data to be imported into AWS HealthLake.
      * </p>
      * 
      * @param s3Uri
-     *        The S3Uri is the user specified S3 location of the FHIR data to be imported into Amazon HealthLake.
+     *        The S3Uri is the user specified S3 location of the FHIR data to be imported into AWS HealthLake.
      */
 
     public void setS3Uri(String s3Uri) {
@@ -50,10 +50,10 @@ public class InputDataConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The S3Uri is the user specified S3 location of the FHIR data to be imported into Amazon HealthLake.
+     * The S3Uri is the user specified S3 location of the FHIR data to be imported into AWS HealthLake.
      * </p>
      * 
-     * @return The S3Uri is the user specified S3 location of the FHIR data to be imported into Amazon HealthLake.
+     * @return The S3Uri is the user specified S3 location of the FHIR data to be imported into AWS HealthLake.
      */
 
     public String getS3Uri() {
@@ -62,11 +62,11 @@ public class InputDataConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The S3Uri is the user specified S3 location of the FHIR data to be imported into Amazon HealthLake.
+     * The S3Uri is the user specified S3 location of the FHIR data to be imported into AWS HealthLake.
      * </p>
      * 
      * @param s3Uri
-     *        The S3Uri is the user specified S3 location of the FHIR data to be imported into Amazon HealthLake.
+     *        The S3Uri is the user specified S3 location of the FHIR data to be imported into AWS HealthLake.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

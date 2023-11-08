@@ -209,6 +209,19 @@ public class AbstractAWSSsmSapAsync extends AbstractAWSSsmSap implements AWSSsmS
     }
 
     @Override
+    public java.util.concurrent.Future<StartApplicationRefreshResult> startApplicationRefreshAsync(StartApplicationRefreshRequest request) {
+
+        return startApplicationRefreshAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartApplicationRefreshResult> startApplicationRefreshAsync(StartApplicationRefreshRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartApplicationRefreshRequest, StartApplicationRefreshResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);

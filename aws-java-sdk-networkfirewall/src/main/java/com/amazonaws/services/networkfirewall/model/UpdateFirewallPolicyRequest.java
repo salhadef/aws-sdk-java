@@ -58,7 +58,9 @@ public class UpdateFirewallPolicyRequest extends com.amazonaws.AmazonWebServiceR
     private String firewallPolicyName;
     /**
      * <p>
-     * The updated firewall policy to use for the firewall.
+     * The updated firewall policy to use for the firewall. You can't add or remove a <a>TLSInspectionConfiguration</a>
+     * after you create a firewall policy. However, you can replace an existing TLS inspection configuration with
+     * another <code>TLSInspectionConfiguration</code>.
      * </p>
      */
     private FirewallPolicy firewallPolicy;
@@ -289,11 +291,15 @@ public class UpdateFirewallPolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The updated firewall policy to use for the firewall.
+     * The updated firewall policy to use for the firewall. You can't add or remove a <a>TLSInspectionConfiguration</a>
+     * after you create a firewall policy. However, you can replace an existing TLS inspection configuration with
+     * another <code>TLSInspectionConfiguration</code>.
      * </p>
      * 
      * @param firewallPolicy
-     *        The updated firewall policy to use for the firewall.
+     *        The updated firewall policy to use for the firewall. You can't add or remove a
+     *        <a>TLSInspectionConfiguration</a> after you create a firewall policy. However, you can replace an existing
+     *        TLS inspection configuration with another <code>TLSInspectionConfiguration</code>.
      */
 
     public void setFirewallPolicy(FirewallPolicy firewallPolicy) {
@@ -302,10 +308,14 @@ public class UpdateFirewallPolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The updated firewall policy to use for the firewall.
+     * The updated firewall policy to use for the firewall. You can't add or remove a <a>TLSInspectionConfiguration</a>
+     * after you create a firewall policy. However, you can replace an existing TLS inspection configuration with
+     * another <code>TLSInspectionConfiguration</code>.
      * </p>
      * 
-     * @return The updated firewall policy to use for the firewall.
+     * @return The updated firewall policy to use for the firewall. You can't add or remove a
+     *         <a>TLSInspectionConfiguration</a> after you create a firewall policy. However, you can replace an
+     *         existing TLS inspection configuration with another <code>TLSInspectionConfiguration</code>.
      */
 
     public FirewallPolicy getFirewallPolicy() {
@@ -314,11 +324,15 @@ public class UpdateFirewallPolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The updated firewall policy to use for the firewall.
+     * The updated firewall policy to use for the firewall. You can't add or remove a <a>TLSInspectionConfiguration</a>
+     * after you create a firewall policy. However, you can replace an existing TLS inspection configuration with
+     * another <code>TLSInspectionConfiguration</code>.
      * </p>
      * 
      * @param firewallPolicy
-     *        The updated firewall policy to use for the firewall.
+     *        The updated firewall policy to use for the firewall. You can't add or remove a
+     *        <a>TLSInspectionConfiguration</a> after you create a firewall policy. However, you can replace an existing
+     *        TLS inspection configuration with another <code>TLSInspectionConfiguration</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

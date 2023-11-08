@@ -44,10 +44,25 @@ public class DeploymentEvent implements Serializable, Cloneable, StructuredPojo 
     private String triggeredBy;
     /**
      * <p>
-     * A description of the deployment event. Descriptions include, but are not limited to, the user account or the
-     * Amazon CloudWatch alarm ARN that initiated a rollback, the percentage of hosts that received the deployment, or
-     * in the case of an internal error, a recommendation to attempt a new deployment.
+     * A description of the deployment event. Descriptions include, but are not limited to, the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The Amazon Web Services account or the Amazon CloudWatch alarm ARN that initiated a rollback.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The percentage of hosts that received the deployment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A recommendation to attempt a new deployment (in the case of an internal error).
+     * </p>
+     * </li>
+     * </ul>
      */
     private String description;
     /**
@@ -203,15 +218,44 @@ public class DeploymentEvent implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A description of the deployment event. Descriptions include, but are not limited to, the user account or the
-     * Amazon CloudWatch alarm ARN that initiated a rollback, the percentage of hosts that received the deployment, or
-     * in the case of an internal error, a recommendation to attempt a new deployment.
+     * A description of the deployment event. Descriptions include, but are not limited to, the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The Amazon Web Services account or the Amazon CloudWatch alarm ARN that initiated a rollback.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The percentage of hosts that received the deployment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A recommendation to attempt a new deployment (in the case of an internal error).
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param description
-     *        A description of the deployment event. Descriptions include, but are not limited to, the user account or
-     *        the Amazon CloudWatch alarm ARN that initiated a rollback, the percentage of hosts that received the
-     *        deployment, or in the case of an internal error, a recommendation to attempt a new deployment.
+     *        A description of the deployment event. Descriptions include, but are not limited to, the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The Amazon Web Services account or the Amazon CloudWatch alarm ARN that initiated a rollback.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The percentage of hosts that received the deployment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A recommendation to attempt a new deployment (in the case of an internal error).
+     *        </p>
+     *        </li>
      */
 
     public void setDescription(String description) {
@@ -220,14 +264,43 @@ public class DeploymentEvent implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A description of the deployment event. Descriptions include, but are not limited to, the user account or the
-     * Amazon CloudWatch alarm ARN that initiated a rollback, the percentage of hosts that received the deployment, or
-     * in the case of an internal error, a recommendation to attempt a new deployment.
+     * A description of the deployment event. Descriptions include, but are not limited to, the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The Amazon Web Services account or the Amazon CloudWatch alarm ARN that initiated a rollback.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The percentage of hosts that received the deployment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A recommendation to attempt a new deployment (in the case of an internal error).
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return A description of the deployment event. Descriptions include, but are not limited to, the user account or
-     *         the Amazon CloudWatch alarm ARN that initiated a rollback, the percentage of hosts that received the
-     *         deployment, or in the case of an internal error, a recommendation to attempt a new deployment.
+     * @return A description of the deployment event. Descriptions include, but are not limited to, the following:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The Amazon Web Services account or the Amazon CloudWatch alarm ARN that initiated a rollback.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The percentage of hosts that received the deployment.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A recommendation to attempt a new deployment (in the case of an internal error).
+     *         </p>
+     *         </li>
      */
 
     public String getDescription() {
@@ -236,15 +309,44 @@ public class DeploymentEvent implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A description of the deployment event. Descriptions include, but are not limited to, the user account or the
-     * Amazon CloudWatch alarm ARN that initiated a rollback, the percentage of hosts that received the deployment, or
-     * in the case of an internal error, a recommendation to attempt a new deployment.
+     * A description of the deployment event. Descriptions include, but are not limited to, the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The Amazon Web Services account or the Amazon CloudWatch alarm ARN that initiated a rollback.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The percentage of hosts that received the deployment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A recommendation to attempt a new deployment (in the case of an internal error).
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param description
-     *        A description of the deployment event. Descriptions include, but are not limited to, the user account or
-     *        the Amazon CloudWatch alarm ARN that initiated a rollback, the percentage of hosts that received the
-     *        deployment, or in the case of an internal error, a recommendation to attempt a new deployment.
+     *        A description of the deployment event. Descriptions include, but are not limited to, the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The Amazon Web Services account or the Amazon CloudWatch alarm ARN that initiated a rollback.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The percentage of hosts that received the deployment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A recommendation to attempt a new deployment (in the case of an internal error).
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

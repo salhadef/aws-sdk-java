@@ -28,7 +28,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -103,7 +103,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
      * <p>
-     * One or more VPC peering connection IDs.
+     * The IDs of the VPC peering connections.
      * </p>
      * <p>
      * Default: Describes all your VPC peering connections.
@@ -128,7 +128,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -200,7 +200,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      * </li>
      * </ul>
      * 
-     * @return One or more filters.</p>
+     * @return The filters.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -282,7 +282,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -355,7 +355,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -439,7 +439,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -517,7 +517,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      * </p>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -603,7 +603,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -676,7 +676,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -757,13 +757,13 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * One or more VPC peering connection IDs.
+     * The IDs of the VPC peering connections.
      * </p>
      * <p>
      * Default: Describes all your VPC peering connections.
      * </p>
      * 
-     * @return One or more VPC peering connection IDs.</p>
+     * @return The IDs of the VPC peering connections.</p>
      *         <p>
      *         Default: Describes all your VPC peering connections.
      */
@@ -777,14 +777,14 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * One or more VPC peering connection IDs.
+     * The IDs of the VPC peering connections.
      * </p>
      * <p>
      * Default: Describes all your VPC peering connections.
      * </p>
      * 
      * @param vpcPeeringConnectionIds
-     *        One or more VPC peering connection IDs.</p>
+     *        The IDs of the VPC peering connections.</p>
      *        <p>
      *        Default: Describes all your VPC peering connections.
      */
@@ -800,7 +800,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * One or more VPC peering connection IDs.
+     * The IDs of the VPC peering connections.
      * </p>
      * <p>
      * Default: Describes all your VPC peering connections.
@@ -812,7 +812,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      * </p>
      * 
      * @param vpcPeeringConnectionIds
-     *        One or more VPC peering connection IDs.</p>
+     *        The IDs of the VPC peering connections.</p>
      *        <p>
      *        Default: Describes all your VPC peering connections.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -830,14 +830,14 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * One or more VPC peering connection IDs.
+     * The IDs of the VPC peering connections.
      * </p>
      * <p>
      * Default: Describes all your VPC peering connections.
      * </p>
      * 
      * @param vpcPeeringConnectionIds
-     *        One or more VPC peering connection IDs.</p>
+     *        The IDs of the VPC peering connections.</p>
      *        <p>
      *        Default: Describes all your VPC peering connections.
      * @return Returns a reference to this object so that method calls can be chained together.

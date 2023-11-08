@@ -31,6 +31,8 @@ public class DataLakeSettingsMarshaller {
 
     private static final MarshallingInfo<List> DATALAKEADMINS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataLakeAdmins").build();
+    private static final MarshallingInfo<List> READONLYADMINS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReadOnlyAdmins").build();
     private static final MarshallingInfo<List> CREATEDATABASEDEFAULTPERMISSIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreateDatabaseDefaultPermissions").build();
     private static final MarshallingInfo<List> CREATETABLEDEFAULTPERMISSIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -41,6 +43,8 @@ public class DataLakeSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TrustedResourceOwners").build();
     private static final MarshallingInfo<Boolean> ALLOWEXTERNALDATAFILTERING_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AllowExternalDataFiltering").build();
+    private static final MarshallingInfo<Boolean> ALLOWFULLTABLEEXTERNALDATAACCESS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AllowFullTableExternalDataAccess").build();
     private static final MarshallingInfo<List> EXTERNALDATAFILTERINGALLOWLIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExternalDataFilteringAllowList").build();
     private static final MarshallingInfo<List> AUTHORIZEDSESSIONTAGVALUELIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -63,11 +67,13 @@ public class DataLakeSettingsMarshaller {
 
         try {
             protocolMarshaller.marshall(dataLakeSettings.getDataLakeAdmins(), DATALAKEADMINS_BINDING);
+            protocolMarshaller.marshall(dataLakeSettings.getReadOnlyAdmins(), READONLYADMINS_BINDING);
             protocolMarshaller.marshall(dataLakeSettings.getCreateDatabaseDefaultPermissions(), CREATEDATABASEDEFAULTPERMISSIONS_BINDING);
             protocolMarshaller.marshall(dataLakeSettings.getCreateTableDefaultPermissions(), CREATETABLEDEFAULTPERMISSIONS_BINDING);
             protocolMarshaller.marshall(dataLakeSettings.getParameters(), PARAMETERS_BINDING);
             protocolMarshaller.marshall(dataLakeSettings.getTrustedResourceOwners(), TRUSTEDRESOURCEOWNERS_BINDING);
             protocolMarshaller.marshall(dataLakeSettings.getAllowExternalDataFiltering(), ALLOWEXTERNALDATAFILTERING_BINDING);
+            protocolMarshaller.marshall(dataLakeSettings.getAllowFullTableExternalDataAccess(), ALLOWFULLTABLEEXTERNALDATAACCESS_BINDING);
             protocolMarshaller.marshall(dataLakeSettings.getExternalDataFilteringAllowList(), EXTERNALDATAFILTERINGALLOWLIST_BINDING);
             protocolMarshaller.marshall(dataLakeSettings.getAuthorizedSessionTagValueList(), AUTHORIZEDSESSIONTAGVALUELIST_BINDING);
         } catch (Exception e) {

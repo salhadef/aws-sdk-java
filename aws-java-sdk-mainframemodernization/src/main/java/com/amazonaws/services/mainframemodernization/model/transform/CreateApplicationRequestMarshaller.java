@@ -44,6 +44,8 @@ public class CreateApplicationRequestMarshaller {
             .marshallLocationName("kmsKeyId").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("roleArn").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
 
@@ -69,6 +71,7 @@ public class CreateApplicationRequestMarshaller {
             protocolMarshaller.marshall(createApplicationRequest.getEngineType(), ENGINETYPE_BINDING);
             protocolMarshaller.marshall(createApplicationRequest.getKmsKeyId(), KMSKEYID_BINDING);
             protocolMarshaller.marshall(createApplicationRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(createApplicationRequest.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(createApplicationRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

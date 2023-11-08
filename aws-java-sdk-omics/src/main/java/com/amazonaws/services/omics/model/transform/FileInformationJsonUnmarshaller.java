@@ -48,17 +48,17 @@ public class FileInformationJsonUnmarshaller implements Unmarshaller<FileInforma
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("contentLength", targetDepth)) {
+                if (context.testExpression("totalParts", targetDepth)) {
                     context.nextToken();
-                    fileInformation.setContentLength(context.getUnmarshaller(Long.class).unmarshall(context));
+                    fileInformation.setTotalParts(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("partSize", targetDepth)) {
                     context.nextToken();
                     fileInformation.setPartSize(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
-                if (context.testExpression("totalParts", targetDepth)) {
+                if (context.testExpression("contentLength", targetDepth)) {
                     context.nextToken();
-                    fileInformation.setTotalParts(context.getUnmarshaller(Integer.class).unmarshall(context));
+                    fileInformation.setContentLength(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

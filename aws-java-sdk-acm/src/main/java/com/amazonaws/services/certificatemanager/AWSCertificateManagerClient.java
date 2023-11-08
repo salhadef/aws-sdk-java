@@ -45,6 +45,7 @@ import com.amazonaws.services.certificatemanager.waiters.AWSCertificateManagerWa
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.certificatemanager.model.*;
+
 import com.amazonaws.services.certificatemanager.model.transform.*;
 
 /**

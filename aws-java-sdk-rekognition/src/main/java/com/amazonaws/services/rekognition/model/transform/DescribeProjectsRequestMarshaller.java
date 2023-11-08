@@ -34,6 +34,8 @@ public class DescribeProjectsRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
     private static final MarshallingInfo<List> PROJECTNAMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ProjectNames").build();
+    private static final MarshallingInfo<List> FEATURES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Features").build();
 
     private static final DescribeProjectsRequestMarshaller instance = new DescribeProjectsRequestMarshaller();
 
@@ -54,6 +56,7 @@ public class DescribeProjectsRequestMarshaller {
             protocolMarshaller.marshall(describeProjectsRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(describeProjectsRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(describeProjectsRequest.getProjectNames(), PROJECTNAMES_BINDING);
+            protocolMarshaller.marshall(describeProjectsRequest.getFeatures(), FEATURES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

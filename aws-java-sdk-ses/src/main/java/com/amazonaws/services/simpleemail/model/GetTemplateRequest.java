@@ -27,18 +27,18 @@ public class GetTemplateRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the template you want to retrieve.
+     * The name of the template to retrieve.
      * </p>
      */
     private String templateName;
 
     /**
      * <p>
-     * The name of the template you want to retrieve.
+     * The name of the template to retrieve.
      * </p>
      * 
      * @param templateName
-     *        The name of the template you want to retrieve.
+     *        The name of the template to retrieve.
      */
 
     public void setTemplateName(String templateName) {
@@ -47,10 +47,10 @@ public class GetTemplateRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the template you want to retrieve.
+     * The name of the template to retrieve.
      * </p>
      * 
-     * @return The name of the template you want to retrieve.
+     * @return The name of the template to retrieve.
      */
 
     public String getTemplateName() {
@@ -59,11 +59,11 @@ public class GetTemplateRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the template you want to retrieve.
+     * The name of the template to retrieve.
      * </p>
      * 
      * @param templateName
-     *        The name of the template you want to retrieve.
+     *        The name of the template to retrieve.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

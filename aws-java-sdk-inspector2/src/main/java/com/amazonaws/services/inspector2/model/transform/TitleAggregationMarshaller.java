@@ -28,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class TitleAggregationMarshaller {
 
+    private static final MarshallingInfo<String> FINDINGTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("findingType").build();
     private static final MarshallingInfo<String> RESOURCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceType").build();
     private static final MarshallingInfo<String> SORTBY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -55,6 +57,7 @@ public class TitleAggregationMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(titleAggregation.getFindingType(), FINDINGTYPE_BINDING);
             protocolMarshaller.marshall(titleAggregation.getResourceType(), RESOURCETYPE_BINDING);
             protocolMarshaller.marshall(titleAggregation.getSortBy(), SORTBY_BINDING);
             protocolMarshaller.marshall(titleAggregation.getSortOrder(), SORTORDER_BINDING);

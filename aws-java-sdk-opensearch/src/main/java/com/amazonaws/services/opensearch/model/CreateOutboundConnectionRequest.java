@@ -49,6 +49,12 @@ public class CreateOutboundConnectionRequest extends com.amazonaws.AmazonWebServ
      * </p>
      */
     private String connectionMode;
+    /**
+     * <p>
+     * The <code>ConnectionProperties</code> for the outbound connection.
+     * </p>
+     */
+    private ConnectionProperties connectionProperties;
 
     /**
      * <p>
@@ -230,6 +236,46 @@ public class CreateOutboundConnectionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * The <code>ConnectionProperties</code> for the outbound connection.
+     * </p>
+     * 
+     * @param connectionProperties
+     *        The <code>ConnectionProperties</code> for the outbound connection.
+     */
+
+    public void setConnectionProperties(ConnectionProperties connectionProperties) {
+        this.connectionProperties = connectionProperties;
+    }
+
+    /**
+     * <p>
+     * The <code>ConnectionProperties</code> for the outbound connection.
+     * </p>
+     * 
+     * @return The <code>ConnectionProperties</code> for the outbound connection.
+     */
+
+    public ConnectionProperties getConnectionProperties() {
+        return this.connectionProperties;
+    }
+
+    /**
+     * <p>
+     * The <code>ConnectionProperties</code> for the outbound connection.
+     * </p>
+     * 
+     * @param connectionProperties
+     *        The <code>ConnectionProperties</code> for the outbound connection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateOutboundConnectionRequest withConnectionProperties(ConnectionProperties connectionProperties) {
+        setConnectionProperties(connectionProperties);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -248,7 +294,9 @@ public class CreateOutboundConnectionRequest extends com.amazonaws.AmazonWebServ
         if (getConnectionAlias() != null)
             sb.append("ConnectionAlias: ").append(getConnectionAlias()).append(",");
         if (getConnectionMode() != null)
-            sb.append("ConnectionMode: ").append(getConnectionMode());
+            sb.append("ConnectionMode: ").append(getConnectionMode()).append(",");
+        if (getConnectionProperties() != null)
+            sb.append("ConnectionProperties: ").append(getConnectionProperties());
         sb.append("}");
         return sb.toString();
     }
@@ -279,6 +327,10 @@ public class CreateOutboundConnectionRequest extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getConnectionMode() != null && other.getConnectionMode().equals(this.getConnectionMode()) == false)
             return false;
+        if (other.getConnectionProperties() == null ^ this.getConnectionProperties() == null)
+            return false;
+        if (other.getConnectionProperties() != null && other.getConnectionProperties().equals(this.getConnectionProperties()) == false)
+            return false;
         return true;
     }
 
@@ -291,6 +343,7 @@ public class CreateOutboundConnectionRequest extends com.amazonaws.AmazonWebServ
         hashCode = prime * hashCode + ((getRemoteDomainInfo() == null) ? 0 : getRemoteDomainInfo().hashCode());
         hashCode = prime * hashCode + ((getConnectionAlias() == null) ? 0 : getConnectionAlias().hashCode());
         hashCode = prime * hashCode + ((getConnectionMode() == null) ? 0 : getConnectionMode().hashCode());
+        hashCode = prime * hashCode + ((getConnectionProperties() == null) ? 0 : getConnectionProperties().hashCode());
         return hashCode;
     }
 

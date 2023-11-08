@@ -27,10 +27,10 @@ public class CreateAnnotationStoreRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A description for the store.
+     * The genome reference for the store's annotations.
      * </p>
      */
-    private String description;
+    private ReferenceItem reference;
     /**
      * <p>
      * A name for the store.
@@ -39,10 +39,22 @@ public class CreateAnnotationStoreRequest extends com.amazonaws.AmazonWebService
     private String name;
     /**
      * <p>
-     * The genome reference for the store's annotations.
+     * A description for the store.
      * </p>
      */
-    private ReferenceItem reference;
+    private String description;
+    /**
+     * <p>
+     * Tags for the store.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * The name given to an annotation store version to distinguish it from other versions.
+     * </p>
+     */
+    private String versionName;
     /**
      * <p>
      * Server-side encryption (SSE) settings for the store.
@@ -61,50 +73,44 @@ public class CreateAnnotationStoreRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private StoreOptions storeOptions;
-    /**
-     * <p>
-     * Tags for the store.
-     * </p>
-     */
-    private java.util.Map<String, String> tags;
 
     /**
      * <p>
-     * A description for the store.
+     * The genome reference for the store's annotations.
      * </p>
      * 
-     * @param description
-     *        A description for the store.
+     * @param reference
+     *        The genome reference for the store's annotations.
      */
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setReference(ReferenceItem reference) {
+        this.reference = reference;
     }
 
     /**
      * <p>
-     * A description for the store.
+     * The genome reference for the store's annotations.
      * </p>
      * 
-     * @return A description for the store.
+     * @return The genome reference for the store's annotations.
      */
 
-    public String getDescription() {
-        return this.description;
+    public ReferenceItem getReference() {
+        return this.reference;
     }
 
     /**
      * <p>
-     * A description for the store.
+     * The genome reference for the store's annotations.
      * </p>
      * 
-     * @param description
-     *        A description for the store.
+     * @param reference
+     *        The genome reference for the store's annotations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateAnnotationStoreRequest withDescription(String description) {
-        setDescription(description);
+    public CreateAnnotationStoreRequest withReference(ReferenceItem reference) {
+        setReference(reference);
         return this;
     }
 
@@ -150,41 +156,149 @@ public class CreateAnnotationStoreRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The genome reference for the store's annotations.
+     * A description for the store.
      * </p>
      * 
-     * @param reference
-     *        The genome reference for the store's annotations.
+     * @param description
+     *        A description for the store.
      */
 
-    public void setReference(ReferenceItem reference) {
-        this.reference = reference;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     /**
      * <p>
-     * The genome reference for the store's annotations.
+     * A description for the store.
      * </p>
      * 
-     * @return The genome reference for the store's annotations.
+     * @return A description for the store.
      */
 
-    public ReferenceItem getReference() {
-        return this.reference;
+    public String getDescription() {
+        return this.description;
     }
 
     /**
      * <p>
-     * The genome reference for the store's annotations.
+     * A description for the store.
      * </p>
      * 
-     * @param reference
-     *        The genome reference for the store's annotations.
+     * @param description
+     *        A description for the store.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateAnnotationStoreRequest withReference(ReferenceItem reference) {
-        setReference(reference);
+    public CreateAnnotationStoreRequest withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Tags for the store.
+     * </p>
+     * 
+     * @return Tags for the store.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Tags for the store.
+     * </p>
+     * 
+     * @param tags
+     *        Tags for the store.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * Tags for the store.
+     * </p>
+     * 
+     * @param tags
+     *        Tags for the store.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAnnotationStoreRequest withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see CreateAnnotationStoreRequest#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAnnotationStoreRequest addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAnnotationStoreRequest clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name given to an annotation store version to distinguish it from other versions.
+     * </p>
+     * 
+     * @param versionName
+     *        The name given to an annotation store version to distinguish it from other versions.
+     */
+
+    public void setVersionName(String versionName) {
+        this.versionName = versionName;
+    }
+
+    /**
+     * <p>
+     * The name given to an annotation store version to distinguish it from other versions.
+     * </p>
+     * 
+     * @return The name given to an annotation store version to distinguish it from other versions.
+     */
+
+    public String getVersionName() {
+        return this.versionName;
+    }
+
+    /**
+     * <p>
+     * The name given to an annotation store version to distinguish it from other versions.
+     * </p>
+     * 
+     * @param versionName
+     *        The name given to an annotation store version to distinguish it from other versions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAnnotationStoreRequest withVersionName(String versionName) {
+        setVersionName(versionName);
         return this;
     }
 
@@ -328,74 +442,6 @@ public class CreateAnnotationStoreRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * <p>
-     * Tags for the store.
-     * </p>
-     * 
-     * @return Tags for the store.
-     */
-
-    public java.util.Map<String, String> getTags() {
-        return tags;
-    }
-
-    /**
-     * <p>
-     * Tags for the store.
-     * </p>
-     * 
-     * @param tags
-     *        Tags for the store.
-     */
-
-    public void setTags(java.util.Map<String, String> tags) {
-        this.tags = tags;
-    }
-
-    /**
-     * <p>
-     * Tags for the store.
-     * </p>
-     * 
-     * @param tags
-     *        Tags for the store.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateAnnotationStoreRequest withTags(java.util.Map<String, String> tags) {
-        setTags(tags);
-        return this;
-    }
-
-    /**
-     * Add a single Tags entry
-     *
-     * @see CreateAnnotationStoreRequest#withTags
-     * @returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateAnnotationStoreRequest addTagsEntry(String key, String value) {
-        if (null == this.tags) {
-            this.tags = new java.util.HashMap<String, String>();
-        }
-        if (this.tags.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.tags.put(key, value);
-        return this;
-    }
-
-    /**
-     * Removes all the entries added into Tags.
-     *
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateAnnotationStoreRequest clearTagsEntries() {
-        this.tags = null;
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -407,20 +453,22 @@ public class CreateAnnotationStoreRequest extends com.amazonaws.AmazonWebService
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
-        if (getName() != null)
-            sb.append("Name: ").append(getName()).append(",");
         if (getReference() != null)
             sb.append("Reference: ").append(getReference()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getVersionName() != null)
+            sb.append("VersionName: ").append(getVersionName()).append(",");
         if (getSseConfig() != null)
             sb.append("SseConfig: ").append(getSseConfig()).append(",");
         if (getStoreFormat() != null)
             sb.append("StoreFormat: ").append(getStoreFormat()).append(",");
         if (getStoreOptions() != null)
-            sb.append("StoreOptions: ").append(getStoreOptions()).append(",");
-        if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("StoreOptions: ").append(getStoreOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -435,17 +483,25 @@ public class CreateAnnotationStoreRequest extends com.amazonaws.AmazonWebService
         if (obj instanceof CreateAnnotationStoreRequest == false)
             return false;
         CreateAnnotationStoreRequest other = (CreateAnnotationStoreRequest) obj;
-        if (other.getDescription() == null ^ this.getDescription() == null)
+        if (other.getReference() == null ^ this.getReference() == null)
             return false;
-        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getReference() != null && other.getReference().equals(this.getReference()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
-        if (other.getReference() == null ^ this.getReference() == null)
+        if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getReference() != null && other.getReference().equals(this.getReference()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
+        if (other.getVersionName() == null ^ this.getVersionName() == null)
+            return false;
+        if (other.getVersionName() != null && other.getVersionName().equals(this.getVersionName()) == false)
             return false;
         if (other.getSseConfig() == null ^ this.getSseConfig() == null)
             return false;
@@ -459,10 +515,6 @@ public class CreateAnnotationStoreRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getStoreOptions() != null && other.getStoreOptions().equals(this.getStoreOptions()) == false)
             return false;
-        if (other.getTags() == null ^ this.getTags() == null)
-            return false;
-        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
-            return false;
         return true;
     }
 
@@ -471,13 +523,14 @@ public class CreateAnnotationStoreRequest extends com.amazonaws.AmazonWebService
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getReference() == null) ? 0 : getReference().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getVersionName() == null) ? 0 : getVersionName().hashCode());
         hashCode = prime * hashCode + ((getSseConfig() == null) ? 0 : getSseConfig().hashCode());
         hashCode = prime * hashCode + ((getStoreFormat() == null) ? 0 : getStoreFormat().hashCode());
         hashCode = prime * hashCode + ((getStoreOptions() == null) ? 0 : getStoreOptions().hashCode());
-        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

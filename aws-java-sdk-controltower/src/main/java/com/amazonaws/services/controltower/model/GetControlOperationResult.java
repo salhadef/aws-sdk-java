@@ -23,13 +23,20 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetControlOperationResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** <p/> */
+    /**
+     * <p>
+     * An operation performed by the control.
+     * </p>
+     */
     private ControlOperation controlOperation;
 
     /**
-     * <p/>
+     * <p>
+     * An operation performed by the control.
+     * </p>
      * 
      * @param controlOperation
+     *        An operation performed by the control.
      */
 
     public void setControlOperation(ControlOperation controlOperation) {
@@ -37,9 +44,11 @@ public class GetControlOperationResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * <p/>
+     * <p>
+     * An operation performed by the control.
+     * </p>
      * 
-     * @return
+     * @return An operation performed by the control.
      */
 
     public ControlOperation getControlOperation() {
@@ -47,9 +56,12 @@ public class GetControlOperationResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * <p/>
+     * <p>
+     * An operation performed by the control.
+     * </p>
      * 
      * @param controlOperation
+     *        An operation performed by the control.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -450,7 +450,7 @@ public class GameSessionConnectionInfo implements Serializable, Cloneable, Struc
         if (getGameSessionArn() != null)
             sb.append("GameSessionArn: ").append(getGameSessionArn()).append(",");
         if (getIpAddress() != null)
-            sb.append("IpAddress: ").append(getIpAddress()).append(",");
+            sb.append("IpAddress: ").append("***Sensitive Data Redacted***").append(",");
         if (getDnsName() != null)
             sb.append("DnsName: ").append(getDnsName()).append(",");
         if (getPort() != null)

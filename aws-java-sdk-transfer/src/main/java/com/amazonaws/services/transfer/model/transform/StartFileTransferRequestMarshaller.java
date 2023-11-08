@@ -32,6 +32,12 @@ public class StartFileTransferRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConnectorId").build();
     private static final MarshallingInfo<List> SENDFILEPATHS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("SendFilePaths").build();
+    private static final MarshallingInfo<List> RETRIEVEFILEPATHS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RetrieveFilePaths").build();
+    private static final MarshallingInfo<String> LOCALDIRECTORYPATH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LocalDirectoryPath").build();
+    private static final MarshallingInfo<String> REMOTEDIRECTORYPATH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RemoteDirectoryPath").build();
 
     private static final StartFileTransferRequestMarshaller instance = new StartFileTransferRequestMarshaller();
 
@@ -51,6 +57,9 @@ public class StartFileTransferRequestMarshaller {
         try {
             protocolMarshaller.marshall(startFileTransferRequest.getConnectorId(), CONNECTORID_BINDING);
             protocolMarshaller.marshall(startFileTransferRequest.getSendFilePaths(), SENDFILEPATHS_BINDING);
+            protocolMarshaller.marshall(startFileTransferRequest.getRetrieveFilePaths(), RETRIEVEFILEPATHS_BINDING);
+            protocolMarshaller.marshall(startFileTransferRequest.getLocalDirectoryPath(), LOCALDIRECTORYPATH_BINDING);
+            protocolMarshaller.marshall(startFileTransferRequest.getRemoteDirectoryPath(), REMOTEDIRECTORYPATH_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -46,6 +46,12 @@ public class ColumnConfiguration implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private String role;
+    /**
+     * <p>
+     * The color configurations of the column.
+     * </p>
+     */
+    private ColorsConfiguration colorsConfiguration;
 
     /**
      * <p>
@@ -187,6 +193,46 @@ public class ColumnConfiguration implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The color configurations of the column.
+     * </p>
+     * 
+     * @param colorsConfiguration
+     *        The color configurations of the column.
+     */
+
+    public void setColorsConfiguration(ColorsConfiguration colorsConfiguration) {
+        this.colorsConfiguration = colorsConfiguration;
+    }
+
+    /**
+     * <p>
+     * The color configurations of the column.
+     * </p>
+     * 
+     * @return The color configurations of the column.
+     */
+
+    public ColorsConfiguration getColorsConfiguration() {
+        return this.colorsConfiguration;
+    }
+
+    /**
+     * <p>
+     * The color configurations of the column.
+     * </p>
+     * 
+     * @param colorsConfiguration
+     *        The color configurations of the column.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ColumnConfiguration withColorsConfiguration(ColorsConfiguration colorsConfiguration) {
+        setColorsConfiguration(colorsConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -203,7 +249,9 @@ public class ColumnConfiguration implements Serializable, Cloneable, StructuredP
         if (getFormatConfiguration() != null)
             sb.append("FormatConfiguration: ").append(getFormatConfiguration()).append(",");
         if (getRole() != null)
-            sb.append("Role: ").append(getRole());
+            sb.append("Role: ").append(getRole()).append(",");
+        if (getColorsConfiguration() != null)
+            sb.append("ColorsConfiguration: ").append(getColorsConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -230,6 +278,10 @@ public class ColumnConfiguration implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getRole() != null && other.getRole().equals(this.getRole()) == false)
             return false;
+        if (other.getColorsConfiguration() == null ^ this.getColorsConfiguration() == null)
+            return false;
+        if (other.getColorsConfiguration() != null && other.getColorsConfiguration().equals(this.getColorsConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -241,6 +293,7 @@ public class ColumnConfiguration implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getColumn() == null) ? 0 : getColumn().hashCode());
         hashCode = prime * hashCode + ((getFormatConfiguration() == null) ? 0 : getFormatConfiguration().hashCode());
         hashCode = prime * hashCode + ((getRole() == null) ? 0 : getRole().hashCode());
+        hashCode = prime * hashCode + ((getColorsConfiguration() == null) ? 0 : getColorsConfiguration().hashCode());
         return hashCode;
     }
 

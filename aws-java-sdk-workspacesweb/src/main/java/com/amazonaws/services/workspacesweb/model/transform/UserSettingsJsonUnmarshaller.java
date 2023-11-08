@@ -54,6 +54,10 @@ public class UserSettingsJsonUnmarshaller implements Unmarshaller<UserSettings, 
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("cookieSynchronizationConfiguration", targetDepth)) {
+                    context.nextToken();
+                    userSettings.setCookieSynchronizationConfiguration(CookieSynchronizationConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("copyAllowed", targetDepth)) {
                     context.nextToken();
                     userSettings.setCopyAllowed(context.getUnmarshaller(String.class).unmarshall(context));

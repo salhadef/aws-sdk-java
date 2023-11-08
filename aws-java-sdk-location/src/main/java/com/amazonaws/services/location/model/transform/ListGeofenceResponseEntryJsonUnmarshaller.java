@@ -56,6 +56,11 @@ public class ListGeofenceResponseEntryJsonUnmarshaller implements Unmarshaller<L
                     context.nextToken();
                     listGeofenceResponseEntry.setGeofenceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("GeofenceProperties", targetDepth)) {
+                    context.nextToken();
+                    listGeofenceResponseEntry.setGeofenceProperties(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
+                }
                 if (context.testExpression("Geometry", targetDepth)) {
                     context.nextToken();
                     listGeofenceResponseEntry.setGeometry(GeofenceGeometryJsonUnmarshaller.getInstance().unmarshall(context));

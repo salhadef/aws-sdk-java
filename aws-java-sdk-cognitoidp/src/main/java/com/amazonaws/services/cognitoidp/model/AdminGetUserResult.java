@@ -28,7 +28,7 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The user name of the user about whom you're receiving information.
+     * The username of the user that you requested.
      * </p>
      */
     private String username;
@@ -46,7 +46,8 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
     private java.util.Date userCreateDate;
     /**
      * <p>
-     * The date the user was last modified.
+     * The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when
+     * the item was modified.
      * </p>
      */
     private java.util.Date userLastModifiedDate;
@@ -69,11 +70,6 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
      * <li>
      * <p>
      * CONFIRMED - User has been confirmed.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * ARCHIVED - User is no longer active.
      * </p>
      * </li>
      * <li>
@@ -120,11 +116,11 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The user name of the user about whom you're receiving information.
+     * The username of the user that you requested.
      * </p>
      * 
      * @param username
-     *        The user name of the user about whom you're receiving information.
+     *        The username of the user that you requested.
      */
 
     public void setUsername(String username) {
@@ -133,10 +129,10 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The user name of the user about whom you're receiving information.
+     * The username of the user that you requested.
      * </p>
      * 
-     * @return The user name of the user about whom you're receiving information.
+     * @return The username of the user that you requested.
      */
 
     public String getUsername() {
@@ -145,11 +141,11 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The user name of the user about whom you're receiving information.
+     * The username of the user that you requested.
      * </p>
      * 
      * @param username
-     *        The user name of the user about whom you're receiving information.
+     *        The username of the user that you requested.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -270,11 +266,13 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The date the user was last modified.
+     * The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when
+     * the item was modified.
      * </p>
      * 
      * @param userLastModifiedDate
-     *        The date the user was last modified.
+     *        The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     *        format, when the item was modified.
      */
 
     public void setUserLastModifiedDate(java.util.Date userLastModifiedDate) {
@@ -283,10 +281,12 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The date the user was last modified.
+     * The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when
+     * the item was modified.
      * </p>
      * 
-     * @return The date the user was last modified.
+     * @return The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     *         format, when the item was modified.
      */
 
     public java.util.Date getUserLastModifiedDate() {
@@ -295,11 +295,13 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The date the user was last modified.
+     * The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when
+     * the item was modified.
      * </p>
      * 
      * @param userLastModifiedDate
-     *        The date the user was last modified.
+     *        The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     *        format, when the item was modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -377,11 +379,6 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
      * </li>
      * <li>
      * <p>
-     * ARCHIVED - User is no longer active.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * UNKNOWN - User status isn't known.
      * </p>
      * </li>
@@ -410,11 +407,6 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
      *        <li>
      *        <p>
      *        CONFIRMED - User has been confirmed.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        ARCHIVED - User is no longer active.
      *        </p>
      *        </li>
      *        <li>
@@ -458,11 +450,6 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
      * </li>
      * <li>
      * <p>
-     * ARCHIVED - User is no longer active.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * UNKNOWN - User status isn't known.
      * </p>
      * </li>
@@ -490,11 +477,6 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
      *         <li>
      *         <p>
      *         CONFIRMED - User has been confirmed.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         ARCHIVED - User is no longer active.
      *         </p>
      *         </li>
      *         <li>
@@ -538,11 +520,6 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
      * </li>
      * <li>
      * <p>
-     * ARCHIVED - User is no longer active.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * UNKNOWN - User status isn't known.
      * </p>
      * </li>
@@ -571,11 +548,6 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
      *        <li>
      *        <p>
      *        CONFIRMED - User has been confirmed.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        ARCHIVED - User is no longer active.
      *        </p>
      *        </li>
      *        <li>
@@ -621,11 +593,6 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
      * </li>
      * <li>
      * <p>
-     * ARCHIVED - User is no longer active.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * UNKNOWN - User status isn't known.
      * </p>
      * </li>
@@ -654,11 +621,6 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
      *        <li>
      *        <p>
      *        CONFIRMED - User has been confirmed.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        ARCHIVED - User is no longer active.
      *        </p>
      *        </li>
      *        <li>
@@ -702,11 +664,6 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
      * </li>
      * <li>
      * <p>
-     * ARCHIVED - User is no longer active.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * UNKNOWN - User status isn't known.
      * </p>
      * </li>
@@ -735,11 +692,6 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
      *        <li>
      *        <p>
      *        CONFIRMED - User has been confirmed.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        ARCHIVED - User is no longer active.
      *        </p>
      *        </li>
      *        <li>

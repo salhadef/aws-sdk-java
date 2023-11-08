@@ -65,6 +65,11 @@ public class EngineConfigurationJsonUnmarshaller implements Unmarshaller<EngineC
                     engineConfiguration.setAdditionalConfigs(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
+                if (context.testExpression("SparkProperties", targetDepth)) {
+                    context.nextToken();
+                    engineConfiguration.setSparkProperties(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

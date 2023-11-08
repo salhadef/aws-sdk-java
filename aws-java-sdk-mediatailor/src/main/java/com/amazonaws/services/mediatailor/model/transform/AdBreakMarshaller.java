@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.mediatailor.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -27,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class AdBreakMarshaller {
 
+    private static final MarshallingInfo<List> ADBREAKMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdBreakMetadata").build();
     private static final MarshallingInfo<String> MESSAGETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MessageType").build();
     private static final MarshallingInfo<Long> OFFSETMILLIS_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
@@ -54,6 +57,7 @@ public class AdBreakMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(adBreak.getAdBreakMetadata(), ADBREAKMETADATA_BINDING);
             protocolMarshaller.marshall(adBreak.getMessageType(), MESSAGETYPE_BINDING);
             protocolMarshaller.marshall(adBreak.getOffsetMillis(), OFFSETMILLIS_BINDING);
             protocolMarshaller.marshall(adBreak.getSlate(), SLATE_BINDING);

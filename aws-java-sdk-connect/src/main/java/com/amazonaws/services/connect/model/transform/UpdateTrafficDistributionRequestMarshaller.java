@@ -31,6 +31,10 @@ public class UpdateTrafficDistributionRequestMarshaller {
             .marshallLocationName("Id").build();
     private static final MarshallingInfo<StructuredPojo> TELEPHONYCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TelephonyConfig").build();
+    private static final MarshallingInfo<StructuredPojo> SIGNINCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SignInConfig").build();
+    private static final MarshallingInfo<StructuredPojo> AGENTCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AgentConfig").build();
 
     private static final UpdateTrafficDistributionRequestMarshaller instance = new UpdateTrafficDistributionRequestMarshaller();
 
@@ -50,6 +54,8 @@ public class UpdateTrafficDistributionRequestMarshaller {
         try {
             protocolMarshaller.marshall(updateTrafficDistributionRequest.getId(), ID_BINDING);
             protocolMarshaller.marshall(updateTrafficDistributionRequest.getTelephonyConfig(), TELEPHONYCONFIG_BINDING);
+            protocolMarshaller.marshall(updateTrafficDistributionRequest.getSignInConfig(), SIGNINCONFIG_BINDING);
+            protocolMarshaller.marshall(updateTrafficDistributionRequest.getAgentConfig(), AGENTCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

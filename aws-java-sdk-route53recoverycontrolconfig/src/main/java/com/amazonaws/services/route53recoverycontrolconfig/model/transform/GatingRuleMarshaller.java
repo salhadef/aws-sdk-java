@@ -44,6 +44,8 @@ public class GatingRuleMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TargetControls").build();
     private static final MarshallingInfo<Integer> WAITPERIODMS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WaitPeriodMs").build();
+    private static final MarshallingInfo<String> OWNER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Owner").build();
 
     private static final GatingRuleMarshaller instance = new GatingRuleMarshaller();
 
@@ -69,6 +71,7 @@ public class GatingRuleMarshaller {
             protocolMarshaller.marshall(gatingRule.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(gatingRule.getTargetControls(), TARGETCONTROLS_BINDING);
             protocolMarshaller.marshall(gatingRule.getWaitPeriodMs(), WAITPERIODMS_BINDING);
+            protocolMarshaller.marshall(gatingRule.getOwner(), OWNER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

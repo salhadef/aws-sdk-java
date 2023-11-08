@@ -29,6 +29,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UpdateScheduleRequestMarshaller {
 
+    private static final MarshallingInfo<String> ACTIONAFTERCOMPLETION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ActionAfterCompletion").build();
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
@@ -71,6 +73,7 @@ public class UpdateScheduleRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(updateScheduleRequest.getActionAfterCompletion(), ACTIONAFTERCOMPLETION_BINDING);
             protocolMarshaller.marshall(updateScheduleRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(updateScheduleRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(updateScheduleRequest.getEndDate(), ENDDATE_BINDING);

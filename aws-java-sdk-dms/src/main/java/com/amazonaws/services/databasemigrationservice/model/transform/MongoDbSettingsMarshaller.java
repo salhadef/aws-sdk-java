@@ -55,6 +55,10 @@ public class MongoDbSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecretsManagerAccessRoleArn").build();
     private static final MarshallingInfo<String> SECRETSMANAGERSECRETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecretsManagerSecretId").build();
+    private static final MarshallingInfo<Boolean> USEUPDATELOOKUP_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UseUpdateLookUp").build();
+    private static final MarshallingInfo<Boolean> REPLICATESHARDCOLLECTIONS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReplicateShardCollections").build();
 
     private static final MongoDbSettingsMarshaller instance = new MongoDbSettingsMarshaller();
 
@@ -86,6 +90,8 @@ public class MongoDbSettingsMarshaller {
             protocolMarshaller.marshall(mongoDbSettings.getKmsKeyId(), KMSKEYID_BINDING);
             protocolMarshaller.marshall(mongoDbSettings.getSecretsManagerAccessRoleArn(), SECRETSMANAGERACCESSROLEARN_BINDING);
             protocolMarshaller.marshall(mongoDbSettings.getSecretsManagerSecretId(), SECRETSMANAGERSECRETID_BINDING);
+            protocolMarshaller.marshall(mongoDbSettings.getUseUpdateLookUp(), USEUPDATELOOKUP_BINDING);
+            protocolMarshaller.marshall(mongoDbSettings.getReplicateShardCollections(), REPLICATESHARDCOLLECTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

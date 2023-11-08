@@ -302,6 +302,38 @@ public class CodeGenConfigurationNodeJsonUnmarshaller implements Unmarshaller<Co
                     context.nextToken();
                     codeGenConfigurationNode.setS3DeltaDirectTarget(S3DeltaDirectTargetJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("AmazonRedshiftSource", targetDepth)) {
+                    context.nextToken();
+                    codeGenConfigurationNode.setAmazonRedshiftSource(AmazonRedshiftSourceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AmazonRedshiftTarget", targetDepth)) {
+                    context.nextToken();
+                    codeGenConfigurationNode.setAmazonRedshiftTarget(AmazonRedshiftTargetJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("EvaluateDataQualityMultiFrame", targetDepth)) {
+                    context.nextToken();
+                    codeGenConfigurationNode.setEvaluateDataQualityMultiFrame(EvaluateDataQualityMultiFrameJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("Recipe", targetDepth)) {
+                    context.nextToken();
+                    codeGenConfigurationNode.setRecipe(RecipeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("SnowflakeSource", targetDepth)) {
+                    context.nextToken();
+                    codeGenConfigurationNode.setSnowflakeSource(SnowflakeSourceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("SnowflakeTarget", targetDepth)) {
+                    context.nextToken();
+                    codeGenConfigurationNode.setSnowflakeTarget(SnowflakeTargetJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ConnectorDataSource", targetDepth)) {
+                    context.nextToken();
+                    codeGenConfigurationNode.setConnectorDataSource(ConnectorDataSourceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ConnectorDataTarget", targetDepth)) {
+                    context.nextToken();
+                    codeGenConfigurationNode.setConnectorDataTarget(ConnectorDataTargetJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

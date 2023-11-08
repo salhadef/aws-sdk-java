@@ -46,7 +46,9 @@ public class UpdateGameServerRequest extends com.amazonaws.AmazonWebServiceReque
     private String gameServerData;
     /**
      * <p>
-     * Indicates whether the game server is available or is currently hosting gameplay.
+     * Indicates if the game server is available or is currently hosting gameplay. You can update a game server status
+     * from <code>AVAILABLE</code> to <code>UTILIZED</code>, but you can't change a the status from
+     * <code>UTILIZED</code> to <code>AVAILABLE</code>.
      * </p>
      */
     private String utilizationStatus;
@@ -186,11 +188,15 @@ public class UpdateGameServerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Indicates whether the game server is available or is currently hosting gameplay.
+     * Indicates if the game server is available or is currently hosting gameplay. You can update a game server status
+     * from <code>AVAILABLE</code> to <code>UTILIZED</code>, but you can't change a the status from
+     * <code>UTILIZED</code> to <code>AVAILABLE</code>.
      * </p>
      * 
      * @param utilizationStatus
-     *        Indicates whether the game server is available or is currently hosting gameplay.
+     *        Indicates if the game server is available or is currently hosting gameplay. You can update a game server
+     *        status from <code>AVAILABLE</code> to <code>UTILIZED</code>, but you can't change a the status from
+     *        <code>UTILIZED</code> to <code>AVAILABLE</code>.
      * @see GameServerUtilizationStatus
      */
 
@@ -200,10 +206,14 @@ public class UpdateGameServerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Indicates whether the game server is available or is currently hosting gameplay.
+     * Indicates if the game server is available or is currently hosting gameplay. You can update a game server status
+     * from <code>AVAILABLE</code> to <code>UTILIZED</code>, but you can't change a the status from
+     * <code>UTILIZED</code> to <code>AVAILABLE</code>.
      * </p>
      * 
-     * @return Indicates whether the game server is available or is currently hosting gameplay.
+     * @return Indicates if the game server is available or is currently hosting gameplay. You can update a game server
+     *         status from <code>AVAILABLE</code> to <code>UTILIZED</code>, but you can't change a the status from
+     *         <code>UTILIZED</code> to <code>AVAILABLE</code>.
      * @see GameServerUtilizationStatus
      */
 
@@ -213,11 +223,15 @@ public class UpdateGameServerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Indicates whether the game server is available or is currently hosting gameplay.
+     * Indicates if the game server is available or is currently hosting gameplay. You can update a game server status
+     * from <code>AVAILABLE</code> to <code>UTILIZED</code>, but you can't change a the status from
+     * <code>UTILIZED</code> to <code>AVAILABLE</code>.
      * </p>
      * 
      * @param utilizationStatus
-     *        Indicates whether the game server is available or is currently hosting gameplay.
+     *        Indicates if the game server is available or is currently hosting gameplay. You can update a game server
+     *        status from <code>AVAILABLE</code> to <code>UTILIZED</code>, but you can't change a the status from
+     *        <code>UTILIZED</code> to <code>AVAILABLE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see GameServerUtilizationStatus
      */
@@ -229,11 +243,15 @@ public class UpdateGameServerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Indicates whether the game server is available or is currently hosting gameplay.
+     * Indicates if the game server is available or is currently hosting gameplay. You can update a game server status
+     * from <code>AVAILABLE</code> to <code>UTILIZED</code>, but you can't change a the status from
+     * <code>UTILIZED</code> to <code>AVAILABLE</code>.
      * </p>
      * 
      * @param utilizationStatus
-     *        Indicates whether the game server is available or is currently hosting gameplay.
+     *        Indicates if the game server is available or is currently hosting gameplay. You can update a game server
+     *        status from <code>AVAILABLE</code> to <code>UTILIZED</code>, but you can't change a the status from
+     *        <code>UTILIZED</code> to <code>AVAILABLE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see GameServerUtilizationStatus
      */

@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides the configuration information to connect to a index.
+ * Provides the configuration information to an <a
+ * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-database.html">Amazon Kendra supported database</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DatabaseConfiguration" target="_top">AWS API

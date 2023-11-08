@@ -35,7 +35,7 @@ public class VirtualMFADevice implements Serializable, Cloneable {
     /**
      * <p>
      * The base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
-     * <code>Base32StringSeed</code> is base64-encoded.
+     * <code>Base32StringSeed</code> is base32-encoded.
      * </p>
      */
     private java.nio.ByteBuffer base32StringSeed;
@@ -113,7 +113,7 @@ public class VirtualMFADevice implements Serializable, Cloneable {
     /**
      * <p>
      * The base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
-     * <code>Base32StringSeed</code> is base64-encoded.
+     * <code>Base32StringSeed</code> is base32-encoded.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -128,7 +128,7 @@ public class VirtualMFADevice implements Serializable, Cloneable {
      * 
      * @param base32StringSeed
      *        The base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
-     *        <code>Base32StringSeed</code> is base64-encoded.
+     *        <code>Base32StringSeed</code> is base32-encoded.
      */
 
     public void setBase32StringSeed(java.nio.ByteBuffer base32StringSeed) {
@@ -138,7 +138,7 @@ public class VirtualMFADevice implements Serializable, Cloneable {
     /**
      * <p>
      * The base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
-     * <code>Base32StringSeed</code> is base64-encoded.
+     * <code>Base32StringSeed</code> is base32-encoded.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -149,7 +149,7 @@ public class VirtualMFADevice implements Serializable, Cloneable {
      * </p>
      * 
      * @return The base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>.
-     *         The <code>Base32StringSeed</code> is base64-encoded.
+     *         The <code>Base32StringSeed</code> is base32-encoded.
      */
 
     public java.nio.ByteBuffer getBase32StringSeed() {
@@ -159,7 +159,7 @@ public class VirtualMFADevice implements Serializable, Cloneable {
     /**
      * <p>
      * The base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
-     * <code>Base32StringSeed</code> is base64-encoded.
+     * <code>Base32StringSeed</code> is base32-encoded.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -174,7 +174,7 @@ public class VirtualMFADevice implements Serializable, Cloneable {
      * 
      * @param base32StringSeed
      *        The base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
-     *        <code>Base32StringSeed</code> is base64-encoded.
+     *        <code>Base32StringSeed</code> is base32-encoded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

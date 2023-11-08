@@ -340,7 +340,7 @@ public class CreateDelegationRequest implements Serializable, Cloneable, Structu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getComment() != null)
-            sb.append("Comment: ").append(getComment()).append(",");
+            sb.append("Comment: ").append("***Sensitive Data Redacted***").append(",");
         if (getControlSetId() != null)
             sb.append("ControlSetId: ").append(getControlSetId()).append(",");
         if (getRoleArn() != null)

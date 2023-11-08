@@ -33,29 +33,27 @@ public class ScatterPlotFieldWells implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The aggregated field wells of a scatter plot. Scatter plots that have a field in the category (group/color) field
-     * will have aggregated field wells. The x and y-axes of these scatter plots are aggregated by category.
+     * The aggregated field wells of a scatter plot. The x and y-axes of scatter plots with aggregated field wells are
+     * aggregated by category, label, or both.
      * </p>
      */
     private ScatterPlotCategoricallyAggregatedFieldWells scatterPlotCategoricallyAggregatedFieldWells;
     /**
      * <p>
-     * The unaggregated field wells of a scatter plot. Scatter plots without a category field well have unaggregated
-     * field wells. The x and y-axes of these scatter plots are unaggregated.
+     * The unaggregated field wells of a scatter plot. The x and y-axes of these scatter plots are unaggregated.
      * </p>
      */
     private ScatterPlotUnaggregatedFieldWells scatterPlotUnaggregatedFieldWells;
 
     /**
      * <p>
-     * The aggregated field wells of a scatter plot. Scatter plots that have a field in the category (group/color) field
-     * will have aggregated field wells. The x and y-axes of these scatter plots are aggregated by category.
+     * The aggregated field wells of a scatter plot. The x and y-axes of scatter plots with aggregated field wells are
+     * aggregated by category, label, or both.
      * </p>
      * 
      * @param scatterPlotCategoricallyAggregatedFieldWells
-     *        The aggregated field wells of a scatter plot. Scatter plots that have a field in the category
-     *        (group/color) field will have aggregated field wells. The x and y-axes of these scatter plots are
-     *        aggregated by category.
+     *        The aggregated field wells of a scatter plot. The x and y-axes of scatter plots with aggregated field
+     *        wells are aggregated by category, label, or both.
      */
 
     public void setScatterPlotCategoricallyAggregatedFieldWells(ScatterPlotCategoricallyAggregatedFieldWells scatterPlotCategoricallyAggregatedFieldWells) {
@@ -64,13 +62,12 @@ public class ScatterPlotFieldWells implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The aggregated field wells of a scatter plot. Scatter plots that have a field in the category (group/color) field
-     * will have aggregated field wells. The x and y-axes of these scatter plots are aggregated by category.
+     * The aggregated field wells of a scatter plot. The x and y-axes of scatter plots with aggregated field wells are
+     * aggregated by category, label, or both.
      * </p>
      * 
-     * @return The aggregated field wells of a scatter plot. Scatter plots that have a field in the category
-     *         (group/color) field will have aggregated field wells. The x and y-axes of these scatter plots are
-     *         aggregated by category.
+     * @return The aggregated field wells of a scatter plot. The x and y-axes of scatter plots with aggregated field
+     *         wells are aggregated by category, label, or both.
      */
 
     public ScatterPlotCategoricallyAggregatedFieldWells getScatterPlotCategoricallyAggregatedFieldWells() {
@@ -79,14 +76,13 @@ public class ScatterPlotFieldWells implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The aggregated field wells of a scatter plot. Scatter plots that have a field in the category (group/color) field
-     * will have aggregated field wells. The x and y-axes of these scatter plots are aggregated by category.
+     * The aggregated field wells of a scatter plot. The x and y-axes of scatter plots with aggregated field wells are
+     * aggregated by category, label, or both.
      * </p>
      * 
      * @param scatterPlotCategoricallyAggregatedFieldWells
-     *        The aggregated field wells of a scatter plot. Scatter plots that have a field in the category
-     *        (group/color) field will have aggregated field wells. The x and y-axes of these scatter plots are
-     *        aggregated by category.
+     *        The aggregated field wells of a scatter plot. The x and y-axes of scatter plots with aggregated field
+     *        wells are aggregated by category, label, or both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,13 +94,11 @@ public class ScatterPlotFieldWells implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The unaggregated field wells of a scatter plot. Scatter plots without a category field well have unaggregated
-     * field wells. The x and y-axes of these scatter plots are unaggregated.
+     * The unaggregated field wells of a scatter plot. The x and y-axes of these scatter plots are unaggregated.
      * </p>
      * 
      * @param scatterPlotUnaggregatedFieldWells
-     *        The unaggregated field wells of a scatter plot. Scatter plots without a category field well have
-     *        unaggregated field wells. The x and y-axes of these scatter plots are unaggregated.
+     *        The unaggregated field wells of a scatter plot. The x and y-axes of these scatter plots are unaggregated.
      */
 
     public void setScatterPlotUnaggregatedFieldWells(ScatterPlotUnaggregatedFieldWells scatterPlotUnaggregatedFieldWells) {
@@ -113,12 +107,10 @@ public class ScatterPlotFieldWells implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The unaggregated field wells of a scatter plot. Scatter plots without a category field well have unaggregated
-     * field wells. The x and y-axes of these scatter plots are unaggregated.
+     * The unaggregated field wells of a scatter plot. The x and y-axes of these scatter plots are unaggregated.
      * </p>
      * 
-     * @return The unaggregated field wells of a scatter plot. Scatter plots without a category field well have
-     *         unaggregated field wells. The x and y-axes of these scatter plots are unaggregated.
+     * @return The unaggregated field wells of a scatter plot. The x and y-axes of these scatter plots are unaggregated.
      */
 
     public ScatterPlotUnaggregatedFieldWells getScatterPlotUnaggregatedFieldWells() {
@@ -127,13 +119,11 @@ public class ScatterPlotFieldWells implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The unaggregated field wells of a scatter plot. Scatter plots without a category field well have unaggregated
-     * field wells. The x and y-axes of these scatter plots are unaggregated.
+     * The unaggregated field wells of a scatter plot. The x and y-axes of these scatter plots are unaggregated.
      * </p>
      * 
      * @param scatterPlotUnaggregatedFieldWells
-     *        The unaggregated field wells of a scatter plot. Scatter plots without a category field well have
-     *        unaggregated field wells. The x and y-axes of these scatter plots are unaggregated.
+     *        The unaggregated field wells of a scatter plot. The x and y-axes of these scatter plots are unaggregated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

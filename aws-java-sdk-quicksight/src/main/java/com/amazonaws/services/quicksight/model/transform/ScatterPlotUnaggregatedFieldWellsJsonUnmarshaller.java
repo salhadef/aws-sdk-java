@@ -66,6 +66,18 @@ public class ScatterPlotUnaggregatedFieldWellsJsonUnmarshaller implements Unmars
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("Category", targetDepth)) {
+                    context.nextToken();
+                    scatterPlotUnaggregatedFieldWells.setCategory(new ListUnmarshaller<DimensionField>(DimensionFieldJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("Label", targetDepth)) {
+                    context.nextToken();
+                    scatterPlotUnaggregatedFieldWells.setLabel(new ListUnmarshaller<DimensionField>(DimensionFieldJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

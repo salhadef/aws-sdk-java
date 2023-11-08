@@ -27,18 +27,18 @@ public class DescribeAutoMLJobV2Request extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Requests information about an AutoML V2 job using its unique name.
+     * Requests information about an AutoML job V2 using its unique name.
      * </p>
      */
     private String autoMLJobName;
 
     /**
      * <p>
-     * Requests information about an AutoML V2 job using its unique name.
+     * Requests information about an AutoML job V2 using its unique name.
      * </p>
      * 
      * @param autoMLJobName
-     *        Requests information about an AutoML V2 job using its unique name.
+     *        Requests information about an AutoML job V2 using its unique name.
      */
 
     public void setAutoMLJobName(String autoMLJobName) {
@@ -47,10 +47,10 @@ public class DescribeAutoMLJobV2Request extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Requests information about an AutoML V2 job using its unique name.
+     * Requests information about an AutoML job V2 using its unique name.
      * </p>
      * 
-     * @return Requests information about an AutoML V2 job using its unique name.
+     * @return Requests information about an AutoML job V2 using its unique name.
      */
 
     public String getAutoMLJobName() {
@@ -59,11 +59,11 @@ public class DescribeAutoMLJobV2Request extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Requests information about an AutoML V2 job using its unique name.
+     * Requests information about an AutoML job V2 using its unique name.
      * </p>
      * 
      * @param autoMLJobName
-     *        Requests information about an AutoML V2 job using its unique name.
+     *        Requests information about an AutoML job V2 using its unique name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

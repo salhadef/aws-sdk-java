@@ -29,6 +29,8 @@ public class DescribeApplicationRequestMarshaller {
 
     private static final MarshallingInfo<String> RESOURCEGROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceGroupName").build();
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("AccountId").build();
 
     private static final DescribeApplicationRequestMarshaller instance = new DescribeApplicationRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class DescribeApplicationRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(describeApplicationRequest.getResourceGroupName(), RESOURCEGROUPNAME_BINDING);
+            protocolMarshaller.marshall(describeApplicationRequest.getAccountId(), ACCOUNTID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -29,6 +29,8 @@ public class PublishAppVersionRequestMarshaller {
 
     private static final MarshallingInfo<String> APPARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("appArn").build();
+    private static final MarshallingInfo<String> VERSIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("versionName").build();
 
     private static final PublishAppVersionRequestMarshaller instance = new PublishAppVersionRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class PublishAppVersionRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(publishAppVersionRequest.getAppArn(), APPARN_BINDING);
+            protocolMarshaller.marshall(publishAppVersionRequest.getVersionName(), VERSIONNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

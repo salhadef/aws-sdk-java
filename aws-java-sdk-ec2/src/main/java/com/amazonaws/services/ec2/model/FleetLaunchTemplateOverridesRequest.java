@@ -114,8 +114,9 @@ public class FleetLaunchTemplateOverridesRequest implements Serializable, Clonea
     private InstanceRequirementsRequest instanceRequirements;
     /**
      * <p>
-     * The ID of the AMI. An AMI is required to launch an instance. The AMI ID must be specified here or in the launch
-     * template.
+     * The ID of the AMI. An AMI is required to launch an instance. This parameter is only available for fleets of type
+     * <code>instant</code>. For fleets of type <code>maintain</code> and <code>request</code>, you must specify the AMI
+     * ID in the launch template.
      * </p>
      */
     private String imageId;
@@ -686,13 +687,15 @@ public class FleetLaunchTemplateOverridesRequest implements Serializable, Clonea
 
     /**
      * <p>
-     * The ID of the AMI. An AMI is required to launch an instance. The AMI ID must be specified here or in the launch
-     * template.
+     * The ID of the AMI. An AMI is required to launch an instance. This parameter is only available for fleets of type
+     * <code>instant</code>. For fleets of type <code>maintain</code> and <code>request</code>, you must specify the AMI
+     * ID in the launch template.
      * </p>
      * 
      * @param imageId
-     *        The ID of the AMI. An AMI is required to launch an instance. The AMI ID must be specified here or in the
-     *        launch template.
+     *        The ID of the AMI. An AMI is required to launch an instance. This parameter is only available for fleets
+     *        of type <code>instant</code>. For fleets of type <code>maintain</code> and <code>request</code>, you must
+     *        specify the AMI ID in the launch template.
      */
 
     public void setImageId(String imageId) {
@@ -701,12 +704,14 @@ public class FleetLaunchTemplateOverridesRequest implements Serializable, Clonea
 
     /**
      * <p>
-     * The ID of the AMI. An AMI is required to launch an instance. The AMI ID must be specified here or in the launch
-     * template.
+     * The ID of the AMI. An AMI is required to launch an instance. This parameter is only available for fleets of type
+     * <code>instant</code>. For fleets of type <code>maintain</code> and <code>request</code>, you must specify the AMI
+     * ID in the launch template.
      * </p>
      * 
-     * @return The ID of the AMI. An AMI is required to launch an instance. The AMI ID must be specified here or in the
-     *         launch template.
+     * @return The ID of the AMI. An AMI is required to launch an instance. This parameter is only available for fleets
+     *         of type <code>instant</code>. For fleets of type <code>maintain</code> and <code>request</code>, you must
+     *         specify the AMI ID in the launch template.
      */
 
     public String getImageId() {
@@ -715,13 +720,15 @@ public class FleetLaunchTemplateOverridesRequest implements Serializable, Clonea
 
     /**
      * <p>
-     * The ID of the AMI. An AMI is required to launch an instance. The AMI ID must be specified here or in the launch
-     * template.
+     * The ID of the AMI. An AMI is required to launch an instance. This parameter is only available for fleets of type
+     * <code>instant</code>. For fleets of type <code>maintain</code> and <code>request</code>, you must specify the AMI
+     * ID in the launch template.
      * </p>
      * 
      * @param imageId
-     *        The ID of the AMI. An AMI is required to launch an instance. The AMI ID must be specified here or in the
-     *        launch template.
+     *        The ID of the AMI. An AMI is required to launch an instance. This parameter is only available for fleets
+     *        of type <code>instant</code>. For fleets of type <code>maintain</code> and <code>request</code>, you must
+     *        specify the AMI ID in the launch template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

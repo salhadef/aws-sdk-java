@@ -83,6 +83,12 @@ public class GetSceneResult extends com.amazonaws.AmazonWebServiceResult<com.ama
      * </p>
      */
     private java.util.Map<String, String> generatedSceneMetadata;
+    /**
+     * <p>
+     * The SceneResponse error.
+     * </p>
+     */
+    private SceneError error;
 
     /**
      * <p>
@@ -571,6 +577,46 @@ public class GetSceneResult extends com.amazonaws.AmazonWebServiceResult<com.ama
     }
 
     /**
+     * <p>
+     * The SceneResponse error.
+     * </p>
+     * 
+     * @param error
+     *        The SceneResponse error.
+     */
+
+    public void setError(SceneError error) {
+        this.error = error;
+    }
+
+    /**
+     * <p>
+     * The SceneResponse error.
+     * </p>
+     * 
+     * @return The SceneResponse error.
+     */
+
+    public SceneError getError() {
+        return this.error;
+    }
+
+    /**
+     * <p>
+     * The SceneResponse error.
+     * </p>
+     * 
+     * @param error
+     *        The SceneResponse error.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetSceneResult withError(SceneError error) {
+        setError(error);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -601,7 +647,9 @@ public class GetSceneResult extends com.amazonaws.AmazonWebServiceResult<com.ama
         if (getSceneMetadata() != null)
             sb.append("SceneMetadata: ").append(getSceneMetadata()).append(",");
         if (getGeneratedSceneMetadata() != null)
-            sb.append("GeneratedSceneMetadata: ").append(getGeneratedSceneMetadata());
+            sb.append("GeneratedSceneMetadata: ").append(getGeneratedSceneMetadata()).append(",");
+        if (getError() != null)
+            sb.append("Error: ").append(getError());
         sb.append("}");
         return sb.toString();
     }
@@ -656,6 +704,10 @@ public class GetSceneResult extends com.amazonaws.AmazonWebServiceResult<com.ama
             return false;
         if (other.getGeneratedSceneMetadata() != null && other.getGeneratedSceneMetadata().equals(this.getGeneratedSceneMetadata()) == false)
             return false;
+        if (other.getError() == null ^ this.getError() == null)
+            return false;
+        if (other.getError() != null && other.getError().equals(this.getError()) == false)
+            return false;
         return true;
     }
 
@@ -674,6 +726,7 @@ public class GetSceneResult extends com.amazonaws.AmazonWebServiceResult<com.ama
         hashCode = prime * hashCode + ((getCapabilities() == null) ? 0 : getCapabilities().hashCode());
         hashCode = prime * hashCode + ((getSceneMetadata() == null) ? 0 : getSceneMetadata().hashCode());
         hashCode = prime * hashCode + ((getGeneratedSceneMetadata() == null) ? 0 : getGeneratedSceneMetadata().hashCode());
+        hashCode = prime * hashCode + ((getError() == null) ? 0 : getError().hashCode());
         return hashCode;
     }
 

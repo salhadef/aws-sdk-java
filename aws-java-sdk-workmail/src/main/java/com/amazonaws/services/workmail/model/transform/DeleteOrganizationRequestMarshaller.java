@@ -36,6 +36,8 @@ public class DeleteOrganizationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OrganizationId").build();
     private static final MarshallingInfo<Boolean> DELETEDIRECTORY_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeleteDirectory").build();
+    private static final MarshallingInfo<Boolean> FORCEDELETE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ForceDelete").build();
 
     private static final DeleteOrganizationRequestMarshaller instance = new DeleteOrganizationRequestMarshaller();
 
@@ -56,6 +58,7 @@ public class DeleteOrganizationRequestMarshaller {
             protocolMarshaller.marshall(deleteOrganizationRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(deleteOrganizationRequest.getOrganizationId(), ORGANIZATIONID_BINDING);
             protocolMarshaller.marshall(deleteOrganizationRequest.getDeleteDirectory(), DELETEDIRECTORY_BINDING);
+            protocolMarshaller.marshall(deleteOrganizationRequest.getForceDelete(), FORCEDELETE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

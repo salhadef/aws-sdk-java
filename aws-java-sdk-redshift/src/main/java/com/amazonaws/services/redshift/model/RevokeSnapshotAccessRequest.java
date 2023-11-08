@@ -40,8 +40,8 @@ public class RevokeSnapshotAccessRequest extends com.amazonaws.AmazonWebServiceR
     private String snapshotArn;
     /**
      * <p>
-     * The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user or role
-     * has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.
+     * The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a
+     * policy containing a snapshot resource element that specifies anything other than * for the cluster name.
      * </p>
      */
     private String snapshotClusterIdentifier;
@@ -134,14 +134,14 @@ public class RevokeSnapshotAccessRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user or role
-     * has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.
+     * The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a
+     * policy containing a snapshot resource element that specifies anything other than * for the cluster name.
      * </p>
      * 
      * @param snapshotClusterIdentifier
      *        The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user
-     *        or role has a policy containing a snapshot resource element that specifies anything other than * for the
-     *        cluster name.
+     *        has a policy containing a snapshot resource element that specifies anything other than * for the cluster
+     *        name.
      */
 
     public void setSnapshotClusterIdentifier(String snapshotClusterIdentifier) {
@@ -150,13 +150,13 @@ public class RevokeSnapshotAccessRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user or role
-     * has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.
+     * The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a
+     * policy containing a snapshot resource element that specifies anything other than * for the cluster name.
      * </p>
      * 
      * @return The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user
-     *         or role has a policy containing a snapshot resource element that specifies anything other than * for the
-     *         cluster name.
+     *         has a policy containing a snapshot resource element that specifies anything other than * for the cluster
+     *         name.
      */
 
     public String getSnapshotClusterIdentifier() {
@@ -165,14 +165,14 @@ public class RevokeSnapshotAccessRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user or role
-     * has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.
+     * The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a
+     * policy containing a snapshot resource element that specifies anything other than * for the cluster name.
      * </p>
      * 
      * @param snapshotClusterIdentifier
      *        The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user
-     *        or role has a policy containing a snapshot resource element that specifies anything other than * for the
-     *        cluster name.
+     *        has a policy containing a snapshot resource element that specifies anything other than * for the cluster
+     *        name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

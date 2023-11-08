@@ -278,6 +278,13 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private GcpMySQLSettings gcpMySQLSettings;
+    /**
+     * <p>
+     * The settings for the Amazon Timestream target endpoint. For more information, see the
+     * <code>TimestreamSettings</code> structure.
+     * </p>
+     */
+    private TimestreamSettings timestreamSettings;
 
     /**
      * <p>
@@ -1907,6 +1914,52 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The settings for the Amazon Timestream target endpoint. For more information, see the
+     * <code>TimestreamSettings</code> structure.
+     * </p>
+     * 
+     * @param timestreamSettings
+     *        The settings for the Amazon Timestream target endpoint. For more information, see the
+     *        <code>TimestreamSettings</code> structure.
+     */
+
+    public void setTimestreamSettings(TimestreamSettings timestreamSettings) {
+        this.timestreamSettings = timestreamSettings;
+    }
+
+    /**
+     * <p>
+     * The settings for the Amazon Timestream target endpoint. For more information, see the
+     * <code>TimestreamSettings</code> structure.
+     * </p>
+     * 
+     * @return The settings for the Amazon Timestream target endpoint. For more information, see the
+     *         <code>TimestreamSettings</code> structure.
+     */
+
+    public TimestreamSettings getTimestreamSettings() {
+        return this.timestreamSettings;
+    }
+
+    /**
+     * <p>
+     * The settings for the Amazon Timestream target endpoint. For more information, see the
+     * <code>TimestreamSettings</code> structure.
+     * </p>
+     * 
+     * @param timestreamSettings
+     *        The settings for the Amazon Timestream target endpoint. For more information, see the
+     *        <code>TimestreamSettings</code> structure.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Endpoint withTimestreamSettings(TimestreamSettings timestreamSettings) {
+        setTimestreamSettings(timestreamSettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1987,7 +2040,9 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
         if (getRedisSettings() != null)
             sb.append("RedisSettings: ").append(getRedisSettings()).append(",");
         if (getGcpMySQLSettings() != null)
-            sb.append("GcpMySQLSettings: ").append(getGcpMySQLSettings());
+            sb.append("GcpMySQLSettings: ").append(getGcpMySQLSettings()).append(",");
+        if (getTimestreamSettings() != null)
+            sb.append("TimestreamSettings: ").append(getTimestreamSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -2142,6 +2197,10 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getGcpMySQLSettings() != null && other.getGcpMySQLSettings().equals(this.getGcpMySQLSettings()) == false)
             return false;
+        if (other.getTimestreamSettings() == null ^ this.getTimestreamSettings() == null)
+            return false;
+        if (other.getTimestreamSettings() != null && other.getTimestreamSettings().equals(this.getTimestreamSettings()) == false)
+            return false;
         return true;
     }
 
@@ -2185,6 +2244,7 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDocDbSettings() == null) ? 0 : getDocDbSettings().hashCode());
         hashCode = prime * hashCode + ((getRedisSettings() == null) ? 0 : getRedisSettings().hashCode());
         hashCode = prime * hashCode + ((getGcpMySQLSettings() == null) ? 0 : getGcpMySQLSettings().hashCode());
+        hashCode = prime * hashCode + ((getTimestreamSettings() == null) ? 0 : getTimestreamSettings().hashCode());
         return hashCode;
     }
 

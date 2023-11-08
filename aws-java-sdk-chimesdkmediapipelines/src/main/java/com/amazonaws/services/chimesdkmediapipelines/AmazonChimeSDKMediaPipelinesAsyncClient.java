@@ -251,6 +251,74 @@ public class AmazonChimeSDKMediaPipelinesAsyncClient extends AmazonChimeSDKMedia
     }
 
     @Override
+    public java.util.concurrent.Future<CreateMediaPipelineKinesisVideoStreamPoolResult> createMediaPipelineKinesisVideoStreamPoolAsync(
+            CreateMediaPipelineKinesisVideoStreamPoolRequest request) {
+
+        return createMediaPipelineKinesisVideoStreamPoolAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMediaPipelineKinesisVideoStreamPoolResult> createMediaPipelineKinesisVideoStreamPoolAsync(
+            final CreateMediaPipelineKinesisVideoStreamPoolRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateMediaPipelineKinesisVideoStreamPoolRequest, CreateMediaPipelineKinesisVideoStreamPoolResult> asyncHandler) {
+        final CreateMediaPipelineKinesisVideoStreamPoolRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateMediaPipelineKinesisVideoStreamPoolResult>() {
+            @Override
+            public CreateMediaPipelineKinesisVideoStreamPoolResult call() throws Exception {
+                CreateMediaPipelineKinesisVideoStreamPoolResult result = null;
+
+                try {
+                    result = executeCreateMediaPipelineKinesisVideoStreamPool(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMediaStreamPipelineResult> createMediaStreamPipelineAsync(CreateMediaStreamPipelineRequest request) {
+
+        return createMediaStreamPipelineAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMediaStreamPipelineResult> createMediaStreamPipelineAsync(final CreateMediaStreamPipelineRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateMediaStreamPipelineRequest, CreateMediaStreamPipelineResult> asyncHandler) {
+        final CreateMediaStreamPipelineRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateMediaStreamPipelineResult>() {
+            @Override
+            public CreateMediaStreamPipelineResult call() throws Exception {
+                CreateMediaStreamPipelineResult result = null;
+
+                try {
+                    result = executeCreateMediaStreamPipeline(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteMediaCapturePipelineResult> deleteMediaCapturePipelineAsync(DeleteMediaCapturePipelineRequest request) {
 
         return deleteMediaCapturePipelineAsync(request, null);
@@ -336,6 +404,41 @@ public class AmazonChimeSDKMediaPipelinesAsyncClient extends AmazonChimeSDKMedia
 
                 try {
                     result = executeDeleteMediaPipeline(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMediaPipelineKinesisVideoStreamPoolResult> deleteMediaPipelineKinesisVideoStreamPoolAsync(
+            DeleteMediaPipelineKinesisVideoStreamPoolRequest request) {
+
+        return deleteMediaPipelineKinesisVideoStreamPoolAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMediaPipelineKinesisVideoStreamPoolResult> deleteMediaPipelineKinesisVideoStreamPoolAsync(
+            final DeleteMediaPipelineKinesisVideoStreamPoolRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteMediaPipelineKinesisVideoStreamPoolRequest, DeleteMediaPipelineKinesisVideoStreamPoolResult> asyncHandler) {
+        final DeleteMediaPipelineKinesisVideoStreamPoolRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteMediaPipelineKinesisVideoStreamPoolResult>() {
+            @Override
+            public DeleteMediaPipelineKinesisVideoStreamPoolResult call() throws Exception {
+                DeleteMediaPipelineKinesisVideoStreamPoolResult result = null;
+
+                try {
+                    result = executeDeleteMediaPipelineKinesisVideoStreamPool(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -453,6 +556,107 @@ public class AmazonChimeSDKMediaPipelinesAsyncClient extends AmazonChimeSDKMedia
     }
 
     @Override
+    public java.util.concurrent.Future<GetMediaPipelineKinesisVideoStreamPoolResult> getMediaPipelineKinesisVideoStreamPoolAsync(
+            GetMediaPipelineKinesisVideoStreamPoolRequest request) {
+
+        return getMediaPipelineKinesisVideoStreamPoolAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMediaPipelineKinesisVideoStreamPoolResult> getMediaPipelineKinesisVideoStreamPoolAsync(
+            final GetMediaPipelineKinesisVideoStreamPoolRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetMediaPipelineKinesisVideoStreamPoolRequest, GetMediaPipelineKinesisVideoStreamPoolResult> asyncHandler) {
+        final GetMediaPipelineKinesisVideoStreamPoolRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetMediaPipelineKinesisVideoStreamPoolResult>() {
+            @Override
+            public GetMediaPipelineKinesisVideoStreamPoolResult call() throws Exception {
+                GetMediaPipelineKinesisVideoStreamPoolResult result = null;
+
+                try {
+                    result = executeGetMediaPipelineKinesisVideoStreamPool(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSpeakerSearchTaskResult> getSpeakerSearchTaskAsync(GetSpeakerSearchTaskRequest request) {
+
+        return getSpeakerSearchTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSpeakerSearchTaskResult> getSpeakerSearchTaskAsync(final GetSpeakerSearchTaskRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSpeakerSearchTaskRequest, GetSpeakerSearchTaskResult> asyncHandler) {
+        final GetSpeakerSearchTaskRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetSpeakerSearchTaskResult>() {
+            @Override
+            public GetSpeakerSearchTaskResult call() throws Exception {
+                GetSpeakerSearchTaskResult result = null;
+
+                try {
+                    result = executeGetSpeakerSearchTask(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetVoiceToneAnalysisTaskResult> getVoiceToneAnalysisTaskAsync(GetVoiceToneAnalysisTaskRequest request) {
+
+        return getVoiceToneAnalysisTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetVoiceToneAnalysisTaskResult> getVoiceToneAnalysisTaskAsync(final GetVoiceToneAnalysisTaskRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetVoiceToneAnalysisTaskRequest, GetVoiceToneAnalysisTaskResult> asyncHandler) {
+        final GetVoiceToneAnalysisTaskRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetVoiceToneAnalysisTaskResult>() {
+            @Override
+            public GetVoiceToneAnalysisTaskResult call() throws Exception {
+                GetVoiceToneAnalysisTaskResult result = null;
+
+                try {
+                    result = executeGetVoiceToneAnalysisTask(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListMediaCapturePipelinesResult> listMediaCapturePipelinesAsync(ListMediaCapturePipelinesRequest request) {
 
         return listMediaCapturePipelinesAsync(request, null);
@@ -521,6 +725,41 @@ public class AmazonChimeSDKMediaPipelinesAsyncClient extends AmazonChimeSDKMedia
     }
 
     @Override
+    public java.util.concurrent.Future<ListMediaPipelineKinesisVideoStreamPoolsResult> listMediaPipelineKinesisVideoStreamPoolsAsync(
+            ListMediaPipelineKinesisVideoStreamPoolsRequest request) {
+
+        return listMediaPipelineKinesisVideoStreamPoolsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMediaPipelineKinesisVideoStreamPoolsResult> listMediaPipelineKinesisVideoStreamPoolsAsync(
+            final ListMediaPipelineKinesisVideoStreamPoolsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListMediaPipelineKinesisVideoStreamPoolsRequest, ListMediaPipelineKinesisVideoStreamPoolsResult> asyncHandler) {
+        final ListMediaPipelineKinesisVideoStreamPoolsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListMediaPipelineKinesisVideoStreamPoolsResult>() {
+            @Override
+            public ListMediaPipelineKinesisVideoStreamPoolsResult call() throws Exception {
+                ListMediaPipelineKinesisVideoStreamPoolsResult result = null;
+
+                try {
+                    result = executeListMediaPipelineKinesisVideoStreamPools(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListMediaPipelinesResult> listMediaPipelinesAsync(ListMediaPipelinesRequest request) {
 
         return listMediaPipelinesAsync(request, null);
@@ -571,6 +810,138 @@ public class AmazonChimeSDKMediaPipelinesAsyncClient extends AmazonChimeSDKMedia
 
                 try {
                     result = executeListTagsForResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartSpeakerSearchTaskResult> startSpeakerSearchTaskAsync(StartSpeakerSearchTaskRequest request) {
+
+        return startSpeakerSearchTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartSpeakerSearchTaskResult> startSpeakerSearchTaskAsync(final StartSpeakerSearchTaskRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartSpeakerSearchTaskRequest, StartSpeakerSearchTaskResult> asyncHandler) {
+        final StartSpeakerSearchTaskRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartSpeakerSearchTaskResult>() {
+            @Override
+            public StartSpeakerSearchTaskResult call() throws Exception {
+                StartSpeakerSearchTaskResult result = null;
+
+                try {
+                    result = executeStartSpeakerSearchTask(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartVoiceToneAnalysisTaskResult> startVoiceToneAnalysisTaskAsync(StartVoiceToneAnalysisTaskRequest request) {
+
+        return startVoiceToneAnalysisTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartVoiceToneAnalysisTaskResult> startVoiceToneAnalysisTaskAsync(final StartVoiceToneAnalysisTaskRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartVoiceToneAnalysisTaskRequest, StartVoiceToneAnalysisTaskResult> asyncHandler) {
+        final StartVoiceToneAnalysisTaskRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartVoiceToneAnalysisTaskResult>() {
+            @Override
+            public StartVoiceToneAnalysisTaskResult call() throws Exception {
+                StartVoiceToneAnalysisTaskResult result = null;
+
+                try {
+                    result = executeStartVoiceToneAnalysisTask(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopSpeakerSearchTaskResult> stopSpeakerSearchTaskAsync(StopSpeakerSearchTaskRequest request) {
+
+        return stopSpeakerSearchTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopSpeakerSearchTaskResult> stopSpeakerSearchTaskAsync(final StopSpeakerSearchTaskRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopSpeakerSearchTaskRequest, StopSpeakerSearchTaskResult> asyncHandler) {
+        final StopSpeakerSearchTaskRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopSpeakerSearchTaskResult>() {
+            @Override
+            public StopSpeakerSearchTaskResult call() throws Exception {
+                StopSpeakerSearchTaskResult result = null;
+
+                try {
+                    result = executeStopSpeakerSearchTask(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopVoiceToneAnalysisTaskResult> stopVoiceToneAnalysisTaskAsync(StopVoiceToneAnalysisTaskRequest request) {
+
+        return stopVoiceToneAnalysisTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopVoiceToneAnalysisTaskResult> stopVoiceToneAnalysisTaskAsync(final StopVoiceToneAnalysisTaskRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopVoiceToneAnalysisTaskRequest, StopVoiceToneAnalysisTaskResult> asyncHandler) {
+        final StopVoiceToneAnalysisTaskRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopVoiceToneAnalysisTaskResult>() {
+            @Override
+            public StopVoiceToneAnalysisTaskResult call() throws Exception {
+                StopVoiceToneAnalysisTaskResult result = null;
+
+                try {
+                    result = executeStopVoiceToneAnalysisTask(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -707,6 +1078,41 @@ public class AmazonChimeSDKMediaPipelinesAsyncClient extends AmazonChimeSDKMedia
 
                 try {
                     result = executeUpdateMediaInsightsPipelineStatus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMediaPipelineKinesisVideoStreamPoolResult> updateMediaPipelineKinesisVideoStreamPoolAsync(
+            UpdateMediaPipelineKinesisVideoStreamPoolRequest request) {
+
+        return updateMediaPipelineKinesisVideoStreamPoolAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMediaPipelineKinesisVideoStreamPoolResult> updateMediaPipelineKinesisVideoStreamPoolAsync(
+            final UpdateMediaPipelineKinesisVideoStreamPoolRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateMediaPipelineKinesisVideoStreamPoolRequest, UpdateMediaPipelineKinesisVideoStreamPoolResult> asyncHandler) {
+        final UpdateMediaPipelineKinesisVideoStreamPoolRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateMediaPipelineKinesisVideoStreamPoolResult>() {
+            @Override
+            public UpdateMediaPipelineKinesisVideoStreamPoolResult call() throws Exception {
+                UpdateMediaPipelineKinesisVideoStreamPoolResult result = null;
+
+                try {
+                    result = executeUpdateMediaPipelineKinesisVideoStreamPool(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

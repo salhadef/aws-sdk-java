@@ -59,7 +59,18 @@ public class SystemControl implements Serializable, Cloneable, StructuredPojo {
     private String namespace;
     /**
      * <p>
-     * The value for the namespaced kernel parameter that's specified in <code>namespace</code>.
+     * The namespaced kernel parameter to set a <code>value</code> for.
+     * </p>
+     * <p>
+     * Valid IPC namespace values:
+     * <code>"kernel.msgmax" | "kernel.msgmnb" | "kernel.msgmni" | "kernel.sem" | "kernel.shmall" | "kernel.shmmax" | "kernel.shmmni" | "kernel.shm_rmid_forced"</code>
+     * , and <code>Sysctls</code> that start with <code>"fs.mqueue.*"</code>
+     * </p>
+     * <p>
+     * Valid network namespace values: <code>Sysctls</code> that start with <code>"net.*"</code>
+     * </p>
+     * <p>
+     * All of these values are supported by Fargate.
      * </p>
      */
     private String value;
@@ -106,11 +117,32 @@ public class SystemControl implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value for the namespaced kernel parameter that's specified in <code>namespace</code>.
+     * The namespaced kernel parameter to set a <code>value</code> for.
+     * </p>
+     * <p>
+     * Valid IPC namespace values:
+     * <code>"kernel.msgmax" | "kernel.msgmnb" | "kernel.msgmni" | "kernel.sem" | "kernel.shmall" | "kernel.shmmax" | "kernel.shmmni" | "kernel.shm_rmid_forced"</code>
+     * , and <code>Sysctls</code> that start with <code>"fs.mqueue.*"</code>
+     * </p>
+     * <p>
+     * Valid network namespace values: <code>Sysctls</code> that start with <code>"net.*"</code>
+     * </p>
+     * <p>
+     * All of these values are supported by Fargate.
      * </p>
      * 
      * @param value
-     *        The value for the namespaced kernel parameter that's specified in <code>namespace</code>.
+     *        The namespaced kernel parameter to set a <code>value</code> for.</p>
+     *        <p>
+     *        Valid IPC namespace values:
+     *        <code>"kernel.msgmax" | "kernel.msgmnb" | "kernel.msgmni" | "kernel.sem" | "kernel.shmall" | "kernel.shmmax" | "kernel.shmmni" | "kernel.shm_rmid_forced"</code>
+     *        , and <code>Sysctls</code> that start with <code>"fs.mqueue.*"</code>
+     *        </p>
+     *        <p>
+     *        Valid network namespace values: <code>Sysctls</code> that start with <code>"net.*"</code>
+     *        </p>
+     *        <p>
+     *        All of these values are supported by Fargate.
      */
 
     public void setValue(String value) {
@@ -119,10 +151,31 @@ public class SystemControl implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value for the namespaced kernel parameter that's specified in <code>namespace</code>.
+     * The namespaced kernel parameter to set a <code>value</code> for.
+     * </p>
+     * <p>
+     * Valid IPC namespace values:
+     * <code>"kernel.msgmax" | "kernel.msgmnb" | "kernel.msgmni" | "kernel.sem" | "kernel.shmall" | "kernel.shmmax" | "kernel.shmmni" | "kernel.shm_rmid_forced"</code>
+     * , and <code>Sysctls</code> that start with <code>"fs.mqueue.*"</code>
+     * </p>
+     * <p>
+     * Valid network namespace values: <code>Sysctls</code> that start with <code>"net.*"</code>
+     * </p>
+     * <p>
+     * All of these values are supported by Fargate.
      * </p>
      * 
-     * @return The value for the namespaced kernel parameter that's specified in <code>namespace</code>.
+     * @return The namespaced kernel parameter to set a <code>value</code> for.</p>
+     *         <p>
+     *         Valid IPC namespace values:
+     *         <code>"kernel.msgmax" | "kernel.msgmnb" | "kernel.msgmni" | "kernel.sem" | "kernel.shmall" | "kernel.shmmax" | "kernel.shmmni" | "kernel.shm_rmid_forced"</code>
+     *         , and <code>Sysctls</code> that start with <code>"fs.mqueue.*"</code>
+     *         </p>
+     *         <p>
+     *         Valid network namespace values: <code>Sysctls</code> that start with <code>"net.*"</code>
+     *         </p>
+     *         <p>
+     *         All of these values are supported by Fargate.
      */
 
     public String getValue() {
@@ -131,11 +184,32 @@ public class SystemControl implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value for the namespaced kernel parameter that's specified in <code>namespace</code>.
+     * The namespaced kernel parameter to set a <code>value</code> for.
+     * </p>
+     * <p>
+     * Valid IPC namespace values:
+     * <code>"kernel.msgmax" | "kernel.msgmnb" | "kernel.msgmni" | "kernel.sem" | "kernel.shmall" | "kernel.shmmax" | "kernel.shmmni" | "kernel.shm_rmid_forced"</code>
+     * , and <code>Sysctls</code> that start with <code>"fs.mqueue.*"</code>
+     * </p>
+     * <p>
+     * Valid network namespace values: <code>Sysctls</code> that start with <code>"net.*"</code>
+     * </p>
+     * <p>
+     * All of these values are supported by Fargate.
      * </p>
      * 
      * @param value
-     *        The value for the namespaced kernel parameter that's specified in <code>namespace</code>.
+     *        The namespaced kernel parameter to set a <code>value</code> for.</p>
+     *        <p>
+     *        Valid IPC namespace values:
+     *        <code>"kernel.msgmax" | "kernel.msgmnb" | "kernel.msgmni" | "kernel.sem" | "kernel.shmall" | "kernel.shmmax" | "kernel.shmmni" | "kernel.shm_rmid_forced"</code>
+     *        , and <code>Sysctls</code> that start with <code>"fs.mqueue.*"</code>
+     *        </p>
+     *        <p>
+     *        Valid network namespace values: <code>Sysctls</code> that start with <code>"net.*"</code>
+     *        </p>
+     *        <p>
+     *        All of these values are supported by Fargate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

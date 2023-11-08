@@ -29,6 +29,8 @@ public class CoveredResourceMarshaller {
 
     private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("accountId").build();
+    private static final MarshallingInfo<java.util.Date> LASTSCANNEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastScannedAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> RESOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceId").build();
     private static final MarshallingInfo<StructuredPojo> RESOURCEMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -57,6 +59,7 @@ public class CoveredResourceMarshaller {
 
         try {
             protocolMarshaller.marshall(coveredResource.getAccountId(), ACCOUNTID_BINDING);
+            protocolMarshaller.marshall(coveredResource.getLastScannedAt(), LASTSCANNEDAT_BINDING);
             protocolMarshaller.marshall(coveredResource.getResourceId(), RESOURCEID_BINDING);
             protocolMarshaller.marshall(coveredResource.getResourceMetadata(), RESOURCEMETADATA_BINDING);
             protocolMarshaller.marshall(coveredResource.getResourceType(), RESOURCETYPE_BINDING);

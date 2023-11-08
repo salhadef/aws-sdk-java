@@ -35,6 +35,21 @@ public class DeleteGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The identifier of the group to be deleted.
      * </p>
+     * <p>
+     * The identifier can be the <i>GroupId</i>, or <i>Groupname</i>. The following identity formats are available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Group name: group
+     * </p>
+     * </li>
+     * </ul>
      */
     private String groupId;
 
@@ -82,9 +97,39 @@ public class DeleteGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The identifier of the group to be deleted.
      * </p>
+     * <p>
+     * The identifier can be the <i>GroupId</i>, or <i>Groupname</i>. The following identity formats are available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Group name: group
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param groupId
-     *        The identifier of the group to be deleted.
+     *        The identifier of the group to be deleted.</p>
+     *        <p>
+     *        The identifier can be the <i>GroupId</i>, or <i>Groupname</i>. The following identity formats are
+     *        available:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Group name: group
+     *        </p>
+     *        </li>
      */
 
     public void setGroupId(String groupId) {
@@ -95,8 +140,38 @@ public class DeleteGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The identifier of the group to be deleted.
      * </p>
+     * <p>
+     * The identifier can be the <i>GroupId</i>, or <i>Groupname</i>. The following identity formats are available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Group name: group
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The identifier of the group to be deleted.
+     * @return The identifier of the group to be deleted.</p>
+     *         <p>
+     *         The identifier can be the <i>GroupId</i>, or <i>Groupname</i>. The following identity formats are
+     *         available:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Group name: group
+     *         </p>
+     *         </li>
      */
 
     public String getGroupId() {
@@ -107,9 +182,39 @@ public class DeleteGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The identifier of the group to be deleted.
      * </p>
+     * <p>
+     * The identifier can be the <i>GroupId</i>, or <i>Groupname</i>. The following identity formats are available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Group name: group
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param groupId
-     *        The identifier of the group to be deleted.
+     *        The identifier of the group to be deleted.</p>
+     *        <p>
+     *        The identifier can be the <i>GroupId</i>, or <i>Groupname</i>. The following identity formats are
+     *        available:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Group name: group
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

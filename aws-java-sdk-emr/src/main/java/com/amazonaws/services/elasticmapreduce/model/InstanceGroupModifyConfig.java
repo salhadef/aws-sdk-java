@@ -42,8 +42,8 @@ public class InstanceGroupModifyConfig implements Serializable, Cloneable, Struc
     private Integer instanceCount;
     /**
      * <p>
-     * The EC2 InstanceIds to terminate. After you terminate the instances, the instance group will not return to its
-     * original requested size.
+     * The Amazon EC2 InstanceIds to terminate. After you terminate the instances, the instance group will not return to
+     * its original requested size.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> eC2InstanceIdsToTerminate;
@@ -169,12 +169,12 @@ public class InstanceGroupModifyConfig implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The EC2 InstanceIds to terminate. After you terminate the instances, the instance group will not return to its
-     * original requested size.
+     * The Amazon EC2 InstanceIds to terminate. After you terminate the instances, the instance group will not return to
+     * its original requested size.
      * </p>
      * 
-     * @return The EC2 InstanceIds to terminate. After you terminate the instances, the instance group will not return
-     *         to its original requested size.
+     * @return The Amazon EC2 InstanceIds to terminate. After you terminate the instances, the instance group will not
+     *         return to its original requested size.
      */
 
     public java.util.List<String> getEC2InstanceIdsToTerminate() {
@@ -186,13 +186,13 @@ public class InstanceGroupModifyConfig implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The EC2 InstanceIds to terminate. After you terminate the instances, the instance group will not return to its
-     * original requested size.
+     * The Amazon EC2 InstanceIds to terminate. After you terminate the instances, the instance group will not return to
+     * its original requested size.
      * </p>
      * 
      * @param eC2InstanceIdsToTerminate
-     *        The EC2 InstanceIds to terminate. After you terminate the instances, the instance group will not return to
-     *        its original requested size.
+     *        The Amazon EC2 InstanceIds to terminate. After you terminate the instances, the instance group will not
+     *        return to its original requested size.
      */
 
     public void setEC2InstanceIdsToTerminate(java.util.Collection<String> eC2InstanceIdsToTerminate) {
@@ -206,8 +206,8 @@ public class InstanceGroupModifyConfig implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The EC2 InstanceIds to terminate. After you terminate the instances, the instance group will not return to its
-     * original requested size.
+     * The Amazon EC2 InstanceIds to terminate. After you terminate the instances, the instance group will not return to
+     * its original requested size.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -216,8 +216,8 @@ public class InstanceGroupModifyConfig implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param eC2InstanceIdsToTerminate
-     *        The EC2 InstanceIds to terminate. After you terminate the instances, the instance group will not return to
-     *        its original requested size.
+     *        The Amazon EC2 InstanceIds to terminate. After you terminate the instances, the instance group will not
+     *        return to its original requested size.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -233,13 +233,13 @@ public class InstanceGroupModifyConfig implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The EC2 InstanceIds to terminate. After you terminate the instances, the instance group will not return to its
-     * original requested size.
+     * The Amazon EC2 InstanceIds to terminate. After you terminate the instances, the instance group will not return to
+     * its original requested size.
      * </p>
      * 
      * @param eC2InstanceIdsToTerminate
-     *        The EC2 InstanceIds to terminate. After you terminate the instances, the instance group will not return to
-     *        its original requested size.
+     *        The Amazon EC2 InstanceIds to terminate. After you terminate the instances, the instance group will not
+     *        return to its original requested size.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

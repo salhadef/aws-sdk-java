@@ -29,10 +29,14 @@ public class ListAppVersionsRequestMarshaller {
 
     private static final MarshallingInfo<String> APPARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("appArn").build();
+    private static final MarshallingInfo<java.util.Date> ENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("endTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("nextToken").build();
+    private static final MarshallingInfo<java.util.Date> STARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startTime").timestampFormat("unixTimestamp").build();
 
     private static final ListAppVersionsRequestMarshaller instance = new ListAppVersionsRequestMarshaller();
 
@@ -51,8 +55,10 @@ public class ListAppVersionsRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(listAppVersionsRequest.getAppArn(), APPARN_BINDING);
+            protocolMarshaller.marshall(listAppVersionsRequest.getEndTime(), ENDTIME_BINDING);
             protocolMarshaller.marshall(listAppVersionsRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listAppVersionsRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listAppVersionsRequest.getStartTime(), STARTTIME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

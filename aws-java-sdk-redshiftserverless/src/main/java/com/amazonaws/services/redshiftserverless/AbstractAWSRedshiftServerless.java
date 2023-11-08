@@ -33,6 +33,11 @@ public class AbstractAWSRedshiftServerless implements AWSRedshiftServerless {
     }
 
     @Override
+    public CreateCustomDomainAssociationResult createCustomDomainAssociation(CreateCustomDomainAssociationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateEndpointAccessResult createEndpointAccess(CreateEndpointAccessRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -54,6 +59,11 @@ public class AbstractAWSRedshiftServerless implements AWSRedshiftServerless {
 
     @Override
     public CreateWorkgroupResult createWorkgroup(CreateWorkgroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteCustomDomainAssociationResult deleteCustomDomainAssociation(DeleteCustomDomainAssociationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -89,6 +99,11 @@ public class AbstractAWSRedshiftServerless implements AWSRedshiftServerless {
 
     @Override
     public GetCredentialsResult getCredentials(GetCredentialsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetCustomDomainAssociationResult getCustomDomainAssociation(GetCustomDomainAssociationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -129,6 +144,11 @@ public class AbstractAWSRedshiftServerless implements AWSRedshiftServerless {
 
     @Override
     public GetWorkgroupResult getWorkgroup(GetWorkgroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListCustomDomainAssociationsResult listCustomDomainAssociations(ListCustomDomainAssociationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -199,6 +219,11 @@ public class AbstractAWSRedshiftServerless implements AWSRedshiftServerless {
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateCustomDomainAssociationResult updateCustomDomainAssociation(UpdateCustomDomainAssociationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

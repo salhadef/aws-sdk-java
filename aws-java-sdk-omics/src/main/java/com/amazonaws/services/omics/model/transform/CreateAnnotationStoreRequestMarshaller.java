@@ -29,20 +29,22 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CreateAnnotationStoreRequestMarshaller {
 
-    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
-    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("name").build();
     private static final MarshallingInfo<StructuredPojo> REFERENCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("reference").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
+    private static final MarshallingInfo<String> VERSIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("versionName").build();
     private static final MarshallingInfo<StructuredPojo> SSECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sseConfig").build();
     private static final MarshallingInfo<String> STOREFORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("storeFormat").build();
     private static final MarshallingInfo<StructuredPojo> STOREOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("storeOptions").build();
-    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("tags").build();
 
     private static final CreateAnnotationStoreRequestMarshaller instance = new CreateAnnotationStoreRequestMarshaller();
 
@@ -60,13 +62,14 @@ public class CreateAnnotationStoreRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(createAnnotationStoreRequest.getDescription(), DESCRIPTION_BINDING);
-            protocolMarshaller.marshall(createAnnotationStoreRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(createAnnotationStoreRequest.getReference(), REFERENCE_BINDING);
+            protocolMarshaller.marshall(createAnnotationStoreRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(createAnnotationStoreRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(createAnnotationStoreRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createAnnotationStoreRequest.getVersionName(), VERSIONNAME_BINDING);
             protocolMarshaller.marshall(createAnnotationStoreRequest.getSseConfig(), SSECONFIG_BINDING);
             protocolMarshaller.marshall(createAnnotationStoreRequest.getStoreFormat(), STOREFORMAT_BINDING);
             protocolMarshaller.marshall(createAnnotationStoreRequest.getStoreOptions(), STOREOPTIONS_BINDING);
-            protocolMarshaller.marshall(createAnnotationStoreRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -25,18 +25,6 @@ public class GetReadSetActivationJobResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * When the job completed.
-     * </p>
-     */
-    private java.util.Date completionTime;
-    /**
-     * <p>
-     * When the job was created.
-     * </p>
-     */
-    private java.util.Date creationTime;
-    /**
-     * <p>
      * The job's ID.
      * </p>
      */
@@ -49,12 +37,6 @@ public class GetReadSetActivationJobResult extends com.amazonaws.AmazonWebServic
     private String sequenceStoreId;
     /**
      * <p>
-     * The job's source files.
-     * </p>
-     */
-    private java.util.List<ActivateReadSetSourceItem> sources;
-    /**
-     * <p>
      * The job's status.
      * </p>
      */
@@ -65,86 +47,24 @@ public class GetReadSetActivationJobResult extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private String statusMessage;
-
-    /**
-     * <p>
-     * When the job completed.
-     * </p>
-     * 
-     * @param completionTime
-     *        When the job completed.
-     */
-
-    public void setCompletionTime(java.util.Date completionTime) {
-        this.completionTime = completionTime;
-    }
-
-    /**
-     * <p>
-     * When the job completed.
-     * </p>
-     * 
-     * @return When the job completed.
-     */
-
-    public java.util.Date getCompletionTime() {
-        return this.completionTime;
-    }
-
-    /**
-     * <p>
-     * When the job completed.
-     * </p>
-     * 
-     * @param completionTime
-     *        When the job completed.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetReadSetActivationJobResult withCompletionTime(java.util.Date completionTime) {
-        setCompletionTime(completionTime);
-        return this;
-    }
-
     /**
      * <p>
      * When the job was created.
      * </p>
-     * 
-     * @param creationTime
-     *        When the job was created.
      */
-
-    public void setCreationTime(java.util.Date creationTime) {
-        this.creationTime = creationTime;
-    }
-
+    private java.util.Date creationTime;
     /**
      * <p>
-     * When the job was created.
+     * When the job completed.
      * </p>
-     * 
-     * @return When the job was created.
      */
-
-    public java.util.Date getCreationTime() {
-        return this.creationTime;
-    }
-
+    private java.util.Date completionTime;
     /**
      * <p>
-     * When the job was created.
+     * The job's source files.
      * </p>
-     * 
-     * @param creationTime
-     *        When the job was created.
-     * @return Returns a reference to this object so that method calls can be chained together.
      */
-
-    public GetReadSetActivationJobResult withCreationTime(java.util.Date creationTime) {
-        setCreationTime(creationTime);
-        return this;
-    }
+    private java.util.List<ActivateReadSetSourceItem> sources;
 
     /**
      * <p>
@@ -223,76 +143,6 @@ public class GetReadSetActivationJobResult extends com.amazonaws.AmazonWebServic
 
     public GetReadSetActivationJobResult withSequenceStoreId(String sequenceStoreId) {
         setSequenceStoreId(sequenceStoreId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The job's source files.
-     * </p>
-     * 
-     * @return The job's source files.
-     */
-
-    public java.util.List<ActivateReadSetSourceItem> getSources() {
-        return sources;
-    }
-
-    /**
-     * <p>
-     * The job's source files.
-     * </p>
-     * 
-     * @param sources
-     *        The job's source files.
-     */
-
-    public void setSources(java.util.Collection<ActivateReadSetSourceItem> sources) {
-        if (sources == null) {
-            this.sources = null;
-            return;
-        }
-
-        this.sources = new java.util.ArrayList<ActivateReadSetSourceItem>(sources);
-    }
-
-    /**
-     * <p>
-     * The job's source files.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setSources(java.util.Collection)} or {@link #withSources(java.util.Collection)} if you want to override
-     * the existing values.
-     * </p>
-     * 
-     * @param sources
-     *        The job's source files.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetReadSetActivationJobResult withSources(ActivateReadSetSourceItem... sources) {
-        if (this.sources == null) {
-            setSources(new java.util.ArrayList<ActivateReadSetSourceItem>(sources.length));
-        }
-        for (ActivateReadSetSourceItem ele : sources) {
-            this.sources.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * The job's source files.
-     * </p>
-     * 
-     * @param sources
-     *        The job's source files.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetReadSetActivationJobResult withSources(java.util.Collection<ActivateReadSetSourceItem> sources) {
-        setSources(sources);
         return this;
     }
 
@@ -396,6 +246,156 @@ public class GetReadSetActivationJobResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * When the job was created.
+     * </p>
+     * 
+     * @param creationTime
+     *        When the job was created.
+     */
+
+    public void setCreationTime(java.util.Date creationTime) {
+        this.creationTime = creationTime;
+    }
+
+    /**
+     * <p>
+     * When the job was created.
+     * </p>
+     * 
+     * @return When the job was created.
+     */
+
+    public java.util.Date getCreationTime() {
+        return this.creationTime;
+    }
+
+    /**
+     * <p>
+     * When the job was created.
+     * </p>
+     * 
+     * @param creationTime
+     *        When the job was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetReadSetActivationJobResult withCreationTime(java.util.Date creationTime) {
+        setCreationTime(creationTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When the job completed.
+     * </p>
+     * 
+     * @param completionTime
+     *        When the job completed.
+     */
+
+    public void setCompletionTime(java.util.Date completionTime) {
+        this.completionTime = completionTime;
+    }
+
+    /**
+     * <p>
+     * When the job completed.
+     * </p>
+     * 
+     * @return When the job completed.
+     */
+
+    public java.util.Date getCompletionTime() {
+        return this.completionTime;
+    }
+
+    /**
+     * <p>
+     * When the job completed.
+     * </p>
+     * 
+     * @param completionTime
+     *        When the job completed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetReadSetActivationJobResult withCompletionTime(java.util.Date completionTime) {
+        setCompletionTime(completionTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The job's source files.
+     * </p>
+     * 
+     * @return The job's source files.
+     */
+
+    public java.util.List<ActivateReadSetSourceItem> getSources() {
+        return sources;
+    }
+
+    /**
+     * <p>
+     * The job's source files.
+     * </p>
+     * 
+     * @param sources
+     *        The job's source files.
+     */
+
+    public void setSources(java.util.Collection<ActivateReadSetSourceItem> sources) {
+        if (sources == null) {
+            this.sources = null;
+            return;
+        }
+
+        this.sources = new java.util.ArrayList<ActivateReadSetSourceItem>(sources);
+    }
+
+    /**
+     * <p>
+     * The job's source files.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSources(java.util.Collection)} or {@link #withSources(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param sources
+     *        The job's source files.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetReadSetActivationJobResult withSources(ActivateReadSetSourceItem... sources) {
+        if (this.sources == null) {
+            setSources(new java.util.ArrayList<ActivateReadSetSourceItem>(sources.length));
+        }
+        for (ActivateReadSetSourceItem ele : sources) {
+            this.sources.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The job's source files.
+     * </p>
+     * 
+     * @param sources
+     *        The job's source files.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetReadSetActivationJobResult withSources(java.util.Collection<ActivateReadSetSourceItem> sources) {
+        setSources(sources);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -407,20 +407,20 @@ public class GetReadSetActivationJobResult extends com.amazonaws.AmazonWebServic
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getCompletionTime() != null)
-            sb.append("CompletionTime: ").append(getCompletionTime()).append(",");
-        if (getCreationTime() != null)
-            sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
         if (getSequenceStoreId() != null)
             sb.append("SequenceStoreId: ").append(getSequenceStoreId()).append(",");
-        if (getSources() != null)
-            sb.append("Sources: ").append(getSources()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusMessage() != null)
-            sb.append("StatusMessage: ").append(getStatusMessage());
+            sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
+        if (getCreationTime() != null)
+            sb.append("CreationTime: ").append(getCreationTime()).append(",");
+        if (getCompletionTime() != null)
+            sb.append("CompletionTime: ").append(getCompletionTime()).append(",");
+        if (getSources() != null)
+            sb.append("Sources: ").append(getSources());
         sb.append("}");
         return sb.toString();
     }
@@ -435,14 +435,6 @@ public class GetReadSetActivationJobResult extends com.amazonaws.AmazonWebServic
         if (obj instanceof GetReadSetActivationJobResult == false)
             return false;
         GetReadSetActivationJobResult other = (GetReadSetActivationJobResult) obj;
-        if (other.getCompletionTime() == null ^ this.getCompletionTime() == null)
-            return false;
-        if (other.getCompletionTime() != null && other.getCompletionTime().equals(this.getCompletionTime()) == false)
-            return false;
-        if (other.getCreationTime() == null ^ this.getCreationTime() == null)
-            return false;
-        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
-            return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
@@ -450,10 +442,6 @@ public class GetReadSetActivationJobResult extends com.amazonaws.AmazonWebServic
         if (other.getSequenceStoreId() == null ^ this.getSequenceStoreId() == null)
             return false;
         if (other.getSequenceStoreId() != null && other.getSequenceStoreId().equals(this.getSequenceStoreId()) == false)
-            return false;
-        if (other.getSources() == null ^ this.getSources() == null)
-            return false;
-        if (other.getSources() != null && other.getSources().equals(this.getSources()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
@@ -463,6 +451,18 @@ public class GetReadSetActivationJobResult extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getStatusMessage() != null && other.getStatusMessage().equals(this.getStatusMessage()) == false)
             return false;
+        if (other.getCreationTime() == null ^ this.getCreationTime() == null)
+            return false;
+        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
+            return false;
+        if (other.getCompletionTime() == null ^ this.getCompletionTime() == null)
+            return false;
+        if (other.getCompletionTime() != null && other.getCompletionTime().equals(this.getCompletionTime()) == false)
+            return false;
+        if (other.getSources() == null ^ this.getSources() == null)
+            return false;
+        if (other.getSources() != null && other.getSources().equals(this.getSources()) == false)
+            return false;
         return true;
     }
 
@@ -471,13 +471,13 @@ public class GetReadSetActivationJobResult extends com.amazonaws.AmazonWebServic
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getCompletionTime() == null) ? 0 : getCompletionTime().hashCode());
-        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getSequenceStoreId() == null) ? 0 : getSequenceStoreId().hashCode());
-        hashCode = prime * hashCode + ((getSources() == null) ? 0 : getSources().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
+        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
+        hashCode = prime * hashCode + ((getCompletionTime() == null) ? 0 : getCompletionTime().hashCode());
+        hashCode = prime * hashCode + ((getSources() == null) ? 0 : getSources().hashCode());
         return hashCode;
     }
 

@@ -45,7 +45,7 @@ public class ListModelCardVersionsRequest extends com.amazonaws.AmazonWebService
     private Integer maxResults;
     /**
      * <p>
-     * List model card versions for the model card with the specified name.
+     * List model card versions for the model card with the specified name or Amazon Resource Name (ARN).
      * </p>
      */
     private String modelCardName;
@@ -197,11 +197,11 @@ public class ListModelCardVersionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * List model card versions for the model card with the specified name.
+     * List model card versions for the model card with the specified name or Amazon Resource Name (ARN).
      * </p>
      * 
      * @param modelCardName
-     *        List model card versions for the model card with the specified name.
+     *        List model card versions for the model card with the specified name or Amazon Resource Name (ARN).
      */
 
     public void setModelCardName(String modelCardName) {
@@ -210,10 +210,10 @@ public class ListModelCardVersionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * List model card versions for the model card with the specified name.
+     * List model card versions for the model card with the specified name or Amazon Resource Name (ARN).
      * </p>
      * 
-     * @return List model card versions for the model card with the specified name.
+     * @return List model card versions for the model card with the specified name or Amazon Resource Name (ARN).
      */
 
     public String getModelCardName() {
@@ -222,11 +222,11 @@ public class ListModelCardVersionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * List model card versions for the model card with the specified name.
+     * List model card versions for the model card with the specified name or Amazon Resource Name (ARN).
      * </p>
      * 
      * @param modelCardName
-     *        List model card versions for the model card with the specified name.
+     *        List model card versions for the model card with the specified name or Amazon Resource Name (ARN).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

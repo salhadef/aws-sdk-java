@@ -130,6 +130,18 @@ public class DescribeAutoMLJobV2ResultJsonUnmarshaller implements Unmarshaller<D
                     context.nextToken();
                     describeAutoMLJobV2Result.setSecurityConfig(AutoMLSecurityConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("AutoMLJobArtifacts", targetDepth)) {
+                    context.nextToken();
+                    describeAutoMLJobV2Result.setAutoMLJobArtifacts(AutoMLJobArtifactsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ResolvedAttributes", targetDepth)) {
+                    context.nextToken();
+                    describeAutoMLJobV2Result.setResolvedAttributes(AutoMLResolvedAttributesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AutoMLProblemTypeConfigName", targetDepth)) {
+                    context.nextToken();
+                    describeAutoMLJobV2Result.setAutoMLProblemTypeConfigName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

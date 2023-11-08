@@ -34,6 +34,41 @@ public interface AWSdrsAsync extends AWSdrs {
 
     /**
      * <p>
+     * Associate a Source Network to an existing CloudFormation Stack and modify launch templates to use this network.
+     * Can be used for reverting to previously deployed CloudFormation stacks.
+     * </p>
+     * 
+     * @param associateSourceNetworkStackRequest
+     * @return A Java Future containing the result of the AssociateSourceNetworkStack operation returned by the service.
+     * @sample AWSdrsAsync.AssociateSourceNetworkStack
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/AssociateSourceNetworkStack"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateSourceNetworkStackResult> associateSourceNetworkStackAsync(
+            AssociateSourceNetworkStackRequest associateSourceNetworkStackRequest);
+
+    /**
+     * <p>
+     * Associate a Source Network to an existing CloudFormation Stack and modify launch templates to use this network.
+     * Can be used for reverting to previously deployed CloudFormation stacks.
+     * </p>
+     * 
+     * @param associateSourceNetworkStackRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateSourceNetworkStack operation returned by the service.
+     * @sample AWSdrsAsyncHandler.AssociateSourceNetworkStack
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/AssociateSourceNetworkStack"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateSourceNetworkStackResult> associateSourceNetworkStackAsync(
+            AssociateSourceNetworkStackRequest associateSourceNetworkStackRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateSourceNetworkStackRequest, AssociateSourceNetworkStackResult> asyncHandler);
+
+    /**
+     * <p>
      * Create an extended source server in the target Account based on the source server in staging account.
      * </p>
      * 
@@ -137,6 +172,37 @@ public interface AWSdrsAsync extends AWSdrs {
 
     /**
      * <p>
+     * Create a new Source Network resource for a provided VPC ID.
+     * </p>
+     * 
+     * @param createSourceNetworkRequest
+     * @return A Java Future containing the result of the CreateSourceNetwork operation returned by the service.
+     * @sample AWSdrsAsync.CreateSourceNetwork
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/CreateSourceNetwork" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateSourceNetworkResult> createSourceNetworkAsync(CreateSourceNetworkRequest createSourceNetworkRequest);
+
+    /**
+     * <p>
+     * Create a new Source Network resource for a provided VPC ID.
+     * </p>
+     * 
+     * @param createSourceNetworkRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateSourceNetwork operation returned by the service.
+     * @sample AWSdrsAsyncHandler.CreateSourceNetwork
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/CreateSourceNetwork" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateSourceNetworkResult> createSourceNetworkAsync(CreateSourceNetworkRequest createSourceNetworkRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateSourceNetworkRequest, CreateSourceNetworkResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a single Job by ID.
      * </p>
      * 
@@ -165,6 +231,37 @@ public interface AWSdrsAsync extends AWSdrs {
      */
     java.util.concurrent.Future<DeleteJobResult> deleteJobAsync(DeleteJobRequest deleteJobRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteJobRequest, DeleteJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a resource launch action.
+     * </p>
+     * 
+     * @param deleteLaunchActionRequest
+     * @return A Java Future containing the result of the DeleteLaunchAction operation returned by the service.
+     * @sample AWSdrsAsync.DeleteLaunchAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DeleteLaunchAction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLaunchActionResult> deleteLaunchActionAsync(DeleteLaunchActionRequest deleteLaunchActionRequest);
+
+    /**
+     * <p>
+     * Deletes a resource launch action.
+     * </p>
+     * 
+     * @param deleteLaunchActionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteLaunchAction operation returned by the service.
+     * @sample AWSdrsAsyncHandler.DeleteLaunchAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DeleteLaunchAction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLaunchActionResult> deleteLaunchActionAsync(DeleteLaunchActionRequest deleteLaunchActionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteLaunchActionRequest, DeleteLaunchActionResult> asyncHandler);
 
     /**
      * <p>
@@ -268,6 +365,37 @@ public interface AWSdrsAsync extends AWSdrs {
     java.util.concurrent.Future<DeleteReplicationConfigurationTemplateResult> deleteReplicationConfigurationTemplateAsync(
             DeleteReplicationConfigurationTemplateRequest deleteReplicationConfigurationTemplateRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteReplicationConfigurationTemplateRequest, DeleteReplicationConfigurationTemplateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Delete Source Network resource.
+     * </p>
+     * 
+     * @param deleteSourceNetworkRequest
+     * @return A Java Future containing the result of the DeleteSourceNetwork operation returned by the service.
+     * @sample AWSdrsAsync.DeleteSourceNetwork
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DeleteSourceNetwork" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteSourceNetworkResult> deleteSourceNetworkAsync(DeleteSourceNetworkRequest deleteSourceNetworkRequest);
+
+    /**
+     * <p>
+     * Delete Source Network resource.
+     * </p>
+     * 
+     * @param deleteSourceNetworkRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteSourceNetwork operation returned by the service.
+     * @sample AWSdrsAsyncHandler.DeleteSourceNetwork
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DeleteSourceNetwork" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteSourceNetworkResult> deleteSourceNetworkAsync(DeleteSourceNetworkRequest deleteSourceNetworkRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteSourceNetworkRequest, DeleteSourceNetworkResult> asyncHandler);
 
     /**
      * <p>
@@ -508,6 +636,37 @@ public interface AWSdrsAsync extends AWSdrs {
 
     /**
      * <p>
+     * Lists all Source Networks or multiple Source Networks filtered by ID.
+     * </p>
+     * 
+     * @param describeSourceNetworksRequest
+     * @return A Java Future containing the result of the DescribeSourceNetworks operation returned by the service.
+     * @sample AWSdrsAsync.DescribeSourceNetworks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DescribeSourceNetworks" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeSourceNetworksResult> describeSourceNetworksAsync(DescribeSourceNetworksRequest describeSourceNetworksRequest);
+
+    /**
+     * <p>
+     * Lists all Source Networks or multiple Source Networks filtered by ID.
+     * </p>
+     * 
+     * @param describeSourceNetworksRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeSourceNetworks operation returned by the service.
+     * @sample AWSdrsAsyncHandler.DescribeSourceNetworks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DescribeSourceNetworks" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeSourceNetworksResult> describeSourceNetworksAsync(DescribeSourceNetworksRequest describeSourceNetworksRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeSourceNetworksRequest, DescribeSourceNetworksResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists all Source Servers or multiple Source Servers filtered by ID.
      * </p>
      * 
@@ -628,6 +787,41 @@ public interface AWSdrsAsync extends AWSdrs {
      */
     java.util.concurrent.Future<DisconnectSourceServerResult> disconnectSourceServerAsync(DisconnectSourceServerRequest disconnectSourceServerRequest,
             com.amazonaws.handlers.AsyncHandler<DisconnectSourceServerRequest, DisconnectSourceServerResult> asyncHandler);
+
+    /**
+     * <p>
+     * Export the Source Network CloudFormation template to an S3 bucket.
+     * </p>
+     * 
+     * @param exportSourceNetworkCfnTemplateRequest
+     * @return A Java Future containing the result of the ExportSourceNetworkCfnTemplate operation returned by the
+     *         service.
+     * @sample AWSdrsAsync.ExportSourceNetworkCfnTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ExportSourceNetworkCfnTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ExportSourceNetworkCfnTemplateResult> exportSourceNetworkCfnTemplateAsync(
+            ExportSourceNetworkCfnTemplateRequest exportSourceNetworkCfnTemplateRequest);
+
+    /**
+     * <p>
+     * Export the Source Network CloudFormation template to an S3 bucket.
+     * </p>
+     * 
+     * @param exportSourceNetworkCfnTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ExportSourceNetworkCfnTemplate operation returned by the
+     *         service.
+     * @sample AWSdrsAsyncHandler.ExportSourceNetworkCfnTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ExportSourceNetworkCfnTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ExportSourceNetworkCfnTemplateResult> exportSourceNetworkCfnTemplateAsync(
+            ExportSourceNetworkCfnTemplateRequest exportSourceNetworkCfnTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<ExportSourceNetworkCfnTemplateRequest, ExportSourceNetworkCfnTemplateResult> asyncHandler);
 
     /**
      * <p>
@@ -798,6 +992,37 @@ public interface AWSdrsAsync extends AWSdrs {
 
     /**
      * <p>
+     * Lists resource launch actions.
+     * </p>
+     * 
+     * @param listLaunchActionsRequest
+     * @return A Java Future containing the result of the ListLaunchActions operation returned by the service.
+     * @sample AWSdrsAsync.ListLaunchActions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ListLaunchActions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListLaunchActionsResult> listLaunchActionsAsync(ListLaunchActionsRequest listLaunchActionsRequest);
+
+    /**
+     * <p>
+     * Lists resource launch actions.
+     * </p>
+     * 
+     * @param listLaunchActionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListLaunchActions operation returned by the service.
+     * @sample AWSdrsAsyncHandler.ListLaunchActions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ListLaunchActions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListLaunchActionsResult> listLaunchActionsAsync(ListLaunchActionsRequest listLaunchActionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListLaunchActionsRequest, ListLaunchActionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns an array of staging accounts for existing extended source servers.
      * </p>
      * 
@@ -857,6 +1082,37 @@ public interface AWSdrsAsync extends AWSdrs {
      */
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Puts a resource launch action.
+     * </p>
+     * 
+     * @param putLaunchActionRequest
+     * @return A Java Future containing the result of the PutLaunchAction operation returned by the service.
+     * @sample AWSdrsAsync.PutLaunchAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/PutLaunchAction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutLaunchActionResult> putLaunchActionAsync(PutLaunchActionRequest putLaunchActionRequest);
+
+    /**
+     * <p>
+     * Puts a resource launch action.
+     * </p>
+     * 
+     * @param putLaunchActionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutLaunchAction operation returned by the service.
+     * @sample AWSdrsAsyncHandler.PutLaunchAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/PutLaunchAction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutLaunchActionResult> putLaunchActionAsync(PutLaunchActionRequest putLaunchActionRequest,
+            com.amazonaws.handlers.AsyncHandler<PutLaunchActionRequest, PutLaunchActionResult> asyncHandler);
 
     /**
      * <p>
@@ -1031,6 +1287,76 @@ public interface AWSdrsAsync extends AWSdrs {
 
     /**
      * <p>
+     * Deploy VPC for the specified Source Network and modify launch templates to use this network. The VPC will be
+     * deployed using a dedicated CloudFormation stack.
+     * </p>
+     * 
+     * @param startSourceNetworkRecoveryRequest
+     * @return A Java Future containing the result of the StartSourceNetworkRecovery operation returned by the service.
+     * @sample AWSdrsAsync.StartSourceNetworkRecovery
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StartSourceNetworkRecovery" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<StartSourceNetworkRecoveryResult> startSourceNetworkRecoveryAsync(
+            StartSourceNetworkRecoveryRequest startSourceNetworkRecoveryRequest);
+
+    /**
+     * <p>
+     * Deploy VPC for the specified Source Network and modify launch templates to use this network. The VPC will be
+     * deployed using a dedicated CloudFormation stack.
+     * </p>
+     * 
+     * @param startSourceNetworkRecoveryRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartSourceNetworkRecovery operation returned by the service.
+     * @sample AWSdrsAsyncHandler.StartSourceNetworkRecovery
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StartSourceNetworkRecovery" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<StartSourceNetworkRecoveryResult> startSourceNetworkRecoveryAsync(
+            StartSourceNetworkRecoveryRequest startSourceNetworkRecoveryRequest,
+            com.amazonaws.handlers.AsyncHandler<StartSourceNetworkRecoveryRequest, StartSourceNetworkRecoveryResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts replication for a Source Network. This action would make the Source Network protected.
+     * </p>
+     * 
+     * @param startSourceNetworkReplicationRequest
+     * @return A Java Future containing the result of the StartSourceNetworkReplication operation returned by the
+     *         service.
+     * @sample AWSdrsAsync.StartSourceNetworkReplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StartSourceNetworkReplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartSourceNetworkReplicationResult> startSourceNetworkReplicationAsync(
+            StartSourceNetworkReplicationRequest startSourceNetworkReplicationRequest);
+
+    /**
+     * <p>
+     * Starts replication for a Source Network. This action would make the Source Network protected.
+     * </p>
+     * 
+     * @param startSourceNetworkReplicationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartSourceNetworkReplication operation returned by the
+     *         service.
+     * @sample AWSdrsAsyncHandler.StartSourceNetworkReplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StartSourceNetworkReplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartSourceNetworkReplicationResult> startSourceNetworkReplicationAsync(
+            StartSourceNetworkReplicationRequest startSourceNetworkReplicationRequest,
+            com.amazonaws.handlers.AsyncHandler<StartSourceNetworkReplicationRequest, StartSourceNetworkReplicationResult> asyncHandler);
+
+    /**
+     * <p>
      * Stops the failback process for a specified Recovery Instance. This changes the Failback State of the Recovery
      * Instance back to FAILBACK_NOT_STARTED.
      * </p>
@@ -1094,6 +1420,41 @@ public interface AWSdrsAsync extends AWSdrs {
      */
     java.util.concurrent.Future<StopReplicationResult> stopReplicationAsync(StopReplicationRequest stopReplicationRequest,
             com.amazonaws.handlers.AsyncHandler<StopReplicationRequest, StopReplicationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Stops replication for a Source Network. This action would make the Source Network unprotected.
+     * </p>
+     * 
+     * @param stopSourceNetworkReplicationRequest
+     * @return A Java Future containing the result of the StopSourceNetworkReplication operation returned by the
+     *         service.
+     * @sample AWSdrsAsync.StopSourceNetworkReplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StopSourceNetworkReplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StopSourceNetworkReplicationResult> stopSourceNetworkReplicationAsync(
+            StopSourceNetworkReplicationRequest stopSourceNetworkReplicationRequest);
+
+    /**
+     * <p>
+     * Stops replication for a Source Network. This action would make the Source Network unprotected.
+     * </p>
+     * 
+     * @param stopSourceNetworkReplicationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopSourceNetworkReplication operation returned by the
+     *         service.
+     * @sample AWSdrsAsyncHandler.StopSourceNetworkReplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StopSourceNetworkReplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StopSourceNetworkReplicationResult> stopSourceNetworkReplicationAsync(
+            StopSourceNetworkReplicationRequest stopSourceNetworkReplicationRequest,
+            com.amazonaws.handlers.AsyncHandler<StopSourceNetworkReplicationRequest, StopSourceNetworkReplicationResult> asyncHandler);
 
     /**
      * <p>

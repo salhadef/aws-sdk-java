@@ -27,7 +27,7 @@ public class ListFHIRExportJobsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * This parameter limits the response to the export job with the specified Data Store ID.
+     * This parameter limits the response to the export job with the specified data store ID.
      * </p>
      */
     private String datastoreId;
@@ -71,11 +71,11 @@ public class ListFHIRExportJobsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * This parameter limits the response to the export job with the specified Data Store ID.
+     * This parameter limits the response to the export job with the specified data store ID.
      * </p>
      * 
      * @param datastoreId
-     *        This parameter limits the response to the export job with the specified Data Store ID.
+     *        This parameter limits the response to the export job with the specified data store ID.
      */
 
     public void setDatastoreId(String datastoreId) {
@@ -84,10 +84,10 @@ public class ListFHIRExportJobsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * This parameter limits the response to the export job with the specified Data Store ID.
+     * This parameter limits the response to the export job with the specified data store ID.
      * </p>
      * 
-     * @return This parameter limits the response to the export job with the specified Data Store ID.
+     * @return This parameter limits the response to the export job with the specified data store ID.
      */
 
     public String getDatastoreId() {
@@ -96,11 +96,11 @@ public class ListFHIRExportJobsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * This parameter limits the response to the export job with the specified Data Store ID.
+     * This parameter limits the response to the export job with the specified data store ID.
      * </p>
      * 
      * @param datastoreId
-     *        This parameter limits the response to the export job with the specified Data Store ID.
+     *        This parameter limits the response to the export job with the specified data store ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

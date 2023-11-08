@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * OCU Limit Exceeded for service limits
+ * Thrown when the collection you're attempting to create results in a number of search or indexing OCUs that exceeds
+ * the account limit.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

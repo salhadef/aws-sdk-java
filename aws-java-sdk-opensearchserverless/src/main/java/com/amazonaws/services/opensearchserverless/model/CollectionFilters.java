@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * List of filter keys that you can use for LIST, UPDATE, and DELETE requests to OpenSearch Serverless collections.
+ * A list of filter keys that you can use for LIST, UPDATE, and DELETE requests to OpenSearch Serverless collections.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CollectionFilters"

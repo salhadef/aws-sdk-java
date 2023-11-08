@@ -163,10 +163,22 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
     private ExasolParameters exasolParameters;
     /**
      * <p>
-     * The required parameters that are needed to connect to a Databricks data source.
+     * The parameters that are required to connect to a Databricks data source.
      * </p>
      */
     private DatabricksParameters databricksParameters;
+    /**
+     * <p>
+     * The parameters that are required to connect to a Starburst data source.
+     * </p>
+     */
+    private StarburstParameters starburstParameters;
+    /**
+     * <p>
+     * The parameters that are required to connect to a Trino data source.
+     * </p>
+     */
+    private TrinoParameters trinoParameters;
 
     /**
      * <p>
@@ -1050,11 +1062,11 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The required parameters that are needed to connect to a Databricks data source.
+     * The parameters that are required to connect to a Databricks data source.
      * </p>
      * 
      * @param databricksParameters
-     *        The required parameters that are needed to connect to a Databricks data source.
+     *        The parameters that are required to connect to a Databricks data source.
      */
 
     public void setDatabricksParameters(DatabricksParameters databricksParameters) {
@@ -1063,10 +1075,10 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The required parameters that are needed to connect to a Databricks data source.
+     * The parameters that are required to connect to a Databricks data source.
      * </p>
      * 
-     * @return The required parameters that are needed to connect to a Databricks data source.
+     * @return The parameters that are required to connect to a Databricks data source.
      */
 
     public DatabricksParameters getDatabricksParameters() {
@@ -1075,16 +1087,96 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The required parameters that are needed to connect to a Databricks data source.
+     * The parameters that are required to connect to a Databricks data source.
      * </p>
      * 
      * @param databricksParameters
-     *        The required parameters that are needed to connect to a Databricks data source.
+     *        The parameters that are required to connect to a Databricks data source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DataSourceParameters withDatabricksParameters(DatabricksParameters databricksParameters) {
         setDatabricksParameters(databricksParameters);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The parameters that are required to connect to a Starburst data source.
+     * </p>
+     * 
+     * @param starburstParameters
+     *        The parameters that are required to connect to a Starburst data source.
+     */
+
+    public void setStarburstParameters(StarburstParameters starburstParameters) {
+        this.starburstParameters = starburstParameters;
+    }
+
+    /**
+     * <p>
+     * The parameters that are required to connect to a Starburst data source.
+     * </p>
+     * 
+     * @return The parameters that are required to connect to a Starburst data source.
+     */
+
+    public StarburstParameters getStarburstParameters() {
+        return this.starburstParameters;
+    }
+
+    /**
+     * <p>
+     * The parameters that are required to connect to a Starburst data source.
+     * </p>
+     * 
+     * @param starburstParameters
+     *        The parameters that are required to connect to a Starburst data source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSourceParameters withStarburstParameters(StarburstParameters starburstParameters) {
+        setStarburstParameters(starburstParameters);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The parameters that are required to connect to a Trino data source.
+     * </p>
+     * 
+     * @param trinoParameters
+     *        The parameters that are required to connect to a Trino data source.
+     */
+
+    public void setTrinoParameters(TrinoParameters trinoParameters) {
+        this.trinoParameters = trinoParameters;
+    }
+
+    /**
+     * <p>
+     * The parameters that are required to connect to a Trino data source.
+     * </p>
+     * 
+     * @return The parameters that are required to connect to a Trino data source.
+     */
+
+    public TrinoParameters getTrinoParameters() {
+        return this.trinoParameters;
+    }
+
+    /**
+     * <p>
+     * The parameters that are required to connect to a Trino data source.
+     * </p>
+     * 
+     * @param trinoParameters
+     *        The parameters that are required to connect to a Trino data source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSourceParameters withTrinoParameters(TrinoParameters trinoParameters) {
+        setTrinoParameters(trinoParameters);
         return this;
     }
 
@@ -1145,7 +1237,11 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
         if (getExasolParameters() != null)
             sb.append("ExasolParameters: ").append(getExasolParameters()).append(",");
         if (getDatabricksParameters() != null)
-            sb.append("DatabricksParameters: ").append(getDatabricksParameters());
+            sb.append("DatabricksParameters: ").append(getDatabricksParameters()).append(",");
+        if (getStarburstParameters() != null)
+            sb.append("StarburstParameters: ").append(getStarburstParameters()).append(",");
+        if (getTrinoParameters() != null)
+            sb.append("TrinoParameters: ").append(getTrinoParameters());
         sb.append("}");
         return sb.toString();
     }
@@ -1253,6 +1349,14 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
             return false;
         if (other.getDatabricksParameters() != null && other.getDatabricksParameters().equals(this.getDatabricksParameters()) == false)
             return false;
+        if (other.getStarburstParameters() == null ^ this.getStarburstParameters() == null)
+            return false;
+        if (other.getStarburstParameters() != null && other.getStarburstParameters().equals(this.getStarburstParameters()) == false)
+            return false;
+        if (other.getTrinoParameters() == null ^ this.getTrinoParameters() == null)
+            return false;
+        if (other.getTrinoParameters() != null && other.getTrinoParameters().equals(this.getTrinoParameters()) == false)
+            return false;
         return true;
     }
 
@@ -1284,6 +1388,8 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getAmazonOpenSearchParameters() == null) ? 0 : getAmazonOpenSearchParameters().hashCode());
         hashCode = prime * hashCode + ((getExasolParameters() == null) ? 0 : getExasolParameters().hashCode());
         hashCode = prime * hashCode + ((getDatabricksParameters() == null) ? 0 : getDatabricksParameters().hashCode());
+        hashCode = prime * hashCode + ((getStarburstParameters() == null) ? 0 : getStarburstParameters().hashCode());
+        hashCode = prime * hashCode + ((getTrinoParameters() == null) ? 0 : getTrinoParameters().hashCode());
         return hashCode;
     }
 

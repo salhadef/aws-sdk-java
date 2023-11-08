@@ -39,7 +39,8 @@ public class GetTraceSummariesRequest extends com.amazonaws.AmazonWebServiceRequ
     private java.util.Date endTime;
     /**
      * <p>
-     * A parameter to indicate whether to query trace summaries by TraceId or Event time.
+     * A parameter to indicate whether to query trace summaries by TraceId, Event (trace update time), or Service
+     * (segment end time).
      * </p>
      */
     private String timeRangeType;
@@ -150,11 +151,13 @@ public class GetTraceSummariesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A parameter to indicate whether to query trace summaries by TraceId or Event time.
+     * A parameter to indicate whether to query trace summaries by TraceId, Event (trace update time), or Service
+     * (segment end time).
      * </p>
      * 
      * @param timeRangeType
-     *        A parameter to indicate whether to query trace summaries by TraceId or Event time.
+     *        A parameter to indicate whether to query trace summaries by TraceId, Event (trace update time), or Service
+     *        (segment end time).
      * @see TimeRangeType
      */
 
@@ -164,10 +167,12 @@ public class GetTraceSummariesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A parameter to indicate whether to query trace summaries by TraceId or Event time.
+     * A parameter to indicate whether to query trace summaries by TraceId, Event (trace update time), or Service
+     * (segment end time).
      * </p>
      * 
-     * @return A parameter to indicate whether to query trace summaries by TraceId or Event time.
+     * @return A parameter to indicate whether to query trace summaries by TraceId, Event (trace update time), or
+     *         Service (segment end time).
      * @see TimeRangeType
      */
 
@@ -177,11 +182,13 @@ public class GetTraceSummariesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A parameter to indicate whether to query trace summaries by TraceId or Event time.
+     * A parameter to indicate whether to query trace summaries by TraceId, Event (trace update time), or Service
+     * (segment end time).
      * </p>
      * 
      * @param timeRangeType
-     *        A parameter to indicate whether to query trace summaries by TraceId or Event time.
+     *        A parameter to indicate whether to query trace summaries by TraceId, Event (trace update time), or Service
+     *        (segment end time).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TimeRangeType
      */
@@ -193,11 +200,13 @@ public class GetTraceSummariesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A parameter to indicate whether to query trace summaries by TraceId or Event time.
+     * A parameter to indicate whether to query trace summaries by TraceId, Event (trace update time), or Service
+     * (segment end time).
      * </p>
      * 
      * @param timeRangeType
-     *        A parameter to indicate whether to query trace summaries by TraceId or Event time.
+     *        A parameter to indicate whether to query trace summaries by TraceId, Event (trace update time), or Service
+     *        (segment end time).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TimeRangeType
      */

@@ -30,7 +30,7 @@ public class LogicalResourceId implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
+     * Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
      * </p>
      * <note>
      * <p>
@@ -41,7 +41,7 @@ public class LogicalResourceId implements Serializable, Cloneable, StructuredPoj
     private String eksSourceName;
     /**
      * <p>
-     * The identifier of the resource.
+     * Identifier of the resource.
      * </p>
      */
     private String identifier;
@@ -66,7 +66,7 @@ public class LogicalResourceId implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
+     * Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
      * </p>
      * <note>
      * <p>
@@ -75,8 +75,7 @@ public class LogicalResourceId implements Serializable, Cloneable, StructuredPoj
      * </note>
      * 
      * @param eksSourceName
-     *        The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p>
-     *        <note>
+     *        Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p> <note>
      *        <p>
      *        This parameter accepts values in "eks-cluster/namespace" format.
      *        </p>
@@ -88,7 +87,7 @@ public class LogicalResourceId implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
+     * Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
      * </p>
      * <note>
      * <p>
@@ -96,8 +95,7 @@ public class LogicalResourceId implements Serializable, Cloneable, StructuredPoj
      * </p>
      * </note>
      * 
-     * @return The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p>
-     *         <note>
+     * @return Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p> <note>
      *         <p>
      *         This parameter accepts values in "eks-cluster/namespace" format.
      *         </p>
@@ -109,7 +107,7 @@ public class LogicalResourceId implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
+     * Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
      * </p>
      * <note>
      * <p>
@@ -118,8 +116,7 @@ public class LogicalResourceId implements Serializable, Cloneable, StructuredPoj
      * </note>
      * 
      * @param eksSourceName
-     *        The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p>
-     *        <note>
+     *        Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p> <note>
      *        <p>
      *        This parameter accepts values in "eks-cluster/namespace" format.
      *        </p>
@@ -133,11 +130,11 @@ public class LogicalResourceId implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The identifier of the resource.
+     * Identifier of the resource.
      * </p>
      * 
      * @param identifier
-     *        The identifier of the resource.
+     *        Identifier of the resource.
      */
 
     public void setIdentifier(String identifier) {
@@ -146,10 +143,10 @@ public class LogicalResourceId implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The identifier of the resource.
+     * Identifier of the resource.
      * </p>
      * 
-     * @return The identifier of the resource.
+     * @return Identifier of the resource.
      */
 
     public String getIdentifier() {
@@ -158,11 +155,11 @@ public class LogicalResourceId implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The identifier of the resource.
+     * Identifier of the resource.
      * </p>
      * 
      * @param identifier
-     *        The identifier of the resource.
+     *        Identifier of the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

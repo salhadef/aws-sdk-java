@@ -79,6 +79,12 @@ public class SubtotalOptionsJsonUnmarshaller implements Unmarshaller<SubtotalOpt
                     context.nextToken();
                     subtotalOptions.setMetricHeaderCellStyle(TableCellStyleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("StyleTargets", targetDepth)) {
+                    context.nextToken();
+                    subtotalOptions.setStyleTargets(new ListUnmarshaller<TableStyleTarget>(TableStyleTargetJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -52,6 +52,13 @@ public class CreateWorkgroupRequest extends com.amazonaws.AmazonWebServiceReques
     private Boolean enhancedVpcRouting;
     /**
      * <p>
+     * The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve queries. The max capacity is
+     * specified in RPUs.
+     * </p>
+     */
+    private Integer maxCapacity;
+    /**
+     * <p>
      * The name of the namespace to associate with the workgroup.
      * </p>
      */
@@ -310,6 +317,52 @@ public class CreateWorkgroupRequest extends com.amazonaws.AmazonWebServiceReques
 
     public Boolean isEnhancedVpcRouting() {
         return this.enhancedVpcRouting;
+    }
+
+    /**
+     * <p>
+     * The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve queries. The max capacity is
+     * specified in RPUs.
+     * </p>
+     * 
+     * @param maxCapacity
+     *        The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve queries. The max capacity is
+     *        specified in RPUs.
+     */
+
+    public void setMaxCapacity(Integer maxCapacity) {
+        this.maxCapacity = maxCapacity;
+    }
+
+    /**
+     * <p>
+     * The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve queries. The max capacity is
+     * specified in RPUs.
+     * </p>
+     * 
+     * @return The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve queries. The max capacity is
+     *         specified in RPUs.
+     */
+
+    public Integer getMaxCapacity() {
+        return this.maxCapacity;
+    }
+
+    /**
+     * <p>
+     * The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve queries. The max capacity is
+     * specified in RPUs.
+     * </p>
+     * 
+     * @param maxCapacity
+     *        The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve queries. The max capacity is
+     *        specified in RPUs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWorkgroupRequest withMaxCapacity(Integer maxCapacity) {
+        setMaxCapacity(maxCapacity);
+        return this;
     }
 
     /**
@@ -718,6 +771,8 @@ public class CreateWorkgroupRequest extends com.amazonaws.AmazonWebServiceReques
             sb.append("ConfigParameters: ").append(getConfigParameters()).append(",");
         if (getEnhancedVpcRouting() != null)
             sb.append("EnhancedVpcRouting: ").append(getEnhancedVpcRouting()).append(",");
+        if (getMaxCapacity() != null)
+            sb.append("MaxCapacity: ").append(getMaxCapacity()).append(",");
         if (getNamespaceName() != null)
             sb.append("NamespaceName: ").append(getNamespaceName()).append(",");
         if (getPort() != null)
@@ -758,6 +813,10 @@ public class CreateWorkgroupRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getEnhancedVpcRouting() != null && other.getEnhancedVpcRouting().equals(this.getEnhancedVpcRouting()) == false)
             return false;
+        if (other.getMaxCapacity() == null ^ this.getMaxCapacity() == null)
+            return false;
+        if (other.getMaxCapacity() != null && other.getMaxCapacity().equals(this.getMaxCapacity()) == false)
+            return false;
         if (other.getNamespaceName() == null ^ this.getNamespaceName() == null)
             return false;
         if (other.getNamespaceName() != null && other.getNamespaceName().equals(this.getNamespaceName()) == false)
@@ -797,6 +856,7 @@ public class CreateWorkgroupRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getBaseCapacity() == null) ? 0 : getBaseCapacity().hashCode());
         hashCode = prime * hashCode + ((getConfigParameters() == null) ? 0 : getConfigParameters().hashCode());
         hashCode = prime * hashCode + ((getEnhancedVpcRouting() == null) ? 0 : getEnhancedVpcRouting().hashCode());
+        hashCode = prime * hashCode + ((getMaxCapacity() == null) ? 0 : getMaxCapacity().hashCode());
         hashCode = prime * hashCode + ((getNamespaceName() == null) ? 0 : getNamespaceName().hashCode());
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
         hashCode = prime * hashCode + ((getPubliclyAccessible() == null) ? 0 : getPubliclyAccessible().hashCode());

@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum ResourceStatus {
 
     ACTIVE("ACTIVE"),
-    DELETING("DELETING");
+    DELETING("DELETING"),
+    ERROR("ERROR");
 
     private String value;
 

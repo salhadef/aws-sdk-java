@@ -25,28 +25,10 @@ public class GetAnnotationStoreResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * When the store was created.
-     * </p>
-     */
-    private java.util.Date creationTime;
-    /**
-     * <p>
-     * The store's description.
-     * </p>
-     */
-    private String description;
-    /**
-     * <p>
      * The store's ID.
      * </p>
      */
     private String id;
-    /**
-     * <p>
-     * The store's name.
-     * </p>
-     */
-    private String name;
     /**
      * <p>
      * The store's genome reference.
@@ -55,22 +37,10 @@ public class GetAnnotationStoreResult extends com.amazonaws.AmazonWebServiceResu
     private ReferenceItem reference;
     /**
      * <p>
-     * The store's server-side encryption (SSE) settings.
-     * </p>
-     */
-    private SseConfig sseConfig;
-    /**
-     * <p>
      * The store's status.
      * </p>
      */
     private String status;
-    /**
-     * <p>
-     * A status message.
-     * </p>
-     */
-    private String statusMessage;
     /**
      * <p>
      * The store's ARN.
@@ -79,22 +49,34 @@ public class GetAnnotationStoreResult extends com.amazonaws.AmazonWebServiceResu
     private String storeArn;
     /**
      * <p>
-     * The store's annotation file format.
+     * The store's name.
      * </p>
      */
-    private String storeFormat;
+    private String name;
     /**
      * <p>
-     * The store's parsing options.
+     * The store's description.
      * </p>
      */
-    private StoreOptions storeOptions;
+    private String description;
     /**
      * <p>
-     * The store's size in bytes.
+     * The store's server-side encryption (SSE) settings.
      * </p>
      */
-    private Long storeSizeBytes;
+    private SseConfig sseConfig;
+    /**
+     * <p>
+     * When the store was created.
+     * </p>
+     */
+    private java.util.Date creationTime;
+    /**
+     * <p>
+     * When the store was updated.
+     * </p>
+     */
+    private java.util.Date updateTime;
     /**
      * <p>
      * The store's tags.
@@ -103,90 +85,34 @@ public class GetAnnotationStoreResult extends com.amazonaws.AmazonWebServiceResu
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * When the store was updated.
+     * The store's parsing options.
      * </p>
      */
-    private java.util.Date updateTime;
-
+    private StoreOptions storeOptions;
     /**
      * <p>
-     * When the store was created.
+     * The store's annotation file format.
      * </p>
-     * 
-     * @param creationTime
-     *        When the store was created.
      */
-
-    public void setCreationTime(java.util.Date creationTime) {
-        this.creationTime = creationTime;
-    }
-
+    private String storeFormat;
     /**
      * <p>
-     * When the store was created.
+     * A status message.
      * </p>
-     * 
-     * @return When the store was created.
      */
-
-    public java.util.Date getCreationTime() {
-        return this.creationTime;
-    }
-
+    private String statusMessage;
     /**
      * <p>
-     * When the store was created.
+     * The store's size in bytes.
      * </p>
-     * 
-     * @param creationTime
-     *        When the store was created.
-     * @return Returns a reference to this object so that method calls can be chained together.
      */
-
-    public GetAnnotationStoreResult withCreationTime(java.util.Date creationTime) {
-        setCreationTime(creationTime);
-        return this;
-    }
-
+    private Long storeSizeBytes;
     /**
      * <p>
-     * The store's description.
+     * An integer indicating how many versions of an annotation store exist.
      * </p>
-     * 
-     * @param description
-     *        The store's description.
      */
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    /**
-     * <p>
-     * The store's description.
-     * </p>
-     * 
-     * @return The store's description.
-     */
-
-    public String getDescription() {
-        return this.description;
-    }
-
-    /**
-     * <p>
-     * The store's description.
-     * </p>
-     * 
-     * @param description
-     *        The store's description.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetAnnotationStoreResult withDescription(String description) {
-        setDescription(description);
-        return this;
-    }
+    private Integer numVersions;
 
     /**
      * <p>
@@ -230,46 +156,6 @@ public class GetAnnotationStoreResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The store's name.
-     * </p>
-     * 
-     * @param name
-     *        The store's name.
-     */
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     * <p>
-     * The store's name.
-     * </p>
-     * 
-     * @return The store's name.
-     */
-
-    public String getName() {
-        return this.name;
-    }
-
-    /**
-     * <p>
-     * The store's name.
-     * </p>
-     * 
-     * @param name
-     *        The store's name.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetAnnotationStoreResult withName(String name) {
-        setName(name);
-        return this;
-    }
-
-    /**
-     * <p>
      * The store's genome reference.
      * </p>
      * 
@@ -305,46 +191,6 @@ public class GetAnnotationStoreResult extends com.amazonaws.AmazonWebServiceResu
 
     public GetAnnotationStoreResult withReference(ReferenceItem reference) {
         setReference(reference);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The store's server-side encryption (SSE) settings.
-     * </p>
-     * 
-     * @param sseConfig
-     *        The store's server-side encryption (SSE) settings.
-     */
-
-    public void setSseConfig(SseConfig sseConfig) {
-        this.sseConfig = sseConfig;
-    }
-
-    /**
-     * <p>
-     * The store's server-side encryption (SSE) settings.
-     * </p>
-     * 
-     * @return The store's server-side encryption (SSE) settings.
-     */
-
-    public SseConfig getSseConfig() {
-        return this.sseConfig;
-    }
-
-    /**
-     * <p>
-     * The store's server-side encryption (SSE) settings.
-     * </p>
-     * 
-     * @param sseConfig
-     *        The store's server-side encryption (SSE) settings.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetAnnotationStoreResult withSseConfig(SseConfig sseConfig) {
-        setSseConfig(sseConfig);
         return this;
     }
 
@@ -409,46 +255,6 @@ public class GetAnnotationStoreResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A status message.
-     * </p>
-     * 
-     * @param statusMessage
-     *        A status message.
-     */
-
-    public void setStatusMessage(String statusMessage) {
-        this.statusMessage = statusMessage;
-    }
-
-    /**
-     * <p>
-     * A status message.
-     * </p>
-     * 
-     * @return A status message.
-     */
-
-    public String getStatusMessage() {
-        return this.statusMessage;
-    }
-
-    /**
-     * <p>
-     * A status message.
-     * </p>
-     * 
-     * @param statusMessage
-     *        A status message.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetAnnotationStoreResult withStatusMessage(String statusMessage) {
-        setStatusMessage(statusMessage);
-        return this;
-    }
-
-    /**
-     * <p>
      * The store's ARN.
      * </p>
      * 
@@ -489,140 +295,201 @@ public class GetAnnotationStoreResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The store's annotation file format.
+     * The store's name.
      * </p>
      * 
-     * @param storeFormat
-     *        The store's annotation file format.
-     * @see StoreFormat
+     * @param name
+     *        The store's name.
      */
 
-    public void setStoreFormat(String storeFormat) {
-        this.storeFormat = storeFormat;
+    public void setName(String name) {
+        this.name = name;
     }
 
     /**
      * <p>
-     * The store's annotation file format.
+     * The store's name.
      * </p>
      * 
-     * @return The store's annotation file format.
-     * @see StoreFormat
+     * @return The store's name.
      */
 
-    public String getStoreFormat() {
-        return this.storeFormat;
+    public String getName() {
+        return this.name;
     }
 
     /**
      * <p>
-     * The store's annotation file format.
+     * The store's name.
      * </p>
      * 
-     * @param storeFormat
-     *        The store's annotation file format.
+     * @param name
+     *        The store's name.
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see StoreFormat
      */
 
-    public GetAnnotationStoreResult withStoreFormat(String storeFormat) {
-        setStoreFormat(storeFormat);
+    public GetAnnotationStoreResult withName(String name) {
+        setName(name);
         return this;
     }
 
     /**
      * <p>
-     * The store's annotation file format.
+     * The store's description.
      * </p>
      * 
-     * @param storeFormat
-     *        The store's annotation file format.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see StoreFormat
+     * @param description
+     *        The store's description.
      */
 
-    public GetAnnotationStoreResult withStoreFormat(StoreFormat storeFormat) {
-        this.storeFormat = storeFormat.toString();
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * The store's description.
+     * </p>
+     * 
+     * @return The store's description.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * The store's description.
+     * </p>
+     * 
+     * @param description
+     *        The store's description.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetAnnotationStoreResult withDescription(String description) {
+        setDescription(description);
         return this;
     }
 
     /**
      * <p>
-     * The store's parsing options.
+     * The store's server-side encryption (SSE) settings.
      * </p>
      * 
-     * @param storeOptions
-     *        The store's parsing options.
+     * @param sseConfig
+     *        The store's server-side encryption (SSE) settings.
      */
 
-    public void setStoreOptions(StoreOptions storeOptions) {
-        this.storeOptions = storeOptions;
+    public void setSseConfig(SseConfig sseConfig) {
+        this.sseConfig = sseConfig;
     }
 
     /**
      * <p>
-     * The store's parsing options.
+     * The store's server-side encryption (SSE) settings.
      * </p>
      * 
-     * @return The store's parsing options.
+     * @return The store's server-side encryption (SSE) settings.
      */
 
-    public StoreOptions getStoreOptions() {
-        return this.storeOptions;
+    public SseConfig getSseConfig() {
+        return this.sseConfig;
     }
 
     /**
      * <p>
-     * The store's parsing options.
+     * The store's server-side encryption (SSE) settings.
      * </p>
      * 
-     * @param storeOptions
-     *        The store's parsing options.
+     * @param sseConfig
+     *        The store's server-side encryption (SSE) settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetAnnotationStoreResult withStoreOptions(StoreOptions storeOptions) {
-        setStoreOptions(storeOptions);
+    public GetAnnotationStoreResult withSseConfig(SseConfig sseConfig) {
+        setSseConfig(sseConfig);
         return this;
     }
 
     /**
      * <p>
-     * The store's size in bytes.
+     * When the store was created.
      * </p>
      * 
-     * @param storeSizeBytes
-     *        The store's size in bytes.
+     * @param creationTime
+     *        When the store was created.
      */
 
-    public void setStoreSizeBytes(Long storeSizeBytes) {
-        this.storeSizeBytes = storeSizeBytes;
+    public void setCreationTime(java.util.Date creationTime) {
+        this.creationTime = creationTime;
     }
 
     /**
      * <p>
-     * The store's size in bytes.
+     * When the store was created.
      * </p>
      * 
-     * @return The store's size in bytes.
+     * @return When the store was created.
      */
 
-    public Long getStoreSizeBytes() {
-        return this.storeSizeBytes;
+    public java.util.Date getCreationTime() {
+        return this.creationTime;
     }
 
     /**
      * <p>
-     * The store's size in bytes.
+     * When the store was created.
      * </p>
      * 
-     * @param storeSizeBytes
-     *        The store's size in bytes.
+     * @param creationTime
+     *        When the store was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetAnnotationStoreResult withStoreSizeBytes(Long storeSizeBytes) {
-        setStoreSizeBytes(storeSizeBytes);
+    public GetAnnotationStoreResult withCreationTime(java.util.Date creationTime) {
+        setCreationTime(creationTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When the store was updated.
+     * </p>
+     * 
+     * @param updateTime
+     *        When the store was updated.
+     */
+
+    public void setUpdateTime(java.util.Date updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    /**
+     * <p>
+     * When the store was updated.
+     * </p>
+     * 
+     * @return When the store was updated.
+     */
+
+    public java.util.Date getUpdateTime() {
+        return this.updateTime;
+    }
+
+    /**
+     * <p>
+     * When the store was updated.
+     * </p>
+     * 
+     * @param updateTime
+     *        When the store was updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetAnnotationStoreResult withUpdateTime(java.util.Date updateTime) {
+        setUpdateTime(updateTime);
         return this;
     }
 
@@ -696,41 +563,220 @@ public class GetAnnotationStoreResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * When the store was updated.
+     * The store's parsing options.
      * </p>
      * 
-     * @param updateTime
-     *        When the store was updated.
+     * @param storeOptions
+     *        The store's parsing options.
      */
 
-    public void setUpdateTime(java.util.Date updateTime) {
-        this.updateTime = updateTime;
+    public void setStoreOptions(StoreOptions storeOptions) {
+        this.storeOptions = storeOptions;
     }
 
     /**
      * <p>
-     * When the store was updated.
+     * The store's parsing options.
      * </p>
      * 
-     * @return When the store was updated.
+     * @return The store's parsing options.
      */
 
-    public java.util.Date getUpdateTime() {
-        return this.updateTime;
+    public StoreOptions getStoreOptions() {
+        return this.storeOptions;
     }
 
     /**
      * <p>
-     * When the store was updated.
+     * The store's parsing options.
      * </p>
      * 
-     * @param updateTime
-     *        When the store was updated.
+     * @param storeOptions
+     *        The store's parsing options.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetAnnotationStoreResult withUpdateTime(java.util.Date updateTime) {
-        setUpdateTime(updateTime);
+    public GetAnnotationStoreResult withStoreOptions(StoreOptions storeOptions) {
+        setStoreOptions(storeOptions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The store's annotation file format.
+     * </p>
+     * 
+     * @param storeFormat
+     *        The store's annotation file format.
+     * @see StoreFormat
+     */
+
+    public void setStoreFormat(String storeFormat) {
+        this.storeFormat = storeFormat;
+    }
+
+    /**
+     * <p>
+     * The store's annotation file format.
+     * </p>
+     * 
+     * @return The store's annotation file format.
+     * @see StoreFormat
+     */
+
+    public String getStoreFormat() {
+        return this.storeFormat;
+    }
+
+    /**
+     * <p>
+     * The store's annotation file format.
+     * </p>
+     * 
+     * @param storeFormat
+     *        The store's annotation file format.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StoreFormat
+     */
+
+    public GetAnnotationStoreResult withStoreFormat(String storeFormat) {
+        setStoreFormat(storeFormat);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The store's annotation file format.
+     * </p>
+     * 
+     * @param storeFormat
+     *        The store's annotation file format.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StoreFormat
+     */
+
+    public GetAnnotationStoreResult withStoreFormat(StoreFormat storeFormat) {
+        this.storeFormat = storeFormat.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * A status message.
+     * </p>
+     * 
+     * @param statusMessage
+     *        A status message.
+     */
+
+    public void setStatusMessage(String statusMessage) {
+        this.statusMessage = statusMessage;
+    }
+
+    /**
+     * <p>
+     * A status message.
+     * </p>
+     * 
+     * @return A status message.
+     */
+
+    public String getStatusMessage() {
+        return this.statusMessage;
+    }
+
+    /**
+     * <p>
+     * A status message.
+     * </p>
+     * 
+     * @param statusMessage
+     *        A status message.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetAnnotationStoreResult withStatusMessage(String statusMessage) {
+        setStatusMessage(statusMessage);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The store's size in bytes.
+     * </p>
+     * 
+     * @param storeSizeBytes
+     *        The store's size in bytes.
+     */
+
+    public void setStoreSizeBytes(Long storeSizeBytes) {
+        this.storeSizeBytes = storeSizeBytes;
+    }
+
+    /**
+     * <p>
+     * The store's size in bytes.
+     * </p>
+     * 
+     * @return The store's size in bytes.
+     */
+
+    public Long getStoreSizeBytes() {
+        return this.storeSizeBytes;
+    }
+
+    /**
+     * <p>
+     * The store's size in bytes.
+     * </p>
+     * 
+     * @param storeSizeBytes
+     *        The store's size in bytes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetAnnotationStoreResult withStoreSizeBytes(Long storeSizeBytes) {
+        setStoreSizeBytes(storeSizeBytes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An integer indicating how many versions of an annotation store exist.
+     * </p>
+     * 
+     * @param numVersions
+     *        An integer indicating how many versions of an annotation store exist.
+     */
+
+    public void setNumVersions(Integer numVersions) {
+        this.numVersions = numVersions;
+    }
+
+    /**
+     * <p>
+     * An integer indicating how many versions of an annotation store exist.
+     * </p>
+     * 
+     * @return An integer indicating how many versions of an annotation store exist.
+     */
+
+    public Integer getNumVersions() {
+        return this.numVersions;
+    }
+
+    /**
+     * <p>
+     * An integer indicating how many versions of an annotation store exist.
+     * </p>
+     * 
+     * @param numVersions
+     *        An integer indicating how many versions of an annotation store exist.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetAnnotationStoreResult withNumVersions(Integer numVersions) {
+        setNumVersions(numVersions);
         return this;
     }
 
@@ -746,34 +792,36 @@ public class GetAnnotationStoreResult extends com.amazonaws.AmazonWebServiceResu
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getCreationTime() != null)
-            sb.append("CreationTime: ").append(getCreationTime()).append(",");
-        if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
-        if (getName() != null)
-            sb.append("Name: ").append(getName()).append(",");
         if (getReference() != null)
             sb.append("Reference: ").append(getReference()).append(",");
-        if (getSseConfig() != null)
-            sb.append("SseConfig: ").append(getSseConfig()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
-        if (getStatusMessage() != null)
-            sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
         if (getStoreArn() != null)
             sb.append("StoreArn: ").append(getStoreArn()).append(",");
-        if (getStoreFormat() != null)
-            sb.append("StoreFormat: ").append(getStoreFormat()).append(",");
-        if (getStoreOptions() != null)
-            sb.append("StoreOptions: ").append(getStoreOptions()).append(",");
-        if (getStoreSizeBytes() != null)
-            sb.append("StoreSizeBytes: ").append(getStoreSizeBytes()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getSseConfig() != null)
+            sb.append("SseConfig: ").append(getSseConfig()).append(",");
+        if (getCreationTime() != null)
+            sb.append("CreationTime: ").append(getCreationTime()).append(",");
+        if (getUpdateTime() != null)
+            sb.append("UpdateTime: ").append(getUpdateTime()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
-        if (getUpdateTime() != null)
-            sb.append("UpdateTime: ").append(getUpdateTime());
+        if (getStoreOptions() != null)
+            sb.append("StoreOptions: ").append(getStoreOptions()).append(",");
+        if (getStoreFormat() != null)
+            sb.append("StoreFormat: ").append(getStoreFormat()).append(",");
+        if (getStatusMessage() != null)
+            sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
+        if (getStoreSizeBytes() != null)
+            sb.append("StoreSizeBytes: ").append(getStoreSizeBytes()).append(",");
+        if (getNumVersions() != null)
+            sb.append("NumVersions: ").append(getNumVersions());
         sb.append("}");
         return sb.toString();
     }
@@ -788,61 +836,65 @@ public class GetAnnotationStoreResult extends com.amazonaws.AmazonWebServiceResu
         if (obj instanceof GetAnnotationStoreResult == false)
             return false;
         GetAnnotationStoreResult other = (GetAnnotationStoreResult) obj;
-        if (other.getCreationTime() == null ^ this.getCreationTime() == null)
-            return false;
-        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
-            return false;
-        if (other.getDescription() == null ^ this.getDescription() == null)
-            return false;
-        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
-            return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
-            return false;
-        if (other.getName() == null ^ this.getName() == null)
-            return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getReference() == null ^ this.getReference() == null)
             return false;
         if (other.getReference() != null && other.getReference().equals(this.getReference()) == false)
             return false;
-        if (other.getSseConfig() == null ^ this.getSseConfig() == null)
-            return false;
-        if (other.getSseConfig() != null && other.getSseConfig().equals(this.getSseConfig()) == false)
-            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
-            return false;
-        if (other.getStatusMessage() == null ^ this.getStatusMessage() == null)
-            return false;
-        if (other.getStatusMessage() != null && other.getStatusMessage().equals(this.getStatusMessage()) == false)
             return false;
         if (other.getStoreArn() == null ^ this.getStoreArn() == null)
             return false;
         if (other.getStoreArn() != null && other.getStoreArn().equals(this.getStoreArn()) == false)
             return false;
-        if (other.getStoreFormat() == null ^ this.getStoreFormat() == null)
+        if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getStoreFormat() != null && other.getStoreFormat().equals(this.getStoreFormat()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
-        if (other.getStoreOptions() == null ^ this.getStoreOptions() == null)
+        if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getStoreOptions() != null && other.getStoreOptions().equals(this.getStoreOptions()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
-        if (other.getStoreSizeBytes() == null ^ this.getStoreSizeBytes() == null)
+        if (other.getSseConfig() == null ^ this.getSseConfig() == null)
             return false;
-        if (other.getStoreSizeBytes() != null && other.getStoreSizeBytes().equals(this.getStoreSizeBytes()) == false)
+        if (other.getSseConfig() != null && other.getSseConfig().equals(this.getSseConfig()) == false)
+            return false;
+        if (other.getCreationTime() == null ^ this.getCreationTime() == null)
+            return false;
+        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
+            return false;
+        if (other.getUpdateTime() == null ^ this.getUpdateTime() == null)
+            return false;
+        if (other.getUpdateTime() != null && other.getUpdateTime().equals(this.getUpdateTime()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
-        if (other.getUpdateTime() == null ^ this.getUpdateTime() == null)
+        if (other.getStoreOptions() == null ^ this.getStoreOptions() == null)
             return false;
-        if (other.getUpdateTime() != null && other.getUpdateTime().equals(this.getUpdateTime()) == false)
+        if (other.getStoreOptions() != null && other.getStoreOptions().equals(this.getStoreOptions()) == false)
+            return false;
+        if (other.getStoreFormat() == null ^ this.getStoreFormat() == null)
+            return false;
+        if (other.getStoreFormat() != null && other.getStoreFormat().equals(this.getStoreFormat()) == false)
+            return false;
+        if (other.getStatusMessage() == null ^ this.getStatusMessage() == null)
+            return false;
+        if (other.getStatusMessage() != null && other.getStatusMessage().equals(this.getStatusMessage()) == false)
+            return false;
+        if (other.getStoreSizeBytes() == null ^ this.getStoreSizeBytes() == null)
+            return false;
+        if (other.getStoreSizeBytes() != null && other.getStoreSizeBytes().equals(this.getStoreSizeBytes()) == false)
+            return false;
+        if (other.getNumVersions() == null ^ this.getNumVersions() == null)
+            return false;
+        if (other.getNumVersions() != null && other.getNumVersions().equals(this.getNumVersions()) == false)
             return false;
         return true;
     }
@@ -852,20 +904,21 @@ public class GetAnnotationStoreResult extends com.amazonaws.AmazonWebServiceResu
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getReference() == null) ? 0 : getReference().hashCode());
-        hashCode = prime * hashCode + ((getSseConfig() == null) ? 0 : getSseConfig().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
         hashCode = prime * hashCode + ((getStoreArn() == null) ? 0 : getStoreArn().hashCode());
-        hashCode = prime * hashCode + ((getStoreFormat() == null) ? 0 : getStoreFormat().hashCode());
-        hashCode = prime * hashCode + ((getStoreOptions() == null) ? 0 : getStoreOptions().hashCode());
-        hashCode = prime * hashCode + ((getStoreSizeBytes() == null) ? 0 : getStoreSizeBytes().hashCode());
-        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getSseConfig() == null) ? 0 : getSseConfig().hashCode());
+        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getUpdateTime() == null) ? 0 : getUpdateTime().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getStoreOptions() == null) ? 0 : getStoreOptions().hashCode());
+        hashCode = prime * hashCode + ((getStoreFormat() == null) ? 0 : getStoreFormat().hashCode());
+        hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
+        hashCode = prime * hashCode + ((getStoreSizeBytes() == null) ? 0 : getStoreSizeBytes().hashCode());
+        hashCode = prime * hashCode + ((getNumVersions() == null) ? 0 : getNumVersions().hashCode());
         return hashCode;
     }
 

@@ -33,6 +33,11 @@ public class AbstractAmazonWorkSpacesWeb implements AmazonWorkSpacesWeb {
     }
 
     @Override
+    public AssociateIpAccessSettingsResult associateIpAccessSettings(AssociateIpAccessSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AssociateNetworkSettingsResult associateNetworkSettings(AssociateNetworkSettingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -59,6 +64,11 @@ public class AbstractAmazonWorkSpacesWeb implements AmazonWorkSpacesWeb {
 
     @Override
     public CreateIdentityProviderResult createIdentityProvider(CreateIdentityProviderRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateIpAccessSettingsResult createIpAccessSettings(CreateIpAccessSettingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -98,6 +108,11 @@ public class AbstractAmazonWorkSpacesWeb implements AmazonWorkSpacesWeb {
     }
 
     @Override
+    public DeleteIpAccessSettingsResult deleteIpAccessSettings(DeleteIpAccessSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteNetworkSettingsResult deleteNetworkSettings(DeleteNetworkSettingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -128,6 +143,11 @@ public class AbstractAmazonWorkSpacesWeb implements AmazonWorkSpacesWeb {
     }
 
     @Override
+    public DisassociateIpAccessSettingsResult disassociateIpAccessSettings(DisassociateIpAccessSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DisassociateNetworkSettingsResult disassociateNetworkSettings(DisassociateNetworkSettingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -154,6 +174,11 @@ public class AbstractAmazonWorkSpacesWeb implements AmazonWorkSpacesWeb {
 
     @Override
     public GetIdentityProviderResult getIdentityProvider(GetIdentityProviderRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetIpAccessSettingsResult getIpAccessSettings(GetIpAccessSettingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -199,6 +224,11 @@ public class AbstractAmazonWorkSpacesWeb implements AmazonWorkSpacesWeb {
 
     @Override
     public ListIdentityProvidersResult listIdentityProviders(ListIdentityProvidersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListIpAccessSettingsResult listIpAccessSettings(ListIpAccessSettingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -254,6 +284,11 @@ public class AbstractAmazonWorkSpacesWeb implements AmazonWorkSpacesWeb {
 
     @Override
     public UpdateIdentityProviderResult updateIdentityProvider(UpdateIdentityProviderRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateIpAccessSettingsResult updateIpAccessSettings(UpdateIpAccessSettingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

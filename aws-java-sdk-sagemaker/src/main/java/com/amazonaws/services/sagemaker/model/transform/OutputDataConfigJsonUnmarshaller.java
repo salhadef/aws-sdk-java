@@ -56,6 +56,10 @@ public class OutputDataConfigJsonUnmarshaller implements Unmarshaller<OutputData
                     context.nextToken();
                     outputDataConfig.setS3OutputPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("CompressionType", targetDepth)) {
+                    context.nextToken();
+                    outputDataConfig.setCompressionType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

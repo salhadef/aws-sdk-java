@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum OrgFeatureStatus {
 
     NEW("NEW"),
-    NONE("NONE");
+    NONE("NONE"),
+    ALL("ALL");
 
     private String value;
 

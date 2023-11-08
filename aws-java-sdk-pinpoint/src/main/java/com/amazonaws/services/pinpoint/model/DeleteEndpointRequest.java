@@ -34,7 +34,8 @@ public class DeleteEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     private String applicationId;
     /**
      * <p>
-     * The unique identifier for the endpoint.
+     * The case insensitive unique identifier for the endpoint. The identifier can't contain <code>$</code>,
+     * <code>{</code> or <code>}</code>.
      * </p>
      */
     private String endpointId;
@@ -87,11 +88,13 @@ public class DeleteEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The unique identifier for the endpoint.
+     * The case insensitive unique identifier for the endpoint. The identifier can't contain <code>$</code>,
+     * <code>{</code> or <code>}</code>.
      * </p>
      * 
      * @param endpointId
-     *        The unique identifier for the endpoint.
+     *        The case insensitive unique identifier for the endpoint. The identifier can't contain <code>$</code>,
+     *        <code>{</code> or <code>}</code>.
      */
 
     public void setEndpointId(String endpointId) {
@@ -100,10 +103,12 @@ public class DeleteEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The unique identifier for the endpoint.
+     * The case insensitive unique identifier for the endpoint. The identifier can't contain <code>$</code>,
+     * <code>{</code> or <code>}</code>.
      * </p>
      * 
-     * @return The unique identifier for the endpoint.
+     * @return The case insensitive unique identifier for the endpoint. The identifier can't contain <code>$</code>,
+     *         <code>{</code> or <code>}</code>.
      */
 
     public String getEndpointId() {
@@ -112,11 +117,13 @@ public class DeleteEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The unique identifier for the endpoint.
+     * The case insensitive unique identifier for the endpoint. The identifier can't contain <code>$</code>,
+     * <code>{</code> or <code>}</code>.
      * </p>
      * 
      * @param endpointId
-     *        The unique identifier for the endpoint.
+     *        The case insensitive unique identifier for the endpoint. The identifier can't contain <code>$</code>,
+     *        <code>{</code> or <code>}</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

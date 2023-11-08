@@ -88,6 +88,10 @@ public class PipelineExecutionStepJsonUnmarshaller implements Unmarshaller<Pipel
                     context.nextToken();
                     pipelineExecutionStep.setMetadata(PipelineExecutionStepMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("SelectiveExecutionResult", targetDepth)) {
+                    context.nextToken();
+                    pipelineExecutionStep.setSelectiveExecutionResult(SelectiveExecutionResultJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

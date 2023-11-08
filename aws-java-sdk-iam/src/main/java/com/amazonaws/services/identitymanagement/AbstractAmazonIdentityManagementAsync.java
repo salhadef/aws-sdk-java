@@ -1021,6 +1021,19 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
     }
 
     @Override
+    public java.util.concurrent.Future<GetMFADeviceResult> getMFADeviceAsync(GetMFADeviceRequest request) {
+
+        return getMFADeviceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMFADeviceResult> getMFADeviceAsync(GetMFADeviceRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetMFADeviceRequest, GetMFADeviceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetOpenIDConnectProviderResult> getOpenIDConnectProviderAsync(GetOpenIDConnectProviderRequest request) {
 
         return getOpenIDConnectProviderAsync(request, null);

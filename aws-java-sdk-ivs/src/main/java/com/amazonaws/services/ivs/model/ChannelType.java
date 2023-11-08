@@ -21,7 +21,9 @@ import javax.annotation.Generated;
 public enum ChannelType {
 
     BASIC("BASIC"),
-    STANDARD("STANDARD");
+    STANDARD("STANDARD"),
+    ADVANCED_SD("ADVANCED_SD"),
+    ADVANCED_HD("ADVANCED_HD");
 
     private String value;
 

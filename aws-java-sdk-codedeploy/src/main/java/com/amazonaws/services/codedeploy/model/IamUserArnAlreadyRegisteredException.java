@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified IAM user ARN is already registered with an on-premises instance.
+ * The specified user ARN is already registered with an on-premises instance.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

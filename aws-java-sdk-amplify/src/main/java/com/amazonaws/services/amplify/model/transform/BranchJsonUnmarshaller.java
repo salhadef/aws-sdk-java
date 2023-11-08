@@ -162,6 +162,10 @@ public class BranchJsonUnmarshaller implements Unmarshaller<Branch, JsonUnmarsha
                     context.nextToken();
                     branch.setBackendEnvironmentArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("backend", targetDepth)) {
+                    context.nextToken();
+                    branch.setBackend(BackendJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

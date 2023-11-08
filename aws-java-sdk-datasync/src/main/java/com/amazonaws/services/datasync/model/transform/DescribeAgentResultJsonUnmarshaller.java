@@ -76,6 +76,10 @@ public class DescribeAgentResultJsonUnmarshaller implements Unmarshaller<Describ
                     context.nextToken();
                     describeAgentResult.setPrivateLinkConfig(PrivateLinkConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Platform", targetDepth)) {
+                    context.nextToken();
+                    describeAgentResult.setPlatform(PlatformJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

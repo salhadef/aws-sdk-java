@@ -62,6 +62,10 @@ public class ReferenceLineDataConfigurationJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     referenceLineDataConfiguration.setAxisBinding(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SeriesType", targetDepth)) {
+                    context.nextToken();
+                    referenceLineDataConfiguration.setSeriesType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

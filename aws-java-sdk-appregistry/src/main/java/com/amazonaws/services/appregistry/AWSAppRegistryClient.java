@@ -44,6 +44,7 @@ import com.amazonaws.services.appregistry.AWSAppRegistryClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.appregistry.model.*;
+
 import com.amazonaws.services.appregistry.model.transform.*;
 
 /**

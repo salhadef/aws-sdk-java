@@ -27,18 +27,18 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class DvbSubSourceSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * When using DVB-Sub with Burn-In or SMPTE-TT, use this PID for the source content. Unused for DVB-Sub passthrough.
-     * All DVB-Sub content is passed through, regardless of selectors.
+     * When using DVB-Sub with Burn-in, use this PID for the source content. Unused for DVB-Sub passthrough. All DVB-Sub
+     * content is passed through, regardless of selectors.
      */
     private Integer pid;
 
     /**
-     * When using DVB-Sub with Burn-In or SMPTE-TT, use this PID for the source content. Unused for DVB-Sub passthrough.
-     * All DVB-Sub content is passed through, regardless of selectors.
+     * When using DVB-Sub with Burn-in, use this PID for the source content. Unused for DVB-Sub passthrough. All DVB-Sub
+     * content is passed through, regardless of selectors.
      * 
      * @param pid
-     *        When using DVB-Sub with Burn-In or SMPTE-TT, use this PID for the source content. Unused for DVB-Sub
-     *        passthrough. All DVB-Sub content is passed through, regardless of selectors.
+     *        When using DVB-Sub with Burn-in, use this PID for the source content. Unused for DVB-Sub passthrough. All
+     *        DVB-Sub content is passed through, regardless of selectors.
      */
 
     public void setPid(Integer pid) {
@@ -46,11 +46,11 @@ public class DvbSubSourceSettings implements Serializable, Cloneable, Structured
     }
 
     /**
-     * When using DVB-Sub with Burn-In or SMPTE-TT, use this PID for the source content. Unused for DVB-Sub passthrough.
-     * All DVB-Sub content is passed through, regardless of selectors.
+     * When using DVB-Sub with Burn-in, use this PID for the source content. Unused for DVB-Sub passthrough. All DVB-Sub
+     * content is passed through, regardless of selectors.
      * 
-     * @return When using DVB-Sub with Burn-In or SMPTE-TT, use this PID for the source content. Unused for DVB-Sub
-     *         passthrough. All DVB-Sub content is passed through, regardless of selectors.
+     * @return When using DVB-Sub with Burn-in, use this PID for the source content. Unused for DVB-Sub passthrough. All
+     *         DVB-Sub content is passed through, regardless of selectors.
      */
 
     public Integer getPid() {
@@ -58,12 +58,12 @@ public class DvbSubSourceSettings implements Serializable, Cloneable, Structured
     }
 
     /**
-     * When using DVB-Sub with Burn-In or SMPTE-TT, use this PID for the source content. Unused for DVB-Sub passthrough.
-     * All DVB-Sub content is passed through, regardless of selectors.
+     * When using DVB-Sub with Burn-in, use this PID for the source content. Unused for DVB-Sub passthrough. All DVB-Sub
+     * content is passed through, regardless of selectors.
      * 
      * @param pid
-     *        When using DVB-Sub with Burn-In or SMPTE-TT, use this PID for the source content. Unused for DVB-Sub
-     *        passthrough. All DVB-Sub content is passed through, regardless of selectors.
+     *        When using DVB-Sub with Burn-in, use this PID for the source content. Unused for DVB-Sub passthrough. All
+     *        DVB-Sub content is passed through, regardless of selectors.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

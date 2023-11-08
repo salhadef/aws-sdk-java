@@ -20,8 +20,7 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ExportDataFormat {
 
-    CSV("CSV"),
-    GRAPHML("GRAPHML");
+    CSV("CSV");
 
     private String value;
 

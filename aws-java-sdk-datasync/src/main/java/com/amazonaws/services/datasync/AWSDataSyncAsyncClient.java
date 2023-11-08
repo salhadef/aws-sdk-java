@@ -27,9 +27,8 @@ import java.util.concurrent.ExecutorService;
  * <p>
  * <fullname>DataSync</fullname>
  * <p>
- * DataSync is a managed data transfer service that makes it simpler for you to automate moving data between on-premises
- * storage and Amazon Web Services storage services. You also can use DataSync to transfer data between other cloud
- * providers and Amazon Web Services storage services.
+ * DataSync is an online data movement and discovery service that simplifies data migration and helps you quickly,
+ * easily, and securely transfer your file or object data to, from, and between Amazon Web Services storage services.
  * </p>
  * <p>
  * This API interface reference includes documentation for using DataSync programmatically. For complete information,
@@ -165,6 +164,39 @@ public class AWSDataSyncAsyncClient extends AWSDataSyncClient implements AWSData
 
                 try {
                     result = executeCreateAgent(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLocationAzureBlobResult> createLocationAzureBlobAsync(CreateLocationAzureBlobRequest request) {
+
+        return createLocationAzureBlobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLocationAzureBlobResult> createLocationAzureBlobAsync(final CreateLocationAzureBlobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateLocationAzureBlobRequest, CreateLocationAzureBlobResult> asyncHandler) {
+        final CreateLocationAzureBlobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateLocationAzureBlobResult>() {
+            @Override
+            public CreateLocationAzureBlobResult call() throws Exception {
+                CreateLocationAzureBlobResult result = null;
+
+                try {
+                    result = executeCreateLocationAzureBlob(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -693,6 +725,39 @@ public class AWSDataSyncAsyncClient extends AWSDataSyncClient implements AWSData
 
                 try {
                     result = executeDescribeDiscoveryJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLocationAzureBlobResult> describeLocationAzureBlobAsync(DescribeLocationAzureBlobRequest request) {
+
+        return describeLocationAzureBlobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLocationAzureBlobResult> describeLocationAzureBlobAsync(final DescribeLocationAzureBlobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeLocationAzureBlobRequest, DescribeLocationAzureBlobResult> asyncHandler) {
+        final DescribeLocationAzureBlobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeLocationAzureBlobResult>() {
+            @Override
+            public DescribeLocationAzureBlobResult call() throws Exception {
+                DescribeLocationAzureBlobResult result = null;
+
+                try {
+                    result = executeDescribeLocationAzureBlob(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1720,6 +1785,39 @@ public class AWSDataSyncAsyncClient extends AWSDataSyncClient implements AWSData
 
                 try {
                     result = executeUpdateDiscoveryJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLocationAzureBlobResult> updateLocationAzureBlobAsync(UpdateLocationAzureBlobRequest request) {
+
+        return updateLocationAzureBlobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLocationAzureBlobResult> updateLocationAzureBlobAsync(final UpdateLocationAzureBlobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateLocationAzureBlobRequest, UpdateLocationAzureBlobResult> asyncHandler) {
+        final UpdateLocationAzureBlobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateLocationAzureBlobResult>() {
+            @Override
+            public UpdateLocationAzureBlobResult call() throws Exception {
+                UpdateLocationAzureBlobResult result = null;
+
+                try {
+                    result = executeUpdateLocationAzureBlob(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

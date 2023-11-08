@@ -93,7 +93,7 @@ public class RefreshPreferences implements Serializable, Cloneable {
     /**
      * <p>
      * (Optional) Indicates whether to roll back the Auto Scaling group to its previous configuration if the instance
-     * refresh fails. The default is <code>false</code>.
+     * refresh fails or a CloudWatch alarm threshold is met. The default is <code>false</code>.
      * </p>
      * <p>
      * A rollback is not supported in the following situations:
@@ -116,6 +116,11 @@ public class RefreshPreferences implements Serializable, Cloneable {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/instance-refresh-rollback.html">Undo changes with a
+     * rollback</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
      */
     private Boolean autoRollback;
     /**
@@ -181,6 +186,13 @@ public class RefreshPreferences implements Serializable, Cloneable {
      * </dl>
      */
     private String standbyInstances;
+    /**
+     * <p>
+     * (Optional) The CloudWatch alarm specification. CloudWatch alarms can be used to identify any issues and fail the
+     * operation if an alarm threshold is met.
+     * </p>
+     */
+    private AlarmSpecification alarmSpecification;
 
     /**
      * <p>
@@ -657,7 +669,7 @@ public class RefreshPreferences implements Serializable, Cloneable {
     /**
      * <p>
      * (Optional) Indicates whether to roll back the Auto Scaling group to its previous configuration if the instance
-     * refresh fails. The default is <code>false</code>.
+     * refresh fails or a CloudWatch alarm threshold is met. The default is <code>false</code>.
      * </p>
      * <p>
      * A rollback is not supported in the following situations:
@@ -680,10 +692,15 @@ public class RefreshPreferences implements Serializable, Cloneable {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/instance-refresh-rollback.html">Undo changes with a
+     * rollback</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
      * 
      * @param autoRollback
      *        (Optional) Indicates whether to roll back the Auto Scaling group to its previous configuration if the
-     *        instance refresh fails. The default is <code>false</code>.</p>
+     *        instance refresh fails or a CloudWatch alarm threshold is met. The default is <code>false</code>.</p>
      *        <p>
      *        A rollback is not supported in the following situations:
      *        </p>
@@ -704,6 +721,11 @@ public class RefreshPreferences implements Serializable, Cloneable {
      *        The Auto Scaling group uses the launch template's <code>$Latest</code> or <code>$Default</code> version.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/instance-refresh-rollback.html">Undo changes
+     *        with a rollback</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
     public void setAutoRollback(Boolean autoRollback) {
@@ -713,7 +735,7 @@ public class RefreshPreferences implements Serializable, Cloneable {
     /**
      * <p>
      * (Optional) Indicates whether to roll back the Auto Scaling group to its previous configuration if the instance
-     * refresh fails. The default is <code>false</code>.
+     * refresh fails or a CloudWatch alarm threshold is met. The default is <code>false</code>.
      * </p>
      * <p>
      * A rollback is not supported in the following situations:
@@ -736,9 +758,14 @@ public class RefreshPreferences implements Serializable, Cloneable {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/instance-refresh-rollback.html">Undo changes with a
+     * rollback</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
      * 
      * @return (Optional) Indicates whether to roll back the Auto Scaling group to its previous configuration if the
-     *         instance refresh fails. The default is <code>false</code>.</p>
+     *         instance refresh fails or a CloudWatch alarm threshold is met. The default is <code>false</code>.</p>
      *         <p>
      *         A rollback is not supported in the following situations:
      *         </p>
@@ -759,6 +786,11 @@ public class RefreshPreferences implements Serializable, Cloneable {
      *         The Auto Scaling group uses the launch template's <code>$Latest</code> or <code>$Default</code> version.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/instance-refresh-rollback.html">Undo changes
+     *         with a rollback</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
     public Boolean getAutoRollback() {
@@ -768,7 +800,7 @@ public class RefreshPreferences implements Serializable, Cloneable {
     /**
      * <p>
      * (Optional) Indicates whether to roll back the Auto Scaling group to its previous configuration if the instance
-     * refresh fails. The default is <code>false</code>.
+     * refresh fails or a CloudWatch alarm threshold is met. The default is <code>false</code>.
      * </p>
      * <p>
      * A rollback is not supported in the following situations:
@@ -791,10 +823,15 @@ public class RefreshPreferences implements Serializable, Cloneable {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/instance-refresh-rollback.html">Undo changes with a
+     * rollback</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
      * 
      * @param autoRollback
      *        (Optional) Indicates whether to roll back the Auto Scaling group to its previous configuration if the
-     *        instance refresh fails. The default is <code>false</code>.</p>
+     *        instance refresh fails or a CloudWatch alarm threshold is met. The default is <code>false</code>.</p>
      *        <p>
      *        A rollback is not supported in the following situations:
      *        </p>
@@ -815,6 +852,11 @@ public class RefreshPreferences implements Serializable, Cloneable {
      *        The Auto Scaling group uses the launch template's <code>$Latest</code> or <code>$Default</code> version.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/instance-refresh-rollback.html">Undo changes
+     *        with a rollback</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -826,7 +868,7 @@ public class RefreshPreferences implements Serializable, Cloneable {
     /**
      * <p>
      * (Optional) Indicates whether to roll back the Auto Scaling group to its previous configuration if the instance
-     * refresh fails. The default is <code>false</code>.
+     * refresh fails or a CloudWatch alarm threshold is met. The default is <code>false</code>.
      * </p>
      * <p>
      * A rollback is not supported in the following situations:
@@ -849,9 +891,14 @@ public class RefreshPreferences implements Serializable, Cloneable {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/instance-refresh-rollback.html">Undo changes with a
+     * rollback</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
      * 
      * @return (Optional) Indicates whether to roll back the Auto Scaling group to its previous configuration if the
-     *         instance refresh fails. The default is <code>false</code>.</p>
+     *         instance refresh fails or a CloudWatch alarm threshold is met. The default is <code>false</code>.</p>
      *         <p>
      *         A rollback is not supported in the following situations:
      *         </p>
@@ -872,6 +919,11 @@ public class RefreshPreferences implements Serializable, Cloneable {
      *         The Auto Scaling group uses the launch template's <code>$Latest</code> or <code>$Default</code> version.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/instance-refresh-rollback.html">Undo changes
+     *         with a rollback</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
     public Boolean isAutoRollback() {
@@ -1401,6 +1453,52 @@ public class RefreshPreferences implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * (Optional) The CloudWatch alarm specification. CloudWatch alarms can be used to identify any issues and fail the
+     * operation if an alarm threshold is met.
+     * </p>
+     * 
+     * @param alarmSpecification
+     *        (Optional) The CloudWatch alarm specification. CloudWatch alarms can be used to identify any issues and
+     *        fail the operation if an alarm threshold is met.
+     */
+
+    public void setAlarmSpecification(AlarmSpecification alarmSpecification) {
+        this.alarmSpecification = alarmSpecification;
+    }
+
+    /**
+     * <p>
+     * (Optional) The CloudWatch alarm specification. CloudWatch alarms can be used to identify any issues and fail the
+     * operation if an alarm threshold is met.
+     * </p>
+     * 
+     * @return (Optional) The CloudWatch alarm specification. CloudWatch alarms can be used to identify any issues and
+     *         fail the operation if an alarm threshold is met.
+     */
+
+    public AlarmSpecification getAlarmSpecification() {
+        return this.alarmSpecification;
+    }
+
+    /**
+     * <p>
+     * (Optional) The CloudWatch alarm specification. CloudWatch alarms can be used to identify any issues and fail the
+     * operation if an alarm threshold is met.
+     * </p>
+     * 
+     * @param alarmSpecification
+     *        (Optional) The CloudWatch alarm specification. CloudWatch alarms can be used to identify any issues and
+     *        fail the operation if an alarm threshold is met.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RefreshPreferences withAlarmSpecification(AlarmSpecification alarmSpecification) {
+        setAlarmSpecification(alarmSpecification);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1427,7 +1525,9 @@ public class RefreshPreferences implements Serializable, Cloneable {
         if (getScaleInProtectedInstances() != null)
             sb.append("ScaleInProtectedInstances: ").append(getScaleInProtectedInstances()).append(",");
         if (getStandbyInstances() != null)
-            sb.append("StandbyInstances: ").append(getStandbyInstances());
+            sb.append("StandbyInstances: ").append(getStandbyInstances()).append(",");
+        if (getAlarmSpecification() != null)
+            sb.append("AlarmSpecification: ").append(getAlarmSpecification());
         sb.append("}");
         return sb.toString();
     }
@@ -1474,6 +1574,10 @@ public class RefreshPreferences implements Serializable, Cloneable {
             return false;
         if (other.getStandbyInstances() != null && other.getStandbyInstances().equals(this.getStandbyInstances()) == false)
             return false;
+        if (other.getAlarmSpecification() == null ^ this.getAlarmSpecification() == null)
+            return false;
+        if (other.getAlarmSpecification() != null && other.getAlarmSpecification().equals(this.getAlarmSpecification()) == false)
+            return false;
         return true;
     }
 
@@ -1490,6 +1594,7 @@ public class RefreshPreferences implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAutoRollback() == null) ? 0 : getAutoRollback().hashCode());
         hashCode = prime * hashCode + ((getScaleInProtectedInstances() == null) ? 0 : getScaleInProtectedInstances().hashCode());
         hashCode = prime * hashCode + ((getStandbyInstances() == null) ? 0 : getStandbyInstances().hashCode());
+        hashCode = prime * hashCode + ((getAlarmSpecification() == null) ? 0 : getAlarmSpecification().hashCode());
         return hashCode;
     }
 

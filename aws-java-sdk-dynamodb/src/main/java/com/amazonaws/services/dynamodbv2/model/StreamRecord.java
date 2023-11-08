@@ -31,7 +31,7 @@ public class StreamRecord implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The approximate date and time when the stream record was created, in <a
-     * href="http://www.epochconverter.com/">UNIX epoch time</a> format.
+     * href="http://www.epochconverter.com/">UNIX epoch time</a> format and rounded down to the closest second.
      * </p>
      */
     private java.util.Date approximateCreationDateTime;
@@ -97,12 +97,12 @@ public class StreamRecord implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The approximate date and time when the stream record was created, in <a
-     * href="http://www.epochconverter.com/">UNIX epoch time</a> format.
+     * href="http://www.epochconverter.com/">UNIX epoch time</a> format and rounded down to the closest second.
      * </p>
      * 
      * @param approximateCreationDateTime
      *        The approximate date and time when the stream record was created, in <a
-     *        href="http://www.epochconverter.com/">UNIX epoch time</a> format.
+     *        href="http://www.epochconverter.com/">UNIX epoch time</a> format and rounded down to the closest second.
      */
 
     public void setApproximateCreationDateTime(java.util.Date approximateCreationDateTime) {
@@ -112,11 +112,11 @@ public class StreamRecord implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The approximate date and time when the stream record was created, in <a
-     * href="http://www.epochconverter.com/">UNIX epoch time</a> format.
+     * href="http://www.epochconverter.com/">UNIX epoch time</a> format and rounded down to the closest second.
      * </p>
      * 
      * @return The approximate date and time when the stream record was created, in <a
-     *         href="http://www.epochconverter.com/">UNIX epoch time</a> format.
+     *         href="http://www.epochconverter.com/">UNIX epoch time</a> format and rounded down to the closest second.
      */
 
     public java.util.Date getApproximateCreationDateTime() {
@@ -126,12 +126,12 @@ public class StreamRecord implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The approximate date and time when the stream record was created, in <a
-     * href="http://www.epochconverter.com/">UNIX epoch time</a> format.
+     * href="http://www.epochconverter.com/">UNIX epoch time</a> format and rounded down to the closest second.
      * </p>
      * 
      * @param approximateCreationDateTime
      *        The approximate date and time when the stream record was created, in <a
-     *        href="http://www.epochconverter.com/">UNIX epoch time</a> format.
+     *        href="http://www.epochconverter.com/">UNIX epoch time</a> format and rounded down to the closest second.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

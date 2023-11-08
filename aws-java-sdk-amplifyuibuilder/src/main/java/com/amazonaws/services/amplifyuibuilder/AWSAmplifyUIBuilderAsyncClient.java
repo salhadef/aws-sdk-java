@@ -419,6 +419,39 @@ public class AWSAmplifyUIBuilderAsyncClient extends AWSAmplifyUIBuilderClient im
     }
 
     @Override
+    public java.util.concurrent.Future<GetCodegenJobResult> getCodegenJobAsync(GetCodegenJobRequest request) {
+
+        return getCodegenJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCodegenJobResult> getCodegenJobAsync(final GetCodegenJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCodegenJobRequest, GetCodegenJobResult> asyncHandler) {
+        final GetCodegenJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetCodegenJobResult>() {
+            @Override
+            public GetCodegenJobResult call() throws Exception {
+                GetCodegenJobResult result = null;
+
+                try {
+                    result = executeGetCodegenJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetComponentResult> getComponentAsync(GetComponentRequest request) {
 
         return getComponentAsync(request, null);
@@ -535,6 +568,39 @@ public class AWSAmplifyUIBuilderAsyncClient extends AWSAmplifyUIBuilderClient im
 
                 try {
                     result = executeGetTheme(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCodegenJobsResult> listCodegenJobsAsync(ListCodegenJobsRequest request) {
+
+        return listCodegenJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCodegenJobsResult> listCodegenJobsAsync(final ListCodegenJobsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListCodegenJobsRequest, ListCodegenJobsResult> asyncHandler) {
+        final ListCodegenJobsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListCodegenJobsResult>() {
+            @Override
+            public ListCodegenJobsResult call() throws Exception {
+                ListCodegenJobsResult result = null;
+
+                try {
+                    result = executeListCodegenJobs(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -700,6 +766,39 @@ public class AWSAmplifyUIBuilderAsyncClient extends AWSAmplifyUIBuilderClient im
 
                 try {
                     result = executeRefreshToken(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartCodegenJobResult> startCodegenJobAsync(StartCodegenJobRequest request) {
+
+        return startCodegenJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartCodegenJobResult> startCodegenJobAsync(final StartCodegenJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartCodegenJobRequest, StartCodegenJobResult> asyncHandler) {
+        final StartCodegenJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartCodegenJobResult>() {
+            @Override
+            public StartCodegenJobResult call() throws Exception {
+                StartCodegenJobResult result = null;
+
+                try {
+                    result = executeStartCodegenJob(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

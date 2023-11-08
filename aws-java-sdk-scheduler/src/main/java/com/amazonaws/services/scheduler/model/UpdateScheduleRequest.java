@@ -27,6 +27,13 @@ public class UpdateScheduleRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
+     * Specifies the action that EventBridge Scheduler applies to the schedule after the schedule completes invoking the
+     * target.
+     * </p>
+     */
+    private String actionAfterCompletion;
+    /**
+     * <p>
      * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a
      * client token, EventBridge Scheduler uses a randomly generated token for the request to ensure idempotency.
      * </p>
@@ -85,7 +92,7 @@ public class UpdateScheduleRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>rate</code> expression - <code>rate(unit value)</code>
+     * <code>rate</code> expression - <code>rate(value unit)</code>
      * </p>
      * </li>
      * <li>
@@ -143,6 +150,73 @@ public class UpdateScheduleRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private Target target;
+
+    /**
+     * <p>
+     * Specifies the action that EventBridge Scheduler applies to the schedule after the schedule completes invoking the
+     * target.
+     * </p>
+     * 
+     * @param actionAfterCompletion
+     *        Specifies the action that EventBridge Scheduler applies to the schedule after the schedule completes
+     *        invoking the target.
+     * @see ActionAfterCompletion
+     */
+
+    public void setActionAfterCompletion(String actionAfterCompletion) {
+        this.actionAfterCompletion = actionAfterCompletion;
+    }
+
+    /**
+     * <p>
+     * Specifies the action that EventBridge Scheduler applies to the schedule after the schedule completes invoking the
+     * target.
+     * </p>
+     * 
+     * @return Specifies the action that EventBridge Scheduler applies to the schedule after the schedule completes
+     *         invoking the target.
+     * @see ActionAfterCompletion
+     */
+
+    public String getActionAfterCompletion() {
+        return this.actionAfterCompletion;
+    }
+
+    /**
+     * <p>
+     * Specifies the action that EventBridge Scheduler applies to the schedule after the schedule completes invoking the
+     * target.
+     * </p>
+     * 
+     * @param actionAfterCompletion
+     *        Specifies the action that EventBridge Scheduler applies to the schedule after the schedule completes
+     *        invoking the target.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ActionAfterCompletion
+     */
+
+    public UpdateScheduleRequest withActionAfterCompletion(String actionAfterCompletion) {
+        setActionAfterCompletion(actionAfterCompletion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the action that EventBridge Scheduler applies to the schedule after the schedule completes invoking the
+     * target.
+     * </p>
+     * 
+     * @param actionAfterCompletion
+     *        Specifies the action that EventBridge Scheduler applies to the schedule after the schedule completes
+     *        invoking the target.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ActionAfterCompletion
+     */
+
+    public UpdateScheduleRequest withActionAfterCompletion(ActionAfterCompletion actionAfterCompletion) {
+        this.actionAfterCompletion = actionAfterCompletion.toString();
+        return this;
+    }
 
     /**
      * <p>
@@ -475,7 +549,7 @@ public class UpdateScheduleRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>rate</code> expression - <code>rate(unit value)</code>
+     * <code>rate</code> expression - <code>rate(value unit)</code>
      * </p>
      * </li>
      * <li>
@@ -516,7 +590,7 @@ public class UpdateScheduleRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>rate</code> expression - <code>rate(unit value)</code>
+     *        <code>rate</code> expression - <code>rate(value unit)</code>
      *        </p>
      *        </li>
      *        <li>
@@ -564,7 +638,7 @@ public class UpdateScheduleRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>rate</code> expression - <code>rate(unit value)</code>
+     * <code>rate</code> expression - <code>rate(value unit)</code>
      * </p>
      * </li>
      * <li>
@@ -604,7 +678,7 @@ public class UpdateScheduleRequest extends com.amazonaws.AmazonWebServiceRequest
      *         </li>
      *         <li>
      *         <p>
-     *         <code>rate</code> expression - <code>rate(unit value)</code>
+     *         <code>rate</code> expression - <code>rate(value unit)</code>
      *         </p>
      *         </li>
      *         <li>
@@ -652,7 +726,7 @@ public class UpdateScheduleRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>rate</code> expression - <code>rate(unit value)</code>
+     * <code>rate</code> expression - <code>rate(value unit)</code>
      * </p>
      * </li>
      * <li>
@@ -693,7 +767,7 @@ public class UpdateScheduleRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>rate</code> expression - <code>rate(unit value)</code>
+     *        <code>rate</code> expression - <code>rate(value unit)</code>
      *        </p>
      *        </li>
      *        <li>
@@ -934,6 +1008,8 @@ public class UpdateScheduleRequest extends com.amazonaws.AmazonWebServiceRequest
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getActionAfterCompletion() != null)
+            sb.append("ActionAfterCompletion: ").append(getActionAfterCompletion()).append(",");
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getDescription() != null)
@@ -972,6 +1048,10 @@ public class UpdateScheduleRequest extends com.amazonaws.AmazonWebServiceRequest
         if (obj instanceof UpdateScheduleRequest == false)
             return false;
         UpdateScheduleRequest other = (UpdateScheduleRequest) obj;
+        if (other.getActionAfterCompletion() == null ^ this.getActionAfterCompletion() == null)
+            return false;
+        if (other.getActionAfterCompletion() != null && other.getActionAfterCompletion().equals(this.getActionAfterCompletion()) == false)
+            return false;
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
@@ -1028,6 +1108,7 @@ public class UpdateScheduleRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getActionAfterCompletion() == null) ? 0 : getActionAfterCompletion().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getEndDate() == null) ? 0 : getEndDate().hashCode());

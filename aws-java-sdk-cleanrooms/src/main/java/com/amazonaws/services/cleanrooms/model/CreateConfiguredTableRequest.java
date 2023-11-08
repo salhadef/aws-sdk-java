@@ -39,7 +39,7 @@ public class CreateConfiguredTableRequest extends com.amazonaws.AmazonWebService
     private String description;
     /**
      * <p>
-     * A reference to the AWS Glue table being configured.
+     * A reference to the Glue table being configured.
      * </p>
      */
     private TableReference tableReference;
@@ -146,11 +146,11 @@ public class CreateConfiguredTableRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A reference to the AWS Glue table being configured.
+     * A reference to the Glue table being configured.
      * </p>
      * 
      * @param tableReference
-     *        A reference to the AWS Glue table being configured.
+     *        A reference to the Glue table being configured.
      */
 
     public void setTableReference(TableReference tableReference) {
@@ -159,10 +159,10 @@ public class CreateConfiguredTableRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A reference to the AWS Glue table being configured.
+     * A reference to the Glue table being configured.
      * </p>
      * 
-     * @return A reference to the AWS Glue table being configured.
+     * @return A reference to the Glue table being configured.
      */
 
     public TableReference getTableReference() {
@@ -171,11 +171,11 @@ public class CreateConfiguredTableRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A reference to the AWS Glue table being configured.
+     * A reference to the Glue table being configured.
      * </p>
      * 
      * @param tableReference
-     *        A reference to the AWS Glue table being configured.
+     *        A reference to the Glue table being configured.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

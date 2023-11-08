@@ -27,6 +27,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/Dimension" target="_top">AWS API
  *      Documentation</a>
  */
+@Deprecated
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Dimension implements Serializable, Cloneable, StructuredPojo {
 

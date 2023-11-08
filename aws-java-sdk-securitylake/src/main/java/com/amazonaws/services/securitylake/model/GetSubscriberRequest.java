@@ -30,20 +30,20 @@ public class GetSubscriberRequest extends com.amazonaws.AmazonWebServiceRequest 
      * A value created by Amazon Security Lake that uniquely identifies your <code>GetSubscriber</code> API request.
      * </p>
      */
-    private String id;
+    private String subscriberId;
 
     /**
      * <p>
      * A value created by Amazon Security Lake that uniquely identifies your <code>GetSubscriber</code> API request.
      * </p>
      * 
-     * @param id
+     * @param subscriberId
      *        A value created by Amazon Security Lake that uniquely identifies your <code>GetSubscriber</code> API
      *        request.
      */
 
-    public void setId(String id) {
-        this.id = id;
+    public void setSubscriberId(String subscriberId) {
+        this.subscriberId = subscriberId;
     }
 
     /**
@@ -55,8 +55,8 @@ public class GetSubscriberRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         request.
      */
 
-    public String getId() {
-        return this.id;
+    public String getSubscriberId() {
+        return this.subscriberId;
     }
 
     /**
@@ -64,14 +64,14 @@ public class GetSubscriberRequest extends com.amazonaws.AmazonWebServiceRequest 
      * A value created by Amazon Security Lake that uniquely identifies your <code>GetSubscriber</code> API request.
      * </p>
      * 
-     * @param id
+     * @param subscriberId
      *        A value created by Amazon Security Lake that uniquely identifies your <code>GetSubscriber</code> API
      *        request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetSubscriberRequest withId(String id) {
-        setId(id);
+    public GetSubscriberRequest withSubscriberId(String subscriberId) {
+        setSubscriberId(subscriberId);
         return this;
     }
 
@@ -87,8 +87,8 @@ public class GetSubscriberRequest extends com.amazonaws.AmazonWebServiceRequest 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getId() != null)
-            sb.append("Id: ").append(getId());
+        if (getSubscriberId() != null)
+            sb.append("SubscriberId: ").append(getSubscriberId());
         sb.append("}");
         return sb.toString();
     }
@@ -103,9 +103,9 @@ public class GetSubscriberRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (obj instanceof GetSubscriberRequest == false)
             return false;
         GetSubscriberRequest other = (GetSubscriberRequest) obj;
-        if (other.getId() == null ^ this.getId() == null)
+        if (other.getSubscriberId() == null ^ this.getSubscriberId() == null)
             return false;
-        if (other.getId() != null && other.getId().equals(this.getId()) == false)
+        if (other.getSubscriberId() != null && other.getSubscriberId().equals(this.getSubscriberId()) == false)
             return false;
         return true;
     }
@@ -115,7 +115,7 @@ public class GetSubscriberRequest extends com.amazonaws.AmazonWebServiceRequest 
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getSubscriberId() == null) ? 0 : getSubscriberId().hashCode());
         return hashCode;
     }
 

@@ -28,7 +28,7 @@ import com.amazonaws.services.inspector2.model.*;
  * <p>
  * <p>
  * Amazon Inspector is a vulnerability discovery service that automates continuous scanning for security vulnerabilities
- * within your Amazon EC2 and Amazon ECR environments.
+ * within your Amazon EC2, Amazon ECR, and Amazon Web Services Lambda environments.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -44,7 +44,12 @@ public interface AWSInspector2 {
 
     /**
      * <p>
-     * Associates an Amazon Web Services account with an Amazon Inspector delegated administrator.
+     * Associates an Amazon Web Services account with an Amazon Inspector delegated administrator. An HTTP 200 response
+     * indicates the association was successfully started, but doesn’t indicate whether it was completed. You can check
+     * if the association completed by using <a
+     * href="https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListMembers.html">ListMembers</a> for multiple
+     * accounts or <a href="https://docs.aws.amazon.com/inspector/v2/APIReference/API_GetMember.html">GetMembers</a> for
+     * a single account.
      * </p>
      * 
      * @param associateMemberRequest
@@ -88,6 +93,48 @@ public interface AWSInspector2 {
 
     /**
      * <p>
+     * Retrieves code snippets from findings that Amazon Inspector detected code vulnerabilities in.
+     * </p>
+     * 
+     * @param batchGetCodeSnippetRequest
+     * @return Result of the BatchGetCodeSnippet operation returned by the service.
+     * @throws ValidationException
+     *         The request has failed validation due to missing required fields or having invalid inputs.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws InternalServerException
+     *         The request has failed due to an internal failure of the Amazon Inspector service.
+     * @sample AWSInspector2.BatchGetCodeSnippet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/BatchGetCodeSnippet" target="_top">AWS
+     *      API Documentation</a>
+     */
+    BatchGetCodeSnippetResult batchGetCodeSnippet(BatchGetCodeSnippetRequest batchGetCodeSnippetRequest);
+
+    /**
+     * <p>
+     * Gets vulnerability details for findings.
+     * </p>
+     * 
+     * @param batchGetFindingDetailsRequest
+     * @return Result of the BatchGetFindingDetails operation returned by the service.
+     * @throws ValidationException
+     *         The request has failed validation due to missing required fields or having invalid inputs.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws InternalServerException
+     *         The request has failed due to an internal failure of the Amazon Inspector service.
+     * @sample AWSInspector2.BatchGetFindingDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/BatchGetFindingDetails"
+     *      target="_top">AWS API Documentation</a>
+     */
+    BatchGetFindingDetailsResult batchGetFindingDetails(BatchGetFindingDetailsRequest batchGetFindingDetailsRequest);
+
+    /**
+     * <p>
      * Gets free trial status for multiple Amazon Web Services accounts.
      * </p>
      * 
@@ -106,6 +153,53 @@ public interface AWSInspector2 {
      *      target="_top">AWS API Documentation</a>
      */
     BatchGetFreeTrialInfoResult batchGetFreeTrialInfo(BatchGetFreeTrialInfoRequest batchGetFreeTrialInfoRequest);
+
+    /**
+     * <p>
+     * Retrieves Amazon Inspector deep inspection activation status of multiple member accounts within your
+     * organization. You must be the delegated administrator of an organization in Amazon Inspector to use this API.
+     * </p>
+     * 
+     * @param batchGetMemberEc2DeepInspectionStatusRequest
+     * @return Result of the BatchGetMemberEc2DeepInspectionStatus operation returned by the service.
+     * @throws ValidationException
+     *         The request has failed validation due to missing required fields or having invalid inputs.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws InternalServerException
+     *         The request has failed due to an internal failure of the Amazon Inspector service.
+     * @sample AWSInspector2.BatchGetMemberEc2DeepInspectionStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/BatchGetMemberEc2DeepInspectionStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    BatchGetMemberEc2DeepInspectionStatusResult batchGetMemberEc2DeepInspectionStatus(
+            BatchGetMemberEc2DeepInspectionStatusRequest batchGetMemberEc2DeepInspectionStatusRequest);
+
+    /**
+     * <p>
+     * Activates or deactivates Amazon Inspector deep inspection for the provided member accounts in your organization.
+     * You must be the delegated administrator of an organization in Amazon Inspector to use this API.
+     * </p>
+     * 
+     * @param batchUpdateMemberEc2DeepInspectionStatusRequest
+     * @return Result of the BatchUpdateMemberEc2DeepInspectionStatus operation returned by the service.
+     * @throws ValidationException
+     *         The request has failed validation due to missing required fields or having invalid inputs.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws InternalServerException
+     *         The request has failed due to an internal failure of the Amazon Inspector service.
+     * @sample AWSInspector2.BatchUpdateMemberEc2DeepInspectionStatus
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/BatchUpdateMemberEc2DeepInspectionStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    BatchUpdateMemberEc2DeepInspectionStatusResult batchUpdateMemberEc2DeepInspectionStatus(
+            BatchUpdateMemberEc2DeepInspectionStatusRequest batchUpdateMemberEc2DeepInspectionStatusRequest);
 
     /**
      * <p>
@@ -132,7 +226,31 @@ public interface AWSInspector2 {
 
     /**
      * <p>
-     * Creates a filter resource using specified filter criteria.
+     * Cancels a software bill of materials (SBOM) report.
+     * </p>
+     * 
+     * @param cancelSbomExportRequest
+     * @return Result of the CancelSbomExport operation returned by the service.
+     * @throws ValidationException
+     *         The request has failed validation due to missing required fields or having invalid inputs.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws ResourceNotFoundException
+     *         The operation tried to access an invalid resource. Make sure the resource is specified correctly.
+     * @throws InternalServerException
+     *         The request has failed due to an internal failure of the Amazon Inspector service.
+     * @sample AWSInspector2.CancelSbomExport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CancelSbomExport" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CancelSbomExportResult cancelSbomExport(CancelSbomExportRequest cancelSbomExportRequest);
+
+    /**
+     * <p>
+     * Creates a filter resource using specified filter criteria. When the filter action is set to <code>SUPPRESS</code>
+     * this action creates a suppression rule.
      * </p>
      * 
      * @param createFilterRequest
@@ -158,7 +276,9 @@ public interface AWSInspector2 {
 
     /**
      * <p>
-     * Creates a finding report.
+     * Creates a finding report. By default only <code>ACTIVE</code> findings are returned in the report. To see
+     * <code>SUPRESSED</code> or <code>CLOSED</code> findings you must specify a value for the
+     * <code>findingStatus</code> filter criteria.
      * </p>
      * 
      * @param createFindingsReportRequest
@@ -178,6 +298,29 @@ public interface AWSInspector2 {
      *      target="_top">AWS API Documentation</a>
      */
     CreateFindingsReportResult createFindingsReport(CreateFindingsReportRequest createFindingsReportRequest);
+
+    /**
+     * <p>
+     * Creates a software bill of materials (SBOM) report.
+     * </p>
+     * 
+     * @param createSbomExportRequest
+     * @return Result of the CreateSbomExport operation returned by the service.
+     * @throws ValidationException
+     *         The request has failed validation due to missing required fields or having invalid inputs.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws ResourceNotFoundException
+     *         The operation tried to access an invalid resource. Make sure the resource is specified correctly.
+     * @throws InternalServerException
+     *         The request has failed due to an internal failure of the Amazon Inspector service.
+     * @sample AWSInspector2.CreateSbomExport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CreateSbomExport" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateSbomExportResult createSbomExport(CreateSbomExportRequest createSbomExportRequest);
 
     /**
      * <p>
@@ -385,6 +528,51 @@ public interface AWSInspector2 {
 
     /**
      * <p>
+     * Retrieves the activation status of Amazon Inspector deep inspection and custom paths associated with your
+     * account.
+     * </p>
+     * 
+     * @param getEc2DeepInspectionConfigurationRequest
+     * @return Result of the GetEc2DeepInspectionConfiguration operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The operation tried to access an invalid resource. Make sure the resource is specified correctly.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws InternalServerException
+     *         The request has failed due to an internal failure of the Amazon Inspector service.
+     * @sample AWSInspector2.GetEc2DeepInspectionConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetEc2DeepInspectionConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetEc2DeepInspectionConfigurationResult getEc2DeepInspectionConfiguration(GetEc2DeepInspectionConfigurationRequest getEc2DeepInspectionConfigurationRequest);
+
+    /**
+     * <p>
+     * Gets an encryption key.
+     * </p>
+     * 
+     * @param getEncryptionKeyRequest
+     * @return Result of the GetEncryptionKey operation returned by the service.
+     * @throws ValidationException
+     *         The request has failed validation due to missing required fields or having invalid inputs.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws ResourceNotFoundException
+     *         The operation tried to access an invalid resource. Make sure the resource is specified correctly.
+     * @throws InternalServerException
+     *         The request has failed due to an internal failure of the Amazon Inspector service.
+     * @sample AWSInspector2.GetEncryptionKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetEncryptionKey" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetEncryptionKeyResult getEncryptionKey(GetEncryptionKeyRequest getEncryptionKeyRequest);
+
+    /**
+     * <p>
      * Gets the status of a findings report.
      * </p>
      * 
@@ -428,6 +616,29 @@ public interface AWSInspector2 {
      *      Documentation</a>
      */
     GetMemberResult getMember(GetMemberRequest getMemberRequest);
+
+    /**
+     * <p>
+     * Gets details of a software bill of materials (SBOM) report.
+     * </p>
+     * 
+     * @param getSbomExportRequest
+     * @return Result of the GetSbomExport operation returned by the service.
+     * @throws ValidationException
+     *         The request has failed validation due to missing required fields or having invalid inputs.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The operation tried to access an invalid resource. Make sure the resource is specified correctly.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws InternalServerException
+     *         The request has failed due to an internal failure of the Amazon Inspector service.
+     * @sample AWSInspector2.GetSbomExport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetSbomExport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetSbomExportResult getSbomExport(GetSbomExportRequest getSbomExportRequest);
 
     /**
      * <p>
@@ -633,6 +844,51 @@ public interface AWSInspector2 {
 
     /**
      * <p>
+     * Resets an encryption key. After the key is reset your resources will be encrypted by an Amazon Web Services owned
+     * key.
+     * </p>
+     * 
+     * @param resetEncryptionKeyRequest
+     * @return Result of the ResetEncryptionKey operation returned by the service.
+     * @throws ValidationException
+     *         The request has failed validation due to missing required fields or having invalid inputs.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws ResourceNotFoundException
+     *         The operation tried to access an invalid resource. Make sure the resource is specified correctly.
+     * @throws InternalServerException
+     *         The request has failed due to an internal failure of the Amazon Inspector service.
+     * @sample AWSInspector2.ResetEncryptionKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ResetEncryptionKey" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ResetEncryptionKeyResult resetEncryptionKey(ResetEncryptionKeyRequest resetEncryptionKeyRequest);
+
+    /**
+     * <p>
+     * Lists Amazon Inspector coverage details for a specific vulnerability.
+     * </p>
+     * 
+     * @param searchVulnerabilitiesRequest
+     * @return Result of the SearchVulnerabilities operation returned by the service.
+     * @throws ValidationException
+     *         The request has failed validation due to missing required fields or having invalid inputs.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws InternalServerException
+     *         The request has failed due to an internal failure of the Amazon Inspector service.
+     * @sample AWSInspector2.SearchVulnerabilities
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/SearchVulnerabilities"
+     *      target="_top">AWS API Documentation</a>
+     */
+    SearchVulnerabilitiesResult searchVulnerabilities(SearchVulnerabilitiesRequest searchVulnerabilitiesRequest);
+
+    /**
+     * <p>
      * Adds tags to a resource.
      * </p>
      * 
@@ -700,6 +956,52 @@ public interface AWSInspector2 {
 
     /**
      * <p>
+     * Activates, deactivates Amazon Inspector deep inspection, or updates custom paths for your account.
+     * </p>
+     * 
+     * @param updateEc2DeepInspectionConfigurationRequest
+     * @return Result of the UpdateEc2DeepInspectionConfiguration operation returned by the service.
+     * @throws ValidationException
+     *         The request has failed validation due to missing required fields or having invalid inputs.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws InternalServerException
+     *         The request has failed due to an internal failure of the Amazon Inspector service.
+     * @sample AWSInspector2.UpdateEc2DeepInspectionConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateEc2DeepInspectionConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateEc2DeepInspectionConfigurationResult updateEc2DeepInspectionConfiguration(
+            UpdateEc2DeepInspectionConfigurationRequest updateEc2DeepInspectionConfigurationRequest);
+
+    /**
+     * <p>
+     * Updates an encryption key. A <code>ResourceNotFoundException</code> means that an AWS owned key is being used for
+     * encryption.
+     * </p>
+     * 
+     * @param updateEncryptionKeyRequest
+     * @return Result of the UpdateEncryptionKey operation returned by the service.
+     * @throws ValidationException
+     *         The request has failed validation due to missing required fields or having invalid inputs.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws ResourceNotFoundException
+     *         The operation tried to access an invalid resource. Make sure the resource is specified correctly.
+     * @throws InternalServerException
+     *         The request has failed due to an internal failure of the Amazon Inspector service.
+     * @sample AWSInspector2.UpdateEncryptionKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateEncryptionKey" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateEncryptionKeyResult updateEncryptionKey(UpdateEncryptionKeyRequest updateEncryptionKeyRequest);
+
+    /**
+     * <p>
      * Specifies the action that is to be applied to the findings that match the filter.
      * </p>
      * 
@@ -720,6 +1022,30 @@ public interface AWSInspector2 {
      *      Documentation</a>
      */
     UpdateFilterResult updateFilter(UpdateFilterRequest updateFilterRequest);
+
+    /**
+     * <p>
+     * Updates the Amazon Inspector deep inspection custom paths for your organization. You must be an Amazon Inspector
+     * delegated administrator to use this API.
+     * </p>
+     * 
+     * @param updateOrgEc2DeepInspectionConfigurationRequest
+     * @return Result of the UpdateOrgEc2DeepInspectionConfiguration operation returned by the service.
+     * @throws ValidationException
+     *         The request has failed validation due to missing required fields or having invalid inputs.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws InternalServerException
+     *         The request has failed due to an internal failure of the Amazon Inspector service.
+     * @sample AWSInspector2.UpdateOrgEc2DeepInspectionConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateOrgEc2DeepInspectionConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateOrgEc2DeepInspectionConfigurationResult updateOrgEc2DeepInspectionConfiguration(
+            UpdateOrgEc2DeepInspectionConfigurationRequest updateOrgEc2DeepInspectionConfigurationRequest);
 
     /**
      * <p>

@@ -102,6 +102,14 @@ public class ResolverEndpointJsonUnmarshaller implements Unmarshaller<ResolverEn
                     context.nextToken();
                     resolverEndpoint.setResolverEndpointType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("OutpostArn", targetDepth)) {
+                    context.nextToken();
+                    resolverEndpoint.setOutpostArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("PreferredInstanceType", targetDepth)) {
+                    context.nextToken();
+                    resolverEndpoint.setPreferredInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

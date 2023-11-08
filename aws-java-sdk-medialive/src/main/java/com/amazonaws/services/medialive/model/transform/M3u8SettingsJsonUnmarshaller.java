@@ -116,6 +116,14 @@ public class M3u8SettingsJsonUnmarshaller implements Unmarshaller<M3u8Settings, 
                     context.nextToken();
                     m3u8Settings.setVideoPid(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("klvBehavior", targetDepth)) {
+                    context.nextToken();
+                    m3u8Settings.setKlvBehavior(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("klvDataPids", targetDepth)) {
+                    context.nextToken();
+                    m3u8Settings.setKlvDataPids(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

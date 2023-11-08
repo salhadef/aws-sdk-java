@@ -42,24 +42,10 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
     private java.util.List<String> accessTypes;
     /**
      * <p>
-     * The Amazon Web Services account ID you are using to create your Amazon Security Lake account.
-     * </p>
-     */
-    private String accountId;
-    /**
-     * <p>
-     * The date and time when the subscription was created.
+     * The date and time when the subscriber was created.
      * </p>
      */
     private java.util.Date createdAt;
-    /**
-     * <p>
-     * The external ID of the subscriber. The external ID lets the user that is assuming the role assert the
-     * circumstances in which they are operating. It also provides a way for the account owner to permit the role to be
-     * assumed only under specific circumstances.
-     * </p>
-     */
-    private String externalId;
     /**
      * <p>
      * The Amazon Resource Name (ARN) which uniquely defines the AWS RAM resource share. Before accepting the RAM
@@ -90,24 +76,44 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
     private String s3BucketArn;
     /**
      * <p>
-     * The ARN for the Amazon Simple Notification Service.
+     * Amazon Security Lake supports log and event collection for natively supported Amazon Web Services. For more
+     * information, see the <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/source-management.html">Amazon Security Lake
+     * User Guide</a>.
      * </p>
      */
-    private String snsArn;
+    private java.util.List<LogSourceResource> sources;
     /**
      * <p>
-     * Amazon Security Lake supports log and event collection for natively supported Amazon Web Services. For more
-     * information, see the Amazon Security Lake User Guide.
+     * The subscriber ARN of the Amazon Security Lake subscriber account.
      * </p>
      */
-    private java.util.List<SourceType> sourceTypes;
+    private String subscriberArn;
     /**
      * <p>
      * The subscriber descriptions for a subscriber account. The description for a subscriber includes
-     * <code>subscriberName</code>, <code>accountID</code>, <code>externalID</code>, and <code>subscriptionId</code>.
+     * <code>subscriberName</code>, <code>accountID</code>, <code>externalID</code>, and <code>subscriberId</code>.
      * </p>
      */
     private String subscriberDescription;
+    /**
+     * <p>
+     * The subscriber endpoint to which exception messages are posted.
+     * </p>
+     */
+    private String subscriberEndpoint;
+    /**
+     * <p>
+     * The subscriber ID of the Amazon Security Lake subscriber account.
+     * </p>
+     */
+    private String subscriberId;
+    /**
+     * <p>
+     * The AWS identity used to access your data.
+     * </p>
+     */
+    private AwsIdentity subscriberIdentity;
     /**
      * <p>
      * The name of your Amazon Security Lake subscriber account.
@@ -116,31 +122,13 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
     private String subscriberName;
     /**
      * <p>
-     * The subscription endpoint to which exception messages are posted.
+     * The subscriber status of the Amazon Security Lake subscriber account.
      * </p>
      */
-    private String subscriptionEndpoint;
+    private String subscriberStatus;
     /**
      * <p>
-     * The subscription ID of the Amazon Security Lake subscriber account.
-     * </p>
-     */
-    private String subscriptionId;
-    /**
-     * <p>
-     * The subscription protocol to which exception messages are posted.
-     * </p>
-     */
-    private String subscriptionProtocol;
-    /**
-     * <p>
-     * The subscription status of the Amazon Security Lake subscriber account.
-     * </p>
-     */
-    private String subscriptionStatus;
-    /**
-     * <p>
-     * The date and time when the subscription was created.
+     * The date and time when the subscriber was last updated.
      * </p>
      */
     private java.util.Date updatedAt;
@@ -156,7 +144,7 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @return You can choose to notify subscribers of new objects with an Amazon Simple Queue Service (Amazon SQS)
-     *         queue or through messaging to an HTTPS endpoint provided by the subscriber. </p>
+     *         queue or through messaging to an HTTPS endpoint provided by the subscriber.</p>
      *         <p>
      *         Subscribers can consume data by directly querying Lake Formation tables in your Amazon S3 bucket through
      *         services like Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>.
@@ -179,7 +167,7 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
      * 
      * @param accessTypes
      *        You can choose to notify subscribers of new objects with an Amazon Simple Queue Service (Amazon SQS) queue
-     *        or through messaging to an HTTPS endpoint provided by the subscriber. </p>
+     *        or through messaging to an HTTPS endpoint provided by the subscriber.</p>
      *        <p>
      *        Subscribers can consume data by directly querying Lake Formation tables in your Amazon S3 bucket through
      *        services like Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>.
@@ -212,7 +200,7 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
      * 
      * @param accessTypes
      *        You can choose to notify subscribers of new objects with an Amazon Simple Queue Service (Amazon SQS) queue
-     *        or through messaging to an HTTPS endpoint provided by the subscriber. </p>
+     *        or through messaging to an HTTPS endpoint provided by the subscriber.</p>
      *        <p>
      *        Subscribers can consume data by directly querying Lake Formation tables in your Amazon S3 bucket through
      *        services like Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>.
@@ -242,7 +230,7 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
      * 
      * @param accessTypes
      *        You can choose to notify subscribers of new objects with an Amazon Simple Queue Service (Amazon SQS) queue
-     *        or through messaging to an HTTPS endpoint provided by the subscriber. </p>
+     *        or through messaging to an HTTPS endpoint provided by the subscriber.</p>
      *        <p>
      *        Subscribers can consume data by directly querying Lake Formation tables in your Amazon S3 bucket through
      *        services like Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>.
@@ -267,7 +255,7 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
      * 
      * @param accessTypes
      *        You can choose to notify subscribers of new objects with an Amazon Simple Queue Service (Amazon SQS) queue
-     *        or through messaging to an HTTPS endpoint provided by the subscriber. </p>
+     *        or through messaging to an HTTPS endpoint provided by the subscriber.</p>
      *        <p>
      *        Subscribers can consume data by directly querying Lake Formation tables in your Amazon S3 bucket through
      *        services like Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>.
@@ -290,51 +278,11 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The Amazon Web Services account ID you are using to create your Amazon Security Lake account.
-     * </p>
-     * 
-     * @param accountId
-     *        The Amazon Web Services account ID you are using to create your Amazon Security Lake account.
-     */
-
-    public void setAccountId(String accountId) {
-        this.accountId = accountId;
-    }
-
-    /**
-     * <p>
-     * The Amazon Web Services account ID you are using to create your Amazon Security Lake account.
-     * </p>
-     * 
-     * @return The Amazon Web Services account ID you are using to create your Amazon Security Lake account.
-     */
-
-    public String getAccountId() {
-        return this.accountId;
-    }
-
-    /**
-     * <p>
-     * The Amazon Web Services account ID you are using to create your Amazon Security Lake account.
-     * </p>
-     * 
-     * @param accountId
-     *        The Amazon Web Services account ID you are using to create your Amazon Security Lake account.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public SubscriberResource withAccountId(String accountId) {
-        setAccountId(accountId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The date and time when the subscription was created.
+     * The date and time when the subscriber was created.
      * </p>
      * 
      * @param createdAt
-     *        The date and time when the subscription was created.
+     *        The date and time when the subscriber was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -343,10 +291,10 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The date and time when the subscription was created.
+     * The date and time when the subscriber was created.
      * </p>
      * 
-     * @return The date and time when the subscription was created.
+     * @return The date and time when the subscriber was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -355,68 +303,16 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The date and time when the subscription was created.
+     * The date and time when the subscriber was created.
      * </p>
      * 
      * @param createdAt
-     *        The date and time when the subscription was created.
+     *        The date and time when the subscriber was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SubscriberResource withCreatedAt(java.util.Date createdAt) {
         setCreatedAt(createdAt);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The external ID of the subscriber. The external ID lets the user that is assuming the role assert the
-     * circumstances in which they are operating. It also provides a way for the account owner to permit the role to be
-     * assumed only under specific circumstances.
-     * </p>
-     * 
-     * @param externalId
-     *        The external ID of the subscriber. The external ID lets the user that is assuming the role assert the
-     *        circumstances in which they are operating. It also provides a way for the account owner to permit the role
-     *        to be assumed only under specific circumstances.
-     */
-
-    public void setExternalId(String externalId) {
-        this.externalId = externalId;
-    }
-
-    /**
-     * <p>
-     * The external ID of the subscriber. The external ID lets the user that is assuming the role assert the
-     * circumstances in which they are operating. It also provides a way for the account owner to permit the role to be
-     * assumed only under specific circumstances.
-     * </p>
-     * 
-     * @return The external ID of the subscriber. The external ID lets the user that is assuming the role assert the
-     *         circumstances in which they are operating. It also provides a way for the account owner to permit the
-     *         role to be assumed only under specific circumstances.
-     */
-
-    public String getExternalId() {
-        return this.externalId;
-    }
-
-    /**
-     * <p>
-     * The external ID of the subscriber. The external ID lets the user that is assuming the role assert the
-     * circumstances in which they are operating. It also provides a way for the account owner to permit the role to be
-     * assumed only under specific circumstances.
-     * </p>
-     * 
-     * @param externalId
-     *        The external ID of the subscriber. The external ID lets the user that is assuming the role assert the
-     *        circumstances in which they are operating. It also provides a way for the account owner to permit the role
-     *        to be assumed only under specific circumstances.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public SubscriberResource withExternalId(String externalId) {
-        setExternalId(externalId);
         return this;
     }
 
@@ -603,101 +499,73 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ARN for the Amazon Simple Notification Service.
-     * </p>
-     * 
-     * @param snsArn
-     *        The ARN for the Amazon Simple Notification Service.
-     */
-
-    public void setSnsArn(String snsArn) {
-        this.snsArn = snsArn;
-    }
-
-    /**
-     * <p>
-     * The ARN for the Amazon Simple Notification Service.
-     * </p>
-     * 
-     * @return The ARN for the Amazon Simple Notification Service.
-     */
-
-    public String getSnsArn() {
-        return this.snsArn;
-    }
-
-    /**
-     * <p>
-     * The ARN for the Amazon Simple Notification Service.
-     * </p>
-     * 
-     * @param snsArn
-     *        The ARN for the Amazon Simple Notification Service.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public SubscriberResource withSnsArn(String snsArn) {
-        setSnsArn(snsArn);
-        return this;
-    }
-
-    /**
-     * <p>
      * Amazon Security Lake supports log and event collection for natively supported Amazon Web Services. For more
-     * information, see the Amazon Security Lake User Guide.
+     * information, see the <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/source-management.html">Amazon Security Lake
+     * User Guide</a>.
      * </p>
      * 
      * @return Amazon Security Lake supports log and event collection for natively supported Amazon Web Services. For
-     *         more information, see the Amazon Security Lake User Guide.
+     *         more information, see the <a
+     *         href="https://docs.aws.amazon.com/security-lake/latest/userguide/source-management.html">Amazon Security
+     *         Lake User Guide</a>.
      */
 
-    public java.util.List<SourceType> getSourceTypes() {
-        return sourceTypes;
+    public java.util.List<LogSourceResource> getSources() {
+        return sources;
     }
 
     /**
      * <p>
      * Amazon Security Lake supports log and event collection for natively supported Amazon Web Services. For more
-     * information, see the Amazon Security Lake User Guide.
+     * information, see the <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/source-management.html">Amazon Security Lake
+     * User Guide</a>.
      * </p>
      * 
-     * @param sourceTypes
+     * @param sources
      *        Amazon Security Lake supports log and event collection for natively supported Amazon Web Services. For
-     *        more information, see the Amazon Security Lake User Guide.
+     *        more information, see the <a
+     *        href="https://docs.aws.amazon.com/security-lake/latest/userguide/source-management.html">Amazon Security
+     *        Lake User Guide</a>.
      */
 
-    public void setSourceTypes(java.util.Collection<SourceType> sourceTypes) {
-        if (sourceTypes == null) {
-            this.sourceTypes = null;
+    public void setSources(java.util.Collection<LogSourceResource> sources) {
+        if (sources == null) {
+            this.sources = null;
             return;
         }
 
-        this.sourceTypes = new java.util.ArrayList<SourceType>(sourceTypes);
+        this.sources = new java.util.ArrayList<LogSourceResource>(sources);
     }
 
     /**
      * <p>
      * Amazon Security Lake supports log and event collection for natively supported Amazon Web Services. For more
-     * information, see the Amazon Security Lake User Guide.
+     * information, see the <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/source-management.html">Amazon Security Lake
+     * User Guide</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setSourceTypes(java.util.Collection)} or {@link #withSourceTypes(java.util.Collection)} if you want to
-     * override the existing values.
+     * {@link #setSources(java.util.Collection)} or {@link #withSources(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
-     * @param sourceTypes
+     * @param sources
      *        Amazon Security Lake supports log and event collection for natively supported Amazon Web Services. For
-     *        more information, see the Amazon Security Lake User Guide.
+     *        more information, see the <a
+     *        href="https://docs.aws.amazon.com/security-lake/latest/userguide/source-management.html">Amazon Security
+     *        Lake User Guide</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SubscriberResource withSourceTypes(SourceType... sourceTypes) {
-        if (this.sourceTypes == null) {
-            setSourceTypes(new java.util.ArrayList<SourceType>(sourceTypes.length));
+    public SubscriberResource withSources(LogSourceResource... sources) {
+        if (this.sources == null) {
+            setSources(new java.util.ArrayList<LogSourceResource>(sources.length));
         }
-        for (SourceType ele : sourceTypes) {
-            this.sourceTypes.add(ele);
+        for (LogSourceResource ele : sources) {
+            this.sources.add(ele);
         }
         return this;
     }
@@ -705,30 +573,74 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * Amazon Security Lake supports log and event collection for natively supported Amazon Web Services. For more
-     * information, see the Amazon Security Lake User Guide.
+     * information, see the <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/source-management.html">Amazon Security Lake
+     * User Guide</a>.
      * </p>
      * 
-     * @param sourceTypes
+     * @param sources
      *        Amazon Security Lake supports log and event collection for natively supported Amazon Web Services. For
-     *        more information, see the Amazon Security Lake User Guide.
+     *        more information, see the <a
+     *        href="https://docs.aws.amazon.com/security-lake/latest/userguide/source-management.html">Amazon Security
+     *        Lake User Guide</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SubscriberResource withSourceTypes(java.util.Collection<SourceType> sourceTypes) {
-        setSourceTypes(sourceTypes);
+    public SubscriberResource withSources(java.util.Collection<LogSourceResource> sources) {
+        setSources(sources);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The subscriber ARN of the Amazon Security Lake subscriber account.
+     * </p>
+     * 
+     * @param subscriberArn
+     *        The subscriber ARN of the Amazon Security Lake subscriber account.
+     */
+
+    public void setSubscriberArn(String subscriberArn) {
+        this.subscriberArn = subscriberArn;
+    }
+
+    /**
+     * <p>
+     * The subscriber ARN of the Amazon Security Lake subscriber account.
+     * </p>
+     * 
+     * @return The subscriber ARN of the Amazon Security Lake subscriber account.
+     */
+
+    public String getSubscriberArn() {
+        return this.subscriberArn;
+    }
+
+    /**
+     * <p>
+     * The subscriber ARN of the Amazon Security Lake subscriber account.
+     * </p>
+     * 
+     * @param subscriberArn
+     *        The subscriber ARN of the Amazon Security Lake subscriber account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SubscriberResource withSubscriberArn(String subscriberArn) {
+        setSubscriberArn(subscriberArn);
         return this;
     }
 
     /**
      * <p>
      * The subscriber descriptions for a subscriber account. The description for a subscriber includes
-     * <code>subscriberName</code>, <code>accountID</code>, <code>externalID</code>, and <code>subscriptionId</code>.
+     * <code>subscriberName</code>, <code>accountID</code>, <code>externalID</code>, and <code>subscriberId</code>.
      * </p>
      * 
      * @param subscriberDescription
      *        The subscriber descriptions for a subscriber account. The description for a subscriber includes
      *        <code>subscriberName</code>, <code>accountID</code>, <code>externalID</code>, and
-     *        <code>subscriptionId</code>.
+     *        <code>subscriberId</code>.
      */
 
     public void setSubscriberDescription(String subscriberDescription) {
@@ -738,12 +650,12 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The subscriber descriptions for a subscriber account. The description for a subscriber includes
-     * <code>subscriberName</code>, <code>accountID</code>, <code>externalID</code>, and <code>subscriptionId</code>.
+     * <code>subscriberName</code>, <code>accountID</code>, <code>externalID</code>, and <code>subscriberId</code>.
      * </p>
      * 
      * @return The subscriber descriptions for a subscriber account. The description for a subscriber includes
      *         <code>subscriberName</code>, <code>accountID</code>, <code>externalID</code>, and
-     *         <code>subscriptionId</code>.
+     *         <code>subscriberId</code>.
      */
 
     public String getSubscriberDescription() {
@@ -753,18 +665,138 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The subscriber descriptions for a subscriber account. The description for a subscriber includes
-     * <code>subscriberName</code>, <code>accountID</code>, <code>externalID</code>, and <code>subscriptionId</code>.
+     * <code>subscriberName</code>, <code>accountID</code>, <code>externalID</code>, and <code>subscriberId</code>.
      * </p>
      * 
      * @param subscriberDescription
      *        The subscriber descriptions for a subscriber account. The description for a subscriber includes
      *        <code>subscriberName</code>, <code>accountID</code>, <code>externalID</code>, and
-     *        <code>subscriptionId</code>.
+     *        <code>subscriberId</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SubscriberResource withSubscriberDescription(String subscriberDescription) {
         setSubscriberDescription(subscriberDescription);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The subscriber endpoint to which exception messages are posted.
+     * </p>
+     * 
+     * @param subscriberEndpoint
+     *        The subscriber endpoint to which exception messages are posted.
+     */
+
+    public void setSubscriberEndpoint(String subscriberEndpoint) {
+        this.subscriberEndpoint = subscriberEndpoint;
+    }
+
+    /**
+     * <p>
+     * The subscriber endpoint to which exception messages are posted.
+     * </p>
+     * 
+     * @return The subscriber endpoint to which exception messages are posted.
+     */
+
+    public String getSubscriberEndpoint() {
+        return this.subscriberEndpoint;
+    }
+
+    /**
+     * <p>
+     * The subscriber endpoint to which exception messages are posted.
+     * </p>
+     * 
+     * @param subscriberEndpoint
+     *        The subscriber endpoint to which exception messages are posted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SubscriberResource withSubscriberEndpoint(String subscriberEndpoint) {
+        setSubscriberEndpoint(subscriberEndpoint);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The subscriber ID of the Amazon Security Lake subscriber account.
+     * </p>
+     * 
+     * @param subscriberId
+     *        The subscriber ID of the Amazon Security Lake subscriber account.
+     */
+
+    public void setSubscriberId(String subscriberId) {
+        this.subscriberId = subscriberId;
+    }
+
+    /**
+     * <p>
+     * The subscriber ID of the Amazon Security Lake subscriber account.
+     * </p>
+     * 
+     * @return The subscriber ID of the Amazon Security Lake subscriber account.
+     */
+
+    public String getSubscriberId() {
+        return this.subscriberId;
+    }
+
+    /**
+     * <p>
+     * The subscriber ID of the Amazon Security Lake subscriber account.
+     * </p>
+     * 
+     * @param subscriberId
+     *        The subscriber ID of the Amazon Security Lake subscriber account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SubscriberResource withSubscriberId(String subscriberId) {
+        setSubscriberId(subscriberId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AWS identity used to access your data.
+     * </p>
+     * 
+     * @param subscriberIdentity
+     *        The AWS identity used to access your data.
+     */
+
+    public void setSubscriberIdentity(AwsIdentity subscriberIdentity) {
+        this.subscriberIdentity = subscriberIdentity;
+    }
+
+    /**
+     * <p>
+     * The AWS identity used to access your data.
+     * </p>
+     * 
+     * @return The AWS identity used to access your data.
+     */
+
+    public AwsIdentity getSubscriberIdentity() {
+        return this.subscriberIdentity;
+    }
+
+    /**
+     * <p>
+     * The AWS identity used to access your data.
+     * </p>
+     * 
+     * @param subscriberIdentity
+     *        The AWS identity used to access your data.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SubscriberResource withSubscriberIdentity(AwsIdentity subscriberIdentity) {
+        setSubscriberIdentity(subscriberIdentity);
         return this;
     }
 
@@ -810,209 +842,70 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The subscription endpoint to which exception messages are posted.
+     * The subscriber status of the Amazon Security Lake subscriber account.
      * </p>
      * 
-     * @param subscriptionEndpoint
-     *        The subscription endpoint to which exception messages are posted.
+     * @param subscriberStatus
+     *        The subscriber status of the Amazon Security Lake subscriber account.
+     * @see SubscriberStatus
      */
 
-    public void setSubscriptionEndpoint(String subscriptionEndpoint) {
-        this.subscriptionEndpoint = subscriptionEndpoint;
+    public void setSubscriberStatus(String subscriberStatus) {
+        this.subscriberStatus = subscriberStatus;
     }
 
     /**
      * <p>
-     * The subscription endpoint to which exception messages are posted.
+     * The subscriber status of the Amazon Security Lake subscriber account.
      * </p>
      * 
-     * @return The subscription endpoint to which exception messages are posted.
+     * @return The subscriber status of the Amazon Security Lake subscriber account.
+     * @see SubscriberStatus
      */
 
-    public String getSubscriptionEndpoint() {
-        return this.subscriptionEndpoint;
+    public String getSubscriberStatus() {
+        return this.subscriberStatus;
     }
 
     /**
      * <p>
-     * The subscription endpoint to which exception messages are posted.
+     * The subscriber status of the Amazon Security Lake subscriber account.
      * </p>
      * 
-     * @param subscriptionEndpoint
-     *        The subscription endpoint to which exception messages are posted.
+     * @param subscriberStatus
+     *        The subscriber status of the Amazon Security Lake subscriber account.
      * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SubscriberStatus
      */
 
-    public SubscriberResource withSubscriptionEndpoint(String subscriptionEndpoint) {
-        setSubscriptionEndpoint(subscriptionEndpoint);
+    public SubscriberResource withSubscriberStatus(String subscriberStatus) {
+        setSubscriberStatus(subscriberStatus);
         return this;
     }
 
     /**
      * <p>
-     * The subscription ID of the Amazon Security Lake subscriber account.
+     * The subscriber status of the Amazon Security Lake subscriber account.
      * </p>
      * 
-     * @param subscriptionId
-     *        The subscription ID of the Amazon Security Lake subscriber account.
-     */
-
-    public void setSubscriptionId(String subscriptionId) {
-        this.subscriptionId = subscriptionId;
-    }
-
-    /**
-     * <p>
-     * The subscription ID of the Amazon Security Lake subscriber account.
-     * </p>
-     * 
-     * @return The subscription ID of the Amazon Security Lake subscriber account.
-     */
-
-    public String getSubscriptionId() {
-        return this.subscriptionId;
-    }
-
-    /**
-     * <p>
-     * The subscription ID of the Amazon Security Lake subscriber account.
-     * </p>
-     * 
-     * @param subscriptionId
-     *        The subscription ID of the Amazon Security Lake subscriber account.
+     * @param subscriberStatus
+     *        The subscriber status of the Amazon Security Lake subscriber account.
      * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SubscriberStatus
      */
 
-    public SubscriberResource withSubscriptionId(String subscriptionId) {
-        setSubscriptionId(subscriptionId);
+    public SubscriberResource withSubscriberStatus(SubscriberStatus subscriberStatus) {
+        this.subscriberStatus = subscriberStatus.toString();
         return this;
     }
 
     /**
      * <p>
-     * The subscription protocol to which exception messages are posted.
-     * </p>
-     * 
-     * @param subscriptionProtocol
-     *        The subscription protocol to which exception messages are posted.
-     * @see EndpointProtocol
-     */
-
-    public void setSubscriptionProtocol(String subscriptionProtocol) {
-        this.subscriptionProtocol = subscriptionProtocol;
-    }
-
-    /**
-     * <p>
-     * The subscription protocol to which exception messages are posted.
-     * </p>
-     * 
-     * @return The subscription protocol to which exception messages are posted.
-     * @see EndpointProtocol
-     */
-
-    public String getSubscriptionProtocol() {
-        return this.subscriptionProtocol;
-    }
-
-    /**
-     * <p>
-     * The subscription protocol to which exception messages are posted.
-     * </p>
-     * 
-     * @param subscriptionProtocol
-     *        The subscription protocol to which exception messages are posted.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see EndpointProtocol
-     */
-
-    public SubscriberResource withSubscriptionProtocol(String subscriptionProtocol) {
-        setSubscriptionProtocol(subscriptionProtocol);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The subscription protocol to which exception messages are posted.
-     * </p>
-     * 
-     * @param subscriptionProtocol
-     *        The subscription protocol to which exception messages are posted.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see EndpointProtocol
-     */
-
-    public SubscriberResource withSubscriptionProtocol(EndpointProtocol subscriptionProtocol) {
-        this.subscriptionProtocol = subscriptionProtocol.toString();
-        return this;
-    }
-
-    /**
-     * <p>
-     * The subscription status of the Amazon Security Lake subscriber account.
-     * </p>
-     * 
-     * @param subscriptionStatus
-     *        The subscription status of the Amazon Security Lake subscriber account.
-     * @see SubscriptionStatus
-     */
-
-    public void setSubscriptionStatus(String subscriptionStatus) {
-        this.subscriptionStatus = subscriptionStatus;
-    }
-
-    /**
-     * <p>
-     * The subscription status of the Amazon Security Lake subscriber account.
-     * </p>
-     * 
-     * @return The subscription status of the Amazon Security Lake subscriber account.
-     * @see SubscriptionStatus
-     */
-
-    public String getSubscriptionStatus() {
-        return this.subscriptionStatus;
-    }
-
-    /**
-     * <p>
-     * The subscription status of the Amazon Security Lake subscriber account.
-     * </p>
-     * 
-     * @param subscriptionStatus
-     *        The subscription status of the Amazon Security Lake subscriber account.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see SubscriptionStatus
-     */
-
-    public SubscriberResource withSubscriptionStatus(String subscriptionStatus) {
-        setSubscriptionStatus(subscriptionStatus);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The subscription status of the Amazon Security Lake subscriber account.
-     * </p>
-     * 
-     * @param subscriptionStatus
-     *        The subscription status of the Amazon Security Lake subscriber account.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see SubscriptionStatus
-     */
-
-    public SubscriberResource withSubscriptionStatus(SubscriptionStatus subscriptionStatus) {
-        this.subscriptionStatus = subscriptionStatus.toString();
-        return this;
-    }
-
-    /**
-     * <p>
-     * The date and time when the subscription was created.
+     * The date and time when the subscriber was last updated.
      * </p>
      * 
      * @param updatedAt
-     *        The date and time when the subscription was created.
+     *        The date and time when the subscriber was last updated.
      */
 
     public void setUpdatedAt(java.util.Date updatedAt) {
@@ -1021,10 +914,10 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The date and time when the subscription was created.
+     * The date and time when the subscriber was last updated.
      * </p>
      * 
-     * @return The date and time when the subscription was created.
+     * @return The date and time when the subscriber was last updated.
      */
 
     public java.util.Date getUpdatedAt() {
@@ -1033,11 +926,11 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The date and time when the subscription was created.
+     * The date and time when the subscriber was last updated.
      * </p>
      * 
      * @param updatedAt
-     *        The date and time when the subscription was created.
+     *        The date and time when the subscriber was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1060,12 +953,8 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
         sb.append("{");
         if (getAccessTypes() != null)
             sb.append("AccessTypes: ").append(getAccessTypes()).append(",");
-        if (getAccountId() != null)
-            sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getCreatedAt() != null)
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
-        if (getExternalId() != null)
-            sb.append("ExternalId: ").append(getExternalId()).append(",");
         if (getResourceShareArn() != null)
             sb.append("ResourceShareArn: ").append(getResourceShareArn()).append(",");
         if (getResourceShareName() != null)
@@ -1074,22 +963,22 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getS3BucketArn() != null)
             sb.append("S3BucketArn: ").append(getS3BucketArn()).append(",");
-        if (getSnsArn() != null)
-            sb.append("SnsArn: ").append(getSnsArn()).append(",");
-        if (getSourceTypes() != null)
-            sb.append("SourceTypes: ").append(getSourceTypes()).append(",");
+        if (getSources() != null)
+            sb.append("Sources: ").append(getSources()).append(",");
+        if (getSubscriberArn() != null)
+            sb.append("SubscriberArn: ").append(getSubscriberArn()).append(",");
         if (getSubscriberDescription() != null)
             sb.append("SubscriberDescription: ").append(getSubscriberDescription()).append(",");
+        if (getSubscriberEndpoint() != null)
+            sb.append("SubscriberEndpoint: ").append(getSubscriberEndpoint()).append(",");
+        if (getSubscriberId() != null)
+            sb.append("SubscriberId: ").append(getSubscriberId()).append(",");
+        if (getSubscriberIdentity() != null)
+            sb.append("SubscriberIdentity: ").append(getSubscriberIdentity()).append(",");
         if (getSubscriberName() != null)
             sb.append("SubscriberName: ").append(getSubscriberName()).append(",");
-        if (getSubscriptionEndpoint() != null)
-            sb.append("SubscriptionEndpoint: ").append(getSubscriptionEndpoint()).append(",");
-        if (getSubscriptionId() != null)
-            sb.append("SubscriptionId: ").append(getSubscriptionId()).append(",");
-        if (getSubscriptionProtocol() != null)
-            sb.append("SubscriptionProtocol: ").append(getSubscriptionProtocol()).append(",");
-        if (getSubscriptionStatus() != null)
-            sb.append("SubscriptionStatus: ").append(getSubscriptionStatus()).append(",");
+        if (getSubscriberStatus() != null)
+            sb.append("SubscriberStatus: ").append(getSubscriberStatus()).append(",");
         if (getUpdatedAt() != null)
             sb.append("UpdatedAt: ").append(getUpdatedAt());
         sb.append("}");
@@ -1110,17 +999,9 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getAccessTypes() != null && other.getAccessTypes().equals(this.getAccessTypes()) == false)
             return false;
-        if (other.getAccountId() == null ^ this.getAccountId() == null)
-            return false;
-        if (other.getAccountId() != null && other.getAccountId().equals(this.getAccountId()) == false)
-            return false;
         if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
             return false;
         if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
-            return false;
-        if (other.getExternalId() == null ^ this.getExternalId() == null)
-            return false;
-        if (other.getExternalId() != null && other.getExternalId().equals(this.getExternalId()) == false)
             return false;
         if (other.getResourceShareArn() == null ^ this.getResourceShareArn() == null)
             return false;
@@ -1138,37 +1019,37 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getS3BucketArn() != null && other.getS3BucketArn().equals(this.getS3BucketArn()) == false)
             return false;
-        if (other.getSnsArn() == null ^ this.getSnsArn() == null)
+        if (other.getSources() == null ^ this.getSources() == null)
             return false;
-        if (other.getSnsArn() != null && other.getSnsArn().equals(this.getSnsArn()) == false)
+        if (other.getSources() != null && other.getSources().equals(this.getSources()) == false)
             return false;
-        if (other.getSourceTypes() == null ^ this.getSourceTypes() == null)
+        if (other.getSubscriberArn() == null ^ this.getSubscriberArn() == null)
             return false;
-        if (other.getSourceTypes() != null && other.getSourceTypes().equals(this.getSourceTypes()) == false)
+        if (other.getSubscriberArn() != null && other.getSubscriberArn().equals(this.getSubscriberArn()) == false)
             return false;
         if (other.getSubscriberDescription() == null ^ this.getSubscriberDescription() == null)
             return false;
         if (other.getSubscriberDescription() != null && other.getSubscriberDescription().equals(this.getSubscriberDescription()) == false)
             return false;
+        if (other.getSubscriberEndpoint() == null ^ this.getSubscriberEndpoint() == null)
+            return false;
+        if (other.getSubscriberEndpoint() != null && other.getSubscriberEndpoint().equals(this.getSubscriberEndpoint()) == false)
+            return false;
+        if (other.getSubscriberId() == null ^ this.getSubscriberId() == null)
+            return false;
+        if (other.getSubscriberId() != null && other.getSubscriberId().equals(this.getSubscriberId()) == false)
+            return false;
+        if (other.getSubscriberIdentity() == null ^ this.getSubscriberIdentity() == null)
+            return false;
+        if (other.getSubscriberIdentity() != null && other.getSubscriberIdentity().equals(this.getSubscriberIdentity()) == false)
+            return false;
         if (other.getSubscriberName() == null ^ this.getSubscriberName() == null)
             return false;
         if (other.getSubscriberName() != null && other.getSubscriberName().equals(this.getSubscriberName()) == false)
             return false;
-        if (other.getSubscriptionEndpoint() == null ^ this.getSubscriptionEndpoint() == null)
+        if (other.getSubscriberStatus() == null ^ this.getSubscriberStatus() == null)
             return false;
-        if (other.getSubscriptionEndpoint() != null && other.getSubscriptionEndpoint().equals(this.getSubscriptionEndpoint()) == false)
-            return false;
-        if (other.getSubscriptionId() == null ^ this.getSubscriptionId() == null)
-            return false;
-        if (other.getSubscriptionId() != null && other.getSubscriptionId().equals(this.getSubscriptionId()) == false)
-            return false;
-        if (other.getSubscriptionProtocol() == null ^ this.getSubscriptionProtocol() == null)
-            return false;
-        if (other.getSubscriptionProtocol() != null && other.getSubscriptionProtocol().equals(this.getSubscriptionProtocol()) == false)
-            return false;
-        if (other.getSubscriptionStatus() == null ^ this.getSubscriptionStatus() == null)
-            return false;
-        if (other.getSubscriptionStatus() != null && other.getSubscriptionStatus().equals(this.getSubscriptionStatus()) == false)
+        if (other.getSubscriberStatus() != null && other.getSubscriberStatus().equals(this.getSubscriberStatus()) == false)
             return false;
         if (other.getUpdatedAt() == null ^ this.getUpdatedAt() == null)
             return false;
@@ -1183,21 +1064,19 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAccessTypes() == null) ? 0 : getAccessTypes().hashCode());
-        hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
-        hashCode = prime * hashCode + ((getExternalId() == null) ? 0 : getExternalId().hashCode());
         hashCode = prime * hashCode + ((getResourceShareArn() == null) ? 0 : getResourceShareArn().hashCode());
         hashCode = prime * hashCode + ((getResourceShareName() == null) ? 0 : getResourceShareName().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getS3BucketArn() == null) ? 0 : getS3BucketArn().hashCode());
-        hashCode = prime * hashCode + ((getSnsArn() == null) ? 0 : getSnsArn().hashCode());
-        hashCode = prime * hashCode + ((getSourceTypes() == null) ? 0 : getSourceTypes().hashCode());
+        hashCode = prime * hashCode + ((getSources() == null) ? 0 : getSources().hashCode());
+        hashCode = prime * hashCode + ((getSubscriberArn() == null) ? 0 : getSubscriberArn().hashCode());
         hashCode = prime * hashCode + ((getSubscriberDescription() == null) ? 0 : getSubscriberDescription().hashCode());
+        hashCode = prime * hashCode + ((getSubscriberEndpoint() == null) ? 0 : getSubscriberEndpoint().hashCode());
+        hashCode = prime * hashCode + ((getSubscriberId() == null) ? 0 : getSubscriberId().hashCode());
+        hashCode = prime * hashCode + ((getSubscriberIdentity() == null) ? 0 : getSubscriberIdentity().hashCode());
         hashCode = prime * hashCode + ((getSubscriberName() == null) ? 0 : getSubscriberName().hashCode());
-        hashCode = prime * hashCode + ((getSubscriptionEndpoint() == null) ? 0 : getSubscriptionEndpoint().hashCode());
-        hashCode = prime * hashCode + ((getSubscriptionId() == null) ? 0 : getSubscriptionId().hashCode());
-        hashCode = prime * hashCode + ((getSubscriptionProtocol() == null) ? 0 : getSubscriptionProtocol().hashCode());
-        hashCode = prime * hashCode + ((getSubscriptionStatus() == null) ? 0 : getSubscriptionStatus().hashCode());
+        hashCode = prime * hashCode + ((getSubscriberStatus() == null) ? 0 : getSubscriberStatus().hashCode());
         hashCode = prime * hashCode + ((getUpdatedAt() == null) ? 0 : getUpdatedAt().hashCode());
         return hashCode;
     }

@@ -62,7 +62,10 @@ public class ScheduleKeyDeletionRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * This value is optional. If you include a value, it must be between 7 and 30, inclusive. If you do not include a
-     * value, it defaults to 30.
+     * value, it defaults to 30. You can use the <a href=
+     * "https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-schedule-key-deletion-pending-window-in-days"
+     * > <code>kms:ScheduleKeyDeletionPendingWindowInDays</code> </a> condition key to further constrain the values that
+     * principals can specify in the <code>PendingWindowInDays</code> parameter.
      * </p>
      */
     private Integer pendingWindowInDays;
@@ -240,7 +243,10 @@ public class ScheduleKeyDeletionRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * This value is optional. If you include a value, it must be between 7 and 30, inclusive. If you do not include a
-     * value, it defaults to 30.
+     * value, it defaults to 30. You can use the <a href=
+     * "https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-schedule-key-deletion-pending-window-in-days"
+     * > <code>kms:ScheduleKeyDeletionPendingWindowInDays</code> </a> condition key to further constrain the values that
+     * principals can specify in the <code>PendingWindowInDays</code> parameter.
      * </p>
      * 
      * @param pendingWindowInDays
@@ -252,7 +258,10 @@ public class ScheduleKeyDeletionRequest extends com.amazonaws.AmazonWebServiceRe
      *        </p>
      *        <p>
      *        This value is optional. If you include a value, it must be between 7 and 30, inclusive. If you do not
-     *        include a value, it defaults to 30.
+     *        include a value, it defaults to 30. You can use the <a href=
+     *        "https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-schedule-key-deletion-pending-window-in-days"
+     *        > <code>kms:ScheduleKeyDeletionPendingWindowInDays</code> </a> condition key to further constrain the
+     *        values that principals can specify in the <code>PendingWindowInDays</code> parameter.
      */
 
     public void setPendingWindowInDays(Integer pendingWindowInDays) {
@@ -269,7 +278,10 @@ public class ScheduleKeyDeletionRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * This value is optional. If you include a value, it must be between 7 and 30, inclusive. If you do not include a
-     * value, it defaults to 30.
+     * value, it defaults to 30. You can use the <a href=
+     * "https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-schedule-key-deletion-pending-window-in-days"
+     * > <code>kms:ScheduleKeyDeletionPendingWindowInDays</code> </a> condition key to further constrain the values that
+     * principals can specify in the <code>PendingWindowInDays</code> parameter.
      * </p>
      * 
      * @return The waiting period, specified in number of days. After the waiting period ends, KMS deletes the KMS
@@ -280,7 +292,10 @@ public class ScheduleKeyDeletionRequest extends com.amazonaws.AmazonWebServiceRe
      *         </p>
      *         <p>
      *         This value is optional. If you include a value, it must be between 7 and 30, inclusive. If you do not
-     *         include a value, it defaults to 30.
+     *         include a value, it defaults to 30. You can use the <a href=
+     *         "https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-schedule-key-deletion-pending-window-in-days"
+     *         > <code>kms:ScheduleKeyDeletionPendingWindowInDays</code> </a> condition key to further constrain the
+     *         values that principals can specify in the <code>PendingWindowInDays</code> parameter.
      */
 
     public Integer getPendingWindowInDays() {
@@ -297,7 +312,10 @@ public class ScheduleKeyDeletionRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * This value is optional. If you include a value, it must be between 7 and 30, inclusive. If you do not include a
-     * value, it defaults to 30.
+     * value, it defaults to 30. You can use the <a href=
+     * "https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-schedule-key-deletion-pending-window-in-days"
+     * > <code>kms:ScheduleKeyDeletionPendingWindowInDays</code> </a> condition key to further constrain the values that
+     * principals can specify in the <code>PendingWindowInDays</code> parameter.
      * </p>
      * 
      * @param pendingWindowInDays
@@ -309,7 +327,10 @@ public class ScheduleKeyDeletionRequest extends com.amazonaws.AmazonWebServiceRe
      *        </p>
      *        <p>
      *        This value is optional. If you include a value, it must be between 7 and 30, inclusive. If you do not
-     *        include a value, it defaults to 30.
+     *        include a value, it defaults to 30. You can use the <a href=
+     *        "https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-schedule-key-deletion-pending-window-in-days"
+     *        > <code>kms:ScheduleKeyDeletionPendingWindowInDays</code> </a> condition key to further constrain the
+     *        values that principals can specify in the <code>PendingWindowInDays</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

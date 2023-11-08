@@ -15,9 +15,9 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Specify whether the encoder uses B-frames as reference frames for other pictures in the same GOP. Choose Allow
- * (ENABLED) to allow the encoder to use B-frames as reference frames. Choose Don't allow (DISABLED) to prevent the
- * encoder from using B-frames as reference frames.
+ * Specify whether the encoder uses B-frames as reference frames for other pictures in the same GOP. Choose Allow to
+ * allow the encoder to use B-frames as reference frames. Choose Don't allow to prevent the encoder from using B-frames
+ * as reference frames.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum XavcGopBReference {

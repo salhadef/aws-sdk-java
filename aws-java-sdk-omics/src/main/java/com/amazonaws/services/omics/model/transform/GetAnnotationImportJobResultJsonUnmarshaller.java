@@ -48,40 +48,21 @@ public class GetAnnotationImportJobResultJsonUnmarshaller implements Unmarshalle
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("completionTime", targetDepth)) {
+                if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
-                    getAnnotationImportJobResult.setCompletionTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
-                }
-                if (context.testExpression("creationTime", targetDepth)) {
-                    context.nextToken();
-                    getAnnotationImportJobResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                    getAnnotationImportJobResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("destinationName", targetDepth)) {
                     context.nextToken();
                     getAnnotationImportJobResult.setDestinationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("formatOptions", targetDepth)) {
+                if (context.testExpression("versionName", targetDepth)) {
                     context.nextToken();
-                    getAnnotationImportJobResult.setFormatOptions(FormatOptionsJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("id", targetDepth)) {
-                    context.nextToken();
-                    getAnnotationImportJobResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("items", targetDepth)) {
-                    context.nextToken();
-                    getAnnotationImportJobResult.setItems(new ListUnmarshaller<AnnotationImportItemDetail>(AnnotationImportItemDetailJsonUnmarshaller
-                            .getInstance())
-
-                    .unmarshall(context));
+                    getAnnotationImportJobResult.setVersionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("roleArn", targetDepth)) {
                     context.nextToken();
                     getAnnotationImportJobResult.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("runLeftNormalization", targetDepth)) {
-                    context.nextToken();
-                    getAnnotationImportJobResult.setRunLeftNormalization(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
@@ -91,9 +72,37 @@ public class GetAnnotationImportJobResultJsonUnmarshaller implements Unmarshalle
                     context.nextToken();
                     getAnnotationImportJobResult.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("creationTime", targetDepth)) {
+                    context.nextToken();
+                    getAnnotationImportJobResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
                 if (context.testExpression("updateTime", targetDepth)) {
                     context.nextToken();
                     getAnnotationImportJobResult.setUpdateTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (context.testExpression("completionTime", targetDepth)) {
+                    context.nextToken();
+                    getAnnotationImportJobResult.setCompletionTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (context.testExpression("items", targetDepth)) {
+                    context.nextToken();
+                    getAnnotationImportJobResult.setItems(new ListUnmarshaller<AnnotationImportItemDetail>(AnnotationImportItemDetailJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("runLeftNormalization", targetDepth)) {
+                    context.nextToken();
+                    getAnnotationImportJobResult.setRunLeftNormalization(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("formatOptions", targetDepth)) {
+                    context.nextToken();
+                    getAnnotationImportJobResult.setFormatOptions(FormatOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("annotationFields", targetDepth)) {
+                    context.nextToken();
+                    getAnnotationImportJobResult.setAnnotationFields(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

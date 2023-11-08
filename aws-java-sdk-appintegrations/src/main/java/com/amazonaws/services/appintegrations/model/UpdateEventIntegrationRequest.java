@@ -33,7 +33,7 @@ public class UpdateEventIntegrationRequest extends com.amazonaws.AmazonWebServic
     private String name;
     /**
      * <p>
-     * The description of the event inegration.
+     * The description of the event integration.
      * </p>
      */
     private String description;
@@ -80,11 +80,11 @@ public class UpdateEventIntegrationRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The description of the event inegration.
+     * The description of the event integration.
      * </p>
      * 
      * @param description
-     *        The description of the event inegration.
+     *        The description of the event integration.
      */
 
     public void setDescription(String description) {
@@ -93,10 +93,10 @@ public class UpdateEventIntegrationRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The description of the event inegration.
+     * The description of the event integration.
      * </p>
      * 
-     * @return The description of the event inegration.
+     * @return The description of the event integration.
      */
 
     public String getDescription() {
@@ -105,11 +105,11 @@ public class UpdateEventIntegrationRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The description of the event inegration.
+     * The description of the event integration.
      * </p>
      * 
      * @param description
-     *        The description of the event inegration.
+     *        The description of the event integration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

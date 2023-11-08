@@ -52,14 +52,6 @@ public class SequenceStoreDetailJsonUnmarshaller implements Unmarshaller<Sequenc
                     context.nextToken();
                     sequenceStoreDetail.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("creationTime", targetDepth)) {
-                    context.nextToken();
-                    sequenceStoreDetail.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
-                }
-                if (context.testExpression("description", targetDepth)) {
-                    context.nextToken();
-                    sequenceStoreDetail.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
                     sequenceStoreDetail.setId(context.getUnmarshaller(String.class).unmarshall(context));
@@ -68,9 +60,21 @@ public class SequenceStoreDetailJsonUnmarshaller implements Unmarshaller<Sequenc
                     context.nextToken();
                     sequenceStoreDetail.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("description", targetDepth)) {
+                    context.nextToken();
+                    sequenceStoreDetail.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("sseConfig", targetDepth)) {
                     context.nextToken();
                     sequenceStoreDetail.setSseConfig(SseConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("creationTime", targetDepth)) {
+                    context.nextToken();
+                    sequenceStoreDetail.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (context.testExpression("fallbackLocation", targetDepth)) {
+                    context.nextToken();
+                    sequenceStoreDetail.setFallbackLocation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

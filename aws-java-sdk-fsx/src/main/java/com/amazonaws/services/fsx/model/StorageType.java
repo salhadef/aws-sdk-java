@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The storage type for your Amazon FSx file system.
+ * Specifies the file system's storage type.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

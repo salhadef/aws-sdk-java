@@ -42,7 +42,7 @@ public class EvaluationSummary implements Serializable, Cloneable, StructuredPoj
     private String evaluationArn;
     /**
      * <p>
-     * A unique title of the evaluation form.
+     * A title of the evaluation form.
      * </p>
      */
     private String evaluationFormTitle;
@@ -165,11 +165,11 @@ public class EvaluationSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A unique title of the evaluation form.
+     * A title of the evaluation form.
      * </p>
      * 
      * @param evaluationFormTitle
-     *        A unique title of the evaluation form.
+     *        A title of the evaluation form.
      */
 
     public void setEvaluationFormTitle(String evaluationFormTitle) {
@@ -178,10 +178,10 @@ public class EvaluationSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A unique title of the evaluation form.
+     * A title of the evaluation form.
      * </p>
      * 
-     * @return A unique title of the evaluation form.
+     * @return A title of the evaluation form.
      */
 
     public String getEvaluationFormTitle() {
@@ -190,11 +190,11 @@ public class EvaluationSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A unique title of the evaluation form.
+     * A title of the evaluation form.
      * </p>
      * 
      * @param evaluationFormTitle
-     *        A unique title of the evaluation form.
+     *        A title of the evaluation form.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

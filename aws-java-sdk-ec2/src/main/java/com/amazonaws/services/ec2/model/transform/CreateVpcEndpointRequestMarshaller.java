@@ -156,6 +156,31 @@ public class CreateVpcEndpointRequestMarshaller implements Marshaller<Request<Cr
             }
         }
 
+        com.amazonaws.internal.SdkInternalList<SubnetConfiguration> createVpcEndpointRequestSubnetConfigurationsList = (com.amazonaws.internal.SdkInternalList<SubnetConfiguration>) createVpcEndpointRequest
+                .getSubnetConfigurations();
+        if (!createVpcEndpointRequestSubnetConfigurationsList.isEmpty() || !createVpcEndpointRequestSubnetConfigurationsList.isAutoConstruct()) {
+            int subnetConfigurationsListIndex = 1;
+
+            for (SubnetConfiguration createVpcEndpointRequestSubnetConfigurationsListValue : createVpcEndpointRequestSubnetConfigurationsList) {
+
+                if (createVpcEndpointRequestSubnetConfigurationsListValue.getSubnetId() != null) {
+                    request.addParameter("SubnetConfiguration." + subnetConfigurationsListIndex + ".SubnetId",
+                            StringUtils.fromString(createVpcEndpointRequestSubnetConfigurationsListValue.getSubnetId()));
+                }
+
+                if (createVpcEndpointRequestSubnetConfigurationsListValue.getIpv4() != null) {
+                    request.addParameter("SubnetConfiguration." + subnetConfigurationsListIndex + ".Ipv4",
+                            StringUtils.fromString(createVpcEndpointRequestSubnetConfigurationsListValue.getIpv4()));
+                }
+
+                if (createVpcEndpointRequestSubnetConfigurationsListValue.getIpv6() != null) {
+                    request.addParameter("SubnetConfiguration." + subnetConfigurationsListIndex + ".Ipv6",
+                            StringUtils.fromString(createVpcEndpointRequestSubnetConfigurationsListValue.getIpv6()));
+                }
+                subnetConfigurationsListIndex++;
+            }
+        }
+
         return request;
     }
 

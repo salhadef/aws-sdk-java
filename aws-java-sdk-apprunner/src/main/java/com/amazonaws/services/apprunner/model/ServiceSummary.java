@@ -81,12 +81,9 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>CREATE_FAILED</code> – The service failed to create. Read the failure events and logs, change any
-     * parameters that need to be fixed, and retry the call to create the service.
-     * </p>
-     * <p>
-     * The failed service isn't usable, and still counts towards your service quota. When you're done analyzing the
-     * failure, delete the service.
+     * <code>CREATE_FAILED</code> – The service failed to create. The failed service isn't usable, and still counts
+     * towards your service quota. To troubleshoot this failure, read the failure events and logs, change any parameters
+     * that need to be fixed, and rebuild your service using <code>UpdateService</code>.
      * </p>
      * </li>
      * <li>
@@ -352,12 +349,9 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>CREATE_FAILED</code> – The service failed to create. Read the failure events and logs, change any
-     * parameters that need to be fixed, and retry the call to create the service.
-     * </p>
-     * <p>
-     * The failed service isn't usable, and still counts towards your service quota. When you're done analyzing the
-     * failure, delete the service.
+     * <code>CREATE_FAILED</code> – The service failed to create. The failed service isn't usable, and still counts
+     * towards your service quota. To troubleshoot this failure, read the failure events and logs, change any parameters
+     * that need to be fixed, and rebuild your service using <code>UpdateService</code>.
      * </p>
      * </li>
      * <li>
@@ -373,12 +367,9 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CREATE_FAILED</code> – The service failed to create. Read the failure events and logs, change any
-     *        parameters that need to be fixed, and retry the call to create the service.
-     *        </p>
-     *        <p>
-     *        The failed service isn't usable, and still counts towards your service quota. When you're done analyzing
-     *        the failure, delete the service.
+     *        <code>CREATE_FAILED</code> – The service failed to create. The failed service isn't usable, and still
+     *        counts towards your service quota. To troubleshoot this failure, read the failure events and logs, change
+     *        any parameters that need to be fixed, and rebuild your service using <code>UpdateService</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -401,12 +392,9 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>CREATE_FAILED</code> – The service failed to create. Read the failure events and logs, change any
-     * parameters that need to be fixed, and retry the call to create the service.
-     * </p>
-     * <p>
-     * The failed service isn't usable, and still counts towards your service quota. When you're done analyzing the
-     * failure, delete the service.
+     * <code>CREATE_FAILED</code> – The service failed to create. The failed service isn't usable, and still counts
+     * towards your service quota. To troubleshoot this failure, read the failure events and logs, change any parameters
+     * that need to be fixed, and rebuild your service using <code>UpdateService</code>.
      * </p>
      * </li>
      * <li>
@@ -421,12 +409,9 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>CREATE_FAILED</code> – The service failed to create. Read the failure events and logs, change any
-     *         parameters that need to be fixed, and retry the call to create the service.
-     *         </p>
-     *         <p>
-     *         The failed service isn't usable, and still counts towards your service quota. When you're done analyzing
-     *         the failure, delete the service.
+     *         <code>CREATE_FAILED</code> – The service failed to create. The failed service isn't usable, and still
+     *         counts towards your service quota. To troubleshoot this failure, read the failure events and logs, change
+     *         any parameters that need to be fixed, and rebuild your service using <code>UpdateService</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -449,12 +434,9 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>CREATE_FAILED</code> – The service failed to create. Read the failure events and logs, change any
-     * parameters that need to be fixed, and retry the call to create the service.
-     * </p>
-     * <p>
-     * The failed service isn't usable, and still counts towards your service quota. When you're done analyzing the
-     * failure, delete the service.
+     * <code>CREATE_FAILED</code> – The service failed to create. The failed service isn't usable, and still counts
+     * towards your service quota. To troubleshoot this failure, read the failure events and logs, change any parameters
+     * that need to be fixed, and rebuild your service using <code>UpdateService</code>.
      * </p>
      * </li>
      * <li>
@@ -470,12 +452,9 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CREATE_FAILED</code> – The service failed to create. Read the failure events and logs, change any
-     *        parameters that need to be fixed, and retry the call to create the service.
-     *        </p>
-     *        <p>
-     *        The failed service isn't usable, and still counts towards your service quota. When you're done analyzing
-     *        the failure, delete the service.
+     *        <code>CREATE_FAILED</code> – The service failed to create. The failed service isn't usable, and still
+     *        counts towards your service quota. To troubleshoot this failure, read the failure events and logs, change
+     *        any parameters that need to be fixed, and rebuild your service using <code>UpdateService</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -500,12 +479,9 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>CREATE_FAILED</code> – The service failed to create. Read the failure events and logs, change any
-     * parameters that need to be fixed, and retry the call to create the service.
-     * </p>
-     * <p>
-     * The failed service isn't usable, and still counts towards your service quota. When you're done analyzing the
-     * failure, delete the service.
+     * <code>CREATE_FAILED</code> – The service failed to create. The failed service isn't usable, and still counts
+     * towards your service quota. To troubleshoot this failure, read the failure events and logs, change any parameters
+     * that need to be fixed, and rebuild your service using <code>UpdateService</code>.
      * </p>
      * </li>
      * <li>
@@ -521,12 +497,9 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CREATE_FAILED</code> – The service failed to create. Read the failure events and logs, change any
-     *        parameters that need to be fixed, and retry the call to create the service.
-     *        </p>
-     *        <p>
-     *        The failed service isn't usable, and still counts towards your service quota. When you're done analyzing
-     *        the failure, delete the service.
+     *        <code>CREATE_FAILED</code> – The service failed to create. The failed service isn't usable, and still
+     *        counts towards your service quota. To troubleshoot this failure, read the failure events and logs, change
+     *        any parameters that need to be fixed, and rebuild your service using <code>UpdateService</code>.
      *        </p>
      *        </li>
      *        <li>

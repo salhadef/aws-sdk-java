@@ -52,6 +52,10 @@ public class CustomRoutingEndpointConfigurationJsonUnmarshaller implements Unmar
                     context.nextToken();
                     customRoutingEndpointConfiguration.setEndpointId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("AttachmentArn", targetDepth)) {
+                    context.nextToken();
+                    customRoutingEndpointConfiguration.setAttachmentArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

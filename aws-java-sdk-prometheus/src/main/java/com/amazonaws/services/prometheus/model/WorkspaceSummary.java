@@ -30,6 +30,12 @@ public class WorkspaceSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * Unique string identifying this workspace.
+     * </p>
+     */
+    private String workspaceId;
+    /**
+     * <p>
      * Alias of this workspace.
      * </p>
      */
@@ -42,28 +48,62 @@ public class WorkspaceSummary implements Serializable, Cloneable, StructuredPojo
     private String arn;
     /**
      * <p>
-     * The time when the workspace was created.
-     * </p>
-     */
-    private java.util.Date createdAt;
-    /**
-     * <p>
      * The status of this workspace.
      * </p>
      */
     private WorkspaceStatus status;
     /**
      * <p>
+     * The time when the workspace was created.
+     * </p>
+     */
+    private java.util.Date createdAt;
+    /**
+     * <p>
      * The tags of this workspace.
      * </p>
      */
     private java.util.Map<String, String> tags;
+
     /**
      * <p>
      * Unique string identifying this workspace.
      * </p>
+     * 
+     * @param workspaceId
+     *        Unique string identifying this workspace.
      */
-    private String workspaceId;
+
+    public void setWorkspaceId(String workspaceId) {
+        this.workspaceId = workspaceId;
+    }
+
+    /**
+     * <p>
+     * Unique string identifying this workspace.
+     * </p>
+     * 
+     * @return Unique string identifying this workspace.
+     */
+
+    public String getWorkspaceId() {
+        return this.workspaceId;
+    }
+
+    /**
+     * <p>
+     * Unique string identifying this workspace.
+     * </p>
+     * 
+     * @param workspaceId
+     *        Unique string identifying this workspace.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkspaceSummary withWorkspaceId(String workspaceId) {
+        setWorkspaceId(workspaceId);
+        return this;
+    }
 
     /**
      * <p>
@@ -147,46 +187,6 @@ public class WorkspaceSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The time when the workspace was created.
-     * </p>
-     * 
-     * @param createdAt
-     *        The time when the workspace was created.
-     */
-
-    public void setCreatedAt(java.util.Date createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    /**
-     * <p>
-     * The time when the workspace was created.
-     * </p>
-     * 
-     * @return The time when the workspace was created.
-     */
-
-    public java.util.Date getCreatedAt() {
-        return this.createdAt;
-    }
-
-    /**
-     * <p>
-     * The time when the workspace was created.
-     * </p>
-     * 
-     * @param createdAt
-     *        The time when the workspace was created.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public WorkspaceSummary withCreatedAt(java.util.Date createdAt) {
-        setCreatedAt(createdAt);
-        return this;
-    }
-
-    /**
-     * <p>
      * The status of this workspace.
      * </p>
      * 
@@ -222,6 +222,46 @@ public class WorkspaceSummary implements Serializable, Cloneable, StructuredPojo
 
     public WorkspaceSummary withStatus(WorkspaceStatus status) {
         setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time when the workspace was created.
+     * </p>
+     * 
+     * @param createdAt
+     *        The time when the workspace was created.
+     */
+
+    public void setCreatedAt(java.util.Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    /**
+     * <p>
+     * The time when the workspace was created.
+     * </p>
+     * 
+     * @return The time when the workspace was created.
+     */
+
+    public java.util.Date getCreatedAt() {
+        return this.createdAt;
+    }
+
+    /**
+     * <p>
+     * The time when the workspace was created.
+     * </p>
+     * 
+     * @param createdAt
+     *        The time when the workspace was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkspaceSummary withCreatedAt(java.util.Date createdAt) {
+        setCreatedAt(createdAt);
         return this;
     }
 
@@ -294,46 +334,6 @@ public class WorkspaceSummary implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * <p>
-     * Unique string identifying this workspace.
-     * </p>
-     * 
-     * @param workspaceId
-     *        Unique string identifying this workspace.
-     */
-
-    public void setWorkspaceId(String workspaceId) {
-        this.workspaceId = workspaceId;
-    }
-
-    /**
-     * <p>
-     * Unique string identifying this workspace.
-     * </p>
-     * 
-     * @return Unique string identifying this workspace.
-     */
-
-    public String getWorkspaceId() {
-        return this.workspaceId;
-    }
-
-    /**
-     * <p>
-     * Unique string identifying this workspace.
-     * </p>
-     * 
-     * @param workspaceId
-     *        Unique string identifying this workspace.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public WorkspaceSummary withWorkspaceId(String workspaceId) {
-        setWorkspaceId(workspaceId);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -345,18 +345,18 @@ public class WorkspaceSummary implements Serializable, Cloneable, StructuredPojo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getWorkspaceId() != null)
+            sb.append("WorkspaceId: ").append(getWorkspaceId()).append(",");
         if (getAlias() != null)
             sb.append("Alias: ").append(getAlias()).append(",");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
-        if (getCreatedAt() != null)
-            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
+        if (getCreatedAt() != null)
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags()).append(",");
-        if (getWorkspaceId() != null)
-            sb.append("WorkspaceId: ").append(getWorkspaceId());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -371,6 +371,10 @@ public class WorkspaceSummary implements Serializable, Cloneable, StructuredPojo
         if (obj instanceof WorkspaceSummary == false)
             return false;
         WorkspaceSummary other = (WorkspaceSummary) obj;
+        if (other.getWorkspaceId() == null ^ this.getWorkspaceId() == null)
+            return false;
+        if (other.getWorkspaceId() != null && other.getWorkspaceId().equals(this.getWorkspaceId()) == false)
+            return false;
         if (other.getAlias() == null ^ this.getAlias() == null)
             return false;
         if (other.getAlias() != null && other.getAlias().equals(this.getAlias()) == false)
@@ -379,21 +383,17 @@ public class WorkspaceSummary implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
-        if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
-            return false;
-        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
-            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
+            return false;
+        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
-            return false;
-        if (other.getWorkspaceId() == null ^ this.getWorkspaceId() == null)
-            return false;
-        if (other.getWorkspaceId() != null && other.getWorkspaceId().equals(this.getWorkspaceId()) == false)
             return false;
         return true;
     }
@@ -403,12 +403,12 @@ public class WorkspaceSummary implements Serializable, Cloneable, StructuredPojo
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getWorkspaceId() == null) ? 0 : getWorkspaceId().hashCode());
         hashCode = prime * hashCode + ((getAlias() == null) ? 0 : getAlias().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
-        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
-        hashCode = prime * hashCode + ((getWorkspaceId() == null) ? 0 : getWorkspaceId().hashCode());
         return hashCode;
     }
 

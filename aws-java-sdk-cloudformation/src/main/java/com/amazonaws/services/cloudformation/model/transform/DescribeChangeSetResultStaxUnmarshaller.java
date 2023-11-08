@@ -164,6 +164,11 @@ public class DescribeChangeSetResultStaxUnmarshaller implements Unmarshaller<Des
                     describeChangeSetResult.setRootChangeSetId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("OnStackFailure", targetDepth)) {
+                    describeChangeSetResult.setOnStackFailure(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return describeChangeSetResult;

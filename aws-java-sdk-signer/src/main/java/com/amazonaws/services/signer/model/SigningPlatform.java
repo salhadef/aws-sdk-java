@@ -30,7 +30,7 @@ public class SigningPlatform implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ID of a code signing; platform.
+     * The ID of a code signing platform.
      * </p>
      */
     private String platformId;
@@ -82,11 +82,11 @@ public class SigningPlatform implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ID of a code signing; platform.
+     * The ID of a code signing platform.
      * </p>
      * 
      * @param platformId
-     *        The ID of a code signing; platform.
+     *        The ID of a code signing platform.
      */
 
     public void setPlatformId(String platformId) {
@@ -95,10 +95,10 @@ public class SigningPlatform implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ID of a code signing; platform.
+     * The ID of a code signing platform.
      * </p>
      * 
-     * @return The ID of a code signing; platform.
+     * @return The ID of a code signing platform.
      */
 
     public String getPlatformId() {
@@ -107,11 +107,11 @@ public class SigningPlatform implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ID of a code signing; platform.
+     * The ID of a code signing platform.
      * </p>
      * 
      * @param platformId
-     *        The ID of a code signing; platform.
+     *        The ID of a code signing platform.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

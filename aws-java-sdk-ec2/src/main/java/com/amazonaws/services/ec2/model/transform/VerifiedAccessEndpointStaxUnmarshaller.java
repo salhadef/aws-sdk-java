@@ -145,6 +145,10 @@ public class VerifiedAccessEndpointStaxUnmarshaller implements Unmarshaller<Veri
                     continue;
                 }
 
+                if (context.testExpression("sseSpecification", targetDepth)) {
+                    verifiedAccessEndpoint.setSseSpecification(VerifiedAccessSseSpecificationResponseStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return verifiedAccessEndpoint;

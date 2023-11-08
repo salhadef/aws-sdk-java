@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies the KMS key that is used to encrypt the user's data stores in Athena.
+ * Specifies the KMS key that is used to encrypt the user's data stores in Athena. This setting does not apply to Athena
+ * SQL workgroups.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CustomerContentEncryptionConfiguration"

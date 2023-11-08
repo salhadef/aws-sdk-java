@@ -52,6 +52,10 @@ public class SourceDescriptionJsonUnmarshaller implements Unmarshaller<SourceDes
                     context.nextToken();
                     sourceDescription.setKinesisStreamSourceDescription(KinesisStreamSourceDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("MSKSourceDescription", targetDepth)) {
+                    context.nextToken();
+                    sourceDescription.setMSKSourceDescription(MSKSourceDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

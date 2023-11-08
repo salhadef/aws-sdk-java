@@ -35,6 +35,10 @@ public class InferenceRecommendationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModelConfiguration").build();
     private static final MarshallingInfo<String> RECOMMENDATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RecommendationId").build();
+    private static final MarshallingInfo<java.util.Date> INVOCATIONENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InvocationEndTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<java.util.Date> INVOCATIONSTARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InvocationStartTime").timestampFormat("unixTimestamp").build();
 
     private static final InferenceRecommendationMarshaller instance = new InferenceRecommendationMarshaller();
 
@@ -56,6 +60,8 @@ public class InferenceRecommendationMarshaller {
             protocolMarshaller.marshall(inferenceRecommendation.getEndpointConfiguration(), ENDPOINTCONFIGURATION_BINDING);
             protocolMarshaller.marshall(inferenceRecommendation.getModelConfiguration(), MODELCONFIGURATION_BINDING);
             protocolMarshaller.marshall(inferenceRecommendation.getRecommendationId(), RECOMMENDATIONID_BINDING);
+            protocolMarshaller.marshall(inferenceRecommendation.getInvocationEndTime(), INVOCATIONENDTIME_BINDING);
+            protocolMarshaller.marshall(inferenceRecommendation.getInvocationStartTime(), INVOCATIONSTARTTIME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

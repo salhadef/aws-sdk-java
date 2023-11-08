@@ -29,6 +29,8 @@ public class KmsKeyMarshaller {
 
     private static final MarshallingInfo<String> KMSALIASARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("kmsAliasArn").build();
+    private static final MarshallingInfo<String> KMSALIASNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("kmsAliasName").build();
     private static final MarshallingInfo<String> KMSKEYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("kmsKeyArn").build();
 
@@ -49,6 +51,7 @@ public class KmsKeyMarshaller {
 
         try {
             protocolMarshaller.marshall(kmsKey.getKmsAliasArn(), KMSALIASARN_BINDING);
+            protocolMarshaller.marshall(kmsKey.getKmsAliasName(), KMSALIASNAME_BINDING);
             protocolMarshaller.marshall(kmsKey.getKmsKeyArn(), KMSKEYARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

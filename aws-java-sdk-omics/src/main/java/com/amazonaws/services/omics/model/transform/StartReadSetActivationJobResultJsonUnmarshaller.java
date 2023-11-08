@@ -48,10 +48,6 @@ public class StartReadSetActivationJobResultJsonUnmarshaller implements Unmarsha
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("creationTime", targetDepth)) {
-                    context.nextToken();
-                    startReadSetActivationJobResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
-                }
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
                     startReadSetActivationJobResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
@@ -63,6 +59,10 @@ public class StartReadSetActivationJobResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     startReadSetActivationJobResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("creationTime", targetDepth)) {
+                    context.nextToken();
+                    startReadSetActivationJobResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

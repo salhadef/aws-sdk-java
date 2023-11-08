@@ -22,7 +22,8 @@ public enum UserRole {
 
     USER("USER"),
     RESOURCE("RESOURCE"),
-    SYSTEM_USER("SYSTEM_USER");
+    SYSTEM_USER("SYSTEM_USER"),
+    REMOTE_USER("REMOTE_USER");
 
     private String value;
 

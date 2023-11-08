@@ -52,6 +52,14 @@ public class RecommendationItemJsonUnmarshaller implements Unmarshaller<Recommen
                     context.nextToken();
                     recommendationItem.setAlreadyImplemented(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("excludeReason", targetDepth)) {
+                    context.nextToken();
+                    recommendationItem.setExcludeReason(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("excluded", targetDepth)) {
+                    context.nextToken();
+                    recommendationItem.setExcluded(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("resourceId", targetDepth)) {
                     context.nextToken();
                     recommendationItem.setResourceId(context.getUnmarshaller(String.class).unmarshall(context));

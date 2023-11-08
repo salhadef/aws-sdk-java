@@ -44,6 +44,7 @@ import com.amazonaws.services.keyspaces.AmazonKeyspacesClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.keyspaces.model.*;
+
 import com.amazonaws.services.keyspaces.model.transform.*;
 
 /**
@@ -971,9 +972,9 @@ public class AmazonKeyspacesClient extends AmazonWebServiceClient implements Ama
      * Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.
      * </p>
      * <p>
-     * For IAM policy examples that show how to control access to Amazon Keyspaces resources based on tags, see <a
-     * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/security_iam_id-based-policy-examples-tags">Amazon
-     * Keyspaces resource access based on tags</a> in the <i>Amazon Keyspaces Developer Guide</i>.
+     * For IAM policy examples that show how to control access to Amazon Keyspaces resources based on tags, see <a href=
+     * "https://docs.aws.amazon.com/keyspaces/latest/devguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-tags"
+     * >Amazon Keyspaces resource access based on tags</a> in the <i>Amazon Keyspaces Developer Guide</i>.
      * </p>
      * 
      * @param tagResourceRequest

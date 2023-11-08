@@ -48,6 +48,11 @@ public class ResiliencyScoreJsonUnmarshaller implements Unmarshaller<ResiliencyS
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("componentScore", targetDepth)) {
+                    context.nextToken();
+                    resiliencyScore.setComponentScore(new MapUnmarshaller<String, ScoringComponentResiliencyScore>(context.getUnmarshaller(String.class),
+                            ScoringComponentResiliencyScoreJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("disruptionScore", targetDepth)) {
                     context.nextToken();
                     resiliencyScore.setDisruptionScore(new MapUnmarshaller<String, Double>(context.getUnmarshaller(String.class), context

@@ -143,7 +143,7 @@ public class Image implements Serializable, Cloneable {
     private Boolean enaSupport;
     /**
      * <p>
-     * The hypervisor type of the image.
+     * The hypervisor type of the image. Only <code>xen</code> is supported. <code>ovm</code> is not supported.
      * </p>
      */
     private String hypervisor;
@@ -231,6 +231,14 @@ public class Image implements Serializable, Cloneable {
      * </p>
      */
     private String imdsSupport;
+    /**
+     * <p>
+     * The ID of the instance that the AMI was created from if the AMI was created using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>. This field
+     * only appears if the AMI was created using CreateImage.
+     * </p>
+     */
+    private String sourceInstanceId;
 
     /**
      * <p>
@@ -1230,11 +1238,11 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The hypervisor type of the image.
+     * The hypervisor type of the image. Only <code>xen</code> is supported. <code>ovm</code> is not supported.
      * </p>
      * 
      * @param hypervisor
-     *        The hypervisor type of the image.
+     *        The hypervisor type of the image. Only <code>xen</code> is supported. <code>ovm</code> is not supported.
      * @see HypervisorType
      */
 
@@ -1244,10 +1252,10 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The hypervisor type of the image.
+     * The hypervisor type of the image. Only <code>xen</code> is supported. <code>ovm</code> is not supported.
      * </p>
      * 
-     * @return The hypervisor type of the image.
+     * @return The hypervisor type of the image. Only <code>xen</code> is supported. <code>ovm</code> is not supported.
      * @see HypervisorType
      */
 
@@ -1257,11 +1265,11 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The hypervisor type of the image.
+     * The hypervisor type of the image. Only <code>xen</code> is supported. <code>ovm</code> is not supported.
      * </p>
      * 
      * @param hypervisor
-     *        The hypervisor type of the image.
+     *        The hypervisor type of the image. Only <code>xen</code> is supported. <code>ovm</code> is not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HypervisorType
      */
@@ -1273,11 +1281,11 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The hypervisor type of the image.
+     * The hypervisor type of the image. Only <code>xen</code> is supported. <code>ovm</code> is not supported.
      * </p>
      * 
      * @param hypervisor
-     *        The hypervisor type of the image.
+     *        The hypervisor type of the image. Only <code>xen</code> is supported. <code>ovm</code> is not supported.
      * @see HypervisorType
      */
 
@@ -1287,11 +1295,11 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The hypervisor type of the image.
+     * The hypervisor type of the image. Only <code>xen</code> is supported. <code>ovm</code> is not supported.
      * </p>
      * 
      * @param hypervisor
-     *        The hypervisor type of the image.
+     *        The hypervisor type of the image. Only <code>xen</code> is supported. <code>ovm</code> is not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HypervisorType
      */
@@ -2089,6 +2097,58 @@ public class Image implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ID of the instance that the AMI was created from if the AMI was created using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>. This field
+     * only appears if the AMI was created using CreateImage.
+     * </p>
+     * 
+     * @param sourceInstanceId
+     *        The ID of the instance that the AMI was created from if the AMI was created using <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>. This
+     *        field only appears if the AMI was created using CreateImage.
+     */
+
+    public void setSourceInstanceId(String sourceInstanceId) {
+        this.sourceInstanceId = sourceInstanceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the instance that the AMI was created from if the AMI was created using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>. This field
+     * only appears if the AMI was created using CreateImage.
+     * </p>
+     * 
+     * @return The ID of the instance that the AMI was created from if the AMI was created using <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>. This
+     *         field only appears if the AMI was created using CreateImage.
+     */
+
+    public String getSourceInstanceId() {
+        return this.sourceInstanceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the instance that the AMI was created from if the AMI was created using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>. This field
+     * only appears if the AMI was created using CreateImage.
+     * </p>
+     * 
+     * @param sourceInstanceId
+     *        The ID of the instance that the AMI was created from if the AMI was created using <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>. This
+     *        field only appears if the AMI was created using CreateImage.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Image withSourceInstanceId(String sourceInstanceId) {
+        setSourceInstanceId(sourceInstanceId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2159,7 +2219,9 @@ public class Image implements Serializable, Cloneable {
         if (getDeprecationTime() != null)
             sb.append("DeprecationTime: ").append(getDeprecationTime()).append(",");
         if (getImdsSupport() != null)
-            sb.append("ImdsSupport: ").append(getImdsSupport());
+            sb.append("ImdsSupport: ").append(getImdsSupport()).append(",");
+        if (getSourceInstanceId() != null)
+            sb.append("SourceInstanceId: ").append(getSourceInstanceId());
         sb.append("}");
         return sb.toString();
     }
@@ -2294,6 +2356,10 @@ public class Image implements Serializable, Cloneable {
             return false;
         if (other.getImdsSupport() != null && other.getImdsSupport().equals(this.getImdsSupport()) == false)
             return false;
+        if (other.getSourceInstanceId() == null ^ this.getSourceInstanceId() == null)
+            return false;
+        if (other.getSourceInstanceId() != null && other.getSourceInstanceId().equals(this.getSourceInstanceId()) == false)
+            return false;
         return true;
     }
 
@@ -2332,6 +2398,7 @@ public class Image implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getTpmSupport() == null) ? 0 : getTpmSupport().hashCode());
         hashCode = prime * hashCode + ((getDeprecationTime() == null) ? 0 : getDeprecationTime().hashCode());
         hashCode = prime * hashCode + ((getImdsSupport() == null) ? 0 : getImdsSupport().hashCode());
+        hashCode = prime * hashCode + ((getSourceInstanceId() == null) ? 0 : getSourceInstanceId().hashCode());
         return hashCode;
     }
 

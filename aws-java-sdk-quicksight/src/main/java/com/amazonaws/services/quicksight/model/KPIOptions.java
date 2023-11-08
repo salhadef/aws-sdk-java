@@ -70,6 +70,18 @@ public class KPIOptions implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private FontConfiguration secondaryValueFontConfiguration;
+    /**
+     * <p>
+     * The options that determine the visibility, color, type, and tooltip visibility of the sparkline of a KPI visual.
+     * </p>
+     */
+    private KPISparklineOptions sparkline;
+    /**
+     * <p>
+     * The options that determine the layout a KPI visual.
+     * </p>
+     */
+    private KPIVisualLayoutOptions visualLayoutOptions;
 
     /**
      * <p>
@@ -371,6 +383,89 @@ public class KPIOptions implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The options that determine the visibility, color, type, and tooltip visibility of the sparkline of a KPI visual.
+     * </p>
+     * 
+     * @param sparkline
+     *        The options that determine the visibility, color, type, and tooltip visibility of the sparkline of a KPI
+     *        visual.
+     */
+
+    public void setSparkline(KPISparklineOptions sparkline) {
+        this.sparkline = sparkline;
+    }
+
+    /**
+     * <p>
+     * The options that determine the visibility, color, type, and tooltip visibility of the sparkline of a KPI visual.
+     * </p>
+     * 
+     * @return The options that determine the visibility, color, type, and tooltip visibility of the sparkline of a KPI
+     *         visual.
+     */
+
+    public KPISparklineOptions getSparkline() {
+        return this.sparkline;
+    }
+
+    /**
+     * <p>
+     * The options that determine the visibility, color, type, and tooltip visibility of the sparkline of a KPI visual.
+     * </p>
+     * 
+     * @param sparkline
+     *        The options that determine the visibility, color, type, and tooltip visibility of the sparkline of a KPI
+     *        visual.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KPIOptions withSparkline(KPISparklineOptions sparkline) {
+        setSparkline(sparkline);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The options that determine the layout a KPI visual.
+     * </p>
+     * 
+     * @param visualLayoutOptions
+     *        The options that determine the layout a KPI visual.
+     */
+
+    public void setVisualLayoutOptions(KPIVisualLayoutOptions visualLayoutOptions) {
+        this.visualLayoutOptions = visualLayoutOptions;
+    }
+
+    /**
+     * <p>
+     * The options that determine the layout a KPI visual.
+     * </p>
+     * 
+     * @return The options that determine the layout a KPI visual.
+     */
+
+    public KPIVisualLayoutOptions getVisualLayoutOptions() {
+        return this.visualLayoutOptions;
+    }
+
+    /**
+     * <p>
+     * The options that determine the layout a KPI visual.
+     * </p>
+     * 
+     * @param visualLayoutOptions
+     *        The options that determine the layout a KPI visual.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KPIOptions withVisualLayoutOptions(KPIVisualLayoutOptions visualLayoutOptions) {
+        setVisualLayoutOptions(visualLayoutOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -395,7 +490,11 @@ public class KPIOptions implements Serializable, Cloneable, StructuredPojo {
         if (getPrimaryValueFontConfiguration() != null)
             sb.append("PrimaryValueFontConfiguration: ").append(getPrimaryValueFontConfiguration()).append(",");
         if (getSecondaryValueFontConfiguration() != null)
-            sb.append("SecondaryValueFontConfiguration: ").append(getSecondaryValueFontConfiguration());
+            sb.append("SecondaryValueFontConfiguration: ").append(getSecondaryValueFontConfiguration()).append(",");
+        if (getSparkline() != null)
+            sb.append("Sparkline: ").append(getSparkline()).append(",");
+        if (getVisualLayoutOptions() != null)
+            sb.append("VisualLayoutOptions: ").append(getVisualLayoutOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -440,6 +539,14 @@ public class KPIOptions implements Serializable, Cloneable, StructuredPojo {
         if (other.getSecondaryValueFontConfiguration() != null
                 && other.getSecondaryValueFontConfiguration().equals(this.getSecondaryValueFontConfiguration()) == false)
             return false;
+        if (other.getSparkline() == null ^ this.getSparkline() == null)
+            return false;
+        if (other.getSparkline() != null && other.getSparkline().equals(this.getSparkline()) == false)
+            return false;
+        if (other.getVisualLayoutOptions() == null ^ this.getVisualLayoutOptions() == null)
+            return false;
+        if (other.getVisualLayoutOptions() != null && other.getVisualLayoutOptions().equals(this.getVisualLayoutOptions()) == false)
+            return false;
         return true;
     }
 
@@ -455,6 +562,8 @@ public class KPIOptions implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPrimaryValueDisplayType() == null) ? 0 : getPrimaryValueDisplayType().hashCode());
         hashCode = prime * hashCode + ((getPrimaryValueFontConfiguration() == null) ? 0 : getPrimaryValueFontConfiguration().hashCode());
         hashCode = prime * hashCode + ((getSecondaryValueFontConfiguration() == null) ? 0 : getSecondaryValueFontConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getSparkline() == null) ? 0 : getSparkline().hashCode());
+        hashCode = prime * hashCode + ((getVisualLayoutOptions() == null) ? 0 : getVisualLayoutOptions().hashCode());
         return hashCode;
     }
 

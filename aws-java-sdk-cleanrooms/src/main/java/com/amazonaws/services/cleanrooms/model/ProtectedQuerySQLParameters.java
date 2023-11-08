@@ -34,6 +34,18 @@ public class ProtectedQuerySQLParameters implements Serializable, Cloneable, Str
      * </p>
      */
     private String queryString;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) associated with the analysis template within a collaboration.
+     * </p>
+     */
+    private String analysisTemplateArn;
+    /**
+     * <p>
+     * The protected query SQL parameters.
+     * </p>
+     */
+    private java.util.Map<String, String> parameters;
 
     /**
      * <p>
@@ -76,6 +88,114 @@ public class ProtectedQuerySQLParameters implements Serializable, Cloneable, Str
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) associated with the analysis template within a collaboration.
+     * </p>
+     * 
+     * @param analysisTemplateArn
+     *        The Amazon Resource Name (ARN) associated with the analysis template within a collaboration.
+     */
+
+    public void setAnalysisTemplateArn(String analysisTemplateArn) {
+        this.analysisTemplateArn = analysisTemplateArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) associated with the analysis template within a collaboration.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) associated with the analysis template within a collaboration.
+     */
+
+    public String getAnalysisTemplateArn() {
+        return this.analysisTemplateArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) associated with the analysis template within a collaboration.
+     * </p>
+     * 
+     * @param analysisTemplateArn
+     *        The Amazon Resource Name (ARN) associated with the analysis template within a collaboration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProtectedQuerySQLParameters withAnalysisTemplateArn(String analysisTemplateArn) {
+        setAnalysisTemplateArn(analysisTemplateArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The protected query SQL parameters.
+     * </p>
+     * 
+     * @return The protected query SQL parameters.
+     */
+
+    public java.util.Map<String, String> getParameters() {
+        return parameters;
+    }
+
+    /**
+     * <p>
+     * The protected query SQL parameters.
+     * </p>
+     * 
+     * @param parameters
+     *        The protected query SQL parameters.
+     */
+
+    public void setParameters(java.util.Map<String, String> parameters) {
+        this.parameters = parameters;
+    }
+
+    /**
+     * <p>
+     * The protected query SQL parameters.
+     * </p>
+     * 
+     * @param parameters
+     *        The protected query SQL parameters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProtectedQuerySQLParameters withParameters(java.util.Map<String, String> parameters) {
+        setParameters(parameters);
+        return this;
+    }
+
+    /**
+     * Add a single Parameters entry
+     *
+     * @see ProtectedQuerySQLParameters#withParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProtectedQuerySQLParameters addParametersEntry(String key, String value) {
+        if (null == this.parameters) {
+            this.parameters = new java.util.HashMap<String, String>();
+        }
+        if (this.parameters.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.parameters.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Parameters.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProtectedQuerySQLParameters clearParametersEntries() {
+        this.parameters = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +208,11 @@ public class ProtectedQuerySQLParameters implements Serializable, Cloneable, Str
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getQueryString() != null)
-            sb.append("QueryString: ").append(getQueryString());
+            sb.append("QueryString: ").append(getQueryString()).append(",");
+        if (getAnalysisTemplateArn() != null)
+            sb.append("AnalysisTemplateArn: ").append(getAnalysisTemplateArn()).append(",");
+        if (getParameters() != null)
+            sb.append("Parameters: ").append(getParameters());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +231,14 @@ public class ProtectedQuerySQLParameters implements Serializable, Cloneable, Str
             return false;
         if (other.getQueryString() != null && other.getQueryString().equals(this.getQueryString()) == false)
             return false;
+        if (other.getAnalysisTemplateArn() == null ^ this.getAnalysisTemplateArn() == null)
+            return false;
+        if (other.getAnalysisTemplateArn() != null && other.getAnalysisTemplateArn().equals(this.getAnalysisTemplateArn()) == false)
+            return false;
+        if (other.getParameters() == null ^ this.getParameters() == null)
+            return false;
+        if (other.getParameters() != null && other.getParameters().equals(this.getParameters()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +248,8 @@ public class ProtectedQuerySQLParameters implements Serializable, Cloneable, Str
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getQueryString() == null) ? 0 : getQueryString().hashCode());
+        hashCode = prime * hashCode + ((getAnalysisTemplateArn() == null) ? 0 : getAnalysisTemplateArn().hashCode());
+        hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         return hashCode;
     }
 

@@ -40,7 +40,9 @@ public class UpdateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize
-     * will support.
+     * will support. A high <code>minProvisionedTPS</code> will increase your bill. We recommend starting with 1 for
+     * <code>minProvisionedTPS</code> (the default). Track your usage using Amazon CloudWatch metrics, and increase the
+     * <code>minProvisionedTPS</code> as necessary.
      * </p>
      */
     private Integer minProvisionedTPS;
@@ -134,12 +136,16 @@ public class UpdateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize
-     * will support.
+     * will support. A high <code>minProvisionedTPS</code> will increase your bill. We recommend starting with 1 for
+     * <code>minProvisionedTPS</code> (the default). Track your usage using Amazon CloudWatch metrics, and increase the
+     * <code>minProvisionedTPS</code> as necessary.
      * </p>
      * 
      * @param minProvisionedTPS
      *        Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon
-     *        Personalize will support.
+     *        Personalize will support. A high <code>minProvisionedTPS</code> will increase your bill. We recommend
+     *        starting with 1 for <code>minProvisionedTPS</code> (the default). Track your usage using Amazon CloudWatch
+     *        metrics, and increase the <code>minProvisionedTPS</code> as necessary.
      */
 
     public void setMinProvisionedTPS(Integer minProvisionedTPS) {
@@ -149,11 +155,15 @@ public class UpdateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize
-     * will support.
+     * will support. A high <code>minProvisionedTPS</code> will increase your bill. We recommend starting with 1 for
+     * <code>minProvisionedTPS</code> (the default). Track your usage using Amazon CloudWatch metrics, and increase the
+     * <code>minProvisionedTPS</code> as necessary.
      * </p>
      * 
      * @return Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon
-     *         Personalize will support.
+     *         Personalize will support. A high <code>minProvisionedTPS</code> will increase your bill. We recommend
+     *         starting with 1 for <code>minProvisionedTPS</code> (the default). Track your usage using Amazon
+     *         CloudWatch metrics, and increase the <code>minProvisionedTPS</code> as necessary.
      */
 
     public Integer getMinProvisionedTPS() {
@@ -163,12 +173,16 @@ public class UpdateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize
-     * will support.
+     * will support. A high <code>minProvisionedTPS</code> will increase your bill. We recommend starting with 1 for
+     * <code>minProvisionedTPS</code> (the default). Track your usage using Amazon CloudWatch metrics, and increase the
+     * <code>minProvisionedTPS</code> as necessary.
      * </p>
      * 
      * @param minProvisionedTPS
      *        Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon
-     *        Personalize will support.
+     *        Personalize will support. A high <code>minProvisionedTPS</code> will increase your bill. We recommend
+     *        starting with 1 for <code>minProvisionedTPS</code> (the default). Track your usage using Amazon CloudWatch
+     *        metrics, and increase the <code>minProvisionedTPS</code> as necessary.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

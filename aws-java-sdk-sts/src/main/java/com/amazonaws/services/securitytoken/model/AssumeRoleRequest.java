@@ -265,6 +265,12 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private String sourceIdentity;
+    /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     */
+    private java.util.List<ProvidedContext> providedContexts;
 
     /**
      * <p>
@@ -1981,6 +1987,76 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     * 
+     * @return Reserved for future use.
+     */
+
+    public java.util.List<ProvidedContext> getProvidedContexts() {
+        return providedContexts;
+    }
+
+    /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     * 
+     * @param providedContexts
+     *        Reserved for future use.
+     */
+
+    public void setProvidedContexts(java.util.Collection<ProvidedContext> providedContexts) {
+        if (providedContexts == null) {
+            this.providedContexts = null;
+            return;
+        }
+
+        this.providedContexts = new java.util.ArrayList<ProvidedContext>(providedContexts);
+    }
+
+    /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setProvidedContexts(java.util.Collection)} or {@link #withProvidedContexts(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param providedContexts
+     *        Reserved for future use.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssumeRoleRequest withProvidedContexts(ProvidedContext... providedContexts) {
+        if (this.providedContexts == null) {
+            setProvidedContexts(new java.util.ArrayList<ProvidedContext>(providedContexts.length));
+        }
+        for (ProvidedContext ele : providedContexts) {
+            this.providedContexts.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     * 
+     * @param providedContexts
+     *        Reserved for future use.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssumeRoleRequest withProvidedContexts(java.util.Collection<ProvidedContext> providedContexts) {
+        setProvidedContexts(providedContexts);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2013,7 +2089,9 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getTokenCode() != null)
             sb.append("TokenCode: ").append(getTokenCode()).append(",");
         if (getSourceIdentity() != null)
-            sb.append("SourceIdentity: ").append(getSourceIdentity());
+            sb.append("SourceIdentity: ").append(getSourceIdentity()).append(",");
+        if (getProvidedContexts() != null)
+            sb.append("ProvidedContexts: ").append(getProvidedContexts());
         sb.append("}");
         return sb.toString();
     }
@@ -2072,6 +2150,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getSourceIdentity() != null && other.getSourceIdentity().equals(this.getSourceIdentity()) == false)
             return false;
+        if (other.getProvidedContexts() == null ^ this.getProvidedContexts() == null)
+            return false;
+        if (other.getProvidedContexts() != null && other.getProvidedContexts().equals(this.getProvidedContexts()) == false)
+            return false;
         return true;
     }
 
@@ -2091,6 +2173,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getSerialNumber() == null) ? 0 : getSerialNumber().hashCode());
         hashCode = prime * hashCode + ((getTokenCode() == null) ? 0 : getTokenCode().hashCode());
         hashCode = prime * hashCode + ((getSourceIdentity() == null) ? 0 : getSourceIdentity().hashCode());
+        hashCode = prime * hashCode + ((getProvidedContexts() == null) ? 0 : getProvidedContexts().hashCode());
         return hashCode;
     }
 

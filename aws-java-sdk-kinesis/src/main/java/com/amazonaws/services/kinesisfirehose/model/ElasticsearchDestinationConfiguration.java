@@ -134,10 +134,17 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
     private CloudWatchLoggingOptions cloudWatchLoggingOptions;
     /**
      * <p>
-     * The details of the VPC of the Amazon ES destination.
+     * The details of the VPC of the Amazon destination.
      * </p>
      */
     private VpcConfiguration vpcConfiguration;
+    /**
+     * <p>
+     * Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated
+     * document ID and OpenSearch Service generated document ID.
+     * </p>
+     */
+    private DocumentIdOptions documentIdOptions;
 
     /**
      * <p>
@@ -921,11 +928,11 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * The details of the VPC of the Amazon ES destination.
+     * The details of the VPC of the Amazon destination.
      * </p>
      * 
      * @param vpcConfiguration
-     *        The details of the VPC of the Amazon ES destination.
+     *        The details of the VPC of the Amazon destination.
      */
 
     public void setVpcConfiguration(VpcConfiguration vpcConfiguration) {
@@ -934,10 +941,10 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * The details of the VPC of the Amazon ES destination.
+     * The details of the VPC of the Amazon destination.
      * </p>
      * 
-     * @return The details of the VPC of the Amazon ES destination.
+     * @return The details of the VPC of the Amazon destination.
      */
 
     public VpcConfiguration getVpcConfiguration() {
@@ -946,16 +953,62 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * The details of the VPC of the Amazon ES destination.
+     * The details of the VPC of the Amazon destination.
      * </p>
      * 
      * @param vpcConfiguration
-     *        The details of the VPC of the Amazon ES destination.
+     *        The details of the VPC of the Amazon destination.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ElasticsearchDestinationConfiguration withVpcConfiguration(VpcConfiguration vpcConfiguration) {
         setVpcConfiguration(vpcConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated
+     * document ID and OpenSearch Service generated document ID.
+     * </p>
+     * 
+     * @param documentIdOptions
+     *        Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated
+     *        document ID and OpenSearch Service generated document ID.
+     */
+
+    public void setDocumentIdOptions(DocumentIdOptions documentIdOptions) {
+        this.documentIdOptions = documentIdOptions;
+    }
+
+    /**
+     * <p>
+     * Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated
+     * document ID and OpenSearch Service generated document ID.
+     * </p>
+     * 
+     * @return Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose
+     *         generated document ID and OpenSearch Service generated document ID.
+     */
+
+    public DocumentIdOptions getDocumentIdOptions() {
+        return this.documentIdOptions;
+    }
+
+    /**
+     * <p>
+     * Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated
+     * document ID and OpenSearch Service generated document ID.
+     * </p>
+     * 
+     * @param documentIdOptions
+     *        Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated
+     *        document ID and OpenSearch Service generated document ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ElasticsearchDestinationConfiguration withDocumentIdOptions(DocumentIdOptions documentIdOptions) {
+        setDocumentIdOptions(documentIdOptions);
         return this;
     }
 
@@ -996,7 +1049,9 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
         if (getCloudWatchLoggingOptions() != null)
             sb.append("CloudWatchLoggingOptions: ").append(getCloudWatchLoggingOptions()).append(",");
         if (getVpcConfiguration() != null)
-            sb.append("VpcConfiguration: ").append(getVpcConfiguration());
+            sb.append("VpcConfiguration: ").append(getVpcConfiguration()).append(",");
+        if (getDocumentIdOptions() != null)
+            sb.append("DocumentIdOptions: ").append(getDocumentIdOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -1063,6 +1118,10 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
             return false;
         if (other.getVpcConfiguration() != null && other.getVpcConfiguration().equals(this.getVpcConfiguration()) == false)
             return false;
+        if (other.getDocumentIdOptions() == null ^ this.getDocumentIdOptions() == null)
+            return false;
+        if (other.getDocumentIdOptions() != null && other.getDocumentIdOptions().equals(this.getDocumentIdOptions()) == false)
+            return false;
         return true;
     }
 
@@ -1084,6 +1143,7 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
         hashCode = prime * hashCode + ((getProcessingConfiguration() == null) ? 0 : getProcessingConfiguration().hashCode());
         hashCode = prime * hashCode + ((getCloudWatchLoggingOptions() == null) ? 0 : getCloudWatchLoggingOptions().hashCode());
         hashCode = prime * hashCode + ((getVpcConfiguration() == null) ? 0 : getVpcConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getDocumentIdOptions() == null) ? 0 : getDocumentIdOptions().hashCode());
         return hashCode;
     }
 

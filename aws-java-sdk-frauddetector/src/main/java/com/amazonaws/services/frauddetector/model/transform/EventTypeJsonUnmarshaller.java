@@ -94,6 +94,10 @@ public class EventTypeJsonUnmarshaller implements Unmarshaller<EventType, JsonUn
                     context.nextToken();
                     eventType.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("eventOrchestration", targetDepth)) {
+                    context.nextToken();
+                    eventType.setEventOrchestration(EventOrchestrationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

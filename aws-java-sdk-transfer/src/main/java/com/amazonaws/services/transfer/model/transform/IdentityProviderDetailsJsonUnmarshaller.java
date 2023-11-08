@@ -64,6 +64,10 @@ public class IdentityProviderDetailsJsonUnmarshaller implements Unmarshaller<Ide
                     context.nextToken();
                     identityProviderDetails.setFunction(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SftpAuthenticationMethods", targetDepth)) {
+                    context.nextToken();
+                    identityProviderDetails.setSftpAuthenticationMethods(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

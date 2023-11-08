@@ -329,7 +329,7 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is
      * supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances
-     * built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
      * </p>
      */
     private String ipDiscovery;
@@ -352,11 +352,20 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires you to
-     * first set the <code>TransitEncryptionMode</code> to <code>preferred</code> first, after that you can set
+     * first set the <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can set
      * <code>TransitEncryptionMode</code> to <code>required</code>.
      * </p>
      */
     private String transitEncryptionMode;
+    /**
+     * <p>
+     * Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to
+     * Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode
+     * disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode
+     * configuration and set the cluster mode to Enabled.
+     * </p>
+     */
+    private String clusterMode;
 
     /**
      * <p>
@@ -2537,13 +2546,13 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is
      * supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances
-     * built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
      * </p>
      * 
      * @param ipDiscovery
      *        The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6
      *        is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
-     *        instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     *        instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
      * @see IpDiscovery
      */
 
@@ -2555,12 +2564,12 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is
      * supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances
-     * built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
      * </p>
      * 
      * @return The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6
      *         is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
-     *         instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     *         instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
      * @see IpDiscovery
      */
 
@@ -2572,13 +2581,13 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is
      * supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances
-     * built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
      * </p>
      * 
      * @param ipDiscovery
      *        The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6
      *        is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
-     *        instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     *        instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IpDiscovery
      */
@@ -2592,13 +2601,13 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is
      * supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances
-     * built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
      * </p>
      * 
      * @param ipDiscovery
      *        The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6
      *        is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
-     *        instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     *        instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IpDiscovery
      */
@@ -2680,7 +2689,7 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires you to
-     * first set the <code>TransitEncryptionMode</code> to <code>preferred</code> first, after that you can set
+     * first set the <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can set
      * <code>TransitEncryptionMode</code> to <code>required</code>.
      * </p>
      * 
@@ -2694,8 +2703,8 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        <p>
      *        Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires
-     *        you to first set the <code>TransitEncryptionMode</code> to <code>preferred</code> first, after that you
-     *        can set <code>TransitEncryptionMode</code> to <code>required</code>.
+     *        you to first set the <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can set
+     *        <code>TransitEncryptionMode</code> to <code>required</code>.
      * @see TransitEncryptionMode
      */
 
@@ -2715,7 +2724,7 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires you to
-     * first set the <code>TransitEncryptionMode</code> to <code>preferred</code> first, after that you can set
+     * first set the <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can set
      * <code>TransitEncryptionMode</code> to <code>required</code>.
      * </p>
      * 
@@ -2728,8 +2737,8 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *         </p>
      *         <p>
      *         Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires
-     *         you to first set the <code>TransitEncryptionMode</code> to <code>preferred</code> first, after that you
-     *         can set <code>TransitEncryptionMode</code> to <code>required</code>.
+     *         you to first set the <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can set
+     *         <code>TransitEncryptionMode</code> to <code>required</code>.
      * @see TransitEncryptionMode
      */
 
@@ -2749,7 +2758,7 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires you to
-     * first set the <code>TransitEncryptionMode</code> to <code>preferred</code> first, after that you can set
+     * first set the <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can set
      * <code>TransitEncryptionMode</code> to <code>required</code>.
      * </p>
      * 
@@ -2763,8 +2772,8 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        <p>
      *        Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires
-     *        you to first set the <code>TransitEncryptionMode</code> to <code>preferred</code> first, after that you
-     *        can set <code>TransitEncryptionMode</code> to <code>required</code>.
+     *        you to first set the <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can set
+     *        <code>TransitEncryptionMode</code> to <code>required</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TransitEncryptionMode
      */
@@ -2786,7 +2795,7 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires you to
-     * first set the <code>TransitEncryptionMode</code> to <code>preferred</code> first, after that you can set
+     * first set the <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can set
      * <code>TransitEncryptionMode</code> to <code>required</code>.
      * </p>
      * 
@@ -2800,14 +2809,97 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        <p>
      *        Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires
-     *        you to first set the <code>TransitEncryptionMode</code> to <code>preferred</code> first, after that you
-     *        can set <code>TransitEncryptionMode</code> to <code>required</code>.
+     *        you to first set the <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can set
+     *        <code>TransitEncryptionMode</code> to <code>required</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TransitEncryptionMode
      */
 
     public ModifyReplicationGroupRequest withTransitEncryptionMode(TransitEncryptionMode transitEncryptionMode) {
         this.transitEncryptionMode = transitEncryptionMode.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to
+     * Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode
+     * disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode
+     * configuration and set the cluster mode to Enabled.
+     * </p>
+     * 
+     * @param clusterMode
+     *        Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode
+     *        to Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and
+     *        cluster mode disabled. After you migrate all Redis clients to use cluster mode enabled, you can then
+     *        complete cluster mode configuration and set the cluster mode to Enabled.
+     * @see ClusterMode
+     */
+
+    public void setClusterMode(String clusterMode) {
+        this.clusterMode = clusterMode;
+    }
+
+    /**
+     * <p>
+     * Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to
+     * Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode
+     * disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode
+     * configuration and set the cluster mode to Enabled.
+     * </p>
+     * 
+     * @return Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode
+     *         to Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and
+     *         cluster mode disabled. After you migrate all Redis clients to use cluster mode enabled, you can then
+     *         complete cluster mode configuration and set the cluster mode to Enabled.
+     * @see ClusterMode
+     */
+
+    public String getClusterMode() {
+        return this.clusterMode;
+    }
+
+    /**
+     * <p>
+     * Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to
+     * Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode
+     * disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode
+     * configuration and set the cluster mode to Enabled.
+     * </p>
+     * 
+     * @param clusterMode
+     *        Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode
+     *        to Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and
+     *        cluster mode disabled. After you migrate all Redis clients to use cluster mode enabled, you can then
+     *        complete cluster mode configuration and set the cluster mode to Enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ClusterMode
+     */
+
+    public ModifyReplicationGroupRequest withClusterMode(String clusterMode) {
+        setClusterMode(clusterMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to
+     * Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode
+     * disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode
+     * configuration and set the cluster mode to Enabled.
+     * </p>
+     * 
+     * @param clusterMode
+     *        Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode
+     *        to Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and
+     *        cluster mode disabled. After you migrate all Redis clients to use cluster mode enabled, you can then
+     *        complete cluster mode configuration and set the cluster mode to Enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ClusterMode
+     */
+
+    public ModifyReplicationGroupRequest withClusterMode(ClusterMode clusterMode) {
+        this.clusterMode = clusterMode.toString();
         return this;
     }
 
@@ -2878,7 +2970,9 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
         if (getTransitEncryptionEnabled() != null)
             sb.append("TransitEncryptionEnabled: ").append(getTransitEncryptionEnabled()).append(",");
         if (getTransitEncryptionMode() != null)
-            sb.append("TransitEncryptionMode: ").append(getTransitEncryptionMode());
+            sb.append("TransitEncryptionMode: ").append(getTransitEncryptionMode()).append(",");
+        if (getClusterMode() != null)
+            sb.append("ClusterMode: ").append(getClusterMode());
         sb.append("}");
         return sb.toString();
     }
@@ -3005,6 +3099,10 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getTransitEncryptionMode() != null && other.getTransitEncryptionMode().equals(this.getTransitEncryptionMode()) == false)
             return false;
+        if (other.getClusterMode() == null ^ this.getClusterMode() == null)
+            return false;
+        if (other.getClusterMode() != null && other.getClusterMode().equals(this.getClusterMode()) == false)
+            return false;
         return true;
     }
 
@@ -3041,6 +3139,7 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getIpDiscovery() == null) ? 0 : getIpDiscovery().hashCode());
         hashCode = prime * hashCode + ((getTransitEncryptionEnabled() == null) ? 0 : getTransitEncryptionEnabled().hashCode());
         hashCode = prime * hashCode + ((getTransitEncryptionMode() == null) ? 0 : getTransitEncryptionMode().hashCode());
+        hashCode = prime * hashCode + ((getClusterMode() == null) ? 0 : getClusterMode().hashCode());
         return hashCode;
     }
 

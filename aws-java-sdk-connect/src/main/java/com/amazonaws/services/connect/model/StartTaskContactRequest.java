@@ -35,7 +35,9 @@ public class StartTaskContactRequest extends com.amazonaws.AmazonWebServiceReque
     private String instanceId;
     /**
      * <p>
-     * The identifier of the previous chat, voice, or task contact.
+     * The identifier of the previous chat, voice, or task contact. Any updates to user-defined attributes to task
+     * contacts linked using the same <code>PreviousContactID</code> will affect every contact in the chain. There can
+     * be a maximum of 12 linked task contacts in a chain.
      * </p>
      */
     private String previousContactId;
@@ -71,7 +73,10 @@ public class StartTaskContactRequest extends com.amazonaws.AmazonWebServiceReque
     private String name;
     /**
      * <p>
-     * A formatted URL that is shown to an agent in the Contact Control Panel (CCP).
+     * A formatted URL that is shown to an agent in the Contact Control Panel (CCP). Tasks can have the following
+     * reference types at the time of creation: <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> |
+     * <code>DATE</code> | <code>EMAIL</code>. <code>ATTACHMENT</code> is not a supported reference type during task
+     * creation.
      * </p>
      */
     private java.util.Map<String, Reference> references;
@@ -99,13 +104,17 @@ public class StartTaskContactRequest extends com.amazonaws.AmazonWebServiceReque
     private java.util.Date scheduledTime;
     /**
      * <p>
-     * A unique identifier for the task template.
+     * A unique identifier for the task template. For more information about task templates, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/task-templates.html">Create task templates</a> in the
+     * <i>Amazon Connect Administrator Guide</i>.
      * </p>
      */
     private String taskTemplateId;
     /**
      * <p>
-     * The identifier for the quick connect.
+     * The identifier for the quick connect. Tasks that are created by using <code>QuickConnectId</code> will use the
+     * flow that is defined on agent or queue quick connect. For more information about quick connects, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/quick-connects.html">Create quick connects</a>.
      * </p>
      */
     private String quickConnectId;
@@ -113,6 +122,10 @@ public class StartTaskContactRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The contactId that is <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/tasks.html#linked-tasks">related</a> to this contact.
+     * Linking tasks together by using <code>RelatedContactID</code> copies over contact attributes from the related
+     * task contact to the new task contact. All updates to user-defined attributes in the new task contact are limited
+     * to the individual contact ID, unlike what happens when tasks are linked by using <code>PreviousContactID</code>.
+     * There are no limits to the number of contacts that can be linked by using <code>RelatedContactId</code>.
      * </p>
      */
     private String relatedContactId;
@@ -171,11 +184,15 @@ public class StartTaskContactRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the previous chat, voice, or task contact.
+     * The identifier of the previous chat, voice, or task contact. Any updates to user-defined attributes to task
+     * contacts linked using the same <code>PreviousContactID</code> will affect every contact in the chain. There can
+     * be a maximum of 12 linked task contacts in a chain.
      * </p>
      * 
      * @param previousContactId
-     *        The identifier of the previous chat, voice, or task contact.
+     *        The identifier of the previous chat, voice, or task contact. Any updates to user-defined attributes to
+     *        task contacts linked using the same <code>PreviousContactID</code> will affect every contact in the chain.
+     *        There can be a maximum of 12 linked task contacts in a chain.
      */
 
     public void setPreviousContactId(String previousContactId) {
@@ -184,10 +201,14 @@ public class StartTaskContactRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the previous chat, voice, or task contact.
+     * The identifier of the previous chat, voice, or task contact. Any updates to user-defined attributes to task
+     * contacts linked using the same <code>PreviousContactID</code> will affect every contact in the chain. There can
+     * be a maximum of 12 linked task contacts in a chain.
      * </p>
      * 
-     * @return The identifier of the previous chat, voice, or task contact.
+     * @return The identifier of the previous chat, voice, or task contact. Any updates to user-defined attributes to
+     *         task contacts linked using the same <code>PreviousContactID</code> will affect every contact in the
+     *         chain. There can be a maximum of 12 linked task contacts in a chain.
      */
 
     public String getPreviousContactId() {
@@ -196,11 +217,15 @@ public class StartTaskContactRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the previous chat, voice, or task contact.
+     * The identifier of the previous chat, voice, or task contact. Any updates to user-defined attributes to task
+     * contacts linked using the same <code>PreviousContactID</code> will affect every contact in the chain. There can
+     * be a maximum of 12 linked task contacts in a chain.
      * </p>
      * 
      * @param previousContactId
-     *        The identifier of the previous chat, voice, or task contact.
+     *        The identifier of the previous chat, voice, or task contact. Any updates to user-defined attributes to
+     *        task contacts linked using the same <code>PreviousContactID</code> will affect every contact in the chain.
+     *        There can be a maximum of 12 linked task contacts in a chain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -425,10 +450,16 @@ public class StartTaskContactRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A formatted URL that is shown to an agent in the Contact Control Panel (CCP).
+     * A formatted URL that is shown to an agent in the Contact Control Panel (CCP). Tasks can have the following
+     * reference types at the time of creation: <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> |
+     * <code>DATE</code> | <code>EMAIL</code>. <code>ATTACHMENT</code> is not a supported reference type during task
+     * creation.
      * </p>
      * 
-     * @return A formatted URL that is shown to an agent in the Contact Control Panel (CCP).
+     * @return A formatted URL that is shown to an agent in the Contact Control Panel (CCP). Tasks can have the
+     *         following reference types at the time of creation: <code>URL</code> | <code>NUMBER</code> |
+     *         <code>STRING</code> | <code>DATE</code> | <code>EMAIL</code>. <code>ATTACHMENT</code> is not a supported
+     *         reference type during task creation.
      */
 
     public java.util.Map<String, Reference> getReferences() {
@@ -437,11 +468,17 @@ public class StartTaskContactRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A formatted URL that is shown to an agent in the Contact Control Panel (CCP).
+     * A formatted URL that is shown to an agent in the Contact Control Panel (CCP). Tasks can have the following
+     * reference types at the time of creation: <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> |
+     * <code>DATE</code> | <code>EMAIL</code>. <code>ATTACHMENT</code> is not a supported reference type during task
+     * creation.
      * </p>
      * 
      * @param references
-     *        A formatted URL that is shown to an agent in the Contact Control Panel (CCP).
+     *        A formatted URL that is shown to an agent in the Contact Control Panel (CCP). Tasks can have the following
+     *        reference types at the time of creation: <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> |
+     *        <code>DATE</code> | <code>EMAIL</code>. <code>ATTACHMENT</code> is not a supported reference type during
+     *        task creation.
      */
 
     public void setReferences(java.util.Map<String, Reference> references) {
@@ -450,11 +487,17 @@ public class StartTaskContactRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A formatted URL that is shown to an agent in the Contact Control Panel (CCP).
+     * A formatted URL that is shown to an agent in the Contact Control Panel (CCP). Tasks can have the following
+     * reference types at the time of creation: <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> |
+     * <code>DATE</code> | <code>EMAIL</code>. <code>ATTACHMENT</code> is not a supported reference type during task
+     * creation.
      * </p>
      * 
      * @param references
-     *        A formatted URL that is shown to an agent in the Contact Control Panel (CCP).
+     *        A formatted URL that is shown to an agent in the Contact Control Panel (CCP). Tasks can have the following
+     *        reference types at the time of creation: <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> |
+     *        <code>DATE</code> | <code>EMAIL</code>. <code>ATTACHMENT</code> is not a supported reference type during
+     *        task creation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -637,11 +680,15 @@ public class StartTaskContactRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A unique identifier for the task template.
+     * A unique identifier for the task template. For more information about task templates, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/task-templates.html">Create task templates</a> in the
+     * <i>Amazon Connect Administrator Guide</i>.
      * </p>
      * 
      * @param taskTemplateId
-     *        A unique identifier for the task template.
+     *        A unique identifier for the task template. For more information about task templates, see <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/task-templates.html">Create task templates</a>
+     *        in the <i>Amazon Connect Administrator Guide</i>.
      */
 
     public void setTaskTemplateId(String taskTemplateId) {
@@ -650,10 +697,14 @@ public class StartTaskContactRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A unique identifier for the task template.
+     * A unique identifier for the task template. For more information about task templates, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/task-templates.html">Create task templates</a> in the
+     * <i>Amazon Connect Administrator Guide</i>.
      * </p>
      * 
-     * @return A unique identifier for the task template.
+     * @return A unique identifier for the task template. For more information about task templates, see <a
+     *         href="https://docs.aws.amazon.com/connect/latest/adminguide/task-templates.html">Create task
+     *         templates</a> in the <i>Amazon Connect Administrator Guide</i>.
      */
 
     public String getTaskTemplateId() {
@@ -662,11 +713,15 @@ public class StartTaskContactRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A unique identifier for the task template.
+     * A unique identifier for the task template. For more information about task templates, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/task-templates.html">Create task templates</a> in the
+     * <i>Amazon Connect Administrator Guide</i>.
      * </p>
      * 
      * @param taskTemplateId
-     *        A unique identifier for the task template.
+     *        A unique identifier for the task template. For more information about task templates, see <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/task-templates.html">Create task templates</a>
+     *        in the <i>Amazon Connect Administrator Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -677,11 +732,16 @@ public class StartTaskContactRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier for the quick connect.
+     * The identifier for the quick connect. Tasks that are created by using <code>QuickConnectId</code> will use the
+     * flow that is defined on agent or queue quick connect. For more information about quick connects, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/quick-connects.html">Create quick connects</a>.
      * </p>
      * 
      * @param quickConnectId
-     *        The identifier for the quick connect.
+     *        The identifier for the quick connect. Tasks that are created by using <code>QuickConnectId</code> will use
+     *        the flow that is defined on agent or queue quick connect. For more information about quick connects, see
+     *        <a href="https://docs.aws.amazon.com/connect/latest/adminguide/quick-connects.html">Create quick
+     *        connects</a>.
      */
 
     public void setQuickConnectId(String quickConnectId) {
@@ -690,10 +750,15 @@ public class StartTaskContactRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier for the quick connect.
+     * The identifier for the quick connect. Tasks that are created by using <code>QuickConnectId</code> will use the
+     * flow that is defined on agent or queue quick connect. For more information about quick connects, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/quick-connects.html">Create quick connects</a>.
      * </p>
      * 
-     * @return The identifier for the quick connect.
+     * @return The identifier for the quick connect. Tasks that are created by using <code>QuickConnectId</code> will
+     *         use the flow that is defined on agent or queue quick connect. For more information about quick connects,
+     *         see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/quick-connects.html">Create quick
+     *         connects</a>.
      */
 
     public String getQuickConnectId() {
@@ -702,11 +767,16 @@ public class StartTaskContactRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier for the quick connect.
+     * The identifier for the quick connect. Tasks that are created by using <code>QuickConnectId</code> will use the
+     * flow that is defined on agent or queue quick connect. For more information about quick connects, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/quick-connects.html">Create quick connects</a>.
      * </p>
      * 
      * @param quickConnectId
-     *        The identifier for the quick connect.
+     *        The identifier for the quick connect. Tasks that are created by using <code>QuickConnectId</code> will use
+     *        the flow that is defined on agent or queue quick connect. For more information about quick connects, see
+     *        <a href="https://docs.aws.amazon.com/connect/latest/adminguide/quick-connects.html">Create quick
+     *        connects</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -719,12 +789,20 @@ public class StartTaskContactRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The contactId that is <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/tasks.html#linked-tasks">related</a> to this contact.
+     * Linking tasks together by using <code>RelatedContactID</code> copies over contact attributes from the related
+     * task contact to the new task contact. All updates to user-defined attributes in the new task contact are limited
+     * to the individual contact ID, unlike what happens when tasks are linked by using <code>PreviousContactID</code>.
+     * There are no limits to the number of contacts that can be linked by using <code>RelatedContactId</code>.
      * </p>
      * 
      * @param relatedContactId
      *        The contactId that is <a
      *        href="https://docs.aws.amazon.com/connect/latest/adminguide/tasks.html#linked-tasks">related</a> to this
-     *        contact.
+     *        contact. Linking tasks together by using <code>RelatedContactID</code> copies over contact attributes from
+     *        the related task contact to the new task contact. All updates to user-defined attributes in the new task
+     *        contact are limited to the individual contact ID, unlike what happens when tasks are linked by using
+     *        <code>PreviousContactID</code>. There are no limits to the number of contacts that can be linked by using
+     *        <code>RelatedContactId</code>.
      */
 
     public void setRelatedContactId(String relatedContactId) {
@@ -735,11 +813,19 @@ public class StartTaskContactRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The contactId that is <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/tasks.html#linked-tasks">related</a> to this contact.
+     * Linking tasks together by using <code>RelatedContactID</code> copies over contact attributes from the related
+     * task contact to the new task contact. All updates to user-defined attributes in the new task contact are limited
+     * to the individual contact ID, unlike what happens when tasks are linked by using <code>PreviousContactID</code>.
+     * There are no limits to the number of contacts that can be linked by using <code>RelatedContactId</code>.
      * </p>
      * 
      * @return The contactId that is <a
      *         href="https://docs.aws.amazon.com/connect/latest/adminguide/tasks.html#linked-tasks">related</a> to this
-     *         contact.
+     *         contact. Linking tasks together by using <code>RelatedContactID</code> copies over contact attributes
+     *         from the related task contact to the new task contact. All updates to user-defined attributes in the new
+     *         task contact are limited to the individual contact ID, unlike what happens when tasks are linked by using
+     *         <code>PreviousContactID</code>. There are no limits to the number of contacts that can be linked by using
+     *         <code>RelatedContactId</code>.
      */
 
     public String getRelatedContactId() {
@@ -750,12 +836,20 @@ public class StartTaskContactRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The contactId that is <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/tasks.html#linked-tasks">related</a> to this contact.
+     * Linking tasks together by using <code>RelatedContactID</code> copies over contact attributes from the related
+     * task contact to the new task contact. All updates to user-defined attributes in the new task contact are limited
+     * to the individual contact ID, unlike what happens when tasks are linked by using <code>PreviousContactID</code>.
+     * There are no limits to the number of contacts that can be linked by using <code>RelatedContactId</code>.
      * </p>
      * 
      * @param relatedContactId
      *        The contactId that is <a
      *        href="https://docs.aws.amazon.com/connect/latest/adminguide/tasks.html#linked-tasks">related</a> to this
-     *        contact.
+     *        contact. Linking tasks together by using <code>RelatedContactID</code> copies over contact attributes from
+     *        the related task contact to the new task contact. All updates to user-defined attributes in the new task
+     *        contact are limited to the individual contact ID, unlike what happens when tasks are linked by using
+     *        <code>PreviousContactID</code>. There are no limits to the number of contacts that can be linked by using
+     *        <code>RelatedContactId</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

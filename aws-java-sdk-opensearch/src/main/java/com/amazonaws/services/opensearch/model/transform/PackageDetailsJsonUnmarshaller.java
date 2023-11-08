@@ -84,6 +84,14 @@ public class PackageDetailsJsonUnmarshaller implements Unmarshaller<PackageDetai
                     context.nextToken();
                     packageDetails.setErrorDetails(ErrorDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("EngineVersion", targetDepth)) {
+                    context.nextToken();
+                    packageDetails.setEngineVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("AvailablePluginProperties", targetDepth)) {
+                    context.nextToken();
+                    packageDetails.setAvailablePluginProperties(PluginPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

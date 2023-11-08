@@ -33,6 +33,8 @@ public class AggregationFunctionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CategoricalAggregationFunction").build();
     private static final MarshallingInfo<String> DATEAGGREGATIONFUNCTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DateAggregationFunction").build();
+    private static final MarshallingInfo<StructuredPojo> ATTRIBUTEAGGREGATIONFUNCTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AttributeAggregationFunction").build();
 
     private static final AggregationFunctionMarshaller instance = new AggregationFunctionMarshaller();
 
@@ -53,6 +55,7 @@ public class AggregationFunctionMarshaller {
             protocolMarshaller.marshall(aggregationFunction.getNumericalAggregationFunction(), NUMERICALAGGREGATIONFUNCTION_BINDING);
             protocolMarshaller.marshall(aggregationFunction.getCategoricalAggregationFunction(), CATEGORICALAGGREGATIONFUNCTION_BINDING);
             protocolMarshaller.marshall(aggregationFunction.getDateAggregationFunction(), DATEAGGREGATIONFUNCTION_BINDING);
+            protocolMarshaller.marshall(aggregationFunction.getAttributeAggregationFunction(), ATTRIBUTEAGGREGATIONFUNCTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

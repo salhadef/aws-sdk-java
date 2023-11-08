@@ -46,6 +46,8 @@ public class AnswerSummaryMarshaller {
             .marshallLocationName("Risk").build();
     private static final MarshallingInfo<String> REASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Reason").build();
+    private static final MarshallingInfo<String> QUESTIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("QuestionType").build();
 
     private static final AnswerSummaryMarshaller instance = new AnswerSummaryMarshaller();
 
@@ -72,6 +74,7 @@ public class AnswerSummaryMarshaller {
             protocolMarshaller.marshall(answerSummary.getIsApplicable(), ISAPPLICABLE_BINDING);
             protocolMarshaller.marshall(answerSummary.getRisk(), RISK_BINDING);
             protocolMarshaller.marshall(answerSummary.getReason(), REASON_BINDING);
+            protocolMarshaller.marshall(answerSummary.getQuestionType(), QUESTIONTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

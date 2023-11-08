@@ -54,7 +54,8 @@ public class MembershipSummary implements Serializable, Cloneable, StructuredPoj
     private String collaborationId;
     /**
      * <p>
-     * The identifier of the AWS principal that created the collaboration. Currently only supports AWS account ID.
+     * The identifier of the Amazon Web Services principal that created the collaboration. Currently only supports
+     * Amazon Web Services account ID.
      * </p>
      */
     private String collaborationCreatorAccountId;
@@ -257,12 +258,13 @@ public class MembershipSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The identifier of the AWS principal that created the collaboration. Currently only supports AWS account ID.
+     * The identifier of the Amazon Web Services principal that created the collaboration. Currently only supports
+     * Amazon Web Services account ID.
      * </p>
      * 
      * @param collaborationCreatorAccountId
-     *        The identifier of the AWS principal that created the collaboration. Currently only supports AWS account
-     *        ID.
+     *        The identifier of the Amazon Web Services principal that created the collaboration. Currently only
+     *        supports Amazon Web Services account ID.
      */
 
     public void setCollaborationCreatorAccountId(String collaborationCreatorAccountId) {
@@ -271,11 +273,12 @@ public class MembershipSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The identifier of the AWS principal that created the collaboration. Currently only supports AWS account ID.
+     * The identifier of the Amazon Web Services principal that created the collaboration. Currently only supports
+     * Amazon Web Services account ID.
      * </p>
      * 
-     * @return The identifier of the AWS principal that created the collaboration. Currently only supports AWS account
-     *         ID.
+     * @return The identifier of the Amazon Web Services principal that created the collaboration. Currently only
+     *         supports Amazon Web Services account ID.
      */
 
     public String getCollaborationCreatorAccountId() {
@@ -284,12 +287,13 @@ public class MembershipSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The identifier of the AWS principal that created the collaboration. Currently only supports AWS account ID.
+     * The identifier of the Amazon Web Services principal that created the collaboration. Currently only supports
+     * Amazon Web Services account ID.
      * </p>
      * 
      * @param collaborationCreatorAccountId
-     *        The identifier of the AWS principal that created the collaboration. Currently only supports AWS account
-     *        ID.
+     *        The identifier of the Amazon Web Services principal that created the collaboration. Currently only
+     *        supports Amazon Web Services account ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

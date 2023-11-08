@@ -24,8 +24,8 @@ import com.amazonaws.util.ValidationUtils;
  * <p>
  * The primary supported ARN format is: {@code arn:<partition>:<service>:<region>:<account>:<resource>}
  * <p>
- * To parse an ARN from a string use ARN.fromString(). To convert an ARN to it's
- * string representation use ARN.toString(). For instance, for a string s, containing a well-formed ARN the
+ * To parse an ARN from a string use Arn.fromString(). To convert an ARN to it's
+ * string representation use Arn.toString(). For instance, for a string s, containing a well-formed ARN the
  * following should always be true:
  * <pre>
  * ARN theArn = Arn.fromString(s);

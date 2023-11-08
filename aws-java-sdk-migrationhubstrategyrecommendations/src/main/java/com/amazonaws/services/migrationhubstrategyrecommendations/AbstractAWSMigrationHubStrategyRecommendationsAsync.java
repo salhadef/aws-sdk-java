@@ -161,6 +161,19 @@ public class AbstractAWSMigrationHubStrategyRecommendationsAsync extends Abstrac
     }
 
     @Override
+    public java.util.concurrent.Future<ListAnalyzableServersResult> listAnalyzableServersAsync(ListAnalyzableServersRequest request) {
+
+        return listAnalyzableServersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAnalyzableServersResult> listAnalyzableServersAsync(ListAnalyzableServersRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAnalyzableServersRequest, ListAnalyzableServersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListApplicationComponentsResult> listApplicationComponentsAsync(ListApplicationComponentsRequest request) {
 
         return listApplicationComponentsAsync(request, null);

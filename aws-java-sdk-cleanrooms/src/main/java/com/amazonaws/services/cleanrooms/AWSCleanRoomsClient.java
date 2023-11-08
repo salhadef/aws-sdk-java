@@ -44,6 +44,7 @@ import com.amazonaws.services.cleanrooms.AWSCleanRoomsClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.cleanrooms.model.*;
+
 import com.amazonaws.services.cleanrooms.model.transform.*;
 
 /**
@@ -51,16 +52,20 @@ import com.amazonaws.services.cleanrooms.model.transform.*;
  * return until the service call completes.
  * <p>
  * <p>
- * Welcome to the <i>AWS Clean Rooms API Reference</i>.
+ * Welcome to the <i>Clean Rooms API Reference</i>.
  * </p>
  * <p>
- * AWS Clean Rooms is an AWS service that helps multiple parties to join their data together in a secure collaboration
- * workspace. In the collaboration, members who can query and receive results can get insights into the collective
- * datasets without either party getting access to the other party's raw data.
+ * Clean Rooms is an Amazon Web Services service that helps multiple parties to join their data together in a secure
+ * collaboration workspace. In the collaboration, members who can query and receive results can get insights into the
+ * collective datasets without either party getting access to the other party's raw data.
  * </p>
  * <p>
- * To learn more about AWS Clean Rooms concepts, procedures, and best practices, see the <a
- * href="https://docs.aws.amazon.com/clean-rooms/latest/userguide/what-is.html">AWS Clean Rooms User Guide</a>.
+ * To learn more about Clean Rooms concepts, procedures, and best practices, see the <a
+ * href="https://docs.aws.amazon.com/clean-rooms/latest/userguide/what-is.html">Clean Rooms User Guide</a>.
+ * </p>
+ * <p>
+ * To learn more about SQL commands, functions, and conditions supported in Clean Rooms, see the <a
+ * href="https://docs.aws.amazon.com/clean-rooms/latest/sql-reference/sql-reference.html">Clean Rooms SQL Reference</a>.
  * </p>
  */
 @ThreadSafe
@@ -157,6 +162,74 @@ public class AWSCleanRoomsClient extends AmazonWebServiceClient implements AWSCl
 
     /**
      * <p>
+     * Retrieves multiple analysis templates within a collaboration by their Amazon Resource Names (ARNs).
+     * </p>
+     * 
+     * @param batchGetCollaborationAnalysisTemplateRequest
+     * @return Result of the BatchGetCollaborationAnalysisTemplate operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.BatchGetCollaborationAnalysisTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/BatchGetCollaborationAnalysisTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public BatchGetCollaborationAnalysisTemplateResult batchGetCollaborationAnalysisTemplate(BatchGetCollaborationAnalysisTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchGetCollaborationAnalysisTemplate(request);
+    }
+
+    @SdkInternalApi
+    final BatchGetCollaborationAnalysisTemplateResult executeBatchGetCollaborationAnalysisTemplate(
+            BatchGetCollaborationAnalysisTemplateRequest batchGetCollaborationAnalysisTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchGetCollaborationAnalysisTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchGetCollaborationAnalysisTemplateRequest> request = null;
+        Response<BatchGetCollaborationAnalysisTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchGetCollaborationAnalysisTemplateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(batchGetCollaborationAnalysisTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CleanRooms");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetCollaborationAnalysisTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchGetCollaborationAnalysisTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new BatchGetCollaborationAnalysisTemplateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves multiple schemas by their identifiers.
      * </p>
      * 
@@ -210,6 +283,76 @@ public class AWSCleanRoomsClient extends AmazonWebServiceClient implements AWSCl
 
             HttpResponseHandler<AmazonWebServiceResponse<BatchGetSchemaResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new BatchGetSchemaResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a new analysis template.
+     * </p>
+     * 
+     * @param createAnalysisTemplateRequest
+     * @return Result of the CreateAnalysisTemplate operation returned by the service.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws ServiceQuotaExceededException
+     *         Request denied because service quota has been exceeded.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.CreateAnalysisTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateAnalysisTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateAnalysisTemplateResult createAnalysisTemplate(CreateAnalysisTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateAnalysisTemplate(request);
+    }
+
+    @SdkInternalApi
+    final CreateAnalysisTemplateResult executeCreateAnalysisTemplate(CreateAnalysisTemplateRequest createAnalysisTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createAnalysisTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateAnalysisTemplateRequest> request = null;
+        Response<CreateAnalysisTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateAnalysisTemplateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAnalysisTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CleanRooms");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAnalysisTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateAnalysisTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateAnalysisTemplateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -558,6 +701,72 @@ public class AWSCleanRoomsClient extends AmazonWebServiceClient implements AWSCl
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateMembershipResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateMembershipResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes an analysis template.
+     * </p>
+     * 
+     * @param deleteAnalysisTemplateRequest
+     * @return Result of the DeleteAnalysisTemplate operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.DeleteAnalysisTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteAnalysisTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteAnalysisTemplateResult deleteAnalysisTemplate(DeleteAnalysisTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAnalysisTemplate(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAnalysisTemplateResult executeDeleteAnalysisTemplate(DeleteAnalysisTemplateRequest deleteAnalysisTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteAnalysisTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteAnalysisTemplateRequest> request = null;
+        Response<DeleteAnalysisTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteAnalysisTemplateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAnalysisTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CleanRooms");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAnalysisTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteAnalysisTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteAnalysisTemplateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -977,6 +1186,71 @@ public class AWSCleanRoomsClient extends AmazonWebServiceClient implements AWSCl
 
     /**
      * <p>
+     * Retrieves an analysis template.
+     * </p>
+     * 
+     * @param getAnalysisTemplateRequest
+     * @return Result of the GetAnalysisTemplate operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.GetAnalysisTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetAnalysisTemplate" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetAnalysisTemplateResult getAnalysisTemplate(GetAnalysisTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAnalysisTemplate(request);
+    }
+
+    @SdkInternalApi
+    final GetAnalysisTemplateResult executeGetAnalysisTemplate(GetAnalysisTemplateRequest getAnalysisTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getAnalysisTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAnalysisTemplateRequest> request = null;
+        Response<GetAnalysisTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAnalysisTemplateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAnalysisTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CleanRooms");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAnalysisTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetAnalysisTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetAnalysisTemplateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns metadata about a collaboration.
      * </p>
      * 
@@ -1028,6 +1302,74 @@ public class AWSCleanRoomsClient extends AmazonWebServiceClient implements AWSCl
 
             HttpResponseHandler<AmazonWebServiceResponse<GetCollaborationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetCollaborationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves an analysis template within a collaboration.
+     * </p>
+     * 
+     * @param getCollaborationAnalysisTemplateRequest
+     * @return Result of the GetCollaborationAnalysisTemplate operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.GetCollaborationAnalysisTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetCollaborationAnalysisTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetCollaborationAnalysisTemplateResult getCollaborationAnalysisTemplate(GetCollaborationAnalysisTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCollaborationAnalysisTemplate(request);
+    }
+
+    @SdkInternalApi
+    final GetCollaborationAnalysisTemplateResult executeGetCollaborationAnalysisTemplate(
+            GetCollaborationAnalysisTemplateRequest getCollaborationAnalysisTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getCollaborationAnalysisTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetCollaborationAnalysisTemplateRequest> request = null;
+        Response<GetCollaborationAnalysisTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetCollaborationAnalysisTemplateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getCollaborationAnalysisTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CleanRooms");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCollaborationAnalysisTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetCollaborationAnalysisTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetCollaborationAnalysisTemplateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1488,6 +1830,140 @@ public class AWSCleanRoomsClient extends AmazonWebServiceClient implements AWSCl
             HttpResponseHandler<AmazonWebServiceResponse<GetSchemaAnalysisRuleResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new GetSchemaAnalysisRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists analysis templates that the caller owns.
+     * </p>
+     * 
+     * @param listAnalysisTemplatesRequest
+     * @return Result of the ListAnalysisTemplates operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.ListAnalysisTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListAnalysisTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListAnalysisTemplatesResult listAnalysisTemplates(ListAnalysisTemplatesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAnalysisTemplates(request);
+    }
+
+    @SdkInternalApi
+    final ListAnalysisTemplatesResult executeListAnalysisTemplates(ListAnalysisTemplatesRequest listAnalysisTemplatesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAnalysisTemplatesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAnalysisTemplatesRequest> request = null;
+        Response<ListAnalysisTemplatesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAnalysisTemplatesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAnalysisTemplatesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CleanRooms");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAnalysisTemplates");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAnalysisTemplatesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ListAnalysisTemplatesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists analysis templates within a collaboration.
+     * </p>
+     * 
+     * @param listCollaborationAnalysisTemplatesRequest
+     * @return Result of the ListCollaborationAnalysisTemplates operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.ListCollaborationAnalysisTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListCollaborationAnalysisTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListCollaborationAnalysisTemplatesResult listCollaborationAnalysisTemplates(ListCollaborationAnalysisTemplatesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListCollaborationAnalysisTemplates(request);
+    }
+
+    @SdkInternalApi
+    final ListCollaborationAnalysisTemplatesResult executeListCollaborationAnalysisTemplates(
+            ListCollaborationAnalysisTemplatesRequest listCollaborationAnalysisTemplatesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listCollaborationAnalysisTemplatesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListCollaborationAnalysisTemplatesRequest> request = null;
+        Response<ListCollaborationAnalysisTemplatesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListCollaborationAnalysisTemplatesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listCollaborationAnalysisTemplatesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CleanRooms");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCollaborationAnalysisTemplates");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListCollaborationAnalysisTemplatesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListCollaborationAnalysisTemplatesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2011,7 +2487,7 @@ public class AWSCleanRoomsClient extends AmazonWebServiceClient implements AWSCl
 
     /**
      * <p>
-     * Creates a protected query that is started by AWS Clean Rooms.
+     * Creates a protected query that is started by Clean Rooms.
      * </p>
      * 
      * @param startProtectedQueryRequest
@@ -2184,6 +2660,72 @@ public class AWSCleanRoomsClient extends AmazonWebServiceClient implements AWSCl
 
             HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the analysis template metadata.
+     * </p>
+     * 
+     * @param updateAnalysisTemplateRequest
+     * @return Result of the UpdateAnalysisTemplate operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.UpdateAnalysisTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateAnalysisTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateAnalysisTemplateResult updateAnalysisTemplate(UpdateAnalysisTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateAnalysisTemplate(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAnalysisTemplateResult executeUpdateAnalysisTemplate(UpdateAnalysisTemplateRequest updateAnalysisTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateAnalysisTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateAnalysisTemplateRequest> request = null;
+        Response<UpdateAnalysisTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateAnalysisTemplateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAnalysisTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CleanRooms");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAnalysisTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateAnalysisTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateAnalysisTemplateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

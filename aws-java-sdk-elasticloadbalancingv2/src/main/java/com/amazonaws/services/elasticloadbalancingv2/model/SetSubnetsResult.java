@@ -33,6 +33,9 @@ public class SetSubnetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * <p>
      * [Network Load Balancers] The IP address type.
      * </p>
+     * <p>
+     * [Gateway Load Balancers] The IP address type.
+     * </p>
      */
     private String ipAddressType;
 
@@ -110,9 +113,14 @@ public class SetSubnetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * <p>
      * [Network Load Balancers] The IP address type.
      * </p>
+     * <p>
+     * [Gateway Load Balancers] The IP address type.
+     * </p>
      * 
      * @param ipAddressType
-     *        [Network Load Balancers] The IP address type.
+     *        [Network Load Balancers] The IP address type.</p>
+     *        <p>
+     *        [Gateway Load Balancers] The IP address type.
      * @see IpAddressType
      */
 
@@ -124,8 +132,13 @@ public class SetSubnetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * <p>
      * [Network Load Balancers] The IP address type.
      * </p>
+     * <p>
+     * [Gateway Load Balancers] The IP address type.
+     * </p>
      * 
-     * @return [Network Load Balancers] The IP address type.
+     * @return [Network Load Balancers] The IP address type.</p>
+     *         <p>
+     *         [Gateway Load Balancers] The IP address type.
      * @see IpAddressType
      */
 
@@ -137,9 +150,14 @@ public class SetSubnetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * <p>
      * [Network Load Balancers] The IP address type.
      * </p>
+     * <p>
+     * [Gateway Load Balancers] The IP address type.
+     * </p>
      * 
      * @param ipAddressType
-     *        [Network Load Balancers] The IP address type.
+     *        [Network Load Balancers] The IP address type.</p>
+     *        <p>
+     *        [Gateway Load Balancers] The IP address type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IpAddressType
      */
@@ -153,9 +171,14 @@ public class SetSubnetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * <p>
      * [Network Load Balancers] The IP address type.
      * </p>
+     * <p>
+     * [Gateway Load Balancers] The IP address type.
+     * </p>
      * 
      * @param ipAddressType
-     *        [Network Load Balancers] The IP address type.
+     *        [Network Load Balancers] The IP address type.</p>
+     *        <p>
+     *        [Gateway Load Balancers] The IP address type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IpAddressType
      */

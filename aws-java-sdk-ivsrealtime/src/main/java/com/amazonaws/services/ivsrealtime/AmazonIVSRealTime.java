@@ -30,23 +30,43 @@ import com.amazonaws.services.ivsrealtime.model.*;
  * <b>Introduction</b>
  * </p>
  * <p>
- * The Amazon Interactive Video Service (IVS) stage API is REST compatible, using a standard HTTP API and an AWS
+ * The Amazon Interactive Video Service (IVS) real-time API is REST compatible, using a standard HTTP API and an AWS
  * EventBridge event stream for responses. JSON is used for both requests and responses, including errors.
  * </p>
  * <p>
- * Terminology: The IVS stage API sometimes is referred to as the IVS RealTime API.
+ * Terminology:
  * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * A <i>stage</i> is a virtual space where participants can exchange video in real time.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * A <i>participant token</i> is a token that authenticates a participant when they join a stage.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * A <i>participant object</i> represents participants (people) in the stage and contains information about them. When a
+ * token is created, it includes a participant ID; when a participant uses that token to join a stage, the participant
+ * is associated with that participant ID There is a 1:1 mapping between participant tokens and participants.
+ * </p>
+ * </li>
+ * </ul>
  * <p>
  * <b>Resources</b>
  * </p>
  * <p>
  * The following resources contain information about your IVS live stream (see <a
- * href="https://docs.aws.amazon.com/ivs/latest/userguide/getting-started.html">Getting Started with Amazon IVS</a>):
+ * href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/getting-started.html">Getting Started with Amazon IVS
+ * Real-Time Streaming</a>):
  * </p>
  * <ul>
  * <li>
  * <p>
- * <b>Stage</b> — A stage is a virtual space where multiple participants can exchange audio and video in real time.
+ * <b>Stage</b> — A stage is a virtual space where participants can exchange video in real time.
  * </p>
  * </li>
  * </ul>
@@ -66,7 +86,7 @@ import com.amazonaws.services.ivsrealtime.model.*;
  * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Access Tags</a>).
  * </p>
  * <p>
- * The Amazon IVS stage API has these tag-related endpoints: <a>TagResource</a>, <a>UntagResource</a>, and
+ * The Amazon IVS real-time API has these tag-related endpoints: <a>TagResource</a>, <a>UntagResource</a>, and
  * <a>ListTagsForResource</a>. The following resource supports tagging: Stage.
  * </p>
  * <p>
@@ -100,13 +120,39 @@ import com.amazonaws.services.ivsrealtime.model.*;
  * </li>
  * <li>
  * <p>
+ * <a>GetParticipant</a> — Gets information about the specified participant token.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a>GetStage</a> — Gets information for the specified stage.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetStageSession</a> — Gets information for the specified stage session.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListParticipantEvents</a> — Lists events for a specified participant that occurred during a specified stage
+ * session.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListParticipants</a> — Lists all participants in a specified stage session.
  * </p>
  * </li>
  * <li>
  * <p>
  * <a>ListStages</a> — Gets summary information about all stages in your account, in the AWS region where the API
  * request is processed.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListStageSessions</a> — Gets all sessions for a specified stage.
  * </p>
  * </li>
  * <li>
@@ -223,6 +269,22 @@ public interface AmazonIVSRealTime {
 
     /**
      * <p>
+     * Gets information about the specified participant token.
+     * </p>
+     * 
+     * @param getParticipantRequest
+     * @return Result of the GetParticipant operation returned by the service.
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     * @sample AmazonIVSRealTime.GetParticipant
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetParticipant" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetParticipantResult getParticipant(GetParticipantRequest getParticipantRequest);
+
+    /**
+     * <p>
      * Gets information for the specified stage.
      * </p>
      * 
@@ -236,6 +298,67 @@ public interface AmazonIVSRealTime {
      *      Documentation</a>
      */
     GetStageResult getStage(GetStageRequest getStageRequest);
+
+    /**
+     * <p>
+     * Gets information for the specified stage session.
+     * </p>
+     * 
+     * @param getStageSessionRequest
+     * @return Result of the GetStageSession operation returned by the service.
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     * @sample AmazonIVSRealTime.GetStageSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetStageSession" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetStageSessionResult getStageSession(GetStageSessionRequest getStageSessionRequest);
+
+    /**
+     * <p>
+     * Lists events for a specified participant that occurred during a specified stage session.
+     * </p>
+     * 
+     * @param listParticipantEventsRequest
+     * @return Result of the ListParticipantEvents operation returned by the service.
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     * @sample AmazonIVSRealTime.ListParticipantEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListParticipantEvents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListParticipantEventsResult listParticipantEvents(ListParticipantEventsRequest listParticipantEventsRequest);
+
+    /**
+     * <p>
+     * Lists all participants in a specified stage session.
+     * </p>
+     * 
+     * @param listParticipantsRequest
+     * @return Result of the ListParticipants operation returned by the service.
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     * @sample AmazonIVSRealTime.ListParticipants
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListParticipants" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListParticipantsResult listParticipants(ListParticipantsRequest listParticipantsRequest);
+
+    /**
+     * <p>
+     * Gets all sessions for a specified stage.
+     * </p>
+     * 
+     * @param listStageSessionsRequest
+     * @return Result of the ListStageSessions operation returned by the service.
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     * @sample AmazonIVSRealTime.ListStageSessions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListStageSessions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListStageSessionsResult listStageSessions(ListStageSessionsRequest listStageSessionsRequest);
 
     /**
      * <p>

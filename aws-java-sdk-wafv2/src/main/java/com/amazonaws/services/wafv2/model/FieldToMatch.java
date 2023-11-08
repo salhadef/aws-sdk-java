@@ -94,9 +94,9 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * A limited amount of the request body is forwarded to WAF for inspection by the underlying host service. For
-     * regional resources, the limit is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is 16 KB
-     * (16,384 kilobytes). For CloudFront distributions, you can increase the limit in the web ACL's
-     * <code>AssociationConfig</code>, for additional processing fees.
+     * regional resources, the limit is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16 KB (16,384
+     * bytes). For CloudFront distributions, you can increase the limit in the web ACL's <code>AssociationConfig</code>,
+     * for additional processing fees.
      * </p>
      * <p>
      * For information about how to handle oversized request bodies, see the <code>Body</code> object configuration.
@@ -118,9 +118,9 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * A limited amount of the request body is forwarded to WAF for inspection by the underlying host service. For
-     * regional resources, the limit is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is 16 KB
-     * (16,384 kilobytes). For CloudFront distributions, you can increase the limit in the web ACL's
-     * <code>AssociationConfig</code>, for additional processing fees.
+     * regional resources, the limit is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16 KB (16,384
+     * bytes). For CloudFront distributions, you can increase the limit in the web ACL's <code>AssociationConfig</code>,
+     * for additional processing fees.
      * </p>
      * <p>
      * For information about how to handle oversized request bodies, see the <code>JsonBody</code> object configuration.
@@ -153,6 +153,40 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Cookies cookies;
+    /**
+     * <p>
+     * Inspect a string containing the list of the request's header names, ordered as they appear in the web request
+     * that WAF receives for inspection. WAF generates the string and then uses that as the field to match component in
+     * its inspection. WAF separates the header names in the string using colons and no added spaces, for example
+     * <code>host:user-agent:accept:authorization:referer</code>.
+     * </p>
+     */
+    private HeaderOrder headerOrder;
+    /**
+     * <p>
+     * Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS
+     * Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's TLS
+     * configuration. WAF calculates and logs this fingerprint for each request that has enough TLS Client Hello
+     * information for the calculation. Almost all web requests include this information.
+     * </p>
+     * <note>
+     * <p>
+     * You can use this choice only with a string match <code>ByteMatchStatement</code> with the
+     * <code>PositionalConstraint</code> set to <code>EXACTLY</code>.
+     * </p>
+     * </note>
+     * <p>
+     * You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the
+     * fingerprint, it includes it in the logs. For information about the logging fields, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF
+     * Developer Guide</i>.
+     * </p>
+     * <p>
+     * Provide the JA3 fingerprint string from the logs in your string match statement specification, to match with any
+     * future requests that have the same TLS configuration.
+     * </p>
+     */
+    private JA3Fingerprint jA3Fingerprint;
 
     /**
      * <p>
@@ -438,9 +472,9 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * A limited amount of the request body is forwarded to WAF for inspection by the underlying host service. For
-     * regional resources, the limit is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is 16 KB
-     * (16,384 kilobytes). For CloudFront distributions, you can increase the limit in the web ACL's
-     * <code>AssociationConfig</code>, for additional processing fees.
+     * regional resources, the limit is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16 KB (16,384
+     * bytes). For CloudFront distributions, you can increase the limit in the web ACL's <code>AssociationConfig</code>,
+     * for additional processing fees.
      * </p>
      * <p>
      * For information about how to handle oversized request bodies, see the <code>Body</code> object configuration.
@@ -452,8 +486,8 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      *        HTTP request body, such as data from a form. </p>
      *        <p>
      *        A limited amount of the request body is forwarded to WAF for inspection by the underlying host service.
-     *        For regional resources, the limit is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is
-     *        16 KB (16,384 kilobytes). For CloudFront distributions, you can increase the limit in the web ACL's
+     *        For regional resources, the limit is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16
+     *        KB (16,384 bytes). For CloudFront distributions, you can increase the limit in the web ACL's
      *        <code>AssociationConfig</code>, for additional processing fees.
      *        </p>
      *        <p>
@@ -473,9 +507,9 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * A limited amount of the request body is forwarded to WAF for inspection by the underlying host service. For
-     * regional resources, the limit is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is 16 KB
-     * (16,384 kilobytes). For CloudFront distributions, you can increase the limit in the web ACL's
-     * <code>AssociationConfig</code>, for additional processing fees.
+     * regional resources, the limit is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16 KB (16,384
+     * bytes). For CloudFront distributions, you can increase the limit in the web ACL's <code>AssociationConfig</code>,
+     * for additional processing fees.
      * </p>
      * <p>
      * For information about how to handle oversized request bodies, see the <code>Body</code> object configuration.
@@ -486,8 +520,8 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      *         HTTP request body, such as data from a form. </p>
      *         <p>
      *         A limited amount of the request body is forwarded to WAF for inspection by the underlying host service.
-     *         For regional resources, the limit is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit
-     *         is 16 KB (16,384 kilobytes). For CloudFront distributions, you can increase the limit in the web ACL's
+     *         For regional resources, the limit is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16
+     *         KB (16,384 bytes). For CloudFront distributions, you can increase the limit in the web ACL's
      *         <code>AssociationConfig</code>, for additional processing fees.
      *         </p>
      *         <p>
@@ -507,9 +541,9 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * A limited amount of the request body is forwarded to WAF for inspection by the underlying host service. For
-     * regional resources, the limit is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is 16 KB
-     * (16,384 kilobytes). For CloudFront distributions, you can increase the limit in the web ACL's
-     * <code>AssociationConfig</code>, for additional processing fees.
+     * regional resources, the limit is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16 KB (16,384
+     * bytes). For CloudFront distributions, you can increase the limit in the web ACL's <code>AssociationConfig</code>,
+     * for additional processing fees.
      * </p>
      * <p>
      * For information about how to handle oversized request bodies, see the <code>Body</code> object configuration.
@@ -521,8 +555,8 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      *        HTTP request body, such as data from a form. </p>
      *        <p>
      *        A limited amount of the request body is forwarded to WAF for inspection by the underlying host service.
-     *        For regional resources, the limit is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is
-     *        16 KB (16,384 kilobytes). For CloudFront distributions, you can increase the limit in the web ACL's
+     *        For regional resources, the limit is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16
+     *        KB (16,384 bytes). For CloudFront distributions, you can increase the limit in the web ACL's
      *        <code>AssociationConfig</code>, for additional processing fees.
      *        </p>
      *        <p>
@@ -590,9 +624,9 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * A limited amount of the request body is forwarded to WAF for inspection by the underlying host service. For
-     * regional resources, the limit is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is 16 KB
-     * (16,384 kilobytes). For CloudFront distributions, you can increase the limit in the web ACL's
-     * <code>AssociationConfig</code>, for additional processing fees.
+     * regional resources, the limit is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16 KB (16,384
+     * bytes). For CloudFront distributions, you can increase the limit in the web ACL's <code>AssociationConfig</code>,
+     * for additional processing fees.
      * </p>
      * <p>
      * For information about how to handle oversized request bodies, see the <code>JsonBody</code> object configuration.
@@ -604,8 +638,8 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      *        request body, such as data from a form. </p>
      *        <p>
      *        A limited amount of the request body is forwarded to WAF for inspection by the underlying host service.
-     *        For regional resources, the limit is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is
-     *        16 KB (16,384 kilobytes). For CloudFront distributions, you can increase the limit in the web ACL's
+     *        For regional resources, the limit is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16
+     *        KB (16,384 bytes). For CloudFront distributions, you can increase the limit in the web ACL's
      *        <code>AssociationConfig</code>, for additional processing fees.
      *        </p>
      *        <p>
@@ -625,9 +659,9 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * A limited amount of the request body is forwarded to WAF for inspection by the underlying host service. For
-     * regional resources, the limit is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is 16 KB
-     * (16,384 kilobytes). For CloudFront distributions, you can increase the limit in the web ACL's
-     * <code>AssociationConfig</code>, for additional processing fees.
+     * regional resources, the limit is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16 KB (16,384
+     * bytes). For CloudFront distributions, you can increase the limit in the web ACL's <code>AssociationConfig</code>,
+     * for additional processing fees.
      * </p>
      * <p>
      * For information about how to handle oversized request bodies, see the <code>JsonBody</code> object configuration.
@@ -638,8 +672,8 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      *         request body, such as data from a form. </p>
      *         <p>
      *         A limited amount of the request body is forwarded to WAF for inspection by the underlying host service.
-     *         For regional resources, the limit is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit
-     *         is 16 KB (16,384 kilobytes). For CloudFront distributions, you can increase the limit in the web ACL's
+     *         For regional resources, the limit is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16
+     *         KB (16,384 bytes). For CloudFront distributions, you can increase the limit in the web ACL's
      *         <code>AssociationConfig</code>, for additional processing fees.
      *         </p>
      *         <p>
@@ -659,9 +693,9 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * A limited amount of the request body is forwarded to WAF for inspection by the underlying host service. For
-     * regional resources, the limit is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is 16 KB
-     * (16,384 kilobytes). For CloudFront distributions, you can increase the limit in the web ACL's
-     * <code>AssociationConfig</code>, for additional processing fees.
+     * regional resources, the limit is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16 KB (16,384
+     * bytes). For CloudFront distributions, you can increase the limit in the web ACL's <code>AssociationConfig</code>,
+     * for additional processing fees.
      * </p>
      * <p>
      * For information about how to handle oversized request bodies, see the <code>JsonBody</code> object configuration.
@@ -673,8 +707,8 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      *        request body, such as data from a form. </p>
      *        <p>
      *        A limited amount of the request body is forwarded to WAF for inspection by the underlying host service.
-     *        For regional resources, the limit is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is
-     *        16 KB (16,384 kilobytes). For CloudFront distributions, you can increase the limit in the web ACL's
+     *        For regional resources, the limit is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16
+     *        KB (16,384 bytes). For CloudFront distributions, you can increase the limit in the web ACL's
      *        <code>AssociationConfig</code>, for additional processing fees.
      *        </p>
      *        <p>
@@ -853,6 +887,212 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Inspect a string containing the list of the request's header names, ordered as they appear in the web request
+     * that WAF receives for inspection. WAF generates the string and then uses that as the field to match component in
+     * its inspection. WAF separates the header names in the string using colons and no added spaces, for example
+     * <code>host:user-agent:accept:authorization:referer</code>.
+     * </p>
+     * 
+     * @param headerOrder
+     *        Inspect a string containing the list of the request's header names, ordered as they appear in the web
+     *        request that WAF receives for inspection. WAF generates the string and then uses that as the field to
+     *        match component in its inspection. WAF separates the header names in the string using colons and no added
+     *        spaces, for example <code>host:user-agent:accept:authorization:referer</code>.
+     */
+
+    public void setHeaderOrder(HeaderOrder headerOrder) {
+        this.headerOrder = headerOrder;
+    }
+
+    /**
+     * <p>
+     * Inspect a string containing the list of the request's header names, ordered as they appear in the web request
+     * that WAF receives for inspection. WAF generates the string and then uses that as the field to match component in
+     * its inspection. WAF separates the header names in the string using colons and no added spaces, for example
+     * <code>host:user-agent:accept:authorization:referer</code>.
+     * </p>
+     * 
+     * @return Inspect a string containing the list of the request's header names, ordered as they appear in the web
+     *         request that WAF receives for inspection. WAF generates the string and then uses that as the field to
+     *         match component in its inspection. WAF separates the header names in the string using colons and no added
+     *         spaces, for example <code>host:user-agent:accept:authorization:referer</code>.
+     */
+
+    public HeaderOrder getHeaderOrder() {
+        return this.headerOrder;
+    }
+
+    /**
+     * <p>
+     * Inspect a string containing the list of the request's header names, ordered as they appear in the web request
+     * that WAF receives for inspection. WAF generates the string and then uses that as the field to match component in
+     * its inspection. WAF separates the header names in the string using colons and no added spaces, for example
+     * <code>host:user-agent:accept:authorization:referer</code>.
+     * </p>
+     * 
+     * @param headerOrder
+     *        Inspect a string containing the list of the request's header names, ordered as they appear in the web
+     *        request that WAF receives for inspection. WAF generates the string and then uses that as the field to
+     *        match component in its inspection. WAF separates the header names in the string using colons and no added
+     *        spaces, for example <code>host:user-agent:accept:authorization:referer</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FieldToMatch withHeaderOrder(HeaderOrder headerOrder) {
+        setHeaderOrder(headerOrder);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS
+     * Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's TLS
+     * configuration. WAF calculates and logs this fingerprint for each request that has enough TLS Client Hello
+     * information for the calculation. Almost all web requests include this information.
+     * </p>
+     * <note>
+     * <p>
+     * You can use this choice only with a string match <code>ByteMatchStatement</code> with the
+     * <code>PositionalConstraint</code> set to <code>EXACTLY</code>.
+     * </p>
+     * </note>
+     * <p>
+     * You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the
+     * fingerprint, it includes it in the logs. For information about the logging fields, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF
+     * Developer Guide</i>.
+     * </p>
+     * <p>
+     * Provide the JA3 fingerprint string from the logs in your string match statement specification, to match with any
+     * future requests that have the same TLS configuration.
+     * </p>
+     * 
+     * @param jA3Fingerprint
+     *        Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the
+     *        TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's
+     *        TLS configuration. WAF calculates and logs this fingerprint for each request that has enough TLS Client
+     *        Hello information for the calculation. Almost all web requests include this information.</p> <note>
+     *        <p>
+     *        You can use this choice only with a string match <code>ByteMatchStatement</code> with the
+     *        <code>PositionalConstraint</code> set to <code>EXACTLY</code>.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate
+     *        the fingerprint, it includes it in the logs. For information about the logging fields, see <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the
+     *        <i>WAF Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        Provide the JA3 fingerprint string from the logs in your string match statement specification, to match
+     *        with any future requests that have the same TLS configuration.
+     */
+
+    public void setJA3Fingerprint(JA3Fingerprint jA3Fingerprint) {
+        this.jA3Fingerprint = jA3Fingerprint;
+    }
+
+    /**
+     * <p>
+     * Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS
+     * Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's TLS
+     * configuration. WAF calculates and logs this fingerprint for each request that has enough TLS Client Hello
+     * information for the calculation. Almost all web requests include this information.
+     * </p>
+     * <note>
+     * <p>
+     * You can use this choice only with a string match <code>ByteMatchStatement</code> with the
+     * <code>PositionalConstraint</code> set to <code>EXACTLY</code>.
+     * </p>
+     * </note>
+     * <p>
+     * You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the
+     * fingerprint, it includes it in the logs. For information about the logging fields, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF
+     * Developer Guide</i>.
+     * </p>
+     * <p>
+     * Provide the JA3 fingerprint string from the logs in your string match statement specification, to match with any
+     * future requests that have the same TLS configuration.
+     * </p>
+     * 
+     * @return Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the
+     *         TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's
+     *         TLS configuration. WAF calculates and logs this fingerprint for each request that has enough TLS Client
+     *         Hello information for the calculation. Almost all web requests include this information.</p> <note>
+     *         <p>
+     *         You can use this choice only with a string match <code>ByteMatchStatement</code> with the
+     *         <code>PositionalConstraint</code> set to <code>EXACTLY</code>.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate
+     *         the fingerprint, it includes it in the logs. For information about the logging fields, see <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the
+     *         <i>WAF Developer Guide</i>.
+     *         </p>
+     *         <p>
+     *         Provide the JA3 fingerprint string from the logs in your string match statement specification, to match
+     *         with any future requests that have the same TLS configuration.
+     */
+
+    public JA3Fingerprint getJA3Fingerprint() {
+        return this.jA3Fingerprint;
+    }
+
+    /**
+     * <p>
+     * Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS
+     * Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's TLS
+     * configuration. WAF calculates and logs this fingerprint for each request that has enough TLS Client Hello
+     * information for the calculation. Almost all web requests include this information.
+     * </p>
+     * <note>
+     * <p>
+     * You can use this choice only with a string match <code>ByteMatchStatement</code> with the
+     * <code>PositionalConstraint</code> set to <code>EXACTLY</code>.
+     * </p>
+     * </note>
+     * <p>
+     * You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the
+     * fingerprint, it includes it in the logs. For information about the logging fields, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF
+     * Developer Guide</i>.
+     * </p>
+     * <p>
+     * Provide the JA3 fingerprint string from the logs in your string match statement specification, to match with any
+     * future requests that have the same TLS configuration.
+     * </p>
+     * 
+     * @param jA3Fingerprint
+     *        Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the
+     *        TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's
+     *        TLS configuration. WAF calculates and logs this fingerprint for each request that has enough TLS Client
+     *        Hello information for the calculation. Almost all web requests include this information.</p> <note>
+     *        <p>
+     *        You can use this choice only with a string match <code>ByteMatchStatement</code> with the
+     *        <code>PositionalConstraint</code> set to <code>EXACTLY</code>.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate
+     *        the fingerprint, it includes it in the logs. For information about the logging fields, see <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the
+     *        <i>WAF Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        Provide the JA3 fingerprint string from the logs in your string match statement specification, to match
+     *        with any future requests that have the same TLS configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FieldToMatch withJA3Fingerprint(JA3Fingerprint jA3Fingerprint) {
+        setJA3Fingerprint(jA3Fingerprint);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -883,7 +1123,11 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
         if (getHeaders() != null)
             sb.append("Headers: ").append(getHeaders()).append(",");
         if (getCookies() != null)
-            sb.append("Cookies: ").append(getCookies());
+            sb.append("Cookies: ").append(getCookies()).append(",");
+        if (getHeaderOrder() != null)
+            sb.append("HeaderOrder: ").append(getHeaderOrder()).append(",");
+        if (getJA3Fingerprint() != null)
+            sb.append("JA3Fingerprint: ").append(getJA3Fingerprint());
         sb.append("}");
         return sb.toString();
     }
@@ -938,6 +1182,14 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCookies() != null && other.getCookies().equals(this.getCookies()) == false)
             return false;
+        if (other.getHeaderOrder() == null ^ this.getHeaderOrder() == null)
+            return false;
+        if (other.getHeaderOrder() != null && other.getHeaderOrder().equals(this.getHeaderOrder()) == false)
+            return false;
+        if (other.getJA3Fingerprint() == null ^ this.getJA3Fingerprint() == null)
+            return false;
+        if (other.getJA3Fingerprint() != null && other.getJA3Fingerprint().equals(this.getJA3Fingerprint()) == false)
+            return false;
         return true;
     }
 
@@ -956,6 +1208,8 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getJsonBody() == null) ? 0 : getJsonBody().hashCode());
         hashCode = prime * hashCode + ((getHeaders() == null) ? 0 : getHeaders().hashCode());
         hashCode = prime * hashCode + ((getCookies() == null) ? 0 : getCookies().hashCode());
+        hashCode = prime * hashCode + ((getHeaderOrder() == null) ? 0 : getHeaderOrder().hashCode());
+        hashCode = prime * hashCode + ((getJA3Fingerprint() == null) ? 0 : getJA3Fingerprint().hashCode());
         return hashCode;
     }
 

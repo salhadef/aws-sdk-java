@@ -27,24 +27,28 @@ public class GetComputeAccessRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A unique identifier for the fleet that the compute resource is registered to.
+     * A unique identifier for the fleet that contains the compute resource you want to connect to. You can use either
+     * the fleet ID or ARN value.
      * </p>
      */
     private String fleetId;
     /**
      * <p>
-     * The name of the compute resource you are requesting credentials for.
+     * A unique identifier for the compute resource that you want to connect to. You can use either a registered compute
+     * name or an instance ID.
      * </p>
      */
     private String computeName;
 
     /**
      * <p>
-     * A unique identifier for the fleet that the compute resource is registered to.
+     * A unique identifier for the fleet that contains the compute resource you want to connect to. You can use either
+     * the fleet ID or ARN value.
      * </p>
      * 
      * @param fleetId
-     *        A unique identifier for the fleet that the compute resource is registered to.
+     *        A unique identifier for the fleet that contains the compute resource you want to connect to. You can use
+     *        either the fleet ID or ARN value.
      */
 
     public void setFleetId(String fleetId) {
@@ -53,10 +57,12 @@ public class GetComputeAccessRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A unique identifier for the fleet that the compute resource is registered to.
+     * A unique identifier for the fleet that contains the compute resource you want to connect to. You can use either
+     * the fleet ID or ARN value.
      * </p>
      * 
-     * @return A unique identifier for the fleet that the compute resource is registered to.
+     * @return A unique identifier for the fleet that contains the compute resource you want to connect to. You can use
+     *         either the fleet ID or ARN value.
      */
 
     public String getFleetId() {
@@ -65,11 +71,13 @@ public class GetComputeAccessRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A unique identifier for the fleet that the compute resource is registered to.
+     * A unique identifier for the fleet that contains the compute resource you want to connect to. You can use either
+     * the fleet ID or ARN value.
      * </p>
      * 
      * @param fleetId
-     *        A unique identifier for the fleet that the compute resource is registered to.
+     *        A unique identifier for the fleet that contains the compute resource you want to connect to. You can use
+     *        either the fleet ID or ARN value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +88,13 @@ public class GetComputeAccessRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the compute resource you are requesting credentials for.
+     * A unique identifier for the compute resource that you want to connect to. You can use either a registered compute
+     * name or an instance ID.
      * </p>
      * 
      * @param computeName
-     *        The name of the compute resource you are requesting credentials for.
+     *        A unique identifier for the compute resource that you want to connect to. You can use either a registered
+     *        compute name or an instance ID.
      */
 
     public void setComputeName(String computeName) {
@@ -93,10 +103,12 @@ public class GetComputeAccessRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the compute resource you are requesting credentials for.
+     * A unique identifier for the compute resource that you want to connect to. You can use either a registered compute
+     * name or an instance ID.
      * </p>
      * 
-     * @return The name of the compute resource you are requesting credentials for.
+     * @return A unique identifier for the compute resource that you want to connect to. You can use either a registered
+     *         compute name or an instance ID.
      */
 
     public String getComputeName() {
@@ -105,11 +117,13 @@ public class GetComputeAccessRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the compute resource you are requesting credentials for.
+     * A unique identifier for the compute resource that you want to connect to. You can use either a registered compute
+     * name or an instance ID.
      * </p>
      * 
      * @param computeName
-     *        The name of the compute resource you are requesting credentials for.
+     *        A unique identifier for the compute resource that you want to connect to. You can use either a registered
+     *        compute name or an instance ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

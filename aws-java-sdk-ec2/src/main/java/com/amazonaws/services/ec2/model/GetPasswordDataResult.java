@@ -177,7 +177,7 @@ public class GetPasswordDataResult extends com.amazonaws.AmazonWebServiceResult<
         if (getInstanceId() != null)
             sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getPasswordData() != null)
-            sb.append("PasswordData: ").append(getPasswordData()).append(",");
+            sb.append("PasswordData: ").append("***Sensitive Data Redacted***").append(",");
         if (getTimestamp() != null)
             sb.append("Timestamp: ").append(getTimestamp());
         sb.append("}");

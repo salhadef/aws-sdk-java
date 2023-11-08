@@ -54,7 +54,8 @@ public class ObdSignal implements Serializable, Cloneable, StructuredPojo {
     private Double scaling;
     /**
      * <p>
-     * Indicates where data appears in the message.
+     * The offset used to calculate the signal value. Combined with scaling, the calculation is
+     * <code>value = raw_value * scaling + offset</code>.
      * </p>
      */
     private Double offset;
@@ -245,11 +246,13 @@ public class ObdSignal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates where data appears in the message.
+     * The offset used to calculate the signal value. Combined with scaling, the calculation is
+     * <code>value = raw_value * scaling + offset</code>.
      * </p>
      * 
      * @param offset
-     *        Indicates where data appears in the message.
+     *        The offset used to calculate the signal value. Combined with scaling, the calculation is
+     *        <code>value = raw_value * scaling + offset</code>.
      */
 
     public void setOffset(Double offset) {
@@ -258,10 +261,12 @@ public class ObdSignal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates where data appears in the message.
+     * The offset used to calculate the signal value. Combined with scaling, the calculation is
+     * <code>value = raw_value * scaling + offset</code>.
      * </p>
      * 
-     * @return Indicates where data appears in the message.
+     * @return The offset used to calculate the signal value. Combined with scaling, the calculation is
+     *         <code>value = raw_value * scaling + offset</code>.
      */
 
     public Double getOffset() {
@@ -270,11 +275,13 @@ public class ObdSignal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates where data appears in the message.
+     * The offset used to calculate the signal value. Combined with scaling, the calculation is
+     * <code>value = raw_value * scaling + offset</code>.
      * </p>
      * 
      * @param offset
-     *        Indicates where data appears in the message.
+     *        The offset used to calculate the signal value. Combined with scaling, the calculation is
+     *        <code>value = raw_value * scaling + offset</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum ImportExportFileFormat {
 
     LexJson("LexJson"),
-    TSV("TSV");
+    TSV("TSV"),
+    CSV("CSV");
 
     private String value;
 

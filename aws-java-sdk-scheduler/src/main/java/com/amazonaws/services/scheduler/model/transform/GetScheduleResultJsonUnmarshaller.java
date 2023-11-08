@@ -48,6 +48,10 @@ public class GetScheduleResultJsonUnmarshaller implements Unmarshaller<GetSchedu
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("ActionAfterCompletion", targetDepth)) {
+                    context.nextToken();
+                    getScheduleResult.setActionAfterCompletion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Arn", targetDepth)) {
                     context.nextToken();
                     getScheduleResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));

@@ -68,6 +68,10 @@ public class ApplicationJsonUnmarshaller implements Unmarshaller<Application, Js
                     context.nextToken();
                     application.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DiscoveryStatus", targetDepth)) {
+                    context.nextToken();
+                    application.setDiscoveryStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Components", targetDepth)) {
                     context.nextToken();
                     application.setComponents(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))

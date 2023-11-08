@@ -57,6 +57,11 @@ public class UpdateServiceIntegrationConfigJsonUnmarshaller implements Unmarshal
                     updateServiceIntegrationConfig.setLogsAnomalyDetection(LogsAnomalyDetectionIntegrationConfigJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
+                if (context.testExpression("KMSServerSideEncryption", targetDepth)) {
+                    context.nextToken();
+                    updateServiceIntegrationConfig.setKMSServerSideEncryption(KMSServerSideEncryptionIntegrationConfigJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

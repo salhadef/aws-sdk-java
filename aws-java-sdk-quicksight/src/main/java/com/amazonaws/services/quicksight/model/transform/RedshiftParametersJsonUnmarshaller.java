@@ -64,6 +64,10 @@ public class RedshiftParametersJsonUnmarshaller implements Unmarshaller<Redshift
                     context.nextToken();
                     redshiftParameters.setClusterId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("IAMParameters", targetDepth)) {
+                    context.nextToken();
+                    redshiftParameters.setIAMParameters(RedshiftIAMParametersJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

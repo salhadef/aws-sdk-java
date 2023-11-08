@@ -47,6 +47,12 @@ public class Capacity implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Long logicalUsed;
+    /**
+     * <p>
+     * The amount of space in the cluster that's in cloud storage (for example, if you're using data tiering).
+     * </p>
+     */
+    private Long clusterCloudStorageUsed;
 
     /**
      * <p>
@@ -175,6 +181,46 @@ public class Capacity implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The amount of space in the cluster that's in cloud storage (for example, if you're using data tiering).
+     * </p>
+     * 
+     * @param clusterCloudStorageUsed
+     *        The amount of space in the cluster that's in cloud storage (for example, if you're using data tiering).
+     */
+
+    public void setClusterCloudStorageUsed(Long clusterCloudStorageUsed) {
+        this.clusterCloudStorageUsed = clusterCloudStorageUsed;
+    }
+
+    /**
+     * <p>
+     * The amount of space in the cluster that's in cloud storage (for example, if you're using data tiering).
+     * </p>
+     * 
+     * @return The amount of space in the cluster that's in cloud storage (for example, if you're using data tiering).
+     */
+
+    public Long getClusterCloudStorageUsed() {
+        return this.clusterCloudStorageUsed;
+    }
+
+    /**
+     * <p>
+     * The amount of space in the cluster that's in cloud storage (for example, if you're using data tiering).
+     * </p>
+     * 
+     * @param clusterCloudStorageUsed
+     *        The amount of space in the cluster that's in cloud storage (for example, if you're using data tiering).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Capacity withClusterCloudStorageUsed(Long clusterCloudStorageUsed) {
+        setClusterCloudStorageUsed(clusterCloudStorageUsed);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -191,7 +237,9 @@ public class Capacity implements Serializable, Cloneable, StructuredPojo {
         if (getProvisioned() != null)
             sb.append("Provisioned: ").append(getProvisioned()).append(",");
         if (getLogicalUsed() != null)
-            sb.append("LogicalUsed: ").append(getLogicalUsed());
+            sb.append("LogicalUsed: ").append(getLogicalUsed()).append(",");
+        if (getClusterCloudStorageUsed() != null)
+            sb.append("ClusterCloudStorageUsed: ").append(getClusterCloudStorageUsed());
         sb.append("}");
         return sb.toString();
     }
@@ -218,6 +266,10 @@ public class Capacity implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLogicalUsed() != null && other.getLogicalUsed().equals(this.getLogicalUsed()) == false)
             return false;
+        if (other.getClusterCloudStorageUsed() == null ^ this.getClusterCloudStorageUsed() == null)
+            return false;
+        if (other.getClusterCloudStorageUsed() != null && other.getClusterCloudStorageUsed().equals(this.getClusterCloudStorageUsed()) == false)
+            return false;
         return true;
     }
 
@@ -229,6 +281,7 @@ public class Capacity implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getUsed() == null) ? 0 : getUsed().hashCode());
         hashCode = prime * hashCode + ((getProvisioned() == null) ? 0 : getProvisioned().hashCode());
         hashCode = prime * hashCode + ((getLogicalUsed() == null) ? 0 : getLogicalUsed().hashCode());
+        hashCode = prime * hashCode + ((getClusterCloudStorageUsed() == null) ? 0 : getClusterCloudStorageUsed().hashCode());
         return hashCode;
     }
 

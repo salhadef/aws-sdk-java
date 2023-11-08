@@ -329,6 +329,39 @@ public class AWSComputeOptimizerAsyncClient extends AWSComputeOptimizerClient im
     }
 
     @Override
+    public java.util.concurrent.Future<ExportLicenseRecommendationsResult> exportLicenseRecommendationsAsync(ExportLicenseRecommendationsRequest request) {
+
+        return exportLicenseRecommendationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportLicenseRecommendationsResult> exportLicenseRecommendationsAsync(final ExportLicenseRecommendationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ExportLicenseRecommendationsRequest, ExportLicenseRecommendationsResult> asyncHandler) {
+        final ExportLicenseRecommendationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ExportLicenseRecommendationsResult>() {
+            @Override
+            public ExportLicenseRecommendationsResult call() throws Exception {
+                ExportLicenseRecommendationsResult result = null;
+
+                try {
+                    result = executeExportLicenseRecommendations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAutoScalingGroupRecommendationsResult> getAutoScalingGroupRecommendationsAsync(
             GetAutoScalingGroupRecommendationsRequest request) {
 
@@ -656,6 +689,39 @@ public class AWSComputeOptimizerAsyncClient extends AWSComputeOptimizerClient im
 
                 try {
                     result = executeGetLambdaFunctionRecommendations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLicenseRecommendationsResult> getLicenseRecommendationsAsync(GetLicenseRecommendationsRequest request) {
+
+        return getLicenseRecommendationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLicenseRecommendationsResult> getLicenseRecommendationsAsync(final GetLicenseRecommendationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetLicenseRecommendationsRequest, GetLicenseRecommendationsResult> asyncHandler) {
+        final GetLicenseRecommendationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetLicenseRecommendationsResult>() {
+            @Override
+            public GetLicenseRecommendationsResult call() throws Exception {
+                GetLicenseRecommendationsResult result = null;
+
+                try {
+                    result = executeGetLicenseRecommendations(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

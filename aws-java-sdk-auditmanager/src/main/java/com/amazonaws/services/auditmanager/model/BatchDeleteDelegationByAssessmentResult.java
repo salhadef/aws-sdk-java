@@ -114,7 +114,7 @@ public class BatchDeleteDelegationByAssessmentResult extends com.amazonaws.Amazo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getErrors() != null)
-            sb.append("Errors: ").append(getErrors());
+            sb.append("Errors: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

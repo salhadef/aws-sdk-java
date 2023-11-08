@@ -38,6 +38,8 @@ public class CreateUserRequestMarshaller {
             .marshallLocationName("password").build();
     private static final MarshallingInfo<String> USERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("username").build();
+    private static final MarshallingInfo<Boolean> REPLICATIONUSER_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("replicationUser").build();
 
     private static final CreateUserRequestMarshaller instance = new CreateUserRequestMarshaller();
 
@@ -60,6 +62,7 @@ public class CreateUserRequestMarshaller {
             protocolMarshaller.marshall(createUserRequest.getGroups(), GROUPS_BINDING);
             protocolMarshaller.marshall(createUserRequest.getPassword(), PASSWORD_BINDING);
             protocolMarshaller.marshall(createUserRequest.getUsername(), USERNAME_BINDING);
+            protocolMarshaller.marshall(createUserRequest.getReplicationUser(), REPLICATIONUSER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

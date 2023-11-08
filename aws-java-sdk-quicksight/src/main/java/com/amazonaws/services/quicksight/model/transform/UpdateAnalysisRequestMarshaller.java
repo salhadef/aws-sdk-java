@@ -41,6 +41,8 @@ public class UpdateAnalysisRequestMarshaller {
             .marshallLocationName("ThemeArn").build();
     private static final MarshallingInfo<StructuredPojo> DEFINITION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Definition").build();
+    private static final MarshallingInfo<StructuredPojo> VALIDATIONSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ValidationStrategy").build();
 
     private static final UpdateAnalysisRequestMarshaller instance = new UpdateAnalysisRequestMarshaller();
 
@@ -65,6 +67,7 @@ public class UpdateAnalysisRequestMarshaller {
             protocolMarshaller.marshall(updateAnalysisRequest.getSourceEntity(), SOURCEENTITY_BINDING);
             protocolMarshaller.marshall(updateAnalysisRequest.getThemeArn(), THEMEARN_BINDING);
             protocolMarshaller.marshall(updateAnalysisRequest.getDefinition(), DEFINITION_BINDING);
+            protocolMarshaller.marshall(updateAnalysisRequest.getValidationStrategy(), VALIDATIONSTRATEGY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

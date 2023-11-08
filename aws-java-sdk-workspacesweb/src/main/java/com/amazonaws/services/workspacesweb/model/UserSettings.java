@@ -37,6 +37,13 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<String> associatedPortalArns;
     /**
      * <p>
+     * The configuration that specifies which cookies should be synchronized from the end user's local browser to the
+     * remote browser.
+     * </p>
+     */
+    private CookieSynchronizationConfiguration cookieSynchronizationConfiguration;
+    /**
+     * <p>
      * Specifies whether the user can copy text from the streaming session to the local device.
      * </p>
      */
@@ -152,6 +159,52 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
 
     public UserSettings withAssociatedPortalArns(java.util.Collection<String> associatedPortalArns) {
         setAssociatedPortalArns(associatedPortalArns);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration that specifies which cookies should be synchronized from the end user's local browser to the
+     * remote browser.
+     * </p>
+     * 
+     * @param cookieSynchronizationConfiguration
+     *        The configuration that specifies which cookies should be synchronized from the end user's local browser to
+     *        the remote browser.
+     */
+
+    public void setCookieSynchronizationConfiguration(CookieSynchronizationConfiguration cookieSynchronizationConfiguration) {
+        this.cookieSynchronizationConfiguration = cookieSynchronizationConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration that specifies which cookies should be synchronized from the end user's local browser to the
+     * remote browser.
+     * </p>
+     * 
+     * @return The configuration that specifies which cookies should be synchronized from the end user's local browser
+     *         to the remote browser.
+     */
+
+    public CookieSynchronizationConfiguration getCookieSynchronizationConfiguration() {
+        return this.cookieSynchronizationConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration that specifies which cookies should be synchronized from the end user's local browser to the
+     * remote browser.
+     * </p>
+     * 
+     * @param cookieSynchronizationConfiguration
+     *        The configuration that specifies which cookies should be synchronized from the end user's local browser to
+     *        the remote browser.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UserSettings withCookieSynchronizationConfiguration(CookieSynchronizationConfiguration cookieSynchronizationConfiguration) {
+        setCookieSynchronizationConfiguration(cookieSynchronizationConfiguration);
         return this;
     }
 
@@ -590,6 +643,8 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getAssociatedPortalArns() != null)
             sb.append("AssociatedPortalArns: ").append(getAssociatedPortalArns()).append(",");
+        if (getCookieSynchronizationConfiguration() != null)
+            sb.append("CookieSynchronizationConfiguration: ").append("***Sensitive Data Redacted***").append(",");
         if (getCopyAllowed() != null)
             sb.append("CopyAllowed: ").append(getCopyAllowed()).append(",");
         if (getDisconnectTimeoutInMinutes() != null)
@@ -623,6 +678,11 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
         if (other.getAssociatedPortalArns() == null ^ this.getAssociatedPortalArns() == null)
             return false;
         if (other.getAssociatedPortalArns() != null && other.getAssociatedPortalArns().equals(this.getAssociatedPortalArns()) == false)
+            return false;
+        if (other.getCookieSynchronizationConfiguration() == null ^ this.getCookieSynchronizationConfiguration() == null)
+            return false;
+        if (other.getCookieSynchronizationConfiguration() != null
+                && other.getCookieSynchronizationConfiguration().equals(this.getCookieSynchronizationConfiguration()) == false)
             return false;
         if (other.getCopyAllowed() == null ^ this.getCopyAllowed() == null)
             return false;
@@ -666,6 +726,7 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAssociatedPortalArns() == null) ? 0 : getAssociatedPortalArns().hashCode());
+        hashCode = prime * hashCode + ((getCookieSynchronizationConfiguration() == null) ? 0 : getCookieSynchronizationConfiguration().hashCode());
         hashCode = prime * hashCode + ((getCopyAllowed() == null) ? 0 : getCopyAllowed().hashCode());
         hashCode = prime * hashCode + ((getDisconnectTimeoutInMinutes() == null) ? 0 : getDisconnectTimeoutInMinutes().hashCode());
         hashCode = prime * hashCode + ((getDownloadAllowed() == null) ? 0 : getDownloadAllowed().hashCode());

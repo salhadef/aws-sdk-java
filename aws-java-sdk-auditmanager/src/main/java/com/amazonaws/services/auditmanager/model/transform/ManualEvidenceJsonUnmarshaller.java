@@ -52,6 +52,14 @@ public class ManualEvidenceJsonUnmarshaller implements Unmarshaller<ManualEviden
                     context.nextToken();
                     manualEvidence.setS3ResourcePath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("textResponse", targetDepth)) {
+                    context.nextToken();
+                    manualEvidence.setTextResponse(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("evidenceFileName", targetDepth)) {
+                    context.nextToken();
+                    manualEvidence.setEvidenceFileName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -29,6 +29,8 @@ public class ListRecoveryPointsByBackupVaultRequestMarshaller {
 
     private static final MarshallingInfo<String> BACKUPVAULTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("backupVaultName").build();
+    private static final MarshallingInfo<String> BACKUPVAULTACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("backupVaultAccountId").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nextToken").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -63,6 +65,7 @@ public class ListRecoveryPointsByBackupVaultRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(listRecoveryPointsByBackupVaultRequest.getBackupVaultName(), BACKUPVAULTNAME_BINDING);
+            protocolMarshaller.marshall(listRecoveryPointsByBackupVaultRequest.getBackupVaultAccountId(), BACKUPVAULTACCOUNTID_BINDING);
             protocolMarshaller.marshall(listRecoveryPointsByBackupVaultRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listRecoveryPointsByBackupVaultRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listRecoveryPointsByBackupVaultRequest.getByResourceArn(), BYRESOURCEARN_BINDING);

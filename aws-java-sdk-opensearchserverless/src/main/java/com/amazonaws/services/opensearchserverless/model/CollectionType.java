@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum CollectionType {
 
     SEARCH("SEARCH"),
-    TIMESERIES("TIMESERIES");
+    TIMESERIES("TIMESERIES"),
+    VECTORSEARCH("VECTORSEARCH");
 
     private String value;
 

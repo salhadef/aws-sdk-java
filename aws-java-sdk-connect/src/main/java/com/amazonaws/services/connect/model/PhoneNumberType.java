@@ -21,7 +21,11 @@ import javax.annotation.Generated;
 public enum PhoneNumberType {
 
     TOLL_FREE("TOLL_FREE"),
-    DID("DID");
+    DID("DID"),
+    UIFN("UIFN"),
+    SHARED("SHARED"),
+    THIRD_PARTY_TF("THIRD_PARTY_TF"),
+    THIRD_PARTY_DID("THIRD_PARTY_DID");
 
     private String value;
 

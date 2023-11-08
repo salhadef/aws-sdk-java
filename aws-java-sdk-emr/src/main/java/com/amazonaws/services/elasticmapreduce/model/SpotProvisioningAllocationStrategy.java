@@ -20,7 +20,10 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum SpotProvisioningAllocationStrategy {
 
-    CapacityOptimized("capacity-optimized");
+    CapacityOptimized("capacity-optimized"),
+    PriceCapacityOptimized("price-capacity-optimized"),
+    LowestPrice("lowest-price"),
+    Diversified("diversified");
 
     private String value;
 

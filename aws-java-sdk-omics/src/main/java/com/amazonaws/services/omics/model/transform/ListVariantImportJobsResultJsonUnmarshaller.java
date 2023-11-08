@@ -48,16 +48,16 @@ public class ListVariantImportJobsResultJsonUnmarshaller implements Unmarshaller
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("nextToken", targetDepth)) {
-                    context.nextToken();
-                    listVariantImportJobsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("variantImportJobs", targetDepth)) {
                     context.nextToken();
                     listVariantImportJobsResult.setVariantImportJobs(new ListUnmarshaller<VariantImportJobItem>(VariantImportJobItemJsonUnmarshaller
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (context.testExpression("nextToken", targetDepth)) {
+                    context.nextToken();
+                    listVariantImportJobsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -25,7 +25,8 @@ public enum StackInstanceDetailedStatus {
     SUCCEEDED("SUCCEEDED"),
     FAILED("FAILED"),
     CANCELLED("CANCELLED"),
-    INOPERABLE("INOPERABLE");
+    INOPERABLE("INOPERABLE"),
+    SKIPPED_SUSPENDED_ACCOUNT("SKIPPED_SUSPENDED_ACCOUNT");
 
     private String value;
 

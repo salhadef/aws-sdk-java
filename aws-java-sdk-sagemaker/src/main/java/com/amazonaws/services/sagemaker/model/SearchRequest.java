@@ -68,6 +68,18 @@ public class SearchRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * </p>
      */
     private Integer maxResults;
+    /**
+     * <p>
+     * A cross account filter option. When the value is <code>"CrossAccount"</code> the search results will only include
+     * resources made discoverable to you from other accounts. When the value is <code>"SameAccount"</code> or
+     * <code>null</code> the search results will only include resources from your account. Default is <code>null</code>.
+     * For more information on searching for resources made discoverable to your account, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store-cross-account-discoverability-use.html">
+     * Search discoverable resources</a> in the SageMaker Developer Guide. The maximum number of
+     * <code>ResourceCatalog</code>s viewable is 1000.
+     * </p>
+     */
+    private String crossAccountFilterOption;
 
     /**
      * <p>
@@ -392,6 +404,117 @@ public class SearchRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     }
 
     /**
+     * <p>
+     * A cross account filter option. When the value is <code>"CrossAccount"</code> the search results will only include
+     * resources made discoverable to you from other accounts. When the value is <code>"SameAccount"</code> or
+     * <code>null</code> the search results will only include resources from your account. Default is <code>null</code>.
+     * For more information on searching for resources made discoverable to your account, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store-cross-account-discoverability-use.html">
+     * Search discoverable resources</a> in the SageMaker Developer Guide. The maximum number of
+     * <code>ResourceCatalog</code>s viewable is 1000.
+     * </p>
+     * 
+     * @param crossAccountFilterOption
+     *        A cross account filter option. When the value is <code>"CrossAccount"</code> the search results will only
+     *        include resources made discoverable to you from other accounts. When the value is
+     *        <code>"SameAccount"</code> or <code>null</code> the search results will only include resources from your
+     *        account. Default is <code>null</code>. For more information on searching for resources made discoverable
+     *        to your account, see <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store-cross-account-discoverability-use.html">
+     *        Search discoverable resources</a> in the SageMaker Developer Guide. The maximum number of
+     *        <code>ResourceCatalog</code>s viewable is 1000.
+     * @see CrossAccountFilterOption
+     */
+
+    public void setCrossAccountFilterOption(String crossAccountFilterOption) {
+        this.crossAccountFilterOption = crossAccountFilterOption;
+    }
+
+    /**
+     * <p>
+     * A cross account filter option. When the value is <code>"CrossAccount"</code> the search results will only include
+     * resources made discoverable to you from other accounts. When the value is <code>"SameAccount"</code> or
+     * <code>null</code> the search results will only include resources from your account. Default is <code>null</code>.
+     * For more information on searching for resources made discoverable to your account, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store-cross-account-discoverability-use.html">
+     * Search discoverable resources</a> in the SageMaker Developer Guide. The maximum number of
+     * <code>ResourceCatalog</code>s viewable is 1000.
+     * </p>
+     * 
+     * @return A cross account filter option. When the value is <code>"CrossAccount"</code> the search results will only
+     *         include resources made discoverable to you from other accounts. When the value is
+     *         <code>"SameAccount"</code> or <code>null</code> the search results will only include resources from your
+     *         account. Default is <code>null</code>. For more information on searching for resources made discoverable
+     *         to your account, see <a href=
+     *         "https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store-cross-account-discoverability-use.html">
+     *         Search discoverable resources</a> in the SageMaker Developer Guide. The maximum number of
+     *         <code>ResourceCatalog</code>s viewable is 1000.
+     * @see CrossAccountFilterOption
+     */
+
+    public String getCrossAccountFilterOption() {
+        return this.crossAccountFilterOption;
+    }
+
+    /**
+     * <p>
+     * A cross account filter option. When the value is <code>"CrossAccount"</code> the search results will only include
+     * resources made discoverable to you from other accounts. When the value is <code>"SameAccount"</code> or
+     * <code>null</code> the search results will only include resources from your account. Default is <code>null</code>.
+     * For more information on searching for resources made discoverable to your account, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store-cross-account-discoverability-use.html">
+     * Search discoverable resources</a> in the SageMaker Developer Guide. The maximum number of
+     * <code>ResourceCatalog</code>s viewable is 1000.
+     * </p>
+     * 
+     * @param crossAccountFilterOption
+     *        A cross account filter option. When the value is <code>"CrossAccount"</code> the search results will only
+     *        include resources made discoverable to you from other accounts. When the value is
+     *        <code>"SameAccount"</code> or <code>null</code> the search results will only include resources from your
+     *        account. Default is <code>null</code>. For more information on searching for resources made discoverable
+     *        to your account, see <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store-cross-account-discoverability-use.html">
+     *        Search discoverable resources</a> in the SageMaker Developer Guide. The maximum number of
+     *        <code>ResourceCatalog</code>s viewable is 1000.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CrossAccountFilterOption
+     */
+
+    public SearchRequest withCrossAccountFilterOption(String crossAccountFilterOption) {
+        setCrossAccountFilterOption(crossAccountFilterOption);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A cross account filter option. When the value is <code>"CrossAccount"</code> the search results will only include
+     * resources made discoverable to you from other accounts. When the value is <code>"SameAccount"</code> or
+     * <code>null</code> the search results will only include resources from your account. Default is <code>null</code>.
+     * For more information on searching for resources made discoverable to your account, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store-cross-account-discoverability-use.html">
+     * Search discoverable resources</a> in the SageMaker Developer Guide. The maximum number of
+     * <code>ResourceCatalog</code>s viewable is 1000.
+     * </p>
+     * 
+     * @param crossAccountFilterOption
+     *        A cross account filter option. When the value is <code>"CrossAccount"</code> the search results will only
+     *        include resources made discoverable to you from other accounts. When the value is
+     *        <code>"SameAccount"</code> or <code>null</code> the search results will only include resources from your
+     *        account. Default is <code>null</code>. For more information on searching for resources made discoverable
+     *        to your account, see <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store-cross-account-discoverability-use.html">
+     *        Search discoverable resources</a> in the SageMaker Developer Guide. The maximum number of
+     *        <code>ResourceCatalog</code>s viewable is 1000.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CrossAccountFilterOption
+     */
+
+    public SearchRequest withCrossAccountFilterOption(CrossAccountFilterOption crossAccountFilterOption) {
+        this.crossAccountFilterOption = crossAccountFilterOption.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -414,7 +537,9 @@ public class SearchRequest extends com.amazonaws.AmazonWebServiceRequest impleme
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getCrossAccountFilterOption() != null)
+            sb.append("CrossAccountFilterOption: ").append(getCrossAccountFilterOption());
         sb.append("}");
         return sb.toString();
     }
@@ -453,6 +578,10 @@ public class SearchRequest extends com.amazonaws.AmazonWebServiceRequest impleme
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
+        if (other.getCrossAccountFilterOption() == null ^ this.getCrossAccountFilterOption() == null)
+            return false;
+        if (other.getCrossAccountFilterOption() != null && other.getCrossAccountFilterOption().equals(this.getCrossAccountFilterOption()) == false)
+            return false;
         return true;
     }
 
@@ -467,6 +596,7 @@ public class SearchRequest extends com.amazonaws.AmazonWebServiceRequest impleme
         hashCode = prime * hashCode + ((getSortOrder() == null) ? 0 : getSortOrder().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getCrossAccountFilterOption() == null) ? 0 : getCrossAccountFilterOption().hashCode());
         return hashCode;
     }
 

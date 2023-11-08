@@ -248,7 +248,7 @@ public class UpdateAssessmentControlSetStatusRequest extends com.amazonaws.Amazo
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getComment() != null)
-            sb.append("Comment: ").append(getComment());
+            sb.append("Comment: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

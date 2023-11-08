@@ -27,10 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DeleteAnnotationStoreRequestMarshaller {
 
-    private static final MarshallingInfo<Boolean> FORCE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
-            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("force").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<Boolean> FORCE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("force").build();
 
     private static final DeleteAnnotationStoreRequestMarshaller instance = new DeleteAnnotationStoreRequestMarshaller();
 
@@ -48,8 +48,8 @@ public class DeleteAnnotationStoreRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(deleteAnnotationStoreRequest.getForce(), FORCE_BINDING);
             protocolMarshaller.marshall(deleteAnnotationStoreRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(deleteAnnotationStoreRequest.getForce(), FORCE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

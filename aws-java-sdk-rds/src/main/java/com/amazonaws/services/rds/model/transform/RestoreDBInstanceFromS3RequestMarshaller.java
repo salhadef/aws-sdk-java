@@ -301,6 +301,10 @@ public class RestoreDBInstanceFromS3RequestMarshaller implements Marshaller<Requ
             request.addParameter("MasterUserSecretKmsKeyId", StringUtils.fromString(restoreDBInstanceFromS3Request.getMasterUserSecretKmsKeyId()));
         }
 
+        if (restoreDBInstanceFromS3Request.getDedicatedLogVolume() != null) {
+            request.addParameter("DedicatedLogVolume", StringUtils.fromBoolean(restoreDBInstanceFromS3Request.getDedicatedLogVolume()));
+        }
+
         return request;
     }
 

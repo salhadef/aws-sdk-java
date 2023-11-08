@@ -30,6 +30,8 @@ public class AnalysisRuleListMarshaller {
 
     private static final MarshallingInfo<List> JOINCOLUMNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("joinColumns").build();
+    private static final MarshallingInfo<List> ALLOWEDJOINOPERATORS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("allowedJoinOperators").build();
     private static final MarshallingInfo<List> LISTCOLUMNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("listColumns").build();
 
@@ -50,6 +52,7 @@ public class AnalysisRuleListMarshaller {
 
         try {
             protocolMarshaller.marshall(analysisRuleList.getJoinColumns(), JOINCOLUMNS_BINDING);
+            protocolMarshaller.marshall(analysisRuleList.getAllowedJoinOperators(), ALLOWEDJOINOPERATORS_BINDING);
             protocolMarshaller.marshall(analysisRuleList.getListColumns(), LISTCOLUMNS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

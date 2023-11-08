@@ -76,6 +76,12 @@ public class GetNetworkAnalyzerConfigurationResultJsonUnmarshaller implements Un
                     context.nextToken();
                     getNetworkAnalyzerConfigurationResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("MulticastGroups", targetDepth)) {
+                    context.nextToken();
+                    getNetworkAnalyzerConfigurationResult.setMulticastGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

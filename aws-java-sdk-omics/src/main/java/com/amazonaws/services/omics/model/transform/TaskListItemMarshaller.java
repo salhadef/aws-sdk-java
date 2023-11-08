@@ -27,22 +27,26 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class TaskListItemMarshaller {
 
-    private static final MarshallingInfo<Integer> CPUS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("cpus").build();
-    private static final MarshallingInfo<java.util.Date> CREATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationTime").timestampFormat("iso8601").build();
-    private static final MarshallingInfo<Integer> MEMORY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("memory").build();
-    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("name").build();
-    private static final MarshallingInfo<java.util.Date> STARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startTime").timestampFormat("iso8601").build();
-    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("status").build();
-    private static final MarshallingInfo<java.util.Date> STOPTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stopTime").timestampFormat("iso8601").build();
     private static final MarshallingInfo<String> TASKID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("taskId").build();
+    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("status").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("name").build();
+    private static final MarshallingInfo<Integer> CPUS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("cpus").build();
+    private static final MarshallingInfo<Integer> MEMORY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("memory").build();
+    private static final MarshallingInfo<java.util.Date> CREATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationTime").timestampFormat("iso8601").build();
+    private static final MarshallingInfo<java.util.Date> STARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startTime").timestampFormat("iso8601").build();
+    private static final MarshallingInfo<java.util.Date> STOPTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stopTime").timestampFormat("iso8601").build();
+    private static final MarshallingInfo<Integer> GPUS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("gpus").build();
+    private static final MarshallingInfo<String> INSTANCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("instanceType").build();
 
     private static final TaskListItemMarshaller instance = new TaskListItemMarshaller();
 
@@ -60,14 +64,16 @@ public class TaskListItemMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(taskListItem.getCpus(), CPUS_BINDING);
-            protocolMarshaller.marshall(taskListItem.getCreationTime(), CREATIONTIME_BINDING);
-            protocolMarshaller.marshall(taskListItem.getMemory(), MEMORY_BINDING);
-            protocolMarshaller.marshall(taskListItem.getName(), NAME_BINDING);
-            protocolMarshaller.marshall(taskListItem.getStartTime(), STARTTIME_BINDING);
-            protocolMarshaller.marshall(taskListItem.getStatus(), STATUS_BINDING);
-            protocolMarshaller.marshall(taskListItem.getStopTime(), STOPTIME_BINDING);
             protocolMarshaller.marshall(taskListItem.getTaskId(), TASKID_BINDING);
+            protocolMarshaller.marshall(taskListItem.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(taskListItem.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(taskListItem.getCpus(), CPUS_BINDING);
+            protocolMarshaller.marshall(taskListItem.getMemory(), MEMORY_BINDING);
+            protocolMarshaller.marshall(taskListItem.getCreationTime(), CREATIONTIME_BINDING);
+            protocolMarshaller.marshall(taskListItem.getStartTime(), STARTTIME_BINDING);
+            protocolMarshaller.marshall(taskListItem.getStopTime(), STOPTIME_BINDING);
+            protocolMarshaller.marshall(taskListItem.getGpus(), GPUS_BINDING);
+            protocolMarshaller.marshall(taskListItem.getInstanceType(), INSTANCETYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

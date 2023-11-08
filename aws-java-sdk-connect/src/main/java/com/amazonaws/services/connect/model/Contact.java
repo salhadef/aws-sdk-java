@@ -93,7 +93,9 @@ public class Contact implements Serializable, Cloneable, StructuredPojo {
      * The date and time this contact was initiated, in UTC time. For <code>INBOUND</code>, this is when the contact
      * arrived. For <code>OUTBOUND</code>, this is when the agent began dialing. For <code>CALLBACK</code>, this is when
      * the callback contact was created. For <code>TRANSFER</code> and <code>QUEUE_TRANSFER</code>, this is when the
-     * transfer was initiated. For <code>API</code>, this is when the request arrived.
+     * transfer was initiated. For <code>API</code>, this is when the request arrived. For
+     * <code>EXTERNAL_OUTBOUND</code>, this is when the agent started dialing the external participant. For
+     * <code>MONITOR</code>, this is when the supervisor started listening to a contact.
      * </p>
      */
     private java.util.Date initiationTimestamp;
@@ -573,7 +575,9 @@ public class Contact implements Serializable, Cloneable, StructuredPojo {
      * The date and time this contact was initiated, in UTC time. For <code>INBOUND</code>, this is when the contact
      * arrived. For <code>OUTBOUND</code>, this is when the agent began dialing. For <code>CALLBACK</code>, this is when
      * the callback contact was created. For <code>TRANSFER</code> and <code>QUEUE_TRANSFER</code>, this is when the
-     * transfer was initiated. For <code>API</code>, this is when the request arrived.
+     * transfer was initiated. For <code>API</code>, this is when the request arrived. For
+     * <code>EXTERNAL_OUTBOUND</code>, this is when the agent started dialing the external participant. For
+     * <code>MONITOR</code>, this is when the supervisor started listening to a contact.
      * </p>
      * 
      * @param initiationTimestamp
@@ -581,7 +585,9 @@ public class Contact implements Serializable, Cloneable, StructuredPojo {
      *        contact arrived. For <code>OUTBOUND</code>, this is when the agent began dialing. For
      *        <code>CALLBACK</code>, this is when the callback contact was created. For <code>TRANSFER</code> and
      *        <code>QUEUE_TRANSFER</code>, this is when the transfer was initiated. For <code>API</code>, this is when
-     *        the request arrived.
+     *        the request arrived. For <code>EXTERNAL_OUTBOUND</code>, this is when the agent started dialing the
+     *        external participant. For <code>MONITOR</code>, this is when the supervisor started listening to a
+     *        contact.
      */
 
     public void setInitiationTimestamp(java.util.Date initiationTimestamp) {
@@ -593,14 +599,18 @@ public class Contact implements Serializable, Cloneable, StructuredPojo {
      * The date and time this contact was initiated, in UTC time. For <code>INBOUND</code>, this is when the contact
      * arrived. For <code>OUTBOUND</code>, this is when the agent began dialing. For <code>CALLBACK</code>, this is when
      * the callback contact was created. For <code>TRANSFER</code> and <code>QUEUE_TRANSFER</code>, this is when the
-     * transfer was initiated. For <code>API</code>, this is when the request arrived.
+     * transfer was initiated. For <code>API</code>, this is when the request arrived. For
+     * <code>EXTERNAL_OUTBOUND</code>, this is when the agent started dialing the external participant. For
+     * <code>MONITOR</code>, this is when the supervisor started listening to a contact.
      * </p>
      * 
      * @return The date and time this contact was initiated, in UTC time. For <code>INBOUND</code>, this is when the
      *         contact arrived. For <code>OUTBOUND</code>, this is when the agent began dialing. For
      *         <code>CALLBACK</code>, this is when the callback contact was created. For <code>TRANSFER</code> and
      *         <code>QUEUE_TRANSFER</code>, this is when the transfer was initiated. For <code>API</code>, this is when
-     *         the request arrived.
+     *         the request arrived. For <code>EXTERNAL_OUTBOUND</code>, this is when the agent started dialing the
+     *         external participant. For <code>MONITOR</code>, this is when the supervisor started listening to a
+     *         contact.
      */
 
     public java.util.Date getInitiationTimestamp() {
@@ -612,7 +622,9 @@ public class Contact implements Serializable, Cloneable, StructuredPojo {
      * The date and time this contact was initiated, in UTC time. For <code>INBOUND</code>, this is when the contact
      * arrived. For <code>OUTBOUND</code>, this is when the agent began dialing. For <code>CALLBACK</code>, this is when
      * the callback contact was created. For <code>TRANSFER</code> and <code>QUEUE_TRANSFER</code>, this is when the
-     * transfer was initiated. For <code>API</code>, this is when the request arrived.
+     * transfer was initiated. For <code>API</code>, this is when the request arrived. For
+     * <code>EXTERNAL_OUTBOUND</code>, this is when the agent started dialing the external participant. For
+     * <code>MONITOR</code>, this is when the supervisor started listening to a contact.
      * </p>
      * 
      * @param initiationTimestamp
@@ -620,7 +632,9 @@ public class Contact implements Serializable, Cloneable, StructuredPojo {
      *        contact arrived. For <code>OUTBOUND</code>, this is when the agent began dialing. For
      *        <code>CALLBACK</code>, this is when the callback contact was created. For <code>TRANSFER</code> and
      *        <code>QUEUE_TRANSFER</code>, this is when the transfer was initiated. For <code>API</code>, this is when
-     *        the request arrived.
+     *        the request arrived. For <code>EXTERNAL_OUTBOUND</code>, this is when the agent started dialing the
+     *        external participant. For <code>MONITOR</code>, this is when the supervisor started listening to a
+     *        contact.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -35,6 +35,8 @@ public class StartSpeakerSearchTaskRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VoiceProfileDomainId").build();
     private static final MarshallingInfo<String> CLIENTREQUESTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClientRequestToken").build();
+    private static final MarshallingInfo<String> CALLLEG_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("CallLeg").build();
 
     private static final StartSpeakerSearchTaskRequestMarshaller instance = new StartSpeakerSearchTaskRequestMarshaller();
 
@@ -56,6 +58,7 @@ public class StartSpeakerSearchTaskRequestMarshaller {
             protocolMarshaller.marshall(startSpeakerSearchTaskRequest.getTransactionId(), TRANSACTIONID_BINDING);
             protocolMarshaller.marshall(startSpeakerSearchTaskRequest.getVoiceProfileDomainId(), VOICEPROFILEDOMAINID_BINDING);
             protocolMarshaller.marshall(startSpeakerSearchTaskRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
+            protocolMarshaller.marshall(startSpeakerSearchTaskRequest.getCallLeg(), CALLLEG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -30,18 +30,18 @@ public class DeleteIdentityRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The identity to be removed from the list of identities for the AWS Account.
+     * The identity to be removed from the list of identities for the Amazon Web Services account.
      * </p>
      */
     private String identity;
 
     /**
      * <p>
-     * The identity to be removed from the list of identities for the AWS Account.
+     * The identity to be removed from the list of identities for the Amazon Web Services account.
      * </p>
      * 
      * @param identity
-     *        The identity to be removed from the list of identities for the AWS Account.
+     *        The identity to be removed from the list of identities for the Amazon Web Services account.
      */
 
     public void setIdentity(String identity) {
@@ -50,10 +50,10 @@ public class DeleteIdentityRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The identity to be removed from the list of identities for the AWS Account.
+     * The identity to be removed from the list of identities for the Amazon Web Services account.
      * </p>
      * 
-     * @return The identity to be removed from the list of identities for the AWS Account.
+     * @return The identity to be removed from the list of identities for the Amazon Web Services account.
      */
 
     public String getIdentity() {
@@ -62,11 +62,11 @@ public class DeleteIdentityRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The identity to be removed from the list of identities for the AWS Account.
+     * The identity to be removed from the list of identities for the Amazon Web Services account.
      * </p>
      * 
      * @param identity
-     *        The identity to be removed from the list of identities for the AWS Account.
+     *        The identity to be removed from the list of identities for the Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

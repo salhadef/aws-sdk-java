@@ -70,6 +70,24 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private RdsLoginAttemptAction rdsLoginAttemptAction;
+    /**
+     * <p>
+     * Information whether the user has the permission to use a specific Kubernetes API.
+     * </p>
+     */
+    private KubernetesPermissionCheckedDetails kubernetesPermissionCheckedDetails;
+    /**
+     * <p>
+     * Information about the role binding that grants the permission defined in a Kubernetes role.
+     * </p>
+     */
+    private KubernetesRoleBindingDetails kubernetesRoleBindingDetails;
+    /**
+     * <p>
+     * Information about the Kubernetes role name and role type.
+     * </p>
+     */
+    private KubernetesRoleDetails kubernetesRoleDetails;
 
     /**
      * <p>
@@ -352,6 +370,126 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Information whether the user has the permission to use a specific Kubernetes API.
+     * </p>
+     * 
+     * @param kubernetesPermissionCheckedDetails
+     *        Information whether the user has the permission to use a specific Kubernetes API.
+     */
+
+    public void setKubernetesPermissionCheckedDetails(KubernetesPermissionCheckedDetails kubernetesPermissionCheckedDetails) {
+        this.kubernetesPermissionCheckedDetails = kubernetesPermissionCheckedDetails;
+    }
+
+    /**
+     * <p>
+     * Information whether the user has the permission to use a specific Kubernetes API.
+     * </p>
+     * 
+     * @return Information whether the user has the permission to use a specific Kubernetes API.
+     */
+
+    public KubernetesPermissionCheckedDetails getKubernetesPermissionCheckedDetails() {
+        return this.kubernetesPermissionCheckedDetails;
+    }
+
+    /**
+     * <p>
+     * Information whether the user has the permission to use a specific Kubernetes API.
+     * </p>
+     * 
+     * @param kubernetesPermissionCheckedDetails
+     *        Information whether the user has the permission to use a specific Kubernetes API.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Action withKubernetesPermissionCheckedDetails(KubernetesPermissionCheckedDetails kubernetesPermissionCheckedDetails) {
+        setKubernetesPermissionCheckedDetails(kubernetesPermissionCheckedDetails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the role binding that grants the permission defined in a Kubernetes role.
+     * </p>
+     * 
+     * @param kubernetesRoleBindingDetails
+     *        Information about the role binding that grants the permission defined in a Kubernetes role.
+     */
+
+    public void setKubernetesRoleBindingDetails(KubernetesRoleBindingDetails kubernetesRoleBindingDetails) {
+        this.kubernetesRoleBindingDetails = kubernetesRoleBindingDetails;
+    }
+
+    /**
+     * <p>
+     * Information about the role binding that grants the permission defined in a Kubernetes role.
+     * </p>
+     * 
+     * @return Information about the role binding that grants the permission defined in a Kubernetes role.
+     */
+
+    public KubernetesRoleBindingDetails getKubernetesRoleBindingDetails() {
+        return this.kubernetesRoleBindingDetails;
+    }
+
+    /**
+     * <p>
+     * Information about the role binding that grants the permission defined in a Kubernetes role.
+     * </p>
+     * 
+     * @param kubernetesRoleBindingDetails
+     *        Information about the role binding that grants the permission defined in a Kubernetes role.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Action withKubernetesRoleBindingDetails(KubernetesRoleBindingDetails kubernetesRoleBindingDetails) {
+        setKubernetesRoleBindingDetails(kubernetesRoleBindingDetails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the Kubernetes role name and role type.
+     * </p>
+     * 
+     * @param kubernetesRoleDetails
+     *        Information about the Kubernetes role name and role type.
+     */
+
+    public void setKubernetesRoleDetails(KubernetesRoleDetails kubernetesRoleDetails) {
+        this.kubernetesRoleDetails = kubernetesRoleDetails;
+    }
+
+    /**
+     * <p>
+     * Information about the Kubernetes role name and role type.
+     * </p>
+     * 
+     * @return Information about the Kubernetes role name and role type.
+     */
+
+    public KubernetesRoleDetails getKubernetesRoleDetails() {
+        return this.kubernetesRoleDetails;
+    }
+
+    /**
+     * <p>
+     * Information about the Kubernetes role name and role type.
+     * </p>
+     * 
+     * @param kubernetesRoleDetails
+     *        Information about the Kubernetes role name and role type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Action withKubernetesRoleDetails(KubernetesRoleDetails kubernetesRoleDetails) {
+        setKubernetesRoleDetails(kubernetesRoleDetails);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -376,7 +514,13 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
         if (getKubernetesApiCallAction() != null)
             sb.append("KubernetesApiCallAction: ").append(getKubernetesApiCallAction()).append(",");
         if (getRdsLoginAttemptAction() != null)
-            sb.append("RdsLoginAttemptAction: ").append(getRdsLoginAttemptAction());
+            sb.append("RdsLoginAttemptAction: ").append(getRdsLoginAttemptAction()).append(",");
+        if (getKubernetesPermissionCheckedDetails() != null)
+            sb.append("KubernetesPermissionCheckedDetails: ").append(getKubernetesPermissionCheckedDetails()).append(",");
+        if (getKubernetesRoleBindingDetails() != null)
+            sb.append("KubernetesRoleBindingDetails: ").append(getKubernetesRoleBindingDetails()).append(",");
+        if (getKubernetesRoleDetails() != null)
+            sb.append("KubernetesRoleDetails: ").append(getKubernetesRoleDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -419,6 +563,19 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRdsLoginAttemptAction() != null && other.getRdsLoginAttemptAction().equals(this.getRdsLoginAttemptAction()) == false)
             return false;
+        if (other.getKubernetesPermissionCheckedDetails() == null ^ this.getKubernetesPermissionCheckedDetails() == null)
+            return false;
+        if (other.getKubernetesPermissionCheckedDetails() != null
+                && other.getKubernetesPermissionCheckedDetails().equals(this.getKubernetesPermissionCheckedDetails()) == false)
+            return false;
+        if (other.getKubernetesRoleBindingDetails() == null ^ this.getKubernetesRoleBindingDetails() == null)
+            return false;
+        if (other.getKubernetesRoleBindingDetails() != null && other.getKubernetesRoleBindingDetails().equals(this.getKubernetesRoleBindingDetails()) == false)
+            return false;
+        if (other.getKubernetesRoleDetails() == null ^ this.getKubernetesRoleDetails() == null)
+            return false;
+        if (other.getKubernetesRoleDetails() != null && other.getKubernetesRoleDetails().equals(this.getKubernetesRoleDetails()) == false)
+            return false;
         return true;
     }
 
@@ -434,6 +591,9 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPortProbeAction() == null) ? 0 : getPortProbeAction().hashCode());
         hashCode = prime * hashCode + ((getKubernetesApiCallAction() == null) ? 0 : getKubernetesApiCallAction().hashCode());
         hashCode = prime * hashCode + ((getRdsLoginAttemptAction() == null) ? 0 : getRdsLoginAttemptAction().hashCode());
+        hashCode = prime * hashCode + ((getKubernetesPermissionCheckedDetails() == null) ? 0 : getKubernetesPermissionCheckedDetails().hashCode());
+        hashCode = prime * hashCode + ((getKubernetesRoleBindingDetails() == null) ? 0 : getKubernetesRoleBindingDetails().hashCode());
+        hashCode = prime * hashCode + ((getKubernetesRoleDetails() == null) ? 0 : getKubernetesRoleDetails().hashCode());
         return hashCode;
     }
 

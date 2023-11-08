@@ -19,9 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS
- * Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store
- * artifact for the pipeline in AWS CodePipeline.
+ * Represents an Amazon Web Services session credentials object. These credentials are temporary credentials that are
+ * issued by Amazon Web Services Secure Token Service (STS). They can be used to access input and output artifacts in
+ * the S3 bucket used to store artifact for the pipeline in CodePipeline.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/AWSSessionCredentials" target="_top">AWS

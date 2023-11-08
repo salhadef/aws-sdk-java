@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.12.462-SNAPSHOT</version>
+    <version>1.12.585-SNAPSHOT</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-osgi</artifactId>
@@ -15,6 +15,96 @@
 
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>
+    <dependency>
+        <artifactId>aws-java-sdk-launchwizard</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-datazoneexternal</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-bedrock</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-bedrockruntime</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-neptunedata</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-pcaconnectorad</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-managedblockchainquery</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-entityresolution</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-medicalimaging</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-appfabric</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-verifiedpermissions</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-codegurusecurity</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-paymentcryptography</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-paymentcryptographydata</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-mediapackagev2</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
     <dependency>
         <artifactId>aws-java-sdk-osis</artifactId>
         <groupId>com.amazonaws</groupId>
@@ -257,12 +347,6 @@
     </dependency>
     <dependency>
         <artifactId>aws-java-sdk-pinpointsmsvoicev2</artifactId>
-        <groupId>com.amazonaws</groupId>
-        <optional>false</optional>
-        <version>${awsjavasdk.version}</version>
-    </dependency>
-    <dependency>
-        <artifactId>aws-java-sdk-gamesparks</artifactId>
         <groupId>com.amazonaws</groupId>
         <optional>false</optional>
         <version>${awsjavasdk.version}</version>
@@ -2171,7 +2255,7 @@
                           <windowtitle>AWS SDK for Java - ${project.version}</windowtitle>
                           <encoding>UTF-8</encoding>
                           <docencoding>UTF-8</docencoding>
-                          <doctitle>AWS SDK for Java API Reference - ${project.version}</doctitle>
+                          <doctitle>AWS SDK for Java 1.x API Reference - ${project.version}</doctitle>
                           <packagesheader>AWS SDK for Java</packagesheader>
                           <!-- Required for src/main/javadoc/resources/ to be copied over correctly -->
                           <docfilessubdirs>true</docfilessubdirs>
@@ -2186,6 +2270,66 @@
                               </taglet>
                           </taglets>
                           <groups>
+                              <group>
+                                  <title>AWS Launch Wizard</title>
+                                  <packages>com.amazonaws.services.launchwizard*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon DataZone</title>
+                                  <packages>com.amazonaws.services.datazoneexternal*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon Bedrock</title>
+                                  <packages>com.amazonaws.services.bedrock*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon Bedrock Runtime</title>
+                                  <packages>com.amazonaws.services.bedrockruntime*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon NeptuneData</title>
+                                  <packages>com.amazonaws.services.neptunedata*</packages>
+                              </group>
+                              <group>
+                                  <title>PcaConnectorAd</title>
+                                  <packages>com.amazonaws.services.pcaconnectorad*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon Managed Blockchain Query</title>
+                                  <packages>com.amazonaws.services.managedblockchainquery*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS EntityResolution</title>
+                                  <packages>com.amazonaws.services.entityresolution*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Health Imaging</title>
+                                  <packages>com.amazonaws.services.medicalimaging*</packages>
+                              </group>
+                              <group>
+                                  <title>AppFabric</title>
+                                  <packages>com.amazonaws.services.appfabric*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon Verified Permissions</title>
+                                  <packages>com.amazonaws.services.verifiedpermissions*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon CodeGuru Security</title>
+                                  <packages>com.amazonaws.services.codegurusecurity*</packages>
+                              </group>
+                              <group>
+                                  <title>Payment Cryptography Control Plane</title>
+                                  <packages>com.amazonaws.services.paymentcryptography*</packages>
+                              </group>
+                              <group>
+                                  <title>Payment Cryptography Data Plane</title>
+                                  <packages>com.amazonaws.services.paymentcryptographydata*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Elemental MediaPackage v2</title>
+                                  <packages>com.amazonaws.services.mediapackagev2*</packages>
+                              </group>
                               <group>
                                   <title>Amazon OpenSearch Ingestion</title>
                                   <packages>com.amazonaws.services.osis*</packages>
@@ -2349,10 +2493,6 @@
                               <group>
                                   <title>Amazon Pinpoint SMS Voice V2</title>
                                   <packages>com.amazonaws.services.pinpointsmsvoicev2*</packages>
-                              </group>
-                              <group>
-                                  <title>GameSparks</title>
-                                  <packages>com.amazonaws.services.gamesparks*</packages>
                               </group>
                               <group>
                                   <title>AWSBillingConductor</title>
@@ -3557,11 +3697,10 @@
 
                               <!-- BEGIN-FEEDBACK-SECTION -->
                               <div id="feedback-section">
-                                  <h3>Did this page help you?</h3>
+                                  <h3>AWS SDK for Java 1.x API Reference - ${project.version}</h3>
                                   <div id="feedback-link-sectioin">
                                       <a id="go_cti" target="_blank" style="display:inline;">Submit feedback...</a>
                                   </div>
-
                               </div>
                               <script type="text/javascript">
                                   window.onload = function(){

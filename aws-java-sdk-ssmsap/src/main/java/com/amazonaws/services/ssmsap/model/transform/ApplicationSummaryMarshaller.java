@@ -31,6 +31,8 @@ public class ApplicationSummaryMarshaller {
 
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Id").build();
+    private static final MarshallingInfo<String> DISCOVERYSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DiscoveryStatus").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Type").build();
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -55,6 +57,7 @@ public class ApplicationSummaryMarshaller {
 
         try {
             protocolMarshaller.marshall(applicationSummary.getId(), ID_BINDING);
+            protocolMarshaller.marshall(applicationSummary.getDiscoveryStatus(), DISCOVERYSTATUS_BINDING);
             protocolMarshaller.marshall(applicationSummary.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(applicationSummary.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(applicationSummary.getTags(), TAGS_BINDING);

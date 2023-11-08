@@ -72,6 +72,34 @@ public class ModelSummaryJsonUnmarshaller implements Unmarshaller<ModelSummary, 
                     context.nextToken();
                     modelSummary.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("ActiveModelVersion", targetDepth)) {
+                    context.nextToken();
+                    modelSummary.setActiveModelVersion(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("ActiveModelVersionArn", targetDepth)) {
+                    context.nextToken();
+                    modelSummary.setActiveModelVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("LatestScheduledRetrainingStatus", targetDepth)) {
+                    context.nextToken();
+                    modelSummary.setLatestScheduledRetrainingStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("LatestScheduledRetrainingModelVersion", targetDepth)) {
+                    context.nextToken();
+                    modelSummary.setLatestScheduledRetrainingModelVersion(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("LatestScheduledRetrainingStartTime", targetDepth)) {
+                    context.nextToken();
+                    modelSummary.setLatestScheduledRetrainingStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("NextScheduledRetrainingStartDate", targetDepth)) {
+                    context.nextToken();
+                    modelSummary.setNextScheduledRetrainingStartDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("RetrainingSchedulerStatus", targetDepth)) {
+                    context.nextToken();
+                    modelSummary.setRetrainingSchedulerStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

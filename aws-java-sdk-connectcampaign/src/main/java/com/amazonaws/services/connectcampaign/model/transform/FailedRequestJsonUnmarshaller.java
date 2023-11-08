@@ -52,13 +52,13 @@ public class FailedRequestJsonUnmarshaller implements Unmarshaller<FailedRequest
                     context.nextToken();
                     failedRequest.setClientToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("failureCode", targetDepth)) {
-                    context.nextToken();
-                    failedRequest.setFailureCode(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
                     failedRequest.setId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("failureCode", targetDepth)) {
+                    context.nextToken();
+                    failedRequest.setFailureCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

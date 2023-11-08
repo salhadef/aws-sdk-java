@@ -36,8 +36,8 @@ public class ImageGenerationDestinationConfig implements Serializable, Cloneable
     private String uri;
     /**
      * <p>
-     * The AWS Region of the S3 bucket where images will be delivered. This <code>DestinationRegion</code> must match
-     * the Region where the stream is located.
+     * The Amazon Web Services Region of the S3 bucket where images will be delivered. This
+     * <code>DestinationRegion</code> must match the Region where the stream is located.
      * </p>
      */
     private String destinationRegion;
@@ -84,13 +84,13 @@ public class ImageGenerationDestinationConfig implements Serializable, Cloneable
 
     /**
      * <p>
-     * The AWS Region of the S3 bucket where images will be delivered. This <code>DestinationRegion</code> must match
-     * the Region where the stream is located.
+     * The Amazon Web Services Region of the S3 bucket where images will be delivered. This
+     * <code>DestinationRegion</code> must match the Region where the stream is located.
      * </p>
      * 
      * @param destinationRegion
-     *        The AWS Region of the S3 bucket where images will be delivered. This <code>DestinationRegion</code> must
-     *        match the Region where the stream is located.
+     *        The Amazon Web Services Region of the S3 bucket where images will be delivered. This
+     *        <code>DestinationRegion</code> must match the Region where the stream is located.
      */
 
     public void setDestinationRegion(String destinationRegion) {
@@ -99,12 +99,12 @@ public class ImageGenerationDestinationConfig implements Serializable, Cloneable
 
     /**
      * <p>
-     * The AWS Region of the S3 bucket where images will be delivered. This <code>DestinationRegion</code> must match
-     * the Region where the stream is located.
+     * The Amazon Web Services Region of the S3 bucket where images will be delivered. This
+     * <code>DestinationRegion</code> must match the Region where the stream is located.
      * </p>
      * 
-     * @return The AWS Region of the S3 bucket where images will be delivered. This <code>DestinationRegion</code> must
-     *         match the Region where the stream is located.
+     * @return The Amazon Web Services Region of the S3 bucket where images will be delivered. This
+     *         <code>DestinationRegion</code> must match the Region where the stream is located.
      */
 
     public String getDestinationRegion() {
@@ -113,13 +113,13 @@ public class ImageGenerationDestinationConfig implements Serializable, Cloneable
 
     /**
      * <p>
-     * The AWS Region of the S3 bucket where images will be delivered. This <code>DestinationRegion</code> must match
-     * the Region where the stream is located.
+     * The Amazon Web Services Region of the S3 bucket where images will be delivered. This
+     * <code>DestinationRegion</code> must match the Region where the stream is located.
      * </p>
      * 
      * @param destinationRegion
-     *        The AWS Region of the S3 bucket where images will be delivered. This <code>DestinationRegion</code> must
-     *        match the Region where the stream is located.
+     *        The Amazon Web Services Region of the S3 bucket where images will be delivered. This
+     *        <code>DestinationRegion</code> must match the Region where the stream is located.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

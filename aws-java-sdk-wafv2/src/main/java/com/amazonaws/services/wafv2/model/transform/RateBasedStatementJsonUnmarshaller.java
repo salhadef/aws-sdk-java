@@ -64,6 +64,13 @@ public class RateBasedStatementJsonUnmarshaller implements Unmarshaller<RateBase
                     context.nextToken();
                     rateBasedStatement.setForwardedIPConfig(ForwardedIPConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("CustomKeys", targetDepth)) {
+                    context.nextToken();
+                    rateBasedStatement.setCustomKeys(new ListUnmarshaller<RateBasedStatementCustomKey>(RateBasedStatementCustomKeyJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

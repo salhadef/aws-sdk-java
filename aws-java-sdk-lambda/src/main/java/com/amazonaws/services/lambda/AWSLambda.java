@@ -660,6 +660,8 @@ public interface AWSLambda {
      *         The request throughput limit was exceeded. For more information, see <a
      *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
      *         quotas</a>.
+     * @throws ResourceConflictException
+     *         The resource already exists, or another operation is in progress.
      * @throws ResourceInUseException
      *         The operation conflicts with the resource's availability. For example, you tried to update an event
      *         source mapping in the CREATING state, or you tried to delete an event source mapping currently UPDATING.
@@ -672,7 +674,8 @@ public interface AWSLambda {
     /**
      * <p>
      * Deletes a Lambda function. To delete a specific function version, use the <code>Qualifier</code> parameter.
-     * Otherwise, all versions and aliases are deleted.
+     * Otherwise, all versions and aliases are deleted. This doesn't require the user to have explicit permissions for
+     * <a>DeleteAlias</a>.
      * </p>
      * <p>
      * To delete Lambda event source mappings that invoke a function, use <a>DeleteEventSourceMapping</a>. For Amazon
@@ -1242,7 +1245,10 @@ public interface AWSLambda {
     /**
      * <p>
      * Invokes a Lambda function. You can invoke a function synchronously (and wait for the response), or
-     * asynchronously. To invoke a function asynchronously, set <code>InvocationType</code> to <code>Event</code>.
+     * asynchronously. By default, Lambda invokes your function synchronously (i.e. the<code>InvocationType</code> is
+     * <code>RequestResponse</code>). To invoke a function asynchronously, set <code>InvocationType</code> to
+     * <code>Event</code>. Lambda passes the <code>ClientContext</code> object to your function for synchronous
+     * invocations only.
      * </p>
      * <p>
      * For <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-sync.html">synchronous invocation</a>,
@@ -1365,6 +1371,9 @@ public interface AWSLambda {
      * @throws ResourceNotReadyException
      *         The function is inactive and its VPC connection is no longer available. Wait for the VPC connection to
      *         reestablish and try again.
+     * @throws RecursiveInvocationException
+     *         Lambda has detected your function being invoked in a recursive loop with other Amazon Web Services
+     *         resources and stopped your function's invocation.
      * @sample AWSLambda.Invoke
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/Invoke" target="_top">AWS API
      *      Documentation</a>
@@ -1380,6 +1389,12 @@ public interface AWSLambda {
      * <p>
      * Invokes a function asynchronously.
      * </p>
+     * <note>
+     * <p>
+     * If you do use the InvokeAsync action, note that it doesn't support the use of X-Ray active tracing. Trace ID is
+     * not propagated to the function, even if X-Ray active tracing is turned on.
+     * </p>
+     * </note>
      * 
      * @param invokeAsyncRequest
      * @return Result of the InvokeAsync operation returned by the service.

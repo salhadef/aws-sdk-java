@@ -64,6 +64,14 @@ public class SnapshotJsonUnmarshaller implements Unmarshaller<Snapshot, JsonUnma
                     context.nextToken();
                     snapshot.setActualIncrementalBackupSizeInMegaBytes(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
+                if (context.testExpression("adminPasswordSecretArn", targetDepth)) {
+                    context.nextToken();
+                    snapshot.setAdminPasswordSecretArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("adminPasswordSecretKmsKeyId", targetDepth)) {
+                    context.nextToken();
+                    snapshot.setAdminPasswordSecretKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("adminUsername", targetDepth)) {
                     context.nextToken();
                     snapshot.setAdminUsername(context.getUnmarshaller(String.class).unmarshall(context));

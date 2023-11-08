@@ -56,6 +56,18 @@ public class AutoMLProblemTypeConfigJsonUnmarshaller implements Unmarshaller<Aut
                     context.nextToken();
                     autoMLProblemTypeConfig.setTextClassificationJobConfig(TextClassificationJobConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("TabularJobConfig", targetDepth)) {
+                    context.nextToken();
+                    autoMLProblemTypeConfig.setTabularJobConfig(TabularJobConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("TimeSeriesForecastingJobConfig", targetDepth)) {
+                    context.nextToken();
+                    autoMLProblemTypeConfig.setTimeSeriesForecastingJobConfig(TimeSeriesForecastingJobConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("TextGenerationJobConfig", targetDepth)) {
+                    context.nextToken();
+                    autoMLProblemTypeConfig.setTextGenerationJobConfig(TextGenerationJobConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

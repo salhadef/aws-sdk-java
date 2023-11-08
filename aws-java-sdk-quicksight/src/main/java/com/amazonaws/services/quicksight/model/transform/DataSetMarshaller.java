@@ -61,6 +61,8 @@ public class DataSetMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ColumnLevelPermissionRules").build();
     private static final MarshallingInfo<StructuredPojo> DATASETUSAGECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataSetUsageConfiguration").build();
+    private static final MarshallingInfo<List> DATASETPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DatasetParameters").build();
 
     private static final DataSetMarshaller instance = new DataSetMarshaller();
 
@@ -94,6 +96,7 @@ public class DataSetMarshaller {
             protocolMarshaller.marshall(dataSet.getRowLevelPermissionTagConfiguration(), ROWLEVELPERMISSIONTAGCONFIGURATION_BINDING);
             protocolMarshaller.marshall(dataSet.getColumnLevelPermissionRules(), COLUMNLEVELPERMISSIONRULES_BINDING);
             protocolMarshaller.marshall(dataSet.getDataSetUsageConfiguration(), DATASETUSAGECONFIGURATION_BINDING);
+            protocolMarshaller.marshall(dataSet.getDatasetParameters(), DATASETPARAMETERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

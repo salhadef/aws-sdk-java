@@ -327,6 +327,13 @@ public class RequestSpotFleetRequestMarshaller implements Marshaller<Request<Req
                                                 + ".Ipv6Address",
                                                 StringUtils.fromString(instanceNetworkInterfaceSpecificationIpv6AddressesListValue.getIpv6Address()));
                                     }
+
+                                    if (instanceNetworkInterfaceSpecificationIpv6AddressesListValue.getIsPrimaryIpv6() != null) {
+                                        request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex
+                                                + ".NetworkInterfaceSet." + networkInterfacesListIndex + ".Ipv6Addresses." + ipv6AddressesListIndex
+                                                + ".IsPrimaryIpv6",
+                                                StringUtils.fromBoolean(instanceNetworkInterfaceSpecificationIpv6AddressesListValue.getIsPrimaryIpv6()));
+                                    }
                                     ipv6AddressesListIndex++;
                                 }
                             }
@@ -444,6 +451,12 @@ public class RequestSpotFleetRequestMarshaller implements Marshaller<Request<Req
                                 request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".NetworkInterfaceSet."
                                         + networkInterfacesListIndex + ".Ipv6PrefixCount",
                                         StringUtils.fromInteger(spotFleetLaunchSpecificationNetworkInterfacesListValue.getIpv6PrefixCount()));
+                            }
+
+                            if (spotFleetLaunchSpecificationNetworkInterfacesListValue.getPrimaryIpv6() != null) {
+                                request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".NetworkInterfaceSet."
+                                        + networkInterfacesListIndex + ".PrimaryIpv6",
+                                        StringUtils.fromBoolean(spotFleetLaunchSpecificationNetworkInterfacesListValue.getPrimaryIpv6()));
                             }
                             networkInterfacesListIndex++;
                         }

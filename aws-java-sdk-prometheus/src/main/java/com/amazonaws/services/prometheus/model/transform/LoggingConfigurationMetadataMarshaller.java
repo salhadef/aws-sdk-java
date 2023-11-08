@@ -27,16 +27,16 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class LoggingConfigurationMetadataMarshaller {
 
-    private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("unixTimestamp").build();
-    private static final MarshallingInfo<String> LOGGROUPARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logGroupArn").build();
-    private static final MarshallingInfo<java.util.Date> MODIFIEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("modifiedAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<StructuredPojo> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("status").build();
     private static final MarshallingInfo<String> WORKSPACE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("workspace").build();
+    private static final MarshallingInfo<String> LOGGROUPARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logGroupArn").build();
+    private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<java.util.Date> MODIFIEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("modifiedAt").timestampFormat("unixTimestamp").build();
 
     private static final LoggingConfigurationMetadataMarshaller instance = new LoggingConfigurationMetadataMarshaller();
 
@@ -54,11 +54,11 @@ public class LoggingConfigurationMetadataMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(loggingConfigurationMetadata.getCreatedAt(), CREATEDAT_BINDING);
-            protocolMarshaller.marshall(loggingConfigurationMetadata.getLogGroupArn(), LOGGROUPARN_BINDING);
-            protocolMarshaller.marshall(loggingConfigurationMetadata.getModifiedAt(), MODIFIEDAT_BINDING);
             protocolMarshaller.marshall(loggingConfigurationMetadata.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(loggingConfigurationMetadata.getWorkspace(), WORKSPACE_BINDING);
+            protocolMarshaller.marshall(loggingConfigurationMetadata.getLogGroupArn(), LOGGROUPARN_BINDING);
+            protocolMarshaller.marshall(loggingConfigurationMetadata.getCreatedAt(), CREATEDAT_BINDING);
+            protocolMarshaller.marshall(loggingConfigurationMetadata.getModifiedAt(), MODIFIEDAT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -180,6 +180,12 @@ public class OntapVolumeConfiguration implements Serializable, Cloneable, Struct
      * </p>
      */
     private Boolean copyTagsToBackups;
+    /**
+     * <p>
+     * The SnapLock configuration object for an FSx for ONTAP SnapLock volume.
+     * </p>
+     */
+    private SnaplockConfiguration snaplockConfiguration;
 
     /**
      * <p>
@@ -1326,6 +1332,46 @@ public class OntapVolumeConfiguration implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * The SnapLock configuration object for an FSx for ONTAP SnapLock volume.
+     * </p>
+     * 
+     * @param snaplockConfiguration
+     *        The SnapLock configuration object for an FSx for ONTAP SnapLock volume.
+     */
+
+    public void setSnaplockConfiguration(SnaplockConfiguration snaplockConfiguration) {
+        this.snaplockConfiguration = snaplockConfiguration;
+    }
+
+    /**
+     * <p>
+     * The SnapLock configuration object for an FSx for ONTAP SnapLock volume.
+     * </p>
+     * 
+     * @return The SnapLock configuration object for an FSx for ONTAP SnapLock volume.
+     */
+
+    public SnaplockConfiguration getSnaplockConfiguration() {
+        return this.snaplockConfiguration;
+    }
+
+    /**
+     * <p>
+     * The SnapLock configuration object for an FSx for ONTAP SnapLock volume.
+     * </p>
+     * 
+     * @param snaplockConfiguration
+     *        The SnapLock configuration object for an FSx for ONTAP SnapLock volume.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OntapVolumeConfiguration withSnaplockConfiguration(SnaplockConfiguration snaplockConfiguration) {
+        setSnaplockConfiguration(snaplockConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1360,7 +1406,9 @@ public class OntapVolumeConfiguration implements Serializable, Cloneable, Struct
         if (getSnapshotPolicy() != null)
             sb.append("SnapshotPolicy: ").append(getSnapshotPolicy()).append(",");
         if (getCopyTagsToBackups() != null)
-            sb.append("CopyTagsToBackups: ").append(getCopyTagsToBackups());
+            sb.append("CopyTagsToBackups: ").append(getCopyTagsToBackups()).append(",");
+        if (getSnaplockConfiguration() != null)
+            sb.append("SnaplockConfiguration: ").append(getSnaplockConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -1423,6 +1471,10 @@ public class OntapVolumeConfiguration implements Serializable, Cloneable, Struct
             return false;
         if (other.getCopyTagsToBackups() != null && other.getCopyTagsToBackups().equals(this.getCopyTagsToBackups()) == false)
             return false;
+        if (other.getSnaplockConfiguration() == null ^ this.getSnaplockConfiguration() == null)
+            return false;
+        if (other.getSnaplockConfiguration() != null && other.getSnaplockConfiguration().equals(this.getSnaplockConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -1443,6 +1495,7 @@ public class OntapVolumeConfiguration implements Serializable, Cloneable, Struct
         hashCode = prime * hashCode + ((getOntapVolumeType() == null) ? 0 : getOntapVolumeType().hashCode());
         hashCode = prime * hashCode + ((getSnapshotPolicy() == null) ? 0 : getSnapshotPolicy().hashCode());
         hashCode = prime * hashCode + ((getCopyTagsToBackups() == null) ? 0 : getCopyTagsToBackups().hashCode());
+        hashCode = prime * hashCode + ((getSnaplockConfiguration() == null) ? 0 : getSnaplockConfiguration().hashCode());
         return hashCode;
     }
 

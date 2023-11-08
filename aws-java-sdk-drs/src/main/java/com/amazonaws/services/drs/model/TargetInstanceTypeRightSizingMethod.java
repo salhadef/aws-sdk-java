@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum TargetInstanceTypeRightSizingMethod {
 
     NONE("NONE"),
-    BASIC("BASIC");
+    BASIC("BASIC"),
+    IN_AWS("IN_AWS");
 
     private String value;
 

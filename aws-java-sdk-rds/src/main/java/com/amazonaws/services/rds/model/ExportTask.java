@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * Contains the details of a snapshot or cluster export to Amazon S3.
  * </p>
  * <p>
- * This data type is used as a response element in the <code>DescribeExportTasks</code> action.
+ * This data type is used as a response element in the <code>DescribeExportTasks</code> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ExportTask" target="_top">AWS API
@@ -44,7 +44,10 @@ public class ExportTask implements Serializable, Cloneable {
     private String sourceArn;
     /**
      * <p>
-     * The data exported from the snapshot or cluster. Valid values are the following:
+     * The data exported from the snapshot or cluster.
+     * </p>
+     * <p>
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
@@ -75,25 +78,25 @@ public class ExportTask implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> exportOnly;
     /**
      * <p>
-     * The time that the snapshot was created.
+     * The time when the snapshot was created.
      * </p>
      */
     private java.util.Date snapshotTime;
     /**
      * <p>
-     * The time that the snapshot or cluster export task started.
+     * The time when the snapshot or cluster export task started.
      * </p>
      */
     private java.util.Date taskStartTime;
     /**
      * <p>
-     * The time that the snapshot or cluster export task ended.
+     * The time when the snapshot or cluster export task ended.
      * </p>
      */
     private java.util.Date taskEndTime;
     /**
      * <p>
-     * The Amazon S3 bucket that the snapshot or cluster is exported to.
+     * The Amazon S3 bucket where the snapshot or cluster is exported to.
      * </p>
      */
     private String s3Bucket;
@@ -274,7 +277,10 @@ public class ExportTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The data exported from the snapshot or cluster. Valid values are the following:
+     * The data exported from the snapshot or cluster.
+     * </p>
+     * <p>
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
@@ -302,7 +308,10 @@ public class ExportTask implements Serializable, Cloneable {
      * </li>
      * </ul>
      * 
-     * @return The data exported from the snapshot or cluster. Valid values are the following:</p>
+     * @return The data exported from the snapshot or cluster.</p>
+     *         <p>
+     *         Valid Values:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -338,7 +347,10 @@ public class ExportTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The data exported from the snapshot or cluster. Valid values are the following:
+     * The data exported from the snapshot or cluster.
+     * </p>
+     * <p>
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
@@ -367,7 +379,10 @@ public class ExportTask implements Serializable, Cloneable {
      * </ul>
      * 
      * @param exportOnly
-     *        The data exported from the snapshot or cluster. Valid values are the following:</p>
+     *        The data exported from the snapshot or cluster.</p>
+     *        <p>
+     *        Valid Values:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -405,7 +420,10 @@ public class ExportTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The data exported from the snapshot or cluster. Valid values are the following:
+     * The data exported from the snapshot or cluster.
+     * </p>
+     * <p>
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
@@ -439,7 +457,10 @@ public class ExportTask implements Serializable, Cloneable {
      * </p>
      * 
      * @param exportOnly
-     *        The data exported from the snapshot or cluster. Valid values are the following:</p>
+     *        The data exported from the snapshot or cluster.</p>
+     *        <p>
+     *        Valid Values:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -479,7 +500,10 @@ public class ExportTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The data exported from the snapshot or cluster. Valid values are the following:
+     * The data exported from the snapshot or cluster.
+     * </p>
+     * <p>
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
@@ -508,7 +532,10 @@ public class ExportTask implements Serializable, Cloneable {
      * </ul>
      * 
      * @param exportOnly
-     *        The data exported from the snapshot or cluster. Valid values are the following:</p>
+     *        The data exported from the snapshot or cluster.</p>
+     *        <p>
+     *        Valid Values:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -543,11 +570,11 @@ public class ExportTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time that the snapshot was created.
+     * The time when the snapshot was created.
      * </p>
      * 
      * @param snapshotTime
-     *        The time that the snapshot was created.
+     *        The time when the snapshot was created.
      */
 
     public void setSnapshotTime(java.util.Date snapshotTime) {
@@ -556,10 +583,10 @@ public class ExportTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time that the snapshot was created.
+     * The time when the snapshot was created.
      * </p>
      * 
-     * @return The time that the snapshot was created.
+     * @return The time when the snapshot was created.
      */
 
     public java.util.Date getSnapshotTime() {
@@ -568,11 +595,11 @@ public class ExportTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time that the snapshot was created.
+     * The time when the snapshot was created.
      * </p>
      * 
      * @param snapshotTime
-     *        The time that the snapshot was created.
+     *        The time when the snapshot was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -583,11 +610,11 @@ public class ExportTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time that the snapshot or cluster export task started.
+     * The time when the snapshot or cluster export task started.
      * </p>
      * 
      * @param taskStartTime
-     *        The time that the snapshot or cluster export task started.
+     *        The time when the snapshot or cluster export task started.
      */
 
     public void setTaskStartTime(java.util.Date taskStartTime) {
@@ -596,10 +623,10 @@ public class ExportTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time that the snapshot or cluster export task started.
+     * The time when the snapshot or cluster export task started.
      * </p>
      * 
-     * @return The time that the snapshot or cluster export task started.
+     * @return The time when the snapshot or cluster export task started.
      */
 
     public java.util.Date getTaskStartTime() {
@@ -608,11 +635,11 @@ public class ExportTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time that the snapshot or cluster export task started.
+     * The time when the snapshot or cluster export task started.
      * </p>
      * 
      * @param taskStartTime
-     *        The time that the snapshot or cluster export task started.
+     *        The time when the snapshot or cluster export task started.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -623,11 +650,11 @@ public class ExportTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time that the snapshot or cluster export task ended.
+     * The time when the snapshot or cluster export task ended.
      * </p>
      * 
      * @param taskEndTime
-     *        The time that the snapshot or cluster export task ended.
+     *        The time when the snapshot or cluster export task ended.
      */
 
     public void setTaskEndTime(java.util.Date taskEndTime) {
@@ -636,10 +663,10 @@ public class ExportTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time that the snapshot or cluster export task ended.
+     * The time when the snapshot or cluster export task ended.
      * </p>
      * 
-     * @return The time that the snapshot or cluster export task ended.
+     * @return The time when the snapshot or cluster export task ended.
      */
 
     public java.util.Date getTaskEndTime() {
@@ -648,11 +675,11 @@ public class ExportTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time that the snapshot or cluster export task ended.
+     * The time when the snapshot or cluster export task ended.
      * </p>
      * 
      * @param taskEndTime
-     *        The time that the snapshot or cluster export task ended.
+     *        The time when the snapshot or cluster export task ended.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -663,11 +690,11 @@ public class ExportTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon S3 bucket that the snapshot or cluster is exported to.
+     * The Amazon S3 bucket where the snapshot or cluster is exported to.
      * </p>
      * 
      * @param s3Bucket
-     *        The Amazon S3 bucket that the snapshot or cluster is exported to.
+     *        The Amazon S3 bucket where the snapshot or cluster is exported to.
      */
 
     public void setS3Bucket(String s3Bucket) {
@@ -676,10 +703,10 @@ public class ExportTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon S3 bucket that the snapshot or cluster is exported to.
+     * The Amazon S3 bucket where the snapshot or cluster is exported to.
      * </p>
      * 
-     * @return The Amazon S3 bucket that the snapshot or cluster is exported to.
+     * @return The Amazon S3 bucket where the snapshot or cluster is exported to.
      */
 
     public String getS3Bucket() {
@@ -688,11 +715,11 @@ public class ExportTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon S3 bucket that the snapshot or cluster is exported to.
+     * The Amazon S3 bucket where the snapshot or cluster is exported to.
      * </p>
      * 
      * @param s3Bucket
-     *        The Amazon S3 bucket that the snapshot or cluster is exported to.
+     *        The Amazon S3 bucket where the snapshot or cluster is exported to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

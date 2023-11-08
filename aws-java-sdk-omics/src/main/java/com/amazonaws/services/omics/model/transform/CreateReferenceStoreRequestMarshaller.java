@@ -29,16 +29,16 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CreateReferenceStoreRequestMarshaller {
 
-    private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken").build();
-    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<StructuredPojo> SSECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sseConfig").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken").build();
 
     private static final CreateReferenceStoreRequestMarshaller instance = new CreateReferenceStoreRequestMarshaller();
 
@@ -56,11 +56,11 @@ public class CreateReferenceStoreRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(createReferenceStoreRequest.getClientToken(), CLIENTTOKEN_BINDING);
-            protocolMarshaller.marshall(createReferenceStoreRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createReferenceStoreRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(createReferenceStoreRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createReferenceStoreRequest.getSseConfig(), SSECONFIG_BINDING);
             protocolMarshaller.marshall(createReferenceStoreRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createReferenceStoreRequest.getClientToken(), CLIENTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

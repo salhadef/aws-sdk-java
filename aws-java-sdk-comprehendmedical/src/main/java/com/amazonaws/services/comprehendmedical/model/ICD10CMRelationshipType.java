@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum ICD10CMRelationshipType {
 
     OVERLAP("OVERLAP"),
-    SYSTEM_ORGAN_SITE("SYSTEM_ORGAN_SITE");
+    SYSTEM_ORGAN_SITE("SYSTEM_ORGAN_SITE"),
+    QUALITY("QUALITY");
 
     private String value;
 

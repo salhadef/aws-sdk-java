@@ -42,6 +42,12 @@ public class OtaaV10X implements Serializable, Cloneable, StructuredPojo {
     private String appEui;
     /**
      * <p>
+     * The JoinEUI value.
+     * </p>
+     */
+    private String joinEui;
+    /**
+     * <p>
      * The GenAppKey value.
      * </p>
      */
@@ -129,6 +135,46 @@ public class OtaaV10X implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The JoinEUI value.
+     * </p>
+     * 
+     * @param joinEui
+     *        The JoinEUI value.
+     */
+
+    public void setJoinEui(String joinEui) {
+        this.joinEui = joinEui;
+    }
+
+    /**
+     * <p>
+     * The JoinEUI value.
+     * </p>
+     * 
+     * @return The JoinEUI value.
+     */
+
+    public String getJoinEui() {
+        return this.joinEui;
+    }
+
+    /**
+     * <p>
+     * The JoinEUI value.
+     * </p>
+     * 
+     * @param joinEui
+     *        The JoinEUI value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OtaaV10X withJoinEui(String joinEui) {
+        setJoinEui(joinEui);
+        return this;
+    }
+
+    /**
+     * <p>
      * The GenAppKey value.
      * </p>
      * 
@@ -183,6 +229,8 @@ public class OtaaV10X implements Serializable, Cloneable, StructuredPojo {
             sb.append("AppKey: ").append(getAppKey()).append(",");
         if (getAppEui() != null)
             sb.append("AppEui: ").append(getAppEui()).append(",");
+        if (getJoinEui() != null)
+            sb.append("JoinEui: ").append(getJoinEui()).append(",");
         if (getGenAppKey() != null)
             sb.append("GenAppKey: ").append(getGenAppKey());
         sb.append("}");
@@ -207,6 +255,10 @@ public class OtaaV10X implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAppEui() != null && other.getAppEui().equals(this.getAppEui()) == false)
             return false;
+        if (other.getJoinEui() == null ^ this.getJoinEui() == null)
+            return false;
+        if (other.getJoinEui() != null && other.getJoinEui().equals(this.getJoinEui()) == false)
+            return false;
         if (other.getGenAppKey() == null ^ this.getGenAppKey() == null)
             return false;
         if (other.getGenAppKey() != null && other.getGenAppKey().equals(this.getGenAppKey()) == false)
@@ -221,6 +273,7 @@ public class OtaaV10X implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getAppKey() == null) ? 0 : getAppKey().hashCode());
         hashCode = prime * hashCode + ((getAppEui() == null) ? 0 : getAppEui().hashCode());
+        hashCode = prime * hashCode + ((getJoinEui() == null) ? 0 : getJoinEui().hashCode());
         hashCode = prime * hashCode + ((getGenAppKey() == null) ? 0 : getGenAppKey().hashCode());
         return hashCode;
     }

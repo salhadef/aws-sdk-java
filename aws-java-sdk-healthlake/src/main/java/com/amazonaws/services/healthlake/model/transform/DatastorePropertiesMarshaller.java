@@ -45,6 +45,8 @@ public class DatastorePropertiesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SseConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> PRELOADDATACONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PreloadDataConfig").build();
+    private static final MarshallingInfo<StructuredPojo> IDENTITYPROVIDERCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdentityProviderConfiguration").build();
 
     private static final DatastorePropertiesMarshaller instance = new DatastorePropertiesMarshaller();
 
@@ -71,6 +73,7 @@ public class DatastorePropertiesMarshaller {
             protocolMarshaller.marshall(datastoreProperties.getDatastoreEndpoint(), DATASTOREENDPOINT_BINDING);
             protocolMarshaller.marshall(datastoreProperties.getSseConfiguration(), SSECONFIGURATION_BINDING);
             protocolMarshaller.marshall(datastoreProperties.getPreloadDataConfig(), PRELOADDATACONFIG_BINDING);
+            protocolMarshaller.marshall(datastoreProperties.getIdentityProviderConfiguration(), IDENTITYPROVIDERCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

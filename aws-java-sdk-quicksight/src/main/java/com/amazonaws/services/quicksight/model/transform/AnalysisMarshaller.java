@@ -48,6 +48,8 @@ public class AnalysisMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastUpdatedTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<List> SHEETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Sheets").build();
+    private static final MarshallingInfo<StructuredPojo> OPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Options").build();
 
     private static final AnalysisMarshaller instance = new AnalysisMarshaller();
 
@@ -75,6 +77,7 @@ public class AnalysisMarshaller {
             protocolMarshaller.marshall(analysis.getCreatedTime(), CREATEDTIME_BINDING);
             protocolMarshaller.marshall(analysis.getLastUpdatedTime(), LASTUPDATEDTIME_BINDING);
             protocolMarshaller.marshall(analysis.getSheets(), SHEETS_BINDING);
+            protocolMarshaller.marshall(analysis.getOptions(), OPTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -65,6 +65,11 @@ public class PillarReviewSummaryJsonUnmarshaller implements Unmarshaller<PillarR
                     pillarReviewSummary.setRiskCounts(new MapUnmarshaller<String, Integer>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(Integer.class)).unmarshall(context));
                 }
+                if (context.testExpression("PrioritizedRiskCounts", targetDepth)) {
+                    context.nextToken();
+                    pillarReviewSummary.setPrioritizedRiskCounts(new MapUnmarshaller<String, Integer>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(Integer.class)).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

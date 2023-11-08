@@ -40,6 +40,12 @@ public class TextFieldControlDisplayOptions implements Serializable, Cloneable, 
      * </p>
      */
     private TextControlPlaceholderOptions placeholderOptions;
+    /**
+     * <p>
+     * The configuration of info icon label options.
+     * </p>
+     */
+    private SheetControlInfoIconLabelOptions infoIconLabelOptions;
 
     /**
      * <p>
@@ -122,6 +128,46 @@ public class TextFieldControlDisplayOptions implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * The configuration of info icon label options.
+     * </p>
+     * 
+     * @param infoIconLabelOptions
+     *        The configuration of info icon label options.
+     */
+
+    public void setInfoIconLabelOptions(SheetControlInfoIconLabelOptions infoIconLabelOptions) {
+        this.infoIconLabelOptions = infoIconLabelOptions;
+    }
+
+    /**
+     * <p>
+     * The configuration of info icon label options.
+     * </p>
+     * 
+     * @return The configuration of info icon label options.
+     */
+
+    public SheetControlInfoIconLabelOptions getInfoIconLabelOptions() {
+        return this.infoIconLabelOptions;
+    }
+
+    /**
+     * <p>
+     * The configuration of info icon label options.
+     * </p>
+     * 
+     * @param infoIconLabelOptions
+     *        The configuration of info icon label options.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TextFieldControlDisplayOptions withInfoIconLabelOptions(SheetControlInfoIconLabelOptions infoIconLabelOptions) {
+        setInfoIconLabelOptions(infoIconLabelOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -136,7 +182,9 @@ public class TextFieldControlDisplayOptions implements Serializable, Cloneable, 
         if (getTitleOptions() != null)
             sb.append("TitleOptions: ").append(getTitleOptions()).append(",");
         if (getPlaceholderOptions() != null)
-            sb.append("PlaceholderOptions: ").append(getPlaceholderOptions());
+            sb.append("PlaceholderOptions: ").append(getPlaceholderOptions()).append(",");
+        if (getInfoIconLabelOptions() != null)
+            sb.append("InfoIconLabelOptions: ").append(getInfoIconLabelOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +207,10 @@ public class TextFieldControlDisplayOptions implements Serializable, Cloneable, 
             return false;
         if (other.getPlaceholderOptions() != null && other.getPlaceholderOptions().equals(this.getPlaceholderOptions()) == false)
             return false;
+        if (other.getInfoIconLabelOptions() == null ^ this.getInfoIconLabelOptions() == null)
+            return false;
+        if (other.getInfoIconLabelOptions() != null && other.getInfoIconLabelOptions().equals(this.getInfoIconLabelOptions()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +221,7 @@ public class TextFieldControlDisplayOptions implements Serializable, Cloneable, 
 
         hashCode = prime * hashCode + ((getTitleOptions() == null) ? 0 : getTitleOptions().hashCode());
         hashCode = prime * hashCode + ((getPlaceholderOptions() == null) ? 0 : getPlaceholderOptions().hashCode());
+        hashCode = prime * hashCode + ((getInfoIconLabelOptions() == null) ? 0 : getInfoIconLabelOptions().hashCode());
         return hashCode;
     }
 

@@ -48,29 +48,29 @@ public class ImportReadSetJobItemJsonUnmarshaller implements Unmarshaller<Import
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("completionTime", targetDepth)) {
-                    context.nextToken();
-                    importReadSetJobItem.setCompletionTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
-                }
-                if (context.testExpression("creationTime", targetDepth)) {
-                    context.nextToken();
-                    importReadSetJobItem.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
-                }
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
                     importReadSetJobItem.setId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("roleArn", targetDepth)) {
-                    context.nextToken();
-                    importReadSetJobItem.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sequenceStoreId", targetDepth)) {
                     context.nextToken();
                     importReadSetJobItem.setSequenceStoreId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("roleArn", targetDepth)) {
+                    context.nextToken();
+                    importReadSetJobItem.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     importReadSetJobItem.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("creationTime", targetDepth)) {
+                    context.nextToken();
+                    importReadSetJobItem.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (context.testExpression("completionTime", targetDepth)) {
+                    context.nextToken();
+                    importReadSetJobItem.setCompletionTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

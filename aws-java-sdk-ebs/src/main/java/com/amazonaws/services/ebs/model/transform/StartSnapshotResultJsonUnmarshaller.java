@@ -90,6 +90,10 @@ public class StartSnapshotResultJsonUnmarshaller implements Unmarshaller<StartSn
                     context.nextToken();
                     startSnapshotResult.setKmsKeyArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SseType", targetDepth)) {
+                    context.nextToken();
+                    startSnapshotResult.setSseType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

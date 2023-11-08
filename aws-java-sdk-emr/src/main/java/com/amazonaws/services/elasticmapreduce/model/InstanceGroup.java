@@ -63,7 +63,7 @@ public class InstanceGroup implements Serializable, Cloneable, StructuredPojo {
     private String bidPrice;
     /**
      * <p>
-     * The EC2 instance type for all instances in the instance group.
+     * The Amazon EC2 instance type for all instances in the instance group.
      * </p>
      */
     private String instanceType;
@@ -88,7 +88,7 @@ public class InstanceGroup implements Serializable, Cloneable, StructuredPojo {
     /**
      * <note>
      * <p>
-     * Amazon EMR releases 4.x or later.
+     * Amazon EMR releases 4.x or higher.
      * </p>
      * </note>
      * <p>
@@ -138,8 +138,8 @@ public class InstanceGroup implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The
-     * automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response
-     * to the value of a CloudWatch metric. See PutAutoScalingPolicy.
+     * automatic scaling policy defines how an instance group dynamically adds and terminates Amazon EC2 instances in
+     * response to the value of a CloudWatch metric. See PutAutoScalingPolicy.
      * </p>
      */
     private AutoScalingPolicyDescription autoScalingPolicy;
@@ -430,11 +430,11 @@ public class InstanceGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The EC2 instance type for all instances in the instance group.
+     * The Amazon EC2 instance type for all instances in the instance group.
      * </p>
      * 
      * @param instanceType
-     *        The EC2 instance type for all instances in the instance group.
+     *        The Amazon EC2 instance type for all instances in the instance group.
      */
 
     public void setInstanceType(String instanceType) {
@@ -443,10 +443,10 @@ public class InstanceGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The EC2 instance type for all instances in the instance group.
+     * The Amazon EC2 instance type for all instances in the instance group.
      * </p>
      * 
-     * @return The EC2 instance type for all instances in the instance group.
+     * @return The Amazon EC2 instance type for all instances in the instance group.
      */
 
     public String getInstanceType() {
@@ -455,11 +455,11 @@ public class InstanceGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The EC2 instance type for all instances in the instance group.
+     * The Amazon EC2 instance type for all instances in the instance group.
      * </p>
      * 
      * @param instanceType
-     *        The EC2 instance type for all instances in the instance group.
+     *        The Amazon EC2 instance type for all instances in the instance group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -591,7 +591,7 @@ public class InstanceGroup implements Serializable, Cloneable, StructuredPojo {
     /**
      * <note>
      * <p>
-     * Amazon EMR releases 4.x or later.
+     * Amazon EMR releases 4.x or higher.
      * </p>
      * </note>
      * <p>
@@ -600,7 +600,7 @@ public class InstanceGroup implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @return <p>
-     *         Amazon EMR releases 4.x or later.
+     *         Amazon EMR releases 4.x or higher.
      *         </p>
      *         </note>
      *         <p>
@@ -618,7 +618,7 @@ public class InstanceGroup implements Serializable, Cloneable, StructuredPojo {
     /**
      * <note>
      * <p>
-     * Amazon EMR releases 4.x or later.
+     * Amazon EMR releases 4.x or higher.
      * </p>
      * </note>
      * <p>
@@ -628,7 +628,7 @@ public class InstanceGroup implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param configurations
      *        <p>
-     *        Amazon EMR releases 4.x or later.
+     *        Amazon EMR releases 4.x or higher.
      *        </p>
      *        </note>
      *        <p>
@@ -648,7 +648,7 @@ public class InstanceGroup implements Serializable, Cloneable, StructuredPojo {
     /**
      * <note>
      * <p>
-     * Amazon EMR releases 4.x or later.
+     * Amazon EMR releases 4.x or higher.
      * </p>
      * </note>
      * <p>
@@ -663,7 +663,7 @@ public class InstanceGroup implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param configurations
      *        <p>
-     *        Amazon EMR releases 4.x or later.
+     *        Amazon EMR releases 4.x or higher.
      *        </p>
      *        </note>
      *        <p>
@@ -685,7 +685,7 @@ public class InstanceGroup implements Serializable, Cloneable, StructuredPojo {
     /**
      * <note>
      * <p>
-     * Amazon EMR releases 4.x or later.
+     * Amazon EMR releases 4.x or higher.
      * </p>
      * </note>
      * <p>
@@ -695,7 +695,7 @@ public class InstanceGroup implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param configurations
      *        <p>
-     *        Amazon EMR releases 4.x or later.
+     *        Amazon EMR releases 4.x or higher.
      *        </p>
      *        </note>
      *        <p>
@@ -1045,14 +1045,14 @@ public class InstanceGroup implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The
-     * automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response
-     * to the value of a CloudWatch metric. See PutAutoScalingPolicy.
+     * automatic scaling policy defines how an instance group dynamically adds and terminates Amazon EC2 instances in
+     * response to the value of a CloudWatch metric. See PutAutoScalingPolicy.
      * </p>
      * 
      * @param autoScalingPolicy
      *        An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The
-     *        automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in
-     *        response to the value of a CloudWatch metric. See PutAutoScalingPolicy.
+     *        automatic scaling policy defines how an instance group dynamically adds and terminates Amazon EC2
+     *        instances in response to the value of a CloudWatch metric. See PutAutoScalingPolicy.
      */
 
     public void setAutoScalingPolicy(AutoScalingPolicyDescription autoScalingPolicy) {
@@ -1062,13 +1062,13 @@ public class InstanceGroup implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The
-     * automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response
-     * to the value of a CloudWatch metric. See PutAutoScalingPolicy.
+     * automatic scaling policy defines how an instance group dynamically adds and terminates Amazon EC2 instances in
+     * response to the value of a CloudWatch metric. See PutAutoScalingPolicy.
      * </p>
      * 
      * @return An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster.
-     *         The automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances
-     *         in response to the value of a CloudWatch metric. See PutAutoScalingPolicy.
+     *         The automatic scaling policy defines how an instance group dynamically adds and terminates Amazon EC2
+     *         instances in response to the value of a CloudWatch metric. See PutAutoScalingPolicy.
      */
 
     public AutoScalingPolicyDescription getAutoScalingPolicy() {
@@ -1078,14 +1078,14 @@ public class InstanceGroup implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The
-     * automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response
-     * to the value of a CloudWatch metric. See PutAutoScalingPolicy.
+     * automatic scaling policy defines how an instance group dynamically adds and terminates Amazon EC2 instances in
+     * response to the value of a CloudWatch metric. See PutAutoScalingPolicy.
      * </p>
      * 
      * @param autoScalingPolicy
      *        An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The
-     *        automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in
-     *        response to the value of a CloudWatch metric. See PutAutoScalingPolicy.
+     *        automatic scaling policy defines how an instance group dynamically adds and terminates Amazon EC2
+     *        instances in response to the value of a CloudWatch metric. See PutAutoScalingPolicy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

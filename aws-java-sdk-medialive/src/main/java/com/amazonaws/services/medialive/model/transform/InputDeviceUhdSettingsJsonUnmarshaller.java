@@ -84,6 +84,14 @@ public class InputDeviceUhdSettingsJsonUnmarshaller implements Unmarshaller<Inpu
                     context.nextToken();
                     inputDeviceUhdSettings.setLatencyMs(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("codec", targetDepth)) {
+                    context.nextToken();
+                    inputDeviceUhdSettings.setCodec(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("mediaconnectSettings", targetDepth)) {
+                    context.nextToken();
+                    inputDeviceUhdSettings.setMediaconnectSettings(InputDeviceMediaConnectSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

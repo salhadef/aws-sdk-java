@@ -31,6 +31,8 @@ public class AnalysisRulePolicyV1Marshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("list").build();
     private static final MarshallingInfo<StructuredPojo> AGGREGATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("aggregation").build();
+    private static final MarshallingInfo<StructuredPojo> CUSTOM_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("custom").build();
 
     private static final AnalysisRulePolicyV1Marshaller instance = new AnalysisRulePolicyV1Marshaller();
 
@@ -50,6 +52,7 @@ public class AnalysisRulePolicyV1Marshaller {
         try {
             protocolMarshaller.marshall(analysisRulePolicyV1.getList(), LIST_BINDING);
             protocolMarshaller.marshall(analysisRulePolicyV1.getAggregation(), AGGREGATION_BINDING);
+            protocolMarshaller.marshall(analysisRulePolicyV1.getCustom(), CUSTOM_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

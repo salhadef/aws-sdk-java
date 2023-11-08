@@ -25,16 +25,56 @@ public class ListReadSetActivationJobsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A list of jobs.
-     * </p>
-     */
-    private java.util.List<ActivateReadSetJobItem> activationJobs;
-    /**
-     * <p>
      * A pagination token that's included if more results are available.
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * A list of jobs.
+     * </p>
+     */
+    private java.util.List<ActivateReadSetJobItem> activationJobs;
+
+    /**
+     * <p>
+     * A pagination token that's included if more results are available.
+     * </p>
+     * 
+     * @param nextToken
+     *        A pagination token that's included if more results are available.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * A pagination token that's included if more results are available.
+     * </p>
+     * 
+     * @return A pagination token that's included if more results are available.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * A pagination token that's included if more results are available.
+     * </p>
+     * 
+     * @param nextToken
+     *        A pagination token that's included if more results are available.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListReadSetActivationJobsResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
 
     /**
      * <p>
@@ -107,46 +147,6 @@ public class ListReadSetActivationJobsResult extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * <p>
-     * A pagination token that's included if more results are available.
-     * </p>
-     * 
-     * @param nextToken
-     *        A pagination token that's included if more results are available.
-     */
-
-    public void setNextToken(String nextToken) {
-        this.nextToken = nextToken;
-    }
-
-    /**
-     * <p>
-     * A pagination token that's included if more results are available.
-     * </p>
-     * 
-     * @return A pagination token that's included if more results are available.
-     */
-
-    public String getNextToken() {
-        return this.nextToken;
-    }
-
-    /**
-     * <p>
-     * A pagination token that's included if more results are available.
-     * </p>
-     * 
-     * @param nextToken
-     *        A pagination token that's included if more results are available.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListReadSetActivationJobsResult withNextToken(String nextToken) {
-        setNextToken(nextToken);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -158,10 +158,10 @@ public class ListReadSetActivationJobsResult extends com.amazonaws.AmazonWebServ
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getActivationJobs() != null)
-            sb.append("ActivationJobs: ").append(getActivationJobs()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getActivationJobs() != null)
+            sb.append("ActivationJobs: ").append(getActivationJobs());
         sb.append("}");
         return sb.toString();
     }
@@ -176,13 +176,13 @@ public class ListReadSetActivationJobsResult extends com.amazonaws.AmazonWebServ
         if (obj instanceof ListReadSetActivationJobsResult == false)
             return false;
         ListReadSetActivationJobsResult other = (ListReadSetActivationJobsResult) obj;
-        if (other.getActivationJobs() == null ^ this.getActivationJobs() == null)
-            return false;
-        if (other.getActivationJobs() != null && other.getActivationJobs().equals(this.getActivationJobs()) == false)
-            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getActivationJobs() == null ^ this.getActivationJobs() == null)
+            return false;
+        if (other.getActivationJobs() != null && other.getActivationJobs().equals(this.getActivationJobs()) == false)
             return false;
         return true;
     }
@@ -192,8 +192,8 @@ public class ListReadSetActivationJobsResult extends com.amazonaws.AmazonWebServ
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getActivationJobs() == null) ? 0 : getActivationJobs().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getActivationJobs() == null) ? 0 : getActivationJobs().hashCode());
         return hashCode;
     }
 

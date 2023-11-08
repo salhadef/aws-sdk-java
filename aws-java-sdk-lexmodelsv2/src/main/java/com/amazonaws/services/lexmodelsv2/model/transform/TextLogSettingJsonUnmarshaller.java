@@ -56,6 +56,10 @@ public class TextLogSettingJsonUnmarshaller implements Unmarshaller<TextLogSetti
                     context.nextToken();
                     textLogSetting.setDestination(TextLogDestinationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("selectiveLoggingEnabled", targetDepth)) {
+                    context.nextToken();
+                    textLogSetting.setSelectiveLoggingEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

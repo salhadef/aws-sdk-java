@@ -76,6 +76,14 @@ public class KPIOptionsJsonUnmarshaller implements Unmarshaller<KPIOptions, Json
                     context.nextToken();
                     kPIOptions.setSecondaryValueFontConfiguration(FontConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Sparkline", targetDepth)) {
+                    context.nextToken();
+                    kPIOptions.setSparkline(KPISparklineOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("VisualLayoutOptions", targetDepth)) {
+                    context.nextToken();
+                    kPIOptions.setVisualLayoutOptions(KPIVisualLayoutOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -31,30 +31,32 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class StartRunRequestMarshaller {
 
-    private static final MarshallingInfo<String> LOGLEVEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("logLevel").build();
-    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("name").build();
-    private static final MarshallingInfo<String> OUTPUTURI_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("outputUri").build();
-    private static final MarshallingInfo<Integer> PRIORITY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("priority").build();
-    private static final MarshallingInfo<String> REQUESTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("requestId").defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
-    private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("roleArn").build();
-    private static final MarshallingInfo<String> RUNGROUPID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("runGroupId").build();
-    private static final MarshallingInfo<String> RUNID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("runId").build();
-    private static final MarshallingInfo<Integer> STORAGECAPACITY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("storageCapacity").build();
-    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> WORKFLOWID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("workflowId").build();
     private static final MarshallingInfo<String> WORKFLOWTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("workflowType").build();
+    private static final MarshallingInfo<String> RUNID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("runId").build();
+    private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("roleArn").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> RUNGROUPID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("runGroupId").build();
+    private static final MarshallingInfo<Integer> PRIORITY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("priority").build();
+    private static final MarshallingInfo<Integer> STORAGECAPACITY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("storageCapacity").build();
+    private static final MarshallingInfo<String> OUTPUTURI_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("outputUri").build();
+    private static final MarshallingInfo<String> LOGLEVEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("logLevel").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
+    private static final MarshallingInfo<String> REQUESTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("requestId").defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
+    private static final MarshallingInfo<String> RETENTIONMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("retentionMode").build();
 
     private static final StartRunRequestMarshaller instance = new StartRunRequestMarshaller();
 
@@ -72,18 +74,19 @@ public class StartRunRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(startRunRequest.getLogLevel(), LOGLEVEL_BINDING);
-            protocolMarshaller.marshall(startRunRequest.getName(), NAME_BINDING);
-            protocolMarshaller.marshall(startRunRequest.getOutputUri(), OUTPUTURI_BINDING);
-            protocolMarshaller.marshall(startRunRequest.getPriority(), PRIORITY_BINDING);
-            protocolMarshaller.marshall(startRunRequest.getRequestId(), REQUESTID_BINDING);
-            protocolMarshaller.marshall(startRunRequest.getRoleArn(), ROLEARN_BINDING);
-            protocolMarshaller.marshall(startRunRequest.getRunGroupId(), RUNGROUPID_BINDING);
-            protocolMarshaller.marshall(startRunRequest.getRunId(), RUNID_BINDING);
-            protocolMarshaller.marshall(startRunRequest.getStorageCapacity(), STORAGECAPACITY_BINDING);
-            protocolMarshaller.marshall(startRunRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(startRunRequest.getWorkflowId(), WORKFLOWID_BINDING);
             protocolMarshaller.marshall(startRunRequest.getWorkflowType(), WORKFLOWTYPE_BINDING);
+            protocolMarshaller.marshall(startRunRequest.getRunId(), RUNID_BINDING);
+            protocolMarshaller.marshall(startRunRequest.getRoleArn(), ROLEARN_BINDING);
+            protocolMarshaller.marshall(startRunRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(startRunRequest.getRunGroupId(), RUNGROUPID_BINDING);
+            protocolMarshaller.marshall(startRunRequest.getPriority(), PRIORITY_BINDING);
+            protocolMarshaller.marshall(startRunRequest.getStorageCapacity(), STORAGECAPACITY_BINDING);
+            protocolMarshaller.marshall(startRunRequest.getOutputUri(), OUTPUTURI_BINDING);
+            protocolMarshaller.marshall(startRunRequest.getLogLevel(), LOGLEVEL_BINDING);
+            protocolMarshaller.marshall(startRunRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(startRunRequest.getRequestId(), REQUESTID_BINDING);
+            protocolMarshaller.marshall(startRunRequest.getRetentionMode(), RETENTIONMODE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

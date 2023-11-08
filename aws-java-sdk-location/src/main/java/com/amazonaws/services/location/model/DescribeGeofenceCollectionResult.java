@@ -59,6 +59,12 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
     private String description;
     /**
      * <p>
+     * The number of geofences in the geofence collection.
+     * </p>
+     */
+    private Integer geofenceCount;
+    /**
+     * <p>
      * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
      * Web Services KMS customer managed key</a> assigned to the Amazon Location resource
      * </p>
@@ -307,6 +313,46 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
 
     public DescribeGeofenceCollectionResult withDescription(String description) {
         setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of geofences in the geofence collection.
+     * </p>
+     * 
+     * @param geofenceCount
+     *        The number of geofences in the geofence collection.
+     */
+
+    public void setGeofenceCount(Integer geofenceCount) {
+        this.geofenceCount = geofenceCount;
+    }
+
+    /**
+     * <p>
+     * The number of geofences in the geofence collection.
+     * </p>
+     * 
+     * @return The number of geofences in the geofence collection.
+     */
+
+    public Integer getGeofenceCount() {
+        return this.geofenceCount;
+    }
+
+    /**
+     * <p>
+     * The number of geofences in the geofence collection.
+     * </p>
+     * 
+     * @param geofenceCount
+     *        The number of geofences in the geofence collection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeGeofenceCollectionResult withGeofenceCount(Integer geofenceCount) {
+        setGeofenceCount(geofenceCount);
         return this;
     }
 
@@ -598,6 +644,8 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
             sb.append("CreateTime: ").append(getCreateTime()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
+        if (getGeofenceCount() != null)
+            sb.append("GeofenceCount: ").append(getGeofenceCount()).append(",");
         if (getKmsKeyId() != null)
             sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getPricingPlan() != null)
@@ -638,6 +686,10 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getGeofenceCount() == null ^ this.getGeofenceCount() == null)
+            return false;
+        if (other.getGeofenceCount() != null && other.getGeofenceCount().equals(this.getGeofenceCount()) == false)
+            return false;
         if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
             return false;
         if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
@@ -670,6 +722,7 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
         hashCode = prime * hashCode + ((getCollectionName() == null) ? 0 : getCollectionName().hashCode());
         hashCode = prime * hashCode + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getGeofenceCount() == null) ? 0 : getGeofenceCount().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getPricingPlan() == null) ? 0 : getPricingPlan().hashCode());
         hashCode = prime * hashCode + ((getPricingPlanDataSource() == null) ? 0 : getPricingPlanDataSource().hashCode());

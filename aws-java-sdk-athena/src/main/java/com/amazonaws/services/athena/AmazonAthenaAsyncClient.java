@@ -452,6 +452,39 @@ public class AmazonAthenaAsyncClient extends AmazonAthenaClient implements Amazo
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteCapacityReservationResult> deleteCapacityReservationAsync(DeleteCapacityReservationRequest request) {
+
+        return deleteCapacityReservationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCapacityReservationResult> deleteCapacityReservationAsync(final DeleteCapacityReservationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteCapacityReservationRequest, DeleteCapacityReservationResult> asyncHandler) {
+        final DeleteCapacityReservationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteCapacityReservationResult>() {
+            @Override
+            public DeleteCapacityReservationResult call() throws Exception {
+                DeleteCapacityReservationResult result = null;
+
+                try {
+                    result = executeDeleteCapacityReservation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDataCatalogResult> deleteDataCatalogAsync(DeleteDataCatalogRequest request) {
 
         return deleteDataCatalogAsync(request, null);

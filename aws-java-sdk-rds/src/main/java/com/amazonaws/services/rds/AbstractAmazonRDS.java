@@ -184,7 +184,17 @@ public class AbstractAmazonRDS implements AmazonRDS {
     }
 
     @Override
+    public CreateIntegrationResult createIntegration(CreateIntegrationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public OptionGroup createOptionGroup(CreateOptionGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TenantDatabase createTenantDatabase(CreateTenantDatabaseRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -200,6 +210,11 @@ public class AbstractAmazonRDS implements AmazonRDS {
 
     @Override
     public DBCluster deleteDBCluster(DeleteDBClusterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DBClusterAutomatedBackup deleteDBClusterAutomatedBackup(DeleteDBClusterAutomatedBackupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -269,7 +284,17 @@ public class AbstractAmazonRDS implements AmazonRDS {
     }
 
     @Override
+    public DeleteIntegrationResult deleteIntegration(DeleteIntegrationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteOptionGroupResult deleteOptionGroup(DeleteOptionGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TenantDatabase deleteTenantDatabase(DeleteTenantDatabaseRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -301,6 +326,11 @@ public class AbstractAmazonRDS implements AmazonRDS {
     @Override
     public DescribeCertificatesResult describeCertificates() {
         return describeCertificates(new DescribeCertificatesRequest());
+    }
+
+    @Override
+    public DescribeDBClusterAutomatedBackupsResult describeDBClusterAutomatedBackups(DescribeDBClusterAutomatedBackupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -439,6 +469,11 @@ public class AbstractAmazonRDS implements AmazonRDS {
     }
 
     @Override
+    public DescribeDBSnapshotTenantDatabasesResult describeDBSnapshotTenantDatabases(DescribeDBSnapshotTenantDatabasesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeDBSnapshotsResult describeDBSnapshots(DescribeDBSnapshotsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -509,6 +544,11 @@ public class AbstractAmazonRDS implements AmazonRDS {
     }
 
     @Override
+    public DescribeIntegrationsResult describeIntegrations(DescribeIntegrationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeOptionGroupOptionsResult describeOptionGroupOptions(DescribeOptionGroupOptionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -560,6 +600,11 @@ public class AbstractAmazonRDS implements AmazonRDS {
 
     @Override
     public DescribeSourceRegionsResult describeSourceRegions(DescribeSourceRegionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeTenantDatabasesResult describeTenantDatabases(DescribeTenantDatabasesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -685,6 +730,11 @@ public class AbstractAmazonRDS implements AmazonRDS {
 
     @Override
     public OptionGroup modifyOptionGroup(ModifyOptionGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TenantDatabase modifyTenantDatabase(ModifyTenantDatabaseRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -835,6 +885,11 @@ public class AbstractAmazonRDS implements AmazonRDS {
 
     @Override
     public SwitchoverBlueGreenDeploymentResult switchoverBlueGreenDeployment(SwitchoverBlueGreenDeploymentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GlobalCluster switchoverGlobalCluster(SwitchoverGlobalClusterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

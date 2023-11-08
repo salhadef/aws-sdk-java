@@ -30,6 +30,12 @@ public class FilterCriteriaMarshaller {
 
     private static final MarshallingInfo<List> AWSACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("awsAccountId").build();
+    private static final MarshallingInfo<List> CODEVULNERABILITYDETECTORNAME_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("codeVulnerabilityDetectorName").build();
+    private static final MarshallingInfo<List> CODEVULNERABILITYDETECTORTAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("codeVulnerabilityDetectorTags").build();
+    private static final MarshallingInfo<List> CODEVULNERABILITYFILEPATH_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("codeVulnerabilityFilePath").build();
     private static final MarshallingInfo<List> COMPONENTID_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("componentId").build();
     private static final MarshallingInfo<List> COMPONENTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -52,6 +58,8 @@ public class FilterCriteriaMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ecrImageRepositoryName").build();
     private static final MarshallingInfo<List> ECRIMAGETAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ecrImageTags").build();
+    private static final MarshallingInfo<List> EPSSSCORE_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("epssScore").build();
     private static final MarshallingInfo<List> EXPLOITAVAILABLE_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("exploitAvailable").build();
     private static final MarshallingInfo<List> FINDINGARN_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -122,6 +130,9 @@ public class FilterCriteriaMarshaller {
 
         try {
             protocolMarshaller.marshall(filterCriteria.getAwsAccountId(), AWSACCOUNTID_BINDING);
+            protocolMarshaller.marshall(filterCriteria.getCodeVulnerabilityDetectorName(), CODEVULNERABILITYDETECTORNAME_BINDING);
+            protocolMarshaller.marshall(filterCriteria.getCodeVulnerabilityDetectorTags(), CODEVULNERABILITYDETECTORTAGS_BINDING);
+            protocolMarshaller.marshall(filterCriteria.getCodeVulnerabilityFilePath(), CODEVULNERABILITYFILEPATH_BINDING);
             protocolMarshaller.marshall(filterCriteria.getComponentId(), COMPONENTID_BINDING);
             protocolMarshaller.marshall(filterCriteria.getComponentType(), COMPONENTTYPE_BINDING);
             protocolMarshaller.marshall(filterCriteria.getEc2InstanceImageId(), EC2INSTANCEIMAGEID_BINDING);
@@ -133,6 +144,7 @@ public class FilterCriteriaMarshaller {
             protocolMarshaller.marshall(filterCriteria.getEcrImageRegistry(), ECRIMAGEREGISTRY_BINDING);
             protocolMarshaller.marshall(filterCriteria.getEcrImageRepositoryName(), ECRIMAGEREPOSITORYNAME_BINDING);
             protocolMarshaller.marshall(filterCriteria.getEcrImageTags(), ECRIMAGETAGS_BINDING);
+            protocolMarshaller.marshall(filterCriteria.getEpssScore(), EPSSSCORE_BINDING);
             protocolMarshaller.marshall(filterCriteria.getExploitAvailable(), EXPLOITAVAILABLE_BINDING);
             protocolMarshaller.marshall(filterCriteria.getFindingArn(), FINDINGARN_BINDING);
             protocolMarshaller.marshall(filterCriteria.getFindingStatus(), FINDINGSTATUS_BINDING);

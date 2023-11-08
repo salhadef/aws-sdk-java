@@ -3500,7 +3500,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
         if (getTdeCredentialArn() != null)
             sb.append("TdeCredentialArn: ").append(getTdeCredentialArn()).append(",");
         if (getTdeCredentialPassword() != null)
-            sb.append("TdeCredentialPassword: ").append(getTdeCredentialPassword()).append(",");
+            sb.append("TdeCredentialPassword: ").append("***Sensitive Data Redacted***").append(",");
         if (getCACertificateIdentifier() != null)
             sb.append("CACertificateIdentifier: ").append(getCACertificateIdentifier()).append(",");
         if (getDomain() != null)

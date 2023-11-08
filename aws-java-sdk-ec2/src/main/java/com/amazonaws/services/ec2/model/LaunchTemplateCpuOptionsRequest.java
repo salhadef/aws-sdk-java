@@ -42,7 +42,8 @@ public class LaunchTemplateCpuOptionsRequest implements Serializable, Cloneable 
     /**
      * <p>
      * Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is supported with M6a, R6a, and C6a
-     * instance types only.
+     * instance types only. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP</a>.
      * </p>
      */
     private String amdSevSnp;
@@ -136,12 +137,14 @@ public class LaunchTemplateCpuOptionsRequest implements Serializable, Cloneable 
     /**
      * <p>
      * Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is supported with M6a, R6a, and C6a
-     * instance types only.
+     * instance types only. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP</a>.
      * </p>
      * 
      * @param amdSevSnp
      *        Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is supported with M6a, R6a, and C6a
-     *        instance types only.
+     *        instance types only. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP</a>.
      * @see AmdSevSnpSpecification
      */
 
@@ -152,11 +155,13 @@ public class LaunchTemplateCpuOptionsRequest implements Serializable, Cloneable 
     /**
      * <p>
      * Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is supported with M6a, R6a, and C6a
-     * instance types only.
+     * instance types only. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP</a>.
      * </p>
      * 
      * @return Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is supported with M6a, R6a, and C6a
-     *         instance types only.
+     *         instance types only. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP</a>.
      * @see AmdSevSnpSpecification
      */
 
@@ -167,12 +172,14 @@ public class LaunchTemplateCpuOptionsRequest implements Serializable, Cloneable 
     /**
      * <p>
      * Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is supported with M6a, R6a, and C6a
-     * instance types only.
+     * instance types only. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP</a>.
      * </p>
      * 
      * @param amdSevSnp
      *        Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is supported with M6a, R6a, and C6a
-     *        instance types only.
+     *        instance types only. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AmdSevSnpSpecification
      */
@@ -185,12 +192,14 @@ public class LaunchTemplateCpuOptionsRequest implements Serializable, Cloneable 
     /**
      * <p>
      * Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is supported with M6a, R6a, and C6a
-     * instance types only.
+     * instance types only. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP</a>.
      * </p>
      * 
      * @param amdSevSnp
      *        Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is supported with M6a, R6a, and C6a
-     *        instance types only.
+     *        instance types only. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AmdSevSnpSpecification
      */

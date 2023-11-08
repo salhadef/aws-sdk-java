@@ -14,6 +14,8 @@ package com.amazonaws.services.sqs.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
+public class SendMessageBatchRequestEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -1578,4 +1580,9 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
         }
     }
 
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.sqs.model.transform.SendMessageBatchRequestEntryMarshaller.getInstance().marshall(this, protocolMarshaller);
+    }
 }

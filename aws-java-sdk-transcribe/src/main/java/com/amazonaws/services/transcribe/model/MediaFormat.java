@@ -26,7 +26,8 @@ public enum MediaFormat {
     Flac("flac"),
     Ogg("ogg"),
     Amr("amr"),
-    Webm("webm");
+    Webm("webm"),
+    M4a("m4a");
 
     private String value;
 

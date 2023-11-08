@@ -53,6 +53,12 @@ public class AnswerSummary implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String reason;
+    /**
+     * <p>
+     * The type of the question.
+     * </p>
+     */
+    private String questionType;
 
     /**
      * @param questionId
@@ -440,6 +446,65 @@ public class AnswerSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The type of the question.
+     * </p>
+     * 
+     * @param questionType
+     *        The type of the question.
+     * @see QuestionType
+     */
+
+    public void setQuestionType(String questionType) {
+        this.questionType = questionType;
+    }
+
+    /**
+     * <p>
+     * The type of the question.
+     * </p>
+     * 
+     * @return The type of the question.
+     * @see QuestionType
+     */
+
+    public String getQuestionType() {
+        return this.questionType;
+    }
+
+    /**
+     * <p>
+     * The type of the question.
+     * </p>
+     * 
+     * @param questionType
+     *        The type of the question.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see QuestionType
+     */
+
+    public AnswerSummary withQuestionType(String questionType) {
+        setQuestionType(questionType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of the question.
+     * </p>
+     * 
+     * @param questionType
+     *        The type of the question.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see QuestionType
+     */
+
+    public AnswerSummary withQuestionType(QuestionType questionType) {
+        this.questionType = questionType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -468,7 +533,9 @@ public class AnswerSummary implements Serializable, Cloneable, StructuredPojo {
         if (getRisk() != null)
             sb.append("Risk: ").append(getRisk()).append(",");
         if (getReason() != null)
-            sb.append("Reason: ").append(getReason());
+            sb.append("Reason: ").append(getReason()).append(",");
+        if (getQuestionType() != null)
+            sb.append("QuestionType: ").append(getQuestionType());
         sb.append("}");
         return sb.toString();
     }
@@ -519,6 +586,10 @@ public class AnswerSummary implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getReason() != null && other.getReason().equals(this.getReason()) == false)
             return false;
+        if (other.getQuestionType() == null ^ this.getQuestionType() == null)
+            return false;
+        if (other.getQuestionType() != null && other.getQuestionType().equals(this.getQuestionType()) == false)
+            return false;
         return true;
     }
 
@@ -536,6 +607,7 @@ public class AnswerSummary implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getIsApplicable() == null) ? 0 : getIsApplicable().hashCode());
         hashCode = prime * hashCode + ((getRisk() == null) ? 0 : getRisk().hashCode());
         hashCode = prime * hashCode + ((getReason() == null) ? 0 : getReason().hashCode());
+        hashCode = prime * hashCode + ((getQuestionType() == null) ? 0 : getQuestionType().hashCode());
         return hashCode;
     }
 

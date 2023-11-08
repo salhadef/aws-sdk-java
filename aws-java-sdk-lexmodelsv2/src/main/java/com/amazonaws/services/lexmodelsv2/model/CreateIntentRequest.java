@@ -146,7 +146,7 @@ public class CreateIntentRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String botId;
     /**
      * <p>
-     * The identifier of the version of the bot associated with this intent.
+     * The version of the bot associated with this intent.
      * </p>
      */
     private String botVersion;
@@ -1071,11 +1071,11 @@ public class CreateIntentRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The identifier of the version of the bot associated with this intent.
+     * The version of the bot associated with this intent.
      * </p>
      * 
      * @param botVersion
-     *        The identifier of the version of the bot associated with this intent.
+     *        The version of the bot associated with this intent.
      */
 
     public void setBotVersion(String botVersion) {
@@ -1084,10 +1084,10 @@ public class CreateIntentRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The identifier of the version of the bot associated with this intent.
+     * The version of the bot associated with this intent.
      * </p>
      * 
-     * @return The identifier of the version of the bot associated with this intent.
+     * @return The version of the bot associated with this intent.
      */
 
     public String getBotVersion() {
@@ -1096,11 +1096,11 @@ public class CreateIntentRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The identifier of the version of the bot associated with this intent.
+     * The version of the bot associated with this intent.
      * </p>
      * 
      * @param botVersion
-     *        The identifier of the version of the bot associated with this intent.
+     *        The version of the bot associated with this intent.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

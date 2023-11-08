@@ -34,9 +34,8 @@ public class ResetDBClusterParameterGroupRequest extends com.amazonaws.AmazonWeb
     private String dBClusterParameterGroupName;
     /**
      * <p>
-     * A value that indicates whether to reset all parameters in the DB cluster parameter group to their default values.
-     * You can't use this parameter if there is a list of parameter names specified for the <code>Parameters</code>
-     * parameter.
+     * Specifies whether to reset all parameters in the DB cluster parameter group to their default values. You can't
+     * use this parameter if there is a list of parameter names specified for the <code>Parameters</code> parameter.
      * </p>
      */
     private Boolean resetAllParameters;
@@ -90,15 +89,14 @@ public class ResetDBClusterParameterGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A value that indicates whether to reset all parameters in the DB cluster parameter group to their default values.
-     * You can't use this parameter if there is a list of parameter names specified for the <code>Parameters</code>
-     * parameter.
+     * Specifies whether to reset all parameters in the DB cluster parameter group to their default values. You can't
+     * use this parameter if there is a list of parameter names specified for the <code>Parameters</code> parameter.
      * </p>
      * 
      * @param resetAllParameters
-     *        A value that indicates whether to reset all parameters in the DB cluster parameter group to their default
-     *        values. You can't use this parameter if there is a list of parameter names specified for the
-     *        <code>Parameters</code> parameter.
+     *        Specifies whether to reset all parameters in the DB cluster parameter group to their default values. You
+     *        can't use this parameter if there is a list of parameter names specified for the <code>Parameters</code>
+     *        parameter.
      */
 
     public void setResetAllParameters(Boolean resetAllParameters) {
@@ -107,14 +105,13 @@ public class ResetDBClusterParameterGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A value that indicates whether to reset all parameters in the DB cluster parameter group to their default values.
-     * You can't use this parameter if there is a list of parameter names specified for the <code>Parameters</code>
-     * parameter.
+     * Specifies whether to reset all parameters in the DB cluster parameter group to their default values. You can't
+     * use this parameter if there is a list of parameter names specified for the <code>Parameters</code> parameter.
      * </p>
      * 
-     * @return A value that indicates whether to reset all parameters in the DB cluster parameter group to their default
-     *         values. You can't use this parameter if there is a list of parameter names specified for the
-     *         <code>Parameters</code> parameter.
+     * @return Specifies whether to reset all parameters in the DB cluster parameter group to their default values. You
+     *         can't use this parameter if there is a list of parameter names specified for the <code>Parameters</code>
+     *         parameter.
      */
 
     public Boolean getResetAllParameters() {
@@ -123,15 +120,14 @@ public class ResetDBClusterParameterGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A value that indicates whether to reset all parameters in the DB cluster parameter group to their default values.
-     * You can't use this parameter if there is a list of parameter names specified for the <code>Parameters</code>
-     * parameter.
+     * Specifies whether to reset all parameters in the DB cluster parameter group to their default values. You can't
+     * use this parameter if there is a list of parameter names specified for the <code>Parameters</code> parameter.
      * </p>
      * 
      * @param resetAllParameters
-     *        A value that indicates whether to reset all parameters in the DB cluster parameter group to their default
-     *        values. You can't use this parameter if there is a list of parameter names specified for the
-     *        <code>Parameters</code> parameter.
+     *        Specifies whether to reset all parameters in the DB cluster parameter group to their default values. You
+     *        can't use this parameter if there is a list of parameter names specified for the <code>Parameters</code>
+     *        parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,14 +138,13 @@ public class ResetDBClusterParameterGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A value that indicates whether to reset all parameters in the DB cluster parameter group to their default values.
-     * You can't use this parameter if there is a list of parameter names specified for the <code>Parameters</code>
-     * parameter.
+     * Specifies whether to reset all parameters in the DB cluster parameter group to their default values. You can't
+     * use this parameter if there is a list of parameter names specified for the <code>Parameters</code> parameter.
      * </p>
      * 
-     * @return A value that indicates whether to reset all parameters in the DB cluster parameter group to their default
-     *         values. You can't use this parameter if there is a list of parameter names specified for the
-     *         <code>Parameters</code> parameter.
+     * @return Specifies whether to reset all parameters in the DB cluster parameter group to their default values. You
+     *         can't use this parameter if there is a list of parameter names specified for the <code>Parameters</code>
+     *         parameter.
      */
 
     public Boolean isResetAllParameters() {

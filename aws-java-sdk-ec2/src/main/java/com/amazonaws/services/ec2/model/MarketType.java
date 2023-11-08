@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum MarketType {
 
-    Spot("spot");
+    Spot("spot"),
+    CapacityBlock("capacity-block");
 
     private String value;
 

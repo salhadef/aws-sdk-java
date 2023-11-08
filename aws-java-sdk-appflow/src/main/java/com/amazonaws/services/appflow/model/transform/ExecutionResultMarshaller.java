@@ -35,6 +35,10 @@ public class ExecutionResultMarshaller {
             .marshallLocationName("bytesWritten").build();
     private static final MarshallingInfo<Long> RECORDSPROCESSED_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("recordsProcessed").build();
+    private static final MarshallingInfo<Long> NUMPARALLELPROCESSES_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("numParallelProcesses").build();
+    private static final MarshallingInfo<Long> MAXPAGESIZE_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("maxPageSize").build();
 
     private static final ExecutionResultMarshaller instance = new ExecutionResultMarshaller();
 
@@ -56,6 +60,8 @@ public class ExecutionResultMarshaller {
             protocolMarshaller.marshall(executionResult.getBytesProcessed(), BYTESPROCESSED_BINDING);
             protocolMarshaller.marshall(executionResult.getBytesWritten(), BYTESWRITTEN_BINDING);
             protocolMarshaller.marshall(executionResult.getRecordsProcessed(), RECORDSPROCESSED_BINDING);
+            protocolMarshaller.marshall(executionResult.getNumParallelProcesses(), NUMPARALLELPROCESSES_BINDING);
+            protocolMarshaller.marshall(executionResult.getMaxPageSize(), MAXPAGESIZE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

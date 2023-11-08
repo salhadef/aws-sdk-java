@@ -44,6 +44,7 @@ import com.amazonaws.services.kendraranking.AmazonKendraRankingClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.kendraranking.model.*;
+
 import com.amazonaws.services.kendraranking.model.transform.*;
 
 /**

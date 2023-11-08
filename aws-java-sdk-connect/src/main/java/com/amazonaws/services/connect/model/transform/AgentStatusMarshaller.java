@@ -45,6 +45,10 @@ public class AgentStatusMarshaller {
             .marshallLocationName("State").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<java.util.Date> LASTMODIFIEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> LASTMODIFIEDREGION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedRegion").build();
 
     private static final AgentStatusMarshaller instance = new AgentStatusMarshaller();
 
@@ -70,6 +74,8 @@ public class AgentStatusMarshaller {
             protocolMarshaller.marshall(agentStatus.getDisplayOrder(), DISPLAYORDER_BINDING);
             protocolMarshaller.marshall(agentStatus.getState(), STATE_BINDING);
             protocolMarshaller.marshall(agentStatus.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(agentStatus.getLastModifiedTime(), LASTMODIFIEDTIME_BINDING);
+            protocolMarshaller.marshall(agentStatus.getLastModifiedRegion(), LASTMODIFIEDREGION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

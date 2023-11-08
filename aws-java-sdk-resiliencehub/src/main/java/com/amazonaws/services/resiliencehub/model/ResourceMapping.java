@@ -36,7 +36,7 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
     private String appRegistryAppName;
     /**
      * <p>
-     * The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
+     * Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
      * </p>
      * <note>
      * <p>
@@ -89,19 +89,19 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
     private String mappingType;
     /**
      * <p>
-     * The identifier of this resource.
+     * Identifier of the physical resource.
      * </p>
      */
     private PhysicalResourceId physicalResourceId;
     /**
      * <p>
-     * The name of the resource group this resource is mapped to.
+     * Name of the resource group that the resource is mapped to.
      * </p>
      */
     private String resourceGroupName;
     /**
      * <p>
-     * The name of the resource this resource is mapped to.
+     * Name of the resource that the resource is mapped to.
      * </p>
      */
     private String resourceName;
@@ -154,7 +154,7 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
+     * Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
      * </p>
      * <note>
      * <p>
@@ -163,8 +163,7 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
      * </note>
      * 
      * @param eksSourceName
-     *        The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p>
-     *        <note>
+     *        Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p> <note>
      *        <p>
      *        This parameter accepts values in "eks-cluster/namespace" format.
      *        </p>
@@ -176,7 +175,7 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
+     * Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
      * </p>
      * <note>
      * <p>
@@ -184,8 +183,7 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * </note>
      * 
-     * @return The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p>
-     *         <note>
+     * @return Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p> <note>
      *         <p>
      *         This parameter accepts values in "eks-cluster/namespace" format.
      *         </p>
@@ -197,7 +195,7 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
+     * Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
      * </p>
      * <note>
      * <p>
@@ -206,8 +204,7 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
      * </note>
      * 
      * @param eksSourceName
-     *        The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p>
-     *        <note>
+     *        Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p> <note>
      *        <p>
      *        This parameter accepts values in "eks-cluster/namespace" format.
      *        </p>
@@ -556,11 +553,11 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The identifier of this resource.
+     * Identifier of the physical resource.
      * </p>
      * 
      * @param physicalResourceId
-     *        The identifier of this resource.
+     *        Identifier of the physical resource.
      */
 
     public void setPhysicalResourceId(PhysicalResourceId physicalResourceId) {
@@ -569,10 +566,10 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The identifier of this resource.
+     * Identifier of the physical resource.
      * </p>
      * 
-     * @return The identifier of this resource.
+     * @return Identifier of the physical resource.
      */
 
     public PhysicalResourceId getPhysicalResourceId() {
@@ -581,11 +578,11 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The identifier of this resource.
+     * Identifier of the physical resource.
      * </p>
      * 
      * @param physicalResourceId
-     *        The identifier of this resource.
+     *        Identifier of the physical resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -596,11 +593,11 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the resource group this resource is mapped to.
+     * Name of the resource group that the resource is mapped to.
      * </p>
      * 
      * @param resourceGroupName
-     *        The name of the resource group this resource is mapped to.
+     *        Name of the resource group that the resource is mapped to.
      */
 
     public void setResourceGroupName(String resourceGroupName) {
@@ -609,10 +606,10 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the resource group this resource is mapped to.
+     * Name of the resource group that the resource is mapped to.
      * </p>
      * 
-     * @return The name of the resource group this resource is mapped to.
+     * @return Name of the resource group that the resource is mapped to.
      */
 
     public String getResourceGroupName() {
@@ -621,11 +618,11 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the resource group this resource is mapped to.
+     * Name of the resource group that the resource is mapped to.
      * </p>
      * 
      * @param resourceGroupName
-     *        The name of the resource group this resource is mapped to.
+     *        Name of the resource group that the resource is mapped to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -636,11 +633,11 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the resource this resource is mapped to.
+     * Name of the resource that the resource is mapped to.
      * </p>
      * 
      * @param resourceName
-     *        The name of the resource this resource is mapped to.
+     *        Name of the resource that the resource is mapped to.
      */
 
     public void setResourceName(String resourceName) {
@@ -649,10 +646,10 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the resource this resource is mapped to.
+     * Name of the resource that the resource is mapped to.
      * </p>
      * 
-     * @return The name of the resource this resource is mapped to.
+     * @return Name of the resource that the resource is mapped to.
      */
 
     public String getResourceName() {
@@ -661,11 +658,11 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the resource this resource is mapped to.
+     * Name of the resource that the resource is mapped to.
      * </p>
      * 
      * @param resourceName
-     *        The name of the resource this resource is mapped to.
+     *        Name of the resource that the resource is mapped to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

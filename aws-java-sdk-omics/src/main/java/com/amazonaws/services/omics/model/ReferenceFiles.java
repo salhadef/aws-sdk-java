@@ -30,56 +30,16 @@ public class ReferenceFiles implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The files' index.
-     * </p>
-     */
-    private FileInformation index;
-    /**
-     * <p>
      * The source file's location in Amazon S3.
      * </p>
      */
     private FileInformation source;
-
     /**
      * <p>
      * The files' index.
      * </p>
-     * 
-     * @param index
-     *        The files' index.
      */
-
-    public void setIndex(FileInformation index) {
-        this.index = index;
-    }
-
-    /**
-     * <p>
-     * The files' index.
-     * </p>
-     * 
-     * @return The files' index.
-     */
-
-    public FileInformation getIndex() {
-        return this.index;
-    }
-
-    /**
-     * <p>
-     * The files' index.
-     * </p>
-     * 
-     * @param index
-     *        The files' index.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ReferenceFiles withIndex(FileInformation index) {
-        setIndex(index);
-        return this;
-    }
+    private FileInformation index;
 
     /**
      * <p>
@@ -122,6 +82,46 @@ public class ReferenceFiles implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The files' index.
+     * </p>
+     * 
+     * @param index
+     *        The files' index.
+     */
+
+    public void setIndex(FileInformation index) {
+        this.index = index;
+    }
+
+    /**
+     * <p>
+     * The files' index.
+     * </p>
+     * 
+     * @return The files' index.
+     */
+
+    public FileInformation getIndex() {
+        return this.index;
+    }
+
+    /**
+     * <p>
+     * The files' index.
+     * </p>
+     * 
+     * @param index
+     *        The files' index.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReferenceFiles withIndex(FileInformation index) {
+        setIndex(index);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -133,10 +133,10 @@ public class ReferenceFiles implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getIndex() != null)
-            sb.append("Index: ").append(getIndex()).append(",");
         if (getSource() != null)
-            sb.append("Source: ").append(getSource());
+            sb.append("Source: ").append(getSource()).append(",");
+        if (getIndex() != null)
+            sb.append("Index: ").append(getIndex());
         sb.append("}");
         return sb.toString();
     }
@@ -151,13 +151,13 @@ public class ReferenceFiles implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof ReferenceFiles == false)
             return false;
         ReferenceFiles other = (ReferenceFiles) obj;
-        if (other.getIndex() == null ^ this.getIndex() == null)
-            return false;
-        if (other.getIndex() != null && other.getIndex().equals(this.getIndex()) == false)
-            return false;
         if (other.getSource() == null ^ this.getSource() == null)
             return false;
         if (other.getSource() != null && other.getSource().equals(this.getSource()) == false)
+            return false;
+        if (other.getIndex() == null ^ this.getIndex() == null)
+            return false;
+        if (other.getIndex() != null && other.getIndex().equals(this.getIndex()) == false)
             return false;
         return true;
     }
@@ -167,8 +167,8 @@ public class ReferenceFiles implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getIndex() == null) ? 0 : getIndex().hashCode());
         hashCode = prime * hashCode + ((getSource() == null) ? 0 : getSource().hashCode());
+        hashCode = prime * hashCode + ((getIndex() == null) ? 0 : getIndex().hashCode());
         return hashCode;
     }
 

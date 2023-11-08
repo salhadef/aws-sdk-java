@@ -56,6 +56,10 @@ public class S3DestinationSettingsJsonUnmarshaller implements Unmarshaller<S3Des
                     context.nextToken();
                     s3DestinationSettings.setEncryption(S3EncryptionSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("storageClass", targetDepth)) {
+                    context.nextToken();
+                    s3DestinationSettings.setStorageClass(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

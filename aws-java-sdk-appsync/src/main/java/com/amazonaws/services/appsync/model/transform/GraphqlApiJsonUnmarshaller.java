@@ -105,6 +105,31 @@ public class GraphqlApiJsonUnmarshaller implements Unmarshaller<GraphqlApi, Json
                     context.nextToken();
                     graphqlApi.setLambdaAuthorizerConfig(LambdaAuthorizerConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("dns", targetDepth)) {
+                    context.nextToken();
+                    graphqlApi.setDns(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
+                            .unmarshall(context));
+                }
+                if (context.testExpression("visibility", targetDepth)) {
+                    context.nextToken();
+                    graphqlApi.setVisibility(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("apiType", targetDepth)) {
+                    context.nextToken();
+                    graphqlApi.setApiType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("mergedApiExecutionRoleArn", targetDepth)) {
+                    context.nextToken();
+                    graphqlApi.setMergedApiExecutionRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("owner", targetDepth)) {
+                    context.nextToken();
+                    graphqlApi.setOwner(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ownerContact", targetDepth)) {
+                    context.nextToken();
+                    graphqlApi.setOwnerContact(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

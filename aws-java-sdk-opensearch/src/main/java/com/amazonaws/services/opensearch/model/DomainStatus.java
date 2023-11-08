@@ -66,6 +66,8 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String endpoint;
+
+    private String endpointV2;
     /**
      * <p>
      * The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints.. Example
@@ -113,6 +115,12 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String accessPolicies;
+    /**
+     * <p>
+     * The type of IP addresses supported by the endpoint for the domain.
+     * </p>
+     */
+    private String iPAddressType;
     /**
      * <p>
      * DEPRECATED. Container for parameters required to configure automated snapshots of domain indexes.
@@ -498,6 +506,32 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param endpointV2
+     */
+
+    public void setEndpointV2(String endpointV2) {
+        this.endpointV2 = endpointV2;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getEndpointV2() {
+        return this.endpointV2;
+    }
+
+    /**
+     * @param endpointV2
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DomainStatus withEndpointV2(String endpointV2) {
+        setEndpointV2(endpointV2);
+        return this;
+    }
+
+    /**
      * <p>
      * The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints.. Example
      * <code>key, value</code>:
@@ -860,6 +894,65 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     public DomainStatus withAccessPolicies(String accessPolicies) {
         setAccessPolicies(accessPolicies);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of IP addresses supported by the endpoint for the domain.
+     * </p>
+     * 
+     * @param iPAddressType
+     *        The type of IP addresses supported by the endpoint for the domain.
+     * @see IPAddressType
+     */
+
+    public void setIPAddressType(String iPAddressType) {
+        this.iPAddressType = iPAddressType;
+    }
+
+    /**
+     * <p>
+     * The type of IP addresses supported by the endpoint for the domain.
+     * </p>
+     * 
+     * @return The type of IP addresses supported by the endpoint for the domain.
+     * @see IPAddressType
+     */
+
+    public String getIPAddressType() {
+        return this.iPAddressType;
+    }
+
+    /**
+     * <p>
+     * The type of IP addresses supported by the endpoint for the domain.
+     * </p>
+     * 
+     * @param iPAddressType
+     *        The type of IP addresses supported by the endpoint for the domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IPAddressType
+     */
+
+    public DomainStatus withIPAddressType(String iPAddressType) {
+        setIPAddressType(iPAddressType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of IP addresses supported by the endpoint for the domain.
+     * </p>
+     * 
+     * @param iPAddressType
+     *        The type of IP addresses supported by the endpoint for the domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IPAddressType
+     */
+
+    public DomainStatus withIPAddressType(IPAddressType iPAddressType) {
+        this.iPAddressType = iPAddressType.toString();
         return this;
     }
 
@@ -1509,6 +1602,8 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
             sb.append("Deleted: ").append(getDeleted()).append(",");
         if (getEndpoint() != null)
             sb.append("Endpoint: ").append(getEndpoint()).append(",");
+        if (getEndpointV2() != null)
+            sb.append("EndpointV2: ").append(getEndpointV2()).append(",");
         if (getEndpoints() != null)
             sb.append("Endpoints: ").append(getEndpoints()).append(",");
         if (getProcessing() != null)
@@ -1523,6 +1618,8 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
             sb.append("EBSOptions: ").append(getEBSOptions()).append(",");
         if (getAccessPolicies() != null)
             sb.append("AccessPolicies: ").append(getAccessPolicies()).append(",");
+        if (getIPAddressType() != null)
+            sb.append("IPAddressType: ").append(getIPAddressType()).append(",");
         if (getSnapshotOptions() != null)
             sb.append("SnapshotOptions: ").append(getSnapshotOptions()).append(",");
         if (getVPCOptions() != null)
@@ -1589,6 +1686,10 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getEndpoint() != null && other.getEndpoint().equals(this.getEndpoint()) == false)
             return false;
+        if (other.getEndpointV2() == null ^ this.getEndpointV2() == null)
+            return false;
+        if (other.getEndpointV2() != null && other.getEndpointV2().equals(this.getEndpointV2()) == false)
+            return false;
         if (other.getEndpoints() == null ^ this.getEndpoints() == null)
             return false;
         if (other.getEndpoints() != null && other.getEndpoints().equals(this.getEndpoints()) == false)
@@ -1616,6 +1717,10 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
         if (other.getAccessPolicies() == null ^ this.getAccessPolicies() == null)
             return false;
         if (other.getAccessPolicies() != null && other.getAccessPolicies().equals(this.getAccessPolicies()) == false)
+            return false;
+        if (other.getIPAddressType() == null ^ this.getIPAddressType() == null)
+            return false;
+        if (other.getIPAddressType() != null && other.getIPAddressType().equals(this.getIPAddressType()) == false)
             return false;
         if (other.getSnapshotOptions() == null ^ this.getSnapshotOptions() == null)
             return false;
@@ -1687,6 +1792,7 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCreated() == null) ? 0 : getCreated().hashCode());
         hashCode = prime * hashCode + ((getDeleted() == null) ? 0 : getDeleted().hashCode());
         hashCode = prime * hashCode + ((getEndpoint() == null) ? 0 : getEndpoint().hashCode());
+        hashCode = prime * hashCode + ((getEndpointV2() == null) ? 0 : getEndpointV2().hashCode());
         hashCode = prime * hashCode + ((getEndpoints() == null) ? 0 : getEndpoints().hashCode());
         hashCode = prime * hashCode + ((getProcessing() == null) ? 0 : getProcessing().hashCode());
         hashCode = prime * hashCode + ((getUpgradeProcessing() == null) ? 0 : getUpgradeProcessing().hashCode());
@@ -1694,6 +1800,7 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getClusterConfig() == null) ? 0 : getClusterConfig().hashCode());
         hashCode = prime * hashCode + ((getEBSOptions() == null) ? 0 : getEBSOptions().hashCode());
         hashCode = prime * hashCode + ((getAccessPolicies() == null) ? 0 : getAccessPolicies().hashCode());
+        hashCode = prime * hashCode + ((getIPAddressType() == null) ? 0 : getIPAddressType().hashCode());
         hashCode = prime * hashCode + ((getSnapshotOptions() == null) ? 0 : getSnapshotOptions().hashCode());
         hashCode = prime * hashCode + ((getVPCOptions() == null) ? 0 : getVPCOptions().hashCode());
         hashCode = prime * hashCode + ((getCognitoOptions() == null) ? 0 : getCognitoOptions().hashCode());

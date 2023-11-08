@@ -80,6 +80,10 @@ public class DisconnectSourceServerResultJsonUnmarshaller implements Unmarshalle
                     context.nextToken();
                     disconnectSourceServerResult.setSourceCloudProperties(SourceCloudPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("sourceNetworkID", targetDepth)) {
+                    context.nextToken();
+                    disconnectSourceServerResult.setSourceNetworkID(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("sourceProperties", targetDepth)) {
                     context.nextToken();
                     disconnectSourceServerResult.setSourceProperties(SourcePropertiesJsonUnmarshaller.getInstance().unmarshall(context));

@@ -31,17 +31,17 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CreateRuleGroupsNamespaceRequestMarshaller {
 
+    private static final MarshallingInfo<String> WORKSPACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("workspaceId").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("name").build();
+    private static final MarshallingInfo<java.nio.ByteBuffer> DATA_BINDING = MarshallingInfo.builder(MarshallingType.BYTE_BUFFER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("data").build();
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
-    private static final MarshallingInfo<java.nio.ByteBuffer> DATA_BINDING = MarshallingInfo.builder(MarshallingType.BYTE_BUFFER)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("data").build();
-    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("name").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
-    private static final MarshallingInfo<String> WORKSPACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
-            .marshallLocationName("workspaceId").build();
 
     private static final CreateRuleGroupsNamespaceRequestMarshaller instance = new CreateRuleGroupsNamespaceRequestMarshaller();
 
@@ -59,11 +59,11 @@ public class CreateRuleGroupsNamespaceRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(createRuleGroupsNamespaceRequest.getClientToken(), CLIENTTOKEN_BINDING);
-            protocolMarshaller.marshall(createRuleGroupsNamespaceRequest.getData(), DATA_BINDING);
-            protocolMarshaller.marshall(createRuleGroupsNamespaceRequest.getName(), NAME_BINDING);
-            protocolMarshaller.marshall(createRuleGroupsNamespaceRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createRuleGroupsNamespaceRequest.getWorkspaceId(), WORKSPACEID_BINDING);
+            protocolMarshaller.marshall(createRuleGroupsNamespaceRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(createRuleGroupsNamespaceRequest.getData(), DATA_BINDING);
+            protocolMarshaller.marshall(createRuleGroupsNamespaceRequest.getClientToken(), CLIENTTOKEN_BINDING);
+            protocolMarshaller.marshall(createRuleGroupsNamespaceRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -45,6 +45,7 @@ import com.amazonaws.services.signer.waiters.AWSsignerWaiters;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.signer.model.*;
+
 import com.amazonaws.services.signer.model.transform.*;
 
 /**
@@ -58,12 +59,15 @@ import com.amazonaws.services.signer.model.transform.*;
  * AWS Signer supports the following applications:
  * </p>
  * <p>
- * With <i>code signing for AWS Lambda</i>, you can sign AWS Lambda deployment packages. Integrated support is provided
- * for Amazon S3, Amazon CloudWatch, and AWS CloudTrail. In order to sign code, you create a signing profile and then
- * use Signer to sign Lambda zip files in S3.
+ * With code signing for AWS Lambda, you can sign <a href="http://docs.aws.amazon.com/lambda/latest/dg/">AWS Lambda</a>
+ * deployment packages. Integrated support is provided for <a
+ * href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/">Amazon S3</a>, <a
+ * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/">Amazon CloudWatch</a>, and <a
+ * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/">AWS CloudTrail</a>. In order to sign code, you
+ * create a signing profile and then use Signer to sign Lambda zip files in S3.
  * </p>
  * <p>
- * With <i>code signing for IoT</i>, you can sign code for any IoT device that is supported by AWS. IoT code signing is
+ * With code signing for IoT, you can sign code for any IoT device that is supported by AWS. IoT code signing is
  * available for <a href="http://docs.aws.amazon.com/freertos/latest/userguide/">Amazon FreeRTOS</a> and <a
  * href="http://docs.aws.amazon.com/iot/latest/developerguide/">AWS IoT Device Management</a>, and is integrated with <a
  * href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager (ACM)</a>. In order to sign code, you
@@ -71,10 +75,12 @@ import com.amazonaws.services.signer.model.transform.*;
  * Device Management.
  * </p>
  * <p>
- * For more information about AWS Signer, see the <a
- * href="http://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html">AWS Signer Developer Guide</a>.
+ * With code signing for containers …(TBD)
  * </p>
- * <p/>
+ * <p>
+ * For more information about AWS Signer, see the <a
+ * href="https://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html">AWS Signer Developer Guide</a>.
+ * </p>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -374,6 +380,80 @@ public class AWSsignerClient extends AmazonWebServiceClient implements AWSsigner
             HttpResponseHandler<AmazonWebServiceResponse<DescribeSigningJobResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeSigningJobResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the revocation status of one or more of the signing profile, signing job, and signing certificate.
+     * </p>
+     * 
+     * @param getRevocationStatusRequest
+     * @return Result of the GetRevocationStatus operation returned by the service.
+     * @throws ValidationException
+     *         You signing certificate could not be validated.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws TooManyRequestsException
+     *         The allowed number of job-signing requests has been exceeded.</p>
+     *         <p>
+     *         This error supersedes the error <code>ThrottlingException</code>.
+     * @throws InternalServiceErrorException
+     *         An internal error occurred.
+     * @sample AWSsigner.GetRevocationStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/GetRevocationStatus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetRevocationStatusResult getRevocationStatus(GetRevocationStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetRevocationStatus(request);
+    }
+
+    @SdkInternalApi
+    final GetRevocationStatusResult executeGetRevocationStatus(GetRevocationStatusRequest getRevocationStatusRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getRevocationStatusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetRevocationStatusRequest> request = null;
+        Response<GetRevocationStatusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetRevocationStatusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRevocationStatusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "signer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRevocationStatus");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "verification.";
+                String resolvedHostPrefix = String.format("verification.");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetRevocationStatusResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetRevocationStatusResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();
 
@@ -857,9 +937,7 @@ public class AWSsignerClient extends AmazonWebServiceClient implements AWSsigner
     /**
      * <p>
      * Creates a signing profile. A signing profile is a code signing template that can be used to carry out a
-     * pre-defined signing job. For more information, see <a
-     * href="http://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html"
-     * >http://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html</a>
+     * pre-defined signing job.
      * </p>
      * 
      * @param putSigningProfileRequest
@@ -1132,6 +1210,73 @@ public class AWSsignerClient extends AmazonWebServiceClient implements AWSsigner
 
     /**
      * <p>
+     * Signs a binary payload and returns a signature envelope.
+     * </p>
+     * 
+     * @param signPayloadRequest
+     * @return Result of the SignPayload operation returned by the service.
+     * @throws ValidationException
+     *         You signing certificate could not be validated.
+     * @throws ResourceNotFoundException
+     *         A specified resource could not be found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws TooManyRequestsException
+     *         The allowed number of job-signing requests has been exceeded.</p>
+     *         <p>
+     *         This error supersedes the error <code>ThrottlingException</code>.
+     * @throws InternalServiceErrorException
+     *         An internal error occurred.
+     * @sample AWSsigner.SignPayload
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/SignPayload" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public SignPayloadResult signPayload(SignPayloadRequest request) {
+        request = beforeClientExecution(request);
+        return executeSignPayload(request);
+    }
+
+    @SdkInternalApi
+    final SignPayloadResult executeSignPayload(SignPayloadRequest signPayloadRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(signPayloadRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SignPayloadRequest> request = null;
+        Response<SignPayloadResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SignPayloadRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(signPayloadRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "signer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SignPayload");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SignPayloadResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SignPayloadResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Initiates a signing job to be performed on the code provided. Signing jobs are viewable by the
      * <code>ListSigningJobs</code> operation for two years after they are performed. Note the following requirements:
      * </p>
@@ -1139,7 +1284,7 @@ public class AWSsignerClient extends AmazonWebServiceClient implements AWSsigner
      * <li>
      * <p>
      * You must create an Amazon S3 source bucket. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html">Create a Bucket</a> in the <i>Amazon
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html">Creating a Bucket</a> in the <i>Amazon
      * S3 Getting Started Guide</i>.
      * </p>
      * </li>
@@ -1171,7 +1316,7 @@ public class AWSsignerClient extends AmazonWebServiceClient implements AWSsigner
      * </p>
      * <p>
      * For a Java example that shows how to use this action, see <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/">http://docs.aws.amazon.com/acm/latest/userguide/</a>
+     * href="https://docs.aws.amazon.com/signer/latest/developerguide/api-startsigningjob.html">StartSigningJob</a>.
      * </p>
      * 
      * @param startSigningJobRequest

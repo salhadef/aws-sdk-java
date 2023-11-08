@@ -76,6 +76,11 @@ public class TransformOperationJsonUnmarshaller implements Unmarshaller<Transfor
                     context.nextToken();
                     transformOperation.setUntagColumnOperation(UntagColumnOperationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("OverrideDatasetParameterOperation", targetDepth)) {
+                    context.nextToken();
+                    transformOperation
+                            .setOverrideDatasetParameterOperation(OverrideDatasetParameterOperationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

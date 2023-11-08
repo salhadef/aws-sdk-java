@@ -27,7 +27,7 @@ public class DetectModerationLabelsResult extends com.amazonaws.AmazonWebService
     private java.util.List<ModerationLabel> moderationLabels;
     /**
      * <p>
-     * Version number of the moderation detection model that was used to detect unsafe content.
+     * Version number of the base moderation detection model that was used to detect unsafe content.
      * </p>
      */
     private String moderationModelVersion;
@@ -37,6 +37,13 @@ public class DetectModerationLabelsResult extends com.amazonaws.AmazonWebService
      * </p>
      */
     private HumanLoopActivationOutput humanLoopActivationOutput;
+    /**
+     * <p>
+     * Identifier of the custom adapter that was used during inference. If during inference the adapter was EXPIRED,
+     * then the parameter will not be returned, indicating that a base moderation detection project version was used.
+     * </p>
+     */
+    private String projectVersion;
 
     /**
      * <p>
@@ -118,11 +125,11 @@ public class DetectModerationLabelsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Version number of the moderation detection model that was used to detect unsafe content.
+     * Version number of the base moderation detection model that was used to detect unsafe content.
      * </p>
      * 
      * @param moderationModelVersion
-     *        Version number of the moderation detection model that was used to detect unsafe content.
+     *        Version number of the base moderation detection model that was used to detect unsafe content.
      */
 
     public void setModerationModelVersion(String moderationModelVersion) {
@@ -131,10 +138,10 @@ public class DetectModerationLabelsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Version number of the moderation detection model that was used to detect unsafe content.
+     * Version number of the base moderation detection model that was used to detect unsafe content.
      * </p>
      * 
-     * @return Version number of the moderation detection model that was used to detect unsafe content.
+     * @return Version number of the base moderation detection model that was used to detect unsafe content.
      */
 
     public String getModerationModelVersion() {
@@ -143,11 +150,11 @@ public class DetectModerationLabelsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Version number of the moderation detection model that was used to detect unsafe content.
+     * Version number of the base moderation detection model that was used to detect unsafe content.
      * </p>
      * 
      * @param moderationModelVersion
-     *        Version number of the moderation detection model that was used to detect unsafe content.
+     *        Version number of the base moderation detection model that was used to detect unsafe content.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -197,6 +204,55 @@ public class DetectModerationLabelsResult extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * Identifier of the custom adapter that was used during inference. If during inference the adapter was EXPIRED,
+     * then the parameter will not be returned, indicating that a base moderation detection project version was used.
+     * </p>
+     * 
+     * @param projectVersion
+     *        Identifier of the custom adapter that was used during inference. If during inference the adapter was
+     *        EXPIRED, then the parameter will not be returned, indicating that a base moderation detection project
+     *        version was used.
+     */
+
+    public void setProjectVersion(String projectVersion) {
+        this.projectVersion = projectVersion;
+    }
+
+    /**
+     * <p>
+     * Identifier of the custom adapter that was used during inference. If during inference the adapter was EXPIRED,
+     * then the parameter will not be returned, indicating that a base moderation detection project version was used.
+     * </p>
+     * 
+     * @return Identifier of the custom adapter that was used during inference. If during inference the adapter was
+     *         EXPIRED, then the parameter will not be returned, indicating that a base moderation detection project
+     *         version was used.
+     */
+
+    public String getProjectVersion() {
+        return this.projectVersion;
+    }
+
+    /**
+     * <p>
+     * Identifier of the custom adapter that was used during inference. If during inference the adapter was EXPIRED,
+     * then the parameter will not be returned, indicating that a base moderation detection project version was used.
+     * </p>
+     * 
+     * @param projectVersion
+     *        Identifier of the custom adapter that was used during inference. If during inference the adapter was
+     *        EXPIRED, then the parameter will not be returned, indicating that a base moderation detection project
+     *        version was used.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DetectModerationLabelsResult withProjectVersion(String projectVersion) {
+        setProjectVersion(projectVersion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -213,7 +269,9 @@ public class DetectModerationLabelsResult extends com.amazonaws.AmazonWebService
         if (getModerationModelVersion() != null)
             sb.append("ModerationModelVersion: ").append(getModerationModelVersion()).append(",");
         if (getHumanLoopActivationOutput() != null)
-            sb.append("HumanLoopActivationOutput: ").append(getHumanLoopActivationOutput());
+            sb.append("HumanLoopActivationOutput: ").append(getHumanLoopActivationOutput()).append(",");
+        if (getProjectVersion() != null)
+            sb.append("ProjectVersion: ").append(getProjectVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -240,6 +298,10 @@ public class DetectModerationLabelsResult extends com.amazonaws.AmazonWebService
             return false;
         if (other.getHumanLoopActivationOutput() != null && other.getHumanLoopActivationOutput().equals(this.getHumanLoopActivationOutput()) == false)
             return false;
+        if (other.getProjectVersion() == null ^ this.getProjectVersion() == null)
+            return false;
+        if (other.getProjectVersion() != null && other.getProjectVersion().equals(this.getProjectVersion()) == false)
+            return false;
         return true;
     }
 
@@ -251,6 +313,7 @@ public class DetectModerationLabelsResult extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getModerationLabels() == null) ? 0 : getModerationLabels().hashCode());
         hashCode = prime * hashCode + ((getModerationModelVersion() == null) ? 0 : getModerationModelVersion().hashCode());
         hashCode = prime * hashCode + ((getHumanLoopActivationOutput() == null) ? 0 : getHumanLoopActivationOutput().hashCode());
+        hashCode = prime * hashCode + ((getProjectVersion() == null) ? 0 : getProjectVersion().hashCode());
         return hashCode;
     }
 

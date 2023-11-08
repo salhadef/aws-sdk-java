@@ -87,6 +87,21 @@ public class CreateBlueGreenDeploymentRequest extends com.amazonaws.AmazonWebSer
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * Specify the DB instance class for the databases in the green environment.
+     * </p>
+     */
+    private String targetDBInstanceClass;
+    /**
+     * <p>
+     * Whether to upgrade the storage file system configuration on the green database. This option migrates the green DB
+     * instance from the older 32-bit file system to the preferred configuration. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem"
+     * >Upgrading the storage file system for a DB instance</a>.
+     * </p>
+     */
+    private Boolean upgradeTargetStorageConfig;
 
     /**
      * <p>
@@ -509,6 +524,126 @@ public class CreateBlueGreenDeploymentRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * Specify the DB instance class for the databases in the green environment.
+     * </p>
+     * 
+     * @param targetDBInstanceClass
+     *        Specify the DB instance class for the databases in the green environment.
+     */
+
+    public void setTargetDBInstanceClass(String targetDBInstanceClass) {
+        this.targetDBInstanceClass = targetDBInstanceClass;
+    }
+
+    /**
+     * <p>
+     * Specify the DB instance class for the databases in the green environment.
+     * </p>
+     * 
+     * @return Specify the DB instance class for the databases in the green environment.
+     */
+
+    public String getTargetDBInstanceClass() {
+        return this.targetDBInstanceClass;
+    }
+
+    /**
+     * <p>
+     * Specify the DB instance class for the databases in the green environment.
+     * </p>
+     * 
+     * @param targetDBInstanceClass
+     *        Specify the DB instance class for the databases in the green environment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateBlueGreenDeploymentRequest withTargetDBInstanceClass(String targetDBInstanceClass) {
+        setTargetDBInstanceClass(targetDBInstanceClass);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether to upgrade the storage file system configuration on the green database. This option migrates the green DB
+     * instance from the older 32-bit file system to the preferred configuration. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem"
+     * >Upgrading the storage file system for a DB instance</a>.
+     * </p>
+     * 
+     * @param upgradeTargetStorageConfig
+     *        Whether to upgrade the storage file system configuration on the green database. This option migrates the
+     *        green DB instance from the older 32-bit file system to the preferred configuration. For more information,
+     *        see <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem"
+     *        >Upgrading the storage file system for a DB instance</a>.
+     */
+
+    public void setUpgradeTargetStorageConfig(Boolean upgradeTargetStorageConfig) {
+        this.upgradeTargetStorageConfig = upgradeTargetStorageConfig;
+    }
+
+    /**
+     * <p>
+     * Whether to upgrade the storage file system configuration on the green database. This option migrates the green DB
+     * instance from the older 32-bit file system to the preferred configuration. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem"
+     * >Upgrading the storage file system for a DB instance</a>.
+     * </p>
+     * 
+     * @return Whether to upgrade the storage file system configuration on the green database. This option migrates the
+     *         green DB instance from the older 32-bit file system to the preferred configuration. For more information,
+     *         see <a href=
+     *         "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem"
+     *         >Upgrading the storage file system for a DB instance</a>.
+     */
+
+    public Boolean getUpgradeTargetStorageConfig() {
+        return this.upgradeTargetStorageConfig;
+    }
+
+    /**
+     * <p>
+     * Whether to upgrade the storage file system configuration on the green database. This option migrates the green DB
+     * instance from the older 32-bit file system to the preferred configuration. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem"
+     * >Upgrading the storage file system for a DB instance</a>.
+     * </p>
+     * 
+     * @param upgradeTargetStorageConfig
+     *        Whether to upgrade the storage file system configuration on the green database. This option migrates the
+     *        green DB instance from the older 32-bit file system to the preferred configuration. For more information,
+     *        see <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem"
+     *        >Upgrading the storage file system for a DB instance</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateBlueGreenDeploymentRequest withUpgradeTargetStorageConfig(Boolean upgradeTargetStorageConfig) {
+        setUpgradeTargetStorageConfig(upgradeTargetStorageConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether to upgrade the storage file system configuration on the green database. This option migrates the green DB
+     * instance from the older 32-bit file system to the preferred configuration. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem"
+     * >Upgrading the storage file system for a DB instance</a>.
+     * </p>
+     * 
+     * @return Whether to upgrade the storage file system configuration on the green database. This option migrates the
+     *         green DB instance from the older 32-bit file system to the preferred configuration. For more information,
+     *         see <a href=
+     *         "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem"
+     *         >Upgrading the storage file system for a DB instance</a>.
+     */
+
+    public Boolean isUpgradeTargetStorageConfig() {
+        return this.upgradeTargetStorageConfig;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -531,7 +666,11 @@ public class CreateBlueGreenDeploymentRequest extends com.amazonaws.AmazonWebSer
         if (getTargetDBClusterParameterGroupName() != null)
             sb.append("TargetDBClusterParameterGroupName: ").append(getTargetDBClusterParameterGroupName()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getTargetDBInstanceClass() != null)
+            sb.append("TargetDBInstanceClass: ").append(getTargetDBInstanceClass()).append(",");
+        if (getUpgradeTargetStorageConfig() != null)
+            sb.append("UpgradeTargetStorageConfig: ").append(getUpgradeTargetStorageConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -571,6 +710,14 @@ public class CreateBlueGreenDeploymentRequest extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getTargetDBInstanceClass() == null ^ this.getTargetDBInstanceClass() == null)
+            return false;
+        if (other.getTargetDBInstanceClass() != null && other.getTargetDBInstanceClass().equals(this.getTargetDBInstanceClass()) == false)
+            return false;
+        if (other.getUpgradeTargetStorageConfig() == null ^ this.getUpgradeTargetStorageConfig() == null)
+            return false;
+        if (other.getUpgradeTargetStorageConfig() != null && other.getUpgradeTargetStorageConfig().equals(this.getUpgradeTargetStorageConfig()) == false)
+            return false;
         return true;
     }
 
@@ -585,6 +732,8 @@ public class CreateBlueGreenDeploymentRequest extends com.amazonaws.AmazonWebSer
         hashCode = prime * hashCode + ((getTargetDBParameterGroupName() == null) ? 0 : getTargetDBParameterGroupName().hashCode());
         hashCode = prime * hashCode + ((getTargetDBClusterParameterGroupName() == null) ? 0 : getTargetDBClusterParameterGroupName().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getTargetDBInstanceClass() == null) ? 0 : getTargetDBInstanceClass().hashCode());
+        hashCode = prime * hashCode + ((getUpgradeTargetStorageConfig() == null) ? 0 : getUpgradeTargetStorageConfig().hashCode());
         return hashCode;
     }
 

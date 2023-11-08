@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * Settings for SCTE-35 signals from ESAM. Include this in your job settings to put SCTE-35 markers in your HLS and
  * transport stream outputs at the insertion points that you specify in an ESAM XML document. Provide the document in
- * the setting SCC XML (sccXml).
+ * the setting SCC XML.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/M2tsScte35Esam" target="_top">AWS API
  *      Documentation</a>

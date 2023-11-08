@@ -75,6 +75,46 @@ public interface AWSOpenSearchServerless {
 
     /**
      * <p>
+     * Returns a list of successful and failed retrievals for the OpenSearch Serverless indexes. For more information,
+     * see <a href=
+     * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-list"
+     * >Viewing data lifecycle policies</a>.
+     * </p>
+     * 
+     * @param batchGetEffectiveLifecyclePolicyRequest
+     * @return Result of the BatchGetEffectiveLifecyclePolicy operation returned by the service.
+     * @throws InternalServerException
+     *         Thrown when an error internal to the service occurs while processing a request.
+     * @throws ValidationException
+     *         Thrown when the HTTP request contains invalid input or is missing required input.
+     * @sample AWSOpenSearchServerless.BatchGetEffectiveLifecyclePolicy
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/BatchGetEffectiveLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    BatchGetEffectiveLifecyclePolicyResult batchGetEffectiveLifecyclePolicy(BatchGetEffectiveLifecyclePolicyRequest batchGetEffectiveLifecyclePolicyRequest);
+
+    /**
+     * <p>
+     * Returns one or more configured OpenSearch Serverless lifecycle policies. For more information, see <a href=
+     * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-list"
+     * >Viewing data lifecycle policies</a>.
+     * </p>
+     * 
+     * @param batchGetLifecyclePolicyRequest
+     * @return Result of the BatchGetLifecyclePolicy operation returned by the service.
+     * @throws InternalServerException
+     *         Thrown when an error internal to the service occurs while processing a request.
+     * @throws ValidationException
+     *         Thrown when the HTTP request contains invalid input or is missing required input.
+     * @sample AWSOpenSearchServerless.BatchGetLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/BatchGetLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    BatchGetLifecyclePolicyResult batchGetLifecyclePolicy(BatchGetLifecyclePolicyRequest batchGetLifecyclePolicyRequest);
+
+    /**
+     * <p>
      * Returns attributes for one or more VPC endpoints associated with the current account. For more information, see
      * <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-vpc.html">Access Amazon
      * OpenSearch Serverless using an interface endpoint</a>.
@@ -128,7 +168,8 @@ public interface AWSOpenSearchServerless {
      * @param createCollectionRequest
      * @return Result of the CreateCollection operation returned by the service.
      * @throws OcuLimitExceededException
-     *         OCU Limit Exceeded for service limits
+     *         Thrown when the collection you're attempting to create results in a number of search or indexing OCUs
+     *         that exceeds the account limit.
      * @throws InternalServerException
      *         Thrown when an error internal to the service occurs while processing a request.
      * @throws ConflictException
@@ -143,6 +184,31 @@ public interface AWSOpenSearchServerless {
      *      target="_top">AWS API Documentation</a>
      */
     CreateCollectionResult createCollection(CreateCollectionRequest createCollectionRequest);
+
+    /**
+     * <p>
+     * Creates a lifecyle policy to be applied to OpenSearch Serverless indexes. Lifecycle policies define the number of
+     * days or hours to retain the data on an OpenSearch Serverless index. For more information, see <a href=
+     * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-create"
+     * >Creating data lifecycle policies</a>.
+     * </p>
+     * 
+     * @param createLifecyclePolicyRequest
+     * @return Result of the CreateLifecyclePolicy operation returned by the service.
+     * @throws InternalServerException
+     *         Thrown when an error internal to the service occurs while processing a request.
+     * @throws ConflictException
+     *         When creating a resource, thrown when a resource with the same name already exists or is being created.
+     *         When deleting a resource, thrown when the resource is not in the ACTIVE or FAILED state.
+     * @throws ValidationException
+     *         Thrown when the HTTP request contains invalid input or is missing required input.
+     * @throws ServiceQuotaExceededException
+     *         Thrown when you attempt to create more resources than the service allows based on service quotas.
+     * @sample AWSOpenSearchServerless.CreateLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CreateLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateLifecyclePolicyResult createLifecyclePolicy(CreateLifecyclePolicyRequest createLifecyclePolicyRequest);
 
     /**
      * <p>
@@ -267,6 +333,30 @@ public interface AWSOpenSearchServerless {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteCollectionResult deleteCollection(DeleteCollectionRequest deleteCollectionRequest);
+
+    /**
+     * <p>
+     * Deletes an OpenSearch Serverless lifecycle policy. For more information, see <a href=
+     * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-delete"
+     * >Deleting data lifecycle policies</a>.
+     * </p>
+     * 
+     * @param deleteLifecyclePolicyRequest
+     * @return Result of the DeleteLifecyclePolicy operation returned by the service.
+     * @throws InternalServerException
+     *         Thrown when an error internal to the service occurs while processing a request.
+     * @throws ResourceNotFoundException
+     *         Thrown when accessing or deleting a resource that does not exist.
+     * @throws ConflictException
+     *         When creating a resource, thrown when a resource with the same name already exists or is being created.
+     *         When deleting a resource, thrown when the resource is not in the ACTIVE or FAILED state.
+     * @throws ValidationException
+     *         Thrown when the HTTP request contains invalid input or is missing required input.
+     * @sample AWSOpenSearchServerless.DeleteLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/DeleteLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteLifecyclePolicyResult deleteLifecyclePolicy(DeleteLifecyclePolicyRequest deleteLifecyclePolicyRequest);
 
     /**
      * <p>
@@ -479,6 +569,25 @@ public interface AWSOpenSearchServerless {
 
     /**
      * <p>
+     * Returns a list of OpenSearch Serverless lifecycle policies. For more information, see <a href=
+     * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-list"
+     * >Viewing data lifecycle policies</a>.
+     * </p>
+     * 
+     * @param listLifecyclePoliciesRequest
+     * @return Result of the ListLifecyclePolicies operation returned by the service.
+     * @throws InternalServerException
+     *         Thrown when an error internal to the service occurs while processing a request.
+     * @throws ValidationException
+     *         Thrown when the HTTP request contains invalid input or is missing required input.
+     * @sample AWSOpenSearchServerless.ListLifecyclePolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/ListLifecyclePolicies"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListLifecyclePoliciesResult listLifecyclePolicies(ListLifecyclePoliciesRequest listLifecyclePoliciesRequest);
+
+    /**
+     * <p>
      * Returns information about configured OpenSearch Serverless security configurations. For more information, see <a
      * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-saml.html">SAML
      * authentication for Amazon OpenSearch Serverless</a>.
@@ -666,6 +775,32 @@ public interface AWSOpenSearchServerless {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateCollectionResult updateCollection(UpdateCollectionRequest updateCollectionRequest);
+
+    /**
+     * <p>
+     * Updates an OpenSearch Serverless access policy. For more information, see <a href=
+     * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-update"
+     * >Updating data lifecycle policies</a>.
+     * </p>
+     * 
+     * @param updateLifecyclePolicyRequest
+     * @return Result of the UpdateLifecyclePolicy operation returned by the service.
+     * @throws InternalServerException
+     *         Thrown when an error internal to the service occurs while processing a request.
+     * @throws ResourceNotFoundException
+     *         Thrown when accessing or deleting a resource that does not exist.
+     * @throws ConflictException
+     *         When creating a resource, thrown when a resource with the same name already exists or is being created.
+     *         When deleting a resource, thrown when the resource is not in the ACTIVE or FAILED state.
+     * @throws ValidationException
+     *         Thrown when the HTTP request contains invalid input or is missing required input.
+     * @throws ServiceQuotaExceededException
+     *         Thrown when you attempt to create more resources than the service allows based on service quotas.
+     * @sample AWSOpenSearchServerless.UpdateLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/UpdateLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateLifecyclePolicyResult updateLifecyclePolicy(UpdateLifecyclePolicyRequest updateLifecyclePolicyRequest);
 
     /**
      * <p>

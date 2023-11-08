@@ -358,7 +358,7 @@ public class CreateAssessmentReportRequest extends com.amazonaws.AmazonWebServic
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
+            sb.append("Description: ").append("***Sensitive Data Redacted***").append(",");
         if (getAssessmentId() != null)
             sb.append("AssessmentId: ").append(getAssessmentId()).append(",");
         if (getQueryStatement() != null)

@@ -43,8 +43,8 @@ public class JobTemplateSettings implements Serializable, Cloneable, StructuredP
      */
     private ExtendedDataServices extendedDataServices;
     /**
-     * Use Inputs (inputs) to define the source file used in the transcode job. There can only be one input in a job
-     * template. Using the API, you can include multiple inputs when referencing a job template.
+     * Use Inputs to define the source file used in the transcode job. There can only be one input in a job template.
+     * Using the API, you can include multiple inputs when referencing a job template.
      */
     private java.util.List<InputTemplate> inputs;
     /**
@@ -62,10 +62,8 @@ public class JobTemplateSettings implements Serializable, Cloneable, StructuredP
     private MotionImageInserter motionImageInserter;
     /**
      * Settings for your Nielsen configuration. If you don't do Nielsen measurement and analytics, ignore these
-     * settings. When you enable Nielsen configuration (nielsenConfiguration), MediaConvert enables PCM to ID3 tagging
-     * for all outputs in the job. To enable Nielsen configuration programmatically, include an instance of
-     * nielsenConfiguration in your JSON job specification. Even if you don't include any children of
-     * nielsenConfiguration, you still enable the setting.
+     * settings. When you enable Nielsen configuration, MediaConvert enables PCM to ID3 tagging for all outputs in the
+     * job.
      */
     private NielsenConfiguration nielsenConfiguration;
     /**
@@ -77,13 +75,12 @@ public class JobTemplateSettings implements Serializable, Cloneable, StructuredP
      */
     private NielsenNonLinearWatermarkSettings nielsenNonLinearWatermark;
     /**
-     * (OutputGroups) contains one group of settings for each set of outputs that share a common package type. All
-     * unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no container) are grouped in a single output group as
-     * well. Required in (OutputGroups) is a group of settings that apply to the whole group. This required object
-     * depends on the value you set for (Type) under (OutputGroups)>(OutputGroupSettings). Type, settings object pairs
-     * are as follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS, HlsGroupSettings *
-     * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings *
-     * CMAF_GROUP_SETTINGS, CmafGroupSettings
+     * Contains one group of settings for each set of outputs that share a common package type. All unpackaged files
+     * (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no container) are grouped in a single output group as well. Required in
+     * is a group of settings that apply to the whole group. This required object depends on the value you set for Type.
+     * Type, settings object pairs are as follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS,
+     * HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings
+     * * CMAF_GROUP_SETTINGS, CmafGroupSettings
      */
     private java.util.List<OutputGroup> outputGroups;
     /**
@@ -92,8 +89,8 @@ public class JobTemplateSettings implements Serializable, Cloneable, StructuredP
      */
     private TimecodeConfig timecodeConfig;
     /**
-     * Insert user-defined custom ID3 metadata (id3) at timecodes (timecode) that you specify. In each output that you
-     * want to include this metadata, you must set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH).
+     * Insert user-defined custom ID3 metadata at timecodes that you specify. In each output that you want to include
+     * this metadata, you must set ID3 metadata to Passthrough.
      */
     private TimedMetadataInsertion timedMetadataInsertion;
 
@@ -258,11 +255,11 @@ public class JobTemplateSettings implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Use Inputs (inputs) to define the source file used in the transcode job. There can only be one input in a job
-     * template. Using the API, you can include multiple inputs when referencing a job template.
+     * Use Inputs to define the source file used in the transcode job. There can only be one input in a job template.
+     * Using the API, you can include multiple inputs when referencing a job template.
      * 
-     * @return Use Inputs (inputs) to define the source file used in the transcode job. There can only be one input in a
-     *         job template. Using the API, you can include multiple inputs when referencing a job template.
+     * @return Use Inputs to define the source file used in the transcode job. There can only be one input in a job
+     *         template. Using the API, you can include multiple inputs when referencing a job template.
      */
 
     public java.util.List<InputTemplate> getInputs() {
@@ -270,12 +267,12 @@ public class JobTemplateSettings implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Use Inputs (inputs) to define the source file used in the transcode job. There can only be one input in a job
-     * template. Using the API, you can include multiple inputs when referencing a job template.
+     * Use Inputs to define the source file used in the transcode job. There can only be one input in a job template.
+     * Using the API, you can include multiple inputs when referencing a job template.
      * 
      * @param inputs
-     *        Use Inputs (inputs) to define the source file used in the transcode job. There can only be one input in a
-     *        job template. Using the API, you can include multiple inputs when referencing a job template.
+     *        Use Inputs to define the source file used in the transcode job. There can only be one input in a job
+     *        template. Using the API, you can include multiple inputs when referencing a job template.
      */
 
     public void setInputs(java.util.Collection<InputTemplate> inputs) {
@@ -288,8 +285,8 @@ public class JobTemplateSettings implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Use Inputs (inputs) to define the source file used in the transcode job. There can only be one input in a job
-     * template. Using the API, you can include multiple inputs when referencing a job template.
+     * Use Inputs to define the source file used in the transcode job. There can only be one input in a job template.
+     * Using the API, you can include multiple inputs when referencing a job template.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setInputs(java.util.Collection)} or {@link #withInputs(java.util.Collection)} if you want to override the
@@ -297,8 +294,8 @@ public class JobTemplateSettings implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param inputs
-     *        Use Inputs (inputs) to define the source file used in the transcode job. There can only be one input in a
-     *        job template. Using the API, you can include multiple inputs when referencing a job template.
+     *        Use Inputs to define the source file used in the transcode job. There can only be one input in a job
+     *        template. Using the API, you can include multiple inputs when referencing a job template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -313,12 +310,12 @@ public class JobTemplateSettings implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Use Inputs (inputs) to define the source file used in the transcode job. There can only be one input in a job
-     * template. Using the API, you can include multiple inputs when referencing a job template.
+     * Use Inputs to define the source file used in the transcode job. There can only be one input in a job template.
+     * Using the API, you can include multiple inputs when referencing a job template.
      * 
      * @param inputs
-     *        Use Inputs (inputs) to define the source file used in the transcode job. There can only be one input in a
-     *        job template. Using the API, you can include multiple inputs when referencing a job template.
+     *        Use Inputs to define the source file used in the transcode job. There can only be one input in a job
+     *        template. Using the API, you can include multiple inputs when referencing a job template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -430,17 +427,13 @@ public class JobTemplateSettings implements Serializable, Cloneable, StructuredP
 
     /**
      * Settings for your Nielsen configuration. If you don't do Nielsen measurement and analytics, ignore these
-     * settings. When you enable Nielsen configuration (nielsenConfiguration), MediaConvert enables PCM to ID3 tagging
-     * for all outputs in the job. To enable Nielsen configuration programmatically, include an instance of
-     * nielsenConfiguration in your JSON job specification. Even if you don't include any children of
-     * nielsenConfiguration, you still enable the setting.
+     * settings. When you enable Nielsen configuration, MediaConvert enables PCM to ID3 tagging for all outputs in the
+     * job.
      * 
      * @param nielsenConfiguration
      *        Settings for your Nielsen configuration. If you don't do Nielsen measurement and analytics, ignore these
-     *        settings. When you enable Nielsen configuration (nielsenConfiguration), MediaConvert enables PCM to ID3
-     *        tagging for all outputs in the job. To enable Nielsen configuration programmatically, include an instance
-     *        of nielsenConfiguration in your JSON job specification. Even if you don't include any children of
-     *        nielsenConfiguration, you still enable the setting.
+     *        settings. When you enable Nielsen configuration, MediaConvert enables PCM to ID3 tagging for all outputs
+     *        in the job.
      */
 
     public void setNielsenConfiguration(NielsenConfiguration nielsenConfiguration) {
@@ -449,16 +442,12 @@ public class JobTemplateSettings implements Serializable, Cloneable, StructuredP
 
     /**
      * Settings for your Nielsen configuration. If you don't do Nielsen measurement and analytics, ignore these
-     * settings. When you enable Nielsen configuration (nielsenConfiguration), MediaConvert enables PCM to ID3 tagging
-     * for all outputs in the job. To enable Nielsen configuration programmatically, include an instance of
-     * nielsenConfiguration in your JSON job specification. Even if you don't include any children of
-     * nielsenConfiguration, you still enable the setting.
+     * settings. When you enable Nielsen configuration, MediaConvert enables PCM to ID3 tagging for all outputs in the
+     * job.
      * 
      * @return Settings for your Nielsen configuration. If you don't do Nielsen measurement and analytics, ignore these
-     *         settings. When you enable Nielsen configuration (nielsenConfiguration), MediaConvert enables PCM to ID3
-     *         tagging for all outputs in the job. To enable Nielsen configuration programmatically, include an instance
-     *         of nielsenConfiguration in your JSON job specification. Even if you don't include any children of
-     *         nielsenConfiguration, you still enable the setting.
+     *         settings. When you enable Nielsen configuration, MediaConvert enables PCM to ID3 tagging for all outputs
+     *         in the job.
      */
 
     public NielsenConfiguration getNielsenConfiguration() {
@@ -467,17 +456,13 @@ public class JobTemplateSettings implements Serializable, Cloneable, StructuredP
 
     /**
      * Settings for your Nielsen configuration. If you don't do Nielsen measurement and analytics, ignore these
-     * settings. When you enable Nielsen configuration (nielsenConfiguration), MediaConvert enables PCM to ID3 tagging
-     * for all outputs in the job. To enable Nielsen configuration programmatically, include an instance of
-     * nielsenConfiguration in your JSON job specification. Even if you don't include any children of
-     * nielsenConfiguration, you still enable the setting.
+     * settings. When you enable Nielsen configuration, MediaConvert enables PCM to ID3 tagging for all outputs in the
+     * job.
      * 
      * @param nielsenConfiguration
      *        Settings for your Nielsen configuration. If you don't do Nielsen measurement and analytics, ignore these
-     *        settings. When you enable Nielsen configuration (nielsenConfiguration), MediaConvert enables PCM to ID3
-     *        tagging for all outputs in the job. To enable Nielsen configuration programmatically, include an instance
-     *        of nielsenConfiguration in your JSON job specification. Even if you don't include any children of
-     *        nielsenConfiguration, you still enable the setting.
+     *        settings. When you enable Nielsen configuration, MediaConvert enables PCM to ID3 tagging for all outputs
+     *        in the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -548,21 +533,19 @@ public class JobTemplateSettings implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * (OutputGroups) contains one group of settings for each set of outputs that share a common package type. All
-     * unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no container) are grouped in a single output group as
-     * well. Required in (OutputGroups) is a group of settings that apply to the whole group. This required object
-     * depends on the value you set for (Type) under (OutputGroups)>(OutputGroupSettings). Type, settings object pairs
-     * are as follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS, HlsGroupSettings *
-     * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings *
-     * CMAF_GROUP_SETTINGS, CmafGroupSettings
+     * Contains one group of settings for each set of outputs that share a common package type. All unpackaged files
+     * (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no container) are grouped in a single output group as well. Required in
+     * is a group of settings that apply to the whole group. This required object depends on the value you set for Type.
+     * Type, settings object pairs are as follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS,
+     * HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings
+     * * CMAF_GROUP_SETTINGS, CmafGroupSettings
      * 
-     * @return (OutputGroups) contains one group of settings for each set of outputs that share a common package type.
-     *         All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no container) are grouped in a single output
-     *         group as well. Required in (OutputGroups) is a group of settings that apply to the whole group. This
-     *         required object depends on the value you set for (Type) under (OutputGroups)>(OutputGroupSettings). Type,
-     *         settings object pairs are as follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS,
-     *         HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS,
-     *         MsSmoothGroupSettings * CMAF_GROUP_SETTINGS, CmafGroupSettings
+     * @return Contains one group of settings for each set of outputs that share a common package type. All unpackaged
+     *         files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no container) are grouped in a single output group as well.
+     *         Required in is a group of settings that apply to the whole group. This required object depends on the
+     *         value you set for Type. Type, settings object pairs are as follows. * FILE_GROUP_SETTINGS,
+     *         FileGroupSettings * HLS_GROUP_SETTINGS, HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings
+     *         * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings * CMAF_GROUP_SETTINGS, CmafGroupSettings
      */
 
     public java.util.List<OutputGroup> getOutputGroups() {
@@ -570,22 +553,20 @@ public class JobTemplateSettings implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * (OutputGroups) contains one group of settings for each set of outputs that share a common package type. All
-     * unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no container) are grouped in a single output group as
-     * well. Required in (OutputGroups) is a group of settings that apply to the whole group. This required object
-     * depends on the value you set for (Type) under (OutputGroups)>(OutputGroupSettings). Type, settings object pairs
-     * are as follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS, HlsGroupSettings *
-     * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings *
-     * CMAF_GROUP_SETTINGS, CmafGroupSettings
+     * Contains one group of settings for each set of outputs that share a common package type. All unpackaged files
+     * (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no container) are grouped in a single output group as well. Required in
+     * is a group of settings that apply to the whole group. This required object depends on the value you set for Type.
+     * Type, settings object pairs are as follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS,
+     * HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings
+     * * CMAF_GROUP_SETTINGS, CmafGroupSettings
      * 
      * @param outputGroups
-     *        (OutputGroups) contains one group of settings for each set of outputs that share a common package type.
-     *        All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no container) are grouped in a single output
-     *        group as well. Required in (OutputGroups) is a group of settings that apply to the whole group. This
-     *        required object depends on the value you set for (Type) under (OutputGroups)>(OutputGroupSettings). Type,
-     *        settings object pairs are as follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS,
-     *        HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS,
-     *        MsSmoothGroupSettings * CMAF_GROUP_SETTINGS, CmafGroupSettings
+     *        Contains one group of settings for each set of outputs that share a common package type. All unpackaged
+     *        files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no container) are grouped in a single output group as well.
+     *        Required in is a group of settings that apply to the whole group. This required object depends on the
+     *        value you set for Type. Type, settings object pairs are as follows. * FILE_GROUP_SETTINGS,
+     *        FileGroupSettings * HLS_GROUP_SETTINGS, HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings *
+     *        MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings * CMAF_GROUP_SETTINGS, CmafGroupSettings
      */
 
     public void setOutputGroups(java.util.Collection<OutputGroup> outputGroups) {
@@ -598,13 +579,12 @@ public class JobTemplateSettings implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * (OutputGroups) contains one group of settings for each set of outputs that share a common package type. All
-     * unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no container) are grouped in a single output group as
-     * well. Required in (OutputGroups) is a group of settings that apply to the whole group. This required object
-     * depends on the value you set for (Type) under (OutputGroups)>(OutputGroupSettings). Type, settings object pairs
-     * are as follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS, HlsGroupSettings *
-     * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings *
-     * CMAF_GROUP_SETTINGS, CmafGroupSettings
+     * Contains one group of settings for each set of outputs that share a common package type. All unpackaged files
+     * (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no container) are grouped in a single output group as well. Required in
+     * is a group of settings that apply to the whole group. This required object depends on the value you set for Type.
+     * Type, settings object pairs are as follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS,
+     * HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings
+     * * CMAF_GROUP_SETTINGS, CmafGroupSettings
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setOutputGroups(java.util.Collection)} or {@link #withOutputGroups(java.util.Collection)} if you want to
@@ -612,13 +592,12 @@ public class JobTemplateSettings implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param outputGroups
-     *        (OutputGroups) contains one group of settings for each set of outputs that share a common package type.
-     *        All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no container) are grouped in a single output
-     *        group as well. Required in (OutputGroups) is a group of settings that apply to the whole group. This
-     *        required object depends on the value you set for (Type) under (OutputGroups)>(OutputGroupSettings). Type,
-     *        settings object pairs are as follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS,
-     *        HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS,
-     *        MsSmoothGroupSettings * CMAF_GROUP_SETTINGS, CmafGroupSettings
+     *        Contains one group of settings for each set of outputs that share a common package type. All unpackaged
+     *        files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no container) are grouped in a single output group as well.
+     *        Required in is a group of settings that apply to the whole group. This required object depends on the
+     *        value you set for Type. Type, settings object pairs are as follows. * FILE_GROUP_SETTINGS,
+     *        FileGroupSettings * HLS_GROUP_SETTINGS, HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings *
+     *        MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings * CMAF_GROUP_SETTINGS, CmafGroupSettings
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -633,22 +612,20 @@ public class JobTemplateSettings implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * (OutputGroups) contains one group of settings for each set of outputs that share a common package type. All
-     * unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no container) are grouped in a single output group as
-     * well. Required in (OutputGroups) is a group of settings that apply to the whole group. This required object
-     * depends on the value you set for (Type) under (OutputGroups)>(OutputGroupSettings). Type, settings object pairs
-     * are as follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS, HlsGroupSettings *
-     * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings *
-     * CMAF_GROUP_SETTINGS, CmafGroupSettings
+     * Contains one group of settings for each set of outputs that share a common package type. All unpackaged files
+     * (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no container) are grouped in a single output group as well. Required in
+     * is a group of settings that apply to the whole group. This required object depends on the value you set for Type.
+     * Type, settings object pairs are as follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS,
+     * HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings
+     * * CMAF_GROUP_SETTINGS, CmafGroupSettings
      * 
      * @param outputGroups
-     *        (OutputGroups) contains one group of settings for each set of outputs that share a common package type.
-     *        All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no container) are grouped in a single output
-     *        group as well. Required in (OutputGroups) is a group of settings that apply to the whole group. This
-     *        required object depends on the value you set for (Type) under (OutputGroups)>(OutputGroupSettings). Type,
-     *        settings object pairs are as follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS,
-     *        HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS,
-     *        MsSmoothGroupSettings * CMAF_GROUP_SETTINGS, CmafGroupSettings
+     *        Contains one group of settings for each set of outputs that share a common package type. All unpackaged
+     *        files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no container) are grouped in a single output group as well.
+     *        Required in is a group of settings that apply to the whole group. This required object depends on the
+     *        value you set for Type. Type, settings object pairs are as follows. * FILE_GROUP_SETTINGS,
+     *        FileGroupSettings * HLS_GROUP_SETTINGS, HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings *
+     *        MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings * CMAF_GROUP_SETTINGS, CmafGroupSettings
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -698,13 +675,12 @@ public class JobTemplateSettings implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Insert user-defined custom ID3 metadata (id3) at timecodes (timecode) that you specify. In each output that you
-     * want to include this metadata, you must set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH).
+     * Insert user-defined custom ID3 metadata at timecodes that you specify. In each output that you want to include
+     * this metadata, you must set ID3 metadata to Passthrough.
      * 
      * @param timedMetadataInsertion
-     *        Insert user-defined custom ID3 metadata (id3) at timecodes (timecode) that you specify. In each output
-     *        that you want to include this metadata, you must set ID3 metadata (timedMetadata) to Passthrough
-     *        (PASSTHROUGH).
+     *        Insert user-defined custom ID3 metadata at timecodes that you specify. In each output that you want to
+     *        include this metadata, you must set ID3 metadata to Passthrough.
      */
 
     public void setTimedMetadataInsertion(TimedMetadataInsertion timedMetadataInsertion) {
@@ -712,12 +688,11 @@ public class JobTemplateSettings implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Insert user-defined custom ID3 metadata (id3) at timecodes (timecode) that you specify. In each output that you
-     * want to include this metadata, you must set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH).
+     * Insert user-defined custom ID3 metadata at timecodes that you specify. In each output that you want to include
+     * this metadata, you must set ID3 metadata to Passthrough.
      * 
-     * @return Insert user-defined custom ID3 metadata (id3) at timecodes (timecode) that you specify. In each output
-     *         that you want to include this metadata, you must set ID3 metadata (timedMetadata) to Passthrough
-     *         (PASSTHROUGH).
+     * @return Insert user-defined custom ID3 metadata at timecodes that you specify. In each output that you want to
+     *         include this metadata, you must set ID3 metadata to Passthrough.
      */
 
     public TimedMetadataInsertion getTimedMetadataInsertion() {
@@ -725,13 +700,12 @@ public class JobTemplateSettings implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Insert user-defined custom ID3 metadata (id3) at timecodes (timecode) that you specify. In each output that you
-     * want to include this metadata, you must set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH).
+     * Insert user-defined custom ID3 metadata at timecodes that you specify. In each output that you want to include
+     * this metadata, you must set ID3 metadata to Passthrough.
      * 
      * @param timedMetadataInsertion
-     *        Insert user-defined custom ID3 metadata (id3) at timecodes (timecode) that you specify. In each output
-     *        that you want to include this metadata, you must set ID3 metadata (timedMetadata) to Passthrough
-     *        (PASSTHROUGH).
+     *        Insert user-defined custom ID3 metadata at timecodes that you specify. In each output that you want to
+     *        include this metadata, you must set ID3 metadata to Passthrough.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

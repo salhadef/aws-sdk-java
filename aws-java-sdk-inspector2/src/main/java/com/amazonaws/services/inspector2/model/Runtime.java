@@ -32,7 +32,9 @@ public enum Runtime {
     PYTHON_3_9("PYTHON_3_9"),
     UNSUPPORTED("UNSUPPORTED"),
     NODEJS_18_X("NODEJS_18_X"),
-    GO_1_X("GO_1_X");
+    GO_1_X("GO_1_X"),
+    JAVA_17("JAVA_17"),
+    PYTHON_3_10("PYTHON_3_10");
 
     private String value;
 

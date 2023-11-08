@@ -36,7 +36,7 @@ public class BulkEmailDestinationStatus implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>Success</code>: Amazon SES accepted the message, and will attempt to deliver it to the recipients.
+     * <code>Success</code>: Amazon SES accepted the message, and attempts to deliver it to the recipients.
      * </p>
      * </li>
      * <li>
@@ -139,7 +139,7 @@ public class BulkEmailDestinationStatus implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>Success</code>: Amazon SES accepted the message, and will attempt to deliver it to the recipients.
+     * <code>Success</code>: Amazon SES accepted the message, and attempts to deliver it to the recipients.
      * </p>
      * </li>
      * <li>
@@ -225,7 +225,7 @@ public class BulkEmailDestinationStatus implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Success</code>: Amazon SES accepted the message, and will attempt to deliver it to the recipients.
+     *        <code>Success</code>: Amazon SES accepted the message, and attempts to deliver it to the recipients.
      *        </p>
      *        </li>
      *        <li>
@@ -318,7 +318,7 @@ public class BulkEmailDestinationStatus implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>Success</code>: Amazon SES accepted the message, and will attempt to deliver it to the recipients.
+     * <code>Success</code>: Amazon SES accepted the message, and attempts to deliver it to the recipients.
      * </p>
      * </li>
      * <li>
@@ -403,7 +403,7 @@ public class BulkEmailDestinationStatus implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>Success</code>: Amazon SES accepted the message, and will attempt to deliver it to the recipients.
+     *         <code>Success</code>: Amazon SES accepted the message, and attempts to deliver it to the recipients.
      *         </p>
      *         </li>
      *         <li>
@@ -497,7 +497,7 @@ public class BulkEmailDestinationStatus implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>Success</code>: Amazon SES accepted the message, and will attempt to deliver it to the recipients.
+     * <code>Success</code>: Amazon SES accepted the message, and attempts to deliver it to the recipients.
      * </p>
      * </li>
      * <li>
@@ -583,7 +583,7 @@ public class BulkEmailDestinationStatus implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Success</code>: Amazon SES accepted the message, and will attempt to deliver it to the recipients.
+     *        <code>Success</code>: Amazon SES accepted the message, and attempts to deliver it to the recipients.
      *        </p>
      *        </li>
      *        <li>
@@ -678,7 +678,7 @@ public class BulkEmailDestinationStatus implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>Success</code>: Amazon SES accepted the message, and will attempt to deliver it to the recipients.
+     * <code>Success</code>: Amazon SES accepted the message, and attempts to deliver it to the recipients.
      * </p>
      * </li>
      * <li>
@@ -764,7 +764,7 @@ public class BulkEmailDestinationStatus implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Success</code>: Amazon SES accepted the message, and will attempt to deliver it to the recipients.
+     *        <code>Success</code>: Amazon SES accepted the message, and attempts to deliver it to the recipients.
      *        </p>
      *        </li>
      *        <li>

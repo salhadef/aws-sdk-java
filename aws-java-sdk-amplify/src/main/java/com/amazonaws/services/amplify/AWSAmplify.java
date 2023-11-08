@@ -27,9 +27,9 @@ import com.amazonaws.services.amplify.model.*;
  * </p>
  * <p>
  * <p>
- * Amplify enables developers to develop and deploy cloud-powered mobile and web apps. The Amplify Console provides a
+ * Amplify enables developers to develop and deploy cloud-powered mobile and web apps. Amplify Hosting provides a
  * continuous delivery and hosting service for web applications. For more information, see the <a
- * href="https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html">Amplify Console User Guide</a>. The Amplify
+ * href="https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html">Amplify Hosting User Guide</a>. The Amplify
  * Framework is a comprehensive set of SDKs, libraries, tools, and documentation for client app development. For more
  * information, see the <a href="https://docs.amplify.aws/">Amplify Framework.</a>
  * </p>
@@ -123,6 +123,11 @@ public interface AWSAmplify {
      * <p>
      * Creates a deployment for a manually deployed Amplify app. Manually deployed apps are not connected to a
      * repository.
+     * </p>
+     * <p>
+     * The maximum duration between the <code>CreateDeployment</code> call and the <code>StartDeployment</code> call
+     * cannot exceed 8 hours. If the duration exceeds 8 hours, the <code>StartDeployment</code> call and the associated
+     * <code>Job</code> will fail.
      * </p>
      * 
      * @param createDeploymentRequest
@@ -362,7 +367,7 @@ public interface AWSAmplify {
 
     /**
      * <p>
-     * Returns an existing Amplify app by appID.
+     * Returns an existing Amplify app specified by an app ID.
      * </p>
      * 
      * @param getAppRequest
@@ -689,6 +694,11 @@ public interface AWSAmplify {
     /**
      * <p>
      * Starts a deployment for a manually deployed app. Manually deployed apps are not connected to a repository.
+     * </p>
+     * <p>
+     * The maximum duration between the <code>CreateDeployment</code> call and the <code>StartDeployment</code> call
+     * cannot exceed 8 hours. If the duration exceeds 8 hours, the <code>StartDeployment</code> call and the associated
+     * <code>Job</code> will fail.
      * </p>
      * 
      * @param startDeploymentRequest

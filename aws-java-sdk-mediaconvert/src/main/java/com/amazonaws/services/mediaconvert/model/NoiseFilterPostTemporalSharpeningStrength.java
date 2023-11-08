@@ -15,9 +15,8 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Use Post temporal sharpening strength (postTemporalSharpeningStrength) to define the amount of sharpening the
- * transcoder applies to your output. Set Post temporal sharpening strength to Low (LOW), Medium (MEDIUM), or High
- * (HIGH) to indicate the amount of sharpening.
+ * Use Post temporal sharpening strength to define the amount of sharpening the transcoder applies to your output. Set
+ * Post temporal sharpening strength to Low, Medium, or High to indicate the amount of sharpening.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum NoiseFilterPostTemporalSharpeningStrength {

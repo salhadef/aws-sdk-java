@@ -85,6 +85,10 @@ public class GetQuantumTaskResultJsonUnmarshaller implements Unmarshaller<GetQua
                     context.nextToken();
                     getQuantumTaskResult.setQuantumTaskArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("queueInfo", targetDepth)) {
+                    context.nextToken();
+                    getQuantumTaskResult.setQueueInfo(QuantumTaskQueueInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("shots", targetDepth)) {
                     context.nextToken();
                     getQuantumTaskResult.setShots(context.getUnmarshaller(Long.class).unmarshall(context));

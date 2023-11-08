@@ -29,16 +29,16 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ImportReferenceSourceItemMarshaller {
 
-    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
-    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("name").build();
     private static final MarshallingInfo<String> SOURCEFILE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceFile").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
     private static final MarshallingInfo<String> STATUSMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("statusMessage").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
 
@@ -58,11 +58,11 @@ public class ImportReferenceSourceItemMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(importReferenceSourceItem.getDescription(), DESCRIPTION_BINDING);
-            protocolMarshaller.marshall(importReferenceSourceItem.getName(), NAME_BINDING);
             protocolMarshaller.marshall(importReferenceSourceItem.getSourceFile(), SOURCEFILE_BINDING);
             protocolMarshaller.marshall(importReferenceSourceItem.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(importReferenceSourceItem.getStatusMessage(), STATUSMESSAGE_BINDING);
+            protocolMarshaller.marshall(importReferenceSourceItem.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(importReferenceSourceItem.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(importReferenceSourceItem.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

@@ -38,6 +38,8 @@ public class OrderMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("networkSiteArn").build();
     private static final MarshallingInfo<String> ORDERARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("orderArn").build();
+    private static final MarshallingInfo<List> ORDEREDRESOURCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("orderedResources").build();
     private static final MarshallingInfo<StructuredPojo> SHIPPINGADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("shippingAddress").build();
     private static final MarshallingInfo<List> TRACKINGINFORMATION_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -64,6 +66,7 @@ public class OrderMarshaller {
             protocolMarshaller.marshall(order.getNetworkArn(), NETWORKARN_BINDING);
             protocolMarshaller.marshall(order.getNetworkSiteArn(), NETWORKSITEARN_BINDING);
             protocolMarshaller.marshall(order.getOrderArn(), ORDERARN_BINDING);
+            protocolMarshaller.marshall(order.getOrderedResources(), ORDEREDRESOURCES_BINDING);
             protocolMarshaller.marshall(order.getShippingAddress(), SHIPPINGADDRESS_BINDING);
             protocolMarshaller.marshall(order.getTrackingInformation(), TRACKINGINFORMATION_BINDING);
         } catch (Exception e) {

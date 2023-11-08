@@ -60,6 +60,10 @@ public class LaunchConfigurationTemplateJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     launchConfigurationTemplate.setCopyTags(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("exportBucketArn", targetDepth)) {
+                    context.nextToken();
+                    launchConfigurationTemplate.setExportBucketArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("launchConfigurationTemplateID", targetDepth)) {
                     context.nextToken();
                     launchConfigurationTemplate.setLaunchConfigurationTemplateID(context.getUnmarshaller(String.class).unmarshall(context));
@@ -68,9 +72,17 @@ public class LaunchConfigurationTemplateJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     launchConfigurationTemplate.setLaunchDisposition(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("launchIntoSourceInstance", targetDepth)) {
+                    context.nextToken();
+                    launchConfigurationTemplate.setLaunchIntoSourceInstance(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("licensing", targetDepth)) {
                     context.nextToken();
                     launchConfigurationTemplate.setLicensing(LicensingJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("postLaunchEnabled", targetDepth)) {
+                    context.nextToken();
+                    launchConfigurationTemplate.setPostLaunchEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();

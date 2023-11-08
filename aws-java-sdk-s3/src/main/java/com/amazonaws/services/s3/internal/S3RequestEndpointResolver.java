@@ -129,29 +129,26 @@ public class S3RequestEndpointResolver {
     }
 
     private String getHostStyleResourcePath() {
-        return keyForPath();
+        return keyForBaseOfPath();
     }
 
     private String getPathStyleResourcePath() {
         if (bucketName == null) {
-            return SdkHttpUtils.urlEncode(keyForPath(), true);
+            return SdkHttpUtils.urlEncode(keyForBaseOfPath(), true);
         }
 
         String encodedBucketName = SdkHttpUtils.urlEncode(bucketName, false);
-        return encodedBucketName + "/" + SdkHttpUtils.urlEncode(keyForPath(), true);
+        return encodedBucketName + "/" + SdkHttpUtils.urlEncode(key == null ? "" : key, true);
     }
 
-    private String keyForPath() {
+    private String keyForBaseOfPath() {
         if (key == null) {
             return "";
         }
 
-        // If the key name starts with a slash AND that key will be at the start of the resource path, prepend it with "/" so
-        // that it doesn't get treated as a redundant slash and get pruned out in later path normalization logic.
-        //
-        // A key will be at the start of the resource path IF we're using access points (therefore, bucket == null) or we're
-        // using virtual style addressing (therefore, isPathStyleAccess == false).
-        if ((bucketName == null || !isPathStyleAccess) && key.startsWith("/")) {
+        // If the key name starts with a slash, prepend it with "/" so that it doesn't get treated as a redundant slash and get
+        // pruned out in later path normalization logic.
+        if (key.startsWith("/")) {
             return "/" + key;
         }
 

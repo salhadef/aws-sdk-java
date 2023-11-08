@@ -232,8 +232,13 @@ public interface AWSAmplifyUIBuilderAsync extends AWSAmplifyUIBuilder {
             com.amazonaws.handlers.AsyncHandler<DeleteThemeRequest, DeleteThemeResult> asyncHandler);
 
     /**
+     * <note>
      * <p>
-     * Exchanges an access code for a token.
+     * This is for internal use.
+     * </p>
+     * </note>
+     * <p>
+     * Amplify uses this action to exchange an access code for a token.
      * </p>
      * 
      * @param exchangeCodeForTokenRequest
@@ -245,8 +250,13 @@ public interface AWSAmplifyUIBuilderAsync extends AWSAmplifyUIBuilder {
     java.util.concurrent.Future<ExchangeCodeForTokenResult> exchangeCodeForTokenAsync(ExchangeCodeForTokenRequest exchangeCodeForTokenRequest);
 
     /**
+     * <note>
      * <p>
-     * Exchanges an access code for a token.
+     * This is for internal use.
+     * </p>
+     * </note>
+     * <p>
+     * Amplify uses this action to exchange an access code for a token.
      * </p>
      * 
      * @param exchangeCodeForTokenRequest
@@ -354,6 +364,37 @@ public interface AWSAmplifyUIBuilderAsync extends AWSAmplifyUIBuilder {
      */
     java.util.concurrent.Future<ExportThemesResult> exportThemesAsync(ExportThemesRequest exportThemesRequest,
             com.amazonaws.handlers.AsyncHandler<ExportThemesRequest, ExportThemesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns an existing code generation job.
+     * </p>
+     * 
+     * @param getCodegenJobRequest
+     * @return A Java Future containing the result of the GetCodegenJob operation returned by the service.
+     * @sample AWSAmplifyUIBuilderAsync.GetCodegenJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/GetCodegenJob" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCodegenJobResult> getCodegenJobAsync(GetCodegenJobRequest getCodegenJobRequest);
+
+    /**
+     * <p>
+     * Returns an existing code generation job.
+     * </p>
+     * 
+     * @param getCodegenJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCodegenJob operation returned by the service.
+     * @sample AWSAmplifyUIBuilderAsyncHandler.GetCodegenJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/GetCodegenJob" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCodegenJobResult> getCodegenJobAsync(GetCodegenJobRequest getCodegenJobRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCodegenJobRequest, GetCodegenJobResult> asyncHandler);
 
     /**
      * <p>
@@ -481,6 +522,37 @@ public interface AWSAmplifyUIBuilderAsync extends AWSAmplifyUIBuilder {
 
     /**
      * <p>
+     * Retrieves a list of code generation jobs for a specified Amplify app and backend environment.
+     * </p>
+     * 
+     * @param listCodegenJobsRequest
+     * @return A Java Future containing the result of the ListCodegenJobs operation returned by the service.
+     * @sample AWSAmplifyUIBuilderAsync.ListCodegenJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ListCodegenJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCodegenJobsResult> listCodegenJobsAsync(ListCodegenJobsRequest listCodegenJobsRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of code generation jobs for a specified Amplify app and backend environment.
+     * </p>
+     * 
+     * @param listCodegenJobsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListCodegenJobs operation returned by the service.
+     * @sample AWSAmplifyUIBuilderAsyncHandler.ListCodegenJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ListCodegenJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCodegenJobsResult> listCodegenJobsAsync(ListCodegenJobsRequest listCodegenJobsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListCodegenJobsRequest, ListCodegenJobsResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves a list of components for a specified Amplify app and backend environment.
      * </p>
      * 
@@ -604,8 +676,13 @@ public interface AWSAmplifyUIBuilderAsync extends AWSAmplifyUIBuilder {
             com.amazonaws.handlers.AsyncHandler<PutMetadataFlagRequest, PutMetadataFlagResult> asyncHandler);
 
     /**
+     * <note>
      * <p>
-     * Refreshes a previously issued access token that might have expired.
+     * This is for internal use.
+     * </p>
+     * </note>
+     * <p>
+     * Amplify uses this action to refresh a previously issued access token that might have expired.
      * </p>
      * 
      * @param refreshTokenRequest
@@ -617,8 +694,13 @@ public interface AWSAmplifyUIBuilderAsync extends AWSAmplifyUIBuilder {
     java.util.concurrent.Future<RefreshTokenResult> refreshTokenAsync(RefreshTokenRequest refreshTokenRequest);
 
     /**
+     * <note>
      * <p>
-     * Refreshes a previously issued access token that might have expired.
+     * This is for internal use.
+     * </p>
+     * </note>
+     * <p>
+     * Amplify uses this action to refresh a previously issued access token that might have expired.
      * </p>
      * 
      * @param refreshTokenRequest
@@ -633,6 +715,37 @@ public interface AWSAmplifyUIBuilderAsync extends AWSAmplifyUIBuilder {
      */
     java.util.concurrent.Future<RefreshTokenResult> refreshTokenAsync(RefreshTokenRequest refreshTokenRequest,
             com.amazonaws.handlers.AsyncHandler<RefreshTokenRequest, RefreshTokenResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts a code generation job for a specified Amplify app and backend environment.
+     * </p>
+     * 
+     * @param startCodegenJobRequest
+     * @return A Java Future containing the result of the StartCodegenJob operation returned by the service.
+     * @sample AWSAmplifyUIBuilderAsync.StartCodegenJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/StartCodegenJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartCodegenJobResult> startCodegenJobAsync(StartCodegenJobRequest startCodegenJobRequest);
+
+    /**
+     * <p>
+     * Starts a code generation job for a specified Amplify app and backend environment.
+     * </p>
+     * 
+     * @param startCodegenJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartCodegenJob operation returned by the service.
+     * @sample AWSAmplifyUIBuilderAsyncHandler.StartCodegenJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/StartCodegenJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartCodegenJobResult> startCodegenJobAsync(StartCodegenJobRequest startCodegenJobRequest,
+            com.amazonaws.handlers.AsyncHandler<StartCodegenJobRequest, StartCodegenJobResult> asyncHandler);
 
     /**
      * <p>

@@ -28,10 +28,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class StartReadSetActivationJobRequestMarshaller {
 
-    private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken").build();
     private static final MarshallingInfo<String> SEQUENCESTOREID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("sequenceStoreId").build();
+    private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken").build();
     private static final MarshallingInfo<List> SOURCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("sources").build();
 
@@ -51,8 +51,8 @@ public class StartReadSetActivationJobRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(startReadSetActivationJobRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(startReadSetActivationJobRequest.getSequenceStoreId(), SEQUENCESTOREID_BINDING);
+            protocolMarshaller.marshall(startReadSetActivationJobRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(startReadSetActivationJobRequest.getSources(), SOURCES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

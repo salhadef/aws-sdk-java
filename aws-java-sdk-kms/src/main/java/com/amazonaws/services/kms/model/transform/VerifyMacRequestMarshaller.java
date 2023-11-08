@@ -38,6 +38,8 @@ public class VerifyMacRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Mac").build();
     private static final MarshallingInfo<List> GRANTTOKENS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("GrantTokens").build();
+    private static final MarshallingInfo<Boolean> DRYRUN_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("DryRun").build();
 
     private static final VerifyMacRequestMarshaller instance = new VerifyMacRequestMarshaller();
 
@@ -60,6 +62,7 @@ public class VerifyMacRequestMarshaller {
             protocolMarshaller.marshall(verifyMacRequest.getMacAlgorithm(), MACALGORITHM_BINDING);
             protocolMarshaller.marshall(verifyMacRequest.getMac(), MAC_BINDING);
             protocolMarshaller.marshall(verifyMacRequest.getGrantTokens(), GRANTTOKENS_BINDING);
+            protocolMarshaller.marshall(verifyMacRequest.getDryRun(), DRYRUN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

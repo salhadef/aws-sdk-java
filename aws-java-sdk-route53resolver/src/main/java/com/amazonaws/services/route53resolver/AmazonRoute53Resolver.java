@@ -298,6 +298,33 @@ public interface AmazonRoute53Resolver {
 
     /**
      * <p>
+     * Creates an Route 53 Resolver on an Outpost.
+     * </p>
+     * 
+     * @param createOutpostResolverRequest
+     * @return Result of the CreateOutpostResolver operation returned by the service.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws ServiceQuotaExceededException
+     *         Fulfilling the request would cause one or more quotas to be exceeded.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @throws ValidationException
+     *         You have provided an invalid command. Supported values are <code>ADD</code>, <code>REMOVE</code>, or
+     *         <code>REPLACE</code> a domain.
+     * @sample AmazonRoute53Resolver.CreateOutpostResolver
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateOutpostResolver"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateOutpostResolverResult createOutpostResolver(CreateOutpostResolverRequest createOutpostResolverRequest);
+
+    /**
+     * <p>
      * Creates a Resolver endpoint. There are two types of Resolver endpoints, inbound and outbound:
      * </p>
      * <ul>
@@ -485,6 +512,35 @@ public interface AmazonRoute53Resolver {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteFirewallRuleGroupResult deleteFirewallRuleGroup(DeleteFirewallRuleGroupRequest deleteFirewallRuleGroupRequest);
+
+    /**
+     * <p>
+     * Deletes a Resolver on the Outpost.
+     * </p>
+     * 
+     * @param deleteOutpostResolverRequest
+     * @return Result of the DeleteOutpostResolver operation returned by the service.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws ConflictException
+     *         The requested state transition isn't valid. For example, you can't delete a firewall domain list if it is
+     *         in the process of being deleted, or you can't import domains into a domain list that is in the process of
+     *         being deleted.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @throws ValidationException
+     *         You have provided an invalid command. Supported values are <code>ADD</code>, <code>REMOVE</code>, or
+     *         <code>REPLACE</code> a domain.
+     * @sample AmazonRoute53Resolver.DeleteOutpostResolver
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DeleteOutpostResolver"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteOutpostResolverResult deleteOutpostResolver(DeleteOutpostResolverRequest deleteOutpostResolverRequest);
 
     /**
      * <p>
@@ -844,6 +900,32 @@ public interface AmazonRoute53Resolver {
      *      target="_top">AWS API Documentation</a>
      */
     GetFirewallRuleGroupPolicyResult getFirewallRuleGroupPolicy(GetFirewallRuleGroupPolicyRequest getFirewallRuleGroupPolicyRequest);
+
+    /**
+     * <p>
+     * Gets information about a specified Resolver on the Outpost, such as its instance count and type, name, and the
+     * current status of the Resolver.
+     * </p>
+     * 
+     * @param getOutpostResolverRequest
+     * @return Result of the GetOutpostResolver operation returned by the service.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @throws ValidationException
+     *         You have provided an invalid command. Supported values are <code>ADD</code>, <code>REMOVE</code>, or
+     *         <code>REPLACE</code> a domain.
+     * @sample AmazonRoute53Resolver.GetOutpostResolver
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetOutpostResolver"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetOutpostResolverResult getOutpostResolver(GetOutpostResolverRequest getOutpostResolverRequest);
 
     /**
      * <p>
@@ -1291,6 +1373,31 @@ public interface AmazonRoute53Resolver {
      *      target="_top">AWS API Documentation</a>
      */
     ListFirewallRulesResult listFirewallRules(ListFirewallRulesRequest listFirewallRulesRequest);
+
+    /**
+     * <p>
+     * Lists all the Resolvers on Outposts that were created using the current Amazon Web Services account.
+     * </p>
+     * 
+     * @param listOutpostResolversRequest
+     * @return Result of the ListOutpostResolvers operation returned by the service.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @throws ValidationException
+     *         You have provided an invalid command. Supported values are <code>ADD</code>, <code>REMOVE</code>, or
+     *         <code>REPLACE</code> a domain.
+     * @sample AmazonRoute53Resolver.ListOutpostResolvers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListOutpostResolvers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListOutpostResolversResult listOutpostResolvers(ListOutpostResolversRequest listOutpostResolversRequest);
 
     /**
      * <p>
@@ -1767,6 +1874,38 @@ public interface AmazonRoute53Resolver {
      */
     UpdateFirewallRuleGroupAssociationResult updateFirewallRuleGroupAssociation(
             UpdateFirewallRuleGroupAssociationRequest updateFirewallRuleGroupAssociationRequest);
+
+    /**
+     * <p>
+     * You can use <code>UpdateOutpostResolver</code> to update the instance count, type, or name of a Resolver on an
+     * Outpost.
+     * </p>
+     * 
+     * @param updateOutpostResolverRequest
+     * @return Result of the UpdateOutpostResolver operation returned by the service.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws ConflictException
+     *         The requested state transition isn't valid. For example, you can't delete a firewall domain list if it is
+     *         in the process of being deleted, or you can't import domains into a domain list that is in the process of
+     *         being deleted.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws ServiceQuotaExceededException
+     *         Fulfilling the request would cause one or more quotas to be exceeded.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @throws ValidationException
+     *         You have provided an invalid command. Supported values are <code>ADD</code>, <code>REMOVE</code>, or
+     *         <code>REPLACE</code> a domain.
+     * @sample AmazonRoute53Resolver.UpdateOutpostResolver
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateOutpostResolver"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateOutpostResolverResult updateOutpostResolver(UpdateOutpostResolverRequest updateOutpostResolverRequest);
 
     /**
      * <p>

@@ -44,6 +44,7 @@ import com.amazonaws.services.mediatailor.AWSMediaTailorClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.mediatailor.model.*;
+
 import com.amazonaws.services.mediatailor.model.transform.*;
 
 /**

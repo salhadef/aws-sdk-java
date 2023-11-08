@@ -44,6 +44,7 @@ import com.amazonaws.services.fms.AWSFMSClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.fms.model.*;
+
 import com.amazonaws.services.fms.model.transform.*;
 
 /**
@@ -1012,6 +1013,11 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
      *         The specified resource was not found.
      * @throws InternalErrorException
      *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @throws LimitExceededException
+     *         The operation exceeds a resource limit, for example, the maximum number of <code>policy</code> objects
+     *         that you can create for an Amazon Web Services account. For more information, see <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall Manager Limits</a>
+     *         in the <i>WAF Developer Guide</i>.
      * @sample AWSFMS.GetAdminScope
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetAdminScope" target="_top">AWS API
      *      Documentation</a>
@@ -1702,6 +1708,11 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
      *         The specified resource was not found.
      * @throws InternalErrorException
      *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @throws LimitExceededException
+     *         The operation exceeds a resource limit, for example, the maximum number of <code>policy</code> objects
+     *         that you can create for an Amazon Web Services account. For more information, see <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall Manager Limits</a>
+     *         in the <i>WAF Developer Guide</i>.
      * @sample AWSFMS.ListAdminAccountsForOrganization
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListAdminAccountsForOrganization"
      *      target="_top">AWS API Documentation</a>

@@ -706,6 +706,37 @@ public interface AWSDataExchangeAsync extends AWSDataExchange {
 
     /**
      * <p>
+     * The type of event associated with the data set.
+     * </p>
+     * 
+     * @param sendDataSetNotificationRequest
+     * @return A Java Future containing the result of the SendDataSetNotification operation returned by the service.
+     * @sample AWSDataExchangeAsync.SendDataSetNotification
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/SendDataSetNotification"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SendDataSetNotificationResult> sendDataSetNotificationAsync(SendDataSetNotificationRequest sendDataSetNotificationRequest);
+
+    /**
+     * <p>
+     * The type of event associated with the data set.
+     * </p>
+     * 
+     * @param sendDataSetNotificationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SendDataSetNotification operation returned by the service.
+     * @sample AWSDataExchangeAsyncHandler.SendDataSetNotification
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/SendDataSetNotification"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SendDataSetNotificationResult> sendDataSetNotificationAsync(SendDataSetNotificationRequest sendDataSetNotificationRequest,
+            com.amazonaws.handlers.AsyncHandler<SendDataSetNotificationRequest, SendDataSetNotificationResult> asyncHandler);
+
+    /**
+     * <p>
      * This operation starts a job.
      * </p>
      * 

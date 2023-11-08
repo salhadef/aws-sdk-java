@@ -31,7 +31,7 @@ public class ResetUserPasswordResult extends com.amazonaws.AmazonWebServiceResul
     private String userId;
     /**
      * <p>
-     * A randomly generated temporary password for the requested user account. This password expires in 7 days.
+     * A randomly generated temporary password for the requested user. This password expires in 7 days.
      * </p>
      */
     private String temporaryPassword;
@@ -78,11 +78,11 @@ public class ResetUserPasswordResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * A randomly generated temporary password for the requested user account. This password expires in 7 days.
+     * A randomly generated temporary password for the requested user. This password expires in 7 days.
      * </p>
      * 
      * @param temporaryPassword
-     *        A randomly generated temporary password for the requested user account. This password expires in 7 days.
+     *        A randomly generated temporary password for the requested user. This password expires in 7 days.
      */
 
     public void setTemporaryPassword(String temporaryPassword) {
@@ -91,10 +91,10 @@ public class ResetUserPasswordResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * A randomly generated temporary password for the requested user account. This password expires in 7 days.
+     * A randomly generated temporary password for the requested user. This password expires in 7 days.
      * </p>
      * 
-     * @return A randomly generated temporary password for the requested user account. This password expires in 7 days.
+     * @return A randomly generated temporary password for the requested user. This password expires in 7 days.
      */
 
     public String getTemporaryPassword() {
@@ -103,11 +103,11 @@ public class ResetUserPasswordResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * A randomly generated temporary password for the requested user account. This password expires in 7 days.
+     * A randomly generated temporary password for the requested user. This password expires in 7 days.
      * </p>
      * 
      * @param temporaryPassword
-     *        A randomly generated temporary password for the requested user account. This password expires in 7 days.
+     *        A randomly generated temporary password for the requested user. This password expires in 7 days.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

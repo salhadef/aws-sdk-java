@@ -17,13 +17,13 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the details about a blue/green deployment.
+ * Details about a blue/green deployment.
  * </p>
  * <p>
  * For more information, see <a
  * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green
  * Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a
- * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS
+ * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">Using Amazon RDS
  * Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.
  * </p>
  * 
@@ -35,7 +35,7 @@ public class BlueGreenDeployment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The system-generated identifier of the blue/green deployment.
+     * The unique identifier of the blue/green deployment.
      * </p>
      */
     private String blueGreenDeploymentIdentifier;
@@ -80,7 +80,7 @@ public class BlueGreenDeployment implements Serializable, Cloneable {
      * The status of the blue/green deployment.
      * </p>
      * <p>
-     * Values:
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
@@ -131,13 +131,13 @@ public class BlueGreenDeployment implements Serializable, Cloneable {
     private String statusDetails;
     /**
      * <p>
-     * Specifies the time when the blue/green deployment was created, in Universal Coordinated Time (UTC).
+     * The time when the blue/green deployment was created, in Universal Coordinated Time (UTC).
      * </p>
      */
     private java.util.Date createTime;
     /**
      * <p>
-     * Specifies the time when the blue/green deployment was deleted, in Universal Coordinated Time (UTC).
+     * The time when the blue/green deployment was deleted, in Universal Coordinated Time (UTC).
      * </p>
      */
     private java.util.Date deleteTime;
@@ -146,11 +146,11 @@ public class BlueGreenDeployment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The system-generated identifier of the blue/green deployment.
+     * The unique identifier of the blue/green deployment.
      * </p>
      * 
      * @param blueGreenDeploymentIdentifier
-     *        The system-generated identifier of the blue/green deployment.
+     *        The unique identifier of the blue/green deployment.
      */
 
     public void setBlueGreenDeploymentIdentifier(String blueGreenDeploymentIdentifier) {
@@ -159,10 +159,10 @@ public class BlueGreenDeployment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The system-generated identifier of the blue/green deployment.
+     * The unique identifier of the blue/green deployment.
      * </p>
      * 
-     * @return The system-generated identifier of the blue/green deployment.
+     * @return The unique identifier of the blue/green deployment.
      */
 
     public String getBlueGreenDeploymentIdentifier() {
@@ -171,11 +171,11 @@ public class BlueGreenDeployment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The system-generated identifier of the blue/green deployment.
+     * The unique identifier of the blue/green deployment.
      * </p>
      * 
      * @param blueGreenDeploymentIdentifier
-     *        The system-generated identifier of the blue/green deployment.
+     *        The unique identifier of the blue/green deployment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -485,7 +485,7 @@ public class BlueGreenDeployment implements Serializable, Cloneable {
      * The status of the blue/green deployment.
      * </p>
      * <p>
-     * Values:
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
@@ -530,7 +530,7 @@ public class BlueGreenDeployment implements Serializable, Cloneable {
      * @param status
      *        The status of the blue/green deployment.</p>
      *        <p>
-     *        Values:
+     *        Valid Values:
      *        </p>
      *        <ul>
      *        <li>
@@ -582,7 +582,7 @@ public class BlueGreenDeployment implements Serializable, Cloneable {
      * The status of the blue/green deployment.
      * </p>
      * <p>
-     * Values:
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
@@ -626,7 +626,7 @@ public class BlueGreenDeployment implements Serializable, Cloneable {
      * 
      * @return The status of the blue/green deployment.</p>
      *         <p>
-     *         Values:
+     *         Valid Values:
      *         </p>
      *         <ul>
      *         <li>
@@ -678,7 +678,7 @@ public class BlueGreenDeployment implements Serializable, Cloneable {
      * The status of the blue/green deployment.
      * </p>
      * <p>
-     * Values:
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
@@ -723,7 +723,7 @@ public class BlueGreenDeployment implements Serializable, Cloneable {
      * @param status
      *        The status of the blue/green deployment.</p>
      *        <p>
-     *        Values:
+     *        Valid Values:
      *        </p>
      *        <ul>
      *        <li>
@@ -814,11 +814,11 @@ public class BlueGreenDeployment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the time when the blue/green deployment was created, in Universal Coordinated Time (UTC).
+     * The time when the blue/green deployment was created, in Universal Coordinated Time (UTC).
      * </p>
      * 
      * @param createTime
-     *        Specifies the time when the blue/green deployment was created, in Universal Coordinated Time (UTC).
+     *        The time when the blue/green deployment was created, in Universal Coordinated Time (UTC).
      */
 
     public void setCreateTime(java.util.Date createTime) {
@@ -827,10 +827,10 @@ public class BlueGreenDeployment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the time when the blue/green deployment was created, in Universal Coordinated Time (UTC).
+     * The time when the blue/green deployment was created, in Universal Coordinated Time (UTC).
      * </p>
      * 
-     * @return Specifies the time when the blue/green deployment was created, in Universal Coordinated Time (UTC).
+     * @return The time when the blue/green deployment was created, in Universal Coordinated Time (UTC).
      */
 
     public java.util.Date getCreateTime() {
@@ -839,11 +839,11 @@ public class BlueGreenDeployment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the time when the blue/green deployment was created, in Universal Coordinated Time (UTC).
+     * The time when the blue/green deployment was created, in Universal Coordinated Time (UTC).
      * </p>
      * 
      * @param createTime
-     *        Specifies the time when the blue/green deployment was created, in Universal Coordinated Time (UTC).
+     *        The time when the blue/green deployment was created, in Universal Coordinated Time (UTC).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -854,11 +854,11 @@ public class BlueGreenDeployment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the time when the blue/green deployment was deleted, in Universal Coordinated Time (UTC).
+     * The time when the blue/green deployment was deleted, in Universal Coordinated Time (UTC).
      * </p>
      * 
      * @param deleteTime
-     *        Specifies the time when the blue/green deployment was deleted, in Universal Coordinated Time (UTC).
+     *        The time when the blue/green deployment was deleted, in Universal Coordinated Time (UTC).
      */
 
     public void setDeleteTime(java.util.Date deleteTime) {
@@ -867,10 +867,10 @@ public class BlueGreenDeployment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the time when the blue/green deployment was deleted, in Universal Coordinated Time (UTC).
+     * The time when the blue/green deployment was deleted, in Universal Coordinated Time (UTC).
      * </p>
      * 
-     * @return Specifies the time when the blue/green deployment was deleted, in Universal Coordinated Time (UTC).
+     * @return The time when the blue/green deployment was deleted, in Universal Coordinated Time (UTC).
      */
 
     public java.util.Date getDeleteTime() {
@@ -879,11 +879,11 @@ public class BlueGreenDeployment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the time when the blue/green deployment was deleted, in Universal Coordinated Time (UTC).
+     * The time when the blue/green deployment was deleted, in Universal Coordinated Time (UTC).
      * </p>
      * 
      * @param deleteTime
-     *        Specifies the time when the blue/green deployment was deleted, in Universal Coordinated Time (UTC).
+     *        The time when the blue/green deployment was deleted, in Universal Coordinated Time (UTC).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

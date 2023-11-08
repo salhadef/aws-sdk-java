@@ -13,7 +13,7 @@
 
 /**
  * <p>
- * Amazon HealthLake is a HIPAA eligibile service that allows customers to store, transform, query, and analyze their
+ * AWS HealthLake is a HIPAA eligibile service that allows customers to store, transform, query, and analyze their
  * FHIR-formatted data in a consistent fashion in the cloud.
  * </p>
  */

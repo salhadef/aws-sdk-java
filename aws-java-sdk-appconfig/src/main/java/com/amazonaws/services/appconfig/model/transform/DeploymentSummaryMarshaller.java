@@ -49,6 +49,8 @@ public class DeploymentSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartedAt").timestampFormat("iso8601").build();
     private static final MarshallingInfo<java.util.Date> COMPLETEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CompletedAt").timestampFormat("iso8601").build();
+    private static final MarshallingInfo<String> VERSIONLABEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VersionLabel").build();
 
     private static final DeploymentSummaryMarshaller instance = new DeploymentSummaryMarshaller();
 
@@ -77,6 +79,7 @@ public class DeploymentSummaryMarshaller {
             protocolMarshaller.marshall(deploymentSummary.getPercentageComplete(), PERCENTAGECOMPLETE_BINDING);
             protocolMarshaller.marshall(deploymentSummary.getStartedAt(), STARTEDAT_BINDING);
             protocolMarshaller.marshall(deploymentSummary.getCompletedAt(), COMPLETEDAT_BINDING);
+            protocolMarshaller.marshall(deploymentSummary.getVersionLabel(), VERSIONLABEL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

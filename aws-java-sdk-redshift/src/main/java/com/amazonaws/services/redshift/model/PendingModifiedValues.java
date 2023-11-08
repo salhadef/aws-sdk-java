@@ -648,7 +648,7 @@ public class PendingModifiedValues implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMasterUserPassword() != null)
-            sb.append("MasterUserPassword: ").append(getMasterUserPassword()).append(",");
+            sb.append("MasterUserPassword: ").append("***Sensitive Data Redacted***").append(",");
         if (getNodeType() != null)
             sb.append("NodeType: ").append(getNodeType()).append(",");
         if (getNumberOfNodes() != null)

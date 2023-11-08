@@ -18,7 +18,7 @@ import javax.annotation.Generated;
  * <p>
  * Amazon Translate does not support translation from the language of the source text into the requested target
  * language. For more information, see <a
- * href="https://docs.aws.amazon.com/translate/latest/dg/how-to-error-msg.html">Error messages</a>.
+ * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

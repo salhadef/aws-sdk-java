@@ -67,6 +67,19 @@ public class AbstractAWSControlTowerAsync extends AbstractAWSControlTower implem
     }
 
     @Override
+    public java.util.concurrent.Future<GetEnabledControlResult> getEnabledControlAsync(GetEnabledControlRequest request) {
+
+        return getEnabledControlAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEnabledControlResult> getEnabledControlAsync(GetEnabledControlRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetEnabledControlRequest, GetEnabledControlResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListEnabledControlsResult> listEnabledControlsAsync(ListEnabledControlsRequest request) {
 
         return listEnabledControlsAsync(request, null);

@@ -30,6 +30,12 @@ public class ReferenceStoreFilter implements Serializable, Cloneable, Structured
 
     /**
      * <p>
+     * The name to filter on.
+     * </p>
+     */
+    private String name;
+    /**
+     * <p>
      * The filter's start date.
      * </p>
      */
@@ -40,12 +46,46 @@ public class ReferenceStoreFilter implements Serializable, Cloneable, Structured
      * </p>
      */
     private java.util.Date createdBefore;
+
     /**
      * <p>
      * The name to filter on.
      * </p>
+     * 
+     * @param name
+     *        The name to filter on.
      */
-    private String name;
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The name to filter on.
+     * </p>
+     * 
+     * @return The name to filter on.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The name to filter on.
+     * </p>
+     * 
+     * @param name
+     *        The name to filter on.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReferenceStoreFilter withName(String name) {
+        setName(name);
+        return this;
+    }
 
     /**
      * <p>
@@ -128,46 +168,6 @@ public class ReferenceStoreFilter implements Serializable, Cloneable, Structured
     }
 
     /**
-     * <p>
-     * The name to filter on.
-     * </p>
-     * 
-     * @param name
-     *        The name to filter on.
-     */
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     * <p>
-     * The name to filter on.
-     * </p>
-     * 
-     * @return The name to filter on.
-     */
-
-    public String getName() {
-        return this.name;
-    }
-
-    /**
-     * <p>
-     * The name to filter on.
-     * </p>
-     * 
-     * @param name
-     *        The name to filter on.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ReferenceStoreFilter withName(String name) {
-        setName(name);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -179,12 +179,12 @@ public class ReferenceStoreFilter implements Serializable, Cloneable, Structured
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
         if (getCreatedAfter() != null)
             sb.append("CreatedAfter: ").append(getCreatedAfter()).append(",");
         if (getCreatedBefore() != null)
-            sb.append("CreatedBefore: ").append(getCreatedBefore()).append(",");
-        if (getName() != null)
-            sb.append("Name: ").append(getName());
+            sb.append("CreatedBefore: ").append(getCreatedBefore());
         sb.append("}");
         return sb.toString();
     }
@@ -199,6 +199,10 @@ public class ReferenceStoreFilter implements Serializable, Cloneable, Structured
         if (obj instanceof ReferenceStoreFilter == false)
             return false;
         ReferenceStoreFilter other = (ReferenceStoreFilter) obj;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
         if (other.getCreatedAfter() == null ^ this.getCreatedAfter() == null)
             return false;
         if (other.getCreatedAfter() != null && other.getCreatedAfter().equals(this.getCreatedAfter()) == false)
@@ -206,10 +210,6 @@ public class ReferenceStoreFilter implements Serializable, Cloneable, Structured
         if (other.getCreatedBefore() == null ^ this.getCreatedBefore() == null)
             return false;
         if (other.getCreatedBefore() != null && other.getCreatedBefore().equals(this.getCreatedBefore()) == false)
-            return false;
-        if (other.getName() == null ^ this.getName() == null)
-            return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         return true;
     }
@@ -219,9 +219,9 @@ public class ReferenceStoreFilter implements Serializable, Cloneable, Structured
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getCreatedAfter() == null) ? 0 : getCreatedAfter().hashCode());
         hashCode = prime * hashCode + ((getCreatedBefore() == null) ? 0 : getCreatedBefore().hashCode());
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         return hashCode;
     }
 

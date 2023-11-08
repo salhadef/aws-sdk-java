@@ -53,9 +53,9 @@ public class UserAuthConfig implements Serializable, Cloneable {
     private String secretArn;
     /**
      * <p>
-     * Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for
-     * connections to the proxy. The <code>ENABLED</code> value is valid only for proxies with RDS for Microsoft SQL
-     * Server.
+     * A value that indicates whether to require or disallow Amazon Web Services Identity and Access Management (IAM)
+     * authentication for connections to the proxy. The <code>ENABLED</code> value is valid only for proxies with RDS
+     * for Microsoft SQL Server.
      * </p>
      */
     private String iAMAuth;
@@ -256,15 +256,15 @@ public class UserAuthConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for
-     * connections to the proxy. The <code>ENABLED</code> value is valid only for proxies with RDS for Microsoft SQL
-     * Server.
+     * A value that indicates whether to require or disallow Amazon Web Services Identity and Access Management (IAM)
+     * authentication for connections to the proxy. The <code>ENABLED</code> value is valid only for proxies with RDS
+     * for Microsoft SQL Server.
      * </p>
      * 
      * @param iAMAuth
-     *        Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for
-     *        connections to the proxy. The <code>ENABLED</code> value is valid only for proxies with RDS for Microsoft
-     *        SQL Server.
+     *        A value that indicates whether to require or disallow Amazon Web Services Identity and Access Management
+     *        (IAM) authentication for connections to the proxy. The <code>ENABLED</code> value is valid only for
+     *        proxies with RDS for Microsoft SQL Server.
      * @see IAMAuthMode
      */
 
@@ -274,14 +274,14 @@ public class UserAuthConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for
-     * connections to the proxy. The <code>ENABLED</code> value is valid only for proxies with RDS for Microsoft SQL
-     * Server.
+     * A value that indicates whether to require or disallow Amazon Web Services Identity and Access Management (IAM)
+     * authentication for connections to the proxy. The <code>ENABLED</code> value is valid only for proxies with RDS
+     * for Microsoft SQL Server.
      * </p>
      * 
-     * @return Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication
-     *         for connections to the proxy. The <code>ENABLED</code> value is valid only for proxies with RDS for
-     *         Microsoft SQL Server.
+     * @return A value that indicates whether to require or disallow Amazon Web Services Identity and Access Management
+     *         (IAM) authentication for connections to the proxy. The <code>ENABLED</code> value is valid only for
+     *         proxies with RDS for Microsoft SQL Server.
      * @see IAMAuthMode
      */
 
@@ -291,15 +291,15 @@ public class UserAuthConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for
-     * connections to the proxy. The <code>ENABLED</code> value is valid only for proxies with RDS for Microsoft SQL
-     * Server.
+     * A value that indicates whether to require or disallow Amazon Web Services Identity and Access Management (IAM)
+     * authentication for connections to the proxy. The <code>ENABLED</code> value is valid only for proxies with RDS
+     * for Microsoft SQL Server.
      * </p>
      * 
      * @param iAMAuth
-     *        Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for
-     *        connections to the proxy. The <code>ENABLED</code> value is valid only for proxies with RDS for Microsoft
-     *        SQL Server.
+     *        A value that indicates whether to require or disallow Amazon Web Services Identity and Access Management
+     *        (IAM) authentication for connections to the proxy. The <code>ENABLED</code> value is valid only for
+     *        proxies with RDS for Microsoft SQL Server.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IAMAuthMode
      */
@@ -311,15 +311,15 @@ public class UserAuthConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for
-     * connections to the proxy. The <code>ENABLED</code> value is valid only for proxies with RDS for Microsoft SQL
-     * Server.
+     * A value that indicates whether to require or disallow Amazon Web Services Identity and Access Management (IAM)
+     * authentication for connections to the proxy. The <code>ENABLED</code> value is valid only for proxies with RDS
+     * for Microsoft SQL Server.
      * </p>
      * 
      * @param iAMAuth
-     *        Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for
-     *        connections to the proxy. The <code>ENABLED</code> value is valid only for proxies with RDS for Microsoft
-     *        SQL Server.
+     *        A value that indicates whether to require or disallow Amazon Web Services Identity and Access Management
+     *        (IAM) authentication for connections to the proxy. The <code>ENABLED</code> value is valid only for
+     *        proxies with RDS for Microsoft SQL Server.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IAMAuthMode
      */

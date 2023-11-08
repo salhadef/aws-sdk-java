@@ -13,8 +13,8 @@
 
 /**
  * <p>
- * This is the <i>Amazon Omics API Reference</i>. For an introduction to the service, see <a
- * href="https://docs.aws.amazon.com/omics/latest/dev/">What is Amazon Omics?</a> in the <i>Amazon Omics Developer
+ * This is the <i>AWS HealthOmics API Reference</i>. For an introduction to the service, see <a
+ * href="https://docs.aws.amazon.com/omics/latest/dev/">What is AWS HealthOmics?</a> in the <i>AWS HealthOmics User
  * Guide</i>.
  * </p>
  */

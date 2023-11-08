@@ -73,7 +73,13 @@ public enum ExportableAutoScalingGroupField {
     EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics("EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics"),
     EffectiveRecommendationPreferencesInferredWorkloadTypes("EffectiveRecommendationPreferencesInferredWorkloadTypes"),
     InferredWorkloadTypes("InferredWorkloadTypes"),
-    RecommendationOptionsMigrationEffort("RecommendationOptionsMigrationEffort");
+    RecommendationOptionsMigrationEffort("RecommendationOptionsMigrationEffort"),
+    CurrentInstanceGpuInfo("CurrentInstanceGpuInfo"),
+    RecommendationOptionsInstanceGpuInfo("RecommendationOptionsInstanceGpuInfo"),
+    UtilizationMetricsGpuPercentageMaximum("UtilizationMetricsGpuPercentageMaximum"),
+    UtilizationMetricsGpuMemoryPercentageMaximum("UtilizationMetricsGpuMemoryPercentageMaximum"),
+    RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum("RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum"),
+    RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum("RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum");
 
     private String value;
 

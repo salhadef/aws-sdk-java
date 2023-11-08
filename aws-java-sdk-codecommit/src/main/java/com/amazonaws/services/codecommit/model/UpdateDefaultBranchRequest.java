@@ -30,24 +30,24 @@ public class UpdateDefaultBranchRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the repository to set or change the default branch for.
+     * The name of the repository for which you want to set or change the default branch.
      * </p>
      */
     private String repositoryName;
     /**
      * <p>
-     * The name of the branch to set as the default.
+     * The name of the branch to set as the default branch.
      * </p>
      */
     private String defaultBranchName;
 
     /**
      * <p>
-     * The name of the repository to set or change the default branch for.
+     * The name of the repository for which you want to set or change the default branch.
      * </p>
      * 
      * @param repositoryName
-     *        The name of the repository to set or change the default branch for.
+     *        The name of the repository for which you want to set or change the default branch.
      */
 
     public void setRepositoryName(String repositoryName) {
@@ -56,10 +56,10 @@ public class UpdateDefaultBranchRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the repository to set or change the default branch for.
+     * The name of the repository for which you want to set or change the default branch.
      * </p>
      * 
-     * @return The name of the repository to set or change the default branch for.
+     * @return The name of the repository for which you want to set or change the default branch.
      */
 
     public String getRepositoryName() {
@@ -68,11 +68,11 @@ public class UpdateDefaultBranchRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the repository to set or change the default branch for.
+     * The name of the repository for which you want to set or change the default branch.
      * </p>
      * 
      * @param repositoryName
-     *        The name of the repository to set or change the default branch for.
+     *        The name of the repository for which you want to set or change the default branch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class UpdateDefaultBranchRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the branch to set as the default.
+     * The name of the branch to set as the default branch.
      * </p>
      * 
      * @param defaultBranchName
-     *        The name of the branch to set as the default.
+     *        The name of the branch to set as the default branch.
      */
 
     public void setDefaultBranchName(String defaultBranchName) {
@@ -96,10 +96,10 @@ public class UpdateDefaultBranchRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the branch to set as the default.
+     * The name of the branch to set as the default branch.
      * </p>
      * 
-     * @return The name of the branch to set as the default.
+     * @return The name of the branch to set as the default branch.
      */
 
     public String getDefaultBranchName() {
@@ -108,11 +108,11 @@ public class UpdateDefaultBranchRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the branch to set as the default.
+     * The name of the branch to set as the default branch.
      * </p>
      * 
      * @param defaultBranchName
-     *        The name of the branch to set as the default.
+     *        The name of the branch to set as the default branch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

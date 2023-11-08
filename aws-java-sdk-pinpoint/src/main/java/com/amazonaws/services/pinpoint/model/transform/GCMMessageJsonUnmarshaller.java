@@ -77,6 +77,10 @@ public class GCMMessageJsonUnmarshaller implements Unmarshaller<GCMMessage, Json
                     context.nextToken();
                     gCMMessage.setImageUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("PreferredAuthenticationMethod", targetDepth)) {
+                    context.nextToken();
+                    gCMMessage.setPreferredAuthenticationMethod(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Priority", targetDepth)) {
                     context.nextToken();
                     gCMMessage.setPriority(context.getUnmarshaller(String.class).unmarshall(context));

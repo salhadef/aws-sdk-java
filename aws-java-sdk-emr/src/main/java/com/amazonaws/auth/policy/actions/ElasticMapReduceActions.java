@@ -93,6 +93,8 @@ public enum ElasticMapReduceActions implements Action {
     ListStudioSessionMappings("elasticmapreduce:ListStudioSessionMappings"),
     /** Action for the ListStudios operation. */
     ListStudios("elasticmapreduce:ListStudios"),
+    /** Action for the ListSupportedInstanceTypes operation. */
+    ListSupportedInstanceTypes("elasticmapreduce:ListSupportedInstanceTypes"),
     /** Action for the ModifyCluster operation. */
     ModifyCluster("elasticmapreduce:ModifyCluster"),
     /** Action for the ModifyInstanceFleet operation. */

@@ -60,7 +60,8 @@ public class DataCellsFilter implements Serializable, Cloneable, StructuredPojo 
     private RowFilter rowFilter;
     /**
      * <p>
-     * A list of column names.
+     * A list of column names and/or nested column attributes. When specifying nested attributes, use a qualified dot
+     * (.) delimited format such as "address"."zip". Nested attributes within this list may not exceed a depth of 5.
      * </p>
      */
     private java.util.List<String> columnNames;
@@ -282,10 +283,13 @@ public class DataCellsFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of column names.
+     * A list of column names and/or nested column attributes. When specifying nested attributes, use a qualified dot
+     * (.) delimited format such as "address"."zip". Nested attributes within this list may not exceed a depth of 5.
      * </p>
      * 
-     * @return A list of column names.
+     * @return A list of column names and/or nested column attributes. When specifying nested attributes, use a
+     *         qualified dot (.) delimited format such as "address"."zip". Nested attributes within this list may not
+     *         exceed a depth of 5.
      */
 
     public java.util.List<String> getColumnNames() {
@@ -294,11 +298,14 @@ public class DataCellsFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of column names.
+     * A list of column names and/or nested column attributes. When specifying nested attributes, use a qualified dot
+     * (.) delimited format such as "address"."zip". Nested attributes within this list may not exceed a depth of 5.
      * </p>
      * 
      * @param columnNames
-     *        A list of column names.
+     *        A list of column names and/or nested column attributes. When specifying nested attributes, use a qualified
+     *        dot (.) delimited format such as "address"."zip". Nested attributes within this list may not exceed a
+     *        depth of 5.
      */
 
     public void setColumnNames(java.util.Collection<String> columnNames) {
@@ -312,7 +319,8 @@ public class DataCellsFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of column names.
+     * A list of column names and/or nested column attributes. When specifying nested attributes, use a qualified dot
+     * (.) delimited format such as "address"."zip". Nested attributes within this list may not exceed a depth of 5.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -321,7 +329,9 @@ public class DataCellsFilter implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param columnNames
-     *        A list of column names.
+     *        A list of column names and/or nested column attributes. When specifying nested attributes, use a qualified
+     *        dot (.) delimited format such as "address"."zip". Nested attributes within this list may not exceed a
+     *        depth of 5.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -337,11 +347,14 @@ public class DataCellsFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of column names.
+     * A list of column names and/or nested column attributes. When specifying nested attributes, use a qualified dot
+     * (.) delimited format such as "address"."zip". Nested attributes within this list may not exceed a depth of 5.
      * </p>
      * 
      * @param columnNames
-     *        A list of column names.
+     *        A list of column names and/or nested column attributes. When specifying nested attributes, use a qualified
+     *        dot (.) delimited format such as "address"."zip". Nested attributes within this list may not exceed a
+     *        depth of 5.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -38,6 +38,26 @@ public class AWSManagedRulesBotControlRuleSet implements Serializable, Cloneable
      * </p>
      */
     private String inspectionLevel;
+    /**
+     * <p>
+     * Applies only to the targeted inspection level.
+     * </p>
+     * <p>
+     * Determines whether to use machine learning (ML) to analyze your web traffic for bot-related activity. Machine
+     * learning is required for the Bot Control rules <code>TGT_ML_CoordinatedActivityLow</code> and
+     * <code>TGT_ML_CoordinatedActivityMedium</code>, which inspect for anomalous behavior that might indicate
+     * distributed, coordinated bot activity.
+     * </p>
+     * <p>
+     * For more information about this choice, see the listing for these rules in the table at <a href=
+     * "https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html#aws-managed-rule-groups-bot-rules"
+     * >Bot Control rules listing</a> in the <i>WAF Developer Guide</i>.
+     * </p>
+     * <p>
+     * Default: <code>TRUE</code>
+     * </p>
+     */
+    private Boolean enableMachineLearning;
 
     /**
      * <p>
@@ -127,6 +147,166 @@ public class AWSManagedRulesBotControlRuleSet implements Serializable, Cloneable
     }
 
     /**
+     * <p>
+     * Applies only to the targeted inspection level.
+     * </p>
+     * <p>
+     * Determines whether to use machine learning (ML) to analyze your web traffic for bot-related activity. Machine
+     * learning is required for the Bot Control rules <code>TGT_ML_CoordinatedActivityLow</code> and
+     * <code>TGT_ML_CoordinatedActivityMedium</code>, which inspect for anomalous behavior that might indicate
+     * distributed, coordinated bot activity.
+     * </p>
+     * <p>
+     * For more information about this choice, see the listing for these rules in the table at <a href=
+     * "https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html#aws-managed-rule-groups-bot-rules"
+     * >Bot Control rules listing</a> in the <i>WAF Developer Guide</i>.
+     * </p>
+     * <p>
+     * Default: <code>TRUE</code>
+     * </p>
+     * 
+     * @param enableMachineLearning
+     *        Applies only to the targeted inspection level. </p>
+     *        <p>
+     *        Determines whether to use machine learning (ML) to analyze your web traffic for bot-related activity.
+     *        Machine learning is required for the Bot Control rules <code>TGT_ML_CoordinatedActivityLow</code> and
+     *        <code>TGT_ML_CoordinatedActivityMedium</code>, which inspect for anomalous behavior that might indicate
+     *        distributed, coordinated bot activity.
+     *        </p>
+     *        <p>
+     *        For more information about this choice, see the listing for these rules in the table at <a href=
+     *        "https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html#aws-managed-rule-groups-bot-rules"
+     *        >Bot Control rules listing</a> in the <i>WAF Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        Default: <code>TRUE</code>
+     */
+
+    public void setEnableMachineLearning(Boolean enableMachineLearning) {
+        this.enableMachineLearning = enableMachineLearning;
+    }
+
+    /**
+     * <p>
+     * Applies only to the targeted inspection level.
+     * </p>
+     * <p>
+     * Determines whether to use machine learning (ML) to analyze your web traffic for bot-related activity. Machine
+     * learning is required for the Bot Control rules <code>TGT_ML_CoordinatedActivityLow</code> and
+     * <code>TGT_ML_CoordinatedActivityMedium</code>, which inspect for anomalous behavior that might indicate
+     * distributed, coordinated bot activity.
+     * </p>
+     * <p>
+     * For more information about this choice, see the listing for these rules in the table at <a href=
+     * "https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html#aws-managed-rule-groups-bot-rules"
+     * >Bot Control rules listing</a> in the <i>WAF Developer Guide</i>.
+     * </p>
+     * <p>
+     * Default: <code>TRUE</code>
+     * </p>
+     * 
+     * @return Applies only to the targeted inspection level. </p>
+     *         <p>
+     *         Determines whether to use machine learning (ML) to analyze your web traffic for bot-related activity.
+     *         Machine learning is required for the Bot Control rules <code>TGT_ML_CoordinatedActivityLow</code> and
+     *         <code>TGT_ML_CoordinatedActivityMedium</code>, which inspect for anomalous behavior that might indicate
+     *         distributed, coordinated bot activity.
+     *         </p>
+     *         <p>
+     *         For more information about this choice, see the listing for these rules in the table at <a href=
+     *         "https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html#aws-managed-rule-groups-bot-rules"
+     *         >Bot Control rules listing</a> in the <i>WAF Developer Guide</i>.
+     *         </p>
+     *         <p>
+     *         Default: <code>TRUE</code>
+     */
+
+    public Boolean getEnableMachineLearning() {
+        return this.enableMachineLearning;
+    }
+
+    /**
+     * <p>
+     * Applies only to the targeted inspection level.
+     * </p>
+     * <p>
+     * Determines whether to use machine learning (ML) to analyze your web traffic for bot-related activity. Machine
+     * learning is required for the Bot Control rules <code>TGT_ML_CoordinatedActivityLow</code> and
+     * <code>TGT_ML_CoordinatedActivityMedium</code>, which inspect for anomalous behavior that might indicate
+     * distributed, coordinated bot activity.
+     * </p>
+     * <p>
+     * For more information about this choice, see the listing for these rules in the table at <a href=
+     * "https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html#aws-managed-rule-groups-bot-rules"
+     * >Bot Control rules listing</a> in the <i>WAF Developer Guide</i>.
+     * </p>
+     * <p>
+     * Default: <code>TRUE</code>
+     * </p>
+     * 
+     * @param enableMachineLearning
+     *        Applies only to the targeted inspection level. </p>
+     *        <p>
+     *        Determines whether to use machine learning (ML) to analyze your web traffic for bot-related activity.
+     *        Machine learning is required for the Bot Control rules <code>TGT_ML_CoordinatedActivityLow</code> and
+     *        <code>TGT_ML_CoordinatedActivityMedium</code>, which inspect for anomalous behavior that might indicate
+     *        distributed, coordinated bot activity.
+     *        </p>
+     *        <p>
+     *        For more information about this choice, see the listing for these rules in the table at <a href=
+     *        "https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html#aws-managed-rule-groups-bot-rules"
+     *        >Bot Control rules listing</a> in the <i>WAF Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        Default: <code>TRUE</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AWSManagedRulesBotControlRuleSet withEnableMachineLearning(Boolean enableMachineLearning) {
+        setEnableMachineLearning(enableMachineLearning);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Applies only to the targeted inspection level.
+     * </p>
+     * <p>
+     * Determines whether to use machine learning (ML) to analyze your web traffic for bot-related activity. Machine
+     * learning is required for the Bot Control rules <code>TGT_ML_CoordinatedActivityLow</code> and
+     * <code>TGT_ML_CoordinatedActivityMedium</code>, which inspect for anomalous behavior that might indicate
+     * distributed, coordinated bot activity.
+     * </p>
+     * <p>
+     * For more information about this choice, see the listing for these rules in the table at <a href=
+     * "https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html#aws-managed-rule-groups-bot-rules"
+     * >Bot Control rules listing</a> in the <i>WAF Developer Guide</i>.
+     * </p>
+     * <p>
+     * Default: <code>TRUE</code>
+     * </p>
+     * 
+     * @return Applies only to the targeted inspection level. </p>
+     *         <p>
+     *         Determines whether to use machine learning (ML) to analyze your web traffic for bot-related activity.
+     *         Machine learning is required for the Bot Control rules <code>TGT_ML_CoordinatedActivityLow</code> and
+     *         <code>TGT_ML_CoordinatedActivityMedium</code>, which inspect for anomalous behavior that might indicate
+     *         distributed, coordinated bot activity.
+     *         </p>
+     *         <p>
+     *         For more information about this choice, see the listing for these rules in the table at <a href=
+     *         "https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html#aws-managed-rule-groups-bot-rules"
+     *         >Bot Control rules listing</a> in the <i>WAF Developer Guide</i>.
+     *         </p>
+     *         <p>
+     *         Default: <code>TRUE</code>
+     */
+
+    public Boolean isEnableMachineLearning() {
+        return this.enableMachineLearning;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -139,7 +319,9 @@ public class AWSManagedRulesBotControlRuleSet implements Serializable, Cloneable
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInspectionLevel() != null)
-            sb.append("InspectionLevel: ").append(getInspectionLevel());
+            sb.append("InspectionLevel: ").append(getInspectionLevel()).append(",");
+        if (getEnableMachineLearning() != null)
+            sb.append("EnableMachineLearning: ").append(getEnableMachineLearning());
         sb.append("}");
         return sb.toString();
     }
@@ -158,6 +340,10 @@ public class AWSManagedRulesBotControlRuleSet implements Serializable, Cloneable
             return false;
         if (other.getInspectionLevel() != null && other.getInspectionLevel().equals(this.getInspectionLevel()) == false)
             return false;
+        if (other.getEnableMachineLearning() == null ^ this.getEnableMachineLearning() == null)
+            return false;
+        if (other.getEnableMachineLearning() != null && other.getEnableMachineLearning().equals(this.getEnableMachineLearning()) == false)
+            return false;
         return true;
     }
 
@@ -167,6 +353,7 @@ public class AWSManagedRulesBotControlRuleSet implements Serializable, Cloneable
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getInspectionLevel() == null) ? 0 : getInspectionLevel().hashCode());
+        hashCode = prime * hashCode + ((getEnableMachineLearning() == null) ? 0 : getEnableMachineLearning().hashCode());
         return hashCode;
     }
 

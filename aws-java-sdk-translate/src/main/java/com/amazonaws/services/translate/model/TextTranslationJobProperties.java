@@ -118,7 +118,7 @@ public class TextTranslationJobProperties implements Serializable, Cloneable, St
     private String dataAccessRoleArn;
     /**
      * <p>
-     * Settings that configure the translation output.
+     * Settings that modify the translation output.
      * </p>
      */
     private TranslationSettings settings;
@@ -822,11 +822,11 @@ public class TextTranslationJobProperties implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Settings that configure the translation output.
+     * Settings that modify the translation output.
      * </p>
      * 
      * @param settings
-     *        Settings that configure the translation output.
+     *        Settings that modify the translation output.
      */
 
     public void setSettings(TranslationSettings settings) {
@@ -835,10 +835,10 @@ public class TextTranslationJobProperties implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Settings that configure the translation output.
+     * Settings that modify the translation output.
      * </p>
      * 
-     * @return Settings that configure the translation output.
+     * @return Settings that modify the translation output.
      */
 
     public TranslationSettings getSettings() {
@@ -847,11 +847,11 @@ public class TextTranslationJobProperties implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Settings that configure the translation output.
+     * Settings that modify the translation output.
      * </p>
      * 
      * @param settings
-     *        Settings that configure the translation output.
+     *        Settings that modify the translation output.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -44,6 +44,7 @@ import com.amazonaws.services.mediaconvert.AWSMediaConvertClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.mediaconvert.model.*;
+
 import com.amazonaws.services.mediaconvert.model.transform.*;
 
 /**
@@ -963,7 +964,7 @@ public class AWSMediaConvertClient extends AmazonWebServiceClient implements AWS
     }
 
     /**
-     * Retrieve the JSON for a specific completed transcoding job.
+     * Retrieve the JSON for a specific transcoding job.
      * 
      * @param getJobRequest
      * @return Result of the GetJob operation returned by the service.

@@ -119,6 +119,13 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
      * </p>
      */
     private CloudWatchLoggingOptions cloudWatchLoggingOptions;
+    /**
+     * <p>
+     * Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated
+     * document ID and OpenSearch Service generated document ID.
+     * </p>
+     */
+    private DocumentIdOptions documentIdOptions;
 
     /**
      * <p>
@@ -750,6 +757,52 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated
+     * document ID and OpenSearch Service generated document ID.
+     * </p>
+     * 
+     * @param documentIdOptions
+     *        Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated
+     *        document ID and OpenSearch Service generated document ID.
+     */
+
+    public void setDocumentIdOptions(DocumentIdOptions documentIdOptions) {
+        this.documentIdOptions = documentIdOptions;
+    }
+
+    /**
+     * <p>
+     * Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated
+     * document ID and OpenSearch Service generated document ID.
+     * </p>
+     * 
+     * @return Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose
+     *         generated document ID and OpenSearch Service generated document ID.
+     */
+
+    public DocumentIdOptions getDocumentIdOptions() {
+        return this.documentIdOptions;
+    }
+
+    /**
+     * <p>
+     * Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated
+     * document ID and OpenSearch Service generated document ID.
+     * </p>
+     * 
+     * @param documentIdOptions
+     *        Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated
+     *        document ID and OpenSearch Service generated document ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ElasticsearchDestinationUpdate withDocumentIdOptions(DocumentIdOptions documentIdOptions) {
+        setDocumentIdOptions(documentIdOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -782,7 +835,9 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
         if (getProcessingConfiguration() != null)
             sb.append("ProcessingConfiguration: ").append(getProcessingConfiguration()).append(",");
         if (getCloudWatchLoggingOptions() != null)
-            sb.append("CloudWatchLoggingOptions: ").append(getCloudWatchLoggingOptions());
+            sb.append("CloudWatchLoggingOptions: ").append(getCloudWatchLoggingOptions()).append(",");
+        if (getDocumentIdOptions() != null)
+            sb.append("DocumentIdOptions: ").append(getDocumentIdOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -841,6 +896,10 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
             return false;
         if (other.getCloudWatchLoggingOptions() != null && other.getCloudWatchLoggingOptions().equals(this.getCloudWatchLoggingOptions()) == false)
             return false;
+        if (other.getDocumentIdOptions() == null ^ this.getDocumentIdOptions() == null)
+            return false;
+        if (other.getDocumentIdOptions() != null && other.getDocumentIdOptions().equals(this.getDocumentIdOptions()) == false)
+            return false;
         return true;
     }
 
@@ -860,6 +919,7 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
         hashCode = prime * hashCode + ((getS3Update() == null) ? 0 : getS3Update().hashCode());
         hashCode = prime * hashCode + ((getProcessingConfiguration() == null) ? 0 : getProcessingConfiguration().hashCode());
         hashCode = prime * hashCode + ((getCloudWatchLoggingOptions() == null) ? 0 : getCloudWatchLoggingOptions().hashCode());
+        hashCode = prime * hashCode + ((getDocumentIdOptions() == null) ? 0 : getDocumentIdOptions().hashCode());
         return hashCode;
     }
 

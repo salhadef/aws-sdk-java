@@ -48,14 +48,6 @@ public class ImportReferenceSourceItemJsonUnmarshaller implements Unmarshaller<I
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("description", targetDepth)) {
-                    context.nextToken();
-                    importReferenceSourceItem.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("name", targetDepth)) {
-                    context.nextToken();
-                    importReferenceSourceItem.setName(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("sourceFile", targetDepth)) {
                     context.nextToken();
                     importReferenceSourceItem.setSourceFile(context.getUnmarshaller(String.class).unmarshall(context));
@@ -67,6 +59,14 @@ public class ImportReferenceSourceItemJsonUnmarshaller implements Unmarshaller<I
                 if (context.testExpression("statusMessage", targetDepth)) {
                     context.nextToken();
                     importReferenceSourceItem.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("name", targetDepth)) {
+                    context.nextToken();
+                    importReferenceSourceItem.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("description", targetDepth)) {
+                    context.nextToken();
+                    importReferenceSourceItem.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();

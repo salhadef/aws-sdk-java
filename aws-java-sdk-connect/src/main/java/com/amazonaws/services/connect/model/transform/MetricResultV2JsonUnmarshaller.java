@@ -53,6 +53,10 @@ public class MetricResultV2JsonUnmarshaller implements Unmarshaller<MetricResult
                     metricResultV2.setDimensions(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
+                if (context.testExpression("MetricInterval", targetDepth)) {
+                    context.nextToken();
+                    metricResultV2.setMetricInterval(MetricIntervalJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Collections", targetDepth)) {
                     context.nextToken();
                     metricResultV2.setCollections(new ListUnmarshaller<MetricDataV2>(MetricDataV2JsonUnmarshaller.getInstance())

@@ -44,6 +44,7 @@ import com.amazonaws.services.forecastquery.AmazonForecastQueryClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.forecastquery.model.*;
+
 import com.amazonaws.services.forecastquery.model.transform.*;
 
 /**

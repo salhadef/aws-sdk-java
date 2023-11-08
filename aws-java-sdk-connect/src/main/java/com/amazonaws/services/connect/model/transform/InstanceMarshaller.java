@@ -47,6 +47,8 @@ public class InstanceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InboundCallsEnabled").build();
     private static final MarshallingInfo<Boolean> OUTBOUNDCALLSENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OutboundCallsEnabled").build();
+    private static final MarshallingInfo<String> INSTANCEACCESSURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceAccessUrl").build();
 
     private static final InstanceMarshaller instance = new InstanceMarshaller();
 
@@ -74,6 +76,7 @@ public class InstanceMarshaller {
             protocolMarshaller.marshall(instance.getStatusReason(), STATUSREASON_BINDING);
             protocolMarshaller.marshall(instance.getInboundCallsEnabled(), INBOUNDCALLSENABLED_BINDING);
             protocolMarshaller.marshall(instance.getOutboundCallsEnabled(), OUTBOUNDCALLSENABLED_BINDING);
+            protocolMarshaller.marshall(instance.getInstanceAccessUrl(), INSTANCEACCESSURL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

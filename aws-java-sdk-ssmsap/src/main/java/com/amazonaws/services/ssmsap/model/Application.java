@@ -60,6 +60,12 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
+     * The latest discovery result for the application.
+     * </p>
+     */
+    private String discoveryStatus;
+    /**
+     * <p>
      * The components of the application.
      * </p>
      */
@@ -317,6 +323,65 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The latest discovery result for the application.
+     * </p>
+     * 
+     * @param discoveryStatus
+     *        The latest discovery result for the application.
+     * @see ApplicationDiscoveryStatus
+     */
+
+    public void setDiscoveryStatus(String discoveryStatus) {
+        this.discoveryStatus = discoveryStatus;
+    }
+
+    /**
+     * <p>
+     * The latest discovery result for the application.
+     * </p>
+     * 
+     * @return The latest discovery result for the application.
+     * @see ApplicationDiscoveryStatus
+     */
+
+    public String getDiscoveryStatus() {
+        return this.discoveryStatus;
+    }
+
+    /**
+     * <p>
+     * The latest discovery result for the application.
+     * </p>
+     * 
+     * @param discoveryStatus
+     *        The latest discovery result for the application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ApplicationDiscoveryStatus
+     */
+
+    public Application withDiscoveryStatus(String discoveryStatus) {
+        setDiscoveryStatus(discoveryStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The latest discovery result for the application.
+     * </p>
+     * 
+     * @param discoveryStatus
+     *        The latest discovery result for the application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ApplicationDiscoveryStatus
+     */
+
+    public Application withDiscoveryStatus(ApplicationDiscoveryStatus discoveryStatus) {
+        this.discoveryStatus = discoveryStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * The components of the application.
      * </p>
      * 
@@ -487,6 +552,8 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
             sb.append("AppRegistryArn: ").append(getAppRegistryArn()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
+        if (getDiscoveryStatus() != null)
+            sb.append("DiscoveryStatus: ").append(getDiscoveryStatus()).append(",");
         if (getComponents() != null)
             sb.append("Components: ").append(getComponents()).append(",");
         if (getLastUpdated() != null)
@@ -527,6 +594,10 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getDiscoveryStatus() == null ^ this.getDiscoveryStatus() == null)
+            return false;
+        if (other.getDiscoveryStatus() != null && other.getDiscoveryStatus().equals(this.getDiscoveryStatus()) == false)
+            return false;
         if (other.getComponents() == null ^ this.getComponents() == null)
             return false;
         if (other.getComponents() != null && other.getComponents().equals(this.getComponents()) == false)
@@ -552,6 +623,7 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getAppRegistryArn() == null) ? 0 : getAppRegistryArn().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getDiscoveryStatus() == null) ? 0 : getDiscoveryStatus().hashCode());
         hashCode = prime * hashCode + ((getComponents() == null) ? 0 : getComponents().hashCode());
         hashCode = prime * hashCode + ((getLastUpdated() == null) ? 0 : getLastUpdated().hashCode());
         hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());

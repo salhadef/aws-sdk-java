@@ -48,35 +48,17 @@ public class GetVariantImportJobResultJsonUnmarshaller implements Unmarshaller<G
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("completionTime", targetDepth)) {
+                if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
-                    getVariantImportJobResult.setCompletionTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
-                }
-                if (context.testExpression("creationTime", targetDepth)) {
-                    context.nextToken();
-                    getVariantImportJobResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                    getVariantImportJobResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("destinationName", targetDepth)) {
                     context.nextToken();
                     getVariantImportJobResult.setDestinationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("id", targetDepth)) {
-                    context.nextToken();
-                    getVariantImportJobResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("items", targetDepth)) {
-                    context.nextToken();
-                    getVariantImportJobResult.setItems(new ListUnmarshaller<VariantImportItemDetail>(VariantImportItemDetailJsonUnmarshaller.getInstance())
-
-                    .unmarshall(context));
-                }
                 if (context.testExpression("roleArn", targetDepth)) {
                     context.nextToken();
                     getVariantImportJobResult.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("runLeftNormalization", targetDepth)) {
-                    context.nextToken();
-                    getVariantImportJobResult.setRunLeftNormalization(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
@@ -86,9 +68,32 @@ public class GetVariantImportJobResultJsonUnmarshaller implements Unmarshaller<G
                     context.nextToken();
                     getVariantImportJobResult.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("creationTime", targetDepth)) {
+                    context.nextToken();
+                    getVariantImportJobResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
                 if (context.testExpression("updateTime", targetDepth)) {
                     context.nextToken();
                     getVariantImportJobResult.setUpdateTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (context.testExpression("completionTime", targetDepth)) {
+                    context.nextToken();
+                    getVariantImportJobResult.setCompletionTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (context.testExpression("items", targetDepth)) {
+                    context.nextToken();
+                    getVariantImportJobResult.setItems(new ListUnmarshaller<VariantImportItemDetail>(VariantImportItemDetailJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("runLeftNormalization", targetDepth)) {
+                    context.nextToken();
+                    getVariantImportJobResult.setRunLeftNormalization(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("annotationFields", targetDepth)) {
+                    context.nextToken();
+                    getVariantImportJobResult.setAnnotationFields(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

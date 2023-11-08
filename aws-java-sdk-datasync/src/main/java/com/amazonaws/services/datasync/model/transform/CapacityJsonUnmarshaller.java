@@ -60,6 +60,10 @@ public class CapacityJsonUnmarshaller implements Unmarshaller<Capacity, JsonUnma
                     context.nextToken();
                     capacity.setLogicalUsed(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("ClusterCloudStorageUsed", targetDepth)) {
+                    context.nextToken();
+                    capacity.setClusterCloudStorageUsed(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

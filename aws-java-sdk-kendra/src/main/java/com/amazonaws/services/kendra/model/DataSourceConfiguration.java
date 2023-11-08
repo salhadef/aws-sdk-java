@@ -124,7 +124,14 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
      * <p>
      * Provides the configuration information to connect to Alfresco as your data source.
      * </p>
+     * <p>
+     * Support for <code>AlfrescoConfiguration</code> ended May 2023. We recommend migrating to or using the Alfresco
+     * data source template schema / <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html"
+     * >TemplateConfiguration</a> API.
+     * </p>
      */
+    @Deprecated
     private AlfrescoConfiguration alfrescoConfiguration;
     /**
      * <p>
@@ -763,11 +770,22 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
      * <p>
      * Provides the configuration information to connect to Alfresco as your data source.
      * </p>
+     * <p>
+     * Support for <code>AlfrescoConfiguration</code> ended May 2023. We recommend migrating to or using the Alfresco
+     * data source template schema / <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html"
+     * >TemplateConfiguration</a> API.
+     * </p>
      * 
      * @param alfrescoConfiguration
-     *        Provides the configuration information to connect to Alfresco as your data source.
+     *        Provides the configuration information to connect to Alfresco as your data source.</p>
+     *        <p>
+     *        Support for <code>AlfrescoConfiguration</code> ended May 2023. We recommend migrating to or using the
+     *        Alfresco data source template schema / <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html"
+     *        >TemplateConfiguration</a> API.
      */
-
+    @Deprecated
     public void setAlfrescoConfiguration(AlfrescoConfiguration alfrescoConfiguration) {
         this.alfrescoConfiguration = alfrescoConfiguration;
     }
@@ -776,10 +794,21 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
      * <p>
      * Provides the configuration information to connect to Alfresco as your data source.
      * </p>
+     * <p>
+     * Support for <code>AlfrescoConfiguration</code> ended May 2023. We recommend migrating to or using the Alfresco
+     * data source template schema / <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html"
+     * >TemplateConfiguration</a> API.
+     * </p>
      * 
-     * @return Provides the configuration information to connect to Alfresco as your data source.
+     * @return Provides the configuration information to connect to Alfresco as your data source.</p>
+     *         <p>
+     *         Support for <code>AlfrescoConfiguration</code> ended May 2023. We recommend migrating to or using the
+     *         Alfresco data source template schema / <a
+     *         href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html"
+     *         >TemplateConfiguration</a> API.
      */
-
+    @Deprecated
     public AlfrescoConfiguration getAlfrescoConfiguration() {
         return this.alfrescoConfiguration;
     }
@@ -788,12 +817,23 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
      * <p>
      * Provides the configuration information to connect to Alfresco as your data source.
      * </p>
+     * <p>
+     * Support for <code>AlfrescoConfiguration</code> ended May 2023. We recommend migrating to or using the Alfresco
+     * data source template schema / <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html"
+     * >TemplateConfiguration</a> API.
+     * </p>
      * 
      * @param alfrescoConfiguration
-     *        Provides the configuration information to connect to Alfresco as your data source.
+     *        Provides the configuration information to connect to Alfresco as your data source.</p>
+     *        <p>
+     *        Support for <code>AlfrescoConfiguration</code> ended May 2023. We recommend migrating to or using the
+     *        Alfresco data source template schema / <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html"
+     *        >TemplateConfiguration</a> API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public DataSourceConfiguration withAlfrescoConfiguration(AlfrescoConfiguration alfrescoConfiguration) {
         setAlfrescoConfiguration(alfrescoConfiguration);
         return this;

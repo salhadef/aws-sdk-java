@@ -44,6 +44,7 @@ import com.amazonaws.services.applicationautoscaling.AWSApplicationAutoScalingCl
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.applicationautoscaling.model.*;
+
 import com.amazonaws.services.applicationautoscaling.model.transform.*;
 
 /**
@@ -112,6 +113,11 @@ import com.amazonaws.services.applicationautoscaling.model.transform.*;
  * <li>
  * <p>
  * Amazon SageMaker endpoint variants
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Amazon SageMaker Serverless endpoint provisioned concurrency
  * </p>
  * </li>
  * <li>

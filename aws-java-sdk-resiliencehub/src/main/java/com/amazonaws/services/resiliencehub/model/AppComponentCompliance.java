@@ -30,7 +30,7 @@ public class AppComponentCompliance implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The name of the Application Component.
+     * Name of the Application Component.
      * </p>
      */
     private String appComponentName;
@@ -60,18 +60,18 @@ public class AppComponentCompliance implements Serializable, Cloneable, Structur
     private ResiliencyScore resiliencyScore;
     /**
      * <p>
-     * The status of the action.
+     * Status of the action.
      * </p>
      */
     private String status;
 
     /**
      * <p>
-     * The name of the Application Component.
+     * Name of the Application Component.
      * </p>
      * 
      * @param appComponentName
-     *        The name of the Application Component.
+     *        Name of the Application Component.
      */
 
     public void setAppComponentName(String appComponentName) {
@@ -80,10 +80,10 @@ public class AppComponentCompliance implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The name of the Application Component.
+     * Name of the Application Component.
      * </p>
      * 
-     * @return The name of the Application Component.
+     * @return Name of the Application Component.
      */
 
     public String getAppComponentName() {
@@ -92,11 +92,11 @@ public class AppComponentCompliance implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The name of the Application Component.
+     * Name of the Application Component.
      * </p>
      * 
      * @param appComponentName
-     *        The name of the Application Component.
+     *        Name of the Application Component.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -295,11 +295,11 @@ public class AppComponentCompliance implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The status of the action.
+     * Status of the action.
      * </p>
      * 
      * @param status
-     *        The status of the action.
+     *        Status of the action.
      * @see ComplianceStatus
      */
 
@@ -309,10 +309,10 @@ public class AppComponentCompliance implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The status of the action.
+     * Status of the action.
      * </p>
      * 
-     * @return The status of the action.
+     * @return Status of the action.
      * @see ComplianceStatus
      */
 
@@ -322,11 +322,11 @@ public class AppComponentCompliance implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The status of the action.
+     * Status of the action.
      * </p>
      * 
      * @param status
-     *        The status of the action.
+     *        Status of the action.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComplianceStatus
      */
@@ -338,11 +338,11 @@ public class AppComponentCompliance implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The status of the action.
+     * Status of the action.
      * </p>
      * 
      * @param status
-     *        The status of the action.
+     *        Status of the action.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComplianceStatus
      */

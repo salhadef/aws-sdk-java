@@ -137,8 +137,7 @@ public class DescribeAutoMLJobResult extends com.amazonaws.AmazonWebServiceResul
     /**
      * <p>
      * Contains <code>ProblemType</code>, <code>AutoMLJobObjective</code>, and <code>CompletionCriteria</code>. If you
-     * do not provide these values, they are auto-inferred. If you do provide them, the values used are the ones you
-     * provide.
+     * do not provide these values, they are inferred.
      * </p>
      */
     private ResolvedAttributes resolvedAttributes;
@@ -1026,14 +1025,12 @@ public class DescribeAutoMLJobResult extends com.amazonaws.AmazonWebServiceResul
     /**
      * <p>
      * Contains <code>ProblemType</code>, <code>AutoMLJobObjective</code>, and <code>CompletionCriteria</code>. If you
-     * do not provide these values, they are auto-inferred. If you do provide them, the values used are the ones you
-     * provide.
+     * do not provide these values, they are inferred.
      * </p>
      * 
      * @param resolvedAttributes
      *        Contains <code>ProblemType</code>, <code>AutoMLJobObjective</code>, and <code>CompletionCriteria</code>.
-     *        If you do not provide these values, they are auto-inferred. If you do provide them, the values used are
-     *        the ones you provide.
+     *        If you do not provide these values, they are inferred.
      */
 
     public void setResolvedAttributes(ResolvedAttributes resolvedAttributes) {
@@ -1043,13 +1040,11 @@ public class DescribeAutoMLJobResult extends com.amazonaws.AmazonWebServiceResul
     /**
      * <p>
      * Contains <code>ProblemType</code>, <code>AutoMLJobObjective</code>, and <code>CompletionCriteria</code>. If you
-     * do not provide these values, they are auto-inferred. If you do provide them, the values used are the ones you
-     * provide.
+     * do not provide these values, they are inferred.
      * </p>
      * 
      * @return Contains <code>ProblemType</code>, <code>AutoMLJobObjective</code>, and <code>CompletionCriteria</code>.
-     *         If you do not provide these values, they are auto-inferred. If you do provide them, the values used are
-     *         the ones you provide.
+     *         If you do not provide these values, they are inferred.
      */
 
     public ResolvedAttributes getResolvedAttributes() {
@@ -1059,14 +1054,12 @@ public class DescribeAutoMLJobResult extends com.amazonaws.AmazonWebServiceResul
     /**
      * <p>
      * Contains <code>ProblemType</code>, <code>AutoMLJobObjective</code>, and <code>CompletionCriteria</code>. If you
-     * do not provide these values, they are auto-inferred. If you do provide them, the values used are the ones you
-     * provide.
+     * do not provide these values, they are inferred.
      * </p>
      * 
      * @param resolvedAttributes
      *        Contains <code>ProblemType</code>, <code>AutoMLJobObjective</code>, and <code>CompletionCriteria</code>.
-     *        If you do not provide these values, they are auto-inferred. If you do provide them, the values used are
-     *        the ones you provide.
+     *        If you do not provide these values, they are inferred.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

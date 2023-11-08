@@ -34,6 +34,15 @@ public class WorkloadDiscoveryConfig implements Serializable, Cloneable, Structu
      * </p>
      */
     private String trustedAdvisorIntegrationStatus;
+    /**
+     * <p>
+     * The mode to use for identifying resources associated with the workload.
+     * </p>
+     * <p>
+     * You can specify <code>WORKLOAD_METADATA</code>, <code>APP_REGISTRY</code>, or both.
+     * </p>
+     */
+    private java.util.List<String> workloadResourceDefinition;
 
     /**
      * <p>
@@ -95,6 +104,129 @@ public class WorkloadDiscoveryConfig implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * The mode to use for identifying resources associated with the workload.
+     * </p>
+     * <p>
+     * You can specify <code>WORKLOAD_METADATA</code>, <code>APP_REGISTRY</code>, or both.
+     * </p>
+     * 
+     * @return The mode to use for identifying resources associated with the workload.</p>
+     *         <p>
+     *         You can specify <code>WORKLOAD_METADATA</code>, <code>APP_REGISTRY</code>, or both.
+     * @see DefinitionType
+     */
+
+    public java.util.List<String> getWorkloadResourceDefinition() {
+        return workloadResourceDefinition;
+    }
+
+    /**
+     * <p>
+     * The mode to use for identifying resources associated with the workload.
+     * </p>
+     * <p>
+     * You can specify <code>WORKLOAD_METADATA</code>, <code>APP_REGISTRY</code>, or both.
+     * </p>
+     * 
+     * @param workloadResourceDefinition
+     *        The mode to use for identifying resources associated with the workload.</p>
+     *        <p>
+     *        You can specify <code>WORKLOAD_METADATA</code>, <code>APP_REGISTRY</code>, or both.
+     * @see DefinitionType
+     */
+
+    public void setWorkloadResourceDefinition(java.util.Collection<String> workloadResourceDefinition) {
+        if (workloadResourceDefinition == null) {
+            this.workloadResourceDefinition = null;
+            return;
+        }
+
+        this.workloadResourceDefinition = new java.util.ArrayList<String>(workloadResourceDefinition);
+    }
+
+    /**
+     * <p>
+     * The mode to use for identifying resources associated with the workload.
+     * </p>
+     * <p>
+     * You can specify <code>WORKLOAD_METADATA</code>, <code>APP_REGISTRY</code>, or both.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setWorkloadResourceDefinition(java.util.Collection)} or
+     * {@link #withWorkloadResourceDefinition(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param workloadResourceDefinition
+     *        The mode to use for identifying resources associated with the workload.</p>
+     *        <p>
+     *        You can specify <code>WORKLOAD_METADATA</code>, <code>APP_REGISTRY</code>, or both.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DefinitionType
+     */
+
+    public WorkloadDiscoveryConfig withWorkloadResourceDefinition(String... workloadResourceDefinition) {
+        if (this.workloadResourceDefinition == null) {
+            setWorkloadResourceDefinition(new java.util.ArrayList<String>(workloadResourceDefinition.length));
+        }
+        for (String ele : workloadResourceDefinition) {
+            this.workloadResourceDefinition.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The mode to use for identifying resources associated with the workload.
+     * </p>
+     * <p>
+     * You can specify <code>WORKLOAD_METADATA</code>, <code>APP_REGISTRY</code>, or both.
+     * </p>
+     * 
+     * @param workloadResourceDefinition
+     *        The mode to use for identifying resources associated with the workload.</p>
+     *        <p>
+     *        You can specify <code>WORKLOAD_METADATA</code>, <code>APP_REGISTRY</code>, or both.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DefinitionType
+     */
+
+    public WorkloadDiscoveryConfig withWorkloadResourceDefinition(java.util.Collection<String> workloadResourceDefinition) {
+        setWorkloadResourceDefinition(workloadResourceDefinition);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The mode to use for identifying resources associated with the workload.
+     * </p>
+     * <p>
+     * You can specify <code>WORKLOAD_METADATA</code>, <code>APP_REGISTRY</code>, or both.
+     * </p>
+     * 
+     * @param workloadResourceDefinition
+     *        The mode to use for identifying resources associated with the workload.</p>
+     *        <p>
+     *        You can specify <code>WORKLOAD_METADATA</code>, <code>APP_REGISTRY</code>, or both.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DefinitionType
+     */
+
+    public WorkloadDiscoveryConfig withWorkloadResourceDefinition(DefinitionType... workloadResourceDefinition) {
+        java.util.ArrayList<String> workloadResourceDefinitionCopy = new java.util.ArrayList<String>(workloadResourceDefinition.length);
+        for (DefinitionType value : workloadResourceDefinition) {
+            workloadResourceDefinitionCopy.add(value.toString());
+        }
+        if (getWorkloadResourceDefinition() == null) {
+            setWorkloadResourceDefinition(workloadResourceDefinitionCopy);
+        } else {
+            getWorkloadResourceDefinition().addAll(workloadResourceDefinitionCopy);
+        }
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -107,7 +239,9 @@ public class WorkloadDiscoveryConfig implements Serializable, Cloneable, Structu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTrustedAdvisorIntegrationStatus() != null)
-            sb.append("TrustedAdvisorIntegrationStatus: ").append(getTrustedAdvisorIntegrationStatus());
+            sb.append("TrustedAdvisorIntegrationStatus: ").append(getTrustedAdvisorIntegrationStatus()).append(",");
+        if (getWorkloadResourceDefinition() != null)
+            sb.append("WorkloadResourceDefinition: ").append(getWorkloadResourceDefinition());
         sb.append("}");
         return sb.toString();
     }
@@ -127,6 +261,10 @@ public class WorkloadDiscoveryConfig implements Serializable, Cloneable, Structu
         if (other.getTrustedAdvisorIntegrationStatus() != null
                 && other.getTrustedAdvisorIntegrationStatus().equals(this.getTrustedAdvisorIntegrationStatus()) == false)
             return false;
+        if (other.getWorkloadResourceDefinition() == null ^ this.getWorkloadResourceDefinition() == null)
+            return false;
+        if (other.getWorkloadResourceDefinition() != null && other.getWorkloadResourceDefinition().equals(this.getWorkloadResourceDefinition()) == false)
+            return false;
         return true;
     }
 
@@ -136,6 +274,7 @@ public class WorkloadDiscoveryConfig implements Serializable, Cloneable, Structu
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getTrustedAdvisorIntegrationStatus() == null) ? 0 : getTrustedAdvisorIntegrationStatus().hashCode());
+        hashCode = prime * hashCode + ((getWorkloadResourceDefinition() == null) ? 0 : getWorkloadResourceDefinition().hashCode());
         return hashCode;
     }
 

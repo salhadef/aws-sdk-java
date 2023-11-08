@@ -28,14 +28,14 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class StartReadSetExportJobRequestMarshaller {
 
-    private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken").build();
+    private static final MarshallingInfo<String> SEQUENCESTOREID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("sequenceStoreId").build();
     private static final MarshallingInfo<String> DESTINATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("destination").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("roleArn").build();
-    private static final MarshallingInfo<String> SEQUENCESTOREID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PATH).marshallLocationName("sequenceStoreId").build();
+    private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken").build();
     private static final MarshallingInfo<List> SOURCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("sources").build();
 
@@ -55,10 +55,10 @@ public class StartReadSetExportJobRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(startReadSetExportJobRequest.getClientToken(), CLIENTTOKEN_BINDING);
+            protocolMarshaller.marshall(startReadSetExportJobRequest.getSequenceStoreId(), SEQUENCESTOREID_BINDING);
             protocolMarshaller.marshall(startReadSetExportJobRequest.getDestination(), DESTINATION_BINDING);
             protocolMarshaller.marshall(startReadSetExportJobRequest.getRoleArn(), ROLEARN_BINDING);
-            protocolMarshaller.marshall(startReadSetExportJobRequest.getSequenceStoreId(), SEQUENCESTOREID_BINDING);
+            protocolMarshaller.marshall(startReadSetExportJobRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(startReadSetExportJobRequest.getSources(), SOURCES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

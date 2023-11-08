@@ -638,6 +638,68 @@ public interface AmazonOpenSearchAsync extends AmazonOpenSearch {
 
     /**
      * <p>
+     * Returns information about domain and node health, the standby Availability Zone, number of nodes per Availability
+     * Zone, and shard count per node.
+     * </p>
+     * 
+     * @param describeDomainHealthRequest
+     *        Container for the parameters to the <code>DescribeDomainHealth</code> operation.
+     * @return A Java Future containing the result of the DescribeDomainHealth operation returned by the service.
+     * @sample AmazonOpenSearchAsync.DescribeDomainHealth
+     */
+    java.util.concurrent.Future<DescribeDomainHealthResult> describeDomainHealthAsync(DescribeDomainHealthRequest describeDomainHealthRequest);
+
+    /**
+     * <p>
+     * Returns information about domain and node health, the standby Availability Zone, number of nodes per Availability
+     * Zone, and shard count per node.
+     * </p>
+     * 
+     * @param describeDomainHealthRequest
+     *        Container for the parameters to the <code>DescribeDomainHealth</code> operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeDomainHealth operation returned by the service.
+     * @sample AmazonOpenSearchAsyncHandler.DescribeDomainHealth
+     */
+    java.util.concurrent.Future<DescribeDomainHealthResult> describeDomainHealthAsync(DescribeDomainHealthRequest describeDomainHealthRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeDomainHealthRequest, DescribeDomainHealthResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about domain and nodes, including data nodes, master nodes, ultrawarm nodes, Availability
+     * Zone(s), standby nodes, node configurations, and node states.
+     * </p>
+     * 
+     * @param describeDomainNodesRequest
+     *        Container for the parameters to the <code>DescribeDomainNodes</code> operation.
+     * @return A Java Future containing the result of the DescribeDomainNodes operation returned by the service.
+     * @sample AmazonOpenSearchAsync.DescribeDomainNodes
+     */
+    java.util.concurrent.Future<DescribeDomainNodesResult> describeDomainNodesAsync(DescribeDomainNodesRequest describeDomainNodesRequest);
+
+    /**
+     * <p>
+     * Returns information about domain and nodes, including data nodes, master nodes, ultrawarm nodes, Availability
+     * Zone(s), standby nodes, node configurations, and node states.
+     * </p>
+     * 
+     * @param describeDomainNodesRequest
+     *        Container for the parameters to the <code>DescribeDomainNodes</code> operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeDomainNodes operation returned by the service.
+     * @sample AmazonOpenSearchAsyncHandler.DescribeDomainNodes
+     */
+    java.util.concurrent.Future<DescribeDomainNodesResult> describeDomainNodesAsync(DescribeDomainNodesRequest describeDomainNodesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeDomainNodesRequest, DescribeDomainNodesResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns domain configuration information about the specified Amazon OpenSearch Service domains.
      * </p>
      * 
@@ -1005,8 +1067,39 @@ public interface AmazonOpenSearchAsync extends AmazonOpenSearch {
 
     /**
      * <p>
-     * Returns a list of Amazon OpenSearch Service package versions, along with their creation time and commit message.
-     * For more information, see <a
+     * The status of the maintenance action.
+     * </p>
+     * 
+     * @param getDomainMaintenanceStatusRequest
+     *        Container for the parameters to the <code>GetDomainMaintenanceStatus</code> operation.
+     * @return A Java Future containing the result of the GetDomainMaintenanceStatus operation returned by the service.
+     * @sample AmazonOpenSearchAsync.GetDomainMaintenanceStatus
+     */
+    java.util.concurrent.Future<GetDomainMaintenanceStatusResult> getDomainMaintenanceStatusAsync(
+            GetDomainMaintenanceStatusRequest getDomainMaintenanceStatusRequest);
+
+    /**
+     * <p>
+     * The status of the maintenance action.
+     * </p>
+     * 
+     * @param getDomainMaintenanceStatusRequest
+     *        Container for the parameters to the <code>GetDomainMaintenanceStatus</code> operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetDomainMaintenanceStatus operation returned by the service.
+     * @sample AmazonOpenSearchAsyncHandler.GetDomainMaintenanceStatus
+     */
+    java.util.concurrent.Future<GetDomainMaintenanceStatusResult> getDomainMaintenanceStatusAsync(
+            GetDomainMaintenanceStatusRequest getDomainMaintenanceStatusRequest,
+            com.amazonaws.handlers.AsyncHandler<GetDomainMaintenanceStatusRequest, GetDomainMaintenanceStatusResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of Amazon OpenSearch Service package versions, along with their creation time, commit message, and
+     * plugin properties (if the package is a zip plugin package). For more information, see <a
      * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom packages
      * for Amazon OpenSearch Service</a>.
      * </p>
@@ -1020,8 +1113,8 @@ public interface AmazonOpenSearchAsync extends AmazonOpenSearch {
 
     /**
      * <p>
-     * Returns a list of Amazon OpenSearch Service package versions, along with their creation time and commit message.
-     * For more information, see <a
+     * Returns a list of Amazon OpenSearch Service package versions, along with their creation time, commit message, and
+     * plugin properties (if the package is a zip plugin package). For more information, see <a
      * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom packages
      * for Amazon OpenSearch Service</a>.
      * </p>
@@ -1097,6 +1190,35 @@ public interface AmazonOpenSearchAsync extends AmazonOpenSearch {
      */
     java.util.concurrent.Future<GetUpgradeStatusResult> getUpgradeStatusAsync(GetUpgradeStatusRequest getUpgradeStatusRequest,
             com.amazonaws.handlers.AsyncHandler<GetUpgradeStatusRequest, GetUpgradeStatusResult> asyncHandler);
+
+    /**
+     * <p>
+     * A list of maintenance actions for the domain.
+     * </p>
+     * 
+     * @param listDomainMaintenancesRequest
+     *        Container for the parameters to the <code>ListDomainMaintenances</code> operation.
+     * @return A Java Future containing the result of the ListDomainMaintenances operation returned by the service.
+     * @sample AmazonOpenSearchAsync.ListDomainMaintenances
+     */
+    java.util.concurrent.Future<ListDomainMaintenancesResult> listDomainMaintenancesAsync(ListDomainMaintenancesRequest listDomainMaintenancesRequest);
+
+    /**
+     * <p>
+     * A list of maintenance actions for the domain.
+     * </p>
+     * 
+     * @param listDomainMaintenancesRequest
+     *        Container for the parameters to the <code>ListDomainMaintenances</code> operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListDomainMaintenances operation returned by the service.
+     * @sample AmazonOpenSearchAsyncHandler.ListDomainMaintenances
+     */
+    java.util.concurrent.Future<ListDomainMaintenancesResult> listDomainMaintenancesAsync(ListDomainMaintenancesRequest listDomainMaintenancesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListDomainMaintenancesRequest, ListDomainMaintenancesResult> asyncHandler);
 
     /**
      * <p>
@@ -1525,6 +1647,37 @@ public interface AmazonOpenSearchAsync extends AmazonOpenSearch {
      */
     java.util.concurrent.Future<RevokeVpcEndpointAccessResult> revokeVpcEndpointAccessAsync(RevokeVpcEndpointAccessRequest revokeVpcEndpointAccessRequest,
             com.amazonaws.handlers.AsyncHandler<RevokeVpcEndpointAccessRequest, RevokeVpcEndpointAccessResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts the node maintenance process on the data node. These processes can include a node reboot, an Opensearch or
+     * Elasticsearch process restart, or a Dashboard or Kibana restart.
+     * </p>
+     * 
+     * @param startDomainMaintenanceRequest
+     *        Container for the parameters to the <code>StartDomainMaintenance</code> operation.
+     * @return A Java Future containing the result of the StartDomainMaintenance operation returned by the service.
+     * @sample AmazonOpenSearchAsync.StartDomainMaintenance
+     */
+    java.util.concurrent.Future<StartDomainMaintenanceResult> startDomainMaintenanceAsync(StartDomainMaintenanceRequest startDomainMaintenanceRequest);
+
+    /**
+     * <p>
+     * Starts the node maintenance process on the data node. These processes can include a node reboot, an Opensearch or
+     * Elasticsearch process restart, or a Dashboard or Kibana restart.
+     * </p>
+     * 
+     * @param startDomainMaintenanceRequest
+     *        Container for the parameters to the <code>StartDomainMaintenance</code> operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartDomainMaintenance operation returned by the service.
+     * @sample AmazonOpenSearchAsyncHandler.StartDomainMaintenance
+     */
+    java.util.concurrent.Future<StartDomainMaintenanceResult> startDomainMaintenanceAsync(StartDomainMaintenanceRequest startDomainMaintenanceRequest,
+            com.amazonaws.handlers.AsyncHandler<StartDomainMaintenanceRequest, StartDomainMaintenanceResult> asyncHandler);
 
     /**
      * <p>

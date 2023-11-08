@@ -56,6 +56,10 @@ public class ServiceNowConnectorProfileCredentialsJsonUnmarshaller implements Un
                     context.nextToken();
                     serviceNowConnectorProfileCredentials.setPassword(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("oAuth2Credentials", targetDepth)) {
+                    context.nextToken();
+                    serviceNowConnectorProfileCredentials.setOAuth2Credentials(OAuth2CredentialsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

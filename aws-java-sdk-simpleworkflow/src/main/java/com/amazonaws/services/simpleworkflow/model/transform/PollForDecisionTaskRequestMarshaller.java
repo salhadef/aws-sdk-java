@@ -39,6 +39,8 @@ public class PollForDecisionTaskRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maximumPageSize").build();
     private static final MarshallingInfo<Boolean> REVERSEORDER_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("reverseOrder").build();
+    private static final MarshallingInfo<Boolean> STARTATPREVIOUSSTARTEDEVENT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startAtPreviousStartedEvent").build();
 
     private static final PollForDecisionTaskRequestMarshaller instance = new PollForDecisionTaskRequestMarshaller();
 
@@ -62,6 +64,7 @@ public class PollForDecisionTaskRequestMarshaller {
             protocolMarshaller.marshall(pollForDecisionTaskRequest.getNextPageToken(), NEXTPAGETOKEN_BINDING);
             protocolMarshaller.marshall(pollForDecisionTaskRequest.getMaximumPageSize(), MAXIMUMPAGESIZE_BINDING);
             protocolMarshaller.marshall(pollForDecisionTaskRequest.getReverseOrder(), REVERSEORDER_BINDING);
+            protocolMarshaller.marshall(pollForDecisionTaskRequest.getStartAtPreviousStartedEvent(), STARTATPREVIOUSSTARTEDEVENT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

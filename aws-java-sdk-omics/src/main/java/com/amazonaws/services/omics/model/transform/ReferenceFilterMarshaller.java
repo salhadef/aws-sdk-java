@@ -27,14 +27,14 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ReferenceFilterMarshaller {
 
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> MD5_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("md5").build();
     private static final MarshallingInfo<java.util.Date> CREATEDAFTER_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAfter").timestampFormat("iso8601").build();
     private static final MarshallingInfo<java.util.Date> CREATEDBEFORE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdBefore").timestampFormat("iso8601").build();
-    private static final MarshallingInfo<String> MD5_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("md5").build();
-    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("name").build();
 
     private static final ReferenceFilterMarshaller instance = new ReferenceFilterMarshaller();
 
@@ -52,10 +52,10 @@ public class ReferenceFilterMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(referenceFilter.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(referenceFilter.getMd5(), MD5_BINDING);
             protocolMarshaller.marshall(referenceFilter.getCreatedAfter(), CREATEDAFTER_BINDING);
             protocolMarshaller.marshall(referenceFilter.getCreatedBefore(), CREATEDBEFORE_BINDING);
-            protocolMarshaller.marshall(referenceFilter.getMd5(), MD5_BINDING);
-            protocolMarshaller.marshall(referenceFilter.getName(), NAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

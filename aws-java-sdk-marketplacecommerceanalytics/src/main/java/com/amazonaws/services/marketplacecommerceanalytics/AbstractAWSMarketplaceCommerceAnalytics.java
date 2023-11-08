@@ -43,6 +43,7 @@ public class AbstractAWSMarketplaceCommerceAnalytics implements AWSMarketplaceCo
     }
 
     @Override
+    @Deprecated
     public StartSupportDataExportResult startSupportDataExport(StartSupportDataExportRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

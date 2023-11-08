@@ -29,6 +29,10 @@ public class UpdateTrackerRequestMarshaller {
 
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
+    private static final MarshallingInfo<Boolean> EVENTBRIDGEENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EventBridgeEnabled").build();
+    private static final MarshallingInfo<Boolean> KMSKEYENABLEGEOSPATIALQUERIES_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KmsKeyEnableGeospatialQueries").build();
     private static final MarshallingInfo<String> POSITIONFILTERING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PositionFiltering").build();
     private static final MarshallingInfo<String> PRICINGPLAN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -55,6 +59,8 @@ public class UpdateTrackerRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(updateTrackerRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(updateTrackerRequest.getEventBridgeEnabled(), EVENTBRIDGEENABLED_BINDING);
+            protocolMarshaller.marshall(updateTrackerRequest.getKmsKeyEnableGeospatialQueries(), KMSKEYENABLEGEOSPATIALQUERIES_BINDING);
             protocolMarshaller.marshall(updateTrackerRequest.getPositionFiltering(), POSITIONFILTERING_BINDING);
             protocolMarshaller.marshall(updateTrackerRequest.getPricingPlan(), PRICINGPLAN_BINDING);
             protocolMarshaller.marshall(updateTrackerRequest.getPricingPlanDataSource(), PRICINGPLANDATASOURCE_BINDING);

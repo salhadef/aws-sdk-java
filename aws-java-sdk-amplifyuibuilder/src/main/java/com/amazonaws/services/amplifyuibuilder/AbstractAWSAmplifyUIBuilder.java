@@ -78,6 +78,11 @@ public class AbstractAWSAmplifyUIBuilder implements AWSAmplifyUIBuilder {
     }
 
     @Override
+    public GetCodegenJobResult getCodegenJob(GetCodegenJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetComponentResult getComponent(GetComponentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -94,6 +99,11 @@ public class AbstractAWSAmplifyUIBuilder implements AWSAmplifyUIBuilder {
 
     @Override
     public GetThemeResult getTheme(GetThemeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListCodegenJobsResult listCodegenJobs(ListCodegenJobsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -119,6 +129,11 @@ public class AbstractAWSAmplifyUIBuilder implements AWSAmplifyUIBuilder {
 
     @Override
     public RefreshTokenResult refreshToken(RefreshTokenRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartCodegenJobResult startCodegenJob(StartCodegenJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

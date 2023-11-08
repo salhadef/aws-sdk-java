@@ -86,6 +86,10 @@ public class VerifiedAccessInstanceStaxUnmarshaller implements Unmarshaller<Veri
                     continue;
                 }
 
+                if (context.testExpression("fipsEnabled", targetDepth)) {
+                    verifiedAccessInstance.setFipsEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return verifiedAccessInstance;

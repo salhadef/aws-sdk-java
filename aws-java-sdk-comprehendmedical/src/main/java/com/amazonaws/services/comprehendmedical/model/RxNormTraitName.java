@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum RxNormTraitName {
 
-    NEGATION("NEGATION");
+    NEGATION("NEGATION"),
+    PAST_HISTORY("PAST_HISTORY");
 
     private String value;
 

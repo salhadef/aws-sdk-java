@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 /**
  * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with Presentation Timestamp (PTS) values
  * greater than or equal to the first video packet PTS (MediaConvert drops captions and data packets with lesser PTS
- * values). Keep the default value (AUTO) to allow all PTS values.
+ * values). Keep the default value to allow all PTS values.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum M2tsDataPtsControl {

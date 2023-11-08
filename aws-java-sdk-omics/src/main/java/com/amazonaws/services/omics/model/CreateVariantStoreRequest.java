@@ -27,10 +27,10 @@ public class CreateVariantStoreRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A description for the store.
+     * The genome reference for the store's variants.
      * </p>
      */
-    private String description;
+    private ReferenceItem reference;
     /**
      * <p>
      * A name for the store.
@@ -39,60 +39,60 @@ public class CreateVariantStoreRequest extends com.amazonaws.AmazonWebServiceReq
     private String name;
     /**
      * <p>
-     * The genome reference for the store's variants.
+     * A description for the store.
      * </p>
      */
-    private ReferenceItem reference;
-    /**
-     * <p>
-     * Server-side encryption (SSE) settings for the store.
-     * </p>
-     */
-    private SseConfig sseConfig;
+    private String description;
     /**
      * <p>
      * Tags for the store.
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * Server-side encryption (SSE) settings for the store.
+     * </p>
+     */
+    private SseConfig sseConfig;
 
     /**
      * <p>
-     * A description for the store.
+     * The genome reference for the store's variants.
      * </p>
      * 
-     * @param description
-     *        A description for the store.
+     * @param reference
+     *        The genome reference for the store's variants.
      */
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setReference(ReferenceItem reference) {
+        this.reference = reference;
     }
 
     /**
      * <p>
-     * A description for the store.
+     * The genome reference for the store's variants.
      * </p>
      * 
-     * @return A description for the store.
+     * @return The genome reference for the store's variants.
      */
 
-    public String getDescription() {
-        return this.description;
+    public ReferenceItem getReference() {
+        return this.reference;
     }
 
     /**
      * <p>
-     * A description for the store.
+     * The genome reference for the store's variants.
      * </p>
      * 
-     * @param description
-     *        A description for the store.
+     * @param reference
+     *        The genome reference for the store's variants.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateVariantStoreRequest withDescription(String description) {
-        setDescription(description);
+    public CreateVariantStoreRequest withReference(ReferenceItem reference) {
+        setReference(reference);
         return this;
     }
 
@@ -138,81 +138,41 @@ public class CreateVariantStoreRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The genome reference for the store's variants.
+     * A description for the store.
      * </p>
      * 
-     * @param reference
-     *        The genome reference for the store's variants.
+     * @param description
+     *        A description for the store.
      */
 
-    public void setReference(ReferenceItem reference) {
-        this.reference = reference;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     /**
      * <p>
-     * The genome reference for the store's variants.
+     * A description for the store.
      * </p>
      * 
-     * @return The genome reference for the store's variants.
+     * @return A description for the store.
      */
 
-    public ReferenceItem getReference() {
-        return this.reference;
+    public String getDescription() {
+        return this.description;
     }
 
     /**
      * <p>
-     * The genome reference for the store's variants.
+     * A description for the store.
      * </p>
      * 
-     * @param reference
-     *        The genome reference for the store's variants.
+     * @param description
+     *        A description for the store.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateVariantStoreRequest withReference(ReferenceItem reference) {
-        setReference(reference);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Server-side encryption (SSE) settings for the store.
-     * </p>
-     * 
-     * @param sseConfig
-     *        Server-side encryption (SSE) settings for the store.
-     */
-
-    public void setSseConfig(SseConfig sseConfig) {
-        this.sseConfig = sseConfig;
-    }
-
-    /**
-     * <p>
-     * Server-side encryption (SSE) settings for the store.
-     * </p>
-     * 
-     * @return Server-side encryption (SSE) settings for the store.
-     */
-
-    public SseConfig getSseConfig() {
-        return this.sseConfig;
-    }
-
-    /**
-     * <p>
-     * Server-side encryption (SSE) settings for the store.
-     * </p>
-     * 
-     * @param sseConfig
-     *        Server-side encryption (SSE) settings for the store.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateVariantStoreRequest withSseConfig(SseConfig sseConfig) {
-        setSseConfig(sseConfig);
+    public CreateVariantStoreRequest withDescription(String description) {
+        setDescription(description);
         return this;
     }
 
@@ -285,6 +245,46 @@ public class CreateVariantStoreRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * Server-side encryption (SSE) settings for the store.
+     * </p>
+     * 
+     * @param sseConfig
+     *        Server-side encryption (SSE) settings for the store.
+     */
+
+    public void setSseConfig(SseConfig sseConfig) {
+        this.sseConfig = sseConfig;
+    }
+
+    /**
+     * <p>
+     * Server-side encryption (SSE) settings for the store.
+     * </p>
+     * 
+     * @return Server-side encryption (SSE) settings for the store.
+     */
+
+    public SseConfig getSseConfig() {
+        return this.sseConfig;
+    }
+
+    /**
+     * <p>
+     * Server-side encryption (SSE) settings for the store.
+     * </p>
+     * 
+     * @param sseConfig
+     *        Server-side encryption (SSE) settings for the store.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateVariantStoreRequest withSseConfig(SseConfig sseConfig) {
+        setSseConfig(sseConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -296,16 +296,16 @@ public class CreateVariantStoreRequest extends com.amazonaws.AmazonWebServiceReq
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
-        if (getName() != null)
-            sb.append("Name: ").append(getName()).append(",");
         if (getReference() != null)
             sb.append("Reference: ").append(getReference()).append(",");
-        if (getSseConfig() != null)
-            sb.append("SseConfig: ").append(getSseConfig()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getSseConfig() != null)
+            sb.append("SseConfig: ").append(getSseConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -320,25 +320,25 @@ public class CreateVariantStoreRequest extends com.amazonaws.AmazonWebServiceReq
         if (obj instanceof CreateVariantStoreRequest == false)
             return false;
         CreateVariantStoreRequest other = (CreateVariantStoreRequest) obj;
-        if (other.getDescription() == null ^ this.getDescription() == null)
+        if (other.getReference() == null ^ this.getReference() == null)
             return false;
-        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getReference() != null && other.getReference().equals(this.getReference()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
-        if (other.getReference() == null ^ this.getReference() == null)
+        if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getReference() != null && other.getReference().equals(this.getReference()) == false)
-            return false;
-        if (other.getSseConfig() == null ^ this.getSseConfig() == null)
-            return false;
-        if (other.getSseConfig() != null && other.getSseConfig().equals(this.getSseConfig()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
+        if (other.getSseConfig() == null ^ this.getSseConfig() == null)
+            return false;
+        if (other.getSseConfig() != null && other.getSseConfig().equals(this.getSseConfig()) == false)
             return false;
         return true;
     }
@@ -348,11 +348,11 @@ public class CreateVariantStoreRequest extends com.amazonaws.AmazonWebServiceReq
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getReference() == null) ? 0 : getReference().hashCode());
-        hashCode = prime * hashCode + ((getSseConfig() == null) ? 0 : getSseConfig().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getSseConfig() == null) ? 0 : getSseConfig().hashCode());
         return hashCode;
     }
 

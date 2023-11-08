@@ -83,6 +83,8 @@ public class BranchMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceBranch").build();
     private static final MarshallingInfo<String> BACKENDENVIRONMENTARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("backendEnvironmentArn").build();
+    private static final MarshallingInfo<StructuredPojo> BACKEND_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("backend").build();
 
     private static final BranchMarshaller instance = new BranchMarshaller();
 
@@ -127,6 +129,7 @@ public class BranchMarshaller {
             protocolMarshaller.marshall(branch.getDestinationBranch(), DESTINATIONBRANCH_BINDING);
             protocolMarshaller.marshall(branch.getSourceBranch(), SOURCEBRANCH_BINDING);
             protocolMarshaller.marshall(branch.getBackendEnvironmentArn(), BACKENDENVIRONMENTARN_BINDING);
+            protocolMarshaller.marshall(branch.getBackend(), BACKEND_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

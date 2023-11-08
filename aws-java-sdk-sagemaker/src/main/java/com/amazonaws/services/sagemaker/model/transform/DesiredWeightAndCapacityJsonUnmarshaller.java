@@ -60,6 +60,11 @@ public class DesiredWeightAndCapacityJsonUnmarshaller implements Unmarshaller<De
                     context.nextToken();
                     desiredWeightAndCapacity.setDesiredInstanceCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("ServerlessUpdateConfig", targetDepth)) {
+                    context.nextToken();
+                    desiredWeightAndCapacity.setServerlessUpdateConfig(ProductionVariantServerlessUpdateConfigJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

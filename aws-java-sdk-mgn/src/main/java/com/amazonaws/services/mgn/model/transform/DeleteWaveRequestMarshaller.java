@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DeleteWaveRequestMarshaller {
 
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("accountID").build();
     private static final MarshallingInfo<String> WAVEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("waveID").build();
 
@@ -46,6 +48,7 @@ public class DeleteWaveRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(deleteWaveRequest.getAccountID(), ACCOUNTID_BINDING);
             protocolMarshaller.marshall(deleteWaveRequest.getWaveID(), WAVEID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

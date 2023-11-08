@@ -114,7 +114,8 @@ public class GetInsightRuleReportRequest extends com.amazonaws.AmazonWebServiceR
     private com.amazonaws.internal.SdkInternalList<String> metrics;
     /**
      * <p>
-     * Determines what statistic to use to rank the contributors. Valid values are SUM and MAXIMUM.
+     * Determines what statistic to use to rank the contributors. Valid values are <code>Sum</code> and
+     * <code>Maximum</code>.
      * </p>
      */
     private String orderBy;
@@ -792,11 +793,13 @@ public class GetInsightRuleReportRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Determines what statistic to use to rank the contributors. Valid values are SUM and MAXIMUM.
+     * Determines what statistic to use to rank the contributors. Valid values are <code>Sum</code> and
+     * <code>Maximum</code>.
      * </p>
      * 
      * @param orderBy
-     *        Determines what statistic to use to rank the contributors. Valid values are SUM and MAXIMUM.
+     *        Determines what statistic to use to rank the contributors. Valid values are <code>Sum</code> and
+     *        <code>Maximum</code>.
      */
 
     public void setOrderBy(String orderBy) {
@@ -805,10 +808,12 @@ public class GetInsightRuleReportRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Determines what statistic to use to rank the contributors. Valid values are SUM and MAXIMUM.
+     * Determines what statistic to use to rank the contributors. Valid values are <code>Sum</code> and
+     * <code>Maximum</code>.
      * </p>
      * 
-     * @return Determines what statistic to use to rank the contributors. Valid values are SUM and MAXIMUM.
+     * @return Determines what statistic to use to rank the contributors. Valid values are <code>Sum</code> and
+     *         <code>Maximum</code>.
      */
 
     public String getOrderBy() {
@@ -817,11 +822,13 @@ public class GetInsightRuleReportRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Determines what statistic to use to rank the contributors. Valid values are SUM and MAXIMUM.
+     * Determines what statistic to use to rank the contributors. Valid values are <code>Sum</code> and
+     * <code>Maximum</code>.
      * </p>
      * 
      * @param orderBy
-     *        Determines what statistic to use to rank the contributors. Valid values are SUM and MAXIMUM.
+     *        Determines what statistic to use to rank the contributors. Valid values are <code>Sum</code> and
+     *        <code>Maximum</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

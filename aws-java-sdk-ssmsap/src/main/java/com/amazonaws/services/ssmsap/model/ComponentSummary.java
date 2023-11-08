@@ -52,6 +52,12 @@ public class ComponentSummary implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the component summary.
+     * </p>
+     */
+    private String arn;
 
     /**
      * <p>
@@ -261,6 +267,46 @@ public class ComponentSummary implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the component summary.
+     * </p>
+     * 
+     * @param arn
+     *        The Amazon Resource Name (ARN) of the component summary.
+     */
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the component summary.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the component summary.
+     */
+
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the component summary.
+     * </p>
+     * 
+     * @param arn
+     *        The Amazon Resource Name (ARN) of the component summary.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComponentSummary withArn(String arn) {
+        setArn(arn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -279,7 +325,9 @@ public class ComponentSummary implements Serializable, Cloneable, StructuredPojo
         if (getComponentType() != null)
             sb.append("ComponentType: ").append(getComponentType()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn());
         sb.append("}");
         return sb.toString();
     }
@@ -310,6 +358,10 @@ public class ComponentSummary implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getArn() == null ^ this.getArn() == null)
+            return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
         return true;
     }
 
@@ -322,6 +374,7 @@ public class ComponentSummary implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getComponentId() == null) ? 0 : getComponentId().hashCode());
         hashCode = prime * hashCode + ((getComponentType() == null) ? 0 : getComponentType().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         return hashCode;
     }
 

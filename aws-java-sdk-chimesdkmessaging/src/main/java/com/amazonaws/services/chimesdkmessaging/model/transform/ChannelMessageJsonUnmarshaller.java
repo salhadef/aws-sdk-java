@@ -109,6 +109,12 @@ public class ChannelMessageJsonUnmarshaller implements Unmarshaller<ChannelMessa
                     context.nextToken();
                     channelMessage.setContentType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Target", targetDepth)) {
+                    context.nextToken();
+                    channelMessage.setTarget(new ListUnmarshaller<Target>(TargetJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

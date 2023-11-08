@@ -241,13 +241,15 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
     private java.util.List<String> idpIdentifiers;
     /**
      * <p>
-     * The date the IdP was last modified.
+     * The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when
+     * the item was modified.
      * </p>
      */
     private java.util.Date lastModifiedDate;
     /**
      * <p>
-     * The date the IdP was created.
+     * The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when
+     * the item was created.
      * </p>
      */
     private java.util.Date creationDate;
@@ -1663,11 +1665,13 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The date the IdP was last modified.
+     * The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when
+     * the item was modified.
      * </p>
      * 
      * @param lastModifiedDate
-     *        The date the IdP was last modified.
+     *        The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     *        format, when the item was modified.
      */
 
     public void setLastModifiedDate(java.util.Date lastModifiedDate) {
@@ -1676,10 +1680,12 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The date the IdP was last modified.
+     * The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when
+     * the item was modified.
      * </p>
      * 
-     * @return The date the IdP was last modified.
+     * @return The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     *         format, when the item was modified.
      */
 
     public java.util.Date getLastModifiedDate() {
@@ -1688,11 +1694,13 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The date the IdP was last modified.
+     * The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when
+     * the item was modified.
      * </p>
      * 
      * @param lastModifiedDate
-     *        The date the IdP was last modified.
+     *        The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     *        format, when the item was modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1703,11 +1711,13 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The date the IdP was created.
+     * The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when
+     * the item was created.
      * </p>
      * 
      * @param creationDate
-     *        The date the IdP was created.
+     *        The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     *        format, when the item was created.
      */
 
     public void setCreationDate(java.util.Date creationDate) {
@@ -1716,10 +1726,12 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The date the IdP was created.
+     * The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when
+     * the item was created.
      * </p>
      * 
-     * @return The date the IdP was created.
+     * @return The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     *         format, when the item was created.
      */
 
     public java.util.Date getCreationDate() {
@@ -1728,11 +1740,13 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The date the IdP was created.
+     * The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when
+     * the item was created.
      * </p>
      * 
      * @param creationDate
-     *        The date the IdP was created.
+     *        The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     *        format, when the item was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

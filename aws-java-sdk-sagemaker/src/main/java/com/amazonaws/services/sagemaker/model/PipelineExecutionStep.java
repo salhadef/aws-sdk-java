@@ -90,6 +90,12 @@ public class PipelineExecutionStep implements Serializable, Cloneable, Structure
      * </p>
      */
     private PipelineExecutionStepMetadata metadata;
+    /**
+     * <p>
+     * The ARN from an execution of the current pipeline from which results are reused for this step.
+     * </p>
+     */
+    private SelectiveExecutionResult selectiveExecutionResult;
 
     /**
      * <p>
@@ -523,6 +529,46 @@ public class PipelineExecutionStep implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * The ARN from an execution of the current pipeline from which results are reused for this step.
+     * </p>
+     * 
+     * @param selectiveExecutionResult
+     *        The ARN from an execution of the current pipeline from which results are reused for this step.
+     */
+
+    public void setSelectiveExecutionResult(SelectiveExecutionResult selectiveExecutionResult) {
+        this.selectiveExecutionResult = selectiveExecutionResult;
+    }
+
+    /**
+     * <p>
+     * The ARN from an execution of the current pipeline from which results are reused for this step.
+     * </p>
+     * 
+     * @return The ARN from an execution of the current pipeline from which results are reused for this step.
+     */
+
+    public SelectiveExecutionResult getSelectiveExecutionResult() {
+        return this.selectiveExecutionResult;
+    }
+
+    /**
+     * <p>
+     * The ARN from an execution of the current pipeline from which results are reused for this step.
+     * </p>
+     * 
+     * @param selectiveExecutionResult
+     *        The ARN from an execution of the current pipeline from which results are reused for this step.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PipelineExecutionStep withSelectiveExecutionResult(SelectiveExecutionResult selectiveExecutionResult) {
+        setSelectiveExecutionResult(selectiveExecutionResult);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -553,7 +599,9 @@ public class PipelineExecutionStep implements Serializable, Cloneable, Structure
         if (getFailureReason() != null)
             sb.append("FailureReason: ").append(getFailureReason()).append(",");
         if (getMetadata() != null)
-            sb.append("Metadata: ").append(getMetadata());
+            sb.append("Metadata: ").append(getMetadata()).append(",");
+        if (getSelectiveExecutionResult() != null)
+            sb.append("SelectiveExecutionResult: ").append(getSelectiveExecutionResult());
         sb.append("}");
         return sb.toString();
     }
@@ -608,6 +656,10 @@ public class PipelineExecutionStep implements Serializable, Cloneable, Structure
             return false;
         if (other.getMetadata() != null && other.getMetadata().equals(this.getMetadata()) == false)
             return false;
+        if (other.getSelectiveExecutionResult() == null ^ this.getSelectiveExecutionResult() == null)
+            return false;
+        if (other.getSelectiveExecutionResult() != null && other.getSelectiveExecutionResult().equals(this.getSelectiveExecutionResult()) == false)
+            return false;
         return true;
     }
 
@@ -626,6 +678,7 @@ public class PipelineExecutionStep implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getAttemptCount() == null) ? 0 : getAttemptCount().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
         hashCode = prime * hashCode + ((getMetadata() == null) ? 0 : getMetadata().hashCode());
+        hashCode = prime * hashCode + ((getSelectiveExecutionResult() == null) ? 0 : getSelectiveExecutionResult().hashCode());
         return hashCode;
     }
 

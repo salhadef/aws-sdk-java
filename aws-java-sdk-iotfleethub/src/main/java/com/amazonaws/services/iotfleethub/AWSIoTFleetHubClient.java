@@ -44,6 +44,7 @@ import com.amazonaws.services.iotfleethub.AWSIoTFleetHubClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.iotfleethub.model.*;
+
 import com.amazonaws.services.iotfleethub.model.transform.*;
 
 /**

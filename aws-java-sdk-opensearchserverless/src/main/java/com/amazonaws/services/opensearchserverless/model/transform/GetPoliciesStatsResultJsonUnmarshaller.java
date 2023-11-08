@@ -52,6 +52,10 @@ public class GetPoliciesStatsResultJsonUnmarshaller implements Unmarshaller<GetP
                     context.nextToken();
                     getPoliciesStatsResult.setAccessPolicyStats(AccessPolicyStatsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("LifecyclePolicyStats", targetDepth)) {
+                    context.nextToken();
+                    getPoliciesStatsResult.setLifecyclePolicyStats(LifecyclePolicyStatsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("SecurityConfigStats", targetDepth)) {
                     context.nextToken();
                     getPoliciesStatsResult.setSecurityConfigStats(SecurityConfigStatsJsonUnmarshaller.getInstance().unmarshall(context));

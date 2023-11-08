@@ -39,6 +39,16 @@ public class UpdateUserSettingsRequest extends com.amazonaws.AmazonWebServiceReq
     private String clientToken;
     /**
      * <p>
+     * The configuration that specifies which cookies should be synchronized from the end user's local browser to the
+     * remote browser.
+     * </p>
+     * <p>
+     * If the allowlist and blocklist are empty, the configuration becomes null.
+     * </p>
+     */
+    private CookieSynchronizationConfiguration cookieSynchronizationConfiguration;
+    /**
+     * <p>
      * Specifies whether the user can copy text from the streaming session to the local device.
      * </p>
      */
@@ -157,6 +167,67 @@ public class UpdateUserSettingsRequest extends com.amazonaws.AmazonWebServiceReq
 
     public UpdateUserSettingsRequest withClientToken(String clientToken) {
         setClientToken(clientToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration that specifies which cookies should be synchronized from the end user's local browser to the
+     * remote browser.
+     * </p>
+     * <p>
+     * If the allowlist and blocklist are empty, the configuration becomes null.
+     * </p>
+     * 
+     * @param cookieSynchronizationConfiguration
+     *        The configuration that specifies which cookies should be synchronized from the end user's local browser to
+     *        the remote browser.</p>
+     *        <p>
+     *        If the allowlist and blocklist are empty, the configuration becomes null.
+     */
+
+    public void setCookieSynchronizationConfiguration(CookieSynchronizationConfiguration cookieSynchronizationConfiguration) {
+        this.cookieSynchronizationConfiguration = cookieSynchronizationConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration that specifies which cookies should be synchronized from the end user's local browser to the
+     * remote browser.
+     * </p>
+     * <p>
+     * If the allowlist and blocklist are empty, the configuration becomes null.
+     * </p>
+     * 
+     * @return The configuration that specifies which cookies should be synchronized from the end user's local browser
+     *         to the remote browser.</p>
+     *         <p>
+     *         If the allowlist and blocklist are empty, the configuration becomes null.
+     */
+
+    public CookieSynchronizationConfiguration getCookieSynchronizationConfiguration() {
+        return this.cookieSynchronizationConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration that specifies which cookies should be synchronized from the end user's local browser to the
+     * remote browser.
+     * </p>
+     * <p>
+     * If the allowlist and blocklist are empty, the configuration becomes null.
+     * </p>
+     * 
+     * @param cookieSynchronizationConfiguration
+     *        The configuration that specifies which cookies should be synchronized from the end user's local browser to
+     *        the remote browser.</p>
+     *        <p>
+     *        If the allowlist and blocklist are empty, the configuration becomes null.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateUserSettingsRequest withCookieSynchronizationConfiguration(CookieSynchronizationConfiguration cookieSynchronizationConfiguration) {
+        setCookieSynchronizationConfiguration(cookieSynchronizationConfiguration);
         return this;
     }
 
@@ -595,6 +666,8 @@ public class UpdateUserSettingsRequest extends com.amazonaws.AmazonWebServiceReq
         sb.append("{");
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getCookieSynchronizationConfiguration() != null)
+            sb.append("CookieSynchronizationConfiguration: ").append("***Sensitive Data Redacted***").append(",");
         if (getCopyAllowed() != null)
             sb.append("CopyAllowed: ").append(getCopyAllowed()).append(",");
         if (getDisconnectTimeoutInMinutes() != null)
@@ -628,6 +701,11 @@ public class UpdateUserSettingsRequest extends com.amazonaws.AmazonWebServiceReq
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
+            return false;
+        if (other.getCookieSynchronizationConfiguration() == null ^ this.getCookieSynchronizationConfiguration() == null)
+            return false;
+        if (other.getCookieSynchronizationConfiguration() != null
+                && other.getCookieSynchronizationConfiguration().equals(this.getCookieSynchronizationConfiguration()) == false)
             return false;
         if (other.getCopyAllowed() == null ^ this.getCopyAllowed() == null)
             return false;
@@ -671,6 +749,7 @@ public class UpdateUserSettingsRequest extends com.amazonaws.AmazonWebServiceReq
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getCookieSynchronizationConfiguration() == null) ? 0 : getCookieSynchronizationConfiguration().hashCode());
         hashCode = prime * hashCode + ((getCopyAllowed() == null) ? 0 : getCopyAllowed().hashCode());
         hashCode = prime * hashCode + ((getDisconnectTimeoutInMinutes() == null) ? 0 : getDisconnectTimeoutInMinutes().hashCode());
         hashCode = prime * hashCode + ((getDownloadAllowed() == null) ? 0 : getDownloadAllowed().hashCode());

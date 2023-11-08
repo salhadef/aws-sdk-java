@@ -27,6 +27,12 @@ public class ListSourceServerActionsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
+     * Account ID to return when listing source server post migration custom actions.
+     * </p>
+     */
+    private String accountID;
+    /**
+     * <p>
      * Filters to apply when listing source server post migration custom actions.
      * </p>
      */
@@ -49,6 +55,46 @@ public class ListSourceServerActionsRequest extends com.amazonaws.AmazonWebServi
      * </p>
      */
     private String sourceServerID;
+
+    /**
+     * <p>
+     * Account ID to return when listing source server post migration custom actions.
+     * </p>
+     * 
+     * @param accountID
+     *        Account ID to return when listing source server post migration custom actions.
+     */
+
+    public void setAccountID(String accountID) {
+        this.accountID = accountID;
+    }
+
+    /**
+     * <p>
+     * Account ID to return when listing source server post migration custom actions.
+     * </p>
+     * 
+     * @return Account ID to return when listing source server post migration custom actions.
+     */
+
+    public String getAccountID() {
+        return this.accountID;
+    }
+
+    /**
+     * <p>
+     * Account ID to return when listing source server post migration custom actions.
+     * </p>
+     * 
+     * @param accountID
+     *        Account ID to return when listing source server post migration custom actions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListSourceServerActionsRequest withAccountID(String accountID) {
+        setAccountID(accountID);
+        return this;
+    }
 
     /**
      * <p>
@@ -222,6 +268,8 @@ public class ListSourceServerActionsRequest extends com.amazonaws.AmazonWebServi
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAccountID() != null)
+            sb.append("AccountID: ").append(getAccountID()).append(",");
         if (getFilters() != null)
             sb.append("Filters: ").append(getFilters()).append(",");
         if (getMaxResults() != null)
@@ -244,6 +292,10 @@ public class ListSourceServerActionsRequest extends com.amazonaws.AmazonWebServi
         if (obj instanceof ListSourceServerActionsRequest == false)
             return false;
         ListSourceServerActionsRequest other = (ListSourceServerActionsRequest) obj;
+        if (other.getAccountID() == null ^ this.getAccountID() == null)
+            return false;
+        if (other.getAccountID() != null && other.getAccountID().equals(this.getAccountID()) == false)
+            return false;
         if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
         if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
@@ -268,6 +320,7 @@ public class ListSourceServerActionsRequest extends com.amazonaws.AmazonWebServi
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAccountID() == null) ? 0 : getAccountID().hashCode());
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());

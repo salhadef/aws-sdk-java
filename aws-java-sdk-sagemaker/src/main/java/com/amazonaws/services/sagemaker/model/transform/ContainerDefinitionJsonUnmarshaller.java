@@ -85,6 +85,10 @@ public class ContainerDefinitionJsonUnmarshaller implements Unmarshaller<Contain
                     context.nextToken();
                     containerDefinition.setMultiModelConfig(MultiModelConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ModelDataSource", targetDepth)) {
+                    context.nextToken();
+                    containerDefinition.setModelDataSource(ModelDataSourceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

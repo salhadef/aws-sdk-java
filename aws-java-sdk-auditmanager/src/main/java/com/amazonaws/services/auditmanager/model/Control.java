@@ -42,7 +42,7 @@ public class Control implements Serializable, Cloneable, StructuredPojo {
     private String id;
     /**
      * <p>
-     * The type of control, such as a custom control or a standard control.
+     * Specifies whether the control is a standard control or a custom control.
      * </p>
      */
     private String type;
@@ -201,11 +201,11 @@ public class Control implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of control, such as a custom control or a standard control.
+     * Specifies whether the control is a standard control or a custom control.
      * </p>
      * 
      * @param type
-     *        The type of control, such as a custom control or a standard control.
+     *        Specifies whether the control is a standard control or a custom control.
      * @see ControlType
      */
 
@@ -215,10 +215,10 @@ public class Control implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of control, such as a custom control or a standard control.
+     * Specifies whether the control is a standard control or a custom control.
      * </p>
      * 
-     * @return The type of control, such as a custom control or a standard control.
+     * @return Specifies whether the control is a standard control or a custom control.
      * @see ControlType
      */
 
@@ -228,11 +228,11 @@ public class Control implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of control, such as a custom control or a standard control.
+     * Specifies whether the control is a standard control or a custom control.
      * </p>
      * 
      * @param type
-     *        The type of control, such as a custom control or a standard control.
+     *        Specifies whether the control is a standard control or a custom control.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ControlType
      */
@@ -244,11 +244,11 @@ public class Control implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of control, such as a custom control or a standard control.
+     * Specifies whether the control is a standard control or a custom control.
      * </p>
      * 
      * @param type
-     *        The type of control, such as a custom control or a standard control.
+     *        Specifies whether the control is a standard control or a custom control.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ControlType
      */
@@ -819,11 +819,11 @@ public class Control implements Serializable, Cloneable, StructuredPojo {
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getTestingInformation() != null)
-            sb.append("TestingInformation: ").append(getTestingInformation()).append(",");
+            sb.append("TestingInformation: ").append("***Sensitive Data Redacted***").append(",");
         if (getActionPlanTitle() != null)
-            sb.append("ActionPlanTitle: ").append(getActionPlanTitle()).append(",");
+            sb.append("ActionPlanTitle: ").append("***Sensitive Data Redacted***").append(",");
         if (getActionPlanInstructions() != null)
-            sb.append("ActionPlanInstructions: ").append(getActionPlanInstructions()).append(",");
+            sb.append("ActionPlanInstructions: ").append("***Sensitive Data Redacted***").append(",");
         if (getControlSources() != null)
             sb.append("ControlSources: ").append(getControlSources()).append(",");
         if (getControlMappingSources() != null)
@@ -833,9 +833,9 @@ public class Control implements Serializable, Cloneable, StructuredPojo {
         if (getLastUpdatedAt() != null)
             sb.append("LastUpdatedAt: ").append(getLastUpdatedAt()).append(",");
         if (getCreatedBy() != null)
-            sb.append("CreatedBy: ").append(getCreatedBy()).append(",");
+            sb.append("CreatedBy: ").append("***Sensitive Data Redacted***").append(",");
         if (getLastUpdatedBy() != null)
-            sb.append("LastUpdatedBy: ").append(getLastUpdatedBy()).append(",");
+            sb.append("LastUpdatedBy: ").append("***Sensitive Data Redacted***").append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");

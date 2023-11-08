@@ -27,7 +27,7 @@ public class ListResiliencyPoliciesRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The maximum number of results to include in the response. If more results exist than the specified
+     * Maximum number of results to include in the response. If more results exist than the specified
      * <code>MaxResults</code> value, a token is included in the response so that the remaining results can be
      * retrieved.
      * </p>
@@ -48,13 +48,13 @@ public class ListResiliencyPoliciesRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The maximum number of results to include in the response. If more results exist than the specified
+     * Maximum number of results to include in the response. If more results exist than the specified
      * <code>MaxResults</code> value, a token is included in the response so that the remaining results can be
      * retrieved.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to include in the response. If more results exist than the specified
+     *        Maximum number of results to include in the response. If more results exist than the specified
      *        <code>MaxResults</code> value, a token is included in the response so that the remaining results can be
      *        retrieved.
      */
@@ -65,12 +65,12 @@ public class ListResiliencyPoliciesRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The maximum number of results to include in the response. If more results exist than the specified
+     * Maximum number of results to include in the response. If more results exist than the specified
      * <code>MaxResults</code> value, a token is included in the response so that the remaining results can be
      * retrieved.
      * </p>
      * 
-     * @return The maximum number of results to include in the response. If more results exist than the specified
+     * @return Maximum number of results to include in the response. If more results exist than the specified
      *         <code>MaxResults</code> value, a token is included in the response so that the remaining results can be
      *         retrieved.
      */
@@ -81,13 +81,13 @@ public class ListResiliencyPoliciesRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The maximum number of results to include in the response. If more results exist than the specified
+     * Maximum number of results to include in the response. If more results exist than the specified
      * <code>MaxResults</code> value, a token is included in the response so that the remaining results can be
      * retrieved.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to include in the response. If more results exist than the specified
+     *        Maximum number of results to include in the response. If more results exist than the specified
      *        <code>MaxResults</code> value, a token is included in the response so that the remaining results can be
      *        retrieved.
      * @return Returns a reference to this object so that method calls can be chained together.

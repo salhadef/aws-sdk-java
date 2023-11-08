@@ -29,6 +29,8 @@ public class OutpostMarshaller {
 
     private static final MarshallingInfo<String> OUTPOSTARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OutpostArn").build();
+    private static final MarshallingInfo<String> S3OUTPOSTARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3OutpostArn").build();
     private static final MarshallingInfo<String> OUTPOSTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("OutpostId").build();
     private static final MarshallingInfo<String> OWNERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -53,6 +55,7 @@ public class OutpostMarshaller {
 
         try {
             protocolMarshaller.marshall(outpost.getOutpostArn(), OUTPOSTARN_BINDING);
+            protocolMarshaller.marshall(outpost.getS3OutpostArn(), S3OUTPOSTARN_BINDING);
             protocolMarshaller.marshall(outpost.getOutpostId(), OUTPOSTID_BINDING);
             protocolMarshaller.marshall(outpost.getOwnerId(), OWNERID_BINDING);
             protocolMarshaller.marshall(outpost.getCapacityInBytes(), CAPACITYINBYTES_BINDING);

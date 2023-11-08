@@ -295,7 +295,7 @@ import java.util.concurrent.ExecutorService;
  * </li>
  * </ul>
  * <p>
- * <b>PlaybackKeyPair Endpoints</b>
+ * <b>Private Channel Endpoints</b>
  * </p>
  * <p>
  * For more information, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting Up
@@ -325,6 +325,19 @@ import java.util.concurrent.ExecutorService;
  * <p>
  * <a>DeletePlaybackKeyPair</a> — Deletes a specified authorization key pair. This invalidates future viewer tokens
  * generated using the key pair’s <code>privateKey</code>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>StartViewerSessionRevocation</a> — Starts the process of revoking the viewer session associated with a specified
+ * channel ARN and viewer ID. Optionally, you can provide a version to revoke viewer sessions less than and including
+ * that version.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>BatchStartViewerSessionRevocation</a> — Performs <a>StartViewerSessionRevocation</a> on multiple channel ARN and
+ * viewer ID pairs simultaneously.
  * </p>
  * </li>
  * </ul>
@@ -470,6 +483,41 @@ public class AmazonIVSAsyncClient extends AmazonIVSClient implements AmazonIVSAs
 
                 try {
                     result = executeBatchGetStreamKey(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchStartViewerSessionRevocationResult> batchStartViewerSessionRevocationAsync(
+            BatchStartViewerSessionRevocationRequest request) {
+
+        return batchStartViewerSessionRevocationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchStartViewerSessionRevocationResult> batchStartViewerSessionRevocationAsync(
+            final BatchStartViewerSessionRevocationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchStartViewerSessionRevocationRequest, BatchStartViewerSessionRevocationResult> asyncHandler) {
+        final BatchStartViewerSessionRevocationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchStartViewerSessionRevocationResult>() {
+            @Override
+            public BatchStartViewerSessionRevocationResult call() throws Exception {
+                BatchStartViewerSessionRevocationResult result = null;
+
+                try {
+                    result = executeBatchStartViewerSessionRevocation(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1196,6 +1244,39 @@ public class AmazonIVSAsyncClient extends AmazonIVSClient implements AmazonIVSAs
 
                 try {
                     result = executePutMetadata(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartViewerSessionRevocationResult> startViewerSessionRevocationAsync(StartViewerSessionRevocationRequest request) {
+
+        return startViewerSessionRevocationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartViewerSessionRevocationResult> startViewerSessionRevocationAsync(final StartViewerSessionRevocationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartViewerSessionRevocationRequest, StartViewerSessionRevocationResult> asyncHandler) {
+        final StartViewerSessionRevocationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartViewerSessionRevocationResult>() {
+            @Override
+            public StartViewerSessionRevocationResult call() throws Exception {
+                StartViewerSessionRevocationResult result = null;
+
+                try {
+                    result = executeStartViewerSessionRevocation(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

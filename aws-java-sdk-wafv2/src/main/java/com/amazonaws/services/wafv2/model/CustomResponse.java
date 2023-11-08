@@ -57,7 +57,8 @@ public class CustomResponse implements Serializable, Cloneable, StructuredPojo {
     private String customResponseBodyKey;
     /**
      * <p>
-     * The HTTP headers to use in the response. Duplicate header names are not allowed.
+     * The HTTP headers to use in the response. You can specify any header name except for <code>content-type</code>.
+     * Duplicate header names are not allowed.
      * </p>
      * <p>
      * For information about the limits on count and size for custom request and response settings, see <a
@@ -200,7 +201,8 @@ public class CustomResponse implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The HTTP headers to use in the response. Duplicate header names are not allowed.
+     * The HTTP headers to use in the response. You can specify any header name except for <code>content-type</code>.
+     * Duplicate header names are not allowed.
      * </p>
      * <p>
      * For information about the limits on count and size for custom request and response settings, see <a
@@ -208,7 +210,8 @@ public class CustomResponse implements Serializable, Cloneable, StructuredPojo {
      * Guide</i>.
      * </p>
      * 
-     * @return The HTTP headers to use in the response. Duplicate header names are not allowed. </p>
+     * @return The HTTP headers to use in the response. You can specify any header name except for
+     *         <code>content-type</code>. Duplicate header names are not allowed.</p>
      *         <p>
      *         For information about the limits on count and size for custom request and response settings, see <a
      *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF
@@ -221,7 +224,8 @@ public class CustomResponse implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The HTTP headers to use in the response. Duplicate header names are not allowed.
+     * The HTTP headers to use in the response. You can specify any header name except for <code>content-type</code>.
+     * Duplicate header names are not allowed.
      * </p>
      * <p>
      * For information about the limits on count and size for custom request and response settings, see <a
@@ -230,7 +234,8 @@ public class CustomResponse implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param responseHeaders
-     *        The HTTP headers to use in the response. Duplicate header names are not allowed. </p>
+     *        The HTTP headers to use in the response. You can specify any header name except for
+     *        <code>content-type</code>. Duplicate header names are not allowed.</p>
      *        <p>
      *        For information about the limits on count and size for custom request and response settings, see <a
      *        href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF
@@ -248,7 +253,8 @@ public class CustomResponse implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The HTTP headers to use in the response. Duplicate header names are not allowed.
+     * The HTTP headers to use in the response. You can specify any header name except for <code>content-type</code>.
+     * Duplicate header names are not allowed.
      * </p>
      * <p>
      * For information about the limits on count and size for custom request and response settings, see <a
@@ -262,7 +268,8 @@ public class CustomResponse implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param responseHeaders
-     *        The HTTP headers to use in the response. Duplicate header names are not allowed. </p>
+     *        The HTTP headers to use in the response. You can specify any header name except for
+     *        <code>content-type</code>. Duplicate header names are not allowed.</p>
      *        <p>
      *        For information about the limits on count and size for custom request and response settings, see <a
      *        href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF
@@ -282,7 +289,8 @@ public class CustomResponse implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The HTTP headers to use in the response. Duplicate header names are not allowed.
+     * The HTTP headers to use in the response. You can specify any header name except for <code>content-type</code>.
+     * Duplicate header names are not allowed.
      * </p>
      * <p>
      * For information about the limits on count and size for custom request and response settings, see <a
@@ -291,7 +299,8 @@ public class CustomResponse implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param responseHeaders
-     *        The HTTP headers to use in the response. Duplicate header names are not allowed. </p>
+     *        The HTTP headers to use in the response. You can specify any header name except for
+     *        <code>content-type</code>. Duplicate header names are not allowed.</p>
      *        <p>
      *        For information about the limits on count and size for custom request and response settings, see <a
      *        href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF

@@ -47,6 +47,20 @@ public class ExecutionStartedEventDetails implements Serializable, Cloneable, St
      * </p>
      */
     private String roleArn;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) that identifies a state machine alias used for starting the state machine
+     * execution.
+     * </p>
+     */
+    private String stateMachineAliasArn;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) that identifies a state machine version used for starting the state machine
+     * execution.
+     * </p>
+     */
+    private String stateMachineVersionArn;
 
     /**
      * <p>
@@ -175,6 +189,98 @@ public class ExecutionStartedEventDetails implements Serializable, Cloneable, St
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) that identifies a state machine alias used for starting the state machine
+     * execution.
+     * </p>
+     * 
+     * @param stateMachineAliasArn
+     *        The Amazon Resource Name (ARN) that identifies a state machine alias used for starting the state machine
+     *        execution.
+     */
+
+    public void setStateMachineAliasArn(String stateMachineAliasArn) {
+        this.stateMachineAliasArn = stateMachineAliasArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) that identifies a state machine alias used for starting the state machine
+     * execution.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) that identifies a state machine alias used for starting the state machine
+     *         execution.
+     */
+
+    public String getStateMachineAliasArn() {
+        return this.stateMachineAliasArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) that identifies a state machine alias used for starting the state machine
+     * execution.
+     * </p>
+     * 
+     * @param stateMachineAliasArn
+     *        The Amazon Resource Name (ARN) that identifies a state machine alias used for starting the state machine
+     *        execution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExecutionStartedEventDetails withStateMachineAliasArn(String stateMachineAliasArn) {
+        setStateMachineAliasArn(stateMachineAliasArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) that identifies a state machine version used for starting the state machine
+     * execution.
+     * </p>
+     * 
+     * @param stateMachineVersionArn
+     *        The Amazon Resource Name (ARN) that identifies a state machine version used for starting the state machine
+     *        execution.
+     */
+
+    public void setStateMachineVersionArn(String stateMachineVersionArn) {
+        this.stateMachineVersionArn = stateMachineVersionArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) that identifies a state machine version used for starting the state machine
+     * execution.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) that identifies a state machine version used for starting the state
+     *         machine execution.
+     */
+
+    public String getStateMachineVersionArn() {
+        return this.stateMachineVersionArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) that identifies a state machine version used for starting the state machine
+     * execution.
+     * </p>
+     * 
+     * @param stateMachineVersionArn
+     *        The Amazon Resource Name (ARN) that identifies a state machine version used for starting the state machine
+     *        execution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExecutionStartedEventDetails withStateMachineVersionArn(String stateMachineVersionArn) {
+        setStateMachineVersionArn(stateMachineVersionArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -191,7 +297,11 @@ public class ExecutionStartedEventDetails implements Serializable, Cloneable, St
         if (getInputDetails() != null)
             sb.append("InputDetails: ").append(getInputDetails()).append(",");
         if (getRoleArn() != null)
-            sb.append("RoleArn: ").append(getRoleArn());
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
+        if (getStateMachineAliasArn() != null)
+            sb.append("StateMachineAliasArn: ").append(getStateMachineAliasArn()).append(",");
+        if (getStateMachineVersionArn() != null)
+            sb.append("StateMachineVersionArn: ").append(getStateMachineVersionArn());
         sb.append("}");
         return sb.toString();
     }
@@ -218,6 +328,14 @@ public class ExecutionStartedEventDetails implements Serializable, Cloneable, St
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
             return false;
+        if (other.getStateMachineAliasArn() == null ^ this.getStateMachineAliasArn() == null)
+            return false;
+        if (other.getStateMachineAliasArn() != null && other.getStateMachineAliasArn().equals(this.getStateMachineAliasArn()) == false)
+            return false;
+        if (other.getStateMachineVersionArn() == null ^ this.getStateMachineVersionArn() == null)
+            return false;
+        if (other.getStateMachineVersionArn() != null && other.getStateMachineVersionArn().equals(this.getStateMachineVersionArn()) == false)
+            return false;
         return true;
     }
 
@@ -229,6 +347,8 @@ public class ExecutionStartedEventDetails implements Serializable, Cloneable, St
         hashCode = prime * hashCode + ((getInput() == null) ? 0 : getInput().hashCode());
         hashCode = prime * hashCode + ((getInputDetails() == null) ? 0 : getInputDetails().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getStateMachineAliasArn() == null) ? 0 : getStateMachineAliasArn().hashCode());
+        hashCode = prime * hashCode + ((getStateMachineVersionArn() == null) ? 0 : getStateMachineVersionArn().hashCode());
         return hashCode;
     }
 

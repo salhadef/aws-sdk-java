@@ -23,7 +23,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * resource. For example, <code>/images/daily-ad.jpg</code>.
  * </p>
  * <p>
- * This is used only in the <a>FieldToMatch</a> specification for some web request component types.
+ * This is used in the <a>FieldToMatch</a> specification for some web request component types.
  * </p>
  * <p>
  * JSON specification: <code>"UriPath": {}</code>

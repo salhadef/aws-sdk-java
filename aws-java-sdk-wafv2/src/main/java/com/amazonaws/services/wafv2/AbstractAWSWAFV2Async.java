@@ -211,6 +211,34 @@ public class AbstractAWSWAFV2Async extends AbstractAWSWAFV2 implements AWSWAFV2A
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeAllManagedProductsResult> describeAllManagedProductsAsync(DescribeAllManagedProductsRequest request) {
+
+        return describeAllManagedProductsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAllManagedProductsResult> describeAllManagedProductsAsync(DescribeAllManagedProductsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeAllManagedProductsRequest, DescribeAllManagedProductsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeManagedProductsByVendorResult> describeManagedProductsByVendorAsync(
+            DescribeManagedProductsByVendorRequest request) {
+
+        return describeManagedProductsByVendorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeManagedProductsByVendorResult> describeManagedProductsByVendorAsync(
+            DescribeManagedProductsByVendorRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeManagedProductsByVendorRequest, DescribeManagedProductsByVendorResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeManagedRuleGroupResult> describeManagedRuleGroupAsync(DescribeManagedRuleGroupRequest request) {
 
         return describeManagedRuleGroupAsync(request, null);

@@ -45,6 +45,7 @@ import com.amazonaws.services.nimblestudio.waiters.AmazonNimbleStudioWaiters;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.nimblestudio.model.*;
+
 import com.amazonaws.services.nimblestudio.model.transform.*;
 
 /**

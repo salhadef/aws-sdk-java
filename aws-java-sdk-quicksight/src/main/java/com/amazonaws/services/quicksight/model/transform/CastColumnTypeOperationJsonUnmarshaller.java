@@ -56,6 +56,10 @@ public class CastColumnTypeOperationJsonUnmarshaller implements Unmarshaller<Cas
                     context.nextToken();
                     castColumnTypeOperation.setNewColumnType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SubType", targetDepth)) {
+                    context.nextToken();
+                    castColumnTypeOperation.setSubType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Format", targetDepth)) {
                     context.nextToken();
                     castColumnTypeOperation.setFormat(context.getUnmarshaller(String.class).unmarshall(context));

@@ -63,6 +63,7 @@ public class AbstractAmazonMWAA implements AmazonMWAA {
     }
 
     @Override
+    @Deprecated
     public PublishMetricsResult publishMetrics(PublishMetricsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

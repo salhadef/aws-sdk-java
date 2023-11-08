@@ -34,7 +34,9 @@ public class ListUserProfilesRequest extends com.amazonaws.AmazonWebServiceReque
     private String nextToken;
     /**
      * <p>
-     * Returns a list up to a specified limit.
+     * The total number of items to return in the response. If the total number of items available is more than the
+     * value specified, a <code>NextToken</code> is provided in the response. To resume pagination, provide the
+     * <code>NextToken</code> value in the as part of a subsequent call. The default value is 10.
      * </p>
      */
     private Integer maxResults;
@@ -111,11 +113,15 @@ public class ListUserProfilesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Returns a list up to a specified limit.
+     * The total number of items to return in the response. If the total number of items available is more than the
+     * value specified, a <code>NextToken</code> is provided in the response. To resume pagination, provide the
+     * <code>NextToken</code> value in the as part of a subsequent call. The default value is 10.
      * </p>
      * 
      * @param maxResults
-     *        Returns a list up to a specified limit.
+     *        The total number of items to return in the response. If the total number of items available is more than
+     *        the value specified, a <code>NextToken</code> is provided in the response. To resume pagination, provide
+     *        the <code>NextToken</code> value in the as part of a subsequent call. The default value is 10.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -124,10 +130,14 @@ public class ListUserProfilesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Returns a list up to a specified limit.
+     * The total number of items to return in the response. If the total number of items available is more than the
+     * value specified, a <code>NextToken</code> is provided in the response. To resume pagination, provide the
+     * <code>NextToken</code> value in the as part of a subsequent call. The default value is 10.
      * </p>
      * 
-     * @return Returns a list up to a specified limit.
+     * @return The total number of items to return in the response. If the total number of items available is more than
+     *         the value specified, a <code>NextToken</code> is provided in the response. To resume pagination, provide
+     *         the <code>NextToken</code> value in the as part of a subsequent call. The default value is 10.
      */
 
     public Integer getMaxResults() {
@@ -136,11 +146,15 @@ public class ListUserProfilesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Returns a list up to a specified limit.
+     * The total number of items to return in the response. If the total number of items available is more than the
+     * value specified, a <code>NextToken</code> is provided in the response. To resume pagination, provide the
+     * <code>NextToken</code> value in the as part of a subsequent call. The default value is 10.
      * </p>
      * 
      * @param maxResults
-     *        Returns a list up to a specified limit.
+     *        The total number of items to return in the response. If the total number of items available is more than
+     *        the value specified, a <code>NextToken</code> is provided in the response. To resume pagination, provide
+     *        the <code>NextToken</code> value in the as part of a subsequent call. The default value is 10.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

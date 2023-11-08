@@ -25,6 +25,12 @@ public class DescribeVodSourceResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
+     * The ad break opportunities within the VOD source.
+     * </p>
+     */
+    private java.util.List<AdBreakOpportunity> adBreakOpportunities;
+    /**
+     * <p>
      * The ARN of the VOD source.
      * </p>
      */
@@ -68,6 +74,76 @@ public class DescribeVodSourceResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      */
     private String vodSourceName;
+
+    /**
+     * <p>
+     * The ad break opportunities within the VOD source.
+     * </p>
+     * 
+     * @return The ad break opportunities within the VOD source.
+     */
+
+    public java.util.List<AdBreakOpportunity> getAdBreakOpportunities() {
+        return adBreakOpportunities;
+    }
+
+    /**
+     * <p>
+     * The ad break opportunities within the VOD source.
+     * </p>
+     * 
+     * @param adBreakOpportunities
+     *        The ad break opportunities within the VOD source.
+     */
+
+    public void setAdBreakOpportunities(java.util.Collection<AdBreakOpportunity> adBreakOpportunities) {
+        if (adBreakOpportunities == null) {
+            this.adBreakOpportunities = null;
+            return;
+        }
+
+        this.adBreakOpportunities = new java.util.ArrayList<AdBreakOpportunity>(adBreakOpportunities);
+    }
+
+    /**
+     * <p>
+     * The ad break opportunities within the VOD source.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAdBreakOpportunities(java.util.Collection)} or {@link #withAdBreakOpportunities(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param adBreakOpportunities
+     *        The ad break opportunities within the VOD source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeVodSourceResult withAdBreakOpportunities(AdBreakOpportunity... adBreakOpportunities) {
+        if (this.adBreakOpportunities == null) {
+            setAdBreakOpportunities(new java.util.ArrayList<AdBreakOpportunity>(adBreakOpportunities.length));
+        }
+        for (AdBreakOpportunity ele : adBreakOpportunities) {
+            this.adBreakOpportunities.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ad break opportunities within the VOD source.
+     * </p>
+     * 
+     * @param adBreakOpportunities
+     *        The ad break opportunities within the VOD source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeVodSourceResult withAdBreakOpportunities(java.util.Collection<AdBreakOpportunity> adBreakOpportunities) {
+        setAdBreakOpportunities(adBreakOpportunities);
+        return this;
+    }
 
     /**
      * <p>
@@ -437,6 +513,8 @@ public class DescribeVodSourceResult extends com.amazonaws.AmazonWebServiceResul
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAdBreakOpportunities() != null)
+            sb.append("AdBreakOpportunities: ").append(getAdBreakOpportunities()).append(",");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
         if (getCreationTime() != null)
@@ -465,6 +543,10 @@ public class DescribeVodSourceResult extends com.amazonaws.AmazonWebServiceResul
         if (obj instanceof DescribeVodSourceResult == false)
             return false;
         DescribeVodSourceResult other = (DescribeVodSourceResult) obj;
+        if (other.getAdBreakOpportunities() == null ^ this.getAdBreakOpportunities() == null)
+            return false;
+        if (other.getAdBreakOpportunities() != null && other.getAdBreakOpportunities().equals(this.getAdBreakOpportunities()) == false)
+            return false;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
@@ -501,6 +583,7 @@ public class DescribeVodSourceResult extends com.amazonaws.AmazonWebServiceResul
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAdBreakOpportunities() == null) ? 0 : getAdBreakOpportunities().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getHttpPackageConfigurations() == null) ? 0 : getHttpPackageConfigurations().hashCode());

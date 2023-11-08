@@ -44,6 +44,7 @@ import com.amazonaws.services.synthetics.AWSSyntheticsClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.synthetics.model.*;
+
 import com.amazonaws.services.synthetics.model.transform.*;
 
 /**

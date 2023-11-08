@@ -227,13 +227,13 @@ public class FrameworkMetadata implements Serializable, Cloneable, StructuredPoj
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: ").append(getName()).append(",");
+            sb.append("Name: ").append("***Sensitive Data Redacted***").append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getLogo() != null)
             sb.append("Logo: ").append(getLogo()).append(",");
         if (getComplianceType() != null)
-            sb.append("ComplianceType: ").append(getComplianceType());
+            sb.append("ComplianceType: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

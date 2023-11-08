@@ -25,18 +25,18 @@ public class RegisterComputeResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The details of the compute resource you registered to the specified fleet.
+     * The details of the compute resource you registered.
      * </p>
      */
     private Compute compute;
 
     /**
      * <p>
-     * The details of the compute resource you registered to the specified fleet.
+     * The details of the compute resource you registered.
      * </p>
      * 
      * @param compute
-     *        The details of the compute resource you registered to the specified fleet.
+     *        The details of the compute resource you registered.
      */
 
     public void setCompute(Compute compute) {
@@ -45,10 +45,10 @@ public class RegisterComputeResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The details of the compute resource you registered to the specified fleet.
+     * The details of the compute resource you registered.
      * </p>
      * 
-     * @return The details of the compute resource you registered to the specified fleet.
+     * @return The details of the compute resource you registered.
      */
 
     public Compute getCompute() {
@@ -57,11 +57,11 @@ public class RegisterComputeResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The details of the compute resource you registered to the specified fleet.
+     * The details of the compute resource you registered.
      * </p>
      * 
      * @param compute
-     *        The details of the compute resource you registered to the specified fleet.
+     *        The details of the compute resource you registered.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

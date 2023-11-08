@@ -33,10 +33,10 @@ public class ListRunTasksRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String id;
     /**
      * <p>
-     * The maximum number of run tasks to return in one page of results.
+     * Filter the list by status.
      * </p>
      */
-    private Integer maxResults;
+    private String status;
     /**
      * <p>
      * Specify the pagination token from a previous request to retrieve the next page of results.
@@ -45,10 +45,10 @@ public class ListRunTasksRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String startingToken;
     /**
      * <p>
-     * Filter the list by status.
+     * The maximum number of run tasks to return in one page of results.
      * </p>
      */
-    private String status;
+    private Integer maxResults;
 
     /**
      * <p>
@@ -87,86 +87,6 @@ public class ListRunTasksRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     public ListRunTasksRequest withId(String id) {
         setId(id);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The maximum number of run tasks to return in one page of results.
-     * </p>
-     * 
-     * @param maxResults
-     *        The maximum number of run tasks to return in one page of results.
-     */
-
-    public void setMaxResults(Integer maxResults) {
-        this.maxResults = maxResults;
-    }
-
-    /**
-     * <p>
-     * The maximum number of run tasks to return in one page of results.
-     * </p>
-     * 
-     * @return The maximum number of run tasks to return in one page of results.
-     */
-
-    public Integer getMaxResults() {
-        return this.maxResults;
-    }
-
-    /**
-     * <p>
-     * The maximum number of run tasks to return in one page of results.
-     * </p>
-     * 
-     * @param maxResults
-     *        The maximum number of run tasks to return in one page of results.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListRunTasksRequest withMaxResults(Integer maxResults) {
-        setMaxResults(maxResults);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Specify the pagination token from a previous request to retrieve the next page of results.
-     * </p>
-     * 
-     * @param startingToken
-     *        Specify the pagination token from a previous request to retrieve the next page of results.
-     */
-
-    public void setStartingToken(String startingToken) {
-        this.startingToken = startingToken;
-    }
-
-    /**
-     * <p>
-     * Specify the pagination token from a previous request to retrieve the next page of results.
-     * </p>
-     * 
-     * @return Specify the pagination token from a previous request to retrieve the next page of results.
-     */
-
-    public String getStartingToken() {
-        return this.startingToken;
-    }
-
-    /**
-     * <p>
-     * Specify the pagination token from a previous request to retrieve the next page of results.
-     * </p>
-     * 
-     * @param startingToken
-     *        Specify the pagination token from a previous request to retrieve the next page of results.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListRunTasksRequest withStartingToken(String startingToken) {
-        setStartingToken(startingToken);
         return this;
     }
 
@@ -230,6 +150,86 @@ public class ListRunTasksRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * Specify the pagination token from a previous request to retrieve the next page of results.
+     * </p>
+     * 
+     * @param startingToken
+     *        Specify the pagination token from a previous request to retrieve the next page of results.
+     */
+
+    public void setStartingToken(String startingToken) {
+        this.startingToken = startingToken;
+    }
+
+    /**
+     * <p>
+     * Specify the pagination token from a previous request to retrieve the next page of results.
+     * </p>
+     * 
+     * @return Specify the pagination token from a previous request to retrieve the next page of results.
+     */
+
+    public String getStartingToken() {
+        return this.startingToken;
+    }
+
+    /**
+     * <p>
+     * Specify the pagination token from a previous request to retrieve the next page of results.
+     * </p>
+     * 
+     * @param startingToken
+     *        Specify the pagination token from a previous request to retrieve the next page of results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListRunTasksRequest withStartingToken(String startingToken) {
+        setStartingToken(startingToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum number of run tasks to return in one page of results.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of run tasks to return in one page of results.
+     */
+
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of run tasks to return in one page of results.
+     * </p>
+     * 
+     * @return The maximum number of run tasks to return in one page of results.
+     */
+
+    public Integer getMaxResults() {
+        return this.maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of run tasks to return in one page of results.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of run tasks to return in one page of results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListRunTasksRequest withMaxResults(Integer maxResults) {
+        setMaxResults(maxResults);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -243,12 +243,12 @@ public class ListRunTasksRequest extends com.amazonaws.AmazonWebServiceRequest i
         sb.append("{");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
-        if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getStartingToken() != null)
             sb.append("StartingToken: ").append(getStartingToken()).append(",");
-        if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+        if (getMaxResults() != null)
+            sb.append("MaxResults: ").append(getMaxResults());
         sb.append("}");
         return sb.toString();
     }
@@ -267,17 +267,17 @@ public class ListRunTasksRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
-        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
+        if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
-        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         if (other.getStartingToken() == null ^ this.getStartingToken() == null)
             return false;
         if (other.getStartingToken() != null && other.getStartingToken().equals(this.getStartingToken()) == false)
             return false;
-        if (other.getStatus() == null ^ this.getStatus() == null)
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
-        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
         return true;
     }
@@ -288,9 +288,9 @@ public class ListRunTasksRequest extends com.amazonaws.AmazonWebServiceRequest i
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
-        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
-        hashCode = prime * hashCode + ((getStartingToken() == null) ? 0 : getStartingToken().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getStartingToken() == null) ? 0 : getStartingToken().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         return hashCode;
     }
 

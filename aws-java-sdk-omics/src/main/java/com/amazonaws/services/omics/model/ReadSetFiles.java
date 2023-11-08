@@ -30,12 +30,6 @@ public class ReadSetFiles implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The files' index.
-     * </p>
-     */
-    private FileInformation index;
-    /**
-     * <p>
      * The location of the first file in Amazon S3.
      * </p>
      */
@@ -46,46 +40,12 @@ public class ReadSetFiles implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private FileInformation source2;
-
     /**
      * <p>
      * The files' index.
      * </p>
-     * 
-     * @param index
-     *        The files' index.
      */
-
-    public void setIndex(FileInformation index) {
-        this.index = index;
-    }
-
-    /**
-     * <p>
-     * The files' index.
-     * </p>
-     * 
-     * @return The files' index.
-     */
-
-    public FileInformation getIndex() {
-        return this.index;
-    }
-
-    /**
-     * <p>
-     * The files' index.
-     * </p>
-     * 
-     * @param index
-     *        The files' index.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ReadSetFiles withIndex(FileInformation index) {
-        setIndex(index);
-        return this;
-    }
+    private FileInformation index;
 
     /**
      * <p>
@@ -168,6 +128,46 @@ public class ReadSetFiles implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The files' index.
+     * </p>
+     * 
+     * @param index
+     *        The files' index.
+     */
+
+    public void setIndex(FileInformation index) {
+        this.index = index;
+    }
+
+    /**
+     * <p>
+     * The files' index.
+     * </p>
+     * 
+     * @return The files' index.
+     */
+
+    public FileInformation getIndex() {
+        return this.index;
+    }
+
+    /**
+     * <p>
+     * The files' index.
+     * </p>
+     * 
+     * @param index
+     *        The files' index.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReadSetFiles withIndex(FileInformation index) {
+        setIndex(index);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -179,12 +179,12 @@ public class ReadSetFiles implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getIndex() != null)
-            sb.append("Index: ").append(getIndex()).append(",");
         if (getSource1() != null)
             sb.append("Source1: ").append(getSource1()).append(",");
         if (getSource2() != null)
-            sb.append("Source2: ").append(getSource2());
+            sb.append("Source2: ").append(getSource2()).append(",");
+        if (getIndex() != null)
+            sb.append("Index: ").append(getIndex());
         sb.append("}");
         return sb.toString();
     }
@@ -199,10 +199,6 @@ public class ReadSetFiles implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof ReadSetFiles == false)
             return false;
         ReadSetFiles other = (ReadSetFiles) obj;
-        if (other.getIndex() == null ^ this.getIndex() == null)
-            return false;
-        if (other.getIndex() != null && other.getIndex().equals(this.getIndex()) == false)
-            return false;
         if (other.getSource1() == null ^ this.getSource1() == null)
             return false;
         if (other.getSource1() != null && other.getSource1().equals(this.getSource1()) == false)
@@ -210,6 +206,10 @@ public class ReadSetFiles implements Serializable, Cloneable, StructuredPojo {
         if (other.getSource2() == null ^ this.getSource2() == null)
             return false;
         if (other.getSource2() != null && other.getSource2().equals(this.getSource2()) == false)
+            return false;
+        if (other.getIndex() == null ^ this.getIndex() == null)
+            return false;
+        if (other.getIndex() != null && other.getIndex().equals(this.getIndex()) == false)
             return false;
         return true;
     }
@@ -219,9 +219,9 @@ public class ReadSetFiles implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getIndex() == null) ? 0 : getIndex().hashCode());
         hashCode = prime * hashCode + ((getSource1() == null) ? 0 : getSource1().hashCode());
         hashCode = prime * hashCode + ((getSource2() == null) ? 0 : getSource2().hashCode());
+        hashCode = prime * hashCode + ((getIndex() == null) ? 0 : getIndex().hashCode());
         return hashCode;
     }
 

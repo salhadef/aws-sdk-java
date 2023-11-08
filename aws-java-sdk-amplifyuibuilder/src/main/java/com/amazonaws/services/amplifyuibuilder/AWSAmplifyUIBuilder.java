@@ -178,8 +178,13 @@ public interface AWSAmplifyUIBuilder {
     DeleteThemeResult deleteTheme(DeleteThemeRequest deleteThemeRequest);
 
     /**
+     * <note>
      * <p>
-     * Exchanges an access code for a token.
+     * This is for internal use.
+     * </p>
+     * </note>
+     * <p>
+     * Amplify uses this action to exchange an access code for a token.
      * </p>
      * 
      * @param exchangeCodeForTokenRequest
@@ -242,6 +247,27 @@ public interface AWSAmplifyUIBuilder {
      *      API Documentation</a>
      */
     ExportThemesResult exportThemes(ExportThemesRequest exportThemesRequest);
+
+    /**
+     * <p>
+     * Returns an existing code generation job.
+     * </p>
+     * 
+     * @param getCodegenJobRequest
+     * @return Result of the GetCodegenJob operation returned by the service.
+     * @throws InternalServerException
+     *         An internal error has occurred. Please retry your request.
+     * @throws InvalidParameterException
+     *         An invalid or out-of-range value was supplied for the input parameter.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ResourceNotFoundException
+     *         The requested resource does not exist, or access was denied.
+     * @sample AWSAmplifyUIBuilder.GetCodegenJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/GetCodegenJob" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetCodegenJobResult getCodegenJob(GetCodegenJobRequest getCodegenJobRequest);
 
     /**
      * <p>
@@ -319,6 +345,25 @@ public interface AWSAmplifyUIBuilder {
 
     /**
      * <p>
+     * Retrieves a list of code generation jobs for a specified Amplify app and backend environment.
+     * </p>
+     * 
+     * @param listCodegenJobsRequest
+     * @return Result of the ListCodegenJobs operation returned by the service.
+     * @throws InternalServerException
+     *         An internal error has occurred. Please retry your request.
+     * @throws InvalidParameterException
+     *         An invalid or out-of-range value was supplied for the input parameter.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AWSAmplifyUIBuilder.ListCodegenJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ListCodegenJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListCodegenJobsResult listCodegenJobs(ListCodegenJobsRequest listCodegenJobsRequest);
+
+    /**
+     * <p>
      * Retrieves a list of components for a specified Amplify app and backend environment.
      * </p>
      * 
@@ -386,8 +431,13 @@ public interface AWSAmplifyUIBuilder {
     PutMetadataFlagResult putMetadataFlag(PutMetadataFlagRequest putMetadataFlagRequest);
 
     /**
+     * <note>
      * <p>
-     * Refreshes a previously issued access token that might have expired.
+     * This is for internal use.
+     * </p>
+     * </note>
+     * <p>
+     * Amplify uses this action to refresh a previously issued access token that might have expired.
      * </p>
      * 
      * @param refreshTokenRequest
@@ -399,6 +449,25 @@ public interface AWSAmplifyUIBuilder {
      *      API Documentation</a>
      */
     RefreshTokenResult refreshToken(RefreshTokenRequest refreshTokenRequest);
+
+    /**
+     * <p>
+     * Starts a code generation job for a specified Amplify app and backend environment.
+     * </p>
+     * 
+     * @param startCodegenJobRequest
+     * @return Result of the StartCodegenJob operation returned by the service.
+     * @throws InternalServerException
+     *         An internal error has occurred. Please retry your request.
+     * @throws InvalidParameterException
+     *         An invalid or out-of-range value was supplied for the input parameter.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AWSAmplifyUIBuilder.StartCodegenJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/StartCodegenJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartCodegenJobResult startCodegenJob(StartCodegenJobRequest startCodegenJobRequest);
 
     /**
      * <p>

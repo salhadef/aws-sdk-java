@@ -80,6 +80,12 @@ public class LogGroupJsonUnmarshaller implements Unmarshaller<LogGroup, JsonUnma
                     context.nextToken();
                     logGroup.setDataProtectionStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("inheritedProperties", targetDepth)) {
+                    context.nextToken();
+                    logGroup.setInheritedProperties(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

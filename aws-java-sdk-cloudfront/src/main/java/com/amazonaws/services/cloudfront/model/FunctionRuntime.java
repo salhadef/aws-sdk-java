@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum FunctionRuntime {
 
-    CloudfrontJs10("cloudfront-js-1.0");
+    CloudfrontJs10("cloudfront-js-1.0"),
+    CloudfrontJs20("cloudfront-js-2.0");
 
     private String value;
 

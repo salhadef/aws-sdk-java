@@ -255,6 +255,174 @@ public interface AmazonTextract {
 
     /**
      * <p>
+     * Creates an adapter, which can be fine-tuned for enhanced performance on user provided documents. Takes an
+     * AdapterName and FeatureType. Currently the only supported feature type is <code>QUERIES</code>. You can also
+     * provide a Description, Tags, and a ClientRequestToken. You can choose whether or not the adapter should be
+     * AutoUpdated with the AutoUpdate argument. By default, AutoUpdate is set to DISABLED.
+     * </p>
+     * 
+     * @param createAdapterRequest
+     * @return Result of the CreateAdapter operation returned by the service.
+     * @throws InvalidParameterException
+     *         An input parameter violated a constraint. For example, in synchronous operations, an
+     *         <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or
+     *         <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your
+     *         parameter before calling the API operation again.
+     * @throws AccessDeniedException
+     *         You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or
+     *         IAM role to perform the operation.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Textract.
+     * @throws InternalServerErrorException
+     *         Amazon Textract experienced a service issue. Try your call again.
+     * @throws IdempotentParameterMismatchException
+     *         A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the
+     *         other input parameters is different from the previous call to the operation.
+     * @throws ThrottlingException
+     *         Amazon Textract is temporarily unable to process the request. Try your call again.
+     * @throws LimitExceededException
+     *         An Amazon Textract service limit was exceeded. For example, if you start too many asynchronous jobs
+     *         concurrently, calls to start operations (<code>StartDocumentTextDetection</code>, for example) raise a
+     *         LimitExceededException exception (HTTP status code: 400) until the number of concurrently running jobs is
+     *         below the Amazon Textract service limit.
+     * @throws ValidationException
+     *         Indicates that a request was not valid. Check request for proper formatting.
+     * @throws ServiceQuotaExceededException
+     *         Returned when a request cannot be completed as it would exceed a maximum service quota.
+     * @sample AmazonTextract.CreateAdapter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/CreateAdapter" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateAdapterResult createAdapter(CreateAdapterRequest createAdapterRequest);
+
+    /**
+     * <p>
+     * Creates a new version of an adapter. Operates on a provided AdapterId and a specified dataset provided via the
+     * DatasetConfig argument. Requires that you specify an Amazon S3 bucket with the OutputConfig argument. You can
+     * provide an optional KMSKeyId, an optional ClientRequestToken, and optional tags.
+     * </p>
+     * 
+     * @param createAdapterVersionRequest
+     * @return Result of the CreateAdapterVersion operation returned by the service.
+     * @throws InvalidParameterException
+     *         An input parameter violated a constraint. For example, in synchronous operations, an
+     *         <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or
+     *         <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your
+     *         parameter before calling the API operation again.
+     * @throws InvalidS3ObjectException
+     *         Amazon Textract is unable to access the S3 object that's specified in the request. for more information,
+     *         <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to
+     *         Amazon S3</a> For troubleshooting information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a>
+     * @throws InvalidKMSKeyException
+     *         Indicates you do not have decrypt permissions with the KMS key entered, or the KMS key was entered
+     *         incorrectly.
+     * @throws AccessDeniedException
+     *         You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or
+     *         IAM role to perform the operation.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Textract.
+     * @throws InternalServerErrorException
+     *         Amazon Textract experienced a service issue. Try your call again.
+     * @throws IdempotentParameterMismatchException
+     *         A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the
+     *         other input parameters is different from the previous call to the operation.
+     * @throws ThrottlingException
+     *         Amazon Textract is temporarily unable to process the request. Try your call again.
+     * @throws LimitExceededException
+     *         An Amazon Textract service limit was exceeded. For example, if you start too many asynchronous jobs
+     *         concurrently, calls to start operations (<code>StartDocumentTextDetection</code>, for example) raise a
+     *         LimitExceededException exception (HTTP status code: 400) until the number of concurrently running jobs is
+     *         below the Amazon Textract service limit.
+     * @throws ValidationException
+     *         Indicates that a request was not valid. Check request for proper formatting.
+     * @throws ServiceQuotaExceededException
+     *         Returned when a request cannot be completed as it would exceed a maximum service quota.
+     * @throws ResourceNotFoundException
+     *         Returned when an operation tried to access a nonexistent resource.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @sample AmazonTextract.CreateAdapterVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/CreateAdapterVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateAdapterVersionResult createAdapterVersion(CreateAdapterVersionRequest createAdapterVersionRequest);
+
+    /**
+     * <p>
+     * Deletes an Amazon Textract adapter. Takes an AdapterId and deletes the adapter specified by the ID.
+     * </p>
+     * 
+     * @param deleteAdapterRequest
+     * @return Result of the DeleteAdapter operation returned by the service.
+     * @throws InvalidParameterException
+     *         An input parameter violated a constraint. For example, in synchronous operations, an
+     *         <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or
+     *         <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your
+     *         parameter before calling the API operation again.
+     * @throws AccessDeniedException
+     *         You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or
+     *         IAM role to perform the operation.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Textract.
+     * @throws InternalServerErrorException
+     *         Amazon Textract experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Textract is temporarily unable to process the request. Try your call again.
+     * @throws ValidationException
+     *         Indicates that a request was not valid. Check request for proper formatting.
+     * @throws ResourceNotFoundException
+     *         Returned when an operation tried to access a nonexistent resource.
+     * @sample AmazonTextract.DeleteAdapter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/DeleteAdapter" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteAdapterResult deleteAdapter(DeleteAdapterRequest deleteAdapterRequest);
+
+    /**
+     * <p>
+     * Deletes an Amazon Textract adapter version. Requires that you specify both an AdapterId and a AdapterVersion.
+     * Deletes the adapter version specified by the AdapterId and the AdapterVersion.
+     * </p>
+     * 
+     * @param deleteAdapterVersionRequest
+     * @return Result of the DeleteAdapterVersion operation returned by the service.
+     * @throws InvalidParameterException
+     *         An input parameter violated a constraint. For example, in synchronous operations, an
+     *         <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or
+     *         <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your
+     *         parameter before calling the API operation again.
+     * @throws AccessDeniedException
+     *         You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or
+     *         IAM role to perform the operation.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Textract.
+     * @throws InternalServerErrorException
+     *         Amazon Textract experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Textract is temporarily unable to process the request. Try your call again.
+     * @throws ValidationException
+     *         Indicates that a request was not valid. Check request for proper formatting.
+     * @throws ResourceNotFoundException
+     *         Returned when an operation tried to access a nonexistent resource.
+     * @sample AmazonTextract.DeleteAdapterVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/DeleteAdapterVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteAdapterVersionResult deleteAdapterVersion(DeleteAdapterVersionRequest deleteAdapterVersionRequest);
+
+    /**
+     * <p>
      * Detects text in the input document. Amazon Textract can detect lines of text and the words that make up a line of
      * text. The input document must be in one of the following image formats: JPEG, PNG, PDF, or TIFF.
      * <code>DetectDocumentText</code> returns the detected text in an array of <a>Block</a> objects.
@@ -310,6 +478,72 @@ public interface AmazonTextract {
      *      API Documentation</a>
      */
     DetectDocumentTextResult detectDocumentText(DetectDocumentTextRequest detectDocumentTextRequest);
+
+    /**
+     * <p>
+     * Gets configuration information for an adapter specified by an AdapterId, returning information on AdapterName,
+     * Description, CreationTime, AutoUpdate status, and FeatureTypes.
+     * </p>
+     * 
+     * @param getAdapterRequest
+     * @return Result of the GetAdapter operation returned by the service.
+     * @throws InvalidParameterException
+     *         An input parameter violated a constraint. For example, in synchronous operations, an
+     *         <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or
+     *         <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your
+     *         parameter before calling the API operation again.
+     * @throws AccessDeniedException
+     *         You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or
+     *         IAM role to perform the operation.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Textract.
+     * @throws InternalServerErrorException
+     *         Amazon Textract experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Textract is temporarily unable to process the request. Try your call again.
+     * @throws ValidationException
+     *         Indicates that a request was not valid. Check request for proper formatting.
+     * @throws ResourceNotFoundException
+     *         Returned when an operation tried to access a nonexistent resource.
+     * @sample AmazonTextract.GetAdapter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetAdapter" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetAdapterResult getAdapter(GetAdapterRequest getAdapterRequest);
+
+    /**
+     * <p>
+     * Gets configuration information for the specified adapter version, including: AdapterId, AdapterVersion,
+     * FeatureTypes, Status, StatusMessage, DatasetConfig, KMSKeyId, OutputConfig, Tags and EvaluationMetrics.
+     * </p>
+     * 
+     * @param getAdapterVersionRequest
+     * @return Result of the GetAdapterVersion operation returned by the service.
+     * @throws InvalidParameterException
+     *         An input parameter violated a constraint. For example, in synchronous operations, an
+     *         <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or
+     *         <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your
+     *         parameter before calling the API operation again.
+     * @throws AccessDeniedException
+     *         You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or
+     *         IAM role to perform the operation.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Textract.
+     * @throws InternalServerErrorException
+     *         Amazon Textract experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Textract is temporarily unable to process the request. Try your call again.
+     * @throws ValidationException
+     *         Indicates that a request was not valid. Check request for proper formatting.
+     * @throws ResourceNotFoundException
+     *         Returned when an operation tried to access a nonexistent resource.
+     * @sample AmazonTextract.GetAdapterVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetAdapterVersion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetAdapterVersionResult getAdapterVersion(GetAdapterVersionRequest getAdapterVersionRequest);
 
     /**
      * <p>
@@ -649,6 +883,100 @@ public interface AmazonTextract {
 
     /**
      * <p>
+     * List all version of an adapter that meet the specified filtration criteria.
+     * </p>
+     * 
+     * @param listAdapterVersionsRequest
+     * @return Result of the ListAdapterVersions operation returned by the service.
+     * @throws InvalidParameterException
+     *         An input parameter violated a constraint. For example, in synchronous operations, an
+     *         <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or
+     *         <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your
+     *         parameter before calling the API operation again.
+     * @throws AccessDeniedException
+     *         You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or
+     *         IAM role to perform the operation.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Textract.
+     * @throws InternalServerErrorException
+     *         Amazon Textract experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Textract is temporarily unable to process the request. Try your call again.
+     * @throws ValidationException
+     *         Indicates that a request was not valid. Check request for proper formatting.
+     * @throws ResourceNotFoundException
+     *         Returned when an operation tried to access a nonexistent resource.
+     * @sample AmazonTextract.ListAdapterVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/ListAdapterVersions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListAdapterVersionsResult listAdapterVersions(ListAdapterVersionsRequest listAdapterVersionsRequest);
+
+    /**
+     * <p>
+     * Lists all adapters that match the specified filtration criteria.
+     * </p>
+     * 
+     * @param listAdaptersRequest
+     * @return Result of the ListAdapters operation returned by the service.
+     * @throws InvalidParameterException
+     *         An input parameter violated a constraint. For example, in synchronous operations, an
+     *         <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or
+     *         <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your
+     *         parameter before calling the API operation again.
+     * @throws AccessDeniedException
+     *         You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or
+     *         IAM role to perform the operation.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Textract.
+     * @throws InternalServerErrorException
+     *         Amazon Textract experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Textract is temporarily unable to process the request. Try your call again.
+     * @throws ValidationException
+     *         Indicates that a request was not valid. Check request for proper formatting.
+     * @sample AmazonTextract.ListAdapters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/ListAdapters" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListAdaptersResult listAdapters(ListAdaptersRequest listAdaptersRequest);
+
+    /**
+     * <p>
+     * Lists all tags for an Amazon Textract resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Returned when an operation tried to access a nonexistent resource.
+     * @throws InvalidParameterException
+     *         An input parameter violated a constraint. For example, in synchronous operations, an
+     *         <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or
+     *         <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your
+     *         parameter before calling the API operation again.
+     * @throws AccessDeniedException
+     *         You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or
+     *         IAM role to perform the operation.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Textract.
+     * @throws InternalServerErrorException
+     *         Amazon Textract experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Textract is temporarily unable to process the request. Try your call again.
+     * @throws ValidationException
+     *         Indicates that a request was not valid. Check request for proper formatting.
+     * @sample AmazonTextract.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
      * Starts the asynchronous analysis of an input document for relationships between detected items such as key-value
      * pairs, tables, and selection elements.
      * </p>
@@ -948,6 +1276,107 @@ public interface AmazonTextract {
      *      API Documentation</a>
      */
     StartLendingAnalysisResult startLendingAnalysis(StartLendingAnalysisRequest startLendingAnalysisRequest);
+
+    /**
+     * <p>
+     * Adds one or more tags to the specified resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Returned when an operation tried to access a nonexistent resource.
+     * @throws InvalidParameterException
+     *         An input parameter violated a constraint. For example, in synchronous operations, an
+     *         <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or
+     *         <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your
+     *         parameter before calling the API operation again.
+     * @throws ServiceQuotaExceededException
+     *         Returned when a request cannot be completed as it would exceed a maximum service quota.
+     * @throws AccessDeniedException
+     *         You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or
+     *         IAM role to perform the operation.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Textract.
+     * @throws InternalServerErrorException
+     *         Amazon Textract experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Textract is temporarily unable to process the request. Try your call again.
+     * @throws ValidationException
+     *         Indicates that a request was not valid. Check request for proper formatting.
+     * @sample AmazonTextract.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Removes any tags with the specified keys from the specified resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Returned when an operation tried to access a nonexistent resource.
+     * @throws InvalidParameterException
+     *         An input parameter violated a constraint. For example, in synchronous operations, an
+     *         <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or
+     *         <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your
+     *         parameter before calling the API operation again.
+     * @throws AccessDeniedException
+     *         You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or
+     *         IAM role to perform the operation.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Textract.
+     * @throws InternalServerErrorException
+     *         Amazon Textract experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Textract is temporarily unable to process the request. Try your call again.
+     * @throws ValidationException
+     *         Indicates that a request was not valid. Check request for proper formatting.
+     * @sample AmazonTextract.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Update the configuration for an adapter. FeatureTypes configurations cannot be updated. At least one new
+     * parameter must be specified as an argument.
+     * </p>
+     * 
+     * @param updateAdapterRequest
+     * @return Result of the UpdateAdapter operation returned by the service.
+     * @throws InvalidParameterException
+     *         An input parameter violated a constraint. For example, in synchronous operations, an
+     *         <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or
+     *         <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your
+     *         parameter before calling the API operation again.
+     * @throws AccessDeniedException
+     *         You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or
+     *         IAM role to perform the operation.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Textract.
+     * @throws InternalServerErrorException
+     *         Amazon Textract experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Textract is temporarily unable to process the request. Try your call again.
+     * @throws ValidationException
+     *         Indicates that a request was not valid. Check request for proper formatting.
+     * @throws ResourceNotFoundException
+     *         Returned when an operation tried to access a nonexistent resource.
+     * @sample AmazonTextract.UpdateAdapter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/UpdateAdapter" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateAdapterResult updateAdapter(UpdateAdapterRequest updateAdapterRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

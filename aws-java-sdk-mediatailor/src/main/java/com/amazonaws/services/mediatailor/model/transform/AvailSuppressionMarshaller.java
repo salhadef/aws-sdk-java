@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class AvailSuppressionMarshaller {
 
+    private static final MarshallingInfo<String> FILLPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FillPolicy").build();
     private static final MarshallingInfo<String> MODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Mode").build();
     private static final MarshallingInfo<String> VALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -48,6 +50,7 @@ public class AvailSuppressionMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(availSuppression.getFillPolicy(), FILLPOLICY_BINDING);
             protocolMarshaller.marshall(availSuppression.getMode(), MODE_BINDING);
             protocolMarshaller.marshall(availSuppression.getValue(), VALUE_BINDING);
         } catch (Exception e) {

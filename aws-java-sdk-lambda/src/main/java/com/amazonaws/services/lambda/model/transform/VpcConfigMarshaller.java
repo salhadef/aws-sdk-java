@@ -32,6 +32,8 @@ public class VpcConfigMarshaller {
             .marshallLocationName("SubnetIds").build();
     private static final MarshallingInfo<List> SECURITYGROUPIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecurityGroupIds").build();
+    private static final MarshallingInfo<Boolean> IPV6ALLOWEDFORDUALSTACK_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Ipv6AllowedForDualStack").build();
 
     private static final VpcConfigMarshaller instance = new VpcConfigMarshaller();
 
@@ -51,6 +53,7 @@ public class VpcConfigMarshaller {
         try {
             protocolMarshaller.marshall(vpcConfig.getSubnetIds(), SUBNETIDS_BINDING);
             protocolMarshaller.marshall(vpcConfig.getSecurityGroupIds(), SECURITYGROUPIDS_BINDING);
+            protocolMarshaller.marshall(vpcConfig.getIpv6AllowedForDualStack(), IPV6ALLOWEDFORDUALSTACK_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

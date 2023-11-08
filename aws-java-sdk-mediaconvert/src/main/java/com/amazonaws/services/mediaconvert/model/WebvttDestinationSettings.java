@@ -20,9 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * Settings related to WebVTT captions. WebVTT is a sidecar format that holds captions in a file that is separate from
  * the video container. Set up sidecar captions in the same output group, but different output from your video. For more
- * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html. When you
- * work directly in your JSON job specification, include this object and any required children when you set
- * destinationType to WebVTT.
+ * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/WebvttDestinationSettings"
  *      target="_top">AWS API Documentation</a>
@@ -44,13 +42,12 @@ public class WebvttDestinationSettings implements Serializable, Cloneable, Struc
      */
     private String accessibility;
     /**
-     * To use the available style, color, and position information from your input captions: Set Style passthrough
-     * (stylePassthrough) to Enabled (ENABLED). MediaConvert uses default settings when style and position information
-     * is missing from your input captions. To recreate the input captions exactly: Set Style passthrough to Strict
-     * (STRICT). MediaConvert automatically applies timing adjustments, including adjustments for frame rate conversion,
-     * ad avails, and input clipping. Your input captions format must be WebVTT. To ignore the style and position
-     * information from your input captions and use simplified output captions: Set Style passthrough to Disabled
-     * (DISABLED), or leave blank.
+     * To use the available style, color, and position information from your input captions: Set Style passthrough to
+     * Enabled. MediaConvert uses default settings when style and position information is missing from your input
+     * captions. To recreate the input captions exactly: Set Style passthrough to Strict. MediaConvert automatically
+     * applies timing adjustments, including adjustments for frame rate conversion, ad avails, and input clipping. Your
+     * input captions format must be WebVTT. To ignore the style and position information from your input captions and
+     * use simplified output captions: Set Style passthrough to Disabled, or leave blank.
      */
     private String stylePassthrough;
 
@@ -178,22 +175,21 @@ public class WebvttDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * To use the available style, color, and position information from your input captions: Set Style passthrough
-     * (stylePassthrough) to Enabled (ENABLED). MediaConvert uses default settings when style and position information
-     * is missing from your input captions. To recreate the input captions exactly: Set Style passthrough to Strict
-     * (STRICT). MediaConvert automatically applies timing adjustments, including adjustments for frame rate conversion,
-     * ad avails, and input clipping. Your input captions format must be WebVTT. To ignore the style and position
-     * information from your input captions and use simplified output captions: Set Style passthrough to Disabled
-     * (DISABLED), or leave blank.
+     * To use the available style, color, and position information from your input captions: Set Style passthrough to
+     * Enabled. MediaConvert uses default settings when style and position information is missing from your input
+     * captions. To recreate the input captions exactly: Set Style passthrough to Strict. MediaConvert automatically
+     * applies timing adjustments, including adjustments for frame rate conversion, ad avails, and input clipping. Your
+     * input captions format must be WebVTT. To ignore the style and position information from your input captions and
+     * use simplified output captions: Set Style passthrough to Disabled, or leave blank.
      * 
      * @param stylePassthrough
      *        To use the available style, color, and position information from your input captions: Set Style
-     *        passthrough (stylePassthrough) to Enabled (ENABLED). MediaConvert uses default settings when style and
-     *        position information is missing from your input captions. To recreate the input captions exactly: Set
-     *        Style passthrough to Strict (STRICT). MediaConvert automatically applies timing adjustments, including
-     *        adjustments for frame rate conversion, ad avails, and input clipping. Your input captions format must be
-     *        WebVTT. To ignore the style and position information from your input captions and use simplified output
-     *        captions: Set Style passthrough to Disabled (DISABLED), or leave blank.
+     *        passthrough to Enabled. MediaConvert uses default settings when style and position information is missing
+     *        from your input captions. To recreate the input captions exactly: Set Style passthrough to Strict.
+     *        MediaConvert automatically applies timing adjustments, including adjustments for frame rate conversion, ad
+     *        avails, and input clipping. Your input captions format must be WebVTT. To ignore the style and position
+     *        information from your input captions and use simplified output captions: Set Style passthrough to
+     *        Disabled, or leave blank.
      * @see WebvttStylePassthrough
      */
 
@@ -202,21 +198,20 @@ public class WebvttDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * To use the available style, color, and position information from your input captions: Set Style passthrough
-     * (stylePassthrough) to Enabled (ENABLED). MediaConvert uses default settings when style and position information
-     * is missing from your input captions. To recreate the input captions exactly: Set Style passthrough to Strict
-     * (STRICT). MediaConvert automatically applies timing adjustments, including adjustments for frame rate conversion,
-     * ad avails, and input clipping. Your input captions format must be WebVTT. To ignore the style and position
-     * information from your input captions and use simplified output captions: Set Style passthrough to Disabled
-     * (DISABLED), or leave blank.
+     * To use the available style, color, and position information from your input captions: Set Style passthrough to
+     * Enabled. MediaConvert uses default settings when style and position information is missing from your input
+     * captions. To recreate the input captions exactly: Set Style passthrough to Strict. MediaConvert automatically
+     * applies timing adjustments, including adjustments for frame rate conversion, ad avails, and input clipping. Your
+     * input captions format must be WebVTT. To ignore the style and position information from your input captions and
+     * use simplified output captions: Set Style passthrough to Disabled, or leave blank.
      * 
      * @return To use the available style, color, and position information from your input captions: Set Style
-     *         passthrough (stylePassthrough) to Enabled (ENABLED). MediaConvert uses default settings when style and
-     *         position information is missing from your input captions. To recreate the input captions exactly: Set
-     *         Style passthrough to Strict (STRICT). MediaConvert automatically applies timing adjustments, including
-     *         adjustments for frame rate conversion, ad avails, and input clipping. Your input captions format must be
-     *         WebVTT. To ignore the style and position information from your input captions and use simplified output
-     *         captions: Set Style passthrough to Disabled (DISABLED), or leave blank.
+     *         passthrough to Enabled. MediaConvert uses default settings when style and position information is missing
+     *         from your input captions. To recreate the input captions exactly: Set Style passthrough to Strict.
+     *         MediaConvert automatically applies timing adjustments, including adjustments for frame rate conversion,
+     *         ad avails, and input clipping. Your input captions format must be WebVTT. To ignore the style and
+     *         position information from your input captions and use simplified output captions: Set Style passthrough
+     *         to Disabled, or leave blank.
      * @see WebvttStylePassthrough
      */
 
@@ -225,22 +220,21 @@ public class WebvttDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * To use the available style, color, and position information from your input captions: Set Style passthrough
-     * (stylePassthrough) to Enabled (ENABLED). MediaConvert uses default settings when style and position information
-     * is missing from your input captions. To recreate the input captions exactly: Set Style passthrough to Strict
-     * (STRICT). MediaConvert automatically applies timing adjustments, including adjustments for frame rate conversion,
-     * ad avails, and input clipping. Your input captions format must be WebVTT. To ignore the style and position
-     * information from your input captions and use simplified output captions: Set Style passthrough to Disabled
-     * (DISABLED), or leave blank.
+     * To use the available style, color, and position information from your input captions: Set Style passthrough to
+     * Enabled. MediaConvert uses default settings when style and position information is missing from your input
+     * captions. To recreate the input captions exactly: Set Style passthrough to Strict. MediaConvert automatically
+     * applies timing adjustments, including adjustments for frame rate conversion, ad avails, and input clipping. Your
+     * input captions format must be WebVTT. To ignore the style and position information from your input captions and
+     * use simplified output captions: Set Style passthrough to Disabled, or leave blank.
      * 
      * @param stylePassthrough
      *        To use the available style, color, and position information from your input captions: Set Style
-     *        passthrough (stylePassthrough) to Enabled (ENABLED). MediaConvert uses default settings when style and
-     *        position information is missing from your input captions. To recreate the input captions exactly: Set
-     *        Style passthrough to Strict (STRICT). MediaConvert automatically applies timing adjustments, including
-     *        adjustments for frame rate conversion, ad avails, and input clipping. Your input captions format must be
-     *        WebVTT. To ignore the style and position information from your input captions and use simplified output
-     *        captions: Set Style passthrough to Disabled (DISABLED), or leave blank.
+     *        passthrough to Enabled. MediaConvert uses default settings when style and position information is missing
+     *        from your input captions. To recreate the input captions exactly: Set Style passthrough to Strict.
+     *        MediaConvert automatically applies timing adjustments, including adjustments for frame rate conversion, ad
+     *        avails, and input clipping. Your input captions format must be WebVTT. To ignore the style and position
+     *        information from your input captions and use simplified output captions: Set Style passthrough to
+     *        Disabled, or leave blank.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see WebvttStylePassthrough
      */
@@ -251,22 +245,21 @@ public class WebvttDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * To use the available style, color, and position information from your input captions: Set Style passthrough
-     * (stylePassthrough) to Enabled (ENABLED). MediaConvert uses default settings when style and position information
-     * is missing from your input captions. To recreate the input captions exactly: Set Style passthrough to Strict
-     * (STRICT). MediaConvert automatically applies timing adjustments, including adjustments for frame rate conversion,
-     * ad avails, and input clipping. Your input captions format must be WebVTT. To ignore the style and position
-     * information from your input captions and use simplified output captions: Set Style passthrough to Disabled
-     * (DISABLED), or leave blank.
+     * To use the available style, color, and position information from your input captions: Set Style passthrough to
+     * Enabled. MediaConvert uses default settings when style and position information is missing from your input
+     * captions. To recreate the input captions exactly: Set Style passthrough to Strict. MediaConvert automatically
+     * applies timing adjustments, including adjustments for frame rate conversion, ad avails, and input clipping. Your
+     * input captions format must be WebVTT. To ignore the style and position information from your input captions and
+     * use simplified output captions: Set Style passthrough to Disabled, or leave blank.
      * 
      * @param stylePassthrough
      *        To use the available style, color, and position information from your input captions: Set Style
-     *        passthrough (stylePassthrough) to Enabled (ENABLED). MediaConvert uses default settings when style and
-     *        position information is missing from your input captions. To recreate the input captions exactly: Set
-     *        Style passthrough to Strict (STRICT). MediaConvert automatically applies timing adjustments, including
-     *        adjustments for frame rate conversion, ad avails, and input clipping. Your input captions format must be
-     *        WebVTT. To ignore the style and position information from your input captions and use simplified output
-     *        captions: Set Style passthrough to Disabled (DISABLED), or leave blank.
+     *        passthrough to Enabled. MediaConvert uses default settings when style and position information is missing
+     *        from your input captions. To recreate the input captions exactly: Set Style passthrough to Strict.
+     *        MediaConvert automatically applies timing adjustments, including adjustments for frame rate conversion, ad
+     *        avails, and input clipping. Your input captions format must be WebVTT. To ignore the style and position
+     *        information from your input captions and use simplified output captions: Set Style passthrough to
+     *        Disabled, or leave blank.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see WebvttStylePassthrough
      */

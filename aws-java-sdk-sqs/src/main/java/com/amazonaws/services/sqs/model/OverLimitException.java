@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * The specified action violates a limit. For example, <code>ReceiveMessage</code> returns this error if the maximum
- * number of inflight messages is reached and <code>AddPermission</code> returns this error if the maximum number of
+ * number of in flight messages is reached and <code>AddPermission</code> returns this error if the maximum number of
  * permissions for the queue is reached.
  * </p>
  */

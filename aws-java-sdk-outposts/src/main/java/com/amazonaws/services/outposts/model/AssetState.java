@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum AssetState {
 
     ACTIVE("ACTIVE"),
-    RETIRING("RETIRING");
+    RETIRING("RETIRING"),
+    ISOLATED("ISOLATED");
 
     private String value;
 

@@ -44,6 +44,7 @@ import com.amazonaws.services.licensemanager.AWSLicenseManagerClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.licensemanager.model.*;
+
 import com.amazonaws.services.licensemanager.model.transform.*;
 
 /**

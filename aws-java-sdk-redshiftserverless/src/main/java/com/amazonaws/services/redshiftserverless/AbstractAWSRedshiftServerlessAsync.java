@@ -41,6 +41,19 @@ public class AbstractAWSRedshiftServerlessAsync extends AbstractAWSRedshiftServe
     }
 
     @Override
+    public java.util.concurrent.Future<CreateCustomDomainAssociationResult> createCustomDomainAssociationAsync(CreateCustomDomainAssociationRequest request) {
+
+        return createCustomDomainAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCustomDomainAssociationResult> createCustomDomainAssociationAsync(CreateCustomDomainAssociationRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateCustomDomainAssociationRequest, CreateCustomDomainAssociationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateEndpointAccessResult> createEndpointAccessAsync(CreateEndpointAccessRequest request) {
 
         return createEndpointAccessAsync(request, null);
@@ -101,6 +114,19 @@ public class AbstractAWSRedshiftServerlessAsync extends AbstractAWSRedshiftServe
     @Override
     public java.util.concurrent.Future<CreateWorkgroupResult> createWorkgroupAsync(CreateWorkgroupRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateWorkgroupRequest, CreateWorkgroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCustomDomainAssociationResult> deleteCustomDomainAssociationAsync(DeleteCustomDomainAssociationRequest request) {
+
+        return deleteCustomDomainAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCustomDomainAssociationResult> deleteCustomDomainAssociationAsync(DeleteCustomDomainAssociationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteCustomDomainAssociationRequest, DeleteCustomDomainAssociationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -192,6 +218,19 @@ public class AbstractAWSRedshiftServerlessAsync extends AbstractAWSRedshiftServe
     @Override
     public java.util.concurrent.Future<GetCredentialsResult> getCredentialsAsync(GetCredentialsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetCredentialsRequest, GetCredentialsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCustomDomainAssociationResult> getCustomDomainAssociationAsync(GetCustomDomainAssociationRequest request) {
+
+        return getCustomDomainAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCustomDomainAssociationResult> getCustomDomainAssociationAsync(GetCustomDomainAssociationRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetCustomDomainAssociationRequest, GetCustomDomainAssociationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -296,6 +335,19 @@ public class AbstractAWSRedshiftServerlessAsync extends AbstractAWSRedshiftServe
     @Override
     public java.util.concurrent.Future<GetWorkgroupResult> getWorkgroupAsync(GetWorkgroupRequest request,
             com.amazonaws.handlers.AsyncHandler<GetWorkgroupRequest, GetWorkgroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCustomDomainAssociationsResult> listCustomDomainAssociationsAsync(ListCustomDomainAssociationsRequest request) {
+
+        return listCustomDomainAssociationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCustomDomainAssociationsResult> listCustomDomainAssociationsAsync(ListCustomDomainAssociationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListCustomDomainAssociationsRequest, ListCustomDomainAssociationsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -478,6 +530,19 @@ public class AbstractAWSRedshiftServerlessAsync extends AbstractAWSRedshiftServe
     @Override
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCustomDomainAssociationResult> updateCustomDomainAssociationAsync(UpdateCustomDomainAssociationRequest request) {
+
+        return updateCustomDomainAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCustomDomainAssociationResult> updateCustomDomainAssociationAsync(UpdateCustomDomainAssociationRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateCustomDomainAssociationRequest, UpdateCustomDomainAssociationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

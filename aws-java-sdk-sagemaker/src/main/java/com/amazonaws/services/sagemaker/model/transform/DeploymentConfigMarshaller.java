@@ -31,6 +31,8 @@ public class DeploymentConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BlueGreenUpdatePolicy").build();
     private static final MarshallingInfo<StructuredPojo> AUTOROLLBACKCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutoRollbackConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> ROLLINGUPDATEPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RollingUpdatePolicy").build();
 
     private static final DeploymentConfigMarshaller instance = new DeploymentConfigMarshaller();
 
@@ -50,6 +52,7 @@ public class DeploymentConfigMarshaller {
         try {
             protocolMarshaller.marshall(deploymentConfig.getBlueGreenUpdatePolicy(), BLUEGREENUPDATEPOLICY_BINDING);
             protocolMarshaller.marshall(deploymentConfig.getAutoRollbackConfiguration(), AUTOROLLBACKCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(deploymentConfig.getRollingUpdatePolicy(), ROLLINGUPDATEPOLICY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -84,6 +84,24 @@ public class OpenZFSFileSystemConfigurationJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     openZFSFileSystemConfiguration.setRootVolumeId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("PreferredSubnetId", targetDepth)) {
+                    context.nextToken();
+                    openZFSFileSystemConfiguration.setPreferredSubnetId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("EndpointIpAddressRange", targetDepth)) {
+                    context.nextToken();
+                    openZFSFileSystemConfiguration.setEndpointIpAddressRange(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("RouteTableIds", targetDepth)) {
+                    context.nextToken();
+                    openZFSFileSystemConfiguration.setRouteTableIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("EndpointIpAddress", targetDepth)) {
+                    context.nextToken();
+                    openZFSFileSystemConfiguration.setEndpointIpAddress(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

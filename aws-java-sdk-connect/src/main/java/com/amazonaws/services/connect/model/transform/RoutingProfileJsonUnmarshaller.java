@@ -91,6 +91,22 @@ public class RoutingProfileJsonUnmarshaller implements Unmarshaller<RoutingProfi
                     context.nextToken();
                     routingProfile.setNumberOfAssociatedUsers(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("AgentAvailabilityTimer", targetDepth)) {
+                    context.nextToken();
+                    routingProfile.setAgentAvailabilityTimer(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    context.nextToken();
+                    routingProfile.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("LastModifiedRegion", targetDepth)) {
+                    context.nextToken();
+                    routingProfile.setLastModifiedRegion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("IsDefault", targetDepth)) {
+                    context.nextToken();
+                    routingProfile.setIsDefault(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

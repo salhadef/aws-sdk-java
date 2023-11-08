@@ -83,6 +83,11 @@ public class AbstractAmazonAthena implements AmazonAthena {
     }
 
     @Override
+    public DeleteCapacityReservationResult deleteCapacityReservation(DeleteCapacityReservationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteDataCatalogResult deleteDataCatalog(DeleteDataCatalogRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

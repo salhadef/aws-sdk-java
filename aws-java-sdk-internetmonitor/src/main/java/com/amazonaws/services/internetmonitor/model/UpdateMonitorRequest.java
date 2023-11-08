@@ -33,16 +33,17 @@ public class UpdateMonitorRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String monitorName;
     /**
      * <p>
-     * The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs).
+     * The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs). Resources can
+     * be VPCs, NLBs, Amazon CloudFront distributions, or Amazon WorkSpaces directories.
      * </p>
      * <p>
-     * You can add a combination of Amazon Virtual Private Clouds (VPCs) and Amazon CloudFront distributions, or you can
-     * add Amazon WorkSpaces directories. You can't add all three types of resources.
+     * You can add a combination of VPCs and CloudFront distributions, or you can add WorkSpaces directories, or you can
+     * add NLBs. You can't add NLBs or WorkSpaces directories together with any other resources.
      * </p>
      * <note>
      * <p>
-     * If you add only VPC resources, at least one VPC must have an Internet Gateway attached to it, to make sure that
-     * it has internet connectivity.
+     * If you add only Amazon Virtual Private Clouds resources, at least one VPC must have an Internet Gateway attached
+     * to it, to make sure that it has internet connectivity.
      * </p>
      * </note>
      */
@@ -70,9 +71,9 @@ public class UpdateMonitorRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String clientToken;
     /**
      * <p>
-     * The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where
-     * clients access your application resources from and the network or ASN, such as an internet service provider, that
-     * clients access the resources through.
+     * The maximum number of city-networks to monitor for your application. A city-network is the location (city) where
+     * clients access your application resources from and the ASN or network provider, such as an internet service
+     * provider (ISP), that clients access the resources through. Setting this limit can help control billing costs.
      * </p>
      */
     private Integer maxCityNetworksToMonitor;
@@ -85,10 +86,30 @@ public class UpdateMonitorRequest extends com.amazonaws.AmazonWebServiceRequest 
     private InternetMeasurementsLogDelivery internetMeasurementsLogDelivery;
     /**
      * <p>
-     * The percentage of the internet-facing traffic for your application that you want to monitor with this monitor.
+     * The percentage of the internet-facing traffic for your application that you want to monitor with this monitor. If
+     * you set a city-networks maximum, that limit overrides the traffic percentage that you set.
+     * </p>
+     * <p>
+     * To learn more, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMTrafficPercentage.html">Choosing an
+     * application traffic percentage to monitor </a> in the Amazon CloudWatch Internet Monitor section of the
+     * <i>CloudWatch User Guide</i>.
      * </p>
      */
     private Integer trafficPercentageToMonitor;
+    /**
+     * <p>
+     * The list of health score thresholds. A threshold percentage for health scores, along with other configuration
+     * information, determines when Internet Monitor creates a health event when there's an internet issue that affects
+     * your application end users.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview"
+     * > Change health event thresholds</a> in the Internet Monitor section of the <i>CloudWatch User Guide</i>.
+     * </p>
+     */
+    private HealthEventsConfig healthEventsConfig;
 
     /**
      * <p>
@@ -132,28 +153,30 @@ public class UpdateMonitorRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs).
+     * The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs). Resources can
+     * be VPCs, NLBs, Amazon CloudFront distributions, or Amazon WorkSpaces directories.
      * </p>
      * <p>
-     * You can add a combination of Amazon Virtual Private Clouds (VPCs) and Amazon CloudFront distributions, or you can
-     * add Amazon WorkSpaces directories. You can't add all three types of resources.
+     * You can add a combination of VPCs and CloudFront distributions, or you can add WorkSpaces directories, or you can
+     * add NLBs. You can't add NLBs or WorkSpaces directories together with any other resources.
      * </p>
      * <note>
      * <p>
-     * If you add only VPC resources, at least one VPC must have an Internet Gateway attached to it, to make sure that
-     * it has internet connectivity.
+     * If you add only Amazon Virtual Private Clouds resources, at least one VPC must have an Internet Gateway attached
+     * to it, to make sure that it has internet connectivity.
      * </p>
      * </note>
      * 
-     * @return The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs).</p>
+     * @return The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs).
+     *         Resources can be VPCs, NLBs, Amazon CloudFront distributions, or Amazon WorkSpaces directories.</p>
      *         <p>
-     *         You can add a combination of Amazon Virtual Private Clouds (VPCs) and Amazon CloudFront distributions, or
-     *         you can add Amazon WorkSpaces directories. You can't add all three types of resources.
+     *         You can add a combination of VPCs and CloudFront distributions, or you can add WorkSpaces directories, or
+     *         you can add NLBs. You can't add NLBs or WorkSpaces directories together with any other resources.
      *         </p>
      *         <note>
      *         <p>
-     *         If you add only VPC resources, at least one VPC must have an Internet Gateway attached to it, to make
-     *         sure that it has internet connectivity.
+     *         If you add only Amazon Virtual Private Clouds resources, at least one VPC must have an Internet Gateway
+     *         attached to it, to make sure that it has internet connectivity.
      *         </p>
      */
 
@@ -163,29 +186,31 @@ public class UpdateMonitorRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs).
+     * The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs). Resources can
+     * be VPCs, NLBs, Amazon CloudFront distributions, or Amazon WorkSpaces directories.
      * </p>
      * <p>
-     * You can add a combination of Amazon Virtual Private Clouds (VPCs) and Amazon CloudFront distributions, or you can
-     * add Amazon WorkSpaces directories. You can't add all three types of resources.
+     * You can add a combination of VPCs and CloudFront distributions, or you can add WorkSpaces directories, or you can
+     * add NLBs. You can't add NLBs or WorkSpaces directories together with any other resources.
      * </p>
      * <note>
      * <p>
-     * If you add only VPC resources, at least one VPC must have an Internet Gateway attached to it, to make sure that
-     * it has internet connectivity.
+     * If you add only Amazon Virtual Private Clouds resources, at least one VPC must have an Internet Gateway attached
+     * to it, to make sure that it has internet connectivity.
      * </p>
      * </note>
      * 
      * @param resourcesToAdd
-     *        The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs).</p>
+     *        The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs).
+     *        Resources can be VPCs, NLBs, Amazon CloudFront distributions, or Amazon WorkSpaces directories.</p>
      *        <p>
-     *        You can add a combination of Amazon Virtual Private Clouds (VPCs) and Amazon CloudFront distributions, or
-     *        you can add Amazon WorkSpaces directories. You can't add all three types of resources.
+     *        You can add a combination of VPCs and CloudFront distributions, or you can add WorkSpaces directories, or
+     *        you can add NLBs. You can't add NLBs or WorkSpaces directories together with any other resources.
      *        </p>
      *        <note>
      *        <p>
-     *        If you add only VPC resources, at least one VPC must have an Internet Gateway attached to it, to make sure
-     *        that it has internet connectivity.
+     *        If you add only Amazon Virtual Private Clouds resources, at least one VPC must have an Internet Gateway
+     *        attached to it, to make sure that it has internet connectivity.
      *        </p>
      */
 
@@ -200,16 +225,17 @@ public class UpdateMonitorRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs).
+     * The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs). Resources can
+     * be VPCs, NLBs, Amazon CloudFront distributions, or Amazon WorkSpaces directories.
      * </p>
      * <p>
-     * You can add a combination of Amazon Virtual Private Clouds (VPCs) and Amazon CloudFront distributions, or you can
-     * add Amazon WorkSpaces directories. You can't add all three types of resources.
+     * You can add a combination of VPCs and CloudFront distributions, or you can add WorkSpaces directories, or you can
+     * add NLBs. You can't add NLBs or WorkSpaces directories together with any other resources.
      * </p>
      * <note>
      * <p>
-     * If you add only VPC resources, at least one VPC must have an Internet Gateway attached to it, to make sure that
-     * it has internet connectivity.
+     * If you add only Amazon Virtual Private Clouds resources, at least one VPC must have an Internet Gateway attached
+     * to it, to make sure that it has internet connectivity.
      * </p>
      * </note>
      * <p>
@@ -219,15 +245,16 @@ public class UpdateMonitorRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param resourcesToAdd
-     *        The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs).</p>
+     *        The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs).
+     *        Resources can be VPCs, NLBs, Amazon CloudFront distributions, or Amazon WorkSpaces directories.</p>
      *        <p>
-     *        You can add a combination of Amazon Virtual Private Clouds (VPCs) and Amazon CloudFront distributions, or
-     *        you can add Amazon WorkSpaces directories. You can't add all three types of resources.
+     *        You can add a combination of VPCs and CloudFront distributions, or you can add WorkSpaces directories, or
+     *        you can add NLBs. You can't add NLBs or WorkSpaces directories together with any other resources.
      *        </p>
      *        <note>
      *        <p>
-     *        If you add only VPC resources, at least one VPC must have an Internet Gateway attached to it, to make sure
-     *        that it has internet connectivity.
+     *        If you add only Amazon Virtual Private Clouds resources, at least one VPC must have an Internet Gateway
+     *        attached to it, to make sure that it has internet connectivity.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -244,29 +271,31 @@ public class UpdateMonitorRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs).
+     * The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs). Resources can
+     * be VPCs, NLBs, Amazon CloudFront distributions, or Amazon WorkSpaces directories.
      * </p>
      * <p>
-     * You can add a combination of Amazon Virtual Private Clouds (VPCs) and Amazon CloudFront distributions, or you can
-     * add Amazon WorkSpaces directories. You can't add all three types of resources.
+     * You can add a combination of VPCs and CloudFront distributions, or you can add WorkSpaces directories, or you can
+     * add NLBs. You can't add NLBs or WorkSpaces directories together with any other resources.
      * </p>
      * <note>
      * <p>
-     * If you add only VPC resources, at least one VPC must have an Internet Gateway attached to it, to make sure that
-     * it has internet connectivity.
+     * If you add only Amazon Virtual Private Clouds resources, at least one VPC must have an Internet Gateway attached
+     * to it, to make sure that it has internet connectivity.
      * </p>
      * </note>
      * 
      * @param resourcesToAdd
-     *        The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs).</p>
+     *        The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs).
+     *        Resources can be VPCs, NLBs, Amazon CloudFront distributions, or Amazon WorkSpaces directories.</p>
      *        <p>
-     *        You can add a combination of Amazon Virtual Private Clouds (VPCs) and Amazon CloudFront distributions, or
-     *        you can add Amazon WorkSpaces directories. You can't add all three types of resources.
+     *        You can add a combination of VPCs and CloudFront distributions, or you can add WorkSpaces directories, or
+     *        you can add NLBs. You can't add NLBs or WorkSpaces directories together with any other resources.
      *        </p>
      *        <note>
      *        <p>
-     *        If you add only VPC resources, at least one VPC must have an Internet Gateway attached to it, to make sure
-     *        that it has internet connectivity.
+     *        If you add only Amazon Virtual Private Clouds resources, at least one VPC must have an Internet Gateway
+     *        attached to it, to make sure that it has internet connectivity.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -469,15 +498,16 @@ public class UpdateMonitorRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where
-     * clients access your application resources from and the network or ASN, such as an internet service provider, that
-     * clients access the resources through.
+     * The maximum number of city-networks to monitor for your application. A city-network is the location (city) where
+     * clients access your application resources from and the ASN or network provider, such as an internet service
+     * provider (ISP), that clients access the resources through. Setting this limit can help control billing costs.
      * </p>
      * 
      * @param maxCityNetworksToMonitor
-     *        The maximum number of city-networks to monitor for your resources. A city-network is the location (city)
-     *        where clients access your application resources from and the network or ASN, such as an internet service
-     *        provider, that clients access the resources through.
+     *        The maximum number of city-networks to monitor for your application. A city-network is the location (city)
+     *        where clients access your application resources from and the ASN or network provider, such as an internet
+     *        service provider (ISP), that clients access the resources through. Setting this limit can help control
+     *        billing costs.
      */
 
     public void setMaxCityNetworksToMonitor(Integer maxCityNetworksToMonitor) {
@@ -486,14 +516,15 @@ public class UpdateMonitorRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where
-     * clients access your application resources from and the network or ASN, such as an internet service provider, that
-     * clients access the resources through.
+     * The maximum number of city-networks to monitor for your application. A city-network is the location (city) where
+     * clients access your application resources from and the ASN or network provider, such as an internet service
+     * provider (ISP), that clients access the resources through. Setting this limit can help control billing costs.
      * </p>
      * 
-     * @return The maximum number of city-networks to monitor for your resources. A city-network is the location (city)
-     *         where clients access your application resources from and the network or ASN, such as an internet service
-     *         provider, that clients access the resources through.
+     * @return The maximum number of city-networks to monitor for your application. A city-network is the location
+     *         (city) where clients access your application resources from and the ASN or network provider, such as an
+     *         internet service provider (ISP), that clients access the resources through. Setting this limit can help
+     *         control billing costs.
      */
 
     public Integer getMaxCityNetworksToMonitor() {
@@ -502,15 +533,16 @@ public class UpdateMonitorRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where
-     * clients access your application resources from and the network or ASN, such as an internet service provider, that
-     * clients access the resources through.
+     * The maximum number of city-networks to monitor for your application. A city-network is the location (city) where
+     * clients access your application resources from and the ASN or network provider, such as an internet service
+     * provider (ISP), that clients access the resources through. Setting this limit can help control billing costs.
      * </p>
      * 
      * @param maxCityNetworksToMonitor
-     *        The maximum number of city-networks to monitor for your resources. A city-network is the location (city)
-     *        where clients access your application resources from and the network or ASN, such as an internet service
-     *        provider, that clients access the resources through.
+     *        The maximum number of city-networks to monitor for your application. A city-network is the location (city)
+     *        where clients access your application resources from and the ASN or network provider, such as an internet
+     *        service provider (ISP), that clients access the resources through. Setting this limit can help control
+     *        billing costs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -567,12 +599,24 @@ public class UpdateMonitorRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The percentage of the internet-facing traffic for your application that you want to monitor with this monitor.
+     * The percentage of the internet-facing traffic for your application that you want to monitor with this monitor. If
+     * you set a city-networks maximum, that limit overrides the traffic percentage that you set.
+     * </p>
+     * <p>
+     * To learn more, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMTrafficPercentage.html">Choosing an
+     * application traffic percentage to monitor </a> in the Amazon CloudWatch Internet Monitor section of the
+     * <i>CloudWatch User Guide</i>.
      * </p>
      * 
      * @param trafficPercentageToMonitor
      *        The percentage of the internet-facing traffic for your application that you want to monitor with this
-     *        monitor.
+     *        monitor. If you set a city-networks maximum, that limit overrides the traffic percentage that you set.</p>
+     *        <p>
+     *        To learn more, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMTrafficPercentage.html">Choosing an
+     *        application traffic percentage to monitor </a> in the Amazon CloudWatch Internet Monitor section of the
+     *        <i>CloudWatch User Guide</i>.
      */
 
     public void setTrafficPercentageToMonitor(Integer trafficPercentageToMonitor) {
@@ -581,11 +625,24 @@ public class UpdateMonitorRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The percentage of the internet-facing traffic for your application that you want to monitor with this monitor.
+     * The percentage of the internet-facing traffic for your application that you want to monitor with this monitor. If
+     * you set a city-networks maximum, that limit overrides the traffic percentage that you set.
+     * </p>
+     * <p>
+     * To learn more, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMTrafficPercentage.html">Choosing an
+     * application traffic percentage to monitor </a> in the Amazon CloudWatch Internet Monitor section of the
+     * <i>CloudWatch User Guide</i>.
      * </p>
      * 
      * @return The percentage of the internet-facing traffic for your application that you want to monitor with this
-     *         monitor.
+     *         monitor. If you set a city-networks maximum, that limit overrides the traffic percentage that you
+     *         set.</p>
+     *         <p>
+     *         To learn more, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMTrafficPercentage.html">Choosing
+     *         an application traffic percentage to monitor </a> in the Amazon CloudWatch Internet Monitor section of
+     *         the <i>CloudWatch User Guide</i>.
      */
 
     public Integer getTrafficPercentageToMonitor() {
@@ -594,17 +651,108 @@ public class UpdateMonitorRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The percentage of the internet-facing traffic for your application that you want to monitor with this monitor.
+     * The percentage of the internet-facing traffic for your application that you want to monitor with this monitor. If
+     * you set a city-networks maximum, that limit overrides the traffic percentage that you set.
+     * </p>
+     * <p>
+     * To learn more, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMTrafficPercentage.html">Choosing an
+     * application traffic percentage to monitor </a> in the Amazon CloudWatch Internet Monitor section of the
+     * <i>CloudWatch User Guide</i>.
      * </p>
      * 
      * @param trafficPercentageToMonitor
      *        The percentage of the internet-facing traffic for your application that you want to monitor with this
-     *        monitor.
+     *        monitor. If you set a city-networks maximum, that limit overrides the traffic percentage that you set.</p>
+     *        <p>
+     *        To learn more, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMTrafficPercentage.html">Choosing an
+     *        application traffic percentage to monitor </a> in the Amazon CloudWatch Internet Monitor section of the
+     *        <i>CloudWatch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateMonitorRequest withTrafficPercentageToMonitor(Integer trafficPercentageToMonitor) {
         setTrafficPercentageToMonitor(trafficPercentageToMonitor);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of health score thresholds. A threshold percentage for health scores, along with other configuration
+     * information, determines when Internet Monitor creates a health event when there's an internet issue that affects
+     * your application end users.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview"
+     * > Change health event thresholds</a> in the Internet Monitor section of the <i>CloudWatch User Guide</i>.
+     * </p>
+     * 
+     * @param healthEventsConfig
+     *        The list of health score thresholds. A threshold percentage for health scores, along with other
+     *        configuration information, determines when Internet Monitor creates a health event when there's an
+     *        internet issue that affects your application end users.</p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview"
+     *        > Change health event thresholds</a> in the Internet Monitor section of the <i>CloudWatch User Guide</i>.
+     */
+
+    public void setHealthEventsConfig(HealthEventsConfig healthEventsConfig) {
+        this.healthEventsConfig = healthEventsConfig;
+    }
+
+    /**
+     * <p>
+     * The list of health score thresholds. A threshold percentage for health scores, along with other configuration
+     * information, determines when Internet Monitor creates a health event when there's an internet issue that affects
+     * your application end users.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview"
+     * > Change health event thresholds</a> in the Internet Monitor section of the <i>CloudWatch User Guide</i>.
+     * </p>
+     * 
+     * @return The list of health score thresholds. A threshold percentage for health scores, along with other
+     *         configuration information, determines when Internet Monitor creates a health event when there's an
+     *         internet issue that affects your application end users.</p>
+     *         <p>
+     *         For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview"
+     *         > Change health event thresholds</a> in the Internet Monitor section of the <i>CloudWatch User Guide</i>.
+     */
+
+    public HealthEventsConfig getHealthEventsConfig() {
+        return this.healthEventsConfig;
+    }
+
+    /**
+     * <p>
+     * The list of health score thresholds. A threshold percentage for health scores, along with other configuration
+     * information, determines when Internet Monitor creates a health event when there's an internet issue that affects
+     * your application end users.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview"
+     * > Change health event thresholds</a> in the Internet Monitor section of the <i>CloudWatch User Guide</i>.
+     * </p>
+     * 
+     * @param healthEventsConfig
+     *        The list of health score thresholds. A threshold percentage for health scores, along with other
+     *        configuration information, determines when Internet Monitor creates a health event when there's an
+     *        internet issue that affects your application end users.</p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview"
+     *        > Change health event thresholds</a> in the Internet Monitor section of the <i>CloudWatch User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateMonitorRequest withHealthEventsConfig(HealthEventsConfig healthEventsConfig) {
+        setHealthEventsConfig(healthEventsConfig);
         return this;
     }
 
@@ -635,7 +783,9 @@ public class UpdateMonitorRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getInternetMeasurementsLogDelivery() != null)
             sb.append("InternetMeasurementsLogDelivery: ").append(getInternetMeasurementsLogDelivery()).append(",");
         if (getTrafficPercentageToMonitor() != null)
-            sb.append("TrafficPercentageToMonitor: ").append(getTrafficPercentageToMonitor());
+            sb.append("TrafficPercentageToMonitor: ").append(getTrafficPercentageToMonitor()).append(",");
+        if (getHealthEventsConfig() != null)
+            sb.append("HealthEventsConfig: ").append(getHealthEventsConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -683,6 +833,10 @@ public class UpdateMonitorRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getTrafficPercentageToMonitor() != null && other.getTrafficPercentageToMonitor().equals(this.getTrafficPercentageToMonitor()) == false)
             return false;
+        if (other.getHealthEventsConfig() == null ^ this.getHealthEventsConfig() == null)
+            return false;
+        if (other.getHealthEventsConfig() != null && other.getHealthEventsConfig().equals(this.getHealthEventsConfig()) == false)
+            return false;
         return true;
     }
 
@@ -699,6 +853,7 @@ public class UpdateMonitorRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getMaxCityNetworksToMonitor() == null) ? 0 : getMaxCityNetworksToMonitor().hashCode());
         hashCode = prime * hashCode + ((getInternetMeasurementsLogDelivery() == null) ? 0 : getInternetMeasurementsLogDelivery().hashCode());
         hashCode = prime * hashCode + ((getTrafficPercentageToMonitor() == null) ? 0 : getTrafficPercentageToMonitor().hashCode());
+        hashCode = prime * hashCode + ((getHealthEventsConfig() == null) ? 0 : getHealthEventsConfig().hashCode());
         return hashCode;
     }
 

@@ -62,6 +62,13 @@ public class PivotTableFieldOptionsJsonUnmarshaller implements Unmarshaller<Pivo
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("CollapseStateOptions", targetDepth)) {
+                    context.nextToken();
+                    pivotTableFieldOptions.setCollapseStateOptions(new ListUnmarshaller<PivotTableFieldCollapseStateOption>(
+                            PivotTableFieldCollapseStateOptionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

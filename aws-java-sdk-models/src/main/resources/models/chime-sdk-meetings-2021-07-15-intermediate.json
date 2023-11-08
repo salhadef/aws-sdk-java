@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientMutationMethods", "ClientConstructors" ],
+    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientConstructors", "ClientMutationMethods" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -191,6 +191,14 @@
         "exceptionName" : "ServiceUnavailableException",
         "documentation" : "<p>The service is currently unavailable.</p>",
         "httpStatusCode" : 503
+      }, {
+        "exceptionName" : "ServiceFailureException",
+        "documentation" : "<p>The service encountered an unexpected error.</p>",
+        "httpStatusCode" : 500
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p>The number of customer requests exceeds the request rate limit.</p>",
+        "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -298,6 +306,10 @@
         "documentation" : "<p>The input parameters don't match the service's restrictions.</p>",
         "httpStatusCode" : 400
       }, {
+        "exceptionName" : "ConflictException",
+        "documentation" : "<p>Multiple instances of the same request have been made simultaneously.</p>",
+        "httpStatusCode" : 409
+      }, {
         "exceptionName" : "ForbiddenException",
         "documentation" : "<p>The client is permanently forbidden from making the request.</p>",
         "httpStatusCode" : 403
@@ -358,6 +370,10 @@
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The input parameters don't match the service's restrictions.</p>",
         "httpStatusCode" : 400
+      }, {
+        "exceptionName" : "ConflictException",
+        "documentation" : "<p>Multiple instances of the same request have been made simultaneously.</p>",
+        "httpStatusCode" : 409
       }, {
         "exceptionName" : "ForbiddenException",
         "documentation" : "<p>The client is permanently forbidden from making the request.</p>",
@@ -721,6 +737,34 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
+        "exceptionName" : "BadRequestException",
+        "documentation" : "<p>The input parameters don't match the service's restrictions.</p>",
+        "httpStatusCode" : 400
+      }, {
+        "exceptionName" : "ForbiddenException",
+        "documentation" : "<p>The client is permanently forbidden from making the request.</p>",
+        "httpStatusCode" : 403
+      }, {
+        "exceptionName" : "UnauthorizedException",
+        "documentation" : "<p>The user isn't authorized to request a resource.</p>",
+        "httpStatusCode" : 401
+      }, {
+        "exceptionName" : "LimitExceededException",
+        "documentation" : "<p>The request exceeds the resource limit.</p>",
+        "httpStatusCode" : 400
+      }, {
+        "exceptionName" : "ServiceUnavailableException",
+        "documentation" : "<p>The service is currently unavailable.</p>",
+        "httpStatusCode" : 503
+      }, {
+        "exceptionName" : "ServiceFailureException",
+        "documentation" : "<p>The service encountered an unexpected error.</p>",
+        "httpStatusCode" : 500
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p>The number of customer requests exceeds the request rate limit.</p>",
+        "httpStatusCode" : 429
+      }, {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The resource that you want to tag couldn't be found.</p>",
         "httpStatusCode" : 404
@@ -896,6 +940,30 @@
         "documentation" : "<p>The input parameters don't match the service's restrictions.</p>",
         "httpStatusCode" : 400
       }, {
+        "exceptionName" : "ForbiddenException",
+        "documentation" : "<p>The client is permanently forbidden from making the request.</p>",
+        "httpStatusCode" : 403
+      }, {
+        "exceptionName" : "UnauthorizedException",
+        "documentation" : "<p>The user isn't authorized to request a resource.</p>",
+        "httpStatusCode" : 401
+      }, {
+        "exceptionName" : "LimitExceededException",
+        "documentation" : "<p>The request exceeds the resource limit.</p>",
+        "httpStatusCode" : 400
+      }, {
+        "exceptionName" : "ServiceUnavailableException",
+        "documentation" : "<p>The service is currently unavailable.</p>",
+        "httpStatusCode" : 503
+      }, {
+        "exceptionName" : "ServiceFailureException",
+        "documentation" : "<p>The service encountered an unexpected error.</p>",
+        "httpStatusCode" : 500
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p>The number of customer requests exceeds the request rate limit.</p>",
+        "httpStatusCode" : 429
+      }, {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The resource that you want to tag couldn't be found.</p>",
         "httpStatusCode" : 404
@@ -940,6 +1008,30 @@
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The input parameters don't match the service's restrictions.</p>",
         "httpStatusCode" : 400
+      }, {
+        "exceptionName" : "ForbiddenException",
+        "documentation" : "<p>The client is permanently forbidden from making the request.</p>",
+        "httpStatusCode" : 403
+      }, {
+        "exceptionName" : "UnauthorizedException",
+        "documentation" : "<p>The user isn't authorized to request a resource.</p>",
+        "httpStatusCode" : 401
+      }, {
+        "exceptionName" : "LimitExceededException",
+        "documentation" : "<p>The request exceeds the resource limit.</p>",
+        "httpStatusCode" : 400
+      }, {
+        "exceptionName" : "ServiceUnavailableException",
+        "documentation" : "<p>The service is currently unavailable.</p>",
+        "httpStatusCode" : 503
+      }, {
+        "exceptionName" : "ServiceFailureException",
+        "documentation" : "<p>The service encountered an unexpected error.</p>",
+        "httpStatusCode" : 500
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p>The number of customer requests exceeds the request rate limit.</p>",
+        "httpStatusCode" : 429
       }, {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The resource that you want to tag couldn't be found.</p>",
@@ -1001,6 +1093,14 @@
         "exceptionName" : "ServiceUnavailableException",
         "documentation" : "<p>The service is currently unavailable.</p>",
         "httpStatusCode" : 503
+      }, {
+        "exceptionName" : "ServiceFailureException",
+        "documentation" : "<p>The service encountered an unexpected error.</p>",
+        "httpStatusCode" : 500
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p>The number of customer requests exceeds the request rate limit.</p>",
+        "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -27669,6 +27769,7 @@
   },
   "exceptionUnmarshallerImpl" : null,
   "fileHeader" : "/*\n * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
+  "hasShapes" : true,
   "hasWaiters" : false,
   "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AmazonChimeSDKMeetingsException",

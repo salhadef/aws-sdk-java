@@ -77,6 +77,8 @@ public class JobMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("schedulingConfig").build();
     private static final MarshallingInfo<List> SCHEDULEDJOBROLLOUTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("scheduledJobRollouts").build();
+    private static final MarshallingInfo<List> DESTINATIONPACKAGEVERSIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("destinationPackageVersions").build();
 
     private static final JobMarshaller instance = new JobMarshaller();
 
@@ -118,6 +120,7 @@ public class JobMarshaller {
             protocolMarshaller.marshall(job.getIsConcurrent(), ISCONCURRENT_BINDING);
             protocolMarshaller.marshall(job.getSchedulingConfig(), SCHEDULINGCONFIG_BINDING);
             protocolMarshaller.marshall(job.getScheduledJobRollouts(), SCHEDULEDJOBROLLOUTS_BINDING);
+            protocolMarshaller.marshall(job.getDestinationPackageVersions(), DESTINATIONPACKAGEVERSIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

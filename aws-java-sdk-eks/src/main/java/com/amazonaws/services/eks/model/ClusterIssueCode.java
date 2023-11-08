@@ -25,7 +25,20 @@ public enum ClusterIssueCode {
     ConfigurationConflict("ConfigurationConflict"),
     InternalFailure("InternalFailure"),
     ResourceLimitExceeded("ResourceLimitExceeded"),
-    ResourceNotFound("ResourceNotFound");
+    ResourceNotFound("ResourceNotFound"),
+    IamRoleNotFound("IamRoleNotFound"),
+    VpcNotFound("VpcNotFound"),
+    InsufficientFreeAddresses("InsufficientFreeAddresses"),
+    Ec2ServiceNotSubscribed("Ec2ServiceNotSubscribed"),
+    Ec2SubnetNotFound("Ec2SubnetNotFound"),
+    Ec2SecurityGroupNotFound("Ec2SecurityGroupNotFound"),
+    KmsGrantRevoked("KmsGrantRevoked"),
+    KmsKeyNotFound("KmsKeyNotFound"),
+    KmsKeyMarkedForDeletion("KmsKeyMarkedForDeletion"),
+    KmsKeyDisabled("KmsKeyDisabled"),
+    StsRegionalEndpointDisabled("StsRegionalEndpointDisabled"),
+    UnsupportedVersion("UnsupportedVersion"),
+    Other("Other");
 
     private String value;
 

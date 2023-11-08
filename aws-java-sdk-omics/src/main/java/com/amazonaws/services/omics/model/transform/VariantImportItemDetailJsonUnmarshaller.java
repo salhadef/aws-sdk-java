@@ -48,13 +48,13 @@ public class VariantImportItemDetailJsonUnmarshaller implements Unmarshaller<Var
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("jobStatus", targetDepth)) {
-                    context.nextToken();
-                    variantImportItemDetail.setJobStatus(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("source", targetDepth)) {
                     context.nextToken();
                     variantImportItemDetail.setSource(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("jobStatus", targetDepth)) {
+                    context.nextToken();
+                    variantImportItemDetail.setJobStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("statusMessage", targetDepth)) {
                     context.nextToken();

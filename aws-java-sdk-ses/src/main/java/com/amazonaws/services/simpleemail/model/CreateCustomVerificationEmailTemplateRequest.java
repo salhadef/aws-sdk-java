@@ -49,9 +49,9 @@ public class CreateCustomVerificationEmailTemplateRequest extends com.amazonaws.
     /**
      * <p>
      * The content of the custom verification email. The total size of the email must be less than 10 MB. The message
-     * body may contain HTML, with some limitations. For more information, see <a href=
-     * "https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html#custom-verification-emails-faq"
-     * >Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer Guide</i>.
+     * body may contain HTML, with some limitations. For more information, see <a
+     * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Custom
+     * Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer Guide</i>.
      * </p>
      */
     private String templateContent;
@@ -192,15 +192,15 @@ public class CreateCustomVerificationEmailTemplateRequest extends com.amazonaws.
     /**
      * <p>
      * The content of the custom verification email. The total size of the email must be less than 10 MB. The message
-     * body may contain HTML, with some limitations. For more information, see <a href=
-     * "https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html#custom-verification-emails-faq"
-     * >Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer Guide</i>.
+     * body may contain HTML, with some limitations. For more information, see <a
+     * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Custom
+     * Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer Guide</i>.
      * </p>
      * 
      * @param templateContent
      *        The content of the custom verification email. The total size of the email must be less than 10 MB. The
      *        message body may contain HTML, with some limitations. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html#custom-verification-emails-faq"
+     *        "https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom"
      *        >Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer Guide</i>.
      */
 
@@ -211,14 +211,14 @@ public class CreateCustomVerificationEmailTemplateRequest extends com.amazonaws.
     /**
      * <p>
      * The content of the custom verification email. The total size of the email must be less than 10 MB. The message
-     * body may contain HTML, with some limitations. For more information, see <a href=
-     * "https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html#custom-verification-emails-faq"
-     * >Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer Guide</i>.
+     * body may contain HTML, with some limitations. For more information, see <a
+     * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Custom
+     * Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer Guide</i>.
      * </p>
      * 
      * @return The content of the custom verification email. The total size of the email must be less than 10 MB. The
      *         message body may contain HTML, with some limitations. For more information, see <a href=
-     *         "https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html#custom-verification-emails-faq"
+     *         "https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom"
      *         >Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer Guide</i>.
      */
 
@@ -229,15 +229,15 @@ public class CreateCustomVerificationEmailTemplateRequest extends com.amazonaws.
     /**
      * <p>
      * The content of the custom verification email. The total size of the email must be less than 10 MB. The message
-     * body may contain HTML, with some limitations. For more information, see <a href=
-     * "https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html#custom-verification-emails-faq"
-     * >Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer Guide</i>.
+     * body may contain HTML, with some limitations. For more information, see <a
+     * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Custom
+     * Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer Guide</i>.
      * </p>
      * 
      * @param templateContent
      *        The content of the custom verification email. The total size of the email must be less than 10 MB. The
      *        message body may contain HTML, with some limitations. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html#custom-verification-emails-faq"
+     *        "https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom"
      *        >Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

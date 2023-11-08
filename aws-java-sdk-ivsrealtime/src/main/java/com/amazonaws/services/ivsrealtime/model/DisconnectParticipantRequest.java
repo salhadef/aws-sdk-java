@@ -27,7 +27,8 @@ public class DisconnectParticipantRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Identifier of the participant to be disconnected. This is returned by <a>CreateParticipantToken</a>.
+     * Identifier of the participant to be disconnected. This is assigned by IVS and returned by
+     * <a>CreateParticipantToken</a>.
      * </p>
      */
     private String participantId;
@@ -46,11 +47,13 @@ public class DisconnectParticipantRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Identifier of the participant to be disconnected. This is returned by <a>CreateParticipantToken</a>.
+     * Identifier of the participant to be disconnected. This is assigned by IVS and returned by
+     * <a>CreateParticipantToken</a>.
      * </p>
      * 
      * @param participantId
-     *        Identifier of the participant to be disconnected. This is returned by <a>CreateParticipantToken</a>.
+     *        Identifier of the participant to be disconnected. This is assigned by IVS and returned by
+     *        <a>CreateParticipantToken</a>.
      */
 
     public void setParticipantId(String participantId) {
@@ -59,10 +62,12 @@ public class DisconnectParticipantRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Identifier of the participant to be disconnected. This is returned by <a>CreateParticipantToken</a>.
+     * Identifier of the participant to be disconnected. This is assigned by IVS and returned by
+     * <a>CreateParticipantToken</a>.
      * </p>
      * 
-     * @return Identifier of the participant to be disconnected. This is returned by <a>CreateParticipantToken</a>.
+     * @return Identifier of the participant to be disconnected. This is assigned by IVS and returned by
+     *         <a>CreateParticipantToken</a>.
      */
 
     public String getParticipantId() {
@@ -71,11 +76,13 @@ public class DisconnectParticipantRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Identifier of the participant to be disconnected. This is returned by <a>CreateParticipantToken</a>.
+     * Identifier of the participant to be disconnected. This is assigned by IVS and returned by
+     * <a>CreateParticipantToken</a>.
      * </p>
      * 
      * @param participantId
-     *        Identifier of the participant to be disconnected. This is returned by <a>CreateParticipantToken</a>.
+     *        Identifier of the participant to be disconnected. This is assigned by IVS and returned by
+     *        <a>CreateParticipantToken</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

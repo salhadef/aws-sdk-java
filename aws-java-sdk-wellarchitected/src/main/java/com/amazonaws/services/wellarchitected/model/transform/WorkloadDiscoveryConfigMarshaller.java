@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.wellarchitected.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -29,6 +30,8 @@ public class WorkloadDiscoveryConfigMarshaller {
 
     private static final MarshallingInfo<String> TRUSTEDADVISORINTEGRATIONSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TrustedAdvisorIntegrationStatus").build();
+    private static final MarshallingInfo<List> WORKLOADRESOURCEDEFINITION_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WorkloadResourceDefinition").build();
 
     private static final WorkloadDiscoveryConfigMarshaller instance = new WorkloadDiscoveryConfigMarshaller();
 
@@ -47,6 +50,7 @@ public class WorkloadDiscoveryConfigMarshaller {
 
         try {
             protocolMarshaller.marshall(workloadDiscoveryConfig.getTrustedAdvisorIntegrationStatus(), TRUSTEDADVISORINTEGRATIONSTATUS_BINDING);
+            protocolMarshaller.marshall(workloadDiscoveryConfig.getWorkloadResourceDefinition(), WORKLOADRESOURCEDEFINITION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

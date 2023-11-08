@@ -25,13 +25,13 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Returns the name of the AutoML V2 job.
+     * Returns the name of the AutoML job V2.
      * </p>
      */
     private String autoMLJobName;
     /**
      * <p>
-     * Returns the Amazon Resource Name (ARN) of the AutoML V2 job.
+     * Returns the Amazon Resource Name (ARN) of the AutoML job V2.
      * </p>
      */
     private String autoMLJobArn;
@@ -62,19 +62,19 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
     private AutoMLJobObjective autoMLJobObjective;
     /**
      * <p>
-     * Returns the configuration settings of the problem type set for the AutoML V2 job.
+     * Returns the configuration settings of the problem type set for the AutoML job V2.
      * </p>
      */
     private AutoMLProblemTypeConfig autoMLProblemTypeConfig;
     /**
      * <p>
-     * Returns the creation time of the AutoML V2 job.
+     * Returns the creation time of the AutoML job V2.
      * </p>
      */
     private java.util.Date creationTime;
     /**
      * <p>
-     * Returns the end time of the AutoML V2 job.
+     * Returns the end time of the AutoML job V2.
      * </p>
      */
     private java.util.Date endTime;
@@ -86,13 +86,13 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
     private java.util.Date lastModifiedTime;
     /**
      * <p>
-     * Returns the reason for the failure of the AutoML V2 job, when applicable.
+     * Returns the reason for the failure of the AutoML job V2, when applicable.
      * </p>
      */
     private String failureReason;
     /**
      * <p>
-     * Returns a list of reasons for partial failures within an AutoML V2 job.
+     * Returns a list of reasons for partial failures within an AutoML job V2.
      * </p>
      */
     private java.util.List<AutoMLPartialFailureReason> partialFailureReasons;
@@ -105,13 +105,13 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
     private AutoMLCandidate bestCandidate;
     /**
      * <p>
-     * Returns the status of the AutoML V2 job.
+     * Returns the status of the AutoML job V2.
      * </p>
      */
     private String autoMLJobStatus;
     /**
      * <p>
-     * Returns the secondary status of the AutoML V2 job.
+     * Returns the secondary status of the AutoML job V2.
      * </p>
      */
     private String autoMLJobSecondaryStatus;
@@ -141,13 +141,27 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
      */
     private AutoMLSecurityConfig securityConfig;
 
+    private AutoMLJobArtifacts autoMLJobArtifacts;
     /**
      * <p>
-     * Returns the name of the AutoML V2 job.
+     * Returns the resolved attributes used by the AutoML job V2.
+     * </p>
+     */
+    private AutoMLResolvedAttributes resolvedAttributes;
+    /**
+     * <p>
+     * Returns the name of the problem type configuration set for the AutoML job V2.
+     * </p>
+     */
+    private String autoMLProblemTypeConfigName;
+
+    /**
+     * <p>
+     * Returns the name of the AutoML job V2.
      * </p>
      * 
      * @param autoMLJobName
-     *        Returns the name of the AutoML V2 job.
+     *        Returns the name of the AutoML job V2.
      */
 
     public void setAutoMLJobName(String autoMLJobName) {
@@ -156,10 +170,10 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Returns the name of the AutoML V2 job.
+     * Returns the name of the AutoML job V2.
      * </p>
      * 
-     * @return Returns the name of the AutoML V2 job.
+     * @return Returns the name of the AutoML job V2.
      */
 
     public String getAutoMLJobName() {
@@ -168,11 +182,11 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Returns the name of the AutoML V2 job.
+     * Returns the name of the AutoML job V2.
      * </p>
      * 
      * @param autoMLJobName
-     *        Returns the name of the AutoML V2 job.
+     *        Returns the name of the AutoML job V2.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -183,11 +197,11 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Returns the Amazon Resource Name (ARN) of the AutoML V2 job.
+     * Returns the Amazon Resource Name (ARN) of the AutoML job V2.
      * </p>
      * 
      * @param autoMLJobArn
-     *        Returns the Amazon Resource Name (ARN) of the AutoML V2 job.
+     *        Returns the Amazon Resource Name (ARN) of the AutoML job V2.
      */
 
     public void setAutoMLJobArn(String autoMLJobArn) {
@@ -196,10 +210,10 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Returns the Amazon Resource Name (ARN) of the AutoML V2 job.
+     * Returns the Amazon Resource Name (ARN) of the AutoML job V2.
      * </p>
      * 
-     * @return Returns the Amazon Resource Name (ARN) of the AutoML V2 job.
+     * @return Returns the Amazon Resource Name (ARN) of the AutoML job V2.
      */
 
     public String getAutoMLJobArn() {
@@ -208,11 +222,11 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Returns the Amazon Resource Name (ARN) of the AutoML V2 job.
+     * Returns the Amazon Resource Name (ARN) of the AutoML job V2.
      * </p>
      * 
      * @param autoMLJobArn
-     *        Returns the Amazon Resource Name (ARN) of the AutoML V2 job.
+     *        Returns the Amazon Resource Name (ARN) of the AutoML job V2.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -419,11 +433,11 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Returns the configuration settings of the problem type set for the AutoML V2 job.
+     * Returns the configuration settings of the problem type set for the AutoML job V2.
      * </p>
      * 
      * @param autoMLProblemTypeConfig
-     *        Returns the configuration settings of the problem type set for the AutoML V2 job.
+     *        Returns the configuration settings of the problem type set for the AutoML job V2.
      */
 
     public void setAutoMLProblemTypeConfig(AutoMLProblemTypeConfig autoMLProblemTypeConfig) {
@@ -432,10 +446,10 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Returns the configuration settings of the problem type set for the AutoML V2 job.
+     * Returns the configuration settings of the problem type set for the AutoML job V2.
      * </p>
      * 
-     * @return Returns the configuration settings of the problem type set for the AutoML V2 job.
+     * @return Returns the configuration settings of the problem type set for the AutoML job V2.
      */
 
     public AutoMLProblemTypeConfig getAutoMLProblemTypeConfig() {
@@ -444,11 +458,11 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Returns the configuration settings of the problem type set for the AutoML V2 job.
+     * Returns the configuration settings of the problem type set for the AutoML job V2.
      * </p>
      * 
      * @param autoMLProblemTypeConfig
-     *        Returns the configuration settings of the problem type set for the AutoML V2 job.
+     *        Returns the configuration settings of the problem type set for the AutoML job V2.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -459,11 +473,11 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Returns the creation time of the AutoML V2 job.
+     * Returns the creation time of the AutoML job V2.
      * </p>
      * 
      * @param creationTime
-     *        Returns the creation time of the AutoML V2 job.
+     *        Returns the creation time of the AutoML job V2.
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -472,10 +486,10 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Returns the creation time of the AutoML V2 job.
+     * Returns the creation time of the AutoML job V2.
      * </p>
      * 
-     * @return Returns the creation time of the AutoML V2 job.
+     * @return Returns the creation time of the AutoML job V2.
      */
 
     public java.util.Date getCreationTime() {
@@ -484,11 +498,11 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Returns the creation time of the AutoML V2 job.
+     * Returns the creation time of the AutoML job V2.
      * </p>
      * 
      * @param creationTime
-     *        Returns the creation time of the AutoML V2 job.
+     *        Returns the creation time of the AutoML job V2.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -499,11 +513,11 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Returns the end time of the AutoML V2 job.
+     * Returns the end time of the AutoML job V2.
      * </p>
      * 
      * @param endTime
-     *        Returns the end time of the AutoML V2 job.
+     *        Returns the end time of the AutoML job V2.
      */
 
     public void setEndTime(java.util.Date endTime) {
@@ -512,10 +526,10 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Returns the end time of the AutoML V2 job.
+     * Returns the end time of the AutoML job V2.
      * </p>
      * 
-     * @return Returns the end time of the AutoML V2 job.
+     * @return Returns the end time of the AutoML job V2.
      */
 
     public java.util.Date getEndTime() {
@@ -524,11 +538,11 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Returns the end time of the AutoML V2 job.
+     * Returns the end time of the AutoML job V2.
      * </p>
      * 
      * @param endTime
-     *        Returns the end time of the AutoML V2 job.
+     *        Returns the end time of the AutoML job V2.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -579,11 +593,11 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Returns the reason for the failure of the AutoML V2 job, when applicable.
+     * Returns the reason for the failure of the AutoML job V2, when applicable.
      * </p>
      * 
      * @param failureReason
-     *        Returns the reason for the failure of the AutoML V2 job, when applicable.
+     *        Returns the reason for the failure of the AutoML job V2, when applicable.
      */
 
     public void setFailureReason(String failureReason) {
@@ -592,10 +606,10 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Returns the reason for the failure of the AutoML V2 job, when applicable.
+     * Returns the reason for the failure of the AutoML job V2, when applicable.
      * </p>
      * 
-     * @return Returns the reason for the failure of the AutoML V2 job, when applicable.
+     * @return Returns the reason for the failure of the AutoML job V2, when applicable.
      */
 
     public String getFailureReason() {
@@ -604,11 +618,11 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Returns the reason for the failure of the AutoML V2 job, when applicable.
+     * Returns the reason for the failure of the AutoML job V2, when applicable.
      * </p>
      * 
      * @param failureReason
-     *        Returns the reason for the failure of the AutoML V2 job, when applicable.
+     *        Returns the reason for the failure of the AutoML job V2, when applicable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -619,10 +633,10 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Returns a list of reasons for partial failures within an AutoML V2 job.
+     * Returns a list of reasons for partial failures within an AutoML job V2.
      * </p>
      * 
-     * @return Returns a list of reasons for partial failures within an AutoML V2 job.
+     * @return Returns a list of reasons for partial failures within an AutoML job V2.
      */
 
     public java.util.List<AutoMLPartialFailureReason> getPartialFailureReasons() {
@@ -631,11 +645,11 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Returns a list of reasons for partial failures within an AutoML V2 job.
+     * Returns a list of reasons for partial failures within an AutoML job V2.
      * </p>
      * 
      * @param partialFailureReasons
-     *        Returns a list of reasons for partial failures within an AutoML V2 job.
+     *        Returns a list of reasons for partial failures within an AutoML job V2.
      */
 
     public void setPartialFailureReasons(java.util.Collection<AutoMLPartialFailureReason> partialFailureReasons) {
@@ -649,7 +663,7 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Returns a list of reasons for partial failures within an AutoML V2 job.
+     * Returns a list of reasons for partial failures within an AutoML job V2.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -658,7 +672,7 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param partialFailureReasons
-     *        Returns a list of reasons for partial failures within an AutoML V2 job.
+     *        Returns a list of reasons for partial failures within an AutoML job V2.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -674,11 +688,11 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Returns a list of reasons for partial failures within an AutoML V2 job.
+     * Returns a list of reasons for partial failures within an AutoML job V2.
      * </p>
      * 
      * @param partialFailureReasons
-     *        Returns a list of reasons for partial failures within an AutoML V2 job.
+     *        Returns a list of reasons for partial failures within an AutoML job V2.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -735,11 +749,11 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Returns the status of the AutoML V2 job.
+     * Returns the status of the AutoML job V2.
      * </p>
      * 
      * @param autoMLJobStatus
-     *        Returns the status of the AutoML V2 job.
+     *        Returns the status of the AutoML job V2.
      * @see AutoMLJobStatus
      */
 
@@ -749,10 +763,10 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Returns the status of the AutoML V2 job.
+     * Returns the status of the AutoML job V2.
      * </p>
      * 
-     * @return Returns the status of the AutoML V2 job.
+     * @return Returns the status of the AutoML job V2.
      * @see AutoMLJobStatus
      */
 
@@ -762,11 +776,11 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Returns the status of the AutoML V2 job.
+     * Returns the status of the AutoML job V2.
      * </p>
      * 
      * @param autoMLJobStatus
-     *        Returns the status of the AutoML V2 job.
+     *        Returns the status of the AutoML job V2.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoMLJobStatus
      */
@@ -778,11 +792,11 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Returns the status of the AutoML V2 job.
+     * Returns the status of the AutoML job V2.
      * </p>
      * 
      * @param autoMLJobStatus
-     *        Returns the status of the AutoML V2 job.
+     *        Returns the status of the AutoML job V2.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoMLJobStatus
      */
@@ -794,11 +808,11 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Returns the secondary status of the AutoML V2 job.
+     * Returns the secondary status of the AutoML job V2.
      * </p>
      * 
      * @param autoMLJobSecondaryStatus
-     *        Returns the secondary status of the AutoML V2 job.
+     *        Returns the secondary status of the AutoML job V2.
      * @see AutoMLJobSecondaryStatus
      */
 
@@ -808,10 +822,10 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Returns the secondary status of the AutoML V2 job.
+     * Returns the secondary status of the AutoML job V2.
      * </p>
      * 
-     * @return Returns the secondary status of the AutoML V2 job.
+     * @return Returns the secondary status of the AutoML job V2.
      * @see AutoMLJobSecondaryStatus
      */
 
@@ -821,11 +835,11 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Returns the secondary status of the AutoML V2 job.
+     * Returns the secondary status of the AutoML job V2.
      * </p>
      * 
      * @param autoMLJobSecondaryStatus
-     *        Returns the secondary status of the AutoML V2 job.
+     *        Returns the secondary status of the AutoML job V2.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoMLJobSecondaryStatus
      */
@@ -837,11 +851,11 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Returns the secondary status of the AutoML V2 job.
+     * Returns the secondary status of the AutoML job V2.
      * </p>
      * 
      * @param autoMLJobSecondaryStatus
-     *        Returns the secondary status of the AutoML V2 job.
+     *        Returns the secondary status of the AutoML job V2.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoMLJobSecondaryStatus
      */
@@ -1018,6 +1032,131 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * @param autoMLJobArtifacts
+     */
+
+    public void setAutoMLJobArtifacts(AutoMLJobArtifacts autoMLJobArtifacts) {
+        this.autoMLJobArtifacts = autoMLJobArtifacts;
+    }
+
+    /**
+     * @return
+     */
+
+    public AutoMLJobArtifacts getAutoMLJobArtifacts() {
+        return this.autoMLJobArtifacts;
+    }
+
+    /**
+     * @param autoMLJobArtifacts
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAutoMLJobV2Result withAutoMLJobArtifacts(AutoMLJobArtifacts autoMLJobArtifacts) {
+        setAutoMLJobArtifacts(autoMLJobArtifacts);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Returns the resolved attributes used by the AutoML job V2.
+     * </p>
+     * 
+     * @param resolvedAttributes
+     *        Returns the resolved attributes used by the AutoML job V2.
+     */
+
+    public void setResolvedAttributes(AutoMLResolvedAttributes resolvedAttributes) {
+        this.resolvedAttributes = resolvedAttributes;
+    }
+
+    /**
+     * <p>
+     * Returns the resolved attributes used by the AutoML job V2.
+     * </p>
+     * 
+     * @return Returns the resolved attributes used by the AutoML job V2.
+     */
+
+    public AutoMLResolvedAttributes getResolvedAttributes() {
+        return this.resolvedAttributes;
+    }
+
+    /**
+     * <p>
+     * Returns the resolved attributes used by the AutoML job V2.
+     * </p>
+     * 
+     * @param resolvedAttributes
+     *        Returns the resolved attributes used by the AutoML job V2.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAutoMLJobV2Result withResolvedAttributes(AutoMLResolvedAttributes resolvedAttributes) {
+        setResolvedAttributes(resolvedAttributes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Returns the name of the problem type configuration set for the AutoML job V2.
+     * </p>
+     * 
+     * @param autoMLProblemTypeConfigName
+     *        Returns the name of the problem type configuration set for the AutoML job V2.
+     * @see AutoMLProblemTypeConfigName
+     */
+
+    public void setAutoMLProblemTypeConfigName(String autoMLProblemTypeConfigName) {
+        this.autoMLProblemTypeConfigName = autoMLProblemTypeConfigName;
+    }
+
+    /**
+     * <p>
+     * Returns the name of the problem type configuration set for the AutoML job V2.
+     * </p>
+     * 
+     * @return Returns the name of the problem type configuration set for the AutoML job V2.
+     * @see AutoMLProblemTypeConfigName
+     */
+
+    public String getAutoMLProblemTypeConfigName() {
+        return this.autoMLProblemTypeConfigName;
+    }
+
+    /**
+     * <p>
+     * Returns the name of the problem type configuration set for the AutoML job V2.
+     * </p>
+     * 
+     * @param autoMLProblemTypeConfigName
+     *        Returns the name of the problem type configuration set for the AutoML job V2.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AutoMLProblemTypeConfigName
+     */
+
+    public DescribeAutoMLJobV2Result withAutoMLProblemTypeConfigName(String autoMLProblemTypeConfigName) {
+        setAutoMLProblemTypeConfigName(autoMLProblemTypeConfigName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Returns the name of the problem type configuration set for the AutoML job V2.
+     * </p>
+     * 
+     * @param autoMLProblemTypeConfigName
+     *        Returns the name of the problem type configuration set for the AutoML job V2.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AutoMLProblemTypeConfigName
+     */
+
+    public DescribeAutoMLJobV2Result withAutoMLProblemTypeConfigName(AutoMLProblemTypeConfigName autoMLProblemTypeConfigName) {
+        this.autoMLProblemTypeConfigName = autoMLProblemTypeConfigName.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1066,7 +1205,13 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
         if (getDataSplitConfig() != null)
             sb.append("DataSplitConfig: ").append(getDataSplitConfig()).append(",");
         if (getSecurityConfig() != null)
-            sb.append("SecurityConfig: ").append(getSecurityConfig());
+            sb.append("SecurityConfig: ").append(getSecurityConfig()).append(",");
+        if (getAutoMLJobArtifacts() != null)
+            sb.append("AutoMLJobArtifacts: ").append(getAutoMLJobArtifacts()).append(",");
+        if (getResolvedAttributes() != null)
+            sb.append("ResolvedAttributes: ").append(getResolvedAttributes()).append(",");
+        if (getAutoMLProblemTypeConfigName() != null)
+            sb.append("AutoMLProblemTypeConfigName: ").append(getAutoMLProblemTypeConfigName());
         sb.append("}");
         return sb.toString();
     }
@@ -1157,6 +1302,18 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getSecurityConfig() != null && other.getSecurityConfig().equals(this.getSecurityConfig()) == false)
             return false;
+        if (other.getAutoMLJobArtifacts() == null ^ this.getAutoMLJobArtifacts() == null)
+            return false;
+        if (other.getAutoMLJobArtifacts() != null && other.getAutoMLJobArtifacts().equals(this.getAutoMLJobArtifacts()) == false)
+            return false;
+        if (other.getResolvedAttributes() == null ^ this.getResolvedAttributes() == null)
+            return false;
+        if (other.getResolvedAttributes() != null && other.getResolvedAttributes().equals(this.getResolvedAttributes()) == false)
+            return false;
+        if (other.getAutoMLProblemTypeConfigName() == null ^ this.getAutoMLProblemTypeConfigName() == null)
+            return false;
+        if (other.getAutoMLProblemTypeConfigName() != null && other.getAutoMLProblemTypeConfigName().equals(this.getAutoMLProblemTypeConfigName()) == false)
+            return false;
         return true;
     }
 
@@ -1184,6 +1341,9 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
         hashCode = prime * hashCode + ((getModelDeployResult() == null) ? 0 : getModelDeployResult().hashCode());
         hashCode = prime * hashCode + ((getDataSplitConfig() == null) ? 0 : getDataSplitConfig().hashCode());
         hashCode = prime * hashCode + ((getSecurityConfig() == null) ? 0 : getSecurityConfig().hashCode());
+        hashCode = prime * hashCode + ((getAutoMLJobArtifacts() == null) ? 0 : getAutoMLJobArtifacts().hashCode());
+        hashCode = prime * hashCode + ((getResolvedAttributes() == null) ? 0 : getResolvedAttributes().hashCode());
+        hashCode = prime * hashCode + ((getAutoMLProblemTypeConfigName() == null) ? 0 : getAutoMLProblemTypeConfigName().hashCode());
         return hashCode;
     }
 

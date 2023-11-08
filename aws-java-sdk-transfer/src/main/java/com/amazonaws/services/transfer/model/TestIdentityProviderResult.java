@@ -25,13 +25,13 @@ public class TestIdentityProviderResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The response that is returned from your API Gateway.
+     * The response that is returned from your API Gateway or your Lambda function.
      * </p>
      */
     private String response;
     /**
      * <p>
-     * The HTTP status code that is the response from your API Gateway.
+     * The HTTP status code that is the response from your API Gateway or your Lambda function.
      * </p>
      */
     private Integer statusCode;
@@ -56,11 +56,11 @@ public class TestIdentityProviderResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The response that is returned from your API Gateway.
+     * The response that is returned from your API Gateway or your Lambda function.
      * </p>
      * 
      * @param response
-     *        The response that is returned from your API Gateway.
+     *        The response that is returned from your API Gateway or your Lambda function.
      */
 
     public void setResponse(String response) {
@@ -69,10 +69,10 @@ public class TestIdentityProviderResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The response that is returned from your API Gateway.
+     * The response that is returned from your API Gateway or your Lambda function.
      * </p>
      * 
-     * @return The response that is returned from your API Gateway.
+     * @return The response that is returned from your API Gateway or your Lambda function.
      */
 
     public String getResponse() {
@@ -81,11 +81,11 @@ public class TestIdentityProviderResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The response that is returned from your API Gateway.
+     * The response that is returned from your API Gateway or your Lambda function.
      * </p>
      * 
      * @param response
-     *        The response that is returned from your API Gateway.
+     *        The response that is returned from your API Gateway or your Lambda function.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,11 +96,11 @@ public class TestIdentityProviderResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The HTTP status code that is the response from your API Gateway.
+     * The HTTP status code that is the response from your API Gateway or your Lambda function.
      * </p>
      * 
      * @param statusCode
-     *        The HTTP status code that is the response from your API Gateway.
+     *        The HTTP status code that is the response from your API Gateway or your Lambda function.
      */
 
     public void setStatusCode(Integer statusCode) {
@@ -109,10 +109,10 @@ public class TestIdentityProviderResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The HTTP status code that is the response from your API Gateway.
+     * The HTTP status code that is the response from your API Gateway or your Lambda function.
      * </p>
      * 
-     * @return The HTTP status code that is the response from your API Gateway.
+     * @return The HTTP status code that is the response from your API Gateway or your Lambda function.
      */
 
     public Integer getStatusCode() {
@@ -121,11 +121,11 @@ public class TestIdentityProviderResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The HTTP status code that is the response from your API Gateway.
+     * The HTTP status code that is the response from your API Gateway or your Lambda function.
      * </p>
      * 
      * @param statusCode
-     *        The HTTP status code that is the response from your API Gateway.
+     *        The HTTP status code that is the response from your API Gateway or your Lambda function.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

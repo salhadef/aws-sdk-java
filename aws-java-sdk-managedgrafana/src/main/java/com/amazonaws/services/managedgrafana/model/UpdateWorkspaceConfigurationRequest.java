@@ -36,6 +36,19 @@ public class UpdateWorkspaceConfigurationRequest extends com.amazonaws.AmazonWeb
     private String configuration;
     /**
      * <p>
+     * Specifies the version of Grafana to support in the new workspace.
+     * </p>
+     * <p>
+     * Can only be used to upgrade (for example, from 8.4 to 9.4), not downgrade (for example, from 9.4 to 8.4).
+     * </p>
+     * <p>
+     * To know what versions are available to upgrade to for a specific workspace, see the <code>ListVersions</code>
+     * operation.
+     * </p>
+     */
+    private String grafanaVersion;
+    /**
+     * <p>
      * The ID of the workspace to update.
      * </p>
      */
@@ -121,6 +134,85 @@ public class UpdateWorkspaceConfigurationRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
+     * Specifies the version of Grafana to support in the new workspace.
+     * </p>
+     * <p>
+     * Can only be used to upgrade (for example, from 8.4 to 9.4), not downgrade (for example, from 9.4 to 8.4).
+     * </p>
+     * <p>
+     * To know what versions are available to upgrade to for a specific workspace, see the <code>ListVersions</code>
+     * operation.
+     * </p>
+     * 
+     * @param grafanaVersion
+     *        Specifies the version of Grafana to support in the new workspace.</p>
+     *        <p>
+     *        Can only be used to upgrade (for example, from 8.4 to 9.4), not downgrade (for example, from 9.4 to 8.4).
+     *        </p>
+     *        <p>
+     *        To know what versions are available to upgrade to for a specific workspace, see the
+     *        <code>ListVersions</code> operation.
+     */
+
+    public void setGrafanaVersion(String grafanaVersion) {
+        this.grafanaVersion = grafanaVersion;
+    }
+
+    /**
+     * <p>
+     * Specifies the version of Grafana to support in the new workspace.
+     * </p>
+     * <p>
+     * Can only be used to upgrade (for example, from 8.4 to 9.4), not downgrade (for example, from 9.4 to 8.4).
+     * </p>
+     * <p>
+     * To know what versions are available to upgrade to for a specific workspace, see the <code>ListVersions</code>
+     * operation.
+     * </p>
+     * 
+     * @return Specifies the version of Grafana to support in the new workspace.</p>
+     *         <p>
+     *         Can only be used to upgrade (for example, from 8.4 to 9.4), not downgrade (for example, from 9.4 to 8.4).
+     *         </p>
+     *         <p>
+     *         To know what versions are available to upgrade to for a specific workspace, see the
+     *         <code>ListVersions</code> operation.
+     */
+
+    public String getGrafanaVersion() {
+        return this.grafanaVersion;
+    }
+
+    /**
+     * <p>
+     * Specifies the version of Grafana to support in the new workspace.
+     * </p>
+     * <p>
+     * Can only be used to upgrade (for example, from 8.4 to 9.4), not downgrade (for example, from 9.4 to 8.4).
+     * </p>
+     * <p>
+     * To know what versions are available to upgrade to for a specific workspace, see the <code>ListVersions</code>
+     * operation.
+     * </p>
+     * 
+     * @param grafanaVersion
+     *        Specifies the version of Grafana to support in the new workspace.</p>
+     *        <p>
+     *        Can only be used to upgrade (for example, from 8.4 to 9.4), not downgrade (for example, from 9.4 to 8.4).
+     *        </p>
+     *        <p>
+     *        To know what versions are available to upgrade to for a specific workspace, see the
+     *        <code>ListVersions</code> operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateWorkspaceConfigurationRequest withGrafanaVersion(String grafanaVersion) {
+        setGrafanaVersion(grafanaVersion);
+        return this;
+    }
+
+    /**
+     * <p>
      * The ID of the workspace to update.
      * </p>
      * 
@@ -173,6 +265,8 @@ public class UpdateWorkspaceConfigurationRequest extends com.amazonaws.AmazonWeb
         sb.append("{");
         if (getConfiguration() != null)
             sb.append("Configuration: ").append(getConfiguration()).append(",");
+        if (getGrafanaVersion() != null)
+            sb.append("GrafanaVersion: ").append(getGrafanaVersion()).append(",");
         if (getWorkspaceId() != null)
             sb.append("WorkspaceId: ").append(getWorkspaceId());
         sb.append("}");
@@ -193,6 +287,10 @@ public class UpdateWorkspaceConfigurationRequest extends com.amazonaws.AmazonWeb
             return false;
         if (other.getConfiguration() != null && other.getConfiguration().equals(this.getConfiguration()) == false)
             return false;
+        if (other.getGrafanaVersion() == null ^ this.getGrafanaVersion() == null)
+            return false;
+        if (other.getGrafanaVersion() != null && other.getGrafanaVersion().equals(this.getGrafanaVersion()) == false)
+            return false;
         if (other.getWorkspaceId() == null ^ this.getWorkspaceId() == null)
             return false;
         if (other.getWorkspaceId() != null && other.getWorkspaceId().equals(this.getWorkspaceId()) == false)
@@ -206,6 +304,7 @@ public class UpdateWorkspaceConfigurationRequest extends com.amazonaws.AmazonWeb
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getGrafanaVersion() == null) ? 0 : getGrafanaVersion().hashCode());
         hashCode = prime * hashCode + ((getWorkspaceId() == null) ? 0 : getWorkspaceId().hashCode());
         return hashCode;
     }

@@ -36,6 +36,12 @@ public class MetricResultV2 implements Serializable, Cloneable, StructuredPojo {
     private java.util.Map<String, String> dimensions;
     /**
      * <p>
+     * The interval period with the start and end time for the metrics.
+     * </p>
+     */
+    private MetricInterval metricInterval;
+    /**
+     * <p>
      * The set of metrics.
      * </p>
      */
@@ -106,6 +112,46 @@ public class MetricResultV2 implements Serializable, Cloneable, StructuredPojo {
 
     public MetricResultV2 clearDimensionsEntries() {
         this.dimensions = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * The interval period with the start and end time for the metrics.
+     * </p>
+     * 
+     * @param metricInterval
+     *        The interval period with the start and end time for the metrics.
+     */
+
+    public void setMetricInterval(MetricInterval metricInterval) {
+        this.metricInterval = metricInterval;
+    }
+
+    /**
+     * <p>
+     * The interval period with the start and end time for the metrics.
+     * </p>
+     * 
+     * @return The interval period with the start and end time for the metrics.
+     */
+
+    public MetricInterval getMetricInterval() {
+        return this.metricInterval;
+    }
+
+    /**
+     * <p>
+     * The interval period with the start and end time for the metrics.
+     * </p>
+     * 
+     * @param metricInterval
+     *        The interval period with the start and end time for the metrics.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MetricResultV2 withMetricInterval(MetricInterval metricInterval) {
+        setMetricInterval(metricInterval);
         return this;
     }
 
@@ -193,6 +239,8 @@ public class MetricResultV2 implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getDimensions() != null)
             sb.append("Dimensions: ").append(getDimensions()).append(",");
+        if (getMetricInterval() != null)
+            sb.append("MetricInterval: ").append(getMetricInterval()).append(",");
         if (getCollections() != null)
             sb.append("Collections: ").append(getCollections());
         sb.append("}");
@@ -213,6 +261,10 @@ public class MetricResultV2 implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDimensions() != null && other.getDimensions().equals(this.getDimensions()) == false)
             return false;
+        if (other.getMetricInterval() == null ^ this.getMetricInterval() == null)
+            return false;
+        if (other.getMetricInterval() != null && other.getMetricInterval().equals(this.getMetricInterval()) == false)
+            return false;
         if (other.getCollections() == null ^ this.getCollections() == null)
             return false;
         if (other.getCollections() != null && other.getCollections().equals(this.getCollections()) == false)
@@ -226,6 +278,7 @@ public class MetricResultV2 implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDimensions() == null) ? 0 : getDimensions().hashCode());
+        hashCode = prime * hashCode + ((getMetricInterval() == null) ? 0 : getMetricInterval().hashCode());
         hashCode = prime * hashCode + ((getCollections() == null) ? 0 : getCollections().hashCode());
         return hashCode;
     }

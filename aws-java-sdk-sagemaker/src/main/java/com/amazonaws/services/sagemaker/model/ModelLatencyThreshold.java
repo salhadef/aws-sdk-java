@@ -30,7 +30,8 @@ public class ModelLatencyThreshold implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The model latency percentile threshold.
+     * The model latency percentile threshold. Acceptable values are <code>P95</code> and <code>P99</code>. For custom
+     * load tests, specify the value as <code>P95</code>.
      * </p>
      */
     private String percentile;
@@ -43,11 +44,13 @@ public class ModelLatencyThreshold implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The model latency percentile threshold.
+     * The model latency percentile threshold. Acceptable values are <code>P95</code> and <code>P99</code>. For custom
+     * load tests, specify the value as <code>P95</code>.
      * </p>
      * 
      * @param percentile
-     *        The model latency percentile threshold.
+     *        The model latency percentile threshold. Acceptable values are <code>P95</code> and <code>P99</code>. For
+     *        custom load tests, specify the value as <code>P95</code>.
      */
 
     public void setPercentile(String percentile) {
@@ -56,10 +59,12 @@ public class ModelLatencyThreshold implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The model latency percentile threshold.
+     * The model latency percentile threshold. Acceptable values are <code>P95</code> and <code>P99</code>. For custom
+     * load tests, specify the value as <code>P95</code>.
      * </p>
      * 
-     * @return The model latency percentile threshold.
+     * @return The model latency percentile threshold. Acceptable values are <code>P95</code> and <code>P99</code>. For
+     *         custom load tests, specify the value as <code>P95</code>.
      */
 
     public String getPercentile() {
@@ -68,11 +73,13 @@ public class ModelLatencyThreshold implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The model latency percentile threshold.
+     * The model latency percentile threshold. Acceptable values are <code>P95</code> and <code>P99</code>. For custom
+     * load tests, specify the value as <code>P95</code>.
      * </p>
      * 
      * @param percentile
-     *        The model latency percentile threshold.
+     *        The model latency percentile threshold. Acceptable values are <code>P95</code> and <code>P99</code>. For
+     *        custom load tests, specify the value as <code>P95</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

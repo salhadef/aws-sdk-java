@@ -30,16 +30,10 @@ public class SequenceInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The sequence's alignment setting.
+     * The sequence's total read count.
      * </p>
      */
-    private String alignment;
-    /**
-     * <p>
-     * Where the sequence originated.
-     * </p>
-     */
-    private String generatedFrom;
+    private Long totalReadCount;
     /**
      * <p>
      * The sequence's total base count.
@@ -48,88 +42,54 @@ public class SequenceInformation implements Serializable, Cloneable, StructuredP
     private Long totalBaseCount;
     /**
      * <p>
+     * Where the sequence originated.
+     * </p>
+     */
+    private String generatedFrom;
+    /**
+     * <p>
+     * The sequence's alignment setting.
+     * </p>
+     */
+    private String alignment;
+
+    /**
+     * <p>
      * The sequence's total read count.
      * </p>
-     */
-    private Long totalReadCount;
-
-    /**
-     * <p>
-     * The sequence's alignment setting.
-     * </p>
      * 
-     * @param alignment
-     *        The sequence's alignment setting.
+     * @param totalReadCount
+     *        The sequence's total read count.
      */
 
-    public void setAlignment(String alignment) {
-        this.alignment = alignment;
+    public void setTotalReadCount(Long totalReadCount) {
+        this.totalReadCount = totalReadCount;
     }
 
     /**
      * <p>
-     * The sequence's alignment setting.
+     * The sequence's total read count.
      * </p>
      * 
-     * @return The sequence's alignment setting.
+     * @return The sequence's total read count.
      */
 
-    public String getAlignment() {
-        return this.alignment;
+    public Long getTotalReadCount() {
+        return this.totalReadCount;
     }
 
     /**
      * <p>
-     * The sequence's alignment setting.
+     * The sequence's total read count.
      * </p>
      * 
-     * @param alignment
-     *        The sequence's alignment setting.
+     * @param totalReadCount
+     *        The sequence's total read count.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SequenceInformation withAlignment(String alignment) {
-        setAlignment(alignment);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Where the sequence originated.
-     * </p>
-     * 
-     * @param generatedFrom
-     *        Where the sequence originated.
-     */
-
-    public void setGeneratedFrom(String generatedFrom) {
-        this.generatedFrom = generatedFrom;
-    }
-
-    /**
-     * <p>
-     * Where the sequence originated.
-     * </p>
-     * 
-     * @return Where the sequence originated.
-     */
-
-    public String getGeneratedFrom() {
-        return this.generatedFrom;
-    }
-
-    /**
-     * <p>
-     * Where the sequence originated.
-     * </p>
-     * 
-     * @param generatedFrom
-     *        Where the sequence originated.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public SequenceInformation withGeneratedFrom(String generatedFrom) {
-        setGeneratedFrom(generatedFrom);
+    public SequenceInformation withTotalReadCount(Long totalReadCount) {
+        setTotalReadCount(totalReadCount);
         return this;
     }
 
@@ -175,41 +135,81 @@ public class SequenceInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The sequence's total read count.
+     * Where the sequence originated.
      * </p>
      * 
-     * @param totalReadCount
-     *        The sequence's total read count.
+     * @param generatedFrom
+     *        Where the sequence originated.
      */
 
-    public void setTotalReadCount(Long totalReadCount) {
-        this.totalReadCount = totalReadCount;
+    public void setGeneratedFrom(String generatedFrom) {
+        this.generatedFrom = generatedFrom;
     }
 
     /**
      * <p>
-     * The sequence's total read count.
+     * Where the sequence originated.
      * </p>
      * 
-     * @return The sequence's total read count.
+     * @return Where the sequence originated.
      */
 
-    public Long getTotalReadCount() {
-        return this.totalReadCount;
+    public String getGeneratedFrom() {
+        return this.generatedFrom;
     }
 
     /**
      * <p>
-     * The sequence's total read count.
+     * Where the sequence originated.
      * </p>
      * 
-     * @param totalReadCount
-     *        The sequence's total read count.
+     * @param generatedFrom
+     *        Where the sequence originated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SequenceInformation withTotalReadCount(Long totalReadCount) {
-        setTotalReadCount(totalReadCount);
+    public SequenceInformation withGeneratedFrom(String generatedFrom) {
+        setGeneratedFrom(generatedFrom);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The sequence's alignment setting.
+     * </p>
+     * 
+     * @param alignment
+     *        The sequence's alignment setting.
+     */
+
+    public void setAlignment(String alignment) {
+        this.alignment = alignment;
+    }
+
+    /**
+     * <p>
+     * The sequence's alignment setting.
+     * </p>
+     * 
+     * @return The sequence's alignment setting.
+     */
+
+    public String getAlignment() {
+        return this.alignment;
+    }
+
+    /**
+     * <p>
+     * The sequence's alignment setting.
+     * </p>
+     * 
+     * @param alignment
+     *        The sequence's alignment setting.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SequenceInformation withAlignment(String alignment) {
+        setAlignment(alignment);
         return this;
     }
 
@@ -225,14 +225,14 @@ public class SequenceInformation implements Serializable, Cloneable, StructuredP
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getAlignment() != null)
-            sb.append("Alignment: ").append(getAlignment()).append(",");
-        if (getGeneratedFrom() != null)
-            sb.append("GeneratedFrom: ").append(getGeneratedFrom()).append(",");
+        if (getTotalReadCount() != null)
+            sb.append("TotalReadCount: ").append(getTotalReadCount()).append(",");
         if (getTotalBaseCount() != null)
             sb.append("TotalBaseCount: ").append(getTotalBaseCount()).append(",");
-        if (getTotalReadCount() != null)
-            sb.append("TotalReadCount: ").append(getTotalReadCount());
+        if (getGeneratedFrom() != null)
+            sb.append("GeneratedFrom: ").append(getGeneratedFrom()).append(",");
+        if (getAlignment() != null)
+            sb.append("Alignment: ").append(getAlignment());
         sb.append("}");
         return sb.toString();
     }
@@ -247,21 +247,21 @@ public class SequenceInformation implements Serializable, Cloneable, StructuredP
         if (obj instanceof SequenceInformation == false)
             return false;
         SequenceInformation other = (SequenceInformation) obj;
-        if (other.getAlignment() == null ^ this.getAlignment() == null)
+        if (other.getTotalReadCount() == null ^ this.getTotalReadCount() == null)
             return false;
-        if (other.getAlignment() != null && other.getAlignment().equals(this.getAlignment()) == false)
-            return false;
-        if (other.getGeneratedFrom() == null ^ this.getGeneratedFrom() == null)
-            return false;
-        if (other.getGeneratedFrom() != null && other.getGeneratedFrom().equals(this.getGeneratedFrom()) == false)
+        if (other.getTotalReadCount() != null && other.getTotalReadCount().equals(this.getTotalReadCount()) == false)
             return false;
         if (other.getTotalBaseCount() == null ^ this.getTotalBaseCount() == null)
             return false;
         if (other.getTotalBaseCount() != null && other.getTotalBaseCount().equals(this.getTotalBaseCount()) == false)
             return false;
-        if (other.getTotalReadCount() == null ^ this.getTotalReadCount() == null)
+        if (other.getGeneratedFrom() == null ^ this.getGeneratedFrom() == null)
             return false;
-        if (other.getTotalReadCount() != null && other.getTotalReadCount().equals(this.getTotalReadCount()) == false)
+        if (other.getGeneratedFrom() != null && other.getGeneratedFrom().equals(this.getGeneratedFrom()) == false)
+            return false;
+        if (other.getAlignment() == null ^ this.getAlignment() == null)
+            return false;
+        if (other.getAlignment() != null && other.getAlignment().equals(this.getAlignment()) == false)
             return false;
         return true;
     }
@@ -271,10 +271,10 @@ public class SequenceInformation implements Serializable, Cloneable, StructuredP
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getAlignment() == null) ? 0 : getAlignment().hashCode());
-        hashCode = prime * hashCode + ((getGeneratedFrom() == null) ? 0 : getGeneratedFrom().hashCode());
-        hashCode = prime * hashCode + ((getTotalBaseCount() == null) ? 0 : getTotalBaseCount().hashCode());
         hashCode = prime * hashCode + ((getTotalReadCount() == null) ? 0 : getTotalReadCount().hashCode());
+        hashCode = prime * hashCode + ((getTotalBaseCount() == null) ? 0 : getTotalBaseCount().hashCode());
+        hashCode = prime * hashCode + ((getGeneratedFrom() == null) ? 0 : getGeneratedFrom().hashCode());
+        hashCode = prime * hashCode + ((getAlignment() == null) ? 0 : getAlignment().hashCode());
         return hashCode;
     }
 

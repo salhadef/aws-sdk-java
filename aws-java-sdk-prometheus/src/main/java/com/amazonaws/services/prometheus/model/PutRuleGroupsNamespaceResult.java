@@ -28,16 +28,16 @@ public class PutRuleGroupsNamespaceResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of this rule groups namespace.
-     * </p>
-     */
-    private String arn;
-    /**
-     * <p>
      * The rule groups namespace name.
      * </p>
      */
     private String name;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of this rule groups namespace.
+     * </p>
+     */
+    private String arn;
     /**
      * <p>
      * The status of rule groups namespace.
@@ -50,46 +50,6 @@ public class PutRuleGroupsNamespaceResult extends com.amazonaws.AmazonWebService
      * </p>
      */
     private java.util.Map<String, String> tags;
-
-    /**
-     * <p>
-     * The Amazon Resource Name (ARN) of this rule groups namespace.
-     * </p>
-     * 
-     * @param arn
-     *        The Amazon Resource Name (ARN) of this rule groups namespace.
-     */
-
-    public void setArn(String arn) {
-        this.arn = arn;
-    }
-
-    /**
-     * <p>
-     * The Amazon Resource Name (ARN) of this rule groups namespace.
-     * </p>
-     * 
-     * @return The Amazon Resource Name (ARN) of this rule groups namespace.
-     */
-
-    public String getArn() {
-        return this.arn;
-    }
-
-    /**
-     * <p>
-     * The Amazon Resource Name (ARN) of this rule groups namespace.
-     * </p>
-     * 
-     * @param arn
-     *        The Amazon Resource Name (ARN) of this rule groups namespace.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public PutRuleGroupsNamespaceResult withArn(String arn) {
-        setArn(arn);
-        return this;
-    }
 
     /**
      * <p>
@@ -128,6 +88,46 @@ public class PutRuleGroupsNamespaceResult extends com.amazonaws.AmazonWebService
 
     public PutRuleGroupsNamespaceResult withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of this rule groups namespace.
+     * </p>
+     * 
+     * @param arn
+     *        The Amazon Resource Name (ARN) of this rule groups namespace.
+     */
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of this rule groups namespace.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of this rule groups namespace.
+     */
+
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of this rule groups namespace.
+     * </p>
+     * 
+     * @param arn
+     *        The Amazon Resource Name (ARN) of this rule groups namespace.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutRuleGroupsNamespaceResult withArn(String arn) {
+        setArn(arn);
         return this;
     }
 
@@ -251,10 +251,10 @@ public class PutRuleGroupsNamespaceResult extends com.amazonaws.AmazonWebService
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getArn() != null)
-            sb.append("Arn: ").append(getArn()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getTags() != null)
@@ -273,13 +273,13 @@ public class PutRuleGroupsNamespaceResult extends com.amazonaws.AmazonWebService
         if (obj instanceof PutRuleGroupsNamespaceResult == false)
             return false;
         PutRuleGroupsNamespaceResult other = (PutRuleGroupsNamespaceResult) obj;
-        if (other.getArn() == null ^ this.getArn() == null)
-            return false;
-        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
-            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getArn() == null ^ this.getArn() == null)
+            return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
@@ -297,8 +297,8 @@ public class PutRuleGroupsNamespaceResult extends com.amazonaws.AmazonWebService
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;

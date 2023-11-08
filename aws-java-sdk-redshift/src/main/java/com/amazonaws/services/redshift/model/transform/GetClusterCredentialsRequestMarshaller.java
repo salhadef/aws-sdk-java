@@ -74,6 +74,10 @@ public class GetClusterCredentialsRequestMarshaller implements Marshaller<Reques
             }
         }
 
+        if (getClusterCredentialsRequest.getCustomDomainName() != null) {
+            request.addParameter("CustomDomainName", StringUtils.fromString(getClusterCredentialsRequest.getCustomDomainName()));
+        }
+
         return request;
     }
 

@@ -48,37 +48,45 @@ public class TaskListItemJsonUnmarshaller implements Unmarshaller<TaskListItem, 
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("cpus", targetDepth)) {
+                if (context.testExpression("taskId", targetDepth)) {
                     context.nextToken();
-                    taskListItem.setCpus(context.getUnmarshaller(Integer.class).unmarshall(context));
-                }
-                if (context.testExpression("creationTime", targetDepth)) {
-                    context.nextToken();
-                    taskListItem.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
-                }
-                if (context.testExpression("memory", targetDepth)) {
-                    context.nextToken();
-                    taskListItem.setMemory(context.getUnmarshaller(Integer.class).unmarshall(context));
-                }
-                if (context.testExpression("name", targetDepth)) {
-                    context.nextToken();
-                    taskListItem.setName(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("startTime", targetDepth)) {
-                    context.nextToken();
-                    taskListItem.setStartTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                    taskListItem.setTaskId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     taskListItem.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("name", targetDepth)) {
+                    context.nextToken();
+                    taskListItem.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("cpus", targetDepth)) {
+                    context.nextToken();
+                    taskListItem.setCpus(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("memory", targetDepth)) {
+                    context.nextToken();
+                    taskListItem.setMemory(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("creationTime", targetDepth)) {
+                    context.nextToken();
+                    taskListItem.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (context.testExpression("startTime", targetDepth)) {
+                    context.nextToken();
+                    taskListItem.setStartTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
                 if (context.testExpression("stopTime", targetDepth)) {
                     context.nextToken();
                     taskListItem.setStopTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
-                if (context.testExpression("taskId", targetDepth)) {
+                if (context.testExpression("gpus", targetDepth)) {
                     context.nextToken();
-                    taskListItem.setTaskId(context.getUnmarshaller(String.class).unmarshall(context));
+                    taskListItem.setGpus(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("instanceType", targetDepth)) {
+                    context.nextToken();
+                    taskListItem.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

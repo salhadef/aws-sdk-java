@@ -51,6 +51,10 @@ public class InferenceExecutionSummaryMarshaller {
             .marshallLocationName("Status").build();
     private static final MarshallingInfo<String> FAILEDREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FailedReason").build();
+    private static final MarshallingInfo<Long> MODELVERSION_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ModelVersion").build();
+    private static final MarshallingInfo<String> MODELVERSIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModelVersionArn").build();
 
     private static final InferenceExecutionSummaryMarshaller instance = new InferenceExecutionSummaryMarshaller();
 
@@ -80,6 +84,8 @@ public class InferenceExecutionSummaryMarshaller {
             protocolMarshaller.marshall(inferenceExecutionSummary.getCustomerResultObject(), CUSTOMERRESULTOBJECT_BINDING);
             protocolMarshaller.marshall(inferenceExecutionSummary.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(inferenceExecutionSummary.getFailedReason(), FAILEDREASON_BINDING);
+            protocolMarshaller.marshall(inferenceExecutionSummary.getModelVersion(), MODELVERSION_BINDING);
+            protocolMarshaller.marshall(inferenceExecutionSummary.getModelVersionArn(), MODELVERSIONARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

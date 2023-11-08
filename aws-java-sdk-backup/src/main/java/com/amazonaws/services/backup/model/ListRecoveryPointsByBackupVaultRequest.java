@@ -40,6 +40,12 @@ public class ListRecoveryPointsByBackupVaultRequest extends com.amazonaws.Amazon
     private String backupVaultName;
     /**
      * <p>
+     * This parameter will sort the list of recovery points by account ID.
+     * </p>
+     */
+    private String backupVaultAccountId;
+    /**
+     * <p>
      * The next item following a partial list of returned items. For example, if a request is made to return
      * <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list
      * starting at the location pointed to by the next token.
@@ -163,6 +169,46 @@ public class ListRecoveryPointsByBackupVaultRequest extends com.amazonaws.Amazon
 
     public ListRecoveryPointsByBackupVaultRequest withBackupVaultName(String backupVaultName) {
         setBackupVaultName(backupVaultName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This parameter will sort the list of recovery points by account ID.
+     * </p>
+     * 
+     * @param backupVaultAccountId
+     *        This parameter will sort the list of recovery points by account ID.
+     */
+
+    public void setBackupVaultAccountId(String backupVaultAccountId) {
+        this.backupVaultAccountId = backupVaultAccountId;
+    }
+
+    /**
+     * <p>
+     * This parameter will sort the list of recovery points by account ID.
+     * </p>
+     * 
+     * @return This parameter will sort the list of recovery points by account ID.
+     */
+
+    public String getBackupVaultAccountId() {
+        return this.backupVaultAccountId;
+    }
+
+    /**
+     * <p>
+     * This parameter will sort the list of recovery points by account ID.
+     * </p>
+     * 
+     * @param backupVaultAccountId
+     *        This parameter will sort the list of recovery points by account ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListRecoveryPointsByBackupVaultRequest withBackupVaultAccountId(String backupVaultAccountId) {
+        setBackupVaultAccountId(backupVaultAccountId);
         return this;
     }
 
@@ -518,6 +564,8 @@ public class ListRecoveryPointsByBackupVaultRequest extends com.amazonaws.Amazon
         sb.append("{");
         if (getBackupVaultName() != null)
             sb.append("BackupVaultName: ").append(getBackupVaultName()).append(",");
+        if (getBackupVaultAccountId() != null)
+            sb.append("BackupVaultAccountId: ").append(getBackupVaultAccountId()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
@@ -551,6 +599,10 @@ public class ListRecoveryPointsByBackupVaultRequest extends com.amazonaws.Amazon
         if (other.getBackupVaultName() == null ^ this.getBackupVaultName() == null)
             return false;
         if (other.getBackupVaultName() != null && other.getBackupVaultName().equals(this.getBackupVaultName()) == false)
+            return false;
+        if (other.getBackupVaultAccountId() == null ^ this.getBackupVaultAccountId() == null)
+            return false;
+        if (other.getBackupVaultAccountId() != null && other.getBackupVaultAccountId().equals(this.getBackupVaultAccountId()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
@@ -593,6 +645,7 @@ public class ListRecoveryPointsByBackupVaultRequest extends com.amazonaws.Amazon
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getBackupVaultName() == null) ? 0 : getBackupVaultName().hashCode());
+        hashCode = prime * hashCode + ((getBackupVaultAccountId() == null) ? 0 : getBackupVaultAccountId().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getByResourceArn() == null) ? 0 : getByResourceArn().hashCode());

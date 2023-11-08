@@ -344,6 +344,46 @@ public class ClusterStaxUnmarshaller implements Unmarshaller<Cluster, StaxUnmars
                     cluster.setReservedNodeExchangeStatus(ReservedNodeExchangeStatusStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("CustomDomainName", targetDepth)) {
+                    cluster.setCustomDomainName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("CustomDomainCertificateArn", targetDepth)) {
+                    cluster.setCustomDomainCertificateArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("CustomDomainCertificateExpiryDate", targetDepth)) {
+                    cluster.setCustomDomainCertificateExpiryDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("MasterPasswordSecretArn", targetDepth)) {
+                    cluster.setMasterPasswordSecretArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("MasterPasswordSecretKmsKeyId", targetDepth)) {
+                    cluster.setMasterPasswordSecretKmsKeyId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("IpAddressType", targetDepth)) {
+                    cluster.setIpAddressType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("MultiAZ", targetDepth)) {
+                    cluster.setMultiAZ(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("MultiAZSecondary", targetDepth)) {
+                    cluster.setMultiAZSecondary(SecondaryClusterInfoStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return cluster;

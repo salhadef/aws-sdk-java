@@ -12,7 +12,6 @@
  */
 package com.amazonaws.services.securitylake.model.transform;
 
-import java.util.Map;
 import java.math.*;
 
 import javax.annotation.Generated;
@@ -53,17 +52,11 @@ public class ListLogSourcesResultJsonUnmarshaller implements Unmarshaller<ListLo
                     context.nextToken();
                     listLogSourcesResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("regionSourceTypesAccountsList", targetDepth)) {
+                if (context.testExpression("sources", targetDepth)) {
                     context.nextToken();
-                    listLogSourcesResult
-                            .setRegionSourceTypesAccountsList(new ListUnmarshaller<java.util.Map<String, java.util.Map<String, java.util.List<String>>>>(
-                                    new MapUnmarshaller<String, java.util.Map<String, java.util.List<String>>>(context.getUnmarshaller(String.class),
-                                            new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
-                                                    new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+                    listLogSourcesResult.setSources(new ListUnmarshaller<LogSource>(LogSourceJsonUnmarshaller.getInstance())
 
-                                            )))
-
-                            .unmarshall(context));
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

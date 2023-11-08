@@ -109,6 +109,10 @@ public class GetJobResultJsonUnmarshaller implements Unmarshaller<GetJobResult, 
                     context.nextToken();
                     getJobResult.setOutputDataConfig(JobOutputDataConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("queueInfo", targetDepth)) {
+                    context.nextToken();
+                    getJobResult.setQueueInfo(HybridJobQueueInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("roleArn", targetDepth)) {
                     context.nextToken();
                     getJobResult.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));

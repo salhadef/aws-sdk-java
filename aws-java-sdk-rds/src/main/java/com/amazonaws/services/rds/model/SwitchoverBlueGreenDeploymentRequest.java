@@ -27,7 +27,7 @@ public class SwitchoverBlueGreenDeploymentRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The blue/green deployment identifier.
+     * The unique identifier of the blue/green deployment.
      * </p>
      * <p>
      * Constraints:
@@ -43,7 +43,10 @@ public class SwitchoverBlueGreenDeploymentRequest extends com.amazonaws.AmazonWe
     private String blueGreenDeploymentIdentifier;
     /**
      * <p>
-     * The amount of time, in seconds, for the switchover to complete. The default is 300.
+     * The amount of time, in seconds, for the switchover to complete.
+     * </p>
+     * <p>
+     * Default: 300
      * </p>
      * <p>
      * If the switchover takes longer than the specified duration, then any changes are rolled back, and no changes are
@@ -54,7 +57,7 @@ public class SwitchoverBlueGreenDeploymentRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The blue/green deployment identifier.
+     * The unique identifier of the blue/green deployment.
      * </p>
      * <p>
      * Constraints:
@@ -68,7 +71,7 @@ public class SwitchoverBlueGreenDeploymentRequest extends com.amazonaws.AmazonWe
      * </ul>
      * 
      * @param blueGreenDeploymentIdentifier
-     *        The blue/green deployment identifier.</p>
+     *        The unique identifier of the blue/green deployment.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -86,7 +89,7 @@ public class SwitchoverBlueGreenDeploymentRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The blue/green deployment identifier.
+     * The unique identifier of the blue/green deployment.
      * </p>
      * <p>
      * Constraints:
@@ -99,7 +102,7 @@ public class SwitchoverBlueGreenDeploymentRequest extends com.amazonaws.AmazonWe
      * </li>
      * </ul>
      * 
-     * @return The blue/green deployment identifier.</p>
+     * @return The unique identifier of the blue/green deployment.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -117,7 +120,7 @@ public class SwitchoverBlueGreenDeploymentRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The blue/green deployment identifier.
+     * The unique identifier of the blue/green deployment.
      * </p>
      * <p>
      * Constraints:
@@ -131,7 +134,7 @@ public class SwitchoverBlueGreenDeploymentRequest extends com.amazonaws.AmazonWe
      * </ul>
      * 
      * @param blueGreenDeploymentIdentifier
-     *        The blue/green deployment identifier.</p>
+     *        The unique identifier of the blue/green deployment.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -151,7 +154,10 @@ public class SwitchoverBlueGreenDeploymentRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The amount of time, in seconds, for the switchover to complete. The default is 300.
+     * The amount of time, in seconds, for the switchover to complete.
+     * </p>
+     * <p>
+     * Default: 300
      * </p>
      * <p>
      * If the switchover takes longer than the specified duration, then any changes are rolled back, and no changes are
@@ -159,7 +165,10 @@ public class SwitchoverBlueGreenDeploymentRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param switchoverTimeout
-     *        The amount of time, in seconds, for the switchover to complete. The default is 300.</p>
+     *        The amount of time, in seconds, for the switchover to complete.</p>
+     *        <p>
+     *        Default: 300
+     *        </p>
      *        <p>
      *        If the switchover takes longer than the specified duration, then any changes are rolled back, and no
      *        changes are made to the environments.
@@ -171,14 +180,20 @@ public class SwitchoverBlueGreenDeploymentRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The amount of time, in seconds, for the switchover to complete. The default is 300.
+     * The amount of time, in seconds, for the switchover to complete.
+     * </p>
+     * <p>
+     * Default: 300
      * </p>
      * <p>
      * If the switchover takes longer than the specified duration, then any changes are rolled back, and no changes are
      * made to the environments.
      * </p>
      * 
-     * @return The amount of time, in seconds, for the switchover to complete. The default is 300.</p>
+     * @return The amount of time, in seconds, for the switchover to complete.</p>
+     *         <p>
+     *         Default: 300
+     *         </p>
      *         <p>
      *         If the switchover takes longer than the specified duration, then any changes are rolled back, and no
      *         changes are made to the environments.
@@ -190,7 +205,10 @@ public class SwitchoverBlueGreenDeploymentRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The amount of time, in seconds, for the switchover to complete. The default is 300.
+     * The amount of time, in seconds, for the switchover to complete.
+     * </p>
+     * <p>
+     * Default: 300
      * </p>
      * <p>
      * If the switchover takes longer than the specified duration, then any changes are rolled back, and no changes are
@@ -198,7 +216,10 @@ public class SwitchoverBlueGreenDeploymentRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param switchoverTimeout
-     *        The amount of time, in seconds, for the switchover to complete. The default is 300.</p>
+     *        The amount of time, in seconds, for the switchover to complete.</p>
+     *        <p>
+     *        Default: 300
+     *        </p>
      *        <p>
      *        If the switchover takes longer than the specified duration, then any changes are rolled back, and no
      *        changes are made to the environments.

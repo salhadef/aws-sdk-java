@@ -48,10 +48,6 @@ public class ReadSetFilesJsonUnmarshaller implements Unmarshaller<ReadSetFiles, 
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("index", targetDepth)) {
-                    context.nextToken();
-                    readSetFiles.setIndex(FileInformationJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("source1", targetDepth)) {
                     context.nextToken();
                     readSetFiles.setSource1(FileInformationJsonUnmarshaller.getInstance().unmarshall(context));
@@ -59,6 +55,10 @@ public class ReadSetFilesJsonUnmarshaller implements Unmarshaller<ReadSetFiles, 
                 if (context.testExpression("source2", targetDepth)) {
                     context.nextToken();
                     readSetFiles.setSource2(FileInformationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("index", targetDepth)) {
+                    context.nextToken();
+                    readSetFiles.setIndex(FileInformationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

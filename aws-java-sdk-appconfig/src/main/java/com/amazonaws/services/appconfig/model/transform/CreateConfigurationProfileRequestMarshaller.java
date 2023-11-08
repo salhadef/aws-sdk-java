@@ -45,6 +45,8 @@ public class CreateConfigurationProfileRequestMarshaller {
             .marshallLocationName("Tags").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Type").build();
+    private static final MarshallingInfo<String> KMSKEYIDENTIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KmsKeyIdentifier").build();
 
     private static final CreateConfigurationProfileRequestMarshaller instance = new CreateConfigurationProfileRequestMarshaller();
 
@@ -70,6 +72,7 @@ public class CreateConfigurationProfileRequestMarshaller {
             protocolMarshaller.marshall(createConfigurationProfileRequest.getValidators(), VALIDATORS_BINDING);
             protocolMarshaller.marshall(createConfigurationProfileRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createConfigurationProfileRequest.getType(), TYPE_BINDING);
+            protocolMarshaller.marshall(createConfigurationProfileRequest.getKmsKeyIdentifier(), KMSKEYIDENTIFIER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

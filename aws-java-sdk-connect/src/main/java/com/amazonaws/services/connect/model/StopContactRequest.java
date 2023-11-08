@@ -39,6 +39,12 @@ public class StopContactRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String instanceId;
+    /**
+     * <p>
+     * The reason a contact can be disconnected. Only Amazon Connect outbound campaigns can provide this field.
+     * </p>
+     */
+    private DisconnectReason disconnectReason;
 
     /**
      * <p>
@@ -133,6 +139,46 @@ public class StopContactRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The reason a contact can be disconnected. Only Amazon Connect outbound campaigns can provide this field.
+     * </p>
+     * 
+     * @param disconnectReason
+     *        The reason a contact can be disconnected. Only Amazon Connect outbound campaigns can provide this field.
+     */
+
+    public void setDisconnectReason(DisconnectReason disconnectReason) {
+        this.disconnectReason = disconnectReason;
+    }
+
+    /**
+     * <p>
+     * The reason a contact can be disconnected. Only Amazon Connect outbound campaigns can provide this field.
+     * </p>
+     * 
+     * @return The reason a contact can be disconnected. Only Amazon Connect outbound campaigns can provide this field.
+     */
+
+    public DisconnectReason getDisconnectReason() {
+        return this.disconnectReason;
+    }
+
+    /**
+     * <p>
+     * The reason a contact can be disconnected. Only Amazon Connect outbound campaigns can provide this field.
+     * </p>
+     * 
+     * @param disconnectReason
+     *        The reason a contact can be disconnected. Only Amazon Connect outbound campaigns can provide this field.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StopContactRequest withDisconnectReason(DisconnectReason disconnectReason) {
+        setDisconnectReason(disconnectReason);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -147,7 +193,9 @@ public class StopContactRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getContactId() != null)
             sb.append("ContactId: ").append(getContactId()).append(",");
         if (getInstanceId() != null)
-            sb.append("InstanceId: ").append(getInstanceId());
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
+        if (getDisconnectReason() != null)
+            sb.append("DisconnectReason: ").append(getDisconnectReason());
         sb.append("}");
         return sb.toString();
     }
@@ -170,6 +218,10 @@ public class StopContactRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
             return false;
+        if (other.getDisconnectReason() == null ^ this.getDisconnectReason() == null)
+            return false;
+        if (other.getDisconnectReason() != null && other.getDisconnectReason().equals(this.getDisconnectReason()) == false)
+            return false;
         return true;
     }
 
@@ -180,6 +232,7 @@ public class StopContactRequest extends com.amazonaws.AmazonWebServiceRequest im
 
         hashCode = prime * hashCode + ((getContactId() == null) ? 0 : getContactId().hashCode());
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
+        hashCode = prime * hashCode + ((getDisconnectReason() == null) ? 0 : getDisconnectReason().hashCode());
         return hashCode;
     }
 

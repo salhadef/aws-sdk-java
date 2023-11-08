@@ -128,8 +128,8 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the source DB snapshot to the target DB snapshot. By
-     * default, tags aren't copied.
+     * Specifies whether to copy all tags from the source DB snapshot to the target DB snapshot. By default, tags aren't
+     * copied.
      * </p>
      */
     private Boolean copyTags;
@@ -228,9 +228,9 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
     private String targetCustomAvailabilityZone;
     /**
      * <p>
-     * A value that indicates whether to copy the DB option group associated with the source DB snapshot to the target
-     * Amazon Web Services account and associate with the target DB snapshot. The associated option group can be copied
-     * only with cross-account snapshot copy calls.
+     * Specifies whether to copy the DB option group associated with the source DB snapshot to the target Amazon Web
+     * Services account and associate with the target DB snapshot. The associated option group can be copied only with
+     * cross-account snapshot copy calls.
      * </p>
      */
     private Boolean copyOptionGroup;
@@ -888,13 +888,13 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the source DB snapshot to the target DB snapshot. By
-     * default, tags aren't copied.
+     * Specifies whether to copy all tags from the source DB snapshot to the target DB snapshot. By default, tags aren't
+     * copied.
      * </p>
      * 
      * @param copyTags
-     *        A value that indicates whether to copy all tags from the source DB snapshot to the target DB snapshot. By
-     *        default, tags aren't copied.
+     *        Specifies whether to copy all tags from the source DB snapshot to the target DB snapshot. By default, tags
+     *        aren't copied.
      */
 
     public void setCopyTags(Boolean copyTags) {
@@ -903,12 +903,12 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the source DB snapshot to the target DB snapshot. By
-     * default, tags aren't copied.
+     * Specifies whether to copy all tags from the source DB snapshot to the target DB snapshot. By default, tags aren't
+     * copied.
      * </p>
      * 
-     * @return A value that indicates whether to copy all tags from the source DB snapshot to the target DB snapshot. By
-     *         default, tags aren't copied.
+     * @return Specifies whether to copy all tags from the source DB snapshot to the target DB snapshot. By default,
+     *         tags aren't copied.
      */
 
     public Boolean getCopyTags() {
@@ -917,13 +917,13 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the source DB snapshot to the target DB snapshot. By
-     * default, tags aren't copied.
+     * Specifies whether to copy all tags from the source DB snapshot to the target DB snapshot. By default, tags aren't
+     * copied.
      * </p>
      * 
      * @param copyTags
-     *        A value that indicates whether to copy all tags from the source DB snapshot to the target DB snapshot. By
-     *        default, tags aren't copied.
+     *        Specifies whether to copy all tags from the source DB snapshot to the target DB snapshot. By default, tags
+     *        aren't copied.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -934,12 +934,12 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the source DB snapshot to the target DB snapshot. By
-     * default, tags aren't copied.
+     * Specifies whether to copy all tags from the source DB snapshot to the target DB snapshot. By default, tags aren't
+     * copied.
      * </p>
      * 
-     * @return A value that indicates whether to copy all tags from the source DB snapshot to the target DB snapshot. By
-     *         default, tags aren't copied.
+     * @return Specifies whether to copy all tags from the source DB snapshot to the target DB snapshot. By default,
+     *         tags aren't copied.
      */
 
     public Boolean isCopyTags() {
@@ -1512,15 +1512,15 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A value that indicates whether to copy the DB option group associated with the source DB snapshot to the target
-     * Amazon Web Services account and associate with the target DB snapshot. The associated option group can be copied
-     * only with cross-account snapshot copy calls.
+     * Specifies whether to copy the DB option group associated with the source DB snapshot to the target Amazon Web
+     * Services account and associate with the target DB snapshot. The associated option group can be copied only with
+     * cross-account snapshot copy calls.
      * </p>
      * 
      * @param copyOptionGroup
-     *        A value that indicates whether to copy the DB option group associated with the source DB snapshot to the
-     *        target Amazon Web Services account and associate with the target DB snapshot. The associated option group
-     *        can be copied only with cross-account snapshot copy calls.
+     *        Specifies whether to copy the DB option group associated with the source DB snapshot to the target Amazon
+     *        Web Services account and associate with the target DB snapshot. The associated option group can be copied
+     *        only with cross-account snapshot copy calls.
      */
 
     public void setCopyOptionGroup(Boolean copyOptionGroup) {
@@ -1529,14 +1529,14 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A value that indicates whether to copy the DB option group associated with the source DB snapshot to the target
-     * Amazon Web Services account and associate with the target DB snapshot. The associated option group can be copied
-     * only with cross-account snapshot copy calls.
+     * Specifies whether to copy the DB option group associated with the source DB snapshot to the target Amazon Web
+     * Services account and associate with the target DB snapshot. The associated option group can be copied only with
+     * cross-account snapshot copy calls.
      * </p>
      * 
-     * @return A value that indicates whether to copy the DB option group associated with the source DB snapshot to the
-     *         target Amazon Web Services account and associate with the target DB snapshot. The associated option group
-     *         can be copied only with cross-account snapshot copy calls.
+     * @return Specifies whether to copy the DB option group associated with the source DB snapshot to the target Amazon
+     *         Web Services account and associate with the target DB snapshot. The associated option group can be copied
+     *         only with cross-account snapshot copy calls.
      */
 
     public Boolean getCopyOptionGroup() {
@@ -1545,15 +1545,15 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A value that indicates whether to copy the DB option group associated with the source DB snapshot to the target
-     * Amazon Web Services account and associate with the target DB snapshot. The associated option group can be copied
-     * only with cross-account snapshot copy calls.
+     * Specifies whether to copy the DB option group associated with the source DB snapshot to the target Amazon Web
+     * Services account and associate with the target DB snapshot. The associated option group can be copied only with
+     * cross-account snapshot copy calls.
      * </p>
      * 
      * @param copyOptionGroup
-     *        A value that indicates whether to copy the DB option group associated with the source DB snapshot to the
-     *        target Amazon Web Services account and associate with the target DB snapshot. The associated option group
-     *        can be copied only with cross-account snapshot copy calls.
+     *        Specifies whether to copy the DB option group associated with the source DB snapshot to the target Amazon
+     *        Web Services account and associate with the target DB snapshot. The associated option group can be copied
+     *        only with cross-account snapshot copy calls.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1564,14 +1564,14 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A value that indicates whether to copy the DB option group associated with the source DB snapshot to the target
-     * Amazon Web Services account and associate with the target DB snapshot. The associated option group can be copied
-     * only with cross-account snapshot copy calls.
+     * Specifies whether to copy the DB option group associated with the source DB snapshot to the target Amazon Web
+     * Services account and associate with the target DB snapshot. The associated option group can be copied only with
+     * cross-account snapshot copy calls.
      * </p>
      * 
-     * @return A value that indicates whether to copy the DB option group associated with the source DB snapshot to the
-     *         target Amazon Web Services account and associate with the target DB snapshot. The associated option group
-     *         can be copied only with cross-account snapshot copy calls.
+     * @return Specifies whether to copy the DB option group associated with the source DB snapshot to the target Amazon
+     *         Web Services account and associate with the target DB snapshot. The associated option group can be copied
+     *         only with cross-account snapshot copy calls.
      */
 
     public Boolean isCopyOptionGroup() {

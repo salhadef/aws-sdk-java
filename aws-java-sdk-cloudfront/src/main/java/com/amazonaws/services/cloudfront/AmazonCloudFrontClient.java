@@ -45,6 +45,7 @@ import com.amazonaws.services.cloudfront.waiters.AmazonCloudFrontWaiters;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.cloudfront.model.*;
+
 import com.amazonaws.services.cloudfront.model.transform.*;
 
 /**
@@ -971,6 +972,28 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * distribution's configuration. Then you can use <code>CreateContinuousDeploymentPolicy</code> to incrementally
      * move traffic to the staging distribution.
      * </p>
+     * <p>
+     * This API operation requires the following IAM permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistribution.html">GetDistribution</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateDistribution.html">
+     * CreateDistribution</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a
+     * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CopyDistribution.html">CopyDistribution</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param copyDistributionRequest
      * @return Result of the CopyDistribution operation returned by the service.
@@ -1104,10 +1127,17 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         information, see <a
      *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
      *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws TooManyDistributionsAssociatedToOriginAccessControlException
+     *         The maximum number of distributions have been associated with the specified origin access control.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
      * @throws NoSuchResponseHeadersPolicyException
      *         The response headers policy does not exist.
      * @throws TooManyDistributionsAssociatedToResponseHeadersPolicyException
-     *         The maximum number of distributions have been associated with the specified response headers policy.</p>
+     *         The maximum number of distributions have been associated with the specified response headers policy.
+     *         </p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
@@ -1685,8 +1715,21 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Create a new distribution with tags.
+     * Create a new distribution with tags. This API operation requires the following IAM permissions:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateDistribution.html">
+     * CreateDistribution</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_TagResource.html">TagResource</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param createDistributionWithTagsRequest
      *        The request to create a new distribution with tags.
@@ -1702,6 +1745,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         The origin access identity is not valid or doesn't exist.
      * @throws InvalidOriginAccessControlException
      *         The origin access control is not valid.
+     * @throws IllegalOriginAccessConfigurationException
+     *         An origin cannot contain both an origin access control (OAC) and an origin access identity (OAI).
      * @throws AccessDeniedException
      *         Access denied.
      * @throws TooManyTrustedSignersException
@@ -1817,10 +1862,17 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         information, see <a
      *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
      *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws TooManyDistributionsAssociatedToOriginAccessControlException
+     *         The maximum number of distributions have been associated with the specified origin access control.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
      * @throws NoSuchResponseHeadersPolicyException
      *         The response headers policy does not exist.
      * @throws TooManyDistributionsAssociatedToResponseHeadersPolicyException
-     *         The maximum number of distributions have been associated with the specified response headers policy.</p>
+     *         The maximum number of distributions have been associated with the specified response headers policy.
+     *         </p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
@@ -8288,10 +8340,17 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         information, see <a
      *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
      *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws TooManyDistributionsAssociatedToOriginAccessControlException
+     *         The maximum number of distributions have been associated with the specified origin access control.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
      * @throws NoSuchResponseHeadersPolicyException
      *         The response headers policy does not exist.
      * @throws TooManyDistributionsAssociatedToResponseHeadersPolicyException
-     *         The maximum number of distributions have been associated with the specified response headers policy.</p>
+     *         The maximum number of distributions have been associated with the specified response headers policy.
+     *         </p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
@@ -8392,6 +8451,22 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * staging distribution's configuration to the primary distribution. This action will disable the continuous
      * deployment policy and move your domain's traffic back to the primary distribution.
      * </p>
+     * <p>
+     * This API operation requires the following IAM permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistribution.html">GetDistribution</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">
+     * UpdateDistribution</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param updateDistributionWithStagingConfigRequest
      * @return Result of the UpdateDistributionWithStagingConfig operation returned by the service.
@@ -8517,10 +8592,17 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         information, see <a
      *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
      *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws TooManyDistributionsAssociatedToOriginAccessControlException
+     *         The maximum number of distributions have been associated with the specified origin access control.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
      * @throws NoSuchResponseHeadersPolicyException
      *         The response headers policy does not exist.
      * @throws TooManyDistributionsAssociatedToResponseHeadersPolicyException
-     *         The maximum number of distributions have been associated with the specified response headers policy.</p>
+     *         The maximum number of distributions have been associated with the specified response headers policy.
+     *         </p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"

@@ -201,6 +201,42 @@ public interface AWSBackup {
 
     /**
      * <p>
+     * This request creates a logical container to where backups may be copied.
+     * </p>
+     * <p>
+     * This request includes a name, the Region, the maximum number of retention days, the minimum number of retention
+     * days, and optionally can include tags and a creator request ID.
+     * </p>
+     * <note>
+     * <p>
+     * Do not include sensitive data, such as passport numbers, in the name of a backup vault.
+     * </p>
+     * </note>
+     * 
+     * @param createLogicallyAirGappedBackupVaultRequest
+     * @return Result of the CreateLogicallyAirGappedBackupVault operation returned by the service.
+     * @throws AlreadyExistsException
+     *         The required resource already exists.
+     * @throws InvalidParameterValueException
+     *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @throws LimitExceededException
+     *         A limit in the request has been exceeded; for example, a maximum number of items allowed in a request.
+     * @throws MissingParameterValueException
+     *         Indicates that a required parameter is missing.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a parameter is of the wrong
+     *         type.
+     * @sample AWSBackup.CreateLogicallyAirGappedBackupVault
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateLogicallyAirGappedBackupVault"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateLogicallyAirGappedBackupVaultResult createLogicallyAirGappedBackupVault(
+            CreateLogicallyAirGappedBackupVaultRequest createLogicallyAirGappedBackupVaultRequest);
+
+    /**
+     * <p>
      * Creates a report plan. A report plan is a document that contains information about the contents of the report and
      * where Backup will deliver it.
      * </p>
@@ -1162,6 +1198,26 @@ public interface AWSBackup {
 
     /**
      * <p>
+     * This request lists the protected resources corresponding to each backup vault.
+     * </p>
+     * 
+     * @param listProtectedResourcesByBackupVaultRequest
+     * @return Result of the ListProtectedResourcesByBackupVault operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action doesn't exist.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @sample AWSBackup.ListProtectedResourcesByBackupVault
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListProtectedResourcesByBackupVault"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListProtectedResourcesByBackupVaultResult listProtectedResourcesByBackupVault(
+            ListProtectedResourcesByBackupVaultRequest listProtectedResourcesByBackupVaultRequest);
+
+    /**
+     * <p>
      * Returns detailed information about the recovery points stored in a backup vault.
      * </p>
      * 
@@ -1481,6 +1537,9 @@ public interface AWSBackup {
      *         Indicates that a required parameter is missing.
      * @throws ServiceUnavailableException
      *         The request failed due to a temporary failure of the server.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a parameter is of the wrong
+     *         type.
      * @sample AWSBackup.StartRestoreJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/StartRestoreJob" target="_top">AWS API
      *      Documentation</a>

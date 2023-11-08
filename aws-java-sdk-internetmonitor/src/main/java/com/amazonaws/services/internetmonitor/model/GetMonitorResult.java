@@ -37,7 +37,7 @@ public class GetMonitorResult extends com.amazonaws.AmazonWebServiceResult<com.a
     private String monitorArn;
     /**
      * <p>
-     * The resources that have been added for the monitor. Resources are listed by their Amazon Resource Names (ARNs).
+     * The resources monitored by the monitor. Resources are listed by their Amazon Resource Names (ARNs).
      * </p>
      */
     private java.util.List<String> resources;
@@ -80,8 +80,8 @@ public class GetMonitorResult extends com.amazonaws.AmazonWebServiceResult<com.a
     /**
      * <p>
      * The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where
-     * clients access your application resources from and the network or ASN, such as an internet service provider
-     * (ISP), that clients access the resources through. This limit helps control billing costs.
+     * clients access your application resources from and the ASN or network provider, such as an internet service
+     * provider (ISP), that clients access the resources through. This limit can help control billing costs.
      * </p>
      * <p>
      * To learn more, see <a
@@ -100,10 +100,30 @@ public class GetMonitorResult extends com.amazonaws.AmazonWebServiceResult<com.a
     private InternetMeasurementsLogDelivery internetMeasurementsLogDelivery;
     /**
      * <p>
-     * The percentage of the internet-facing traffic for your application that you want to monitor with this monitor.
+     * The percentage of the internet-facing traffic for your application to monitor with this monitor. If you set a
+     * city-networks maximum, that limit overrides the traffic percentage that you set.
+     * </p>
+     * <p>
+     * To learn more, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMTrafficPercentage.html">Choosing an
+     * application traffic percentage to monitor </a> in the Amazon CloudWatch Internet Monitor section of the
+     * <i>CloudWatch User Guide</i>.
      * </p>
      */
     private Integer trafficPercentageToMonitor;
+    /**
+     * <p>
+     * The list of health event threshold configurations. The threshold percentage for a health score determines, along
+     * with other configuration information, when Internet Monitor creates a health event when there's an internet issue
+     * that affects your application end users.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview"
+     * > Change health event thresholds</a> in the Internet Monitor section of the <i>CloudWatch User Guide</i>.
+     * </p>
+     */
+    private HealthEventsConfig healthEventsConfig;
 
     /**
      * <p>
@@ -187,11 +207,10 @@ public class GetMonitorResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The resources that have been added for the monitor. Resources are listed by their Amazon Resource Names (ARNs).
+     * The resources monitored by the monitor. Resources are listed by their Amazon Resource Names (ARNs).
      * </p>
      * 
-     * @return The resources that have been added for the monitor. Resources are listed by their Amazon Resource Names
-     *         (ARNs).
+     * @return The resources monitored by the monitor. Resources are listed by their Amazon Resource Names (ARNs).
      */
 
     public java.util.List<String> getResources() {
@@ -200,12 +219,11 @@ public class GetMonitorResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The resources that have been added for the monitor. Resources are listed by their Amazon Resource Names (ARNs).
+     * The resources monitored by the monitor. Resources are listed by their Amazon Resource Names (ARNs).
      * </p>
      * 
      * @param resources
-     *        The resources that have been added for the monitor. Resources are listed by their Amazon Resource Names
-     *        (ARNs).
+     *        The resources monitored by the monitor. Resources are listed by their Amazon Resource Names (ARNs).
      */
 
     public void setResources(java.util.Collection<String> resources) {
@@ -219,7 +237,7 @@ public class GetMonitorResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The resources that have been added for the monitor. Resources are listed by their Amazon Resource Names (ARNs).
+     * The resources monitored by the monitor. Resources are listed by their Amazon Resource Names (ARNs).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -228,8 +246,7 @@ public class GetMonitorResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      * 
      * @param resources
-     *        The resources that have been added for the monitor. Resources are listed by their Amazon Resource Names
-     *        (ARNs).
+     *        The resources monitored by the monitor. Resources are listed by their Amazon Resource Names (ARNs).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -245,12 +262,11 @@ public class GetMonitorResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The resources that have been added for the monitor. Resources are listed by their Amazon Resource Names (ARNs).
+     * The resources monitored by the monitor. Resources are listed by their Amazon Resource Names (ARNs).
      * </p>
      * 
      * @param resources
-     *        The resources that have been added for the monitor. Resources are listed by their Amazon Resource Names
-     *        (ARNs).
+     *        The resources monitored by the monitor. Resources are listed by their Amazon Resource Names (ARNs).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -568,8 +584,8 @@ public class GetMonitorResult extends com.amazonaws.AmazonWebServiceResult<com.a
     /**
      * <p>
      * The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where
-     * clients access your application resources from and the network or ASN, such as an internet service provider
-     * (ISP), that clients access the resources through. This limit helps control billing costs.
+     * clients access your application resources from and the ASN or network provider, such as an internet service
+     * provider (ISP), that clients access the resources through. This limit can help control billing costs.
      * </p>
      * <p>
      * To learn more, see <a
@@ -580,8 +596,9 @@ public class GetMonitorResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * 
      * @param maxCityNetworksToMonitor
      *        The maximum number of city-networks to monitor for your resources. A city-network is the location (city)
-     *        where clients access your application resources from and the network or ASN, such as an internet service
-     *        provider (ISP), that clients access the resources through. This limit helps control billing costs.</p>
+     *        where clients access your application resources from and the ASN or network provider, such as an internet
+     *        service provider (ISP), that clients access the resources through. This limit can help control billing
+     *        costs.</p>
      *        <p>
      *        To learn more, see <a
      *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMCityNetworksMaximum.html">Choosing
@@ -596,8 +613,8 @@ public class GetMonitorResult extends com.amazonaws.AmazonWebServiceResult<com.a
     /**
      * <p>
      * The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where
-     * clients access your application resources from and the network or ASN, such as an internet service provider
-     * (ISP), that clients access the resources through. This limit helps control billing costs.
+     * clients access your application resources from and the ASN or network provider, such as an internet service
+     * provider (ISP), that clients access the resources through. This limit can help control billing costs.
      * </p>
      * <p>
      * To learn more, see <a
@@ -607,8 +624,9 @@ public class GetMonitorResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      * 
      * @return The maximum number of city-networks to monitor for your resources. A city-network is the location (city)
-     *         where clients access your application resources from and the network or ASN, such as an internet service
-     *         provider (ISP), that clients access the resources through. This limit helps control billing costs.</p>
+     *         where clients access your application resources from and the ASN or network provider, such as an internet
+     *         service provider (ISP), that clients access the resources through. This limit can help control billing
+     *         costs.</p>
      *         <p>
      *         To learn more, see <a
      *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMCityNetworksMaximum.html">Choosing
@@ -623,8 +641,8 @@ public class GetMonitorResult extends com.amazonaws.AmazonWebServiceResult<com.a
     /**
      * <p>
      * The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where
-     * clients access your application resources from and the network or ASN, such as an internet service provider
-     * (ISP), that clients access the resources through. This limit helps control billing costs.
+     * clients access your application resources from and the ASN or network provider, such as an internet service
+     * provider (ISP), that clients access the resources through. This limit can help control billing costs.
      * </p>
      * <p>
      * To learn more, see <a
@@ -635,8 +653,9 @@ public class GetMonitorResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * 
      * @param maxCityNetworksToMonitor
      *        The maximum number of city-networks to monitor for your resources. A city-network is the location (city)
-     *        where clients access your application resources from and the network or ASN, such as an internet service
-     *        provider (ISP), that clients access the resources through. This limit helps control billing costs.</p>
+     *        where clients access your application resources from and the ASN or network provider, such as an internet
+     *        service provider (ISP), that clients access the resources through. This limit can help control billing
+     *        costs.</p>
      *        <p>
      *        To learn more, see <a
      *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMCityNetworksMaximum.html">Choosing
@@ -698,12 +717,24 @@ public class GetMonitorResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The percentage of the internet-facing traffic for your application that you want to monitor with this monitor.
+     * The percentage of the internet-facing traffic for your application to monitor with this monitor. If you set a
+     * city-networks maximum, that limit overrides the traffic percentage that you set.
+     * </p>
+     * <p>
+     * To learn more, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMTrafficPercentage.html">Choosing an
+     * application traffic percentage to monitor </a> in the Amazon CloudWatch Internet Monitor section of the
+     * <i>CloudWatch User Guide</i>.
      * </p>
      * 
      * @param trafficPercentageToMonitor
-     *        The percentage of the internet-facing traffic for your application that you want to monitor with this
-     *        monitor.
+     *        The percentage of the internet-facing traffic for your application to monitor with this monitor. If you
+     *        set a city-networks maximum, that limit overrides the traffic percentage that you set.</p>
+     *        <p>
+     *        To learn more, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMTrafficPercentage.html">Choosing an
+     *        application traffic percentage to monitor </a> in the Amazon CloudWatch Internet Monitor section of the
+     *        <i>CloudWatch User Guide</i>.
      */
 
     public void setTrafficPercentageToMonitor(Integer trafficPercentageToMonitor) {
@@ -712,11 +743,23 @@ public class GetMonitorResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The percentage of the internet-facing traffic for your application that you want to monitor with this monitor.
+     * The percentage of the internet-facing traffic for your application to monitor with this monitor. If you set a
+     * city-networks maximum, that limit overrides the traffic percentage that you set.
+     * </p>
+     * <p>
+     * To learn more, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMTrafficPercentage.html">Choosing an
+     * application traffic percentage to monitor </a> in the Amazon CloudWatch Internet Monitor section of the
+     * <i>CloudWatch User Guide</i>.
      * </p>
      * 
-     * @return The percentage of the internet-facing traffic for your application that you want to monitor with this
-     *         monitor.
+     * @return The percentage of the internet-facing traffic for your application to monitor with this monitor. If you
+     *         set a city-networks maximum, that limit overrides the traffic percentage that you set.</p>
+     *         <p>
+     *         To learn more, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMTrafficPercentage.html">Choosing
+     *         an application traffic percentage to monitor </a> in the Amazon CloudWatch Internet Monitor section of
+     *         the <i>CloudWatch User Guide</i>.
      */
 
     public Integer getTrafficPercentageToMonitor() {
@@ -725,17 +768,108 @@ public class GetMonitorResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The percentage of the internet-facing traffic for your application that you want to monitor with this monitor.
+     * The percentage of the internet-facing traffic for your application to monitor with this monitor. If you set a
+     * city-networks maximum, that limit overrides the traffic percentage that you set.
+     * </p>
+     * <p>
+     * To learn more, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMTrafficPercentage.html">Choosing an
+     * application traffic percentage to monitor </a> in the Amazon CloudWatch Internet Monitor section of the
+     * <i>CloudWatch User Guide</i>.
      * </p>
      * 
      * @param trafficPercentageToMonitor
-     *        The percentage of the internet-facing traffic for your application that you want to monitor with this
-     *        monitor.
+     *        The percentage of the internet-facing traffic for your application to monitor with this monitor. If you
+     *        set a city-networks maximum, that limit overrides the traffic percentage that you set.</p>
+     *        <p>
+     *        To learn more, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMTrafficPercentage.html">Choosing an
+     *        application traffic percentage to monitor </a> in the Amazon CloudWatch Internet Monitor section of the
+     *        <i>CloudWatch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetMonitorResult withTrafficPercentageToMonitor(Integer trafficPercentageToMonitor) {
         setTrafficPercentageToMonitor(trafficPercentageToMonitor);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of health event threshold configurations. The threshold percentage for a health score determines, along
+     * with other configuration information, when Internet Monitor creates a health event when there's an internet issue
+     * that affects your application end users.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview"
+     * > Change health event thresholds</a> in the Internet Monitor section of the <i>CloudWatch User Guide</i>.
+     * </p>
+     * 
+     * @param healthEventsConfig
+     *        The list of health event threshold configurations. The threshold percentage for a health score determines,
+     *        along with other configuration information, when Internet Monitor creates a health event when there's an
+     *        internet issue that affects your application end users.</p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview"
+     *        > Change health event thresholds</a> in the Internet Monitor section of the <i>CloudWatch User Guide</i>.
+     */
+
+    public void setHealthEventsConfig(HealthEventsConfig healthEventsConfig) {
+        this.healthEventsConfig = healthEventsConfig;
+    }
+
+    /**
+     * <p>
+     * The list of health event threshold configurations. The threshold percentage for a health score determines, along
+     * with other configuration information, when Internet Monitor creates a health event when there's an internet issue
+     * that affects your application end users.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview"
+     * > Change health event thresholds</a> in the Internet Monitor section of the <i>CloudWatch User Guide</i>.
+     * </p>
+     * 
+     * @return The list of health event threshold configurations. The threshold percentage for a health score
+     *         determines, along with other configuration information, when Internet Monitor creates a health event when
+     *         there's an internet issue that affects your application end users.</p>
+     *         <p>
+     *         For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview"
+     *         > Change health event thresholds</a> in the Internet Monitor section of the <i>CloudWatch User Guide</i>.
+     */
+
+    public HealthEventsConfig getHealthEventsConfig() {
+        return this.healthEventsConfig;
+    }
+
+    /**
+     * <p>
+     * The list of health event threshold configurations. The threshold percentage for a health score determines, along
+     * with other configuration information, when Internet Monitor creates a health event when there's an internet issue
+     * that affects your application end users.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview"
+     * > Change health event thresholds</a> in the Internet Monitor section of the <i>CloudWatch User Guide</i>.
+     * </p>
+     * 
+     * @param healthEventsConfig
+     *        The list of health event threshold configurations. The threshold percentage for a health score determines,
+     *        along with other configuration information, when Internet Monitor creates a health event when there's an
+     *        internet issue that affects your application end users.</p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview"
+     *        > Change health event thresholds</a> in the Internet Monitor section of the <i>CloudWatch User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetMonitorResult withHealthEventsConfig(HealthEventsConfig healthEventsConfig) {
+        setHealthEventsConfig(healthEventsConfig);
         return this;
     }
 
@@ -774,7 +908,9 @@ public class GetMonitorResult extends com.amazonaws.AmazonWebServiceResult<com.a
         if (getInternetMeasurementsLogDelivery() != null)
             sb.append("InternetMeasurementsLogDelivery: ").append(getInternetMeasurementsLogDelivery()).append(",");
         if (getTrafficPercentageToMonitor() != null)
-            sb.append("TrafficPercentageToMonitor: ").append(getTrafficPercentageToMonitor());
+            sb.append("TrafficPercentageToMonitor: ").append(getTrafficPercentageToMonitor()).append(",");
+        if (getHealthEventsConfig() != null)
+            sb.append("HealthEventsConfig: ").append(getHealthEventsConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -838,6 +974,10 @@ public class GetMonitorResult extends com.amazonaws.AmazonWebServiceResult<com.a
             return false;
         if (other.getTrafficPercentageToMonitor() != null && other.getTrafficPercentageToMonitor().equals(this.getTrafficPercentageToMonitor()) == false)
             return false;
+        if (other.getHealthEventsConfig() == null ^ this.getHealthEventsConfig() == null)
+            return false;
+        if (other.getHealthEventsConfig() != null && other.getHealthEventsConfig().equals(this.getHealthEventsConfig()) == false)
+            return false;
         return true;
     }
 
@@ -858,6 +998,7 @@ public class GetMonitorResult extends com.amazonaws.AmazonWebServiceResult<com.a
         hashCode = prime * hashCode + ((getMaxCityNetworksToMonitor() == null) ? 0 : getMaxCityNetworksToMonitor().hashCode());
         hashCode = prime * hashCode + ((getInternetMeasurementsLogDelivery() == null) ? 0 : getInternetMeasurementsLogDelivery().hashCode());
         hashCode = prime * hashCode + ((getTrafficPercentageToMonitor() == null) ? 0 : getTrafficPercentageToMonitor().hashCode());
+        hashCode = prime * hashCode + ((getHealthEventsConfig() == null) ? 0 : getHealthEventsConfig().hashCode());
         return hashCode;
     }
 

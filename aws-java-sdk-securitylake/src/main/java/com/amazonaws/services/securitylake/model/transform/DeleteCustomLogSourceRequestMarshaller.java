@@ -27,8 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DeleteCustomLogSourceRequestMarshaller {
 
-    private static final MarshallingInfo<String> CUSTOMSOURCENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("customSourceName").build();
+    private static final MarshallingInfo<String> SOURCENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("sourceName").build();
+    private static final MarshallingInfo<String> SOURCEVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("sourceVersion").build();
 
     private static final DeleteCustomLogSourceRequestMarshaller instance = new DeleteCustomLogSourceRequestMarshaller();
 
@@ -46,7 +48,8 @@ public class DeleteCustomLogSourceRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(deleteCustomLogSourceRequest.getCustomSourceName(), CUSTOMSOURCENAME_BINDING);
+            protocolMarshaller.marshall(deleteCustomLogSourceRequest.getSourceName(), SOURCENAME_BINDING);
+            protocolMarshaller.marshall(deleteCustomLogSourceRequest.getSourceVersion(), SOURCEVERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

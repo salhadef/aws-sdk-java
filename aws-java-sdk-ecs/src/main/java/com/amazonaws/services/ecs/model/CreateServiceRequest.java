@@ -120,7 +120,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     private com.amazonaws.internal.SdkInternalList<ServiceRegistry> serviceRegistries;
     /**
      * <p>
-     * The number of instantiations of the specified task definition to place and keep running on your cluster.
+     * The number of instantiations of the specified task definition to place and keep running in your service.
      * </p>
      * <p>
      * This is required if <code>schedulingStrategy</code> is <code>REPLICA</code> or isn't specified. If
@@ -366,6 +366,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging your Amazon ECS
      * resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
+     * <p>
+     * When you use Amazon ECS managed tags, you need to set the <code>propagateTags</code> request parameter.
+     * </p>
      */
     private Boolean enableECSManagedTags;
     /**
@@ -374,6 +377,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * aren't propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task
      * creation, use the <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a> API action.
+     * </p>
+     * <p>
+     * The default is <code>NONE</code>.
      * </p>
      */
     private String propagateTags;
@@ -1146,7 +1152,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The number of instantiations of the specified task definition to place and keep running on your cluster.
+     * The number of instantiations of the specified task definition to place and keep running in your service.
      * </p>
      * <p>
      * This is required if <code>schedulingStrategy</code> is <code>REPLICA</code> or isn't specified. If
@@ -1154,8 +1160,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param desiredCount
-     *        The number of instantiations of the specified task definition to place and keep running on your
-     *        cluster.</p>
+     *        The number of instantiations of the specified task definition to place and keep running in your
+     *        service.</p>
      *        <p>
      *        This is required if <code>schedulingStrategy</code> is <code>REPLICA</code> or isn't specified. If
      *        <code>schedulingStrategy</code> is <code>DAEMON</code> then this isn't required.
@@ -1167,15 +1173,15 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The number of instantiations of the specified task definition to place and keep running on your cluster.
+     * The number of instantiations of the specified task definition to place and keep running in your service.
      * </p>
      * <p>
      * This is required if <code>schedulingStrategy</code> is <code>REPLICA</code> or isn't specified. If
      * <code>schedulingStrategy</code> is <code>DAEMON</code> then this isn't required.
      * </p>
      * 
-     * @return The number of instantiations of the specified task definition to place and keep running on your
-     *         cluster.</p>
+     * @return The number of instantiations of the specified task definition to place and keep running in your
+     *         service.</p>
      *         <p>
      *         This is required if <code>schedulingStrategy</code> is <code>REPLICA</code> or isn't specified. If
      *         <code>schedulingStrategy</code> is <code>DAEMON</code> then this isn't required.
@@ -1187,7 +1193,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The number of instantiations of the specified task definition to place and keep running on your cluster.
+     * The number of instantiations of the specified task definition to place and keep running in your service.
      * </p>
      * <p>
      * This is required if <code>schedulingStrategy</code> is <code>REPLICA</code> or isn't specified. If
@@ -1195,8 +1201,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param desiredCount
-     *        The number of instantiations of the specified task definition to place and keep running on your
-     *        cluster.</p>
+     *        The number of instantiations of the specified task definition to place and keep running in your
+     *        service.</p>
      *        <p>
      *        This is required if <code>schedulingStrategy</code> is <code>REPLICA</code> or isn't specified. If
      *        <code>schedulingStrategy</code> is <code>DAEMON</code> then this isn't required.
@@ -3033,12 +3039,17 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging your Amazon ECS
      * resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
+     * <p>
+     * When you use Amazon ECS managed tags, you need to set the <code>propagateTags</code> request parameter.
+     * </p>
      * 
      * @param enableECSManagedTags
      *        Specifies whether to turn on Amazon ECS managed tags for the tasks within the service. For more
      *        information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging your Amazon
-     *        ECS resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        ECS resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     *        <p>
+     *        When you use Amazon ECS managed tags, you need to set the <code>propagateTags</code> request parameter.
      */
 
     public void setEnableECSManagedTags(Boolean enableECSManagedTags) {
@@ -3051,11 +3062,16 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging your Amazon ECS
      * resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
+     * <p>
+     * When you use Amazon ECS managed tags, you need to set the <code>propagateTags</code> request parameter.
+     * </p>
      * 
      * @return Specifies whether to turn on Amazon ECS managed tags for the tasks within the service. For more
      *         information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging your
-     *         Amazon ECS resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *         Amazon ECS resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     *         <p>
+     *         When you use Amazon ECS managed tags, you need to set the <code>propagateTags</code> request parameter.
      */
 
     public Boolean getEnableECSManagedTags() {
@@ -3068,12 +3084,17 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging your Amazon ECS
      * resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
+     * <p>
+     * When you use Amazon ECS managed tags, you need to set the <code>propagateTags</code> request parameter.
+     * </p>
      * 
      * @param enableECSManagedTags
      *        Specifies whether to turn on Amazon ECS managed tags for the tasks within the service. For more
      *        information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging your Amazon
-     *        ECS resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        ECS resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     *        <p>
+     *        When you use Amazon ECS managed tags, you need to set the <code>propagateTags</code> request parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3088,11 +3109,16 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging your Amazon ECS
      * resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
+     * <p>
+     * When you use Amazon ECS managed tags, you need to set the <code>propagateTags</code> request parameter.
+     * </p>
      * 
      * @return Specifies whether to turn on Amazon ECS managed tags for the tasks within the service. For more
      *         information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging your
-     *         Amazon ECS resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *         Amazon ECS resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     *         <p>
+     *         When you use Amazon ECS managed tags, you need to set the <code>propagateTags</code> request parameter.
      */
 
     public Boolean isEnableECSManagedTags() {
@@ -3106,13 +3132,18 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * creation, use the <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a> API action.
      * </p>
+     * <p>
+     * The default is <code>NONE</code>.
+     * </p>
      * 
      * @param propagateTags
      *        Specifies whether to propagate the tags from the task definition to the task. If no value is specified,
      *        the tags aren't propagated. Tags can only be propagated to the task during task creation. To add tags to a
      *        task after task creation, use the <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a> API
-     *        action.
+     *        action.</p>
+     *        <p>
+     *        The default is <code>NONE</code>.
      * @see PropagateTags
      */
 
@@ -3127,12 +3158,17 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * creation, use the <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a> API action.
      * </p>
+     * <p>
+     * The default is <code>NONE</code>.
+     * </p>
      * 
      * @return Specifies whether to propagate the tags from the task definition to the task. If no value is specified,
      *         the tags aren't propagated. Tags can only be propagated to the task during task creation. To add tags to
      *         a task after task creation, use the <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a> API
-     *         action.
+     *         action.</p>
+     *         <p>
+     *         The default is <code>NONE</code>.
      * @see PropagateTags
      */
 
@@ -3147,13 +3183,18 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * creation, use the <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a> API action.
      * </p>
+     * <p>
+     * The default is <code>NONE</code>.
+     * </p>
      * 
      * @param propagateTags
      *        Specifies whether to propagate the tags from the task definition to the task. If no value is specified,
      *        the tags aren't propagated. Tags can only be propagated to the task during task creation. To add tags to a
      *        task after task creation, use the <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a> API
-     *        action.
+     *        action.</p>
+     *        <p>
+     *        The default is <code>NONE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PropagateTags
      */
@@ -3170,13 +3211,18 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * creation, use the <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a> API action.
      * </p>
+     * <p>
+     * The default is <code>NONE</code>.
+     * </p>
      * 
      * @param propagateTags
      *        Specifies whether to propagate the tags from the task definition to the task. If no value is specified,
      *        the tags aren't propagated. Tags can only be propagated to the task during task creation. To add tags to a
      *        task after task creation, use the <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a> API
-     *        action.
+     *        action.</p>
+     *        <p>
+     *        The default is <code>NONE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PropagateTags
      */

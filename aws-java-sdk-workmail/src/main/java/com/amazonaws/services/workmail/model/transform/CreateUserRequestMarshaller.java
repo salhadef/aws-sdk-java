@@ -35,6 +35,14 @@ public class CreateUserRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisplayName").build();
     private static final MarshallingInfo<String> PASSWORD_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Password").build();
+    private static final MarshallingInfo<String> ROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Role").build();
+    private static final MarshallingInfo<String> FIRSTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("FirstName").build();
+    private static final MarshallingInfo<String> LASTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("LastName").build();
+    private static final MarshallingInfo<Boolean> HIDDENFROMGLOBALADDRESSLIST_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HiddenFromGlobalAddressList").build();
 
     private static final CreateUserRequestMarshaller instance = new CreateUserRequestMarshaller();
 
@@ -56,6 +64,10 @@ public class CreateUserRequestMarshaller {
             protocolMarshaller.marshall(createUserRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(createUserRequest.getDisplayName(), DISPLAYNAME_BINDING);
             protocolMarshaller.marshall(createUserRequest.getPassword(), PASSWORD_BINDING);
+            protocolMarshaller.marshall(createUserRequest.getRole(), ROLE_BINDING);
+            protocolMarshaller.marshall(createUserRequest.getFirstName(), FIRSTNAME_BINDING);
+            protocolMarshaller.marshall(createUserRequest.getLastName(), LASTNAME_BINDING);
+            protocolMarshaller.marshall(createUserRequest.getHiddenFromGlobalAddressList(), HIDDENFROMGLOBALADDRESSLIST_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

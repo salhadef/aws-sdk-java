@@ -30,24 +30,24 @@ public class FailurePolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Recovery Point Objective (RPO), in seconds.
+     * Recovery Point Objective (RPO) in seconds.
      * </p>
      */
     private Integer rpoInSecs;
     /**
      * <p>
-     * The Recovery Time Objective (RTO), in seconds.
+     * Recovery Time Objective (RTO) in seconds.
      * </p>
      */
     private Integer rtoInSecs;
 
     /**
      * <p>
-     * The Recovery Point Objective (RPO), in seconds.
+     * Recovery Point Objective (RPO) in seconds.
      * </p>
      * 
      * @param rpoInSecs
-     *        The Recovery Point Objective (RPO), in seconds.
+     *        Recovery Point Objective (RPO) in seconds.
      */
 
     public void setRpoInSecs(Integer rpoInSecs) {
@@ -56,10 +56,10 @@ public class FailurePolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Recovery Point Objective (RPO), in seconds.
+     * Recovery Point Objective (RPO) in seconds.
      * </p>
      * 
-     * @return The Recovery Point Objective (RPO), in seconds.
+     * @return Recovery Point Objective (RPO) in seconds.
      */
 
     public Integer getRpoInSecs() {
@@ -68,11 +68,11 @@ public class FailurePolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Recovery Point Objective (RPO), in seconds.
+     * Recovery Point Objective (RPO) in seconds.
      * </p>
      * 
      * @param rpoInSecs
-     *        The Recovery Point Objective (RPO), in seconds.
+     *        Recovery Point Objective (RPO) in seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class FailurePolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Recovery Time Objective (RTO), in seconds.
+     * Recovery Time Objective (RTO) in seconds.
      * </p>
      * 
      * @param rtoInSecs
-     *        The Recovery Time Objective (RTO), in seconds.
+     *        Recovery Time Objective (RTO) in seconds.
      */
 
     public void setRtoInSecs(Integer rtoInSecs) {
@@ -96,10 +96,10 @@ public class FailurePolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Recovery Time Objective (RTO), in seconds.
+     * Recovery Time Objective (RTO) in seconds.
      * </p>
      * 
-     * @return The Recovery Time Objective (RTO), in seconds.
+     * @return Recovery Time Objective (RTO) in seconds.
      */
 
     public Integer getRtoInSecs() {
@@ -108,11 +108,11 @@ public class FailurePolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Recovery Time Objective (RTO), in seconds.
+     * Recovery Time Objective (RTO) in seconds.
      * </p>
      * 
      * @param rtoInSecs
-     *        The Recovery Time Objective (RTO), in seconds.
+     *        Recovery Time Objective (RTO) in seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

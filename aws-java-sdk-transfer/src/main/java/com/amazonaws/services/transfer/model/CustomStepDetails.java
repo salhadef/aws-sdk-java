@@ -36,7 +36,7 @@ public class CustomStepDetails implements Serializable, Cloneable, StructuredPoj
     private String name;
     /**
      * <p>
-     * The ARN for the lambda function that is being called.
+     * The ARN for the Lambda function that is being called.
      * </p>
      */
     private String target;
@@ -109,11 +109,11 @@ public class CustomStepDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ARN for the lambda function that is being called.
+     * The ARN for the Lambda function that is being called.
      * </p>
      * 
      * @param target
-     *        The ARN for the lambda function that is being called.
+     *        The ARN for the Lambda function that is being called.
      */
 
     public void setTarget(String target) {
@@ -122,10 +122,10 @@ public class CustomStepDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ARN for the lambda function that is being called.
+     * The ARN for the Lambda function that is being called.
      * </p>
      * 
-     * @return The ARN for the lambda function that is being called.
+     * @return The ARN for the Lambda function that is being called.
      */
 
     public String getTarget() {
@@ -134,11 +134,11 @@ public class CustomStepDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ARN for the lambda function that is being called.
+     * The ARN for the Lambda function that is being called.
      * </p>
      * 
      * @param target
-     *        The ARN for the lambda function that is being called.
+     *        The ARN for the Lambda function that is being called.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

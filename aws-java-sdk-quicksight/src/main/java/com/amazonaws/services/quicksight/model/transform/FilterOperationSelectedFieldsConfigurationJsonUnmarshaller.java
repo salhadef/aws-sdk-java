@@ -59,6 +59,13 @@ public class FilterOperationSelectedFieldsConfigurationJsonUnmarshaller implemen
                     context.nextToken();
                     filterOperationSelectedFieldsConfiguration.setSelectedFieldOptions(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SelectedColumns", targetDepth)) {
+                    context.nextToken();
+                    filterOperationSelectedFieldsConfiguration.setSelectedColumns(new ListUnmarshaller<ColumnIdentifier>(ColumnIdentifierJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

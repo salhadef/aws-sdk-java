@@ -34,6 +34,10 @@ public class KubernetesUserDetailsMarshaller {
             .marshallLocationName("uid").build();
     private static final MarshallingInfo<List> GROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("groups").build();
+    private static final MarshallingInfo<List> SESSIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("sessionName").build();
+    private static final MarshallingInfo<StructuredPojo> IMPERSONATEDUSER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("impersonatedUser").build();
 
     private static final KubernetesUserDetailsMarshaller instance = new KubernetesUserDetailsMarshaller();
 
@@ -54,6 +58,8 @@ public class KubernetesUserDetailsMarshaller {
             protocolMarshaller.marshall(kubernetesUserDetails.getUsername(), USERNAME_BINDING);
             protocolMarshaller.marshall(kubernetesUserDetails.getUid(), UID_BINDING);
             protocolMarshaller.marshall(kubernetesUserDetails.getGroups(), GROUPS_BINDING);
+            protocolMarshaller.marshall(kubernetesUserDetails.getSessionName(), SESSIONNAME_BINDING);
+            protocolMarshaller.marshall(kubernetesUserDetails.getImpersonatedUser(), IMPERSONATEDUSER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

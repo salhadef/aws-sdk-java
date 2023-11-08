@@ -43,6 +43,15 @@ public class DeleteKeyPairResultStaxUnmarshaller implements Unmarshaller<DeleteK
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("return", targetDepth)) {
+                    deleteKeyPairResult.setReturn(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("keyPairId", targetDepth)) {
+                    deleteKeyPairResult.setKeyPairId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return deleteKeyPairResult;

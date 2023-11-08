@@ -90,6 +90,10 @@ public class ClusterMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PlacementGroups").build();
     private static final MarshallingInfo<String> OSRELEASELABEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OSReleaseLabel").build();
+    private static final MarshallingInfo<Integer> EBSROOTVOLUMEIOPS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EbsRootVolumeIops").build();
+    private static final MarshallingInfo<Integer> EBSROOTVOLUMETHROUGHPUT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EbsRootVolumeThroughput").build();
 
     private static final ClusterMarshaller instance = new ClusterMarshaller();
 
@@ -138,6 +142,8 @@ public class ClusterMarshaller {
             protocolMarshaller.marshall(cluster.getStepConcurrencyLevel(), STEPCONCURRENCYLEVEL_BINDING);
             protocolMarshaller.marshall(cluster.getPlacementGroups(), PLACEMENTGROUPS_BINDING);
             protocolMarshaller.marshall(cluster.getOSReleaseLabel(), OSRELEASELABEL_BINDING);
+            protocolMarshaller.marshall(cluster.getEbsRootVolumeIops(), EBSROOTVOLUMEIOPS_BINDING);
+            protocolMarshaller.marshall(cluster.getEbsRootVolumeThroughput(), EBSROOTVOLUMETHROUGHPUT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -40,6 +40,12 @@ public class PivotTableFieldOptions implements Serializable, Cloneable, Structur
      * </p>
      */
     private java.util.List<PivotTableDataPathOption> dataPathOptions;
+    /**
+     * <p>
+     * The collapse state options for the pivot table field options.
+     * </p>
+     */
+    private java.util.List<PivotTableFieldCollapseStateOption> collapseStateOptions;
 
     /**
      * <p>
@@ -182,6 +188,76 @@ public class PivotTableFieldOptions implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * The collapse state options for the pivot table field options.
+     * </p>
+     * 
+     * @return The collapse state options for the pivot table field options.
+     */
+
+    public java.util.List<PivotTableFieldCollapseStateOption> getCollapseStateOptions() {
+        return collapseStateOptions;
+    }
+
+    /**
+     * <p>
+     * The collapse state options for the pivot table field options.
+     * </p>
+     * 
+     * @param collapseStateOptions
+     *        The collapse state options for the pivot table field options.
+     */
+
+    public void setCollapseStateOptions(java.util.Collection<PivotTableFieldCollapseStateOption> collapseStateOptions) {
+        if (collapseStateOptions == null) {
+            this.collapseStateOptions = null;
+            return;
+        }
+
+        this.collapseStateOptions = new java.util.ArrayList<PivotTableFieldCollapseStateOption>(collapseStateOptions);
+    }
+
+    /**
+     * <p>
+     * The collapse state options for the pivot table field options.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCollapseStateOptions(java.util.Collection)} or {@link #withCollapseStateOptions(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param collapseStateOptions
+     *        The collapse state options for the pivot table field options.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PivotTableFieldOptions withCollapseStateOptions(PivotTableFieldCollapseStateOption... collapseStateOptions) {
+        if (this.collapseStateOptions == null) {
+            setCollapseStateOptions(new java.util.ArrayList<PivotTableFieldCollapseStateOption>(collapseStateOptions.length));
+        }
+        for (PivotTableFieldCollapseStateOption ele : collapseStateOptions) {
+            this.collapseStateOptions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The collapse state options for the pivot table field options.
+     * </p>
+     * 
+     * @param collapseStateOptions
+     *        The collapse state options for the pivot table field options.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PivotTableFieldOptions withCollapseStateOptions(java.util.Collection<PivotTableFieldCollapseStateOption> collapseStateOptions) {
+        setCollapseStateOptions(collapseStateOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -196,7 +272,9 @@ public class PivotTableFieldOptions implements Serializable, Cloneable, Structur
         if (getSelectedFieldOptions() != null)
             sb.append("SelectedFieldOptions: ").append(getSelectedFieldOptions()).append(",");
         if (getDataPathOptions() != null)
-            sb.append("DataPathOptions: ").append(getDataPathOptions());
+            sb.append("DataPathOptions: ").append(getDataPathOptions()).append(",");
+        if (getCollapseStateOptions() != null)
+            sb.append("CollapseStateOptions: ").append(getCollapseStateOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -219,6 +297,10 @@ public class PivotTableFieldOptions implements Serializable, Cloneable, Structur
             return false;
         if (other.getDataPathOptions() != null && other.getDataPathOptions().equals(this.getDataPathOptions()) == false)
             return false;
+        if (other.getCollapseStateOptions() == null ^ this.getCollapseStateOptions() == null)
+            return false;
+        if (other.getCollapseStateOptions() != null && other.getCollapseStateOptions().equals(this.getCollapseStateOptions()) == false)
+            return false;
         return true;
     }
 
@@ -229,6 +311,7 @@ public class PivotTableFieldOptions implements Serializable, Cloneable, Structur
 
         hashCode = prime * hashCode + ((getSelectedFieldOptions() == null) ? 0 : getSelectedFieldOptions().hashCode());
         hashCode = prime * hashCode + ((getDataPathOptions() == null) ? 0 : getDataPathOptions().hashCode());
+        hashCode = prime * hashCode + ((getCollapseStateOptions() == null) ? 0 : getCollapseStateOptions().hashCode());
         return hashCode;
     }
 

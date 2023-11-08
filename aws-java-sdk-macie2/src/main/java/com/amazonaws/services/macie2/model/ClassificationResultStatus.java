@@ -67,7 +67,7 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      * <p>
      * ARCHIVE_CONTAINS_UNPROCESSED_FILES - The object is an archive file and Macie extracted and analyzed only some or
      * none of the files in the archive. To determine which files Macie analyzed, if any, refer to the corresponding
-     * sensitive data discovery result for the finding (ClassificationDetails.detailedResultsLocation).
+     * sensitive data discovery result for the finding (classificationDetails.detailedResultsLocation).
      * </p>
      * </li>
      * <li>
@@ -370,7 +370,7 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      * <p>
      * ARCHIVE_CONTAINS_UNPROCESSED_FILES - The object is an archive file and Macie extracted and analyzed only some or
      * none of the files in the archive. To determine which files Macie analyzed, if any, refer to the corresponding
-     * sensitive data discovery result for the finding (ClassificationDetails.detailedResultsLocation).
+     * sensitive data discovery result for the finding (classificationDetails.detailedResultsLocation).
      * </p>
      * </li>
      * <li>
@@ -510,7 +510,7 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      *        ARCHIVE_CONTAINS_UNPROCESSED_FILES - The object is an archive file and Macie extracted and analyzed only
      *        some or none of the files in the archive. To determine which files Macie analyzed, if any, refer to the
      *        corresponding sensitive data discovery result for the finding
-     *        (ClassificationDetails.detailedResultsLocation).
+     *        (classificationDetails.detailedResultsLocation).
      *        </p>
      *        </li>
      *        <li>
@@ -656,7 +656,7 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      * <p>
      * ARCHIVE_CONTAINS_UNPROCESSED_FILES - The object is an archive file and Macie extracted and analyzed only some or
      * none of the files in the archive. To determine which files Macie analyzed, if any, refer to the corresponding
-     * sensitive data discovery result for the finding (ClassificationDetails.detailedResultsLocation).
+     * sensitive data discovery result for the finding (classificationDetails.detailedResultsLocation).
      * </p>
      * </li>
      * <li>
@@ -795,7 +795,7 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      *         ARCHIVE_CONTAINS_UNPROCESSED_FILES - The object is an archive file and Macie extracted and analyzed only
      *         some or none of the files in the archive. To determine which files Macie analyzed, if any, refer to the
      *         corresponding sensitive data discovery result for the finding
-     *         (ClassificationDetails.detailedResultsLocation).
+     *         (classificationDetails.detailedResultsLocation).
      *         </p>
      *         </li>
      *         <li>
@@ -941,7 +941,7 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      * <p>
      * ARCHIVE_CONTAINS_UNPROCESSED_FILES - The object is an archive file and Macie extracted and analyzed only some or
      * none of the files in the archive. To determine which files Macie analyzed, if any, refer to the corresponding
-     * sensitive data discovery result for the finding (ClassificationDetails.detailedResultsLocation).
+     * sensitive data discovery result for the finding (classificationDetails.detailedResultsLocation).
      * </p>
      * </li>
      * <li>
@@ -1081,7 +1081,7 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      *        ARCHIVE_CONTAINS_UNPROCESSED_FILES - The object is an archive file and Macie extracted and analyzed only
      *        some or none of the files in the archive. To determine which files Macie analyzed, if any, refer to the
      *        corresponding sensitive data discovery result for the finding
-     *        (ClassificationDetails.detailedResultsLocation).
+     *        (classificationDetails.detailedResultsLocation).
      *        </p>
      *        </li>
      *        <li>

@@ -31,58 +31,10 @@ public class GetWorkflowResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String arn;
     /**
      * <p>
-     * When the workflow was created.
-     * </p>
-     */
-    private java.util.Date creationTime;
-    /**
-     * <p>
-     * The workflow's definition.
-     * </p>
-     */
-    private String definition;
-    /**
-     * <p>
-     * The workflow's description.
-     * </p>
-     */
-    private String description;
-    /**
-     * <p>
-     * The workflow's digest.
-     * </p>
-     */
-    private String digest;
-    /**
-     * <p>
-     * The workflow's engine.
-     * </p>
-     */
-    private String engine;
-    /**
-     * <p>
      * The workflow's ID.
      * </p>
      */
     private String id;
-    /**
-     * <p>
-     * The path of the main definition file for the workflow.
-     * </p>
-     */
-    private String main;
-    /**
-     * <p>
-     * The workflow's name.
-     * </p>
-     */
-    private String name;
-    /**
-     * <p>
-     * The workflow's parameter template.
-     * </p>
-     */
-    private java.util.Map<String, WorkflowParameter> parameterTemplate;
     /**
      * <p>
      * The workflow's status.
@@ -91,10 +43,52 @@ public class GetWorkflowResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String status;
     /**
      * <p>
-     * The workflow's status message.
+     * The workflow's type.
      * </p>
      */
-    private String statusMessage;
+    private String type;
+    /**
+     * <p>
+     * The workflow's name.
+     * </p>
+     */
+    private String name;
+    /**
+     * <p>
+     * The workflow's description.
+     * </p>
+     */
+    private String description;
+    /**
+     * <p>
+     * The workflow's engine.
+     * </p>
+     */
+    private String engine;
+    /**
+     * <p>
+     * The workflow's definition.
+     * </p>
+     */
+    private String definition;
+    /**
+     * <p>
+     * The path of the main definition file for the workflow.
+     * </p>
+     */
+    private String main;
+    /**
+     * <p>
+     * The workflow's digest.
+     * </p>
+     */
+    private String digest;
+    /**
+     * <p>
+     * The workflow's parameter template.
+     * </p>
+     */
+    private java.util.Map<String, WorkflowParameter> parameterTemplate;
     /**
      * <p>
      * The workflow's storage capacity in gigabytes.
@@ -103,16 +97,34 @@ public class GetWorkflowResult extends com.amazonaws.AmazonWebServiceResult<com.
     private Integer storageCapacity;
     /**
      * <p>
+     * When the workflow was created.
+     * </p>
+     */
+    private java.util.Date creationTime;
+    /**
+     * <p>
+     * The workflow's status message.
+     * </p>
+     */
+    private String statusMessage;
+    /**
+     * <p>
      * The workflow's tags.
      * </p>
      */
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * The workflow's type.
+     * Gets metadata for workflow.
      * </p>
      */
-    private String type;
+    private java.util.Map<String, String> metadata;
+    /**
+     * <p>
+     * The computational accelerator specified to run the workflow.
+     * </p>
+     */
+    private String accelerators;
 
     /**
      * <p>
@@ -156,81 +168,199 @@ public class GetWorkflowResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * When the workflow was created.
+     * The workflow's ID.
      * </p>
      * 
-     * @param creationTime
-     *        When the workflow was created.
+     * @param id
+     *        The workflow's ID.
      */
 
-    public void setCreationTime(java.util.Date creationTime) {
-        this.creationTime = creationTime;
+    public void setId(String id) {
+        this.id = id;
     }
 
     /**
      * <p>
-     * When the workflow was created.
+     * The workflow's ID.
      * </p>
      * 
-     * @return When the workflow was created.
+     * @return The workflow's ID.
      */
 
-    public java.util.Date getCreationTime() {
-        return this.creationTime;
+    public String getId() {
+        return this.id;
     }
 
     /**
      * <p>
-     * When the workflow was created.
+     * The workflow's ID.
      * </p>
      * 
-     * @param creationTime
-     *        When the workflow was created.
+     * @param id
+     *        The workflow's ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetWorkflowResult withCreationTime(java.util.Date creationTime) {
-        setCreationTime(creationTime);
+    public GetWorkflowResult withId(String id) {
+        setId(id);
         return this;
     }
 
     /**
      * <p>
-     * The workflow's definition.
+     * The workflow's status.
      * </p>
      * 
-     * @param definition
-     *        The workflow's definition.
+     * @param status
+     *        The workflow's status.
+     * @see WorkflowStatus
      */
 
-    public void setDefinition(String definition) {
-        this.definition = definition;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     /**
      * <p>
-     * The workflow's definition.
+     * The workflow's status.
      * </p>
      * 
-     * @return The workflow's definition.
+     * @return The workflow's status.
+     * @see WorkflowStatus
      */
 
-    public String getDefinition() {
-        return this.definition;
+    public String getStatus() {
+        return this.status;
     }
 
     /**
      * <p>
-     * The workflow's definition.
+     * The workflow's status.
      * </p>
      * 
-     * @param definition
-     *        The workflow's definition.
+     * @param status
+     *        The workflow's status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WorkflowStatus
+     */
+
+    public GetWorkflowResult withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The workflow's status.
+     * </p>
+     * 
+     * @param status
+     *        The workflow's status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WorkflowStatus
+     */
+
+    public GetWorkflowResult withStatus(WorkflowStatus status) {
+        this.status = status.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The workflow's type.
+     * </p>
+     * 
+     * @param type
+     *        The workflow's type.
+     * @see WorkflowType
+     */
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * <p>
+     * The workflow's type.
+     * </p>
+     * 
+     * @return The workflow's type.
+     * @see WorkflowType
+     */
+
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * <p>
+     * The workflow's type.
+     * </p>
+     * 
+     * @param type
+     *        The workflow's type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WorkflowType
+     */
+
+    public GetWorkflowResult withType(String type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The workflow's type.
+     * </p>
+     * 
+     * @param type
+     *        The workflow's type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WorkflowType
+     */
+
+    public GetWorkflowResult withType(WorkflowType type) {
+        this.type = type.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The workflow's name.
+     * </p>
+     * 
+     * @param name
+     *        The workflow's name.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The workflow's name.
+     * </p>
+     * 
+     * @return The workflow's name.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The workflow's name.
+     * </p>
+     * 
+     * @param name
+     *        The workflow's name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetWorkflowResult withDefinition(String definition) {
-        setDefinition(definition);
+    public GetWorkflowResult withName(String name) {
+        setName(name);
         return this;
     }
 
@@ -271,46 +401,6 @@ public class GetWorkflowResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     public GetWorkflowResult withDescription(String description) {
         setDescription(description);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The workflow's digest.
-     * </p>
-     * 
-     * @param digest
-     *        The workflow's digest.
-     */
-
-    public void setDigest(String digest) {
-        this.digest = digest;
-    }
-
-    /**
-     * <p>
-     * The workflow's digest.
-     * </p>
-     * 
-     * @return The workflow's digest.
-     */
-
-    public String getDigest() {
-        return this.digest;
-    }
-
-    /**
-     * <p>
-     * The workflow's digest.
-     * </p>
-     * 
-     * @param digest
-     *        The workflow's digest.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetWorkflowResult withDigest(String digest) {
-        setDigest(digest);
         return this;
     }
 
@@ -375,41 +465,41 @@ public class GetWorkflowResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The workflow's ID.
+     * The workflow's definition.
      * </p>
      * 
-     * @param id
-     *        The workflow's ID.
+     * @param definition
+     *        The workflow's definition.
      */
 
-    public void setId(String id) {
-        this.id = id;
+    public void setDefinition(String definition) {
+        this.definition = definition;
     }
 
     /**
      * <p>
-     * The workflow's ID.
+     * The workflow's definition.
      * </p>
      * 
-     * @return The workflow's ID.
+     * @return The workflow's definition.
      */
 
-    public String getId() {
-        return this.id;
+    public String getDefinition() {
+        return this.definition;
     }
 
     /**
      * <p>
-     * The workflow's ID.
+     * The workflow's definition.
      * </p>
      * 
-     * @param id
-     *        The workflow's ID.
+     * @param definition
+     *        The workflow's definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetWorkflowResult withId(String id) {
-        setId(id);
+    public GetWorkflowResult withDefinition(String definition) {
+        setDefinition(definition);
         return this;
     }
 
@@ -455,41 +545,41 @@ public class GetWorkflowResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The workflow's name.
+     * The workflow's digest.
      * </p>
      * 
-     * @param name
-     *        The workflow's name.
+     * @param digest
+     *        The workflow's digest.
      */
 
-    public void setName(String name) {
-        this.name = name;
+    public void setDigest(String digest) {
+        this.digest = digest;
     }
 
     /**
      * <p>
-     * The workflow's name.
+     * The workflow's digest.
      * </p>
      * 
-     * @return The workflow's name.
+     * @return The workflow's digest.
      */
 
-    public String getName() {
-        return this.name;
+    public String getDigest() {
+        return this.digest;
     }
 
     /**
      * <p>
-     * The workflow's name.
+     * The workflow's digest.
      * </p>
      * 
-     * @param name
-     *        The workflow's name.
+     * @param digest
+     *        The workflow's digest.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetWorkflowResult withName(String name) {
-        setName(name);
+    public GetWorkflowResult withDigest(String digest) {
+        setDigest(digest);
         return this;
     }
 
@@ -563,60 +653,81 @@ public class GetWorkflowResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The workflow's status.
+     * The workflow's storage capacity in gigabytes.
      * </p>
      * 
-     * @param status
-     *        The workflow's status.
-     * @see WorkflowStatus
+     * @param storageCapacity
+     *        The workflow's storage capacity in gigabytes.
      */
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setStorageCapacity(Integer storageCapacity) {
+        this.storageCapacity = storageCapacity;
     }
 
     /**
      * <p>
-     * The workflow's status.
+     * The workflow's storage capacity in gigabytes.
      * </p>
      * 
-     * @return The workflow's status.
-     * @see WorkflowStatus
+     * @return The workflow's storage capacity in gigabytes.
      */
 
-    public String getStatus() {
-        return this.status;
+    public Integer getStorageCapacity() {
+        return this.storageCapacity;
     }
 
     /**
      * <p>
-     * The workflow's status.
+     * The workflow's storage capacity in gigabytes.
      * </p>
      * 
-     * @param status
-     *        The workflow's status.
+     * @param storageCapacity
+     *        The workflow's storage capacity in gigabytes.
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see WorkflowStatus
      */
 
-    public GetWorkflowResult withStatus(String status) {
-        setStatus(status);
+    public GetWorkflowResult withStorageCapacity(Integer storageCapacity) {
+        setStorageCapacity(storageCapacity);
         return this;
     }
 
     /**
      * <p>
-     * The workflow's status.
+     * When the workflow was created.
      * </p>
      * 
-     * @param status
-     *        The workflow's status.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see WorkflowStatus
+     * @param creationTime
+     *        When the workflow was created.
      */
 
-    public GetWorkflowResult withStatus(WorkflowStatus status) {
-        this.status = status.toString();
+    public void setCreationTime(java.util.Date creationTime) {
+        this.creationTime = creationTime;
+    }
+
+    /**
+     * <p>
+     * When the workflow was created.
+     * </p>
+     * 
+     * @return When the workflow was created.
+     */
+
+    public java.util.Date getCreationTime() {
+        return this.creationTime;
+    }
+
+    /**
+     * <p>
+     * When the workflow was created.
+     * </p>
+     * 
+     * @param creationTime
+     *        When the workflow was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetWorkflowResult withCreationTime(java.util.Date creationTime) {
+        setCreationTime(creationTime);
         return this;
     }
 
@@ -657,46 +768,6 @@ public class GetWorkflowResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     public GetWorkflowResult withStatusMessage(String statusMessage) {
         setStatusMessage(statusMessage);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The workflow's storage capacity in gigabytes.
-     * </p>
-     * 
-     * @param storageCapacity
-     *        The workflow's storage capacity in gigabytes.
-     */
-
-    public void setStorageCapacity(Integer storageCapacity) {
-        this.storageCapacity = storageCapacity;
-    }
-
-    /**
-     * <p>
-     * The workflow's storage capacity in gigabytes.
-     * </p>
-     * 
-     * @return The workflow's storage capacity in gigabytes.
-     */
-
-    public Integer getStorageCapacity() {
-        return this.storageCapacity;
-    }
-
-    /**
-     * <p>
-     * The workflow's storage capacity in gigabytes.
-     * </p>
-     * 
-     * @param storageCapacity
-     *        The workflow's storage capacity in gigabytes.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetWorkflowResult withStorageCapacity(Integer storageCapacity) {
-        setStorageCapacity(storageCapacity);
         return this;
     }
 
@@ -770,60 +841,128 @@ public class GetWorkflowResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The workflow's type.
+     * Gets metadata for workflow.
      * </p>
      * 
-     * @param type
-     *        The workflow's type.
-     * @see WorkflowType
+     * @return Gets metadata for workflow.
      */
 
-    public void setType(String type) {
-        this.type = type;
+    public java.util.Map<String, String> getMetadata() {
+        return metadata;
     }
 
     /**
      * <p>
-     * The workflow's type.
+     * Gets metadata for workflow.
      * </p>
      * 
-     * @return The workflow's type.
-     * @see WorkflowType
+     * @param metadata
+     *        Gets metadata for workflow.
      */
 
-    public String getType() {
-        return this.type;
+    public void setMetadata(java.util.Map<String, String> metadata) {
+        this.metadata = metadata;
     }
 
     /**
      * <p>
-     * The workflow's type.
+     * Gets metadata for workflow.
      * </p>
      * 
-     * @param type
-     *        The workflow's type.
+     * @param metadata
+     *        Gets metadata for workflow.
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see WorkflowType
      */
 
-    public GetWorkflowResult withType(String type) {
-        setType(type);
+    public GetWorkflowResult withMetadata(java.util.Map<String, String> metadata) {
+        setMetadata(metadata);
+        return this;
+    }
+
+    /**
+     * Add a single Metadata entry
+     *
+     * @see GetWorkflowResult#withMetadata
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetWorkflowResult addMetadataEntry(String key, String value) {
+        if (null == this.metadata) {
+            this.metadata = new java.util.HashMap<String, String>();
+        }
+        if (this.metadata.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.metadata.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Metadata.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetWorkflowResult clearMetadataEntries() {
+        this.metadata = null;
         return this;
     }
 
     /**
      * <p>
-     * The workflow's type.
+     * The computational accelerator specified to run the workflow.
      * </p>
      * 
-     * @param type
-     *        The workflow's type.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see WorkflowType
+     * @param accelerators
+     *        The computational accelerator specified to run the workflow.
+     * @see Accelerators
      */
 
-    public GetWorkflowResult withType(WorkflowType type) {
-        this.type = type.toString();
+    public void setAccelerators(String accelerators) {
+        this.accelerators = accelerators;
+    }
+
+    /**
+     * <p>
+     * The computational accelerator specified to run the workflow.
+     * </p>
+     * 
+     * @return The computational accelerator specified to run the workflow.
+     * @see Accelerators
+     */
+
+    public String getAccelerators() {
+        return this.accelerators;
+    }
+
+    /**
+     * <p>
+     * The computational accelerator specified to run the workflow.
+     * </p>
+     * 
+     * @param accelerators
+     *        The computational accelerator specified to run the workflow.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Accelerators
+     */
+
+    public GetWorkflowResult withAccelerators(String accelerators) {
+        setAccelerators(accelerators);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The computational accelerator specified to run the workflow.
+     * </p>
+     * 
+     * @param accelerators
+     *        The computational accelerator specified to run the workflow.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Accelerators
+     */
+
+    public GetWorkflowResult withAccelerators(Accelerators accelerators) {
+        this.accelerators = accelerators.toString();
         return this;
     }
 
@@ -841,34 +980,38 @@ public class GetWorkflowResult extends com.amazonaws.AmazonWebServiceResult<com.
         sb.append("{");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
-        if (getCreationTime() != null)
-            sb.append("CreationTime: ").append(getCreationTime()).append(",");
-        if (getDefinition() != null)
-            sb.append("Definition: ").append(getDefinition()).append(",");
-        if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
-        if (getDigest() != null)
-            sb.append("Digest: ").append(getDigest()).append(",");
-        if (getEngine() != null)
-            sb.append("Engine: ").append(getEngine()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
-        if (getMain() != null)
-            sb.append("Main: ").append(getMain()).append(",");
-        if (getName() != null)
-            sb.append("Name: ").append(getName()).append(",");
-        if (getParameterTemplate() != null)
-            sb.append("ParameterTemplate: ").append(getParameterTemplate()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
-        if (getStatusMessage() != null)
-            sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getEngine() != null)
+            sb.append("Engine: ").append(getEngine()).append(",");
+        if (getDefinition() != null)
+            sb.append("Definition: ").append(getDefinition()).append(",");
+        if (getMain() != null)
+            sb.append("Main: ").append(getMain()).append(",");
+        if (getDigest() != null)
+            sb.append("Digest: ").append(getDigest()).append(",");
+        if (getParameterTemplate() != null)
+            sb.append("ParameterTemplate: ").append(getParameterTemplate()).append(",");
         if (getStorageCapacity() != null)
             sb.append("StorageCapacity: ").append(getStorageCapacity()).append(",");
+        if (getCreationTime() != null)
+            sb.append("CreationTime: ").append(getCreationTime()).append(",");
+        if (getStatusMessage() != null)
+            sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
-        if (getType() != null)
-            sb.append("Type: ").append(getType());
+        if (getMetadata() != null)
+            sb.append("Metadata: ").append(getMetadata()).append(",");
+        if (getAccelerators() != null)
+            sb.append("Accelerators: ").append(getAccelerators());
         sb.append("}");
         return sb.toString();
     }
@@ -887,61 +1030,69 @@ public class GetWorkflowResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
-        if (other.getCreationTime() == null ^ this.getCreationTime() == null)
-            return false;
-        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
-            return false;
-        if (other.getDefinition() == null ^ this.getDefinition() == null)
-            return false;
-        if (other.getDefinition() != null && other.getDefinition().equals(this.getDefinition()) == false)
-            return false;
-        if (other.getDescription() == null ^ this.getDescription() == null)
-            return false;
-        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
-            return false;
-        if (other.getDigest() == null ^ this.getDigest() == null)
-            return false;
-        if (other.getDigest() != null && other.getDigest().equals(this.getDigest()) == false)
-            return false;
-        if (other.getEngine() == null ^ this.getEngine() == null)
-            return false;
-        if (other.getEngine() != null && other.getEngine().equals(this.getEngine()) == false)
-            return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
-            return false;
-        if (other.getMain() == null ^ this.getMain() == null)
-            return false;
-        if (other.getMain() != null && other.getMain().equals(this.getMain()) == false)
-            return false;
-        if (other.getName() == null ^ this.getName() == null)
-            return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false)
-            return false;
-        if (other.getParameterTemplate() == null ^ this.getParameterTemplate() == null)
-            return false;
-        if (other.getParameterTemplate() != null && other.getParameterTemplate().equals(this.getParameterTemplate()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
-        if (other.getStatusMessage() == null ^ this.getStatusMessage() == null)
+        if (other.getType() == null ^ this.getType() == null)
             return false;
-        if (other.getStatusMessage() != null && other.getStatusMessage().equals(this.getStatusMessage()) == false)
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getEngine() == null ^ this.getEngine() == null)
+            return false;
+        if (other.getEngine() != null && other.getEngine().equals(this.getEngine()) == false)
+            return false;
+        if (other.getDefinition() == null ^ this.getDefinition() == null)
+            return false;
+        if (other.getDefinition() != null && other.getDefinition().equals(this.getDefinition()) == false)
+            return false;
+        if (other.getMain() == null ^ this.getMain() == null)
+            return false;
+        if (other.getMain() != null && other.getMain().equals(this.getMain()) == false)
+            return false;
+        if (other.getDigest() == null ^ this.getDigest() == null)
+            return false;
+        if (other.getDigest() != null && other.getDigest().equals(this.getDigest()) == false)
+            return false;
+        if (other.getParameterTemplate() == null ^ this.getParameterTemplate() == null)
+            return false;
+        if (other.getParameterTemplate() != null && other.getParameterTemplate().equals(this.getParameterTemplate()) == false)
             return false;
         if (other.getStorageCapacity() == null ^ this.getStorageCapacity() == null)
             return false;
         if (other.getStorageCapacity() != null && other.getStorageCapacity().equals(this.getStorageCapacity()) == false)
             return false;
+        if (other.getCreationTime() == null ^ this.getCreationTime() == null)
+            return false;
+        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
+            return false;
+        if (other.getStatusMessage() == null ^ this.getStatusMessage() == null)
+            return false;
+        if (other.getStatusMessage() != null && other.getStatusMessage().equals(this.getStatusMessage()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
-        if (other.getType() == null ^ this.getType() == null)
+        if (other.getMetadata() == null ^ this.getMetadata() == null)
             return false;
-        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+        if (other.getMetadata() != null && other.getMetadata().equals(this.getMetadata()) == false)
+            return false;
+        if (other.getAccelerators() == null ^ this.getAccelerators() == null)
+            return false;
+        if (other.getAccelerators() != null && other.getAccelerators().equals(this.getAccelerators()) == false)
             return false;
         return true;
     }
@@ -952,20 +1103,22 @@ public class GetWorkflowResult extends com.amazonaws.AmazonWebServiceResult<com.
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
-        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
-        hashCode = prime * hashCode + ((getDefinition() == null) ? 0 : getDefinition().hashCode());
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode + ((getDigest() == null) ? 0 : getDigest().hashCode());
-        hashCode = prime * hashCode + ((getEngine() == null) ? 0 : getEngine().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
-        hashCode = prime * hashCode + ((getMain() == null) ? 0 : getMain().hashCode());
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode + ((getParameterTemplate() == null) ? 0 : getParameterTemplate().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
-        hashCode = prime * hashCode + ((getStorageCapacity() == null) ? 0 : getStorageCapacity().hashCode());
-        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getEngine() == null) ? 0 : getEngine().hashCode());
+        hashCode = prime * hashCode + ((getDefinition() == null) ? 0 : getDefinition().hashCode());
+        hashCode = prime * hashCode + ((getMain() == null) ? 0 : getMain().hashCode());
+        hashCode = prime * hashCode + ((getDigest() == null) ? 0 : getDigest().hashCode());
+        hashCode = prime * hashCode + ((getParameterTemplate() == null) ? 0 : getParameterTemplate().hashCode());
+        hashCode = prime * hashCode + ((getStorageCapacity() == null) ? 0 : getStorageCapacity().hashCode());
+        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
+        hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getMetadata() == null) ? 0 : getMetadata().hashCode());
+        hashCode = prime * hashCode + ((getAccelerators() == null) ? 0 : getAccelerators().hashCode());
         return hashCode;
     }
 

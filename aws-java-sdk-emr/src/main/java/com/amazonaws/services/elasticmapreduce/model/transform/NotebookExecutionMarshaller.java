@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.elasticmapreduce.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -54,6 +55,14 @@ public class NotebookExecutionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NotebookInstanceSecurityGroupId").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<StructuredPojo> NOTEBOOKS3LOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NotebookS3Location").build();
+    private static final MarshallingInfo<StructuredPojo> OUTPUTNOTEBOOKS3LOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OutputNotebookS3Location").build();
+    private static final MarshallingInfo<String> OUTPUTNOTEBOOKFORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OutputNotebookFormat").build();
+    private static final MarshallingInfo<Map> ENVIRONMENTVARIABLES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnvironmentVariables").build();
 
     private static final NotebookExecutionMarshaller instance = new NotebookExecutionMarshaller();
 
@@ -84,6 +93,10 @@ public class NotebookExecutionMarshaller {
             protocolMarshaller.marshall(notebookExecution.getLastStateChangeReason(), LASTSTATECHANGEREASON_BINDING);
             protocolMarshaller.marshall(notebookExecution.getNotebookInstanceSecurityGroupId(), NOTEBOOKINSTANCESECURITYGROUPID_BINDING);
             protocolMarshaller.marshall(notebookExecution.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(notebookExecution.getNotebookS3Location(), NOTEBOOKS3LOCATION_BINDING);
+            protocolMarshaller.marshall(notebookExecution.getOutputNotebookS3Location(), OUTPUTNOTEBOOKS3LOCATION_BINDING);
+            protocolMarshaller.marshall(notebookExecution.getOutputNotebookFormat(), OUTPUTNOTEBOOKFORMAT_BINDING);
+            protocolMarshaller.marshall(notebookExecution.getEnvironmentVariables(), ENVIRONMENTVARIABLES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -89,6 +89,8 @@ public class DashboardVersion implements Serializable, Cloneable, StructuredPojo
      */
     private java.util.List<Sheet> sheets;
 
+    private AssetOptions options;
+
     /**
      * <p>
      * The time that this dashboard version was created.
@@ -603,6 +605,32 @@ public class DashboardVersion implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * @param options
+     */
+
+    public void setOptions(AssetOptions options) {
+        this.options = options;
+    }
+
+    /**
+     * @return
+     */
+
+    public AssetOptions getOptions() {
+        return this.options;
+    }
+
+    /**
+     * @param options
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DashboardVersion withOptions(AssetOptions options) {
+        setOptions(options);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -633,7 +661,9 @@ public class DashboardVersion implements Serializable, Cloneable, StructuredPojo
         if (getThemeArn() != null)
             sb.append("ThemeArn: ").append(getThemeArn()).append(",");
         if (getSheets() != null)
-            sb.append("Sheets: ").append(getSheets());
+            sb.append("Sheets: ").append(getSheets()).append(",");
+        if (getOptions() != null)
+            sb.append("Options: ").append(getOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -688,6 +718,10 @@ public class DashboardVersion implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getSheets() != null && other.getSheets().equals(this.getSheets()) == false)
             return false;
+        if (other.getOptions() == null ^ this.getOptions() == null)
+            return false;
+        if (other.getOptions() != null && other.getOptions().equals(this.getOptions()) == false)
+            return false;
         return true;
     }
 
@@ -706,6 +740,7 @@ public class DashboardVersion implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getThemeArn() == null) ? 0 : getThemeArn().hashCode());
         hashCode = prime * hashCode + ((getSheets() == null) ? 0 : getSheets().hashCode());
+        hashCode = prime * hashCode + ((getOptions() == null) ? 0 : getOptions().hashCode());
         return hashCode;
     }
 

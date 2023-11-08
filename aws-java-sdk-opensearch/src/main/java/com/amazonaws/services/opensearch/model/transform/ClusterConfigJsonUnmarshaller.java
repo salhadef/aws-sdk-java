@@ -92,6 +92,10 @@ public class ClusterConfigJsonUnmarshaller implements Unmarshaller<ClusterConfig
                     context.nextToken();
                     clusterConfig.setColdStorageOptions(ColdStorageOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("MultiAZWithStandbyEnabled", targetDepth)) {
+                    context.nextToken();
+                    clusterConfig.setMultiAZWithStandbyEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

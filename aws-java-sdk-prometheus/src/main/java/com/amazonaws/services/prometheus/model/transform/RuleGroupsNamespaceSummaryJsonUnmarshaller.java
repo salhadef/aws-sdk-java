@@ -52,14 +52,6 @@ public class RuleGroupsNamespaceSummaryJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     ruleGroupsNamespaceSummary.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("createdAt", targetDepth)) {
-                    context.nextToken();
-                    ruleGroupsNamespaceSummary.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
-                }
-                if (context.testExpression("modifiedAt", targetDepth)) {
-                    context.nextToken();
-                    ruleGroupsNamespaceSummary.setModifiedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
-                }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
                     ruleGroupsNamespaceSummary.setName(context.getUnmarshaller(String.class).unmarshall(context));
@@ -67,6 +59,14 @@ public class RuleGroupsNamespaceSummaryJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     ruleGroupsNamespaceSummary.setStatus(RuleGroupsNamespaceStatusJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("createdAt", targetDepth)) {
+                    context.nextToken();
+                    ruleGroupsNamespaceSummary.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("modifiedAt", targetDepth)) {
+                    context.nextToken();
+                    ruleGroupsNamespaceSummary.setModifiedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();

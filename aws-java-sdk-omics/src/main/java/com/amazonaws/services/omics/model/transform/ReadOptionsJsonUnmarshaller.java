@@ -48,29 +48,13 @@ public class ReadOptionsJsonUnmarshaller implements Unmarshaller<ReadOptions, Js
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("comment", targetDepth)) {
+                if (context.testExpression("sep", targetDepth)) {
                     context.nextToken();
-                    readOptions.setComment(context.getUnmarshaller(String.class).unmarshall(context));
+                    readOptions.setSep(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("encoding", targetDepth)) {
                     context.nextToken();
                     readOptions.setEncoding(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("escape", targetDepth)) {
-                    context.nextToken();
-                    readOptions.setEscape(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("escapeQuotes", targetDepth)) {
-                    context.nextToken();
-                    readOptions.setEscapeQuotes(context.getUnmarshaller(Boolean.class).unmarshall(context));
-                }
-                if (context.testExpression("header", targetDepth)) {
-                    context.nextToken();
-                    readOptions.setHeader(context.getUnmarshaller(Boolean.class).unmarshall(context));
-                }
-                if (context.testExpression("lineSep", targetDepth)) {
-                    context.nextToken();
-                    readOptions.setLineSep(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("quote", targetDepth)) {
                     context.nextToken();
@@ -80,9 +64,25 @@ public class ReadOptionsJsonUnmarshaller implements Unmarshaller<ReadOptions, Js
                     context.nextToken();
                     readOptions.setQuoteAll(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
-                if (context.testExpression("sep", targetDepth)) {
+                if (context.testExpression("escape", targetDepth)) {
                     context.nextToken();
-                    readOptions.setSep(context.getUnmarshaller(String.class).unmarshall(context));
+                    readOptions.setEscape(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("escapeQuotes", targetDepth)) {
+                    context.nextToken();
+                    readOptions.setEscapeQuotes(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("comment", targetDepth)) {
+                    context.nextToken();
+                    readOptions.setComment(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("header", targetDepth)) {
+                    context.nextToken();
+                    readOptions.setHeader(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("lineSep", targetDepth)) {
+                    context.nextToken();
+                    readOptions.setLineSep(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

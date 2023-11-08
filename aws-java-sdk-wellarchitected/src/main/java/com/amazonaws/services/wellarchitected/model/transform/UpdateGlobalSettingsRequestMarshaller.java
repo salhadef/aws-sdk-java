@@ -29,6 +29,8 @@ public class UpdateGlobalSettingsRequestMarshaller {
 
     private static final MarshallingInfo<String> ORGANIZATIONSHARINGSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OrganizationSharingStatus").build();
+    private static final MarshallingInfo<String> DISCOVERYINTEGRATIONSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DiscoveryIntegrationStatus").build();
 
     private static final UpdateGlobalSettingsRequestMarshaller instance = new UpdateGlobalSettingsRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class UpdateGlobalSettingsRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(updateGlobalSettingsRequest.getOrganizationSharingStatus(), ORGANIZATIONSHARINGSTATUS_BINDING);
+            protocolMarshaller.marshall(updateGlobalSettingsRequest.getDiscoveryIntegrationStatus(), DISCOVERYINTEGRATIONSTATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

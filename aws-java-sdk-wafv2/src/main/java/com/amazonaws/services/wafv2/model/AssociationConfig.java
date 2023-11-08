@@ -23,7 +23,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <p>
  * Use this to customize the maximum size of the request body that your protected CloudFront distributions forward to
- * WAF for inspection. The default is 16 KB (16,384 kilobytes).
+ * WAF for inspection. The default is 16 KB (16,384 bytes).
  * </p>
  * <note>
  * <p>
@@ -41,7 +41,7 @@ public class AssociationConfig implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Customizes the maximum size of the request body that your protected CloudFront distributions forward to WAF for
-     * inspection. The default size is 16 KB (16,384 kilobytes).
+     * inspection. The default size is 16 KB (16,384 bytes).
      * </p>
      * <note>
      * <p>
@@ -55,7 +55,7 @@ public class AssociationConfig implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Customizes the maximum size of the request body that your protected CloudFront distributions forward to WAF for
-     * inspection. The default size is 16 KB (16,384 kilobytes).
+     * inspection. The default size is 16 KB (16,384 bytes).
      * </p>
      * <note>
      * <p>
@@ -65,7 +65,7 @@ public class AssociationConfig implements Serializable, Cloneable, StructuredPoj
      * </note>
      * 
      * @return Customizes the maximum size of the request body that your protected CloudFront distributions forward to
-     *         WAF for inspection. The default size is 16 KB (16,384 kilobytes). </p> <note>
+     *         WAF for inspection. The default size is 16 KB (16,384 bytes). </p> <note>
      *         <p>
      *         You are charged additional fees when your protected resources forward body sizes that are larger than the
      *         default. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.
@@ -79,7 +79,7 @@ public class AssociationConfig implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Customizes the maximum size of the request body that your protected CloudFront distributions forward to WAF for
-     * inspection. The default size is 16 KB (16,384 kilobytes).
+     * inspection. The default size is 16 KB (16,384 bytes).
      * </p>
      * <note>
      * <p>
@@ -90,7 +90,7 @@ public class AssociationConfig implements Serializable, Cloneable, StructuredPoj
      * 
      * @param requestBody
      *        Customizes the maximum size of the request body that your protected CloudFront distributions forward to
-     *        WAF for inspection. The default size is 16 KB (16,384 kilobytes). </p> <note>
+     *        WAF for inspection. The default size is 16 KB (16,384 bytes). </p> <note>
      *        <p>
      *        You are charged additional fees when your protected resources forward body sizes that are larger than the
      *        default. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.
@@ -104,7 +104,7 @@ public class AssociationConfig implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Customizes the maximum size of the request body that your protected CloudFront distributions forward to WAF for
-     * inspection. The default size is 16 KB (16,384 kilobytes).
+     * inspection. The default size is 16 KB (16,384 bytes).
      * </p>
      * <note>
      * <p>
@@ -115,7 +115,7 @@ public class AssociationConfig implements Serializable, Cloneable, StructuredPoj
      * 
      * @param requestBody
      *        Customizes the maximum size of the request body that your protected CloudFront distributions forward to
-     *        WAF for inspection. The default size is 16 KB (16,384 kilobytes). </p> <note>
+     *        WAF for inspection. The default size is 16 KB (16,384 bytes). </p> <note>
      *        <p>
      *        You are charged additional fees when your protected resources forward body sizes that are larger than the
      *        default. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.

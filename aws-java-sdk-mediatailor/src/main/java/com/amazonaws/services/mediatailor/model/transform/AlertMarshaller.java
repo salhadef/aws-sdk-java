@@ -32,6 +32,8 @@ public class AlertMarshaller {
             .marshallLocationName("AlertCode").build();
     private static final MarshallingInfo<String> ALERTMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AlertMessage").build();
+    private static final MarshallingInfo<String> CATEGORY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Category").build();
     private static final MarshallingInfo<java.util.Date> LASTMODIFIEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<List> RELATEDRESOURCEARNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -57,6 +59,7 @@ public class AlertMarshaller {
         try {
             protocolMarshaller.marshall(alert.getAlertCode(), ALERTCODE_BINDING);
             protocolMarshaller.marshall(alert.getAlertMessage(), ALERTMESSAGE_BINDING);
+            protocolMarshaller.marshall(alert.getCategory(), CATEGORY_BINDING);
             protocolMarshaller.marshall(alert.getLastModifiedTime(), LASTMODIFIEDTIME_BINDING);
             protocolMarshaller.marshall(alert.getRelatedResourceArns(), RELATEDRESOURCEARNS_BINDING);
             protocolMarshaller.marshall(alert.getResourceArn(), RESOURCEARN_BINDING);

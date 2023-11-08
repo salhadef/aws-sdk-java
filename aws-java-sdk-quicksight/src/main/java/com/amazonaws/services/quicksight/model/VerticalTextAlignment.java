@@ -22,7 +22,8 @@ public enum VerticalTextAlignment {
 
     TOP("TOP"),
     MIDDLE("MIDDLE"),
-    BOTTOM("BOTTOM");
+    BOTTOM("BOTTOM"),
+    AUTO("AUTO");
 
     private String value;
 

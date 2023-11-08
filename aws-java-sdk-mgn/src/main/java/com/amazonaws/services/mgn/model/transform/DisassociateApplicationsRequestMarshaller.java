@@ -28,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DisassociateApplicationsRequestMarshaller {
 
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("accountID").build();
     private static final MarshallingInfo<List> APPLICATIONIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("applicationIDs").build();
     private static final MarshallingInfo<String> WAVEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -49,6 +51,7 @@ public class DisassociateApplicationsRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(disassociateApplicationsRequest.getAccountID(), ACCOUNTID_BINDING);
             protocolMarshaller.marshall(disassociateApplicationsRequest.getApplicationIDs(), APPLICATIONIDS_BINDING);
             protocolMarshaller.marshall(disassociateApplicationsRequest.getWaveID(), WAVEID_BINDING);
         } catch (Exception e) {

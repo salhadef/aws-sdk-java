@@ -27,7 +27,7 @@ public class DeactivateTypeRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type name of the extension, in this account and region. If you specified a type name alias when enabling the
+     * The type name of the extension, in this account and Region. If you specified a type name alias when enabling the
      * extension, use the type name alias.
      * </p>
      * <p>
@@ -46,7 +46,7 @@ public class DeactivateTypeRequest extends com.amazonaws.AmazonWebServiceRequest
     private String type;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the extension, in this account and region.
+     * The Amazon Resource Name (ARN) for the extension, in this account and Region.
      * </p>
      * <p>
      * Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.
@@ -56,7 +56,7 @@ public class DeactivateTypeRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type name of the extension, in this account and region. If you specified a type name alias when enabling the
+     * The type name of the extension, in this account and Region. If you specified a type name alias when enabling the
      * extension, use the type name alias.
      * </p>
      * <p>
@@ -64,7 +64,7 @@ public class DeactivateTypeRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param typeName
-     *        The type name of the extension, in this account and region. If you specified a type name alias when
+     *        The type name of the extension, in this account and Region. If you specified a type name alias when
      *        enabling the extension, use the type name alias.</p>
      *        <p>
      *        Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.
@@ -76,14 +76,14 @@ public class DeactivateTypeRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type name of the extension, in this account and region. If you specified a type name alias when enabling the
+     * The type name of the extension, in this account and Region. If you specified a type name alias when enabling the
      * extension, use the type name alias.
      * </p>
      * <p>
      * Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.
      * </p>
      * 
-     * @return The type name of the extension, in this account and region. If you specified a type name alias when
+     * @return The type name of the extension, in this account and Region. If you specified a type name alias when
      *         enabling the extension, use the type name alias.</p>
      *         <p>
      *         Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.
@@ -95,7 +95,7 @@ public class DeactivateTypeRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type name of the extension, in this account and region. If you specified a type name alias when enabling the
+     * The type name of the extension, in this account and Region. If you specified a type name alias when enabling the
      * extension, use the type name alias.
      * </p>
      * <p>
@@ -103,7 +103,7 @@ public class DeactivateTypeRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param typeName
-     *        The type name of the extension, in this account and region. If you specified a type name alias when
+     *        The type name of the extension, in this account and Region. If you specified a type name alias when
      *        enabling the extension, use the type name alias.</p>
      *        <p>
      *        Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.
@@ -196,14 +196,14 @@ public class DeactivateTypeRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the extension, in this account and region.
+     * The Amazon Resource Name (ARN) for the extension, in this account and Region.
      * </p>
      * <p>
      * Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) for the extension, in this account and region.</p>
+     *        The Amazon Resource Name (ARN) for the extension, in this account and Region.</p>
      *        <p>
      *        Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.
      */
@@ -214,13 +214,13 @@ public class DeactivateTypeRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the extension, in this account and region.
+     * The Amazon Resource Name (ARN) for the extension, in this account and Region.
      * </p>
      * <p>
      * Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) for the extension, in this account and region.</p>
+     * @return The Amazon Resource Name (ARN) for the extension, in this account and Region.</p>
      *         <p>
      *         Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.
      */
@@ -231,14 +231,14 @@ public class DeactivateTypeRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the extension, in this account and region.
+     * The Amazon Resource Name (ARN) for the extension, in this account and Region.
      * </p>
      * <p>
      * Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) for the extension, in this account and region.</p>
+     *        The Amazon Resource Name (ARN) for the extension, in this account and Region.</p>
      *        <p>
      *        Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.
      * @return Returns a reference to this object so that method calls can be chained together.

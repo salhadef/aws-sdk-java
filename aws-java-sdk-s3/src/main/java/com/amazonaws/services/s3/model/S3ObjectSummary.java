@@ -49,6 +49,12 @@ public class S3ObjectSummary implements Serializable {
      */
     protected Owner owner;
 
+    /**
+     * The restore status of this object - can be null if the requester doesn't provide
+     * OptionalObjectAttribute header in the request
+     */
+    protected RestoreStatus restoreStatus;
+
 
     /**
      * Gets the name of the Amazon S3 bucket in which this object is stored.
@@ -225,6 +231,28 @@ public class S3ObjectSummary implements Serializable {
         this.storageClass = storageClass;
     }
 
+    /**
+     * Gets restore status of an object.
+     *
+     * @return restoreStatus of an object.
+     *
+     * @see S3ObjectSummary#setRestoreStatus(RestoreStatus)
+     */
+    public RestoreStatus getRestoreStatus() {
+        return restoreStatus;
+    }
+
+    /**
+     * Sets restore status of an object.
+     *
+     * @param restoreStatus of an object.
+     *
+     * @see S3ObjectSummary#getRestoreStatus() ()
+     */
+    public void setRestoreStatus(RestoreStatus restoreStatus) {
+        this.restoreStatus = restoreStatus;
+    }
+
     @Override
     public String toString() {
         return "S3ObjectSummary{" +
@@ -234,7 +262,8 @@ public class S3ObjectSummary implements Serializable {
                 ", size=" + size +
                 ", lastModified=" + lastModified +
                 ", storageClass='" + storageClass + '\'' +
-                ", owner=" + owner +
+                ", owner=" + owner + '\'' +
+                ", restoreStatus=" + restoreStatus  +
                 '}';
     }
 }

@@ -16,23 +16,43 @@
  * <b>Introduction</b>
  * </p>
  * <p>
- * The Amazon Interactive Video Service (IVS) stage API is REST compatible, using a standard HTTP API and an AWS
+ * The Amazon Interactive Video Service (IVS) real-time API is REST compatible, using a standard HTTP API and an AWS
  * EventBridge event stream for responses. JSON is used for both requests and responses, including errors.
  * </p>
  * <p>
- * Terminology: The IVS stage API sometimes is referred to as the IVS RealTime API.
+ * Terminology:
  * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * A <i>stage</i> is a virtual space where participants can exchange video in real time.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * A <i>participant token</i> is a token that authenticates a participant when they join a stage.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * A <i>participant object</i> represents participants (people) in the stage and contains information about them. When a
+ * token is created, it includes a participant ID; when a participant uses that token to join a stage, the participant
+ * is associated with that participant ID There is a 1:1 mapping between participant tokens and participants.
+ * </p>
+ * </li>
+ * </ul>
  * <p>
  * <b>Resources</b>
  * </p>
  * <p>
  * The following resources contain information about your IVS live stream (see <a
- * href="https://docs.aws.amazon.com/ivs/latest/userguide/getting-started.html">Getting Started with Amazon IVS</a>):
+ * href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/getting-started.html">Getting Started with Amazon IVS
+ * Real-Time Streaming</a>):
  * </p>
  * <ul>
  * <li>
  * <p>
- * <b>Stage</b> — A stage is a virtual space where multiple participants can exchange audio and video in real time.
+ * <b>Stage</b> — A stage is a virtual space where participants can exchange video in real time.
  * </p>
  * </li>
  * </ul>
@@ -52,7 +72,7 @@
  * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Access Tags</a>).
  * </p>
  * <p>
- * The Amazon IVS stage API has these tag-related endpoints: <a>TagResource</a>, <a>UntagResource</a>, and
+ * The Amazon IVS real-time API has these tag-related endpoints: <a>TagResource</a>, <a>UntagResource</a>, and
  * <a>ListTagsForResource</a>. The following resource supports tagging: Stage.
  * </p>
  * <p>
@@ -86,13 +106,39 @@
  * </li>
  * <li>
  * <p>
+ * <a>GetParticipant</a> — Gets information about the specified participant token.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a>GetStage</a> — Gets information for the specified stage.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetStageSession</a> — Gets information for the specified stage session.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListParticipantEvents</a> — Lists events for a specified participant that occurred during a specified stage
+ * session.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListParticipants</a> — Lists all participants in a specified stage session.
  * </p>
  * </li>
  * <li>
  * <p>
  * <a>ListStages</a> — Gets summary information about all stages in your account, in the AWS region where the API
  * request is processed.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListStageSessions</a> — Gets all sessions for a specified stage.
  * </p>
  * </li>
  * <li>

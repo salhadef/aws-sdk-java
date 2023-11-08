@@ -173,6 +173,11 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecificationRequestStaxUnmar
                     launchTemplateInstanceNetworkInterfaceSpecificationRequest.setIpv6PrefixCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("PrimaryIpv6", targetDepth)) {
+                    launchTemplateInstanceNetworkInterfaceSpecificationRequest.setPrimaryIpv6(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return launchTemplateInstanceNetworkInterfaceSpecificationRequest;

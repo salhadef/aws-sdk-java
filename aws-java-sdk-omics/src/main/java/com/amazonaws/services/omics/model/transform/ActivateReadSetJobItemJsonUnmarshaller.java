@@ -48,14 +48,6 @@ public class ActivateReadSetJobItemJsonUnmarshaller implements Unmarshaller<Acti
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("completionTime", targetDepth)) {
-                    context.nextToken();
-                    activateReadSetJobItem.setCompletionTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
-                }
-                if (context.testExpression("creationTime", targetDepth)) {
-                    context.nextToken();
-                    activateReadSetJobItem.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
-                }
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
                     activateReadSetJobItem.setId(context.getUnmarshaller(String.class).unmarshall(context));
@@ -67,6 +59,14 @@ public class ActivateReadSetJobItemJsonUnmarshaller implements Unmarshaller<Acti
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     activateReadSetJobItem.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("creationTime", targetDepth)) {
+                    context.nextToken();
+                    activateReadSetJobItem.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (context.testExpression("completionTime", targetDepth)) {
+                    context.nextToken();
+                    activateReadSetJobItem.setCompletionTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

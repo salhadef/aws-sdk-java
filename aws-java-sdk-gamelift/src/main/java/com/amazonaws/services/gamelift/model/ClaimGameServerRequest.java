@@ -47,6 +47,12 @@ public class ClaimGameServerRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private String gameServerData;
+    /**
+     * <p>
+     * Object that restricts how a claimed game server is chosen.
+     * </p>
+     */
+    private ClaimFilterOption filterOption;
 
     /**
      * <p>
@@ -193,6 +199,46 @@ public class ClaimGameServerRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * Object that restricts how a claimed game server is chosen.
+     * </p>
+     * 
+     * @param filterOption
+     *        Object that restricts how a claimed game server is chosen.
+     */
+
+    public void setFilterOption(ClaimFilterOption filterOption) {
+        this.filterOption = filterOption;
+    }
+
+    /**
+     * <p>
+     * Object that restricts how a claimed game server is chosen.
+     * </p>
+     * 
+     * @return Object that restricts how a claimed game server is chosen.
+     */
+
+    public ClaimFilterOption getFilterOption() {
+        return this.filterOption;
+    }
+
+    /**
+     * <p>
+     * Object that restricts how a claimed game server is chosen.
+     * </p>
+     * 
+     * @param filterOption
+     *        Object that restricts how a claimed game server is chosen.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClaimGameServerRequest withFilterOption(ClaimFilterOption filterOption) {
+        setFilterOption(filterOption);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -209,7 +255,9 @@ public class ClaimGameServerRequest extends com.amazonaws.AmazonWebServiceReques
         if (getGameServerId() != null)
             sb.append("GameServerId: ").append(getGameServerId()).append(",");
         if (getGameServerData() != null)
-            sb.append("GameServerData: ").append(getGameServerData());
+            sb.append("GameServerData: ").append(getGameServerData()).append(",");
+        if (getFilterOption() != null)
+            sb.append("FilterOption: ").append(getFilterOption());
         sb.append("}");
         return sb.toString();
     }
@@ -236,6 +284,10 @@ public class ClaimGameServerRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getGameServerData() != null && other.getGameServerData().equals(this.getGameServerData()) == false)
             return false;
+        if (other.getFilterOption() == null ^ this.getFilterOption() == null)
+            return false;
+        if (other.getFilterOption() != null && other.getFilterOption().equals(this.getFilterOption()) == false)
+            return false;
         return true;
     }
 
@@ -247,6 +299,7 @@ public class ClaimGameServerRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getGameServerGroupName() == null) ? 0 : getGameServerGroupName().hashCode());
         hashCode = prime * hashCode + ((getGameServerId() == null) ? 0 : getGameServerId().hashCode());
         hashCode = prime * hashCode + ((getGameServerData() == null) ? 0 : getGameServerData().hashCode());
+        hashCode = prime * hashCode + ((getFilterOption() == null) ? 0 : getFilterOption().hashCode());
         return hashCode;
     }
 

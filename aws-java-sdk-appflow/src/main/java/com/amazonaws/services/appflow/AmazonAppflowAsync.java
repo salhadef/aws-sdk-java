@@ -675,6 +675,53 @@ public interface AmazonAppflowAsync extends AmazonAppflow {
 
     /**
      * <p>
+     * Resets metadata about your connector entities that Amazon AppFlow stored in its cache. Use this action when you
+     * want Amazon AppFlow to return the latest information about the data that you have in a source application.
+     * </p>
+     * <p>
+     * Amazon AppFlow returns metadata about your entities when you use the ListConnectorEntities or
+     * DescribeConnectorEntities actions. Following these actions, Amazon AppFlow caches the metadata to reduce the
+     * number of API requests that it must send to the source application. Amazon AppFlow automatically resets the cache
+     * once every hour, but you can use this action when you want to get the latest metadata right away.
+     * </p>
+     * 
+     * @param resetConnectorMetadataCacheRequest
+     * @return A Java Future containing the result of the ResetConnectorMetadataCache operation returned by the service.
+     * @sample AmazonAppflowAsync.ResetConnectorMetadataCache
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/ResetConnectorMetadataCache"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ResetConnectorMetadataCacheResult> resetConnectorMetadataCacheAsync(
+            ResetConnectorMetadataCacheRequest resetConnectorMetadataCacheRequest);
+
+    /**
+     * <p>
+     * Resets metadata about your connector entities that Amazon AppFlow stored in its cache. Use this action when you
+     * want Amazon AppFlow to return the latest information about the data that you have in a source application.
+     * </p>
+     * <p>
+     * Amazon AppFlow returns metadata about your entities when you use the ListConnectorEntities or
+     * DescribeConnectorEntities actions. Following these actions, Amazon AppFlow caches the metadata to reduce the
+     * number of API requests that it must send to the source application. Amazon AppFlow automatically resets the cache
+     * once every hour, but you can use this action when you want to get the latest metadata right away.
+     * </p>
+     * 
+     * @param resetConnectorMetadataCacheRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ResetConnectorMetadataCache operation returned by the service.
+     * @sample AmazonAppflowAsyncHandler.ResetConnectorMetadataCache
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/ResetConnectorMetadataCache"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ResetConnectorMetadataCacheResult> resetConnectorMetadataCacheAsync(
+            ResetConnectorMetadataCacheRequest resetConnectorMetadataCacheRequest,
+            com.amazonaws.handlers.AsyncHandler<ResetConnectorMetadataCacheRequest, ResetConnectorMetadataCacheResult> asyncHandler);
+
+    /**
+     * <p>
      * Activates an existing flow. For on-demand flows, this operation runs the flow immediately. For schedule and
      * event-triggered flows, this operation activates the flow.
      * </p>

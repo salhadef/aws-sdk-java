@@ -30,7 +30,7 @@ public class PutConfigurationSetDeliveryOptionsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The name of the configuration set that you want to specify the delivery options for.
+     * The name of the configuration set.
      * </p>
      */
     private String configurationSetName;
@@ -43,11 +43,11 @@ public class PutConfigurationSetDeliveryOptionsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The name of the configuration set that you want to specify the delivery options for.
+     * The name of the configuration set.
      * </p>
      * 
      * @param configurationSetName
-     *        The name of the configuration set that you want to specify the delivery options for.
+     *        The name of the configuration set.
      */
 
     public void setConfigurationSetName(String configurationSetName) {
@@ -56,10 +56,10 @@ public class PutConfigurationSetDeliveryOptionsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The name of the configuration set that you want to specify the delivery options for.
+     * The name of the configuration set.
      * </p>
      * 
-     * @return The name of the configuration set that you want to specify the delivery options for.
+     * @return The name of the configuration set.
      */
 
     public String getConfigurationSetName() {
@@ -68,11 +68,11 @@ public class PutConfigurationSetDeliveryOptionsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The name of the configuration set that you want to specify the delivery options for.
+     * The name of the configuration set.
      * </p>
      * 
      * @param configurationSetName
-     *        The name of the configuration set that you want to specify the delivery options for.
+     *        The name of the configuration set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

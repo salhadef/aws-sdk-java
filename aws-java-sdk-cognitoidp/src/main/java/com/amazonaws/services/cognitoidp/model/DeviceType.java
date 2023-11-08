@@ -48,7 +48,8 @@ public class DeviceType implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date deviceCreateDate;
     /**
      * <p>
-     * The last modified date of the device.
+     * The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when
+     * the item was modified.
      * </p>
      */
     private java.util.Date deviceLastModifiedDate;
@@ -211,11 +212,13 @@ public class DeviceType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The last modified date of the device.
+     * The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when
+     * the item was modified.
      * </p>
      * 
      * @param deviceLastModifiedDate
-     *        The last modified date of the device.
+     *        The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     *        format, when the item was modified.
      */
 
     public void setDeviceLastModifiedDate(java.util.Date deviceLastModifiedDate) {
@@ -224,10 +227,12 @@ public class DeviceType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The last modified date of the device.
+     * The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when
+     * the item was modified.
      * </p>
      * 
-     * @return The last modified date of the device.
+     * @return The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     *         format, when the item was modified.
      */
 
     public java.util.Date getDeviceLastModifiedDate() {
@@ -236,11 +241,13 @@ public class DeviceType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The last modified date of the device.
+     * The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when
+     * the item was modified.
      * </p>
      * 
      * @param deviceLastModifiedDate
-     *        The last modified date of the device.
+     *        The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     *        format, when the item was modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

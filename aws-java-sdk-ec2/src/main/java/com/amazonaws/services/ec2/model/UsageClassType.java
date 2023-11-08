@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum UsageClassType {
 
     Spot("spot"),
-    OnDemand("on-demand");
+    OnDemand("on-demand"),
+    CapacityBlock("capacity-block");
 
     private String value;
 

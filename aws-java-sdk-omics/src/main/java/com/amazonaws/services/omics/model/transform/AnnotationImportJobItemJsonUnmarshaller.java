@@ -48,37 +48,46 @@ public class AnnotationImportJobItemJsonUnmarshaller implements Unmarshaller<Ann
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("completionTime", targetDepth)) {
+                if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
-                    annotationImportJobItem.setCompletionTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
-                }
-                if (context.testExpression("creationTime", targetDepth)) {
-                    context.nextToken();
-                    annotationImportJobItem.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                    annotationImportJobItem.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("destinationName", targetDepth)) {
                     context.nextToken();
                     annotationImportJobItem.setDestinationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("id", targetDepth)) {
+                if (context.testExpression("versionName", targetDepth)) {
                     context.nextToken();
-                    annotationImportJobItem.setId(context.getUnmarshaller(String.class).unmarshall(context));
+                    annotationImportJobItem.setVersionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("roleArn", targetDepth)) {
                     context.nextToken();
                     annotationImportJobItem.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("runLeftNormalization", targetDepth)) {
-                    context.nextToken();
-                    annotationImportJobItem.setRunLeftNormalization(context.getUnmarshaller(Boolean.class).unmarshall(context));
-                }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     annotationImportJobItem.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("creationTime", targetDepth)) {
+                    context.nextToken();
+                    annotationImportJobItem.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
                 if (context.testExpression("updateTime", targetDepth)) {
                     context.nextToken();
                     annotationImportJobItem.setUpdateTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (context.testExpression("completionTime", targetDepth)) {
+                    context.nextToken();
+                    annotationImportJobItem.setCompletionTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (context.testExpression("runLeftNormalization", targetDepth)) {
+                    context.nextToken();
+                    annotationImportJobItem.setRunLeftNormalization(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("annotationFields", targetDepth)) {
+                    context.nextToken();
+                    annotationImportJobItem.setAnnotationFields(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

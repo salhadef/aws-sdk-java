@@ -56,6 +56,10 @@ public class DataQualityTargetTableJsonUnmarshaller implements Unmarshaller<Data
                     context.nextToken();
                     dataQualityTargetTable.setDatabaseName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("CatalogId", targetDepth)) {
+                    context.nextToken();
+                    dataQualityTargetTable.setCatalogId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

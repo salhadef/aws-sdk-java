@@ -76,6 +76,13 @@ public class PivotTotalOptionsJsonUnmarshaller implements Unmarshaller<PivotTota
                     context.nextToken();
                     pivotTotalOptions.setMetricHeaderCellStyle(TableCellStyleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("TotalAggregationOptions", targetDepth)) {
+                    context.nextToken();
+                    pivotTotalOptions.setTotalAggregationOptions(new ListUnmarshaller<TotalAggregationOption>(TotalAggregationOptionJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

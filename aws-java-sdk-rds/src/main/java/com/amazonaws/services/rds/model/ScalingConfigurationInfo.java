@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Shows the scaling configuration for an Aurora DB cluster in <code>serverless</code> DB engine mode.
+ * The scaling configuration for an Aurora DB cluster in <code>serverless</code> DB engine mode.
  * </p>
  * <p>
  * For more information, see <a
@@ -45,8 +45,7 @@ public class ScalingConfigurationInfo implements Serializable, Cloneable {
     private Integer maxCapacity;
     /**
      * <p>
-     * A value that indicates whether automatic pause is allowed for the Aurora DB cluster in <code>serverless</code> DB
-     * engine mode.
+     * Indicates whether automatic pause is allowed for the Aurora DB cluster in <code>serverless</code> DB engine mode.
      * </p>
      * <p>
      * When the value is set to false for an Aurora Serverless v1 DB cluster, the DB cluster automatically resumes.
@@ -164,16 +163,15 @@ public class ScalingConfigurationInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether automatic pause is allowed for the Aurora DB cluster in <code>serverless</code> DB
-     * engine mode.
+     * Indicates whether automatic pause is allowed for the Aurora DB cluster in <code>serverless</code> DB engine mode.
      * </p>
      * <p>
      * When the value is set to false for an Aurora Serverless v1 DB cluster, the DB cluster automatically resumes.
      * </p>
      * 
      * @param autoPause
-     *        A value that indicates whether automatic pause is allowed for the Aurora DB cluster in
-     *        <code>serverless</code> DB engine mode.</p>
+     *        Indicates whether automatic pause is allowed for the Aurora DB cluster in <code>serverless</code> DB
+     *        engine mode.</p>
      *        <p>
      *        When the value is set to false for an Aurora Serverless v1 DB cluster, the DB cluster automatically
      *        resumes.
@@ -185,15 +183,14 @@ public class ScalingConfigurationInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether automatic pause is allowed for the Aurora DB cluster in <code>serverless</code> DB
-     * engine mode.
+     * Indicates whether automatic pause is allowed for the Aurora DB cluster in <code>serverless</code> DB engine mode.
      * </p>
      * <p>
      * When the value is set to false for an Aurora Serverless v1 DB cluster, the DB cluster automatically resumes.
      * </p>
      * 
-     * @return A value that indicates whether automatic pause is allowed for the Aurora DB cluster in
-     *         <code>serverless</code> DB engine mode.</p>
+     * @return Indicates whether automatic pause is allowed for the Aurora DB cluster in <code>serverless</code> DB
+     *         engine mode.</p>
      *         <p>
      *         When the value is set to false for an Aurora Serverless v1 DB cluster, the DB cluster automatically
      *         resumes.
@@ -205,16 +202,15 @@ public class ScalingConfigurationInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether automatic pause is allowed for the Aurora DB cluster in <code>serverless</code> DB
-     * engine mode.
+     * Indicates whether automatic pause is allowed for the Aurora DB cluster in <code>serverless</code> DB engine mode.
      * </p>
      * <p>
      * When the value is set to false for an Aurora Serverless v1 DB cluster, the DB cluster automatically resumes.
      * </p>
      * 
      * @param autoPause
-     *        A value that indicates whether automatic pause is allowed for the Aurora DB cluster in
-     *        <code>serverless</code> DB engine mode.</p>
+     *        Indicates whether automatic pause is allowed for the Aurora DB cluster in <code>serverless</code> DB
+     *        engine mode.</p>
      *        <p>
      *        When the value is set to false for an Aurora Serverless v1 DB cluster, the DB cluster automatically
      *        resumes.
@@ -228,15 +224,14 @@ public class ScalingConfigurationInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether automatic pause is allowed for the Aurora DB cluster in <code>serverless</code> DB
-     * engine mode.
+     * Indicates whether automatic pause is allowed for the Aurora DB cluster in <code>serverless</code> DB engine mode.
      * </p>
      * <p>
      * When the value is set to false for an Aurora Serverless v1 DB cluster, the DB cluster automatically resumes.
      * </p>
      * 
-     * @return A value that indicates whether automatic pause is allowed for the Aurora DB cluster in
-     *         <code>serverless</code> DB engine mode.</p>
+     * @return Indicates whether automatic pause is allowed for the Aurora DB cluster in <code>serverless</code> DB
+     *         engine mode.</p>
      *         <p>
      *         When the value is set to false for an Aurora Serverless v1 DB cluster, the DB cluster automatically
      *         resumes.

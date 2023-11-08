@@ -48,6 +48,10 @@ public class ImportReadSetFilterJsonUnmarshaller implements Unmarshaller<ImportR
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("status", targetDepth)) {
+                    context.nextToken();
+                    importReadSetFilter.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("createdAfter", targetDepth)) {
                     context.nextToken();
                     importReadSetFilter.setCreatedAfter(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
@@ -55,10 +59,6 @@ public class ImportReadSetFilterJsonUnmarshaller implements Unmarshaller<ImportR
                 if (context.testExpression("createdBefore", targetDepth)) {
                     context.nextToken();
                     importReadSetFilter.setCreatedBefore(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
-                }
-                if (context.testExpression("status", targetDepth)) {
-                    context.nextToken();
-                    importReadSetFilter.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -96,6 +96,15 @@ public class CreateCustomDBEngineVersionRequestMarshaller implements
             }
         }
 
+        if (createCustomDBEngineVersionRequest.getSourceCustomDbEngineVersionIdentifier() != null) {
+            request.addParameter("SourceCustomDbEngineVersionIdentifier",
+                    StringUtils.fromString(createCustomDBEngineVersionRequest.getSourceCustomDbEngineVersionIdentifier()));
+        }
+
+        if (createCustomDBEngineVersionRequest.getUseAwsProvidedLatestImage() != null) {
+            request.addParameter("UseAwsProvidedLatestImage", StringUtils.fromBoolean(createCustomDBEngineVersionRequest.getUseAwsProvidedLatestImage()));
+        }
+
         return request;
     }
 

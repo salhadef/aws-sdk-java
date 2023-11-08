@@ -34,6 +34,10 @@ public class RespondDecisionTaskCompletedRequestMarshaller {
             .marshallLocationName("decisions").build();
     private static final MarshallingInfo<String> EXECUTIONCONTEXT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("executionContext").build();
+    private static final MarshallingInfo<StructuredPojo> TASKLIST_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("taskList").build();
+    private static final MarshallingInfo<String> TASKLISTSCHEDULETOSTARTTIMEOUT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("taskListScheduleToStartTimeout").build();
 
     private static final RespondDecisionTaskCompletedRequestMarshaller instance = new RespondDecisionTaskCompletedRequestMarshaller();
 
@@ -54,6 +58,8 @@ public class RespondDecisionTaskCompletedRequestMarshaller {
             protocolMarshaller.marshall(respondDecisionTaskCompletedRequest.getTaskToken(), TASKTOKEN_BINDING);
             protocolMarshaller.marshall(respondDecisionTaskCompletedRequest.getDecisions(), DECISIONS_BINDING);
             protocolMarshaller.marshall(respondDecisionTaskCompletedRequest.getExecutionContext(), EXECUTIONCONTEXT_BINDING);
+            protocolMarshaller.marshall(respondDecisionTaskCompletedRequest.getTaskList(), TASKLIST_BINDING);
+            protocolMarshaller.marshall(respondDecisionTaskCompletedRequest.getTaskListScheduleToStartTimeout(), TASKLISTSCHEDULETOSTARTTIMEOUT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

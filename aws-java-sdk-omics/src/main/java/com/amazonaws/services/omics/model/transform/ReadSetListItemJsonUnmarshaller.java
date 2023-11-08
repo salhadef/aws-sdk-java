@@ -48,53 +48,65 @@ public class ReadSetListItemJsonUnmarshaller implements Unmarshaller<ReadSetList
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("arn", targetDepth)) {
-                    context.nextToken();
-                    readSetListItem.setArn(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("creationTime", targetDepth)) {
-                    context.nextToken();
-                    readSetListItem.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
-                }
-                if (context.testExpression("description", targetDepth)) {
-                    context.nextToken();
-                    readSetListItem.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("fileType", targetDepth)) {
-                    context.nextToken();
-                    readSetListItem.setFileType(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
                     readSetListItem.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("name", targetDepth)) {
+                if (context.testExpression("arn", targetDepth)) {
                     context.nextToken();
-                    readSetListItem.setName(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("referenceArn", targetDepth)) {
-                    context.nextToken();
-                    readSetListItem.setReferenceArn(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("sampleId", targetDepth)) {
-                    context.nextToken();
-                    readSetListItem.setSampleId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("sequenceInformation", targetDepth)) {
-                    context.nextToken();
-                    readSetListItem.setSequenceInformation(SequenceInformationJsonUnmarshaller.getInstance().unmarshall(context));
+                    readSetListItem.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sequenceStoreId", targetDepth)) {
                     context.nextToken();
                     readSetListItem.setSequenceStoreId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("subjectId", targetDepth)) {
+                    context.nextToken();
+                    readSetListItem.setSubjectId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("sampleId", targetDepth)) {
+                    context.nextToken();
+                    readSetListItem.setSampleId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     readSetListItem.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("subjectId", targetDepth)) {
+                if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
-                    readSetListItem.setSubjectId(context.getUnmarshaller(String.class).unmarshall(context));
+                    readSetListItem.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("description", targetDepth)) {
+                    context.nextToken();
+                    readSetListItem.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("referenceArn", targetDepth)) {
+                    context.nextToken();
+                    readSetListItem.setReferenceArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("fileType", targetDepth)) {
+                    context.nextToken();
+                    readSetListItem.setFileType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("sequenceInformation", targetDepth)) {
+                    context.nextToken();
+                    readSetListItem.setSequenceInformation(SequenceInformationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("creationTime", targetDepth)) {
+                    context.nextToken();
+                    readSetListItem.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (context.testExpression("statusMessage", targetDepth)) {
+                    context.nextToken();
+                    readSetListItem.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("creationType", targetDepth)) {
+                    context.nextToken();
+                    readSetListItem.setCreationType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("etag", targetDepth)) {
+                    context.nextToken();
+                    readSetListItem.setEtag(ETagJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

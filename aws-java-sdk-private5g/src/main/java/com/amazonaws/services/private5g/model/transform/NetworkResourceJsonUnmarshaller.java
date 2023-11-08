@@ -54,6 +54,10 @@ public class NetworkResourceJsonUnmarshaller implements Unmarshaller<NetworkReso
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("commitmentInformation", targetDepth)) {
+                    context.nextToken();
+                    networkResource.setCommitmentInformation(CommitmentInformationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
                     networkResource.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));

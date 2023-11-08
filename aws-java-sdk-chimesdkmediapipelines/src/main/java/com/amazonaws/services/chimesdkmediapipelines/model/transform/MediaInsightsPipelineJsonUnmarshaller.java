@@ -89,6 +89,13 @@ public class MediaInsightsPipelineJsonUnmarshaller implements Unmarshaller<Media
                     context.nextToken();
                     mediaInsightsPipeline.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
+                if (context.testExpression("ElementStatuses", targetDepth)) {
+                    context.nextToken();
+                    mediaInsightsPipeline.setElementStatuses(new ListUnmarshaller<MediaInsightsPipelineElementStatus>(
+                            MediaInsightsPipelineElementStatusJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

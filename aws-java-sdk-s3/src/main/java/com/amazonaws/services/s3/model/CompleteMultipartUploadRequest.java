@@ -38,7 +38,7 @@ import com.amazonaws.services.s3.AmazonS3;
  *
  * @see AmazonS3#completeMultipartUpload(CompleteMultipartUploadRequest)
  */
-public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest implements Serializable, ExpectedBucketOwnerRequest {
+public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest implements Serializable, ExpectedBucketOwnerRequest, SSECustomerKeyProvider {
 
     /**
      * The name of the bucket containing the multipart upload to complete
@@ -73,6 +73,8 @@ public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest impl
     private boolean isRequesterPays;
 
     private String expectedBucketOwner;
+
+    private SSECustomerKey sseCustomerKey;
 
     public CompleteMultipartUploadRequest() {}
 
@@ -409,6 +411,40 @@ public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest impl
      */
     public CompleteMultipartUploadRequest withRequesterPays(boolean isRequesterPays) {
         setRequesterPays(isRequesterPays);
+        return this;
+    }
+
+    @Override
+    public SSECustomerKey getSSECustomerKey() {
+        return sseCustomerKey;
+    }
+
+    /**
+     * Sets the optional customer-provided server-side encryption key to use to
+     * encrypt the uploaded object.
+     *
+     * @param sseKey
+     *            The optional customer-provided server-side encryption key to
+     *            use to encrypt the uploaded object.
+     */
+    public void setSSECustomerKey(SSECustomerKey sseKey) {
+        this.sseCustomerKey = sseKey;
+    }
+
+    /**
+     * Sets the optional customer-provided server-side encryption key to use to
+     * encrypt the uploaded object, and returns the updated request object so
+     * that additional method calls can be chained together.
+     *
+     * @param sseKey
+     *            The optional customer-provided server-side encryption key to
+     *            use to encrypt the uploaded object.
+     *
+     * @return This updated request object so that additional method calls can
+     *         be chained together.
+     */
+    public CompleteMultipartUploadRequest withSSECustomerKey(SSECustomerKey sseKey) {
+        setSSECustomerKey(sseKey);
         return this;
     }
 

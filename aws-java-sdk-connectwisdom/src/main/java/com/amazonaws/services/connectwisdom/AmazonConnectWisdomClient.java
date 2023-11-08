@@ -44,6 +44,7 @@ import com.amazonaws.services.connectwisdom.AmazonConnectWisdomClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.connectwisdom.model.*;
+
 import com.amazonaws.services.connectwisdom.model.transform.*;
 
 /**

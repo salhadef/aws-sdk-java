@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum ConfiguredTableAnalysisRuleType {
 
     AGGREGATION("AGGREGATION"),
-    LIST("LIST");
+    LIST("LIST"),
+    CUSTOM("CUSTOM");
 
     private String value;
 

@@ -65,7 +65,7 @@ public class GetMediaForFragmentListResult extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * AWS_KINESISVIDEO_EXCEPTION_ERROR_CODE - The integer code of the exception
+     * AWS_KINESISVIDEO_EXCEPTION_ERROR_CODE - The integer code of the
      * </p>
      * </li>
      * <li>
@@ -153,7 +153,7 @@ public class GetMediaForFragmentListResult extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * AWS_KINESISVIDEO_EXCEPTION_ERROR_CODE - The integer code of the exception
+     * AWS_KINESISVIDEO_EXCEPTION_ERROR_CODE - The integer code of the
      * </p>
      * </li>
      * <li>
@@ -197,7 +197,7 @@ public class GetMediaForFragmentListResult extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        AWS_KINESISVIDEO_EXCEPTION_ERROR_CODE - The integer code of the exception
+     *        AWS_KINESISVIDEO_EXCEPTION_ERROR_CODE - The integer code of the
      *        </p>
      *        </li>
      *        <li>
@@ -247,7 +247,7 @@ public class GetMediaForFragmentListResult extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * AWS_KINESISVIDEO_EXCEPTION_ERROR_CODE - The integer code of the exception
+     * AWS_KINESISVIDEO_EXCEPTION_ERROR_CODE - The integer code of the
      * </p>
      * </li>
      * <li>
@@ -290,7 +290,7 @@ public class GetMediaForFragmentListResult extends com.amazonaws.AmazonWebServic
      *         </li>
      *         <li>
      *         <p>
-     *         AWS_KINESISVIDEO_EXCEPTION_ERROR_CODE - The integer code of the exception
+     *         AWS_KINESISVIDEO_EXCEPTION_ERROR_CODE - The integer code of the
      *         </p>
      *         </li>
      *         <li>
@@ -340,7 +340,7 @@ public class GetMediaForFragmentListResult extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * AWS_KINESISVIDEO_EXCEPTION_ERROR_CODE - The integer code of the exception
+     * AWS_KINESISVIDEO_EXCEPTION_ERROR_CODE - The integer code of the
      * </p>
      * </li>
      * <li>
@@ -384,7 +384,7 @@ public class GetMediaForFragmentListResult extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        AWS_KINESISVIDEO_EXCEPTION_ERROR_CODE - The integer code of the exception
+     *        AWS_KINESISVIDEO_EXCEPTION_ERROR_CODE - The integer code of the
      *        </p>
      *        </li>
      *        <li>

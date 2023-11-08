@@ -27,7 +27,7 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -78,7 +78,7 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
     private Integer maxResults;
     /**
      * <p>
-     * One or more NAT gateway IDs.
+     * The IDs of the NAT gateways.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> natGatewayIds;
@@ -92,7 +92,7 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -132,7 +132,7 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
      * </li>
      * </ul>
      * 
-     * @return One or more filters.</p>
+     * @return The filters.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -180,7 +180,7 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -221,7 +221,7 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
      * </ul>
      * 
      * @param filter
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -271,7 +271,7 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -317,7 +317,7 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
      * </p>
      * 
      * @param filter
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -369,7 +369,7 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -410,7 +410,7 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
      * </ul>
      * 
      * @param filter
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -512,10 +512,10 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more NAT gateway IDs.
+     * The IDs of the NAT gateways.
      * </p>
      * 
-     * @return One or more NAT gateway IDs.
+     * @return The IDs of the NAT gateways.
      */
 
     public java.util.List<String> getNatGatewayIds() {
@@ -527,11 +527,11 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more NAT gateway IDs.
+     * The IDs of the NAT gateways.
      * </p>
      * 
      * @param natGatewayIds
-     *        One or more NAT gateway IDs.
+     *        The IDs of the NAT gateways.
      */
 
     public void setNatGatewayIds(java.util.Collection<String> natGatewayIds) {
@@ -545,7 +545,7 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more NAT gateway IDs.
+     * The IDs of the NAT gateways.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -554,7 +554,7 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
      * </p>
      * 
      * @param natGatewayIds
-     *        One or more NAT gateway IDs.
+     *        The IDs of the NAT gateways.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -570,11 +570,11 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more NAT gateway IDs.
+     * The IDs of the NAT gateways.
      * </p>
      * 
      * @param natGatewayIds
-     *        One or more NAT gateway IDs.
+     *        The IDs of the NAT gateways.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

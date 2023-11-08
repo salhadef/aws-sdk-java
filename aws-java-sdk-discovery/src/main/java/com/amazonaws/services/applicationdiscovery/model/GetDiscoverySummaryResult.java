@@ -60,7 +60,11 @@ public class GetDiscoverySummaryResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      */
     private CustomerMeCollectorInfo meCollectorSummary;
-
+    /**
+     * <p>
+     * Details about Agentless Collector collectors, including status.
+     * </p>
+     */
     private CustomerAgentlessCollectorInfo agentlessCollectorSummary;
 
     /**
@@ -344,7 +348,12 @@ public class GetDiscoverySummaryResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * Details about Agentless Collector collectors, including status.
+     * </p>
+     * 
      * @param agentlessCollectorSummary
+     *        Details about Agentless Collector collectors, including status.
      */
 
     public void setAgentlessCollectorSummary(CustomerAgentlessCollectorInfo agentlessCollectorSummary) {
@@ -352,7 +361,11 @@ public class GetDiscoverySummaryResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * @return
+     * <p>
+     * Details about Agentless Collector collectors, including status.
+     * </p>
+     * 
+     * @return Details about Agentless Collector collectors, including status.
      */
 
     public CustomerAgentlessCollectorInfo getAgentlessCollectorSummary() {
@@ -360,7 +373,12 @@ public class GetDiscoverySummaryResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * Details about Agentless Collector collectors, including status.
+     * </p>
+     * 
      * @param agentlessCollectorSummary
+     *        Details about Agentless Collector collectors, including status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

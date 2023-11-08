@@ -46,6 +46,12 @@ public class CreateRecordingConfigurationRequest extends com.amazonaws.AmazonWeb
     private Integer recordingReconnectWindowSeconds;
     /**
      * <p>
+     * Object that describes which renditions should be recorded for a stream.
+     * </p>
+     */
+    private RenditionConfiguration renditionConfiguration;
+    /**
+     * <p>
      * Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>
      * for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon
@@ -184,6 +190,46 @@ public class CreateRecordingConfigurationRequest extends com.amazonaws.AmazonWeb
 
     public CreateRecordingConfigurationRequest withRecordingReconnectWindowSeconds(Integer recordingReconnectWindowSeconds) {
         setRecordingReconnectWindowSeconds(recordingReconnectWindowSeconds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Object that describes which renditions should be recorded for a stream.
+     * </p>
+     * 
+     * @param renditionConfiguration
+     *        Object that describes which renditions should be recorded for a stream.
+     */
+
+    public void setRenditionConfiguration(RenditionConfiguration renditionConfiguration) {
+        this.renditionConfiguration = renditionConfiguration;
+    }
+
+    /**
+     * <p>
+     * Object that describes which renditions should be recorded for a stream.
+     * </p>
+     * 
+     * @return Object that describes which renditions should be recorded for a stream.
+     */
+
+    public RenditionConfiguration getRenditionConfiguration() {
+        return this.renditionConfiguration;
+    }
+
+    /**
+     * <p>
+     * Object that describes which renditions should be recorded for a stream.
+     * </p>
+     * 
+     * @param renditionConfiguration
+     *        Object that describes which renditions should be recorded for a stream.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRecordingConfigurationRequest withRenditionConfiguration(RenditionConfiguration renditionConfiguration) {
+        setRenditionConfiguration(renditionConfiguration);
         return this;
     }
 
@@ -340,6 +386,8 @@ public class CreateRecordingConfigurationRequest extends com.amazonaws.AmazonWeb
             sb.append("Name: ").append(getName()).append(",");
         if (getRecordingReconnectWindowSeconds() != null)
             sb.append("RecordingReconnectWindowSeconds: ").append(getRecordingReconnectWindowSeconds()).append(",");
+        if (getRenditionConfiguration() != null)
+            sb.append("RenditionConfiguration: ").append(getRenditionConfiguration()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getThumbnailConfiguration() != null)
@@ -371,6 +419,10 @@ public class CreateRecordingConfigurationRequest extends com.amazonaws.AmazonWeb
         if (other.getRecordingReconnectWindowSeconds() != null
                 && other.getRecordingReconnectWindowSeconds().equals(this.getRecordingReconnectWindowSeconds()) == false)
             return false;
+        if (other.getRenditionConfiguration() == null ^ this.getRenditionConfiguration() == null)
+            return false;
+        if (other.getRenditionConfiguration() != null && other.getRenditionConfiguration().equals(this.getRenditionConfiguration()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -390,6 +442,7 @@ public class CreateRecordingConfigurationRequest extends com.amazonaws.AmazonWeb
         hashCode = prime * hashCode + ((getDestinationConfiguration() == null) ? 0 : getDestinationConfiguration().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getRecordingReconnectWindowSeconds() == null) ? 0 : getRecordingReconnectWindowSeconds().hashCode());
+        hashCode = prime * hashCode + ((getRenditionConfiguration() == null) ? 0 : getRenditionConfiguration().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getThumbnailConfiguration() == null) ? 0 : getThumbnailConfiguration().hashCode());
         return hashCode;

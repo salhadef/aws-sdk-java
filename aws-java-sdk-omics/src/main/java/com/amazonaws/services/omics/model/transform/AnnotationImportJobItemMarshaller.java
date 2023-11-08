@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.omics.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -27,22 +29,26 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class AnnotationImportJobItemMarshaller {
 
-    private static final MarshallingInfo<java.util.Date> COMPLETIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("completionTime").timestampFormat("iso8601").build();
-    private static final MarshallingInfo<java.util.Date> CREATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationTime").timestampFormat("iso8601").build();
-    private static final MarshallingInfo<String> DESTINATIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("destinationName").build();
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("id").build();
+    private static final MarshallingInfo<String> DESTINATIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("destinationName").build();
+    private static final MarshallingInfo<String> VERSIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("versionName").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("roleArn").build();
-    private static final MarshallingInfo<Boolean> RUNLEFTNORMALIZATION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("runLeftNormalization").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
+    private static final MarshallingInfo<java.util.Date> CREATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationTime").timestampFormat("iso8601").build();
     private static final MarshallingInfo<java.util.Date> UPDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("updateTime").timestampFormat("iso8601").build();
+    private static final MarshallingInfo<java.util.Date> COMPLETIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("completionTime").timestampFormat("iso8601").build();
+    private static final MarshallingInfo<Boolean> RUNLEFTNORMALIZATION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("runLeftNormalization").build();
+    private static final MarshallingInfo<Map> ANNOTATIONFIELDS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("annotationFields").build();
 
     private static final AnnotationImportJobItemMarshaller instance = new AnnotationImportJobItemMarshaller();
 
@@ -60,14 +66,16 @@ public class AnnotationImportJobItemMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(annotationImportJobItem.getCompletionTime(), COMPLETIONTIME_BINDING);
-            protocolMarshaller.marshall(annotationImportJobItem.getCreationTime(), CREATIONTIME_BINDING);
-            protocolMarshaller.marshall(annotationImportJobItem.getDestinationName(), DESTINATIONNAME_BINDING);
             protocolMarshaller.marshall(annotationImportJobItem.getId(), ID_BINDING);
+            protocolMarshaller.marshall(annotationImportJobItem.getDestinationName(), DESTINATIONNAME_BINDING);
+            protocolMarshaller.marshall(annotationImportJobItem.getVersionName(), VERSIONNAME_BINDING);
             protocolMarshaller.marshall(annotationImportJobItem.getRoleArn(), ROLEARN_BINDING);
-            protocolMarshaller.marshall(annotationImportJobItem.getRunLeftNormalization(), RUNLEFTNORMALIZATION_BINDING);
             protocolMarshaller.marshall(annotationImportJobItem.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(annotationImportJobItem.getCreationTime(), CREATIONTIME_BINDING);
             protocolMarshaller.marshall(annotationImportJobItem.getUpdateTime(), UPDATETIME_BINDING);
+            protocolMarshaller.marshall(annotationImportJobItem.getCompletionTime(), COMPLETIONTIME_BINDING);
+            protocolMarshaller.marshall(annotationImportJobItem.getRunLeftNormalization(), RUNLEFTNORMALIZATION_BINDING);
+            protocolMarshaller.marshall(annotationImportJobItem.getAnnotationFields(), ANNOTATIONFIELDS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

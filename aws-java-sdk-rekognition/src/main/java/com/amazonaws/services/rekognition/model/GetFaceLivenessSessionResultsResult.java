@@ -52,7 +52,8 @@ public class GetFaceLivenessSessionResultsResult extends com.amazonaws.AmazonWeb
      * <p>
      * A set of images from the Face Liveness video that can be used for audit purposes. It includes a bounding box of
      * the face and the Base64-encoded bytes that return an image. If the CreateFaceLivenessSession request included an
-     * OutputConfig argument, the image will be uploaded to an S3Object specified in the output configuration.
+     * OutputConfig argument, the image will be uploaded to an S3Object specified in the output configuration. If no
+     * Amazon S3 bucket is defined, raw bytes are sent instead.
      * </p>
      */
     private java.util.List<AuditImage> auditImages;
@@ -275,13 +276,14 @@ public class GetFaceLivenessSessionResultsResult extends com.amazonaws.AmazonWeb
      * <p>
      * A set of images from the Face Liveness video that can be used for audit purposes. It includes a bounding box of
      * the face and the Base64-encoded bytes that return an image. If the CreateFaceLivenessSession request included an
-     * OutputConfig argument, the image will be uploaded to an S3Object specified in the output configuration.
+     * OutputConfig argument, the image will be uploaded to an S3Object specified in the output configuration. If no
+     * Amazon S3 bucket is defined, raw bytes are sent instead.
      * </p>
      * 
      * @return A set of images from the Face Liveness video that can be used for audit purposes. It includes a bounding
      *         box of the face and the Base64-encoded bytes that return an image. If the CreateFaceLivenessSession
      *         request included an OutputConfig argument, the image will be uploaded to an S3Object specified in the
-     *         output configuration.
+     *         output configuration. If no Amazon S3 bucket is defined, raw bytes are sent instead.
      */
 
     public java.util.List<AuditImage> getAuditImages() {
@@ -292,14 +294,15 @@ public class GetFaceLivenessSessionResultsResult extends com.amazonaws.AmazonWeb
      * <p>
      * A set of images from the Face Liveness video that can be used for audit purposes. It includes a bounding box of
      * the face and the Base64-encoded bytes that return an image. If the CreateFaceLivenessSession request included an
-     * OutputConfig argument, the image will be uploaded to an S3Object specified in the output configuration.
+     * OutputConfig argument, the image will be uploaded to an S3Object specified in the output configuration. If no
+     * Amazon S3 bucket is defined, raw bytes are sent instead.
      * </p>
      * 
      * @param auditImages
      *        A set of images from the Face Liveness video that can be used for audit purposes. It includes a bounding
      *        box of the face and the Base64-encoded bytes that return an image. If the CreateFaceLivenessSession
      *        request included an OutputConfig argument, the image will be uploaded to an S3Object specified in the
-     *        output configuration.
+     *        output configuration. If no Amazon S3 bucket is defined, raw bytes are sent instead.
      */
 
     public void setAuditImages(java.util.Collection<AuditImage> auditImages) {
@@ -315,7 +318,8 @@ public class GetFaceLivenessSessionResultsResult extends com.amazonaws.AmazonWeb
      * <p>
      * A set of images from the Face Liveness video that can be used for audit purposes. It includes a bounding box of
      * the face and the Base64-encoded bytes that return an image. If the CreateFaceLivenessSession request included an
-     * OutputConfig argument, the image will be uploaded to an S3Object specified in the output configuration.
+     * OutputConfig argument, the image will be uploaded to an S3Object specified in the output configuration. If no
+     * Amazon S3 bucket is defined, raw bytes are sent instead.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -327,7 +331,7 @@ public class GetFaceLivenessSessionResultsResult extends com.amazonaws.AmazonWeb
      *        A set of images from the Face Liveness video that can be used for audit purposes. It includes a bounding
      *        box of the face and the Base64-encoded bytes that return an image. If the CreateFaceLivenessSession
      *        request included an OutputConfig argument, the image will be uploaded to an S3Object specified in the
-     *        output configuration.
+     *        output configuration. If no Amazon S3 bucket is defined, raw bytes are sent instead.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -345,14 +349,15 @@ public class GetFaceLivenessSessionResultsResult extends com.amazonaws.AmazonWeb
      * <p>
      * A set of images from the Face Liveness video that can be used for audit purposes. It includes a bounding box of
      * the face and the Base64-encoded bytes that return an image. If the CreateFaceLivenessSession request included an
-     * OutputConfig argument, the image will be uploaded to an S3Object specified in the output configuration.
+     * OutputConfig argument, the image will be uploaded to an S3Object specified in the output configuration. If no
+     * Amazon S3 bucket is defined, raw bytes are sent instead.
      * </p>
      * 
      * @param auditImages
      *        A set of images from the Face Liveness video that can be used for audit purposes. It includes a bounding
      *        box of the face and the Base64-encoded bytes that return an image. If the CreateFaceLivenessSession
      *        request included an OutputConfig argument, the image will be uploaded to an S3Object specified in the
-     *        output configuration.
+     *        output configuration. If no Amazon S3 bucket is defined, raw bytes are sent instead.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

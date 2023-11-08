@@ -90,6 +90,11 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The file type of the document in the <code>Blob</code> field.
      * </p>
+     * <p>
+     * If you want to index snippets or subsets of HTML documents instead of the entirety of the HTML documents, you
+     * must add the <code>HTML</code> start and closing tags (<code>&lt;HTML&gt;content&lt;/HTML&gt;</code>) around the
+     * content.
+     * </p>
      */
     private String contentType;
     /**
@@ -621,9 +626,18 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The file type of the document in the <code>Blob</code> field.
      * </p>
+     * <p>
+     * If you want to index snippets or subsets of HTML documents instead of the entirety of the HTML documents, you
+     * must add the <code>HTML</code> start and closing tags (<code>&lt;HTML&gt;content&lt;/HTML&gt;</code>) around the
+     * content.
+     * </p>
      * 
      * @param contentType
-     *        The file type of the document in the <code>Blob</code> field.
+     *        The file type of the document in the <code>Blob</code> field.</p>
+     *        <p>
+     *        If you want to index snippets or subsets of HTML documents instead of the entirety of the HTML documents,
+     *        you must add the <code>HTML</code> start and closing tags (<code>&lt;HTML&gt;content&lt;/HTML&gt;</code>)
+     *        around the content.
      * @see ContentType
      */
 
@@ -635,8 +649,17 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The file type of the document in the <code>Blob</code> field.
      * </p>
+     * <p>
+     * If you want to index snippets or subsets of HTML documents instead of the entirety of the HTML documents, you
+     * must add the <code>HTML</code> start and closing tags (<code>&lt;HTML&gt;content&lt;/HTML&gt;</code>) around the
+     * content.
+     * </p>
      * 
-     * @return The file type of the document in the <code>Blob</code> field.
+     * @return The file type of the document in the <code>Blob</code> field.</p>
+     *         <p>
+     *         If you want to index snippets or subsets of HTML documents instead of the entirety of the HTML documents,
+     *         you must add the <code>HTML</code> start and closing tags (<code>&lt;HTML&gt;content&lt;/HTML&gt;</code>)
+     *         around the content.
      * @see ContentType
      */
 
@@ -648,9 +671,18 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The file type of the document in the <code>Blob</code> field.
      * </p>
+     * <p>
+     * If you want to index snippets or subsets of HTML documents instead of the entirety of the HTML documents, you
+     * must add the <code>HTML</code> start and closing tags (<code>&lt;HTML&gt;content&lt;/HTML&gt;</code>) around the
+     * content.
+     * </p>
      * 
      * @param contentType
-     *        The file type of the document in the <code>Blob</code> field.
+     *        The file type of the document in the <code>Blob</code> field.</p>
+     *        <p>
+     *        If you want to index snippets or subsets of HTML documents instead of the entirety of the HTML documents,
+     *        you must add the <code>HTML</code> start and closing tags (<code>&lt;HTML&gt;content&lt;/HTML&gt;</code>)
+     *        around the content.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContentType
      */
@@ -664,9 +696,18 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The file type of the document in the <code>Blob</code> field.
      * </p>
+     * <p>
+     * If you want to index snippets or subsets of HTML documents instead of the entirety of the HTML documents, you
+     * must add the <code>HTML</code> start and closing tags (<code>&lt;HTML&gt;content&lt;/HTML&gt;</code>) around the
+     * content.
+     * </p>
      * 
      * @param contentType
-     *        The file type of the document in the <code>Blob</code> field.
+     *        The file type of the document in the <code>Blob</code> field.</p>
+     *        <p>
+     *        If you want to index snippets or subsets of HTML documents instead of the entirety of the HTML documents,
+     *        you must add the <code>HTML</code> start and closing tags (<code>&lt;HTML&gt;content&lt;/HTML&gt;</code>)
+     *        around the content.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContentType
      */

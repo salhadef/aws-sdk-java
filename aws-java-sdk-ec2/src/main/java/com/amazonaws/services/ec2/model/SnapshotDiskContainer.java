@@ -253,7 +253,7 @@ public class SnapshotDiskContainer implements Serializable, Cloneable {
         if (getFormat() != null)
             sb.append("Format: ").append(getFormat()).append(",");
         if (getUrl() != null)
-            sb.append("Url: ").append(getUrl()).append(",");
+            sb.append("Url: ").append("***Sensitive Data Redacted***").append(",");
         if (getUserBucket() != null)
             sb.append("UserBucket: ").append(getUserBucket());
         sb.append("}");

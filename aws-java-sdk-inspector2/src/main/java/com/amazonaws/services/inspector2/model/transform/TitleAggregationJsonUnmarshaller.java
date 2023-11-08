@@ -48,6 +48,10 @@ public class TitleAggregationJsonUnmarshaller implements Unmarshaller<TitleAggre
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("findingType", targetDepth)) {
+                    context.nextToken();
+                    titleAggregation.setFindingType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("resourceType", targetDepth)) {
                     context.nextToken();
                     titleAggregation.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));

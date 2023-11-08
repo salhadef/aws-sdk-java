@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service that's
- * being utilized.
+ * The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web Services
+ * service that's being utilized.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

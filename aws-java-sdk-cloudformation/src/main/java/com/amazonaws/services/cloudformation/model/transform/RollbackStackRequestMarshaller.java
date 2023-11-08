@@ -52,6 +52,10 @@ public class RollbackStackRequestMarshaller implements Marshaller<Request<Rollba
             request.addParameter("ClientRequestToken", StringUtils.fromString(rollbackStackRequest.getClientRequestToken()));
         }
 
+        if (rollbackStackRequest.getRetainExceptOnCreate() != null) {
+            request.addParameter("RetainExceptOnCreate", StringUtils.fromBoolean(rollbackStackRequest.getRetainExceptOnCreate()));
+        }
+
         return request;
     }
 

@@ -44,6 +44,7 @@ import com.amazonaws.services.iot1clickprojects.AWSIoT1ClickProjectsClientBuilde
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.iot1clickprojects.model.*;
+
 import com.amazonaws.services.iot1clickprojects.model.transform.*;
 
 /**

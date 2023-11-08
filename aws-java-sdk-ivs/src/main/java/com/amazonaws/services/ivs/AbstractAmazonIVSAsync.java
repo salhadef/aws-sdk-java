@@ -53,6 +53,21 @@ public class AbstractAmazonIVSAsync extends AbstractAmazonIVS implements AmazonI
     }
 
     @Override
+    public java.util.concurrent.Future<BatchStartViewerSessionRevocationResult> batchStartViewerSessionRevocationAsync(
+            BatchStartViewerSessionRevocationRequest request) {
+
+        return batchStartViewerSessionRevocationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchStartViewerSessionRevocationResult> batchStartViewerSessionRevocationAsync(
+            BatchStartViewerSessionRevocationRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchStartViewerSessionRevocationRequest, BatchStartViewerSessionRevocationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateChannelResult> createChannelAsync(CreateChannelRequest request) {
 
         return createChannelAsync(request, null);
@@ -334,6 +349,19 @@ public class AbstractAmazonIVSAsync extends AbstractAmazonIVS implements AmazonI
     @Override
     public java.util.concurrent.Future<PutMetadataResult> putMetadataAsync(PutMetadataRequest request,
             com.amazonaws.handlers.AsyncHandler<PutMetadataRequest, PutMetadataResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartViewerSessionRevocationResult> startViewerSessionRevocationAsync(StartViewerSessionRevocationRequest request) {
+
+        return startViewerSessionRevocationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartViewerSessionRevocationResult> startViewerSessionRevocationAsync(StartViewerSessionRevocationRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartViewerSessionRevocationRequest, StartViewerSessionRevocationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

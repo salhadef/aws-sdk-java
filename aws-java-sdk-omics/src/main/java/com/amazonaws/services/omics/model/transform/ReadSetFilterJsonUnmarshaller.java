@@ -48,6 +48,18 @@ public class ReadSetFilterJsonUnmarshaller implements Unmarshaller<ReadSetFilter
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("name", targetDepth)) {
+                    context.nextToken();
+                    readSetFilter.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("status", targetDepth)) {
+                    context.nextToken();
+                    readSetFilter.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("referenceArn", targetDepth)) {
+                    context.nextToken();
+                    readSetFilter.setReferenceArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("createdAfter", targetDepth)) {
                     context.nextToken();
                     readSetFilter.setCreatedAfter(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
@@ -56,17 +68,21 @@ public class ReadSetFilterJsonUnmarshaller implements Unmarshaller<ReadSetFilter
                     context.nextToken();
                     readSetFilter.setCreatedBefore(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
-                if (context.testExpression("name", targetDepth)) {
+                if (context.testExpression("sampleId", targetDepth)) {
                     context.nextToken();
-                    readSetFilter.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                    readSetFilter.setSampleId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("referenceArn", targetDepth)) {
+                if (context.testExpression("subjectId", targetDepth)) {
                     context.nextToken();
-                    readSetFilter.setReferenceArn(context.getUnmarshaller(String.class).unmarshall(context));
+                    readSetFilter.setSubjectId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("status", targetDepth)) {
+                if (context.testExpression("generatedFrom", targetDepth)) {
                     context.nextToken();
-                    readSetFilter.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                    readSetFilter.setGeneratedFrom(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("creationType", targetDepth)) {
+                    context.nextToken();
+                    readSetFilter.setCreationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

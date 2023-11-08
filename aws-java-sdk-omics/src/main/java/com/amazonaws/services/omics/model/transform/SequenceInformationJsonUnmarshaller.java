@@ -48,21 +48,21 @@ public class SequenceInformationJsonUnmarshaller implements Unmarshaller<Sequenc
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("alignment", targetDepth)) {
+                if (context.testExpression("totalReadCount", targetDepth)) {
                     context.nextToken();
-                    sequenceInformation.setAlignment(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("generatedFrom", targetDepth)) {
-                    context.nextToken();
-                    sequenceInformation.setGeneratedFrom(context.getUnmarshaller(String.class).unmarshall(context));
+                    sequenceInformation.setTotalReadCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("totalBaseCount", targetDepth)) {
                     context.nextToken();
                     sequenceInformation.setTotalBaseCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
-                if (context.testExpression("totalReadCount", targetDepth)) {
+                if (context.testExpression("generatedFrom", targetDepth)) {
                     context.nextToken();
-                    sequenceInformation.setTotalReadCount(context.getUnmarshaller(Long.class).unmarshall(context));
+                    sequenceInformation.setGeneratedFrom(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("alignment", targetDepth)) {
+                    context.nextToken();
+                    sequenceInformation.setAlignment(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

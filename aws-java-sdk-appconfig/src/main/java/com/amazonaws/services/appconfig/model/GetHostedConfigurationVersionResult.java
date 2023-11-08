@@ -67,6 +67,13 @@ public class GetHostedConfigurationVersionResult extends com.amazonaws.AmazonWeb
      * </p>
      */
     private String versionLabel;
+    /**
+     * <p>
+     * The Amazon Resource Name of the Key Management Service key that was used to encrypt this specific version of the
+     * configuration data in the AppConfig hosted configuration store.
+     * </p>
+     */
+    private String kmsKeyArn;
 
     /**
      * <p>
@@ -382,6 +389,52 @@ public class GetHostedConfigurationVersionResult extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name of the Key Management Service key that was used to encrypt this specific version of the
+     * configuration data in the AppConfig hosted configuration store.
+     * </p>
+     * 
+     * @param kmsKeyArn
+     *        The Amazon Resource Name of the Key Management Service key that was used to encrypt this specific version
+     *        of the configuration data in the AppConfig hosted configuration store.
+     */
+
+    public void setKmsKeyArn(String kmsKeyArn) {
+        this.kmsKeyArn = kmsKeyArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name of the Key Management Service key that was used to encrypt this specific version of the
+     * configuration data in the AppConfig hosted configuration store.
+     * </p>
+     * 
+     * @return The Amazon Resource Name of the Key Management Service key that was used to encrypt this specific version
+     *         of the configuration data in the AppConfig hosted configuration store.
+     */
+
+    public String getKmsKeyArn() {
+        return this.kmsKeyArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name of the Key Management Service key that was used to encrypt this specific version of the
+     * configuration data in the AppConfig hosted configuration store.
+     * </p>
+     * 
+     * @param kmsKeyArn
+     *        The Amazon Resource Name of the Key Management Service key that was used to encrypt this specific version
+     *        of the configuration data in the AppConfig hosted configuration store.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetHostedConfigurationVersionResult withKmsKeyArn(String kmsKeyArn) {
+        setKmsKeyArn(kmsKeyArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -406,7 +459,9 @@ public class GetHostedConfigurationVersionResult extends com.amazonaws.AmazonWeb
         if (getContentType() != null)
             sb.append("ContentType: ").append(getContentType()).append(",");
         if (getVersionLabel() != null)
-            sb.append("VersionLabel: ").append(getVersionLabel());
+            sb.append("VersionLabel: ").append(getVersionLabel()).append(",");
+        if (getKmsKeyArn() != null)
+            sb.append("KmsKeyArn: ").append(getKmsKeyArn());
         sb.append("}");
         return sb.toString();
     }
@@ -449,6 +504,10 @@ public class GetHostedConfigurationVersionResult extends com.amazonaws.AmazonWeb
             return false;
         if (other.getVersionLabel() != null && other.getVersionLabel().equals(this.getVersionLabel()) == false)
             return false;
+        if (other.getKmsKeyArn() == null ^ this.getKmsKeyArn() == null)
+            return false;
+        if (other.getKmsKeyArn() != null && other.getKmsKeyArn().equals(this.getKmsKeyArn()) == false)
+            return false;
         return true;
     }
 
@@ -464,6 +523,7 @@ public class GetHostedConfigurationVersionResult extends com.amazonaws.AmazonWeb
         hashCode = prime * hashCode + ((getContent() == null) ? 0 : getContent().hashCode());
         hashCode = prime * hashCode + ((getContentType() == null) ? 0 : getContentType().hashCode());
         hashCode = prime * hashCode + ((getVersionLabel() == null) ? 0 : getVersionLabel().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyArn() == null) ? 0 : getKmsKeyArn().hashCode());
         return hashCode;
     }
 

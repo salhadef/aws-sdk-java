@@ -71,7 +71,7 @@ public class Certificate implements Serializable, Cloneable {
     private String certificateArn;
     /**
      * <p>
-     * Whether there is an override for the default certificate identifier.
+     * Indicates whether there is an override for the default certificate identifier.
      * </p>
      */
     private Boolean customerOverride;
@@ -324,11 +324,11 @@ public class Certificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether there is an override for the default certificate identifier.
+     * Indicates whether there is an override for the default certificate identifier.
      * </p>
      * 
      * @param customerOverride
-     *        Whether there is an override for the default certificate identifier.
+     *        Indicates whether there is an override for the default certificate identifier.
      */
 
     public void setCustomerOverride(Boolean customerOverride) {
@@ -337,10 +337,10 @@ public class Certificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether there is an override for the default certificate identifier.
+     * Indicates whether there is an override for the default certificate identifier.
      * </p>
      * 
-     * @return Whether there is an override for the default certificate identifier.
+     * @return Indicates whether there is an override for the default certificate identifier.
      */
 
     public Boolean getCustomerOverride() {
@@ -349,11 +349,11 @@ public class Certificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether there is an override for the default certificate identifier.
+     * Indicates whether there is an override for the default certificate identifier.
      * </p>
      * 
      * @param customerOverride
-     *        Whether there is an override for the default certificate identifier.
+     *        Indicates whether there is an override for the default certificate identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -364,10 +364,10 @@ public class Certificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether there is an override for the default certificate identifier.
+     * Indicates whether there is an override for the default certificate identifier.
      * </p>
      * 
-     * @return Whether there is an override for the default certificate identifier.
+     * @return Indicates whether there is an override for the default certificate identifier.
      */
 
     public Boolean isCustomerOverride() {

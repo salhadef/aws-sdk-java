@@ -30,7 +30,7 @@ public class AutoScalingGroupProvider implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the Auto Scaling group.
+     * The Amazon Resource Name (ARN) that identifies the Auto Scaling group, or the Auto Scaling group name.
      * </p>
      */
     private String autoScalingGroupArn;
@@ -67,11 +67,11 @@ public class AutoScalingGroupProvider implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the Auto Scaling group.
+     * The Amazon Resource Name (ARN) that identifies the Auto Scaling group, or the Auto Scaling group name.
      * </p>
      * 
      * @param autoScalingGroupArn
-     *        The Amazon Resource Name (ARN) that identifies the Auto Scaling group.
+     *        The Amazon Resource Name (ARN) that identifies the Auto Scaling group, or the Auto Scaling group name.
      */
 
     public void setAutoScalingGroupArn(String autoScalingGroupArn) {
@@ -80,10 +80,10 @@ public class AutoScalingGroupProvider implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the Auto Scaling group.
+     * The Amazon Resource Name (ARN) that identifies the Auto Scaling group, or the Auto Scaling group name.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) that identifies the Auto Scaling group.
+     * @return The Amazon Resource Name (ARN) that identifies the Auto Scaling group, or the Auto Scaling group name.
      */
 
     public String getAutoScalingGroupArn() {
@@ -92,11 +92,11 @@ public class AutoScalingGroupProvider implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the Auto Scaling group.
+     * The Amazon Resource Name (ARN) that identifies the Auto Scaling group, or the Auto Scaling group name.
      * </p>
      * 
      * @param autoScalingGroupArn
-     *        The Amazon Resource Name (ARN) that identifies the Auto Scaling group.
+     *        The Amazon Resource Name (ARN) that identifies the Auto Scaling group, or the Auto Scaling group name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

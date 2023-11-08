@@ -46,6 +46,12 @@ public class ListControlDisplayOptions implements Serializable, Cloneable, Struc
      * </p>
      */
     private LabelOptions titleOptions;
+    /**
+     * <p>
+     * The configuration of info icon label options.
+     * </p>
+     */
+    private SheetControlInfoIconLabelOptions infoIconLabelOptions;
 
     /**
      * <p>
@@ -168,6 +174,46 @@ public class ListControlDisplayOptions implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * The configuration of info icon label options.
+     * </p>
+     * 
+     * @param infoIconLabelOptions
+     *        The configuration of info icon label options.
+     */
+
+    public void setInfoIconLabelOptions(SheetControlInfoIconLabelOptions infoIconLabelOptions) {
+        this.infoIconLabelOptions = infoIconLabelOptions;
+    }
+
+    /**
+     * <p>
+     * The configuration of info icon label options.
+     * </p>
+     * 
+     * @return The configuration of info icon label options.
+     */
+
+    public SheetControlInfoIconLabelOptions getInfoIconLabelOptions() {
+        return this.infoIconLabelOptions;
+    }
+
+    /**
+     * <p>
+     * The configuration of info icon label options.
+     * </p>
+     * 
+     * @param infoIconLabelOptions
+     *        The configuration of info icon label options.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListControlDisplayOptions withInfoIconLabelOptions(SheetControlInfoIconLabelOptions infoIconLabelOptions) {
+        setInfoIconLabelOptions(infoIconLabelOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -184,7 +230,9 @@ public class ListControlDisplayOptions implements Serializable, Cloneable, Struc
         if (getSelectAllOptions() != null)
             sb.append("SelectAllOptions: ").append(getSelectAllOptions()).append(",");
         if (getTitleOptions() != null)
-            sb.append("TitleOptions: ").append(getTitleOptions());
+            sb.append("TitleOptions: ").append(getTitleOptions()).append(",");
+        if (getInfoIconLabelOptions() != null)
+            sb.append("InfoIconLabelOptions: ").append(getInfoIconLabelOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -211,6 +259,10 @@ public class ListControlDisplayOptions implements Serializable, Cloneable, Struc
             return false;
         if (other.getTitleOptions() != null && other.getTitleOptions().equals(this.getTitleOptions()) == false)
             return false;
+        if (other.getInfoIconLabelOptions() == null ^ this.getInfoIconLabelOptions() == null)
+            return false;
+        if (other.getInfoIconLabelOptions() != null && other.getInfoIconLabelOptions().equals(this.getInfoIconLabelOptions()) == false)
+            return false;
         return true;
     }
 
@@ -222,6 +274,7 @@ public class ListControlDisplayOptions implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getSearchOptions() == null) ? 0 : getSearchOptions().hashCode());
         hashCode = prime * hashCode + ((getSelectAllOptions() == null) ? 0 : getSelectAllOptions().hashCode());
         hashCode = prime * hashCode + ((getTitleOptions() == null) ? 0 : getTitleOptions().hashCode());
+        hashCode = prime * hashCode + ((getInfoIconLabelOptions() == null) ? 0 : getInfoIconLabelOptions().hashCode());
         return hashCode;
     }
 

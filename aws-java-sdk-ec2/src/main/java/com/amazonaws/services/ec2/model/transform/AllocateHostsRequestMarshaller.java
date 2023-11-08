@@ -111,6 +111,19 @@ public class AllocateHostsRequestMarshaller implements Marshaller<Request<Alloca
             request.addParameter("HostMaintenance", StringUtils.fromString(allocateHostsRequest.getHostMaintenance()));
         }
 
+        com.amazonaws.internal.SdkInternalList<String> allocateHostsRequestAssetIdsList = (com.amazonaws.internal.SdkInternalList<String>) allocateHostsRequest
+                .getAssetIds();
+        if (!allocateHostsRequestAssetIdsList.isEmpty() || !allocateHostsRequestAssetIdsList.isAutoConstruct()) {
+            int assetIdsListIndex = 1;
+
+            for (String allocateHostsRequestAssetIdsListValue : allocateHostsRequestAssetIdsList) {
+                if (allocateHostsRequestAssetIdsListValue != null) {
+                    request.addParameter("AssetId." + assetIdsListIndex, StringUtils.fromString(allocateHostsRequestAssetIdsListValue));
+                }
+                assetIdsListIndex++;
+            }
+        }
+
         return request;
     }
 

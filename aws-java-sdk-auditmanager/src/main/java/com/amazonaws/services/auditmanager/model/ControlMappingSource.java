@@ -62,7 +62,7 @@ public class ControlMappingSource implements Serializable, Cloneable, Structured
     private SourceKeyword sourceKeyword;
     /**
      * <p>
-     * The frequency of evidence collection for the control mapping source.
+     * Specifies how often evidence is collected from the control mapping source.
      * </p>
      */
     private String sourceFrequency;
@@ -343,11 +343,11 @@ public class ControlMappingSource implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The frequency of evidence collection for the control mapping source.
+     * Specifies how often evidence is collected from the control mapping source.
      * </p>
      * 
      * @param sourceFrequency
-     *        The frequency of evidence collection for the control mapping source.
+     *        Specifies how often evidence is collected from the control mapping source.
      * @see SourceFrequency
      */
 
@@ -357,10 +357,10 @@ public class ControlMappingSource implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The frequency of evidence collection for the control mapping source.
+     * Specifies how often evidence is collected from the control mapping source.
      * </p>
      * 
-     * @return The frequency of evidence collection for the control mapping source.
+     * @return Specifies how often evidence is collected from the control mapping source.
      * @see SourceFrequency
      */
 
@@ -370,11 +370,11 @@ public class ControlMappingSource implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The frequency of evidence collection for the control mapping source.
+     * Specifies how often evidence is collected from the control mapping source.
      * </p>
      * 
      * @param sourceFrequency
-     *        The frequency of evidence collection for the control mapping source.
+     *        Specifies how often evidence is collected from the control mapping source.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SourceFrequency
      */
@@ -386,11 +386,11 @@ public class ControlMappingSource implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The frequency of evidence collection for the control mapping source.
+     * Specifies how often evidence is collected from the control mapping source.
      * </p>
      * 
      * @param sourceFrequency
-     *        The frequency of evidence collection for the control mapping source.
+     *        Specifies how often evidence is collected from the control mapping source.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SourceFrequency
      */
@@ -467,7 +467,7 @@ public class ControlMappingSource implements Serializable, Cloneable, Structured
         if (getSourceFrequency() != null)
             sb.append("SourceFrequency: ").append(getSourceFrequency()).append(",");
         if (getTroubleshootingText() != null)
-            sb.append("TroubleshootingText: ").append(getTroubleshootingText());
+            sb.append("TroubleshootingText: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

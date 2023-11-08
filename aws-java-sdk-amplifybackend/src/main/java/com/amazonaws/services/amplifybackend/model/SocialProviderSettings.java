@@ -153,13 +153,13 @@ public class SocialProviderSettings implements Serializable, Cloneable, Structur
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFacebook() != null)
-            sb.append("Facebook: ").append(getFacebook()).append(",");
+            sb.append("Facebook: ").append("***Sensitive Data Redacted***").append(",");
         if (getGoogle() != null)
-            sb.append("Google: ").append(getGoogle()).append(",");
+            sb.append("Google: ").append("***Sensitive Data Redacted***").append(",");
         if (getLoginWithAmazon() != null)
-            sb.append("LoginWithAmazon: ").append(getLoginWithAmazon()).append(",");
+            sb.append("LoginWithAmazon: ").append("***Sensitive Data Redacted***").append(",");
         if (getSignInWithApple() != null)
-            sb.append("SignInWithApple: ").append(getSignInWithApple());
+            sb.append("SignInWithApple: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

@@ -25,8 +25,8 @@ import javax.annotation.Generated;
  * </p>
  * <p>
  * For information about setting up receipt rule sets, see the <a
- * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon SES
- * Developer Guide</a>.
+ * href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-concepts.html#receiving-email-concepts-rules">Amazon
+ * SES Developer Guide</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ReceiptRuleSetMetadata" target="_top">AWS API
@@ -37,12 +37,12 @@ public class ReceiptRuleSetMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the receipt rule set. The name must:
+     * The name of the receipt rule set. The name must meet the following requirements:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      * </p>
      * </li>
      * <li>
@@ -52,7 +52,7 @@ public class ReceiptRuleSetMetadata implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * Contain less than 64 characters.
+     * Contain 64 characters or fewer.
      * </p>
      * </li>
      * </ul>
@@ -67,12 +67,12 @@ public class ReceiptRuleSetMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the receipt rule set. The name must:
+     * The name of the receipt rule set. The name must meet the following requirements:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      * </p>
      * </li>
      * <li>
@@ -82,17 +82,17 @@ public class ReceiptRuleSetMetadata implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * Contain less than 64 characters.
+     * Contain 64 characters or fewer.
      * </p>
      * </li>
      * </ul>
      * 
      * @param name
-     *        The name of the receipt rule set. The name must:</p>
+     *        The name of the receipt rule set. The name must meet the following requirements:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     *        Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      *        </p>
      *        </li>
      *        <li>
@@ -102,7 +102,7 @@ public class ReceiptRuleSetMetadata implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        Contain less than 64 characters.
+     *        Contain 64 characters or fewer.
      *        </p>
      *        </li>
      */
@@ -113,12 +113,12 @@ public class ReceiptRuleSetMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the receipt rule set. The name must:
+     * The name of the receipt rule set. The name must meet the following requirements:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      * </p>
      * </li>
      * <li>
@@ -128,16 +128,16 @@ public class ReceiptRuleSetMetadata implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * Contain less than 64 characters.
+     * Contain 64 characters or fewer.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The name of the receipt rule set. The name must:</p>
+     * @return The name of the receipt rule set. The name must meet the following requirements:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     *         Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      *         </p>
      *         </li>
      *         <li>
@@ -147,7 +147,7 @@ public class ReceiptRuleSetMetadata implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         Contain less than 64 characters.
+     *         Contain 64 characters or fewer.
      *         </p>
      *         </li>
      */
@@ -158,12 +158,12 @@ public class ReceiptRuleSetMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the receipt rule set. The name must:
+     * The name of the receipt rule set. The name must meet the following requirements:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      * </p>
      * </li>
      * <li>
@@ -173,17 +173,17 @@ public class ReceiptRuleSetMetadata implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * Contain less than 64 characters.
+     * Contain 64 characters or fewer.
      * </p>
      * </li>
      * </ul>
      * 
      * @param name
-     *        The name of the receipt rule set. The name must:</p>
+     *        The name of the receipt rule set. The name must meet the following requirements:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     *        Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      *        </p>
      *        </li>
      *        <li>
@@ -193,7 +193,7 @@ public class ReceiptRuleSetMetadata implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        Contain less than 64 characters.
+     *        Contain 64 characters or fewer.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

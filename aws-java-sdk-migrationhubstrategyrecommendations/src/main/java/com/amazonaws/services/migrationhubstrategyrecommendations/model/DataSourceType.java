@@ -22,7 +22,8 @@ public enum DataSourceType {
 
     ApplicationDiscoveryService("ApplicationDiscoveryService"),
     MPA("MPA"),
-    Import("Import");
+    Import("Import"),
+    StrategyRecommendationsApplicationDataCollector("StrategyRecommendationsApplicationDataCollector");
 
     private String value;
 

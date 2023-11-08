@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.internal.S3RequesterChargedResult;
 
 /**
  * Contains the results of listing the versions in an Amazon S3 bucket,
@@ -30,7 +31,7 @@ import com.amazonaws.services.s3.AmazonS3;
  * @see AmazonS3#listVersions(ListVersionsRequest)
  * @see AmazonS3#listNextBatchOfVersions(VersionListing)
  */
-public class VersionListing implements Serializable {
+public class VersionListing implements Serializable, S3RequesterChargedResult {
 
     /** A list of summary information describing the versions stored in the bucket */
     private List<S3VersionSummary> versionSummaries =
@@ -105,6 +106,11 @@ public class VersionListing implements Serializable {
      */
     private String encodingType;
 
+    /**
+     * Indicate if the requester is charged for conducting this operation from
+     * Requester Pays Buckets.
+     */
+    private boolean isRequesterCharged;
 
     /**
      * Gets the list of version summaries describing the versions stored in
@@ -453,4 +459,13 @@ public class VersionListing implements Serializable {
         this.encodingType = encodingType;
     }
 
+    @Override
+    public boolean isRequesterCharged() {
+        return isRequesterCharged;
+    }
+
+    @Override
+    public void setRequesterCharged(boolean isRequesterCharged) {
+        this.isRequesterCharged = isRequesterCharged;
+    }
 }

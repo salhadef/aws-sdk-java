@@ -42,6 +42,12 @@ public class FieldValueUnion implements Serializable, Cloneable, StructuredPojo 
     private Double doubleValue;
     /**
      * <p>
+     * An empty value.
+     * </p>
+     */
+    private EmptyFieldValue emptyValue;
+    /**
+     * <p>
      * String value type.
      * </p>
      */
@@ -141,6 +147,46 @@ public class FieldValueUnion implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
+     * An empty value.
+     * </p>
+     * 
+     * @param emptyValue
+     *        An empty value.
+     */
+
+    public void setEmptyValue(EmptyFieldValue emptyValue) {
+        this.emptyValue = emptyValue;
+    }
+
+    /**
+     * <p>
+     * An empty value.
+     * </p>
+     * 
+     * @return An empty value.
+     */
+
+    public EmptyFieldValue getEmptyValue() {
+        return this.emptyValue;
+    }
+
+    /**
+     * <p>
+     * An empty value.
+     * </p>
+     * 
+     * @param emptyValue
+     *        An empty value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FieldValueUnion withEmptyValue(EmptyFieldValue emptyValue) {
+        setEmptyValue(emptyValue);
+        return this;
+    }
+
+    /**
+     * <p>
      * String value type.
      * </p>
      * 
@@ -195,6 +241,8 @@ public class FieldValueUnion implements Serializable, Cloneable, StructuredPojo 
             sb.append("BooleanValue: ").append(getBooleanValue()).append(",");
         if (getDoubleValue() != null)
             sb.append("DoubleValue: ").append(getDoubleValue()).append(",");
+        if (getEmptyValue() != null)
+            sb.append("EmptyValue: ").append(getEmptyValue()).append(",");
         if (getStringValue() != null)
             sb.append("StringValue: ").append(getStringValue());
         sb.append("}");
@@ -219,6 +267,10 @@ public class FieldValueUnion implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getDoubleValue() != null && other.getDoubleValue().equals(this.getDoubleValue()) == false)
             return false;
+        if (other.getEmptyValue() == null ^ this.getEmptyValue() == null)
+            return false;
+        if (other.getEmptyValue() != null && other.getEmptyValue().equals(this.getEmptyValue()) == false)
+            return false;
         if (other.getStringValue() == null ^ this.getStringValue() == null)
             return false;
         if (other.getStringValue() != null && other.getStringValue().equals(this.getStringValue()) == false)
@@ -233,6 +285,7 @@ public class FieldValueUnion implements Serializable, Cloneable, StructuredPojo 
 
         hashCode = prime * hashCode + ((getBooleanValue() == null) ? 0 : getBooleanValue().hashCode());
         hashCode = prime * hashCode + ((getDoubleValue() == null) ? 0 : getDoubleValue().hashCode());
+        hashCode = prime * hashCode + ((getEmptyValue() == null) ? 0 : getEmptyValue().hashCode());
         hashCode = prime * hashCode + ((getStringValue() == null) ? 0 : getStringValue().hashCode());
         return hashCode;
     }

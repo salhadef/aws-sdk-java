@@ -171,6 +171,19 @@ public class AbstractAmazonAthenaAsync extends AbstractAmazonAthena implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteCapacityReservationResult> deleteCapacityReservationAsync(DeleteCapacityReservationRequest request) {
+
+        return deleteCapacityReservationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCapacityReservationResult> deleteCapacityReservationAsync(DeleteCapacityReservationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteCapacityReservationRequest, DeleteCapacityReservationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDataCatalogResult> deleteDataCatalogAsync(DeleteDataCatalogRequest request) {
 
         return deleteDataCatalogAsync(request, null);

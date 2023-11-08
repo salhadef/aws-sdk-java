@@ -334,6 +334,8 @@ public interface AmazonECR {
      *         that you are performing operations on the correct registry.
      * @throws LifecyclePolicyNotFoundException
      *         The lifecycle policy could not be found, and no policy is set to the repository.
+     * @throws ValidationException
+     *         There was an exception validating this request.
      * @sample AmazonECR.DeleteLifecyclePolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteLifecyclePolicy" target="_top">AWS API
      *      Documentation</a>
@@ -649,6 +651,8 @@ public interface AmazonECR {
      *         that you are performing operations on the correct registry.
      * @throws LifecyclePolicyNotFoundException
      *         The lifecycle policy could not be found, and no policy is set to the repository.
+     * @throws ValidationException
+     *         There was an exception validating this request.
      * @sample AmazonECR.GetLifecyclePolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetLifecyclePolicy" target="_top">AWS API
      *      Documentation</a>
@@ -671,6 +675,8 @@ public interface AmazonECR {
      *         that you are performing operations on the correct registry.
      * @throws LifecyclePolicyPreviewNotFoundException
      *         There is no dry run for this repository.
+     * @throws ValidationException
+     *         There was an exception validating this request.
      * @sample AmazonECR.GetLifecyclePolicyPreview
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetLifecyclePolicyPreview" target="_top">AWS
      *      API Documentation</a>
@@ -934,6 +940,8 @@ public interface AmazonECR {
      * @throws RepositoryNotFoundException
      *         The specified repository could not be found. Check the spelling of the specified repository and ensure
      *         that you are performing operations on the correct registry.
+     * @throws ValidationException
+     *         There was an exception validating this request.
      * @sample AmazonECR.PutLifecyclePolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutLifecyclePolicy" target="_top">AWS API
      *      Documentation</a>
@@ -1090,6 +1098,8 @@ public interface AmazonECR {
      *         The lifecycle policy could not be found, and no policy is set to the repository.
      * @throws LifecyclePolicyPreviewInProgressException
      *         The previous lifecycle policy preview request has not completed. Wait and try again.
+     * @throws ValidationException
+     *         There was an exception validating this request.
      * @sample AmazonECR.StartLifecyclePolicyPreview
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/StartLifecyclePolicyPreview"
      *      target="_top">AWS API Documentation</a>

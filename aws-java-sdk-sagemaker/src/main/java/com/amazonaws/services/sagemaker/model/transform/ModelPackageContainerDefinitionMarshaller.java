@@ -49,6 +49,8 @@ public class ModelPackageContainerDefinitionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FrameworkVersion").build();
     private static final MarshallingInfo<String> NEARESTMODELNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NearestModelName").build();
+    private static final MarshallingInfo<StructuredPojo> ADDITIONALS3DATASOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdditionalS3DataSource").build();
 
     private static final ModelPackageContainerDefinitionMarshaller instance = new ModelPackageContainerDefinitionMarshaller();
 
@@ -76,6 +78,7 @@ public class ModelPackageContainerDefinitionMarshaller {
             protocolMarshaller.marshall(modelPackageContainerDefinition.getFramework(), FRAMEWORK_BINDING);
             protocolMarshaller.marshall(modelPackageContainerDefinition.getFrameworkVersion(), FRAMEWORKVERSION_BINDING);
             protocolMarshaller.marshall(modelPackageContainerDefinition.getNearestModelName(), NEARESTMODELNAME_BINDING);
+            protocolMarshaller.marshall(modelPackageContainerDefinition.getAdditionalS3DataSource(), ADDITIONALS3DATASOURCE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

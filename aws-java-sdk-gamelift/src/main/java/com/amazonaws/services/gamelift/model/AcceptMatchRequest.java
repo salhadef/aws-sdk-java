@@ -239,7 +239,7 @@ public class AcceptMatchRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getTicketId() != null)
             sb.append("TicketId: ").append(getTicketId()).append(",");
         if (getPlayerIds() != null)
-            sb.append("PlayerIds: ").append(getPlayerIds()).append(",");
+            sb.append("PlayerIds: ").append("***Sensitive Data Redacted***").append(",");
         if (getAcceptanceType() != null)
             sb.append("AcceptanceType: ").append(getAcceptanceType());
         sb.append("}");

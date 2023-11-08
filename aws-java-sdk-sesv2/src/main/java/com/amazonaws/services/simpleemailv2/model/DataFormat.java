@@ -16,8 +16,20 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The data format of the import job's data source.
+ * The data format of a file, can be one of the following:
  * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <code>CSV</code> – A comma-separated values file.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>JSON</code> – A JSON file.
+ * </p>
+ * </li>
+ * </ul>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum DataFormat {

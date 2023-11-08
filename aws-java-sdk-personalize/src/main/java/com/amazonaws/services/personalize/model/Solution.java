@@ -48,6 +48,13 @@ public class Solution implements Serializable, Cloneable, StructuredPojo {
      */
     private Boolean performHPO;
     /**
+     * <important>
+     * <p>
+     * We don't recommend enabling automated machine learning. Instead, match your use case to the available Amazon
+     * Personalize recipes. For more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/determining-use-case.html">Determining your use case.</a>
+     * </p>
+     * </important>
      * <p>
      * When true, Amazon Personalize performs a search for the best USER_PERSONALIZATION recipe from the list specified
      * in the solution configuration (<code>recipeArn</code> must not be specified). When false (the default), Amazon
@@ -57,7 +64,7 @@ public class Solution implements Serializable, Cloneable, StructuredPojo {
     private Boolean performAutoML;
     /**
      * <p>
-     * The ARN of the recipe used to create the solution.
+     * The ARN of the recipe used to create the solution. This is required when <code>performAutoML</code> is false.
      * </p>
      */
     private String recipeArn;
@@ -263,6 +270,13 @@ public class Solution implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <important>
+     * <p>
+     * We don't recommend enabling automated machine learning. Instead, match your use case to the available Amazon
+     * Personalize recipes. For more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/determining-use-case.html">Determining your use case.</a>
+     * </p>
+     * </important>
      * <p>
      * When true, Amazon Personalize performs a search for the best USER_PERSONALIZATION recipe from the list specified
      * in the solution configuration (<code>recipeArn</code> must not be specified). When false (the default), Amazon
@@ -270,6 +284,14 @@ public class Solution implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param performAutoML
+     *        <p>
+     *        We don't recommend enabling automated machine learning. Instead, match your use case to the available
+     *        Amazon Personalize recipes. For more information, see <a
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/determining-use-case.html">Determining your use
+     *        case.</a>
+     *        </p>
+     *        </important>
+     *        <p>
      *        When true, Amazon Personalize performs a search for the best USER_PERSONALIZATION recipe from the list
      *        specified in the solution configuration (<code>recipeArn</code> must not be specified). When false (the
      *        default), Amazon Personalize uses <code>recipeArn</code> for training.
@@ -280,13 +302,28 @@ public class Solution implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <important>
+     * <p>
+     * We don't recommend enabling automated machine learning. Instead, match your use case to the available Amazon
+     * Personalize recipes. For more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/determining-use-case.html">Determining your use case.</a>
+     * </p>
+     * </important>
      * <p>
      * When true, Amazon Personalize performs a search for the best USER_PERSONALIZATION recipe from the list specified
      * in the solution configuration (<code>recipeArn</code> must not be specified). When false (the default), Amazon
      * Personalize uses <code>recipeArn</code> for training.
      * </p>
      * 
-     * @return When true, Amazon Personalize performs a search for the best USER_PERSONALIZATION recipe from the list
+     * @return <p>
+     *         We don't recommend enabling automated machine learning. Instead, match your use case to the available
+     *         Amazon Personalize recipes. For more information, see <a
+     *         href="https://docs.aws.amazon.com/personalize/latest/dg/determining-use-case.html">Determining your use
+     *         case.</a>
+     *         </p>
+     *         </important>
+     *         <p>
+     *         When true, Amazon Personalize performs a search for the best USER_PERSONALIZATION recipe from the list
      *         specified in the solution configuration (<code>recipeArn</code> must not be specified). When false (the
      *         default), Amazon Personalize uses <code>recipeArn</code> for training.
      */
@@ -296,6 +333,13 @@ public class Solution implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <important>
+     * <p>
+     * We don't recommend enabling automated machine learning. Instead, match your use case to the available Amazon
+     * Personalize recipes. For more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/determining-use-case.html">Determining your use case.</a>
+     * </p>
+     * </important>
      * <p>
      * When true, Amazon Personalize performs a search for the best USER_PERSONALIZATION recipe from the list specified
      * in the solution configuration (<code>recipeArn</code> must not be specified). When false (the default), Amazon
@@ -303,6 +347,14 @@ public class Solution implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param performAutoML
+     *        <p>
+     *        We don't recommend enabling automated machine learning. Instead, match your use case to the available
+     *        Amazon Personalize recipes. For more information, see <a
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/determining-use-case.html">Determining your use
+     *        case.</a>
+     *        </p>
+     *        </important>
+     *        <p>
      *        When true, Amazon Personalize performs a search for the best USER_PERSONALIZATION recipe from the list
      *        specified in the solution configuration (<code>recipeArn</code> must not be specified). When false (the
      *        default), Amazon Personalize uses <code>recipeArn</code> for training.
@@ -315,13 +367,28 @@ public class Solution implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <important>
+     * <p>
+     * We don't recommend enabling automated machine learning. Instead, match your use case to the available Amazon
+     * Personalize recipes. For more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/determining-use-case.html">Determining your use case.</a>
+     * </p>
+     * </important>
      * <p>
      * When true, Amazon Personalize performs a search for the best USER_PERSONALIZATION recipe from the list specified
      * in the solution configuration (<code>recipeArn</code> must not be specified). When false (the default), Amazon
      * Personalize uses <code>recipeArn</code> for training.
      * </p>
      * 
-     * @return When true, Amazon Personalize performs a search for the best USER_PERSONALIZATION recipe from the list
+     * @return <p>
+     *         We don't recommend enabling automated machine learning. Instead, match your use case to the available
+     *         Amazon Personalize recipes. For more information, see <a
+     *         href="https://docs.aws.amazon.com/personalize/latest/dg/determining-use-case.html">Determining your use
+     *         case.</a>
+     *         </p>
+     *         </important>
+     *         <p>
+     *         When true, Amazon Personalize performs a search for the best USER_PERSONALIZATION recipe from the list
      *         specified in the solution configuration (<code>recipeArn</code> must not be specified). When false (the
      *         default), Amazon Personalize uses <code>recipeArn</code> for training.
      */
@@ -332,11 +399,12 @@ public class Solution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the recipe used to create the solution.
+     * The ARN of the recipe used to create the solution. This is required when <code>performAutoML</code> is false.
      * </p>
      * 
      * @param recipeArn
-     *        The ARN of the recipe used to create the solution.
+     *        The ARN of the recipe used to create the solution. This is required when <code>performAutoML</code> is
+     *        false.
      */
 
     public void setRecipeArn(String recipeArn) {
@@ -345,10 +413,11 @@ public class Solution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the recipe used to create the solution.
+     * The ARN of the recipe used to create the solution. This is required when <code>performAutoML</code> is false.
      * </p>
      * 
-     * @return The ARN of the recipe used to create the solution.
+     * @return The ARN of the recipe used to create the solution. This is required when <code>performAutoML</code> is
+     *         false.
      */
 
     public String getRecipeArn() {
@@ -357,11 +426,12 @@ public class Solution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the recipe used to create the solution.
+     * The ARN of the recipe used to create the solution. This is required when <code>performAutoML</code> is false.
      * </p>
      * 
      * @param recipeArn
-     *        The ARN of the recipe used to create the solution.
+     *        The ARN of the recipe used to create the solution. This is required when <code>performAutoML</code> is
+     *        false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

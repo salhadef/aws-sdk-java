@@ -26,8 +26,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <code>TERMINATED</code>.
  * </p>
  * <p>
- * Once the session ends, the game session object is retained for 30 days. This means you can reuse idempotency token
- * values after this time. Game session logs are retained for 14 days.
+ * Amazon GameLift retains a game session resource for 30 days after the game session ends. You can reuse idempotency
+ * token values after this time. Game session logs are retained for 14 days.
  * </p>
  * <p>
  * <a href=
@@ -179,12 +179,11 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
     private String gameSessionData;
     /**
      * <p>
-     * Information about the matchmaking process that was used to create the game session. It is in JSON syntax,
-     * formatted as a string. In addition the matchmaking configuration used, it contains data on all players assigned
-     * to the match, including player attributes and team assignments. For more details on matchmaker data, see <a
+     * Information about the matchmaking process that resulted in the game session, if matchmaking was used. Data is in
+     * JSON syntax, formatted as a string. Information includes the matchmaker ID as well as player attributes and team
+     * assignments. For more details on matchmaker data, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match
-     * Data</a>. Matchmaker data is useful when requesting match backfills, and is updated whenever new players are
-     * added during a successful backfill (see <a
+     * Data</a>. Matchmaker data is updated whenever new players are added during a successful backfill (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html"
      * >StartMatchBackfill</a>).
      * </p>
@@ -1235,26 +1234,23 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the matchmaking process that was used to create the game session. It is in JSON syntax,
-     * formatted as a string. In addition the matchmaking configuration used, it contains data on all players assigned
-     * to the match, including player attributes and team assignments. For more details on matchmaker data, see <a
+     * Information about the matchmaking process that resulted in the game session, if matchmaking was used. Data is in
+     * JSON syntax, formatted as a string. Information includes the matchmaker ID as well as player attributes and team
+     * assignments. For more details on matchmaker data, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match
-     * Data</a>. Matchmaker data is useful when requesting match backfills, and is updated whenever new players are
-     * added during a successful backfill (see <a
+     * Data</a>. Matchmaker data is updated whenever new players are added during a successful backfill (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html"
      * >StartMatchBackfill</a>).
      * </p>
      * 
      * @param matchmakerData
-     *        Information about the matchmaking process that was used to create the game session. It is in JSON syntax,
-     *        formatted as a string. In addition the matchmaking configuration used, it contains data on all players
-     *        assigned to the match, including player attributes and team assignments. For more details on matchmaker
-     *        data, see <a
+     *        Information about the matchmaking process that resulted in the game session, if matchmaking was used. Data
+     *        is in JSON syntax, formatted as a string. Information includes the matchmaker ID as well as player
+     *        attributes and team assignments. For more details on matchmaker data, see <a
      *        href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data"
-     *        >Match Data</a>. Matchmaker data is useful when requesting match backfills, and is updated whenever new
-     *        players are added during a successful backfill (see <a
-     *        href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html"
-     *        >StartMatchBackfill</a>).
+     *        >Match Data</a>. Matchmaker data is updated whenever new players are added during a successful backfill
+     *        (see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html">
+     *        StartMatchBackfill</a>).
      */
 
     public void setMatchmakerData(String matchmakerData) {
@@ -1263,25 +1259,22 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the matchmaking process that was used to create the game session. It is in JSON syntax,
-     * formatted as a string. In addition the matchmaking configuration used, it contains data on all players assigned
-     * to the match, including player attributes and team assignments. For more details on matchmaker data, see <a
+     * Information about the matchmaking process that resulted in the game session, if matchmaking was used. Data is in
+     * JSON syntax, formatted as a string. Information includes the matchmaker ID as well as player attributes and team
+     * assignments. For more details on matchmaker data, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match
-     * Data</a>. Matchmaker data is useful when requesting match backfills, and is updated whenever new players are
-     * added during a successful backfill (see <a
+     * Data</a>. Matchmaker data is updated whenever new players are added during a successful backfill (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html"
      * >StartMatchBackfill</a>).
      * </p>
      * 
-     * @return Information about the matchmaking process that was used to create the game session. It is in JSON syntax,
-     *         formatted as a string. In addition the matchmaking configuration used, it contains data on all players
-     *         assigned to the match, including player attributes and team assignments. For more details on matchmaker
-     *         data, see <a
+     * @return Information about the matchmaking process that resulted in the game session, if matchmaking was used.
+     *         Data is in JSON syntax, formatted as a string. Information includes the matchmaker ID as well as player
+     *         attributes and team assignments. For more details on matchmaker data, see <a
      *         href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data"
-     *         >Match Data</a>. Matchmaker data is useful when requesting match backfills, and is updated whenever new
-     *         players are added during a successful backfill (see <a
-     *         href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html"
-     *         >StartMatchBackfill</a>).
+     *         >Match Data</a>. Matchmaker data is updated whenever new players are added during a successful backfill
+     *         (see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html">
+     *         StartMatchBackfill</a>).
      */
 
     public String getMatchmakerData() {
@@ -1290,26 +1283,23 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the matchmaking process that was used to create the game session. It is in JSON syntax,
-     * formatted as a string. In addition the matchmaking configuration used, it contains data on all players assigned
-     * to the match, including player attributes and team assignments. For more details on matchmaker data, see <a
+     * Information about the matchmaking process that resulted in the game session, if matchmaking was used. Data is in
+     * JSON syntax, formatted as a string. Information includes the matchmaker ID as well as player attributes and team
+     * assignments. For more details on matchmaker data, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match
-     * Data</a>. Matchmaker data is useful when requesting match backfills, and is updated whenever new players are
-     * added during a successful backfill (see <a
+     * Data</a>. Matchmaker data is updated whenever new players are added during a successful backfill (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html"
      * >StartMatchBackfill</a>).
      * </p>
      * 
      * @param matchmakerData
-     *        Information about the matchmaking process that was used to create the game session. It is in JSON syntax,
-     *        formatted as a string. In addition the matchmaking configuration used, it contains data on all players
-     *        assigned to the match, including player attributes and team assignments. For more details on matchmaker
-     *        data, see <a
+     *        Information about the matchmaking process that resulted in the game session, if matchmaking was used. Data
+     *        is in JSON syntax, formatted as a string. Information includes the matchmaker ID as well as player
+     *        attributes and team assignments. For more details on matchmaker data, see <a
      *        href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data"
-     *        >Match Data</a>. Matchmaker data is useful when requesting match backfills, and is updated whenever new
-     *        players are added during a successful backfill (see <a
-     *        href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html"
-     *        >StartMatchBackfill</a>).
+     *        >Match Data</a>. Matchmaker data is updated whenever new players are added during a successful backfill
+     *        (see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html">
+     *        StartMatchBackfill</a>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1402,11 +1392,11 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
         if (getGameProperties() != null)
             sb.append("GameProperties: ").append(getGameProperties()).append(",");
         if (getIpAddress() != null)
-            sb.append("IpAddress: ").append(getIpAddress()).append(",");
+            sb.append("IpAddress: ").append("***Sensitive Data Redacted***").append(",");
         if (getDnsName() != null)
             sb.append("DnsName: ").append(getDnsName()).append(",");
         if (getPort() != null)
-            sb.append("Port: ").append(getPort()).append(",");
+            sb.append("Port: ").append("***Sensitive Data Redacted***").append(",");
         if (getPlayerSessionCreationPolicy() != null)
             sb.append("PlayerSessionCreationPolicy: ").append(getPlayerSessionCreationPolicy()).append(",");
         if (getCreatorId() != null)

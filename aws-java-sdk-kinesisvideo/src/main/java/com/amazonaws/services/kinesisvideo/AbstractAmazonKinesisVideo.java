@@ -38,6 +38,11 @@ public class AbstractAmazonKinesisVideo implements AmazonKinesisVideo {
     }
 
     @Override
+    public DeleteEdgeConfigurationResult deleteEdgeConfiguration(DeleteEdgeConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteSignalingChannelResult deleteSignalingChannel(DeleteSignalingChannelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -89,6 +94,11 @@ public class AbstractAmazonKinesisVideo implements AmazonKinesisVideo {
 
     @Override
     public GetSignalingChannelEndpointResult getSignalingChannelEndpoint(GetSignalingChannelEndpointRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListEdgeAgentConfigurationsResult listEdgeAgentConfigurations(ListEdgeAgentConfigurationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

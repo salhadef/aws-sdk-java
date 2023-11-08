@@ -101,6 +101,10 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
      * in the <i>Amazon Web Services General Reference Guide</i>.
      * </p>
+     * <p>
+     * If you supply <code>ModelPackageGroupName</code>, your model package belongs to the model group you specify and
+     * uses the tags associated with the model group. In this case, you cannot supply a <code>tag</code> argument.
+     * </p>
      */
     private java.util.List<Tag> tags;
     /**
@@ -183,6 +187,12 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private java.util.List<AdditionalInferenceSpecificationDefinition> additionalInferenceSpecifications;
+    /**
+     * <p>
+     * Indicates if you want to skip model validation.
+     * </p>
+     */
+    private String skipModelValidation;
 
     /**
      * <p>
@@ -646,10 +656,18 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
      * in the <i>Amazon Web Services General Reference Guide</i>.
      * </p>
+     * <p>
+     * If you supply <code>ModelPackageGroupName</code>, your model package belongs to the model group you specify and
+     * uses the tags associated with the model group. In this case, you cannot supply a <code>tag</code> argument.
+     * </p>
      * 
      * @return A list of key value pairs associated with the model. For more information, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-     *         resources</a> in the <i>Amazon Web Services General Reference Guide</i>.
+     *         resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+     *         <p>
+     *         If you supply <code>ModelPackageGroupName</code>, your model package belongs to the model group you
+     *         specify and uses the tags associated with the model group. In this case, you cannot supply a
+     *         <code>tag</code> argument.
      */
 
     public java.util.List<Tag> getTags() {
@@ -662,11 +680,19 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
      * in the <i>Amazon Web Services General Reference Guide</i>.
      * </p>
+     * <p>
+     * If you supply <code>ModelPackageGroupName</code>, your model package belongs to the model group you specify and
+     * uses the tags associated with the model group. In this case, you cannot supply a <code>tag</code> argument.
+     * </p>
      * 
      * @param tags
      *        A list of key value pairs associated with the model. For more information, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-     *        resources</a> in the <i>Amazon Web Services General Reference Guide</i>.
+     *        resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+     *        <p>
+     *        If you supply <code>ModelPackageGroupName</code>, your model package belongs to the model group you
+     *        specify and uses the tags associated with the model group. In this case, you cannot supply a
+     *        <code>tag</code> argument.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -685,6 +711,10 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
      * in the <i>Amazon Web Services General Reference Guide</i>.
      * </p>
      * <p>
+     * If you supply <code>ModelPackageGroupName</code>, your model package belongs to the model group you specify and
+     * uses the tags associated with the model group. In this case, you cannot supply a <code>tag</code> argument.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
@@ -693,7 +723,11 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
      * @param tags
      *        A list of key value pairs associated with the model. For more information, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-     *        resources</a> in the <i>Amazon Web Services General Reference Guide</i>.
+     *        resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+     *        <p>
+     *        If you supply <code>ModelPackageGroupName</code>, your model package belongs to the model group you
+     *        specify and uses the tags associated with the model group. In this case, you cannot supply a
+     *        <code>tag</code> argument.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -713,11 +747,19 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
      * in the <i>Amazon Web Services General Reference Guide</i>.
      * </p>
+     * <p>
+     * If you supply <code>ModelPackageGroupName</code>, your model package belongs to the model group you specify and
+     * uses the tags associated with the model group. In this case, you cannot supply a <code>tag</code> argument.
+     * </p>
      * 
      * @param tags
      *        A list of key value pairs associated with the model. For more information, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-     *        resources</a> in the <i>Amazon Web Services General Reference Guide</i>.
+     *        resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+     *        <p>
+     *        If you supply <code>ModelPackageGroupName</code>, your model package belongs to the model group you
+     *        specify and uses the tags associated with the model group. In this case, you cannot supply a
+     *        <code>tag</code> argument.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1351,6 +1393,65 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * Indicates if you want to skip model validation.
+     * </p>
+     * 
+     * @param skipModelValidation
+     *        Indicates if you want to skip model validation.
+     * @see SkipModelValidation
+     */
+
+    public void setSkipModelValidation(String skipModelValidation) {
+        this.skipModelValidation = skipModelValidation;
+    }
+
+    /**
+     * <p>
+     * Indicates if you want to skip model validation.
+     * </p>
+     * 
+     * @return Indicates if you want to skip model validation.
+     * @see SkipModelValidation
+     */
+
+    public String getSkipModelValidation() {
+        return this.skipModelValidation;
+    }
+
+    /**
+     * <p>
+     * Indicates if you want to skip model validation.
+     * </p>
+     * 
+     * @param skipModelValidation
+     *        Indicates if you want to skip model validation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SkipModelValidation
+     */
+
+    public CreateModelPackageRequest withSkipModelValidation(String skipModelValidation) {
+        setSkipModelValidation(skipModelValidation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates if you want to skip model validation.
+     * </p>
+     * 
+     * @param skipModelValidation
+     *        Indicates if you want to skip model validation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SkipModelValidation
+     */
+
+    public CreateModelPackageRequest withSkipModelValidation(SkipModelValidation skipModelValidation) {
+        this.skipModelValidation = skipModelValidation.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1397,7 +1498,9 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
         if (getSamplePayloadUrl() != null)
             sb.append("SamplePayloadUrl: ").append(getSamplePayloadUrl()).append(",");
         if (getAdditionalInferenceSpecifications() != null)
-            sb.append("AdditionalInferenceSpecifications: ").append(getAdditionalInferenceSpecifications());
+            sb.append("AdditionalInferenceSpecifications: ").append(getAdditionalInferenceSpecifications()).append(",");
+        if (getSkipModelValidation() != null)
+            sb.append("SkipModelValidation: ").append(getSkipModelValidation());
         sb.append("}");
         return sb.toString();
     }
@@ -1485,6 +1588,10 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
         if (other.getAdditionalInferenceSpecifications() != null
                 && other.getAdditionalInferenceSpecifications().equals(this.getAdditionalInferenceSpecifications()) == false)
             return false;
+        if (other.getSkipModelValidation() == null ^ this.getSkipModelValidation() == null)
+            return false;
+        if (other.getSkipModelValidation() != null && other.getSkipModelValidation().equals(this.getSkipModelValidation()) == false)
+            return false;
         return true;
     }
 
@@ -1511,6 +1618,7 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getTask() == null) ? 0 : getTask().hashCode());
         hashCode = prime * hashCode + ((getSamplePayloadUrl() == null) ? 0 : getSamplePayloadUrl().hashCode());
         hashCode = prime * hashCode + ((getAdditionalInferenceSpecifications() == null) ? 0 : getAdditionalInferenceSpecifications().hashCode());
+        hashCode = prime * hashCode + ((getSkipModelValidation() == null) ? 0 : getSkipModelValidation().hashCode());
         return hashCode;
     }
 

@@ -37,6 +37,12 @@ public class FilterScopeConfiguration implements Serializable, Cloneable, Struct
      * </p>
      */
     private SelectedSheetsFilterScopeConfiguration selectedSheets;
+    /**
+     * <p>
+     * The configuration for applying a filter to all sheets.
+     * </p>
+     */
+    private AllSheetsFilterScopeConfiguration allSheets;
 
     /**
      * <p>
@@ -79,6 +85,46 @@ public class FilterScopeConfiguration implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * The configuration for applying a filter to all sheets.
+     * </p>
+     * 
+     * @param allSheets
+     *        The configuration for applying a filter to all sheets.
+     */
+
+    public void setAllSheets(AllSheetsFilterScopeConfiguration allSheets) {
+        this.allSheets = allSheets;
+    }
+
+    /**
+     * <p>
+     * The configuration for applying a filter to all sheets.
+     * </p>
+     * 
+     * @return The configuration for applying a filter to all sheets.
+     */
+
+    public AllSheetsFilterScopeConfiguration getAllSheets() {
+        return this.allSheets;
+    }
+
+    /**
+     * <p>
+     * The configuration for applying a filter to all sheets.
+     * </p>
+     * 
+     * @param allSheets
+     *        The configuration for applying a filter to all sheets.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FilterScopeConfiguration withAllSheets(AllSheetsFilterScopeConfiguration allSheets) {
+        setAllSheets(allSheets);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -91,7 +137,9 @@ public class FilterScopeConfiguration implements Serializable, Cloneable, Struct
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSelectedSheets() != null)
-            sb.append("SelectedSheets: ").append(getSelectedSheets());
+            sb.append("SelectedSheets: ").append(getSelectedSheets()).append(",");
+        if (getAllSheets() != null)
+            sb.append("AllSheets: ").append(getAllSheets());
         sb.append("}");
         return sb.toString();
     }
@@ -110,6 +158,10 @@ public class FilterScopeConfiguration implements Serializable, Cloneable, Struct
             return false;
         if (other.getSelectedSheets() != null && other.getSelectedSheets().equals(this.getSelectedSheets()) == false)
             return false;
+        if (other.getAllSheets() == null ^ this.getAllSheets() == null)
+            return false;
+        if (other.getAllSheets() != null && other.getAllSheets().equals(this.getAllSheets()) == false)
+            return false;
         return true;
     }
 
@@ -119,6 +171,7 @@ public class FilterScopeConfiguration implements Serializable, Cloneable, Struct
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getSelectedSheets() == null) ? 0 : getSelectedSheets().hashCode());
+        hashCode = prime * hashCode + ((getAllSheets() == null) ? 0 : getAllSheets().hashCode());
         return hashCode;
     }
 

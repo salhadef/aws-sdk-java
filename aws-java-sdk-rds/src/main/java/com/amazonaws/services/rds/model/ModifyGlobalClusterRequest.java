@@ -27,7 +27,7 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The DB cluster identifier for the global cluster being modified. This parameter isn't case-sensitive.
+     * The cluster identifier for the global cluster to modify. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -43,8 +43,7 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
     private String globalClusterIdentifier;
     /**
      * <p>
-     * The new cluster identifier for the global database cluster when modifying a global database cluster. This value
-     * is stored as a lowercase string.
+     * The new cluster identifier for the global database cluster. This value is stored as a lowercase string.
      * </p>
      * <p>
      * Constraints:
@@ -52,17 +51,17 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 letters, numbers, or hyphens
+     * Must contain from 1 to 63 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The first character must be a letter
+     * The first character must be a letter.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Can't end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens.
      * </p>
      * </li>
      * </ul>
@@ -73,15 +72,14 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
     private String newGlobalClusterIdentifier;
     /**
      * <p>
-     * Indicates if the global database cluster has deletion protection enabled. The global database cluster can't be
-     * deleted when deletion protection is enabled.
+     * Specifies whether to enable deletion protection for the global database cluster. The global database cluster
+     * can't be deleted when deletion protection is enabled.
      * </p>
      */
     private Boolean deletionProtection;
     /**
      * <p>
-     * The version number of the database engine to which you want to upgrade. Changing this parameter results in an
-     * outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.
+     * The version number of the database engine to which you want to upgrade.
      * </p>
      * <p>
      * To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL-based Aurora global
@@ -101,11 +99,11 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
     private String engineVersion;
     /**
      * <p>
-     * A value that indicates whether major version upgrades are allowed.
+     * Specifies whether to allow major version upgrades.
      * </p>
      * <p>
-     * Constraints: You must allow major version upgrades when specifying a value for the <code>EngineVersion</code>
-     * parameter that is a different major version than the DB cluster's current version.
+     * Constraints: Must be enabled if you specify a value for the <code>EngineVersion</code> parameter that's a
+     * different major version than the global cluster's current version.
      * </p>
      * <p>
      * If you upgrade the major version of a global database, the cluster and DB instance parameter groups are set to
@@ -116,7 +114,7 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The DB cluster identifier for the global cluster being modified. This parameter isn't case-sensitive.
+     * The cluster identifier for the global cluster to modify. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -130,7 +128,7 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
      * </ul>
      * 
      * @param globalClusterIdentifier
-     *        The DB cluster identifier for the global cluster being modified. This parameter isn't case-sensitive.</p>
+     *        The cluster identifier for the global cluster to modify. This parameter isn't case-sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -148,7 +146,7 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The DB cluster identifier for the global cluster being modified. This parameter isn't case-sensitive.
+     * The cluster identifier for the global cluster to modify. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -161,7 +159,7 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * </ul>
      * 
-     * @return The DB cluster identifier for the global cluster being modified. This parameter isn't case-sensitive.</p>
+     * @return The cluster identifier for the global cluster to modify. This parameter isn't case-sensitive.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -179,7 +177,7 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The DB cluster identifier for the global cluster being modified. This parameter isn't case-sensitive.
+     * The cluster identifier for the global cluster to modify. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -193,7 +191,7 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
      * </ul>
      * 
      * @param globalClusterIdentifier
-     *        The DB cluster identifier for the global cluster being modified. This parameter isn't case-sensitive.</p>
+     *        The cluster identifier for the global cluster to modify. This parameter isn't case-sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -213,8 +211,7 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The new cluster identifier for the global database cluster when modifying a global database cluster. This value
-     * is stored as a lowercase string.
+     * The new cluster identifier for the global database cluster. This value is stored as a lowercase string.
      * </p>
      * <p>
      * Constraints:
@@ -222,17 +219,17 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 letters, numbers, or hyphens
+     * Must contain from 1 to 63 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The first character must be a letter
+     * The first character must be a letter.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Can't end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens.
      * </p>
      * </li>
      * </ul>
@@ -241,25 +238,25 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param newGlobalClusterIdentifier
-     *        The new cluster identifier for the global database cluster when modifying a global database cluster. This
-     *        value is stored as a lowercase string.</p>
+     *        The new cluster identifier for the global database cluster. This value is stored as a lowercase
+     *        string.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 letters, numbers, or hyphens
+     *        Must contain from 1 to 63 letters, numbers, or hyphens.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        The first character must be a letter
+     *        The first character must be a letter.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Can't end with a hyphen or contain two consecutive hyphens
+     *        Can't end with a hyphen or contain two consecutive hyphens.
      *        </p>
      *        </li>
      *        </ul>
@@ -273,8 +270,7 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The new cluster identifier for the global database cluster when modifying a global database cluster. This value
-     * is stored as a lowercase string.
+     * The new cluster identifier for the global database cluster. This value is stored as a lowercase string.
      * </p>
      * <p>
      * Constraints:
@@ -282,17 +278,17 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 letters, numbers, or hyphens
+     * Must contain from 1 to 63 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The first character must be a letter
+     * The first character must be a letter.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Can't end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens.
      * </p>
      * </li>
      * </ul>
@@ -300,25 +296,25 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
      * Example: <code>my-cluster2</code>
      * </p>
      * 
-     * @return The new cluster identifier for the global database cluster when modifying a global database cluster. This
-     *         value is stored as a lowercase string.</p>
+     * @return The new cluster identifier for the global database cluster. This value is stored as a lowercase
+     *         string.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Must contain from 1 to 63 letters, numbers, or hyphens
+     *         Must contain from 1 to 63 letters, numbers, or hyphens.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         The first character must be a letter
+     *         The first character must be a letter.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Can't end with a hyphen or contain two consecutive hyphens
+     *         Can't end with a hyphen or contain two consecutive hyphens.
      *         </p>
      *         </li>
      *         </ul>
@@ -332,8 +328,7 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The new cluster identifier for the global database cluster when modifying a global database cluster. This value
-     * is stored as a lowercase string.
+     * The new cluster identifier for the global database cluster. This value is stored as a lowercase string.
      * </p>
      * <p>
      * Constraints:
@@ -341,17 +336,17 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 letters, numbers, or hyphens
+     * Must contain from 1 to 63 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The first character must be a letter
+     * The first character must be a letter.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Can't end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens.
      * </p>
      * </li>
      * </ul>
@@ -360,25 +355,25 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param newGlobalClusterIdentifier
-     *        The new cluster identifier for the global database cluster when modifying a global database cluster. This
-     *        value is stored as a lowercase string.</p>
+     *        The new cluster identifier for the global database cluster. This value is stored as a lowercase
+     *        string.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 letters, numbers, or hyphens
+     *        Must contain from 1 to 63 letters, numbers, or hyphens.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        The first character must be a letter
+     *        The first character must be a letter.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Can't end with a hyphen or contain two consecutive hyphens
+     *        Can't end with a hyphen or contain two consecutive hyphens.
      *        </p>
      *        </li>
      *        </ul>
@@ -394,13 +389,13 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Indicates if the global database cluster has deletion protection enabled. The global database cluster can't be
-     * deleted when deletion protection is enabled.
+     * Specifies whether to enable deletion protection for the global database cluster. The global database cluster
+     * can't be deleted when deletion protection is enabled.
      * </p>
      * 
      * @param deletionProtection
-     *        Indicates if the global database cluster has deletion protection enabled. The global database cluster
-     *        can't be deleted when deletion protection is enabled.
+     *        Specifies whether to enable deletion protection for the global database cluster. The global database
+     *        cluster can't be deleted when deletion protection is enabled.
      */
 
     public void setDeletionProtection(Boolean deletionProtection) {
@@ -409,12 +404,12 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Indicates if the global database cluster has deletion protection enabled. The global database cluster can't be
-     * deleted when deletion protection is enabled.
+     * Specifies whether to enable deletion protection for the global database cluster. The global database cluster
+     * can't be deleted when deletion protection is enabled.
      * </p>
      * 
-     * @return Indicates if the global database cluster has deletion protection enabled. The global database cluster
-     *         can't be deleted when deletion protection is enabled.
+     * @return Specifies whether to enable deletion protection for the global database cluster. The global database
+     *         cluster can't be deleted when deletion protection is enabled.
      */
 
     public Boolean getDeletionProtection() {
@@ -423,13 +418,13 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Indicates if the global database cluster has deletion protection enabled. The global database cluster can't be
-     * deleted when deletion protection is enabled.
+     * Specifies whether to enable deletion protection for the global database cluster. The global database cluster
+     * can't be deleted when deletion protection is enabled.
      * </p>
      * 
      * @param deletionProtection
-     *        Indicates if the global database cluster has deletion protection enabled. The global database cluster
-     *        can't be deleted when deletion protection is enabled.
+     *        Specifies whether to enable deletion protection for the global database cluster. The global database
+     *        cluster can't be deleted when deletion protection is enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -440,12 +435,12 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Indicates if the global database cluster has deletion protection enabled. The global database cluster can't be
-     * deleted when deletion protection is enabled.
+     * Specifies whether to enable deletion protection for the global database cluster. The global database cluster
+     * can't be deleted when deletion protection is enabled.
      * </p>
      * 
-     * @return Indicates if the global database cluster has deletion protection enabled. The global database cluster
-     *         can't be deleted when deletion protection is enabled.
+     * @return Specifies whether to enable deletion protection for the global database cluster. The global database
+     *         cluster can't be deleted when deletion protection is enabled.
      */
 
     public Boolean isDeletionProtection() {
@@ -454,8 +449,7 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The version number of the database engine to which you want to upgrade. Changing this parameter results in an
-     * outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.
+     * The version number of the database engine to which you want to upgrade.
      * </p>
      * <p>
      * To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL-based Aurora global
@@ -473,9 +467,7 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param engineVersion
-     *        The version number of the database engine to which you want to upgrade. Changing this parameter results in
-     *        an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code>
-     *        is enabled.</p>
+     *        The version number of the database engine to which you want to upgrade. </p>
      *        <p>
      *        To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL-based Aurora global
      *        databases), use the following command:
@@ -497,8 +489,7 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The version number of the database engine to which you want to upgrade. Changing this parameter results in an
-     * outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.
+     * The version number of the database engine to which you want to upgrade.
      * </p>
      * <p>
      * To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL-based Aurora global
@@ -515,9 +506,7 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
      * <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code>
      * </p>
      * 
-     * @return The version number of the database engine to which you want to upgrade. Changing this parameter results
-     *         in an outage. The change is applied during the next maintenance window unless
-     *         <code>ApplyImmediately</code> is enabled.</p>
+     * @return The version number of the database engine to which you want to upgrade. </p>
      *         <p>
      *         To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL-based Aurora global
      *         databases), use the following command:
@@ -539,8 +528,7 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The version number of the database engine to which you want to upgrade. Changing this parameter results in an
-     * outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.
+     * The version number of the database engine to which you want to upgrade.
      * </p>
      * <p>
      * To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL-based Aurora global
@@ -558,9 +546,7 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param engineVersion
-     *        The version number of the database engine to which you want to upgrade. Changing this parameter results in
-     *        an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code>
-     *        is enabled.</p>
+     *        The version number of the database engine to which you want to upgrade. </p>
      *        <p>
      *        To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL-based Aurora global
      *        databases), use the following command:
@@ -584,11 +570,11 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A value that indicates whether major version upgrades are allowed.
+     * Specifies whether to allow major version upgrades.
      * </p>
      * <p>
-     * Constraints: You must allow major version upgrades when specifying a value for the <code>EngineVersion</code>
-     * parameter that is a different major version than the DB cluster's current version.
+     * Constraints: Must be enabled if you specify a value for the <code>EngineVersion</code> parameter that's a
+     * different major version than the global cluster's current version.
      * </p>
      * <p>
      * If you upgrade the major version of a global database, the cluster and DB instance parameter groups are set to
@@ -596,11 +582,10 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param allowMajorVersionUpgrade
-     *        A value that indicates whether major version upgrades are allowed.</p>
+     *        Specifies whether to allow major version upgrades.</p>
      *        <p>
-     *        Constraints: You must allow major version upgrades when specifying a value for the
-     *        <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current
-     *        version.
+     *        Constraints: Must be enabled if you specify a value for the <code>EngineVersion</code> parameter that's a
+     *        different major version than the global cluster's current version.
      *        </p>
      *        <p>
      *        If you upgrade the major version of a global database, the cluster and DB instance parameter groups are
@@ -614,22 +599,21 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A value that indicates whether major version upgrades are allowed.
+     * Specifies whether to allow major version upgrades.
      * </p>
      * <p>
-     * Constraints: You must allow major version upgrades when specifying a value for the <code>EngineVersion</code>
-     * parameter that is a different major version than the DB cluster's current version.
+     * Constraints: Must be enabled if you specify a value for the <code>EngineVersion</code> parameter that's a
+     * different major version than the global cluster's current version.
      * </p>
      * <p>
      * If you upgrade the major version of a global database, the cluster and DB instance parameter groups are set to
      * the default parameter groups for the new version. Apply any custom parameter groups after completing the upgrade.
      * </p>
      * 
-     * @return A value that indicates whether major version upgrades are allowed.</p>
+     * @return Specifies whether to allow major version upgrades.</p>
      *         <p>
-     *         Constraints: You must allow major version upgrades when specifying a value for the
-     *         <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current
-     *         version.
+     *         Constraints: Must be enabled if you specify a value for the <code>EngineVersion</code> parameter that's a
+     *         different major version than the global cluster's current version.
      *         </p>
      *         <p>
      *         If you upgrade the major version of a global database, the cluster and DB instance parameter groups are
@@ -643,11 +627,11 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A value that indicates whether major version upgrades are allowed.
+     * Specifies whether to allow major version upgrades.
      * </p>
      * <p>
-     * Constraints: You must allow major version upgrades when specifying a value for the <code>EngineVersion</code>
-     * parameter that is a different major version than the DB cluster's current version.
+     * Constraints: Must be enabled if you specify a value for the <code>EngineVersion</code> parameter that's a
+     * different major version than the global cluster's current version.
      * </p>
      * <p>
      * If you upgrade the major version of a global database, the cluster and DB instance parameter groups are set to
@@ -655,11 +639,10 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param allowMajorVersionUpgrade
-     *        A value that indicates whether major version upgrades are allowed.</p>
+     *        Specifies whether to allow major version upgrades.</p>
      *        <p>
-     *        Constraints: You must allow major version upgrades when specifying a value for the
-     *        <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current
-     *        version.
+     *        Constraints: Must be enabled if you specify a value for the <code>EngineVersion</code> parameter that's a
+     *        different major version than the global cluster's current version.
      *        </p>
      *        <p>
      *        If you upgrade the major version of a global database, the cluster and DB instance parameter groups are
@@ -675,22 +658,21 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A value that indicates whether major version upgrades are allowed.
+     * Specifies whether to allow major version upgrades.
      * </p>
      * <p>
-     * Constraints: You must allow major version upgrades when specifying a value for the <code>EngineVersion</code>
-     * parameter that is a different major version than the DB cluster's current version.
+     * Constraints: Must be enabled if you specify a value for the <code>EngineVersion</code> parameter that's a
+     * different major version than the global cluster's current version.
      * </p>
      * <p>
      * If you upgrade the major version of a global database, the cluster and DB instance parameter groups are set to
      * the default parameter groups for the new version. Apply any custom parameter groups after completing the upgrade.
      * </p>
      * 
-     * @return A value that indicates whether major version upgrades are allowed.</p>
+     * @return Specifies whether to allow major version upgrades.</p>
      *         <p>
-     *         Constraints: You must allow major version upgrades when specifying a value for the
-     *         <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current
-     *         version.
+     *         Constraints: Must be enabled if you specify a value for the <code>EngineVersion</code> parameter that's a
+     *         different major version than the global cluster's current version.
      *         </p>
      *         <p>
      *         If you upgrade the major version of a global database, the cluster and DB instance parameter groups are

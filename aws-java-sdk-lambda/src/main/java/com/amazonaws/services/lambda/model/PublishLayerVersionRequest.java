@@ -48,6 +48,11 @@ public class PublishLayerVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
      * runtimes</a>. Used for filtering with <a>ListLayers</a> and <a>ListLayerVersions</a>.
      * </p>
+     * <p>
+     * The following list includes deprecated runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> compatibleRuntimes;
     /**
@@ -206,9 +211,18 @@ public class PublishLayerVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
      * runtimes</a>. Used for filtering with <a>ListLayers</a> and <a>ListLayerVersions</a>.
      * </p>
+     * <p>
+     * The following list includes deprecated runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.
+     * </p>
      * 
      * @return A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
-     *         runtimes</a>. Used for filtering with <a>ListLayers</a> and <a>ListLayerVersions</a>.
+     *         runtimes</a>. Used for filtering with <a>ListLayers</a> and <a>ListLayerVersions</a>.</p>
+     *         <p>
+     *         The following list includes deprecated runtimes. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     *         deprecation policy</a>.
      * @see Runtime
      */
 
@@ -224,10 +238,19 @@ public class PublishLayerVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
      * runtimes</a>. Used for filtering with <a>ListLayers</a> and <a>ListLayerVersions</a>.
      * </p>
+     * <p>
+     * The following list includes deprecated runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.
+     * </p>
      * 
      * @param compatibleRuntimes
      *        A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
-     *        runtimes</a>. Used for filtering with <a>ListLayers</a> and <a>ListLayerVersions</a>.
+     *        runtimes</a>. Used for filtering with <a>ListLayers</a> and <a>ListLayerVersions</a>.</p>
+     *        <p>
+     *        The following list includes deprecated runtimes. For more information, see <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     *        deprecation policy</a>.
      * @see Runtime
      */
 
@@ -246,6 +269,11 @@ public class PublishLayerVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * runtimes</a>. Used for filtering with <a>ListLayers</a> and <a>ListLayerVersions</a>.
      * </p>
      * <p>
+     * The following list includes deprecated runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setCompatibleRuntimes(java.util.Collection)} or {@link #withCompatibleRuntimes(java.util.Collection)} if
      * you want to override the existing values.
@@ -253,7 +281,11 @@ public class PublishLayerVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * 
      * @param compatibleRuntimes
      *        A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
-     *        runtimes</a>. Used for filtering with <a>ListLayers</a> and <a>ListLayerVersions</a>.
+     *        runtimes</a>. Used for filtering with <a>ListLayers</a> and <a>ListLayerVersions</a>.</p>
+     *        <p>
+     *        The following list includes deprecated runtimes. For more information, see <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     *        deprecation policy</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Runtime
      */
@@ -273,10 +305,19 @@ public class PublishLayerVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
      * runtimes</a>. Used for filtering with <a>ListLayers</a> and <a>ListLayerVersions</a>.
      * </p>
+     * <p>
+     * The following list includes deprecated runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.
+     * </p>
      * 
      * @param compatibleRuntimes
      *        A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
-     *        runtimes</a>. Used for filtering with <a>ListLayers</a> and <a>ListLayerVersions</a>.
+     *        runtimes</a>. Used for filtering with <a>ListLayers</a> and <a>ListLayerVersions</a>.</p>
+     *        <p>
+     *        The following list includes deprecated runtimes. For more information, see <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     *        deprecation policy</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Runtime
      */
@@ -291,10 +332,19 @@ public class PublishLayerVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
      * runtimes</a>. Used for filtering with <a>ListLayers</a> and <a>ListLayerVersions</a>.
      * </p>
+     * <p>
+     * The following list includes deprecated runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.
+     * </p>
      * 
      * @param compatibleRuntimes
      *        A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
-     *        runtimes</a>. Used for filtering with <a>ListLayers</a> and <a>ListLayerVersions</a>.
+     *        runtimes</a>. Used for filtering with <a>ListLayers</a> and <a>ListLayerVersions</a>.</p>
+     *        <p>
+     *        The following list includes deprecated runtimes. For more information, see <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     *        deprecation policy</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Runtime
      */

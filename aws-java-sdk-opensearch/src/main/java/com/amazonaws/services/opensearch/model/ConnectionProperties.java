@@ -26,19 +26,40 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class ConnectionProperties implements Serializable, Cloneable, StructuredPojo {
 
     /**
+     * <important>
      * <p>
-     * The endpoint of the remote domain.
+     * The Endpoint attribute cannot be modified.
+     * </p>
+     * </important>
+     * <p>
+     * The endpoint of the remote domain. Applicable for VPC_ENDPOINT connection mode.
      * </p>
      */
     private String endpoint;
-
     /**
      * <p>
-     * The endpoint of the remote domain.
+     * The connection properties for cross cluster search.
+     * </p>
+     */
+    private CrossClusterSearchConnectionProperties crossClusterSearch;
+
+    /**
+     * <important>
+     * <p>
+     * The Endpoint attribute cannot be modified.
+     * </p>
+     * </important>
+     * <p>
+     * The endpoint of the remote domain. Applicable for VPC_ENDPOINT connection mode.
      * </p>
      * 
      * @param endpoint
-     *        The endpoint of the remote domain.
+     *        <p>
+     *        The Endpoint attribute cannot be modified.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        The endpoint of the remote domain. Applicable for VPC_ENDPOINT connection mode.
      */
 
     public void setEndpoint(String endpoint) {
@@ -46,11 +67,21 @@ public class ConnectionProperties implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <important>
      * <p>
-     * The endpoint of the remote domain.
+     * The Endpoint attribute cannot be modified.
+     * </p>
+     * </important>
+     * <p>
+     * The endpoint of the remote domain. Applicable for VPC_ENDPOINT connection mode.
      * </p>
      * 
-     * @return The endpoint of the remote domain.
+     * @return <p>
+     *         The Endpoint attribute cannot be modified.
+     *         </p>
+     *         </important>
+     *         <p>
+     *         The endpoint of the remote domain. Applicable for VPC_ENDPOINT connection mode.
      */
 
     public String getEndpoint() {
@@ -58,17 +89,67 @@ public class ConnectionProperties implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <important>
      * <p>
-     * The endpoint of the remote domain.
+     * The Endpoint attribute cannot be modified.
+     * </p>
+     * </important>
+     * <p>
+     * The endpoint of the remote domain. Applicable for VPC_ENDPOINT connection mode.
      * </p>
      * 
      * @param endpoint
-     *        The endpoint of the remote domain.
+     *        <p>
+     *        The Endpoint attribute cannot be modified.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        The endpoint of the remote domain. Applicable for VPC_ENDPOINT connection mode.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ConnectionProperties withEndpoint(String endpoint) {
         setEndpoint(endpoint);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The connection properties for cross cluster search.
+     * </p>
+     * 
+     * @param crossClusterSearch
+     *        The connection properties for cross cluster search.
+     */
+
+    public void setCrossClusterSearch(CrossClusterSearchConnectionProperties crossClusterSearch) {
+        this.crossClusterSearch = crossClusterSearch;
+    }
+
+    /**
+     * <p>
+     * The connection properties for cross cluster search.
+     * </p>
+     * 
+     * @return The connection properties for cross cluster search.
+     */
+
+    public CrossClusterSearchConnectionProperties getCrossClusterSearch() {
+        return this.crossClusterSearch;
+    }
+
+    /**
+     * <p>
+     * The connection properties for cross cluster search.
+     * </p>
+     * 
+     * @param crossClusterSearch
+     *        The connection properties for cross cluster search.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConnectionProperties withCrossClusterSearch(CrossClusterSearchConnectionProperties crossClusterSearch) {
+        setCrossClusterSearch(crossClusterSearch);
         return this;
     }
 
@@ -85,7 +166,9 @@ public class ConnectionProperties implements Serializable, Cloneable, Structured
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEndpoint() != null)
-            sb.append("Endpoint: ").append(getEndpoint());
+            sb.append("Endpoint: ").append(getEndpoint()).append(",");
+        if (getCrossClusterSearch() != null)
+            sb.append("CrossClusterSearch: ").append(getCrossClusterSearch());
         sb.append("}");
         return sb.toString();
     }
@@ -104,6 +187,10 @@ public class ConnectionProperties implements Serializable, Cloneable, Structured
             return false;
         if (other.getEndpoint() != null && other.getEndpoint().equals(this.getEndpoint()) == false)
             return false;
+        if (other.getCrossClusterSearch() == null ^ this.getCrossClusterSearch() == null)
+            return false;
+        if (other.getCrossClusterSearch() != null && other.getCrossClusterSearch().equals(this.getCrossClusterSearch()) == false)
+            return false;
         return true;
     }
 
@@ -113,6 +200,7 @@ public class ConnectionProperties implements Serializable, Cloneable, Structured
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getEndpoint() == null) ? 0 : getEndpoint().hashCode());
+        hashCode = prime * hashCode + ((getCrossClusterSearch() == null) ? 0 : getCrossClusterSearch().hashCode());
         return hashCode;
     }
 

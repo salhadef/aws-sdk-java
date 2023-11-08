@@ -522,6 +522,19 @@ public class AbstractAmazonElasticMapReduceAsync extends AbstractAmazonElasticMa
     }
 
     @Override
+    public java.util.concurrent.Future<ListSupportedInstanceTypesResult> listSupportedInstanceTypesAsync(ListSupportedInstanceTypesRequest request) {
+
+        return listSupportedInstanceTypesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSupportedInstanceTypesResult> listSupportedInstanceTypesAsync(ListSupportedInstanceTypesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListSupportedInstanceTypesRequest, ListSupportedInstanceTypesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ModifyClusterResult> modifyClusterAsync(ModifyClusterRequest request) {
 
         return modifyClusterAsync(request, null);

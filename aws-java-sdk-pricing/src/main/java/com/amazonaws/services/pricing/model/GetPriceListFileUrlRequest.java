@@ -29,8 +29,8 @@ public class GetPriceListFileUrlRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The unique identifier that maps to where your Price List files are located. <code>PriceListArn</code> can be
      * obtained from the <a
-     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html">
-     * <code>ListPriceLists</code> </a> response.
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html"
+     * >ListPriceLists</a> response.
      * </p>
      */
     private String priceListArn;
@@ -39,7 +39,7 @@ public class GetPriceListFileUrlRequest extends com.amazonaws.AmazonWebServiceRe
      * The format that you want to retrieve your Price List files in. The <code>FileFormat</code> can be obtained from
      * the <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html">
-     * <code>ListPriceLists</code> </a> response.
+     * ListPriceLists</a> response.
      * </p>
      */
     private String fileFormat;
@@ -48,15 +48,15 @@ public class GetPriceListFileUrlRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The unique identifier that maps to where your Price List files are located. <code>PriceListArn</code> can be
      * obtained from the <a
-     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html">
-     * <code>ListPriceLists</code> </a> response.
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html"
+     * >ListPriceLists</a> response.
      * </p>
      * 
      * @param priceListArn
      *        The unique identifier that maps to where your Price List files are located. <code>PriceListArn</code> can
      *        be obtained from the <a href=
-     *        "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html">
-     *        <code>ListPriceLists</code> </a> response.
+     *        "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html"
+     *        >ListPriceLists</a> response.
      */
 
     public void setPriceListArn(String priceListArn) {
@@ -67,14 +67,14 @@ public class GetPriceListFileUrlRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The unique identifier that maps to where your Price List files are located. <code>PriceListArn</code> can be
      * obtained from the <a
-     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html">
-     * <code>ListPriceLists</code> </a> response.
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html"
+     * >ListPriceLists</a> response.
      * </p>
      * 
      * @return The unique identifier that maps to where your Price List files are located. <code>PriceListArn</code> can
      *         be obtained from the <a href=
-     *         "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html">
-     *         <code>ListPriceLists</code> </a> response.
+     *         "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html"
+     *         >ListPriceLists</a> response.
      */
 
     public String getPriceListArn() {
@@ -85,15 +85,15 @@ public class GetPriceListFileUrlRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The unique identifier that maps to where your Price List files are located. <code>PriceListArn</code> can be
      * obtained from the <a
-     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html">
-     * <code>ListPriceLists</code> </a> response.
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html"
+     * >ListPriceLists</a> response.
      * </p>
      * 
      * @param priceListArn
      *        The unique identifier that maps to where your Price List files are located. <code>PriceListArn</code> can
      *        be obtained from the <a href=
-     *        "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html">
-     *        <code>ListPriceLists</code> </a> response.
+     *        "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html"
+     *        >ListPriceLists</a> response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,14 +107,14 @@ public class GetPriceListFileUrlRequest extends com.amazonaws.AmazonWebServiceRe
      * The format that you want to retrieve your Price List files in. The <code>FileFormat</code> can be obtained from
      * the <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html">
-     * <code>ListPriceLists</code> </a> response.
+     * ListPriceLists</a> response.
      * </p>
      * 
      * @param fileFormat
      *        The format that you want to retrieve your Price List files in. The <code>FileFormat</code> can be obtained
      *        from the <a href=
-     *        "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html">
-     *        <code>ListPriceLists</code> </a> response.
+     *        "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html"
+     *        >ListPriceLists</a> response.
      */
 
     public void setFileFormat(String fileFormat) {
@@ -126,13 +126,13 @@ public class GetPriceListFileUrlRequest extends com.amazonaws.AmazonWebServiceRe
      * The format that you want to retrieve your Price List files in. The <code>FileFormat</code> can be obtained from
      * the <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html">
-     * <code>ListPriceLists</code> </a> response.
+     * ListPriceLists</a> response.
      * </p>
      * 
      * @return The format that you want to retrieve your Price List files in. The <code>FileFormat</code> can be
      *         obtained from the <a href=
-     *         "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html">
-     *         <code>ListPriceLists</code> </a> response.
+     *         "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html"
+     *         >ListPriceLists</a> response.
      */
 
     public String getFileFormat() {
@@ -144,14 +144,14 @@ public class GetPriceListFileUrlRequest extends com.amazonaws.AmazonWebServiceRe
      * The format that you want to retrieve your Price List files in. The <code>FileFormat</code> can be obtained from
      * the <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html">
-     * <code>ListPriceLists</code> </a> response.
+     * ListPriceLists</a> response.
      * </p>
      * 
      * @param fileFormat
      *        The format that you want to retrieve your Price List files in. The <code>FileFormat</code> can be obtained
      *        from the <a href=
-     *        "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html">
-     *        <code>ListPriceLists</code> </a> response.
+     *        "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html"
+     *        >ListPriceLists</a> response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

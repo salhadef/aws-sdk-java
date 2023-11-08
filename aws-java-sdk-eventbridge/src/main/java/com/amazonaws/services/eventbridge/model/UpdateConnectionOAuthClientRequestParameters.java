@@ -137,7 +137,7 @@ public class UpdateConnectionOAuthClientRequestParameters implements Serializabl
         if (getClientID() != null)
             sb.append("ClientID: ").append(getClientID()).append(",");
         if (getClientSecret() != null)
-            sb.append("ClientSecret: ").append(getClientSecret());
+            sb.append("ClientSecret: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

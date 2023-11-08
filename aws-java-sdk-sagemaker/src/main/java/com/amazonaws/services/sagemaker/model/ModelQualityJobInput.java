@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The input for the model quality monitoring job. Currently endponts are supported for input for model quality
+ * The input for the model quality monitoring job. Currently endpoints are supported for input for model quality
  * monitoring jobs.
  * </p>
  * 

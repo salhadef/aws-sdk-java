@@ -45,6 +45,7 @@ import com.amazonaws.services.cloudwatch.waiters.AmazonCloudWatchWaiters;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.cloudwatch.model.*;
+
 import com.amazonaws.services.cloudwatch.model.transform.*;
 
 /**
@@ -2624,6 +2625,9 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      * <code>AWSServiceRoleForCloudWatchAlarms_ActionSSM</code>. For more information, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role"
      * >Amazon Web Services service-linked role</a>.
+     * </p>
+     * <p>
+     * Each <code>PutMetricAlarm</code> action has a maximum uncompressed payload of 120 KB.
      * </p>
      * <p>
      * <b>Cross-account alarms</b>

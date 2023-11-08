@@ -33,6 +33,14 @@ public class AutoScalingConfigurationSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutoScalingConfigurationName").build();
     private static final MarshallingInfo<Integer> AUTOSCALINGCONFIGURATIONREVISION_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutoScalingConfigurationRevision").build();
+    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Status").build();
+    private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedAt").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<Boolean> HASASSOCIATEDSERVICE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HasAssociatedService").build();
+    private static final MarshallingInfo<Boolean> ISDEFAULT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IsDefault").build();
 
     private static final AutoScalingConfigurationSummaryMarshaller instance = new AutoScalingConfigurationSummaryMarshaller();
 
@@ -53,6 +61,10 @@ public class AutoScalingConfigurationSummaryMarshaller {
             protocolMarshaller.marshall(autoScalingConfigurationSummary.getAutoScalingConfigurationArn(), AUTOSCALINGCONFIGURATIONARN_BINDING);
             protocolMarshaller.marshall(autoScalingConfigurationSummary.getAutoScalingConfigurationName(), AUTOSCALINGCONFIGURATIONNAME_BINDING);
             protocolMarshaller.marshall(autoScalingConfigurationSummary.getAutoScalingConfigurationRevision(), AUTOSCALINGCONFIGURATIONREVISION_BINDING);
+            protocolMarshaller.marshall(autoScalingConfigurationSummary.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(autoScalingConfigurationSummary.getCreatedAt(), CREATEDAT_BINDING);
+            protocolMarshaller.marshall(autoScalingConfigurationSummary.getHasAssociatedService(), HASASSOCIATEDSERVICE_BINDING);
+            protocolMarshaller.marshall(autoScalingConfigurationSummary.getIsDefault(), ISDEFAULT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

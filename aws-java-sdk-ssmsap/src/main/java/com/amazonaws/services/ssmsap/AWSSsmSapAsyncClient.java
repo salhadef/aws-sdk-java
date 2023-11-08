@@ -537,6 +537,39 @@ public class AWSSsmSapAsyncClient extends AWSSsmSapClient implements AWSSsmSapAs
     }
 
     @Override
+    public java.util.concurrent.Future<StartApplicationRefreshResult> startApplicationRefreshAsync(StartApplicationRefreshRequest request) {
+
+        return startApplicationRefreshAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartApplicationRefreshResult> startApplicationRefreshAsync(final StartApplicationRefreshRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartApplicationRefreshRequest, StartApplicationRefreshResult> asyncHandler) {
+        final StartApplicationRefreshRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartApplicationRefreshResult>() {
+            @Override
+            public StartApplicationRefreshResult call() throws Exception {
+                StartApplicationRefreshResult result = null;
+
+                try {
+                    result = executeStartApplicationRefresh(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);

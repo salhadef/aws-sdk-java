@@ -30,7 +30,7 @@ public class UpdateConfigurationSetSendingEnabledRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * The name of the configuration set that you want to update.
+     * The name of the configuration set to update.
      * </p>
      */
     private String configurationSetName;
@@ -43,11 +43,11 @@ public class UpdateConfigurationSetSendingEnabledRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * The name of the configuration set that you want to update.
+     * The name of the configuration set to update.
      * </p>
      * 
      * @param configurationSetName
-     *        The name of the configuration set that you want to update.
+     *        The name of the configuration set to update.
      */
 
     public void setConfigurationSetName(String configurationSetName) {
@@ -56,10 +56,10 @@ public class UpdateConfigurationSetSendingEnabledRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * The name of the configuration set that you want to update.
+     * The name of the configuration set to update.
      * </p>
      * 
-     * @return The name of the configuration set that you want to update.
+     * @return The name of the configuration set to update.
      */
 
     public String getConfigurationSetName() {
@@ -68,11 +68,11 @@ public class UpdateConfigurationSetSendingEnabledRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * The name of the configuration set that you want to update.
+     * The name of the configuration set to update.
      * </p>
      * 
      * @param configurationSetName
-     *        The name of the configuration set that you want to update.
+     *        The name of the configuration set to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

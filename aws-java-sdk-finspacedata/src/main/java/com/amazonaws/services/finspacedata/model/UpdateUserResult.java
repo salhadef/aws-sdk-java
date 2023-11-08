@@ -25,18 +25,18 @@ public class UpdateUserResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The unique identifier of the updated user account.
+     * The unique identifier of the updated user.
      * </p>
      */
     private String userId;
 
     /**
      * <p>
-     * The unique identifier of the updated user account.
+     * The unique identifier of the updated user.
      * </p>
      * 
      * @param userId
-     *        The unique identifier of the updated user account.
+     *        The unique identifier of the updated user.
      */
 
     public void setUserId(String userId) {
@@ -45,10 +45,10 @@ public class UpdateUserResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The unique identifier of the updated user account.
+     * The unique identifier of the updated user.
      * </p>
      * 
-     * @return The unique identifier of the updated user account.
+     * @return The unique identifier of the updated user.
      */
 
     public String getUserId() {
@@ -57,11 +57,11 @@ public class UpdateUserResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The unique identifier of the updated user account.
+     * The unique identifier of the updated user.
      * </p>
      * 
      * @param userId
-     *        The unique identifier of the updated user account.
+     *        The unique identifier of the updated user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

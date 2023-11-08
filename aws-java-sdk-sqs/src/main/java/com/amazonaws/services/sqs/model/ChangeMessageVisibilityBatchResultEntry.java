@@ -14,6 +14,8 @@ package com.amazonaws.services.sqs.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ChangeMessageVisibilityBatchResultEntry implements Serializable, Cloneable {
+public class ChangeMessageVisibilityBatchResultEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -126,4 +128,9 @@ public class ChangeMessageVisibilityBatchResultEntry implements Serializable, Cl
         }
     }
 
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.sqs.model.transform.ChangeMessageVisibilityBatchResultEntryMarshaller.getInstance().marshall(this, protocolMarshaller);
+    }
 }

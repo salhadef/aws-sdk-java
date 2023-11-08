@@ -468,9 +468,9 @@ public class GetProfileObjectTypeTemplateResult extends com.amazonaws.AmazonWebS
         if (getSourceLastUpdatedTimestampFormat() != null)
             sb.append("SourceLastUpdatedTimestampFormat: ").append(getSourceLastUpdatedTimestampFormat()).append(",");
         if (getFields() != null)
-            sb.append("Fields: ").append(getFields()).append(",");
+            sb.append("Fields: ").append("***Sensitive Data Redacted***").append(",");
         if (getKeys() != null)
-            sb.append("Keys: ").append(getKeys());
+            sb.append("Keys: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

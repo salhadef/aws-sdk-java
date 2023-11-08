@@ -146,7 +146,7 @@ public class DescribeOrderableDBInstanceOptionsRequest extends com.amazonaws.Ama
     private String availabilityZoneGroup;
     /**
      * <p>
-     * A value that indicates whether to show only VPC or non-VPC offerings. RDS Custom supports only VPC offerings.
+     * Specifies whether to show only VPC or non-VPC offerings. RDS Custom supports only VPC offerings.
      * </p>
      * <p>
      * RDS Custom supports only VPC offerings. If you describe non-VPC offerings for RDS Custom, the output shows VPC
@@ -904,7 +904,7 @@ public class DescribeOrderableDBInstanceOptionsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * A value that indicates whether to show only VPC or non-VPC offerings. RDS Custom supports only VPC offerings.
+     * Specifies whether to show only VPC or non-VPC offerings. RDS Custom supports only VPC offerings.
      * </p>
      * <p>
      * RDS Custom supports only VPC offerings. If you describe non-VPC offerings for RDS Custom, the output shows VPC
@@ -912,8 +912,7 @@ public class DescribeOrderableDBInstanceOptionsRequest extends com.amazonaws.Ama
      * </p>
      * 
      * @param vpc
-     *        A value that indicates whether to show only VPC or non-VPC offerings. RDS Custom supports only VPC
-     *        offerings.</p>
+     *        Specifies whether to show only VPC or non-VPC offerings. RDS Custom supports only VPC offerings.</p>
      *        <p>
      *        RDS Custom supports only VPC offerings. If you describe non-VPC offerings for RDS Custom, the output shows
      *        VPC offerings.
@@ -925,15 +924,14 @@ public class DescribeOrderableDBInstanceOptionsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * A value that indicates whether to show only VPC or non-VPC offerings. RDS Custom supports only VPC offerings.
+     * Specifies whether to show only VPC or non-VPC offerings. RDS Custom supports only VPC offerings.
      * </p>
      * <p>
      * RDS Custom supports only VPC offerings. If you describe non-VPC offerings for RDS Custom, the output shows VPC
      * offerings.
      * </p>
      * 
-     * @return A value that indicates whether to show only VPC or non-VPC offerings. RDS Custom supports only VPC
-     *         offerings.</p>
+     * @return Specifies whether to show only VPC or non-VPC offerings. RDS Custom supports only VPC offerings.</p>
      *         <p>
      *         RDS Custom supports only VPC offerings. If you describe non-VPC offerings for RDS Custom, the output
      *         shows VPC offerings.
@@ -945,7 +943,7 @@ public class DescribeOrderableDBInstanceOptionsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * A value that indicates whether to show only VPC or non-VPC offerings. RDS Custom supports only VPC offerings.
+     * Specifies whether to show only VPC or non-VPC offerings. RDS Custom supports only VPC offerings.
      * </p>
      * <p>
      * RDS Custom supports only VPC offerings. If you describe non-VPC offerings for RDS Custom, the output shows VPC
@@ -953,8 +951,7 @@ public class DescribeOrderableDBInstanceOptionsRequest extends com.amazonaws.Ama
      * </p>
      * 
      * @param vpc
-     *        A value that indicates whether to show only VPC or non-VPC offerings. RDS Custom supports only VPC
-     *        offerings.</p>
+     *        Specifies whether to show only VPC or non-VPC offerings. RDS Custom supports only VPC offerings.</p>
      *        <p>
      *        RDS Custom supports only VPC offerings. If you describe non-VPC offerings for RDS Custom, the output shows
      *        VPC offerings.
@@ -968,15 +965,14 @@ public class DescribeOrderableDBInstanceOptionsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * A value that indicates whether to show only VPC or non-VPC offerings. RDS Custom supports only VPC offerings.
+     * Specifies whether to show only VPC or non-VPC offerings. RDS Custom supports only VPC offerings.
      * </p>
      * <p>
      * RDS Custom supports only VPC offerings. If you describe non-VPC offerings for RDS Custom, the output shows VPC
      * offerings.
      * </p>
      * 
-     * @return A value that indicates whether to show only VPC or non-VPC offerings. RDS Custom supports only VPC
-     *         offerings.</p>
+     * @return Specifies whether to show only VPC or non-VPC offerings. RDS Custom supports only VPC offerings.</p>
      *         <p>
      *         RDS Custom supports only VPC offerings. If you describe non-VPC offerings for RDS Custom, the output
      *         shows VPC offerings.

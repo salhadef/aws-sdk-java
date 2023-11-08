@@ -44,6 +44,7 @@ import com.amazonaws.services.sagemakeredgemanager.AmazonSagemakerEdgeManagerCli
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.sagemakeredgemanager.model.*;
+
 import com.amazonaws.services.sagemakeredgemanager.model.transform.*;
 
 /**

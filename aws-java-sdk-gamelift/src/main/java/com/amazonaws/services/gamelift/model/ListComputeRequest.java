@@ -27,13 +27,13 @@ public class ListComputeRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A unique identifier for the fleet the compute resources are registered to.
+     * A unique identifier for the fleet to retrieve compute resources for.
      * </p>
      */
     private String fleetId;
     /**
      * <p>
-     * The name of the custom location that the compute resources are assigned to.
+     * The name of a location to retrieve compute resources for.
      * </p>
      */
     private String location;
@@ -54,11 +54,11 @@ public class ListComputeRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A unique identifier for the fleet the compute resources are registered to.
+     * A unique identifier for the fleet to retrieve compute resources for.
      * </p>
      * 
      * @param fleetId
-     *        A unique identifier for the fleet the compute resources are registered to.
+     *        A unique identifier for the fleet to retrieve compute resources for.
      */
 
     public void setFleetId(String fleetId) {
@@ -67,10 +67,10 @@ public class ListComputeRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A unique identifier for the fleet the compute resources are registered to.
+     * A unique identifier for the fleet to retrieve compute resources for.
      * </p>
      * 
-     * @return A unique identifier for the fleet the compute resources are registered to.
+     * @return A unique identifier for the fleet to retrieve compute resources for.
      */
 
     public String getFleetId() {
@@ -79,11 +79,11 @@ public class ListComputeRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A unique identifier for the fleet the compute resources are registered to.
+     * A unique identifier for the fleet to retrieve compute resources for.
      * </p>
      * 
      * @param fleetId
-     *        A unique identifier for the fleet the compute resources are registered to.
+     *        A unique identifier for the fleet to retrieve compute resources for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +94,11 @@ public class ListComputeRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the custom location that the compute resources are assigned to.
+     * The name of a location to retrieve compute resources for.
      * </p>
      * 
      * @param location
-     *        The name of the custom location that the compute resources are assigned to.
+     *        The name of a location to retrieve compute resources for.
      */
 
     public void setLocation(String location) {
@@ -107,10 +107,10 @@ public class ListComputeRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the custom location that the compute resources are assigned to.
+     * The name of a location to retrieve compute resources for.
      * </p>
      * 
-     * @return The name of the custom location that the compute resources are assigned to.
+     * @return The name of a location to retrieve compute resources for.
      */
 
     public String getLocation() {
@@ -119,11 +119,11 @@ public class ListComputeRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the custom location that the compute resources are assigned to.
+     * The name of a location to retrieve compute resources for.
      * </p>
      * 
      * @param location
-     *        The name of the custom location that the compute resources are assigned to.
+     *        The name of a location to retrieve compute resources for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -56,6 +56,11 @@ public class GetGeofenceResultJsonUnmarshaller implements Unmarshaller<GetGeofen
                     context.nextToken();
                     getGeofenceResult.setGeofenceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("GeofenceProperties", targetDepth)) {
+                    context.nextToken();
+                    getGeofenceResult.setGeofenceProperties(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
+                }
                 if (context.testExpression("Geometry", targetDepth)) {
                     context.nextToken();
                     getGeofenceResult.setGeometry(GeofenceGeometryJsonUnmarshaller.getInstance().unmarshall(context));

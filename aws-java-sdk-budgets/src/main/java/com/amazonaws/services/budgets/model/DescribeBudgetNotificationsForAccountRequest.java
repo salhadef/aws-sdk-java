@@ -23,7 +23,7 @@ public class DescribeBudgetNotificationsForAccountRequest extends com.amazonaws.
     private String accountId;
     /**
      * <p>
-     * An integer that shows how many budget name entries a paginated response contains.
+     * An integer that represents how many budgets a paginated response contains. The default is 50.
      * </p>
      */
     private Integer maxResults;
@@ -58,11 +58,11 @@ public class DescribeBudgetNotificationsForAccountRequest extends com.amazonaws.
 
     /**
      * <p>
-     * An integer that shows how many budget name entries a paginated response contains.
+     * An integer that represents how many budgets a paginated response contains. The default is 50.
      * </p>
      * 
      * @param maxResults
-     *        An integer that shows how many budget name entries a paginated response contains.
+     *        An integer that represents how many budgets a paginated response contains. The default is 50.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -71,10 +71,10 @@ public class DescribeBudgetNotificationsForAccountRequest extends com.amazonaws.
 
     /**
      * <p>
-     * An integer that shows how many budget name entries a paginated response contains.
+     * An integer that represents how many budgets a paginated response contains. The default is 50.
      * </p>
      * 
-     * @return An integer that shows how many budget name entries a paginated response contains.
+     * @return An integer that represents how many budgets a paginated response contains. The default is 50.
      */
 
     public Integer getMaxResults() {
@@ -83,11 +83,11 @@ public class DescribeBudgetNotificationsForAccountRequest extends com.amazonaws.
 
     /**
      * <p>
-     * An integer that shows how many budget name entries a paginated response contains.
+     * An integer that represents how many budgets a paginated response contains. The default is 50.
      * </p>
      * 
      * @param maxResults
-     *        An integer that shows how many budget name entries a paginated response contains.
+     *        An integer that represents how many budgets a paginated response contains. The default is 50.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -58,6 +58,11 @@ public class AbstractAWSBackup implements AWSBackup {
     }
 
     @Override
+    public CreateLogicallyAirGappedBackupVaultResult createLogicallyAirGappedBackupVault(CreateLogicallyAirGappedBackupVaultRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateReportPlanResult createReportPlan(CreateReportPlanRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -269,6 +274,11 @@ public class AbstractAWSBackup implements AWSBackup {
 
     @Override
     public ListProtectedResourcesResult listProtectedResources(ListProtectedResourcesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListProtectedResourcesByBackupVaultResult listProtectedResourcesByBackupVault(ListProtectedResourcesByBackupVaultRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -47,7 +47,8 @@ public class GameSessionQueue implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The maximum time, in seconds, that a new game session placement request remains in the queue. When a request
-     * exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.
+     * exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status. By default, this
+     * property is set to <code>600</code>.
      * </p>
      */
     private Integer timeoutInSeconds;
@@ -206,12 +207,14 @@ public class GameSessionQueue implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The maximum time, in seconds, that a new game session placement request remains in the queue. When a request
-     * exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.
+     * exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status. By default, this
+     * property is set to <code>600</code>.
      * </p>
      * 
      * @param timeoutInSeconds
      *        The maximum time, in seconds, that a new game session placement request remains in the queue. When a
-     *        request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.
+     *        request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status. By
+     *        default, this property is set to <code>600</code>.
      */
 
     public void setTimeoutInSeconds(Integer timeoutInSeconds) {
@@ -221,11 +224,13 @@ public class GameSessionQueue implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The maximum time, in seconds, that a new game session placement request remains in the queue. When a request
-     * exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.
+     * exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status. By default, this
+     * property is set to <code>600</code>.
      * </p>
      * 
      * @return The maximum time, in seconds, that a new game session placement request remains in the queue. When a
-     *         request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.
+     *         request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status. By
+     *         default, this property is set to <code>600</code>.
      */
 
     public Integer getTimeoutInSeconds() {
@@ -235,12 +240,14 @@ public class GameSessionQueue implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The maximum time, in seconds, that a new game session placement request remains in the queue. When a request
-     * exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.
+     * exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status. By default, this
+     * property is set to <code>600</code>.
      * </p>
      * 
      * @param timeoutInSeconds
      *        The maximum time, in seconds, that a new game session placement request remains in the queue. When a
-     *        request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.
+     *        request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status. By
+     *        default, this property is set to <code>600</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

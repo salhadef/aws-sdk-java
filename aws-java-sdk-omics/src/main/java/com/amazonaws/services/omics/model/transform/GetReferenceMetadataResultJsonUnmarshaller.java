@@ -48,45 +48,45 @@ public class GetReferenceMetadataResultJsonUnmarshaller implements Unmarshaller<
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("arn", targetDepth)) {
-                    context.nextToken();
-                    getReferenceMetadataResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("creationTime", targetDepth)) {
-                    context.nextToken();
-                    getReferenceMetadataResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
-                }
-                if (context.testExpression("description", targetDepth)) {
-                    context.nextToken();
-                    getReferenceMetadataResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("files", targetDepth)) {
-                    context.nextToken();
-                    getReferenceMetadataResult.setFiles(ReferenceFilesJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
                     getReferenceMetadataResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("md5", targetDepth)) {
+                if (context.testExpression("arn", targetDepth)) {
                     context.nextToken();
-                    getReferenceMetadataResult.setMd5(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("name", targetDepth)) {
-                    context.nextToken();
-                    getReferenceMetadataResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                    getReferenceMetadataResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("referenceStoreId", targetDepth)) {
                     context.nextToken();
                     getReferenceMetadataResult.setReferenceStoreId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("md5", targetDepth)) {
+                    context.nextToken();
+                    getReferenceMetadataResult.setMd5(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     getReferenceMetadataResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("name", targetDepth)) {
+                    context.nextToken();
+                    getReferenceMetadataResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("description", targetDepth)) {
+                    context.nextToken();
+                    getReferenceMetadataResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("creationTime", targetDepth)) {
+                    context.nextToken();
+                    getReferenceMetadataResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
                 if (context.testExpression("updateTime", targetDepth)) {
                     context.nextToken();
                     getReferenceMetadataResult.setUpdateTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (context.testExpression("files", targetDepth)) {
+                    context.nextToken();
+                    getReferenceMetadataResult.setFiles(ReferenceFilesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

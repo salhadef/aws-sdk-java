@@ -274,7 +274,7 @@ public class ModifyVpnTunnelOptionsRequest extends AmazonWebServiceRequest imple
         if (getVpnTunnelOutsideIpAddress() != null)
             sb.append("VpnTunnelOutsideIpAddress: ").append(getVpnTunnelOutsideIpAddress()).append(",");
         if (getTunnelOptions() != null)
-            sb.append("TunnelOptions: ").append(getTunnelOptions()).append(",");
+            sb.append("TunnelOptions: ").append("***Sensitive Data Redacted***").append(",");
         if (getSkipTunnelReplacement() != null)
             sb.append("SkipTunnelReplacement: ").append(getSkipTunnelReplacement());
         sb.append("}");

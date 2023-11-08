@@ -179,7 +179,7 @@ public class PutProfileObjectRequest extends com.amazonaws.AmazonWebServiceReque
         if (getObjectTypeName() != null)
             sb.append("ObjectTypeName: ").append(getObjectTypeName()).append(",");
         if (getObject() != null)
-            sb.append("Object: ").append(getObject()).append(",");
+            sb.append("Object: ").append("***Sensitive Data Redacted***").append(",");
         if (getDomainName() != null)
             sb.append("DomainName: ").append(getDomainName());
         sb.append("}");

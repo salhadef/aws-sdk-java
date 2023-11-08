@@ -39,6 +39,8 @@ public class ListConfigurationHistoryRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("NextToken").build();
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("AccountId").build();
 
     private static final ListConfigurationHistoryRequestMarshaller instance = new ListConfigurationHistoryRequestMarshaller();
 
@@ -62,6 +64,7 @@ public class ListConfigurationHistoryRequestMarshaller {
             protocolMarshaller.marshall(listConfigurationHistoryRequest.getEventStatus(), EVENTSTATUS_BINDING);
             protocolMarshaller.marshall(listConfigurationHistoryRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listConfigurationHistoryRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listConfigurationHistoryRequest.getAccountId(), ACCOUNTID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

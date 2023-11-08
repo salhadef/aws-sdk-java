@@ -48,6 +48,8 @@ public class ModelMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnableNetworkIsolation").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<StructuredPojo> DEPLOYMENTRECOMMENDATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeploymentRecommendation").build();
 
     private static final ModelMarshaller instance = new ModelMarshaller();
 
@@ -75,6 +77,7 @@ public class ModelMarshaller {
             protocolMarshaller.marshall(model.getModelArn(), MODELARN_BINDING);
             protocolMarshaller.marshall(model.getEnableNetworkIsolation(), ENABLENETWORKISOLATION_BINDING);
             protocolMarshaller.marshall(model.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(model.getDeploymentRecommendation(), DEPLOYMENTRECOMMENDATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

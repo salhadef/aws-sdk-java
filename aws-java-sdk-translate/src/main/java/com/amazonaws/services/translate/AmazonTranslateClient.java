@@ -44,6 +44,7 @@ import com.amazonaws.services.translate.AmazonTranslateClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.translate.model.*;
+
 import com.amazonaws.services.translate.model.transform.*;
 
 /**
@@ -995,7 +996,7 @@ public class AmazonTranslateClient extends AmazonWebServiceClient implements Ama
      * @throws UnsupportedLanguagePairException
      *         Amazon Translate does not support translation from the language of the source text into the requested
      *         target language. For more information, see <a
-     *         href="https://docs.aws.amazon.com/translate/latest/dg/how-to-error-msg.html">Error messages</a>.
+     *         href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
      * @throws InvalidRequestException
      *         The request that you made is not valid. Check your request to determine why it's not valid and then retry
      *         the request.
@@ -1202,6 +1203,90 @@ public class AmazonTranslateClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Translates the input document from the source language to the target language. This synchronous operation
+     * supports text, HTML, or Word documents as the input document. <code>TranslateDocument</code> supports
+     * translations from English to any supported language, and from any supported language to English. Therefore,
+     * specify either the source language code or the target language code as “en” (English).
+     * </p>
+     * <p>
+     * If you set the <code>Formality</code> parameter, the request will fail if the target language does not support
+     * formality. For a list of target languages that support formality, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-formality.html">Setting
+     * formality</a>.
+     * </p>
+     * 
+     * @param translateDocumentRequest
+     * @return Result of the TranslateDocument operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request that you made is not valid. Check your request to determine why it's not valid and then retry
+     *         the request.
+     * @throws LimitExceededException
+     *         The specified limit has been exceeded. Review your request and retry it with a quantity below the stated
+     *         limit.
+     * @throws TooManyRequestsException
+     *         You have made too many requests within a short period of time. Wait for a short time and then try your
+     *         request again.
+     * @throws ResourceNotFoundException
+     *         The resource you are looking for has not been found. Review the resource you're looking for and see if a
+     *         different resource will accomplish your needs before retrying the revised request.
+     * @throws UnsupportedLanguagePairException
+     *         Amazon Translate does not support translation from the language of the source text into the requested
+     *         target language. For more information, see <a
+     *         href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @throws ServiceUnavailableException
+     *         The Amazon Translate service is temporarily unavailable. Wait a bit and then retry your request.
+     * @sample AmazonTranslate.TranslateDocument
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/TranslateDocument" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public TranslateDocumentResult translateDocument(TranslateDocumentRequest request) {
+        request = beforeClientExecution(request);
+        return executeTranslateDocument(request);
+    }
+
+    @SdkInternalApi
+    final TranslateDocumentResult executeTranslateDocument(TranslateDocumentRequest translateDocumentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(translateDocumentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TranslateDocumentRequest> request = null;
+        Response<TranslateDocumentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TranslateDocumentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(translateDocumentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Translate");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TranslateDocument");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TranslateDocumentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TranslateDocumentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Translates input text from the source language to the target language. For a list of available languages and
      * language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
      * languages</a>.
@@ -1221,7 +1306,7 @@ public class AmazonTranslateClient extends AmazonWebServiceClient implements Ama
      * @throws UnsupportedLanguagePairException
      *         Amazon Translate does not support translation from the language of the source text into the requested
      *         target language. For more information, see <a
-     *         href="https://docs.aws.amazon.com/translate/latest/dg/how-to-error-msg.html">Error messages</a>.
+     *         href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
      * @throws DetectedLanguageLowConfidenceException
      *         The confidence that Amazon Comprehend accurately detected the source language is low. If a low confidence
      *         level is acceptable for your application, you can use the language in the exception to call Amazon

@@ -56,6 +56,10 @@ public class SearchRelatedItemsResponseItemJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     searchRelatedItemsResponseItem.setContent(RelatedItemContentJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("performedBy", targetDepth)) {
+                    context.nextToken();
+                    searchRelatedItemsResponseItem.setPerformedBy(UserUnionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("relatedItemId", targetDepth)) {
                     context.nextToken();
                     searchRelatedItemsResponseItem.setRelatedItemId(context.getUnmarshaller(String.class).unmarshall(context));

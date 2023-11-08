@@ -27,7 +27,7 @@ public class DescribeFeatureMetadataRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the feature group containing the feature.
+     * The name or Amazon Resource Name (ARN) of the feature group containing the feature.
      * </p>
      */
     private String featureGroupName;
@@ -40,11 +40,11 @@ public class DescribeFeatureMetadataRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the feature group containing the feature.
+     * The name or Amazon Resource Name (ARN) of the feature group containing the feature.
      * </p>
      * 
      * @param featureGroupName
-     *        The name of the feature group containing the feature.
+     *        The name or Amazon Resource Name (ARN) of the feature group containing the feature.
      */
 
     public void setFeatureGroupName(String featureGroupName) {
@@ -53,10 +53,10 @@ public class DescribeFeatureMetadataRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the feature group containing the feature.
+     * The name or Amazon Resource Name (ARN) of the feature group containing the feature.
      * </p>
      * 
-     * @return The name of the feature group containing the feature.
+     * @return The name or Amazon Resource Name (ARN) of the feature group containing the feature.
      */
 
     public String getFeatureGroupName() {
@@ -65,11 +65,11 @@ public class DescribeFeatureMetadataRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the feature group containing the feature.
+     * The name or Amazon Resource Name (ARN) of the feature group containing the feature.
      * </p>
      * 
      * @param featureGroupName
-     *        The name of the feature group containing the feature.
+     *        The name or Amazon Resource Name (ARN) of the feature group containing the feature.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

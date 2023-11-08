@@ -184,6 +184,19 @@ public class AbstractAWSRoute53RecoveryControlConfigAsync extends AbstractAWSRou
     }
 
     @Override
+    public java.util.concurrent.Future<GetResourcePolicyResult> getResourcePolicyAsync(GetResourcePolicyRequest request) {
+
+        return getResourcePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResourcePolicyResult> getResourcePolicyAsync(GetResourcePolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetResourcePolicyRequest, GetResourcePolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAssociatedRoute53HealthChecksResult> listAssociatedRoute53HealthChecksAsync(
             ListAssociatedRoute53HealthChecksRequest request) {
 

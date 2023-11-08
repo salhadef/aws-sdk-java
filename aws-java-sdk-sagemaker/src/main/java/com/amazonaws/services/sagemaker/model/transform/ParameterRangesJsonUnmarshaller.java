@@ -68,6 +68,12 @@ public class ParameterRangesJsonUnmarshaller implements Unmarshaller<ParameterRa
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("AutoParameters", targetDepth)) {
+                    context.nextToken();
+                    parameterRanges.setAutoParameters(new ListUnmarshaller<AutoParameter>(AutoParameterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

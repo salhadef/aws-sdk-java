@@ -115,6 +115,12 @@ public class NetAppONTAPSVM implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Long totalSnapshotCapacityUsed;
+    /**
+     * <p>
+     * The number of LUNs (logical unit numbers) in the SVM.
+     * </p>
+     */
+    private Long lunCount;
 
     /**
      * <p>
@@ -780,6 +786,46 @@ public class NetAppONTAPSVM implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The number of LUNs (logical unit numbers) in the SVM.
+     * </p>
+     * 
+     * @param lunCount
+     *        The number of LUNs (logical unit numbers) in the SVM.
+     */
+
+    public void setLunCount(Long lunCount) {
+        this.lunCount = lunCount;
+    }
+
+    /**
+     * <p>
+     * The number of LUNs (logical unit numbers) in the SVM.
+     * </p>
+     * 
+     * @return The number of LUNs (logical unit numbers) in the SVM.
+     */
+
+    public Long getLunCount() {
+        return this.lunCount;
+    }
+
+    /**
+     * <p>
+     * The number of LUNs (logical unit numbers) in the SVM.
+     * </p>
+     * 
+     * @param lunCount
+     *        The number of LUNs (logical unit numbers) in the SVM.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetAppONTAPSVM withLunCount(Long lunCount) {
+        setLunCount(lunCount);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -816,7 +862,9 @@ public class NetAppONTAPSVM implements Serializable, Cloneable, StructuredPojo {
         if (getRecommendationStatus() != null)
             sb.append("RecommendationStatus: ").append(getRecommendationStatus()).append(",");
         if (getTotalSnapshotCapacityUsed() != null)
-            sb.append("TotalSnapshotCapacityUsed: ").append(getTotalSnapshotCapacityUsed());
+            sb.append("TotalSnapshotCapacityUsed: ").append(getTotalSnapshotCapacityUsed()).append(",");
+        if (getLunCount() != null)
+            sb.append("LunCount: ").append(getLunCount());
         sb.append("}");
         return sb.toString();
     }
@@ -883,6 +931,10 @@ public class NetAppONTAPSVM implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTotalSnapshotCapacityUsed() != null && other.getTotalSnapshotCapacityUsed().equals(this.getTotalSnapshotCapacityUsed()) == false)
             return false;
+        if (other.getLunCount() == null ^ this.getLunCount() == null)
+            return false;
+        if (other.getLunCount() != null && other.getLunCount().equals(this.getLunCount()) == false)
+            return false;
         return true;
     }
 
@@ -904,6 +956,7 @@ public class NetAppONTAPSVM implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getNfsExportedVolumes() == null) ? 0 : getNfsExportedVolumes().hashCode());
         hashCode = prime * hashCode + ((getRecommendationStatus() == null) ? 0 : getRecommendationStatus().hashCode());
         hashCode = prime * hashCode + ((getTotalSnapshotCapacityUsed() == null) ? 0 : getTotalSnapshotCapacityUsed().hashCode());
+        hashCode = prime * hashCode + ((getLunCount() == null) ? 0 : getLunCount().hashCode());
         return hashCode;
     }
 

@@ -58,7 +58,7 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose
-     * this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter or the
+     * this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter for the
      * <code>IdentityProviderDetails</code> data type.
      * </p>
      */
@@ -221,7 +221,7 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose
-     * this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter or the
+     * this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter for the
      * <code>IdentityProviderDetails</code> data type.
      * </p>
      * 
@@ -242,7 +242,7 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you
      *        choose this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter
-     *        or the <code>IdentityProviderDetails</code> data type.
+     *        for the <code>IdentityProviderDetails</code> data type.
      * @see IdentityProviderType
      */
 
@@ -268,7 +268,7 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose
-     * this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter or the
+     * this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter for the
      * <code>IdentityProviderDetails</code> data type.
      * </p>
      * 
@@ -288,7 +288,7 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If
      *         you choose this value, you must specify the ARN for the Lambda function in the <code>Function</code>
-     *         parameter or the <code>IdentityProviderDetails</code> data type.
+     *         parameter for the <code>IdentityProviderDetails</code> data type.
      * @see IdentityProviderType
      */
 
@@ -314,7 +314,7 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose
-     * this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter or the
+     * this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter for the
      * <code>IdentityProviderDetails</code> data type.
      * </p>
      * 
@@ -335,7 +335,7 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you
      *        choose this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter
-     *        or the <code>IdentityProviderDetails</code> data type.
+     *        for the <code>IdentityProviderDetails</code> data type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityProviderType
      */
@@ -363,7 +363,7 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose
-     * this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter or the
+     * this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter for the
      * <code>IdentityProviderDetails</code> data type.
      * </p>
      * 
@@ -384,7 +384,7 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you
      *        choose this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter
-     *        or the <code>IdentityProviderDetails</code> data type.
+     *        for the <code>IdentityProviderDetails</code> data type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityProviderType
      */

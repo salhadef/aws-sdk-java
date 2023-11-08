@@ -37,7 +37,7 @@ public class UncertaintyRange implements Serializable, Cloneable, StructuredPojo
     private Float lowerBoundValue;
     /**
      * <p>
-     * The lower bound value of the area under curve (auc).
+     * The upper bound value of the area under curve (auc).
      * </p>
      */
     private Float upperBoundValue;
@@ -84,11 +84,11 @@ public class UncertaintyRange implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The lower bound value of the area under curve (auc).
+     * The upper bound value of the area under curve (auc).
      * </p>
      * 
      * @param upperBoundValue
-     *        The lower bound value of the area under curve (auc).
+     *        The upper bound value of the area under curve (auc).
      */
 
     public void setUpperBoundValue(Float upperBoundValue) {
@@ -97,10 +97,10 @@ public class UncertaintyRange implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The lower bound value of the area under curve (auc).
+     * The upper bound value of the area under curve (auc).
      * </p>
      * 
-     * @return The lower bound value of the area under curve (auc).
+     * @return The upper bound value of the area under curve (auc).
      */
 
     public Float getUpperBoundValue() {
@@ -109,11 +109,11 @@ public class UncertaintyRange implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The lower bound value of the area under curve (auc).
+     * The upper bound value of the area under curve (auc).
      * </p>
      * 
      * @param upperBoundValue
-     *        The lower bound value of the area under curve (auc).
+     *        The upper bound value of the area under curve (auc).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

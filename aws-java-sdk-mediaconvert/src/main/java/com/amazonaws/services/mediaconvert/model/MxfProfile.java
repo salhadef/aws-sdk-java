@@ -15,8 +15,8 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Specify the MXF profile, also called shim, for this output. When you choose Auto, MediaConvert chooses a profile
- * based on the video codec and resolution. For a list of codecs supported with each MXF profile, see
+ * Specify the MXF profile, also called shim, for this output. To automatically select a profile according to your
+ * output video codec and resolution, leave blank. For a list of codecs supported with each MXF profile, see
  * https://docs.aws.amazon.com/mediaconvert/latest/ug/codecs-supported-with-each-mxf-profile.html. For more information
  * about the automatic selection behavior, see
  * https://docs.aws.amazon.com/mediaconvert/latest/ug/default-automatic-selection-of-mxf-profiles.html.
@@ -27,7 +27,8 @@ public enum MxfProfile {
     D_10("D_10"),
     XDCAM("XDCAM"),
     OP1A("OP1A"),
-    XAVC("XAVC");
+    XAVC("XAVC"),
+    XDCAM_RDD9("XDCAM_RDD9");
 
     private String value;
 

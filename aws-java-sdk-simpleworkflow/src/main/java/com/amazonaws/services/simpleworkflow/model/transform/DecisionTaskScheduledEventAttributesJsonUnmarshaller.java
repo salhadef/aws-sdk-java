@@ -60,6 +60,10 @@ public class DecisionTaskScheduledEventAttributesJsonUnmarshaller implements Unm
                     context.nextToken();
                     decisionTaskScheduledEventAttributes.setStartToCloseTimeout(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("scheduleToStartTimeout", targetDepth)) {
+                    context.nextToken();
+                    decisionTaskScheduledEventAttributes.setScheduleToStartTimeout(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

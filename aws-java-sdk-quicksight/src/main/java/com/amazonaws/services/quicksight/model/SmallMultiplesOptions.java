@@ -54,6 +54,18 @@ public class SmallMultiplesOptions implements Serializable, Cloneable, Structure
      * </p>
      */
     private PanelConfiguration panelConfiguration;
+    /**
+     * <p>
+     * The properties of a small multiples X axis.
+     * </p>
+     */
+    private SmallMultiplesAxisProperties xAxis;
+    /**
+     * <p>
+     * The properties of a small multiples Y axis.
+     * </p>
+     */
+    private SmallMultiplesAxisProperties yAxis;
 
     /**
      * <p>
@@ -218,6 +230,86 @@ public class SmallMultiplesOptions implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * The properties of a small multiples X axis.
+     * </p>
+     * 
+     * @param xAxis
+     *        The properties of a small multiples X axis.
+     */
+
+    public void setXAxis(SmallMultiplesAxisProperties xAxis) {
+        this.xAxis = xAxis;
+    }
+
+    /**
+     * <p>
+     * The properties of a small multiples X axis.
+     * </p>
+     * 
+     * @return The properties of a small multiples X axis.
+     */
+
+    public SmallMultiplesAxisProperties getXAxis() {
+        return this.xAxis;
+    }
+
+    /**
+     * <p>
+     * The properties of a small multiples X axis.
+     * </p>
+     * 
+     * @param xAxis
+     *        The properties of a small multiples X axis.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SmallMultiplesOptions withXAxis(SmallMultiplesAxisProperties xAxis) {
+        setXAxis(xAxis);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The properties of a small multiples Y axis.
+     * </p>
+     * 
+     * @param yAxis
+     *        The properties of a small multiples Y axis.
+     */
+
+    public void setYAxis(SmallMultiplesAxisProperties yAxis) {
+        this.yAxis = yAxis;
+    }
+
+    /**
+     * <p>
+     * The properties of a small multiples Y axis.
+     * </p>
+     * 
+     * @return The properties of a small multiples Y axis.
+     */
+
+    public SmallMultiplesAxisProperties getYAxis() {
+        return this.yAxis;
+    }
+
+    /**
+     * <p>
+     * The properties of a small multiples Y axis.
+     * </p>
+     * 
+     * @param yAxis
+     *        The properties of a small multiples Y axis.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SmallMultiplesOptions withYAxis(SmallMultiplesAxisProperties yAxis) {
+        setYAxis(yAxis);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -234,7 +326,11 @@ public class SmallMultiplesOptions implements Serializable, Cloneable, Structure
         if (getMaxVisibleColumns() != null)
             sb.append("MaxVisibleColumns: ").append(getMaxVisibleColumns()).append(",");
         if (getPanelConfiguration() != null)
-            sb.append("PanelConfiguration: ").append(getPanelConfiguration());
+            sb.append("PanelConfiguration: ").append(getPanelConfiguration()).append(",");
+        if (getXAxis() != null)
+            sb.append("XAxis: ").append(getXAxis()).append(",");
+        if (getYAxis() != null)
+            sb.append("YAxis: ").append(getYAxis());
         sb.append("}");
         return sb.toString();
     }
@@ -261,6 +357,14 @@ public class SmallMultiplesOptions implements Serializable, Cloneable, Structure
             return false;
         if (other.getPanelConfiguration() != null && other.getPanelConfiguration().equals(this.getPanelConfiguration()) == false)
             return false;
+        if (other.getXAxis() == null ^ this.getXAxis() == null)
+            return false;
+        if (other.getXAxis() != null && other.getXAxis().equals(this.getXAxis()) == false)
+            return false;
+        if (other.getYAxis() == null ^ this.getYAxis() == null)
+            return false;
+        if (other.getYAxis() != null && other.getYAxis().equals(this.getYAxis()) == false)
+            return false;
         return true;
     }
 
@@ -272,6 +376,8 @@ public class SmallMultiplesOptions implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getMaxVisibleRows() == null) ? 0 : getMaxVisibleRows().hashCode());
         hashCode = prime * hashCode + ((getMaxVisibleColumns() == null) ? 0 : getMaxVisibleColumns().hashCode());
         hashCode = prime * hashCode + ((getPanelConfiguration() == null) ? 0 : getPanelConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getXAxis() == null) ? 0 : getXAxis().hashCode());
+        hashCode = prime * hashCode + ((getYAxis() == null) ? 0 : getYAxis().hashCode());
         return hashCode;
     }
 

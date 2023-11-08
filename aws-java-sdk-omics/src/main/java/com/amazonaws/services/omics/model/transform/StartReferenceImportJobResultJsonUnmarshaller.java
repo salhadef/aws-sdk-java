@@ -48,10 +48,6 @@ public class StartReferenceImportJobResultJsonUnmarshaller implements Unmarshall
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("creationTime", targetDepth)) {
-                    context.nextToken();
-                    startReferenceImportJobResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
-                }
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
                     startReferenceImportJobResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
@@ -67,6 +63,10 @@ public class StartReferenceImportJobResultJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     startReferenceImportJobResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("creationTime", targetDepth)) {
+                    context.nextToken();
+                    startReferenceImportJobResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

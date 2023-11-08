@@ -33,6 +33,10 @@ public class ExecutionStartedEventDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inputDetails").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("roleArn").build();
+    private static final MarshallingInfo<String> STATEMACHINEALIASARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stateMachineAliasArn").build();
+    private static final MarshallingInfo<String> STATEMACHINEVERSIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stateMachineVersionArn").build();
 
     private static final ExecutionStartedEventDetailsMarshaller instance = new ExecutionStartedEventDetailsMarshaller();
 
@@ -53,6 +57,8 @@ public class ExecutionStartedEventDetailsMarshaller {
             protocolMarshaller.marshall(executionStartedEventDetails.getInput(), INPUT_BINDING);
             protocolMarshaller.marshall(executionStartedEventDetails.getInputDetails(), INPUTDETAILS_BINDING);
             protocolMarshaller.marshall(executionStartedEventDetails.getRoleArn(), ROLEARN_BINDING);
+            protocolMarshaller.marshall(executionStartedEventDetails.getStateMachineAliasArn(), STATEMACHINEALIASARN_BINDING);
+            protocolMarshaller.marshall(executionStartedEventDetails.getStateMachineVersionArn(), STATEMACHINEVERSIONARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

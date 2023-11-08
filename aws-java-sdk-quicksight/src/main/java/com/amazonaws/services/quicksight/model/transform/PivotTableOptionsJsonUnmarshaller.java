@@ -88,6 +88,18 @@ public class PivotTableOptionsJsonUnmarshaller implements Unmarshaller<PivotTabl
                     context.nextToken();
                     pivotTableOptions.setCollapsedRowDimensionsVisibility(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("RowsLayout", targetDepth)) {
+                    context.nextToken();
+                    pivotTableOptions.setRowsLayout(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("RowsLabelOptions", targetDepth)) {
+                    context.nextToken();
+                    pivotTableOptions.setRowsLabelOptions(PivotTableRowsLabelOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("DefaultCellWidth", targetDepth)) {
+                    context.nextToken();
+                    pivotTableOptions.setDefaultCellWidth(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

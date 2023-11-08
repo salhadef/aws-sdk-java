@@ -94,6 +94,12 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private java.util.List<Parameter> pipelineParameters;
+    /**
+     * <p>
+     * The selective execution configuration applied to the pipeline run.
+     * </p>
+     */
+    private SelectiveExecutionConfig selectiveExecutionConfig;
 
     /**
      * <p>
@@ -623,6 +629,46 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The selective execution configuration applied to the pipeline run.
+     * </p>
+     * 
+     * @param selectiveExecutionConfig
+     *        The selective execution configuration applied to the pipeline run.
+     */
+
+    public void setSelectiveExecutionConfig(SelectiveExecutionConfig selectiveExecutionConfig) {
+        this.selectiveExecutionConfig = selectiveExecutionConfig;
+    }
+
+    /**
+     * <p>
+     * The selective execution configuration applied to the pipeline run.
+     * </p>
+     * 
+     * @return The selective execution configuration applied to the pipeline run.
+     */
+
+    public SelectiveExecutionConfig getSelectiveExecutionConfig() {
+        return this.selectiveExecutionConfig;
+    }
+
+    /**
+     * <p>
+     * The selective execution configuration applied to the pipeline run.
+     * </p>
+     * 
+     * @param selectiveExecutionConfig
+     *        The selective execution configuration applied to the pipeline run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PipelineExecution withSelectiveExecutionConfig(SelectiveExecutionConfig selectiveExecutionConfig) {
+        setSelectiveExecutionConfig(selectiveExecutionConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -659,7 +705,9 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
         if (getParallelismConfiguration() != null)
             sb.append("ParallelismConfiguration: ").append(getParallelismConfiguration()).append(",");
         if (getPipelineParameters() != null)
-            sb.append("PipelineParameters: ").append(getPipelineParameters());
+            sb.append("PipelineParameters: ").append(getPipelineParameters()).append(",");
+        if (getSelectiveExecutionConfig() != null)
+            sb.append("SelectiveExecutionConfig: ").append(getSelectiveExecutionConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -726,6 +774,10 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getPipelineParameters() != null && other.getPipelineParameters().equals(this.getPipelineParameters()) == false)
             return false;
+        if (other.getSelectiveExecutionConfig() == null ^ this.getSelectiveExecutionConfig() == null)
+            return false;
+        if (other.getSelectiveExecutionConfig() != null && other.getSelectiveExecutionConfig().equals(this.getSelectiveExecutionConfig()) == false)
+            return false;
         return true;
     }
 
@@ -747,6 +799,7 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getLastModifiedBy() == null) ? 0 : getLastModifiedBy().hashCode());
         hashCode = prime * hashCode + ((getParallelismConfiguration() == null) ? 0 : getParallelismConfiguration().hashCode());
         hashCode = prime * hashCode + ((getPipelineParameters() == null) ? 0 : getPipelineParameters().hashCode());
+        hashCode = prime * hashCode + ((getSelectiveExecutionConfig() == null) ? 0 : getSelectiveExecutionConfig().hashCode());
         return hashCode;
     }
 

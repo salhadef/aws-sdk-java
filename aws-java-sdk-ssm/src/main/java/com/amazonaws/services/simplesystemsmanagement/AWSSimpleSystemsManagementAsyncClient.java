@@ -49,7 +49,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <li>
  * <p>
  * For information about each of the capabilities that comprise Systems Manager, see <a href=
- * "https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/what-is-systems-manager.html#systems-manager-capabilities"
+ * "https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/systems-manager-capabilities.html"
  * >Systems Manager capabilities</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
  * </p>
  * </li>
@@ -881,6 +881,39 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
 
                 try {
                     result = executeDeleteMaintenanceWindow(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteOpsItemResult> deleteOpsItemAsync(DeleteOpsItemRequest request) {
+
+        return deleteOpsItemAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteOpsItemResult> deleteOpsItemAsync(final DeleteOpsItemRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteOpsItemRequest, DeleteOpsItemResult> asyncHandler) {
+        final DeleteOpsItemRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteOpsItemResult>() {
+            @Override
+            public DeleteOpsItemResult call() throws Exception {
+                DeleteOpsItemResult result = null;
+
+                try {
+                    result = executeDeleteOpsItem(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

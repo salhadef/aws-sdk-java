@@ -1813,6 +1813,39 @@ public class AWSkendraAsyncClient extends AWSkendraClient implements AWSkendraAs
     }
 
     @Override
+    public java.util.concurrent.Future<RetrieveResult> retrieveAsync(RetrieveRequest request) {
+
+        return retrieveAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RetrieveResult> retrieveAsync(final RetrieveRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RetrieveRequest, RetrieveResult> asyncHandler) {
+        final RetrieveRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RetrieveResult>() {
+            @Override
+            public RetrieveResult call() throws Exception {
+                RetrieveResult result = null;
+
+                try {
+                    result = executeRetrieve(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StartDataSourceSyncJobResult> startDataSourceSyncJobAsync(StartDataSourceSyncJobRequest request) {
 
         return startDataSourceSyncJobAsync(request, null);

@@ -159,6 +159,12 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
      * </p>
      */
     private String hostEnvironmentId;
+    /**
+     * <p>
+     * The version number of the software running on the gateway appliance.
+     * </p>
+     */
+    private String softwareVersion;
 
     /**
      * @param gatewayARN
@@ -1231,6 +1237,46 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * The version number of the software running on the gateway appliance.
+     * </p>
+     * 
+     * @param softwareVersion
+     *        The version number of the software running on the gateway appliance.
+     */
+
+    public void setSoftwareVersion(String softwareVersion) {
+        this.softwareVersion = softwareVersion;
+    }
+
+    /**
+     * <p>
+     * The version number of the software running on the gateway appliance.
+     * </p>
+     * 
+     * @return The version number of the software running on the gateway appliance.
+     */
+
+    public String getSoftwareVersion() {
+        return this.softwareVersion;
+    }
+
+    /**
+     * <p>
+     * The version number of the software running on the gateway appliance.
+     * </p>
+     * 
+     * @param softwareVersion
+     *        The version number of the software running on the gateway appliance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeGatewayInformationResult withSoftwareVersion(String softwareVersion) {
+        setSoftwareVersion(softwareVersion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1253,7 +1299,7 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
         if (getGatewayState() != null)
             sb.append("GatewayState: ").append(getGatewayState()).append(",");
         if (getGatewayNetworkInterfaces() != null)
-            sb.append("GatewayNetworkInterfaces: ").append(getGatewayNetworkInterfaces()).append(",");
+            sb.append("GatewayNetworkInterfaces: ").append("***Sensitive Data Redacted***").append(",");
         if (getGatewayType() != null)
             sb.append("GatewayType: ").append(getGatewayType()).append(",");
         if (getNextUpdateAvailabilityDate() != null)
@@ -1283,7 +1329,9 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
         if (getSupportedGatewayCapacities() != null)
             sb.append("SupportedGatewayCapacities: ").append(getSupportedGatewayCapacities()).append(",");
         if (getHostEnvironmentId() != null)
-            sb.append("HostEnvironmentId: ").append(getHostEnvironmentId());
+            sb.append("HostEnvironmentId: ").append(getHostEnvironmentId()).append(",");
+        if (getSoftwareVersion() != null)
+            sb.append("SoftwareVersion: ").append(getSoftwareVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -1382,6 +1430,10 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getHostEnvironmentId() != null && other.getHostEnvironmentId().equals(this.getHostEnvironmentId()) == false)
             return false;
+        if (other.getSoftwareVersion() == null ^ this.getSoftwareVersion() == null)
+            return false;
+        if (other.getSoftwareVersion() != null && other.getSoftwareVersion().equals(this.getSoftwareVersion()) == false)
+            return false;
         return true;
     }
 
@@ -1411,6 +1463,7 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
         hashCode = prime * hashCode + ((getGatewayCapacity() == null) ? 0 : getGatewayCapacity().hashCode());
         hashCode = prime * hashCode + ((getSupportedGatewayCapacities() == null) ? 0 : getSupportedGatewayCapacities().hashCode());
         hashCode = prime * hashCode + ((getHostEnvironmentId() == null) ? 0 : getHostEnvironmentId().hashCode());
+        hashCode = prime * hashCode + ((getSoftwareVersion() == null) ? 0 : getSoftwareVersion().hashCode());
         return hashCode;
     }
 

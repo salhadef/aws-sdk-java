@@ -32,6 +32,8 @@ public class PivotTableFieldOptionsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SelectedFieldOptions").build();
     private static final MarshallingInfo<List> DATAPATHOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataPathOptions").build();
+    private static final MarshallingInfo<List> COLLAPSESTATEOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CollapseStateOptions").build();
 
     private static final PivotTableFieldOptionsMarshaller instance = new PivotTableFieldOptionsMarshaller();
 
@@ -51,6 +53,7 @@ public class PivotTableFieldOptionsMarshaller {
         try {
             protocolMarshaller.marshall(pivotTableFieldOptions.getSelectedFieldOptions(), SELECTEDFIELDOPTIONS_BINDING);
             protocolMarshaller.marshall(pivotTableFieldOptions.getDataPathOptions(), DATAPATHOPTIONS_BINDING);
+            protocolMarshaller.marshall(pivotTableFieldOptions.getCollapseStateOptions(), COLLAPSESTATEOPTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -73,9 +73,17 @@ public class PutDataProtectionPolicyRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * <important>
      * <p>
-     * The contents of two <code>DataIdentifer</code> arrays must match exactly.
+     * The contents of the two <code>DataIdentifer</code> arrays must match exactly.
      * </p>
      * </important>
+     * <p>
+     * In addition to the two JSON blocks, the <code>policyDocument</code> can also include <code>Name</code>,
+     * <code>Description</code>, and <code>Version</code> fields. The <code>Name</code> is used as a dimension when
+     * CloudWatch Logs reports audit findings metrics to CloudWatch.
+     * </p>
+     * <p>
+     * The JSON specified in <code>policyDocument</code> can be up to 30,720 characters.
+     * </p>
      */
     private String policyDocument;
 
@@ -161,9 +169,17 @@ public class PutDataProtectionPolicyRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * <important>
      * <p>
-     * The contents of two <code>DataIdentifer</code> arrays must match exactly.
+     * The contents of the two <code>DataIdentifer</code> arrays must match exactly.
      * </p>
      * </important>
+     * <p>
+     * In addition to the two JSON blocks, the <code>policyDocument</code> can also include <code>Name</code>,
+     * <code>Description</code>, and <code>Version</code> fields. The <code>Name</code> is used as a dimension when
+     * CloudWatch Logs reports audit findings metrics to CloudWatch.
+     * </p>
+     * <p>
+     * The JSON specified in <code>policyDocument</code> can be up to 30,720 characters.
+     * </p>
      * 
      * @param policyDocument
      *        Specify the data protection policy, in JSON.</p>
@@ -205,8 +221,16 @@ public class PutDataProtectionPolicyRequest extends com.amazonaws.AmazonWebServi
      *        </p>
      *        <important>
      *        <p>
-     *        The contents of two <code>DataIdentifer</code> arrays must match exactly.
+     *        The contents of the two <code>DataIdentifer</code> arrays must match exactly.
      *        </p>
+     *        </important>
+     *        <p>
+     *        In addition to the two JSON blocks, the <code>policyDocument</code> can also include <code>Name</code>,
+     *        <code>Description</code>, and <code>Version</code> fields. The <code>Name</code> is used as a dimension
+     *        when CloudWatch Logs reports audit findings metrics to CloudWatch.
+     *        </p>
+     *        <p>
+     *        The JSON specified in <code>policyDocument</code> can be up to 30,720 characters.
      */
 
     public void setPolicyDocument(String policyDocument) {
@@ -255,9 +279,17 @@ public class PutDataProtectionPolicyRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * <important>
      * <p>
-     * The contents of two <code>DataIdentifer</code> arrays must match exactly.
+     * The contents of the two <code>DataIdentifer</code> arrays must match exactly.
      * </p>
      * </important>
+     * <p>
+     * In addition to the two JSON blocks, the <code>policyDocument</code> can also include <code>Name</code>,
+     * <code>Description</code>, and <code>Version</code> fields. The <code>Name</code> is used as a dimension when
+     * CloudWatch Logs reports audit findings metrics to CloudWatch.
+     * </p>
+     * <p>
+     * The JSON specified in <code>policyDocument</code> can be up to 30,720 characters.
+     * </p>
      * 
      * @return Specify the data protection policy, in JSON.</p>
      *         <p>
@@ -298,8 +330,16 @@ public class PutDataProtectionPolicyRequest extends com.amazonaws.AmazonWebServi
      *         </p>
      *         <important>
      *         <p>
-     *         The contents of two <code>DataIdentifer</code> arrays must match exactly.
+     *         The contents of the two <code>DataIdentifer</code> arrays must match exactly.
      *         </p>
+     *         </important>
+     *         <p>
+     *         In addition to the two JSON blocks, the <code>policyDocument</code> can also include <code>Name</code>,
+     *         <code>Description</code>, and <code>Version</code> fields. The <code>Name</code> is used as a dimension
+     *         when CloudWatch Logs reports audit findings metrics to CloudWatch.
+     *         </p>
+     *         <p>
+     *         The JSON specified in <code>policyDocument</code> can be up to 30,720 characters.
      */
 
     public String getPolicyDocument() {
@@ -348,9 +388,17 @@ public class PutDataProtectionPolicyRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * <important>
      * <p>
-     * The contents of two <code>DataIdentifer</code> arrays must match exactly.
+     * The contents of the two <code>DataIdentifer</code> arrays must match exactly.
      * </p>
      * </important>
+     * <p>
+     * In addition to the two JSON blocks, the <code>policyDocument</code> can also include <code>Name</code>,
+     * <code>Description</code>, and <code>Version</code> fields. The <code>Name</code> is used as a dimension when
+     * CloudWatch Logs reports audit findings metrics to CloudWatch.
+     * </p>
+     * <p>
+     * The JSON specified in <code>policyDocument</code> can be up to 30,720 characters.
+     * </p>
      * 
      * @param policyDocument
      *        Specify the data protection policy, in JSON.</p>
@@ -392,8 +440,16 @@ public class PutDataProtectionPolicyRequest extends com.amazonaws.AmazonWebServi
      *        </p>
      *        <important>
      *        <p>
-     *        The contents of two <code>DataIdentifer</code> arrays must match exactly.
+     *        The contents of the two <code>DataIdentifer</code> arrays must match exactly.
      *        </p>
+     *        </important>
+     *        <p>
+     *        In addition to the two JSON blocks, the <code>policyDocument</code> can also include <code>Name</code>,
+     *        <code>Description</code>, and <code>Version</code> fields. The <code>Name</code> is used as a dimension
+     *        when CloudWatch Logs reports audit findings metrics to CloudWatch.
+     *        </p>
+     *        <p>
+     *        The JSON specified in <code>policyDocument</code> can be up to 30,720 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

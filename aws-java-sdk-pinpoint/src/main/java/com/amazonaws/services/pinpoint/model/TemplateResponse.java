@@ -82,7 +82,8 @@ public class TemplateResponse implements Serializable, Cloneable, StructuredPojo
     private String templateName;
     /**
      * <p>
-     * The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, and VOICE.
+     * The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, INAPP, and
+     * VOICE.
      * </p>
      */
     private String templateType;
@@ -466,12 +467,13 @@ public class TemplateResponse implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, and VOICE.
+     * The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, INAPP, and
+     * VOICE.
      * </p>
      * 
      * @param templateType
-     *        The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, and
-     *        VOICE.
+     *        The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS,
+     *        INAPP, and VOICE.
      * @see TemplateType
      */
 
@@ -481,11 +483,12 @@ public class TemplateResponse implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, and VOICE.
+     * The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, INAPP, and
+     * VOICE.
      * </p>
      * 
-     * @return The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, and
-     *         VOICE.
+     * @return The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS,
+     *         INAPP, and VOICE.
      * @see TemplateType
      */
 
@@ -495,12 +498,13 @@ public class TemplateResponse implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, and VOICE.
+     * The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, INAPP, and
+     * VOICE.
      * </p>
      * 
      * @param templateType
-     *        The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, and
-     *        VOICE.
+     *        The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS,
+     *        INAPP, and VOICE.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TemplateType
      */
@@ -512,12 +516,13 @@ public class TemplateResponse implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, and VOICE.
+     * The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, INAPP, and
+     * VOICE.
      * </p>
      * 
      * @param templateType
-     *        The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, and
-     *        VOICE.
+     *        The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS,
+     *        INAPP, and VOICE.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TemplateType
      */

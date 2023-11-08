@@ -57,6 +57,16 @@ public class NetworkCardInfoStaxUnmarshaller implements Unmarshaller<NetworkCard
                     networkCardInfo.setMaximumNetworkInterfaces(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("baselineBandwidthInGbps", targetDepth)) {
+                    networkCardInfo.setBaselineBandwidthInGbps(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("peakBandwidthInGbps", targetDepth)) {
+                    networkCardInfo.setPeakBandwidthInGbps(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return networkCardInfo;

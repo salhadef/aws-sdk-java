@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * The specified reference name format is not valid. Reference names must conform to the Git references format (for
- * example, refs/heads/master). For more information, see <a
+ * example, refs/heads/main). For more information, see <a
  * href="https://git-scm.com/book/en/v2/Git-Internals-Git-References">Git Internals - Git References</a> or consult your
  * Git documentation.
  * </p>

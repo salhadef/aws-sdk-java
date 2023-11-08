@@ -52,7 +52,7 @@ public class StartDeploymentRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The configuration version to deploy. If deploying an AppConfig hosted configuration version, you can specify
-     * either the version number or version label.
+     * either the version number or version label. For all other configurations, you must specify the version number.
      * </p>
      */
     private String configurationVersion;
@@ -240,12 +240,13 @@ public class StartDeploymentRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The configuration version to deploy. If deploying an AppConfig hosted configuration version, you can specify
-     * either the version number or version label.
+     * either the version number or version label. For all other configurations, you must specify the version number.
      * </p>
      * 
      * @param configurationVersion
      *        The configuration version to deploy. If deploying an AppConfig hosted configuration version, you can
-     *        specify either the version number or version label.
+     *        specify either the version number or version label. For all other configurations, you must specify the
+     *        version number.
      */
 
     public void setConfigurationVersion(String configurationVersion) {
@@ -255,11 +256,12 @@ public class StartDeploymentRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The configuration version to deploy. If deploying an AppConfig hosted configuration version, you can specify
-     * either the version number or version label.
+     * either the version number or version label. For all other configurations, you must specify the version number.
      * </p>
      * 
      * @return The configuration version to deploy. If deploying an AppConfig hosted configuration version, you can
-     *         specify either the version number or version label.
+     *         specify either the version number or version label. For all other configurations, you must specify the
+     *         version number.
      */
 
     public String getConfigurationVersion() {
@@ -269,12 +271,13 @@ public class StartDeploymentRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The configuration version to deploy. If deploying an AppConfig hosted configuration version, you can specify
-     * either the version number or version label.
+     * either the version number or version label. For all other configurations, you must specify the version number.
      * </p>
      * 
      * @param configurationVersion
      *        The configuration version to deploy. If deploying an AppConfig hosted configuration version, you can
-     *        specify either the version number or version label.
+     *        specify either the version number or version label. For all other configurations, you must specify the
+     *        version number.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

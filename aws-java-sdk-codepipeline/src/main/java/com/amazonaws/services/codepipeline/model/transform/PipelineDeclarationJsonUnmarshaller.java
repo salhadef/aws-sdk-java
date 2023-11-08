@@ -75,6 +75,23 @@ public class PipelineDeclarationJsonUnmarshaller implements Unmarshaller<Pipelin
                     context.nextToken();
                     pipelineDeclaration.setVersion(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("pipelineType", targetDepth)) {
+                    context.nextToken();
+                    pipelineDeclaration.setPipelineType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("triggers", targetDepth)) {
+                    context.nextToken();
+                    pipelineDeclaration.setTriggers(new ListUnmarshaller<PipelineTriggerDeclaration>(PipelineTriggerDeclarationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("variables", targetDepth)) {
+                    context.nextToken();
+                    pipelineDeclaration.setVariables(new ListUnmarshaller<PipelineVariableDeclaration>(PipelineVariableDeclarationJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

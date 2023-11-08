@@ -104,6 +104,14 @@ public class RequestedServiceQuotaChangeJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     requestedServiceQuotaChange.setUnit(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("QuotaRequestedAtLevel", targetDepth)) {
+                    context.nextToken();
+                    requestedServiceQuotaChange.setQuotaRequestedAtLevel(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("QuotaContext", targetDepth)) {
+                    context.nextToken();
+                    requestedServiceQuotaChange.setQuotaContext(QuotaContextInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

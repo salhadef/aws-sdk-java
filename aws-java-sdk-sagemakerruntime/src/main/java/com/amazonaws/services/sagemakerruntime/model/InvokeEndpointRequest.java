@@ -51,7 +51,7 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     private String contentType;
     /**
      * <p>
-     * The desired MIME type of the inference in the response.
+     * The desired MIME type of the inference response from the model container.
      * </p>
      */
     private String accept;
@@ -61,7 +61,7 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * SageMaker endpoint. The information is an opaque value that is forwarded verbatim. You could use this value, for
      * example, to provide an ID that you can use to track a request or to provide other metadata that a service
      * endpoint was programmed to process. The value must consist of no more than 1024 visible US-ASCII characters as
-     * specified in <a href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6. Field Value
+     * specified in <a href="https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.6">Section 3.3.6. Field Value
      * Components</a> of the Hypertext Transfer Protocol (HTTP/1.1).
      * </p>
      * <p>
@@ -303,11 +303,11 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The desired MIME type of the inference in the response.
+     * The desired MIME type of the inference response from the model container.
      * </p>
      * 
      * @param accept
-     *        The desired MIME type of the inference in the response.
+     *        The desired MIME type of the inference response from the model container.
      */
 
     public void setAccept(String accept) {
@@ -316,10 +316,10 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The desired MIME type of the inference in the response.
+     * The desired MIME type of the inference response from the model container.
      * </p>
      * 
-     * @return The desired MIME type of the inference in the response.
+     * @return The desired MIME type of the inference response from the model container.
      */
 
     public String getAccept() {
@@ -328,11 +328,11 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The desired MIME type of the inference in the response.
+     * The desired MIME type of the inference response from the model container.
      * </p>
      * 
      * @param accept
-     *        The desired MIME type of the inference in the response.
+     *        The desired MIME type of the inference response from the model container.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -347,7 +347,7 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * SageMaker endpoint. The information is an opaque value that is forwarded verbatim. You could use this value, for
      * example, to provide an ID that you can use to track a request or to provide other metadata that a service
      * endpoint was programmed to process. The value must consist of no more than 1024 visible US-ASCII characters as
-     * specified in <a href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6. Field Value
+     * specified in <a href="https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.6">Section 3.3.6. Field Value
      * Components</a> of the Hypertext Transfer Protocol (HTTP/1.1).
      * </p>
      * <p>
@@ -365,8 +365,8 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      *        SageMaker endpoint. The information is an opaque value that is forwarded verbatim. You could use this
      *        value, for example, to provide an ID that you can use to track a request or to provide other metadata that
      *        a service endpoint was programmed to process. The value must consist of no more than 1024 visible US-ASCII
-     *        characters as specified in <a href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6.
-     *        Field Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). </p>
+     *        characters as specified in <a href="https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.6">Section
+     *        3.3.6. Field Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). </p>
      *        <p>
      *        The code in your model is responsible for setting or updating any custom attributes in the response. If
      *        your code does not set this value in the response, an empty value is returned. For example, if a custom
@@ -388,7 +388,7 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * SageMaker endpoint. The information is an opaque value that is forwarded verbatim. You could use this value, for
      * example, to provide an ID that you can use to track a request or to provide other metadata that a service
      * endpoint was programmed to process. The value must consist of no more than 1024 visible US-ASCII characters as
-     * specified in <a href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6. Field Value
+     * specified in <a href="https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.6">Section 3.3.6. Field Value
      * Components</a> of the Hypertext Transfer Protocol (HTTP/1.1).
      * </p>
      * <p>
@@ -405,8 +405,9 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      *         SageMaker endpoint. The information is an opaque value that is forwarded verbatim. You could use this
      *         value, for example, to provide an ID that you can use to track a request or to provide other metadata
      *         that a service endpoint was programmed to process. The value must consist of no more than 1024 visible
-     *         US-ASCII characters as specified in <a href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section
-     *         3.3.6. Field Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). </p>
+     *         US-ASCII characters as specified in <a
+     *         href="https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.6">Section 3.3.6. Field Value
+     *         Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). </p>
      *         <p>
      *         The code in your model is responsible for setting or updating any custom attributes in the response. If
      *         your code does not set this value in the response, an empty value is returned. For example, if a custom
@@ -428,7 +429,7 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * SageMaker endpoint. The information is an opaque value that is forwarded verbatim. You could use this value, for
      * example, to provide an ID that you can use to track a request or to provide other metadata that a service
      * endpoint was programmed to process. The value must consist of no more than 1024 visible US-ASCII characters as
-     * specified in <a href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6. Field Value
+     * specified in <a href="https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.6">Section 3.3.6. Field Value
      * Components</a> of the Hypertext Transfer Protocol (HTTP/1.1).
      * </p>
      * <p>
@@ -446,8 +447,8 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      *        SageMaker endpoint. The information is an opaque value that is forwarded verbatim. You could use this
      *        value, for example, to provide an ID that you can use to track a request or to provide other metadata that
      *        a service endpoint was programmed to process. The value must consist of no more than 1024 visible US-ASCII
-     *        characters as specified in <a href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6.
-     *        Field Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). </p>
+     *        characters as specified in <a href="https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.6">Section
+     *        3.3.6. Field Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). </p>
      *        <p>
      *        The code in your model is responsible for setting or updating any custom attributes in the response. If
      *        your code does not set this value in the response, an empty value is returned. For example, if a custom

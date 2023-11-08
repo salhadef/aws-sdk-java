@@ -27,12 +27,6 @@ public class StartReferenceImportJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * To ensure that jobs don't run multiple times, specify a unique token for each job.
-     * </p>
-     */
-    private String clientToken;
-    /**
-     * <p>
      * The job's reference store ID.
      * </p>
      */
@@ -45,50 +39,16 @@ public class StartReferenceImportJobRequest extends com.amazonaws.AmazonWebServi
     private String roleArn;
     /**
      * <p>
+     * To ensure that jobs don't run multiple times, specify a unique token for each job.
+     * </p>
+     */
+    private String clientToken;
+    /**
+     * <p>
      * The job's source files.
      * </p>
      */
     private java.util.List<StartReferenceImportJobSourceItem> sources;
-
-    /**
-     * <p>
-     * To ensure that jobs don't run multiple times, specify a unique token for each job.
-     * </p>
-     * 
-     * @param clientToken
-     *        To ensure that jobs don't run multiple times, specify a unique token for each job.
-     */
-
-    public void setClientToken(String clientToken) {
-        this.clientToken = clientToken;
-    }
-
-    /**
-     * <p>
-     * To ensure that jobs don't run multiple times, specify a unique token for each job.
-     * </p>
-     * 
-     * @return To ensure that jobs don't run multiple times, specify a unique token for each job.
-     */
-
-    public String getClientToken() {
-        return this.clientToken;
-    }
-
-    /**
-     * <p>
-     * To ensure that jobs don't run multiple times, specify a unique token for each job.
-     * </p>
-     * 
-     * @param clientToken
-     *        To ensure that jobs don't run multiple times, specify a unique token for each job.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public StartReferenceImportJobRequest withClientToken(String clientToken) {
-        setClientToken(clientToken);
-        return this;
-    }
 
     /**
      * <p>
@@ -167,6 +127,46 @@ public class StartReferenceImportJobRequest extends com.amazonaws.AmazonWebServi
 
     public StartReferenceImportJobRequest withRoleArn(String roleArn) {
         setRoleArn(roleArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * To ensure that jobs don't run multiple times, specify a unique token for each job.
+     * </p>
+     * 
+     * @param clientToken
+     *        To ensure that jobs don't run multiple times, specify a unique token for each job.
+     */
+
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
+    }
+
+    /**
+     * <p>
+     * To ensure that jobs don't run multiple times, specify a unique token for each job.
+     * </p>
+     * 
+     * @return To ensure that jobs don't run multiple times, specify a unique token for each job.
+     */
+
+    public String getClientToken() {
+        return this.clientToken;
+    }
+
+    /**
+     * <p>
+     * To ensure that jobs don't run multiple times, specify a unique token for each job.
+     * </p>
+     * 
+     * @param clientToken
+     *        To ensure that jobs don't run multiple times, specify a unique token for each job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartReferenceImportJobRequest withClientToken(String clientToken) {
+        setClientToken(clientToken);
         return this;
     }
 
@@ -252,12 +252,12 @@ public class StartReferenceImportJobRequest extends com.amazonaws.AmazonWebServi
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getReferenceStoreId() != null)
             sb.append("ReferenceStoreId: ").append(getReferenceStoreId()).append(",");
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
+        if (getClientToken() != null)
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getSources() != null)
             sb.append("Sources: ").append(getSources());
         sb.append("}");
@@ -274,10 +274,6 @@ public class StartReferenceImportJobRequest extends com.amazonaws.AmazonWebServi
         if (obj instanceof StartReferenceImportJobRequest == false)
             return false;
         StartReferenceImportJobRequest other = (StartReferenceImportJobRequest) obj;
-        if (other.getClientToken() == null ^ this.getClientToken() == null)
-            return false;
-        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
-            return false;
         if (other.getReferenceStoreId() == null ^ this.getReferenceStoreId() == null)
             return false;
         if (other.getReferenceStoreId() != null && other.getReferenceStoreId().equals(this.getReferenceStoreId()) == false)
@@ -285,6 +281,10 @@ public class StartReferenceImportJobRequest extends com.amazonaws.AmazonWebServi
         if (other.getRoleArn() == null ^ this.getRoleArn() == null)
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
+            return false;
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
+            return false;
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
         if (other.getSources() == null ^ this.getSources() == null)
             return false;
@@ -298,9 +298,9 @@ public class StartReferenceImportJobRequest extends com.amazonaws.AmazonWebServi
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getReferenceStoreId() == null) ? 0 : getReferenceStoreId().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getSources() == null) ? 0 : getSources().hashCode());
         return hashCode;
     }

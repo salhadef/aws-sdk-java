@@ -44,6 +44,7 @@ import com.amazonaws.services.dlm.AmazonDLMClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.dlm.model.*;
+
 import com.amazonaws.services.dlm.model.transform.*;
 
 /**
@@ -280,7 +281,8 @@ public class AmazonDLMClient extends AmazonWebServiceClient implements AmazonDLM
      * Gets summary information about all or the specified data lifecycle policies.
      * </p>
      * <p>
-     * To get complete information about a policy, use <a>GetLifecyclePolicy</a>.
+     * To get complete information about a policy, use <a
+     * href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_GetLifecyclePolicy.html">GetLifecyclePolicy</a>.
      * </p>
      * 
      * @param getLifecyclePoliciesRequest

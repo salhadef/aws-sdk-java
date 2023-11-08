@@ -27,30 +27,30 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class MpdSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * Optional. Choose Include (INCLUDE) to have MediaConvert mark up your DASH manifest with <Accessibility> elements
-     * for embedded 608 captions. This markup isn't generally required, but some video players require it to discover
-     * and play embedded 608 captions. Keep the default value, Exclude (EXCLUDE), to leave these elements out. When you
-     * enable this setting, this is the markup that MediaConvert includes in your manifest: <Accessibility
+     * Optional. Choose Include to have MediaConvert mark up your DASH manifest with <Accessibility> elements for
+     * embedded 608 captions. This markup isn't generally required, but some video players require it to discover and
+     * play embedded 608 captions. Keep the default value, Exclude, to leave these elements out. When you enable this
+     * setting, this is the markup that MediaConvert includes in your manifest: <Accessibility
      * schemeIdUri="urn:scte:dash:cc:cea-608:2015" value="CC1=eng"/>
      */
     private String accessibilityCaptionHints;
     /**
      * Specify this setting only when your output will be consumed by a downstream repackaging workflow that is
      * sensitive to very small duration differences between video and audio. For this situation, choose Match video
-     * duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration
-     * (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams with
-     * silence or trims them to ensure that the total duration of each audio stream is at least as long as the total
-     * duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame
-     * longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment
-     * of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the
-     * default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
+     * duration. In all other cases, keep the default value, Default codec duration. When you choose Match video
+     * duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration
+     * of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the
+     * audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding
+     * or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding
+     * only to the end of the file. When you keep the default value, any minor discrepancies between audio and video
+     * duration will depend on your output audio codec.
      */
     private String audioDuration;
     /**
      * Use this setting only in DASH output groups that include sidecar TTML or IMSC captions. You specify sidecar
-     * captions in a separate output from your audio and video. Choose Raw (RAW) for captions in a single XML file in a
-     * raw container. Choose Fragmented MPEG-4 (FRAGMENTED_MP4) for captions in XML format contained within fragmented
-     * MP4 files. This set of fragmented MP4 files is separate from your video and audio fragmented MP4 files.
+     * captions in a separate output from your audio and video. Choose Raw for captions in a single XML file in a raw
+     * container. Choose Fragmented MPEG-4 for captions in XML format contained within fragmented MP4 files. This set of
+     * fragmented MP4 files is separate from your video and audio fragmented MP4 files.
      */
     private String captionContainerType;
     /**
@@ -65,61 +65,60 @@ public class MpdSettings implements Serializable, Cloneable, StructuredPojo {
      * value that you specify for ID3 metadata scheme ID URI. For SCTE35 event messages, the InbandEventStream element
      * schemeIdUri will be "urn:scte:scte35:2013:bin". To leave these elements out of your output MPD manifest, set
      * Manifest metadata signaling to Disabled. To enable Manifest metadata signaling, you must also set SCTE-35 source
-     * to Passthrough, ESAM SCTE-35 to insert, or ID3 metadata (TimedMetadata) to Passthrough.
+     * to Passthrough, ESAM SCTE-35 to insert, or ID3 metadata to Passthrough.
      */
     private String manifestMetadataSignaling;
     /**
      * Use this setting only when you specify SCTE-35 markers from ESAM. Choose INSERT to put SCTE-35 markers in this
      * output at the insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC
-     * XML (sccXml).
+     * XML.
      */
     private String scte35Esam;
     /**
-     * Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough (PASSTHROUGH) if
-     * you want SCTE-35 markers that appear in your input to also appear in this output. Choose None (NONE) if you don't
-     * want those SCTE-35 markers in this output.
+     * Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough if you want
+     * SCTE-35 markers that appear in your input to also appear in this output. Choose None if you don't want those
+     * SCTE-35 markers in this output.
      */
     private String scte35Source;
     /**
-     * To include ID3 metadata in this output: Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH). Specify
-     * this ID3 metadata in Custom ID3 metadata inserter (timedMetadataInsertion). MediaConvert writes each instance of
-     * ID3 metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata: Set ID3 metadata to None (NONE)
-     * or leave blank.
+     * To include ID3 metadata in this output: Set ID3 metadata to Passthrough. Specify this ID3 metadata in Custom ID3
+     * metadata inserter. MediaConvert writes each instance of ID3 metadata in a separate Event Message (eMSG) box. To
+     * exclude this ID3 metadata: Set ID3 metadata to None or leave blank.
      */
     private String timedMetadata;
     /**
      * Specify the event message box (eMSG) version for ID3 timed metadata in your output. For more information, see
      * ISO/IEC 23009-1:2022 section 5.10.3.3.3 Syntax. Leave blank to use the default value Version 0. When you specify
-     * Version 1, you must also set ID3 metadata (timedMetadata) to Passthrough.
+     * Version 1, you must also set ID3 metadata to Passthrough.
      */
     private String timedMetadataBoxVersion;
     /**
-     * Specify the event message box (eMSG) scheme ID URI (scheme_id_uri) for ID3 timed metadata in your output. For
-     * more information, see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. Leave blank to use the default value:
+     * Specify the event message box (eMSG) scheme ID URI for ID3 timed metadata in your output. For more information,
+     * see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. Leave blank to use the default value:
      * https://aomedia.org/emsg/ID3 When you specify a value for ID3 metadata scheme ID URI, you must also set ID3
-     * metadata (timedMetadata) to Passthrough.
+     * metadata to Passthrough.
      */
     private String timedMetadataSchemeIdUri;
     /**
      * Specify the event message box (eMSG) value for ID3 timed metadata in your output. For more information, see
      * ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. When you specify a value for ID3 Metadata Value, you must also
-     * set ID3 metadata (timedMetadata) to Passthrough.
+     * set ID3 metadata to Passthrough.
      */
     private String timedMetadataValue;
 
     /**
-     * Optional. Choose Include (INCLUDE) to have MediaConvert mark up your DASH manifest with <Accessibility> elements
-     * for embedded 608 captions. This markup isn't generally required, but some video players require it to discover
-     * and play embedded 608 captions. Keep the default value, Exclude (EXCLUDE), to leave these elements out. When you
-     * enable this setting, this is the markup that MediaConvert includes in your manifest: <Accessibility
+     * Optional. Choose Include to have MediaConvert mark up your DASH manifest with <Accessibility> elements for
+     * embedded 608 captions. This markup isn't generally required, but some video players require it to discover and
+     * play embedded 608 captions. Keep the default value, Exclude, to leave these elements out. When you enable this
+     * setting, this is the markup that MediaConvert includes in your manifest: <Accessibility
      * schemeIdUri="urn:scte:dash:cc:cea-608:2015" value="CC1=eng"/>
      * 
      * @param accessibilityCaptionHints
-     *        Optional. Choose Include (INCLUDE) to have MediaConvert mark up your DASH manifest with <Accessibility>
-     *        elements for embedded 608 captions. This markup isn't generally required, but some video players require
-     *        it to discover and play embedded 608 captions. Keep the default value, Exclude (EXCLUDE), to leave these
-     *        elements out. When you enable this setting, this is the markup that MediaConvert includes in your
-     *        manifest: <Accessibility schemeIdUri="urn:scte:dash:cc:cea-608:2015" value="CC1=eng"/>
+     *        Optional. Choose Include to have MediaConvert mark up your DASH manifest with <Accessibility> elements for
+     *        embedded 608 captions. This markup isn't generally required, but some video players require it to discover
+     *        and play embedded 608 captions. Keep the default value, Exclude, to leave these elements out. When you
+     *        enable this setting, this is the markup that MediaConvert includes in your manifest: <Accessibility
+     *        schemeIdUri="urn:scte:dash:cc:cea-608:2015" value="CC1=eng"/>
      * @see MpdAccessibilityCaptionHints
      */
 
@@ -128,17 +127,17 @@ public class MpdSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Optional. Choose Include (INCLUDE) to have MediaConvert mark up your DASH manifest with <Accessibility> elements
-     * for embedded 608 captions. This markup isn't generally required, but some video players require it to discover
-     * and play embedded 608 captions. Keep the default value, Exclude (EXCLUDE), to leave these elements out. When you
-     * enable this setting, this is the markup that MediaConvert includes in your manifest: <Accessibility
+     * Optional. Choose Include to have MediaConvert mark up your DASH manifest with <Accessibility> elements for
+     * embedded 608 captions. This markup isn't generally required, but some video players require it to discover and
+     * play embedded 608 captions. Keep the default value, Exclude, to leave these elements out. When you enable this
+     * setting, this is the markup that MediaConvert includes in your manifest: <Accessibility
      * schemeIdUri="urn:scte:dash:cc:cea-608:2015" value="CC1=eng"/>
      * 
-     * @return Optional. Choose Include (INCLUDE) to have MediaConvert mark up your DASH manifest with <Accessibility>
-     *         elements for embedded 608 captions. This markup isn't generally required, but some video players require
-     *         it to discover and play embedded 608 captions. Keep the default value, Exclude (EXCLUDE), to leave these
-     *         elements out. When you enable this setting, this is the markup that MediaConvert includes in your
-     *         manifest: <Accessibility schemeIdUri="urn:scte:dash:cc:cea-608:2015" value="CC1=eng"/>
+     * @return Optional. Choose Include to have MediaConvert mark up your DASH manifest with <Accessibility> elements
+     *         for embedded 608 captions. This markup isn't generally required, but some video players require it to
+     *         discover and play embedded 608 captions. Keep the default value, Exclude, to leave these elements out.
+     *         When you enable this setting, this is the markup that MediaConvert includes in your manifest:
+     *         <Accessibility schemeIdUri="urn:scte:dash:cc:cea-608:2015" value="CC1=eng"/>
      * @see MpdAccessibilityCaptionHints
      */
 
@@ -147,18 +146,18 @@ public class MpdSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Optional. Choose Include (INCLUDE) to have MediaConvert mark up your DASH manifest with <Accessibility> elements
-     * for embedded 608 captions. This markup isn't generally required, but some video players require it to discover
-     * and play embedded 608 captions. Keep the default value, Exclude (EXCLUDE), to leave these elements out. When you
-     * enable this setting, this is the markup that MediaConvert includes in your manifest: <Accessibility
+     * Optional. Choose Include to have MediaConvert mark up your DASH manifest with <Accessibility> elements for
+     * embedded 608 captions. This markup isn't generally required, but some video players require it to discover and
+     * play embedded 608 captions. Keep the default value, Exclude, to leave these elements out. When you enable this
+     * setting, this is the markup that MediaConvert includes in your manifest: <Accessibility
      * schemeIdUri="urn:scte:dash:cc:cea-608:2015" value="CC1=eng"/>
      * 
      * @param accessibilityCaptionHints
-     *        Optional. Choose Include (INCLUDE) to have MediaConvert mark up your DASH manifest with <Accessibility>
-     *        elements for embedded 608 captions. This markup isn't generally required, but some video players require
-     *        it to discover and play embedded 608 captions. Keep the default value, Exclude (EXCLUDE), to leave these
-     *        elements out. When you enable this setting, this is the markup that MediaConvert includes in your
-     *        manifest: <Accessibility schemeIdUri="urn:scte:dash:cc:cea-608:2015" value="CC1=eng"/>
+     *        Optional. Choose Include to have MediaConvert mark up your DASH manifest with <Accessibility> elements for
+     *        embedded 608 captions. This markup isn't generally required, but some video players require it to discover
+     *        and play embedded 608 captions. Keep the default value, Exclude, to leave these elements out. When you
+     *        enable this setting, this is the markup that MediaConvert includes in your manifest: <Accessibility
+     *        schemeIdUri="urn:scte:dash:cc:cea-608:2015" value="CC1=eng"/>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MpdAccessibilityCaptionHints
      */
@@ -169,18 +168,18 @@ public class MpdSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Optional. Choose Include (INCLUDE) to have MediaConvert mark up your DASH manifest with <Accessibility> elements
-     * for embedded 608 captions. This markup isn't generally required, but some video players require it to discover
-     * and play embedded 608 captions. Keep the default value, Exclude (EXCLUDE), to leave these elements out. When you
-     * enable this setting, this is the markup that MediaConvert includes in your manifest: <Accessibility
+     * Optional. Choose Include to have MediaConvert mark up your DASH manifest with <Accessibility> elements for
+     * embedded 608 captions. This markup isn't generally required, but some video players require it to discover and
+     * play embedded 608 captions. Keep the default value, Exclude, to leave these elements out. When you enable this
+     * setting, this is the markup that MediaConvert includes in your manifest: <Accessibility
      * schemeIdUri="urn:scte:dash:cc:cea-608:2015" value="CC1=eng"/>
      * 
      * @param accessibilityCaptionHints
-     *        Optional. Choose Include (INCLUDE) to have MediaConvert mark up your DASH manifest with <Accessibility>
-     *        elements for embedded 608 captions. This markup isn't generally required, but some video players require
-     *        it to discover and play embedded 608 captions. Keep the default value, Exclude (EXCLUDE), to leave these
-     *        elements out. When you enable this setting, this is the markup that MediaConvert includes in your
-     *        manifest: <Accessibility schemeIdUri="urn:scte:dash:cc:cea-608:2015" value="CC1=eng"/>
+     *        Optional. Choose Include to have MediaConvert mark up your DASH manifest with <Accessibility> elements for
+     *        embedded 608 captions. This markup isn't generally required, but some video players require it to discover
+     *        and play embedded 608 captions. Keep the default value, Exclude, to leave these elements out. When you
+     *        enable this setting, this is the markup that MediaConvert includes in your manifest: <Accessibility
+     *        schemeIdUri="urn:scte:dash:cc:cea-608:2015" value="CC1=eng"/>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MpdAccessibilityCaptionHints
      */
@@ -193,25 +192,24 @@ public class MpdSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * Specify this setting only when your output will be consumed by a downstream repackaging workflow that is
      * sensitive to very small duration differences between video and audio. For this situation, choose Match video
-     * duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration
-     * (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams with
-     * silence or trims them to ensure that the total duration of each audio stream is at least as long as the total
-     * duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame
-     * longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment
-     * of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the
-     * default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
+     * duration. In all other cases, keep the default value, Default codec duration. When you choose Match video
+     * duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration
+     * of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the
+     * audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding
+     * or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding
+     * only to the end of the file. When you keep the default value, any minor discrepancies between audio and video
+     * duration will depend on your output audio codec.
      * 
      * @param audioDuration
      *        Specify this setting only when your output will be consumed by a downstream repackaging workflow that is
      *        sensitive to very small duration differences between video and audio. For this situation, choose Match
-     *        video duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration
-     *        (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams
-     *        with silence or trims them to ensure that the total duration of each audio stream is at least as long as
-     *        the total duration of the video stream. After padding or trimming, the audio stream duration is no more
-     *        than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the
-     *        end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end
-     *        of the file. When you keep the default value, any minor discrepancies between audio and video duration
-     *        will depend on your output audio codec.
+     *        video duration. In all other cases, keep the default value, Default codec duration. When you choose Match
+     *        video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the
+     *        total duration of each audio stream is at least as long as the total duration of the video stream. After
+     *        padding or trimming, the audio stream duration is no more than one frame longer than the video stream.
+     *        MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For
+     *        unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default
+     *        value, any minor discrepancies between audio and video duration will depend on your output audio codec.
      * @see MpdAudioDuration
      */
 
@@ -222,24 +220,23 @@ public class MpdSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * Specify this setting only when your output will be consumed by a downstream repackaging workflow that is
      * sensitive to very small duration differences between video and audio. For this situation, choose Match video
-     * duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration
-     * (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams with
-     * silence or trims them to ensure that the total duration of each audio stream is at least as long as the total
-     * duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame
-     * longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment
-     * of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the
-     * default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
+     * duration. In all other cases, keep the default value, Default codec duration. When you choose Match video
+     * duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration
+     * of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the
+     * audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding
+     * or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding
+     * only to the end of the file. When you keep the default value, any minor discrepancies between audio and video
+     * duration will depend on your output audio codec.
      * 
      * @return Specify this setting only when your output will be consumed by a downstream repackaging workflow that is
      *         sensitive to very small duration differences between video and audio. For this situation, choose Match
-     *         video duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration
-     *         (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio
-     *         streams with silence or trims them to ensure that the total duration of each audio stream is at least as
-     *         long as the total duration of the video stream. After padding or trimming, the audio stream duration is
-     *         no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only
-     *         to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to
-     *         the end of the file. When you keep the default value, any minor discrepancies between audio and video
-     *         duration will depend on your output audio codec.
+     *         video duration. In all other cases, keep the default value, Default codec duration. When you choose Match
+     *         video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the
+     *         total duration of each audio stream is at least as long as the total duration of the video stream. After
+     *         padding or trimming, the audio stream duration is no more than one frame longer than the video stream.
+     *         MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For
+     *         unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default
+     *         value, any minor discrepancies between audio and video duration will depend on your output audio codec.
      * @see MpdAudioDuration
      */
 
@@ -250,25 +247,24 @@ public class MpdSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * Specify this setting only when your output will be consumed by a downstream repackaging workflow that is
      * sensitive to very small duration differences between video and audio. For this situation, choose Match video
-     * duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration
-     * (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams with
-     * silence or trims them to ensure that the total duration of each audio stream is at least as long as the total
-     * duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame
-     * longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment
-     * of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the
-     * default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
+     * duration. In all other cases, keep the default value, Default codec duration. When you choose Match video
+     * duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration
+     * of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the
+     * audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding
+     * or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding
+     * only to the end of the file. When you keep the default value, any minor discrepancies between audio and video
+     * duration will depend on your output audio codec.
      * 
      * @param audioDuration
      *        Specify this setting only when your output will be consumed by a downstream repackaging workflow that is
      *        sensitive to very small duration differences between video and audio. For this situation, choose Match
-     *        video duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration
-     *        (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams
-     *        with silence or trims them to ensure that the total duration of each audio stream is at least as long as
-     *        the total duration of the video stream. After padding or trimming, the audio stream duration is no more
-     *        than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the
-     *        end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end
-     *        of the file. When you keep the default value, any minor discrepancies between audio and video duration
-     *        will depend on your output audio codec.
+     *        video duration. In all other cases, keep the default value, Default codec duration. When you choose Match
+     *        video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the
+     *        total duration of each audio stream is at least as long as the total duration of the video stream. After
+     *        padding or trimming, the audio stream duration is no more than one frame longer than the video stream.
+     *        MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For
+     *        unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default
+     *        value, any minor discrepancies between audio and video duration will depend on your output audio codec.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MpdAudioDuration
      */
@@ -281,25 +277,24 @@ public class MpdSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * Specify this setting only when your output will be consumed by a downstream repackaging workflow that is
      * sensitive to very small duration differences between video and audio. For this situation, choose Match video
-     * duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration
-     * (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams with
-     * silence or trims them to ensure that the total duration of each audio stream is at least as long as the total
-     * duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame
-     * longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment
-     * of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the
-     * default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
+     * duration. In all other cases, keep the default value, Default codec duration. When you choose Match video
+     * duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration
+     * of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the
+     * audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding
+     * or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding
+     * only to the end of the file. When you keep the default value, any minor discrepancies between audio and video
+     * duration will depend on your output audio codec.
      * 
      * @param audioDuration
      *        Specify this setting only when your output will be consumed by a downstream repackaging workflow that is
      *        sensitive to very small duration differences between video and audio. For this situation, choose Match
-     *        video duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration
-     *        (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams
-     *        with silence or trims them to ensure that the total duration of each audio stream is at least as long as
-     *        the total duration of the video stream. After padding or trimming, the audio stream duration is no more
-     *        than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the
-     *        end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end
-     *        of the file. When you keep the default value, any minor discrepancies between audio and video duration
-     *        will depend on your output audio codec.
+     *        video duration. In all other cases, keep the default value, Default codec duration. When you choose Match
+     *        video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the
+     *        total duration of each audio stream is at least as long as the total duration of the video stream. After
+     *        padding or trimming, the audio stream duration is no more than one frame longer than the video stream.
+     *        MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For
+     *        unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default
+     *        value, any minor discrepancies between audio and video duration will depend on your output audio codec.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MpdAudioDuration
      */
@@ -311,16 +306,15 @@ public class MpdSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Use this setting only in DASH output groups that include sidecar TTML or IMSC captions. You specify sidecar
-     * captions in a separate output from your audio and video. Choose Raw (RAW) for captions in a single XML file in a
-     * raw container. Choose Fragmented MPEG-4 (FRAGMENTED_MP4) for captions in XML format contained within fragmented
-     * MP4 files. This set of fragmented MP4 files is separate from your video and audio fragmented MP4 files.
+     * captions in a separate output from your audio and video. Choose Raw for captions in a single XML file in a raw
+     * container. Choose Fragmented MPEG-4 for captions in XML format contained within fragmented MP4 files. This set of
+     * fragmented MP4 files is separate from your video and audio fragmented MP4 files.
      * 
      * @param captionContainerType
      *        Use this setting only in DASH output groups that include sidecar TTML or IMSC captions. You specify
-     *        sidecar captions in a separate output from your audio and video. Choose Raw (RAW) for captions in a single
-     *        XML file in a raw container. Choose Fragmented MPEG-4 (FRAGMENTED_MP4) for captions in XML format
-     *        contained within fragmented MP4 files. This set of fragmented MP4 files is separate from your video and
-     *        audio fragmented MP4 files.
+     *        sidecar captions in a separate output from your audio and video. Choose Raw for captions in a single XML
+     *        file in a raw container. Choose Fragmented MPEG-4 for captions in XML format contained within fragmented
+     *        MP4 files. This set of fragmented MP4 files is separate from your video and audio fragmented MP4 files.
      * @see MpdCaptionContainerType
      */
 
@@ -330,15 +324,14 @@ public class MpdSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Use this setting only in DASH output groups that include sidecar TTML or IMSC captions. You specify sidecar
-     * captions in a separate output from your audio and video. Choose Raw (RAW) for captions in a single XML file in a
-     * raw container. Choose Fragmented MPEG-4 (FRAGMENTED_MP4) for captions in XML format contained within fragmented
-     * MP4 files. This set of fragmented MP4 files is separate from your video and audio fragmented MP4 files.
+     * captions in a separate output from your audio and video. Choose Raw for captions in a single XML file in a raw
+     * container. Choose Fragmented MPEG-4 for captions in XML format contained within fragmented MP4 files. This set of
+     * fragmented MP4 files is separate from your video and audio fragmented MP4 files.
      * 
      * @return Use this setting only in DASH output groups that include sidecar TTML or IMSC captions. You specify
-     *         sidecar captions in a separate output from your audio and video. Choose Raw (RAW) for captions in a
-     *         single XML file in a raw container. Choose Fragmented MPEG-4 (FRAGMENTED_MP4) for captions in XML format
-     *         contained within fragmented MP4 files. This set of fragmented MP4 files is separate from your video and
-     *         audio fragmented MP4 files.
+     *         sidecar captions in a separate output from your audio and video. Choose Raw for captions in a single XML
+     *         file in a raw container. Choose Fragmented MPEG-4 for captions in XML format contained within fragmented
+     *         MP4 files. This set of fragmented MP4 files is separate from your video and audio fragmented MP4 files.
      * @see MpdCaptionContainerType
      */
 
@@ -348,16 +341,15 @@ public class MpdSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Use this setting only in DASH output groups that include sidecar TTML or IMSC captions. You specify sidecar
-     * captions in a separate output from your audio and video. Choose Raw (RAW) for captions in a single XML file in a
-     * raw container. Choose Fragmented MPEG-4 (FRAGMENTED_MP4) for captions in XML format contained within fragmented
-     * MP4 files. This set of fragmented MP4 files is separate from your video and audio fragmented MP4 files.
+     * captions in a separate output from your audio and video. Choose Raw for captions in a single XML file in a raw
+     * container. Choose Fragmented MPEG-4 for captions in XML format contained within fragmented MP4 files. This set of
+     * fragmented MP4 files is separate from your video and audio fragmented MP4 files.
      * 
      * @param captionContainerType
      *        Use this setting only in DASH output groups that include sidecar TTML or IMSC captions. You specify
-     *        sidecar captions in a separate output from your audio and video. Choose Raw (RAW) for captions in a single
-     *        XML file in a raw container. Choose Fragmented MPEG-4 (FRAGMENTED_MP4) for captions in XML format
-     *        contained within fragmented MP4 files. This set of fragmented MP4 files is separate from your video and
-     *        audio fragmented MP4 files.
+     *        sidecar captions in a separate output from your audio and video. Choose Raw for captions in a single XML
+     *        file in a raw container. Choose Fragmented MPEG-4 for captions in XML format contained within fragmented
+     *        MP4 files. This set of fragmented MP4 files is separate from your video and audio fragmented MP4 files.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MpdCaptionContainerType
      */
@@ -369,16 +361,15 @@ public class MpdSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Use this setting only in DASH output groups that include sidecar TTML or IMSC captions. You specify sidecar
-     * captions in a separate output from your audio and video. Choose Raw (RAW) for captions in a single XML file in a
-     * raw container. Choose Fragmented MPEG-4 (FRAGMENTED_MP4) for captions in XML format contained within fragmented
-     * MP4 files. This set of fragmented MP4 files is separate from your video and audio fragmented MP4 files.
+     * captions in a separate output from your audio and video. Choose Raw for captions in a single XML file in a raw
+     * container. Choose Fragmented MPEG-4 for captions in XML format contained within fragmented MP4 files. This set of
+     * fragmented MP4 files is separate from your video and audio fragmented MP4 files.
      * 
      * @param captionContainerType
      *        Use this setting only in DASH output groups that include sidecar TTML or IMSC captions. You specify
-     *        sidecar captions in a separate output from your audio and video. Choose Raw (RAW) for captions in a single
-     *        XML file in a raw container. Choose Fragmented MPEG-4 (FRAGMENTED_MP4) for captions in XML format
-     *        contained within fragmented MP4 files. This set of fragmented MP4 files is separate from your video and
-     *        audio fragmented MP4 files.
+     *        sidecar captions in a separate output from your audio and video. Choose Raw for captions in a single XML
+     *        file in a raw container. Choose Fragmented MPEG-4 for captions in XML format contained within fragmented
+     *        MP4 files. This set of fragmented MP4 files is separate from your video and audio fragmented MP4 files.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MpdCaptionContainerType
      */
@@ -465,7 +456,7 @@ public class MpdSettings implements Serializable, Cloneable, StructuredPojo {
      * value that you specify for ID3 metadata scheme ID URI. For SCTE35 event messages, the InbandEventStream element
      * schemeIdUri will be "urn:scte:scte35:2013:bin". To leave these elements out of your output MPD manifest, set
      * Manifest metadata signaling to Disabled. To enable Manifest metadata signaling, you must also set SCTE-35 source
-     * to Passthrough, ESAM SCTE-35 to insert, or ID3 metadata (TimedMetadata) to Passthrough.
+     * to Passthrough, ESAM SCTE-35 to insert, or ID3 metadata to Passthrough.
      * 
      * @param manifestMetadataSignaling
      *        To add an InbandEventStream element in your output MPD manifest for each type of event message, set
@@ -473,8 +464,8 @@ public class MpdSettings implements Serializable, Cloneable, StructuredPojo {
      *        will be same value that you specify for ID3 metadata scheme ID URI. For SCTE35 event messages, the
      *        InbandEventStream element schemeIdUri will be "urn:scte:scte35:2013:bin". To leave these elements out of
      *        your output MPD manifest, set Manifest metadata signaling to Disabled. To enable Manifest metadata
-     *        signaling, you must also set SCTE-35 source to Passthrough, ESAM SCTE-35 to insert, or ID3 metadata
-     *        (TimedMetadata) to Passthrough.
+     *        signaling, you must also set SCTE-35 source to Passthrough, ESAM SCTE-35 to insert, or ID3 metadata to
+     *        Passthrough.
      * @see MpdManifestMetadataSignaling
      */
 
@@ -488,15 +479,15 @@ public class MpdSettings implements Serializable, Cloneable, StructuredPojo {
      * value that you specify for ID3 metadata scheme ID URI. For SCTE35 event messages, the InbandEventStream element
      * schemeIdUri will be "urn:scte:scte35:2013:bin". To leave these elements out of your output MPD manifest, set
      * Manifest metadata signaling to Disabled. To enable Manifest metadata signaling, you must also set SCTE-35 source
-     * to Passthrough, ESAM SCTE-35 to insert, or ID3 metadata (TimedMetadata) to Passthrough.
+     * to Passthrough, ESAM SCTE-35 to insert, or ID3 metadata to Passthrough.
      * 
      * @return To add an InbandEventStream element in your output MPD manifest for each type of event message, set
      *         Manifest metadata signaling to Enabled. For ID3 event messages, the InbandEventStream element schemeIdUri
      *         will be same value that you specify for ID3 metadata scheme ID URI. For SCTE35 event messages, the
      *         InbandEventStream element schemeIdUri will be "urn:scte:scte35:2013:bin". To leave these elements out of
      *         your output MPD manifest, set Manifest metadata signaling to Disabled. To enable Manifest metadata
-     *         signaling, you must also set SCTE-35 source to Passthrough, ESAM SCTE-35 to insert, or ID3 metadata
-     *         (TimedMetadata) to Passthrough.
+     *         signaling, you must also set SCTE-35 source to Passthrough, ESAM SCTE-35 to insert, or ID3 metadata to
+     *         Passthrough.
      * @see MpdManifestMetadataSignaling
      */
 
@@ -510,7 +501,7 @@ public class MpdSettings implements Serializable, Cloneable, StructuredPojo {
      * value that you specify for ID3 metadata scheme ID URI. For SCTE35 event messages, the InbandEventStream element
      * schemeIdUri will be "urn:scte:scte35:2013:bin". To leave these elements out of your output MPD manifest, set
      * Manifest metadata signaling to Disabled. To enable Manifest metadata signaling, you must also set SCTE-35 source
-     * to Passthrough, ESAM SCTE-35 to insert, or ID3 metadata (TimedMetadata) to Passthrough.
+     * to Passthrough, ESAM SCTE-35 to insert, or ID3 metadata to Passthrough.
      * 
      * @param manifestMetadataSignaling
      *        To add an InbandEventStream element in your output MPD manifest for each type of event message, set
@@ -518,8 +509,8 @@ public class MpdSettings implements Serializable, Cloneable, StructuredPojo {
      *        will be same value that you specify for ID3 metadata scheme ID URI. For SCTE35 event messages, the
      *        InbandEventStream element schemeIdUri will be "urn:scte:scte35:2013:bin". To leave these elements out of
      *        your output MPD manifest, set Manifest metadata signaling to Disabled. To enable Manifest metadata
-     *        signaling, you must also set SCTE-35 source to Passthrough, ESAM SCTE-35 to insert, or ID3 metadata
-     *        (TimedMetadata) to Passthrough.
+     *        signaling, you must also set SCTE-35 source to Passthrough, ESAM SCTE-35 to insert, or ID3 metadata to
+     *        Passthrough.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MpdManifestMetadataSignaling
      */
@@ -535,7 +526,7 @@ public class MpdSettings implements Serializable, Cloneable, StructuredPojo {
      * value that you specify for ID3 metadata scheme ID URI. For SCTE35 event messages, the InbandEventStream element
      * schemeIdUri will be "urn:scte:scte35:2013:bin". To leave these elements out of your output MPD manifest, set
      * Manifest metadata signaling to Disabled. To enable Manifest metadata signaling, you must also set SCTE-35 source
-     * to Passthrough, ESAM SCTE-35 to insert, or ID3 metadata (TimedMetadata) to Passthrough.
+     * to Passthrough, ESAM SCTE-35 to insert, or ID3 metadata to Passthrough.
      * 
      * @param manifestMetadataSignaling
      *        To add an InbandEventStream element in your output MPD manifest for each type of event message, set
@@ -543,8 +534,8 @@ public class MpdSettings implements Serializable, Cloneable, StructuredPojo {
      *        will be same value that you specify for ID3 metadata scheme ID URI. For SCTE35 event messages, the
      *        InbandEventStream element schemeIdUri will be "urn:scte:scte35:2013:bin". To leave these elements out of
      *        your output MPD manifest, set Manifest metadata signaling to Disabled. To enable Manifest metadata
-     *        signaling, you must also set SCTE-35 source to Passthrough, ESAM SCTE-35 to insert, or ID3 metadata
-     *        (TimedMetadata) to Passthrough.
+     *        signaling, you must also set SCTE-35 source to Passthrough, ESAM SCTE-35 to insert, or ID3 metadata to
+     *        Passthrough.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MpdManifestMetadataSignaling
      */
@@ -557,12 +548,12 @@ public class MpdSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * Use this setting only when you specify SCTE-35 markers from ESAM. Choose INSERT to put SCTE-35 markers in this
      * output at the insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC
-     * XML (sccXml).
+     * XML.
      * 
      * @param scte35Esam
      *        Use this setting only when you specify SCTE-35 markers from ESAM. Choose INSERT to put SCTE-35 markers in
      *        this output at the insertion points that you specify in an ESAM XML document. Provide the document in the
-     *        setting SCC XML (sccXml).
+     *        setting SCC XML.
      * @see MpdScte35Esam
      */
 
@@ -573,11 +564,11 @@ public class MpdSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * Use this setting only when you specify SCTE-35 markers from ESAM. Choose INSERT to put SCTE-35 markers in this
      * output at the insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC
-     * XML (sccXml).
+     * XML.
      * 
      * @return Use this setting only when you specify SCTE-35 markers from ESAM. Choose INSERT to put SCTE-35 markers in
      *         this output at the insertion points that you specify in an ESAM XML document. Provide the document in the
-     *         setting SCC XML (sccXml).
+     *         setting SCC XML.
      * @see MpdScte35Esam
      */
 
@@ -588,12 +579,12 @@ public class MpdSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * Use this setting only when you specify SCTE-35 markers from ESAM. Choose INSERT to put SCTE-35 markers in this
      * output at the insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC
-     * XML (sccXml).
+     * XML.
      * 
      * @param scte35Esam
      *        Use this setting only when you specify SCTE-35 markers from ESAM. Choose INSERT to put SCTE-35 markers in
      *        this output at the insertion points that you specify in an ESAM XML document. Provide the document in the
-     *        setting SCC XML (sccXml).
+     *        setting SCC XML.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MpdScte35Esam
      */
@@ -606,12 +597,12 @@ public class MpdSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * Use this setting only when you specify SCTE-35 markers from ESAM. Choose INSERT to put SCTE-35 markers in this
      * output at the insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC
-     * XML (sccXml).
+     * XML.
      * 
      * @param scte35Esam
      *        Use this setting only when you specify SCTE-35 markers from ESAM. Choose INSERT to put SCTE-35 markers in
      *        this output at the insertion points that you specify in an ESAM XML document. Provide the document in the
-     *        setting SCC XML (sccXml).
+     *        setting SCC XML.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MpdScte35Esam
      */
@@ -622,14 +613,14 @@ public class MpdSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough (PASSTHROUGH) if
-     * you want SCTE-35 markers that appear in your input to also appear in this output. Choose None (NONE) if you don't
-     * want those SCTE-35 markers in this output.
+     * Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough if you want
+     * SCTE-35 markers that appear in your input to also appear in this output. Choose None if you don't want those
+     * SCTE-35 markers in this output.
      * 
      * @param scte35Source
-     *        Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough
-     *        (PASSTHROUGH) if you want SCTE-35 markers that appear in your input to also appear in this output. Choose
-     *        None (NONE) if you don't want those SCTE-35 markers in this output.
+     *        Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough if you
+     *        want SCTE-35 markers that appear in your input to also appear in this output. Choose None if you don't
+     *        want those SCTE-35 markers in this output.
      * @see MpdScte35Source
      */
 
@@ -638,13 +629,13 @@ public class MpdSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough (PASSTHROUGH) if
-     * you want SCTE-35 markers that appear in your input to also appear in this output. Choose None (NONE) if you don't
-     * want those SCTE-35 markers in this output.
+     * Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough if you want
+     * SCTE-35 markers that appear in your input to also appear in this output. Choose None if you don't want those
+     * SCTE-35 markers in this output.
      * 
-     * @return Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough
-     *         (PASSTHROUGH) if you want SCTE-35 markers that appear in your input to also appear in this output. Choose
-     *         None (NONE) if you don't want those SCTE-35 markers in this output.
+     * @return Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough if you
+     *         want SCTE-35 markers that appear in your input to also appear in this output. Choose None if you don't
+     *         want those SCTE-35 markers in this output.
      * @see MpdScte35Source
      */
 
@@ -653,14 +644,14 @@ public class MpdSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough (PASSTHROUGH) if
-     * you want SCTE-35 markers that appear in your input to also appear in this output. Choose None (NONE) if you don't
-     * want those SCTE-35 markers in this output.
+     * Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough if you want
+     * SCTE-35 markers that appear in your input to also appear in this output. Choose None if you don't want those
+     * SCTE-35 markers in this output.
      * 
      * @param scte35Source
-     *        Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough
-     *        (PASSTHROUGH) if you want SCTE-35 markers that appear in your input to also appear in this output. Choose
-     *        None (NONE) if you don't want those SCTE-35 markers in this output.
+     *        Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough if you
+     *        want SCTE-35 markers that appear in your input to also appear in this output. Choose None if you don't
+     *        want those SCTE-35 markers in this output.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MpdScte35Source
      */
@@ -671,14 +662,14 @@ public class MpdSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough (PASSTHROUGH) if
-     * you want SCTE-35 markers that appear in your input to also appear in this output. Choose None (NONE) if you don't
-     * want those SCTE-35 markers in this output.
+     * Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough if you want
+     * SCTE-35 markers that appear in your input to also appear in this output. Choose None if you don't want those
+     * SCTE-35 markers in this output.
      * 
      * @param scte35Source
-     *        Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough
-     *        (PASSTHROUGH) if you want SCTE-35 markers that appear in your input to also appear in this output. Choose
-     *        None (NONE) if you don't want those SCTE-35 markers in this output.
+     *        Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough if you
+     *        want SCTE-35 markers that appear in your input to also appear in this output. Choose None if you don't
+     *        want those SCTE-35 markers in this output.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MpdScte35Source
      */
@@ -689,16 +680,14 @@ public class MpdSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * To include ID3 metadata in this output: Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH). Specify
-     * this ID3 metadata in Custom ID3 metadata inserter (timedMetadataInsertion). MediaConvert writes each instance of
-     * ID3 metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata: Set ID3 metadata to None (NONE)
-     * or leave blank.
+     * To include ID3 metadata in this output: Set ID3 metadata to Passthrough. Specify this ID3 metadata in Custom ID3
+     * metadata inserter. MediaConvert writes each instance of ID3 metadata in a separate Event Message (eMSG) box. To
+     * exclude this ID3 metadata: Set ID3 metadata to None or leave blank.
      * 
      * @param timedMetadata
-     *        To include ID3 metadata in this output: Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH).
-     *        Specify this ID3 metadata in Custom ID3 metadata inserter (timedMetadataInsertion). MediaConvert writes
-     *        each instance of ID3 metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata: Set
-     *        ID3 metadata to None (NONE) or leave blank.
+     *        To include ID3 metadata in this output: Set ID3 metadata to Passthrough. Specify this ID3 metadata in
+     *        Custom ID3 metadata inserter. MediaConvert writes each instance of ID3 metadata in a separate Event
+     *        Message (eMSG) box. To exclude this ID3 metadata: Set ID3 metadata to None or leave blank.
      * @see MpdTimedMetadata
      */
 
@@ -707,15 +696,13 @@ public class MpdSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * To include ID3 metadata in this output: Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH). Specify
-     * this ID3 metadata in Custom ID3 metadata inserter (timedMetadataInsertion). MediaConvert writes each instance of
-     * ID3 metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata: Set ID3 metadata to None (NONE)
-     * or leave blank.
+     * To include ID3 metadata in this output: Set ID3 metadata to Passthrough. Specify this ID3 metadata in Custom ID3
+     * metadata inserter. MediaConvert writes each instance of ID3 metadata in a separate Event Message (eMSG) box. To
+     * exclude this ID3 metadata: Set ID3 metadata to None or leave blank.
      * 
-     * @return To include ID3 metadata in this output: Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH).
-     *         Specify this ID3 metadata in Custom ID3 metadata inserter (timedMetadataInsertion). MediaConvert writes
-     *         each instance of ID3 metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata: Set
-     *         ID3 metadata to None (NONE) or leave blank.
+     * @return To include ID3 metadata in this output: Set ID3 metadata to Passthrough. Specify this ID3 metadata in
+     *         Custom ID3 metadata inserter. MediaConvert writes each instance of ID3 metadata in a separate Event
+     *         Message (eMSG) box. To exclude this ID3 metadata: Set ID3 metadata to None or leave blank.
      * @see MpdTimedMetadata
      */
 
@@ -724,16 +711,14 @@ public class MpdSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * To include ID3 metadata in this output: Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH). Specify
-     * this ID3 metadata in Custom ID3 metadata inserter (timedMetadataInsertion). MediaConvert writes each instance of
-     * ID3 metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata: Set ID3 metadata to None (NONE)
-     * or leave blank.
+     * To include ID3 metadata in this output: Set ID3 metadata to Passthrough. Specify this ID3 metadata in Custom ID3
+     * metadata inserter. MediaConvert writes each instance of ID3 metadata in a separate Event Message (eMSG) box. To
+     * exclude this ID3 metadata: Set ID3 metadata to None or leave blank.
      * 
      * @param timedMetadata
-     *        To include ID3 metadata in this output: Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH).
-     *        Specify this ID3 metadata in Custom ID3 metadata inserter (timedMetadataInsertion). MediaConvert writes
-     *        each instance of ID3 metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata: Set
-     *        ID3 metadata to None (NONE) or leave blank.
+     *        To include ID3 metadata in this output: Set ID3 metadata to Passthrough. Specify this ID3 metadata in
+     *        Custom ID3 metadata inserter. MediaConvert writes each instance of ID3 metadata in a separate Event
+     *        Message (eMSG) box. To exclude this ID3 metadata: Set ID3 metadata to None or leave blank.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MpdTimedMetadata
      */
@@ -744,16 +729,14 @@ public class MpdSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * To include ID3 metadata in this output: Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH). Specify
-     * this ID3 metadata in Custom ID3 metadata inserter (timedMetadataInsertion). MediaConvert writes each instance of
-     * ID3 metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata: Set ID3 metadata to None (NONE)
-     * or leave blank.
+     * To include ID3 metadata in this output: Set ID3 metadata to Passthrough. Specify this ID3 metadata in Custom ID3
+     * metadata inserter. MediaConvert writes each instance of ID3 metadata in a separate Event Message (eMSG) box. To
+     * exclude this ID3 metadata: Set ID3 metadata to None or leave blank.
      * 
      * @param timedMetadata
-     *        To include ID3 metadata in this output: Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH).
-     *        Specify this ID3 metadata in Custom ID3 metadata inserter (timedMetadataInsertion). MediaConvert writes
-     *        each instance of ID3 metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata: Set
-     *        ID3 metadata to None (NONE) or leave blank.
+     *        To include ID3 metadata in this output: Set ID3 metadata to Passthrough. Specify this ID3 metadata in
+     *        Custom ID3 metadata inserter. MediaConvert writes each instance of ID3 metadata in a separate Event
+     *        Message (eMSG) box. To exclude this ID3 metadata: Set ID3 metadata to None or leave blank.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MpdTimedMetadata
      */
@@ -766,12 +749,12 @@ public class MpdSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * Specify the event message box (eMSG) version for ID3 timed metadata in your output. For more information, see
      * ISO/IEC 23009-1:2022 section 5.10.3.3.3 Syntax. Leave blank to use the default value Version 0. When you specify
-     * Version 1, you must also set ID3 metadata (timedMetadata) to Passthrough.
+     * Version 1, you must also set ID3 metadata to Passthrough.
      * 
      * @param timedMetadataBoxVersion
      *        Specify the event message box (eMSG) version for ID3 timed metadata in your output. For more information,
      *        see ISO/IEC 23009-1:2022 section 5.10.3.3.3 Syntax. Leave blank to use the default value Version 0. When
-     *        you specify Version 1, you must also set ID3 metadata (timedMetadata) to Passthrough.
+     *        you specify Version 1, you must also set ID3 metadata to Passthrough.
      * @see MpdTimedMetadataBoxVersion
      */
 
@@ -782,11 +765,11 @@ public class MpdSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * Specify the event message box (eMSG) version for ID3 timed metadata in your output. For more information, see
      * ISO/IEC 23009-1:2022 section 5.10.3.3.3 Syntax. Leave blank to use the default value Version 0. When you specify
-     * Version 1, you must also set ID3 metadata (timedMetadata) to Passthrough.
+     * Version 1, you must also set ID3 metadata to Passthrough.
      * 
      * @return Specify the event message box (eMSG) version for ID3 timed metadata in your output. For more information,
      *         see ISO/IEC 23009-1:2022 section 5.10.3.3.3 Syntax. Leave blank to use the default value Version 0. When
-     *         you specify Version 1, you must also set ID3 metadata (timedMetadata) to Passthrough.
+     *         you specify Version 1, you must also set ID3 metadata to Passthrough.
      * @see MpdTimedMetadataBoxVersion
      */
 
@@ -797,12 +780,12 @@ public class MpdSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * Specify the event message box (eMSG) version for ID3 timed metadata in your output. For more information, see
      * ISO/IEC 23009-1:2022 section 5.10.3.3.3 Syntax. Leave blank to use the default value Version 0. When you specify
-     * Version 1, you must also set ID3 metadata (timedMetadata) to Passthrough.
+     * Version 1, you must also set ID3 metadata to Passthrough.
      * 
      * @param timedMetadataBoxVersion
      *        Specify the event message box (eMSG) version for ID3 timed metadata in your output. For more information,
      *        see ISO/IEC 23009-1:2022 section 5.10.3.3.3 Syntax. Leave blank to use the default value Version 0. When
-     *        you specify Version 1, you must also set ID3 metadata (timedMetadata) to Passthrough.
+     *        you specify Version 1, you must also set ID3 metadata to Passthrough.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MpdTimedMetadataBoxVersion
      */
@@ -815,12 +798,12 @@ public class MpdSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * Specify the event message box (eMSG) version for ID3 timed metadata in your output. For more information, see
      * ISO/IEC 23009-1:2022 section 5.10.3.3.3 Syntax. Leave blank to use the default value Version 0. When you specify
-     * Version 1, you must also set ID3 metadata (timedMetadata) to Passthrough.
+     * Version 1, you must also set ID3 metadata to Passthrough.
      * 
      * @param timedMetadataBoxVersion
      *        Specify the event message box (eMSG) version for ID3 timed metadata in your output. For more information,
      *        see ISO/IEC 23009-1:2022 section 5.10.3.3.3 Syntax. Leave blank to use the default value Version 0. When
-     *        you specify Version 1, you must also set ID3 metadata (timedMetadata) to Passthrough.
+     *        you specify Version 1, you must also set ID3 metadata to Passthrough.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MpdTimedMetadataBoxVersion
      */
@@ -831,16 +814,16 @@ public class MpdSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify the event message box (eMSG) scheme ID URI (scheme_id_uri) for ID3 timed metadata in your output. For
-     * more information, see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. Leave blank to use the default value:
+     * Specify the event message box (eMSG) scheme ID URI for ID3 timed metadata in your output. For more information,
+     * see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. Leave blank to use the default value:
      * https://aomedia.org/emsg/ID3 When you specify a value for ID3 metadata scheme ID URI, you must also set ID3
-     * metadata (timedMetadata) to Passthrough.
+     * metadata to Passthrough.
      * 
      * @param timedMetadataSchemeIdUri
-     *        Specify the event message box (eMSG) scheme ID URI (scheme_id_uri) for ID3 timed metadata in your output.
-     *        For more information, see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. Leave blank to use the
-     *        default value: https://aomedia.org/emsg/ID3 When you specify a value for ID3 metadata scheme ID URI, you
-     *        must also set ID3 metadata (timedMetadata) to Passthrough.
+     *        Specify the event message box (eMSG) scheme ID URI for ID3 timed metadata in your output. For more
+     *        information, see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. Leave blank to use the default value:
+     *        https://aomedia.org/emsg/ID3 When you specify a value for ID3 metadata scheme ID URI, you must also set
+     *        ID3 metadata to Passthrough.
      */
 
     public void setTimedMetadataSchemeIdUri(String timedMetadataSchemeIdUri) {
@@ -848,15 +831,15 @@ public class MpdSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify the event message box (eMSG) scheme ID URI (scheme_id_uri) for ID3 timed metadata in your output. For
-     * more information, see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. Leave blank to use the default value:
+     * Specify the event message box (eMSG) scheme ID URI for ID3 timed metadata in your output. For more information,
+     * see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. Leave blank to use the default value:
      * https://aomedia.org/emsg/ID3 When you specify a value for ID3 metadata scheme ID URI, you must also set ID3
-     * metadata (timedMetadata) to Passthrough.
+     * metadata to Passthrough.
      * 
-     * @return Specify the event message box (eMSG) scheme ID URI (scheme_id_uri) for ID3 timed metadata in your output.
-     *         For more information, see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. Leave blank to use the
-     *         default value: https://aomedia.org/emsg/ID3 When you specify a value for ID3 metadata scheme ID URI, you
-     *         must also set ID3 metadata (timedMetadata) to Passthrough.
+     * @return Specify the event message box (eMSG) scheme ID URI for ID3 timed metadata in your output. For more
+     *         information, see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. Leave blank to use the default value:
+     *         https://aomedia.org/emsg/ID3 When you specify a value for ID3 metadata scheme ID URI, you must also set
+     *         ID3 metadata to Passthrough.
      */
 
     public String getTimedMetadataSchemeIdUri() {
@@ -864,16 +847,16 @@ public class MpdSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify the event message box (eMSG) scheme ID URI (scheme_id_uri) for ID3 timed metadata in your output. For
-     * more information, see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. Leave blank to use the default value:
+     * Specify the event message box (eMSG) scheme ID URI for ID3 timed metadata in your output. For more information,
+     * see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. Leave blank to use the default value:
      * https://aomedia.org/emsg/ID3 When you specify a value for ID3 metadata scheme ID URI, you must also set ID3
-     * metadata (timedMetadata) to Passthrough.
+     * metadata to Passthrough.
      * 
      * @param timedMetadataSchemeIdUri
-     *        Specify the event message box (eMSG) scheme ID URI (scheme_id_uri) for ID3 timed metadata in your output.
-     *        For more information, see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. Leave blank to use the
-     *        default value: https://aomedia.org/emsg/ID3 When you specify a value for ID3 metadata scheme ID URI, you
-     *        must also set ID3 metadata (timedMetadata) to Passthrough.
+     *        Specify the event message box (eMSG) scheme ID URI for ID3 timed metadata in your output. For more
+     *        information, see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. Leave blank to use the default value:
+     *        https://aomedia.org/emsg/ID3 When you specify a value for ID3 metadata scheme ID URI, you must also set
+     *        ID3 metadata to Passthrough.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -885,12 +868,12 @@ public class MpdSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * Specify the event message box (eMSG) value for ID3 timed metadata in your output. For more information, see
      * ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. When you specify a value for ID3 Metadata Value, you must also
-     * set ID3 metadata (timedMetadata) to Passthrough.
+     * set ID3 metadata to Passthrough.
      * 
      * @param timedMetadataValue
      *        Specify the event message box (eMSG) value for ID3 timed metadata in your output. For more information,
      *        see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. When you specify a value for ID3 Metadata Value,
-     *        you must also set ID3 metadata (timedMetadata) to Passthrough.
+     *        you must also set ID3 metadata to Passthrough.
      */
 
     public void setTimedMetadataValue(String timedMetadataValue) {
@@ -900,11 +883,11 @@ public class MpdSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * Specify the event message box (eMSG) value for ID3 timed metadata in your output. For more information, see
      * ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. When you specify a value for ID3 Metadata Value, you must also
-     * set ID3 metadata (timedMetadata) to Passthrough.
+     * set ID3 metadata to Passthrough.
      * 
      * @return Specify the event message box (eMSG) value for ID3 timed metadata in your output. For more information,
      *         see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. When you specify a value for ID3 Metadata Value,
-     *         you must also set ID3 metadata (timedMetadata) to Passthrough.
+     *         you must also set ID3 metadata to Passthrough.
      */
 
     public String getTimedMetadataValue() {
@@ -914,12 +897,12 @@ public class MpdSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * Specify the event message box (eMSG) value for ID3 timed metadata in your output. For more information, see
      * ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. When you specify a value for ID3 Metadata Value, you must also
-     * set ID3 metadata (timedMetadata) to Passthrough.
+     * set ID3 metadata to Passthrough.
      * 
      * @param timedMetadataValue
      *        Specify the event message box (eMSG) value for ID3 timed metadata in your output. For more information,
      *        see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. When you specify a value for ID3 Metadata Value,
-     *        you must also set ID3 metadata (timedMetadata) to Passthrough.
+     *        you must also set ID3 metadata to Passthrough.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

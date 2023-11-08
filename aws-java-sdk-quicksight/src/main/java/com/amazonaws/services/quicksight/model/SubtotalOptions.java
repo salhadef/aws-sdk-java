@@ -70,6 +70,12 @@ public class SubtotalOptions implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private TableCellStyle metricHeaderCellStyle;
+    /**
+     * <p>
+     * The style targets options for subtotals.
+     * </p>
+     */
+    private java.util.List<TableStyleTarget> styleTargets;
 
     /**
      * <p>
@@ -420,6 +426,76 @@ public class SubtotalOptions implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The style targets options for subtotals.
+     * </p>
+     * 
+     * @return The style targets options for subtotals.
+     */
+
+    public java.util.List<TableStyleTarget> getStyleTargets() {
+        return styleTargets;
+    }
+
+    /**
+     * <p>
+     * The style targets options for subtotals.
+     * </p>
+     * 
+     * @param styleTargets
+     *        The style targets options for subtotals.
+     */
+
+    public void setStyleTargets(java.util.Collection<TableStyleTarget> styleTargets) {
+        if (styleTargets == null) {
+            this.styleTargets = null;
+            return;
+        }
+
+        this.styleTargets = new java.util.ArrayList<TableStyleTarget>(styleTargets);
+    }
+
+    /**
+     * <p>
+     * The style targets options for subtotals.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setStyleTargets(java.util.Collection)} or {@link #withStyleTargets(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param styleTargets
+     *        The style targets options for subtotals.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SubtotalOptions withStyleTargets(TableStyleTarget... styleTargets) {
+        if (this.styleTargets == null) {
+            setStyleTargets(new java.util.ArrayList<TableStyleTarget>(styleTargets.length));
+        }
+        for (TableStyleTarget ele : styleTargets) {
+            this.styleTargets.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The style targets options for subtotals.
+     * </p>
+     * 
+     * @param styleTargets
+     *        The style targets options for subtotals.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SubtotalOptions withStyleTargets(java.util.Collection<TableStyleTarget> styleTargets) {
+        setStyleTargets(styleTargets);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -444,7 +520,9 @@ public class SubtotalOptions implements Serializable, Cloneable, StructuredPojo 
         if (getValueCellStyle() != null)
             sb.append("ValueCellStyle: ").append(getValueCellStyle()).append(",");
         if (getMetricHeaderCellStyle() != null)
-            sb.append("MetricHeaderCellStyle: ").append(getMetricHeaderCellStyle());
+            sb.append("MetricHeaderCellStyle: ").append(getMetricHeaderCellStyle()).append(",");
+        if (getStyleTargets() != null)
+            sb.append("StyleTargets: ").append(getStyleTargets());
         sb.append("}");
         return sb.toString();
     }
@@ -487,6 +565,10 @@ public class SubtotalOptions implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getMetricHeaderCellStyle() != null && other.getMetricHeaderCellStyle().equals(this.getMetricHeaderCellStyle()) == false)
             return false;
+        if (other.getStyleTargets() == null ^ this.getStyleTargets() == null)
+            return false;
+        if (other.getStyleTargets() != null && other.getStyleTargets().equals(this.getStyleTargets()) == false)
+            return false;
         return true;
     }
 
@@ -502,6 +584,7 @@ public class SubtotalOptions implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getTotalCellStyle() == null) ? 0 : getTotalCellStyle().hashCode());
         hashCode = prime * hashCode + ((getValueCellStyle() == null) ? 0 : getValueCellStyle().hashCode());
         hashCode = prime * hashCode + ((getMetricHeaderCellStyle() == null) ? 0 : getMetricHeaderCellStyle().hashCode());
+        hashCode = prime * hashCode + ((getStyleTargets() == null) ? 0 : getStyleTargets().hashCode());
         return hashCode;
     }
 

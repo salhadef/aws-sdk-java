@@ -27,12 +27,6 @@ public class GetWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The export format for the workflow.
-     * </p>
-     */
-    private java.util.List<String> export;
-    /**
-     * <p>
      * The workflow's ID.
      * </p>
      */
@@ -43,104 +37,12 @@ public class GetWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String type;
-
     /**
      * <p>
      * The export format for the workflow.
      * </p>
-     * 
-     * @return The export format for the workflow.
-     * @see WorkflowExport
      */
-
-    public java.util.List<String> getExport() {
-        return export;
-    }
-
-    /**
-     * <p>
-     * The export format for the workflow.
-     * </p>
-     * 
-     * @param export
-     *        The export format for the workflow.
-     * @see WorkflowExport
-     */
-
-    public void setExport(java.util.Collection<String> export) {
-        if (export == null) {
-            this.export = null;
-            return;
-        }
-
-        this.export = new java.util.ArrayList<String>(export);
-    }
-
-    /**
-     * <p>
-     * The export format for the workflow.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setExport(java.util.Collection)} or {@link #withExport(java.util.Collection)} if you want to override the
-     * existing values.
-     * </p>
-     * 
-     * @param export
-     *        The export format for the workflow.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see WorkflowExport
-     */
-
-    public GetWorkflowRequest withExport(String... export) {
-        if (this.export == null) {
-            setExport(new java.util.ArrayList<String>(export.length));
-        }
-        for (String ele : export) {
-            this.export.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * The export format for the workflow.
-     * </p>
-     * 
-     * @param export
-     *        The export format for the workflow.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see WorkflowExport
-     */
-
-    public GetWorkflowRequest withExport(java.util.Collection<String> export) {
-        setExport(export);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The export format for the workflow.
-     * </p>
-     * 
-     * @param export
-     *        The export format for the workflow.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see WorkflowExport
-     */
-
-    public GetWorkflowRequest withExport(WorkflowExport... export) {
-        java.util.ArrayList<String> exportCopy = new java.util.ArrayList<String>(export.length);
-        for (WorkflowExport value : export) {
-            exportCopy.add(value.toString());
-        }
-        if (getExport() == null) {
-            setExport(exportCopy);
-        } else {
-            getExport().addAll(exportCopy);
-        }
-        return this;
-    }
+    private java.util.List<String> export;
 
     /**
      * <p>
@@ -242,6 +144,104 @@ public class GetWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The export format for the workflow.
+     * </p>
+     * 
+     * @return The export format for the workflow.
+     * @see WorkflowExport
+     */
+
+    public java.util.List<String> getExport() {
+        return export;
+    }
+
+    /**
+     * <p>
+     * The export format for the workflow.
+     * </p>
+     * 
+     * @param export
+     *        The export format for the workflow.
+     * @see WorkflowExport
+     */
+
+    public void setExport(java.util.Collection<String> export) {
+        if (export == null) {
+            this.export = null;
+            return;
+        }
+
+        this.export = new java.util.ArrayList<String>(export);
+    }
+
+    /**
+     * <p>
+     * The export format for the workflow.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setExport(java.util.Collection)} or {@link #withExport(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param export
+     *        The export format for the workflow.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WorkflowExport
+     */
+
+    public GetWorkflowRequest withExport(String... export) {
+        if (this.export == null) {
+            setExport(new java.util.ArrayList<String>(export.length));
+        }
+        for (String ele : export) {
+            this.export.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The export format for the workflow.
+     * </p>
+     * 
+     * @param export
+     *        The export format for the workflow.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WorkflowExport
+     */
+
+    public GetWorkflowRequest withExport(java.util.Collection<String> export) {
+        setExport(export);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The export format for the workflow.
+     * </p>
+     * 
+     * @param export
+     *        The export format for the workflow.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WorkflowExport
+     */
+
+    public GetWorkflowRequest withExport(WorkflowExport... export) {
+        java.util.ArrayList<String> exportCopy = new java.util.ArrayList<String>(export.length);
+        for (WorkflowExport value : export) {
+            exportCopy.add(value.toString());
+        }
+        if (getExport() == null) {
+            setExport(exportCopy);
+        } else {
+            getExport().addAll(exportCopy);
+        }
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -253,12 +253,12 @@ public class GetWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest im
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getExport() != null)
-            sb.append("Export: ").append(getExport()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
         if (getType() != null)
-            sb.append("Type: ").append(getType());
+            sb.append("Type: ").append(getType()).append(",");
+        if (getExport() != null)
+            sb.append("Export: ").append(getExport());
         sb.append("}");
         return sb.toString();
     }
@@ -273,10 +273,6 @@ public class GetWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (obj instanceof GetWorkflowRequest == false)
             return false;
         GetWorkflowRequest other = (GetWorkflowRequest) obj;
-        if (other.getExport() == null ^ this.getExport() == null)
-            return false;
-        if (other.getExport() != null && other.getExport().equals(this.getExport()) == false)
-            return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
@@ -284,6 +280,10 @@ public class GetWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (other.getType() == null ^ this.getType() == null)
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
+        if (other.getExport() == null ^ this.getExport() == null)
+            return false;
+        if (other.getExport() != null && other.getExport().equals(this.getExport()) == false)
             return false;
         return true;
     }
@@ -293,9 +293,9 @@ public class GetWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest im
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getExport() == null) ? 0 : getExport().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getExport() == null) ? 0 : getExport().hashCode());
         return hashCode;
     }
 

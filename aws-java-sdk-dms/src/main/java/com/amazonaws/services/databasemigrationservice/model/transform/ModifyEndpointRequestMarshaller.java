@@ -93,6 +93,8 @@ public class ModifyEndpointRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExactSettings").build();
     private static final MarshallingInfo<StructuredPojo> GCPMYSQLSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GcpMySQLSettings").build();
+    private static final MarshallingInfo<StructuredPojo> TIMESTREAMSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TimestreamSettings").build();
 
     private static final ModifyEndpointRequestMarshaller instance = new ModifyEndpointRequestMarshaller();
 
@@ -143,6 +145,7 @@ public class ModifyEndpointRequestMarshaller {
             protocolMarshaller.marshall(modifyEndpointRequest.getRedisSettings(), REDISSETTINGS_BINDING);
             protocolMarshaller.marshall(modifyEndpointRequest.getExactSettings(), EXACTSETTINGS_BINDING);
             protocolMarshaller.marshall(modifyEndpointRequest.getGcpMySQLSettings(), GCPMYSQLSETTINGS_BINDING);
+            protocolMarshaller.marshall(modifyEndpointRequest.getTimestreamSettings(), TIMESTREAMSETTINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -27,7 +27,8 @@ public enum ContactInitiationMethod {
     CALLBACK("CALLBACK"),
     API("API"),
     DISCONNECT("DISCONNECT"),
-    MONITOR("MONITOR");
+    MONITOR("MONITOR"),
+    EXTERNAL_OUTBOUND("EXTERNAL_OUTBOUND");
 
     private String value;
 

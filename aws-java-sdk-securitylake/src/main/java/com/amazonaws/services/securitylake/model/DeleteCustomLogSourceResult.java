@@ -24,53 +24,6 @@ import javax.annotation.Generated;
 public class DeleteCustomLogSourceResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
-     * <p>
-     * The location of the partition in the Amazon S3 bucket for Security Lake.
-     * </p>
-     */
-    private String customDataLocation;
-
-    /**
-     * <p>
-     * The location of the partition in the Amazon S3 bucket for Security Lake.
-     * </p>
-     * 
-     * @param customDataLocation
-     *        The location of the partition in the Amazon S3 bucket for Security Lake.
-     */
-
-    public void setCustomDataLocation(String customDataLocation) {
-        this.customDataLocation = customDataLocation;
-    }
-
-    /**
-     * <p>
-     * The location of the partition in the Amazon S3 bucket for Security Lake.
-     * </p>
-     * 
-     * @return The location of the partition in the Amazon S3 bucket for Security Lake.
-     */
-
-    public String getCustomDataLocation() {
-        return this.customDataLocation;
-    }
-
-    /**
-     * <p>
-     * The location of the partition in the Amazon S3 bucket for Security Lake.
-     * </p>
-     * 
-     * @param customDataLocation
-     *        The location of the partition in the Amazon S3 bucket for Security Lake.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DeleteCustomLogSourceResult withCustomDataLocation(String customDataLocation) {
-        setCustomDataLocation(customDataLocation);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -82,8 +35,6 @@ public class DeleteCustomLogSourceResult extends com.amazonaws.AmazonWebServiceR
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getCustomDataLocation() != null)
-            sb.append("CustomDataLocation: ").append(getCustomDataLocation());
         sb.append("}");
         return sb.toString();
     }
@@ -98,10 +49,6 @@ public class DeleteCustomLogSourceResult extends com.amazonaws.AmazonWebServiceR
         if (obj instanceof DeleteCustomLogSourceResult == false)
             return false;
         DeleteCustomLogSourceResult other = (DeleteCustomLogSourceResult) obj;
-        if (other.getCustomDataLocation() == null ^ this.getCustomDataLocation() == null)
-            return false;
-        if (other.getCustomDataLocation() != null && other.getCustomDataLocation().equals(this.getCustomDataLocation()) == false)
-            return false;
         return true;
     }
 
@@ -110,7 +57,6 @@ public class DeleteCustomLogSourceResult extends com.amazonaws.AmazonWebServiceR
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getCustomDataLocation() == null) ? 0 : getCustomDataLocation().hashCode());
         return hashCode;
     }
 

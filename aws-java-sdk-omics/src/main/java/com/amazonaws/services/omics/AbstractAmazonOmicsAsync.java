@@ -28,6 +28,32 @@ public class AbstractAmazonOmicsAsync extends AbstractAmazonOmics implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<AbortMultipartReadSetUploadResult> abortMultipartReadSetUploadAsync(AbortMultipartReadSetUploadRequest request) {
+
+        return abortMultipartReadSetUploadAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AbortMultipartReadSetUploadResult> abortMultipartReadSetUploadAsync(AbortMultipartReadSetUploadRequest request,
+            com.amazonaws.handlers.AsyncHandler<AbortMultipartReadSetUploadRequest, AbortMultipartReadSetUploadResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<AcceptShareResult> acceptShareAsync(AcceptShareRequest request) {
+
+        return acceptShareAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AcceptShareResult> acceptShareAsync(AcceptShareRequest request,
+            com.amazonaws.handlers.AsyncHandler<AcceptShareRequest, AcceptShareResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchDeleteReadSetResult> batchDeleteReadSetAsync(BatchDeleteReadSetRequest request) {
 
         return batchDeleteReadSetAsync(request, null);
@@ -80,6 +106,19 @@ public class AbstractAmazonOmicsAsync extends AbstractAmazonOmics implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<CompleteMultipartReadSetUploadResult> completeMultipartReadSetUploadAsync(CompleteMultipartReadSetUploadRequest request) {
+
+        return completeMultipartReadSetUploadAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CompleteMultipartReadSetUploadResult> completeMultipartReadSetUploadAsync(CompleteMultipartReadSetUploadRequest request,
+            com.amazonaws.handlers.AsyncHandler<CompleteMultipartReadSetUploadRequest, CompleteMultipartReadSetUploadResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateAnnotationStoreResult> createAnnotationStoreAsync(CreateAnnotationStoreRequest request) {
 
         return createAnnotationStoreAsync(request, null);
@@ -88,6 +127,32 @@ public class AbstractAmazonOmicsAsync extends AbstractAmazonOmics implements Ama
     @Override
     public java.util.concurrent.Future<CreateAnnotationStoreResult> createAnnotationStoreAsync(CreateAnnotationStoreRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateAnnotationStoreRequest, CreateAnnotationStoreResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAnnotationStoreVersionResult> createAnnotationStoreVersionAsync(CreateAnnotationStoreVersionRequest request) {
+
+        return createAnnotationStoreVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAnnotationStoreVersionResult> createAnnotationStoreVersionAsync(CreateAnnotationStoreVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateAnnotationStoreVersionRequest, CreateAnnotationStoreVersionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMultipartReadSetUploadResult> createMultipartReadSetUploadAsync(CreateMultipartReadSetUploadRequest request) {
+
+        return createMultipartReadSetUploadAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMultipartReadSetUploadResult> createMultipartReadSetUploadAsync(CreateMultipartReadSetUploadRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateMultipartReadSetUploadRequest, CreateMultipartReadSetUploadResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -132,6 +197,19 @@ public class AbstractAmazonOmicsAsync extends AbstractAmazonOmics implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<CreateShareResult> createShareAsync(CreateShareRequest request) {
+
+        return createShareAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateShareResult> createShareAsync(CreateShareRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateShareRequest, CreateShareResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateVariantStoreResult> createVariantStoreAsync(CreateVariantStoreRequest request) {
 
         return createVariantStoreAsync(request, null);
@@ -166,6 +244,19 @@ public class AbstractAmazonOmicsAsync extends AbstractAmazonOmics implements Ama
     @Override
     public java.util.concurrent.Future<DeleteAnnotationStoreResult> deleteAnnotationStoreAsync(DeleteAnnotationStoreRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteAnnotationStoreRequest, DeleteAnnotationStoreResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAnnotationStoreVersionsResult> deleteAnnotationStoreVersionsAsync(DeleteAnnotationStoreVersionsRequest request) {
+
+        return deleteAnnotationStoreVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAnnotationStoreVersionsResult> deleteAnnotationStoreVersionsAsync(DeleteAnnotationStoreVersionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteAnnotationStoreVersionsRequest, DeleteAnnotationStoreVersionsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -236,6 +327,19 @@ public class AbstractAmazonOmicsAsync extends AbstractAmazonOmics implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteShareResult> deleteShareAsync(DeleteShareRequest request) {
+
+        return deleteShareAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteShareResult> deleteShareAsync(DeleteShareRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteShareRequest, DeleteShareResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteVariantStoreResult> deleteVariantStoreAsync(DeleteVariantStoreRequest request) {
 
         return deleteVariantStoreAsync(request, null);
@@ -283,6 +387,19 @@ public class AbstractAmazonOmicsAsync extends AbstractAmazonOmics implements Ama
     @Override
     public java.util.concurrent.Future<GetAnnotationStoreResult> getAnnotationStoreAsync(GetAnnotationStoreRequest request,
             com.amazonaws.handlers.AsyncHandler<GetAnnotationStoreRequest, GetAnnotationStoreResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAnnotationStoreVersionResult> getAnnotationStoreVersionAsync(GetAnnotationStoreVersionRequest request) {
+
+        return getAnnotationStoreVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAnnotationStoreVersionResult> getAnnotationStoreVersionAsync(GetAnnotationStoreVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetAnnotationStoreVersionRequest, GetAnnotationStoreVersionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -457,6 +574,19 @@ public class AbstractAmazonOmicsAsync extends AbstractAmazonOmics implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<GetShareResult> getShareAsync(GetShareRequest request) {
+
+        return getShareAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetShareResult> getShareAsync(GetShareRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetShareRequest, GetShareResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetVariantImportJobResult> getVariantImportJobAsync(GetVariantImportJobRequest request) {
 
         return getVariantImportJobAsync(request, null);
@@ -509,6 +639,19 @@ public class AbstractAmazonOmicsAsync extends AbstractAmazonOmics implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<ListAnnotationStoreVersionsResult> listAnnotationStoreVersionsAsync(ListAnnotationStoreVersionsRequest request) {
+
+        return listAnnotationStoreVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAnnotationStoreVersionsResult> listAnnotationStoreVersionsAsync(ListAnnotationStoreVersionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAnnotationStoreVersionsRequest, ListAnnotationStoreVersionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAnnotationStoresResult> listAnnotationStoresAsync(ListAnnotationStoresRequest request) {
 
         return listAnnotationStoresAsync(request, null);
@@ -517,6 +660,19 @@ public class AbstractAmazonOmicsAsync extends AbstractAmazonOmics implements Ama
     @Override
     public java.util.concurrent.Future<ListAnnotationStoresResult> listAnnotationStoresAsync(ListAnnotationStoresRequest request,
             com.amazonaws.handlers.AsyncHandler<ListAnnotationStoresRequest, ListAnnotationStoresResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMultipartReadSetUploadsResult> listMultipartReadSetUploadsAsync(ListMultipartReadSetUploadsRequest request) {
+
+        return listMultipartReadSetUploadsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMultipartReadSetUploadsResult> listMultipartReadSetUploadsAsync(ListMultipartReadSetUploadsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListMultipartReadSetUploadsRequest, ListMultipartReadSetUploadsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -556,6 +712,19 @@ public class AbstractAmazonOmicsAsync extends AbstractAmazonOmics implements Ama
     @Override
     public java.util.concurrent.Future<ListReadSetImportJobsResult> listReadSetImportJobsAsync(ListReadSetImportJobsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListReadSetImportJobsRequest, ListReadSetImportJobsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListReadSetUploadPartsResult> listReadSetUploadPartsAsync(ListReadSetUploadPartsRequest request) {
+
+        return listReadSetUploadPartsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListReadSetUploadPartsResult> listReadSetUploadPartsAsync(ListReadSetUploadPartsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListReadSetUploadPartsRequest, ListReadSetUploadPartsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -660,6 +829,19 @@ public class AbstractAmazonOmicsAsync extends AbstractAmazonOmics implements Ama
     @Override
     public java.util.concurrent.Future<ListSequenceStoresResult> listSequenceStoresAsync(ListSequenceStoresRequest request,
             com.amazonaws.handlers.AsyncHandler<ListSequenceStoresRequest, ListSequenceStoresResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSharesResult> listSharesAsync(ListSharesRequest request) {
+
+        return listSharesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSharesResult> listSharesAsync(ListSharesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListSharesRequest, ListSharesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -847,6 +1029,19 @@ public class AbstractAmazonOmicsAsync extends AbstractAmazonOmics implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateAnnotationStoreVersionResult> updateAnnotationStoreVersionAsync(UpdateAnnotationStoreVersionRequest request) {
+
+        return updateAnnotationStoreVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAnnotationStoreVersionResult> updateAnnotationStoreVersionAsync(UpdateAnnotationStoreVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateAnnotationStoreVersionRequest, UpdateAnnotationStoreVersionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateRunGroupResult> updateRunGroupAsync(UpdateRunGroupRequest request) {
 
         return updateRunGroupAsync(request, null);
@@ -881,6 +1076,19 @@ public class AbstractAmazonOmicsAsync extends AbstractAmazonOmics implements Ama
     @Override
     public java.util.concurrent.Future<UpdateWorkflowResult> updateWorkflowAsync(UpdateWorkflowRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateWorkflowRequest, UpdateWorkflowResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UploadReadSetPartResult> uploadReadSetPartAsync(UploadReadSetPartRequest request) {
+
+        return uploadReadSetPartAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UploadReadSetPartResult> uploadReadSetPartAsync(UploadReadSetPartRequest request,
+            com.amazonaws.handlers.AsyncHandler<UploadReadSetPartRequest, UploadReadSetPartResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

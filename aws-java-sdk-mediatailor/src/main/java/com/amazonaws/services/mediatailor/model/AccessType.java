@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum AccessType {
 
     S3_SIGV4("S3_SIGV4"),
-    SECRETS_MANAGER_ACCESS_TOKEN("SECRETS_MANAGER_ACCESS_TOKEN");
+    SECRETS_MANAGER_ACCESS_TOKEN("SECRETS_MANAGER_ACCESS_TOKEN"),
+    AUTODETECT_SIGV4("AUTODETECT_SIGV4");
 
     private String value;
 

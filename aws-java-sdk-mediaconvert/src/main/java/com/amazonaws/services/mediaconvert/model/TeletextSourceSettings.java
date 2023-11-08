@@ -27,19 +27,18 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class TeletextSourceSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * Use Page Number (PageNumber) to specify the three-digit hexadecimal page number that will be used for Teletext
-     * captions. Do not use this setting if you are passing through teletext from the input source to output.
+     * Use Page Number to specify the three-digit hexadecimal page number that will be used for Teletext captions. Do
+     * not use this setting if you are passing through teletext from the input source to output.
      */
     private String pageNumber;
 
     /**
-     * Use Page Number (PageNumber) to specify the three-digit hexadecimal page number that will be used for Teletext
-     * captions. Do not use this setting if you are passing through teletext from the input source to output.
+     * Use Page Number to specify the three-digit hexadecimal page number that will be used for Teletext captions. Do
+     * not use this setting if you are passing through teletext from the input source to output.
      * 
      * @param pageNumber
-     *        Use Page Number (PageNumber) to specify the three-digit hexadecimal page number that will be used for
-     *        Teletext captions. Do not use this setting if you are passing through teletext from the input source to
-     *        output.
+     *        Use Page Number to specify the three-digit hexadecimal page number that will be used for Teletext
+     *        captions. Do not use this setting if you are passing through teletext from the input source to output.
      */
 
     public void setPageNumber(String pageNumber) {
@@ -47,12 +46,11 @@ public class TeletextSourceSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Use Page Number (PageNumber) to specify the three-digit hexadecimal page number that will be used for Teletext
-     * captions. Do not use this setting if you are passing through teletext from the input source to output.
+     * Use Page Number to specify the three-digit hexadecimal page number that will be used for Teletext captions. Do
+     * not use this setting if you are passing through teletext from the input source to output.
      * 
-     * @return Use Page Number (PageNumber) to specify the three-digit hexadecimal page number that will be used for
-     *         Teletext captions. Do not use this setting if you are passing through teletext from the input source to
-     *         output.
+     * @return Use Page Number to specify the three-digit hexadecimal page number that will be used for Teletext
+     *         captions. Do not use this setting if you are passing through teletext from the input source to output.
      */
 
     public String getPageNumber() {
@@ -60,13 +58,12 @@ public class TeletextSourceSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Use Page Number (PageNumber) to specify the three-digit hexadecimal page number that will be used for Teletext
-     * captions. Do not use this setting if you are passing through teletext from the input source to output.
+     * Use Page Number to specify the three-digit hexadecimal page number that will be used for Teletext captions. Do
+     * not use this setting if you are passing through teletext from the input source to output.
      * 
      * @param pageNumber
-     *        Use Page Number (PageNumber) to specify the three-digit hexadecimal page number that will be used for
-     *        Teletext captions. Do not use this setting if you are passing through teletext from the input source to
-     *        output.
+     *        Use Page Number to specify the three-digit hexadecimal page number that will be used for Teletext
+     *        captions. Do not use this setting if you are passing through teletext from the input source to output.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

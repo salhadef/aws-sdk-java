@@ -91,9 +91,10 @@ public class GlobalCluster implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<GlobalClusterMember> globalClusterMembers;
     /**
      * <p>
-     * A data object containing all properties for the current state of an in-process or pending failover process for
-     * this Aurora global database. This object is empty unless the <a>FailoverGlobalCluster</a> API operation has been
-     * called on this Aurora global database (<a>GlobalCluster</a>).
+     * A data object containing all properties for the current state of an in-process or pending switchover or failover
+     * process for this global cluster (Aurora global database). This object is empty unless the
+     * <code>SwitchoverGlobalCluster</code> or <code>FailoverGlobalCluster</code> operation was called on this global
+     * cluster.
      * </p>
      */
     private FailoverState failoverState;
@@ -575,15 +576,17 @@ public class GlobalCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A data object containing all properties for the current state of an in-process or pending failover process for
-     * this Aurora global database. This object is empty unless the <a>FailoverGlobalCluster</a> API operation has been
-     * called on this Aurora global database (<a>GlobalCluster</a>).
+     * A data object containing all properties for the current state of an in-process or pending switchover or failover
+     * process for this global cluster (Aurora global database). This object is empty unless the
+     * <code>SwitchoverGlobalCluster</code> or <code>FailoverGlobalCluster</code> operation was called on this global
+     * cluster.
      * </p>
      * 
      * @param failoverState
-     *        A data object containing all properties for the current state of an in-process or pending failover process
-     *        for this Aurora global database. This object is empty unless the <a>FailoverGlobalCluster</a> API
-     *        operation has been called on this Aurora global database (<a>GlobalCluster</a>).
+     *        A data object containing all properties for the current state of an in-process or pending switchover or
+     *        failover process for this global cluster (Aurora global database). This object is empty unless the
+     *        <code>SwitchoverGlobalCluster</code> or <code>FailoverGlobalCluster</code> operation was called on this
+     *        global cluster.
      */
 
     public void setFailoverState(FailoverState failoverState) {
@@ -592,14 +595,16 @@ public class GlobalCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A data object containing all properties for the current state of an in-process or pending failover process for
-     * this Aurora global database. This object is empty unless the <a>FailoverGlobalCluster</a> API operation has been
-     * called on this Aurora global database (<a>GlobalCluster</a>).
+     * A data object containing all properties for the current state of an in-process or pending switchover or failover
+     * process for this global cluster (Aurora global database). This object is empty unless the
+     * <code>SwitchoverGlobalCluster</code> or <code>FailoverGlobalCluster</code> operation was called on this global
+     * cluster.
      * </p>
      * 
-     * @return A data object containing all properties for the current state of an in-process or pending failover
-     *         process for this Aurora global database. This object is empty unless the <a>FailoverGlobalCluster</a> API
-     *         operation has been called on this Aurora global database (<a>GlobalCluster</a>).
+     * @return A data object containing all properties for the current state of an in-process or pending switchover or
+     *         failover process for this global cluster (Aurora global database). This object is empty unless the
+     *         <code>SwitchoverGlobalCluster</code> or <code>FailoverGlobalCluster</code> operation was called on this
+     *         global cluster.
      */
 
     public FailoverState getFailoverState() {
@@ -608,15 +613,17 @@ public class GlobalCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A data object containing all properties for the current state of an in-process or pending failover process for
-     * this Aurora global database. This object is empty unless the <a>FailoverGlobalCluster</a> API operation has been
-     * called on this Aurora global database (<a>GlobalCluster</a>).
+     * A data object containing all properties for the current state of an in-process or pending switchover or failover
+     * process for this global cluster (Aurora global database). This object is empty unless the
+     * <code>SwitchoverGlobalCluster</code> or <code>FailoverGlobalCluster</code> operation was called on this global
+     * cluster.
      * </p>
      * 
      * @param failoverState
-     *        A data object containing all properties for the current state of an in-process or pending failover process
-     *        for this Aurora global database. This object is empty unless the <a>FailoverGlobalCluster</a> API
-     *        operation has been called on this Aurora global database (<a>GlobalCluster</a>).
+     *        A data object containing all properties for the current state of an in-process or pending switchover or
+     *        failover process for this global cluster (Aurora global database). This object is empty unless the
+     *        <code>SwitchoverGlobalCluster</code> or <code>FailoverGlobalCluster</code> operation was called on this
+     *        global cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -36,7 +36,7 @@ public class UpdateSecurityGroupRuleDescriptionsEgressRequest extends AmazonWebS
     /**
      * <p>
      * [Default VPC] The name of the security group. You must specify either the security group ID or the security group
-     * name in the request.
+     * name.
      * </p>
      */
     private String groupName;
@@ -103,12 +103,12 @@ public class UpdateSecurityGroupRuleDescriptionsEgressRequest extends AmazonWebS
     /**
      * <p>
      * [Default VPC] The name of the security group. You must specify either the security group ID or the security group
-     * name in the request.
+     * name.
      * </p>
      * 
      * @param groupName
      *        [Default VPC] The name of the security group. You must specify either the security group ID or the
-     *        security group name in the request.
+     *        security group name.
      */
 
     public void setGroupName(String groupName) {
@@ -118,11 +118,11 @@ public class UpdateSecurityGroupRuleDescriptionsEgressRequest extends AmazonWebS
     /**
      * <p>
      * [Default VPC] The name of the security group. You must specify either the security group ID or the security group
-     * name in the request.
+     * name.
      * </p>
      * 
      * @return [Default VPC] The name of the security group. You must specify either the security group ID or the
-     *         security group name in the request.
+     *         security group name.
      */
 
     public String getGroupName() {
@@ -132,12 +132,12 @@ public class UpdateSecurityGroupRuleDescriptionsEgressRequest extends AmazonWebS
     /**
      * <p>
      * [Default VPC] The name of the security group. You must specify either the security group ID or the security group
-     * name in the request.
+     * name.
      * </p>
      * 
      * @param groupName
      *        [Default VPC] The name of the security group. You must specify either the security group ID or the
-     *        security group name in the request.
+     *        security group name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

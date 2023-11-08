@@ -48,6 +48,12 @@ public class HlsPlaylistSettingsJsonUnmarshaller implements Unmarshaller<HlsPlay
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("AdMarkupType", targetDepth)) {
+                    context.nextToken();
+                    hlsPlaylistSettings.setAdMarkupType(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("ManifestWindowSeconds", targetDepth)) {
                     context.nextToken();
                     hlsPlaylistSettings.setManifestWindowSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));

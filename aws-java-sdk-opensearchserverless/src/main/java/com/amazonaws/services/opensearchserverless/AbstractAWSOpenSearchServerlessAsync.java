@@ -41,6 +41,34 @@ public class AbstractAWSOpenSearchServerlessAsync extends AbstractAWSOpenSearchS
     }
 
     @Override
+    public java.util.concurrent.Future<BatchGetEffectiveLifecyclePolicyResult> batchGetEffectiveLifecyclePolicyAsync(
+            BatchGetEffectiveLifecyclePolicyRequest request) {
+
+        return batchGetEffectiveLifecyclePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetEffectiveLifecyclePolicyResult> batchGetEffectiveLifecyclePolicyAsync(
+            BatchGetEffectiveLifecyclePolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchGetEffectiveLifecyclePolicyRequest, BatchGetEffectiveLifecyclePolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetLifecyclePolicyResult> batchGetLifecyclePolicyAsync(BatchGetLifecyclePolicyRequest request) {
+
+        return batchGetLifecyclePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetLifecyclePolicyResult> batchGetLifecyclePolicyAsync(BatchGetLifecyclePolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchGetLifecyclePolicyRequest, BatchGetLifecyclePolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchGetVpcEndpointResult> batchGetVpcEndpointAsync(BatchGetVpcEndpointRequest request) {
 
         return batchGetVpcEndpointAsync(request, null);
@@ -75,6 +103,19 @@ public class AbstractAWSOpenSearchServerlessAsync extends AbstractAWSOpenSearchS
     @Override
     public java.util.concurrent.Future<CreateCollectionResult> createCollectionAsync(CreateCollectionRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateCollectionRequest, CreateCollectionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLifecyclePolicyResult> createLifecyclePolicyAsync(CreateLifecyclePolicyRequest request) {
+
+        return createLifecyclePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLifecyclePolicyResult> createLifecyclePolicyAsync(CreateLifecyclePolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateLifecyclePolicyRequest, CreateLifecyclePolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -140,6 +181,19 @@ public class AbstractAWSOpenSearchServerlessAsync extends AbstractAWSOpenSearchS
     @Override
     public java.util.concurrent.Future<DeleteCollectionResult> deleteCollectionAsync(DeleteCollectionRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteCollectionRequest, DeleteCollectionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLifecyclePolicyResult> deleteLifecyclePolicyAsync(DeleteLifecyclePolicyRequest request) {
+
+        return deleteLifecyclePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLifecyclePolicyResult> deleteLifecyclePolicyAsync(DeleteLifecyclePolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteLifecyclePolicyRequest, DeleteLifecyclePolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -275,6 +329,19 @@ public class AbstractAWSOpenSearchServerlessAsync extends AbstractAWSOpenSearchS
     }
 
     @Override
+    public java.util.concurrent.Future<ListLifecyclePoliciesResult> listLifecyclePoliciesAsync(ListLifecyclePoliciesRequest request) {
+
+        return listLifecyclePoliciesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLifecyclePoliciesResult> listLifecyclePoliciesAsync(ListLifecyclePoliciesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListLifecyclePoliciesRequest, ListLifecyclePoliciesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListSecurityConfigsResult> listSecurityConfigsAsync(ListSecurityConfigsRequest request) {
 
         return listSecurityConfigsAsync(request, null);
@@ -387,6 +454,19 @@ public class AbstractAWSOpenSearchServerlessAsync extends AbstractAWSOpenSearchS
     @Override
     public java.util.concurrent.Future<UpdateCollectionResult> updateCollectionAsync(UpdateCollectionRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateCollectionRequest, UpdateCollectionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLifecyclePolicyResult> updateLifecyclePolicyAsync(UpdateLifecyclePolicyRequest request) {
+
+        return updateLifecyclePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLifecyclePolicyResult> updateLifecyclePolicyAsync(UpdateLifecyclePolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateLifecyclePolicyRequest, UpdateLifecyclePolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

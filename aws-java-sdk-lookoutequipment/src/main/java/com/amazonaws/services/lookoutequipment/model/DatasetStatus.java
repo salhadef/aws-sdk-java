@@ -22,7 +22,8 @@ public enum DatasetStatus {
 
     CREATED("CREATED"),
     INGESTION_IN_PROGRESS("INGESTION_IN_PROGRESS"),
-    ACTIVE("ACTIVE");
+    ACTIVE("ACTIVE"),
+    IMPORT_IN_PROGRESS("IMPORT_IN_PROGRESS");
 
     private String value;
 

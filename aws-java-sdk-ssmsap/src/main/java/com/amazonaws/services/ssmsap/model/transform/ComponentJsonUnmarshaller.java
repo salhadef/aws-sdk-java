@@ -52,6 +52,24 @@ public class ComponentJsonUnmarshaller implements Unmarshaller<Component, JsonUn
                     context.nextToken();
                     component.setComponentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Sid", targetDepth)) {
+                    context.nextToken();
+                    component.setSid(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("SystemNumber", targetDepth)) {
+                    context.nextToken();
+                    component.setSystemNumber(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ParentComponent", targetDepth)) {
+                    context.nextToken();
+                    component.setParentComponent(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ChildComponents", targetDepth)) {
+                    context.nextToken();
+                    component.setChildComponents(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("ApplicationId", targetDepth)) {
                     context.nextToken();
                     component.setApplicationId(context.getUnmarshaller(String.class).unmarshall(context));
@@ -63,6 +81,30 @@ public class ComponentJsonUnmarshaller implements Unmarshaller<Component, JsonUn
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
                     component.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("SapHostname", targetDepth)) {
+                    context.nextToken();
+                    component.setSapHostname(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("SapFeature", targetDepth)) {
+                    context.nextToken();
+                    component.setSapFeature(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("SapKernelVersion", targetDepth)) {
+                    context.nextToken();
+                    component.setSapKernelVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("HdbVersion", targetDepth)) {
+                    context.nextToken();
+                    component.setHdbVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Resilience", targetDepth)) {
+                    context.nextToken();
+                    component.setResilience(ResilienceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AssociatedHost", targetDepth)) {
+                    context.nextToken();
+                    component.setAssociatedHost(AssociatedHostJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Databases", targetDepth)) {
                     context.nextToken();
@@ -80,9 +122,17 @@ public class ComponentJsonUnmarshaller implements Unmarshaller<Component, JsonUn
                     context.nextToken();
                     component.setPrimaryHost(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DatabaseConnection", targetDepth)) {
+                    context.nextToken();
+                    component.setDatabaseConnection(DatabaseConnectionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("LastUpdated", targetDepth)) {
                     context.nextToken();
                     component.setLastUpdated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("Arn", targetDepth)) {
+                    context.nextToken();
+                    component.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

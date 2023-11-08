@@ -62,6 +62,12 @@ public class StackInstanceComprehensiveStatus implements Serializable, Cloneable
      * </li>
      * <li>
      * <p>
+     * <code>SKIPPED_SUSPENDED_ACCOUNT</code>: The operation in the specified account and Region has been skipped
+     * because the account was suspended at the time of the operation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>SUCCEEDED</code>: The operation in the specified account and Region completed successfully.
      * </p>
      * </li>
@@ -105,6 +111,12 @@ public class StackInstanceComprehensiveStatus implements Serializable, Cloneable
      * </li>
      * <li>
      * <p>
+     * <code>SKIPPED_SUSPENDED_ACCOUNT</code>: The operation in the specified account and Region has been skipped
+     * because the account was suspended at the time of the operation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>SUCCEEDED</code>: The operation in the specified account and Region completed successfully.
      * </p>
      * </li>
@@ -137,6 +149,11 @@ public class StackInstanceComprehensiveStatus implements Serializable, Cloneable
      *        </li> <li>
      *        <p>
      *        <code>RUNNING</code>: The operation in the specified account and Region is currently in progress.
+     *        </p>
+     *        </li> <li>
+     *        <p>
+     *        <code>SKIPPED_SUSPENDED_ACCOUNT</code>: The operation in the specified account and Region has been skipped
+     *        because the account was suspended at the time of the operation.
      *        </p>
      *        </li> <li>
      *        <p>
@@ -186,6 +203,12 @@ public class StackInstanceComprehensiveStatus implements Serializable, Cloneable
      * </li>
      * <li>
      * <p>
+     * <code>SKIPPED_SUSPENDED_ACCOUNT</code>: The operation in the specified account and Region has been skipped
+     * because the account was suspended at the time of the operation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>SUCCEEDED</code>: The operation in the specified account and Region completed successfully.
      * </p>
      * </li>
@@ -217,6 +240,11 @@ public class StackInstanceComprehensiveStatus implements Serializable, Cloneable
      *         </li> <li>
      *         <p>
      *         <code>RUNNING</code>: The operation in the specified account and Region is currently in progress.
+     *         </p>
+     *         </li> <li>
+     *         <p>
+     *         <code>SKIPPED_SUSPENDED_ACCOUNT</code>: The operation in the specified account and Region has been
+     *         skipped because the account was suspended at the time of the operation.
      *         </p>
      *         </li> <li>
      *         <p>
@@ -266,6 +294,12 @@ public class StackInstanceComprehensiveStatus implements Serializable, Cloneable
      * </li>
      * <li>
      * <p>
+     * <code>SKIPPED_SUSPENDED_ACCOUNT</code>: The operation in the specified account and Region has been skipped
+     * because the account was suspended at the time of the operation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>SUCCEEDED</code>: The operation in the specified account and Region completed successfully.
      * </p>
      * </li>
@@ -298,6 +332,11 @@ public class StackInstanceComprehensiveStatus implements Serializable, Cloneable
      *        </li> <li>
      *        <p>
      *        <code>RUNNING</code>: The operation in the specified account and Region is currently in progress.
+     *        </p>
+     *        </li> <li>
+     *        <p>
+     *        <code>SKIPPED_SUSPENDED_ACCOUNT</code>: The operation in the specified account and Region has been skipped
+     *        because the account was suspended at the time of the operation.
      *        </p>
      *        </li> <li>
      *        <p>
@@ -349,6 +388,12 @@ public class StackInstanceComprehensiveStatus implements Serializable, Cloneable
      * </li>
      * <li>
      * <p>
+     * <code>SKIPPED_SUSPENDED_ACCOUNT</code>: The operation in the specified account and Region has been skipped
+     * because the account was suspended at the time of the operation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>SUCCEEDED</code>: The operation in the specified account and Region completed successfully.
      * </p>
      * </li>
@@ -381,6 +426,11 @@ public class StackInstanceComprehensiveStatus implements Serializable, Cloneable
      *        </li> <li>
      *        <p>
      *        <code>RUNNING</code>: The operation in the specified account and Region is currently in progress.
+     *        </p>
+     *        </li> <li>
+     *        <p>
+     *        <code>SKIPPED_SUSPENDED_ACCOUNT</code>: The operation in the specified account and Region has been skipped
+     *        because the account was suspended at the time of the operation.
      *        </p>
      *        </li> <li>
      *        <p>

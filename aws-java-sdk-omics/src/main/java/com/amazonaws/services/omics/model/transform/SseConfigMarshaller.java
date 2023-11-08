@@ -27,10 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class SseConfigMarshaller {
 
-    private static final MarshallingInfo<String> KEYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("keyArn").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("type").build();
+    private static final MarshallingInfo<String> KEYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("keyArn").build();
 
     private static final SseConfigMarshaller instance = new SseConfigMarshaller();
 
@@ -48,8 +48,8 @@ public class SseConfigMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(sseConfig.getKeyArn(), KEYARN_BINDING);
             protocolMarshaller.marshall(sseConfig.getType(), TYPE_BINDING);
+            protocolMarshaller.marshall(sseConfig.getKeyArn(), KEYARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

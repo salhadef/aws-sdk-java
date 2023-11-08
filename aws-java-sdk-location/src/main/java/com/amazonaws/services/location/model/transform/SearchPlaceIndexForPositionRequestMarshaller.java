@@ -30,6 +30,8 @@ public class SearchPlaceIndexForPositionRequestMarshaller {
 
     private static final MarshallingInfo<String> INDEXNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("IndexName").build();
+    private static final MarshallingInfo<String> KEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.QUERY_PARAM)
+            .marshallLocationName("key").build();
     private static final MarshallingInfo<String> LANGUAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Language").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -54,6 +56,7 @@ public class SearchPlaceIndexForPositionRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(searchPlaceIndexForPositionRequest.getIndexName(), INDEXNAME_BINDING);
+            protocolMarshaller.marshall(searchPlaceIndexForPositionRequest.getKey(), KEY_BINDING);
             protocolMarshaller.marshall(searchPlaceIndexForPositionRequest.getLanguage(), LANGUAGE_BINDING);
             protocolMarshaller.marshall(searchPlaceIndexForPositionRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(searchPlaceIndexForPositionRequest.getPosition(), POSITION_BINDING);

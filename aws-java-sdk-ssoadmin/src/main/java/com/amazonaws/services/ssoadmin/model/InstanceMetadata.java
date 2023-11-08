@@ -30,70 +30,18 @@ public class InstanceMetadata implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
-     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.
-     * </p>
-     */
-    private String instanceArn;
-    /**
-     * <p>
      * The identifier of the identity store that is connected to the IAM Identity Center instance.
      * </p>
      */
     private String identityStoreId;
-
     /**
      * <p>
      * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
-     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon
+     * Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
-     * 
-     * @param instanceArn
-     *        The ARN of the IAM Identity Center instance under which the operation will be executed. For more
-     *        information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-     *        Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      */
-
-    public void setInstanceArn(String instanceArn) {
-        this.instanceArn = instanceArn;
-    }
-
-    /**
-     * <p>
-     * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
-     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.
-     * </p>
-     * 
-     * @return The ARN of the IAM Identity Center instance under which the operation will be executed. For more
-     *         information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-     *         Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
-     */
-
-    public String getInstanceArn() {
-        return this.instanceArn;
-    }
-
-    /**
-     * <p>
-     * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
-     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.
-     * </p>
-     * 
-     * @param instanceArn
-     *        The ARN of the IAM Identity Center instance under which the operation will be executed. For more
-     *        information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-     *        Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public InstanceMetadata withInstanceArn(String instanceArn) {
-        setInstanceArn(instanceArn);
-        return this;
-    }
+    private String instanceArn;
 
     /**
      * <p>
@@ -136,6 +84,61 @@ public class InstanceMetadata implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon
+     * Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * </p>
+     * 
+     * @param instanceArn
+     *        The ARN of the IAM Identity Center instance under which the operation will be executed. For more
+     *        information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+     *        Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General
+     *        Reference</i>.
+     */
+
+    public void setInstanceArn(String instanceArn) {
+        this.instanceArn = instanceArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon
+     * Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * </p>
+     * 
+     * @return The ARN of the IAM Identity Center instance under which the operation will be executed. For more
+     *         information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+     *         Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General
+     *         Reference</i>.
+     */
+
+    public String getInstanceArn() {
+        return this.instanceArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon
+     * Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * </p>
+     * 
+     * @param instanceArn
+     *        The ARN of the IAM Identity Center instance under which the operation will be executed. For more
+     *        information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+     *        Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General
+     *        Reference</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceMetadata withInstanceArn(String instanceArn) {
+        setInstanceArn(instanceArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -147,10 +150,10 @@ public class InstanceMetadata implements Serializable, Cloneable, StructuredPojo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getInstanceArn() != null)
-            sb.append("InstanceArn: ").append(getInstanceArn()).append(",");
         if (getIdentityStoreId() != null)
-            sb.append("IdentityStoreId: ").append(getIdentityStoreId());
+            sb.append("IdentityStoreId: ").append(getIdentityStoreId()).append(",");
+        if (getInstanceArn() != null)
+            sb.append("InstanceArn: ").append(getInstanceArn());
         sb.append("}");
         return sb.toString();
     }
@@ -165,13 +168,13 @@ public class InstanceMetadata implements Serializable, Cloneable, StructuredPojo
         if (obj instanceof InstanceMetadata == false)
             return false;
         InstanceMetadata other = (InstanceMetadata) obj;
-        if (other.getInstanceArn() == null ^ this.getInstanceArn() == null)
-            return false;
-        if (other.getInstanceArn() != null && other.getInstanceArn().equals(this.getInstanceArn()) == false)
-            return false;
         if (other.getIdentityStoreId() == null ^ this.getIdentityStoreId() == null)
             return false;
         if (other.getIdentityStoreId() != null && other.getIdentityStoreId().equals(this.getIdentityStoreId()) == false)
+            return false;
+        if (other.getInstanceArn() == null ^ this.getInstanceArn() == null)
+            return false;
+        if (other.getInstanceArn() != null && other.getInstanceArn().equals(this.getInstanceArn()) == false)
             return false;
         return true;
     }
@@ -181,8 +184,8 @@ public class InstanceMetadata implements Serializable, Cloneable, StructuredPojo
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getInstanceArn() == null) ? 0 : getInstanceArn().hashCode());
         hashCode = prime * hashCode + ((getIdentityStoreId() == null) ? 0 : getIdentityStoreId().hashCode());
+        hashCode = prime * hashCode + ((getInstanceArn() == null) ? 0 : getInstanceArn().hashCode());
         return hashCode;
     }
 

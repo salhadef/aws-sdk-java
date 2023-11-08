@@ -33,7 +33,7 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the AWS service that should allowed or denied access to an Amazon Lex action.
+     * The name of the Amazon Web Services service that should allowed or denied access to an Amazon Lex action.
      * </p>
      */
     private String service;
@@ -46,11 +46,11 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the AWS service that should allowed or denied access to an Amazon Lex action.
+     * The name of the Amazon Web Services service that should allowed or denied access to an Amazon Lex action.
      * </p>
      * 
      * @param service
-     *        The name of the AWS service that should allowed or denied access to an Amazon Lex action.
+     *        The name of the Amazon Web Services service that should allowed or denied access to an Amazon Lex action.
      */
 
     public void setService(String service) {
@@ -59,10 +59,10 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the AWS service that should allowed or denied access to an Amazon Lex action.
+     * The name of the Amazon Web Services service that should allowed or denied access to an Amazon Lex action.
      * </p>
      * 
-     * @return The name of the AWS service that should allowed or denied access to an Amazon Lex action.
+     * @return The name of the Amazon Web Services service that should allowed or denied access to an Amazon Lex action.
      */
 
     public String getService() {
@@ -71,11 +71,11 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the AWS service that should allowed or denied access to an Amazon Lex action.
+     * The name of the Amazon Web Services service that should allowed or denied access to an Amazon Lex action.
      * </p>
      * 
      * @param service
-     *        The name of the AWS service that should allowed or denied access to an Amazon Lex action.
+     *        The name of the Amazon Web Services service that should allowed or denied access to an Amazon Lex action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

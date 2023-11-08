@@ -30,18 +30,18 @@ public class DescribeTaskRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task to describe.
+     * Specifies the Amazon Resource Name (ARN) of the transfer task.
      * </p>
      */
     private String taskArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task to describe.
+     * Specifies the Amazon Resource Name (ARN) of the transfer task.
      * </p>
      * 
      * @param taskArn
-     *        The Amazon Resource Name (ARN) of the task to describe.
+     *        Specifies the Amazon Resource Name (ARN) of the transfer task.
      */
 
     public void setTaskArn(String taskArn) {
@@ -50,10 +50,10 @@ public class DescribeTaskRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task to describe.
+     * Specifies the Amazon Resource Name (ARN) of the transfer task.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the task to describe.
+     * @return Specifies the Amazon Resource Name (ARN) of the transfer task.
      */
 
     public String getTaskArn() {
@@ -62,11 +62,11 @@ public class DescribeTaskRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task to describe.
+     * Specifies the Amazon Resource Name (ARN) of the transfer task.
      * </p>
      * 
      * @param taskArn
-     *        The Amazon Resource Name (ARN) of the task to describe.
+     *        Specifies the Amazon Resource Name (ARN) of the transfer task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

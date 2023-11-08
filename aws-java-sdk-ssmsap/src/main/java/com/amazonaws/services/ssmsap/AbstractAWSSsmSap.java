@@ -98,6 +98,11 @@ public class AbstractAWSSsmSap implements AWSSsmSap {
     }
 
     @Override
+    public StartApplicationRefreshResult startApplicationRefresh(StartApplicationRefreshRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public TagResourceResult tagResource(TagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

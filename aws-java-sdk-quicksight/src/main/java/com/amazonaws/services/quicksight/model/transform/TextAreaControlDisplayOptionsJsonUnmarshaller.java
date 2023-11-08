@@ -56,6 +56,10 @@ public class TextAreaControlDisplayOptionsJsonUnmarshaller implements Unmarshall
                     context.nextToken();
                     textAreaControlDisplayOptions.setPlaceholderOptions(TextControlPlaceholderOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("InfoIconLabelOptions", targetDepth)) {
+                    context.nextToken();
+                    textAreaControlDisplayOptions.setInfoIconLabelOptions(SheetControlInfoIconLabelOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

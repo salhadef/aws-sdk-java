@@ -27,25 +27,13 @@ public class UpdateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The external ID of the Security Lake account.
-     * </p>
-     */
-    private String externalId;
-    /**
-     * <p>
-     * A value created by Security Lake that uniquely identifies your subscription.
-     * </p>
-     */
-    private String id;
-    /**
-     * <p>
      * The supported Amazon Web Services from which logs and events are collected. For the list of supported Amazon Web
      * Services, see the <a
      * href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon Security Lake User
      * Guide</a>.
      * </p>
      */
-    private java.util.List<SourceType> sourceTypes;
+    private java.util.List<LogSourceResource> sources;
     /**
      * <p>
      * The description of the Security Lake account subscriber.
@@ -54,90 +42,22 @@ public class UpdateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
     private String subscriberDescription;
     /**
      * <p>
+     * A value created by Security Lake that uniquely identifies your subscription.
+     * </p>
+     */
+    private String subscriberId;
+    /**
+     * <p>
+     * The AWS identity used to access your data.
+     * </p>
+     */
+    private AwsIdentity subscriberIdentity;
+    /**
+     * <p>
      * The name of the Security Lake account subscriber.
      * </p>
      */
     private String subscriberName;
-
-    /**
-     * <p>
-     * The external ID of the Security Lake account.
-     * </p>
-     * 
-     * @param externalId
-     *        The external ID of the Security Lake account.
-     */
-
-    public void setExternalId(String externalId) {
-        this.externalId = externalId;
-    }
-
-    /**
-     * <p>
-     * The external ID of the Security Lake account.
-     * </p>
-     * 
-     * @return The external ID of the Security Lake account.
-     */
-
-    public String getExternalId() {
-        return this.externalId;
-    }
-
-    /**
-     * <p>
-     * The external ID of the Security Lake account.
-     * </p>
-     * 
-     * @param externalId
-     *        The external ID of the Security Lake account.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateSubscriberRequest withExternalId(String externalId) {
-        setExternalId(externalId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * A value created by Security Lake that uniquely identifies your subscription.
-     * </p>
-     * 
-     * @param id
-     *        A value created by Security Lake that uniquely identifies your subscription.
-     */
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    /**
-     * <p>
-     * A value created by Security Lake that uniquely identifies your subscription.
-     * </p>
-     * 
-     * @return A value created by Security Lake that uniquely identifies your subscription.
-     */
-
-    public String getId() {
-        return this.id;
-    }
-
-    /**
-     * <p>
-     * A value created by Security Lake that uniquely identifies your subscription.
-     * </p>
-     * 
-     * @param id
-     *        A value created by Security Lake that uniquely identifies your subscription.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateSubscriberRequest withId(String id) {
-        setId(id);
-        return this;
-    }
 
     /**
      * <p>
@@ -153,8 +73,8 @@ public class UpdateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
      *         Lake User Guide</a>.
      */
 
-    public java.util.List<SourceType> getSourceTypes() {
-        return sourceTypes;
+    public java.util.List<LogSourceResource> getSources() {
+        return sources;
     }
 
     /**
@@ -165,20 +85,20 @@ public class UpdateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
      * Guide</a>.
      * </p>
      * 
-     * @param sourceTypes
+     * @param sources
      *        The supported Amazon Web Services from which logs and events are collected. For the list of supported
      *        Amazon Web Services, see the <a
      *        href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon Security
      *        Lake User Guide</a>.
      */
 
-    public void setSourceTypes(java.util.Collection<SourceType> sourceTypes) {
-        if (sourceTypes == null) {
-            this.sourceTypes = null;
+    public void setSources(java.util.Collection<LogSourceResource> sources) {
+        if (sources == null) {
+            this.sources = null;
             return;
         }
 
-        this.sourceTypes = new java.util.ArrayList<SourceType>(sourceTypes);
+        this.sources = new java.util.ArrayList<LogSourceResource>(sources);
     }
 
     /**
@@ -190,11 +110,11 @@ public class UpdateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setSourceTypes(java.util.Collection)} or {@link #withSourceTypes(java.util.Collection)} if you want to
-     * override the existing values.
+     * {@link #setSources(java.util.Collection)} or {@link #withSources(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
-     * @param sourceTypes
+     * @param sources
      *        The supported Amazon Web Services from which logs and events are collected. For the list of supported
      *        Amazon Web Services, see the <a
      *        href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon Security
@@ -202,12 +122,12 @@ public class UpdateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateSubscriberRequest withSourceTypes(SourceType... sourceTypes) {
-        if (this.sourceTypes == null) {
-            setSourceTypes(new java.util.ArrayList<SourceType>(sourceTypes.length));
+    public UpdateSubscriberRequest withSources(LogSourceResource... sources) {
+        if (this.sources == null) {
+            setSources(new java.util.ArrayList<LogSourceResource>(sources.length));
         }
-        for (SourceType ele : sourceTypes) {
-            this.sourceTypes.add(ele);
+        for (LogSourceResource ele : sources) {
+            this.sources.add(ele);
         }
         return this;
     }
@@ -220,7 +140,7 @@ public class UpdateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
      * Guide</a>.
      * </p>
      * 
-     * @param sourceTypes
+     * @param sources
      *        The supported Amazon Web Services from which logs and events are collected. For the list of supported
      *        Amazon Web Services, see the <a
      *        href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon Security
@@ -228,8 +148,8 @@ public class UpdateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateSubscriberRequest withSourceTypes(java.util.Collection<SourceType> sourceTypes) {
-        setSourceTypes(sourceTypes);
+    public UpdateSubscriberRequest withSources(java.util.Collection<LogSourceResource> sources) {
+        setSources(sources);
         return this;
     }
 
@@ -270,6 +190,86 @@ public class UpdateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
 
     public UpdateSubscriberRequest withSubscriberDescription(String subscriberDescription) {
         setSubscriberDescription(subscriberDescription);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value created by Security Lake that uniquely identifies your subscription.
+     * </p>
+     * 
+     * @param subscriberId
+     *        A value created by Security Lake that uniquely identifies your subscription.
+     */
+
+    public void setSubscriberId(String subscriberId) {
+        this.subscriberId = subscriberId;
+    }
+
+    /**
+     * <p>
+     * A value created by Security Lake that uniquely identifies your subscription.
+     * </p>
+     * 
+     * @return A value created by Security Lake that uniquely identifies your subscription.
+     */
+
+    public String getSubscriberId() {
+        return this.subscriberId;
+    }
+
+    /**
+     * <p>
+     * A value created by Security Lake that uniquely identifies your subscription.
+     * </p>
+     * 
+     * @param subscriberId
+     *        A value created by Security Lake that uniquely identifies your subscription.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateSubscriberRequest withSubscriberId(String subscriberId) {
+        setSubscriberId(subscriberId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AWS identity used to access your data.
+     * </p>
+     * 
+     * @param subscriberIdentity
+     *        The AWS identity used to access your data.
+     */
+
+    public void setSubscriberIdentity(AwsIdentity subscriberIdentity) {
+        this.subscriberIdentity = subscriberIdentity;
+    }
+
+    /**
+     * <p>
+     * The AWS identity used to access your data.
+     * </p>
+     * 
+     * @return The AWS identity used to access your data.
+     */
+
+    public AwsIdentity getSubscriberIdentity() {
+        return this.subscriberIdentity;
+    }
+
+    /**
+     * <p>
+     * The AWS identity used to access your data.
+     * </p>
+     * 
+     * @param subscriberIdentity
+     *        The AWS identity used to access your data.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateSubscriberRequest withSubscriberIdentity(AwsIdentity subscriberIdentity) {
+        setSubscriberIdentity(subscriberIdentity);
         return this;
     }
 
@@ -325,14 +325,14 @@ public class UpdateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getExternalId() != null)
-            sb.append("ExternalId: ").append(getExternalId()).append(",");
-        if (getId() != null)
-            sb.append("Id: ").append(getId()).append(",");
-        if (getSourceTypes() != null)
-            sb.append("SourceTypes: ").append(getSourceTypes()).append(",");
+        if (getSources() != null)
+            sb.append("Sources: ").append(getSources()).append(",");
         if (getSubscriberDescription() != null)
             sb.append("SubscriberDescription: ").append(getSubscriberDescription()).append(",");
+        if (getSubscriberId() != null)
+            sb.append("SubscriberId: ").append(getSubscriberId()).append(",");
+        if (getSubscriberIdentity() != null)
+            sb.append("SubscriberIdentity: ").append(getSubscriberIdentity()).append(",");
         if (getSubscriberName() != null)
             sb.append("SubscriberName: ").append(getSubscriberName());
         sb.append("}");
@@ -349,21 +349,21 @@ public class UpdateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
         if (obj instanceof UpdateSubscriberRequest == false)
             return false;
         UpdateSubscriberRequest other = (UpdateSubscriberRequest) obj;
-        if (other.getExternalId() == null ^ this.getExternalId() == null)
+        if (other.getSources() == null ^ this.getSources() == null)
             return false;
-        if (other.getExternalId() != null && other.getExternalId().equals(this.getExternalId()) == false)
-            return false;
-        if (other.getId() == null ^ this.getId() == null)
-            return false;
-        if (other.getId() != null && other.getId().equals(this.getId()) == false)
-            return false;
-        if (other.getSourceTypes() == null ^ this.getSourceTypes() == null)
-            return false;
-        if (other.getSourceTypes() != null && other.getSourceTypes().equals(this.getSourceTypes()) == false)
+        if (other.getSources() != null && other.getSources().equals(this.getSources()) == false)
             return false;
         if (other.getSubscriberDescription() == null ^ this.getSubscriberDescription() == null)
             return false;
         if (other.getSubscriberDescription() != null && other.getSubscriberDescription().equals(this.getSubscriberDescription()) == false)
+            return false;
+        if (other.getSubscriberId() == null ^ this.getSubscriberId() == null)
+            return false;
+        if (other.getSubscriberId() != null && other.getSubscriberId().equals(this.getSubscriberId()) == false)
+            return false;
+        if (other.getSubscriberIdentity() == null ^ this.getSubscriberIdentity() == null)
+            return false;
+        if (other.getSubscriberIdentity() != null && other.getSubscriberIdentity().equals(this.getSubscriberIdentity()) == false)
             return false;
         if (other.getSubscriberName() == null ^ this.getSubscriberName() == null)
             return false;
@@ -377,10 +377,10 @@ public class UpdateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getExternalId() == null) ? 0 : getExternalId().hashCode());
-        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
-        hashCode = prime * hashCode + ((getSourceTypes() == null) ? 0 : getSourceTypes().hashCode());
+        hashCode = prime * hashCode + ((getSources() == null) ? 0 : getSources().hashCode());
         hashCode = prime * hashCode + ((getSubscriberDescription() == null) ? 0 : getSubscriberDescription().hashCode());
+        hashCode = prime * hashCode + ((getSubscriberId() == null) ? 0 : getSubscriberId().hashCode());
+        hashCode = prime * hashCode + ((getSubscriberIdentity() == null) ? 0 : getSubscriberIdentity().hashCode());
         hashCode = prime * hashCode + ((getSubscriberName() == null) ? 0 : getSubscriberName().hashCode());
         return hashCode;
     }

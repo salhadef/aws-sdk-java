@@ -241,6 +241,22 @@ public class RestoreDBClusterFromSnapshotRequestMarshaller implements
             request.addParameter("NetworkType", StringUtils.fromString(restoreDBClusterFromSnapshotRequest.getNetworkType()));
         }
 
+        {
+            RdsCustomClusterConfiguration rdsCustomClusterConfiguration = restoreDBClusterFromSnapshotRequest.getRdsCustomClusterConfiguration();
+            if (rdsCustomClusterConfiguration != null) {
+
+                if (rdsCustomClusterConfiguration.getInterconnectSubnetId() != null) {
+                    request.addParameter("RdsCustomClusterConfiguration.InterconnectSubnetId",
+                            StringUtils.fromString(rdsCustomClusterConfiguration.getInterconnectSubnetId()));
+                }
+
+                if (rdsCustomClusterConfiguration.getTransitGatewayMulticastDomainId() != null) {
+                    request.addParameter("RdsCustomClusterConfiguration.TransitGatewayMulticastDomainId",
+                            StringUtils.fromString(rdsCustomClusterConfiguration.getTransitGatewayMulticastDomainId()));
+                }
+            }
+        }
+
         return request;
     }
 

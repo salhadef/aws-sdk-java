@@ -25,16 +25,10 @@ import com.amazonaws.services.securitylake.model.*;
  * {@link com.amazonaws.services.securitylake.AbstractAmazonSecurityLakeAsync} instead.
  * </p>
  * <p>
- * <note>
- * <p>
- * Amazon Security Lake is in preview release. Your use of the Security Lake preview is subject to Section 2 of the <a
- * href="http://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>("Betas and Previews").
- * </p>
- * </note>
  * <p>
  * Amazon Security Lake is a fully managed security data lake service. You can use Security Lake to automatically
  * centralize security data from cloud, on-premises, and custom sources into a data lake that's stored in your Amazon
- * Web Servicesaccount. Amazon Web Services Organizations is an account management service that lets you consolidate
+ * Web Services account. Amazon Web Services Organizations is an account management service that lets you consolidate
  * multiple Amazon Web Services accounts into an organization that you create and centrally manage. With Organizations,
  * you can create member accounts and invite existing accounts to join your organization. Security Lake helps you
  * analyze security data for a more complete understanding of your security posture across the entire organization. It
@@ -46,7 +40,7 @@ import com.amazonaws.services.securitylake.model.*;
  * </p>
  * <p>
  * Amazon Security Lake integrates with CloudTrail, a service that provides a record of actions taken by a user, role,
- * or an Amazon Web Services service in Security Lake CloudTrail captures API calls for Security Lake as events. The
+ * or an Amazon Web Services service. In Security Lake, CloudTrail captures API calls for Security Lake as events. The
  * calls captured include calls from the Security Lake console and code calls to the Security Lake API operations. If
  * you create a trail, you can enable continuous delivery of CloudTrail events to an Amazon S3 bucket, including events
  * for Security Lake. If you don't configure a trail, you can still view the most recent events in the CloudTrail
@@ -74,16 +68,8 @@ public interface AmazonSecurityLakeAsync extends AmazonSecurityLake {
      * <p>
      * Adds a natively supported Amazon Web Service as an Amazon Security Lake source. Enables source types for member
      * accounts in required Amazon Web Services Regions, based on the parameters you specify. You can choose any source
-     * type in any Region for either accounts that are part of a trusted organization or standalone accounts. At least
-     * one of the three dimensions is a mandatory input to this API. However, you can supply any combination of the
-     * three dimensions to this API.
-     * </p>
-     * <p>
-     * By default, a dimension refers to the entire set. When you don't provide a dimension, Security Lake assumes that
-     * the missing dimension refers to the entire set. This is overridden when you supply any one of the inputs. For
-     * instance, when you do not specify members, the API enables all Security Lake member accounts for all sources.
-     * Similarly, when you do not specify Regions, Security Lake is enabled for all the Regions where Security Lake is
-     * available as a service.
+     * type in any Region for either accounts that are part of a trusted organization or standalone accounts. Once you
+     * add an Amazon Web Service as a source, Security Lake starts collecting logs and events from it.
      * </p>
      * <p>
      * You can use this API only to enable natively supported Amazon Web Services as a source. Use
@@ -102,16 +88,8 @@ public interface AmazonSecurityLakeAsync extends AmazonSecurityLake {
      * <p>
      * Adds a natively supported Amazon Web Service as an Amazon Security Lake source. Enables source types for member
      * accounts in required Amazon Web Services Regions, based on the parameters you specify. You can choose any source
-     * type in any Region for either accounts that are part of a trusted organization or standalone accounts. At least
-     * one of the three dimensions is a mandatory input to this API. However, you can supply any combination of the
-     * three dimensions to this API.
-     * </p>
-     * <p>
-     * By default, a dimension refers to the entire set. When you don't provide a dimension, Security Lake assumes that
-     * the missing dimension refers to the entire set. This is overridden when you supply any one of the inputs. For
-     * instance, when you do not specify members, the API enables all Security Lake member accounts for all sources.
-     * Similarly, when you do not specify Regions, Security Lake is enabled for all the Regions where Security Lake is
-     * available as a service.
+     * type in any Region for either accounts that are part of a trusted organization or standalone accounts. Once you
+     * add an Amazon Web Service as a source, Security Lake starts collecting logs and events from it.
      * </p>
      * <p>
      * You can use this API only to enable natively supported Amazon Web Services as a source. Use
@@ -137,7 +115,7 @@ public interface AmazonSecurityLakeAsync extends AmazonSecurityLake {
      * create a custom source. Security Lake can collect logs and events from third-party custom sources. After creating
      * the appropriate IAM role to invoke Glue crawler, use this API to add a custom source name in Security Lake. This
      * operation creates a partition in the Amazon S3 bucket for Security Lake as the target location for log files from
-     * the custom source in addition to an associated Glue table and an Glue crawler.
+     * the custom source. In addition, this operation also creates an associated Glue table and an Glue crawler.
      * </p>
      * 
      * @param createCustomLogSourceRequest
@@ -154,7 +132,7 @@ public interface AmazonSecurityLakeAsync extends AmazonSecurityLake {
      * create a custom source. Security Lake can collect logs and events from third-party custom sources. After creating
      * the appropriate IAM role to invoke Glue crawler, use this API to add a custom source name in Security Lake. This
      * operation creates a partition in the Amazon S3 bucket for Security Lake as the target location for log files from
-     * the custom source in addition to an associated Glue table and an Glue crawler.
+     * the custom source. In addition, this operation also creates an associated Glue table and an Glue crawler.
      * </p>
      * 
      * @param createCustomLogSourceRequest
@@ -174,12 +152,10 @@ public interface AmazonSecurityLakeAsync extends AmazonSecurityLake {
      * <p>
      * Initializes an Amazon Security Lake instance with the provided (or default) configuration. You can enable
      * Security Lake in Amazon Web Services Regions with customized settings before enabling log collection in Regions.
-     * You can either use the <code>enableAll</code> parameter to specify all Regions or specify the Regions where you
-     * want to enable Security Lake. To specify particular Regions, use the <code>Regions</code> parameter and then
-     * configure these Regions using the <code>configurations</code> parameter. If you have already enabled Security
-     * Lake in a Region when you call this command, the command will update the Region if you provide new configuration
-     * parameters. If you have not already enabled Security Lake in the Region when you call this API, it will set up
-     * the data lake in the Region with the specified configurations.
+     * To specify particular Regions, configure these Regions using the <code>configurations</code> parameter. If you
+     * have already enabled Security Lake in a Region when you call this command, the command will update the Region if
+     * you provide new configuration parameters. If you have not already enabled Security Lake in the Region when you
+     * call this API, it will set up the data lake in the Region with the specified configurations.
      * </p>
      * <p>
      * When you enable Security Lake, it starts ingesting security data after the <code>CreateAwsLogSource</code> call.
@@ -190,24 +166,22 @@ public interface AmazonSecurityLakeAsync extends AmazonSecurityLake {
      * Lake User Guide</a>.
      * </p>
      * 
-     * @param createDatalakeRequest
-     * @return A Java Future containing the result of the CreateDatalake operation returned by the service.
-     * @sample AmazonSecurityLakeAsync.CreateDatalake
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDatalake" target="_top">AWS
+     * @param createDataLakeRequest
+     * @return A Java Future containing the result of the CreateDataLake operation returned by the service.
+     * @sample AmazonSecurityLakeAsync.CreateDataLake
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDataLake" target="_top">AWS
      *      API Documentation</a>
      */
-    java.util.concurrent.Future<CreateDatalakeResult> createDatalakeAsync(CreateDatalakeRequest createDatalakeRequest);
+    java.util.concurrent.Future<CreateDataLakeResult> createDataLakeAsync(CreateDataLakeRequest createDataLakeRequest);
 
     /**
      * <p>
      * Initializes an Amazon Security Lake instance with the provided (or default) configuration. You can enable
      * Security Lake in Amazon Web Services Regions with customized settings before enabling log collection in Regions.
-     * You can either use the <code>enableAll</code> parameter to specify all Regions or specify the Regions where you
-     * want to enable Security Lake. To specify particular Regions, use the <code>Regions</code> parameter and then
-     * configure these Regions using the <code>configurations</code> parameter. If you have already enabled Security
-     * Lake in a Region when you call this command, the command will update the Region if you provide new configuration
-     * parameters. If you have not already enabled Security Lake in the Region when you call this API, it will set up
-     * the data lake in the Region with the specified configurations.
+     * To specify particular Regions, configure these Regions using the <code>configurations</code> parameter. If you
+     * have already enabled Security Lake in a Region when you call this command, the command will update the Region if
+     * you provide new configuration parameters. If you have not already enabled Security Lake in the Region when you
+     * call this API, it will set up the data lake in the Region with the specified configurations.
      * </p>
      * <p>
      * When you enable Security Lake, it starts ingesting security data after the <code>CreateAwsLogSource</code> call.
@@ -218,18 +192,53 @@ public interface AmazonSecurityLakeAsync extends AmazonSecurityLake {
      * Lake User Guide</a>.
      * </p>
      * 
-     * @param createDatalakeRequest
+     * @param createDataLakeRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the CreateDatalake operation returned by the service.
-     * @sample AmazonSecurityLakeAsyncHandler.CreateDatalake
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDatalake" target="_top">AWS
+     * @return A Java Future containing the result of the CreateDataLake operation returned by the service.
+     * @sample AmazonSecurityLakeAsyncHandler.CreateDataLake
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDataLake" target="_top">AWS
      *      API Documentation</a>
      */
-    java.util.concurrent.Future<CreateDatalakeResult> createDatalakeAsync(CreateDatalakeRequest createDatalakeRequest,
-            com.amazonaws.handlers.AsyncHandler<CreateDatalakeRequest, CreateDatalakeResult> asyncHandler);
+    java.util.concurrent.Future<CreateDataLakeResult> createDataLakeAsync(CreateDataLakeRequest createDataLakeRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateDataLakeRequest, CreateDataLakeResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates the specified notification subscription in Amazon Security Lake for the organization you specify.
+     * </p>
+     * 
+     * @param createDataLakeExceptionSubscriptionRequest
+     * @return A Java Future containing the result of the CreateDataLakeExceptionSubscription operation returned by the
+     *         service.
+     * @sample AmazonSecurityLakeAsync.CreateDataLakeExceptionSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDataLakeExceptionSubscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateDataLakeExceptionSubscriptionResult> createDataLakeExceptionSubscriptionAsync(
+            CreateDataLakeExceptionSubscriptionRequest createDataLakeExceptionSubscriptionRequest);
+
+    /**
+     * <p>
+     * Creates the specified notification subscription in Amazon Security Lake for the organization you specify.
+     * </p>
+     * 
+     * @param createDataLakeExceptionSubscriptionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateDataLakeExceptionSubscription operation returned by the
+     *         service.
+     * @sample AmazonSecurityLakeAsyncHandler.CreateDataLakeExceptionSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDataLakeExceptionSubscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateDataLakeExceptionSubscriptionResult> createDataLakeExceptionSubscriptionAsync(
+            CreateDataLakeExceptionSubscriptionRequest createDataLakeExceptionSubscriptionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateDataLakeExceptionSubscriptionRequest, CreateDataLakeExceptionSubscriptionResult> asyncHandler);
 
     /**
      * <p>
@@ -237,13 +246,16 @@ public interface AmazonSecurityLakeAsync extends AmazonSecurityLake {
      * automatically enabled for any existing member accounts in your organization.
      * </p>
      * 
-     * @param createDatalakeAutoEnableRequest
-     * @return A Java Future containing the result of the CreateDatalakeAutoEnable operation returned by the service.
-     * @sample AmazonSecurityLakeAsync.CreateDatalakeAutoEnable
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDatalakeAutoEnable"
+     * @param createDataLakeOrganizationConfigurationRequest
+     * @return A Java Future containing the result of the CreateDataLakeOrganizationConfiguration operation returned by
+     *         the service.
+     * @sample AmazonSecurityLakeAsync.CreateDataLakeOrganizationConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDataLakeOrganizationConfiguration"
      *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<CreateDatalakeAutoEnableResult> createDatalakeAutoEnableAsync(CreateDatalakeAutoEnableRequest createDatalakeAutoEnableRequest);
+    java.util.concurrent.Future<CreateDataLakeOrganizationConfigurationResult> createDataLakeOrganizationConfigurationAsync(
+            CreateDataLakeOrganizationConfigurationRequest createDataLakeOrganizationConfigurationRequest);
 
     /**
      * <p>
@@ -251,94 +263,21 @@ public interface AmazonSecurityLakeAsync extends AmazonSecurityLake {
      * automatically enabled for any existing member accounts in your organization.
      * </p>
      * 
-     * @param createDatalakeAutoEnableRequest
+     * @param createDataLakeOrganizationConfigurationRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the CreateDatalakeAutoEnable operation returned by the service.
-     * @sample AmazonSecurityLakeAsyncHandler.CreateDatalakeAutoEnable
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDatalakeAutoEnable"
-     *      target="_top">AWS API Documentation</a>
-     */
-    java.util.concurrent.Future<CreateDatalakeAutoEnableResult> createDatalakeAutoEnableAsync(CreateDatalakeAutoEnableRequest createDatalakeAutoEnableRequest,
-            com.amazonaws.handlers.AsyncHandler<CreateDatalakeAutoEnableRequest, CreateDatalakeAutoEnableResult> asyncHandler);
-
-    /**
-     * <p>
-     * Designates the Amazon Security Lake delegated administrator account for the organization. This API can only be
-     * called by the organization management account. The organization management account cannot be the delegated
-     * administrator account.
-     * </p>
-     * 
-     * @param createDatalakeDelegatedAdminRequest
-     * @return A Java Future containing the result of the CreateDatalakeDelegatedAdmin operation returned by the
-     *         service.
-     * @sample AmazonSecurityLakeAsync.CreateDatalakeDelegatedAdmin
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDatalakeDelegatedAdmin"
-     *      target="_top">AWS API Documentation</a>
-     */
-    java.util.concurrent.Future<CreateDatalakeDelegatedAdminResult> createDatalakeDelegatedAdminAsync(
-            CreateDatalakeDelegatedAdminRequest createDatalakeDelegatedAdminRequest);
-
-    /**
-     * <p>
-     * Designates the Amazon Security Lake delegated administrator account for the organization. This API can only be
-     * called by the organization management account. The organization management account cannot be the delegated
-     * administrator account.
-     * </p>
-     * 
-     * @param createDatalakeDelegatedAdminRequest
-     * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
-     *        implementation of the callback methods in this interface to receive notification of successful or
-     *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the CreateDatalakeDelegatedAdmin operation returned by the
-     *         service.
-     * @sample AmazonSecurityLakeAsyncHandler.CreateDatalakeDelegatedAdmin
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDatalakeDelegatedAdmin"
-     *      target="_top">AWS API Documentation</a>
-     */
-    java.util.concurrent.Future<CreateDatalakeDelegatedAdminResult> createDatalakeDelegatedAdminAsync(
-            CreateDatalakeDelegatedAdminRequest createDatalakeDelegatedAdminRequest,
-            com.amazonaws.handlers.AsyncHandler<CreateDatalakeDelegatedAdminRequest, CreateDatalakeDelegatedAdminResult> asyncHandler);
-
-    /**
-     * <p>
-     * Creates the specified notification subscription in Amazon Security Lake for the organization you specify.
-     * </p>
-     * 
-     * @param createDatalakeExceptionsSubscriptionRequest
-     * @return A Java Future containing the result of the CreateDatalakeExceptionsSubscription operation returned by the
-     *         service.
-     * @sample AmazonSecurityLakeAsync.CreateDatalakeExceptionsSubscription
+     * @return A Java Future containing the result of the CreateDataLakeOrganizationConfiguration operation returned by
+     *         the service.
+     * @sample AmazonSecurityLakeAsyncHandler.CreateDataLakeOrganizationConfiguration
      * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDatalakeExceptionsSubscription"
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDataLakeOrganizationConfiguration"
      *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<CreateDatalakeExceptionsSubscriptionResult> createDatalakeExceptionsSubscriptionAsync(
-            CreateDatalakeExceptionsSubscriptionRequest createDatalakeExceptionsSubscriptionRequest);
-
-    /**
-     * <p>
-     * Creates the specified notification subscription in Amazon Security Lake for the organization you specify.
-     * </p>
-     * 
-     * @param createDatalakeExceptionsSubscriptionRequest
-     * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
-     *        implementation of the callback methods in this interface to receive notification of successful or
-     *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the CreateDatalakeExceptionsSubscription operation returned by the
-     *         service.
-     * @sample AmazonSecurityLakeAsyncHandler.CreateDatalakeExceptionsSubscription
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDatalakeExceptionsSubscription"
-     *      target="_top">AWS API Documentation</a>
-     */
-    java.util.concurrent.Future<CreateDatalakeExceptionsSubscriptionResult> createDatalakeExceptionsSubscriptionAsync(
-            CreateDatalakeExceptionsSubscriptionRequest createDatalakeExceptionsSubscriptionRequest,
-            com.amazonaws.handlers.AsyncHandler<CreateDatalakeExceptionsSubscriptionRequest, CreateDatalakeExceptionsSubscriptionResult> asyncHandler);
+    java.util.concurrent.Future<CreateDataLakeOrganizationConfigurationResult> createDataLakeOrganizationConfigurationAsync(
+            CreateDataLakeOrganizationConfigurationRequest createDataLakeOrganizationConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateDataLakeOrganizationConfigurationRequest, CreateDataLakeOrganizationConfigurationResult> asyncHandler);
 
     /**
      * <p>
@@ -379,16 +318,15 @@ public interface AmazonSecurityLakeAsync extends AmazonSecurityLake {
      * Security Lake. You can create only one subscriber notification per subscriber.
      * </p>
      * 
-     * @param createSubscriptionNotificationConfigurationRequest
-     * @return A Java Future containing the result of the CreateSubscriptionNotificationConfiguration operation returned
-     *         by the service.
-     * @sample AmazonSecurityLakeAsync.CreateSubscriptionNotificationConfiguration
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateSubscriptionNotificationConfiguration"
+     * @param createSubscriberNotificationRequest
+     * @return A Java Future containing the result of the CreateSubscriberNotification operation returned by the
+     *         service.
+     * @sample AmazonSecurityLakeAsync.CreateSubscriberNotification
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateSubscriberNotification"
      *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<CreateSubscriptionNotificationConfigurationResult> createSubscriptionNotificationConfigurationAsync(
-            CreateSubscriptionNotificationConfigurationRequest createSubscriptionNotificationConfigurationRequest);
+    java.util.concurrent.Future<CreateSubscriberNotificationResult> createSubscriberNotificationAsync(
+            CreateSubscriberNotificationRequest createSubscriberNotificationRequest);
 
     /**
      * <p>
@@ -396,43 +334,31 @@ public interface AmazonSecurityLakeAsync extends AmazonSecurityLake {
      * Security Lake. You can create only one subscriber notification per subscriber.
      * </p>
      * 
-     * @param createSubscriptionNotificationConfigurationRequest
+     * @param createSubscriberNotificationRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the CreateSubscriptionNotificationConfiguration operation returned
-     *         by the service.
-     * @sample AmazonSecurityLakeAsyncHandler.CreateSubscriptionNotificationConfiguration
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateSubscriptionNotificationConfiguration"
+     * @return A Java Future containing the result of the CreateSubscriberNotification operation returned by the
+     *         service.
+     * @sample AmazonSecurityLakeAsyncHandler.CreateSubscriberNotification
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateSubscriberNotification"
      *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<CreateSubscriptionNotificationConfigurationResult> createSubscriptionNotificationConfigurationAsync(
-            CreateSubscriptionNotificationConfigurationRequest createSubscriptionNotificationConfigurationRequest,
-            com.amazonaws.handlers.AsyncHandler<CreateSubscriptionNotificationConfigurationRequest, CreateSubscriptionNotificationConfigurationResult> asyncHandler);
+    java.util.concurrent.Future<CreateSubscriberNotificationResult> createSubscriberNotificationAsync(
+            CreateSubscriberNotificationRequest createSubscriberNotificationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateSubscriberNotificationRequest, CreateSubscriberNotificationResult> asyncHandler);
 
     /**
      * <p>
-     * Removes a natively supported Amazon Web Service as an Amazon Security Lake source. When you remove the source,
-     * Security Lake stops collecting data from that source, and subscribers can no longer consume new data from the
-     * source. Subscribers can still consume data that Security Lake collected from the source before disablement.
+     * Removes a natively supported Amazon Web Service as an Amazon Security Lake source. You can remove a source for
+     * one or more Regions. When you remove the source, Security Lake stops collecting data from that source in the
+     * specified Regions and accounts, and subscribers can no longer consume new data from the source. However,
+     * subscribers can still consume data that Security Lake collected from the source before removal.
      * </p>
      * <p>
      * You can choose any source type in any Amazon Web Services Region for either accounts that are part of a trusted
-     * organization or standalone accounts. At least one of the three dimensions is a mandatory input to this API.
-     * However, you can supply any combination of the three dimensions to this API.
-     * </p>
-     * <p>
-     * By default, a dimension refers to the entire set. This is overridden when you supply any one of the inputs. For
-     * instance, when you do not specify members, the API disables all Security Lake member accounts for sources.
-     * Similarly, when you do not specify Regions, Security Lake is disabled for all the Regions where Security Lake is
-     * available as a service.
-     * </p>
-     * <p>
-     * When you don't provide a dimension, Security Lake assumes that the missing dimension refers to the entire set.
-     * For example, if you don't provide specific accounts, the API applies to the entire set of accounts in your
-     * organization.
+     * organization or standalone accounts.
      * </p>
      * 
      * @param deleteAwsLogSourceRequest
@@ -445,25 +371,14 @@ public interface AmazonSecurityLakeAsync extends AmazonSecurityLake {
 
     /**
      * <p>
-     * Removes a natively supported Amazon Web Service as an Amazon Security Lake source. When you remove the source,
-     * Security Lake stops collecting data from that source, and subscribers can no longer consume new data from the
-     * source. Subscribers can still consume data that Security Lake collected from the source before disablement.
+     * Removes a natively supported Amazon Web Service as an Amazon Security Lake source. You can remove a source for
+     * one or more Regions. When you remove the source, Security Lake stops collecting data from that source in the
+     * specified Regions and accounts, and subscribers can no longer consume new data from the source. However,
+     * subscribers can still consume data that Security Lake collected from the source before removal.
      * </p>
      * <p>
      * You can choose any source type in any Amazon Web Services Region for either accounts that are part of a trusted
-     * organization or standalone accounts. At least one of the three dimensions is a mandatory input to this API.
-     * However, you can supply any combination of the three dimensions to this API.
-     * </p>
-     * <p>
-     * By default, a dimension refers to the entire set. This is overridden when you supply any one of the inputs. For
-     * instance, when you do not specify members, the API disables all Security Lake member accounts for sources.
-     * Similarly, when you do not specify Regions, Security Lake is disabled for all the Regions where Security Lake is
-     * available as a service.
-     * </p>
-     * <p>
-     * When you don't provide a dimension, Security Lake assumes that the missing dimension refers to the entire set.
-     * For example, if you don't provide specific accounts, the API applies to the entire set of accounts in your
-     * organization.
+     * organization or standalone accounts.
      * </p>
      * 
      * @param deleteAwsLogSourceRequest
@@ -481,7 +396,8 @@ public interface AmazonSecurityLakeAsync extends AmazonSecurityLake {
 
     /**
      * <p>
-     * Removes a custom log source from Amazon Security Lake.
+     * Removes a custom log source from Amazon Security Lake, to stop sending data from the custom source to Security
+     * Lake.
      * </p>
      * 
      * @param deleteCustomLogSourceRequest
@@ -494,7 +410,8 @@ public interface AmazonSecurityLakeAsync extends AmazonSecurityLake {
 
     /**
      * <p>
-     * Removes a custom log source from Amazon Security Lake.
+     * Removes a custom log source from Amazon Security Lake, to stop sending data from the custom source to Security
+     * Lake.
      * </p>
      * 
      * @param deleteCustomLogSourceRequest
@@ -512,172 +429,137 @@ public interface AmazonSecurityLakeAsync extends AmazonSecurityLake {
 
     /**
      * <p>
-     * When you delete Amazon Security Lake from your account, Security Lake is disabled in all Amazon Web Services
-     * Regions. Also, this API automatically takes steps to remove the account from Security Lake .
+     * When you disable Amazon Security Lake from your account, Security Lake is disabled in all Amazon Web Services
+     * Regions and it stops collecting data from your sources. Also, this API automatically takes steps to remove the
+     * account from Security Lake. However, Security Lake retains all of your existing settings and the resources that
+     * it created in your Amazon Web Services account in the current Amazon Web Services Region.
      * </p>
      * <p>
-     * This operation disables security data collection from sources, deletes data stored, and stops making data
-     * accessible to subscribers. Security Lake also deletes all the existing settings and resources that it stores or
-     * maintains for your Amazon Web Services account in the current Region, including security log and event data. The
-     * <code>DeleteDatalake</code> operation does not delete the Amazon S3 bucket, which is owned by your Amazon Web
-     * Services account. For more information, see the <a
+     * The <code>DeleteDataLake</code> operation does not delete the data that is stored in your Amazon S3 bucket, which
+     * is owned by your Amazon Web Services account. For more information, see the <a
      * href="https://docs.aws.amazon.com/security-lake/latest/userguide/disable-security-lake.html">Amazon Security Lake
      * User Guide</a>.
      * </p>
      * 
-     * @param deleteDatalakeRequest
-     * @return A Java Future containing the result of the DeleteDatalake operation returned by the service.
-     * @sample AmazonSecurityLakeAsync.DeleteDatalake
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDatalake" target="_top">AWS
+     * @param deleteDataLakeRequest
+     * @return A Java Future containing the result of the DeleteDataLake operation returned by the service.
+     * @sample AmazonSecurityLakeAsync.DeleteDataLake
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDataLake" target="_top">AWS
      *      API Documentation</a>
      */
-    java.util.concurrent.Future<DeleteDatalakeResult> deleteDatalakeAsync(DeleteDatalakeRequest deleteDatalakeRequest);
+    java.util.concurrent.Future<DeleteDataLakeResult> deleteDataLakeAsync(DeleteDataLakeRequest deleteDataLakeRequest);
 
     /**
      * <p>
-     * When you delete Amazon Security Lake from your account, Security Lake is disabled in all Amazon Web Services
-     * Regions. Also, this API automatically takes steps to remove the account from Security Lake .
+     * When you disable Amazon Security Lake from your account, Security Lake is disabled in all Amazon Web Services
+     * Regions and it stops collecting data from your sources. Also, this API automatically takes steps to remove the
+     * account from Security Lake. However, Security Lake retains all of your existing settings and the resources that
+     * it created in your Amazon Web Services account in the current Amazon Web Services Region.
      * </p>
      * <p>
-     * This operation disables security data collection from sources, deletes data stored, and stops making data
-     * accessible to subscribers. Security Lake also deletes all the existing settings and resources that it stores or
-     * maintains for your Amazon Web Services account in the current Region, including security log and event data. The
-     * <code>DeleteDatalake</code> operation does not delete the Amazon S3 bucket, which is owned by your Amazon Web
-     * Services account. For more information, see the <a
+     * The <code>DeleteDataLake</code> operation does not delete the data that is stored in your Amazon S3 bucket, which
+     * is owned by your Amazon Web Services account. For more information, see the <a
      * href="https://docs.aws.amazon.com/security-lake/latest/userguide/disable-security-lake.html">Amazon Security Lake
      * User Guide</a>.
      * </p>
      * 
-     * @param deleteDatalakeRequest
+     * @param deleteDataLakeRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the DeleteDatalake operation returned by the service.
-     * @sample AmazonSecurityLakeAsyncHandler.DeleteDatalake
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDatalake" target="_top">AWS
+     * @return A Java Future containing the result of the DeleteDataLake operation returned by the service.
+     * @sample AmazonSecurityLakeAsyncHandler.DeleteDataLake
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDataLake" target="_top">AWS
      *      API Documentation</a>
      */
-    java.util.concurrent.Future<DeleteDatalakeResult> deleteDatalakeAsync(DeleteDatalakeRequest deleteDatalakeRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteDatalakeRequest, DeleteDatalakeResult> asyncHandler);
-
-    /**
-     * <p>
-     * <code>DeleteDatalakeAutoEnable</code> removes automatic enablement of configuration settings for new member
-     * accounts (but keeps settings for the delegated administrator) from Amazon Security Lake. You must run this API
-     * using credentials of the delegated administrator. When you run this API, new member accounts that are added after
-     * the organization enables Security Lake won't contribute to the data lake.
-     * </p>
-     * 
-     * @param deleteDatalakeAutoEnableRequest
-     * @return A Java Future containing the result of the DeleteDatalakeAutoEnable operation returned by the service.
-     * @sample AmazonSecurityLakeAsync.DeleteDatalakeAutoEnable
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDatalakeAutoEnable"
-     *      target="_top">AWS API Documentation</a>
-     */
-    java.util.concurrent.Future<DeleteDatalakeAutoEnableResult> deleteDatalakeAutoEnableAsync(DeleteDatalakeAutoEnableRequest deleteDatalakeAutoEnableRequest);
-
-    /**
-     * <p>
-     * <code>DeleteDatalakeAutoEnable</code> removes automatic enablement of configuration settings for new member
-     * accounts (but keeps settings for the delegated administrator) from Amazon Security Lake. You must run this API
-     * using credentials of the delegated administrator. When you run this API, new member accounts that are added after
-     * the organization enables Security Lake won't contribute to the data lake.
-     * </p>
-     * 
-     * @param deleteDatalakeAutoEnableRequest
-     * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
-     *        implementation of the callback methods in this interface to receive notification of successful or
-     *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the DeleteDatalakeAutoEnable operation returned by the service.
-     * @sample AmazonSecurityLakeAsyncHandler.DeleteDatalakeAutoEnable
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDatalakeAutoEnable"
-     *      target="_top">AWS API Documentation</a>
-     */
-    java.util.concurrent.Future<DeleteDatalakeAutoEnableResult> deleteDatalakeAutoEnableAsync(DeleteDatalakeAutoEnableRequest deleteDatalakeAutoEnableRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteDatalakeAutoEnableRequest, DeleteDatalakeAutoEnableResult> asyncHandler);
-
-    /**
-     * <p>
-     * Deletes the Amazon Security Lake delegated administrator account for the organization. This API can only be
-     * called by the organization management account. The organization management account cannot be the delegated
-     * administrator account.
-     * </p>
-     * 
-     * @param deleteDatalakeDelegatedAdminRequest
-     * @return A Java Future containing the result of the DeleteDatalakeDelegatedAdmin operation returned by the
-     *         service.
-     * @sample AmazonSecurityLakeAsync.DeleteDatalakeDelegatedAdmin
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDatalakeDelegatedAdmin"
-     *      target="_top">AWS API Documentation</a>
-     */
-    java.util.concurrent.Future<DeleteDatalakeDelegatedAdminResult> deleteDatalakeDelegatedAdminAsync(
-            DeleteDatalakeDelegatedAdminRequest deleteDatalakeDelegatedAdminRequest);
-
-    /**
-     * <p>
-     * Deletes the Amazon Security Lake delegated administrator account for the organization. This API can only be
-     * called by the organization management account. The organization management account cannot be the delegated
-     * administrator account.
-     * </p>
-     * 
-     * @param deleteDatalakeDelegatedAdminRequest
-     * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
-     *        implementation of the callback methods in this interface to receive notification of successful or
-     *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the DeleteDatalakeDelegatedAdmin operation returned by the
-     *         service.
-     * @sample AmazonSecurityLakeAsyncHandler.DeleteDatalakeDelegatedAdmin
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDatalakeDelegatedAdmin"
-     *      target="_top">AWS API Documentation</a>
-     */
-    java.util.concurrent.Future<DeleteDatalakeDelegatedAdminResult> deleteDatalakeDelegatedAdminAsync(
-            DeleteDatalakeDelegatedAdminRequest deleteDatalakeDelegatedAdminRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteDatalakeDelegatedAdminRequest, DeleteDatalakeDelegatedAdminResult> asyncHandler);
+    java.util.concurrent.Future<DeleteDataLakeResult> deleteDataLakeAsync(DeleteDataLakeRequest deleteDataLakeRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteDataLakeRequest, DeleteDataLakeResult> asyncHandler);
 
     /**
      * <p>
      * Deletes the specified notification subscription in Amazon Security Lake for the organization you specify.
      * </p>
      * 
-     * @param deleteDatalakeExceptionsSubscriptionRequest
-     * @return A Java Future containing the result of the DeleteDatalakeExceptionsSubscription operation returned by the
+     * @param deleteDataLakeExceptionSubscriptionRequest
+     * @return A Java Future containing the result of the DeleteDataLakeExceptionSubscription operation returned by the
      *         service.
-     * @sample AmazonSecurityLakeAsync.DeleteDatalakeExceptionsSubscription
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDatalakeExceptionsSubscription"
+     * @sample AmazonSecurityLakeAsync.DeleteDataLakeExceptionSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDataLakeExceptionSubscription"
      *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<DeleteDatalakeExceptionsSubscriptionResult> deleteDatalakeExceptionsSubscriptionAsync(
-            DeleteDatalakeExceptionsSubscriptionRequest deleteDatalakeExceptionsSubscriptionRequest);
+    java.util.concurrent.Future<DeleteDataLakeExceptionSubscriptionResult> deleteDataLakeExceptionSubscriptionAsync(
+            DeleteDataLakeExceptionSubscriptionRequest deleteDataLakeExceptionSubscriptionRequest);
 
     /**
      * <p>
      * Deletes the specified notification subscription in Amazon Security Lake for the organization you specify.
      * </p>
      * 
-     * @param deleteDatalakeExceptionsSubscriptionRequest
+     * @param deleteDataLakeExceptionSubscriptionRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the DeleteDatalakeExceptionsSubscription operation returned by the
+     * @return A Java Future containing the result of the DeleteDataLakeExceptionSubscription operation returned by the
      *         service.
-     * @sample AmazonSecurityLakeAsyncHandler.DeleteDatalakeExceptionsSubscription
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDatalakeExceptionsSubscription"
+     * @sample AmazonSecurityLakeAsyncHandler.DeleteDataLakeExceptionSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDataLakeExceptionSubscription"
      *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<DeleteDatalakeExceptionsSubscriptionResult> deleteDatalakeExceptionsSubscriptionAsync(
-            DeleteDatalakeExceptionsSubscriptionRequest deleteDatalakeExceptionsSubscriptionRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteDatalakeExceptionsSubscriptionRequest, DeleteDatalakeExceptionsSubscriptionResult> asyncHandler);
+    java.util.concurrent.Future<DeleteDataLakeExceptionSubscriptionResult> deleteDataLakeExceptionSubscriptionAsync(
+            DeleteDataLakeExceptionSubscriptionRequest deleteDataLakeExceptionSubscriptionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteDataLakeExceptionSubscriptionRequest, DeleteDataLakeExceptionSubscriptionResult> asyncHandler);
 
     /**
      * <p>
-     * Deletes the subscription permission for accounts that are already enabled in Amazon Security Lake. You can delete
-     * a subscriber and remove access to data in the current Amazon Web Services Region.
+     * Turns off automatic enablement of Amazon Security Lake for member accounts that are added to an organization in
+     * Organizations. Only the delegated Security Lake administrator for an organization can perform this operation. If
+     * the delegated Security Lake administrator performs this operation, new member accounts won't automatically
+     * contribute data to the data lake.
+     * </p>
+     * 
+     * @param deleteDataLakeOrganizationConfigurationRequest
+     * @return A Java Future containing the result of the DeleteDataLakeOrganizationConfiguration operation returned by
+     *         the service.
+     * @sample AmazonSecurityLakeAsync.DeleteDataLakeOrganizationConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDataLakeOrganizationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteDataLakeOrganizationConfigurationResult> deleteDataLakeOrganizationConfigurationAsync(
+            DeleteDataLakeOrganizationConfigurationRequest deleteDataLakeOrganizationConfigurationRequest);
+
+    /**
+     * <p>
+     * Turns off automatic enablement of Amazon Security Lake for member accounts that are added to an organization in
+     * Organizations. Only the delegated Security Lake administrator for an organization can perform this operation. If
+     * the delegated Security Lake administrator performs this operation, new member accounts won't automatically
+     * contribute data to the data lake.
+     * </p>
+     * 
+     * @param deleteDataLakeOrganizationConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteDataLakeOrganizationConfiguration operation returned by
+     *         the service.
+     * @sample AmazonSecurityLakeAsyncHandler.DeleteDataLakeOrganizationConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDataLakeOrganizationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteDataLakeOrganizationConfigurationResult> deleteDataLakeOrganizationConfigurationAsync(
+            DeleteDataLakeOrganizationConfigurationRequest deleteDataLakeOrganizationConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteDataLakeOrganizationConfigurationRequest, DeleteDataLakeOrganizationConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the subscription permission and all notification settings for accounts that are already enabled in Amazon
+     * Security Lake. When you run <code>DeleteSubscriber</code>, the subscriber will no longer consume data from
+     * Security Lake and the subscriber is removed. This operation deletes the subscriber and removes access to data in
+     * the current Amazon Web Services Region.
      * </p>
      * 
      * @param deleteSubscriberRequest
@@ -690,8 +572,10 @@ public interface AmazonSecurityLakeAsync extends AmazonSecurityLake {
 
     /**
      * <p>
-     * Deletes the subscription permission for accounts that are already enabled in Amazon Security Lake. You can delete
-     * a subscriber and remove access to data in the current Amazon Web Services Region.
+     * Deletes the subscription permission and all notification settings for accounts that are already enabled in Amazon
+     * Security Lake. When you run <code>DeleteSubscriber</code>, the subscriber will no longer consume data from
+     * Security Lake and the subscriber is removed. This operation deletes the subscriber and removes access to data in
+     * the current Amazon Web Services Region.
      * </p>
      * 
      * @param deleteSubscriberRequest
@@ -712,72 +596,111 @@ public interface AmazonSecurityLakeAsync extends AmazonSecurityLake {
      * Deletes the specified notification subscription in Amazon Security Lake for the organization you specify.
      * </p>
      * 
-     * @param deleteSubscriptionNotificationConfigurationRequest
-     * @return A Java Future containing the result of the DeleteSubscriptionNotificationConfiguration operation returned
-     *         by the service.
-     * @sample AmazonSecurityLakeAsync.DeleteSubscriptionNotificationConfiguration
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteSubscriptionNotificationConfiguration"
+     * @param deleteSubscriberNotificationRequest
+     * @return A Java Future containing the result of the DeleteSubscriberNotification operation returned by the
+     *         service.
+     * @sample AmazonSecurityLakeAsync.DeleteSubscriberNotification
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteSubscriberNotification"
      *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<DeleteSubscriptionNotificationConfigurationResult> deleteSubscriptionNotificationConfigurationAsync(
-            DeleteSubscriptionNotificationConfigurationRequest deleteSubscriptionNotificationConfigurationRequest);
+    java.util.concurrent.Future<DeleteSubscriberNotificationResult> deleteSubscriberNotificationAsync(
+            DeleteSubscriberNotificationRequest deleteSubscriberNotificationRequest);
 
     /**
      * <p>
      * Deletes the specified notification subscription in Amazon Security Lake for the organization you specify.
      * </p>
      * 
-     * @param deleteSubscriptionNotificationConfigurationRequest
+     * @param deleteSubscriberNotificationRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the DeleteSubscriptionNotificationConfiguration operation returned
-     *         by the service.
-     * @sample AmazonSecurityLakeAsyncHandler.DeleteSubscriptionNotificationConfiguration
+     * @return A Java Future containing the result of the DeleteSubscriberNotification operation returned by the
+     *         service.
+     * @sample AmazonSecurityLakeAsyncHandler.DeleteSubscriberNotification
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteSubscriberNotification"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteSubscriberNotificationResult> deleteSubscriberNotificationAsync(
+            DeleteSubscriberNotificationRequest deleteSubscriberNotificationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteSubscriberNotificationRequest, DeleteSubscriberNotificationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the Amazon Security Lake delegated administrator account for the organization. This API can only be
+     * called by the organization management account. The organization management account cannot be the delegated
+     * administrator account.
+     * </p>
+     * 
+     * @param deregisterDataLakeDelegatedAdministratorRequest
+     * @return A Java Future containing the result of the DeregisterDataLakeDelegatedAdministrator operation returned by
+     *         the service.
+     * @sample AmazonSecurityLakeAsync.DeregisterDataLakeDelegatedAdministrator
      * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteSubscriptionNotificationConfiguration"
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeregisterDataLakeDelegatedAdministrator"
      *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<DeleteSubscriptionNotificationConfigurationResult> deleteSubscriptionNotificationConfigurationAsync(
-            DeleteSubscriptionNotificationConfigurationRequest deleteSubscriptionNotificationConfigurationRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteSubscriptionNotificationConfigurationRequest, DeleteSubscriptionNotificationConfigurationResult> asyncHandler);
+    java.util.concurrent.Future<DeregisterDataLakeDelegatedAdministratorResult> deregisterDataLakeDelegatedAdministratorAsync(
+            DeregisterDataLakeDelegatedAdministratorRequest deregisterDataLakeDelegatedAdministratorRequest);
 
     /**
      * <p>
-     * Retrieves the Amazon Security Lake configuration object for the specified Amazon Web Services account ID. You can
-     * use the <code>GetDatalake</code> API to know whether Security Lake is enabled for the current Region. This API
-     * does not take input parameters.
+     * Deletes the Amazon Security Lake delegated administrator account for the organization. This API can only be
+     * called by the organization management account. The organization management account cannot be the delegated
+     * administrator account.
      * </p>
      * 
-     * @param getDatalakeRequest
-     * @return A Java Future containing the result of the GetDatalake operation returned by the service.
-     * @sample AmazonSecurityLakeAsync.GetDatalake
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDatalake" target="_top">AWS API
-     *      Documentation</a>
-     */
-    java.util.concurrent.Future<GetDatalakeResult> getDatalakeAsync(GetDatalakeRequest getDatalakeRequest);
-
-    /**
-     * <p>
-     * Retrieves the Amazon Security Lake configuration object for the specified Amazon Web Services account ID. You can
-     * use the <code>GetDatalake</code> API to know whether Security Lake is enabled for the current Region. This API
-     * does not take input parameters.
-     * </p>
-     * 
-     * @param getDatalakeRequest
+     * @param deregisterDataLakeDelegatedAdministratorRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the GetDatalake operation returned by the service.
-     * @sample AmazonSecurityLakeAsyncHandler.GetDatalake
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDatalake" target="_top">AWS API
-     *      Documentation</a>
+     * @return A Java Future containing the result of the DeregisterDataLakeDelegatedAdministrator operation returned by
+     *         the service.
+     * @sample AmazonSecurityLakeAsyncHandler.DeregisterDataLakeDelegatedAdministrator
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeregisterDataLakeDelegatedAdministrator"
+     *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<GetDatalakeResult> getDatalakeAsync(GetDatalakeRequest getDatalakeRequest,
-            com.amazonaws.handlers.AsyncHandler<GetDatalakeRequest, GetDatalakeResult> asyncHandler);
+    java.util.concurrent.Future<DeregisterDataLakeDelegatedAdministratorResult> deregisterDataLakeDelegatedAdministratorAsync(
+            DeregisterDataLakeDelegatedAdministratorRequest deregisterDataLakeDelegatedAdministratorRequest,
+            com.amazonaws.handlers.AsyncHandler<DeregisterDataLakeDelegatedAdministratorRequest, DeregisterDataLakeDelegatedAdministratorResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the details of exception notifications for the account in Amazon Security Lake.
+     * </p>
+     * 
+     * @param getDataLakeExceptionSubscriptionRequest
+     * @return A Java Future containing the result of the GetDataLakeExceptionSubscription operation returned by the
+     *         service.
+     * @sample AmazonSecurityLakeAsync.GetDataLakeExceptionSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDataLakeExceptionSubscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetDataLakeExceptionSubscriptionResult> getDataLakeExceptionSubscriptionAsync(
+            GetDataLakeExceptionSubscriptionRequest getDataLakeExceptionSubscriptionRequest);
+
+    /**
+     * <p>
+     * Retrieves the details of exception notifications for the account in Amazon Security Lake.
+     * </p>
+     * 
+     * @param getDataLakeExceptionSubscriptionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetDataLakeExceptionSubscription operation returned by the
+     *         service.
+     * @sample AmazonSecurityLakeAsyncHandler.GetDataLakeExceptionSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDataLakeExceptionSubscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetDataLakeExceptionSubscriptionResult> getDataLakeExceptionSubscriptionAsync(
+            GetDataLakeExceptionSubscriptionRequest getDataLakeExceptionSubscriptionRequest,
+            com.amazonaws.handlers.AsyncHandler<GetDataLakeExceptionSubscriptionRequest, GetDataLakeExceptionSubscriptionResult> asyncHandler);
 
     /**
      * <p>
@@ -785,13 +708,16 @@ public interface AmazonSecurityLakeAsync extends AmazonSecurityLake {
      * organization has onboarded to Amazon Security Lake. This API does not take input parameters.
      * </p>
      * 
-     * @param getDatalakeAutoEnableRequest
-     * @return A Java Future containing the result of the GetDatalakeAutoEnable operation returned by the service.
-     * @sample AmazonSecurityLakeAsync.GetDatalakeAutoEnable
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDatalakeAutoEnable"
+     * @param getDataLakeOrganizationConfigurationRequest
+     * @return A Java Future containing the result of the GetDataLakeOrganizationConfiguration operation returned by the
+     *         service.
+     * @sample AmazonSecurityLakeAsync.GetDataLakeOrganizationConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDataLakeOrganizationConfiguration"
      *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<GetDatalakeAutoEnableResult> getDatalakeAutoEnableAsync(GetDatalakeAutoEnableRequest getDatalakeAutoEnableRequest);
+    java.util.concurrent.Future<GetDataLakeOrganizationConfigurationResult> getDataLakeOrganizationConfigurationAsync(
+            GetDataLakeOrganizationConfigurationRequest getDataLakeOrganizationConfigurationRequest);
 
     /**
      * <p>
@@ -799,90 +725,21 @@ public interface AmazonSecurityLakeAsync extends AmazonSecurityLake {
      * organization has onboarded to Amazon Security Lake. This API does not take input parameters.
      * </p>
      * 
-     * @param getDatalakeAutoEnableRequest
+     * @param getDataLakeOrganizationConfigurationRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the GetDatalakeAutoEnable operation returned by the service.
-     * @sample AmazonSecurityLakeAsyncHandler.GetDatalakeAutoEnable
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDatalakeAutoEnable"
-     *      target="_top">AWS API Documentation</a>
-     */
-    java.util.concurrent.Future<GetDatalakeAutoEnableResult> getDatalakeAutoEnableAsync(GetDatalakeAutoEnableRequest getDatalakeAutoEnableRequest,
-            com.amazonaws.handlers.AsyncHandler<GetDatalakeAutoEnableRequest, GetDatalakeAutoEnableResult> asyncHandler);
-
-    /**
-     * <p>
-     * Retrieves the expiration period and time-to-live (TTL) for which the exception message will remain. Exceptions
-     * are stored by default, for 2 weeks from when a record was created in Amazon Security Lake. This API does not take
-     * input parameters.
-     * </p>
-     * 
-     * @param getDatalakeExceptionsExpiryRequest
-     * @return A Java Future containing the result of the GetDatalakeExceptionsExpiry operation returned by the service.
-     * @sample AmazonSecurityLakeAsync.GetDatalakeExceptionsExpiry
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDatalakeExceptionsExpiry"
-     *      target="_top">AWS API Documentation</a>
-     */
-    java.util.concurrent.Future<GetDatalakeExceptionsExpiryResult> getDatalakeExceptionsExpiryAsync(
-            GetDatalakeExceptionsExpiryRequest getDatalakeExceptionsExpiryRequest);
-
-    /**
-     * <p>
-     * Retrieves the expiration period and time-to-live (TTL) for which the exception message will remain. Exceptions
-     * are stored by default, for 2 weeks from when a record was created in Amazon Security Lake. This API does not take
-     * input parameters.
-     * </p>
-     * 
-     * @param getDatalakeExceptionsExpiryRequest
-     * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
-     *        implementation of the callback methods in this interface to receive notification of successful or
-     *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the GetDatalakeExceptionsExpiry operation returned by the service.
-     * @sample AmazonSecurityLakeAsyncHandler.GetDatalakeExceptionsExpiry
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDatalakeExceptionsExpiry"
-     *      target="_top">AWS API Documentation</a>
-     */
-    java.util.concurrent.Future<GetDatalakeExceptionsExpiryResult> getDatalakeExceptionsExpiryAsync(
-            GetDatalakeExceptionsExpiryRequest getDatalakeExceptionsExpiryRequest,
-            com.amazonaws.handlers.AsyncHandler<GetDatalakeExceptionsExpiryRequest, GetDatalakeExceptionsExpiryResult> asyncHandler);
-
-    /**
-     * <p>
-     * Retrieves the details of exception notifications for the account in Amazon Security Lake.
-     * </p>
-     * 
-     * @param getDatalakeExceptionsSubscriptionRequest
-     * @return A Java Future containing the result of the GetDatalakeExceptionsSubscription operation returned by the
+     * @return A Java Future containing the result of the GetDataLakeOrganizationConfiguration operation returned by the
      *         service.
-     * @sample AmazonSecurityLakeAsync.GetDatalakeExceptionsSubscription
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDatalakeExceptionsSubscription"
+     * @sample AmazonSecurityLakeAsyncHandler.GetDataLakeOrganizationConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDataLakeOrganizationConfiguration"
      *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<GetDatalakeExceptionsSubscriptionResult> getDatalakeExceptionsSubscriptionAsync(
-            GetDatalakeExceptionsSubscriptionRequest getDatalakeExceptionsSubscriptionRequest);
-
-    /**
-     * <p>
-     * Retrieves the details of exception notifications for the account in Amazon Security Lake.
-     * </p>
-     * 
-     * @param getDatalakeExceptionsSubscriptionRequest
-     * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
-     *        implementation of the callback methods in this interface to receive notification of successful or
-     *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the GetDatalakeExceptionsSubscription operation returned by the
-     *         service.
-     * @sample AmazonSecurityLakeAsyncHandler.GetDatalakeExceptionsSubscription
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDatalakeExceptionsSubscription"
-     *      target="_top">AWS API Documentation</a>
-     */
-    java.util.concurrent.Future<GetDatalakeExceptionsSubscriptionResult> getDatalakeExceptionsSubscriptionAsync(
-            GetDatalakeExceptionsSubscriptionRequest getDatalakeExceptionsSubscriptionRequest,
-            com.amazonaws.handlers.AsyncHandler<GetDatalakeExceptionsSubscriptionRequest, GetDatalakeExceptionsSubscriptionResult> asyncHandler);
+    java.util.concurrent.Future<GetDataLakeOrganizationConfigurationResult> getDataLakeOrganizationConfigurationAsync(
+            GetDataLakeOrganizationConfigurationRequest getDataLakeOrganizationConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetDataLakeOrganizationConfigurationRequest, GetDataLakeOrganizationConfigurationResult> asyncHandler);
 
     /**
      * <p>
@@ -890,13 +747,13 @@ public interface AmazonSecurityLakeAsync extends AmazonSecurityLake {
      * and which sources Security Lake is collecting data from.
      * </p>
      * 
-     * @param getDatalakeStatusRequest
-     * @return A Java Future containing the result of the GetDatalakeStatus operation returned by the service.
-     * @sample AmazonSecurityLakeAsync.GetDatalakeStatus
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDatalakeStatus" target="_top">AWS
-     *      API Documentation</a>
+     * @param getDataLakeSourcesRequest
+     * @return A Java Future containing the result of the GetDataLakeSources operation returned by the service.
+     * @sample AmazonSecurityLakeAsync.GetDataLakeSources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDataLakeSources"
+     *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<GetDatalakeStatusResult> getDatalakeStatusAsync(GetDatalakeStatusRequest getDatalakeStatusRequest);
+    java.util.concurrent.Future<GetDataLakeSourcesResult> getDataLakeSourcesAsync(GetDataLakeSourcesRequest getDataLakeSourcesRequest);
 
     /**
      * <p>
@@ -904,18 +761,18 @@ public interface AmazonSecurityLakeAsync extends AmazonSecurityLake {
      * and which sources Security Lake is collecting data from.
      * </p>
      * 
-     * @param getDatalakeStatusRequest
+     * @param getDataLakeSourcesRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the GetDatalakeStatus operation returned by the service.
-     * @sample AmazonSecurityLakeAsyncHandler.GetDatalakeStatus
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDatalakeStatus" target="_top">AWS
-     *      API Documentation</a>
+     * @return A Java Future containing the result of the GetDataLakeSources operation returned by the service.
+     * @sample AmazonSecurityLakeAsyncHandler.GetDataLakeSources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDataLakeSources"
+     *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<GetDatalakeStatusResult> getDatalakeStatusAsync(GetDatalakeStatusRequest getDatalakeStatusRequest,
-            com.amazonaws.handlers.AsyncHandler<GetDatalakeStatusRequest, GetDatalakeStatusResult> asyncHandler);
+    java.util.concurrent.Future<GetDataLakeSourcesResult> getDataLakeSourcesAsync(GetDataLakeSourcesRequest getDataLakeSourcesRequest,
+            com.amazonaws.handlers.AsyncHandler<GetDataLakeSourcesRequest, GetDataLakeSourcesResult> asyncHandler);
 
     /**
      * <p>
@@ -955,31 +812,64 @@ public interface AmazonSecurityLakeAsync extends AmazonSecurityLake {
      * Lists the Amazon Security Lake exceptions that you can use to find the source of problems and fix them.
      * </p>
      * 
-     * @param listDatalakeExceptionsRequest
-     * @return A Java Future containing the result of the ListDatalakeExceptions operation returned by the service.
-     * @sample AmazonSecurityLakeAsync.ListDatalakeExceptions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ListDatalakeExceptions"
+     * @param listDataLakeExceptionsRequest
+     * @return A Java Future containing the result of the ListDataLakeExceptions operation returned by the service.
+     * @sample AmazonSecurityLakeAsync.ListDataLakeExceptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ListDataLakeExceptions"
      *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<ListDatalakeExceptionsResult> listDatalakeExceptionsAsync(ListDatalakeExceptionsRequest listDatalakeExceptionsRequest);
+    java.util.concurrent.Future<ListDataLakeExceptionsResult> listDataLakeExceptionsAsync(ListDataLakeExceptionsRequest listDataLakeExceptionsRequest);
 
     /**
      * <p>
      * Lists the Amazon Security Lake exceptions that you can use to find the source of problems and fix them.
      * </p>
      * 
-     * @param listDatalakeExceptionsRequest
+     * @param listDataLakeExceptionsRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the ListDatalakeExceptions operation returned by the service.
-     * @sample AmazonSecurityLakeAsyncHandler.ListDatalakeExceptions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ListDatalakeExceptions"
+     * @return A Java Future containing the result of the ListDataLakeExceptions operation returned by the service.
+     * @sample AmazonSecurityLakeAsyncHandler.ListDataLakeExceptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ListDataLakeExceptions"
      *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<ListDatalakeExceptionsResult> listDatalakeExceptionsAsync(ListDatalakeExceptionsRequest listDatalakeExceptionsRequest,
-            com.amazonaws.handlers.AsyncHandler<ListDatalakeExceptionsRequest, ListDatalakeExceptionsResult> asyncHandler);
+    java.util.concurrent.Future<ListDataLakeExceptionsResult> listDataLakeExceptionsAsync(ListDataLakeExceptionsRequest listDataLakeExceptionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListDataLakeExceptionsRequest, ListDataLakeExceptionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the Amazon Security Lake configuration object for the specified Amazon Web Services Regions. You can
+     * use this operation to determine whether Security Lake is enabled for a Region.
+     * </p>
+     * 
+     * @param listDataLakesRequest
+     * @return A Java Future containing the result of the ListDataLakes operation returned by the service.
+     * @sample AmazonSecurityLakeAsync.ListDataLakes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ListDataLakes" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListDataLakesResult> listDataLakesAsync(ListDataLakesRequest listDataLakesRequest);
+
+    /**
+     * <p>
+     * Retrieves the Amazon Security Lake configuration object for the specified Amazon Web Services Regions. You can
+     * use this operation to determine whether Security Lake is enabled for a Region.
+     * </p>
+     * 
+     * @param listDataLakesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListDataLakes operation returned by the service.
+     * @sample AmazonSecurityLakeAsyncHandler.ListDataLakes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ListDataLakes" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListDataLakesResult> listDataLakesAsync(ListDataLakesRequest listDataLakesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListDataLakesRequest, ListDataLakesResult> asyncHandler);
 
     /**
      * <p>
@@ -1047,112 +937,225 @@ public interface AmazonSecurityLakeAsync extends AmazonSecurityLake {
 
     /**
      * <p>
-     * Specifies where to store your security data and for how long. You can add a rollup Region to consolidate data
-     * from multiple Amazon Web Services Regions.
+     * Retrieves the tags (keys and values) that are associated with an Amazon Security Lake resource: a subscriber, or
+     * the data lake configuration for your Amazon Web Services account in a particular Amazon Web Services Region.
      * </p>
      * 
-     * @param updateDatalakeRequest
-     * @return A Java Future containing the result of the UpdateDatalake operation returned by the service.
-     * @sample AmazonSecurityLakeAsync.UpdateDatalake
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateDatalake" target="_top">AWS
-     *      API Documentation</a>
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonSecurityLakeAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<UpdateDatalakeResult> updateDatalakeAsync(UpdateDatalakeRequest updateDatalakeRequest);
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
 
     /**
      * <p>
-     * Specifies where to store your security data and for how long. You can add a rollup Region to consolidate data
-     * from multiple Amazon Web Services Regions.
+     * Retrieves the tags (keys and values) that are associated with an Amazon Security Lake resource: a subscriber, or
+     * the data lake configuration for your Amazon Web Services account in a particular Amazon Web Services Region.
      * </p>
      * 
-     * @param updateDatalakeRequest
+     * @param listTagsForResourceRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the UpdateDatalake operation returned by the service.
-     * @sample AmazonSecurityLakeAsyncHandler.UpdateDatalake
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateDatalake" target="_top">AWS
-     *      API Documentation</a>
-     */
-    java.util.concurrent.Future<UpdateDatalakeResult> updateDatalakeAsync(UpdateDatalakeRequest updateDatalakeRequest,
-            com.amazonaws.handlers.AsyncHandler<UpdateDatalakeRequest, UpdateDatalakeResult> asyncHandler);
-
-    /**
-     * <p>
-     * Update the expiration period for the exception message to your preferred time, and control the time-to-live (TTL)
-     * for the exception message to remain. Exceptions are stored by default for 2 weeks from when a record was created
-     * in Amazon Security Lake.
-     * </p>
-     * 
-     * @param updateDatalakeExceptionsExpiryRequest
-     * @return A Java Future containing the result of the UpdateDatalakeExceptionsExpiry operation returned by the
-     *         service.
-     * @sample AmazonSecurityLakeAsync.UpdateDatalakeExceptionsExpiry
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateDatalakeExceptionsExpiry"
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonSecurityLakeAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ListTagsForResource"
      *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<UpdateDatalakeExceptionsExpiryResult> updateDatalakeExceptionsExpiryAsync(
-            UpdateDatalakeExceptionsExpiryRequest updateDatalakeExceptionsExpiryRequest);
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
 
     /**
      * <p>
-     * Update the expiration period for the exception message to your preferred time, and control the time-to-live (TTL)
-     * for the exception message to remain. Exceptions are stored by default for 2 weeks from when a record was created
-     * in Amazon Security Lake.
+     * Designates the Amazon Security Lake delegated administrator account for the organization. This API can only be
+     * called by the organization management account. The organization management account cannot be the delegated
+     * administrator account.
      * </p>
      * 
-     * @param updateDatalakeExceptionsExpiryRequest
+     * @param registerDataLakeDelegatedAdministratorRequest
+     * @return A Java Future containing the result of the RegisterDataLakeDelegatedAdministrator operation returned by
+     *         the service.
+     * @sample AmazonSecurityLakeAsync.RegisterDataLakeDelegatedAdministrator
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/RegisterDataLakeDelegatedAdministrator"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RegisterDataLakeDelegatedAdministratorResult> registerDataLakeDelegatedAdministratorAsync(
+            RegisterDataLakeDelegatedAdministratorRequest registerDataLakeDelegatedAdministratorRequest);
+
+    /**
+     * <p>
+     * Designates the Amazon Security Lake delegated administrator account for the organization. This API can only be
+     * called by the organization management account. The organization management account cannot be the delegated
+     * administrator account.
+     * </p>
+     * 
+     * @param registerDataLakeDelegatedAdministratorRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the UpdateDatalakeExceptionsExpiry operation returned by the
-     *         service.
-     * @sample AmazonSecurityLakeAsyncHandler.UpdateDatalakeExceptionsExpiry
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateDatalakeExceptionsExpiry"
+     * @return A Java Future containing the result of the RegisterDataLakeDelegatedAdministrator operation returned by
+     *         the service.
+     * @sample AmazonSecurityLakeAsyncHandler.RegisterDataLakeDelegatedAdministrator
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/RegisterDataLakeDelegatedAdministrator"
      *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<UpdateDatalakeExceptionsExpiryResult> updateDatalakeExceptionsExpiryAsync(
-            UpdateDatalakeExceptionsExpiryRequest updateDatalakeExceptionsExpiryRequest,
-            com.amazonaws.handlers.AsyncHandler<UpdateDatalakeExceptionsExpiryRequest, UpdateDatalakeExceptionsExpiryResult> asyncHandler);
+    java.util.concurrent.Future<RegisterDataLakeDelegatedAdministratorResult> registerDataLakeDelegatedAdministratorAsync(
+            RegisterDataLakeDelegatedAdministratorRequest registerDataLakeDelegatedAdministratorRequest,
+            com.amazonaws.handlers.AsyncHandler<RegisterDataLakeDelegatedAdministratorRequest, RegisterDataLakeDelegatedAdministratorResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds or updates one or more tags that are associated with an Amazon Security Lake resource: a subscriber, or the
+     * data lake configuration for your Amazon Web Services account in a particular Amazon Web Services Region. A
+     * <i>tag</i> is a label that you can define and associate with Amazon Web Services resources. Each tag consists of
+     * a required <i>tag key</i> and an associated <i>tag value</i>. A <i>tag key</i> is a general label that acts as a
+     * category for a more specific tag value. A <i>tag value</i> acts as a descriptor for a tag key. Tags can help you
+     * identify, categorize, and manage resources in different ways, such as by owner, environment, or other criteria.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/tagging-resources.html">Tagging Amazon Security
+     * Lake resources</a> in the <i>Amazon Security Lake User Guide</i>.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonSecurityLakeAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Adds or updates one or more tags that are associated with an Amazon Security Lake resource: a subscriber, or the
+     * data lake configuration for your Amazon Web Services account in a particular Amazon Web Services Region. A
+     * <i>tag</i> is a label that you can define and associate with Amazon Web Services resources. Each tag consists of
+     * a required <i>tag key</i> and an associated <i>tag value</i>. A <i>tag key</i> is a general label that acts as a
+     * category for a more specific tag value. A <i>tag value</i> acts as a descriptor for a tag key. Tags can help you
+     * identify, categorize, and manage resources in different ways, such as by owner, environment, or other criteria.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/tagging-resources.html">Tagging Amazon Security
+     * Lake resources</a> in the <i>Amazon Security Lake User Guide</i>.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonSecurityLakeAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes one or more tags (keys and values) from an Amazon Security Lake resource: a subscriber, or the data lake
+     * configuration for your Amazon Web Services account in a particular Amazon Web Services Region.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonSecurityLakeAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Removes one or more tags (keys and values) from an Amazon Security Lake resource: a subscriber, or the data lake
+     * configuration for your Amazon Web Services account in a particular Amazon Web Services Region.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonSecurityLakeAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Specifies where to store your security data and for how long. You can add a rollup Region to consolidate data
+     * from multiple Amazon Web Services Regions.
+     * </p>
+     * 
+     * @param updateDataLakeRequest
+     * @return A Java Future containing the result of the UpdateDataLake operation returned by the service.
+     * @sample AmazonSecurityLakeAsync.UpdateDataLake
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateDataLake" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateDataLakeResult> updateDataLakeAsync(UpdateDataLakeRequest updateDataLakeRequest);
+
+    /**
+     * <p>
+     * Specifies where to store your security data and for how long. You can add a rollup Region to consolidate data
+     * from multiple Amazon Web Services Regions.
+     * </p>
+     * 
+     * @param updateDataLakeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateDataLake operation returned by the service.
+     * @sample AmazonSecurityLakeAsyncHandler.UpdateDataLake
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateDataLake" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateDataLakeResult> updateDataLakeAsync(UpdateDataLakeRequest updateDataLakeRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateDataLakeRequest, UpdateDataLakeResult> asyncHandler);
 
     /**
      * <p>
      * Updates the specified notification subscription in Amazon Security Lake for the organization you specify.
      * </p>
      * 
-     * @param updateDatalakeExceptionsSubscriptionRequest
-     * @return A Java Future containing the result of the UpdateDatalakeExceptionsSubscription operation returned by the
+     * @param updateDataLakeExceptionSubscriptionRequest
+     * @return A Java Future containing the result of the UpdateDataLakeExceptionSubscription operation returned by the
      *         service.
-     * @sample AmazonSecurityLakeAsync.UpdateDatalakeExceptionsSubscription
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateDatalakeExceptionsSubscription"
+     * @sample AmazonSecurityLakeAsync.UpdateDataLakeExceptionSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateDataLakeExceptionSubscription"
      *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<UpdateDatalakeExceptionsSubscriptionResult> updateDatalakeExceptionsSubscriptionAsync(
-            UpdateDatalakeExceptionsSubscriptionRequest updateDatalakeExceptionsSubscriptionRequest);
+    java.util.concurrent.Future<UpdateDataLakeExceptionSubscriptionResult> updateDataLakeExceptionSubscriptionAsync(
+            UpdateDataLakeExceptionSubscriptionRequest updateDataLakeExceptionSubscriptionRequest);
 
     /**
      * <p>
      * Updates the specified notification subscription in Amazon Security Lake for the organization you specify.
      * </p>
      * 
-     * @param updateDatalakeExceptionsSubscriptionRequest
+     * @param updateDataLakeExceptionSubscriptionRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the UpdateDatalakeExceptionsSubscription operation returned by the
+     * @return A Java Future containing the result of the UpdateDataLakeExceptionSubscription operation returned by the
      *         service.
-     * @sample AmazonSecurityLakeAsyncHandler.UpdateDatalakeExceptionsSubscription
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateDatalakeExceptionsSubscription"
+     * @sample AmazonSecurityLakeAsyncHandler.UpdateDataLakeExceptionSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateDataLakeExceptionSubscription"
      *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<UpdateDatalakeExceptionsSubscriptionResult> updateDatalakeExceptionsSubscriptionAsync(
-            UpdateDatalakeExceptionsSubscriptionRequest updateDatalakeExceptionsSubscriptionRequest,
-            com.amazonaws.handlers.AsyncHandler<UpdateDatalakeExceptionsSubscriptionRequest, UpdateDatalakeExceptionsSubscriptionResult> asyncHandler);
+    java.util.concurrent.Future<UpdateDataLakeExceptionSubscriptionResult> updateDataLakeExceptionSubscriptionAsync(
+            UpdateDataLakeExceptionSubscriptionRequest updateDataLakeExceptionSubscriptionRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateDataLakeExceptionSubscriptionRequest, UpdateDataLakeExceptionSubscriptionResult> asyncHandler);
 
     /**
      * <p>
@@ -1193,16 +1196,15 @@ public interface AmazonSecurityLakeAsync extends AmazonSecurityLake {
      * subscription endpoint for a subscriber.
      * </p>
      * 
-     * @param updateSubscriptionNotificationConfigurationRequest
-     * @return A Java Future containing the result of the UpdateSubscriptionNotificationConfiguration operation returned
-     *         by the service.
-     * @sample AmazonSecurityLakeAsync.UpdateSubscriptionNotificationConfiguration
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateSubscriptionNotificationConfiguration"
+     * @param updateSubscriberNotificationRequest
+     * @return A Java Future containing the result of the UpdateSubscriberNotification operation returned by the
+     *         service.
+     * @sample AmazonSecurityLakeAsync.UpdateSubscriberNotification
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateSubscriberNotification"
      *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<UpdateSubscriptionNotificationConfigurationResult> updateSubscriptionNotificationConfigurationAsync(
-            UpdateSubscriptionNotificationConfigurationRequest updateSubscriptionNotificationConfigurationRequest);
+    java.util.concurrent.Future<UpdateSubscriberNotificationResult> updateSubscriberNotificationAsync(
+            UpdateSubscriberNotificationRequest updateSubscriberNotificationRequest);
 
     /**
      * <p>
@@ -1210,20 +1212,19 @@ public interface AmazonSecurityLakeAsync extends AmazonSecurityLake {
      * subscription endpoint for a subscriber.
      * </p>
      * 
-     * @param updateSubscriptionNotificationConfigurationRequest
+     * @param updateSubscriberNotificationRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the UpdateSubscriptionNotificationConfiguration operation returned
-     *         by the service.
-     * @sample AmazonSecurityLakeAsyncHandler.UpdateSubscriptionNotificationConfiguration
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateSubscriptionNotificationConfiguration"
+     * @return A Java Future containing the result of the UpdateSubscriberNotification operation returned by the
+     *         service.
+     * @sample AmazonSecurityLakeAsyncHandler.UpdateSubscriberNotification
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateSubscriberNotification"
      *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<UpdateSubscriptionNotificationConfigurationResult> updateSubscriptionNotificationConfigurationAsync(
-            UpdateSubscriptionNotificationConfigurationRequest updateSubscriptionNotificationConfigurationRequest,
-            com.amazonaws.handlers.AsyncHandler<UpdateSubscriptionNotificationConfigurationRequest, UpdateSubscriptionNotificationConfigurationResult> asyncHandler);
+    java.util.concurrent.Future<UpdateSubscriberNotificationResult> updateSubscriberNotificationAsync(
+            UpdateSubscriberNotificationRequest updateSubscriberNotificationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateSubscriberNotificationRequest, UpdateSubscriberNotificationResult> asyncHandler);
 
 }

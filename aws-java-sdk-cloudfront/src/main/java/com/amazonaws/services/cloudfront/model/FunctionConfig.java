@@ -34,7 +34,7 @@ public class FunctionConfig implements Serializable, Cloneable {
     private String comment;
     /**
      * <p>
-     * The function's runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.
+     * The function's runtime environment verion.
      * </p>
      */
     private String runtime;
@@ -81,11 +81,11 @@ public class FunctionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The function's runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.
+     * The function's runtime environment verion.
      * </p>
      * 
      * @param runtime
-     *        The function's runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.
+     *        The function's runtime environment verion.
      * @see FunctionRuntime
      */
 
@@ -95,10 +95,10 @@ public class FunctionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The function's runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.
+     * The function's runtime environment verion.
      * </p>
      * 
-     * @return The function's runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.
+     * @return The function's runtime environment verion.
      * @see FunctionRuntime
      */
 
@@ -108,11 +108,11 @@ public class FunctionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The function's runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.
+     * The function's runtime environment verion.
      * </p>
      * 
      * @param runtime
-     *        The function's runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.
+     *        The function's runtime environment verion.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FunctionRuntime
      */
@@ -124,11 +124,11 @@ public class FunctionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The function's runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.
+     * The function's runtime environment verion.
      * </p>
      * 
      * @param runtime
-     *        The function's runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.
+     *        The function's runtime environment verion.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FunctionRuntime
      */

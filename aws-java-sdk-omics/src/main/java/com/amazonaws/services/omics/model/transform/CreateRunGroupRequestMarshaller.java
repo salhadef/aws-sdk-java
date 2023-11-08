@@ -31,18 +31,20 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CreateRunGroupRequestMarshaller {
 
-    private static final MarshallingInfo<Integer> MAXCPUS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("maxCpus").build();
-    private static final MarshallingInfo<Integer> MAXDURATION_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxDuration").build();
-    private static final MarshallingInfo<Integer> MAXRUNS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("maxRuns").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
-    private static final MarshallingInfo<String> REQUESTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("requestId").defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
+    private static final MarshallingInfo<Integer> MAXCPUS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("maxCpus").build();
+    private static final MarshallingInfo<Integer> MAXRUNS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("maxRuns").build();
+    private static final MarshallingInfo<Integer> MAXDURATION_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxDuration").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<String> REQUESTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("requestId").defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
+    private static final MarshallingInfo<Integer> MAXGPUS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("maxGpus").build();
 
     private static final CreateRunGroupRequestMarshaller instance = new CreateRunGroupRequestMarshaller();
 
@@ -60,12 +62,13 @@ public class CreateRunGroupRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(createRunGroupRequest.getMaxCpus(), MAXCPUS_BINDING);
-            protocolMarshaller.marshall(createRunGroupRequest.getMaxDuration(), MAXDURATION_BINDING);
-            protocolMarshaller.marshall(createRunGroupRequest.getMaxRuns(), MAXRUNS_BINDING);
             protocolMarshaller.marshall(createRunGroupRequest.getName(), NAME_BINDING);
-            protocolMarshaller.marshall(createRunGroupRequest.getRequestId(), REQUESTID_BINDING);
+            protocolMarshaller.marshall(createRunGroupRequest.getMaxCpus(), MAXCPUS_BINDING);
+            protocolMarshaller.marshall(createRunGroupRequest.getMaxRuns(), MAXRUNS_BINDING);
+            protocolMarshaller.marshall(createRunGroupRequest.getMaxDuration(), MAXDURATION_BINDING);
             protocolMarshaller.marshall(createRunGroupRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createRunGroupRequest.getRequestId(), REQUESTID_BINDING);
+            protocolMarshaller.marshall(createRunGroupRequest.getMaxGpus(), MAXGPUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

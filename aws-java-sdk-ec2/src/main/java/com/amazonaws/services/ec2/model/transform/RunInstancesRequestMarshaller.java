@@ -136,6 +136,11 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
                     request.addParameter("Ipv6Address." + ipv6AddressesListIndex + ".Ipv6Address",
                             StringUtils.fromString(runInstancesRequestIpv6AddressesListValue.getIpv6Address()));
                 }
+
+                if (runInstancesRequestIpv6AddressesListValue.getIsPrimaryIpv6() != null) {
+                    request.addParameter("Ipv6Address." + ipv6AddressesListIndex + ".IsPrimaryIpv6",
+                            StringUtils.fromBoolean(runInstancesRequestIpv6AddressesListValue.getIsPrimaryIpv6()));
+                }
                 ipv6AddressesListIndex++;
             }
         }
@@ -327,6 +332,11 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
                                     "NetworkInterface." + networkInterfacesListIndex + ".Ipv6Addresses." + ipv6AddressesListIndex + ".Ipv6Address",
                                     StringUtils.fromString(instanceNetworkInterfaceSpecificationIpv6AddressesListValue.getIpv6Address()));
                         }
+
+                        if (instanceNetworkInterfaceSpecificationIpv6AddressesListValue.getIsPrimaryIpv6() != null) {
+                            request.addParameter("NetworkInterface." + networkInterfacesListIndex + ".Ipv6Addresses." + ipv6AddressesListIndex
+                                    + ".IsPrimaryIpv6", StringUtils.fromBoolean(instanceNetworkInterfaceSpecificationIpv6AddressesListValue.getIsPrimaryIpv6()));
+                        }
                         ipv6AddressesListIndex++;
                     }
                 }
@@ -428,6 +438,11 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
                 if (runInstancesRequestNetworkInterfacesListValue.getIpv6PrefixCount() != null) {
                     request.addParameter("NetworkInterface." + networkInterfacesListIndex + ".Ipv6PrefixCount",
                             StringUtils.fromInteger(runInstancesRequestNetworkInterfacesListValue.getIpv6PrefixCount()));
+                }
+
+                if (runInstancesRequestNetworkInterfacesListValue.getPrimaryIpv6() != null) {
+                    request.addParameter("NetworkInterface." + networkInterfacesListIndex + ".PrimaryIpv6",
+                            StringUtils.fromBoolean(runInstancesRequestNetworkInterfacesListValue.getPrimaryIpv6()));
                 }
                 networkInterfacesListIndex++;
             }
@@ -687,6 +702,10 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
 
         if (runInstancesRequest.getDisableApiStop() != null) {
             request.addParameter("DisableApiStop", StringUtils.fromBoolean(runInstancesRequest.getDisableApiStop()));
+        }
+
+        if (runInstancesRequest.getEnablePrimaryIpv6() != null) {
+            request.addParameter("EnablePrimaryIpv6", StringUtils.fromBoolean(runInstancesRequest.getEnablePrimaryIpv6()));
         }
 
         return request;

@@ -66,6 +66,13 @@ public class PutQueryDefinitionRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private String queryString;
+    /**
+     * <p>
+     * Used as an idempotency token, to avoid returning an exception if the service receives the same request twice
+     * because of a network error.
+     * </p>
+     */
+    private String clientToken;
 
     /**
      * <p>
@@ -364,6 +371,52 @@ public class PutQueryDefinitionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * Used as an idempotency token, to avoid returning an exception if the service receives the same request twice
+     * because of a network error.
+     * </p>
+     * 
+     * @param clientToken
+     *        Used as an idempotency token, to avoid returning an exception if the service receives the same request
+     *        twice because of a network error.
+     */
+
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
+    }
+
+    /**
+     * <p>
+     * Used as an idempotency token, to avoid returning an exception if the service receives the same request twice
+     * because of a network error.
+     * </p>
+     * 
+     * @return Used as an idempotency token, to avoid returning an exception if the service receives the same request
+     *         twice because of a network error.
+     */
+
+    public String getClientToken() {
+        return this.clientToken;
+    }
+
+    /**
+     * <p>
+     * Used as an idempotency token, to avoid returning an exception if the service receives the same request twice
+     * because of a network error.
+     * </p>
+     * 
+     * @param clientToken
+     *        Used as an idempotency token, to avoid returning an exception if the service receives the same request
+     *        twice because of a network error.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutQueryDefinitionRequest withClientToken(String clientToken) {
+        setClientToken(clientToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -382,7 +435,9 @@ public class PutQueryDefinitionRequest extends com.amazonaws.AmazonWebServiceReq
         if (getLogGroupNames() != null)
             sb.append("LogGroupNames: ").append(getLogGroupNames()).append(",");
         if (getQueryString() != null)
-            sb.append("QueryString: ").append(getQueryString());
+            sb.append("QueryString: ").append(getQueryString()).append(",");
+        if (getClientToken() != null)
+            sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");
         return sb.toString();
     }
@@ -413,6 +468,10 @@ public class PutQueryDefinitionRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getQueryString() != null && other.getQueryString().equals(this.getQueryString()) == false)
             return false;
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
+            return false;
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
+            return false;
         return true;
     }
 
@@ -425,6 +484,7 @@ public class PutQueryDefinitionRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getQueryDefinitionId() == null) ? 0 : getQueryDefinitionId().hashCode());
         hashCode = prime * hashCode + ((getLogGroupNames() == null) ? 0 : getLogGroupNames().hashCode());
         hashCode = prime * hashCode + ((getQueryString() == null) ? 0 : getQueryString().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         return hashCode;
     }
 

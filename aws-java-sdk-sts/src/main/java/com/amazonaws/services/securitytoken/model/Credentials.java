@@ -253,7 +253,7 @@ public class Credentials implements Serializable, Cloneable {
         if (getAccessKeyId() != null)
             sb.append("AccessKeyId: ").append(getAccessKeyId()).append(",");
         if (getSecretAccessKey() != null)
-            sb.append("SecretAccessKey: ").append(getSecretAccessKey()).append(",");
+            sb.append("SecretAccessKey: ").append("***Sensitive Data Redacted***").append(",");
         if (getSessionToken() != null)
             sb.append("SessionToken: ").append(getSessionToken()).append(",");
         if (getExpiration() != null)

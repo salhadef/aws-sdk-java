@@ -30,7 +30,7 @@ public class QuotaPeriod implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value.
+     * The value associated with the reported <code>PeriodUnit</code>.
      * </p>
      */
     private Integer periodValue;
@@ -43,11 +43,11 @@ public class QuotaPeriod implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value.
+     * The value associated with the reported <code>PeriodUnit</code>.
      * </p>
      * 
      * @param periodValue
-     *        The value.
+     *        The value associated with the reported <code>PeriodUnit</code>.
      */
 
     public void setPeriodValue(Integer periodValue) {
@@ -56,10 +56,10 @@ public class QuotaPeriod implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value.
+     * The value associated with the reported <code>PeriodUnit</code>.
      * </p>
      * 
-     * @return The value.
+     * @return The value associated with the reported <code>PeriodUnit</code>.
      */
 
     public Integer getPeriodValue() {
@@ -68,11 +68,11 @@ public class QuotaPeriod implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value.
+     * The value associated with the reported <code>PeriodUnit</code>.
      * </p>
      * 
      * @param periodValue
-     *        The value.
+     *        The value associated with the reported <code>PeriodUnit</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

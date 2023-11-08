@@ -30,24 +30,6 @@ public class LoggingConfigurationMetadata implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The time when the logging configuration was created.
-     * </p>
-     */
-    private java.util.Date createdAt;
-    /**
-     * <p>
-     * The ARN of the CW log group to which the vended log data will be published.
-     * </p>
-     */
-    private String logGroupArn;
-    /**
-     * <p>
-     * The time when the logging configuration was modified.
-     * </p>
-     */
-    private java.util.Date modifiedAt;
-    /**
-     * <p>
      * The status of the logging configuration.
      * </p>
      */
@@ -58,126 +40,24 @@ public class LoggingConfigurationMetadata implements Serializable, Cloneable, St
      * </p>
      */
     private String workspace;
-
-    /**
-     * <p>
-     * The time when the logging configuration was created.
-     * </p>
-     * 
-     * @param createdAt
-     *        The time when the logging configuration was created.
-     */
-
-    public void setCreatedAt(java.util.Date createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    /**
-     * <p>
-     * The time when the logging configuration was created.
-     * </p>
-     * 
-     * @return The time when the logging configuration was created.
-     */
-
-    public java.util.Date getCreatedAt() {
-        return this.createdAt;
-    }
-
-    /**
-     * <p>
-     * The time when the logging configuration was created.
-     * </p>
-     * 
-     * @param createdAt
-     *        The time when the logging configuration was created.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public LoggingConfigurationMetadata withCreatedAt(java.util.Date createdAt) {
-        setCreatedAt(createdAt);
-        return this;
-    }
-
     /**
      * <p>
      * The ARN of the CW log group to which the vended log data will be published.
      * </p>
-     * 
-     * @param logGroupArn
-     *        The ARN of the CW log group to which the vended log data will be published.
      */
-
-    public void setLogGroupArn(String logGroupArn) {
-        this.logGroupArn = logGroupArn;
-    }
-
+    private String logGroupArn;
     /**
      * <p>
-     * The ARN of the CW log group to which the vended log data will be published.
+     * The time when the logging configuration was created.
      * </p>
-     * 
-     * @return The ARN of the CW log group to which the vended log data will be published.
      */
-
-    public String getLogGroupArn() {
-        return this.logGroupArn;
-    }
-
-    /**
-     * <p>
-     * The ARN of the CW log group to which the vended log data will be published.
-     * </p>
-     * 
-     * @param logGroupArn
-     *        The ARN of the CW log group to which the vended log data will be published.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public LoggingConfigurationMetadata withLogGroupArn(String logGroupArn) {
-        setLogGroupArn(logGroupArn);
-        return this;
-    }
-
+    private java.util.Date createdAt;
     /**
      * <p>
      * The time when the logging configuration was modified.
      * </p>
-     * 
-     * @param modifiedAt
-     *        The time when the logging configuration was modified.
      */
-
-    public void setModifiedAt(java.util.Date modifiedAt) {
-        this.modifiedAt = modifiedAt;
-    }
-
-    /**
-     * <p>
-     * The time when the logging configuration was modified.
-     * </p>
-     * 
-     * @return The time when the logging configuration was modified.
-     */
-
-    public java.util.Date getModifiedAt() {
-        return this.modifiedAt;
-    }
-
-    /**
-     * <p>
-     * The time when the logging configuration was modified.
-     * </p>
-     * 
-     * @param modifiedAt
-     *        The time when the logging configuration was modified.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public LoggingConfigurationMetadata withModifiedAt(java.util.Date modifiedAt) {
-        setModifiedAt(modifiedAt);
-        return this;
-    }
+    private java.util.Date modifiedAt;
 
     /**
      * <p>
@@ -260,6 +140,126 @@ public class LoggingConfigurationMetadata implements Serializable, Cloneable, St
     }
 
     /**
+     * <p>
+     * The ARN of the CW log group to which the vended log data will be published.
+     * </p>
+     * 
+     * @param logGroupArn
+     *        The ARN of the CW log group to which the vended log data will be published.
+     */
+
+    public void setLogGroupArn(String logGroupArn) {
+        this.logGroupArn = logGroupArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the CW log group to which the vended log data will be published.
+     * </p>
+     * 
+     * @return The ARN of the CW log group to which the vended log data will be published.
+     */
+
+    public String getLogGroupArn() {
+        return this.logGroupArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the CW log group to which the vended log data will be published.
+     * </p>
+     * 
+     * @param logGroupArn
+     *        The ARN of the CW log group to which the vended log data will be published.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LoggingConfigurationMetadata withLogGroupArn(String logGroupArn) {
+        setLogGroupArn(logGroupArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time when the logging configuration was created.
+     * </p>
+     * 
+     * @param createdAt
+     *        The time when the logging configuration was created.
+     */
+
+    public void setCreatedAt(java.util.Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    /**
+     * <p>
+     * The time when the logging configuration was created.
+     * </p>
+     * 
+     * @return The time when the logging configuration was created.
+     */
+
+    public java.util.Date getCreatedAt() {
+        return this.createdAt;
+    }
+
+    /**
+     * <p>
+     * The time when the logging configuration was created.
+     * </p>
+     * 
+     * @param createdAt
+     *        The time when the logging configuration was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LoggingConfigurationMetadata withCreatedAt(java.util.Date createdAt) {
+        setCreatedAt(createdAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time when the logging configuration was modified.
+     * </p>
+     * 
+     * @param modifiedAt
+     *        The time when the logging configuration was modified.
+     */
+
+    public void setModifiedAt(java.util.Date modifiedAt) {
+        this.modifiedAt = modifiedAt;
+    }
+
+    /**
+     * <p>
+     * The time when the logging configuration was modified.
+     * </p>
+     * 
+     * @return The time when the logging configuration was modified.
+     */
+
+    public java.util.Date getModifiedAt() {
+        return this.modifiedAt;
+    }
+
+    /**
+     * <p>
+     * The time when the logging configuration was modified.
+     * </p>
+     * 
+     * @param modifiedAt
+     *        The time when the logging configuration was modified.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LoggingConfigurationMetadata withModifiedAt(java.util.Date modifiedAt) {
+        setModifiedAt(modifiedAt);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -271,16 +271,16 @@ public class LoggingConfigurationMetadata implements Serializable, Cloneable, St
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getCreatedAt() != null)
-            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
-        if (getLogGroupArn() != null)
-            sb.append("LogGroupArn: ").append(getLogGroupArn()).append(",");
-        if (getModifiedAt() != null)
-            sb.append("ModifiedAt: ").append(getModifiedAt()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getWorkspace() != null)
-            sb.append("Workspace: ").append(getWorkspace());
+            sb.append("Workspace: ").append(getWorkspace()).append(",");
+        if (getLogGroupArn() != null)
+            sb.append("LogGroupArn: ").append(getLogGroupArn()).append(",");
+        if (getCreatedAt() != null)
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
+        if (getModifiedAt() != null)
+            sb.append("ModifiedAt: ").append(getModifiedAt());
         sb.append("}");
         return sb.toString();
     }
@@ -295,18 +295,6 @@ public class LoggingConfigurationMetadata implements Serializable, Cloneable, St
         if (obj instanceof LoggingConfigurationMetadata == false)
             return false;
         LoggingConfigurationMetadata other = (LoggingConfigurationMetadata) obj;
-        if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
-            return false;
-        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
-            return false;
-        if (other.getLogGroupArn() == null ^ this.getLogGroupArn() == null)
-            return false;
-        if (other.getLogGroupArn() != null && other.getLogGroupArn().equals(this.getLogGroupArn()) == false)
-            return false;
-        if (other.getModifiedAt() == null ^ this.getModifiedAt() == null)
-            return false;
-        if (other.getModifiedAt() != null && other.getModifiedAt().equals(this.getModifiedAt()) == false)
-            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
@@ -314,6 +302,18 @@ public class LoggingConfigurationMetadata implements Serializable, Cloneable, St
         if (other.getWorkspace() == null ^ this.getWorkspace() == null)
             return false;
         if (other.getWorkspace() != null && other.getWorkspace().equals(this.getWorkspace()) == false)
+            return false;
+        if (other.getLogGroupArn() == null ^ this.getLogGroupArn() == null)
+            return false;
+        if (other.getLogGroupArn() != null && other.getLogGroupArn().equals(this.getLogGroupArn()) == false)
+            return false;
+        if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
+            return false;
+        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
+            return false;
+        if (other.getModifiedAt() == null ^ this.getModifiedAt() == null)
+            return false;
+        if (other.getModifiedAt() != null && other.getModifiedAt().equals(this.getModifiedAt()) == false)
             return false;
         return true;
     }
@@ -323,11 +323,11 @@ public class LoggingConfigurationMetadata implements Serializable, Cloneable, St
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
-        hashCode = prime * hashCode + ((getLogGroupArn() == null) ? 0 : getLogGroupArn().hashCode());
-        hashCode = prime * hashCode + ((getModifiedAt() == null) ? 0 : getModifiedAt().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getWorkspace() == null) ? 0 : getWorkspace().hashCode());
+        hashCode = prime * hashCode + ((getLogGroupArn() == null) ? 0 : getLogGroupArn().hashCode());
+        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
+        hashCode = prime * hashCode + ((getModifiedAt() == null) ? 0 : getModifiedAt().hashCode());
         return hashCode;
     }
 

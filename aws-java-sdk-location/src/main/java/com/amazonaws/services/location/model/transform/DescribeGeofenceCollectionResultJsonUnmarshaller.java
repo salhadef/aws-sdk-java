@@ -64,6 +64,10 @@ public class DescribeGeofenceCollectionResultJsonUnmarshaller implements Unmarsh
                     context.nextToken();
                     describeGeofenceCollectionResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("GeofenceCount", targetDepth)) {
+                    context.nextToken();
+                    describeGeofenceCollectionResult.setGeofenceCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("KmsKeyId", targetDepth)) {
                     context.nextToken();
                     describeGeofenceCollectionResult.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));

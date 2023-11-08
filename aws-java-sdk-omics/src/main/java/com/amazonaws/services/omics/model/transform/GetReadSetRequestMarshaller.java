@@ -27,14 +27,14 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class GetReadSetRequestMarshaller {
 
-    private static final MarshallingInfo<String> FILE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.QUERY_PARAM)
-            .marshallLocationName("file").build();
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("id").build();
-    private static final MarshallingInfo<Integer> PARTNUMBER_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
-            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("partNumber").build();
     private static final MarshallingInfo<String> SEQUENCESTOREID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("sequenceStoreId").build();
+    private static final MarshallingInfo<String> FILE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.QUERY_PARAM)
+            .marshallLocationName("file").build();
+    private static final MarshallingInfo<Integer> PARTNUMBER_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("partNumber").build();
 
     private static final GetReadSetRequestMarshaller instance = new GetReadSetRequestMarshaller();
 
@@ -52,10 +52,10 @@ public class GetReadSetRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(getReadSetRequest.getFile(), FILE_BINDING);
             protocolMarshaller.marshall(getReadSetRequest.getId(), ID_BINDING);
-            protocolMarshaller.marshall(getReadSetRequest.getPartNumber(), PARTNUMBER_BINDING);
             protocolMarshaller.marshall(getReadSetRequest.getSequenceStoreId(), SEQUENCESTOREID_BINDING);
+            protocolMarshaller.marshall(getReadSetRequest.getFile(), FILE_BINDING);
+            protocolMarshaller.marshall(getReadSetRequest.getPartNumber(), PARTNUMBER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

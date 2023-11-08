@@ -48,6 +48,10 @@ public class ReferenceStoreFilterJsonUnmarshaller implements Unmarshaller<Refere
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("name", targetDepth)) {
+                    context.nextToken();
+                    referenceStoreFilter.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("createdAfter", targetDepth)) {
                     context.nextToken();
                     referenceStoreFilter.setCreatedAfter(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
@@ -55,10 +59,6 @@ public class ReferenceStoreFilterJsonUnmarshaller implements Unmarshaller<Refere
                 if (context.testExpression("createdBefore", targetDepth)) {
                     context.nextToken();
                     referenceStoreFilter.setCreatedBefore(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
-                }
-                if (context.testExpression("name", targetDepth)) {
-                    context.nextToken();
-                    referenceStoreFilter.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

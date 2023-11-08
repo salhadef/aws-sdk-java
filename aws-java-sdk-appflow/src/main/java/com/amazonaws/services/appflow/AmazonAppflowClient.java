@@ -44,6 +44,7 @@ import com.amazonaws.services.appflow.AmazonAppflowClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.appflow.model.*;
+
 import com.amazonaws.services.appflow.model.transform.*;
 
 /**
@@ -387,6 +388,8 @@ public class AmazonAppflowClient extends AmazonWebServiceClient implements Amazo
      *         An error occurred when authenticating with the connector endpoint.
      * @throws ConnectorServerException
      *         An error occurred when retrieving data from the connector endpoint.
+     * @throws AccessDeniedException
+     *         AppFlow/Requester has invalid or missing permissions.
      * @sample AmazonAppflow.CreateFlow
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/CreateFlow" target="_top">AWS API
      *      Documentation</a>
@@ -1266,6 +1269,79 @@ public class AmazonAppflowClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * Resets metadata about your connector entities that Amazon AppFlow stored in its cache. Use this action when you
+     * want Amazon AppFlow to return the latest information about the data that you have in a source application.
+     * </p>
+     * <p>
+     * Amazon AppFlow returns metadata about your entities when you use the ListConnectorEntities or
+     * DescribeConnectorEntities actions. Following these actions, Amazon AppFlow caches the metadata to reduce the
+     * number of API requests that it must send to the source application. Amazon AppFlow automatically resets the cache
+     * once every hour, but you can use this action when you want to get the latest metadata right away.
+     * </p>
+     * 
+     * @param resetConnectorMetadataCacheRequest
+     * @return Result of the ResetConnectorMetadataCache operation returned by the service.
+     * @throws ValidationException
+     *         The request has invalid or missing parameters.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request (such as the source or destination connector profile) is not found.
+     * @throws ConflictException
+     *         There was a conflict when processing the request (for example, a flow with the given name already exists
+     *         within the account. Check for conflicting resource names and try again.
+     * @throws InternalServerException
+     *         An internal service error occurred during the processing of your request. Try again later.
+     * @sample AmazonAppflow.ResetConnectorMetadataCache
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/ResetConnectorMetadataCache"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ResetConnectorMetadataCacheResult resetConnectorMetadataCache(ResetConnectorMetadataCacheRequest request) {
+        request = beforeClientExecution(request);
+        return executeResetConnectorMetadataCache(request);
+    }
+
+    @SdkInternalApi
+    final ResetConnectorMetadataCacheResult executeResetConnectorMetadataCache(ResetConnectorMetadataCacheRequest resetConnectorMetadataCacheRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(resetConnectorMetadataCacheRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ResetConnectorMetadataCacheRequest> request = null;
+        Response<ResetConnectorMetadataCacheResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ResetConnectorMetadataCacheRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(resetConnectorMetadataCacheRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Appflow");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResetConnectorMetadataCache");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ResetConnectorMetadataCacheResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ResetConnectorMetadataCacheResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Activates an existing flow. For on-demand flows, this operation runs the flow immediately. For schedule and
      * event-triggered flows, this operation activates the flow.
      * </p>
@@ -1758,6 +1834,8 @@ public class AmazonAppflowClient extends AmazonWebServiceClient implements Amazo
      *         An error occurred when retrieving data from the connector endpoint.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
+     * @throws AccessDeniedException
+     *         AppFlow/Requester has invalid or missing permissions.
      * @sample AmazonAppflow.UpdateFlow
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/UpdateFlow" target="_top">AWS API
      *      Documentation</a>

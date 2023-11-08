@@ -51,6 +51,12 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
     private AccessPoliciesStatus accessPolicies;
     /**
      * <p>
+     * The type of IP addresses supported by the endpoint for the domain.
+     * </p>
+     */
+    private IPAddressTypeStatus iPAddressType;
+    /**
+     * <p>
      * DEPRECATED. Container for parameters required to configure automated snapshots of domain indexes.
      * </p>
      */
@@ -89,7 +95,7 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
     private AdvancedOptionsStatus advancedOptions;
     /**
      * <p>
-     * Key-value pairs to configure slow log publishing.
+     * Key-value pairs to configure log publishing.
      * </p>
      */
     private LogPublishingOptionsStatus logPublishingOptions;
@@ -287,6 +293,46 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     public DomainConfig withAccessPolicies(AccessPoliciesStatus accessPolicies) {
         setAccessPolicies(accessPolicies);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of IP addresses supported by the endpoint for the domain.
+     * </p>
+     * 
+     * @param iPAddressType
+     *        The type of IP addresses supported by the endpoint for the domain.
+     */
+
+    public void setIPAddressType(IPAddressTypeStatus iPAddressType) {
+        this.iPAddressType = iPAddressType;
+    }
+
+    /**
+     * <p>
+     * The type of IP addresses supported by the endpoint for the domain.
+     * </p>
+     * 
+     * @return The type of IP addresses supported by the endpoint for the domain.
+     */
+
+    public IPAddressTypeStatus getIPAddressType() {
+        return this.iPAddressType;
+    }
+
+    /**
+     * <p>
+     * The type of IP addresses supported by the endpoint for the domain.
+     * </p>
+     * 
+     * @param iPAddressType
+     *        The type of IP addresses supported by the endpoint for the domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DomainConfig withIPAddressType(IPAddressTypeStatus iPAddressType) {
+        setIPAddressType(iPAddressType);
         return this;
     }
 
@@ -544,11 +590,11 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Key-value pairs to configure slow log publishing.
+     * Key-value pairs to configure log publishing.
      * </p>
      * 
      * @param logPublishingOptions
-     *        Key-value pairs to configure slow log publishing.
+     *        Key-value pairs to configure log publishing.
      */
 
     public void setLogPublishingOptions(LogPublishingOptionsStatus logPublishingOptions) {
@@ -557,10 +603,10 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Key-value pairs to configure slow log publishing.
+     * Key-value pairs to configure log publishing.
      * </p>
      * 
-     * @return Key-value pairs to configure slow log publishing.
+     * @return Key-value pairs to configure log publishing.
      */
 
     public LogPublishingOptionsStatus getLogPublishingOptions() {
@@ -569,11 +615,11 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Key-value pairs to configure slow log publishing.
+     * Key-value pairs to configure log publishing.
      * </p>
      * 
      * @param logPublishingOptions
-     *        Key-value pairs to configure slow log publishing.
+     *        Key-value pairs to configure log publishing.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -842,6 +888,8 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
             sb.append("EBSOptions: ").append(getEBSOptions()).append(",");
         if (getAccessPolicies() != null)
             sb.append("AccessPolicies: ").append(getAccessPolicies()).append(",");
+        if (getIPAddressType() != null)
+            sb.append("IPAddressType: ").append(getIPAddressType()).append(",");
         if (getSnapshotOptions() != null)
             sb.append("SnapshotOptions: ").append(getSnapshotOptions()).append(",");
         if (getVPCOptions() != null)
@@ -897,6 +945,10 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
         if (other.getAccessPolicies() == null ^ this.getAccessPolicies() == null)
             return false;
         if (other.getAccessPolicies() != null && other.getAccessPolicies().equals(this.getAccessPolicies()) == false)
+            return false;
+        if (other.getIPAddressType() == null ^ this.getIPAddressType() == null)
+            return false;
+        if (other.getIPAddressType() != null && other.getIPAddressType().equals(this.getIPAddressType()) == false)
             return false;
         if (other.getSnapshotOptions() == null ^ this.getSnapshotOptions() == null)
             return false;
@@ -962,6 +1014,7 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getClusterConfig() == null) ? 0 : getClusterConfig().hashCode());
         hashCode = prime * hashCode + ((getEBSOptions() == null) ? 0 : getEBSOptions().hashCode());
         hashCode = prime * hashCode + ((getAccessPolicies() == null) ? 0 : getAccessPolicies().hashCode());
+        hashCode = prime * hashCode + ((getIPAddressType() == null) ? 0 : getIPAddressType().hashCode());
         hashCode = prime * hashCode + ((getSnapshotOptions() == null) ? 0 : getSnapshotOptions().hashCode());
         hashCode = prime * hashCode + ((getVPCOptions() == null) ? 0 : getVPCOptions().hashCode());
         hashCode = prime * hashCode + ((getCognitoOptions() == null) ? 0 : getCognitoOptions().hashCode());

@@ -20,7 +20,14 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ComponentType {
 
-    HANA("HANA");
+    HANA("HANA"),
+    HANA_NODE("HANA_NODE"),
+    ABAP("ABAP"),
+    ASCS("ASCS"),
+    DIALOG("DIALOG"),
+    WEBDISP("WEBDISP"),
+    WD("WD"),
+    ERS("ERS");
 
     private String value;
 

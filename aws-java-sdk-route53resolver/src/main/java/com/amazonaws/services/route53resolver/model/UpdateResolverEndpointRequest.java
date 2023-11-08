@@ -41,11 +41,15 @@ public class UpdateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Specifies the endpoint type for what type of IP address the endpoint uses to forward DNS queries.
      * </p>
+     * <p>
+     * Updating to <code>IPV6</code> type isn't currently supported.
+     * </p>
      */
     private String resolverEndpointType;
     /**
      * <p>
-     * Updates the Resolver endpoint type to IpV4, Ipv6, or dual-stack.
+     * Specifies the IPv6 address when you update the Resolver endpoint from IPv4 to dual-stack. If you don't specify an
+     * IPv6 address, one will be automatically chosen from your subnet.
      * </p>
      */
     private java.util.List<UpdateIpAddress> updateIpAddresses;
@@ -134,9 +138,14 @@ public class UpdateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Specifies the endpoint type for what type of IP address the endpoint uses to forward DNS queries.
      * </p>
+     * <p>
+     * Updating to <code>IPV6</code> type isn't currently supported.
+     * </p>
      * 
      * @param resolverEndpointType
-     *        Specifies the endpoint type for what type of IP address the endpoint uses to forward DNS queries.
+     *        Specifies the endpoint type for what type of IP address the endpoint uses to forward DNS queries. </p>
+     *        <p>
+     *        Updating to <code>IPV6</code> type isn't currently supported.
      * @see ResolverEndpointType
      */
 
@@ -148,8 +157,13 @@ public class UpdateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Specifies the endpoint type for what type of IP address the endpoint uses to forward DNS queries.
      * </p>
+     * <p>
+     * Updating to <code>IPV6</code> type isn't currently supported.
+     * </p>
      * 
-     * @return Specifies the endpoint type for what type of IP address the endpoint uses to forward DNS queries.
+     * @return Specifies the endpoint type for what type of IP address the endpoint uses to forward DNS queries. </p>
+     *         <p>
+     *         Updating to <code>IPV6</code> type isn't currently supported.
      * @see ResolverEndpointType
      */
 
@@ -161,9 +175,14 @@ public class UpdateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Specifies the endpoint type for what type of IP address the endpoint uses to forward DNS queries.
      * </p>
+     * <p>
+     * Updating to <code>IPV6</code> type isn't currently supported.
+     * </p>
      * 
      * @param resolverEndpointType
-     *        Specifies the endpoint type for what type of IP address the endpoint uses to forward DNS queries.
+     *        Specifies the endpoint type for what type of IP address the endpoint uses to forward DNS queries. </p>
+     *        <p>
+     *        Updating to <code>IPV6</code> type isn't currently supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResolverEndpointType
      */
@@ -177,9 +196,14 @@ public class UpdateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Specifies the endpoint type for what type of IP address the endpoint uses to forward DNS queries.
      * </p>
+     * <p>
+     * Updating to <code>IPV6</code> type isn't currently supported.
+     * </p>
      * 
      * @param resolverEndpointType
-     *        Specifies the endpoint type for what type of IP address the endpoint uses to forward DNS queries.
+     *        Specifies the endpoint type for what type of IP address the endpoint uses to forward DNS queries. </p>
+     *        <p>
+     *        Updating to <code>IPV6</code> type isn't currently supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResolverEndpointType
      */
@@ -191,10 +215,12 @@ public class UpdateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Updates the Resolver endpoint type to IpV4, Ipv6, or dual-stack.
+     * Specifies the IPv6 address when you update the Resolver endpoint from IPv4 to dual-stack. If you don't specify an
+     * IPv6 address, one will be automatically chosen from your subnet.
      * </p>
      * 
-     * @return Updates the Resolver endpoint type to IpV4, Ipv6, or dual-stack.
+     * @return Specifies the IPv6 address when you update the Resolver endpoint from IPv4 to dual-stack. If you don't
+     *         specify an IPv6 address, one will be automatically chosen from your subnet.
      */
 
     public java.util.List<UpdateIpAddress> getUpdateIpAddresses() {
@@ -203,11 +229,13 @@ public class UpdateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Updates the Resolver endpoint type to IpV4, Ipv6, or dual-stack.
+     * Specifies the IPv6 address when you update the Resolver endpoint from IPv4 to dual-stack. If you don't specify an
+     * IPv6 address, one will be automatically chosen from your subnet.
      * </p>
      * 
      * @param updateIpAddresses
-     *        Updates the Resolver endpoint type to IpV4, Ipv6, or dual-stack.
+     *        Specifies the IPv6 address when you update the Resolver endpoint from IPv4 to dual-stack. If you don't
+     *        specify an IPv6 address, one will be automatically chosen from your subnet.
      */
 
     public void setUpdateIpAddresses(java.util.Collection<UpdateIpAddress> updateIpAddresses) {
@@ -221,7 +249,8 @@ public class UpdateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Updates the Resolver endpoint type to IpV4, Ipv6, or dual-stack.
+     * Specifies the IPv6 address when you update the Resolver endpoint from IPv4 to dual-stack. If you don't specify an
+     * IPv6 address, one will be automatically chosen from your subnet.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -230,7 +259,8 @@ public class UpdateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param updateIpAddresses
-     *        Updates the Resolver endpoint type to IpV4, Ipv6, or dual-stack.
+     *        Specifies the IPv6 address when you update the Resolver endpoint from IPv4 to dual-stack. If you don't
+     *        specify an IPv6 address, one will be automatically chosen from your subnet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -246,11 +276,13 @@ public class UpdateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Updates the Resolver endpoint type to IpV4, Ipv6, or dual-stack.
+     * Specifies the IPv6 address when you update the Resolver endpoint from IPv4 to dual-stack. If you don't specify an
+     * IPv6 address, one will be automatically chosen from your subnet.
      * </p>
      * 
      * @param updateIpAddresses
-     *        Updates the Resolver endpoint type to IpV4, Ipv6, or dual-stack.
+     *        Specifies the IPv6 address when you update the Resolver endpoint from IPv4 to dual-stack. If you don't
+     *        specify an IPv6 address, one will be automatically chosen from your subnet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

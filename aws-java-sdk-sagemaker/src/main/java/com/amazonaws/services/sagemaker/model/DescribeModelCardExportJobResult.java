@@ -61,7 +61,7 @@ public class DescribeModelCardExportJobResult extends com.amazonaws.AmazonWebSer
     private String status;
     /**
      * <p>
-     * The name of the model card that the model export job exports.
+     * The name or Amazon Resource Name (ARN) of the model card that the model export job exports.
      * </p>
      */
     private String modelCardName;
@@ -383,11 +383,11 @@ public class DescribeModelCardExportJobResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the model card that the model export job exports.
+     * The name or Amazon Resource Name (ARN) of the model card that the model export job exports.
      * </p>
      * 
      * @param modelCardName
-     *        The name of the model card that the model export job exports.
+     *        The name or Amazon Resource Name (ARN) of the model card that the model export job exports.
      */
 
     public void setModelCardName(String modelCardName) {
@@ -396,10 +396,10 @@ public class DescribeModelCardExportJobResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the model card that the model export job exports.
+     * The name or Amazon Resource Name (ARN) of the model card that the model export job exports.
      * </p>
      * 
-     * @return The name of the model card that the model export job exports.
+     * @return The name or Amazon Resource Name (ARN) of the model card that the model export job exports.
      */
 
     public String getModelCardName() {
@@ -408,11 +408,11 @@ public class DescribeModelCardExportJobResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the model card that the model export job exports.
+     * The name or Amazon Resource Name (ARN) of the model card that the model export job exports.
      * </p>
      * 
      * @param modelCardName
-     *        The name of the model card that the model export job exports.
+     *        The name or Amazon Resource Name (ARN) of the model card that the model export job exports.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

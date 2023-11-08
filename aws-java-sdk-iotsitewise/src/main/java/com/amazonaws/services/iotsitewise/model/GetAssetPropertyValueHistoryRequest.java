@@ -81,11 +81,22 @@ public class GetAssetPropertyValueHistoryRequest extends com.amazonaws.AmazonWeb
     private String nextToken;
     /**
      * <p>
-     * The maximum number of results to return for each paginated request.
+     * The maximum number of results to return for each paginated request. A result set is returned in the two cases,
+     * whichever occurs first.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * Default: 100
+     * The size of the result set is equal to 4 MB.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value
+     * of <code>maxResults</code> is 20000.
+     * </p>
+     * </li>
+     * </ul>
      */
     private Integer maxResults;
 
@@ -532,16 +543,38 @@ public class GetAssetPropertyValueHistoryRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The maximum number of results to return for each paginated request.
+     * The maximum number of results to return for each paginated request. A result set is returned in the two cases,
+     * whichever occurs first.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * Default: 100
+     * The size of the result set is equal to 4 MB.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value
+     * of <code>maxResults</code> is 20000.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param maxResults
-     *        The maximum number of results to return for each paginated request.</p>
+     *        The maximum number of results to return for each paginated request. A result set is returned in the two
+     *        cases, whichever occurs first.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        Default: 100
+     *        The size of the result set is equal to 4 MB.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum
+     *        value of <code>maxResults</code> is 20000.
+     *        </p>
+     *        </li>
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -550,15 +583,37 @@ public class GetAssetPropertyValueHistoryRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The maximum number of results to return for each paginated request.
+     * The maximum number of results to return for each paginated request. A result set is returned in the two cases,
+     * whichever occurs first.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * Default: 100
+     * The size of the result set is equal to 4 MB.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value
+     * of <code>maxResults</code> is 20000.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The maximum number of results to return for each paginated request.</p>
+     * @return The maximum number of results to return for each paginated request. A result set is returned in the two
+     *         cases, whichever occurs first.</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         Default: 100
+     *         The size of the result set is equal to 4 MB.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum
+     *         value of <code>maxResults</code> is 20000.
+     *         </p>
+     *         </li>
      */
 
     public Integer getMaxResults() {
@@ -567,16 +622,38 @@ public class GetAssetPropertyValueHistoryRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The maximum number of results to return for each paginated request.
+     * The maximum number of results to return for each paginated request. A result set is returned in the two cases,
+     * whichever occurs first.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * Default: 100
+     * The size of the result set is equal to 4 MB.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value
+     * of <code>maxResults</code> is 20000.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param maxResults
-     *        The maximum number of results to return for each paginated request.</p>
+     *        The maximum number of results to return for each paginated request. A result set is returned in the two
+     *        cases, whichever occurs first.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        Default: 100
+     *        The size of the result set is equal to 4 MB.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum
+     *        value of <code>maxResults</code> is 20000.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

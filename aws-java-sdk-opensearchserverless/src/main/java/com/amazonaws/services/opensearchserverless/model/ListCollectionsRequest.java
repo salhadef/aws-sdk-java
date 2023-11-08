@@ -27,7 +27,7 @@ public class ListCollectionsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * List of filter names and values that you can use for requests.
+     * A list of filter names and values that you can use for requests.
      * </p>
      */
     private CollectionFilters collectionFilters;
@@ -49,11 +49,11 @@ public class ListCollectionsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * List of filter names and values that you can use for requests.
+     * A list of filter names and values that you can use for requests.
      * </p>
      * 
      * @param collectionFilters
-     *        List of filter names and values that you can use for requests.
+     *        A list of filter names and values that you can use for requests.
      */
 
     public void setCollectionFilters(CollectionFilters collectionFilters) {
@@ -62,10 +62,10 @@ public class ListCollectionsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * List of filter names and values that you can use for requests.
+     * A list of filter names and values that you can use for requests.
      * </p>
      * 
-     * @return List of filter names and values that you can use for requests.
+     * @return A list of filter names and values that you can use for requests.
      */
 
     public CollectionFilters getCollectionFilters() {
@@ -74,11 +74,11 @@ public class ListCollectionsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * List of filter names and values that you can use for requests.
+     * A list of filter names and values that you can use for requests.
      * </p>
      * 
      * @param collectionFilters
-     *        List of filter names and values that you can use for requests.
+     *        A list of filter names and values that you can use for requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

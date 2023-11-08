@@ -27,6 +27,12 @@ public class UpdateWaveRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
+     * Account ID.
+     * </p>
+     */
+    private String accountID;
+    /**
+     * <p>
      * Wave description.
      * </p>
      */
@@ -43,6 +49,46 @@ public class UpdateWaveRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private String waveID;
+
+    /**
+     * <p>
+     * Account ID.
+     * </p>
+     * 
+     * @param accountID
+     *        Account ID.
+     */
+
+    public void setAccountID(String accountID) {
+        this.accountID = accountID;
+    }
+
+    /**
+     * <p>
+     * Account ID.
+     * </p>
+     * 
+     * @return Account ID.
+     */
+
+    public String getAccountID() {
+        return this.accountID;
+    }
+
+    /**
+     * <p>
+     * Account ID.
+     * </p>
+     * 
+     * @param accountID
+     *        Account ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateWaveRequest withAccountID(String accountID) {
+        setAccountID(accountID);
+        return this;
+    }
 
     /**
      * <p>
@@ -176,6 +222,8 @@ public class UpdateWaveRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAccountID() != null)
+            sb.append("AccountID: ").append(getAccountID()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getName() != null)
@@ -196,6 +244,10 @@ public class UpdateWaveRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (obj instanceof UpdateWaveRequest == false)
             return false;
         UpdateWaveRequest other = (UpdateWaveRequest) obj;
+        if (other.getAccountID() == null ^ this.getAccountID() == null)
+            return false;
+        if (other.getAccountID() != null && other.getAccountID().equals(this.getAccountID()) == false)
+            return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
@@ -216,6 +268,7 @@ public class UpdateWaveRequest extends com.amazonaws.AmazonWebServiceRequest imp
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAccountID() == null) ? 0 : getAccountID().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getWaveID() == null) ? 0 : getWaveID().hashCode());

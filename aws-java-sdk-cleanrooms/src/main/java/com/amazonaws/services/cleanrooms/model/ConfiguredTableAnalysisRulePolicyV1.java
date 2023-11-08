@@ -41,6 +41,8 @@ public class ConfiguredTableAnalysisRulePolicyV1 implements Serializable, Clonea
      */
     private AnalysisRuleAggregation aggregation;
 
+    private AnalysisRuleCustom custom;
+
     /**
      * <p>
      * Analysis rule type that enables only list queries on a configured table.
@@ -122,6 +124,32 @@ public class ConfiguredTableAnalysisRulePolicyV1 implements Serializable, Clonea
     }
 
     /**
+     * @param custom
+     */
+
+    public void setCustom(AnalysisRuleCustom custom) {
+        this.custom = custom;
+    }
+
+    /**
+     * @return
+     */
+
+    public AnalysisRuleCustom getCustom() {
+        return this.custom;
+    }
+
+    /**
+     * @param custom
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConfiguredTableAnalysisRulePolicyV1 withCustom(AnalysisRuleCustom custom) {
+        setCustom(custom);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -136,7 +164,9 @@ public class ConfiguredTableAnalysisRulePolicyV1 implements Serializable, Clonea
         if (getList() != null)
             sb.append("List: ").append(getList()).append(",");
         if (getAggregation() != null)
-            sb.append("Aggregation: ").append(getAggregation());
+            sb.append("Aggregation: ").append(getAggregation()).append(",");
+        if (getCustom() != null)
+            sb.append("Custom: ").append(getCustom());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +189,10 @@ public class ConfiguredTableAnalysisRulePolicyV1 implements Serializable, Clonea
             return false;
         if (other.getAggregation() != null && other.getAggregation().equals(this.getAggregation()) == false)
             return false;
+        if (other.getCustom() == null ^ this.getCustom() == null)
+            return false;
+        if (other.getCustom() != null && other.getCustom().equals(this.getCustom()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +203,7 @@ public class ConfiguredTableAnalysisRulePolicyV1 implements Serializable, Clonea
 
         hashCode = prime * hashCode + ((getList() == null) ? 0 : getList().hashCode());
         hashCode = prime * hashCode + ((getAggregation() == null) ? 0 : getAggregation().hashCode());
+        hashCode = prime * hashCode + ((getCustom() == null) ? 0 : getCustom().hashCode());
         return hashCode;
     }
 

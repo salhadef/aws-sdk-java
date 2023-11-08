@@ -58,6 +58,10 @@ public class MetricFilterV2JsonUnmarshaller implements Unmarshaller<MetricFilter
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("Negate", targetDepth)) {
+                    context.nextToken();
+                    metricFilterV2.setNegate(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

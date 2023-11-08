@@ -95,6 +95,14 @@ public class ModifyVerifiedAccessInstanceLoggingConfigurationRequestMarshaller i
                     request.addParameter("AccessLogs.KinesisDataFirehose.DeliveryStream", StringUtils.fromString(kinesisDataFirehose.getDeliveryStream()));
                 }
             }
+
+            if (accessLogs.getLogVersion() != null) {
+                request.addParameter("AccessLogs.LogVersion", StringUtils.fromString(accessLogs.getLogVersion()));
+            }
+
+            if (accessLogs.getIncludeTrustContext() != null) {
+                request.addParameter("AccessLogs.IncludeTrustContext", StringUtils.fromBoolean(accessLogs.getIncludeTrustContext()));
+            }
         }
 
         request.addParameter("ClientToken", IdempotentUtils.resolveString(modifyVerifiedAccessInstanceLoggingConfigurationRequest.getClientToken()));

@@ -146,6 +146,7 @@ public class SnsMessageManager {
             case AF_SOUTH_1:
             case AP_SOUTHEAST_3:
             case AP_SOUTHEAST_4:
+            case IL_CENTRAL_1:
                 return "sns-signing." + regionStr + ".amazonaws.com";
             default:
                 return "sns.amazonaws.com";

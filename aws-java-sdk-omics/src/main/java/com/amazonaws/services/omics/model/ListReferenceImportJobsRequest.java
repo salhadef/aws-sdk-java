@@ -27,12 +27,6 @@ public class ListReferenceImportJobsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A filter to apply to the list.
-     * </p>
-     */
-    private ImportReferenceFilter filter;
-    /**
-     * <p>
      * The maximum number of jobs to return in one page of results.
      * </p>
      */
@@ -49,46 +43,12 @@ public class ListReferenceImportJobsRequest extends com.amazonaws.AmazonWebServi
      * </p>
      */
     private String referenceStoreId;
-
     /**
      * <p>
      * A filter to apply to the list.
      * </p>
-     * 
-     * @param filter
-     *        A filter to apply to the list.
      */
-
-    public void setFilter(ImportReferenceFilter filter) {
-        this.filter = filter;
-    }
-
-    /**
-     * <p>
-     * A filter to apply to the list.
-     * </p>
-     * 
-     * @return A filter to apply to the list.
-     */
-
-    public ImportReferenceFilter getFilter() {
-        return this.filter;
-    }
-
-    /**
-     * <p>
-     * A filter to apply to the list.
-     * </p>
-     * 
-     * @param filter
-     *        A filter to apply to the list.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListReferenceImportJobsRequest withFilter(ImportReferenceFilter filter) {
-        setFilter(filter);
-        return this;
-    }
+    private ImportReferenceFilter filter;
 
     /**
      * <p>
@@ -211,6 +171,46 @@ public class ListReferenceImportJobsRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * A filter to apply to the list.
+     * </p>
+     * 
+     * @param filter
+     *        A filter to apply to the list.
+     */
+
+    public void setFilter(ImportReferenceFilter filter) {
+        this.filter = filter;
+    }
+
+    /**
+     * <p>
+     * A filter to apply to the list.
+     * </p>
+     * 
+     * @return A filter to apply to the list.
+     */
+
+    public ImportReferenceFilter getFilter() {
+        return this.filter;
+    }
+
+    /**
+     * <p>
+     * A filter to apply to the list.
+     * </p>
+     * 
+     * @param filter
+     *        A filter to apply to the list.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListReferenceImportJobsRequest withFilter(ImportReferenceFilter filter) {
+        setFilter(filter);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -222,14 +222,14 @@ public class ListReferenceImportJobsRequest extends com.amazonaws.AmazonWebServi
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getFilter() != null)
-            sb.append("Filter: ").append(getFilter()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getReferenceStoreId() != null)
-            sb.append("ReferenceStoreId: ").append(getReferenceStoreId());
+            sb.append("ReferenceStoreId: ").append(getReferenceStoreId()).append(",");
+        if (getFilter() != null)
+            sb.append("Filter: ").append(getFilter());
         sb.append("}");
         return sb.toString();
     }
@@ -244,10 +244,6 @@ public class ListReferenceImportJobsRequest extends com.amazonaws.AmazonWebServi
         if (obj instanceof ListReferenceImportJobsRequest == false)
             return false;
         ListReferenceImportJobsRequest other = (ListReferenceImportJobsRequest) obj;
-        if (other.getFilter() == null ^ this.getFilter() == null)
-            return false;
-        if (other.getFilter() != null && other.getFilter().equals(this.getFilter()) == false)
-            return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
@@ -260,6 +256,10 @@ public class ListReferenceImportJobsRequest extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getReferenceStoreId() != null && other.getReferenceStoreId().equals(this.getReferenceStoreId()) == false)
             return false;
+        if (other.getFilter() == null ^ this.getFilter() == null)
+            return false;
+        if (other.getFilter() != null && other.getFilter().equals(this.getFilter()) == false)
+            return false;
         return true;
     }
 
@@ -268,10 +268,10 @@ public class ListReferenceImportJobsRequest extends com.amazonaws.AmazonWebServi
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getFilter() == null) ? 0 : getFilter().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getReferenceStoreId() == null) ? 0 : getReferenceStoreId().hashCode());
+        hashCode = prime * hashCode + ((getFilter() == null) ? 0 : getFilter().hashCode());
         return hashCode;
     }
 

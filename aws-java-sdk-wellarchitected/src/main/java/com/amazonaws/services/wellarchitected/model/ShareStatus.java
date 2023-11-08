@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The status of a workload share.
+ * The status of the share request.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

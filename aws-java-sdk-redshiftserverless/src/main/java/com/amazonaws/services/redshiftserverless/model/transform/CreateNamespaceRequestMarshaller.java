@@ -28,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CreateNamespaceRequestMarshaller {
 
+    private static final MarshallingInfo<String> ADMINPASSWORDSECRETKMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("adminPasswordSecretKmsKeyId").build();
     private static final MarshallingInfo<String> ADMINUSERPASSWORD_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("adminUserPassword").build();
     private static final MarshallingInfo<String> ADMINUSERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -42,6 +44,8 @@ public class CreateNamespaceRequestMarshaller {
             .marshallLocationName("kmsKeyId").build();
     private static final MarshallingInfo<List> LOGEXPORTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("logExports").build();
+    private static final MarshallingInfo<Boolean> MANAGEADMINPASSWORD_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("manageAdminPassword").build();
     private static final MarshallingInfo<String> NAMESPACENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("namespaceName").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -63,6 +67,7 @@ public class CreateNamespaceRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(createNamespaceRequest.getAdminPasswordSecretKmsKeyId(), ADMINPASSWORDSECRETKMSKEYID_BINDING);
             protocolMarshaller.marshall(createNamespaceRequest.getAdminUserPassword(), ADMINUSERPASSWORD_BINDING);
             protocolMarshaller.marshall(createNamespaceRequest.getAdminUsername(), ADMINUSERNAME_BINDING);
             protocolMarshaller.marshall(createNamespaceRequest.getDbName(), DBNAME_BINDING);
@@ -70,6 +75,7 @@ public class CreateNamespaceRequestMarshaller {
             protocolMarshaller.marshall(createNamespaceRequest.getIamRoles(), IAMROLES_BINDING);
             protocolMarshaller.marshall(createNamespaceRequest.getKmsKeyId(), KMSKEYID_BINDING);
             protocolMarshaller.marshall(createNamespaceRequest.getLogExports(), LOGEXPORTS_BINDING);
+            protocolMarshaller.marshall(createNamespaceRequest.getManageAdminPassword(), MANAGEADMINPASSWORD_BINDING);
             protocolMarshaller.marshall(createNamespaceRequest.getNamespaceName(), NAMESPACENAME_BINDING);
             protocolMarshaller.marshall(createNamespaceRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {

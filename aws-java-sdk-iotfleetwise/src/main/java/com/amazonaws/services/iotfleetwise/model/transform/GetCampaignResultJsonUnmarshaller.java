@@ -124,6 +124,13 @@ public class GetCampaignResultJsonUnmarshaller implements Unmarshaller<GetCampai
                     context.nextToken();
                     getCampaignResult.setLastModificationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("dataDestinationConfigs", targetDepth)) {
+                    context.nextToken();
+                    getCampaignResult
+                            .setDataDestinationConfigs(new ListUnmarshaller<DataDestinationConfig>(DataDestinationConfigJsonUnmarshaller.getInstance())
+
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -44,6 +44,7 @@ import com.amazonaws.services.drs.AWSdrsClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.drs.model.*;
+
 import com.amazonaws.services.drs.model.transform.*;
 
 /**
@@ -78,29 +79,29 @@ public class AWSdrsClient extends AmazonWebServiceClient implements AWSdrs {
                     .withSupportsIon(false)
                     .withContentTypeOverride("application/json")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.drs.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UninitializedAccountException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.drs.model.transform.UninitializedAccountExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.drs.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
                                     com.amazonaws.services.drs.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.drs.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.drs.model.transform.ConflictExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.drs.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.drs.model.transform.ValidationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.drs.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UninitializedAccountException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.drs.model.transform.UninitializedAccountExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.drs.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.drs.model.transform.ConflictExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.drs.model.AWSdrsException.class));
 
     public static AWSdrsClientBuilder builder() {
@@ -147,6 +148,78 @@ public class AWSdrsClient extends AmazonWebServiceClient implements AWSdrs {
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain("/com/amazonaws/services/drs/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain("/com/amazonaws/services/drs/request.handler2s"));
         requestHandler2s.addAll(chainFactory.getGlobalHandlers());
+    }
+
+    /**
+     * <p>
+     * Associate a Source Network to an existing CloudFormation Stack and modify launch templates to use this network.
+     * Can be used for reverting to previously deployed CloudFormation stacks.
+     * </p>
+     * 
+     * @param associateSourceNetworkStackRequest
+     * @return Result of the AssociateSourceNetworkStack operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource for this operation was not found.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @throws ServiceQuotaExceededException
+     *         The request could not be completed because its exceeded the service quota.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by the AWS service.
+     * @throws UninitializedAccountException
+     *         The account performing the request has not been initialized.
+     * @sample AWSdrs.AssociateSourceNetworkStack
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/AssociateSourceNetworkStack"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AssociateSourceNetworkStackResult associateSourceNetworkStack(AssociateSourceNetworkStackRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateSourceNetworkStack(request);
+    }
+
+    @SdkInternalApi
+    final AssociateSourceNetworkStackResult executeAssociateSourceNetworkStack(AssociateSourceNetworkStackRequest associateSourceNetworkStackRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateSourceNetworkStackRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateSourceNetworkStackRequest> request = null;
+        Response<AssociateSourceNetworkStackResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateSourceNetworkStackRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(associateSourceNetworkStackRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "drs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateSourceNetworkStack");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssociateSourceNetworkStackResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AssociateSourceNetworkStackResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -362,6 +435,75 @@ public class AWSdrsClient extends AmazonWebServiceClient implements AWSdrs {
 
     /**
      * <p>
+     * Create a new Source Network resource for a provided VPC ID.
+     * </p>
+     * 
+     * @param createSourceNetworkRequest
+     * @return Result of the CreateSourceNetwork operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource for this operation was not found.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @throws ServiceQuotaExceededException
+     *         The request could not be completed because its exceeded the service quota.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by the AWS service.
+     * @throws UninitializedAccountException
+     *         The account performing the request has not been initialized.
+     * @sample AWSdrs.CreateSourceNetwork
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/CreateSourceNetwork" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateSourceNetworkResult createSourceNetwork(CreateSourceNetworkRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateSourceNetwork(request);
+    }
+
+    @SdkInternalApi
+    final CreateSourceNetworkResult executeCreateSourceNetwork(CreateSourceNetworkRequest createSourceNetworkRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createSourceNetworkRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateSourceNetworkRequest> request = null;
+        Response<CreateSourceNetworkResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateSourceNetworkRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createSourceNetworkRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "drs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSourceNetwork");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateSourceNetworkResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateSourceNetworkResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a single Job by ID.
      * </p>
      * 
@@ -415,6 +557,71 @@ public class AWSdrsClient extends AmazonWebServiceClient implements AWSdrs {
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteJobResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a resource launch action.
+     * </p>
+     * 
+     * @param deleteLaunchActionRequest
+     * @return Result of the DeleteLaunchAction operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource for this operation was not found.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by the AWS service.
+     * @throws UninitializedAccountException
+     *         The account performing the request has not been initialized.
+     * @sample AWSdrs.DeleteLaunchAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DeleteLaunchAction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteLaunchActionResult deleteLaunchAction(DeleteLaunchActionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteLaunchAction(request);
+    }
+
+    @SdkInternalApi
+    final DeleteLaunchActionResult executeDeleteLaunchAction(DeleteLaunchActionRequest deleteLaunchActionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteLaunchActionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteLaunchActionRequest> request = null;
+        Response<DeleteLaunchActionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteLaunchActionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteLaunchActionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "drs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLaunchAction");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteLaunchActionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteLaunchActionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -618,6 +825,71 @@ public class AWSdrsClient extends AmazonWebServiceClient implements AWSdrs {
             HttpResponseHandler<AmazonWebServiceResponse<DeleteReplicationConfigurationTemplateResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new DeleteReplicationConfigurationTemplateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Delete Source Network resource.
+     * </p>
+     * 
+     * @param deleteSourceNetworkRequest
+     * @return Result of the DeleteSourceNetwork operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource for this operation was not found.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws UninitializedAccountException
+     *         The account performing the request has not been initialized.
+     * @sample AWSdrs.DeleteSourceNetwork
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DeleteSourceNetwork" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteSourceNetworkResult deleteSourceNetwork(DeleteSourceNetworkRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteSourceNetwork(request);
+    }
+
+    @SdkInternalApi
+    final DeleteSourceNetworkResult executeDeleteSourceNetwork(DeleteSourceNetworkRequest deleteSourceNetworkRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteSourceNetworkRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteSourceNetworkRequest> request = null;
+        Response<DeleteSourceNetworkResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteSourceNetworkRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteSourceNetworkRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "drs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSourceNetwork");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteSourceNetworkResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteSourceNetworkResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1093,6 +1365,70 @@ public class AWSdrsClient extends AmazonWebServiceClient implements AWSdrs {
 
     /**
      * <p>
+     * Lists all Source Networks or multiple Source Networks filtered by ID.
+     * </p>
+     * 
+     * @param describeSourceNetworksRequest
+     * @return Result of the DescribeSourceNetworks operation returned by the service.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by the AWS service.
+     * @throws UninitializedAccountException
+     *         The account performing the request has not been initialized.
+     * @sample AWSdrs.DescribeSourceNetworks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DescribeSourceNetworks" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeSourceNetworksResult describeSourceNetworks(DescribeSourceNetworksRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeSourceNetworks(request);
+    }
+
+    @SdkInternalApi
+    final DescribeSourceNetworksResult executeDescribeSourceNetworks(DescribeSourceNetworksRequest describeSourceNetworksRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeSourceNetworksRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeSourceNetworksRequest> request = null;
+        Response<DescribeSourceNetworksResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeSourceNetworksRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeSourceNetworksRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "drs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSourceNetworks");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeSourceNetworksResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeSourceNetworksResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists all Source Servers or multiple Source Servers filtered by ID.
      * </p>
      * 
@@ -1294,6 +1630,75 @@ public class AWSdrsClient extends AmazonWebServiceClient implements AWSdrs {
             HttpResponseHandler<AmazonWebServiceResponse<DisconnectSourceServerResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DisconnectSourceServerResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Export the Source Network CloudFormation template to an S3 bucket.
+     * </p>
+     * 
+     * @param exportSourceNetworkCfnTemplateRequest
+     * @return Result of the ExportSourceNetworkCfnTemplate operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource for this operation was not found.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by the AWS service.
+     * @throws UninitializedAccountException
+     *         The account performing the request has not been initialized.
+     * @sample AWSdrs.ExportSourceNetworkCfnTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ExportSourceNetworkCfnTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ExportSourceNetworkCfnTemplateResult exportSourceNetworkCfnTemplate(ExportSourceNetworkCfnTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeExportSourceNetworkCfnTemplate(request);
+    }
+
+    @SdkInternalApi
+    final ExportSourceNetworkCfnTemplateResult executeExportSourceNetworkCfnTemplate(ExportSourceNetworkCfnTemplateRequest exportSourceNetworkCfnTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(exportSourceNetworkCfnTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ExportSourceNetworkCfnTemplateRequest> request = null;
+        Response<ExportSourceNetworkCfnTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ExportSourceNetworkCfnTemplateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(exportSourceNetworkCfnTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "drs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExportSourceNetworkCfnTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ExportSourceNetworkCfnTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ExportSourceNetworkCfnTemplateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1635,6 +2040,71 @@ public class AWSdrsClient extends AmazonWebServiceClient implements AWSdrs {
 
     /**
      * <p>
+     * Lists resource launch actions.
+     * </p>
+     * 
+     * @param listLaunchActionsRequest
+     * @return Result of the ListLaunchActions operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource for this operation was not found.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @throws ServiceQuotaExceededException
+     *         The request could not be completed because its exceeded the service quota.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws UninitializedAccountException
+     *         The account performing the request has not been initialized.
+     * @sample AWSdrs.ListLaunchActions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ListLaunchActions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListLaunchActionsResult listLaunchActions(ListLaunchActionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListLaunchActions(request);
+    }
+
+    @SdkInternalApi
+    final ListLaunchActionsResult executeListLaunchActions(ListLaunchActionsRequest listLaunchActionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listLaunchActionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListLaunchActionsRequest> request = null;
+        Response<ListLaunchActionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListLaunchActionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listLaunchActionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "drs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLaunchActions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListLaunchActionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListLaunchActionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns an array of staging accounts for existing extended source servers.
      * </p>
      * 
@@ -1753,6 +2223,73 @@ public class AWSdrsClient extends AmazonWebServiceClient implements AWSdrs {
 
             HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Puts a resource launch action.
+     * </p>
+     * 
+     * @param putLaunchActionRequest
+     * @return Result of the PutLaunchAction operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource for this operation was not found.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by the AWS service.
+     * @throws UninitializedAccountException
+     *         The account performing the request has not been initialized.
+     * @sample AWSdrs.PutLaunchAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/PutLaunchAction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public PutLaunchActionResult putLaunchAction(PutLaunchActionRequest request) {
+        request = beforeClientExecution(request);
+        return executePutLaunchAction(request);
+    }
+
+    @SdkInternalApi
+    final PutLaunchActionResult executePutLaunchAction(PutLaunchActionRequest putLaunchActionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putLaunchActionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutLaunchActionRequest> request = null;
+        Response<PutLaunchActionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutLaunchActionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putLaunchActionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "drs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutLaunchAction");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutLaunchActionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutLaunchActionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2104,6 +2641,143 @@ public class AWSdrsClient extends AmazonWebServiceClient implements AWSdrs {
 
     /**
      * <p>
+     * Deploy VPC for the specified Source Network and modify launch templates to use this network. The VPC will be
+     * deployed using a dedicated CloudFormation stack.
+     * </p>
+     * 
+     * @param startSourceNetworkRecoveryRequest
+     * @return Result of the StartSourceNetworkRecovery operation returned by the service.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @throws ServiceQuotaExceededException
+     *         The request could not be completed because its exceeded the service quota.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by the AWS service.
+     * @throws UninitializedAccountException
+     *         The account performing the request has not been initialized.
+     * @sample AWSdrs.StartSourceNetworkRecovery
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StartSourceNetworkRecovery" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public StartSourceNetworkRecoveryResult startSourceNetworkRecovery(StartSourceNetworkRecoveryRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartSourceNetworkRecovery(request);
+    }
+
+    @SdkInternalApi
+    final StartSourceNetworkRecoveryResult executeStartSourceNetworkRecovery(StartSourceNetworkRecoveryRequest startSourceNetworkRecoveryRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startSourceNetworkRecoveryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartSourceNetworkRecoveryRequest> request = null;
+        Response<StartSourceNetworkRecoveryResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartSourceNetworkRecoveryRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startSourceNetworkRecoveryRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "drs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartSourceNetworkRecovery");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartSourceNetworkRecoveryResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartSourceNetworkRecoveryResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts replication for a Source Network. This action would make the Source Network protected.
+     * </p>
+     * 
+     * @param startSourceNetworkReplicationRequest
+     * @return Result of the StartSourceNetworkReplication operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource for this operation was not found.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws UninitializedAccountException
+     *         The account performing the request has not been initialized.
+     * @sample AWSdrs.StartSourceNetworkReplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StartSourceNetworkReplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartSourceNetworkReplicationResult startSourceNetworkReplication(StartSourceNetworkReplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartSourceNetworkReplication(request);
+    }
+
+    @SdkInternalApi
+    final StartSourceNetworkReplicationResult executeStartSourceNetworkReplication(StartSourceNetworkReplicationRequest startSourceNetworkReplicationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startSourceNetworkReplicationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartSourceNetworkReplicationRequest> request = null;
+        Response<StartSourceNetworkReplicationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartSourceNetworkReplicationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startSourceNetworkReplicationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "drs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartSourceNetworkReplication");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartSourceNetworkReplicationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartSourceNetworkReplicationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Stops the failback process for a specified Recovery Instance. This changes the Failback State of the Recovery
      * Instance back to FAILBACK_NOT_STARTED.
      * </p>
@@ -2222,6 +2896,75 @@ public class AWSdrsClient extends AmazonWebServiceClient implements AWSdrs {
 
             HttpResponseHandler<AmazonWebServiceResponse<StopReplicationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopReplicationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Stops replication for a Source Network. This action would make the Source Network unprotected.
+     * </p>
+     * 
+     * @param stopSourceNetworkReplicationRequest
+     * @return Result of the StopSourceNetworkReplication operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource for this operation was not found.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by the AWS service.
+     * @throws UninitializedAccountException
+     *         The account performing the request has not been initialized.
+     * @sample AWSdrs.StopSourceNetworkReplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StopSourceNetworkReplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StopSourceNetworkReplicationResult stopSourceNetworkReplication(StopSourceNetworkReplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopSourceNetworkReplication(request);
+    }
+
+    @SdkInternalApi
+    final StopSourceNetworkReplicationResult executeStopSourceNetworkReplication(StopSourceNetworkReplicationRequest stopSourceNetworkReplicationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(stopSourceNetworkReplicationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopSourceNetworkReplicationRequest> request = null;
+        Response<StopSourceNetworkReplicationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopSourceNetworkReplicationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(stopSourceNetworkReplicationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "drs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopSourceNetworkReplication");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StopSourceNetworkReplicationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StopSourceNetworkReplicationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

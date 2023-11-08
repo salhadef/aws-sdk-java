@@ -43,6 +43,11 @@ public class AbstractAWSControlTower implements AWSControlTower {
     }
 
     @Override
+    public GetEnabledControlResult getEnabledControl(GetEnabledControlRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListEnabledControlsResult listEnabledControls(ListEnabledControlsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

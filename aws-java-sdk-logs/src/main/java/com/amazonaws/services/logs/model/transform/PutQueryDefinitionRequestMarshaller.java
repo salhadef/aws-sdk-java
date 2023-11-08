@@ -18,6 +18,8 @@ import javax.annotation.Generated;
 import com.amazonaws.SdkClientException;
 import com.amazonaws.services.logs.model.*;
 
+import com.amazonaws.util.IdempotentUtils;
+
 import com.amazonaws.protocol.*;
 import com.amazonaws.annotation.SdkInternalApi;
 
@@ -36,6 +38,9 @@ public class PutQueryDefinitionRequestMarshaller {
             .marshallLocationName("logGroupNames").build();
     private static final MarshallingInfo<String> QUERYSTRING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("queryString").build();
+    private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken")
+            .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
 
     private static final PutQueryDefinitionRequestMarshaller instance = new PutQueryDefinitionRequestMarshaller();
 
@@ -57,6 +62,7 @@ public class PutQueryDefinitionRequestMarshaller {
             protocolMarshaller.marshall(putQueryDefinitionRequest.getQueryDefinitionId(), QUERYDEFINITIONID_BINDING);
             protocolMarshaller.marshall(putQueryDefinitionRequest.getLogGroupNames(), LOGGROUPNAMES_BINDING);
             protocolMarshaller.marshall(putQueryDefinitionRequest.getQueryString(), QUERYSTRING_BINDING);
+            protocolMarshaller.marshall(putQueryDefinitionRequest.getClientToken(), CLIENTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

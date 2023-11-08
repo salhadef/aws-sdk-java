@@ -25,7 +25,7 @@ public class ListTrailsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Returns the name, ARN, and home region of trails in the current account.
+     * Returns the name, ARN, and home Region of trails in the current account.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TrailInfo> trails;
@@ -41,10 +41,10 @@ public class ListTrailsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Returns the name, ARN, and home region of trails in the current account.
+     * Returns the name, ARN, and home Region of trails in the current account.
      * </p>
      * 
-     * @return Returns the name, ARN, and home region of trails in the current account.
+     * @return Returns the name, ARN, and home Region of trails in the current account.
      */
 
     public java.util.List<TrailInfo> getTrails() {
@@ -56,11 +56,11 @@ public class ListTrailsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Returns the name, ARN, and home region of trails in the current account.
+     * Returns the name, ARN, and home Region of trails in the current account.
      * </p>
      * 
      * @param trails
-     *        Returns the name, ARN, and home region of trails in the current account.
+     *        Returns the name, ARN, and home Region of trails in the current account.
      */
 
     public void setTrails(java.util.Collection<TrailInfo> trails) {
@@ -74,7 +74,7 @@ public class ListTrailsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Returns the name, ARN, and home region of trails in the current account.
+     * Returns the name, ARN, and home Region of trails in the current account.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -83,7 +83,7 @@ public class ListTrailsResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      * 
      * @param trails
-     *        Returns the name, ARN, and home region of trails in the current account.
+     *        Returns the name, ARN, and home Region of trails in the current account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,11 +99,11 @@ public class ListTrailsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Returns the name, ARN, and home region of trails in the current account.
+     * Returns the name, ARN, and home Region of trails in the current account.
      * </p>
      * 
      * @param trails
-     *        Returns the name, ARN, and home region of trails in the current account.
+     *        Returns the name, ARN, and home Region of trails in the current account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

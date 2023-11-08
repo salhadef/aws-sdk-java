@@ -132,6 +132,19 @@ public class AbstractAWSLakeFormationAsync extends AbstractAWSLakeFormation impl
     }
 
     @Override
+    public java.util.concurrent.Future<CreateLakeFormationOptInResult> createLakeFormationOptInAsync(CreateLakeFormationOptInRequest request) {
+
+        return createLakeFormationOptInAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLakeFormationOptInResult> createLakeFormationOptInAsync(CreateLakeFormationOptInRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateLakeFormationOptInRequest, CreateLakeFormationOptInResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDataCellsFilterResult> deleteDataCellsFilterAsync(DeleteDataCellsFilterRequest request) {
 
         return deleteDataCellsFilterAsync(request, null);
@@ -153,6 +166,19 @@ public class AbstractAWSLakeFormationAsync extends AbstractAWSLakeFormation impl
     @Override
     public java.util.concurrent.Future<DeleteLFTagResult> deleteLFTagAsync(DeleteLFTagRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteLFTagRequest, DeleteLFTagResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLakeFormationOptInResult> deleteLakeFormationOptInAsync(DeleteLakeFormationOptInRequest request) {
+
+        return deleteLakeFormationOptInAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLakeFormationOptInResult> deleteLakeFormationOptInAsync(DeleteLakeFormationOptInRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteLakeFormationOptInRequest, DeleteLakeFormationOptInResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -417,6 +443,19 @@ public class AbstractAWSLakeFormationAsync extends AbstractAWSLakeFormation impl
     @Override
     public java.util.concurrent.Future<ListLFTagsResult> listLFTagsAsync(ListLFTagsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListLFTagsRequest, ListLFTagsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLakeFormationOptInsResult> listLakeFormationOptInsAsync(ListLakeFormationOptInsRequest request) {
+
+        return listLakeFormationOptInsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLakeFormationOptInsResult> listLakeFormationOptInsAsync(ListLakeFormationOptInsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListLakeFormationOptInsRequest, ListLakeFormationOptInsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

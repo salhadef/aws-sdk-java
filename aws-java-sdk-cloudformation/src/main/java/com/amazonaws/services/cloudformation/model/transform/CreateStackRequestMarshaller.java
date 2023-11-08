@@ -235,6 +235,10 @@ public class CreateStackRequestMarshaller implements Marshaller<Request<CreateSt
             request.addParameter("EnableTerminationProtection", StringUtils.fromBoolean(createStackRequest.getEnableTerminationProtection()));
         }
 
+        if (createStackRequest.getRetainExceptOnCreate() != null) {
+            request.addParameter("RetainExceptOnCreate", StringUtils.fromBoolean(createStackRequest.getRetainExceptOnCreate()));
+        }
+
         return request;
     }
 

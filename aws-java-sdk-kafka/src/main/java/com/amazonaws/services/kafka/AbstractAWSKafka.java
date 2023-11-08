@@ -53,6 +53,11 @@ public class AbstractAWSKafka implements AWSKafka {
     }
 
     @Override
+    public CreateReplicatorResult createReplicator(CreateReplicatorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateVpcConnectionResult createVpcConnection(CreateVpcConnectionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -73,6 +78,11 @@ public class AbstractAWSKafka implements AWSKafka {
     }
 
     @Override
+    public DeleteReplicatorResult deleteReplicator(DeleteReplicatorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteVpcConnectionResult deleteVpcConnection(DeleteVpcConnectionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -88,6 +98,11 @@ public class AbstractAWSKafka implements AWSKafka {
     }
 
     @Override
+    public DescribeClusterOperationV2Result describeClusterOperationV2(DescribeClusterOperationV2Request request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeClusterV2Result describeClusterV2(DescribeClusterV2Request request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -99,6 +114,11 @@ public class AbstractAWSKafka implements AWSKafka {
 
     @Override
     public DescribeConfigurationRevisionResult describeConfigurationRevision(DescribeConfigurationRevisionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeReplicatorResult describeReplicator(DescribeReplicatorRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -133,6 +153,11 @@ public class AbstractAWSKafka implements AWSKafka {
     }
 
     @Override
+    public ListClusterOperationsV2Result listClusterOperationsV2(ListClusterOperationsV2Request request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListClustersResult listClusters(ListClustersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -159,6 +184,11 @@ public class AbstractAWSKafka implements AWSKafka {
 
     @Override
     public ListNodesResult listNodes(ListNodesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListReplicatorsResult listReplicators(ListReplicatorsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -239,6 +269,11 @@ public class AbstractAWSKafka implements AWSKafka {
 
     @Override
     public UpdateMonitoringResult updateMonitoring(UpdateMonitoringRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateReplicationInfoResult updateReplicationInfo(UpdateReplicationInfoRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

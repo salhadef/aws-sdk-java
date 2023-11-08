@@ -60,6 +60,10 @@ public class AWSManagedRulesATPRuleSetJsonUnmarshaller implements Unmarshaller<A
                     context.nextToken();
                     aWSManagedRulesATPRuleSet.setResponseInspection(ResponseInspectionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("EnableRegexInPath", targetDepth)) {
+                    context.nextToken();
+                    aWSManagedRulesATPRuleSet.setEnableRegexInPath(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

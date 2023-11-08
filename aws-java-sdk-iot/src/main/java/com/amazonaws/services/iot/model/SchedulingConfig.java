@@ -33,6 +33,12 @@ public class SchedulingConfig implements Serializable, Cloneable, StructuredPojo
      * from the current time. The date and time format for the <code>startTime</code> is YYYY-MM-DD for the date and
      * HH:MM for the time.
      * </p>
+     * <p>
+     * For more information on the syntax for <code>startTime</code> when using an API command or the Command Line
+     * Interface, see <a href=
+     * "https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp"
+     * >Timestamp</a>.
+     * </p>
      */
     private String startTime;
     /**
@@ -43,6 +49,12 @@ public class SchedulingConfig implements Serializable, Cloneable, StructuredPojo
      * <code>endTime</code> is thirty minutes. The maximum duration between <code>startTime</code> and
      * <code>endTime</code> is two years. The date and time format for the <code>endTime</code> is YYYY-MM-DD for the
      * date and HH:MM for the time.
+     * </p>
+     * <p>
+     * For more information on the syntax for <code>endTime</code> when using an API command or the Command Line
+     * Interface, see <a href=
+     * "https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp"
+     * >Timestamp</a>.
      * </p>
      */
     private String endTime;
@@ -69,12 +81,23 @@ public class SchedulingConfig implements Serializable, Cloneable, StructuredPojo
      * from the current time. The date and time format for the <code>startTime</code> is YYYY-MM-DD for the date and
      * HH:MM for the time.
      * </p>
+     * <p>
+     * For more information on the syntax for <code>startTime</code> when using an API command or the Command Line
+     * Interface, see <a href=
+     * "https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp"
+     * >Timestamp</a>.
+     * </p>
      * 
      * @param startTime
      *        The time a job will begin rollout of the job document to all devices in the target group for a job. The
      *        <code>startTime</code> can be scheduled up to a year in advance and must be scheduled a minimum of thirty
      *        minutes from the current time. The date and time format for the <code>startTime</code> is YYYY-MM-DD for
-     *        the date and HH:MM for the time.
+     *        the date and HH:MM for the time.</p>
+     *        <p>
+     *        For more information on the syntax for <code>startTime</code> when using an API command or the Command
+     *        Line Interface, see <a href=
+     *        "https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp"
+     *        >Timestamp</a>.
      */
 
     public void setStartTime(String startTime) {
@@ -88,11 +111,22 @@ public class SchedulingConfig implements Serializable, Cloneable, StructuredPojo
      * from the current time. The date and time format for the <code>startTime</code> is YYYY-MM-DD for the date and
      * HH:MM for the time.
      * </p>
+     * <p>
+     * For more information on the syntax for <code>startTime</code> when using an API command or the Command Line
+     * Interface, see <a href=
+     * "https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp"
+     * >Timestamp</a>.
+     * </p>
      * 
      * @return The time a job will begin rollout of the job document to all devices in the target group for a job. The
      *         <code>startTime</code> can be scheduled up to a year in advance and must be scheduled a minimum of thirty
      *         minutes from the current time. The date and time format for the <code>startTime</code> is YYYY-MM-DD for
-     *         the date and HH:MM for the time.
+     *         the date and HH:MM for the time.</p>
+     *         <p>
+     *         For more information on the syntax for <code>startTime</code> when using an API command or the Command
+     *         Line Interface, see <a href=
+     *         "https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp"
+     *         >Timestamp</a>.
      */
 
     public String getStartTime() {
@@ -106,12 +140,23 @@ public class SchedulingConfig implements Serializable, Cloneable, StructuredPojo
      * from the current time. The date and time format for the <code>startTime</code> is YYYY-MM-DD for the date and
      * HH:MM for the time.
      * </p>
+     * <p>
+     * For more information on the syntax for <code>startTime</code> when using an API command or the Command Line
+     * Interface, see <a href=
+     * "https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp"
+     * >Timestamp</a>.
+     * </p>
      * 
      * @param startTime
      *        The time a job will begin rollout of the job document to all devices in the target group for a job. The
      *        <code>startTime</code> can be scheduled up to a year in advance and must be scheduled a minimum of thirty
      *        minutes from the current time. The date and time format for the <code>startTime</code> is YYYY-MM-DD for
-     *        the date and HH:MM for the time.
+     *        the date and HH:MM for the time.</p>
+     *        <p>
+     *        For more information on the syntax for <code>startTime</code> when using an API command or the Command
+     *        Line Interface, see <a href=
+     *        "https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp"
+     *        >Timestamp</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,6 +174,12 @@ public class SchedulingConfig implements Serializable, Cloneable, StructuredPojo
      * <code>endTime</code> is two years. The date and time format for the <code>endTime</code> is YYYY-MM-DD for the
      * date and HH:MM for the time.
      * </p>
+     * <p>
+     * For more information on the syntax for <code>endTime</code> when using an API command or the Command Line
+     * Interface, see <a href=
+     * "https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp"
+     * >Timestamp</a>.
+     * </p>
      * 
      * @param endTime
      *        The time a job will stop rollout of the job document to all devices in the target group for a job. The
@@ -136,7 +187,12 @@ public class SchedulingConfig implements Serializable, Cloneable, StructuredPojo
      *        minimum of thirty minutes from the current time. The minimum duration between <code>startTime</code> and
      *        <code>endTime</code> is thirty minutes. The maximum duration between <code>startTime</code> and
      *        <code>endTime</code> is two years. The date and time format for the <code>endTime</code> is YYYY-MM-DD for
-     *        the date and HH:MM for the time.
+     *        the date and HH:MM for the time.</p>
+     *        <p>
+     *        For more information on the syntax for <code>endTime</code> when using an API command or the Command Line
+     *        Interface, see <a href=
+     *        "https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp"
+     *        >Timestamp</a>.
      */
 
     public void setEndTime(String endTime) {
@@ -152,13 +208,24 @@ public class SchedulingConfig implements Serializable, Cloneable, StructuredPojo
      * <code>endTime</code> is two years. The date and time format for the <code>endTime</code> is YYYY-MM-DD for the
      * date and HH:MM for the time.
      * </p>
+     * <p>
+     * For more information on the syntax for <code>endTime</code> when using an API command or the Command Line
+     * Interface, see <a href=
+     * "https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp"
+     * >Timestamp</a>.
+     * </p>
      * 
      * @return The time a job will stop rollout of the job document to all devices in the target group for a job. The
      *         <code>endTime</code> must take place no later than two years from the current time and be scheduled a
      *         minimum of thirty minutes from the current time. The minimum duration between <code>startTime</code> and
      *         <code>endTime</code> is thirty minutes. The maximum duration between <code>startTime</code> and
      *         <code>endTime</code> is two years. The date and time format for the <code>endTime</code> is YYYY-MM-DD
-     *         for the date and HH:MM for the time.
+     *         for the date and HH:MM for the time.</p>
+     *         <p>
+     *         For more information on the syntax for <code>endTime</code> when using an API command or the Command Line
+     *         Interface, see <a href=
+     *         "https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp"
+     *         >Timestamp</a>.
      */
 
     public String getEndTime() {
@@ -174,6 +241,12 @@ public class SchedulingConfig implements Serializable, Cloneable, StructuredPojo
      * <code>endTime</code> is two years. The date and time format for the <code>endTime</code> is YYYY-MM-DD for the
      * date and HH:MM for the time.
      * </p>
+     * <p>
+     * For more information on the syntax for <code>endTime</code> when using an API command or the Command Line
+     * Interface, see <a href=
+     * "https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp"
+     * >Timestamp</a>.
+     * </p>
      * 
      * @param endTime
      *        The time a job will stop rollout of the job document to all devices in the target group for a job. The
@@ -181,7 +254,12 @@ public class SchedulingConfig implements Serializable, Cloneable, StructuredPojo
      *        minimum of thirty minutes from the current time. The minimum duration between <code>startTime</code> and
      *        <code>endTime</code> is thirty minutes. The maximum duration between <code>startTime</code> and
      *        <code>endTime</code> is two years. The date and time format for the <code>endTime</code> is YYYY-MM-DD for
-     *        the date and HH:MM for the time.
+     *        the date and HH:MM for the time.</p>
+     *        <p>
+     *        For more information on the syntax for <code>endTime</code> when using an API command or the Command Line
+     *        Interface, see <a href=
+     *        "https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp"
+     *        >Timestamp</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

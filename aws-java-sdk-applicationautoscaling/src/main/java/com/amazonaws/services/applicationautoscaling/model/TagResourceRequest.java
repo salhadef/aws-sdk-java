@@ -40,7 +40,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String resourceARN;
     /**
      * <p>
-     * The tags assigned to the resource. A tag is a label that you assign to an AWS resource.
+     * The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
      * </p>
      * <p>
      * Each tag consists of a tag key and a tag value.
@@ -139,7 +139,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tags assigned to the resource. A tag is a label that you assign to an AWS resource.
+     * The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
      * </p>
      * <p>
      * Each tag consists of a tag key and a tag value.
@@ -155,7 +155,8 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * tag restrictions</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.
      * </p>
      * 
-     * @return The tags assigned to the resource. A tag is a label that you assign to an AWS resource.</p>
+     * @return The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services
+     *         resource.</p>
      *         <p>
      *         Each tag consists of a tag key and a tag value.
      *         </p>
@@ -177,7 +178,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tags assigned to the resource. A tag is a label that you assign to an AWS resource.
+     * The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
      * </p>
      * <p>
      * Each tag consists of a tag key and a tag value.
@@ -194,7 +195,8 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param tags
-     *        The tags assigned to the resource. A tag is a label that you assign to an AWS resource.</p>
+     *        The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services
+     *        resource.</p>
      *        <p>
      *        Each tag consists of a tag key and a tag value.
      *        </p>
@@ -216,7 +218,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tags assigned to the resource. A tag is a label that you assign to an AWS resource.
+     * The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
      * </p>
      * <p>
      * Each tag consists of a tag key and a tag value.
@@ -233,7 +235,8 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param tags
-     *        The tags assigned to the resource. A tag is a label that you assign to an AWS resource.</p>
+     *        The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services
+     *        resource.</p>
      *        <p>
      *        Each tag consists of a tag key and a tag value.
      *        </p>

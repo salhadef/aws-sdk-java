@@ -60,6 +60,10 @@ public class PackageVersionHistoryJsonUnmarshaller implements Unmarshaller<Packa
                     context.nextToken();
                     packageVersionHistory.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("PluginProperties", targetDepth)) {
+                    context.nextToken();
+                    packageVersionHistory.setPluginProperties(PluginPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -48,7 +48,7 @@ public class ConfiguredTableAnalysisRule implements Serializable, Cloneable, Str
     private ConfiguredTableAnalysisRulePolicy policy;
     /**
      * <p>
-     * The type of configured table analysis rule. Valid values are `AGGREGATION` and `LIST`.
+     * The type of configured table analysis rule.
      * </p>
      */
     private String type;
@@ -187,11 +187,11 @@ public class ConfiguredTableAnalysisRule implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The type of configured table analysis rule. Valid values are `AGGREGATION` and `LIST`.
+     * The type of configured table analysis rule.
      * </p>
      * 
      * @param type
-     *        The type of configured table analysis rule. Valid values are `AGGREGATION` and `LIST`.
+     *        The type of configured table analysis rule.
      * @see ConfiguredTableAnalysisRuleType
      */
 
@@ -201,10 +201,10 @@ public class ConfiguredTableAnalysisRule implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The type of configured table analysis rule. Valid values are `AGGREGATION` and `LIST`.
+     * The type of configured table analysis rule.
      * </p>
      * 
-     * @return The type of configured table analysis rule. Valid values are `AGGREGATION` and `LIST`.
+     * @return The type of configured table analysis rule.
      * @see ConfiguredTableAnalysisRuleType
      */
 
@@ -214,11 +214,11 @@ public class ConfiguredTableAnalysisRule implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The type of configured table analysis rule. Valid values are `AGGREGATION` and `LIST`.
+     * The type of configured table analysis rule.
      * </p>
      * 
      * @param type
-     *        The type of configured table analysis rule. Valid values are `AGGREGATION` and `LIST`.
+     *        The type of configured table analysis rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConfiguredTableAnalysisRuleType
      */
@@ -230,11 +230,11 @@ public class ConfiguredTableAnalysisRule implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The type of configured table analysis rule. Valid values are `AGGREGATION` and `LIST`.
+     * The type of configured table analysis rule.
      * </p>
      * 
      * @param type
-     *        The type of configured table analysis rule. Valid values are `AGGREGATION` and `LIST`.
+     *        The type of configured table analysis rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConfiguredTableAnalysisRuleType
      */

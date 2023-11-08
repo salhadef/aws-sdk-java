@@ -22,7 +22,7 @@ public class StopProjectVersionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the model version that you want to delete.
+     * The Amazon Resource Name (ARN) of the model version that you want to stop.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:StopProjectVersion</code> action.
@@ -32,14 +32,14 @@ public class StopProjectVersionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the model version that you want to delete.
+     * The Amazon Resource Name (ARN) of the model version that you want to stop.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:StopProjectVersion</code> action.
      * </p>
      * 
      * @param projectVersionArn
-     *        The Amazon Resource Name (ARN) of the model version that you want to delete.</p>
+     *        The Amazon Resource Name (ARN) of the model version that you want to stop.</p>
      *        <p>
      *        This operation requires permissions to perform the <code>rekognition:StopProjectVersion</code> action.
      */
@@ -50,13 +50,13 @@ public class StopProjectVersionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the model version that you want to delete.
+     * The Amazon Resource Name (ARN) of the model version that you want to stop.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:StopProjectVersion</code> action.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the model version that you want to delete.</p>
+     * @return The Amazon Resource Name (ARN) of the model version that you want to stop.</p>
      *         <p>
      *         This operation requires permissions to perform the <code>rekognition:StopProjectVersion</code> action.
      */
@@ -67,14 +67,14 @@ public class StopProjectVersionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the model version that you want to delete.
+     * The Amazon Resource Name (ARN) of the model version that you want to stop.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:StopProjectVersion</code> action.
      * </p>
      * 
      * @param projectVersionArn
-     *        The Amazon Resource Name (ARN) of the model version that you want to delete.</p>
+     *        The Amazon Resource Name (ARN) of the model version that you want to stop.</p>
      *        <p>
      *        This operation requires permissions to perform the <code>rekognition:StopProjectVersion</code> action.
      * @return Returns a reference to this object so that method calls can be chained together.

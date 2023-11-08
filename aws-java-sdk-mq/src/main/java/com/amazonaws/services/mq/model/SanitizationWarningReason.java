@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The reason for which the XML elements or attributes were sanitized.
+ * The reason for which the configuration elements or attributes were sanitized.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -30,34 +30,10 @@ public class TaskListItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The task's CPU count.
+     * The task's ID.
      * </p>
      */
-    private Integer cpus;
-    /**
-     * <p>
-     * When the task was created.
-     * </p>
-     */
-    private java.util.Date creationTime;
-    /**
-     * <p>
-     * The task's memory use in gigabyes.
-     * </p>
-     */
-    private Integer memory;
-    /**
-     * <p>
-     * The task's name.
-     * </p>
-     */
-    private String name;
-    /**
-     * <p>
-     * When the task started.
-     * </p>
-     */
-    private java.util.Date startTime;
+    private String taskId;
     /**
      * <p>
      * The task's status.
@@ -66,214 +42,90 @@ public class TaskListItem implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
+     * The task's name.
+     * </p>
+     */
+    private String name;
+    /**
+     * <p>
+     * The task's CPU count.
+     * </p>
+     */
+    private Integer cpus;
+    /**
+     * <p>
+     * The task's memory use in gigabyes.
+     * </p>
+     */
+    private Integer memory;
+    /**
+     * <p>
+     * When the task was created.
+     * </p>
+     */
+    private java.util.Date creationTime;
+    /**
+     * <p>
+     * When the task started.
+     * </p>
+     */
+    private java.util.Date startTime;
+    /**
+     * <p>
      * When the task stopped.
      * </p>
      */
     private java.util.Date stopTime;
     /**
      * <p>
+     * The number of Graphics Processing Units (GPU) specified for the task.
+     * </p>
+     */
+    private Integer gpus;
+    /**
+     * <p>
+     * The instance type for a task.
+     * </p>
+     */
+    private String instanceType;
+
+    /**
+     * <p>
      * The task's ID.
      * </p>
-     */
-    private String taskId;
-
-    /**
-     * <p>
-     * The task's CPU count.
-     * </p>
      * 
-     * @param cpus
-     *        The task's CPU count.
+     * @param taskId
+     *        The task's ID.
      */
 
-    public void setCpus(Integer cpus) {
-        this.cpus = cpus;
+    public void setTaskId(String taskId) {
+        this.taskId = taskId;
     }
 
     /**
      * <p>
-     * The task's CPU count.
+     * The task's ID.
      * </p>
      * 
-     * @return The task's CPU count.
+     * @return The task's ID.
      */
 
-    public Integer getCpus() {
-        return this.cpus;
+    public String getTaskId() {
+        return this.taskId;
     }
 
     /**
      * <p>
-     * The task's CPU count.
+     * The task's ID.
      * </p>
      * 
-     * @param cpus
-     *        The task's CPU count.
+     * @param taskId
+     *        The task's ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public TaskListItem withCpus(Integer cpus) {
-        setCpus(cpus);
-        return this;
-    }
-
-    /**
-     * <p>
-     * When the task was created.
-     * </p>
-     * 
-     * @param creationTime
-     *        When the task was created.
-     */
-
-    public void setCreationTime(java.util.Date creationTime) {
-        this.creationTime = creationTime;
-    }
-
-    /**
-     * <p>
-     * When the task was created.
-     * </p>
-     * 
-     * @return When the task was created.
-     */
-
-    public java.util.Date getCreationTime() {
-        return this.creationTime;
-    }
-
-    /**
-     * <p>
-     * When the task was created.
-     * </p>
-     * 
-     * @param creationTime
-     *        When the task was created.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public TaskListItem withCreationTime(java.util.Date creationTime) {
-        setCreationTime(creationTime);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The task's memory use in gigabyes.
-     * </p>
-     * 
-     * @param memory
-     *        The task's memory use in gigabyes.
-     */
-
-    public void setMemory(Integer memory) {
-        this.memory = memory;
-    }
-
-    /**
-     * <p>
-     * The task's memory use in gigabyes.
-     * </p>
-     * 
-     * @return The task's memory use in gigabyes.
-     */
-
-    public Integer getMemory() {
-        return this.memory;
-    }
-
-    /**
-     * <p>
-     * The task's memory use in gigabyes.
-     * </p>
-     * 
-     * @param memory
-     *        The task's memory use in gigabyes.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public TaskListItem withMemory(Integer memory) {
-        setMemory(memory);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The task's name.
-     * </p>
-     * 
-     * @param name
-     *        The task's name.
-     */
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     * <p>
-     * The task's name.
-     * </p>
-     * 
-     * @return The task's name.
-     */
-
-    public String getName() {
-        return this.name;
-    }
-
-    /**
-     * <p>
-     * The task's name.
-     * </p>
-     * 
-     * @param name
-     *        The task's name.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public TaskListItem withName(String name) {
-        setName(name);
-        return this;
-    }
-
-    /**
-     * <p>
-     * When the task started.
-     * </p>
-     * 
-     * @param startTime
-     *        When the task started.
-     */
-
-    public void setStartTime(java.util.Date startTime) {
-        this.startTime = startTime;
-    }
-
-    /**
-     * <p>
-     * When the task started.
-     * </p>
-     * 
-     * @return When the task started.
-     */
-
-    public java.util.Date getStartTime() {
-        return this.startTime;
-    }
-
-    /**
-     * <p>
-     * When the task started.
-     * </p>
-     * 
-     * @param startTime
-     *        When the task started.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public TaskListItem withStartTime(java.util.Date startTime) {
-        setStartTime(startTime);
+    public TaskListItem withTaskId(String taskId) {
+        setTaskId(taskId);
         return this;
     }
 
@@ -338,6 +190,206 @@ public class TaskListItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The task's name.
+     * </p>
+     * 
+     * @param name
+     *        The task's name.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The task's name.
+     * </p>
+     * 
+     * @return The task's name.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The task's name.
+     * </p>
+     * 
+     * @param name
+     *        The task's name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TaskListItem withName(String name) {
+        setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The task's CPU count.
+     * </p>
+     * 
+     * @param cpus
+     *        The task's CPU count.
+     */
+
+    public void setCpus(Integer cpus) {
+        this.cpus = cpus;
+    }
+
+    /**
+     * <p>
+     * The task's CPU count.
+     * </p>
+     * 
+     * @return The task's CPU count.
+     */
+
+    public Integer getCpus() {
+        return this.cpus;
+    }
+
+    /**
+     * <p>
+     * The task's CPU count.
+     * </p>
+     * 
+     * @param cpus
+     *        The task's CPU count.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TaskListItem withCpus(Integer cpus) {
+        setCpus(cpus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The task's memory use in gigabyes.
+     * </p>
+     * 
+     * @param memory
+     *        The task's memory use in gigabyes.
+     */
+
+    public void setMemory(Integer memory) {
+        this.memory = memory;
+    }
+
+    /**
+     * <p>
+     * The task's memory use in gigabyes.
+     * </p>
+     * 
+     * @return The task's memory use in gigabyes.
+     */
+
+    public Integer getMemory() {
+        return this.memory;
+    }
+
+    /**
+     * <p>
+     * The task's memory use in gigabyes.
+     * </p>
+     * 
+     * @param memory
+     *        The task's memory use in gigabyes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TaskListItem withMemory(Integer memory) {
+        setMemory(memory);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When the task was created.
+     * </p>
+     * 
+     * @param creationTime
+     *        When the task was created.
+     */
+
+    public void setCreationTime(java.util.Date creationTime) {
+        this.creationTime = creationTime;
+    }
+
+    /**
+     * <p>
+     * When the task was created.
+     * </p>
+     * 
+     * @return When the task was created.
+     */
+
+    public java.util.Date getCreationTime() {
+        return this.creationTime;
+    }
+
+    /**
+     * <p>
+     * When the task was created.
+     * </p>
+     * 
+     * @param creationTime
+     *        When the task was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TaskListItem withCreationTime(java.util.Date creationTime) {
+        setCreationTime(creationTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When the task started.
+     * </p>
+     * 
+     * @param startTime
+     *        When the task started.
+     */
+
+    public void setStartTime(java.util.Date startTime) {
+        this.startTime = startTime;
+    }
+
+    /**
+     * <p>
+     * When the task started.
+     * </p>
+     * 
+     * @return When the task started.
+     */
+
+    public java.util.Date getStartTime() {
+        return this.startTime;
+    }
+
+    /**
+     * <p>
+     * When the task started.
+     * </p>
+     * 
+     * @param startTime
+     *        When the task started.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TaskListItem withStartTime(java.util.Date startTime) {
+        setStartTime(startTime);
+        return this;
+    }
+
+    /**
+     * <p>
      * When the task stopped.
      * </p>
      * 
@@ -378,41 +430,81 @@ public class TaskListItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The task's ID.
+     * The number of Graphics Processing Units (GPU) specified for the task.
      * </p>
      * 
-     * @param taskId
-     *        The task's ID.
+     * @param gpus
+     *        The number of Graphics Processing Units (GPU) specified for the task.
      */
 
-    public void setTaskId(String taskId) {
-        this.taskId = taskId;
+    public void setGpus(Integer gpus) {
+        this.gpus = gpus;
     }
 
     /**
      * <p>
-     * The task's ID.
+     * The number of Graphics Processing Units (GPU) specified for the task.
      * </p>
      * 
-     * @return The task's ID.
+     * @return The number of Graphics Processing Units (GPU) specified for the task.
      */
 
-    public String getTaskId() {
-        return this.taskId;
+    public Integer getGpus() {
+        return this.gpus;
     }
 
     /**
      * <p>
-     * The task's ID.
+     * The number of Graphics Processing Units (GPU) specified for the task.
      * </p>
      * 
-     * @param taskId
-     *        The task's ID.
+     * @param gpus
+     *        The number of Graphics Processing Units (GPU) specified for the task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public TaskListItem withTaskId(String taskId) {
-        setTaskId(taskId);
+    public TaskListItem withGpus(Integer gpus) {
+        setGpus(gpus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The instance type for a task.
+     * </p>
+     * 
+     * @param instanceType
+     *        The instance type for a task.
+     */
+
+    public void setInstanceType(String instanceType) {
+        this.instanceType = instanceType;
+    }
+
+    /**
+     * <p>
+     * The instance type for a task.
+     * </p>
+     * 
+     * @return The instance type for a task.
+     */
+
+    public String getInstanceType() {
+        return this.instanceType;
+    }
+
+    /**
+     * <p>
+     * The instance type for a task.
+     * </p>
+     * 
+     * @param instanceType
+     *        The instance type for a task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TaskListItem withInstanceType(String instanceType) {
+        setInstanceType(instanceType);
         return this;
     }
 
@@ -428,22 +520,26 @@ public class TaskListItem implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getCpus() != null)
-            sb.append("Cpus: ").append(getCpus()).append(",");
-        if (getCreationTime() != null)
-            sb.append("CreationTime: ").append(getCreationTime()).append(",");
-        if (getMemory() != null)
-            sb.append("Memory: ").append(getMemory()).append(",");
-        if (getName() != null)
-            sb.append("Name: ").append(getName()).append(",");
-        if (getStartTime() != null)
-            sb.append("StartTime: ").append(getStartTime()).append(",");
+        if (getTaskId() != null)
+            sb.append("TaskId: ").append(getTaskId()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
+        if (getCpus() != null)
+            sb.append("Cpus: ").append(getCpus()).append(",");
+        if (getMemory() != null)
+            sb.append("Memory: ").append(getMemory()).append(",");
+        if (getCreationTime() != null)
+            sb.append("CreationTime: ").append(getCreationTime()).append(",");
+        if (getStartTime() != null)
+            sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getStopTime() != null)
             sb.append("StopTime: ").append(getStopTime()).append(",");
-        if (getTaskId() != null)
-            sb.append("TaskId: ").append(getTaskId());
+        if (getGpus() != null)
+            sb.append("Gpus: ").append(getGpus()).append(",");
+        if (getInstanceType() != null)
+            sb.append("InstanceType: ").append(getInstanceType());
         sb.append("}");
         return sb.toString();
     }
@@ -458,37 +554,45 @@ public class TaskListItem implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof TaskListItem == false)
             return false;
         TaskListItem other = (TaskListItem) obj;
-        if (other.getCpus() == null ^ this.getCpus() == null)
+        if (other.getTaskId() == null ^ this.getTaskId() == null)
             return false;
-        if (other.getCpus() != null && other.getCpus().equals(this.getCpus()) == false)
-            return false;
-        if (other.getCreationTime() == null ^ this.getCreationTime() == null)
-            return false;
-        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
-            return false;
-        if (other.getMemory() == null ^ this.getMemory() == null)
-            return false;
-        if (other.getMemory() != null && other.getMemory().equals(this.getMemory()) == false)
-            return false;
-        if (other.getName() == null ^ this.getName() == null)
-            return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false)
-            return false;
-        if (other.getStartTime() == null ^ this.getStartTime() == null)
-            return false;
-        if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false)
+        if (other.getTaskId() != null && other.getTaskId().equals(this.getTaskId()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getCpus() == null ^ this.getCpus() == null)
+            return false;
+        if (other.getCpus() != null && other.getCpus().equals(this.getCpus()) == false)
+            return false;
+        if (other.getMemory() == null ^ this.getMemory() == null)
+            return false;
+        if (other.getMemory() != null && other.getMemory().equals(this.getMemory()) == false)
+            return false;
+        if (other.getCreationTime() == null ^ this.getCreationTime() == null)
+            return false;
+        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
+            return false;
+        if (other.getStartTime() == null ^ this.getStartTime() == null)
+            return false;
+        if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false)
+            return false;
         if (other.getStopTime() == null ^ this.getStopTime() == null)
             return false;
         if (other.getStopTime() != null && other.getStopTime().equals(this.getStopTime()) == false)
             return false;
-        if (other.getTaskId() == null ^ this.getTaskId() == null)
+        if (other.getGpus() == null ^ this.getGpus() == null)
             return false;
-        if (other.getTaskId() != null && other.getTaskId().equals(this.getTaskId()) == false)
+        if (other.getGpus() != null && other.getGpus().equals(this.getGpus()) == false)
+            return false;
+        if (other.getInstanceType() == null ^ this.getInstanceType() == null)
+            return false;
+        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
             return false;
         return true;
     }
@@ -498,14 +602,16 @@ public class TaskListItem implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getCpus() == null) ? 0 : getCpus().hashCode());
-        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
-        hashCode = prime * hashCode + ((getMemory() == null) ? 0 : getMemory().hashCode());
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
-        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime * hashCode + ((getStopTime() == null) ? 0 : getStopTime().hashCode());
         hashCode = prime * hashCode + ((getTaskId() == null) ? 0 : getTaskId().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getCpus() == null) ? 0 : getCpus().hashCode());
+        hashCode = prime * hashCode + ((getMemory() == null) ? 0 : getMemory().hashCode());
+        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
+        hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
+        hashCode = prime * hashCode + ((getStopTime() == null) ? 0 : getStopTime().hashCode());
+        hashCode = prime * hashCode + ((getGpus() == null) ? 0 : getGpus().hashCode());
+        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
         return hashCode;
     }
 

@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum TrafficType {
 
-    PHASES("PHASES");
+    PHASES("PHASES"),
+    STAIRS("STAIRS");
 
     private String value;
 

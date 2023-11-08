@@ -56,6 +56,10 @@ public class ListHostedZonesRequestMarshaller implements Marshaller<Request<List
             request.addParameter("delegationsetid", StringUtils.fromString(listHostedZonesRequest.getDelegationSetId()));
         }
 
+        if (listHostedZonesRequest.getHostedZoneType() != null) {
+            request.addParameter("hostedzonetype", StringUtils.fromString(listHostedZonesRequest.getHostedZoneType()));
+        }
+
         return request;
     }
 

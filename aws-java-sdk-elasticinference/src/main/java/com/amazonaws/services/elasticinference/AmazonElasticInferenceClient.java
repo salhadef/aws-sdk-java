@@ -44,6 +44,7 @@ import com.amazonaws.services.elasticinference.AmazonElasticInferenceClientBuild
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.elasticinference.model.*;
+
 import com.amazonaws.services.elasticinference.model.transform.*;
 
 /**

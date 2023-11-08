@@ -112,6 +112,12 @@ public class PhoneNumber implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String orderId;
+    /**
+     * <p>
+     * The name of the phone number.
+     * </p>
+     */
+    private String name;
 
     /**
      * <p>
@@ -780,6 +786,46 @@ public class PhoneNumber implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The name of the phone number.
+     * </p>
+     * 
+     * @param name
+     *        The name of the phone number.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The name of the phone number.
+     * </p>
+     * 
+     * @return The name of the phone number.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The name of the phone number.
+     * </p>
+     * 
+     * @param name
+     *        The name of the phone number.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PhoneNumber withName(String name) {
+        setName(name);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -818,7 +864,9 @@ public class PhoneNumber implements Serializable, Cloneable, StructuredPojo {
         if (getDeletionTimestamp() != null)
             sb.append("DeletionTimestamp: ").append(getDeletionTimestamp()).append(",");
         if (getOrderId() != null)
-            sb.append("OrderId: ").append(getOrderId());
+            sb.append("OrderId: ").append(getOrderId()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }
@@ -889,6 +937,10 @@ public class PhoneNumber implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getOrderId() != null && other.getOrderId().equals(this.getOrderId()) == false)
             return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
         return true;
     }
 
@@ -911,6 +963,7 @@ public class PhoneNumber implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getUpdatedTimestamp() == null) ? 0 : getUpdatedTimestamp().hashCode());
         hashCode = prime * hashCode + ((getDeletionTimestamp() == null) ? 0 : getDeletionTimestamp().hashCode());
         hashCode = prime * hashCode + ((getOrderId() == null) ? 0 : getOrderId().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         return hashCode;
     }
 

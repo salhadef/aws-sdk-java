@@ -194,7 +194,7 @@ public class Scope implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAwsAccounts() != null)
-            sb.append("AwsAccounts: ").append(getAwsAccounts()).append(",");
+            sb.append("AwsAccounts: ").append("***Sensitive Data Redacted***").append(",");
         if (getAwsServices() != null)
             sb.append("AwsServices: ").append(getAwsServices());
         sb.append("}");

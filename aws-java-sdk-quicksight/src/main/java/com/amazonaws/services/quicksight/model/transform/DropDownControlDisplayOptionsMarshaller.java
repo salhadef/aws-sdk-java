@@ -31,6 +31,8 @@ public class DropDownControlDisplayOptionsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SelectAllOptions").build();
     private static final MarshallingInfo<StructuredPojo> TITLEOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TitleOptions").build();
+    private static final MarshallingInfo<StructuredPojo> INFOICONLABELOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InfoIconLabelOptions").build();
 
     private static final DropDownControlDisplayOptionsMarshaller instance = new DropDownControlDisplayOptionsMarshaller();
 
@@ -50,6 +52,7 @@ public class DropDownControlDisplayOptionsMarshaller {
         try {
             protocolMarshaller.marshall(dropDownControlDisplayOptions.getSelectAllOptions(), SELECTALLOPTIONS_BINDING);
             protocolMarshaller.marshall(dropDownControlDisplayOptions.getTitleOptions(), TITLEOPTIONS_BINDING);
+            protocolMarshaller.marshall(dropDownControlDisplayOptions.getInfoIconLabelOptions(), INFOICONLABELOPTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

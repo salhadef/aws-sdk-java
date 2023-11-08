@@ -52,6 +52,12 @@ public class MediaPipeline implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private MediaInsightsPipeline mediaInsightsPipeline;
+    /**
+     * <p>
+     * Designates a media pipeline as a media stream pipeline.
+     * </p>
+     */
+    private MediaStreamPipeline mediaStreamPipeline;
 
     /**
      * <p>
@@ -214,6 +220,46 @@ public class MediaPipeline implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Designates a media pipeline as a media stream pipeline.
+     * </p>
+     * 
+     * @param mediaStreamPipeline
+     *        Designates a media pipeline as a media stream pipeline.
+     */
+
+    public void setMediaStreamPipeline(MediaStreamPipeline mediaStreamPipeline) {
+        this.mediaStreamPipeline = mediaStreamPipeline;
+    }
+
+    /**
+     * <p>
+     * Designates a media pipeline as a media stream pipeline.
+     * </p>
+     * 
+     * @return Designates a media pipeline as a media stream pipeline.
+     */
+
+    public MediaStreamPipeline getMediaStreamPipeline() {
+        return this.mediaStreamPipeline;
+    }
+
+    /**
+     * <p>
+     * Designates a media pipeline as a media stream pipeline.
+     * </p>
+     * 
+     * @param mediaStreamPipeline
+     *        Designates a media pipeline as a media stream pipeline.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MediaPipeline withMediaStreamPipeline(MediaStreamPipeline mediaStreamPipeline) {
+        setMediaStreamPipeline(mediaStreamPipeline);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -232,7 +278,9 @@ public class MediaPipeline implements Serializable, Cloneable, StructuredPojo {
         if (getMediaConcatenationPipeline() != null)
             sb.append("MediaConcatenationPipeline: ").append(getMediaConcatenationPipeline()).append(",");
         if (getMediaInsightsPipeline() != null)
-            sb.append("MediaInsightsPipeline: ").append(getMediaInsightsPipeline());
+            sb.append("MediaInsightsPipeline: ").append(getMediaInsightsPipeline()).append(",");
+        if (getMediaStreamPipeline() != null)
+            sb.append("MediaStreamPipeline: ").append(getMediaStreamPipeline());
         sb.append("}");
         return sb.toString();
     }
@@ -263,6 +311,10 @@ public class MediaPipeline implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getMediaInsightsPipeline() != null && other.getMediaInsightsPipeline().equals(this.getMediaInsightsPipeline()) == false)
             return false;
+        if (other.getMediaStreamPipeline() == null ^ this.getMediaStreamPipeline() == null)
+            return false;
+        if (other.getMediaStreamPipeline() != null && other.getMediaStreamPipeline().equals(this.getMediaStreamPipeline()) == false)
+            return false;
         return true;
     }
 
@@ -275,6 +327,7 @@ public class MediaPipeline implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getMediaLiveConnectorPipeline() == null) ? 0 : getMediaLiveConnectorPipeline().hashCode());
         hashCode = prime * hashCode + ((getMediaConcatenationPipeline() == null) ? 0 : getMediaConcatenationPipeline().hashCode());
         hashCode = prime * hashCode + ((getMediaInsightsPipeline() == null) ? 0 : getMediaInsightsPipeline().hashCode());
+        hashCode = prime * hashCode + ((getMediaStreamPipeline() == null) ? 0 : getMediaStreamPipeline().hashCode());
         return hashCode;
     }
 

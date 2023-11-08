@@ -132,6 +132,31 @@ public class AssumeRoleRequestMarshaller implements Marshaller<Request<AssumeRol
             request.addParameter("SourceIdentity", StringUtils.fromString(assumeRoleRequest.getSourceIdentity()));
         }
 
+        if (assumeRoleRequest.getProvidedContexts() != null) {
+            java.util.List<ProvidedContext> providedContextsList = assumeRoleRequest.getProvidedContexts();
+            if (providedContextsList.isEmpty()) {
+                request.addParameter("ProvidedContexts", "");
+            } else {
+                int providedContextsListIndex = 1;
+
+                for (ProvidedContext providedContextsListValue : providedContextsList) {
+                    if (providedContextsListValue != null) {
+
+                        if (providedContextsListValue.getProviderArn() != null) {
+                            request.addParameter("ProvidedContexts.member." + providedContextsListIndex + ".ProviderArn",
+                                    StringUtils.fromString(providedContextsListValue.getProviderArn()));
+                        }
+
+                        if (providedContextsListValue.getContextAssertion() != null) {
+                            request.addParameter("ProvidedContexts.member." + providedContextsListIndex + ".ContextAssertion",
+                                    StringUtils.fromString(providedContextsListValue.getContextAssertion()));
+                        }
+                    }
+                    providedContextsListIndex++;
+                }
+            }
+        }
+
         return request;
     }
 

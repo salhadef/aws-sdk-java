@@ -46,6 +46,12 @@ public class PivotTableCellConditionalFormatting implements Serializable, Clonea
      * </p>
      */
     private PivotTableConditionalFormattingScope scope;
+    /**
+     * <p>
+     * A list of cell scopes for conditional formatting.
+     * </p>
+     */
+    private java.util.List<PivotTableConditionalFormattingScope> scopes;
 
     /**
      * <p>
@@ -168,6 +174,76 @@ public class PivotTableCellConditionalFormatting implements Serializable, Clonea
     }
 
     /**
+     * <p>
+     * A list of cell scopes for conditional formatting.
+     * </p>
+     * 
+     * @return A list of cell scopes for conditional formatting.
+     */
+
+    public java.util.List<PivotTableConditionalFormattingScope> getScopes() {
+        return scopes;
+    }
+
+    /**
+     * <p>
+     * A list of cell scopes for conditional formatting.
+     * </p>
+     * 
+     * @param scopes
+     *        A list of cell scopes for conditional formatting.
+     */
+
+    public void setScopes(java.util.Collection<PivotTableConditionalFormattingScope> scopes) {
+        if (scopes == null) {
+            this.scopes = null;
+            return;
+        }
+
+        this.scopes = new java.util.ArrayList<PivotTableConditionalFormattingScope>(scopes);
+    }
+
+    /**
+     * <p>
+     * A list of cell scopes for conditional formatting.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setScopes(java.util.Collection)} or {@link #withScopes(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param scopes
+     *        A list of cell scopes for conditional formatting.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PivotTableCellConditionalFormatting withScopes(PivotTableConditionalFormattingScope... scopes) {
+        if (this.scopes == null) {
+            setScopes(new java.util.ArrayList<PivotTableConditionalFormattingScope>(scopes.length));
+        }
+        for (PivotTableConditionalFormattingScope ele : scopes) {
+            this.scopes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of cell scopes for conditional formatting.
+     * </p>
+     * 
+     * @param scopes
+     *        A list of cell scopes for conditional formatting.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PivotTableCellConditionalFormatting withScopes(java.util.Collection<PivotTableConditionalFormattingScope> scopes) {
+        setScopes(scopes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -184,7 +260,9 @@ public class PivotTableCellConditionalFormatting implements Serializable, Clonea
         if (getTextFormat() != null)
             sb.append("TextFormat: ").append(getTextFormat()).append(",");
         if (getScope() != null)
-            sb.append("Scope: ").append(getScope());
+            sb.append("Scope: ").append(getScope()).append(",");
+        if (getScopes() != null)
+            sb.append("Scopes: ").append(getScopes());
         sb.append("}");
         return sb.toString();
     }
@@ -211,6 +289,10 @@ public class PivotTableCellConditionalFormatting implements Serializable, Clonea
             return false;
         if (other.getScope() != null && other.getScope().equals(this.getScope()) == false)
             return false;
+        if (other.getScopes() == null ^ this.getScopes() == null)
+            return false;
+        if (other.getScopes() != null && other.getScopes().equals(this.getScopes()) == false)
+            return false;
         return true;
     }
 
@@ -222,6 +304,7 @@ public class PivotTableCellConditionalFormatting implements Serializable, Clonea
         hashCode = prime * hashCode + ((getFieldId() == null) ? 0 : getFieldId().hashCode());
         hashCode = prime * hashCode + ((getTextFormat() == null) ? 0 : getTextFormat().hashCode());
         hashCode = prime * hashCode + ((getScope() == null) ? 0 : getScope().hashCode());
+        hashCode = prime * hashCode + ((getScopes() == null) ? 0 : getScopes().hashCode());
         return hashCode;
     }
 

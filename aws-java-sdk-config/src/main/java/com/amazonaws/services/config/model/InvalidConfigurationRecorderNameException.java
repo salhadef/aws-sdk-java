@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You have provided a configuration recorder name that is not valid.
+ * You have provided a name for the configuration recorder that is not valid.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

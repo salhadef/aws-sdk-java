@@ -30,6 +30,12 @@ public class UpdateWorkspaceAliasRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
+     * The ID of the workspace being updated.
+     * </p>
+     */
+    private String workspaceId;
+    /**
+     * <p>
      * The new alias of the workspace.
      * </p>
      */
@@ -40,12 +46,46 @@ public class UpdateWorkspaceAliasRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private String clientToken;
+
     /**
      * <p>
      * The ID of the workspace being updated.
      * </p>
+     * 
+     * @param workspaceId
+     *        The ID of the workspace being updated.
      */
-    private String workspaceId;
+
+    public void setWorkspaceId(String workspaceId) {
+        this.workspaceId = workspaceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the workspace being updated.
+     * </p>
+     * 
+     * @return The ID of the workspace being updated.
+     */
+
+    public String getWorkspaceId() {
+        return this.workspaceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the workspace being updated.
+     * </p>
+     * 
+     * @param workspaceId
+     *        The ID of the workspace being updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateWorkspaceAliasRequest withWorkspaceId(String workspaceId) {
+        setWorkspaceId(workspaceId);
+        return this;
+    }
 
     /**
      * <p>
@@ -128,46 +168,6 @@ public class UpdateWorkspaceAliasRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * <p>
-     * The ID of the workspace being updated.
-     * </p>
-     * 
-     * @param workspaceId
-     *        The ID of the workspace being updated.
-     */
-
-    public void setWorkspaceId(String workspaceId) {
-        this.workspaceId = workspaceId;
-    }
-
-    /**
-     * <p>
-     * The ID of the workspace being updated.
-     * </p>
-     * 
-     * @return The ID of the workspace being updated.
-     */
-
-    public String getWorkspaceId() {
-        return this.workspaceId;
-    }
-
-    /**
-     * <p>
-     * The ID of the workspace being updated.
-     * </p>
-     * 
-     * @param workspaceId
-     *        The ID of the workspace being updated.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateWorkspaceAliasRequest withWorkspaceId(String workspaceId) {
-        setWorkspaceId(workspaceId);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -179,12 +179,12 @@ public class UpdateWorkspaceAliasRequest extends com.amazonaws.AmazonWebServiceR
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getWorkspaceId() != null)
+            sb.append("WorkspaceId: ").append(getWorkspaceId()).append(",");
         if (getAlias() != null)
             sb.append("Alias: ").append(getAlias()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken()).append(",");
-        if (getWorkspaceId() != null)
-            sb.append("WorkspaceId: ").append(getWorkspaceId());
+            sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");
         return sb.toString();
     }
@@ -199,6 +199,10 @@ public class UpdateWorkspaceAliasRequest extends com.amazonaws.AmazonWebServiceR
         if (obj instanceof UpdateWorkspaceAliasRequest == false)
             return false;
         UpdateWorkspaceAliasRequest other = (UpdateWorkspaceAliasRequest) obj;
+        if (other.getWorkspaceId() == null ^ this.getWorkspaceId() == null)
+            return false;
+        if (other.getWorkspaceId() != null && other.getWorkspaceId().equals(this.getWorkspaceId()) == false)
+            return false;
         if (other.getAlias() == null ^ this.getAlias() == null)
             return false;
         if (other.getAlias() != null && other.getAlias().equals(this.getAlias()) == false)
@@ -206,10 +210,6 @@ public class UpdateWorkspaceAliasRequest extends com.amazonaws.AmazonWebServiceR
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
-            return false;
-        if (other.getWorkspaceId() == null ^ this.getWorkspaceId() == null)
-            return false;
-        if (other.getWorkspaceId() != null && other.getWorkspaceId().equals(this.getWorkspaceId()) == false)
             return false;
         return true;
     }
@@ -219,9 +219,9 @@ public class UpdateWorkspaceAliasRequest extends com.amazonaws.AmazonWebServiceR
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getWorkspaceId() == null) ? 0 : getWorkspaceId().hashCode());
         hashCode = prime * hashCode + ((getAlias() == null) ? 0 : getAlias().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
-        hashCode = prime * hashCode + ((getWorkspaceId() == null) ? 0 : getWorkspaceId().hashCode());
         return hashCode;
     }
 

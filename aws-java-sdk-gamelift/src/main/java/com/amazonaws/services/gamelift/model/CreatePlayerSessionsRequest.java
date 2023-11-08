@@ -254,7 +254,7 @@ public class CreatePlayerSessionsRequest extends com.amazonaws.AmazonWebServiceR
         if (getGameSessionId() != null)
             sb.append("GameSessionId: ").append(getGameSessionId()).append(",");
         if (getPlayerIds() != null)
-            sb.append("PlayerIds: ").append(getPlayerIds()).append(",");
+            sb.append("PlayerIds: ").append("***Sensitive Data Redacted***").append(",");
         if (getPlayerDataMap() != null)
             sb.append("PlayerDataMap: ").append(getPlayerDataMap());
         sb.append("}");

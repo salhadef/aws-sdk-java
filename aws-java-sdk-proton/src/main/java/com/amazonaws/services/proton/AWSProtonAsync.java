@@ -1201,6 +1201,37 @@ public interface AWSProtonAsync extends AWSProton {
 
     /**
      * <p>
+     * Delete the deployment.
+     * </p>
+     * 
+     * @param deleteDeploymentRequest
+     * @return A Java Future containing the result of the DeleteDeployment operation returned by the service.
+     * @sample AWSProtonAsync.DeleteDeployment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteDeployment" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteDeploymentResult> deleteDeploymentAsync(DeleteDeploymentRequest deleteDeploymentRequest);
+
+    /**
+     * <p>
+     * Delete the deployment.
+     * </p>
+     * 
+     * @param deleteDeploymentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteDeployment operation returned by the service.
+     * @sample AWSProtonAsyncHandler.DeleteDeployment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteDeployment" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteDeploymentResult> deleteDeploymentAsync(DeleteDeploymentRequest deleteDeploymentRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteDeploymentRequest, DeleteDeploymentResult> asyncHandler);
+
+    /**
+     * <p>
      * Delete an environment.
      * </p>
      * 
@@ -1668,6 +1699,37 @@ public interface AWSProtonAsync extends AWSProton {
      */
     java.util.concurrent.Future<GetComponentResult> getComponentAsync(GetComponentRequest getComponentRequest,
             com.amazonaws.handlers.AsyncHandler<GetComponentRequest, GetComponentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Get detailed data for a deployment.
+     * </p>
+     * 
+     * @param getDeploymentRequest
+     * @return A Java Future containing the result of the GetDeployment operation returned by the service.
+     * @sample AWSProtonAsync.GetDeployment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetDeployment" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetDeploymentResult> getDeploymentAsync(GetDeploymentRequest getDeploymentRequest);
+
+    /**
+     * <p>
+     * Get detailed data for a deployment.
+     * </p>
+     * 
+     * @param getDeploymentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetDeployment operation returned by the service.
+     * @sample AWSProtonAsyncHandler.GetDeployment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetDeployment" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetDeploymentResult> getDeploymentAsync(GetDeploymentRequest getDeploymentRequest,
+            com.amazonaws.handlers.AsyncHandler<GetDeploymentRequest, GetDeploymentResult> asyncHandler);
 
     /**
      * <p>
@@ -2389,6 +2451,37 @@ public interface AWSProtonAsync extends AWSProton {
      */
     java.util.concurrent.Future<ListComponentsResult> listComponentsAsync(ListComponentsRequest listComponentsRequest,
             com.amazonaws.handlers.AsyncHandler<ListComponentsRequest, ListComponentsResult> asyncHandler);
+
+    /**
+     * <p>
+     * List deployments. You can filter the result list by environment, service, or a single service instance.
+     * </p>
+     * 
+     * @param listDeploymentsRequest
+     * @return A Java Future containing the result of the ListDeployments operation returned by the service.
+     * @sample AWSProtonAsync.ListDeployments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListDeployments" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListDeploymentsResult> listDeploymentsAsync(ListDeploymentsRequest listDeploymentsRequest);
+
+    /**
+     * <p>
+     * List deployments. You can filter the result list by environment, service, or a single service instance.
+     * </p>
+     * 
+     * @param listDeploymentsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListDeployments operation returned by the service.
+     * @sample AWSProtonAsyncHandler.ListDeployments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListDeployments" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListDeploymentsResult> listDeploymentsAsync(ListDeploymentsRequest listDeploymentsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListDeploymentsRequest, ListDeploymentsResult> asyncHandler);
 
     /**
      * <p>

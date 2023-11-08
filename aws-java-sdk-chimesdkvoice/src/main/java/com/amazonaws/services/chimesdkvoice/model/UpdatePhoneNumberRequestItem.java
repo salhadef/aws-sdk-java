@@ -47,6 +47,12 @@ public class UpdatePhoneNumberRequestItem implements Serializable, Cloneable, St
      * </p>
      */
     private String callingName;
+    /**
+     * <p>
+     * The name of the phone number.
+     * </p>
+     */
+    private String name;
 
     /**
      * <p>
@@ -188,6 +194,46 @@ public class UpdatePhoneNumberRequestItem implements Serializable, Cloneable, St
     }
 
     /**
+     * <p>
+     * The name of the phone number.
+     * </p>
+     * 
+     * @param name
+     *        The name of the phone number.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The name of the phone number.
+     * </p>
+     * 
+     * @return The name of the phone number.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The name of the phone number.
+     * </p>
+     * 
+     * @param name
+     *        The name of the phone number.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdatePhoneNumberRequestItem withName(String name) {
+        setName(name);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -204,7 +250,9 @@ public class UpdatePhoneNumberRequestItem implements Serializable, Cloneable, St
         if (getProductType() != null)
             sb.append("ProductType: ").append(getProductType()).append(",");
         if (getCallingName() != null)
-            sb.append("CallingName: ").append("***Sensitive Data Redacted***");
+            sb.append("CallingName: ").append("***Sensitive Data Redacted***").append(",");
+        if (getName() != null)
+            sb.append("Name: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }
@@ -231,6 +279,10 @@ public class UpdatePhoneNumberRequestItem implements Serializable, Cloneable, St
             return false;
         if (other.getCallingName() != null && other.getCallingName().equals(this.getCallingName()) == false)
             return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
         return true;
     }
 
@@ -242,6 +294,7 @@ public class UpdatePhoneNumberRequestItem implements Serializable, Cloneable, St
         hashCode = prime * hashCode + ((getPhoneNumberId() == null) ? 0 : getPhoneNumberId().hashCode());
         hashCode = prime * hashCode + ((getProductType() == null) ? 0 : getProductType().hashCode());
         hashCode = prime * hashCode + ((getCallingName() == null) ? 0 : getCallingName().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         return hashCode;
     }
 

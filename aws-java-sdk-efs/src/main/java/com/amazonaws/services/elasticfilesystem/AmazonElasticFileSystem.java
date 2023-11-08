@@ -112,12 +112,20 @@ public interface AmazonElasticFileSystem {
      * <note>
      * <p>
      * If multiple requests to create access points on the same file system are sent in quick succession, and the file
-     * system is near the limit of 1000 access points, you may experience a throttling response for these requests. This
-     * is to ensure that the file system does not exceed the stated access point limit.
+     * system is near the limit of 1,000 access points, you may experience a throttling response for these requests.
+     * This is to ensure that the file system does not exceed the stated access point limit.
      * </p>
      * </note>
      * <p>
      * This operation requires permissions for the <code>elasticfilesystem:CreateAccessPoint</code> action.
+     * </p>
+     * <p>
+     * Access points can be tagged on creation. If tags are specified in the creation action, IAM performs additional
+     * authorization on the <code>elasticfilesystem:TagResource</code> action to verify if users have permissions to
+     * create tags. Therefore, you must grant explicit permissions to use the <code>elasticfilesystem:TagResource</code>
+     * action. For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/using-tags-efs.html#supported-iam-actions-tagging.html">Granting
+     * permissions to tag resources during creation</a>.
      * </p>
      * 
      * @param createAccessPointRequest
@@ -220,6 +228,14 @@ public interface AmazonElasticFileSystem {
      * </p>
      * <p>
      * This operation requires permissions for the <code>elasticfilesystem:CreateFileSystem</code> action.
+     * </p>
+     * <p>
+     * File systems can be tagged on creation. If tags are specified in the creation action, IAM performs additional
+     * authorization on the <code>elasticfilesystem:TagResource</code> action to verify if users have permissions to
+     * create tags. Therefore, you must grant explicit permissions to use the <code>elasticfilesystem:TagResource</code>
+     * action. For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/using-tags-efs.html#supported-iam-actions-tagging.html">Granting
+     * permissions to tag resources during creation</a>.
      * </p>
      * 
      * @param createFileSystemRequest
@@ -499,9 +515,11 @@ public interface AmazonElasticFileSystem {
      * <li>
      * <p>
      * <b>Amazon Web Services Region</b> - The Amazon Web Services Region in which the destination file system is
-     * created. Amazon EFS replication is available in all Amazon Web Services Regions that Amazon EFS is available in,
-     * except Africa (Cape Town), Asia Pacific (Hong Kong), Asia Pacific (Jakarta), Europe (Milan), and Middle East
-     * (Bahrain).
+     * created. Amazon EFS replication is available in all Amazon Web Services Regions in which EFS is available. To use
+     * EFS replication in a Region that is disabled by default, you must first opt in to the Region. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Managing Amazon Web
+     * Services Regions</a> in the <i>Amazon Web Services General Reference Reference Guide</i>
      * </p>
      * </li>
      * <li>
@@ -557,7 +575,7 @@ public interface AmazonElasticFileSystem {
      * </li>
      * <li>
      * <p>
-     * <b>Automatic backups</b> - Automatic daily backups not enabled on the destination file system. After the file
+     * <b>Automatic backups</b> - Automatic daily backups are enabled on the destination file system. After the file
      * system is created, you can change this setting.
      * </p>
      * </li>
@@ -803,11 +821,9 @@ public interface AmazonElasticFileSystem {
 
     /**
      * <p>
-     * Deletes an existing replication configuration. To delete a replication configuration, you must make the request
-     * from the Amazon Web Services Region in which the destination file system is located. Deleting a replication
-     * configuration ends the replication process. After a replication configuration is deleted, the destination file
-     * system is no longer read-only. You can write to the destination file system after its status becomes
-     * <code>Writeable</code>.
+     * Deletes an existing replication configuration. Deleting a replication configuration ends the replication process.
+     * After a replication configuration is deleted, the destination file system is no longer read-only. You can write
+     * to the destination file system after its status becomes <code>Writeable</code>.
      * </p>
      * 
      * @param deleteReplicationConfigurationRequest
@@ -894,8 +910,7 @@ public interface AmazonElasticFileSystem {
     /**
      * <p>
      * Returns the account preferences settings for the Amazon Web Services account associated with the user making the
-     * request, in the current Amazon Web Services Region. For more information, see <a
-     * href="efs/latest/ug/manage-efs-resource-ids.html">Managing Amazon EFS resource IDs</a>.
+     * request, in the current Amazon Web Services Region.
      * </p>
      * 
      * @param describeAccountPreferencesRequest

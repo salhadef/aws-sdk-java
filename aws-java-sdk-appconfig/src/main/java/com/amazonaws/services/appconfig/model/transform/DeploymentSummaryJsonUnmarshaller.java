@@ -92,6 +92,10 @@ public class DeploymentSummaryJsonUnmarshaller implements Unmarshaller<Deploymen
                     context.nextToken();
                     deploymentSummary.setCompletedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
+                if (context.testExpression("VersionLabel", targetDepth)) {
+                    context.nextToken();
+                    deploymentSummary.setVersionLabel(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

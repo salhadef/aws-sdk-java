@@ -64,6 +64,14 @@ public class ExecutionResultJsonUnmarshaller implements Unmarshaller<ExecutionRe
                     context.nextToken();
                     executionResult.setRecordsProcessed(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("numParallelProcesses", targetDepth)) {
+                    context.nextToken();
+                    executionResult.setNumParallelProcesses(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("maxPageSize", targetDepth)) {
+                    context.nextToken();
+                    executionResult.setMaxPageSize(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

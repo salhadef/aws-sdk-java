@@ -129,6 +129,19 @@ public class AbstractAWSSupportAsync extends AbstractAWSSupport implements AWSSu
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeCreateCaseOptionsResult> describeCreateCaseOptionsAsync(DescribeCreateCaseOptionsRequest request) {
+
+        return describeCreateCaseOptionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeCreateCaseOptionsResult> describeCreateCaseOptionsAsync(DescribeCreateCaseOptionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeCreateCaseOptionsRequest, DescribeCreateCaseOptionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeServicesResult> describeServicesAsync(DescribeServicesRequest request) {
 
         return describeServicesAsync(request, null);
@@ -198,6 +211,19 @@ public class AbstractAWSSupportAsync extends AbstractAWSSupport implements AWSSu
             com.amazonaws.handlers.AsyncHandler<DescribeSeverityLevelsRequest, DescribeSeverityLevelsResult> asyncHandler) {
 
         return describeSeverityLevelsAsync(new DescribeSeverityLevelsRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeSupportedLanguagesResult> describeSupportedLanguagesAsync(DescribeSupportedLanguagesRequest request) {
+
+        return describeSupportedLanguagesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeSupportedLanguagesResult> describeSupportedLanguagesAsync(DescribeSupportedLanguagesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeSupportedLanguagesRequest, DescribeSupportedLanguagesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

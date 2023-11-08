@@ -33,6 +33,8 @@ public class CustomConnectorSourcePropertiesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("entityName").build();
     private static final MarshallingInfo<Map> CUSTOMPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("customProperties").build();
+    private static final MarshallingInfo<StructuredPojo> DATATRANSFERAPI_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataTransferApi").build();
 
     private static final CustomConnectorSourcePropertiesMarshaller instance = new CustomConnectorSourcePropertiesMarshaller();
 
@@ -52,6 +54,7 @@ public class CustomConnectorSourcePropertiesMarshaller {
         try {
             protocolMarshaller.marshall(customConnectorSourceProperties.getEntityName(), ENTITYNAME_BINDING);
             protocolMarshaller.marshall(customConnectorSourceProperties.getCustomProperties(), CUSTOMPROPERTIES_BINDING);
+            protocolMarshaller.marshall(customConnectorSourceProperties.getDataTransferApi(), DATATRANSFERAPI_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

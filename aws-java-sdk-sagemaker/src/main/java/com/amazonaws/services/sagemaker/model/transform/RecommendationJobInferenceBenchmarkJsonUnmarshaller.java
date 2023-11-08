@@ -68,6 +68,14 @@ public class RecommendationJobInferenceBenchmarkJsonUnmarshaller implements Unma
                     context.nextToken();
                     recommendationJobInferenceBenchmark.setEndpointMetrics(InferenceMetricsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("InvocationEndTime", targetDepth)) {
+                    context.nextToken();
+                    recommendationJobInferenceBenchmark.setInvocationEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("InvocationStartTime", targetDepth)) {
+                    context.nextToken();
+                    recommendationJobInferenceBenchmark.setInvocationStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

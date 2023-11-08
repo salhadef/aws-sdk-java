@@ -47,6 +47,12 @@ public class CreateVerifiedAccessInstanceRequest extends AmazonWebServiceRequest
      * </p>
      */
     private String clientToken;
+    /**
+     * <p>
+     * Enable or disable support for Federal Information Processing Standards (FIPS) on the instance.
+     * </p>
+     */
+    private Boolean fIPSEnabled;
 
     /**
      * <p>
@@ -220,6 +226,58 @@ public class CreateVerifiedAccessInstanceRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Enable or disable support for Federal Information Processing Standards (FIPS) on the instance.
+     * </p>
+     * 
+     * @param fIPSEnabled
+     *        Enable or disable support for Federal Information Processing Standards (FIPS) on the instance.
+     */
+
+    public void setFIPSEnabled(Boolean fIPSEnabled) {
+        this.fIPSEnabled = fIPSEnabled;
+    }
+
+    /**
+     * <p>
+     * Enable or disable support for Federal Information Processing Standards (FIPS) on the instance.
+     * </p>
+     * 
+     * @return Enable or disable support for Federal Information Processing Standards (FIPS) on the instance.
+     */
+
+    public Boolean getFIPSEnabled() {
+        return this.fIPSEnabled;
+    }
+
+    /**
+     * <p>
+     * Enable or disable support for Federal Information Processing Standards (FIPS) on the instance.
+     * </p>
+     * 
+     * @param fIPSEnabled
+     *        Enable or disable support for Federal Information Processing Standards (FIPS) on the instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateVerifiedAccessInstanceRequest withFIPSEnabled(Boolean fIPSEnabled) {
+        setFIPSEnabled(fIPSEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Enable or disable support for Federal Information Processing Standards (FIPS) on the instance.
+     * </p>
+     * 
+     * @return Enable or disable support for Federal Information Processing Standards (FIPS) on the instance.
+     */
+
+    public Boolean isFIPSEnabled() {
+        return this.fIPSEnabled;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -247,7 +305,9 @@ public class CreateVerifiedAccessInstanceRequest extends AmazonWebServiceRequest
         if (getTagSpecifications() != null)
             sb.append("TagSpecifications: ").append(getTagSpecifications()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken());
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getFIPSEnabled() != null)
+            sb.append("FIPSEnabled: ").append(getFIPSEnabled());
         sb.append("}");
         return sb.toString();
     }
@@ -274,6 +334,10 @@ public class CreateVerifiedAccessInstanceRequest extends AmazonWebServiceRequest
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
+        if (other.getFIPSEnabled() == null ^ this.getFIPSEnabled() == null)
+            return false;
+        if (other.getFIPSEnabled() != null && other.getFIPSEnabled().equals(this.getFIPSEnabled()) == false)
+            return false;
         return true;
     }
 
@@ -285,6 +349,7 @@ public class CreateVerifiedAccessInstanceRequest extends AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getFIPSEnabled() == null) ? 0 : getFIPSEnabled().hashCode());
         return hashCode;
     }
 

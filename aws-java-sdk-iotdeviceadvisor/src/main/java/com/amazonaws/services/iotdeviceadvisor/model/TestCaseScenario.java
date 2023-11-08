@@ -108,6 +108,7 @@ public class TestCaseScenario implements Serializable, Cloneable, StructuredPojo
     private String failure;
     /**
      * <p>
+     * Provides test case scenario system messages if any.
      * </p>
      */
     private String systemMessage;
@@ -740,9 +741,11 @@ public class TestCaseScenario implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * Provides test case scenario system messages if any.
      * </p>
      * 
      * @param systemMessage
+     *        Provides test case scenario system messages if any.
      */
 
     public void setSystemMessage(String systemMessage) {
@@ -751,9 +754,10 @@ public class TestCaseScenario implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * Provides test case scenario system messages if any.
      * </p>
      * 
-     * @return
+     * @return Provides test case scenario system messages if any.
      */
 
     public String getSystemMessage() {
@@ -762,9 +766,11 @@ public class TestCaseScenario implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * Provides test case scenario system messages if any.
      * </p>
      * 
      * @param systemMessage
+     *        Provides test case scenario system messages if any.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

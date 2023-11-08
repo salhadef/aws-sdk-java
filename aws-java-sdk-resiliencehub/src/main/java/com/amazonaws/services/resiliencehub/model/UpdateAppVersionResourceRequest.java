@@ -33,29 +33,29 @@ public class UpdateAppVersionResourceRequest extends com.amazonaws.AmazonWebServ
     private java.util.Map<String, java.util.List<String>> additionalInfo;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     * Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
      * <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more
      * information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * </p>
      */
     private String appArn;
     /**
      * <p>
-     * The list of Application Components that this resource belongs to. If an Application Component is not part of the
+     * List of Application Components that this resource belongs to. If an Application Component is not part of the
      * Resilience Hub application, it will be added.
      * </p>
      */
     private java.util.List<String> appComponents;
     /**
      * <p>
-     * The Amazon Web Services account that owns the physical resource.
+     * Amazon Web Services account that owns the physical resource.
      * </p>
      */
     private String awsAccountId;
     /**
      * <p>
-     * The Amazon Web Services region that owns the physical resource.
+     * Amazon Web Services region that owns the physical resource.
      * </p>
      */
     private String awsRegion;
@@ -72,25 +72,25 @@ public class UpdateAppVersionResourceRequest extends com.amazonaws.AmazonWebServ
     private Boolean excluded;
     /**
      * <p>
-     * The logical identifier of the resource.
+     * Logical identifier of the resource.
      * </p>
      */
     private LogicalResourceId logicalResourceId;
     /**
      * <p>
-     * The physical identifier of the resource.
+     * Physical identifier of the resource.
      * </p>
      */
     private String physicalResourceId;
     /**
      * <p>
-     * The name of the resource.
+     * Name of the resource.
      * </p>
      */
     private String resourceName;
     /**
      * <p>
-     * The type of resource.
+     * Type of resource.
      * </p>
      */
     private String resourceType;
@@ -165,18 +165,18 @@ public class UpdateAppVersionResourceRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     * Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
      * <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more
      * information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * </p>
      * 
      * @param appArn
-     *        The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     *        Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
      *        <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For
      *        more information about ARNs, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     *        (ARNs)</a> in the <i>AWS General Reference</i> guide.
+     *        (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      */
 
     public void setAppArn(String appArn) {
@@ -185,17 +185,17 @@ public class UpdateAppVersionResourceRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     * Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
      * <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more
      * information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     * @return Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
      *         <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      *         For more information about ARNs, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     *         (ARNs)</a> in the <i>AWS General Reference</i> guide.
+     *         (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      */
 
     public String getAppArn() {
@@ -204,18 +204,18 @@ public class UpdateAppVersionResourceRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     * Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
      * <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more
      * information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * </p>
      * 
      * @param appArn
-     *        The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     *        Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
      *        <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For
      *        more information about ARNs, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     *        (ARNs)</a> in the <i>AWS General Reference</i> guide.
+     *        (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -226,12 +226,12 @@ public class UpdateAppVersionResourceRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The list of Application Components that this resource belongs to. If an Application Component is not part of the
+     * List of Application Components that this resource belongs to. If an Application Component is not part of the
      * Resilience Hub application, it will be added.
      * </p>
      * 
-     * @return The list of Application Components that this resource belongs to. If an Application Component is not part
-     *         of the Resilience Hub application, it will be added.
+     * @return List of Application Components that this resource belongs to. If an Application Component is not part of
+     *         the Resilience Hub application, it will be added.
      */
 
     public java.util.List<String> getAppComponents() {
@@ -240,13 +240,13 @@ public class UpdateAppVersionResourceRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The list of Application Components that this resource belongs to. If an Application Component is not part of the
+     * List of Application Components that this resource belongs to. If an Application Component is not part of the
      * Resilience Hub application, it will be added.
      * </p>
      * 
      * @param appComponents
-     *        The list of Application Components that this resource belongs to. If an Application Component is not part
-     *        of the Resilience Hub application, it will be added.
+     *        List of Application Components that this resource belongs to. If an Application Component is not part of
+     *        the Resilience Hub application, it will be added.
      */
 
     public void setAppComponents(java.util.Collection<String> appComponents) {
@@ -260,7 +260,7 @@ public class UpdateAppVersionResourceRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The list of Application Components that this resource belongs to. If an Application Component is not part of the
+     * List of Application Components that this resource belongs to. If an Application Component is not part of the
      * Resilience Hub application, it will be added.
      * </p>
      * <p>
@@ -270,8 +270,8 @@ public class UpdateAppVersionResourceRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param appComponents
-     *        The list of Application Components that this resource belongs to. If an Application Component is not part
-     *        of the Resilience Hub application, it will be added.
+     *        List of Application Components that this resource belongs to. If an Application Component is not part of
+     *        the Resilience Hub application, it will be added.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -287,13 +287,13 @@ public class UpdateAppVersionResourceRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The list of Application Components that this resource belongs to. If an Application Component is not part of the
+     * List of Application Components that this resource belongs to. If an Application Component is not part of the
      * Resilience Hub application, it will be added.
      * </p>
      * 
      * @param appComponents
-     *        The list of Application Components that this resource belongs to. If an Application Component is not part
-     *        of the Resilience Hub application, it will be added.
+     *        List of Application Components that this resource belongs to. If an Application Component is not part of
+     *        the Resilience Hub application, it will be added.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -304,11 +304,11 @@ public class UpdateAppVersionResourceRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Amazon Web Services account that owns the physical resource.
+     * Amazon Web Services account that owns the physical resource.
      * </p>
      * 
      * @param awsAccountId
-     *        The Amazon Web Services account that owns the physical resource.
+     *        Amazon Web Services account that owns the physical resource.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -317,10 +317,10 @@ public class UpdateAppVersionResourceRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Amazon Web Services account that owns the physical resource.
+     * Amazon Web Services account that owns the physical resource.
      * </p>
      * 
-     * @return The Amazon Web Services account that owns the physical resource.
+     * @return Amazon Web Services account that owns the physical resource.
      */
 
     public String getAwsAccountId() {
@@ -329,11 +329,11 @@ public class UpdateAppVersionResourceRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Amazon Web Services account that owns the physical resource.
+     * Amazon Web Services account that owns the physical resource.
      * </p>
      * 
      * @param awsAccountId
-     *        The Amazon Web Services account that owns the physical resource.
+     *        Amazon Web Services account that owns the physical resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -344,11 +344,11 @@ public class UpdateAppVersionResourceRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Amazon Web Services region that owns the physical resource.
+     * Amazon Web Services region that owns the physical resource.
      * </p>
      * 
      * @param awsRegion
-     *        The Amazon Web Services region that owns the physical resource.
+     *        Amazon Web Services region that owns the physical resource.
      */
 
     public void setAwsRegion(String awsRegion) {
@@ -357,10 +357,10 @@ public class UpdateAppVersionResourceRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Amazon Web Services region that owns the physical resource.
+     * Amazon Web Services region that owns the physical resource.
      * </p>
      * 
-     * @return The Amazon Web Services region that owns the physical resource.
+     * @return Amazon Web Services region that owns the physical resource.
      */
 
     public String getAwsRegion() {
@@ -369,11 +369,11 @@ public class UpdateAppVersionResourceRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Amazon Web Services region that owns the physical resource.
+     * Amazon Web Services region that owns the physical resource.
      * </p>
      * 
      * @param awsRegion
-     *        The Amazon Web Services region that owns the physical resource.
+     *        Amazon Web Services region that owns the physical resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -468,11 +468,11 @@ public class UpdateAppVersionResourceRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The logical identifier of the resource.
+     * Logical identifier of the resource.
      * </p>
      * 
      * @param logicalResourceId
-     *        The logical identifier of the resource.
+     *        Logical identifier of the resource.
      */
 
     public void setLogicalResourceId(LogicalResourceId logicalResourceId) {
@@ -481,10 +481,10 @@ public class UpdateAppVersionResourceRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The logical identifier of the resource.
+     * Logical identifier of the resource.
      * </p>
      * 
-     * @return The logical identifier of the resource.
+     * @return Logical identifier of the resource.
      */
 
     public LogicalResourceId getLogicalResourceId() {
@@ -493,11 +493,11 @@ public class UpdateAppVersionResourceRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The logical identifier of the resource.
+     * Logical identifier of the resource.
      * </p>
      * 
      * @param logicalResourceId
-     *        The logical identifier of the resource.
+     *        Logical identifier of the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -508,11 +508,11 @@ public class UpdateAppVersionResourceRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The physical identifier of the resource.
+     * Physical identifier of the resource.
      * </p>
      * 
      * @param physicalResourceId
-     *        The physical identifier of the resource.
+     *        Physical identifier of the resource.
      */
 
     public void setPhysicalResourceId(String physicalResourceId) {
@@ -521,10 +521,10 @@ public class UpdateAppVersionResourceRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The physical identifier of the resource.
+     * Physical identifier of the resource.
      * </p>
      * 
-     * @return The physical identifier of the resource.
+     * @return Physical identifier of the resource.
      */
 
     public String getPhysicalResourceId() {
@@ -533,11 +533,11 @@ public class UpdateAppVersionResourceRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The physical identifier of the resource.
+     * Physical identifier of the resource.
      * </p>
      * 
      * @param physicalResourceId
-     *        The physical identifier of the resource.
+     *        Physical identifier of the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -548,11 +548,11 @@ public class UpdateAppVersionResourceRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the resource.
+     * Name of the resource.
      * </p>
      * 
      * @param resourceName
-     *        The name of the resource.
+     *        Name of the resource.
      */
 
     public void setResourceName(String resourceName) {
@@ -561,10 +561,10 @@ public class UpdateAppVersionResourceRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the resource.
+     * Name of the resource.
      * </p>
      * 
-     * @return The name of the resource.
+     * @return Name of the resource.
      */
 
     public String getResourceName() {
@@ -573,11 +573,11 @@ public class UpdateAppVersionResourceRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the resource.
+     * Name of the resource.
      * </p>
      * 
      * @param resourceName
-     *        The name of the resource.
+     *        Name of the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -588,11 +588,11 @@ public class UpdateAppVersionResourceRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The type of resource.
+     * Type of resource.
      * </p>
      * 
      * @param resourceType
-     *        The type of resource.
+     *        Type of resource.
      */
 
     public void setResourceType(String resourceType) {
@@ -601,10 +601,10 @@ public class UpdateAppVersionResourceRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The type of resource.
+     * Type of resource.
      * </p>
      * 
-     * @return The type of resource.
+     * @return Type of resource.
      */
 
     public String getResourceType() {
@@ -613,11 +613,11 @@ public class UpdateAppVersionResourceRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The type of resource.
+     * Type of resource.
      * </p>
      * 
      * @param resourceType
-     *        The type of resource.
+     *        Type of resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

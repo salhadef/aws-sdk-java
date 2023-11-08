@@ -41,7 +41,8 @@ public class ProcessorInfo implements Serializable, Cloneable {
     /**
      * <p>
      * Indicates whether the instance type supports AMD SEV-SNP. If the request returns <code>amd-sev-snp</code>, AMD
-     * SEV-SNP is supported. Otherwise, it is not supported.
+     * SEV-SNP is supported. Otherwise, it is not supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html"> AMD SEV-SNP</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> supportedFeatures;
@@ -191,11 +192,13 @@ public class ProcessorInfo implements Serializable, Cloneable {
     /**
      * <p>
      * Indicates whether the instance type supports AMD SEV-SNP. If the request returns <code>amd-sev-snp</code>, AMD
-     * SEV-SNP is supported. Otherwise, it is not supported.
+     * SEV-SNP is supported. Otherwise, it is not supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html"> AMD SEV-SNP</a>.
      * </p>
      * 
      * @return Indicates whether the instance type supports AMD SEV-SNP. If the request returns <code>amd-sev-snp</code>
-     *         , AMD SEV-SNP is supported. Otherwise, it is not supported.
+     *         , AMD SEV-SNP is supported. Otherwise, it is not supported. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html"> AMD SEV-SNP</a>.
      * @see SupportedAdditionalProcessorFeature
      */
 
@@ -209,12 +212,14 @@ public class ProcessorInfo implements Serializable, Cloneable {
     /**
      * <p>
      * Indicates whether the instance type supports AMD SEV-SNP. If the request returns <code>amd-sev-snp</code>, AMD
-     * SEV-SNP is supported. Otherwise, it is not supported.
+     * SEV-SNP is supported. Otherwise, it is not supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html"> AMD SEV-SNP</a>.
      * </p>
      * 
      * @param supportedFeatures
      *        Indicates whether the instance type supports AMD SEV-SNP. If the request returns <code>amd-sev-snp</code>,
-     *        AMD SEV-SNP is supported. Otherwise, it is not supported.
+     *        AMD SEV-SNP is supported. Otherwise, it is not supported. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html"> AMD SEV-SNP</a>.
      * @see SupportedAdditionalProcessorFeature
      */
 
@@ -230,7 +235,8 @@ public class ProcessorInfo implements Serializable, Cloneable {
     /**
      * <p>
      * Indicates whether the instance type supports AMD SEV-SNP. If the request returns <code>amd-sev-snp</code>, AMD
-     * SEV-SNP is supported. Otherwise, it is not supported.
+     * SEV-SNP is supported. Otherwise, it is not supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html"> AMD SEV-SNP</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -240,7 +246,8 @@ public class ProcessorInfo implements Serializable, Cloneable {
      * 
      * @param supportedFeatures
      *        Indicates whether the instance type supports AMD SEV-SNP. If the request returns <code>amd-sev-snp</code>,
-     *        AMD SEV-SNP is supported. Otherwise, it is not supported.
+     *        AMD SEV-SNP is supported. Otherwise, it is not supported. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html"> AMD SEV-SNP</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SupportedAdditionalProcessorFeature
      */
@@ -258,12 +265,14 @@ public class ProcessorInfo implements Serializable, Cloneable {
     /**
      * <p>
      * Indicates whether the instance type supports AMD SEV-SNP. If the request returns <code>amd-sev-snp</code>, AMD
-     * SEV-SNP is supported. Otherwise, it is not supported.
+     * SEV-SNP is supported. Otherwise, it is not supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html"> AMD SEV-SNP</a>.
      * </p>
      * 
      * @param supportedFeatures
      *        Indicates whether the instance type supports AMD SEV-SNP. If the request returns <code>amd-sev-snp</code>,
-     *        AMD SEV-SNP is supported. Otherwise, it is not supported.
+     *        AMD SEV-SNP is supported. Otherwise, it is not supported. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html"> AMD SEV-SNP</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SupportedAdditionalProcessorFeature
      */
@@ -276,12 +285,14 @@ public class ProcessorInfo implements Serializable, Cloneable {
     /**
      * <p>
      * Indicates whether the instance type supports AMD SEV-SNP. If the request returns <code>amd-sev-snp</code>, AMD
-     * SEV-SNP is supported. Otherwise, it is not supported.
+     * SEV-SNP is supported. Otherwise, it is not supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html"> AMD SEV-SNP</a>.
      * </p>
      * 
      * @param supportedFeatures
      *        Indicates whether the instance type supports AMD SEV-SNP. If the request returns <code>amd-sev-snp</code>,
-     *        AMD SEV-SNP is supported. Otherwise, it is not supported.
+     *        AMD SEV-SNP is supported. Otherwise, it is not supported. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html"> AMD SEV-SNP</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SupportedAdditionalProcessorFeature
      */

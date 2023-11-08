@@ -33,6 +33,10 @@ public class SmallMultiplesOptionsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxVisibleColumns").build();
     private static final MarshallingInfo<StructuredPojo> PANELCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PanelConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> XAXIS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("XAxis").build();
+    private static final MarshallingInfo<StructuredPojo> YAXIS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("YAxis").build();
 
     private static final SmallMultiplesOptionsMarshaller instance = new SmallMultiplesOptionsMarshaller();
 
@@ -53,6 +57,8 @@ public class SmallMultiplesOptionsMarshaller {
             protocolMarshaller.marshall(smallMultiplesOptions.getMaxVisibleRows(), MAXVISIBLEROWS_BINDING);
             protocolMarshaller.marshall(smallMultiplesOptions.getMaxVisibleColumns(), MAXVISIBLECOLUMNS_BINDING);
             protocolMarshaller.marshall(smallMultiplesOptions.getPanelConfiguration(), PANELCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(smallMultiplesOptions.getXAxis(), XAXIS_BINDING);
+            protocolMarshaller.marshall(smallMultiplesOptions.getYAxis(), YAXIS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

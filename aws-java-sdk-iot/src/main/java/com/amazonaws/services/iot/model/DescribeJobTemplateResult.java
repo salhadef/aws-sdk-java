@@ -75,6 +75,16 @@ public class DescribeJobTemplateResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      */
     private java.util.List<MaintenanceWindow> maintenanceWindows;
+    /**
+     * <p>
+     * The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully
+     * completes.
+     * </p>
+     * <p>
+     * <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.
+     * </p>
+     */
+    private java.util.List<String> destinationPackageVersions;
 
     /**
      * <p>
@@ -539,6 +549,104 @@ public class DescribeJobTemplateResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully
+     * completes.
+     * </p>
+     * <p>
+     * <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.
+     * </p>
+     * 
+     * @return The package version Amazon Resource Names (ARNs) that are installed on the device when the job
+     *         successfully completes. </p>
+     *         <p>
+     *         <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.
+     */
+
+    public java.util.List<String> getDestinationPackageVersions() {
+        return destinationPackageVersions;
+    }
+
+    /**
+     * <p>
+     * The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully
+     * completes.
+     * </p>
+     * <p>
+     * <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.
+     * </p>
+     * 
+     * @param destinationPackageVersions
+     *        The package version Amazon Resource Names (ARNs) that are installed on the device when the job
+     *        successfully completes. </p>
+     *        <p>
+     *        <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.
+     */
+
+    public void setDestinationPackageVersions(java.util.Collection<String> destinationPackageVersions) {
+        if (destinationPackageVersions == null) {
+            this.destinationPackageVersions = null;
+            return;
+        }
+
+        this.destinationPackageVersions = new java.util.ArrayList<String>(destinationPackageVersions);
+    }
+
+    /**
+     * <p>
+     * The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully
+     * completes.
+     * </p>
+     * <p>
+     * <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDestinationPackageVersions(java.util.Collection)} or
+     * {@link #withDestinationPackageVersions(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param destinationPackageVersions
+     *        The package version Amazon Resource Names (ARNs) that are installed on the device when the job
+     *        successfully completes. </p>
+     *        <p>
+     *        <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeJobTemplateResult withDestinationPackageVersions(String... destinationPackageVersions) {
+        if (this.destinationPackageVersions == null) {
+            setDestinationPackageVersions(new java.util.ArrayList<String>(destinationPackageVersions.length));
+        }
+        for (String ele : destinationPackageVersions) {
+            this.destinationPackageVersions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully
+     * completes.
+     * </p>
+     * <p>
+     * <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.
+     * </p>
+     * 
+     * @param destinationPackageVersions
+     *        The package version Amazon Resource Names (ARNs) that are installed on the device when the job
+     *        successfully completes. </p>
+     *        <p>
+     *        <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeJobTemplateResult withDestinationPackageVersions(java.util.Collection<String> destinationPackageVersions) {
+        setDestinationPackageVersions(destinationPackageVersions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -573,7 +681,9 @@ public class DescribeJobTemplateResult extends com.amazonaws.AmazonWebServiceRes
         if (getJobExecutionsRetryConfig() != null)
             sb.append("JobExecutionsRetryConfig: ").append(getJobExecutionsRetryConfig()).append(",");
         if (getMaintenanceWindows() != null)
-            sb.append("MaintenanceWindows: ").append(getMaintenanceWindows());
+            sb.append("MaintenanceWindows: ").append(getMaintenanceWindows()).append(",");
+        if (getDestinationPackageVersions() != null)
+            sb.append("DestinationPackageVersions: ").append(getDestinationPackageVersions());
         sb.append("}");
         return sb.toString();
     }
@@ -636,6 +746,10 @@ public class DescribeJobTemplateResult extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getMaintenanceWindows() != null && other.getMaintenanceWindows().equals(this.getMaintenanceWindows()) == false)
             return false;
+        if (other.getDestinationPackageVersions() == null ^ this.getDestinationPackageVersions() == null)
+            return false;
+        if (other.getDestinationPackageVersions() != null && other.getDestinationPackageVersions().equals(this.getDestinationPackageVersions()) == false)
+            return false;
         return true;
     }
 
@@ -656,6 +770,7 @@ public class DescribeJobTemplateResult extends com.amazonaws.AmazonWebServiceRes
         hashCode = prime * hashCode + ((getTimeoutConfig() == null) ? 0 : getTimeoutConfig().hashCode());
         hashCode = prime * hashCode + ((getJobExecutionsRetryConfig() == null) ? 0 : getJobExecutionsRetryConfig().hashCode());
         hashCode = prime * hashCode + ((getMaintenanceWindows() == null) ? 0 : getMaintenanceWindows().hashCode());
+        hashCode = prime * hashCode + ((getDestinationPackageVersions() == null) ? 0 : getDestinationPackageVersions().hashCode());
         return hashCode;
     }
 

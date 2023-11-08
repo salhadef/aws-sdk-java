@@ -39,6 +39,17 @@ public class Place implements Serializable, Cloneable, StructuredPojo {
     private String addressNumber;
     /**
      * <p>
+     * The Amazon Location categories that describe this Place.
+     * </p>
+     * <p>
+     * For more information about using categories, including a list of Amazon Location categories, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and
+     * filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.
+     * </p>
+     */
+    private java.util.List<String> categories;
+    /**
+     * <p>
      * A country/region specified using <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit
      * country/region code. For example, <code>CAN</code>.
      * </p>
@@ -110,7 +121,14 @@ public class Place implements Serializable, Cloneable, StructuredPojo {
     private String subRegion;
     /**
      * <p>
-     * The time zone in which the <code>Place</code> is located. Returned only when using HERE as the selected partner.
+     * Categories from the data provider that describe the Place that are not mapped to any Amazon Location categories.
+     * </p>
+     */
+    private java.util.List<String> supplementalCategories;
+    /**
+     * <p>
+     * The time zone in which the <code>Place</code> is located. Returned only when using HERE or Grab as the selected
+     * partner.
      * </p>
      */
     private TimeZone timeZone;
@@ -121,7 +139,7 @@ public class Place implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * Returned only for a place index that uses Esri as a data provider. Is not returned for
+     * Returned only for a place index that uses Esri or Grab as a data provider. Is not returned for
      * <code>SearchPlaceIndexForPosition</code>.
      * </p>
      * </note>
@@ -131,6 +149,11 @@ public class Place implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.
      * </p>
+     * <note>
+     * <p>
+     * Returned only for a place index that uses Esri as a data provider.
+     * </p>
+     * </note>
      */
     private String unitType;
 
@@ -171,6 +194,112 @@ public class Place implements Serializable, Cloneable, StructuredPojo {
 
     public Place withAddressNumber(String addressNumber) {
         setAddressNumber(addressNumber);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Location categories that describe this Place.
+     * </p>
+     * <p>
+     * For more information about using categories, including a list of Amazon Location categories, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and
+     * filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.
+     * </p>
+     * 
+     * @return The Amazon Location categories that describe this Place.</p>
+     *         <p>
+     *         For more information about using categories, including a list of Amazon Location categories, see <a
+     *         href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and
+     *         filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.
+     */
+
+    public java.util.List<String> getCategories() {
+        return categories;
+    }
+
+    /**
+     * <p>
+     * The Amazon Location categories that describe this Place.
+     * </p>
+     * <p>
+     * For more information about using categories, including a list of Amazon Location categories, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and
+     * filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param categories
+     *        The Amazon Location categories that describe this Place.</p>
+     *        <p>
+     *        For more information about using categories, including a list of Amazon Location categories, see <a
+     *        href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and
+     *        filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.
+     */
+
+    public void setCategories(java.util.Collection<String> categories) {
+        if (categories == null) {
+            this.categories = null;
+            return;
+        }
+
+        this.categories = new java.util.ArrayList<String>(categories);
+    }
+
+    /**
+     * <p>
+     * The Amazon Location categories that describe this Place.
+     * </p>
+     * <p>
+     * For more information about using categories, including a list of Amazon Location categories, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and
+     * filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCategories(java.util.Collection)} or {@link #withCategories(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param categories
+     *        The Amazon Location categories that describe this Place.</p>
+     *        <p>
+     *        For more information about using categories, including a list of Amazon Location categories, see <a
+     *        href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and
+     *        filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Place withCategories(String... categories) {
+        if (this.categories == null) {
+            setCategories(new java.util.ArrayList<String>(categories.length));
+        }
+        for (String ele : categories) {
+            this.categories.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Location categories that describe this Place.
+     * </p>
+     * <p>
+     * For more information about using categories, including a list of Amazon Location categories, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and
+     * filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param categories
+     *        The Amazon Location categories that describe this Place.</p>
+     *        <p>
+     *        For more information about using categories, including a list of Amazon Location categories, see <a
+     *        href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and
+     *        filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Place withCategories(java.util.Collection<String> categories) {
+        setCategories(categories);
         return this;
     }
 
@@ -682,12 +811,87 @@ public class Place implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time zone in which the <code>Place</code> is located. Returned only when using HERE as the selected partner.
+     * Categories from the data provider that describe the Place that are not mapped to any Amazon Location categories.
+     * </p>
+     * 
+     * @return Categories from the data provider that describe the Place that are not mapped to any Amazon Location
+     *         categories.
+     */
+
+    public java.util.List<String> getSupplementalCategories() {
+        return supplementalCategories;
+    }
+
+    /**
+     * <p>
+     * Categories from the data provider that describe the Place that are not mapped to any Amazon Location categories.
+     * </p>
+     * 
+     * @param supplementalCategories
+     *        Categories from the data provider that describe the Place that are not mapped to any Amazon Location
+     *        categories.
+     */
+
+    public void setSupplementalCategories(java.util.Collection<String> supplementalCategories) {
+        if (supplementalCategories == null) {
+            this.supplementalCategories = null;
+            return;
+        }
+
+        this.supplementalCategories = new java.util.ArrayList<String>(supplementalCategories);
+    }
+
+    /**
+     * <p>
+     * Categories from the data provider that describe the Place that are not mapped to any Amazon Location categories.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSupplementalCategories(java.util.Collection)} or
+     * {@link #withSupplementalCategories(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param supplementalCategories
+     *        Categories from the data provider that describe the Place that are not mapped to any Amazon Location
+     *        categories.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Place withSupplementalCategories(String... supplementalCategories) {
+        if (this.supplementalCategories == null) {
+            setSupplementalCategories(new java.util.ArrayList<String>(supplementalCategories.length));
+        }
+        for (String ele : supplementalCategories) {
+            this.supplementalCategories.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Categories from the data provider that describe the Place that are not mapped to any Amazon Location categories.
+     * </p>
+     * 
+     * @param supplementalCategories
+     *        Categories from the data provider that describe the Place that are not mapped to any Amazon Location
+     *        categories.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Place withSupplementalCategories(java.util.Collection<String> supplementalCategories) {
+        setSupplementalCategories(supplementalCategories);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time zone in which the <code>Place</code> is located. Returned only when using HERE or Grab as the selected
+     * partner.
      * </p>
      * 
      * @param timeZone
-     *        The time zone in which the <code>Place</code> is located. Returned only when using HERE as the selected
-     *        partner.
+     *        The time zone in which the <code>Place</code> is located. Returned only when using HERE or Grab as the
+     *        selected partner.
      */
 
     public void setTimeZone(TimeZone timeZone) {
@@ -696,11 +900,12 @@ public class Place implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time zone in which the <code>Place</code> is located. Returned only when using HERE as the selected partner.
+     * The time zone in which the <code>Place</code> is located. Returned only when using HERE or Grab as the selected
+     * partner.
      * </p>
      * 
-     * @return The time zone in which the <code>Place</code> is located. Returned only when using HERE as the selected
-     *         partner.
+     * @return The time zone in which the <code>Place</code> is located. Returned only when using HERE or Grab as the
+     *         selected partner.
      */
 
     public TimeZone getTimeZone() {
@@ -709,12 +914,13 @@ public class Place implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time zone in which the <code>Place</code> is located. Returned only when using HERE as the selected partner.
+     * The time zone in which the <code>Place</code> is located. Returned only when using HERE or Grab as the selected
+     * partner.
      * </p>
      * 
      * @param timeZone
-     *        The time zone in which the <code>Place</code> is located. Returned only when using HERE as the selected
-     *        partner.
+     *        The time zone in which the <code>Place</code> is located. Returned only when using HERE or Grab as the
+     *        selected partner.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -730,7 +936,7 @@ public class Place implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * Returned only for a place index that uses Esri as a data provider. Is not returned for
+     * Returned only for a place index that uses Esri or Grab as a data provider. Is not returned for
      * <code>SearchPlaceIndexForPosition</code>.
      * </p>
      * </note>
@@ -739,7 +945,7 @@ public class Place implements Serializable, Cloneable, StructuredPojo {
      *        For addresses with multiple units, the unit identifier. Can include numbers and letters, for example
      *        <code>3B</code> or <code>Unit 123</code>.</p> <note>
      *        <p>
-     *        Returned only for a place index that uses Esri as a data provider. Is not returned for
+     *        Returned only for a place index that uses Esri or Grab as a data provider. Is not returned for
      *        <code>SearchPlaceIndexForPosition</code>.
      *        </p>
      */
@@ -755,7 +961,7 @@ public class Place implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * Returned only for a place index that uses Esri as a data provider. Is not returned for
+     * Returned only for a place index that uses Esri or Grab as a data provider. Is not returned for
      * <code>SearchPlaceIndexForPosition</code>.
      * </p>
      * </note>
@@ -763,7 +969,7 @@ public class Place implements Serializable, Cloneable, StructuredPojo {
      * @return For addresses with multiple units, the unit identifier. Can include numbers and letters, for example
      *         <code>3B</code> or <code>Unit 123</code>.</p> <note>
      *         <p>
-     *         Returned only for a place index that uses Esri as a data provider. Is not returned for
+     *         Returned only for a place index that uses Esri or Grab as a data provider. Is not returned for
      *         <code>SearchPlaceIndexForPosition</code>.
      *         </p>
      */
@@ -779,7 +985,7 @@ public class Place implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * Returned only for a place index that uses Esri as a data provider. Is not returned for
+     * Returned only for a place index that uses Esri or Grab as a data provider. Is not returned for
      * <code>SearchPlaceIndexForPosition</code>.
      * </p>
      * </note>
@@ -788,7 +994,7 @@ public class Place implements Serializable, Cloneable, StructuredPojo {
      *        For addresses with multiple units, the unit identifier. Can include numbers and letters, for example
      *        <code>3B</code> or <code>Unit 123</code>.</p> <note>
      *        <p>
-     *        Returned only for a place index that uses Esri as a data provider. Is not returned for
+     *        Returned only for a place index that uses Esri or Grab as a data provider. Is not returned for
      *        <code>SearchPlaceIndexForPosition</code>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -803,9 +1009,18 @@ public class Place implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.
      * </p>
+     * <note>
+     * <p>
+     * Returned only for a place index that uses Esri as a data provider.
+     * </p>
+     * </note>
      * 
      * @param unitType
-     *        For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.
+     *        For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p>
+     *        <note>
+     *        <p>
+     *        Returned only for a place index that uses Esri as a data provider.
+     *        </p>
      */
 
     public void setUnitType(String unitType) {
@@ -816,8 +1031,17 @@ public class Place implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.
      * </p>
+     * <note>
+     * <p>
+     * Returned only for a place index that uses Esri as a data provider.
+     * </p>
+     * </note>
      * 
-     * @return For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.
+     * @return For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p>
+     *         <note>
+     *         <p>
+     *         Returned only for a place index that uses Esri as a data provider.
+     *         </p>
      */
 
     public String getUnitType() {
@@ -828,9 +1052,18 @@ public class Place implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.
      * </p>
+     * <note>
+     * <p>
+     * Returned only for a place index that uses Esri as a data provider.
+     * </p>
+     * </note>
      * 
      * @param unitType
-     *        For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.
+     *        For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p>
+     *        <note>
+     *        <p>
+     *        Returned only for a place index that uses Esri as a data provider.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -853,6 +1086,8 @@ public class Place implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getAddressNumber() != null)
             sb.append("AddressNumber: ").append(getAddressNumber()).append(",");
+        if (getCategories() != null)
+            sb.append("Categories: ").append(getCategories()).append(",");
         if (getCountry() != null)
             sb.append("Country: ").append(getCountry()).append(",");
         if (getGeometry() != null)
@@ -873,6 +1108,8 @@ public class Place implements Serializable, Cloneable, StructuredPojo {
             sb.append("Street: ").append(getStreet()).append(",");
         if (getSubRegion() != null)
             sb.append("SubRegion: ").append(getSubRegion()).append(",");
+        if (getSupplementalCategories() != null)
+            sb.append("SupplementalCategories: ").append(getSupplementalCategories()).append(",");
         if (getTimeZone() != null)
             sb.append("TimeZone: ").append(getTimeZone()).append(",");
         if (getUnitNumber() != null)
@@ -896,6 +1133,10 @@ public class Place implements Serializable, Cloneable, StructuredPojo {
         if (other.getAddressNumber() == null ^ this.getAddressNumber() == null)
             return false;
         if (other.getAddressNumber() != null && other.getAddressNumber().equals(this.getAddressNumber()) == false)
+            return false;
+        if (other.getCategories() == null ^ this.getCategories() == null)
+            return false;
+        if (other.getCategories() != null && other.getCategories().equals(this.getCategories()) == false)
             return false;
         if (other.getCountry() == null ^ this.getCountry() == null)
             return false;
@@ -937,6 +1178,10 @@ public class Place implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSubRegion() != null && other.getSubRegion().equals(this.getSubRegion()) == false)
             return false;
+        if (other.getSupplementalCategories() == null ^ this.getSupplementalCategories() == null)
+            return false;
+        if (other.getSupplementalCategories() != null && other.getSupplementalCategories().equals(this.getSupplementalCategories()) == false)
+            return false;
         if (other.getTimeZone() == null ^ this.getTimeZone() == null)
             return false;
         if (other.getTimeZone() != null && other.getTimeZone().equals(this.getTimeZone()) == false)
@@ -958,6 +1203,7 @@ public class Place implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAddressNumber() == null) ? 0 : getAddressNumber().hashCode());
+        hashCode = prime * hashCode + ((getCategories() == null) ? 0 : getCategories().hashCode());
         hashCode = prime * hashCode + ((getCountry() == null) ? 0 : getCountry().hashCode());
         hashCode = prime * hashCode + ((getGeometry() == null) ? 0 : getGeometry().hashCode());
         hashCode = prime * hashCode + ((getInterpolated() == null) ? 0 : getInterpolated().hashCode());
@@ -968,6 +1214,7 @@ public class Place implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode());
         hashCode = prime * hashCode + ((getStreet() == null) ? 0 : getStreet().hashCode());
         hashCode = prime * hashCode + ((getSubRegion() == null) ? 0 : getSubRegion().hashCode());
+        hashCode = prime * hashCode + ((getSupplementalCategories() == null) ? 0 : getSupplementalCategories().hashCode());
         hashCode = prime * hashCode + ((getTimeZone() == null) ? 0 : getTimeZone().hashCode());
         hashCode = prime * hashCode + ((getUnitNumber() == null) ? 0 : getUnitNumber().hashCode());
         hashCode = prime * hashCode + ((getUnitType() == null) ? 0 : getUnitType().hashCode());

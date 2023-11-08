@@ -27,7 +27,7 @@ public class PutRecordRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name of the feature group that you want to insert the record into.
+     * The name or Amazon Resource Name (ARN) of the feature group that you want to insert the record into.
      * </p>
      */
     private String featureGroupName;
@@ -62,14 +62,23 @@ public class PutRecordRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      */
     private java.util.List<String> targetStores;
+    /**
+     * <p>
+     * Time to live duration, where the record is hard deleted after the expiration time is reached;
+     * <code>ExpiresAt</code> = <code>EventTime</code> + <code>TtlDuration</code>. For information on HardDelete, see
+     * the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_DeleteRecord.html">
+     * DeleteRecord</a> API in the Amazon SageMaker API Reference guide.
+     * </p>
+     */
+    private TtlDuration ttlDuration;
 
     /**
      * <p>
-     * The name of the feature group that you want to insert the record into.
+     * The name or Amazon Resource Name (ARN) of the feature group that you want to insert the record into.
      * </p>
      * 
      * @param featureGroupName
-     *        The name of the feature group that you want to insert the record into.
+     *        The name or Amazon Resource Name (ARN) of the feature group that you want to insert the record into.
      */
 
     public void setFeatureGroupName(String featureGroupName) {
@@ -78,10 +87,10 @@ public class PutRecordRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name of the feature group that you want to insert the record into.
+     * The name or Amazon Resource Name (ARN) of the feature group that you want to insert the record into.
      * </p>
      * 
-     * @return The name of the feature group that you want to insert the record into.
+     * @return The name or Amazon Resource Name (ARN) of the feature group that you want to insert the record into.
      */
 
     public String getFeatureGroupName() {
@@ -90,11 +99,11 @@ public class PutRecordRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name of the feature group that you want to insert the record into.
+     * The name or Amazon Resource Name (ARN) of the feature group that you want to insert the record into.
      * </p>
      * 
      * @param featureGroupName
-     *        The name of the feature group that you want to insert the record into.
+     *        The name or Amazon Resource Name (ARN) of the feature group that you want to insert the record into.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -422,6 +431,67 @@ public class PutRecordRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * Time to live duration, where the record is hard deleted after the expiration time is reached;
+     * <code>ExpiresAt</code> = <code>EventTime</code> + <code>TtlDuration</code>. For information on HardDelete, see
+     * the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_DeleteRecord.html">
+     * DeleteRecord</a> API in the Amazon SageMaker API Reference guide.
+     * </p>
+     * 
+     * @param ttlDuration
+     *        Time to live duration, where the record is hard deleted after the expiration time is reached;
+     *        <code>ExpiresAt</code> = <code>EventTime</code> + <code>TtlDuration</code>. For information on HardDelete,
+     *        see the <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_DeleteRecord.html"
+     *        >DeleteRecord</a> API in the Amazon SageMaker API Reference guide.
+     */
+
+    public void setTtlDuration(TtlDuration ttlDuration) {
+        this.ttlDuration = ttlDuration;
+    }
+
+    /**
+     * <p>
+     * Time to live duration, where the record is hard deleted after the expiration time is reached;
+     * <code>ExpiresAt</code> = <code>EventTime</code> + <code>TtlDuration</code>. For information on HardDelete, see
+     * the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_DeleteRecord.html">
+     * DeleteRecord</a> API in the Amazon SageMaker API Reference guide.
+     * </p>
+     * 
+     * @return Time to live duration, where the record is hard deleted after the expiration time is reached;
+     *         <code>ExpiresAt</code> = <code>EventTime</code> + <code>TtlDuration</code>. For information on
+     *         HardDelete, see the <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_DeleteRecord.html"
+     *         >DeleteRecord</a> API in the Amazon SageMaker API Reference guide.
+     */
+
+    public TtlDuration getTtlDuration() {
+        return this.ttlDuration;
+    }
+
+    /**
+     * <p>
+     * Time to live duration, where the record is hard deleted after the expiration time is reached;
+     * <code>ExpiresAt</code> = <code>EventTime</code> + <code>TtlDuration</code>. For information on HardDelete, see
+     * the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_DeleteRecord.html">
+     * DeleteRecord</a> API in the Amazon SageMaker API Reference guide.
+     * </p>
+     * 
+     * @param ttlDuration
+     *        Time to live duration, where the record is hard deleted after the expiration time is reached;
+     *        <code>ExpiresAt</code> = <code>EventTime</code> + <code>TtlDuration</code>. For information on HardDelete,
+     *        see the <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_DeleteRecord.html"
+     *        >DeleteRecord</a> API in the Amazon SageMaker API Reference guide.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutRecordRequest withTtlDuration(TtlDuration ttlDuration) {
+        setTtlDuration(ttlDuration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -438,7 +508,9 @@ public class PutRecordRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getRecord() != null)
             sb.append("Record: ").append(getRecord()).append(",");
         if (getTargetStores() != null)
-            sb.append("TargetStores: ").append(getTargetStores());
+            sb.append("TargetStores: ").append(getTargetStores()).append(",");
+        if (getTtlDuration() != null)
+            sb.append("TtlDuration: ").append(getTtlDuration());
         sb.append("}");
         return sb.toString();
     }
@@ -465,6 +537,10 @@ public class PutRecordRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getTargetStores() != null && other.getTargetStores().equals(this.getTargetStores()) == false)
             return false;
+        if (other.getTtlDuration() == null ^ this.getTtlDuration() == null)
+            return false;
+        if (other.getTtlDuration() != null && other.getTtlDuration().equals(this.getTtlDuration()) == false)
+            return false;
         return true;
     }
 
@@ -476,6 +552,7 @@ public class PutRecordRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getFeatureGroupName() == null) ? 0 : getFeatureGroupName().hashCode());
         hashCode = prime * hashCode + ((getRecord() == null) ? 0 : getRecord().hashCode());
         hashCode = prime * hashCode + ((getTargetStores() == null) ? 0 : getTargetStores().hashCode());
+        hashCode = prime * hashCode + ((getTtlDuration() == null) ? 0 : getTtlDuration().hashCode());
         return hashCode;
     }
 

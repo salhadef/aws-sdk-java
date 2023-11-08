@@ -57,8 +57,7 @@ public class ListProfileObjectsRequest extends com.amazonaws.AmazonWebServiceReq
     private String profileId;
     /**
      * <p>
-     * Applies a filter to the response to include profile objects with the specified index values. This filter is only
-     * supported for ObjectTypeName _asset, _case and _order.
+     * Applies a filter to the response to include profile objects with the specified index values.
      * </p>
      */
     private ObjectFilter objectFilter;
@@ -265,13 +264,11 @@ public class ListProfileObjectsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Applies a filter to the response to include profile objects with the specified index values. This filter is only
-     * supported for ObjectTypeName _asset, _case and _order.
+     * Applies a filter to the response to include profile objects with the specified index values.
      * </p>
      * 
      * @param objectFilter
-     *        Applies a filter to the response to include profile objects with the specified index values. This filter
-     *        is only supported for ObjectTypeName _asset, _case and _order.
+     *        Applies a filter to the response to include profile objects with the specified index values.
      */
 
     public void setObjectFilter(ObjectFilter objectFilter) {
@@ -280,12 +277,10 @@ public class ListProfileObjectsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Applies a filter to the response to include profile objects with the specified index values. This filter is only
-     * supported for ObjectTypeName _asset, _case and _order.
+     * Applies a filter to the response to include profile objects with the specified index values.
      * </p>
      * 
-     * @return Applies a filter to the response to include profile objects with the specified index values. This filter
-     *         is only supported for ObjectTypeName _asset, _case and _order.
+     * @return Applies a filter to the response to include profile objects with the specified index values.
      */
 
     public ObjectFilter getObjectFilter() {
@@ -294,13 +289,11 @@ public class ListProfileObjectsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Applies a filter to the response to include profile objects with the specified index values. This filter is only
-     * supported for ObjectTypeName _asset, _case and _order.
+     * Applies a filter to the response to include profile objects with the specified index values.
      * </p>
      * 
      * @param objectFilter
-     *        Applies a filter to the response to include profile objects with the specified index values. This filter
-     *        is only supported for ObjectTypeName _asset, _case and _order.
+     *        Applies a filter to the response to include profile objects with the specified index values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

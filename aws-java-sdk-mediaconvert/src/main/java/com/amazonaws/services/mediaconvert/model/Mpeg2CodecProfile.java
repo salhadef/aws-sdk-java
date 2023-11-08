@@ -15,7 +15,7 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Use Profile (Mpeg2CodecProfile) to set the MPEG-2 profile for the video output.
+ * Use Profile to set the MPEG-2 profile for the video output.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Mpeg2CodecProfile {

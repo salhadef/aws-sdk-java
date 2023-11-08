@@ -81,6 +81,14 @@ public class CreateBlueGreenDeploymentRequestMarshaller implements Marshaller<Re
             }
         }
 
+        if (createBlueGreenDeploymentRequest.getTargetDBInstanceClass() != null) {
+            request.addParameter("TargetDBInstanceClass", StringUtils.fromString(createBlueGreenDeploymentRequest.getTargetDBInstanceClass()));
+        }
+
+        if (createBlueGreenDeploymentRequest.getUpgradeTargetStorageConfig() != null) {
+            request.addParameter("UpgradeTargetStorageConfig", StringUtils.fromBoolean(createBlueGreenDeploymentRequest.getUpgradeTargetStorageConfig()));
+        }
+
         return request;
     }
 

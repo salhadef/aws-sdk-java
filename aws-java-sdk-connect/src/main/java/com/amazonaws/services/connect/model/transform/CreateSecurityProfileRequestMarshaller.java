@@ -43,6 +43,8 @@ public class CreateSecurityProfileRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AllowedAccessControlTags").build();
     private static final MarshallingInfo<List> TAGRESTRICTEDRESOURCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TagRestrictedResources").build();
+    private static final MarshallingInfo<List> APPLICATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Applications").build();
 
     private static final CreateSecurityProfileRequestMarshaller instance = new CreateSecurityProfileRequestMarshaller();
 
@@ -67,6 +69,7 @@ public class CreateSecurityProfileRequestMarshaller {
             protocolMarshaller.marshall(createSecurityProfileRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createSecurityProfileRequest.getAllowedAccessControlTags(), ALLOWEDACCESSCONTROLTAGS_BINDING);
             protocolMarshaller.marshall(createSecurityProfileRequest.getTagRestrictedResources(), TAGRESTRICTEDRESOURCES_BINDING);
+            protocolMarshaller.marshall(createSecurityProfileRequest.getApplications(), APPLICATIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

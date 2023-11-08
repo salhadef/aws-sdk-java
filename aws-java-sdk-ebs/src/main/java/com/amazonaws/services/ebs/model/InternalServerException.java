@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * An internal error has occurred.
+ * An internal error has occurred. For more information see <a
+ * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error retries</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

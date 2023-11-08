@@ -25,18 +25,18 @@ public class GetResourcePolicyResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * An IAM policy.
+     * The Amazon Resource Name (ARN) of the service network or service.
      * </p>
      */
     private String policy;
 
     /**
      * <p>
-     * An IAM policy.
+     * The Amazon Resource Name (ARN) of the service network or service.
      * </p>
      * 
      * @param policy
-     *        An IAM policy.
+     *        The Amazon Resource Name (ARN) of the service network or service.
      */
 
     public void setPolicy(String policy) {
@@ -45,10 +45,10 @@ public class GetResourcePolicyResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * An IAM policy.
+     * The Amazon Resource Name (ARN) of the service network or service.
      * </p>
      * 
-     * @return An IAM policy.
+     * @return The Amazon Resource Name (ARN) of the service network or service.
      */
 
     public String getPolicy() {
@@ -57,11 +57,11 @@ public class GetResourcePolicyResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * An IAM policy.
+     * The Amazon Resource Name (ARN) of the service network or service.
      * </p>
      * 
      * @param policy
-     *        An IAM policy.
+     *        The Amazon Resource Name (ARN) of the service network or service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

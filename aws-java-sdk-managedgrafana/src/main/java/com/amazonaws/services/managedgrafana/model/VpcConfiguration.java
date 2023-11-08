@@ -25,6 +25,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Provided <code>securityGroupIds</code> and <code>subnetIds</code> must be part of the same VPC.
  * </p>
+ * <p>
+ * Connecting to a private VPC is not yet available in the Asia Pacific (Seoul) Region (ap-northeast-2).
+ * </p>
  * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/VpcConfiguration" target="_top">AWS API

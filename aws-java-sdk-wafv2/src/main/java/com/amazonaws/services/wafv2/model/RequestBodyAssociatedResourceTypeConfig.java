@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Customizes the maximum size of the request body that your protected CloudFront distributions forward to WAF for
- * inspection. The default size is 16 KB (16,384 kilobytes).
+ * inspection. The default size is 16 KB (16,384 bytes).
  * </p>
  * <note>
  * <p>
@@ -44,7 +44,7 @@ public class RequestBodyAssociatedResourceTypeConfig implements Serializable, Cl
      * send to WAF for inspection. This applies to statements in the web ACL that inspect the body or JSON body.
      * </p>
      * <p>
-     * Default: <code>16 KB (16,384 kilobytes)</code>
+     * Default: <code>16 KB (16,384 bytes)</code>
      * </p>
      */
     private String defaultSizeInspectionLimit;
@@ -55,7 +55,7 @@ public class RequestBodyAssociatedResourceTypeConfig implements Serializable, Cl
      * send to WAF for inspection. This applies to statements in the web ACL that inspect the body or JSON body.
      * </p>
      * <p>
-     * Default: <code>16 KB (16,384 kilobytes)</code>
+     * Default: <code>16 KB (16,384 bytes)</code>
      * </p>
      * 
      * @param defaultSizeInspectionLimit
@@ -63,7 +63,7 @@ public class RequestBodyAssociatedResourceTypeConfig implements Serializable, Cl
      *        should send to WAF for inspection. This applies to statements in the web ACL that inspect the body or JSON
      *        body. </p>
      *        <p>
-     *        Default: <code>16 KB (16,384 kilobytes)</code>
+     *        Default: <code>16 KB (16,384 bytes)</code>
      * @see SizeInspectionLimit
      */
 
@@ -77,14 +77,14 @@ public class RequestBodyAssociatedResourceTypeConfig implements Serializable, Cl
      * send to WAF for inspection. This applies to statements in the web ACL that inspect the body or JSON body.
      * </p>
      * <p>
-     * Default: <code>16 KB (16,384 kilobytes)</code>
+     * Default: <code>16 KB (16,384 bytes)</code>
      * </p>
      * 
      * @return Specifies the maximum size of the web request body component that an associated CloudFront distribution
      *         should send to WAF for inspection. This applies to statements in the web ACL that inspect the body or
      *         JSON body. </p>
      *         <p>
-     *         Default: <code>16 KB (16,384 kilobytes)</code>
+     *         Default: <code>16 KB (16,384 bytes)</code>
      * @see SizeInspectionLimit
      */
 
@@ -98,7 +98,7 @@ public class RequestBodyAssociatedResourceTypeConfig implements Serializable, Cl
      * send to WAF for inspection. This applies to statements in the web ACL that inspect the body or JSON body.
      * </p>
      * <p>
-     * Default: <code>16 KB (16,384 kilobytes)</code>
+     * Default: <code>16 KB (16,384 bytes)</code>
      * </p>
      * 
      * @param defaultSizeInspectionLimit
@@ -106,7 +106,7 @@ public class RequestBodyAssociatedResourceTypeConfig implements Serializable, Cl
      *        should send to WAF for inspection. This applies to statements in the web ACL that inspect the body or JSON
      *        body. </p>
      *        <p>
-     *        Default: <code>16 KB (16,384 kilobytes)</code>
+     *        Default: <code>16 KB (16,384 bytes)</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SizeInspectionLimit
      */
@@ -122,7 +122,7 @@ public class RequestBodyAssociatedResourceTypeConfig implements Serializable, Cl
      * send to WAF for inspection. This applies to statements in the web ACL that inspect the body or JSON body.
      * </p>
      * <p>
-     * Default: <code>16 KB (16,384 kilobytes)</code>
+     * Default: <code>16 KB (16,384 bytes)</code>
      * </p>
      * 
      * @param defaultSizeInspectionLimit
@@ -130,7 +130,7 @@ public class RequestBodyAssociatedResourceTypeConfig implements Serializable, Cl
      *        should send to WAF for inspection. This applies to statements in the web ACL that inspect the body or JSON
      *        body. </p>
      *        <p>
-     *        Default: <code>16 KB (16,384 kilobytes)</code>
+     *        Default: <code>16 KB (16,384 bytes)</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SizeInspectionLimit
      */

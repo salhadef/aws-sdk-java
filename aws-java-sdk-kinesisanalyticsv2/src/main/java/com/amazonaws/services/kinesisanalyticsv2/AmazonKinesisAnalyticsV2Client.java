@@ -44,6 +44,7 @@ import com.amazonaws.services.kinesisanalyticsv2.AmazonKinesisAnalyticsV2ClientB
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.kinesisanalyticsv2.model.*;
+
 import com.amazonaws.services.kinesisanalyticsv2.model.transform.*;
 
 /**

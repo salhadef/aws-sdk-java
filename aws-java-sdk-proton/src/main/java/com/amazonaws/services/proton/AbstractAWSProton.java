@@ -119,6 +119,11 @@ public class AbstractAWSProton implements AWSProton {
     }
 
     @Override
+    public DeleteDeploymentResult deleteDeployment(DeleteDeploymentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteEnvironmentResult deleteEnvironment(DeleteEnvironmentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -175,6 +180,11 @@ public class AbstractAWSProton implements AWSProton {
 
     @Override
     public GetComponentResult getComponent(GetComponentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetDeploymentResult getDeployment(GetDeploymentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -270,6 +280,11 @@ public class AbstractAWSProton implements AWSProton {
 
     @Override
     public ListComponentsResult listComponents(ListComponentsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListDeploymentsResult listDeployments(ListDeploymentsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

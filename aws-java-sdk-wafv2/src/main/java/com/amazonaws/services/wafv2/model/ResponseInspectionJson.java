@@ -20,7 +20,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Configures inspection of the response JSON. WAF can inspect the first 65,536 bytes (64 KB) of the response JSON. This
- * is part of the <code>ResponseInspection</code> configuration for <code>AWSManagedRulesATPRuleSet</code>.
+ * is part of the <code>ResponseInspection</code> configuration for <code>AWSManagedRulesATPRuleSet</code> and
+ * <code>AWSManagedRulesACFPRuleSet</code>.
  * </p>
  * <note>
  * <p>
@@ -39,15 +40,16 @@ public class ResponseInspectionJson implements Serializable, Cloneable, Structur
      * The identifier for the value to match against in the JSON. The identifier must be an exact match, including case.
      * </p>
      * <p>
-     * JSON example: <code>"Identifier": [ "/login/success" ]</code>
+     * JSON examples: <code>"Identifier": [ "/login/success" ]</code> and
+     * <code>"Identifier": [ "/sign-up/success" ]</code>
      * </p>
      */
     private String identifier;
     /**
      * <p>
-     * Values for the specified identifier in the response JSON that indicate a successful login attempt. To be counted
-     * as a successful login, the value must be an exact match, including case. Each value must be unique among the
-     * success and failure values.
+     * Values for the specified identifier in the response JSON that indicate a successful login or account creation
+     * attempt. To be counted as a success, the value must be an exact match, including case. Each value must be unique
+     * among the success and failure values.
      * </p>
      * <p>
      * JSON example: <code>"SuccessValues": [ "True", "Succeeded" ]</code>
@@ -56,9 +58,9 @@ public class ResponseInspectionJson implements Serializable, Cloneable, Structur
     private java.util.List<String> successValues;
     /**
      * <p>
-     * Values for the specified identifier in the response JSON that indicate a failed login attempt. To be counted as a
-     * failed login, the value must be an exact match, including case. Each value must be unique among the success and
-     * failure values.
+     * Values for the specified identifier in the response JSON that indicate a failed login or account creation
+     * attempt. To be counted as a failure, the value must be an exact match, including case. Each value must be unique
+     * among the success and failure values.
      * </p>
      * <p>
      * JSON example: <code>"FailureValues": [ "False", "Failed" ]</code>
@@ -71,14 +73,16 @@ public class ResponseInspectionJson implements Serializable, Cloneable, Structur
      * The identifier for the value to match against in the JSON. The identifier must be an exact match, including case.
      * </p>
      * <p>
-     * JSON example: <code>"Identifier": [ "/login/success" ]</code>
+     * JSON examples: <code>"Identifier": [ "/login/success" ]</code> and
+     * <code>"Identifier": [ "/sign-up/success" ]</code>
      * </p>
      * 
      * @param identifier
      *        The identifier for the value to match against in the JSON. The identifier must be an exact match,
      *        including case.</p>
      *        <p>
-     *        JSON example: <code>"Identifier": [ "/login/success" ]</code>
+     *        JSON examples: <code>"Identifier": [ "/login/success" ]</code> and
+     *        <code>"Identifier": [ "/sign-up/success" ]</code>
      */
 
     public void setIdentifier(String identifier) {
@@ -90,13 +94,15 @@ public class ResponseInspectionJson implements Serializable, Cloneable, Structur
      * The identifier for the value to match against in the JSON. The identifier must be an exact match, including case.
      * </p>
      * <p>
-     * JSON example: <code>"Identifier": [ "/login/success" ]</code>
+     * JSON examples: <code>"Identifier": [ "/login/success" ]</code> and
+     * <code>"Identifier": [ "/sign-up/success" ]</code>
      * </p>
      * 
      * @return The identifier for the value to match against in the JSON. The identifier must be an exact match,
      *         including case.</p>
      *         <p>
-     *         JSON example: <code>"Identifier": [ "/login/success" ]</code>
+     *         JSON examples: <code>"Identifier": [ "/login/success" ]</code> and
+     *         <code>"Identifier": [ "/sign-up/success" ]</code>
      */
 
     public String getIdentifier() {
@@ -108,14 +114,16 @@ public class ResponseInspectionJson implements Serializable, Cloneable, Structur
      * The identifier for the value to match against in the JSON. The identifier must be an exact match, including case.
      * </p>
      * <p>
-     * JSON example: <code>"Identifier": [ "/login/success" ]</code>
+     * JSON examples: <code>"Identifier": [ "/login/success" ]</code> and
+     * <code>"Identifier": [ "/sign-up/success" ]</code>
      * </p>
      * 
      * @param identifier
      *        The identifier for the value to match against in the JSON. The identifier must be an exact match,
      *        including case.</p>
      *        <p>
-     *        JSON example: <code>"Identifier": [ "/login/success" ]</code>
+     *        JSON examples: <code>"Identifier": [ "/login/success" ]</code> and
+     *        <code>"Identifier": [ "/sign-up/success" ]</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,17 +134,17 @@ public class ResponseInspectionJson implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Values for the specified identifier in the response JSON that indicate a successful login attempt. To be counted
-     * as a successful login, the value must be an exact match, including case. Each value must be unique among the
-     * success and failure values.
+     * Values for the specified identifier in the response JSON that indicate a successful login or account creation
+     * attempt. To be counted as a success, the value must be an exact match, including case. Each value must be unique
+     * among the success and failure values.
      * </p>
      * <p>
      * JSON example: <code>"SuccessValues": [ "True", "Succeeded" ]</code>
      * </p>
      * 
-     * @return Values for the specified identifier in the response JSON that indicate a successful login attempt. To be
-     *         counted as a successful login, the value must be an exact match, including case. Each value must be
-     *         unique among the success and failure values. </p>
+     * @return Values for the specified identifier in the response JSON that indicate a successful login or account
+     *         creation attempt. To be counted as a success, the value must be an exact match, including case. Each
+     *         value must be unique among the success and failure values. </p>
      *         <p>
      *         JSON example: <code>"SuccessValues": [ "True", "Succeeded" ]</code>
      */
@@ -147,18 +155,18 @@ public class ResponseInspectionJson implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Values for the specified identifier in the response JSON that indicate a successful login attempt. To be counted
-     * as a successful login, the value must be an exact match, including case. Each value must be unique among the
-     * success and failure values.
+     * Values for the specified identifier in the response JSON that indicate a successful login or account creation
+     * attempt. To be counted as a success, the value must be an exact match, including case. Each value must be unique
+     * among the success and failure values.
      * </p>
      * <p>
      * JSON example: <code>"SuccessValues": [ "True", "Succeeded" ]</code>
      * </p>
      * 
      * @param successValues
-     *        Values for the specified identifier in the response JSON that indicate a successful login attempt. To be
-     *        counted as a successful login, the value must be an exact match, including case. Each value must be unique
-     *        among the success and failure values. </p>
+     *        Values for the specified identifier in the response JSON that indicate a successful login or account
+     *        creation attempt. To be counted as a success, the value must be an exact match, including case. Each value
+     *        must be unique among the success and failure values. </p>
      *        <p>
      *        JSON example: <code>"SuccessValues": [ "True", "Succeeded" ]</code>
      */
@@ -174,9 +182,9 @@ public class ResponseInspectionJson implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Values for the specified identifier in the response JSON that indicate a successful login attempt. To be counted
-     * as a successful login, the value must be an exact match, including case. Each value must be unique among the
-     * success and failure values.
+     * Values for the specified identifier in the response JSON that indicate a successful login or account creation
+     * attempt. To be counted as a success, the value must be an exact match, including case. Each value must be unique
+     * among the success and failure values.
      * </p>
      * <p>
      * JSON example: <code>"SuccessValues": [ "True", "Succeeded" ]</code>
@@ -188,9 +196,9 @@ public class ResponseInspectionJson implements Serializable, Cloneable, Structur
      * </p>
      * 
      * @param successValues
-     *        Values for the specified identifier in the response JSON that indicate a successful login attempt. To be
-     *        counted as a successful login, the value must be an exact match, including case. Each value must be unique
-     *        among the success and failure values. </p>
+     *        Values for the specified identifier in the response JSON that indicate a successful login or account
+     *        creation attempt. To be counted as a success, the value must be an exact match, including case. Each value
+     *        must be unique among the success and failure values. </p>
      *        <p>
      *        JSON example: <code>"SuccessValues": [ "True", "Succeeded" ]</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -208,18 +216,18 @@ public class ResponseInspectionJson implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Values for the specified identifier in the response JSON that indicate a successful login attempt. To be counted
-     * as a successful login, the value must be an exact match, including case. Each value must be unique among the
-     * success and failure values.
+     * Values for the specified identifier in the response JSON that indicate a successful login or account creation
+     * attempt. To be counted as a success, the value must be an exact match, including case. Each value must be unique
+     * among the success and failure values.
      * </p>
      * <p>
      * JSON example: <code>"SuccessValues": [ "True", "Succeeded" ]</code>
      * </p>
      * 
      * @param successValues
-     *        Values for the specified identifier in the response JSON that indicate a successful login attempt. To be
-     *        counted as a successful login, the value must be an exact match, including case. Each value must be unique
-     *        among the success and failure values. </p>
+     *        Values for the specified identifier in the response JSON that indicate a successful login or account
+     *        creation attempt. To be counted as a success, the value must be an exact match, including case. Each value
+     *        must be unique among the success and failure values. </p>
      *        <p>
      *        JSON example: <code>"SuccessValues": [ "True", "Succeeded" ]</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -232,17 +240,17 @@ public class ResponseInspectionJson implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Values for the specified identifier in the response JSON that indicate a failed login attempt. To be counted as a
-     * failed login, the value must be an exact match, including case. Each value must be unique among the success and
-     * failure values.
+     * Values for the specified identifier in the response JSON that indicate a failed login or account creation
+     * attempt. To be counted as a failure, the value must be an exact match, including case. Each value must be unique
+     * among the success and failure values.
      * </p>
      * <p>
      * JSON example: <code>"FailureValues": [ "False", "Failed" ]</code>
      * </p>
      * 
-     * @return Values for the specified identifier in the response JSON that indicate a failed login attempt. To be
-     *         counted as a failed login, the value must be an exact match, including case. Each value must be unique
-     *         among the success and failure values. </p>
+     * @return Values for the specified identifier in the response JSON that indicate a failed login or account creation
+     *         attempt. To be counted as a failure, the value must be an exact match, including case. Each value must be
+     *         unique among the success and failure values. </p>
      *         <p>
      *         JSON example: <code>"FailureValues": [ "False", "Failed" ]</code>
      */
@@ -253,18 +261,18 @@ public class ResponseInspectionJson implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Values for the specified identifier in the response JSON that indicate a failed login attempt. To be counted as a
-     * failed login, the value must be an exact match, including case. Each value must be unique among the success and
-     * failure values.
+     * Values for the specified identifier in the response JSON that indicate a failed login or account creation
+     * attempt. To be counted as a failure, the value must be an exact match, including case. Each value must be unique
+     * among the success and failure values.
      * </p>
      * <p>
      * JSON example: <code>"FailureValues": [ "False", "Failed" ]</code>
      * </p>
      * 
      * @param failureValues
-     *        Values for the specified identifier in the response JSON that indicate a failed login attempt. To be
-     *        counted as a failed login, the value must be an exact match, including case. Each value must be unique
-     *        among the success and failure values. </p>
+     *        Values for the specified identifier in the response JSON that indicate a failed login or account creation
+     *        attempt. To be counted as a failure, the value must be an exact match, including case. Each value must be
+     *        unique among the success and failure values. </p>
      *        <p>
      *        JSON example: <code>"FailureValues": [ "False", "Failed" ]</code>
      */
@@ -280,9 +288,9 @@ public class ResponseInspectionJson implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Values for the specified identifier in the response JSON that indicate a failed login attempt. To be counted as a
-     * failed login, the value must be an exact match, including case. Each value must be unique among the success and
-     * failure values.
+     * Values for the specified identifier in the response JSON that indicate a failed login or account creation
+     * attempt. To be counted as a failure, the value must be an exact match, including case. Each value must be unique
+     * among the success and failure values.
      * </p>
      * <p>
      * JSON example: <code>"FailureValues": [ "False", "Failed" ]</code>
@@ -294,9 +302,9 @@ public class ResponseInspectionJson implements Serializable, Cloneable, Structur
      * </p>
      * 
      * @param failureValues
-     *        Values for the specified identifier in the response JSON that indicate a failed login attempt. To be
-     *        counted as a failed login, the value must be an exact match, including case. Each value must be unique
-     *        among the success and failure values. </p>
+     *        Values for the specified identifier in the response JSON that indicate a failed login or account creation
+     *        attempt. To be counted as a failure, the value must be an exact match, including case. Each value must be
+     *        unique among the success and failure values. </p>
      *        <p>
      *        JSON example: <code>"FailureValues": [ "False", "Failed" ]</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -314,18 +322,18 @@ public class ResponseInspectionJson implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Values for the specified identifier in the response JSON that indicate a failed login attempt. To be counted as a
-     * failed login, the value must be an exact match, including case. Each value must be unique among the success and
-     * failure values.
+     * Values for the specified identifier in the response JSON that indicate a failed login or account creation
+     * attempt. To be counted as a failure, the value must be an exact match, including case. Each value must be unique
+     * among the success and failure values.
      * </p>
      * <p>
      * JSON example: <code>"FailureValues": [ "False", "Failed" ]</code>
      * </p>
      * 
      * @param failureValues
-     *        Values for the specified identifier in the response JSON that indicate a failed login attempt. To be
-     *        counted as a failed login, the value must be an exact match, including case. Each value must be unique
-     *        among the success and failure values. </p>
+     *        Values for the specified identifier in the response JSON that indicate a failed login or account creation
+     *        attempt. To be counted as a failure, the value must be an exact match, including case. Each value must be
+     *        unique among the success and failure values. </p>
      *        <p>
      *        JSON example: <code>"FailureValues": [ "False", "Failed" ]</code>
      * @return Returns a reference to this object so that method calls can be chained together.

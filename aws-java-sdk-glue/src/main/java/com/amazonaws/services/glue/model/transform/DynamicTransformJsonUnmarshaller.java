@@ -80,6 +80,12 @@ public class DynamicTransformJsonUnmarshaller implements Unmarshaller<DynamicTra
                     context.nextToken();
                     dynamicTransform.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("OutputSchemas", targetDepth)) {
+                    context.nextToken();
+                    dynamicTransform.setOutputSchemas(new ListUnmarshaller<GlueSchema>(GlueSchemaJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

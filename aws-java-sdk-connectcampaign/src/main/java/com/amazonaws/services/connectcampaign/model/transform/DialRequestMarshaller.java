@@ -29,14 +29,14 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DialRequestMarshaller {
 
-    private static final MarshallingInfo<Map> ATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("attributes").build();
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken").build();
-    private static final MarshallingInfo<java.util.Date> EXPIRATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("expirationTime").timestampFormat("iso8601").build();
     private static final MarshallingInfo<String> PHONENUMBER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("phoneNumber").build();
+    private static final MarshallingInfo<java.util.Date> EXPIRATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("expirationTime").timestampFormat("iso8601").build();
+    private static final MarshallingInfo<Map> ATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("attributes").build();
 
     private static final DialRequestMarshaller instance = new DialRequestMarshaller();
 
@@ -54,10 +54,10 @@ public class DialRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(dialRequest.getAttributes(), ATTRIBUTES_BINDING);
             protocolMarshaller.marshall(dialRequest.getClientToken(), CLIENTTOKEN_BINDING);
-            protocolMarshaller.marshall(dialRequest.getExpirationTime(), EXPIRATIONTIME_BINDING);
             protocolMarshaller.marshall(dialRequest.getPhoneNumber(), PHONENUMBER_BINDING);
+            protocolMarshaller.marshall(dialRequest.getExpirationTime(), EXPIRATIONTIME_BINDING);
+            protocolMarshaller.marshall(dialRequest.getAttributes(), ATTRIBUTES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

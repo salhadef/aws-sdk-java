@@ -39,6 +39,8 @@ public class ListAnswersRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("NextToken").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("MaxResults").build();
+    private static final MarshallingInfo<String> QUESTIONPRIORITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("QuestionPriority").build();
 
     private static final ListAnswersRequestMarshaller instance = new ListAnswersRequestMarshaller();
 
@@ -62,6 +64,7 @@ public class ListAnswersRequestMarshaller {
             protocolMarshaller.marshall(listAnswersRequest.getMilestoneNumber(), MILESTONENUMBER_BINDING);
             protocolMarshaller.marshall(listAnswersRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listAnswersRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(listAnswersRequest.getQuestionPriority(), QUESTIONPRIORITY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

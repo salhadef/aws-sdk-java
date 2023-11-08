@@ -71,6 +71,10 @@ public class CopyDistributionRequestMarshaller implements Marshaller<Request<Cop
                 if (copyDistributionRequest.getCallerReference() != null) {
                     xmlWriter.startElement("CallerReference").value(copyDistributionRequest.getCallerReference()).endElement();
                 }
+
+                if (copyDistributionRequest.getEnabled() != null) {
+                    xmlWriter.startElement("Enabled").value(copyDistributionRequest.getEnabled()).endElement();
+                }
             }
             xmlWriter.endElement();
 

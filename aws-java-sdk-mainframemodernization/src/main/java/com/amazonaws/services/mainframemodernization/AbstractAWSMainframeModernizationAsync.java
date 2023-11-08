@@ -225,6 +225,19 @@ public class AbstractAWSMainframeModernizationAsync extends AbstractAWSMainframe
     }
 
     @Override
+    public java.util.concurrent.Future<GetSignedBluinsightsUrlResult> getSignedBluinsightsUrlAsync(GetSignedBluinsightsUrlRequest request) {
+
+        return getSignedBluinsightsUrlAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSignedBluinsightsUrlResult> getSignedBluinsightsUrlAsync(GetSignedBluinsightsUrlRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetSignedBluinsightsUrlRequest, GetSignedBluinsightsUrlResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListApplicationVersionsResult> listApplicationVersionsAsync(ListApplicationVersionsRequest request) {
 
         return listApplicationVersionsAsync(request, null);

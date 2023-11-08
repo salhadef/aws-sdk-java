@@ -27,6 +27,12 @@ public class ListDevicePositionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
+     * The geomerty used to filter device positions.
+     * </p>
+     */
+    private TrackingFilterGeometry filterGeometry;
+    /**
+     * <p>
      * An optional limit for the number of entries returned in a single call.
      * </p>
      * <p>
@@ -50,6 +56,46 @@ public class ListDevicePositionsRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String trackerName;
+
+    /**
+     * <p>
+     * The geomerty used to filter device positions.
+     * </p>
+     * 
+     * @param filterGeometry
+     *        The geomerty used to filter device positions.
+     */
+
+    public void setFilterGeometry(TrackingFilterGeometry filterGeometry) {
+        this.filterGeometry = filterGeometry;
+    }
+
+    /**
+     * <p>
+     * The geomerty used to filter device positions.
+     * </p>
+     * 
+     * @return The geomerty used to filter device positions.
+     */
+
+    public TrackingFilterGeometry getFilterGeometry() {
+        return this.filterGeometry;
+    }
+
+    /**
+     * <p>
+     * The geomerty used to filter device positions.
+     * </p>
+     * 
+     * @param filterGeometry
+     *        The geomerty used to filter device positions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListDevicePositionsRequest withFilterGeometry(TrackingFilterGeometry filterGeometry) {
+        setFilterGeometry(filterGeometry);
+        return this;
+    }
 
     /**
      * <p>
@@ -219,6 +265,8 @@ public class ListDevicePositionsRequest extends com.amazonaws.AmazonWebServiceRe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getFilterGeometry() != null)
+            sb.append("FilterGeometry: ").append(getFilterGeometry()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
@@ -239,6 +287,10 @@ public class ListDevicePositionsRequest extends com.amazonaws.AmazonWebServiceRe
         if (obj instanceof ListDevicePositionsRequest == false)
             return false;
         ListDevicePositionsRequest other = (ListDevicePositionsRequest) obj;
+        if (other.getFilterGeometry() == null ^ this.getFilterGeometry() == null)
+            return false;
+        if (other.getFilterGeometry() != null && other.getFilterGeometry().equals(this.getFilterGeometry()) == false)
+            return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
@@ -259,6 +311,7 @@ public class ListDevicePositionsRequest extends com.amazonaws.AmazonWebServiceRe
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getFilterGeometry() == null) ? 0 : getFilterGeometry().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getTrackerName() == null) ? 0 : getTrackerName().hashCode());

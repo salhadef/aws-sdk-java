@@ -24,7 +24,8 @@ public enum RecommendationSourceType {
     AutoScalingGroup("AutoScalingGroup"),
     EbsVolume("EbsVolume"),
     LambdaFunction("LambdaFunction"),
-    EcsService("EcsService");
+    EcsService("EcsService"),
+    License("License");
 
     private String value;
 

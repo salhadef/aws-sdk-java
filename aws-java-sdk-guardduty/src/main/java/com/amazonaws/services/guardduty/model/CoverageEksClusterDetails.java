@@ -52,6 +52,19 @@ public class CoverageEksClusterDetails implements Serializable, Cloneable, Struc
      * </p>
      */
     private AddonDetails addonDetails;
+    /**
+     * <p>
+     * Indicates how the Amazon EKS add-on GuardDuty agent is managed for this EKS cluster.
+     * </p>
+     * <p>
+     * <code>AUTO_MANAGED</code> indicates GuardDuty deploys and manages updates for this resource.
+     * </p>
+     * <p>
+     * <code>MANUAL</code> indicates that you are responsible to deploy, update, and manage the Amazon EKS add-on
+     * GuardDuty agent for this resource.
+     * </p>
+     */
+    private String managementType;
 
     /**
      * <p>
@@ -214,6 +227,117 @@ public class CoverageEksClusterDetails implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * Indicates how the Amazon EKS add-on GuardDuty agent is managed for this EKS cluster.
+     * </p>
+     * <p>
+     * <code>AUTO_MANAGED</code> indicates GuardDuty deploys and manages updates for this resource.
+     * </p>
+     * <p>
+     * <code>MANUAL</code> indicates that you are responsible to deploy, update, and manage the Amazon EKS add-on
+     * GuardDuty agent for this resource.
+     * </p>
+     * 
+     * @param managementType
+     *        Indicates how the Amazon EKS add-on GuardDuty agent is managed for this EKS cluster.</p>
+     *        <p>
+     *        <code>AUTO_MANAGED</code> indicates GuardDuty deploys and manages updates for this resource.
+     *        </p>
+     *        <p>
+     *        <code>MANUAL</code> indicates that you are responsible to deploy, update, and manage the Amazon EKS add-on
+     *        GuardDuty agent for this resource.
+     * @see ManagementType
+     */
+
+    public void setManagementType(String managementType) {
+        this.managementType = managementType;
+    }
+
+    /**
+     * <p>
+     * Indicates how the Amazon EKS add-on GuardDuty agent is managed for this EKS cluster.
+     * </p>
+     * <p>
+     * <code>AUTO_MANAGED</code> indicates GuardDuty deploys and manages updates for this resource.
+     * </p>
+     * <p>
+     * <code>MANUAL</code> indicates that you are responsible to deploy, update, and manage the Amazon EKS add-on
+     * GuardDuty agent for this resource.
+     * </p>
+     * 
+     * @return Indicates how the Amazon EKS add-on GuardDuty agent is managed for this EKS cluster.</p>
+     *         <p>
+     *         <code>AUTO_MANAGED</code> indicates GuardDuty deploys and manages updates for this resource.
+     *         </p>
+     *         <p>
+     *         <code>MANUAL</code> indicates that you are responsible to deploy, update, and manage the Amazon EKS
+     *         add-on GuardDuty agent for this resource.
+     * @see ManagementType
+     */
+
+    public String getManagementType() {
+        return this.managementType;
+    }
+
+    /**
+     * <p>
+     * Indicates how the Amazon EKS add-on GuardDuty agent is managed for this EKS cluster.
+     * </p>
+     * <p>
+     * <code>AUTO_MANAGED</code> indicates GuardDuty deploys and manages updates for this resource.
+     * </p>
+     * <p>
+     * <code>MANUAL</code> indicates that you are responsible to deploy, update, and manage the Amazon EKS add-on
+     * GuardDuty agent for this resource.
+     * </p>
+     * 
+     * @param managementType
+     *        Indicates how the Amazon EKS add-on GuardDuty agent is managed for this EKS cluster.</p>
+     *        <p>
+     *        <code>AUTO_MANAGED</code> indicates GuardDuty deploys and manages updates for this resource.
+     *        </p>
+     *        <p>
+     *        <code>MANUAL</code> indicates that you are responsible to deploy, update, and manage the Amazon EKS add-on
+     *        GuardDuty agent for this resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ManagementType
+     */
+
+    public CoverageEksClusterDetails withManagementType(String managementType) {
+        setManagementType(managementType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates how the Amazon EKS add-on GuardDuty agent is managed for this EKS cluster.
+     * </p>
+     * <p>
+     * <code>AUTO_MANAGED</code> indicates GuardDuty deploys and manages updates for this resource.
+     * </p>
+     * <p>
+     * <code>MANUAL</code> indicates that you are responsible to deploy, update, and manage the Amazon EKS add-on
+     * GuardDuty agent for this resource.
+     * </p>
+     * 
+     * @param managementType
+     *        Indicates how the Amazon EKS add-on GuardDuty agent is managed for this EKS cluster.</p>
+     *        <p>
+     *        <code>AUTO_MANAGED</code> indicates GuardDuty deploys and manages updates for this resource.
+     *        </p>
+     *        <p>
+     *        <code>MANUAL</code> indicates that you are responsible to deploy, update, and manage the Amazon EKS add-on
+     *        GuardDuty agent for this resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ManagementType
+     */
+
+    public CoverageEksClusterDetails withManagementType(ManagementType managementType) {
+        this.managementType = managementType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -232,7 +356,9 @@ public class CoverageEksClusterDetails implements Serializable, Cloneable, Struc
         if (getCompatibleNodes() != null)
             sb.append("CompatibleNodes: ").append(getCompatibleNodes()).append(",");
         if (getAddonDetails() != null)
-            sb.append("AddonDetails: ").append(getAddonDetails());
+            sb.append("AddonDetails: ").append(getAddonDetails()).append(",");
+        if (getManagementType() != null)
+            sb.append("ManagementType: ").append(getManagementType());
         sb.append("}");
         return sb.toString();
     }
@@ -263,6 +389,10 @@ public class CoverageEksClusterDetails implements Serializable, Cloneable, Struc
             return false;
         if (other.getAddonDetails() != null && other.getAddonDetails().equals(this.getAddonDetails()) == false)
             return false;
+        if (other.getManagementType() == null ^ this.getManagementType() == null)
+            return false;
+        if (other.getManagementType() != null && other.getManagementType().equals(this.getManagementType()) == false)
+            return false;
         return true;
     }
 
@@ -275,6 +405,7 @@ public class CoverageEksClusterDetails implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getCoveredNodes() == null) ? 0 : getCoveredNodes().hashCode());
         hashCode = prime * hashCode + ((getCompatibleNodes() == null) ? 0 : getCompatibleNodes().hashCode());
         hashCode = prime * hashCode + ((getAddonDetails() == null) ? 0 : getAddonDetails().hashCode());
+        hashCode = prime * hashCode + ((getManagementType() == null) ? 0 : getManagementType().hashCode());
         return hashCode;
     }
 

@@ -93,8 +93,8 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The mapping of all supported processing unit (CPU, GPU, etc...) to inference container definitions for the
-     * candidate. This field is populated for the V2 API only (for example, for jobs created by calling
-     * <code>CreateAutoMLJobV2</code>).
+     * candidate. This field is populated for the AutoML jobs V2 (for example, for jobs created by calling
+     * <code>CreateAutoMLJobV2</code>) related to image or text classification problem types only.
      * </p>
      */
     private java.util.Map<String, java.util.List<AutoMLContainerDefinition>> inferenceContainerDefinitions;
@@ -626,13 +626,13 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The mapping of all supported processing unit (CPU, GPU, etc...) to inference container definitions for the
-     * candidate. This field is populated for the V2 API only (for example, for jobs created by calling
-     * <code>CreateAutoMLJobV2</code>).
+     * candidate. This field is populated for the AutoML jobs V2 (for example, for jobs created by calling
+     * <code>CreateAutoMLJobV2</code>) related to image or text classification problem types only.
      * </p>
      * 
      * @return The mapping of all supported processing unit (CPU, GPU, etc...) to inference container definitions for
-     *         the candidate. This field is populated for the V2 API only (for example, for jobs created by calling
-     *         <code>CreateAutoMLJobV2</code>).
+     *         the candidate. This field is populated for the AutoML jobs V2 (for example, for jobs created by calling
+     *         <code>CreateAutoMLJobV2</code>) related to image or text classification problem types only.
      */
 
     public java.util.Map<String, java.util.List<AutoMLContainerDefinition>> getInferenceContainerDefinitions() {
@@ -642,14 +642,14 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The mapping of all supported processing unit (CPU, GPU, etc...) to inference container definitions for the
-     * candidate. This field is populated for the V2 API only (for example, for jobs created by calling
-     * <code>CreateAutoMLJobV2</code>).
+     * candidate. This field is populated for the AutoML jobs V2 (for example, for jobs created by calling
+     * <code>CreateAutoMLJobV2</code>) related to image or text classification problem types only.
      * </p>
      * 
      * @param inferenceContainerDefinitions
      *        The mapping of all supported processing unit (CPU, GPU, etc...) to inference container definitions for the
-     *        candidate. This field is populated for the V2 API only (for example, for jobs created by calling
-     *        <code>CreateAutoMLJobV2</code>).
+     *        candidate. This field is populated for the AutoML jobs V2 (for example, for jobs created by calling
+     *        <code>CreateAutoMLJobV2</code>) related to image or text classification problem types only.
      */
 
     public void setInferenceContainerDefinitions(java.util.Map<String, java.util.List<AutoMLContainerDefinition>> inferenceContainerDefinitions) {
@@ -659,14 +659,14 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The mapping of all supported processing unit (CPU, GPU, etc...) to inference container definitions for the
-     * candidate. This field is populated for the V2 API only (for example, for jobs created by calling
-     * <code>CreateAutoMLJobV2</code>).
+     * candidate. This field is populated for the AutoML jobs V2 (for example, for jobs created by calling
+     * <code>CreateAutoMLJobV2</code>) related to image or text classification problem types only.
      * </p>
      * 
      * @param inferenceContainerDefinitions
      *        The mapping of all supported processing unit (CPU, GPU, etc...) to inference container definitions for the
-     *        candidate. This field is populated for the V2 API only (for example, for jobs created by calling
-     *        <code>CreateAutoMLJobV2</code>).
+     *        candidate. This field is populated for the AutoML jobs V2 (for example, for jobs created by calling
+     *        <code>CreateAutoMLJobV2</code>) related to image or text classification problem types only.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

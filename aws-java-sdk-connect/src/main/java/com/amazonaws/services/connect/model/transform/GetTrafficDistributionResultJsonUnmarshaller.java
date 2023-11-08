@@ -60,6 +60,14 @@ public class GetTrafficDistributionResultJsonUnmarshaller implements Unmarshalle
                     context.nextToken();
                     getTrafficDistributionResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SignInConfig", targetDepth)) {
+                    context.nextToken();
+                    getTrafficDistributionResult.setSignInConfig(SignInConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AgentConfig", targetDepth)) {
+                    context.nextToken();
+                    getTrafficDistributionResult.setAgentConfig(AgentConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

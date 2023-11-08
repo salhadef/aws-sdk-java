@@ -44,6 +44,10 @@ public class ActuatorMarshaller {
             .marshallLocationName("max").build();
     private static final MarshallingInfo<String> ASSIGNEDVALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("assignedValue").build();
+    private static final MarshallingInfo<String> DEPRECATIONMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deprecationMessage").build();
+    private static final MarshallingInfo<String> COMMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("comment").build();
 
     private static final ActuatorMarshaller instance = new ActuatorMarshaller();
 
@@ -69,6 +73,8 @@ public class ActuatorMarshaller {
             protocolMarshaller.marshall(actuator.getMin(), MIN_BINDING);
             protocolMarshaller.marshall(actuator.getMax(), MAX_BINDING);
             protocolMarshaller.marshall(actuator.getAssignedValue(), ASSIGNEDVALUE_BINDING);
+            protocolMarshaller.marshall(actuator.getDeprecationMessage(), DEPRECATIONMESSAGE_BINDING);
+            protocolMarshaller.marshall(actuator.getComment(), COMMENT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

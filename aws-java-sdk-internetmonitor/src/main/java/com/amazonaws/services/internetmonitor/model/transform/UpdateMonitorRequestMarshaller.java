@@ -47,6 +47,8 @@ public class UpdateMonitorRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InternetMeasurementsLogDelivery").build();
     private static final MarshallingInfo<Integer> TRAFFICPERCENTAGETOMONITOR_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TrafficPercentageToMonitor").build();
+    private static final MarshallingInfo<StructuredPojo> HEALTHEVENTSCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HealthEventsConfig").build();
 
     private static final UpdateMonitorRequestMarshaller instance = new UpdateMonitorRequestMarshaller();
 
@@ -72,6 +74,7 @@ public class UpdateMonitorRequestMarshaller {
             protocolMarshaller.marshall(updateMonitorRequest.getMaxCityNetworksToMonitor(), MAXCITYNETWORKSTOMONITOR_BINDING);
             protocolMarshaller.marshall(updateMonitorRequest.getInternetMeasurementsLogDelivery(), INTERNETMEASUREMENTSLOGDELIVERY_BINDING);
             protocolMarshaller.marshall(updateMonitorRequest.getTrafficPercentageToMonitor(), TRAFFICPERCENTAGETOMONITOR_BINDING);
+            protocolMarshaller.marshall(updateMonitorRequest.getHealthEventsConfig(), HEALTHEVENTSCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -65,6 +65,10 @@ public class DestinationParameterValueConfigurationJsonUnmarshaller implements U
                     context.nextToken();
                     destinationParameterValueConfiguration.setSourceField(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SourceColumn", targetDepth)) {
+                    context.nextToken();
+                    destinationParameterValueConfiguration.setSourceColumn(ColumnIdentifierJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

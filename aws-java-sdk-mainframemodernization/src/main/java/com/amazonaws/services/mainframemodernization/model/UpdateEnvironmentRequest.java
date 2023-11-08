@@ -37,7 +37,8 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     private Boolean applyDuringMaintenanceWindow;
     /**
      * <p>
-     * The desired capacity for the runtime environment to update.
+     * The desired capacity for the runtime environment to update. The minimum possible value is 0 and the maximum is
+     * 100.
      * </p>
      */
     private Integer desiredCapacity;
@@ -55,14 +56,32 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     private String environmentId;
     /**
      * <p>
+     * Forces the updates on the environment. This option is needed if the applications in the environment are not
+     * stopped or if there are ongoing application-related activities in the environment.
+     * </p>
+     * <p>
+     * If you use this option, be aware that it could lead to data corruption in the applications, and that you might
+     * need to perform repair and recovery procedures for the applications.
+     * </p>
+     * <p>
+     * This option is not needed if the attribute being updated is <code>preferredMaintenanceWindow</code>.
+     * </p>
+     */
+    private Boolean forceUpdate;
+    /**
+     * <p>
      * The instance type for the runtime environment to update.
      * </p>
      */
     private String instanceType;
     /**
      * <p>
-     * Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random
-     * system-generated value will be assigned.
+     * Configures the maintenance window that you want for the runtime environment. The maintenance window must have the
+     * format <code>ddd:hh24:mi-ddd:hh24:mi</code> and must be less than 24 hours. The following two examples are valid
+     * maintenance windows: <code>sun:23:45-mon:00:15</code> or <code>sat:01:00-sat:03:00</code>.
+     * </p>
+     * <p>
+     * If you do not provide a value, a random system-generated value will be assigned.
      * </p>
      */
     private String preferredMaintenanceWindow;
@@ -153,11 +172,13 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The desired capacity for the runtime environment to update.
+     * The desired capacity for the runtime environment to update. The minimum possible value is 0 and the maximum is
+     * 100.
      * </p>
      * 
      * @param desiredCapacity
-     *        The desired capacity for the runtime environment to update.
+     *        The desired capacity for the runtime environment to update. The minimum possible value is 0 and the
+     *        maximum is 100.
      */
 
     public void setDesiredCapacity(Integer desiredCapacity) {
@@ -166,10 +187,12 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The desired capacity for the runtime environment to update.
+     * The desired capacity for the runtime environment to update. The minimum possible value is 0 and the maximum is
+     * 100.
      * </p>
      * 
-     * @return The desired capacity for the runtime environment to update.
+     * @return The desired capacity for the runtime environment to update. The minimum possible value is 0 and the
+     *         maximum is 100.
      */
 
     public Integer getDesiredCapacity() {
@@ -178,11 +201,13 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The desired capacity for the runtime environment to update.
+     * The desired capacity for the runtime environment to update. The minimum possible value is 0 and the maximum is
+     * 100.
      * </p>
      * 
      * @param desiredCapacity
-     *        The desired capacity for the runtime environment to update.
+     *        The desired capacity for the runtime environment to update. The minimum possible value is 0 and the
+     *        maximum is 100.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -273,6 +298,118 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
+     * Forces the updates on the environment. This option is needed if the applications in the environment are not
+     * stopped or if there are ongoing application-related activities in the environment.
+     * </p>
+     * <p>
+     * If you use this option, be aware that it could lead to data corruption in the applications, and that you might
+     * need to perform repair and recovery procedures for the applications.
+     * </p>
+     * <p>
+     * This option is not needed if the attribute being updated is <code>preferredMaintenanceWindow</code>.
+     * </p>
+     * 
+     * @param forceUpdate
+     *        Forces the updates on the environment. This option is needed if the applications in the environment are
+     *        not stopped or if there are ongoing application-related activities in the environment.</p>
+     *        <p>
+     *        If you use this option, be aware that it could lead to data corruption in the applications, and that you
+     *        might need to perform repair and recovery procedures for the applications.
+     *        </p>
+     *        <p>
+     *        This option is not needed if the attribute being updated is <code>preferredMaintenanceWindow</code>.
+     */
+
+    public void setForceUpdate(Boolean forceUpdate) {
+        this.forceUpdate = forceUpdate;
+    }
+
+    /**
+     * <p>
+     * Forces the updates on the environment. This option is needed if the applications in the environment are not
+     * stopped or if there are ongoing application-related activities in the environment.
+     * </p>
+     * <p>
+     * If you use this option, be aware that it could lead to data corruption in the applications, and that you might
+     * need to perform repair and recovery procedures for the applications.
+     * </p>
+     * <p>
+     * This option is not needed if the attribute being updated is <code>preferredMaintenanceWindow</code>.
+     * </p>
+     * 
+     * @return Forces the updates on the environment. This option is needed if the applications in the environment are
+     *         not stopped or if there are ongoing application-related activities in the environment.</p>
+     *         <p>
+     *         If you use this option, be aware that it could lead to data corruption in the applications, and that you
+     *         might need to perform repair and recovery procedures for the applications.
+     *         </p>
+     *         <p>
+     *         This option is not needed if the attribute being updated is <code>preferredMaintenanceWindow</code>.
+     */
+
+    public Boolean getForceUpdate() {
+        return this.forceUpdate;
+    }
+
+    /**
+     * <p>
+     * Forces the updates on the environment. This option is needed if the applications in the environment are not
+     * stopped or if there are ongoing application-related activities in the environment.
+     * </p>
+     * <p>
+     * If you use this option, be aware that it could lead to data corruption in the applications, and that you might
+     * need to perform repair and recovery procedures for the applications.
+     * </p>
+     * <p>
+     * This option is not needed if the attribute being updated is <code>preferredMaintenanceWindow</code>.
+     * </p>
+     * 
+     * @param forceUpdate
+     *        Forces the updates on the environment. This option is needed if the applications in the environment are
+     *        not stopped or if there are ongoing application-related activities in the environment.</p>
+     *        <p>
+     *        If you use this option, be aware that it could lead to data corruption in the applications, and that you
+     *        might need to perform repair and recovery procedures for the applications.
+     *        </p>
+     *        <p>
+     *        This option is not needed if the attribute being updated is <code>preferredMaintenanceWindow</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateEnvironmentRequest withForceUpdate(Boolean forceUpdate) {
+        setForceUpdate(forceUpdate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Forces the updates on the environment. This option is needed if the applications in the environment are not
+     * stopped or if there are ongoing application-related activities in the environment.
+     * </p>
+     * <p>
+     * If you use this option, be aware that it could lead to data corruption in the applications, and that you might
+     * need to perform repair and recovery procedures for the applications.
+     * </p>
+     * <p>
+     * This option is not needed if the attribute being updated is <code>preferredMaintenanceWindow</code>.
+     * </p>
+     * 
+     * @return Forces the updates on the environment. This option is needed if the applications in the environment are
+     *         not stopped or if there are ongoing application-related activities in the environment.</p>
+     *         <p>
+     *         If you use this option, be aware that it could lead to data corruption in the applications, and that you
+     *         might need to perform repair and recovery procedures for the applications.
+     *         </p>
+     *         <p>
+     *         This option is not needed if the attribute being updated is <code>preferredMaintenanceWindow</code>.
+     */
+
+    public Boolean isForceUpdate() {
+        return this.forceUpdate;
+    }
+
+    /**
+     * <p>
      * The instance type for the runtime environment to update.
      * </p>
      * 
@@ -313,13 +450,21 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random
-     * system-generated value will be assigned.
+     * Configures the maintenance window that you want for the runtime environment. The maintenance window must have the
+     * format <code>ddd:hh24:mi-ddd:hh24:mi</code> and must be less than 24 hours. The following two examples are valid
+     * maintenance windows: <code>sun:23:45-mon:00:15</code> or <code>sat:01:00-sat:03:00</code>.
+     * </p>
+     * <p>
+     * If you do not provide a value, a random system-generated value will be assigned.
      * </p>
      * 
      * @param preferredMaintenanceWindow
-     *        Configures the maintenance window you want for the runtime environment. If you do not provide a value, a
-     *        random system-generated value will be assigned.
+     *        Configures the maintenance window that you want for the runtime environment. The maintenance window must
+     *        have the format <code>ddd:hh24:mi-ddd:hh24:mi</code> and must be less than 24 hours. The following two
+     *        examples are valid maintenance windows: <code>sun:23:45-mon:00:15</code> or
+     *        <code>sat:01:00-sat:03:00</code>. </p>
+     *        <p>
+     *        If you do not provide a value, a random system-generated value will be assigned.
      */
 
     public void setPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
@@ -328,12 +473,20 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random
-     * system-generated value will be assigned.
+     * Configures the maintenance window that you want for the runtime environment. The maintenance window must have the
+     * format <code>ddd:hh24:mi-ddd:hh24:mi</code> and must be less than 24 hours. The following two examples are valid
+     * maintenance windows: <code>sun:23:45-mon:00:15</code> or <code>sat:01:00-sat:03:00</code>.
+     * </p>
+     * <p>
+     * If you do not provide a value, a random system-generated value will be assigned.
      * </p>
      * 
-     * @return Configures the maintenance window you want for the runtime environment. If you do not provide a value, a
-     *         random system-generated value will be assigned.
+     * @return Configures the maintenance window that you want for the runtime environment. The maintenance window must
+     *         have the format <code>ddd:hh24:mi-ddd:hh24:mi</code> and must be less than 24 hours. The following two
+     *         examples are valid maintenance windows: <code>sun:23:45-mon:00:15</code> or
+     *         <code>sat:01:00-sat:03:00</code>. </p>
+     *         <p>
+     *         If you do not provide a value, a random system-generated value will be assigned.
      */
 
     public String getPreferredMaintenanceWindow() {
@@ -342,13 +495,21 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random
-     * system-generated value will be assigned.
+     * Configures the maintenance window that you want for the runtime environment. The maintenance window must have the
+     * format <code>ddd:hh24:mi-ddd:hh24:mi</code> and must be less than 24 hours. The following two examples are valid
+     * maintenance windows: <code>sun:23:45-mon:00:15</code> or <code>sat:01:00-sat:03:00</code>.
+     * </p>
+     * <p>
+     * If you do not provide a value, a random system-generated value will be assigned.
      * </p>
      * 
      * @param preferredMaintenanceWindow
-     *        Configures the maintenance window you want for the runtime environment. If you do not provide a value, a
-     *        random system-generated value will be assigned.
+     *        Configures the maintenance window that you want for the runtime environment. The maintenance window must
+     *        have the format <code>ddd:hh24:mi-ddd:hh24:mi</code> and must be less than 24 hours. The following two
+     *        examples are valid maintenance windows: <code>sun:23:45-mon:00:15</code> or
+     *        <code>sat:01:00-sat:03:00</code>. </p>
+     *        <p>
+     *        If you do not provide a value, a random system-generated value will be assigned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -377,6 +538,8 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
             sb.append("EngineVersion: ").append(getEngineVersion()).append(",");
         if (getEnvironmentId() != null)
             sb.append("EnvironmentId: ").append(getEnvironmentId()).append(",");
+        if (getForceUpdate() != null)
+            sb.append("ForceUpdate: ").append(getForceUpdate()).append(",");
         if (getInstanceType() != null)
             sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getPreferredMaintenanceWindow() != null)
@@ -411,6 +574,10 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getEnvironmentId() != null && other.getEnvironmentId().equals(this.getEnvironmentId()) == false)
             return false;
+        if (other.getForceUpdate() == null ^ this.getForceUpdate() == null)
+            return false;
+        if (other.getForceUpdate() != null && other.getForceUpdate().equals(this.getForceUpdate()) == false)
+            return false;
         if (other.getInstanceType() == null ^ this.getInstanceType() == null)
             return false;
         if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
@@ -431,6 +598,7 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getDesiredCapacity() == null) ? 0 : getDesiredCapacity().hashCode());
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());
         hashCode = prime * hashCode + ((getEnvironmentId() == null) ? 0 : getEnvironmentId().hashCode());
+        hashCode = prime * hashCode + ((getForceUpdate() == null) ? 0 : getForceUpdate().hashCode());
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
         hashCode = prime * hashCode + ((getPreferredMaintenanceWindow() == null) ? 0 : getPreferredMaintenanceWindow().hashCode());
         return hashCode;

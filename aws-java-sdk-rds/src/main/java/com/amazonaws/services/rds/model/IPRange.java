@@ -27,25 +27,24 @@ public class IPRange implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the status of the IP range. Status can be "authorizing", "authorized", "revoking", and "revoked".
+     * The status of the IP range. Status can be "authorizing", "authorized", "revoking", and "revoked".
      * </p>
      */
     private String status;
     /**
      * <p>
-     * Specifies the IP range.
+     * The IP range.
      * </p>
      */
     private String cIDRIP;
 
     /**
      * <p>
-     * Specifies the status of the IP range. Status can be "authorizing", "authorized", "revoking", and "revoked".
+     * The status of the IP range. Status can be "authorizing", "authorized", "revoking", and "revoked".
      * </p>
      * 
      * @param status
-     *        Specifies the status of the IP range. Status can be "authorizing", "authorized", "revoking", and
-     *        "revoked".
+     *        The status of the IP range. Status can be "authorizing", "authorized", "revoking", and "revoked".
      */
 
     public void setStatus(String status) {
@@ -54,11 +53,10 @@ public class IPRange implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the status of the IP range. Status can be "authorizing", "authorized", "revoking", and "revoked".
+     * The status of the IP range. Status can be "authorizing", "authorized", "revoking", and "revoked".
      * </p>
      * 
-     * @return Specifies the status of the IP range. Status can be "authorizing", "authorized", "revoking", and
-     *         "revoked".
+     * @return The status of the IP range. Status can be "authorizing", "authorized", "revoking", and "revoked".
      */
 
     public String getStatus() {
@@ -67,12 +65,11 @@ public class IPRange implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the status of the IP range. Status can be "authorizing", "authorized", "revoking", and "revoked".
+     * The status of the IP range. Status can be "authorizing", "authorized", "revoking", and "revoked".
      * </p>
      * 
      * @param status
-     *        Specifies the status of the IP range. Status can be "authorizing", "authorized", "revoking", and
-     *        "revoked".
+     *        The status of the IP range. Status can be "authorizing", "authorized", "revoking", and "revoked".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +80,11 @@ public class IPRange implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the IP range.
+     * The IP range.
      * </p>
      * 
      * @param cIDRIP
-     *        Specifies the IP range.
+     *        The IP range.
      */
 
     public void setCIDRIP(String cIDRIP) {
@@ -96,10 +93,10 @@ public class IPRange implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the IP range.
+     * The IP range.
      * </p>
      * 
-     * @return Specifies the IP range.
+     * @return The IP range.
      */
 
     public String getCIDRIP() {
@@ -108,11 +105,11 @@ public class IPRange implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the IP range.
+     * The IP range.
      * </p>
      * 
      * @param cIDRIP
-     *        Specifies the IP range.
+     *        The IP range.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

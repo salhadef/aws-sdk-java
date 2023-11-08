@@ -65,6 +65,10 @@ public class ValidDBInstanceModificationsMessageStaxUnmarshaller implements Unma
                     continue;
                 }
 
+                if (context.testExpression("SupportsDedicatedLogVolume", targetDepth)) {
+                    validDBInstanceModificationsMessage.setSupportsDedicatedLogVolume(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return validDBInstanceModificationsMessage;

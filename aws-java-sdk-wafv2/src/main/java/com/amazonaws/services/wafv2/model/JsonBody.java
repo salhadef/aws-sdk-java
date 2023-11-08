@@ -47,8 +47,14 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
     private JsonMatchPattern matchPattern;
     /**
      * <p>
-     * The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify <code>All</code>, WAF
+     * The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify <code>ALL</code>, WAF
      * matches against keys and values.
+     * </p>
+     * <p>
+     * <code>All</code> does not require a match to be found in the keys and a match to be found in the values. It
+     * requires a match to be found in the keys or the values or both. To require a match in the keys and in the values,
+     * use a logical <code>AND</code> statement to combine two match rules, one that inspects the keys and another that
+     * inspects the values.
      * </p>
      */
     private String matchScope;
@@ -112,7 +118,7 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
      * the limit, the underlying host service only forwards the contents that are below the limit to WAF for inspection.
      * </p>
      * <p>
-     * The default limit is 8 KB (8,192 kilobytes) for regional resources and 16 KB (16,384 kilobytes) for CloudFront
+     * The default limit is 8 KB (8,192 bytes) for regional resources and 16 KB (16,384 bytes) for CloudFront
      * distributions. For CloudFront distributions, you can increase the limit in the web ACL
      * <code>AssociationConfig</code>, for additional processing fees.
      * </p>
@@ -122,7 +128,7 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>CONTINUE</code> - Inspect the body normally, according to the rule inspection criteria.
+     * <code>CONTINUE</code> - Inspect the available body contents normally, according to the rule inspection criteria.
      * </p>
      * </li>
      * <li>
@@ -195,13 +201,24 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify <code>All</code>, WAF
+     * The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify <code>ALL</code>, WAF
      * matches against keys and values.
+     * </p>
+     * <p>
+     * <code>All</code> does not require a match to be found in the keys and a match to be found in the values. It
+     * requires a match to be found in the keys or the values or both. To require a match in the keys and in the values,
+     * use a logical <code>AND</code> statement to combine two match rules, one that inspects the keys and another that
+     * inspects the values.
      * </p>
      * 
      * @param matchScope
      *        The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify
-     *        <code>All</code>, WAF matches against keys and values.
+     *        <code>ALL</code>, WAF matches against keys and values. </p>
+     *        <p>
+     *        <code>All</code> does not require a match to be found in the keys and a match to be found in the values.
+     *        It requires a match to be found in the keys or the values or both. To require a match in the keys and in
+     *        the values, use a logical <code>AND</code> statement to combine two match rules, one that inspects the
+     *        keys and another that inspects the values.
      * @see JsonMatchScope
      */
 
@@ -211,12 +228,23 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify <code>All</code>, WAF
+     * The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify <code>ALL</code>, WAF
      * matches against keys and values.
+     * </p>
+     * <p>
+     * <code>All</code> does not require a match to be found in the keys and a match to be found in the values. It
+     * requires a match to be found in the keys or the values or both. To require a match in the keys and in the values,
+     * use a logical <code>AND</code> statement to combine two match rules, one that inspects the keys and another that
+     * inspects the values.
      * </p>
      * 
      * @return The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify
-     *         <code>All</code>, WAF matches against keys and values.
+     *         <code>ALL</code>, WAF matches against keys and values. </p>
+     *         <p>
+     *         <code>All</code> does not require a match to be found in the keys and a match to be found in the values.
+     *         It requires a match to be found in the keys or the values or both. To require a match in the keys and in
+     *         the values, use a logical <code>AND</code> statement to combine two match rules, one that inspects the
+     *         keys and another that inspects the values.
      * @see JsonMatchScope
      */
 
@@ -226,13 +254,24 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify <code>All</code>, WAF
+     * The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify <code>ALL</code>, WAF
      * matches against keys and values.
+     * </p>
+     * <p>
+     * <code>All</code> does not require a match to be found in the keys and a match to be found in the values. It
+     * requires a match to be found in the keys or the values or both. To require a match in the keys and in the values,
+     * use a logical <code>AND</code> statement to combine two match rules, one that inspects the keys and another that
+     * inspects the values.
      * </p>
      * 
      * @param matchScope
      *        The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify
-     *        <code>All</code>, WAF matches against keys and values.
+     *        <code>ALL</code>, WAF matches against keys and values. </p>
+     *        <p>
+     *        <code>All</code> does not require a match to be found in the keys and a match to be found in the values.
+     *        It requires a match to be found in the keys or the values or both. To require a match in the keys and in
+     *        the values, use a logical <code>AND</code> statement to combine two match rules, one that inspects the
+     *        keys and another that inspects the values.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JsonMatchScope
      */
@@ -244,13 +283,24 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify <code>All</code>, WAF
+     * The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify <code>ALL</code>, WAF
      * matches against keys and values.
+     * </p>
+     * <p>
+     * <code>All</code> does not require a match to be found in the keys and a match to be found in the values. It
+     * requires a match to be found in the keys or the values or both. To require a match in the keys and in the values,
+     * use a logical <code>AND</code> statement to combine two match rules, one that inspects the keys and another that
+     * inspects the values.
      * </p>
      * 
      * @param matchScope
      *        The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify
-     *        <code>All</code>, WAF matches against keys and values.
+     *        <code>ALL</code>, WAF matches against keys and values. </p>
+     *        <p>
+     *        <code>All</code> does not require a match to be found in the keys and a match to be found in the values.
+     *        It requires a match to be found in the keys or the values or both. To require a match in the keys and in
+     *        the values, use a logical <code>AND</code> statement to combine two match rules, one that inspects the
+     *        keys and another that inspects the values.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JsonMatchScope
      */
@@ -698,7 +748,7 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
      * the limit, the underlying host service only forwards the contents that are below the limit to WAF for inspection.
      * </p>
      * <p>
-     * The default limit is 8 KB (8,192 kilobytes) for regional resources and 16 KB (16,384 kilobytes) for CloudFront
+     * The default limit is 8 KB (8,192 bytes) for regional resources and 16 KB (16,384 bytes) for CloudFront
      * distributions. For CloudFront distributions, you can increase the limit in the web ACL
      * <code>AssociationConfig</code>, for additional processing fees.
      * </p>
@@ -708,7 +758,7 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>CONTINUE</code> - Inspect the body normally, according to the rule inspection criteria.
+     * <code>CONTINUE</code> - Inspect the available body contents normally, according to the rule inspection criteria.
      * </p>
      * </li>
      * <li>
@@ -737,8 +787,8 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
      *        larger than the limit, the underlying host service only forwards the contents that are below the limit to
      *        WAF for inspection. </p>
      *        <p>
-     *        The default limit is 8 KB (8,192 kilobytes) for regional resources and 16 KB (16,384 kilobytes) for
-     *        CloudFront distributions. For CloudFront distributions, you can increase the limit in the web ACL
+     *        The default limit is 8 KB (8,192 bytes) for regional resources and 16 KB (16,384 bytes) for CloudFront
+     *        distributions. For CloudFront distributions, you can increase the limit in the web ACL
      *        <code>AssociationConfig</code>, for additional processing fees.
      *        </p>
      *        <p>
@@ -747,7 +797,8 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CONTINUE</code> - Inspect the body normally, according to the rule inspection criteria.
+     *        <code>CONTINUE</code> - Inspect the available body contents normally, according to the rule inspection
+     *        criteria.
      *        </p>
      *        </li>
      *        <li>
@@ -782,7 +833,7 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
      * the limit, the underlying host service only forwards the contents that are below the limit to WAF for inspection.
      * </p>
      * <p>
-     * The default limit is 8 KB (8,192 kilobytes) for regional resources and 16 KB (16,384 kilobytes) for CloudFront
+     * The default limit is 8 KB (8,192 bytes) for regional resources and 16 KB (16,384 bytes) for CloudFront
      * distributions. For CloudFront distributions, you can increase the limit in the web ACL
      * <code>AssociationConfig</code>, for additional processing fees.
      * </p>
@@ -792,7 +843,7 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>CONTINUE</code> - Inspect the body normally, according to the rule inspection criteria.
+     * <code>CONTINUE</code> - Inspect the available body contents normally, according to the rule inspection criteria.
      * </p>
      * </li>
      * <li>
@@ -820,8 +871,8 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
      *         larger than the limit, the underlying host service only forwards the contents that are below the limit to
      *         WAF for inspection. </p>
      *         <p>
-     *         The default limit is 8 KB (8,192 kilobytes) for regional resources and 16 KB (16,384 kilobytes) for
-     *         CloudFront distributions. For CloudFront distributions, you can increase the limit in the web ACL
+     *         The default limit is 8 KB (8,192 bytes) for regional resources and 16 KB (16,384 bytes) for CloudFront
+     *         distributions. For CloudFront distributions, you can increase the limit in the web ACL
      *         <code>AssociationConfig</code>, for additional processing fees.
      *         </p>
      *         <p>
@@ -830,7 +881,8 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>CONTINUE</code> - Inspect the body normally, according to the rule inspection criteria.
+     *         <code>CONTINUE</code> - Inspect the available body contents normally, according to the rule inspection
+     *         criteria.
      *         </p>
      *         </li>
      *         <li>
@@ -865,7 +917,7 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
      * the limit, the underlying host service only forwards the contents that are below the limit to WAF for inspection.
      * </p>
      * <p>
-     * The default limit is 8 KB (8,192 kilobytes) for regional resources and 16 KB (16,384 kilobytes) for CloudFront
+     * The default limit is 8 KB (8,192 bytes) for regional resources and 16 KB (16,384 bytes) for CloudFront
      * distributions. For CloudFront distributions, you can increase the limit in the web ACL
      * <code>AssociationConfig</code>, for additional processing fees.
      * </p>
@@ -875,7 +927,7 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>CONTINUE</code> - Inspect the body normally, according to the rule inspection criteria.
+     * <code>CONTINUE</code> - Inspect the available body contents normally, according to the rule inspection criteria.
      * </p>
      * </li>
      * <li>
@@ -904,8 +956,8 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
      *        larger than the limit, the underlying host service only forwards the contents that are below the limit to
      *        WAF for inspection. </p>
      *        <p>
-     *        The default limit is 8 KB (8,192 kilobytes) for regional resources and 16 KB (16,384 kilobytes) for
-     *        CloudFront distributions. For CloudFront distributions, you can increase the limit in the web ACL
+     *        The default limit is 8 KB (8,192 bytes) for regional resources and 16 KB (16,384 bytes) for CloudFront
+     *        distributions. For CloudFront distributions, you can increase the limit in the web ACL
      *        <code>AssociationConfig</code>, for additional processing fees.
      *        </p>
      *        <p>
@@ -914,7 +966,8 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CONTINUE</code> - Inspect the body normally, according to the rule inspection criteria.
+     *        <code>CONTINUE</code> - Inspect the available body contents normally, according to the rule inspection
+     *        criteria.
      *        </p>
      *        </li>
      *        <li>
@@ -951,7 +1004,7 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
      * the limit, the underlying host service only forwards the contents that are below the limit to WAF for inspection.
      * </p>
      * <p>
-     * The default limit is 8 KB (8,192 kilobytes) for regional resources and 16 KB (16,384 kilobytes) for CloudFront
+     * The default limit is 8 KB (8,192 bytes) for regional resources and 16 KB (16,384 bytes) for CloudFront
      * distributions. For CloudFront distributions, you can increase the limit in the web ACL
      * <code>AssociationConfig</code>, for additional processing fees.
      * </p>
@@ -961,7 +1014,7 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>CONTINUE</code> - Inspect the body normally, according to the rule inspection criteria.
+     * <code>CONTINUE</code> - Inspect the available body contents normally, according to the rule inspection criteria.
      * </p>
      * </li>
      * <li>
@@ -990,8 +1043,8 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
      *        larger than the limit, the underlying host service only forwards the contents that are below the limit to
      *        WAF for inspection. </p>
      *        <p>
-     *        The default limit is 8 KB (8,192 kilobytes) for regional resources and 16 KB (16,384 kilobytes) for
-     *        CloudFront distributions. For CloudFront distributions, you can increase the limit in the web ACL
+     *        The default limit is 8 KB (8,192 bytes) for regional resources and 16 KB (16,384 bytes) for CloudFront
+     *        distributions. For CloudFront distributions, you can increase the limit in the web ACL
      *        <code>AssociationConfig</code>, for additional processing fees.
      *        </p>
      *        <p>
@@ -1000,7 +1053,8 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CONTINUE</code> - Inspect the body normally, according to the rule inspection criteria.
+     *        <code>CONTINUE</code> - Inspect the available body contents normally, according to the rule inspection
+     *        criteria.
      *        </p>
      *        </li>
      *        <li>

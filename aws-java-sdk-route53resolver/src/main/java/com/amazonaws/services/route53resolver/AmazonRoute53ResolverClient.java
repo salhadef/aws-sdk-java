@@ -44,6 +44,7 @@ import com.amazonaws.services.route53resolver.AmazonRoute53ResolverClientBuilder
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.route53resolver.model.*;
+
 import com.amazonaws.services.route53resolver.model.transform.*;
 
 /**
@@ -111,38 +112,20 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.route53resolver.model.transform.InvalidParameterExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.route53resolver.model.transform.ResourceInUseExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withExceptionUnmarshaller(
                                     com.amazonaws.services.route53resolver.model.transform.InvalidRequestExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidPolicyDocument").withExceptionUnmarshaller(
                                     com.amazonaws.services.route53resolver.model.transform.InvalidPolicyDocumentExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.route53resolver.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.route53resolver.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withExceptionUnmarshaller(
                                     com.amazonaws.services.route53resolver.model.transform.InvalidNextTokenExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.route53resolver.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidTagException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.route53resolver.model.transform.InvalidTagExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.route53resolver.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.route53resolver.model.transform.ConflictExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UnknownResourceException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.route53resolver.model.transform.UnknownResourceExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.route53resolver.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
@@ -158,6 +141,27 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceExistsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.route53resolver.model.transform.ResourceExistsExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.route53resolver.model.transform.InvalidParameterExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.route53resolver.model.transform.ResourceInUseExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.route53resolver.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTagException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.route53resolver.model.transform.InvalidTagExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.route53resolver.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.route53resolver.model.transform.ConflictExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnknownResourceException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.route53resolver.model.transform.UnknownResourceExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.route53resolver.model.AmazonRoute53ResolverException.class));
 
     public static AmazonRoute53ResolverClientBuilder builder() {
@@ -735,6 +739,76 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
 
     /**
      * <p>
+     * Creates an Route 53 Resolver on an Outpost.
+     * </p>
+     * 
+     * @param createOutpostResolverRequest
+     * @return Result of the CreateOutpostResolver operation returned by the service.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws ServiceQuotaExceededException
+     *         Fulfilling the request would cause one or more quotas to be exceeded.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @throws ValidationException
+     *         You have provided an invalid command. Supported values are <code>ADD</code>, <code>REMOVE</code>, or
+     *         <code>REPLACE</code> a domain.
+     * @sample AmazonRoute53Resolver.CreateOutpostResolver
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateOutpostResolver"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateOutpostResolverResult createOutpostResolver(CreateOutpostResolverRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateOutpostResolver(request);
+    }
+
+    @SdkInternalApi
+    final CreateOutpostResolverResult executeCreateOutpostResolver(CreateOutpostResolverRequest createOutpostResolverRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createOutpostResolverRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateOutpostResolverRequest> request = null;
+        Response<CreateOutpostResolverResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateOutpostResolverRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createOutpostResolverRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route53Resolver");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateOutpostResolver");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateOutpostResolverResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new CreateOutpostResolverResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a Resolver endpoint. There are two types of Resolver endpoints, inbound and outbound:
      * </p>
      * <ul>
@@ -1172,6 +1246,78 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
             HttpResponseHandler<AmazonWebServiceResponse<DeleteFirewallRuleGroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteFirewallRuleGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a Resolver on the Outpost.
+     * </p>
+     * 
+     * @param deleteOutpostResolverRequest
+     * @return Result of the DeleteOutpostResolver operation returned by the service.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws ConflictException
+     *         The requested state transition isn't valid. For example, you can't delete a firewall domain list if it is
+     *         in the process of being deleted, or you can't import domains into a domain list that is in the process of
+     *         being deleted.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @throws ValidationException
+     *         You have provided an invalid command. Supported values are <code>ADD</code>, <code>REMOVE</code>, or
+     *         <code>REPLACE</code> a domain.
+     * @sample AmazonRoute53Resolver.DeleteOutpostResolver
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DeleteOutpostResolver"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteOutpostResolverResult deleteOutpostResolver(DeleteOutpostResolverRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteOutpostResolver(request);
+    }
+
+    @SdkInternalApi
+    final DeleteOutpostResolverResult executeDeleteOutpostResolver(DeleteOutpostResolverRequest deleteOutpostResolverRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteOutpostResolverRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteOutpostResolverRequest> request = null;
+        Response<DeleteOutpostResolverResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteOutpostResolverRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteOutpostResolverRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route53Resolver");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteOutpostResolver");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteOutpostResolverResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DeleteOutpostResolverResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2052,6 +2198,74 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
             HttpResponseHandler<AmazonWebServiceResponse<GetFirewallRuleGroupPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetFirewallRuleGroupPolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets information about a specified Resolver on the Outpost, such as its instance count and type, name, and the
+     * current status of the Resolver.
+     * </p>
+     * 
+     * @param getOutpostResolverRequest
+     * @return Result of the GetOutpostResolver operation returned by the service.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @throws ValidationException
+     *         You have provided an invalid command. Supported values are <code>ADD</code>, <code>REMOVE</code>, or
+     *         <code>REPLACE</code> a domain.
+     * @sample AmazonRoute53Resolver.GetOutpostResolver
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetOutpostResolver"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetOutpostResolverResult getOutpostResolver(GetOutpostResolverRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetOutpostResolver(request);
+    }
+
+    @SdkInternalApi
+    final GetOutpostResolverResult executeGetOutpostResolver(GetOutpostResolverRequest getOutpostResolverRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getOutpostResolverRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetOutpostResolverRequest> request = null;
+        Response<GetOutpostResolverResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetOutpostResolverRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getOutpostResolverRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route53Resolver");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetOutpostResolver");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetOutpostResolverResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetOutpostResolverResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3190,6 +3404,73 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
 
             HttpResponseHandler<AmazonWebServiceResponse<ListFirewallRulesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListFirewallRulesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all the Resolvers on Outposts that were created using the current Amazon Web Services account.
+     * </p>
+     * 
+     * @param listOutpostResolversRequest
+     * @return Result of the ListOutpostResolvers operation returned by the service.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @throws ValidationException
+     *         You have provided an invalid command. Supported values are <code>ADD</code>, <code>REMOVE</code>, or
+     *         <code>REPLACE</code> a domain.
+     * @sample AmazonRoute53Resolver.ListOutpostResolvers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListOutpostResolvers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListOutpostResolversResult listOutpostResolvers(ListOutpostResolversRequest request) {
+        request = beforeClientExecution(request);
+        return executeListOutpostResolvers(request);
+    }
+
+    @SdkInternalApi
+    final ListOutpostResolversResult executeListOutpostResolvers(ListOutpostResolversRequest listOutpostResolversRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listOutpostResolversRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListOutpostResolversRequest> request = null;
+        Response<ListOutpostResolversResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListOutpostResolversRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listOutpostResolversRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route53Resolver");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOutpostResolvers");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListOutpostResolversResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListOutpostResolversResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4443,6 +4724,81 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
             HttpResponseHandler<AmazonWebServiceResponse<UpdateFirewallRuleGroupAssociationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateFirewallRuleGroupAssociationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * You can use <code>UpdateOutpostResolver</code> to update the instance count, type, or name of a Resolver on an
+     * Outpost.
+     * </p>
+     * 
+     * @param updateOutpostResolverRequest
+     * @return Result of the UpdateOutpostResolver operation returned by the service.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws ConflictException
+     *         The requested state transition isn't valid. For example, you can't delete a firewall domain list if it is
+     *         in the process of being deleted, or you can't import domains into a domain list that is in the process of
+     *         being deleted.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws ServiceQuotaExceededException
+     *         Fulfilling the request would cause one or more quotas to be exceeded.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @throws ValidationException
+     *         You have provided an invalid command. Supported values are <code>ADD</code>, <code>REMOVE</code>, or
+     *         <code>REPLACE</code> a domain.
+     * @sample AmazonRoute53Resolver.UpdateOutpostResolver
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateOutpostResolver"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateOutpostResolverResult updateOutpostResolver(UpdateOutpostResolverRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateOutpostResolver(request);
+    }
+
+    @SdkInternalApi
+    final UpdateOutpostResolverResult executeUpdateOutpostResolver(UpdateOutpostResolverRequest updateOutpostResolverRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateOutpostResolverRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateOutpostResolverRequest> request = null;
+        Response<UpdateOutpostResolverResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateOutpostResolverRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateOutpostResolverRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route53Resolver");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateOutpostResolver");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateOutpostResolverResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new UpdateOutpostResolverResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

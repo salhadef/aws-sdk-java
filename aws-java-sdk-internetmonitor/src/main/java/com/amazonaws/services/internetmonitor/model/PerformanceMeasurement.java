@@ -19,12 +19,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Measurements about the performance for your application on the internet calculated by Amazon CloudWatch Internet
- * Monitor. Amazon Web Services has substantial historical data about internet performance and availability between
- * Amazon Web Services services and different network providers and geographies. By applying statistical analysis to the
- * data, Internet Monitor can detect when the performance and availability for your application has dropped, compared to
- * an estimated baseline that's already calculated. To make it easier to see those drops, we report that information to
- * you in the form of health scores: a performance score and an availability score.
+ * Amazon CloudWatch Internet Monitor calculates measurements about the performance for your application's internet
+ * traffic between client locations and Amazon Web Services. Amazon Web Services has substantial historical data about
+ * internet performance and availability between Amazon Web Services services and different network providers and
+ * geographies. By applying statistical analysis to the data, Internet Monitor can detect when the performance and
+ * availability for your application has dropped, compared to an estimated baseline that's already calculated. To make
+ * it easier to see those drops, we report that information to you in the form of health scores: a performance score and
+ * an availability score.
  * </p>
  * <p>
  * Performance in Internet Monitor represents the estimated percentage of traffic that is not seeing a performance drop.
@@ -63,9 +64,9 @@ public class PerformanceMeasurement implements Serializable, Cloneable, Structur
     private Double experienceScore;
     /**
      * <p>
-     * How much performance impact was caused by a health event for total traffic globally. For performance, this is the
-     * percentage of how much latency increased during the event compared to typical performance for your application
-     * traffic globally.
+     * The impact on total traffic that a health event has, in increased latency or reduced availability. This is the
+     * percentage of how much latency has increased or availability has decreased during the event, compared to what is
+     * typical for traffic from this client location to the Amazon Web Services location using this client network.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -208,9 +209,9 @@ public class PerformanceMeasurement implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * How much performance impact was caused by a health event for total traffic globally. For performance, this is the
-     * percentage of how much latency increased during the event compared to typical performance for your application
-     * traffic globally.
+     * The impact on total traffic that a health event has, in increased latency or reduced availability. This is the
+     * percentage of how much latency has increased or availability has decreased during the event, compared to what is
+     * typical for traffic from this client location to the Amazon Web Services location using this client network.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -220,9 +221,10 @@ public class PerformanceMeasurement implements Serializable, Cloneable, Structur
      * </p>
      * 
      * @param percentOfTotalTrafficImpacted
-     *        How much performance impact was caused by a health event for total traffic globally. For performance, this
-     *        is the percentage of how much latency increased during the event compared to typical performance for your
-     *        application traffic globally. </p>
+     *        The impact on total traffic that a health event has, in increased latency or reduced availability. This is
+     *        the percentage of how much latency has increased or availability has decreased during the event, compared
+     *        to what is typical for traffic from this client location to the Amazon Web Services location using this
+     *        client network.</p>
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMHealthEventStartStop"
@@ -236,9 +238,9 @@ public class PerformanceMeasurement implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * How much performance impact was caused by a health event for total traffic globally. For performance, this is the
-     * percentage of how much latency increased during the event compared to typical performance for your application
-     * traffic globally.
+     * The impact on total traffic that a health event has, in increased latency or reduced availability. This is the
+     * percentage of how much latency has increased or availability has decreased during the event, compared to what is
+     * typical for traffic from this client location to the Amazon Web Services location using this client network.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -247,9 +249,10 @@ public class PerformanceMeasurement implements Serializable, Cloneable, Structur
      * section of the <i>CloudWatch User Guide</i>.
      * </p>
      * 
-     * @return How much performance impact was caused by a health event for total traffic globally. For performance,
-     *         this is the percentage of how much latency increased during the event compared to typical performance for
-     *         your application traffic globally. </p>
+     * @return The impact on total traffic that a health event has, in increased latency or reduced availability. This
+     *         is the percentage of how much latency has increased or availability has decreased during the event,
+     *         compared to what is typical for traffic from this client location to the Amazon Web Services location
+     *         using this client network.</p>
      *         <p>
      *         For more information, see <a href=
      *         "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMHealthEventStartStop"
@@ -263,9 +266,9 @@ public class PerformanceMeasurement implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * How much performance impact was caused by a health event for total traffic globally. For performance, this is the
-     * percentage of how much latency increased during the event compared to typical performance for your application
-     * traffic globally.
+     * The impact on total traffic that a health event has, in increased latency or reduced availability. This is the
+     * percentage of how much latency has increased or availability has decreased during the event, compared to what is
+     * typical for traffic from this client location to the Amazon Web Services location using this client network.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -275,9 +278,10 @@ public class PerformanceMeasurement implements Serializable, Cloneable, Structur
      * </p>
      * 
      * @param percentOfTotalTrafficImpacted
-     *        How much performance impact was caused by a health event for total traffic globally. For performance, this
-     *        is the percentage of how much latency increased during the event compared to typical performance for your
-     *        application traffic globally. </p>
+     *        The impact on total traffic that a health event has, in increased latency or reduced availability. This is
+     *        the percentage of how much latency has increased or availability has decreased during the event, compared
+     *        to what is typical for traffic from this client location to the Amazon Web Services location using this
+     *        client network.</p>
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMHealthEventStartStop"

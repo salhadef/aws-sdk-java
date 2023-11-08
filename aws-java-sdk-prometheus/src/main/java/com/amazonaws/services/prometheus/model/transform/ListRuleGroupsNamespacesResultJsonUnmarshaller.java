@@ -48,16 +48,16 @@ public class ListRuleGroupsNamespacesResultJsonUnmarshaller implements Unmarshal
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("nextToken", targetDepth)) {
-                    context.nextToken();
-                    listRuleGroupsNamespacesResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("ruleGroupsNamespaces", targetDepth)) {
                     context.nextToken();
                     listRuleGroupsNamespacesResult.setRuleGroupsNamespaces(new ListUnmarshaller<RuleGroupsNamespaceSummary>(
                             RuleGroupsNamespaceSummaryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (context.testExpression("nextToken", targetDepth)) {
+                    context.nextToken();
+                    listRuleGroupsNamespacesResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

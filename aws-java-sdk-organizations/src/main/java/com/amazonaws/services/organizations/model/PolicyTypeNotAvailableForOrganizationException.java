@@ -19,7 +19,7 @@ import javax.annotation.Generated;
  * You can't use the specified policy type with the feature set currently enabled for this organization. For example,
  * you can enable SCPs only after you enable all features in the organization. For more information, see <a
  * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html#enable_policies_on_root"
- * >Managing Organizations Policies</a>in the <i>Organizations User Guide.</i>
+ * >Managing Organizations policies</a>in the <i>Organizations User Guide</i>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

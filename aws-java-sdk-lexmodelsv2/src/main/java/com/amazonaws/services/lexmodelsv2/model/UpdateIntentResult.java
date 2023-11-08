@@ -132,7 +132,11 @@ public class UpdateIntentResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      */
     private java.util.Date lastUpdatedDateTime;
-    /** <p/> */
+    /**
+     * <p>
+     * Configuration settings for a response sent to the user before Amazon Lex starts eliciting slots.
+     * </p>
+     */
     private InitialResponseSetting initialResponseSetting;
 
     /**
@@ -982,9 +986,12 @@ public class UpdateIntentResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * <p/>
+     * <p>
+     * Configuration settings for a response sent to the user before Amazon Lex starts eliciting slots.
+     * </p>
      * 
      * @param initialResponseSetting
+     *        Configuration settings for a response sent to the user before Amazon Lex starts eliciting slots.
      */
 
     public void setInitialResponseSetting(InitialResponseSetting initialResponseSetting) {
@@ -992,9 +999,11 @@ public class UpdateIntentResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * <p/>
+     * <p>
+     * Configuration settings for a response sent to the user before Amazon Lex starts eliciting slots.
+     * </p>
      * 
-     * @return
+     * @return Configuration settings for a response sent to the user before Amazon Lex starts eliciting slots.
      */
 
     public InitialResponseSetting getInitialResponseSetting() {
@@ -1002,9 +1011,12 @@ public class UpdateIntentResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * <p/>
+     * <p>
+     * Configuration settings for a response sent to the user before Amazon Lex starts eliciting slots.
+     * </p>
      * 
      * @param initialResponseSetting
+     *        Configuration settings for a response sent to the user before Amazon Lex starts eliciting slots.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

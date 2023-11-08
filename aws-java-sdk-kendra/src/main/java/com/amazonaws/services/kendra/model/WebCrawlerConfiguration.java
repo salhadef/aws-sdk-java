@@ -48,15 +48,8 @@ public class WebCrawlerConfiguration implements Serializable, Cloneable, Structu
     private Urls urls;
     /**
      * <p>
-     * Specifies the number of levels in a website that you want to crawl.
-     * </p>
-     * <p>
-     * The first level begins from the website seed or starting point URL. For example, if a website has three
-     * levels—index level (the seed in this example), sections level, and subsections level—and you are only interested
-     * in crawling information up to the sections level (levels 0-1), you can set your depth to 1.
-     * </p>
-     * <p>
-     * The default crawl depth is set to 2.
+     * The 'depth' or number of levels from the seed level to crawl. For example, the seed URL page is depth 1 and any
+     * hyperlinks on this page that are also crawled are depth 2.
      * </p>
      */
     private Integer crawlDepth;
@@ -261,26 +254,13 @@ public class WebCrawlerConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifies the number of levels in a website that you want to crawl.
-     * </p>
-     * <p>
-     * The first level begins from the website seed or starting point URL. For example, if a website has three
-     * levels—index level (the seed in this example), sections level, and subsections level—and you are only interested
-     * in crawling information up to the sections level (levels 0-1), you can set your depth to 1.
-     * </p>
-     * <p>
-     * The default crawl depth is set to 2.
+     * The 'depth' or number of levels from the seed level to crawl. For example, the seed URL page is depth 1 and any
+     * hyperlinks on this page that are also crawled are depth 2.
      * </p>
      * 
      * @param crawlDepth
-     *        Specifies the number of levels in a website that you want to crawl.</p>
-     *        <p>
-     *        The first level begins from the website seed or starting point URL. For example, if a website has three
-     *        levels—index level (the seed in this example), sections level, and subsections level—and you are only
-     *        interested in crawling information up to the sections level (levels 0-1), you can set your depth to 1.
-     *        </p>
-     *        <p>
-     *        The default crawl depth is set to 2.
+     *        The 'depth' or number of levels from the seed level to crawl. For example, the seed URL page is depth 1
+     *        and any hyperlinks on this page that are also crawled are depth 2.
      */
 
     public void setCrawlDepth(Integer crawlDepth) {
@@ -289,25 +269,12 @@ public class WebCrawlerConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifies the number of levels in a website that you want to crawl.
-     * </p>
-     * <p>
-     * The first level begins from the website seed or starting point URL. For example, if a website has three
-     * levels—index level (the seed in this example), sections level, and subsections level—and you are only interested
-     * in crawling information up to the sections level (levels 0-1), you can set your depth to 1.
-     * </p>
-     * <p>
-     * The default crawl depth is set to 2.
+     * The 'depth' or number of levels from the seed level to crawl. For example, the seed URL page is depth 1 and any
+     * hyperlinks on this page that are also crawled are depth 2.
      * </p>
      * 
-     * @return Specifies the number of levels in a website that you want to crawl.</p>
-     *         <p>
-     *         The first level begins from the website seed or starting point URL. For example, if a website has three
-     *         levels—index level (the seed in this example), sections level, and subsections level—and you are only
-     *         interested in crawling information up to the sections level (levels 0-1), you can set your depth to 1.
-     *         </p>
-     *         <p>
-     *         The default crawl depth is set to 2.
+     * @return The 'depth' or number of levels from the seed level to crawl. For example, the seed URL page is depth 1
+     *         and any hyperlinks on this page that are also crawled are depth 2.
      */
 
     public Integer getCrawlDepth() {
@@ -316,26 +283,13 @@ public class WebCrawlerConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifies the number of levels in a website that you want to crawl.
-     * </p>
-     * <p>
-     * The first level begins from the website seed or starting point URL. For example, if a website has three
-     * levels—index level (the seed in this example), sections level, and subsections level—and you are only interested
-     * in crawling information up to the sections level (levels 0-1), you can set your depth to 1.
-     * </p>
-     * <p>
-     * The default crawl depth is set to 2.
+     * The 'depth' or number of levels from the seed level to crawl. For example, the seed URL page is depth 1 and any
+     * hyperlinks on this page that are also crawled are depth 2.
      * </p>
      * 
      * @param crawlDepth
-     *        Specifies the number of levels in a website that you want to crawl.</p>
-     *        <p>
-     *        The first level begins from the website seed or starting point URL. For example, if a website has three
-     *        levels—index level (the seed in this example), sections level, and subsections level—and you are only
-     *        interested in crawling information up to the sections level (levels 0-1), you can set your depth to 1.
-     *        </p>
-     *        <p>
-     *        The default crawl depth is set to 2.
+     *        The 'depth' or number of levels from the seed level to crawl. For example, the seed URL page is depth 1
+     *        and any hyperlinks on this page that are also crawled are depth 2.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

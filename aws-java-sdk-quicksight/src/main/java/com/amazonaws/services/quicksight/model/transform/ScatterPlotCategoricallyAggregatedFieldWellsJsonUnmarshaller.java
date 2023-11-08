@@ -73,6 +73,12 @@ public class ScatterPlotCategoricallyAggregatedFieldWellsJsonUnmarshaller implem
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("Label", targetDepth)) {
+                    context.nextToken();
+                    scatterPlotCategoricallyAggregatedFieldWells.setLabel(new ListUnmarshaller<DimensionField>(DimensionFieldJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

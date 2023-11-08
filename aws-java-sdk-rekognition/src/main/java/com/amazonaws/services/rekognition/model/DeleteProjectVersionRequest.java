@@ -22,18 +22,18 @@ public class DeleteProjectVersionRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the model version that you want to delete.
+     * The Amazon Resource Name (ARN) of the project version that you want to delete.
      * </p>
      */
     private String projectVersionArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the model version that you want to delete.
+     * The Amazon Resource Name (ARN) of the project version that you want to delete.
      * </p>
      * 
      * @param projectVersionArn
-     *        The Amazon Resource Name (ARN) of the model version that you want to delete.
+     *        The Amazon Resource Name (ARN) of the project version that you want to delete.
      */
 
     public void setProjectVersionArn(String projectVersionArn) {
@@ -42,10 +42,10 @@ public class DeleteProjectVersionRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the model version that you want to delete.
+     * The Amazon Resource Name (ARN) of the project version that you want to delete.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the model version that you want to delete.
+     * @return The Amazon Resource Name (ARN) of the project version that you want to delete.
      */
 
     public String getProjectVersionArn() {
@@ -54,11 +54,11 @@ public class DeleteProjectVersionRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the model version that you want to delete.
+     * The Amazon Resource Name (ARN) of the project version that you want to delete.
      * </p>
      * 
      * @param projectVersionArn
-     *        The Amazon Resource Name (ARN) of the model version that you want to delete.
+     *        The Amazon Resource Name (ARN) of the project version that you want to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

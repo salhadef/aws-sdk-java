@@ -29,6 +29,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class RouteSummaryMarshaller {
 
+    private static final MarshallingInfo<Boolean> APPENDSOURCEPATH_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AppendSourcePath").build();
     private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApplicationId").build();
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -80,6 +82,7 @@ public class RouteSummaryMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(routeSummary.getAppendSourcePath(), APPENDSOURCEPATH_BINDING);
             protocolMarshaller.marshall(routeSummary.getApplicationId(), APPLICATIONID_BINDING);
             protocolMarshaller.marshall(routeSummary.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(routeSummary.getCreatedByAccountId(), CREATEDBYACCOUNTID_BINDING);

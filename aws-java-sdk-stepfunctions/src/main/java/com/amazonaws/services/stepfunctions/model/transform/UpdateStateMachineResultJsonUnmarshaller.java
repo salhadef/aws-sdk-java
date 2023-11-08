@@ -52,6 +52,14 @@ public class UpdateStateMachineResultJsonUnmarshaller implements Unmarshaller<Up
                     context.nextToken();
                     updateStateMachineResult.setUpdateDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("revisionId", targetDepth)) {
+                    context.nextToken();
+                    updateStateMachineResult.setRevisionId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("stateMachineVersionArn", targetDepth)) {
+                    context.nextToken();
+                    updateStateMachineResult.setStateMachineVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

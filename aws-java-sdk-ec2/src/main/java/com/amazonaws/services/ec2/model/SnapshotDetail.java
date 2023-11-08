@@ -516,7 +516,7 @@ public class SnapshotDetail implements Serializable, Cloneable {
         if (getStatusMessage() != null)
             sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
         if (getUrl() != null)
-            sb.append("Url: ").append(getUrl()).append(",");
+            sb.append("Url: ").append("***Sensitive Data Redacted***").append(",");
         if (getUserBucket() != null)
             sb.append("UserBucket: ").append(getUserBucket());
         sb.append("}");

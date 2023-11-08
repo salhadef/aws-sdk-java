@@ -186,11 +186,11 @@ public class IngestEndpoint implements Serializable, Cloneable, StructuredPojo {
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
         if (getPassword() != null)
-            sb.append("Password: ").append(getPassword()).append(",");
+            sb.append("Password: ").append("***Sensitive Data Redacted***").append(",");
         if (getUrl() != null)
             sb.append("Url: ").append(getUrl()).append(",");
         if (getUsername() != null)
-            sb.append("Username: ").append(getUsername());
+            sb.append("Username: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

@@ -39,7 +39,8 @@ public enum ScalableDimension {
     KafkaBrokerStorageVolumeSize("kafka:broker-storage:VolumeSize"),
     ElasticacheReplicationGroupNodeGroups("elasticache:replication-group:NodeGroups"),
     ElasticacheReplicationGroupReplicas("elasticache:replication-group:Replicas"),
-    NeptuneClusterReadReplicaCount("neptune:cluster:ReadReplicaCount");
+    NeptuneClusterReadReplicaCount("neptune:cluster:ReadReplicaCount"),
+    SagemakerVariantDesiredProvisionedConcurrency("sagemaker:variant:DesiredProvisionedConcurrency");
 
     private String value;
 

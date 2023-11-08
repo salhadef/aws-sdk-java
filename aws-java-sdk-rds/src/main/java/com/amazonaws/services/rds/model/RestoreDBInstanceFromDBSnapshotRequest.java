@@ -142,7 +142,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
     private String dBSubnetGroupName;
     /**
      * <p>
-     * A value that indicates whether the DB instance is a Multi-AZ deployment.
+     * Specifies whether the DB instance is a Multi-AZ deployment.
      * </p>
      * <p>
      * This setting doesn't apply to RDS Custom.
@@ -155,7 +155,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
     private Boolean multiAZ;
     /**
      * <p>
-     * A value that indicates whether the DB instance is publicly accessible.
+     * Specifies whether the DB instance is publicly accessible.
      * </p>
      * <p>
      * When the DB instance is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP
@@ -174,8 +174,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
     private Boolean publiclyAccessible;
     /**
      * <p>
-     * A value that indicates whether minor version upgrades are applied automatically to the DB instance during the
-     * maintenance window.
+     * Specifies whether to automatically apply minor version upgrades to the DB instance during the maintenance window.
      * </p>
      * <p>
      * If you restore an RDS Custom DB instance, you must disable this parameter.
@@ -193,7 +192,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * Default: Same as source.
      * </p>
      * <p>
-     * Valid values: <code>license-included</code> | <code>bring-your-own-license</code> |
+     * Valid Values: <code>license-included</code> | <code>bring-your-own-license</code> |
      * <code>general-public-license</code>
      * </p>
      */
@@ -321,7 +320,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * Specifies the storage type to be associated with the DB instance.
      * </p>
      * <p>
-     * Valid values: <code>gp2 | gp3 | io1 | standard</code>
+     * Valid Values: <code>gp2 | gp3 | io1 | standard</code>
      * </p>
      * <p>
      * If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code>
@@ -377,7 +376,89 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
     private String domain;
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the restored DB instance to snapshots of the DB instance.
+     * The fully qualified domain name (FQDN) of an Active Directory domain.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Can't be longer than 64 characters.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Example: <code>mymanagedADtest.mymanagedAD.mydomain</code>
+     * </p>
+     */
+    private String domainFqdn;
+    /**
+     * <p>
+     * The Active Directory organizational unit for your DB instance to join.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be in the distinguished name format.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can't be longer than 64 characters.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code>
+     * </p>
+     */
+    private String domainOu;
+    /**
+     * <p>
+     * The ARN for the Secrets Manager secret with the credentials for the user joining the domain.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Can't be longer than 64 characters.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Example: <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
+     * </p>
+     */
+    private String domainAuthSecretArn;
+    /**
+     * <p>
+     * The IPv4 DNS IP addresses of your primary and secondary Active Directory domain controllers.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the
+     * primary domain controller for both entries in the list.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Example: <code>123.124.125.126,234.235.236.237</code>
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> domainDnsIps;
+    /**
+     * <p>
+     * Specifies whether to copy all tags from the restored DB instance to snapshots of the DB instance.
      * </p>
      * <p>
      * In most cases, tags aren't copied by default. However, when you restore a DB instance from a DB snapshot, RDS
@@ -394,17 +475,17 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
     private Boolean copyTagsToSnapshot;
     /**
      * <p>
-     * Specify the name of the IAM role to be used when making API calls to the Directory Service.
+     * The name of the IAM role to use when making API calls to the Directory Service.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      */
     private String domainIAMRoleName;
     /**
      * <p>
-     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts. By default, mapping is disabled.
+     * Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to
+     * database accounts. By default, mapping is disabled.
      * </p>
      * <p>
      * For more information about IAM database authentication, see <a
@@ -439,7 +520,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
     private com.amazonaws.internal.SdkInternalList<ProcessorFeature> processorFeatures;
     /**
      * <p>
-     * A value that indicates whether the DB instance class of the DB instance uses its default processor features.
+     * Specifies whether the DB instance class of the DB instance uses its default processor features.
      * </p>
      * <p>
      * This setting doesn't apply to RDS Custom.
@@ -486,8 +567,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
     private String dBParameterGroupName;
     /**
      * <p>
-     * A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted
-     * when deletion protection is enabled. By default, deletion protection isn't enabled. For more information, see <a
+     * Specifies whether to enable deletion protection for the DB instance. The database can't be deleted when deletion
+     * protection is enabled. By default, deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      * Instance</a>.
      * </p>
@@ -495,7 +576,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
     private Boolean deletionProtection;
     /**
      * <p>
-     * A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.
+     * Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.
      * </p>
      * <p>
      * A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your
@@ -569,7 +650,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * The network type of the DB instance.
      * </p>
      * <p>
-     * Valid values:
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
@@ -664,6 +745,12 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * </note>
      */
     private Integer allocatedStorage;
+    /**
+     * <p>
+     * Specifies whether to enable a dedicated log volume (DLV) for the DB instance.
+     * </p>
+     */
+    private Boolean dedicatedLogVolume;
 
     /**
      * Default constructor for RestoreDBInstanceFromDBSnapshotRequest object. Callers should use the setter or fluent
@@ -1426,7 +1513,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether the DB instance is a Multi-AZ deployment.
+     * Specifies whether the DB instance is a Multi-AZ deployment.
      * </p>
      * <p>
      * This setting doesn't apply to RDS Custom.
@@ -1437,7 +1524,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * </p>
      * 
      * @param multiAZ
-     *        A value that indicates whether the DB instance is a Multi-AZ deployment.</p>
+     *        Specifies whether the DB instance is a Multi-AZ deployment.</p>
      *        <p>
      *        This setting doesn't apply to RDS Custom.
      *        </p>
@@ -1452,7 +1539,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether the DB instance is a Multi-AZ deployment.
+     * Specifies whether the DB instance is a Multi-AZ deployment.
      * </p>
      * <p>
      * This setting doesn't apply to RDS Custom.
@@ -1462,7 +1549,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * deployment.
      * </p>
      * 
-     * @return A value that indicates whether the DB instance is a Multi-AZ deployment.</p>
+     * @return Specifies whether the DB instance is a Multi-AZ deployment.</p>
      *         <p>
      *         This setting doesn't apply to RDS Custom.
      *         </p>
@@ -1477,7 +1564,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether the DB instance is a Multi-AZ deployment.
+     * Specifies whether the DB instance is a Multi-AZ deployment.
      * </p>
      * <p>
      * This setting doesn't apply to RDS Custom.
@@ -1488,7 +1575,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * </p>
      * 
      * @param multiAZ
-     *        A value that indicates whether the DB instance is a Multi-AZ deployment.</p>
+     *        Specifies whether the DB instance is a Multi-AZ deployment.</p>
      *        <p>
      *        This setting doesn't apply to RDS Custom.
      *        </p>
@@ -1505,7 +1592,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether the DB instance is a Multi-AZ deployment.
+     * Specifies whether the DB instance is a Multi-AZ deployment.
      * </p>
      * <p>
      * This setting doesn't apply to RDS Custom.
@@ -1515,7 +1602,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * deployment.
      * </p>
      * 
-     * @return A value that indicates whether the DB instance is a Multi-AZ deployment.</p>
+     * @return Specifies whether the DB instance is a Multi-AZ deployment.</p>
      *         <p>
      *         This setting doesn't apply to RDS Custom.
      *         </p>
@@ -1530,7 +1617,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether the DB instance is publicly accessible.
+     * Specifies whether the DB instance is publicly accessible.
      * </p>
      * <p>
      * When the DB instance is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP
@@ -1547,7 +1634,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * </p>
      * 
      * @param publiclyAccessible
-     *        A value that indicates whether the DB instance is publicly accessible.</p>
+     *        Specifies whether the DB instance is publicly accessible.</p>
      *        <p>
      *        When the DB instance is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private
      *        IP address from within the DB instance's virtual private cloud (VPC). It resolves to the public IP address
@@ -1569,7 +1656,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether the DB instance is publicly accessible.
+     * Specifies whether the DB instance is publicly accessible.
      * </p>
      * <p>
      * When the DB instance is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP
@@ -1585,7 +1672,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * For more information, see <a>CreateDBInstance</a>.
      * </p>
      * 
-     * @return A value that indicates whether the DB instance is publicly accessible.</p>
+     * @return Specifies whether the DB instance is publicly accessible.</p>
      *         <p>
      *         When the DB instance is publicly accessible, its Domain Name System (DNS) endpoint resolves to the
      *         private IP address from within the DB instance's virtual private cloud (VPC). It resolves to the public
@@ -1607,7 +1694,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether the DB instance is publicly accessible.
+     * Specifies whether the DB instance is publicly accessible.
      * </p>
      * <p>
      * When the DB instance is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP
@@ -1624,7 +1711,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * </p>
      * 
      * @param publiclyAccessible
-     *        A value that indicates whether the DB instance is publicly accessible.</p>
+     *        Specifies whether the DB instance is publicly accessible.</p>
      *        <p>
      *        When the DB instance is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private
      *        IP address from within the DB instance's virtual private cloud (VPC). It resolves to the public IP address
@@ -1648,7 +1735,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether the DB instance is publicly accessible.
+     * Specifies whether the DB instance is publicly accessible.
      * </p>
      * <p>
      * When the DB instance is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP
@@ -1664,7 +1751,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * For more information, see <a>CreateDBInstance</a>.
      * </p>
      * 
-     * @return A value that indicates whether the DB instance is publicly accessible.</p>
+     * @return Specifies whether the DB instance is publicly accessible.</p>
      *         <p>
      *         When the DB instance is publicly accessible, its Domain Name System (DNS) endpoint resolves to the
      *         private IP address from within the DB instance's virtual private cloud (VPC). It resolves to the public
@@ -1686,16 +1773,15 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether minor version upgrades are applied automatically to the DB instance during the
-     * maintenance window.
+     * Specifies whether to automatically apply minor version upgrades to the DB instance during the maintenance window.
      * </p>
      * <p>
      * If you restore an RDS Custom DB instance, you must disable this parameter.
      * </p>
      * 
      * @param autoMinorVersionUpgrade
-     *        A value that indicates whether minor version upgrades are applied automatically to the DB instance during
-     *        the maintenance window.</p>
+     *        Specifies whether to automatically apply minor version upgrades to the DB instance during the maintenance
+     *        window.</p>
      *        <p>
      *        If you restore an RDS Custom DB instance, you must disable this parameter.
      */
@@ -1706,15 +1792,14 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether minor version upgrades are applied automatically to the DB instance during the
-     * maintenance window.
+     * Specifies whether to automatically apply minor version upgrades to the DB instance during the maintenance window.
      * </p>
      * <p>
      * If you restore an RDS Custom DB instance, you must disable this parameter.
      * </p>
      * 
-     * @return A value that indicates whether minor version upgrades are applied automatically to the DB instance during
-     *         the maintenance window.</p>
+     * @return Specifies whether to automatically apply minor version upgrades to the DB instance during the maintenance
+     *         window.</p>
      *         <p>
      *         If you restore an RDS Custom DB instance, you must disable this parameter.
      */
@@ -1725,16 +1810,15 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether minor version upgrades are applied automatically to the DB instance during the
-     * maintenance window.
+     * Specifies whether to automatically apply minor version upgrades to the DB instance during the maintenance window.
      * </p>
      * <p>
      * If you restore an RDS Custom DB instance, you must disable this parameter.
      * </p>
      * 
      * @param autoMinorVersionUpgrade
-     *        A value that indicates whether minor version upgrades are applied automatically to the DB instance during
-     *        the maintenance window.</p>
+     *        Specifies whether to automatically apply minor version upgrades to the DB instance during the maintenance
+     *        window.</p>
      *        <p>
      *        If you restore an RDS Custom DB instance, you must disable this parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1747,15 +1831,14 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether minor version upgrades are applied automatically to the DB instance during the
-     * maintenance window.
+     * Specifies whether to automatically apply minor version upgrades to the DB instance during the maintenance window.
      * </p>
      * <p>
      * If you restore an RDS Custom DB instance, you must disable this parameter.
      * </p>
      * 
-     * @return A value that indicates whether minor version upgrades are applied automatically to the DB instance during
-     *         the maintenance window.</p>
+     * @return Specifies whether to automatically apply minor version upgrades to the DB instance during the maintenance
+     *         window.</p>
      *         <p>
      *         If you restore an RDS Custom DB instance, you must disable this parameter.
      */
@@ -1775,7 +1858,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * Default: Same as source.
      * </p>
      * <p>
-     * Valid values: <code>license-included</code> | <code>bring-your-own-license</code> |
+     * Valid Values: <code>license-included</code> | <code>bring-your-own-license</code> |
      * <code>general-public-license</code>
      * </p>
      * 
@@ -1788,7 +1871,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *        Default: Same as source.
      *        </p>
      *        <p>
-     *        Valid values: <code>license-included</code> | <code>bring-your-own-license</code> |
+     *        Valid Values: <code>license-included</code> | <code>bring-your-own-license</code> |
      *        <code>general-public-license</code>
      */
 
@@ -1807,7 +1890,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * Default: Same as source.
      * </p>
      * <p>
-     * Valid values: <code>license-included</code> | <code>bring-your-own-license</code> |
+     * Valid Values: <code>license-included</code> | <code>bring-your-own-license</code> |
      * <code>general-public-license</code>
      * </p>
      * 
@@ -1819,7 +1902,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *         Default: Same as source.
      *         </p>
      *         <p>
-     *         Valid values: <code>license-included</code> | <code>bring-your-own-license</code> |
+     *         Valid Values: <code>license-included</code> | <code>bring-your-own-license</code> |
      *         <code>general-public-license</code>
      */
 
@@ -1838,7 +1921,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * Default: Same as source.
      * </p>
      * <p>
-     * Valid values: <code>license-included</code> | <code>bring-your-own-license</code> |
+     * Valid Values: <code>license-included</code> | <code>bring-your-own-license</code> |
      * <code>general-public-license</code>
      * </p>
      * 
@@ -1851,7 +1934,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *        Default: Same as source.
      *        </p>
      *        <p>
-     *        Valid values: <code>license-included</code> | <code>bring-your-own-license</code> |
+     *        Valid Values: <code>license-included</code> | <code>bring-your-own-license</code> |
      *        <code>general-public-license</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2624,7 +2707,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * Specifies the storage type to be associated with the DB instance.
      * </p>
      * <p>
-     * Valid values: <code>gp2 | gp3 | io1 | standard</code>
+     * Valid Values: <code>gp2 | gp3 | io1 | standard</code>
      * </p>
      * <p>
      * If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code>
@@ -2637,7 +2720,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * @param storageType
      *        Specifies the storage type to be associated with the DB instance.</p>
      *        <p>
-     *        Valid values: <code>gp2 | gp3 | io1 | standard</code>
+     *        Valid Values: <code>gp2 | gp3 | io1 | standard</code>
      *        </p>
      *        <p>
      *        If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the
@@ -2656,7 +2739,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * Specifies the storage type to be associated with the DB instance.
      * </p>
      * <p>
-     * Valid values: <code>gp2 | gp3 | io1 | standard</code>
+     * Valid Values: <code>gp2 | gp3 | io1 | standard</code>
      * </p>
      * <p>
      * If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code>
@@ -2668,7 +2751,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * 
      * @return Specifies the storage type to be associated with the DB instance.</p>
      *         <p>
-     *         Valid values: <code>gp2 | gp3 | io1 | standard</code>
+     *         Valid Values: <code>gp2 | gp3 | io1 | standard</code>
      *         </p>
      *         <p>
      *         If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the
@@ -2687,7 +2770,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * Specifies the storage type to be associated with the DB instance.
      * </p>
      * <p>
-     * Valid values: <code>gp2 | gp3 | io1 | standard</code>
+     * Valid Values: <code>gp2 | gp3 | io1 | standard</code>
      * </p>
      * <p>
      * If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code>
@@ -2700,7 +2783,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * @param storageType
      *        Specifies the storage type to be associated with the DB instance.</p>
      *        <p>
-     *        Valid values: <code>gp2 | gp3 | io1 | standard</code>
+     *        Valid Values: <code>gp2 | gp3 | io1 | standard</code>
      *        </p>
      *        <p>
      *        If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the
@@ -3018,7 +3101,564 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the restored DB instance to snapshots of the DB instance.
+     * The fully qualified domain name (FQDN) of an Active Directory domain.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Can't be longer than 64 characters.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Example: <code>mymanagedADtest.mymanagedAD.mydomain</code>
+     * </p>
+     * 
+     * @param domainFqdn
+     *        The fully qualified domain name (FQDN) of an Active Directory domain.</p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Can't be longer than 64 characters.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Example: <code>mymanagedADtest.mymanagedAD.mydomain</code>
+     */
+
+    public void setDomainFqdn(String domainFqdn) {
+        this.domainFqdn = domainFqdn;
+    }
+
+    /**
+     * <p>
+     * The fully qualified domain name (FQDN) of an Active Directory domain.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Can't be longer than 64 characters.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Example: <code>mymanagedADtest.mymanagedAD.mydomain</code>
+     * </p>
+     * 
+     * @return The fully qualified domain name (FQDN) of an Active Directory domain.</p>
+     *         <p>
+     *         Constraints:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Can't be longer than 64 characters.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Example: <code>mymanagedADtest.mymanagedAD.mydomain</code>
+     */
+
+    public String getDomainFqdn() {
+        return this.domainFqdn;
+    }
+
+    /**
+     * <p>
+     * The fully qualified domain name (FQDN) of an Active Directory domain.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Can't be longer than 64 characters.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Example: <code>mymanagedADtest.mymanagedAD.mydomain</code>
+     * </p>
+     * 
+     * @param domainFqdn
+     *        The fully qualified domain name (FQDN) of an Active Directory domain.</p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Can't be longer than 64 characters.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Example: <code>mymanagedADtest.mymanagedAD.mydomain</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreDBInstanceFromDBSnapshotRequest withDomainFqdn(String domainFqdn) {
+        setDomainFqdn(domainFqdn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Active Directory organizational unit for your DB instance to join.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be in the distinguished name format.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can't be longer than 64 characters.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code>
+     * </p>
+     * 
+     * @param domainOu
+     *        The Active Directory organizational unit for your DB instance to join.</p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Must be in the distinguished name format.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can't be longer than 64 characters.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code>
+     */
+
+    public void setDomainOu(String domainOu) {
+        this.domainOu = domainOu;
+    }
+
+    /**
+     * <p>
+     * The Active Directory organizational unit for your DB instance to join.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be in the distinguished name format.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can't be longer than 64 characters.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code>
+     * </p>
+     * 
+     * @return The Active Directory organizational unit for your DB instance to join.</p>
+     *         <p>
+     *         Constraints:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Must be in the distinguished name format.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Can't be longer than 64 characters.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code>
+     */
+
+    public String getDomainOu() {
+        return this.domainOu;
+    }
+
+    /**
+     * <p>
+     * The Active Directory organizational unit for your DB instance to join.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be in the distinguished name format.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can't be longer than 64 characters.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code>
+     * </p>
+     * 
+     * @param domainOu
+     *        The Active Directory organizational unit for your DB instance to join.</p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Must be in the distinguished name format.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can't be longer than 64 characters.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreDBInstanceFromDBSnapshotRequest withDomainOu(String domainOu) {
+        setDomainOu(domainOu);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN for the Secrets Manager secret with the credentials for the user joining the domain.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Can't be longer than 64 characters.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Example: <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
+     * </p>
+     * 
+     * @param domainAuthSecretArn
+     *        The ARN for the Secrets Manager secret with the credentials for the user joining the domain.</p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Can't be longer than 64 characters.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Example: <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
+     */
+
+    public void setDomainAuthSecretArn(String domainAuthSecretArn) {
+        this.domainAuthSecretArn = domainAuthSecretArn;
+    }
+
+    /**
+     * <p>
+     * The ARN for the Secrets Manager secret with the credentials for the user joining the domain.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Can't be longer than 64 characters.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Example: <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
+     * </p>
+     * 
+     * @return The ARN for the Secrets Manager secret with the credentials for the user joining the domain.</p>
+     *         <p>
+     *         Constraints:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Can't be longer than 64 characters.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Example:
+     *         <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
+     */
+
+    public String getDomainAuthSecretArn() {
+        return this.domainAuthSecretArn;
+    }
+
+    /**
+     * <p>
+     * The ARN for the Secrets Manager secret with the credentials for the user joining the domain.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Can't be longer than 64 characters.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Example: <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
+     * </p>
+     * 
+     * @param domainAuthSecretArn
+     *        The ARN for the Secrets Manager secret with the credentials for the user joining the domain.</p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Can't be longer than 64 characters.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Example: <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreDBInstanceFromDBSnapshotRequest withDomainAuthSecretArn(String domainAuthSecretArn) {
+        setDomainAuthSecretArn(domainAuthSecretArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IPv4 DNS IP addresses of your primary and secondary Active Directory domain controllers.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the
+     * primary domain controller for both entries in the list.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Example: <code>123.124.125.126,234.235.236.237</code>
+     * </p>
+     * 
+     * @return The IPv4 DNS IP addresses of your primary and secondary Active Directory domain controllers.</p>
+     *         <p>
+     *         Constraints:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of
+     *         the primary domain controller for both entries in the list.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Example: <code>123.124.125.126,234.235.236.237</code>
+     */
+
+    public java.util.List<String> getDomainDnsIps() {
+        if (domainDnsIps == null) {
+            domainDnsIps = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return domainDnsIps;
+    }
+
+    /**
+     * <p>
+     * The IPv4 DNS IP addresses of your primary and secondary Active Directory domain controllers.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the
+     * primary domain controller for both entries in the list.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Example: <code>123.124.125.126,234.235.236.237</code>
+     * </p>
+     * 
+     * @param domainDnsIps
+     *        The IPv4 DNS IP addresses of your primary and secondary Active Directory domain controllers.</p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the
+     *        primary domain controller for both entries in the list.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Example: <code>123.124.125.126,234.235.236.237</code>
+     */
+
+    public void setDomainDnsIps(java.util.Collection<String> domainDnsIps) {
+        if (domainDnsIps == null) {
+            this.domainDnsIps = null;
+            return;
+        }
+
+        this.domainDnsIps = new com.amazonaws.internal.SdkInternalList<String>(domainDnsIps);
+    }
+
+    /**
+     * <p>
+     * The IPv4 DNS IP addresses of your primary and secondary Active Directory domain controllers.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the
+     * primary domain controller for both entries in the list.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Example: <code>123.124.125.126,234.235.236.237</code>
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDomainDnsIps(java.util.Collection)} or {@link #withDomainDnsIps(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param domainDnsIps
+     *        The IPv4 DNS IP addresses of your primary and secondary Active Directory domain controllers.</p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the
+     *        primary domain controller for both entries in the list.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Example: <code>123.124.125.126,234.235.236.237</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreDBInstanceFromDBSnapshotRequest withDomainDnsIps(String... domainDnsIps) {
+        if (this.domainDnsIps == null) {
+            setDomainDnsIps(new com.amazonaws.internal.SdkInternalList<String>(domainDnsIps.length));
+        }
+        for (String ele : domainDnsIps) {
+            this.domainDnsIps.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IPv4 DNS IP addresses of your primary and secondary Active Directory domain controllers.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the
+     * primary domain controller for both entries in the list.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Example: <code>123.124.125.126,234.235.236.237</code>
+     * </p>
+     * 
+     * @param domainDnsIps
+     *        The IPv4 DNS IP addresses of your primary and secondary Active Directory domain controllers.</p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the
+     *        primary domain controller for both entries in the list.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Example: <code>123.124.125.126,234.235.236.237</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreDBInstanceFromDBSnapshotRequest withDomainDnsIps(java.util.Collection<String> domainDnsIps) {
+        setDomainDnsIps(domainDnsIps);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to copy all tags from the restored DB instance to snapshots of the DB instance.
      * </p>
      * <p>
      * In most cases, tags aren't copied by default. However, when you restore a DB instance from a DB snapshot, RDS
@@ -3033,8 +3673,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * </p>
      * 
      * @param copyTagsToSnapshot
-     *        A value that indicates whether to copy all tags from the restored DB instance to snapshots of the DB
-     *        instance.</p>
+     *        Specifies whether to copy all tags from the restored DB instance to snapshots of the DB instance.</p>
      *        <p>
      *        In most cases, tags aren't copied by default. However, when you restore a DB instance from a DB snapshot,
      *        RDS checks whether you specify new tags. If yes, the new tags are added to the restored DB instance. If
@@ -3053,7 +3692,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the restored DB instance to snapshots of the DB instance.
+     * Specifies whether to copy all tags from the restored DB instance to snapshots of the DB instance.
      * </p>
      * <p>
      * In most cases, tags aren't copied by default. However, when you restore a DB instance from a DB snapshot, RDS
@@ -3067,8 +3706,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * tags to DB instance snapshots</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * 
-     * @return A value that indicates whether to copy all tags from the restored DB instance to snapshots of the DB
-     *         instance.</p>
+     * @return Specifies whether to copy all tags from the restored DB instance to snapshots of the DB instance.</p>
      *         <p>
      *         In most cases, tags aren't copied by default. However, when you restore a DB instance from a DB snapshot,
      *         RDS checks whether you specify new tags. If yes, the new tags are added to the restored DB instance. If
@@ -3087,7 +3725,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the restored DB instance to snapshots of the DB instance.
+     * Specifies whether to copy all tags from the restored DB instance to snapshots of the DB instance.
      * </p>
      * <p>
      * In most cases, tags aren't copied by default. However, when you restore a DB instance from a DB snapshot, RDS
@@ -3102,8 +3740,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * </p>
      * 
      * @param copyTagsToSnapshot
-     *        A value that indicates whether to copy all tags from the restored DB instance to snapshots of the DB
-     *        instance.</p>
+     *        Specifies whether to copy all tags from the restored DB instance to snapshots of the DB instance.</p>
      *        <p>
      *        In most cases, tags aren't copied by default. However, when you restore a DB instance from a DB snapshot,
      *        RDS checks whether you specify new tags. If yes, the new tags are added to the restored DB instance. If
@@ -3124,7 +3761,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the restored DB instance to snapshots of the DB instance.
+     * Specifies whether to copy all tags from the restored DB instance to snapshots of the DB instance.
      * </p>
      * <p>
      * In most cases, tags aren't copied by default. However, when you restore a DB instance from a DB snapshot, RDS
@@ -3138,8 +3775,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * tags to DB instance snapshots</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * 
-     * @return A value that indicates whether to copy all tags from the restored DB instance to snapshots of the DB
-     *         instance.</p>
+     * @return Specifies whether to copy all tags from the restored DB instance to snapshots of the DB instance.</p>
      *         <p>
      *         In most cases, tags aren't copied by default. However, when you restore a DB instance from a DB snapshot,
      *         RDS checks whether you specify new tags. If yes, the new tags are added to the restored DB instance. If
@@ -3158,16 +3794,16 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Specify the name of the IAM role to be used when making API calls to the Directory Service.
+     * The name of the IAM role to use when making API calls to the Directory Service.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * 
      * @param domainIAMRoleName
-     *        Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
+     *        The name of the IAM role to use when making API calls to the Directory Service.</p>
      *        <p>
-     *        This setting doesn't apply to RDS Custom.
+     *        This setting doesn't apply to RDS Custom DB instances.
      */
 
     public void setDomainIAMRoleName(String domainIAMRoleName) {
@@ -3176,15 +3812,15 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Specify the name of the IAM role to be used when making API calls to the Directory Service.
+     * The name of the IAM role to use when making API calls to the Directory Service.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * 
-     * @return Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
+     * @return The name of the IAM role to use when making API calls to the Directory Service.</p>
      *         <p>
-     *         This setting doesn't apply to RDS Custom.
+     *         This setting doesn't apply to RDS Custom DB instances.
      */
 
     public String getDomainIAMRoleName() {
@@ -3193,16 +3829,16 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Specify the name of the IAM role to be used when making API calls to the Directory Service.
+     * The name of the IAM role to use when making API calls to the Directory Service.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * 
      * @param domainIAMRoleName
-     *        Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
+     *        The name of the IAM role to use when making API calls to the Directory Service.</p>
      *        <p>
-     *        This setting doesn't apply to RDS Custom.
+     *        This setting doesn't apply to RDS Custom DB instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3213,8 +3849,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts. By default, mapping is disabled.
+     * Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to
+     * database accounts. By default, mapping is disabled.
      * </p>
      * <p>
      * For more information about IAM database authentication, see <a
@@ -3226,8 +3862,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
-     *        (IAM) accounts to database accounts. By default, mapping is disabled.</p>
+     *        Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts
+     *        to database accounts. By default, mapping is disabled.</p>
      *        <p>
      *        For more information about IAM database authentication, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
@@ -3243,8 +3879,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts. By default, mapping is disabled.
+     * Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to
+     * database accounts. By default, mapping is disabled.
      * </p>
      * <p>
      * For more information about IAM database authentication, see <a
@@ -3255,8 +3891,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * This setting doesn't apply to RDS Custom.
      * </p>
      * 
-     * @return A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
-     *         (IAM) accounts to database accounts. By default, mapping is disabled.</p>
+     * @return Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts
+     *         to database accounts. By default, mapping is disabled.</p>
      *         <p>
      *         For more information about IAM database authentication, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
@@ -3272,8 +3908,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts. By default, mapping is disabled.
+     * Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to
+     * database accounts. By default, mapping is disabled.
      * </p>
      * <p>
      * For more information about IAM database authentication, see <a
@@ -3285,8 +3921,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
-     *        (IAM) accounts to database accounts. By default, mapping is disabled.</p>
+     *        Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts
+     *        to database accounts. By default, mapping is disabled.</p>
      *        <p>
      *        For more information about IAM database authentication, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
@@ -3304,8 +3940,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts. By default, mapping is disabled.
+     * Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to
+     * database accounts. By default, mapping is disabled.
      * </p>
      * <p>
      * For more information about IAM database authentication, see <a
@@ -3316,8 +3952,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * This setting doesn't apply to RDS Custom.
      * </p>
      * 
-     * @return A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
-     *         (IAM) accounts to database accounts. By default, mapping is disabled.</p>
+     * @return Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts
+     *         to database accounts. By default, mapping is disabled.</p>
      *         <p>
      *         For more information about IAM database authentication, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
@@ -3547,15 +4183,14 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether the DB instance class of the DB instance uses its default processor features.
+     * Specifies whether the DB instance class of the DB instance uses its default processor features.
      * </p>
      * <p>
      * This setting doesn't apply to RDS Custom.
      * </p>
      * 
      * @param useDefaultProcessorFeatures
-     *        A value that indicates whether the DB instance class of the DB instance uses its default processor
-     *        features.</p>
+     *        Specifies whether the DB instance class of the DB instance uses its default processor features.</p>
      *        <p>
      *        This setting doesn't apply to RDS Custom.
      */
@@ -3566,14 +4201,13 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether the DB instance class of the DB instance uses its default processor features.
+     * Specifies whether the DB instance class of the DB instance uses its default processor features.
      * </p>
      * <p>
      * This setting doesn't apply to RDS Custom.
      * </p>
      * 
-     * @return A value that indicates whether the DB instance class of the DB instance uses its default processor
-     *         features.</p>
+     * @return Specifies whether the DB instance class of the DB instance uses its default processor features.</p>
      *         <p>
      *         This setting doesn't apply to RDS Custom.
      */
@@ -3584,15 +4218,14 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether the DB instance class of the DB instance uses its default processor features.
+     * Specifies whether the DB instance class of the DB instance uses its default processor features.
      * </p>
      * <p>
      * This setting doesn't apply to RDS Custom.
      * </p>
      * 
      * @param useDefaultProcessorFeatures
-     *        A value that indicates whether the DB instance class of the DB instance uses its default processor
-     *        features.</p>
+     *        Specifies whether the DB instance class of the DB instance uses its default processor features.</p>
      *        <p>
      *        This setting doesn't apply to RDS Custom.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -3605,14 +4238,13 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether the DB instance class of the DB instance uses its default processor features.
+     * Specifies whether the DB instance class of the DB instance uses its default processor features.
      * </p>
      * <p>
      * This setting doesn't apply to RDS Custom.
      * </p>
      * 
-     * @return A value that indicates whether the DB instance class of the DB instance uses its default processor
-     *         features.</p>
+     * @return Specifies whether the DB instance class of the DB instance uses its default processor features.</p>
      *         <p>
      *         This setting doesn't apply to RDS Custom.
      */
@@ -3852,17 +4484,16 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted
-     * when deletion protection is enabled. By default, deletion protection isn't enabled. For more information, see <a
+     * Specifies whether to enable deletion protection for the DB instance. The database can't be deleted when deletion
+     * protection is enabled. By default, deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      * Instance</a>.
      * </p>
      * 
      * @param deletionProtection
-     *        A value that indicates whether the DB instance has deletion protection enabled. The database can't be
-     *        deleted when deletion protection is enabled. By default, deletion protection isn't enabled. For more
-     *        information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
+     *        Specifies whether to enable deletion protection for the DB instance. The database can't be deleted when
+     *        deletion protection is enabled. By default, deletion protection isn't enabled. For more information, see
+     *        <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      *        Instance</a>.
      */
 
@@ -3872,16 +4503,15 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted
-     * when deletion protection is enabled. By default, deletion protection isn't enabled. For more information, see <a
+     * Specifies whether to enable deletion protection for the DB instance. The database can't be deleted when deletion
+     * protection is enabled. By default, deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      * Instance</a>.
      * </p>
      * 
-     * @return A value that indicates whether the DB instance has deletion protection enabled. The database can't be
-     *         deleted when deletion protection is enabled. By default, deletion protection isn't enabled. For more
-     *         information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
+     * @return Specifies whether to enable deletion protection for the DB instance. The database can't be deleted when
+     *         deletion protection is enabled. By default, deletion protection isn't enabled. For more information, see
+     *         <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      *         Instance</a>.
      */
 
@@ -3891,17 +4521,16 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted
-     * when deletion protection is enabled. By default, deletion protection isn't enabled. For more information, see <a
+     * Specifies whether to enable deletion protection for the DB instance. The database can't be deleted when deletion
+     * protection is enabled. By default, deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      * Instance</a>.
      * </p>
      * 
      * @param deletionProtection
-     *        A value that indicates whether the DB instance has deletion protection enabled. The database can't be
-     *        deleted when deletion protection is enabled. By default, deletion protection isn't enabled. For more
-     *        information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
+     *        Specifies whether to enable deletion protection for the DB instance. The database can't be deleted when
+     *        deletion protection is enabled. By default, deletion protection isn't enabled. For more information, see
+     *        <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      *        Instance</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -3913,16 +4542,15 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted
-     * when deletion protection is enabled. By default, deletion protection isn't enabled. For more information, see <a
+     * Specifies whether to enable deletion protection for the DB instance. The database can't be deleted when deletion
+     * protection is enabled. By default, deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      * Instance</a>.
      * </p>
      * 
-     * @return A value that indicates whether the DB instance has deletion protection enabled. The database can't be
-     *         deleted when deletion protection is enabled. By default, deletion protection isn't enabled. For more
-     *         information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
+     * @return Specifies whether to enable deletion protection for the DB instance. The database can't be deleted when
+     *         deletion protection is enabled. By default, deletion protection isn't enabled. For more information, see
+     *         <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      *         Instance</a>.
      */
 
@@ -3932,7 +4560,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.
+     * Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.
      * </p>
      * <p>
      * A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your
@@ -3954,8 +4582,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * </p>
      * 
      * @param enableCustomerOwnedIp
-     *        A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB
-     *        instance.</p>
+     *        Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>
      *        <p>
      *        A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your
      *        on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB
@@ -3981,7 +4608,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.
+     * Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.
      * </p>
      * <p>
      * A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your
@@ -4002,8 +4629,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      * </p>
      * 
-     * @return A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB
-     *         instance.</p>
+     * @return Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>
      *         <p>
      *         A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your
      *         on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB
@@ -4029,7 +4655,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.
+     * Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.
      * </p>
      * <p>
      * A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your
@@ -4051,8 +4677,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * </p>
      * 
      * @param enableCustomerOwnedIp
-     *        A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB
-     *        instance.</p>
+     *        Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>
      *        <p>
      *        A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your
      *        on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB
@@ -4080,7 +4705,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.
+     * Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.
      * </p>
      * <p>
      * A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your
@@ -4101,8 +4726,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      * </p>
      * 
-     * @return A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB
-     *         instance.</p>
+     * @return Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>
      *         <p>
      *         A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your
      *         on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB
@@ -4418,7 +5042,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * The network type of the DB instance.
      * </p>
      * <p>
-     * Valid values:
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
@@ -4446,7 +5070,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * @param networkType
      *        The network type of the DB instance.</p>
      *        <p>
-     *        Valid values:
+     *        Valid Values:
      *        </p>
      *        <ul>
      *        <li>
@@ -4480,7 +5104,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * The network type of the DB instance.
      * </p>
      * <p>
-     * Valid values:
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
@@ -4507,7 +5131,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * 
      * @return The network type of the DB instance.</p>
      *         <p>
-     *         Valid values:
+     *         Valid Values:
      *         </p>
      *         <ul>
      *         <li>
@@ -4541,7 +5165,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * The network type of the DB instance.
      * </p>
      * <p>
-     * Valid values:
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
@@ -4569,7 +5193,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * @param networkType
      *        The network type of the DB instance.</p>
      *        <p>
-     *        Valid values:
+     *        Valid Values:
      *        </p>
      *        <ul>
      *        <li>
@@ -5015,6 +5639,58 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * Specifies whether to enable a dedicated log volume (DLV) for the DB instance.
+     * </p>
+     * 
+     * @param dedicatedLogVolume
+     *        Specifies whether to enable a dedicated log volume (DLV) for the DB instance.
+     */
+
+    public void setDedicatedLogVolume(Boolean dedicatedLogVolume) {
+        this.dedicatedLogVolume = dedicatedLogVolume;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to enable a dedicated log volume (DLV) for the DB instance.
+     * </p>
+     * 
+     * @return Specifies whether to enable a dedicated log volume (DLV) for the DB instance.
+     */
+
+    public Boolean getDedicatedLogVolume() {
+        return this.dedicatedLogVolume;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to enable a dedicated log volume (DLV) for the DB instance.
+     * </p>
+     * 
+     * @param dedicatedLogVolume
+     *        Specifies whether to enable a dedicated log volume (DLV) for the DB instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreDBInstanceFromDBSnapshotRequest withDedicatedLogVolume(Boolean dedicatedLogVolume) {
+        setDedicatedLogVolume(dedicatedLogVolume);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to enable a dedicated log volume (DLV) for the DB instance.
+     * </p>
+     * 
+     * @return Specifies whether to enable a dedicated log volume (DLV) for the DB instance.
+     */
+
+    public Boolean isDedicatedLogVolume() {
+        return this.dedicatedLogVolume;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -5066,6 +5742,14 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
             sb.append("VpcSecurityGroupIds: ").append(getVpcSecurityGroupIds()).append(",");
         if (getDomain() != null)
             sb.append("Domain: ").append(getDomain()).append(",");
+        if (getDomainFqdn() != null)
+            sb.append("DomainFqdn: ").append(getDomainFqdn()).append(",");
+        if (getDomainOu() != null)
+            sb.append("DomainOu: ").append(getDomainOu()).append(",");
+        if (getDomainAuthSecretArn() != null)
+            sb.append("DomainAuthSecretArn: ").append(getDomainAuthSecretArn()).append(",");
+        if (getDomainDnsIps() != null)
+            sb.append("DomainDnsIps: ").append(getDomainDnsIps()).append(",");
         if (getCopyTagsToSnapshot() != null)
             sb.append("CopyTagsToSnapshot: ").append(getCopyTagsToSnapshot()).append(",");
         if (getDomainIAMRoleName() != null)
@@ -5095,7 +5779,9 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
         if (getDBClusterSnapshotIdentifier() != null)
             sb.append("DBClusterSnapshotIdentifier: ").append(getDBClusterSnapshotIdentifier()).append(",");
         if (getAllocatedStorage() != null)
-            sb.append("AllocatedStorage: ").append(getAllocatedStorage());
+            sb.append("AllocatedStorage: ").append(getAllocatedStorage()).append(",");
+        if (getDedicatedLogVolume() != null)
+            sb.append("DedicatedLogVolume: ").append(getDedicatedLogVolume());
         sb.append("}");
         return sb.toString();
     }
@@ -5190,6 +5876,22 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
             return false;
         if (other.getDomain() != null && other.getDomain().equals(this.getDomain()) == false)
             return false;
+        if (other.getDomainFqdn() == null ^ this.getDomainFqdn() == null)
+            return false;
+        if (other.getDomainFqdn() != null && other.getDomainFqdn().equals(this.getDomainFqdn()) == false)
+            return false;
+        if (other.getDomainOu() == null ^ this.getDomainOu() == null)
+            return false;
+        if (other.getDomainOu() != null && other.getDomainOu().equals(this.getDomainOu()) == false)
+            return false;
+        if (other.getDomainAuthSecretArn() == null ^ this.getDomainAuthSecretArn() == null)
+            return false;
+        if (other.getDomainAuthSecretArn() != null && other.getDomainAuthSecretArn().equals(this.getDomainAuthSecretArn()) == false)
+            return false;
+        if (other.getDomainDnsIps() == null ^ this.getDomainDnsIps() == null)
+            return false;
+        if (other.getDomainDnsIps() != null && other.getDomainDnsIps().equals(this.getDomainDnsIps()) == false)
+            return false;
         if (other.getCopyTagsToSnapshot() == null ^ this.getCopyTagsToSnapshot() == null)
             return false;
         if (other.getCopyTagsToSnapshot() != null && other.getCopyTagsToSnapshot().equals(this.getCopyTagsToSnapshot()) == false)
@@ -5251,6 +5953,10 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
             return false;
         if (other.getAllocatedStorage() != null && other.getAllocatedStorage().equals(this.getAllocatedStorage()) == false)
             return false;
+        if (other.getDedicatedLogVolume() == null ^ this.getDedicatedLogVolume() == null)
+            return false;
+        if (other.getDedicatedLogVolume() != null && other.getDedicatedLogVolume().equals(this.getDedicatedLogVolume()) == false)
+            return false;
         return true;
     }
 
@@ -5279,6 +5985,10 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
         hashCode = prime * hashCode + ((getTdeCredentialPassword() == null) ? 0 : getTdeCredentialPassword().hashCode());
         hashCode = prime * hashCode + ((getVpcSecurityGroupIds() == null) ? 0 : getVpcSecurityGroupIds().hashCode());
         hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode());
+        hashCode = prime * hashCode + ((getDomainFqdn() == null) ? 0 : getDomainFqdn().hashCode());
+        hashCode = prime * hashCode + ((getDomainOu() == null) ? 0 : getDomainOu().hashCode());
+        hashCode = prime * hashCode + ((getDomainAuthSecretArn() == null) ? 0 : getDomainAuthSecretArn().hashCode());
+        hashCode = prime * hashCode + ((getDomainDnsIps() == null) ? 0 : getDomainDnsIps().hashCode());
         hashCode = prime * hashCode + ((getCopyTagsToSnapshot() == null) ? 0 : getCopyTagsToSnapshot().hashCode());
         hashCode = prime * hashCode + ((getDomainIAMRoleName() == null) ? 0 : getDomainIAMRoleName().hashCode());
         hashCode = prime * hashCode + ((getEnableIAMDatabaseAuthentication() == null) ? 0 : getEnableIAMDatabaseAuthentication().hashCode());
@@ -5294,6 +6004,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
         hashCode = prime * hashCode + ((getStorageThroughput() == null) ? 0 : getStorageThroughput().hashCode());
         hashCode = prime * hashCode + ((getDBClusterSnapshotIdentifier() == null) ? 0 : getDBClusterSnapshotIdentifier().hashCode());
         hashCode = prime * hashCode + ((getAllocatedStorage() == null) ? 0 : getAllocatedStorage().hashCode());
+        hashCode = prime * hashCode + ((getDedicatedLogVolume() == null) ? 0 : getDedicatedLogVolume().hashCode());
         return hashCode;
     }
 

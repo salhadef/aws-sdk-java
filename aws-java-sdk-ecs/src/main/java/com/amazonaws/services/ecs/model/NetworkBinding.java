@@ -95,8 +95,8 @@ public class NetworkBinding implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPort</code> is set to the same
-     * value as the <code>containerPort</code>. This is a static mapping strategy.
+     * For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPortRange</code> is set to the
+     * same value as the <code>containerPortRange</code>. This is a static mapping strategy.
      * </p>
      * </li>
      * <li>
@@ -392,8 +392,8 @@ public class NetworkBinding implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPort</code> is set to the same
-     * value as the <code>containerPort</code>. This is a static mapping strategy.
+     * For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPortRange</code> is set to the
+     * same value as the <code>containerPortRange</code>. This is a static mapping strategy.
      * </p>
      * </li>
      * <li>
@@ -486,8 +486,8 @@ public class NetworkBinding implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPort</code> is set to
-     *        the same value as the <code>containerPort</code>. This is a static mapping strategy.
+     *        For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPortRange</code> is set
+     *        to the same value as the <code>containerPortRange</code>. This is a static mapping strategy.
      *        </p>
      *        </li>
      *        <li>
@@ -585,8 +585,8 @@ public class NetworkBinding implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPort</code> is set to the same
-     * value as the <code>containerPort</code>. This is a static mapping strategy.
+     * For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPortRange</code> is set to the
+     * same value as the <code>containerPortRange</code>. This is a static mapping strategy.
      * </p>
      * </li>
      * <li>
@@ -678,8 +678,8 @@ public class NetworkBinding implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPort</code> is set to
-     *         the same value as the <code>containerPort</code>. This is a static mapping strategy.
+     *         For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPortRange</code> is set
+     *         to the same value as the <code>containerPortRange</code>. This is a static mapping strategy.
      *         </p>
      *         </li>
      *         <li>
@@ -777,8 +777,8 @@ public class NetworkBinding implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPort</code> is set to the same
-     * value as the <code>containerPort</code>. This is a static mapping strategy.
+     * For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPortRange</code> is set to the
+     * same value as the <code>containerPortRange</code>. This is a static mapping strategy.
      * </p>
      * </li>
      * <li>
@@ -871,8 +871,8 @@ public class NetworkBinding implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPort</code> is set to
-     *        the same value as the <code>containerPort</code>. This is a static mapping strategy.
+     *        For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPortRange</code> is set
+     *        to the same value as the <code>containerPortRange</code>. This is a static mapping strategy.
      *        </p>
      *        </li>
      *        <li>

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Enables query structure and specified queries that product aggregate statistics.
+ * A type of analysis rule that enables query structure and specified queries that produce aggregate statistics.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/AnalysisRuleAggregation" target="_top">AWS
@@ -44,10 +44,16 @@ public class AnalysisRuleAggregation implements Serializable, Cloneable, Structu
     /**
      * <p>
      * Control that requires member who runs query to do a join with their configured table and/or other configured
-     * table in query
+     * table in query.
      * </p>
      */
     private String joinRequired;
+    /**
+     * <p>
+     * Which logical operators (if any) are to be used in an INNER JOIN match condition. Default is <code>AND</code>.
+     * </p>
+     */
+    private java.util.List<String> allowedJoinOperators;
     /**
      * <p>
      * The columns that query runners are allowed to select, group by, or filter by.
@@ -220,12 +226,12 @@ public class AnalysisRuleAggregation implements Serializable, Cloneable, Structu
     /**
      * <p>
      * Control that requires member who runs query to do a join with their configured table and/or other configured
-     * table in query
+     * table in query.
      * </p>
      * 
      * @param joinRequired
      *        Control that requires member who runs query to do a join with their configured table and/or other
-     *        configured table in query
+     *        configured table in query.
      * @see JoinRequiredOption
      */
 
@@ -236,11 +242,11 @@ public class AnalysisRuleAggregation implements Serializable, Cloneable, Structu
     /**
      * <p>
      * Control that requires member who runs query to do a join with their configured table and/or other configured
-     * table in query
+     * table in query.
      * </p>
      * 
      * @return Control that requires member who runs query to do a join with their configured table and/or other
-     *         configured table in query
+     *         configured table in query.
      * @see JoinRequiredOption
      */
 
@@ -251,12 +257,12 @@ public class AnalysisRuleAggregation implements Serializable, Cloneable, Structu
     /**
      * <p>
      * Control that requires member who runs query to do a join with their configured table and/or other configured
-     * table in query
+     * table in query.
      * </p>
      * 
      * @param joinRequired
      *        Control that requires member who runs query to do a join with their configured table and/or other
-     *        configured table in query
+     *        configured table in query.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JoinRequiredOption
      */
@@ -269,18 +275,121 @@ public class AnalysisRuleAggregation implements Serializable, Cloneable, Structu
     /**
      * <p>
      * Control that requires member who runs query to do a join with their configured table and/or other configured
-     * table in query
+     * table in query.
      * </p>
      * 
      * @param joinRequired
      *        Control that requires member who runs query to do a join with their configured table and/or other
-     *        configured table in query
+     *        configured table in query.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JoinRequiredOption
      */
 
     public AnalysisRuleAggregation withJoinRequired(JoinRequiredOption joinRequired) {
         this.joinRequired = joinRequired.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Which logical operators (if any) are to be used in an INNER JOIN match condition. Default is <code>AND</code>.
+     * </p>
+     * 
+     * @return Which logical operators (if any) are to be used in an INNER JOIN match condition. Default is
+     *         <code>AND</code>.
+     * @see JoinOperator
+     */
+
+    public java.util.List<String> getAllowedJoinOperators() {
+        return allowedJoinOperators;
+    }
+
+    /**
+     * <p>
+     * Which logical operators (if any) are to be used in an INNER JOIN match condition. Default is <code>AND</code>.
+     * </p>
+     * 
+     * @param allowedJoinOperators
+     *        Which logical operators (if any) are to be used in an INNER JOIN match condition. Default is
+     *        <code>AND</code>.
+     * @see JoinOperator
+     */
+
+    public void setAllowedJoinOperators(java.util.Collection<String> allowedJoinOperators) {
+        if (allowedJoinOperators == null) {
+            this.allowedJoinOperators = null;
+            return;
+        }
+
+        this.allowedJoinOperators = new java.util.ArrayList<String>(allowedJoinOperators);
+    }
+
+    /**
+     * <p>
+     * Which logical operators (if any) are to be used in an INNER JOIN match condition. Default is <code>AND</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAllowedJoinOperators(java.util.Collection)} or {@link #withAllowedJoinOperators(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param allowedJoinOperators
+     *        Which logical operators (if any) are to be used in an INNER JOIN match condition. Default is
+     *        <code>AND</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see JoinOperator
+     */
+
+    public AnalysisRuleAggregation withAllowedJoinOperators(String... allowedJoinOperators) {
+        if (this.allowedJoinOperators == null) {
+            setAllowedJoinOperators(new java.util.ArrayList<String>(allowedJoinOperators.length));
+        }
+        for (String ele : allowedJoinOperators) {
+            this.allowedJoinOperators.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Which logical operators (if any) are to be used in an INNER JOIN match condition. Default is <code>AND</code>.
+     * </p>
+     * 
+     * @param allowedJoinOperators
+     *        Which logical operators (if any) are to be used in an INNER JOIN match condition. Default is
+     *        <code>AND</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see JoinOperator
+     */
+
+    public AnalysisRuleAggregation withAllowedJoinOperators(java.util.Collection<String> allowedJoinOperators) {
+        setAllowedJoinOperators(allowedJoinOperators);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Which logical operators (if any) are to be used in an INNER JOIN match condition. Default is <code>AND</code>.
+     * </p>
+     * 
+     * @param allowedJoinOperators
+     *        Which logical operators (if any) are to be used in an INNER JOIN match condition. Default is
+     *        <code>AND</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see JoinOperator
+     */
+
+    public AnalysisRuleAggregation withAllowedJoinOperators(JoinOperator... allowedJoinOperators) {
+        java.util.ArrayList<String> allowedJoinOperatorsCopy = new java.util.ArrayList<String>(allowedJoinOperators.length);
+        for (JoinOperator value : allowedJoinOperators) {
+            allowedJoinOperatorsCopy.add(value.toString());
+        }
+        if (getAllowedJoinOperators() == null) {
+            setAllowedJoinOperators(allowedJoinOperatorsCopy);
+        } else {
+            getAllowedJoinOperators().addAll(allowedJoinOperatorsCopy);
+        }
         return this;
     }
 
@@ -558,6 +667,8 @@ public class AnalysisRuleAggregation implements Serializable, Cloneable, Structu
             sb.append("JoinColumns: ").append(getJoinColumns()).append(",");
         if (getJoinRequired() != null)
             sb.append("JoinRequired: ").append(getJoinRequired()).append(",");
+        if (getAllowedJoinOperators() != null)
+            sb.append("AllowedJoinOperators: ").append(getAllowedJoinOperators()).append(",");
         if (getDimensionColumns() != null)
             sb.append("DimensionColumns: ").append(getDimensionColumns()).append(",");
         if (getScalarFunctions() != null)
@@ -590,6 +701,10 @@ public class AnalysisRuleAggregation implements Serializable, Cloneable, Structu
             return false;
         if (other.getJoinRequired() != null && other.getJoinRequired().equals(this.getJoinRequired()) == false)
             return false;
+        if (other.getAllowedJoinOperators() == null ^ this.getAllowedJoinOperators() == null)
+            return false;
+        if (other.getAllowedJoinOperators() != null && other.getAllowedJoinOperators().equals(this.getAllowedJoinOperators()) == false)
+            return false;
         if (other.getDimensionColumns() == null ^ this.getDimensionColumns() == null)
             return false;
         if (other.getDimensionColumns() != null && other.getDimensionColumns().equals(this.getDimensionColumns()) == false)
@@ -613,6 +728,7 @@ public class AnalysisRuleAggregation implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getAggregateColumns() == null) ? 0 : getAggregateColumns().hashCode());
         hashCode = prime * hashCode + ((getJoinColumns() == null) ? 0 : getJoinColumns().hashCode());
         hashCode = prime * hashCode + ((getJoinRequired() == null) ? 0 : getJoinRequired().hashCode());
+        hashCode = prime * hashCode + ((getAllowedJoinOperators() == null) ? 0 : getAllowedJoinOperators().hashCode());
         hashCode = prime * hashCode + ((getDimensionColumns() == null) ? 0 : getDimensionColumns().hashCode());
         hashCode = prime * hashCode + ((getScalarFunctions() == null) ? 0 : getScalarFunctions().hashCode());
         hashCode = prime * hashCode + ((getOutputConstraints() == null) ? 0 : getOutputConstraints().hashCode());

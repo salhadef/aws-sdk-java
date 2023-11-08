@@ -40,7 +40,9 @@ public class CreateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize
-     * will support.
+     * will support. A high <code>minProvisionedTPS</code> will increase your bill. We recommend starting with 1 for
+     * <code>minProvisionedTPS</code> (the default). Track your usage using Amazon CloudWatch metrics, and increase the
+     * <code>minProvisionedTPS</code> as necessary.
      * </p>
      */
     private Integer minProvisionedTPS;
@@ -52,8 +54,8 @@ public class CreateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
     private CampaignConfig campaignConfig;
     /**
      * <p>
-     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply
-     * to the campaign.
+     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to
+     * the campaign.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -141,12 +143,16 @@ public class CreateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize
-     * will support.
+     * will support. A high <code>minProvisionedTPS</code> will increase your bill. We recommend starting with 1 for
+     * <code>minProvisionedTPS</code> (the default). Track your usage using Amazon CloudWatch metrics, and increase the
+     * <code>minProvisionedTPS</code> as necessary.
      * </p>
      * 
      * @param minProvisionedTPS
      *        Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon
-     *        Personalize will support.
+     *        Personalize will support. A high <code>minProvisionedTPS</code> will increase your bill. We recommend
+     *        starting with 1 for <code>minProvisionedTPS</code> (the default). Track your usage using Amazon CloudWatch
+     *        metrics, and increase the <code>minProvisionedTPS</code> as necessary.
      */
 
     public void setMinProvisionedTPS(Integer minProvisionedTPS) {
@@ -156,11 +162,15 @@ public class CreateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize
-     * will support.
+     * will support. A high <code>minProvisionedTPS</code> will increase your bill. We recommend starting with 1 for
+     * <code>minProvisionedTPS</code> (the default). Track your usage using Amazon CloudWatch metrics, and increase the
+     * <code>minProvisionedTPS</code> as necessary.
      * </p>
      * 
      * @return Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon
-     *         Personalize will support.
+     *         Personalize will support. A high <code>minProvisionedTPS</code> will increase your bill. We recommend
+     *         starting with 1 for <code>minProvisionedTPS</code> (the default). Track your usage using Amazon
+     *         CloudWatch metrics, and increase the <code>minProvisionedTPS</code> as necessary.
      */
 
     public Integer getMinProvisionedTPS() {
@@ -170,12 +180,16 @@ public class CreateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize
-     * will support.
+     * will support. A high <code>minProvisionedTPS</code> will increase your bill. We recommend starting with 1 for
+     * <code>minProvisionedTPS</code> (the default). Track your usage using Amazon CloudWatch metrics, and increase the
+     * <code>minProvisionedTPS</code> as necessary.
      * </p>
      * 
      * @param minProvisionedTPS
      *        Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon
-     *        Personalize will support.
+     *        Personalize will support. A high <code>minProvisionedTPS</code> will increase your bill. We recommend
+     *        starting with 1 for <code>minProvisionedTPS</code> (the default). Track your usage using Amazon CloudWatch
+     *        metrics, and increase the <code>minProvisionedTPS</code> as necessary.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -226,11 +240,11 @@ public class CreateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply
-     * to the campaign.
+     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to
+     * the campaign.
      * </p>
      * 
-     * @return A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to
+     * @return A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to
      *         apply to the campaign.
      */
 
@@ -240,12 +254,12 @@ public class CreateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply
-     * to the campaign.
+     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to
+     * the campaign.
      * </p>
      * 
      * @param tags
-     *        A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to
+     *        A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to
      *        apply to the campaign.
      */
 
@@ -260,8 +274,8 @@ public class CreateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply
-     * to the campaign.
+     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to
+     * the campaign.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -270,7 +284,7 @@ public class CreateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param tags
-     *        A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to
+     *        A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to
      *        apply to the campaign.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -287,12 +301,12 @@ public class CreateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply
-     * to the campaign.
+     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to
+     * the campaign.
      * </p>
      * 
      * @param tags
-     *        A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to
+     *        A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to
      *        apply to the campaign.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -121,6 +121,74 @@ public class AWSOpenSearchServerlessAsyncClient extends AWSOpenSearchServerlessC
     }
 
     @Override
+    public java.util.concurrent.Future<BatchGetEffectiveLifecyclePolicyResult> batchGetEffectiveLifecyclePolicyAsync(
+            BatchGetEffectiveLifecyclePolicyRequest request) {
+
+        return batchGetEffectiveLifecyclePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetEffectiveLifecyclePolicyResult> batchGetEffectiveLifecyclePolicyAsync(
+            final BatchGetEffectiveLifecyclePolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchGetEffectiveLifecyclePolicyRequest, BatchGetEffectiveLifecyclePolicyResult> asyncHandler) {
+        final BatchGetEffectiveLifecyclePolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchGetEffectiveLifecyclePolicyResult>() {
+            @Override
+            public BatchGetEffectiveLifecyclePolicyResult call() throws Exception {
+                BatchGetEffectiveLifecyclePolicyResult result = null;
+
+                try {
+                    result = executeBatchGetEffectiveLifecyclePolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetLifecyclePolicyResult> batchGetLifecyclePolicyAsync(BatchGetLifecyclePolicyRequest request) {
+
+        return batchGetLifecyclePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetLifecyclePolicyResult> batchGetLifecyclePolicyAsync(final BatchGetLifecyclePolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchGetLifecyclePolicyRequest, BatchGetLifecyclePolicyResult> asyncHandler) {
+        final BatchGetLifecyclePolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchGetLifecyclePolicyResult>() {
+            @Override
+            public BatchGetLifecyclePolicyResult call() throws Exception {
+                BatchGetLifecyclePolicyResult result = null;
+
+                try {
+                    result = executeBatchGetLifecyclePolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchGetVpcEndpointResult> batchGetVpcEndpointAsync(BatchGetVpcEndpointRequest request) {
 
         return batchGetVpcEndpointAsync(request, null);
@@ -204,6 +272,39 @@ public class AWSOpenSearchServerlessAsyncClient extends AWSOpenSearchServerlessC
 
                 try {
                     result = executeCreateCollection(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLifecyclePolicyResult> createLifecyclePolicyAsync(CreateLifecyclePolicyRequest request) {
+
+        return createLifecyclePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLifecyclePolicyResult> createLifecyclePolicyAsync(final CreateLifecyclePolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateLifecyclePolicyRequest, CreateLifecyclePolicyResult> asyncHandler) {
+        final CreateLifecyclePolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateLifecyclePolicyResult>() {
+            @Override
+            public CreateLifecyclePolicyResult call() throws Exception {
+                CreateLifecyclePolicyResult result = null;
+
+                try {
+                    result = executeCreateLifecyclePolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -369,6 +470,39 @@ public class AWSOpenSearchServerlessAsyncClient extends AWSOpenSearchServerlessC
 
                 try {
                     result = executeDeleteCollection(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLifecyclePolicyResult> deleteLifecyclePolicyAsync(DeleteLifecyclePolicyRequest request) {
+
+        return deleteLifecyclePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLifecyclePolicyResult> deleteLifecyclePolicyAsync(final DeleteLifecyclePolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteLifecyclePolicyRequest, DeleteLifecyclePolicyResult> asyncHandler) {
+        final DeleteLifecyclePolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteLifecyclePolicyResult>() {
+            @Override
+            public DeleteLifecyclePolicyResult call() throws Exception {
+                DeleteLifecyclePolicyResult result = null;
+
+                try {
+                    result = executeDeleteLifecyclePolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -715,6 +849,39 @@ public class AWSOpenSearchServerlessAsyncClient extends AWSOpenSearchServerlessC
     }
 
     @Override
+    public java.util.concurrent.Future<ListLifecyclePoliciesResult> listLifecyclePoliciesAsync(ListLifecyclePoliciesRequest request) {
+
+        return listLifecyclePoliciesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLifecyclePoliciesResult> listLifecyclePoliciesAsync(final ListLifecyclePoliciesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListLifecyclePoliciesRequest, ListLifecyclePoliciesResult> asyncHandler) {
+        final ListLifecyclePoliciesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListLifecyclePoliciesResult>() {
+            @Override
+            public ListLifecyclePoliciesResult call() throws Exception {
+                ListLifecyclePoliciesResult result = null;
+
+                try {
+                    result = executeListLifecyclePolicies(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListSecurityConfigsResult> listSecurityConfigsAsync(ListSecurityConfigsRequest request) {
 
         return listSecurityConfigsAsync(request, null);
@@ -996,6 +1163,39 @@ public class AWSOpenSearchServerlessAsyncClient extends AWSOpenSearchServerlessC
 
                 try {
                     result = executeUpdateCollection(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLifecyclePolicyResult> updateLifecyclePolicyAsync(UpdateLifecyclePolicyRequest request) {
+
+        return updateLifecyclePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLifecyclePolicyResult> updateLifecyclePolicyAsync(final UpdateLifecyclePolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateLifecyclePolicyRequest, UpdateLifecyclePolicyResult> asyncHandler) {
+        final UpdateLifecyclePolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateLifecyclePolicyResult>() {
+            @Override
+            public UpdateLifecyclePolicyResult call() throws Exception {
+                UpdateLifecyclePolicyResult result = null;
+
+                try {
+                    result = executeUpdateLifecyclePolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

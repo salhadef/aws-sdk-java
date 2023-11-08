@@ -27,10 +27,56 @@ public class ArchiveApplicationRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
+     * Account ID.
+     * </p>
+     */
+    private String accountID;
+    /**
+     * <p>
      * Application ID.
      * </p>
      */
     private String applicationID;
+
+    /**
+     * <p>
+     * Account ID.
+     * </p>
+     * 
+     * @param accountID
+     *        Account ID.
+     */
+
+    public void setAccountID(String accountID) {
+        this.accountID = accountID;
+    }
+
+    /**
+     * <p>
+     * Account ID.
+     * </p>
+     * 
+     * @return Account ID.
+     */
+
+    public String getAccountID() {
+        return this.accountID;
+    }
+
+    /**
+     * <p>
+     * Account ID.
+     * </p>
+     * 
+     * @param accountID
+     *        Account ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ArchiveApplicationRequest withAccountID(String accountID) {
+        setAccountID(accountID);
+        return this;
+    }
 
     /**
      * <p>
@@ -84,6 +130,8 @@ public class ArchiveApplicationRequest extends com.amazonaws.AmazonWebServiceReq
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAccountID() != null)
+            sb.append("AccountID: ").append(getAccountID()).append(",");
         if (getApplicationID() != null)
             sb.append("ApplicationID: ").append(getApplicationID());
         sb.append("}");
@@ -100,6 +148,10 @@ public class ArchiveApplicationRequest extends com.amazonaws.AmazonWebServiceReq
         if (obj instanceof ArchiveApplicationRequest == false)
             return false;
         ArchiveApplicationRequest other = (ArchiveApplicationRequest) obj;
+        if (other.getAccountID() == null ^ this.getAccountID() == null)
+            return false;
+        if (other.getAccountID() != null && other.getAccountID().equals(this.getAccountID()) == false)
+            return false;
         if (other.getApplicationID() == null ^ this.getApplicationID() == null)
             return false;
         if (other.getApplicationID() != null && other.getApplicationID().equals(this.getApplicationID()) == false)
@@ -112,6 +164,7 @@ public class ArchiveApplicationRequest extends com.amazonaws.AmazonWebServiceReq
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAccountID() == null) ? 0 : getAccountID().hashCode());
         hashCode = prime * hashCode + ((getApplicationID() == null) ? 0 : getApplicationID().hashCode());
         return hashCode;
     }

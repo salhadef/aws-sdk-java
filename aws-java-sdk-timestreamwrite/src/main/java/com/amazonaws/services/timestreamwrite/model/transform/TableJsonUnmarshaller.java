@@ -80,6 +80,10 @@ public class TableJsonUnmarshaller implements Unmarshaller<Table, JsonUnmarshall
                     context.nextToken();
                     table.setMagneticStoreWriteProperties(MagneticStoreWritePropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Schema", targetDepth)) {
+                    context.nextToken();
+                    table.setSchema(SchemaJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

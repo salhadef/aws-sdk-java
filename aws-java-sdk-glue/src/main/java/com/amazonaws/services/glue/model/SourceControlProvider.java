@@ -21,6 +21,8 @@ import javax.annotation.Generated;
 public enum SourceControlProvider {
 
     GITHUB("GITHUB"),
+    GITLAB("GITLAB"),
+    BITBUCKET("BITBUCKET"),
     AWS_CODE_COMMIT("AWS_CODE_COMMIT");
 
     private String value;

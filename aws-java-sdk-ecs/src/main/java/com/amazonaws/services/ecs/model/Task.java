@@ -336,6 +336,11 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * The stop code indicating why a task was stopped. The <code>stoppedReason</code> might contain additional details.
      * </p>
      * <p>
+     * For more information about stop code, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/stopped-task-error-codes.html">Stopped tasks error
+     * codes</a> in the <i>Amazon ECS User Guide</i>.
+     * </p>
+     * <p>
      * The following are valid values:
      * </p>
      * <ul>
@@ -388,7 +393,7 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Unix timestamp for the time when the task stops. More specifically, it's for the time when the task
-     * transitions from the <code>RUNNING</code> state to <code>STOPPED</code>.
+     * transitions from the <code>RUNNING</code> state to <code>STOPPING</code>.
      * </p>
      */
     private java.util.Date stoppingAt;
@@ -2638,6 +2643,11 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * The stop code indicating why a task was stopped. The <code>stoppedReason</code> might contain additional details.
      * </p>
      * <p>
+     * For more information about stop code, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/stopped-task-error-codes.html">Stopped tasks error
+     * codes</a> in the <i>Amazon ECS User Guide</i>.
+     * </p>
+     * <p>
      * The following are valid values:
      * </p>
      * <ul>
@@ -2675,7 +2685,12 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param stopCode
      *        The stop code indicating why a task was stopped. The <code>stoppedReason</code> might contain additional
-     *        details.</p>
+     *        details. </p>
+     *        <p>
+     *        For more information about stop code, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/stopped-task-error-codes.html">Stopped tasks
+     *        error codes</a> in the <i>Amazon ECS User Guide</i>.
+     *        </p>
      *        <p>
      *        The following are valid values:
      *        </p>
@@ -2722,6 +2737,11 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * The stop code indicating why a task was stopped. The <code>stoppedReason</code> might contain additional details.
      * </p>
      * <p>
+     * For more information about stop code, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/stopped-task-error-codes.html">Stopped tasks error
+     * codes</a> in the <i>Amazon ECS User Guide</i>.
+     * </p>
+     * <p>
      * The following are valid values:
      * </p>
      * <ul>
@@ -2758,7 +2778,12 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @return The stop code indicating why a task was stopped. The <code>stoppedReason</code> might contain additional
-     *         details.</p>
+     *         details. </p>
+     *         <p>
+     *         For more information about stop code, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/stopped-task-error-codes.html">Stopped tasks
+     *         error codes</a> in the <i>Amazon ECS User Guide</i>.
+     *         </p>
      *         <p>
      *         The following are valid values:
      *         </p>
@@ -2805,6 +2830,11 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * The stop code indicating why a task was stopped. The <code>stoppedReason</code> might contain additional details.
      * </p>
      * <p>
+     * For more information about stop code, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/stopped-task-error-codes.html">Stopped tasks error
+     * codes</a> in the <i>Amazon ECS User Guide</i>.
+     * </p>
+     * <p>
      * The following are valid values:
      * </p>
      * <ul>
@@ -2842,7 +2872,12 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param stopCode
      *        The stop code indicating why a task was stopped. The <code>stoppedReason</code> might contain additional
-     *        details.</p>
+     *        details. </p>
+     *        <p>
+     *        For more information about stop code, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/stopped-task-error-codes.html">Stopped tasks
+     *        error codes</a> in the <i>Amazon ECS User Guide</i>.
+     *        </p>
      *        <p>
      *        The following are valid values:
      *        </p>
@@ -2891,6 +2926,11 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * The stop code indicating why a task was stopped. The <code>stoppedReason</code> might contain additional details.
      * </p>
      * <p>
+     * For more information about stop code, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/stopped-task-error-codes.html">Stopped tasks error
+     * codes</a> in the <i>Amazon ECS User Guide</i>.
+     * </p>
+     * <p>
      * The following are valid values:
      * </p>
      * <ul>
@@ -2928,7 +2968,12 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param stopCode
      *        The stop code indicating why a task was stopped. The <code>stoppedReason</code> might contain additional
-     *        details.</p>
+     *        details. </p>
+     *        <p>
+     *        For more information about stop code, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/stopped-task-error-codes.html">Stopped tasks
+     *        error codes</a> in the <i>Amazon ECS User Guide</i>.
+     *        </p>
      *        <p>
      *        The following are valid values:
      *        </p>
@@ -3061,12 +3106,12 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Unix timestamp for the time when the task stops. More specifically, it's for the time when the task
-     * transitions from the <code>RUNNING</code> state to <code>STOPPED</code>.
+     * transitions from the <code>RUNNING</code> state to <code>STOPPING</code>.
      * </p>
      * 
      * @param stoppingAt
      *        The Unix timestamp for the time when the task stops. More specifically, it's for the time when the task
-     *        transitions from the <code>RUNNING</code> state to <code>STOPPED</code>.
+     *        transitions from the <code>RUNNING</code> state to <code>STOPPING</code>.
      */
 
     public void setStoppingAt(java.util.Date stoppingAt) {
@@ -3076,11 +3121,11 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Unix timestamp for the time when the task stops. More specifically, it's for the time when the task
-     * transitions from the <code>RUNNING</code> state to <code>STOPPED</code>.
+     * transitions from the <code>RUNNING</code> state to <code>STOPPING</code>.
      * </p>
      * 
      * @return The Unix timestamp for the time when the task stops. More specifically, it's for the time when the task
-     *         transitions from the <code>RUNNING</code> state to <code>STOPPED</code>.
+     *         transitions from the <code>RUNNING</code> state to <code>STOPPING</code>.
      */
 
     public java.util.Date getStoppingAt() {
@@ -3090,12 +3135,12 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Unix timestamp for the time when the task stops. More specifically, it's for the time when the task
-     * transitions from the <code>RUNNING</code> state to <code>STOPPED</code>.
+     * transitions from the <code>RUNNING</code> state to <code>STOPPING</code>.
      * </p>
      * 
      * @param stoppingAt
      *        The Unix timestamp for the time when the task stops. More specifically, it's for the time when the task
-     *        transitions from the <code>RUNNING</code> state to <code>STOPPED</code>.
+     *        transitions from the <code>RUNNING</code> state to <code>STOPPING</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

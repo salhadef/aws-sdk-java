@@ -15,8 +15,8 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manually
- * controllable for MPEG2 and uncompressed video inputs.
+ * Enable Deblock to produce smoother motion in the output. Default is disabled. Only manually controllable for MPEG2
+ * and uncompressed video inputs.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum InputDeblockFilter {

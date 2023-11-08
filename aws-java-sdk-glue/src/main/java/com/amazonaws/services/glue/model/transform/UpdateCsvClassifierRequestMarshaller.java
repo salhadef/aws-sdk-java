@@ -46,6 +46,8 @@ public class UpdateCsvClassifierRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomDatatypeConfigured").build();
     private static final MarshallingInfo<List> CUSTOMDATATYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomDatatypes").build();
+    private static final MarshallingInfo<String> SERDE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Serde").build();
 
     private static final UpdateCsvClassifierRequestMarshaller instance = new UpdateCsvClassifierRequestMarshaller();
 
@@ -72,6 +74,7 @@ public class UpdateCsvClassifierRequestMarshaller {
             protocolMarshaller.marshall(updateCsvClassifierRequest.getAllowSingleColumn(), ALLOWSINGLECOLUMN_BINDING);
             protocolMarshaller.marshall(updateCsvClassifierRequest.getCustomDatatypeConfigured(), CUSTOMDATATYPECONFIGURED_BINDING);
             protocolMarshaller.marshall(updateCsvClassifierRequest.getCustomDatatypes(), CUSTOMDATATYPES_BINDING);
+            protocolMarshaller.marshall(updateCsvClassifierRequest.getSerde(), SERDE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

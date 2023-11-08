@@ -35,8 +35,8 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
     private String instanceType;
     /**
      * <p>
-     * Number of dedicated master nodes in the cluster. This number must be greater than 1, otherwise you receive a
-     * validation exception.
+     * Number of data nodes in the cluster. This number must be greater than 1, otherwise you receive a validation
+     * exception.
      * </p>
      */
     private Integer instanceCount;
@@ -70,8 +70,8 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
     private String dedicatedMasterType;
     /**
      * <p>
-     * Number of dedicated master nodes in the cluster. This number must be greater than 1, otherwise you receive a
-     * validation exception.
+     * Number of dedicated master nodes in the cluster. This number must be greater than 2 and not 4, otherwise you
+     * receive a validation exception.
      * </p>
      */
     private Integer dedicatedMasterCount;
@@ -99,6 +99,15 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private ColdStorageOptions coldStorageOptions;
+    /**
+     * <p>
+     * A boolean that indicates whether a multi-AZ domain is turned on with a standby AZ. For more information, see <a
+     * href
+     * ="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html">Configuring a
+     * multi-AZ domain in Amazon OpenSearch Service</a>.
+     * </p>
+     */
+    private Boolean multiAZWithStandbyEnabled;
 
     /**
      * <p>
@@ -161,13 +170,13 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Number of dedicated master nodes in the cluster. This number must be greater than 1, otherwise you receive a
-     * validation exception.
+     * Number of data nodes in the cluster. This number must be greater than 1, otherwise you receive a validation
+     * exception.
      * </p>
      * 
      * @param instanceCount
-     *        Number of dedicated master nodes in the cluster. This number must be greater than 1, otherwise you receive
-     *        a validation exception.
+     *        Number of data nodes in the cluster. This number must be greater than 1, otherwise you receive a
+     *        validation exception.
      */
 
     public void setInstanceCount(Integer instanceCount) {
@@ -176,12 +185,12 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Number of dedicated master nodes in the cluster. This number must be greater than 1, otherwise you receive a
-     * validation exception.
+     * Number of data nodes in the cluster. This number must be greater than 1, otherwise you receive a validation
+     * exception.
      * </p>
      * 
-     * @return Number of dedicated master nodes in the cluster. This number must be greater than 1, otherwise you
-     *         receive a validation exception.
+     * @return Number of data nodes in the cluster. This number must be greater than 1, otherwise you receive a
+     *         validation exception.
      */
 
     public Integer getInstanceCount() {
@@ -190,13 +199,13 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Number of dedicated master nodes in the cluster. This number must be greater than 1, otherwise you receive a
-     * validation exception.
+     * Number of data nodes in the cluster. This number must be greater than 1, otherwise you receive a validation
+     * exception.
      * </p>
      * 
      * @param instanceCount
-     *        Number of dedicated master nodes in the cluster. This number must be greater than 1, otherwise you receive
-     *        a validation exception.
+     *        Number of data nodes in the cluster. This number must be greater than 1, otherwise you receive a
+     *        validation exception.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -440,13 +449,13 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Number of dedicated master nodes in the cluster. This number must be greater than 1, otherwise you receive a
-     * validation exception.
+     * Number of dedicated master nodes in the cluster. This number must be greater than 2 and not 4, otherwise you
+     * receive a validation exception.
      * </p>
      * 
      * @param dedicatedMasterCount
-     *        Number of dedicated master nodes in the cluster. This number must be greater than 1, otherwise you receive
-     *        a validation exception.
+     *        Number of dedicated master nodes in the cluster. This number must be greater than 2 and not 4, otherwise
+     *        you receive a validation exception.
      */
 
     public void setDedicatedMasterCount(Integer dedicatedMasterCount) {
@@ -455,12 +464,12 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Number of dedicated master nodes in the cluster. This number must be greater than 1, otherwise you receive a
-     * validation exception.
+     * Number of dedicated master nodes in the cluster. This number must be greater than 2 and not 4, otherwise you
+     * receive a validation exception.
      * </p>
      * 
-     * @return Number of dedicated master nodes in the cluster. This number must be greater than 1, otherwise you
-     *         receive a validation exception.
+     * @return Number of dedicated master nodes in the cluster. This number must be greater than 2 and not 4, otherwise
+     *         you receive a validation exception.
      */
 
     public Integer getDedicatedMasterCount() {
@@ -469,13 +478,13 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Number of dedicated master nodes in the cluster. This number must be greater than 1, otherwise you receive a
-     * validation exception.
+     * Number of dedicated master nodes in the cluster. This number must be greater than 2 and not 4, otherwise you
+     * receive a validation exception.
      * </p>
      * 
      * @param dedicatedMasterCount
-     *        Number of dedicated master nodes in the cluster. This number must be greater than 1, otherwise you receive
-     *        a validation exception.
+     *        Number of dedicated master nodes in the cluster. This number must be greater than 2 and not 4, otherwise
+     *        you receive a validation exception.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -676,6 +685,82 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A boolean that indicates whether a multi-AZ domain is turned on with a standby AZ. For more information, see <a
+     * href
+     * ="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html">Configuring a
+     * multi-AZ domain in Amazon OpenSearch Service</a>.
+     * </p>
+     * 
+     * @param multiAZWithStandbyEnabled
+     *        A boolean that indicates whether a multi-AZ domain is turned on with a standby AZ. For more information,
+     *        see <a
+     *        href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html"
+     *        >Configuring a multi-AZ domain in Amazon OpenSearch Service</a>.
+     */
+
+    public void setMultiAZWithStandbyEnabled(Boolean multiAZWithStandbyEnabled) {
+        this.multiAZWithStandbyEnabled = multiAZWithStandbyEnabled;
+    }
+
+    /**
+     * <p>
+     * A boolean that indicates whether a multi-AZ domain is turned on with a standby AZ. For more information, see <a
+     * href
+     * ="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html">Configuring a
+     * multi-AZ domain in Amazon OpenSearch Service</a>.
+     * </p>
+     * 
+     * @return A boolean that indicates whether a multi-AZ domain is turned on with a standby AZ. For more information,
+     *         see <a
+     *         href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html"
+     *         >Configuring a multi-AZ domain in Amazon OpenSearch Service</a>.
+     */
+
+    public Boolean getMultiAZWithStandbyEnabled() {
+        return this.multiAZWithStandbyEnabled;
+    }
+
+    /**
+     * <p>
+     * A boolean that indicates whether a multi-AZ domain is turned on with a standby AZ. For more information, see <a
+     * href
+     * ="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html">Configuring a
+     * multi-AZ domain in Amazon OpenSearch Service</a>.
+     * </p>
+     * 
+     * @param multiAZWithStandbyEnabled
+     *        A boolean that indicates whether a multi-AZ domain is turned on with a standby AZ. For more information,
+     *        see <a
+     *        href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html"
+     *        >Configuring a multi-AZ domain in Amazon OpenSearch Service</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClusterConfig withMultiAZWithStandbyEnabled(Boolean multiAZWithStandbyEnabled) {
+        setMultiAZWithStandbyEnabled(multiAZWithStandbyEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A boolean that indicates whether a multi-AZ domain is turned on with a standby AZ. For more information, see <a
+     * href
+     * ="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html">Configuring a
+     * multi-AZ domain in Amazon OpenSearch Service</a>.
+     * </p>
+     * 
+     * @return A boolean that indicates whether a multi-AZ domain is turned on with a standby AZ. For more information,
+     *         see <a
+     *         href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html"
+     *         >Configuring a multi-AZ domain in Amazon OpenSearch Service</a>.
+     */
+
+    public Boolean isMultiAZWithStandbyEnabled() {
+        return this.multiAZWithStandbyEnabled;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -708,7 +793,9 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
         if (getWarmCount() != null)
             sb.append("WarmCount: ").append(getWarmCount()).append(",");
         if (getColdStorageOptions() != null)
-            sb.append("ColdStorageOptions: ").append(getColdStorageOptions());
+            sb.append("ColdStorageOptions: ").append(getColdStorageOptions()).append(",");
+        if (getMultiAZWithStandbyEnabled() != null)
+            sb.append("MultiAZWithStandbyEnabled: ").append(getMultiAZWithStandbyEnabled());
         sb.append("}");
         return sb.toString();
     }
@@ -767,6 +854,10 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getColdStorageOptions() != null && other.getColdStorageOptions().equals(this.getColdStorageOptions()) == false)
             return false;
+        if (other.getMultiAZWithStandbyEnabled() == null ^ this.getMultiAZWithStandbyEnabled() == null)
+            return false;
+        if (other.getMultiAZWithStandbyEnabled() != null && other.getMultiAZWithStandbyEnabled().equals(this.getMultiAZWithStandbyEnabled()) == false)
+            return false;
         return true;
     }
 
@@ -786,6 +877,7 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getWarmType() == null) ? 0 : getWarmType().hashCode());
         hashCode = prime * hashCode + ((getWarmCount() == null) ? 0 : getWarmCount().hashCode());
         hashCode = prime * hashCode + ((getColdStorageOptions() == null) ? 0 : getColdStorageOptions().hashCode());
+        hashCode = prime * hashCode + ((getMultiAZWithStandbyEnabled() == null) ? 0 : getMultiAZWithStandbyEnabled().hashCode());
         return hashCode;
     }
 

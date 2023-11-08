@@ -38,6 +38,12 @@ public class ListApplicationsRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private Integer maxResults;
+    /**
+     * <p>
+     * The filter of name, value, and operator.
+     * </p>
+     */
+    private java.util.List<Filter> filters;
 
     /**
      * <p>
@@ -126,6 +132,76 @@ public class ListApplicationsRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The filter of name, value, and operator.
+     * </p>
+     * 
+     * @return The filter of name, value, and operator.
+     */
+
+    public java.util.List<Filter> getFilters() {
+        return filters;
+    }
+
+    /**
+     * <p>
+     * The filter of name, value, and operator.
+     * </p>
+     * 
+     * @param filters
+     *        The filter of name, value, and operator.
+     */
+
+    public void setFilters(java.util.Collection<Filter> filters) {
+        if (filters == null) {
+            this.filters = null;
+            return;
+        }
+
+        this.filters = new java.util.ArrayList<Filter>(filters);
+    }
+
+    /**
+     * <p>
+     * The filter of name, value, and operator.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param filters
+     *        The filter of name, value, and operator.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListApplicationsRequest withFilters(Filter... filters) {
+        if (this.filters == null) {
+            setFilters(new java.util.ArrayList<Filter>(filters.length));
+        }
+        for (Filter ele : filters) {
+            this.filters.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The filter of name, value, and operator.
+     * </p>
+     * 
+     * @param filters
+     *        The filter of name, value, and operator.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListApplicationsRequest withFilters(java.util.Collection<Filter> filters) {
+        setFilters(filters);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -140,7 +216,9 @@ public class ListApplicationsRequest extends com.amazonaws.AmazonWebServiceReque
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getFilters() != null)
+            sb.append("Filters: ").append(getFilters());
         sb.append("}");
         return sb.toString();
     }
@@ -163,6 +241,10 @@ public class ListApplicationsRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
+        if (other.getFilters() == null ^ this.getFilters() == null)
+            return false;
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
+            return false;
         return true;
     }
 
@@ -173,6 +255,7 @@ public class ListApplicationsRequest extends com.amazonaws.AmazonWebServiceReque
 
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         return hashCode;
     }
 

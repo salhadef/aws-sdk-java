@@ -948,6 +948,43 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
 
     /**
      * <p>
+     * Retrieves the details for a Savings Plan recommendation. These details include the hourly data-points that
+     * construct the cost, coverage, and utilization charts.
+     * </p>
+     * 
+     * @param getSavingsPlanPurchaseRecommendationDetailsRequest
+     * @return A Java Future containing the result of the GetSavingsPlanPurchaseRecommendationDetails operation returned
+     *         by the service.
+     * @sample AWSCostExplorerAsync.GetSavingsPlanPurchaseRecommendationDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlanPurchaseRecommendationDetails"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetSavingsPlanPurchaseRecommendationDetailsResult> getSavingsPlanPurchaseRecommendationDetailsAsync(
+            GetSavingsPlanPurchaseRecommendationDetailsRequest getSavingsPlanPurchaseRecommendationDetailsRequest);
+
+    /**
+     * <p>
+     * Retrieves the details for a Savings Plan recommendation. These details include the hourly data-points that
+     * construct the cost, coverage, and utilization charts.
+     * </p>
+     * 
+     * @param getSavingsPlanPurchaseRecommendationDetailsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetSavingsPlanPurchaseRecommendationDetails operation returned
+     *         by the service.
+     * @sample AWSCostExplorerAsyncHandler.GetSavingsPlanPurchaseRecommendationDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlanPurchaseRecommendationDetails"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetSavingsPlanPurchaseRecommendationDetailsResult> getSavingsPlanPurchaseRecommendationDetailsAsync(
+            GetSavingsPlanPurchaseRecommendationDetailsRequest getSavingsPlanPurchaseRecommendationDetailsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetSavingsPlanPurchaseRecommendationDetailsRequest, GetSavingsPlanPurchaseRecommendationDetailsResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves the Savings Plans covered for your account. This enables you to see how much of your cost is covered by
      * a Savings Plan. An organization’s management account can see the coverage of the associated member accounts. This
      * supports dimensions, Cost Categories, and nested expressions. For any time period, you can filter data for
@@ -1583,8 +1620,16 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
 
     /**
      * <p>
-     * Updates an existing cost anomaly monitor subscription.
+     * Updates an existing cost anomaly subscription. Specify the fields that you want to update. Omitted fields are
+     * unchanged.
      * </p>
+     * <note>
+     * <p>
+     * The JSON below describes the generic construct for each type. See <a href=
+     * "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_UpdateAnomalySubscription.html#API_UpdateAnomalySubscription_RequestParameters"
+     * >Request Parameters</a> for possible values as they apply to <code>AnomalySubscription</code>.
+     * </p>
+     * </note>
      * 
      * @param updateAnomalySubscriptionRequest
      * @return A Java Future containing the result of the UpdateAnomalySubscription operation returned by the service.
@@ -1597,8 +1642,16 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
 
     /**
      * <p>
-     * Updates an existing cost anomaly monitor subscription.
+     * Updates an existing cost anomaly subscription. Specify the fields that you want to update. Omitted fields are
+     * unchanged.
      * </p>
+     * <note>
+     * <p>
+     * The JSON below describes the generic construct for each type. See <a href=
+     * "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_UpdateAnomalySubscription.html#API_UpdateAnomalySubscription_RequestParameters"
+     * >Request Parameters</a> for possible values as they apply to <code>AnomalySubscription</code>.
+     * </p>
+     * </note>
      * 
      * @param updateAnomalySubscriptionRequest
      * @param asyncHandler

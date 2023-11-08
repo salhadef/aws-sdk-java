@@ -36,7 +36,7 @@ public class LabelGroupSummary implements Serializable, Cloneable, StructuredPoj
     private String labelGroupName;
     /**
      * <p>
-     * The ARN of the label group.
+     * The Amazon Resource Name (ARN) of the label group.
      * </p>
      */
     private String labelGroupArn;
@@ -95,11 +95,11 @@ public class LabelGroupSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ARN of the label group.
+     * The Amazon Resource Name (ARN) of the label group.
      * </p>
      * 
      * @param labelGroupArn
-     *        The ARN of the label group.
+     *        The Amazon Resource Name (ARN) of the label group.
      */
 
     public void setLabelGroupArn(String labelGroupArn) {
@@ -108,10 +108,10 @@ public class LabelGroupSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ARN of the label group.
+     * The Amazon Resource Name (ARN) of the label group.
      * </p>
      * 
-     * @return The ARN of the label group.
+     * @return The Amazon Resource Name (ARN) of the label group.
      */
 
     public String getLabelGroupArn() {
@@ -120,11 +120,11 @@ public class LabelGroupSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ARN of the label group.
+     * The Amazon Resource Name (ARN) of the label group.
      * </p>
      * 
      * @param labelGroupArn
-     *        The ARN of the label group.
+     *        The Amazon Resource Name (ARN) of the label group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

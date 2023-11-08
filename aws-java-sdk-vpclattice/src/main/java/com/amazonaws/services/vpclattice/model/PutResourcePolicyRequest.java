@@ -27,7 +27,7 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * An IAM policy. The policy string in JSON must not contain newlines or blank lines.
+     * An IAM policy.
      * </p>
      */
     private String policy;
@@ -40,11 +40,11 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * An IAM policy. The policy string in JSON must not contain newlines or blank lines.
+     * An IAM policy.
      * </p>
      * 
      * @param policy
-     *        An IAM policy. The policy string in JSON must not contain newlines or blank lines.
+     *        An IAM policy.
      */
 
     public void setPolicy(String policy) {
@@ -53,10 +53,10 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * An IAM policy. The policy string in JSON must not contain newlines or blank lines.
+     * An IAM policy.
      * </p>
      * 
-     * @return An IAM policy. The policy string in JSON must not contain newlines or blank lines.
+     * @return An IAM policy.
      */
 
     public String getPolicy() {
@@ -65,11 +65,11 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * An IAM policy. The policy string in JSON must not contain newlines or blank lines.
+     * An IAM policy.
      * </p>
      * 
      * @param policy
-     *        An IAM policy. The policy string in JSON must not contain newlines or blank lines.
+     *        An IAM policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

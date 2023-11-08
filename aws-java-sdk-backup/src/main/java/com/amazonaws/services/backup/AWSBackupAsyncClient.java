@@ -275,6 +275,41 @@ public class AWSBackupAsyncClient extends AWSBackupClient implements AWSBackupAs
     }
 
     @Override
+    public java.util.concurrent.Future<CreateLogicallyAirGappedBackupVaultResult> createLogicallyAirGappedBackupVaultAsync(
+            CreateLogicallyAirGappedBackupVaultRequest request) {
+
+        return createLogicallyAirGappedBackupVaultAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLogicallyAirGappedBackupVaultResult> createLogicallyAirGappedBackupVaultAsync(
+            final CreateLogicallyAirGappedBackupVaultRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateLogicallyAirGappedBackupVaultRequest, CreateLogicallyAirGappedBackupVaultResult> asyncHandler) {
+        final CreateLogicallyAirGappedBackupVaultRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateLogicallyAirGappedBackupVaultResult>() {
+            @Override
+            public CreateLogicallyAirGappedBackupVaultResult call() throws Exception {
+                CreateLogicallyAirGappedBackupVaultResult result = null;
+
+                try {
+                    result = executeCreateLogicallyAirGappedBackupVault(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateReportPlanResult> createReportPlanAsync(CreateReportPlanRequest request) {
 
         return createReportPlanAsync(request, null);
@@ -1686,6 +1721,41 @@ public class AWSBackupAsyncClient extends AWSBackupClient implements AWSBackupAs
 
                 try {
                     result = executeListProtectedResources(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListProtectedResourcesByBackupVaultResult> listProtectedResourcesByBackupVaultAsync(
+            ListProtectedResourcesByBackupVaultRequest request) {
+
+        return listProtectedResourcesByBackupVaultAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListProtectedResourcesByBackupVaultResult> listProtectedResourcesByBackupVaultAsync(
+            final ListProtectedResourcesByBackupVaultRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListProtectedResourcesByBackupVaultRequest, ListProtectedResourcesByBackupVaultResult> asyncHandler) {
+        final ListProtectedResourcesByBackupVaultRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListProtectedResourcesByBackupVaultResult>() {
+            @Override
+            public ListProtectedResourcesByBackupVaultResult call() throws Exception {
+                ListProtectedResourcesByBackupVaultResult result = null;
+
+                try {
+                    result = executeListProtectedResourcesByBackupVault(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -28,7 +28,7 @@ import javax.annotation.Generated;
  * </p>
  * <p>
  * The following is the format of an event data store ARN:
- * <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+ * <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
  * </p>
  * <p>
  * The following is the format of a channel ARN:

@@ -295,7 +295,7 @@ import com.amazonaws.services.ivs.model.*;
  * </li>
  * </ul>
  * <p>
- * <b>PlaybackKeyPair Endpoints</b>
+ * <b>Private Channel Endpoints</b>
  * </p>
  * <p>
  * For more information, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting Up
@@ -325,6 +325,19 @@ import com.amazonaws.services.ivs.model.*;
  * <p>
  * <a>DeletePlaybackKeyPair</a> — Deletes a specified authorization key pair. This invalidates future viewer tokens
  * generated using the key pair’s <code>privateKey</code>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>StartViewerSessionRevocation</a> — Starts the process of revoking the viewer session associated with a specified
+ * channel ARN and viewer ID. Optionally, you can provide a version to revoke viewer sessions less than and including
+ * that version.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>BatchStartViewerSessionRevocation</a> — Performs <a>StartViewerSessionRevocation</a> on multiple channel ARN and
+ * viewer ID pairs simultaneously.
  * </p>
  * </li>
  * </ul>
@@ -439,6 +452,41 @@ public interface AmazonIVSAsync extends AmazonIVS {
      */
     java.util.concurrent.Future<BatchGetStreamKeyResult> batchGetStreamKeyAsync(BatchGetStreamKeyRequest batchGetStreamKeyRequest,
             com.amazonaws.handlers.AsyncHandler<BatchGetStreamKeyRequest, BatchGetStreamKeyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Performs <a>StartViewerSessionRevocation</a> on multiple channel ARN and viewer ID pairs simultaneously.
+     * </p>
+     * 
+     * @param batchStartViewerSessionRevocationRequest
+     * @return A Java Future containing the result of the BatchStartViewerSessionRevocation operation returned by the
+     *         service.
+     * @sample AmazonIVSAsync.BatchStartViewerSessionRevocation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/BatchStartViewerSessionRevocation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchStartViewerSessionRevocationResult> batchStartViewerSessionRevocationAsync(
+            BatchStartViewerSessionRevocationRequest batchStartViewerSessionRevocationRequest);
+
+    /**
+     * <p>
+     * Performs <a>StartViewerSessionRevocation</a> on multiple channel ARN and viewer ID pairs simultaneously.
+     * </p>
+     * 
+     * @param batchStartViewerSessionRevocationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchStartViewerSessionRevocation operation returned by the
+     *         service.
+     * @sample AmazonIVSAsyncHandler.BatchStartViewerSessionRevocation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/BatchStartViewerSessionRevocation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchStartViewerSessionRevocationResult> batchStartViewerSessionRevocationAsync(
+            BatchStartViewerSessionRevocationRequest batchStartViewerSessionRevocationRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchStartViewerSessionRevocationRequest, BatchStartViewerSessionRevocationResult> asyncHandler);
 
     /**
      * <p>
@@ -1238,6 +1286,47 @@ public interface AmazonIVSAsync extends AmazonIVS {
 
     /**
      * <p>
+     * Starts the process of revoking the viewer session associated with a specified channel ARN and viewer ID.
+     * Optionally, you can provide a version to revoke viewer sessions less than and including that version. For
+     * instructions on associating a viewer ID with a viewer session, see <a
+     * href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting Up Private Channels</a>.
+     * </p>
+     * 
+     * @param startViewerSessionRevocationRequest
+     * @return A Java Future containing the result of the StartViewerSessionRevocation operation returned by the
+     *         service.
+     * @sample AmazonIVSAsync.StartViewerSessionRevocation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/StartViewerSessionRevocation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartViewerSessionRevocationResult> startViewerSessionRevocationAsync(
+            StartViewerSessionRevocationRequest startViewerSessionRevocationRequest);
+
+    /**
+     * <p>
+     * Starts the process of revoking the viewer session associated with a specified channel ARN and viewer ID.
+     * Optionally, you can provide a version to revoke viewer sessions less than and including that version. For
+     * instructions on associating a viewer ID with a viewer session, see <a
+     * href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting Up Private Channels</a>.
+     * </p>
+     * 
+     * @param startViewerSessionRevocationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartViewerSessionRevocation operation returned by the
+     *         service.
+     * @sample AmazonIVSAsyncHandler.StartViewerSessionRevocation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/StartViewerSessionRevocation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartViewerSessionRevocationResult> startViewerSessionRevocationAsync(
+            StartViewerSessionRevocationRequest startViewerSessionRevocationRequest,
+            com.amazonaws.handlers.AsyncHandler<StartViewerSessionRevocationRequest, StartViewerSessionRevocationResult> asyncHandler);
+
+    /**
+     * <p>
      * Disconnects the incoming RTMPS stream for the specified channel. Can be used in conjunction with
      * <a>DeleteStreamKey</a> to prevent further streaming to a channel.
      * </p>
@@ -1345,8 +1434,8 @@ public interface AmazonIVSAsync extends AmazonIVS {
 
     /**
      * <p>
-     * Updates a channel's configuration. This does not affect an ongoing stream of this channel. You must stop and
-     * restart the stream for the changes to take effect.
+     * Updates a channel's configuration. Live channels cannot be updated. You must stop the ongoing stream, update the
+     * channel, and restart the stream for the changes to take effect.
      * </p>
      * 
      * @param updateChannelRequest
@@ -1359,8 +1448,8 @@ public interface AmazonIVSAsync extends AmazonIVS {
 
     /**
      * <p>
-     * Updates a channel's configuration. This does not affect an ongoing stream of this channel. You must stop and
-     * restart the stream for the changes to take effect.
+     * Updates a channel's configuration. Live channels cannot be updated. You must stop the ongoing stream, update the
+     * channel, and restart the stream for the changes to take effect.
      * </p>
      * 
      * @param updateChannelRequest

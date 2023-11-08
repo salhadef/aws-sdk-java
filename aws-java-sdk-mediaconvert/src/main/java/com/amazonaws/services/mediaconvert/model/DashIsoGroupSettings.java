@@ -19,9 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * Settings related to your DASH output package. For more information, see
- * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When you work directly in your JSON job
- * specification, include this object and any required children when you set Type, under OutputGroupSettings, to
- * DASH_ISO_GROUP_SETTINGS.
+ * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DashIsoGroupSettings" target="_top">AWS
  *      API Documentation</a>
@@ -39,10 +37,9 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
      * Use this setting only when your audio codec is a Dolby one (AC3, EAC3, or Atmos) and your downstream workflow
      * requires that your DASH manifest use the Dolby channel configuration tag, rather than the MPEG one. For example,
      * you might need to use this to make dynamic ad insertion work. Specify which audio channel configuration scheme ID
-     * URI MediaConvert writes in your DASH manifest. Keep the default value, MPEG channel configuration
-     * (MPEG_CHANNEL_CONFIGURATION), to have MediaConvert write this: urn:mpeg:mpegB:cicp:ChannelConfiguration. Choose
-     * Dolby channel configuration (DOLBY_CHANNEL_CONFIGURATION) to have MediaConvert write this instead:
-     * tag:dolby.com,2014:dash:audio_channel_configuration:2011.
+     * URI MediaConvert writes in your DASH manifest. Keep the default value, MPEG channel configuration, to have
+     * MediaConvert write this: urn:mpeg:mpegB:cicp:ChannelConfiguration. Choose Dolby channel configuration to have
+     * MediaConvert write this instead: tag:dolby.com,2014:dash:audio_channel_configuration:2011.
      */
     private String audioChannelConfigSchemeIdUri;
     /**
@@ -59,9 +56,9 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
      */
     private String dashManifestStyle;
     /**
-     * Use Destination (Destination) to specify the S3 output location and the output filename base. Destination accepts
-     * format identifiers. If you do not specify the base filename in the URI, the service will use the filename of the
-     * input file. If your job has multiple inputs, the service uses the filename of the first input file.
+     * Use Destination to specify the S3 output location and the output filename base. Destination accepts format
+     * identifiers. If you do not specify the base filename in the URI, the service will use the filename of the input
+     * file. If your job has multiple inputs, the service uses the filename of the first input file.
      */
     private String destination;
     /** Settings associated with the destination. Will vary based on the type of destination */
@@ -78,12 +75,11 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
     /** Supports HbbTV specification as indicated */
     private String hbbtvCompliance;
     /**
-     * Specify whether MediaConvert generates images for trick play. Keep the default value, None (NONE), to not
-     * generate any images. Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full frame
-     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images of single frames. MediaConvert
-     * adds an entry in the .mpd manifest for each set of images that you generate. A common application for these images
-     * is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are
-     * compatible with this Roku specification:
+     * Specify whether MediaConvert generates images for trick play. Keep the default value, None, to not generate any
+     * images. Choose Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to generate tiled
+     * thumbnails and full-resolution images of single frames. MediaConvert adds an entry in the .mpd manifest for each
+     * set of images that you generate. A common application for these images is Roku trick mode. The thumbnails and
+     * full-frame images that MediaConvert creates with this feature are compatible with this Roku specification:
      * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
      */
     private String imageBasedTrickPlay;
@@ -110,21 +106,19 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
      */
     private String mpdManifestBandwidthType;
     /**
-     * Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service
-     * signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand
-     * (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose
-     * On-demand, you must also set the output group setting Segment control (SegmentControl) to Single file
-     * (SINGLE_FILE).
+     * Specify whether your DASH profile is on-demand or main. When you choose Main profile, the service signals
+     * urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand, the service signals
+     * urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also set the output
+     * group setting Segment control to Single file.
      */
     private String mpdProfile;
     /**
      * Use this setting only when your output video stream has B-frames, which causes the initial presentation time
      * stamp (PTS) to be offset from the initial decode time stamp (DTS). Specify how MediaConvert handles PTS when
-     * writing time stamps in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when you want
-     * MediaConvert to use the initial PTS as the first time stamp in the manifest. Choose Zero-based (ZERO_BASED) to
-     * have MediaConvert ignore the initial PTS in the video stream and instead write the initial time stamp as zero in
-     * the manifest. For outputs that don't have B-frames, the time stamps in your DASH manifests start at zero
-     * regardless of your choice here.
+     * writing time stamps in output DASH manifests. Choose Match initial PTS when you want MediaConvert to use the
+     * initial PTS as the first time stamp in the manifest. Choose Zero-based to have MediaConvert ignore the initial PTS
+     * in the video stream and instead write the initial time stamp as zero in the manifest. For outputs that don't have
+     * B-frames, the time stamps in your DASH manifests start at zero regardless of your choice here.
      */
     private String ptsOffsetHandlingForBFrames;
     /**
@@ -134,16 +128,15 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
     private String segmentControl;
     /**
      * Specify the length, in whole seconds, of each segment. When you don't specify a value, MediaConvert defaults to
-     * 30. Related settings: Use Segment length control (SegmentLengthControl) to specify whether the encoder enforces
-     * this value strictly. Use Segment control (DashIsoSegmentControl) to specify whether MediaConvert creates separate
-     * segment files or one content file that has metadata to mark the segment boundaries.
+     * 30. Related settings: Use Segment length control to specify whether the encoder enforces this value strictly. Use
+     * Segment control to specify whether MediaConvert creates separate segment files or one content file that has
+     * metadata to mark the segment boundaries.
      */
     private Integer segmentLength;
     /**
-     * Specify how you want MediaConvert to determine the segment length. Choose Exact (EXACT) to have the encoder use
-     * the exact length that you specify with the setting Segment length (SegmentLength). This might result in extra
-     * I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next
-     * GOP boundary.
+     * Specify how you want MediaConvert to determine the segment length. Choose Exact to have the encoder use the exact
+     * length that you specify with the setting Segment length. This might result in extra I-frames. Choose Multiple of
+     * GOP to have the encoder round up the segment lengths to match the next GOP boundary.
      */
     private String segmentLengthControl;
     /**
@@ -245,19 +238,18 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
      * Use this setting only when your audio codec is a Dolby one (AC3, EAC3, or Atmos) and your downstream workflow
      * requires that your DASH manifest use the Dolby channel configuration tag, rather than the MPEG one. For example,
      * you might need to use this to make dynamic ad insertion work. Specify which audio channel configuration scheme ID
-     * URI MediaConvert writes in your DASH manifest. Keep the default value, MPEG channel configuration
-     * (MPEG_CHANNEL_CONFIGURATION), to have MediaConvert write this: urn:mpeg:mpegB:cicp:ChannelConfiguration. Choose
-     * Dolby channel configuration (DOLBY_CHANNEL_CONFIGURATION) to have MediaConvert write this instead:
-     * tag:dolby.com,2014:dash:audio_channel_configuration:2011.
+     * URI MediaConvert writes in your DASH manifest. Keep the default value, MPEG channel configuration, to have
+     * MediaConvert write this: urn:mpeg:mpegB:cicp:ChannelConfiguration. Choose Dolby channel configuration to have
+     * MediaConvert write this instead: tag:dolby.com,2014:dash:audio_channel_configuration:2011.
      * 
      * @param audioChannelConfigSchemeIdUri
      *        Use this setting only when your audio codec is a Dolby one (AC3, EAC3, or Atmos) and your downstream
      *        workflow requires that your DASH manifest use the Dolby channel configuration tag, rather than the MPEG
      *        one. For example, you might need to use this to make dynamic ad insertion work. Specify which audio
      *        channel configuration scheme ID URI MediaConvert writes in your DASH manifest. Keep the default value,
-     *        MPEG channel configuration (MPEG_CHANNEL_CONFIGURATION), to have MediaConvert write this:
-     *        urn:mpeg:mpegB:cicp:ChannelConfiguration. Choose Dolby channel configuration (DOLBY_CHANNEL_CONFIGURATION)
-     *        to have MediaConvert write this instead: tag:dolby.com,2014:dash:audio_channel_configuration:2011.
+     *        MPEG channel configuration, to have MediaConvert write this: urn:mpeg:mpegB:cicp:ChannelConfiguration.
+     *        Choose Dolby channel configuration to have MediaConvert write this instead:
+     *        tag:dolby.com,2014:dash:audio_channel_configuration:2011.
      * @see DashIsoGroupAudioChannelConfigSchemeIdUri
      */
 
@@ -269,18 +261,16 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
      * Use this setting only when your audio codec is a Dolby one (AC3, EAC3, or Atmos) and your downstream workflow
      * requires that your DASH manifest use the Dolby channel configuration tag, rather than the MPEG one. For example,
      * you might need to use this to make dynamic ad insertion work. Specify which audio channel configuration scheme ID
-     * URI MediaConvert writes in your DASH manifest. Keep the default value, MPEG channel configuration
-     * (MPEG_CHANNEL_CONFIGURATION), to have MediaConvert write this: urn:mpeg:mpegB:cicp:ChannelConfiguration. Choose
-     * Dolby channel configuration (DOLBY_CHANNEL_CONFIGURATION) to have MediaConvert write this instead:
-     * tag:dolby.com,2014:dash:audio_channel_configuration:2011.
+     * URI MediaConvert writes in your DASH manifest. Keep the default value, MPEG channel configuration, to have
+     * MediaConvert write this: urn:mpeg:mpegB:cicp:ChannelConfiguration. Choose Dolby channel configuration to have
+     * MediaConvert write this instead: tag:dolby.com,2014:dash:audio_channel_configuration:2011.
      * 
      * @return Use this setting only when your audio codec is a Dolby one (AC3, EAC3, or Atmos) and your downstream
      *         workflow requires that your DASH manifest use the Dolby channel configuration tag, rather than the MPEG
      *         one. For example, you might need to use this to make dynamic ad insertion work. Specify which audio
      *         channel configuration scheme ID URI MediaConvert writes in your DASH manifest. Keep the default value,
-     *         MPEG channel configuration (MPEG_CHANNEL_CONFIGURATION), to have MediaConvert write this:
-     *         urn:mpeg:mpegB:cicp:ChannelConfiguration. Choose Dolby channel configuration
-     *         (DOLBY_CHANNEL_CONFIGURATION) to have MediaConvert write this instead:
+     *         MPEG channel configuration, to have MediaConvert write this: urn:mpeg:mpegB:cicp:ChannelConfiguration.
+     *         Choose Dolby channel configuration to have MediaConvert write this instead:
      *         tag:dolby.com,2014:dash:audio_channel_configuration:2011.
      * @see DashIsoGroupAudioChannelConfigSchemeIdUri
      */
@@ -293,19 +283,18 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
      * Use this setting only when your audio codec is a Dolby one (AC3, EAC3, or Atmos) and your downstream workflow
      * requires that your DASH manifest use the Dolby channel configuration tag, rather than the MPEG one. For example,
      * you might need to use this to make dynamic ad insertion work. Specify which audio channel configuration scheme ID
-     * URI MediaConvert writes in your DASH manifest. Keep the default value, MPEG channel configuration
-     * (MPEG_CHANNEL_CONFIGURATION), to have MediaConvert write this: urn:mpeg:mpegB:cicp:ChannelConfiguration. Choose
-     * Dolby channel configuration (DOLBY_CHANNEL_CONFIGURATION) to have MediaConvert write this instead:
-     * tag:dolby.com,2014:dash:audio_channel_configuration:2011.
+     * URI MediaConvert writes in your DASH manifest. Keep the default value, MPEG channel configuration, to have
+     * MediaConvert write this: urn:mpeg:mpegB:cicp:ChannelConfiguration. Choose Dolby channel configuration to have
+     * MediaConvert write this instead: tag:dolby.com,2014:dash:audio_channel_configuration:2011.
      * 
      * @param audioChannelConfigSchemeIdUri
      *        Use this setting only when your audio codec is a Dolby one (AC3, EAC3, or Atmos) and your downstream
      *        workflow requires that your DASH manifest use the Dolby channel configuration tag, rather than the MPEG
      *        one. For example, you might need to use this to make dynamic ad insertion work. Specify which audio
      *        channel configuration scheme ID URI MediaConvert writes in your DASH manifest. Keep the default value,
-     *        MPEG channel configuration (MPEG_CHANNEL_CONFIGURATION), to have MediaConvert write this:
-     *        urn:mpeg:mpegB:cicp:ChannelConfiguration. Choose Dolby channel configuration (DOLBY_CHANNEL_CONFIGURATION)
-     *        to have MediaConvert write this instead: tag:dolby.com,2014:dash:audio_channel_configuration:2011.
+     *        MPEG channel configuration, to have MediaConvert write this: urn:mpeg:mpegB:cicp:ChannelConfiguration.
+     *        Choose Dolby channel configuration to have MediaConvert write this instead:
+     *        tag:dolby.com,2014:dash:audio_channel_configuration:2011.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DashIsoGroupAudioChannelConfigSchemeIdUri
      */
@@ -319,19 +308,18 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
      * Use this setting only when your audio codec is a Dolby one (AC3, EAC3, or Atmos) and your downstream workflow
      * requires that your DASH manifest use the Dolby channel configuration tag, rather than the MPEG one. For example,
      * you might need to use this to make dynamic ad insertion work. Specify which audio channel configuration scheme ID
-     * URI MediaConvert writes in your DASH manifest. Keep the default value, MPEG channel configuration
-     * (MPEG_CHANNEL_CONFIGURATION), to have MediaConvert write this: urn:mpeg:mpegB:cicp:ChannelConfiguration. Choose
-     * Dolby channel configuration (DOLBY_CHANNEL_CONFIGURATION) to have MediaConvert write this instead:
-     * tag:dolby.com,2014:dash:audio_channel_configuration:2011.
+     * URI MediaConvert writes in your DASH manifest. Keep the default value, MPEG channel configuration, to have
+     * MediaConvert write this: urn:mpeg:mpegB:cicp:ChannelConfiguration. Choose Dolby channel configuration to have
+     * MediaConvert write this instead: tag:dolby.com,2014:dash:audio_channel_configuration:2011.
      * 
      * @param audioChannelConfigSchemeIdUri
      *        Use this setting only when your audio codec is a Dolby one (AC3, EAC3, or Atmos) and your downstream
      *        workflow requires that your DASH manifest use the Dolby channel configuration tag, rather than the MPEG
      *        one. For example, you might need to use this to make dynamic ad insertion work. Specify which audio
      *        channel configuration scheme ID URI MediaConvert writes in your DASH manifest. Keep the default value,
-     *        MPEG channel configuration (MPEG_CHANNEL_CONFIGURATION), to have MediaConvert write this:
-     *        urn:mpeg:mpegB:cicp:ChannelConfiguration. Choose Dolby channel configuration (DOLBY_CHANNEL_CONFIGURATION)
-     *        to have MediaConvert write this instead: tag:dolby.com,2014:dash:audio_channel_configuration:2011.
+     *        MPEG channel configuration, to have MediaConvert write this: urn:mpeg:mpegB:cicp:ChannelConfiguration.
+     *        Choose Dolby channel configuration to have MediaConvert write this instead:
+     *        tag:dolby.com,2014:dash:audio_channel_configuration:2011.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DashIsoGroupAudioChannelConfigSchemeIdUri
      */
@@ -465,15 +453,14 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Use Destination (Destination) to specify the S3 output location and the output filename base. Destination accepts
-     * format identifiers. If you do not specify the base filename in the URI, the service will use the filename of the
-     * input file. If your job has multiple inputs, the service uses the filename of the first input file.
+     * Use Destination to specify the S3 output location and the output filename base. Destination accepts format
+     * identifiers. If you do not specify the base filename in the URI, the service will use the filename of the input
+     * file. If your job has multiple inputs, the service uses the filename of the first input file.
      * 
      * @param destination
-     *        Use Destination (Destination) to specify the S3 output location and the output filename base. Destination
-     *        accepts format identifiers. If you do not specify the base filename in the URI, the service will use the
-     *        filename of the input file. If your job has multiple inputs, the service uses the filename of the first
-     *        input file.
+     *        Use Destination to specify the S3 output location and the output filename base. Destination accepts format
+     *        identifiers. If you do not specify the base filename in the URI, the service will use the filename of the
+     *        input file. If your job has multiple inputs, the service uses the filename of the first input file.
      */
 
     public void setDestination(String destination) {
@@ -481,14 +468,14 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Use Destination (Destination) to specify the S3 output location and the output filename base. Destination accepts
-     * format identifiers. If you do not specify the base filename in the URI, the service will use the filename of the
-     * input file. If your job has multiple inputs, the service uses the filename of the first input file.
+     * Use Destination to specify the S3 output location and the output filename base. Destination accepts format
+     * identifiers. If you do not specify the base filename in the URI, the service will use the filename of the input
+     * file. If your job has multiple inputs, the service uses the filename of the first input file.
      * 
-     * @return Use Destination (Destination) to specify the S3 output location and the output filename base. Destination
-     *         accepts format identifiers. If you do not specify the base filename in the URI, the service will use the
-     *         filename of the input file. If your job has multiple inputs, the service uses the filename of the first
-     *         input file.
+     * @return Use Destination to specify the S3 output location and the output filename base. Destination accepts
+     *         format identifiers. If you do not specify the base filename in the URI, the service will use the filename
+     *         of the input file. If your job has multiple inputs, the service uses the filename of the first input
+     *         file.
      */
 
     public String getDestination() {
@@ -496,15 +483,14 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Use Destination (Destination) to specify the S3 output location and the output filename base. Destination accepts
-     * format identifiers. If you do not specify the base filename in the URI, the service will use the filename of the
-     * input file. If your job has multiple inputs, the service uses the filename of the first input file.
+     * Use Destination to specify the S3 output location and the output filename base. Destination accepts format
+     * identifiers. If you do not specify the base filename in the URI, the service will use the filename of the input
+     * file. If your job has multiple inputs, the service uses the filename of the first input file.
      * 
      * @param destination
-     *        Use Destination (Destination) to specify the S3 output location and the output filename base. Destination
-     *        accepts format identifiers. If you do not specify the base filename in the URI, the service will use the
-     *        filename of the input file. If your job has multiple inputs, the service uses the filename of the first
-     *        input file.
+     *        Use Destination to specify the S3 output location and the output filename base. Destination accepts format
+     *        identifiers. If you do not specify the base filename in the URI, the service will use the filename of the
+     *        input file. If your job has multiple inputs, the service uses the filename of the first input file.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -685,21 +671,20 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Specify whether MediaConvert generates images for trick play. Keep the default value, None (NONE), to not
-     * generate any images. Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full frame
-     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images of single frames. MediaConvert
-     * adds an entry in the .mpd manifest for each set of images that you generate. A common application for these images
-     * is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are
-     * compatible with this Roku specification:
+     * Specify whether MediaConvert generates images for trick play. Keep the default value, None, to not generate any
+     * images. Choose Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to generate tiled
+     * thumbnails and full-resolution images of single frames. MediaConvert adds an entry in the .mpd manifest for each
+     * set of images that you generate. A common application for these images is Roku trick mode. The thumbnails and
+     * full-frame images that MediaConvert creates with this feature are compatible with this Roku specification:
      * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
      * 
      * @param imageBasedTrickPlay
-     *        Specify whether MediaConvert generates images for trick play. Keep the default value, None (NONE), to not
-     *        generate any images. Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full
-     *        frame (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images of single frames.
-     *        MediaConvert adds an entry in the .mpd manifest for each set of images that you generate. A common
-     *        application for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert
-     *        creates with this feature are compatible with this Roku specification:
+     *        Specify whether MediaConvert generates images for trick play. Keep the default value, None, to not
+     *        generate any images. Choose Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to
+     *        generate tiled thumbnails and full-resolution images of single frames. MediaConvert adds an entry in the
+     *        .mpd manifest for each set of images that you generate. A common application for these images is Roku
+     *        trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are
+     *        compatible with this Roku specification:
      *        https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
      * @see DashIsoImageBasedTrickPlay
      */
@@ -709,20 +694,19 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Specify whether MediaConvert generates images for trick play. Keep the default value, None (NONE), to not
-     * generate any images. Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full frame
-     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images of single frames. MediaConvert
-     * adds an entry in the .mpd manifest for each set of images that you generate. A common application for these images
-     * is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are
-     * compatible with this Roku specification:
+     * Specify whether MediaConvert generates images for trick play. Keep the default value, None, to not generate any
+     * images. Choose Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to generate tiled
+     * thumbnails and full-resolution images of single frames. MediaConvert adds an entry in the .mpd manifest for each
+     * set of images that you generate. A common application for these images is Roku trick mode. The thumbnails and
+     * full-frame images that MediaConvert creates with this feature are compatible with this Roku specification:
      * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
      * 
-     * @return Specify whether MediaConvert generates images for trick play. Keep the default value, None (NONE), to not
-     *         generate any images. Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full
-     *         frame (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images of single frames.
-     *         MediaConvert adds an entry in the .mpd manifest for each set of images that you generate. A common
-     *         application for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert
-     *         creates with this feature are compatible with this Roku specification:
+     * @return Specify whether MediaConvert generates images for trick play. Keep the default value, None, to not
+     *         generate any images. Choose Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to
+     *         generate tiled thumbnails and full-resolution images of single frames. MediaConvert adds an entry in the
+     *         .mpd manifest for each set of images that you generate. A common application for these images is Roku
+     *         trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are
+     *         compatible with this Roku specification:
      *         https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
      * @see DashIsoImageBasedTrickPlay
      */
@@ -732,21 +716,20 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Specify whether MediaConvert generates images for trick play. Keep the default value, None (NONE), to not
-     * generate any images. Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full frame
-     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images of single frames. MediaConvert
-     * adds an entry in the .mpd manifest for each set of images that you generate. A common application for these images
-     * is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are
-     * compatible with this Roku specification:
+     * Specify whether MediaConvert generates images for trick play. Keep the default value, None, to not generate any
+     * images. Choose Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to generate tiled
+     * thumbnails and full-resolution images of single frames. MediaConvert adds an entry in the .mpd manifest for each
+     * set of images that you generate. A common application for these images is Roku trick mode. The thumbnails and
+     * full-frame images that MediaConvert creates with this feature are compatible with this Roku specification:
      * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
      * 
      * @param imageBasedTrickPlay
-     *        Specify whether MediaConvert generates images for trick play. Keep the default value, None (NONE), to not
-     *        generate any images. Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full
-     *        frame (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images of single frames.
-     *        MediaConvert adds an entry in the .mpd manifest for each set of images that you generate. A common
-     *        application for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert
-     *        creates with this feature are compatible with this Roku specification:
+     *        Specify whether MediaConvert generates images for trick play. Keep the default value, None, to not
+     *        generate any images. Choose Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to
+     *        generate tiled thumbnails and full-resolution images of single frames. MediaConvert adds an entry in the
+     *        .mpd manifest for each set of images that you generate. A common application for these images is Roku
+     *        trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are
+     *        compatible with this Roku specification:
      *        https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DashIsoImageBasedTrickPlay
@@ -758,21 +741,20 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Specify whether MediaConvert generates images for trick play. Keep the default value, None (NONE), to not
-     * generate any images. Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full frame
-     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images of single frames. MediaConvert
-     * adds an entry in the .mpd manifest for each set of images that you generate. A common application for these images
-     * is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are
-     * compatible with this Roku specification:
+     * Specify whether MediaConvert generates images for trick play. Keep the default value, None, to not generate any
+     * images. Choose Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to generate tiled
+     * thumbnails and full-resolution images of single frames. MediaConvert adds an entry in the .mpd manifest for each
+     * set of images that you generate. A common application for these images is Roku trick mode. The thumbnails and
+     * full-frame images that MediaConvert creates with this feature are compatible with this Roku specification:
      * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
      * 
      * @param imageBasedTrickPlay
-     *        Specify whether MediaConvert generates images for trick play. Keep the default value, None (NONE), to not
-     *        generate any images. Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full
-     *        frame (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images of single frames.
-     *        MediaConvert adds an entry in the .mpd manifest for each set of images that you generate. A common
-     *        application for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert
-     *        creates with this feature are compatible with this Roku specification:
+     *        Specify whether MediaConvert generates images for trick play. Keep the default value, None, to not
+     *        generate any images. Choose Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to
+     *        generate tiled thumbnails and full-resolution images of single frames. MediaConvert adds an entry in the
+     *        .mpd manifest for each set of images that you generate. A common application for these images is Roku
+     *        trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are
+     *        compatible with this Roku specification:
      *        https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DashIsoImageBasedTrickPlay
@@ -1007,18 +989,16 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service
-     * signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand
-     * (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose
-     * On-demand, you must also set the output group setting Segment control (SegmentControl) to Single file
-     * (SINGLE_FILE).
+     * Specify whether your DASH profile is on-demand or main. When you choose Main profile, the service signals
+     * urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand, the service signals
+     * urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also set the output
+     * group setting Segment control to Single file.
      * 
      * @param mpdProfile
-     *        Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the
-     *        service signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose
-     *        On-demand (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your
-     *        .mpd. When you choose On-demand, you must also set the output group setting Segment control
-     *        (SegmentControl) to Single file (SINGLE_FILE).
+     *        Specify whether your DASH profile is on-demand or main. When you choose Main profile, the service signals
+     *        urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand, the service
+     *        signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also
+     *        set the output group setting Segment control to Single file.
      * @see DashIsoMpdProfile
      */
 
@@ -1027,17 +1007,15 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service
-     * signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand
-     * (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose
-     * On-demand, you must also set the output group setting Segment control (SegmentControl) to Single file
-     * (SINGLE_FILE).
+     * Specify whether your DASH profile is on-demand or main. When you choose Main profile, the service signals
+     * urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand, the service signals
+     * urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also set the output
+     * group setting Segment control to Single file.
      * 
-     * @return Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the
-     *         service signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose
-     *         On-demand (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your
-     *         .mpd. When you choose On-demand, you must also set the output group setting Segment control
-     *         (SegmentControl) to Single file (SINGLE_FILE).
+     * @return Specify whether your DASH profile is on-demand or main. When you choose Main profile, the service signals
+     *         urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand, the service
+     *         signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also
+     *         set the output group setting Segment control to Single file.
      * @see DashIsoMpdProfile
      */
 
@@ -1046,18 +1024,16 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service
-     * signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand
-     * (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose
-     * On-demand, you must also set the output group setting Segment control (SegmentControl) to Single file
-     * (SINGLE_FILE).
+     * Specify whether your DASH profile is on-demand or main. When you choose Main profile, the service signals
+     * urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand, the service signals
+     * urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also set the output
+     * group setting Segment control to Single file.
      * 
      * @param mpdProfile
-     *        Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the
-     *        service signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose
-     *        On-demand (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your
-     *        .mpd. When you choose On-demand, you must also set the output group setting Segment control
-     *        (SegmentControl) to Single file (SINGLE_FILE).
+     *        Specify whether your DASH profile is on-demand or main. When you choose Main profile, the service signals
+     *        urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand, the service
+     *        signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also
+     *        set the output group setting Segment control to Single file.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DashIsoMpdProfile
      */
@@ -1068,18 +1044,16 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service
-     * signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand
-     * (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose
-     * On-demand, you must also set the output group setting Segment control (SegmentControl) to Single file
-     * (SINGLE_FILE).
+     * Specify whether your DASH profile is on-demand or main. When you choose Main profile, the service signals
+     * urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand, the service signals
+     * urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also set the output
+     * group setting Segment control to Single file.
      * 
      * @param mpdProfile
-     *        Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the
-     *        service signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose
-     *        On-demand (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your
-     *        .mpd. When you choose On-demand, you must also set the output group setting Segment control
-     *        (SegmentControl) to Single file (SINGLE_FILE).
+     *        Specify whether your DASH profile is on-demand or main. When you choose Main profile, the service signals
+     *        urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand, the service
+     *        signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also
+     *        set the output group setting Segment control to Single file.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DashIsoMpdProfile
      */
@@ -1092,20 +1066,19 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
     /**
      * Use this setting only when your output video stream has B-frames, which causes the initial presentation time
      * stamp (PTS) to be offset from the initial decode time stamp (DTS). Specify how MediaConvert handles PTS when
-     * writing time stamps in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when you want
-     * MediaConvert to use the initial PTS as the first time stamp in the manifest. Choose Zero-based (ZERO_BASED) to
-     * have MediaConvert ignore the initial PTS in the video stream and instead write the initial time stamp as zero in
-     * the manifest. For outputs that don't have B-frames, the time stamps in your DASH manifests start at zero
-     * regardless of your choice here.
+     * writing time stamps in output DASH manifests. Choose Match initial PTS when you want MediaConvert to use the
+     * initial PTS as the first time stamp in the manifest. Choose Zero-based to have MediaConvert ignore the initial PTS
+     * in the video stream and instead write the initial time stamp as zero in the manifest. For outputs that don't have
+     * B-frames, the time stamps in your DASH manifests start at zero regardless of your choice here.
      * 
      * @param ptsOffsetHandlingForBFrames
      *        Use this setting only when your output video stream has B-frames, which causes the initial presentation
      *        time stamp (PTS) to be offset from the initial decode time stamp (DTS). Specify how MediaConvert handles
-     *        PTS when writing time stamps in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when
-     *        you want MediaConvert to use the initial PTS as the first time stamp in the manifest. Choose Zero-based
-     *        (ZERO_BASED) to have MediaConvert ignore the initial PTS in the video stream and instead write the initial
-     *        time stamp as zero in the manifest. For outputs that don't have B-frames, the time stamps in your DASH
-     *        manifests start at zero regardless of your choice here.
+     *        PTS when writing time stamps in output DASH manifests. Choose Match initial PTS when you want MediaConvert
+     *        to use the initial PTS as the first time stamp in the manifest. Choose Zero-based to have MediaConvert
+     *        ignore the initial PTS in the video stream and instead write the initial time stamp as zero in the
+     *        manifest. For outputs that don't have B-frames, the time stamps in your DASH manifests start at zero
+     *        regardless of your choice here.
      * @see DashIsoPtsOffsetHandlingForBFrames
      */
 
@@ -1116,19 +1089,18 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
     /**
      * Use this setting only when your output video stream has B-frames, which causes the initial presentation time
      * stamp (PTS) to be offset from the initial decode time stamp (DTS). Specify how MediaConvert handles PTS when
-     * writing time stamps in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when you want
-     * MediaConvert to use the initial PTS as the first time stamp in the manifest. Choose Zero-based (ZERO_BASED) to
-     * have MediaConvert ignore the initial PTS in the video stream and instead write the initial time stamp as zero in
-     * the manifest. For outputs that don't have B-frames, the time stamps in your DASH manifests start at zero
-     * regardless of your choice here.
+     * writing time stamps in output DASH manifests. Choose Match initial PTS when you want MediaConvert to use the
+     * initial PTS as the first time stamp in the manifest. Choose Zero-based to have MediaConvert ignore the initial PTS
+     * in the video stream and instead write the initial time stamp as zero in the manifest. For outputs that don't have
+     * B-frames, the time stamps in your DASH manifests start at zero regardless of your choice here.
      * 
      * @return Use this setting only when your output video stream has B-frames, which causes the initial presentation
      *         time stamp (PTS) to be offset from the initial decode time stamp (DTS). Specify how MediaConvert handles
-     *         PTS when writing time stamps in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when
-     *         you want MediaConvert to use the initial PTS as the first time stamp in the manifest. Choose Zero-based
-     *         (ZERO_BASED) to have MediaConvert ignore the initial PTS in the video stream and instead write the
-     *         initial time stamp as zero in the manifest. For outputs that don't have B-frames, the time stamps in your
-     *         DASH manifests start at zero regardless of your choice here.
+     *         PTS when writing time stamps in output DASH manifests. Choose Match initial PTS when you want
+     *         MediaConvert to use the initial PTS as the first time stamp in the manifest. Choose Zero-based to have
+     *         MediaConvert ignore the initial PTS in the video stream and instead write the initial time stamp as zero
+     *         in the manifest. For outputs that don't have B-frames, the time stamps in your DASH manifests start at
+     *         zero regardless of your choice here.
      * @see DashIsoPtsOffsetHandlingForBFrames
      */
 
@@ -1139,20 +1111,19 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
     /**
      * Use this setting only when your output video stream has B-frames, which causes the initial presentation time
      * stamp (PTS) to be offset from the initial decode time stamp (DTS). Specify how MediaConvert handles PTS when
-     * writing time stamps in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when you want
-     * MediaConvert to use the initial PTS as the first time stamp in the manifest. Choose Zero-based (ZERO_BASED) to
-     * have MediaConvert ignore the initial PTS in the video stream and instead write the initial time stamp as zero in
-     * the manifest. For outputs that don't have B-frames, the time stamps in your DASH manifests start at zero
-     * regardless of your choice here.
+     * writing time stamps in output DASH manifests. Choose Match initial PTS when you want MediaConvert to use the
+     * initial PTS as the first time stamp in the manifest. Choose Zero-based to have MediaConvert ignore the initial PTS
+     * in the video stream and instead write the initial time stamp as zero in the manifest. For outputs that don't have
+     * B-frames, the time stamps in your DASH manifests start at zero regardless of your choice here.
      * 
      * @param ptsOffsetHandlingForBFrames
      *        Use this setting only when your output video stream has B-frames, which causes the initial presentation
      *        time stamp (PTS) to be offset from the initial decode time stamp (DTS). Specify how MediaConvert handles
-     *        PTS when writing time stamps in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when
-     *        you want MediaConvert to use the initial PTS as the first time stamp in the manifest. Choose Zero-based
-     *        (ZERO_BASED) to have MediaConvert ignore the initial PTS in the video stream and instead write the initial
-     *        time stamp as zero in the manifest. For outputs that don't have B-frames, the time stamps in your DASH
-     *        manifests start at zero regardless of your choice here.
+     *        PTS when writing time stamps in output DASH manifests. Choose Match initial PTS when you want MediaConvert
+     *        to use the initial PTS as the first time stamp in the manifest. Choose Zero-based to have MediaConvert
+     *        ignore the initial PTS in the video stream and instead write the initial time stamp as zero in the
+     *        manifest. For outputs that don't have B-frames, the time stamps in your DASH manifests start at zero
+     *        regardless of your choice here.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DashIsoPtsOffsetHandlingForBFrames
      */
@@ -1165,20 +1136,19 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
     /**
      * Use this setting only when your output video stream has B-frames, which causes the initial presentation time
      * stamp (PTS) to be offset from the initial decode time stamp (DTS). Specify how MediaConvert handles PTS when
-     * writing time stamps in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when you want
-     * MediaConvert to use the initial PTS as the first time stamp in the manifest. Choose Zero-based (ZERO_BASED) to
-     * have MediaConvert ignore the initial PTS in the video stream and instead write the initial time stamp as zero in
-     * the manifest. For outputs that don't have B-frames, the time stamps in your DASH manifests start at zero
-     * regardless of your choice here.
+     * writing time stamps in output DASH manifests. Choose Match initial PTS when you want MediaConvert to use the
+     * initial PTS as the first time stamp in the manifest. Choose Zero-based to have MediaConvert ignore the initial PTS
+     * in the video stream and instead write the initial time stamp as zero in the manifest. For outputs that don't have
+     * B-frames, the time stamps in your DASH manifests start at zero regardless of your choice here.
      * 
      * @param ptsOffsetHandlingForBFrames
      *        Use this setting only when your output video stream has B-frames, which causes the initial presentation
      *        time stamp (PTS) to be offset from the initial decode time stamp (DTS). Specify how MediaConvert handles
-     *        PTS when writing time stamps in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when
-     *        you want MediaConvert to use the initial PTS as the first time stamp in the manifest. Choose Zero-based
-     *        (ZERO_BASED) to have MediaConvert ignore the initial PTS in the video stream and instead write the initial
-     *        time stamp as zero in the manifest. For outputs that don't have B-frames, the time stamps in your DASH
-     *        manifests start at zero regardless of your choice here.
+     *        PTS when writing time stamps in output DASH manifests. Choose Match initial PTS when you want MediaConvert
+     *        to use the initial PTS as the first time stamp in the manifest. Choose Zero-based to have MediaConvert
+     *        ignore the initial PTS in the video stream and instead write the initial time stamp as zero in the
+     *        manifest. For outputs that don't have B-frames, the time stamps in your DASH manifests start at zero
+     *        regardless of your choice here.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DashIsoPtsOffsetHandlingForBFrames
      */
@@ -1249,16 +1219,15 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
 
     /**
      * Specify the length, in whole seconds, of each segment. When you don't specify a value, MediaConvert defaults to
-     * 30. Related settings: Use Segment length control (SegmentLengthControl) to specify whether the encoder enforces
-     * this value strictly. Use Segment control (DashIsoSegmentControl) to specify whether MediaConvert creates separate
-     * segment files or one content file that has metadata to mark the segment boundaries.
+     * 30. Related settings: Use Segment length control to specify whether the encoder enforces this value strictly. Use
+     * Segment control to specify whether MediaConvert creates separate segment files or one content file that has
+     * metadata to mark the segment boundaries.
      * 
      * @param segmentLength
      *        Specify the length, in whole seconds, of each segment. When you don't specify a value, MediaConvert
-     *        defaults to 30. Related settings: Use Segment length control (SegmentLengthControl) to specify whether the
-     *        encoder enforces this value strictly. Use Segment control (DashIsoSegmentControl) to specify whether
-     *        MediaConvert creates separate segment files or one content file that has metadata to mark the segment
-     *        boundaries.
+     *        defaults to 30. Related settings: Use Segment length control to specify whether the encoder enforces this
+     *        value strictly. Use Segment control to specify whether MediaConvert creates separate segment files or one
+     *        content file that has metadata to mark the segment boundaries.
      */
 
     public void setSegmentLength(Integer segmentLength) {
@@ -1267,15 +1236,14 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
 
     /**
      * Specify the length, in whole seconds, of each segment. When you don't specify a value, MediaConvert defaults to
-     * 30. Related settings: Use Segment length control (SegmentLengthControl) to specify whether the encoder enforces
-     * this value strictly. Use Segment control (DashIsoSegmentControl) to specify whether MediaConvert creates separate
-     * segment files or one content file that has metadata to mark the segment boundaries.
+     * 30. Related settings: Use Segment length control to specify whether the encoder enforces this value strictly. Use
+     * Segment control to specify whether MediaConvert creates separate segment files or one content file that has
+     * metadata to mark the segment boundaries.
      * 
      * @return Specify the length, in whole seconds, of each segment. When you don't specify a value, MediaConvert
-     *         defaults to 30. Related settings: Use Segment length control (SegmentLengthControl) to specify whether
-     *         the encoder enforces this value strictly. Use Segment control (DashIsoSegmentControl) to specify whether
-     *         MediaConvert creates separate segment files or one content file that has metadata to mark the segment
-     *         boundaries.
+     *         defaults to 30. Related settings: Use Segment length control to specify whether the encoder enforces this
+     *         value strictly. Use Segment control to specify whether MediaConvert creates separate segment files or one
+     *         content file that has metadata to mark the segment boundaries.
      */
 
     public Integer getSegmentLength() {
@@ -1284,16 +1252,15 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
 
     /**
      * Specify the length, in whole seconds, of each segment. When you don't specify a value, MediaConvert defaults to
-     * 30. Related settings: Use Segment length control (SegmentLengthControl) to specify whether the encoder enforces
-     * this value strictly. Use Segment control (DashIsoSegmentControl) to specify whether MediaConvert creates separate
-     * segment files or one content file that has metadata to mark the segment boundaries.
+     * 30. Related settings: Use Segment length control to specify whether the encoder enforces this value strictly. Use
+     * Segment control to specify whether MediaConvert creates separate segment files or one content file that has
+     * metadata to mark the segment boundaries.
      * 
      * @param segmentLength
      *        Specify the length, in whole seconds, of each segment. When you don't specify a value, MediaConvert
-     *        defaults to 30. Related settings: Use Segment length control (SegmentLengthControl) to specify whether the
-     *        encoder enforces this value strictly. Use Segment control (DashIsoSegmentControl) to specify whether
-     *        MediaConvert creates separate segment files or one content file that has metadata to mark the segment
-     *        boundaries.
+     *        defaults to 30. Related settings: Use Segment length control to specify whether the encoder enforces this
+     *        value strictly. Use Segment control to specify whether MediaConvert creates separate segment files or one
+     *        content file that has metadata to mark the segment boundaries.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1303,16 +1270,14 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Specify how you want MediaConvert to determine the segment length. Choose Exact (EXACT) to have the encoder use
-     * the exact length that you specify with the setting Segment length (SegmentLength). This might result in extra
-     * I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next
-     * GOP boundary.
+     * Specify how you want MediaConvert to determine the segment length. Choose Exact to have the encoder use the exact
+     * length that you specify with the setting Segment length. This might result in extra I-frames. Choose Multiple of
+     * GOP to have the encoder round up the segment lengths to match the next GOP boundary.
      * 
      * @param segmentLengthControl
-     *        Specify how you want MediaConvert to determine the segment length. Choose Exact (EXACT) to have the
-     *        encoder use the exact length that you specify with the setting Segment length (SegmentLength). This might
-     *        result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
-     *        lengths to match the next GOP boundary.
+     *        Specify how you want MediaConvert to determine the segment length. Choose Exact to have the encoder use
+     *        the exact length that you specify with the setting Segment length. This might result in extra I-frames.
+     *        Choose Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary.
      * @see DashIsoSegmentLengthControl
      */
 
@@ -1321,15 +1286,13 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Specify how you want MediaConvert to determine the segment length. Choose Exact (EXACT) to have the encoder use
-     * the exact length that you specify with the setting Segment length (SegmentLength). This might result in extra
-     * I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next
-     * GOP boundary.
+     * Specify how you want MediaConvert to determine the segment length. Choose Exact to have the encoder use the exact
+     * length that you specify with the setting Segment length. This might result in extra I-frames. Choose Multiple of
+     * GOP to have the encoder round up the segment lengths to match the next GOP boundary.
      * 
-     * @return Specify how you want MediaConvert to determine the segment length. Choose Exact (EXACT) to have the
-     *         encoder use the exact length that you specify with the setting Segment length (SegmentLength). This might
-     *         result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
-     *         lengths to match the next GOP boundary.
+     * @return Specify how you want MediaConvert to determine the segment length. Choose Exact to have the encoder use
+     *         the exact length that you specify with the setting Segment length. This might result in extra I-frames.
+     *         Choose Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary.
      * @see DashIsoSegmentLengthControl
      */
 
@@ -1338,16 +1301,14 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Specify how you want MediaConvert to determine the segment length. Choose Exact (EXACT) to have the encoder use
-     * the exact length that you specify with the setting Segment length (SegmentLength). This might result in extra
-     * I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next
-     * GOP boundary.
+     * Specify how you want MediaConvert to determine the segment length. Choose Exact to have the encoder use the exact
+     * length that you specify with the setting Segment length. This might result in extra I-frames. Choose Multiple of
+     * GOP to have the encoder round up the segment lengths to match the next GOP boundary.
      * 
      * @param segmentLengthControl
-     *        Specify how you want MediaConvert to determine the segment length. Choose Exact (EXACT) to have the
-     *        encoder use the exact length that you specify with the setting Segment length (SegmentLength). This might
-     *        result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
-     *        lengths to match the next GOP boundary.
+     *        Specify how you want MediaConvert to determine the segment length. Choose Exact to have the encoder use
+     *        the exact length that you specify with the setting Segment length. This might result in extra I-frames.
+     *        Choose Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DashIsoSegmentLengthControl
      */
@@ -1358,16 +1319,14 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Specify how you want MediaConvert to determine the segment length. Choose Exact (EXACT) to have the encoder use
-     * the exact length that you specify with the setting Segment length (SegmentLength). This might result in extra
-     * I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next
-     * GOP boundary.
+     * Specify how you want MediaConvert to determine the segment length. Choose Exact to have the encoder use the exact
+     * length that you specify with the setting Segment length. This might result in extra I-frames. Choose Multiple of
+     * GOP to have the encoder round up the segment lengths to match the next GOP boundary.
      * 
      * @param segmentLengthControl
-     *        Specify how you want MediaConvert to determine the segment length. Choose Exact (EXACT) to have the
-     *        encoder use the exact length that you specify with the setting Segment length (SegmentLength). This might
-     *        result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
-     *        lengths to match the next GOP boundary.
+     *        Specify how you want MediaConvert to determine the segment length. Choose Exact to have the encoder use
+     *        the exact length that you specify with the setting Segment length. This might result in extra I-frames.
+     *        Choose Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DashIsoSegmentLengthControl
      */

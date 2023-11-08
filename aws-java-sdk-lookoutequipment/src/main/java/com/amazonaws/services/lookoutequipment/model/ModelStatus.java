@@ -22,7 +22,8 @@ public enum ModelStatus {
 
     IN_PROGRESS("IN_PROGRESS"),
     SUCCESS("SUCCESS"),
-    FAILED("FAILED");
+    FAILED("FAILED"),
+    IMPORT_IN_PROGRESS("IMPORT_IN_PROGRESS");
 
     private String value;
 

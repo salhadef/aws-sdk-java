@@ -59,6 +59,16 @@ public class VerifiedAccessLogOptionsStaxUnmarshaller implements Unmarshaller<Ve
                             .unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("LogVersion", targetDepth)) {
+                    verifiedAccessLogOptions.setLogVersion(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("IncludeTrustContext", targetDepth)) {
+                    verifiedAccessLogOptions.setIncludeTrustContext(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return verifiedAccessLogOptions;

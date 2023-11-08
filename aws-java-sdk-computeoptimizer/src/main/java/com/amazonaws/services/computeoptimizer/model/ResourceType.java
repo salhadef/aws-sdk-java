@@ -25,7 +25,8 @@ public enum ResourceType {
     EbsVolume("EbsVolume"),
     LambdaFunction("LambdaFunction"),
     NotApplicable("NotApplicable"),
-    EcsService("EcsService");
+    EcsService("EcsService"),
+    License("License");
 
     private String value;
 

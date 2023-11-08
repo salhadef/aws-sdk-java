@@ -613,6 +613,27 @@ public class StartInstanceRefreshRequestMarshaller implements Marshaller<Request
                 if (preferences.getStandbyInstances() != null) {
                     request.addParameter("Preferences.StandbyInstances", StringUtils.fromString(preferences.getStandbyInstances()));
                 }
+
+                {
+                    AlarmSpecification alarmSpecification = preferences.getAlarmSpecification();
+                    if (alarmSpecification != null) {
+
+                        if (!alarmSpecification.getAlarms().isEmpty()
+                                || !((com.amazonaws.internal.SdkInternalList<String>) alarmSpecification.getAlarms()).isAutoConstruct()) {
+                            com.amazonaws.internal.SdkInternalList<String> alarmsList = (com.amazonaws.internal.SdkInternalList<String>) alarmSpecification
+                                    .getAlarms();
+                            int alarmsListIndex = 1;
+
+                            for (String alarmsListValue : alarmsList) {
+                                if (alarmsListValue != null) {
+                                    request.addParameter("Preferences.AlarmSpecification.Alarms.member." + alarmsListIndex,
+                                            StringUtils.fromString(alarmsListValue));
+                                }
+                                alarmsListIndex++;
+                            }
+                        }
+                    }
+                }
             }
         }
 

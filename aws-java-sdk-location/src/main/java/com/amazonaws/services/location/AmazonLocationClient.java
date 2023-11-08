@@ -44,6 +44,7 @@ import com.amazonaws.services.location.AmazonLocationClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.location.model.*;
+
 import com.amazonaws.services.location.model.transform.*;
 
 /**
@@ -220,8 +221,8 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
             URI endpointTraitHost = null;
             if (!clientConfiguration.isDisableHostPrefixInjection()) {
 
-                String hostPrefix = "tracking.";
-                String resolvedHostPrefix = String.format("tracking.");
+                String hostPrefix = "cp.tracking.";
+                String resolvedHostPrefix = String.format("cp.tracking.");
 
                 endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
             }
@@ -660,8 +661,9 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Uploads position update data for one or more devices to a tracker resource. Amazon Location uses the data when it
-     * reports the last known device position and position history. Amazon Location retains location data for 30 days.
+     * Uploads position update data for one or more devices to a tracker resource (up to 10 devices per batch). Amazon
+     * Location uses the data when it reports the last known device position and position history. Amazon Location
+     * retains location data for 30 days.
      * </p>
      * <note>
      * <p>
@@ -1053,8 +1055,8 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
             URI endpointTraitHost = null;
             if (!clientConfiguration.isDisableHostPrefixInjection()) {
 
-                String hostPrefix = "geofencing.";
-                String resolvedHostPrefix = String.format("geofencing.");
+                String hostPrefix = "cp.geofencing.";
+                String resolvedHostPrefix = String.format("cp.geofencing.");
 
                 endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
             }
@@ -1074,16 +1076,15 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Creates an API key resource in your Amazon Web Services account, which lets you grant <code>geo:GetMap*</code>
-     * actions for Amazon Location Map resources to the API key bearer.
+     * Creates an API key resource in your Amazon Web Services account, which lets you grant actions for Amazon Location
+     * resources to the API key bearer.
      * </p>
-     * <important>
+     * <note>
      * <p>
-     * The API keys feature is in preview. We may add, change, or remove features before announcing general
-     * availability. For more information, see <a
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Using API keys</a>.
      * </p>
-     * </important>
+     * </note>
      * 
      * @param createKeyRequest
      * @return Result of the CreateKey operation returned by the service.
@@ -1141,8 +1142,8 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
             URI endpointTraitHost = null;
             if (!clientConfiguration.isDisableHostPrefixInjection()) {
 
-                String hostPrefix = "metadata.";
-                String resolvedHostPrefix = String.format("metadata.");
+                String hostPrefix = "cp.metadata.";
+                String resolvedHostPrefix = String.format("cp.metadata.");
 
                 endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
             }
@@ -1228,8 +1229,8 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
             URI endpointTraitHost = null;
             if (!clientConfiguration.isDisableHostPrefixInjection()) {
 
-                String hostPrefix = "maps.";
-                String resolvedHostPrefix = String.format("maps.");
+                String hostPrefix = "cp.maps.";
+                String resolvedHostPrefix = String.format("cp.maps.");
 
                 endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
             }
@@ -1317,8 +1318,8 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
             URI endpointTraitHost = null;
             if (!clientConfiguration.isDisableHostPrefixInjection()) {
 
-                String hostPrefix = "places.";
-                String resolvedHostPrefix = String.format("places.");
+                String hostPrefix = "cp.places.";
+                String resolvedHostPrefix = String.format("cp.places.");
 
                 endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
             }
@@ -1407,8 +1408,8 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
             URI endpointTraitHost = null;
             if (!clientConfiguration.isDisableHostPrefixInjection()) {
 
-                String hostPrefix = "routes.";
-                String resolvedHostPrefix = String.format("routes.");
+                String hostPrefix = "cp.routes.";
+                String resolvedHostPrefix = String.format("cp.routes.");
 
                 endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
             }
@@ -1443,6 +1444,10 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
      *         verify your permissions.
      * @throws ValidationException
      *         The input failed to meet the constraints specified by the AWS service.
+     * @throws ServiceQuotaExceededException
+     *         The operation was denied because the request would exceed the maximum <a
+     *         href="https://docs.aws.amazon.com/location/latest/developerguide/location-quotas.html">quota</a> set for
+     *         Amazon Location Service.
      * @throws ThrottlingException
      *         The request was denied because of request throttling.
      * @sample AmazonLocation.CreateTracker
@@ -1484,8 +1489,8 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
             URI endpointTraitHost = null;
             if (!clientConfiguration.isDisableHostPrefixInjection()) {
 
-                String hostPrefix = "tracking.";
-                String resolvedHostPrefix = String.format("tracking.");
+                String hostPrefix = "cp.tracking.";
+                String resolvedHostPrefix = String.format("cp.tracking.");
 
                 endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
             }
@@ -1566,8 +1571,8 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
             URI endpointTraitHost = null;
             if (!clientConfiguration.isDisableHostPrefixInjection()) {
 
-                String hostPrefix = "geofencing.";
-                String resolvedHostPrefix = String.format("geofencing.");
+                String hostPrefix = "cp.geofencing.";
+                String resolvedHostPrefix = String.format("cp.geofencing.");
 
                 endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
             }
@@ -1642,8 +1647,8 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
             URI endpointTraitHost = null;
             if (!clientConfiguration.isDisableHostPrefixInjection()) {
 
-                String hostPrefix = "metadata.";
-                String resolvedHostPrefix = String.format("metadata.");
+                String hostPrefix = "cp.metadata.";
+                String resolvedHostPrefix = String.format("cp.metadata.");
 
                 endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
             }
@@ -1723,8 +1728,8 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
             URI endpointTraitHost = null;
             if (!clientConfiguration.isDisableHostPrefixInjection()) {
 
-                String hostPrefix = "maps.";
-                String resolvedHostPrefix = String.format("maps.");
+                String hostPrefix = "cp.maps.";
+                String resolvedHostPrefix = String.format("cp.maps.");
 
                 endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
             }
@@ -1803,8 +1808,8 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
             URI endpointTraitHost = null;
             if (!clientConfiguration.isDisableHostPrefixInjection()) {
 
-                String hostPrefix = "places.";
-                String resolvedHostPrefix = String.format("places.");
+                String hostPrefix = "cp.places.";
+                String resolvedHostPrefix = String.format("cp.places.");
 
                 endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
             }
@@ -1883,8 +1888,8 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
             URI endpointTraitHost = null;
             if (!clientConfiguration.isDisableHostPrefixInjection()) {
 
-                String hostPrefix = "routes.";
-                String resolvedHostPrefix = String.format("routes.");
+                String hostPrefix = "cp.routes.";
+                String resolvedHostPrefix = String.format("cp.routes.");
 
                 endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
             }
@@ -1965,8 +1970,8 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
             URI endpointTraitHost = null;
             if (!clientConfiguration.isDisableHostPrefixInjection()) {
 
-                String hostPrefix = "tracking.";
-                String resolvedHostPrefix = String.format("tracking.");
+                String hostPrefix = "cp.tracking.";
+                String resolvedHostPrefix = String.format("cp.tracking.");
 
                 endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
             }
@@ -2041,8 +2046,8 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
             URI endpointTraitHost = null;
             if (!clientConfiguration.isDisableHostPrefixInjection()) {
 
-                String hostPrefix = "geofencing.";
-                String resolvedHostPrefix = String.format("geofencing.");
+                String hostPrefix = "cp.geofencing.";
+                String resolvedHostPrefix = String.format("cp.geofencing.");
 
                 endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
             }
@@ -2064,13 +2069,6 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
      * <p>
      * Retrieves the API key resource details.
      * </p>
-     * <important>
-     * <p>
-     * The API keys feature is in preview. We may add, change, or remove features before announcing general
-     * availability. For more information, see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Using API keys</a>.
-     * </p>
-     * </important>
      * 
      * @param describeKeyRequest
      * @return Result of the DescribeKey operation returned by the service.
@@ -2124,8 +2122,8 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
             URI endpointTraitHost = null;
             if (!clientConfiguration.isDisableHostPrefixInjection()) {
 
-                String hostPrefix = "metadata.";
-                String resolvedHostPrefix = String.format("metadata.");
+                String hostPrefix = "cp.metadata.";
+                String resolvedHostPrefix = String.format("cp.metadata.");
 
                 endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
             }
@@ -2199,8 +2197,8 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
             URI endpointTraitHost = null;
             if (!clientConfiguration.isDisableHostPrefixInjection()) {
 
-                String hostPrefix = "maps.";
-                String resolvedHostPrefix = String.format("maps.");
+                String hostPrefix = "cp.maps.";
+                String resolvedHostPrefix = String.format("cp.maps.");
 
                 endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
             }
@@ -2274,8 +2272,8 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
             URI endpointTraitHost = null;
             if (!clientConfiguration.isDisableHostPrefixInjection()) {
 
-                String hostPrefix = "places.";
-                String resolvedHostPrefix = String.format("places.");
+                String hostPrefix = "cp.places.";
+                String resolvedHostPrefix = String.format("cp.places.");
 
                 endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
             }
@@ -2350,8 +2348,8 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
             URI endpointTraitHost = null;
             if (!clientConfiguration.isDisableHostPrefixInjection()) {
 
-                String hostPrefix = "routes.";
-                String resolvedHostPrefix = String.format("routes.");
+                String hostPrefix = "cp.routes.";
+                String resolvedHostPrefix = String.format("cp.routes.");
 
                 endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
             }
@@ -2426,8 +2424,8 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
             URI endpointTraitHost = null;
             if (!clientConfiguration.isDisableHostPrefixInjection()) {
 
-                String hostPrefix = "tracking.";
-                String resolvedHostPrefix = String.format("tracking.");
+                String hostPrefix = "cp.tracking.";
+                String resolvedHostPrefix = String.format("cp.tracking.");
 
                 endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
             }
@@ -2508,8 +2506,8 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
             URI endpointTraitHost = null;
             if (!clientConfiguration.isDisableHostPrefixInjection()) {
 
-                String hostPrefix = "tracking.";
-                String resolvedHostPrefix = String.format("tracking.");
+                String hostPrefix = "cp.tracking.";
+                String resolvedHostPrefix = String.format("cp.tracking.");
 
                 endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
             }
@@ -3304,8 +3302,8 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
             URI endpointTraitHost = null;
             if (!clientConfiguration.isDisableHostPrefixInjection()) {
 
-                String hostPrefix = "geofencing.";
-                String resolvedHostPrefix = String.format("geofencing.");
+                String hostPrefix = "cp.geofencing.";
+                String resolvedHostPrefix = String.format("cp.geofencing.");
 
                 endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
             }
@@ -3402,13 +3400,6 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
      * <p>
      * Lists API key resources in your Amazon Web Services account.
      * </p>
-     * <important>
-     * <p>
-     * The API keys feature is in preview. We may add, change, or remove features before announcing general
-     * availability. For more information, see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Using API keys</a>.
-     * </p>
-     * </important>
      * 
      * @param listKeysRequest
      * @return Result of the ListKeys operation returned by the service.
@@ -3460,8 +3451,8 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
             URI endpointTraitHost = null;
             if (!clientConfiguration.isDisableHostPrefixInjection()) {
 
-                String hostPrefix = "metadata.";
-                String resolvedHostPrefix = String.format("metadata.");
+                String hostPrefix = "cp.metadata.";
+                String resolvedHostPrefix = String.format("cp.metadata.");
 
                 endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
             }
@@ -3533,8 +3524,8 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
             URI endpointTraitHost = null;
             if (!clientConfiguration.isDisableHostPrefixInjection()) {
 
-                String hostPrefix = "maps.";
-                String resolvedHostPrefix = String.format("maps.");
+                String hostPrefix = "cp.maps.";
+                String resolvedHostPrefix = String.format("cp.maps.");
 
                 endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
             }
@@ -3606,8 +3597,8 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
             URI endpointTraitHost = null;
             if (!clientConfiguration.isDisableHostPrefixInjection()) {
 
-                String hostPrefix = "places.";
-                String resolvedHostPrefix = String.format("places.");
+                String hostPrefix = "cp.places.";
+                String resolvedHostPrefix = String.format("cp.places.");
 
                 endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
             }
@@ -3679,8 +3670,8 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
             URI endpointTraitHost = null;
             if (!clientConfiguration.isDisableHostPrefixInjection()) {
 
-                String hostPrefix = "routes.";
-                String resolvedHostPrefix = String.format("routes.");
+                String hostPrefix = "cp.routes.";
+                String resolvedHostPrefix = String.format("cp.routes.");
 
                 endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
             }
@@ -3754,8 +3745,8 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
             URI endpointTraitHost = null;
             if (!clientConfiguration.isDisableHostPrefixInjection()) {
 
-                String hostPrefix = "metadata.";
-                String resolvedHostPrefix = String.format("metadata.");
+                String hostPrefix = "cp.metadata.";
+                String resolvedHostPrefix = String.format("cp.metadata.");
 
                 endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
             }
@@ -3829,8 +3820,8 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
             URI endpointTraitHost = null;
             if (!clientConfiguration.isDisableHostPrefixInjection()) {
 
-                String hostPrefix = "tracking.";
-                String resolvedHostPrefix = String.format("tracking.");
+                String hostPrefix = "cp.tracking.";
+                String resolvedHostPrefix = String.format("cp.tracking.");
 
                 endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
             }
@@ -3902,8 +3893,8 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
             URI endpointTraitHost = null;
             if (!clientConfiguration.isDisableHostPrefixInjection()) {
 
-                String hostPrefix = "tracking.";
-                String resolvedHostPrefix = String.format("tracking.");
+                String hostPrefix = "cp.tracking.";
+                String resolvedHostPrefix = String.format("cp.tracking.");
 
                 endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
             }
@@ -4326,8 +4317,8 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
             URI endpointTraitHost = null;
             if (!clientConfiguration.isDisableHostPrefixInjection()) {
 
-                String hostPrefix = "metadata.";
-                String resolvedHostPrefix = String.format("metadata.");
+                String hostPrefix = "cp.metadata.";
+                String resolvedHostPrefix = String.format("cp.metadata.");
 
                 endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
             }
@@ -4401,8 +4392,8 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
             URI endpointTraitHost = null;
             if (!clientConfiguration.isDisableHostPrefixInjection()) {
 
-                String hostPrefix = "metadata.";
-                String resolvedHostPrefix = String.format("metadata.");
+                String hostPrefix = "cp.metadata.";
+                String resolvedHostPrefix = String.format("cp.metadata.");
 
                 endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
             }
@@ -4477,8 +4468,8 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
             URI endpointTraitHost = null;
             if (!clientConfiguration.isDisableHostPrefixInjection()) {
 
-                String hostPrefix = "geofencing.";
-                String resolvedHostPrefix = String.format("geofencing.");
+                String hostPrefix = "cp.geofencing.";
+                String resolvedHostPrefix = String.format("cp.geofencing.");
 
                 endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
             }
@@ -4500,13 +4491,6 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
      * <p>
      * Updates the specified properties of a given API key resource.
      * </p>
-     * <important>
-     * <p>
-     * The API keys feature is in preview. We may add, change, or remove features before announcing general
-     * availability. For more information, see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Using API keys</a>.
-     * </p>
-     * </important>
      * 
      * @param updateKeyRequest
      * @return Result of the UpdateKey operation returned by the service.
@@ -4560,8 +4544,8 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
             URI endpointTraitHost = null;
             if (!clientConfiguration.isDisableHostPrefixInjection()) {
 
-                String hostPrefix = "metadata.";
-                String resolvedHostPrefix = String.format("metadata.");
+                String hostPrefix = "cp.metadata.";
+                String resolvedHostPrefix = String.format("cp.metadata.");
 
                 endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
             }
@@ -4635,8 +4619,8 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
             URI endpointTraitHost = null;
             if (!clientConfiguration.isDisableHostPrefixInjection()) {
 
-                String hostPrefix = "maps.";
-                String resolvedHostPrefix = String.format("maps.");
+                String hostPrefix = "cp.maps.";
+                String resolvedHostPrefix = String.format("cp.maps.");
 
                 endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
             }
@@ -4710,8 +4694,8 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
             URI endpointTraitHost = null;
             if (!clientConfiguration.isDisableHostPrefixInjection()) {
 
-                String hostPrefix = "places.";
-                String resolvedHostPrefix = String.format("places.");
+                String hostPrefix = "cp.places.";
+                String resolvedHostPrefix = String.format("cp.places.");
 
                 endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
             }
@@ -4785,8 +4769,8 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
             URI endpointTraitHost = null;
             if (!clientConfiguration.isDisableHostPrefixInjection()) {
 
-                String hostPrefix = "routes.";
-                String resolvedHostPrefix = String.format("routes.");
+                String hostPrefix = "cp.routes.";
+                String resolvedHostPrefix = String.format("cp.routes.");
 
                 endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
             }
@@ -4861,8 +4845,8 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
             URI endpointTraitHost = null;
             if (!clientConfiguration.isDisableHostPrefixInjection()) {
 
-                String hostPrefix = "tracking.";
-                String resolvedHostPrefix = String.format("tracking.");
+                String hostPrefix = "cp.tracking.";
+                String resolvedHostPrefix = String.format("cp.tracking.");
 
                 endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
             }

@@ -101,11 +101,11 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
     private Boolean includeGlobalServiceEvents;
     /**
      * <p>
-     * Specifies whether the trail applies only to the current region or to all regions. The default is false. If the
-     * trail exists only in the current region and this value is set to true, shadow trails (replications of the trail)
-     * will be created in the other regions. If the trail exists in all regions and this value is set to false, the
-     * trail will remain in the region where it was created, and its shadow trails in other regions will be deleted. As
-     * a best practice, consider using trails that log events in all regions.
+     * Specifies whether the trail applies only to the current Region or to all Regions. The default is false. If the
+     * trail exists only in the current Region and this value is set to true, shadow trails (replications of the trail)
+     * will be created in the other Regions. If the trail exists in all Regions and this value is set to false, the
+     * trail will remain in the Region where it was created, and its shadow trails in other Regions will be deleted. As
+     * a best practice, consider using trails that log events in all Regions.
      * </p>
      */
     private Boolean isMultiRegionTrail;
@@ -650,19 +650,19 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies whether the trail applies only to the current region or to all regions. The default is false. If the
-     * trail exists only in the current region and this value is set to true, shadow trails (replications of the trail)
-     * will be created in the other regions. If the trail exists in all regions and this value is set to false, the
-     * trail will remain in the region where it was created, and its shadow trails in other regions will be deleted. As
-     * a best practice, consider using trails that log events in all regions.
+     * Specifies whether the trail applies only to the current Region or to all Regions. The default is false. If the
+     * trail exists only in the current Region and this value is set to true, shadow trails (replications of the trail)
+     * will be created in the other Regions. If the trail exists in all Regions and this value is set to false, the
+     * trail will remain in the Region where it was created, and its shadow trails in other Regions will be deleted. As
+     * a best practice, consider using trails that log events in all Regions.
      * </p>
      * 
      * @param isMultiRegionTrail
-     *        Specifies whether the trail applies only to the current region or to all regions. The default is false. If
-     *        the trail exists only in the current region and this value is set to true, shadow trails (replications of
-     *        the trail) will be created in the other regions. If the trail exists in all regions and this value is set
-     *        to false, the trail will remain in the region where it was created, and its shadow trails in other regions
-     *        will be deleted. As a best practice, consider using trails that log events in all regions.
+     *        Specifies whether the trail applies only to the current Region or to all Regions. The default is false. If
+     *        the trail exists only in the current Region and this value is set to true, shadow trails (replications of
+     *        the trail) will be created in the other Regions. If the trail exists in all Regions and this value is set
+     *        to false, the trail will remain in the Region where it was created, and its shadow trails in other Regions
+     *        will be deleted. As a best practice, consider using trails that log events in all Regions.
      */
 
     public void setIsMultiRegionTrail(Boolean isMultiRegionTrail) {
@@ -671,18 +671,18 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies whether the trail applies only to the current region or to all regions. The default is false. If the
-     * trail exists only in the current region and this value is set to true, shadow trails (replications of the trail)
-     * will be created in the other regions. If the trail exists in all regions and this value is set to false, the
-     * trail will remain in the region where it was created, and its shadow trails in other regions will be deleted. As
-     * a best practice, consider using trails that log events in all regions.
+     * Specifies whether the trail applies only to the current Region or to all Regions. The default is false. If the
+     * trail exists only in the current Region and this value is set to true, shadow trails (replications of the trail)
+     * will be created in the other Regions. If the trail exists in all Regions and this value is set to false, the
+     * trail will remain in the Region where it was created, and its shadow trails in other Regions will be deleted. As
+     * a best practice, consider using trails that log events in all Regions.
      * </p>
      * 
-     * @return Specifies whether the trail applies only to the current region or to all regions. The default is false.
-     *         If the trail exists only in the current region and this value is set to true, shadow trails (replications
-     *         of the trail) will be created in the other regions. If the trail exists in all regions and this value is
-     *         set to false, the trail will remain in the region where it was created, and its shadow trails in other
-     *         regions will be deleted. As a best practice, consider using trails that log events in all regions.
+     * @return Specifies whether the trail applies only to the current Region or to all Regions. The default is false.
+     *         If the trail exists only in the current Region and this value is set to true, shadow trails (replications
+     *         of the trail) will be created in the other Regions. If the trail exists in all Regions and this value is
+     *         set to false, the trail will remain in the Region where it was created, and its shadow trails in other
+     *         Regions will be deleted. As a best practice, consider using trails that log events in all Regions.
      */
 
     public Boolean getIsMultiRegionTrail() {
@@ -691,19 +691,19 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies whether the trail applies only to the current region or to all regions. The default is false. If the
-     * trail exists only in the current region and this value is set to true, shadow trails (replications of the trail)
-     * will be created in the other regions. If the trail exists in all regions and this value is set to false, the
-     * trail will remain in the region where it was created, and its shadow trails in other regions will be deleted. As
-     * a best practice, consider using trails that log events in all regions.
+     * Specifies whether the trail applies only to the current Region or to all Regions. The default is false. If the
+     * trail exists only in the current Region and this value is set to true, shadow trails (replications of the trail)
+     * will be created in the other Regions. If the trail exists in all Regions and this value is set to false, the
+     * trail will remain in the Region where it was created, and its shadow trails in other Regions will be deleted. As
+     * a best practice, consider using trails that log events in all Regions.
      * </p>
      * 
      * @param isMultiRegionTrail
-     *        Specifies whether the trail applies only to the current region or to all regions. The default is false. If
-     *        the trail exists only in the current region and this value is set to true, shadow trails (replications of
-     *        the trail) will be created in the other regions. If the trail exists in all regions and this value is set
-     *        to false, the trail will remain in the region where it was created, and its shadow trails in other regions
-     *        will be deleted. As a best practice, consider using trails that log events in all regions.
+     *        Specifies whether the trail applies only to the current Region or to all Regions. The default is false. If
+     *        the trail exists only in the current Region and this value is set to true, shadow trails (replications of
+     *        the trail) will be created in the other Regions. If the trail exists in all Regions and this value is set
+     *        to false, the trail will remain in the Region where it was created, and its shadow trails in other Regions
+     *        will be deleted. As a best practice, consider using trails that log events in all Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -714,18 +714,18 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies whether the trail applies only to the current region or to all regions. The default is false. If the
-     * trail exists only in the current region and this value is set to true, shadow trails (replications of the trail)
-     * will be created in the other regions. If the trail exists in all regions and this value is set to false, the
-     * trail will remain in the region where it was created, and its shadow trails in other regions will be deleted. As
-     * a best practice, consider using trails that log events in all regions.
+     * Specifies whether the trail applies only to the current Region or to all Regions. The default is false. If the
+     * trail exists only in the current Region and this value is set to true, shadow trails (replications of the trail)
+     * will be created in the other Regions. If the trail exists in all Regions and this value is set to false, the
+     * trail will remain in the Region where it was created, and its shadow trails in other Regions will be deleted. As
+     * a best practice, consider using trails that log events in all Regions.
      * </p>
      * 
-     * @return Specifies whether the trail applies only to the current region or to all regions. The default is false.
-     *         If the trail exists only in the current region and this value is set to true, shadow trails (replications
-     *         of the trail) will be created in the other regions. If the trail exists in all regions and this value is
-     *         set to false, the trail will remain in the region where it was created, and its shadow trails in other
-     *         regions will be deleted. As a best practice, consider using trails that log events in all regions.
+     * @return Specifies whether the trail applies only to the current Region or to all Regions. The default is false.
+     *         If the trail exists only in the current Region and this value is set to true, shadow trails (replications
+     *         of the trail) will be created in the other Regions. If the trail exists in all Regions and this value is
+     *         set to false, the trail will remain in the Region where it was created, and its shadow trails in other
+     *         Regions will be deleted. As a best practice, consider using trails that log events in all Regions.
      */
 
     public Boolean isMultiRegionTrail() {

@@ -101,6 +101,30 @@ public class SessionJsonUnmarshaller implements Unmarshaller<Session, JsonUnmars
                     context.nextToken();
                     session.setGlueVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("NumberOfWorkers", targetDepth)) {
+                    context.nextToken();
+                    session.setNumberOfWorkers(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("WorkerType", targetDepth)) {
+                    context.nextToken();
+                    session.setWorkerType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CompletedOn", targetDepth)) {
+                    context.nextToken();
+                    session.setCompletedOn(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("ExecutionTime", targetDepth)) {
+                    context.nextToken();
+                    session.setExecutionTime(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (context.testExpression("DPUSeconds", targetDepth)) {
+                    context.nextToken();
+                    session.setDPUSeconds(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (context.testExpression("IdleTimeout", targetDepth)) {
+                    context.nextToken();
+                    session.setIdleTimeout(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

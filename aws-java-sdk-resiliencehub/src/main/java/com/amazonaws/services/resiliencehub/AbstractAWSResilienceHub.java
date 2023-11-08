@@ -33,6 +33,11 @@ public class AbstractAWSResilienceHub implements AWSResilienceHub {
     }
 
     @Override
+    public BatchUpdateRecommendationStatusResult batchUpdateRecommendationStatus(BatchUpdateRecommendationStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateAppResult createApp(CreateAppRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -146,6 +151,11 @@ public class AbstractAWSResilienceHub implements AWSResilienceHub {
 
     @Override
     public ListAlarmRecommendationsResult listAlarmRecommendations(ListAlarmRecommendationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListAppAssessmentComplianceDriftsResult listAppAssessmentComplianceDrifts(ListAppAssessmentComplianceDriftsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

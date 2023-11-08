@@ -36,6 +36,13 @@ public class InputDeviceConfigurableSettings implements Serializable, Cloneable,
     private Integer maxBitrate;
     /** The Link device's buffer size (latency) in milliseconds (ms). */
     private Integer latencyMs;
+    /** Choose the codec for the video that the device produces. Only UHD devices can specify this parameter. */
+    private String codec;
+    /**
+     * To attach this device to a MediaConnect flow, specify these parameters. To detach an existing flow, enter {} for
+     * the value of mediaconnectSettings. Only UHD devices can specify this parameter.
+     */
+    private InputDeviceMediaConnectConfigurableSettings mediaconnectSettings;
 
     /**
      * The input source that you want to use. If the device has a source connected to only one of its input ports, or if
@@ -173,6 +180,97 @@ public class InputDeviceConfigurableSettings implements Serializable, Cloneable,
     }
 
     /**
+     * Choose the codec for the video that the device produces. Only UHD devices can specify this parameter.
+     * 
+     * @param codec
+     *        Choose the codec for the video that the device produces. Only UHD devices can specify this parameter.
+     * @see InputDeviceCodec
+     */
+
+    public void setCodec(String codec) {
+        this.codec = codec;
+    }
+
+    /**
+     * Choose the codec for the video that the device produces. Only UHD devices can specify this parameter.
+     * 
+     * @return Choose the codec for the video that the device produces. Only UHD devices can specify this parameter.
+     * @see InputDeviceCodec
+     */
+
+    public String getCodec() {
+        return this.codec;
+    }
+
+    /**
+     * Choose the codec for the video that the device produces. Only UHD devices can specify this parameter.
+     * 
+     * @param codec
+     *        Choose the codec for the video that the device produces. Only UHD devices can specify this parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InputDeviceCodec
+     */
+
+    public InputDeviceConfigurableSettings withCodec(String codec) {
+        setCodec(codec);
+        return this;
+    }
+
+    /**
+     * Choose the codec for the video that the device produces. Only UHD devices can specify this parameter.
+     * 
+     * @param codec
+     *        Choose the codec for the video that the device produces. Only UHD devices can specify this parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InputDeviceCodec
+     */
+
+    public InputDeviceConfigurableSettings withCodec(InputDeviceCodec codec) {
+        this.codec = codec.toString();
+        return this;
+    }
+
+    /**
+     * To attach this device to a MediaConnect flow, specify these parameters. To detach an existing flow, enter {} for
+     * the value of mediaconnectSettings. Only UHD devices can specify this parameter.
+     * 
+     * @param mediaconnectSettings
+     *        To attach this device to a MediaConnect flow, specify these parameters. To detach an existing flow, enter
+     *        {} for the value of mediaconnectSettings. Only UHD devices can specify this parameter.
+     */
+
+    public void setMediaconnectSettings(InputDeviceMediaConnectConfigurableSettings mediaconnectSettings) {
+        this.mediaconnectSettings = mediaconnectSettings;
+    }
+
+    /**
+     * To attach this device to a MediaConnect flow, specify these parameters. To detach an existing flow, enter {} for
+     * the value of mediaconnectSettings. Only UHD devices can specify this parameter.
+     * 
+     * @return To attach this device to a MediaConnect flow, specify these parameters. To detach an existing flow, enter
+     *         {} for the value of mediaconnectSettings. Only UHD devices can specify this parameter.
+     */
+
+    public InputDeviceMediaConnectConfigurableSettings getMediaconnectSettings() {
+        return this.mediaconnectSettings;
+    }
+
+    /**
+     * To attach this device to a MediaConnect flow, specify these parameters. To detach an existing flow, enter {} for
+     * the value of mediaconnectSettings. Only UHD devices can specify this parameter.
+     * 
+     * @param mediaconnectSettings
+     *        To attach this device to a MediaConnect flow, specify these parameters. To detach an existing flow, enter
+     *        {} for the value of mediaconnectSettings. Only UHD devices can specify this parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InputDeviceConfigurableSettings withMediaconnectSettings(InputDeviceMediaConnectConfigurableSettings mediaconnectSettings) {
+        setMediaconnectSettings(mediaconnectSettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -189,7 +287,11 @@ public class InputDeviceConfigurableSettings implements Serializable, Cloneable,
         if (getMaxBitrate() != null)
             sb.append("MaxBitrate: ").append(getMaxBitrate()).append(",");
         if (getLatencyMs() != null)
-            sb.append("LatencyMs: ").append(getLatencyMs());
+            sb.append("LatencyMs: ").append(getLatencyMs()).append(",");
+        if (getCodec() != null)
+            sb.append("Codec: ").append(getCodec()).append(",");
+        if (getMediaconnectSettings() != null)
+            sb.append("MediaconnectSettings: ").append(getMediaconnectSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -216,6 +318,14 @@ public class InputDeviceConfigurableSettings implements Serializable, Cloneable,
             return false;
         if (other.getLatencyMs() != null && other.getLatencyMs().equals(this.getLatencyMs()) == false)
             return false;
+        if (other.getCodec() == null ^ this.getCodec() == null)
+            return false;
+        if (other.getCodec() != null && other.getCodec().equals(this.getCodec()) == false)
+            return false;
+        if (other.getMediaconnectSettings() == null ^ this.getMediaconnectSettings() == null)
+            return false;
+        if (other.getMediaconnectSettings() != null && other.getMediaconnectSettings().equals(this.getMediaconnectSettings()) == false)
+            return false;
         return true;
     }
 
@@ -227,6 +337,8 @@ public class InputDeviceConfigurableSettings implements Serializable, Cloneable,
         hashCode = prime * hashCode + ((getConfiguredInput() == null) ? 0 : getConfiguredInput().hashCode());
         hashCode = prime * hashCode + ((getMaxBitrate() == null) ? 0 : getMaxBitrate().hashCode());
         hashCode = prime * hashCode + ((getLatencyMs() == null) ? 0 : getLatencyMs().hashCode());
+        hashCode = prime * hashCode + ((getCodec() == null) ? 0 : getCodec().hashCode());
+        hashCode = prime * hashCode + ((getMediaconnectSettings() == null) ? 0 : getMediaconnectSettings().hashCode());
         return hashCode;
     }
 

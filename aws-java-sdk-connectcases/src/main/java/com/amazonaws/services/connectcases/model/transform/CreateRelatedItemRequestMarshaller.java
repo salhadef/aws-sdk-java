@@ -33,6 +33,8 @@ public class CreateRelatedItemRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("content").build();
     private static final MarshallingInfo<String> DOMAINID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("domainId").build();
+    private static final MarshallingInfo<StructuredPojo> PERFORMEDBY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("performedBy").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("type").build();
 
@@ -55,6 +57,7 @@ public class CreateRelatedItemRequestMarshaller {
             protocolMarshaller.marshall(createRelatedItemRequest.getCaseId(), CASEID_BINDING);
             protocolMarshaller.marshall(createRelatedItemRequest.getContent(), CONTENT_BINDING);
             protocolMarshaller.marshall(createRelatedItemRequest.getDomainId(), DOMAINID_BINDING);
+            protocolMarshaller.marshall(createRelatedItemRequest.getPerformedBy(), PERFORMEDBY_BINDING);
             protocolMarshaller.marshall(createRelatedItemRequest.getType(), TYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

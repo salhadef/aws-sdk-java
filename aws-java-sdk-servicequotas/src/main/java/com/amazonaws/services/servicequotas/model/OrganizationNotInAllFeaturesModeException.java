@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The organization that your account belongs to is not in All Features mode.
+ * The organization that your Amazon Web Services account belongs to is not in All Features mode.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

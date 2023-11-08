@@ -48,13 +48,13 @@ public class VcfOptionsJsonUnmarshaller implements Unmarshaller<VcfOptions, Json
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("ignoreFilterField", targetDepth)) {
-                    context.nextToken();
-                    vcfOptions.setIgnoreFilterField(context.getUnmarshaller(Boolean.class).unmarshall(context));
-                }
                 if (context.testExpression("ignoreQualField", targetDepth)) {
                     context.nextToken();
                     vcfOptions.setIgnoreQualField(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("ignoreFilterField", targetDepth)) {
+                    context.nextToken();
+                    vcfOptions.setIgnoreFilterField(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

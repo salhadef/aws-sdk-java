@@ -1421,8 +1421,9 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * </p>
      * <note>
      * <p>
-     * Currently, you can specify only one configuration recorder per region in your account. For a detailed status of
-     * recording events over time, add your Config events to Amazon CloudWatch metrics and use CloudWatch metrics.
+     * &gt;You can specify only one configuration recorder for each Amazon Web Services Region for each account. For a
+     * detailed status of recording events over time, add your Config events to Amazon CloudWatch metrics and use
+     * CloudWatch metrics.
      * </p>
      * </note>
      * 
@@ -1445,8 +1446,9 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * </p>
      * <note>
      * <p>
-     * Currently, you can specify only one configuration recorder per region in your account. For a detailed status of
-     * recording events over time, add your Config events to Amazon CloudWatch metrics and use CloudWatch metrics.
+     * &gt;You can specify only one configuration recorder for each Amazon Web Services Region for each account. For a
+     * detailed status of recording events over time, add your Config events to Amazon CloudWatch metrics and use
+     * CloudWatch metrics.
      * </p>
      * </note>
      * 
@@ -1489,7 +1491,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * </p>
      * <note>
      * <p>
-     * Currently, you can specify only one configuration recorder per region in your account.
+     * You can specify only one configuration recorder for each Amazon Web Services Region for each account.
      * </p>
      * </note>
      * 
@@ -1511,7 +1513,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * </p>
      * <note>
      * <p>
-     * Currently, you can specify only one configuration recorder per region in your account.
+     * You can specify only one configuration recorder for each Amazon Web Services Region for each account.
      * </p>
      * </note>
      * 
@@ -3083,6 +3085,14 @@ public interface AmazonConfigAsync extends AmazonConfig {
             com.amazonaws.handlers.AsyncHandler<GetOrganizationCustomRulePolicyRequest, GetOrganizationCustomRulePolicyResult> asyncHandler);
 
     /**
+     * <important>
+     * <p>
+     * For accurate reporting on the compliance status, you must record the <code>AWS::Config::ResourceCompliance</code>
+     * resource type. For more information, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html">Selecting Which Resources
+     * Config Records</a>.
+     * </p>
+     * </important>
      * <p>
      * Returns a list of <code>ConfigurationItems</code> for the specified resource. The list contains details about
      * each state of the resource during the specified time interval. If you specified a retention period to retain your
@@ -3113,6 +3123,14 @@ public interface AmazonConfigAsync extends AmazonConfig {
     java.util.concurrent.Future<GetResourceConfigHistoryResult> getResourceConfigHistoryAsync(GetResourceConfigHistoryRequest getResourceConfigHistoryRequest);
 
     /**
+     * <important>
+     * <p>
+     * For accurate reporting on the compliance status, you must record the <code>AWS::Config::ResourceCompliance</code>
+     * resource type. For more information, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html">Selecting Which Resources
+     * Config Records</a>.
+     * </p>
+     * </important>
      * <p>
      * Returns a list of <code>ConfigurationItems</code> for the specified resource. The list contains details about
      * each state of the resource during the specified time interval. If you specified a retention period to retain your
@@ -3774,19 +3792,21 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
-     * Creates a new configuration recorder to record the selected resource configurations.
+     * Creates a new configuration recorder to record configuration changes for specified resource types.
      * </p>
      * <p>
-     * You can use this action to change the role <code>roleARN</code> or the <code>recordingGroup</code> of an existing
-     * recorder. To change the role, call the action on the existing configuration recorder and specify a role.
+     * You can also use this action to change the <code>roleARN</code> or the <code>recordingGroup</code> of an existing
+     * recorder. For more information, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/stop-start-recorder.html"> <b>Managing the
+     * Configuration Recorder</b> </a> in the <i>Config Developer Guide</i>.
      * </p>
      * <note>
      * <p>
-     * Currently, you can specify only one configuration recorder per region in your account.
+     * You can specify only one configuration recorder for each Amazon Web Services Region for each account.
      * </p>
      * <p>
-     * If <code>ConfigurationRecorder</code> does not have the <b>recordingGroup</b> parameter specified, the default is
-     * to record all supported resource types.
+     * If the configuration recorder does not have the <code>recordingGroup</code> field specified, the default is to
+     * record all supported resource types.
      * </p>
      * </note>
      * 
@@ -3801,19 +3821,21 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
-     * Creates a new configuration recorder to record the selected resource configurations.
+     * Creates a new configuration recorder to record configuration changes for specified resource types.
      * </p>
      * <p>
-     * You can use this action to change the role <code>roleARN</code> or the <code>recordingGroup</code> of an existing
-     * recorder. To change the role, call the action on the existing configuration recorder and specify a role.
+     * You can also use this action to change the <code>roleARN</code> or the <code>recordingGroup</code> of an existing
+     * recorder. For more information, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/stop-start-recorder.html"> <b>Managing the
+     * Configuration Recorder</b> </a> in the <i>Config Developer Guide</i>.
      * </p>
      * <note>
      * <p>
-     * Currently, you can specify only one configuration recorder per region in your account.
+     * You can specify only one configuration recorder for each Amazon Web Services Region for each account.
      * </p>
      * <p>
-     * If <code>ConfigurationRecorder</code> does not have the <b>recordingGroup</b> parameter specified, the default is
-     * to record all supported resource types.
+     * If the configuration recorder does not have the <code>recordingGroup</code> field specified, the default is to
+     * record all supported resource types.
      * </p>
      * </note>
      * 
@@ -3836,7 +3858,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * Creates or updates a conformance pack. A conformance pack is a collection of Config rules that can be easily
      * deployed in an account and a region and across an organization. For information on how many conformance packs you
      * can have per account, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
-     * <b>Service Limits</b> </a> in the Config Developer Guide.
+     * <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.
      * </p>
      * <p>
      * This API creates a service-linked role <code>AWSServiceRoleForConfigConforms</code> in your account. The
@@ -3862,7 +3884,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * Creates or updates a conformance pack. A conformance pack is a collection of Config rules that can be easily
      * deployed in an account and a region and across an organization. For information on how many conformance packs you
      * can have per account, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
-     * <b>Service Limits</b> </a> in the Config Developer Guide.
+     * <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.
      * </p>
      * <p>
      * This API creates a service-linked role <code>AWSServiceRoleForConfigConforms</code> in your account. The
@@ -3890,8 +3912,10 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
-     * Creates a delivery channel object to deliver configuration information to an Amazon S3 bucket and Amazon SNS
-     * topic.
+     * Creates a delivery channel object to deliver configuration information and other compliance information to an
+     * Amazon S3 bucket and Amazon SNS topic. For more information, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/notifications-for-AWS-Config.html">Notifications
+     * that Config Sends to an Amazon SNS topic</a>.
      * </p>
      * <p>
      * Before you can create a delivery channel, you must create a configuration recorder.
@@ -3919,8 +3943,10 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
-     * Creates a delivery channel object to deliver configuration information to an Amazon S3 bucket and Amazon SNS
-     * topic.
+     * Creates a delivery channel object to deliver configuration information and other compliance information to an
+     * Amazon S3 bucket and Amazon SNS topic. For more information, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/notifications-for-AWS-Config.html">Notifications
+     * that Config Sends to an Amazon SNS topic</a>.
      * </p>
      * <p>
      * Before you can create a delivery channel, you must create a configuration recorder.
@@ -4167,7 +4193,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * Deploys conformance packs across member accounts in an Amazon Web Services Organization. For information on how
      * many organization conformance packs and how many Config rules you can have per account, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in
-     * the Config Developer Guide.
+     * the <i>Config Developer Guide</i>.
      * </p>
      * <p>
      * Only a management account and a delegated administrator can call this API. When calling this API with a delegated
@@ -4212,7 +4238,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * Deploys conformance packs across member accounts in an Amazon Web Services Organization. For information on how
      * many organization conformance packs and how many Config rules you can have per account, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in
-     * the Config Developer Guide.
+     * the <i>Config Developer Guide</i>.
      * </p>
      * <p>
      * Only a management account and a delegated administrator can call this API. When calling this API with a delegated
@@ -4366,7 +4392,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * will not be generated. For more information on the conditions that initiate the possible Config evaluation
      * results, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.html#aws-config-rules">Concepts |
-     * Config Rules</a> in the Config Developer Guide.
+     * Config Rules</a> in the <i>Config Developer Guide</i>.
      * </p>
      * </note>
      * 
@@ -4404,7 +4430,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * will not be generated. For more information on the conditions that initiate the possible Config evaluation
      * results, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.html#aws-config-rules">Concepts |
-     * Config Rules</a> in the Config Developer Guide.
+     * Config Rules</a> in the <i>Config Developer Guide</i>.
      * </p>
      * </note>
      * 
@@ -4591,7 +4617,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * <p>
      * For more information about query components, see the <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/query-components.html"> <b>Query Components</b>
-     * </a> section in the Config Developer Guide.
+     * </a> section in the <i>Config Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -4627,7 +4653,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * <p>
      * For more information about query components, see the <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/query-components.html"> <b>Query Components</b>
-     * </a> section in the Config Developer Guide.
+     * </a> section in the <i>Config Developer Guide</i>.
      * </p>
      * <note>
      * <p>

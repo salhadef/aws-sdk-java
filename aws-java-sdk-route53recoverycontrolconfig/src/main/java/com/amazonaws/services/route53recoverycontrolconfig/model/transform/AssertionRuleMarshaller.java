@@ -42,6 +42,8 @@ public class AssertionRuleMarshaller {
             .marshallLocationName("Status").build();
     private static final MarshallingInfo<Integer> WAITPERIODMS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WaitPeriodMs").build();
+    private static final MarshallingInfo<String> OWNER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Owner").build();
 
     private static final AssertionRuleMarshaller instance = new AssertionRuleMarshaller();
 
@@ -66,6 +68,7 @@ public class AssertionRuleMarshaller {
             protocolMarshaller.marshall(assertionRule.getSafetyRuleArn(), SAFETYRULEARN_BINDING);
             protocolMarshaller.marshall(assertionRule.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(assertionRule.getWaitPeriodMs(), WAITPERIODMS_BINDING);
+            protocolMarshaller.marshall(assertionRule.getOwner(), OWNER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

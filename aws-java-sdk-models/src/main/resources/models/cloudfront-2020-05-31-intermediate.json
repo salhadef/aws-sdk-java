@@ -249,7 +249,7 @@
       "asyncReturnType" : "CopyDistributionResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Creates a staging distribution using the configuration of the provided primary distribution. A staging distribution is a copy of an existing distribution (called the primary distribution) that you can use in a continuous deployment workflow.</p> <p>After you create a staging distribution, you can use <code>UpdateDistribution</code> to modify the staging distribution's configuration. Then you can use <code>CreateContinuousDeploymentPolicy</code> to incrementally move traffic to the staging distribution.</p>",
+      "documentation" : "<p>Creates a staging distribution using the configuration of the provided primary distribution. A staging distribution is a copy of an existing distribution (called the primary distribution) that you can use in a continuous deployment workflow.</p> <p>After you create a staging distribution, you can use <code>UpdateDistribution</code> to modify the staging distribution's configuration. Then you can use <code>CreateContinuousDeploymentPolicy</code> to incrementally move traffic to the staging distribution.</p> <p>This API operation requires the following IAM permissions:</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistribution.html\">GetDistribution</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateDistribution.html\">CreateDistribution</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CopyDistribution.html\">CopyDistribution</a> </p> </li> </ul>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -469,6 +469,10 @@
       }, {
         "exceptionName" : "TooManyDistributionsAssociatedToCachePolicyException",
         "documentation" : "<p>The maximum number of distributions have been associated with the specified cache policy. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html\">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>",
+        "httpStatusCode" : 400
+      }, {
+        "exceptionName" : "TooManyDistributionsAssociatedToOriginAccessControlException",
+        "documentation" : "<p>The maximum number of distributions have been associated with the specified origin access control.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html\">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>",
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "NoSuchResponseHeadersPolicyException",
@@ -1002,7 +1006,7 @@
       "asyncReturnType" : "CreateDistributionWithTagsResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Create a new distribution with tags.</p>",
+      "documentation" : "<p>Create a new distribution with tags. This API operation requires the following IAM permissions:</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateDistribution.html\">CreateDistribution</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_TagResource.html\">TagResource</a> </p> </li> </ul>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -1026,6 +1030,10 @@
       }, {
         "exceptionName" : "InvalidOriginAccessControlException",
         "documentation" : "<p>The origin access control is not valid.</p>",
+        "httpStatusCode" : 400
+      }, {
+        "exceptionName" : "IllegalOriginAccessConfigurationException",
+        "documentation" : "<p>An origin cannot contain both an origin access control (OAC) and an origin access identity (OAI).</p>",
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "AccessDeniedException",
@@ -1214,6 +1222,10 @@
       }, {
         "exceptionName" : "TooManyDistributionsAssociatedToCachePolicyException",
         "documentation" : "<p>The maximum number of distributions have been associated with the specified cache policy. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html\">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>",
+        "httpStatusCode" : 400
+      }, {
+        "exceptionName" : "TooManyDistributionsAssociatedToOriginAccessControlException",
+        "documentation" : "<p>The maximum number of distributions have been associated with the specified origin access control.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html\">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>",
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "NoSuchResponseHeadersPolicyException",
@@ -5640,6 +5652,10 @@
         "documentation" : "<p>The maximum number of distributions have been associated with the specified cache policy. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html\">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>",
         "httpStatusCode" : 400
       }, {
+        "exceptionName" : "TooManyDistributionsAssociatedToOriginAccessControlException",
+        "documentation" : "<p>The maximum number of distributions have been associated with the specified origin access control.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html\">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>",
+        "httpStatusCode" : 400
+      }, {
         "exceptionName" : "NoSuchResponseHeadersPolicyException",
         "documentation" : "<p>The response headers policy does not exist.</p>",
         "httpStatusCode" : 404
@@ -5723,7 +5739,7 @@
       "asyncReturnType" : "UpdateDistributionWithStagingConfigResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Copies the staging distribution's configuration to its corresponding primary distribution. The primary distribution retains its <code>Aliases</code> (also known as alternate domain names or CNAMEs) and <code>ContinuousDeploymentPolicyId</code> value, but otherwise its configuration is overwritten to match the staging distribution.</p> <p>You can use this operation in a continuous deployment workflow after you have tested configuration changes on the staging distribution. After using a continuous deployment policy to move a portion of your domain name's traffic to the staging distribution and verifying that it works as intended, you can use this operation to copy the staging distribution's configuration to the primary distribution. This action will disable the continuous deployment policy and move your domain's traffic back to the primary distribution.</p>",
+      "documentation" : "<p>Copies the staging distribution's configuration to its corresponding primary distribution. The primary distribution retains its <code>Aliases</code> (also known as alternate domain names or CNAMEs) and <code>ContinuousDeploymentPolicyId</code> value, but otherwise its configuration is overwritten to match the staging distribution.</p> <p>You can use this operation in a continuous deployment workflow after you have tested configuration changes on the staging distribution. After using a continuous deployment policy to move a portion of your domain name's traffic to the staging distribution and verifying that it works as intended, you can use this operation to copy the staging distribution's configuration to the primary distribution. This action will disable the continuous deployment policy and move your domain's traffic back to the primary distribution.</p> <p>This API operation requires the following IAM permissions:</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistribution.html\">GetDistribution</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html\">UpdateDistribution</a> </p> </li> </ul>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -5931,6 +5947,10 @@
       }, {
         "exceptionName" : "TooManyDistributionsAssociatedToCachePolicyException",
         "documentation" : "<p>The maximum number of distributions have been associated with the specified cache policy. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html\">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>",
+        "httpStatusCode" : 400
+      }, {
+        "exceptionName" : "TooManyDistributionsAssociatedToOriginAccessControlException",
+        "documentation" : "<p>The maximum number of distributions have been associated with the specified origin access control.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html\">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>",
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "NoSuchResponseHeadersPolicyException",
@@ -7368,12 +7388,12 @@
         "c2jName" : "Enabled",
         "c2jShape" : "boolean",
         "deprecated" : false,
-        "documentation" : "<p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list have active CloudFront key pairs that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>",
+        "documentation" : "<p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list have active CloudFront key pairs that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>\n@param enabled This field is <code>true</code> if any of the Amazon Web Services accounts in the list have active CloudFront key pairs that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.</p>\n@param enabled This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withEnabled",
-        "getterDocumentation" : "/**<p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list have active CloudFront key pairs that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>\n@return This field is <code>true</code> if any of the Amazon Web Services accounts in the list have active CloudFront key pairs that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.*/",
+        "getterDocumentation" : "/**<p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.</p>\n@return This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.*/",
         "getterMethodName" : "getEnabled",
         "getterModel" : {
           "returnType" : "Boolean",
@@ -7407,7 +7427,7 @@
         "marshallingType" : "BOOLEAN",
         "name" : "Enabled",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list have active CloudFront key pairs that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>\n@param enabled This field is <code>true</code> if any of the Amazon Web Services accounts in the list have active CloudFront key pairs that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.*/",
+        "setterDocumentation" : "/**<p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.</p>\n@param enabled This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.*/",
         "setterMethodName" : "setEnabled",
         "setterModel" : {
           "timestampFormat" : null,
@@ -7422,13 +7442,13 @@
         "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list have active CloudFront key pairs that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>\n@param enabled This field is <code>true</code> if any of the Amazon Web Services accounts in the list have active CloudFront key pairs that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.</p>\n@param enabled This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "enabled",
           "variableType" : "Boolean",
-          "documentation" : "<p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list have active CloudFront key pairs that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>",
+          "documentation" : "<p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.</p>",
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
@@ -7661,12 +7681,12 @@
           "c2jName" : "Enabled",
           "c2jShape" : "boolean",
           "deprecated" : false,
-          "documentation" : "<p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list have active CloudFront key pairs that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>",
+          "documentation" : "<p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list have active CloudFront key pairs that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>\n@param enabled This field is <code>true</code> if any of the Amazon Web Services accounts in the list have active CloudFront key pairs that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.</p>\n@param enabled This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withEnabled",
-          "getterDocumentation" : "/**<p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list have active CloudFront key pairs that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>\n@return This field is <code>true</code> if any of the Amazon Web Services accounts in the list have active CloudFront key pairs that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.*/",
+          "getterDocumentation" : "/**<p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.</p>\n@return This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.*/",
           "getterMethodName" : "getEnabled",
           "getterModel" : {
             "returnType" : "Boolean",
@@ -7700,7 +7720,7 @@
           "marshallingType" : "BOOLEAN",
           "name" : "Enabled",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list have active CloudFront key pairs that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>\n@param enabled This field is <code>true</code> if any of the Amazon Web Services accounts in the list have active CloudFront key pairs that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.*/",
+          "setterDocumentation" : "/**<p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.</p>\n@param enabled This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.*/",
           "setterMethodName" : "setEnabled",
           "setterModel" : {
             "timestampFormat" : null,
@@ -7715,13 +7735,13 @@
           "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list have active CloudFront key pairs that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>\n@param enabled This field is <code>true</code> if any of the Amazon Web Services accounts in the list have active CloudFront key pairs that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.</p>\n@param enabled This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "enabled",
             "variableType" : "Boolean",
-            "documentation" : "<p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list have active CloudFront key pairs that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>",
+            "documentation" : "<p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.</p>",
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
@@ -25984,6 +26004,75 @@
           "variableSetterType" : "String"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "Enabled",
+        "c2jShape" : "boolean",
+        "deprecated" : false,
+        "documentation" : "<p>A Boolean flag to specify the state of the staging distribution when it's created. When you set this value to <code>True</code>, the staging distribution is enabled. When you set this value to <code>False</code>, the staging distribution is disabled.</p> <p>If you omit this field, the default value is <code>True</code>.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>A Boolean flag to specify the state of the staging distribution when it's created. When you set this value to <code>True</code>, the staging distribution is enabled. When you set this value to <code>False</code>, the staging distribution is disabled.</p> <p>If you omit this field, the default value is <code>True</code>.</p>\n@param enabled A Boolean flag to specify the state of the staging distribution when it's created. When you set this value to <code>True</code>, the staging distribution is enabled. When you set this value to <code>False</code>, the staging distribution is disabled.</p> <p>If you omit this field, the default value is <code>True</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withEnabled",
+        "getterDocumentation" : "/**<p>A Boolean flag to specify the state of the staging distribution when it's created. When you set this value to <code>True</code>, the staging distribution is enabled. When you set this value to <code>False</code>, the staging distribution is disabled.</p> <p>If you omit this field, the default value is <code>True</code>.</p>\n@return A Boolean flag to specify the state of the staging distribution when it's created. When you set this value to <code>True</code>, the staging distribution is enabled. When you set this value to <code>False</code>, the staging distribution is disabled.</p> <p>If you omit this field, the default value is <code>True</code>.*/",
+        "getterMethodName" : "getEnabled",
+        "getterModel" : {
+          "returnType" : "Boolean",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "Enabled",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "Enabled",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "Boolean",
+        "marshallingType" : "BOOLEAN",
+        "name" : "Enabled",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>A Boolean flag to specify the state of the staging distribution when it's created. When you set this value to <code>True</code>, the staging distribution is enabled. When you set this value to <code>False</code>, the staging distribution is disabled.</p> <p>If you omit this field, the default value is <code>True</code>.</p>\n@param enabled A Boolean flag to specify the state of the staging distribution when it's created. When you set this value to <code>True</code>, the staging distribution is enabled. When you set this value to <code>False</code>, the staging distribution is disabled.</p> <p>If you omit this field, the default value is <code>True</code>.*/",
+        "setterMethodName" : "setEnabled",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "enabled",
+          "variableType" : "Boolean",
+          "documentation" : "",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>A Boolean flag to specify the state of the staging distribution when it's created. When you set this value to <code>True</code>, the staging distribution is enabled. When you set this value to <code>False</code>, the staging distribution is disabled.</p> <p>If you omit this field, the default value is <code>True</code>.</p>\n@param enabled A Boolean flag to specify the state of the staging distribution when it's created. When you set this value to <code>True</code>, the staging distribution is enabled. When you set this value to <code>False</code>, the staging distribution is disabled.</p> <p>If you omit this field, the default value is <code>True</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "enabled",
+          "variableType" : "Boolean",
+          "documentation" : "<p>A Boolean flag to specify the state of the staging distribution when it's created. When you set this value to <code>True</code>, the staging distribution is enabled. When you set this value to <code>False</code>, the staging distribution is disabled.</p> <p>If you omit this field, the default value is <code>True</code>.</p>",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "CallerReference" : {
@@ -26053,6 +26142,76 @@
             "documentation" : "<p>A value that uniquely identifies a request to create a resource. This helps to prevent CloudFront from creating a duplicate resource if you accidentally resubmit an identical request.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "Enabled" : {
+          "c2jName" : "Enabled",
+          "c2jShape" : "boolean",
+          "deprecated" : false,
+          "documentation" : "<p>A Boolean flag to specify the state of the staging distribution when it's created. When you set this value to <code>True</code>, the staging distribution is enabled. When you set this value to <code>False</code>, the staging distribution is disabled.</p> <p>If you omit this field, the default value is <code>True</code>.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>A Boolean flag to specify the state of the staging distribution when it's created. When you set this value to <code>True</code>, the staging distribution is enabled. When you set this value to <code>False</code>, the staging distribution is disabled.</p> <p>If you omit this field, the default value is <code>True</code>.</p>\n@param enabled A Boolean flag to specify the state of the staging distribution when it's created. When you set this value to <code>True</code>, the staging distribution is enabled. When you set this value to <code>False</code>, the staging distribution is disabled.</p> <p>If you omit this field, the default value is <code>True</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withEnabled",
+          "getterDocumentation" : "/**<p>A Boolean flag to specify the state of the staging distribution when it's created. When you set this value to <code>True</code>, the staging distribution is enabled. When you set this value to <code>False</code>, the staging distribution is disabled.</p> <p>If you omit this field, the default value is <code>True</code>.</p>\n@return A Boolean flag to specify the state of the staging distribution when it's created. When you set this value to <code>True</code>, the staging distribution is enabled. When you set this value to <code>False</code>, the staging distribution is disabled.</p> <p>If you omit this field, the default value is <code>True</code>.*/",
+          "getterMethodName" : "getEnabled",
+          "getterModel" : {
+            "returnType" : "Boolean",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "Enabled",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "Enabled",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "Boolean",
+          "marshallingType" : "BOOLEAN",
+          "name" : "Enabled",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>A Boolean flag to specify the state of the staging distribution when it's created. When you set this value to <code>True</code>, the staging distribution is enabled. When you set this value to <code>False</code>, the staging distribution is disabled.</p> <p>If you omit this field, the default value is <code>True</code>.</p>\n@param enabled A Boolean flag to specify the state of the staging distribution when it's created. When you set this value to <code>True</code>, the staging distribution is enabled. When you set this value to <code>False</code>, the staging distribution is disabled.</p> <p>If you omit this field, the default value is <code>True</code>.*/",
+          "setterMethodName" : "setEnabled",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "enabled",
+            "variableType" : "Boolean",
+            "documentation" : "",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>A Boolean flag to specify the state of the staging distribution when it's created. When you set this value to <code>True</code>, the staging distribution is enabled. When you set this value to <code>False</code>, the staging distribution is disabled.</p> <p>If you omit this field, the default value is <code>True</code>.</p>\n@param enabled A Boolean flag to specify the state of the staging distribution when it's created. When you set this value to <code>True</code>, the staging distribution is enabled. When you set this value to <code>False</code>, the staging distribution is disabled.</p> <p>If you omit this field, the default value is <code>True</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "enabled",
+            "variableType" : "Boolean",
+            "documentation" : "<p>A Boolean flag to specify the state of the staging distribution when it's created. When you set this value to <code>True</code>, the staging distribution is enabled. When you set this value to <code>False</code>, the staging distribution is disabled.</p> <p>If you omit this field, the default value is <code>True</code>.</p>",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
           },
           "xmlNameSpaceUri" : null
         },
@@ -68885,12 +69044,12 @@
         "c2jName" : "Runtime",
         "c2jShape" : "FunctionRuntime",
         "deprecated" : false,
-        "documentation" : "<p>The function's runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.</p>",
+        "documentation" : "<p>The function's runtime environment verion.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : "FunctionRuntime",
-        "fluentSetterDocumentation" : "/**<p>The function's runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.</p>\n@param runtime The function's runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see FunctionRuntime*/",
+        "fluentSetterDocumentation" : "/**<p>The function's runtime environment verion.</p>\n@param runtime The function's runtime environment verion.\n@return Returns a reference to this object so that method calls can be chained together.\n@see FunctionRuntime*/",
         "fluentSetterMethodName" : "withRuntime",
-        "getterDocumentation" : "/**<p>The function's runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.</p>\n@return The function's runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.\n@see FunctionRuntime*/",
+        "getterDocumentation" : "/**<p>The function's runtime environment verion.</p>\n@return The function's runtime environment verion.\n@see FunctionRuntime*/",
         "getterMethodName" : "getRuntime",
         "getterModel" : {
           "returnType" : "String",
@@ -68924,7 +69083,7 @@
         "marshallingType" : "STRING",
         "name" : "Runtime",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>The function's runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.</p>\n@param runtime The function's runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.\n@see FunctionRuntime*/",
+        "setterDocumentation" : "/**<p>The function's runtime environment verion.</p>\n@param runtime The function's runtime environment verion.\n@see FunctionRuntime*/",
         "setterMethodName" : "setRuntime",
         "setterModel" : {
           "timestampFormat" : null,
@@ -68939,13 +69098,13 @@
         "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The function's runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.</p>\n@param runtime The function's runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see FunctionRuntime*/",
+        "varargSetterDocumentation" : "/**<p>The function's runtime environment verion.</p>\n@param runtime The function's runtime environment verion.\n@return Returns a reference to this object so that method calls can be chained together.\n@see FunctionRuntime*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "runtime",
           "variableType" : "String",
-          "documentation" : "<p>The function's runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.</p>",
+          "documentation" : "<p>The function's runtime environment verion.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -69026,12 +69185,12 @@
           "c2jName" : "Runtime",
           "c2jShape" : "FunctionRuntime",
           "deprecated" : false,
-          "documentation" : "<p>The function's runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.</p>",
+          "documentation" : "<p>The function's runtime environment verion.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : "FunctionRuntime",
-          "fluentSetterDocumentation" : "/**<p>The function's runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.</p>\n@param runtime The function's runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see FunctionRuntime*/",
+          "fluentSetterDocumentation" : "/**<p>The function's runtime environment verion.</p>\n@param runtime The function's runtime environment verion.\n@return Returns a reference to this object so that method calls can be chained together.\n@see FunctionRuntime*/",
           "fluentSetterMethodName" : "withRuntime",
-          "getterDocumentation" : "/**<p>The function's runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.</p>\n@return The function's runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.\n@see FunctionRuntime*/",
+          "getterDocumentation" : "/**<p>The function's runtime environment verion.</p>\n@return The function's runtime environment verion.\n@see FunctionRuntime*/",
           "getterMethodName" : "getRuntime",
           "getterModel" : {
             "returnType" : "String",
@@ -69065,7 +69224,7 @@
           "marshallingType" : "STRING",
           "name" : "Runtime",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>The function's runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.</p>\n@param runtime The function's runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.\n@see FunctionRuntime*/",
+          "setterDocumentation" : "/**<p>The function's runtime environment verion.</p>\n@param runtime The function's runtime environment verion.\n@see FunctionRuntime*/",
           "setterMethodName" : "setRuntime",
           "setterModel" : {
             "timestampFormat" : null,
@@ -69080,13 +69239,13 @@
           "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The function's runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.</p>\n@param runtime The function's runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see FunctionRuntime*/",
+          "varargSetterDocumentation" : "/**<p>The function's runtime environment verion.</p>\n@param runtime The function's runtime environment verion.\n@return Returns a reference to this object so that method calls can be chained together.\n@see FunctionRuntime*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "runtime",
             "variableType" : "String",
-            "documentation" : "<p>The function's runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.</p>",
+            "documentation" : "<p>The function's runtime environment verion.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -70540,6 +70699,9 @@
       "enums" : [ {
         "name" : "CloudfrontJs10",
         "value" : "cloudfront-js-1.0"
+      }, {
+        "name" : "CloudfrontJs20",
+        "value" : "cloudfront-js-2.0"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.cloudfront.enum.FunctionRuntime",
@@ -156534,12 +156696,12 @@
         "c2jName" : "Enabled",
         "c2jShape" : "boolean",
         "deprecated" : false,
-        "documentation" : "<p>This field is <code>true</code> if any of the Amazon Web Services accounts have public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>",
+        "documentation" : "<p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>This field is <code>true</code> if any of the Amazon Web Services accounts have public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>\n@param enabled This field is <code>true</code> if any of the Amazon Web Services accounts have public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.</p>\n@param enabled This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withEnabled",
-        "getterDocumentation" : "/**<p>This field is <code>true</code> if any of the Amazon Web Services accounts have public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>\n@return This field is <code>true</code> if any of the Amazon Web Services accounts have public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.*/",
+        "getterDocumentation" : "/**<p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.</p>\n@return This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.*/",
         "getterMethodName" : "getEnabled",
         "getterModel" : {
           "returnType" : "Boolean",
@@ -156573,7 +156735,7 @@
         "marshallingType" : "BOOLEAN",
         "name" : "Enabled",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>This field is <code>true</code> if any of the Amazon Web Services accounts have public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>\n@param enabled This field is <code>true</code> if any of the Amazon Web Services accounts have public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.*/",
+        "setterDocumentation" : "/**<p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.</p>\n@param enabled This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.*/",
         "setterMethodName" : "setEnabled",
         "setterModel" : {
           "timestampFormat" : null,
@@ -156588,13 +156750,13 @@
         "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>This field is <code>true</code> if any of the Amazon Web Services accounts have public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>\n@param enabled This field is <code>true</code> if any of the Amazon Web Services accounts have public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.</p>\n@param enabled This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "enabled",
           "variableType" : "Boolean",
-          "documentation" : "<p>This field is <code>true</code> if any of the Amazon Web Services accounts have public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>",
+          "documentation" : "<p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.</p>",
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
@@ -156827,12 +156989,12 @@
           "c2jName" : "Enabled",
           "c2jShape" : "boolean",
           "deprecated" : false,
-          "documentation" : "<p>This field is <code>true</code> if any of the Amazon Web Services accounts have public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>",
+          "documentation" : "<p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>This field is <code>true</code> if any of the Amazon Web Services accounts have public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>\n@param enabled This field is <code>true</code> if any of the Amazon Web Services accounts have public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.</p>\n@param enabled This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withEnabled",
-          "getterDocumentation" : "/**<p>This field is <code>true</code> if any of the Amazon Web Services accounts have public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>\n@return This field is <code>true</code> if any of the Amazon Web Services accounts have public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.*/",
+          "getterDocumentation" : "/**<p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.</p>\n@return This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.*/",
           "getterMethodName" : "getEnabled",
           "getterModel" : {
             "returnType" : "Boolean",
@@ -156866,7 +157028,7 @@
           "marshallingType" : "BOOLEAN",
           "name" : "Enabled",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>This field is <code>true</code> if any of the Amazon Web Services accounts have public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>\n@param enabled This field is <code>true</code> if any of the Amazon Web Services accounts have public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.*/",
+          "setterDocumentation" : "/**<p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.</p>\n@param enabled This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.*/",
           "setterMethodName" : "setEnabled",
           "setterModel" : {
             "timestampFormat" : null,
@@ -156881,13 +157043,13 @@
           "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>This field is <code>true</code> if any of the Amazon Web Services accounts have public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>\n@param enabled This field is <code>true</code> if any of the Amazon Web Services accounts have public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.</p>\n@param enabled This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "enabled",
             "variableType" : "Boolean",
-            "documentation" : "<p>This field is <code>true</code> if any of the Amazon Web Services accounts have public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>",
+            "documentation" : "<p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.</p>",
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
@@ -171080,6 +171242,7 @@
   },
   "exceptionUnmarshallerImpl" : "StandardErrorUnmarshaller",
   "fileHeader" : "/*\n * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
+  "hasShapes" : true,
   "hasWaiters" : true,
   "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AmazonCloudFrontException",

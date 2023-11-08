@@ -874,7 +874,7 @@ public interface AWSIotAsync extends AWSIot {
      * <note>
      * <p>
      * The CSR must include a public key that is either an RSA key with a length of at least 2048 bits or an ECC key
-     * from NIST P-25 or NIST P-384 curves. For supported certificates, consult <a
+     * from NIST P-256, NIST P-384, or NIST P-521 curves. For supported certificates, consult <a
      * href="https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#x509-cert-algorithms">
      * Certificate signing algorithms supported by IoT</a>.
      * </p>
@@ -939,7 +939,7 @@ public interface AWSIotAsync extends AWSIot {
      * <note>
      * <p>
      * The CSR must include a public key that is either an RSA key with a length of at least 2048 bits or an ECC key
-     * from NIST P-25 or NIST P-384 curves. For supported certificates, consult <a
+     * from NIST P-256, NIST P-384, or NIST P-521 curves. For supported certificates, consult <a
      * href="https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#x509-cert-algorithms">
      * Certificate signing algorithms supported by IoT</a>.
      * </p>
@@ -1402,6 +1402,88 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<CreateOTAUpdateResult> createOTAUpdateAsync(CreateOTAUpdateRequest createOTAUpdateRequest,
             com.amazonaws.handlers.AsyncHandler<CreateOTAUpdateRequest, CreateOTAUpdateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an IoT software package that can be deployed to your fleet.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >CreatePackage</a> and <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >GetIndexingConfiguration</a> actions.
+     * </p>
+     * 
+     * @param createPackageRequest
+     * @return A Java Future containing the result of the CreatePackage operation returned by the service.
+     * @sample AWSIotAsync.CreatePackage
+     */
+    java.util.concurrent.Future<CreatePackageResult> createPackageAsync(CreatePackageRequest createPackageRequest);
+
+    /**
+     * <p>
+     * Creates an IoT software package that can be deployed to your fleet.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >CreatePackage</a> and <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >GetIndexingConfiguration</a> actions.
+     * </p>
+     * 
+     * @param createPackageRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreatePackage operation returned by the service.
+     * @sample AWSIotAsyncHandler.CreatePackage
+     */
+    java.util.concurrent.Future<CreatePackageResult> createPackageAsync(CreatePackageRequest createPackageRequest,
+            com.amazonaws.handlers.AsyncHandler<CreatePackageRequest, CreatePackageResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a new version for an existing IoT software package.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >CreatePackageVersion</a> and <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >GetIndexingConfiguration</a> actions.
+     * </p>
+     * 
+     * @param createPackageVersionRequest
+     * @return A Java Future containing the result of the CreatePackageVersion operation returned by the service.
+     * @sample AWSIotAsync.CreatePackageVersion
+     */
+    java.util.concurrent.Future<CreatePackageVersionResult> createPackageVersionAsync(CreatePackageVersionRequest createPackageVersionRequest);
+
+    /**
+     * <p>
+     * Creates a new version for an existing IoT software package.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >CreatePackageVersion</a> and <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >GetIndexingConfiguration</a> actions.
+     * </p>
+     * 
+     * @param createPackageVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreatePackageVersion operation returned by the service.
+     * @sample AWSIotAsyncHandler.CreatePackageVersion
+     */
+    java.util.concurrent.Future<CreatePackageVersionResult> createPackageVersionAsync(CreatePackageVersionRequest createPackageVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreatePackageVersionRequest, CreatePackageVersionResult> asyncHandler);
 
     /**
      * <p>
@@ -2634,6 +2716,84 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<DeleteOTAUpdateResult> deleteOTAUpdateAsync(DeleteOTAUpdateRequest deleteOTAUpdateRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteOTAUpdateRequest, DeleteOTAUpdateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a specific version from a software package.
+     * </p>
+     * <p>
+     * <b>Note:</b> All package versions must be deleted before deleting the software package.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >DeletePackageVersion</a> action.
+     * </p>
+     * 
+     * @param deletePackageRequest
+     * @return A Java Future containing the result of the DeletePackage operation returned by the service.
+     * @sample AWSIotAsync.DeletePackage
+     */
+    java.util.concurrent.Future<DeletePackageResult> deletePackageAsync(DeletePackageRequest deletePackageRequest);
+
+    /**
+     * <p>
+     * Deletes a specific version from a software package.
+     * </p>
+     * <p>
+     * <b>Note:</b> All package versions must be deleted before deleting the software package.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >DeletePackageVersion</a> action.
+     * </p>
+     * 
+     * @param deletePackageRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeletePackage operation returned by the service.
+     * @sample AWSIotAsyncHandler.DeletePackage
+     */
+    java.util.concurrent.Future<DeletePackageResult> deletePackageAsync(DeletePackageRequest deletePackageRequest,
+            com.amazonaws.handlers.AsyncHandler<DeletePackageRequest, DeletePackageResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a specific version from a software package.
+     * </p>
+     * <p>
+     * <b>Note:</b> If a package version is designated as default, you must remove the designation from the software
+     * package using the <a>UpdatePackage</a> action.
+     * </p>
+     * 
+     * @param deletePackageVersionRequest
+     * @return A Java Future containing the result of the DeletePackageVersion operation returned by the service.
+     * @sample AWSIotAsync.DeletePackageVersion
+     */
+    java.util.concurrent.Future<DeletePackageVersionResult> deletePackageVersionAsync(DeletePackageVersionRequest deletePackageVersionRequest);
+
+    /**
+     * <p>
+     * Deletes a specific version from a software package.
+     * </p>
+     * <p>
+     * <b>Note:</b> If a package version is designated as default, you must remove the designation from the software
+     * package using the <a>UpdatePackage</a> action.
+     * </p>
+     * 
+     * @param deletePackageVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeletePackageVersion operation returned by the service.
+     * @sample AWSIotAsyncHandler.DeletePackageVersion
+     */
+    java.util.concurrent.Future<DeletePackageVersionResult> deletePackageVersionAsync(DeletePackageVersionRequest deletePackageVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeletePackageVersionRequest, DeletePackageVersionResult> asyncHandler);
 
     /**
      * <p>
@@ -5102,6 +5262,117 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
+     * Gets information about the specified software package.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >GetPackage</a> action.
+     * </p>
+     * 
+     * @param getPackageRequest
+     * @return A Java Future containing the result of the GetPackage operation returned by the service.
+     * @sample AWSIotAsync.GetPackage
+     */
+    java.util.concurrent.Future<GetPackageResult> getPackageAsync(GetPackageRequest getPackageRequest);
+
+    /**
+     * <p>
+     * Gets information about the specified software package.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >GetPackage</a> action.
+     * </p>
+     * 
+     * @param getPackageRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetPackage operation returned by the service.
+     * @sample AWSIotAsyncHandler.GetPackage
+     */
+    java.util.concurrent.Future<GetPackageResult> getPackageAsync(GetPackageRequest getPackageRequest,
+            com.amazonaws.handlers.AsyncHandler<GetPackageRequest, GetPackageResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets information about the specified software package's configuration.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >GetPackageConfiguration</a> action.
+     * </p>
+     * 
+     * @param getPackageConfigurationRequest
+     * @return A Java Future containing the result of the GetPackageConfiguration operation returned by the service.
+     * @sample AWSIotAsync.GetPackageConfiguration
+     */
+    java.util.concurrent.Future<GetPackageConfigurationResult> getPackageConfigurationAsync(GetPackageConfigurationRequest getPackageConfigurationRequest);
+
+    /**
+     * <p>
+     * Gets information about the specified software package's configuration.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >GetPackageConfiguration</a> action.
+     * </p>
+     * 
+     * @param getPackageConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetPackageConfiguration operation returned by the service.
+     * @sample AWSIotAsyncHandler.GetPackageConfiguration
+     */
+    java.util.concurrent.Future<GetPackageConfigurationResult> getPackageConfigurationAsync(GetPackageConfigurationRequest getPackageConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetPackageConfigurationRequest, GetPackageConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets information about the specified package version.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >GetPackageVersion</a> action.
+     * </p>
+     * 
+     * @param getPackageVersionRequest
+     * @return A Java Future containing the result of the GetPackageVersion operation returned by the service.
+     * @sample AWSIotAsync.GetPackageVersion
+     */
+    java.util.concurrent.Future<GetPackageVersionResult> getPackageVersionAsync(GetPackageVersionRequest getPackageVersionRequest);
+
+    /**
+     * <p>
+     * Gets information about the specified package version.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >GetPackageVersion</a> action.
+     * </p>
+     * 
+     * @param getPackageVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetPackageVersion operation returned by the service.
+     * @sample AWSIotAsyncHandler.GetPackageVersion
+     */
+    java.util.concurrent.Future<GetPackageVersionResult> getPackageVersionAsync(GetPackageVersionRequest getPackageVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<GetPackageVersionRequest, GetPackageVersionResult> asyncHandler);
+
+    /**
+     * <p>
      * Groups the aggregated values that match the query into percentile groupings. The default percentile groupings
      * are: 1,5,25,50,75,95,99, although you can specify your own when you call <code>GetPercentiles</code>. This
      * function returns a value for each percentile group specified (or the default percentile groupings). The
@@ -6483,6 +6754,80 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<ListOutgoingCertificatesResult> listOutgoingCertificatesAsync(ListOutgoingCertificatesRequest listOutgoingCertificatesRequest,
             com.amazonaws.handlers.AsyncHandler<ListOutgoingCertificatesRequest, ListOutgoingCertificatesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the software package versions associated to the account.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >ListPackageVersions</a> action.
+     * </p>
+     * 
+     * @param listPackageVersionsRequest
+     * @return A Java Future containing the result of the ListPackageVersions operation returned by the service.
+     * @sample AWSIotAsync.ListPackageVersions
+     */
+    java.util.concurrent.Future<ListPackageVersionsResult> listPackageVersionsAsync(ListPackageVersionsRequest listPackageVersionsRequest);
+
+    /**
+     * <p>
+     * Lists the software package versions associated to the account.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >ListPackageVersions</a> action.
+     * </p>
+     * 
+     * @param listPackageVersionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListPackageVersions operation returned by the service.
+     * @sample AWSIotAsyncHandler.ListPackageVersions
+     */
+    java.util.concurrent.Future<ListPackageVersionsResult> listPackageVersionsAsync(ListPackageVersionsRequest listPackageVersionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListPackageVersionsRequest, ListPackageVersionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the software packages associated to the account.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >ListPackages</a> action.
+     * </p>
+     * 
+     * @param listPackagesRequest
+     * @return A Java Future containing the result of the ListPackages operation returned by the service.
+     * @sample AWSIotAsync.ListPackages
+     */
+    java.util.concurrent.Future<ListPackagesResult> listPackagesAsync(ListPackagesRequest listPackagesRequest);
+
+    /**
+     * <p>
+     * Lists the software packages associated to the account.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >ListPackages</a> action.
+     * </p>
+     * 
+     * @param listPackagesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListPackages operation returned by the service.
+     * @sample AWSIotAsyncHandler.ListPackages
+     */
+    java.util.concurrent.Future<ListPackagesResult> listPackagesAsync(ListPackagesRequest listPackagesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListPackagesRequest, ListPackagesResult> asyncHandler);
 
     /**
      * <p>
@@ -9392,6 +9737,129 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<UpdateMitigationActionResult> updateMitigationActionAsync(UpdateMitigationActionRequest updateMitigationActionRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateMitigationActionRequest, UpdateMitigationActionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the supported fields for a specific software package.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >UpdatePackage</a> and <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >GetIndexingConfiguration</a> actions.
+     * </p>
+     * 
+     * @param updatePackageRequest
+     * @return A Java Future containing the result of the UpdatePackage operation returned by the service.
+     * @sample AWSIotAsync.UpdatePackage
+     */
+    java.util.concurrent.Future<UpdatePackageResult> updatePackageAsync(UpdatePackageRequest updatePackageRequest);
+
+    /**
+     * <p>
+     * Updates the supported fields for a specific software package.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >UpdatePackage</a> and <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >GetIndexingConfiguration</a> actions.
+     * </p>
+     * 
+     * @param updatePackageRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdatePackage operation returned by the service.
+     * @sample AWSIotAsyncHandler.UpdatePackage
+     */
+    java.util.concurrent.Future<UpdatePackageResult> updatePackageAsync(UpdatePackageRequest updatePackageRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdatePackageRequest, UpdatePackageResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the software package configuration.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >UpdatePackageConfiguration</a> and <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">iam:PassRole</a> actions.
+     * </p>
+     * 
+     * @param updatePackageConfigurationRequest
+     * @return A Java Future containing the result of the UpdatePackageConfiguration operation returned by the service.
+     * @sample AWSIotAsync.UpdatePackageConfiguration
+     */
+    java.util.concurrent.Future<UpdatePackageConfigurationResult> updatePackageConfigurationAsync(
+            UpdatePackageConfigurationRequest updatePackageConfigurationRequest);
+
+    /**
+     * <p>
+     * Updates the software package configuration.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >UpdatePackageConfiguration</a> and <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">iam:PassRole</a> actions.
+     * </p>
+     * 
+     * @param updatePackageConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdatePackageConfiguration operation returned by the service.
+     * @sample AWSIotAsyncHandler.UpdatePackageConfiguration
+     */
+    java.util.concurrent.Future<UpdatePackageConfigurationResult> updatePackageConfigurationAsync(
+            UpdatePackageConfigurationRequest updatePackageConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdatePackageConfigurationRequest, UpdatePackageConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the supported fields for a specific package version.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >UpdatePackageVersion</a> and <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >GetIndexingConfiguration</a> actions.
+     * </p>
+     * 
+     * @param updatePackageVersionRequest
+     * @return A Java Future containing the result of the UpdatePackageVersion operation returned by the service.
+     * @sample AWSIotAsync.UpdatePackageVersion
+     */
+    java.util.concurrent.Future<UpdatePackageVersionResult> updatePackageVersionAsync(UpdatePackageVersionRequest updatePackageVersionRequest);
+
+    /**
+     * <p>
+     * Updates the supported fields for a specific package version.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >UpdatePackageVersion</a> and <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >GetIndexingConfiguration</a> actions.
+     * </p>
+     * 
+     * @param updatePackageVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdatePackageVersion operation returned by the service.
+     * @sample AWSIotAsyncHandler.UpdatePackageVersion
+     */
+    java.util.concurrent.Future<UpdatePackageVersionResult> updatePackageVersionAsync(UpdatePackageVersionRequest updatePackageVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdatePackageVersionRequest, UpdatePackageVersionResult> asyncHandler);
 
     /**
      * <p>

@@ -27,7 +27,7 @@ public class UpdateStorageVirtualMachineRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Updates the Microsoft Active Directory (AD) configuration for an SVM that is joined to an AD.
+     * Specifies updates to an SVM's Microsoft Active Directory (AD) configuration.
      * </p>
      */
     private UpdateSvmActiveDirectoryConfiguration activeDirectoryConfiguration;
@@ -41,18 +41,18 @@ public class UpdateStorageVirtualMachineRequest extends com.amazonaws.AmazonWebS
     private String storageVirtualMachineId;
     /**
      * <p>
-     * Enter a new SvmAdminPassword if you are updating it.
+     * Specifies a new SvmAdminPassword.
      * </p>
      */
     private String svmAdminPassword;
 
     /**
      * <p>
-     * Updates the Microsoft Active Directory (AD) configuration for an SVM that is joined to an AD.
+     * Specifies updates to an SVM's Microsoft Active Directory (AD) configuration.
      * </p>
      * 
      * @param activeDirectoryConfiguration
-     *        Updates the Microsoft Active Directory (AD) configuration for an SVM that is joined to an AD.
+     *        Specifies updates to an SVM's Microsoft Active Directory (AD) configuration.
      */
 
     public void setActiveDirectoryConfiguration(UpdateSvmActiveDirectoryConfiguration activeDirectoryConfiguration) {
@@ -61,10 +61,10 @@ public class UpdateStorageVirtualMachineRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Updates the Microsoft Active Directory (AD) configuration for an SVM that is joined to an AD.
+     * Specifies updates to an SVM's Microsoft Active Directory (AD) configuration.
      * </p>
      * 
-     * @return Updates the Microsoft Active Directory (AD) configuration for an SVM that is joined to an AD.
+     * @return Specifies updates to an SVM's Microsoft Active Directory (AD) configuration.
      */
 
     public UpdateSvmActiveDirectoryConfiguration getActiveDirectoryConfiguration() {
@@ -73,11 +73,11 @@ public class UpdateStorageVirtualMachineRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Updates the Microsoft Active Directory (AD) configuration for an SVM that is joined to an AD.
+     * Specifies updates to an SVM's Microsoft Active Directory (AD) configuration.
      * </p>
      * 
      * @param activeDirectoryConfiguration
-     *        Updates the Microsoft Active Directory (AD) configuration for an SVM that is joined to an AD.
+     *        Specifies updates to an SVM's Microsoft Active Directory (AD) configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -154,11 +154,11 @@ public class UpdateStorageVirtualMachineRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Enter a new SvmAdminPassword if you are updating it.
+     * Specifies a new SvmAdminPassword.
      * </p>
      * 
      * @param svmAdminPassword
-     *        Enter a new SvmAdminPassword if you are updating it.
+     *        Specifies a new SvmAdminPassword.
      */
 
     public void setSvmAdminPassword(String svmAdminPassword) {
@@ -167,10 +167,10 @@ public class UpdateStorageVirtualMachineRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Enter a new SvmAdminPassword if you are updating it.
+     * Specifies a new SvmAdminPassword.
      * </p>
      * 
-     * @return Enter a new SvmAdminPassword if you are updating it.
+     * @return Specifies a new SvmAdminPassword.
      */
 
     public String getSvmAdminPassword() {
@@ -179,11 +179,11 @@ public class UpdateStorageVirtualMachineRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Enter a new SvmAdminPassword if you are updating it.
+     * Specifies a new SvmAdminPassword.
      * </p>
      * 
      * @param svmAdminPassword
-     *        Enter a new SvmAdminPassword if you are updating it.
+     *        Specifies a new SvmAdminPassword.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

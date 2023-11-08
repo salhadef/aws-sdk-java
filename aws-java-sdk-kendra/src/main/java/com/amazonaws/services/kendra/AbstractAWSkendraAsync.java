@@ -720,6 +720,19 @@ public class AbstractAWSkendraAsync extends AbstractAWSkendra implements AWSkend
     }
 
     @Override
+    public java.util.concurrent.Future<RetrieveResult> retrieveAsync(RetrieveRequest request) {
+
+        return retrieveAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RetrieveResult> retrieveAsync(RetrieveRequest request,
+            com.amazonaws.handlers.AsyncHandler<RetrieveRequest, RetrieveResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<StartDataSourceSyncJobResult> startDataSourceSyncJobAsync(StartDataSourceSyncJobRequest request) {
 
         return startDataSourceSyncJobAsync(request, null);

@@ -32,10 +32,10 @@ public class ListLogSourcesResult extends com.amazonaws.AmazonWebServiceResult<c
     private String nextToken;
     /**
      * <p>
-     * Lists the log sources by Regions for enabled Security Lake accounts.
+     * The list of log sources in your organization that send data to the data lake.
      * </p>
      */
-    private java.util.List<java.util.Map<String, java.util.Map<String, java.util.List<String>>>> regionSourceTypesAccountsList;
+    private java.util.List<LogSource> sources;
 
     /**
      * <p>
@@ -85,76 +85,71 @@ public class ListLogSourcesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Lists the log sources by Regions for enabled Security Lake accounts.
+     * The list of log sources in your organization that send data to the data lake.
      * </p>
      * 
-     * @return Lists the log sources by Regions for enabled Security Lake accounts.
+     * @return The list of log sources in your organization that send data to the data lake.
      */
 
-    public java.util.List<java.util.Map<String, java.util.Map<String, java.util.List<String>>>> getRegionSourceTypesAccountsList() {
-        return regionSourceTypesAccountsList;
+    public java.util.List<LogSource> getSources() {
+        return sources;
     }
 
     /**
      * <p>
-     * Lists the log sources by Regions for enabled Security Lake accounts.
+     * The list of log sources in your organization that send data to the data lake.
      * </p>
      * 
-     * @param regionSourceTypesAccountsList
-     *        Lists the log sources by Regions for enabled Security Lake accounts.
+     * @param sources
+     *        The list of log sources in your organization that send data to the data lake.
      */
 
-    public void setRegionSourceTypesAccountsList(
-            java.util.Collection<java.util.Map<String, java.util.Map<String, java.util.List<String>>>> regionSourceTypesAccountsList) {
-        if (regionSourceTypesAccountsList == null) {
-            this.regionSourceTypesAccountsList = null;
+    public void setSources(java.util.Collection<LogSource> sources) {
+        if (sources == null) {
+            this.sources = null;
             return;
         }
 
-        this.regionSourceTypesAccountsList = new java.util.ArrayList<java.util.Map<String, java.util.Map<String, java.util.List<String>>>>(
-                regionSourceTypesAccountsList);
+        this.sources = new java.util.ArrayList<LogSource>(sources);
     }
 
     /**
      * <p>
-     * Lists the log sources by Regions for enabled Security Lake accounts.
+     * The list of log sources in your organization that send data to the data lake.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setRegionSourceTypesAccountsList(java.util.Collection)} or
-     * {@link #withRegionSourceTypesAccountsList(java.util.Collection)} if you want to override the existing values.
+     * {@link #setSources(java.util.Collection)} or {@link #withSources(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
-     * @param regionSourceTypesAccountsList
-     *        Lists the log sources by Regions for enabled Security Lake accounts.
+     * @param sources
+     *        The list of log sources in your organization that send data to the data lake.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListLogSourcesResult withRegionSourceTypesAccountsList(
-            java.util.Map<String, java.util.Map<String, java.util.List<String>>>... regionSourceTypesAccountsList) {
-        if (this.regionSourceTypesAccountsList == null) {
-            setRegionSourceTypesAccountsList(new java.util.ArrayList<java.util.Map<String, java.util.Map<String, java.util.List<String>>>>(
-                    regionSourceTypesAccountsList.length));
+    public ListLogSourcesResult withSources(LogSource... sources) {
+        if (this.sources == null) {
+            setSources(new java.util.ArrayList<LogSource>(sources.length));
         }
-        for (java.util.Map<String, java.util.Map<String, java.util.List<String>>> ele : regionSourceTypesAccountsList) {
-            this.regionSourceTypesAccountsList.add(ele);
+        for (LogSource ele : sources) {
+            this.sources.add(ele);
         }
         return this;
     }
 
     /**
      * <p>
-     * Lists the log sources by Regions for enabled Security Lake accounts.
+     * The list of log sources in your organization that send data to the data lake.
      * </p>
      * 
-     * @param regionSourceTypesAccountsList
-     *        Lists the log sources by Regions for enabled Security Lake accounts.
+     * @param sources
+     *        The list of log sources in your organization that send data to the data lake.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListLogSourcesResult withRegionSourceTypesAccountsList(
-            java.util.Collection<java.util.Map<String, java.util.Map<String, java.util.List<String>>>> regionSourceTypesAccountsList) {
-        setRegionSourceTypesAccountsList(regionSourceTypesAccountsList);
+    public ListLogSourcesResult withSources(java.util.Collection<LogSource> sources) {
+        setSources(sources);
         return this;
     }
 
@@ -172,8 +167,8 @@ public class ListLogSourcesResult extends com.amazonaws.AmazonWebServiceResult<c
         sb.append("{");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
-        if (getRegionSourceTypesAccountsList() != null)
-            sb.append("RegionSourceTypesAccountsList: ").append(getRegionSourceTypesAccountsList());
+        if (getSources() != null)
+            sb.append("Sources: ").append(getSources());
         sb.append("}");
         return sb.toString();
     }
@@ -192,10 +187,9 @@ public class ListLogSourcesResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
-        if (other.getRegionSourceTypesAccountsList() == null ^ this.getRegionSourceTypesAccountsList() == null)
+        if (other.getSources() == null ^ this.getSources() == null)
             return false;
-        if (other.getRegionSourceTypesAccountsList() != null
-                && other.getRegionSourceTypesAccountsList().equals(this.getRegionSourceTypesAccountsList()) == false)
+        if (other.getSources() != null && other.getSources().equals(this.getSources()) == false)
             return false;
         return true;
     }
@@ -206,7 +200,7 @@ public class ListLogSourcesResult extends com.amazonaws.AmazonWebServiceResult<c
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
-        hashCode = prime * hashCode + ((getRegionSourceTypesAccountsList() == null) ? 0 : getRegionSourceTypesAccountsList().hashCode());
+        hashCode = prime * hashCode + ((getSources() == null) ? 0 : getSources().hashCode());
         return hashCode;
     }
 

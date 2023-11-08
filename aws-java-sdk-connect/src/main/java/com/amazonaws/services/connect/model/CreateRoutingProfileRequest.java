@@ -78,6 +78,13 @@ public class CreateRoutingProfileRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * Whether agents with this routing profile will have their routing order calculated based on <i>longest idle
+     * time</i> or <i>time since their last inbound contact</i>.
+     * </p>
+     */
+    private String agentAvailabilityTimer;
 
     /**
      * <p>
@@ -526,6 +533,73 @@ public class CreateRoutingProfileRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * Whether agents with this routing profile will have their routing order calculated based on <i>longest idle
+     * time</i> or <i>time since their last inbound contact</i>.
+     * </p>
+     * 
+     * @param agentAvailabilityTimer
+     *        Whether agents with this routing profile will have their routing order calculated based on <i>longest idle
+     *        time</i> or <i>time since their last inbound contact</i>.
+     * @see AgentAvailabilityTimer
+     */
+
+    public void setAgentAvailabilityTimer(String agentAvailabilityTimer) {
+        this.agentAvailabilityTimer = agentAvailabilityTimer;
+    }
+
+    /**
+     * <p>
+     * Whether agents with this routing profile will have their routing order calculated based on <i>longest idle
+     * time</i> or <i>time since their last inbound contact</i>.
+     * </p>
+     * 
+     * @return Whether agents with this routing profile will have their routing order calculated based on <i>longest
+     *         idle time</i> or <i>time since their last inbound contact</i>.
+     * @see AgentAvailabilityTimer
+     */
+
+    public String getAgentAvailabilityTimer() {
+        return this.agentAvailabilityTimer;
+    }
+
+    /**
+     * <p>
+     * Whether agents with this routing profile will have their routing order calculated based on <i>longest idle
+     * time</i> or <i>time since their last inbound contact</i>.
+     * </p>
+     * 
+     * @param agentAvailabilityTimer
+     *        Whether agents with this routing profile will have their routing order calculated based on <i>longest idle
+     *        time</i> or <i>time since their last inbound contact</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AgentAvailabilityTimer
+     */
+
+    public CreateRoutingProfileRequest withAgentAvailabilityTimer(String agentAvailabilityTimer) {
+        setAgentAvailabilityTimer(agentAvailabilityTimer);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether agents with this routing profile will have their routing order calculated based on <i>longest idle
+     * time</i> or <i>time since their last inbound contact</i>.
+     * </p>
+     * 
+     * @param agentAvailabilityTimer
+     *        Whether agents with this routing profile will have their routing order calculated based on <i>longest idle
+     *        time</i> or <i>time since their last inbound contact</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AgentAvailabilityTimer
+     */
+
+    public CreateRoutingProfileRequest withAgentAvailabilityTimer(AgentAvailabilityTimer agentAvailabilityTimer) {
+        this.agentAvailabilityTimer = agentAvailabilityTimer.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -550,7 +624,9 @@ public class CreateRoutingProfileRequest extends com.amazonaws.AmazonWebServiceR
         if (getMediaConcurrencies() != null)
             sb.append("MediaConcurrencies: ").append(getMediaConcurrencies()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getAgentAvailabilityTimer() != null)
+            sb.append("AgentAvailabilityTimer: ").append(getAgentAvailabilityTimer());
         sb.append("}");
         return sb.toString();
     }
@@ -593,6 +669,10 @@ public class CreateRoutingProfileRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getAgentAvailabilityTimer() == null ^ this.getAgentAvailabilityTimer() == null)
+            return false;
+        if (other.getAgentAvailabilityTimer() != null && other.getAgentAvailabilityTimer().equals(this.getAgentAvailabilityTimer()) == false)
+            return false;
         return true;
     }
 
@@ -608,6 +688,7 @@ public class CreateRoutingProfileRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getQueueConfigs() == null) ? 0 : getQueueConfigs().hashCode());
         hashCode = prime * hashCode + ((getMediaConcurrencies() == null) ? 0 : getMediaConcurrencies().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getAgentAvailabilityTimer() == null) ? 0 : getAgentAvailabilityTimer().hashCode());
         return hashCode;
     }
 

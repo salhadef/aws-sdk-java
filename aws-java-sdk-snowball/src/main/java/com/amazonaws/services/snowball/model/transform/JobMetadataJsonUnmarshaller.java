@@ -136,6 +136,18 @@ public class JobMetadataJsonUnmarshaller implements Unmarshaller<JobMetadata, Js
                     context.nextToken();
                     jobMetadata.setOnDeviceServiceConfiguration(OnDeviceServiceConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ImpactLevel", targetDepth)) {
+                    context.nextToken();
+                    jobMetadata.setImpactLevel(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("PickupDetails", targetDepth)) {
+                    context.nextToken();
+                    jobMetadata.setPickupDetails(PickupDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("SnowballId", targetDepth)) {
+                    context.nextToken();
+                    jobMetadata.setSnowballId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

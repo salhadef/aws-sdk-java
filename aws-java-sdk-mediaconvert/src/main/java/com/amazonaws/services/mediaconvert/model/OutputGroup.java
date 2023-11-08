@@ -32,9 +32,9 @@ public class OutputGroup implements Serializable, Cloneable, StructuredPojo {
      */
     private AutomatedEncodingSettings automatedEncodingSettings;
     /**
-     * Use Custom Group Name (CustomName) to specify a name for the output group. This value is displayed on the console
-     * and can make your job settings JSON more human-readable. It does not affect your outputs. Use up to twelve
-     * characters that are either letters, numbers, spaces, or underscores.
+     * Use Custom Group Name to specify a name for the output group. This value is displayed on the console and can make
+     * your job settings JSON more human-readable. It does not affect your outputs. Use up to twelve characters that are
+     * either letters, numbers, spaces, or underscores.
      */
     private String customName;
     /** Name of the output group */
@@ -85,14 +85,14 @@ public class OutputGroup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Custom Group Name (CustomName) to specify a name for the output group. This value is displayed on the console
-     * and can make your job settings JSON more human-readable. It does not affect your outputs. Use up to twelve
-     * characters that are either letters, numbers, spaces, or underscores.
+     * Use Custom Group Name to specify a name for the output group. This value is displayed on the console and can make
+     * your job settings JSON more human-readable. It does not affect your outputs. Use up to twelve characters that are
+     * either letters, numbers, spaces, or underscores.
      * 
      * @param customName
-     *        Use Custom Group Name (CustomName) to specify a name for the output group. This value is displayed on the
-     *        console and can make your job settings JSON more human-readable. It does not affect your outputs. Use up
-     *        to twelve characters that are either letters, numbers, spaces, or underscores.
+     *        Use Custom Group Name to specify a name for the output group. This value is displayed on the console and
+     *        can make your job settings JSON more human-readable. It does not affect your outputs. Use up to twelve
+     *        characters that are either letters, numbers, spaces, or underscores.
      */
 
     public void setCustomName(String customName) {
@@ -100,13 +100,13 @@ public class OutputGroup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Custom Group Name (CustomName) to specify a name for the output group. This value is displayed on the console
-     * and can make your job settings JSON more human-readable. It does not affect your outputs. Use up to twelve
-     * characters that are either letters, numbers, spaces, or underscores.
+     * Use Custom Group Name to specify a name for the output group. This value is displayed on the console and can make
+     * your job settings JSON more human-readable. It does not affect your outputs. Use up to twelve characters that are
+     * either letters, numbers, spaces, or underscores.
      * 
-     * @return Use Custom Group Name (CustomName) to specify a name for the output group. This value is displayed on the
-     *         console and can make your job settings JSON more human-readable. It does not affect your outputs. Use up
-     *         to twelve characters that are either letters, numbers, spaces, or underscores.
+     * @return Use Custom Group Name to specify a name for the output group. This value is displayed on the console and
+     *         can make your job settings JSON more human-readable. It does not affect your outputs. Use up to twelve
+     *         characters that are either letters, numbers, spaces, or underscores.
      */
 
     public String getCustomName() {
@@ -114,14 +114,14 @@ public class OutputGroup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Custom Group Name (CustomName) to specify a name for the output group. This value is displayed on the console
-     * and can make your job settings JSON more human-readable. It does not affect your outputs. Use up to twelve
-     * characters that are either letters, numbers, spaces, or underscores.
+     * Use Custom Group Name to specify a name for the output group. This value is displayed on the console and can make
+     * your job settings JSON more human-readable. It does not affect your outputs. Use up to twelve characters that are
+     * either letters, numbers, spaces, or underscores.
      * 
      * @param customName
-     *        Use Custom Group Name (CustomName) to specify a name for the output group. This value is displayed on the
-     *        console and can make your job settings JSON more human-readable. It does not affect your outputs. Use up
-     *        to twelve characters that are either letters, numbers, spaces, or underscores.
+     *        Use Custom Group Name to specify a name for the output group. This value is displayed on the console and
+     *        can make your job settings JSON more human-readable. It does not affect your outputs. Use up to twelve
+     *        characters that are either letters, numbers, spaces, or underscores.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

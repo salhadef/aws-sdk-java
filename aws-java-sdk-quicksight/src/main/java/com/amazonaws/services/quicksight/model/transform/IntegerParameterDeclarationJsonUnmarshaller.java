@@ -64,6 +64,13 @@ public class IntegerParameterDeclarationJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     integerParameterDeclaration.setValueWhenUnset(IntegerValueWhenUnsetConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("MappedDataSetParameters", targetDepth)) {
+                    context.nextToken();
+                    integerParameterDeclaration.setMappedDataSetParameters(new ListUnmarshaller<MappedDataSetParameter>(MappedDataSetParameterJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -26,7 +26,8 @@ public class DescribeFleetCapacityResult extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * A collection of objects that contains capacity information for each requested fleet ID. Capacity objects are
-     * returned only for fleets that currently exist.
+     * returned only for fleets that currently exist. Changes in desired instance value can take up to 1 minute to be
+     * reflected.
      * </p>
      */
     private java.util.List<FleetCapacity> fleetCapacity;
@@ -41,11 +42,13 @@ public class DescribeFleetCapacityResult extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * A collection of objects that contains capacity information for each requested fleet ID. Capacity objects are
-     * returned only for fleets that currently exist.
+     * returned only for fleets that currently exist. Changes in desired instance value can take up to 1 minute to be
+     * reflected.
      * </p>
      * 
      * @return A collection of objects that contains capacity information for each requested fleet ID. Capacity objects
-     *         are returned only for fleets that currently exist.
+     *         are returned only for fleets that currently exist. Changes in desired instance value can take up to 1
+     *         minute to be reflected.
      */
 
     public java.util.List<FleetCapacity> getFleetCapacity() {
@@ -55,12 +58,14 @@ public class DescribeFleetCapacityResult extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * A collection of objects that contains capacity information for each requested fleet ID. Capacity objects are
-     * returned only for fleets that currently exist.
+     * returned only for fleets that currently exist. Changes in desired instance value can take up to 1 minute to be
+     * reflected.
      * </p>
      * 
      * @param fleetCapacity
      *        A collection of objects that contains capacity information for each requested fleet ID. Capacity objects
-     *        are returned only for fleets that currently exist.
+     *        are returned only for fleets that currently exist. Changes in desired instance value can take up to 1
+     *        minute to be reflected.
      */
 
     public void setFleetCapacity(java.util.Collection<FleetCapacity> fleetCapacity) {
@@ -75,7 +80,8 @@ public class DescribeFleetCapacityResult extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * A collection of objects that contains capacity information for each requested fleet ID. Capacity objects are
-     * returned only for fleets that currently exist.
+     * returned only for fleets that currently exist. Changes in desired instance value can take up to 1 minute to be
+     * reflected.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -85,7 +91,8 @@ public class DescribeFleetCapacityResult extends com.amazonaws.AmazonWebServiceR
      * 
      * @param fleetCapacity
      *        A collection of objects that contains capacity information for each requested fleet ID. Capacity objects
-     *        are returned only for fleets that currently exist.
+     *        are returned only for fleets that currently exist. Changes in desired instance value can take up to 1
+     *        minute to be reflected.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,12 +109,14 @@ public class DescribeFleetCapacityResult extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * A collection of objects that contains capacity information for each requested fleet ID. Capacity objects are
-     * returned only for fleets that currently exist.
+     * returned only for fleets that currently exist. Changes in desired instance value can take up to 1 minute to be
+     * reflected.
      * </p>
      * 
      * @param fleetCapacity
      *        A collection of objects that contains capacity information for each requested fleet ID. Capacity objects
-     *        are returned only for fleets that currently exist.
+     *        are returned only for fleets that currently exist. Changes in desired instance value can take up to 1
+     *        minute to be reflected.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

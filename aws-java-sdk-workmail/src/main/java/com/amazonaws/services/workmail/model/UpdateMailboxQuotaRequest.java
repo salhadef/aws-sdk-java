@@ -35,6 +35,27 @@ public class UpdateMailboxQuotaRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The identifer for the user for whom to update the mailbox quota.
      * </p>
+     * <p>
+     * The identifier can be the <i>UserId</i>, <i>Username</i>, or <i>email</i>. The following identity formats are
+     * available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * User ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Email address: user@domain.tld
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * User name: user
+     * </p>
+     * </li>
+     * </ul>
      */
     private String userId;
     /**
@@ -88,9 +109,50 @@ public class UpdateMailboxQuotaRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The identifer for the user for whom to update the mailbox quota.
      * </p>
+     * <p>
+     * The identifier can be the <i>UserId</i>, <i>Username</i>, or <i>email</i>. The following identity formats are
+     * available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * User ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Email address: user@domain.tld
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * User name: user
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param userId
-     *        The identifer for the user for whom to update the mailbox quota.
+     *        The identifer for the user for whom to update the mailbox quota.</p>
+     *        <p>
+     *        The identifier can be the <i>UserId</i>, <i>Username</i>, or <i>email</i>. The following identity formats
+     *        are available:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        User ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Email address: user@domain.tld
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        User name: user
+     *        </p>
+     *        </li>
      */
 
     public void setUserId(String userId) {
@@ -101,8 +163,49 @@ public class UpdateMailboxQuotaRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The identifer for the user for whom to update the mailbox quota.
      * </p>
+     * <p>
+     * The identifier can be the <i>UserId</i>, <i>Username</i>, or <i>email</i>. The following identity formats are
+     * available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * User ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Email address: user@domain.tld
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * User name: user
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The identifer for the user for whom to update the mailbox quota.
+     * @return The identifer for the user for whom to update the mailbox quota.</p>
+     *         <p>
+     *         The identifier can be the <i>UserId</i>, <i>Username</i>, or <i>email</i>. The following identity formats
+     *         are available:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         User ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Email address: user@domain.tld
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         User name: user
+     *         </p>
+     *         </li>
      */
 
     public String getUserId() {
@@ -113,9 +216,50 @@ public class UpdateMailboxQuotaRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The identifer for the user for whom to update the mailbox quota.
      * </p>
+     * <p>
+     * The identifier can be the <i>UserId</i>, <i>Username</i>, or <i>email</i>. The following identity formats are
+     * available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * User ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Email address: user@domain.tld
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * User name: user
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param userId
-     *        The identifer for the user for whom to update the mailbox quota.
+     *        The identifer for the user for whom to update the mailbox quota.</p>
+     *        <p>
+     *        The identifier can be the <i>UserId</i>, <i>Username</i>, or <i>email</i>. The following identity formats
+     *        are available:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        User ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Email address: user@domain.tld
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        User name: user
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

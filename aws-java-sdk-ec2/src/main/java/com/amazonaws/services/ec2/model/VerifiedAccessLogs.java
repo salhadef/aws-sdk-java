@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes the destinations for Verified Access logs.
+ * Describes the options for Verified Access logs.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/VerifiedAccessLogs" target="_top">AWS API
@@ -44,6 +44,18 @@ public class VerifiedAccessLogs implements Serializable, Cloneable {
      * </p>
      */
     private VerifiedAccessLogKinesisDataFirehoseDestination kinesisDataFirehose;
+    /**
+     * <p>
+     * Describes current setting for the logging version.
+     * </p>
+     */
+    private String logVersion;
+    /**
+     * <p>
+     * Describes current setting for including trust data into the logs.
+     * </p>
+     */
+    private Boolean includeTrustContext;
 
     /**
      * <p>
@@ -166,6 +178,98 @@ public class VerifiedAccessLogs implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Describes current setting for the logging version.
+     * </p>
+     * 
+     * @param logVersion
+     *        Describes current setting for the logging version.
+     */
+
+    public void setLogVersion(String logVersion) {
+        this.logVersion = logVersion;
+    }
+
+    /**
+     * <p>
+     * Describes current setting for the logging version.
+     * </p>
+     * 
+     * @return Describes current setting for the logging version.
+     */
+
+    public String getLogVersion() {
+        return this.logVersion;
+    }
+
+    /**
+     * <p>
+     * Describes current setting for the logging version.
+     * </p>
+     * 
+     * @param logVersion
+     *        Describes current setting for the logging version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VerifiedAccessLogs withLogVersion(String logVersion) {
+        setLogVersion(logVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes current setting for including trust data into the logs.
+     * </p>
+     * 
+     * @param includeTrustContext
+     *        Describes current setting for including trust data into the logs.
+     */
+
+    public void setIncludeTrustContext(Boolean includeTrustContext) {
+        this.includeTrustContext = includeTrustContext;
+    }
+
+    /**
+     * <p>
+     * Describes current setting for including trust data into the logs.
+     * </p>
+     * 
+     * @return Describes current setting for including trust data into the logs.
+     */
+
+    public Boolean getIncludeTrustContext() {
+        return this.includeTrustContext;
+    }
+
+    /**
+     * <p>
+     * Describes current setting for including trust data into the logs.
+     * </p>
+     * 
+     * @param includeTrustContext
+     *        Describes current setting for including trust data into the logs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VerifiedAccessLogs withIncludeTrustContext(Boolean includeTrustContext) {
+        setIncludeTrustContext(includeTrustContext);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes current setting for including trust data into the logs.
+     * </p>
+     * 
+     * @return Describes current setting for including trust data into the logs.
+     */
+
+    public Boolean isIncludeTrustContext() {
+        return this.includeTrustContext;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -182,7 +286,11 @@ public class VerifiedAccessLogs implements Serializable, Cloneable {
         if (getCloudWatchLogs() != null)
             sb.append("CloudWatchLogs: ").append(getCloudWatchLogs()).append(",");
         if (getKinesisDataFirehose() != null)
-            sb.append("KinesisDataFirehose: ").append(getKinesisDataFirehose());
+            sb.append("KinesisDataFirehose: ").append(getKinesisDataFirehose()).append(",");
+        if (getLogVersion() != null)
+            sb.append("LogVersion: ").append(getLogVersion()).append(",");
+        if (getIncludeTrustContext() != null)
+            sb.append("IncludeTrustContext: ").append(getIncludeTrustContext());
         sb.append("}");
         return sb.toString();
     }
@@ -209,6 +317,14 @@ public class VerifiedAccessLogs implements Serializable, Cloneable {
             return false;
         if (other.getKinesisDataFirehose() != null && other.getKinesisDataFirehose().equals(this.getKinesisDataFirehose()) == false)
             return false;
+        if (other.getLogVersion() == null ^ this.getLogVersion() == null)
+            return false;
+        if (other.getLogVersion() != null && other.getLogVersion().equals(this.getLogVersion()) == false)
+            return false;
+        if (other.getIncludeTrustContext() == null ^ this.getIncludeTrustContext() == null)
+            return false;
+        if (other.getIncludeTrustContext() != null && other.getIncludeTrustContext().equals(this.getIncludeTrustContext()) == false)
+            return false;
         return true;
     }
 
@@ -220,6 +336,8 @@ public class VerifiedAccessLogs implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getS3() == null) ? 0 : getS3().hashCode());
         hashCode = prime * hashCode + ((getCloudWatchLogs() == null) ? 0 : getCloudWatchLogs().hashCode());
         hashCode = prime * hashCode + ((getKinesisDataFirehose() == null) ? 0 : getKinesisDataFirehose().hashCode());
+        hashCode = prime * hashCode + ((getLogVersion() == null) ? 0 : getLogVersion().hashCode());
+        hashCode = prime * hashCode + ((getIncludeTrustContext() == null) ? 0 : getIncludeTrustContext().hashCode());
         return hashCode;
     }
 

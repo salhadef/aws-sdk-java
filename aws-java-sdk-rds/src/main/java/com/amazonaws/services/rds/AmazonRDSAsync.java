@@ -1199,8 +1199,8 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * Guide</i>.
      * </p>
      * <p>
-     * Amazon Aurora doesn't support this operation. Call the <code>CreateDBInstance</code> operation to create a DB
-     * instance for an Aurora DB cluster.
+     * Amazon Aurora doesn't support this operation. To create a DB instance for an Aurora DB cluster, use the
+     * <code>CreateDBInstance</code> operation.
      * </p>
      * <p>
      * All read replica DB instances are created with backups disabled. All other attributes (including DB security
@@ -1232,8 +1232,8 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * Guide</i>.
      * </p>
      * <p>
-     * Amazon Aurora doesn't support this operation. Call the <code>CreateDBInstance</code> operation to create a DB
-     * instance for an Aurora DB cluster.
+     * Amazon Aurora doesn't support this operation. To create a DB instance for an Aurora DB cluster, use the
+     * <code>CreateDBInstance</code> operation.
      * </p>
      * <p>
      * All read replica DB instances are created with backups disabled. All other attributes (including DB security
@@ -1618,13 +1618,13 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * data from the primary cluster through high-speed replication performed by the Aurora storage subsystem.
      * </p>
      * <p>
-     * You can create a global database that is initially empty, and then add a primary cluster and a secondary cluster
-     * to it. Or you can specify an existing Aurora cluster during the create operation, and this cluster becomes the
-     * primary cluster of the global database.
+     * You can create a global database that is initially empty, and then create the primary and secondary DB clusters
+     * in the global database. Or you can specify an existing Aurora cluster during the create operation, and this
+     * cluster becomes the primary cluster of the global database.
      * </p>
      * <note>
      * <p>
-     * This action applies only to Aurora DB clusters.
+     * This operation applies only to Aurora DB clusters.
      * </p>
      * </note>
      * 
@@ -1643,13 +1643,13 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * data from the primary cluster through high-speed replication performed by the Aurora storage subsystem.
      * </p>
      * <p>
-     * You can create a global database that is initially empty, and then add a primary cluster and a secondary cluster
-     * to it. Or you can specify an existing Aurora cluster during the create operation, and this cluster becomes the
-     * primary cluster of the global database.
+     * You can create a global database that is initially empty, and then create the primary and secondary DB clusters
+     * in the global database. Or you can specify an existing Aurora cluster during the create operation, and this
+     * cluster becomes the primary cluster of the global database.
      * </p>
      * <note>
      * <p>
-     * This action applies only to Aurora DB clusters.
+     * This operation applies only to Aurora DB clusters.
      * </p>
      * </note>
      * 
@@ -1665,6 +1665,41 @@ public interface AmazonRDSAsync extends AmazonRDS {
      */
     java.util.concurrent.Future<GlobalCluster> createGlobalClusterAsync(CreateGlobalClusterRequest createGlobalClusterRequest,
             com.amazonaws.handlers.AsyncHandler<CreateGlobalClusterRequest, GlobalCluster> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a zero-ETL integration with Amazon Redshift. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.html">Working with Amazon Aurora
+     * zero-ETL integrations with Amazon Redshift</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * 
+     * @param createIntegrationRequest
+     * @return A Java Future containing the result of the CreateIntegration operation returned by the service.
+     * @sample AmazonRDSAsync.CreateIntegration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateIntegration" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateIntegrationResult> createIntegrationAsync(CreateIntegrationRequest createIntegrationRequest);
+
+    /**
+     * <p>
+     * Creates a zero-ETL integration with Amazon Redshift. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.html">Working with Amazon Aurora
+     * zero-ETL integrations with Amazon Redshift</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * 
+     * @param createIntegrationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateIntegration operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.CreateIntegration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateIntegration" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateIntegrationResult> createIntegrationAsync(CreateIntegrationRequest createIntegrationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateIntegrationRequest, CreateIntegrationResult> asyncHandler);
 
     /**
      * <p>
@@ -1705,13 +1740,46 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
+     * Creates a tenant database in a DB instance that uses the multi-tenant configuration. Only RDS for Oracle
+     * container database (CDB) instances are supported.
+     * </p>
+     * 
+     * @param createTenantDatabaseRequest
+     * @return A Java Future containing the result of the CreateTenantDatabase operation returned by the service.
+     * @sample AmazonRDSAsync.CreateTenantDatabase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateTenantDatabase" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TenantDatabase> createTenantDatabaseAsync(CreateTenantDatabaseRequest createTenantDatabaseRequest);
+
+    /**
+     * <p>
+     * Creates a tenant database in a DB instance that uses the multi-tenant configuration. Only RDS for Oracle
+     * container database (CDB) instances are supported.
+     * </p>
+     * 
+     * @param createTenantDatabaseRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateTenantDatabase operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.CreateTenantDatabase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateTenantDatabase" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TenantDatabase> createTenantDatabaseAsync(CreateTenantDatabaseRequest createTenantDatabaseRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateTenantDatabaseRequest, TenantDatabase> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a blue/green deployment.
      * </p>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS
      * Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">Using Amazon RDS
      * Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * 
@@ -1732,7 +1800,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS
      * Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">Using Amazon RDS
      * Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * 
@@ -1908,6 +1976,43 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
+     * Deletes automated backups using the <code>DbClusterResourceId</code> value of the source DB cluster or the Amazon
+     * Resource Name (ARN) of the automated backups.
+     * </p>
+     * 
+     * @param deleteDBClusterAutomatedBackupRequest
+     * @return A Java Future containing the result of the DeleteDBClusterAutomatedBackup operation returned by the
+     *         service.
+     * @sample AmazonRDSAsync.DeleteDBClusterAutomatedBackup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterAutomatedBackup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DBClusterAutomatedBackup> deleteDBClusterAutomatedBackupAsync(
+            DeleteDBClusterAutomatedBackupRequest deleteDBClusterAutomatedBackupRequest);
+
+    /**
+     * <p>
+     * Deletes automated backups using the <code>DbClusterResourceId</code> value of the source DB cluster or the Amazon
+     * Resource Name (ARN) of the automated backups.
+     * </p>
+     * 
+     * @param deleteDBClusterAutomatedBackupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteDBClusterAutomatedBackup operation returned by the
+     *         service.
+     * @sample AmazonRDSAsyncHandler.DeleteDBClusterAutomatedBackup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterAutomatedBackup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DBClusterAutomatedBackup> deleteDBClusterAutomatedBackupAsync(
+            DeleteDBClusterAutomatedBackupRequest deleteDBClusterAutomatedBackupRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteDBClusterAutomatedBackupRequest, DBClusterAutomatedBackup> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a custom endpoint and removes it from an Amazon Aurora DB cluster.
      * </p>
      * <note>
@@ -2067,14 +2172,13 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * The DeleteDBInstance action deletes a previously provisioned DB instance. When you delete a DB instance, all
-     * automated backups for that instance are deleted and can't be recovered. Manual DB snapshots of the DB instance to
-     * be deleted by <code>DeleteDBInstance</code> are not deleted.
+     * Deletes a previously provisioned DB instance. When you delete a DB instance, all automated backups for that
+     * instance are deleted and can't be recovered. However, manual DB snapshots of the DB instance aren't deleted.
      * </p>
      * <p>
-     * If you request a final DB snapshot the status of the Amazon RDS DB instance is <code>deleting</code> until the DB
-     * snapshot is created. The API action <code>DescribeDBInstance</code> is used to monitor the status of this
-     * operation. The action can't be canceled or reverted once submitted.
+     * If you request a final DB snapshot, the status of the Amazon RDS DB instance is <code>deleting</code> until the
+     * DB snapshot is created. This operation can't be canceled or reverted after it begins. To monitor the status of
+     * this operation, use <code>DescribeDBInstance</code>.
      * </p>
      * <p>
      * When a DB instance is in a failure state and has a status of <code>failed</code>,
@@ -2098,10 +2202,17 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * </li>
      * </ul>
      * <p>
-     * To delete a DB instance in this case, first call the <code>PromoteReadReplicaDBCluster</code> API action to
-     * promote the DB cluster so it's no longer a read replica. After the promotion completes, then call the
-     * <code>DeleteDBInstance</code> API action to delete the final instance in the DB cluster.
+     * To delete a DB instance in this case, first use the <code>PromoteReadReplicaDBCluster</code> operation to promote
+     * the DB cluster so that it's no longer a read replica. After the promotion completes, use the
+     * <code>DeleteDBInstance</code> operation to delete the final instance in the DB cluster.
      * </p>
+     * <important>
+     * <p>
+     * For RDS Custom DB instances, deleting the DB instance permanently deletes the EC2 instance and the associated EBS
+     * volumes. Make sure that you don't terminate or delete these resources before you delete the DB instance.
+     * Otherwise, deleting the DB instance and creation of the final snapshot might fail.
+     * </p>
+     * </important>
      * 
      * @param deleteDBInstanceRequest
      * @return A Java Future containing the result of the DeleteDBInstance operation returned by the service.
@@ -2113,14 +2224,13 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * The DeleteDBInstance action deletes a previously provisioned DB instance. When you delete a DB instance, all
-     * automated backups for that instance are deleted and can't be recovered. Manual DB snapshots of the DB instance to
-     * be deleted by <code>DeleteDBInstance</code> are not deleted.
+     * Deletes a previously provisioned DB instance. When you delete a DB instance, all automated backups for that
+     * instance are deleted and can't be recovered. However, manual DB snapshots of the DB instance aren't deleted.
      * </p>
      * <p>
-     * If you request a final DB snapshot the status of the Amazon RDS DB instance is <code>deleting</code> until the DB
-     * snapshot is created. The API action <code>DescribeDBInstance</code> is used to monitor the status of this
-     * operation. The action can't be canceled or reverted once submitted.
+     * If you request a final DB snapshot, the status of the Amazon RDS DB instance is <code>deleting</code> until the
+     * DB snapshot is created. This operation can't be canceled or reverted after it begins. To monitor the status of
+     * this operation, use <code>DescribeDBInstance</code>.
      * </p>
      * <p>
      * When a DB instance is in a failure state and has a status of <code>failed</code>,
@@ -2144,10 +2254,17 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * </li>
      * </ul>
      * <p>
-     * To delete a DB instance in this case, first call the <code>PromoteReadReplicaDBCluster</code> API action to
-     * promote the DB cluster so it's no longer a read replica. After the promotion completes, then call the
-     * <code>DeleteDBInstance</code> API action to delete the final instance in the DB cluster.
+     * To delete a DB instance in this case, first use the <code>PromoteReadReplicaDBCluster</code> operation to promote
+     * the DB cluster so that it's no longer a read replica. After the promotion completes, use the
+     * <code>DeleteDBInstance</code> operation to delete the final instance in the DB cluster.
      * </p>
+     * <important>
+     * <p>
+     * For RDS Custom DB instances, deleting the DB instance permanently deletes the EC2 instance and the associated EBS
+     * volumes. Make sure that you don't terminate or delete these resources before you delete the DB instance.
+     * Otherwise, deleting the DB instance and creation of the final snapshot might fail.
+     * </p>
+     * </important>
      * 
      * @param deleteDBInstanceRequest
      * @param asyncHandler
@@ -2519,6 +2636,41 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
+     * Deletes a zero-ETL integration with Amazon Redshift. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.deleting.html">Deleting Amazon Aurora
+     * zero-ETL integrations with Amazon Redshift</a> in the <i>Amazon Aurora User Guide</i>
+     * </p>
+     * 
+     * @param deleteIntegrationRequest
+     * @return A Java Future containing the result of the DeleteIntegration operation returned by the service.
+     * @sample AmazonRDSAsync.DeleteIntegration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteIntegration" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteIntegrationResult> deleteIntegrationAsync(DeleteIntegrationRequest deleteIntegrationRequest);
+
+    /**
+     * <p>
+     * Deletes a zero-ETL integration with Amazon Redshift. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.deleting.html">Deleting Amazon Aurora
+     * zero-ETL integrations with Amazon Redshift</a> in the <i>Amazon Aurora User Guide</i>
+     * </p>
+     * 
+     * @param deleteIntegrationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteIntegration operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.DeleteIntegration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteIntegration" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteIntegrationResult> deleteIntegrationAsync(DeleteIntegrationRequest deleteIntegrationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteIntegrationRequest, DeleteIntegrationResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes an existing option group.
      * </p>
      * 
@@ -2547,6 +2699,45 @@ public interface AmazonRDSAsync extends AmazonRDS {
      */
     java.util.concurrent.Future<DeleteOptionGroupResult> deleteOptionGroupAsync(DeleteOptionGroupRequest deleteOptionGroupRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteOptionGroupRequest, DeleteOptionGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a tenant database from your DB instance. This command only applies to RDS for Oracle container database
+     * (CDB) instances.
+     * </p>
+     * <p>
+     * You can't delete a tenant database when it is the only tenant in the DB instance.
+     * </p>
+     * 
+     * @param deleteTenantDatabaseRequest
+     * @return A Java Future containing the result of the DeleteTenantDatabase operation returned by the service.
+     * @sample AmazonRDSAsync.DeleteTenantDatabase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteTenantDatabase" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TenantDatabase> deleteTenantDatabaseAsync(DeleteTenantDatabaseRequest deleteTenantDatabaseRequest);
+
+    /**
+     * <p>
+     * Deletes a tenant database from your DB instance. This command only applies to RDS for Oracle container database
+     * (CDB) instances.
+     * </p>
+     * <p>
+     * You can't delete a tenant database when it is the only tenant in the DB instance.
+     * </p>
+     * 
+     * @param deleteTenantDatabaseRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteTenantDatabase operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.DeleteTenantDatabase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteTenantDatabase" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TenantDatabase> deleteTenantDatabaseAsync(DeleteTenantDatabaseRequest deleteTenantDatabaseRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteTenantDatabaseRequest, TenantDatabase> asyncHandler);
 
     /**
      * <p>
@@ -2641,7 +2832,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Returns information about blue/green deployments.
+     * Describes one or more blue/green deployments.
      * </p>
      * <p>
      * For more information, see <a
@@ -2663,7 +2854,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Returns information about blue/green deployments.
+     * Describes one or more blue/green deployments.
      * </p>
      * <p>
      * For more information, see <a
@@ -2690,7 +2881,8 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Lists the set of CA certificates provided by Amazon RDS for this Amazon Web Services account.
+     * Lists the set of certificate authority (CA) certificates provided by Amazon RDS for this Amazon Web Services
+     * account.
      * </p>
      * <p>
      * For more information, see <a
@@ -2710,7 +2902,8 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Lists the set of CA certificates provided by Amazon RDS for this Amazon Web Services account.
+     * Lists the set of certificate authority (CA) certificates provided by Amazon RDS for this Amazon Web Services
+     * account.
      * </p>
      * <p>
      * For more information, see <a
@@ -2747,6 +2940,51 @@ public interface AmazonRDSAsync extends AmazonRDS {
      */
     java.util.concurrent.Future<DescribeCertificatesResult> describeCertificatesAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeCertificatesRequest, DescribeCertificatesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Displays backups for both current and deleted DB clusters. For example, use this operation to find details about
+     * automated backups for previously deleted clusters. Current clusters are returned for both the
+     * <code>DescribeDBClusterAutomatedBackups</code> and <code>DescribeDBClusters</code> operations.
+     * </p>
+     * <p>
+     * All parameters are optional.
+     * </p>
+     * 
+     * @param describeDBClusterAutomatedBackupsRequest
+     * @return A Java Future containing the result of the DescribeDBClusterAutomatedBackups operation returned by the
+     *         service.
+     * @sample AmazonRDSAsync.DescribeDBClusterAutomatedBackups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterAutomatedBackups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDBClusterAutomatedBackupsResult> describeDBClusterAutomatedBackupsAsync(
+            DescribeDBClusterAutomatedBackupsRequest describeDBClusterAutomatedBackupsRequest);
+
+    /**
+     * <p>
+     * Displays backups for both current and deleted DB clusters. For example, use this operation to find details about
+     * automated backups for previously deleted clusters. Current clusters are returned for both the
+     * <code>DescribeDBClusterAutomatedBackups</code> and <code>DescribeDBClusters</code> operations.
+     * </p>
+     * <p>
+     * All parameters are optional.
+     * </p>
+     * 
+     * @param describeDBClusterAutomatedBackupsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeDBClusterAutomatedBackups operation returned by the
+     *         service.
+     * @sample AmazonRDSAsyncHandler.DescribeDBClusterAutomatedBackups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterAutomatedBackups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDBClusterAutomatedBackupsResult> describeDBClusterAutomatedBackupsAsync(
+            DescribeDBClusterAutomatedBackupsRequest describeDBClusterAutomatedBackupsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeDBClusterAutomatedBackupsRequest, DescribeDBClusterAutomatedBackupsResult> asyncHandler);
 
     /**
      * <p>
@@ -3101,7 +3339,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Returns information about Amazon Aurora DB clusters and Multi-AZ DB clusters. This API supports pagination.
+     * Describes existing Amazon Aurora DB clusters and Multi-AZ DB clusters. This API supports pagination.
      * </p>
      * <p>
      * For more information on Amazon Aurora DB clusters, see <a
@@ -3127,7 +3365,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Returns information about Amazon Aurora DB clusters and Multi-AZ DB clusters. This API supports pagination.
+     * Describes existing Amazon Aurora DB clusters and Multi-AZ DB clusters. This API supports pagination.
      * </p>
      * <p>
      * For more information on Amazon Aurora DB clusters, see <a
@@ -3173,7 +3411,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Returns a list of the available DB engines.
+     * Describes the properties of specific versions of DB engines.
      * </p>
      * 
      * @param describeDBEngineVersionsRequest
@@ -3186,7 +3424,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Returns a list of the available DB engines.
+     * Describes the properties of specific versions of DB engines.
      * </p>
      * 
      * @param describeDBEngineVersionsRequest
@@ -3268,7 +3506,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Returns information about provisioned RDS instances. This API supports pagination.
+     * Describes provisioned RDS instances. This API supports pagination.
      * </p>
      * <note>
      * <p>
@@ -3286,7 +3524,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Returns information about provisioned RDS instances. This API supports pagination.
+     * Describes provisioned RDS instances. This API supports pagination.
      * </p>
      * <note>
      * <p>
@@ -3709,6 +3947,53 @@ public interface AmazonRDSAsync extends AmazonRDS {
      */
     java.util.concurrent.Future<DBSnapshotAttributesResult> describeDBSnapshotAttributesAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeDBSnapshotAttributesRequest, DBSnapshotAttributesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the tenant databases that exist in a DB snapshot. This command only applies to RDS for Oracle DB
+     * instances in the multi-tenant configuration.
+     * </p>
+     * <p>
+     * You can use this command to inspect the tenant databases within a snapshot before restoring it. You can't
+     * directly interact with the tenant databases in a DB snapshot. If you restore a snapshot that was taken from DB
+     * instance using the multi-tenant configuration, you restore all its tenant databases.
+     * </p>
+     * 
+     * @param describeDBSnapshotTenantDatabasesRequest
+     * @return A Java Future containing the result of the DescribeDBSnapshotTenantDatabases operation returned by the
+     *         service.
+     * @sample AmazonRDSAsync.DescribeDBSnapshotTenantDatabases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSnapshotTenantDatabases"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDBSnapshotTenantDatabasesResult> describeDBSnapshotTenantDatabasesAsync(
+            DescribeDBSnapshotTenantDatabasesRequest describeDBSnapshotTenantDatabasesRequest);
+
+    /**
+     * <p>
+     * Describes the tenant databases that exist in a DB snapshot. This command only applies to RDS for Oracle DB
+     * instances in the multi-tenant configuration.
+     * </p>
+     * <p>
+     * You can use this command to inspect the tenant databases within a snapshot before restoring it. You can't
+     * directly interact with the tenant databases in a DB snapshot. If you restore a snapshot that was taken from DB
+     * instance using the multi-tenant configuration, you restore all its tenant databases.
+     * </p>
+     * 
+     * @param describeDBSnapshotTenantDatabasesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeDBSnapshotTenantDatabases operation returned by the
+     *         service.
+     * @sample AmazonRDSAsyncHandler.DescribeDBSnapshotTenantDatabases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSnapshotTenantDatabases"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDBSnapshotTenantDatabasesResult> describeDBSnapshotTenantDatabasesAsync(
+            DescribeDBSnapshotTenantDatabasesRequest describeDBSnapshotTenantDatabasesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeDBSnapshotTenantDatabasesRequest, DescribeDBSnapshotTenantDatabasesResult> asyncHandler);
 
     /**
      * <p>
@@ -4166,6 +4451,43 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
+     * Describe one or more zero-ETL integration with Amazon Redshift. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.describingmonitoring.html">Viewing
+     * and monitoring Amazon Aurora zero-ETL integrations with Amazon Redshift</a> in the <i>Amazon Aurora User
+     * Guide</i>
+     * </p>
+     * 
+     * @param describeIntegrationsRequest
+     * @return A Java Future containing the result of the DescribeIntegrations operation returned by the service.
+     * @sample AmazonRDSAsync.DescribeIntegrations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeIntegrations" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeIntegrationsResult> describeIntegrationsAsync(DescribeIntegrationsRequest describeIntegrationsRequest);
+
+    /**
+     * <p>
+     * Describe one or more zero-ETL integration with Amazon Redshift. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.describingmonitoring.html">Viewing
+     * and monitoring Amazon Aurora zero-ETL integrations with Amazon Redshift</a> in the <i>Amazon Aurora User
+     * Guide</i>
+     * </p>
+     * 
+     * @param describeIntegrationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeIntegrations operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.DescribeIntegrations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeIntegrations" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeIntegrationsResult> describeIntegrationsAsync(DescribeIntegrationsRequest describeIntegrationsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeIntegrationsRequest, DescribeIntegrationsResult> asyncHandler);
+
+    /**
+     * <p>
      * Describes all available options.
      * </p>
      * 
@@ -4485,6 +4807,39 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
+     * Describes the tenant databases in a DB instance that uses the multi-tenant configuration. Only RDS for Oracle CDB
+     * instances are supported.
+     * </p>
+     * 
+     * @param describeTenantDatabasesRequest
+     * @return A Java Future containing the result of the DescribeTenantDatabases operation returned by the service.
+     * @sample AmazonRDSAsync.DescribeTenantDatabases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeTenantDatabases" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTenantDatabasesResult> describeTenantDatabasesAsync(DescribeTenantDatabasesRequest describeTenantDatabasesRequest);
+
+    /**
+     * <p>
+     * Describes the tenant databases in a DB instance that uses the multi-tenant configuration. Only RDS for Oracle CDB
+     * instances are supported.
+     * </p>
+     * 
+     * @param describeTenantDatabasesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeTenantDatabases operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.DescribeTenantDatabases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeTenantDatabases" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTenantDatabasesResult> describeTenantDatabasesAsync(DescribeTenantDatabasesRequest describeTenantDatabasesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeTenantDatabasesRequest, DescribeTenantDatabasesResult> asyncHandler);
+
+    /**
+     * <p>
      * You can call <code>DescribeValidDBInstanceModifications</code> to learn what modifications you can make to your
      * DB instance. You can use this information when you call <code>ModifyDBInstance</code>.
      * </p>
@@ -4666,26 +5021,69 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Initiates the failover process for an Aurora global database (<a>GlobalCluster</a>).
-     * </p>
-     * <p>
-     * A failover for an Aurora global database promotes one of secondary read-only DB clusters to be the primary DB
-     * cluster and demotes the primary DB cluster to being a secondary (read-only) DB cluster. In other words, the role
-     * of the current primary DB cluster and the selected (target) DB cluster are switched. The selected secondary DB
-     * cluster assumes full read/write capabilities for the Aurora global database.
-     * </p>
-     * <p>
-     * For more information about failing over an Amazon Aurora global database, see <a href=
-     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html#aurora-global-database-disaster-recovery.managed-failover"
-     * >Managed planned failover for Amazon Aurora global databases</a> in the <i>Amazon Aurora User Guide</i>.
+     * Promotes the specified secondary DB cluster to be the primary DB cluster in the global database cluster to fail
+     * over or switch over a global database. Switchover operations were previously called "managed planned failovers."
      * </p>
      * <note>
      * <p>
-     * This action applies to <a>GlobalCluster</a> (Aurora global databases) only. Use this action only on healthy
-     * Aurora global databases with running Aurora DB clusters and no Region-wide outages, to test disaster recovery
-     * scenarios or to reconfigure your Aurora global database topology.
+     * Although this operation can be used either to fail over or to switch over a global database cluster, its intended
+     * use is for global database failover. To switch over a global database cluster, we recommend that you use the
+     * <a>SwitchoverGlobalCluster</a> operation instead.
      * </p>
      * </note>
+     * <p>
+     * How you use this operation depends on whether you are failing over or switching over your global database
+     * cluster:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Failing over - Specify the <code>AllowDataLoss</code> parameter and don't specify the <code>Switchover</code>
+     * parameter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Switching over - Specify the <code>Switchover</code> parameter or omit it, but don't specify the
+     * <code>AllowDataLoss</code> parameter.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>About failing over and switching over</b>
+     * </p>
+     * <p>
+     * While failing over and switching over a global database cluster both change the primary DB cluster, you use these
+     * operations for different reasons:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <i>Failing over</i> - Use this operation to respond to an unplanned event, such as a Regional disaster in the
+     * primary Region. Failing over can result in a loss of write transaction data that wasn't replicated to the chosen
+     * secondary before the failover event occurred. However, the recovery process that promotes a DB instance on the
+     * chosen seconday DB cluster to be the primary writer DB instance guarantees that the data is in a transactionally
+     * consistent state.
+     * </p>
+     * <p>
+     * For more information about failing over an Amazon Aurora global database, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html#aurora-global-database-failover.managed-unplanned"
+     * >Performing managed failovers for Aurora global databases</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>Switching over</i> - Use this operation on a healthy global database cluster for planned events, such as
+     * Regional rotation or to fail back to the original primary DB cluster after a failover operation. With this
+     * operation, there is no data loss.
+     * </p>
+     * <p>
+     * For more information about switching over an Amazon Aurora global database, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html#aurora-global-database-disaster-recovery.managed-failover"
+     * >Performing switchovers for Aurora global databases</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param failoverGlobalClusterRequest
      * @return A Java Future containing the result of the FailoverGlobalCluster operation returned by the service.
@@ -4697,26 +5095,69 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Initiates the failover process for an Aurora global database (<a>GlobalCluster</a>).
-     * </p>
-     * <p>
-     * A failover for an Aurora global database promotes one of secondary read-only DB clusters to be the primary DB
-     * cluster and demotes the primary DB cluster to being a secondary (read-only) DB cluster. In other words, the role
-     * of the current primary DB cluster and the selected (target) DB cluster are switched. The selected secondary DB
-     * cluster assumes full read/write capabilities for the Aurora global database.
-     * </p>
-     * <p>
-     * For more information about failing over an Amazon Aurora global database, see <a href=
-     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html#aurora-global-database-disaster-recovery.managed-failover"
-     * >Managed planned failover for Amazon Aurora global databases</a> in the <i>Amazon Aurora User Guide</i>.
+     * Promotes the specified secondary DB cluster to be the primary DB cluster in the global database cluster to fail
+     * over or switch over a global database. Switchover operations were previously called "managed planned failovers."
      * </p>
      * <note>
      * <p>
-     * This action applies to <a>GlobalCluster</a> (Aurora global databases) only. Use this action only on healthy
-     * Aurora global databases with running Aurora DB clusters and no Region-wide outages, to test disaster recovery
-     * scenarios or to reconfigure your Aurora global database topology.
+     * Although this operation can be used either to fail over or to switch over a global database cluster, its intended
+     * use is for global database failover. To switch over a global database cluster, we recommend that you use the
+     * <a>SwitchoverGlobalCluster</a> operation instead.
      * </p>
      * </note>
+     * <p>
+     * How you use this operation depends on whether you are failing over or switching over your global database
+     * cluster:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Failing over - Specify the <code>AllowDataLoss</code> parameter and don't specify the <code>Switchover</code>
+     * parameter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Switching over - Specify the <code>Switchover</code> parameter or omit it, but don't specify the
+     * <code>AllowDataLoss</code> parameter.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>About failing over and switching over</b>
+     * </p>
+     * <p>
+     * While failing over and switching over a global database cluster both change the primary DB cluster, you use these
+     * operations for different reasons:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <i>Failing over</i> - Use this operation to respond to an unplanned event, such as a Regional disaster in the
+     * primary Region. Failing over can result in a loss of write transaction data that wasn't replicated to the chosen
+     * secondary before the failover event occurred. However, the recovery process that promotes a DB instance on the
+     * chosen seconday DB cluster to be the primary writer DB instance guarantees that the data is in a transactionally
+     * consistent state.
+     * </p>
+     * <p>
+     * For more information about failing over an Amazon Aurora global database, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html#aurora-global-database-failover.managed-unplanned"
+     * >Performing managed failovers for Aurora global databases</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>Switching over</i> - Use this operation on a healthy global database cluster for planned events, such as
+     * Regional rotation or to fail back to the original primary DB cluster after a failover operation. With this
+     * operation, there is no data loss.
+     * </p>
+     * <p>
+     * For more information about switching over an Amazon Aurora global database, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html#aurora-global-database-disaster-recovery.managed-failover"
+     * >Performing switchovers for Aurora global databases</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param failoverGlobalClusterRequest
      * @param asyncHandler
@@ -5072,8 +5513,8 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Modify the settings for an Amazon Aurora DB cluster or a Multi-AZ DB cluster. You can change one or more settings
-     * by specifying these parameters and the new values in the request.
+     * Modifies the settings of an Amazon Aurora DB cluster or a Multi-AZ DB cluster. You can change one or more
+     * settings by specifying these parameters and the new values in the request.
      * </p>
      * <p>
      * For more information on Amazon Aurora DB clusters, see <a
@@ -5096,8 +5537,8 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Modify the settings for an Amazon Aurora DB cluster or a Multi-AZ DB cluster. You can change one or more settings
-     * by specifying these parameters and the new values in the request.
+     * Modifies the settings of an Amazon Aurora DB cluster or a Multi-AZ DB cluster. You can change one or more
+     * settings by specifying these parameters and the new values in the request.
      * </p>
      * <p>
      * For more information on Amazon Aurora DB clusters, see <a
@@ -5719,14 +6160,15 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Modify a setting for an Amazon Aurora global cluster. You can change one or more database configuration
-     * parameters by specifying these parameters and the new values in the request. For more information on Amazon
-     * Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What
-     * is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
+     * Modifies a setting for an Amazon Aurora global database cluster. You can change one or more database
+     * configuration parameters by specifying these parameters and the new values in the request. For more information
+     * on Amazon Aurora, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * <note>
      * <p>
-     * This action only applies to Aurora DB clusters.
+     * This operation only applies to Aurora global database clusters.
      * </p>
      * </note>
      * 
@@ -5740,14 +6182,15 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Modify a setting for an Amazon Aurora global cluster. You can change one or more database configuration
-     * parameters by specifying these parameters and the new values in the request. For more information on Amazon
-     * Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What
-     * is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
+     * Modifies a setting for an Amazon Aurora global database cluster. You can change one or more database
+     * configuration parameters by specifying these parameters and the new values in the request. For more information
+     * on Amazon Aurora, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * <note>
      * <p>
-     * This action only applies to Aurora DB clusters.
+     * This operation only applies to Aurora global database clusters.
      * </p>
      * </note>
      * 
@@ -5794,6 +6237,39 @@ public interface AmazonRDSAsync extends AmazonRDS {
      */
     java.util.concurrent.Future<OptionGroup> modifyOptionGroupAsync(ModifyOptionGroupRequest modifyOptionGroupRequest,
             com.amazonaws.handlers.AsyncHandler<ModifyOptionGroupRequest, OptionGroup> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies an existing tenant database in a DB instance. You can change the tenant database name or the master user
+     * password. This operation is supported only for RDS for Oracle CDB instances using the multi-tenant configuration.
+     * </p>
+     * 
+     * @param modifyTenantDatabaseRequest
+     * @return A Java Future containing the result of the ModifyTenantDatabase operation returned by the service.
+     * @sample AmazonRDSAsync.ModifyTenantDatabase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyTenantDatabase" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TenantDatabase> modifyTenantDatabaseAsync(ModifyTenantDatabaseRequest modifyTenantDatabaseRequest);
+
+    /**
+     * <p>
+     * Modifies an existing tenant database in a DB instance. You can change the tenant database name or the master user
+     * password. This operation is supported only for RDS for Oracle CDB instances using the multi-tenant configuration.
+     * </p>
+     * 
+     * @param modifyTenantDatabaseRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyTenantDatabase operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.ModifyTenantDatabase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyTenantDatabase" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TenantDatabase> modifyTenantDatabaseAsync(ModifyTenantDatabaseRequest modifyTenantDatabaseRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyTenantDatabaseRequest, TenantDatabase> asyncHandler);
 
     /**
      * <p>
@@ -6752,8 +7228,8 @@ public interface AmazonRDSAsync extends AmazonRDS {
     /**
      * <p>
      * Restores a DB instance to an arbitrary point in time. You can restore to any point in time before the time
-     * identified by the LatestRestorableTime property. You can restore to a point up to the number of days specified by
-     * the BackupRetentionPeriod property.
+     * identified by the <code>LatestRestorableTime</code> property. You can restore to a point up to the number of days
+     * specified by the <code>BackupRetentionPeriod</code> property.
      * </p>
      * <p>
      * The target database is created with most of the original configuration, but in a system-selected Availability
@@ -6781,8 +7257,8 @@ public interface AmazonRDSAsync extends AmazonRDS {
     /**
      * <p>
      * Restores a DB instance to an arbitrary point in time. You can restore to any point in time before the time
-     * identified by the LatestRestorableTime property. You can restore to a point up to the number of days specified by
-     * the BackupRetentionPeriod property.
+     * identified by the <code>LatestRestorableTime</code> property. You can restore to a point up to the number of days
+     * specified by the <code>BackupRetentionPeriod</code> property.
      * </p>
      * <p>
      * The target database is created with most of the original configuration, but in a system-selected Availability
@@ -7362,7 +7838,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS
      * Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">Using Amazon RDS
      * Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * 
@@ -7388,7 +7864,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS
      * Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">Using Amazon RDS
      * Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * 
@@ -7406,6 +7882,71 @@ public interface AmazonRDSAsync extends AmazonRDS {
     java.util.concurrent.Future<SwitchoverBlueGreenDeploymentResult> switchoverBlueGreenDeploymentAsync(
             SwitchoverBlueGreenDeploymentRequest switchoverBlueGreenDeploymentRequest,
             com.amazonaws.handlers.AsyncHandler<SwitchoverBlueGreenDeploymentRequest, SwitchoverBlueGreenDeploymentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Switches over the specified secondary DB cluster to be the new primary DB cluster in the global database cluster.
+     * Switchover operations were previously called "managed planned failovers."
+     * </p>
+     * <p>
+     * Aurora promotes the specified secondary cluster to assume full read/write capabilities and demotes the current
+     * primary cluster to a secondary (read-only) cluster, maintaining the orginal replication topology. All secondary
+     * clusters are synchronized with the primary at the beginning of the process so the new primary continues
+     * operations for the Aurora global database without losing any data. Your database is unavailable for a short time
+     * while the primary and selected secondary clusters are assuming their new roles. For more information about
+     * switching over an Aurora global database, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html#aurora-global-database-disaster-recovery.managed-failover"
+     * >Performing switchovers for Amazon Aurora global databases</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * This operation is intended for controlled environments, for operations such as "regional rotation" or to fall
+     * back to the original primary after a global database failover.
+     * </p>
+     * </note>
+     * 
+     * @param switchoverGlobalClusterRequest
+     * @return A Java Future containing the result of the SwitchoverGlobalCluster operation returned by the service.
+     * @sample AmazonRDSAsync.SwitchoverGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/SwitchoverGlobalCluster" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GlobalCluster> switchoverGlobalClusterAsync(SwitchoverGlobalClusterRequest switchoverGlobalClusterRequest);
+
+    /**
+     * <p>
+     * Switches over the specified secondary DB cluster to be the new primary DB cluster in the global database cluster.
+     * Switchover operations were previously called "managed planned failovers."
+     * </p>
+     * <p>
+     * Aurora promotes the specified secondary cluster to assume full read/write capabilities and demotes the current
+     * primary cluster to a secondary (read-only) cluster, maintaining the orginal replication topology. All secondary
+     * clusters are synchronized with the primary at the beginning of the process so the new primary continues
+     * operations for the Aurora global database without losing any data. Your database is unavailable for a short time
+     * while the primary and selected secondary clusters are assuming their new roles. For more information about
+     * switching over an Aurora global database, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html#aurora-global-database-disaster-recovery.managed-failover"
+     * >Performing switchovers for Amazon Aurora global databases</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * This operation is intended for controlled environments, for operations such as "regional rotation" or to fall
+     * back to the original primary after a global database failover.
+     * </p>
+     * </note>
+     * 
+     * @param switchoverGlobalClusterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SwitchoverGlobalCluster operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.SwitchoverGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/SwitchoverGlobalCluster" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GlobalCluster> switchoverGlobalClusterAsync(SwitchoverGlobalClusterRequest switchoverGlobalClusterRequest,
+            com.amazonaws.handlers.AsyncHandler<SwitchoverGlobalClusterRequest, GlobalCluster> asyncHandler);
 
     /**
      * <p>

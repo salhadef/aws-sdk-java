@@ -53,6 +53,12 @@ public class ModifyVerifiedAccessEndpointPolicyResultStaxUnmarshaller implements
                     modifyVerifiedAccessEndpointPolicyResult.setPolicyDocument(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("sseSpecification", targetDepth)) {
+                    modifyVerifiedAccessEndpointPolicyResult.setSseSpecification(VerifiedAccessSseSpecificationResponseStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return modifyVerifiedAccessEndpointPolicyResult;

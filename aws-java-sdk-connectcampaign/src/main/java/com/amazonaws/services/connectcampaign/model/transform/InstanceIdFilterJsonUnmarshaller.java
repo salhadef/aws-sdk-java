@@ -48,13 +48,13 @@ public class InstanceIdFilterJsonUnmarshaller implements Unmarshaller<InstanceId
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("operator", targetDepth)) {
-                    context.nextToken();
-                    instanceIdFilter.setOperator(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("value", targetDepth)) {
                     context.nextToken();
                     instanceIdFilter.setValue(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("operator", targetDepth)) {
+                    context.nextToken();
+                    instanceIdFilter.setOperator(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -54,6 +54,10 @@ public class ResolverEndpointMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModificationTime").build();
     private static final MarshallingInfo<String> RESOLVERENDPOINTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResolverEndpointType").build();
+    private static final MarshallingInfo<String> OUTPOSTARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OutpostArn").build();
+    private static final MarshallingInfo<String> PREFERREDINSTANCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PreferredInstanceType").build();
 
     private static final ResolverEndpointMarshaller instance = new ResolverEndpointMarshaller();
 
@@ -84,6 +88,8 @@ public class ResolverEndpointMarshaller {
             protocolMarshaller.marshall(resolverEndpoint.getCreationTime(), CREATIONTIME_BINDING);
             protocolMarshaller.marshall(resolverEndpoint.getModificationTime(), MODIFICATIONTIME_BINDING);
             protocolMarshaller.marshall(resolverEndpoint.getResolverEndpointType(), RESOLVERENDPOINTTYPE_BINDING);
+            protocolMarshaller.marshall(resolverEndpoint.getOutpostArn(), OUTPOSTARN_BINDING);
+            protocolMarshaller.marshall(resolverEndpoint.getPreferredInstanceType(), PREFERREDINSTANCETYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

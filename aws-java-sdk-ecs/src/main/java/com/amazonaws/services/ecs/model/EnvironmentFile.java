@@ -22,8 +22,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * A list of files containing the environment variables to pass to a container. You can specify up to ten environment
  * files. The file must have a <code>.env</code> file extension. Each line in an environment file should contain an
  * environment variable in <code>VARIABLE=VALUE</code> format. Lines beginning with <code>#</code> are treated as
- * comments and are ignored. For more information about the environment variable file syntax, see <a
- * href="https://docs.docker.com/compose/env-file/">Declare default environment variables in file</a>.
+ * comments and are ignored.
  * </p>
  * <p>
  * If there are environment variables specified using the <code>environment</code> parameter in a container definition,
@@ -34,7 +33,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * variables</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
  * </p>
  * <p>
- * This parameter is only supported for tasks hosted on Fargate using the following platform versions:
+ * You must use the following platforms for the Fargate launch type:
  * </p>
  * <ul>
  * <li>
@@ -45,6 +44,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <li>
  * <p>
  * Windows platform version <code>1.0.0</code> or later.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * Consider the following when using the Fargate launch type:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * The file is handled like a native Docker env-file.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * There is no support for shell escape handling.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * The container entry point interperts the <code>VARIABLE</code> values.
  * </p>
  * </li>
  * </ul>

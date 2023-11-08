@@ -104,6 +104,10 @@ public class NetAppONTAPSVMJsonUnmarshaller implements Unmarshaller<NetAppONTAPS
                     context.nextToken();
                     netAppONTAPSVM.setTotalSnapshotCapacityUsed(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("LunCount", targetDepth)) {
+                    context.nextToken();
+                    netAppONTAPSVM.setLunCount(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

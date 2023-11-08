@@ -37,6 +37,8 @@ public class AccountInfoMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AuthenticationType").build();
     private static final MarshallingInfo<String> ACCOUNTSUBSCRIPTIONSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AccountSubscriptionStatus").build();
+    private static final MarshallingInfo<String> IAMIDENTITYCENTERINSTANCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IAMIdentityCenterInstanceArn").build();
 
     private static final AccountInfoMarshaller instance = new AccountInfoMarshaller();
 
@@ -59,6 +61,7 @@ public class AccountInfoMarshaller {
             protocolMarshaller.marshall(accountInfo.getNotificationEmail(), NOTIFICATIONEMAIL_BINDING);
             protocolMarshaller.marshall(accountInfo.getAuthenticationType(), AUTHENTICATIONTYPE_BINDING);
             protocolMarshaller.marshall(accountInfo.getAccountSubscriptionStatus(), ACCOUNTSUBSCRIPTIONSTATUS_BINDING);
+            protocolMarshaller.marshall(accountInfo.getIAMIdentityCenterInstanceArn(), IAMIDENTITYCENTERINSTANCEARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

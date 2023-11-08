@@ -25,56 +25,16 @@ public class ListVariantStoresResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * A pagination token that's included if more results are available.
-     * </p>
-     */
-    private String nextToken;
-    /**
-     * <p>
      * A list of variant stores.
      * </p>
      */
     private java.util.List<VariantStoreItem> variantStores;
-
     /**
      * <p>
      * A pagination token that's included if more results are available.
      * </p>
-     * 
-     * @param nextToken
-     *        A pagination token that's included if more results are available.
      */
-
-    public void setNextToken(String nextToken) {
-        this.nextToken = nextToken;
-    }
-
-    /**
-     * <p>
-     * A pagination token that's included if more results are available.
-     * </p>
-     * 
-     * @return A pagination token that's included if more results are available.
-     */
-
-    public String getNextToken() {
-        return this.nextToken;
-    }
-
-    /**
-     * <p>
-     * A pagination token that's included if more results are available.
-     * </p>
-     * 
-     * @param nextToken
-     *        A pagination token that's included if more results are available.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListVariantStoresResult withNextToken(String nextToken) {
-        setNextToken(nextToken);
-        return this;
-    }
+    private String nextToken;
 
     /**
      * <p>
@@ -147,6 +107,46 @@ public class ListVariantStoresResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
+     * A pagination token that's included if more results are available.
+     * </p>
+     * 
+     * @param nextToken
+     *        A pagination token that's included if more results are available.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * A pagination token that's included if more results are available.
+     * </p>
+     * 
+     * @return A pagination token that's included if more results are available.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * A pagination token that's included if more results are available.
+     * </p>
+     * 
+     * @param nextToken
+     *        A pagination token that's included if more results are available.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListVariantStoresResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -158,10 +158,10 @@ public class ListVariantStoresResult extends com.amazonaws.AmazonWebServiceResul
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getVariantStores() != null)
-            sb.append("VariantStores: ").append(getVariantStores());
+            sb.append("VariantStores: ").append(getVariantStores()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -176,13 +176,13 @@ public class ListVariantStoresResult extends com.amazonaws.AmazonWebServiceResul
         if (obj instanceof ListVariantStoresResult == false)
             return false;
         ListVariantStoresResult other = (ListVariantStoresResult) obj;
-        if (other.getNextToken() == null ^ this.getNextToken() == null)
-            return false;
-        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
-            return false;
         if (other.getVariantStores() == null ^ this.getVariantStores() == null)
             return false;
         if (other.getVariantStores() != null && other.getVariantStores().equals(this.getVariantStores()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -192,8 +192,8 @@ public class ListVariantStoresResult extends com.amazonaws.AmazonWebServiceResul
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getVariantStores() == null) ? 0 : getVariantStores().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

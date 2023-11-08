@@ -58,11 +58,10 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
     private String problemType;
     /**
      * <p>
-     * Defines the objective metric used to measure the predictive quality of an AutoML job. You provide an <a
+     * Specifies a metric to minimize or maximize as the objective of a job. If not specified, the default objective
+     * metric depends on the problem type. See <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html"
-     * >AutoMLJobObjective$MetricName</a> and Autopilot infers whether to minimize or maximize it. For <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html"
-     * >CreateAutoMLJobV2</a>, only <code>Accuracy</code> is supported.
+     * >AutoMLJobObjective</a> for the default values.
      * </p>
      */
     private AutoMLJobObjective autoMLJobObjective;
@@ -374,19 +373,17 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Defines the objective metric used to measure the predictive quality of an AutoML job. You provide an <a
+     * Specifies a metric to minimize or maximize as the objective of a job. If not specified, the default objective
+     * metric depends on the problem type. See <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html"
-     * >AutoMLJobObjective$MetricName</a> and Autopilot infers whether to minimize or maximize it. For <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html"
-     * >CreateAutoMLJobV2</a>, only <code>Accuracy</code> is supported.
+     * >AutoMLJobObjective</a> for the default values.
      * </p>
      * 
      * @param autoMLJobObjective
-     *        Defines the objective metric used to measure the predictive quality of an AutoML job. You provide an <a
-     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">
-     *        AutoMLJobObjective$MetricName</a> and Autopilot infers whether to minimize or maximize it. For <a
-     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html"
-     *        >CreateAutoMLJobV2</a>, only <code>Accuracy</code> is supported.
+     *        Specifies a metric to minimize or maximize as the objective of a job. If not specified, the default
+     *        objective metric depends on the problem type. See <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html"
+     *        >AutoMLJobObjective</a> for the default values.
      */
 
     public void setAutoMLJobObjective(AutoMLJobObjective autoMLJobObjective) {
@@ -395,18 +392,16 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Defines the objective metric used to measure the predictive quality of an AutoML job. You provide an <a
+     * Specifies a metric to minimize or maximize as the objective of a job. If not specified, the default objective
+     * metric depends on the problem type. See <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html"
-     * >AutoMLJobObjective$MetricName</a> and Autopilot infers whether to minimize or maximize it. For <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html"
-     * >CreateAutoMLJobV2</a>, only <code>Accuracy</code> is supported.
+     * >AutoMLJobObjective</a> for the default values.
      * </p>
      * 
-     * @return Defines the objective metric used to measure the predictive quality of an AutoML job. You provide an <a
-     *         href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">
-     *         AutoMLJobObjective$MetricName</a> and Autopilot infers whether to minimize or maximize it. For <a
-     *         href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html"
-     *         >CreateAutoMLJobV2</a>, only <code>Accuracy</code> is supported.
+     * @return Specifies a metric to minimize or maximize as the objective of a job. If not specified, the default
+     *         objective metric depends on the problem type. See <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html"
+     *         >AutoMLJobObjective</a> for the default values.
      */
 
     public AutoMLJobObjective getAutoMLJobObjective() {
@@ -415,19 +410,17 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Defines the objective metric used to measure the predictive quality of an AutoML job. You provide an <a
+     * Specifies a metric to minimize or maximize as the objective of a job. If not specified, the default objective
+     * metric depends on the problem type. See <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html"
-     * >AutoMLJobObjective$MetricName</a> and Autopilot infers whether to minimize or maximize it. For <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html"
-     * >CreateAutoMLJobV2</a>, only <code>Accuracy</code> is supported.
+     * >AutoMLJobObjective</a> for the default values.
      * </p>
      * 
      * @param autoMLJobObjective
-     *        Defines the objective metric used to measure the predictive quality of an AutoML job. You provide an <a
-     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">
-     *        AutoMLJobObjective$MetricName</a> and Autopilot infers whether to minimize or maximize it. For <a
-     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html"
-     *        >CreateAutoMLJobV2</a>, only <code>Accuracy</code> is supported.
+     *        Specifies a metric to minimize or maximize as the objective of a job. If not specified, the default
+     *        objective metric depends on the problem type. See <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html"
+     *        >AutoMLJobObjective</a> for the default values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -89,9 +89,9 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
     /**
      * <p>
      * The number of player slots in a match to keep open for future players. For example, if the configuration's rule
-     * set specifies a match for a single 12-person team, and the additional player count is set to 2, only 10 players
-     * are selected for the match. This parameter is not used if <code>FlexMatchMode</code> is set to
-     * <code>STANDALONE</code>.
+     * set specifies a match for a single 10-person team, and the additional player count is set to 2, 10 players will
+     * be selected for the match and 2 more player slots will be open for future players. This parameter is not used if
+     * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.
      * </p>
      */
     private Integer additionalPlayerCount;
@@ -635,16 +635,16 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
     /**
      * <p>
      * The number of player slots in a match to keep open for future players. For example, if the configuration's rule
-     * set specifies a match for a single 12-person team, and the additional player count is set to 2, only 10 players
-     * are selected for the match. This parameter is not used if <code>FlexMatchMode</code> is set to
-     * <code>STANDALONE</code>.
+     * set specifies a match for a single 10-person team, and the additional player count is set to 2, 10 players will
+     * be selected for the match and 2 more player slots will be open for future players. This parameter is not used if
+     * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.
      * </p>
      * 
      * @param additionalPlayerCount
      *        The number of player slots in a match to keep open for future players. For example, if the configuration's
-     *        rule set specifies a match for a single 12-person team, and the additional player count is set to 2, only
-     *        10 players are selected for the match. This parameter is not used if <code>FlexMatchMode</code> is set to
-     *        <code>STANDALONE</code>.
+     *        rule set specifies a match for a single 10-person team, and the additional player count is set to 2, 10
+     *        players will be selected for the match and 2 more player slots will be open for future players. This
+     *        parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.
      */
 
     public void setAdditionalPlayerCount(Integer additionalPlayerCount) {
@@ -654,15 +654,15 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
     /**
      * <p>
      * The number of player slots in a match to keep open for future players. For example, if the configuration's rule
-     * set specifies a match for a single 12-person team, and the additional player count is set to 2, only 10 players
-     * are selected for the match. This parameter is not used if <code>FlexMatchMode</code> is set to
-     * <code>STANDALONE</code>.
+     * set specifies a match for a single 10-person team, and the additional player count is set to 2, 10 players will
+     * be selected for the match and 2 more player slots will be open for future players. This parameter is not used if
+     * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.
      * </p>
      * 
      * @return The number of player slots in a match to keep open for future players. For example, if the
-     *         configuration's rule set specifies a match for a single 12-person team, and the additional player count
-     *         is set to 2, only 10 players are selected for the match. This parameter is not used if
-     *         <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.
+     *         configuration's rule set specifies a match for a single 10-person team, and the additional player count
+     *         is set to 2, 10 players will be selected for the match and 2 more player slots will be open for future
+     *         players. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.
      */
 
     public Integer getAdditionalPlayerCount() {
@@ -672,16 +672,16 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
     /**
      * <p>
      * The number of player slots in a match to keep open for future players. For example, if the configuration's rule
-     * set specifies a match for a single 12-person team, and the additional player count is set to 2, only 10 players
-     * are selected for the match. This parameter is not used if <code>FlexMatchMode</code> is set to
-     * <code>STANDALONE</code>.
+     * set specifies a match for a single 10-person team, and the additional player count is set to 2, 10 players will
+     * be selected for the match and 2 more player slots will be open for future players. This parameter is not used if
+     * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.
      * </p>
      * 
      * @param additionalPlayerCount
      *        The number of player slots in a match to keep open for future players. For example, if the configuration's
-     *        rule set specifies a match for a single 12-person team, and the additional player count is set to 2, only
-     *        10 players are selected for the match. This parameter is not used if <code>FlexMatchMode</code> is set to
-     *        <code>STANDALONE</code>.
+     *        rule set specifies a match for a single 10-person team, and the additional player count is set to 2, 10
+     *        players will be selected for the match and 2 more player slots will be open for future players. This
+     *        parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

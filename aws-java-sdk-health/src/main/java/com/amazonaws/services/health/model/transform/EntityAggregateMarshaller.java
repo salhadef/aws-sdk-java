@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.health.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +33,8 @@ public class EntityAggregateMarshaller {
             .marshallLocationName("eventArn").build();
     private static final MarshallingInfo<Integer> COUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("count").build();
+    private static final MarshallingInfo<Map> STATUSES_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("statuses").build();
 
     private static final EntityAggregateMarshaller instance = new EntityAggregateMarshaller();
 
@@ -50,6 +54,7 @@ public class EntityAggregateMarshaller {
         try {
             protocolMarshaller.marshall(entityAggregate.getEventArn(), EVENTARN_BINDING);
             protocolMarshaller.marshall(entityAggregate.getCount(), COUNT_BINDING);
+            protocolMarshaller.marshall(entityAggregate.getStatuses(), STATUSES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

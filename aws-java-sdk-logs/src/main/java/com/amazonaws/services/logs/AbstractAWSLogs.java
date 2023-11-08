@@ -63,6 +63,11 @@ public class AbstractAWSLogs implements AWSLogs {
     }
 
     @Override
+    public DeleteAccountPolicyResult deleteAccountPolicy(DeleteAccountPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteDataProtectionPolicyResult deleteDataProtectionPolicy(DeleteDataProtectionPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -104,6 +109,11 @@ public class AbstractAWSLogs implements AWSLogs {
 
     @Override
     public DeleteSubscriptionFilterResult deleteSubscriptionFilter(DeleteSubscriptionFilterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeAccountPoliciesResult describeAccountPolicies(DescribeAccountPoliciesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -205,6 +215,11 @@ public class AbstractAWSLogs implements AWSLogs {
     @Override
     @Deprecated
     public ListTagsLogGroupResult listTagsLogGroup(ListTagsLogGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutAccountPolicyResult putAccountPolicy(PutAccountPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

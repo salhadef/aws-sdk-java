@@ -27,20 +27,19 @@ import com.amazonaws.services.ssoadmin.model.*;
  * </p>
  * <p>
  * <p>
- * AWS IAM Identity Center (successor to AWS Single Sign-On) helps you securely create, or connect, your workforce
- * identities and manage their access centrally across AWS accounts and applications. IAM Identity Center is the
- * recommended approach for workforce authentication and authorization in AWS, for organizations of any size and type.
+ * IAM Identity Center (successor to Single Sign-On) helps you securely create, or connect, your workforce identities
+ * and manage their access centrally across Amazon Web Services accounts and applications. IAM Identity Center is the
+ * recommended approach for workforce authentication and authorization in Amazon Web Services, for organizations of any
+ * size and type.
  * </p>
  * <note>
  * <p>
- * Although AWS Single Sign-On was renamed, the <code>sso</code> and <code>identitystore</code> API namespaces will
- * continue to retain their original name for backward compatibility purposes. For more information, see <a
- * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html#renamed">IAM Identity Center rename</a>.
+ * IAM Identity Center uses the <code>sso</code> and <code>identitystore</code> API namespaces.
  * </p>
  * </note>
  * <p>
  * This reference guide provides information on single sign-on operations which could be used for access management of
- * AWS accounts. For information about IAM Identity Center features, see the <a
+ * Amazon Web Services accounts. For information about IAM Identity Center features, see the <a
  * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">IAM Identity Center User Guide</a>.
  * </p>
  * <p>
@@ -51,10 +50,11 @@ import com.amazonaws.services.ssoadmin.model.*;
  * </p>
  * <note>
  * <p>
- * AWS provides SDKs that consist of libraries and sample code for various programming languages and platforms (Java,
- * Ruby, .Net, iOS, Android, and more). The SDKs provide a convenient way to create programmatic access to IAM Identity
- * Center and other AWS services. For more information about the AWS SDKs, including how to download and install them,
- * see <a href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.
+ * Amazon Web Services provides SDKs that consist of libraries and sample code for various programming languages and
+ * platforms (Java, Ruby, .Net, iOS, Android, and more). The SDKs provide a convenient way to create programmatic access
+ * to IAM Identity Center and other Amazon Web Services services. For more information about the Amazon Web Services
+ * SDKs, including how to download and install them, see <a href="http://aws.amazon.com/tools/">Tools for Amazon Web
+ * Services</a>.
  * </p>
  * </note>
  */
@@ -76,19 +76,19 @@ public interface AWSSSOAdmin {
      * 
      * @param attachCustomerManagedPolicyReferenceToPermissionSetRequest
      * @return Result of the AttachCustomerManagedPolicyReferenceToPermissionSet operation returned by the service.
-     * @throws ResourceNotFoundException
-     *         Indicates that a requested resource is not found.
-     * @throws InternalServerException
-     *         The request processing has failed because of an unknown error, exception, or failure with an internal
-     *         server.
      * @throws ServiceQuotaExceededException
      *         Indicates that the principal has crossed the permitted number of resources that can be created.
      * @throws ThrottlingException
      *         Indicates that the principal has crossed the throttling limits of the API operations.
-     * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
      * @throws ConflictException
      *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
      *         previous write did not have time to propagate to the host serving the current request. A retry (with
@@ -103,7 +103,7 @@ public interface AWSSSOAdmin {
 
     /**
      * <p>
-     * Attaches an AWS managed policy ARN to a permission set.
+     * Attaches an Amazon Web Services managed policy ARN to a permission set.
      * </p>
      * <note>
      * <p>
@@ -115,19 +115,19 @@ public interface AWSSSOAdmin {
      * 
      * @param attachManagedPolicyToPermissionSetRequest
      * @return Result of the AttachManagedPolicyToPermissionSet operation returned by the service.
-     * @throws ResourceNotFoundException
-     *         Indicates that a requested resource is not found.
-     * @throws InternalServerException
-     *         The request processing has failed because of an unknown error, exception, or failure with an internal
-     *         server.
      * @throws ServiceQuotaExceededException
      *         Indicates that the principal has crossed the permitted number of resources that can be created.
      * @throws ThrottlingException
      *         Indicates that the principal has crossed the throttling limits of the API operations.
-     * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
      * @throws ConflictException
      *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
      *         previous write did not have time to propagate to the host serving the current request. A retry (with
@@ -141,7 +141,7 @@ public interface AWSSSOAdmin {
 
     /**
      * <p>
-     * Assigns access to a principal for a specified AWS account using a specified permission set.
+     * Assigns access to a principal for a specified Amazon Web Services account using a specified permission set.
      * </p>
      * <note>
      * <p>
@@ -164,19 +164,19 @@ public interface AWSSSOAdmin {
      * 
      * @param createAccountAssignmentRequest
      * @return Result of the CreateAccountAssignment operation returned by the service.
-     * @throws ResourceNotFoundException
-     *         Indicates that a requested resource is not found.
-     * @throws InternalServerException
-     *         The request processing has failed because of an unknown error, exception, or failure with an internal
-     *         server.
      * @throws ServiceQuotaExceededException
      *         Indicates that the principal has crossed the permitted number of resources that can be created.
      * @throws ThrottlingException
      *         Indicates that the principal has crossed the throttling limits of the API operations.
-     * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
      * @throws ConflictException
      *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
      *         previous write did not have time to propagate to the host serving the current request. A retry (with
@@ -203,17 +203,17 @@ public interface AWSSSOAdmin {
      * 
      * @param createInstanceAccessControlAttributeConfigurationRequest
      * @return Result of the CreateInstanceAccessControlAttributeConfiguration operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
      * @throws InternalServerException
      *         The request processing has failed because of an unknown error, exception, or failure with an internal
      *         server.
-     * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
-     * @throws ThrottlingException
-     *         Indicates that the principal has crossed the throttling limits of the API operations.
-     * @throws ValidationException
-     *         The request failed because it contains a syntax error.
      * @throws ResourceNotFoundException
      *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
      * @throws ConflictException
      *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
      *         previous write did not have time to propagate to the host serving the current request. A retry (with
@@ -232,25 +232,26 @@ public interface AWSSSOAdmin {
      * </p>
      * <note>
      * <p>
-     * To grant users and groups access to AWS account resources, use <code> <a>CreateAccountAssignment</a> </code>.
+     * To grant users and groups access to Amazon Web Services account resources, use
+     * <code> <a>CreateAccountAssignment</a> </code>.
      * </p>
      * </note>
      * 
      * @param createPermissionSetRequest
      * @return Result of the CreatePermissionSet operation returned by the service.
-     * @throws ResourceNotFoundException
-     *         Indicates that a requested resource is not found.
-     * @throws InternalServerException
-     *         The request processing has failed because of an unknown error, exception, or failure with an internal
-     *         server.
      * @throws ServiceQuotaExceededException
      *         Indicates that the principal has crossed the permitted number of resources that can be created.
      * @throws ThrottlingException
      *         Indicates that the principal has crossed the throttling limits of the API operations.
-     * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
      * @throws ConflictException
      *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
      *         previous write did not have time to propagate to the host serving the current request. A retry (with
@@ -263,28 +264,28 @@ public interface AWSSSOAdmin {
 
     /**
      * <p>
-     * Deletes a principal's access from a specified AWS account using a specified permission set.
+     * Deletes a principal's access from a specified Amazon Web Services account using a specified permission set.
      * </p>
      * <note>
      * <p>
-     * After a successful response, call <code>DescribeAccountAssignmentCreationStatus</code> to describe the status of
+     * After a successful response, call <code>DescribeAccountAssignmentDeletionStatus</code> to describe the status of
      * an assignment deletion request.
      * </p>
      * </note>
      * 
      * @param deleteAccountAssignmentRequest
      * @return Result of the DeleteAccountAssignment operation returned by the service.
-     * @throws ResourceNotFoundException
-     *         Indicates that a requested resource is not found.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
      * @throws InternalServerException
      *         The request processing has failed because of an unknown error, exception, or failure with an internal
      *         server.
-     * @throws ThrottlingException
-     *         Indicates that the principal has crossed the throttling limits of the API operations.
-     * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
      * @throws ConflictException
      *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
      *         previous write did not have time to propagate to the host serving the current request. A retry (with
@@ -302,17 +303,17 @@ public interface AWSSSOAdmin {
      * 
      * @param deleteInlinePolicyFromPermissionSetRequest
      * @return Result of the DeleteInlinePolicyFromPermissionSet operation returned by the service.
-     * @throws ResourceNotFoundException
-     *         Indicates that a requested resource is not found.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
      * @throws InternalServerException
      *         The request processing has failed because of an unknown error, exception, or failure with an internal
      *         server.
-     * @throws ThrottlingException
-     *         Indicates that the principal has crossed the throttling limits of the API operations.
-     * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
      * @throws ConflictException
      *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
      *         previous write did not have time to propagate to the host serving the current request. A retry (with
@@ -335,17 +336,17 @@ public interface AWSSSOAdmin {
      * 
      * @param deleteInstanceAccessControlAttributeConfigurationRequest
      * @return Result of the DeleteInstanceAccessControlAttributeConfiguration operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
      * @throws InternalServerException
      *         The request processing has failed because of an unknown error, exception, or failure with an internal
      *         server.
-     * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
-     * @throws ThrottlingException
-     *         Indicates that the principal has crossed the throttling limits of the API operations.
-     * @throws ValidationException
-     *         The request failed because it contains a syntax error.
      * @throws ResourceNotFoundException
      *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
      * @throws ConflictException
      *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
      *         previous write did not have time to propagate to the host serving the current request. A retry (with
@@ -365,17 +366,17 @@ public interface AWSSSOAdmin {
      * 
      * @param deletePermissionSetRequest
      * @return Result of the DeletePermissionSet operation returned by the service.
-     * @throws ResourceNotFoundException
-     *         Indicates that a requested resource is not found.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
      * @throws InternalServerException
      *         The request processing has failed because of an unknown error, exception, or failure with an internal
      *         server.
-     * @throws ThrottlingException
-     *         Indicates that the principal has crossed the throttling limits of the API operations.
-     * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
      * @throws ConflictException
      *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
      *         previous write did not have time to propagate to the host serving the current request. A retry (with
@@ -393,17 +394,17 @@ public interface AWSSSOAdmin {
      * 
      * @param deletePermissionsBoundaryFromPermissionSetRequest
      * @return Result of the DeletePermissionsBoundaryFromPermissionSet operation returned by the service.
-     * @throws ResourceNotFoundException
-     *         Indicates that a requested resource is not found.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
      * @throws InternalServerException
      *         The request processing has failed because of an unknown error, exception, or failure with an internal
      *         server.
-     * @throws ThrottlingException
-     *         Indicates that the principal has crossed the throttling limits of the API operations.
-     * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
      * @sample AWSSSOAdmin.DeletePermissionsBoundaryFromPermissionSet
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeletePermissionsBoundaryFromPermissionSet"
@@ -419,17 +420,17 @@ public interface AWSSSOAdmin {
      * 
      * @param describeAccountAssignmentCreationStatusRequest
      * @return Result of the DescribeAccountAssignmentCreationStatus operation returned by the service.
-     * @throws ResourceNotFoundException
-     *         Indicates that a requested resource is not found.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
      * @throws InternalServerException
      *         The request processing has failed because of an unknown error, exception, or failure with an internal
      *         server.
-     * @throws ThrottlingException
-     *         Indicates that the principal has crossed the throttling limits of the API operations.
-     * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
      * @sample AWSSSOAdmin.DescribeAccountAssignmentCreationStatus
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeAccountAssignmentCreationStatus"
@@ -445,17 +446,17 @@ public interface AWSSSOAdmin {
      * 
      * @param describeAccountAssignmentDeletionStatusRequest
      * @return Result of the DescribeAccountAssignmentDeletionStatus operation returned by the service.
-     * @throws ResourceNotFoundException
-     *         Indicates that a requested resource is not found.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
      * @throws InternalServerException
      *         The request processing has failed because of an unknown error, exception, or failure with an internal
      *         server.
-     * @throws ThrottlingException
-     *         Indicates that the principal has crossed the throttling limits of the API operations.
-     * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
      * @sample AWSSSOAdmin.DescribeAccountAssignmentDeletionStatus
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeAccountAssignmentDeletionStatus"
@@ -475,15 +476,15 @@ public interface AWSSSOAdmin {
      * 
      * @param describeInstanceAccessControlAttributeConfigurationRequest
      * @return Result of the DescribeInstanceAccessControlAttributeConfiguration operation returned by the service.
-     * @throws ResourceNotFoundException
-     *         Indicates that a requested resource is not found.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
      * @throws InternalServerException
      *         The request processing has failed because of an unknown error, exception, or failure with an internal
      *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
-     * @throws ThrottlingException
-     *         Indicates that the principal has crossed the throttling limits of the API operations.
      * @throws ValidationException
      *         The request failed because it contains a syntax error.
      * @sample AWSSSOAdmin.DescribeInstanceAccessControlAttributeConfiguration
@@ -501,17 +502,17 @@ public interface AWSSSOAdmin {
      * 
      * @param describePermissionSetRequest
      * @return Result of the DescribePermissionSet operation returned by the service.
-     * @throws ResourceNotFoundException
-     *         Indicates that a requested resource is not found.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
      * @throws InternalServerException
      *         The request processing has failed because of an unknown error, exception, or failure with an internal
      *         server.
-     * @throws ThrottlingException
-     *         Indicates that the principal has crossed the throttling limits of the API operations.
-     * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
      * @sample AWSSSOAdmin.DescribePermissionSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribePermissionSet"
      *      target="_top">AWS API Documentation</a>
@@ -525,17 +526,17 @@ public interface AWSSSOAdmin {
      * 
      * @param describePermissionSetProvisioningStatusRequest
      * @return Result of the DescribePermissionSetProvisioningStatus operation returned by the service.
-     * @throws ResourceNotFoundException
-     *         Indicates that a requested resource is not found.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
      * @throws InternalServerException
      *         The request processing has failed because of an unknown error, exception, or failure with an internal
      *         server.
-     * @throws ThrottlingException
-     *         Indicates that the principal has crossed the throttling limits of the API operations.
-     * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
      * @sample AWSSSOAdmin.DescribePermissionSetProvisioningStatus
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribePermissionSetProvisioningStatus"
@@ -551,17 +552,17 @@ public interface AWSSSOAdmin {
      * 
      * @param detachCustomerManagedPolicyReferenceFromPermissionSetRequest
      * @return Result of the DetachCustomerManagedPolicyReferenceFromPermissionSet operation returned by the service.
-     * @throws ResourceNotFoundException
-     *         Indicates that a requested resource is not found.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
      * @throws InternalServerException
      *         The request processing has failed because of an unknown error, exception, or failure with an internal
      *         server.
-     * @throws ThrottlingException
-     *         Indicates that the principal has crossed the throttling limits of the API operations.
-     * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
      * @throws ConflictException
      *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
      *         previous write did not have time to propagate to the host serving the current request. A retry (with
@@ -576,22 +577,22 @@ public interface AWSSSOAdmin {
 
     /**
      * <p>
-     * Detaches the attached AWS managed policy ARN from the specified permission set.
+     * Detaches the attached Amazon Web Services managed policy ARN from the specified permission set.
      * </p>
      * 
      * @param detachManagedPolicyFromPermissionSetRequest
      * @return Result of the DetachManagedPolicyFromPermissionSet operation returned by the service.
-     * @throws ResourceNotFoundException
-     *         Indicates that a requested resource is not found.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
      * @throws InternalServerException
      *         The request processing has failed because of an unknown error, exception, or failure with an internal
      *         server.
-     * @throws ThrottlingException
-     *         Indicates that the principal has crossed the throttling limits of the API operations.
-     * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
      * @throws ConflictException
      *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
      *         previous write did not have time to propagate to the host serving the current request. A retry (with
@@ -610,17 +611,17 @@ public interface AWSSSOAdmin {
      * 
      * @param getInlinePolicyForPermissionSetRequest
      * @return Result of the GetInlinePolicyForPermissionSet operation returned by the service.
-     * @throws ResourceNotFoundException
-     *         Indicates that a requested resource is not found.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
      * @throws InternalServerException
      *         The request processing has failed because of an unknown error, exception, or failure with an internal
      *         server.
-     * @throws ThrottlingException
-     *         Indicates that the principal has crossed the throttling limits of the API operations.
-     * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
      * @sample AWSSSOAdmin.GetInlinePolicyForPermissionSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetInlinePolicyForPermissionSet"
      *      target="_top">AWS API Documentation</a>
@@ -634,17 +635,17 @@ public interface AWSSSOAdmin {
      * 
      * @param getPermissionsBoundaryForPermissionSetRequest
      * @return Result of the GetPermissionsBoundaryForPermissionSet operation returned by the service.
-     * @throws ResourceNotFoundException
-     *         Indicates that a requested resource is not found.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
      * @throws InternalServerException
      *         The request processing has failed because of an unknown error, exception, or failure with an internal
      *         server.
-     * @throws ThrottlingException
-     *         Indicates that the principal has crossed the throttling limits of the API operations.
-     * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
      * @sample AWSSSOAdmin.GetPermissionsBoundaryForPermissionSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetPermissionsBoundaryForPermissionSet"
      *      target="_top">AWS API Documentation</a>
@@ -654,22 +655,23 @@ public interface AWSSSOAdmin {
 
     /**
      * <p>
-     * Lists the status of the AWS account assignment creation requests for a specified IAM Identity Center instance.
+     * Lists the status of the Amazon Web Services account assignment creation requests for a specified IAM Identity
+     * Center instance.
      * </p>
      * 
      * @param listAccountAssignmentCreationStatusRequest
      * @return Result of the ListAccountAssignmentCreationStatus operation returned by the service.
-     * @throws ResourceNotFoundException
-     *         Indicates that a requested resource is not found.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
      * @throws InternalServerException
      *         The request processing has failed because of an unknown error, exception, or failure with an internal
      *         server.
-     * @throws ThrottlingException
-     *         Indicates that the principal has crossed the throttling limits of the API operations.
-     * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
      * @sample AWSSSOAdmin.ListAccountAssignmentCreationStatus
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListAccountAssignmentCreationStatus"
      *      target="_top">AWS API Documentation</a>
@@ -679,22 +681,23 @@ public interface AWSSSOAdmin {
 
     /**
      * <p>
-     * Lists the status of the AWS account assignment deletion requests for a specified IAM Identity Center instance.
+     * Lists the status of the Amazon Web Services account assignment deletion requests for a specified IAM Identity
+     * Center instance.
      * </p>
      * 
      * @param listAccountAssignmentDeletionStatusRequest
      * @return Result of the ListAccountAssignmentDeletionStatus operation returned by the service.
-     * @throws ResourceNotFoundException
-     *         Indicates that a requested resource is not found.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
      * @throws InternalServerException
      *         The request processing has failed because of an unknown error, exception, or failure with an internal
      *         server.
-     * @throws ThrottlingException
-     *         Indicates that the principal has crossed the throttling limits of the API operations.
-     * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
      * @sample AWSSSOAdmin.ListAccountAssignmentDeletionStatus
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListAccountAssignmentDeletionStatus"
      *      target="_top">AWS API Documentation</a>
@@ -704,22 +707,22 @@ public interface AWSSSOAdmin {
 
     /**
      * <p>
-     * Lists the assignee of the specified AWS account with the specified permission set.
+     * Lists the assignee of the specified Amazon Web Services account with the specified permission set.
      * </p>
      * 
      * @param listAccountAssignmentsRequest
      * @return Result of the ListAccountAssignments operation returned by the service.
-     * @throws ResourceNotFoundException
-     *         Indicates that a requested resource is not found.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
      * @throws InternalServerException
      *         The request processing has failed because of an unknown error, exception, or failure with an internal
      *         server.
-     * @throws ThrottlingException
-     *         Indicates that the principal has crossed the throttling limits of the API operations.
-     * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
      * @sample AWSSSOAdmin.ListAccountAssignments
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListAccountAssignments"
      *      target="_top">AWS API Documentation</a>
@@ -728,22 +731,22 @@ public interface AWSSSOAdmin {
 
     /**
      * <p>
-     * Lists all the AWS accounts where the specified permission set is provisioned.
+     * Lists all the Amazon Web Services accounts where the specified permission set is provisioned.
      * </p>
      * 
      * @param listAccountsForProvisionedPermissionSetRequest
      * @return Result of the ListAccountsForProvisionedPermissionSet operation returned by the service.
-     * @throws ResourceNotFoundException
-     *         Indicates that a requested resource is not found.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
      * @throws InternalServerException
      *         The request processing has failed because of an unknown error, exception, or failure with an internal
      *         server.
-     * @throws ThrottlingException
-     *         Indicates that the principal has crossed the throttling limits of the API operations.
-     * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
      * @sample AWSSSOAdmin.ListAccountsForProvisionedPermissionSet
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListAccountsForProvisionedPermissionSet"
@@ -759,17 +762,17 @@ public interface AWSSSOAdmin {
      * 
      * @param listCustomerManagedPolicyReferencesInPermissionSetRequest
      * @return Result of the ListCustomerManagedPolicyReferencesInPermissionSet operation returned by the service.
-     * @throws ResourceNotFoundException
-     *         Indicates that a requested resource is not found.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
      * @throws InternalServerException
      *         The request processing has failed because of an unknown error, exception, or failure with an internal
      *         server.
-     * @throws ThrottlingException
-     *         Indicates that the principal has crossed the throttling limits of the API operations.
-     * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
      * @sample AWSSSOAdmin.ListCustomerManagedPolicyReferencesInPermissionSet
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListCustomerManagedPolicyReferencesInPermissionSet"
@@ -785,11 +788,11 @@ public interface AWSSSOAdmin {
      * 
      * @param listInstancesRequest
      * @return Result of the ListInstances operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
      * @throws InternalServerException
      *         The request processing has failed because of an unknown error, exception, or failure with an internal
      *         server.
-     * @throws ThrottlingException
-     *         Indicates that the principal has crossed the throttling limits of the API operations.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ValidationException
@@ -802,22 +805,22 @@ public interface AWSSSOAdmin {
 
     /**
      * <p>
-     * Lists the AWS managed policy that is attached to a specified permission set.
+     * Lists the Amazon Web Services managed policy that is attached to a specified permission set.
      * </p>
      * 
      * @param listManagedPoliciesInPermissionSetRequest
      * @return Result of the ListManagedPoliciesInPermissionSet operation returned by the service.
-     * @throws ResourceNotFoundException
-     *         Indicates that a requested resource is not found.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
      * @throws InternalServerException
      *         The request processing has failed because of an unknown error, exception, or failure with an internal
      *         server.
-     * @throws ThrottlingException
-     *         Indicates that the principal has crossed the throttling limits of the API operations.
-     * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
      * @sample AWSSSOAdmin.ListManagedPoliciesInPermissionSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListManagedPoliciesInPermissionSet"
      *      target="_top">AWS API Documentation</a>
@@ -832,17 +835,17 @@ public interface AWSSSOAdmin {
      * 
      * @param listPermissionSetProvisioningStatusRequest
      * @return Result of the ListPermissionSetProvisioningStatus operation returned by the service.
-     * @throws ResourceNotFoundException
-     *         Indicates that a requested resource is not found.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
      * @throws InternalServerException
      *         The request processing has failed because of an unknown error, exception, or failure with an internal
      *         server.
-     * @throws ThrottlingException
-     *         Indicates that the principal has crossed the throttling limits of the API operations.
-     * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
      * @sample AWSSSOAdmin.ListPermissionSetProvisioningStatus
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListPermissionSetProvisioningStatus"
      *      target="_top">AWS API Documentation</a>
@@ -857,17 +860,17 @@ public interface AWSSSOAdmin {
      * 
      * @param listPermissionSetsRequest
      * @return Result of the ListPermissionSets operation returned by the service.
-     * @throws ResourceNotFoundException
-     *         Indicates that a requested resource is not found.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
      * @throws InternalServerException
      *         The request processing has failed because of an unknown error, exception, or failure with an internal
      *         server.
-     * @throws ThrottlingException
-     *         Indicates that the principal has crossed the throttling limits of the API operations.
-     * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
      * @sample AWSSSOAdmin.ListPermissionSets
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListPermissionSets" target="_top">AWS
      *      API Documentation</a>
@@ -876,22 +879,22 @@ public interface AWSSSOAdmin {
 
     /**
      * <p>
-     * Lists all the permission sets that are provisioned to a specified AWS account.
+     * Lists all the permission sets that are provisioned to a specified Amazon Web Services account.
      * </p>
      * 
      * @param listPermissionSetsProvisionedToAccountRequest
      * @return Result of the ListPermissionSetsProvisionedToAccount operation returned by the service.
-     * @throws ResourceNotFoundException
-     *         Indicates that a requested resource is not found.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
      * @throws InternalServerException
      *         The request processing has failed because of an unknown error, exception, or failure with an internal
      *         server.
-     * @throws ThrottlingException
-     *         Indicates that the principal has crossed the throttling limits of the API operations.
-     * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
      * @sample AWSSSOAdmin.ListPermissionSetsProvisionedToAccount
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListPermissionSetsProvisionedToAccount"
      *      target="_top">AWS API Documentation</a>
@@ -906,17 +909,17 @@ public interface AWSSSOAdmin {
      * 
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
-     * @throws ResourceNotFoundException
-     *         Indicates that a requested resource is not found.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
      * @throws InternalServerException
      *         The request processing has failed because of an unknown error, exception, or failure with an internal
      *         server.
-     * @throws ThrottlingException
-     *         Indicates that the principal has crossed the throttling limits of the API operations.
-     * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
      * @sample AWSSSOAdmin.ListTagsForResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListTagsForResource" target="_top">AWS
      *      API Documentation</a>
@@ -930,17 +933,17 @@ public interface AWSSSOAdmin {
      * 
      * @param provisionPermissionSetRequest
      * @return Result of the ProvisionPermissionSet operation returned by the service.
-     * @throws ResourceNotFoundException
-     *         Indicates that a requested resource is not found.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
      * @throws InternalServerException
      *         The request processing has failed because of an unknown error, exception, or failure with an internal
      *         server.
-     * @throws ThrottlingException
-     *         Indicates that the principal has crossed the throttling limits of the API operations.
-     * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
      * @throws ConflictException
      *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
      *         previous write did not have time to propagate to the host serving the current request. A retry (with
@@ -965,19 +968,19 @@ public interface AWSSSOAdmin {
      * 
      * @param putInlinePolicyToPermissionSetRequest
      * @return Result of the PutInlinePolicyToPermissionSet operation returned by the service.
-     * @throws ResourceNotFoundException
-     *         Indicates that a requested resource is not found.
-     * @throws InternalServerException
-     *         The request processing has failed because of an unknown error, exception, or failure with an internal
-     *         server.
      * @throws ServiceQuotaExceededException
      *         Indicates that the principal has crossed the permitted number of resources that can be created.
      * @throws ThrottlingException
      *         Indicates that the principal has crossed the throttling limits of the API operations.
-     * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
      * @throws ConflictException
      *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
      *         previous write did not have time to propagate to the host serving the current request. A retry (with
@@ -990,23 +993,23 @@ public interface AWSSSOAdmin {
 
     /**
      * <p>
-     * Attaches an AWS managed or customer managed policy to the specified <a>PermissionSet</a> as a permissions
-     * boundary.
+     * Attaches an Amazon Web Services managed or customer managed policy to the specified <a>PermissionSet</a> as a
+     * permissions boundary.
      * </p>
      * 
      * @param putPermissionsBoundaryToPermissionSetRequest
      * @return Result of the PutPermissionsBoundaryToPermissionSet operation returned by the service.
-     * @throws ResourceNotFoundException
-     *         Indicates that a requested resource is not found.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
      * @throws InternalServerException
      *         The request processing has failed because of an unknown error, exception, or failure with an internal
      *         server.
-     * @throws ThrottlingException
-     *         Indicates that the principal has crossed the throttling limits of the API operations.
-     * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
      * @throws ConflictException
      *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
      *         previous write did not have time to propagate to the host serving the current request. A retry (with
@@ -1025,19 +1028,19 @@ public interface AWSSSOAdmin {
      * 
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
-     * @throws ResourceNotFoundException
-     *         Indicates that a requested resource is not found.
-     * @throws InternalServerException
-     *         The request processing has failed because of an unknown error, exception, or failure with an internal
-     *         server.
      * @throws ServiceQuotaExceededException
      *         Indicates that the principal has crossed the permitted number of resources that can be created.
      * @throws ThrottlingException
      *         Indicates that the principal has crossed the throttling limits of the API operations.
-     * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
      * @throws ConflictException
      *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
      *         previous write did not have time to propagate to the host serving the current request. A retry (with
@@ -1055,17 +1058,17 @@ public interface AWSSSOAdmin {
      * 
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
-     * @throws ResourceNotFoundException
-     *         Indicates that a requested resource is not found.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
      * @throws InternalServerException
      *         The request processing has failed because of an unknown error, exception, or failure with an internal
      *         server.
-     * @throws ThrottlingException
-     *         Indicates that the principal has crossed the throttling limits of the API operations.
-     * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
      * @throws ConflictException
      *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
      *         previous write did not have time to propagate to the host serving the current request. A retry (with
@@ -1089,17 +1092,17 @@ public interface AWSSSOAdmin {
      * 
      * @param updateInstanceAccessControlAttributeConfigurationRequest
      * @return Result of the UpdateInstanceAccessControlAttributeConfiguration operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
      * @throws InternalServerException
      *         The request processing has failed because of an unknown error, exception, or failure with an internal
      *         server.
-     * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
-     * @throws ThrottlingException
-     *         Indicates that the principal has crossed the throttling limits of the API operations.
-     * @throws ValidationException
-     *         The request failed because it contains a syntax error.
      * @throws ResourceNotFoundException
      *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
      * @throws ConflictException
      *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
      *         previous write did not have time to propagate to the host serving the current request. A retry (with
@@ -1119,17 +1122,17 @@ public interface AWSSSOAdmin {
      * 
      * @param updatePermissionSetRequest
      * @return Result of the UpdatePermissionSet operation returned by the service.
-     * @throws ResourceNotFoundException
-     *         Indicates that a requested resource is not found.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
      * @throws InternalServerException
      *         The request processing has failed because of an unknown error, exception, or failure with an internal
      *         server.
-     * @throws ThrottlingException
-     *         Indicates that the principal has crossed the throttling limits of the API operations.
-     * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
      * @throws ConflictException
      *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
      *         previous write did not have time to propagate to the host serving the current request. A retry (with

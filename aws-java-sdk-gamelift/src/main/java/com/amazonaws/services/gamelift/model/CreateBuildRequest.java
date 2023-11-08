@@ -54,11 +54,18 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
     private S3Location storageLocation;
     /**
      * <p>
-     * The operating system that you built the game server binaries to run on. This value determines the type of fleet
-     * resources that you can use for this build. If your game build contains multiple executables, they all must run on
-     * the same operating system. If an operating system isn't specified when creating a build, Amazon GameLift uses the
-     * default value (WINDOWS_2012). This value can't be changed later.
+     * The operating system that your game server binaries run on. This value determines the type of fleet resources
+     * that you use for this build. If your game build contains multiple executables, they all must run on the same
+     * operating system. You must specify a valid operating system in this request. There is no default value. You can't
+     * change a build's operating system later.
      * </p>
+     * <note>
+     * <p>
+     * If you have active fleets using the Windows Server 2012 operating system, you can continue to create new builds
+     * using this OS until October 10, 2023, when Microsoft ends its support. All others must use Windows Server 2016
+     * when creating new Windows-based builds.
+     * </p>
+     * </note>
      */
     private String operatingSystem;
     /**
@@ -259,17 +266,29 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The operating system that you built the game server binaries to run on. This value determines the type of fleet
-     * resources that you can use for this build. If your game build contains multiple executables, they all must run on
-     * the same operating system. If an operating system isn't specified when creating a build, Amazon GameLift uses the
-     * default value (WINDOWS_2012). This value can't be changed later.
+     * The operating system that your game server binaries run on. This value determines the type of fleet resources
+     * that you use for this build. If your game build contains multiple executables, they all must run on the same
+     * operating system. You must specify a valid operating system in this request. There is no default value. You can't
+     * change a build's operating system later.
      * </p>
+     * <note>
+     * <p>
+     * If you have active fleets using the Windows Server 2012 operating system, you can continue to create new builds
+     * using this OS until October 10, 2023, when Microsoft ends its support. All others must use Windows Server 2016
+     * when creating new Windows-based builds.
+     * </p>
+     * </note>
      * 
      * @param operatingSystem
-     *        The operating system that you built the game server binaries to run on. This value determines the type of
-     *        fleet resources that you can use for this build. If your game build contains multiple executables, they
-     *        all must run on the same operating system. If an operating system isn't specified when creating a build,
-     *        Amazon GameLift uses the default value (WINDOWS_2012). This value can't be changed later.
+     *        The operating system that your game server binaries run on. This value determines the type of fleet
+     *        resources that you use for this build. If your game build contains multiple executables, they all must run
+     *        on the same operating system. You must specify a valid operating system in this request. There is no
+     *        default value. You can't change a build's operating system later.</p> <note>
+     *        <p>
+     *        If you have active fleets using the Windows Server 2012 operating system, you can continue to create new
+     *        builds using this OS until October 10, 2023, when Microsoft ends its support. All others must use Windows
+     *        Server 2016 when creating new Windows-based builds.
+     *        </p>
      * @see OperatingSystem
      */
 
@@ -279,16 +298,28 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The operating system that you built the game server binaries to run on. This value determines the type of fleet
-     * resources that you can use for this build. If your game build contains multiple executables, they all must run on
-     * the same operating system. If an operating system isn't specified when creating a build, Amazon GameLift uses the
-     * default value (WINDOWS_2012). This value can't be changed later.
+     * The operating system that your game server binaries run on. This value determines the type of fleet resources
+     * that you use for this build. If your game build contains multiple executables, they all must run on the same
+     * operating system. You must specify a valid operating system in this request. There is no default value. You can't
+     * change a build's operating system later.
      * </p>
+     * <note>
+     * <p>
+     * If you have active fleets using the Windows Server 2012 operating system, you can continue to create new builds
+     * using this OS until October 10, 2023, when Microsoft ends its support. All others must use Windows Server 2016
+     * when creating new Windows-based builds.
+     * </p>
+     * </note>
      * 
-     * @return The operating system that you built the game server binaries to run on. This value determines the type of
-     *         fleet resources that you can use for this build. If your game build contains multiple executables, they
-     *         all must run on the same operating system. If an operating system isn't specified when creating a build,
-     *         Amazon GameLift uses the default value (WINDOWS_2012). This value can't be changed later.
+     * @return The operating system that your game server binaries run on. This value determines the type of fleet
+     *         resources that you use for this build. If your game build contains multiple executables, they all must
+     *         run on the same operating system. You must specify a valid operating system in this request. There is no
+     *         default value. You can't change a build's operating system later.</p> <note>
+     *         <p>
+     *         If you have active fleets using the Windows Server 2012 operating system, you can continue to create new
+     *         builds using this OS until October 10, 2023, when Microsoft ends its support. All others must use Windows
+     *         Server 2016 when creating new Windows-based builds.
+     *         </p>
      * @see OperatingSystem
      */
 
@@ -298,17 +329,29 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The operating system that you built the game server binaries to run on. This value determines the type of fleet
-     * resources that you can use for this build. If your game build contains multiple executables, they all must run on
-     * the same operating system. If an operating system isn't specified when creating a build, Amazon GameLift uses the
-     * default value (WINDOWS_2012). This value can't be changed later.
+     * The operating system that your game server binaries run on. This value determines the type of fleet resources
+     * that you use for this build. If your game build contains multiple executables, they all must run on the same
+     * operating system. You must specify a valid operating system in this request. There is no default value. You can't
+     * change a build's operating system later.
      * </p>
+     * <note>
+     * <p>
+     * If you have active fleets using the Windows Server 2012 operating system, you can continue to create new builds
+     * using this OS until October 10, 2023, when Microsoft ends its support. All others must use Windows Server 2016
+     * when creating new Windows-based builds.
+     * </p>
+     * </note>
      * 
      * @param operatingSystem
-     *        The operating system that you built the game server binaries to run on. This value determines the type of
-     *        fleet resources that you can use for this build. If your game build contains multiple executables, they
-     *        all must run on the same operating system. If an operating system isn't specified when creating a build,
-     *        Amazon GameLift uses the default value (WINDOWS_2012). This value can't be changed later.
+     *        The operating system that your game server binaries run on. This value determines the type of fleet
+     *        resources that you use for this build. If your game build contains multiple executables, they all must run
+     *        on the same operating system. You must specify a valid operating system in this request. There is no
+     *        default value. You can't change a build's operating system later.</p> <note>
+     *        <p>
+     *        If you have active fleets using the Windows Server 2012 operating system, you can continue to create new
+     *        builds using this OS until October 10, 2023, when Microsoft ends its support. All others must use Windows
+     *        Server 2016 when creating new Windows-based builds.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperatingSystem
      */
@@ -320,17 +363,29 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The operating system that you built the game server binaries to run on. This value determines the type of fleet
-     * resources that you can use for this build. If your game build contains multiple executables, they all must run on
-     * the same operating system. If an operating system isn't specified when creating a build, Amazon GameLift uses the
-     * default value (WINDOWS_2012). This value can't be changed later.
+     * The operating system that your game server binaries run on. This value determines the type of fleet resources
+     * that you use for this build. If your game build contains multiple executables, they all must run on the same
+     * operating system. You must specify a valid operating system in this request. There is no default value. You can't
+     * change a build's operating system later.
      * </p>
+     * <note>
+     * <p>
+     * If you have active fleets using the Windows Server 2012 operating system, you can continue to create new builds
+     * using this OS until October 10, 2023, when Microsoft ends its support. All others must use Windows Server 2016
+     * when creating new Windows-based builds.
+     * </p>
+     * </note>
      * 
      * @param operatingSystem
-     *        The operating system that you built the game server binaries to run on. This value determines the type of
-     *        fleet resources that you can use for this build. If your game build contains multiple executables, they
-     *        all must run on the same operating system. If an operating system isn't specified when creating a build,
-     *        Amazon GameLift uses the default value (WINDOWS_2012). This value can't be changed later.
+     *        The operating system that your game server binaries run on. This value determines the type of fleet
+     *        resources that you use for this build. If your game build contains multiple executables, they all must run
+     *        on the same operating system. You must specify a valid operating system in this request. There is no
+     *        default value. You can't change a build's operating system later.</p> <note>
+     *        <p>
+     *        If you have active fleets using the Windows Server 2012 operating system, you can continue to create new
+     *        builds using this OS until October 10, 2023, when Microsoft ends its support. All others must use Windows
+     *        Server 2016 when creating new Windows-based builds.
+     *        </p>
      * @see OperatingSystem
      */
 
@@ -340,17 +395,29 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The operating system that you built the game server binaries to run on. This value determines the type of fleet
-     * resources that you can use for this build. If your game build contains multiple executables, they all must run on
-     * the same operating system. If an operating system isn't specified when creating a build, Amazon GameLift uses the
-     * default value (WINDOWS_2012). This value can't be changed later.
+     * The operating system that your game server binaries run on. This value determines the type of fleet resources
+     * that you use for this build. If your game build contains multiple executables, they all must run on the same
+     * operating system. You must specify a valid operating system in this request. There is no default value. You can't
+     * change a build's operating system later.
      * </p>
+     * <note>
+     * <p>
+     * If you have active fleets using the Windows Server 2012 operating system, you can continue to create new builds
+     * using this OS until October 10, 2023, when Microsoft ends its support. All others must use Windows Server 2016
+     * when creating new Windows-based builds.
+     * </p>
+     * </note>
      * 
      * @param operatingSystem
-     *        The operating system that you built the game server binaries to run on. This value determines the type of
-     *        fleet resources that you can use for this build. If your game build contains multiple executables, they
-     *        all must run on the same operating system. If an operating system isn't specified when creating a build,
-     *        Amazon GameLift uses the default value (WINDOWS_2012). This value can't be changed later.
+     *        The operating system that your game server binaries run on. This value determines the type of fleet
+     *        resources that you use for this build. If your game build contains multiple executables, they all must run
+     *        on the same operating system. You must specify a valid operating system in this request. There is no
+     *        default value. You can't change a build's operating system later.</p> <note>
+     *        <p>
+     *        If you have active fleets using the Windows Server 2012 operating system, you can continue to create new
+     *        builds using this OS until October 10, 2023, when Microsoft ends its support. All others must use Windows
+     *        Server 2016 when creating new Windows-based builds.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperatingSystem
      */

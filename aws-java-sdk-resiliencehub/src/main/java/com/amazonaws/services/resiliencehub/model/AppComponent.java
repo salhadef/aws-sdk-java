@@ -51,13 +51,13 @@ public class AppComponent implements Serializable, Cloneable, StructuredPojo {
     private java.util.Map<String, java.util.List<String>> additionalInfo;
     /**
      * <p>
-     * Unique identifier of the Application Component.
+     * Identifier of the Application Component.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The name of the Application Component.
+     * Name of the Application Component.
      * </p>
      */
     private String name;
@@ -222,11 +222,11 @@ public class AppComponent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier of the Application Component.
+     * Identifier of the Application Component.
      * </p>
      * 
      * @param id
-     *        Unique identifier of the Application Component.
+     *        Identifier of the Application Component.
      */
 
     public void setId(String id) {
@@ -235,10 +235,10 @@ public class AppComponent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier of the Application Component.
+     * Identifier of the Application Component.
      * </p>
      * 
-     * @return Unique identifier of the Application Component.
+     * @return Identifier of the Application Component.
      */
 
     public String getId() {
@@ -247,11 +247,11 @@ public class AppComponent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier of the Application Component.
+     * Identifier of the Application Component.
      * </p>
      * 
      * @param id
-     *        Unique identifier of the Application Component.
+     *        Identifier of the Application Component.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -262,11 +262,11 @@ public class AppComponent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the Application Component.
+     * Name of the Application Component.
      * </p>
      * 
      * @param name
-     *        The name of the Application Component.
+     *        Name of the Application Component.
      */
 
     public void setName(String name) {
@@ -275,10 +275,10 @@ public class AppComponent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the Application Component.
+     * Name of the Application Component.
      * </p>
      * 
-     * @return The name of the Application Component.
+     * @return Name of the Application Component.
      */
 
     public String getName() {
@@ -287,11 +287,11 @@ public class AppComponent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the Application Component.
+     * Name of the Application Component.
      * </p>
      * 
      * @param name
-     *        The name of the Application Component.
+     *        Name of the Application Component.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

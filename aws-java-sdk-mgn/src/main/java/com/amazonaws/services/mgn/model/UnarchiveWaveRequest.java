@@ -27,10 +27,56 @@ public class UnarchiveWaveRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
+     * Account ID.
+     * </p>
+     */
+    private String accountID;
+    /**
+     * <p>
      * Wave ID.
      * </p>
      */
     private String waveID;
+
+    /**
+     * <p>
+     * Account ID.
+     * </p>
+     * 
+     * @param accountID
+     *        Account ID.
+     */
+
+    public void setAccountID(String accountID) {
+        this.accountID = accountID;
+    }
+
+    /**
+     * <p>
+     * Account ID.
+     * </p>
+     * 
+     * @return Account ID.
+     */
+
+    public String getAccountID() {
+        return this.accountID;
+    }
+
+    /**
+     * <p>
+     * Account ID.
+     * </p>
+     * 
+     * @param accountID
+     *        Account ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UnarchiveWaveRequest withAccountID(String accountID) {
+        setAccountID(accountID);
+        return this;
+    }
 
     /**
      * <p>
@@ -84,6 +130,8 @@ public class UnarchiveWaveRequest extends com.amazonaws.AmazonWebServiceRequest 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAccountID() != null)
+            sb.append("AccountID: ").append(getAccountID()).append(",");
         if (getWaveID() != null)
             sb.append("WaveID: ").append(getWaveID());
         sb.append("}");
@@ -100,6 +148,10 @@ public class UnarchiveWaveRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (obj instanceof UnarchiveWaveRequest == false)
             return false;
         UnarchiveWaveRequest other = (UnarchiveWaveRequest) obj;
+        if (other.getAccountID() == null ^ this.getAccountID() == null)
+            return false;
+        if (other.getAccountID() != null && other.getAccountID().equals(this.getAccountID()) == false)
+            return false;
         if (other.getWaveID() == null ^ this.getWaveID() == null)
             return false;
         if (other.getWaveID() != null && other.getWaveID().equals(this.getWaveID()) == false)
@@ -112,6 +164,7 @@ public class UnarchiveWaveRequest extends com.amazonaws.AmazonWebServiceRequest 
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAccountID() == null) ? 0 : getAccountID().hashCode());
         hashCode = prime * hashCode + ((getWaveID() == null) ? 0 : getWaveID().hashCode());
         return hashCode;
     }

@@ -119,6 +119,11 @@ public class LoadBalancerStaxUnmarshaller implements Unmarshaller<LoadBalancer, 
                     loadBalancer.setCustomerOwnedIpv4Pool(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("EnforceSecurityGroupInboundRulesOnPrivateLinkTraffic", targetDepth)) {
+                    loadBalancer.setEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return loadBalancer;

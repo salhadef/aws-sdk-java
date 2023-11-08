@@ -27,7 +27,7 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The database engine to return.
+     * The database engine to return version details for.
      * </p>
      * <p>
      * Valid Values:
@@ -108,7 +108,7 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
     private String engine;
     /**
      * <p>
-     * The database engine version to return.
+     * A specific database engine version to return details for.
      * </p>
      * <p>
      * Example: <code>5.1.49</code>
@@ -125,7 +125,7 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * If supplied, must match an existing DBParameterGroupFamily.
+     * If supplied, must match an existing DB parameter group family.
      * </p>
      * </li>
      * </ul>
@@ -234,50 +234,50 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
     private String marker;
     /**
      * <p>
-     * A value that indicates whether only the default version of the specified engine or engine and major version
-     * combination is returned.
+     * Specifies whether to return only the default version of the specified engine or the engine and major version
+     * combination.
      * </p>
      */
     private Boolean defaultOnly;
     /**
      * <p>
-     * A value that indicates whether to list the supported character sets for each engine version.
+     * Specifies whether to list the supported character sets for each engine version.
      * </p>
      * <p>
      * If this parameter is enabled and the requested engine supports the <code>CharacterSetName</code> parameter for
      * <code>CreateDBInstance</code>, the response includes a list of supported character sets for each engine version.
      * </p>
      * <p>
-     * For RDS Custom, the default is not to list supported character sets. If you set
-     * <code>ListSupportedCharacterSets</code> to <code>true</code>, RDS Custom returns no results.
+     * For RDS Custom, the default is not to list supported character sets. If you enable this parameter, RDS Custom
+     * returns no results.
      * </p>
      */
     private Boolean listSupportedCharacterSets;
     /**
      * <p>
-     * A value that indicates whether to list the supported time zones for each engine version.
+     * Specifies whether to list the supported time zones for each engine version.
      * </p>
      * <p>
      * If this parameter is enabled and the requested engine supports the <code>TimeZone</code> parameter for
      * <code>CreateDBInstance</code>, the response includes a list of supported time zones for each engine version.
      * </p>
      * <p>
-     * For RDS Custom, the default is not to list supported time zones. If you set <code>ListSupportedTimezones</code>
-     * to <code>true</code>, RDS Custom returns no results.
+     * For RDS Custom, the default is not to list supported time zones. If you enable this parameter, RDS Custom returns
+     * no results.
      * </p>
      */
     private Boolean listSupportedTimezones;
     /**
      * <p>
-     * A value that indicates whether to include engine versions that aren't available in the list. The default is to
-     * list only available engine versions.
+     * Specifies whether to also list the engine versions that aren't available. The default is to list only available
+     * engine versions.
      * </p>
      */
     private Boolean includeAll;
 
     /**
      * <p>
-     * The database engine to return.
+     * The database engine to return version details for.
      * </p>
      * <p>
      * Valid Values:
@@ -356,7 +356,7 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
      * </ul>
      * 
      * @param engine
-     *        The database engine to return.</p>
+     *        The database engine to return version details for.</p>
      *        <p>
      *        Valid Values:
      *        </p>
@@ -439,7 +439,7 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The database engine to return.
+     * The database engine to return version details for.
      * </p>
      * <p>
      * Valid Values:
@@ -517,7 +517,7 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * </ul>
      * 
-     * @return The database engine to return.</p>
+     * @return The database engine to return version details for.</p>
      *         <p>
      *         Valid Values:
      *         </p>
@@ -600,7 +600,7 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The database engine to return.
+     * The database engine to return version details for.
      * </p>
      * <p>
      * Valid Values:
@@ -679,7 +679,7 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
      * </ul>
      * 
      * @param engine
-     *        The database engine to return.</p>
+     *        The database engine to return version details for.</p>
      *        <p>
      *        Valid Values:
      *        </p>
@@ -764,14 +764,14 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The database engine version to return.
+     * A specific database engine version to return details for.
      * </p>
      * <p>
      * Example: <code>5.1.49</code>
      * </p>
      * 
      * @param engineVersion
-     *        The database engine version to return.</p>
+     *        A specific database engine version to return details for.</p>
      *        <p>
      *        Example: <code>5.1.49</code>
      */
@@ -782,13 +782,13 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The database engine version to return.
+     * A specific database engine version to return details for.
      * </p>
      * <p>
      * Example: <code>5.1.49</code>
      * </p>
      * 
-     * @return The database engine version to return.</p>
+     * @return A specific database engine version to return details for.</p>
      *         <p>
      *         Example: <code>5.1.49</code>
      */
@@ -799,14 +799,14 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The database engine version to return.
+     * A specific database engine version to return details for.
      * </p>
      * <p>
      * Example: <code>5.1.49</code>
      * </p>
      * 
      * @param engineVersion
-     *        The database engine version to return.</p>
+     *        A specific database engine version to return details for.</p>
      *        <p>
      *        Example: <code>5.1.49</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -827,7 +827,7 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * If supplied, must match an existing DBParameterGroupFamily.
+     * If supplied, must match an existing DB parameter group family.
      * </p>
      * </li>
      * </ul>
@@ -840,7 +840,7 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
      *        <ul>
      *        <li>
      *        <p>
-     *        If supplied, must match an existing DBParameterGroupFamily.
+     *        If supplied, must match an existing DB parameter group family.
      *        </p>
      *        </li>
      */
@@ -859,7 +859,7 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * If supplied, must match an existing DBParameterGroupFamily.
+     * If supplied, must match an existing DB parameter group family.
      * </p>
      * </li>
      * </ul>
@@ -871,7 +871,7 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
      *         <ul>
      *         <li>
      *         <p>
-     *         If supplied, must match an existing DBParameterGroupFamily.
+     *         If supplied, must match an existing DB parameter group family.
      *         </p>
      *         </li>
      */
@@ -890,7 +890,7 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * If supplied, must match an existing DBParameterGroupFamily.
+     * If supplied, must match an existing DB parameter group family.
      * </p>
      * </li>
      * </ul>
@@ -903,7 +903,7 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
      *        <ul>
      *        <li>
      *        <p>
-     *        If supplied, must match an existing DBParameterGroupFamily.
+     *        If supplied, must match an existing DB parameter group family.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1708,13 +1708,13 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A value that indicates whether only the default version of the specified engine or engine and major version
-     * combination is returned.
+     * Specifies whether to return only the default version of the specified engine or the engine and major version
+     * combination.
      * </p>
      * 
      * @param defaultOnly
-     *        A value that indicates whether only the default version of the specified engine or engine and major
-     *        version combination is returned.
+     *        Specifies whether to return only the default version of the specified engine or the engine and major
+     *        version combination.
      */
 
     public void setDefaultOnly(Boolean defaultOnly) {
@@ -1723,12 +1723,12 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A value that indicates whether only the default version of the specified engine or engine and major version
-     * combination is returned.
+     * Specifies whether to return only the default version of the specified engine or the engine and major version
+     * combination.
      * </p>
      * 
-     * @return A value that indicates whether only the default version of the specified engine or engine and major
-     *         version combination is returned.
+     * @return Specifies whether to return only the default version of the specified engine or the engine and major
+     *         version combination.
      */
 
     public Boolean getDefaultOnly() {
@@ -1737,13 +1737,13 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A value that indicates whether only the default version of the specified engine or engine and major version
-     * combination is returned.
+     * Specifies whether to return only the default version of the specified engine or the engine and major version
+     * combination.
      * </p>
      * 
      * @param defaultOnly
-     *        A value that indicates whether only the default version of the specified engine or engine and major
-     *        version combination is returned.
+     *        Specifies whether to return only the default version of the specified engine or the engine and major
+     *        version combination.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1754,12 +1754,12 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A value that indicates whether only the default version of the specified engine or engine and major version
-     * combination is returned.
+     * Specifies whether to return only the default version of the specified engine or the engine and major version
+     * combination.
      * </p>
      * 
-     * @return A value that indicates whether only the default version of the specified engine or engine and major
-     *         version combination is returned.
+     * @return Specifies whether to return only the default version of the specified engine or the engine and major
+     *         version combination.
      */
 
     public Boolean isDefaultOnly() {
@@ -1768,27 +1768,27 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A value that indicates whether to list the supported character sets for each engine version.
+     * Specifies whether to list the supported character sets for each engine version.
      * </p>
      * <p>
      * If this parameter is enabled and the requested engine supports the <code>CharacterSetName</code> parameter for
      * <code>CreateDBInstance</code>, the response includes a list of supported character sets for each engine version.
      * </p>
      * <p>
-     * For RDS Custom, the default is not to list supported character sets. If you set
-     * <code>ListSupportedCharacterSets</code> to <code>true</code>, RDS Custom returns no results.
+     * For RDS Custom, the default is not to list supported character sets. If you enable this parameter, RDS Custom
+     * returns no results.
      * </p>
      * 
      * @param listSupportedCharacterSets
-     *        A value that indicates whether to list the supported character sets for each engine version.</p>
+     *        Specifies whether to list the supported character sets for each engine version.</p>
      *        <p>
      *        If this parameter is enabled and the requested engine supports the <code>CharacterSetName</code> parameter
      *        for <code>CreateDBInstance</code>, the response includes a list of supported character sets for each
      *        engine version.
      *        </p>
      *        <p>
-     *        For RDS Custom, the default is not to list supported character sets. If you set
-     *        <code>ListSupportedCharacterSets</code> to <code>true</code>, RDS Custom returns no results.
+     *        For RDS Custom, the default is not to list supported character sets. If you enable this parameter, RDS
+     *        Custom returns no results.
      */
 
     public void setListSupportedCharacterSets(Boolean listSupportedCharacterSets) {
@@ -1797,26 +1797,26 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A value that indicates whether to list the supported character sets for each engine version.
+     * Specifies whether to list the supported character sets for each engine version.
      * </p>
      * <p>
      * If this parameter is enabled and the requested engine supports the <code>CharacterSetName</code> parameter for
      * <code>CreateDBInstance</code>, the response includes a list of supported character sets for each engine version.
      * </p>
      * <p>
-     * For RDS Custom, the default is not to list supported character sets. If you set
-     * <code>ListSupportedCharacterSets</code> to <code>true</code>, RDS Custom returns no results.
+     * For RDS Custom, the default is not to list supported character sets. If you enable this parameter, RDS Custom
+     * returns no results.
      * </p>
      * 
-     * @return A value that indicates whether to list the supported character sets for each engine version.</p>
+     * @return Specifies whether to list the supported character sets for each engine version.</p>
      *         <p>
      *         If this parameter is enabled and the requested engine supports the <code>CharacterSetName</code>
      *         parameter for <code>CreateDBInstance</code>, the response includes a list of supported character sets for
      *         each engine version.
      *         </p>
      *         <p>
-     *         For RDS Custom, the default is not to list supported character sets. If you set
-     *         <code>ListSupportedCharacterSets</code> to <code>true</code>, RDS Custom returns no results.
+     *         For RDS Custom, the default is not to list supported character sets. If you enable this parameter, RDS
+     *         Custom returns no results.
      */
 
     public Boolean getListSupportedCharacterSets() {
@@ -1825,27 +1825,27 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A value that indicates whether to list the supported character sets for each engine version.
+     * Specifies whether to list the supported character sets for each engine version.
      * </p>
      * <p>
      * If this parameter is enabled and the requested engine supports the <code>CharacterSetName</code> parameter for
      * <code>CreateDBInstance</code>, the response includes a list of supported character sets for each engine version.
      * </p>
      * <p>
-     * For RDS Custom, the default is not to list supported character sets. If you set
-     * <code>ListSupportedCharacterSets</code> to <code>true</code>, RDS Custom returns no results.
+     * For RDS Custom, the default is not to list supported character sets. If you enable this parameter, RDS Custom
+     * returns no results.
      * </p>
      * 
      * @param listSupportedCharacterSets
-     *        A value that indicates whether to list the supported character sets for each engine version.</p>
+     *        Specifies whether to list the supported character sets for each engine version.</p>
      *        <p>
      *        If this parameter is enabled and the requested engine supports the <code>CharacterSetName</code> parameter
      *        for <code>CreateDBInstance</code>, the response includes a list of supported character sets for each
      *        engine version.
      *        </p>
      *        <p>
-     *        For RDS Custom, the default is not to list supported character sets. If you set
-     *        <code>ListSupportedCharacterSets</code> to <code>true</code>, RDS Custom returns no results.
+     *        For RDS Custom, the default is not to list supported character sets. If you enable this parameter, RDS
+     *        Custom returns no results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1856,26 +1856,26 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A value that indicates whether to list the supported character sets for each engine version.
+     * Specifies whether to list the supported character sets for each engine version.
      * </p>
      * <p>
      * If this parameter is enabled and the requested engine supports the <code>CharacterSetName</code> parameter for
      * <code>CreateDBInstance</code>, the response includes a list of supported character sets for each engine version.
      * </p>
      * <p>
-     * For RDS Custom, the default is not to list supported character sets. If you set
-     * <code>ListSupportedCharacterSets</code> to <code>true</code>, RDS Custom returns no results.
+     * For RDS Custom, the default is not to list supported character sets. If you enable this parameter, RDS Custom
+     * returns no results.
      * </p>
      * 
-     * @return A value that indicates whether to list the supported character sets for each engine version.</p>
+     * @return Specifies whether to list the supported character sets for each engine version.</p>
      *         <p>
      *         If this parameter is enabled and the requested engine supports the <code>CharacterSetName</code>
      *         parameter for <code>CreateDBInstance</code>, the response includes a list of supported character sets for
      *         each engine version.
      *         </p>
      *         <p>
-     *         For RDS Custom, the default is not to list supported character sets. If you set
-     *         <code>ListSupportedCharacterSets</code> to <code>true</code>, RDS Custom returns no results.
+     *         For RDS Custom, the default is not to list supported character sets. If you enable this parameter, RDS
+     *         Custom returns no results.
      */
 
     public Boolean isListSupportedCharacterSets() {
@@ -1884,27 +1884,27 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A value that indicates whether to list the supported time zones for each engine version.
+     * Specifies whether to list the supported time zones for each engine version.
      * </p>
      * <p>
      * If this parameter is enabled and the requested engine supports the <code>TimeZone</code> parameter for
      * <code>CreateDBInstance</code>, the response includes a list of supported time zones for each engine version.
      * </p>
      * <p>
-     * For RDS Custom, the default is not to list supported time zones. If you set <code>ListSupportedTimezones</code>
-     * to <code>true</code>, RDS Custom returns no results.
+     * For RDS Custom, the default is not to list supported time zones. If you enable this parameter, RDS Custom returns
+     * no results.
      * </p>
      * 
      * @param listSupportedTimezones
-     *        A value that indicates whether to list the supported time zones for each engine version.</p>
+     *        Specifies whether to list the supported time zones for each engine version.</p>
      *        <p>
      *        If this parameter is enabled and the requested engine supports the <code>TimeZone</code> parameter for
      *        <code>CreateDBInstance</code>, the response includes a list of supported time zones for each engine
      *        version.
      *        </p>
      *        <p>
-     *        For RDS Custom, the default is not to list supported time zones. If you set
-     *        <code>ListSupportedTimezones</code> to <code>true</code>, RDS Custom returns no results.
+     *        For RDS Custom, the default is not to list supported time zones. If you enable this parameter, RDS Custom
+     *        returns no results.
      */
 
     public void setListSupportedTimezones(Boolean listSupportedTimezones) {
@@ -1913,26 +1913,26 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A value that indicates whether to list the supported time zones for each engine version.
+     * Specifies whether to list the supported time zones for each engine version.
      * </p>
      * <p>
      * If this parameter is enabled and the requested engine supports the <code>TimeZone</code> parameter for
      * <code>CreateDBInstance</code>, the response includes a list of supported time zones for each engine version.
      * </p>
      * <p>
-     * For RDS Custom, the default is not to list supported time zones. If you set <code>ListSupportedTimezones</code>
-     * to <code>true</code>, RDS Custom returns no results.
+     * For RDS Custom, the default is not to list supported time zones. If you enable this parameter, RDS Custom returns
+     * no results.
      * </p>
      * 
-     * @return A value that indicates whether to list the supported time zones for each engine version.</p>
+     * @return Specifies whether to list the supported time zones for each engine version.</p>
      *         <p>
      *         If this parameter is enabled and the requested engine supports the <code>TimeZone</code> parameter for
      *         <code>CreateDBInstance</code>, the response includes a list of supported time zones for each engine
      *         version.
      *         </p>
      *         <p>
-     *         For RDS Custom, the default is not to list supported time zones. If you set
-     *         <code>ListSupportedTimezones</code> to <code>true</code>, RDS Custom returns no results.
+     *         For RDS Custom, the default is not to list supported time zones. If you enable this parameter, RDS Custom
+     *         returns no results.
      */
 
     public Boolean getListSupportedTimezones() {
@@ -1941,27 +1941,27 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A value that indicates whether to list the supported time zones for each engine version.
+     * Specifies whether to list the supported time zones for each engine version.
      * </p>
      * <p>
      * If this parameter is enabled and the requested engine supports the <code>TimeZone</code> parameter for
      * <code>CreateDBInstance</code>, the response includes a list of supported time zones for each engine version.
      * </p>
      * <p>
-     * For RDS Custom, the default is not to list supported time zones. If you set <code>ListSupportedTimezones</code>
-     * to <code>true</code>, RDS Custom returns no results.
+     * For RDS Custom, the default is not to list supported time zones. If you enable this parameter, RDS Custom returns
+     * no results.
      * </p>
      * 
      * @param listSupportedTimezones
-     *        A value that indicates whether to list the supported time zones for each engine version.</p>
+     *        Specifies whether to list the supported time zones for each engine version.</p>
      *        <p>
      *        If this parameter is enabled and the requested engine supports the <code>TimeZone</code> parameter for
      *        <code>CreateDBInstance</code>, the response includes a list of supported time zones for each engine
      *        version.
      *        </p>
      *        <p>
-     *        For RDS Custom, the default is not to list supported time zones. If you set
-     *        <code>ListSupportedTimezones</code> to <code>true</code>, RDS Custom returns no results.
+     *        For RDS Custom, the default is not to list supported time zones. If you enable this parameter, RDS Custom
+     *        returns no results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1972,26 +1972,26 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A value that indicates whether to list the supported time zones for each engine version.
+     * Specifies whether to list the supported time zones for each engine version.
      * </p>
      * <p>
      * If this parameter is enabled and the requested engine supports the <code>TimeZone</code> parameter for
      * <code>CreateDBInstance</code>, the response includes a list of supported time zones for each engine version.
      * </p>
      * <p>
-     * For RDS Custom, the default is not to list supported time zones. If you set <code>ListSupportedTimezones</code>
-     * to <code>true</code>, RDS Custom returns no results.
+     * For RDS Custom, the default is not to list supported time zones. If you enable this parameter, RDS Custom returns
+     * no results.
      * </p>
      * 
-     * @return A value that indicates whether to list the supported time zones for each engine version.</p>
+     * @return Specifies whether to list the supported time zones for each engine version.</p>
      *         <p>
      *         If this parameter is enabled and the requested engine supports the <code>TimeZone</code> parameter for
      *         <code>CreateDBInstance</code>, the response includes a list of supported time zones for each engine
      *         version.
      *         </p>
      *         <p>
-     *         For RDS Custom, the default is not to list supported time zones. If you set
-     *         <code>ListSupportedTimezones</code> to <code>true</code>, RDS Custom returns no results.
+     *         For RDS Custom, the default is not to list supported time zones. If you enable this parameter, RDS Custom
+     *         returns no results.
      */
 
     public Boolean isListSupportedTimezones() {
@@ -2000,13 +2000,13 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A value that indicates whether to include engine versions that aren't available in the list. The default is to
-     * list only available engine versions.
+     * Specifies whether to also list the engine versions that aren't available. The default is to list only available
+     * engine versions.
      * </p>
      * 
      * @param includeAll
-     *        A value that indicates whether to include engine versions that aren't available in the list. The default
-     *        is to list only available engine versions.
+     *        Specifies whether to also list the engine versions that aren't available. The default is to list only
+     *        available engine versions.
      */
 
     public void setIncludeAll(Boolean includeAll) {
@@ -2015,12 +2015,12 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A value that indicates whether to include engine versions that aren't available in the list. The default is to
-     * list only available engine versions.
+     * Specifies whether to also list the engine versions that aren't available. The default is to list only available
+     * engine versions.
      * </p>
      * 
-     * @return A value that indicates whether to include engine versions that aren't available in the list. The default
-     *         is to list only available engine versions.
+     * @return Specifies whether to also list the engine versions that aren't available. The default is to list only
+     *         available engine versions.
      */
 
     public Boolean getIncludeAll() {
@@ -2029,13 +2029,13 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A value that indicates whether to include engine versions that aren't available in the list. The default is to
-     * list only available engine versions.
+     * Specifies whether to also list the engine versions that aren't available. The default is to list only available
+     * engine versions.
      * </p>
      * 
      * @param includeAll
-     *        A value that indicates whether to include engine versions that aren't available in the list. The default
-     *        is to list only available engine versions.
+     *        Specifies whether to also list the engine versions that aren't available. The default is to list only
+     *        available engine versions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2046,12 +2046,12 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A value that indicates whether to include engine versions that aren't available in the list. The default is to
-     * list only available engine versions.
+     * Specifies whether to also list the engine versions that aren't available. The default is to list only available
+     * engine versions.
      * </p>
      * 
-     * @return A value that indicates whether to include engine versions that aren't available in the list. The default
-     *         is to list only available engine versions.
+     * @return Specifies whether to also list the engine versions that aren't available. The default is to list only
+     *         available engine versions.
      */
 
     public Boolean isIncludeAll() {

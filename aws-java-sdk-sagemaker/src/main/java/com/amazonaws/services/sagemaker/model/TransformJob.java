@@ -176,6 +176,8 @@ public class TransformJob implements Serializable, Cloneable, StructuredPojo {
      */
     private java.util.List<Tag> tags;
 
+    private BatchDataCaptureConfig dataCaptureConfig;
+
     /**
      * <p>
      * The name of the transform job.
@@ -1360,6 +1362,32 @@ public class TransformJob implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param dataCaptureConfig
+     */
+
+    public void setDataCaptureConfig(BatchDataCaptureConfig dataCaptureConfig) {
+        this.dataCaptureConfig = dataCaptureConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public BatchDataCaptureConfig getDataCaptureConfig() {
+        return this.dataCaptureConfig;
+    }
+
+    /**
+     * @param dataCaptureConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TransformJob withDataCaptureConfig(BatchDataCaptureConfig dataCaptureConfig) {
+        setDataCaptureConfig(dataCaptureConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1412,7 +1440,9 @@ public class TransformJob implements Serializable, Cloneable, StructuredPojo {
         if (getExperimentConfig() != null)
             sb.append("ExperimentConfig: ").append(getExperimentConfig()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getDataCaptureConfig() != null)
+            sb.append("DataCaptureConfig: ").append(getDataCaptureConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -1511,6 +1541,10 @@ public class TransformJob implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getDataCaptureConfig() == null ^ this.getDataCaptureConfig() == null)
+            return false;
+        if (other.getDataCaptureConfig() != null && other.getDataCaptureConfig().equals(this.getDataCaptureConfig()) == false)
+            return false;
         return true;
     }
 
@@ -1540,6 +1574,7 @@ public class TransformJob implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDataProcessing() == null) ? 0 : getDataProcessing().hashCode());
         hashCode = prime * hashCode + ((getExperimentConfig() == null) ? 0 : getExperimentConfig().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getDataCaptureConfig() == null) ? 0 : getDataCaptureConfig().hashCode());
         return hashCode;
     }
 

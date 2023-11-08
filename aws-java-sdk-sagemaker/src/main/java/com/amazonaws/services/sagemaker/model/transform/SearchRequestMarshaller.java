@@ -39,6 +39,8 @@ public class SearchRequestMarshaller {
             .marshallLocationName("NextToken").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
+    private static final MarshallingInfo<String> CROSSACCOUNTFILTEROPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CrossAccountFilterOption").build();
 
     private static final SearchRequestMarshaller instance = new SearchRequestMarshaller();
 
@@ -62,6 +64,7 @@ public class SearchRequestMarshaller {
             protocolMarshaller.marshall(searchRequest.getSortOrder(), SORTORDER_BINDING);
             protocolMarshaller.marshall(searchRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(searchRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(searchRequest.getCrossAccountFilterOption(), CROSSACCOUNTFILTEROPTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

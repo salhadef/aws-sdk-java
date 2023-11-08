@@ -20,7 +20,9 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum WrappingKeySpec {
 
-    RSA_2048("RSA_2048");
+    RSA_2048("RSA_2048"),
+    RSA_3072("RSA_3072"),
+    RSA_4096("RSA_4096");
 
     private String value;
 

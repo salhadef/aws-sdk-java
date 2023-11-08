@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class FinalizeCutoverRequestMarshaller {
 
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("accountID").build();
     private static final MarshallingInfo<String> SOURCESERVERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceServerID").build();
 
@@ -46,6 +48,7 @@ public class FinalizeCutoverRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(finalizeCutoverRequest.getAccountID(), ACCOUNTID_BINDING);
             protocolMarshaller.marshall(finalizeCutoverRequest.getSourceServerID(), SOURCESERVERID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

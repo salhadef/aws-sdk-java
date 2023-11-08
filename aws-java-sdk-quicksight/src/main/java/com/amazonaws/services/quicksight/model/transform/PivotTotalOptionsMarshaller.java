@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.quicksight.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -41,6 +42,8 @@ public class PivotTotalOptionsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ValueCellStyle").build();
     private static final MarshallingInfo<StructuredPojo> METRICHEADERCELLSTYLE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MetricHeaderCellStyle").build();
+    private static final MarshallingInfo<List> TOTALAGGREGATIONOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TotalAggregationOptions").build();
 
     private static final PivotTotalOptionsMarshaller instance = new PivotTotalOptionsMarshaller();
 
@@ -65,6 +68,7 @@ public class PivotTotalOptionsMarshaller {
             protocolMarshaller.marshall(pivotTotalOptions.getTotalCellStyle(), TOTALCELLSTYLE_BINDING);
             protocolMarshaller.marshall(pivotTotalOptions.getValueCellStyle(), VALUECELLSTYLE_BINDING);
             protocolMarshaller.marshall(pivotTotalOptions.getMetricHeaderCellStyle(), METRICHEADERCELLSTYLE_BINDING);
+            protocolMarshaller.marshall(pivotTotalOptions.getTotalAggregationOptions(), TOTALAGGREGATIONOPTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

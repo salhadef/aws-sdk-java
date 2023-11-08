@@ -25,7 +25,7 @@ public class GetComputeAccessResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The fleet ID of compute resource.
+     * The ID of the fleet that contains the compute resource to be accessed.
      * </p>
      */
     private String fleetId;
@@ -40,14 +40,15 @@ public class GetComputeAccessResult extends com.amazonaws.AmazonWebServiceResult
     private String fleetArn;
     /**
      * <p>
-     * The name of the compute resource you requested credentials for.
+     * The identifier of the compute resource to be accessed. This value might be either a compute name or an instance
+     * ID.
      * </p>
      */
     private String computeName;
     /**
      * <p>
      * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a Amazon GameLift compute resource and uniquely identifies it. ARNs are unique across all
+     * that is assigned to an Amazon GameLift compute resource and uniquely identifies it. ARNs are unique across all
      * Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      * </p>
@@ -55,18 +56,19 @@ public class GetComputeAccessResult extends com.amazonaws.AmazonWebServiceResult
     private String computeArn;
     /**
      * <p>
-     * The access credentials for the compute resource.
+     * A set of temporary Amazon Web Services credentials for use when connecting to the compute resource with Amazon
+     * EC2 Systems Manager (SSM).
      * </p>
      */
     private Credentials credentials;
 
     /**
      * <p>
-     * The fleet ID of compute resource.
+     * The ID of the fleet that contains the compute resource to be accessed.
      * </p>
      * 
      * @param fleetId
-     *        The fleet ID of compute resource.
+     *        The ID of the fleet that contains the compute resource to be accessed.
      */
 
     public void setFleetId(String fleetId) {
@@ -75,10 +77,10 @@ public class GetComputeAccessResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The fleet ID of compute resource.
+     * The ID of the fleet that contains the compute resource to be accessed.
      * </p>
      * 
-     * @return The fleet ID of compute resource.
+     * @return The ID of the fleet that contains the compute resource to be accessed.
      */
 
     public String getFleetId() {
@@ -87,11 +89,11 @@ public class GetComputeAccessResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The fleet ID of compute resource.
+     * The ID of the fleet that contains the compute resource to be accessed.
      * </p>
      * 
      * @param fleetId
-     *        The fleet ID of compute resource.
+     *        The ID of the fleet that contains the compute resource to be accessed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -160,11 +162,13 @@ public class GetComputeAccessResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The name of the compute resource you requested credentials for.
+     * The identifier of the compute resource to be accessed. This value might be either a compute name or an instance
+     * ID.
      * </p>
      * 
      * @param computeName
-     *        The name of the compute resource you requested credentials for.
+     *        The identifier of the compute resource to be accessed. This value might be either a compute name or an
+     *        instance ID.
      */
 
     public void setComputeName(String computeName) {
@@ -173,10 +177,12 @@ public class GetComputeAccessResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The name of the compute resource you requested credentials for.
+     * The identifier of the compute resource to be accessed. This value might be either a compute name or an instance
+     * ID.
      * </p>
      * 
-     * @return The name of the compute resource you requested credentials for.
+     * @return The identifier of the compute resource to be accessed. This value might be either a compute name or an
+     *         instance ID.
      */
 
     public String getComputeName() {
@@ -185,11 +191,13 @@ public class GetComputeAccessResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The name of the compute resource you requested credentials for.
+     * The identifier of the compute resource to be accessed. This value might be either a compute name or an instance
+     * ID.
      * </p>
      * 
      * @param computeName
-     *        The name of the compute resource you requested credentials for.
+     *        The identifier of the compute resource to be accessed. This value might be either a compute name or an
+     *        instance ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -201,14 +209,14 @@ public class GetComputeAccessResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a Amazon GameLift compute resource and uniquely identifies it. ARNs are unique across all
+     * that is assigned to an Amazon GameLift compute resource and uniquely identifies it. ARNs are unique across all
      * Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      * </p>
      * 
      * @param computeArn
      *        The Amazon Resource Name (<a
-     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to an
      *        Amazon GameLift compute resource and uniquely identifies it. ARNs are unique across all Regions. Format is
      *        <code>arn:aws:gamelift:&lt;region&gt;::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      */
@@ -220,13 +228,13 @@ public class GetComputeAccessResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a Amazon GameLift compute resource and uniquely identifies it. ARNs are unique across all
+     * that is assigned to an Amazon GameLift compute resource and uniquely identifies it. ARNs are unique across all
      * Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      * </p>
      * 
      * @return The Amazon Resource Name (<a
-     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to an
      *         Amazon GameLift compute resource and uniquely identifies it. ARNs are unique across all Regions. Format
      *         is <code>arn:aws:gamelift:&lt;region&gt;::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      */
@@ -238,14 +246,14 @@ public class GetComputeAccessResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a Amazon GameLift compute resource and uniquely identifies it. ARNs are unique across all
+     * that is assigned to an Amazon GameLift compute resource and uniquely identifies it. ARNs are unique across all
      * Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      * </p>
      * 
      * @param computeArn
      *        The Amazon Resource Name (<a
-     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to an
      *        Amazon GameLift compute resource and uniquely identifies it. ARNs are unique across all Regions. Format is
      *        <code>arn:aws:gamelift:&lt;region&gt;::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -258,11 +266,13 @@ public class GetComputeAccessResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The access credentials for the compute resource.
+     * A set of temporary Amazon Web Services credentials for use when connecting to the compute resource with Amazon
+     * EC2 Systems Manager (SSM).
      * </p>
      * 
      * @param credentials
-     *        The access credentials for the compute resource.
+     *        A set of temporary Amazon Web Services credentials for use when connecting to the compute resource with
+     *        Amazon EC2 Systems Manager (SSM).
      */
 
     public void setCredentials(Credentials credentials) {
@@ -271,10 +281,12 @@ public class GetComputeAccessResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The access credentials for the compute resource.
+     * A set of temporary Amazon Web Services credentials for use when connecting to the compute resource with Amazon
+     * EC2 Systems Manager (SSM).
      * </p>
      * 
-     * @return The access credentials for the compute resource.
+     * @return A set of temporary Amazon Web Services credentials for use when connecting to the compute resource with
+     *         Amazon EC2 Systems Manager (SSM).
      */
 
     public Credentials getCredentials() {
@@ -283,11 +295,13 @@ public class GetComputeAccessResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The access credentials for the compute resource.
+     * A set of temporary Amazon Web Services credentials for use when connecting to the compute resource with Amazon
+     * EC2 Systems Manager (SSM).
      * </p>
      * 
      * @param credentials
-     *        The access credentials for the compute resource.
+     *        A set of temporary Amazon Web Services credentials for use when connecting to the compute resource with
+     *        Amazon EC2 Systems Manager (SSM).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -66,6 +66,13 @@ public class DescribeEdgeConfigurationResult extends com.amazonaws.AmazonWebServ
      * </p>
      */
     private EdgeConfig edgeConfig;
+    /**
+     * <p>
+     * An object that contains the latest status details for an edge agent's recorder and uploader jobs. Use this
+     * information to determine the current health of an edge agent.
+     * </p>
+     */
+    private EdgeAgentStatus edgeAgentStatus;
 
     /**
      * <p>
@@ -373,6 +380,52 @@ public class DescribeEdgeConfigurationResult extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * An object that contains the latest status details for an edge agent's recorder and uploader jobs. Use this
+     * information to determine the current health of an edge agent.
+     * </p>
+     * 
+     * @param edgeAgentStatus
+     *        An object that contains the latest status details for an edge agent's recorder and uploader jobs. Use this
+     *        information to determine the current health of an edge agent.
+     */
+
+    public void setEdgeAgentStatus(EdgeAgentStatus edgeAgentStatus) {
+        this.edgeAgentStatus = edgeAgentStatus;
+    }
+
+    /**
+     * <p>
+     * An object that contains the latest status details for an edge agent's recorder and uploader jobs. Use this
+     * information to determine the current health of an edge agent.
+     * </p>
+     * 
+     * @return An object that contains the latest status details for an edge agent's recorder and uploader jobs. Use
+     *         this information to determine the current health of an edge agent.
+     */
+
+    public EdgeAgentStatus getEdgeAgentStatus() {
+        return this.edgeAgentStatus;
+    }
+
+    /**
+     * <p>
+     * An object that contains the latest status details for an edge agent's recorder and uploader jobs. Use this
+     * information to determine the current health of an edge agent.
+     * </p>
+     * 
+     * @param edgeAgentStatus
+     *        An object that contains the latest status details for an edge agent's recorder and uploader jobs. Use this
+     *        information to determine the current health of an edge agent.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeEdgeConfigurationResult withEdgeAgentStatus(EdgeAgentStatus edgeAgentStatus) {
+        setEdgeAgentStatus(edgeAgentStatus);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -397,7 +450,9 @@ public class DescribeEdgeConfigurationResult extends com.amazonaws.AmazonWebServ
         if (getFailedStatusDetails() != null)
             sb.append("FailedStatusDetails: ").append(getFailedStatusDetails()).append(",");
         if (getEdgeConfig() != null)
-            sb.append("EdgeConfig: ").append(getEdgeConfig());
+            sb.append("EdgeConfig: ").append(getEdgeConfig()).append(",");
+        if (getEdgeAgentStatus() != null)
+            sb.append("EdgeAgentStatus: ").append(getEdgeAgentStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -440,6 +495,10 @@ public class DescribeEdgeConfigurationResult extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getEdgeConfig() != null && other.getEdgeConfig().equals(this.getEdgeConfig()) == false)
             return false;
+        if (other.getEdgeAgentStatus() == null ^ this.getEdgeAgentStatus() == null)
+            return false;
+        if (other.getEdgeAgentStatus() != null && other.getEdgeAgentStatus().equals(this.getEdgeAgentStatus()) == false)
+            return false;
         return true;
     }
 
@@ -455,6 +514,7 @@ public class DescribeEdgeConfigurationResult extends com.amazonaws.AmazonWebServ
         hashCode = prime * hashCode + ((getSyncStatus() == null) ? 0 : getSyncStatus().hashCode());
         hashCode = prime * hashCode + ((getFailedStatusDetails() == null) ? 0 : getFailedStatusDetails().hashCode());
         hashCode = prime * hashCode + ((getEdgeConfig() == null) ? 0 : getEdgeConfig().hashCode());
+        hashCode = prime * hashCode + ((getEdgeAgentStatus() == null) ? 0 : getEdgeAgentStatus().hashCode());
         return hashCode;
     }
 

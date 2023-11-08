@@ -108,6 +108,11 @@ public class AbstractAmazonAppflow implements AmazonAppflow {
     }
 
     @Override
+    public ResetConnectorMetadataCacheResult resetConnectorMetadataCache(ResetConnectorMetadataCacheRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartFlowResult startFlow(StartFlowRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

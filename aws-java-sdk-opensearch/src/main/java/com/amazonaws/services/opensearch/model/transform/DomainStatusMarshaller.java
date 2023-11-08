@@ -41,6 +41,8 @@ public class DomainStatusMarshaller {
             .marshallLocationName("Deleted").build();
     private static final MarshallingInfo<String> ENDPOINT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Endpoint").build();
+    private static final MarshallingInfo<String> ENDPOINTV2_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndpointV2").build();
     private static final MarshallingInfo<Map> ENDPOINTS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Endpoints").build();
     private static final MarshallingInfo<Boolean> PROCESSING_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
@@ -55,6 +57,8 @@ public class DomainStatusMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EBSOptions").build();
     private static final MarshallingInfo<String> ACCESSPOLICIES_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AccessPolicies").build();
+    private static final MarshallingInfo<String> IPADDRESSTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IPAddressType").build();
     private static final MarshallingInfo<StructuredPojo> SNAPSHOTOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SnapshotOptions").build();
     private static final MarshallingInfo<StructuredPojo> VPCOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -106,6 +110,7 @@ public class DomainStatusMarshaller {
             protocolMarshaller.marshall(domainStatus.getCreated(), CREATED_BINDING);
             protocolMarshaller.marshall(domainStatus.getDeleted(), DELETED_BINDING);
             protocolMarshaller.marshall(domainStatus.getEndpoint(), ENDPOINT_BINDING);
+            protocolMarshaller.marshall(domainStatus.getEndpointV2(), ENDPOINTV2_BINDING);
             protocolMarshaller.marshall(domainStatus.getEndpoints(), ENDPOINTS_BINDING);
             protocolMarshaller.marshall(domainStatus.getProcessing(), PROCESSING_BINDING);
             protocolMarshaller.marshall(domainStatus.getUpgradeProcessing(), UPGRADEPROCESSING_BINDING);
@@ -113,6 +118,7 @@ public class DomainStatusMarshaller {
             protocolMarshaller.marshall(domainStatus.getClusterConfig(), CLUSTERCONFIG_BINDING);
             protocolMarshaller.marshall(domainStatus.getEBSOptions(), EBSOPTIONS_BINDING);
             protocolMarshaller.marshall(domainStatus.getAccessPolicies(), ACCESSPOLICIES_BINDING);
+            protocolMarshaller.marshall(domainStatus.getIPAddressType(), IPADDRESSTYPE_BINDING);
             protocolMarshaller.marshall(domainStatus.getSnapshotOptions(), SNAPSHOTOPTIONS_BINDING);
             protocolMarshaller.marshall(domainStatus.getVPCOptions(), VPCOPTIONS_BINDING);
             protocolMarshaller.marshall(domainStatus.getCognitoOptions(), COGNITOOPTIONS_BINDING);

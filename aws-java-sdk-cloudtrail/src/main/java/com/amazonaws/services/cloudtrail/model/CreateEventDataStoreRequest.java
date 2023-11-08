@@ -57,7 +57,7 @@ public class CreateEventDataStoreRequest extends com.amazonaws.AmazonWebServiceR
     private com.amazonaws.internal.SdkInternalList<AdvancedEventSelector> advancedEventSelectors;
     /**
      * <p>
-     * Specifies whether the event data store includes events from all regions, or only from the region in which the
+     * Specifies whether the event data store includes events from all Regions, or only from the Region in which the
      * event data store is created.
      * </p>
      */
@@ -71,8 +71,18 @@ public class CreateEventDataStoreRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The retention period of the event data store, in days. You can set a retention period of up to 2557 days, the
-     * equivalent of seven years.
+     * equivalent of seven years. CloudTrail Lake determines whether to retain an event by checking if the
+     * <code>eventTime</code> of the event is within the specified retention period. For example, if you set a retention
+     * period of 90 days, CloudTrail will remove events when the <code>eventTime</code> is older than 90 days.
      * </p>
+     * <note>
+     * <p>
+     * If you plan to copy trail events to this event data store, we recommend that you consider both the age of the
+     * events that you want to copy as well as how long you want to keep the copied events in your event data store. For
+     * example, if you copy trail events that are 5 years old and specify a retention period of 7 years, the event data
+     * store will retain those events for two years.
+     * </p>
+     * </note>
      */
     private Integer retentionPeriod;
     /**
@@ -131,6 +141,12 @@ public class CreateEventDataStoreRequest extends com.amazonaws.AmazonWebServiceR
      * </ul>
      */
     private String kmsKeyId;
+    /**
+     * <p>
+     * Specifies whether the event data store should start ingesting live events. The default is true.
+     * </p>
+     */
+    private Boolean startIngestion;
 
     /**
      * <p>
@@ -387,12 +403,12 @@ public class CreateEventDataStoreRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Specifies whether the event data store includes events from all regions, or only from the region in which the
+     * Specifies whether the event data store includes events from all Regions, or only from the Region in which the
      * event data store is created.
      * </p>
      * 
      * @param multiRegionEnabled
-     *        Specifies whether the event data store includes events from all regions, or only from the region in which
+     *        Specifies whether the event data store includes events from all Regions, or only from the Region in which
      *        the event data store is created.
      */
 
@@ -402,11 +418,11 @@ public class CreateEventDataStoreRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Specifies whether the event data store includes events from all regions, or only from the region in which the
+     * Specifies whether the event data store includes events from all Regions, or only from the Region in which the
      * event data store is created.
      * </p>
      * 
-     * @return Specifies whether the event data store includes events from all regions, or only from the region in which
+     * @return Specifies whether the event data store includes events from all Regions, or only from the Region in which
      *         the event data store is created.
      */
 
@@ -416,12 +432,12 @@ public class CreateEventDataStoreRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Specifies whether the event data store includes events from all regions, or only from the region in which the
+     * Specifies whether the event data store includes events from all Regions, or only from the Region in which the
      * event data store is created.
      * </p>
      * 
      * @param multiRegionEnabled
-     *        Specifies whether the event data store includes events from all regions, or only from the region in which
+     *        Specifies whether the event data store includes events from all Regions, or only from the Region in which
      *        the event data store is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -433,11 +449,11 @@ public class CreateEventDataStoreRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Specifies whether the event data store includes events from all regions, or only from the region in which the
+     * Specifies whether the event data store includes events from all Regions, or only from the Region in which the
      * event data store is created.
      * </p>
      * 
-     * @return Specifies whether the event data store includes events from all regions, or only from the region in which
+     * @return Specifies whether the event data store includes events from all Regions, or only from the Region in which
      *         the event data store is created.
      */
 
@@ -500,12 +516,31 @@ public class CreateEventDataStoreRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The retention period of the event data store, in days. You can set a retention period of up to 2557 days, the
-     * equivalent of seven years.
+     * equivalent of seven years. CloudTrail Lake determines whether to retain an event by checking if the
+     * <code>eventTime</code> of the event is within the specified retention period. For example, if you set a retention
+     * period of 90 days, CloudTrail will remove events when the <code>eventTime</code> is older than 90 days.
      * </p>
+     * <note>
+     * <p>
+     * If you plan to copy trail events to this event data store, we recommend that you consider both the age of the
+     * events that you want to copy as well as how long you want to keep the copied events in your event data store. For
+     * example, if you copy trail events that are 5 years old and specify a retention period of 7 years, the event data
+     * store will retain those events for two years.
+     * </p>
+     * </note>
      * 
      * @param retentionPeriod
      *        The retention period of the event data store, in days. You can set a retention period of up to 2557 days,
-     *        the equivalent of seven years.
+     *        the equivalent of seven years. CloudTrail Lake determines whether to retain an event by checking if the
+     *        <code>eventTime</code> of the event is within the specified retention period. For example, if you set a
+     *        retention period of 90 days, CloudTrail will remove events when the <code>eventTime</code> is older than
+     *        90 days.</p> <note>
+     *        <p>
+     *        If you plan to copy trail events to this event data store, we recommend that you consider both the age of
+     *        the events that you want to copy as well as how long you want to keep the copied events in your event data
+     *        store. For example, if you copy trail events that are 5 years old and specify a retention period of 7
+     *        years, the event data store will retain those events for two years.
+     *        </p>
      */
 
     public void setRetentionPeriod(Integer retentionPeriod) {
@@ -515,11 +550,30 @@ public class CreateEventDataStoreRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The retention period of the event data store, in days. You can set a retention period of up to 2557 days, the
-     * equivalent of seven years.
+     * equivalent of seven years. CloudTrail Lake determines whether to retain an event by checking if the
+     * <code>eventTime</code> of the event is within the specified retention period. For example, if you set a retention
+     * period of 90 days, CloudTrail will remove events when the <code>eventTime</code> is older than 90 days.
      * </p>
+     * <note>
+     * <p>
+     * If you plan to copy trail events to this event data store, we recommend that you consider both the age of the
+     * events that you want to copy as well as how long you want to keep the copied events in your event data store. For
+     * example, if you copy trail events that are 5 years old and specify a retention period of 7 years, the event data
+     * store will retain those events for two years.
+     * </p>
+     * </note>
      * 
      * @return The retention period of the event data store, in days. You can set a retention period of up to 2557 days,
-     *         the equivalent of seven years.
+     *         the equivalent of seven years. CloudTrail Lake determines whether to retain an event by checking if the
+     *         <code>eventTime</code> of the event is within the specified retention period. For example, if you set a
+     *         retention period of 90 days, CloudTrail will remove events when the <code>eventTime</code> is older than
+     *         90 days.</p> <note>
+     *         <p>
+     *         If you plan to copy trail events to this event data store, we recommend that you consider both the age of
+     *         the events that you want to copy as well as how long you want to keep the copied events in your event
+     *         data store. For example, if you copy trail events that are 5 years old and specify a retention period of
+     *         7 years, the event data store will retain those events for two years.
+     *         </p>
      */
 
     public Integer getRetentionPeriod() {
@@ -529,12 +583,31 @@ public class CreateEventDataStoreRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The retention period of the event data store, in days. You can set a retention period of up to 2557 days, the
-     * equivalent of seven years.
+     * equivalent of seven years. CloudTrail Lake determines whether to retain an event by checking if the
+     * <code>eventTime</code> of the event is within the specified retention period. For example, if you set a retention
+     * period of 90 days, CloudTrail will remove events when the <code>eventTime</code> is older than 90 days.
      * </p>
+     * <note>
+     * <p>
+     * If you plan to copy trail events to this event data store, we recommend that you consider both the age of the
+     * events that you want to copy as well as how long you want to keep the copied events in your event data store. For
+     * example, if you copy trail events that are 5 years old and specify a retention period of 7 years, the event data
+     * store will retain those events for two years.
+     * </p>
+     * </note>
      * 
      * @param retentionPeriod
      *        The retention period of the event data store, in days. You can set a retention period of up to 2557 days,
-     *        the equivalent of seven years.
+     *        the equivalent of seven years. CloudTrail Lake determines whether to retain an event by checking if the
+     *        <code>eventTime</code> of the event is within the specified retention period. For example, if you set a
+     *        retention period of 90 days, CloudTrail will remove events when the <code>eventTime</code> is older than
+     *        90 days.</p> <note>
+     *        <p>
+     *        If you plan to copy trail events to this event data store, we recommend that you consider both the age of
+     *        the events that you want to copy as well as how long you want to keep the copied events in your event data
+     *        store. For example, if you copy trail events that are 5 years old and specify a retention period of 7
+     *        years, the event data store will retain those events for two years.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -939,6 +1012,58 @@ public class CreateEventDataStoreRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * Specifies whether the event data store should start ingesting live events. The default is true.
+     * </p>
+     * 
+     * @param startIngestion
+     *        Specifies whether the event data store should start ingesting live events. The default is true.
+     */
+
+    public void setStartIngestion(Boolean startIngestion) {
+        this.startIngestion = startIngestion;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the event data store should start ingesting live events. The default is true.
+     * </p>
+     * 
+     * @return Specifies whether the event data store should start ingesting live events. The default is true.
+     */
+
+    public Boolean getStartIngestion() {
+        return this.startIngestion;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the event data store should start ingesting live events. The default is true.
+     * </p>
+     * 
+     * @param startIngestion
+     *        Specifies whether the event data store should start ingesting live events. The default is true.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEventDataStoreRequest withStartIngestion(Boolean startIngestion) {
+        setStartIngestion(startIngestion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the event data store should start ingesting live events. The default is true.
+     * </p>
+     * 
+     * @return Specifies whether the event data store should start ingesting live events. The default is true.
+     */
+
+    public Boolean isStartIngestion() {
+        return this.startIngestion;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -965,7 +1090,9 @@ public class CreateEventDataStoreRequest extends com.amazonaws.AmazonWebServiceR
         if (getTagsList() != null)
             sb.append("TagsList: ").append(getTagsList()).append(",");
         if (getKmsKeyId() != null)
-            sb.append("KmsKeyId: ").append(getKmsKeyId());
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
+        if (getStartIngestion() != null)
+            sb.append("StartIngestion: ").append(getStartIngestion());
         sb.append("}");
         return sb.toString();
     }
@@ -1012,6 +1139,10 @@ public class CreateEventDataStoreRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
+        if (other.getStartIngestion() == null ^ this.getStartIngestion() == null)
+            return false;
+        if (other.getStartIngestion() != null && other.getStartIngestion().equals(this.getStartIngestion()) == false)
+            return false;
         return true;
     }
 
@@ -1028,6 +1159,7 @@ public class CreateEventDataStoreRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getTerminationProtectionEnabled() == null) ? 0 : getTerminationProtectionEnabled().hashCode());
         hashCode = prime * hashCode + ((getTagsList() == null) ? 0 : getTagsList().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getStartIngestion() == null) ? 0 : getStartIngestion().hashCode());
         return hashCode;
     }
 

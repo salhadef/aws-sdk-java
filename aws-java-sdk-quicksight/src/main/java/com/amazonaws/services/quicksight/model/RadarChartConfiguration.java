@@ -112,6 +112,12 @@ public class RadarChartConfiguration implements Serializable, Cloneable, Structu
      * </p>
      */
     private LegendOptions legend;
+    /**
+     * <p>
+     * The axis behavior options of a radar chart.
+     * </p>
+     */
+    private String axesRangeScale;
 
     /**
      * <p>
@@ -712,6 +718,65 @@ public class RadarChartConfiguration implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * The axis behavior options of a radar chart.
+     * </p>
+     * 
+     * @param axesRangeScale
+     *        The axis behavior options of a radar chart.
+     * @see RadarChartAxesRangeScale
+     */
+
+    public void setAxesRangeScale(String axesRangeScale) {
+        this.axesRangeScale = axesRangeScale;
+    }
+
+    /**
+     * <p>
+     * The axis behavior options of a radar chart.
+     * </p>
+     * 
+     * @return The axis behavior options of a radar chart.
+     * @see RadarChartAxesRangeScale
+     */
+
+    public String getAxesRangeScale() {
+        return this.axesRangeScale;
+    }
+
+    /**
+     * <p>
+     * The axis behavior options of a radar chart.
+     * </p>
+     * 
+     * @param axesRangeScale
+     *        The axis behavior options of a radar chart.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RadarChartAxesRangeScale
+     */
+
+    public RadarChartConfiguration withAxesRangeScale(String axesRangeScale) {
+        setAxesRangeScale(axesRangeScale);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The axis behavior options of a radar chart.
+     * </p>
+     * 
+     * @param axesRangeScale
+     *        The axis behavior options of a radar chart.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RadarChartAxesRangeScale
+     */
+
+    public RadarChartConfiguration withAxesRangeScale(RadarChartAxesRangeScale axesRangeScale) {
+        this.axesRangeScale = axesRangeScale.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -750,7 +815,9 @@ public class RadarChartConfiguration implements Serializable, Cloneable, Structu
         if (getColorLabelOptions() != null)
             sb.append("ColorLabelOptions: ").append(getColorLabelOptions()).append(",");
         if (getLegend() != null)
-            sb.append("Legend: ").append(getLegend());
+            sb.append("Legend: ").append(getLegend()).append(",");
+        if (getAxesRangeScale() != null)
+            sb.append("AxesRangeScale: ").append(getAxesRangeScale());
         sb.append("}");
         return sb.toString();
     }
@@ -822,6 +889,10 @@ public class RadarChartConfiguration implements Serializable, Cloneable, Structu
             return false;
         if (other.getLegend() != null && other.getLegend().equals(this.getLegend()) == false)
             return false;
+        if (other.getAxesRangeScale() == null ^ this.getAxesRangeScale() == null)
+            return false;
+        if (other.getAxesRangeScale() != null && other.getAxesRangeScale().equals(this.getAxesRangeScale()) == false)
+            return false;
         return true;
     }
 
@@ -844,6 +915,7 @@ public class RadarChartConfiguration implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getColorAxis() == null) ? 0 : getColorAxis().hashCode());
         hashCode = prime * hashCode + ((getColorLabelOptions() == null) ? 0 : getColorLabelOptions().hashCode());
         hashCode = prime * hashCode + ((getLegend() == null) ? 0 : getLegend().hashCode());
+        hashCode = prime * hashCode + ((getAxesRangeScale() == null) ? 0 : getAxesRangeScale().hashCode());
         return hashCode;
     }
 

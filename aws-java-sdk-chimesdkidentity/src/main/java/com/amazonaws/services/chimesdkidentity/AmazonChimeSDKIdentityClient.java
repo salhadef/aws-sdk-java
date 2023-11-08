@@ -44,6 +44,7 @@ import com.amazonaws.services.chimesdkidentity.AmazonChimeSDKIdentityClientBuild
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.chimesdkidentity.model.*;
+
 import com.amazonaws.services.chimesdkidentity.model.transform.*;
 
 /**
@@ -82,17 +83,20 @@ public class AmazonChimeSDKIdentityClient extends AmazonWebServiceClient impleme
                     .withSupportsIon(false)
                     .withContentTypeOverride("application/json")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.chimesdkidentity.model.transform.ConflictExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("UnauthorizedClientException").withExceptionUnmarshaller(
                                     com.amazonaws.services.chimesdkidentity.model.transform.UnauthorizedClientExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ThrottledClientException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.chimesdkidentity.model.transform.ThrottledClientExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.chimesdkidentity.model.transform.NotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceFailureException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.chimesdkidentity.model.transform.ServiceFailureExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.chimesdkidentity.model.transform.ConflictExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottledClientException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.chimesdkidentity.model.transform.ThrottledClientExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withExceptionUnmarshaller(
                                     com.amazonaws.services.chimesdkidentity.model.transform.ServiceUnavailableExceptionUnmarshaller.getInstance()))
@@ -105,9 +109,6 @@ public class AmazonChimeSDKIdentityClient extends AmazonWebServiceClient impleme
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("BadRequestException").withExceptionUnmarshaller(
                                     com.amazonaws.services.chimesdkidentity.model.transform.BadRequestExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServiceFailureException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.chimesdkidentity.model.transform.ServiceFailureExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.chimesdkidentity.model.AmazonChimeSDKIdentityException.class));
 
     public static AmazonChimeSDKIdentityClientBuilder builder() {

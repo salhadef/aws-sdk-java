@@ -44,6 +44,7 @@ import com.amazonaws.services.ssmsap.AWSSsmSapClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.ssmsap.model.*;
+
 import com.amazonaws.services.ssmsap.model.transform.*;
 
 /**
@@ -87,6 +88,9 @@ public class AWSSsmSapClient extends AmazonWebServiceClient implements AWSSsmSap
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ssmsap.model.transform.ValidationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnauthorizedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ssmsap.model.transform.UnauthorizedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ssmsap.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
@@ -209,6 +213,8 @@ public class AWSSsmSapClient extends AmazonWebServiceClient implements AWSSsmSap
      * 
      * @param deregisterApplicationRequest
      * @return Result of the DeregisterApplication operation returned by the service.
+     * @throws UnauthorizedException
+     *         The request is not authorized.
      * @throws ValidationException
      *         The input fails to satisfy the constraints specified by an AWS service.
      * @throws InternalServerException
@@ -329,6 +335,8 @@ public class AWSSsmSapClient extends AmazonWebServiceClient implements AWSSsmSap
      * 
      * @param getComponentRequest
      * @return Result of the GetComponent operation returned by the service.
+     * @throws UnauthorizedException
+     *         The request is not authorized.
      * @throws ValidationException
      *         The input fails to satisfy the constraints specified by an AWS service.
      * @throws InternalServerException
@@ -629,6 +637,8 @@ public class AWSSsmSapClient extends AmazonWebServiceClient implements AWSSsmSap
      * 
      * @param listComponentsRequest
      * @return Result of the ListComponents operation returned by the service.
+     * @throws UnauthorizedException
+     *         The request is not authorized.
      * @throws ResourceNotFoundException
      *         The resource is not available.
      * @throws ValidationException
@@ -944,6 +954,8 @@ public class AWSSsmSapClient extends AmazonWebServiceClient implements AWSSsmSap
      * 
      * @param registerApplicationRequest
      * @return Result of the RegisterApplication operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource is not available.
      * @throws ValidationException
      *         The input fails to satisfy the constraints specified by an AWS service.
      * @throws ConflictException
@@ -988,6 +1000,73 @@ public class AWSSsmSapClient extends AmazonWebServiceClient implements AWSSsmSap
 
             HttpResponseHandler<AmazonWebServiceResponse<RegisterApplicationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RegisterApplicationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Refreshes a registered application.
+     * </p>
+     * 
+     * @param startApplicationRefreshRequest
+     * @return Result of the StartApplicationRefresh operation returned by the service.
+     * @throws UnauthorizedException
+     *         The request is not authorized.
+     * @throws ResourceNotFoundException
+     *         The resource is not available.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ConflictException
+     *         A conflict has occurred.
+     * @throws InternalServerException
+     *         An internal error has occurred.
+     * @sample AWSSsmSap.StartApplicationRefresh
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/StartApplicationRefresh"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartApplicationRefreshResult startApplicationRefresh(StartApplicationRefreshRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartApplicationRefresh(request);
+    }
+
+    @SdkInternalApi
+    final StartApplicationRefreshResult executeStartApplicationRefresh(StartApplicationRefreshRequest startApplicationRefreshRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startApplicationRefreshRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartApplicationRefreshRequest> request = null;
+        Response<StartApplicationRefreshResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartApplicationRefreshRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startApplicationRefreshRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Ssm Sap");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartApplicationRefresh");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartApplicationRefreshResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartApplicationRefreshResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1127,10 +1206,14 @@ public class AWSSsmSapClient extends AmazonWebServiceClient implements AWSSsmSap
      * 
      * @param updateApplicationSettingsRequest
      * @return Result of the UpdateApplicationSettings operation returned by the service.
+     * @throws UnauthorizedException
+     *         The request is not authorized.
      * @throws ResourceNotFoundException
      *         The resource is not available.
      * @throws ValidationException
      *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ConflictException
+     *         A conflict has occurred.
      * @throws InternalServerException
      *         An internal error has occurred.
      * @sample AWSSsmSap.UpdateApplicationSettings

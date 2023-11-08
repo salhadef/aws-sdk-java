@@ -45,6 +45,7 @@ import com.amazonaws.services.acmpca.waiters.AWSACMPCAWaiters;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.acmpca.model.*;
+
 import com.amazonaws.services.acmpca.model.transform.*;
 
 /**
@@ -67,7 +68,7 @@ import com.amazonaws.services.acmpca.model.transform.*;
  * operation. Throttling means that Amazon Web Services Private CA rejects an otherwise valid request because the
  * request exceeds the operation's quota for the number of requests per second. When a request is throttled, Amazon Web
  * Services Private CA returns a <a
- * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/CommonErrors.html">ThrottlingException</a> error.
+ * href="https://docs.aws.amazon.com/privateca/latest/APIReference/CommonErrors.html">ThrottlingException</a> error.
  * Amazon Web Services Private CA does not guarantee a minimum request rate for APIs.
  * </p>
  * <p>

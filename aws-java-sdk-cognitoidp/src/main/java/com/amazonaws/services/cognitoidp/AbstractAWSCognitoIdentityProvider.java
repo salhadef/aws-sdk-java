@@ -338,6 +338,11 @@ public class AbstractAWSCognitoIdentityProvider implements AWSCognitoIdentityPro
     }
 
     @Override
+    public GetLogDeliveryConfigurationResult getLogDeliveryConfiguration(GetLogDeliveryConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetSigningCertificateResult getSigningCertificate(GetSigningCertificateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -434,6 +439,11 @@ public class AbstractAWSCognitoIdentityProvider implements AWSCognitoIdentityPro
 
     @Override
     public RevokeTokenResult revokeToken(RevokeTokenRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public SetLogDeliveryConfigurationResult setLogDeliveryConfiguration(SetLogDeliveryConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

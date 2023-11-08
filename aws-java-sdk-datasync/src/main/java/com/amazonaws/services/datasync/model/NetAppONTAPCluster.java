@@ -97,6 +97,18 @@ public class NetAppONTAPCluster implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private String recommendationStatus;
+    /**
+     * <p>
+     * The number of LUNs (logical unit numbers) in the cluster.
+     * </p>
+     */
+    private Long lunCount;
+    /**
+     * <p>
+     * The amount of space in the cluster that's in cloud storage (for example, if you're using data tiering).
+     * </p>
+     */
+    private Long clusterCloudStorageUsed;
 
     /**
      * <p>
@@ -616,6 +628,86 @@ public class NetAppONTAPCluster implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The number of LUNs (logical unit numbers) in the cluster.
+     * </p>
+     * 
+     * @param lunCount
+     *        The number of LUNs (logical unit numbers) in the cluster.
+     */
+
+    public void setLunCount(Long lunCount) {
+        this.lunCount = lunCount;
+    }
+
+    /**
+     * <p>
+     * The number of LUNs (logical unit numbers) in the cluster.
+     * </p>
+     * 
+     * @return The number of LUNs (logical unit numbers) in the cluster.
+     */
+
+    public Long getLunCount() {
+        return this.lunCount;
+    }
+
+    /**
+     * <p>
+     * The number of LUNs (logical unit numbers) in the cluster.
+     * </p>
+     * 
+     * @param lunCount
+     *        The number of LUNs (logical unit numbers) in the cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetAppONTAPCluster withLunCount(Long lunCount) {
+        setLunCount(lunCount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The amount of space in the cluster that's in cloud storage (for example, if you're using data tiering).
+     * </p>
+     * 
+     * @param clusterCloudStorageUsed
+     *        The amount of space in the cluster that's in cloud storage (for example, if you're using data tiering).
+     */
+
+    public void setClusterCloudStorageUsed(Long clusterCloudStorageUsed) {
+        this.clusterCloudStorageUsed = clusterCloudStorageUsed;
+    }
+
+    /**
+     * <p>
+     * The amount of space in the cluster that's in cloud storage (for example, if you're using data tiering).
+     * </p>
+     * 
+     * @return The amount of space in the cluster that's in cloud storage (for example, if you're using data tiering).
+     */
+
+    public Long getClusterCloudStorageUsed() {
+        return this.clusterCloudStorageUsed;
+    }
+
+    /**
+     * <p>
+     * The amount of space in the cluster that's in cloud storage (for example, if you're using data tiering).
+     * </p>
+     * 
+     * @param clusterCloudStorageUsed
+     *        The amount of space in the cluster that's in cloud storage (for example, if you're using data tiering).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetAppONTAPCluster withClusterCloudStorageUsed(Long clusterCloudStorageUsed) {
+        setClusterCloudStorageUsed(clusterCloudStorageUsed);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -646,7 +738,11 @@ public class NetAppONTAPCluster implements Serializable, Cloneable, StructuredPo
         if (getRecommendations() != null)
             sb.append("Recommendations: ").append(getRecommendations()).append(",");
         if (getRecommendationStatus() != null)
-            sb.append("RecommendationStatus: ").append(getRecommendationStatus());
+            sb.append("RecommendationStatus: ").append(getRecommendationStatus()).append(",");
+        if (getLunCount() != null)
+            sb.append("LunCount: ").append(getLunCount()).append(",");
+        if (getClusterCloudStorageUsed() != null)
+            sb.append("ClusterCloudStorageUsed: ").append(getClusterCloudStorageUsed());
         sb.append("}");
         return sb.toString();
     }
@@ -702,6 +798,14 @@ public class NetAppONTAPCluster implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getRecommendationStatus() != null && other.getRecommendationStatus().equals(this.getRecommendationStatus()) == false)
             return false;
+        if (other.getLunCount() == null ^ this.getLunCount() == null)
+            return false;
+        if (other.getLunCount() != null && other.getLunCount().equals(this.getLunCount()) == false)
+            return false;
+        if (other.getClusterCloudStorageUsed() == null ^ this.getClusterCloudStorageUsed() == null)
+            return false;
+        if (other.getClusterCloudStorageUsed() != null && other.getClusterCloudStorageUsed().equals(this.getClusterCloudStorageUsed()) == false)
+            return false;
         return true;
     }
 
@@ -720,6 +824,8 @@ public class NetAppONTAPCluster implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getClusterBlockStorageLogicalUsed() == null) ? 0 : getClusterBlockStorageLogicalUsed().hashCode());
         hashCode = prime * hashCode + ((getRecommendations() == null) ? 0 : getRecommendations().hashCode());
         hashCode = prime * hashCode + ((getRecommendationStatus() == null) ? 0 : getRecommendationStatus().hashCode());
+        hashCode = prime * hashCode + ((getLunCount() == null) ? 0 : getLunCount().hashCode());
+        hashCode = prime * hashCode + ((getClusterCloudStorageUsed() == null) ? 0 : getClusterCloudStorageUsed().hashCode());
         return hashCode;
     }
 

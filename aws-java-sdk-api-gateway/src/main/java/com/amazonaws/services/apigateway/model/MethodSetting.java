@@ -27,92 +27,78 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether Amazon CloudWatch metrics are enabled for this method. The PATCH path for this setting is
-     * <code>/{method_setting_key}/metrics/enabled</code>, and the value is a Boolean.
+     * Specifies whether Amazon CloudWatch metrics are enabled for this method.
      * </p>
      */
     private Boolean metricsEnabled;
     /**
      * <p>
-     * Specifies the logging level for this method, which affects the log entries pushed to Amazon CloudWatch Logs. The
-     * PATCH path for this setting is <code>/{method_setting_key}/logging/loglevel</code>, and the available levels are
-     * <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>. Choose <code>ERROR</code> to write only error-level
-     * entries to CloudWatch Logs, or choose <code>INFO</code> to include all <code>ERROR</code> events as well as extra
-     * informational events.
+     * Specifies the logging level for this method, which affects the log entries pushed to Amazon CloudWatch Logs.
+     * Valid values are <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>. Choose <code>ERROR</code> to write
+     * only error-level entries to CloudWatch Logs, or choose <code>INFO</code> to include all <code>ERROR</code> events
+     * as well as extra informational events.
      * </p>
      */
     private String loggingLevel;
     /**
      * <p>
      * Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to Amazon
-     * CloudWatch Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and the
-     * value is a Boolean.
+     * CloudWatch Logs.
      * </p>
      */
     private Boolean dataTraceEnabled;
     /**
      * <p>
-     * Specifies the throttling burst limit. The PATCH path for this setting is
-     * <code>/{method_setting_key}/throttling/burstLimit</code>, and the value is an integer.
+     * Specifies the throttling burst limit.
      * </p>
      */
     private Integer throttlingBurstLimit;
     /**
      * <p>
-     * Specifies the throttling rate limit. The PATCH path for this setting is
-     * <code>/{method_setting_key}/throttling/rateLimit</code>, and the value is a double.
+     * Specifies the throttling rate limit.
      * </p>
      */
     private Double throttlingRateLimit;
     /**
      * <p>
      * Specifies whether responses should be cached and returned for requests. A cache cluster must be enabled on the
-     * stage for responses to be cached. The PATCH path for this setting is
-     * <code>/{method_setting_key}/caching/enabled</code>, and the value is a Boolean.
+     * stage for responses to be cached.
      * </p>
      */
     private Boolean cachingEnabled;
     /**
      * <p>
      * Specifies the time to live (TTL), in seconds, for cached responses. The higher the TTL, the longer the response
-     * will be cached. The PATCH path for this setting is <code>/{method_setting_key}/caching/ttlInSeconds</code>, and
-     * the value is an integer.
+     * will be cached.
      * </p>
      */
     private Integer cacheTtlInSeconds;
     /**
      * <p>
-     * Specifies whether the cached responses are encrypted. The PATCH path for this setting is
-     * <code>/{method_setting_key}/caching/dataEncrypted</code>, and the value is a Boolean.
+     * Specifies whether the cached responses are encrypted.
      * </p>
      */
     private Boolean cacheDataEncrypted;
     /**
      * <p>
-     * Specifies whether authorization is required for a cache invalidation request. The PATCH path for this setting is
-     * <code>/{method_setting_key}/caching/requireAuthorizationForCacheControl</code>, and the value is a Boolean.
+     * Specifies whether authorization is required for a cache invalidation request.
      * </p>
      */
     private Boolean requireAuthorizationForCacheControl;
     /**
      * <p>
-     * Specifies how to handle unauthorized requests for cache invalidation. The PATCH path for this setting is
-     * <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>, and the available values are
-     * <code>FAIL_WITH_403</code>, <code>SUCCEED_WITH_RESPONSE_HEADER</code>,
-     * <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code>.
+     * Specifies how to handle unauthorized requests for cache invalidation.
      * </p>
      */
     private String unauthorizedCacheControlHeaderStrategy;
 
     /**
      * <p>
-     * Specifies whether Amazon CloudWatch metrics are enabled for this method. The PATCH path for this setting is
-     * <code>/{method_setting_key}/metrics/enabled</code>, and the value is a Boolean.
+     * Specifies whether Amazon CloudWatch metrics are enabled for this method.
      * </p>
      * 
      * @param metricsEnabled
-     *        Specifies whether Amazon CloudWatch metrics are enabled for this method. The PATCH path for this setting
-     *        is <code>/{method_setting_key}/metrics/enabled</code>, and the value is a Boolean.
+     *        Specifies whether Amazon CloudWatch metrics are enabled for this method.
      */
 
     public void setMetricsEnabled(Boolean metricsEnabled) {
@@ -121,12 +107,10 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether Amazon CloudWatch metrics are enabled for this method. The PATCH path for this setting is
-     * <code>/{method_setting_key}/metrics/enabled</code>, and the value is a Boolean.
+     * Specifies whether Amazon CloudWatch metrics are enabled for this method.
      * </p>
      * 
-     * @return Specifies whether Amazon CloudWatch metrics are enabled for this method. The PATCH path for this setting
-     *         is <code>/{method_setting_key}/metrics/enabled</code>, and the value is a Boolean.
+     * @return Specifies whether Amazon CloudWatch metrics are enabled for this method.
      */
 
     public Boolean getMetricsEnabled() {
@@ -135,13 +119,11 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether Amazon CloudWatch metrics are enabled for this method. The PATCH path for this setting is
-     * <code>/{method_setting_key}/metrics/enabled</code>, and the value is a Boolean.
+     * Specifies whether Amazon CloudWatch metrics are enabled for this method.
      * </p>
      * 
      * @param metricsEnabled
-     *        Specifies whether Amazon CloudWatch metrics are enabled for this method. The PATCH path for this setting
-     *        is <code>/{method_setting_key}/metrics/enabled</code>, and the value is a Boolean.
+     *        Specifies whether Amazon CloudWatch metrics are enabled for this method.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -152,12 +134,10 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether Amazon CloudWatch metrics are enabled for this method. The PATCH path for this setting is
-     * <code>/{method_setting_key}/metrics/enabled</code>, and the value is a Boolean.
+     * Specifies whether Amazon CloudWatch metrics are enabled for this method.
      * </p>
      * 
-     * @return Specifies whether Amazon CloudWatch metrics are enabled for this method. The PATCH path for this setting
-     *         is <code>/{method_setting_key}/metrics/enabled</code>, and the value is a Boolean.
+     * @return Specifies whether Amazon CloudWatch metrics are enabled for this method.
      */
 
     public Boolean isMetricsEnabled() {
@@ -166,17 +146,15 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the logging level for this method, which affects the log entries pushed to Amazon CloudWatch Logs. The
-     * PATCH path for this setting is <code>/{method_setting_key}/logging/loglevel</code>, and the available levels are
-     * <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>. Choose <code>ERROR</code> to write only error-level
-     * entries to CloudWatch Logs, or choose <code>INFO</code> to include all <code>ERROR</code> events as well as extra
-     * informational events.
+     * Specifies the logging level for this method, which affects the log entries pushed to Amazon CloudWatch Logs.
+     * Valid values are <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>. Choose <code>ERROR</code> to write
+     * only error-level entries to CloudWatch Logs, or choose <code>INFO</code> to include all <code>ERROR</code> events
+     * as well as extra informational events.
      * </p>
      * 
      * @param loggingLevel
      *        Specifies the logging level for this method, which affects the log entries pushed to Amazon CloudWatch
-     *        Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/loglevel</code>, and the
-     *        available levels are <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>. Choose
+     *        Logs. Valid values are <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>. Choose
      *        <code>ERROR</code> to write only error-level entries to CloudWatch Logs, or choose <code>INFO</code> to
      *        include all <code>ERROR</code> events as well as extra informational events.
      */
@@ -187,16 +165,14 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the logging level for this method, which affects the log entries pushed to Amazon CloudWatch Logs. The
-     * PATCH path for this setting is <code>/{method_setting_key}/logging/loglevel</code>, and the available levels are
-     * <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>. Choose <code>ERROR</code> to write only error-level
-     * entries to CloudWatch Logs, or choose <code>INFO</code> to include all <code>ERROR</code> events as well as extra
-     * informational events.
+     * Specifies the logging level for this method, which affects the log entries pushed to Amazon CloudWatch Logs.
+     * Valid values are <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>. Choose <code>ERROR</code> to write
+     * only error-level entries to CloudWatch Logs, or choose <code>INFO</code> to include all <code>ERROR</code> events
+     * as well as extra informational events.
      * </p>
      * 
      * @return Specifies the logging level for this method, which affects the log entries pushed to Amazon CloudWatch
-     *         Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/loglevel</code>, and the
-     *         available levels are <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>. Choose
+     *         Logs. Valid values are <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>. Choose
      *         <code>ERROR</code> to write only error-level entries to CloudWatch Logs, or choose <code>INFO</code> to
      *         include all <code>ERROR</code> events as well as extra informational events.
      */
@@ -207,17 +183,15 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the logging level for this method, which affects the log entries pushed to Amazon CloudWatch Logs. The
-     * PATCH path for this setting is <code>/{method_setting_key}/logging/loglevel</code>, and the available levels are
-     * <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>. Choose <code>ERROR</code> to write only error-level
-     * entries to CloudWatch Logs, or choose <code>INFO</code> to include all <code>ERROR</code> events as well as extra
-     * informational events.
+     * Specifies the logging level for this method, which affects the log entries pushed to Amazon CloudWatch Logs.
+     * Valid values are <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>. Choose <code>ERROR</code> to write
+     * only error-level entries to CloudWatch Logs, or choose <code>INFO</code> to include all <code>ERROR</code> events
+     * as well as extra informational events.
      * </p>
      * 
      * @param loggingLevel
      *        Specifies the logging level for this method, which affects the log entries pushed to Amazon CloudWatch
-     *        Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/loglevel</code>, and the
-     *        available levels are <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>. Choose
+     *        Logs. Valid values are <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>. Choose
      *        <code>ERROR</code> to write only error-level entries to CloudWatch Logs, or choose <code>INFO</code> to
      *        include all <code>ERROR</code> events as well as extra informational events.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -231,14 +205,12 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to Amazon
-     * CloudWatch Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and the
-     * value is a Boolean.
+     * CloudWatch Logs.
      * </p>
      * 
      * @param dataTraceEnabled
      *        Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to
-     *        Amazon CloudWatch Logs. The PATCH path for this setting is
-     *        <code>/{method_setting_key}/logging/dataTrace</code>, and the value is a Boolean.
+     *        Amazon CloudWatch Logs.
      */
 
     public void setDataTraceEnabled(Boolean dataTraceEnabled) {
@@ -248,13 +220,11 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to Amazon
-     * CloudWatch Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and the
-     * value is a Boolean.
+     * CloudWatch Logs.
      * </p>
      * 
      * @return Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to
-     *         Amazon CloudWatch Logs. The PATCH path for this setting is
-     *         <code>/{method_setting_key}/logging/dataTrace</code>, and the value is a Boolean.
+     *         Amazon CloudWatch Logs.
      */
 
     public Boolean getDataTraceEnabled() {
@@ -264,14 +234,12 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to Amazon
-     * CloudWatch Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and the
-     * value is a Boolean.
+     * CloudWatch Logs.
      * </p>
      * 
      * @param dataTraceEnabled
      *        Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to
-     *        Amazon CloudWatch Logs. The PATCH path for this setting is
-     *        <code>/{method_setting_key}/logging/dataTrace</code>, and the value is a Boolean.
+     *        Amazon CloudWatch Logs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -283,13 +251,11 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to Amazon
-     * CloudWatch Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and the
-     * value is a Boolean.
+     * CloudWatch Logs.
      * </p>
      * 
      * @return Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to
-     *         Amazon CloudWatch Logs. The PATCH path for this setting is
-     *         <code>/{method_setting_key}/logging/dataTrace</code>, and the value is a Boolean.
+     *         Amazon CloudWatch Logs.
      */
 
     public Boolean isDataTraceEnabled() {
@@ -298,13 +264,11 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the throttling burst limit. The PATCH path for this setting is
-     * <code>/{method_setting_key}/throttling/burstLimit</code>, and the value is an integer.
+     * Specifies the throttling burst limit.
      * </p>
      * 
      * @param throttlingBurstLimit
-     *        Specifies the throttling burst limit. The PATCH path for this setting is
-     *        <code>/{method_setting_key}/throttling/burstLimit</code>, and the value is an integer.
+     *        Specifies the throttling burst limit.
      */
 
     public void setThrottlingBurstLimit(Integer throttlingBurstLimit) {
@@ -313,12 +277,10 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the throttling burst limit. The PATCH path for this setting is
-     * <code>/{method_setting_key}/throttling/burstLimit</code>, and the value is an integer.
+     * Specifies the throttling burst limit.
      * </p>
      * 
-     * @return Specifies the throttling burst limit. The PATCH path for this setting is
-     *         <code>/{method_setting_key}/throttling/burstLimit</code>, and the value is an integer.
+     * @return Specifies the throttling burst limit.
      */
 
     public Integer getThrottlingBurstLimit() {
@@ -327,13 +289,11 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the throttling burst limit. The PATCH path for this setting is
-     * <code>/{method_setting_key}/throttling/burstLimit</code>, and the value is an integer.
+     * Specifies the throttling burst limit.
      * </p>
      * 
      * @param throttlingBurstLimit
-     *        Specifies the throttling burst limit. The PATCH path for this setting is
-     *        <code>/{method_setting_key}/throttling/burstLimit</code>, and the value is an integer.
+     *        Specifies the throttling burst limit.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -344,13 +304,11 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the throttling rate limit. The PATCH path for this setting is
-     * <code>/{method_setting_key}/throttling/rateLimit</code>, and the value is a double.
+     * Specifies the throttling rate limit.
      * </p>
      * 
      * @param throttlingRateLimit
-     *        Specifies the throttling rate limit. The PATCH path for this setting is
-     *        <code>/{method_setting_key}/throttling/rateLimit</code>, and the value is a double.
+     *        Specifies the throttling rate limit.
      */
 
     public void setThrottlingRateLimit(Double throttlingRateLimit) {
@@ -359,12 +317,10 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the throttling rate limit. The PATCH path for this setting is
-     * <code>/{method_setting_key}/throttling/rateLimit</code>, and the value is a double.
+     * Specifies the throttling rate limit.
      * </p>
      * 
-     * @return Specifies the throttling rate limit. The PATCH path for this setting is
-     *         <code>/{method_setting_key}/throttling/rateLimit</code>, and the value is a double.
+     * @return Specifies the throttling rate limit.
      */
 
     public Double getThrottlingRateLimit() {
@@ -373,13 +329,11 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the throttling rate limit. The PATCH path for this setting is
-     * <code>/{method_setting_key}/throttling/rateLimit</code>, and the value is a double.
+     * Specifies the throttling rate limit.
      * </p>
      * 
      * @param throttlingRateLimit
-     *        Specifies the throttling rate limit. The PATCH path for this setting is
-     *        <code>/{method_setting_key}/throttling/rateLimit</code>, and the value is a double.
+     *        Specifies the throttling rate limit.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -391,14 +345,12 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies whether responses should be cached and returned for requests. A cache cluster must be enabled on the
-     * stage for responses to be cached. The PATCH path for this setting is
-     * <code>/{method_setting_key}/caching/enabled</code>, and the value is a Boolean.
+     * stage for responses to be cached.
      * </p>
      * 
      * @param cachingEnabled
      *        Specifies whether responses should be cached and returned for requests. A cache cluster must be enabled on
-     *        the stage for responses to be cached. The PATCH path for this setting is
-     *        <code>/{method_setting_key}/caching/enabled</code>, and the value is a Boolean.
+     *        the stage for responses to be cached.
      */
 
     public void setCachingEnabled(Boolean cachingEnabled) {
@@ -408,13 +360,11 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies whether responses should be cached and returned for requests. A cache cluster must be enabled on the
-     * stage for responses to be cached. The PATCH path for this setting is
-     * <code>/{method_setting_key}/caching/enabled</code>, and the value is a Boolean.
+     * stage for responses to be cached.
      * </p>
      * 
      * @return Specifies whether responses should be cached and returned for requests. A cache cluster must be enabled
-     *         on the stage for responses to be cached. The PATCH path for this setting is
-     *         <code>/{method_setting_key}/caching/enabled</code>, and the value is a Boolean.
+     *         on the stage for responses to be cached.
      */
 
     public Boolean getCachingEnabled() {
@@ -424,14 +374,12 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies whether responses should be cached and returned for requests. A cache cluster must be enabled on the
-     * stage for responses to be cached. The PATCH path for this setting is
-     * <code>/{method_setting_key}/caching/enabled</code>, and the value is a Boolean.
+     * stage for responses to be cached.
      * </p>
      * 
      * @param cachingEnabled
      *        Specifies whether responses should be cached and returned for requests. A cache cluster must be enabled on
-     *        the stage for responses to be cached. The PATCH path for this setting is
-     *        <code>/{method_setting_key}/caching/enabled</code>, and the value is a Boolean.
+     *        the stage for responses to be cached.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -443,13 +391,11 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies whether responses should be cached and returned for requests. A cache cluster must be enabled on the
-     * stage for responses to be cached. The PATCH path for this setting is
-     * <code>/{method_setting_key}/caching/enabled</code>, and the value is a Boolean.
+     * stage for responses to be cached.
      * </p>
      * 
      * @return Specifies whether responses should be cached and returned for requests. A cache cluster must be enabled
-     *         on the stage for responses to be cached. The PATCH path for this setting is
-     *         <code>/{method_setting_key}/caching/enabled</code>, and the value is a Boolean.
+     *         on the stage for responses to be cached.
      */
 
     public Boolean isCachingEnabled() {
@@ -459,14 +405,12 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies the time to live (TTL), in seconds, for cached responses. The higher the TTL, the longer the response
-     * will be cached. The PATCH path for this setting is <code>/{method_setting_key}/caching/ttlInSeconds</code>, and
-     * the value is an integer.
+     * will be cached.
      * </p>
      * 
      * @param cacheTtlInSeconds
      *        Specifies the time to live (TTL), in seconds, for cached responses. The higher the TTL, the longer the
-     *        response will be cached. The PATCH path for this setting is
-     *        <code>/{method_setting_key}/caching/ttlInSeconds</code>, and the value is an integer.
+     *        response will be cached.
      */
 
     public void setCacheTtlInSeconds(Integer cacheTtlInSeconds) {
@@ -476,13 +420,11 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies the time to live (TTL), in seconds, for cached responses. The higher the TTL, the longer the response
-     * will be cached. The PATCH path for this setting is <code>/{method_setting_key}/caching/ttlInSeconds</code>, and
-     * the value is an integer.
+     * will be cached.
      * </p>
      * 
      * @return Specifies the time to live (TTL), in seconds, for cached responses. The higher the TTL, the longer the
-     *         response will be cached. The PATCH path for this setting is
-     *         <code>/{method_setting_key}/caching/ttlInSeconds</code>, and the value is an integer.
+     *         response will be cached.
      */
 
     public Integer getCacheTtlInSeconds() {
@@ -492,14 +434,12 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies the time to live (TTL), in seconds, for cached responses. The higher the TTL, the longer the response
-     * will be cached. The PATCH path for this setting is <code>/{method_setting_key}/caching/ttlInSeconds</code>, and
-     * the value is an integer.
+     * will be cached.
      * </p>
      * 
      * @param cacheTtlInSeconds
      *        Specifies the time to live (TTL), in seconds, for cached responses. The higher the TTL, the longer the
-     *        response will be cached. The PATCH path for this setting is
-     *        <code>/{method_setting_key}/caching/ttlInSeconds</code>, and the value is an integer.
+     *        response will be cached.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -510,13 +450,11 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the cached responses are encrypted. The PATCH path for this setting is
-     * <code>/{method_setting_key}/caching/dataEncrypted</code>, and the value is a Boolean.
+     * Specifies whether the cached responses are encrypted.
      * </p>
      * 
      * @param cacheDataEncrypted
-     *        Specifies whether the cached responses are encrypted. The PATCH path for this setting is
-     *        <code>/{method_setting_key}/caching/dataEncrypted</code>, and the value is a Boolean.
+     *        Specifies whether the cached responses are encrypted.
      */
 
     public void setCacheDataEncrypted(Boolean cacheDataEncrypted) {
@@ -525,12 +463,10 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the cached responses are encrypted. The PATCH path for this setting is
-     * <code>/{method_setting_key}/caching/dataEncrypted</code>, and the value is a Boolean.
+     * Specifies whether the cached responses are encrypted.
      * </p>
      * 
-     * @return Specifies whether the cached responses are encrypted. The PATCH path for this setting is
-     *         <code>/{method_setting_key}/caching/dataEncrypted</code>, and the value is a Boolean.
+     * @return Specifies whether the cached responses are encrypted.
      */
 
     public Boolean getCacheDataEncrypted() {
@@ -539,13 +475,11 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the cached responses are encrypted. The PATCH path for this setting is
-     * <code>/{method_setting_key}/caching/dataEncrypted</code>, and the value is a Boolean.
+     * Specifies whether the cached responses are encrypted.
      * </p>
      * 
      * @param cacheDataEncrypted
-     *        Specifies whether the cached responses are encrypted. The PATCH path for this setting is
-     *        <code>/{method_setting_key}/caching/dataEncrypted</code>, and the value is a Boolean.
+     *        Specifies whether the cached responses are encrypted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -556,12 +490,10 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the cached responses are encrypted. The PATCH path for this setting is
-     * <code>/{method_setting_key}/caching/dataEncrypted</code>, and the value is a Boolean.
+     * Specifies whether the cached responses are encrypted.
      * </p>
      * 
-     * @return Specifies whether the cached responses are encrypted. The PATCH path for this setting is
-     *         <code>/{method_setting_key}/caching/dataEncrypted</code>, and the value is a Boolean.
+     * @return Specifies whether the cached responses are encrypted.
      */
 
     public Boolean isCacheDataEncrypted() {
@@ -570,14 +502,11 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether authorization is required for a cache invalidation request. The PATCH path for this setting is
-     * <code>/{method_setting_key}/caching/requireAuthorizationForCacheControl</code>, and the value is a Boolean.
+     * Specifies whether authorization is required for a cache invalidation request.
      * </p>
      * 
      * @param requireAuthorizationForCacheControl
-     *        Specifies whether authorization is required for a cache invalidation request. The PATCH path for this
-     *        setting is <code>/{method_setting_key}/caching/requireAuthorizationForCacheControl</code>, and the value
-     *        is a Boolean.
+     *        Specifies whether authorization is required for a cache invalidation request.
      */
 
     public void setRequireAuthorizationForCacheControl(Boolean requireAuthorizationForCacheControl) {
@@ -586,13 +515,10 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether authorization is required for a cache invalidation request. The PATCH path for this setting is
-     * <code>/{method_setting_key}/caching/requireAuthorizationForCacheControl</code>, and the value is a Boolean.
+     * Specifies whether authorization is required for a cache invalidation request.
      * </p>
      * 
-     * @return Specifies whether authorization is required for a cache invalidation request. The PATCH path for this
-     *         setting is <code>/{method_setting_key}/caching/requireAuthorizationForCacheControl</code>, and the value
-     *         is a Boolean.
+     * @return Specifies whether authorization is required for a cache invalidation request.
      */
 
     public Boolean getRequireAuthorizationForCacheControl() {
@@ -601,14 +527,11 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether authorization is required for a cache invalidation request. The PATCH path for this setting is
-     * <code>/{method_setting_key}/caching/requireAuthorizationForCacheControl</code>, and the value is a Boolean.
+     * Specifies whether authorization is required for a cache invalidation request.
      * </p>
      * 
      * @param requireAuthorizationForCacheControl
-     *        Specifies whether authorization is required for a cache invalidation request. The PATCH path for this
-     *        setting is <code>/{method_setting_key}/caching/requireAuthorizationForCacheControl</code>, and the value
-     *        is a Boolean.
+     *        Specifies whether authorization is required for a cache invalidation request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -619,13 +542,10 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether authorization is required for a cache invalidation request. The PATCH path for this setting is
-     * <code>/{method_setting_key}/caching/requireAuthorizationForCacheControl</code>, and the value is a Boolean.
+     * Specifies whether authorization is required for a cache invalidation request.
      * </p>
      * 
-     * @return Specifies whether authorization is required for a cache invalidation request. The PATCH path for this
-     *         setting is <code>/{method_setting_key}/caching/requireAuthorizationForCacheControl</code>, and the value
-     *         is a Boolean.
+     * @return Specifies whether authorization is required for a cache invalidation request.
      */
 
     public Boolean isRequireAuthorizationForCacheControl() {
@@ -634,17 +554,11 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies how to handle unauthorized requests for cache invalidation. The PATCH path for this setting is
-     * <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>, and the available values are
-     * <code>FAIL_WITH_403</code>, <code>SUCCEED_WITH_RESPONSE_HEADER</code>,
-     * <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code>.
+     * Specifies how to handle unauthorized requests for cache invalidation.
      * </p>
      * 
      * @param unauthorizedCacheControlHeaderStrategy
-     *        Specifies how to handle unauthorized requests for cache invalidation. The PATCH path for this setting is
-     *        <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>, and the available
-     *        values are <code>FAIL_WITH_403</code>, <code>SUCCEED_WITH_RESPONSE_HEADER</code>,
-     *        <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code>.
+     *        Specifies how to handle unauthorized requests for cache invalidation.
      * @see UnauthorizedCacheControlHeaderStrategy
      */
 
@@ -654,16 +568,10 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies how to handle unauthorized requests for cache invalidation. The PATCH path for this setting is
-     * <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>, and the available values are
-     * <code>FAIL_WITH_403</code>, <code>SUCCEED_WITH_RESPONSE_HEADER</code>,
-     * <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code>.
+     * Specifies how to handle unauthorized requests for cache invalidation.
      * </p>
      * 
-     * @return Specifies how to handle unauthorized requests for cache invalidation. The PATCH path for this setting is
-     *         <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>, and the available
-     *         values are <code>FAIL_WITH_403</code>, <code>SUCCEED_WITH_RESPONSE_HEADER</code>,
-     *         <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code>.
+     * @return Specifies how to handle unauthorized requests for cache invalidation.
      * @see UnauthorizedCacheControlHeaderStrategy
      */
 
@@ -673,17 +581,11 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies how to handle unauthorized requests for cache invalidation. The PATCH path for this setting is
-     * <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>, and the available values are
-     * <code>FAIL_WITH_403</code>, <code>SUCCEED_WITH_RESPONSE_HEADER</code>,
-     * <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code>.
+     * Specifies how to handle unauthorized requests for cache invalidation.
      * </p>
      * 
      * @param unauthorizedCacheControlHeaderStrategy
-     *        Specifies how to handle unauthorized requests for cache invalidation. The PATCH path for this setting is
-     *        <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>, and the available
-     *        values are <code>FAIL_WITH_403</code>, <code>SUCCEED_WITH_RESPONSE_HEADER</code>,
-     *        <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code>.
+     *        Specifies how to handle unauthorized requests for cache invalidation.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UnauthorizedCacheControlHeaderStrategy
      */
@@ -695,17 +597,11 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies how to handle unauthorized requests for cache invalidation. The PATCH path for this setting is
-     * <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>, and the available values are
-     * <code>FAIL_WITH_403</code>, <code>SUCCEED_WITH_RESPONSE_HEADER</code>,
-     * <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code>.
+     * Specifies how to handle unauthorized requests for cache invalidation.
      * </p>
      * 
      * @param unauthorizedCacheControlHeaderStrategy
-     *        Specifies how to handle unauthorized requests for cache invalidation. The PATCH path for this setting is
-     *        <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>, and the available
-     *        values are <code>FAIL_WITH_403</code>, <code>SUCCEED_WITH_RESPONSE_HEADER</code>,
-     *        <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code>.
+     *        Specifies how to handle unauthorized requests for cache invalidation.
      * @see UnauthorizedCacheControlHeaderStrategy
      */
 
@@ -715,17 +611,11 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies how to handle unauthorized requests for cache invalidation. The PATCH path for this setting is
-     * <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>, and the available values are
-     * <code>FAIL_WITH_403</code>, <code>SUCCEED_WITH_RESPONSE_HEADER</code>,
-     * <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code>.
+     * Specifies how to handle unauthorized requests for cache invalidation.
      * </p>
      * 
      * @param unauthorizedCacheControlHeaderStrategy
-     *        Specifies how to handle unauthorized requests for cache invalidation. The PATCH path for this setting is
-     *        <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>, and the available
-     *        values are <code>FAIL_WITH_403</code>, <code>SUCCEED_WITH_RESPONSE_HEADER</code>,
-     *        <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code>.
+     *        Specifies how to handle unauthorized requests for cache invalidation.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UnauthorizedCacheControlHeaderStrategy
      */

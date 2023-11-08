@@ -25,56 +25,16 @@ public class ListVariantImportJobsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A pagination token that's included if more results are available.
-     * </p>
-     */
-    private String nextToken;
-    /**
-     * <p>
      * A list of jobs.
      * </p>
      */
     private java.util.List<VariantImportJobItem> variantImportJobs;
-
     /**
      * <p>
      * A pagination token that's included if more results are available.
      * </p>
-     * 
-     * @param nextToken
-     *        A pagination token that's included if more results are available.
      */
-
-    public void setNextToken(String nextToken) {
-        this.nextToken = nextToken;
-    }
-
-    /**
-     * <p>
-     * A pagination token that's included if more results are available.
-     * </p>
-     * 
-     * @return A pagination token that's included if more results are available.
-     */
-
-    public String getNextToken() {
-        return this.nextToken;
-    }
-
-    /**
-     * <p>
-     * A pagination token that's included if more results are available.
-     * </p>
-     * 
-     * @param nextToken
-     *        A pagination token that's included if more results are available.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListVariantImportJobsResult withNextToken(String nextToken) {
-        setNextToken(nextToken);
-        return this;
-    }
+    private String nextToken;
 
     /**
      * <p>
@@ -147,6 +107,46 @@ public class ListVariantImportJobsResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * A pagination token that's included if more results are available.
+     * </p>
+     * 
+     * @param nextToken
+     *        A pagination token that's included if more results are available.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * A pagination token that's included if more results are available.
+     * </p>
+     * 
+     * @return A pagination token that's included if more results are available.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * A pagination token that's included if more results are available.
+     * </p>
+     * 
+     * @param nextToken
+     *        A pagination token that's included if more results are available.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListVariantImportJobsResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -158,10 +158,10 @@ public class ListVariantImportJobsResult extends com.amazonaws.AmazonWebServiceR
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getVariantImportJobs() != null)
-            sb.append("VariantImportJobs: ").append(getVariantImportJobs());
+            sb.append("VariantImportJobs: ").append(getVariantImportJobs()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -176,13 +176,13 @@ public class ListVariantImportJobsResult extends com.amazonaws.AmazonWebServiceR
         if (obj instanceof ListVariantImportJobsResult == false)
             return false;
         ListVariantImportJobsResult other = (ListVariantImportJobsResult) obj;
-        if (other.getNextToken() == null ^ this.getNextToken() == null)
-            return false;
-        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
-            return false;
         if (other.getVariantImportJobs() == null ^ this.getVariantImportJobs() == null)
             return false;
         if (other.getVariantImportJobs() != null && other.getVariantImportJobs().equals(this.getVariantImportJobs()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -192,8 +192,8 @@ public class ListVariantImportJobsResult extends com.amazonaws.AmazonWebServiceR
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getVariantImportJobs() == null) ? 0 : getVariantImportJobs().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

@@ -22,7 +22,8 @@ public enum Ec2Platform {
 
     WINDOWS("WINDOWS"),
     LINUX("LINUX"),
-    UNKNOWN("UNKNOWN");
+    UNKNOWN("UNKNOWN"),
+    MACOS("MACOS");
 
     private String value;
 

@@ -60,7 +60,7 @@ public class AccessPolicySummary implements Serializable, Cloneable, StructuredP
     private String policyVersion;
     /**
      * <p>
-     * The type of access policy. Currently the only available type is <code>data</code>.
+     * The type of access policy. Currently, the only available type is <code>data</code>.
      * </p>
      */
     private String type;
@@ -267,11 +267,11 @@ public class AccessPolicySummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The type of access policy. Currently the only available type is <code>data</code>.
+     * The type of access policy. Currently, the only available type is <code>data</code>.
      * </p>
      * 
      * @param type
-     *        The type of access policy. Currently the only available type is <code>data</code>.
+     *        The type of access policy. Currently, the only available type is <code>data</code>.
      * @see AccessPolicyType
      */
 
@@ -281,10 +281,10 @@ public class AccessPolicySummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The type of access policy. Currently the only available type is <code>data</code>.
+     * The type of access policy. Currently, the only available type is <code>data</code>.
      * </p>
      * 
-     * @return The type of access policy. Currently the only available type is <code>data</code>.
+     * @return The type of access policy. Currently, the only available type is <code>data</code>.
      * @see AccessPolicyType
      */
 
@@ -294,11 +294,11 @@ public class AccessPolicySummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The type of access policy. Currently the only available type is <code>data</code>.
+     * The type of access policy. Currently, the only available type is <code>data</code>.
      * </p>
      * 
      * @param type
-     *        The type of access policy. Currently the only available type is <code>data</code>.
+     *        The type of access policy. Currently, the only available type is <code>data</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AccessPolicyType
      */
@@ -310,11 +310,11 @@ public class AccessPolicySummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The type of access policy. Currently the only available type is <code>data</code>.
+     * The type of access policy. Currently, the only available type is <code>data</code>.
      * </p>
      * 
      * @param type
-     *        The type of access policy. Currently the only available type is <code>data</code>.
+     *        The type of access policy. Currently, the only available type is <code>data</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AccessPolicyType
      */

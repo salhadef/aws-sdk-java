@@ -36,6 +36,13 @@ public class BatchJobIdentifier implements Serializable, Cloneable, StructuredPo
     private FileBatchJobIdentifier fileBatchJobIdentifier;
     /**
      * <p>
+     * Specifies an Amazon S3 location that identifies the batch jobs that you want to run. Use this identifier to run
+     * ad hoc batch jobs.
+     * </p>
+     */
+    private S3BatchJobIdentifier s3BatchJobIdentifier;
+    /**
+     * <p>
      * A batch job identifier in which the batch job to run is identified by the script name.
      * </p>
      */
@@ -78,6 +85,52 @@ public class BatchJobIdentifier implements Serializable, Cloneable, StructuredPo
 
     public BatchJobIdentifier withFileBatchJobIdentifier(FileBatchJobIdentifier fileBatchJobIdentifier) {
         setFileBatchJobIdentifier(fileBatchJobIdentifier);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies an Amazon S3 location that identifies the batch jobs that you want to run. Use this identifier to run
+     * ad hoc batch jobs.
+     * </p>
+     * 
+     * @param s3BatchJobIdentifier
+     *        Specifies an Amazon S3 location that identifies the batch jobs that you want to run. Use this identifier
+     *        to run ad hoc batch jobs.
+     */
+
+    public void setS3BatchJobIdentifier(S3BatchJobIdentifier s3BatchJobIdentifier) {
+        this.s3BatchJobIdentifier = s3BatchJobIdentifier;
+    }
+
+    /**
+     * <p>
+     * Specifies an Amazon S3 location that identifies the batch jobs that you want to run. Use this identifier to run
+     * ad hoc batch jobs.
+     * </p>
+     * 
+     * @return Specifies an Amazon S3 location that identifies the batch jobs that you want to run. Use this identifier
+     *         to run ad hoc batch jobs.
+     */
+
+    public S3BatchJobIdentifier getS3BatchJobIdentifier() {
+        return this.s3BatchJobIdentifier;
+    }
+
+    /**
+     * <p>
+     * Specifies an Amazon S3 location that identifies the batch jobs that you want to run. Use this identifier to run
+     * ad hoc batch jobs.
+     * </p>
+     * 
+     * @param s3BatchJobIdentifier
+     *        Specifies an Amazon S3 location that identifies the batch jobs that you want to run. Use this identifier
+     *        to run ad hoc batch jobs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchJobIdentifier withS3BatchJobIdentifier(S3BatchJobIdentifier s3BatchJobIdentifier) {
+        setS3BatchJobIdentifier(s3BatchJobIdentifier);
         return this;
     }
 
@@ -135,6 +188,8 @@ public class BatchJobIdentifier implements Serializable, Cloneable, StructuredPo
         sb.append("{");
         if (getFileBatchJobIdentifier() != null)
             sb.append("FileBatchJobIdentifier: ").append(getFileBatchJobIdentifier()).append(",");
+        if (getS3BatchJobIdentifier() != null)
+            sb.append("S3BatchJobIdentifier: ").append(getS3BatchJobIdentifier()).append(",");
         if (getScriptBatchJobIdentifier() != null)
             sb.append("ScriptBatchJobIdentifier: ").append(getScriptBatchJobIdentifier());
         sb.append("}");
@@ -155,6 +210,10 @@ public class BatchJobIdentifier implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getFileBatchJobIdentifier() != null && other.getFileBatchJobIdentifier().equals(this.getFileBatchJobIdentifier()) == false)
             return false;
+        if (other.getS3BatchJobIdentifier() == null ^ this.getS3BatchJobIdentifier() == null)
+            return false;
+        if (other.getS3BatchJobIdentifier() != null && other.getS3BatchJobIdentifier().equals(this.getS3BatchJobIdentifier()) == false)
+            return false;
         if (other.getScriptBatchJobIdentifier() == null ^ this.getScriptBatchJobIdentifier() == null)
             return false;
         if (other.getScriptBatchJobIdentifier() != null && other.getScriptBatchJobIdentifier().equals(this.getScriptBatchJobIdentifier()) == false)
@@ -168,6 +227,7 @@ public class BatchJobIdentifier implements Serializable, Cloneable, StructuredPo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getFileBatchJobIdentifier() == null) ? 0 : getFileBatchJobIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getS3BatchJobIdentifier() == null) ? 0 : getS3BatchJobIdentifier().hashCode());
         hashCode = prime * hashCode + ((getScriptBatchJobIdentifier() == null) ? 0 : getScriptBatchJobIdentifier().hashCode());
         return hashCode;
     }

@@ -141,8 +141,7 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      * records</a> in the <i>Amazon Web Services Transit Gateway Guide</i>.
      * </p>
      * <p>
-     * Specify the fields using the <code>${field-id}</code> format, separated by spaces. For the CLI, surround this
-     * parameter value with single quotes on Linux or double quotes on Windows.
+     * Specify the fields using the <code>${field-id}</code> format, separated by spaces.
      * </p>
      */
     private String logFormat;
@@ -1000,8 +999,7 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      * records</a> in the <i>Amazon Web Services Transit Gateway Guide</i>.
      * </p>
      * <p>
-     * Specify the fields using the <code>${field-id}</code> format, separated by spaces. For the CLI, surround this
-     * parameter value with single quotes on Linux or double quotes on Windows.
+     * Specify the fields using the <code>${field-id}</code> format, separated by spaces.
      * </p>
      * 
      * @param logFormat
@@ -1013,8 +1011,7 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      *        href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-flow-logs.html#flow-log-records">Transit Gateway Flow
      *        Log records</a> in the <i>Amazon Web Services Transit Gateway Guide</i>.</p>
      *        <p>
-     *        Specify the fields using the <code>${field-id}</code> format, separated by spaces. For the CLI, surround
-     *        this parameter value with single quotes on Linux or double quotes on Windows.
+     *        Specify the fields using the <code>${field-id}</code> format, separated by spaces.
      */
 
     public void setLogFormat(String logFormat) {
@@ -1032,8 +1029,7 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      * records</a> in the <i>Amazon Web Services Transit Gateway Guide</i>.
      * </p>
      * <p>
-     * Specify the fields using the <code>${field-id}</code> format, separated by spaces. For the CLI, surround this
-     * parameter value with single quotes on Linux or double quotes on Windows.
+     * Specify the fields using the <code>${field-id}</code> format, separated by spaces.
      * </p>
      * 
      * @return The fields to include in the flow log record. List the fields in the order in which they should appear.
@@ -1044,8 +1040,7 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      *         href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-flow-logs.html#flow-log-records">Transit Gateway
      *         Flow Log records</a> in the <i>Amazon Web Services Transit Gateway Guide</i>.</p>
      *         <p>
-     *         Specify the fields using the <code>${field-id}</code> format, separated by spaces. For the CLI, surround
-     *         this parameter value with single quotes on Linux or double quotes on Windows.
+     *         Specify the fields using the <code>${field-id}</code> format, separated by spaces.
      */
 
     public String getLogFormat() {
@@ -1063,8 +1058,7 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      * records</a> in the <i>Amazon Web Services Transit Gateway Guide</i>.
      * </p>
      * <p>
-     * Specify the fields using the <code>${field-id}</code> format, separated by spaces. For the CLI, surround this
-     * parameter value with single quotes on Linux or double quotes on Windows.
+     * Specify the fields using the <code>${field-id}</code> format, separated by spaces.
      * </p>
      * 
      * @param logFormat
@@ -1076,8 +1070,7 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      *        href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-flow-logs.html#flow-log-records">Transit Gateway Flow
      *        Log records</a> in the <i>Amazon Web Services Transit Gateway Guide</i>.</p>
      *        <p>
-     *        Specify the fields using the <code>${field-id}</code> format, separated by spaces. For the CLI, surround
-     *        this parameter value with single quotes on Linux or double quotes on Windows.
+     *        Specify the fields using the <code>${field-id}</code> format, separated by spaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

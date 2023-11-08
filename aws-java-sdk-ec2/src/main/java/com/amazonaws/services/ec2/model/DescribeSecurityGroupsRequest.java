@@ -189,9 +189,8 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
     private com.amazonaws.internal.SdkInternalList<String> groupIds;
     /**
      * <p>
-     * [EC2-Classic and default VPC only] The names of the security groups. You can specify either the security group
-     * name or the security group ID. For security groups in a nondefault VPC, use the <code>group-name</code> filter to
-     * describe security groups by name.
+     * [Default VPC] The names of the security groups. You can specify either the security group name or the security
+     * group ID.
      * </p>
      * <p>
      * Default: Describes all of your security groups.
@@ -1547,17 +1546,15 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * [EC2-Classic and default VPC only] The names of the security groups. You can specify either the security group
-     * name or the security group ID. For security groups in a nondefault VPC, use the <code>group-name</code> filter to
-     * describe security groups by name.
+     * [Default VPC] The names of the security groups. You can specify either the security group name or the security
+     * group ID.
      * </p>
      * <p>
      * Default: Describes all of your security groups.
      * </p>
      * 
-     * @return [EC2-Classic and default VPC only] The names of the security groups. You can specify either the security
-     *         group name or the security group ID. For security groups in a nondefault VPC, use the
-     *         <code>group-name</code> filter to describe security groups by name.</p>
+     * @return [Default VPC] The names of the security groups. You can specify either the security group name or the
+     *         security group ID.</p>
      *         <p>
      *         Default: Describes all of your security groups.
      */
@@ -1571,18 +1568,16 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * [EC2-Classic and default VPC only] The names of the security groups. You can specify either the security group
-     * name or the security group ID. For security groups in a nondefault VPC, use the <code>group-name</code> filter to
-     * describe security groups by name.
+     * [Default VPC] The names of the security groups. You can specify either the security group name or the security
+     * group ID.
      * </p>
      * <p>
      * Default: Describes all of your security groups.
      * </p>
      * 
      * @param groupNames
-     *        [EC2-Classic and default VPC only] The names of the security groups. You can specify either the security
-     *        group name or the security group ID. For security groups in a nondefault VPC, use the
-     *        <code>group-name</code> filter to describe security groups by name.</p>
+     *        [Default VPC] The names of the security groups. You can specify either the security group name or the
+     *        security group ID.</p>
      *        <p>
      *        Default: Describes all of your security groups.
      */
@@ -1598,9 +1593,8 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * [EC2-Classic and default VPC only] The names of the security groups. You can specify either the security group
-     * name or the security group ID. For security groups in a nondefault VPC, use the <code>group-name</code> filter to
-     * describe security groups by name.
+     * [Default VPC] The names of the security groups. You can specify either the security group name or the security
+     * group ID.
      * </p>
      * <p>
      * Default: Describes all of your security groups.
@@ -1612,9 +1606,8 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * </p>
      * 
      * @param groupNames
-     *        [EC2-Classic and default VPC only] The names of the security groups. You can specify either the security
-     *        group name or the security group ID. For security groups in a nondefault VPC, use the
-     *        <code>group-name</code> filter to describe security groups by name.</p>
+     *        [Default VPC] The names of the security groups. You can specify either the security group name or the
+     *        security group ID.</p>
      *        <p>
      *        Default: Describes all of your security groups.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1632,18 +1625,16 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * [EC2-Classic and default VPC only] The names of the security groups. You can specify either the security group
-     * name or the security group ID. For security groups in a nondefault VPC, use the <code>group-name</code> filter to
-     * describe security groups by name.
+     * [Default VPC] The names of the security groups. You can specify either the security group name or the security
+     * group ID.
      * </p>
      * <p>
      * Default: Describes all of your security groups.
      * </p>
      * 
      * @param groupNames
-     *        [EC2-Classic and default VPC only] The names of the security groups. You can specify either the security
-     *        group name or the security group ID. For security groups in a nondefault VPC, use the
-     *        <code>group-name</code> filter to describe security groups by name.</p>
+     *        [Default VPC] The names of the security groups. You can specify either the security group name or the
+     *        security group ID.</p>
      *        <p>
      *        Default: Describes all of your security groups.
      * @return Returns a reference to this object so that method calls can be chained together.

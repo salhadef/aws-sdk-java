@@ -43,10 +43,10 @@ public class RequestInspection implements Serializable, Cloneable, StructuredPoj
     private String payloadType;
     /**
      * <p>
-     * Details about your login page username field.
+     * The name of the field in the request payload that contains your customer's username.
      * </p>
      * <p>
-     * How you specify this depends on the payload type.
+     * How you specify this depends on the request inspection payload type.
      * </p>
      * <ul>
      * <li>
@@ -56,10 +56,8 @@ public class RequestInspection implements Serializable, Cloneable, StructuredPoj
      * href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.
      * </p>
      * <p>
-     * For example, for the JSON payload
-     * <code>{ "login": { "username": "THE_USERNAME", "password": "THE_PASSWORD" } }</code>, the username field
-     * specification is <code>/login/username</code> and the password field specification is
-     * <code>/login/password</code>.
+     * For example, for the JSON payload <code>{ "form": { "username": "THE_USERNAME" } }</code>, the username field
+     * specification is <code>/form/username</code>.
      * </p>
      * </li>
      * <li>
@@ -67,9 +65,8 @@ public class RequestInspection implements Serializable, Cloneable, StructuredPoj
      * For form encoded payload types, use the HTML form names.
      * </p>
      * <p>
-     * For example, for an HTML form with input elements named <code>username1</code> and <code>password1</code>, the
-     * username field specification is <code>username1</code> and the password field specification is
-     * <code>password1</code>.
+     * For example, for an HTML form with the input element named <code>username1</code>, the username field
+     * specification is <code>username1</code>
      * </p>
      * </li>
      * </ul>
@@ -77,10 +74,10 @@ public class RequestInspection implements Serializable, Cloneable, StructuredPoj
     private UsernameField usernameField;
     /**
      * <p>
-     * Details about your login page password field.
+     * The name of the field in the request payload that contains your customer's password.
      * </p>
      * <p>
-     * How you specify this depends on the payload type.
+     * How you specify this depends on the request inspection payload type.
      * </p>
      * <ul>
      * <li>
@@ -90,10 +87,8 @@ public class RequestInspection implements Serializable, Cloneable, StructuredPoj
      * href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.
      * </p>
      * <p>
-     * For example, for the JSON payload
-     * <code>{ "login": { "username": "THE_USERNAME", "password": "THE_PASSWORD" } }</code>, the username field
-     * specification is <code>/login/username</code> and the password field specification is
-     * <code>/login/password</code>.
+     * For example, for the JSON payload <code>{ "form": { "password": "THE_PASSWORD" } }</code>, the password field
+     * specification is <code>/form/password</code>.
      * </p>
      * </li>
      * <li>
@@ -101,9 +96,8 @@ public class RequestInspection implements Serializable, Cloneable, StructuredPoj
      * For form encoded payload types, use the HTML form names.
      * </p>
      * <p>
-     * For example, for an HTML form with input elements named <code>username1</code> and <code>password1</code>, the
-     * username field specification is <code>username1</code> and the password field specification is
-     * <code>password1</code>.
+     * For example, for an HTML form with the input element named <code>password1</code>, the password field
+     * specification is <code>password1</code>.
      * </p>
      * </li>
      * </ul>
@@ -171,10 +165,10 @@ public class RequestInspection implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Details about your login page username field.
+     * The name of the field in the request payload that contains your customer's username.
      * </p>
      * <p>
-     * How you specify this depends on the payload type.
+     * How you specify this depends on the request inspection payload type.
      * </p>
      * <ul>
      * <li>
@@ -184,10 +178,8 @@ public class RequestInspection implements Serializable, Cloneable, StructuredPoj
      * href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.
      * </p>
      * <p>
-     * For example, for the JSON payload
-     * <code>{ "login": { "username": "THE_USERNAME", "password": "THE_PASSWORD" } }</code>, the username field
-     * specification is <code>/login/username</code> and the password field specification is
-     * <code>/login/password</code>.
+     * For example, for the JSON payload <code>{ "form": { "username": "THE_USERNAME" } }</code>, the username field
+     * specification is <code>/form/username</code>.
      * </p>
      * </li>
      * <li>
@@ -195,17 +187,16 @@ public class RequestInspection implements Serializable, Cloneable, StructuredPoj
      * For form encoded payload types, use the HTML form names.
      * </p>
      * <p>
-     * For example, for an HTML form with input elements named <code>username1</code> and <code>password1</code>, the
-     * username field specification is <code>username1</code> and the password field specification is
-     * <code>password1</code>.
+     * For example, for an HTML form with the input element named <code>username1</code>, the username field
+     * specification is <code>username1</code>
      * </p>
      * </li>
      * </ul>
      * 
      * @param usernameField
-     *        Details about your login page username field. </p>
+     *        The name of the field in the request payload that contains your customer's username. </p>
      *        <p>
-     *        How you specify this depends on the payload type.
+     *        How you specify this depends on the request inspection payload type.
      *        </p>
      *        <ul>
      *        <li>
@@ -215,10 +206,8 @@ public class RequestInspection implements Serializable, Cloneable, StructuredPoj
      *        href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.
      *        </p>
      *        <p>
-     *        For example, for the JSON payload
-     *        <code>{ "login": { "username": "THE_USERNAME", "password": "THE_PASSWORD" } }</code>, the username field
-     *        specification is <code>/login/username</code> and the password field specification is
-     *        <code>/login/password</code>.
+     *        For example, for the JSON payload <code>{ "form": { "username": "THE_USERNAME" } }</code>, the username
+     *        field specification is <code>/form/username</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -226,9 +215,8 @@ public class RequestInspection implements Serializable, Cloneable, StructuredPoj
      *        For form encoded payload types, use the HTML form names.
      *        </p>
      *        <p>
-     *        For example, for an HTML form with input elements named <code>username1</code> and <code>password1</code>,
-     *        the username field specification is <code>username1</code> and the password field specification is
-     *        <code>password1</code>.
+     *        For example, for an HTML form with the input element named <code>username1</code>, the username field
+     *        specification is <code>username1</code>
      *        </p>
      *        </li>
      */
@@ -239,10 +227,10 @@ public class RequestInspection implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Details about your login page username field.
+     * The name of the field in the request payload that contains your customer's username.
      * </p>
      * <p>
-     * How you specify this depends on the payload type.
+     * How you specify this depends on the request inspection payload type.
      * </p>
      * <ul>
      * <li>
@@ -252,10 +240,8 @@ public class RequestInspection implements Serializable, Cloneable, StructuredPoj
      * href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.
      * </p>
      * <p>
-     * For example, for the JSON payload
-     * <code>{ "login": { "username": "THE_USERNAME", "password": "THE_PASSWORD" } }</code>, the username field
-     * specification is <code>/login/username</code> and the password field specification is
-     * <code>/login/password</code>.
+     * For example, for the JSON payload <code>{ "form": { "username": "THE_USERNAME" } }</code>, the username field
+     * specification is <code>/form/username</code>.
      * </p>
      * </li>
      * <li>
@@ -263,16 +249,15 @@ public class RequestInspection implements Serializable, Cloneable, StructuredPoj
      * For form encoded payload types, use the HTML form names.
      * </p>
      * <p>
-     * For example, for an HTML form with input elements named <code>username1</code> and <code>password1</code>, the
-     * username field specification is <code>username1</code> and the password field specification is
-     * <code>password1</code>.
+     * For example, for an HTML form with the input element named <code>username1</code>, the username field
+     * specification is <code>username1</code>
      * </p>
      * </li>
      * </ul>
      * 
-     * @return Details about your login page username field. </p>
+     * @return The name of the field in the request payload that contains your customer's username. </p>
      *         <p>
-     *         How you specify this depends on the payload type.
+     *         How you specify this depends on the request inspection payload type.
      *         </p>
      *         <ul>
      *         <li>
@@ -282,10 +267,8 @@ public class RequestInspection implements Serializable, Cloneable, StructuredPoj
      *         href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.
      *         </p>
      *         <p>
-     *         For example, for the JSON payload
-     *         <code>{ "login": { "username": "THE_USERNAME", "password": "THE_PASSWORD" } }</code>, the username field
-     *         specification is <code>/login/username</code> and the password field specification is
-     *         <code>/login/password</code>.
+     *         For example, for the JSON payload <code>{ "form": { "username": "THE_USERNAME" } }</code>, the username
+     *         field specification is <code>/form/username</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -293,9 +276,8 @@ public class RequestInspection implements Serializable, Cloneable, StructuredPoj
      *         For form encoded payload types, use the HTML form names.
      *         </p>
      *         <p>
-     *         For example, for an HTML form with input elements named <code>username1</code> and <code>password1</code>
-     *         , the username field specification is <code>username1</code> and the password field specification is
-     *         <code>password1</code>.
+     *         For example, for an HTML form with the input element named <code>username1</code>, the username field
+     *         specification is <code>username1</code>
      *         </p>
      *         </li>
      */
@@ -306,10 +288,10 @@ public class RequestInspection implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Details about your login page username field.
+     * The name of the field in the request payload that contains your customer's username.
      * </p>
      * <p>
-     * How you specify this depends on the payload type.
+     * How you specify this depends on the request inspection payload type.
      * </p>
      * <ul>
      * <li>
@@ -319,10 +301,8 @@ public class RequestInspection implements Serializable, Cloneable, StructuredPoj
      * href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.
      * </p>
      * <p>
-     * For example, for the JSON payload
-     * <code>{ "login": { "username": "THE_USERNAME", "password": "THE_PASSWORD" } }</code>, the username field
-     * specification is <code>/login/username</code> and the password field specification is
-     * <code>/login/password</code>.
+     * For example, for the JSON payload <code>{ "form": { "username": "THE_USERNAME" } }</code>, the username field
+     * specification is <code>/form/username</code>.
      * </p>
      * </li>
      * <li>
@@ -330,17 +310,16 @@ public class RequestInspection implements Serializable, Cloneable, StructuredPoj
      * For form encoded payload types, use the HTML form names.
      * </p>
      * <p>
-     * For example, for an HTML form with input elements named <code>username1</code> and <code>password1</code>, the
-     * username field specification is <code>username1</code> and the password field specification is
-     * <code>password1</code>.
+     * For example, for an HTML form with the input element named <code>username1</code>, the username field
+     * specification is <code>username1</code>
      * </p>
      * </li>
      * </ul>
      * 
      * @param usernameField
-     *        Details about your login page username field. </p>
+     *        The name of the field in the request payload that contains your customer's username. </p>
      *        <p>
-     *        How you specify this depends on the payload type.
+     *        How you specify this depends on the request inspection payload type.
      *        </p>
      *        <ul>
      *        <li>
@@ -350,10 +329,8 @@ public class RequestInspection implements Serializable, Cloneable, StructuredPoj
      *        href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.
      *        </p>
      *        <p>
-     *        For example, for the JSON payload
-     *        <code>{ "login": { "username": "THE_USERNAME", "password": "THE_PASSWORD" } }</code>, the username field
-     *        specification is <code>/login/username</code> and the password field specification is
-     *        <code>/login/password</code>.
+     *        For example, for the JSON payload <code>{ "form": { "username": "THE_USERNAME" } }</code>, the username
+     *        field specification is <code>/form/username</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -361,9 +338,8 @@ public class RequestInspection implements Serializable, Cloneable, StructuredPoj
      *        For form encoded payload types, use the HTML form names.
      *        </p>
      *        <p>
-     *        For example, for an HTML form with input elements named <code>username1</code> and <code>password1</code>,
-     *        the username field specification is <code>username1</code> and the password field specification is
-     *        <code>password1</code>.
+     *        For example, for an HTML form with the input element named <code>username1</code>, the username field
+     *        specification is <code>username1</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -376,10 +352,10 @@ public class RequestInspection implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Details about your login page password field.
+     * The name of the field in the request payload that contains your customer's password.
      * </p>
      * <p>
-     * How you specify this depends on the payload type.
+     * How you specify this depends on the request inspection payload type.
      * </p>
      * <ul>
      * <li>
@@ -389,10 +365,8 @@ public class RequestInspection implements Serializable, Cloneable, StructuredPoj
      * href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.
      * </p>
      * <p>
-     * For example, for the JSON payload
-     * <code>{ "login": { "username": "THE_USERNAME", "password": "THE_PASSWORD" } }</code>, the username field
-     * specification is <code>/login/username</code> and the password field specification is
-     * <code>/login/password</code>.
+     * For example, for the JSON payload <code>{ "form": { "password": "THE_PASSWORD" } }</code>, the password field
+     * specification is <code>/form/password</code>.
      * </p>
      * </li>
      * <li>
@@ -400,17 +374,16 @@ public class RequestInspection implements Serializable, Cloneable, StructuredPoj
      * For form encoded payload types, use the HTML form names.
      * </p>
      * <p>
-     * For example, for an HTML form with input elements named <code>username1</code> and <code>password1</code>, the
-     * username field specification is <code>username1</code> and the password field specification is
-     * <code>password1</code>.
+     * For example, for an HTML form with the input element named <code>password1</code>, the password field
+     * specification is <code>password1</code>.
      * </p>
      * </li>
      * </ul>
      * 
      * @param passwordField
-     *        Details about your login page password field. </p>
+     *        The name of the field in the request payload that contains your customer's password. </p>
      *        <p>
-     *        How you specify this depends on the payload type.
+     *        How you specify this depends on the request inspection payload type.
      *        </p>
      *        <ul>
      *        <li>
@@ -420,10 +393,8 @@ public class RequestInspection implements Serializable, Cloneable, StructuredPoj
      *        href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.
      *        </p>
      *        <p>
-     *        For example, for the JSON payload
-     *        <code>{ "login": { "username": "THE_USERNAME", "password": "THE_PASSWORD" } }</code>, the username field
-     *        specification is <code>/login/username</code> and the password field specification is
-     *        <code>/login/password</code>.
+     *        For example, for the JSON payload <code>{ "form": { "password": "THE_PASSWORD" } }</code>, the password
+     *        field specification is <code>/form/password</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -431,9 +402,8 @@ public class RequestInspection implements Serializable, Cloneable, StructuredPoj
      *        For form encoded payload types, use the HTML form names.
      *        </p>
      *        <p>
-     *        For example, for an HTML form with input elements named <code>username1</code> and <code>password1</code>,
-     *        the username field specification is <code>username1</code> and the password field specification is
-     *        <code>password1</code>.
+     *        For example, for an HTML form with the input element named <code>password1</code>, the password field
+     *        specification is <code>password1</code>.
      *        </p>
      *        </li>
      */
@@ -444,10 +414,10 @@ public class RequestInspection implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Details about your login page password field.
+     * The name of the field in the request payload that contains your customer's password.
      * </p>
      * <p>
-     * How you specify this depends on the payload type.
+     * How you specify this depends on the request inspection payload type.
      * </p>
      * <ul>
      * <li>
@@ -457,10 +427,8 @@ public class RequestInspection implements Serializable, Cloneable, StructuredPoj
      * href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.
      * </p>
      * <p>
-     * For example, for the JSON payload
-     * <code>{ "login": { "username": "THE_USERNAME", "password": "THE_PASSWORD" } }</code>, the username field
-     * specification is <code>/login/username</code> and the password field specification is
-     * <code>/login/password</code>.
+     * For example, for the JSON payload <code>{ "form": { "password": "THE_PASSWORD" } }</code>, the password field
+     * specification is <code>/form/password</code>.
      * </p>
      * </li>
      * <li>
@@ -468,16 +436,15 @@ public class RequestInspection implements Serializable, Cloneable, StructuredPoj
      * For form encoded payload types, use the HTML form names.
      * </p>
      * <p>
-     * For example, for an HTML form with input elements named <code>username1</code> and <code>password1</code>, the
-     * username field specification is <code>username1</code> and the password field specification is
-     * <code>password1</code>.
+     * For example, for an HTML form with the input element named <code>password1</code>, the password field
+     * specification is <code>password1</code>.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return Details about your login page password field. </p>
+     * @return The name of the field in the request payload that contains your customer's password. </p>
      *         <p>
-     *         How you specify this depends on the payload type.
+     *         How you specify this depends on the request inspection payload type.
      *         </p>
      *         <ul>
      *         <li>
@@ -487,10 +454,8 @@ public class RequestInspection implements Serializable, Cloneable, StructuredPoj
      *         href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.
      *         </p>
      *         <p>
-     *         For example, for the JSON payload
-     *         <code>{ "login": { "username": "THE_USERNAME", "password": "THE_PASSWORD" } }</code>, the username field
-     *         specification is <code>/login/username</code> and the password field specification is
-     *         <code>/login/password</code>.
+     *         For example, for the JSON payload <code>{ "form": { "password": "THE_PASSWORD" } }</code>, the password
+     *         field specification is <code>/form/password</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -498,9 +463,8 @@ public class RequestInspection implements Serializable, Cloneable, StructuredPoj
      *         For form encoded payload types, use the HTML form names.
      *         </p>
      *         <p>
-     *         For example, for an HTML form with input elements named <code>username1</code> and <code>password1</code>
-     *         , the username field specification is <code>username1</code> and the password field specification is
-     *         <code>password1</code>.
+     *         For example, for an HTML form with the input element named <code>password1</code>, the password field
+     *         specification is <code>password1</code>.
      *         </p>
      *         </li>
      */
@@ -511,10 +475,10 @@ public class RequestInspection implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Details about your login page password field.
+     * The name of the field in the request payload that contains your customer's password.
      * </p>
      * <p>
-     * How you specify this depends on the payload type.
+     * How you specify this depends on the request inspection payload type.
      * </p>
      * <ul>
      * <li>
@@ -524,10 +488,8 @@ public class RequestInspection implements Serializable, Cloneable, StructuredPoj
      * href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.
      * </p>
      * <p>
-     * For example, for the JSON payload
-     * <code>{ "login": { "username": "THE_USERNAME", "password": "THE_PASSWORD" } }</code>, the username field
-     * specification is <code>/login/username</code> and the password field specification is
-     * <code>/login/password</code>.
+     * For example, for the JSON payload <code>{ "form": { "password": "THE_PASSWORD" } }</code>, the password field
+     * specification is <code>/form/password</code>.
      * </p>
      * </li>
      * <li>
@@ -535,17 +497,16 @@ public class RequestInspection implements Serializable, Cloneable, StructuredPoj
      * For form encoded payload types, use the HTML form names.
      * </p>
      * <p>
-     * For example, for an HTML form with input elements named <code>username1</code> and <code>password1</code>, the
-     * username field specification is <code>username1</code> and the password field specification is
-     * <code>password1</code>.
+     * For example, for an HTML form with the input element named <code>password1</code>, the password field
+     * specification is <code>password1</code>.
      * </p>
      * </li>
      * </ul>
      * 
      * @param passwordField
-     *        Details about your login page password field. </p>
+     *        The name of the field in the request payload that contains your customer's password. </p>
      *        <p>
-     *        How you specify this depends on the payload type.
+     *        How you specify this depends on the request inspection payload type.
      *        </p>
      *        <ul>
      *        <li>
@@ -555,10 +516,8 @@ public class RequestInspection implements Serializable, Cloneable, StructuredPoj
      *        href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.
      *        </p>
      *        <p>
-     *        For example, for the JSON payload
-     *        <code>{ "login": { "username": "THE_USERNAME", "password": "THE_PASSWORD" } }</code>, the username field
-     *        specification is <code>/login/username</code> and the password field specification is
-     *        <code>/login/password</code>.
+     *        For example, for the JSON payload <code>{ "form": { "password": "THE_PASSWORD" } }</code>, the password
+     *        field specification is <code>/form/password</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -566,9 +525,8 @@ public class RequestInspection implements Serializable, Cloneable, StructuredPoj
      *        For form encoded payload types, use the HTML form names.
      *        </p>
      *        <p>
-     *        For example, for an HTML form with input elements named <code>username1</code> and <code>password1</code>,
-     *        the username field specification is <code>username1</code> and the password field specification is
-     *        <code>password1</code>.
+     *        For example, for an HTML form with the input element named <code>password1</code>, the password field
+     *        specification is <code>password1</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

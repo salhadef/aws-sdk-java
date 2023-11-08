@@ -158,6 +158,19 @@ public class AbstractAWSAmplifyUIBuilderAsync extends AbstractAWSAmplifyUIBuilde
     }
 
     @Override
+    public java.util.concurrent.Future<GetCodegenJobResult> getCodegenJobAsync(GetCodegenJobRequest request) {
+
+        return getCodegenJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCodegenJobResult> getCodegenJobAsync(GetCodegenJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetCodegenJobRequest, GetCodegenJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetComponentResult> getComponentAsync(GetComponentRequest request) {
 
         return getComponentAsync(request, null);
@@ -205,6 +218,19 @@ public class AbstractAWSAmplifyUIBuilderAsync extends AbstractAWSAmplifyUIBuilde
     @Override
     public java.util.concurrent.Future<GetThemeResult> getThemeAsync(GetThemeRequest request,
             com.amazonaws.handlers.AsyncHandler<GetThemeRequest, GetThemeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCodegenJobsResult> listCodegenJobsAsync(ListCodegenJobsRequest request) {
+
+        return listCodegenJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCodegenJobsResult> listCodegenJobsAsync(ListCodegenJobsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListCodegenJobsRequest, ListCodegenJobsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -270,6 +296,19 @@ public class AbstractAWSAmplifyUIBuilderAsync extends AbstractAWSAmplifyUIBuilde
     @Override
     public java.util.concurrent.Future<RefreshTokenResult> refreshTokenAsync(RefreshTokenRequest request,
             com.amazonaws.handlers.AsyncHandler<RefreshTokenRequest, RefreshTokenResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartCodegenJobResult> startCodegenJobAsync(StartCodegenJobRequest request) {
+
+        return startCodegenJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartCodegenJobResult> startCodegenJobAsync(StartCodegenJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartCodegenJobRequest, StartCodegenJobResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

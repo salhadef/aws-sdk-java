@@ -67,6 +67,12 @@ public class InstanceTypeDetails implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private java.util.List<String> instanceRole;
+    /**
+     * <p>
+     * The supported Availability Zones for the instance type.
+     * </p>
+     */
+    private java.util.List<String> availabilityZones;
 
     /**
      * <p>
@@ -458,6 +464,76 @@ public class InstanceTypeDetails implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The supported Availability Zones for the instance type.
+     * </p>
+     * 
+     * @return The supported Availability Zones for the instance type.
+     */
+
+    public java.util.List<String> getAvailabilityZones() {
+        return availabilityZones;
+    }
+
+    /**
+     * <p>
+     * The supported Availability Zones for the instance type.
+     * </p>
+     * 
+     * @param availabilityZones
+     *        The supported Availability Zones for the instance type.
+     */
+
+    public void setAvailabilityZones(java.util.Collection<String> availabilityZones) {
+        if (availabilityZones == null) {
+            this.availabilityZones = null;
+            return;
+        }
+
+        this.availabilityZones = new java.util.ArrayList<String>(availabilityZones);
+    }
+
+    /**
+     * <p>
+     * The supported Availability Zones for the instance type.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAvailabilityZones(java.util.Collection)} or {@link #withAvailabilityZones(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param availabilityZones
+     *        The supported Availability Zones for the instance type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceTypeDetails withAvailabilityZones(String... availabilityZones) {
+        if (this.availabilityZones == null) {
+            setAvailabilityZones(new java.util.ArrayList<String>(availabilityZones.length));
+        }
+        for (String ele : availabilityZones) {
+            this.availabilityZones.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The supported Availability Zones for the instance type.
+     * </p>
+     * 
+     * @param availabilityZones
+     *        The supported Availability Zones for the instance type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceTypeDetails withAvailabilityZones(java.util.Collection<String> availabilityZones) {
+        setAvailabilityZones(availabilityZones);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -482,7 +558,9 @@ public class InstanceTypeDetails implements Serializable, Cloneable, StructuredP
         if (getWarmEnabled() != null)
             sb.append("WarmEnabled: ").append(getWarmEnabled()).append(",");
         if (getInstanceRole() != null)
-            sb.append("InstanceRole: ").append(getInstanceRole());
+            sb.append("InstanceRole: ").append(getInstanceRole()).append(",");
+        if (getAvailabilityZones() != null)
+            sb.append("AvailabilityZones: ").append(getAvailabilityZones());
         sb.append("}");
         return sb.toString();
     }
@@ -525,6 +603,10 @@ public class InstanceTypeDetails implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getInstanceRole() != null && other.getInstanceRole().equals(this.getInstanceRole()) == false)
             return false;
+        if (other.getAvailabilityZones() == null ^ this.getAvailabilityZones() == null)
+            return false;
+        if (other.getAvailabilityZones() != null && other.getAvailabilityZones().equals(this.getAvailabilityZones()) == false)
+            return false;
         return true;
     }
 
@@ -540,6 +622,7 @@ public class InstanceTypeDetails implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getAdvancedSecurityEnabled() == null) ? 0 : getAdvancedSecurityEnabled().hashCode());
         hashCode = prime * hashCode + ((getWarmEnabled() == null) ? 0 : getWarmEnabled().hashCode());
         hashCode = prime * hashCode + ((getInstanceRole() == null) ? 0 : getInstanceRole().hashCode());
+        hashCode = prime * hashCode + ((getAvailabilityZones() == null) ? 0 : getAvailabilityZones().hashCode());
         return hashCode;
     }
 

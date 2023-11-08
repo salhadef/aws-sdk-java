@@ -60,6 +60,16 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
      * <code>zip</code>: A zip archive file.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>YAML</code>: A YAML-formatted file.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>JSON</code>: A JSON-formatted file.
+     * </p>
+     * </li>
      * </ul>
      */
     private String bundleType;
@@ -182,6 +192,16 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
      * <code>zip</code>: A zip archive file.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>YAML</code>: A YAML-formatted file.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>JSON</code>: A JSON-formatted file.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param bundleType
@@ -200,6 +220,16 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>zip</code>: A zip archive file.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YAML</code>: A YAML-formatted file.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>JSON</code>: A JSON-formatted file.
      *        </p>
      *        </li>
      * @see BundleType
@@ -229,6 +259,16 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
      * <code>zip</code>: A zip archive file.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>YAML</code>: A YAML-formatted file.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>JSON</code>: A JSON-formatted file.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The file type of the application revision. Must be one of the following:</p>
@@ -246,6 +286,16 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         <code>zip</code>: A zip archive file.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YAML</code>: A YAML-formatted file.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>JSON</code>: A JSON-formatted file.
      *         </p>
      *         </li>
      * @see BundleType
@@ -275,6 +325,16 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
      * <code>zip</code>: A zip archive file.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>YAML</code>: A YAML-formatted file.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>JSON</code>: A JSON-formatted file.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param bundleType
@@ -293,6 +353,16 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>zip</code>: A zip archive file.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YAML</code>: A YAML-formatted file.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>JSON</code>: A JSON-formatted file.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -324,6 +394,16 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
      * <code>zip</code>: A zip archive file.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>YAML</code>: A YAML-formatted file.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>JSON</code>: A JSON-formatted file.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param bundleType
@@ -342,6 +422,16 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>zip</code>: A zip archive file.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YAML</code>: A YAML-formatted file.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>JSON</code>: A JSON-formatted file.
      *        </p>
      *        </li>
      * @see BundleType
@@ -371,6 +461,16 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
      * <code>zip</code>: A zip archive file.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>YAML</code>: A YAML-formatted file.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>JSON</code>: A JSON-formatted file.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param bundleType
@@ -389,6 +489,16 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>zip</code>: A zip archive file.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YAML</code>: A YAML-formatted file.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>JSON</code>: A JSON-formatted file.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

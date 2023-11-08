@@ -42,6 +42,8 @@ public class CalculateRouteMatrixRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DestinationPositions").build();
     private static final MarshallingInfo<String> DISTANCEUNIT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DistanceUnit").build();
+    private static final MarshallingInfo<String> KEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.QUERY_PARAM)
+            .marshallLocationName("key").build();
     private static final MarshallingInfo<String> TRAVELMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TravelMode").build();
     private static final MarshallingInfo<StructuredPojo> TRUCKMODEOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -70,6 +72,7 @@ public class CalculateRouteMatrixRequestMarshaller {
             protocolMarshaller.marshall(calculateRouteMatrixRequest.getDepartureTime(), DEPARTURETIME_BINDING);
             protocolMarshaller.marshall(calculateRouteMatrixRequest.getDestinationPositions(), DESTINATIONPOSITIONS_BINDING);
             protocolMarshaller.marshall(calculateRouteMatrixRequest.getDistanceUnit(), DISTANCEUNIT_BINDING);
+            protocolMarshaller.marshall(calculateRouteMatrixRequest.getKey(), KEY_BINDING);
             protocolMarshaller.marshall(calculateRouteMatrixRequest.getTravelMode(), TRAVELMODE_BINDING);
             protocolMarshaller.marshall(calculateRouteMatrixRequest.getTruckModeOptions(), TRUCKMODEOPTIONS_BINDING);
         } catch (Exception e) {

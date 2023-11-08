@@ -36,7 +36,7 @@ public class ReservationPurchaseRecommendationDetail implements Serializable, Cl
     private String accountId;
     /**
      * <p>
-     * Details about the instances that Amazon Web Services recommends that you purchase.
+     * Details about the reservations that Amazon Web Services recommends that you purchase.
      * </p>
      */
     private InstanceDetails instanceDetails;
@@ -194,11 +194,11 @@ public class ReservationPurchaseRecommendationDetail implements Serializable, Cl
 
     /**
      * <p>
-     * Details about the instances that Amazon Web Services recommends that you purchase.
+     * Details about the reservations that Amazon Web Services recommends that you purchase.
      * </p>
      * 
      * @param instanceDetails
-     *        Details about the instances that Amazon Web Services recommends that you purchase.
+     *        Details about the reservations that Amazon Web Services recommends that you purchase.
      */
 
     public void setInstanceDetails(InstanceDetails instanceDetails) {
@@ -207,10 +207,10 @@ public class ReservationPurchaseRecommendationDetail implements Serializable, Cl
 
     /**
      * <p>
-     * Details about the instances that Amazon Web Services recommends that you purchase.
+     * Details about the reservations that Amazon Web Services recommends that you purchase.
      * </p>
      * 
-     * @return Details about the instances that Amazon Web Services recommends that you purchase.
+     * @return Details about the reservations that Amazon Web Services recommends that you purchase.
      */
 
     public InstanceDetails getInstanceDetails() {
@@ -219,11 +219,11 @@ public class ReservationPurchaseRecommendationDetail implements Serializable, Cl
 
     /**
      * <p>
-     * Details about the instances that Amazon Web Services recommends that you purchase.
+     * Details about the reservations that Amazon Web Services recommends that you purchase.
      * </p>
      * 
      * @param instanceDetails
-     *        Details about the instances that Amazon Web Services recommends that you purchase.
+     *        Details about the reservations that Amazon Web Services recommends that you purchase.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

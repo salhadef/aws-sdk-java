@@ -40,10 +40,18 @@ public class RecommenderConfig implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Specifies the requested minimum provisioned recommendation requests per second that Amazon Personalize will
-     * support.
+     * support. A high <code>minRecommendationRequestsPerSecond</code> will increase your bill. We recommend starting
+     * with 1 for <code>minRecommendationRequestsPerSecond</code> (the default). Track your usage using Amazon
+     * CloudWatch metrics, and increase the <code>minRecommendationRequestsPerSecond</code> as necessary.
      * </p>
      */
     private Integer minRecommendationRequestsPerSecond;
+    /**
+     * <p>
+     * Specifies the training data configuration to use when creating a domain recommender.
+     * </p>
+     */
+    private TrainingDataConfig trainingDataConfig;
 
     /**
      * <p>
@@ -134,12 +142,16 @@ public class RecommenderConfig implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Specifies the requested minimum provisioned recommendation requests per second that Amazon Personalize will
-     * support.
+     * support. A high <code>minRecommendationRequestsPerSecond</code> will increase your bill. We recommend starting
+     * with 1 for <code>minRecommendationRequestsPerSecond</code> (the default). Track your usage using Amazon
+     * CloudWatch metrics, and increase the <code>minRecommendationRequestsPerSecond</code> as necessary.
      * </p>
      * 
      * @param minRecommendationRequestsPerSecond
      *        Specifies the requested minimum provisioned recommendation requests per second that Amazon Personalize
-     *        will support.
+     *        will support. A high <code>minRecommendationRequestsPerSecond</code> will increase your bill. We recommend
+     *        starting with 1 for <code>minRecommendationRequestsPerSecond</code> (the default). Track your usage using
+     *        Amazon CloudWatch metrics, and increase the <code>minRecommendationRequestsPerSecond</code> as necessary.
      */
 
     public void setMinRecommendationRequestsPerSecond(Integer minRecommendationRequestsPerSecond) {
@@ -149,11 +161,16 @@ public class RecommenderConfig implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Specifies the requested minimum provisioned recommendation requests per second that Amazon Personalize will
-     * support.
+     * support. A high <code>minRecommendationRequestsPerSecond</code> will increase your bill. We recommend starting
+     * with 1 for <code>minRecommendationRequestsPerSecond</code> (the default). Track your usage using Amazon
+     * CloudWatch metrics, and increase the <code>minRecommendationRequestsPerSecond</code> as necessary.
      * </p>
      * 
      * @return Specifies the requested minimum provisioned recommendation requests per second that Amazon Personalize
-     *         will support.
+     *         will support. A high <code>minRecommendationRequestsPerSecond</code> will increase your bill. We
+     *         recommend starting with 1 for <code>minRecommendationRequestsPerSecond</code> (the default). Track your
+     *         usage using Amazon CloudWatch metrics, and increase the <code>minRecommendationRequestsPerSecond</code>
+     *         as necessary.
      */
 
     public Integer getMinRecommendationRequestsPerSecond() {
@@ -163,17 +180,61 @@ public class RecommenderConfig implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Specifies the requested minimum provisioned recommendation requests per second that Amazon Personalize will
-     * support.
+     * support. A high <code>minRecommendationRequestsPerSecond</code> will increase your bill. We recommend starting
+     * with 1 for <code>minRecommendationRequestsPerSecond</code> (the default). Track your usage using Amazon
+     * CloudWatch metrics, and increase the <code>minRecommendationRequestsPerSecond</code> as necessary.
      * </p>
      * 
      * @param minRecommendationRequestsPerSecond
      *        Specifies the requested minimum provisioned recommendation requests per second that Amazon Personalize
-     *        will support.
+     *        will support. A high <code>minRecommendationRequestsPerSecond</code> will increase your bill. We recommend
+     *        starting with 1 for <code>minRecommendationRequestsPerSecond</code> (the default). Track your usage using
+     *        Amazon CloudWatch metrics, and increase the <code>minRecommendationRequestsPerSecond</code> as necessary.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RecommenderConfig withMinRecommendationRequestsPerSecond(Integer minRecommendationRequestsPerSecond) {
         setMinRecommendationRequestsPerSecond(minRecommendationRequestsPerSecond);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the training data configuration to use when creating a domain recommender.
+     * </p>
+     * 
+     * @param trainingDataConfig
+     *        Specifies the training data configuration to use when creating a domain recommender.
+     */
+
+    public void setTrainingDataConfig(TrainingDataConfig trainingDataConfig) {
+        this.trainingDataConfig = trainingDataConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies the training data configuration to use when creating a domain recommender.
+     * </p>
+     * 
+     * @return Specifies the training data configuration to use when creating a domain recommender.
+     */
+
+    public TrainingDataConfig getTrainingDataConfig() {
+        return this.trainingDataConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies the training data configuration to use when creating a domain recommender.
+     * </p>
+     * 
+     * @param trainingDataConfig
+     *        Specifies the training data configuration to use when creating a domain recommender.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RecommenderConfig withTrainingDataConfig(TrainingDataConfig trainingDataConfig) {
+        setTrainingDataConfig(trainingDataConfig);
         return this;
     }
 
@@ -192,7 +253,9 @@ public class RecommenderConfig implements Serializable, Cloneable, StructuredPoj
         if (getItemExplorationConfig() != null)
             sb.append("ItemExplorationConfig: ").append(getItemExplorationConfig()).append(",");
         if (getMinRecommendationRequestsPerSecond() != null)
-            sb.append("MinRecommendationRequestsPerSecond: ").append(getMinRecommendationRequestsPerSecond());
+            sb.append("MinRecommendationRequestsPerSecond: ").append(getMinRecommendationRequestsPerSecond()).append(",");
+        if (getTrainingDataConfig() != null)
+            sb.append("TrainingDataConfig: ").append(getTrainingDataConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -216,6 +279,10 @@ public class RecommenderConfig implements Serializable, Cloneable, StructuredPoj
         if (other.getMinRecommendationRequestsPerSecond() != null
                 && other.getMinRecommendationRequestsPerSecond().equals(this.getMinRecommendationRequestsPerSecond()) == false)
             return false;
+        if (other.getTrainingDataConfig() == null ^ this.getTrainingDataConfig() == null)
+            return false;
+        if (other.getTrainingDataConfig() != null && other.getTrainingDataConfig().equals(this.getTrainingDataConfig()) == false)
+            return false;
         return true;
     }
 
@@ -226,6 +293,7 @@ public class RecommenderConfig implements Serializable, Cloneable, StructuredPoj
 
         hashCode = prime * hashCode + ((getItemExplorationConfig() == null) ? 0 : getItemExplorationConfig().hashCode());
         hashCode = prime * hashCode + ((getMinRecommendationRequestsPerSecond() == null) ? 0 : getMinRecommendationRequestsPerSecond().hashCode());
+        hashCode = prime * hashCode + ((getTrainingDataConfig() == null) ? 0 : getTrainingDataConfig().hashCode());
         return hashCode;
     }
 

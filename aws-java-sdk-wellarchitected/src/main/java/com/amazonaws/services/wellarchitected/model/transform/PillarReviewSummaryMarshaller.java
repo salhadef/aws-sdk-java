@@ -37,6 +37,8 @@ public class PillarReviewSummaryMarshaller {
             .marshallLocationName("Notes").build();
     private static final MarshallingInfo<Map> RISKCOUNTS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("RiskCounts").build();
+    private static final MarshallingInfo<Map> PRIORITIZEDRISKCOUNTS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PrioritizedRiskCounts").build();
 
     private static final PillarReviewSummaryMarshaller instance = new PillarReviewSummaryMarshaller();
 
@@ -58,6 +60,7 @@ public class PillarReviewSummaryMarshaller {
             protocolMarshaller.marshall(pillarReviewSummary.getPillarName(), PILLARNAME_BINDING);
             protocolMarshaller.marshall(pillarReviewSummary.getNotes(), NOTES_BINDING);
             protocolMarshaller.marshall(pillarReviewSummary.getRiskCounts(), RISKCOUNTS_BINDING);
+            protocolMarshaller.marshall(pillarReviewSummary.getPrioritizedRiskCounts(), PRIORITIZEDRISKCOUNTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

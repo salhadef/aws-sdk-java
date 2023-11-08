@@ -50,6 +50,10 @@ public class CreateDashboardRequestMarshaller {
             .marshallLocationName("ThemeArn").build();
     private static final MarshallingInfo<StructuredPojo> DEFINITION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Definition").build();
+    private static final MarshallingInfo<StructuredPojo> VALIDATIONSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ValidationStrategy").build();
+    private static final MarshallingInfo<List> FOLDERARNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("FolderArns").build();
 
     private static final CreateDashboardRequestMarshaller instance = new CreateDashboardRequestMarshaller();
 
@@ -78,6 +82,8 @@ public class CreateDashboardRequestMarshaller {
             protocolMarshaller.marshall(createDashboardRequest.getDashboardPublishOptions(), DASHBOARDPUBLISHOPTIONS_BINDING);
             protocolMarshaller.marshall(createDashboardRequest.getThemeArn(), THEMEARN_BINDING);
             protocolMarshaller.marshall(createDashboardRequest.getDefinition(), DEFINITION_BINDING);
+            protocolMarshaller.marshall(createDashboardRequest.getValidationStrategy(), VALIDATIONSTRATEGY_BINDING);
+            protocolMarshaller.marshall(createDashboardRequest.getFolderArns(), FOLDERARNS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

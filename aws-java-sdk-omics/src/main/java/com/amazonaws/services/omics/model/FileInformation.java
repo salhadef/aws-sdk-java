@@ -30,10 +30,10 @@ public class FileInformation implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The file's content length.
+     * The file's total parts.
      * </p>
      */
-    private Long contentLength;
+    private Integer totalParts;
     /**
      * <p>
      * The file's part size.
@@ -42,48 +42,48 @@ public class FileInformation implements Serializable, Cloneable, StructuredPojo 
     private Long partSize;
     /**
      * <p>
+     * The file's content length.
+     * </p>
+     */
+    private Long contentLength;
+
+    /**
+     * <p>
      * The file's total parts.
      * </p>
-     */
-    private Integer totalParts;
-
-    /**
-     * <p>
-     * The file's content length.
-     * </p>
      * 
-     * @param contentLength
-     *        The file's content length.
+     * @param totalParts
+     *        The file's total parts.
      */
 
-    public void setContentLength(Long contentLength) {
-        this.contentLength = contentLength;
+    public void setTotalParts(Integer totalParts) {
+        this.totalParts = totalParts;
     }
 
     /**
      * <p>
-     * The file's content length.
+     * The file's total parts.
      * </p>
      * 
-     * @return The file's content length.
+     * @return The file's total parts.
      */
 
-    public Long getContentLength() {
-        return this.contentLength;
+    public Integer getTotalParts() {
+        return this.totalParts;
     }
 
     /**
      * <p>
-     * The file's content length.
+     * The file's total parts.
      * </p>
      * 
-     * @param contentLength
-     *        The file's content length.
+     * @param totalParts
+     *        The file's total parts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public FileInformation withContentLength(Long contentLength) {
-        setContentLength(contentLength);
+    public FileInformation withTotalParts(Integer totalParts) {
+        setTotalParts(totalParts);
         return this;
     }
 
@@ -129,41 +129,41 @@ public class FileInformation implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The file's total parts.
+     * The file's content length.
      * </p>
      * 
-     * @param totalParts
-     *        The file's total parts.
+     * @param contentLength
+     *        The file's content length.
      */
 
-    public void setTotalParts(Integer totalParts) {
-        this.totalParts = totalParts;
+    public void setContentLength(Long contentLength) {
+        this.contentLength = contentLength;
     }
 
     /**
      * <p>
-     * The file's total parts.
+     * The file's content length.
      * </p>
      * 
-     * @return The file's total parts.
+     * @return The file's content length.
      */
 
-    public Integer getTotalParts() {
-        return this.totalParts;
+    public Long getContentLength() {
+        return this.contentLength;
     }
 
     /**
      * <p>
-     * The file's total parts.
+     * The file's content length.
      * </p>
      * 
-     * @param totalParts
-     *        The file's total parts.
+     * @param contentLength
+     *        The file's content length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public FileInformation withTotalParts(Integer totalParts) {
-        setTotalParts(totalParts);
+    public FileInformation withContentLength(Long contentLength) {
+        setContentLength(contentLength);
         return this;
     }
 
@@ -179,12 +179,12 @@ public class FileInformation implements Serializable, Cloneable, StructuredPojo 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getContentLength() != null)
-            sb.append("ContentLength: ").append(getContentLength()).append(",");
+        if (getTotalParts() != null)
+            sb.append("TotalParts: ").append(getTotalParts()).append(",");
         if (getPartSize() != null)
             sb.append("PartSize: ").append(getPartSize()).append(",");
-        if (getTotalParts() != null)
-            sb.append("TotalParts: ").append(getTotalParts());
+        if (getContentLength() != null)
+            sb.append("ContentLength: ").append(getContentLength());
         sb.append("}");
         return sb.toString();
     }
@@ -199,17 +199,17 @@ public class FileInformation implements Serializable, Cloneable, StructuredPojo 
         if (obj instanceof FileInformation == false)
             return false;
         FileInformation other = (FileInformation) obj;
-        if (other.getContentLength() == null ^ this.getContentLength() == null)
+        if (other.getTotalParts() == null ^ this.getTotalParts() == null)
             return false;
-        if (other.getContentLength() != null && other.getContentLength().equals(this.getContentLength()) == false)
+        if (other.getTotalParts() != null && other.getTotalParts().equals(this.getTotalParts()) == false)
             return false;
         if (other.getPartSize() == null ^ this.getPartSize() == null)
             return false;
         if (other.getPartSize() != null && other.getPartSize().equals(this.getPartSize()) == false)
             return false;
-        if (other.getTotalParts() == null ^ this.getTotalParts() == null)
+        if (other.getContentLength() == null ^ this.getContentLength() == null)
             return false;
-        if (other.getTotalParts() != null && other.getTotalParts().equals(this.getTotalParts()) == false)
+        if (other.getContentLength() != null && other.getContentLength().equals(this.getContentLength()) == false)
             return false;
         return true;
     }
@@ -219,9 +219,9 @@ public class FileInformation implements Serializable, Cloneable, StructuredPojo 
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getContentLength() == null) ? 0 : getContentLength().hashCode());
-        hashCode = prime * hashCode + ((getPartSize() == null) ? 0 : getPartSize().hashCode());
         hashCode = prime * hashCode + ((getTotalParts() == null) ? 0 : getTotalParts().hashCode());
+        hashCode = prime * hashCode + ((getPartSize() == null) ? 0 : getPartSize().hashCode());
+        hashCode = prime * hashCode + ((getContentLength() == null) ? 0 : getContentLength().hashCode());
         return hashCode;
     }
 

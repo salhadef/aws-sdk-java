@@ -145,7 +145,7 @@ public class AppflowIntegration implements Serializable, Cloneable, StructuredPo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFlowDefinition() != null)
-            sb.append("FlowDefinition: ").append(getFlowDefinition()).append(",");
+            sb.append("FlowDefinition: ").append("***Sensitive Data Redacted***").append(",");
         if (getBatches() != null)
             sb.append("Batches: ").append(getBatches());
         sb.append("}");

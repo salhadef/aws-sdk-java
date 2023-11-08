@@ -20,6 +20,7 @@ package com.amazonaws.services.s3.model;
 public enum SSEAlgorithm {
     AES256("AES256"),
     KMS("aws:kms"),
+    DSSE("aws:kms:dsse"),
     ;
 
     private final String algorithm;

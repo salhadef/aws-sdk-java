@@ -47,9 +47,6 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
      * <i>Amazon EC2 User Guide</i>.
      * </p>
-     * <p>
-     * Default: <code>m1.small</code>
-     * </p>
      */
     private String instanceType;
     /**
@@ -402,7 +399,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     private CapacityReservationSpecification capacityReservationSpecification;
     /**
      * <p>
-     * Indicates whether an instance is enabled for hibernation. For more information, see <a
+     * Indicates whether an instance is enabled for hibernation. This parameter is valid only if the instance meets the
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation
+     * prerequisites</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the
      * <i>Amazon EC2 User Guide</i>.
      * </p>
@@ -428,7 +427,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information, see <a
-     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is Amazon Web Services Nitro
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What is Amazon Web Services Nitro
      * Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.
      * </p>
      * <p>
@@ -438,7 +437,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     private EnclaveOptionsRequest enclaveOptions;
     /**
      * <p>
-     * The options for the instance hostname. The default values are inherited from the subnet.
+     * The options for the instance hostname. The default values are inherited from the subnet. Applies only if creating
+     * a network interface, not attaching an existing one.
      * </p>
      */
     private PrivateDnsNameOptionsRequest privateDnsNameOptions;
@@ -456,6 +456,20 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      */
     private Boolean disableApiStop;
+    /**
+     * <p>
+     * If you’re launching an instance into a dual-stack or IPv6-only subnet, you can enable assigning a primary IPv6
+     * address. A primary IPv6 address is an IPv6 GUA address associated with an ENI that you have enabled to use a
+     * primary IPv6 address. Use this option if an instance relies on its IPv6 address not changing. When you launch the
+     * instance, Amazon Web Services will automatically assign an IPv6 address associated with the ENI attached to your
+     * instance to be the primary IPv6 address. Once you enable an IPv6 GUA address to be a primary IPv6, you cannot
+     * disable it. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary
+     * IPv6 address until the instance is terminated or the network interface is detached. If you have multiple IPv6
+     * addresses associated with an ENI attached to your instance and you enable a primary IPv6 address, the first IPv6
+     * GUA address associated with the ENI becomes the primary IPv6 address.
+     * </p>
+     */
+    private Boolean enablePrimaryIpv6;
 
     /**
      * Default constructor for RunInstancesRequest object. Callers should use the setter or fluent setter (with...)
@@ -645,16 +659,11 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
      * <i>Amazon EC2 User Guide</i>.
      * </p>
-     * <p>
-     * Default: <code>m1.small</code>
-     * </p>
      * 
      * @param instanceType
      *        The instance type. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
-     *        <i>Amazon EC2 User Guide</i>.</p>
-     *        <p>
-     *        Default: <code>m1.small</code>
+     *        <i>Amazon EC2 User Guide</i>.
      * @see InstanceType
      */
 
@@ -668,15 +677,10 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
      * <i>Amazon EC2 User Guide</i>.
      * </p>
-     * <p>
-     * Default: <code>m1.small</code>
-     * </p>
      * 
      * @return The instance type. For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
-     *         <i>Amazon EC2 User Guide</i>.</p>
-     *         <p>
-     *         Default: <code>m1.small</code>
+     *         <i>Amazon EC2 User Guide</i>.
      * @see InstanceType
      */
 
@@ -690,16 +694,11 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
      * <i>Amazon EC2 User Guide</i>.
      * </p>
-     * <p>
-     * Default: <code>m1.small</code>
-     * </p>
      * 
      * @param instanceType
      *        The instance type. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
-     *        <i>Amazon EC2 User Guide</i>.</p>
-     *        <p>
-     *        Default: <code>m1.small</code>
+     *        <i>Amazon EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
      */
@@ -715,16 +714,11 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
      * <i>Amazon EC2 User Guide</i>.
      * </p>
-     * <p>
-     * Default: <code>m1.small</code>
-     * </p>
      * 
      * @param instanceType
      *        The instance type. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
-     *        <i>Amazon EC2 User Guide</i>.</p>
-     *        <p>
-     *        Default: <code>m1.small</code>
+     *        <i>Amazon EC2 User Guide</i>.
      * @see InstanceType
      */
 
@@ -738,16 +732,11 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
      * <i>Amazon EC2 User Guide</i>.
      * </p>
-     * <p>
-     * Default: <code>m1.small</code>
-     * </p>
      * 
      * @param instanceType
      *        The instance type. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
-     *        <i>Amazon EC2 User Guide</i>.</p>
-     *        <p>
-     *        Default: <code>m1.small</code>
+     *        <i>Amazon EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
      */
@@ -3390,7 +3379,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * Indicates whether an instance is enabled for hibernation. For more information, see <a
+     * Indicates whether an instance is enabled for hibernation. This parameter is valid only if the instance meets the
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation
+     * prerequisites</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the
      * <i>Amazon EC2 User Guide</i>.
      * </p>
@@ -3399,7 +3390,10 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param hibernationOptions
-     *        Indicates whether an instance is enabled for hibernation. For more information, see <a
+     *        Indicates whether an instance is enabled for hibernation. This parameter is valid only if the instance
+     *        meets the <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation
+     *        prerequisites</a>. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in
      *        the <i>Amazon EC2 User Guide</i>.</p>
      *        <p>
@@ -3412,7 +3406,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * Indicates whether an instance is enabled for hibernation. For more information, see <a
+     * Indicates whether an instance is enabled for hibernation. This parameter is valid only if the instance meets the
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation
+     * prerequisites</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the
      * <i>Amazon EC2 User Guide</i>.
      * </p>
@@ -3420,7 +3416,10 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * You can't enable hibernation and Amazon Web Services Nitro Enclaves on the same instance.
      * </p>
      * 
-     * @return Indicates whether an instance is enabled for hibernation. For more information, see <a
+     * @return Indicates whether an instance is enabled for hibernation. This parameter is valid only if the instance
+     *         meets the <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation
+     *         prerequisites</a>. For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in
      *         the <i>Amazon EC2 User Guide</i>.</p>
      *         <p>
@@ -3433,7 +3432,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * Indicates whether an instance is enabled for hibernation. For more information, see <a
+     * Indicates whether an instance is enabled for hibernation. This parameter is valid only if the instance meets the
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation
+     * prerequisites</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the
      * <i>Amazon EC2 User Guide</i>.
      * </p>
@@ -3442,7 +3443,10 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param hibernationOptions
-     *        Indicates whether an instance is enabled for hibernation. For more information, see <a
+     *        Indicates whether an instance is enabled for hibernation. This parameter is valid only if the instance
+     *        meets the <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation
+     *        prerequisites</a>. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in
      *        the <i>Amazon EC2 User Guide</i>.</p>
      *        <p>
@@ -3583,7 +3587,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information, see <a
-     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is Amazon Web Services Nitro
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What is Amazon Web Services Nitro
      * Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.
      * </p>
      * <p>
@@ -3592,7 +3596,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * 
      * @param enclaveOptions
      *        Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information,
-     *        see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is Amazon Web
+     *        see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What is Amazon Web
      *        Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.</p>
      *        <p>
      *        You can't enable Amazon Web Services Nitro Enclaves and hibernation on the same instance.
@@ -3605,7 +3609,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information, see <a
-     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is Amazon Web Services Nitro
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What is Amazon Web Services Nitro
      * Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.
      * </p>
      * <p>
@@ -3613,7 +3617,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @return Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information,
-     *         see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is Amazon Web
+     *         see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What is Amazon Web
      *         Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.</p>
      *         <p>
      *         You can't enable Amazon Web Services Nitro Enclaves and hibernation on the same instance.
@@ -3626,7 +3630,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information, see <a
-     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is Amazon Web Services Nitro
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What is Amazon Web Services Nitro
      * Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.
      * </p>
      * <p>
@@ -3635,7 +3639,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * 
      * @param enclaveOptions
      *        Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information,
-     *        see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is Amazon Web
+     *        see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What is Amazon Web
      *        Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.</p>
      *        <p>
      *        You can't enable Amazon Web Services Nitro Enclaves and hibernation on the same instance.
@@ -3649,11 +3653,13 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The options for the instance hostname. The default values are inherited from the subnet.
+     * The options for the instance hostname. The default values are inherited from the subnet. Applies only if creating
+     * a network interface, not attaching an existing one.
      * </p>
      * 
      * @param privateDnsNameOptions
-     *        The options for the instance hostname. The default values are inherited from the subnet.
+     *        The options for the instance hostname. The default values are inherited from the subnet. Applies only if
+     *        creating a network interface, not attaching an existing one.
      */
 
     public void setPrivateDnsNameOptions(PrivateDnsNameOptionsRequest privateDnsNameOptions) {
@@ -3662,10 +3668,12 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The options for the instance hostname. The default values are inherited from the subnet.
+     * The options for the instance hostname. The default values are inherited from the subnet. Applies only if creating
+     * a network interface, not attaching an existing one.
      * </p>
      * 
-     * @return The options for the instance hostname. The default values are inherited from the subnet.
+     * @return The options for the instance hostname. The default values are inherited from the subnet. Applies only if
+     *         creating a network interface, not attaching an existing one.
      */
 
     public PrivateDnsNameOptionsRequest getPrivateDnsNameOptions() {
@@ -3674,11 +3682,13 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The options for the instance hostname. The default values are inherited from the subnet.
+     * The options for the instance hostname. The default values are inherited from the subnet. Applies only if creating
+     * a network interface, not attaching an existing one.
      * </p>
      * 
      * @param privateDnsNameOptions
-     *        The options for the instance hostname. The default values are inherited from the subnet.
+     *        The options for the instance hostname. The default values are inherited from the subnet. Applies only if
+     *        creating a network interface, not attaching an existing one.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3796,6 +3806,126 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
+     * <p>
+     * If you’re launching an instance into a dual-stack or IPv6-only subnet, you can enable assigning a primary IPv6
+     * address. A primary IPv6 address is an IPv6 GUA address associated with an ENI that you have enabled to use a
+     * primary IPv6 address. Use this option if an instance relies on its IPv6 address not changing. When you launch the
+     * instance, Amazon Web Services will automatically assign an IPv6 address associated with the ENI attached to your
+     * instance to be the primary IPv6 address. Once you enable an IPv6 GUA address to be a primary IPv6, you cannot
+     * disable it. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary
+     * IPv6 address until the instance is terminated or the network interface is detached. If you have multiple IPv6
+     * addresses associated with an ENI attached to your instance and you enable a primary IPv6 address, the first IPv6
+     * GUA address associated with the ENI becomes the primary IPv6 address.
+     * </p>
+     * 
+     * @param enablePrimaryIpv6
+     *        If you’re launching an instance into a dual-stack or IPv6-only subnet, you can enable assigning a primary
+     *        IPv6 address. A primary IPv6 address is an IPv6 GUA address associated with an ENI that you have enabled
+     *        to use a primary IPv6 address. Use this option if an instance relies on its IPv6 address not changing.
+     *        When you launch the instance, Amazon Web Services will automatically assign an IPv6 address associated
+     *        with the ENI attached to your instance to be the primary IPv6 address. Once you enable an IPv6 GUA address
+     *        to be a primary IPv6, you cannot disable it. When you enable an IPv6 GUA address to be a primary IPv6, the
+     *        first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network
+     *        interface is detached. If you have multiple IPv6 addresses associated with an ENI attached to your
+     *        instance and you enable a primary IPv6 address, the first IPv6 GUA address associated with the ENI becomes
+     *        the primary IPv6 address.
+     */
+
+    public void setEnablePrimaryIpv6(Boolean enablePrimaryIpv6) {
+        this.enablePrimaryIpv6 = enablePrimaryIpv6;
+    }
+
+    /**
+     * <p>
+     * If you’re launching an instance into a dual-stack or IPv6-only subnet, you can enable assigning a primary IPv6
+     * address. A primary IPv6 address is an IPv6 GUA address associated with an ENI that you have enabled to use a
+     * primary IPv6 address. Use this option if an instance relies on its IPv6 address not changing. When you launch the
+     * instance, Amazon Web Services will automatically assign an IPv6 address associated with the ENI attached to your
+     * instance to be the primary IPv6 address. Once you enable an IPv6 GUA address to be a primary IPv6, you cannot
+     * disable it. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary
+     * IPv6 address until the instance is terminated or the network interface is detached. If you have multiple IPv6
+     * addresses associated with an ENI attached to your instance and you enable a primary IPv6 address, the first IPv6
+     * GUA address associated with the ENI becomes the primary IPv6 address.
+     * </p>
+     * 
+     * @return If you’re launching an instance into a dual-stack or IPv6-only subnet, you can enable assigning a primary
+     *         IPv6 address. A primary IPv6 address is an IPv6 GUA address associated with an ENI that you have enabled
+     *         to use a primary IPv6 address. Use this option if an instance relies on its IPv6 address not changing.
+     *         When you launch the instance, Amazon Web Services will automatically assign an IPv6 address associated
+     *         with the ENI attached to your instance to be the primary IPv6 address. Once you enable an IPv6 GUA
+     *         address to be a primary IPv6, you cannot disable it. When you enable an IPv6 GUA address to be a primary
+     *         IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the
+     *         network interface is detached. If you have multiple IPv6 addresses associated with an ENI attached to
+     *         your instance and you enable a primary IPv6 address, the first IPv6 GUA address associated with the ENI
+     *         becomes the primary IPv6 address.
+     */
+
+    public Boolean getEnablePrimaryIpv6() {
+        return this.enablePrimaryIpv6;
+    }
+
+    /**
+     * <p>
+     * If you’re launching an instance into a dual-stack or IPv6-only subnet, you can enable assigning a primary IPv6
+     * address. A primary IPv6 address is an IPv6 GUA address associated with an ENI that you have enabled to use a
+     * primary IPv6 address. Use this option if an instance relies on its IPv6 address not changing. When you launch the
+     * instance, Amazon Web Services will automatically assign an IPv6 address associated with the ENI attached to your
+     * instance to be the primary IPv6 address. Once you enable an IPv6 GUA address to be a primary IPv6, you cannot
+     * disable it. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary
+     * IPv6 address until the instance is terminated or the network interface is detached. If you have multiple IPv6
+     * addresses associated with an ENI attached to your instance and you enable a primary IPv6 address, the first IPv6
+     * GUA address associated with the ENI becomes the primary IPv6 address.
+     * </p>
+     * 
+     * @param enablePrimaryIpv6
+     *        If you’re launching an instance into a dual-stack or IPv6-only subnet, you can enable assigning a primary
+     *        IPv6 address. A primary IPv6 address is an IPv6 GUA address associated with an ENI that you have enabled
+     *        to use a primary IPv6 address. Use this option if an instance relies on its IPv6 address not changing.
+     *        When you launch the instance, Amazon Web Services will automatically assign an IPv6 address associated
+     *        with the ENI attached to your instance to be the primary IPv6 address. Once you enable an IPv6 GUA address
+     *        to be a primary IPv6, you cannot disable it. When you enable an IPv6 GUA address to be a primary IPv6, the
+     *        first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network
+     *        interface is detached. If you have multiple IPv6 addresses associated with an ENI attached to your
+     *        instance and you enable a primary IPv6 address, the first IPv6 GUA address associated with the ENI becomes
+     *        the primary IPv6 address.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunInstancesRequest withEnablePrimaryIpv6(Boolean enablePrimaryIpv6) {
+        setEnablePrimaryIpv6(enablePrimaryIpv6);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If you’re launching an instance into a dual-stack or IPv6-only subnet, you can enable assigning a primary IPv6
+     * address. A primary IPv6 address is an IPv6 GUA address associated with an ENI that you have enabled to use a
+     * primary IPv6 address. Use this option if an instance relies on its IPv6 address not changing. When you launch the
+     * instance, Amazon Web Services will automatically assign an IPv6 address associated with the ENI attached to your
+     * instance to be the primary IPv6 address. Once you enable an IPv6 GUA address to be a primary IPv6, you cannot
+     * disable it. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary
+     * IPv6 address until the instance is terminated or the network interface is detached. If you have multiple IPv6
+     * addresses associated with an ENI attached to your instance and you enable a primary IPv6 address, the first IPv6
+     * GUA address associated with the ENI becomes the primary IPv6 address.
+     * </p>
+     * 
+     * @return If you’re launching an instance into a dual-stack or IPv6-only subnet, you can enable assigning a primary
+     *         IPv6 address. A primary IPv6 address is an IPv6 GUA address associated with an ENI that you have enabled
+     *         to use a primary IPv6 address. Use this option if an instance relies on its IPv6 address not changing.
+     *         When you launch the instance, Amazon Web Services will automatically assign an IPv6 address associated
+     *         with the ENI attached to your instance to be the primary IPv6 address. Once you enable an IPv6 GUA
+     *         address to be a primary IPv6, you cannot disable it. When you enable an IPv6 GUA address to be a primary
+     *         IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the
+     *         network interface is detached. If you have multiple IPv6 addresses associated with an ENI attached to
+     *         your instance and you enable a primary IPv6 address, the first IPv6 GUA address associated with the ENI
+     *         becomes the primary IPv6 address.
+     */
+
+    public Boolean isEnablePrimaryIpv6() {
+        return this.enablePrimaryIpv6;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -3895,7 +4025,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
         if (getMaintenanceOptions() != null)
             sb.append("MaintenanceOptions: ").append(getMaintenanceOptions()).append(",");
         if (getDisableApiStop() != null)
-            sb.append("DisableApiStop: ").append(getDisableApiStop());
+            sb.append("DisableApiStop: ").append(getDisableApiStop()).append(",");
+        if (getEnablePrimaryIpv6() != null)
+            sb.append("EnablePrimaryIpv6: ").append(getEnablePrimaryIpv6());
         sb.append("}");
         return sb.toString();
     }
@@ -4068,6 +4200,10 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
             return false;
         if (other.getDisableApiStop() != null && other.getDisableApiStop().equals(this.getDisableApiStop()) == false)
             return false;
+        if (other.getEnablePrimaryIpv6() == null ^ this.getEnablePrimaryIpv6() == null)
+            return false;
+        if (other.getEnablePrimaryIpv6() != null && other.getEnablePrimaryIpv6().equals(this.getEnablePrimaryIpv6()) == false)
+            return false;
         return true;
     }
 
@@ -4115,6 +4251,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
         hashCode = prime * hashCode + ((getPrivateDnsNameOptions() == null) ? 0 : getPrivateDnsNameOptions().hashCode());
         hashCode = prime * hashCode + ((getMaintenanceOptions() == null) ? 0 : getMaintenanceOptions().hashCode());
         hashCode = prime * hashCode + ((getDisableApiStop() == null) ? 0 : getDisableApiStop().hashCode());
+        hashCode = prime * hashCode + ((getEnablePrimaryIpv6() == null) ? 0 : getEnablePrimaryIpv6().hashCode());
         return hashCode;
     }
 

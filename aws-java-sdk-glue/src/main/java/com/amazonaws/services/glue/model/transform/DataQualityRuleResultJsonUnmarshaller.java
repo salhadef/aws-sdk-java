@@ -64,6 +64,11 @@ public class DataQualityRuleResultJsonUnmarshaller implements Unmarshaller<DataQ
                     context.nextToken();
                     dataQualityRuleResult.setResult(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("EvaluatedMetrics", targetDepth)) {
+                    context.nextToken();
+                    dataQualityRuleResult.setEvaluatedMetrics(new MapUnmarshaller<String, Double>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(Double.class)).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

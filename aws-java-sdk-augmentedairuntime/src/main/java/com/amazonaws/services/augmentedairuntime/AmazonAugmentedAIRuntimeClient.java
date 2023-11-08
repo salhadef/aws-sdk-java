@@ -44,6 +44,7 @@ import com.amazonaws.services.augmentedairuntime.AmazonAugmentedAIRuntimeClientB
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.augmentedairuntime.model.*;
+
 import com.amazonaws.services.augmentedairuntime.model.transform.*;
 
 /**

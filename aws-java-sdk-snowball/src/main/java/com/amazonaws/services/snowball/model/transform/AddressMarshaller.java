@@ -55,6 +55,8 @@ public class AddressMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PhoneNumber").build();
     private static final MarshallingInfo<Boolean> ISRESTRICTED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IsRestricted").build();
+    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Type").build();
 
     private static final AddressMarshaller instance = new AddressMarshaller();
 
@@ -86,6 +88,7 @@ public class AddressMarshaller {
             protocolMarshaller.marshall(address.getPostalCode(), POSTALCODE_BINDING);
             protocolMarshaller.marshall(address.getPhoneNumber(), PHONENUMBER_BINDING);
             protocolMarshaller.marshall(address.getIsRestricted(), ISRESTRICTED_BINDING);
+            protocolMarshaller.marshall(address.getType(), TYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

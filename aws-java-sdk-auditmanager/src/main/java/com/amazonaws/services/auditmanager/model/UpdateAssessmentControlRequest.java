@@ -296,7 +296,7 @@ public class UpdateAssessmentControlRequest extends com.amazonaws.AmazonWebServi
         if (getControlStatus() != null)
             sb.append("ControlStatus: ").append(getControlStatus()).append(",");
         if (getCommentBody() != null)
-            sb.append("CommentBody: ").append(getCommentBody());
+            sb.append("CommentBody: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

@@ -29,13 +29,13 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DeleteRuleGroupsNamespaceRequestMarshaller {
 
+    private static final MarshallingInfo<String> WORKSPACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("workspaceId").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("name").build();
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("clientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
-    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
-            .marshallLocationName("name").build();
-    private static final MarshallingInfo<String> WORKSPACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
-            .marshallLocationName("workspaceId").build();
 
     private static final DeleteRuleGroupsNamespaceRequestMarshaller instance = new DeleteRuleGroupsNamespaceRequestMarshaller();
 
@@ -53,9 +53,9 @@ public class DeleteRuleGroupsNamespaceRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(deleteRuleGroupsNamespaceRequest.getClientToken(), CLIENTTOKEN_BINDING);
-            protocolMarshaller.marshall(deleteRuleGroupsNamespaceRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(deleteRuleGroupsNamespaceRequest.getWorkspaceId(), WORKSPACEID_BINDING);
+            protocolMarshaller.marshall(deleteRuleGroupsNamespaceRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(deleteRuleGroupsNamespaceRequest.getClientToken(), CLIENTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

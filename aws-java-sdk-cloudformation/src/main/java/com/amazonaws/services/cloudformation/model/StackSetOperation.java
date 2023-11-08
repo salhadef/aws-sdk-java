@@ -113,7 +113,7 @@ public class StackSetOperation implements Serializable, Cloneable {
      * <p>
      * Use customized administrator roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define Permissions
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define Permissions
      * for Multiple Administrators</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      */
@@ -940,7 +940,7 @@ public class StackSetOperation implements Serializable, Cloneable {
      * <p>
      * Use customized administrator roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define Permissions
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define Permissions
      * for Multiple Administrators</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
@@ -949,7 +949,7 @@ public class StackSetOperation implements Serializable, Cloneable {
      *        <p>
      *        Use customized administrator roles to control which users or groups can manage specific stack sets within
      *        the same administrator account. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
      *        Permissions for Multiple Administrators</a> in the <i>CloudFormation User Guide</i>.
      */
 
@@ -964,7 +964,7 @@ public class StackSetOperation implements Serializable, Cloneable {
      * <p>
      * Use customized administrator roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define Permissions
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define Permissions
      * for Multiple Administrators</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
@@ -972,7 +972,7 @@ public class StackSetOperation implements Serializable, Cloneable {
      *         <p>
      *         Use customized administrator roles to control which users or groups can manage specific stack sets within
      *         the same administrator account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
      *         Permissions for Multiple Administrators</a> in the <i>CloudFormation User Guide</i>.
      */
 
@@ -987,7 +987,7 @@ public class StackSetOperation implements Serializable, Cloneable {
      * <p>
      * Use customized administrator roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define Permissions
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define Permissions
      * for Multiple Administrators</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
@@ -996,7 +996,7 @@ public class StackSetOperation implements Serializable, Cloneable {
      *        <p>
      *        Use customized administrator roles to control which users or groups can manage specific stack sets within
      *        the same administrator account. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
      *        Permissions for Multiple Administrators</a> in the <i>CloudFormation User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

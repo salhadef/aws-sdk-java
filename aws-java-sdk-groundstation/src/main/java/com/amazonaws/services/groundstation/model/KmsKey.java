@@ -36,6 +36,12 @@ public class KmsKey implements Serializable, Cloneable, StructuredPojo {
     private String kmsAliasArn;
     /**
      * <p>
+     * KMS Alias Name.
+     * </p>
+     */
+    private String kmsAliasName;
+    /**
+     * <p>
      * KMS Key Arn.
      * </p>
      */
@@ -78,6 +84,46 @@ public class KmsKey implements Serializable, Cloneable, StructuredPojo {
 
     public KmsKey withKmsAliasArn(String kmsAliasArn) {
         setKmsAliasArn(kmsAliasArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * KMS Alias Name.
+     * </p>
+     * 
+     * @param kmsAliasName
+     *        KMS Alias Name.
+     */
+
+    public void setKmsAliasName(String kmsAliasName) {
+        this.kmsAliasName = kmsAliasName;
+    }
+
+    /**
+     * <p>
+     * KMS Alias Name.
+     * </p>
+     * 
+     * @return KMS Alias Name.
+     */
+
+    public String getKmsAliasName() {
+        return this.kmsAliasName;
+    }
+
+    /**
+     * <p>
+     * KMS Alias Name.
+     * </p>
+     * 
+     * @param kmsAliasName
+     *        KMS Alias Name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KmsKey withKmsAliasName(String kmsAliasName) {
+        setKmsAliasName(kmsAliasName);
         return this;
     }
 
@@ -135,6 +181,8 @@ public class KmsKey implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getKmsAliasArn() != null)
             sb.append("KmsAliasArn: ").append(getKmsAliasArn()).append(",");
+        if (getKmsAliasName() != null)
+            sb.append("KmsAliasName: ").append(getKmsAliasName()).append(",");
         if (getKmsKeyArn() != null)
             sb.append("KmsKeyArn: ").append(getKmsKeyArn());
         sb.append("}");
@@ -155,6 +203,10 @@ public class KmsKey implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getKmsAliasArn() != null && other.getKmsAliasArn().equals(this.getKmsAliasArn()) == false)
             return false;
+        if (other.getKmsAliasName() == null ^ this.getKmsAliasName() == null)
+            return false;
+        if (other.getKmsAliasName() != null && other.getKmsAliasName().equals(this.getKmsAliasName()) == false)
+            return false;
         if (other.getKmsKeyArn() == null ^ this.getKmsKeyArn() == null)
             return false;
         if (other.getKmsKeyArn() != null && other.getKmsKeyArn().equals(this.getKmsKeyArn()) == false)
@@ -168,6 +220,7 @@ public class KmsKey implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getKmsAliasArn() == null) ? 0 : getKmsAliasArn().hashCode());
+        hashCode = prime * hashCode + ((getKmsAliasName() == null) ? 0 : getKmsAliasName().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyArn() == null) ? 0 : getKmsKeyArn().hashCode());
         return hashCode;
     }

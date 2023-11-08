@@ -27,12 +27,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class PutInlinePolicyToPermissionSetRequestMarshaller {
 
+    private static final MarshallingInfo<String> INLINEPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InlinePolicy").build();
     private static final MarshallingInfo<String> INSTANCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceArn").build();
     private static final MarshallingInfo<String> PERMISSIONSETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PermissionSetArn").build();
-    private static final MarshallingInfo<String> INLINEPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InlinePolicy").build();
 
     private static final PutInlinePolicyToPermissionSetRequestMarshaller instance = new PutInlinePolicyToPermissionSetRequestMarshaller();
 
@@ -50,9 +50,9 @@ public class PutInlinePolicyToPermissionSetRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(putInlinePolicyToPermissionSetRequest.getInlinePolicy(), INLINEPOLICY_BINDING);
             protocolMarshaller.marshall(putInlinePolicyToPermissionSetRequest.getInstanceArn(), INSTANCEARN_BINDING);
             protocolMarshaller.marshall(putInlinePolicyToPermissionSetRequest.getPermissionSetArn(), PERMISSIONSETARN_BINDING);
-            protocolMarshaller.marshall(putInlinePolicyToPermissionSetRequest.getInlinePolicy(), INLINEPOLICY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

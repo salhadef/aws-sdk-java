@@ -55,6 +55,10 @@ public class InferenceAcceleratorInfoStaxUnmarshaller implements Unmarshaller<In
                     continue;
                 }
 
+                if (context.testExpression("totalInferenceMemoryInMiB", targetDepth)) {
+                    inferenceAcceleratorInfo.setTotalInferenceMemoryInMiB(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return inferenceAcceleratorInfo;

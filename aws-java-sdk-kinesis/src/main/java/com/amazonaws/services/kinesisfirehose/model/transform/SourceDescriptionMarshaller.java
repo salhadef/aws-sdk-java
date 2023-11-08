@@ -29,6 +29,8 @@ public class SourceDescriptionMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> KINESISSTREAMSOURCEDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KinesisStreamSourceDescription").build();
+    private static final MarshallingInfo<StructuredPojo> MSKSOURCEDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MSKSourceDescription").build();
 
     private static final SourceDescriptionMarshaller instance = new SourceDescriptionMarshaller();
 
@@ -47,6 +49,7 @@ public class SourceDescriptionMarshaller {
 
         try {
             protocolMarshaller.marshall(sourceDescription.getKinesisStreamSourceDescription(), KINESISSTREAMSOURCEDESCRIPTION_BINDING);
+            protocolMarshaller.marshall(sourceDescription.getMSKSourceDescription(), MSKSOURCEDESCRIPTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

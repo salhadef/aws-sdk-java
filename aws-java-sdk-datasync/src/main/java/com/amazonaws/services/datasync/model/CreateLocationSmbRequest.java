@@ -71,6 +71,10 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
      * Specifies the Windows domain name that your SMB file server belongs to.
      * </p>
      * <p>
+     * If you have multiple domains in your environment, configuring this parameter makes sure that DataSync connects to
+     * the right file server.
+     * </p>
+     * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions"
      * >required permissions</a> for SMB locations.
@@ -343,6 +347,10 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
      * Specifies the Windows domain name that your SMB file server belongs to.
      * </p>
      * <p>
+     * If you have multiple domains in your environment, configuring this parameter makes sure that DataSync connects to
+     * the right file server.
+     * </p>
+     * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions"
      * >required permissions</a> for SMB locations.
@@ -350,6 +358,10 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
      * 
      * @param domain
      *        Specifies the Windows domain name that your SMB file server belongs to. </p>
+     *        <p>
+     *        If you have multiple domains in your environment, configuring this parameter makes sure that DataSync
+     *        connects to the right file server.
+     *        </p>
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions"
@@ -365,12 +377,20 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
      * Specifies the Windows domain name that your SMB file server belongs to.
      * </p>
      * <p>
+     * If you have multiple domains in your environment, configuring this parameter makes sure that DataSync connects to
+     * the right file server.
+     * </p>
+     * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions"
      * >required permissions</a> for SMB locations.
      * </p>
      * 
      * @return Specifies the Windows domain name that your SMB file server belongs to. </p>
+     *         <p>
+     *         If you have multiple domains in your environment, configuring this parameter makes sure that DataSync
+     *         connects to the right file server.
+     *         </p>
      *         <p>
      *         For more information, see <a href=
      *         "https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions"
@@ -386,6 +406,10 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
      * Specifies the Windows domain name that your SMB file server belongs to.
      * </p>
      * <p>
+     * If you have multiple domains in your environment, configuring this parameter makes sure that DataSync connects to
+     * the right file server.
+     * </p>
+     * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions"
      * >required permissions</a> for SMB locations.
@@ -393,6 +417,10 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
      * 
      * @param domain
      *        Specifies the Windows domain name that your SMB file server belongs to. </p>
+     *        <p>
+     *        If you have multiple domains in your environment, configuring this parameter makes sure that DataSync
+     *        connects to the right file server.
+     *        </p>
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions"

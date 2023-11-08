@@ -98,6 +98,16 @@ public class AbstractAWSWAFV2 implements AWSWAFV2 {
     }
 
     @Override
+    public DescribeAllManagedProductsResult describeAllManagedProducts(DescribeAllManagedProductsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeManagedProductsByVendorResult describeManagedProductsByVendor(DescribeManagedProductsByVendorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeManagedRuleGroupResult describeManagedRuleGroup(DescribeManagedRuleGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

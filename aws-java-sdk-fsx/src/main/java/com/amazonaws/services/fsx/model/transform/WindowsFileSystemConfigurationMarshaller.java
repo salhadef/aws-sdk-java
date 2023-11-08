@@ -56,6 +56,8 @@ public class WindowsFileSystemConfigurationMarshaller {
             .marshallLocationName("Aliases").build();
     private static final MarshallingInfo<StructuredPojo> AUDITLOGCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AuditLogConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> DISKIOPSCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DiskIopsConfiguration").build();
 
     private static final WindowsFileSystemConfigurationMarshaller instance = new WindowsFileSystemConfigurationMarshaller();
 
@@ -88,6 +90,7 @@ public class WindowsFileSystemConfigurationMarshaller {
             protocolMarshaller.marshall(windowsFileSystemConfiguration.getCopyTagsToBackups(), COPYTAGSTOBACKUPS_BINDING);
             protocolMarshaller.marshall(windowsFileSystemConfiguration.getAliases(), ALIASES_BINDING);
             protocolMarshaller.marshall(windowsFileSystemConfiguration.getAuditLogConfiguration(), AUDITLOGCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(windowsFileSystemConfiguration.getDiskIopsConfiguration(), DISKIOPSCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

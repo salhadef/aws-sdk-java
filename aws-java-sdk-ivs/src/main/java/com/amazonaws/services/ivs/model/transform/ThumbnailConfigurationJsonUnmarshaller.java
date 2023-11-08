@@ -52,6 +52,16 @@ public class ThumbnailConfigurationJsonUnmarshaller implements Unmarshaller<Thum
                     context.nextToken();
                     thumbnailConfiguration.setRecordingMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("resolution", targetDepth)) {
+                    context.nextToken();
+                    thumbnailConfiguration.setResolution(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("storage", targetDepth)) {
+                    context.nextToken();
+                    thumbnailConfiguration.setStorage(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("targetIntervalSeconds", targetDepth)) {
                     context.nextToken();
                     thumbnailConfiguration.setTargetIntervalSeconds(context.getUnmarshaller(Long.class).unmarshall(context));

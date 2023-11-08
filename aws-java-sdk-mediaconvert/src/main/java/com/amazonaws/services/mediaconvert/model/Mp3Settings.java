@@ -29,8 +29,8 @@ public class Mp3Settings implements Serializable, Cloneable, StructuredPojo {
     /** Specify the average bitrate in bits per second. */
     private Integer bitrate;
     /**
-     * Specify the number of channels in this output audio track. Choosing Mono on the console gives you 1 output
-     * channel; choosing Stereo gives you 2. In the API, valid values are 1 and 2.
+     * Specify the number of channels in this output audio track. Choosing Mono gives you 1 output channel; choosing
+     * Stereo gives you 2. In the API, valid values are 1 and 2.
      */
     private Integer channels;
     /**
@@ -41,8 +41,8 @@ public class Mp3Settings implements Serializable, Cloneable, StructuredPojo {
     /** Sample rate in hz. */
     private Integer sampleRate;
     /**
-     * Required when you set Bitrate control mode (rateControlMode) to VBR. Specify the audio quality of this MP3 output
-     * from 0 (highest quality) to 9 (lowest quality).
+     * Required when you set Bitrate control mode to VBR. Specify the audio quality of this MP3 output from 0 (highest
+     * quality) to 9 (lowest quality).
      */
     private Integer vbrQuality;
 
@@ -81,12 +81,12 @@ public class Mp3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify the number of channels in this output audio track. Choosing Mono on the console gives you 1 output
-     * channel; choosing Stereo gives you 2. In the API, valid values are 1 and 2.
+     * Specify the number of channels in this output audio track. Choosing Mono gives you 1 output channel; choosing
+     * Stereo gives you 2. In the API, valid values are 1 and 2.
      * 
      * @param channels
-     *        Specify the number of channels in this output audio track. Choosing Mono on the console gives you 1 output
-     *        channel; choosing Stereo gives you 2. In the API, valid values are 1 and 2.
+     *        Specify the number of channels in this output audio track. Choosing Mono gives you 1 output channel;
+     *        choosing Stereo gives you 2. In the API, valid values are 1 and 2.
      */
 
     public void setChannels(Integer channels) {
@@ -94,11 +94,11 @@ public class Mp3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify the number of channels in this output audio track. Choosing Mono on the console gives you 1 output
-     * channel; choosing Stereo gives you 2. In the API, valid values are 1 and 2.
+     * Specify the number of channels in this output audio track. Choosing Mono gives you 1 output channel; choosing
+     * Stereo gives you 2. In the API, valid values are 1 and 2.
      * 
-     * @return Specify the number of channels in this output audio track. Choosing Mono on the console gives you 1
-     *         output channel; choosing Stereo gives you 2. In the API, valid values are 1 and 2.
+     * @return Specify the number of channels in this output audio track. Choosing Mono gives you 1 output channel;
+     *         choosing Stereo gives you 2. In the API, valid values are 1 and 2.
      */
 
     public Integer getChannels() {
@@ -106,12 +106,12 @@ public class Mp3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify the number of channels in this output audio track. Choosing Mono on the console gives you 1 output
-     * channel; choosing Stereo gives you 2. In the API, valid values are 1 and 2.
+     * Specify the number of channels in this output audio track. Choosing Mono gives you 1 output channel; choosing
+     * Stereo gives you 2. In the API, valid values are 1 and 2.
      * 
      * @param channels
-     *        Specify the number of channels in this output audio track. Choosing Mono on the console gives you 1 output
-     *        channel; choosing Stereo gives you 2. In the API, valid values are 1 and 2.
+     *        Specify the number of channels in this output audio track. Choosing Mono gives you 1 output channel;
+     *        choosing Stereo gives you 2. In the API, valid values are 1 and 2.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -214,12 +214,12 @@ public class Mp3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Required when you set Bitrate control mode (rateControlMode) to VBR. Specify the audio quality of this MP3 output
-     * from 0 (highest quality) to 9 (lowest quality).
+     * Required when you set Bitrate control mode to VBR. Specify the audio quality of this MP3 output from 0 (highest
+     * quality) to 9 (lowest quality).
      * 
      * @param vbrQuality
-     *        Required when you set Bitrate control mode (rateControlMode) to VBR. Specify the audio quality of this MP3
-     *        output from 0 (highest quality) to 9 (lowest quality).
+     *        Required when you set Bitrate control mode to VBR. Specify the audio quality of this MP3 output from 0
+     *        (highest quality) to 9 (lowest quality).
      */
 
     public void setVbrQuality(Integer vbrQuality) {
@@ -227,11 +227,11 @@ public class Mp3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Required when you set Bitrate control mode (rateControlMode) to VBR. Specify the audio quality of this MP3 output
-     * from 0 (highest quality) to 9 (lowest quality).
+     * Required when you set Bitrate control mode to VBR. Specify the audio quality of this MP3 output from 0 (highest
+     * quality) to 9 (lowest quality).
      * 
-     * @return Required when you set Bitrate control mode (rateControlMode) to VBR. Specify the audio quality of this
-     *         MP3 output from 0 (highest quality) to 9 (lowest quality).
+     * @return Required when you set Bitrate control mode to VBR. Specify the audio quality of this MP3 output from 0
+     *         (highest quality) to 9 (lowest quality).
      */
 
     public Integer getVbrQuality() {
@@ -239,12 +239,12 @@ public class Mp3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Required when you set Bitrate control mode (rateControlMode) to VBR. Specify the audio quality of this MP3 output
-     * from 0 (highest quality) to 9 (lowest quality).
+     * Required when you set Bitrate control mode to VBR. Specify the audio quality of this MP3 output from 0 (highest
+     * quality) to 9 (lowest quality).
      * 
      * @param vbrQuality
-     *        Required when you set Bitrate control mode (rateControlMode) to VBR. Specify the audio quality of this MP3
-     *        output from 0 (highest quality) to 9 (lowest quality).
+     *        Required when you set Bitrate control mode to VBR. Specify the audio quality of this MP3 output from 0
+     *        (highest quality) to 9 (lowest quality).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -33,7 +33,7 @@ public class CreatePackageRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String packageName;
     /**
      * <p>
-     * Type of package.
+     * The type of package.
      * </p>
      */
     private String packageType;
@@ -92,11 +92,11 @@ public class CreatePackageRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Type of package.
+     * The type of package.
      * </p>
      * 
      * @param packageType
-     *        Type of package.
+     *        The type of package.
      * @see PackageType
      */
 
@@ -106,10 +106,10 @@ public class CreatePackageRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Type of package.
+     * The type of package.
      * </p>
      * 
-     * @return Type of package.
+     * @return The type of package.
      * @see PackageType
      */
 
@@ -119,11 +119,11 @@ public class CreatePackageRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Type of package.
+     * The type of package.
      * </p>
      * 
      * @param packageType
-     *        Type of package.
+     *        The type of package.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageType
      */
@@ -135,11 +135,11 @@ public class CreatePackageRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Type of package.
+     * The type of package.
      * </p>
      * 
      * @param packageType
-     *        Type of package.
+     *        The type of package.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageType
      */

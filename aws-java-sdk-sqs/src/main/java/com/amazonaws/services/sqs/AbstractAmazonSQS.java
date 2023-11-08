@@ -48,6 +48,11 @@ public class AbstractAmazonSQS implements AmazonSQS {
     }
 
     @Override
+    public CancelMessageMoveTaskResult cancelMessageMoveTask(CancelMessageMoveTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ChangeMessageVisibilityResult changeMessageVisibility(ChangeMessageVisibilityRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -134,6 +139,11 @@ public class AbstractAmazonSQS implements AmazonSQS {
     }
 
     @Override
+    public ListMessageMoveTasksResult listMessageMoveTasks(ListMessageMoveTasksRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListQueueTagsResult listQueueTags(ListQueueTagsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -211,6 +221,11 @@ public class AbstractAmazonSQS implements AmazonSQS {
     @Override
     public SetQueueAttributesResult setQueueAttributes(String queueUrl, java.util.Map<String, String> attributes) {
         return setQueueAttributes(new SetQueueAttributesRequest().withQueueUrl(queueUrl).withAttributes(attributes));
+    }
+
+    @Override
+    public StartMessageMoveTaskResult startMessageMoveTask(StartMessageMoveTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

@@ -72,6 +72,10 @@ public class GetDomainResultJsonUnmarshaller implements Unmarshaller<GetDomainRe
                     context.nextToken();
                     getDomainResult.setMatching(MatchingResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("RuleBasedMatching", targetDepth)) {
+                    context.nextToken();
+                    getDomainResult.setRuleBasedMatching(RuleBasedMatchingResponseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("CreatedAt", targetDepth)) {
                     context.nextToken();
                     getDomainResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));

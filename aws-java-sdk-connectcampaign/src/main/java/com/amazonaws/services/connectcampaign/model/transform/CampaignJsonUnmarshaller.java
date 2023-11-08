@@ -48,9 +48,17 @@ public class CampaignJsonUnmarshaller implements Unmarshaller<Campaign, JsonUnma
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("id", targetDepth)) {
+                    context.nextToken();
+                    campaign.setId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("arn", targetDepth)) {
                     context.nextToken();
                     campaign.setArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("name", targetDepth)) {
+                    context.nextToken();
+                    campaign.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("connectInstanceId", targetDepth)) {
                     context.nextToken();
@@ -59,14 +67,6 @@ public class CampaignJsonUnmarshaller implements Unmarshaller<Campaign, JsonUnma
                 if (context.testExpression("dialerConfig", targetDepth)) {
                     context.nextToken();
                     campaign.setDialerConfig(DialerConfigJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("id", targetDepth)) {
-                    context.nextToken();
-                    campaign.setId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("name", targetDepth)) {
-                    context.nextToken();
-                    campaign.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("outboundCallConfig", targetDepth)) {
                     context.nextToken();

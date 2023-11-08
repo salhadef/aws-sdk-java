@@ -36,16 +36,22 @@ public class RunListItem implements Serializable, Cloneable, StructuredPojo {
     private String arn;
     /**
      * <p>
-     * When the run was created.
-     * </p>
-     */
-    private java.util.Date creationTime;
-    /**
-     * <p>
      * The run's ID.
      * </p>
      */
     private String id;
+    /**
+     * <p>
+     * The run's status.
+     * </p>
+     */
+    private String status;
+    /**
+     * <p>
+     * The run's workflow ID.
+     * </p>
+     */
+    private String workflowId;
     /**
      * <p>
      * The run's name.
@@ -60,34 +66,28 @@ public class RunListItem implements Serializable, Cloneable, StructuredPojo {
     private Integer priority;
     /**
      * <p>
-     * When the run started.
-     * </p>
-     */
-    private java.util.Date startTime;
-    /**
-     * <p>
-     * The run's status.
-     * </p>
-     */
-    private String status;
-    /**
-     * <p>
-     * When the run stopped.
-     * </p>
-     */
-    private java.util.Date stopTime;
-    /**
-     * <p>
      * The run's storage capacity.
      * </p>
      */
     private Integer storageCapacity;
     /**
      * <p>
-     * The run's workflow ID.
+     * When the run was created.
      * </p>
      */
-    private String workflowId;
+    private java.util.Date creationTime;
+    /**
+     * <p>
+     * When the run started.
+     * </p>
+     */
+    private java.util.Date startTime;
+    /**
+     * <p>
+     * When the run stopped.
+     * </p>
+     */
+    private java.util.Date stopTime;
 
     /**
      * <p>
@@ -131,46 +131,6 @@ public class RunListItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * When the run was created.
-     * </p>
-     * 
-     * @param creationTime
-     *        When the run was created.
-     */
-
-    public void setCreationTime(java.util.Date creationTime) {
-        this.creationTime = creationTime;
-    }
-
-    /**
-     * <p>
-     * When the run was created.
-     * </p>
-     * 
-     * @return When the run was created.
-     */
-
-    public java.util.Date getCreationTime() {
-        return this.creationTime;
-    }
-
-    /**
-     * <p>
-     * When the run was created.
-     * </p>
-     * 
-     * @param creationTime
-     *        When the run was created.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public RunListItem withCreationTime(java.util.Date creationTime) {
-        setCreationTime(creationTime);
-        return this;
-    }
-
-    /**
-     * <p>
      * The run's ID.
      * </p>
      * 
@@ -206,6 +166,105 @@ public class RunListItem implements Serializable, Cloneable, StructuredPojo {
 
     public RunListItem withId(String id) {
         setId(id);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The run's status.
+     * </p>
+     * 
+     * @param status
+     *        The run's status.
+     * @see RunStatus
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * The run's status.
+     * </p>
+     * 
+     * @return The run's status.
+     * @see RunStatus
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * The run's status.
+     * </p>
+     * 
+     * @param status
+     *        The run's status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RunStatus
+     */
+
+    public RunListItem withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The run's status.
+     * </p>
+     * 
+     * @param status
+     *        The run's status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RunStatus
+     */
+
+    public RunListItem withStatus(RunStatus status) {
+        this.status = status.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The run's workflow ID.
+     * </p>
+     * 
+     * @param workflowId
+     *        The run's workflow ID.
+     */
+
+    public void setWorkflowId(String workflowId) {
+        this.workflowId = workflowId;
+    }
+
+    /**
+     * <p>
+     * The run's workflow ID.
+     * </p>
+     * 
+     * @return The run's workflow ID.
+     */
+
+    public String getWorkflowId() {
+        return this.workflowId;
+    }
+
+    /**
+     * <p>
+     * The run's workflow ID.
+     * </p>
+     * 
+     * @param workflowId
+     *        The run's workflow ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunListItem withWorkflowId(String workflowId) {
+        setWorkflowId(workflowId);
         return this;
     }
 
@@ -291,6 +350,86 @@ public class RunListItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The run's storage capacity.
+     * </p>
+     * 
+     * @param storageCapacity
+     *        The run's storage capacity.
+     */
+
+    public void setStorageCapacity(Integer storageCapacity) {
+        this.storageCapacity = storageCapacity;
+    }
+
+    /**
+     * <p>
+     * The run's storage capacity.
+     * </p>
+     * 
+     * @return The run's storage capacity.
+     */
+
+    public Integer getStorageCapacity() {
+        return this.storageCapacity;
+    }
+
+    /**
+     * <p>
+     * The run's storage capacity.
+     * </p>
+     * 
+     * @param storageCapacity
+     *        The run's storage capacity.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunListItem withStorageCapacity(Integer storageCapacity) {
+        setStorageCapacity(storageCapacity);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When the run was created.
+     * </p>
+     * 
+     * @param creationTime
+     *        When the run was created.
+     */
+
+    public void setCreationTime(java.util.Date creationTime) {
+        this.creationTime = creationTime;
+    }
+
+    /**
+     * <p>
+     * When the run was created.
+     * </p>
+     * 
+     * @return When the run was created.
+     */
+
+    public java.util.Date getCreationTime() {
+        return this.creationTime;
+    }
+
+    /**
+     * <p>
+     * When the run was created.
+     * </p>
+     * 
+     * @param creationTime
+     *        When the run was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunListItem withCreationTime(java.util.Date creationTime) {
+        setCreationTime(creationTime);
+        return this;
+    }
+
+    /**
+     * <p>
      * When the run started.
      * </p>
      * 
@@ -326,65 +465,6 @@ public class RunListItem implements Serializable, Cloneable, StructuredPojo {
 
     public RunListItem withStartTime(java.util.Date startTime) {
         setStartTime(startTime);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The run's status.
-     * </p>
-     * 
-     * @param status
-     *        The run's status.
-     * @see RunStatus
-     */
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    /**
-     * <p>
-     * The run's status.
-     * </p>
-     * 
-     * @return The run's status.
-     * @see RunStatus
-     */
-
-    public String getStatus() {
-        return this.status;
-    }
-
-    /**
-     * <p>
-     * The run's status.
-     * </p>
-     * 
-     * @param status
-     *        The run's status.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see RunStatus
-     */
-
-    public RunListItem withStatus(String status) {
-        setStatus(status);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The run's status.
-     * </p>
-     * 
-     * @param status
-     *        The run's status.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see RunStatus
-     */
-
-    public RunListItem withStatus(RunStatus status) {
-        this.status = status.toString();
         return this;
     }
 
@@ -429,86 +509,6 @@ public class RunListItem implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p>
-     * The run's storage capacity.
-     * </p>
-     * 
-     * @param storageCapacity
-     *        The run's storage capacity.
-     */
-
-    public void setStorageCapacity(Integer storageCapacity) {
-        this.storageCapacity = storageCapacity;
-    }
-
-    /**
-     * <p>
-     * The run's storage capacity.
-     * </p>
-     * 
-     * @return The run's storage capacity.
-     */
-
-    public Integer getStorageCapacity() {
-        return this.storageCapacity;
-    }
-
-    /**
-     * <p>
-     * The run's storage capacity.
-     * </p>
-     * 
-     * @param storageCapacity
-     *        The run's storage capacity.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public RunListItem withStorageCapacity(Integer storageCapacity) {
-        setStorageCapacity(storageCapacity);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The run's workflow ID.
-     * </p>
-     * 
-     * @param workflowId
-     *        The run's workflow ID.
-     */
-
-    public void setWorkflowId(String workflowId) {
-        this.workflowId = workflowId;
-    }
-
-    /**
-     * <p>
-     * The run's workflow ID.
-     * </p>
-     * 
-     * @return The run's workflow ID.
-     */
-
-    public String getWorkflowId() {
-        return this.workflowId;
-    }
-
-    /**
-     * <p>
-     * The run's workflow ID.
-     * </p>
-     * 
-     * @param workflowId
-     *        The run's workflow ID.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public RunListItem withWorkflowId(String workflowId) {
-        setWorkflowId(workflowId);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -522,24 +522,24 @@ public class RunListItem implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
-        if (getCreationTime() != null)
-            sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getWorkflowId() != null)
+            sb.append("WorkflowId: ").append(getWorkflowId()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getPriority() != null)
             sb.append("Priority: ").append(getPriority()).append(",");
-        if (getStartTime() != null)
-            sb.append("StartTime: ").append(getStartTime()).append(",");
-        if (getStatus() != null)
-            sb.append("Status: ").append(getStatus()).append(",");
-        if (getStopTime() != null)
-            sb.append("StopTime: ").append(getStopTime()).append(",");
         if (getStorageCapacity() != null)
             sb.append("StorageCapacity: ").append(getStorageCapacity()).append(",");
-        if (getWorkflowId() != null)
-            sb.append("WorkflowId: ").append(getWorkflowId());
+        if (getCreationTime() != null)
+            sb.append("CreationTime: ").append(getCreationTime()).append(",");
+        if (getStartTime() != null)
+            sb.append("StartTime: ").append(getStartTime()).append(",");
+        if (getStopTime() != null)
+            sb.append("StopTime: ").append(getStopTime());
         sb.append("}");
         return sb.toString();
     }
@@ -558,13 +558,17 @@ public class RunListItem implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
-        if (other.getCreationTime() == null ^ this.getCreationTime() == null)
-            return false;
-        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
-            return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
+            return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        if (other.getWorkflowId() == null ^ this.getWorkflowId() == null)
+            return false;
+        if (other.getWorkflowId() != null && other.getWorkflowId().equals(this.getWorkflowId()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
@@ -574,25 +578,21 @@ public class RunListItem implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPriority() != null && other.getPriority().equals(this.getPriority()) == false)
             return false;
-        if (other.getStartTime() == null ^ this.getStartTime() == null)
-            return false;
-        if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false)
-            return false;
-        if (other.getStatus() == null ^ this.getStatus() == null)
-            return false;
-        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
-            return false;
-        if (other.getStopTime() == null ^ this.getStopTime() == null)
-            return false;
-        if (other.getStopTime() != null && other.getStopTime().equals(this.getStopTime()) == false)
-            return false;
         if (other.getStorageCapacity() == null ^ this.getStorageCapacity() == null)
             return false;
         if (other.getStorageCapacity() != null && other.getStorageCapacity().equals(this.getStorageCapacity()) == false)
             return false;
-        if (other.getWorkflowId() == null ^ this.getWorkflowId() == null)
+        if (other.getCreationTime() == null ^ this.getCreationTime() == null)
             return false;
-        if (other.getWorkflowId() != null && other.getWorkflowId().equals(this.getWorkflowId()) == false)
+        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
+            return false;
+        if (other.getStartTime() == null ^ this.getStartTime() == null)
+            return false;
+        if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false)
+            return false;
+        if (other.getStopTime() == null ^ this.getStopTime() == null)
+            return false;
+        if (other.getStopTime() != null && other.getStopTime().equals(this.getStopTime()) == false)
             return false;
         return true;
     }
@@ -603,15 +603,15 @@ public class RunListItem implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
-        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getWorkflowId() == null) ? 0 : getWorkflowId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getPriority() == null) ? 0 : getPriority().hashCode());
-        hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
-        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime * hashCode + ((getStopTime() == null) ? 0 : getStopTime().hashCode());
         hashCode = prime * hashCode + ((getStorageCapacity() == null) ? 0 : getStorageCapacity().hashCode());
-        hashCode = prime * hashCode + ((getWorkflowId() == null) ? 0 : getWorkflowId().hashCode());
+        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
+        hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
+        hashCode = prime * hashCode + ((getStopTime() == null) ? 0 : getStopTime().hashCode());
         return hashCode;
     }
 

@@ -196,6 +196,12 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      */
     private java.util.List<String> enabledCloudwatchLogsExports;
+    /**
+     * <p>
+     * The details of the DB instance's server certificate.
+     * </p>
+     */
+    private CertificateDetails certificateDetails;
 
     /**
      * <p>
@@ -1479,6 +1485,46 @@ public class DBInstance implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The details of the DB instance's server certificate.
+     * </p>
+     * 
+     * @param certificateDetails
+     *        The details of the DB instance's server certificate.
+     */
+
+    public void setCertificateDetails(CertificateDetails certificateDetails) {
+        this.certificateDetails = certificateDetails;
+    }
+
+    /**
+     * <p>
+     * The details of the DB instance's server certificate.
+     * </p>
+     * 
+     * @return The details of the DB instance's server certificate.
+     */
+
+    public CertificateDetails getCertificateDetails() {
+        return this.certificateDetails;
+    }
+
+    /**
+     * <p>
+     * The details of the DB instance's server certificate.
+     * </p>
+     * 
+     * @param certificateDetails
+     *        The details of the DB instance's server certificate.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withCertificateDetails(CertificateDetails certificateDetails) {
+        setCertificateDetails(certificateDetails);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1543,7 +1589,9 @@ public class DBInstance implements Serializable, Cloneable {
         if (getDBInstanceArn() != null)
             sb.append("DBInstanceArn: ").append(getDBInstanceArn()).append(",");
         if (getEnabledCloudwatchLogsExports() != null)
-            sb.append("EnabledCloudwatchLogsExports: ").append(getEnabledCloudwatchLogsExports());
+            sb.append("EnabledCloudwatchLogsExports: ").append(getEnabledCloudwatchLogsExports()).append(",");
+        if (getCertificateDetails() != null)
+            sb.append("CertificateDetails: ").append(getCertificateDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -1666,6 +1714,10 @@ public class DBInstance implements Serializable, Cloneable {
             return false;
         if (other.getEnabledCloudwatchLogsExports() != null && other.getEnabledCloudwatchLogsExports().equals(this.getEnabledCloudwatchLogsExports()) == false)
             return false;
+        if (other.getCertificateDetails() == null ^ this.getCertificateDetails() == null)
+            return false;
+        if (other.getCertificateDetails() != null && other.getCertificateDetails().equals(this.getCertificateDetails()) == false)
+            return false;
         return true;
     }
 
@@ -1701,6 +1753,7 @@ public class DBInstance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getPromotionTier() == null) ? 0 : getPromotionTier().hashCode());
         hashCode = prime * hashCode + ((getDBInstanceArn() == null) ? 0 : getDBInstanceArn().hashCode());
         hashCode = prime * hashCode + ((getEnabledCloudwatchLogsExports() == null) ? 0 : getEnabledCloudwatchLogsExports().hashCode());
+        hashCode = prime * hashCode + ((getCertificateDetails() == null) ? 0 : getCertificateDetails().hashCode());
         return hashCode;
     }
 

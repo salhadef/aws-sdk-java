@@ -121,6 +121,12 @@ public class WriteJourneyRequestJsonUnmarshaller implements Unmarshaller<WriteJo
                     context.nextToken();
                     writeJourneyRequest.setClosedDays(ClosedDaysJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("TimezoneEstimationMethods", targetDepth)) {
+                    context.nextToken();
+                    writeJourneyRequest.setTimezoneEstimationMethods(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

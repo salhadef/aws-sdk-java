@@ -30,6 +30,8 @@ public class ListPhoneNumbersV2RequestMarshaller {
 
     private static final MarshallingInfo<String> TARGETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("TargetArn").build();
+    private static final MarshallingInfo<String> INSTANCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceId").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -58,6 +60,7 @@ public class ListPhoneNumbersV2RequestMarshaller {
 
         try {
             protocolMarshaller.marshall(listPhoneNumbersV2Request.getTargetArn(), TARGETARN_BINDING);
+            protocolMarshaller.marshall(listPhoneNumbersV2Request.getInstanceId(), INSTANCEID_BINDING);
             protocolMarshaller.marshall(listPhoneNumbersV2Request.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listPhoneNumbersV2Request.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listPhoneNumbersV2Request.getPhoneNumberCountryCodes(), PHONENUMBERCOUNTRYCODES_BINDING);

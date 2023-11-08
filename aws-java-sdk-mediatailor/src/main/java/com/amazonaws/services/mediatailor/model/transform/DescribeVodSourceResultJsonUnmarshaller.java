@@ -48,6 +48,12 @@ public class DescribeVodSourceResultJsonUnmarshaller implements Unmarshaller<Des
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("AdBreakOpportunities", targetDepth)) {
+                    context.nextToken();
+                    describeVodSourceResult.setAdBreakOpportunities(new ListUnmarshaller<AdBreakOpportunity>(AdBreakOpportunityJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("Arn", targetDepth)) {
                     context.nextToken();
                     describeVodSourceResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));

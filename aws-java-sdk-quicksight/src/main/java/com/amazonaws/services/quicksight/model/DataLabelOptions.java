@@ -82,6 +82,12 @@ public class DataLabelOptions implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String overlap;
+    /**
+     * <p>
+     * Determines the visibility of the total.
+     * </p>
+     */
+    private String totalsVisibility;
 
     /**
      * <p>
@@ -588,6 +594,65 @@ public class DataLabelOptions implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * Determines the visibility of the total.
+     * </p>
+     * 
+     * @param totalsVisibility
+     *        Determines the visibility of the total.
+     * @see Visibility
+     */
+
+    public void setTotalsVisibility(String totalsVisibility) {
+        this.totalsVisibility = totalsVisibility;
+    }
+
+    /**
+     * <p>
+     * Determines the visibility of the total.
+     * </p>
+     * 
+     * @return Determines the visibility of the total.
+     * @see Visibility
+     */
+
+    public String getTotalsVisibility() {
+        return this.totalsVisibility;
+    }
+
+    /**
+     * <p>
+     * Determines the visibility of the total.
+     * </p>
+     * 
+     * @param totalsVisibility
+     *        Determines the visibility of the total.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Visibility
+     */
+
+    public DataLabelOptions withTotalsVisibility(String totalsVisibility) {
+        setTotalsVisibility(totalsVisibility);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Determines the visibility of the total.
+     * </p>
+     * 
+     * @param totalsVisibility
+     *        Determines the visibility of the total.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Visibility
+     */
+
+    public DataLabelOptions withTotalsVisibility(Visibility totalsVisibility) {
+        this.totalsVisibility = totalsVisibility.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -616,7 +681,9 @@ public class DataLabelOptions implements Serializable, Cloneable, StructuredPojo
         if (getLabelColor() != null)
             sb.append("LabelColor: ").append(getLabelColor()).append(",");
         if (getOverlap() != null)
-            sb.append("Overlap: ").append(getOverlap());
+            sb.append("Overlap: ").append(getOverlap()).append(",");
+        if (getTotalsVisibility() != null)
+            sb.append("TotalsVisibility: ").append(getTotalsVisibility());
         sb.append("}");
         return sb.toString();
     }
@@ -667,6 +734,10 @@ public class DataLabelOptions implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getOverlap() != null && other.getOverlap().equals(this.getOverlap()) == false)
             return false;
+        if (other.getTotalsVisibility() == null ^ this.getTotalsVisibility() == null)
+            return false;
+        if (other.getTotalsVisibility() != null && other.getTotalsVisibility().equals(this.getTotalsVisibility()) == false)
+            return false;
         return true;
     }
 
@@ -684,6 +755,7 @@ public class DataLabelOptions implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getLabelFontConfiguration() == null) ? 0 : getLabelFontConfiguration().hashCode());
         hashCode = prime * hashCode + ((getLabelColor() == null) ? 0 : getLabelColor().hashCode());
         hashCode = prime * hashCode + ((getOverlap() == null) ? 0 : getOverlap().hashCode());
+        hashCode = prime * hashCode + ((getTotalsVisibility() == null) ? 0 : getTotalsVisibility().hashCode());
         return hashCode;
     }
 

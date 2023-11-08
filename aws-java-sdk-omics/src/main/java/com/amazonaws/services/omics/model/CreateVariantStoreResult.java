@@ -25,22 +25,10 @@ public class CreateVariantStoreResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * When the store was created.
-     * </p>
-     */
-    private java.util.Date creationTime;
-    /**
-     * <p>
      * The store's ID.
      * </p>
      */
     private String id;
-    /**
-     * <p>
-     * The store's name.
-     * </p>
-     */
-    private String name;
     /**
      * <p>
      * The store's genome reference.
@@ -53,46 +41,18 @@ public class CreateVariantStoreResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      */
     private String status;
-
+    /**
+     * <p>
+     * The store's name.
+     * </p>
+     */
+    private String name;
     /**
      * <p>
      * When the store was created.
      * </p>
-     * 
-     * @param creationTime
-     *        When the store was created.
      */
-
-    public void setCreationTime(java.util.Date creationTime) {
-        this.creationTime = creationTime;
-    }
-
-    /**
-     * <p>
-     * When the store was created.
-     * </p>
-     * 
-     * @return When the store was created.
-     */
-
-    public java.util.Date getCreationTime() {
-        return this.creationTime;
-    }
-
-    /**
-     * <p>
-     * When the store was created.
-     * </p>
-     * 
-     * @param creationTime
-     *        When the store was created.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateVariantStoreResult withCreationTime(java.util.Date creationTime) {
-        setCreationTime(creationTime);
-        return this;
-    }
+    private java.util.Date creationTime;
 
     /**
      * <p>
@@ -131,46 +91,6 @@ public class CreateVariantStoreResult extends com.amazonaws.AmazonWebServiceResu
 
     public CreateVariantStoreResult withId(String id) {
         setId(id);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The store's name.
-     * </p>
-     * 
-     * @param name
-     *        The store's name.
-     */
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     * <p>
-     * The store's name.
-     * </p>
-     * 
-     * @return The store's name.
-     */
-
-    public String getName() {
-        return this.name;
-    }
-
-    /**
-     * <p>
-     * The store's name.
-     * </p>
-     * 
-     * @param name
-     *        The store's name.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateVariantStoreResult withName(String name) {
-        setName(name);
         return this;
     }
 
@@ -274,6 +194,86 @@ public class CreateVariantStoreResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * The store's name.
+     * </p>
+     * 
+     * @param name
+     *        The store's name.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The store's name.
+     * </p>
+     * 
+     * @return The store's name.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The store's name.
+     * </p>
+     * 
+     * @param name
+     *        The store's name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateVariantStoreResult withName(String name) {
+        setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When the store was created.
+     * </p>
+     * 
+     * @param creationTime
+     *        When the store was created.
+     */
+
+    public void setCreationTime(java.util.Date creationTime) {
+        this.creationTime = creationTime;
+    }
+
+    /**
+     * <p>
+     * When the store was created.
+     * </p>
+     * 
+     * @return When the store was created.
+     */
+
+    public java.util.Date getCreationTime() {
+        return this.creationTime;
+    }
+
+    /**
+     * <p>
+     * When the store was created.
+     * </p>
+     * 
+     * @param creationTime
+     *        When the store was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateVariantStoreResult withCreationTime(java.util.Date creationTime) {
+        setCreationTime(creationTime);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -285,16 +285,16 @@ public class CreateVariantStoreResult extends com.amazonaws.AmazonWebServiceResu
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getCreationTime() != null)
-            sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
-        if (getName() != null)
-            sb.append("Name: ").append(getName()).append(",");
         if (getReference() != null)
             sb.append("Reference: ").append(getReference()).append(",");
         if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
+        if (getCreationTime() != null)
+            sb.append("CreationTime: ").append(getCreationTime());
         sb.append("}");
         return sb.toString();
     }
@@ -309,17 +309,9 @@ public class CreateVariantStoreResult extends com.amazonaws.AmazonWebServiceResu
         if (obj instanceof CreateVariantStoreResult == false)
             return false;
         CreateVariantStoreResult other = (CreateVariantStoreResult) obj;
-        if (other.getCreationTime() == null ^ this.getCreationTime() == null)
-            return false;
-        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
-            return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
-            return false;
-        if (other.getName() == null ^ this.getName() == null)
-            return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getReference() == null ^ this.getReference() == null)
             return false;
@@ -329,6 +321,14 @@ public class CreateVariantStoreResult extends com.amazonaws.AmazonWebServiceResu
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getCreationTime() == null ^ this.getCreationTime() == null)
+            return false;
+        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
+            return false;
         return true;
     }
 
@@ -337,11 +337,11 @@ public class CreateVariantStoreResult extends com.amazonaws.AmazonWebServiceResu
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getReference() == null) ? 0 : getReference().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         return hashCode;
     }
 

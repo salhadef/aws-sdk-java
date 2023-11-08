@@ -89,6 +89,11 @@ public class AbstractAWSRoute53RecoveryControlConfig implements AWSRoute53Recove
     }
 
     @Override
+    public GetResourcePolicyResult getResourcePolicy(GetResourcePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListAssociatedRoute53HealthChecksResult listAssociatedRoute53HealthChecks(ListAssociatedRoute53HealthChecksRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -528,11 +528,11 @@ public class AssessmentControlSet implements Serializable, Cloneable, Structured
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getRoles() != null)
-            sb.append("Roles: ").append(getRoles()).append(",");
+            sb.append("Roles: ").append("***Sensitive Data Redacted***").append(",");
         if (getControls() != null)
             sb.append("Controls: ").append(getControls()).append(",");
         if (getDelegations() != null)
-            sb.append("Delegations: ").append(getDelegations()).append(",");
+            sb.append("Delegations: ").append("***Sensitive Data Redacted***").append(",");
         if (getSystemEvidenceCount() != null)
             sb.append("SystemEvidenceCount: ").append(getSystemEvidenceCount()).append(",");
         if (getManualEvidenceCount() != null)

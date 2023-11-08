@@ -27,8 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class GetSubscriberRequestMarshaller {
 
-    private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
-            .marshallLocationName("id").build();
+    private static final MarshallingInfo<String> SUBSCRIBERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("subscriberId").build();
 
     private static final GetSubscriberRequestMarshaller instance = new GetSubscriberRequestMarshaller();
 
@@ -46,7 +46,7 @@ public class GetSubscriberRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(getSubscriberRequest.getId(), ID_BINDING);
+            protocolMarshaller.marshall(getSubscriberRequest.getSubscriberId(), SUBSCRIBERID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -96,7 +96,7 @@ public class RedshiftDatabaseCredentials implements Serializable, Cloneable, Str
         if (getUsername() != null)
             sb.append("Username: ").append(getUsername()).append(",");
         if (getPassword() != null)
-            sb.append("Password: ").append(getPassword());
+            sb.append("Password: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

@@ -48,15 +48,15 @@ public class PutDialRequestBatchResultJsonUnmarshaller implements Unmarshaller<P
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("failedRequests", targetDepth)) {
-                    context.nextToken();
-                    putDialRequestBatchResult.setFailedRequests(new ListUnmarshaller<FailedRequest>(FailedRequestJsonUnmarshaller.getInstance())
-
-                    .unmarshall(context));
-                }
                 if (context.testExpression("successfulRequests", targetDepth)) {
                     context.nextToken();
                     putDialRequestBatchResult.setSuccessfulRequests(new ListUnmarshaller<SuccessfulRequest>(SuccessfulRequestJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("failedRequests", targetDepth)) {
+                    context.nextToken();
+                    putDialRequestBatchResult.setFailedRequests(new ListUnmarshaller<FailedRequest>(FailedRequestJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }

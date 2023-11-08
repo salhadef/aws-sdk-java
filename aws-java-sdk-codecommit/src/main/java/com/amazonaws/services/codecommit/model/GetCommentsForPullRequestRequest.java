@@ -33,21 +33,25 @@ public class GetCommentsForPullRequestRequest extends com.amazonaws.AmazonWebSer
     private String pullRequestId;
     /**
      * <p>
-     * The name of the repository that contains the pull request.
+     * The name of the repository that contains the pull request. Requirement is conditional:
+     * <code>repositoryName</code> must be specified when <code>beforeCommitId</code> and <code>afterCommitId</code> are
+     * included.
      * </p>
      */
     private String repositoryName;
     /**
      * <p>
      * The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull
-     * request was created.
+     * request was created. Requirement is conditional: <code>beforeCommitId</code> must be specified when
+     * <code>repositoryName</code> is included.
      * </p>
      */
     private String beforeCommitId;
     /**
      * <p>
      * The full commit ID of the commit in the source branch that was the tip of the branch at the time the comment was
-     * made.
+     * made. Requirement is conditional: <code>afterCommitId</code> must be specified when <code>repositoryName</code>
+     * is included.
      * </p>
      */
     private String afterCommitId;
@@ -107,11 +111,15 @@ public class GetCommentsForPullRequestRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the repository that contains the pull request.
+     * The name of the repository that contains the pull request. Requirement is conditional:
+     * <code>repositoryName</code> must be specified when <code>beforeCommitId</code> and <code>afterCommitId</code> are
+     * included.
      * </p>
      * 
      * @param repositoryName
-     *        The name of the repository that contains the pull request.
+     *        The name of the repository that contains the pull request. Requirement is conditional:
+     *        <code>repositoryName</code> must be specified when <code>beforeCommitId</code> and
+     *        <code>afterCommitId</code> are included.
      */
 
     public void setRepositoryName(String repositoryName) {
@@ -120,10 +128,14 @@ public class GetCommentsForPullRequestRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the repository that contains the pull request.
+     * The name of the repository that contains the pull request. Requirement is conditional:
+     * <code>repositoryName</code> must be specified when <code>beforeCommitId</code> and <code>afterCommitId</code> are
+     * included.
      * </p>
      * 
-     * @return The name of the repository that contains the pull request.
+     * @return The name of the repository that contains the pull request. Requirement is conditional:
+     *         <code>repositoryName</code> must be specified when <code>beforeCommitId</code> and
+     *         <code>afterCommitId</code> are included.
      */
 
     public String getRepositoryName() {
@@ -132,11 +144,15 @@ public class GetCommentsForPullRequestRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the repository that contains the pull request.
+     * The name of the repository that contains the pull request. Requirement is conditional:
+     * <code>repositoryName</code> must be specified when <code>beforeCommitId</code> and <code>afterCommitId</code> are
+     * included.
      * </p>
      * 
      * @param repositoryName
-     *        The name of the repository that contains the pull request.
+     *        The name of the repository that contains the pull request. Requirement is conditional:
+     *        <code>repositoryName</code> must be specified when <code>beforeCommitId</code> and
+     *        <code>afterCommitId</code> are included.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -148,12 +164,14 @@ public class GetCommentsForPullRequestRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull
-     * request was created.
+     * request was created. Requirement is conditional: <code>beforeCommitId</code> must be specified when
+     * <code>repositoryName</code> is included.
      * </p>
      * 
      * @param beforeCommitId
      *        The full commit ID of the commit in the destination branch that was the tip of the branch at the time the
-     *        pull request was created.
+     *        pull request was created. Requirement is conditional: <code>beforeCommitId</code> must be specified when
+     *        <code>repositoryName</code> is included.
      */
 
     public void setBeforeCommitId(String beforeCommitId) {
@@ -163,11 +181,13 @@ public class GetCommentsForPullRequestRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull
-     * request was created.
+     * request was created. Requirement is conditional: <code>beforeCommitId</code> must be specified when
+     * <code>repositoryName</code> is included.
      * </p>
      * 
      * @return The full commit ID of the commit in the destination branch that was the tip of the branch at the time the
-     *         pull request was created.
+     *         pull request was created. Requirement is conditional: <code>beforeCommitId</code> must be specified when
+     *         <code>repositoryName</code> is included.
      */
 
     public String getBeforeCommitId() {
@@ -177,12 +197,14 @@ public class GetCommentsForPullRequestRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull
-     * request was created.
+     * request was created. Requirement is conditional: <code>beforeCommitId</code> must be specified when
+     * <code>repositoryName</code> is included.
      * </p>
      * 
      * @param beforeCommitId
      *        The full commit ID of the commit in the destination branch that was the tip of the branch at the time the
-     *        pull request was created.
+     *        pull request was created. Requirement is conditional: <code>beforeCommitId</code> must be specified when
+     *        <code>repositoryName</code> is included.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -194,12 +216,14 @@ public class GetCommentsForPullRequestRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The full commit ID of the commit in the source branch that was the tip of the branch at the time the comment was
-     * made.
+     * made. Requirement is conditional: <code>afterCommitId</code> must be specified when <code>repositoryName</code>
+     * is included.
      * </p>
      * 
      * @param afterCommitId
      *        The full commit ID of the commit in the source branch that was the tip of the branch at the time the
-     *        comment was made.
+     *        comment was made. Requirement is conditional: <code>afterCommitId</code> must be specified when
+     *        <code>repositoryName</code> is included.
      */
 
     public void setAfterCommitId(String afterCommitId) {
@@ -209,11 +233,13 @@ public class GetCommentsForPullRequestRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The full commit ID of the commit in the source branch that was the tip of the branch at the time the comment was
-     * made.
+     * made. Requirement is conditional: <code>afterCommitId</code> must be specified when <code>repositoryName</code>
+     * is included.
      * </p>
      * 
      * @return The full commit ID of the commit in the source branch that was the tip of the branch at the time the
-     *         comment was made.
+     *         comment was made. Requirement is conditional: <code>afterCommitId</code> must be specified when
+     *         <code>repositoryName</code> is included.
      */
 
     public String getAfterCommitId() {
@@ -223,12 +249,14 @@ public class GetCommentsForPullRequestRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The full commit ID of the commit in the source branch that was the tip of the branch at the time the comment was
-     * made.
+     * made. Requirement is conditional: <code>afterCommitId</code> must be specified when <code>repositoryName</code>
+     * is included.
      * </p>
      * 
      * @param afterCommitId
      *        The full commit ID of the commit in the source branch that was the tip of the branch at the time the
-     *        comment was made.
+     *        comment was made. Requirement is conditional: <code>afterCommitId</code> must be specified when
+     *        <code>repositoryName</code> is included.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

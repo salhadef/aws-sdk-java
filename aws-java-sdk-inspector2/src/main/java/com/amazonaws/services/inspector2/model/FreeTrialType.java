@@ -22,7 +22,8 @@ public enum FreeTrialType {
 
     EC2("EC2"),
     ECR("ECR"),
-    LAMBDA("LAMBDA");
+    LAMBDA("LAMBDA"),
+    LAMBDA_CODE("LAMBDA_CODE");
 
     private String value;
 

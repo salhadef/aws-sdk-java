@@ -31,13 +31,13 @@ public class InferenceSchedulerSummary implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The name of the ML model used for the inference scheduler.
+     * The name of the machine learning model used for the inference scheduler.
      * </p>
      */
     private String modelName;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the ML model used by the inference scheduler.
+     * The Amazon Resource Name (ARN) of the machine learning model used by the inference scheduler.
      * </p>
      */
     private String modelArn;
@@ -89,11 +89,11 @@ public class InferenceSchedulerSummary implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The name of the ML model used for the inference scheduler.
+     * The name of the machine learning model used for the inference scheduler.
      * </p>
      * 
      * @param modelName
-     *        The name of the ML model used for the inference scheduler.
+     *        The name of the machine learning model used for the inference scheduler.
      */
 
     public void setModelName(String modelName) {
@@ -102,10 +102,10 @@ public class InferenceSchedulerSummary implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The name of the ML model used for the inference scheduler.
+     * The name of the machine learning model used for the inference scheduler.
      * </p>
      * 
-     * @return The name of the ML model used for the inference scheduler.
+     * @return The name of the machine learning model used for the inference scheduler.
      */
 
     public String getModelName() {
@@ -114,11 +114,11 @@ public class InferenceSchedulerSummary implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The name of the ML model used for the inference scheduler.
+     * The name of the machine learning model used for the inference scheduler.
      * </p>
      * 
      * @param modelName
-     *        The name of the ML model used for the inference scheduler.
+     *        The name of the machine learning model used for the inference scheduler.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +129,11 @@ public class InferenceSchedulerSummary implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the ML model used by the inference scheduler.
+     * The Amazon Resource Name (ARN) of the machine learning model used by the inference scheduler.
      * </p>
      * 
      * @param modelArn
-     *        The Amazon Resource Name (ARN) of the ML model used by the inference scheduler.
+     *        The Amazon Resource Name (ARN) of the machine learning model used by the inference scheduler.
      */
 
     public void setModelArn(String modelArn) {
@@ -142,10 +142,10 @@ public class InferenceSchedulerSummary implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the ML model used by the inference scheduler.
+     * The Amazon Resource Name (ARN) of the machine learning model used by the inference scheduler.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the ML model used by the inference scheduler.
+     * @return The Amazon Resource Name (ARN) of the machine learning model used by the inference scheduler.
      */
 
     public String getModelArn() {
@@ -154,11 +154,11 @@ public class InferenceSchedulerSummary implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the ML model used by the inference scheduler.
+     * The Amazon Resource Name (ARN) of the machine learning model used by the inference scheduler.
      * </p>
      * 
      * @param modelArn
-     *        The Amazon Resource Name (ARN) of the ML model used by the inference scheduler.
+     *        The Amazon Resource Name (ARN) of the machine learning model used by the inference scheduler.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

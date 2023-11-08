@@ -31,6 +31,8 @@ public class InputColumnMarshaller {
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Type").build();
+    private static final MarshallingInfo<String> SUBTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SubType").build();
 
     private static final InputColumnMarshaller instance = new InputColumnMarshaller();
 
@@ -50,6 +52,7 @@ public class InputColumnMarshaller {
         try {
             protocolMarshaller.marshall(inputColumn.getName(), NAME_BINDING);
             protocolMarshaller.marshall(inputColumn.getType(), TYPE_BINDING);
+            protocolMarshaller.marshall(inputColumn.getSubType(), SUBTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

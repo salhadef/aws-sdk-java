@@ -52,6 +52,12 @@ public class GetComponentResultJsonUnmarshaller implements Unmarshaller<GetCompo
                     context.nextToken();
                     getComponentResult.setComponent(ComponentJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Tags", targetDepth)) {
+                    context.nextToken();
+                    getComponentResult
+                            .setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
+                                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

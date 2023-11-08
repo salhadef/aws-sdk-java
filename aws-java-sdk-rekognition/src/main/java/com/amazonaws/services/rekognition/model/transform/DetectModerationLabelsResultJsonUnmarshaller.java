@@ -62,6 +62,10 @@ public class DetectModerationLabelsResultJsonUnmarshaller implements Unmarshalle
                     context.nextToken();
                     detectModerationLabelsResult.setHumanLoopActivationOutput(HumanLoopActivationOutputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ProjectVersion", targetDepth)) {
+                    context.nextToken();
+                    detectModerationLabelsResult.setProjectVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

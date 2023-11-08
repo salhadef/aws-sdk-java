@@ -35,6 +35,8 @@ public class ResourceInfoMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModified").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<Boolean> WITHFEDERATION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WithFederation").build();
+    private static final MarshallingInfo<Boolean> HYBRIDACCESSENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HybridAccessEnabled").build();
 
     private static final ResourceInfoMarshaller instance = new ResourceInfoMarshaller();
 
@@ -56,6 +58,7 @@ public class ResourceInfoMarshaller {
             protocolMarshaller.marshall(resourceInfo.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(resourceInfo.getLastModified(), LASTMODIFIED_BINDING);
             protocolMarshaller.marshall(resourceInfo.getWithFederation(), WITHFEDERATION_BINDING);
+            protocolMarshaller.marshall(resourceInfo.getHybridAccessEnabled(), HYBRIDACCESSENABLED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

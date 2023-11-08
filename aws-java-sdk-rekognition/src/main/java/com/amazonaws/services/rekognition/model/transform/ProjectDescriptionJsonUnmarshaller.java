@@ -66,6 +66,14 @@ public class ProjectDescriptionJsonUnmarshaller implements Unmarshaller<ProjectD
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("Feature", targetDepth)) {
+                    context.nextToken();
+                    projectDescription.setFeature(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("AutoUpdate", targetDepth)) {
+                    context.nextToken();
+                    projectDescription.setAutoUpdate(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -21,6 +21,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Object specifying a participant token in a stage.
  * </p>
+ * <p>
+ * <b>Important</b>: Treat tokens as opaque; i.e., do not build functionality based on token contents. The format of
+ * tokens could change in the future.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ParticipantToken" target="_top">AWS API
  *      Documentation</a>
@@ -43,7 +47,7 @@ public class ParticipantToken implements Serializable, Cloneable, StructuredPojo
     private java.util.List<String> capabilities;
     /**
      * <p>
-     * Duration (in minutes), after which the participant token expires. Default: 60 (1 hour).
+     * Duration (in minutes), after which the participant token expires. Default: 720 (12 hours).
      * </p>
      */
     private Integer duration;
@@ -67,8 +71,9 @@ public class ParticipantToken implements Serializable, Cloneable, StructuredPojo
     private String token;
     /**
      * <p>
-     * Name to help identify the token. This can be any UTF-8 encoded text. <i>This field is exposed to all stage
-     * participants and should not be used for personally identifying, confidential, or sensitive information.</i>
+     * Customer-assigned name to help identify the token; this can be used to link a participant to a user in the
+     * customer’s own systems. This can be any UTF-8 encoded text. <i>This field is exposed to all stage participants
+     * and should not be used for personally identifying, confidential, or sensitive information.</i>
      * </p>
      */
     private String userId;
@@ -250,11 +255,11 @@ public class ParticipantToken implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Duration (in minutes), after which the participant token expires. Default: 60 (1 hour).
+     * Duration (in minutes), after which the participant token expires. Default: 720 (12 hours).
      * </p>
      * 
      * @param duration
-     *        Duration (in minutes), after which the participant token expires. Default: 60 (1 hour).
+     *        Duration (in minutes), after which the participant token expires. Default: 720 (12 hours).
      */
 
     public void setDuration(Integer duration) {
@@ -263,10 +268,10 @@ public class ParticipantToken implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Duration (in minutes), after which the participant token expires. Default: 60 (1 hour).
+     * Duration (in minutes), after which the participant token expires. Default: 720 (12 hours).
      * </p>
      * 
-     * @return Duration (in minutes), after which the participant token expires. Default: 60 (1 hour).
+     * @return Duration (in minutes), after which the participant token expires. Default: 720 (12 hours).
      */
 
     public Integer getDuration() {
@@ -275,11 +280,11 @@ public class ParticipantToken implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Duration (in minutes), after which the participant token expires. Default: 60 (1 hour).
+     * Duration (in minutes), after which the participant token expires. Default: 720 (12 hours).
      * </p>
      * 
      * @param duration
-     *        Duration (in minutes), after which the participant token expires. Default: 60 (1 hour).
+     *        Duration (in minutes), after which the participant token expires. Default: 720 (12 hours).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -410,12 +415,14 @@ public class ParticipantToken implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Name to help identify the token. This can be any UTF-8 encoded text. <i>This field is exposed to all stage
-     * participants and should not be used for personally identifying, confidential, or sensitive information.</i>
+     * Customer-assigned name to help identify the token; this can be used to link a participant to a user in the
+     * customer’s own systems. This can be any UTF-8 encoded text. <i>This field is exposed to all stage participants
+     * and should not be used for personally identifying, confidential, or sensitive information.</i>
      * </p>
      * 
      * @param userId
-     *        Name to help identify the token. This can be any UTF-8 encoded text. <i>This field is exposed to all stage
+     *        Customer-assigned name to help identify the token; this can be used to link a participant to a user in the
+     *        customer’s own systems. This can be any UTF-8 encoded text. <i>This field is exposed to all stage
      *        participants and should not be used for personally identifying, confidential, or sensitive
      *        information.</i>
      */
@@ -426,12 +433,14 @@ public class ParticipantToken implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Name to help identify the token. This can be any UTF-8 encoded text. <i>This field is exposed to all stage
-     * participants and should not be used for personally identifying, confidential, or sensitive information.</i>
+     * Customer-assigned name to help identify the token; this can be used to link a participant to a user in the
+     * customer’s own systems. This can be any UTF-8 encoded text. <i>This field is exposed to all stage participants
+     * and should not be used for personally identifying, confidential, or sensitive information.</i>
      * </p>
      * 
-     * @return Name to help identify the token. This can be any UTF-8 encoded text. <i>This field is exposed to all
-     *         stage participants and should not be used for personally identifying, confidential, or sensitive
+     * @return Customer-assigned name to help identify the token; this can be used to link a participant to a user in
+     *         the customer’s own systems. This can be any UTF-8 encoded text. <i>This field is exposed to all stage
+     *         participants and should not be used for personally identifying, confidential, or sensitive
      *         information.</i>
      */
 
@@ -441,12 +450,14 @@ public class ParticipantToken implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Name to help identify the token. This can be any UTF-8 encoded text. <i>This field is exposed to all stage
-     * participants and should not be used for personally identifying, confidential, or sensitive information.</i>
+     * Customer-assigned name to help identify the token; this can be used to link a participant to a user in the
+     * customer’s own systems. This can be any UTF-8 encoded text. <i>This field is exposed to all stage participants
+     * and should not be used for personally identifying, confidential, or sensitive information.</i>
      * </p>
      * 
      * @param userId
-     *        Name to help identify the token. This can be any UTF-8 encoded text. <i>This field is exposed to all stage
+     *        Customer-assigned name to help identify the token; this can be used to link a participant to a user in the
+     *        customer’s own systems. This can be any UTF-8 encoded text. <i>This field is exposed to all stage
      *        participants and should not be used for personally identifying, confidential, or sensitive
      *        information.</i>
      * @return Returns a reference to this object so that method calls can be chained together.

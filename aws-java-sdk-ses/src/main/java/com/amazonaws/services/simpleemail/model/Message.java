@@ -28,7 +28,7 @@ public class Message implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The subject of the message: A short summary of the content, which will appear in the recipient's inbox.
+     * The subject of the message: A short summary of the content, which appears in the recipient's inbox.
      * </p>
      */
     private Content subject;
@@ -51,7 +51,7 @@ public class Message implements Serializable, Cloneable {
      * any additional object members.
      * 
      * @param subject
-     *        The subject of the message: A short summary of the content, which will appear in the recipient's inbox.
+     *        The subject of the message: A short summary of the content, which appears in the recipient's inbox.
      * @param body
      *        The message body.
      */
@@ -62,11 +62,11 @@ public class Message implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The subject of the message: A short summary of the content, which will appear in the recipient's inbox.
+     * The subject of the message: A short summary of the content, which appears in the recipient's inbox.
      * </p>
      * 
      * @param subject
-     *        The subject of the message: A short summary of the content, which will appear in the recipient's inbox.
+     *        The subject of the message: A short summary of the content, which appears in the recipient's inbox.
      */
 
     public void setSubject(Content subject) {
@@ -75,10 +75,10 @@ public class Message implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The subject of the message: A short summary of the content, which will appear in the recipient's inbox.
+     * The subject of the message: A short summary of the content, which appears in the recipient's inbox.
      * </p>
      * 
-     * @return The subject of the message: A short summary of the content, which will appear in the recipient's inbox.
+     * @return The subject of the message: A short summary of the content, which appears in the recipient's inbox.
      */
 
     public Content getSubject() {
@@ -87,11 +87,11 @@ public class Message implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The subject of the message: A short summary of the content, which will appear in the recipient's inbox.
+     * The subject of the message: A short summary of the content, which appears in the recipient's inbox.
      * </p>
      * 
      * @param subject
-     *        The subject of the message: A short summary of the content, which will appear in the recipient's inbox.
+     *        The subject of the message: A short summary of the content, which appears in the recipient's inbox.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

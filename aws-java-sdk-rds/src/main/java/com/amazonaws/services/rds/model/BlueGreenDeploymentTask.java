@@ -17,13 +17,13 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the details about a task for a blue/green deployment.
+ * Details about a task for a blue/green deployment.
  * </p>
  * <p>
  * For more information, see <a
  * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green
  * Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a
- * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS
+ * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">Using Amazon RDS
  * Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.
  * </p>
  * 
@@ -44,12 +44,12 @@ public class BlueGreenDeploymentTask implements Serializable, Cloneable {
      * The status of the blue/green deployment task.
      * </p>
      * <p>
-     * Values:
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>PENDING</code> - The resources are being prepared for deployment.
+     * <code>PENDING</code> - The resource is being prepared for deployment.
      * </p>
      * </li>
      * <li>
@@ -116,12 +116,12 @@ public class BlueGreenDeploymentTask implements Serializable, Cloneable {
      * The status of the blue/green deployment task.
      * </p>
      * <p>
-     * Values:
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>PENDING</code> - The resources are being prepared for deployment.
+     * <code>PENDING</code> - The resource is being prepared for deployment.
      * </p>
      * </li>
      * <li>
@@ -144,12 +144,12 @@ public class BlueGreenDeploymentTask implements Serializable, Cloneable {
      * @param status
      *        The status of the blue/green deployment task.</p>
      *        <p>
-     *        Values:
+     *        Valid Values:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>PENDING</code> - The resources are being prepared for deployment.
+     *        <code>PENDING</code> - The resource is being prepared for deployment.
      *        </p>
      *        </li>
      *        <li>
@@ -178,12 +178,12 @@ public class BlueGreenDeploymentTask implements Serializable, Cloneable {
      * The status of the blue/green deployment task.
      * </p>
      * <p>
-     * Values:
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>PENDING</code> - The resources are being prepared for deployment.
+     * <code>PENDING</code> - The resource is being prepared for deployment.
      * </p>
      * </li>
      * <li>
@@ -205,12 +205,12 @@ public class BlueGreenDeploymentTask implements Serializable, Cloneable {
      * 
      * @return The status of the blue/green deployment task.</p>
      *         <p>
-     *         Values:
+     *         Valid Values:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>PENDING</code> - The resources are being prepared for deployment.
+     *         <code>PENDING</code> - The resource is being prepared for deployment.
      *         </p>
      *         </li>
      *         <li>
@@ -239,12 +239,12 @@ public class BlueGreenDeploymentTask implements Serializable, Cloneable {
      * The status of the blue/green deployment task.
      * </p>
      * <p>
-     * Values:
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>PENDING</code> - The resources are being prepared for deployment.
+     * <code>PENDING</code> - The resource is being prepared for deployment.
      * </p>
      * </li>
      * <li>
@@ -267,12 +267,12 @@ public class BlueGreenDeploymentTask implements Serializable, Cloneable {
      * @param status
      *        The status of the blue/green deployment task.</p>
      *        <p>
-     *        Values:
+     *        Valid Values:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>PENDING</code> - The resources are being prepared for deployment.
+     *        <code>PENDING</code> - The resource is being prepared for deployment.
      *        </p>
      *        </li>
      *        <li>

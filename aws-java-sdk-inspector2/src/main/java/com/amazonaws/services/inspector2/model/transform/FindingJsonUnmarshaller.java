@@ -52,9 +52,17 @@ public class FindingJsonUnmarshaller implements Unmarshaller<Finding, JsonUnmars
                     context.nextToken();
                     finding.setAwsAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("codeVulnerabilityDetails", targetDepth)) {
+                    context.nextToken();
+                    finding.setCodeVulnerabilityDetails(CodeVulnerabilityDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
                     finding.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("epss", targetDepth)) {
+                    context.nextToken();
+                    finding.setEpss(EpssDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("exploitAvailable", targetDepth)) {
                     context.nextToken();

@@ -166,7 +166,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      * >Acknowledging IAM Resources in CloudFormation Templates</a>.
      * </p>
      * </li>
@@ -178,16 +178,16 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * Some templates reference macros. If your stack set template references one or more macros, you must update the
      * stack set directly from the processed template, without first reviewing the resulting changes in a change set. To
      * update the stack set directly, you must acknowledge this capability. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
      * Macros to Perform Custom Processing on Templates</a>.
      * </p>
      * <important>
      * <p>
      * Stack sets with service-managed permissions do not currently support the use of macros in templates. (This
      * includes the <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      * >AWS::Include</a> and <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      * >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this capability
      * for a stack set with service-managed permissions, if you reference a macro in your template the stack set
      * operation will fail.
@@ -249,7 +249,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Specify an IAM role only if you are using customized administrator roles to control which users or groups can
      * manage specific stack sets within the same administrator account. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Granting Permissions
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Granting Permissions
      * for Stack Set Operations</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * <p>
@@ -899,7 +899,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      * >Acknowledging IAM Resources in CloudFormation Templates</a>.
      * </p>
      * </li>
@@ -911,16 +911,16 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * Some templates reference macros. If your stack set template references one or more macros, you must update the
      * stack set directly from the processed template, without first reviewing the resulting changes in a change set. To
      * update the stack set directly, you must acknowledge this capability. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
      * Macros to Perform Custom Processing on Templates</a>.
      * </p>
      * <important>
      * <p>
      * Stack sets with service-managed permissions do not currently support the use of macros in templates. (This
      * includes the <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      * >AWS::Include</a> and <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      * >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this capability
      * for a stack set with service-managed permissions, if you reference a macro in your template the stack set
      * operation will fail.
@@ -1015,7 +1015,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *         </ul>
      *         <p>
      *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      *         >Acknowledging IAM Resources in CloudFormation Templates</a>.
      *         </p>
      *         </li>
@@ -1028,16 +1028,16 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *         update the stack set directly from the processed template, without first reviewing the resulting changes
      *         in a change set. To update the stack set directly, you must acknowledge this capability. For more
      *         information, see <a
-     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      *         CloudFormation Macros to Perform Custom Processing on Templates</a>.
      *         </p>
      *         <important>
      *         <p>
      *         Stack sets with service-managed permissions do not currently support the use of macros in templates.
      *         (This includes the <a href=
-     *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      *         >AWS::Include</a> and <a
-     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      *         >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this
      *         capability for a stack set with service-managed permissions, if you reference a macro in your template
      *         the stack set operation will fail.
@@ -1140,7 +1140,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      * >Acknowledging IAM Resources in CloudFormation Templates</a>.
      * </p>
      * </li>
@@ -1152,16 +1152,16 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * Some templates reference macros. If your stack set template references one or more macros, you must update the
      * stack set directly from the processed template, without first reviewing the resulting changes in a change set. To
      * update the stack set directly, you must acknowledge this capability. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
      * Macros to Perform Custom Processing on Templates</a>.
      * </p>
      * <important>
      * <p>
      * Stack sets with service-managed permissions do not currently support the use of macros in templates. (This
      * includes the <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      * >AWS::Include</a> and <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      * >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this capability
      * for a stack set with service-managed permissions, if you reference a macro in your template the stack set
      * operation will fail.
@@ -1257,7 +1257,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </ul>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      *        >Acknowledging IAM Resources in CloudFormation Templates</a>.
      *        </p>
      *        </li>
@@ -1269,16 +1269,16 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Some templates reference macros. If your stack set template references one or more macros, you must update
      *        the stack set directly from the processed template, without first reviewing the resulting changes in a
      *        change set. To update the stack set directly, you must acknowledge this capability. For more information,
-     *        see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
+     *        see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      *        CloudFormation Macros to Perform Custom Processing on Templates</a>.
      *        </p>
      *        <important>
      *        <p>
      *        Stack sets with service-managed permissions do not currently support the use of macros in templates. (This
      *        includes the <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      *        >AWS::Include</a> and <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      *        >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this
      *        capability for a stack set with service-managed permissions, if you reference a macro in your template the
      *        stack set operation will fail.
@@ -1383,7 +1383,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      * >Acknowledging IAM Resources in CloudFormation Templates</a>.
      * </p>
      * </li>
@@ -1395,16 +1395,16 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * Some templates reference macros. If your stack set template references one or more macros, you must update the
      * stack set directly from the processed template, without first reviewing the resulting changes in a change set. To
      * update the stack set directly, you must acknowledge this capability. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
      * Macros to Perform Custom Processing on Templates</a>.
      * </p>
      * <important>
      * <p>
      * Stack sets with service-managed permissions do not currently support the use of macros in templates. (This
      * includes the <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      * >AWS::Include</a> and <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      * >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this capability
      * for a stack set with service-managed permissions, if you reference a macro in your template the stack set
      * operation will fail.
@@ -1505,7 +1505,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </ul>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      *        >Acknowledging IAM Resources in CloudFormation Templates</a>.
      *        </p>
      *        </li>
@@ -1517,16 +1517,16 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Some templates reference macros. If your stack set template references one or more macros, you must update
      *        the stack set directly from the processed template, without first reviewing the resulting changes in a
      *        change set. To update the stack set directly, you must acknowledge this capability. For more information,
-     *        see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
+     *        see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      *        CloudFormation Macros to Perform Custom Processing on Templates</a>.
      *        </p>
      *        <important>
      *        <p>
      *        Stack sets with service-managed permissions do not currently support the use of macros in templates. (This
      *        includes the <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      *        >AWS::Include</a> and <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      *        >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this
      *        capability for a stack set with service-managed permissions, if you reference a macro in your template the
      *        stack set operation will fail.
@@ -1633,7 +1633,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      * >Acknowledging IAM Resources in CloudFormation Templates</a>.
      * </p>
      * </li>
@@ -1645,16 +1645,16 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * Some templates reference macros. If your stack set template references one or more macros, you must update the
      * stack set directly from the processed template, without first reviewing the resulting changes in a change set. To
      * update the stack set directly, you must acknowledge this capability. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
      * Macros to Perform Custom Processing on Templates</a>.
      * </p>
      * <important>
      * <p>
      * Stack sets with service-managed permissions do not currently support the use of macros in templates. (This
      * includes the <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      * >AWS::Include</a> and <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      * >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this capability
      * for a stack set with service-managed permissions, if you reference a macro in your template the stack set
      * operation will fail.
@@ -1750,7 +1750,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </ul>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      *        >Acknowledging IAM Resources in CloudFormation Templates</a>.
      *        </p>
      *        </li>
@@ -1762,16 +1762,16 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Some templates reference macros. If your stack set template references one or more macros, you must update
      *        the stack set directly from the processed template, without first reviewing the resulting changes in a
      *        change set. To update the stack set directly, you must acknowledge this capability. For more information,
-     *        see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
+     *        see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      *        CloudFormation Macros to Perform Custom Processing on Templates</a>.
      *        </p>
      *        <important>
      *        <p>
      *        Stack sets with service-managed permissions do not currently support the use of macros in templates. (This
      *        includes the <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      *        >AWS::Include</a> and <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      *        >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this
      *        capability for a stack set with service-managed permissions, if you reference a macro in your template the
      *        stack set operation will fail.
@@ -1873,7 +1873,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      * >Acknowledging IAM Resources in CloudFormation Templates</a>.
      * </p>
      * </li>
@@ -1885,16 +1885,16 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * Some templates reference macros. If your stack set template references one or more macros, you must update the
      * stack set directly from the processed template, without first reviewing the resulting changes in a change set. To
      * update the stack set directly, you must acknowledge this capability. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
      * Macros to Perform Custom Processing on Templates</a>.
      * </p>
      * <important>
      * <p>
      * Stack sets with service-managed permissions do not currently support the use of macros in templates. (This
      * includes the <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      * >AWS::Include</a> and <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      * >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this capability
      * for a stack set with service-managed permissions, if you reference a macro in your template the stack set
      * operation will fail.
@@ -1990,7 +1990,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </ul>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      *        >Acknowledging IAM Resources in CloudFormation Templates</a>.
      *        </p>
      *        </li>
@@ -2002,16 +2002,16 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Some templates reference macros. If your stack set template references one or more macros, you must update
      *        the stack set directly from the processed template, without first reviewing the resulting changes in a
      *        change set. To update the stack set directly, you must acknowledge this capability. For more information,
-     *        see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
+     *        see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      *        CloudFormation Macros to Perform Custom Processing on Templates</a>.
      *        </p>
      *        <important>
      *        <p>
      *        Stack sets with service-managed permissions do not currently support the use of macros in templates. (This
      *        includes the <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      *        >AWS::Include</a> and <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      *        >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this
      *        capability for a stack set with service-managed permissions, if you reference a macro in your template the
      *        stack set operation will fail.
@@ -2422,7 +2422,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Specify an IAM role only if you are using customized administrator roles to control which users or groups can
      * manage specific stack sets within the same administrator account. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Granting Permissions
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Granting Permissions
      * for Stack Set Operations</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * <p>
@@ -2435,7 +2435,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        Specify an IAM role only if you are using customized administrator roles to control which users or groups
      *        can manage specific stack sets within the same administrator account. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Granting
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Granting
      *        Permissions for Stack Set Operations</a> in the <i>CloudFormation User Guide</i>.
      *        </p>
      *        <p>
@@ -2455,7 +2455,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Specify an IAM role only if you are using customized administrator roles to control which users or groups can
      * manage specific stack sets within the same administrator account. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Granting Permissions
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Granting Permissions
      * for Stack Set Operations</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * <p>
@@ -2467,7 +2467,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <p>
      *         Specify an IAM role only if you are using customized administrator roles to control which users or groups
      *         can manage specific stack sets within the same administrator account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Granting
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Granting
      *         Permissions for Stack Set Operations</a> in the <i>CloudFormation User Guide</i>.
      *         </p>
      *         <p>
@@ -2487,7 +2487,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Specify an IAM role only if you are using customized administrator roles to control which users or groups can
      * manage specific stack sets within the same administrator account. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Granting Permissions
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Granting Permissions
      * for Stack Set Operations</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * <p>
@@ -2500,7 +2500,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        Specify an IAM role only if you are using customized administrator roles to control which users or groups
      *        can manage specific stack sets within the same administrator account. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Granting
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Granting
      *        Permissions for Stack Set Operations</a> in the <i>CloudFormation User Guide</i>.
      *        </p>
      *        <p>

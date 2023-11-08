@@ -64,6 +64,10 @@ public class TargetGroupSummaryJsonUnmarshaller implements Unmarshaller<TargetGr
                     context.nextToken();
                     targetGroupSummary.setIpAddressType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("lambdaEventStructureVersion", targetDepth)) {
+                    context.nextToken();
+                    targetGroupSummary.setLambdaEventStructureVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("lastUpdatedAt", targetDepth)) {
                     context.nextToken();
                     targetGroupSummary.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));

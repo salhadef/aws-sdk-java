@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The field options for a table visual.
+ * The field options of a table visual.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/TableFieldOptions" target="_top">AWS API
@@ -30,23 +30,29 @@ public class TableFieldOptions implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The selected field options for the table field options.
+     * The field options to be configured to a table.
      * </p>
      */
     private java.util.List<TableFieldOption> selectedFieldOptions;
     /**
      * <p>
-     * The order of field IDs of the field options for a table visual.
+     * The order of the field IDs that are configured as field options for a table visual.
      * </p>
      */
     private java.util.List<String> order;
+    /**
+     * <p>
+     * The settings for the pinned columns of a table visual.
+     * </p>
+     */
+    private TablePinnedFieldOptions pinnedFieldOptions;
 
     /**
      * <p>
-     * The selected field options for the table field options.
+     * The field options to be configured to a table.
      * </p>
      * 
-     * @return The selected field options for the table field options.
+     * @return The field options to be configured to a table.
      */
 
     public java.util.List<TableFieldOption> getSelectedFieldOptions() {
@@ -55,11 +61,11 @@ public class TableFieldOptions implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The selected field options for the table field options.
+     * The field options to be configured to a table.
      * </p>
      * 
      * @param selectedFieldOptions
-     *        The selected field options for the table field options.
+     *        The field options to be configured to a table.
      */
 
     public void setSelectedFieldOptions(java.util.Collection<TableFieldOption> selectedFieldOptions) {
@@ -73,7 +79,7 @@ public class TableFieldOptions implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The selected field options for the table field options.
+     * The field options to be configured to a table.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -82,7 +88,7 @@ public class TableFieldOptions implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param selectedFieldOptions
-     *        The selected field options for the table field options.
+     *        The field options to be configured to a table.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +104,11 @@ public class TableFieldOptions implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The selected field options for the table field options.
+     * The field options to be configured to a table.
      * </p>
      * 
      * @param selectedFieldOptions
-     *        The selected field options for the table field options.
+     *        The field options to be configured to a table.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,10 +119,10 @@ public class TableFieldOptions implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The order of field IDs of the field options for a table visual.
+     * The order of the field IDs that are configured as field options for a table visual.
      * </p>
      * 
-     * @return The order of field IDs of the field options for a table visual.
+     * @return The order of the field IDs that are configured as field options for a table visual.
      */
 
     public java.util.List<String> getOrder() {
@@ -125,11 +131,11 @@ public class TableFieldOptions implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The order of field IDs of the field options for a table visual.
+     * The order of the field IDs that are configured as field options for a table visual.
      * </p>
      * 
      * @param order
-     *        The order of field IDs of the field options for a table visual.
+     *        The order of the field IDs that are configured as field options for a table visual.
      */
 
     public void setOrder(java.util.Collection<String> order) {
@@ -143,7 +149,7 @@ public class TableFieldOptions implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The order of field IDs of the field options for a table visual.
+     * The order of the field IDs that are configured as field options for a table visual.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -152,7 +158,7 @@ public class TableFieldOptions implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param order
-     *        The order of field IDs of the field options for a table visual.
+     *        The order of the field IDs that are configured as field options for a table visual.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -168,16 +174,56 @@ public class TableFieldOptions implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The order of field IDs of the field options for a table visual.
+     * The order of the field IDs that are configured as field options for a table visual.
      * </p>
      * 
      * @param order
-     *        The order of field IDs of the field options for a table visual.
+     *        The order of the field IDs that are configured as field options for a table visual.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TableFieldOptions withOrder(java.util.Collection<String> order) {
         setOrder(order);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The settings for the pinned columns of a table visual.
+     * </p>
+     * 
+     * @param pinnedFieldOptions
+     *        The settings for the pinned columns of a table visual.
+     */
+
+    public void setPinnedFieldOptions(TablePinnedFieldOptions pinnedFieldOptions) {
+        this.pinnedFieldOptions = pinnedFieldOptions;
+    }
+
+    /**
+     * <p>
+     * The settings for the pinned columns of a table visual.
+     * </p>
+     * 
+     * @return The settings for the pinned columns of a table visual.
+     */
+
+    public TablePinnedFieldOptions getPinnedFieldOptions() {
+        return this.pinnedFieldOptions;
+    }
+
+    /**
+     * <p>
+     * The settings for the pinned columns of a table visual.
+     * </p>
+     * 
+     * @param pinnedFieldOptions
+     *        The settings for the pinned columns of a table visual.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TableFieldOptions withPinnedFieldOptions(TablePinnedFieldOptions pinnedFieldOptions) {
+        setPinnedFieldOptions(pinnedFieldOptions);
         return this;
     }
 
@@ -196,7 +242,9 @@ public class TableFieldOptions implements Serializable, Cloneable, StructuredPoj
         if (getSelectedFieldOptions() != null)
             sb.append("SelectedFieldOptions: ").append(getSelectedFieldOptions()).append(",");
         if (getOrder() != null)
-            sb.append("Order: ").append(getOrder());
+            sb.append("Order: ").append(getOrder()).append(",");
+        if (getPinnedFieldOptions() != null)
+            sb.append("PinnedFieldOptions: ").append(getPinnedFieldOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -219,6 +267,10 @@ public class TableFieldOptions implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getOrder() != null && other.getOrder().equals(this.getOrder()) == false)
             return false;
+        if (other.getPinnedFieldOptions() == null ^ this.getPinnedFieldOptions() == null)
+            return false;
+        if (other.getPinnedFieldOptions() != null && other.getPinnedFieldOptions().equals(this.getPinnedFieldOptions()) == false)
+            return false;
         return true;
     }
 
@@ -229,6 +281,7 @@ public class TableFieldOptions implements Serializable, Cloneable, StructuredPoj
 
         hashCode = prime * hashCode + ((getSelectedFieldOptions() == null) ? 0 : getSelectedFieldOptions().hashCode());
         hashCode = prime * hashCode + ((getOrder() == null) ? 0 : getOrder().hashCode());
+        hashCode = prime * hashCode + ((getPinnedFieldOptions() == null) ? 0 : getPinnedFieldOptions().hashCode());
         return hashCode;
     }
 

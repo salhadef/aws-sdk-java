@@ -37,7 +37,7 @@ public class StartFHIRExportJobResult extends com.amazonaws.AmazonWebServiceResu
     private String jobStatus;
     /**
      * <p>
-     * The AWS generated ID for the Data Store from which files are being exported for an export job.
+     * The AWS generated ID for the data store from which files are being exported for an export job.
      * </p>
      */
     private String datastoreId;
@@ -143,11 +143,11 @@ public class StartFHIRExportJobResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The AWS generated ID for the Data Store from which files are being exported for an export job.
+     * The AWS generated ID for the data store from which files are being exported for an export job.
      * </p>
      * 
      * @param datastoreId
-     *        The AWS generated ID for the Data Store from which files are being exported for an export job.
+     *        The AWS generated ID for the data store from which files are being exported for an export job.
      */
 
     public void setDatastoreId(String datastoreId) {
@@ -156,10 +156,10 @@ public class StartFHIRExportJobResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The AWS generated ID for the Data Store from which files are being exported for an export job.
+     * The AWS generated ID for the data store from which files are being exported for an export job.
      * </p>
      * 
-     * @return The AWS generated ID for the Data Store from which files are being exported for an export job.
+     * @return The AWS generated ID for the data store from which files are being exported for an export job.
      */
 
     public String getDatastoreId() {
@@ -168,11 +168,11 @@ public class StartFHIRExportJobResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The AWS generated ID for the Data Store from which files are being exported for an export job.
+     * The AWS generated ID for the data store from which files are being exported for an export job.
      * </p>
      * 
      * @param datastoreId
-     *        The AWS generated ID for the Data Store from which files are being exported for an export job.
+     *        The AWS generated ID for the data store from which files are being exported for an export job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -106,6 +106,10 @@ public class PhoneNumberJsonUnmarshaller implements Unmarshaller<PhoneNumber, Js
                     context.nextToken();
                     phoneNumber.setOrderId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Name", targetDepth)) {
+                    context.nextToken();
+                    phoneNumber.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

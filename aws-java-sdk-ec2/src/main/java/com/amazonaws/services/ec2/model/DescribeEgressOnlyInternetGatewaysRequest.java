@@ -28,7 +28,7 @@ public class DescribeEgressOnlyInternetGatewaysRequest extends AmazonWebServiceR
 
     /**
      * <p>
-     * One or more egress-only internet gateway IDs.
+     * The IDs of the egress-only internet gateways.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> egressOnlyInternetGatewayIds;
@@ -49,7 +49,7 @@ public class DescribeEgressOnlyInternetGatewaysRequest extends AmazonWebServiceR
     private String nextToken;
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -72,10 +72,10 @@ public class DescribeEgressOnlyInternetGatewaysRequest extends AmazonWebServiceR
 
     /**
      * <p>
-     * One or more egress-only internet gateway IDs.
+     * The IDs of the egress-only internet gateways.
      * </p>
      * 
-     * @return One or more egress-only internet gateway IDs.
+     * @return The IDs of the egress-only internet gateways.
      */
 
     public java.util.List<String> getEgressOnlyInternetGatewayIds() {
@@ -87,11 +87,11 @@ public class DescribeEgressOnlyInternetGatewaysRequest extends AmazonWebServiceR
 
     /**
      * <p>
-     * One or more egress-only internet gateway IDs.
+     * The IDs of the egress-only internet gateways.
      * </p>
      * 
      * @param egressOnlyInternetGatewayIds
-     *        One or more egress-only internet gateway IDs.
+     *        The IDs of the egress-only internet gateways.
      */
 
     public void setEgressOnlyInternetGatewayIds(java.util.Collection<String> egressOnlyInternetGatewayIds) {
@@ -105,7 +105,7 @@ public class DescribeEgressOnlyInternetGatewaysRequest extends AmazonWebServiceR
 
     /**
      * <p>
-     * One or more egress-only internet gateway IDs.
+     * The IDs of the egress-only internet gateways.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -114,7 +114,7 @@ public class DescribeEgressOnlyInternetGatewaysRequest extends AmazonWebServiceR
      * </p>
      * 
      * @param egressOnlyInternetGatewayIds
-     *        One or more egress-only internet gateway IDs.
+     *        The IDs of the egress-only internet gateways.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,11 +130,11 @@ public class DescribeEgressOnlyInternetGatewaysRequest extends AmazonWebServiceR
 
     /**
      * <p>
-     * One or more egress-only internet gateway IDs.
+     * The IDs of the egress-only internet gateways.
      * </p>
      * 
      * @param egressOnlyInternetGatewayIds
-     *        One or more egress-only internet gateway IDs.
+     *        The IDs of the egress-only internet gateways.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -246,7 +246,7 @@ public class DescribeEgressOnlyInternetGatewaysRequest extends AmazonWebServiceR
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -265,7 +265,7 @@ public class DescribeEgressOnlyInternetGatewaysRequest extends AmazonWebServiceR
      * </li>
      * </ul>
      * 
-     * @return One or more filters.</p>
+     * @return The filters.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -292,7 +292,7 @@ public class DescribeEgressOnlyInternetGatewaysRequest extends AmazonWebServiceR
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -312,7 +312,7 @@ public class DescribeEgressOnlyInternetGatewaysRequest extends AmazonWebServiceR
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -341,7 +341,7 @@ public class DescribeEgressOnlyInternetGatewaysRequest extends AmazonWebServiceR
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -366,7 +366,7 @@ public class DescribeEgressOnlyInternetGatewaysRequest extends AmazonWebServiceR
      * </p>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -397,7 +397,7 @@ public class DescribeEgressOnlyInternetGatewaysRequest extends AmazonWebServiceR
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -417,7 +417,7 @@ public class DescribeEgressOnlyInternetGatewaysRequest extends AmazonWebServiceR
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>

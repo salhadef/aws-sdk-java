@@ -57,6 +57,12 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String accessPolicies;
     /**
      * <p>
+     * The type of IP addresses supported by the endpoint for the domain.
+     * </p>
+     */
+    private String iPAddressType;
+    /**
+     * <p>
      * DEPRECATED. Container for the parameters required to configure automated snapshots of domain indexes.
      * </p>
      */
@@ -133,7 +139,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
     private java.util.Map<String, String> advancedOptions;
     /**
      * <p>
-     * Key-value pairs to configure slow log publishing.
+     * Key-value pairs to configure log publishing.
      * </p>
      */
     private java.util.Map<String, LogPublishingOption> logPublishingOptions;
@@ -404,6 +410,65 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     public CreateDomainRequest withAccessPolicies(String accessPolicies) {
         setAccessPolicies(accessPolicies);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of IP addresses supported by the endpoint for the domain.
+     * </p>
+     * 
+     * @param iPAddressType
+     *        The type of IP addresses supported by the endpoint for the domain.
+     * @see IPAddressType
+     */
+
+    public void setIPAddressType(String iPAddressType) {
+        this.iPAddressType = iPAddressType;
+    }
+
+    /**
+     * <p>
+     * The type of IP addresses supported by the endpoint for the domain.
+     * </p>
+     * 
+     * @return The type of IP addresses supported by the endpoint for the domain.
+     * @see IPAddressType
+     */
+
+    public String getIPAddressType() {
+        return this.iPAddressType;
+    }
+
+    /**
+     * <p>
+     * The type of IP addresses supported by the endpoint for the domain.
+     * </p>
+     * 
+     * @param iPAddressType
+     *        The type of IP addresses supported by the endpoint for the domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IPAddressType
+     */
+
+    public CreateDomainRequest withIPAddressType(String iPAddressType) {
+        setIPAddressType(iPAddressType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of IP addresses supported by the endpoint for the domain.
+     * </p>
+     * 
+     * @param iPAddressType
+     *        The type of IP addresses supported by the endpoint for the domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IPAddressType
+     */
+
+    public CreateDomainRequest withIPAddressType(IPAddressType iPAddressType) {
+        this.iPAddressType = iPAddressType.toString();
         return this;
     }
 
@@ -920,10 +985,10 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Key-value pairs to configure slow log publishing.
+     * Key-value pairs to configure log publishing.
      * </p>
      * 
-     * @return Key-value pairs to configure slow log publishing.
+     * @return Key-value pairs to configure log publishing.
      */
 
     public java.util.Map<String, LogPublishingOption> getLogPublishingOptions() {
@@ -932,11 +997,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Key-value pairs to configure slow log publishing.
+     * Key-value pairs to configure log publishing.
      * </p>
      * 
      * @param logPublishingOptions
-     *        Key-value pairs to configure slow log publishing.
+     *        Key-value pairs to configure log publishing.
      */
 
     public void setLogPublishingOptions(java.util.Map<String, LogPublishingOption> logPublishingOptions) {
@@ -945,11 +1010,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Key-value pairs to configure slow log publishing.
+     * Key-value pairs to configure log publishing.
      * </p>
      * 
      * @param logPublishingOptions
-     *        Key-value pairs to configure slow log publishing.
+     *        Key-value pairs to configure log publishing.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1296,6 +1361,8 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
             sb.append("EBSOptions: ").append(getEBSOptions()).append(",");
         if (getAccessPolicies() != null)
             sb.append("AccessPolicies: ").append(getAccessPolicies()).append(",");
+        if (getIPAddressType() != null)
+            sb.append("IPAddressType: ").append(getIPAddressType()).append(",");
         if (getSnapshotOptions() != null)
             sb.append("SnapshotOptions: ").append(getSnapshotOptions()).append(",");
         if (getVPCOptions() != null)
@@ -1355,6 +1422,10 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (other.getAccessPolicies() == null ^ this.getAccessPolicies() == null)
             return false;
         if (other.getAccessPolicies() != null && other.getAccessPolicies().equals(this.getAccessPolicies()) == false)
+            return false;
+        if (other.getIPAddressType() == null ^ this.getIPAddressType() == null)
+            return false;
+        if (other.getIPAddressType() != null && other.getIPAddressType().equals(this.getIPAddressType()) == false)
             return false;
         if (other.getSnapshotOptions() == null ^ this.getSnapshotOptions() == null)
             return false;
@@ -1421,6 +1492,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getClusterConfig() == null) ? 0 : getClusterConfig().hashCode());
         hashCode = prime * hashCode + ((getEBSOptions() == null) ? 0 : getEBSOptions().hashCode());
         hashCode = prime * hashCode + ((getAccessPolicies() == null) ? 0 : getAccessPolicies().hashCode());
+        hashCode = prime * hashCode + ((getIPAddressType() == null) ? 0 : getIPAddressType().hashCode());
         hashCode = prime * hashCode + ((getSnapshotOptions() == null) ? 0 : getSnapshotOptions().hashCode());
         hashCode = prime * hashCode + ((getVPCOptions() == null) ? 0 : getVPCOptions().hashCode());
         hashCode = prime * hashCode + ((getCognitoOptions() == null) ? 0 : getCognitoOptions().hashCode());

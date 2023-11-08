@@ -29,10 +29,10 @@ public class ListTagsForResourceRequestMarshaller {
 
     private static final MarshallingInfo<String> INSTANCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceArn").build();
-    private static final MarshallingInfo<String> RESOURCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceArn").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("NextToken").build();
+    private static final MarshallingInfo<String> RESOURCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceArn").build();
 
     private static final ListTagsForResourceRequestMarshaller instance = new ListTagsForResourceRequestMarshaller();
 
@@ -51,8 +51,8 @@ public class ListTagsForResourceRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(listTagsForResourceRequest.getInstanceArn(), INSTANCEARN_BINDING);
-            protocolMarshaller.marshall(listTagsForResourceRequest.getResourceArn(), RESOURCEARN_BINDING);
             protocolMarshaller.marshall(listTagsForResourceRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listTagsForResourceRequest.getResourceArn(), RESOURCEARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

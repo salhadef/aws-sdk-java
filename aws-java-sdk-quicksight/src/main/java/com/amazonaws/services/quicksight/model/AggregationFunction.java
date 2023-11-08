@@ -83,6 +83,12 @@ public class AggregationFunction implements Serializable, Cloneable, StructuredP
      * </ul>
      */
     private String dateAggregationFunction;
+    /**
+     * <p>
+     * Aggregation for attributes.
+     * </p>
+     */
+    private AttributeAggregationFunction attributeAggregationFunction;
 
     /**
      * <p>
@@ -507,6 +513,46 @@ public class AggregationFunction implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * Aggregation for attributes.
+     * </p>
+     * 
+     * @param attributeAggregationFunction
+     *        Aggregation for attributes.
+     */
+
+    public void setAttributeAggregationFunction(AttributeAggregationFunction attributeAggregationFunction) {
+        this.attributeAggregationFunction = attributeAggregationFunction;
+    }
+
+    /**
+     * <p>
+     * Aggregation for attributes.
+     * </p>
+     * 
+     * @return Aggregation for attributes.
+     */
+
+    public AttributeAggregationFunction getAttributeAggregationFunction() {
+        return this.attributeAggregationFunction;
+    }
+
+    /**
+     * <p>
+     * Aggregation for attributes.
+     * </p>
+     * 
+     * @param attributeAggregationFunction
+     *        Aggregation for attributes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AggregationFunction withAttributeAggregationFunction(AttributeAggregationFunction attributeAggregationFunction) {
+        setAttributeAggregationFunction(attributeAggregationFunction);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -523,7 +569,9 @@ public class AggregationFunction implements Serializable, Cloneable, StructuredP
         if (getCategoricalAggregationFunction() != null)
             sb.append("CategoricalAggregationFunction: ").append(getCategoricalAggregationFunction()).append(",");
         if (getDateAggregationFunction() != null)
-            sb.append("DateAggregationFunction: ").append(getDateAggregationFunction());
+            sb.append("DateAggregationFunction: ").append(getDateAggregationFunction()).append(",");
+        if (getAttributeAggregationFunction() != null)
+            sb.append("AttributeAggregationFunction: ").append(getAttributeAggregationFunction());
         sb.append("}");
         return sb.toString();
     }
@@ -551,6 +599,10 @@ public class AggregationFunction implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getDateAggregationFunction() != null && other.getDateAggregationFunction().equals(this.getDateAggregationFunction()) == false)
             return false;
+        if (other.getAttributeAggregationFunction() == null ^ this.getAttributeAggregationFunction() == null)
+            return false;
+        if (other.getAttributeAggregationFunction() != null && other.getAttributeAggregationFunction().equals(this.getAttributeAggregationFunction()) == false)
+            return false;
         return true;
     }
 
@@ -562,6 +614,7 @@ public class AggregationFunction implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getNumericalAggregationFunction() == null) ? 0 : getNumericalAggregationFunction().hashCode());
         hashCode = prime * hashCode + ((getCategoricalAggregationFunction() == null) ? 0 : getCategoricalAggregationFunction().hashCode());
         hashCode = prime * hashCode + ((getDateAggregationFunction() == null) ? 0 : getDateAggregationFunction().hashCode());
+        hashCode = prime * hashCode + ((getAttributeAggregationFunction() == null) ? 0 : getAttributeAggregationFunction().hashCode());
         return hashCode;
     }
 

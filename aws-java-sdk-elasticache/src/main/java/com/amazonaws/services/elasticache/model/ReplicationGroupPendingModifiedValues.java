@@ -75,6 +75,15 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
      * </p>
      */
     private String transitEncryptionMode;
+    /**
+     * <p>
+     * Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to
+     * Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode
+     * disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode
+     * configuration and set the cluster mode to Enabled.
+     * </p>
+     */
+    private String clusterMode;
 
     /**
      * <p>
@@ -547,6 +556,109 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
     }
 
     /**
+     * <p>
+     * Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to
+     * Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode
+     * disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode
+     * configuration and set the cluster mode to Enabled.
+     * </p>
+     * 
+     * @param clusterMode
+     *        Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode
+     *        to Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and
+     *        cluster mode disabled. After you migrate all Redis clients to use cluster mode enabled, you can then
+     *        complete cluster mode configuration and set the cluster mode to Enabled.
+     * @see ClusterMode
+     */
+
+    public void setClusterMode(String clusterMode) {
+        this.clusterMode = clusterMode;
+    }
+
+    /**
+     * <p>
+     * Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to
+     * Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode
+     * disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode
+     * configuration and set the cluster mode to Enabled.
+     * </p>
+     * 
+     * @return Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode
+     *         to Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and
+     *         cluster mode disabled. After you migrate all Redis clients to use cluster mode enabled, you can then
+     *         complete cluster mode configuration and set the cluster mode to Enabled.
+     * @see ClusterMode
+     */
+
+    public String getClusterMode() {
+        return this.clusterMode;
+    }
+
+    /**
+     * <p>
+     * Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to
+     * Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode
+     * disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode
+     * configuration and set the cluster mode to Enabled.
+     * </p>
+     * 
+     * @param clusterMode
+     *        Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode
+     *        to Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and
+     *        cluster mode disabled. After you migrate all Redis clients to use cluster mode enabled, you can then
+     *        complete cluster mode configuration and set the cluster mode to Enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ClusterMode
+     */
+
+    public ReplicationGroupPendingModifiedValues withClusterMode(String clusterMode) {
+        setClusterMode(clusterMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to
+     * Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode
+     * disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode
+     * configuration and set the cluster mode to Enabled.
+     * </p>
+     * 
+     * @param clusterMode
+     *        Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode
+     *        to Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and
+     *        cluster mode disabled. After you migrate all Redis clients to use cluster mode enabled, you can then
+     *        complete cluster mode configuration and set the cluster mode to Enabled.
+     * @see ClusterMode
+     */
+
+    public void setClusterMode(ClusterMode clusterMode) {
+        withClusterMode(clusterMode);
+    }
+
+    /**
+     * <p>
+     * Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to
+     * Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode
+     * disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode
+     * configuration and set the cluster mode to Enabled.
+     * </p>
+     * 
+     * @param clusterMode
+     *        Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode
+     *        to Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and
+     *        cluster mode disabled. After you migrate all Redis clients to use cluster mode enabled, you can then
+     *        complete cluster mode configuration and set the cluster mode to Enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ClusterMode
+     */
+
+    public ReplicationGroupPendingModifiedValues withClusterMode(ClusterMode clusterMode) {
+        this.clusterMode = clusterMode.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -573,7 +685,9 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
         if (getTransitEncryptionEnabled() != null)
             sb.append("TransitEncryptionEnabled: ").append(getTransitEncryptionEnabled()).append(",");
         if (getTransitEncryptionMode() != null)
-            sb.append("TransitEncryptionMode: ").append(getTransitEncryptionMode());
+            sb.append("TransitEncryptionMode: ").append(getTransitEncryptionMode()).append(",");
+        if (getClusterMode() != null)
+            sb.append("ClusterMode: ").append(getClusterMode());
         sb.append("}");
         return sb.toString();
     }
@@ -620,6 +734,10 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
             return false;
         if (other.getTransitEncryptionMode() != null && other.getTransitEncryptionMode().equals(this.getTransitEncryptionMode()) == false)
             return false;
+        if (other.getClusterMode() == null ^ this.getClusterMode() == null)
+            return false;
+        if (other.getClusterMode() != null && other.getClusterMode().equals(this.getClusterMode()) == false)
+            return false;
         return true;
     }
 
@@ -636,6 +754,7 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
         hashCode = prime * hashCode + ((getLogDeliveryConfigurations() == null) ? 0 : getLogDeliveryConfigurations().hashCode());
         hashCode = prime * hashCode + ((getTransitEncryptionEnabled() == null) ? 0 : getTransitEncryptionEnabled().hashCode());
         hashCode = prime * hashCode + ((getTransitEncryptionMode() == null) ? 0 : getTransitEncryptionMode().hashCode());
+        hashCode = prime * hashCode + ((getClusterMode() == null) ? 0 : getClusterMode().hashCode());
         return hashCode;
     }
 

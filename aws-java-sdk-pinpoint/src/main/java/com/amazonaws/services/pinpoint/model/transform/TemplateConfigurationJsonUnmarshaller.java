@@ -64,6 +64,10 @@ public class TemplateConfigurationJsonUnmarshaller implements Unmarshaller<Templ
                     context.nextToken();
                     templateConfiguration.setVoiceTemplate(TemplateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("InAppTemplate", targetDepth)) {
+                    context.nextToken();
+                    templateConfiguration.setInAppTemplate(TemplateJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

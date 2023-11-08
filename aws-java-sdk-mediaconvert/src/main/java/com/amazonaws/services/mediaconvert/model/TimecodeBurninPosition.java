@@ -15,8 +15,7 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Use Position (Position) under under Timecode burn-in (TimecodeBurnIn) to specify the location the burned-in timecode
- * on output video.
+ * Use Position under Timecode burn-in to specify the location the burned-in timecode on output video.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum TimecodeBurninPosition {

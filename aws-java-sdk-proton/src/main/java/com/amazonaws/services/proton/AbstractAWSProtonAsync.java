@@ -271,6 +271,19 @@ public class AbstractAWSProtonAsync extends AbstractAWSProton implements AWSProt
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteDeploymentResult> deleteDeploymentAsync(DeleteDeploymentRequest request) {
+
+        return deleteDeploymentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDeploymentResult> deleteDeploymentAsync(DeleteDeploymentRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteDeploymentRequest, DeleteDeploymentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteEnvironmentResult> deleteEnvironmentAsync(DeleteEnvironmentRequest request) {
 
         return deleteEnvironmentAsync(request, null);
@@ -426,6 +439,19 @@ public class AbstractAWSProtonAsync extends AbstractAWSProton implements AWSProt
     @Override
     public java.util.concurrent.Future<GetComponentResult> getComponentAsync(GetComponentRequest request,
             com.amazonaws.handlers.AsyncHandler<GetComponentRequest, GetComponentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDeploymentResult> getDeploymentAsync(GetDeploymentRequest request) {
+
+        return getDeploymentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDeploymentResult> getDeploymentAsync(GetDeploymentRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetDeploymentRequest, GetDeploymentResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -677,6 +703,19 @@ public class AbstractAWSProtonAsync extends AbstractAWSProton implements AWSProt
     @Override
     public java.util.concurrent.Future<ListComponentsResult> listComponentsAsync(ListComponentsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListComponentsRequest, ListComponentsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDeploymentsResult> listDeploymentsAsync(ListDeploymentsRequest request) {
+
+        return listDeploymentsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDeploymentsResult> listDeploymentsAsync(ListDeploymentsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListDeploymentsRequest, ListDeploymentsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -126,6 +126,13 @@ public class ModelCard implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String riskRating;
+    /**
+     * <p>
+     * The model package group that contains the model package. Only relevant for model cards created for model packages
+     * in the Amazon SageMaker Model Registry.
+     * </p>
+     */
+    private String modelPackageGroupName;
 
     /**
      * <p>
@@ -881,6 +888,52 @@ public class ModelCard implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The model package group that contains the model package. Only relevant for model cards created for model packages
+     * in the Amazon SageMaker Model Registry.
+     * </p>
+     * 
+     * @param modelPackageGroupName
+     *        The model package group that contains the model package. Only relevant for model cards created for model
+     *        packages in the Amazon SageMaker Model Registry.
+     */
+
+    public void setModelPackageGroupName(String modelPackageGroupName) {
+        this.modelPackageGroupName = modelPackageGroupName;
+    }
+
+    /**
+     * <p>
+     * The model package group that contains the model package. Only relevant for model cards created for model packages
+     * in the Amazon SageMaker Model Registry.
+     * </p>
+     * 
+     * @return The model package group that contains the model package. Only relevant for model cards created for model
+     *         packages in the Amazon SageMaker Model Registry.
+     */
+
+    public String getModelPackageGroupName() {
+        return this.modelPackageGroupName;
+    }
+
+    /**
+     * <p>
+     * The model package group that contains the model package. Only relevant for model cards created for model packages
+     * in the Amazon SageMaker Model Registry.
+     * </p>
+     * 
+     * @param modelPackageGroupName
+     *        The model package group that contains the model package. Only relevant for model cards created for model
+     *        packages in the Amazon SageMaker Model Registry.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModelCard withModelPackageGroupName(String modelPackageGroupName) {
+        setModelPackageGroupName(modelPackageGroupName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -917,7 +970,9 @@ public class ModelCard implements Serializable, Cloneable, StructuredPojo {
         if (getModelId() != null)
             sb.append("ModelId: ").append(getModelId()).append(",");
         if (getRiskRating() != null)
-            sb.append("RiskRating: ").append(getRiskRating());
+            sb.append("RiskRating: ").append(getRiskRating()).append(",");
+        if (getModelPackageGroupName() != null)
+            sb.append("ModelPackageGroupName: ").append(getModelPackageGroupName());
         sb.append("}");
         return sb.toString();
     }
@@ -984,6 +1039,10 @@ public class ModelCard implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRiskRating() != null && other.getRiskRating().equals(this.getRiskRating()) == false)
             return false;
+        if (other.getModelPackageGroupName() == null ^ this.getModelPackageGroupName() == null)
+            return false;
+        if (other.getModelPackageGroupName() != null && other.getModelPackageGroupName().equals(this.getModelPackageGroupName()) == false)
+            return false;
         return true;
     }
 
@@ -1005,6 +1064,7 @@ public class ModelCard implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getModelId() == null) ? 0 : getModelId().hashCode());
         hashCode = prime * hashCode + ((getRiskRating() == null) ? 0 : getRiskRating().hashCode());
+        hashCode = prime * hashCode + ((getModelPackageGroupName() == null) ? 0 : getModelPackageGroupName().hashCode());
         return hashCode;
     }
 

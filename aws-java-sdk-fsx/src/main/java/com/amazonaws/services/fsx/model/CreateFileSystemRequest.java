@@ -172,7 +172,7 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * (Optional) For FSx for Lustre file systems, sets the Lustre version for the file system that you're creating.
-     * Valid values are <code>2.10</code> and <code>2.12</code>:
+     * Valid values are <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>:
      * </p>
      * <ul>
      * <li>
@@ -182,8 +182,8 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * 2.12 is supported by all Lustre deployment types. <code>2.12</code> is required when setting FSx for Lustre
-     * <code>DeploymentType</code> to <code>PERSISTENT_2</code>.
+     * 2.12 and 2.15 are supported by all Lustre deployment types. <code>2.12</code> or <code>2.15</code> is required
+     * when setting FSx for Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.
      * </p>
      * </li>
      * </ul>
@@ -1330,7 +1330,7 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * (Optional) For FSx for Lustre file systems, sets the Lustre version for the file system that you're creating.
-     * Valid values are <code>2.10</code> and <code>2.12</code>:
+     * Valid values are <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>:
      * </p>
      * <ul>
      * <li>
@@ -1340,8 +1340,8 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * 2.12 is supported by all Lustre deployment types. <code>2.12</code> is required when setting FSx for Lustre
-     * <code>DeploymentType</code> to <code>PERSISTENT_2</code>.
+     * 2.12 and 2.15 are supported by all Lustre deployment types. <code>2.12</code> or <code>2.15</code> is required
+     * when setting FSx for Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.
      * </p>
      * </li>
      * </ul>
@@ -1358,7 +1358,7 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @param fileSystemTypeVersion
      *        (Optional) For FSx for Lustre file systems, sets the Lustre version for the file system that you're
-     *        creating. Valid values are <code>2.10</code> and <code>2.12</code>:</p>
+     *        creating. Valid values are <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1367,8 +1367,8 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        2.12 is supported by all Lustre deployment types. <code>2.12</code> is required when setting FSx for
-     *        Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.
+     *        2.12 and 2.15 are supported by all Lustre deployment types. <code>2.12</code> or <code>2.15</code> is
+     *        required when setting FSx for Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -1390,7 +1390,7 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * (Optional) For FSx for Lustre file systems, sets the Lustre version for the file system that you're creating.
-     * Valid values are <code>2.10</code> and <code>2.12</code>:
+     * Valid values are <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>:
      * </p>
      * <ul>
      * <li>
@@ -1400,8 +1400,8 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * 2.12 is supported by all Lustre deployment types. <code>2.12</code> is required when setting FSx for Lustre
-     * <code>DeploymentType</code> to <code>PERSISTENT_2</code>.
+     * 2.12 and 2.15 are supported by all Lustre deployment types. <code>2.12</code> or <code>2.15</code> is required
+     * when setting FSx for Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.
      * </p>
      * </li>
      * </ul>
@@ -1417,7 +1417,7 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * </note>
      * 
      * @return (Optional) For FSx for Lustre file systems, sets the Lustre version for the file system that you're
-     *         creating. Valid values are <code>2.10</code> and <code>2.12</code>:</p>
+     *         creating. Valid values are <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -1426,8 +1426,8 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      *         </li>
      *         <li>
      *         <p>
-     *         2.12 is supported by all Lustre deployment types. <code>2.12</code> is required when setting FSx for
-     *         Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.
+     *         2.12 and 2.15 are supported by all Lustre deployment types. <code>2.12</code> or <code>2.15</code> is
+     *         required when setting FSx for Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.
      *         </p>
      *         </li>
      *         </ul>
@@ -1449,7 +1449,7 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * (Optional) For FSx for Lustre file systems, sets the Lustre version for the file system that you're creating.
-     * Valid values are <code>2.10</code> and <code>2.12</code>:
+     * Valid values are <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>:
      * </p>
      * <ul>
      * <li>
@@ -1459,8 +1459,8 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * 2.12 is supported by all Lustre deployment types. <code>2.12</code> is required when setting FSx for Lustre
-     * <code>DeploymentType</code> to <code>PERSISTENT_2</code>.
+     * 2.12 and 2.15 are supported by all Lustre deployment types. <code>2.12</code> or <code>2.15</code> is required
+     * when setting FSx for Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.
      * </p>
      * </li>
      * </ul>
@@ -1477,7 +1477,7 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @param fileSystemTypeVersion
      *        (Optional) For FSx for Lustre file systems, sets the Lustre version for the file system that you're
-     *        creating. Valid values are <code>2.10</code> and <code>2.12</code>:</p>
+     *        creating. Valid values are <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1486,8 +1486,8 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        2.12 is supported by all Lustre deployment types. <code>2.12</code> is required when setting FSx for
-     *        Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.
+     *        2.12 and 2.15 are supported by all Lustre deployment types. <code>2.12</code> or <code>2.15</code> is
+     *        required when setting FSx for Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.
      *        </p>
      *        </li>
      *        </ul>

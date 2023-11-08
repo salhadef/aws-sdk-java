@@ -136,8 +136,10 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption"
      * >environment variables</a>. When <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda SnapStart</a> is activated,
-     * this key is also used to encrypt your function's snapshot. If you don't provide a customer managed key, Lambda
-     * uses a default service key.
+     * Lambda also uses this key is to encrypt your function's snapshot. If you deploy your function using a container
+     * image, Lambda also uses this key to encrypt your function when it's deployed. Note that this is not the same key
+     * that's used to protect your container image in the Amazon Elastic Container Registry (Amazon ECR). If you don't
+     * provide a customer managed key, Lambda uses a default service key.
      * </p>
      */
     private String kMSKeyArn;
@@ -178,7 +180,9 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole
-     * number between 512 and 10,240 MB.
+     * number between 512 and 10,240 MB. For more information, see <a href=
+     * "https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage"
+     * >Configuring ephemeral storage (console)</a>.
      * </p>
      */
     private EphemeralStorage ephemeralStorage;
@@ -927,8 +931,10 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption"
      * >environment variables</a>. When <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda SnapStart</a> is activated,
-     * this key is also used to encrypt your function's snapshot. If you don't provide a customer managed key, Lambda
-     * uses a default service key.
+     * Lambda also uses this key is to encrypt your function's snapshot. If you deploy your function using a container
+     * image, Lambda also uses this key to encrypt your function when it's deployed. Note that this is not the same key
+     * that's used to protect your container image in the Amazon Elastic Container Registry (Amazon ECR). If you don't
+     * provide a customer managed key, Lambda uses a default service key.
      * </p>
      * 
      * @param kMSKeyArn
@@ -937,8 +943,10 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      *        "https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption"
      *        >environment variables</a>. When <a
      *        href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda SnapStart</a> is
-     *        activated, this key is also used to encrypt your function's snapshot. If you don't provide a customer
-     *        managed key, Lambda uses a default service key.
+     *        activated, Lambda also uses this key is to encrypt your function's snapshot. If you deploy your function
+     *        using a container image, Lambda also uses this key to encrypt your function when it's deployed. Note that
+     *        this is not the same key that's used to protect your container image in the Amazon Elastic Container
+     *        Registry (Amazon ECR). If you don't provide a customer managed key, Lambda uses a default service key.
      */
 
     public void setKMSKeyArn(String kMSKeyArn) {
@@ -951,8 +959,10 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption"
      * >environment variables</a>. When <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda SnapStart</a> is activated,
-     * this key is also used to encrypt your function's snapshot. If you don't provide a customer managed key, Lambda
-     * uses a default service key.
+     * Lambda also uses this key is to encrypt your function's snapshot. If you deploy your function using a container
+     * image, Lambda also uses this key to encrypt your function when it's deployed. Note that this is not the same key
+     * that's used to protect your container image in the Amazon Elastic Container Registry (Amazon ECR). If you don't
+     * provide a customer managed key, Lambda uses a default service key.
      * </p>
      * 
      * @return The ARN of the Key Management Service (KMS) customer managed key that's used to encrypt your function's
@@ -960,8 +970,10 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      *         "https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption"
      *         >environment variables</a>. When <a
      *         href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda SnapStart</a> is
-     *         activated, this key is also used to encrypt your function's snapshot. If you don't provide a customer
-     *         managed key, Lambda uses a default service key.
+     *         activated, Lambda also uses this key is to encrypt your function's snapshot. If you deploy your function
+     *         using a container image, Lambda also uses this key to encrypt your function when it's deployed. Note that
+     *         this is not the same key that's used to protect your container image in the Amazon Elastic Container
+     *         Registry (Amazon ECR). If you don't provide a customer managed key, Lambda uses a default service key.
      */
 
     public String getKMSKeyArn() {
@@ -974,8 +986,10 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption"
      * >environment variables</a>. When <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda SnapStart</a> is activated,
-     * this key is also used to encrypt your function's snapshot. If you don't provide a customer managed key, Lambda
-     * uses a default service key.
+     * Lambda also uses this key is to encrypt your function's snapshot. If you deploy your function using a container
+     * image, Lambda also uses this key to encrypt your function when it's deployed. Note that this is not the same key
+     * that's used to protect your container image in the Amazon Elastic Container Registry (Amazon ECR). If you don't
+     * provide a customer managed key, Lambda uses a default service key.
      * </p>
      * 
      * @param kMSKeyArn
@@ -984,8 +998,10 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      *        "https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption"
      *        >environment variables</a>. When <a
      *        href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda SnapStart</a> is
-     *        activated, this key is also used to encrypt your function's snapshot. If you don't provide a customer
-     *        managed key, Lambda uses a default service key.
+     *        activated, Lambda also uses this key is to encrypt your function's snapshot. If you deploy your function
+     *        using a container image, Lambda also uses this key to encrypt your function when it's deployed. Note that
+     *        this is not the same key that's used to protect your container image in the Amazon Elastic Container
+     *        Registry (Amazon ECR). If you don't provide a customer managed key, Lambda uses a default service key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1293,12 +1309,16 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole
-     * number between 512 and 10,240 MB.
+     * number between 512 and 10,240 MB. For more information, see <a href=
+     * "https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage"
+     * >Configuring ephemeral storage (console)</a>.
      * </p>
      * 
      * @param ephemeralStorage
      *        The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any
-     *        whole number between 512 and 10,240 MB.
+     *        whole number between 512 and 10,240 MB. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage"
+     *        >Configuring ephemeral storage (console)</a>.
      */
 
     public void setEphemeralStorage(EphemeralStorage ephemeralStorage) {
@@ -1308,11 +1328,15 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole
-     * number between 512 and 10,240 MB.
+     * number between 512 and 10,240 MB. For more information, see <a href=
+     * "https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage"
+     * >Configuring ephemeral storage (console)</a>.
      * </p>
      * 
      * @return The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any
-     *         whole number between 512 and 10,240 MB.
+     *         whole number between 512 and 10,240 MB. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage"
+     *         >Configuring ephemeral storage (console)</a>.
      */
 
     public EphemeralStorage getEphemeralStorage() {
@@ -1322,12 +1346,16 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole
-     * number between 512 and 10,240 MB.
+     * number between 512 and 10,240 MB. For more information, see <a href=
+     * "https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage"
+     * >Configuring ephemeral storage (console)</a>.
      * </p>
      * 
      * @param ephemeralStorage
      *        The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any
-     *        whole number between 512 and 10,240 MB.
+     *        whole number between 512 and 10,240 MB. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage"
+     *        >Configuring ephemeral storage (console)</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

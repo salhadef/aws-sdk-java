@@ -27,48 +27,101 @@ public class DeleteCustomLogSourceRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The custom source name for the custom log source.
+     * The source name of custom log source that you want to delete.
      * </p>
      */
-    private String customSourceName;
+    private String sourceName;
+    /**
+     * <p>
+     * The source version for the third-party custom source. You can limit the custom source removal to the specified
+     * source version.
+     * </p>
+     */
+    private String sourceVersion;
 
     /**
      * <p>
-     * The custom source name for the custom log source.
+     * The source name of custom log source that you want to delete.
      * </p>
      * 
-     * @param customSourceName
-     *        The custom source name for the custom log source.
+     * @param sourceName
+     *        The source name of custom log source that you want to delete.
      */
 
-    public void setCustomSourceName(String customSourceName) {
-        this.customSourceName = customSourceName;
+    public void setSourceName(String sourceName) {
+        this.sourceName = sourceName;
     }
 
     /**
      * <p>
-     * The custom source name for the custom log source.
+     * The source name of custom log source that you want to delete.
      * </p>
      * 
-     * @return The custom source name for the custom log source.
+     * @return The source name of custom log source that you want to delete.
      */
 
-    public String getCustomSourceName() {
-        return this.customSourceName;
+    public String getSourceName() {
+        return this.sourceName;
     }
 
     /**
      * <p>
-     * The custom source name for the custom log source.
+     * The source name of custom log source that you want to delete.
      * </p>
      * 
-     * @param customSourceName
-     *        The custom source name for the custom log source.
+     * @param sourceName
+     *        The source name of custom log source that you want to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DeleteCustomLogSourceRequest withCustomSourceName(String customSourceName) {
-        setCustomSourceName(customSourceName);
+    public DeleteCustomLogSourceRequest withSourceName(String sourceName) {
+        setSourceName(sourceName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The source version for the third-party custom source. You can limit the custom source removal to the specified
+     * source version.
+     * </p>
+     * 
+     * @param sourceVersion
+     *        The source version for the third-party custom source. You can limit the custom source removal to the
+     *        specified source version.
+     */
+
+    public void setSourceVersion(String sourceVersion) {
+        this.sourceVersion = sourceVersion;
+    }
+
+    /**
+     * <p>
+     * The source version for the third-party custom source. You can limit the custom source removal to the specified
+     * source version.
+     * </p>
+     * 
+     * @return The source version for the third-party custom source. You can limit the custom source removal to the
+     *         specified source version.
+     */
+
+    public String getSourceVersion() {
+        return this.sourceVersion;
+    }
+
+    /**
+     * <p>
+     * The source version for the third-party custom source. You can limit the custom source removal to the specified
+     * source version.
+     * </p>
+     * 
+     * @param sourceVersion
+     *        The source version for the third-party custom source. You can limit the custom source removal to the
+     *        specified source version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteCustomLogSourceRequest withSourceVersion(String sourceVersion) {
+        setSourceVersion(sourceVersion);
         return this;
     }
 
@@ -84,8 +137,10 @@ public class DeleteCustomLogSourceRequest extends com.amazonaws.AmazonWebService
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getCustomSourceName() != null)
-            sb.append("CustomSourceName: ").append(getCustomSourceName());
+        if (getSourceName() != null)
+            sb.append("SourceName: ").append(getSourceName()).append(",");
+        if (getSourceVersion() != null)
+            sb.append("SourceVersion: ").append(getSourceVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -100,9 +155,13 @@ public class DeleteCustomLogSourceRequest extends com.amazonaws.AmazonWebService
         if (obj instanceof DeleteCustomLogSourceRequest == false)
             return false;
         DeleteCustomLogSourceRequest other = (DeleteCustomLogSourceRequest) obj;
-        if (other.getCustomSourceName() == null ^ this.getCustomSourceName() == null)
+        if (other.getSourceName() == null ^ this.getSourceName() == null)
             return false;
-        if (other.getCustomSourceName() != null && other.getCustomSourceName().equals(this.getCustomSourceName()) == false)
+        if (other.getSourceName() != null && other.getSourceName().equals(this.getSourceName()) == false)
+            return false;
+        if (other.getSourceVersion() == null ^ this.getSourceVersion() == null)
+            return false;
+        if (other.getSourceVersion() != null && other.getSourceVersion().equals(this.getSourceVersion()) == false)
             return false;
         return true;
     }
@@ -112,7 +171,8 @@ public class DeleteCustomLogSourceRequest extends com.amazonaws.AmazonWebService
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getCustomSourceName() == null) ? 0 : getCustomSourceName().hashCode());
+        hashCode = prime * hashCode + ((getSourceName() == null) ? 0 : getSourceName().hashCode());
+        hashCode = prime * hashCode + ((getSourceVersion() == null) ? 0 : getSourceVersion().hashCode());
         return hashCode;
     }
 

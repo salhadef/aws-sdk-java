@@ -87,6 +87,10 @@ public class GetEmailIdentityResultJsonUnmarshaller implements Unmarshaller<GetE
                     context.nextToken();
                     getEmailIdentityResult.setVerificationStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("VerificationInfo", targetDepth)) {
+                    context.nextToken();
+                    getEmailIdentityResult.setVerificationInfo(VerificationInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

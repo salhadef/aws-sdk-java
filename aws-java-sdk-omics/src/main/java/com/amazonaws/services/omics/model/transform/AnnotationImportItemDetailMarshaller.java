@@ -27,10 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class AnnotationImportItemDetailMarshaller {
 
-    private static final MarshallingInfo<String> JOBSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("jobStatus").build();
     private static final MarshallingInfo<String> SOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("source").build();
+    private static final MarshallingInfo<String> JOBSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("jobStatus").build();
 
     private static final AnnotationImportItemDetailMarshaller instance = new AnnotationImportItemDetailMarshaller();
 
@@ -48,8 +48,8 @@ public class AnnotationImportItemDetailMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(annotationImportItemDetail.getJobStatus(), JOBSTATUS_BINDING);
             protocolMarshaller.marshall(annotationImportItemDetail.getSource(), SOURCE_BINDING);
+            protocolMarshaller.marshall(annotationImportItemDetail.getJobStatus(), JOBSTATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

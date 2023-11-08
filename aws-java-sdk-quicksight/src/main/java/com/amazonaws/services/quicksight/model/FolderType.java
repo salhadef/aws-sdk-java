@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum FolderType {
 
-    SHARED("SHARED");
+    SHARED("SHARED"),
+    RESTRICTED("RESTRICTED");
 
     private String value;
 

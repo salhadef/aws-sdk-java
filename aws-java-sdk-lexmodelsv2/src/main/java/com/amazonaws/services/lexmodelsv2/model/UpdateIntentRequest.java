@@ -124,7 +124,11 @@ public class UpdateIntentRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private String localeId;
-    /** <p/> */
+    /**
+     * <p>
+     * Configuration settings for a response sent to the user before Amazon Lex starts eliciting slots.
+     * </p>
+     */
     private InitialResponseSetting initialResponseSetting;
 
     /**
@@ -906,9 +910,12 @@ public class UpdateIntentRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * <p/>
+     * <p>
+     * Configuration settings for a response sent to the user before Amazon Lex starts eliciting slots.
+     * </p>
      * 
      * @param initialResponseSetting
+     *        Configuration settings for a response sent to the user before Amazon Lex starts eliciting slots.
      */
 
     public void setInitialResponseSetting(InitialResponseSetting initialResponseSetting) {
@@ -916,9 +923,11 @@ public class UpdateIntentRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * <p/>
+     * <p>
+     * Configuration settings for a response sent to the user before Amazon Lex starts eliciting slots.
+     * </p>
      * 
-     * @return
+     * @return Configuration settings for a response sent to the user before Amazon Lex starts eliciting slots.
      */
 
     public InitialResponseSetting getInitialResponseSetting() {
@@ -926,9 +935,12 @@ public class UpdateIntentRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * <p/>
+     * <p>
+     * Configuration settings for a response sent to the user before Amazon Lex starts eliciting slots.
+     * </p>
      * 
      * @param initialResponseSetting
+     *        Configuration settings for a response sent to the user before Amazon Lex starts eliciting slots.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

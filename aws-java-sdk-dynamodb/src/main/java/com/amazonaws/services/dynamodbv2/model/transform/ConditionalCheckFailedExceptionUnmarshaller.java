@@ -53,6 +53,11 @@ public class ConditionalCheckFailedExceptionUnmarshaller extends EnhancedJsonErr
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("Item", targetDepth)) {
+                    context.nextToken();
+                    conditionalCheckFailedException.setItem(new MapUnmarshaller<String, AttributeValue>(context.getUnmarshaller(String.class),
+                            AttributeValueJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

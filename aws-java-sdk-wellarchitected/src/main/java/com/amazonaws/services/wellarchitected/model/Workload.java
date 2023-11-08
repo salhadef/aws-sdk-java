@@ -101,6 +101,14 @@ public class Workload implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<String> applications;
+    /**
+     * <p>
+     * Profile associated with a workload.
+     * </p>
+     */
+    private java.util.List<WorkloadProfile> profiles;
+
+    private java.util.Map<String, Integer> prioritizedRiskCounts;
 
     /**
      * @param workloadId
@@ -1111,6 +1119,130 @@ public class Workload implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Profile associated with a workload.
+     * </p>
+     * 
+     * @return Profile associated with a workload.
+     */
+
+    public java.util.List<WorkloadProfile> getProfiles() {
+        return profiles;
+    }
+
+    /**
+     * <p>
+     * Profile associated with a workload.
+     * </p>
+     * 
+     * @param profiles
+     *        Profile associated with a workload.
+     */
+
+    public void setProfiles(java.util.Collection<WorkloadProfile> profiles) {
+        if (profiles == null) {
+            this.profiles = null;
+            return;
+        }
+
+        this.profiles = new java.util.ArrayList<WorkloadProfile>(profiles);
+    }
+
+    /**
+     * <p>
+     * Profile associated with a workload.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setProfiles(java.util.Collection)} or {@link #withProfiles(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param profiles
+     *        Profile associated with a workload.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Workload withProfiles(WorkloadProfile... profiles) {
+        if (this.profiles == null) {
+            setProfiles(new java.util.ArrayList<WorkloadProfile>(profiles.length));
+        }
+        for (WorkloadProfile ele : profiles) {
+            this.profiles.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Profile associated with a workload.
+     * </p>
+     * 
+     * @param profiles
+     *        Profile associated with a workload.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Workload withProfiles(java.util.Collection<WorkloadProfile> profiles) {
+        setProfiles(profiles);
+        return this;
+    }
+
+    /**
+     * @return
+     */
+
+    public java.util.Map<String, Integer> getPrioritizedRiskCounts() {
+        return prioritizedRiskCounts;
+    }
+
+    /**
+     * @param prioritizedRiskCounts
+     */
+
+    public void setPrioritizedRiskCounts(java.util.Map<String, Integer> prioritizedRiskCounts) {
+        this.prioritizedRiskCounts = prioritizedRiskCounts;
+    }
+
+    /**
+     * @param prioritizedRiskCounts
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Workload withPrioritizedRiskCounts(java.util.Map<String, Integer> prioritizedRiskCounts) {
+        setPrioritizedRiskCounts(prioritizedRiskCounts);
+        return this;
+    }
+
+    /**
+     * Add a single PrioritizedRiskCounts entry
+     *
+     * @see Workload#withPrioritizedRiskCounts
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Workload addPrioritizedRiskCountsEntry(String key, Integer value) {
+        if (null == this.prioritizedRiskCounts) {
+            this.prioritizedRiskCounts = new java.util.HashMap<String, Integer>();
+        }
+        if (this.prioritizedRiskCounts.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.prioritizedRiskCounts.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into PrioritizedRiskCounts.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Workload clearPrioritizedRiskCountsEntries() {
+        this.prioritizedRiskCounts = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1171,7 +1303,11 @@ public class Workload implements Serializable, Cloneable, StructuredPojo {
         if (getDiscoveryConfig() != null)
             sb.append("DiscoveryConfig: ").append(getDiscoveryConfig()).append(",");
         if (getApplications() != null)
-            sb.append("Applications: ").append(getApplications());
+            sb.append("Applications: ").append(getApplications()).append(",");
+        if (getProfiles() != null)
+            sb.append("Profiles: ").append(getProfiles()).append(",");
+        if (getPrioritizedRiskCounts() != null)
+            sb.append("PrioritizedRiskCounts: ").append(getPrioritizedRiskCounts());
         sb.append("}");
         return sb.toString();
     }
@@ -1287,6 +1423,14 @@ public class Workload implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getApplications() != null && other.getApplications().equals(this.getApplications()) == false)
             return false;
+        if (other.getProfiles() == null ^ this.getProfiles() == null)
+            return false;
+        if (other.getProfiles() != null && other.getProfiles().equals(this.getProfiles()) == false)
+            return false;
+        if (other.getPrioritizedRiskCounts() == null ^ this.getPrioritizedRiskCounts() == null)
+            return false;
+        if (other.getPrioritizedRiskCounts() != null && other.getPrioritizedRiskCounts().equals(this.getPrioritizedRiskCounts()) == false)
+            return false;
         return true;
     }
 
@@ -1320,6 +1464,8 @@ public class Workload implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getDiscoveryConfig() == null) ? 0 : getDiscoveryConfig().hashCode());
         hashCode = prime * hashCode + ((getApplications() == null) ? 0 : getApplications().hashCode());
+        hashCode = prime * hashCode + ((getProfiles() == null) ? 0 : getProfiles().hashCode());
+        hashCode = prime * hashCode + ((getPrioritizedRiskCounts() == null) ? 0 : getPrioritizedRiskCounts().hashCode());
         return hashCode;
     }
 

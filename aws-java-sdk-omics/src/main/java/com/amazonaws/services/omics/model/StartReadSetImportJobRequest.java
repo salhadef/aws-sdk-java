@@ -27,10 +27,10 @@ public class StartReadSetImportJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * To ensure that jobs don't run multiple times, specify a unique token for each job.
+     * The read set's sequence store ID.
      * </p>
      */
-    private String clientToken;
+    private String sequenceStoreId;
     /**
      * <p>
      * A service role for the job.
@@ -39,10 +39,10 @@ public class StartReadSetImportJobRequest extends com.amazonaws.AmazonWebService
     private String roleArn;
     /**
      * <p>
-     * The read set's sequence store ID.
+     * To ensure that jobs don't run multiple times, specify a unique token for each job.
      * </p>
      */
-    private String sequenceStoreId;
+    private String clientToken;
     /**
      * <p>
      * The job's source files.
@@ -52,41 +52,41 @@ public class StartReadSetImportJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * To ensure that jobs don't run multiple times, specify a unique token for each job.
+     * The read set's sequence store ID.
      * </p>
      * 
-     * @param clientToken
-     *        To ensure that jobs don't run multiple times, specify a unique token for each job.
+     * @param sequenceStoreId
+     *        The read set's sequence store ID.
      */
 
-    public void setClientToken(String clientToken) {
-        this.clientToken = clientToken;
+    public void setSequenceStoreId(String sequenceStoreId) {
+        this.sequenceStoreId = sequenceStoreId;
     }
 
     /**
      * <p>
-     * To ensure that jobs don't run multiple times, specify a unique token for each job.
+     * The read set's sequence store ID.
      * </p>
      * 
-     * @return To ensure that jobs don't run multiple times, specify a unique token for each job.
+     * @return The read set's sequence store ID.
      */
 
-    public String getClientToken() {
-        return this.clientToken;
+    public String getSequenceStoreId() {
+        return this.sequenceStoreId;
     }
 
     /**
      * <p>
-     * To ensure that jobs don't run multiple times, specify a unique token for each job.
+     * The read set's sequence store ID.
      * </p>
      * 
-     * @param clientToken
-     *        To ensure that jobs don't run multiple times, specify a unique token for each job.
+     * @param sequenceStoreId
+     *        The read set's sequence store ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public StartReadSetImportJobRequest withClientToken(String clientToken) {
-        setClientToken(clientToken);
+    public StartReadSetImportJobRequest withSequenceStoreId(String sequenceStoreId) {
+        setSequenceStoreId(sequenceStoreId);
         return this;
     }
 
@@ -132,41 +132,41 @@ public class StartReadSetImportJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The read set's sequence store ID.
+     * To ensure that jobs don't run multiple times, specify a unique token for each job.
      * </p>
      * 
-     * @param sequenceStoreId
-     *        The read set's sequence store ID.
+     * @param clientToken
+     *        To ensure that jobs don't run multiple times, specify a unique token for each job.
      */
 
-    public void setSequenceStoreId(String sequenceStoreId) {
-        this.sequenceStoreId = sequenceStoreId;
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
     }
 
     /**
      * <p>
-     * The read set's sequence store ID.
+     * To ensure that jobs don't run multiple times, specify a unique token for each job.
      * </p>
      * 
-     * @return The read set's sequence store ID.
+     * @return To ensure that jobs don't run multiple times, specify a unique token for each job.
      */
 
-    public String getSequenceStoreId() {
-        return this.sequenceStoreId;
+    public String getClientToken() {
+        return this.clientToken;
     }
 
     /**
      * <p>
-     * The read set's sequence store ID.
+     * To ensure that jobs don't run multiple times, specify a unique token for each job.
      * </p>
      * 
-     * @param sequenceStoreId
-     *        The read set's sequence store ID.
+     * @param clientToken
+     *        To ensure that jobs don't run multiple times, specify a unique token for each job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public StartReadSetImportJobRequest withSequenceStoreId(String sequenceStoreId) {
-        setSequenceStoreId(sequenceStoreId);
+    public StartReadSetImportJobRequest withClientToken(String clientToken) {
+        setClientToken(clientToken);
         return this;
     }
 
@@ -252,12 +252,12 @@ public class StartReadSetImportJobRequest extends com.amazonaws.AmazonWebService
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken()).append(",");
-        if (getRoleArn() != null)
-            sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getSequenceStoreId() != null)
             sb.append("SequenceStoreId: ").append(getSequenceStoreId()).append(",");
+        if (getRoleArn() != null)
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
+        if (getClientToken() != null)
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getSources() != null)
             sb.append("Sources: ").append(getSources());
         sb.append("}");
@@ -274,17 +274,17 @@ public class StartReadSetImportJobRequest extends com.amazonaws.AmazonWebService
         if (obj instanceof StartReadSetImportJobRequest == false)
             return false;
         StartReadSetImportJobRequest other = (StartReadSetImportJobRequest) obj;
-        if (other.getClientToken() == null ^ this.getClientToken() == null)
+        if (other.getSequenceStoreId() == null ^ this.getSequenceStoreId() == null)
             return false;
-        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
+        if (other.getSequenceStoreId() != null && other.getSequenceStoreId().equals(this.getSequenceStoreId()) == false)
             return false;
         if (other.getRoleArn() == null ^ this.getRoleArn() == null)
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
             return false;
-        if (other.getSequenceStoreId() == null ^ this.getSequenceStoreId() == null)
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
-        if (other.getSequenceStoreId() != null && other.getSequenceStoreId().equals(this.getSequenceStoreId()) == false)
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
         if (other.getSources() == null ^ this.getSources() == null)
             return false;
@@ -298,9 +298,9 @@ public class StartReadSetImportJobRequest extends com.amazonaws.AmazonWebService
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
-        hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getSequenceStoreId() == null) ? 0 : getSequenceStoreId().hashCode());
+        hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getSources() == null) ? 0 : getSources().hashCode());
         return hashCode;
     }

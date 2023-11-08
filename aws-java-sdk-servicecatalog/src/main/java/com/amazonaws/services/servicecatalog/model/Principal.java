@@ -30,28 +30,43 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the principal (user, role, or group). This field allows for an ARN with no <code>accountID</code> if
-     * the <code>PrincipalType</code> is an <code>IAM_PATTERN</code>.
+     * The ARN of the principal (user, role, or group). This field allows for an ARN with no <code>accountID</code>,
+     * with or without wildcard characters if the <code>PrincipalType</code> is an <code>IAM_PATTERN</code>.
+     * </p>
+     * <p>
+     * For more information, review <a href=
+     * "https://docs.aws.amazon.com/cli/latest/reference/servicecatalog/associate-principal-with-portfolio.html#options"
+     * >associate-principal-with-portfolio</a> in the Amazon Web Services CLI Command Reference.
      * </p>
      */
     private String principalARN;
     /**
      * <p>
      * The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or
-     * <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>.
+     * <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>, with or without wildcard characters.
      * </p>
      */
     private String principalType;
 
     /**
      * <p>
-     * The ARN of the principal (user, role, or group). This field allows for an ARN with no <code>accountID</code> if
-     * the <code>PrincipalType</code> is an <code>IAM_PATTERN</code>.
+     * The ARN of the principal (user, role, or group). This field allows for an ARN with no <code>accountID</code>,
+     * with or without wildcard characters if the <code>PrincipalType</code> is an <code>IAM_PATTERN</code>.
+     * </p>
+     * <p>
+     * For more information, review <a href=
+     * "https://docs.aws.amazon.com/cli/latest/reference/servicecatalog/associate-principal-with-portfolio.html#options"
+     * >associate-principal-with-portfolio</a> in the Amazon Web Services CLI Command Reference.
      * </p>
      * 
      * @param principalARN
      *        The ARN of the principal (user, role, or group). This field allows for an ARN with no
-     *        <code>accountID</code> if the <code>PrincipalType</code> is an <code>IAM_PATTERN</code>.
+     *        <code>accountID</code>, with or without wildcard characters if the <code>PrincipalType</code> is an
+     *        <code>IAM_PATTERN</code>. </p>
+     *        <p>
+     *        For more information, review <a href=
+     *        "https://docs.aws.amazon.com/cli/latest/reference/servicecatalog/associate-principal-with-portfolio.html#options"
+     *        >associate-principal-with-portfolio</a> in the Amazon Web Services CLI Command Reference.
      */
 
     public void setPrincipalARN(String principalARN) {
@@ -60,12 +75,22 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the principal (user, role, or group). This field allows for an ARN with no <code>accountID</code> if
-     * the <code>PrincipalType</code> is an <code>IAM_PATTERN</code>.
+     * The ARN of the principal (user, role, or group). This field allows for an ARN with no <code>accountID</code>,
+     * with or without wildcard characters if the <code>PrincipalType</code> is an <code>IAM_PATTERN</code>.
+     * </p>
+     * <p>
+     * For more information, review <a href=
+     * "https://docs.aws.amazon.com/cli/latest/reference/servicecatalog/associate-principal-with-portfolio.html#options"
+     * >associate-principal-with-portfolio</a> in the Amazon Web Services CLI Command Reference.
      * </p>
      * 
      * @return The ARN of the principal (user, role, or group). This field allows for an ARN with no
-     *         <code>accountID</code> if the <code>PrincipalType</code> is an <code>IAM_PATTERN</code>.
+     *         <code>accountID</code>, with or without wildcard characters if the <code>PrincipalType</code> is an
+     *         <code>IAM_PATTERN</code>. </p>
+     *         <p>
+     *         For more information, review <a href=
+     *         "https://docs.aws.amazon.com/cli/latest/reference/servicecatalog/associate-principal-with-portfolio.html#options"
+     *         >associate-principal-with-portfolio</a> in the Amazon Web Services CLI Command Reference.
      */
 
     public String getPrincipalARN() {
@@ -74,13 +99,23 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the principal (user, role, or group). This field allows for an ARN with no <code>accountID</code> if
-     * the <code>PrincipalType</code> is an <code>IAM_PATTERN</code>.
+     * The ARN of the principal (user, role, or group). This field allows for an ARN with no <code>accountID</code>,
+     * with or without wildcard characters if the <code>PrincipalType</code> is an <code>IAM_PATTERN</code>.
+     * </p>
+     * <p>
+     * For more information, review <a href=
+     * "https://docs.aws.amazon.com/cli/latest/reference/servicecatalog/associate-principal-with-portfolio.html#options"
+     * >associate-principal-with-portfolio</a> in the Amazon Web Services CLI Command Reference.
      * </p>
      * 
      * @param principalARN
      *        The ARN of the principal (user, role, or group). This field allows for an ARN with no
-     *        <code>accountID</code> if the <code>PrincipalType</code> is an <code>IAM_PATTERN</code>.
+     *        <code>accountID</code>, with or without wildcard characters if the <code>PrincipalType</code> is an
+     *        <code>IAM_PATTERN</code>. </p>
+     *        <p>
+     *        For more information, review <a href=
+     *        "https://docs.aws.amazon.com/cli/latest/reference/servicecatalog/associate-principal-with-portfolio.html#options"
+     *        >associate-principal-with-portfolio</a> in the Amazon Web Services CLI Command Reference.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,12 +127,13 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or
-     * <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>.
+     * <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>, with or without wildcard characters.
      * </p>
      * 
      * @param principalType
      *        The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or
-     *        <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>.
+     *        <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>, with or without wildcard
+     *        characters.
      * @see PrincipalType
      */
 
@@ -108,11 +144,12 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or
-     * <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>.
+     * <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>, with or without wildcard characters.
      * </p>
      * 
      * @return The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or
-     *         <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>.
+     *         <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>, with or without wildcard
+     *         characters.
      * @see PrincipalType
      */
 
@@ -123,12 +160,13 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or
-     * <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>.
+     * <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>, with or without wildcard characters.
      * </p>
      * 
      * @param principalType
      *        The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or
-     *        <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>.
+     *        <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>, with or without wildcard
+     *        characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PrincipalType
      */
@@ -141,12 +179,13 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or
-     * <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>.
+     * <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>, with or without wildcard characters.
      * </p>
      * 
      * @param principalType
      *        The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or
-     *        <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>.
+     *        <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>, with or without wildcard
+     *        characters.
      * @see PrincipalType
      */
 
@@ -157,12 +196,13 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or
-     * <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>.
+     * <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>, with or without wildcard characters.
      * </p>
      * 
      * @param principalType
      *        The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or
-     *        <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>.
+     *        <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>, with or without wildcard
+     *        characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PrincipalType
      */

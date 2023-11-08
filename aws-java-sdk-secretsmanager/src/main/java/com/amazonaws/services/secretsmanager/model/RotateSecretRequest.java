@@ -38,22 +38,25 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String secretId;
     /**
      * <p>
-     * A unique identifier for the new version of the secret that helps ensure idempotency. Secrets Manager uses this
-     * value to prevent the accidental creation of duplicate versions if there are failures and retries during rotation.
-     * This value becomes the <code>VersionId</code> of the new version.
+     * A unique identifier for the new version of the secret. You only need to specify this value if you implement your
+     * own retry logic and you want to ensure that Secrets Manager doesn't attempt to create a secret version twice.
+     * </p>
+     * <note>
+     * <p>
+     * If you use the Amazon Web Services CLI or one of the Amazon Web Services SDKs to call this operation, then you
+     * can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes it as the value for
+     * this parameter in the request.
+     * </p>
+     * </note>
+     * <p>
+     * If you generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a
+     * <code>ClientRequestToken</code> and include it in the request.
      * </p>
      * <p>
-     * If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can
-     * leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that in the request for
-     * this parameter. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service
-     * endpoint, then you must generate a <code>ClientRequestToken</code> yourself for new versions and include that
-     * value in the request.
-     * </p>
-     * <p>
-     * You only need to specify this value if you implement your own retry logic and you want to ensure that Secrets
-     * Manager doesn't attempt to create a secret version twice. We recommend that you generate a <a
-     * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to ensure uniqueness within
-     * the specified secret.
+     * This value helps ensure idempotency. Secrets Manager uses this value to prevent the accidental creation of
+     * duplicate versions if there are failures and retries during a rotation. We recommend that you generate a <a
+     * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to ensure uniqueness of your
+     * versions within the specified secret.
      * </p>
      */
     private String clientRequestToken;
@@ -161,40 +164,46 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A unique identifier for the new version of the secret that helps ensure idempotency. Secrets Manager uses this
-     * value to prevent the accidental creation of duplicate versions if there are failures and retries during rotation.
-     * This value becomes the <code>VersionId</code> of the new version.
+     * A unique identifier for the new version of the secret. You only need to specify this value if you implement your
+     * own retry logic and you want to ensure that Secrets Manager doesn't attempt to create a secret version twice.
+     * </p>
+     * <note>
+     * <p>
+     * If you use the Amazon Web Services CLI or one of the Amazon Web Services SDKs to call this operation, then you
+     * can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes it as the value for
+     * this parameter in the request.
+     * </p>
+     * </note>
+     * <p>
+     * If you generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a
+     * <code>ClientRequestToken</code> and include it in the request.
      * </p>
      * <p>
-     * If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can
-     * leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that in the request for
-     * this parameter. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service
-     * endpoint, then you must generate a <code>ClientRequestToken</code> yourself for new versions and include that
-     * value in the request.
-     * </p>
-     * <p>
-     * You only need to specify this value if you implement your own retry logic and you want to ensure that Secrets
-     * Manager doesn't attempt to create a secret version twice. We recommend that you generate a <a
-     * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to ensure uniqueness within
-     * the specified secret.
+     * This value helps ensure idempotency. Secrets Manager uses this value to prevent the accidental creation of
+     * duplicate versions if there are failures and retries during a rotation. We recommend that you generate a <a
+     * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to ensure uniqueness of your
+     * versions within the specified secret.
      * </p>
      * 
      * @param clientRequestToken
-     *        A unique identifier for the new version of the secret that helps ensure idempotency. Secrets Manager uses
-     *        this value to prevent the accidental creation of duplicate versions if there are failures and retries
-     *        during rotation. This value becomes the <code>VersionId</code> of the new version.</p>
+     *        A unique identifier for the new version of the secret. You only need to specify this value if you
+     *        implement your own retry logic and you want to ensure that Secrets Manager doesn't attempt to create a
+     *        secret version twice.</p> <note>
      *        <p>
-     *        If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then
-     *        you can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that in
-     *        the request for this parameter. If you don't use the SDK and instead generate a raw HTTP request to the
-     *        Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for
-     *        new versions and include that value in the request.
+     *        If you use the Amazon Web Services CLI or one of the Amazon Web Services SDKs to call this operation, then
+     *        you can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes it as the
+     *        value for this parameter in the request.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        If you generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a
+     *        <code>ClientRequestToken</code> and include it in the request.
      *        </p>
      *        <p>
-     *        You only need to specify this value if you implement your own retry logic and you want to ensure that
-     *        Secrets Manager doesn't attempt to create a secret version twice. We recommend that you generate a <a
-     *        href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to ensure uniqueness
-     *        within the specified secret.
+     *        This value helps ensure idempotency. Secrets Manager uses this value to prevent the accidental creation of
+     *        duplicate versions if there are failures and retries during a rotation. We recommend that you generate a
+     *        <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to ensure
+     *        uniqueness of your versions within the specified secret.
      */
 
     public void setClientRequestToken(String clientRequestToken) {
@@ -203,39 +212,45 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A unique identifier for the new version of the secret that helps ensure idempotency. Secrets Manager uses this
-     * value to prevent the accidental creation of duplicate versions if there are failures and retries during rotation.
-     * This value becomes the <code>VersionId</code> of the new version.
+     * A unique identifier for the new version of the secret. You only need to specify this value if you implement your
+     * own retry logic and you want to ensure that Secrets Manager doesn't attempt to create a secret version twice.
+     * </p>
+     * <note>
+     * <p>
+     * If you use the Amazon Web Services CLI or one of the Amazon Web Services SDKs to call this operation, then you
+     * can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes it as the value for
+     * this parameter in the request.
+     * </p>
+     * </note>
+     * <p>
+     * If you generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a
+     * <code>ClientRequestToken</code> and include it in the request.
      * </p>
      * <p>
-     * If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can
-     * leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that in the request for
-     * this parameter. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service
-     * endpoint, then you must generate a <code>ClientRequestToken</code> yourself for new versions and include that
-     * value in the request.
-     * </p>
-     * <p>
-     * You only need to specify this value if you implement your own retry logic and you want to ensure that Secrets
-     * Manager doesn't attempt to create a secret version twice. We recommend that you generate a <a
-     * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to ensure uniqueness within
-     * the specified secret.
+     * This value helps ensure idempotency. Secrets Manager uses this value to prevent the accidental creation of
+     * duplicate versions if there are failures and retries during a rotation. We recommend that you generate a <a
+     * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to ensure uniqueness of your
+     * versions within the specified secret.
      * </p>
      * 
-     * @return A unique identifier for the new version of the secret that helps ensure idempotency. Secrets Manager uses
-     *         this value to prevent the accidental creation of duplicate versions if there are failures and retries
-     *         during rotation. This value becomes the <code>VersionId</code> of the new version.</p>
+     * @return A unique identifier for the new version of the secret. You only need to specify this value if you
+     *         implement your own retry logic and you want to ensure that Secrets Manager doesn't attempt to create a
+     *         secret version twice.</p> <note>
      *         <p>
-     *         If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then
-     *         you can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that in
-     *         the request for this parameter. If you don't use the SDK and instead generate a raw HTTP request to the
-     *         Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for
-     *         new versions and include that value in the request.
+     *         If you use the Amazon Web Services CLI or one of the Amazon Web Services SDKs to call this operation,
+     *         then you can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes it
+     *         as the value for this parameter in the request.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         If you generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a
+     *         <code>ClientRequestToken</code> and include it in the request.
      *         </p>
      *         <p>
-     *         You only need to specify this value if you implement your own retry logic and you want to ensure that
-     *         Secrets Manager doesn't attempt to create a secret version twice. We recommend that you generate a <a
-     *         href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to ensure uniqueness
-     *         within the specified secret.
+     *         This value helps ensure idempotency. Secrets Manager uses this value to prevent the accidental creation
+     *         of duplicate versions if there are failures and retries during a rotation. We recommend that you generate
+     *         a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to ensure
+     *         uniqueness of your versions within the specified secret.
      */
 
     public String getClientRequestToken() {
@@ -244,40 +259,46 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A unique identifier for the new version of the secret that helps ensure idempotency. Secrets Manager uses this
-     * value to prevent the accidental creation of duplicate versions if there are failures and retries during rotation.
-     * This value becomes the <code>VersionId</code> of the new version.
+     * A unique identifier for the new version of the secret. You only need to specify this value if you implement your
+     * own retry logic and you want to ensure that Secrets Manager doesn't attempt to create a secret version twice.
+     * </p>
+     * <note>
+     * <p>
+     * If you use the Amazon Web Services CLI or one of the Amazon Web Services SDKs to call this operation, then you
+     * can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes it as the value for
+     * this parameter in the request.
+     * </p>
+     * </note>
+     * <p>
+     * If you generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a
+     * <code>ClientRequestToken</code> and include it in the request.
      * </p>
      * <p>
-     * If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can
-     * leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that in the request for
-     * this parameter. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service
-     * endpoint, then you must generate a <code>ClientRequestToken</code> yourself for new versions and include that
-     * value in the request.
-     * </p>
-     * <p>
-     * You only need to specify this value if you implement your own retry logic and you want to ensure that Secrets
-     * Manager doesn't attempt to create a secret version twice. We recommend that you generate a <a
-     * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to ensure uniqueness within
-     * the specified secret.
+     * This value helps ensure idempotency. Secrets Manager uses this value to prevent the accidental creation of
+     * duplicate versions if there are failures and retries during a rotation. We recommend that you generate a <a
+     * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to ensure uniqueness of your
+     * versions within the specified secret.
      * </p>
      * 
      * @param clientRequestToken
-     *        A unique identifier for the new version of the secret that helps ensure idempotency. Secrets Manager uses
-     *        this value to prevent the accidental creation of duplicate versions if there are failures and retries
-     *        during rotation. This value becomes the <code>VersionId</code> of the new version.</p>
+     *        A unique identifier for the new version of the secret. You only need to specify this value if you
+     *        implement your own retry logic and you want to ensure that Secrets Manager doesn't attempt to create a
+     *        secret version twice.</p> <note>
      *        <p>
-     *        If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then
-     *        you can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that in
-     *        the request for this parameter. If you don't use the SDK and instead generate a raw HTTP request to the
-     *        Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for
-     *        new versions and include that value in the request.
+     *        If you use the Amazon Web Services CLI or one of the Amazon Web Services SDKs to call this operation, then
+     *        you can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes it as the
+     *        value for this parameter in the request.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        If you generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a
+     *        <code>ClientRequestToken</code> and include it in the request.
      *        </p>
      *        <p>
-     *        You only need to specify this value if you implement your own retry logic and you want to ensure that
-     *        Secrets Manager doesn't attempt to create a secret version twice. We recommend that you generate a <a
-     *        href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to ensure uniqueness
-     *        within the specified secret.
+     *        This value helps ensure idempotency. Secrets Manager uses this value to prevent the accidental creation of
+     *        duplicate versions if there are failures and retries during a rotation. We recommend that you generate a
+     *        <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to ensure
+     *        uniqueness of your versions within the specified secret.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

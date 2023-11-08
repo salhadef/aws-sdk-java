@@ -95,7 +95,7 @@ public class ReservedDBInstance implements Serializable, Cloneable {
     private String offeringType;
     /**
      * <p>
-     * Indicates if the reservation applies to Multi-AZ deployments.
+     * Indicates whether the reservation applies to Multi-AZ deployments.
      * </p>
      */
     private Boolean multiAZ;
@@ -571,11 +571,11 @@ public class ReservedDBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates if the reservation applies to Multi-AZ deployments.
+     * Indicates whether the reservation applies to Multi-AZ deployments.
      * </p>
      * 
      * @param multiAZ
-     *        Indicates if the reservation applies to Multi-AZ deployments.
+     *        Indicates whether the reservation applies to Multi-AZ deployments.
      */
 
     public void setMultiAZ(Boolean multiAZ) {
@@ -584,10 +584,10 @@ public class ReservedDBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates if the reservation applies to Multi-AZ deployments.
+     * Indicates whether the reservation applies to Multi-AZ deployments.
      * </p>
      * 
-     * @return Indicates if the reservation applies to Multi-AZ deployments.
+     * @return Indicates whether the reservation applies to Multi-AZ deployments.
      */
 
     public Boolean getMultiAZ() {
@@ -596,11 +596,11 @@ public class ReservedDBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates if the reservation applies to Multi-AZ deployments.
+     * Indicates whether the reservation applies to Multi-AZ deployments.
      * </p>
      * 
      * @param multiAZ
-     *        Indicates if the reservation applies to Multi-AZ deployments.
+     *        Indicates whether the reservation applies to Multi-AZ deployments.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -611,10 +611,10 @@ public class ReservedDBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates if the reservation applies to Multi-AZ deployments.
+     * Indicates whether the reservation applies to Multi-AZ deployments.
      * </p>
      * 
-     * @return Indicates if the reservation applies to Multi-AZ deployments.
+     * @return Indicates whether the reservation applies to Multi-AZ deployments.
      */
 
     public Boolean isMultiAZ() {

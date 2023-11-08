@@ -122,7 +122,7 @@ public interface AWSCloudTrail {
      * keys with the same name but different values. If you specify a key without a value, the tag will be created with
      * the specified key and a value of null. You can tag a trail or event data store that applies to all Amazon Web
      * Services Regions only from the Region in which the trail or event data store was created (also known as its home
-     * region).
+     * Region).
      * </p>
      * 
      * @param addTagsRequest
@@ -142,11 +142,15 @@ public interface AWSCloudTrail {
      *         </p>
      *         <p>
      *         The following is the format of an event data store ARN:
-     *         <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     *         <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
      *         </p>
      *         <p>
      *         The following is the format of a channel ARN:
      *         <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code>
+     * @throws EventDataStoreARNInvalidException
+     *         The specified event data store ARN is not valid or does not map to an event data store in your account.
+     * @throws ChannelARNInvalidException
+     *         This exception is thrown when the specified value of <code>ChannelARN</code> is not valid.
      * @throws ResourceTypeNotSupportedException
      *         This exception is thrown when the specified resource type is not supported by CloudTrail.
      * @throws TagsLimitExceededException
@@ -363,8 +367,8 @@ public interface AWSCloudTrail {
      *         This exception is thrown when the KMS key ARN is not valid.
      * @throws KmsKeyNotFoundException
      *         This exception is thrown when the KMS key does not exist, when the S3 bucket and the KMS key are not in
-     *         the same region, or when the KMS key associated with the Amazon SNS topic either does not exist or is not
-     *         in the same region.
+     *         the same Region, or when the KMS key associated with the Amazon SNS topic either does not exist or is not
+     *         in the same Region.
      * @throws KmsException
      *         This exception is thrown when there is an issue with the specified KMS key and the trail or event data
      *         store can't be updated.
@@ -376,8 +380,8 @@ public interface AWSCloudTrail {
      *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
      *         >Prepare For Creating a Trail For Your Organization</a>.
      * @throws InsufficientDependencyServiceAccessPermissionException
-     *         This exception is thrown when the IAM user or role that is used to create the organization resource lacks
-     *         one or more required permissions for creating an organization resource in a required service.
+     *         This exception is thrown when the IAM identity that is used to create the organization resource lacks one
+     *         or more required permissions for creating an organization resource in a required service.
      * @throws NotOrganizationMasterAccountException
      *         This exception is thrown when the Amazon Web Services account making the request to create or update an
      *         organization trail or event data store is not the management account for an organization in
@@ -469,8 +473,8 @@ public interface AWSCloudTrail {
      *         This exception is thrown when the combination of parameters provided is not valid.
      * @throws KmsKeyNotFoundException
      *         This exception is thrown when the KMS key does not exist, when the S3 bucket and the KMS key are not in
-     *         the same region, or when the KMS key associated with the Amazon SNS topic either does not exist or is not
-     *         in the same region.
+     *         the same Region, or when the KMS key associated with the Amazon SNS topic either does not exist or is not
+     *         in the same Region.
      * @throws KmsKeyDisabledException
      *         This exception is no longer in use.
      * @throws KmsException
@@ -481,7 +485,7 @@ public interface AWSCloudTrail {
      * @throws InvalidCloudWatchLogsRoleArnException
      *         This exception is thrown when the provided role is not valid.
      * @throws CloudWatchLogsDeliveryUnavailableException
-     *         Cannot set a CloudWatch Logs delivery for this region.
+     *         Cannot set a CloudWatch Logs delivery for this Region.
      * @throws InvalidTagParameterException
      *         This exception is thrown when the specified tag key or values are not valid. It can also occur if there
      *         are duplicate tags or too many tags on the resource.
@@ -497,8 +501,8 @@ public interface AWSCloudTrail {
      *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
      *         >Prepare For Creating a Trail For Your Organization</a>.
      * @throws InsufficientDependencyServiceAccessPermissionException
-     *         This exception is thrown when the IAM user or role that is used to create the organization resource lacks
-     *         one or more required permissions for creating an organization resource in a required service.
+     *         This exception is thrown when the IAM identity that is used to create the organization resource lacks one
+     *         or more required permissions for creating an organization resource in a required service.
      * @throws NotOrganizationMasterAccountException
      *         This exception is thrown when the Amazon Web Services account making the request to create or update an
      *         organization trail or event data store is not the management account for an organization in
@@ -525,6 +529,8 @@ public interface AWSCloudTrail {
      *         you try to run an operation on a resource before CloudTrail has time to fully load the resource, or
      *         because another operation is modifying the resource. If this exception occurs, wait a few minutes, and
      *         then try the operation again.
+     * @throws ThrottlingException
+     *         This exception is thrown when the request rate exceeds the limit.
      * @sample AWSCloudTrail.CreateTrail
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CreateTrail" target="_top">AWS API
      *      Documentation</a>
@@ -600,8 +606,8 @@ public interface AWSCloudTrail {
      *         This exception is thrown when the specified event data store cannot yet be deleted because it is in use
      *         by a channel.
      * @throws InsufficientDependencyServiceAccessPermissionException
-     *         This exception is thrown when the IAM user or role that is used to create the organization resource lacks
-     *         one or more required permissions for creating an organization resource in a required service.
+     *         This exception is thrown when the IAM identity that is used to create the organization resource lacks one
+     *         or more required permissions for creating an organization resource in a required service.
      * @sample AWSCloudTrail.DeleteEventDataStore
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteEventDataStore"
      *      target="_top">AWS API Documentation</a>
@@ -637,9 +643,9 @@ public interface AWSCloudTrail {
 
     /**
      * <p>
-     * Deletes a trail. This operation must be called from the region in which the trail was created.
-     * <code>DeleteTrail</code> cannot be called on the shadow trails (replicated trails in other regions) of a trail
-     * that is enabled in all regions.
+     * Deletes a trail. This operation must be called from the Region in which the trail was created.
+     * <code>DeleteTrail</code> cannot be called on the shadow trails (replicated trails in other Regions) of a trail
+     * that is enabled in all Regions.
      * </p>
      * 
      * @param deleteTrailRequest
@@ -689,7 +695,7 @@ public interface AWSCloudTrail {
      *         </p>
      *         <p>
      *         The following is the format of an event data store ARN: <code>
-     *         arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     *         arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
      *         </p>
      *         <p>
      *         The following is the format of a channel ARN: <code>
@@ -699,8 +705,10 @@ public interface AWSCloudTrail {
      *         you try to run an operation on a resource before CloudTrail has time to fully load the resource, or
      *         because another operation is modifying the resource. If this exception occurs, wait a few minutes, and
      *         then try the operation again.
+     * @throws ThrottlingException
+     *         This exception is thrown when the request rate exceeds the limit.
      * @throws InvalidHomeRegionException
-     *         This exception is thrown when an operation is called on a trail from a region other than the region in
+     *         This exception is thrown when an operation is called on a trail from a Region other than the Region in
      *         which the trail was created.
      * @throws UnsupportedOperationException
      *         This exception is thrown when the requested operation is not supported.
@@ -717,8 +725,8 @@ public interface AWSCloudTrail {
      * @throws NoManagementAccountSLRExistsException
      *         This exception is thrown when the management account does not have a service-linked role.
      * @throws InsufficientDependencyServiceAccessPermissionException
-     *         This exception is thrown when the IAM user or role that is used to create the organization resource lacks
-     *         one or more required permissions for creating an organization resource in a required service.
+     *         This exception is thrown when the IAM identity that is used to create the organization resource lacks one
+     *         or more required permissions for creating an organization resource in a required service.
      * @sample AWSCloudTrail.DeleteTrail
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteTrail" target="_top">AWS API
      *      Documentation</a>
@@ -752,8 +760,8 @@ public interface AWSCloudTrail {
      *         because another operation is modifying the resource. If this exception occurs, wait a few minutes, and
      *         then try the operation again.
      * @throws InsufficientDependencyServiceAccessPermissionException
-     *         This exception is thrown when the IAM user or role that is used to create the organization resource lacks
-     *         one or more required permissions for creating an organization resource in a required service.
+     *         This exception is thrown when the IAM identity that is used to create the organization resource lacks one
+     *         or more required permissions for creating an organization resource in a required service.
      * @throws InvalidParameterException
      *         The request includes a parameter that is not valid.
      * @throws NotOrganizationManagementAccountException
@@ -780,7 +788,12 @@ public interface AWSCloudTrail {
     /**
      * <p>
      * Returns metadata about a query, including query run time in milliseconds, number of events scanned and matched,
-     * and query status. You must specify an ARN for <code>EventDataStore</code>, and a value for <code>QueryID</code>.
+     * and query status. If the query results were delivered to an S3 bucket, the response also provides the S3 URI and
+     * the delivery status.
+     * </p>
+     * <p>
+     * You must specify either a <code>QueryID</code> or a <code>QueryAlias</code>. Specifying the
+     * <code>QueryAlias</code> parameter returns information about the last query run for the alias.
      * </p>
      * 
      * @param describeQueryRequest
@@ -809,7 +822,7 @@ public interface AWSCloudTrail {
 
     /**
      * <p>
-     * Retrieves settings for one or more trails associated with the current region for your account.
+     * Retrieves settings for one or more trails associated with the current Region for your account.
      * </p>
      * 
      * @param describeTrailsRequest
@@ -942,13 +955,13 @@ public interface AWSCloudTrail {
      * <p>
      * <a href=
      * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html"
-     * >Logging management events for trails </a>
+     * >Logging management events</a>
      * </p>
      * </li>
      * <li>
      * <p>
      * <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">
-     * Logging data events for trails </a>
+     * Logging data events</a>
      * </p>
      * </li>
      * </ul>
@@ -999,7 +1012,7 @@ public interface AWSCloudTrail {
      *         </p>
      *         <p>
      *         The following is the format of an event data store ARN: <code>
-     *         arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     *         arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
      *         </p>
      *         <p>
      *         The following is the format of a channel ARN: <code>
@@ -1096,7 +1109,7 @@ public interface AWSCloudTrail {
      *         </p>
      *         <p>
      *         The following is the format of an event data store ARN: <code>
-     *         arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     *         arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
      *         </p>
      *         <p>
      *         The following is the format of a channel ARN: <code>
@@ -1110,6 +1123,8 @@ public interface AWSCloudTrail {
      *         operation throws the exception <code>InsightNotEnabledException</code>.
      * @throws NoManagementAccountSLRExistsException
      *         This exception is thrown when the management account does not have a service-linked role.
+     * @throws ThrottlingException
+     *         This exception is thrown when the request rate exceeds the limit.
      * @sample AWSCloudTrail.GetInsightSelectors
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetInsightSelectors" target="_top">AWS
      *      API Documentation</a>
@@ -1119,7 +1134,7 @@ public interface AWSCloudTrail {
     /**
      * <p>
      * Gets event data results of a query. You must specify the <code>QueryID</code> value returned by the
-     * <code>StartQuery</code> operation, and an ARN for <code>EventDataStore</code>.
+     * <code>StartQuery</code> operation.
      * </p>
      * 
      * @param getQueryResultsRequest
@@ -1200,7 +1215,7 @@ public interface AWSCloudTrail {
      *         </p>
      *         <p>
      *         The following is the format of an event data store ARN:
-     *         <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     *         <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
      *         </p>
      *         <p>
      *         The following is the format of a channel ARN:
@@ -1252,8 +1267,8 @@ public interface AWSCloudTrail {
      * <p>
      * Returns a JSON-formatted list of information about the specified trail. Fields include information on delivery
      * errors, Amazon SNS and Amazon S3 errors, and start and stop logging times for each trail. This operation returns
-     * trail status from a single region. To return trail status from all regions, you must call the operation on each
-     * region.
+     * trail status from a single Region. To return trail status from all Regions, you must call the operation on each
+     * Region.
      * </p>
      * 
      * @param getTrailStatusRequest
@@ -1271,7 +1286,7 @@ public interface AWSCloudTrail {
      *         </p>
      *         <p>
      *         The following is the format of an event data store ARN:
-     *         <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     *         <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
      *         </p>
      *         <p>
      *         The following is the format of a channel ARN:
@@ -1341,7 +1356,7 @@ public interface AWSCloudTrail {
 
     /**
      * <p>
-     * Returns information about all event data stores in the account, in the current region.
+     * Returns information about all event data stores in the account, in the current Region.
      * </p>
      * 
      * @param listEventDataStoresRequest
@@ -1415,8 +1430,8 @@ public interface AWSCloudTrail {
      * </p>
      * <note>
      * <p>
-     * CloudTrail uses different private and public key pairs per region. Each digest file is signed with a private key
-     * unique to its region. When you validate a digest file from a specific region, you must look in the same region
+     * CloudTrail uses different private and public key pairs per Region. Each digest file is signed with a private key
+     * unique to its Region. When you validate a digest file from a specific Region, you must look in the same Region
      * for its corresponding public key.
      * </p>
      * </note>
@@ -1492,7 +1507,7 @@ public interface AWSCloudTrail {
 
     /**
      * <p>
-     * Lists the tags for the trail, event data store, or channel in the current region.
+     * Lists the tags for the specified trails, event data stores, or channels in the current Region.
      * </p>
      * 
      * @param listTagsRequest
@@ -1512,11 +1527,15 @@ public interface AWSCloudTrail {
      *         </p>
      *         <p>
      *         The following is the format of an event data store ARN:
-     *         <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     *         <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
      *         </p>
      *         <p>
      *         The following is the format of a channel ARN:
      *         <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code>
+     * @throws EventDataStoreARNInvalidException
+     *         The specified event data store ARN is not valid or does not map to an event data store in your account.
+     * @throws ChannelARNInvalidException
+     *         This exception is thrown when the specified value of <code>ChannelARN</code> is not valid.
      * @throws ResourceTypeNotSupportedException
      *         This exception is thrown when the specified resource type is not supported by CloudTrail.
      * @throws InvalidTrailNameException
@@ -1591,7 +1610,7 @@ public interface AWSCloudTrail {
      * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-management-events"
      * >management events</a> or <a href=
      * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-insights-events"
-     * >CloudTrail Insights events</a> that are captured by CloudTrail. You can look up events that occurred in a region
+     * >CloudTrail Insights events</a> that are captured by CloudTrail. You can look up events that occurred in a Region
      * within the last 90 days. Lookup supports the following attributes for management events:
      * </p>
      * <ul>
@@ -1662,7 +1681,7 @@ public interface AWSCloudTrail {
      * </p>
      * <important>
      * <p>
-     * The rate of lookup requests is limited to two per second, per account, per region. If this limit is exceeded, a
+     * The rate of lookup requests is limited to two per second, per account, per Region. If this limit is exceeded, a
      * throttling error occurs.
      * </p>
      * </important>
@@ -1702,7 +1721,11 @@ public interface AWSCloudTrail {
     /**
      * <p>
      * Configures an event selector or advanced event selectors for your trail. Use event selectors or advanced event
-     * selectors to specify management and data event settings for your trail. By default, trails created without
+     * selectors to specify management and data event settings for your trail. If you want your trail to log Insights
+     * events, be sure the event selector enables logging of the Insights event types you want configured for your
+     * trail. For more information about logging Insights events, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html"
+     * >Logging Insights events for trails</a> in the <i>CloudTrail User Guide</i>. By default, trails created without
      * specific event selectors are configured to log all read and write management events, and no data events.
      * </p>
      * <p>
@@ -1742,15 +1765,15 @@ public interface AWSCloudTrail {
      * </li>
      * </ol>
      * <p>
-     * The <code>PutEventSelectors</code> operation must be called from the region in which the trail was created;
+     * The <code>PutEventSelectors</code> operation must be called from the Region in which the trail was created;
      * otherwise, an <code>InvalidHomeRegionException</code> exception is thrown.
      * </p>
      * <p>
      * You can configure up to five event selectors for each trail. For more information, see <a href=
      * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html"
-     * >Logging management events for trails </a>, <a
+     * >Logging management events</a>, <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html"
-     * >Logging data events for trails </a>, and <a
+     * >Logging data events</a>, and <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Quotas in
      * CloudTrail</a> in the <i>CloudTrail User Guide</i>.
      * </p>
@@ -1761,7 +1784,7 @@ public interface AWSCloudTrail {
      * existing <code>EventSelectors</code> are overwritten. For more information about advanced event selectors, see <a
      * href
      * ="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-     * data events for trails</a> in the <i>CloudTrail User Guide</i>.
+     * data events</a> in the <i>CloudTrail User Guide</i>.
      * </p>
      * 
      * @param putEventSelectorsRequest
@@ -1810,13 +1833,13 @@ public interface AWSCloudTrail {
      *         </p>
      *         <p>
      *         The following is the format of an event data store ARN: <code>
-     *         arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     *         arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
      *         </p>
      *         <p>
      *         The following is the format of a channel ARN: <code>
      *         arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code>
      * @throws InvalidHomeRegionException
-     *         This exception is thrown when an operation is called on a trail from a region other than the region in
+     *         This exception is thrown when an operation is called on a trail from a Region other than the Region in
      *         which the trail was created.
      * @throws InvalidEventSelectorsException
      *         This exception is thrown when the <code>PutEventSelectors</code> operation is called with a number of
@@ -1853,6 +1876,13 @@ public interface AWSCloudTrail {
      *         with a value of <code>read-only</code> is not valid.
      *         </p>
      *         </li>
+     * @throws ConflictException
+     *         This exception is thrown when the specified resource is not ready for an operation. This can occur when
+     *         you try to run an operation on a resource before CloudTrail has time to fully load the resource, or
+     *         because another operation is modifying the resource. If this exception occurs, wait a few minutes, and
+     *         then try the operation again.
+     * @throws ThrottlingException
+     *         This exception is thrown when the request rate exceeds the limit.
      * @throws UnsupportedOperationException
      *         This exception is thrown when the requested operation is not supported.
      * @throws OperationNotPermittedException
@@ -1868,8 +1898,8 @@ public interface AWSCloudTrail {
      * @throws NoManagementAccountSLRExistsException
      *         This exception is thrown when the management account does not have a service-linked role.
      * @throws InsufficientDependencyServiceAccessPermissionException
-     *         This exception is thrown when the IAM user or role that is used to create the organization resource lacks
-     *         one or more required permissions for creating an organization resource in a required service.
+     *         This exception is thrown when the IAM identity that is used to create the organization resource lacks one
+     *         or more required permissions for creating an organization resource in a required service.
      * @sample AWSCloudTrail.PutEventSelectors
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutEventSelectors" target="_top">AWS
      *      API Documentation</a>
@@ -1882,6 +1912,12 @@ public interface AWSCloudTrail {
      * existing trail. You also use <code>PutInsightSelectors</code> to turn off Insights event logging, by passing an
      * empty list of insight types. The valid Insights event types in this release are <code>ApiErrorRateInsight</code>
      * and <code>ApiCallRateInsight</code>.
+     * </p>
+     * <p>
+     * To log CloudTrail Insights events on API call volume, the trail must log <code>write</code> management events. To
+     * log CloudTrail Insights events on API error rate, the trail must log <code>read</code> or <code>write</code>
+     * management events. You can call <code>GetEventSelectors</code> on a trail to check whether the trail logs
+     * management events.
      * </p>
      * 
      * @param putInsightSelectorsRequest
@@ -1930,13 +1966,13 @@ public interface AWSCloudTrail {
      *         </p>
      *         <p>
      *         The following is the format of an event data store ARN: <code>
-     *         arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     *         arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
      *         </p>
      *         <p>
      *         The following is the format of a channel ARN: <code>
      *         arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code>
      * @throws InvalidHomeRegionException
-     *         This exception is thrown when an operation is called on a trail from a region other than the region in
+     *         This exception is thrown when an operation is called on a trail from a Region other than the Region in
      *         which the trail was created.
      * @throws InvalidInsightSelectorsException
      *         The formatting or syntax of the <code>InsightSelectors</code> JSON statement in your <code>
@@ -1966,6 +2002,8 @@ public interface AWSCloudTrail {
      *         event data store</a>.
      * @throws NoManagementAccountSLRExistsException
      *         This exception is thrown when the management account does not have a service-linked role.
+     * @throws ThrottlingException
+     *         This exception is thrown when the request rate exceeds the limit.
      * @sample AWSCloudTrail.PutInsightSelectors
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutInsightSelectors" target="_top">AWS
      *      API Documentation</a>
@@ -2036,8 +2074,8 @@ public interface AWSCloudTrail {
      * @throws AccountNotFoundException
      *         This exception is thrown when the specified account is not found or not part of an organization.
      * @throws InsufficientDependencyServiceAccessPermissionException
-     *         This exception is thrown when the IAM user or role that is used to create the organization resource lacks
-     *         one or more required permissions for creating an organization resource in a required service.
+     *         This exception is thrown when the IAM identity that is used to create the organization resource lacks one
+     *         or more required permissions for creating an organization resource in a required service.
      * @throws InvalidParameterException
      *         The request includes a parameter that is not valid.
      * @throws CannotDelegateManagementAccountException
@@ -2100,11 +2138,15 @@ public interface AWSCloudTrail {
      *         </p>
      *         <p>
      *         The following is the format of an event data store ARN:
-     *         <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     *         <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
      *         </p>
      *         <p>
      *         The following is the format of a channel ARN:
      *         <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code>
+     * @throws EventDataStoreARNInvalidException
+     *         The specified event data store ARN is not valid or does not map to an event data store in your account.
+     * @throws ChannelARNInvalidException
+     *         This exception is thrown when the specified value of <code>ChannelARN</code> is not valid.
      * @throws ResourceTypeNotSupportedException
      *         This exception is thrown when the specified resource type is not supported by CloudTrail.
      * @throws InvalidTrailNameException
@@ -2198,8 +2240,8 @@ public interface AWSCloudTrail {
      *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
      *         >Prepare For Creating a Trail For Your Organization</a>.
      * @throws InsufficientDependencyServiceAccessPermissionException
-     *         This exception is thrown when the IAM user or role that is used to create the organization resource lacks
-     *         one or more required permissions for creating an organization resource in a required service.
+     *         This exception is thrown when the IAM identity that is used to create the organization resource lacks one
+     *         or more required permissions for creating an organization resource in a required service.
      * @throws OrganizationsNotInUseException
      *         This exception is thrown when the request is made from an Amazon Web Services account that is not a
      *         member of an organization. To make this request, sign in using the credentials of an account that belongs
@@ -2222,6 +2264,48 @@ public interface AWSCloudTrail {
      *      target="_top">AWS API Documentation</a>
      */
     RestoreEventDataStoreResult restoreEventDataStore(RestoreEventDataStoreRequest restoreEventDataStoreRequest);
+
+    /**
+     * <p>
+     * Starts the ingestion of live events on an event data store specified as either an ARN or the ID portion of the
+     * ARN. To start ingestion, the event data store <code>Status</code> must be <code>STOPPED_INGESTION</code> and the
+     * <code>eventCategory</code> must be <code>Management</code>, <code>Data</code>, or <code>ConfigurationItem</code>.
+     * </p>
+     * 
+     * @param startEventDataStoreIngestionRequest
+     * @return Result of the StartEventDataStoreIngestion operation returned by the service.
+     * @throws EventDataStoreARNInvalidException
+     *         The specified event data store ARN is not valid or does not map to an event data store in your account.
+     * @throws EventDataStoreNotFoundException
+     *         The specified event data store was not found.
+     * @throws InvalidEventDataStoreStatusException
+     *         The event data store is not in a status that supports the operation.
+     * @throws InvalidParameterException
+     *         The request includes a parameter that is not valid.
+     * @throws InvalidEventDataStoreCategoryException
+     *         This exception is thrown when event categories of specified event data stores are not valid.
+     * @throws OperationNotPermittedException
+     *         This exception is thrown when the requested operation is not permitted.
+     * @throws UnsupportedOperationException
+     *         This exception is thrown when the requested operation is not supported.
+     * @throws NotOrganizationMasterAccountException
+     *         This exception is thrown when the Amazon Web Services account making the request to create or update an
+     *         organization trail or event data store is not the management account for an organization in
+     *         Organizations. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
+     *         >Prepare For Creating a Trail For Your Organization</a> or <a
+     *         href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create an
+     *         event data store</a>.
+     * @throws NoManagementAccountSLRExistsException
+     *         This exception is thrown when the management account does not have a service-linked role.
+     * @throws InsufficientDependencyServiceAccessPermissionException
+     *         This exception is thrown when the IAM identity that is used to create the organization resource lacks one
+     *         or more required permissions for creating an organization resource in a required service.
+     * @sample AWSCloudTrail.StartEventDataStoreIngestion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartEventDataStoreIngestion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartEventDataStoreIngestionResult startEventDataStoreIngestion(StartEventDataStoreIngestionRequest startEventDataStoreIngestionRequest);
 
     /**
      * <p>
@@ -2290,9 +2374,9 @@ public interface AWSCloudTrail {
     /**
      * <p>
      * Starts the recording of Amazon Web Services API calls and log file delivery for a trail. For a trail that is
-     * enabled in all regions, this operation must be called from the region in which the trail was created. This
-     * operation cannot be called on the shadow trails (replicated trails in other regions) of a trail that is enabled
-     * in all regions.
+     * enabled in all Regions, this operation must be called from the Region in which the trail was created. This
+     * operation cannot be called on the shadow trails (replicated trails in other Regions) of a trail that is enabled
+     * in all Regions.
      * </p>
      * 
      * @param startLoggingRequest
@@ -2310,7 +2394,7 @@ public interface AWSCloudTrail {
      *         </p>
      *         <p>
      *         The following is the format of an event data store ARN:
-     *         <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     *         <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
      *         </p>
      *         <p>
      *         The following is the format of a channel ARN:
@@ -2320,6 +2404,8 @@ public interface AWSCloudTrail {
      *         you try to run an operation on a resource before CloudTrail has time to fully load the resource, or
      *         because another operation is modifying the resource. If this exception occurs, wait a few minutes, and
      *         then try the operation again.
+     * @throws ThrottlingException
+     *         This exception is thrown when the request rate exceeds the limit.
      * @throws TrailNotFoundException
      *         This exception is thrown when the trail with the given name is not found.
      * @throws InvalidTrailNameException
@@ -2354,7 +2440,7 @@ public interface AWSCloudTrail {
      *         </p>
      *         </li>
      * @throws InvalidHomeRegionException
-     *         This exception is thrown when an operation is called on a trail from a region other than the region in
+     *         This exception is thrown when an operation is called on a trail from a Region other than the Region in
      *         which the trail was created.
      * @throws UnsupportedOperationException
      *         This exception is thrown when the requested operation is not supported.
@@ -2371,8 +2457,8 @@ public interface AWSCloudTrail {
      * @throws NoManagementAccountSLRExistsException
      *         This exception is thrown when the management account does not have a service-linked role.
      * @throws InsufficientDependencyServiceAccessPermissionException
-     *         This exception is thrown when the IAM user or role that is used to create the organization resource lacks
-     *         one or more required permissions for creating an organization resource in a required service.
+     *         This exception is thrown when the IAM identity that is used to create the organization resource lacks one
+     *         or more required permissions for creating an organization resource in a required service.
      * @sample AWSCloudTrail.StartLogging
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartLogging" target="_top">AWS API
      *      Documentation</a>
@@ -2381,9 +2467,15 @@ public interface AWSCloudTrail {
 
     /**
      * <p>
-     * Starts a CloudTrail Lake query. The required <code>QueryStatement</code> parameter provides your SQL query,
-     * enclosed in single quotation marks. Use the optional <code>DeliveryS3Uri</code> parameter to deliver the query
-     * results to an S3 bucket.
+     * Starts a CloudTrail Lake query. Use the <code>QueryStatement</code> parameter to provide your SQL query, enclosed
+     * in single quotation marks. Use the optional <code>DeliveryS3Uri</code> parameter to deliver the query results to
+     * an S3 bucket.
+     * </p>
+     * <p>
+     * <code>StartQuery</code> requires you specify either the <code>QueryStatement</code> parameter, or a
+     * <code>QueryAlias</code> and any <code>QueryParameters</code>. In the current release, the <code>QueryAlias</code>
+     * and <code>QueryParameters</code> parameters are used only for the queries that populate the CloudTrail Lake
+     * dashboards.
      * </p>
      * 
      * @param startQueryRequest
@@ -2402,8 +2494,8 @@ public interface AWSCloudTrail {
      *         href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-create-edit-query.html">Create or
      *         edit a query</a> in the <i>CloudTrail User Guide</i>.
      * @throws MaxConcurrentQueriesException
-     *         You are already running the maximum number of concurrent queries. Wait a minute for some queries to
-     *         finish, and then run the query again.
+     *         You are already running the maximum number of concurrent queries. The maximum number of concurrent
+     *         queries is 10. Wait a minute for some queries to finish, and then run the query again.
      * @throws InsufficientEncryptionPolicyException
      *         This exception is thrown when the policy on the S3 bucket or KMS key does not have sufficient permissions
      *         for the operation.
@@ -2426,6 +2518,48 @@ public interface AWSCloudTrail {
      *      Documentation</a>
      */
     StartQueryResult startQuery(StartQueryRequest startQueryRequest);
+
+    /**
+     * <p>
+     * Stops the ingestion of live events on an event data store specified as either an ARN or the ID portion of the
+     * ARN. To stop ingestion, the event data store <code>Status</code> must be <code>ENABLED</code> and the
+     * <code>eventCategory</code> must be <code>Management</code>, <code>Data</code>, or <code>ConfigurationItem</code>.
+     * </p>
+     * 
+     * @param stopEventDataStoreIngestionRequest
+     * @return Result of the StopEventDataStoreIngestion operation returned by the service.
+     * @throws EventDataStoreARNInvalidException
+     *         The specified event data store ARN is not valid or does not map to an event data store in your account.
+     * @throws EventDataStoreNotFoundException
+     *         The specified event data store was not found.
+     * @throws InvalidEventDataStoreStatusException
+     *         The event data store is not in a status that supports the operation.
+     * @throws InvalidParameterException
+     *         The request includes a parameter that is not valid.
+     * @throws InvalidEventDataStoreCategoryException
+     *         This exception is thrown when event categories of specified event data stores are not valid.
+     * @throws OperationNotPermittedException
+     *         This exception is thrown when the requested operation is not permitted.
+     * @throws UnsupportedOperationException
+     *         This exception is thrown when the requested operation is not supported.
+     * @throws NotOrganizationMasterAccountException
+     *         This exception is thrown when the Amazon Web Services account making the request to create or update an
+     *         organization trail or event data store is not the management account for an organization in
+     *         Organizations. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
+     *         >Prepare For Creating a Trail For Your Organization</a> or <a
+     *         href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create an
+     *         event data store</a>.
+     * @throws NoManagementAccountSLRExistsException
+     *         This exception is thrown when the management account does not have a service-linked role.
+     * @throws InsufficientDependencyServiceAccessPermissionException
+     *         This exception is thrown when the IAM identity that is used to create the organization resource lacks one
+     *         or more required permissions for creating an organization resource in a required service.
+     * @sample AWSCloudTrail.StopEventDataStoreIngestion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StopEventDataStoreIngestion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StopEventDataStoreIngestionResult stopEventDataStoreIngestion(StopEventDataStoreIngestionRequest stopEventDataStoreIngestionRequest);
 
     /**
      * <p>
@@ -2452,9 +2586,9 @@ public interface AWSCloudTrail {
      * <p>
      * Suspends the recording of Amazon Web Services API calls and log file delivery for the specified trail. Under most
      * circumstances, there is no need to use this action. You can update a trail without stopping it first. This action
-     * is the only way to stop recording. For a trail enabled in all regions, this operation must be called from the
-     * region in which the trail was created, or an <code>InvalidHomeRegionException</code> will occur. This operation
-     * cannot be called on the shadow trails (replicated trails in other regions) of a trail enabled in all regions.
+     * is the only way to stop recording. For a trail enabled in all Regions, this operation must be called from the
+     * Region in which the trail was created, or an <code>InvalidHomeRegionException</code> will occur. This operation
+     * cannot be called on the shadow trails (replicated trails in other Regions) of a trail enabled in all Regions.
      * </p>
      * 
      * @param stopLoggingRequest
@@ -2504,7 +2638,7 @@ public interface AWSCloudTrail {
      *         </p>
      *         <p>
      *         The following is the format of an event data store ARN: <code>
-     *         arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     *         arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
      *         </p>
      *         <p>
      *         The following is the format of a channel ARN: <code>
@@ -2514,8 +2648,10 @@ public interface AWSCloudTrail {
      *         you try to run an operation on a resource before CloudTrail has time to fully load the resource, or
      *         because another operation is modifying the resource. If this exception occurs, wait a few minutes, and
      *         then try the operation again.
+     * @throws ThrottlingException
+     *         This exception is thrown when the request rate exceeds the limit.
      * @throws InvalidHomeRegionException
-     *         This exception is thrown when an operation is called on a trail from a region other than the region in
+     *         This exception is thrown when an operation is called on a trail from a Region other than the Region in
      *         which the trail was created.
      * @throws UnsupportedOperationException
      *         This exception is thrown when the requested operation is not supported.
@@ -2532,8 +2668,8 @@ public interface AWSCloudTrail {
      * @throws NoManagementAccountSLRExistsException
      *         This exception is thrown when the management account does not have a service-linked role.
      * @throws InsufficientDependencyServiceAccessPermissionException
-     *         This exception is thrown when the IAM user or role that is used to create the organization resource lacks
-     *         one or more required permissions for creating an organization resource in a required service.
+     *         This exception is thrown when the IAM identity that is used to create the organization resource lacks one
+     *         or more required permissions for creating an organization resource in a required service.
      * @sample AWSCloudTrail.StopLogging
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StopLogging" target="_top">AWS API
      *      Documentation</a>
@@ -2582,8 +2718,9 @@ public interface AWSCloudTrail {
      * </p>
      * <p>
      * For event data stores for CloudTrail events, <code>AdvancedEventSelectors</code> includes or excludes management
-     * and data events in your event data store. For more information about <code>AdvancedEventSelectors</code>, see
-     * <a>PutEventSelectorsRequest$AdvancedEventSelectors</a>.
+     * and data events in your event data store. For more information about <code>AdvancedEventSelectors</code>, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedEventSelector.html">
+     * AdvancedEventSelectors</a>.
      * </p>
      * <p>
      * For event data stores for Config configuration items, Audit Manager evidence, or non-Amazon Web Services events,
@@ -2592,6 +2729,8 @@ public interface AWSCloudTrail {
      * 
      * @param updateEventDataStoreRequest
      * @return Result of the UpdateEventDataStore operation returned by the service.
+     * @throws EventDataStoreAlreadyExistsException
+     *         An event data store with that name already exists.
      * @throws EventDataStoreARNInvalidException
      *         The specified event data store ARN is not valid or does not map to an event data store in your account.
      * @throws EventDataStoreNotFoundException
@@ -2648,8 +2787,8 @@ public interface AWSCloudTrail {
      *         This exception is thrown when the KMS key ARN is not valid.
      * @throws KmsKeyNotFoundException
      *         This exception is thrown when the KMS key does not exist, when the S3 bucket and the KMS key are not in
-     *         the same region, or when the KMS key associated with the Amazon SNS topic either does not exist or is not
-     *         in the same region.
+     *         the same Region, or when the KMS key associated with the Amazon SNS topic either does not exist or is not
+     *         in the same Region.
      * @throws KmsException
      *         This exception is thrown when there is an issue with the specified KMS key and the trail or event data
      *         store can't be updated.
@@ -2661,8 +2800,8 @@ public interface AWSCloudTrail {
      *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
      *         >Prepare For Creating a Trail For Your Organization</a>.
      * @throws InsufficientDependencyServiceAccessPermissionException
-     *         This exception is thrown when the IAM user or role that is used to create the organization resource lacks
-     *         one or more required permissions for creating an organization resource in a required service.
+     *         This exception is thrown when the IAM identity that is used to create the organization resource lacks one
+     *         or more required permissions for creating an organization resource in a required service.
      * @throws OrganizationsNotInUseException
      *         This exception is thrown when the request is made from an Amazon Web Services account that is not a
      *         member of an organization. To make this request, sign in using the credentials of an account that belongs
@@ -2691,7 +2830,7 @@ public interface AWSCloudTrail {
      * Updates trail settings that control what events you are logging, and how to handle log files. Changes to a trail
      * do not require stopping the CloudTrail service. Use this action to designate an existing bucket for log delivery.
      * If the existing bucket has previously been a target for CloudTrail log files, an IAM policy exists for the
-     * bucket. <code>UpdateTrail</code> must be called from the region in which the trail was created; otherwise, an
+     * bucket. <code>UpdateTrail</code> must be called from the Region in which the trail was created; otherwise, an
      * <code>InvalidHomeRegionException</code> is thrown.
      * </p>
      * 
@@ -2795,7 +2934,7 @@ public interface AWSCloudTrail {
      *         </p>
      *         <p>
      *         The following is the format of an event data store ARN: <code>
-     *         arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     *         arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
      *         </p>
      *         <p>
      *         The following is the format of a channel ARN: <code>
@@ -2805,15 +2944,17 @@ public interface AWSCloudTrail {
      *         you try to run an operation on a resource before CloudTrail has time to fully load the resource, or
      *         because another operation is modifying the resource. If this exception occurs, wait a few minutes, and
      *         then try the operation again.
+     * @throws ThrottlingException
+     *         This exception is thrown when the request rate exceeds the limit.
      * @throws InvalidParameterCombinationException
      *         This exception is thrown when the combination of parameters provided is not valid.
      * @throws InvalidHomeRegionException
-     *         This exception is thrown when an operation is called on a trail from a region other than the region in
+     *         This exception is thrown when an operation is called on a trail from a Region other than the Region in
      *         which the trail was created.
      * @throws KmsKeyNotFoundException
      *         This exception is thrown when the KMS key does not exist, when the S3 bucket and the KMS key are not in
-     *         the same region, or when the KMS key associated with the Amazon SNS topic either does not exist or is not
-     *         in the same region.
+     *         the same Region, or when the KMS key associated with the Amazon SNS topic either does not exist or is not
+     *         in the same Region.
      * @throws KmsKeyDisabledException
      *         This exception is no longer in use.
      * @throws KmsException
@@ -2824,7 +2965,7 @@ public interface AWSCloudTrail {
      * @throws InvalidCloudWatchLogsRoleArnException
      *         This exception is thrown when the provided role is not valid.
      * @throws CloudWatchLogsDeliveryUnavailableException
-     *         Cannot set a CloudWatch Logs delivery for this region.
+     *         Cannot set a CloudWatch Logs delivery for this Region.
      * @throws UnsupportedOperationException
      *         This exception is thrown when the requested operation is not supported.
      * @throws OperationNotPermittedException
@@ -2837,8 +2978,8 @@ public interface AWSCloudTrail {
      *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
      *         >Prepare For Creating a Trail For Your Organization</a>.
      * @throws InsufficientDependencyServiceAccessPermissionException
-     *         This exception is thrown when the IAM user or role that is used to create the organization resource lacks
-     *         one or more required permissions for creating an organization resource in a required service.
+     *         This exception is thrown when the IAM identity that is used to create the organization resource lacks one
+     *         or more required permissions for creating an organization resource in a required service.
      * @throws OrganizationsNotInUseException
      *         This exception is thrown when the request is made from an Amazon Web Services account that is not a
      *         member of an organization. To make this request, sign in using the credentials of an account that belongs

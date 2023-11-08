@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Permission granted on a workload share.
+ * Permission granted on a share request.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

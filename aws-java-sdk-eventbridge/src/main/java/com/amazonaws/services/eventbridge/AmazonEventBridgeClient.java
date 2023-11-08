@@ -44,6 +44,7 @@ import com.amazonaws.services.eventbridge.AmazonEventBridgeClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.eventbridge.model.*;
+
 import com.amazonaws.services.eventbridge.model.transform.*;
 
 /**

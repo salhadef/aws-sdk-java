@@ -29,6 +29,8 @@ public class ConnectionPropertiesMarshaller {
 
     private static final MarshallingInfo<String> ENDPOINT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Endpoint").build();
+    private static final MarshallingInfo<StructuredPojo> CROSSCLUSTERSEARCH_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CrossClusterSearch").build();
 
     private static final ConnectionPropertiesMarshaller instance = new ConnectionPropertiesMarshaller();
 
@@ -47,6 +49,7 @@ public class ConnectionPropertiesMarshaller {
 
         try {
             protocolMarshaller.marshall(connectionProperties.getEndpoint(), ENDPOINT_BINDING);
+            protocolMarshaller.marshall(connectionProperties.getCrossClusterSearch(), CROSSCLUSTERSEARCH_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

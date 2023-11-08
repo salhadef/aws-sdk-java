@@ -44,6 +44,7 @@ import com.amazonaws.services.dataexchange.AWSDataExchangeClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.dataexchange.model.*;
+
 import com.amazonaws.services.dataexchange.model.transform.*;
 
 /**
@@ -1499,6 +1500,75 @@ public class AWSDataExchangeClient extends AmazonWebServiceClient implements AWS
 
             HttpResponseHandler<AmazonWebServiceResponse<RevokeRevisionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RevokeRevisionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * The type of event associated with the data set.
+     * </p>
+     * 
+     * @param sendDataSetNotificationRequest
+     * @return Result of the SendDataSetNotification operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource couldn't be found.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws AccessDeniedException
+     *         Access to the resource is denied.
+     * @throws ConflictException
+     *         The request couldn't be completed because it conflicted with the current state of the resource.
+     * @throws ValidationException
+     *         The request was invalid.
+     * @throws InternalServerException
+     *         An exception occurred with the service.
+     * @sample AWSDataExchange.SendDataSetNotification
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/SendDataSetNotification"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public SendDataSetNotificationResult sendDataSetNotification(SendDataSetNotificationRequest request) {
+        request = beforeClientExecution(request);
+        return executeSendDataSetNotification(request);
+    }
+
+    @SdkInternalApi
+    final SendDataSetNotificationResult executeSendDataSetNotification(SendDataSetNotificationRequest sendDataSetNotificationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(sendDataSetNotificationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SendDataSetNotificationRequest> request = null;
+        Response<SendDataSetNotificationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SendDataSetNotificationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(sendDataSetNotificationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataExchange");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendDataSetNotification");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SendDataSetNotificationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new SendDataSetNotificationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

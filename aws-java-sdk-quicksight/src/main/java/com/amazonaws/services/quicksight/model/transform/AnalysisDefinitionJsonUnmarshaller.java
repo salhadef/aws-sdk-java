@@ -89,6 +89,10 @@ public class AnalysisDefinitionJsonUnmarshaller implements Unmarshaller<Analysis
                     context.nextToken();
                     analysisDefinition.setAnalysisDefaults(AnalysisDefaultsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Options", targetDepth)) {
+                    context.nextToken();
+                    analysisDefinition.setOptions(AssetOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

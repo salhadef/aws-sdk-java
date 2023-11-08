@@ -90,6 +90,10 @@ public class OntapFileSystemConfigurationJsonUnmarshaller implements Unmarshalle
                     context.nextToken();
                     ontapFileSystemConfiguration.setWeeklyMaintenanceStartTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("FsxAdminPassword", targetDepth)) {
+                    context.nextToken();
+                    ontapFileSystemConfiguration.setFsxAdminPassword(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

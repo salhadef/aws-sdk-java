@@ -124,6 +124,14 @@ public class ExportDescriptionJsonUnmarshaller implements Unmarshaller<ExportDes
                     context.nextToken();
                     exportDescription.setItemCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("ExportType", targetDepth)) {
+                    context.nextToken();
+                    exportDescription.setExportType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("IncrementalExportSpecification", targetDepth)) {
+                    context.nextToken();
+                    exportDescription.setIncrementalExportSpecification(IncrementalExportSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

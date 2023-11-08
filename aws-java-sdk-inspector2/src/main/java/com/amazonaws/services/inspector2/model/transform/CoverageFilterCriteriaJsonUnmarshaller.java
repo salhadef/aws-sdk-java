@@ -91,6 +91,12 @@ public class CoverageFilterCriteriaJsonUnmarshaller implements Unmarshaller<Cove
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("lastScannedAt", targetDepth)) {
+                    context.nextToken();
+                    coverageFilterCriteria.setLastScannedAt(new ListUnmarshaller<CoverageDateFilter>(CoverageDateFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("resourceId", targetDepth)) {
                     context.nextToken();
                     coverageFilterCriteria.setResourceId(new ListUnmarshaller<CoverageStringFilter>(CoverageStringFilterJsonUnmarshaller.getInstance())

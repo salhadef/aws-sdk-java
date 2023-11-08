@@ -37,6 +37,8 @@ public class RecordingConfigurationMarshaller {
             .marshallLocationName("name").build();
     private static final MarshallingInfo<Integer> RECORDINGRECONNECTWINDOWSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("recordingReconnectWindowSeconds").build();
+    private static final MarshallingInfo<StructuredPojo> RENDITIONCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("renditionConfiguration").build();
     private static final MarshallingInfo<String> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("state").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
@@ -64,6 +66,7 @@ public class RecordingConfigurationMarshaller {
             protocolMarshaller.marshall(recordingConfiguration.getDestinationConfiguration(), DESTINATIONCONFIGURATION_BINDING);
             protocolMarshaller.marshall(recordingConfiguration.getName(), NAME_BINDING);
             protocolMarshaller.marshall(recordingConfiguration.getRecordingReconnectWindowSeconds(), RECORDINGRECONNECTWINDOWSECONDS_BINDING);
+            protocolMarshaller.marshall(recordingConfiguration.getRenditionConfiguration(), RENDITIONCONFIGURATION_BINDING);
             protocolMarshaller.marshall(recordingConfiguration.getState(), STATE_BINDING);
             protocolMarshaller.marshall(recordingConfiguration.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(recordingConfiguration.getThumbnailConfiguration(), THUMBNAILCONFIGURATION_BINDING);

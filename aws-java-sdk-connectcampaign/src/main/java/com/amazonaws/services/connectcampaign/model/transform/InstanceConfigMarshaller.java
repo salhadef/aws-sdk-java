@@ -29,10 +29,10 @@ public class InstanceConfigMarshaller {
 
     private static final MarshallingInfo<String> CONNECTINSTANCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("connectInstanceId").build();
-    private static final MarshallingInfo<StructuredPojo> ENCRYPTIONCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encryptionConfig").build();
     private static final MarshallingInfo<String> SERVICELINKEDROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("serviceLinkedRoleArn").build();
+    private static final MarshallingInfo<StructuredPojo> ENCRYPTIONCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encryptionConfig").build();
 
     private static final InstanceConfigMarshaller instance = new InstanceConfigMarshaller();
 
@@ -51,8 +51,8 @@ public class InstanceConfigMarshaller {
 
         try {
             protocolMarshaller.marshall(instanceConfig.getConnectInstanceId(), CONNECTINSTANCEID_BINDING);
-            protocolMarshaller.marshall(instanceConfig.getEncryptionConfig(), ENCRYPTIONCONFIG_BINDING);
             protocolMarshaller.marshall(instanceConfig.getServiceLinkedRoleArn(), SERVICELINKEDROLEARN_BINDING);
+            protocolMarshaller.marshall(instanceConfig.getEncryptionConfig(), ENCRYPTIONCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

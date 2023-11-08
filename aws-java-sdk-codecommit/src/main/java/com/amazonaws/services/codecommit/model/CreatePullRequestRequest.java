@@ -53,8 +53,8 @@ public class CreatePullRequestRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <note>
      * <p>
-     * The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is created for
-     * you.
+     * The Amazon Web ServicesSDKs prepopulate client request tokens. If you are using an Amazon Web ServicesSDK, an
+     * idempotency token is created for you.
      * </p>
      * </note>
      */
@@ -237,8 +237,8 @@ public class CreatePullRequestRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <note>
      * <p>
-     * The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is created for
-     * you.
+     * The Amazon Web ServicesSDKs prepopulate client request tokens. If you are using an Amazon Web ServicesSDK, an
+     * idempotency token is created for you.
      * </p>
      * </note>
      * 
@@ -247,8 +247,8 @@ public class CreatePullRequestRequest extends com.amazonaws.AmazonWebServiceRequ
      *        be repeated with a changed parameter. If a request is received with the same parameters and a token is
      *        included, the request returns information about the initial request that used that token.</p> <note>
      *        <p>
-     *        The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is
-     *        created for you.
+     *        The Amazon Web ServicesSDKs prepopulate client request tokens. If you are using an Amazon Web ServicesSDK,
+     *        an idempotency token is created for you.
      *        </p>
      */
 
@@ -264,8 +264,8 @@ public class CreatePullRequestRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <note>
      * <p>
-     * The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is created for
-     * you.
+     * The Amazon Web ServicesSDKs prepopulate client request tokens. If you are using an Amazon Web ServicesSDK, an
+     * idempotency token is created for you.
      * </p>
      * </note>
      * 
@@ -273,8 +273,8 @@ public class CreatePullRequestRequest extends com.amazonaws.AmazonWebServiceRequ
      *         be repeated with a changed parameter. If a request is received with the same parameters and a token is
      *         included, the request returns information about the initial request that used that token.</p> <note>
      *         <p>
-     *         The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is
-     *         created for you.
+     *         The Amazon Web ServicesSDKs prepopulate client request tokens. If you are using an Amazon Web
+     *         ServicesSDK, an idempotency token is created for you.
      *         </p>
      */
 
@@ -290,8 +290,8 @@ public class CreatePullRequestRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <note>
      * <p>
-     * The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is created for
-     * you.
+     * The Amazon Web ServicesSDKs prepopulate client request tokens. If you are using an Amazon Web ServicesSDK, an
+     * idempotency token is created for you.
      * </p>
      * </note>
      * 
@@ -300,8 +300,8 @@ public class CreatePullRequestRequest extends com.amazonaws.AmazonWebServiceRequ
      *        be repeated with a changed parameter. If a request is received with the same parameters and a token is
      *        included, the request returns information about the initial request that used that token.</p> <note>
      *        <p>
-     *        The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is
-     *        created for you.
+     *        The Amazon Web ServicesSDKs prepopulate client request tokens. If you are using an Amazon Web ServicesSDK,
+     *        an idempotency token is created for you.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

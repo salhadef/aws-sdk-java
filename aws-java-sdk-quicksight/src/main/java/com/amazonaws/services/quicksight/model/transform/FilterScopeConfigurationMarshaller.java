@@ -29,6 +29,8 @@ public class FilterScopeConfigurationMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> SELECTEDSHEETS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SelectedSheets").build();
+    private static final MarshallingInfo<StructuredPojo> ALLSHEETS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AllSheets").build();
 
     private static final FilterScopeConfigurationMarshaller instance = new FilterScopeConfigurationMarshaller();
 
@@ -47,6 +49,7 @@ public class FilterScopeConfigurationMarshaller {
 
         try {
             protocolMarshaller.marshall(filterScopeConfiguration.getSelectedSheets(), SELECTEDSHEETS_BINDING);
+            protocolMarshaller.marshall(filterScopeConfiguration.getAllSheets(), ALLSHEETS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

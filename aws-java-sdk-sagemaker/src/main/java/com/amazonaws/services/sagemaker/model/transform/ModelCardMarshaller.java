@@ -54,6 +54,8 @@ public class ModelCardMarshaller {
             .marshallLocationName("ModelId").build();
     private static final MarshallingInfo<String> RISKRATING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RiskRating").build();
+    private static final MarshallingInfo<String> MODELPACKAGEGROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModelPackageGroupName").build();
 
     private static final ModelCardMarshaller instance = new ModelCardMarshaller();
 
@@ -84,6 +86,7 @@ public class ModelCardMarshaller {
             protocolMarshaller.marshall(modelCard.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(modelCard.getModelId(), MODELID_BINDING);
             protocolMarshaller.marshall(modelCard.getRiskRating(), RISKRATING_BINDING);
+            protocolMarshaller.marshall(modelCard.getModelPackageGroupName(), MODELPACKAGEGROUPNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

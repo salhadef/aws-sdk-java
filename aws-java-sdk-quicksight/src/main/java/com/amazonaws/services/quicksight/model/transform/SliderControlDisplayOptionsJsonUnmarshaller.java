@@ -52,6 +52,10 @@ public class SliderControlDisplayOptionsJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     sliderControlDisplayOptions.setTitleOptions(LabelOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("InfoIconLabelOptions", targetDepth)) {
+                    context.nextToken();
+                    sliderControlDisplayOptions.setInfoIconLabelOptions(SheetControlInfoIconLabelOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

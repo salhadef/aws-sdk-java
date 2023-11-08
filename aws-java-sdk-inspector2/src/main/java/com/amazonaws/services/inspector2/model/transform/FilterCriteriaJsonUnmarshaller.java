@@ -54,6 +54,24 @@ public class FilterCriteriaJsonUnmarshaller implements Unmarshaller<FilterCriter
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("codeVulnerabilityDetectorName", targetDepth)) {
+                    context.nextToken();
+                    filterCriteria.setCodeVulnerabilityDetectorName(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("codeVulnerabilityDetectorTags", targetDepth)) {
+                    context.nextToken();
+                    filterCriteria.setCodeVulnerabilityDetectorTags(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("codeVulnerabilityFilePath", targetDepth)) {
+                    context.nextToken();
+                    filterCriteria.setCodeVulnerabilityFilePath(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("componentId", targetDepth)) {
                     context.nextToken();
                     filterCriteria.setComponentId(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
@@ -117,6 +135,12 @@ public class FilterCriteriaJsonUnmarshaller implements Unmarshaller<FilterCriter
                 if (context.testExpression("ecrImageTags", targetDepth)) {
                     context.nextToken();
                     filterCriteria.setEcrImageTags(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("epssScore", targetDepth)) {
+                    context.nextToken();
+                    filterCriteria.setEpssScore(new ListUnmarshaller<NumberFilter>(NumberFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }

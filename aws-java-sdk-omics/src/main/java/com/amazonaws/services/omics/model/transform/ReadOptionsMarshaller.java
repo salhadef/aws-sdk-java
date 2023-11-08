@@ -27,24 +27,24 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ReadOptionsMarshaller {
 
-    private static final MarshallingInfo<String> COMMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("comment").build();
+    private static final MarshallingInfo<String> SEP_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("sep").build();
     private static final MarshallingInfo<String> ENCODING_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("encoding").build();
-    private static final MarshallingInfo<String> ESCAPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("escape").build();
-    private static final MarshallingInfo<Boolean> ESCAPEQUOTES_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("escapeQuotes").build();
-    private static final MarshallingInfo<Boolean> HEADER_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("header").build();
-    private static final MarshallingInfo<String> LINESEP_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("lineSep").build();
     private static final MarshallingInfo<String> QUOTE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("quote").build();
     private static final MarshallingInfo<Boolean> QUOTEALL_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("quoteAll").build();
-    private static final MarshallingInfo<String> SEP_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("sep").build();
+    private static final MarshallingInfo<String> ESCAPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("escape").build();
+    private static final MarshallingInfo<Boolean> ESCAPEQUOTES_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("escapeQuotes").build();
+    private static final MarshallingInfo<String> COMMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("comment").build();
+    private static final MarshallingInfo<Boolean> HEADER_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("header").build();
+    private static final MarshallingInfo<String> LINESEP_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("lineSep").build();
 
     private static final ReadOptionsMarshaller instance = new ReadOptionsMarshaller();
 
@@ -62,15 +62,15 @@ public class ReadOptionsMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(readOptions.getComment(), COMMENT_BINDING);
+            protocolMarshaller.marshall(readOptions.getSep(), SEP_BINDING);
             protocolMarshaller.marshall(readOptions.getEncoding(), ENCODING_BINDING);
-            protocolMarshaller.marshall(readOptions.getEscape(), ESCAPE_BINDING);
-            protocolMarshaller.marshall(readOptions.getEscapeQuotes(), ESCAPEQUOTES_BINDING);
-            protocolMarshaller.marshall(readOptions.getHeader(), HEADER_BINDING);
-            protocolMarshaller.marshall(readOptions.getLineSep(), LINESEP_BINDING);
             protocolMarshaller.marshall(readOptions.getQuote(), QUOTE_BINDING);
             protocolMarshaller.marshall(readOptions.getQuoteAll(), QUOTEALL_BINDING);
-            protocolMarshaller.marshall(readOptions.getSep(), SEP_BINDING);
+            protocolMarshaller.marshall(readOptions.getEscape(), ESCAPE_BINDING);
+            protocolMarshaller.marshall(readOptions.getEscapeQuotes(), ESCAPEQUOTES_BINDING);
+            protocolMarshaller.marshall(readOptions.getComment(), COMMENT_BINDING);
+            protocolMarshaller.marshall(readOptions.getHeader(), HEADER_BINDING);
+            protocolMarshaller.marshall(readOptions.getLineSep(), LINESEP_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

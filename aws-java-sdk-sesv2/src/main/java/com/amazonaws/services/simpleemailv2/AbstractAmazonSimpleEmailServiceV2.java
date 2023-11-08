@@ -33,6 +33,11 @@ public class AbstractAmazonSimpleEmailServiceV2 implements AmazonSimpleEmailServ
     }
 
     @Override
+    public CancelExportJobResult cancelExportJob(CancelExportJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateConfigurationSetResult createConfigurationSet(CreateConfigurationSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -79,6 +84,11 @@ public class AbstractAmazonSimpleEmailServiceV2 implements AmazonSimpleEmailServ
 
     @Override
     public CreateEmailTemplateResult createEmailTemplate(CreateEmailTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateExportJobResult createExportJob(CreateExportJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -223,7 +233,17 @@ public class AbstractAmazonSimpleEmailServiceV2 implements AmazonSimpleEmailServ
     }
 
     @Override
+    public GetExportJobResult getExportJob(GetExportJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetImportJobResult getImportJob(GetImportJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetMessageInsightsResult getMessageInsights(GetMessageInsightsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -274,6 +294,11 @@ public class AbstractAmazonSimpleEmailServiceV2 implements AmazonSimpleEmailServ
 
     @Override
     public ListEmailTemplatesResult listEmailTemplates(ListEmailTemplatesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListExportJobsResult listExportJobs(ListExportJobsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -354,6 +379,11 @@ public class AbstractAmazonSimpleEmailServiceV2 implements AmazonSimpleEmailServ
 
     @Override
     public PutDedicatedIpInPoolResult putDedicatedIpInPool(PutDedicatedIpInPoolRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutDedicatedIpPoolScalingAttributesResult putDedicatedIpPoolScalingAttributes(PutDedicatedIpPoolScalingAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

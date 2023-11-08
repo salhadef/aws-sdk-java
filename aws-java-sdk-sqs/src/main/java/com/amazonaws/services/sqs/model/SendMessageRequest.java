@@ -37,7 +37,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String queueUrl;
     /**
      * <p>
-     * The message to send. The minimum size is one character. The maximum size is 256 KB.
+     * The message to send. The minimum size is one character. The maximum size is 256 KiB.
      * </p>
      * <important>
      * <p>
@@ -243,7 +243,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        Queue URLs and names are case-sensitive.
      * @param messageBody
-     *        The message to send. The minimum size is one character. The maximum size is 256 KB.
+     *        The message to send. The minimum size is one character. The maximum size is 256 KiB.
      *        </p>
      *        <important>
      *        <p>
@@ -320,7 +320,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The message to send. The minimum size is one character. The maximum size is 256 KB.
+     * The message to send. The minimum size is one character. The maximum size is 256 KiB.
      * </p>
      * <important>
      * <p>
@@ -337,7 +337,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </important>
      * 
      * @param messageBody
-     *        The message to send. The minimum size is one character. The maximum size is 256 KB.</p> <important>
+     *        The message to send. The minimum size is one character. The maximum size is 256 KiB.</p> <important>
      *        <p>
      *        A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed:
      *        </p>
@@ -357,7 +357,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The message to send. The minimum size is one character. The maximum size is 256 KB.
+     * The message to send. The minimum size is one character. The maximum size is 256 KiB.
      * </p>
      * <important>
      * <p>
@@ -373,7 +373,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * </important>
      * 
-     * @return The message to send. The minimum size is one character. The maximum size is 256 KB.</p> <important>
+     * @return The message to send. The minimum size is one character. The maximum size is 256 KiB.</p> <important>
      *         <p>
      *         A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed:
      *         </p>
@@ -393,7 +393,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The message to send. The minimum size is one character. The maximum size is 256 KB.
+     * The message to send. The minimum size is one character. The maximum size is 256 KiB.
      * </p>
      * <important>
      * <p>
@@ -410,7 +410,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </important>
      * 
      * @param messageBody
-     *        The message to send. The minimum size is one character. The maximum size is 256 KB.</p> <important>
+     *        The message to send. The minimum size is one character. The maximum size is 256 KiB.</p> <important>
      *        <p>
      *        A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed:
      *        </p>

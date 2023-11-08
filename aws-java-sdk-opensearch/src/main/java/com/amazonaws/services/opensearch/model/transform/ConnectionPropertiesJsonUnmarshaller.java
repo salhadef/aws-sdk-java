@@ -52,6 +52,10 @@ public class ConnectionPropertiesJsonUnmarshaller implements Unmarshaller<Connec
                     context.nextToken();
                     connectionProperties.setEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("CrossClusterSearch", targetDepth)) {
+                    context.nextToken();
+                    connectionProperties.setCrossClusterSearch(CrossClusterSearchConnectionPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

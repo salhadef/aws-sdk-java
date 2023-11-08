@@ -40,6 +40,8 @@ public class WorkspacePropertiesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ComputeTypeName").build();
     private static final MarshallingInfo<List> PROTOCOLS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Protocols").build();
+    private static final MarshallingInfo<String> OPERATINGSYSTEMNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OperatingSystemName").build();
 
     private static final WorkspacePropertiesMarshaller instance = new WorkspacePropertiesMarshaller();
 
@@ -63,6 +65,7 @@ public class WorkspacePropertiesMarshaller {
             protocolMarshaller.marshall(workspaceProperties.getUserVolumeSizeGib(), USERVOLUMESIZEGIB_BINDING);
             protocolMarshaller.marshall(workspaceProperties.getComputeTypeName(), COMPUTETYPENAME_BINDING);
             protocolMarshaller.marshall(workspaceProperties.getProtocols(), PROTOCOLS_BINDING);
+            protocolMarshaller.marshall(workspaceProperties.getOperatingSystemName(), OPERATINGSYSTEMNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

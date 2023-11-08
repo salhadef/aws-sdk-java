@@ -76,6 +76,10 @@ public class Ac3SettingsJsonUnmarshaller implements Unmarshaller<Ac3Settings, Js
                     context.nextToken();
                     ac3Settings.setMetadataControl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("attenuationControl", targetDepth)) {
+                    context.nextToken();
+                    ac3Settings.setAttenuationControl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

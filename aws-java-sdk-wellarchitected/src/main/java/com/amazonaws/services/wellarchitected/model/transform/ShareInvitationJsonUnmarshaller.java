@@ -68,6 +68,14 @@ public class ShareInvitationJsonUnmarshaller implements Unmarshaller<ShareInvita
                     context.nextToken();
                     shareInvitation.setLensArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ProfileArn", targetDepth)) {
+                    context.nextToken();
+                    shareInvitation.setProfileArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("TemplateArn", targetDepth)) {
+                    context.nextToken();
+                    shareInvitation.setTemplateArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

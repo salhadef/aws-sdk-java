@@ -72,6 +72,10 @@ public class DomainStatusJsonUnmarshaller implements Unmarshaller<DomainStatus, 
                     context.nextToken();
                     domainStatus.setEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("EndpointV2", targetDepth)) {
+                    context.nextToken();
+                    domainStatus.setEndpointV2(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Endpoints", targetDepth)) {
                     context.nextToken();
                     domainStatus.setEndpoints(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
@@ -100,6 +104,10 @@ public class DomainStatusJsonUnmarshaller implements Unmarshaller<DomainStatus, 
                 if (context.testExpression("AccessPolicies", targetDepth)) {
                     context.nextToken();
                     domainStatus.setAccessPolicies(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("IPAddressType", targetDepth)) {
+                    context.nextToken();
+                    domainStatus.setIPAddressType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SnapshotOptions", targetDepth)) {
                     context.nextToken();

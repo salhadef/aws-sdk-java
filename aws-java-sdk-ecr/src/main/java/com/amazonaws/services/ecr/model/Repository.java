@@ -33,7 +33,7 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
      * The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the <code>arn:aws:ecr</code>
      * namespace, followed by the region of the repository, Amazon Web Services account ID of the repository owner,
      * repository namespace, and repository name. For example,
-     * <code>arn:aws:ecr:region:012345678910:repository/test</code>.
+     * <code>arn:aws:ecr:region:012345678910:repository-namespace/repository-name</code>.
      * </p>
      */
     private String repositoryArn;
@@ -83,14 +83,14 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
      * The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the <code>arn:aws:ecr</code>
      * namespace, followed by the region of the repository, Amazon Web Services account ID of the repository owner,
      * repository namespace, and repository name. For example,
-     * <code>arn:aws:ecr:region:012345678910:repository/test</code>.
+     * <code>arn:aws:ecr:region:012345678910:repository-namespace/repository-name</code>.
      * </p>
      * 
      * @param repositoryArn
      *        The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the
      *        <code>arn:aws:ecr</code> namespace, followed by the region of the repository, Amazon Web Services account
      *        ID of the repository owner, repository namespace, and repository name. For example,
-     *        <code>arn:aws:ecr:region:012345678910:repository/test</code>.
+     *        <code>arn:aws:ecr:region:012345678910:repository-namespace/repository-name</code>.
      */
 
     public void setRepositoryArn(String repositoryArn) {
@@ -102,13 +102,13 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
      * The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the <code>arn:aws:ecr</code>
      * namespace, followed by the region of the repository, Amazon Web Services account ID of the repository owner,
      * repository namespace, and repository name. For example,
-     * <code>arn:aws:ecr:region:012345678910:repository/test</code>.
+     * <code>arn:aws:ecr:region:012345678910:repository-namespace/repository-name</code>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the
      *         <code>arn:aws:ecr</code> namespace, followed by the region of the repository, Amazon Web Services account
      *         ID of the repository owner, repository namespace, and repository name. For example,
-     *         <code>arn:aws:ecr:region:012345678910:repository/test</code>.
+     *         <code>arn:aws:ecr:region:012345678910:repository-namespace/repository-name</code>.
      */
 
     public String getRepositoryArn() {
@@ -120,14 +120,14 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
      * The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the <code>arn:aws:ecr</code>
      * namespace, followed by the region of the repository, Amazon Web Services account ID of the repository owner,
      * repository namespace, and repository name. For example,
-     * <code>arn:aws:ecr:region:012345678910:repository/test</code>.
+     * <code>arn:aws:ecr:region:012345678910:repository-namespace/repository-name</code>.
      * </p>
      * 
      * @param repositoryArn
      *        The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the
      *        <code>arn:aws:ecr</code> namespace, followed by the region of the repository, Amazon Web Services account
      *        ID of the repository owner, repository namespace, and repository name. For example,
-     *        <code>arn:aws:ecr:region:012345678910:repository/test</code>.
+     *        <code>arn:aws:ecr:region:012345678910:repository-namespace/repository-name</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

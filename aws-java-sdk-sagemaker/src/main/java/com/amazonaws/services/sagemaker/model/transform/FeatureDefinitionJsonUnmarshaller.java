@@ -56,6 +56,14 @@ public class FeatureDefinitionJsonUnmarshaller implements Unmarshaller<FeatureDe
                     context.nextToken();
                     featureDefinition.setFeatureType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("CollectionType", targetDepth)) {
+                    context.nextToken();
+                    featureDefinition.setCollectionType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CollectionConfig", targetDepth)) {
+                    context.nextToken();
+                    featureDefinition.setCollectionConfig(CollectionConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -48,6 +48,11 @@ public class UserSettingsSummaryJsonUnmarshaller implements Unmarshaller<UserSet
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("cookieSynchronizationConfiguration", targetDepth)) {
+                    context.nextToken();
+                    userSettingsSummary.setCookieSynchronizationConfiguration(CookieSynchronizationConfigurationJsonUnmarshaller.getInstance().unmarshall(
+                            context));
+                }
                 if (context.testExpression("copyAllowed", targetDepth)) {
                     context.nextToken();
                     userSettingsSummary.setCopyAllowed(context.getUnmarshaller(String.class).unmarshall(context));

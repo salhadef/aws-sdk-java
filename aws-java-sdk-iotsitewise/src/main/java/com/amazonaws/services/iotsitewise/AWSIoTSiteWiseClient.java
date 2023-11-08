@@ -45,6 +45,7 @@ import com.amazonaws.services.iotsitewise.waiters.AWSIoTSiteWiseWaiters;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.iotsitewise.model.*;
+
 import com.amazonaws.services.iotsitewise.model.transform.*;
 
 /**

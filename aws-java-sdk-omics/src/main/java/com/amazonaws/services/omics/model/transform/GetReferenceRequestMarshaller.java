@@ -27,16 +27,16 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class GetReferenceRequestMarshaller {
 
-    private static final MarshallingInfo<String> FILE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.QUERY_PARAM)
-            .marshallLocationName("file").build();
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("id").build();
-    private static final MarshallingInfo<Integer> PARTNUMBER_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
-            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("partNumber").build();
-    private static final MarshallingInfo<String> RANGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.HEADER)
-            .marshallLocationName("Range").build();
     private static final MarshallingInfo<String> REFERENCESTOREID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("referenceStoreId").build();
+    private static final MarshallingInfo<String> RANGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.HEADER)
+            .marshallLocationName("Range").build();
+    private static final MarshallingInfo<Integer> PARTNUMBER_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("partNumber").build();
+    private static final MarshallingInfo<String> FILE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.QUERY_PARAM)
+            .marshallLocationName("file").build();
 
     private static final GetReferenceRequestMarshaller instance = new GetReferenceRequestMarshaller();
 
@@ -54,11 +54,11 @@ public class GetReferenceRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(getReferenceRequest.getFile(), FILE_BINDING);
             protocolMarshaller.marshall(getReferenceRequest.getId(), ID_BINDING);
-            protocolMarshaller.marshall(getReferenceRequest.getPartNumber(), PARTNUMBER_BINDING);
-            protocolMarshaller.marshall(getReferenceRequest.getRange(), RANGE_BINDING);
             protocolMarshaller.marshall(getReferenceRequest.getReferenceStoreId(), REFERENCESTOREID_BINDING);
+            protocolMarshaller.marshall(getReferenceRequest.getRange(), RANGE_BINDING);
+            protocolMarshaller.marshall(getReferenceRequest.getPartNumber(), PARTNUMBER_BINDING);
+            protocolMarshaller.marshall(getReferenceRequest.getFile(), FILE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

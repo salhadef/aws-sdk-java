@@ -153,6 +153,40 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      */
     private String rootChangeSetId;
+    /**
+     * <p>
+     * Determines what action will be taken if stack creation fails. When this parameter is specified, the
+     * <code>DisableRollback</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     * >ExecuteChangeSet</a> API operation must not be specified. This must be one of these values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DELETE</code> - Deletes the change set if the stack creation fails. This is only valid when the
+     * <code>ChangeSetType</code> parameter is set to <code>CREATE</code>. If the deletion of the stack fails, the
+     * status of the stack is <code>DELETE_FAILED</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DO_NOTHING</code> - if the stack creation fails, do nothing. This is equivalent to specifying
+     * <code>true</code> for the <code>DisableRollback</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     * >ExecuteChangeSet</a> API operation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ROLLBACK</code> - if the stack creation fails, roll back the stack. This is equivalent to specifying
+     * <code>false</code> for the <code>DisableRollback</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     * >ExecuteChangeSet</a> API operation.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String onStackFailure;
 
     /**
      * <p>
@@ -1294,6 +1328,354 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
+     * Determines what action will be taken if stack creation fails. When this parameter is specified, the
+     * <code>DisableRollback</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     * >ExecuteChangeSet</a> API operation must not be specified. This must be one of these values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DELETE</code> - Deletes the change set if the stack creation fails. This is only valid when the
+     * <code>ChangeSetType</code> parameter is set to <code>CREATE</code>. If the deletion of the stack fails, the
+     * status of the stack is <code>DELETE_FAILED</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DO_NOTHING</code> - if the stack creation fails, do nothing. This is equivalent to specifying
+     * <code>true</code> for the <code>DisableRollback</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     * >ExecuteChangeSet</a> API operation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ROLLBACK</code> - if the stack creation fails, roll back the stack. This is equivalent to specifying
+     * <code>false</code> for the <code>DisableRollback</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     * >ExecuteChangeSet</a> API operation.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param onStackFailure
+     *        Determines what action will be taken if stack creation fails. When this parameter is specified, the
+     *        <code>DisableRollback</code> parameter to the <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     *        >ExecuteChangeSet</a> API operation must not be specified. This must be one of these values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DELETE</code> - Deletes the change set if the stack creation fails. This is only valid when the
+     *        <code>ChangeSetType</code> parameter is set to <code>CREATE</code>. If the deletion of the stack fails,
+     *        the status of the stack is <code>DELETE_FAILED</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DO_NOTHING</code> - if the stack creation fails, do nothing. This is equivalent to specifying
+     *        <code>true</code> for the <code>DisableRollback</code> parameter to the <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     *        >ExecuteChangeSet</a> API operation.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ROLLBACK</code> - if the stack creation fails, roll back the stack. This is equivalent to specifying
+     *        <code>false</code> for the <code>DisableRollback</code> parameter to the <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     *        >ExecuteChangeSet</a> API operation.
+     *        </p>
+     *        </li>
+     * @see OnStackFailure
+     */
+
+    public void setOnStackFailure(String onStackFailure) {
+        this.onStackFailure = onStackFailure;
+    }
+
+    /**
+     * <p>
+     * Determines what action will be taken if stack creation fails. When this parameter is specified, the
+     * <code>DisableRollback</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     * >ExecuteChangeSet</a> API operation must not be specified. This must be one of these values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DELETE</code> - Deletes the change set if the stack creation fails. This is only valid when the
+     * <code>ChangeSetType</code> parameter is set to <code>CREATE</code>. If the deletion of the stack fails, the
+     * status of the stack is <code>DELETE_FAILED</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DO_NOTHING</code> - if the stack creation fails, do nothing. This is equivalent to specifying
+     * <code>true</code> for the <code>DisableRollback</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     * >ExecuteChangeSet</a> API operation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ROLLBACK</code> - if the stack creation fails, roll back the stack. This is equivalent to specifying
+     * <code>false</code> for the <code>DisableRollback</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     * >ExecuteChangeSet</a> API operation.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Determines what action will be taken if stack creation fails. When this parameter is specified, the
+     *         <code>DisableRollback</code> parameter to the <a
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     *         >ExecuteChangeSet</a> API operation must not be specified. This must be one of these values:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>DELETE</code> - Deletes the change set if the stack creation fails. This is only valid when the
+     *         <code>ChangeSetType</code> parameter is set to <code>CREATE</code>. If the deletion of the stack fails,
+     *         the status of the stack is <code>DELETE_FAILED</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DO_NOTHING</code> - if the stack creation fails, do nothing. This is equivalent to specifying
+     *         <code>true</code> for the <code>DisableRollback</code> parameter to the <a
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     *         >ExecuteChangeSet</a> API operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ROLLBACK</code> - if the stack creation fails, roll back the stack. This is equivalent to
+     *         specifying <code>false</code> for the <code>DisableRollback</code> parameter to the <a
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     *         >ExecuteChangeSet</a> API operation.
+     *         </p>
+     *         </li>
+     * @see OnStackFailure
+     */
+
+    public String getOnStackFailure() {
+        return this.onStackFailure;
+    }
+
+    /**
+     * <p>
+     * Determines what action will be taken if stack creation fails. When this parameter is specified, the
+     * <code>DisableRollback</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     * >ExecuteChangeSet</a> API operation must not be specified. This must be one of these values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DELETE</code> - Deletes the change set if the stack creation fails. This is only valid when the
+     * <code>ChangeSetType</code> parameter is set to <code>CREATE</code>. If the deletion of the stack fails, the
+     * status of the stack is <code>DELETE_FAILED</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DO_NOTHING</code> - if the stack creation fails, do nothing. This is equivalent to specifying
+     * <code>true</code> for the <code>DisableRollback</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     * >ExecuteChangeSet</a> API operation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ROLLBACK</code> - if the stack creation fails, roll back the stack. This is equivalent to specifying
+     * <code>false</code> for the <code>DisableRollback</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     * >ExecuteChangeSet</a> API operation.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param onStackFailure
+     *        Determines what action will be taken if stack creation fails. When this parameter is specified, the
+     *        <code>DisableRollback</code> parameter to the <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     *        >ExecuteChangeSet</a> API operation must not be specified. This must be one of these values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DELETE</code> - Deletes the change set if the stack creation fails. This is only valid when the
+     *        <code>ChangeSetType</code> parameter is set to <code>CREATE</code>. If the deletion of the stack fails,
+     *        the status of the stack is <code>DELETE_FAILED</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DO_NOTHING</code> - if the stack creation fails, do nothing. This is equivalent to specifying
+     *        <code>true</code> for the <code>DisableRollback</code> parameter to the <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     *        >ExecuteChangeSet</a> API operation.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ROLLBACK</code> - if the stack creation fails, roll back the stack. This is equivalent to specifying
+     *        <code>false</code> for the <code>DisableRollback</code> parameter to the <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     *        >ExecuteChangeSet</a> API operation.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OnStackFailure
+     */
+
+    public DescribeChangeSetResult withOnStackFailure(String onStackFailure) {
+        setOnStackFailure(onStackFailure);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Determines what action will be taken if stack creation fails. When this parameter is specified, the
+     * <code>DisableRollback</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     * >ExecuteChangeSet</a> API operation must not be specified. This must be one of these values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DELETE</code> - Deletes the change set if the stack creation fails. This is only valid when the
+     * <code>ChangeSetType</code> parameter is set to <code>CREATE</code>. If the deletion of the stack fails, the
+     * status of the stack is <code>DELETE_FAILED</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DO_NOTHING</code> - if the stack creation fails, do nothing. This is equivalent to specifying
+     * <code>true</code> for the <code>DisableRollback</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     * >ExecuteChangeSet</a> API operation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ROLLBACK</code> - if the stack creation fails, roll back the stack. This is equivalent to specifying
+     * <code>false</code> for the <code>DisableRollback</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     * >ExecuteChangeSet</a> API operation.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param onStackFailure
+     *        Determines what action will be taken if stack creation fails. When this parameter is specified, the
+     *        <code>DisableRollback</code> parameter to the <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     *        >ExecuteChangeSet</a> API operation must not be specified. This must be one of these values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DELETE</code> - Deletes the change set if the stack creation fails. This is only valid when the
+     *        <code>ChangeSetType</code> parameter is set to <code>CREATE</code>. If the deletion of the stack fails,
+     *        the status of the stack is <code>DELETE_FAILED</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DO_NOTHING</code> - if the stack creation fails, do nothing. This is equivalent to specifying
+     *        <code>true</code> for the <code>DisableRollback</code> parameter to the <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     *        >ExecuteChangeSet</a> API operation.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ROLLBACK</code> - if the stack creation fails, roll back the stack. This is equivalent to specifying
+     *        <code>false</code> for the <code>DisableRollback</code> parameter to the <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     *        >ExecuteChangeSet</a> API operation.
+     *        </p>
+     *        </li>
+     * @see OnStackFailure
+     */
+
+    public void setOnStackFailure(OnStackFailure onStackFailure) {
+        withOnStackFailure(onStackFailure);
+    }
+
+    /**
+     * <p>
+     * Determines what action will be taken if stack creation fails. When this parameter is specified, the
+     * <code>DisableRollback</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     * >ExecuteChangeSet</a> API operation must not be specified. This must be one of these values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DELETE</code> - Deletes the change set if the stack creation fails. This is only valid when the
+     * <code>ChangeSetType</code> parameter is set to <code>CREATE</code>. If the deletion of the stack fails, the
+     * status of the stack is <code>DELETE_FAILED</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DO_NOTHING</code> - if the stack creation fails, do nothing. This is equivalent to specifying
+     * <code>true</code> for the <code>DisableRollback</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     * >ExecuteChangeSet</a> API operation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ROLLBACK</code> - if the stack creation fails, roll back the stack. This is equivalent to specifying
+     * <code>false</code> for the <code>DisableRollback</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     * >ExecuteChangeSet</a> API operation.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param onStackFailure
+     *        Determines what action will be taken if stack creation fails. When this parameter is specified, the
+     *        <code>DisableRollback</code> parameter to the <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     *        >ExecuteChangeSet</a> API operation must not be specified. This must be one of these values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DELETE</code> - Deletes the change set if the stack creation fails. This is only valid when the
+     *        <code>ChangeSetType</code> parameter is set to <code>CREATE</code>. If the deletion of the stack fails,
+     *        the status of the stack is <code>DELETE_FAILED</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DO_NOTHING</code> - if the stack creation fails, do nothing. This is equivalent to specifying
+     *        <code>true</code> for the <code>DisableRollback</code> parameter to the <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     *        >ExecuteChangeSet</a> API operation.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ROLLBACK</code> - if the stack creation fails, roll back the stack. This is equivalent to specifying
+     *        <code>false</code> for the <code>DisableRollback</code> parameter to the <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     *        >ExecuteChangeSet</a> API operation.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OnStackFailure
+     */
+
+    public DescribeChangeSetResult withOnStackFailure(OnStackFailure onStackFailure) {
+        this.onStackFailure = onStackFailure.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1342,7 +1724,9 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
         if (getParentChangeSetId() != null)
             sb.append("ParentChangeSetId: ").append(getParentChangeSetId()).append(",");
         if (getRootChangeSetId() != null)
-            sb.append("RootChangeSetId: ").append(getRootChangeSetId());
+            sb.append("RootChangeSetId: ").append(getRootChangeSetId()).append(",");
+        if (getOnStackFailure() != null)
+            sb.append("OnStackFailure: ").append(getOnStackFailure());
         sb.append("}");
         return sb.toString();
     }
@@ -1433,6 +1817,10 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getRootChangeSetId() != null && other.getRootChangeSetId().equals(this.getRootChangeSetId()) == false)
             return false;
+        if (other.getOnStackFailure() == null ^ this.getOnStackFailure() == null)
+            return false;
+        if (other.getOnStackFailure() != null && other.getOnStackFailure().equals(this.getOnStackFailure()) == false)
+            return false;
         return true;
     }
 
@@ -1460,6 +1848,7 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
         hashCode = prime * hashCode + ((getIncludeNestedStacks() == null) ? 0 : getIncludeNestedStacks().hashCode());
         hashCode = prime * hashCode + ((getParentChangeSetId() == null) ? 0 : getParentChangeSetId().hashCode());
         hashCode = prime * hashCode + ((getRootChangeSetId() == null) ? 0 : getRootChangeSetId().hashCode());
+        hashCode = prime * hashCode + ((getOnStackFailure() == null) ? 0 : getOnStackFailure().hashCode());
         return hashCode;
     }
 

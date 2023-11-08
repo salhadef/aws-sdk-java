@@ -22,7 +22,8 @@ public enum DataSetTaskLifecycle {
 
     Creating("Creating"),
     Running("Running"),
-    Completed("Completed");
+    Completed("Completed"),
+    Failed("Failed");
 
     private String value;
 

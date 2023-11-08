@@ -235,6 +235,10 @@ public class UpdateStackRequestMarshaller implements Marshaller<Request<UpdateSt
             request.addParameter("ClientRequestToken", StringUtils.fromString(updateStackRequest.getClientRequestToken()));
         }
 
+        if (updateStackRequest.getRetainExceptOnCreate() != null) {
+            request.addParameter("RetainExceptOnCreate", StringUtils.fromBoolean(updateStackRequest.getRetainExceptOnCreate()));
+        }
+
         return request;
     }
 

@@ -98,6 +98,20 @@ public class RecommendationJobContainerConfig implements Serializable, Cloneable
      * </p>
      */
     private String dataInputConfig;
+    /**
+     * <p>
+     * The endpoint type to receive recommendations for. By default this is null, and the results of the inference
+     * recommendation job return a combined list of both real-time and serverless benchmarks. By specifying a value for
+     * this field, you can receive a longer list of benchmarks for the desired endpoint type.
+     * </p>
+     */
+    private String supportedEndpointType;
+    /**
+     * <p>
+     * The supported MIME types for the output data.
+     * </p>
+     */
+    private java.util.List<String> supportedResponseMIMETypes;
 
     /**
      * <p>
@@ -547,6 +561,155 @@ public class RecommendationJobContainerConfig implements Serializable, Cloneable
     }
 
     /**
+     * <p>
+     * The endpoint type to receive recommendations for. By default this is null, and the results of the inference
+     * recommendation job return a combined list of both real-time and serverless benchmarks. By specifying a value for
+     * this field, you can receive a longer list of benchmarks for the desired endpoint type.
+     * </p>
+     * 
+     * @param supportedEndpointType
+     *        The endpoint type to receive recommendations for. By default this is null, and the results of the
+     *        inference recommendation job return a combined list of both real-time and serverless benchmarks. By
+     *        specifying a value for this field, you can receive a longer list of benchmarks for the desired endpoint
+     *        type.
+     * @see RecommendationJobSupportedEndpointType
+     */
+
+    public void setSupportedEndpointType(String supportedEndpointType) {
+        this.supportedEndpointType = supportedEndpointType;
+    }
+
+    /**
+     * <p>
+     * The endpoint type to receive recommendations for. By default this is null, and the results of the inference
+     * recommendation job return a combined list of both real-time and serverless benchmarks. By specifying a value for
+     * this field, you can receive a longer list of benchmarks for the desired endpoint type.
+     * </p>
+     * 
+     * @return The endpoint type to receive recommendations for. By default this is null, and the results of the
+     *         inference recommendation job return a combined list of both real-time and serverless benchmarks. By
+     *         specifying a value for this field, you can receive a longer list of benchmarks for the desired endpoint
+     *         type.
+     * @see RecommendationJobSupportedEndpointType
+     */
+
+    public String getSupportedEndpointType() {
+        return this.supportedEndpointType;
+    }
+
+    /**
+     * <p>
+     * The endpoint type to receive recommendations for. By default this is null, and the results of the inference
+     * recommendation job return a combined list of both real-time and serverless benchmarks. By specifying a value for
+     * this field, you can receive a longer list of benchmarks for the desired endpoint type.
+     * </p>
+     * 
+     * @param supportedEndpointType
+     *        The endpoint type to receive recommendations for. By default this is null, and the results of the
+     *        inference recommendation job return a combined list of both real-time and serverless benchmarks. By
+     *        specifying a value for this field, you can receive a longer list of benchmarks for the desired endpoint
+     *        type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RecommendationJobSupportedEndpointType
+     */
+
+    public RecommendationJobContainerConfig withSupportedEndpointType(String supportedEndpointType) {
+        setSupportedEndpointType(supportedEndpointType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The endpoint type to receive recommendations for. By default this is null, and the results of the inference
+     * recommendation job return a combined list of both real-time and serverless benchmarks. By specifying a value for
+     * this field, you can receive a longer list of benchmarks for the desired endpoint type.
+     * </p>
+     * 
+     * @param supportedEndpointType
+     *        The endpoint type to receive recommendations for. By default this is null, and the results of the
+     *        inference recommendation job return a combined list of both real-time and serverless benchmarks. By
+     *        specifying a value for this field, you can receive a longer list of benchmarks for the desired endpoint
+     *        type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RecommendationJobSupportedEndpointType
+     */
+
+    public RecommendationJobContainerConfig withSupportedEndpointType(RecommendationJobSupportedEndpointType supportedEndpointType) {
+        this.supportedEndpointType = supportedEndpointType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The supported MIME types for the output data.
+     * </p>
+     * 
+     * @return The supported MIME types for the output data.
+     */
+
+    public java.util.List<String> getSupportedResponseMIMETypes() {
+        return supportedResponseMIMETypes;
+    }
+
+    /**
+     * <p>
+     * The supported MIME types for the output data.
+     * </p>
+     * 
+     * @param supportedResponseMIMETypes
+     *        The supported MIME types for the output data.
+     */
+
+    public void setSupportedResponseMIMETypes(java.util.Collection<String> supportedResponseMIMETypes) {
+        if (supportedResponseMIMETypes == null) {
+            this.supportedResponseMIMETypes = null;
+            return;
+        }
+
+        this.supportedResponseMIMETypes = new java.util.ArrayList<String>(supportedResponseMIMETypes);
+    }
+
+    /**
+     * <p>
+     * The supported MIME types for the output data.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSupportedResponseMIMETypes(java.util.Collection)} or
+     * {@link #withSupportedResponseMIMETypes(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param supportedResponseMIMETypes
+     *        The supported MIME types for the output data.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RecommendationJobContainerConfig withSupportedResponseMIMETypes(String... supportedResponseMIMETypes) {
+        if (this.supportedResponseMIMETypes == null) {
+            setSupportedResponseMIMETypes(new java.util.ArrayList<String>(supportedResponseMIMETypes.length));
+        }
+        for (String ele : supportedResponseMIMETypes) {
+            this.supportedResponseMIMETypes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The supported MIME types for the output data.
+     * </p>
+     * 
+     * @param supportedResponseMIMETypes
+     *        The supported MIME types for the output data.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RecommendationJobContainerConfig withSupportedResponseMIMETypes(java.util.Collection<String> supportedResponseMIMETypes) {
+        setSupportedResponseMIMETypes(supportedResponseMIMETypes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -573,7 +736,11 @@ public class RecommendationJobContainerConfig implements Serializable, Cloneable
         if (getSupportedInstanceTypes() != null)
             sb.append("SupportedInstanceTypes: ").append(getSupportedInstanceTypes()).append(",");
         if (getDataInputConfig() != null)
-            sb.append("DataInputConfig: ").append(getDataInputConfig());
+            sb.append("DataInputConfig: ").append(getDataInputConfig()).append(",");
+        if (getSupportedEndpointType() != null)
+            sb.append("SupportedEndpointType: ").append(getSupportedEndpointType()).append(",");
+        if (getSupportedResponseMIMETypes() != null)
+            sb.append("SupportedResponseMIMETypes: ").append(getSupportedResponseMIMETypes());
         sb.append("}");
         return sb.toString();
     }
@@ -620,6 +787,14 @@ public class RecommendationJobContainerConfig implements Serializable, Cloneable
             return false;
         if (other.getDataInputConfig() != null && other.getDataInputConfig().equals(this.getDataInputConfig()) == false)
             return false;
+        if (other.getSupportedEndpointType() == null ^ this.getSupportedEndpointType() == null)
+            return false;
+        if (other.getSupportedEndpointType() != null && other.getSupportedEndpointType().equals(this.getSupportedEndpointType()) == false)
+            return false;
+        if (other.getSupportedResponseMIMETypes() == null ^ this.getSupportedResponseMIMETypes() == null)
+            return false;
+        if (other.getSupportedResponseMIMETypes() != null && other.getSupportedResponseMIMETypes().equals(this.getSupportedResponseMIMETypes()) == false)
+            return false;
         return true;
     }
 
@@ -636,6 +811,8 @@ public class RecommendationJobContainerConfig implements Serializable, Cloneable
         hashCode = prime * hashCode + ((getNearestModelName() == null) ? 0 : getNearestModelName().hashCode());
         hashCode = prime * hashCode + ((getSupportedInstanceTypes() == null) ? 0 : getSupportedInstanceTypes().hashCode());
         hashCode = prime * hashCode + ((getDataInputConfig() == null) ? 0 : getDataInputConfig().hashCode());
+        hashCode = prime * hashCode + ((getSupportedEndpointType() == null) ? 0 : getSupportedEndpointType().hashCode());
+        hashCode = prime * hashCode + ((getSupportedResponseMIMETypes() == null) ? 0 : getSupportedResponseMIMETypes().hashCode());
         return hashCode;
     }
 

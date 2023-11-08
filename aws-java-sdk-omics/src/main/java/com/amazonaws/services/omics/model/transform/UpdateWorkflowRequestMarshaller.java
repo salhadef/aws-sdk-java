@@ -27,12 +27,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UpdateWorkflowRequestMarshaller {
 
-    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("id").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
 
     private static final UpdateWorkflowRequestMarshaller instance = new UpdateWorkflowRequestMarshaller();
 
@@ -50,9 +50,9 @@ public class UpdateWorkflowRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(updateWorkflowRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(updateWorkflowRequest.getId(), ID_BINDING);
             protocolMarshaller.marshall(updateWorkflowRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(updateWorkflowRequest.getDescription(), DESCRIPTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -29,6 +29,8 @@ public class DataSetImportTaskMarshaller {
 
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
+    private static final MarshallingInfo<String> STATUSREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("statusReason").build();
     private static final MarshallingInfo<StructuredPojo> SUMMARY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("summary").build();
     private static final MarshallingInfo<String> TASKID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -51,6 +53,7 @@ public class DataSetImportTaskMarshaller {
 
         try {
             protocolMarshaller.marshall(dataSetImportTask.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(dataSetImportTask.getStatusReason(), STATUSREASON_BINDING);
             protocolMarshaller.marshall(dataSetImportTask.getSummary(), SUMMARY_BINDING);
             protocolMarshaller.marshall(dataSetImportTask.getTaskId(), TASKID_BINDING);
         } catch (Exception e) {

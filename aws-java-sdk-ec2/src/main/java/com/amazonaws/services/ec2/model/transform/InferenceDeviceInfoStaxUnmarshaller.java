@@ -57,6 +57,11 @@ public class InferenceDeviceInfoStaxUnmarshaller implements Unmarshaller<Inferen
                     inferenceDeviceInfo.setManufacturer(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("memoryInfo", targetDepth)) {
+                    inferenceDeviceInfo.setMemoryInfo(InferenceDeviceMemoryInfoStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return inferenceDeviceInfo;

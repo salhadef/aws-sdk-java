@@ -495,6 +495,37 @@ public interface AWSSsmSapAsync extends AWSSsmSap {
 
     /**
      * <p>
+     * Refreshes a registered application.
+     * </p>
+     * 
+     * @param startApplicationRefreshRequest
+     * @return A Java Future containing the result of the StartApplicationRefresh operation returned by the service.
+     * @sample AWSSsmSapAsync.StartApplicationRefresh
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/StartApplicationRefresh"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartApplicationRefreshResult> startApplicationRefreshAsync(StartApplicationRefreshRequest startApplicationRefreshRequest);
+
+    /**
+     * <p>
+     * Refreshes a registered application.
+     * </p>
+     * 
+     * @param startApplicationRefreshRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartApplicationRefresh operation returned by the service.
+     * @sample AWSSsmSapAsyncHandler.StartApplicationRefresh
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/StartApplicationRefresh"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartApplicationRefreshResult> startApplicationRefreshAsync(StartApplicationRefreshRequest startApplicationRefreshRequest,
+            com.amazonaws.handlers.AsyncHandler<StartApplicationRefreshRequest, StartApplicationRefreshResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates tag for a resource by specifying the ARN.
      * </p>
      * 

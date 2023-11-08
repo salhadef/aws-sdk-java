@@ -14,15 +14,23 @@
  */
 package com.amazonaws.services.s3.model;
 
+import com.amazonaws.services.s3.internal.S3RequesterChargedResult;
+
 import java.io.Serializable;
 
 /**
  * Represents the accelerate configuration for a bucket.
  */
-public class BucketAccelerateConfiguration implements Serializable {
+public class BucketAccelerateConfiguration implements Serializable, S3RequesterChargedResult {
 
     /** The current accelerate configuration status */
     private String status;
+
+    /**
+     * Indicate if the requester is charged for conducting this operation from
+     * Requester Pays Buckets.
+     */
+    private boolean isRequesterCharged;
 
     /**
      * Creates a new bucket accelerate configuration object with the specified status.
@@ -101,5 +109,15 @@ public class BucketAccelerateConfiguration implements Serializable {
      */
     public boolean isAccelerateEnabled() {
         return BucketAccelerateStatus.Enabled.toString().equals(getStatus());
+    }
+
+    @Override
+    public boolean isRequesterCharged() {
+        return isRequesterCharged;
+    }
+
+    @Override
+    public void setRequesterCharged(boolean isRequesterCharged) {
+        this.isRequesterCharged = isRequesterCharged;
     }
 }

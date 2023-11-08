@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum WorkflowEngine {
 
     WDL("WDL"),
-    NEXTFLOW("NEXTFLOW");
+    NEXTFLOW("NEXTFLOW"),
+    CWL("CWL");
 
     private String value;
 

@@ -21,6 +21,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * The overrides that should be sent to a container.
  * </p>
+ * <p>
+ * For information about using Batch overrides when you connect event sources to targets, see <a
+ * href="https://docs.aws.amazon.com/eventbridge/latest/pipes-reference/API_BatchContainerOverrides.html"
+ * >BatchContainerOverrides</a>.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ContainerOverrides" target="_top">AWS API
  *      Documentation</a>
@@ -64,6 +69,11 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
      * The command to send to the container that overrides the default command from the Docker image or the job
      * definition.
      * </p>
+     * <note>
+     * <p>
+     * This parameter can't contain an empty string.
+     * </p>
+     * </note>
      */
     private java.util.List<String> command;
     /**
@@ -290,9 +300,17 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
      * The command to send to the container that overrides the default command from the Docker image or the job
      * definition.
      * </p>
+     * <note>
+     * <p>
+     * This parameter can't contain an empty string.
+     * </p>
+     * </note>
      * 
      * @return The command to send to the container that overrides the default command from the Docker image or the job
-     *         definition.
+     *         definition.</p> <note>
+     *         <p>
+     *         This parameter can't contain an empty string.
+     *         </p>
      */
 
     public java.util.List<String> getCommand() {
@@ -304,10 +322,18 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
      * The command to send to the container that overrides the default command from the Docker image or the job
      * definition.
      * </p>
+     * <note>
+     * <p>
+     * This parameter can't contain an empty string.
+     * </p>
+     * </note>
      * 
      * @param command
      *        The command to send to the container that overrides the default command from the Docker image or the job
-     *        definition.
+     *        definition.</p> <note>
+     *        <p>
+     *        This parameter can't contain an empty string.
+     *        </p>
      */
 
     public void setCommand(java.util.Collection<String> command) {
@@ -324,6 +350,11 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
      * The command to send to the container that overrides the default command from the Docker image or the job
      * definition.
      * </p>
+     * <note>
+     * <p>
+     * This parameter can't contain an empty string.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setCommand(java.util.Collection)} or {@link #withCommand(java.util.Collection)} if you want to override
@@ -332,7 +363,10 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
      * 
      * @param command
      *        The command to send to the container that overrides the default command from the Docker image or the job
-     *        definition.
+     *        definition.</p> <note>
+     *        <p>
+     *        This parameter can't contain an empty string.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -351,10 +385,18 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
      * The command to send to the container that overrides the default command from the Docker image or the job
      * definition.
      * </p>
+     * <note>
+     * <p>
+     * This parameter can't contain an empty string.
+     * </p>
+     * </note>
      * 
      * @param command
      *        The command to send to the container that overrides the default command from the Docker image or the job
-     *        definition.
+     *        definition.</p> <note>
+     *        <p>
+     *        This parameter can't contain an empty string.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

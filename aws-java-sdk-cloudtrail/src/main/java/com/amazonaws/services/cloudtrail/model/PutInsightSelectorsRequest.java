@@ -34,7 +34,15 @@ public class PutInsightSelectorsRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * A JSON string that contains the insight types you want to log on a trail. <code>ApiCallRateInsight</code> and
-     * <code>ApiErrorRateInsight</code> are valid insight types.
+     * <code>ApiErrorRateInsight</code> are valid Insight types.
+     * </p>
+     * <p>
+     * The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are aggregated
+     * per minute against a baseline API call volume.
+     * </p>
+     * <p>
+     * The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error codes. The
+     * error is shown if the API call is unsuccessful.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InsightSelector> insightSelectors;
@@ -82,11 +90,26 @@ public class PutInsightSelectorsRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * A JSON string that contains the insight types you want to log on a trail. <code>ApiCallRateInsight</code> and
-     * <code>ApiErrorRateInsight</code> are valid insight types.
+     * <code>ApiErrorRateInsight</code> are valid Insight types.
+     * </p>
+     * <p>
+     * The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are aggregated
+     * per minute against a baseline API call volume.
+     * </p>
+     * <p>
+     * The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error codes. The
+     * error is shown if the API call is unsuccessful.
      * </p>
      * 
      * @return A JSON string that contains the insight types you want to log on a trail. <code>ApiCallRateInsight</code>
-     *         and <code>ApiErrorRateInsight</code> are valid insight types.
+     *         and <code>ApiErrorRateInsight</code> are valid Insight types.</p>
+     *         <p>
+     *         The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are
+     *         aggregated per minute against a baseline API call volume.
+     *         </p>
+     *         <p>
+     *         The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error
+     *         codes. The error is shown if the API call is unsuccessful.
      */
 
     public java.util.List<InsightSelector> getInsightSelectors() {
@@ -99,12 +122,27 @@ public class PutInsightSelectorsRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * A JSON string that contains the insight types you want to log on a trail. <code>ApiCallRateInsight</code> and
-     * <code>ApiErrorRateInsight</code> are valid insight types.
+     * <code>ApiErrorRateInsight</code> are valid Insight types.
+     * </p>
+     * <p>
+     * The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are aggregated
+     * per minute against a baseline API call volume.
+     * </p>
+     * <p>
+     * The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error codes. The
+     * error is shown if the API call is unsuccessful.
      * </p>
      * 
      * @param insightSelectors
      *        A JSON string that contains the insight types you want to log on a trail. <code>ApiCallRateInsight</code>
-     *        and <code>ApiErrorRateInsight</code> are valid insight types.
+     *        and <code>ApiErrorRateInsight</code> are valid Insight types.</p>
+     *        <p>
+     *        The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are
+     *        aggregated per minute against a baseline API call volume.
+     *        </p>
+     *        <p>
+     *        The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error
+     *        codes. The error is shown if the API call is unsuccessful.
      */
 
     public void setInsightSelectors(java.util.Collection<InsightSelector> insightSelectors) {
@@ -119,7 +157,15 @@ public class PutInsightSelectorsRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * A JSON string that contains the insight types you want to log on a trail. <code>ApiCallRateInsight</code> and
-     * <code>ApiErrorRateInsight</code> are valid insight types.
+     * <code>ApiErrorRateInsight</code> are valid Insight types.
+     * </p>
+     * <p>
+     * The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are aggregated
+     * per minute against a baseline API call volume.
+     * </p>
+     * <p>
+     * The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error codes. The
+     * error is shown if the API call is unsuccessful.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -129,7 +175,14 @@ public class PutInsightSelectorsRequest extends com.amazonaws.AmazonWebServiceRe
      * 
      * @param insightSelectors
      *        A JSON string that contains the insight types you want to log on a trail. <code>ApiCallRateInsight</code>
-     *        and <code>ApiErrorRateInsight</code> are valid insight types.
+     *        and <code>ApiErrorRateInsight</code> are valid Insight types.</p>
+     *        <p>
+     *        The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are
+     *        aggregated per minute against a baseline API call volume.
+     *        </p>
+     *        <p>
+     *        The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error
+     *        codes. The error is shown if the API call is unsuccessful.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -146,12 +199,27 @@ public class PutInsightSelectorsRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * A JSON string that contains the insight types you want to log on a trail. <code>ApiCallRateInsight</code> and
-     * <code>ApiErrorRateInsight</code> are valid insight types.
+     * <code>ApiErrorRateInsight</code> are valid Insight types.
+     * </p>
+     * <p>
+     * The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are aggregated
+     * per minute against a baseline API call volume.
+     * </p>
+     * <p>
+     * The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error codes. The
+     * error is shown if the API call is unsuccessful.
      * </p>
      * 
      * @param insightSelectors
      *        A JSON string that contains the insight types you want to log on a trail. <code>ApiCallRateInsight</code>
-     *        and <code>ApiErrorRateInsight</code> are valid insight types.
+     *        and <code>ApiErrorRateInsight</code> are valid Insight types.</p>
+     *        <p>
+     *        The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are
+     *        aggregated per minute against a baseline API call volume.
+     *        </p>
+     *        <p>
+     *        The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error
+     *        codes. The error is shown if the API call is unsuccessful.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -16,8 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * Specify the strength of any adaptive quantization filters that you enable. The value that you choose here applies to
- * the following settings: Spatial adaptive quantization (spatialAdaptiveQuantization), and Temporal adaptive
- * quantization (temporalAdaptiveQuantization).
+ * the following settings: Spatial adaptive quantization, and Temporal adaptive quantization.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Mpeg2AdaptiveQuantization {

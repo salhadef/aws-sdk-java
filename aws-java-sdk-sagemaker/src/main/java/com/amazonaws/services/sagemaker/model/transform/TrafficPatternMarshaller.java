@@ -32,6 +32,8 @@ public class TrafficPatternMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TrafficType").build();
     private static final MarshallingInfo<List> PHASES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Phases").build();
+    private static final MarshallingInfo<StructuredPojo> STAIRS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Stairs").build();
 
     private static final TrafficPatternMarshaller instance = new TrafficPatternMarshaller();
 
@@ -51,6 +53,7 @@ public class TrafficPatternMarshaller {
         try {
             protocolMarshaller.marshall(trafficPattern.getTrafficType(), TRAFFICTYPE_BINDING);
             protocolMarshaller.marshall(trafficPattern.getPhases(), PHASES_BINDING);
+            protocolMarshaller.marshall(trafficPattern.getStairs(), STAIRS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

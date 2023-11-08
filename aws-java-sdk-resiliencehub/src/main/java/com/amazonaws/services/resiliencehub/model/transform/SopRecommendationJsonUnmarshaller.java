@@ -74,6 +74,10 @@ public class SopRecommendationJsonUnmarshaller implements Unmarshaller<SopRecomm
                     context.nextToken();
                     sopRecommendation.setRecommendationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("recommendationStatus", targetDepth)) {
+                    context.nextToken();
+                    sopRecommendation.setRecommendationStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("referenceId", targetDepth)) {
                     context.nextToken();
                     sopRecommendation.setReferenceId(context.getUnmarshaller(String.class).unmarshall(context));

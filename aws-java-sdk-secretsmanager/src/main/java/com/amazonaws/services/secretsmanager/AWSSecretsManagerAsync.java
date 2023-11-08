@@ -1442,44 +1442,10 @@ public interface AWSSecretsManagerAsync extends AWSSecretsManager {
      * tags.
      * </p>
      * <p>
-     * The following restrictions apply to tags:
+     * For tag quotas and naming restrictions, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/arg.html#taged-reference-quotas">Service quotas for
+     * Tagging</a> in the <i>Amazon Web Services General Reference guide</i>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Maximum number of tags per secret: 50
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Maximum key length: 127 Unicode characters in UTF-8
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Maximum value length: 255 Unicode characters in UTF-8
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Tag keys and values are case sensitive.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Do not use the <code>aws:</code> prefix in your tag names or values because Amazon Web Services reserves it for
-     * Amazon Web Services use. You can't edit or delete tag names or values with this prefix. Tags with this prefix do
-     * not count against your tags per secret limit.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If you use your tagging schema across multiple services and resources, other services might have restrictions on
-     * allowed characters. Generally allowed characters: letters, spaces, and numbers representable in UTF-8, plus the
-     * following special characters: + - = . _ : / @.
-     * </p>
-     * </li>
-     * </ul>
      * <important>
      * <p>
      * If you use tags as part of your security strategy, then adding or removing a tag can change permissions. If
@@ -1516,44 +1482,10 @@ public interface AWSSecretsManagerAsync extends AWSSecretsManager {
      * tags.
      * </p>
      * <p>
-     * The following restrictions apply to tags:
+     * For tag quotas and naming restrictions, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/arg.html#taged-reference-quotas">Service quotas for
+     * Tagging</a> in the <i>Amazon Web Services General Reference guide</i>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Maximum number of tags per secret: 50
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Maximum key length: 127 Unicode characters in UTF-8
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Maximum value length: 255 Unicode characters in UTF-8
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Tag keys and values are case sensitive.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Do not use the <code>aws:</code> prefix in your tag names or values because Amazon Web Services reserves it for
-     * Amazon Web Services use. You can't edit or delete tag names or values with this prefix. Tags with this prefix do
-     * not count against your tags per secret limit.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If you use your tagging schema across multiple services and resources, other services might have restrictions on
-     * allowed characters. Generally allowed characters: letters, spaces, and numbers representable in UTF-8, plus the
-     * following special characters: + - = . _ : / @.
-     * </p>
-     * </li>
-     * </ul>
      * <important>
      * <p>
      * If you use tags as part of your security strategy, then adding or removing a tag can change permissions. If
@@ -1711,8 +1643,10 @@ public interface AWSSecretsManagerAsync extends AWSSecretsManager {
      * > IAM policy actions for Secrets Manager</a> and <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access
      * control in Secrets Manager</a>. If you use a customer managed key, you must also have
-     * <code>kms:GenerateDataKey</code> and <code>kms:Decrypt</code> permissions on the key. For more information, see
-     * <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/security-encryption.html"> Secret encryption
+     * <code>kms:GenerateDataKey</code>, <code>kms:Encrypt</code>, and <code>kms:Decrypt</code> permissions on the key.
+     * If you change the KMS key and you don't have <code>kms:Encrypt</code> permission to the new key, Secrets Manager
+     * does not re-ecrypt existing secret versions with the new key. For more information, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/security-encryption.html"> Secret encryption
      * and decryption</a>.
      * </p>
      * 
@@ -1768,8 +1702,10 @@ public interface AWSSecretsManagerAsync extends AWSSecretsManager {
      * > IAM policy actions for Secrets Manager</a> and <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access
      * control in Secrets Manager</a>. If you use a customer managed key, you must also have
-     * <code>kms:GenerateDataKey</code> and <code>kms:Decrypt</code> permissions on the key. For more information, see
-     * <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/security-encryption.html"> Secret encryption
+     * <code>kms:GenerateDataKey</code>, <code>kms:Encrypt</code>, and <code>kms:Decrypt</code> permissions on the key.
+     * If you change the KMS key and you don't have <code>kms:Encrypt</code> permission to the new key, Secrets Manager
+     * does not re-ecrypt existing secret versions with the new key. For more information, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/security-encryption.html"> Secret encryption
      * and decryption</a>.
      * </p>
      * 

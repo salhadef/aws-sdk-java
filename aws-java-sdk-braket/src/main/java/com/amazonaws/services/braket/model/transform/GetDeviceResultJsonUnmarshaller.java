@@ -61,6 +61,12 @@ public class GetDeviceResultJsonUnmarshaller implements Unmarshaller<GetDeviceRe
                     context.nextToken();
                     getDeviceResult.setDeviceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("deviceQueueInfo", targetDepth)) {
+                    context.nextToken();
+                    getDeviceResult.setDeviceQueueInfo(new ListUnmarshaller<DeviceQueueInfo>(DeviceQueueInfoJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("deviceStatus", targetDepth)) {
                     context.nextToken();
                     getDeviceResult.setDeviceStatus(context.getUnmarshaller(String.class).unmarshall(context));

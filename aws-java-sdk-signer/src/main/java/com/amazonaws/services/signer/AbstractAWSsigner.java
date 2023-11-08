@@ -44,6 +44,11 @@ public class AbstractAWSsigner implements AWSsigner {
     }
 
     @Override
+    public GetRevocationStatusResult getRevocationStatus(GetRevocationStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetSigningPlatformResult getSigningPlatform(GetSigningPlatformRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -95,6 +100,11 @@ public class AbstractAWSsigner implements AWSsigner {
 
     @Override
     public RevokeSigningProfileResult revokeSigningProfile(RevokeSigningProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public SignPayloadResult signPayload(SignPayloadRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

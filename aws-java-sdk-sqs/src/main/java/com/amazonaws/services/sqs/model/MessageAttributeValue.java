@@ -14,6 +14,8 @@ package com.amazonaws.services.sqs.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -23,14 +25,14 @@ import javax.annotation.Generated;
  * <p>
  * <code>Name</code>, <code>type</code>, <code>value</code> and the message body must not be empty or null. All parts of
  * the message attribute, including <code>Name</code>, <code>Type</code>, and <code>Value</code>, are part of the
- * message size restriction (256 KB or 262,144 bytes).
+ * message size restriction (256 KiB or 262,144 bytes).
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/MessageAttributeValue" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MessageAttributeValue implements Serializable, Cloneable {
+public class MessageAttributeValue implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -483,4 +485,9 @@ public class MessageAttributeValue implements Serializable, Cloneable {
         }
     }
 
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.sqs.model.transform.MessageAttributeValueMarshaller.getInstance().marshall(this, protocolMarshaller);
+    }
 }

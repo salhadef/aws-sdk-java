@@ -257,6 +257,12 @@ public interface AmazonRDS {
      *         specified Amazon Web Services Region.
      * @throws BlueGreenDeploymentNotFoundException
      *         <code>BlueGreenDeploymentIdentifier</code> doesn't refer to an existing blue/green deployment.
+     * @throws IntegrationNotFoundException
+     *         The specified integration could not be found.
+     * @throws TenantDatabaseNotFoundException
+     *         The specified tenant database wasn't found in the DB instance.
+     * @throws DBSnapshotTenantDatabaseNotFoundException
+     *         The specified snapshot tenant database wasn't found.
      * @sample AmazonRDS.AddTagsToResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddTagsToResource" target="_top">AWS API
      *      Documentation</a>
@@ -869,7 +875,7 @@ public interface AmazonRDS {
      * @throws DBClusterNotFoundException
      *         <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
      * @throws StorageTypeNotSupportedException
-     *         Storage of the <code>StorageType</code> specified can't be associated with the DB instance.
+     *         The specified <code>StorageType</code> can't be associated with the DB instance.
      * @throws AuthorizationNotFoundException
      *         The specified CIDR IP range or Amazon EC2 security group might not be authorized for the specified DB
      *         security group.</p>
@@ -885,6 +891,8 @@ public interface AmazonRDS {
      *         <code>DUAL</code>.
      * @throws CertificateNotFoundException
      *         <code>CertificateIdentifier</code> doesn't refer to an existing certificate.
+     * @throws TenantDatabaseQuotaExceededException
+     *         You attempted to create more tenant databases than are permitted in your Amazon Web Services account.
      * @sample AmazonRDS.CreateDBInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstance" target="_top">AWS API
      *      Documentation</a>
@@ -903,8 +911,8 @@ public interface AmazonRDS {
      * Guide</i>.
      * </p>
      * <p>
-     * Amazon Aurora doesn't support this operation. Call the <code>CreateDBInstance</code> operation to create a DB
-     * instance for an Aurora DB cluster.
+     * Amazon Aurora doesn't support this operation. To create a DB instance for an Aurora DB cluster, use the
+     * <code>CreateDBInstance</code> operation.
      * </p>
      * <p>
      * All read replica DB instances are created with backups disabled. All other attributes (including DB security
@@ -959,7 +967,7 @@ public interface AmazonRDS {
      *         The DBSubnetGroup doesn't belong to the same VPC as that of an existing cross-region read replica of the
      *         same source instance.
      * @throws StorageTypeNotSupportedException
-     *         Storage of the <code>StorageType</code> specified can't be associated with the DB instance.
+     *         The specified <code>StorageType</code> can't be associated with the DB instance.
      * @throws KMSKeyNotAccessibleException
      *         An error occurred accessing an Amazon Web Services KMS key.
      * @throws DomainNotFoundException
@@ -967,6 +975,8 @@ public interface AmazonRDS {
      * @throws NetworkTypeNotSupportedException
      *         The network type is invalid for the DB instance. Valid nework type values are <code>IPV4</code> and
      *         <code>DUAL</code>.
+     * @throws TenantDatabaseQuotaExceededException
+     *         You attempted to create more tenant databases than are permitted in your Amazon Web Services account.
      * @sample AmazonRDS.CreateDBInstanceReadReplica
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstanceReadReplica"
      *      target="_top">AWS API Documentation</a>
@@ -1202,13 +1212,13 @@ public interface AmazonRDS {
      * data from the primary cluster through high-speed replication performed by the Aurora storage subsystem.
      * </p>
      * <p>
-     * You can create a global database that is initially empty, and then add a primary cluster and a secondary cluster
-     * to it. Or you can specify an existing Aurora cluster during the create operation, and this cluster becomes the
-     * primary cluster of the global database.
+     * You can create a global database that is initially empty, and then create the primary and secondary DB clusters
+     * in the global database. Or you can specify an existing Aurora cluster during the create operation, and this
+     * cluster becomes the primary cluster of the global database.
      * </p>
      * <note>
      * <p>
-     * This action applies only to Aurora DB clusters.
+     * This operation applies only to Aurora DB clusters.
      * </p>
      * </note>
      * 
@@ -1228,6 +1238,35 @@ public interface AmazonRDS {
      *      Documentation</a>
      */
     GlobalCluster createGlobalCluster(CreateGlobalClusterRequest createGlobalClusterRequest);
+
+    /**
+     * <p>
+     * Creates a zero-ETL integration with Amazon Redshift. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.html">Working with Amazon Aurora
+     * zero-ETL integrations with Amazon Redshift</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * 
+     * @param createIntegrationRequest
+     * @return Result of the CreateIntegration operation returned by the service.
+     * @throws DBClusterNotFoundException
+     *         <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+     * @throws DBInstanceNotFoundException
+     *         <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+     * @throws IntegrationAlreadyExistsException
+     *         The integration you are trying to create already exists.
+     * @throws IntegrationQuotaExceededException
+     *         You can't crate any more zero-ETL integrations because the quota has been reached.
+     * @throws KMSKeyNotAccessibleException
+     *         An error occurred accessing an Amazon Web Services KMS key.
+     * @throws IntegrationConflictOperationException
+     *         A conflicting conditional operation is currently in progress against this resource. Typically occurs when
+     *         there are multiple requests being made to the same resource at the same time, and these requests conflict
+     *         with each other.
+     * @sample AmazonRDS.CreateIntegration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateIntegration" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateIntegrationResult createIntegration(CreateIntegrationRequest createIntegrationRequest);
 
     /**
      * <p>
@@ -1251,13 +1290,36 @@ public interface AmazonRDS {
 
     /**
      * <p>
+     * Creates a tenant database in a DB instance that uses the multi-tenant configuration. Only RDS for Oracle
+     * container database (CDB) instances are supported.
+     * </p>
+     * 
+     * @param createTenantDatabaseRequest
+     * @return Result of the CreateTenantDatabase operation returned by the service.
+     * @throws DBInstanceNotFoundException
+     *         <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+     * @throws InvalidDBInstanceStateException
+     *         The DB instance isn't in a valid state.
+     * @throws TenantDatabaseAlreadyExistsException
+     *         You attempted to either create a tenant database that already exists or modify a tenant database to use
+     *         the name of an existing tenant database.
+     * @throws TenantDatabaseQuotaExceededException
+     *         You attempted to create more tenant databases than are permitted in your Amazon Web Services account.
+     * @sample AmazonRDS.CreateTenantDatabase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateTenantDatabase" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TenantDatabase createTenantDatabase(CreateTenantDatabaseRequest createTenantDatabaseRequest);
+
+    /**
+     * <p>
      * Deletes a blue/green deployment.
      * </p>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS
      * Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">Using Amazon RDS
      * Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * 
@@ -1354,11 +1416,33 @@ public interface AmazonRDS {
      *         The request would result in the user exceeding the allowed number of DB snapshots.
      * @throws InvalidDBClusterSnapshotStateException
      *         The supplied value isn't a valid DB cluster snapshot state.
+     * @throws DBClusterAutomatedBackupQuotaExceededException
+     *         The quota for retained automated backups was exceeded. This prevents you from retaining any additional
+     *         automated backups. The retained automated backups quota is the same as your DB cluster quota.
      * @sample AmazonRDS.DeleteDBCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBCluster" target="_top">AWS API
      *      Documentation</a>
      */
     DBCluster deleteDBCluster(DeleteDBClusterRequest deleteDBClusterRequest);
+
+    /**
+     * <p>
+     * Deletes automated backups using the <code>DbClusterResourceId</code> value of the source DB cluster or the Amazon
+     * Resource Name (ARN) of the automated backups.
+     * </p>
+     * 
+     * @param deleteDBClusterAutomatedBackupRequest
+     * @return Result of the DeleteDBClusterAutomatedBackup operation returned by the service.
+     * @throws InvalidDBClusterAutomatedBackupStateException
+     *         The automated backup is in an invalid state. For example, this automated backup is associated with an
+     *         active cluster.
+     * @throws DBClusterAutomatedBackupNotFoundException
+     *         No automated backup for this DB cluster was found.
+     * @sample AmazonRDS.DeleteDBClusterAutomatedBackup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterAutomatedBackup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DBClusterAutomatedBackup deleteDBClusterAutomatedBackup(DeleteDBClusterAutomatedBackupRequest deleteDBClusterAutomatedBackupRequest);
 
     /**
      * <p>
@@ -1447,14 +1531,13 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * The DeleteDBInstance action deletes a previously provisioned DB instance. When you delete a DB instance, all
-     * automated backups for that instance are deleted and can't be recovered. Manual DB snapshots of the DB instance to
-     * be deleted by <code>DeleteDBInstance</code> are not deleted.
+     * Deletes a previously provisioned DB instance. When you delete a DB instance, all automated backups for that
+     * instance are deleted and can't be recovered. However, manual DB snapshots of the DB instance aren't deleted.
      * </p>
      * <p>
-     * If you request a final DB snapshot the status of the Amazon RDS DB instance is <code>deleting</code> until the DB
-     * snapshot is created. The API action <code>DescribeDBInstance</code> is used to monitor the status of this
-     * operation. The action can't be canceled or reverted once submitted.
+     * If you request a final DB snapshot, the status of the Amazon RDS DB instance is <code>deleting</code> until the
+     * DB snapshot is created. This operation can't be canceled or reverted after it begins. To monitor the status of
+     * this operation, use <code>DescribeDBInstance</code>.
      * </p>
      * <p>
      * When a DB instance is in a failure state and has a status of <code>failed</code>,
@@ -1478,10 +1561,17 @@ public interface AmazonRDS {
      * </li>
      * </ul>
      * <p>
-     * To delete a DB instance in this case, first call the <code>PromoteReadReplicaDBCluster</code> API action to
-     * promote the DB cluster so it's no longer a read replica. After the promotion completes, then call the
-     * <code>DeleteDBInstance</code> API action to delete the final instance in the DB cluster.
+     * To delete a DB instance in this case, first use the <code>PromoteReadReplicaDBCluster</code> operation to promote
+     * the DB cluster so that it's no longer a read replica. After the promotion completes, use the
+     * <code>DeleteDBInstance</code> operation to delete the final instance in the DB cluster.
      * </p>
+     * <important>
+     * <p>
+     * For RDS Custom DB instances, deleting the DB instance permanently deletes the EC2 instance and the associated EBS
+     * volumes. Make sure that you don't terminate or delete these resources before you delete the DB instance.
+     * Otherwise, deleting the DB instance and creation of the final snapshot might fail.
+     * </p>
+     * </important>
      * 
      * @param deleteDBInstanceRequest
      * @return Result of the DeleteDBInstance operation returned by the service.
@@ -1497,7 +1587,7 @@ public interface AmazonRDS {
      *         The requested operation can't be performed while the cluster is in this state.
      * @throws DBInstanceAutomatedBackupQuotaExceededException
      *         The quota for retained automated backups was exceeded. This prevents you from retaining any additional
-     *         automated backups. The retained automated backups quota is the same as your DB Instance quota.
+     *         automated backups. The retained automated backups quota is the same as your DB instance quota.
      * @sample AmazonRDS.DeleteDBInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBInstance" target="_top">AWS API
      *      Documentation</a>
@@ -1700,6 +1790,29 @@ public interface AmazonRDS {
 
     /**
      * <p>
+     * Deletes a zero-ETL integration with Amazon Redshift. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.deleting.html">Deleting Amazon Aurora
+     * zero-ETL integrations with Amazon Redshift</a> in the <i>Amazon Aurora User Guide</i>
+     * </p>
+     * 
+     * @param deleteIntegrationRequest
+     * @return Result of the DeleteIntegration operation returned by the service.
+     * @throws IntegrationNotFoundException
+     *         The specified integration could not be found.
+     * @throws IntegrationConflictOperationException
+     *         A conflicting conditional operation is currently in progress against this resource. Typically occurs when
+     *         there are multiple requests being made to the same resource at the same time, and these requests conflict
+     *         with each other.
+     * @throws InvalidIntegrationStateException
+     *         The integration is in an invalid state and can't perform the requested operation.
+     * @sample AmazonRDS.DeleteIntegration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteIntegration" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteIntegrationResult deleteIntegration(DeleteIntegrationRequest deleteIntegrationRequest);
+
+    /**
+     * <p>
      * Deletes an existing option group.
      * </p>
      * 
@@ -1714,6 +1827,29 @@ public interface AmazonRDS {
      *      Documentation</a>
      */
     DeleteOptionGroupResult deleteOptionGroup(DeleteOptionGroupRequest deleteOptionGroupRequest);
+
+    /**
+     * <p>
+     * Deletes a tenant database from your DB instance. This command only applies to RDS for Oracle container database
+     * (CDB) instances.
+     * </p>
+     * <p>
+     * You can't delete a tenant database when it is the only tenant in the DB instance.
+     * </p>
+     * 
+     * @param deleteTenantDatabaseRequest
+     * @return Result of the DeleteTenantDatabase operation returned by the service.
+     * @throws DBInstanceNotFoundException
+     *         <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+     * @throws TenantDatabaseNotFoundException
+     *         The specified tenant database wasn't found in the DB instance.
+     * @throws InvalidDBInstanceStateException
+     *         The DB instance isn't in a valid state.
+     * @sample AmazonRDS.DeleteTenantDatabase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteTenantDatabase" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TenantDatabase deleteTenantDatabase(DeleteTenantDatabaseRequest deleteTenantDatabaseRequest);
 
     /**
      * <p>
@@ -1767,7 +1903,7 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * Returns information about blue/green deployments.
+     * Describes one or more blue/green deployments.
      * </p>
      * <p>
      * For more information, see <a
@@ -1789,7 +1925,8 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * Lists the set of CA certificates provided by Amazon RDS for this Amazon Web Services account.
+     * Lists the set of certificate authority (CA) certificates provided by Amazon RDS for this Amazon Web Services
+     * account.
      * </p>
      * <p>
      * For more information, see <a
@@ -1815,6 +1952,26 @@ public interface AmazonRDS {
      * @see #describeCertificates(DescribeCertificatesRequest)
      */
     DescribeCertificatesResult describeCertificates();
+
+    /**
+     * <p>
+     * Displays backups for both current and deleted DB clusters. For example, use this operation to find details about
+     * automated backups for previously deleted clusters. Current clusters are returned for both the
+     * <code>DescribeDBClusterAutomatedBackups</code> and <code>DescribeDBClusters</code> operations.
+     * </p>
+     * <p>
+     * All parameters are optional.
+     * </p>
+     * 
+     * @param describeDBClusterAutomatedBackupsRequest
+     * @return Result of the DescribeDBClusterAutomatedBackups operation returned by the service.
+     * @throws DBClusterAutomatedBackupNotFoundException
+     *         No automated backup for this DB cluster was found.
+     * @sample AmazonRDS.DescribeDBClusterAutomatedBackups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterAutomatedBackups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeDBClusterAutomatedBackupsResult describeDBClusterAutomatedBackups(DescribeDBClusterAutomatedBackupsRequest describeDBClusterAutomatedBackupsRequest);
 
     /**
      * <p>
@@ -1983,7 +2140,7 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * Returns information about Amazon Aurora DB clusters and Multi-AZ DB clusters. This API supports pagination.
+     * Describes existing Amazon Aurora DB clusters and Multi-AZ DB clusters. This API supports pagination.
      * </p>
      * <p>
      * For more information on Amazon Aurora DB clusters, see <a
@@ -2018,7 +2175,7 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * Returns a list of the available DB engines.
+     * Describes the properties of specific versions of DB engines.
      * </p>
      * 
      * @param describeDBEngineVersionsRequest
@@ -2061,7 +2218,7 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * Returns information about provisioned RDS instances. This API supports pagination.
+     * Describes provisioned RDS instances. This API supports pagination.
      * </p>
      * <note>
      * <p>
@@ -2291,6 +2448,27 @@ public interface AmazonRDS {
 
     /**
      * <p>
+     * Describes the tenant databases that exist in a DB snapshot. This command only applies to RDS for Oracle DB
+     * instances in the multi-tenant configuration.
+     * </p>
+     * <p>
+     * You can use this command to inspect the tenant databases within a snapshot before restoring it. You can't
+     * directly interact with the tenant databases in a DB snapshot. If you restore a snapshot that was taken from DB
+     * instance using the multi-tenant configuration, you restore all its tenant databases.
+     * </p>
+     * 
+     * @param describeDBSnapshotTenantDatabasesRequest
+     * @return Result of the DescribeDBSnapshotTenantDatabases operation returned by the service.
+     * @throws DBSnapshotNotFoundException
+     *         <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
+     * @sample AmazonRDS.DescribeDBSnapshotTenantDatabases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSnapshotTenantDatabases"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeDBSnapshotTenantDatabasesResult describeDBSnapshotTenantDatabases(DescribeDBSnapshotTenantDatabasesRequest describeDBSnapshotTenantDatabasesRequest);
+
+    /**
+     * <p>
      * Returns information about DB snapshots. This API action supports pagination.
      * </p>
      * 
@@ -2498,6 +2676,24 @@ public interface AmazonRDS {
 
     /**
      * <p>
+     * Describe one or more zero-ETL integration with Amazon Redshift. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.describingmonitoring.html">Viewing
+     * and monitoring Amazon Aurora zero-ETL integrations with Amazon Redshift</a> in the <i>Amazon Aurora User
+     * Guide</i>
+     * </p>
+     * 
+     * @param describeIntegrationsRequest
+     * @return Result of the DescribeIntegrations operation returned by the service.
+     * @throws IntegrationNotFoundException
+     *         The specified integration could not be found.
+     * @sample AmazonRDS.DescribeIntegrations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeIntegrations" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeIntegrationsResult describeIntegrations(DescribeIntegrationsRequest describeIntegrationsRequest);
+
+    /**
+     * <p>
      * Describes all available options.
      * </p>
      * 
@@ -2639,6 +2835,22 @@ public interface AmazonRDS {
 
     /**
      * <p>
+     * Describes the tenant databases in a DB instance that uses the multi-tenant configuration. Only RDS for Oracle CDB
+     * instances are supported.
+     * </p>
+     * 
+     * @param describeTenantDatabasesRequest
+     * @return Result of the DescribeTenantDatabases operation returned by the service.
+     * @throws DBInstanceNotFoundException
+     *         <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+     * @sample AmazonRDS.DescribeTenantDatabases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeTenantDatabases" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeTenantDatabasesResult describeTenantDatabases(DescribeTenantDatabasesRequest describeTenantDatabasesRequest);
+
+    /**
+     * <p>
      * You can call <code>DescribeValidDBInstanceModifications</code> to learn what modifications you can make to your
      * DB instance. You can use this information when you call <code>ModifyDBInstance</code>.
      * </p>
@@ -2735,26 +2947,69 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * Initiates the failover process for an Aurora global database (<a>GlobalCluster</a>).
-     * </p>
-     * <p>
-     * A failover for an Aurora global database promotes one of secondary read-only DB clusters to be the primary DB
-     * cluster and demotes the primary DB cluster to being a secondary (read-only) DB cluster. In other words, the role
-     * of the current primary DB cluster and the selected (target) DB cluster are switched. The selected secondary DB
-     * cluster assumes full read/write capabilities for the Aurora global database.
-     * </p>
-     * <p>
-     * For more information about failing over an Amazon Aurora global database, see <a href=
-     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html#aurora-global-database-disaster-recovery.managed-failover"
-     * >Managed planned failover for Amazon Aurora global databases</a> in the <i>Amazon Aurora User Guide</i>.
+     * Promotes the specified secondary DB cluster to be the primary DB cluster in the global database cluster to fail
+     * over or switch over a global database. Switchover operations were previously called "managed planned failovers."
      * </p>
      * <note>
      * <p>
-     * This action applies to <a>GlobalCluster</a> (Aurora global databases) only. Use this action only on healthy
-     * Aurora global databases with running Aurora DB clusters and no Region-wide outages, to test disaster recovery
-     * scenarios or to reconfigure your Aurora global database topology.
+     * Although this operation can be used either to fail over or to switch over a global database cluster, its intended
+     * use is for global database failover. To switch over a global database cluster, we recommend that you use the
+     * <a>SwitchoverGlobalCluster</a> operation instead.
      * </p>
      * </note>
+     * <p>
+     * How you use this operation depends on whether you are failing over or switching over your global database
+     * cluster:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Failing over - Specify the <code>AllowDataLoss</code> parameter and don't specify the <code>Switchover</code>
+     * parameter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Switching over - Specify the <code>Switchover</code> parameter or omit it, but don't specify the
+     * <code>AllowDataLoss</code> parameter.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>About failing over and switching over</b>
+     * </p>
+     * <p>
+     * While failing over and switching over a global database cluster both change the primary DB cluster, you use these
+     * operations for different reasons:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <i>Failing over</i> - Use this operation to respond to an unplanned event, such as a Regional disaster in the
+     * primary Region. Failing over can result in a loss of write transaction data that wasn't replicated to the chosen
+     * secondary before the failover event occurred. However, the recovery process that promotes a DB instance on the
+     * chosen seconday DB cluster to be the primary writer DB instance guarantees that the data is in a transactionally
+     * consistent state.
+     * </p>
+     * <p>
+     * For more information about failing over an Amazon Aurora global database, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html#aurora-global-database-failover.managed-unplanned"
+     * >Performing managed failovers for Aurora global databases</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>Switching over</i> - Use this operation on a healthy global database cluster for planned events, such as
+     * Regional rotation or to fail back to the original primary DB cluster after a failover operation. With this
+     * operation, there is no data loss.
+     * </p>
+     * <p>
+     * For more information about switching over an Amazon Aurora global database, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html#aurora-global-database-disaster-recovery.managed-failover"
+     * >Performing switchovers for Aurora global databases</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param failoverGlobalClusterRequest
      * @return Result of the FailoverGlobalCluster operation returned by the service.
@@ -2798,6 +3053,12 @@ public interface AmazonRDS {
      *         specified Amazon Web Services Region.
      * @throws BlueGreenDeploymentNotFoundException
      *         <code>BlueGreenDeploymentIdentifier</code> doesn't refer to an existing blue/green deployment.
+     * @throws IntegrationNotFoundException
+     *         The specified integration could not be found.
+     * @throws TenantDatabaseNotFoundException
+     *         The specified tenant database wasn't found in the DB instance.
+     * @throws DBSnapshotTenantDatabaseNotFoundException
+     *         The specified snapshot tenant database wasn't found.
      * @sample AmazonRDS.ListTagsForResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ListTagsForResource" target="_top">AWS API
      *      Documentation</a>
@@ -2962,8 +3223,8 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * Modify the settings for an Amazon Aurora DB cluster or a Multi-AZ DB cluster. You can change one or more settings
-     * by specifying these parameters and the new values in the request.
+     * Modifies the settings of an Amazon Aurora DB cluster or a Multi-AZ DB cluster. You can change one or more
+     * settings by specifying these parameters and the new values in the request.
      * </p>
      * <p>
      * For more information on Amazon Aurora DB clusters, see <a
@@ -3005,6 +3266,9 @@ public interface AmazonRDS {
      *         The user already has a DB instance with the given identifier.
      * @throws DomainNotFoundException
      *         <code>Domain</code> doesn't refer to an existing Active Directory domain.
+     * @throws StorageTypeNotAvailableException
+     *         The <code>aurora-iopt1</code> storage type isn't available, because you modified the DB cluster to use
+     *         this storage type less than one month ago.
      * @sample AmazonRDS.ModifyDBCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBCluster" target="_top">AWS API
      *      Documentation</a>
@@ -3163,7 +3427,7 @@ public interface AmazonRDS {
      * @throws DBUpgradeDependencyFailureException
      *         The DB upgrade failed because a resource the DB depends on can't be modified.
      * @throws StorageTypeNotSupportedException
-     *         Storage of the <code>StorageType</code> specified can't be associated with the DB instance.
+     *         The specified <code>StorageType</code> can't be associated with the DB instance.
      * @throws AuthorizationNotFoundException
      *         The specified CIDR IP range or Amazon EC2 security group might not be authorized for the specified DB
      *         security group.</p>
@@ -3181,6 +3445,8 @@ public interface AmazonRDS {
      * @throws NetworkTypeNotSupportedException
      *         The network type is invalid for the DB instance. Valid nework type values are <code>IPV4</code> and
      *         <code>DUAL</code>.
+     * @throws TenantDatabaseQuotaExceededException
+     *         You attempted to create more tenant databases than are permitted in your Amazon Web Services account.
      * @sample AmazonRDS.ModifyDBInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBInstance" target="_top">AWS API
      *      Documentation</a>
@@ -3402,14 +3668,15 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * Modify a setting for an Amazon Aurora global cluster. You can change one or more database configuration
-     * parameters by specifying these parameters and the new values in the request. For more information on Amazon
-     * Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What
-     * is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
+     * Modifies a setting for an Amazon Aurora global database cluster. You can change one or more database
+     * configuration parameters by specifying these parameters and the new values in the request. For more information
+     * on Amazon Aurora, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * <note>
      * <p>
-     * This action only applies to Aurora DB clusters.
+     * This operation only applies to Aurora global database clusters.
      * </p>
      * </note>
      * 
@@ -3445,6 +3712,29 @@ public interface AmazonRDS {
      *      Documentation</a>
      */
     OptionGroup modifyOptionGroup(ModifyOptionGroupRequest modifyOptionGroupRequest);
+
+    /**
+     * <p>
+     * Modifies an existing tenant database in a DB instance. You can change the tenant database name or the master user
+     * password. This operation is supported only for RDS for Oracle CDB instances using the multi-tenant configuration.
+     * </p>
+     * 
+     * @param modifyTenantDatabaseRequest
+     * @return Result of the ModifyTenantDatabase operation returned by the service.
+     * @throws DBInstanceNotFoundException
+     *         <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+     * @throws TenantDatabaseNotFoundException
+     *         The specified tenant database wasn't found in the DB instance.
+     * @throws TenantDatabaseAlreadyExistsException
+     *         You attempted to either create a tenant database that already exists or modify a tenant database to use
+     *         the name of an existing tenant database.
+     * @throws InvalidDBInstanceStateException
+     *         The DB instance isn't in a valid state.
+     * @sample AmazonRDS.ModifyTenantDatabase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyTenantDatabase" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TenantDatabase modifyTenantDatabase(ModifyTenantDatabaseRequest modifyTenantDatabaseRequest);
 
     /**
      * <p>
@@ -3737,6 +4027,12 @@ public interface AmazonRDS {
      *         specified Amazon Web Services Region.
      * @throws BlueGreenDeploymentNotFoundException
      *         <code>BlueGreenDeploymentIdentifier</code> doesn't refer to an existing blue/green deployment.
+     * @throws IntegrationNotFoundException
+     *         The specified integration could not be found.
+     * @throws TenantDatabaseNotFoundException
+     *         The specified tenant database wasn't found in the DB instance.
+     * @throws DBSnapshotTenantDatabaseNotFoundException
+     *         The specified snapshot tenant database wasn't found.
      * @sample AmazonRDS.RemoveTagsFromResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveTagsFromResource" target="_top">AWS API
      *      Documentation</a>
@@ -3865,6 +4161,8 @@ public interface AmazonRDS {
      * @throws InsufficientStorageClusterCapacityException
      *         There is insufficient storage available for the current action. You might be able to resolve this error
      *         by updating your subnet group to use different Availability Zones that have more storage available.
+     * @throws StorageTypeNotSupportedException
+     *         The specified <code>StorageType</code> can't be associated with the DB instance.
      * @sample AmazonRDS.RestoreDBClusterFromS3
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromS3" target="_top">AWS API
      *      Documentation</a>
@@ -3928,6 +4226,9 @@ public interface AmazonRDS {
      *         instances.
      * @throws InvalidVPCNetworkStateException
      *         The DB subnet group doesn't cover all Availability Zones after it's created because of users' change.
+     * @throws DBSubnetGroupDoesNotCoverEnoughAZsException
+     *         Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one
+     *         Availability Zone.
      * @throws InvalidRestoreException
      *         Cannot restore from VPC backup to non-VPC DB instance.
      * @throws DBSubnetGroupNotFoundException
@@ -4017,6 +4318,8 @@ public interface AmazonRDS {
      *         <code>Domain</code> doesn't refer to an existing Active Directory domain.
      * @throws DBClusterParameterGroupNotFoundException
      *         <code>DBClusterParameterGroupName</code> doesn't refer to an existing DB cluster parameter group.
+     * @throws DBClusterAutomatedBackupNotFoundException
+     *         No automated backup for this DB cluster was found.
      * @sample AmazonRDS.RestoreDBClusterToPointInTime
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterToPointInTime"
      *      target="_top">AWS API Documentation</a>
@@ -4080,7 +4383,7 @@ public interface AmazonRDS {
      * @throws OptionGroupNotFoundException
      *         The specified option group could not be found.
      * @throws StorageTypeNotSupportedException
-     *         Storage of the <code>StorageType</code> specified can't be associated with the DB instance.
+     *         The specified <code>StorageType</code> can't be associated with the DB instance.
      * @throws AuthorizationNotFoundException
      *         The specified CIDR IP range or Amazon EC2 security group might not be authorized for the specified DB
      *         security group.</p>
@@ -4100,6 +4403,8 @@ public interface AmazonRDS {
      *         <code>DUAL</code>.
      * @throws DBClusterSnapshotNotFoundException
      *         <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster snapshot.
+     * @throws TenantDatabaseQuotaExceededException
+     *         You attempted to create more tenant databases than are permitted in your Amazon Web Services account.
      * @sample AmazonRDS.RestoreDBInstanceFromDBSnapshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromDBSnapshot"
      *      target="_top">AWS API Documentation</a>
@@ -4151,7 +4456,7 @@ public interface AmazonRDS {
      * @throws OptionGroupNotFoundException
      *         The specified option group could not be found.
      * @throws StorageTypeNotSupportedException
-     *         Storage of the <code>StorageType</code> specified can't be associated with the DB instance.
+     *         The specified <code>StorageType</code> can't be associated with the DB instance.
      * @throws AuthorizationNotFoundException
      *         The specified CIDR IP range or Amazon EC2 security group might not be authorized for the specified DB
      *         security group.</p>
@@ -4172,8 +4477,8 @@ public interface AmazonRDS {
     /**
      * <p>
      * Restores a DB instance to an arbitrary point in time. You can restore to any point in time before the time
-     * identified by the LatestRestorableTime property. You can restore to a point up to the number of days specified by
-     * the BackupRetentionPeriod property.
+     * identified by the <code>LatestRestorableTime</code> property. You can restore to a point up to the number of days
+     * specified by the <code>BackupRetentionPeriod</code> property.
      * </p>
      * <p>
      * The target database is created with most of the original configuration, but in a system-selected Availability
@@ -4223,7 +4528,7 @@ public interface AmazonRDS {
      * @throws OptionGroupNotFoundException
      *         The specified option group could not be found.
      * @throws StorageTypeNotSupportedException
-     *         Storage of the <code>StorageType</code> specified can't be associated with the DB instance.
+     *         The specified <code>StorageType</code> can't be associated with the DB instance.
      * @throws AuthorizationNotFoundException
      *         The specified CIDR IP range or Amazon EC2 security group might not be authorized for the specified DB
      *         security group.</p>
@@ -4243,6 +4548,8 @@ public interface AmazonRDS {
      * @throws NetworkTypeNotSupportedException
      *         The network type is invalid for the DB instance. Valid nework type values are <code>IPV4</code> and
      *         <code>DUAL</code>.
+     * @throws TenantDatabaseQuotaExceededException
+     *         You attempted to create more tenant databases than are permitted in your Amazon Web Services account.
      * @sample AmazonRDS.RestoreDBInstanceToPointInTime
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceToPointInTime"
      *      target="_top">AWS API Documentation</a>
@@ -4418,9 +4725,9 @@ public interface AmazonRDS {
      *         An error occurred accessing an Amazon Web Services KMS key.
      * @throws DBInstanceAutomatedBackupQuotaExceededException
      *         The quota for retained automated backups was exceeded. This prevents you from retaining any additional
-     *         automated backups. The retained automated backups quota is the same as your DB Instance quota.
+     *         automated backups. The retained automated backups quota is the same as your DB instance quota.
      * @throws StorageTypeNotSupportedException
-     *         Storage of the <code>StorageType</code> specified can't be associated with the DB instance.
+     *         The specified <code>StorageType</code> can't be associated with the DB instance.
      * @sample AmazonRDS.StartDBInstanceAutomatedBackupsReplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartDBInstanceAutomatedBackupsReplication"
      *      target="_top">AWS API Documentation</a>
@@ -4618,7 +4925,7 @@ public interface AmazonRDS {
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS
      * Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">Using Amazon RDS
      * Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * 
@@ -4634,6 +4941,44 @@ public interface AmazonRDS {
      *      target="_top">AWS API Documentation</a>
      */
     SwitchoverBlueGreenDeploymentResult switchoverBlueGreenDeployment(SwitchoverBlueGreenDeploymentRequest switchoverBlueGreenDeploymentRequest);
+
+    /**
+     * <p>
+     * Switches over the specified secondary DB cluster to be the new primary DB cluster in the global database cluster.
+     * Switchover operations were previously called "managed planned failovers."
+     * </p>
+     * <p>
+     * Aurora promotes the specified secondary cluster to assume full read/write capabilities and demotes the current
+     * primary cluster to a secondary (read-only) cluster, maintaining the orginal replication topology. All secondary
+     * clusters are synchronized with the primary at the beginning of the process so the new primary continues
+     * operations for the Aurora global database without losing any data. Your database is unavailable for a short time
+     * while the primary and selected secondary clusters are assuming their new roles. For more information about
+     * switching over an Aurora global database, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html#aurora-global-database-disaster-recovery.managed-failover"
+     * >Performing switchovers for Amazon Aurora global databases</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * This operation is intended for controlled environments, for operations such as "regional rotation" or to fall
+     * back to the original primary after a global database failover.
+     * </p>
+     * </note>
+     * 
+     * @param switchoverGlobalClusterRequest
+     * @return Result of the SwitchoverGlobalCluster operation returned by the service.
+     * @throws GlobalClusterNotFoundException
+     *         The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster.
+     * @throws InvalidGlobalClusterStateException
+     *         The global cluster is in an invalid state and can't perform the requested operation.
+     * @throws InvalidDBClusterStateException
+     *         The requested operation can't be performed while the cluster is in this state.
+     * @throws DBClusterNotFoundException
+     *         <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+     * @sample AmazonRDS.SwitchoverGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/SwitchoverGlobalCluster" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GlobalCluster switchoverGlobalCluster(SwitchoverGlobalClusterRequest switchoverGlobalClusterRequest);
 
     /**
      * <p>

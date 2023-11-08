@@ -30,10 +30,10 @@ public class ListRuleGroupsNamespacesRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Maximum results to return in response (default=100, maximum=1000).
+     * The ID of the workspace.
      * </p>
      */
-    private Integer maxResults;
+    private String workspaceId;
     /**
      * <p>
      * Optional filter for rule groups namespace name. Only the rule groups namespace that begin with this value will be
@@ -50,48 +50,48 @@ public class ListRuleGroupsNamespacesRequest extends com.amazonaws.AmazonWebServ
     private String nextToken;
     /**
      * <p>
+     * Maximum results to return in response (default=100, maximum=1000).
+     * </p>
+     */
+    private Integer maxResults;
+
+    /**
+     * <p>
      * The ID of the workspace.
      * </p>
-     */
-    private String workspaceId;
-
-    /**
-     * <p>
-     * Maximum results to return in response (default=100, maximum=1000).
-     * </p>
      * 
-     * @param maxResults
-     *        Maximum results to return in response (default=100, maximum=1000).
+     * @param workspaceId
+     *        The ID of the workspace.
      */
 
-    public void setMaxResults(Integer maxResults) {
-        this.maxResults = maxResults;
+    public void setWorkspaceId(String workspaceId) {
+        this.workspaceId = workspaceId;
     }
 
     /**
      * <p>
-     * Maximum results to return in response (default=100, maximum=1000).
+     * The ID of the workspace.
      * </p>
      * 
-     * @return Maximum results to return in response (default=100, maximum=1000).
+     * @return The ID of the workspace.
      */
 
-    public Integer getMaxResults() {
-        return this.maxResults;
+    public String getWorkspaceId() {
+        return this.workspaceId;
     }
 
     /**
      * <p>
-     * Maximum results to return in response (default=100, maximum=1000).
+     * The ID of the workspace.
      * </p>
      * 
-     * @param maxResults
-     *        Maximum results to return in response (default=100, maximum=1000).
+     * @param workspaceId
+     *        The ID of the workspace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListRuleGroupsNamespacesRequest withMaxResults(Integer maxResults) {
-        setMaxResults(maxResults);
+    public ListRuleGroupsNamespacesRequest withWorkspaceId(String workspaceId) {
+        setWorkspaceId(workspaceId);
         return this;
     }
 
@@ -189,41 +189,41 @@ public class ListRuleGroupsNamespacesRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The ID of the workspace.
+     * Maximum results to return in response (default=100, maximum=1000).
      * </p>
      * 
-     * @param workspaceId
-     *        The ID of the workspace.
+     * @param maxResults
+     *        Maximum results to return in response (default=100, maximum=1000).
      */
 
-    public void setWorkspaceId(String workspaceId) {
-        this.workspaceId = workspaceId;
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
     }
 
     /**
      * <p>
-     * The ID of the workspace.
+     * Maximum results to return in response (default=100, maximum=1000).
      * </p>
      * 
-     * @return The ID of the workspace.
+     * @return Maximum results to return in response (default=100, maximum=1000).
      */
 
-    public String getWorkspaceId() {
-        return this.workspaceId;
+    public Integer getMaxResults() {
+        return this.maxResults;
     }
 
     /**
      * <p>
-     * The ID of the workspace.
+     * Maximum results to return in response (default=100, maximum=1000).
      * </p>
      * 
-     * @param workspaceId
-     *        The ID of the workspace.
+     * @param maxResults
+     *        Maximum results to return in response (default=100, maximum=1000).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListRuleGroupsNamespacesRequest withWorkspaceId(String workspaceId) {
-        setWorkspaceId(workspaceId);
+    public ListRuleGroupsNamespacesRequest withMaxResults(Integer maxResults) {
+        setMaxResults(maxResults);
         return this;
     }
 
@@ -239,14 +239,14 @@ public class ListRuleGroupsNamespacesRequest extends com.amazonaws.AmazonWebServ
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getWorkspaceId() != null)
+            sb.append("WorkspaceId: ").append(getWorkspaceId()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
-        if (getWorkspaceId() != null)
-            sb.append("WorkspaceId: ").append(getWorkspaceId());
+        if (getMaxResults() != null)
+            sb.append("MaxResults: ").append(getMaxResults());
         sb.append("}");
         return sb.toString();
     }
@@ -261,9 +261,9 @@ public class ListRuleGroupsNamespacesRequest extends com.amazonaws.AmazonWebServ
         if (obj instanceof ListRuleGroupsNamespacesRequest == false)
             return false;
         ListRuleGroupsNamespacesRequest other = (ListRuleGroupsNamespacesRequest) obj;
-        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
+        if (other.getWorkspaceId() == null ^ this.getWorkspaceId() == null)
             return false;
-        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
+        if (other.getWorkspaceId() != null && other.getWorkspaceId().equals(this.getWorkspaceId()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
@@ -273,9 +273,9 @@ public class ListRuleGroupsNamespacesRequest extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
-        if (other.getWorkspaceId() == null ^ this.getWorkspaceId() == null)
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
-        if (other.getWorkspaceId() != null && other.getWorkspaceId().equals(this.getWorkspaceId()) == false)
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
         return true;
     }
@@ -285,10 +285,10 @@ public class ListRuleGroupsNamespacesRequest extends com.amazonaws.AmazonWebServ
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getWorkspaceId() == null) ? 0 : getWorkspaceId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
-        hashCode = prime * hashCode + ((getWorkspaceId() == null) ? 0 : getWorkspaceId().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         return hashCode;
     }
 

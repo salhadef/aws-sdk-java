@@ -25,13 +25,13 @@ public class StopInferenceSchedulerResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the ML model used by the inference scheduler being stopped.
+     * The Amazon Resource Name (ARN) of the machine learning model used by the inference scheduler being stopped.
      * </p>
      */
     private String modelArn;
     /**
      * <p>
-     * The name of the ML model used by the inference scheduler being stopped.
+     * The name of the machine learning model used by the inference scheduler being stopped.
      * </p>
      */
     private String modelName;
@@ -56,11 +56,12 @@ public class StopInferenceSchedulerResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the ML model used by the inference scheduler being stopped.
+     * The Amazon Resource Name (ARN) of the machine learning model used by the inference scheduler being stopped.
      * </p>
      * 
      * @param modelArn
-     *        The Amazon Resource Name (ARN) of the ML model used by the inference scheduler being stopped.
+     *        The Amazon Resource Name (ARN) of the machine learning model used by the inference scheduler being
+     *        stopped.
      */
 
     public void setModelArn(String modelArn) {
@@ -69,10 +70,11 @@ public class StopInferenceSchedulerResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the ML model used by the inference scheduler being stopped.
+     * The Amazon Resource Name (ARN) of the machine learning model used by the inference scheduler being stopped.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the ML model used by the inference scheduler being stopped.
+     * @return The Amazon Resource Name (ARN) of the machine learning model used by the inference scheduler being
+     *         stopped.
      */
 
     public String getModelArn() {
@@ -81,11 +83,12 @@ public class StopInferenceSchedulerResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the ML model used by the inference scheduler being stopped.
+     * The Amazon Resource Name (ARN) of the machine learning model used by the inference scheduler being stopped.
      * </p>
      * 
      * @param modelArn
-     *        The Amazon Resource Name (ARN) of the ML model used by the inference scheduler being stopped.
+     *        The Amazon Resource Name (ARN) of the machine learning model used by the inference scheduler being
+     *        stopped.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,11 +99,11 @@ public class StopInferenceSchedulerResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the ML model used by the inference scheduler being stopped.
+     * The name of the machine learning model used by the inference scheduler being stopped.
      * </p>
      * 
      * @param modelName
-     *        The name of the ML model used by the inference scheduler being stopped.
+     *        The name of the machine learning model used by the inference scheduler being stopped.
      */
 
     public void setModelName(String modelName) {
@@ -109,10 +112,10 @@ public class StopInferenceSchedulerResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the ML model used by the inference scheduler being stopped.
+     * The name of the machine learning model used by the inference scheduler being stopped.
      * </p>
      * 
-     * @return The name of the ML model used by the inference scheduler being stopped.
+     * @return The name of the machine learning model used by the inference scheduler being stopped.
      */
 
     public String getModelName() {
@@ -121,11 +124,11 @@ public class StopInferenceSchedulerResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the ML model used by the inference scheduler being stopped.
+     * The name of the machine learning model used by the inference scheduler being stopped.
      * </p>
      * 
      * @param modelName
-     *        The name of the ML model used by the inference scheduler being stopped.
+     *        The name of the machine learning model used by the inference scheduler being stopped.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

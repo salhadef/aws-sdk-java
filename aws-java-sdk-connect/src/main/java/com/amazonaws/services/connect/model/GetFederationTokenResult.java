@@ -43,7 +43,7 @@ public class GetFederationTokenResult extends com.amazonaws.AmazonWebServiceResu
     private String userArn;
     /**
      * <p>
-     * The identifier for the user.
+     * The identifier for the user. This can be the ID or the ARN of the user.
      * </p>
      */
     private String userId;
@@ -170,11 +170,11 @@ public class GetFederationTokenResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The identifier for the user.
+     * The identifier for the user. This can be the ID or the ARN of the user.
      * </p>
      * 
      * @param userId
-     *        The identifier for the user.
+     *        The identifier for the user. This can be the ID or the ARN of the user.
      */
 
     public void setUserId(String userId) {
@@ -183,10 +183,10 @@ public class GetFederationTokenResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The identifier for the user.
+     * The identifier for the user. This can be the ID or the ARN of the user.
      * </p>
      * 
-     * @return The identifier for the user.
+     * @return The identifier for the user. This can be the ID or the ARN of the user.
      */
 
     public String getUserId() {
@@ -195,11 +195,11 @@ public class GetFederationTokenResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The identifier for the user.
+     * The identifier for the user. This can be the ID or the ARN of the user.
      * </p>
      * 
      * @param userId
-     *        The identifier for the user.
+     *        The identifier for the user. This can be the ID or the ARN of the user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

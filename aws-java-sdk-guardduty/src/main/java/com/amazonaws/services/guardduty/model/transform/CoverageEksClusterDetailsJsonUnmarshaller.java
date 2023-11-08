@@ -64,6 +64,10 @@ public class CoverageEksClusterDetailsJsonUnmarshaller implements Unmarshaller<C
                     context.nextToken();
                     coverageEksClusterDetails.setAddonDetails(AddonDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("managementType", targetDepth)) {
+                    context.nextToken();
+                    coverageEksClusterDetails.setManagementType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

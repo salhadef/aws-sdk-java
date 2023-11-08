@@ -347,6 +347,37 @@ public interface AmazonRoute53ResolverAsync extends AmazonRoute53Resolver {
 
     /**
      * <p>
+     * Creates an Route 53 Resolver on an Outpost.
+     * </p>
+     * 
+     * @param createOutpostResolverRequest
+     * @return A Java Future containing the result of the CreateOutpostResolver operation returned by the service.
+     * @sample AmazonRoute53ResolverAsync.CreateOutpostResolver
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateOutpostResolver"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateOutpostResolverResult> createOutpostResolverAsync(CreateOutpostResolverRequest createOutpostResolverRequest);
+
+    /**
+     * <p>
+     * Creates an Route 53 Resolver on an Outpost.
+     * </p>
+     * 
+     * @param createOutpostResolverRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateOutpostResolver operation returned by the service.
+     * @sample AmazonRoute53ResolverAsyncHandler.CreateOutpostResolver
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateOutpostResolver"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateOutpostResolverResult> createOutpostResolverAsync(CreateOutpostResolverRequest createOutpostResolverRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateOutpostResolverRequest, CreateOutpostResolverResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a Resolver endpoint. There are two types of Resolver endpoints, inbound and outbound:
      * </p>
      * <ul>
@@ -588,6 +619,37 @@ public interface AmazonRoute53ResolverAsync extends AmazonRoute53Resolver {
      */
     java.util.concurrent.Future<DeleteFirewallRuleGroupResult> deleteFirewallRuleGroupAsync(DeleteFirewallRuleGroupRequest deleteFirewallRuleGroupRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteFirewallRuleGroupRequest, DeleteFirewallRuleGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a Resolver on the Outpost.
+     * </p>
+     * 
+     * @param deleteOutpostResolverRequest
+     * @return A Java Future containing the result of the DeleteOutpostResolver operation returned by the service.
+     * @sample AmazonRoute53ResolverAsync.DeleteOutpostResolver
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DeleteOutpostResolver"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteOutpostResolverResult> deleteOutpostResolverAsync(DeleteOutpostResolverRequest deleteOutpostResolverRequest);
+
+    /**
+     * <p>
+     * Deletes a Resolver on the Outpost.
+     * </p>
+     * 
+     * @param deleteOutpostResolverRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteOutpostResolver operation returned by the service.
+     * @sample AmazonRoute53ResolverAsyncHandler.DeleteOutpostResolver
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DeleteOutpostResolver"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteOutpostResolverResult> deleteOutpostResolverAsync(DeleteOutpostResolverRequest deleteOutpostResolverRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteOutpostResolverRequest, DeleteOutpostResolverResult> asyncHandler);
 
     /**
      * <p>
@@ -1118,6 +1180,39 @@ public interface AmazonRoute53ResolverAsync extends AmazonRoute53Resolver {
     java.util.concurrent.Future<GetFirewallRuleGroupPolicyResult> getFirewallRuleGroupPolicyAsync(
             GetFirewallRuleGroupPolicyRequest getFirewallRuleGroupPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<GetFirewallRuleGroupPolicyRequest, GetFirewallRuleGroupPolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets information about a specified Resolver on the Outpost, such as its instance count and type, name, and the
+     * current status of the Resolver.
+     * </p>
+     * 
+     * @param getOutpostResolverRequest
+     * @return A Java Future containing the result of the GetOutpostResolver operation returned by the service.
+     * @sample AmazonRoute53ResolverAsync.GetOutpostResolver
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetOutpostResolver"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetOutpostResolverResult> getOutpostResolverAsync(GetOutpostResolverRequest getOutpostResolverRequest);
+
+    /**
+     * <p>
+     * Gets information about a specified Resolver on the Outpost, such as its instance count and type, name, and the
+     * current status of the Resolver.
+     * </p>
+     * 
+     * @param getOutpostResolverRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetOutpostResolver operation returned by the service.
+     * @sample AmazonRoute53ResolverAsyncHandler.GetOutpostResolver
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetOutpostResolver"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetOutpostResolverResult> getOutpostResolverAsync(GetOutpostResolverRequest getOutpostResolverRequest,
+            com.amazonaws.handlers.AsyncHandler<GetOutpostResolverRequest, GetOutpostResolverResult> asyncHandler);
 
     /**
      * <p>
@@ -1751,6 +1846,37 @@ public interface AmazonRoute53ResolverAsync extends AmazonRoute53Resolver {
 
     /**
      * <p>
+     * Lists all the Resolvers on Outposts that were created using the current Amazon Web Services account.
+     * </p>
+     * 
+     * @param listOutpostResolversRequest
+     * @return A Java Future containing the result of the ListOutpostResolvers operation returned by the service.
+     * @sample AmazonRoute53ResolverAsync.ListOutpostResolvers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListOutpostResolvers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListOutpostResolversResult> listOutpostResolversAsync(ListOutpostResolversRequest listOutpostResolversRequest);
+
+    /**
+     * <p>
+     * Lists all the Resolvers on Outposts that were created using the current Amazon Web Services account.
+     * </p>
+     * 
+     * @param listOutpostResolversRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListOutpostResolvers operation returned by the service.
+     * @sample AmazonRoute53ResolverAsyncHandler.ListOutpostResolvers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListOutpostResolvers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListOutpostResolversResult> listOutpostResolversAsync(ListOutpostResolversRequest listOutpostResolversRequest,
+            com.amazonaws.handlers.AsyncHandler<ListOutpostResolversRequest, ListOutpostResolversResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves the Resolver configurations that you have defined. Route 53 Resolver uses the configurations to manage
      * DNS resolution behavior for your VPCs.
      * </p>
@@ -2354,6 +2480,39 @@ public interface AmazonRoute53ResolverAsync extends AmazonRoute53Resolver {
     java.util.concurrent.Future<UpdateFirewallRuleGroupAssociationResult> updateFirewallRuleGroupAssociationAsync(
             UpdateFirewallRuleGroupAssociationRequest updateFirewallRuleGroupAssociationRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateFirewallRuleGroupAssociationRequest, UpdateFirewallRuleGroupAssociationResult> asyncHandler);
+
+    /**
+     * <p>
+     * You can use <code>UpdateOutpostResolver</code> to update the instance count, type, or name of a Resolver on an
+     * Outpost.
+     * </p>
+     * 
+     * @param updateOutpostResolverRequest
+     * @return A Java Future containing the result of the UpdateOutpostResolver operation returned by the service.
+     * @sample AmazonRoute53ResolverAsync.UpdateOutpostResolver
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateOutpostResolver"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateOutpostResolverResult> updateOutpostResolverAsync(UpdateOutpostResolverRequest updateOutpostResolverRequest);
+
+    /**
+     * <p>
+     * You can use <code>UpdateOutpostResolver</code> to update the instance count, type, or name of a Resolver on an
+     * Outpost.
+     * </p>
+     * 
+     * @param updateOutpostResolverRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateOutpostResolver operation returned by the service.
+     * @sample AmazonRoute53ResolverAsyncHandler.UpdateOutpostResolver
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateOutpostResolver"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateOutpostResolverResult> updateOutpostResolverAsync(UpdateOutpostResolverRequest updateOutpostResolverRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateOutpostResolverRequest, UpdateOutpostResolverResult> asyncHandler);
 
     /**
      * <p>

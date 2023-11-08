@@ -13,7 +13,7 @@
 package com.amazonaws.services.chimesdkmediapipelines.model.transform;
 
 import java.util.Map;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -49,6 +49,8 @@ public class MediaInsightsPipelineMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3RecordingSinkRuntimeConfiguration").build();
     private static final MarshallingInfo<java.util.Date> CREATEDTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedTimestamp").timestampFormat("iso8601").build();
+    private static final MarshallingInfo<List> ELEMENTSTATUSES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ElementStatuses").build();
 
     private static final MediaInsightsPipelineMarshaller instance = new MediaInsightsPipelineMarshaller();
 
@@ -77,6 +79,7 @@ public class MediaInsightsPipelineMarshaller {
                     KINESISVIDEOSTREAMRECORDINGSOURCERUNTIMECONFIGURATION_BINDING);
             protocolMarshaller.marshall(mediaInsightsPipeline.getS3RecordingSinkRuntimeConfiguration(), S3RECORDINGSINKRUNTIMECONFIGURATION_BINDING);
             protocolMarshaller.marshall(mediaInsightsPipeline.getCreatedTimestamp(), CREATEDTIMESTAMP_BINDING);
+            protocolMarshaller.marshall(mediaInsightsPipeline.getElementStatuses(), ELEMENTSTATUSES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

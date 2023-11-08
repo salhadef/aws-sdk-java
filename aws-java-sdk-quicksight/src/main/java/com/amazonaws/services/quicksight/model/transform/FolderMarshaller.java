@@ -42,6 +42,8 @@ public class FolderMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastUpdatedTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> SHARINGMODEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SharingModel").build();
 
     private static final FolderMarshaller instance = new FolderMarshaller();
 
@@ -66,6 +68,7 @@ public class FolderMarshaller {
             protocolMarshaller.marshall(folder.getFolderPath(), FOLDERPATH_BINDING);
             protocolMarshaller.marshall(folder.getCreatedTime(), CREATEDTIME_BINDING);
             protocolMarshaller.marshall(folder.getLastUpdatedTime(), LASTUPDATEDTIME_BINDING);
+            protocolMarshaller.marshall(folder.getSharingModel(), SHARINGMODEL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

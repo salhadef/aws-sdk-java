@@ -41,6 +41,8 @@ public class ResourceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnabledDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> DISABLEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisabledDate").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
 
     private static final ResourceMarshaller instance = new ResourceMarshaller();
 
@@ -65,6 +67,7 @@ public class ResourceMarshaller {
             protocolMarshaller.marshall(resource.getState(), STATE_BINDING);
             protocolMarshaller.marshall(resource.getEnabledDate(), ENABLEDDATE_BINDING);
             protocolMarshaller.marshall(resource.getDisabledDate(), DISABLEDDATE_BINDING);
+            protocolMarshaller.marshall(resource.getDescription(), DESCRIPTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

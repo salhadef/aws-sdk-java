@@ -27,18 +27,18 @@ public class DeleteResourcePolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Entity resource that is associated with the resource policy.
+     * The Amazon Resource Name (ARN) of the entity resource that is associated with the resource policy.
      * </p>
      */
     private String resourceArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Entity resource that is associated with the resource policy.
+     * The Amazon Resource Name (ARN) of the entity resource that is associated with the resource policy.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the Entity resource that is associated with the resource policy.
+     *        The Amazon Resource Name (ARN) of the entity resource that is associated with the resource policy.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -47,10 +47,10 @@ public class DeleteResourcePolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Entity resource that is associated with the resource policy.
+     * The Amazon Resource Name (ARN) of the entity resource that is associated with the resource policy.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Entity resource that is associated with the resource policy.
+     * @return The Amazon Resource Name (ARN) of the entity resource that is associated with the resource policy.
      */
 
     public String getResourceArn() {
@@ -59,11 +59,11 @@ public class DeleteResourcePolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Entity resource that is associated with the resource policy.
+     * The Amazon Resource Name (ARN) of the entity resource that is associated with the resource policy.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the Entity resource that is associated with the resource policy.
+     *        The Amazon Resource Name (ARN) of the entity resource that is associated with the resource policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

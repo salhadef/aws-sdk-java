@@ -45,6 +45,10 @@ public class SecurityProfileMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AllowedAccessControlTags").build();
     private static final MarshallingInfo<List> TAGRESTRICTEDRESOURCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TagRestrictedResources").build();
+    private static final MarshallingInfo<java.util.Date> LASTMODIFIEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> LASTMODIFIEDREGION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedRegion").build();
 
     private static final SecurityProfileMarshaller instance = new SecurityProfileMarshaller();
 
@@ -70,6 +74,8 @@ public class SecurityProfileMarshaller {
             protocolMarshaller.marshall(securityProfile.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(securityProfile.getAllowedAccessControlTags(), ALLOWEDACCESSCONTROLTAGS_BINDING);
             protocolMarshaller.marshall(securityProfile.getTagRestrictedResources(), TAGRESTRICTEDRESOURCES_BINDING);
+            protocolMarshaller.marshall(securityProfile.getLastModifiedTime(), LASTMODIFIEDTIME_BINDING);
+            protocolMarshaller.marshall(securityProfile.getLastModifiedRegion(), LASTMODIFIEDREGION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

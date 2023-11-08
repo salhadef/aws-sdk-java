@@ -59,6 +59,8 @@ public class SavingsPlansPurchaseRecommendationDetailMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CurrentMaximumHourlyOnDemandSpend").build();
     private static final MarshallingInfo<String> CURRENTAVERAGEHOURLYONDEMANDSPEND_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CurrentAverageHourlyOnDemandSpend").build();
+    private static final MarshallingInfo<String> RECOMMENDATIONDETAILID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RecommendationDetailId").build();
 
     private static final SavingsPlansPurchaseRecommendationDetailMarshaller instance = new SavingsPlansPurchaseRecommendationDetailMarshaller();
 
@@ -96,6 +98,7 @@ public class SavingsPlansPurchaseRecommendationDetailMarshaller {
                     CURRENTMAXIMUMHOURLYONDEMANDSPEND_BINDING);
             protocolMarshaller.marshall(savingsPlansPurchaseRecommendationDetail.getCurrentAverageHourlyOnDemandSpend(),
                     CURRENTAVERAGEHOURLYONDEMANDSPEND_BINDING);
+            protocolMarshaller.marshall(savingsPlansPurchaseRecommendationDetail.getRecommendationDetailId(), RECOMMENDATIONDETAILID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

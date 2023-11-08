@@ -102,6 +102,26 @@ public interface AmazonAppConfig {
      * @return Result of the CreateApplication operation returned by the service.
      * @throws BadRequestException
      *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @throws ServiceQuotaExceededException
+     *         The number of one more AppConfig resources exceeds the maximum allowed. Verify that your environment
+     *         doesn't exceed the following service quotas:</p>
+     *         <p>
+     *         Applications: 100 max
+     *         </p>
+     *         <p>
+     *         Deployment strategies: 20 max
+     *         </p>
+     *         <p>
+     *         Configuration profiles: 100 max per application
+     *         </p>
+     *         <p>
+     *         Environments: 20 max per application
+     *         </p>
+     *         <p>
+     *         To resolve this issue, you can delete one or more resources and try again. Or, you can request a quota
+     *         increase. For more information about quotas and to request an increase, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/appconfig.html#limits_appconfig">Service quotas for
+     *         AppConfig</a> in the Amazon Web Services General Reference.
      * @throws InternalServerException
      *         There was an internal failure in the AppConfig service.
      * @sample AmazonAppConfig.CreateApplication
@@ -182,6 +202,26 @@ public interface AmazonAppConfig {
      *         The requested resource could not be found.
      * @throws InternalServerException
      *         There was an internal failure in the AppConfig service.
+     * @throws ServiceQuotaExceededException
+     *         The number of one more AppConfig resources exceeds the maximum allowed. Verify that your environment
+     *         doesn't exceed the following service quotas:</p>
+     *         <p>
+     *         Applications: 100 max
+     *         </p>
+     *         <p>
+     *         Deployment strategies: 20 max
+     *         </p>
+     *         <p>
+     *         Configuration profiles: 100 max per application
+     *         </p>
+     *         <p>
+     *         Environments: 20 max per application
+     *         </p>
+     *         <p>
+     *         To resolve this issue, you can delete one or more resources and try again. Or, you can request a quota
+     *         increase. For more information about quotas and to request an increase, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/appconfig.html#limits_appconfig">Service quotas for
+     *         AppConfig</a> in the Amazon Web Services General Reference.
      * @sample AmazonAppConfig.CreateConfigurationProfile
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateConfigurationProfile"
      *      target="_top">AWS API Documentation</a>
@@ -199,6 +239,26 @@ public interface AmazonAppConfig {
      * @return Result of the CreateDeploymentStrategy operation returned by the service.
      * @throws InternalServerException
      *         There was an internal failure in the AppConfig service.
+     * @throws ServiceQuotaExceededException
+     *         The number of one more AppConfig resources exceeds the maximum allowed. Verify that your environment
+     *         doesn't exceed the following service quotas:</p>
+     *         <p>
+     *         Applications: 100 max
+     *         </p>
+     *         <p>
+     *         Deployment strategies: 20 max
+     *         </p>
+     *         <p>
+     *         Configuration profiles: 100 max per application
+     *         </p>
+     *         <p>
+     *         Environments: 20 max per application
+     *         </p>
+     *         <p>
+     *         To resolve this issue, you can delete one or more resources and try again. Or, you can request a quota
+     *         increase. For more information about quotas and to request an increase, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/appconfig.html#limits_appconfig">Service quotas for
+     *         AppConfig</a> in the Amazon Web Services General Reference.
      * @throws BadRequestException
      *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @sample AmazonAppConfig.CreateDeploymentStrategy
@@ -225,6 +285,26 @@ public interface AmazonAppConfig {
      *         The requested resource could not be found.
      * @throws BadRequestException
      *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @throws ServiceQuotaExceededException
+     *         The number of one more AppConfig resources exceeds the maximum allowed. Verify that your environment
+     *         doesn't exceed the following service quotas:</p>
+     *         <p>
+     *         Applications: 100 max
+     *         </p>
+     *         <p>
+     *         Deployment strategies: 20 max
+     *         </p>
+     *         <p>
+     *         Configuration profiles: 100 max per application
+     *         </p>
+     *         <p>
+     *         Environments: 20 max per application
+     *         </p>
+     *         <p>
+     *         To resolve this issue, you can delete one or more resources and try again. Or, you can request a quota
+     *         increase. For more information about quotas and to request an increase, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/appconfig.html#limits_appconfig">Service quotas for
+     *         AppConfig</a> in the Amazon Web Services General Reference.
      * @sample AmazonAppConfig.CreateEnvironment
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateEnvironment" target="_top">AWS
      *      API Documentation</a>
@@ -238,8 +318,33 @@ public interface AmazonAppConfig {
      * </p>
      * <p>
      * You can create your own extensions or use the Amazon Web Services authored extensions provided by AppConfig. For
-     * most use cases, to create your own extension, you must create an Lambda function to perform any computation and
-     * processing defined in the extension. For more information about extensions, see <a
+     * an AppConfig extension that uses Lambda, you must create a Lambda function to perform any computation and
+     * processing defined in the extension. If you plan to create custom versions of the Amazon Web Services authored
+     * notification extensions, you only need to specify an Amazon Resource Name (ARN) in the <code>Uri</code> field for
+     * the new extension version.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For a custom EventBridge notification extension, enter the ARN of the EventBridge default events in the
+     * <code>Uri</code> field.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For a custom Amazon SNS notification extension, enter the ARN of an Amazon SNS topic in the <code>Uri</code>
+     * field.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For a custom Amazon SQS notification extension, enter the ARN of an Amazon SQS message queue in the
+     * <code>Uri</code> field.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about extensions, see <a
      * href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working with
      * AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
      * </p>
@@ -251,8 +356,25 @@ public interface AmazonAppConfig {
      * @throws ConflictException
      *         The request could not be processed because of conflict in the current state of the resource.
      * @throws ServiceQuotaExceededException
-     *         The number of hosted configuration versions exceeds the limit for the AppConfig hosted configuration
-     *         store. Delete one or more versions and try again.
+     *         The number of one more AppConfig resources exceeds the maximum allowed. Verify that your environment
+     *         doesn't exceed the following service quotas:</p>
+     *         <p>
+     *         Applications: 100 max
+     *         </p>
+     *         <p>
+     *         Deployment strategies: 20 max
+     *         </p>
+     *         <p>
+     *         Configuration profiles: 100 max per application
+     *         </p>
+     *         <p>
+     *         Environments: 20 max per application
+     *         </p>
+     *         <p>
+     *         To resolve this issue, you can delete one or more resources and try again. Or, you can request a quota
+     *         increase. For more information about quotas and to request an increase, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/appconfig.html#limits_appconfig">Service quotas for
+     *         AppConfig</a> in the Amazon Web Services General Reference.
      * @throws InternalServerException
      *         There was an internal failure in the AppConfig service.
      * @sample AmazonAppConfig.CreateExtension
@@ -283,8 +405,25 @@ public interface AmazonAppConfig {
      * @throws InternalServerException
      *         There was an internal failure in the AppConfig service.
      * @throws ServiceQuotaExceededException
-     *         The number of hosted configuration versions exceeds the limit for the AppConfig hosted configuration
-     *         store. Delete one or more versions and try again.
+     *         The number of one more AppConfig resources exceeds the maximum allowed. Verify that your environment
+     *         doesn't exceed the following service quotas:</p>
+     *         <p>
+     *         Applications: 100 max
+     *         </p>
+     *         <p>
+     *         Deployment strategies: 20 max
+     *         </p>
+     *         <p>
+     *         Configuration profiles: 100 max per application
+     *         </p>
+     *         <p>
+     *         Environments: 20 max per application
+     *         </p>
+     *         <p>
+     *         To resolve this issue, you can delete one or more resources and try again. Or, you can request a quota
+     *         increase. For more information about quotas and to request an increase, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/appconfig.html#limits_appconfig">Service quotas for
+     *         AppConfig</a> in the Amazon Web Services General Reference.
      * @sample AmazonAppConfig.CreateExtensionAssociation
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateExtensionAssociation"
      *      target="_top">AWS API Documentation</a>
@@ -301,8 +440,25 @@ public interface AmazonAppConfig {
      * @throws BadRequestException
      *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @throws ServiceQuotaExceededException
-     *         The number of hosted configuration versions exceeds the limit for the AppConfig hosted configuration
-     *         store. Delete one or more versions and try again.
+     *         The number of one more AppConfig resources exceeds the maximum allowed. Verify that your environment
+     *         doesn't exceed the following service quotas:</p>
+     *         <p>
+     *         Applications: 100 max
+     *         </p>
+     *         <p>
+     *         Deployment strategies: 20 max
+     *         </p>
+     *         <p>
+     *         Configuration profiles: 100 max per application
+     *         </p>
+     *         <p>
+     *         Environments: 20 max per application
+     *         </p>
+     *         <p>
+     *         To resolve this issue, you can delete one or more resources and try again. Or, you can request a quota
+     *         increase. For more information about quotas and to request an increase, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/appconfig.html#limits_appconfig">Service quotas for
+     *         AppConfig</a> in the Amazon Web Services General Reference.
      * @throws ResourceNotFoundException
      *         The requested resource could not be found.
      * @throws ConflictException

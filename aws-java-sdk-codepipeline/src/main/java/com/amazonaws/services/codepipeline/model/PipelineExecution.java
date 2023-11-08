@@ -110,6 +110,14 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
      */
     private java.util.List<ArtifactRevision> artifactRevisions;
 
+    private ExecutionTrigger trigger;
+    /**
+     * <p>
+     * A list of pipeline variables used for the pipeline execution.
+     * </p>
+     */
+    private java.util.List<ResolvedPipelineVariable> variables;
+
     /**
      * <p>
      * The name of the pipeline with the specified pipeline execution.
@@ -865,6 +873,102 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * @param trigger
+     */
+
+    public void setTrigger(ExecutionTrigger trigger) {
+        this.trigger = trigger;
+    }
+
+    /**
+     * @return
+     */
+
+    public ExecutionTrigger getTrigger() {
+        return this.trigger;
+    }
+
+    /**
+     * @param trigger
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PipelineExecution withTrigger(ExecutionTrigger trigger) {
+        setTrigger(trigger);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of pipeline variables used for the pipeline execution.
+     * </p>
+     * 
+     * @return A list of pipeline variables used for the pipeline execution.
+     */
+
+    public java.util.List<ResolvedPipelineVariable> getVariables() {
+        return variables;
+    }
+
+    /**
+     * <p>
+     * A list of pipeline variables used for the pipeline execution.
+     * </p>
+     * 
+     * @param variables
+     *        A list of pipeline variables used for the pipeline execution.
+     */
+
+    public void setVariables(java.util.Collection<ResolvedPipelineVariable> variables) {
+        if (variables == null) {
+            this.variables = null;
+            return;
+        }
+
+        this.variables = new java.util.ArrayList<ResolvedPipelineVariable>(variables);
+    }
+
+    /**
+     * <p>
+     * A list of pipeline variables used for the pipeline execution.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVariables(java.util.Collection)} or {@link #withVariables(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param variables
+     *        A list of pipeline variables used for the pipeline execution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PipelineExecution withVariables(ResolvedPipelineVariable... variables) {
+        if (this.variables == null) {
+            setVariables(new java.util.ArrayList<ResolvedPipelineVariable>(variables.length));
+        }
+        for (ResolvedPipelineVariable ele : variables) {
+            this.variables.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of pipeline variables used for the pipeline execution.
+     * </p>
+     * 
+     * @param variables
+     *        A list of pipeline variables used for the pipeline execution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PipelineExecution withVariables(java.util.Collection<ResolvedPipelineVariable> variables) {
+        setVariables(variables);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -887,7 +991,11 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
         if (getStatusSummary() != null)
             sb.append("StatusSummary: ").append(getStatusSummary()).append(",");
         if (getArtifactRevisions() != null)
-            sb.append("ArtifactRevisions: ").append(getArtifactRevisions());
+            sb.append("ArtifactRevisions: ").append(getArtifactRevisions()).append(",");
+        if (getTrigger() != null)
+            sb.append("Trigger: ").append(getTrigger()).append(",");
+        if (getVariables() != null)
+            sb.append("Variables: ").append(getVariables());
         sb.append("}");
         return sb.toString();
     }
@@ -926,6 +1034,14 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getArtifactRevisions() != null && other.getArtifactRevisions().equals(this.getArtifactRevisions()) == false)
             return false;
+        if (other.getTrigger() == null ^ this.getTrigger() == null)
+            return false;
+        if (other.getTrigger() != null && other.getTrigger().equals(this.getTrigger()) == false)
+            return false;
+        if (other.getVariables() == null ^ this.getVariables() == null)
+            return false;
+        if (other.getVariables() != null && other.getVariables().equals(this.getVariables()) == false)
+            return false;
         return true;
     }
 
@@ -940,6 +1056,8 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getStatusSummary() == null) ? 0 : getStatusSummary().hashCode());
         hashCode = prime * hashCode + ((getArtifactRevisions() == null) ? 0 : getArtifactRevisions().hashCode());
+        hashCode = prime * hashCode + ((getTrigger() == null) ? 0 : getTrigger().hashCode());
+        hashCode = prime * hashCode + ((getVariables() == null) ? 0 : getVariables().hashCode());
         return hashCode;
     }
 

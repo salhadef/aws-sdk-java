@@ -65,7 +65,7 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
      * Specifies the ID of the principal whose resource shares you want to retrieve. This can be an Amazon Web Services
      * account ID, an organization ID, an organizational unit ID, or the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a>
-     * of an individual IAM user or role.
+     * of an individual IAM role or user.
      * </p>
      * <p>
      * You cannot specify this parameter if the association type is <code>RESOURCE</code>.
@@ -402,7 +402,7 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
      * Specifies the ID of the principal whose resource shares you want to retrieve. This can be an Amazon Web Services
      * account ID, an organization ID, an organizational unit ID, or the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a>
-     * of an individual IAM user or role.
+     * of an individual IAM role or user.
      * </p>
      * <p>
      * You cannot specify this parameter if the association type is <code>RESOURCE</code>.
@@ -412,7 +412,7 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
      *        Specifies the ID of the principal whose resource shares you want to retrieve. This can be an Amazon Web
      *        Services account ID, an organization ID, an organizational unit ID, or the <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
-     *        (ARN)</a> of an individual IAM user or role.</p>
+     *        (ARN)</a> of an individual IAM role or user.</p>
      *        <p>
      *        You cannot specify this parameter if the association type is <code>RESOURCE</code>.
      */
@@ -426,7 +426,7 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
      * Specifies the ID of the principal whose resource shares you want to retrieve. This can be an Amazon Web Services
      * account ID, an organization ID, an organizational unit ID, or the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a>
-     * of an individual IAM user or role.
+     * of an individual IAM role or user.
      * </p>
      * <p>
      * You cannot specify this parameter if the association type is <code>RESOURCE</code>.
@@ -435,7 +435,7 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
      * @return Specifies the ID of the principal whose resource shares you want to retrieve. This can be an Amazon Web
      *         Services account ID, an organization ID, an organizational unit ID, or the <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
-     *         (ARN)</a> of an individual IAM user or role.</p>
+     *         (ARN)</a> of an individual IAM role or user.</p>
      *         <p>
      *         You cannot specify this parameter if the association type is <code>RESOURCE</code>.
      */
@@ -449,7 +449,7 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
      * Specifies the ID of the principal whose resource shares you want to retrieve. This can be an Amazon Web Services
      * account ID, an organization ID, an organizational unit ID, or the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a>
-     * of an individual IAM user or role.
+     * of an individual IAM role or user.
      * </p>
      * <p>
      * You cannot specify this parameter if the association type is <code>RESOURCE</code>.
@@ -459,7 +459,7 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
      *        Specifies the ID of the principal whose resource shares you want to retrieve. This can be an Amazon Web
      *        Services account ID, an organization ID, an organizational unit ID, or the <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
-     *        (ARN)</a> of an individual IAM user or role.</p>
+     *        (ARN)</a> of an individual IAM role or user.</p>
      *        <p>
      *        You cannot specify this parameter if the association type is <code>RESOURCE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.

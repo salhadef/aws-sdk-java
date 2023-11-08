@@ -66,7 +66,7 @@ public class DescribeDBClusterBacktracksRequest extends com.amazonaws.AmazonWebS
      * <li>
      * <p>
      * Must contain a valid universally unique identifier (UUID). For more information about UUIDs, see <a
-     * href="http://www.ietf.org/rfc/rfc4122.txt">A Universally Unique Identifier (UUID) URN Namespace</a>.
+     * href="https://en.wikipedia.org/wiki/Universally_unique_identifier">Universally unique identifier</a>.
      * </p>
      * </li>
      * </ul>
@@ -331,7 +331,7 @@ public class DescribeDBClusterBacktracksRequest extends com.amazonaws.AmazonWebS
      * <li>
      * <p>
      * Must contain a valid universally unique identifier (UUID). For more information about UUIDs, see <a
-     * href="http://www.ietf.org/rfc/rfc4122.txt">A Universally Unique Identifier (UUID) URN Namespace</a>.
+     * href="https://en.wikipedia.org/wiki/Universally_unique_identifier">Universally unique identifier</a>.
      * </p>
      * </li>
      * </ul>
@@ -348,7 +348,7 @@ public class DescribeDBClusterBacktracksRequest extends com.amazonaws.AmazonWebS
      *        <li>
      *        <p>
      *        Must contain a valid universally unique identifier (UUID). For more information about UUIDs, see <a
-     *        href="http://www.ietf.org/rfc/rfc4122.txt">A Universally Unique Identifier (UUID) URN Namespace</a>.
+     *        href="https://en.wikipedia.org/wiki/Universally_unique_identifier">Universally unique identifier</a>.
      *        </p>
      *        </li>
      *        </ul>
@@ -371,7 +371,7 @@ public class DescribeDBClusterBacktracksRequest extends com.amazonaws.AmazonWebS
      * <li>
      * <p>
      * Must contain a valid universally unique identifier (UUID). For more information about UUIDs, see <a
-     * href="http://www.ietf.org/rfc/rfc4122.txt">A Universally Unique Identifier (UUID) URN Namespace</a>.
+     * href="https://en.wikipedia.org/wiki/Universally_unique_identifier">Universally unique identifier</a>.
      * </p>
      * </li>
      * </ul>
@@ -387,7 +387,7 @@ public class DescribeDBClusterBacktracksRequest extends com.amazonaws.AmazonWebS
      *         <li>
      *         <p>
      *         Must contain a valid universally unique identifier (UUID). For more information about UUIDs, see <a
-     *         href="http://www.ietf.org/rfc/rfc4122.txt">A Universally Unique Identifier (UUID) URN Namespace</a>.
+     *         href="https://en.wikipedia.org/wiki/Universally_unique_identifier">Universally unique identifier</a>.
      *         </p>
      *         </li>
      *         </ul>
@@ -410,7 +410,7 @@ public class DescribeDBClusterBacktracksRequest extends com.amazonaws.AmazonWebS
      * <li>
      * <p>
      * Must contain a valid universally unique identifier (UUID). For more information about UUIDs, see <a
-     * href="http://www.ietf.org/rfc/rfc4122.txt">A Universally Unique Identifier (UUID) URN Namespace</a>.
+     * href="https://en.wikipedia.org/wiki/Universally_unique_identifier">Universally unique identifier</a>.
      * </p>
      * </li>
      * </ul>
@@ -427,7 +427,7 @@ public class DescribeDBClusterBacktracksRequest extends com.amazonaws.AmazonWebS
      *        <li>
      *        <p>
      *        Must contain a valid universally unique identifier (UUID). For more information about UUIDs, see <a
-     *        href="http://www.ietf.org/rfc/rfc4122.txt">A Universally Unique Identifier (UUID) URN Namespace</a>.
+     *        href="https://en.wikipedia.org/wiki/Universally_unique_identifier">Universally unique identifier</a>.
      *        </p>
      *        </li>
      *        </ul>

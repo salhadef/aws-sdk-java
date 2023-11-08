@@ -123,7 +123,13 @@ public interface AWSkendraAsync extends AWSkendra {
      * </p>
      * <p>
      * The documents are deleted asynchronously. You can see the progress of the deletion by using Amazon Web Services
-     * CloudWatch. Any error messages related to the processing of the batch are sent to you CloudWatch log.
+     * CloudWatch. Any error messages related to the processing of the batch are sent to your Amazon Web Services
+     * CloudWatch log. You can also use the <code>BatchGetDocumentStatus</code> API to monitor the progress of deleting
+     * your documents.
+     * </p>
+     * <p>
+     * Deleting documents from an index using <code>BatchDeleteDocument</code> could take up to an hour or more,
+     * depending on the number of documents you want to delete.
      * </p>
      * 
      * @param batchDeleteDocumentRequest
@@ -141,7 +147,13 @@ public interface AWSkendraAsync extends AWSkendra {
      * </p>
      * <p>
      * The documents are deleted asynchronously. You can see the progress of the deletion by using Amazon Web Services
-     * CloudWatch. Any error messages related to the processing of the batch are sent to you CloudWatch log.
+     * CloudWatch. Any error messages related to the processing of the batch are sent to your Amazon Web Services
+     * CloudWatch log. You can also use the <code>BatchGetDocumentStatus</code> API to monitor the progress of deleting
+     * your documents.
+     * </p>
+     * <p>
+     * Deleting documents from an index using <code>BatchDeleteDocument</code> could take up to an hour or more,
+     * depending on the number of documents you want to delete.
      * </p>
      * 
      * @param batchDeleteDocumentRequest
@@ -261,7 +273,8 @@ public interface AWSkendraAsync extends AWSkendra {
      * <p>
      * The documents are indexed asynchronously. You can see the progress of the batch using Amazon Web Services
      * CloudWatch. Any error messages related to processing the batch are sent to your Amazon Web Services CloudWatch
-     * log.
+     * log. You can also use the <code>BatchGetDocumentStatus</code> API to monitor the progress of indexing your
+     * documents.
      * </p>
      * <p>
      * For an example of ingesting inline documents using Python and Java SDKs, see <a
@@ -289,7 +302,8 @@ public interface AWSkendraAsync extends AWSkendra {
      * <p>
      * The documents are indexed asynchronously. You can see the progress of the batch using Amazon Web Services
      * CloudWatch. Any error messages related to processing the batch are sent to your Amazon Web Services CloudWatch
-     * log.
+     * log. You can also use the <code>BatchGetDocumentStatus</code> API to monitor the progress of indexing your
+     * documents.
      * </p>
      * <p>
      * For an example of ingesting inline documents using Python and Java SDKs, see <a
@@ -633,8 +647,8 @@ public interface AWSkendraAsync extends AWSkendra {
      * <code>Status</code> field is set to <code>ACTIVE</code> when the index is ready to use.
      * </p>
      * <p>
-     * Once the index is active you can index your documents using the <code>BatchPutDocument</code> API or using one of
-     * the supported data sources.
+     * Once the index is active, you can index your documents using the <code>BatchPutDocument</code> API or using one
+     * of the supported <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-sources.html">data sources</a>.
      * </p>
      * <p>
      * For an example of creating an index and data source using the Python SDK, see <a
@@ -658,8 +672,8 @@ public interface AWSkendraAsync extends AWSkendra {
      * <code>Status</code> field is set to <code>ACTIVE</code> when the index is ready to use.
      * </p>
      * <p>
-     * Once the index is active you can index your documents using the <code>BatchPutDocument</code> API or using one of
-     * the supported data sources.
+     * Once the index is active, you can index your documents using the <code>BatchPutDocument</code> API or using one
+     * of the supported <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-sources.html">data sources</a>.
      * </p>
      * <p>
      * For an example of creating an index and data source using the Python SDK, see <a
@@ -845,6 +859,10 @@ public interface AWSkendraAsync extends AWSkendra {
      * <code>DescribeDataSource</code> API is set to <code>DELETING</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/delete-data-source.html">Deleting Data Sources</a>.
      * </p>
+     * <p>
+     * Deleting an entire data source or re-syncing your index after deleting specific documents from a data source
+     * could take up to an hour or more, depending on the number of documents you want to delete.
+     * </p>
      * 
      * @param deleteDataSourceRequest
      * @return A Java Future containing the result of the DeleteDataSource operation returned by the service.
@@ -860,6 +878,10 @@ public interface AWSkendraAsync extends AWSkendra {
      * deleted. While the data source is being deleted, the <code>Status</code> field returned by a call to the
      * <code>DescribeDataSource</code> API is set to <code>DELETING</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/delete-data-source.html">Deleting Data Sources</a>.
+     * </p>
+     * <p>
+     * Deleting an entire data source or re-syncing your index after deleting specific documents from a data source
+     * could take up to an hour or more, depending on the number of documents you want to delete.
      * </p>
      * 
      * @param deleteDataSourceRequest
@@ -2185,40 +2207,49 @@ public interface AWSkendraAsync extends AWSkendra {
 
     /**
      * <p>
-     * Searches an active index. Use this API to search your documents using query. The <code>Query</code> API enables
-     * to do faceted search and to filter results based on document attributes.
+     * Searches an index given an input query.
+     * </p>
+     * <note>
+     * <p>
+     * If you are working with large language models (LLMs) or implementing retrieval augmented generation (RAG)
+     * systems, you can use Amazon Kendra's <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_Retrieve.html">Retrieve</a> API, which can
+     * return longer semantically relevant passages. We recommend using the <code>Retrieve</code> API instead of filing
+     * a service limit increase to increase the <code>Query</code> API document excerpt length.
+     * </p>
+     * </note>
+     * <p>
+     * You can configure boosting or relevance tuning at the query level to override boosting at the index level, filter
+     * based on document fields/attributes and faceted search, and filter based on the user or their group access to
+     * documents. You can also include certain fields in the response that might provide useful additional information.
      * </p>
      * <p>
-     * It also enables you to provide user context that Amazon Kendra uses to enforce document access control in the
-     * search results.
-     * </p>
-     * <p>
-     * Amazon Kendra searches your index for text content and question and answer (FAQ) content. By default the response
-     * contains three types of results.
+     * A query response contains three types of results.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Relevant passages
+     * Relevant suggested answers. The answers can be either a text excerpt or table excerpt. The answer can be
+     * highlighted in the excerpt.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Matching FAQs
+     * Matching FAQs or questions-answer from your FAQ file.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Relevant documents
+     * Relevant documents. This result type includes an excerpt of the document with the document title. The searched
+     * terms can be highlighted in the excerpt.
      * </p>
      * </li>
      * </ul>
      * <p>
      * You can specify that the query return only one type of result using the <code>QueryResultTypeFilter</code>
-     * parameter.
-     * </p>
-     * <p>
-     * Each query returns the 100 most relevant results.
+     * parameter. Each query returns the 100 most relevant results. If you filter result type to only question-answers,
+     * a maximum of four results are returned. If you filter result type to only answers, a maximum of three results are
+     * returned.
      * </p>
      * 
      * @param queryRequest
@@ -2231,40 +2262,49 @@ public interface AWSkendraAsync extends AWSkendra {
 
     /**
      * <p>
-     * Searches an active index. Use this API to search your documents using query. The <code>Query</code> API enables
-     * to do faceted search and to filter results based on document attributes.
+     * Searches an index given an input query.
+     * </p>
+     * <note>
+     * <p>
+     * If you are working with large language models (LLMs) or implementing retrieval augmented generation (RAG)
+     * systems, you can use Amazon Kendra's <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_Retrieve.html">Retrieve</a> API, which can
+     * return longer semantically relevant passages. We recommend using the <code>Retrieve</code> API instead of filing
+     * a service limit increase to increase the <code>Query</code> API document excerpt length.
+     * </p>
+     * </note>
+     * <p>
+     * You can configure boosting or relevance tuning at the query level to override boosting at the index level, filter
+     * based on document fields/attributes and faceted search, and filter based on the user or their group access to
+     * documents. You can also include certain fields in the response that might provide useful additional information.
      * </p>
      * <p>
-     * It also enables you to provide user context that Amazon Kendra uses to enforce document access control in the
-     * search results.
-     * </p>
-     * <p>
-     * Amazon Kendra searches your index for text content and question and answer (FAQ) content. By default the response
-     * contains three types of results.
+     * A query response contains three types of results.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Relevant passages
+     * Relevant suggested answers. The answers can be either a text excerpt or table excerpt. The answer can be
+     * highlighted in the excerpt.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Matching FAQs
+     * Matching FAQs or questions-answer from your FAQ file.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Relevant documents
+     * Relevant documents. This result type includes an excerpt of the document with the document title. The searched
+     * terms can be highlighted in the excerpt.
      * </p>
      * </li>
      * </ul>
      * <p>
      * You can specify that the query return only one type of result using the <code>QueryResultTypeFilter</code>
-     * parameter.
-     * </p>
-     * <p>
-     * Each query returns the 100 most relevant results.
+     * parameter. Each query returns the 100 most relevant results. If you filter result type to only question-answers,
+     * a maximum of four results are returned. If you filter result type to only answers, a maximum of three results are
+     * returned.
      * </p>
      * 
      * @param queryRequest
@@ -2281,8 +2321,143 @@ public interface AWSkendraAsync extends AWSkendra {
 
     /**
      * <p>
+     * Retrieves relevant passages or text excerpts given an input query.
+     * </p>
+     * <p>
+     * This API is similar to the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_Query.html">Query</a> API. However, by default,
+     * the <code>Query</code> API only returns excerpt passages of up to 100 token words. With the <code>Retrieve</code>
+     * API, you can retrieve longer passages of up to 200 token words and up to 100 semantically relevant passages. This
+     * doesn't include question-answer or FAQ type responses from your index. The passages are text excerpts that can be
+     * semantically extracted from multiple documents and multiple parts of the same document. If in extreme cases your
+     * documents produce zero passages using the <code>Retrieve</code> API, you can alternatively use the
+     * <code>Query</code> API and its types of responses.
+     * </p>
+     * <p>
+     * You can also do the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Override boosting at the index level
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Filter based on document fields or attributes
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Filter based on the user or their group access to documents
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * View the confidence score bucket for a retrieved passage result. The confidence bucket provides a relative
+     * ranking that indicates how confident Amazon Kendra is that the response is relevant to the query.
+     * </p>
+     * <note>
+     * <p>
+     * Confidence score buckets are currently available only for English.
+     * </p>
+     * </note></li>
+     * </ul>
+     * <p>
+     * You can also include certain fields in the response that might provide useful additional information.
+     * </p>
+     * <p>
+     * The <code>Retrieve</code> API shares the number of <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_CapacityUnitsConfiguration.html">query capacity
+     * units</a> that you set for your index. For more information on what's included in a single capacity unit and the
+     * default base capacity for an index, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.
+     * </p>
+     * 
+     * @param retrieveRequest
+     * @return A Java Future containing the result of the Retrieve operation returned by the service.
+     * @sample AWSkendraAsync.Retrieve
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/Retrieve" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<RetrieveResult> retrieveAsync(RetrieveRequest retrieveRequest);
+
+    /**
+     * <p>
+     * Retrieves relevant passages or text excerpts given an input query.
+     * </p>
+     * <p>
+     * This API is similar to the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_Query.html">Query</a> API. However, by default,
+     * the <code>Query</code> API only returns excerpt passages of up to 100 token words. With the <code>Retrieve</code>
+     * API, you can retrieve longer passages of up to 200 token words and up to 100 semantically relevant passages. This
+     * doesn't include question-answer or FAQ type responses from your index. The passages are text excerpts that can be
+     * semantically extracted from multiple documents and multiple parts of the same document. If in extreme cases your
+     * documents produce zero passages using the <code>Retrieve</code> API, you can alternatively use the
+     * <code>Query</code> API and its types of responses.
+     * </p>
+     * <p>
+     * You can also do the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Override boosting at the index level
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Filter based on document fields or attributes
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Filter based on the user or their group access to documents
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * View the confidence score bucket for a retrieved passage result. The confidence bucket provides a relative
+     * ranking that indicates how confident Amazon Kendra is that the response is relevant to the query.
+     * </p>
+     * <note>
+     * <p>
+     * Confidence score buckets are currently available only for English.
+     * </p>
+     * </note></li>
+     * </ul>
+     * <p>
+     * You can also include certain fields in the response that might provide useful additional information.
+     * </p>
+     * <p>
+     * The <code>Retrieve</code> API shares the number of <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_CapacityUnitsConfiguration.html">query capacity
+     * units</a> that you set for your index. For more information on what's included in a single capacity unit and the
+     * default base capacity for an index, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.
+     * </p>
+     * 
+     * @param retrieveRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the Retrieve operation returned by the service.
+     * @sample AWSkendraAsyncHandler.Retrieve
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/Retrieve" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<RetrieveResult> retrieveAsync(RetrieveRequest retrieveRequest,
+            com.amazonaws.handlers.AsyncHandler<RetrieveRequest, RetrieveResult> asyncHandler);
+
+    /**
+     * <p>
      * Starts a synchronization job for a data source connector. If a synchronization job is already in progress, Amazon
      * Kendra returns a <code>ResourceInUseException</code> exception.
+     * </p>
+     * <p>
+     * Re-syncing your data source with your index after modifying, adding, or deleting documents from your data source
+     * respository could take up to an hour or more, depending on the number of documents to sync.
      * </p>
      * 
      * @param startDataSourceSyncJobRequest
@@ -2297,6 +2472,10 @@ public interface AWSkendraAsync extends AWSkendra {
      * <p>
      * Starts a synchronization job for a data source connector. If a synchronization job is already in progress, Amazon
      * Kendra returns a <code>ResourceInUseException</code> exception.
+     * </p>
+     * <p>
+     * Re-syncing your data source with your index after modifying, adding, or deleting documents from your data source
+     * respository could take up to an hour or more, depending on the number of documents to sync.
      * </p>
      * 
      * @param startDataSourceSyncJobRequest

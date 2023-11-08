@@ -47,6 +47,12 @@ public class PivotTableOptionsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RowAlternateColorOptions").build();
     private static final MarshallingInfo<String> COLLAPSEDROWDIMENSIONSVISIBILITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CollapsedRowDimensionsVisibility").build();
+    private static final MarshallingInfo<String> ROWSLAYOUT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RowsLayout").build();
+    private static final MarshallingInfo<StructuredPojo> ROWSLABELOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RowsLabelOptions").build();
+    private static final MarshallingInfo<String> DEFAULTCELLWIDTH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultCellWidth").build();
 
     private static final PivotTableOptionsMarshaller instance = new PivotTableOptionsMarshaller();
 
@@ -74,6 +80,9 @@ public class PivotTableOptionsMarshaller {
             protocolMarshaller.marshall(pivotTableOptions.getRowFieldNamesStyle(), ROWFIELDNAMESSTYLE_BINDING);
             protocolMarshaller.marshall(pivotTableOptions.getRowAlternateColorOptions(), ROWALTERNATECOLOROPTIONS_BINDING);
             protocolMarshaller.marshall(pivotTableOptions.getCollapsedRowDimensionsVisibility(), COLLAPSEDROWDIMENSIONSVISIBILITY_BINDING);
+            protocolMarshaller.marshall(pivotTableOptions.getRowsLayout(), ROWSLAYOUT_BINDING);
+            protocolMarshaller.marshall(pivotTableOptions.getRowsLabelOptions(), ROWSLABELOPTIONS_BINDING);
+            protocolMarshaller.marshall(pivotTableOptions.getDefaultCellWidth(), DEFAULTCELLWIDTH_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

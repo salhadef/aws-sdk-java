@@ -48,6 +48,8 @@ public class OntapFileSystemConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ThroughputCapacity").build();
     private static final MarshallingInfo<String> WEEKLYMAINTENANCESTARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WeeklyMaintenanceStartTime").build();
+    private static final MarshallingInfo<String> FSXADMINPASSWORD_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FsxAdminPassword").build();
 
     private static final OntapFileSystemConfigurationMarshaller instance = new OntapFileSystemConfigurationMarshaller();
 
@@ -75,6 +77,7 @@ public class OntapFileSystemConfigurationMarshaller {
             protocolMarshaller.marshall(ontapFileSystemConfiguration.getRouteTableIds(), ROUTETABLEIDS_BINDING);
             protocolMarshaller.marshall(ontapFileSystemConfiguration.getThroughputCapacity(), THROUGHPUTCAPACITY_BINDING);
             protocolMarshaller.marshall(ontapFileSystemConfiguration.getWeeklyMaintenanceStartTime(), WEEKLYMAINTENANCESTARTTIME_BINDING);
+            protocolMarshaller.marshall(ontapFileSystemConfiguration.getFsxAdminPassword(), FSXADMINPASSWORD_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

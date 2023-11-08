@@ -52,9 +52,41 @@ public class GetRunResultJsonUnmarshaller implements Unmarshaller<GetRunResult, 
                     context.nextToken();
                     getRunResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("creationTime", targetDepth)) {
+                if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
-                    getRunResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                    getRunResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("status", targetDepth)) {
+                    context.nextToken();
+                    getRunResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("workflowId", targetDepth)) {
+                    context.nextToken();
+                    getRunResult.setWorkflowId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("workflowType", targetDepth)) {
+                    context.nextToken();
+                    getRunResult.setWorkflowType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("runId", targetDepth)) {
+                    context.nextToken();
+                    getRunResult.setRunId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("roleArn", targetDepth)) {
+                    context.nextToken();
+                    getRunResult.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("name", targetDepth)) {
+                    context.nextToken();
+                    getRunResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("runGroupId", targetDepth)) {
+                    context.nextToken();
+                    getRunResult.setRunGroupId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("priority", targetDepth)) {
+                    context.nextToken();
+                    getRunResult.setPriority(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("definition", targetDepth)) {
                     context.nextToken();
@@ -64,79 +96,71 @@ public class GetRunResultJsonUnmarshaller implements Unmarshaller<GetRunResult, 
                     context.nextToken();
                     getRunResult.setDigest(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("id", targetDepth)) {
+                if (context.testExpression("storageCapacity", targetDepth)) {
                     context.nextToken();
-                    getRunResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("logLevel", targetDepth)) {
-                    context.nextToken();
-                    getRunResult.setLogLevel(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("name", targetDepth)) {
-                    context.nextToken();
-                    getRunResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                    getRunResult.setStorageCapacity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("outputUri", targetDepth)) {
                     context.nextToken();
                     getRunResult.setOutputUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("priority", targetDepth)) {
+                if (context.testExpression("logLevel", targetDepth)) {
                     context.nextToken();
-                    getRunResult.setPriority(context.getUnmarshaller(Integer.class).unmarshall(context));
+                    getRunResult.setLogLevel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceDigests", targetDepth)) {
                     context.nextToken();
                     getRunResult.setResourceDigests(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
-                if (context.testExpression("roleArn", targetDepth)) {
+                if (context.testExpression("startedBy", targetDepth)) {
                     context.nextToken();
-                    getRunResult.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                    getRunResult.setStartedBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("runGroupId", targetDepth)) {
+                if (context.testExpression("creationTime", targetDepth)) {
                     context.nextToken();
-                    getRunResult.setRunGroupId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("runId", targetDepth)) {
-                    context.nextToken();
-                    getRunResult.setRunId(context.getUnmarshaller(String.class).unmarshall(context));
+                    getRunResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("startTime", targetDepth)) {
                     context.nextToken();
                     getRunResult.setStartTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
-                if (context.testExpression("startedBy", targetDepth)) {
-                    context.nextToken();
-                    getRunResult.setStartedBy(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("status", targetDepth)) {
-                    context.nextToken();
-                    getRunResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("statusMessage", targetDepth)) {
-                    context.nextToken();
-                    getRunResult.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("stopTime", targetDepth)) {
                     context.nextToken();
                     getRunResult.setStopTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
-                if (context.testExpression("storageCapacity", targetDepth)) {
+                if (context.testExpression("statusMessage", targetDepth)) {
                     context.nextToken();
-                    getRunResult.setStorageCapacity(context.getUnmarshaller(Integer.class).unmarshall(context));
+                    getRunResult.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
                     getRunResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
-                if (context.testExpression("workflowId", targetDepth)) {
+                if (context.testExpression("accelerators", targetDepth)) {
                     context.nextToken();
-                    getRunResult.setWorkflowId(context.getUnmarshaller(String.class).unmarshall(context));
+                    getRunResult.setAccelerators(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("workflowType", targetDepth)) {
+                if (context.testExpression("retentionMode", targetDepth)) {
                     context.nextToken();
-                    getRunResult.setWorkflowType(context.getUnmarshaller(String.class).unmarshall(context));
+                    getRunResult.setRetentionMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("failureReason", targetDepth)) {
+                    context.nextToken();
+                    getRunResult.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("logLocation", targetDepth)) {
+                    context.nextToken();
+                    getRunResult.setLogLocation(RunLogLocationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("uuid", targetDepth)) {
+                    context.nextToken();
+                    getRunResult.setUuid(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("runOutputUri", targetDepth)) {
+                    context.nextToken();
+                    getRunResult.setRunOutputUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

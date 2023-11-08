@@ -115,6 +115,10 @@ public class GetTemplateSummaryResultStaxUnmarshaller implements Unmarshaller<Ge
                     continue;
                 }
 
+                if (context.testExpression("Warnings", targetDepth)) {
+                    getTemplateSummaryResult.setWarnings(WarningsStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return getTemplateSummaryResult;

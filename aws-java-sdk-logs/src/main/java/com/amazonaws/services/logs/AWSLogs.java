@@ -128,22 +128,63 @@ public interface AWSLogs {
 
     /**
      * <p>
-     * Associates the specified KMS key with the specified log group.
+     * Associates the specified KMS key with either one log group in the account, or with all stored CloudWatch Logs
+     * query insights results in the account.
+     * </p>
+     * <p>
+     * When you use <code>AssociateKmsKey</code>, you specify either the <code>logGroupName</code> parameter or the
+     * <code>resourceIdentifier</code> parameter. You can't specify both of those parameters in the same operation.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify the <code>logGroupName</code> parameter to cause all log events stored in the log group to be encrypted
+     * with that key. Only the log events ingested after the key is associated are encrypted with that key.
      * </p>
      * <p>
      * Associating a KMS key with a log group overrides any existing associations between the log group and a KMS key.
      * After a KMS key is associated with a log group, all newly ingested data for the log group is encrypted using the
-     * KMS key. This association is stored as long as the data encrypted with the KMS keyis still within CloudWatch
+     * KMS key. This association is stored as long as the data encrypted with the KMS key is still within CloudWatch
      * Logs. This enables CloudWatch Logs to decrypt this data whenever it is requested.
      * </p>
+     * <p>
+     * Associating a key with a log group does not cause the results of queries of that log group to be encrypted with
+     * that key. To have query results encrypted with a KMS key, you must use an <code>AssociateKmsKey</code> operation
+     * with the <code>resourceIdentifier</code> parameter that specifies a <code>query-result</code> resource.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify the <code>resourceIdentifier</code> parameter with a <code>query-result</code> resource, to use that key
+     * to encrypt the stored results of all future <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>
+     * operations in the account. The response from a <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetQueryResults.html"
+     * >GetQueryResults</a> operation will still return the query results in plain text.
+     * </p>
+     * <p>
+     * Even if you have not associated a key with your query results, the query results are encrypted when stored, using
+     * the default CloudWatch Logs method.
+     * </p>
+     * <p>
+     * If you run a query from a monitoring account that queries logs in a source account, the query results key from
+     * the monitoring account, if any, is used.
+     * </p>
+     * </li>
+     * </ul>
      * <important>
      * <p>
+     * If you delete the key that is used to encrypt log events or log group query results, then all the associated
+     * stored log events or query results that were encrypted with that key will be unencryptable and unusable.
+     * </p>
+     * </important> <note>
+     * <p>
      * CloudWatch Logs supports only symmetric KMS keys. Do not use an associate an asymmetric KMS key with your log
-     * group. For more information, see <a
+     * group or query results. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using Symmetric and
      * Asymmetric Keys</a>.
      * </p>
-     * </important>
+     * </note>
      * <p>
      * It can take up to 5 minutes for this operation to take effect.
      * </p>
@@ -247,7 +288,7 @@ public interface AWSLogs {
 
     /**
      * <p>
-     * Creates a log group with the specified name. You can create up to 20,000 log groups per account.
+     * Creates a log group with the specified name. You can create up to 1,000,000 log groups per Region per account.
      * </p>
      * <p>
      * You must use the following guidelines when naming a log group:
@@ -282,7 +323,7 @@ public interface AWSLogs {
      * Logs to decrypt this data whenever it is requested.
      * </p>
      * <p>
-     * If you attempt to associate a KMS key with the log group but the KMS keydoes not exist or the KMS key is
+     * If you attempt to associate a KMS key with the log group but the KMS key does not exist or the KMS key is
      * disabled, you receive an <code>InvalidParameterException</code> error.
      * </p>
      * <important>
@@ -357,6 +398,31 @@ public interface AWSLogs {
      *      Documentation</a>
      */
     CreateLogStreamResult createLogStream(CreateLogStreamRequest createLogStreamRequest);
+
+    /**
+     * <p>
+     * Deletes a CloudWatch Logs account policy.
+     * </p>
+     * <p>
+     * To use this operation, you must be signed on with the <code>logs:DeleteDataProtectionPolicy</code> and
+     * <code>logs:DeleteAccountPolicy</code> permissions.
+     * </p>
+     * 
+     * @param deleteAccountPolicyRequest
+     * @return Result of the DeleteAccountPolicy operation returned by the service.
+     * @throws InvalidParameterException
+     *         A parameter is specified incorrectly.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ServiceUnavailableException
+     *         The service cannot complete the request.
+     * @throws OperationAbortedException
+     *         Multiple concurrent requests to update the same resource were in conflict.
+     * @sample AWSLogs.DeleteAccountPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteAccountPolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteAccountPolicyResult deleteAccountPolicy(DeleteAccountPolicyRequest deleteAccountPolicyRequest);
 
     /**
      * <p>
@@ -561,6 +627,27 @@ public interface AWSLogs {
      *      API Documentation</a>
      */
     DeleteSubscriptionFilterResult deleteSubscriptionFilter(DeleteSubscriptionFilterRequest deleteSubscriptionFilterRequest);
+
+    /**
+     * <p>
+     * Returns a list of all CloudWatch Logs account policies in the account.
+     * </p>
+     * 
+     * @param describeAccountPoliciesRequest
+     * @return Result of the DescribeAccountPolicies operation returned by the service.
+     * @throws InvalidParameterException
+     *         A parameter is specified incorrectly.
+     * @throws OperationAbortedException
+     *         Multiple concurrent requests to update the same resource were in conflict.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ServiceUnavailableException
+     *         The service cannot complete the request.
+     * @sample AWSLogs.DescribeAccountPolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeAccountPolicies" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeAccountPoliciesResult describeAccountPolicies(DescribeAccountPoliciesRequest describeAccountPoliciesRequest);
 
     /**
      * <p>
@@ -777,15 +864,35 @@ public interface AWSLogs {
 
     /**
      * <p>
-     * Disassociates the associated KMS key from the specified log group.
+     * Disassociates the specified KMS key from the specified log group or from all CloudWatch Logs Insights query
+     * results in the account.
      * </p>
      * <p>
-     * After the KMS key is disassociated from the log group, CloudWatch Logs stops encrypting newly ingested data for
-     * the log group. All previously ingested data remains encrypted, and CloudWatch Logs requires permissions for the
-     * KMS key whenever the encrypted data is requested.
+     * When you use <code>DisassociateKmsKey</code>, you specify either the <code>logGroupName</code> parameter or the
+     * <code>resourceIdentifier</code> parameter. You can't specify both of those parameters in the same operation.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * Note that it can take up to 5 minutes for this operation to take effect.
+     * Specify the <code>logGroupName</code> parameter to stop using the KMS key to encrypt future log events ingested
+     * and stored in the log group. Instead, they will be encrypted with the default CloudWatch Logs method. The log
+     * events that were ingested while the key was associated with the log group are still encrypted with that key.
+     * Therefore, CloudWatch Logs will need permissions for the key whenever that data is accessed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify the <code>resourceIdentifier</code> parameter with the <code>query-result</code> resource to stop using
+     * the KMS key to encrypt the results of all future <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>
+     * operations in the account. They will instead be encrypted with the default CloudWatch Logs method. The results
+     * from queries that ran while the key was associated with the account are still encrypted with that key. Therefore,
+     * CloudWatch Logs will need permissions for the key whenever that data is accessed.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * It can take up to 5 minutes for this operation to take effect.
      * </p>
      * 
      * @param disassociateKmsKeyRequest
@@ -810,7 +917,7 @@ public interface AWSLogs {
      * filter pattern, a time range, and the name of the log stream.
      * </p>
      * <p>
-     * You must have the <code>logs;FilterLogEvents</code> permission to perform this operation.
+     * You must have the <code>logs:FilterLogEvents</code> permission to perform this operation.
      * </p>
      * <p>
      * You can specify the log group to search by using either <code>logGroupIdentifier</code> or
@@ -1057,6 +1164,67 @@ public interface AWSLogs {
 
     /**
      * <p>
+     * Creates an account-level data protection policy that applies to all log groups in the account. A data protection
+     * policy can help safeguard sensitive data that's ingested by your log groups by auditing and masking the sensitive
+     * log data. Each account can have only one account-level policy.
+     * </p>
+     * <important>
+     * <p>
+     * Sensitive data is detected and masked when it is ingested into a log group. When you set a data protection
+     * policy, log events ingested into the log groups before that time are not masked.
+     * </p>
+     * </important>
+     * <p>
+     * If you use <code>PutAccountPolicy</code> to create a data protection policy for your whole account, it applies to
+     * both existing log groups and all log groups that are created later in this account. The account policy is applied
+     * to existing log groups with eventual consistency. It might take up to 5 minutes before sensitive data in existing
+     * log groups begins to be masked.
+     * </p>
+     * <p>
+     * By default, when a user views a log event that includes masked data, the sensitive data is replaced by asterisks.
+     * A user who has the <code>logs:Unmask</code> permission can use a <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogEvents.html"
+     * >GetLogEvents</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_FilterLogEvents.html"
+     * >FilterLogEvents</a> operation with the <code>unmask</code> parameter set to <code>true</code> to view the
+     * unmasked log events. Users with the <code>logs:Unmask</code> can also view unmasked data in the CloudWatch Logs
+     * console by running a CloudWatch Logs Insights query with the <code>unmask</code> query command.
+     * </p>
+     * <p>
+     * For more information, including a list of types of data that can be audited and masked, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data.html">Protect sensitive
+     * log data with masking</a>.
+     * </p>
+     * <p>
+     * To use the <code>PutAccountPolicy</code> operation, you must be signed on with the
+     * <code>logs:PutDataProtectionPolicy</code> and <code>logs:PutAccountPolicy</code> permissions.
+     * </p>
+     * <p>
+     * The <code>PutAccountPolicy</code> operation applies to all log groups in the account. You can also use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html"
+     * >PutDataProtectionPolicy</a> to create a data protection policy that applies to just one log group. If a log
+     * group has its own data protection policy and the account also has an account-level data protection policy, then
+     * the two policies are cumulative. Any sensitive term specified in either policy is masked.
+     * </p>
+     * 
+     * @param putAccountPolicyRequest
+     * @return Result of the PutAccountPolicy operation returned by the service.
+     * @throws InvalidParameterException
+     *         A parameter is specified incorrectly.
+     * @throws OperationAbortedException
+     *         Multiple concurrent requests to update the same resource were in conflict.
+     * @throws ServiceUnavailableException
+     *         The service cannot complete the request.
+     * @throws LimitExceededException
+     *         You have reached the maximum number of resources that can be created.
+     * @sample AWSLogs.PutAccountPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutAccountPolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    PutAccountPolicyResult putAccountPolicy(PutAccountPolicyRequest putAccountPolicyRequest);
+
+    /**
+     * <p>
      * Creates a data protection policy for the specified log group. A data protection policy can help safeguard
      * sensitive data that's ingested by the log group by auditing and masking the sensitive log data.
      * </p>
@@ -1080,6 +1248,14 @@ public interface AWSLogs {
      * For more information, including a list of types of data that can be audited and masked, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data.html">Protect sensitive
      * log data with masking</a>.
+     * </p>
+     * <p>
+     * The <code>PutDataProtectionPolicy</code> operation applies to only the specified log group. You can also use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutAccountPolicy.html">
+     * PutAccountPolicy</a> to create an account-level data protection policy that applies to all log groups in the
+     * account, including both existing log groups and log groups that are created level. If a log group has its own
+     * data protection policy and the account also has an account-level data protection policy, then the two policies
+     * are cumulative. Any sensitive term specified in either policy is masked.
      * </p>
      * 
      * @param putDataProtectionPolicyRequest
@@ -1206,6 +1382,11 @@ public interface AWSLogs {
      * </li>
      * <li>
      * <p>
+     * Each log event can be no larger than 256 KB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * The maximum number of log events in a batch is 10,000.
      * </p>
      * </li>
@@ -1275,8 +1456,8 @@ public interface AWSLogs {
      * metric.
      * </p>
      * <p>
-     * CloudWatch Logs disables a metric filter if it generates 1,000 different name/value pairs for your specified
-     * dimensions within a certain amount of time. This helps to prevent accidental high charges.
+     * CloudWatch Logs might disable a metric filter if it generates 1,000 different name/value pairs for your specified
+     * dimensions within one hour.
      * </p>
      * <p>
      * You can also set up a billing alarm to alert you if your charges are higher than expected. For more information,
@@ -1375,6 +1556,12 @@ public interface AWSLogs {
      * group at its lower retention setting until 72 hours after the previous retention period ends. Alternatively, wait
      * to change the retention setting until you confirm that the earlier log events are deleted.
      * </p>
+     * <p>
+     * When log events reach their retention setting they are marked for deletion. After they are marked for deletion,
+     * they do not add to your archival storage costs anymore, even if they are not actually deleted until later. These
+     * log events marked for deletion are also not included when you use an API to retrieve the <code>storedBytes</code>
+     * value to see how many bytes a log group is storing.
+     * </p>
      * </note>
      * 
      * @param putRetentionPolicyRequest
@@ -1413,7 +1600,10 @@ public interface AWSLogs {
      * </li>
      * <li>
      * <p>
-     * A logical destination that belongs to a different account, for cross-account delivery.
+     * A logical destination created with <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html"
+     * >PutDestination</a> that belongs to a different account, for cross-account delivery. We currently support Kinesis
+     * Data Streams and Kinesis Data Firehose as logical destinations.
      * </p>
      * </li>
      * <li>
@@ -1433,8 +1623,8 @@ public interface AWSLogs {
      * filter, you must specify the correct name in <code>filterName</code>.
      * </p>
      * <p>
-     * To perform a <code>PutSubscriptionFilter</code> operation, you must also have the <code>iam:PassRole</code>
-     * permission.
+     * To perform a <code>PutSubscriptionFilter</code> operation for any destination except a Lambda function, you must
+     * also have the <code>iam:PassRole</code> permission.
      * </p>
      * 
      * @param putSubscriptionFilterRequest
@@ -1466,7 +1656,19 @@ public interface AWSLogs {
      * Query Syntax</a>.
      * </p>
      * <p>
-     * Queries time out after 15 minutes of runtime. If your queries are timing out, reduce the time range being
+     * After you run a query using <code>StartQuery</code>, the query results are stored by CloudWatch Logs. You can use
+     * <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetQueryResults.html">
+     * GetQueryResults</a> to retrieve the results of a query, using the <code>queryId</code> that
+     * <code>StartQuery</code> returns.
+     * </p>
+     * <p>
+     * If you have associated a KMS key with the query results in this account, then <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>
+     * uses that key to encrypt the results when it stores them. If no key is associated with query results, the query
+     * results are encrypted with the default CloudWatch Logs encryption method.
+     * </p>
+     * <p>
+     * Queries time out after 60 minutes of runtime. If your queries are timing out, reduce the time range being
      * searched or partition your query into a number of queries.
      * </p>
      * <p>
@@ -1477,7 +1679,7 @@ public interface AWSLogs {
      * definition must be defined in the monitoring account.
      * </p>
      * <p>
-     * You can have up to 20 concurrent CloudWatch Logs insights queries, including queries that have been added to
+     * You can have up to 30 concurrent CloudWatch Logs insights queries, including queries that have been added to
      * dashboards.
      * </p>
      * 

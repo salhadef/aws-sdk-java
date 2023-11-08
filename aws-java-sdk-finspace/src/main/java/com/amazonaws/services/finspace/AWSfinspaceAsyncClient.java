@@ -107,6 +107,171 @@ public class AWSfinspaceAsyncClient extends AWSfinspaceClient implements AWSfins
     }
 
     @Override
+    public java.util.concurrent.Future<CreateKxChangesetResult> createKxChangesetAsync(CreateKxChangesetRequest request) {
+
+        return createKxChangesetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateKxChangesetResult> createKxChangesetAsync(final CreateKxChangesetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateKxChangesetRequest, CreateKxChangesetResult> asyncHandler) {
+        final CreateKxChangesetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateKxChangesetResult>() {
+            @Override
+            public CreateKxChangesetResult call() throws Exception {
+                CreateKxChangesetResult result = null;
+
+                try {
+                    result = executeCreateKxChangeset(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateKxClusterResult> createKxClusterAsync(CreateKxClusterRequest request) {
+
+        return createKxClusterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateKxClusterResult> createKxClusterAsync(final CreateKxClusterRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateKxClusterRequest, CreateKxClusterResult> asyncHandler) {
+        final CreateKxClusterRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateKxClusterResult>() {
+            @Override
+            public CreateKxClusterResult call() throws Exception {
+                CreateKxClusterResult result = null;
+
+                try {
+                    result = executeCreateKxCluster(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateKxDatabaseResult> createKxDatabaseAsync(CreateKxDatabaseRequest request) {
+
+        return createKxDatabaseAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateKxDatabaseResult> createKxDatabaseAsync(final CreateKxDatabaseRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateKxDatabaseRequest, CreateKxDatabaseResult> asyncHandler) {
+        final CreateKxDatabaseRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateKxDatabaseResult>() {
+            @Override
+            public CreateKxDatabaseResult call() throws Exception {
+                CreateKxDatabaseResult result = null;
+
+                try {
+                    result = executeCreateKxDatabase(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateKxEnvironmentResult> createKxEnvironmentAsync(CreateKxEnvironmentRequest request) {
+
+        return createKxEnvironmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateKxEnvironmentResult> createKxEnvironmentAsync(final CreateKxEnvironmentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateKxEnvironmentRequest, CreateKxEnvironmentResult> asyncHandler) {
+        final CreateKxEnvironmentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateKxEnvironmentResult>() {
+            @Override
+            public CreateKxEnvironmentResult call() throws Exception {
+                CreateKxEnvironmentResult result = null;
+
+                try {
+                    result = executeCreateKxEnvironment(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateKxUserResult> createKxUserAsync(CreateKxUserRequest request) {
+
+        return createKxUserAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateKxUserResult> createKxUserAsync(final CreateKxUserRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateKxUserRequest, CreateKxUserResult> asyncHandler) {
+        final CreateKxUserRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateKxUserResult>() {
+            @Override
+            public CreateKxUserResult call() throws Exception {
+                CreateKxUserResult result = null;
+
+                try {
+                    result = executeCreateKxUser(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteEnvironmentResult> deleteEnvironmentAsync(DeleteEnvironmentRequest request) {
 
         return deleteEnvironmentAsync(request, null);
@@ -124,6 +289,138 @@ public class AWSfinspaceAsyncClient extends AWSfinspaceClient implements AWSfins
 
                 try {
                     result = executeDeleteEnvironment(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteKxClusterResult> deleteKxClusterAsync(DeleteKxClusterRequest request) {
+
+        return deleteKxClusterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteKxClusterResult> deleteKxClusterAsync(final DeleteKxClusterRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteKxClusterRequest, DeleteKxClusterResult> asyncHandler) {
+        final DeleteKxClusterRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteKxClusterResult>() {
+            @Override
+            public DeleteKxClusterResult call() throws Exception {
+                DeleteKxClusterResult result = null;
+
+                try {
+                    result = executeDeleteKxCluster(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteKxDatabaseResult> deleteKxDatabaseAsync(DeleteKxDatabaseRequest request) {
+
+        return deleteKxDatabaseAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteKxDatabaseResult> deleteKxDatabaseAsync(final DeleteKxDatabaseRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteKxDatabaseRequest, DeleteKxDatabaseResult> asyncHandler) {
+        final DeleteKxDatabaseRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteKxDatabaseResult>() {
+            @Override
+            public DeleteKxDatabaseResult call() throws Exception {
+                DeleteKxDatabaseResult result = null;
+
+                try {
+                    result = executeDeleteKxDatabase(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteKxEnvironmentResult> deleteKxEnvironmentAsync(DeleteKxEnvironmentRequest request) {
+
+        return deleteKxEnvironmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteKxEnvironmentResult> deleteKxEnvironmentAsync(final DeleteKxEnvironmentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteKxEnvironmentRequest, DeleteKxEnvironmentResult> asyncHandler) {
+        final DeleteKxEnvironmentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteKxEnvironmentResult>() {
+            @Override
+            public DeleteKxEnvironmentResult call() throws Exception {
+                DeleteKxEnvironmentResult result = null;
+
+                try {
+                    result = executeDeleteKxEnvironment(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteKxUserResult> deleteKxUserAsync(DeleteKxUserRequest request) {
+
+        return deleteKxUserAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteKxUserResult> deleteKxUserAsync(final DeleteKxUserRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteKxUserRequest, DeleteKxUserResult> asyncHandler) {
+        final DeleteKxUserRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteKxUserResult>() {
+            @Override
+            public DeleteKxUserResult call() throws Exception {
+                DeleteKxUserResult result = null;
+
+                try {
+                    result = executeDeleteKxUser(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -173,6 +470,204 @@ public class AWSfinspaceAsyncClient extends AWSfinspaceClient implements AWSfins
     }
 
     @Override
+    public java.util.concurrent.Future<GetKxChangesetResult> getKxChangesetAsync(GetKxChangesetRequest request) {
+
+        return getKxChangesetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetKxChangesetResult> getKxChangesetAsync(final GetKxChangesetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetKxChangesetRequest, GetKxChangesetResult> asyncHandler) {
+        final GetKxChangesetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetKxChangesetResult>() {
+            @Override
+            public GetKxChangesetResult call() throws Exception {
+                GetKxChangesetResult result = null;
+
+                try {
+                    result = executeGetKxChangeset(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetKxClusterResult> getKxClusterAsync(GetKxClusterRequest request) {
+
+        return getKxClusterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetKxClusterResult> getKxClusterAsync(final GetKxClusterRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetKxClusterRequest, GetKxClusterResult> asyncHandler) {
+        final GetKxClusterRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetKxClusterResult>() {
+            @Override
+            public GetKxClusterResult call() throws Exception {
+                GetKxClusterResult result = null;
+
+                try {
+                    result = executeGetKxCluster(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetKxConnectionStringResult> getKxConnectionStringAsync(GetKxConnectionStringRequest request) {
+
+        return getKxConnectionStringAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetKxConnectionStringResult> getKxConnectionStringAsync(final GetKxConnectionStringRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetKxConnectionStringRequest, GetKxConnectionStringResult> asyncHandler) {
+        final GetKxConnectionStringRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetKxConnectionStringResult>() {
+            @Override
+            public GetKxConnectionStringResult call() throws Exception {
+                GetKxConnectionStringResult result = null;
+
+                try {
+                    result = executeGetKxConnectionString(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetKxDatabaseResult> getKxDatabaseAsync(GetKxDatabaseRequest request) {
+
+        return getKxDatabaseAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetKxDatabaseResult> getKxDatabaseAsync(final GetKxDatabaseRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetKxDatabaseRequest, GetKxDatabaseResult> asyncHandler) {
+        final GetKxDatabaseRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetKxDatabaseResult>() {
+            @Override
+            public GetKxDatabaseResult call() throws Exception {
+                GetKxDatabaseResult result = null;
+
+                try {
+                    result = executeGetKxDatabase(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetKxEnvironmentResult> getKxEnvironmentAsync(GetKxEnvironmentRequest request) {
+
+        return getKxEnvironmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetKxEnvironmentResult> getKxEnvironmentAsync(final GetKxEnvironmentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetKxEnvironmentRequest, GetKxEnvironmentResult> asyncHandler) {
+        final GetKxEnvironmentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetKxEnvironmentResult>() {
+            @Override
+            public GetKxEnvironmentResult call() throws Exception {
+                GetKxEnvironmentResult result = null;
+
+                try {
+                    result = executeGetKxEnvironment(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetKxUserResult> getKxUserAsync(GetKxUserRequest request) {
+
+        return getKxUserAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetKxUserResult> getKxUserAsync(final GetKxUserRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetKxUserRequest, GetKxUserResult> asyncHandler) {
+        final GetKxUserRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetKxUserResult>() {
+            @Override
+            public GetKxUserResult call() throws Exception {
+                GetKxUserResult result = null;
+
+                try {
+                    result = executeGetKxUser(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListEnvironmentsResult> listEnvironmentsAsync(ListEnvironmentsRequest request) {
 
         return listEnvironmentsAsync(request, null);
@@ -190,6 +685,204 @@ public class AWSfinspaceAsyncClient extends AWSfinspaceClient implements AWSfins
 
                 try {
                     result = executeListEnvironments(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListKxChangesetsResult> listKxChangesetsAsync(ListKxChangesetsRequest request) {
+
+        return listKxChangesetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListKxChangesetsResult> listKxChangesetsAsync(final ListKxChangesetsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListKxChangesetsRequest, ListKxChangesetsResult> asyncHandler) {
+        final ListKxChangesetsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListKxChangesetsResult>() {
+            @Override
+            public ListKxChangesetsResult call() throws Exception {
+                ListKxChangesetsResult result = null;
+
+                try {
+                    result = executeListKxChangesets(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListKxClusterNodesResult> listKxClusterNodesAsync(ListKxClusterNodesRequest request) {
+
+        return listKxClusterNodesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListKxClusterNodesResult> listKxClusterNodesAsync(final ListKxClusterNodesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListKxClusterNodesRequest, ListKxClusterNodesResult> asyncHandler) {
+        final ListKxClusterNodesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListKxClusterNodesResult>() {
+            @Override
+            public ListKxClusterNodesResult call() throws Exception {
+                ListKxClusterNodesResult result = null;
+
+                try {
+                    result = executeListKxClusterNodes(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListKxClustersResult> listKxClustersAsync(ListKxClustersRequest request) {
+
+        return listKxClustersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListKxClustersResult> listKxClustersAsync(final ListKxClustersRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListKxClustersRequest, ListKxClustersResult> asyncHandler) {
+        final ListKxClustersRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListKxClustersResult>() {
+            @Override
+            public ListKxClustersResult call() throws Exception {
+                ListKxClustersResult result = null;
+
+                try {
+                    result = executeListKxClusters(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListKxDatabasesResult> listKxDatabasesAsync(ListKxDatabasesRequest request) {
+
+        return listKxDatabasesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListKxDatabasesResult> listKxDatabasesAsync(final ListKxDatabasesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListKxDatabasesRequest, ListKxDatabasesResult> asyncHandler) {
+        final ListKxDatabasesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListKxDatabasesResult>() {
+            @Override
+            public ListKxDatabasesResult call() throws Exception {
+                ListKxDatabasesResult result = null;
+
+                try {
+                    result = executeListKxDatabases(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListKxEnvironmentsResult> listKxEnvironmentsAsync(ListKxEnvironmentsRequest request) {
+
+        return listKxEnvironmentsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListKxEnvironmentsResult> listKxEnvironmentsAsync(final ListKxEnvironmentsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListKxEnvironmentsRequest, ListKxEnvironmentsResult> asyncHandler) {
+        final ListKxEnvironmentsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListKxEnvironmentsResult>() {
+            @Override
+            public ListKxEnvironmentsResult call() throws Exception {
+                ListKxEnvironmentsResult result = null;
+
+                try {
+                    result = executeListKxEnvironments(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListKxUsersResult> listKxUsersAsync(ListKxUsersRequest request) {
+
+        return listKxUsersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListKxUsersResult> listKxUsersAsync(final ListKxUsersRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListKxUsersRequest, ListKxUsersResult> asyncHandler) {
+        final ListKxUsersRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListKxUsersResult>() {
+            @Override
+            public ListKxUsersResult call() throws Exception {
+                ListKxUsersResult result = null;
+
+                try {
+                    result = executeListKxUsers(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -322,6 +1015,206 @@ public class AWSfinspaceAsyncClient extends AWSfinspaceClient implements AWSfins
 
                 try {
                     result = executeUpdateEnvironment(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateKxClusterCodeConfigurationResult> updateKxClusterCodeConfigurationAsync(
+            UpdateKxClusterCodeConfigurationRequest request) {
+
+        return updateKxClusterCodeConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateKxClusterCodeConfigurationResult> updateKxClusterCodeConfigurationAsync(
+            final UpdateKxClusterCodeConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateKxClusterCodeConfigurationRequest, UpdateKxClusterCodeConfigurationResult> asyncHandler) {
+        final UpdateKxClusterCodeConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateKxClusterCodeConfigurationResult>() {
+            @Override
+            public UpdateKxClusterCodeConfigurationResult call() throws Exception {
+                UpdateKxClusterCodeConfigurationResult result = null;
+
+                try {
+                    result = executeUpdateKxClusterCodeConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateKxClusterDatabasesResult> updateKxClusterDatabasesAsync(UpdateKxClusterDatabasesRequest request) {
+
+        return updateKxClusterDatabasesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateKxClusterDatabasesResult> updateKxClusterDatabasesAsync(final UpdateKxClusterDatabasesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateKxClusterDatabasesRequest, UpdateKxClusterDatabasesResult> asyncHandler) {
+        final UpdateKxClusterDatabasesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateKxClusterDatabasesResult>() {
+            @Override
+            public UpdateKxClusterDatabasesResult call() throws Exception {
+                UpdateKxClusterDatabasesResult result = null;
+
+                try {
+                    result = executeUpdateKxClusterDatabases(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateKxDatabaseResult> updateKxDatabaseAsync(UpdateKxDatabaseRequest request) {
+
+        return updateKxDatabaseAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateKxDatabaseResult> updateKxDatabaseAsync(final UpdateKxDatabaseRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateKxDatabaseRequest, UpdateKxDatabaseResult> asyncHandler) {
+        final UpdateKxDatabaseRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateKxDatabaseResult>() {
+            @Override
+            public UpdateKxDatabaseResult call() throws Exception {
+                UpdateKxDatabaseResult result = null;
+
+                try {
+                    result = executeUpdateKxDatabase(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateKxEnvironmentResult> updateKxEnvironmentAsync(UpdateKxEnvironmentRequest request) {
+
+        return updateKxEnvironmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateKxEnvironmentResult> updateKxEnvironmentAsync(final UpdateKxEnvironmentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateKxEnvironmentRequest, UpdateKxEnvironmentResult> asyncHandler) {
+        final UpdateKxEnvironmentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateKxEnvironmentResult>() {
+            @Override
+            public UpdateKxEnvironmentResult call() throws Exception {
+                UpdateKxEnvironmentResult result = null;
+
+                try {
+                    result = executeUpdateKxEnvironment(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateKxEnvironmentNetworkResult> updateKxEnvironmentNetworkAsync(UpdateKxEnvironmentNetworkRequest request) {
+
+        return updateKxEnvironmentNetworkAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateKxEnvironmentNetworkResult> updateKxEnvironmentNetworkAsync(final UpdateKxEnvironmentNetworkRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateKxEnvironmentNetworkRequest, UpdateKxEnvironmentNetworkResult> asyncHandler) {
+        final UpdateKxEnvironmentNetworkRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateKxEnvironmentNetworkResult>() {
+            @Override
+            public UpdateKxEnvironmentNetworkResult call() throws Exception {
+                UpdateKxEnvironmentNetworkResult result = null;
+
+                try {
+                    result = executeUpdateKxEnvironmentNetwork(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateKxUserResult> updateKxUserAsync(UpdateKxUserRequest request) {
+
+        return updateKxUserAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateKxUserResult> updateKxUserAsync(final UpdateKxUserRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateKxUserRequest, UpdateKxUserResult> asyncHandler) {
+        final UpdateKxUserRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateKxUserResult>() {
+            @Override
+            public UpdateKxUserResult call() throws Exception {
+                UpdateKxUserResult result = null;
+
+                try {
+                    result = executeUpdateKxUser(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

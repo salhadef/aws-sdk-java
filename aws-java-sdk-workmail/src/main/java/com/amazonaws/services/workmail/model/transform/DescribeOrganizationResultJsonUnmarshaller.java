@@ -84,6 +84,14 @@ public class DescribeOrganizationResultJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     describeOrganizationResult.setARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("MigrationAdmin", targetDepth)) {
+                    context.nextToken();
+                    describeOrganizationResult.setMigrationAdmin(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("InteroperabilityEnabled", targetDepth)) {
+                    context.nextToken();
+                    describeOrganizationResult.setInteroperabilityEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

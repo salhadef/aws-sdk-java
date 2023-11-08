@@ -44,6 +44,7 @@ import com.amazonaws.services.mobile.AWSMobileClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.mobile.model.*;
+
 import com.amazonaws.services.mobile.model.transform.*;
 
 /**

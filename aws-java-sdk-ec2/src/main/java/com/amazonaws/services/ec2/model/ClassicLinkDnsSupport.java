@@ -16,6 +16,11 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
+ * <note>
+ * <p>
+ * Deprecated.
+ * </p>
+ * </note>
  * <p>
  * Describes the ClassicLink DNS support status of a VPC.
  * </p>

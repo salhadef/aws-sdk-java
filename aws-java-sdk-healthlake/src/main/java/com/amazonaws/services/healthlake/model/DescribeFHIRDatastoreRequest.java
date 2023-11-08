@@ -27,18 +27,18 @@ public class DescribeFHIRDatastoreRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The AWS-generated Data Store id. This is part of the ‘CreateFHIRDatastore’ output.
+     * The AWS-generated data store ID.
      * </p>
      */
     private String datastoreId;
 
     /**
      * <p>
-     * The AWS-generated Data Store id. This is part of the ‘CreateFHIRDatastore’ output.
+     * The AWS-generated data store ID.
      * </p>
      * 
      * @param datastoreId
-     *        The AWS-generated Data Store id. This is part of the ‘CreateFHIRDatastore’ output.
+     *        The AWS-generated data store ID.
      */
 
     public void setDatastoreId(String datastoreId) {
@@ -47,10 +47,10 @@ public class DescribeFHIRDatastoreRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The AWS-generated Data Store id. This is part of the ‘CreateFHIRDatastore’ output.
+     * The AWS-generated data store ID.
      * </p>
      * 
-     * @return The AWS-generated Data Store id. This is part of the ‘CreateFHIRDatastore’ output.
+     * @return The AWS-generated data store ID.
      */
 
     public String getDatastoreId() {
@@ -59,11 +59,11 @@ public class DescribeFHIRDatastoreRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The AWS-generated Data Store id. This is part of the ‘CreateFHIRDatastore’ output.
+     * The AWS-generated data store ID.
      * </p>
      * 
      * @param datastoreId
-     *        The AWS-generated Data Store id. This is part of the ‘CreateFHIRDatastore’ output.
+     *        The AWS-generated data store ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

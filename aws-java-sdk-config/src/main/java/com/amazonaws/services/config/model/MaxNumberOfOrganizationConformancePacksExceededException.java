@@ -18,7 +18,7 @@ import javax.annotation.Generated;
  * <p>
  * You have reached the limit of the number of organization conformance packs you can create in an account. For more
  * information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service
- * Limits</b> </a> in the Config Developer Guide.
+ * Limits</b> </a> in the <i>Config Developer Guide</i>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

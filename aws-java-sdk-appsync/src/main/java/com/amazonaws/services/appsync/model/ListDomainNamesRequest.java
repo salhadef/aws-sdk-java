@@ -27,7 +27,8 @@ public class ListDomainNamesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The API token.
+     * An identifier that was returned from the previous call to this operation, which you can use to return the next
+     * set of items in the list.
      * </p>
      */
     private String nextToken;
@@ -40,11 +41,13 @@ public class ListDomainNamesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The API token.
+     * An identifier that was returned from the previous call to this operation, which you can use to return the next
+     * set of items in the list.
      * </p>
      * 
      * @param nextToken
-     *        The API token.
+     *        An identifier that was returned from the previous call to this operation, which you can use to return the
+     *        next set of items in the list.
      */
 
     public void setNextToken(String nextToken) {
@@ -53,10 +56,12 @@ public class ListDomainNamesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The API token.
+     * An identifier that was returned from the previous call to this operation, which you can use to return the next
+     * set of items in the list.
      * </p>
      * 
-     * @return The API token.
+     * @return An identifier that was returned from the previous call to this operation, which you can use to return the
+     *         next set of items in the list.
      */
 
     public String getNextToken() {
@@ -65,11 +70,13 @@ public class ListDomainNamesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The API token.
+     * An identifier that was returned from the previous call to this operation, which you can use to return the next
+     * set of items in the list.
      * </p>
      * 
      * @param nextToken
-     *        The API token.
+     *        An identifier that was returned from the previous call to this operation, which you can use to return the
+     *        next set of items in the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

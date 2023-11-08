@@ -30,11 +30,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class NoiseReducer implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * Use Noise reducer filter (NoiseReducerFilter) to select one of the following spatial image filtering functions.
-     * To use this setting, you must also enable Noise reducer (NoiseReducer). * Bilateral preserves edges while
-     * reducing noise. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) do convolution filtering. * Conserve
-     * does min/max noise reduction. * Spatial does frequency-domain filtering based on JND principles. * Temporal
-     * optimizes video quality for complex motion.
+     * Use Noise reducer filter to select one of the following spatial image filtering functions. To use this setting,
+     * you must also enable Noise reducer. * Bilateral preserves edges while reducing noise. * Mean (softest), Gaussian,
+     * Lanczos, and Sharpen (sharpest) do convolution filtering. * Conserve does min/max noise reduction. * Spatial does
+     * frequency-domain filtering based on JND principles. * Temporal optimizes video quality for complex motion.
      */
     private String filter;
     /** Settings for a noise reducer filter */
@@ -45,18 +44,17 @@ public class NoiseReducer implements Serializable, Cloneable, StructuredPojo {
     private NoiseReducerTemporalFilterSettings temporalFilterSettings;
 
     /**
-     * Use Noise reducer filter (NoiseReducerFilter) to select one of the following spatial image filtering functions.
-     * To use this setting, you must also enable Noise reducer (NoiseReducer). * Bilateral preserves edges while
-     * reducing noise. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) do convolution filtering. * Conserve
-     * does min/max noise reduction. * Spatial does frequency-domain filtering based on JND principles. * Temporal
-     * optimizes video quality for complex motion.
+     * Use Noise reducer filter to select one of the following spatial image filtering functions. To use this setting,
+     * you must also enable Noise reducer. * Bilateral preserves edges while reducing noise. * Mean (softest), Gaussian,
+     * Lanczos, and Sharpen (sharpest) do convolution filtering. * Conserve does min/max noise reduction. * Spatial does
+     * frequency-domain filtering based on JND principles. * Temporal optimizes video quality for complex motion.
      * 
      * @param filter
-     *        Use Noise reducer filter (NoiseReducerFilter) to select one of the following spatial image filtering
-     *        functions. To use this setting, you must also enable Noise reducer (NoiseReducer). * Bilateral preserves
-     *        edges while reducing noise. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) do convolution
-     *        filtering. * Conserve does min/max noise reduction. * Spatial does frequency-domain filtering based on JND
-     *        principles. * Temporal optimizes video quality for complex motion.
+     *        Use Noise reducer filter to select one of the following spatial image filtering functions. To use this
+     *        setting, you must also enable Noise reducer. * Bilateral preserves edges while reducing noise. * Mean
+     *        (softest), Gaussian, Lanczos, and Sharpen (sharpest) do convolution filtering. * Conserve does min/max
+     *        noise reduction. * Spatial does frequency-domain filtering based on JND principles. * Temporal optimizes
+     *        video quality for complex motion.
      * @see NoiseReducerFilter
      */
 
@@ -65,17 +63,16 @@ public class NoiseReducer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Noise reducer filter (NoiseReducerFilter) to select one of the following spatial image filtering functions.
-     * To use this setting, you must also enable Noise reducer (NoiseReducer). * Bilateral preserves edges while
-     * reducing noise. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) do convolution filtering. * Conserve
-     * does min/max noise reduction. * Spatial does frequency-domain filtering based on JND principles. * Temporal
-     * optimizes video quality for complex motion.
+     * Use Noise reducer filter to select one of the following spatial image filtering functions. To use this setting,
+     * you must also enable Noise reducer. * Bilateral preserves edges while reducing noise. * Mean (softest), Gaussian,
+     * Lanczos, and Sharpen (sharpest) do convolution filtering. * Conserve does min/max noise reduction. * Spatial does
+     * frequency-domain filtering based on JND principles. * Temporal optimizes video quality for complex motion.
      * 
-     * @return Use Noise reducer filter (NoiseReducerFilter) to select one of the following spatial image filtering
-     *         functions. To use this setting, you must also enable Noise reducer (NoiseReducer). * Bilateral preserves
-     *         edges while reducing noise. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) do convolution
-     *         filtering. * Conserve does min/max noise reduction. * Spatial does frequency-domain filtering based on
-     *         JND principles. * Temporal optimizes video quality for complex motion.
+     * @return Use Noise reducer filter to select one of the following spatial image filtering functions. To use this
+     *         setting, you must also enable Noise reducer. * Bilateral preserves edges while reducing noise. * Mean
+     *         (softest), Gaussian, Lanczos, and Sharpen (sharpest) do convolution filtering. * Conserve does min/max
+     *         noise reduction. * Spatial does frequency-domain filtering based on JND principles. * Temporal optimizes
+     *         video quality for complex motion.
      * @see NoiseReducerFilter
      */
 
@@ -84,18 +81,17 @@ public class NoiseReducer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Noise reducer filter (NoiseReducerFilter) to select one of the following spatial image filtering functions.
-     * To use this setting, you must also enable Noise reducer (NoiseReducer). * Bilateral preserves edges while
-     * reducing noise. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) do convolution filtering. * Conserve
-     * does min/max noise reduction. * Spatial does frequency-domain filtering based on JND principles. * Temporal
-     * optimizes video quality for complex motion.
+     * Use Noise reducer filter to select one of the following spatial image filtering functions. To use this setting,
+     * you must also enable Noise reducer. * Bilateral preserves edges while reducing noise. * Mean (softest), Gaussian,
+     * Lanczos, and Sharpen (sharpest) do convolution filtering. * Conserve does min/max noise reduction. * Spatial does
+     * frequency-domain filtering based on JND principles. * Temporal optimizes video quality for complex motion.
      * 
      * @param filter
-     *        Use Noise reducer filter (NoiseReducerFilter) to select one of the following spatial image filtering
-     *        functions. To use this setting, you must also enable Noise reducer (NoiseReducer). * Bilateral preserves
-     *        edges while reducing noise. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) do convolution
-     *        filtering. * Conserve does min/max noise reduction. * Spatial does frequency-domain filtering based on JND
-     *        principles. * Temporal optimizes video quality for complex motion.
+     *        Use Noise reducer filter to select one of the following spatial image filtering functions. To use this
+     *        setting, you must also enable Noise reducer. * Bilateral preserves edges while reducing noise. * Mean
+     *        (softest), Gaussian, Lanczos, and Sharpen (sharpest) do convolution filtering. * Conserve does min/max
+     *        noise reduction. * Spatial does frequency-domain filtering based on JND principles. * Temporal optimizes
+     *        video quality for complex motion.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NoiseReducerFilter
      */
@@ -106,18 +102,17 @@ public class NoiseReducer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Noise reducer filter (NoiseReducerFilter) to select one of the following spatial image filtering functions.
-     * To use this setting, you must also enable Noise reducer (NoiseReducer). * Bilateral preserves edges while
-     * reducing noise. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) do convolution filtering. * Conserve
-     * does min/max noise reduction. * Spatial does frequency-domain filtering based on JND principles. * Temporal
-     * optimizes video quality for complex motion.
+     * Use Noise reducer filter to select one of the following spatial image filtering functions. To use this setting,
+     * you must also enable Noise reducer. * Bilateral preserves edges while reducing noise. * Mean (softest), Gaussian,
+     * Lanczos, and Sharpen (sharpest) do convolution filtering. * Conserve does min/max noise reduction. * Spatial does
+     * frequency-domain filtering based on JND principles. * Temporal optimizes video quality for complex motion.
      * 
      * @param filter
-     *        Use Noise reducer filter (NoiseReducerFilter) to select one of the following spatial image filtering
-     *        functions. To use this setting, you must also enable Noise reducer (NoiseReducer). * Bilateral preserves
-     *        edges while reducing noise. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) do convolution
-     *        filtering. * Conserve does min/max noise reduction. * Spatial does frequency-domain filtering based on JND
-     *        principles. * Temporal optimizes video quality for complex motion.
+     *        Use Noise reducer filter to select one of the following spatial image filtering functions. To use this
+     *        setting, you must also enable Noise reducer. * Bilateral preserves edges while reducing noise. * Mean
+     *        (softest), Gaussian, Lanczos, and Sharpen (sharpest) do convolution filtering. * Conserve does min/max
+     *        noise reduction. * Spatial does frequency-domain filtering based on JND principles. * Temporal optimizes
+     *        video quality for complex motion.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NoiseReducerFilter
      */

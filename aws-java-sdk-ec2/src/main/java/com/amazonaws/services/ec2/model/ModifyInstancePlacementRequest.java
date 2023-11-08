@@ -61,9 +61,9 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
      * </p>
      * <note>
      * <p>
-     * For T3 instances, you can't change the tenancy from <code>dedicated</code> to <code>host</code>, or from
-     * <code>host</code> to <code>dedicated</code>. Attempting to make one of these unsupported tenancy changes results
-     * in the <code>InvalidTenancy</code> error code.
+     * For T3 instances, you must launch the instance on a Dedicated Host to use a tenancy of <code>host</code>. You
+     * can't change the tenancy from <code>host</code> to <code>dedicated</code> or <code>default</code>. Attempting to
+     * make one of these unsupported tenancy changes results in an <code>InvalidRequest</code> error code.
      * </p>
      * </note>
      */
@@ -77,7 +77,8 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
     private Integer partitionNumber;
     /**
      * <p>
-     * The ARN of the host resource group in which to place the instance.
+     * The ARN of the host resource group in which to place the instance. The instance must have a tenancy of
+     * <code>host</code> to specify this parameter.
      * </p>
      */
     private String hostResourceGroupArn;
@@ -315,18 +316,19 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
      * </p>
      * <note>
      * <p>
-     * For T3 instances, you can't change the tenancy from <code>dedicated</code> to <code>host</code>, or from
-     * <code>host</code> to <code>dedicated</code>. Attempting to make one of these unsupported tenancy changes results
-     * in the <code>InvalidTenancy</code> error code.
+     * For T3 instances, you must launch the instance on a Dedicated Host to use a tenancy of <code>host</code>. You
+     * can't change the tenancy from <code>host</code> to <code>dedicated</code> or <code>default</code>. Attempting to
+     * make one of these unsupported tenancy changes results in an <code>InvalidRequest</code> error code.
      * </p>
      * </note>
      * 
      * @param tenancy
      *        The tenancy for the instance.</p> <note>
      *        <p>
-     *        For T3 instances, you can't change the tenancy from <code>dedicated</code> to <code>host</code>, or from
-     *        <code>host</code> to <code>dedicated</code>. Attempting to make one of these unsupported tenancy changes
-     *        results in the <code>InvalidTenancy</code> error code.
+     *        For T3 instances, you must launch the instance on a Dedicated Host to use a tenancy of <code>host</code>.
+     *        You can't change the tenancy from <code>host</code> to <code>dedicated</code> or <code>default</code>.
+     *        Attempting to make one of these unsupported tenancy changes results in an <code>InvalidRequest</code>
+     *        error code.
      *        </p>
      * @see HostTenancy
      */
@@ -341,17 +343,18 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
      * </p>
      * <note>
      * <p>
-     * For T3 instances, you can't change the tenancy from <code>dedicated</code> to <code>host</code>, or from
-     * <code>host</code> to <code>dedicated</code>. Attempting to make one of these unsupported tenancy changes results
-     * in the <code>InvalidTenancy</code> error code.
+     * For T3 instances, you must launch the instance on a Dedicated Host to use a tenancy of <code>host</code>. You
+     * can't change the tenancy from <code>host</code> to <code>dedicated</code> or <code>default</code>. Attempting to
+     * make one of these unsupported tenancy changes results in an <code>InvalidRequest</code> error code.
      * </p>
      * </note>
      * 
      * @return The tenancy for the instance.</p> <note>
      *         <p>
-     *         For T3 instances, you can't change the tenancy from <code>dedicated</code> to <code>host</code>, or from
-     *         <code>host</code> to <code>dedicated</code>. Attempting to make one of these unsupported tenancy changes
-     *         results in the <code>InvalidTenancy</code> error code.
+     *         For T3 instances, you must launch the instance on a Dedicated Host to use a tenancy of <code>host</code>.
+     *         You can't change the tenancy from <code>host</code> to <code>dedicated</code> or <code>default</code>.
+     *         Attempting to make one of these unsupported tenancy changes results in an <code>InvalidRequest</code>
+     *         error code.
      *         </p>
      * @see HostTenancy
      */
@@ -366,18 +369,19 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
      * </p>
      * <note>
      * <p>
-     * For T3 instances, you can't change the tenancy from <code>dedicated</code> to <code>host</code>, or from
-     * <code>host</code> to <code>dedicated</code>. Attempting to make one of these unsupported tenancy changes results
-     * in the <code>InvalidTenancy</code> error code.
+     * For T3 instances, you must launch the instance on a Dedicated Host to use a tenancy of <code>host</code>. You
+     * can't change the tenancy from <code>host</code> to <code>dedicated</code> or <code>default</code>. Attempting to
+     * make one of these unsupported tenancy changes results in an <code>InvalidRequest</code> error code.
      * </p>
      * </note>
      * 
      * @param tenancy
      *        The tenancy for the instance.</p> <note>
      *        <p>
-     *        For T3 instances, you can't change the tenancy from <code>dedicated</code> to <code>host</code>, or from
-     *        <code>host</code> to <code>dedicated</code>. Attempting to make one of these unsupported tenancy changes
-     *        results in the <code>InvalidTenancy</code> error code.
+     *        For T3 instances, you must launch the instance on a Dedicated Host to use a tenancy of <code>host</code>.
+     *        You can't change the tenancy from <code>host</code> to <code>dedicated</code> or <code>default</code>.
+     *        Attempting to make one of these unsupported tenancy changes results in an <code>InvalidRequest</code>
+     *        error code.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HostTenancy
@@ -394,18 +398,19 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
      * </p>
      * <note>
      * <p>
-     * For T3 instances, you can't change the tenancy from <code>dedicated</code> to <code>host</code>, or from
-     * <code>host</code> to <code>dedicated</code>. Attempting to make one of these unsupported tenancy changes results
-     * in the <code>InvalidTenancy</code> error code.
+     * For T3 instances, you must launch the instance on a Dedicated Host to use a tenancy of <code>host</code>. You
+     * can't change the tenancy from <code>host</code> to <code>dedicated</code> or <code>default</code>. Attempting to
+     * make one of these unsupported tenancy changes results in an <code>InvalidRequest</code> error code.
      * </p>
      * </note>
      * 
      * @param tenancy
      *        The tenancy for the instance.</p> <note>
      *        <p>
-     *        For T3 instances, you can't change the tenancy from <code>dedicated</code> to <code>host</code>, or from
-     *        <code>host</code> to <code>dedicated</code>. Attempting to make one of these unsupported tenancy changes
-     *        results in the <code>InvalidTenancy</code> error code.
+     *        For T3 instances, you must launch the instance on a Dedicated Host to use a tenancy of <code>host</code>.
+     *        You can't change the tenancy from <code>host</code> to <code>dedicated</code> or <code>default</code>.
+     *        Attempting to make one of these unsupported tenancy changes results in an <code>InvalidRequest</code>
+     *        error code.
      *        </p>
      * @see HostTenancy
      */
@@ -420,18 +425,19 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
      * </p>
      * <note>
      * <p>
-     * For T3 instances, you can't change the tenancy from <code>dedicated</code> to <code>host</code>, or from
-     * <code>host</code> to <code>dedicated</code>. Attempting to make one of these unsupported tenancy changes results
-     * in the <code>InvalidTenancy</code> error code.
+     * For T3 instances, you must launch the instance on a Dedicated Host to use a tenancy of <code>host</code>. You
+     * can't change the tenancy from <code>host</code> to <code>dedicated</code> or <code>default</code>. Attempting to
+     * make one of these unsupported tenancy changes results in an <code>InvalidRequest</code> error code.
      * </p>
      * </note>
      * 
      * @param tenancy
      *        The tenancy for the instance.</p> <note>
      *        <p>
-     *        For T3 instances, you can't change the tenancy from <code>dedicated</code> to <code>host</code>, or from
-     *        <code>host</code> to <code>dedicated</code>. Attempting to make one of these unsupported tenancy changes
-     *        results in the <code>InvalidTenancy</code> error code.
+     *        For T3 instances, you must launch the instance on a Dedicated Host to use a tenancy of <code>host</code>.
+     *        You can't change the tenancy from <code>host</code> to <code>dedicated</code> or <code>default</code>.
+     *        Attempting to make one of these unsupported tenancy changes results in an <code>InvalidRequest</code>
+     *        error code.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HostTenancy
@@ -490,11 +496,13 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The ARN of the host resource group in which to place the instance.
+     * The ARN of the host resource group in which to place the instance. The instance must have a tenancy of
+     * <code>host</code> to specify this parameter.
      * </p>
      * 
      * @param hostResourceGroupArn
-     *        The ARN of the host resource group in which to place the instance.
+     *        The ARN of the host resource group in which to place the instance. The instance must have a tenancy of
+     *        <code>host</code> to specify this parameter.
      */
 
     public void setHostResourceGroupArn(String hostResourceGroupArn) {
@@ -503,10 +511,12 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The ARN of the host resource group in which to place the instance.
+     * The ARN of the host resource group in which to place the instance. The instance must have a tenancy of
+     * <code>host</code> to specify this parameter.
      * </p>
      * 
-     * @return The ARN of the host resource group in which to place the instance.
+     * @return The ARN of the host resource group in which to place the instance. The instance must have a tenancy of
+     *         <code>host</code> to specify this parameter.
      */
 
     public String getHostResourceGroupArn() {
@@ -515,11 +525,13 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The ARN of the host resource group in which to place the instance.
+     * The ARN of the host resource group in which to place the instance. The instance must have a tenancy of
+     * <code>host</code> to specify this parameter.
      * </p>
      * 
      * @param hostResourceGroupArn
-     *        The ARN of the host resource group in which to place the instance.
+     *        The ARN of the host resource group in which to place the instance. The instance must have a tenancy of
+     *        <code>host</code> to specify this parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

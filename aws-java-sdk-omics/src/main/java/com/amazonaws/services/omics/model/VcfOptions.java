@@ -30,68 +30,16 @@ public class VcfOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The file's ignore filter field setting.
-     * </p>
-     */
-    private Boolean ignoreFilterField;
-    /**
-     * <p>
      * The file's ignore qual field setting.
      * </p>
      */
     private Boolean ignoreQualField;
-
     /**
      * <p>
      * The file's ignore filter field setting.
      * </p>
-     * 
-     * @param ignoreFilterField
-     *        The file's ignore filter field setting.
      */
-
-    public void setIgnoreFilterField(Boolean ignoreFilterField) {
-        this.ignoreFilterField = ignoreFilterField;
-    }
-
-    /**
-     * <p>
-     * The file's ignore filter field setting.
-     * </p>
-     * 
-     * @return The file's ignore filter field setting.
-     */
-
-    public Boolean getIgnoreFilterField() {
-        return this.ignoreFilterField;
-    }
-
-    /**
-     * <p>
-     * The file's ignore filter field setting.
-     * </p>
-     * 
-     * @param ignoreFilterField
-     *        The file's ignore filter field setting.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public VcfOptions withIgnoreFilterField(Boolean ignoreFilterField) {
-        setIgnoreFilterField(ignoreFilterField);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The file's ignore filter field setting.
-     * </p>
-     * 
-     * @return The file's ignore filter field setting.
-     */
-
-    public Boolean isIgnoreFilterField() {
-        return this.ignoreFilterField;
-    }
+    private Boolean ignoreFilterField;
 
     /**
      * <p>
@@ -146,6 +94,58 @@ public class VcfOptions implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The file's ignore filter field setting.
+     * </p>
+     * 
+     * @param ignoreFilterField
+     *        The file's ignore filter field setting.
+     */
+
+    public void setIgnoreFilterField(Boolean ignoreFilterField) {
+        this.ignoreFilterField = ignoreFilterField;
+    }
+
+    /**
+     * <p>
+     * The file's ignore filter field setting.
+     * </p>
+     * 
+     * @return The file's ignore filter field setting.
+     */
+
+    public Boolean getIgnoreFilterField() {
+        return this.ignoreFilterField;
+    }
+
+    /**
+     * <p>
+     * The file's ignore filter field setting.
+     * </p>
+     * 
+     * @param ignoreFilterField
+     *        The file's ignore filter field setting.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VcfOptions withIgnoreFilterField(Boolean ignoreFilterField) {
+        setIgnoreFilterField(ignoreFilterField);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The file's ignore filter field setting.
+     * </p>
+     * 
+     * @return The file's ignore filter field setting.
+     */
+
+    public Boolean isIgnoreFilterField() {
+        return this.ignoreFilterField;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -157,10 +157,10 @@ public class VcfOptions implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getIgnoreFilterField() != null)
-            sb.append("IgnoreFilterField: ").append(getIgnoreFilterField()).append(",");
         if (getIgnoreQualField() != null)
-            sb.append("IgnoreQualField: ").append(getIgnoreQualField());
+            sb.append("IgnoreQualField: ").append(getIgnoreQualField()).append(",");
+        if (getIgnoreFilterField() != null)
+            sb.append("IgnoreFilterField: ").append(getIgnoreFilterField());
         sb.append("}");
         return sb.toString();
     }
@@ -175,13 +175,13 @@ public class VcfOptions implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof VcfOptions == false)
             return false;
         VcfOptions other = (VcfOptions) obj;
-        if (other.getIgnoreFilterField() == null ^ this.getIgnoreFilterField() == null)
-            return false;
-        if (other.getIgnoreFilterField() != null && other.getIgnoreFilterField().equals(this.getIgnoreFilterField()) == false)
-            return false;
         if (other.getIgnoreQualField() == null ^ this.getIgnoreQualField() == null)
             return false;
         if (other.getIgnoreQualField() != null && other.getIgnoreQualField().equals(this.getIgnoreQualField()) == false)
+            return false;
+        if (other.getIgnoreFilterField() == null ^ this.getIgnoreFilterField() == null)
+            return false;
+        if (other.getIgnoreFilterField() != null && other.getIgnoreFilterField().equals(this.getIgnoreFilterField()) == false)
             return false;
         return true;
     }
@@ -191,8 +191,8 @@ public class VcfOptions implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getIgnoreFilterField() == null) ? 0 : getIgnoreFilterField().hashCode());
         hashCode = prime * hashCode + ((getIgnoreQualField() == null) ? 0 : getIgnoreQualField().hashCode());
+        hashCode = prime * hashCode + ((getIgnoreFilterField() == null) ? 0 : getIgnoreFilterField().hashCode());
         return hashCode;
     }
 

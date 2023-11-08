@@ -30,10 +30,10 @@ public class StartReferenceImportJobSourceItem implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The source's description.
+     * The source file's location in Amazon S3.
      * </p>
      */
-    private String description;
+    private String sourceFile;
     /**
      * <p>
      * The source's name.
@@ -42,10 +42,10 @@ public class StartReferenceImportJobSourceItem implements Serializable, Cloneabl
     private String name;
     /**
      * <p>
-     * The source file's location in Amazon S3.
+     * The source's description.
      * </p>
      */
-    private String sourceFile;
+    private String description;
     /**
      * <p>
      * The source's tags.
@@ -55,41 +55,41 @@ public class StartReferenceImportJobSourceItem implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The source's description.
+     * The source file's location in Amazon S3.
      * </p>
      * 
-     * @param description
-     *        The source's description.
+     * @param sourceFile
+     *        The source file's location in Amazon S3.
      */
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setSourceFile(String sourceFile) {
+        this.sourceFile = sourceFile;
     }
 
     /**
      * <p>
-     * The source's description.
+     * The source file's location in Amazon S3.
      * </p>
      * 
-     * @return The source's description.
+     * @return The source file's location in Amazon S3.
      */
 
-    public String getDescription() {
-        return this.description;
+    public String getSourceFile() {
+        return this.sourceFile;
     }
 
     /**
      * <p>
-     * The source's description.
+     * The source file's location in Amazon S3.
      * </p>
      * 
-     * @param description
-     *        The source's description.
+     * @param sourceFile
+     *        The source file's location in Amazon S3.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public StartReferenceImportJobSourceItem withDescription(String description) {
-        setDescription(description);
+    public StartReferenceImportJobSourceItem withSourceFile(String sourceFile) {
+        setSourceFile(sourceFile);
         return this;
     }
 
@@ -135,41 +135,41 @@ public class StartReferenceImportJobSourceItem implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The source file's location in Amazon S3.
+     * The source's description.
      * </p>
      * 
-     * @param sourceFile
-     *        The source file's location in Amazon S3.
+     * @param description
+     *        The source's description.
      */
 
-    public void setSourceFile(String sourceFile) {
-        this.sourceFile = sourceFile;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     /**
      * <p>
-     * The source file's location in Amazon S3.
+     * The source's description.
      * </p>
      * 
-     * @return The source file's location in Amazon S3.
+     * @return The source's description.
      */
 
-    public String getSourceFile() {
-        return this.sourceFile;
+    public String getDescription() {
+        return this.description;
     }
 
     /**
      * <p>
-     * The source file's location in Amazon S3.
+     * The source's description.
      * </p>
      * 
-     * @param sourceFile
-     *        The source file's location in Amazon S3.
+     * @param description
+     *        The source's description.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public StartReferenceImportJobSourceItem withSourceFile(String sourceFile) {
-        setSourceFile(sourceFile);
+    public StartReferenceImportJobSourceItem withDescription(String description) {
+        setDescription(description);
         return this;
     }
 
@@ -253,12 +253,12 @@ public class StartReferenceImportJobSourceItem implements Serializable, Cloneabl
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
-        if (getName() != null)
-            sb.append("Name: ").append(getName()).append(",");
         if (getSourceFile() != null)
             sb.append("SourceFile: ").append(getSourceFile()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -275,17 +275,17 @@ public class StartReferenceImportJobSourceItem implements Serializable, Cloneabl
         if (obj instanceof StartReferenceImportJobSourceItem == false)
             return false;
         StartReferenceImportJobSourceItem other = (StartReferenceImportJobSourceItem) obj;
-        if (other.getDescription() == null ^ this.getDescription() == null)
+        if (other.getSourceFile() == null ^ this.getSourceFile() == null)
             return false;
-        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getSourceFile() != null && other.getSourceFile().equals(this.getSourceFile()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
-        if (other.getSourceFile() == null ^ this.getSourceFile() == null)
+        if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getSourceFile() != null && other.getSourceFile().equals(this.getSourceFile()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
@@ -299,9 +299,9 @@ public class StartReferenceImportJobSourceItem implements Serializable, Cloneabl
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getSourceFile() == null) ? 0 : getSourceFile().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

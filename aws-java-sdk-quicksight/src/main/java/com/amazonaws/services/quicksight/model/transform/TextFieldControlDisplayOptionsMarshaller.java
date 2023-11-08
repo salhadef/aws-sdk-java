@@ -31,6 +31,8 @@ public class TextFieldControlDisplayOptionsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TitleOptions").build();
     private static final MarshallingInfo<StructuredPojo> PLACEHOLDEROPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PlaceholderOptions").build();
+    private static final MarshallingInfo<StructuredPojo> INFOICONLABELOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InfoIconLabelOptions").build();
 
     private static final TextFieldControlDisplayOptionsMarshaller instance = new TextFieldControlDisplayOptionsMarshaller();
 
@@ -50,6 +52,7 @@ public class TextFieldControlDisplayOptionsMarshaller {
         try {
             protocolMarshaller.marshall(textFieldControlDisplayOptions.getTitleOptions(), TITLEOPTIONS_BINDING);
             protocolMarshaller.marshall(textFieldControlDisplayOptions.getPlaceholderOptions(), PLACEHOLDEROPTIONS_BINDING);
+            protocolMarshaller.marshall(textFieldControlDisplayOptions.getInfoIconLabelOptions(), INFOICONLABELOPTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

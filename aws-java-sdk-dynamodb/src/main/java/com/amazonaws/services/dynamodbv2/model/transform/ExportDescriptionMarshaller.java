@@ -65,6 +65,10 @@ public class ExportDescriptionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BilledSizeBytes").build();
     private static final MarshallingInfo<Long> ITEMCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ItemCount").build();
+    private static final MarshallingInfo<String> EXPORTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExportType").build();
+    private static final MarshallingInfo<StructuredPojo> INCREMENTALEXPORTSPECIFICATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IncrementalExportSpecification").build();
 
     private static final ExportDescriptionMarshaller instance = new ExportDescriptionMarshaller();
 
@@ -101,6 +105,8 @@ public class ExportDescriptionMarshaller {
             protocolMarshaller.marshall(exportDescription.getExportFormat(), EXPORTFORMAT_BINDING);
             protocolMarshaller.marshall(exportDescription.getBilledSizeBytes(), BILLEDSIZEBYTES_BINDING);
             protocolMarshaller.marshall(exportDescription.getItemCount(), ITEMCOUNT_BINDING);
+            protocolMarshaller.marshall(exportDescription.getExportType(), EXPORTTYPE_BINDING);
+            protocolMarshaller.marshall(exportDescription.getIncrementalExportSpecification(), INCREMENTALEXPORTSPECIFICATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Controls on the query specifications that can be run on configured table..
+ * Controls on the query specifications that can be run on configured table.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/AnalysisRulePolicyV1" target="_top">AWS
@@ -40,6 +40,12 @@ public class AnalysisRulePolicyV1 implements Serializable, Cloneable, Structured
      * </p>
      */
     private AnalysisRuleAggregation aggregation;
+    /**
+     * <p>
+     * Analysis rule type that enables custom SQL queries on a configured table.
+     * </p>
+     */
+    private AnalysisRuleCustom custom;
 
     /**
      * <p>
@@ -122,6 +128,46 @@ public class AnalysisRulePolicyV1 implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * Analysis rule type that enables custom SQL queries on a configured table.
+     * </p>
+     * 
+     * @param custom
+     *        Analysis rule type that enables custom SQL queries on a configured table.
+     */
+
+    public void setCustom(AnalysisRuleCustom custom) {
+        this.custom = custom;
+    }
+
+    /**
+     * <p>
+     * Analysis rule type that enables custom SQL queries on a configured table.
+     * </p>
+     * 
+     * @return Analysis rule type that enables custom SQL queries on a configured table.
+     */
+
+    public AnalysisRuleCustom getCustom() {
+        return this.custom;
+    }
+
+    /**
+     * <p>
+     * Analysis rule type that enables custom SQL queries on a configured table.
+     * </p>
+     * 
+     * @param custom
+     *        Analysis rule type that enables custom SQL queries on a configured table.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AnalysisRulePolicyV1 withCustom(AnalysisRuleCustom custom) {
+        setCustom(custom);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -136,7 +182,9 @@ public class AnalysisRulePolicyV1 implements Serializable, Cloneable, Structured
         if (getList() != null)
             sb.append("List: ").append(getList()).append(",");
         if (getAggregation() != null)
-            sb.append("Aggregation: ").append(getAggregation());
+            sb.append("Aggregation: ").append(getAggregation()).append(",");
+        if (getCustom() != null)
+            sb.append("Custom: ").append(getCustom());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +207,10 @@ public class AnalysisRulePolicyV1 implements Serializable, Cloneable, Structured
             return false;
         if (other.getAggregation() != null && other.getAggregation().equals(this.getAggregation()) == false)
             return false;
+        if (other.getCustom() == null ^ this.getCustom() == null)
+            return false;
+        if (other.getCustom() != null && other.getCustom().equals(this.getCustom()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +221,7 @@ public class AnalysisRulePolicyV1 implements Serializable, Cloneable, Structured
 
         hashCode = prime * hashCode + ((getList() == null) ? 0 : getList().hashCode());
         hashCode = prime * hashCode + ((getAggregation() == null) ? 0 : getAggregation().hashCode());
+        hashCode = prime * hashCode + ((getCustom() == null) ? 0 : getCustom().hashCode());
         return hashCode;
     }
 

@@ -25,7 +25,7 @@ public class ListUsersResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * A list of all the user accounts.
+     * A list of all the users.
      * </p>
      */
     private java.util.List<User> users;
@@ -38,10 +38,10 @@ public class ListUsersResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * A list of all the user accounts.
+     * A list of all the users.
      * </p>
      * 
-     * @return A list of all the user accounts.
+     * @return A list of all the users.
      */
 
     public java.util.List<User> getUsers() {
@@ -50,11 +50,11 @@ public class ListUsersResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * A list of all the user accounts.
+     * A list of all the users.
      * </p>
      * 
      * @param users
-     *        A list of all the user accounts.
+     *        A list of all the users.
      */
 
     public void setUsers(java.util.Collection<User> users) {
@@ -68,7 +68,7 @@ public class ListUsersResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * A list of all the user accounts.
+     * A list of all the users.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListUsersResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      * 
      * @param users
-     *        A list of all the user accounts.
+     *        A list of all the users.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListUsersResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * A list of all the user accounts.
+     * A list of all the users.
      * </p>
      * 
      * @param users
-     *        A list of all the user accounts.
+     *        A list of all the users.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

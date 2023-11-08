@@ -79,7 +79,7 @@ public class Step implements Serializable, Cloneable, StructuredPojo {
      * following format: <code>arn:partition:service:region:account:resource</code>.
      * </p>
      * <p>
-     * For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.
+     * For example, <code>arn:aws:IAM::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.
      * </p>
      */
     private String executionRoleArn;
@@ -464,7 +464,7 @@ public class Step implements Serializable, Cloneable, StructuredPojo {
      * following format: <code>arn:partition:service:region:account:resource</code>.
      * </p>
      * <p>
-     * For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.
+     * For example, <code>arn:aws:IAM::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.
      * </p>
      * 
      * @param executionRoleArn
@@ -472,7 +472,7 @@ public class Step implements Serializable, Cloneable, StructuredPojo {
      *        cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type
      *        using the following format: <code>arn:partition:service:region:account:resource</code>. </p>
      *        <p>
-     *        For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.
+     *        For example, <code>arn:aws:IAM::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.
      */
 
     public void setExecutionRoleArn(String executionRoleArn) {
@@ -486,14 +486,14 @@ public class Step implements Serializable, Cloneable, StructuredPojo {
      * following format: <code>arn:partition:service:region:account:resource</code>.
      * </p>
      * <p>
-     * For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.
+     * For example, <code>arn:aws:IAM::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a
      *         cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type
      *         using the following format: <code>arn:partition:service:region:account:resource</code>. </p>
      *         <p>
-     *         For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role
+     *         For example, <code>arn:aws:IAM::1234567890:role/ReadOnly</code> is a correctly formatted runtime role
      *         ARN.
      */
 
@@ -508,7 +508,7 @@ public class Step implements Serializable, Cloneable, StructuredPojo {
      * following format: <code>arn:partition:service:region:account:resource</code>.
      * </p>
      * <p>
-     * For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.
+     * For example, <code>arn:aws:IAM::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.
      * </p>
      * 
      * @param executionRoleArn
@@ -516,7 +516,7 @@ public class Step implements Serializable, Cloneable, StructuredPojo {
      *        cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type
      *        using the following format: <code>arn:partition:service:region:account:resource</code>. </p>
      *        <p>
-     *        For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.
+     *        For example, <code>arn:aws:IAM::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

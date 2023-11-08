@@ -224,6 +224,48 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The following attributes apply only to <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ReplayPolicy</code> – Adds or updates an inline policy document for a subscription to replay messages
+     * stored in the specified Amazon SNS topic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReplayStatus</code> – Retrieves the status of the subscription message replay, which can be one of the
+     * following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Completed</code> – The replay has successfully redelivered all messages, and is now delivering newly
+     * published messages. If an ending point was specified in the <code>ReplayPolicy</code> then the subscription will
+     * no longer receive newly published messages.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>In progress</code> – The replay is currently replaying the selected messages.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Failed</code> – The replay was unable to complete.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Pending</code> – The default state while the replay initiates.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> attributes;
     /**
@@ -1133,6 +1175,48 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The following attributes apply only to <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ReplayPolicy</code> – Adds or updates an inline policy document for a subscription to replay messages
+     * stored in the specified Amazon SNS topic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReplayStatus</code> – Retrieves the status of the subscription message replay, which can be one of the
+     * following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Completed</code> – The replay has successfully redelivered all messages, and is now delivering newly
+     * published messages. If an ending point was specified in the <code>ReplayPolicy</code> then the subscription will
+     * no longer receive newly published messages.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>In progress</code> – The replay is currently replaying the selected messages.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Failed</code> – The replay was unable to complete.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Pending</code> – The default state while the replay initiates.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      * 
      * @return A map of attributes with their corresponding values.</p>
      *         <p>
@@ -1213,6 +1297,48 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data
      *         Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.
      *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         The following attributes apply only to <a
+     *         href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>ReplayPolicy</code> – Adds or updates an inline policy document for a subscription to replay
+     *         messages stored in the specified Amazon SNS topic.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ReplayStatus</code> – Retrieves the status of the subscription message replay, which can be one of
+     *         the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>Completed</code> – The replay has successfully redelivered all messages, and is now delivering
+     *         newly published messages. If an ending point was specified in the <code>ReplayPolicy</code> then the
+     *         subscription will no longer receive newly published messages.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>In progress</code> – The replay is currently replaying the selected messages.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Failed</code> – The replay was unable to complete.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Pending</code> – The default state while the replay initiates.
+     *         </p>
+     *         </li>
+     *         </ul>
      *         </li>
      */
 
@@ -1306,6 +1432,48 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The following attributes apply only to <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ReplayPolicy</code> – Adds or updates an inline policy document for a subscription to replay messages
+     * stored in the specified Amazon SNS topic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReplayStatus</code> – Retrieves the status of the subscription message replay, which can be one of the
+     * following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Completed</code> – The replay has successfully redelivered all messages, and is now delivering newly
+     * published messages. If an ending point was specified in the <code>ReplayPolicy</code> then the subscription will
+     * no longer receive newly published messages.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>In progress</code> – The replay is currently replaying the selected messages.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Failed</code> – The replay was unable to complete.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Pending</code> – The default state while the replay initiates.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      * 
      * @param attributes
      *        A map of attributes with their corresponding values.</p>
@@ -1386,6 +1554,48 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data
      *        Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.
      *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The following attributes apply only to <a
+     *        href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ReplayPolicy</code> – Adds or updates an inline policy document for a subscription to replay
+     *        messages stored in the specified Amazon SNS topic.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ReplayStatus</code> – Retrieves the status of the subscription message replay, which can be one of
+     *        the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Completed</code> – The replay has successfully redelivered all messages, and is now delivering newly
+     *        published messages. If an ending point was specified in the <code>ReplayPolicy</code> then the
+     *        subscription will no longer receive newly published messages.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>In progress</code> – The replay is currently replaying the selected messages.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Failed</code> – The replay was unable to complete.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Pending</code> – The default state while the replay initiates.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      */
 
@@ -1476,6 +1686,48 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The following attributes apply only to <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ReplayPolicy</code> – Adds or updates an inline policy document for a subscription to replay messages
+     * stored in the specified Amazon SNS topic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReplayStatus</code> – Retrieves the status of the subscription message replay, which can be one of the
+     * following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Completed</code> – The replay has successfully redelivered all messages, and is now delivering newly
+     * published messages. If an ending point was specified in the <code>ReplayPolicy</code> then the subscription will
+     * no longer receive newly published messages.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>In progress</code> – The replay is currently replaying the selected messages.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Failed</code> – The replay was unable to complete.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Pending</code> – The default state while the replay initiates.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      * 
      * @param attributes
      *        A map of attributes with their corresponding values.</p>
@@ -1556,6 +1808,48 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data
      *        Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.
      *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The following attributes apply only to <a
+     *        href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ReplayPolicy</code> – Adds or updates an inline policy document for a subscription to replay
+     *        messages stored in the specified Amazon SNS topic.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ReplayStatus</code> – Retrieves the status of the subscription message replay, which can be one of
+     *        the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Completed</code> – The replay has successfully redelivered all messages, and is now delivering newly
+     *        published messages. If an ending point was specified in the <code>ReplayPolicy</code> then the
+     *        subscription will no longer receive newly published messages.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>In progress</code> – The replay is currently replaying the selected messages.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Failed</code> – The replay was unable to complete.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Pending</code> – The default state while the replay initiates.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

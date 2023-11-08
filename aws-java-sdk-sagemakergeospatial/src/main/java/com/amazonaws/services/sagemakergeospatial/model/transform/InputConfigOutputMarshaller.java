@@ -27,8 +27,6 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class InputConfigOutputMarshaller {
 
-    private static final MarshallingInfo<StructuredPojo> DATASOURCECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataSourceConfig").build();
     private static final MarshallingInfo<String> PREVIOUSEARTHOBSERVATIONJOBARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PreviousEarthObservationJobArn").build();
     private static final MarshallingInfo<StructuredPojo> RASTERDATACOLLECTIONQUERY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -50,7 +48,6 @@ public class InputConfigOutputMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(inputConfigOutput.getDataSourceConfig(), DATASOURCECONFIG_BINDING);
             protocolMarshaller.marshall(inputConfigOutput.getPreviousEarthObservationJobArn(), PREVIOUSEARTHOBSERVATIONJOBARN_BINDING);
             protocolMarshaller.marshall(inputConfigOutput.getRasterDataCollectionQuery(), RASTERDATACOLLECTIONQUERY_BINDING);
         } catch (Exception e) {

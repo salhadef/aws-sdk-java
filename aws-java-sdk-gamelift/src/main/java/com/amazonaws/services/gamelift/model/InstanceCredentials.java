@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Set of credentials required to remotely access a fleet instance.
+ * A set of credentials that allow remote access to an instance in an EC2 managed fleet. These credentials are returned
+ * in response to a call to <a>GetInstanceAccess</a>, which requests access for instances that are running game servers
+ * with the Amazon GameLift server SDK version 4.x or earlier.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/InstanceCredentials" target="_top">AWS API
@@ -30,25 +32,25 @@ public class InstanceCredentials implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * User login string.
+     * A user name for logging in.
      * </p>
      */
     private String userName;
     /**
      * <p>
      * Secret string. For Windows instances, the secret is a password for use with Windows Remote Desktop. For Linux
-     * instances, it is a private key (which must be saved as a <code>.pem</code> file) for use with SSH.
+     * instances, it's a private key for use with SSH.
      * </p>
      */
     private String secret;
 
     /**
      * <p>
-     * User login string.
+     * A user name for logging in.
      * </p>
      * 
      * @param userName
-     *        User login string.
+     *        A user name for logging in.
      */
 
     public void setUserName(String userName) {
@@ -57,10 +59,10 @@ public class InstanceCredentials implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * User login string.
+     * A user name for logging in.
      * </p>
      * 
-     * @return User login string.
+     * @return A user name for logging in.
      */
 
     public String getUserName() {
@@ -69,11 +71,11 @@ public class InstanceCredentials implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * User login string.
+     * A user name for logging in.
      * </p>
      * 
      * @param userName
-     *        User login string.
+     *        A user name for logging in.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -85,12 +87,12 @@ public class InstanceCredentials implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Secret string. For Windows instances, the secret is a password for use with Windows Remote Desktop. For Linux
-     * instances, it is a private key (which must be saved as a <code>.pem</code> file) for use with SSH.
+     * instances, it's a private key for use with SSH.
      * </p>
      * 
      * @param secret
      *        Secret string. For Windows instances, the secret is a password for use with Windows Remote Desktop. For
-     *        Linux instances, it is a private key (which must be saved as a <code>.pem</code> file) for use with SSH.
+     *        Linux instances, it's a private key for use with SSH.
      */
 
     public void setSecret(String secret) {
@@ -100,11 +102,11 @@ public class InstanceCredentials implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Secret string. For Windows instances, the secret is a password for use with Windows Remote Desktop. For Linux
-     * instances, it is a private key (which must be saved as a <code>.pem</code> file) for use with SSH.
+     * instances, it's a private key for use with SSH.
      * </p>
      * 
      * @return Secret string. For Windows instances, the secret is a password for use with Windows Remote Desktop. For
-     *         Linux instances, it is a private key (which must be saved as a <code>.pem</code> file) for use with SSH.
+     *         Linux instances, it's a private key for use with SSH.
      */
 
     public String getSecret() {
@@ -114,12 +116,12 @@ public class InstanceCredentials implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Secret string. For Windows instances, the secret is a password for use with Windows Remote Desktop. For Linux
-     * instances, it is a private key (which must be saved as a <code>.pem</code> file) for use with SSH.
+     * instances, it's a private key for use with SSH.
      * </p>
      * 
      * @param secret
      *        Secret string. For Windows instances, the secret is a password for use with Windows Remote Desktop. For
-     *        Linux instances, it is a private key (which must be saved as a <code>.pem</code> file) for use with SSH.
+     *        Linux instances, it's a private key for use with SSH.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

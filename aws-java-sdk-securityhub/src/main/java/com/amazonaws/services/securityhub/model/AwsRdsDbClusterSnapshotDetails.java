@@ -146,6 +146,12 @@ public class AwsRdsDbClusterSnapshotDetails implements Serializable, Cloneable, 
      * </p>
      */
     private Boolean iamDatabaseAuthenticationEnabled;
+    /**
+     * <p>
+     * Contains the name and values of a manual DB cluster snapshot attribute.
+     * </p>
+     */
+    private java.util.List<AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute> dbClusterSnapshotAttributes;
 
     /**
      * <p>
@@ -982,6 +988,77 @@ public class AwsRdsDbClusterSnapshotDetails implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * Contains the name and values of a manual DB cluster snapshot attribute.
+     * </p>
+     * 
+     * @return Contains the name and values of a manual DB cluster snapshot attribute.
+     */
+
+    public java.util.List<AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute> getDbClusterSnapshotAttributes() {
+        return dbClusterSnapshotAttributes;
+    }
+
+    /**
+     * <p>
+     * Contains the name and values of a manual DB cluster snapshot attribute.
+     * </p>
+     * 
+     * @param dbClusterSnapshotAttributes
+     *        Contains the name and values of a manual DB cluster snapshot attribute.
+     */
+
+    public void setDbClusterSnapshotAttributes(java.util.Collection<AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute> dbClusterSnapshotAttributes) {
+        if (dbClusterSnapshotAttributes == null) {
+            this.dbClusterSnapshotAttributes = null;
+            return;
+        }
+
+        this.dbClusterSnapshotAttributes = new java.util.ArrayList<AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute>(dbClusterSnapshotAttributes);
+    }
+
+    /**
+     * <p>
+     * Contains the name and values of a manual DB cluster snapshot attribute.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDbClusterSnapshotAttributes(java.util.Collection)} or
+     * {@link #withDbClusterSnapshotAttributes(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param dbClusterSnapshotAttributes
+     *        Contains the name and values of a manual DB cluster snapshot attribute.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsRdsDbClusterSnapshotDetails withDbClusterSnapshotAttributes(AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute... dbClusterSnapshotAttributes) {
+        if (this.dbClusterSnapshotAttributes == null) {
+            setDbClusterSnapshotAttributes(new java.util.ArrayList<AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute>(dbClusterSnapshotAttributes.length));
+        }
+        for (AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute ele : dbClusterSnapshotAttributes) {
+            this.dbClusterSnapshotAttributes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains the name and values of a manual DB cluster snapshot attribute.
+     * </p>
+     * 
+     * @param dbClusterSnapshotAttributes
+     *        Contains the name and values of a manual DB cluster snapshot attribute.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsRdsDbClusterSnapshotDetails withDbClusterSnapshotAttributes(
+            java.util.Collection<AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute> dbClusterSnapshotAttributes) {
+        setDbClusterSnapshotAttributes(dbClusterSnapshotAttributes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1028,7 +1105,9 @@ public class AwsRdsDbClusterSnapshotDetails implements Serializable, Cloneable, 
         if (getDbClusterSnapshotIdentifier() != null)
             sb.append("DbClusterSnapshotIdentifier: ").append(getDbClusterSnapshotIdentifier()).append(",");
         if (getIamDatabaseAuthenticationEnabled() != null)
-            sb.append("IamDatabaseAuthenticationEnabled: ").append(getIamDatabaseAuthenticationEnabled());
+            sb.append("IamDatabaseAuthenticationEnabled: ").append(getIamDatabaseAuthenticationEnabled()).append(",");
+        if (getDbClusterSnapshotAttributes() != null)
+            sb.append("DbClusterSnapshotAttributes: ").append(getDbClusterSnapshotAttributes());
         sb.append("}");
         return sb.toString();
     }
@@ -1116,6 +1195,10 @@ public class AwsRdsDbClusterSnapshotDetails implements Serializable, Cloneable, 
         if (other.getIamDatabaseAuthenticationEnabled() != null
                 && other.getIamDatabaseAuthenticationEnabled().equals(this.getIamDatabaseAuthenticationEnabled()) == false)
             return false;
+        if (other.getDbClusterSnapshotAttributes() == null ^ this.getDbClusterSnapshotAttributes() == null)
+            return false;
+        if (other.getDbClusterSnapshotAttributes() != null && other.getDbClusterSnapshotAttributes().equals(this.getDbClusterSnapshotAttributes()) == false)
+            return false;
         return true;
     }
 
@@ -1142,6 +1225,7 @@ public class AwsRdsDbClusterSnapshotDetails implements Serializable, Cloneable, 
         hashCode = prime * hashCode + ((getDbClusterIdentifier() == null) ? 0 : getDbClusterIdentifier().hashCode());
         hashCode = prime * hashCode + ((getDbClusterSnapshotIdentifier() == null) ? 0 : getDbClusterSnapshotIdentifier().hashCode());
         hashCode = prime * hashCode + ((getIamDatabaseAuthenticationEnabled() == null) ? 0 : getIamDatabaseAuthenticationEnabled().hashCode());
+        hashCode = prime * hashCode + ((getDbClusterSnapshotAttributes() == null) ? 0 : getDbClusterSnapshotAttributes().hashCode());
         return hashCode;
     }
 

@@ -28,21 +28,24 @@ public class CreateAgentResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the agent. Use the <code>ListAgents</code> operation to return a list of agents
-     * for your account and Amazon Web Services Region.
+     * The ARN of the agent that you just activated. Use the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListAgents.html">ListAgents</a> operation to
+     * return a list of agents in your Amazon Web Services account and Amazon Web Services Region.
      * </p>
      */
     private String agentArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the agent. Use the <code>ListAgents</code> operation to return a list of agents
-     * for your account and Amazon Web Services Region.
+     * The ARN of the agent that you just activated. Use the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListAgents.html">ListAgents</a> operation to
+     * return a list of agents in your Amazon Web Services account and Amazon Web Services Region.
      * </p>
      * 
      * @param agentArn
-     *        The Amazon Resource Name (ARN) of the agent. Use the <code>ListAgents</code> operation to return a list of
-     *        agents for your account and Amazon Web Services Region.
+     *        The ARN of the agent that you just activated. Use the <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListAgents.html">ListAgents</a> operation
+     *        to return a list of agents in your Amazon Web Services account and Amazon Web Services Region.
      */
 
     public void setAgentArn(String agentArn) {
@@ -51,12 +54,14 @@ public class CreateAgentResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the agent. Use the <code>ListAgents</code> operation to return a list of agents
-     * for your account and Amazon Web Services Region.
+     * The ARN of the agent that you just activated. Use the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListAgents.html">ListAgents</a> operation to
+     * return a list of agents in your Amazon Web Services account and Amazon Web Services Region.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the agent. Use the <code>ListAgents</code> operation to return a list
-     *         of agents for your account and Amazon Web Services Region.
+     * @return The ARN of the agent that you just activated. Use the <a
+     *         href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListAgents.html">ListAgents</a> operation
+     *         to return a list of agents in your Amazon Web Services account and Amazon Web Services Region.
      */
 
     public String getAgentArn() {
@@ -65,13 +70,15 @@ public class CreateAgentResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the agent. Use the <code>ListAgents</code> operation to return a list of agents
-     * for your account and Amazon Web Services Region.
+     * The ARN of the agent that you just activated. Use the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListAgents.html">ListAgents</a> operation to
+     * return a list of agents in your Amazon Web Services account and Amazon Web Services Region.
      * </p>
      * 
      * @param agentArn
-     *        The Amazon Resource Name (ARN) of the agent. Use the <code>ListAgents</code> operation to return a list of
-     *        agents for your account and Amazon Web Services Region.
+     *        The ARN of the agent that you just activated. Use the <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListAgents.html">ListAgents</a> operation
+     *        to return a list of agents in your Amazon Web Services account and Amazon Web Services Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

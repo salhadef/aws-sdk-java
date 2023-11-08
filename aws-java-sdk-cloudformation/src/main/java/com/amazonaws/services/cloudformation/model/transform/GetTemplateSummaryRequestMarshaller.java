@@ -60,6 +60,17 @@ public class GetTemplateSummaryRequestMarshaller implements Marshaller<Request<G
             request.addParameter("CallAs", StringUtils.fromString(getTemplateSummaryRequest.getCallAs()));
         }
 
+        {
+            TemplateSummaryConfig templateSummaryConfig = getTemplateSummaryRequest.getTemplateSummaryConfig();
+            if (templateSummaryConfig != null) {
+
+                if (templateSummaryConfig.getTreatUnrecognizedResourceTypesAsWarnings() != null) {
+                    request.addParameter("TemplateSummaryConfig.TreatUnrecognizedResourceTypesAsWarnings",
+                            StringUtils.fromBoolean(templateSummaryConfig.getTreatUnrecognizedResourceTypesAsWarnings()));
+                }
+            }
+        }
+
         return request;
     }
 

@@ -95,7 +95,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In
-     * various security-findings providers' solutions, this generator can be called a rule, a check, a detector, a
+     * various security findings providers' solutions, this generator can be called a rule, a check, a detector, a
      * plugin, etc.
      * </p>
      */
@@ -118,7 +118,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
     private java.util.List<String> types;
     /**
      * <p>
-     * Indicates when the security-findings provider first observed the potential security issue that a finding
+     * Indicates when the security findings provider first observed the potential security issue that a finding
      * captured.
      * </p>
      * <p>
@@ -130,7 +130,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
     private String firstObservedAt;
     /**
      * <p>
-     * Indicates when the security-findings provider most recently observed the potential security issue that a finding
+     * Indicates when the security findings provider most recently observed the potential security issue that a finding
      * captured.
      * </p>
      * <p>
@@ -142,7 +142,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
     private String lastObservedAt;
     /**
      * <p>
-     * Indicates when the security-findings provider created the potential security issue that a finding captured.
+     * Indicates when the security findings provider created the potential security issue that a finding captured.
      * </p>
      * <p>
      * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
@@ -153,7 +153,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
     private String createdAt;
     /**
      * <p>
-     * Indicates when the security-findings provider last updated the finding record.
+     * Indicates when the security findings provider last updated the finding record.
      * </p>
      * <p>
      * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
@@ -219,13 +219,13 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
     private Remediation remediation;
     /**
      * <p>
-     * A URL that links to a page about the current finding in the security-findings provider's solution.
+     * A URL that links to a page about the current finding in the security findings provider's solution.
      * </p>
      */
     private String sourceUrl;
     /**
      * <p>
-     * A data type where security-findings providers can include additional solution-specific details that aren't part
+     * A data type where security findings providers can include additional solution-specific details that aren't part
      * of the defined <code>AwsSecurityFinding</code> format.
      * </p>
      * <p>
@@ -359,6 +359,15 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private Boolean sample;
+    /**
+     * <p>
+     * Provides metadata for the Amazon CodeGuru detector associated with a finding. This field pertains to findings
+     * that relate to Lambda functions. Amazon Inspector identifies policy violations and vulnerabilities in Lambda
+     * function code based on internal detectors developed in collaboration with Amazon CodeGuru. Security Hub receives
+     * those findings.
+     * </p>
+     */
+    private GeneratorDetails generatorDetails;
 
     /**
      * <p>
@@ -723,13 +732,13 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In
-     * various security-findings providers' solutions, this generator can be called a rule, a check, a detector, a
+     * various security findings providers' solutions, this generator can be called a rule, a check, a detector, a
      * plugin, etc.
      * </p>
      * 
      * @param generatorId
      *        The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In
-     *        various security-findings providers' solutions, this generator can be called a rule, a check, a detector,
+     *        various security findings providers' solutions, this generator can be called a rule, a check, a detector,
      *        a plugin, etc.
      */
 
@@ -740,12 +749,12 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In
-     * various security-findings providers' solutions, this generator can be called a rule, a check, a detector, a
+     * various security findings providers' solutions, this generator can be called a rule, a check, a detector, a
      * plugin, etc.
      * </p>
      * 
      * @return The identifier for the solution-specific component (a discrete unit of logic) that generated a finding.
-     *         In various security-findings providers' solutions, this generator can be called a rule, a check, a
+     *         In various security findings providers' solutions, this generator can be called a rule, a check, a
      *         detector, a plugin, etc.
      */
 
@@ -756,13 +765,13 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In
-     * various security-findings providers' solutions, this generator can be called a rule, a check, a detector, a
+     * various security findings providers' solutions, this generator can be called a rule, a check, a detector, a
      * plugin, etc.
      * </p>
      * 
      * @param generatorId
      *        The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In
-     *        various security-findings providers' solutions, this generator can be called a rule, a check, a detector,
+     *        various security findings providers' solutions, this generator can be called a rule, a check, a detector,
      *        a plugin, etc.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -916,7 +925,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Indicates when the security-findings provider first observed the potential security issue that a finding
+     * Indicates when the security findings provider first observed the potential security issue that a finding
      * captured.
      * </p>
      * <p>
@@ -926,7 +935,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param firstObservedAt
-     *        Indicates when the security-findings provider first observed the potential security issue that a finding
+     *        Indicates when the security findings provider first observed the potential security issue that a finding
      *        captured.</p>
      *        <p>
      *        Uses the <code>date-time</code> format specified in <a
@@ -941,7 +950,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Indicates when the security-findings provider first observed the potential security issue that a finding
+     * Indicates when the security findings provider first observed the potential security issue that a finding
      * captured.
      * </p>
      * <p>
@@ -950,7 +959,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
      * separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
-     * @return Indicates when the security-findings provider first observed the potential security issue that a finding
+     * @return Indicates when the security findings provider first observed the potential security issue that a finding
      *         captured.</p>
      *         <p>
      *         Uses the <code>date-time</code> format specified in <a
@@ -965,7 +974,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Indicates when the security-findings provider first observed the potential security issue that a finding
+     * Indicates when the security findings provider first observed the potential security issue that a finding
      * captured.
      * </p>
      * <p>
@@ -975,7 +984,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param firstObservedAt
-     *        Indicates when the security-findings provider first observed the potential security issue that a finding
+     *        Indicates when the security findings provider first observed the potential security issue that a finding
      *        captured.</p>
      *        <p>
      *        Uses the <code>date-time</code> format specified in <a
@@ -992,7 +1001,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Indicates when the security-findings provider most recently observed the potential security issue that a finding
+     * Indicates when the security findings provider most recently observed the potential security issue that a finding
      * captured.
      * </p>
      * <p>
@@ -1002,7 +1011,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param lastObservedAt
-     *        Indicates when the security-findings provider most recently observed the potential security issue that a
+     *        Indicates when the security findings provider most recently observed the potential security issue that a
      *        finding captured.</p>
      *        <p>
      *        Uses the <code>date-time</code> format specified in <a
@@ -1017,7 +1026,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Indicates when the security-findings provider most recently observed the potential security issue that a finding
+     * Indicates when the security findings provider most recently observed the potential security issue that a finding
      * captured.
      * </p>
      * <p>
@@ -1026,7 +1035,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
      * separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
-     * @return Indicates when the security-findings provider most recently observed the potential security issue that a
+     * @return Indicates when the security findings provider most recently observed the potential security issue that a
      *         finding captured.</p>
      *         <p>
      *         Uses the <code>date-time</code> format specified in <a
@@ -1041,7 +1050,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Indicates when the security-findings provider most recently observed the potential security issue that a finding
+     * Indicates when the security findings provider most recently observed the potential security issue that a finding
      * captured.
      * </p>
      * <p>
@@ -1051,7 +1060,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param lastObservedAt
-     *        Indicates when the security-findings provider most recently observed the potential security issue that a
+     *        Indicates when the security findings provider most recently observed the potential security issue that a
      *        finding captured.</p>
      *        <p>
      *        Uses the <code>date-time</code> format specified in <a
@@ -1068,7 +1077,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Indicates when the security-findings provider created the potential security issue that a finding captured.
+     * Indicates when the security findings provider created the potential security issue that a finding captured.
      * </p>
      * <p>
      * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
@@ -1077,7 +1086,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param createdAt
-     *        Indicates when the security-findings provider created the potential security issue that a finding
+     *        Indicates when the security findings provider created the potential security issue that a finding
      *        captured.</p>
      *        <p>
      *        Uses the <code>date-time</code> format specified in <a
@@ -1092,7 +1101,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Indicates when the security-findings provider created the potential security issue that a finding captured.
+     * Indicates when the security findings provider created the potential security issue that a finding captured.
      * </p>
      * <p>
      * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
@@ -1100,7 +1109,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
      * separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
-     * @return Indicates when the security-findings provider created the potential security issue that a finding
+     * @return Indicates when the security findings provider created the potential security issue that a finding
      *         captured.</p>
      *         <p>
      *         Uses the <code>date-time</code> format specified in <a
@@ -1115,7 +1124,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Indicates when the security-findings provider created the potential security issue that a finding captured.
+     * Indicates when the security findings provider created the potential security issue that a finding captured.
      * </p>
      * <p>
      * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
@@ -1124,7 +1133,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param createdAt
-     *        Indicates when the security-findings provider created the potential security issue that a finding
+     *        Indicates when the security findings provider created the potential security issue that a finding
      *        captured.</p>
      *        <p>
      *        Uses the <code>date-time</code> format specified in <a
@@ -1141,7 +1150,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Indicates when the security-findings provider last updated the finding record.
+     * Indicates when the security findings provider last updated the finding record.
      * </p>
      * <p>
      * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
@@ -1150,7 +1159,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param updatedAt
-     *        Indicates when the security-findings provider last updated the finding record.</p>
+     *        Indicates when the security findings provider last updated the finding record.</p>
      *        <p>
      *        Uses the <code>date-time</code> format specified in <a
      *        href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
@@ -1164,7 +1173,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Indicates when the security-findings provider last updated the finding record.
+     * Indicates when the security findings provider last updated the finding record.
      * </p>
      * <p>
      * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
@@ -1172,7 +1181,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
      * separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
-     * @return Indicates when the security-findings provider last updated the finding record.</p>
+     * @return Indicates when the security findings provider last updated the finding record.</p>
      *         <p>
      *         Uses the <code>date-time</code> format specified in <a
      *         href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
@@ -1186,7 +1195,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Indicates when the security-findings provider last updated the finding record.
+     * Indicates when the security findings provider last updated the finding record.
      * </p>
      * <p>
      * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
@@ -1195,7 +1204,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param updatedAt
-     *        Indicates when the security-findings provider last updated the finding record.</p>
+     *        Indicates when the security findings provider last updated the finding record.</p>
      *        <p>
      *        Uses the <code>date-time</code> format specified in <a
      *        href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
@@ -1547,11 +1556,11 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A URL that links to a page about the current finding in the security-findings provider's solution.
+     * A URL that links to a page about the current finding in the security findings provider's solution.
      * </p>
      * 
      * @param sourceUrl
-     *        A URL that links to a page about the current finding in the security-findings provider's solution.
+     *        A URL that links to a page about the current finding in the security findings provider's solution.
      */
 
     public void setSourceUrl(String sourceUrl) {
@@ -1560,10 +1569,10 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A URL that links to a page about the current finding in the security-findings provider's solution.
+     * A URL that links to a page about the current finding in the security findings provider's solution.
      * </p>
      * 
-     * @return A URL that links to a page about the current finding in the security-findings provider's solution.
+     * @return A URL that links to a page about the current finding in the security findings provider's solution.
      */
 
     public String getSourceUrl() {
@@ -1572,11 +1581,11 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A URL that links to a page about the current finding in the security-findings provider's solution.
+     * A URL that links to a page about the current finding in the security findings provider's solution.
      * </p>
      * 
      * @param sourceUrl
-     *        A URL that links to a page about the current finding in the security-findings provider's solution.
+     *        A URL that links to a page about the current finding in the security findings provider's solution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1587,7 +1596,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A data type where security-findings providers can include additional solution-specific details that aren't part
+     * A data type where security findings providers can include additional solution-specific details that aren't part
      * of the defined <code>AwsSecurityFinding</code> format.
      * </p>
      * <p>
@@ -1595,7 +1604,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
      * value can contain up to 2048 characters.
      * </p>
      * 
-     * @return A data type where security-findings providers can include additional solution-specific details that
+     * @return A data type where security findings providers can include additional solution-specific details that
      *         aren't part of the defined <code>AwsSecurityFinding</code> format.</p>
      *         <p>
      *         Can contain up to 50 key-value pairs. For each key-value pair, the key can contain up to 128 characters,
@@ -1608,7 +1617,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A data type where security-findings providers can include additional solution-specific details that aren't part
+     * A data type where security findings providers can include additional solution-specific details that aren't part
      * of the defined <code>AwsSecurityFinding</code> format.
      * </p>
      * <p>
@@ -1617,7 +1626,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param productFields
-     *        A data type where security-findings providers can include additional solution-specific details that aren't
+     *        A data type where security findings providers can include additional solution-specific details that aren't
      *        part of the defined <code>AwsSecurityFinding</code> format.</p>
      *        <p>
      *        Can contain up to 50 key-value pairs. For each key-value pair, the key can contain up to 128 characters,
@@ -1630,7 +1639,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A data type where security-findings providers can include additional solution-specific details that aren't part
+     * A data type where security findings providers can include additional solution-specific details that aren't part
      * of the defined <code>AwsSecurityFinding</code> format.
      * </p>
      * <p>
@@ -1639,7 +1648,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param productFields
-     *        A data type where security-findings providers can include additional solution-specific details that aren't
+     *        A data type where security findings providers can include additional solution-specific details that aren't
      *        part of the defined <code>AwsSecurityFinding</code> format.</p>
      *        <p>
      *        Can contain up to 50 key-value pairs. For each key-value pair, the key can contain up to 128 characters,
@@ -2828,6 +2837,64 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * Provides metadata for the Amazon CodeGuru detector associated with a finding. This field pertains to findings
+     * that relate to Lambda functions. Amazon Inspector identifies policy violations and vulnerabilities in Lambda
+     * function code based on internal detectors developed in collaboration with Amazon CodeGuru. Security Hub receives
+     * those findings.
+     * </p>
+     * 
+     * @param generatorDetails
+     *        Provides metadata for the Amazon CodeGuru detector associated with a finding. This field pertains to
+     *        findings that relate to Lambda functions. Amazon Inspector identifies policy violations and
+     *        vulnerabilities in Lambda function code based on internal detectors developed in collaboration with Amazon
+     *        CodeGuru. Security Hub receives those findings.
+     */
+
+    public void setGeneratorDetails(GeneratorDetails generatorDetails) {
+        this.generatorDetails = generatorDetails;
+    }
+
+    /**
+     * <p>
+     * Provides metadata for the Amazon CodeGuru detector associated with a finding. This field pertains to findings
+     * that relate to Lambda functions. Amazon Inspector identifies policy violations and vulnerabilities in Lambda
+     * function code based on internal detectors developed in collaboration with Amazon CodeGuru. Security Hub receives
+     * those findings.
+     * </p>
+     * 
+     * @return Provides metadata for the Amazon CodeGuru detector associated with a finding. This field pertains to
+     *         findings that relate to Lambda functions. Amazon Inspector identifies policy violations and
+     *         vulnerabilities in Lambda function code based on internal detectors developed in collaboration with
+     *         Amazon CodeGuru. Security Hub receives those findings.
+     */
+
+    public GeneratorDetails getGeneratorDetails() {
+        return this.generatorDetails;
+    }
+
+    /**
+     * <p>
+     * Provides metadata for the Amazon CodeGuru detector associated with a finding. This field pertains to findings
+     * that relate to Lambda functions. Amazon Inspector identifies policy violations and vulnerabilities in Lambda
+     * function code based on internal detectors developed in collaboration with Amazon CodeGuru. Security Hub receives
+     * those findings.
+     * </p>
+     * 
+     * @param generatorDetails
+     *        Provides metadata for the Amazon CodeGuru detector associated with a finding. This field pertains to
+     *        findings that relate to Lambda functions. Amazon Inspector identifies policy violations and
+     *        vulnerabilities in Lambda function code based on internal detectors developed in collaboration with Amazon
+     *        CodeGuru. Security Hub receives those findings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSecurityFinding withGeneratorDetails(GeneratorDetails generatorDetails) {
+        setGeneratorDetails(generatorDetails);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2920,7 +2987,9 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
         if (getFindingProviderFields() != null)
             sb.append("FindingProviderFields: ").append(getFindingProviderFields()).append(",");
         if (getSample() != null)
-            sb.append("Sample: ").append(getSample());
+            sb.append("Sample: ").append(getSample()).append(",");
+        if (getGeneratorDetails() != null)
+            sb.append("GeneratorDetails: ").append(getGeneratorDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -3099,6 +3168,10 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getSample() != null && other.getSample().equals(this.getSample()) == false)
             return false;
+        if (other.getGeneratorDetails() == null ^ this.getGeneratorDetails() == null)
+            return false;
+        if (other.getGeneratorDetails() != null && other.getGeneratorDetails().equals(this.getGeneratorDetails()) == false)
+            return false;
         return true;
     }
 
@@ -3148,6 +3221,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getAction() == null) ? 0 : getAction().hashCode());
         hashCode = prime * hashCode + ((getFindingProviderFields() == null) ? 0 : getFindingProviderFields().hashCode());
         hashCode = prime * hashCode + ((getSample() == null) ? 0 : getSample().hashCode());
+        hashCode = prime * hashCode + ((getGeneratorDetails() == null) ? 0 : getGeneratorDetails().hashCode());
         return hashCode;
     }
 

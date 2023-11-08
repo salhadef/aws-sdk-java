@@ -53,8 +53,8 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>burstable-performance-supported</code> - Indicates whether it is a burstable performance instance type (
-     * <code>true</code> | <code>false</code>).
+     * <code>burstable-performance-supported</code> - Indicates whether the instance type is a burstable performance T
+     * instance type (<code>true</code> | <code>false</code>).
      * </p>
      * </li>
      * <li>
@@ -243,6 +243,23 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
+     * <code>nitro-enclaves-support</code> - Indicates whether Nitro Enclaves is supported (<code>supported</code> |
+     * <code>unsupported</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>nitro-tpm-support</code> - Indicates whether NitroTPM is supported (<code>supported</code> |
+     * <code>unsupported</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>nitro-tpm-info.supported-versions</code> - The supported NitroTPM version (<code>2.0</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>processor-info.supported-architecture</code> - The CPU architecture (<code>arm64</code> | <code>i386</code>
      * | <code>x86_64</code>).
      * </p>
@@ -250,6 +267,11 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * <li>
      * <p>
      * <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock speed, in GHz.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>processor-info.supported-features</code> - The supported CPU features (<code>amd-sev-snp</code>).
      * </p>
      * </li>
      * <li>
@@ -458,8 +480,8 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>burstable-performance-supported</code> - Indicates whether it is a burstable performance instance type (
-     * <code>true</code> | <code>false</code>).
+     * <code>burstable-performance-supported</code> - Indicates whether the instance type is a burstable performance T
+     * instance type (<code>true</code> | <code>false</code>).
      * </p>
      * </li>
      * <li>
@@ -648,6 +670,23 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
+     * <code>nitro-enclaves-support</code> - Indicates whether Nitro Enclaves is supported (<code>supported</code> |
+     * <code>unsupported</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>nitro-tpm-support</code> - Indicates whether NitroTPM is supported (<code>supported</code> |
+     * <code>unsupported</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>nitro-tpm-info.supported-versions</code> - The supported NitroTPM version (<code>2.0</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>processor-info.supported-architecture</code> - The CPU architecture (<code>arm64</code> | <code>i386</code>
      * | <code>x86_64</code>).
      * </p>
@@ -655,6 +694,11 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * <li>
      * <p>
      * <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock speed, in GHz.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>processor-info.supported-features</code> - The supported CPU features (<code>amd-sev-snp</code>).
      * </p>
      * </li>
      * <li>
@@ -722,8 +766,8 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *         </li>
      *         <li>
      *         <p>
-     *         <code>burstable-performance-supported</code> - Indicates whether it is a burstable performance instance
-     *         type (<code>true</code> | <code>false</code>).
+     *         <code>burstable-performance-supported</code> - Indicates whether the instance type is a burstable
+     *         performance T instance type (<code>true</code> | <code>false</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -914,6 +958,23 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *         </li>
      *         <li>
      *         <p>
+     *         <code>nitro-enclaves-support</code> - Indicates whether Nitro Enclaves is supported (
+     *         <code>supported</code> | <code>unsupported</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>nitro-tpm-support</code> - Indicates whether NitroTPM is supported (<code>supported</code> |
+     *         <code>unsupported</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>nitro-tpm-info.supported-versions</code> - The supported NitroTPM version (<code>2.0</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>processor-info.supported-architecture</code> - The CPU architecture (<code>arm64</code> |
      *         <code>i386</code> | <code>x86_64</code>).
      *         </p>
@@ -921,6 +982,11 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *         <li>
      *         <p>
      *         <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock speed, in GHz.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>processor-info.supported-features</code> - The supported CPU features (<code>amd-sev-snp</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -1000,8 +1066,8 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>burstable-performance-supported</code> - Indicates whether it is a burstable performance instance type (
-     * <code>true</code> | <code>false</code>).
+     * <code>burstable-performance-supported</code> - Indicates whether the instance type is a burstable performance T
+     * instance type (<code>true</code> | <code>false</code>).
      * </p>
      * </li>
      * <li>
@@ -1190,6 +1256,23 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
+     * <code>nitro-enclaves-support</code> - Indicates whether Nitro Enclaves is supported (<code>supported</code> |
+     * <code>unsupported</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>nitro-tpm-support</code> - Indicates whether NitroTPM is supported (<code>supported</code> |
+     * <code>unsupported</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>nitro-tpm-info.supported-versions</code> - The supported NitroTPM version (<code>2.0</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>processor-info.supported-architecture</code> - The CPU architecture (<code>arm64</code> | <code>i386</code>
      * | <code>x86_64</code>).
      * </p>
@@ -1197,6 +1280,11 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * <li>
      * <p>
      * <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock speed, in GHz.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>processor-info.supported-features</code> - The supported CPU features (<code>amd-sev-snp</code>).
      * </p>
      * </li>
      * <li>
@@ -1265,8 +1353,8 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        </li>
      *        <li>
      *        <p>
-     *        <code>burstable-performance-supported</code> - Indicates whether it is a burstable performance instance
-     *        type (<code>true</code> | <code>false</code>).
+     *        <code>burstable-performance-supported</code> - Indicates whether the instance type is a burstable
+     *        performance T instance type (<code>true</code> | <code>false</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -1457,6 +1545,23 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        </li>
      *        <li>
      *        <p>
+     *        <code>nitro-enclaves-support</code> - Indicates whether Nitro Enclaves is supported (
+     *        <code>supported</code> | <code>unsupported</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>nitro-tpm-support</code> - Indicates whether NitroTPM is supported (<code>supported</code> |
+     *        <code>unsupported</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>nitro-tpm-info.supported-versions</code> - The supported NitroTPM version (<code>2.0</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>processor-info.supported-architecture</code> - The CPU architecture (<code>arm64</code> |
      *        <code>i386</code> | <code>x86_64</code>).
      *        </p>
@@ -1464,6 +1569,11 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        <li>
      *        <p>
      *        <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock speed, in GHz.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>processor-info.supported-features</code> - The supported CPU features (<code>amd-sev-snp</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -1545,8 +1655,8 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>burstable-performance-supported</code> - Indicates whether it is a burstable performance instance type (
-     * <code>true</code> | <code>false</code>).
+     * <code>burstable-performance-supported</code> - Indicates whether the instance type is a burstable performance T
+     * instance type (<code>true</code> | <code>false</code>).
      * </p>
      * </li>
      * <li>
@@ -1735,6 +1845,23 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
+     * <code>nitro-enclaves-support</code> - Indicates whether Nitro Enclaves is supported (<code>supported</code> |
+     * <code>unsupported</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>nitro-tpm-support</code> - Indicates whether NitroTPM is supported (<code>supported</code> |
+     * <code>unsupported</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>nitro-tpm-info.supported-versions</code> - The supported NitroTPM version (<code>2.0</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>processor-info.supported-architecture</code> - The CPU architecture (<code>arm64</code> | <code>i386</code>
      * | <code>x86_64</code>).
      * </p>
@@ -1742,6 +1869,11 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * <li>
      * <p>
      * <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock speed, in GHz.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>processor-info.supported-features</code> - The supported CPU features (<code>amd-sev-snp</code>).
      * </p>
      * </li>
      * <li>
@@ -1815,8 +1947,8 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        </li>
      *        <li>
      *        <p>
-     *        <code>burstable-performance-supported</code> - Indicates whether it is a burstable performance instance
-     *        type (<code>true</code> | <code>false</code>).
+     *        <code>burstable-performance-supported</code> - Indicates whether the instance type is a burstable
+     *        performance T instance type (<code>true</code> | <code>false</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -2007,6 +2139,23 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        </li>
      *        <li>
      *        <p>
+     *        <code>nitro-enclaves-support</code> - Indicates whether Nitro Enclaves is supported (
+     *        <code>supported</code> | <code>unsupported</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>nitro-tpm-support</code> - Indicates whether NitroTPM is supported (<code>supported</code> |
+     *        <code>unsupported</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>nitro-tpm-info.supported-versions</code> - The supported NitroTPM version (<code>2.0</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>processor-info.supported-architecture</code> - The CPU architecture (<code>arm64</code> |
      *        <code>i386</code> | <code>x86_64</code>).
      *        </p>
@@ -2014,6 +2163,11 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        <li>
      *        <p>
      *        <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock speed, in GHz.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>processor-info.supported-features</code> - The supported CPU features (<code>amd-sev-snp</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -2097,8 +2251,8 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>burstable-performance-supported</code> - Indicates whether it is a burstable performance instance type (
-     * <code>true</code> | <code>false</code>).
+     * <code>burstable-performance-supported</code> - Indicates whether the instance type is a burstable performance T
+     * instance type (<code>true</code> | <code>false</code>).
      * </p>
      * </li>
      * <li>
@@ -2287,6 +2441,23 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
+     * <code>nitro-enclaves-support</code> - Indicates whether Nitro Enclaves is supported (<code>supported</code> |
+     * <code>unsupported</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>nitro-tpm-support</code> - Indicates whether NitroTPM is supported (<code>supported</code> |
+     * <code>unsupported</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>nitro-tpm-info.supported-versions</code> - The supported NitroTPM version (<code>2.0</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>processor-info.supported-architecture</code> - The CPU architecture (<code>arm64</code> | <code>i386</code>
      * | <code>x86_64</code>).
      * </p>
@@ -2294,6 +2465,11 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * <li>
      * <p>
      * <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock speed, in GHz.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>processor-info.supported-features</code> - The supported CPU features (<code>amd-sev-snp</code>).
      * </p>
      * </li>
      * <li>
@@ -2362,8 +2538,8 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        </li>
      *        <li>
      *        <p>
-     *        <code>burstable-performance-supported</code> - Indicates whether it is a burstable performance instance
-     *        type (<code>true</code> | <code>false</code>).
+     *        <code>burstable-performance-supported</code> - Indicates whether the instance type is a burstable
+     *        performance T instance type (<code>true</code> | <code>false</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -2554,6 +2730,23 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        </li>
      *        <li>
      *        <p>
+     *        <code>nitro-enclaves-support</code> - Indicates whether Nitro Enclaves is supported (
+     *        <code>supported</code> | <code>unsupported</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>nitro-tpm-support</code> - Indicates whether NitroTPM is supported (<code>supported</code> |
+     *        <code>unsupported</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>nitro-tpm-info.supported-versions</code> - The supported NitroTPM version (<code>2.0</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>processor-info.supported-architecture</code> - The CPU architecture (<code>arm64</code> |
      *        <code>i386</code> | <code>x86_64</code>).
      *        </p>
@@ -2561,6 +2754,11 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        <li>
      *        <p>
      *        <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock speed, in GHz.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>processor-info.supported-features</code> - The supported CPU features (<code>amd-sev-snp</code>).
      *        </p>
      *        </li>
      *        <li>

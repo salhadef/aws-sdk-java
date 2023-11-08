@@ -326,7 +326,7 @@ public class CreateMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getGraphArn() != null)
             sb.append("GraphArn: ").append(getGraphArn()).append(",");
         if (getMessage() != null)
-            sb.append("Message: ").append(getMessage()).append(",");
+            sb.append("Message: ").append("***Sensitive Data Redacted***").append(",");
         if (getDisableEmailNotification() != null)
             sb.append("DisableEmailNotification: ").append(getDisableEmailNotification()).append(",");
         if (getAccounts() != null)

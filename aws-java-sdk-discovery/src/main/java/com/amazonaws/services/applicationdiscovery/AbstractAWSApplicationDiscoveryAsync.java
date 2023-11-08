@@ -43,6 +43,19 @@ public class AbstractAWSApplicationDiscoveryAsync extends AbstractAWSApplication
     }
 
     @Override
+    public java.util.concurrent.Future<BatchDeleteAgentsResult> batchDeleteAgentsAsync(BatchDeleteAgentsRequest request) {
+
+        return batchDeleteAgentsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDeleteAgentsResult> batchDeleteAgentsAsync(BatchDeleteAgentsRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchDeleteAgentsRequest, BatchDeleteAgentsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchDeleteImportDataResult> batchDeleteImportDataAsync(BatchDeleteImportDataRequest request) {
 
         return batchDeleteImportDataAsync(request, null);
@@ -116,6 +129,21 @@ public class AbstractAWSApplicationDiscoveryAsync extends AbstractAWSApplication
     @Override
     public java.util.concurrent.Future<DescribeAgentsResult> describeAgentsAsync(DescribeAgentsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeAgentsRequest, DescribeAgentsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeBatchDeleteConfigurationTaskResult> describeBatchDeleteConfigurationTaskAsync(
+            DescribeBatchDeleteConfigurationTaskRequest request) {
+
+        return describeBatchDeleteConfigurationTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeBatchDeleteConfigurationTaskResult> describeBatchDeleteConfigurationTaskAsync(
+            DescribeBatchDeleteConfigurationTaskRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeBatchDeleteConfigurationTaskRequest, DescribeBatchDeleteConfigurationTaskResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -265,6 +293,21 @@ public class AbstractAWSApplicationDiscoveryAsync extends AbstractAWSApplication
     @Override
     public java.util.concurrent.Future<ListServerNeighborsResult> listServerNeighborsAsync(ListServerNeighborsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListServerNeighborsRequest, ListServerNeighborsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartBatchDeleteConfigurationTaskResult> startBatchDeleteConfigurationTaskAsync(
+            StartBatchDeleteConfigurationTaskRequest request) {
+
+        return startBatchDeleteConfigurationTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartBatchDeleteConfigurationTaskResult> startBatchDeleteConfigurationTaskAsync(
+            StartBatchDeleteConfigurationTaskRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartBatchDeleteConfigurationTaskRequest, StartBatchDeleteConfigurationTaskResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UpdateSourceServerReplicationTypeRequestMarshaller {
 
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("accountID").build();
     private static final MarshallingInfo<String> REPLICATIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("replicationType").build();
     private static final MarshallingInfo<String> SOURCESERVERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -48,6 +50,7 @@ public class UpdateSourceServerReplicationTypeRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(updateSourceServerReplicationTypeRequest.getAccountID(), ACCOUNTID_BINDING);
             protocolMarshaller.marshall(updateSourceServerReplicationTypeRequest.getReplicationType(), REPLICATIONTYPE_BINDING);
             protocolMarshaller.marshall(updateSourceServerReplicationTypeRequest.getSourceServerID(), SOURCESERVERID_BINDING);
         } catch (Exception e) {

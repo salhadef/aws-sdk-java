@@ -39,8 +39,11 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
     private java.util.Map<String, String> airflowConfigurationOptions;
     /**
      * <p>
-     * The Apache Airflow version on your environment. Valid values: <code>1.10.12</code>, <code>2.0.2</code>,
-     * <code>2.2.2</code>, and <code>2.4.3</code>.
+     * The Apache Airflow version on your environment.
+     * </p>
+     * <p>
+     * Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>,
+     * <code>2.5.1</code>, <code>2.6.3</code>, <code>2.7.2</code>.
      * </p>
      */
     private String airflowVersion;
@@ -251,6 +254,14 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>CREATING_SNAPSHOT</code> - Indicates the request to update environment details, or upgrade the environment
+     * version, is in progress and Amazon MWAA is creating a storage volume snapshot of the Amazon RDS database cluster
+     * associated with the environment. A database snapshot is a backup created at a specific point in time. Amazon MWAA
+     * uses snapshots to recover environment metadata if the process to update or upgrade an environment fails.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>CREATE_FAILED</code> - Indicates the request to create the environment failed, and the environment could
      * not be created.
      * </p>
@@ -263,6 +274,12 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>UPDATING</code> - Indicates the request to update the environment is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ROLLING_BACK</code> - Indicates the request to update environment details, or upgrade the environment
+     * version, failed and Amazon MWAA is restoring the environment using the latest storage volume snapshot.
      * </p>
      * </li>
      * <li>
@@ -416,13 +433,18 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Apache Airflow version on your environment. Valid values: <code>1.10.12</code>, <code>2.0.2</code>,
-     * <code>2.2.2</code>, and <code>2.4.3</code>.
+     * The Apache Airflow version on your environment.
+     * </p>
+     * <p>
+     * Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>,
+     * <code>2.5.1</code>, <code>2.6.3</code>, <code>2.7.2</code>.
      * </p>
      * 
      * @param airflowVersion
-     *        The Apache Airflow version on your environment. Valid values: <code>1.10.12</code>, <code>2.0.2</code>,
-     *        <code>2.2.2</code>, and <code>2.4.3</code>.
+     *        The Apache Airflow version on your environment.</p>
+     *        <p>
+     *        Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>,
+     *        <code>2.5.1</code>, <code>2.6.3</code>, <code>2.7.2</code>.
      */
 
     public void setAirflowVersion(String airflowVersion) {
@@ -431,12 +453,17 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Apache Airflow version on your environment. Valid values: <code>1.10.12</code>, <code>2.0.2</code>,
-     * <code>2.2.2</code>, and <code>2.4.3</code>.
+     * The Apache Airflow version on your environment.
+     * </p>
+     * <p>
+     * Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>,
+     * <code>2.5.1</code>, <code>2.6.3</code>, <code>2.7.2</code>.
      * </p>
      * 
-     * @return The Apache Airflow version on your environment. Valid values: <code>1.10.12</code>, <code>2.0.2</code>,
-     *         <code>2.2.2</code>, and <code>2.4.3</code>.
+     * @return The Apache Airflow version on your environment.</p>
+     *         <p>
+     *         Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>,
+     *         <code>2.5.1</code>, <code>2.6.3</code>, <code>2.7.2</code>.
      */
 
     public String getAirflowVersion() {
@@ -445,13 +472,18 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Apache Airflow version on your environment. Valid values: <code>1.10.12</code>, <code>2.0.2</code>,
-     * <code>2.2.2</code>, and <code>2.4.3</code>.
+     * The Apache Airflow version on your environment.
+     * </p>
+     * <p>
+     * Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>,
+     * <code>2.5.1</code>, <code>2.6.3</code>, <code>2.7.2</code>.
      * </p>
      * 
      * @param airflowVersion
-     *        The Apache Airflow version on your environment. Valid values: <code>1.10.12</code>, <code>2.0.2</code>,
-     *        <code>2.2.2</code>, and <code>2.4.3</code>.
+     *        The Apache Airflow version on your environment.</p>
+     *        <p>
+     *        Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>,
+     *        <code>2.5.1</code>, <code>2.6.3</code>, <code>2.7.2</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1732,6 +1764,14 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>CREATING_SNAPSHOT</code> - Indicates the request to update environment details, or upgrade the environment
+     * version, is in progress and Amazon MWAA is creating a storage volume snapshot of the Amazon RDS database cluster
+     * associated with the environment. A database snapshot is a backup created at a specific point in time. Amazon MWAA
+     * uses snapshots to recover environment metadata if the process to update or upgrade an environment fails.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>CREATE_FAILED</code> - Indicates the request to create the environment failed, and the environment could
      * not be created.
      * </p>
@@ -1744,6 +1784,12 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>UPDATING</code> - Indicates the request to update the environment is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ROLLING_BACK</code> - Indicates the request to update environment details, or upgrade the environment
+     * version, failed and Amazon MWAA is restoring the environment using the latest storage volume snapshot.
      * </p>
      * </li>
      * <li>
@@ -1786,6 +1832,15 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
+     *        <code>CREATING_SNAPSHOT</code> - Indicates the request to update environment details, or upgrade the
+     *        environment version, is in progress and Amazon MWAA is creating a storage volume snapshot of the Amazon
+     *        RDS database cluster associated with the environment. A database snapshot is a backup created at a
+     *        specific point in time. Amazon MWAA uses snapshots to recover environment metadata if the process to
+     *        update or upgrade an environment fails.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>CREATE_FAILED</code> - Indicates the request to create the environment failed, and the environment
      *        could not be created.
      *        </p>
@@ -1798,6 +1853,13 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>UPDATING</code> - Indicates the request to update the environment is in progress.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ROLLING_BACK</code> - Indicates the request to update environment details, or upgrade the
+     *        environment version, failed and Amazon MWAA is restoring the environment using the latest storage volume
+     *        snapshot.
      *        </p>
      *        </li>
      *        <li>
@@ -1847,6 +1909,14 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>CREATING_SNAPSHOT</code> - Indicates the request to update environment details, or upgrade the environment
+     * version, is in progress and Amazon MWAA is creating a storage volume snapshot of the Amazon RDS database cluster
+     * associated with the environment. A database snapshot is a backup created at a specific point in time. Amazon MWAA
+     * uses snapshots to recover environment metadata if the process to update or upgrade an environment fails.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>CREATE_FAILED</code> - Indicates the request to create the environment failed, and the environment could
      * not be created.
      * </p>
@@ -1859,6 +1929,12 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>UPDATING</code> - Indicates the request to update the environment is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ROLLING_BACK</code> - Indicates the request to update environment details, or upgrade the environment
+     * version, failed and Amazon MWAA is restoring the environment using the latest storage volume snapshot.
      * </p>
      * </li>
      * <li>
@@ -1900,6 +1976,15 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
+     *         <code>CREATING_SNAPSHOT</code> - Indicates the request to update environment details, or upgrade the
+     *         environment version, is in progress and Amazon MWAA is creating a storage volume snapshot of the Amazon
+     *         RDS database cluster associated with the environment. A database snapshot is a backup created at a
+     *         specific point in time. Amazon MWAA uses snapshots to recover environment metadata if the process to
+     *         update or upgrade an environment fails.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>CREATE_FAILED</code> - Indicates the request to create the environment failed, and the environment
      *         could not be created.
      *         </p>
@@ -1912,6 +1997,13 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         <code>UPDATING</code> - Indicates the request to update the environment is in progress.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ROLLING_BACK</code> - Indicates the request to update environment details, or upgrade the
+     *         environment version, failed and Amazon MWAA is restoring the environment using the latest storage volume
+     *         snapshot.
      *         </p>
      *         </li>
      *         <li>
@@ -1962,6 +2054,14 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>CREATING_SNAPSHOT</code> - Indicates the request to update environment details, or upgrade the environment
+     * version, is in progress and Amazon MWAA is creating a storage volume snapshot of the Amazon RDS database cluster
+     * associated with the environment. A database snapshot is a backup created at a specific point in time. Amazon MWAA
+     * uses snapshots to recover environment metadata if the process to update or upgrade an environment fails.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>CREATE_FAILED</code> - Indicates the request to create the environment failed, and the environment could
      * not be created.
      * </p>
@@ -1974,6 +2074,12 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>UPDATING</code> - Indicates the request to update the environment is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ROLLING_BACK</code> - Indicates the request to update environment details, or upgrade the environment
+     * version, failed and Amazon MWAA is restoring the environment using the latest storage volume snapshot.
      * </p>
      * </li>
      * <li>
@@ -2016,6 +2122,15 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
+     *        <code>CREATING_SNAPSHOT</code> - Indicates the request to update environment details, or upgrade the
+     *        environment version, is in progress and Amazon MWAA is creating a storage volume snapshot of the Amazon
+     *        RDS database cluster associated with the environment. A database snapshot is a backup created at a
+     *        specific point in time. Amazon MWAA uses snapshots to recover environment metadata if the process to
+     *        update or upgrade an environment fails.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>CREATE_FAILED</code> - Indicates the request to create the environment failed, and the environment
      *        could not be created.
      *        </p>
@@ -2028,6 +2143,13 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>UPDATING</code> - Indicates the request to update the environment is in progress.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ROLLING_BACK</code> - Indicates the request to update environment details, or upgrade the
+     *        environment version, failed and Amazon MWAA is restoring the environment using the latest storage volume
+     *        snapshot.
      *        </p>
      *        </li>
      *        <li>
@@ -2079,6 +2201,14 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>CREATING_SNAPSHOT</code> - Indicates the request to update environment details, or upgrade the environment
+     * version, is in progress and Amazon MWAA is creating a storage volume snapshot of the Amazon RDS database cluster
+     * associated with the environment. A database snapshot is a backup created at a specific point in time. Amazon MWAA
+     * uses snapshots to recover environment metadata if the process to update or upgrade an environment fails.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>CREATE_FAILED</code> - Indicates the request to create the environment failed, and the environment could
      * not be created.
      * </p>
@@ -2091,6 +2221,12 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>UPDATING</code> - Indicates the request to update the environment is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ROLLING_BACK</code> - Indicates the request to update environment details, or upgrade the environment
+     * version, failed and Amazon MWAA is restoring the environment using the latest storage volume snapshot.
      * </p>
      * </li>
      * <li>
@@ -2133,6 +2269,15 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
+     *        <code>CREATING_SNAPSHOT</code> - Indicates the request to update environment details, or upgrade the
+     *        environment version, is in progress and Amazon MWAA is creating a storage volume snapshot of the Amazon
+     *        RDS database cluster associated with the environment. A database snapshot is a backup created at a
+     *        specific point in time. Amazon MWAA uses snapshots to recover environment metadata if the process to
+     *        update or upgrade an environment fails.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>CREATE_FAILED</code> - Indicates the request to create the environment failed, and the environment
      *        could not be created.
      *        </p>
@@ -2145,6 +2290,13 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>UPDATING</code> - Indicates the request to update the environment is in progress.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ROLLING_BACK</code> - Indicates the request to update environment details, or upgrade the
+     *        environment version, failed and Amazon MWAA is restoring the environment using the latest storage volume
+     *        snapshot.
      *        </p>
      *        </li>
      *        <li>

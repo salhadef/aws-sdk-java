@@ -21,6 +21,10 @@ import javax.annotation.Generated;
  * with these attributes.
  * </p>
  * <p>
+ * You must specify <code>VCpuCount</code> and <code>MemoryMiB</code>. All other attributes are optional. Any
+ * unspecified optional attribute is set to its default.
+ * </p>
+ * <p>
  * When you specify multiple attributes, you get instance types that satisfy all of the specified attributes. If you
  * specify multiple values for an attribute, you get instance types that satisfy any of the specified values.
  * </p>
@@ -44,8 +48,17 @@ import javax.annotation.Generated;
  * </ul>
  * <note>
  * <p>
- * You must specify <code>VCpuCount</code> and <code>MemoryMiB</code>. All other attributes are optional. Any
- * unspecified optional attribute is set to its default.
+ * If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.
+ * </p>
+ * <p>
+ * Attribute-based instance type selection is only supported when using Auto Scaling groups, EC2 Fleet, and Spot Fleet
+ * to launch instances. If you plan to use the launch template in the <a
+ * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-instance-wizard.html">launch instance
+ * wizard</a>, or with the <a
+ * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a> API or <a
+ * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html"
+ * >AWS::EC2::Instance</a> Amazon Web Services CloudFormation resource, you can't specify
+ * <code>InstanceRequirements</code>.
  * </p>
  * </note>
  * <p>
@@ -506,7 +519,10 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
     private AcceleratorTotalMemoryMiBRequest acceleratorTotalMemoryMiB;
     /**
      * <p>
-     * The minimum and maximum amount of network bandwidth, in gigabits per second (Gbps).
+     * The minimum and maximum amount of baseline network bandwidth, in gigabits per second (Gbps). For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-network-bandwidth.html">Amazon EC2
+     * instance network bandwidth</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * Default: No minimum or maximum limits
@@ -4446,14 +4462,20 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The minimum and maximum amount of network bandwidth, in gigabits per second (Gbps).
+     * The minimum and maximum amount of baseline network bandwidth, in gigabits per second (Gbps). For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-network-bandwidth.html">Amazon EC2
+     * instance network bandwidth</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * Default: No minimum or maximum limits
      * </p>
      * 
      * @param networkBandwidthGbps
-     *        The minimum and maximum amount of network bandwidth, in gigabits per second (Gbps).</p>
+     *        The minimum and maximum amount of baseline network bandwidth, in gigabits per second (Gbps). For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-network-bandwidth.html">Amazon EC2
+     *        instance network bandwidth</a> in the <i>Amazon EC2 User Guide</i>.</p>
      *        <p>
      *        Default: No minimum or maximum limits
      */
@@ -4464,13 +4486,19 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The minimum and maximum amount of network bandwidth, in gigabits per second (Gbps).
+     * The minimum and maximum amount of baseline network bandwidth, in gigabits per second (Gbps). For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-network-bandwidth.html">Amazon EC2
+     * instance network bandwidth</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * Default: No minimum or maximum limits
      * </p>
      * 
-     * @return The minimum and maximum amount of network bandwidth, in gigabits per second (Gbps).</p>
+     * @return The minimum and maximum amount of baseline network bandwidth, in gigabits per second (Gbps). For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-network-bandwidth.html">Amazon EC2
+     *         instance network bandwidth</a> in the <i>Amazon EC2 User Guide</i>.</p>
      *         <p>
      *         Default: No minimum or maximum limits
      */
@@ -4481,14 +4509,20 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The minimum and maximum amount of network bandwidth, in gigabits per second (Gbps).
+     * The minimum and maximum amount of baseline network bandwidth, in gigabits per second (Gbps). For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-network-bandwidth.html">Amazon EC2
+     * instance network bandwidth</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * Default: No minimum or maximum limits
      * </p>
      * 
      * @param networkBandwidthGbps
-     *        The minimum and maximum amount of network bandwidth, in gigabits per second (Gbps).</p>
+     *        The minimum and maximum amount of baseline network bandwidth, in gigabits per second (Gbps). For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-network-bandwidth.html">Amazon EC2
+     *        instance network bandwidth</a> in the <i>Amazon EC2 User Guide</i>.</p>
      *        <p>
      *        Default: No minimum or maximum limits
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -59,6 +59,16 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * <ul>
      * <li>
      * <p>
+     * The environment types <code>ARM_LAMBDA_CONTAINER</code> and <code>LINUX_LAMBDA_CONTAINER</code> are available
+     * only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Mumbai), Asia Pacific
+     * (Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo), EU (Frankfurt), EU (Ireland), and South America (São
+     * Paulo).
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
      * The environment types <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code> are available
      * only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), and EU (Ireland).
      * </p>
@@ -125,6 +135,58 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * <p>
      * <code>BUILD_GENERAL1_2XLARGE</code>: Use up to 145 GB memory, 72 vCPUs, and 824 GB of SSD storage for builds.
      * This compute type supports Docker images up to 100 GB uncompressed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_1GB</code>: Use up to 1 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_2GB</code>: Use up to 2 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_4GB</code>: Use up to 4 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_8GB</code>: Use up to 8 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_10GB</code>: Use up to 10 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you use <code>BUILD_GENERAL1_SMALL</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For environment type <code>LINUX_CONTAINER</code>, you can use up to 3 GB memory and 2 vCPUs for builds.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 16 GB memory, 4 vCPUs, and 1 NVIDIA A10G
+     * Tensor Core GPU for builds.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For environment type <code>ARM_CONTAINER</code>, you can use up to 4 GB memory and 2 vCPUs on ARM-based
+     * processors for builds.
      * </p>
      * </li>
      * </ul>
@@ -264,6 +326,16 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * <ul>
      * <li>
      * <p>
+     * The environment types <code>ARM_LAMBDA_CONTAINER</code> and <code>LINUX_LAMBDA_CONTAINER</code> are available
+     * only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Mumbai), Asia Pacific
+     * (Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo), EU (Frankfurt), EU (Ireland), and South America (São
+     * Paulo).
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
      * The environment types <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code> are available
      * only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), and EU (Ireland).
      * </p>
@@ -299,6 +371,16 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *        US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia
      *        Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing),
      *        and China (Ningxia).
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The environment types <code>ARM_LAMBDA_CONTAINER</code> and <code>LINUX_LAMBDA_CONTAINER</code> are
+     *        available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Mumbai),
+     *        Asia Pacific (Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo), EU (Frankfurt), EU (Ireland), and
+     *        South America (São Paulo).
      *        </p>
      *        </li>
      *        </ul>
@@ -352,6 +434,16 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * <ul>
      * <li>
      * <p>
+     * The environment types <code>ARM_LAMBDA_CONTAINER</code> and <code>LINUX_LAMBDA_CONTAINER</code> are available
+     * only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Mumbai), Asia Pacific
+     * (Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo), EU (Frankfurt), EU (Ireland), and South America (São
+     * Paulo).
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
      * The environment types <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code> are available
      * only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), and EU (Ireland).
      * </p>
@@ -386,6 +478,16 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *         US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia
      *         Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing),
      *         and China (Ningxia).
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The environment types <code>ARM_LAMBDA_CONTAINER</code> and <code>LINUX_LAMBDA_CONTAINER</code> are
+     *         available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Mumbai),
+     *         Asia Pacific (Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo), EU (Frankfurt), EU (Ireland), and
+     *         South America (São Paulo).
      *         </p>
      *         </li>
      *         </ul>
@@ -439,6 +541,16 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * <ul>
      * <li>
      * <p>
+     * The environment types <code>ARM_LAMBDA_CONTAINER</code> and <code>LINUX_LAMBDA_CONTAINER</code> are available
+     * only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Mumbai), Asia Pacific
+     * (Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo), EU (Frankfurt), EU (Ireland), and South America (São
+     * Paulo).
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
      * The environment types <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code> are available
      * only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), and EU (Ireland).
      * </p>
@@ -474,6 +586,16 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *        US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia
      *        Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing),
      *        and China (Ningxia).
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The environment types <code>ARM_LAMBDA_CONTAINER</code> and <code>LINUX_LAMBDA_CONTAINER</code> are
+     *        available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Mumbai),
+     *        Asia Pacific (Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo), EU (Frankfurt), EU (Ireland), and
+     *        South America (São Paulo).
      *        </p>
      *        </li>
      *        </ul>
@@ -529,6 +651,16 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * <ul>
      * <li>
      * <p>
+     * The environment types <code>ARM_LAMBDA_CONTAINER</code> and <code>LINUX_LAMBDA_CONTAINER</code> are available
+     * only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Mumbai), Asia Pacific
+     * (Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo), EU (Frankfurt), EU (Ireland), and South America (São
+     * Paulo).
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
      * The environment types <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code> are available
      * only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), and EU (Ireland).
      * </p>
@@ -564,6 +696,16 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *        US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia
      *        Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing),
      *        and China (Ningxia).
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The environment types <code>ARM_LAMBDA_CONTAINER</code> and <code>LINUX_LAMBDA_CONTAINER</code> are
+     *        available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Mumbai),
+     *        Asia Pacific (Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo), EU (Frankfurt), EU (Ireland), and
+     *        South America (São Paulo).
      *        </p>
      *        </li>
      *        </ul>
@@ -617,6 +759,16 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * <ul>
      * <li>
      * <p>
+     * The environment types <code>ARM_LAMBDA_CONTAINER</code> and <code>LINUX_LAMBDA_CONTAINER</code> are available
+     * only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Mumbai), Asia Pacific
+     * (Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo), EU (Frankfurt), EU (Ireland), and South America (São
+     * Paulo).
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
      * The environment types <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code> are available
      * only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), and EU (Ireland).
      * </p>
@@ -652,6 +804,16 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *        US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia
      *        Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing),
      *        and China (Ningxia).
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The environment types <code>ARM_LAMBDA_CONTAINER</code> and <code>LINUX_LAMBDA_CONTAINER</code> are
+     *        available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Mumbai),
+     *        Asia Pacific (Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo), EU (Frankfurt), EU (Ireland), and
+     *        South America (São Paulo).
      *        </p>
      *        </li>
      *        </ul>
@@ -881,6 +1043,58 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * This compute type supports Docker images up to 100 GB uncompressed.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_1GB</code>: Use up to 1 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_2GB</code>: Use up to 2 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_4GB</code>: Use up to 4 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_8GB</code>: Use up to 8 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_10GB</code>: Use up to 10 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you use <code>BUILD_GENERAL1_SMALL</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For environment type <code>LINUX_CONTAINER</code>, you can use up to 3 GB memory and 2 vCPUs for builds.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 16 GB memory, 4 vCPUs, and 1 NVIDIA A10G
+     * Tensor Core GPU for builds.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For environment type <code>ARM_CONTAINER</code>, you can use up to 4 GB memory and 2 vCPUs on ARM-based
+     * processors for builds.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If you use <code>BUILD_GENERAL1_LARGE</code>:
@@ -933,6 +1147,58 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *        <p>
      *        <code>BUILD_GENERAL1_2XLARGE</code>: Use up to 145 GB memory, 72 vCPUs, and 824 GB of SSD storage for
      *        builds. This compute type supports Docker images up to 100 GB uncompressed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BUILD_LAMBDA_1GB</code>: Use up to 1 GB memory for builds. Only available for environment type
+     *        <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BUILD_LAMBDA_2GB</code>: Use up to 2 GB memory for builds. Only available for environment type
+     *        <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BUILD_LAMBDA_4GB</code>: Use up to 4 GB memory for builds. Only available for environment type
+     *        <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BUILD_LAMBDA_8GB</code>: Use up to 8 GB memory for builds. Only available for environment type
+     *        <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BUILD_LAMBDA_10GB</code>: Use up to 10 GB memory for builds. Only available for environment type
+     *        <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you use <code>BUILD_GENERAL1_SMALL</code>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For environment type <code>LINUX_CONTAINER</code>, you can use up to 3 GB memory and 2 vCPUs for builds.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 16 GB memory, 4 vCPUs, and 1
+     *        NVIDIA A10G Tensor Core GPU for builds.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For environment type <code>ARM_CONTAINER</code>, you can use up to 4 GB memory and 2 vCPUs on ARM-based
+     *        processors for builds.
      *        </p>
      *        </li>
      *        </ul>
@@ -996,6 +1262,58 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * This compute type supports Docker images up to 100 GB uncompressed.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_1GB</code>: Use up to 1 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_2GB</code>: Use up to 2 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_4GB</code>: Use up to 4 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_8GB</code>: Use up to 8 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_10GB</code>: Use up to 10 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you use <code>BUILD_GENERAL1_SMALL</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For environment type <code>LINUX_CONTAINER</code>, you can use up to 3 GB memory and 2 vCPUs for builds.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 16 GB memory, 4 vCPUs, and 1 NVIDIA A10G
+     * Tensor Core GPU for builds.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For environment type <code>ARM_CONTAINER</code>, you can use up to 4 GB memory and 2 vCPUs on ARM-based
+     * processors for builds.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If you use <code>BUILD_GENERAL1_LARGE</code>:
@@ -1047,6 +1365,58 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *         <p>
      *         <code>BUILD_GENERAL1_2XLARGE</code>: Use up to 145 GB memory, 72 vCPUs, and 824 GB of SSD storage for
      *         builds. This compute type supports Docker images up to 100 GB uncompressed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>BUILD_LAMBDA_1GB</code>: Use up to 1 GB memory for builds. Only available for environment type
+     *         <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>BUILD_LAMBDA_2GB</code>: Use up to 2 GB memory for builds. Only available for environment type
+     *         <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>BUILD_LAMBDA_4GB</code>: Use up to 4 GB memory for builds. Only available for environment type
+     *         <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>BUILD_LAMBDA_8GB</code>: Use up to 8 GB memory for builds. Only available for environment type
+     *         <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>BUILD_LAMBDA_10GB</code>: Use up to 10 GB memory for builds. Only available for environment type
+     *         <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         If you use <code>BUILD_GENERAL1_SMALL</code>:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For environment type <code>LINUX_CONTAINER</code>, you can use up to 3 GB memory and 2 vCPUs for builds.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 16 GB memory, 4 vCPUs, and 1
+     *         NVIDIA A10G Tensor Core GPU for builds.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For environment type <code>ARM_CONTAINER</code>, you can use up to 4 GB memory and 2 vCPUs on ARM-based
+     *         processors for builds.
      *         </p>
      *         </li>
      *         </ul>
@@ -1110,6 +1480,58 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * This compute type supports Docker images up to 100 GB uncompressed.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_1GB</code>: Use up to 1 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_2GB</code>: Use up to 2 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_4GB</code>: Use up to 4 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_8GB</code>: Use up to 8 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_10GB</code>: Use up to 10 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you use <code>BUILD_GENERAL1_SMALL</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For environment type <code>LINUX_CONTAINER</code>, you can use up to 3 GB memory and 2 vCPUs for builds.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 16 GB memory, 4 vCPUs, and 1 NVIDIA A10G
+     * Tensor Core GPU for builds.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For environment type <code>ARM_CONTAINER</code>, you can use up to 4 GB memory and 2 vCPUs on ARM-based
+     * processors for builds.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If you use <code>BUILD_GENERAL1_LARGE</code>:
@@ -1162,6 +1584,58 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *        <p>
      *        <code>BUILD_GENERAL1_2XLARGE</code>: Use up to 145 GB memory, 72 vCPUs, and 824 GB of SSD storage for
      *        builds. This compute type supports Docker images up to 100 GB uncompressed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BUILD_LAMBDA_1GB</code>: Use up to 1 GB memory for builds. Only available for environment type
+     *        <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BUILD_LAMBDA_2GB</code>: Use up to 2 GB memory for builds. Only available for environment type
+     *        <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BUILD_LAMBDA_4GB</code>: Use up to 4 GB memory for builds. Only available for environment type
+     *        <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BUILD_LAMBDA_8GB</code>: Use up to 8 GB memory for builds. Only available for environment type
+     *        <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BUILD_LAMBDA_10GB</code>: Use up to 10 GB memory for builds. Only available for environment type
+     *        <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you use <code>BUILD_GENERAL1_SMALL</code>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For environment type <code>LINUX_CONTAINER</code>, you can use up to 3 GB memory and 2 vCPUs for builds.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 16 GB memory, 4 vCPUs, and 1
+     *        NVIDIA A10G Tensor Core GPU for builds.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For environment type <code>ARM_CONTAINER</code>, you can use up to 4 GB memory and 2 vCPUs on ARM-based
+     *        processors for builds.
      *        </p>
      *        </li>
      *        </ul>
@@ -1227,6 +1701,58 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * This compute type supports Docker images up to 100 GB uncompressed.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_1GB</code>: Use up to 1 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_2GB</code>: Use up to 2 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_4GB</code>: Use up to 4 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_8GB</code>: Use up to 8 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_10GB</code>: Use up to 10 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you use <code>BUILD_GENERAL1_SMALL</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For environment type <code>LINUX_CONTAINER</code>, you can use up to 3 GB memory and 2 vCPUs for builds.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 16 GB memory, 4 vCPUs, and 1 NVIDIA A10G
+     * Tensor Core GPU for builds.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For environment type <code>ARM_CONTAINER</code>, you can use up to 4 GB memory and 2 vCPUs on ARM-based
+     * processors for builds.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If you use <code>BUILD_GENERAL1_LARGE</code>:
@@ -1279,6 +1805,58 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *        <p>
      *        <code>BUILD_GENERAL1_2XLARGE</code>: Use up to 145 GB memory, 72 vCPUs, and 824 GB of SSD storage for
      *        builds. This compute type supports Docker images up to 100 GB uncompressed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BUILD_LAMBDA_1GB</code>: Use up to 1 GB memory for builds. Only available for environment type
+     *        <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BUILD_LAMBDA_2GB</code>: Use up to 2 GB memory for builds. Only available for environment type
+     *        <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BUILD_LAMBDA_4GB</code>: Use up to 4 GB memory for builds. Only available for environment type
+     *        <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BUILD_LAMBDA_8GB</code>: Use up to 8 GB memory for builds. Only available for environment type
+     *        <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BUILD_LAMBDA_10GB</code>: Use up to 10 GB memory for builds. Only available for environment type
+     *        <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you use <code>BUILD_GENERAL1_SMALL</code>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For environment type <code>LINUX_CONTAINER</code>, you can use up to 3 GB memory and 2 vCPUs for builds.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 16 GB memory, 4 vCPUs, and 1
+     *        NVIDIA A10G Tensor Core GPU for builds.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For environment type <code>ARM_CONTAINER</code>, you can use up to 4 GB memory and 2 vCPUs on ARM-based
+     *        processors for builds.
      *        </p>
      *        </li>
      *        </ul>
@@ -1342,6 +1920,58 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * This compute type supports Docker images up to 100 GB uncompressed.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_1GB</code>: Use up to 1 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_2GB</code>: Use up to 2 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_4GB</code>: Use up to 4 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_8GB</code>: Use up to 8 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_10GB</code>: Use up to 10 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you use <code>BUILD_GENERAL1_SMALL</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For environment type <code>LINUX_CONTAINER</code>, you can use up to 3 GB memory and 2 vCPUs for builds.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 16 GB memory, 4 vCPUs, and 1 NVIDIA A10G
+     * Tensor Core GPU for builds.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For environment type <code>ARM_CONTAINER</code>, you can use up to 4 GB memory and 2 vCPUs on ARM-based
+     * processors for builds.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If you use <code>BUILD_GENERAL1_LARGE</code>:
@@ -1394,6 +2024,58 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *        <p>
      *        <code>BUILD_GENERAL1_2XLARGE</code>: Use up to 145 GB memory, 72 vCPUs, and 824 GB of SSD storage for
      *        builds. This compute type supports Docker images up to 100 GB uncompressed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BUILD_LAMBDA_1GB</code>: Use up to 1 GB memory for builds. Only available for environment type
+     *        <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BUILD_LAMBDA_2GB</code>: Use up to 2 GB memory for builds. Only available for environment type
+     *        <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BUILD_LAMBDA_4GB</code>: Use up to 4 GB memory for builds. Only available for environment type
+     *        <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BUILD_LAMBDA_8GB</code>: Use up to 8 GB memory for builds. Only available for environment type
+     *        <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BUILD_LAMBDA_10GB</code>: Use up to 10 GB memory for builds. Only available for environment type
+     *        <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you use <code>BUILD_GENERAL1_SMALL</code>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For environment type <code>LINUX_CONTAINER</code>, you can use up to 3 GB memory and 2 vCPUs for builds.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 16 GB memory, 4 vCPUs, and 1
+     *        NVIDIA A10G Tensor Core GPU for builds.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For environment type <code>ARM_CONTAINER</code>, you can use up to 4 GB memory and 2 vCPUs on ARM-based
+     *        processors for builds.
      *        </p>
      *        </li>
      *        </ul>

@@ -227,6 +227,26 @@ public class RestoreDBClusterToPointInTimeRequestMarshaller implements
             request.addParameter("NetworkType", StringUtils.fromString(restoreDBClusterToPointInTimeRequest.getNetworkType()));
         }
 
+        if (restoreDBClusterToPointInTimeRequest.getSourceDbClusterResourceId() != null) {
+            request.addParameter("SourceDbClusterResourceId", StringUtils.fromString(restoreDBClusterToPointInTimeRequest.getSourceDbClusterResourceId()));
+        }
+
+        {
+            RdsCustomClusterConfiguration rdsCustomClusterConfiguration = restoreDBClusterToPointInTimeRequest.getRdsCustomClusterConfiguration();
+            if (rdsCustomClusterConfiguration != null) {
+
+                if (rdsCustomClusterConfiguration.getInterconnectSubnetId() != null) {
+                    request.addParameter("RdsCustomClusterConfiguration.InterconnectSubnetId",
+                            StringUtils.fromString(rdsCustomClusterConfiguration.getInterconnectSubnetId()));
+                }
+
+                if (rdsCustomClusterConfiguration.getTransitGatewayMulticastDomainId() != null) {
+                    request.addParameter("RdsCustomClusterConfiguration.TransitGatewayMulticastDomainId",
+                            StringUtils.fromString(rdsCustomClusterConfiguration.getTransitGatewayMulticastDomainId()));
+                }
+            }
+        }
+
         return request;
     }
 

@@ -56,6 +56,14 @@ public class PublishAppVersionResultJsonUnmarshaller implements Unmarshaller<Pub
                     context.nextToken();
                     publishAppVersionResult.setAppVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("identifier", targetDepth)) {
+                    context.nextToken();
+                    publishAppVersionResult.setIdentifier(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("versionName", targetDepth)) {
+                    context.nextToken();
+                    publishAppVersionResult.setVersionName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

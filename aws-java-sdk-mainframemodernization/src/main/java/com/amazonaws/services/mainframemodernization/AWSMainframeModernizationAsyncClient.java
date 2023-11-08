@@ -576,6 +576,39 @@ public class AWSMainframeModernizationAsyncClient extends AWSMainframeModernizat
     }
 
     @Override
+    public java.util.concurrent.Future<GetSignedBluinsightsUrlResult> getSignedBluinsightsUrlAsync(GetSignedBluinsightsUrlRequest request) {
+
+        return getSignedBluinsightsUrlAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSignedBluinsightsUrlResult> getSignedBluinsightsUrlAsync(final GetSignedBluinsightsUrlRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSignedBluinsightsUrlRequest, GetSignedBluinsightsUrlResult> asyncHandler) {
+        final GetSignedBluinsightsUrlRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetSignedBluinsightsUrlResult>() {
+            @Override
+            public GetSignedBluinsightsUrlResult call() throws Exception {
+                GetSignedBluinsightsUrlResult result = null;
+
+                try {
+                    result = executeGetSignedBluinsightsUrl(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListApplicationVersionsResult> listApplicationVersionsAsync(ListApplicationVersionsRequest request) {
 
         return listApplicationVersionsAsync(request, null);

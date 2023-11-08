@@ -15,7 +15,7 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Use Level (Mpeg2CodecLevel) to set the MPEG-2 level for the video output.
+ * Use Level to set the MPEG-2 level for the video output.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Mpeg2CodecLevel {

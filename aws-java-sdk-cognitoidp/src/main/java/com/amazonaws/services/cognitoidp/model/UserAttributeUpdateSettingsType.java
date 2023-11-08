@@ -43,8 +43,6 @@ public class UserAttributeUpdateSettingsType implements Serializable, Cloneable,
      * You can verify an updated email address or phone number with a <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerifyUserAttribute.html"
      * >VerifyUserAttribute</a> API request. You can also call the <a href=
-     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserAttributes.html"
-     * >UpdateUserAttributes</a> or <a href=
      * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html"
      * >AdminUpdateUserAttributes</a> API and set <code>email_verified</code> or <code>phone_number_verified</code> to
      * true.
@@ -69,8 +67,6 @@ public class UserAttributeUpdateSettingsType implements Serializable, Cloneable,
      * You can verify an updated email address or phone number with a <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerifyUserAttribute.html"
      * >VerifyUserAttribute</a> API request. You can also call the <a href=
-     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserAttributes.html"
-     * >UpdateUserAttributes</a> or <a href=
      * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html"
      * >AdminUpdateUserAttributes</a> API and set <code>email_verified</code> or <code>phone_number_verified</code> to
      * true.
@@ -91,8 +87,6 @@ public class UserAttributeUpdateSettingsType implements Serializable, Cloneable,
      *         You can verify an updated email address or phone number with a <a href=
      *         "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerifyUserAttribute.html"
      *         >VerifyUserAttribute</a> API request. You can also call the <a href=
-     *         "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserAttributes.html"
-     *         >UpdateUserAttributes</a> or <a href=
      *         "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html"
      *         >AdminUpdateUserAttributes</a> API and set <code>email_verified</code> or
      *         <code>phone_number_verified</code> to true.
@@ -120,8 +114,6 @@ public class UserAttributeUpdateSettingsType implements Serializable, Cloneable,
      * You can verify an updated email address or phone number with a <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerifyUserAttribute.html"
      * >VerifyUserAttribute</a> API request. You can also call the <a href=
-     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserAttributes.html"
-     * >UpdateUserAttributes</a> or <a href=
      * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html"
      * >AdminUpdateUserAttributes</a> API and set <code>email_verified</code> or <code>phone_number_verified</code> to
      * true.
@@ -143,8 +135,6 @@ public class UserAttributeUpdateSettingsType implements Serializable, Cloneable,
      *        You can verify an updated email address or phone number with a <a href=
      *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerifyUserAttribute.html"
      *        >VerifyUserAttribute</a> API request. You can also call the <a href=
-     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserAttributes.html"
-     *        >UpdateUserAttributes</a> or <a href=
      *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html"
      *        >AdminUpdateUserAttributes</a> API and set <code>email_verified</code> or
      *        <code>phone_number_verified</code> to true.
@@ -177,8 +167,6 @@ public class UserAttributeUpdateSettingsType implements Serializable, Cloneable,
      * You can verify an updated email address or phone number with a <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerifyUserAttribute.html"
      * >VerifyUserAttribute</a> API request. You can also call the <a href=
-     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserAttributes.html"
-     * >UpdateUserAttributes</a> or <a href=
      * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html"
      * >AdminUpdateUserAttributes</a> API and set <code>email_verified</code> or <code>phone_number_verified</code> to
      * true.
@@ -206,8 +194,6 @@ public class UserAttributeUpdateSettingsType implements Serializable, Cloneable,
      *        You can verify an updated email address or phone number with a <a href=
      *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerifyUserAttribute.html"
      *        >VerifyUserAttribute</a> API request. You can also call the <a href=
-     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserAttributes.html"
-     *        >UpdateUserAttributes</a> or <a href=
      *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html"
      *        >AdminUpdateUserAttributes</a> API and set <code>email_verified</code> or
      *        <code>phone_number_verified</code> to true.
@@ -242,8 +228,6 @@ public class UserAttributeUpdateSettingsType implements Serializable, Cloneable,
      * You can verify an updated email address or phone number with a <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerifyUserAttribute.html"
      * >VerifyUserAttribute</a> API request. You can also call the <a href=
-     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserAttributes.html"
-     * >UpdateUserAttributes</a> or <a href=
      * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html"
      * >AdminUpdateUserAttributes</a> API and set <code>email_verified</code> or <code>phone_number_verified</code> to
      * true.
@@ -265,8 +249,6 @@ public class UserAttributeUpdateSettingsType implements Serializable, Cloneable,
      *        You can verify an updated email address or phone number with a <a href=
      *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerifyUserAttribute.html"
      *        >VerifyUserAttribute</a> API request. You can also call the <a href=
-     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserAttributes.html"
-     *        >UpdateUserAttributes</a> or <a href=
      *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html"
      *        >AdminUpdateUserAttributes</a> API and set <code>email_verified</code> or
      *        <code>phone_number_verified</code> to true.
@@ -296,8 +278,6 @@ public class UserAttributeUpdateSettingsType implements Serializable, Cloneable,
      * You can verify an updated email address or phone number with a <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerifyUserAttribute.html"
      * >VerifyUserAttribute</a> API request. You can also call the <a href=
-     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserAttributes.html"
-     * >UpdateUserAttributes</a> or <a href=
      * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html"
      * >AdminUpdateUserAttributes</a> API and set <code>email_verified</code> or <code>phone_number_verified</code> to
      * true.
@@ -319,8 +299,6 @@ public class UserAttributeUpdateSettingsType implements Serializable, Cloneable,
      *        You can verify an updated email address or phone number with a <a href=
      *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerifyUserAttribute.html"
      *        >VerifyUserAttribute</a> API request. You can also call the <a href=
-     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserAttributes.html"
-     *        >UpdateUserAttributes</a> or <a href=
      *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html"
      *        >AdminUpdateUserAttributes</a> API and set <code>email_verified</code> or
      *        <code>phone_number_verified</code> to true.

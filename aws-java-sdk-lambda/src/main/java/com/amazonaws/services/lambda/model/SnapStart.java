@@ -19,13 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The function's Lambda SnapStart setting. Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a
- * snapshot of the initialized execution environment when you publish a function version.
- * </p>
- * <p>
- * SnapStart is supported with the <code>java11</code> runtime. For more information, see <a
- * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with Lambda
- * SnapStart</a>.
+ * The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Lambda SnapStart</a> setting.
+ * Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution
+ * environment when you publish a function version.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/SnapStart" target="_top">AWS API

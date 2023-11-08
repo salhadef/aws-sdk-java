@@ -49,7 +49,7 @@ public class CreateEventDataStoreResult extends com.amazonaws.AmazonWebServiceRe
     private com.amazonaws.internal.SdkInternalList<AdvancedEventSelector> advancedEventSelectors;
     /**
      * <p>
-     * Indicates whether the event data store collects events from all regions, or only from the region in which it was
+     * Indicates whether the event data store collects events from all Regions, or only from the Region in which it was
      * created.
      * </p>
      */
@@ -312,12 +312,12 @@ public class CreateEventDataStoreResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Indicates whether the event data store collects events from all regions, or only from the region in which it was
+     * Indicates whether the event data store collects events from all Regions, or only from the Region in which it was
      * created.
      * </p>
      * 
      * @param multiRegionEnabled
-     *        Indicates whether the event data store collects events from all regions, or only from the region in which
+     *        Indicates whether the event data store collects events from all Regions, or only from the Region in which
      *        it was created.
      */
 
@@ -327,11 +327,11 @@ public class CreateEventDataStoreResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Indicates whether the event data store collects events from all regions, or only from the region in which it was
+     * Indicates whether the event data store collects events from all Regions, or only from the Region in which it was
      * created.
      * </p>
      * 
-     * @return Indicates whether the event data store collects events from all regions, or only from the region in which
+     * @return Indicates whether the event data store collects events from all Regions, or only from the Region in which
      *         it was created.
      */
 
@@ -341,12 +341,12 @@ public class CreateEventDataStoreResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Indicates whether the event data store collects events from all regions, or only from the region in which it was
+     * Indicates whether the event data store collects events from all Regions, or only from the Region in which it was
      * created.
      * </p>
      * 
      * @param multiRegionEnabled
-     *        Indicates whether the event data store collects events from all regions, or only from the region in which
+     *        Indicates whether the event data store collects events from all Regions, or only from the Region in which
      *        it was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -358,11 +358,11 @@ public class CreateEventDataStoreResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Indicates whether the event data store collects events from all regions, or only from the region in which it was
+     * Indicates whether the event data store collects events from all Regions, or only from the Region in which it was
      * created.
      * </p>
      * 
-     * @return Indicates whether the event data store collects events from all regions, or only from the region in which
+     * @return Indicates whether the event data store collects events from all Regions, or only from the Region in which
      *         it was created.
      */
 

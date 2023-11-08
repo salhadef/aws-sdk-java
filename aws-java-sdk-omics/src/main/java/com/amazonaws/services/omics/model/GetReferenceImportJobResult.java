@@ -25,18 +25,6 @@ public class GetReferenceImportJobResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * When the job completed.
-     * </p>
-     */
-    private java.util.Date completionTime;
-    /**
-     * <p>
-     * When the job was created.
-     * </p>
-     */
-    private java.util.Date creationTime;
-    /**
-     * <p>
      * The job's ID.
      * </p>
      */
@@ -55,12 +43,6 @@ public class GetReferenceImportJobResult extends com.amazonaws.AmazonWebServiceR
     private String roleArn;
     /**
      * <p>
-     * The job's source files.
-     * </p>
-     */
-    private java.util.List<ImportReferenceSourceItem> sources;
-    /**
-     * <p>
      * The job's status.
      * </p>
      */
@@ -71,86 +53,24 @@ public class GetReferenceImportJobResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private String statusMessage;
-
-    /**
-     * <p>
-     * When the job completed.
-     * </p>
-     * 
-     * @param completionTime
-     *        When the job completed.
-     */
-
-    public void setCompletionTime(java.util.Date completionTime) {
-        this.completionTime = completionTime;
-    }
-
-    /**
-     * <p>
-     * When the job completed.
-     * </p>
-     * 
-     * @return When the job completed.
-     */
-
-    public java.util.Date getCompletionTime() {
-        return this.completionTime;
-    }
-
-    /**
-     * <p>
-     * When the job completed.
-     * </p>
-     * 
-     * @param completionTime
-     *        When the job completed.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetReferenceImportJobResult withCompletionTime(java.util.Date completionTime) {
-        setCompletionTime(completionTime);
-        return this;
-    }
-
     /**
      * <p>
      * When the job was created.
      * </p>
-     * 
-     * @param creationTime
-     *        When the job was created.
      */
-
-    public void setCreationTime(java.util.Date creationTime) {
-        this.creationTime = creationTime;
-    }
-
+    private java.util.Date creationTime;
     /**
      * <p>
-     * When the job was created.
+     * When the job completed.
      * </p>
-     * 
-     * @return When the job was created.
      */
-
-    public java.util.Date getCreationTime() {
-        return this.creationTime;
-    }
-
+    private java.util.Date completionTime;
     /**
      * <p>
-     * When the job was created.
+     * The job's source files.
      * </p>
-     * 
-     * @param creationTime
-     *        When the job was created.
-     * @return Returns a reference to this object so that method calls can be chained together.
      */
-
-    public GetReferenceImportJobResult withCreationTime(java.util.Date creationTime) {
-        setCreationTime(creationTime);
-        return this;
-    }
+    private java.util.List<ImportReferenceSourceItem> sources;
 
     /**
      * <p>
@@ -274,76 +194,6 @@ public class GetReferenceImportJobResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The job's source files.
-     * </p>
-     * 
-     * @return The job's source files.
-     */
-
-    public java.util.List<ImportReferenceSourceItem> getSources() {
-        return sources;
-    }
-
-    /**
-     * <p>
-     * The job's source files.
-     * </p>
-     * 
-     * @param sources
-     *        The job's source files.
-     */
-
-    public void setSources(java.util.Collection<ImportReferenceSourceItem> sources) {
-        if (sources == null) {
-            this.sources = null;
-            return;
-        }
-
-        this.sources = new java.util.ArrayList<ImportReferenceSourceItem>(sources);
-    }
-
-    /**
-     * <p>
-     * The job's source files.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setSources(java.util.Collection)} or {@link #withSources(java.util.Collection)} if you want to override
-     * the existing values.
-     * </p>
-     * 
-     * @param sources
-     *        The job's source files.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetReferenceImportJobResult withSources(ImportReferenceSourceItem... sources) {
-        if (this.sources == null) {
-            setSources(new java.util.ArrayList<ImportReferenceSourceItem>(sources.length));
-        }
-        for (ImportReferenceSourceItem ele : sources) {
-            this.sources.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * The job's source files.
-     * </p>
-     * 
-     * @param sources
-     *        The job's source files.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetReferenceImportJobResult withSources(java.util.Collection<ImportReferenceSourceItem> sources) {
-        setSources(sources);
-        return this;
-    }
-
-    /**
-     * <p>
      * The job's status.
      * </p>
      * 
@@ -442,6 +292,156 @@ public class GetReferenceImportJobResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * When the job was created.
+     * </p>
+     * 
+     * @param creationTime
+     *        When the job was created.
+     */
+
+    public void setCreationTime(java.util.Date creationTime) {
+        this.creationTime = creationTime;
+    }
+
+    /**
+     * <p>
+     * When the job was created.
+     * </p>
+     * 
+     * @return When the job was created.
+     */
+
+    public java.util.Date getCreationTime() {
+        return this.creationTime;
+    }
+
+    /**
+     * <p>
+     * When the job was created.
+     * </p>
+     * 
+     * @param creationTime
+     *        When the job was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetReferenceImportJobResult withCreationTime(java.util.Date creationTime) {
+        setCreationTime(creationTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When the job completed.
+     * </p>
+     * 
+     * @param completionTime
+     *        When the job completed.
+     */
+
+    public void setCompletionTime(java.util.Date completionTime) {
+        this.completionTime = completionTime;
+    }
+
+    /**
+     * <p>
+     * When the job completed.
+     * </p>
+     * 
+     * @return When the job completed.
+     */
+
+    public java.util.Date getCompletionTime() {
+        return this.completionTime;
+    }
+
+    /**
+     * <p>
+     * When the job completed.
+     * </p>
+     * 
+     * @param completionTime
+     *        When the job completed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetReferenceImportJobResult withCompletionTime(java.util.Date completionTime) {
+        setCompletionTime(completionTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The job's source files.
+     * </p>
+     * 
+     * @return The job's source files.
+     */
+
+    public java.util.List<ImportReferenceSourceItem> getSources() {
+        return sources;
+    }
+
+    /**
+     * <p>
+     * The job's source files.
+     * </p>
+     * 
+     * @param sources
+     *        The job's source files.
+     */
+
+    public void setSources(java.util.Collection<ImportReferenceSourceItem> sources) {
+        if (sources == null) {
+            this.sources = null;
+            return;
+        }
+
+        this.sources = new java.util.ArrayList<ImportReferenceSourceItem>(sources);
+    }
+
+    /**
+     * <p>
+     * The job's source files.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSources(java.util.Collection)} or {@link #withSources(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param sources
+     *        The job's source files.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetReferenceImportJobResult withSources(ImportReferenceSourceItem... sources) {
+        if (this.sources == null) {
+            setSources(new java.util.ArrayList<ImportReferenceSourceItem>(sources.length));
+        }
+        for (ImportReferenceSourceItem ele : sources) {
+            this.sources.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The job's source files.
+     * </p>
+     * 
+     * @param sources
+     *        The job's source files.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetReferenceImportJobResult withSources(java.util.Collection<ImportReferenceSourceItem> sources) {
+        setSources(sources);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -453,22 +453,22 @@ public class GetReferenceImportJobResult extends com.amazonaws.AmazonWebServiceR
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getCompletionTime() != null)
-            sb.append("CompletionTime: ").append(getCompletionTime()).append(",");
-        if (getCreationTime() != null)
-            sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
         if (getReferenceStoreId() != null)
             sb.append("ReferenceStoreId: ").append(getReferenceStoreId()).append(",");
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
-        if (getSources() != null)
-            sb.append("Sources: ").append(getSources()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusMessage() != null)
-            sb.append("StatusMessage: ").append(getStatusMessage());
+            sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
+        if (getCreationTime() != null)
+            sb.append("CreationTime: ").append(getCreationTime()).append(",");
+        if (getCompletionTime() != null)
+            sb.append("CompletionTime: ").append(getCompletionTime()).append(",");
+        if (getSources() != null)
+            sb.append("Sources: ").append(getSources());
         sb.append("}");
         return sb.toString();
     }
@@ -483,14 +483,6 @@ public class GetReferenceImportJobResult extends com.amazonaws.AmazonWebServiceR
         if (obj instanceof GetReferenceImportJobResult == false)
             return false;
         GetReferenceImportJobResult other = (GetReferenceImportJobResult) obj;
-        if (other.getCompletionTime() == null ^ this.getCompletionTime() == null)
-            return false;
-        if (other.getCompletionTime() != null && other.getCompletionTime().equals(this.getCompletionTime()) == false)
-            return false;
-        if (other.getCreationTime() == null ^ this.getCreationTime() == null)
-            return false;
-        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
-            return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
@@ -503,10 +495,6 @@ public class GetReferenceImportJobResult extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
             return false;
-        if (other.getSources() == null ^ this.getSources() == null)
-            return false;
-        if (other.getSources() != null && other.getSources().equals(this.getSources()) == false)
-            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
@@ -514,6 +502,18 @@ public class GetReferenceImportJobResult extends com.amazonaws.AmazonWebServiceR
         if (other.getStatusMessage() == null ^ this.getStatusMessage() == null)
             return false;
         if (other.getStatusMessage() != null && other.getStatusMessage().equals(this.getStatusMessage()) == false)
+            return false;
+        if (other.getCreationTime() == null ^ this.getCreationTime() == null)
+            return false;
+        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
+            return false;
+        if (other.getCompletionTime() == null ^ this.getCompletionTime() == null)
+            return false;
+        if (other.getCompletionTime() != null && other.getCompletionTime().equals(this.getCompletionTime()) == false)
+            return false;
+        if (other.getSources() == null ^ this.getSources() == null)
+            return false;
+        if (other.getSources() != null && other.getSources().equals(this.getSources()) == false)
             return false;
         return true;
     }
@@ -523,14 +523,14 @@ public class GetReferenceImportJobResult extends com.amazonaws.AmazonWebServiceR
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getCompletionTime() == null) ? 0 : getCompletionTime().hashCode());
-        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getReferenceStoreId() == null) ? 0 : getReferenceStoreId().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
-        hashCode = prime * hashCode + ((getSources() == null) ? 0 : getSources().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
+        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
+        hashCode = prime * hashCode + ((getCompletionTime() == null) ? 0 : getCompletionTime().hashCode());
+        hashCode = prime * hashCode + ((getSources() == null) ? 0 : getSources().hashCode());
         return hashCode;
     }
 

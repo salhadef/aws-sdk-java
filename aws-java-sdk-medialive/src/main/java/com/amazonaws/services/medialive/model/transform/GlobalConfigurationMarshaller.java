@@ -39,6 +39,8 @@ public class GlobalConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("outputTimingSource").build();
     private static final MarshallingInfo<String> SUPPORTLOWFRAMERATEINPUTS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("supportLowFramerateInputs").build();
+    private static final MarshallingInfo<StructuredPojo> OUTPUTLOCKINGSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("outputLockingSettings").build();
 
     private static final GlobalConfigurationMarshaller instance = new GlobalConfigurationMarshaller();
 
@@ -62,6 +64,7 @@ public class GlobalConfigurationMarshaller {
             protocolMarshaller.marshall(globalConfiguration.getOutputLockingMode(), OUTPUTLOCKINGMODE_BINDING);
             protocolMarshaller.marshall(globalConfiguration.getOutputTimingSource(), OUTPUTTIMINGSOURCE_BINDING);
             protocolMarshaller.marshall(globalConfiguration.getSupportLowFramerateInputs(), SUPPORTLOWFRAMERATEINPUTS_BINDING);
+            protocolMarshaller.marshall(globalConfiguration.getOutputLockingSettings(), OUTPUTLOCKINGSETTINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

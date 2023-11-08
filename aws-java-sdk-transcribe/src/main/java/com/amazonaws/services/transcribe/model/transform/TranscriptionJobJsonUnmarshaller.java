@@ -147,6 +147,13 @@ public class TranscriptionJobJsonUnmarshaller implements Unmarshaller<Transcript
                     transcriptionJob.setLanguageIdSettings(new MapUnmarshaller<String, LanguageIdSettings>(context.getUnmarshaller(String.class),
                             LanguageIdSettingsJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("ToxicityDetection", targetDepth)) {
+                    context.nextToken();
+                    transcriptionJob.setToxicityDetection(new ListUnmarshaller<ToxicityDetectionSettings>(ToxicityDetectionSettingsJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

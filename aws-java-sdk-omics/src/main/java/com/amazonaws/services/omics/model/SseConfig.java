@@ -30,56 +30,16 @@ public class SseConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An encryption key ARN.
-     * </p>
-     */
-    private String keyArn;
-    /**
-     * <p>
      * The encryption type.
      * </p>
      */
     private String type;
-
     /**
      * <p>
      * An encryption key ARN.
      * </p>
-     * 
-     * @param keyArn
-     *        An encryption key ARN.
      */
-
-    public void setKeyArn(String keyArn) {
-        this.keyArn = keyArn;
-    }
-
-    /**
-     * <p>
-     * An encryption key ARN.
-     * </p>
-     * 
-     * @return An encryption key ARN.
-     */
-
-    public String getKeyArn() {
-        return this.keyArn;
-    }
-
-    /**
-     * <p>
-     * An encryption key ARN.
-     * </p>
-     * 
-     * @param keyArn
-     *        An encryption key ARN.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public SseConfig withKeyArn(String keyArn) {
-        setKeyArn(keyArn);
-        return this;
-    }
+    private String keyArn;
 
     /**
      * <p>
@@ -141,6 +101,46 @@ public class SseConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * An encryption key ARN.
+     * </p>
+     * 
+     * @param keyArn
+     *        An encryption key ARN.
+     */
+
+    public void setKeyArn(String keyArn) {
+        this.keyArn = keyArn;
+    }
+
+    /**
+     * <p>
+     * An encryption key ARN.
+     * </p>
+     * 
+     * @return An encryption key ARN.
+     */
+
+    public String getKeyArn() {
+        return this.keyArn;
+    }
+
+    /**
+     * <p>
+     * An encryption key ARN.
+     * </p>
+     * 
+     * @param keyArn
+     *        An encryption key ARN.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SseConfig withKeyArn(String keyArn) {
+        setKeyArn(keyArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -152,10 +152,10 @@ public class SseConfig implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getKeyArn() != null)
-            sb.append("KeyArn: ").append(getKeyArn()).append(",");
         if (getType() != null)
-            sb.append("Type: ").append(getType());
+            sb.append("Type: ").append(getType()).append(",");
+        if (getKeyArn() != null)
+            sb.append("KeyArn: ").append(getKeyArn());
         sb.append("}");
         return sb.toString();
     }
@@ -170,13 +170,13 @@ public class SseConfig implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof SseConfig == false)
             return false;
         SseConfig other = (SseConfig) obj;
-        if (other.getKeyArn() == null ^ this.getKeyArn() == null)
-            return false;
-        if (other.getKeyArn() != null && other.getKeyArn().equals(this.getKeyArn()) == false)
-            return false;
         if (other.getType() == null ^ this.getType() == null)
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
+        if (other.getKeyArn() == null ^ this.getKeyArn() == null)
+            return false;
+        if (other.getKeyArn() != null && other.getKeyArn().equals(this.getKeyArn()) == false)
             return false;
         return true;
     }
@@ -186,8 +186,8 @@ public class SseConfig implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getKeyArn() == null) ? 0 : getKeyArn().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getKeyArn() == null) ? 0 : getKeyArn().hashCode());
         return hashCode;
     }
 

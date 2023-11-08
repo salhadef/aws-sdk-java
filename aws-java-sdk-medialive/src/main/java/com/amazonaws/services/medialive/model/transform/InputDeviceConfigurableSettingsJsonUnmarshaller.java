@@ -60,6 +60,15 @@ public class InputDeviceConfigurableSettingsJsonUnmarshaller implements Unmarsha
                     context.nextToken();
                     inputDeviceConfigurableSettings.setLatencyMs(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("codec", targetDepth)) {
+                    context.nextToken();
+                    inputDeviceConfigurableSettings.setCodec(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("mediaconnectSettings", targetDepth)) {
+                    context.nextToken();
+                    inputDeviceConfigurableSettings.setMediaconnectSettings(InputDeviceMediaConnectConfigurableSettingsJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

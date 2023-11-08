@@ -53,6 +53,29 @@ public class FilterListConfiguration implements Serializable, Cloneable, Structu
      * </ul>
      */
     private String selectAllOptions;
+    /**
+     * <p>
+     * This option determines how null values should be treated when filtering data.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ALL_VALUES</code>: Include null values in filtered results.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NULLS_ONLY</code>: Only include null values in filtered results.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String nullOption;
 
     /**
      * <p>
@@ -295,6 +318,197 @@ public class FilterListConfiguration implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * This option determines how null values should be treated when filtering data.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ALL_VALUES</code>: Include null values in filtered results.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NULLS_ONLY</code>: Only include null values in filtered results.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param nullOption
+     *        This option determines how null values should be treated when filtering data.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ALL_VALUES</code>: Include null values in filtered results.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NULLS_ONLY</code>: Only include null values in filtered results.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.
+     *        </p>
+     *        </li>
+     * @see FilterNullOption
+     */
+
+    public void setNullOption(String nullOption) {
+        this.nullOption = nullOption;
+    }
+
+    /**
+     * <p>
+     * This option determines how null values should be treated when filtering data.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ALL_VALUES</code>: Include null values in filtered results.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NULLS_ONLY</code>: Only include null values in filtered results.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return This option determines how null values should be treated when filtering data.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>ALL_VALUES</code>: Include null values in filtered results.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>NULLS_ONLY</code>: Only include null values in filtered results.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.
+     *         </p>
+     *         </li>
+     * @see FilterNullOption
+     */
+
+    public String getNullOption() {
+        return this.nullOption;
+    }
+
+    /**
+     * <p>
+     * This option determines how null values should be treated when filtering data.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ALL_VALUES</code>: Include null values in filtered results.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NULLS_ONLY</code>: Only include null values in filtered results.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param nullOption
+     *        This option determines how null values should be treated when filtering data.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ALL_VALUES</code>: Include null values in filtered results.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NULLS_ONLY</code>: Only include null values in filtered results.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FilterNullOption
+     */
+
+    public FilterListConfiguration withNullOption(String nullOption) {
+        setNullOption(nullOption);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This option determines how null values should be treated when filtering data.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ALL_VALUES</code>: Include null values in filtered results.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NULLS_ONLY</code>: Only include null values in filtered results.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param nullOption
+     *        This option determines how null values should be treated when filtering data.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ALL_VALUES</code>: Include null values in filtered results.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NULLS_ONLY</code>: Only include null values in filtered results.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FilterNullOption
+     */
+
+    public FilterListConfiguration withNullOption(FilterNullOption nullOption) {
+        this.nullOption = nullOption.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -311,7 +525,9 @@ public class FilterListConfiguration implements Serializable, Cloneable, Structu
         if (getCategoryValues() != null)
             sb.append("CategoryValues: ").append(getCategoryValues()).append(",");
         if (getSelectAllOptions() != null)
-            sb.append("SelectAllOptions: ").append(getSelectAllOptions());
+            sb.append("SelectAllOptions: ").append(getSelectAllOptions()).append(",");
+        if (getNullOption() != null)
+            sb.append("NullOption: ").append(getNullOption());
         sb.append("}");
         return sb.toString();
     }
@@ -338,6 +554,10 @@ public class FilterListConfiguration implements Serializable, Cloneable, Structu
             return false;
         if (other.getSelectAllOptions() != null && other.getSelectAllOptions().equals(this.getSelectAllOptions()) == false)
             return false;
+        if (other.getNullOption() == null ^ this.getNullOption() == null)
+            return false;
+        if (other.getNullOption() != null && other.getNullOption().equals(this.getNullOption()) == false)
+            return false;
         return true;
     }
 
@@ -349,6 +569,7 @@ public class FilterListConfiguration implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getMatchOperator() == null) ? 0 : getMatchOperator().hashCode());
         hashCode = prime * hashCode + ((getCategoryValues() == null) ? 0 : getCategoryValues().hashCode());
         hashCode = prime * hashCode + ((getSelectAllOptions() == null) ? 0 : getSelectAllOptions().hashCode());
+        hashCode = prime * hashCode + ((getNullOption() == null) ? 0 : getNullOption().hashCode());
         return hashCode;
     }
 

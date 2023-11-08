@@ -53,7 +53,7 @@ public class AccessLevelFilter implements Serializable, Cloneable, StructuredPoj
     private String key;
     /**
      * <p>
-     * The user to which the access level applies. The only supported value is <code>Self</code>.
+     * The user to which the access level applies. The only supported value is <code>self</code>.
      * </p>
      */
     private String value;
@@ -298,11 +298,11 @@ public class AccessLevelFilter implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The user to which the access level applies. The only supported value is <code>Self</code>.
+     * The user to which the access level applies. The only supported value is <code>self</code>.
      * </p>
      * 
      * @param value
-     *        The user to which the access level applies. The only supported value is <code>Self</code>.
+     *        The user to which the access level applies. The only supported value is <code>self</code>.
      */
 
     public void setValue(String value) {
@@ -311,10 +311,10 @@ public class AccessLevelFilter implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The user to which the access level applies. The only supported value is <code>Self</code>.
+     * The user to which the access level applies. The only supported value is <code>self</code>.
      * </p>
      * 
-     * @return The user to which the access level applies. The only supported value is <code>Self</code>.
+     * @return The user to which the access level applies. The only supported value is <code>self</code>.
      */
 
     public String getValue() {
@@ -323,11 +323,11 @@ public class AccessLevelFilter implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The user to which the access level applies. The only supported value is <code>Self</code>.
+     * The user to which the access level applies. The only supported value is <code>self</code>.
      * </p>
      * 
      * @param value
-     *        The user to which the access level applies. The only supported value is <code>Self</code>.
+     *        The user to which the access level applies. The only supported value is <code>self</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

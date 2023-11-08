@@ -35,7 +35,7 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * The ARN format of a Contributor Insights rule is
-     * <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code>
+     * <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule/<i>insight-rule-name</i> </code>
      * </p>
      * <p>
      * For more information about ARN format, see <a href=
@@ -55,7 +55,7 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * The ARN format of a Contributor Insights rule is
-     * <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code>
+     * <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule/<i>insight-rule-name</i> </code>
      * </p>
      * <p>
      * For more information about ARN format, see <a href=
@@ -71,7 +71,7 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      *        </p>
      *        <p>
      *        The ARN format of a Contributor Insights rule is
-     *        <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code>
+     *        <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule/<i>insight-rule-name</i> </code>
      *        </p>
      *        <p>
      *        For more information about ARN format, see <a href=
@@ -93,7 +93,7 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * The ARN format of a Contributor Insights rule is
-     * <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code>
+     * <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule/<i>insight-rule-name</i> </code>
      * </p>
      * <p>
      * For more information about ARN format, see <a href=
@@ -108,7 +108,7 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      *         </p>
      *         <p>
      *         The ARN format of a Contributor Insights rule is
-     *         <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code>
+     *         <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule/<i>insight-rule-name</i> </code>
      *         </p>
      *         <p>
      *         For more information about ARN format, see <a href=
@@ -130,7 +130,7 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * The ARN format of a Contributor Insights rule is
-     * <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code>
+     * <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule/<i>insight-rule-name</i> </code>
      * </p>
      * <p>
      * For more information about ARN format, see <a href=
@@ -146,7 +146,7 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      *        </p>
      *        <p>
      *        The ARN format of a Contributor Insights rule is
-     *        <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code>
+     *        <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule/<i>insight-rule-name</i> </code>
      *        </p>
      *        <p>
      *        For more information about ARN format, see <a href=

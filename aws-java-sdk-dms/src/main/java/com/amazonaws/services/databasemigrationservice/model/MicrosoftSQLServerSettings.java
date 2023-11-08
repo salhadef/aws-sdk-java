@@ -156,8 +156,9 @@ public class MicrosoftSQLServerSettings implements Serializable, Cloneable, Stru
     private String secretsManagerSecretId;
     /**
      * <p>
-     * Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during
-     * migration. The default value is <code>true</code>.
+     * Use the <code>TrimSpaceInChar</code> source endpoint setting to right-trim data on CHAR and NCHAR data types
+     * during migration. Setting <code>TrimSpaceInChar</code> does not left-trim data. The default value is
+     * <code>true</code>.
      * </p>
      */
     private Boolean trimSpaceInChar;
@@ -1097,13 +1098,15 @@ public class MicrosoftSQLServerSettings implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during
-     * migration. The default value is <code>true</code>.
+     * Use the <code>TrimSpaceInChar</code> source endpoint setting to right-trim data on CHAR and NCHAR data types
+     * during migration. Setting <code>TrimSpaceInChar</code> does not left-trim data. The default value is
+     * <code>true</code>.
      * </p>
      * 
      * @param trimSpaceInChar
-     *        Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types
-     *        during migration. The default value is <code>true</code>.
+     *        Use the <code>TrimSpaceInChar</code> source endpoint setting to right-trim data on CHAR and NCHAR data
+     *        types during migration. Setting <code>TrimSpaceInChar</code> does not left-trim data. The default value is
+     *        <code>true</code>.
      */
 
     public void setTrimSpaceInChar(Boolean trimSpaceInChar) {
@@ -1112,12 +1115,14 @@ public class MicrosoftSQLServerSettings implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during
-     * migration. The default value is <code>true</code>.
+     * Use the <code>TrimSpaceInChar</code> source endpoint setting to right-trim data on CHAR and NCHAR data types
+     * during migration. Setting <code>TrimSpaceInChar</code> does not left-trim data. The default value is
+     * <code>true</code>.
      * </p>
      * 
-     * @return Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types
-     *         during migration. The default value is <code>true</code>.
+     * @return Use the <code>TrimSpaceInChar</code> source endpoint setting to right-trim data on CHAR and NCHAR data
+     *         types during migration. Setting <code>TrimSpaceInChar</code> does not left-trim data. The default value
+     *         is <code>true</code>.
      */
 
     public Boolean getTrimSpaceInChar() {
@@ -1126,13 +1131,15 @@ public class MicrosoftSQLServerSettings implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during
-     * migration. The default value is <code>true</code>.
+     * Use the <code>TrimSpaceInChar</code> source endpoint setting to right-trim data on CHAR and NCHAR data types
+     * during migration. Setting <code>TrimSpaceInChar</code> does not left-trim data. The default value is
+     * <code>true</code>.
      * </p>
      * 
      * @param trimSpaceInChar
-     *        Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types
-     *        during migration. The default value is <code>true</code>.
+     *        Use the <code>TrimSpaceInChar</code> source endpoint setting to right-trim data on CHAR and NCHAR data
+     *        types during migration. Setting <code>TrimSpaceInChar</code> does not left-trim data. The default value is
+     *        <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1143,12 +1150,14 @@ public class MicrosoftSQLServerSettings implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during
-     * migration. The default value is <code>true</code>.
+     * Use the <code>TrimSpaceInChar</code> source endpoint setting to right-trim data on CHAR and NCHAR data types
+     * during migration. Setting <code>TrimSpaceInChar</code> does not left-trim data. The default value is
+     * <code>true</code>.
      * </p>
      * 
-     * @return Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types
-     *         during migration. The default value is <code>true</code>.
+     * @return Use the <code>TrimSpaceInChar</code> source endpoint setting to right-trim data on CHAR and NCHAR data
+     *         types during migration. Setting <code>TrimSpaceInChar</code> does not left-trim data. The default value
+     *         is <code>true</code>.
      */
 
     public Boolean isTrimSpaceInChar() {

@@ -28,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UpdateNamespaceRequestMarshaller {
 
+    private static final MarshallingInfo<String> ADMINPASSWORDSECRETKMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("adminPasswordSecretKmsKeyId").build();
     private static final MarshallingInfo<String> ADMINUSERPASSWORD_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("adminUserPassword").build();
     private static final MarshallingInfo<String> ADMINUSERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -40,6 +42,8 @@ public class UpdateNamespaceRequestMarshaller {
             .marshallLocationName("kmsKeyId").build();
     private static final MarshallingInfo<List> LOGEXPORTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("logExports").build();
+    private static final MarshallingInfo<Boolean> MANAGEADMINPASSWORD_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("manageAdminPassword").build();
     private static final MarshallingInfo<String> NAMESPACENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("namespaceName").build();
 
@@ -59,12 +63,14 @@ public class UpdateNamespaceRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(updateNamespaceRequest.getAdminPasswordSecretKmsKeyId(), ADMINPASSWORDSECRETKMSKEYID_BINDING);
             protocolMarshaller.marshall(updateNamespaceRequest.getAdminUserPassword(), ADMINUSERPASSWORD_BINDING);
             protocolMarshaller.marshall(updateNamespaceRequest.getAdminUsername(), ADMINUSERNAME_BINDING);
             protocolMarshaller.marshall(updateNamespaceRequest.getDefaultIamRoleArn(), DEFAULTIAMROLEARN_BINDING);
             protocolMarshaller.marshall(updateNamespaceRequest.getIamRoles(), IAMROLES_BINDING);
             protocolMarshaller.marshall(updateNamespaceRequest.getKmsKeyId(), KMSKEYID_BINDING);
             protocolMarshaller.marshall(updateNamespaceRequest.getLogExports(), LOGEXPORTS_BINDING);
+            protocolMarshaller.marshall(updateNamespaceRequest.getManageAdminPassword(), MANAGEADMINPASSWORD_BINDING);
             protocolMarshaller.marshall(updateNamespaceRequest.getNamespaceName(), NAMESPACENAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

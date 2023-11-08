@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A reference to a table within an AWS Glue data catalog.
+ * A reference to a table within an Glue data catalog.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GlueTableReference" target="_top">AWS API
@@ -30,24 +30,24 @@ public class GlueTableReference implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the AWS Glue table.
+     * The name of the Glue table.
      * </p>
      */
     private String tableName;
     /**
      * <p>
-     * The name of the database the AWS Glue table belongs to.
+     * The name of the database the Glue table belongs to.
      * </p>
      */
     private String databaseName;
 
     /**
      * <p>
-     * The name of the AWS Glue table.
+     * The name of the Glue table.
      * </p>
      * 
      * @param tableName
-     *        The name of the AWS Glue table.
+     *        The name of the Glue table.
      */
 
     public void setTableName(String tableName) {
@@ -56,10 +56,10 @@ public class GlueTableReference implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the AWS Glue table.
+     * The name of the Glue table.
      * </p>
      * 
-     * @return The name of the AWS Glue table.
+     * @return The name of the Glue table.
      */
 
     public String getTableName() {
@@ -68,11 +68,11 @@ public class GlueTableReference implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the AWS Glue table.
+     * The name of the Glue table.
      * </p>
      * 
      * @param tableName
-     *        The name of the AWS Glue table.
+     *        The name of the Glue table.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class GlueTableReference implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the database the AWS Glue table belongs to.
+     * The name of the database the Glue table belongs to.
      * </p>
      * 
      * @param databaseName
-     *        The name of the database the AWS Glue table belongs to.
+     *        The name of the database the Glue table belongs to.
      */
 
     public void setDatabaseName(String databaseName) {
@@ -96,10 +96,10 @@ public class GlueTableReference implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the database the AWS Glue table belongs to.
+     * The name of the database the Glue table belongs to.
      * </p>
      * 
-     * @return The name of the database the AWS Glue table belongs to.
+     * @return The name of the database the Glue table belongs to.
      */
 
     public String getDatabaseName() {
@@ -108,11 +108,11 @@ public class GlueTableReference implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the database the AWS Glue table belongs to.
+     * The name of the database the Glue table belongs to.
      * </p>
      * 
      * @param databaseName
-     *        The name of the database the AWS Glue table belongs to.
+     *        The name of the database the Glue table belongs to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

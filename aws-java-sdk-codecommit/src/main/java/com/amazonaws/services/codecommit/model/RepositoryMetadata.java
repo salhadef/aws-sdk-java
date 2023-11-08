@@ -30,7 +30,7 @@ public class RepositoryMetadata implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ID of the AWS account associated with the repository.
+     * The ID of the Amazon Web Services account associated with the repository.
      * </p>
      */
     private String accountId;
@@ -91,11 +91,11 @@ public class RepositoryMetadata implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ID of the AWS account associated with the repository.
+     * The ID of the Amazon Web Services account associated with the repository.
      * </p>
      * 
      * @param accountId
-     *        The ID of the AWS account associated with the repository.
+     *        The ID of the Amazon Web Services account associated with the repository.
      */
 
     public void setAccountId(String accountId) {
@@ -104,10 +104,10 @@ public class RepositoryMetadata implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ID of the AWS account associated with the repository.
+     * The ID of the Amazon Web Services account associated with the repository.
      * </p>
      * 
-     * @return The ID of the AWS account associated with the repository.
+     * @return The ID of the Amazon Web Services account associated with the repository.
      */
 
     public String getAccountId() {
@@ -116,11 +116,11 @@ public class RepositoryMetadata implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ID of the AWS account associated with the repository.
+     * The ID of the Amazon Web Services account associated with the repository.
      * </p>
      * 
      * @param accountId
-     *        The ID of the AWS account associated with the repository.
+     *        The ID of the Amazon Web Services account associated with the repository.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

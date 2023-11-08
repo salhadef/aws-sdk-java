@@ -90,6 +90,38 @@ public class PivotTableOptions implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private String collapsedRowDimensionsVisibility;
+    /**
+     * <p>
+     * The layout for the row dimension headers of a pivot table. Choose one of the following options.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>TABULAR</code>: (Default) Each row field is displayed in a separate column.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HIERARCHY</code>: All row fields are displayed in a single column. Indentation is used to differentiate row
+     * headers of different fields.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String rowsLayout;
+    /**
+     * <p>
+     * The options for the label that is located above the row headers. This option is only applicable when
+     * <code>RowsLayout</code> is set to <code>HIERARCHY</code>.
+     * </p>
+     */
+    private PivotTableRowsLabelOptions rowsLabelOptions;
+    /**
+     * <p>
+     * The default cell width of the pivot table.
+     * </p>
+     */
+    private String defaultCellWidth;
 
     /**
      * <p>
@@ -603,6 +635,251 @@ public class PivotTableOptions implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The layout for the row dimension headers of a pivot table. Choose one of the following options.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>TABULAR</code>: (Default) Each row field is displayed in a separate column.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HIERARCHY</code>: All row fields are displayed in a single column. Indentation is used to differentiate row
+     * headers of different fields.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param rowsLayout
+     *        The layout for the row dimension headers of a pivot table. Choose one of the following options.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>TABULAR</code>: (Default) Each row field is displayed in a separate column.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>HIERARCHY</code>: All row fields are displayed in a single column. Indentation is used to
+     *        differentiate row headers of different fields.
+     *        </p>
+     *        </li>
+     * @see PivotTableRowsLayout
+     */
+
+    public void setRowsLayout(String rowsLayout) {
+        this.rowsLayout = rowsLayout;
+    }
+
+    /**
+     * <p>
+     * The layout for the row dimension headers of a pivot table. Choose one of the following options.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>TABULAR</code>: (Default) Each row field is displayed in a separate column.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HIERARCHY</code>: All row fields are displayed in a single column. Indentation is used to differentiate row
+     * headers of different fields.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The layout for the row dimension headers of a pivot table. Choose one of the following options.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>TABULAR</code>: (Default) Each row field is displayed in a separate column.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>HIERARCHY</code>: All row fields are displayed in a single column. Indentation is used to
+     *         differentiate row headers of different fields.
+     *         </p>
+     *         </li>
+     * @see PivotTableRowsLayout
+     */
+
+    public String getRowsLayout() {
+        return this.rowsLayout;
+    }
+
+    /**
+     * <p>
+     * The layout for the row dimension headers of a pivot table. Choose one of the following options.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>TABULAR</code>: (Default) Each row field is displayed in a separate column.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HIERARCHY</code>: All row fields are displayed in a single column. Indentation is used to differentiate row
+     * headers of different fields.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param rowsLayout
+     *        The layout for the row dimension headers of a pivot table. Choose one of the following options.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>TABULAR</code>: (Default) Each row field is displayed in a separate column.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>HIERARCHY</code>: All row fields are displayed in a single column. Indentation is used to
+     *        differentiate row headers of different fields.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PivotTableRowsLayout
+     */
+
+    public PivotTableOptions withRowsLayout(String rowsLayout) {
+        setRowsLayout(rowsLayout);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The layout for the row dimension headers of a pivot table. Choose one of the following options.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>TABULAR</code>: (Default) Each row field is displayed in a separate column.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HIERARCHY</code>: All row fields are displayed in a single column. Indentation is used to differentiate row
+     * headers of different fields.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param rowsLayout
+     *        The layout for the row dimension headers of a pivot table. Choose one of the following options.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>TABULAR</code>: (Default) Each row field is displayed in a separate column.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>HIERARCHY</code>: All row fields are displayed in a single column. Indentation is used to
+     *        differentiate row headers of different fields.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PivotTableRowsLayout
+     */
+
+    public PivotTableOptions withRowsLayout(PivotTableRowsLayout rowsLayout) {
+        this.rowsLayout = rowsLayout.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The options for the label that is located above the row headers. This option is only applicable when
+     * <code>RowsLayout</code> is set to <code>HIERARCHY</code>.
+     * </p>
+     * 
+     * @param rowsLabelOptions
+     *        The options for the label that is located above the row headers. This option is only applicable when
+     *        <code>RowsLayout</code> is set to <code>HIERARCHY</code>.
+     */
+
+    public void setRowsLabelOptions(PivotTableRowsLabelOptions rowsLabelOptions) {
+        this.rowsLabelOptions = rowsLabelOptions;
+    }
+
+    /**
+     * <p>
+     * The options for the label that is located above the row headers. This option is only applicable when
+     * <code>RowsLayout</code> is set to <code>HIERARCHY</code>.
+     * </p>
+     * 
+     * @return The options for the label that is located above the row headers. This option is only applicable when
+     *         <code>RowsLayout</code> is set to <code>HIERARCHY</code>.
+     */
+
+    public PivotTableRowsLabelOptions getRowsLabelOptions() {
+        return this.rowsLabelOptions;
+    }
+
+    /**
+     * <p>
+     * The options for the label that is located above the row headers. This option is only applicable when
+     * <code>RowsLayout</code> is set to <code>HIERARCHY</code>.
+     * </p>
+     * 
+     * @param rowsLabelOptions
+     *        The options for the label that is located above the row headers. This option is only applicable when
+     *        <code>RowsLayout</code> is set to <code>HIERARCHY</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PivotTableOptions withRowsLabelOptions(PivotTableRowsLabelOptions rowsLabelOptions) {
+        setRowsLabelOptions(rowsLabelOptions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The default cell width of the pivot table.
+     * </p>
+     * 
+     * @param defaultCellWidth
+     *        The default cell width of the pivot table.
+     */
+
+    public void setDefaultCellWidth(String defaultCellWidth) {
+        this.defaultCellWidth = defaultCellWidth;
+    }
+
+    /**
+     * <p>
+     * The default cell width of the pivot table.
+     * </p>
+     * 
+     * @return The default cell width of the pivot table.
+     */
+
+    public String getDefaultCellWidth() {
+        return this.defaultCellWidth;
+    }
+
+    /**
+     * <p>
+     * The default cell width of the pivot table.
+     * </p>
+     * 
+     * @param defaultCellWidth
+     *        The default cell width of the pivot table.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PivotTableOptions withDefaultCellWidth(String defaultCellWidth) {
+        setDefaultCellWidth(defaultCellWidth);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -633,7 +910,13 @@ public class PivotTableOptions implements Serializable, Cloneable, StructuredPoj
         if (getRowAlternateColorOptions() != null)
             sb.append("RowAlternateColorOptions: ").append(getRowAlternateColorOptions()).append(",");
         if (getCollapsedRowDimensionsVisibility() != null)
-            sb.append("CollapsedRowDimensionsVisibility: ").append(getCollapsedRowDimensionsVisibility());
+            sb.append("CollapsedRowDimensionsVisibility: ").append(getCollapsedRowDimensionsVisibility()).append(",");
+        if (getRowsLayout() != null)
+            sb.append("RowsLayout: ").append(getRowsLayout()).append(",");
+        if (getRowsLabelOptions() != null)
+            sb.append("RowsLabelOptions: ").append(getRowsLabelOptions()).append(",");
+        if (getDefaultCellWidth() != null)
+            sb.append("DefaultCellWidth: ").append(getDefaultCellWidth());
         sb.append("}");
         return sb.toString();
     }
@@ -689,6 +972,18 @@ public class PivotTableOptions implements Serializable, Cloneable, StructuredPoj
         if (other.getCollapsedRowDimensionsVisibility() != null
                 && other.getCollapsedRowDimensionsVisibility().equals(this.getCollapsedRowDimensionsVisibility()) == false)
             return false;
+        if (other.getRowsLayout() == null ^ this.getRowsLayout() == null)
+            return false;
+        if (other.getRowsLayout() != null && other.getRowsLayout().equals(this.getRowsLayout()) == false)
+            return false;
+        if (other.getRowsLabelOptions() == null ^ this.getRowsLabelOptions() == null)
+            return false;
+        if (other.getRowsLabelOptions() != null && other.getRowsLabelOptions().equals(this.getRowsLabelOptions()) == false)
+            return false;
+        if (other.getDefaultCellWidth() == null ^ this.getDefaultCellWidth() == null)
+            return false;
+        if (other.getDefaultCellWidth() != null && other.getDefaultCellWidth().equals(this.getDefaultCellWidth()) == false)
+            return false;
         return true;
     }
 
@@ -707,6 +1002,9 @@ public class PivotTableOptions implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getRowFieldNamesStyle() == null) ? 0 : getRowFieldNamesStyle().hashCode());
         hashCode = prime * hashCode + ((getRowAlternateColorOptions() == null) ? 0 : getRowAlternateColorOptions().hashCode());
         hashCode = prime * hashCode + ((getCollapsedRowDimensionsVisibility() == null) ? 0 : getCollapsedRowDimensionsVisibility().hashCode());
+        hashCode = prime * hashCode + ((getRowsLayout() == null) ? 0 : getRowsLayout().hashCode());
+        hashCode = prime * hashCode + ((getRowsLabelOptions() == null) ? 0 : getRowsLabelOptions().hashCode());
+        hashCode = prime * hashCode + ((getDefaultCellWidth() == null) ? 0 : getDefaultCellWidth().hashCode());
         return hashCode;
     }
 

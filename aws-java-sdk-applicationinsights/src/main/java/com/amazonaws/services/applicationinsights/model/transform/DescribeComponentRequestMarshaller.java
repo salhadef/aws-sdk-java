@@ -31,6 +31,8 @@ public class DescribeComponentRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceGroupName").build();
     private static final MarshallingInfo<String> COMPONENTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ComponentName").build();
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("AccountId").build();
 
     private static final DescribeComponentRequestMarshaller instance = new DescribeComponentRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class DescribeComponentRequestMarshaller {
         try {
             protocolMarshaller.marshall(describeComponentRequest.getResourceGroupName(), RESOURCEGROUPNAME_BINDING);
             protocolMarshaller.marshall(describeComponentRequest.getComponentName(), COMPONENTNAME_BINDING);
+            protocolMarshaller.marshall(describeComponentRequest.getAccountId(), ACCOUNTID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

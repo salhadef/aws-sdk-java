@@ -49,17 +49,17 @@ public class AccountAssignmentOperationStatusMetadataJsonUnmarshaller implements
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("Status", targetDepth)) {
+                if (context.testExpression("CreatedDate", targetDepth)) {
                     context.nextToken();
-                    accountAssignmentOperationStatusMetadata.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                    accountAssignmentOperationStatusMetadata.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("RequestId", targetDepth)) {
                     context.nextToken();
                     accountAssignmentOperationStatusMetadata.setRequestId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("CreatedDate", targetDepth)) {
+                if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
-                    accountAssignmentOperationStatusMetadata.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    accountAssignmentOperationStatusMetadata.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

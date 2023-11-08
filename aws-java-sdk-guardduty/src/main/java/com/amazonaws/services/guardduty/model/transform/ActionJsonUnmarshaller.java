@@ -76,6 +76,18 @@ public class ActionJsonUnmarshaller implements Unmarshaller<Action, JsonUnmarsha
                     context.nextToken();
                     action.setRdsLoginAttemptAction(RdsLoginAttemptActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("kubernetesPermissionCheckedDetails", targetDepth)) {
+                    context.nextToken();
+                    action.setKubernetesPermissionCheckedDetails(KubernetesPermissionCheckedDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("kubernetesRoleBindingDetails", targetDepth)) {
+                    context.nextToken();
+                    action.setKubernetesRoleBindingDetails(KubernetesRoleBindingDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("kubernetesRoleDetails", targetDepth)) {
+                    context.nextToken();
+                    action.setKubernetesRoleDetails(KubernetesRoleDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

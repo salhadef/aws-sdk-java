@@ -52,7 +52,8 @@ public class CreateMediaInsightsPipelineRequest extends com.amazonaws.AmazonWebS
     private KinesisVideoStreamRecordingSourceRuntimeConfiguration kinesisVideoStreamRecordingSourceRuntimeConfiguration;
     /**
      * <p>
-     * The runtime configuration for the S3 recording sink.
+     * The runtime configuration for the S3 recording sink. If specified, the settings in this structure override any
+     * settings in <code>S3RecordingSinkConfiguration</code>.
      * </p>
      */
     private S3RecordingSinkRuntimeConfiguration s3RecordingSinkRuntimeConfiguration;
@@ -262,11 +263,13 @@ public class CreateMediaInsightsPipelineRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The runtime configuration for the S3 recording sink.
+     * The runtime configuration for the S3 recording sink. If specified, the settings in this structure override any
+     * settings in <code>S3RecordingSinkConfiguration</code>.
      * </p>
      * 
      * @param s3RecordingSinkRuntimeConfiguration
-     *        The runtime configuration for the S3 recording sink.
+     *        The runtime configuration for the S3 recording sink. If specified, the settings in this structure override
+     *        any settings in <code>S3RecordingSinkConfiguration</code>.
      */
 
     public void setS3RecordingSinkRuntimeConfiguration(S3RecordingSinkRuntimeConfiguration s3RecordingSinkRuntimeConfiguration) {
@@ -275,10 +278,12 @@ public class CreateMediaInsightsPipelineRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The runtime configuration for the S3 recording sink.
+     * The runtime configuration for the S3 recording sink. If specified, the settings in this structure override any
+     * settings in <code>S3RecordingSinkConfiguration</code>.
      * </p>
      * 
-     * @return The runtime configuration for the S3 recording sink.
+     * @return The runtime configuration for the S3 recording sink. If specified, the settings in this structure
+     *         override any settings in <code>S3RecordingSinkConfiguration</code>.
      */
 
     public S3RecordingSinkRuntimeConfiguration getS3RecordingSinkRuntimeConfiguration() {
@@ -287,11 +292,13 @@ public class CreateMediaInsightsPipelineRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The runtime configuration for the S3 recording sink.
+     * The runtime configuration for the S3 recording sink. If specified, the settings in this structure override any
+     * settings in <code>S3RecordingSinkConfiguration</code>.
      * </p>
      * 
      * @param s3RecordingSinkRuntimeConfiguration
-     *        The runtime configuration for the S3 recording sink.
+     *        The runtime configuration for the S3 recording sink. If specified, the settings in this structure override
+     *        any settings in <code>S3RecordingSinkConfiguration</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

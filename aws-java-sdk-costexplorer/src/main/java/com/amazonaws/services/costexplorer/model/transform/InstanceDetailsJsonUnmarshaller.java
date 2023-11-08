@@ -68,6 +68,10 @@ public class InstanceDetailsJsonUnmarshaller implements Unmarshaller<InstanceDet
                     context.nextToken();
                     instanceDetails.setESInstanceDetails(ESInstanceDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("MemoryDBInstanceDetails", targetDepth)) {
+                    context.nextToken();
+                    instanceDetails.setMemoryDBInstanceDetails(MemoryDBInstanceDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

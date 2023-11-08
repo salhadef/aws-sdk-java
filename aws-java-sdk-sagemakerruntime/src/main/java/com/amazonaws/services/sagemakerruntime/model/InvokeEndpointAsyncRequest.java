@@ -28,8 +28,7 @@ public class InvokeEndpointAsyncRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The name of the endpoint that you specified when you created the endpoint using the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">
-     * <code>CreateEndpoint</code> </a> API.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API.
      * </p>
      */
     private String endpointName;
@@ -41,7 +40,7 @@ public class InvokeEndpointAsyncRequest extends com.amazonaws.AmazonWebServiceRe
     private String contentType;
     /**
      * <p>
-     * The desired MIME type of the inference in the response.
+     * The desired MIME type of the inference response from the model container.
      * </p>
      */
     private String accept;
@@ -57,7 +56,7 @@ public class InvokeEndpointAsyncRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The code in your model is responsible for setting or updating any custom attributes in the response. If your code
      * does not set this value in the response, an empty value is returned. For example, if a custom attribute
-     * represents the trace ID, your model can prepend the custom attribute with <code>Trace ID</code>: in your
+     * represents the trace ID, your model can prepend the custom attribute with <code>Trace ID:</code> in your
      * post-processing function.
      * </p>
      * <p>
@@ -96,14 +95,12 @@ public class InvokeEndpointAsyncRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The name of the endpoint that you specified when you created the endpoint using the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">
-     * <code>CreateEndpoint</code> </a> API.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API.
      * </p>
      * 
      * @param endpointName
      *        The name of the endpoint that you specified when you created the endpoint using the <a
-     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">
-     *        <code>CreateEndpoint</code> </a> API.
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API.
      */
 
     public void setEndpointName(String endpointName) {
@@ -113,13 +110,11 @@ public class InvokeEndpointAsyncRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The name of the endpoint that you specified when you created the endpoint using the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">
-     * <code>CreateEndpoint</code> </a> API.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API.
      * </p>
      * 
      * @return The name of the endpoint that you specified when you created the endpoint using the <a
-     *         href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">
-     *         <code>CreateEndpoint</code> </a> API.
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API.
      */
 
     public String getEndpointName() {
@@ -129,14 +124,12 @@ public class InvokeEndpointAsyncRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The name of the endpoint that you specified when you created the endpoint using the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">
-     * <code>CreateEndpoint</code> </a> API.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API.
      * </p>
      * 
      * @param endpointName
      *        The name of the endpoint that you specified when you created the endpoint using the <a
-     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">
-     *        <code>CreateEndpoint</code> </a> API.
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -187,11 +180,11 @@ public class InvokeEndpointAsyncRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The desired MIME type of the inference in the response.
+     * The desired MIME type of the inference response from the model container.
      * </p>
      * 
      * @param accept
-     *        The desired MIME type of the inference in the response.
+     *        The desired MIME type of the inference response from the model container.
      */
 
     public void setAccept(String accept) {
@@ -200,10 +193,10 @@ public class InvokeEndpointAsyncRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The desired MIME type of the inference in the response.
+     * The desired MIME type of the inference response from the model container.
      * </p>
      * 
-     * @return The desired MIME type of the inference in the response.
+     * @return The desired MIME type of the inference response from the model container.
      */
 
     public String getAccept() {
@@ -212,11 +205,11 @@ public class InvokeEndpointAsyncRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The desired MIME type of the inference in the response.
+     * The desired MIME type of the inference response from the model container.
      * </p>
      * 
      * @param accept
-     *        The desired MIME type of the inference in the response.
+     *        The desired MIME type of the inference response from the model container.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -237,7 +230,7 @@ public class InvokeEndpointAsyncRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The code in your model is responsible for setting or updating any custom attributes in the response. If your code
      * does not set this value in the response, an empty value is returned. For example, if a custom attribute
-     * represents the trace ID, your model can prepend the custom attribute with <code>Trace ID</code>: in your
+     * represents the trace ID, your model can prepend the custom attribute with <code>Trace ID:</code> in your
      * post-processing function.
      * </p>
      * <p>
@@ -254,7 +247,7 @@ public class InvokeEndpointAsyncRequest extends com.amazonaws.AmazonWebServiceRe
      *        <p>
      *        The code in your model is responsible for setting or updating any custom attributes in the response. If
      *        your code does not set this value in the response, an empty value is returned. For example, if a custom
-     *        attribute represents the trace ID, your model can prepend the custom attribute with <code>Trace ID</code>:
+     *        attribute represents the trace ID, your model can prepend the custom attribute with <code>Trace ID:</code>
      *        in your post-processing function.
      *        </p>
      *        <p>
@@ -278,7 +271,7 @@ public class InvokeEndpointAsyncRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The code in your model is responsible for setting or updating any custom attributes in the response. If your code
      * does not set this value in the response, an empty value is returned. For example, if a custom attribute
-     * represents the trace ID, your model can prepend the custom attribute with <code>Trace ID</code>: in your
+     * represents the trace ID, your model can prepend the custom attribute with <code>Trace ID:</code> in your
      * post-processing function.
      * </p>
      * <p>
@@ -295,8 +288,8 @@ public class InvokeEndpointAsyncRequest extends com.amazonaws.AmazonWebServiceRe
      *         <p>
      *         The code in your model is responsible for setting or updating any custom attributes in the response. If
      *         your code does not set this value in the response, an empty value is returned. For example, if a custom
-     *         attribute represents the trace ID, your model can prepend the custom attribute with <code>Trace ID</code>
-     *         : in your post-processing function.
+     *         attribute represents the trace ID, your model can prepend the custom attribute with
+     *         <code>Trace ID:</code> in your post-processing function.
      *         </p>
      *         <p>
      *         This feature is currently supported in the Amazon Web Services SDKs but not in the Amazon SageMaker
@@ -319,7 +312,7 @@ public class InvokeEndpointAsyncRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The code in your model is responsible for setting or updating any custom attributes in the response. If your code
      * does not set this value in the response, an empty value is returned. For example, if a custom attribute
-     * represents the trace ID, your model can prepend the custom attribute with <code>Trace ID</code>: in your
+     * represents the trace ID, your model can prepend the custom attribute with <code>Trace ID:</code> in your
      * post-processing function.
      * </p>
      * <p>
@@ -336,7 +329,7 @@ public class InvokeEndpointAsyncRequest extends com.amazonaws.AmazonWebServiceRe
      *        <p>
      *        The code in your model is responsible for setting or updating any custom attributes in the response. If
      *        your code does not set this value in the response, an empty value is returned. For example, if a custom
-     *        attribute represents the trace ID, your model can prepend the custom attribute with <code>Trace ID</code>:
+     *        attribute represents the trace ID, your model can prepend the custom attribute with <code>Trace ID:</code>
      *        in your post-processing function.
      *        </p>
      *        <p>

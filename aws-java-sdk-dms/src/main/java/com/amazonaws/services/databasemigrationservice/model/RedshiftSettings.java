@@ -299,7 +299,7 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * When true, lets Redshift migrate the boolean type as boolean. By default, Redshift migrates booleans as
-     * <code>varchar(1)</code>.
+     * <code>varchar(1)</code>. You must set this setting on both the source and target endpoints for it to take effect.
      * </p>
      */
     private Boolean mapBooleanAsBoolean;
@@ -2206,12 +2206,13 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * When true, lets Redshift migrate the boolean type as boolean. By default, Redshift migrates booleans as
-     * <code>varchar(1)</code>.
+     * <code>varchar(1)</code>. You must set this setting on both the source and target endpoints for it to take effect.
      * </p>
      * 
      * @param mapBooleanAsBoolean
      *        When true, lets Redshift migrate the boolean type as boolean. By default, Redshift migrates booleans as
-     *        <code>varchar(1)</code>.
+     *        <code>varchar(1)</code>. You must set this setting on both the source and target endpoints for it to take
+     *        effect.
      */
 
     public void setMapBooleanAsBoolean(Boolean mapBooleanAsBoolean) {
@@ -2221,11 +2222,12 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * When true, lets Redshift migrate the boolean type as boolean. By default, Redshift migrates booleans as
-     * <code>varchar(1)</code>.
+     * <code>varchar(1)</code>. You must set this setting on both the source and target endpoints for it to take effect.
      * </p>
      * 
      * @return When true, lets Redshift migrate the boolean type as boolean. By default, Redshift migrates booleans as
-     *         <code>varchar(1)</code>.
+     *         <code>varchar(1)</code>. You must set this setting on both the source and target endpoints for it to take
+     *         effect.
      */
 
     public Boolean getMapBooleanAsBoolean() {
@@ -2235,12 +2237,13 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * When true, lets Redshift migrate the boolean type as boolean. By default, Redshift migrates booleans as
-     * <code>varchar(1)</code>.
+     * <code>varchar(1)</code>. You must set this setting on both the source and target endpoints for it to take effect.
      * </p>
      * 
      * @param mapBooleanAsBoolean
      *        When true, lets Redshift migrate the boolean type as boolean. By default, Redshift migrates booleans as
-     *        <code>varchar(1)</code>.
+     *        <code>varchar(1)</code>. You must set this setting on both the source and target endpoints for it to take
+     *        effect.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2252,11 +2255,12 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * When true, lets Redshift migrate the boolean type as boolean. By default, Redshift migrates booleans as
-     * <code>varchar(1)</code>.
+     * <code>varchar(1)</code>. You must set this setting on both the source and target endpoints for it to take effect.
      * </p>
      * 
      * @return When true, lets Redshift migrate the boolean type as boolean. By default, Redshift migrates booleans as
-     *         <code>varchar(1)</code>.
+     *         <code>varchar(1)</code>. You must set this setting on both the source and target endpoints for it to take
+     *         effect.
      */
 
     public Boolean isMapBooleanAsBoolean() {

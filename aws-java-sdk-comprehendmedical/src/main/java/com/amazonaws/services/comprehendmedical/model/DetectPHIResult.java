@@ -27,7 +27,7 @@ public class DetectPHIResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * <p>
      * The collection of PHI entities extracted from the input text and their associated information. For each entity,
      * the response provides the entity text, the entity category, where the entity text begins and ends, and the level
-     * of confidence that Comprehend Medical; has in its detection.
+     * of confidence that Amazon Comprehend Medical has in its detection.
      * </p>
      */
     private java.util.List<Entity> entities;
@@ -50,12 +50,12 @@ public class DetectPHIResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * <p>
      * The collection of PHI entities extracted from the input text and their associated information. For each entity,
      * the response provides the entity text, the entity category, where the entity text begins and ends, and the level
-     * of confidence that Comprehend Medical; has in its detection.
+     * of confidence that Amazon Comprehend Medical has in its detection.
      * </p>
      * 
      * @return The collection of PHI entities extracted from the input text and their associated information. For each
      *         entity, the response provides the entity text, the entity category, where the entity text begins and
-     *         ends, and the level of confidence that Comprehend Medical; has in its detection.
+     *         ends, and the level of confidence that Amazon Comprehend Medical has in its detection.
      */
 
     public java.util.List<Entity> getEntities() {
@@ -66,13 +66,13 @@ public class DetectPHIResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * <p>
      * The collection of PHI entities extracted from the input text and their associated information. For each entity,
      * the response provides the entity text, the entity category, where the entity text begins and ends, and the level
-     * of confidence that Comprehend Medical; has in its detection.
+     * of confidence that Amazon Comprehend Medical has in its detection.
      * </p>
      * 
      * @param entities
      *        The collection of PHI entities extracted from the input text and their associated information. For each
      *        entity, the response provides the entity text, the entity category, where the entity text begins and ends,
-     *        and the level of confidence that Comprehend Medical; has in its detection.
+     *        and the level of confidence that Amazon Comprehend Medical has in its detection.
      */
 
     public void setEntities(java.util.Collection<Entity> entities) {
@@ -88,7 +88,7 @@ public class DetectPHIResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * <p>
      * The collection of PHI entities extracted from the input text and their associated information. For each entity,
      * the response provides the entity text, the entity category, where the entity text begins and ends, and the level
-     * of confidence that Comprehend Medical; has in its detection.
+     * of confidence that Amazon Comprehend Medical has in its detection.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -99,7 +99,7 @@ public class DetectPHIResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * @param entities
      *        The collection of PHI entities extracted from the input text and their associated information. For each
      *        entity, the response provides the entity text, the entity category, where the entity text begins and ends,
-     *        and the level of confidence that Comprehend Medical; has in its detection.
+     *        and the level of confidence that Amazon Comprehend Medical has in its detection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -117,13 +117,13 @@ public class DetectPHIResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * <p>
      * The collection of PHI entities extracted from the input text and their associated information. For each entity,
      * the response provides the entity text, the entity category, where the entity text begins and ends, and the level
-     * of confidence that Comprehend Medical; has in its detection.
+     * of confidence that Amazon Comprehend Medical has in its detection.
      * </p>
      * 
      * @param entities
      *        The collection of PHI entities extracted from the input text and their associated information. For each
      *        entity, the response provides the entity text, the entity category, where the entity text begins and ends,
-     *        and the level of confidence that Comprehend Medical; has in its detection.
+     *        and the level of confidence that Amazon Comprehend Medical has in its detection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -28,7 +28,8 @@ public class LaunchTemplateConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The launch template.
+     * The launch template to use. Make sure that the launch template does not contain the
+     * <code>NetworkInterfaceId</code> parameter because you can't specify a network interface ID in a Spot Fleet.
      * </p>
      */
     private FleetLaunchTemplateSpecification launchTemplateSpecification;
@@ -41,11 +42,14 @@ public class LaunchTemplateConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The launch template.
+     * The launch template to use. Make sure that the launch template does not contain the
+     * <code>NetworkInterfaceId</code> parameter because you can't specify a network interface ID in a Spot Fleet.
      * </p>
      * 
      * @param launchTemplateSpecification
-     *        The launch template.
+     *        The launch template to use. Make sure that the launch template does not contain the
+     *        <code>NetworkInterfaceId</code> parameter because you can't specify a network interface ID in a Spot
+     *        Fleet.
      */
 
     public void setLaunchTemplateSpecification(FleetLaunchTemplateSpecification launchTemplateSpecification) {
@@ -54,10 +58,13 @@ public class LaunchTemplateConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The launch template.
+     * The launch template to use. Make sure that the launch template does not contain the
+     * <code>NetworkInterfaceId</code> parameter because you can't specify a network interface ID in a Spot Fleet.
      * </p>
      * 
-     * @return The launch template.
+     * @return The launch template to use. Make sure that the launch template does not contain the
+     *         <code>NetworkInterfaceId</code> parameter because you can't specify a network interface ID in a Spot
+     *         Fleet.
      */
 
     public FleetLaunchTemplateSpecification getLaunchTemplateSpecification() {
@@ -66,11 +73,14 @@ public class LaunchTemplateConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The launch template.
+     * The launch template to use. Make sure that the launch template does not contain the
+     * <code>NetworkInterfaceId</code> parameter because you can't specify a network interface ID in a Spot Fleet.
      * </p>
      * 
      * @param launchTemplateSpecification
-     *        The launch template.
+     *        The launch template to use. Make sure that the launch template does not contain the
+     *        <code>NetworkInterfaceId</code> parameter because you can't specify a network interface ID in a Spot
+     *        Fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

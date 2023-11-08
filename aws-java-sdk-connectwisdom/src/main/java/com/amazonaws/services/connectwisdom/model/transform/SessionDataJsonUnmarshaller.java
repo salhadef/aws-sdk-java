@@ -52,6 +52,10 @@ public class SessionDataJsonUnmarshaller implements Unmarshaller<SessionData, Js
                     context.nextToken();
                     sessionData.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("integrationConfiguration", targetDepth)) {
+                    context.nextToken();
+                    sessionData.setIntegrationConfiguration(SessionIntegrationConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
                     sessionData.setName(context.getUnmarshaller(String.class).unmarshall(context));

@@ -29,23 +29,43 @@ import com.amazonaws.services.ivsrealtime.model.*;
  * <b>Introduction</b>
  * </p>
  * <p>
- * The Amazon Interactive Video Service (IVS) stage API is REST compatible, using a standard HTTP API and an AWS
+ * The Amazon Interactive Video Service (IVS) real-time API is REST compatible, using a standard HTTP API and an AWS
  * EventBridge event stream for responses. JSON is used for both requests and responses, including errors.
  * </p>
  * <p>
- * Terminology: The IVS stage API sometimes is referred to as the IVS RealTime API.
+ * Terminology:
  * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * A <i>stage</i> is a virtual space where participants can exchange video in real time.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * A <i>participant token</i> is a token that authenticates a participant when they join a stage.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * A <i>participant object</i> represents participants (people) in the stage and contains information about them. When a
+ * token is created, it includes a participant ID; when a participant uses that token to join a stage, the participant
+ * is associated with that participant ID There is a 1:1 mapping between participant tokens and participants.
+ * </p>
+ * </li>
+ * </ul>
  * <p>
  * <b>Resources</b>
  * </p>
  * <p>
  * The following resources contain information about your IVS live stream (see <a
- * href="https://docs.aws.amazon.com/ivs/latest/userguide/getting-started.html">Getting Started with Amazon IVS</a>):
+ * href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/getting-started.html">Getting Started with Amazon IVS
+ * Real-Time Streaming</a>):
  * </p>
  * <ul>
  * <li>
  * <p>
- * <b>Stage</b> — A stage is a virtual space where multiple participants can exchange audio and video in real time.
+ * <b>Stage</b> — A stage is a virtual space where participants can exchange video in real time.
  * </p>
  * </li>
  * </ul>
@@ -65,7 +85,7 @@ import com.amazonaws.services.ivsrealtime.model.*;
  * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Access Tags</a>).
  * </p>
  * <p>
- * The Amazon IVS stage API has these tag-related endpoints: <a>TagResource</a>, <a>UntagResource</a>, and
+ * The Amazon IVS real-time API has these tag-related endpoints: <a>TagResource</a>, <a>UntagResource</a>, and
  * <a>ListTagsForResource</a>. The following resource supports tagging: Stage.
  * </p>
  * <p>
@@ -99,13 +119,39 @@ import com.amazonaws.services.ivsrealtime.model.*;
  * </li>
  * <li>
  * <p>
+ * <a>GetParticipant</a> — Gets information about the specified participant token.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a>GetStage</a> — Gets information for the specified stage.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetStageSession</a> — Gets information for the specified stage session.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListParticipantEvents</a> — Lists events for a specified participant that occurred during a specified stage
+ * session.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListParticipants</a> — Lists all participants in a specified stage session.
  * </p>
  * </li>
  * <li>
  * <p>
  * <a>ListStages</a> — Gets summary information about all stages in your account, in the AWS region where the API
  * request is processed.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListStageSessions</a> — Gets all sessions for a specified stage.
  * </p>
  * </li>
  * <li>
@@ -272,6 +318,37 @@ public interface AmazonIVSRealTimeAsync extends AmazonIVSRealTime {
 
     /**
      * <p>
+     * Gets information about the specified participant token.
+     * </p>
+     * 
+     * @param getParticipantRequest
+     * @return A Java Future containing the result of the GetParticipant operation returned by the service.
+     * @sample AmazonIVSRealTimeAsync.GetParticipant
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetParticipant" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetParticipantResult> getParticipantAsync(GetParticipantRequest getParticipantRequest);
+
+    /**
+     * <p>
+     * Gets information about the specified participant token.
+     * </p>
+     * 
+     * @param getParticipantRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetParticipant operation returned by the service.
+     * @sample AmazonIVSRealTimeAsyncHandler.GetParticipant
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetParticipant" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetParticipantResult> getParticipantAsync(GetParticipantRequest getParticipantRequest,
+            com.amazonaws.handlers.AsyncHandler<GetParticipantRequest, GetParticipantResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets information for the specified stage.
      * </p>
      * 
@@ -300,6 +377,130 @@ public interface AmazonIVSRealTimeAsync extends AmazonIVSRealTime {
      */
     java.util.concurrent.Future<GetStageResult> getStageAsync(GetStageRequest getStageRequest,
             com.amazonaws.handlers.AsyncHandler<GetStageRequest, GetStageResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets information for the specified stage session.
+     * </p>
+     * 
+     * @param getStageSessionRequest
+     * @return A Java Future containing the result of the GetStageSession operation returned by the service.
+     * @sample AmazonIVSRealTimeAsync.GetStageSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetStageSession" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetStageSessionResult> getStageSessionAsync(GetStageSessionRequest getStageSessionRequest);
+
+    /**
+     * <p>
+     * Gets information for the specified stage session.
+     * </p>
+     * 
+     * @param getStageSessionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetStageSession operation returned by the service.
+     * @sample AmazonIVSRealTimeAsyncHandler.GetStageSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetStageSession" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetStageSessionResult> getStageSessionAsync(GetStageSessionRequest getStageSessionRequest,
+            com.amazonaws.handlers.AsyncHandler<GetStageSessionRequest, GetStageSessionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists events for a specified participant that occurred during a specified stage session.
+     * </p>
+     * 
+     * @param listParticipantEventsRequest
+     * @return A Java Future containing the result of the ListParticipantEvents operation returned by the service.
+     * @sample AmazonIVSRealTimeAsync.ListParticipantEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListParticipantEvents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListParticipantEventsResult> listParticipantEventsAsync(ListParticipantEventsRequest listParticipantEventsRequest);
+
+    /**
+     * <p>
+     * Lists events for a specified participant that occurred during a specified stage session.
+     * </p>
+     * 
+     * @param listParticipantEventsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListParticipantEvents operation returned by the service.
+     * @sample AmazonIVSRealTimeAsyncHandler.ListParticipantEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListParticipantEvents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListParticipantEventsResult> listParticipantEventsAsync(ListParticipantEventsRequest listParticipantEventsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListParticipantEventsRequest, ListParticipantEventsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all participants in a specified stage session.
+     * </p>
+     * 
+     * @param listParticipantsRequest
+     * @return A Java Future containing the result of the ListParticipants operation returned by the service.
+     * @sample AmazonIVSRealTimeAsync.ListParticipants
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListParticipants" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListParticipantsResult> listParticipantsAsync(ListParticipantsRequest listParticipantsRequest);
+
+    /**
+     * <p>
+     * Lists all participants in a specified stage session.
+     * </p>
+     * 
+     * @param listParticipantsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListParticipants operation returned by the service.
+     * @sample AmazonIVSRealTimeAsyncHandler.ListParticipants
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListParticipants" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListParticipantsResult> listParticipantsAsync(ListParticipantsRequest listParticipantsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListParticipantsRequest, ListParticipantsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets all sessions for a specified stage.
+     * </p>
+     * 
+     * @param listStageSessionsRequest
+     * @return A Java Future containing the result of the ListStageSessions operation returned by the service.
+     * @sample AmazonIVSRealTimeAsync.ListStageSessions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListStageSessions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListStageSessionsResult> listStageSessionsAsync(ListStageSessionsRequest listStageSessionsRequest);
+
+    /**
+     * <p>
+     * Gets all sessions for a specified stage.
+     * </p>
+     * 
+     * @param listStageSessionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListStageSessions operation returned by the service.
+     * @sample AmazonIVSRealTimeAsyncHandler.ListStageSessions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListStageSessions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListStageSessionsResult> listStageSessionsAsync(ListStageSessionsRequest listStageSessionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListStageSessionsRequest, ListStageSessionsResult> asyncHandler);
 
     /**
      * <p>

@@ -1455,9 +1455,9 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
         if (getRegistrarUrl() != null)
             sb.append("RegistrarUrl: ").append(getRegistrarUrl()).append(",");
         if (getAbuseContactEmail() != null)
-            sb.append("AbuseContactEmail: ").append(getAbuseContactEmail()).append(",");
+            sb.append("AbuseContactEmail: ").append("***Sensitive Data Redacted***").append(",");
         if (getAbuseContactPhone() != null)
-            sb.append("AbuseContactPhone: ").append(getAbuseContactPhone()).append(",");
+            sb.append("AbuseContactPhone: ").append("***Sensitive Data Redacted***").append(",");
         if (getRegistryDomainId() != null)
             sb.append("RegistryDomainId: ").append(getRegistryDomainId()).append(",");
         if (getCreationDate() != null)

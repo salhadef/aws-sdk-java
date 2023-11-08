@@ -106,6 +106,13 @@ public class TranscriptionJobSummaryJsonUnmarshaller implements Unmarshaller<Tra
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("ToxicityDetection", targetDepth)) {
+                    context.nextToken();
+                    transcriptionJobSummary.setToxicityDetection(new ListUnmarshaller<ToxicityDetectionSettings>(ToxicityDetectionSettingsJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

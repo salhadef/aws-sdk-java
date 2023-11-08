@@ -45,6 +45,7 @@ import com.amazonaws.services.codedeploy.waiters.AmazonCodeDeployWaiters;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.codedeploy.model.*;
+
 import com.amazonaws.services.codedeploy.model.transform.*;
 
 /**
@@ -783,7 +784,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *        Represents the input of a <code>BatchGetApplicationRevisions</code> operation.
      * @return Result of the BatchGetApplicationRevisions operation returned by the service.
      * @throws ApplicationDoesNotExistException
-     *         The application does not exist with the IAM user or Amazon Web Services account.
+     *         The application does not exist with the user or Amazon Web Services account.
      * @throws ApplicationNameRequiredException
      *         The minimum number of required application names was not specified.
      * @throws InvalidApplicationNameException
@@ -857,7 +858,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws InvalidApplicationNameException
      *         The application name was specified in an invalid format.
      * @throws ApplicationDoesNotExistException
-     *         The application does not exist with the IAM user or Amazon Web Services account.
+     *         The application does not exist with the user or Amazon Web Services account.
      * @throws BatchLimitExceededException
      *         The maximum number of names or IDs allowed for this request (100) was exceeded.
      * @sample AmazonCodeDeploy.BatchGetApplications
@@ -926,7 +927,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws InvalidApplicationNameException
      *         The application name was specified in an invalid format.
      * @throws ApplicationDoesNotExistException
-     *         The application does not exist with the IAM user or Amazon Web Services account.
+     *         The application does not exist with the user or Amazon Web Services account.
      * @throws DeploymentGroupNameRequiredException
      *         The deployment group name was not specified.
      * @throws InvalidDeploymentGroupNameException
@@ -934,7 +935,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws BatchLimitExceededException
      *         The maximum number of names or IDs allowed for this request (100) was exceeded.
      * @throws DeploymentConfigDoesNotExistException
-     *         The deployment configuration does not exist with the IAM user or Amazon Web Services account.
+     *         The deployment configuration does not exist with the user or Amazon Web Services account.
      * @sample AmazonCodeDeploy.BatchGetDeploymentGroups
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentGroups"
      *      target="_top">AWS API Documentation</a>
@@ -1003,7 +1004,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws DeploymentIdRequiredException
      *         At least one deployment ID must be specified.
      * @throws DeploymentDoesNotExistException
-     *         The deployment with the IAM user or Amazon Web Services account does not exist.
+     *         The deployment with the user or Amazon Web Services account does not exist.
      * @throws InstanceIdRequiredException
      *         The instance ID was not specified.
      * @throws InvalidDeploymentIdException
@@ -1106,7 +1107,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws DeploymentIdRequiredException
      *         At least one deployment ID must be specified.
      * @throws DeploymentDoesNotExistException
-     *         The deployment with the IAM user or Amazon Web Services account does not exist.
+     *         The deployment with the user or Amazon Web Services account does not exist.
      * @throws DeploymentNotStartedException
      *         The specified deployment has not started.
      * @throws DeploymentTargetIdRequiredException
@@ -1321,7 +1322,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws DeploymentIdRequiredException
      *         At least one deployment ID must be specified.
      * @throws DeploymentDoesNotExistException
-     *         The deployment with the IAM user or Amazon Web Services account does not exist.
+     *         The deployment with the user or Amazon Web Services account does not exist.
      * @throws DeploymentAlreadyCompletedException
      *         The deployment is already complete.
      * @throws InvalidDeploymentIdException
@@ -1395,7 +1396,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws InvalidApplicationNameException
      *         The application name was specified in an invalid format.
      * @throws ApplicationAlreadyExistsException
-     *         An application with the specified name with the IAM user or Amazon Web Services account already exists.
+     *         An application with the specified name with the user or Amazon Web Services account already exists.
      * @throws ApplicationLimitExceededException
      *         More applications were attempted to be created than are allowed.
      * @throws InvalidComputePlatformException
@@ -1464,23 +1465,23 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws InvalidApplicationNameException
      *         The application name was specified in an invalid format.
      * @throws ApplicationDoesNotExistException
-     *         The application does not exist with the IAM user or Amazon Web Services account.
+     *         The application does not exist with the user or Amazon Web Services account.
      * @throws DeploymentGroupNameRequiredException
      *         The deployment group name was not specified.
      * @throws InvalidDeploymentGroupNameException
      *         The deployment group name was specified in an invalid format.
      * @throws DeploymentGroupDoesNotExistException
-     *         The named deployment group with the IAM user or Amazon Web Services account does not exist.
+     *         The named deployment group with the user or Amazon Web Services account does not exist.
      * @throws RevisionRequiredException
      *         The revision ID was not specified.
      * @throws RevisionDoesNotExistException
-     *         The named revision does not exist with the IAM user or Amazon Web Services account.
+     *         The named revision does not exist with the user or Amazon Web Services account.
      * @throws InvalidRevisionException
      *         The revision was specified in an invalid format.
      * @throws InvalidDeploymentConfigNameException
      *         The deployment configuration name was specified in an invalid format.
      * @throws DeploymentConfigDoesNotExistException
-     *         The deployment configuration does not exist with the IAM user or Amazon Web Services account.
+     *         The deployment configuration does not exist with the user or Amazon Web Services account.
      * @throws DescriptionTooLongException
      *         The description is too long.
      * @throws DeploymentLimitExceededException
@@ -1625,8 +1626,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws DeploymentConfigNameRequiredException
      *         The deployment configuration name was not specified.
      * @throws DeploymentConfigAlreadyExistsException
-     *         A deployment configuration with the specified name with the IAM user or Amazon Web Services account
-     *         already exists.
+     *         A deployment configuration with the specified name with the user or Amazon Web Services account already
+     *         exists.
      * @throws InvalidMinimumHealthyHostValueException
      *         The minimum healthy instance value was specified in an invalid format.
      * @throws DeploymentConfigLimitExceededException
@@ -1698,14 +1699,13 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws InvalidApplicationNameException
      *         The application name was specified in an invalid format.
      * @throws ApplicationDoesNotExistException
-     *         The application does not exist with the IAM user or Amazon Web Services account.
+     *         The application does not exist with the user or Amazon Web Services account.
      * @throws DeploymentGroupNameRequiredException
      *         The deployment group name was not specified.
      * @throws InvalidDeploymentGroupNameException
      *         The deployment group name was specified in an invalid format.
      * @throws DeploymentGroupAlreadyExistsException
-     *         A deployment group with the specified name with the IAM user or Amazon Web Services account already
-     *         exists.
+     *         A deployment group with the specified name with the user or Amazon Web Services account already exists.
      * @throws InvalidEC2TagException
      *         The tag was specified in an invalid format.
      * @throws InvalidTagException
@@ -1715,7 +1715,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws InvalidDeploymentConfigNameException
      *         The deployment configuration name was specified in an invalid format.
      * @throws DeploymentConfigDoesNotExistException
-     *         The deployment configuration does not exist with the IAM user or Amazon Web Services account.
+     *         The deployment configuration does not exist with the user or Amazon Web Services account.
      * @throws RoleRequiredException
      *         The role ID was not specified.
      * @throws InvalidRoleException
@@ -2114,8 +2114,16 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Deletes resources linked to an external ID.
+     * Deletes resources linked to an external ID. This action only applies if you have configured blue/green
+     * deployments through CloudFormation.
      * </p>
+     * <note>
+     * <p>
+     * It is not necessary to call this action directly. CloudFormation calls it on your behalf when it needs to delete
+     * stack resources. This action is offered publicly in case you need to delete resources to comply with General Data
+     * Protection Regulation (GDPR) requirements.
+     * </p>
+     * </note>
      * 
      * @param deleteResourcesByExternalIdRequest
      * @return Result of the DeleteResourcesByExternalId operation returned by the service.
@@ -2244,7 +2252,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws InvalidApplicationNameException
      *         The application name was specified in an invalid format.
      * @throws ApplicationDoesNotExistException
-     *         The application does not exist with the IAM user or Amazon Web Services account.
+     *         The application does not exist with the user or Amazon Web Services account.
      * @sample AmazonCodeDeploy.GetApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetApplication" target="_top">AWS API
      *      Documentation</a>
@@ -2302,13 +2310,13 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *        Represents the input of a <code>GetApplicationRevision</code> operation.
      * @return Result of the GetApplicationRevision operation returned by the service.
      * @throws ApplicationDoesNotExistException
-     *         The application does not exist with the IAM user or Amazon Web Services account.
+     *         The application does not exist with the user or Amazon Web Services account.
      * @throws ApplicationNameRequiredException
      *         The minimum number of required application names was not specified.
      * @throws InvalidApplicationNameException
      *         The application name was specified in an invalid format.
      * @throws RevisionDoesNotExistException
-     *         The named revision does not exist with the IAM user or Amazon Web Services account.
+     *         The named revision does not exist with the user or Amazon Web Services account.
      * @throws RevisionRequiredException
      *         The revision ID was not specified.
      * @throws InvalidRevisionException
@@ -2382,7 +2390,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws InvalidDeploymentIdException
      *         At least one of the deployment IDs was specified in an invalid format.
      * @throws DeploymentDoesNotExistException
-     *         The deployment with the IAM user or Amazon Web Services account does not exist.
+     *         The deployment with the user or Amazon Web Services account does not exist.
      * @sample AmazonCodeDeploy.GetDeployment
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeployment" target="_top">AWS API
      *      Documentation</a>
@@ -2444,7 +2452,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws DeploymentConfigNameRequiredException
      *         The deployment configuration name was not specified.
      * @throws DeploymentConfigDoesNotExistException
-     *         The deployment configuration does not exist with the IAM user or Amazon Web Services account.
+     *         The deployment configuration does not exist with the user or Amazon Web Services account.
      * @throws InvalidComputePlatformException
      *         The computePlatform is invalid. The computePlatform should be <code>Lambda</code>, <code>Server</code>,
      *         or <code>ECS</code>.
@@ -2509,15 +2517,15 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws InvalidApplicationNameException
      *         The application name was specified in an invalid format.
      * @throws ApplicationDoesNotExistException
-     *         The application does not exist with the IAM user or Amazon Web Services account.
+     *         The application does not exist with the user or Amazon Web Services account.
      * @throws DeploymentGroupNameRequiredException
      *         The deployment group name was not specified.
      * @throws InvalidDeploymentGroupNameException
      *         The deployment group name was specified in an invalid format.
      * @throws DeploymentGroupDoesNotExistException
-     *         The named deployment group with the IAM user or Amazon Web Services account does not exist.
+     *         The named deployment group with the user or Amazon Web Services account does not exist.
      * @throws DeploymentConfigDoesNotExistException
-     *         The deployment configuration does not exist with the IAM user or Amazon Web Services account.
+     *         The deployment configuration does not exist with the user or Amazon Web Services account.
      * @sample AmazonCodeDeploy.GetDeploymentGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentGroup" target="_top">AWS
      *      API Documentation</a>
@@ -2577,7 +2585,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws DeploymentIdRequiredException
      *         At least one deployment ID must be specified.
      * @throws DeploymentDoesNotExistException
-     *         The deployment with the IAM user or Amazon Web Services account does not exist.
+     *         The deployment with the user or Amazon Web Services account does not exist.
      * @throws InstanceIdRequiredException
      *         The instance ID was not specified.
      * @throws InvalidDeploymentIdException
@@ -2651,7 +2659,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws DeploymentIdRequiredException
      *         At least one deployment ID must be specified.
      * @throws DeploymentDoesNotExistException
-     *         The deployment with the IAM user or Amazon Web Services account does not exist.
+     *         The deployment with the user or Amazon Web Services account does not exist.
      * @throws DeploymentNotStartedException
      *         The specified deployment has not started.
      * @throws DeploymentTargetIdRequiredException
@@ -2782,7 +2790,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *        Represents the input of a <code>ListApplicationRevisions</code> operation.
      * @return Result of the ListApplicationRevisions operation returned by the service.
      * @throws ApplicationDoesNotExistException
-     *         The application does not exist with the IAM user or Amazon Web Services account.
+     *         The application does not exist with the user or Amazon Web Services account.
      * @throws ApplicationNameRequiredException
      *         The minimum number of required application names was not specified.
      * @throws InvalidApplicationNameException
@@ -2853,7 +2861,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Lists the applications registered with the IAM user or Amazon Web Services account.
+     * Lists the applications registered with the user or Amazon Web Services account.
      * </p>
      * 
      * @param listApplicationsRequest
@@ -2916,7 +2924,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Lists the deployment configurations with the IAM user or Amazon Web Services account.
+     * Lists the deployment configurations with the user or Amazon Web Services account.
      * </p>
      * 
      * @param listDeploymentConfigsRequest
@@ -2980,7 +2988,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Lists the deployment groups for an application registered with the IAM user or Amazon Web Services account.
+     * Lists the deployment groups for an application registered with the Amazon Web Services user or Amazon Web
+     * Services account.
      * </p>
      * 
      * @param listDeploymentGroupsRequest
@@ -2991,7 +3000,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws InvalidApplicationNameException
      *         The application name was specified in an invalid format.
      * @throws ApplicationDoesNotExistException
-     *         The application does not exist with the IAM user or Amazon Web Services account.
+     *         The application does not exist with the user or Amazon Web Services account.
      * @throws InvalidNextTokenException
      *         The next token was specified in an invalid format.
      * @sample AmazonCodeDeploy.ListDeploymentGroups
@@ -3051,7 +3060,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * </p>
      * </note>
      * <p>
-     * Lists the instance for a deployment associated with the IAM user or Amazon Web Services account.
+     * Lists the instance for a deployment associated with the user or Amazon Web Services account.
      * </p>
      * 
      * @param listDeploymentInstancesRequest
@@ -3060,7 +3069,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws DeploymentIdRequiredException
      *         At least one deployment ID must be specified.
      * @throws DeploymentDoesNotExistException
-     *         The deployment with the IAM user or Amazon Web Services account does not exist.
+     *         The deployment with the user or Amazon Web Services account does not exist.
      * @throws DeploymentNotStartedException
      *         The specified deployment has not started.
      * @throws InvalidNextTokenException
@@ -3141,7 +3150,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws DeploymentIdRequiredException
      *         At least one deployment ID must be specified.
      * @throws DeploymentDoesNotExistException
-     *         The deployment with the IAM user or Amazon Web Services account does not exist.
+     *         The deployment with the user or Amazon Web Services account does not exist.
      * @throws DeploymentNotStartedException
      *         The specified deployment has not started.
      * @throws InvalidNextTokenException
@@ -3207,8 +3216,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Lists the deployments in a deployment group for an application registered with the IAM user or Amazon Web
-     * Services account.
+     * Lists the deployments in a deployment group for an application registered with the user or Amazon Web Services
+     * account.
      * </p>
      * 
      * @param listDeploymentsRequest
@@ -3219,11 +3228,11 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws InvalidApplicationNameException
      *         The application name was specified in an invalid format.
      * @throws ApplicationDoesNotExistException
-     *         The application does not exist with the IAM user or Amazon Web Services account.
+     *         The application does not exist with the user or Amazon Web Services account.
      * @throws InvalidDeploymentGroupNameException
      *         The deployment group name was specified in an invalid format.
      * @throws DeploymentGroupDoesNotExistException
-     *         The named deployment group with the IAM user or Amazon Web Services account does not exist.
+     *         The named deployment group with the user or Amazon Web Services account does not exist.
      * @throws DeploymentGroupNameRequiredException
      *         The deployment group name was not specified.
      * @throws InvalidTimeRangeException
@@ -3515,7 +3524,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws DeploymentIdRequiredException
      *         At least one deployment ID must be specified.
      * @throws DeploymentDoesNotExistException
-     *         The deployment with the IAM user or Amazon Web Services account does not exist.
+     *         The deployment with the user or Amazon Web Services account does not exist.
      * @throws InvalidDeploymentIdException
      *         At least one of the deployment IDs was specified in an invalid format.
      * @throws UnsupportedActionForDeploymentTypeException
@@ -3580,7 +3589,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *        Represents the input of a RegisterApplicationRevision operation.
      * @return Result of the RegisterApplicationRevision operation returned by the service.
      * @throws ApplicationDoesNotExistException
-     *         The application does not exist with the IAM user or Amazon Web Services account.
+     *         The application does not exist with the user or Amazon Web Services account.
      * @throws ApplicationNameRequiredException
      *         The minimum number of required application names was not specified.
      * @throws InvalidApplicationNameException
@@ -3657,23 +3666,23 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws InstanceNameAlreadyRegisteredException
      *         The specified on-premises instance name is already registered.
      * @throws IamArnRequiredException
-     *         No IAM ARN was included in the request. You must use an IAM session ARN or IAM user ARN in the request.
+     *         No IAM ARN was included in the request. You must use an IAM session ARN or user ARN in the request.
      * @throws IamSessionArnAlreadyRegisteredException
      *         The request included an IAM session ARN that has already been used to register a different instance.
      * @throws IamUserArnAlreadyRegisteredException
-     *         The specified IAM user ARN is already registered with an on-premises instance.
+     *         The specified user ARN is already registered with an on-premises instance.
      * @throws InstanceNameRequiredException
      *         An on-premises instance name was not specified.
      * @throws IamUserArnRequiredException
-     *         An IAM user ARN was not specified.
+     *         An user ARN was not specified.
      * @throws InvalidInstanceNameException
      *         The on-premises instance name was specified in an invalid format.
      * @throws InvalidIamSessionArnException
      *         The IAM session ARN was specified in an invalid format.
      * @throws InvalidIamUserArnException
-     *         The IAM user ARN was specified in an invalid format.
+     *         The user ARN was specified in an invalid format.
      * @throws MultipleIamArnsProvidedException
-     *         Both an IAM user ARN and an IAM session ARN were included in the request. Use only one ARN type.
+     *         Both an user ARN and an IAM session ARN were included in the request. Use only one ARN type.
      * @sample AmazonCodeDeploy.RegisterOnPremisesInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RegisterOnPremisesInstance"
      *      target="_top">AWS API Documentation</a>
@@ -3808,7 +3817,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws DeploymentIdRequiredException
      *         At least one deployment ID must be specified.
      * @throws DeploymentDoesNotExistException
-     *         The deployment with the IAM user or Amazon Web Services account does not exist.
+     *         The deployment with the user or Amazon Web Services account does not exist.
      * @throws DeploymentAlreadyCompletedException
      *         The deployment is already complete.
      * @throws InvalidDeploymentIdException
@@ -3880,9 +3889,9 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws DeploymentIdRequiredException
      *         At least one deployment ID must be specified.
      * @throws DeploymentDoesNotExistException
-     *         The deployment with the IAM user or Amazon Web Services account does not exist.
+     *         The deployment with the user or Amazon Web Services account does not exist.
      * @throws DeploymentGroupDoesNotExistException
-     *         The named deployment group with the IAM user or Amazon Web Services account does not exist.
+     *         The named deployment group with the user or Amazon Web Services account does not exist.
      * @throws DeploymentAlreadyCompletedException
      *         The deployment is already complete.
      * @throws InvalidDeploymentIdException
@@ -3948,11 +3957,11 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws ResourceArnRequiredException
      *         The ARN of a resource is required, but was not found.
      * @throws ApplicationDoesNotExistException
-     *         The application does not exist with the IAM user or Amazon Web Services account.
+     *         The application does not exist with the user or Amazon Web Services account.
      * @throws DeploymentGroupDoesNotExistException
-     *         The named deployment group with the IAM user or Amazon Web Services account does not exist.
+     *         The named deployment group with the user or Amazon Web Services account does not exist.
      * @throws DeploymentConfigDoesNotExistException
-     *         The deployment configuration does not exist with the IAM user or Amazon Web Services account.
+     *         The deployment configuration does not exist with the user or Amazon Web Services account.
      * @throws TagRequiredException
      *         A tag was not specified.
      * @throws InvalidTagsToAddException
@@ -4020,11 +4029,11 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws ResourceArnRequiredException
      *         The ARN of a resource is required, but was not found.
      * @throws ApplicationDoesNotExistException
-     *         The application does not exist with the IAM user or Amazon Web Services account.
+     *         The application does not exist with the user or Amazon Web Services account.
      * @throws DeploymentGroupDoesNotExistException
-     *         The named deployment group with the IAM user or Amazon Web Services account does not exist.
+     *         The named deployment group with the user or Amazon Web Services account does not exist.
      * @throws DeploymentConfigDoesNotExistException
-     *         The deployment configuration does not exist with the IAM user or Amazon Web Services account.
+     *         The deployment configuration does not exist with the user or Amazon Web Services account.
      * @throws TagRequiredException
      *         A tag was not specified.
      * @throws InvalidTagsToAddException
@@ -4094,9 +4103,9 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws InvalidApplicationNameException
      *         The application name was specified in an invalid format.
      * @throws ApplicationAlreadyExistsException
-     *         An application with the specified name with the IAM user or Amazon Web Services account already exists.
+     *         An application with the specified name with the user or Amazon Web Services account already exists.
      * @throws ApplicationDoesNotExistException
-     *         The application does not exist with the IAM user or Amazon Web Services account.
+     *         The application does not exist with the user or Amazon Web Services account.
      * @sample AmazonCodeDeploy.UpdateApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UpdateApplication" target="_top">AWS
      *      API Documentation</a>
@@ -4163,16 +4172,15 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws InvalidApplicationNameException
      *         The application name was specified in an invalid format.
      * @throws ApplicationDoesNotExistException
-     *         The application does not exist with the IAM user or Amazon Web Services account.
+     *         The application does not exist with the user or Amazon Web Services account.
      * @throws InvalidDeploymentGroupNameException
      *         The deployment group name was specified in an invalid format.
      * @throws DeploymentGroupAlreadyExistsException
-     *         A deployment group with the specified name with the IAM user or Amazon Web Services account already
-     *         exists.
+     *         A deployment group with the specified name with the user or Amazon Web Services account already exists.
      * @throws DeploymentGroupNameRequiredException
      *         The deployment group name was not specified.
      * @throws DeploymentGroupDoesNotExistException
-     *         The named deployment group with the IAM user or Amazon Web Services account does not exist.
+     *         The named deployment group with the user or Amazon Web Services account does not exist.
      * @throws InvalidEC2TagException
      *         The tag was specified in an invalid format.
      * @throws InvalidTagException
@@ -4182,7 +4190,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws InvalidDeploymentConfigNameException
      *         The deployment configuration name was specified in an invalid format.
      * @throws DeploymentConfigDoesNotExistException
-     *         The deployment configuration does not exist with the IAM user or Amazon Web Services account.
+     *         The deployment configuration does not exist with the user or Amazon Web Services account.
      * @throws InvalidRoleException
      *         The service role ARN was specified in an invalid format. Or, if an Auto Scaling group was specified, the
      *         specified service role does not grant the appropriate permissions to Amazon EC2 Auto Scaling.

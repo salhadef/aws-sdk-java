@@ -41,12 +41,14 @@ public class AbstractAWSMarketplaceCommerceAnalyticsAsync extends AbstractAWSMar
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<StartSupportDataExportResult> startSupportDataExportAsync(StartSupportDataExportRequest request) {
 
         return startSupportDataExportAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<StartSupportDataExportResult> startSupportDataExportAsync(StartSupportDataExportRequest request,
             com.amazonaws.handlers.AsyncHandler<StartSupportDataExportRequest, StartSupportDataExportResult> asyncHandler) {
 

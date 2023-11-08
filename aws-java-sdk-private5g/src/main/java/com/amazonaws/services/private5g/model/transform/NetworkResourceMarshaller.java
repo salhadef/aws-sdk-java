@@ -30,6 +30,8 @@ public class NetworkResourceMarshaller {
 
     private static final MarshallingInfo<List> ATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("attributes").build();
+    private static final MarshallingInfo<StructuredPojo> COMMITMENTINFORMATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("commitmentInformation").build();
     private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("iso8601").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -78,6 +80,7 @@ public class NetworkResourceMarshaller {
 
         try {
             protocolMarshaller.marshall(networkResource.getAttributes(), ATTRIBUTES_BINDING);
+            protocolMarshaller.marshall(networkResource.getCommitmentInformation(), COMMITMENTINFORMATION_BINDING);
             protocolMarshaller.marshall(networkResource.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(networkResource.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(networkResource.getHealth(), HEALTH_BINDING);

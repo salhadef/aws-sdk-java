@@ -40,7 +40,8 @@ public class CpuOptions implements Serializable, Cloneable {
     private Integer threadsPerCore;
     /**
      * <p>
-     * Indicates whether the instance is enabled for AMD SEV-SNP.
+     * Indicates whether the instance is enabled for AMD SEV-SNP. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP</a>.
      * </p>
      */
     private String amdSevSnp;
@@ -127,11 +128,13 @@ public class CpuOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instance is enabled for AMD SEV-SNP.
+     * Indicates whether the instance is enabled for AMD SEV-SNP. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP</a>.
      * </p>
      * 
      * @param amdSevSnp
-     *        Indicates whether the instance is enabled for AMD SEV-SNP.
+     *        Indicates whether the instance is enabled for AMD SEV-SNP. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP</a>.
      * @see AmdSevSnpSpecification
      */
 
@@ -141,10 +144,12 @@ public class CpuOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instance is enabled for AMD SEV-SNP.
+     * Indicates whether the instance is enabled for AMD SEV-SNP. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP</a>.
      * </p>
      * 
-     * @return Indicates whether the instance is enabled for AMD SEV-SNP.
+     * @return Indicates whether the instance is enabled for AMD SEV-SNP. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP</a>.
      * @see AmdSevSnpSpecification
      */
 
@@ -154,11 +159,13 @@ public class CpuOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instance is enabled for AMD SEV-SNP.
+     * Indicates whether the instance is enabled for AMD SEV-SNP. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP</a>.
      * </p>
      * 
      * @param amdSevSnp
-     *        Indicates whether the instance is enabled for AMD SEV-SNP.
+     *        Indicates whether the instance is enabled for AMD SEV-SNP. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AmdSevSnpSpecification
      */
@@ -170,11 +177,13 @@ public class CpuOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instance is enabled for AMD SEV-SNP.
+     * Indicates whether the instance is enabled for AMD SEV-SNP. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP</a>.
      * </p>
      * 
      * @param amdSevSnp
-     *        Indicates whether the instance is enabled for AMD SEV-SNP.
+     *        Indicates whether the instance is enabled for AMD SEV-SNP. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AmdSevSnpSpecification
      */

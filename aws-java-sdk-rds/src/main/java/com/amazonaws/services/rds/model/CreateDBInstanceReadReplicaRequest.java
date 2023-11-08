@@ -98,7 +98,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
-     * Default: Inherits from the source DB instance.
+     * Default: Inherits the value from the source DB instance.
      * </p>
      */
     private String dBInstanceClass;
@@ -119,16 +119,16 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * The port number that the DB instance uses for connections.
      * </p>
      * <p>
-     * Default: Inherits from the source DB instance
+     * Valid Values: <code>1150-65535</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code>
+     * Default: Inherits the value from the source DB instance.
      * </p>
      */
     private Integer port;
     /**
      * <p>
-     * A value that indicates whether the read replica is in a Multi-AZ deployment.
+     * Specifies whether the read replica is in a Multi-AZ deployment.
      * </p>
      * <p>
      * You can create a read replica as a Multi-AZ DB instance. RDS creates a standby of your replica in another
@@ -136,34 +136,32 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * independent of whether the source is a Multi-AZ DB instance or a Multi-AZ DB cluster.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      */
     private Boolean multiAZ;
     /**
      * <p>
-     * A value that indicates whether minor engine upgrades are applied automatically to the read replica during the
-     * maintenance window.
+     * Specifies whether to automatically apply minor engine upgrades to the read replica during the maintenance window.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * <p>
-     * Default: Inherits from the source DB instance
+     * Default: Inherits the value from the source DB instance.
      * </p>
      */
     private Boolean autoMinorVersionUpgrade;
     /**
      * <p>
-     * The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB
-     * instance.
+     * The amount of Provisioned IOPS (input/output operations per second) to initially allocate for the DB instance.
      * </p>
      */
     private Integer iops;
     /**
      * <p>
-     * The option group the DB instance is associated with. If omitted, the option group associated with the source
-     * instance or cluster is used.
+     * The option group to associate the DB instance with. If not specified, RDS uses the option group associated with
+     * the source DB instance or cluster.
      * </p>
      * <note>
      * <p>
@@ -171,7 +169,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </p>
      * </note>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      */
     private String optionGroupName;
@@ -180,13 +178,14 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * The name of the DB parameter group to associate with this DB instance.
      * </p>
      * <p>
-     * If you do not specify a value for <code>DBParameterGroupName</code>, then Amazon RDS uses the
-     * <code>DBParameterGroup</code> of source DB instance for a same Region read replica, or the default
+     * If you don't specify a value for <code>DBParameterGroupName</code>, then Amazon RDS uses the
+     * <code>DBParameterGroup</code> of the source DB instance for a same Region read replica, or the default
      * <code>DBParameterGroup</code> for the specified DB engine for a cross-Region read replica.
      * </p>
      * <p>
-     * Specifying a parameter group for this operation is only supported for MySQL and Oracle DB instances. It isn't
-     * supported for RDS Custom.
+     * Specifying a parameter group for this operation is only supported for MySQL DB instances for cross-Region read
+     * replicas and for Oracle DB instances. It isn't supported for MySQL DB instances for same Region read replicas or
+     * for RDS Custom.
      * </p>
      * <p>
      * Constraints:
@@ -199,12 +198,12 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * First character must be a letter
+     * First character must be a letter.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Can't end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens.
      * </p>
      * </li>
      * </ul>
@@ -212,7 +211,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     private String dBParameterGroupName;
     /**
      * <p>
-     * A value that indicates whether the DB instance is publicly accessible.
+     * Specifies whether the DB instance is publicly accessible.
      * </p>
      * <p>
      * When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP
@@ -233,8 +232,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
     /**
      * <p>
-     * Specifies a DB subnet group for the DB instance. The new DB instance is created in the VPC associated with the DB
-     * subnet group. If no DB subnet group is specified, then the new DB instance isn't created in a VPC.
+     * A DB subnet group for the DB instance. The new DB instance is created in the VPC associated with the DB subnet
+     * group. If no DB subnet group is specified, then the new DB instance isn't created in a VPC.
      * </p>
      * <p>
      * Constraints:
@@ -242,7 +241,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
-     * If supplied, must match the name of an existing DBSubnetGroup.
+     * If supplied, must match the name of an existing DB subnet group.
      * </p>
      * </li>
      * <li>
@@ -253,7 +252,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * <li>
      * <p>
      * All read replicas in one Amazon Web Services Region that are created from the same source DB instance must
-     * either:&gt;
+     * either:
      * </p>
      * <ul>
      * <li>
@@ -279,7 +278,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * A list of Amazon EC2 VPC security groups to associate with the read replica.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * <p>
      * Default: The default EC2 VPC security group for the DB subnet group's VPC.
@@ -288,41 +287,44 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     private com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupIds;
     /**
      * <p>
-     * Specifies the storage type to be associated with the read replica.
-     * </p>
-     * <p>
-     * Valid values: <code>gp2 | gp3 | io1 | standard</code>
+     * The storage type to associate with the read replica.
      * </p>
      * <p>
      * If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code>
      * parameter.
      * </p>
      * <p>
-     * Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code>
+     * Valid Values: <code>gp2 | gp3 | io1 | standard</code>
+     * </p>
+     * <p>
+     * Default: <code>io1</code> if the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.
      * </p>
      */
     private String storageType;
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the read replica to snapshots of the read replica. By
-     * default, tags are not copied.
+     * Specifies whether to copy all tags from the read replica to snapshots of the read replica. By default, tags
+     * aren't copied.
      * </p>
      */
     private Boolean copyTagsToSnapshot;
     /**
      * <p>
      * The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the read replica. To
-     * disable collecting Enhanced Monitoring metrics, specify 0. The default is 0.
+     * disable collection of Enhanced Monitoring metrics, specify <code>0</code>. The default is <code>0</code>.
      * </p>
      * <p>
-     * If <code>MonitoringRoleArn</code> is specified, then you must also set <code>MonitoringInterval</code> to a value
-     * other than 0.
+     * If <code>MonitoringRoleArn</code> is specified, then you must set <code>MonitoringInterval</code> to a value
+     * other than <code>0</code>.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * <p>
      * Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code>
+     * </p>
+     * <p>
+     * Default: <code>0</code>
      * </p>
      */
     private Integer monitoringInterval;
@@ -339,7 +341,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * <code>MonitoringRoleArn</code> value.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      */
     private String monitoringRoleArn;
@@ -447,14 +449,14 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </p>
      * </note>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      */
     private String preSignedUrl;
     /**
      * <p>
-     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts. By default, mapping isn't enabled.
+     * Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to
+     * database accounts. By default, mapping isn't enabled.
      * </p>
      * <p>
      * For more information about IAM database authentication, see <a
@@ -462,13 +464,13 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      */
     private Boolean enableIAMDatabaseAuthentication;
     /**
      * <p>
-     * A value that indicates whether to enable Performance Insights for the read replica.
+     * Specifies whether to enable Performance Insights for the read replica.
      * </p>
      * <p>
      * For more information, see <a
@@ -476,7 +478,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * Insights</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      */
     private Boolean enablePerformanceInsights;
@@ -493,61 +495,43 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * different default KMS key for each Amazon Web Services Region.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      */
     private String performanceInsightsKMSKeyId;
     /**
      * <p>
-     * The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:
+     * The number of days to retain Performance Insights data.
+     * </p>
+     * <p>
+     * This setting doesn't apply to RDS Custom DB instances.
+     * </p>
+     * <p>
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * 7
+     * <code>7</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
+     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31),
+     * <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 731
+     * <code>731</code>
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For example, the following values are valid:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * 93 (3 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 341 (11 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 589 (19 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 731
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.
+     * Default: <code>7</code> days
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * If you specify a retention period that isn't valid, such as <code>94</code>, Amazon RDS returns an error.
      * </p>
      */
     private Integer performanceInsightsRetentionPeriod;
@@ -559,7 +543,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> enableCloudwatchLogsExports;
@@ -568,23 +552,23 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ProcessorFeature> processorFeatures;
     /**
      * <p>
-     * A value that indicates whether the DB instance class of the DB instance uses its default processor features.
+     * Specifies whether the DB instance class of the DB instance uses its default processor features.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      */
     private Boolean useDefaultProcessorFeatures;
     /**
      * <p>
-     * A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted
-     * when deletion protection is enabled. By default, deletion protection isn't enabled. For more information, see <a
+     * Specifies whether to enable deletion protection for the DB instance. The database can't be deleted when deletion
+     * protection is enabled. By default, deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      * Instance</a>.
      * </p>
@@ -601,19 +585,91 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * Authentication</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      */
     private String domain;
     /**
      * <p>
-     * The name of the IAM role to be used when making API calls to the Directory Service.
+     * The name of the IAM role to use when making API calls to the Directory Service.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      */
     private String domainIAMRoleName;
+    /**
+     * <p>
+     * The fully qualified domain name (FQDN) of an Active Directory domain.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Can't be longer than 64 characters.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Example: <code>mymanagedADtest.mymanagedAD.mydomain</code>
+     * </p>
+     */
+    private String domainFqdn;
+    /**
+     * <p>
+     * The Active Directory organizational unit for your DB instance to join.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be in the distinguished name format.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can't be longer than 64 characters.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code>
+     * </p>
+     */
+    private String domainOu;
+    /**
+     * <p>
+     * The ARN for the Secrets Manager secret with the credentials for the user joining the domain.
+     * </p>
+     * <p>
+     * Example: <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
+     * </p>
+     */
+    private String domainAuthSecretArn;
+    /**
+     * <p>
+     * The IPv4 DNS IP addresses of your primary and secondary Active Directory domain controllers.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the
+     * primary domain controller for both entries in the list.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Example: <code>123.124.125.126,234.235.236.237</code>
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> domainDnsIps;
     /**
      * <p>
      * The open mode of the replica database: mounted or read-only.
@@ -679,7 +735,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
-     * This setting is required for RDS Custom.
+     * This setting is required for RDS Custom DB instances.
      * </p>
      */
     private String customIamInstanceProfile;
@@ -688,7 +744,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * The network type of the DB instance.
      * </p>
      * <p>
-     * Valid values:
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
@@ -719,13 +775,13 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * Specifies the storage throughput value for the read replica.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom or Amazon Aurora.
+     * This setting doesn't apply to RDS Custom or Amazon Aurora DB instances.
      * </p>
      */
     private Integer storageThroughput;
     /**
      * <p>
-     * A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts read replica.
+     * Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts read replica.
      * </p>
      * <p>
      * A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your
@@ -791,6 +847,19 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </ul>
      */
     private String sourceDBClusterIdentifier;
+    /**
+     * <p>
+     * Indicates whether the DB instance has a dedicated log volume (DLV) enabled.
+     * </p>
+     */
+    private Boolean dedicatedLogVolume;
+    /**
+     * <p>
+     * Whether to upgrade the storage file system configuration on the read replica. This option migrates the read
+     * replica from the old storage file system layout to the preferred layout.
+     * </p>
+     */
+    private Boolean upgradeStorageConfig;
     /** The region where the source instance is located. */
     private String sourceRegion;
 
@@ -1265,7 +1334,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
-     * Default: Inherits from the source DB instance.
+     * Default: Inherits the value from the source DB instance.
      * </p>
      * 
      * @param dBInstanceClass
@@ -1275,7 +1344,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
      *        Class</a> in the <i>Amazon RDS User Guide</i>.</p>
      *        <p>
-     *        Default: Inherits from the source DB instance.
+     *        Default: Inherits the value from the source DB instance.
      */
 
     public void setDBInstanceClass(String dBInstanceClass) {
@@ -1291,7 +1360,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
-     * Default: Inherits from the source DB instance.
+     * Default: Inherits the value from the source DB instance.
      * </p>
      * 
      * @return The compute and memory capacity of the read replica, for example db.m4.large. Not all DB instance classes
@@ -1300,7 +1369,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
      *         Class</a> in the <i>Amazon RDS User Guide</i>.</p>
      *         <p>
-     *         Default: Inherits from the source DB instance.
+     *         Default: Inherits the value from the source DB instance.
      */
 
     public String getDBInstanceClass() {
@@ -1316,7 +1385,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
-     * Default: Inherits from the source DB instance.
+     * Default: Inherits the value from the source DB instance.
      * </p>
      * 
      * @param dBInstanceClass
@@ -1326,7 +1395,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
      *        Class</a> in the <i>Amazon RDS User Guide</i>.</p>
      *        <p>
-     *        Default: Inherits from the source DB instance.
+     *        Default: Inherits the value from the source DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1413,19 +1482,19 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * The port number that the DB instance uses for connections.
      * </p>
      * <p>
-     * Default: Inherits from the source DB instance
+     * Valid Values: <code>1150-65535</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code>
+     * Default: Inherits the value from the source DB instance.
      * </p>
      * 
      * @param port
      *        The port number that the DB instance uses for connections.</p>
      *        <p>
-     *        Default: Inherits from the source DB instance
+     *        Valid Values: <code>1150-65535</code>
      *        </p>
      *        <p>
-     *        Valid Values: <code>1150-65535</code>
+     *        Default: Inherits the value from the source DB instance.
      */
 
     public void setPort(Integer port) {
@@ -1437,18 +1506,18 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * The port number that the DB instance uses for connections.
      * </p>
      * <p>
-     * Default: Inherits from the source DB instance
+     * Valid Values: <code>1150-65535</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code>
+     * Default: Inherits the value from the source DB instance.
      * </p>
      * 
      * @return The port number that the DB instance uses for connections.</p>
      *         <p>
-     *         Default: Inherits from the source DB instance
+     *         Valid Values: <code>1150-65535</code>
      *         </p>
      *         <p>
-     *         Valid Values: <code>1150-65535</code>
+     *         Default: Inherits the value from the source DB instance.
      */
 
     public Integer getPort() {
@@ -1460,19 +1529,19 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * The port number that the DB instance uses for connections.
      * </p>
      * <p>
-     * Default: Inherits from the source DB instance
+     * Valid Values: <code>1150-65535</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code>
+     * Default: Inherits the value from the source DB instance.
      * </p>
      * 
      * @param port
      *        The port number that the DB instance uses for connections.</p>
      *        <p>
-     *        Default: Inherits from the source DB instance
+     *        Valid Values: <code>1150-65535</code>
      *        </p>
      *        <p>
-     *        Valid Values: <code>1150-65535</code>
+     *        Default: Inherits the value from the source DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1483,7 +1552,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A value that indicates whether the read replica is in a Multi-AZ deployment.
+     * Specifies whether the read replica is in a Multi-AZ deployment.
      * </p>
      * <p>
      * You can create a read replica as a Multi-AZ DB instance. RDS creates a standby of your replica in another
@@ -1491,18 +1560,18 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * independent of whether the source is a Multi-AZ DB instance or a Multi-AZ DB cluster.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * 
      * @param multiAZ
-     *        A value that indicates whether the read replica is in a Multi-AZ deployment.</p>
+     *        Specifies whether the read replica is in a Multi-AZ deployment.</p>
      *        <p>
      *        You can create a read replica as a Multi-AZ DB instance. RDS creates a standby of your replica in another
      *        Availability Zone for failover support for the replica. Creating your read replica as a Multi-AZ DB
      *        instance is independent of whether the source is a Multi-AZ DB instance or a Multi-AZ DB cluster.
      *        </p>
      *        <p>
-     *        This setting doesn't apply to RDS Custom.
+     *        This setting doesn't apply to RDS Custom DB instances.
      */
 
     public void setMultiAZ(Boolean multiAZ) {
@@ -1511,7 +1580,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A value that indicates whether the read replica is in a Multi-AZ deployment.
+     * Specifies whether the read replica is in a Multi-AZ deployment.
      * </p>
      * <p>
      * You can create a read replica as a Multi-AZ DB instance. RDS creates a standby of your replica in another
@@ -1519,17 +1588,17 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * independent of whether the source is a Multi-AZ DB instance or a Multi-AZ DB cluster.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * 
-     * @return A value that indicates whether the read replica is in a Multi-AZ deployment.</p>
+     * @return Specifies whether the read replica is in a Multi-AZ deployment.</p>
      *         <p>
      *         You can create a read replica as a Multi-AZ DB instance. RDS creates a standby of your replica in another
      *         Availability Zone for failover support for the replica. Creating your read replica as a Multi-AZ DB
      *         instance is independent of whether the source is a Multi-AZ DB instance or a Multi-AZ DB cluster.
      *         </p>
      *         <p>
-     *         This setting doesn't apply to RDS Custom.
+     *         This setting doesn't apply to RDS Custom DB instances.
      */
 
     public Boolean getMultiAZ() {
@@ -1538,7 +1607,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A value that indicates whether the read replica is in a Multi-AZ deployment.
+     * Specifies whether the read replica is in a Multi-AZ deployment.
      * </p>
      * <p>
      * You can create a read replica as a Multi-AZ DB instance. RDS creates a standby of your replica in another
@@ -1546,18 +1615,18 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * independent of whether the source is a Multi-AZ DB instance or a Multi-AZ DB cluster.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * 
      * @param multiAZ
-     *        A value that indicates whether the read replica is in a Multi-AZ deployment.</p>
+     *        Specifies whether the read replica is in a Multi-AZ deployment.</p>
      *        <p>
      *        You can create a read replica as a Multi-AZ DB instance. RDS creates a standby of your replica in another
      *        Availability Zone for failover support for the replica. Creating your read replica as a Multi-AZ DB
      *        instance is independent of whether the source is a Multi-AZ DB instance or a Multi-AZ DB cluster.
      *        </p>
      *        <p>
-     *        This setting doesn't apply to RDS Custom.
+     *        This setting doesn't apply to RDS Custom DB instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1568,7 +1637,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A value that indicates whether the read replica is in a Multi-AZ deployment.
+     * Specifies whether the read replica is in a Multi-AZ deployment.
      * </p>
      * <p>
      * You can create a read replica as a Multi-AZ DB instance. RDS creates a standby of your replica in another
@@ -1576,17 +1645,17 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * independent of whether the source is a Multi-AZ DB instance or a Multi-AZ DB cluster.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * 
-     * @return A value that indicates whether the read replica is in a Multi-AZ deployment.</p>
+     * @return Specifies whether the read replica is in a Multi-AZ deployment.</p>
      *         <p>
      *         You can create a read replica as a Multi-AZ DB instance. RDS creates a standby of your replica in another
      *         Availability Zone for failover support for the replica. Creating your read replica as a Multi-AZ DB
      *         instance is independent of whether the source is a Multi-AZ DB instance or a Multi-AZ DB cluster.
      *         </p>
      *         <p>
-     *         This setting doesn't apply to RDS Custom.
+     *         This setting doesn't apply to RDS Custom DB instances.
      */
 
     public Boolean isMultiAZ() {
@@ -1595,24 +1664,23 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A value that indicates whether minor engine upgrades are applied automatically to the read replica during the
-     * maintenance window.
+     * Specifies whether to automatically apply minor engine upgrades to the read replica during the maintenance window.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * <p>
-     * Default: Inherits from the source DB instance
+     * Default: Inherits the value from the source DB instance.
      * </p>
      * 
      * @param autoMinorVersionUpgrade
-     *        A value that indicates whether minor engine upgrades are applied automatically to the read replica during
-     *        the maintenance window.</p>
+     *        Specifies whether to automatically apply minor engine upgrades to the read replica during the maintenance
+     *        window.</p>
      *        <p>
-     *        This setting doesn't apply to RDS Custom.
+     *        This setting doesn't apply to RDS Custom DB instances.
      *        </p>
      *        <p>
-     *        Default: Inherits from the source DB instance
+     *        Default: Inherits the value from the source DB instance.
      */
 
     public void setAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
@@ -1621,23 +1689,22 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A value that indicates whether minor engine upgrades are applied automatically to the read replica during the
-     * maintenance window.
+     * Specifies whether to automatically apply minor engine upgrades to the read replica during the maintenance window.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * <p>
-     * Default: Inherits from the source DB instance
+     * Default: Inherits the value from the source DB instance.
      * </p>
      * 
-     * @return A value that indicates whether minor engine upgrades are applied automatically to the read replica during
-     *         the maintenance window.</p>
+     * @return Specifies whether to automatically apply minor engine upgrades to the read replica during the maintenance
+     *         window.</p>
      *         <p>
-     *         This setting doesn't apply to RDS Custom.
+     *         This setting doesn't apply to RDS Custom DB instances.
      *         </p>
      *         <p>
-     *         Default: Inherits from the source DB instance
+     *         Default: Inherits the value from the source DB instance.
      */
 
     public Boolean getAutoMinorVersionUpgrade() {
@@ -1646,24 +1713,23 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A value that indicates whether minor engine upgrades are applied automatically to the read replica during the
-     * maintenance window.
+     * Specifies whether to automatically apply minor engine upgrades to the read replica during the maintenance window.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * <p>
-     * Default: Inherits from the source DB instance
+     * Default: Inherits the value from the source DB instance.
      * </p>
      * 
      * @param autoMinorVersionUpgrade
-     *        A value that indicates whether minor engine upgrades are applied automatically to the read replica during
-     *        the maintenance window.</p>
+     *        Specifies whether to automatically apply minor engine upgrades to the read replica during the maintenance
+     *        window.</p>
      *        <p>
-     *        This setting doesn't apply to RDS Custom.
+     *        This setting doesn't apply to RDS Custom DB instances.
      *        </p>
      *        <p>
-     *        Default: Inherits from the source DB instance
+     *        Default: Inherits the value from the source DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1674,23 +1740,22 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A value that indicates whether minor engine upgrades are applied automatically to the read replica during the
-     * maintenance window.
+     * Specifies whether to automatically apply minor engine upgrades to the read replica during the maintenance window.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * <p>
-     * Default: Inherits from the source DB instance
+     * Default: Inherits the value from the source DB instance.
      * </p>
      * 
-     * @return A value that indicates whether minor engine upgrades are applied automatically to the read replica during
-     *         the maintenance window.</p>
+     * @return Specifies whether to automatically apply minor engine upgrades to the read replica during the maintenance
+     *         window.</p>
      *         <p>
-     *         This setting doesn't apply to RDS Custom.
+     *         This setting doesn't apply to RDS Custom DB instances.
      *         </p>
      *         <p>
-     *         Default: Inherits from the source DB instance
+     *         Default: Inherits the value from the source DB instance.
      */
 
     public Boolean isAutoMinorVersionUpgrade() {
@@ -1699,12 +1764,11 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB
-     * instance.
+     * The amount of Provisioned IOPS (input/output operations per second) to initially allocate for the DB instance.
      * </p>
      * 
      * @param iops
-     *        The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB
+     *        The amount of Provisioned IOPS (input/output operations per second) to initially allocate for the DB
      *        instance.
      */
 
@@ -1714,11 +1778,10 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB
-     * instance.
+     * The amount of Provisioned IOPS (input/output operations per second) to initially allocate for the DB instance.
      * </p>
      * 
-     * @return The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB
+     * @return The amount of Provisioned IOPS (input/output operations per second) to initially allocate for the DB
      *         instance.
      */
 
@@ -1728,12 +1791,11 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB
-     * instance.
+     * The amount of Provisioned IOPS (input/output operations per second) to initially allocate for the DB instance.
      * </p>
      * 
      * @param iops
-     *        The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB
+     *        The amount of Provisioned IOPS (input/output operations per second) to initially allocate for the DB
      *        instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1745,8 +1807,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The option group the DB instance is associated with. If omitted, the option group associated with the source
-     * instance or cluster is used.
+     * The option group to associate the DB instance with. If not specified, RDS uses the option group associated with
+     * the source DB instance or cluster.
      * </p>
      * <note>
      * <p>
@@ -1754,18 +1816,18 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </p>
      * </note>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * 
      * @param optionGroupName
-     *        The option group the DB instance is associated with. If omitted, the option group associated with the
-     *        source instance or cluster is used.</p> <note>
+     *        The option group to associate the DB instance with. If not specified, RDS uses the option group associated
+     *        with the source DB instance or cluster.</p> <note>
      *        <p>
      *        For SQL Server, you must use the option group associated with the source.
      *        </p>
      *        </note>
      *        <p>
-     *        This setting doesn't apply to RDS Custom.
+     *        This setting doesn't apply to RDS Custom DB instances.
      */
 
     public void setOptionGroupName(String optionGroupName) {
@@ -1774,8 +1836,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The option group the DB instance is associated with. If omitted, the option group associated with the source
-     * instance or cluster is used.
+     * The option group to associate the DB instance with. If not specified, RDS uses the option group associated with
+     * the source DB instance or cluster.
      * </p>
      * <note>
      * <p>
@@ -1783,17 +1845,17 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </p>
      * </note>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * 
-     * @return The option group the DB instance is associated with. If omitted, the option group associated with the
-     *         source instance or cluster is used.</p> <note>
+     * @return The option group to associate the DB instance with. If not specified, RDS uses the option group
+     *         associated with the source DB instance or cluster.</p> <note>
      *         <p>
      *         For SQL Server, you must use the option group associated with the source.
      *         </p>
      *         </note>
      *         <p>
-     *         This setting doesn't apply to RDS Custom.
+     *         This setting doesn't apply to RDS Custom DB instances.
      */
 
     public String getOptionGroupName() {
@@ -1802,8 +1864,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The option group the DB instance is associated with. If omitted, the option group associated with the source
-     * instance or cluster is used.
+     * The option group to associate the DB instance with. If not specified, RDS uses the option group associated with
+     * the source DB instance or cluster.
      * </p>
      * <note>
      * <p>
@@ -1811,18 +1873,18 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </p>
      * </note>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * 
      * @param optionGroupName
-     *        The option group the DB instance is associated with. If omitted, the option group associated with the
-     *        source instance or cluster is used.</p> <note>
+     *        The option group to associate the DB instance with. If not specified, RDS uses the option group associated
+     *        with the source DB instance or cluster.</p> <note>
      *        <p>
      *        For SQL Server, you must use the option group associated with the source.
      *        </p>
      *        </note>
      *        <p>
-     *        This setting doesn't apply to RDS Custom.
+     *        This setting doesn't apply to RDS Custom DB instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1836,13 +1898,14 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * The name of the DB parameter group to associate with this DB instance.
      * </p>
      * <p>
-     * If you do not specify a value for <code>DBParameterGroupName</code>, then Amazon RDS uses the
-     * <code>DBParameterGroup</code> of source DB instance for a same Region read replica, or the default
+     * If you don't specify a value for <code>DBParameterGroupName</code>, then Amazon RDS uses the
+     * <code>DBParameterGroup</code> of the source DB instance for a same Region read replica, or the default
      * <code>DBParameterGroup</code> for the specified DB engine for a cross-Region read replica.
      * </p>
      * <p>
-     * Specifying a parameter group for this operation is only supported for MySQL and Oracle DB instances. It isn't
-     * supported for RDS Custom.
+     * Specifying a parameter group for this operation is only supported for MySQL DB instances for cross-Region read
+     * replicas and for Oracle DB instances. It isn't supported for MySQL DB instances for same Region read replicas or
+     * for RDS Custom.
      * </p>
      * <p>
      * Constraints:
@@ -1855,12 +1918,12 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * First character must be a letter
+     * First character must be a letter.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Can't end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens.
      * </p>
      * </li>
      * </ul>
@@ -1868,13 +1931,14 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * @param dBParameterGroupName
      *        The name of the DB parameter group to associate with this DB instance.</p>
      *        <p>
-     *        If you do not specify a value for <code>DBParameterGroupName</code>, then Amazon RDS uses the
-     *        <code>DBParameterGroup</code> of source DB instance for a same Region read replica, or the default
+     *        If you don't specify a value for <code>DBParameterGroupName</code>, then Amazon RDS uses the
+     *        <code>DBParameterGroup</code> of the source DB instance for a same Region read replica, or the default
      *        <code>DBParameterGroup</code> for the specified DB engine for a cross-Region read replica.
      *        </p>
      *        <p>
-     *        Specifying a parameter group for this operation is only supported for MySQL and Oracle DB instances. It
-     *        isn't supported for RDS Custom.
+     *        Specifying a parameter group for this operation is only supported for MySQL DB instances for cross-Region
+     *        read replicas and for Oracle DB instances. It isn't supported for MySQL DB instances for same Region read
+     *        replicas or for RDS Custom.
      *        </p>
      *        <p>
      *        Constraints:
@@ -1887,12 +1951,12 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        </li>
      *        <li>
      *        <p>
-     *        First character must be a letter
+     *        First character must be a letter.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Can't end with a hyphen or contain two consecutive hyphens
+     *        Can't end with a hyphen or contain two consecutive hyphens.
      *        </p>
      *        </li>
      */
@@ -1906,13 +1970,14 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * The name of the DB parameter group to associate with this DB instance.
      * </p>
      * <p>
-     * If you do not specify a value for <code>DBParameterGroupName</code>, then Amazon RDS uses the
-     * <code>DBParameterGroup</code> of source DB instance for a same Region read replica, or the default
+     * If you don't specify a value for <code>DBParameterGroupName</code>, then Amazon RDS uses the
+     * <code>DBParameterGroup</code> of the source DB instance for a same Region read replica, or the default
      * <code>DBParameterGroup</code> for the specified DB engine for a cross-Region read replica.
      * </p>
      * <p>
-     * Specifying a parameter group for this operation is only supported for MySQL and Oracle DB instances. It isn't
-     * supported for RDS Custom.
+     * Specifying a parameter group for this operation is only supported for MySQL DB instances for cross-Region read
+     * replicas and for Oracle DB instances. It isn't supported for MySQL DB instances for same Region read replicas or
+     * for RDS Custom.
      * </p>
      * <p>
      * Constraints:
@@ -1925,25 +1990,26 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * First character must be a letter
+     * First character must be a letter.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Can't end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens.
      * </p>
      * </li>
      * </ul>
      * 
      * @return The name of the DB parameter group to associate with this DB instance.</p>
      *         <p>
-     *         If you do not specify a value for <code>DBParameterGroupName</code>, then Amazon RDS uses the
-     *         <code>DBParameterGroup</code> of source DB instance for a same Region read replica, or the default
+     *         If you don't specify a value for <code>DBParameterGroupName</code>, then Amazon RDS uses the
+     *         <code>DBParameterGroup</code> of the source DB instance for a same Region read replica, or the default
      *         <code>DBParameterGroup</code> for the specified DB engine for a cross-Region read replica.
      *         </p>
      *         <p>
-     *         Specifying a parameter group for this operation is only supported for MySQL and Oracle DB instances. It
-     *         isn't supported for RDS Custom.
+     *         Specifying a parameter group for this operation is only supported for MySQL DB instances for cross-Region
+     *         read replicas and for Oracle DB instances. It isn't supported for MySQL DB instances for same Region read
+     *         replicas or for RDS Custom.
      *         </p>
      *         <p>
      *         Constraints:
@@ -1956,12 +2022,12 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *         </li>
      *         <li>
      *         <p>
-     *         First character must be a letter
+     *         First character must be a letter.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Can't end with a hyphen or contain two consecutive hyphens
+     *         Can't end with a hyphen or contain two consecutive hyphens.
      *         </p>
      *         </li>
      */
@@ -1975,13 +2041,14 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * The name of the DB parameter group to associate with this DB instance.
      * </p>
      * <p>
-     * If you do not specify a value for <code>DBParameterGroupName</code>, then Amazon RDS uses the
-     * <code>DBParameterGroup</code> of source DB instance for a same Region read replica, or the default
+     * If you don't specify a value for <code>DBParameterGroupName</code>, then Amazon RDS uses the
+     * <code>DBParameterGroup</code> of the source DB instance for a same Region read replica, or the default
      * <code>DBParameterGroup</code> for the specified DB engine for a cross-Region read replica.
      * </p>
      * <p>
-     * Specifying a parameter group for this operation is only supported for MySQL and Oracle DB instances. It isn't
-     * supported for RDS Custom.
+     * Specifying a parameter group for this operation is only supported for MySQL DB instances for cross-Region read
+     * replicas and for Oracle DB instances. It isn't supported for MySQL DB instances for same Region read replicas or
+     * for RDS Custom.
      * </p>
      * <p>
      * Constraints:
@@ -1994,12 +2061,12 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * First character must be a letter
+     * First character must be a letter.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Can't end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens.
      * </p>
      * </li>
      * </ul>
@@ -2007,13 +2074,14 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * @param dBParameterGroupName
      *        The name of the DB parameter group to associate with this DB instance.</p>
      *        <p>
-     *        If you do not specify a value for <code>DBParameterGroupName</code>, then Amazon RDS uses the
-     *        <code>DBParameterGroup</code> of source DB instance for a same Region read replica, or the default
+     *        If you don't specify a value for <code>DBParameterGroupName</code>, then Amazon RDS uses the
+     *        <code>DBParameterGroup</code> of the source DB instance for a same Region read replica, or the default
      *        <code>DBParameterGroup</code> for the specified DB engine for a cross-Region read replica.
      *        </p>
      *        <p>
-     *        Specifying a parameter group for this operation is only supported for MySQL and Oracle DB instances. It
-     *        isn't supported for RDS Custom.
+     *        Specifying a parameter group for this operation is only supported for MySQL DB instances for cross-Region
+     *        read replicas and for Oracle DB instances. It isn't supported for MySQL DB instances for same Region read
+     *        replicas or for RDS Custom.
      *        </p>
      *        <p>
      *        Constraints:
@@ -2026,12 +2094,12 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        </li>
      *        <li>
      *        <p>
-     *        First character must be a letter
+     *        First character must be a letter.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Can't end with a hyphen or contain two consecutive hyphens
+     *        Can't end with a hyphen or contain two consecutive hyphens.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2044,7 +2112,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A value that indicates whether the DB instance is publicly accessible.
+     * Specifies whether the DB instance is publicly accessible.
      * </p>
      * <p>
      * When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP
@@ -2061,7 +2129,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param publiclyAccessible
-     *        A value that indicates whether the DB instance is publicly accessible.</p>
+     *        Specifies whether the DB instance is publicly accessible.</p>
      *        <p>
      *        When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private
      *        IP address from within the DB cluster's virtual private cloud (VPC). It resolves to the public IP address
@@ -2083,7 +2151,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A value that indicates whether the DB instance is publicly accessible.
+     * Specifies whether the DB instance is publicly accessible.
      * </p>
      * <p>
      * When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP
@@ -2099,7 +2167,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * For more information, see <a>CreateDBInstance</a>.
      * </p>
      * 
-     * @return A value that indicates whether the DB instance is publicly accessible.</p>
+     * @return Specifies whether the DB instance is publicly accessible.</p>
      *         <p>
      *         When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private
      *         IP address from within the DB cluster's virtual private cloud (VPC). It resolves to the public IP address
@@ -2121,7 +2189,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A value that indicates whether the DB instance is publicly accessible.
+     * Specifies whether the DB instance is publicly accessible.
      * </p>
      * <p>
      * When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP
@@ -2138,7 +2206,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param publiclyAccessible
-     *        A value that indicates whether the DB instance is publicly accessible.</p>
+     *        Specifies whether the DB instance is publicly accessible.</p>
      *        <p>
      *        When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private
      *        IP address from within the DB cluster's virtual private cloud (VPC). It resolves to the public IP address
@@ -2162,7 +2230,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A value that indicates whether the DB instance is publicly accessible.
+     * Specifies whether the DB instance is publicly accessible.
      * </p>
      * <p>
      * When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP
@@ -2178,7 +2246,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * For more information, see <a>CreateDBInstance</a>.
      * </p>
      * 
-     * @return A value that indicates whether the DB instance is publicly accessible.</p>
+     * @return Specifies whether the DB instance is publicly accessible.</p>
      *         <p>
      *         When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private
      *         IP address from within the DB cluster's virtual private cloud (VPC). It resolves to the public IP address
@@ -2255,8 +2323,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Specifies a DB subnet group for the DB instance. The new DB instance is created in the VPC associated with the DB
-     * subnet group. If no DB subnet group is specified, then the new DB instance isn't created in a VPC.
+     * A DB subnet group for the DB instance. The new DB instance is created in the VPC associated with the DB subnet
+     * group. If no DB subnet group is specified, then the new DB instance isn't created in a VPC.
      * </p>
      * <p>
      * Constraints:
@@ -2264,7 +2332,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
-     * If supplied, must match the name of an existing DBSubnetGroup.
+     * If supplied, must match the name of an existing DB subnet group.
      * </p>
      * </li>
      * <li>
@@ -2275,7 +2343,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * <li>
      * <p>
      * All read replicas in one Amazon Web Services Region that are created from the same source DB instance must
-     * either:&gt;
+     * either:
      * </p>
      * <ul>
      * <li>
@@ -2296,16 +2364,15 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param dBSubnetGroupName
-     *        Specifies a DB subnet group for the DB instance. The new DB instance is created in the VPC associated with
-     *        the DB subnet group. If no DB subnet group is specified, then the new DB instance isn't created in a
-     *        VPC.</p>
+     *        A DB subnet group for the DB instance. The new DB instance is created in the VPC associated with the DB
+     *        subnet group. If no DB subnet group is specified, then the new DB instance isn't created in a VPC.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        If supplied, must match the name of an existing DBSubnetGroup.
+     *        If supplied, must match the name of an existing DB subnet group.
      *        </p>
      *        </li>
      *        <li>
@@ -2317,7 +2384,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        <li>
      *        <p>
      *        All read replicas in one Amazon Web Services Region that are created from the same source DB instance must
-     *        either:&gt;
+     *        either:
      *        </p>
      *        <ul>
      *        <li>
@@ -2343,8 +2410,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Specifies a DB subnet group for the DB instance. The new DB instance is created in the VPC associated with the DB
-     * subnet group. If no DB subnet group is specified, then the new DB instance isn't created in a VPC.
+     * A DB subnet group for the DB instance. The new DB instance is created in the VPC associated with the DB subnet
+     * group. If no DB subnet group is specified, then the new DB instance isn't created in a VPC.
      * </p>
      * <p>
      * Constraints:
@@ -2352,7 +2419,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
-     * If supplied, must match the name of an existing DBSubnetGroup.
+     * If supplied, must match the name of an existing DB subnet group.
      * </p>
      * </li>
      * <li>
@@ -2363,7 +2430,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * <li>
      * <p>
      * All read replicas in one Amazon Web Services Region that are created from the same source DB instance must
-     * either:&gt;
+     * either:
      * </p>
      * <ul>
      * <li>
@@ -2383,16 +2450,15 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * Example: <code>mydbsubnetgroup</code>
      * </p>
      * 
-     * @return Specifies a DB subnet group for the DB instance. The new DB instance is created in the VPC associated
-     *         with the DB subnet group. If no DB subnet group is specified, then the new DB instance isn't created in a
-     *         VPC.</p>
+     * @return A DB subnet group for the DB instance. The new DB instance is created in the VPC associated with the DB
+     *         subnet group. If no DB subnet group is specified, then the new DB instance isn't created in a VPC.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         If supplied, must match the name of an existing DBSubnetGroup.
+     *         If supplied, must match the name of an existing DB subnet group.
      *         </p>
      *         </li>
      *         <li>
@@ -2404,7 +2470,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *         <li>
      *         <p>
      *         All read replicas in one Amazon Web Services Region that are created from the same source DB instance
-     *         must either:&gt;
+     *         must either:
      *         </p>
      *         <ul>
      *         <li>
@@ -2430,8 +2496,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Specifies a DB subnet group for the DB instance. The new DB instance is created in the VPC associated with the DB
-     * subnet group. If no DB subnet group is specified, then the new DB instance isn't created in a VPC.
+     * A DB subnet group for the DB instance. The new DB instance is created in the VPC associated with the DB subnet
+     * group. If no DB subnet group is specified, then the new DB instance isn't created in a VPC.
      * </p>
      * <p>
      * Constraints:
@@ -2439,7 +2505,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
-     * If supplied, must match the name of an existing DBSubnetGroup.
+     * If supplied, must match the name of an existing DB subnet group.
      * </p>
      * </li>
      * <li>
@@ -2450,7 +2516,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * <li>
      * <p>
      * All read replicas in one Amazon Web Services Region that are created from the same source DB instance must
-     * either:&gt;
+     * either:
      * </p>
      * <ul>
      * <li>
@@ -2471,16 +2537,15 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param dBSubnetGroupName
-     *        Specifies a DB subnet group for the DB instance. The new DB instance is created in the VPC associated with
-     *        the DB subnet group. If no DB subnet group is specified, then the new DB instance isn't created in a
-     *        VPC.</p>
+     *        A DB subnet group for the DB instance. The new DB instance is created in the VPC associated with the DB
+     *        subnet group. If no DB subnet group is specified, then the new DB instance isn't created in a VPC.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        If supplied, must match the name of an existing DBSubnetGroup.
+     *        If supplied, must match the name of an existing DB subnet group.
      *        </p>
      *        </li>
      *        <li>
@@ -2492,7 +2557,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        <li>
      *        <p>
      *        All read replicas in one Amazon Web Services Region that are created from the same source DB instance must
-     *        either:&gt;
+     *        either:
      *        </p>
      *        <ul>
      *        <li>
@@ -2523,7 +2588,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * A list of Amazon EC2 VPC security groups to associate with the read replica.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * <p>
      * Default: The default EC2 VPC security group for the DB subnet group's VPC.
@@ -2531,7 +2596,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * 
      * @return A list of Amazon EC2 VPC security groups to associate with the read replica.</p>
      *         <p>
-     *         This setting doesn't apply to RDS Custom.
+     *         This setting doesn't apply to RDS Custom DB instances.
      *         </p>
      *         <p>
      *         Default: The default EC2 VPC security group for the DB subnet group's VPC.
@@ -2549,7 +2614,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * A list of Amazon EC2 VPC security groups to associate with the read replica.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * <p>
      * Default: The default EC2 VPC security group for the DB subnet group's VPC.
@@ -2558,7 +2623,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * @param vpcSecurityGroupIds
      *        A list of Amazon EC2 VPC security groups to associate with the read replica.</p>
      *        <p>
-     *        This setting doesn't apply to RDS Custom.
+     *        This setting doesn't apply to RDS Custom DB instances.
      *        </p>
      *        <p>
      *        Default: The default EC2 VPC security group for the DB subnet group's VPC.
@@ -2578,7 +2643,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * A list of Amazon EC2 VPC security groups to associate with the read replica.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * <p>
      * Default: The default EC2 VPC security group for the DB subnet group's VPC.
@@ -2592,7 +2657,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * @param vpcSecurityGroupIds
      *        A list of Amazon EC2 VPC security groups to associate with the read replica.</p>
      *        <p>
-     *        This setting doesn't apply to RDS Custom.
+     *        This setting doesn't apply to RDS Custom DB instances.
      *        </p>
      *        <p>
      *        Default: The default EC2 VPC security group for the DB subnet group's VPC.
@@ -2614,7 +2679,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * A list of Amazon EC2 VPC security groups to associate with the read replica.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * <p>
      * Default: The default EC2 VPC security group for the DB subnet group's VPC.
@@ -2623,7 +2688,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * @param vpcSecurityGroupIds
      *        A list of Amazon EC2 VPC security groups to associate with the read replica.</p>
      *        <p>
-     *        This setting doesn't apply to RDS Custom.
+     *        This setting doesn't apply to RDS Custom DB instances.
      *        </p>
      *        <p>
      *        Default: The default EC2 VPC security group for the DB subnet group's VPC.
@@ -2637,30 +2702,30 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Specifies the storage type to be associated with the read replica.
-     * </p>
-     * <p>
-     * Valid values: <code>gp2 | gp3 | io1 | standard</code>
+     * The storage type to associate with the read replica.
      * </p>
      * <p>
      * If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code>
      * parameter.
      * </p>
      * <p>
-     * Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code>
+     * Valid Values: <code>gp2 | gp3 | io1 | standard</code>
+     * </p>
+     * <p>
+     * Default: <code>io1</code> if the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.
      * </p>
      * 
      * @param storageType
-     *        Specifies the storage type to be associated with the read replica.</p>
-     *        <p>
-     *        Valid values: <code>gp2 | gp3 | io1 | standard</code>
-     *        </p>
+     *        The storage type to associate with the read replica.</p>
      *        <p>
      *        If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the
      *        <code>Iops</code> parameter.
      *        </p>
      *        <p>
-     *        Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code>
+     *        Valid Values: <code>gp2 | gp3 | io1 | standard</code>
+     *        </p>
+     *        <p>
+     *        Default: <code>io1</code> if the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.
      */
 
     public void setStorageType(String storageType) {
@@ -2669,29 +2734,29 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Specifies the storage type to be associated with the read replica.
-     * </p>
-     * <p>
-     * Valid values: <code>gp2 | gp3 | io1 | standard</code>
+     * The storage type to associate with the read replica.
      * </p>
      * <p>
      * If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code>
      * parameter.
      * </p>
      * <p>
-     * Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code>
+     * Valid Values: <code>gp2 | gp3 | io1 | standard</code>
+     * </p>
+     * <p>
+     * Default: <code>io1</code> if the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.
      * </p>
      * 
-     * @return Specifies the storage type to be associated with the read replica.</p>
-     *         <p>
-     *         Valid values: <code>gp2 | gp3 | io1 | standard</code>
-     *         </p>
+     * @return The storage type to associate with the read replica.</p>
      *         <p>
      *         If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the
      *         <code>Iops</code> parameter.
      *         </p>
      *         <p>
-     *         Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code>
+     *         Valid Values: <code>gp2 | gp3 | io1 | standard</code>
+     *         </p>
+     *         <p>
+     *         Default: <code>io1</code> if the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.
      */
 
     public String getStorageType() {
@@ -2700,30 +2765,30 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Specifies the storage type to be associated with the read replica.
-     * </p>
-     * <p>
-     * Valid values: <code>gp2 | gp3 | io1 | standard</code>
+     * The storage type to associate with the read replica.
      * </p>
      * <p>
      * If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code>
      * parameter.
      * </p>
      * <p>
-     * Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code>
+     * Valid Values: <code>gp2 | gp3 | io1 | standard</code>
+     * </p>
+     * <p>
+     * Default: <code>io1</code> if the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.
      * </p>
      * 
      * @param storageType
-     *        Specifies the storage type to be associated with the read replica.</p>
-     *        <p>
-     *        Valid values: <code>gp2 | gp3 | io1 | standard</code>
-     *        </p>
+     *        The storage type to associate with the read replica.</p>
      *        <p>
      *        If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the
      *        <code>Iops</code> parameter.
      *        </p>
      *        <p>
-     *        Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code>
+     *        Valid Values: <code>gp2 | gp3 | io1 | standard</code>
+     *        </p>
+     *        <p>
+     *        Default: <code>io1</code> if the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2734,13 +2799,13 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the read replica to snapshots of the read replica. By
-     * default, tags are not copied.
+     * Specifies whether to copy all tags from the read replica to snapshots of the read replica. By default, tags
+     * aren't copied.
      * </p>
      * 
      * @param copyTagsToSnapshot
-     *        A value that indicates whether to copy all tags from the read replica to snapshots of the read replica. By
-     *        default, tags are not copied.
+     *        Specifies whether to copy all tags from the read replica to snapshots of the read replica. By default,
+     *        tags aren't copied.
      */
 
     public void setCopyTagsToSnapshot(Boolean copyTagsToSnapshot) {
@@ -2749,12 +2814,12 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the read replica to snapshots of the read replica. By
-     * default, tags are not copied.
+     * Specifies whether to copy all tags from the read replica to snapshots of the read replica. By default, tags
+     * aren't copied.
      * </p>
      * 
-     * @return A value that indicates whether to copy all tags from the read replica to snapshots of the read replica.
-     *         By default, tags are not copied.
+     * @return Specifies whether to copy all tags from the read replica to snapshots of the read replica. By default,
+     *         tags aren't copied.
      */
 
     public Boolean getCopyTagsToSnapshot() {
@@ -2763,13 +2828,13 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the read replica to snapshots of the read replica. By
-     * default, tags are not copied.
+     * Specifies whether to copy all tags from the read replica to snapshots of the read replica. By default, tags
+     * aren't copied.
      * </p>
      * 
      * @param copyTagsToSnapshot
-     *        A value that indicates whether to copy all tags from the read replica to snapshots of the read replica. By
-     *        default, tags are not copied.
+     *        Specifies whether to copy all tags from the read replica to snapshots of the read replica. By default,
+     *        tags aren't copied.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2780,12 +2845,12 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the read replica to snapshots of the read replica. By
-     * default, tags are not copied.
+     * Specifies whether to copy all tags from the read replica to snapshots of the read replica. By default, tags
+     * aren't copied.
      * </p>
      * 
-     * @return A value that indicates whether to copy all tags from the read replica to snapshots of the read replica.
-     *         By default, tags are not copied.
+     * @return Specifies whether to copy all tags from the read replica to snapshots of the read replica. By default,
+     *         tags aren't copied.
      */
 
     public Boolean isCopyTagsToSnapshot() {
@@ -2795,31 +2860,38 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the read replica. To
-     * disable collecting Enhanced Monitoring metrics, specify 0. The default is 0.
+     * disable collection of Enhanced Monitoring metrics, specify <code>0</code>. The default is <code>0</code>.
      * </p>
      * <p>
-     * If <code>MonitoringRoleArn</code> is specified, then you must also set <code>MonitoringInterval</code> to a value
-     * other than 0.
+     * If <code>MonitoringRoleArn</code> is specified, then you must set <code>MonitoringInterval</code> to a value
+     * other than <code>0</code>.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * <p>
      * Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code>
      * </p>
+     * <p>
+     * Default: <code>0</code>
+     * </p>
      * 
      * @param monitoringInterval
      *        The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the read
-     *        replica. To disable collecting Enhanced Monitoring metrics, specify 0. The default is 0.</p>
+     *        replica. To disable collection of Enhanced Monitoring metrics, specify <code>0</code>. The default is
+     *        <code>0</code>.</p>
      *        <p>
-     *        If <code>MonitoringRoleArn</code> is specified, then you must also set <code>MonitoringInterval</code> to
-     *        a value other than 0.
+     *        If <code>MonitoringRoleArn</code> is specified, then you must set <code>MonitoringInterval</code> to a
+     *        value other than <code>0</code>.
      *        </p>
      *        <p>
-     *        This setting doesn't apply to RDS Custom.
+     *        This setting doesn't apply to RDS Custom DB instances.
      *        </p>
      *        <p>
      *        Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code>
+     *        </p>
+     *        <p>
+     *        Default: <code>0</code>
      */
 
     public void setMonitoringInterval(Integer monitoringInterval) {
@@ -2829,30 +2901,37 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the read replica. To
-     * disable collecting Enhanced Monitoring metrics, specify 0. The default is 0.
+     * disable collection of Enhanced Monitoring metrics, specify <code>0</code>. The default is <code>0</code>.
      * </p>
      * <p>
-     * If <code>MonitoringRoleArn</code> is specified, then you must also set <code>MonitoringInterval</code> to a value
-     * other than 0.
+     * If <code>MonitoringRoleArn</code> is specified, then you must set <code>MonitoringInterval</code> to a value
+     * other than <code>0</code>.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * <p>
      * Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code>
      * </p>
+     * <p>
+     * Default: <code>0</code>
+     * </p>
      * 
      * @return The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the read
-     *         replica. To disable collecting Enhanced Monitoring metrics, specify 0. The default is 0.</p>
+     *         replica. To disable collection of Enhanced Monitoring metrics, specify <code>0</code>. The default is
+     *         <code>0</code>.</p>
      *         <p>
-     *         If <code>MonitoringRoleArn</code> is specified, then you must also set <code>MonitoringInterval</code> to
-     *         a value other than 0.
+     *         If <code>MonitoringRoleArn</code> is specified, then you must set <code>MonitoringInterval</code> to a
+     *         value other than <code>0</code>.
      *         </p>
      *         <p>
-     *         This setting doesn't apply to RDS Custom.
+     *         This setting doesn't apply to RDS Custom DB instances.
      *         </p>
      *         <p>
      *         Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code>
+     *         </p>
+     *         <p>
+     *         Default: <code>0</code>
      */
 
     public Integer getMonitoringInterval() {
@@ -2862,31 +2941,38 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the read replica. To
-     * disable collecting Enhanced Monitoring metrics, specify 0. The default is 0.
+     * disable collection of Enhanced Monitoring metrics, specify <code>0</code>. The default is <code>0</code>.
      * </p>
      * <p>
-     * If <code>MonitoringRoleArn</code> is specified, then you must also set <code>MonitoringInterval</code> to a value
-     * other than 0.
+     * If <code>MonitoringRoleArn</code> is specified, then you must set <code>MonitoringInterval</code> to a value
+     * other than <code>0</code>.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * <p>
      * Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code>
      * </p>
+     * <p>
+     * Default: <code>0</code>
+     * </p>
      * 
      * @param monitoringInterval
      *        The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the read
-     *        replica. To disable collecting Enhanced Monitoring metrics, specify 0. The default is 0.</p>
+     *        replica. To disable collection of Enhanced Monitoring metrics, specify <code>0</code>. The default is
+     *        <code>0</code>.</p>
      *        <p>
-     *        If <code>MonitoringRoleArn</code> is specified, then you must also set <code>MonitoringInterval</code> to
-     *        a value other than 0.
+     *        If <code>MonitoringRoleArn</code> is specified, then you must set <code>MonitoringInterval</code> to a
+     *        value other than <code>0</code>.
      *        </p>
      *        <p>
-     *        This setting doesn't apply to RDS Custom.
+     *        This setting doesn't apply to RDS Custom DB instances.
      *        </p>
      *        <p>
      *        Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code>
+     *        </p>
+     *        <p>
+     *        Default: <code>0</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2908,7 +2994,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * <code>MonitoringRoleArn</code> value.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * 
      * @param monitoringRoleArn
@@ -2922,7 +3008,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        <code>MonitoringRoleArn</code> value.
      *        </p>
      *        <p>
-     *        This setting doesn't apply to RDS Custom.
+     *        This setting doesn't apply to RDS Custom DB instances.
      */
 
     public void setMonitoringRoleArn(String monitoringRoleArn) {
@@ -2942,7 +3028,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * <code>MonitoringRoleArn</code> value.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * 
      * @return The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs.
@@ -2955,7 +3041,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *         <code>MonitoringRoleArn</code> value.
      *         </p>
      *         <p>
-     *         This setting doesn't apply to RDS Custom.
+     *         This setting doesn't apply to RDS Custom DB instances.
      */
 
     public String getMonitoringRoleArn() {
@@ -2975,7 +3061,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * <code>MonitoringRoleArn</code> value.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * 
      * @param monitoringRoleArn
@@ -2989,7 +3075,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        <code>MonitoringRoleArn</code> value.
      *        </p>
      *        <p>
-     *        This setting doesn't apply to RDS Custom.
+     *        This setting doesn't apply to RDS Custom DB instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3236,7 +3322,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </p>
      * </note>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * 
      * @param preSignedUrl
@@ -3316,7 +3402,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        </p>
      *        </note>
      *        <p>
-     *        This setting doesn't apply to RDS Custom.
+     *        This setting doesn't apply to RDS Custom DB instances.
      */
 
     public void setPreSignedUrl(String preSignedUrl) {
@@ -3401,7 +3487,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </p>
      * </note>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * 
      * @return When you are creating a read replica from one Amazon Web Services GovCloud (US) Region to another or from
@@ -3480,7 +3566,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *         </p>
      *         </note>
      *         <p>
-     *         This setting doesn't apply to RDS Custom.
+     *         This setting doesn't apply to RDS Custom DB instances.
      */
 
     public String getPreSignedUrl() {
@@ -3565,7 +3651,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </p>
      * </note>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * 
      * @param preSignedUrl
@@ -3645,7 +3731,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        </p>
      *        </note>
      *        <p>
-     *        This setting doesn't apply to RDS Custom.
+     *        This setting doesn't apply to RDS Custom DB instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3656,8 +3742,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts. By default, mapping isn't enabled.
+     * Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to
+     * database accounts. By default, mapping isn't enabled.
      * </p>
      * <p>
      * For more information about IAM database authentication, see <a
@@ -3665,19 +3751,19 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
-     *        (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
+     *        Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts
+     *        to database accounts. By default, mapping isn't enabled.</p>
      *        <p>
      *        For more information about IAM database authentication, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
      *        Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide</i>.
      *        </p>
      *        <p>
-     *        This setting doesn't apply to RDS Custom.
+     *        This setting doesn't apply to RDS Custom DB instances.
      */
 
     public void setEnableIAMDatabaseAuthentication(Boolean enableIAMDatabaseAuthentication) {
@@ -3686,8 +3772,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts. By default, mapping isn't enabled.
+     * Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to
+     * database accounts. By default, mapping isn't enabled.
      * </p>
      * <p>
      * For more information about IAM database authentication, see <a
@@ -3695,18 +3781,18 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * 
-     * @return A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
-     *         (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
+     * @return Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts
+     *         to database accounts. By default, mapping isn't enabled.</p>
      *         <p>
      *         For more information about IAM database authentication, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
      *         Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide</i>.
      *         </p>
      *         <p>
-     *         This setting doesn't apply to RDS Custom.
+     *         This setting doesn't apply to RDS Custom DB instances.
      */
 
     public Boolean getEnableIAMDatabaseAuthentication() {
@@ -3715,8 +3801,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts. By default, mapping isn't enabled.
+     * Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to
+     * database accounts. By default, mapping isn't enabled.
      * </p>
      * <p>
      * For more information about IAM database authentication, see <a
@@ -3724,19 +3810,19 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
-     *        (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
+     *        Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts
+     *        to database accounts. By default, mapping isn't enabled.</p>
      *        <p>
      *        For more information about IAM database authentication, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
      *        Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide</i>.
      *        </p>
      *        <p>
-     *        This setting doesn't apply to RDS Custom.
+     *        This setting doesn't apply to RDS Custom DB instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3747,8 +3833,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts. By default, mapping isn't enabled.
+     * Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to
+     * database accounts. By default, mapping isn't enabled.
      * </p>
      * <p>
      * For more information about IAM database authentication, see <a
@@ -3756,18 +3842,18 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * 
-     * @return A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
-     *         (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
+     * @return Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts
+     *         to database accounts. By default, mapping isn't enabled.</p>
      *         <p>
      *         For more information about IAM database authentication, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
      *         Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide</i>.
      *         </p>
      *         <p>
-     *         This setting doesn't apply to RDS Custom.
+     *         This setting doesn't apply to RDS Custom DB instances.
      */
 
     public Boolean isEnableIAMDatabaseAuthentication() {
@@ -3776,7 +3862,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A value that indicates whether to enable Performance Insights for the read replica.
+     * Specifies whether to enable Performance Insights for the read replica.
      * </p>
      * <p>
      * For more information, see <a
@@ -3784,18 +3870,18 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * Insights</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * 
      * @param enablePerformanceInsights
-     *        A value that indicates whether to enable Performance Insights for the read replica.</p>
+     *        Specifies whether to enable Performance Insights for the read replica.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon
      *        Performance Insights</a> in the <i>Amazon RDS User Guide</i>.
      *        </p>
      *        <p>
-     *        This setting doesn't apply to RDS Custom.
+     *        This setting doesn't apply to RDS Custom DB instances.
      */
 
     public void setEnablePerformanceInsights(Boolean enablePerformanceInsights) {
@@ -3804,7 +3890,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A value that indicates whether to enable Performance Insights for the read replica.
+     * Specifies whether to enable Performance Insights for the read replica.
      * </p>
      * <p>
      * For more information, see <a
@@ -3812,17 +3898,17 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * Insights</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * 
-     * @return A value that indicates whether to enable Performance Insights for the read replica.</p>
+     * @return Specifies whether to enable Performance Insights for the read replica.</p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon
      *         Performance Insights</a> in the <i>Amazon RDS User Guide</i>.
      *         </p>
      *         <p>
-     *         This setting doesn't apply to RDS Custom.
+     *         This setting doesn't apply to RDS Custom DB instances.
      */
 
     public Boolean getEnablePerformanceInsights() {
@@ -3831,7 +3917,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A value that indicates whether to enable Performance Insights for the read replica.
+     * Specifies whether to enable Performance Insights for the read replica.
      * </p>
      * <p>
      * For more information, see <a
@@ -3839,18 +3925,18 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * Insights</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * 
      * @param enablePerformanceInsights
-     *        A value that indicates whether to enable Performance Insights for the read replica.</p>
+     *        Specifies whether to enable Performance Insights for the read replica.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon
      *        Performance Insights</a> in the <i>Amazon RDS User Guide</i>.
      *        </p>
      *        <p>
-     *        This setting doesn't apply to RDS Custom.
+     *        This setting doesn't apply to RDS Custom DB instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3861,7 +3947,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A value that indicates whether to enable Performance Insights for the read replica.
+     * Specifies whether to enable Performance Insights for the read replica.
      * </p>
      * <p>
      * For more information, see <a
@@ -3869,17 +3955,17 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * Insights</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * 
-     * @return A value that indicates whether to enable Performance Insights for the read replica.</p>
+     * @return Specifies whether to enable Performance Insights for the read replica.</p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon
      *         Performance Insights</a> in the <i>Amazon RDS User Guide</i>.
      *         </p>
      *         <p>
-     *         This setting doesn't apply to RDS Custom.
+     *         This setting doesn't apply to RDS Custom DB instances.
      */
 
     public Boolean isEnablePerformanceInsights() {
@@ -3899,7 +3985,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * different default KMS key for each Amazon Web Services Region.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * 
      * @param performanceInsightsKMSKeyId
@@ -3914,7 +4000,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        account has a different default KMS key for each Amazon Web Services Region.
      *        </p>
      *        <p>
-     *        This setting doesn't apply to RDS Custom.
+     *        This setting doesn't apply to RDS Custom DB instances.
      */
 
     public void setPerformanceInsightsKMSKeyId(String performanceInsightsKMSKeyId) {
@@ -3934,7 +4020,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * different default KMS key for each Amazon Web Services Region.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * 
      * @return The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
@@ -3948,7 +4034,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *         Services account has a different default KMS key for each Amazon Web Services Region.
      *         </p>
      *         <p>
-     *         This setting doesn't apply to RDS Custom.
+     *         This setting doesn't apply to RDS Custom DB instances.
      */
 
     public String getPerformanceInsightsKMSKeyId() {
@@ -3968,7 +4054,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * different default KMS key for each Amazon Web Services Region.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * 
      * @param performanceInsightsKMSKeyId
@@ -3983,7 +4069,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        account has a different default KMS key for each Amazon Web Services Region.
      *        </p>
      *        <p>
-     *        This setting doesn't apply to RDS Custom.
+     *        This setting doesn't apply to RDS Custom DB instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3994,107 +4080,70 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:
+     * The number of days to retain Performance Insights data.
+     * </p>
+     * <p>
+     * This setting doesn't apply to RDS Custom DB instances.
+     * </p>
+     * <p>
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * 7
+     * <code>7</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
+     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31),
+     * <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 731
+     * <code>731</code>
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For example, the following values are valid:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * 93 (3 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 341 (11 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 589 (19 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 731
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.
+     * Default: <code>7</code> days
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * If you specify a retention period that isn't valid, such as <code>94</code>, Amazon RDS returns an error.
      * </p>
      * 
      * @param performanceInsightsRetentionPeriod
-     *        The number of days to retain Performance Insights data. The default is 7 days. The following values are
-     *        valid:</p>
-     *        <ul>
-     *        <li>
+     *        The number of days to retain Performance Insights data.</p>
      *        <p>
-     *        7
+     *        This setting doesn't apply to RDS Custom DB instances.
      *        </p>
-     *        </li>
-     *        <li>
      *        <p>
-     *        <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        731
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        For example, the following values are valid:
+     *        Valid Values:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        93 (3 months * 31)
+     *        <code>7</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        341 (11 months * 31)
+     *        <i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months
+     *        * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        589 (19 months * 31)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        731
+     *        <code>731</code>
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.
+     *        Default: <code>7</code> days
      *        </p>
      *        <p>
-     *        This setting doesn't apply to RDS Custom.
+     *        If you specify a retention period that isn't valid, such as <code>94</code>, Amazon RDS returns an error.
      */
 
     public void setPerformanceInsightsRetentionPeriod(Integer performanceInsightsRetentionPeriod) {
@@ -4103,106 +4152,69 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:
+     * The number of days to retain Performance Insights data.
+     * </p>
+     * <p>
+     * This setting doesn't apply to RDS Custom DB instances.
+     * </p>
+     * <p>
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * 7
+     * <code>7</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
+     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31),
+     * <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 731
+     * <code>731</code>
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For example, the following values are valid:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * 93 (3 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 341 (11 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 589 (19 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 731
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.
+     * Default: <code>7</code> days
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * If you specify a retention period that isn't valid, such as <code>94</code>, Amazon RDS returns an error.
      * </p>
      * 
-     * @return The number of days to retain Performance Insights data. The default is 7 days. The following values are
-     *         valid:</p>
-     *         <ul>
-     *         <li>
+     * @return The number of days to retain Performance Insights data.</p>
      *         <p>
-     *         7
+     *         This setting doesn't apply to RDS Custom DB instances.
      *         </p>
-     *         </li>
-     *         <li>
      *         <p>
-     *         <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         731
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         For example, the following values are valid:
+     *         Valid Values:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         93 (3 months * 31)
+     *         <code>7</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         341 (11 months * 31)
+     *         <i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3
+     *         months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         589 (19 months * 31)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         731
+     *         <code>731</code>
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.
+     *         Default: <code>7</code> days
      *         </p>
      *         <p>
-     *         This setting doesn't apply to RDS Custom.
+     *         If you specify a retention period that isn't valid, such as <code>94</code>, Amazon RDS returns an error.
      */
 
     public Integer getPerformanceInsightsRetentionPeriod() {
@@ -4211,107 +4223,70 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:
+     * The number of days to retain Performance Insights data.
+     * </p>
+     * <p>
+     * This setting doesn't apply to RDS Custom DB instances.
+     * </p>
+     * <p>
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * 7
+     * <code>7</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
+     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31),
+     * <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 731
+     * <code>731</code>
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For example, the following values are valid:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * 93 (3 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 341 (11 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 589 (19 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 731
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.
+     * Default: <code>7</code> days
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * If you specify a retention period that isn't valid, such as <code>94</code>, Amazon RDS returns an error.
      * </p>
      * 
      * @param performanceInsightsRetentionPeriod
-     *        The number of days to retain Performance Insights data. The default is 7 days. The following values are
-     *        valid:</p>
-     *        <ul>
-     *        <li>
+     *        The number of days to retain Performance Insights data.</p>
      *        <p>
-     *        7
+     *        This setting doesn't apply to RDS Custom DB instances.
      *        </p>
-     *        </li>
-     *        <li>
      *        <p>
-     *        <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        731
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        For example, the following values are valid:
+     *        Valid Values:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        93 (3 months * 31)
+     *        <code>7</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        341 (11 months * 31)
+     *        <i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months
+     *        * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        589 (19 months * 31)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        731
+     *        <code>731</code>
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.
+     *        Default: <code>7</code> days
      *        </p>
      *        <p>
-     *        This setting doesn't apply to RDS Custom.
+     *        If you specify a retention period that isn't valid, such as <code>94</code>, Amazon RDS returns an error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -4328,7 +4303,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * 
      * @return The list of logs that the new DB instance is to export to CloudWatch Logs. The values in the list depend
@@ -4336,7 +4311,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *         "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
      *         >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon RDS User Guide</i>.</p>
      *         <p>
-     *         This setting doesn't apply to RDS Custom.
+     *         This setting doesn't apply to RDS Custom DB instances.
      */
 
     public java.util.List<String> getEnableCloudwatchLogsExports() {
@@ -4354,7 +4329,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * 
      * @param enableCloudwatchLogsExports
@@ -4363,7 +4338,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
      *        >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon RDS User Guide</i>.</p>
      *        <p>
-     *        This setting doesn't apply to RDS Custom.
+     *        This setting doesn't apply to RDS Custom DB instances.
      */
 
     public void setEnableCloudwatchLogsExports(java.util.Collection<String> enableCloudwatchLogsExports) {
@@ -4383,7 +4358,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -4397,7 +4372,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
      *        >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon RDS User Guide</i>.</p>
      *        <p>
-     *        This setting doesn't apply to RDS Custom.
+     *        This setting doesn't apply to RDS Custom DB instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -4419,7 +4394,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * 
      * @param enableCloudwatchLogsExports
@@ -4428,7 +4403,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
      *        >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon RDS User Guide</i>.</p>
      *        <p>
-     *        This setting doesn't apply to RDS Custom.
+     *        This setting doesn't apply to RDS Custom DB instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -4442,13 +4417,13 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * 
      * @return The number of CPU cores and the number of threads per core for the DB instance class of the DB
      *         instance.</p>
      *         <p>
-     *         This setting doesn't apply to RDS Custom.
+     *         This setting doesn't apply to RDS Custom DB instances.
      */
 
     public java.util.List<ProcessorFeature> getProcessorFeatures() {
@@ -4463,14 +4438,14 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * 
      * @param processorFeatures
      *        The number of CPU cores and the number of threads per core for the DB instance class of the DB
      *        instance.</p>
      *        <p>
-     *        This setting doesn't apply to RDS Custom.
+     *        This setting doesn't apply to RDS Custom DB instances.
      */
 
     public void setProcessorFeatures(java.util.Collection<ProcessorFeature> processorFeatures) {
@@ -4487,7 +4462,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -4499,7 +4474,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        The number of CPU cores and the number of threads per core for the DB instance class of the DB
      *        instance.</p>
      *        <p>
-     *        This setting doesn't apply to RDS Custom.
+     *        This setting doesn't apply to RDS Custom DB instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -4518,14 +4493,14 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * 
      * @param processorFeatures
      *        The number of CPU cores and the number of threads per core for the DB instance class of the DB
      *        instance.</p>
      *        <p>
-     *        This setting doesn't apply to RDS Custom.
+     *        This setting doesn't apply to RDS Custom DB instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -4536,17 +4511,16 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A value that indicates whether the DB instance class of the DB instance uses its default processor features.
+     * Specifies whether the DB instance class of the DB instance uses its default processor features.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * 
      * @param useDefaultProcessorFeatures
-     *        A value that indicates whether the DB instance class of the DB instance uses its default processor
-     *        features.</p>
+     *        Specifies whether the DB instance class of the DB instance uses its default processor features.</p>
      *        <p>
-     *        This setting doesn't apply to RDS Custom.
+     *        This setting doesn't apply to RDS Custom DB instances.
      */
 
     public void setUseDefaultProcessorFeatures(Boolean useDefaultProcessorFeatures) {
@@ -4555,16 +4529,15 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A value that indicates whether the DB instance class of the DB instance uses its default processor features.
+     * Specifies whether the DB instance class of the DB instance uses its default processor features.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * 
-     * @return A value that indicates whether the DB instance class of the DB instance uses its default processor
-     *         features.</p>
+     * @return Specifies whether the DB instance class of the DB instance uses its default processor features.</p>
      *         <p>
-     *         This setting doesn't apply to RDS Custom.
+     *         This setting doesn't apply to RDS Custom DB instances.
      */
 
     public Boolean getUseDefaultProcessorFeatures() {
@@ -4573,17 +4546,16 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A value that indicates whether the DB instance class of the DB instance uses its default processor features.
+     * Specifies whether the DB instance class of the DB instance uses its default processor features.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * 
      * @param useDefaultProcessorFeatures
-     *        A value that indicates whether the DB instance class of the DB instance uses its default processor
-     *        features.</p>
+     *        Specifies whether the DB instance class of the DB instance uses its default processor features.</p>
      *        <p>
-     *        This setting doesn't apply to RDS Custom.
+     *        This setting doesn't apply to RDS Custom DB instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -4594,16 +4566,15 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A value that indicates whether the DB instance class of the DB instance uses its default processor features.
+     * Specifies whether the DB instance class of the DB instance uses its default processor features.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * 
-     * @return A value that indicates whether the DB instance class of the DB instance uses its default processor
-     *         features.</p>
+     * @return Specifies whether the DB instance class of the DB instance uses its default processor features.</p>
      *         <p>
-     *         This setting doesn't apply to RDS Custom.
+     *         This setting doesn't apply to RDS Custom DB instances.
      */
 
     public Boolean isUseDefaultProcessorFeatures() {
@@ -4612,17 +4583,16 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted
-     * when deletion protection is enabled. By default, deletion protection isn't enabled. For more information, see <a
+     * Specifies whether to enable deletion protection for the DB instance. The database can't be deleted when deletion
+     * protection is enabled. By default, deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      * Instance</a>.
      * </p>
      * 
      * @param deletionProtection
-     *        A value that indicates whether the DB instance has deletion protection enabled. The database can't be
-     *        deleted when deletion protection is enabled. By default, deletion protection isn't enabled. For more
-     *        information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
+     *        Specifies whether to enable deletion protection for the DB instance. The database can't be deleted when
+     *        deletion protection is enabled. By default, deletion protection isn't enabled. For more information, see
+     *        <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      *        Instance</a>.
      */
 
@@ -4632,16 +4602,15 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted
-     * when deletion protection is enabled. By default, deletion protection isn't enabled. For more information, see <a
+     * Specifies whether to enable deletion protection for the DB instance. The database can't be deleted when deletion
+     * protection is enabled. By default, deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      * Instance</a>.
      * </p>
      * 
-     * @return A value that indicates whether the DB instance has deletion protection enabled. The database can't be
-     *         deleted when deletion protection is enabled. By default, deletion protection isn't enabled. For more
-     *         information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
+     * @return Specifies whether to enable deletion protection for the DB instance. The database can't be deleted when
+     *         deletion protection is enabled. By default, deletion protection isn't enabled. For more information, see
+     *         <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      *         Instance</a>.
      */
 
@@ -4651,17 +4620,16 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted
-     * when deletion protection is enabled. By default, deletion protection isn't enabled. For more information, see <a
+     * Specifies whether to enable deletion protection for the DB instance. The database can't be deleted when deletion
+     * protection is enabled. By default, deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      * Instance</a>.
      * </p>
      * 
      * @param deletionProtection
-     *        A value that indicates whether the DB instance has deletion protection enabled. The database can't be
-     *        deleted when deletion protection is enabled. By default, deletion protection isn't enabled. For more
-     *        information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
+     *        Specifies whether to enable deletion protection for the DB instance. The database can't be deleted when
+     *        deletion protection is enabled. By default, deletion protection isn't enabled. For more information, see
+     *        <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      *        Instance</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -4673,16 +4641,15 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted
-     * when deletion protection is enabled. By default, deletion protection isn't enabled. For more information, see <a
+     * Specifies whether to enable deletion protection for the DB instance. The database can't be deleted when deletion
+     * protection is enabled. By default, deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      * Instance</a>.
      * </p>
      * 
-     * @return A value that indicates whether the DB instance has deletion protection enabled. The database can't be
-     *         deleted when deletion protection is enabled. By default, deletion protection isn't enabled. For more
-     *         information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
+     * @return Specifies whether to enable deletion protection for the DB instance. The database can't be deleted when
+     *         deletion protection is enabled. By default, deletion protection isn't enabled. For more information, see
+     *         <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      *         Instance</a>.
      */
 
@@ -4701,7 +4668,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * Authentication</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * 
      * @param domain
@@ -4713,7 +4680,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        Authentication</a> in the <i>Amazon RDS User Guide</i>.
      *        </p>
      *        <p>
-     *        This setting doesn't apply to RDS Custom.
+     *        This setting doesn't apply to RDS Custom DB instances.
      */
 
     public void setDomain(String domain) {
@@ -4731,7 +4698,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * Authentication</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * 
      * @return The Active Directory directory ID to create the DB instance in. Currently, only MySQL, Microsoft SQL
@@ -4742,7 +4709,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *         Authentication</a> in the <i>Amazon RDS User Guide</i>.
      *         </p>
      *         <p>
-     *         This setting doesn't apply to RDS Custom.
+     *         This setting doesn't apply to RDS Custom DB instances.
      */
 
     public String getDomain() {
@@ -4760,7 +4727,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * Authentication</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * 
      * @param domain
@@ -4772,7 +4739,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        Authentication</a> in the <i>Amazon RDS User Guide</i>.
      *        </p>
      *        <p>
-     *        This setting doesn't apply to RDS Custom.
+     *        This setting doesn't apply to RDS Custom DB instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -4783,16 +4750,16 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of the IAM role to be used when making API calls to the Directory Service.
+     * The name of the IAM role to use when making API calls to the Directory Service.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * 
      * @param domainIAMRoleName
-     *        The name of the IAM role to be used when making API calls to the Directory Service.</p>
+     *        The name of the IAM role to use when making API calls to the Directory Service.</p>
      *        <p>
-     *        This setting doesn't apply to RDS Custom.
+     *        This setting doesn't apply to RDS Custom DB instances.
      */
 
     public void setDomainIAMRoleName(String domainIAMRoleName) {
@@ -4801,15 +4768,15 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of the IAM role to be used when making API calls to the Directory Service.
+     * The name of the IAM role to use when making API calls to the Directory Service.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * 
-     * @return The name of the IAM role to be used when making API calls to the Directory Service.</p>
+     * @return The name of the IAM role to use when making API calls to the Directory Service.</p>
      *         <p>
-     *         This setting doesn't apply to RDS Custom.
+     *         This setting doesn't apply to RDS Custom DB instances.
      */
 
     public String getDomainIAMRoleName() {
@@ -4818,21 +4785,518 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of the IAM role to be used when making API calls to the Directory Service.
+     * The name of the IAM role to use when making API calls to the Directory Service.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom.
+     * This setting doesn't apply to RDS Custom DB instances.
      * </p>
      * 
      * @param domainIAMRoleName
-     *        The name of the IAM role to be used when making API calls to the Directory Service.</p>
+     *        The name of the IAM role to use when making API calls to the Directory Service.</p>
      *        <p>
-     *        This setting doesn't apply to RDS Custom.
+     *        This setting doesn't apply to RDS Custom DB instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDBInstanceReadReplicaRequest withDomainIAMRoleName(String domainIAMRoleName) {
         setDomainIAMRoleName(domainIAMRoleName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The fully qualified domain name (FQDN) of an Active Directory domain.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Can't be longer than 64 characters.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Example: <code>mymanagedADtest.mymanagedAD.mydomain</code>
+     * </p>
+     * 
+     * @param domainFqdn
+     *        The fully qualified domain name (FQDN) of an Active Directory domain.</p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Can't be longer than 64 characters.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Example: <code>mymanagedADtest.mymanagedAD.mydomain</code>
+     */
+
+    public void setDomainFqdn(String domainFqdn) {
+        this.domainFqdn = domainFqdn;
+    }
+
+    /**
+     * <p>
+     * The fully qualified domain name (FQDN) of an Active Directory domain.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Can't be longer than 64 characters.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Example: <code>mymanagedADtest.mymanagedAD.mydomain</code>
+     * </p>
+     * 
+     * @return The fully qualified domain name (FQDN) of an Active Directory domain.</p>
+     *         <p>
+     *         Constraints:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Can't be longer than 64 characters.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Example: <code>mymanagedADtest.mymanagedAD.mydomain</code>
+     */
+
+    public String getDomainFqdn() {
+        return this.domainFqdn;
+    }
+
+    /**
+     * <p>
+     * The fully qualified domain name (FQDN) of an Active Directory domain.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Can't be longer than 64 characters.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Example: <code>mymanagedADtest.mymanagedAD.mydomain</code>
+     * </p>
+     * 
+     * @param domainFqdn
+     *        The fully qualified domain name (FQDN) of an Active Directory domain.</p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Can't be longer than 64 characters.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Example: <code>mymanagedADtest.mymanagedAD.mydomain</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDBInstanceReadReplicaRequest withDomainFqdn(String domainFqdn) {
+        setDomainFqdn(domainFqdn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Active Directory organizational unit for your DB instance to join.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be in the distinguished name format.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can't be longer than 64 characters.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code>
+     * </p>
+     * 
+     * @param domainOu
+     *        The Active Directory organizational unit for your DB instance to join.</p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Must be in the distinguished name format.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can't be longer than 64 characters.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code>
+     */
+
+    public void setDomainOu(String domainOu) {
+        this.domainOu = domainOu;
+    }
+
+    /**
+     * <p>
+     * The Active Directory organizational unit for your DB instance to join.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be in the distinguished name format.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can't be longer than 64 characters.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code>
+     * </p>
+     * 
+     * @return The Active Directory organizational unit for your DB instance to join.</p>
+     *         <p>
+     *         Constraints:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Must be in the distinguished name format.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Can't be longer than 64 characters.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code>
+     */
+
+    public String getDomainOu() {
+        return this.domainOu;
+    }
+
+    /**
+     * <p>
+     * The Active Directory organizational unit for your DB instance to join.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be in the distinguished name format.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can't be longer than 64 characters.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code>
+     * </p>
+     * 
+     * @param domainOu
+     *        The Active Directory organizational unit for your DB instance to join.</p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Must be in the distinguished name format.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can't be longer than 64 characters.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDBInstanceReadReplicaRequest withDomainOu(String domainOu) {
+        setDomainOu(domainOu);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN for the Secrets Manager secret with the credentials for the user joining the domain.
+     * </p>
+     * <p>
+     * Example: <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
+     * </p>
+     * 
+     * @param domainAuthSecretArn
+     *        The ARN for the Secrets Manager secret with the credentials for the user joining the domain.</p>
+     *        <p>
+     *        Example: <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
+     */
+
+    public void setDomainAuthSecretArn(String domainAuthSecretArn) {
+        this.domainAuthSecretArn = domainAuthSecretArn;
+    }
+
+    /**
+     * <p>
+     * The ARN for the Secrets Manager secret with the credentials for the user joining the domain.
+     * </p>
+     * <p>
+     * Example: <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
+     * </p>
+     * 
+     * @return The ARN for the Secrets Manager secret with the credentials for the user joining the domain.</p>
+     *         <p>
+     *         Example:
+     *         <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
+     */
+
+    public String getDomainAuthSecretArn() {
+        return this.domainAuthSecretArn;
+    }
+
+    /**
+     * <p>
+     * The ARN for the Secrets Manager secret with the credentials for the user joining the domain.
+     * </p>
+     * <p>
+     * Example: <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
+     * </p>
+     * 
+     * @param domainAuthSecretArn
+     *        The ARN for the Secrets Manager secret with the credentials for the user joining the domain.</p>
+     *        <p>
+     *        Example: <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDBInstanceReadReplicaRequest withDomainAuthSecretArn(String domainAuthSecretArn) {
+        setDomainAuthSecretArn(domainAuthSecretArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IPv4 DNS IP addresses of your primary and secondary Active Directory domain controllers.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the
+     * primary domain controller for both entries in the list.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Example: <code>123.124.125.126,234.235.236.237</code>
+     * </p>
+     * 
+     * @return The IPv4 DNS IP addresses of your primary and secondary Active Directory domain controllers.</p>
+     *         <p>
+     *         Constraints:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of
+     *         the primary domain controller for both entries in the list.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Example: <code>123.124.125.126,234.235.236.237</code>
+     */
+
+    public java.util.List<String> getDomainDnsIps() {
+        if (domainDnsIps == null) {
+            domainDnsIps = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return domainDnsIps;
+    }
+
+    /**
+     * <p>
+     * The IPv4 DNS IP addresses of your primary and secondary Active Directory domain controllers.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the
+     * primary domain controller for both entries in the list.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Example: <code>123.124.125.126,234.235.236.237</code>
+     * </p>
+     * 
+     * @param domainDnsIps
+     *        The IPv4 DNS IP addresses of your primary and secondary Active Directory domain controllers.</p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the
+     *        primary domain controller for both entries in the list.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Example: <code>123.124.125.126,234.235.236.237</code>
+     */
+
+    public void setDomainDnsIps(java.util.Collection<String> domainDnsIps) {
+        if (domainDnsIps == null) {
+            this.domainDnsIps = null;
+            return;
+        }
+
+        this.domainDnsIps = new com.amazonaws.internal.SdkInternalList<String>(domainDnsIps);
+    }
+
+    /**
+     * <p>
+     * The IPv4 DNS IP addresses of your primary and secondary Active Directory domain controllers.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the
+     * primary domain controller for both entries in the list.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Example: <code>123.124.125.126,234.235.236.237</code>
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDomainDnsIps(java.util.Collection)} or {@link #withDomainDnsIps(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param domainDnsIps
+     *        The IPv4 DNS IP addresses of your primary and secondary Active Directory domain controllers.</p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the
+     *        primary domain controller for both entries in the list.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Example: <code>123.124.125.126,234.235.236.237</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDBInstanceReadReplicaRequest withDomainDnsIps(String... domainDnsIps) {
+        if (this.domainDnsIps == null) {
+            setDomainDnsIps(new com.amazonaws.internal.SdkInternalList<String>(domainDnsIps.length));
+        }
+        for (String ele : domainDnsIps) {
+            this.domainDnsIps.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IPv4 DNS IP addresses of your primary and secondary Active Directory domain controllers.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the
+     * primary domain controller for both entries in the list.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Example: <code>123.124.125.126,234.235.236.237</code>
+     * </p>
+     * 
+     * @param domainDnsIps
+     *        The IPv4 DNS IP addresses of your primary and secondary Active Directory domain controllers.</p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the
+     *        primary domain controller for both entries in the list.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Example: <code>123.124.125.126,234.235.236.237</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDBInstanceReadReplicaRequest withDomainDnsIps(java.util.Collection<String> domainDnsIps) {
+        setDomainDnsIps(domainDnsIps);
         return this;
     }
 
@@ -5152,7 +5616,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
-     * This setting is required for RDS Custom.
+     * This setting is required for RDS Custom DB instances.
      * </p>
      * 
      * @param customIamInstanceProfile
@@ -5182,7 +5646,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.
      *        </p>
      *        <p>
-     *        This setting is required for RDS Custom.
+     *        This setting is required for RDS Custom DB instances.
      */
 
     public void setCustomIamInstanceProfile(String customIamInstanceProfile) {
@@ -5217,7 +5681,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
-     * This setting is required for RDS Custom.
+     * This setting is required for RDS Custom DB instances.
      * </p>
      * 
      * @return The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance. The
@@ -5246,7 +5710,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *         > Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.
      *         </p>
      *         <p>
-     *         This setting is required for RDS Custom.
+     *         This setting is required for RDS Custom DB instances.
      */
 
     public String getCustomIamInstanceProfile() {
@@ -5281,7 +5745,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
-     * This setting is required for RDS Custom.
+     * This setting is required for RDS Custom DB instances.
      * </p>
      * 
      * @param customIamInstanceProfile
@@ -5311,7 +5775,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.
      *        </p>
      *        <p>
-     *        This setting is required for RDS Custom.
+     *        This setting is required for RDS Custom DB instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -5325,7 +5789,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * The network type of the DB instance.
      * </p>
      * <p>
-     * Valid values:
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
@@ -5353,7 +5817,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * @param networkType
      *        The network type of the DB instance.</p>
      *        <p>
-     *        Valid values:
+     *        Valid Values:
      *        </p>
      *        <ul>
      *        <li>
@@ -5387,7 +5851,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * The network type of the DB instance.
      * </p>
      * <p>
-     * Valid values:
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
@@ -5414,7 +5878,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * 
      * @return The network type of the DB instance.</p>
      *         <p>
-     *         Valid values:
+     *         Valid Values:
      *         </p>
      *         <ul>
      *         <li>
@@ -5448,7 +5912,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * The network type of the DB instance.
      * </p>
      * <p>
-     * Valid values:
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
@@ -5476,7 +5940,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * @param networkType
      *        The network type of the DB instance.</p>
      *        <p>
-     *        Valid values:
+     *        Valid Values:
      *        </p>
      *        <ul>
      *        <li>
@@ -5512,13 +5976,13 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * Specifies the storage throughput value for the read replica.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom or Amazon Aurora.
+     * This setting doesn't apply to RDS Custom or Amazon Aurora DB instances.
      * </p>
      * 
      * @param storageThroughput
      *        Specifies the storage throughput value for the read replica.</p>
      *        <p>
-     *        This setting doesn't apply to RDS Custom or Amazon Aurora.
+     *        This setting doesn't apply to RDS Custom or Amazon Aurora DB instances.
      */
 
     public void setStorageThroughput(Integer storageThroughput) {
@@ -5530,12 +5994,12 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * Specifies the storage throughput value for the read replica.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom or Amazon Aurora.
+     * This setting doesn't apply to RDS Custom or Amazon Aurora DB instances.
      * </p>
      * 
      * @return Specifies the storage throughput value for the read replica.</p>
      *         <p>
-     *         This setting doesn't apply to RDS Custom or Amazon Aurora.
+     *         This setting doesn't apply to RDS Custom or Amazon Aurora DB instances.
      */
 
     public Integer getStorageThroughput() {
@@ -5547,13 +6011,13 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * Specifies the storage throughput value for the read replica.
      * </p>
      * <p>
-     * This setting doesn't apply to RDS Custom or Amazon Aurora.
+     * This setting doesn't apply to RDS Custom or Amazon Aurora DB instances.
      * </p>
      * 
      * @param storageThroughput
      *        Specifies the storage throughput value for the read replica.</p>
      *        <p>
-     *        This setting doesn't apply to RDS Custom or Amazon Aurora.
+     *        This setting doesn't apply to RDS Custom or Amazon Aurora DB instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -5564,7 +6028,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts read replica.
+     * Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts read replica.
      * </p>
      * <p>
      * A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your
@@ -5583,8 +6047,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param enableCustomerOwnedIp
-     *        A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts read
-     *        replica.</p>
+     *        Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts read replica.</p>
      *        <p>
      *        A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your
      *        on-premises network. For some use cases, a CoIP can provide lower latency for connections to the read
@@ -5607,7 +6070,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts read replica.
+     * Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts read replica.
      * </p>
      * <p>
      * A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your
@@ -5625,8 +6088,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      * </p>
      * 
-     * @return A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts read
-     *         replica.</p>
+     * @return Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts read replica.</p>
      *         <p>
      *         A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your
      *         on-premises network. For some use cases, a CoIP can provide lower latency for connections to the read
@@ -5649,7 +6111,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts read replica.
+     * Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts read replica.
      * </p>
      * <p>
      * A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your
@@ -5668,8 +6130,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param enableCustomerOwnedIp
-     *        A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts read
-     *        replica.</p>
+     *        Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts read replica.</p>
      *        <p>
      *        A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your
      *        on-premises network. For some use cases, a CoIP can provide lower latency for connections to the read
@@ -5694,7 +6155,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts read replica.
+     * Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts read replica.
      * </p>
      * <p>
      * A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your
@@ -5712,8 +6173,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      * </p>
      * 
-     * @return A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts read
-     *         replica.</p>
+     * @return Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts read replica.</p>
      *         <p>
      *         A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your
      *         on-premises network. For some use cases, a CoIP can provide lower latency for connections to the read
@@ -6016,6 +6476,118 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * Indicates whether the DB instance has a dedicated log volume (DLV) enabled.
+     * </p>
+     * 
+     * @param dedicatedLogVolume
+     *        Indicates whether the DB instance has a dedicated log volume (DLV) enabled.
+     */
+
+    public void setDedicatedLogVolume(Boolean dedicatedLogVolume) {
+        this.dedicatedLogVolume = dedicatedLogVolume;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the DB instance has a dedicated log volume (DLV) enabled.
+     * </p>
+     * 
+     * @return Indicates whether the DB instance has a dedicated log volume (DLV) enabled.
+     */
+
+    public Boolean getDedicatedLogVolume() {
+        return this.dedicatedLogVolume;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the DB instance has a dedicated log volume (DLV) enabled.
+     * </p>
+     * 
+     * @param dedicatedLogVolume
+     *        Indicates whether the DB instance has a dedicated log volume (DLV) enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDBInstanceReadReplicaRequest withDedicatedLogVolume(Boolean dedicatedLogVolume) {
+        setDedicatedLogVolume(dedicatedLogVolume);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the DB instance has a dedicated log volume (DLV) enabled.
+     * </p>
+     * 
+     * @return Indicates whether the DB instance has a dedicated log volume (DLV) enabled.
+     */
+
+    public Boolean isDedicatedLogVolume() {
+        return this.dedicatedLogVolume;
+    }
+
+    /**
+     * <p>
+     * Whether to upgrade the storage file system configuration on the read replica. This option migrates the read
+     * replica from the old storage file system layout to the preferred layout.
+     * </p>
+     * 
+     * @param upgradeStorageConfig
+     *        Whether to upgrade the storage file system configuration on the read replica. This option migrates the
+     *        read replica from the old storage file system layout to the preferred layout.
+     */
+
+    public void setUpgradeStorageConfig(Boolean upgradeStorageConfig) {
+        this.upgradeStorageConfig = upgradeStorageConfig;
+    }
+
+    /**
+     * <p>
+     * Whether to upgrade the storage file system configuration on the read replica. This option migrates the read
+     * replica from the old storage file system layout to the preferred layout.
+     * </p>
+     * 
+     * @return Whether to upgrade the storage file system configuration on the read replica. This option migrates the
+     *         read replica from the old storage file system layout to the preferred layout.
+     */
+
+    public Boolean getUpgradeStorageConfig() {
+        return this.upgradeStorageConfig;
+    }
+
+    /**
+     * <p>
+     * Whether to upgrade the storage file system configuration on the read replica. This option migrates the read
+     * replica from the old storage file system layout to the preferred layout.
+     * </p>
+     * 
+     * @param upgradeStorageConfig
+     *        Whether to upgrade the storage file system configuration on the read replica. This option migrates the
+     *        read replica from the old storage file system layout to the preferred layout.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDBInstanceReadReplicaRequest withUpgradeStorageConfig(Boolean upgradeStorageConfig) {
+        setUpgradeStorageConfig(upgradeStorageConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether to upgrade the storage file system configuration on the read replica. This option migrates the read
+     * replica from the old storage file system layout to the preferred layout.
+     * </p>
+     * 
+     * @return Whether to upgrade the storage file system configuration on the read replica. This option migrates the
+     *         read replica from the old storage file system layout to the preferred layout.
+     */
+
+    public Boolean isUpgradeStorageConfig() {
+        return this.upgradeStorageConfig;
+    }
+
+    /**
      * The region where the source instance is located.
      * 
      * @param sourceRegion
@@ -6121,6 +6693,14 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
             sb.append("Domain: ").append(getDomain()).append(",");
         if (getDomainIAMRoleName() != null)
             sb.append("DomainIAMRoleName: ").append(getDomainIAMRoleName()).append(",");
+        if (getDomainFqdn() != null)
+            sb.append("DomainFqdn: ").append(getDomainFqdn()).append(",");
+        if (getDomainOu() != null)
+            sb.append("DomainOu: ").append(getDomainOu()).append(",");
+        if (getDomainAuthSecretArn() != null)
+            sb.append("DomainAuthSecretArn: ").append(getDomainAuthSecretArn()).append(",");
+        if (getDomainDnsIps() != null)
+            sb.append("DomainDnsIps: ").append(getDomainDnsIps()).append(",");
         if (getReplicaMode() != null)
             sb.append("ReplicaMode: ").append(getReplicaMode()).append(",");
         if (getMaxAllocatedStorage() != null)
@@ -6137,6 +6717,10 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
             sb.append("AllocatedStorage: ").append(getAllocatedStorage()).append(",");
         if (getSourceDBClusterIdentifier() != null)
             sb.append("SourceDBClusterIdentifier: ").append(getSourceDBClusterIdentifier()).append(",");
+        if (getDedicatedLogVolume() != null)
+            sb.append("DedicatedLogVolume: ").append(getDedicatedLogVolume()).append(",");
+        if (getUpgradeStorageConfig() != null)
+            sb.append("UpgradeStorageConfig: ").append(getUpgradeStorageConfig()).append(",");
         if (getSourceRegion() != null)
             sb.append("SourceRegion: ").append(getSourceRegion());
         sb.append("}");
@@ -6275,6 +6859,22 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
             return false;
         if (other.getDomainIAMRoleName() != null && other.getDomainIAMRoleName().equals(this.getDomainIAMRoleName()) == false)
             return false;
+        if (other.getDomainFqdn() == null ^ this.getDomainFqdn() == null)
+            return false;
+        if (other.getDomainFqdn() != null && other.getDomainFqdn().equals(this.getDomainFqdn()) == false)
+            return false;
+        if (other.getDomainOu() == null ^ this.getDomainOu() == null)
+            return false;
+        if (other.getDomainOu() != null && other.getDomainOu().equals(this.getDomainOu()) == false)
+            return false;
+        if (other.getDomainAuthSecretArn() == null ^ this.getDomainAuthSecretArn() == null)
+            return false;
+        if (other.getDomainAuthSecretArn() != null && other.getDomainAuthSecretArn().equals(this.getDomainAuthSecretArn()) == false)
+            return false;
+        if (other.getDomainDnsIps() == null ^ this.getDomainDnsIps() == null)
+            return false;
+        if (other.getDomainDnsIps() != null && other.getDomainDnsIps().equals(this.getDomainDnsIps()) == false)
+            return false;
         if (other.getReplicaMode() == null ^ this.getReplicaMode() == null)
             return false;
         if (other.getReplicaMode() != null && other.getReplicaMode().equals(this.getReplicaMode()) == false)
@@ -6306,6 +6906,14 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
         if (other.getSourceDBClusterIdentifier() == null ^ this.getSourceDBClusterIdentifier() == null)
             return false;
         if (other.getSourceDBClusterIdentifier() != null && other.getSourceDBClusterIdentifier().equals(this.getSourceDBClusterIdentifier()) == false)
+            return false;
+        if (other.getDedicatedLogVolume() == null ^ this.getDedicatedLogVolume() == null)
+            return false;
+        if (other.getDedicatedLogVolume() != null && other.getDedicatedLogVolume().equals(this.getDedicatedLogVolume()) == false)
+            return false;
+        if (other.getUpgradeStorageConfig() == null ^ this.getUpgradeStorageConfig() == null)
+            return false;
+        if (other.getUpgradeStorageConfig() != null && other.getUpgradeStorageConfig().equals(this.getUpgradeStorageConfig()) == false)
             return false;
         if (other.getSourceRegion() == null ^ this.getSourceRegion() == null)
             return false;
@@ -6349,6 +6957,10 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
         hashCode = prime * hashCode + ((getDeletionProtection() == null) ? 0 : getDeletionProtection().hashCode());
         hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode());
         hashCode = prime * hashCode + ((getDomainIAMRoleName() == null) ? 0 : getDomainIAMRoleName().hashCode());
+        hashCode = prime * hashCode + ((getDomainFqdn() == null) ? 0 : getDomainFqdn().hashCode());
+        hashCode = prime * hashCode + ((getDomainOu() == null) ? 0 : getDomainOu().hashCode());
+        hashCode = prime * hashCode + ((getDomainAuthSecretArn() == null) ? 0 : getDomainAuthSecretArn().hashCode());
+        hashCode = prime * hashCode + ((getDomainDnsIps() == null) ? 0 : getDomainDnsIps().hashCode());
         hashCode = prime * hashCode + ((getReplicaMode() == null) ? 0 : getReplicaMode().hashCode());
         hashCode = prime * hashCode + ((getMaxAllocatedStorage() == null) ? 0 : getMaxAllocatedStorage().hashCode());
         hashCode = prime * hashCode + ((getCustomIamInstanceProfile() == null) ? 0 : getCustomIamInstanceProfile().hashCode());
@@ -6357,6 +6969,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
         hashCode = prime * hashCode + ((getEnableCustomerOwnedIp() == null) ? 0 : getEnableCustomerOwnedIp().hashCode());
         hashCode = prime * hashCode + ((getAllocatedStorage() == null) ? 0 : getAllocatedStorage().hashCode());
         hashCode = prime * hashCode + ((getSourceDBClusterIdentifier() == null) ? 0 : getSourceDBClusterIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getDedicatedLogVolume() == null) ? 0 : getDedicatedLogVolume().hashCode());
+        hashCode = prime * hashCode + ((getUpgradeStorageConfig() == null) ? 0 : getUpgradeStorageConfig().hashCode());
         hashCode = prime * hashCode + ((getSourceRegion() == null) ? 0 : getSourceRegion().hashCode());
         return hashCode;
     }

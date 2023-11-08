@@ -41,6 +41,19 @@ public class AbstractAWSMigrationHubConfigAsync extends AbstractAWSMigrationHubC
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteHomeRegionControlResult> deleteHomeRegionControlAsync(DeleteHomeRegionControlRequest request) {
+
+        return deleteHomeRegionControlAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteHomeRegionControlResult> deleteHomeRegionControlAsync(DeleteHomeRegionControlRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteHomeRegionControlRequest, DeleteHomeRegionControlResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeHomeRegionControlsResult> describeHomeRegionControlsAsync(DescribeHomeRegionControlsRequest request) {
 
         return describeHomeRegionControlsAsync(request, null);

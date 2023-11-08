@@ -253,6 +253,10 @@ public class ModifyReplicationGroupRequestMarshaller implements Marshaller<Reque
             request.addParameter("TransitEncryptionMode", StringUtils.fromString(modifyReplicationGroupRequest.getTransitEncryptionMode()));
         }
 
+        if (modifyReplicationGroupRequest.getClusterMode() != null) {
+            request.addParameter("ClusterMode", StringUtils.fromString(modifyReplicationGroupRequest.getClusterMode()));
+        }
+
         return request;
     }
 

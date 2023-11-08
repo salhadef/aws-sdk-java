@@ -56,20 +56,26 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
     private String name;
     /**
      * <p>
-     * By default, when Amazon EC2 creates the new AMI, it reboots the instance so that it can take snapshots of the
-     * attached volumes while data is at rest, in order to ensure a consistent state. You can set the
-     * <code>NoReboot</code> parameter to <code>true</code> in the API request, or use the <code>--no-reboot</code>
-     * option in the CLI to prevent Amazon EC2 from shutting down and rebooting the instance.
+     * Indicates whether or not the instance should be automatically rebooted before creating the image. Specify one of
+     * the following values:
      * </p>
-     * <important>
+     * <ul>
+     * <li>
      * <p>
-     * If you choose to bypass the shutdown and reboot process by setting the <code>NoReboot</code> parameter to
-     * <code>true</code> in the API request, or by using the <code>--no-reboot</code> option in the CLI, we can't
-     * guarantee the file system integrity of the created image.
+     * <code>true</code> - The instance is not rebooted before creating the image. This creates crash-consistent
+     * snapshots that include only the data that has been written to the volumes at the time the snapshots are created.
+     * Buffered data and data in memory that has not yet been written to the volumes is not included in the snapshots.
      * </p>
-     * </important>
+     * </li>
+     * <li>
      * <p>
-     * Default: <code>false</code> (follow standard reboot process)
+     * <code>false</code> - The instance is rebooted before creating the image. This ensures that all buffered data and
+     * data in memory is written to the volumes before the snapshots are created.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Default: <code>false</code>
      * </p>
      */
     private Boolean noReboot;
@@ -349,36 +355,49 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * By default, when Amazon EC2 creates the new AMI, it reboots the instance so that it can take snapshots of the
-     * attached volumes while data is at rest, in order to ensure a consistent state. You can set the
-     * <code>NoReboot</code> parameter to <code>true</code> in the API request, or use the <code>--no-reboot</code>
-     * option in the CLI to prevent Amazon EC2 from shutting down and rebooting the instance.
+     * Indicates whether or not the instance should be automatically rebooted before creating the image. Specify one of
+     * the following values:
      * </p>
-     * <important>
+     * <ul>
+     * <li>
      * <p>
-     * If you choose to bypass the shutdown and reboot process by setting the <code>NoReboot</code> parameter to
-     * <code>true</code> in the API request, or by using the <code>--no-reboot</code> option in the CLI, we can't
-     * guarantee the file system integrity of the created image.
+     * <code>true</code> - The instance is not rebooted before creating the image. This creates crash-consistent
+     * snapshots that include only the data that has been written to the volumes at the time the snapshots are created.
+     * Buffered data and data in memory that has not yet been written to the volumes is not included in the snapshots.
      * </p>
-     * </important>
+     * </li>
+     * <li>
      * <p>
-     * Default: <code>false</code> (follow standard reboot process)
+     * <code>false</code> - The instance is rebooted before creating the image. This ensures that all buffered data and
+     * data in memory is written to the volumes before the snapshots are created.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Default: <code>false</code>
      * </p>
      * 
      * @param noReboot
-     *        By default, when Amazon EC2 creates the new AMI, it reboots the instance so that it can take snapshots of
-     *        the attached volumes while data is at rest, in order to ensure a consistent state. You can set the
-     *        <code>NoReboot</code> parameter to <code>true</code> in the API request, or use the
-     *        <code>--no-reboot</code> option in the CLI to prevent Amazon EC2 from shutting down and rebooting the
-     *        instance.</p> <important>
+     *        Indicates whether or not the instance should be automatically rebooted before creating the image. Specify
+     *        one of the following values:</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        If you choose to bypass the shutdown and reboot process by setting the <code>NoReboot</code> parameter to
-     *        <code>true</code> in the API request, or by using the <code>--no-reboot</code> option in the CLI, we can't
-     *        guarantee the file system integrity of the created image.
+     *        <code>true</code> - The instance is not rebooted before creating the image. This creates crash-consistent
+     *        snapshots that include only the data that has been written to the volumes at the time the snapshots are
+     *        created. Buffered data and data in memory that has not yet been written to the volumes is not included in
+     *        the snapshots.
      *        </p>
-     *        </important>
+     *        </li>
+     *        <li>
      *        <p>
-     *        Default: <code>false</code> (follow standard reboot process)
+     *        <code>false</code> - The instance is rebooted before creating the image. This ensures that all buffered
+     *        data and data in memory is written to the volumes before the snapshots are created.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Default: <code>false</code>
      */
 
     public void setNoReboot(Boolean noReboot) {
@@ -387,35 +406,48 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * By default, when Amazon EC2 creates the new AMI, it reboots the instance so that it can take snapshots of the
-     * attached volumes while data is at rest, in order to ensure a consistent state. You can set the
-     * <code>NoReboot</code> parameter to <code>true</code> in the API request, or use the <code>--no-reboot</code>
-     * option in the CLI to prevent Amazon EC2 from shutting down and rebooting the instance.
+     * Indicates whether or not the instance should be automatically rebooted before creating the image. Specify one of
+     * the following values:
      * </p>
-     * <important>
+     * <ul>
+     * <li>
      * <p>
-     * If you choose to bypass the shutdown and reboot process by setting the <code>NoReboot</code> parameter to
-     * <code>true</code> in the API request, or by using the <code>--no-reboot</code> option in the CLI, we can't
-     * guarantee the file system integrity of the created image.
+     * <code>true</code> - The instance is not rebooted before creating the image. This creates crash-consistent
+     * snapshots that include only the data that has been written to the volumes at the time the snapshots are created.
+     * Buffered data and data in memory that has not yet been written to the volumes is not included in the snapshots.
      * </p>
-     * </important>
+     * </li>
+     * <li>
      * <p>
-     * Default: <code>false</code> (follow standard reboot process)
+     * <code>false</code> - The instance is rebooted before creating the image. This ensures that all buffered data and
+     * data in memory is written to the volumes before the snapshots are created.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Default: <code>false</code>
      * </p>
      * 
-     * @return By default, when Amazon EC2 creates the new AMI, it reboots the instance so that it can take snapshots of
-     *         the attached volumes while data is at rest, in order to ensure a consistent state. You can set the
-     *         <code>NoReboot</code> parameter to <code>true</code> in the API request, or use the
-     *         <code>--no-reboot</code> option in the CLI to prevent Amazon EC2 from shutting down and rebooting the
-     *         instance.</p> <important>
+     * @return Indicates whether or not the instance should be automatically rebooted before creating the image. Specify
+     *         one of the following values:</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         If you choose to bypass the shutdown and reboot process by setting the <code>NoReboot</code> parameter to
-     *         <code>true</code> in the API request, or by using the <code>--no-reboot</code> option in the CLI, we
-     *         can't guarantee the file system integrity of the created image.
+     *         <code>true</code> - The instance is not rebooted before creating the image. This creates crash-consistent
+     *         snapshots that include only the data that has been written to the volumes at the time the snapshots are
+     *         created. Buffered data and data in memory that has not yet been written to the volumes is not included in
+     *         the snapshots.
      *         </p>
-     *         </important>
+     *         </li>
+     *         <li>
      *         <p>
-     *         Default: <code>false</code> (follow standard reboot process)
+     *         <code>false</code> - The instance is rebooted before creating the image. This ensures that all buffered
+     *         data and data in memory is written to the volumes before the snapshots are created.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Default: <code>false</code>
      */
 
     public Boolean getNoReboot() {
@@ -424,36 +456,49 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * By default, when Amazon EC2 creates the new AMI, it reboots the instance so that it can take snapshots of the
-     * attached volumes while data is at rest, in order to ensure a consistent state. You can set the
-     * <code>NoReboot</code> parameter to <code>true</code> in the API request, or use the <code>--no-reboot</code>
-     * option in the CLI to prevent Amazon EC2 from shutting down and rebooting the instance.
+     * Indicates whether or not the instance should be automatically rebooted before creating the image. Specify one of
+     * the following values:
      * </p>
-     * <important>
+     * <ul>
+     * <li>
      * <p>
-     * If you choose to bypass the shutdown and reboot process by setting the <code>NoReboot</code> parameter to
-     * <code>true</code> in the API request, or by using the <code>--no-reboot</code> option in the CLI, we can't
-     * guarantee the file system integrity of the created image.
+     * <code>true</code> - The instance is not rebooted before creating the image. This creates crash-consistent
+     * snapshots that include only the data that has been written to the volumes at the time the snapshots are created.
+     * Buffered data and data in memory that has not yet been written to the volumes is not included in the snapshots.
      * </p>
-     * </important>
+     * </li>
+     * <li>
      * <p>
-     * Default: <code>false</code> (follow standard reboot process)
+     * <code>false</code> - The instance is rebooted before creating the image. This ensures that all buffered data and
+     * data in memory is written to the volumes before the snapshots are created.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Default: <code>false</code>
      * </p>
      * 
      * @param noReboot
-     *        By default, when Amazon EC2 creates the new AMI, it reboots the instance so that it can take snapshots of
-     *        the attached volumes while data is at rest, in order to ensure a consistent state. You can set the
-     *        <code>NoReboot</code> parameter to <code>true</code> in the API request, or use the
-     *        <code>--no-reboot</code> option in the CLI to prevent Amazon EC2 from shutting down and rebooting the
-     *        instance.</p> <important>
+     *        Indicates whether or not the instance should be automatically rebooted before creating the image. Specify
+     *        one of the following values:</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        If you choose to bypass the shutdown and reboot process by setting the <code>NoReboot</code> parameter to
-     *        <code>true</code> in the API request, or by using the <code>--no-reboot</code> option in the CLI, we can't
-     *        guarantee the file system integrity of the created image.
+     *        <code>true</code> - The instance is not rebooted before creating the image. This creates crash-consistent
+     *        snapshots that include only the data that has been written to the volumes at the time the snapshots are
+     *        created. Buffered data and data in memory that has not yet been written to the volumes is not included in
+     *        the snapshots.
      *        </p>
-     *        </important>
+     *        </li>
+     *        <li>
      *        <p>
-     *        Default: <code>false</code> (follow standard reboot process)
+     *        <code>false</code> - The instance is rebooted before creating the image. This ensures that all buffered
+     *        data and data in memory is written to the volumes before the snapshots are created.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Default: <code>false</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -464,35 +509,48 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * By default, when Amazon EC2 creates the new AMI, it reboots the instance so that it can take snapshots of the
-     * attached volumes while data is at rest, in order to ensure a consistent state. You can set the
-     * <code>NoReboot</code> parameter to <code>true</code> in the API request, or use the <code>--no-reboot</code>
-     * option in the CLI to prevent Amazon EC2 from shutting down and rebooting the instance.
+     * Indicates whether or not the instance should be automatically rebooted before creating the image. Specify one of
+     * the following values:
      * </p>
-     * <important>
+     * <ul>
+     * <li>
      * <p>
-     * If you choose to bypass the shutdown and reboot process by setting the <code>NoReboot</code> parameter to
-     * <code>true</code> in the API request, or by using the <code>--no-reboot</code> option in the CLI, we can't
-     * guarantee the file system integrity of the created image.
+     * <code>true</code> - The instance is not rebooted before creating the image. This creates crash-consistent
+     * snapshots that include only the data that has been written to the volumes at the time the snapshots are created.
+     * Buffered data and data in memory that has not yet been written to the volumes is not included in the snapshots.
      * </p>
-     * </important>
+     * </li>
+     * <li>
      * <p>
-     * Default: <code>false</code> (follow standard reboot process)
+     * <code>false</code> - The instance is rebooted before creating the image. This ensures that all buffered data and
+     * data in memory is written to the volumes before the snapshots are created.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Default: <code>false</code>
      * </p>
      * 
-     * @return By default, when Amazon EC2 creates the new AMI, it reboots the instance so that it can take snapshots of
-     *         the attached volumes while data is at rest, in order to ensure a consistent state. You can set the
-     *         <code>NoReboot</code> parameter to <code>true</code> in the API request, or use the
-     *         <code>--no-reboot</code> option in the CLI to prevent Amazon EC2 from shutting down and rebooting the
-     *         instance.</p> <important>
+     * @return Indicates whether or not the instance should be automatically rebooted before creating the image. Specify
+     *         one of the following values:</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         If you choose to bypass the shutdown and reboot process by setting the <code>NoReboot</code> parameter to
-     *         <code>true</code> in the API request, or by using the <code>--no-reboot</code> option in the CLI, we
-     *         can't guarantee the file system integrity of the created image.
+     *         <code>true</code> - The instance is not rebooted before creating the image. This creates crash-consistent
+     *         snapshots that include only the data that has been written to the volumes at the time the snapshots are
+     *         created. Buffered data and data in memory that has not yet been written to the volumes is not included in
+     *         the snapshots.
      *         </p>
-     *         </important>
+     *         </li>
+     *         <li>
      *         <p>
-     *         Default: <code>false</code> (follow standard reboot process)
+     *         <code>false</code> - The instance is rebooted before creating the image. This ensures that all buffered
+     *         data and data in memory is written to the volumes before the snapshots are created.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Default: <code>false</code>
      */
 
     public Boolean isNoReboot() {

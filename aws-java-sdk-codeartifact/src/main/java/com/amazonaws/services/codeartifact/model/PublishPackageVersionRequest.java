@@ -47,6 +47,9 @@ public class PublishPackageVersionRequest extends com.amazonaws.AmazonWebService
      * <p>
      * A format that specifies the type of the package version with the requested asset file.
      * </p>
+     * <p>
+     * The only supported value is <code>generic</code>.
+     * </p>
      */
     private String format;
     /**
@@ -231,9 +234,14 @@ public class PublishPackageVersionRequest extends com.amazonaws.AmazonWebService
      * <p>
      * A format that specifies the type of the package version with the requested asset file.
      * </p>
+     * <p>
+     * The only supported value is <code>generic</code>.
+     * </p>
      * 
      * @param format
-     *        A format that specifies the type of the package version with the requested asset file.
+     *        A format that specifies the type of the package version with the requested asset file.</p>
+     *        <p>
+     *        The only supported value is <code>generic</code>.
      * @see PackageFormat
      */
 
@@ -245,8 +253,13 @@ public class PublishPackageVersionRequest extends com.amazonaws.AmazonWebService
      * <p>
      * A format that specifies the type of the package version with the requested asset file.
      * </p>
+     * <p>
+     * The only supported value is <code>generic</code>.
+     * </p>
      * 
-     * @return A format that specifies the type of the package version with the requested asset file.
+     * @return A format that specifies the type of the package version with the requested asset file.</p>
+     *         <p>
+     *         The only supported value is <code>generic</code>.
      * @see PackageFormat
      */
 
@@ -258,9 +271,14 @@ public class PublishPackageVersionRequest extends com.amazonaws.AmazonWebService
      * <p>
      * A format that specifies the type of the package version with the requested asset file.
      * </p>
+     * <p>
+     * The only supported value is <code>generic</code>.
+     * </p>
      * 
      * @param format
-     *        A format that specifies the type of the package version with the requested asset file.
+     *        A format that specifies the type of the package version with the requested asset file.</p>
+     *        <p>
+     *        The only supported value is <code>generic</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageFormat
      */
@@ -274,9 +292,14 @@ public class PublishPackageVersionRequest extends com.amazonaws.AmazonWebService
      * <p>
      * A format that specifies the type of the package version with the requested asset file.
      * </p>
+     * <p>
+     * The only supported value is <code>generic</code>.
+     * </p>
      * 
      * @param format
-     *        A format that specifies the type of the package version with the requested asset file.
+     *        A format that specifies the type of the package version with the requested asset file.</p>
+     *        <p>
+     *        The only supported value is <code>generic</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageFormat
      */

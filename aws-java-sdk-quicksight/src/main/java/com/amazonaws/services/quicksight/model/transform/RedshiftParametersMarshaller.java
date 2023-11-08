@@ -35,6 +35,8 @@ public class RedshiftParametersMarshaller {
             .marshallLocationName("Database").build();
     private static final MarshallingInfo<String> CLUSTERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ClusterId").build();
+    private static final MarshallingInfo<StructuredPojo> IAMPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IAMParameters").build();
 
     private static final RedshiftParametersMarshaller instance = new RedshiftParametersMarshaller();
 
@@ -56,6 +58,7 @@ public class RedshiftParametersMarshaller {
             protocolMarshaller.marshall(redshiftParameters.getPort(), PORT_BINDING);
             protocolMarshaller.marshall(redshiftParameters.getDatabase(), DATABASE_BINDING);
             protocolMarshaller.marshall(redshiftParameters.getClusterId(), CLUSTERID_BINDING);
+            protocolMarshaller.marshall(redshiftParameters.getIAMParameters(), IAMPARAMETERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

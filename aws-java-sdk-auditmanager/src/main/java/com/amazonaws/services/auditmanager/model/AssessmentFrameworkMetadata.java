@@ -579,7 +579,7 @@ public class AssessmentFrameworkMetadata implements Serializable, Cloneable, Str
         if (getLogo() != null)
             sb.append("Logo: ").append(getLogo()).append(",");
         if (getComplianceType() != null)
-            sb.append("ComplianceType: ").append(getComplianceType()).append(",");
+            sb.append("ComplianceType: ").append("***Sensitive Data Redacted***").append(",");
         if (getControlsCount() != null)
             sb.append("ControlsCount: ").append(getControlsCount()).append(",");
         if (getControlSetsCount() != null)

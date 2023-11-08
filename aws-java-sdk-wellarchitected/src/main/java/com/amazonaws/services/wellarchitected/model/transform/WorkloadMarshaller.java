@@ -79,6 +79,10 @@ public class WorkloadMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DiscoveryConfig").build();
     private static final MarshallingInfo<List> APPLICATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Applications").build();
+    private static final MarshallingInfo<List> PROFILES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Profiles").build();
+    private static final MarshallingInfo<Map> PRIORITIZEDRISKCOUNTS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PrioritizedRiskCounts").build();
 
     private static final WorkloadMarshaller instance = new WorkloadMarshaller();
 
@@ -121,6 +125,8 @@ public class WorkloadMarshaller {
             protocolMarshaller.marshall(workload.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(workload.getDiscoveryConfig(), DISCOVERYCONFIG_BINDING);
             protocolMarshaller.marshall(workload.getApplications(), APPLICATIONS_BINDING);
+            protocolMarshaller.marshall(workload.getProfiles(), PROFILES_BINDING);
+            protocolMarshaller.marshall(workload.getPrioritizedRiskCounts(), PRIORITIZEDRISKCOUNTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

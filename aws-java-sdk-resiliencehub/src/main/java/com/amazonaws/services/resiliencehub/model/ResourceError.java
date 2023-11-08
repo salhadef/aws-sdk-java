@@ -30,13 +30,13 @@ public class ResourceError implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This is the identifier of the resource.
+     * Identifier of the logical resource.
      * </p>
      */
     private String logicalResourceId;
     /**
      * <p>
-     * This is the identifier of the physical resource.
+     * Identifier of the physical resource.
      * </p>
      */
     private String physicalResourceId;
@@ -49,11 +49,11 @@ public class ResourceError implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This is the identifier of the resource.
+     * Identifier of the logical resource.
      * </p>
      * 
      * @param logicalResourceId
-     *        This is the identifier of the resource.
+     *        Identifier of the logical resource.
      */
 
     public void setLogicalResourceId(String logicalResourceId) {
@@ -62,10 +62,10 @@ public class ResourceError implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This is the identifier of the resource.
+     * Identifier of the logical resource.
      * </p>
      * 
-     * @return This is the identifier of the resource.
+     * @return Identifier of the logical resource.
      */
 
     public String getLogicalResourceId() {
@@ -74,11 +74,11 @@ public class ResourceError implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This is the identifier of the resource.
+     * Identifier of the logical resource.
      * </p>
      * 
      * @param logicalResourceId
-     *        This is the identifier of the resource.
+     *        Identifier of the logical resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class ResourceError implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This is the identifier of the physical resource.
+     * Identifier of the physical resource.
      * </p>
      * 
      * @param physicalResourceId
-     *        This is the identifier of the physical resource.
+     *        Identifier of the physical resource.
      */
 
     public void setPhysicalResourceId(String physicalResourceId) {
@@ -102,10 +102,10 @@ public class ResourceError implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This is the identifier of the physical resource.
+     * Identifier of the physical resource.
      * </p>
      * 
-     * @return This is the identifier of the physical resource.
+     * @return Identifier of the physical resource.
      */
 
     public String getPhysicalResourceId() {
@@ -114,11 +114,11 @@ public class ResourceError implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This is the identifier of the physical resource.
+     * Identifier of the physical resource.
      * </p>
      * 
      * @param physicalResourceId
-     *        This is the identifier of the physical resource.
+     *        Identifier of the physical resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

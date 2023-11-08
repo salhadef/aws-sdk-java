@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UpdateApplicationRequestMarshaller {
 
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("accountID").build();
     private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("applicationID").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -50,6 +52,7 @@ public class UpdateApplicationRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(updateApplicationRequest.getAccountID(), ACCOUNTID_BINDING);
             protocolMarshaller.marshall(updateApplicationRequest.getApplicationID(), APPLICATIONID_BINDING);
             protocolMarshaller.marshall(updateApplicationRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(updateApplicationRequest.getName(), NAME_BINDING);

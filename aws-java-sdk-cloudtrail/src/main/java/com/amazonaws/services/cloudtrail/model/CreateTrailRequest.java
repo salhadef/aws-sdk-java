@@ -94,9 +94,9 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
     private Boolean includeGlobalServiceEvents;
     /**
      * <p>
-     * Specifies whether the trail is created in the current region or in all regions. The default is false, which
-     * creates a trail only in the region where you are signed in. As a best practice, consider creating trails that log
-     * events in all regions.
+     * Specifies whether the trail is created in the current Region or in all Regions. The default is false, which
+     * creates a trail only in the Region where you are signed in. As a best practice, consider creating trails that log
+     * events in all Regions.
      * </p>
      */
     private Boolean isMultiRegionTrail;
@@ -598,15 +598,15 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies whether the trail is created in the current region or in all regions. The default is false, which
-     * creates a trail only in the region where you are signed in. As a best practice, consider creating trails that log
-     * events in all regions.
+     * Specifies whether the trail is created in the current Region or in all Regions. The default is false, which
+     * creates a trail only in the Region where you are signed in. As a best practice, consider creating trails that log
+     * events in all Regions.
      * </p>
      * 
      * @param isMultiRegionTrail
-     *        Specifies whether the trail is created in the current region or in all regions. The default is false,
-     *        which creates a trail only in the region where you are signed in. As a best practice, consider creating
-     *        trails that log events in all regions.
+     *        Specifies whether the trail is created in the current Region or in all Regions. The default is false,
+     *        which creates a trail only in the Region where you are signed in. As a best practice, consider creating
+     *        trails that log events in all Regions.
      */
 
     public void setIsMultiRegionTrail(Boolean isMultiRegionTrail) {
@@ -615,14 +615,14 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies whether the trail is created in the current region or in all regions. The default is false, which
-     * creates a trail only in the region where you are signed in. As a best practice, consider creating trails that log
-     * events in all regions.
+     * Specifies whether the trail is created in the current Region or in all Regions. The default is false, which
+     * creates a trail only in the Region where you are signed in. As a best practice, consider creating trails that log
+     * events in all Regions.
      * </p>
      * 
-     * @return Specifies whether the trail is created in the current region or in all regions. The default is false,
-     *         which creates a trail only in the region where you are signed in. As a best practice, consider creating
-     *         trails that log events in all regions.
+     * @return Specifies whether the trail is created in the current Region or in all Regions. The default is false,
+     *         which creates a trail only in the Region where you are signed in. As a best practice, consider creating
+     *         trails that log events in all Regions.
      */
 
     public Boolean getIsMultiRegionTrail() {
@@ -631,15 +631,15 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies whether the trail is created in the current region or in all regions. The default is false, which
-     * creates a trail only in the region where you are signed in. As a best practice, consider creating trails that log
-     * events in all regions.
+     * Specifies whether the trail is created in the current Region or in all Regions. The default is false, which
+     * creates a trail only in the Region where you are signed in. As a best practice, consider creating trails that log
+     * events in all Regions.
      * </p>
      * 
      * @param isMultiRegionTrail
-     *        Specifies whether the trail is created in the current region or in all regions. The default is false,
-     *        which creates a trail only in the region where you are signed in. As a best practice, consider creating
-     *        trails that log events in all regions.
+     *        Specifies whether the trail is created in the current Region or in all Regions. The default is false,
+     *        which creates a trail only in the Region where you are signed in. As a best practice, consider creating
+     *        trails that log events in all Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -650,14 +650,14 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies whether the trail is created in the current region or in all regions. The default is false, which
-     * creates a trail only in the region where you are signed in. As a best practice, consider creating trails that log
-     * events in all regions.
+     * Specifies whether the trail is created in the current Region or in all Regions. The default is false, which
+     * creates a trail only in the Region where you are signed in. As a best practice, consider creating trails that log
+     * events in all Regions.
      * </p>
      * 
-     * @return Specifies whether the trail is created in the current region or in all regions. The default is false,
-     *         which creates a trail only in the region where you are signed in. As a best practice, consider creating
-     *         trails that log events in all regions.
+     * @return Specifies whether the trail is created in the current Region or in all Regions. The default is false,
+     *         which creates a trail only in the Region where you are signed in. As a best practice, consider creating
+     *         trails that log events in all Regions.
      */
 
     public Boolean isMultiRegionTrail() {

@@ -61,7 +61,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * <li>
      * <p>
      * <code>architecture</code> - The image architecture (<code>i386</code> | <code>x86_64</code> | <code>arm64</code>
-     * ).
+     * | <code>x86_64_mac</code> | <code>arm64_mac</code>).
      * </p>
      * </li>
      * <li>
@@ -197,6 +197,13 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * </li>
      * <li>
      * <p>
+     * <code>source-instance-id</code> - The ID of the instance that the AMI was created from if the AMI was created
+     * using CreateImage. This filter is applicable only if the AMI was created using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>state</code> - The state of the image (<code>available</code> | <code>pending</code> | <code>failed</code>
      * ).
      * </p>
@@ -271,6 +278,15 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * </note>
      */
     private Boolean includeDeprecated;
+    /**
+     * <p>
+     * Specifies whether to include disabled AMIs.
+     * </p>
+     * <p>
+     * Default: No disabled AMIs are included in the response.
+     * </p>
+     */
+    private Boolean includeDisabled;
     /**
      * <p>
      * The maximum number of items to return for this request. To get the next page of items, make another request with
@@ -540,7 +556,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * <li>
      * <p>
      * <code>architecture</code> - The image architecture (<code>i386</code> | <code>x86_64</code> | <code>arm64</code>
-     * ).
+     * | <code>x86_64_mac</code> | <code>arm64_mac</code>).
      * </p>
      * </li>
      * <li>
@@ -676,6 +692,13 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * </li>
      * <li>
      * <p>
+     * <code>source-instance-id</code> - The ID of the instance that the AMI was created from if the AMI was created
+     * using CreateImage. This filter is applicable only if the AMI was created using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>state</code> - The state of the image (<code>available</code> | <code>pending</code> | <code>failed</code>
      * ).
      * </p>
@@ -722,7 +745,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *         <li>
      *         <p>
      *         <code>architecture</code> - The image architecture (<code>i386</code> | <code>x86_64</code> |
-     *         <code>arm64</code>).
+     *         <code>arm64</code> | <code>x86_64_mac</code> | <code>arm64_mac</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -861,6 +884,13 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *         </li>
      *         <li>
      *         <p>
+     *         <code>source-instance-id</code> - The ID of the instance that the AMI was created from if the AMI was
+     *         created using CreateImage. This filter is applicable only if the AMI was created using <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>state</code> - The state of the image (<code>available</code> | <code>pending</code> |
      *         <code>failed</code>).
      *         </p>
@@ -917,7 +947,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * <li>
      * <p>
      * <code>architecture</code> - The image architecture (<code>i386</code> | <code>x86_64</code> | <code>arm64</code>
-     * ).
+     * | <code>x86_64_mac</code> | <code>arm64_mac</code>).
      * </p>
      * </li>
      * <li>
@@ -1053,6 +1083,13 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * </li>
      * <li>
      * <p>
+     * <code>source-instance-id</code> - The ID of the instance that the AMI was created from if the AMI was created
+     * using CreateImage. This filter is applicable only if the AMI was created using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>state</code> - The state of the image (<code>available</code> | <code>pending</code> | <code>failed</code>
      * ).
      * </p>
@@ -1100,7 +1137,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *        <li>
      *        <p>
      *        <code>architecture</code> - The image architecture (<code>i386</code> | <code>x86_64</code> |
-     *        <code>arm64</code>).
+     *        <code>arm64</code> | <code>x86_64_mac</code> | <code>arm64_mac</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -1235,6 +1272,13 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *        <p>
      *        <code>root-device-type</code> - The type of the root device volume (<code>ebs</code> |
      *        <code>instance-store</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>source-instance-id</code> - The ID of the instance that the AMI was created from if the AMI was
+     *        created using CreateImage. This filter is applicable only if the AMI was created using <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.
      *        </p>
      *        </li>
      *        <li>
@@ -1297,7 +1341,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * <li>
      * <p>
      * <code>architecture</code> - The image architecture (<code>i386</code> | <code>x86_64</code> | <code>arm64</code>
-     * ).
+     * | <code>x86_64_mac</code> | <code>arm64_mac</code>).
      * </p>
      * </li>
      * <li>
@@ -1433,6 +1477,13 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * </li>
      * <li>
      * <p>
+     * <code>source-instance-id</code> - The ID of the instance that the AMI was created from if the AMI was created
+     * using CreateImage. This filter is applicable only if the AMI was created using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>state</code> - The state of the image (<code>available</code> | <code>pending</code> | <code>failed</code>
      * ).
      * </p>
@@ -1485,7 +1536,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *        <li>
      *        <p>
      *        <code>architecture</code> - The image architecture (<code>i386</code> | <code>x86_64</code> |
-     *        <code>arm64</code>).
+     *        <code>arm64</code> | <code>x86_64_mac</code> | <code>arm64_mac</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -1620,6 +1671,13 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *        <p>
      *        <code>root-device-type</code> - The type of the root device volume (<code>ebs</code> |
      *        <code>instance-store</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>source-instance-id</code> - The ID of the instance that the AMI was created from if the AMI was
+     *        created using CreateImage. This filter is applicable only if the AMI was created using <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.
      *        </p>
      *        </li>
      *        <li>
@@ -1684,7 +1742,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * <li>
      * <p>
      * <code>architecture</code> - The image architecture (<code>i386</code> | <code>x86_64</code> | <code>arm64</code>
-     * ).
+     * | <code>x86_64_mac</code> | <code>arm64_mac</code>).
      * </p>
      * </li>
      * <li>
@@ -1820,6 +1878,13 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * </li>
      * <li>
      * <p>
+     * <code>source-instance-id</code> - The ID of the instance that the AMI was created from if the AMI was created
+     * using CreateImage. This filter is applicable only if the AMI was created using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>state</code> - The state of the image (<code>available</code> | <code>pending</code> | <code>failed</code>
      * ).
      * </p>
@@ -1867,7 +1932,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *        <li>
      *        <p>
      *        <code>architecture</code> - The image architecture (<code>i386</code> | <code>x86_64</code> |
-     *        <code>arm64</code>).
+     *        <code>arm64</code> | <code>x86_64_mac</code> | <code>arm64_mac</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -2002,6 +2067,13 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *        <p>
      *        <code>root-device-type</code> - The type of the root device volume (<code>ebs</code> |
      *        <code>instance-store</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>source-instance-id</code> - The ID of the instance that the AMI was created from if the AMI was
+     *        created using CreateImage. This filter is applicable only if the AMI was created using <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.
      *        </p>
      *        </li>
      *        <li>
@@ -2361,6 +2433,78 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
+     * Specifies whether to include disabled AMIs.
+     * </p>
+     * <p>
+     * Default: No disabled AMIs are included in the response.
+     * </p>
+     * 
+     * @param includeDisabled
+     *        Specifies whether to include disabled AMIs.</p>
+     *        <p>
+     *        Default: No disabled AMIs are included in the response.
+     */
+
+    public void setIncludeDisabled(Boolean includeDisabled) {
+        this.includeDisabled = includeDisabled;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to include disabled AMIs.
+     * </p>
+     * <p>
+     * Default: No disabled AMIs are included in the response.
+     * </p>
+     * 
+     * @return Specifies whether to include disabled AMIs.</p>
+     *         <p>
+     *         Default: No disabled AMIs are included in the response.
+     */
+
+    public Boolean getIncludeDisabled() {
+        return this.includeDisabled;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to include disabled AMIs.
+     * </p>
+     * <p>
+     * Default: No disabled AMIs are included in the response.
+     * </p>
+     * 
+     * @param includeDisabled
+     *        Specifies whether to include disabled AMIs.</p>
+     *        <p>
+     *        Default: No disabled AMIs are included in the response.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeImagesRequest withIncludeDisabled(Boolean includeDisabled) {
+        setIncludeDisabled(includeDisabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to include disabled AMIs.
+     * </p>
+     * <p>
+     * Default: No disabled AMIs are included in the response.
+     * </p>
+     * 
+     * @return Specifies whether to include disabled AMIs.</p>
+     *         <p>
+     *         Default: No disabled AMIs are included in the response.
+     */
+
+    public Boolean isIncludeDisabled() {
+        return this.includeDisabled;
+    }
+
+    /**
+     * <p>
      * The maximum number of items to return for this request. To get the next page of items, make another request with
      * the token returned in the output. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
@@ -2493,6 +2637,8 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
             sb.append("Owners: ").append(getOwners()).append(",");
         if (getIncludeDeprecated() != null)
             sb.append("IncludeDeprecated: ").append(getIncludeDeprecated()).append(",");
+        if (getIncludeDisabled() != null)
+            sb.append("IncludeDisabled: ").append(getIncludeDisabled()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
@@ -2531,6 +2677,10 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
             return false;
         if (other.getIncludeDeprecated() != null && other.getIncludeDeprecated().equals(this.getIncludeDeprecated()) == false)
             return false;
+        if (other.getIncludeDisabled() == null ^ this.getIncludeDisabled() == null)
+            return false;
+        if (other.getIncludeDisabled() != null && other.getIncludeDisabled().equals(this.getIncludeDisabled()) == false)
+            return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
@@ -2552,6 +2702,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
         hashCode = prime * hashCode + ((getImageIds() == null) ? 0 : getImageIds().hashCode());
         hashCode = prime * hashCode + ((getOwners() == null) ? 0 : getOwners().hashCode());
         hashCode = prime * hashCode + ((getIncludeDeprecated() == null) ? 0 : getIncludeDeprecated().hashCode());
+        hashCode = prime * hashCode + ((getIncludeDisabled() == null) ? 0 : getIncludeDisabled().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;

@@ -1172,6 +1172,41 @@ public class AmazonFSxAsyncClient extends AmazonFSxClient implements AmazonFSxAs
     }
 
     @Override
+    public java.util.concurrent.Future<StartMisconfiguredStateRecoveryResult> startMisconfiguredStateRecoveryAsync(
+            StartMisconfiguredStateRecoveryRequest request) {
+
+        return startMisconfiguredStateRecoveryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartMisconfiguredStateRecoveryResult> startMisconfiguredStateRecoveryAsync(
+            final StartMisconfiguredStateRecoveryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartMisconfiguredStateRecoveryRequest, StartMisconfiguredStateRecoveryResult> asyncHandler) {
+        final StartMisconfiguredStateRecoveryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartMisconfiguredStateRecoveryResult>() {
+            @Override
+            public StartMisconfiguredStateRecoveryResult call() throws Exception {
+                StartMisconfiguredStateRecoveryResult result = null;
+
+                try {
+                    result = executeStartMisconfiguredStateRecovery(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);

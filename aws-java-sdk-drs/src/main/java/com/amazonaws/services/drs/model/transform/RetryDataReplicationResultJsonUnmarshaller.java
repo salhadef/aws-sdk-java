@@ -80,6 +80,10 @@ public class RetryDataReplicationResultJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     retryDataReplicationResult.setSourceCloudProperties(SourceCloudPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("sourceNetworkID", targetDepth)) {
+                    context.nextToken();
+                    retryDataReplicationResult.setSourceNetworkID(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("sourceProperties", targetDepth)) {
                     context.nextToken();
                     retryDataReplicationResult.setSourceProperties(SourcePropertiesJsonUnmarshaller.getInstance().unmarshall(context));

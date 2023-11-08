@@ -20,7 +20,9 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum KeywordInputType {
 
-    SELECT_FROM_LIST("SELECT_FROM_LIST");
+    SELECT_FROM_LIST("SELECT_FROM_LIST"),
+    UPLOAD_FILE("UPLOAD_FILE"),
+    INPUT_TEXT("INPUT_TEXT");
 
     private String value;
 

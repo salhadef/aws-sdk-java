@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The requested Data Store was not found.
+ * The requested data store was not found.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

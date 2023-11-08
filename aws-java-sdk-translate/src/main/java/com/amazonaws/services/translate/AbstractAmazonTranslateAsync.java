@@ -223,6 +223,19 @@ public class AbstractAmazonTranslateAsync extends AbstractAmazonTranslate implem
     }
 
     @Override
+    public java.util.concurrent.Future<TranslateDocumentResult> translateDocumentAsync(TranslateDocumentRequest request) {
+
+        return translateDocumentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TranslateDocumentResult> translateDocumentAsync(TranslateDocumentRequest request,
+            com.amazonaws.handlers.AsyncHandler<TranslateDocumentRequest, TranslateDocumentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<TranslateTextResult> translateTextAsync(TranslateTextRequest request) {
 
         return translateTextAsync(request, null);

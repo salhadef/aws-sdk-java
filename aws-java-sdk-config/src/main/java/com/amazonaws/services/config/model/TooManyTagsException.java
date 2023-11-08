@@ -18,7 +18,7 @@ import javax.annotation.Generated;
  * <p>
  * You have reached the limit of the number of tags you can use. For more information, see <a
  * href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in the
- * Config Developer Guide.
+ * <i>Config Developer Guide</i>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

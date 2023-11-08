@@ -58,6 +58,11 @@ public class AbstractAWSHealth implements AWSHealth {
     }
 
     @Override
+    public DescribeEntityAggregatesForOrganizationResult describeEntityAggregatesForOrganization(DescribeEntityAggregatesForOrganizationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeEventAggregatesResult describeEventAggregates(DescribeEventAggregatesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

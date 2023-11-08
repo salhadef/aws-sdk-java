@@ -43,6 +43,8 @@ public class ClaimedPhoneNumberSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PhoneNumberDescription").build();
     private static final MarshallingInfo<String> TARGETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("TargetArn").build();
+    private static final MarshallingInfo<String> INSTANCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceId").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
     private static final MarshallingInfo<StructuredPojo> PHONENUMBERSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -71,6 +73,7 @@ public class ClaimedPhoneNumberSummaryMarshaller {
             protocolMarshaller.marshall(claimedPhoneNumberSummary.getPhoneNumberType(), PHONENUMBERTYPE_BINDING);
             protocolMarshaller.marshall(claimedPhoneNumberSummary.getPhoneNumberDescription(), PHONENUMBERDESCRIPTION_BINDING);
             protocolMarshaller.marshall(claimedPhoneNumberSummary.getTargetArn(), TARGETARN_BINDING);
+            protocolMarshaller.marshall(claimedPhoneNumberSummary.getInstanceId(), INSTANCEID_BINDING);
             protocolMarshaller.marshall(claimedPhoneNumberSummary.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(claimedPhoneNumberSummary.getPhoneNumberStatus(), PHONENUMBERSTATUS_BINDING);
         } catch (Exception e) {

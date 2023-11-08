@@ -725,6 +725,41 @@ public class AWSCostExplorerAsyncClient extends AWSCostExplorerClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<GetSavingsPlanPurchaseRecommendationDetailsResult> getSavingsPlanPurchaseRecommendationDetailsAsync(
+            GetSavingsPlanPurchaseRecommendationDetailsRequest request) {
+
+        return getSavingsPlanPurchaseRecommendationDetailsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSavingsPlanPurchaseRecommendationDetailsResult> getSavingsPlanPurchaseRecommendationDetailsAsync(
+            final GetSavingsPlanPurchaseRecommendationDetailsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSavingsPlanPurchaseRecommendationDetailsRequest, GetSavingsPlanPurchaseRecommendationDetailsResult> asyncHandler) {
+        final GetSavingsPlanPurchaseRecommendationDetailsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetSavingsPlanPurchaseRecommendationDetailsResult>() {
+            @Override
+            public GetSavingsPlanPurchaseRecommendationDetailsResult call() throws Exception {
+                GetSavingsPlanPurchaseRecommendationDetailsResult result = null;
+
+                try {
+                    result = executeGetSavingsPlanPurchaseRecommendationDetails(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetSavingsPlansCoverageResult> getSavingsPlansCoverageAsync(GetSavingsPlansCoverageRequest request) {
 
         return getSavingsPlansCoverageAsync(request, null);

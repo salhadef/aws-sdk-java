@@ -25,7 +25,7 @@ public class GetEnvironmentResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The number of instances included in the runtime environment. A standalone runtime environment has a maxiumum of
+     * The number of instances included in the runtime environment. A standalone runtime environment has a maximum of
      * one instance. Currently, a high availability runtime environment has a maximum of two instances.
      * </p>
      */
@@ -104,8 +104,8 @@ public class GetEnvironmentResult extends com.amazonaws.AmazonWebServiceResult<c
     private PendingMaintenance pendingMaintenance;
     /**
      * <p>
-     * Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random
-     * system-generated value will be assigned.
+     * The maintenance window for the runtime environment. If you don't provide a value for the maintenance window, the
+     * service assigns a random value.
      * </p>
      */
     private String preferredMaintenanceWindow;
@@ -160,13 +160,13 @@ public class GetEnvironmentResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The number of instances included in the runtime environment. A standalone runtime environment has a maxiumum of
+     * The number of instances included in the runtime environment. A standalone runtime environment has a maximum of
      * one instance. Currently, a high availability runtime environment has a maximum of two instances.
      * </p>
      * 
      * @param actualCapacity
      *        The number of instances included in the runtime environment. A standalone runtime environment has a
-     *        maxiumum of one instance. Currently, a high availability runtime environment has a maximum of two
+     *        maximum of one instance. Currently, a high availability runtime environment has a maximum of two
      *        instances.
      */
 
@@ -176,12 +176,12 @@ public class GetEnvironmentResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The number of instances included in the runtime environment. A standalone runtime environment has a maxiumum of
+     * The number of instances included in the runtime environment. A standalone runtime environment has a maximum of
      * one instance. Currently, a high availability runtime environment has a maximum of two instances.
      * </p>
      * 
      * @return The number of instances included in the runtime environment. A standalone runtime environment has a
-     *         maxiumum of one instance. Currently, a high availability runtime environment has a maximum of two
+     *         maximum of one instance. Currently, a high availability runtime environment has a maximum of two
      *         instances.
      */
 
@@ -191,13 +191,13 @@ public class GetEnvironmentResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The number of instances included in the runtime environment. A standalone runtime environment has a maxiumum of
+     * The number of instances included in the runtime environment. A standalone runtime environment has a maximum of
      * one instance. Currently, a high availability runtime environment has a maximum of two instances.
      * </p>
      * 
      * @param actualCapacity
      *        The number of instances included in the runtime environment. A standalone runtime environment has a
-     *        maxiumum of one instance. Currently, a high availability runtime environment has a maximum of two
+     *        maximum of one instance. Currently, a high availability runtime environment has a maximum of two
      *        instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -708,13 +708,13 @@ public class GetEnvironmentResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random
-     * system-generated value will be assigned.
+     * The maintenance window for the runtime environment. If you don't provide a value for the maintenance window, the
+     * service assigns a random value.
      * </p>
      * 
      * @param preferredMaintenanceWindow
-     *        Configures the maintenance window you want for the runtime environment. If you do not provide a value, a
-     *        random system-generated value will be assigned.
+     *        The maintenance window for the runtime environment. If you don't provide a value for the maintenance
+     *        window, the service assigns a random value.
      */
 
     public void setPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
@@ -723,12 +723,12 @@ public class GetEnvironmentResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random
-     * system-generated value will be assigned.
+     * The maintenance window for the runtime environment. If you don't provide a value for the maintenance window, the
+     * service assigns a random value.
      * </p>
      * 
-     * @return Configures the maintenance window you want for the runtime environment. If you do not provide a value, a
-     *         random system-generated value will be assigned.
+     * @return The maintenance window for the runtime environment. If you don't provide a value for the maintenance
+     *         window, the service assigns a random value.
      */
 
     public String getPreferredMaintenanceWindow() {
@@ -737,13 +737,13 @@ public class GetEnvironmentResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random
-     * system-generated value will be assigned.
+     * The maintenance window for the runtime environment. If you don't provide a value for the maintenance window, the
+     * service assigns a random value.
      * </p>
      * 
      * @param preferredMaintenanceWindow
-     *        Configures the maintenance window you want for the runtime environment. If you do not provide a value, a
-     *        random system-generated value will be assigned.
+     *        The maintenance window for the runtime environment. If you don't provide a value for the maintenance
+     *        window, the service assigns a random value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

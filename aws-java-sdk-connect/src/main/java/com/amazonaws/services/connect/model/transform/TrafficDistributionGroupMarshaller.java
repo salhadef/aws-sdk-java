@@ -43,6 +43,8 @@ public class TrafficDistributionGroupMarshaller {
             .marshallLocationName("Status").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<Boolean> ISDEFAULT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IsDefault").build();
 
     private static final TrafficDistributionGroupMarshaller instance = new TrafficDistributionGroupMarshaller();
 
@@ -67,6 +69,7 @@ public class TrafficDistributionGroupMarshaller {
             protocolMarshaller.marshall(trafficDistributionGroup.getInstanceArn(), INSTANCEARN_BINDING);
             protocolMarshaller.marshall(trafficDistributionGroup.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(trafficDistributionGroup.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(trafficDistributionGroup.getIsDefault(), ISDEFAULT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

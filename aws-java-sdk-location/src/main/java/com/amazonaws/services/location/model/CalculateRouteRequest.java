@@ -148,6 +148,13 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
     private Boolean includeLegGeometry;
     /**
      * <p>
+     * The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a>
+     * to authorize the request.
+     * </p>
+     */
+    private String key;
+    /**
+     * <p>
      * Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road
      * compatibility. You can choose <code>Car</code>, <code>Truck</code>, <code>Walking</code>, <code>Bicycle</code> or
      * <code>Motorcycle</code> as options for the <code>TravelMode</code>.
@@ -1173,6 +1180,52 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
+     * The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a>
+     * to authorize the request.
+     * </p>
+     * 
+     * @param key
+     *        The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     *        key</a> to authorize the request.
+     */
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    /**
+     * <p>
+     * The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a>
+     * to authorize the request.
+     * </p>
+     * 
+     * @return The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     *         key</a> to authorize the request.
+     */
+
+    public String getKey() {
+        return this.key;
+    }
+
+    /**
+     * <p>
+     * The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a>
+     * to authorize the request.
+     * </p>
+     * 
+     * @param key
+     *        The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     *        key</a> to authorize the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CalculateRouteRequest withKey(String key) {
+        setKey(key);
+        return this;
+    }
+
+    /**
+     * <p>
      * Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road
      * compatibility. You can choose <code>Car</code>, <code>Truck</code>, <code>Walking</code>, <code>Bicycle</code> or
      * <code>Motorcycle</code> as options for the <code>TravelMode</code>.
@@ -1857,6 +1910,8 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
             sb.append("DistanceUnit: ").append(getDistanceUnit()).append(",");
         if (getIncludeLegGeometry() != null)
             sb.append("IncludeLegGeometry: ").append(getIncludeLegGeometry()).append(",");
+        if (getKey() != null)
+            sb.append("Key: ").append("***Sensitive Data Redacted***").append(",");
         if (getTravelMode() != null)
             sb.append("TravelMode: ").append(getTravelMode()).append(",");
         if (getTruckModeOptions() != null)
@@ -1909,6 +1964,10 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getIncludeLegGeometry() != null && other.getIncludeLegGeometry().equals(this.getIncludeLegGeometry()) == false)
             return false;
+        if (other.getKey() == null ^ this.getKey() == null)
+            return false;
+        if (other.getKey() != null && other.getKey().equals(this.getKey()) == false)
+            return false;
         if (other.getTravelMode() == null ^ this.getTravelMode() == null)
             return false;
         if (other.getTravelMode() != null && other.getTravelMode().equals(this.getTravelMode()) == false)
@@ -1937,6 +1996,7 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getDestinationPosition() == null) ? 0 : getDestinationPosition().hashCode());
         hashCode = prime * hashCode + ((getDistanceUnit() == null) ? 0 : getDistanceUnit().hashCode());
         hashCode = prime * hashCode + ((getIncludeLegGeometry() == null) ? 0 : getIncludeLegGeometry().hashCode());
+        hashCode = prime * hashCode + ((getKey() == null) ? 0 : getKey().hashCode());
         hashCode = prime * hashCode + ((getTravelMode() == null) ? 0 : getTravelMode().hashCode());
         hashCode = prime * hashCode + ((getTruckModeOptions() == null) ? 0 : getTruckModeOptions().hashCode());
         hashCode = prime * hashCode + ((getWaypointPositions() == null) ? 0 : getWaypointPositions().hashCode());

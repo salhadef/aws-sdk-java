@@ -40,6 +40,12 @@ public class GeospatialPointStyleOptions implements Serializable, Cloneable, Str
      * </p>
      */
     private ClusterMarkerConfiguration clusterMarkerConfiguration;
+    /**
+     * <p>
+     * The heatmap configuration of the geospatial point style.
+     * </p>
+     */
+    private GeospatialHeatmapConfiguration heatmapConfiguration;
 
     /**
      * <p>
@@ -141,6 +147,46 @@ public class GeospatialPointStyleOptions implements Serializable, Cloneable, Str
     }
 
     /**
+     * <p>
+     * The heatmap configuration of the geospatial point style.
+     * </p>
+     * 
+     * @param heatmapConfiguration
+     *        The heatmap configuration of the geospatial point style.
+     */
+
+    public void setHeatmapConfiguration(GeospatialHeatmapConfiguration heatmapConfiguration) {
+        this.heatmapConfiguration = heatmapConfiguration;
+    }
+
+    /**
+     * <p>
+     * The heatmap configuration of the geospatial point style.
+     * </p>
+     * 
+     * @return The heatmap configuration of the geospatial point style.
+     */
+
+    public GeospatialHeatmapConfiguration getHeatmapConfiguration() {
+        return this.heatmapConfiguration;
+    }
+
+    /**
+     * <p>
+     * The heatmap configuration of the geospatial point style.
+     * </p>
+     * 
+     * @param heatmapConfiguration
+     *        The heatmap configuration of the geospatial point style.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GeospatialPointStyleOptions withHeatmapConfiguration(GeospatialHeatmapConfiguration heatmapConfiguration) {
+        setHeatmapConfiguration(heatmapConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -155,7 +201,9 @@ public class GeospatialPointStyleOptions implements Serializable, Cloneable, Str
         if (getSelectedPointStyle() != null)
             sb.append("SelectedPointStyle: ").append(getSelectedPointStyle()).append(",");
         if (getClusterMarkerConfiguration() != null)
-            sb.append("ClusterMarkerConfiguration: ").append(getClusterMarkerConfiguration());
+            sb.append("ClusterMarkerConfiguration: ").append(getClusterMarkerConfiguration()).append(",");
+        if (getHeatmapConfiguration() != null)
+            sb.append("HeatmapConfiguration: ").append(getHeatmapConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -178,6 +226,10 @@ public class GeospatialPointStyleOptions implements Serializable, Cloneable, Str
             return false;
         if (other.getClusterMarkerConfiguration() != null && other.getClusterMarkerConfiguration().equals(this.getClusterMarkerConfiguration()) == false)
             return false;
+        if (other.getHeatmapConfiguration() == null ^ this.getHeatmapConfiguration() == null)
+            return false;
+        if (other.getHeatmapConfiguration() != null && other.getHeatmapConfiguration().equals(this.getHeatmapConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -188,6 +240,7 @@ public class GeospatialPointStyleOptions implements Serializable, Cloneable, Str
 
         hashCode = prime * hashCode + ((getSelectedPointStyle() == null) ? 0 : getSelectedPointStyle().hashCode());
         hashCode = prime * hashCode + ((getClusterMarkerConfiguration() == null) ? 0 : getClusterMarkerConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getHeatmapConfiguration() == null) ? 0 : getHeatmapConfiguration().hashCode());
         return hashCode;
     }
 

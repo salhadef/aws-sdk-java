@@ -56,6 +56,16 @@ public class KeyspaceSummaryJsonUnmarshaller implements Unmarshaller<KeyspaceSum
                     context.nextToken();
                     keyspaceSummary.setResourceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("replicationStrategy", targetDepth)) {
+                    context.nextToken();
+                    keyspaceSummary.setReplicationStrategy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("replicationRegions", targetDepth)) {
+                    context.nextToken();
+                    keyspaceSummary.setReplicationRegions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

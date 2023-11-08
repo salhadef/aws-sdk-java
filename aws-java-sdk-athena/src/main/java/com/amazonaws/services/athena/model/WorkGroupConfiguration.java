@@ -98,7 +98,8 @@ public class WorkGroupConfiguration implements Serializable, Cloneable, Structur
     private String executionRole;
     /**
      * <p>
-     * Specifies the KMS key that is used to encrypt the user's data stores in Athena.
+     * Specifies the KMS key that is used to encrypt the user's data stores in Athena. This setting does not apply to
+     * Athena SQL workgroups.
      * </p>
      */
     private CustomerContentEncryptionConfiguration customerContentEncryptionConfiguration;
@@ -587,11 +588,13 @@ public class WorkGroupConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Specifies the KMS key that is used to encrypt the user's data stores in Athena.
+     * Specifies the KMS key that is used to encrypt the user's data stores in Athena. This setting does not apply to
+     * Athena SQL workgroups.
      * </p>
      * 
      * @param customerContentEncryptionConfiguration
-     *        Specifies the KMS key that is used to encrypt the user's data stores in Athena.
+     *        Specifies the KMS key that is used to encrypt the user's data stores in Athena. This setting does not
+     *        apply to Athena SQL workgroups.
      */
 
     public void setCustomerContentEncryptionConfiguration(CustomerContentEncryptionConfiguration customerContentEncryptionConfiguration) {
@@ -600,10 +603,12 @@ public class WorkGroupConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Specifies the KMS key that is used to encrypt the user's data stores in Athena.
+     * Specifies the KMS key that is used to encrypt the user's data stores in Athena. This setting does not apply to
+     * Athena SQL workgroups.
      * </p>
      * 
-     * @return Specifies the KMS key that is used to encrypt the user's data stores in Athena.
+     * @return Specifies the KMS key that is used to encrypt the user's data stores in Athena. This setting does not
+     *         apply to Athena SQL workgroups.
      */
 
     public CustomerContentEncryptionConfiguration getCustomerContentEncryptionConfiguration() {
@@ -612,11 +617,13 @@ public class WorkGroupConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Specifies the KMS key that is used to encrypt the user's data stores in Athena.
+     * Specifies the KMS key that is used to encrypt the user's data stores in Athena. This setting does not apply to
+     * Athena SQL workgroups.
      * </p>
      * 
      * @param customerContentEncryptionConfiguration
-     *        Specifies the KMS key that is used to encrypt the user's data stores in Athena.
+     *        Specifies the KMS key that is used to encrypt the user's data stores in Athena. This setting does not
+     *        apply to Athena SQL workgroups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

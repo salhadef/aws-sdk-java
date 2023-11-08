@@ -55,6 +55,10 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * delay before the secret is permanently deleted. If you delete a secret and then immediately create a secret with
      * the same name, use appropriate back off and retry logic.
      * </p>
+     * <p>
+     * If you forcibly delete an already deleted or nonexistent secret, the operation does not return
+     * <code>ResourceNotFoundException</code>.
+     * </p>
      * <important>
      * <p>
      * Use this parameter with caution. This parameter causes the operation to skip the normal recovery window before
@@ -196,6 +200,10 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * delay before the secret is permanently deleted. If you delete a secret and then immediately create a secret with
      * the same name, use appropriate back off and retry logic.
      * </p>
+     * <p>
+     * If you forcibly delete an already deleted or nonexistent secret, the operation does not return
+     * <code>ResourceNotFoundException</code>.
+     * </p>
      * <important>
      * <p>
      * Use this parameter with caution. This parameter causes the operation to skip the normal recovery window before
@@ -213,6 +221,10 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        Secrets Manager performs the actual deletion with an asynchronous background process, so there might be a
      *        short delay before the secret is permanently deleted. If you delete a secret and then immediately create a
      *        secret with the same name, use appropriate back off and retry logic.
+     *        </p>
+     *        <p>
+     *        If you forcibly delete an already deleted or nonexistent secret, the operation does not return
+     *        <code>ResourceNotFoundException</code>.
      *        </p>
      *        <important>
      *        <p>
@@ -239,6 +251,10 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * delay before the secret is permanently deleted. If you delete a secret and then immediately create a secret with
      * the same name, use appropriate back off and retry logic.
      * </p>
+     * <p>
+     * If you forcibly delete an already deleted or nonexistent secret, the operation does not return
+     * <code>ResourceNotFoundException</code>.
+     * </p>
      * <important>
      * <p>
      * Use this parameter with caution. This parameter causes the operation to skip the normal recovery window before
@@ -255,6 +271,10 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         Secrets Manager performs the actual deletion with an asynchronous background process, so there might be a
      *         short delay before the secret is permanently deleted. If you delete a secret and then immediately create
      *         a secret with the same name, use appropriate back off and retry logic.
+     *         </p>
+     *         <p>
+     *         If you forcibly delete an already deleted or nonexistent secret, the operation does not return
+     *         <code>ResourceNotFoundException</code>.
      *         </p>
      *         <important>
      *         <p>
@@ -281,6 +301,10 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * delay before the secret is permanently deleted. If you delete a secret and then immediately create a secret with
      * the same name, use appropriate back off and retry logic.
      * </p>
+     * <p>
+     * If you forcibly delete an already deleted or nonexistent secret, the operation does not return
+     * <code>ResourceNotFoundException</code>.
+     * </p>
      * <important>
      * <p>
      * Use this parameter with caution. This parameter causes the operation to skip the normal recovery window before
@@ -298,6 +322,10 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        Secrets Manager performs the actual deletion with an asynchronous background process, so there might be a
      *        short delay before the secret is permanently deleted. If you delete a secret and then immediately create a
      *        secret with the same name, use appropriate back off and retry logic.
+     *        </p>
+     *        <p>
+     *        If you forcibly delete an already deleted or nonexistent secret, the operation does not return
+     *        <code>ResourceNotFoundException</code>.
      *        </p>
      *        <important>
      *        <p>
@@ -326,6 +354,10 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * delay before the secret is permanently deleted. If you delete a secret and then immediately create a secret with
      * the same name, use appropriate back off and retry logic.
      * </p>
+     * <p>
+     * If you forcibly delete an already deleted or nonexistent secret, the operation does not return
+     * <code>ResourceNotFoundException</code>.
+     * </p>
      * <important>
      * <p>
      * Use this parameter with caution. This parameter causes the operation to skip the normal recovery window before
@@ -342,6 +374,10 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         Secrets Manager performs the actual deletion with an asynchronous background process, so there might be a
      *         short delay before the secret is permanently deleted. If you delete a secret and then immediately create
      *         a secret with the same name, use appropriate back off and retry logic.
+     *         </p>
+     *         <p>
+     *         If you forcibly delete an already deleted or nonexistent secret, the operation does not return
+     *         <code>ResourceNotFoundException</code>.
      *         </p>
      *         <important>
      *         <p>

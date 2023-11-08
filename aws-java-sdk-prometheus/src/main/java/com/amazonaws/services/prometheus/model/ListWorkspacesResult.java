@@ -28,56 +28,16 @@ public class ListWorkspacesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Pagination token to use when requesting the next page in this list.
-     * </p>
-     */
-    private String nextToken;
-    /**
-     * <p>
      * The list of existing workspaces, including those undergoing creation or deletion.
      * </p>
      */
     private java.util.List<WorkspaceSummary> workspaces;
-
     /**
      * <p>
      * Pagination token to use when requesting the next page in this list.
      * </p>
-     * 
-     * @param nextToken
-     *        Pagination token to use when requesting the next page in this list.
      */
-
-    public void setNextToken(String nextToken) {
-        this.nextToken = nextToken;
-    }
-
-    /**
-     * <p>
-     * Pagination token to use when requesting the next page in this list.
-     * </p>
-     * 
-     * @return Pagination token to use when requesting the next page in this list.
-     */
-
-    public String getNextToken() {
-        return this.nextToken;
-    }
-
-    /**
-     * <p>
-     * Pagination token to use when requesting the next page in this list.
-     * </p>
-     * 
-     * @param nextToken
-     *        Pagination token to use when requesting the next page in this list.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListWorkspacesResult withNextToken(String nextToken) {
-        setNextToken(nextToken);
-        return this;
-    }
+    private String nextToken;
 
     /**
      * <p>
@@ -150,6 +110,46 @@ public class ListWorkspacesResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
+     * Pagination token to use when requesting the next page in this list.
+     * </p>
+     * 
+     * @param nextToken
+     *        Pagination token to use when requesting the next page in this list.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * Pagination token to use when requesting the next page in this list.
+     * </p>
+     * 
+     * @return Pagination token to use when requesting the next page in this list.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * Pagination token to use when requesting the next page in this list.
+     * </p>
+     * 
+     * @param nextToken
+     *        Pagination token to use when requesting the next page in this list.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListWorkspacesResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -161,10 +161,10 @@ public class ListWorkspacesResult extends com.amazonaws.AmazonWebServiceResult<c
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getWorkspaces() != null)
-            sb.append("Workspaces: ").append(getWorkspaces());
+            sb.append("Workspaces: ").append(getWorkspaces()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -179,13 +179,13 @@ public class ListWorkspacesResult extends com.amazonaws.AmazonWebServiceResult<c
         if (obj instanceof ListWorkspacesResult == false)
             return false;
         ListWorkspacesResult other = (ListWorkspacesResult) obj;
-        if (other.getNextToken() == null ^ this.getNextToken() == null)
-            return false;
-        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
-            return false;
         if (other.getWorkspaces() == null ^ this.getWorkspaces() == null)
             return false;
         if (other.getWorkspaces() != null && other.getWorkspaces().equals(this.getWorkspaces()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -195,8 +195,8 @@ public class ListWorkspacesResult extends com.amazonaws.AmazonWebServiceResult<c
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getWorkspaces() == null) ? 0 : getWorkspaces().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

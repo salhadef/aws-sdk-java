@@ -27,8 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DeleteSubscriberRequestMarshaller {
 
-    private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.QUERY_PARAM)
-            .marshallLocationName("id").build();
+    private static final MarshallingInfo<String> SUBSCRIBERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("subscriberId").build();
 
     private static final DeleteSubscriberRequestMarshaller instance = new DeleteSubscriberRequestMarshaller();
 
@@ -46,7 +46,7 @@ public class DeleteSubscriberRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(deleteSubscriberRequest.getId(), ID_BINDING);
+            protocolMarshaller.marshall(deleteSubscriberRequest.getSubscriberId(), SUBSCRIBERID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

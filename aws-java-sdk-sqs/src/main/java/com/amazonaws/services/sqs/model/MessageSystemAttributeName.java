@@ -27,7 +27,8 @@ public enum MessageSystemAttributeName {
     SequenceNumber("SequenceNumber"),
     MessageDeduplicationId("MessageDeduplicationId"),
     MessageGroupId("MessageGroupId"),
-    AWSTraceHeader("AWSTraceHeader");
+    AWSTraceHeader("AWSTraceHeader"),
+    DeadLetterQueueSourceArn("DeadLetterQueueSourceArn");
 
     private String value;
 

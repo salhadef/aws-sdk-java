@@ -188,6 +188,10 @@ public class EndpointJsonUnmarshaller implements Unmarshaller<Endpoint, JsonUnma
                     context.nextToken();
                     endpoint.setGcpMySQLSettings(GcpMySQLSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("TimestreamSettings", targetDepth)) {
+                    context.nextToken();
+                    endpoint.setTimestreamSettings(TimestreamSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

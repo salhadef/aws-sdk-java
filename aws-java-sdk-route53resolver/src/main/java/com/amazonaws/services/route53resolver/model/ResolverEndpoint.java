@@ -189,6 +189,18 @@ public class ResolverEndpoint implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String resolverEndpointType;
+    /**
+     * <p>
+     * The ARN (Amazon Resource Name) for the Outpost.
+     * </p>
+     */
+    private String outpostArn;
+    /**
+     * <p>
+     * The Amazon EC2 instance type.
+     * </p>
+     */
+    private String preferredInstanceType;
 
     /**
      * <p>
@@ -1385,6 +1397,86 @@ public class ResolverEndpoint implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The ARN (Amazon Resource Name) for the Outpost.
+     * </p>
+     * 
+     * @param outpostArn
+     *        The ARN (Amazon Resource Name) for the Outpost.
+     */
+
+    public void setOutpostArn(String outpostArn) {
+        this.outpostArn = outpostArn;
+    }
+
+    /**
+     * <p>
+     * The ARN (Amazon Resource Name) for the Outpost.
+     * </p>
+     * 
+     * @return The ARN (Amazon Resource Name) for the Outpost.
+     */
+
+    public String getOutpostArn() {
+        return this.outpostArn;
+    }
+
+    /**
+     * <p>
+     * The ARN (Amazon Resource Name) for the Outpost.
+     * </p>
+     * 
+     * @param outpostArn
+     *        The ARN (Amazon Resource Name) for the Outpost.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResolverEndpoint withOutpostArn(String outpostArn) {
+        setOutpostArn(outpostArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon EC2 instance type.
+     * </p>
+     * 
+     * @param preferredInstanceType
+     *        The Amazon EC2 instance type.
+     */
+
+    public void setPreferredInstanceType(String preferredInstanceType) {
+        this.preferredInstanceType = preferredInstanceType;
+    }
+
+    /**
+     * <p>
+     * The Amazon EC2 instance type.
+     * </p>
+     * 
+     * @return The Amazon EC2 instance type.
+     */
+
+    public String getPreferredInstanceType() {
+        return this.preferredInstanceType;
+    }
+
+    /**
+     * <p>
+     * The Amazon EC2 instance type.
+     * </p>
+     * 
+     * @param preferredInstanceType
+     *        The Amazon EC2 instance type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResolverEndpoint withPreferredInstanceType(String preferredInstanceType) {
+        setPreferredInstanceType(preferredInstanceType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1421,7 +1513,11 @@ public class ResolverEndpoint implements Serializable, Cloneable, StructuredPojo
         if (getModificationTime() != null)
             sb.append("ModificationTime: ").append(getModificationTime()).append(",");
         if (getResolverEndpointType() != null)
-            sb.append("ResolverEndpointType: ").append(getResolverEndpointType());
+            sb.append("ResolverEndpointType: ").append(getResolverEndpointType()).append(",");
+        if (getOutpostArn() != null)
+            sb.append("OutpostArn: ").append(getOutpostArn()).append(",");
+        if (getPreferredInstanceType() != null)
+            sb.append("PreferredInstanceType: ").append(getPreferredInstanceType());
         sb.append("}");
         return sb.toString();
     }
@@ -1488,6 +1584,14 @@ public class ResolverEndpoint implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getResolverEndpointType() != null && other.getResolverEndpointType().equals(this.getResolverEndpointType()) == false)
             return false;
+        if (other.getOutpostArn() == null ^ this.getOutpostArn() == null)
+            return false;
+        if (other.getOutpostArn() != null && other.getOutpostArn().equals(this.getOutpostArn()) == false)
+            return false;
+        if (other.getPreferredInstanceType() == null ^ this.getPreferredInstanceType() == null)
+            return false;
+        if (other.getPreferredInstanceType() != null && other.getPreferredInstanceType().equals(this.getPreferredInstanceType()) == false)
+            return false;
         return true;
     }
 
@@ -1509,6 +1613,8 @@ public class ResolverEndpoint implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getModificationTime() == null) ? 0 : getModificationTime().hashCode());
         hashCode = prime * hashCode + ((getResolverEndpointType() == null) ? 0 : getResolverEndpointType().hashCode());
+        hashCode = prime * hashCode + ((getOutpostArn() == null) ? 0 : getOutpostArn().hashCode());
+        hashCode = prime * hashCode + ((getPreferredInstanceType() == null) ? 0 : getPreferredInstanceType().hashCode());
         return hashCode;
     }
 

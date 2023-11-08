@@ -337,6 +337,12 @@ public class AwsRdsDbClusterDetails implements Serializable, Cloneable, Structur
      * </p>
      */
     private Boolean iamDatabaseAuthenticationEnabled;
+    /**
+     * <p>
+     * Indicates if minor version upgrades are automatically applied to the cluster.
+     * </p>
+     */
+    private Boolean autoMinorVersionUpgrade;
 
     /**
      * <p>
@@ -2680,6 +2686,58 @@ public class AwsRdsDbClusterDetails implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * Indicates if minor version upgrades are automatically applied to the cluster.
+     * </p>
+     * 
+     * @param autoMinorVersionUpgrade
+     *        Indicates if minor version upgrades are automatically applied to the cluster.
+     */
+
+    public void setAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
+        this.autoMinorVersionUpgrade = autoMinorVersionUpgrade;
+    }
+
+    /**
+     * <p>
+     * Indicates if minor version upgrades are automatically applied to the cluster.
+     * </p>
+     * 
+     * @return Indicates if minor version upgrades are automatically applied to the cluster.
+     */
+
+    public Boolean getAutoMinorVersionUpgrade() {
+        return this.autoMinorVersionUpgrade;
+    }
+
+    /**
+     * <p>
+     * Indicates if minor version upgrades are automatically applied to the cluster.
+     * </p>
+     * 
+     * @param autoMinorVersionUpgrade
+     *        Indicates if minor version upgrades are automatically applied to the cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsRdsDbClusterDetails withAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
+        setAutoMinorVersionUpgrade(autoMinorVersionUpgrade);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates if minor version upgrades are automatically applied to the cluster.
+     * </p>
+     * 
+     * @return Indicates if minor version upgrades are automatically applied to the cluster.
+     */
+
+    public Boolean isAutoMinorVersionUpgrade() {
+        return this.autoMinorVersionUpgrade;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2764,7 +2822,9 @@ public class AwsRdsDbClusterDetails implements Serializable, Cloneable, Structur
         if (getDbClusterMembers() != null)
             sb.append("DbClusterMembers: ").append(getDbClusterMembers()).append(",");
         if (getIamDatabaseAuthenticationEnabled() != null)
-            sb.append("IamDatabaseAuthenticationEnabled: ").append(getIamDatabaseAuthenticationEnabled());
+            sb.append("IamDatabaseAuthenticationEnabled: ").append(getIamDatabaseAuthenticationEnabled()).append(",");
+        if (getAutoMinorVersionUpgrade() != null)
+            sb.append("AutoMinorVersionUpgrade: ").append(getAutoMinorVersionUpgrade());
         sb.append("}");
         return sb.toString();
     }
@@ -2929,6 +2989,10 @@ public class AwsRdsDbClusterDetails implements Serializable, Cloneable, Structur
         if (other.getIamDatabaseAuthenticationEnabled() != null
                 && other.getIamDatabaseAuthenticationEnabled().equals(this.getIamDatabaseAuthenticationEnabled()) == false)
             return false;
+        if (other.getAutoMinorVersionUpgrade() == null ^ this.getAutoMinorVersionUpgrade() == null)
+            return false;
+        if (other.getAutoMinorVersionUpgrade() != null && other.getAutoMinorVersionUpgrade().equals(this.getAutoMinorVersionUpgrade()) == false)
+            return false;
         return true;
     }
 
@@ -2974,6 +3038,7 @@ public class AwsRdsDbClusterDetails implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getDbClusterIdentifier() == null) ? 0 : getDbClusterIdentifier().hashCode());
         hashCode = prime * hashCode + ((getDbClusterMembers() == null) ? 0 : getDbClusterMembers().hashCode());
         hashCode = prime * hashCode + ((getIamDatabaseAuthenticationEnabled() == null) ? 0 : getIamDatabaseAuthenticationEnabled().hashCode());
+        hashCode = prime * hashCode + ((getAutoMinorVersionUpgrade() == null) ? 0 : getAutoMinorVersionUpgrade().hashCode());
         return hashCode;
     }
 

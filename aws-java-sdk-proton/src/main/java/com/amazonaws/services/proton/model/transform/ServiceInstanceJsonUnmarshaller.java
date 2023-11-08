@@ -68,6 +68,10 @@ public class ServiceInstanceJsonUnmarshaller implements Unmarshaller<ServiceInst
                     context.nextToken();
                     serviceInstance.setEnvironmentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("lastAttemptedDeploymentId", targetDepth)) {
+                    context.nextToken();
+                    serviceInstance.setLastAttemptedDeploymentId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("lastClientRequestToken", targetDepth)) {
                     context.nextToken();
                     serviceInstance.setLastClientRequestToken(context.getUnmarshaller(String.class).unmarshall(context));
@@ -79,6 +83,10 @@ public class ServiceInstanceJsonUnmarshaller implements Unmarshaller<ServiceInst
                 if (context.testExpression("lastDeploymentSucceededAt", targetDepth)) {
                     context.nextToken();
                     serviceInstance.setLastDeploymentSucceededAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("lastSucceededDeploymentId", targetDepth)) {
+                    context.nextToken();
+                    serviceInstance.setLastSucceededDeploymentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();

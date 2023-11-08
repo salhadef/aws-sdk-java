@@ -52,6 +52,8 @@ public class QueryResultItemMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FeedbackToken").build();
     private static final MarshallingInfo<StructuredPojo> TABLEEXCERPT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TableExcerpt").build();
+    private static final MarshallingInfo<StructuredPojo> COLLAPSEDRESULTDETAIL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CollapsedResultDetail").build();
 
     private static final QueryResultItemMarshaller instance = new QueryResultItemMarshaller();
 
@@ -81,6 +83,7 @@ public class QueryResultItemMarshaller {
             protocolMarshaller.marshall(queryResultItem.getScoreAttributes(), SCOREATTRIBUTES_BINDING);
             protocolMarshaller.marshall(queryResultItem.getFeedbackToken(), FEEDBACKTOKEN_BINDING);
             protocolMarshaller.marshall(queryResultItem.getTableExcerpt(), TABLEEXCERPT_BINDING);
+            protocolMarshaller.marshall(queryResultItem.getCollapsedResultDetail(), COLLAPSEDRESULTDETAIL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

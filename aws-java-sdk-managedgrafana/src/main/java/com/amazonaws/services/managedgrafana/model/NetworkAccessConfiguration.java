@@ -23,12 +23,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <p>
  * When this is configured, only listed IP addresses and VPC endpoints will be able to access your workspace. Standard
- * Grafana authentication and authorization will still be required.
+ * Grafana authentication and authorization are still required.
  * </p>
  * <p>
- * If this is not configured, or is removed, then all IP addresses and VPC endpoints will be allowed. Standard Grafana
- * authentication and authorization will still be required.
+ * Access is granted to a caller that is in either the IP address list or the VPC endpoint list - they do not need to be
+ * in both.
  * </p>
+ * <p>
+ * If this is not configured, or is removed, then all IP addresses and VPC endpoints are allowed. Standard Grafana
+ * authentication and authorization are still required.
+ * </p>
+ * <note>
+ * <p>
+ * While both <code>prefixListIds</code> and <code>vpceIds</code> are required, you can pass in an empty array of
+ * strings for either parameter if you do not want to allow any of that type.
+ * </p>
+ * <p>
+ * If both are passed as empty arrays, no traffic is allowed to the workspace, because only <i>explicitly</i> allowed
+ * connections are accepted.
+ * </p>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/NetworkAccessConfiguration" target="_top">AWS
  *      API Documentation</a>
@@ -39,8 +53,8 @@ public class NetworkAccessConfiguration implements Serializable, Cloneable, Stru
     /**
      * <p>
      * An array of prefix list IDs. A prefix list is a list of CIDR ranges of IP addresses. The IP addresses specified
-     * are allowed to access your workspace. If the list is not included in the configuration then no IP addresses will
-     * be allowed to access the workspace. You create a prefix list using the Amazon VPC console.
+     * are allowed to access your workspace. If the list is not included in the configuration (passed an empty array)
+     * then no IP addresses are allowed to access the workspace. You create a prefix list using the Amazon VPC console.
      * </p>
      * <p>
      * Prefix list IDs have the format <code>pl-<i>1a2b3c4d</i> </code>.
@@ -56,7 +70,8 @@ public class NetworkAccessConfiguration implements Serializable, Cloneable, Stru
      * <p>
      * An array of Amazon VPC endpoint IDs for the workspace. You can create VPC endpoints to your Amazon Managed
      * Grafana workspace for access from within a VPC. If a <code>NetworkAccessConfiguration</code> is specified then
-     * only VPC endpoints specified here will be allowed to access the workspace.
+     * only VPC endpoints specified here are allowed to access the workspace. If you pass in an empty array of strings,
+     * then no VPCs are allowed to access the workspace.
      * </p>
      * <p>
      * VPC endpoint IDs have the format <code>vpce-<i>1a2b3c4d</i> </code>.
@@ -69,7 +84,7 @@ public class NetworkAccessConfiguration implements Serializable, Cloneable, Stru
      * <note>
      * <p>
      * The only VPC endpoints that can be specified here are interface VPC endpoints for Grafana workspaces (using the
-     * <code>com.amazonaws.[region].grafana-workspace</code> service endpoint). Other VPC endpoints will be ignored.
+     * <code>com.amazonaws.[region].grafana-workspace</code> service endpoint). Other VPC endpoints are ignored.
      * </p>
      * </note>
      */
@@ -78,8 +93,8 @@ public class NetworkAccessConfiguration implements Serializable, Cloneable, Stru
     /**
      * <p>
      * An array of prefix list IDs. A prefix list is a list of CIDR ranges of IP addresses. The IP addresses specified
-     * are allowed to access your workspace. If the list is not included in the configuration then no IP addresses will
-     * be allowed to access the workspace. You create a prefix list using the Amazon VPC console.
+     * are allowed to access your workspace. If the list is not included in the configuration (passed an empty array)
+     * then no IP addresses are allowed to access the workspace. You create a prefix list using the Amazon VPC console.
      * </p>
      * <p>
      * Prefix list IDs have the format <code>pl-<i>1a2b3c4d</i> </code>.
@@ -91,9 +106,9 @@ public class NetworkAccessConfiguration implements Serializable, Cloneable, Stru
      * </p>
      * 
      * @return An array of prefix list IDs. A prefix list is a list of CIDR ranges of IP addresses. The IP addresses
-     *         specified are allowed to access your workspace. If the list is not included in the configuration then no
-     *         IP addresses will be allowed to access the workspace. You create a prefix list using the Amazon VPC
-     *         console.</p>
+     *         specified are allowed to access your workspace. If the list is not included in the configuration (passed
+     *         an empty array) then no IP addresses are allowed to access the workspace. You create a prefix list using
+     *         the Amazon VPC console.</p>
      *         <p>
      *         Prefix list IDs have the format <code>pl-<i>1a2b3c4d</i> </code>.
      *         </p>
@@ -110,8 +125,8 @@ public class NetworkAccessConfiguration implements Serializable, Cloneable, Stru
     /**
      * <p>
      * An array of prefix list IDs. A prefix list is a list of CIDR ranges of IP addresses. The IP addresses specified
-     * are allowed to access your workspace. If the list is not included in the configuration then no IP addresses will
-     * be allowed to access the workspace. You create a prefix list using the Amazon VPC console.
+     * are allowed to access your workspace. If the list is not included in the configuration (passed an empty array)
+     * then no IP addresses are allowed to access the workspace. You create a prefix list using the Amazon VPC console.
      * </p>
      * <p>
      * Prefix list IDs have the format <code>pl-<i>1a2b3c4d</i> </code>.
@@ -124,9 +139,9 @@ public class NetworkAccessConfiguration implements Serializable, Cloneable, Stru
      * 
      * @param prefixListIds
      *        An array of prefix list IDs. A prefix list is a list of CIDR ranges of IP addresses. The IP addresses
-     *        specified are allowed to access your workspace. If the list is not included in the configuration then no
-     *        IP addresses will be allowed to access the workspace. You create a prefix list using the Amazon VPC
-     *        console.</p>
+     *        specified are allowed to access your workspace. If the list is not included in the configuration (passed
+     *        an empty array) then no IP addresses are allowed to access the workspace. You create a prefix list using
+     *        the Amazon VPC console.</p>
      *        <p>
      *        Prefix list IDs have the format <code>pl-<i>1a2b3c4d</i> </code>.
      *        </p>
@@ -148,8 +163,8 @@ public class NetworkAccessConfiguration implements Serializable, Cloneable, Stru
     /**
      * <p>
      * An array of prefix list IDs. A prefix list is a list of CIDR ranges of IP addresses. The IP addresses specified
-     * are allowed to access your workspace. If the list is not included in the configuration then no IP addresses will
-     * be allowed to access the workspace. You create a prefix list using the Amazon VPC console.
+     * are allowed to access your workspace. If the list is not included in the configuration (passed an empty array)
+     * then no IP addresses are allowed to access the workspace. You create a prefix list using the Amazon VPC console.
      * </p>
      * <p>
      * Prefix list IDs have the format <code>pl-<i>1a2b3c4d</i> </code>.
@@ -167,9 +182,9 @@ public class NetworkAccessConfiguration implements Serializable, Cloneable, Stru
      * 
      * @param prefixListIds
      *        An array of prefix list IDs. A prefix list is a list of CIDR ranges of IP addresses. The IP addresses
-     *        specified are allowed to access your workspace. If the list is not included in the configuration then no
-     *        IP addresses will be allowed to access the workspace. You create a prefix list using the Amazon VPC
-     *        console.</p>
+     *        specified are allowed to access your workspace. If the list is not included in the configuration (passed
+     *        an empty array) then no IP addresses are allowed to access the workspace. You create a prefix list using
+     *        the Amazon VPC console.</p>
      *        <p>
      *        Prefix list IDs have the format <code>pl-<i>1a2b3c4d</i> </code>.
      *        </p>
@@ -193,8 +208,8 @@ public class NetworkAccessConfiguration implements Serializable, Cloneable, Stru
     /**
      * <p>
      * An array of prefix list IDs. A prefix list is a list of CIDR ranges of IP addresses. The IP addresses specified
-     * are allowed to access your workspace. If the list is not included in the configuration then no IP addresses will
-     * be allowed to access the workspace. You create a prefix list using the Amazon VPC console.
+     * are allowed to access your workspace. If the list is not included in the configuration (passed an empty array)
+     * then no IP addresses are allowed to access the workspace. You create a prefix list using the Amazon VPC console.
      * </p>
      * <p>
      * Prefix list IDs have the format <code>pl-<i>1a2b3c4d</i> </code>.
@@ -207,9 +222,9 @@ public class NetworkAccessConfiguration implements Serializable, Cloneable, Stru
      * 
      * @param prefixListIds
      *        An array of prefix list IDs. A prefix list is a list of CIDR ranges of IP addresses. The IP addresses
-     *        specified are allowed to access your workspace. If the list is not included in the configuration then no
-     *        IP addresses will be allowed to access the workspace. You create a prefix list using the Amazon VPC
-     *        console.</p>
+     *        specified are allowed to access your workspace. If the list is not included in the configuration (passed
+     *        an empty array) then no IP addresses are allowed to access the workspace. You create a prefix list using
+     *        the Amazon VPC console.</p>
      *        <p>
      *        Prefix list IDs have the format <code>pl-<i>1a2b3c4d</i> </code>.
      *        </p>
@@ -229,7 +244,8 @@ public class NetworkAccessConfiguration implements Serializable, Cloneable, Stru
      * <p>
      * An array of Amazon VPC endpoint IDs for the workspace. You can create VPC endpoints to your Amazon Managed
      * Grafana workspace for access from within a VPC. If a <code>NetworkAccessConfiguration</code> is specified then
-     * only VPC endpoints specified here will be allowed to access the workspace.
+     * only VPC endpoints specified here are allowed to access the workspace. If you pass in an empty array of strings,
+     * then no VPCs are allowed to access the workspace.
      * </p>
      * <p>
      * VPC endpoint IDs have the format <code>vpce-<i>1a2b3c4d</i> </code>.
@@ -242,13 +258,14 @@ public class NetworkAccessConfiguration implements Serializable, Cloneable, Stru
      * <note>
      * <p>
      * The only VPC endpoints that can be specified here are interface VPC endpoints for Grafana workspaces (using the
-     * <code>com.amazonaws.[region].grafana-workspace</code> service endpoint). Other VPC endpoints will be ignored.
+     * <code>com.amazonaws.[region].grafana-workspace</code> service endpoint). Other VPC endpoints are ignored.
      * </p>
      * </note>
      * 
      * @return An array of Amazon VPC endpoint IDs for the workspace. You can create VPC endpoints to your Amazon
      *         Managed Grafana workspace for access from within a VPC. If a <code>NetworkAccessConfiguration</code> is
-     *         specified then only VPC endpoints specified here will be allowed to access the workspace.</p>
+     *         specified then only VPC endpoints specified here are allowed to access the workspace. If you pass in an
+     *         empty array of strings, then no VPCs are allowed to access the workspace.</p>
      *         <p>
      *         VPC endpoint IDs have the format <code>vpce-<i>1a2b3c4d</i> </code>.
      *         </p>
@@ -261,7 +278,7 @@ public class NetworkAccessConfiguration implements Serializable, Cloneable, Stru
      *         <p>
      *         The only VPC endpoints that can be specified here are interface VPC endpoints for Grafana workspaces
      *         (using the <code>com.amazonaws.[region].grafana-workspace</code> service endpoint). Other VPC endpoints
-     *         will be ignored.
+     *         are ignored.
      *         </p>
      */
 
@@ -273,7 +290,8 @@ public class NetworkAccessConfiguration implements Serializable, Cloneable, Stru
      * <p>
      * An array of Amazon VPC endpoint IDs for the workspace. You can create VPC endpoints to your Amazon Managed
      * Grafana workspace for access from within a VPC. If a <code>NetworkAccessConfiguration</code> is specified then
-     * only VPC endpoints specified here will be allowed to access the workspace.
+     * only VPC endpoints specified here are allowed to access the workspace. If you pass in an empty array of strings,
+     * then no VPCs are allowed to access the workspace.
      * </p>
      * <p>
      * VPC endpoint IDs have the format <code>vpce-<i>1a2b3c4d</i> </code>.
@@ -286,14 +304,15 @@ public class NetworkAccessConfiguration implements Serializable, Cloneable, Stru
      * <note>
      * <p>
      * The only VPC endpoints that can be specified here are interface VPC endpoints for Grafana workspaces (using the
-     * <code>com.amazonaws.[region].grafana-workspace</code> service endpoint). Other VPC endpoints will be ignored.
+     * <code>com.amazonaws.[region].grafana-workspace</code> service endpoint). Other VPC endpoints are ignored.
      * </p>
      * </note>
      * 
      * @param vpceIds
      *        An array of Amazon VPC endpoint IDs for the workspace. You can create VPC endpoints to your Amazon Managed
      *        Grafana workspace for access from within a VPC. If a <code>NetworkAccessConfiguration</code> is specified
-     *        then only VPC endpoints specified here will be allowed to access the workspace.</p>
+     *        then only VPC endpoints specified here are allowed to access the workspace. If you pass in an empty array
+     *        of strings, then no VPCs are allowed to access the workspace.</p>
      *        <p>
      *        VPC endpoint IDs have the format <code>vpce-<i>1a2b3c4d</i> </code>.
      *        </p>
@@ -306,7 +325,7 @@ public class NetworkAccessConfiguration implements Serializable, Cloneable, Stru
      *        <p>
      *        The only VPC endpoints that can be specified here are interface VPC endpoints for Grafana workspaces
      *        (using the <code>com.amazonaws.[region].grafana-workspace</code> service endpoint). Other VPC endpoints
-     *        will be ignored.
+     *        are ignored.
      *        </p>
      */
 
@@ -323,7 +342,8 @@ public class NetworkAccessConfiguration implements Serializable, Cloneable, Stru
      * <p>
      * An array of Amazon VPC endpoint IDs for the workspace. You can create VPC endpoints to your Amazon Managed
      * Grafana workspace for access from within a VPC. If a <code>NetworkAccessConfiguration</code> is specified then
-     * only VPC endpoints specified here will be allowed to access the workspace.
+     * only VPC endpoints specified here are allowed to access the workspace. If you pass in an empty array of strings,
+     * then no VPCs are allowed to access the workspace.
      * </p>
      * <p>
      * VPC endpoint IDs have the format <code>vpce-<i>1a2b3c4d</i> </code>.
@@ -336,7 +356,7 @@ public class NetworkAccessConfiguration implements Serializable, Cloneable, Stru
      * <note>
      * <p>
      * The only VPC endpoints that can be specified here are interface VPC endpoints for Grafana workspaces (using the
-     * <code>com.amazonaws.[region].grafana-workspace</code> service endpoint). Other VPC endpoints will be ignored.
+     * <code>com.amazonaws.[region].grafana-workspace</code> service endpoint). Other VPC endpoints are ignored.
      * </p>
      * </note>
      * <p>
@@ -348,7 +368,8 @@ public class NetworkAccessConfiguration implements Serializable, Cloneable, Stru
      * @param vpceIds
      *        An array of Amazon VPC endpoint IDs for the workspace. You can create VPC endpoints to your Amazon Managed
      *        Grafana workspace for access from within a VPC. If a <code>NetworkAccessConfiguration</code> is specified
-     *        then only VPC endpoints specified here will be allowed to access the workspace.</p>
+     *        then only VPC endpoints specified here are allowed to access the workspace. If you pass in an empty array
+     *        of strings, then no VPCs are allowed to access the workspace.</p>
      *        <p>
      *        VPC endpoint IDs have the format <code>vpce-<i>1a2b3c4d</i> </code>.
      *        </p>
@@ -361,7 +382,7 @@ public class NetworkAccessConfiguration implements Serializable, Cloneable, Stru
      *        <p>
      *        The only VPC endpoints that can be specified here are interface VPC endpoints for Grafana workspaces
      *        (using the <code>com.amazonaws.[region].grafana-workspace</code> service endpoint). Other VPC endpoints
-     *        will be ignored.
+     *        are ignored.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -380,7 +401,8 @@ public class NetworkAccessConfiguration implements Serializable, Cloneable, Stru
      * <p>
      * An array of Amazon VPC endpoint IDs for the workspace. You can create VPC endpoints to your Amazon Managed
      * Grafana workspace for access from within a VPC. If a <code>NetworkAccessConfiguration</code> is specified then
-     * only VPC endpoints specified here will be allowed to access the workspace.
+     * only VPC endpoints specified here are allowed to access the workspace. If you pass in an empty array of strings,
+     * then no VPCs are allowed to access the workspace.
      * </p>
      * <p>
      * VPC endpoint IDs have the format <code>vpce-<i>1a2b3c4d</i> </code>.
@@ -393,14 +415,15 @@ public class NetworkAccessConfiguration implements Serializable, Cloneable, Stru
      * <note>
      * <p>
      * The only VPC endpoints that can be specified here are interface VPC endpoints for Grafana workspaces (using the
-     * <code>com.amazonaws.[region].grafana-workspace</code> service endpoint). Other VPC endpoints will be ignored.
+     * <code>com.amazonaws.[region].grafana-workspace</code> service endpoint). Other VPC endpoints are ignored.
      * </p>
      * </note>
      * 
      * @param vpceIds
      *        An array of Amazon VPC endpoint IDs for the workspace. You can create VPC endpoints to your Amazon Managed
      *        Grafana workspace for access from within a VPC. If a <code>NetworkAccessConfiguration</code> is specified
-     *        then only VPC endpoints specified here will be allowed to access the workspace.</p>
+     *        then only VPC endpoints specified here are allowed to access the workspace. If you pass in an empty array
+     *        of strings, then no VPCs are allowed to access the workspace.</p>
      *        <p>
      *        VPC endpoint IDs have the format <code>vpce-<i>1a2b3c4d</i> </code>.
      *        </p>
@@ -413,7 +436,7 @@ public class NetworkAccessConfiguration implements Serializable, Cloneable, Stru
      *        <p>
      *        The only VPC endpoints that can be specified here are interface VPC endpoints for Grafana workspaces
      *        (using the <code>com.amazonaws.[region].grafana-workspace</code> service endpoint). Other VPC endpoints
-     *        will be ignored.
+     *        are ignored.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -27,7 +27,7 @@ public class DeleteRecordRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the feature group to delete the record from.
+     * The name or Amazon Resource Name (ARN) of the feature group to delete the record from.
      * </p>
      */
     private String featureGroupName;
@@ -61,11 +61,11 @@ public class DeleteRecordRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the feature group to delete the record from.
+     * The name or Amazon Resource Name (ARN) of the feature group to delete the record from.
      * </p>
      * 
      * @param featureGroupName
-     *        The name of the feature group to delete the record from.
+     *        The name or Amazon Resource Name (ARN) of the feature group to delete the record from.
      */
 
     public void setFeatureGroupName(String featureGroupName) {
@@ -74,10 +74,10 @@ public class DeleteRecordRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the feature group to delete the record from.
+     * The name or Amazon Resource Name (ARN) of the feature group to delete the record from.
      * </p>
      * 
-     * @return The name of the feature group to delete the record from.
+     * @return The name or Amazon Resource Name (ARN) of the feature group to delete the record from.
      */
 
     public String getFeatureGroupName() {
@@ -86,11 +86,11 @@ public class DeleteRecordRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the feature group to delete the record from.
+     * The name or Amazon Resource Name (ARN) of the feature group to delete the record from.
      * </p>
      * 
      * @param featureGroupName
-     *        The name of the feature group to delete the record from.
+     *        The name or Amazon Resource Name (ARN) of the feature group to delete the record from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

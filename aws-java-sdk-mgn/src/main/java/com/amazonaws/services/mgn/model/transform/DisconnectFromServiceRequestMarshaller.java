@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DisconnectFromServiceRequestMarshaller {
 
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("accountID").build();
     private static final MarshallingInfo<String> SOURCESERVERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceServerID").build();
 
@@ -46,6 +48,7 @@ public class DisconnectFromServiceRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(disconnectFromServiceRequest.getAccountID(), ACCOUNTID_BINDING);
             protocolMarshaller.marshall(disconnectFromServiceRequest.getSourceServerID(), SOURCESERVERID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

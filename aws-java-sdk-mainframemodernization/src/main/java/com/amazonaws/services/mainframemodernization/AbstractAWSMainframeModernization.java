@@ -103,6 +103,11 @@ public class AbstractAWSMainframeModernization implements AWSMainframeModernizat
     }
 
     @Override
+    public GetSignedBluinsightsUrlResult getSignedBluinsightsUrl(GetSignedBluinsightsUrlRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListApplicationVersionsResult listApplicationVersions(ListApplicationVersionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

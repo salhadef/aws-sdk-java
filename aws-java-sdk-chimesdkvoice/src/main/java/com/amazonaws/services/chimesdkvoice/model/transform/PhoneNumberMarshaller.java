@@ -56,6 +56,8 @@ public class PhoneNumberMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeletionTimestamp").timestampFormat("iso8601").build();
     private static final MarshallingInfo<String> ORDERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("OrderId").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
 
     private static final PhoneNumberMarshaller instance = new PhoneNumberMarshaller();
 
@@ -87,6 +89,7 @@ public class PhoneNumberMarshaller {
             protocolMarshaller.marshall(phoneNumber.getUpdatedTimestamp(), UPDATEDTIMESTAMP_BINDING);
             protocolMarshaller.marshall(phoneNumber.getDeletionTimestamp(), DELETIONTIMESTAMP_BINDING);
             protocolMarshaller.marshall(phoneNumber.getOrderId(), ORDERID_BINDING);
+            protocolMarshaller.marshall(phoneNumber.getName(), NAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

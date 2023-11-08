@@ -105,6 +105,10 @@ public class CreateRestApiResultJsonUnmarshaller implements Unmarshaller<CreateR
                     context.nextToken();
                     createRestApiResult.setDisableExecuteApiEndpoint(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("rootResourceId", targetDepth)) {
+                    context.nextToken();
+                    createRestApiResult.setRootResourceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -48,33 +48,13 @@ public class ImportReadSetSourceItemJsonUnmarshaller implements Unmarshaller<Imp
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("description", targetDepth)) {
+                if (context.testExpression("sourceFiles", targetDepth)) {
                     context.nextToken();
-                    importReadSetSourceItem.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("generatedFrom", targetDepth)) {
-                    context.nextToken();
-                    importReadSetSourceItem.setGeneratedFrom(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("name", targetDepth)) {
-                    context.nextToken();
-                    importReadSetSourceItem.setName(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("referenceArn", targetDepth)) {
-                    context.nextToken();
-                    importReadSetSourceItem.setReferenceArn(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("sampleId", targetDepth)) {
-                    context.nextToken();
-                    importReadSetSourceItem.setSampleId(context.getUnmarshaller(String.class).unmarshall(context));
+                    importReadSetSourceItem.setSourceFiles(SourceFilesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("sourceFileType", targetDepth)) {
                     context.nextToken();
                     importReadSetSourceItem.setSourceFileType(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("sourceFiles", targetDepth)) {
-                    context.nextToken();
-                    importReadSetSourceItem.setSourceFiles(SourceFilesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
@@ -87,6 +67,26 @@ public class ImportReadSetSourceItemJsonUnmarshaller implements Unmarshaller<Imp
                 if (context.testExpression("subjectId", targetDepth)) {
                     context.nextToken();
                     importReadSetSourceItem.setSubjectId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("sampleId", targetDepth)) {
+                    context.nextToken();
+                    importReadSetSourceItem.setSampleId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("generatedFrom", targetDepth)) {
+                    context.nextToken();
+                    importReadSetSourceItem.setGeneratedFrom(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("referenceArn", targetDepth)) {
+                    context.nextToken();
+                    importReadSetSourceItem.setReferenceArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("name", targetDepth)) {
+                    context.nextToken();
+                    importReadSetSourceItem.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("description", targetDepth)) {
+                    context.nextToken();
+                    importReadSetSourceItem.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();

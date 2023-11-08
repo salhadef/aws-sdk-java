@@ -45,6 +45,7 @@ import com.amazonaws.services.rekognition.waiters.AmazonRekognitionWaiters;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.rekognition.model.*;
+
 import com.amazonaws.services.rekognition.model.transform.*;
 
 /**
@@ -65,6 +66,11 @@ import com.amazonaws.services.rekognition.model.transform.*;
  * <ul>
  * <li>
  * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_AssociateFaces.html">AssociateFaces</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CompareFaces.html">CompareFaces</a>
  * </p>
  * </li>
@@ -75,12 +81,22 @@ import com.amazonaws.services.rekognition.model.transform.*;
  * </li>
  * <li>
  * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CreateUser.html">CreateUser</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DeleteCollection.html">DeleteCollection</a>
  * </p>
  * </li>
  * <li>
  * <p>
  * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DeleteFaces.html">DeleteFaces</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DeleteUser.html">DeleteUser</a>
  * </p>
  * </li>
  * <li>
@@ -118,6 +134,12 @@ import com.amazonaws.services.rekognition.model.transform.*;
  * </li>
  * <li>
  * <p>
+ * <a
+ * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DisassociateFaces.html">DisassociateFaces</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_GetCelebrityInfo.html">GetCelebrityInfo</a>
  * </p>
  * </li>
@@ -138,6 +160,11 @@ import com.amazonaws.services.rekognition.model.transform.*;
  * </li>
  * <li>
  * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListFaces.html">ListUsers</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_RecognizeCelebrities.html">
  * RecognizeCelebrities</a>
  * </p>
@@ -151,6 +178,17 @@ import com.amazonaws.services.rekognition.model.transform.*;
  * <p>
  * <a
  * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_SearchFacesByImage.html">SearchFacesByImage</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_SearchUsers.html">SearchUsers</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a
+ * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_SearchUsersByImage.html">SearchUsersByImage</a>
  * </p>
  * </li>
  * </ul>
@@ -506,8 +544,14 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
                             new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.rekognition.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.rekognition.model.transform.ConflictExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ImageTooLargeException").withExceptionUnmarshaller(
                                     com.amazonaws.services.rekognition.model.transform.ImageTooLargeExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidManifestException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.rekognition.model.transform.InvalidManifestExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withExceptionUnmarshaller(
                                     com.amazonaws.services.rekognition.model.transform.InternalServerErrorExceptionUnmarshaller.getInstance()))
@@ -715,6 +759,120 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Associates one or more faces with an existing UserID. Takes an array of <code>FaceIds</code>. Each
+     * <code>FaceId</code> that are present in the <code>FaceIds</code> list is associated with the provided UserID. The
+     * maximum number of total <code>FaceIds</code> per UserID is 100.
+     * </p>
+     * <p>
+     * The <code>UserMatchThreshold</code> parameter specifies the minimum user match confidence required for the face
+     * to be associated with a UserID that has at least one <code>FaceID</code> already associated. This ensures that
+     * the <code>FaceIds</code> are associated with the right UserID. The value ranges from 0-100 and default value is
+     * 75.
+     * </p>
+     * <p>
+     * If successful, an array of <code>AssociatedFace</code> objects containing the associated <code>FaceIds</code> is
+     * returned. If a given face is already associated with the given <code>UserID</code>, it will be ignored and will
+     * not be returned in the response. If a given face is already associated to a different <code>UserID</code>, isn't
+     * found in the collection, doesn’t meet the <code>UserMatchThreshold</code>, or there are already 100 faces
+     * associated with the <code>UserID</code>, it will be returned as part of an array of
+     * <code>UnsuccessfulFaceAssociations.</code>
+     * </p>
+     * <p>
+     * The <code>UserStatus</code> reflects the status of an operation which updates a UserID representation with a list
+     * of given faces. The <code>UserStatus</code> can be:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ACTIVE - All associations or disassociations of FaceID(s) for a UserID are complete.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CREATED - A UserID has been created, but has no FaceID(s) associated with it.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UPDATING - A UserID is being updated and there are current associations or disassociations of FaceID(s) taking
+     * place.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param associateFacesRequest
+     * @return Result of the AssociateFaces operation returned by the service.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @throws IdempotentParameterMismatchException
+     *         A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the
+     *         other input parameters is different from the previous call to the operation.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request cannot be found.
+     * @throws ConflictException
+     *         A User with the same Id already exists within the collection, or the update or deletion of the User
+     *         caused an inconsistent state. **
+     * @throws ServiceQuotaExceededException
+     *         <p>
+     *         The size of the collection exceeds the allowed limit. For more information, see Guidelines and quotas in
+     *         Amazon Rekognition in the Amazon Rekognition Developer Guide.
+     * @sample AmazonRekognition.AssociateFaces
+     */
+    @Override
+    public AssociateFacesResult associateFaces(AssociateFacesRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateFaces(request);
+    }
+
+    @SdkInternalApi
+    final AssociateFacesResult executeAssociateFaces(AssociateFacesRequest associateFacesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateFacesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateFacesRequest> request = null;
+        Response<AssociateFacesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateFacesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateFacesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateFaces");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssociateFacesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AssociateFacesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Compares a face in the <i>source</i> input image with each of the 100 largest faces detected in the <i>target</i>
      * input image.
      * </p>
@@ -849,6 +1007,11 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
     }
 
     /**
+     * <note>
+     * <p>
+     * This operation applies only to Amazon Rekognition Custom Labels.
+     * </p>
+     * </note>
      * <p>
      * Copies a version of an Amazon Rekognition Custom Labels model from a source project to a destination project. The
      * source and destination projects can be in different AWS accounts but must be in the same AWS Region. You can't
@@ -868,6 +1031,9 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * policy.
      * </p>
      * <note>
+     * <p>
+     * Copying project versions is supported only for Custom Labels models.
+     * </p>
      * <p>
      * To copy a model, the destination project, source project, and source model version must already exist.
      * </p>
@@ -890,10 +1056,10 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @throws InvalidParameterException
      *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
      * @throws LimitExceededException
-     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition
-     *         Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will
-     *         raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of
-     *         concurrently running jobs is below the Amazon Rekognition service limit.
+     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many jobs concurrently,
+     *         subsequent calls to start operations (ex: <code>StartLabelDetection</code>) will raise a
+     *         <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently
+     *         running jobs is below the Amazon Rekognition service limit.
      * @throws ResourceNotFoundException
      *         The resource specified in the request cannot be found.
      * @throws ThrottlingException
@@ -1042,13 +1208,18 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
     }
 
     /**
+     * <note>
+     * <p>
+     * This operation applies only to Amazon Rekognition Custom Labels.
+     * </p>
+     * </note>
      * <p>
      * Creates a new Amazon Rekognition Custom Labels dataset. You can create a dataset by using an Amazon Sagemaker
      * format manifest file or by copying an existing Amazon Rekognition Custom Labels dataset.
      * </p>
      * <p>
-     * To create a training dataset for a project, specify <code>train</code> for the value of <code>DatasetType</code>.
-     * To create the test dataset for a project, specify <code>test</code> for the value of <code>DatasetType</code>.
+     * To create a training dataset for a project, specify <code>TRAIN</code> for the value of <code>DatasetType</code>.
+     * To create the test dataset for a project, specify <code>TEST</code> for the value of <code>DatasetType</code>.
      * </p>
      * <p>
      * The response from <code>CreateDataset</code> is the Amazon Resource Name (ARN) for the dataset. Creating a
@@ -1086,10 +1257,10 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @throws AccessDeniedException
      *         You are not authorized to perform the action.
      * @throws LimitExceededException
-     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition
-     *         Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will
-     *         raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of
-     *         concurrently running jobs is below the Amazon Rekognition service limit.
+     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many jobs concurrently,
+     *         subsequent calls to start operations (ex: <code>StartLabelDetection</code>) will raise a
+     *         <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently
+     *         running jobs is below the Amazon Rekognition service limit.
      * @throws InvalidS3ObjectException
      *         Amazon Rekognition is unable to access the S3 object specified in the request.
      * @throws ResourceAlreadyExistsException
@@ -1145,11 +1316,17 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
     /**
      * <p>
      * This API operation initiates a Face Liveness session. It returns a <code>SessionId</code>, which you can use to
-     * start streaming Face Liveness video and get the results for a Face Liveness session. You can use the
-     * <code>OutputConfig</code> option in the Settings parameter to provide an Amazon S3 bucket location. The Amazon S3
-     * bucket stores reference images and audit images. You can use <code>AuditImagesLimit</code> to limit the number of
-     * audit images returned. This number is between 0 and 4. By default, it is set to 0. The limit is best effort and
-     * based on the duration of the selfie-video.
+     * start streaming Face Liveness video and get the results for a Face Liveness session.
+     * </p>
+     * <p>
+     * You can use the <code>OutputConfig</code> option in the Settings parameter to provide an Amazon S3 bucket
+     * location. The Amazon S3 bucket stores reference images and audit images. If no Amazon S3 bucket is defined, raw
+     * bytes are sent instead.
+     * </p>
+     * <p>
+     * You can use <code>AuditImagesLimit</code> to limit the number of audit images returned when
+     * <code>GetFaceLivenessSessionResults</code> is called. This number is between 0 and 4. By default, it is set to 0.
+     * The limit is best effort and based on the duration of the selfie-video.
      * </p>
      * 
      * @param createFaceLivenessSessionRequest
@@ -1215,11 +1392,11 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Creates a new Amazon Rekognition Custom Labels project. A project is a group of resources (datasets, model
-     * versions) that you use to create and manage Amazon Rekognition Custom Labels models.
-     * </p>
-     * <p>
-     * This operation requires permissions to perform the <code>rekognition:CreateProject</code> action.
+     * Creates a new Amazon Rekognition project. A project is a group of resources (datasets, model versions) that you
+     * use to create and manage a Amazon Rekognition Custom Labels Model or custom adapter. You can specify a feature to
+     * create the project with, if no feature is specified then Custom Labels is used by default. For adapters, you can
+     * also choose whether or not to have the project auto update by using the AutoUpdate argument. This operation
+     * requires permissions to perform the <code>rekognition:CreateProject</code> action.
      * </p>
      * 
      * @param createProjectRequest
@@ -1227,10 +1404,10 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @throws ResourceInUseException
      *         The specified resource is already being used.
      * @throws LimitExceededException
-     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition
-     *         Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will
-     *         raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of
-     *         concurrently running jobs is below the Amazon Rekognition service limit.
+     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many jobs concurrently,
+     *         subsequent calls to start operations (ex: <code>StartLabelDetection</code>) will raise a
+     *         <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently
+     *         running jobs is below the Amazon Rekognition service limit.
      * @throws InvalidParameterException
      *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
      * @throws AccessDeniedException
@@ -1290,15 +1467,24 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Creates a new version of a model and begins training. Models are managed as part of an Amazon Rekognition Custom
-     * Labels project. The response from <code>CreateProjectVersion</code> is an Amazon Resource Name (ARN) for the
-     * version of the model.
+     * Creates a new version of Amazon Rekognition project (like a Custom Labels model or a custom adapter) and begins
+     * training. Models and adapters are managed as part of a Rekognition project. The response from
+     * <code>CreateProjectVersion</code> is an Amazon Resource Name (ARN) for the project version.
      * </p>
      * <p>
-     * Training uses the training and test datasets associated with the project. For more information, see Creating
-     * training and test dataset in the <i>Amazon Rekognition Custom Labels Developer Guide</i>.
+     * The FeatureConfig operation argument allows you to configure specific model or adapter settings. You can provide
+     * a description to the project version by using the VersionDescription argment. Training can take a while to
+     * complete. You can get the current status by calling <a>DescribeProjectVersions</a>. Training completed
+     * successfully if the value of the <code>Status</code> field is <code>TRAINING_COMPLETED</code>. Once training has
+     * successfully completed, call <a>DescribeProjectVersions</a> to get the training results and evaluate the model.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:CreateProjectVersion</code> action.
      * </p>
      * <note>
+     * <p>
+     * <i>The following applies only to projects with Amazon Rekognition Custom Labels as the chosen feature:</i>
+     * </p>
      * <p>
      * You can train a model in a project that doesn't have associated datasets by specifying manifest files in the
      * <code>TrainingData</code> and <code>TestingData</code> fields.
@@ -1313,25 +1499,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * create training and test datasets for the project.
      * </p>
      * </note>
-     * <p>
-     * Training takes a while to complete. You can get the current status by calling <a>DescribeProjectVersions</a>.
-     * Training completed successfully if the value of the <code>Status</code> field is <code>TRAINING_COMPLETED</code>.
-     * </p>
-     * <p>
-     * If training fails, see Debugging a failed model training in the <i>Amazon Rekognition Custom Labels</i> developer
-     * guide.
-     * </p>
-     * <p>
-     * Once training has successfully completed, call <a>DescribeProjectVersions</a> to get the training results and
-     * evaluate the model. For more information, see Improving a trained Amazon Rekognition Custom Labels model in the
-     * <i>Amazon Rekognition Custom Labels</i> developers guide.
-     * </p>
-     * <p>
-     * After evaluating the model, you start the model by calling <a>StartProjectVersion</a>.
-     * </p>
-     * <p>
-     * This operation requires permissions to perform the <code>rekognition:CreateProjectVersion</code> action.
-     * </p>
+     * <p/>
      * 
      * @param createProjectVersionRequest
      * @return Result of the CreateProjectVersion operation returned by the service.
@@ -1340,10 +1508,10 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @throws ResourceNotFoundException
      *         The resource specified in the request cannot be found.
      * @throws LimitExceededException
-     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition
-     *         Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will
-     *         raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of
-     *         concurrently running jobs is below the Amazon Rekognition service limit.
+     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many jobs concurrently,
+     *         subsequent calls to start operations (ex: <code>StartLabelDetection</code>) will raise a
+     *         <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently
+     *         running jobs is below the Amazon Rekognition service limit.
      * @throws InvalidParameterException
      *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
      * @throws AccessDeniedException
@@ -1459,10 +1627,10 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @throws InvalidParameterException
      *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
      * @throws LimitExceededException
-     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition
-     *         Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will
-     *         raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of
-     *         concurrently running jobs is below the Amazon Rekognition service limit.
+     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many jobs concurrently,
+     *         subsequent calls to start operations (ex: <code>StartLabelDetection</code>) will raise a
+     *         <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently
+     *         running jobs is below the Amazon Rekognition service limit.
      * @throws ResourceInUseException
      *         The specified resource is already being used.
      * @throws ProvisionedThroughputExceededException
@@ -1509,6 +1677,89 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
             HttpResponseHandler<AmazonWebServiceResponse<CreateStreamProcessorResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new CreateStreamProcessorResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a new User within a collection specified by <code>CollectionId</code>. Takes <code>UserId</code> as a
+     * parameter, which is a user provided ID which should be unique within the collection. The provided
+     * <code>UserId</code> will alias the system generated UUID to make the <code>UserId</code> more user friendly.
+     * </p>
+     * <p>
+     * Uses a <code>ClientToken</code>, an idempotency token that ensures a call to <code>CreateUser</code> completes
+     * only once. If the value is not supplied, the AWS SDK generates an idempotency token for the requests. This
+     * prevents retries after a network error results from making multiple <code>CreateUser</code> calls.
+     * </p>
+     * 
+     * @param createUserRequest
+     * @return Result of the CreateUser operation returned by the service.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws ConflictException
+     *         A User with the same Id already exists within the collection, or the update or deletion of the User
+     *         caused an inconsistent state. **
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request cannot be found.
+     * @throws ServiceQuotaExceededException
+     *         <p>
+     *         The size of the collection exceeds the allowed limit. For more information, see Guidelines and quotas in
+     *         Amazon Rekognition in the Amazon Rekognition Developer Guide.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @throws IdempotentParameterMismatchException
+     *         A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the
+     *         other input parameters is different from the previous call to the operation.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @sample AmazonRekognition.CreateUser
+     */
+    @Override
+    public CreateUserResult createUser(CreateUserRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateUser(request);
+    }
+
+    @SdkInternalApi
+    final CreateUserResult executeCreateUser(CreateUserRequest createUserRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createUserRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateUserRequest> request = null;
+        Response<CreateUserResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createUserRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateUser");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateUserResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateUserResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1591,6 +1842,11 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
     }
 
     /**
+     * <note>
+     * <p>
+     * This operation applies only to Amazon Rekognition Custom Labels.
+     * </p>
+     * </note>
      * <p>
      * Deletes an existing Amazon Rekognition Custom Labels dataset. Deleting a dataset might take while. Use
      * <a>DescribeDataset</a> to check the current status. The dataset is still deleting if the value of
@@ -1619,10 +1875,10 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @throws AccessDeniedException
      *         You are not authorized to perform the action.
      * @throws LimitExceededException
-     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition
-     *         Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will
-     *         raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of
-     *         concurrently running jobs is below the Amazon Rekognition service limit.
+     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many jobs concurrently,
+     *         subsequent calls to start operations (ex: <code>StartLabelDetection</code>) will raise a
+     *         <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently
+     *         running jobs is below the Amazon Rekognition service limit.
      * @throws ResourceInUseException
      *         The specified resource is already being used.
      * @throws ResourceNotFoundException
@@ -1745,8 +2001,8 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Deletes an Amazon Rekognition Custom Labels project. To delete a project you must first delete all models
-     * associated with the project. To delete a model, see <a>DeleteProjectVersion</a>.
+     * Deletes a Amazon Rekognition project. To delete a project you must first delete all models or adapters associated
+     * with the project. To delete a model or adapter, see <a>DeleteProjectVersion</a>.
      * </p>
      * <p>
      * <code>DeleteProject</code> is an asynchronous operation. To check if the project is deleted, call
@@ -1821,6 +2077,11 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
     }
 
     /**
+     * <note>
+     * <p>
+     * This operation applies only to Amazon Rekognition Custom Labels.
+     * </p>
+     * </note>
      * <p>
      * Deletes an existing project policy.
      * </p>
@@ -1897,12 +2158,13 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Deletes an Amazon Rekognition Custom Labels model.
+     * Deletes a Rekognition project model or project version, like a Amazon Rekognition Custom Labels model or a custom
+     * adapter.
      * </p>
      * <p>
-     * You can't delete a model if it is running or if it is training. To check the status of a model, use the
-     * <code>Status</code> field returned from <a>DescribeProjectVersions</a>. To stop a running model call
-     * <a>StopProjectVersion</a>. If the model is training, wait until it finishes.
+     * You can't delete a project version if it is running or if it is training. To check the status of a project
+     * version, use the Status field returned from <a>DescribeProjectVersions</a>. To stop a project version call
+     * <a>StopProjectVersion</a>. If the project version is training, wait until it finishes.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:DeleteProjectVersion</code> action.
@@ -2044,6 +2306,81 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Deletes the specified UserID within the collection. Faces that are associated with the UserID are disassociated
+     * from the UserID before deleting the specified UserID. If the specified <code>Collection</code> or
+     * <code>UserID</code> is already deleted or not found, a <code>ResourceNotFoundException</code> will be thrown. If
+     * the action is successful with a 200 response, an empty HTTP body is returned.
+     * </p>
+     * 
+     * @param deleteUserRequest
+     * @return Result of the DeleteUser operation returned by the service.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws ConflictException
+     *         A User with the same Id already exists within the collection, or the update or deletion of the User
+     *         caused an inconsistent state. **
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request cannot be found.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @throws IdempotentParameterMismatchException
+     *         A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the
+     *         other input parameters is different from the previous call to the operation.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @sample AmazonRekognition.DeleteUser
+     */
+    @Override
+    public DeleteUserResult deleteUser(DeleteUserRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteUser(request);
+    }
+
+    @SdkInternalApi
+    final DeleteUserResult executeDeleteUser(DeleteUserRequest deleteUserRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteUserRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteUserRequest> request = null;
+        Response<DeleteUserResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteUserRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUser");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteUserResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteUserResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Describes the specified collection. You can use <code>DescribeCollection</code> to get information, such as the
      * number of faces indexed into a collection and the version of the model used by the collection for face detection.
      * </p>
@@ -2113,6 +2450,11 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
     }
 
     /**
+     * <note>
+     * <p>
+     * This operation applies only to Amazon Rekognition Custom Labels.
+     * </p>
+     * </note>
      * <p>
      * Describes an Amazon Rekognition Custom Labels dataset. You can get information such as the current status of a
      * dataset and statistics about the images and labels in a dataset.
@@ -2184,8 +2526,8 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Lists and describes the versions of a model in an Amazon Rekognition Custom Labels project. You can specify up to
-     * 10 model versions in <code>ProjectVersionArns</code>. If you don't specify a value, descriptions for all model
+     * Lists and describes the versions of an Amazon Rekognition project. You can specify up to 10 model or adapter
+     * versions in <code>ProjectVersionArns</code>. If you don't specify a value, descriptions for all model/adapter
      * versions in the project are returned.
      * </p>
      * <p>
@@ -2259,7 +2601,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Gets information about your Amazon Rekognition Custom Labels projects.
+     * Gets information about your Rekognition projects.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:DescribeProjects</code> action.
@@ -2397,6 +2739,11 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
     }
 
     /**
+     * <note>
+     * <p>
+     * This operation applies only to Amazon Rekognition Custom Labels.
+     * </p>
+     * </note>
      * <p>
      * Detects custom labels in a supplied image by using an Amazon Rekognition Custom Labels model.
      * </p>
@@ -2455,10 +2802,10 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      *         size or resolution exceeds the allowed limit. For more information, see Guidelines and quotas in Amazon
      *         Rekognition in the Amazon Rekognition Developer Guide.
      * @throws LimitExceededException
-     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition
-     *         Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will
-     *         raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of
-     *         concurrently running jobs is below the Amazon Rekognition service limit.
+     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many jobs concurrently,
+     *         subsequent calls to start operations (ex: <code>StartLabelDetection</code>) will raise a
+     *         <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently
+     *         running jobs is below the Amazon Rekognition service limit.
      * @throws AccessDeniedException
      *         You are not authorized to perform the action.
      * @throws InternalServerErrorException
@@ -2524,7 +2871,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * <code>DetectFaces</code> detects the 100 largest faces in the image. For each face detected, the operation
      * returns face details. These details include a bounding box of the face, a confidence value (that the bounding box
      * contains a face), and a fixed set of attributes such as facial landmarks (for example, coordinates of eye and
-     * mouth), presence of beard, sunglasses, and so on.
+     * mouth), pose, presence of facial occlusion, and so on.
      * </p>
      * <p>
      * The face-detection algorithm is most effective on frontal faces. For non-frontal or obscured faces, the algorithm
@@ -2643,9 +2990,10 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * Image</a>.
      * </p>
      * <p>
-     * You can specify <code>MinConfidence</code> to control the confidence threshold for the labels returned. The
-     * default is 55%. You can also add the <code>MaxLabels</code> parameter to limit the number of labels returned. The
-     * default and upper limit is 1000 labels.
+     * When getting labels, you can specify <code>MinConfidence</code> to control the confidence threshold for the
+     * labels returned. The default is 55%. You can also add the <code>MaxLabels</code> parameter to limit the number of
+     * labels returned. The default and upper limit is 1000 labels. These arguments are only valid when supplying
+     * GENERAL_LABELS as a feature type.
      * </p>
      * <p>
      * <b>Response Elements</b>
@@ -2846,6 +3194,10 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * bucket. If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes is not supported. The
      * image must be either a PNG or JPEG formatted file.
      * </p>
+     * <p>
+     * You can specify an adapter to use when retrieving label predictions by providing a <code>ProjectVersionArn</code>
+     * to the <code>ProjectVersion</code> argument.
+     * </p>
      * 
      * @param detectModerationLabelsRequest
      * @return Result of the DetectModerationLabels operation returned by the service.
@@ -2870,6 +3222,11 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      *         The provided image format is not supported.
      * @throws HumanLoopQuotaExceededException
      *         The number of in-progress human reviews you have has exceeded the number allowed.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request cannot be found.
+     * @throws ResourceNotReadyException
+     *         The requested resource isn't ready. For example, this exception occurs when you call
+     *         <code>DetectCustomLabels</code> with a model version that isn't deployed.
      * @sample AmazonRekognition.DetectModerationLabels
      */
     @Override
@@ -3156,6 +3513,88 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
     }
 
     /**
+     * <p>
+     * Removes the association between a <code>Face</code> supplied in an array of <code>FaceIds</code> and the User. If
+     * the User is not present already, then a <code>ResourceNotFound</code> exception is thrown. If successful, an
+     * array of faces that are disassociated from the User is returned. If a given face is already disassociated from
+     * the given UserID, it will be ignored and not be returned in the response. If a given face is already associated
+     * with a different User or not found in the collection it will be returned as part of
+     * <code>UnsuccessfulDisassociations</code>. You can remove 1 - 100 face IDs from a user at one time.
+     * </p>
+     * 
+     * @param disassociateFacesRequest
+     * @return Result of the DisassociateFaces operation returned by the service.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @throws IdempotentParameterMismatchException
+     *         A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the
+     *         other input parameters is different from the previous call to the operation.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request cannot be found.
+     * @throws ConflictException
+     *         A User with the same Id already exists within the collection, or the update or deletion of the User
+     *         caused an inconsistent state. **
+     * @sample AmazonRekognition.DisassociateFaces
+     */
+    @Override
+    public DisassociateFacesResult disassociateFaces(DisassociateFacesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateFaces(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateFacesResult executeDisassociateFaces(DisassociateFacesRequest disassociateFacesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateFacesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateFacesRequest> request = null;
+        Response<DisassociateFacesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateFacesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disassociateFacesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateFaces");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociateFacesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DisassociateFacesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <note>
+     * <p>
+     * This operation applies only to Amazon Rekognition Custom Labels.
+     * </p>
+     * </note>
      * <p>
      * Distributes the entries (images) in a training dataset across the training dataset and the test dataset for a
      * project. <code>DistributeDatasetEntries</code> moves 20% of the training dataset images to the test dataset. An
@@ -3565,6 +4004,10 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * and populate the <code>NextToken</code> request parameter with the token value returned from the previous call to
      * <code>GetFaceDetection</code>.
      * </p>
+     * <p>
+     * Note that for the <code>GetFaceDetection</code> operation, the returned values for <code>FaceOccluded</code> and
+     * <code>EyeDirection</code> will always be "null".
+     * </p>
      * 
      * @param getFaceDetectionRequest
      * @return Result of the GetFaceDetection operation returned by the service.
@@ -3634,7 +4077,12 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * Retrieves the results of a specific Face Liveness session. It requires the <code>sessionId</code> as input, which
      * was created using <code>CreateFaceLivenessSession</code>. Returns the corresponding Face Liveness confidence
      * score, a reference image that includes a face bounding box, and audit images that also contain face bounding
-     * boxes. The Face Liveness confidence score ranges from 0 to 100. The reference image can optionally be returned.
+     * boxes. The Face Liveness confidence score ranges from 0 to 100.
+     * </p>
+     * <p>
+     * The number of audit images returned by <code>GetFaceLivenessSessionResults</code> is defined by the
+     * <code>AuditImagesLimit</code> paramater when calling <code>CreateFaceLivenessSession</code>. Reference images are
+     * always returned when possible.
      * </p>
      * 
      * @param getFaceLivenessSessionResultsRequest
@@ -3960,6 +4408,73 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Retrieves the results for a given media analysis job. Takes a <code>JobId</code> returned by
+     * StartMediaAnalysisJob.
+     * </p>
+     * 
+     * @param getMediaAnalysisJobRequest
+     * @return Result of the GetMediaAnalysisJob operation returned by the service.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request cannot be found.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @sample AmazonRekognition.GetMediaAnalysisJob
+     */
+    @Override
+    public GetMediaAnalysisJobResult getMediaAnalysisJob(GetMediaAnalysisJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetMediaAnalysisJob(request);
+    }
+
+    @SdkInternalApi
+    final GetMediaAnalysisJobResult executeGetMediaAnalysisJob(GetMediaAnalysisJobRequest getMediaAnalysisJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getMediaAnalysisJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetMediaAnalysisJobRequest> request = null;
+        Response<GetMediaAnalysisJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetMediaAnalysisJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getMediaAnalysisJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMediaAnalysisJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetMediaAnalysisJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetMediaAnalysisJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets the path tracking results of a Amazon Rekognition Video analysis started by <a>StartPersonTracking</a>.
      * </p>
      * <p>
@@ -4176,7 +4691,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * </p>
      * <p>
      * <code>GetTextDetection</code> returns an array of detected text (<code>TextDetections</code>) sorted by the time
-     * the text was detected, up to 50 words per frame of video.
+     * the text was detected, up to 100 words per frame of video.
      * </p>
      * <p>
      * Each element of the array includes the detected text, the precentage confidence in the acuracy of the detected
@@ -4374,10 +4889,13 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * </li>
      * </ul>
      * <p>
-     * If you request all facial attributes (by using the <code>detectionAttributes</code> parameter), Amazon
-     * Rekognition returns detailed facial attributes, such as facial landmarks (for example, location of eye and mouth)
-     * and other facial attributes. If you provide the same image, specify the same collection, and use the same
-     * external ID in the <code>IndexFaces</code> operation, Amazon Rekognition doesn't save duplicate face metadata.
+     * If you request <code>ALL</code> or specific facial attributes (e.g., <code>FACE_OCCLUDED</code>) by using the
+     * detectionAttributes parameter, Amazon Rekognition returns detailed facial attributes, such as facial landmarks
+     * (for example, location of eye and mouth), facial occlusion, and other facial attributes.
+     * </p>
+     * <p>
+     * If you provide the same image, specify the same collection, and use the same external ID in the
+     * <code>IndexFaces</code> operation, Amazon Rekognition doesn't save duplicate face metadata.
      * </p>
      * <p/>
      * <p>
@@ -4538,6 +5056,11 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
     }
 
     /**
+     * <note>
+     * <p>
+     * This operation applies only to Amazon Rekognition Custom Labels.
+     * </p>
+     * </note>
      * <p>
      * Lists the entries (images) within a dataset. An entry is a JSON Line that contains the information for a single
      * image, including the image location, assigned labels, and object location bounding boxes. For more information,
@@ -4627,6 +5150,11 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
     }
 
     /**
+     * <note>
+     * <p>
+     * This operation applies only to Amazon Rekognition Custom Labels.
+     * </p>
+     * </note>
      * <p>
      * Lists the labels in a dataset. Amazon Rekognition Custom Labels uses labels to describe images. For more
      * information, see <a
@@ -4780,6 +5308,78 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
     }
 
     /**
+     * <p>
+     * Returns a list of media analysis jobs. Results are sorted by <code>CreationTimestamp</code> in descending order.
+     * </p>
+     * 
+     * @param listMediaAnalysisJobsRequest
+     * @return Result of the ListMediaAnalysisJobs operation returned by the service.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws InvalidPaginationTokenException
+     *         Pagination token in the request is not valid.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @sample AmazonRekognition.ListMediaAnalysisJobs
+     */
+    @Override
+    public ListMediaAnalysisJobsResult listMediaAnalysisJobs(ListMediaAnalysisJobsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListMediaAnalysisJobs(request);
+    }
+
+    @SdkInternalApi
+    final ListMediaAnalysisJobsResult executeListMediaAnalysisJobs(ListMediaAnalysisJobsRequest listMediaAnalysisJobsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listMediaAnalysisJobsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListMediaAnalysisJobsRequest> request = null;
+        Response<ListMediaAnalysisJobsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListMediaAnalysisJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listMediaAnalysisJobsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMediaAnalysisJobs");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListMediaAnalysisJobsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ListMediaAnalysisJobsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <note>
+     * <p>
+     * This operation applies only to Amazon Rekognition Custom Labels.
+     * </p>
+     * </note>
      * <p>
      * Gets a list of the project policies attached to a project.
      * </p>
@@ -4991,9 +5591,86 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Returns metadata of the User such as <code>UserID</code> in the specified collection. Anonymous User (to reserve
+     * faces without any identity) is not returned as part of this request. The results are sorted by system generated
+     * primary key ID. If the response is truncated, <code>NextToken</code> is returned in the response that can be used
+     * in the subsequent request to retrieve the next set of identities.
+     * </p>
+     * 
+     * @param listUsersRequest
+     * @return Result of the ListUsers operation returned by the service.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request cannot be found.
+     * @throws InvalidPaginationTokenException
+     *         Pagination token in the request is not valid.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @sample AmazonRekognition.ListUsers
+     */
+    @Override
+    public ListUsersResult listUsers(ListUsersRequest request) {
+        request = beforeClientExecution(request);
+        return executeListUsers(request);
+    }
+
+    @SdkInternalApi
+    final ListUsersResult executeListUsers(ListUsersRequest listUsersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listUsersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListUsersRequest> request = null;
+        Response<ListUsersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListUsersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listUsersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUsers");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListUsersResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListUsersResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <note>
+     * <p>
+     * This operation applies only to Amazon Rekognition Custom Labels.
+     * </p>
+     * </note>
+     * <p>
      * Attaches a project policy to a Amazon Rekognition Custom Labels project in a trusting AWS account. A project
      * policy specifies that a trusted AWS account can copy a model version from a trusting AWS account to a project in
-     * the trusted AWS account. To copy a model version you use the <a>CopyProjectVersion</a> operation.
+     * the trusted AWS account. To copy a model version you use the <a>CopyProjectVersion</a> operation. Only applies to
+     * Custom Labels projects.
      * </p>
      * <p>
      * For more information about the format of a project policy document, see Attaching a project policy (SDK) in the
@@ -5042,10 +5719,10 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
      * @throws LimitExceededException
-     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition
-     *         Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will
-     *         raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of
-     *         concurrently running jobs is below the Amazon Rekognition service limit.
+     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many jobs concurrently,
+     *         subsequent calls to start operations (ex: <code>StartLabelDetection</code>) will raise a
+     *         <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently
+     *         running jobs is below the Amazon Rekognition service limit.
      * @sample AmazonRekognition.PutProjectPolicy
      */
     @Override
@@ -5402,6 +6079,159 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Searches for UserIDs within a collection based on a <code>FaceId</code> or <code>UserId</code>. This API can be
+     * used to find the closest UserID (with a highest similarity) to associate a face. The request must be provided
+     * with either <code>FaceId</code> or <code>UserId</code>. The operation returns an array of UserID that match the
+     * <code>FaceId</code> or <code>UserId</code>, ordered by similarity score with the highest similarity first.
+     * </p>
+     * 
+     * @param searchUsersRequest
+     * @return Result of the SearchUsers operation returned by the service.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request cannot be found.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @sample AmazonRekognition.SearchUsers
+     */
+    @Override
+    public SearchUsersResult searchUsers(SearchUsersRequest request) {
+        request = beforeClientExecution(request);
+        return executeSearchUsers(request);
+    }
+
+    @SdkInternalApi
+    final SearchUsersResult executeSearchUsers(SearchUsersRequest searchUsersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(searchUsersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SearchUsersRequest> request = null;
+        Response<SearchUsersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SearchUsersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchUsersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchUsers");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SearchUsersResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SearchUsersResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Searches for UserIDs using a supplied image. It first detects the largest face in the image, and then searches a
+     * specified collection for matching UserIDs.
+     * </p>
+     * <p>
+     * The operation returns an array of UserIDs that match the face in the supplied image, ordered by similarity score
+     * with the highest similarity first. It also returns a bounding box for the face found in the input image.
+     * </p>
+     * <p>
+     * Information about faces detected in the supplied image, but not used for the search, is returned in an array of
+     * <code>UnsearchedFace</code> objects. If no valid face is detected in the image, the response will contain an
+     * empty <code>UserMatches</code> list and no <code>SearchedFace</code> object.
+     * </p>
+     * 
+     * @param searchUsersByImageRequest
+     * @return Result of the SearchUsersByImage operation returned by the service.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request cannot be found.
+     * @throws InvalidImageFormatException
+     *         The provided image format is not supported.
+     * @throws InvalidS3ObjectException
+     *         Amazon Rekognition is unable to access the S3 object specified in the request.
+     * @throws ImageTooLargeException
+     *         The input image size exceeds the allowed limit. If you are calling DetectProtectiveEquipment, the image
+     *         size or resolution exceeds the allowed limit. For more information, see Guidelines and quotas in Amazon
+     *         Rekognition in the Amazon Rekognition Developer Guide.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @sample AmazonRekognition.SearchUsersByImage
+     */
+    @Override
+    public SearchUsersByImageResult searchUsersByImage(SearchUsersByImageRequest request) {
+        request = beforeClientExecution(request);
+        return executeSearchUsersByImage(request);
+    }
+
+    @SdkInternalApi
+    final SearchUsersByImageResult executeSearchUsersByImage(SearchUsersByImageRequest searchUsersByImageRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(searchUsersByImageRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SearchUsersByImageRequest> request = null;
+        Response<SearchUsersByImageResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SearchUsersByImageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchUsersByImageRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchUsersByImage");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SearchUsersByImageResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SearchUsersByImageResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Starts asynchronous recognition of celebrities in a stored video.
      * </p>
      * <p>
@@ -5438,10 +6268,10 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
      * @throws LimitExceededException
-     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition
-     *         Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will
-     *         raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of
-     *         concurrently running jobs is below the Amazon Rekognition service limit.
+     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many jobs concurrently,
+     *         subsequent calls to start operations (ex: <code>StartLabelDetection</code>) will raise a
+     *         <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently
+     *         running jobs is below the Amazon Rekognition service limit.
      * @throws ThrottlingException
      *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
      * @sample AmazonRekognition.StartCelebrityRecognition
@@ -5535,10 +6365,10 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
      * @throws LimitExceededException
-     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition
-     *         Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will
-     *         raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of
-     *         concurrently running jobs is below the Amazon Rekognition service limit.
+     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many jobs concurrently,
+     *         subsequent calls to start operations (ex: <code>StartLabelDetection</code>) will raise a
+     *         <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently
+     *         running jobs is below the Amazon Rekognition service limit.
      * @throws ThrottlingException
      *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
      * @sample AmazonRekognition.StartContentModeration
@@ -5625,10 +6455,10 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
      * @throws LimitExceededException
-     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition
-     *         Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will
-     *         raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of
-     *         concurrently running jobs is below the Amazon Rekognition service limit.
+     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many jobs concurrently,
+     *         subsequent calls to start operations (ex: <code>StartLabelDetection</code>) will raise a
+     *         <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently
+     *         running jobs is below the Amazon Rekognition service limit.
      * @throws ThrottlingException
      *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
      * @sample AmazonRekognition.StartFaceDetection
@@ -5714,10 +6544,10 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
      * @throws LimitExceededException
-     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition
-     *         Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will
-     *         raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of
-     *         concurrently running jobs is below the Amazon Rekognition service limit.
+     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many jobs concurrently,
+     *         subsequent calls to start operations (ex: <code>StartLabelDetection</code>) will raise a
+     *         <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently
+     *         running jobs is below the Amazon Rekognition service limit.
      * @throws ResourceNotFoundException
      *         The resource specified in the request cannot be found.
      * @throws ThrottlingException
@@ -5824,10 +6654,10 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
      * @throws LimitExceededException
-     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition
-     *         Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will
-     *         raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of
-     *         concurrently running jobs is below the Amazon Rekognition service limit.
+     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many jobs concurrently,
+     *         subsequent calls to start operations (ex: <code>StartLabelDetection</code>) will raise a
+     *         <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently
+     *         running jobs is below the Amazon Rekognition service limit.
      * @throws ThrottlingException
      *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
      * @sample AmazonRekognition.StartLabelDetection
@@ -5878,6 +6708,89 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Initiates a new media analysis job. Accepts a manifest file in an Amazon S3 bucket. The output is a manifest file
+     * and a summary of the manifest stored in the Amazon S3 bucket.
+     * </p>
+     * 
+     * @param startMediaAnalysisJobRequest
+     * @return Result of the StartMediaAnalysisJob operation returned by the service.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws InvalidManifestException
+     *         Indicates that a provided manifest file is empty or larger than the allowed limit.
+     * @throws InvalidS3ObjectException
+     *         Amazon Rekognition is unable to access the S3 object specified in the request.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request cannot be found.
+     * @throws ResourceNotReadyException
+     *         The requested resource isn't ready. For example, this exception occurs when you call
+     *         <code>DetectCustomLabels</code> with a model version that isn't deployed.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @throws LimitExceededException
+     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many jobs concurrently,
+     *         subsequent calls to start operations (ex: <code>StartLabelDetection</code>) will raise a
+     *         <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently
+     *         running jobs is below the Amazon Rekognition service limit.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @throws IdempotentParameterMismatchException
+     *         A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the
+     *         other input parameters is different from the previous call to the operation.
+     * @sample AmazonRekognition.StartMediaAnalysisJob
+     */
+    @Override
+    public StartMediaAnalysisJobResult startMediaAnalysisJob(StartMediaAnalysisJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartMediaAnalysisJob(request);
+    }
+
+    @SdkInternalApi
+    final StartMediaAnalysisJobResult executeStartMediaAnalysisJob(StartMediaAnalysisJobRequest startMediaAnalysisJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startMediaAnalysisJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartMediaAnalysisJobRequest> request = null;
+        Response<StartMediaAnalysisJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartMediaAnalysisJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startMediaAnalysisJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartMediaAnalysisJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartMediaAnalysisJobResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new StartMediaAnalysisJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Starts the asynchronous tracking of a person's path in a stored video.
      * </p>
      * <p>
@@ -5913,10 +6826,10 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
      * @throws LimitExceededException
-     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition
-     *         Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will
-     *         raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of
-     *         concurrently running jobs is below the Amazon Rekognition service limit.
+     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many jobs concurrently,
+     *         subsequent calls to start operations (ex: <code>StartLabelDetection</code>) will raise a
+     *         <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently
+     *         running jobs is below the Amazon Rekognition service limit.
      * @throws ThrottlingException
      *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
      * @sample AmazonRekognition.StartPersonTracking
@@ -5966,6 +6879,11 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
     }
 
     /**
+     * <note>
+     * <p>
+     * This operation applies only to Amazon Rekognition Custom Labels.
+     * </p>
+     * </note>
      * <p>
      * Starts the running of the version of a model. Starting a model takes a while to complete. To check the current
      * state of the model, use <a>DescribeProjectVersions</a>.
@@ -5980,10 +6898,6 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * </p>
      * </note>
      * <p>
-     * For more information, see <i>Running a trained Amazon Rekognition Custom Labels model</i> in the Amazon
-     * Rekognition Custom Labels Guide.
-     * </p>
-     * <p>
      * This operation requires permissions to perform the <code>rekognition:StartProjectVersion</code> action.
      * </p>
      * 
@@ -5994,10 +6908,10 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @throws ResourceInUseException
      *         The specified resource is already being used.
      * @throws LimitExceededException
-     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition
-     *         Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will
-     *         raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of
-     *         concurrently running jobs is below the Amazon Rekognition service limit.
+     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many jobs concurrently,
+     *         subsequent calls to start operations (ex: <code>StartLabelDetection</code>) will raise a
+     *         <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently
+     *         running jobs is below the Amazon Rekognition service limit.
      * @throws InvalidParameterException
      *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
      * @throws AccessDeniedException
@@ -6101,10 +7015,10 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
      * @throws LimitExceededException
-     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition
-     *         Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will
-     *         raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of
-     *         concurrently running jobs is below the Amazon Rekognition service limit.
+     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many jobs concurrently,
+     *         subsequent calls to start operations (ex: <code>StartLabelDetection</code>) will raise a
+     *         <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently
+     *         running jobs is below the Amazon Rekognition service limit.
      * @throws ThrottlingException
      *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
      * @sample AmazonRekognition.StartSegmentDetection
@@ -6266,10 +7180,10 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
      * @throws LimitExceededException
-     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition
-     *         Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will
-     *         raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of
-     *         concurrently running jobs is below the Amazon Rekognition service limit.
+     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many jobs concurrently,
+     *         subsequent calls to start operations (ex: <code>StartLabelDetection</code>) will raise a
+     *         <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently
+     *         running jobs is below the Amazon Rekognition service limit.
      * @throws ThrottlingException
      *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
      * @sample AmazonRekognition.StartTextDetection
@@ -6319,9 +7233,14 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
     }
 
     /**
+     * <note>
+     * <p>
+     * This operation applies only to Amazon Rekognition Custom Labels.
+     * </p>
+     * </note>
      * <p>
      * Stops a running model. The operation might take a while to complete. To check the current status, call
-     * <a>DescribeProjectVersions</a>.
+     * <a>DescribeProjectVersions</a>. Only applies to Custom Labels projects.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:StopProjectVersion</code> action.
@@ -6603,6 +7522,11 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
     }
 
     /**
+     * <note>
+     * <p>
+     * This operation applies only to Amazon Rekognition Custom Labels.
+     * </p>
+     * </note>
      * <p>
      * Adds or updates one or more entries (images) in a dataset. An entry is a JSON Line which contains the information
      * for a single image, including the image location, assigned labels, and object location bounding boxes. For more
@@ -6649,10 +7573,10 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @throws AccessDeniedException
      *         You are not authorized to perform the action.
      * @throws LimitExceededException
-     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition
-     *         Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will
-     *         raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of
-     *         concurrently running jobs is below the Amazon Rekognition service limit.
+     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many jobs concurrently,
+     *         subsequent calls to start operations (ex: <code>StartLabelDetection</code>) will raise a
+     *         <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently
+     *         running jobs is below the Amazon Rekognition service limit.
      * @throws ResourceInUseException
      *         The specified resource is already being used.
      * @throws ResourceNotFoundException

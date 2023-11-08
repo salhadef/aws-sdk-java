@@ -34,12 +34,22 @@ public class WorkgroupMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("configParameters").build();
     private static final MarshallingInfo<java.util.Date> CREATIONDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationDate").timestampFormat("iso8601").build();
+    private static final MarshallingInfo<String> CUSTOMDOMAINCERTIFICATEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("customDomainCertificateArn").build();
+    private static final MarshallingInfo<java.util.Date> CUSTOMDOMAINCERTIFICATEEXPIRYTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("customDomainCertificateExpiryTime").timestampFormat("iso8601").build();
+    private static final MarshallingInfo<String> CUSTOMDOMAINNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("customDomainName").build();
     private static final MarshallingInfo<StructuredPojo> ENDPOINT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("endpoint").build();
     private static final MarshallingInfo<Boolean> ENHANCEDVPCROUTING_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("enhancedVpcRouting").build();
+    private static final MarshallingInfo<Integer> MAXCAPACITY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxCapacity").build();
     private static final MarshallingInfo<String> NAMESPACENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("namespaceName").build();
+    private static final MarshallingInfo<String> PATCHVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("patchVersion").build();
     private static final MarshallingInfo<Integer> PORT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("port").build();
     private static final MarshallingInfo<Boolean> PUBLICLYACCESSIBLE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
@@ -56,6 +66,8 @@ public class WorkgroupMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("workgroupId").build();
     private static final MarshallingInfo<String> WORKGROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("workgroupName").build();
+    private static final MarshallingInfo<String> WORKGROUPVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("workgroupVersion").build();
 
     private static final WorkgroupMarshaller instance = new WorkgroupMarshaller();
 
@@ -76,9 +88,14 @@ public class WorkgroupMarshaller {
             protocolMarshaller.marshall(workgroup.getBaseCapacity(), BASECAPACITY_BINDING);
             protocolMarshaller.marshall(workgroup.getConfigParameters(), CONFIGPARAMETERS_BINDING);
             protocolMarshaller.marshall(workgroup.getCreationDate(), CREATIONDATE_BINDING);
+            protocolMarshaller.marshall(workgroup.getCustomDomainCertificateArn(), CUSTOMDOMAINCERTIFICATEARN_BINDING);
+            protocolMarshaller.marshall(workgroup.getCustomDomainCertificateExpiryTime(), CUSTOMDOMAINCERTIFICATEEXPIRYTIME_BINDING);
+            protocolMarshaller.marshall(workgroup.getCustomDomainName(), CUSTOMDOMAINNAME_BINDING);
             protocolMarshaller.marshall(workgroup.getEndpoint(), ENDPOINT_BINDING);
             protocolMarshaller.marshall(workgroup.getEnhancedVpcRouting(), ENHANCEDVPCROUTING_BINDING);
+            protocolMarshaller.marshall(workgroup.getMaxCapacity(), MAXCAPACITY_BINDING);
             protocolMarshaller.marshall(workgroup.getNamespaceName(), NAMESPACENAME_BINDING);
+            protocolMarshaller.marshall(workgroup.getPatchVersion(), PATCHVERSION_BINDING);
             protocolMarshaller.marshall(workgroup.getPort(), PORT_BINDING);
             protocolMarshaller.marshall(workgroup.getPubliclyAccessible(), PUBLICLYACCESSIBLE_BINDING);
             protocolMarshaller.marshall(workgroup.getSecurityGroupIds(), SECURITYGROUPIDS_BINDING);
@@ -87,6 +104,7 @@ public class WorkgroupMarshaller {
             protocolMarshaller.marshall(workgroup.getWorkgroupArn(), WORKGROUPARN_BINDING);
             protocolMarshaller.marshall(workgroup.getWorkgroupId(), WORKGROUPID_BINDING);
             protocolMarshaller.marshall(workgroup.getWorkgroupName(), WORKGROUPNAME_BINDING);
+            protocolMarshaller.marshall(workgroup.getWorkgroupVersion(), WORKGROUPVERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

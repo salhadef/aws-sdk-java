@@ -98,6 +98,10 @@ public class MembershipJsonUnmarshaller implements Unmarshaller<Membership, Json
                     context.nextToken();
                     membership.setQueryLogStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("defaultResultConfiguration", targetDepth)) {
+                    context.nextToken();
+                    membership.setDefaultResultConfiguration(MembershipProtectedQueryResultConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

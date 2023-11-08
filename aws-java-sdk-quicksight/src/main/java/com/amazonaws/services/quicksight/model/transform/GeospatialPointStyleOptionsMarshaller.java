@@ -31,6 +31,8 @@ public class GeospatialPointStyleOptionsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SelectedPointStyle").build();
     private static final MarshallingInfo<StructuredPojo> CLUSTERMARKERCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClusterMarkerConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> HEATMAPCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HeatmapConfiguration").build();
 
     private static final GeospatialPointStyleOptionsMarshaller instance = new GeospatialPointStyleOptionsMarshaller();
 
@@ -50,6 +52,7 @@ public class GeospatialPointStyleOptionsMarshaller {
         try {
             protocolMarshaller.marshall(geospatialPointStyleOptions.getSelectedPointStyle(), SELECTEDPOINTSTYLE_BINDING);
             protocolMarshaller.marshall(geospatialPointStyleOptions.getClusterMarkerConfiguration(), CLUSTERMARKERCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(geospatialPointStyleOptions.getHeatmapConfiguration(), HEATMAPCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

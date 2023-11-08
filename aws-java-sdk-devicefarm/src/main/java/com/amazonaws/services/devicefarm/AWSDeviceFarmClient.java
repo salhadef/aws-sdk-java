@@ -44,6 +44,7 @@ import com.amazonaws.services.devicefarm.AWSDeviceFarmClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.devicefarm.model.*;
+
 import com.amazonaws.services.devicefarm.model.transform.*;
 
 /**

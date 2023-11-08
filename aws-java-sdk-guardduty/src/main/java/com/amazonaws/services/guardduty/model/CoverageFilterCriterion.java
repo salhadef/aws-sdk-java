@@ -32,6 +32,12 @@ public class CoverageFilterCriterion implements Serializable, Cloneable, Structu
      * <p>
      * An enum value representing possible filter fields.
      * </p>
+     * <note>
+     * <p>
+     * Replace the enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>. <code>CLUSTER_NAME</code>
+     * has been deprecated.
+     * </p>
+     * </note>
      */
     private String criterionKey;
     /**
@@ -45,9 +51,19 @@ public class CoverageFilterCriterion implements Serializable, Cloneable, Structu
      * <p>
      * An enum value representing possible filter fields.
      * </p>
+     * <note>
+     * <p>
+     * Replace the enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>. <code>CLUSTER_NAME</code>
+     * has been deprecated.
+     * </p>
+     * </note>
      * 
      * @param criterionKey
-     *        An enum value representing possible filter fields.
+     *        An enum value representing possible filter fields.</p> <note>
+     *        <p>
+     *        Replace the enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>.
+     *        <code>CLUSTER_NAME</code> has been deprecated.
+     *        </p>
      * @see CoverageFilterCriterionKey
      */
 
@@ -59,8 +75,18 @@ public class CoverageFilterCriterion implements Serializable, Cloneable, Structu
      * <p>
      * An enum value representing possible filter fields.
      * </p>
+     * <note>
+     * <p>
+     * Replace the enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>. <code>CLUSTER_NAME</code>
+     * has been deprecated.
+     * </p>
+     * </note>
      * 
-     * @return An enum value representing possible filter fields.
+     * @return An enum value representing possible filter fields.</p> <note>
+     *         <p>
+     *         Replace the enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>.
+     *         <code>CLUSTER_NAME</code> has been deprecated.
+     *         </p>
      * @see CoverageFilterCriterionKey
      */
 
@@ -72,9 +98,19 @@ public class CoverageFilterCriterion implements Serializable, Cloneable, Structu
      * <p>
      * An enum value representing possible filter fields.
      * </p>
+     * <note>
+     * <p>
+     * Replace the enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>. <code>CLUSTER_NAME</code>
+     * has been deprecated.
+     * </p>
+     * </note>
      * 
      * @param criterionKey
-     *        An enum value representing possible filter fields.
+     *        An enum value representing possible filter fields.</p> <note>
+     *        <p>
+     *        Replace the enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>.
+     *        <code>CLUSTER_NAME</code> has been deprecated.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CoverageFilterCriterionKey
      */
@@ -88,9 +124,19 @@ public class CoverageFilterCriterion implements Serializable, Cloneable, Structu
      * <p>
      * An enum value representing possible filter fields.
      * </p>
+     * <note>
+     * <p>
+     * Replace the enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>. <code>CLUSTER_NAME</code>
+     * has been deprecated.
+     * </p>
+     * </note>
      * 
      * @param criterionKey
-     *        An enum value representing possible filter fields.
+     *        An enum value representing possible filter fields.</p> <note>
+     *        <p>
+     *        Replace the enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>.
+     *        <code>CLUSTER_NAME</code> has been deprecated.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CoverageFilterCriterionKey
      */

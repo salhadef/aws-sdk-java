@@ -43,6 +43,8 @@ public class ResourceState implements Serializable, Cloneable, StructuredPojo {
 
     private State lambda;
 
+    private State lambdaCode;
+
     /**
      * <p>
      * An object detailing the state of Amazon Inspector scanning for Amazon EC2 resources.
@@ -150,6 +152,32 @@ public class ResourceState implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param lambdaCode
+     */
+
+    public void setLambdaCode(State lambdaCode) {
+        this.lambdaCode = lambdaCode;
+    }
+
+    /**
+     * @return
+     */
+
+    public State getLambdaCode() {
+        return this.lambdaCode;
+    }
+
+    /**
+     * @param lambdaCode
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceState withLambdaCode(State lambdaCode) {
+        setLambdaCode(lambdaCode);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -166,7 +194,9 @@ public class ResourceState implements Serializable, Cloneable, StructuredPojo {
         if (getEcr() != null)
             sb.append("Ecr: ").append(getEcr()).append(",");
         if (getLambda() != null)
-            sb.append("Lambda: ").append(getLambda());
+            sb.append("Lambda: ").append(getLambda()).append(",");
+        if (getLambdaCode() != null)
+            sb.append("LambdaCode: ").append(getLambdaCode());
         sb.append("}");
         return sb.toString();
     }
@@ -193,6 +223,10 @@ public class ResourceState implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLambda() != null && other.getLambda().equals(this.getLambda()) == false)
             return false;
+        if (other.getLambdaCode() == null ^ this.getLambdaCode() == null)
+            return false;
+        if (other.getLambdaCode() != null && other.getLambdaCode().equals(this.getLambdaCode()) == false)
+            return false;
         return true;
     }
 
@@ -204,6 +238,7 @@ public class ResourceState implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getEc2() == null) ? 0 : getEc2().hashCode());
         hashCode = prime * hashCode + ((getEcr() == null) ? 0 : getEcr().hashCode());
         hashCode = prime * hashCode + ((getLambda() == null) ? 0 : getLambda().hashCode());
+        hashCode = prime * hashCode + ((getLambdaCode() == null) ? 0 : getLambdaCode().hashCode());
         return hashCode;
     }
 

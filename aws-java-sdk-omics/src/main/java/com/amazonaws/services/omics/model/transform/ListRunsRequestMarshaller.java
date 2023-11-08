@@ -27,14 +27,16 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ListRunsRequestMarshaller {
 
-    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
-            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.QUERY_PARAM)
             .marshallLocationName("name").build();
     private static final MarshallingInfo<String> RUNGROUPID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("runGroupId").build();
     private static final MarshallingInfo<String> STARTINGTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("startingToken").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
+    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("status").build();
 
     private static final ListRunsRequestMarshaller instance = new ListRunsRequestMarshaller();
 
@@ -52,10 +54,11 @@ public class ListRunsRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(listRunsRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listRunsRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(listRunsRequest.getRunGroupId(), RUNGROUPID_BINDING);
             protocolMarshaller.marshall(listRunsRequest.getStartingToken(), STARTINGTOKEN_BINDING);
+            protocolMarshaller.marshall(listRunsRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(listRunsRequest.getStatus(), STATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

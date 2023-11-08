@@ -94,6 +94,10 @@ public class FirewallPolicyJsonUnmarshaller implements Unmarshaller<FirewallPoli
                     context.nextToken();
                     firewallPolicy.setTLSInspectionConfigurationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("PolicyVariables", targetDepth)) {
+                    context.nextToken();
+                    firewallPolicy.setPolicyVariables(PolicyVariablesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

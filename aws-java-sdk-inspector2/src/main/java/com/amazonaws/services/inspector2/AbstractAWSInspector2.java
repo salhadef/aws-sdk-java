@@ -38,12 +38,37 @@ public class AbstractAWSInspector2 implements AWSInspector2 {
     }
 
     @Override
+    public BatchGetCodeSnippetResult batchGetCodeSnippet(BatchGetCodeSnippetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public BatchGetFindingDetailsResult batchGetFindingDetails(BatchGetFindingDetailsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public BatchGetFreeTrialInfoResult batchGetFreeTrialInfo(BatchGetFreeTrialInfoRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
+    public BatchGetMemberEc2DeepInspectionStatusResult batchGetMemberEc2DeepInspectionStatus(BatchGetMemberEc2DeepInspectionStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public BatchUpdateMemberEc2DeepInspectionStatusResult batchUpdateMemberEc2DeepInspectionStatus(BatchUpdateMemberEc2DeepInspectionStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CancelFindingsReportResult cancelFindingsReport(CancelFindingsReportRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CancelSbomExportResult cancelSbomExport(CancelSbomExportRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -54,6 +79,11 @@ public class AbstractAWSInspector2 implements AWSInspector2 {
 
     @Override
     public CreateFindingsReportResult createFindingsReport(CreateFindingsReportRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateSbomExportResult createSbomExport(CreateSbomExportRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -103,12 +133,27 @@ public class AbstractAWSInspector2 implements AWSInspector2 {
     }
 
     @Override
+    public GetEc2DeepInspectionConfigurationResult getEc2DeepInspectionConfiguration(GetEc2DeepInspectionConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetEncryptionKeyResult getEncryptionKey(GetEncryptionKeyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetFindingsReportStatusResult getFindingsReportStatus(GetFindingsReportStatusRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public GetMemberResult getMember(GetMemberRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetSbomExportResult getSbomExport(GetSbomExportRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -163,6 +208,16 @@ public class AbstractAWSInspector2 implements AWSInspector2 {
     }
 
     @Override
+    public ResetEncryptionKeyResult resetEncryptionKey(ResetEncryptionKeyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public SearchVulnerabilitiesResult searchVulnerabilities(SearchVulnerabilitiesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public TagResourceResult tagResource(TagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -178,7 +233,22 @@ public class AbstractAWSInspector2 implements AWSInspector2 {
     }
 
     @Override
+    public UpdateEc2DeepInspectionConfigurationResult updateEc2DeepInspectionConfiguration(UpdateEc2DeepInspectionConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateEncryptionKeyResult updateEncryptionKey(UpdateEncryptionKeyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateFilterResult updateFilter(UpdateFilterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateOrgEc2DeepInspectionConfigurationResult updateOrgEc2DeepInspectionConfiguration(UpdateOrgEc2DeepInspectionConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

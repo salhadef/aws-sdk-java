@@ -90,6 +90,10 @@ public class GetHealthEventResultJsonUnmarshaller implements Unmarshaller<GetHea
                     context.nextToken();
                     getHealthEventResult.setImpactType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("HealthScoreThreshold", targetDepth)) {
+                    context.nextToken();
+                    getHealthEventResult.setHealthScoreThreshold(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

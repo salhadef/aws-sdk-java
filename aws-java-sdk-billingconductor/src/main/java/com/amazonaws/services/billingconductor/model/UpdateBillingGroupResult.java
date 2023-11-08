@@ -77,6 +77,12 @@ public class UpdateBillingGroupResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      */
     private String statusReason;
+    /**
+     * <p>
+     * Specifies if the billing group has automatic account association (<code>AutoAssociate</code>) enabled.
+     * </p>
+     */
+    private UpdateBillingGroupAccountGrouping accountGrouping;
 
     /**
      * <p>
@@ -461,6 +467,46 @@ public class UpdateBillingGroupResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * Specifies if the billing group has automatic account association (<code>AutoAssociate</code>) enabled.
+     * </p>
+     * 
+     * @param accountGrouping
+     *        Specifies if the billing group has automatic account association (<code>AutoAssociate</code>) enabled.
+     */
+
+    public void setAccountGrouping(UpdateBillingGroupAccountGrouping accountGrouping) {
+        this.accountGrouping = accountGrouping;
+    }
+
+    /**
+     * <p>
+     * Specifies if the billing group has automatic account association (<code>AutoAssociate</code>) enabled.
+     * </p>
+     * 
+     * @return Specifies if the billing group has automatic account association (<code>AutoAssociate</code>) enabled.
+     */
+
+    public UpdateBillingGroupAccountGrouping getAccountGrouping() {
+        return this.accountGrouping;
+    }
+
+    /**
+     * <p>
+     * Specifies if the billing group has automatic account association (<code>AutoAssociate</code>) enabled.
+     * </p>
+     * 
+     * @param accountGrouping
+     *        Specifies if the billing group has automatic account association (<code>AutoAssociate</code>) enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateBillingGroupResult withAccountGrouping(UpdateBillingGroupAccountGrouping accountGrouping) {
+        setAccountGrouping(accountGrouping);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -489,7 +535,9 @@ public class UpdateBillingGroupResult extends com.amazonaws.AmazonWebServiceResu
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusReason() != null)
-            sb.append("StatusReason: ").append(getStatusReason());
+            sb.append("StatusReason: ").append(getStatusReason()).append(",");
+        if (getAccountGrouping() != null)
+            sb.append("AccountGrouping: ").append(getAccountGrouping());
         sb.append("}");
         return sb.toString();
     }
@@ -540,6 +588,10 @@ public class UpdateBillingGroupResult extends com.amazonaws.AmazonWebServiceResu
             return false;
         if (other.getStatusReason() != null && other.getStatusReason().equals(this.getStatusReason()) == false)
             return false;
+        if (other.getAccountGrouping() == null ^ this.getAccountGrouping() == null)
+            return false;
+        if (other.getAccountGrouping() != null && other.getAccountGrouping().equals(this.getAccountGrouping()) == false)
+            return false;
         return true;
     }
 
@@ -557,6 +609,7 @@ public class UpdateBillingGroupResult extends com.amazonaws.AmazonWebServiceResu
         hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getStatusReason() == null) ? 0 : getStatusReason().hashCode());
+        hashCode = prime * hashCode + ((getAccountGrouping() == null) ? 0 : getAccountGrouping().hashCode());
         return hashCode;
     }
 

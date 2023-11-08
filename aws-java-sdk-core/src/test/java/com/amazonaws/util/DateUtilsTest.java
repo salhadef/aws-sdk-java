@@ -335,4 +335,42 @@ public class DateUtilsTest {
         assertTrue(now > days*oneDayMilli);
         assertTrue((now - days*oneDayMilli) <= oneDayMilli);
     }
+
+    @Test
+    public void parseServiceSpecificDate_longerThan20Char_throws() {
+        int len = 21;
+        StringBuilder sb = new StringBuilder(len);
+        for (int i = 0; i < len; ++i) {
+            sb.append('9');
+        }
+
+        Exception caught = null;
+        try {
+            DateUtils.parseServiceSpecificDate(sb.toString());
+            fail("parseServiceSpecificDate should have thrown");
+        } catch (Exception e) {
+            caught = e;
+        } finally {
+            assertTrue(caught.getMessage().contains("no longer than 20"));
+        }
+    }
+
+    @Test
+    public void parseUnixTimestampInMillis_longerThan20Char_throws() {
+        int len = 21;
+        StringBuilder sb = new StringBuilder(len);
+        for (int i = 0; i < len; ++i) {
+            sb.append('9');
+        }
+
+        Exception caught = null;
+        try {
+            DateUtils.parseUnixTimestampInMillis(sb.toString());
+            fail("parseUnixTimestampInMillis should have thrown");
+        } catch (Exception e) {
+            caught = e;
+        } finally {
+            assertTrue(caught.getMessage().contains("no longer than 20"));
+        }
+    }
 }

@@ -37,6 +37,10 @@ public class UpdateStateMachineRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("loggingConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> TRACINGCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("tracingConfiguration").build();
+    private static final MarshallingInfo<Boolean> PUBLISH_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("publish").build();
+    private static final MarshallingInfo<String> VERSIONDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("versionDescription").build();
 
     private static final UpdateStateMachineRequestMarshaller instance = new UpdateStateMachineRequestMarshaller();
 
@@ -59,6 +63,8 @@ public class UpdateStateMachineRequestMarshaller {
             protocolMarshaller.marshall(updateStateMachineRequest.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(updateStateMachineRequest.getLoggingConfiguration(), LOGGINGCONFIGURATION_BINDING);
             protocolMarshaller.marshall(updateStateMachineRequest.getTracingConfiguration(), TRACINGCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(updateStateMachineRequest.getPublish(), PUBLISH_BINDING);
+            protocolMarshaller.marshall(updateStateMachineRequest.getVersionDescription(), VERSIONDESCRIPTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

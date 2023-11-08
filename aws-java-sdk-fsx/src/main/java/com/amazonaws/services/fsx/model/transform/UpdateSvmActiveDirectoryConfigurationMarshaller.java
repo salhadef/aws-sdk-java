@@ -29,6 +29,8 @@ public class UpdateSvmActiveDirectoryConfigurationMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> SELFMANAGEDACTIVEDIRECTORYCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SelfManagedActiveDirectoryConfiguration").build();
+    private static final MarshallingInfo<String> NETBIOSNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NetBiosName").build();
 
     private static final UpdateSvmActiveDirectoryConfigurationMarshaller instance = new UpdateSvmActiveDirectoryConfigurationMarshaller();
 
@@ -48,6 +50,7 @@ public class UpdateSvmActiveDirectoryConfigurationMarshaller {
         try {
             protocolMarshaller.marshall(updateSvmActiveDirectoryConfiguration.getSelfManagedActiveDirectoryConfiguration(),
                     SELFMANAGEDACTIVEDIRECTORYCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(updateSvmActiveDirectoryConfiguration.getNetBiosName(), NETBIOSNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

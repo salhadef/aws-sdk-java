@@ -13,7 +13,7 @@
 package com.amazonaws.services.pinpoint.model.transform;
 
 import java.util.Map;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -71,6 +71,8 @@ public class JourneyResponseMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OpenHours").build();
     private static final MarshallingInfo<StructuredPojo> CLOSEDDAYS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClosedDays").build();
+    private static final MarshallingInfo<List> TIMEZONEESTIMATIONMETHODS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TimezoneEstimationMethods").build();
 
     private static final JourneyResponseMarshaller instance = new JourneyResponseMarshaller();
 
@@ -109,6 +111,7 @@ public class JourneyResponseMarshaller {
             protocolMarshaller.marshall(journeyResponse.getSendingSchedule(), SENDINGSCHEDULE_BINDING);
             protocolMarshaller.marshall(journeyResponse.getOpenHours(), OPENHOURS_BINDING);
             protocolMarshaller.marshall(journeyResponse.getClosedDays(), CLOSEDDAYS_BINDING);
+            protocolMarshaller.marshall(journeyResponse.getTimezoneEstimationMethods(), TIMEZONEESTIMATIONMETHODS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

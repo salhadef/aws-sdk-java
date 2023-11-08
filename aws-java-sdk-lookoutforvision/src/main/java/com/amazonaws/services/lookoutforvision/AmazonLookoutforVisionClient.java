@@ -44,6 +44,7 @@ import com.amazonaws.services.lookoutforvision.AmazonLookoutforVisionClientBuild
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.lookoutforvision.model.*;
+
 import com.amazonaws.services.lookoutforvision.model.transform.*;
 
 /**

@@ -68,6 +68,12 @@ public class JobJsonUnmarshaller implements Unmarshaller<Job, JsonUnmarshallerCo
                     context.nextToken();
                     job.setJobID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("participatingResources", targetDepth)) {
+                    context.nextToken();
+                    job.setParticipatingResources(new ListUnmarshaller<ParticipatingResource>(ParticipatingResourceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("participatingServers", targetDepth)) {
                     context.nextToken();
                     job.setParticipatingServers(new ListUnmarshaller<ParticipatingServer>(ParticipatingServerJsonUnmarshaller.getInstance())

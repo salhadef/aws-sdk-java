@@ -52,6 +52,14 @@ public class ScheduleConfigJsonUnmarshaller implements Unmarshaller<ScheduleConf
                     context.nextToken();
                     scheduleConfig.setScheduleExpression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DataAnalysisStartTime", targetDepth)) {
+                    context.nextToken();
+                    scheduleConfig.setDataAnalysisStartTime(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("DataAnalysisEndTime", targetDepth)) {
+                    context.nextToken();
+                    scheduleConfig.setDataAnalysisEndTime(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -707,7 +707,7 @@ public class PutProfileObjectTypeRequest extends com.amazonaws.AmazonWebServiceR
         if (getObjectTypeName() != null)
             sb.append("ObjectTypeName: ").append(getObjectTypeName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
+            sb.append("Description: ").append("***Sensitive Data Redacted***").append(",");
         if (getTemplateId() != null)
             sb.append("TemplateId: ").append(getTemplateId()).append(",");
         if (getExpirationDays() != null)
@@ -719,9 +719,9 @@ public class PutProfileObjectTypeRequest extends com.amazonaws.AmazonWebServiceR
         if (getSourceLastUpdatedTimestampFormat() != null)
             sb.append("SourceLastUpdatedTimestampFormat: ").append(getSourceLastUpdatedTimestampFormat()).append(",");
         if (getFields() != null)
-            sb.append("Fields: ").append(getFields()).append(",");
+            sb.append("Fields: ").append("***Sensitive Data Redacted***").append(",");
         if (getKeys() != null)
-            sb.append("Keys: ").append(getKeys()).append(",");
+            sb.append("Keys: ").append("***Sensitive Data Redacted***").append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");

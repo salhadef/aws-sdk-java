@@ -43,6 +43,12 @@ public class UpdateAppInstanceBotRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private String metadata;
+    /**
+     * <p>
+     * The configuration for the bot update.
+     * </p>
+     */
+    private Configuration configuration;
 
     /**
      * <p>
@@ -165,6 +171,46 @@ public class UpdateAppInstanceBotRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The configuration for the bot update.
+     * </p>
+     * 
+     * @param configuration
+     *        The configuration for the bot update.
+     */
+
+    public void setConfiguration(Configuration configuration) {
+        this.configuration = configuration;
+    }
+
+    /**
+     * <p>
+     * The configuration for the bot update.
+     * </p>
+     * 
+     * @return The configuration for the bot update.
+     */
+
+    public Configuration getConfiguration() {
+        return this.configuration;
+    }
+
+    /**
+     * <p>
+     * The configuration for the bot update.
+     * </p>
+     * 
+     * @param configuration
+     *        The configuration for the bot update.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateAppInstanceBotRequest withConfiguration(Configuration configuration) {
+        setConfiguration(configuration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -181,7 +227,9 @@ public class UpdateAppInstanceBotRequest extends com.amazonaws.AmazonWebServiceR
         if (getName() != null)
             sb.append("Name: ").append("***Sensitive Data Redacted***").append(",");
         if (getMetadata() != null)
-            sb.append("Metadata: ").append("***Sensitive Data Redacted***");
+            sb.append("Metadata: ").append("***Sensitive Data Redacted***").append(",");
+        if (getConfiguration() != null)
+            sb.append("Configuration: ").append(getConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -208,6 +256,10 @@ public class UpdateAppInstanceBotRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getMetadata() != null && other.getMetadata().equals(this.getMetadata()) == false)
             return false;
+        if (other.getConfiguration() == null ^ this.getConfiguration() == null)
+            return false;
+        if (other.getConfiguration() != null && other.getConfiguration().equals(this.getConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -219,6 +271,7 @@ public class UpdateAppInstanceBotRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getAppInstanceBotArn() == null) ? 0 : getAppInstanceBotArn().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getMetadata() == null) ? 0 : getMetadata().hashCode());
+        hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
         return hashCode;
     }
 

@@ -27,10 +27,10 @@ public class ListReferencesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A filter to apply to the list.
+     * The references' reference store ID.
      * </p>
      */
-    private ReferenceFilter filter;
+    private String referenceStoreId;
     /**
      * <p>
      * The maximum number of references to return in one page of results.
@@ -45,48 +45,48 @@ public class ListReferencesRequest extends com.amazonaws.AmazonWebServiceRequest
     private String nextToken;
     /**
      * <p>
+     * A filter to apply to the list.
+     * </p>
+     */
+    private ReferenceFilter filter;
+
+    /**
+     * <p>
      * The references' reference store ID.
      * </p>
-     */
-    private String referenceStoreId;
-
-    /**
-     * <p>
-     * A filter to apply to the list.
-     * </p>
      * 
-     * @param filter
-     *        A filter to apply to the list.
+     * @param referenceStoreId
+     *        The references' reference store ID.
      */
 
-    public void setFilter(ReferenceFilter filter) {
-        this.filter = filter;
+    public void setReferenceStoreId(String referenceStoreId) {
+        this.referenceStoreId = referenceStoreId;
     }
 
     /**
      * <p>
-     * A filter to apply to the list.
+     * The references' reference store ID.
      * </p>
      * 
-     * @return A filter to apply to the list.
+     * @return The references' reference store ID.
      */
 
-    public ReferenceFilter getFilter() {
-        return this.filter;
+    public String getReferenceStoreId() {
+        return this.referenceStoreId;
     }
 
     /**
      * <p>
-     * A filter to apply to the list.
+     * The references' reference store ID.
      * </p>
      * 
-     * @param filter
-     *        A filter to apply to the list.
+     * @param referenceStoreId
+     *        The references' reference store ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListReferencesRequest withFilter(ReferenceFilter filter) {
-        setFilter(filter);
+    public ListReferencesRequest withReferenceStoreId(String referenceStoreId) {
+        setReferenceStoreId(referenceStoreId);
         return this;
     }
 
@@ -172,41 +172,41 @@ public class ListReferencesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The references' reference store ID.
+     * A filter to apply to the list.
      * </p>
      * 
-     * @param referenceStoreId
-     *        The references' reference store ID.
+     * @param filter
+     *        A filter to apply to the list.
      */
 
-    public void setReferenceStoreId(String referenceStoreId) {
-        this.referenceStoreId = referenceStoreId;
+    public void setFilter(ReferenceFilter filter) {
+        this.filter = filter;
     }
 
     /**
      * <p>
-     * The references' reference store ID.
+     * A filter to apply to the list.
      * </p>
      * 
-     * @return The references' reference store ID.
+     * @return A filter to apply to the list.
      */
 
-    public String getReferenceStoreId() {
-        return this.referenceStoreId;
+    public ReferenceFilter getFilter() {
+        return this.filter;
     }
 
     /**
      * <p>
-     * The references' reference store ID.
+     * A filter to apply to the list.
      * </p>
      * 
-     * @param referenceStoreId
-     *        The references' reference store ID.
+     * @param filter
+     *        A filter to apply to the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListReferencesRequest withReferenceStoreId(String referenceStoreId) {
-        setReferenceStoreId(referenceStoreId);
+    public ListReferencesRequest withFilter(ReferenceFilter filter) {
+        setFilter(filter);
         return this;
     }
 
@@ -222,14 +222,14 @@ public class ListReferencesRequest extends com.amazonaws.AmazonWebServiceRequest
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getFilter() != null)
-            sb.append("Filter: ").append(getFilter()).append(",");
+        if (getReferenceStoreId() != null)
+            sb.append("ReferenceStoreId: ").append(getReferenceStoreId()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
-        if (getReferenceStoreId() != null)
-            sb.append("ReferenceStoreId: ").append(getReferenceStoreId());
+        if (getFilter() != null)
+            sb.append("Filter: ").append(getFilter());
         sb.append("}");
         return sb.toString();
     }
@@ -244,9 +244,9 @@ public class ListReferencesRequest extends com.amazonaws.AmazonWebServiceRequest
         if (obj instanceof ListReferencesRequest == false)
             return false;
         ListReferencesRequest other = (ListReferencesRequest) obj;
-        if (other.getFilter() == null ^ this.getFilter() == null)
+        if (other.getReferenceStoreId() == null ^ this.getReferenceStoreId() == null)
             return false;
-        if (other.getFilter() != null && other.getFilter().equals(this.getFilter()) == false)
+        if (other.getReferenceStoreId() != null && other.getReferenceStoreId().equals(this.getReferenceStoreId()) == false)
             return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
@@ -256,9 +256,9 @@ public class ListReferencesRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
-        if (other.getReferenceStoreId() == null ^ this.getReferenceStoreId() == null)
+        if (other.getFilter() == null ^ this.getFilter() == null)
             return false;
-        if (other.getReferenceStoreId() != null && other.getReferenceStoreId().equals(this.getReferenceStoreId()) == false)
+        if (other.getFilter() != null && other.getFilter().equals(this.getFilter()) == false)
             return false;
         return true;
     }
@@ -268,10 +268,10 @@ public class ListReferencesRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getFilter() == null) ? 0 : getFilter().hashCode());
+        hashCode = prime * hashCode + ((getReferenceStoreId() == null) ? 0 : getReferenceStoreId().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
-        hashCode = prime * hashCode + ((getReferenceStoreId() == null) ? 0 : getReferenceStoreId().hashCode());
+        hashCode = prime * hashCode + ((getFilter() == null) ? 0 : getFilter().hashCode());
         return hashCode;
     }
 

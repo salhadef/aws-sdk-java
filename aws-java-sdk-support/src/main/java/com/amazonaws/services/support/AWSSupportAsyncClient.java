@@ -539,6 +539,39 @@ public class AWSSupportAsyncClient extends AWSSupportClient implements AWSSuppor
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeCreateCaseOptionsResult> describeCreateCaseOptionsAsync(DescribeCreateCaseOptionsRequest request) {
+
+        return describeCreateCaseOptionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeCreateCaseOptionsResult> describeCreateCaseOptionsAsync(final DescribeCreateCaseOptionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeCreateCaseOptionsRequest, DescribeCreateCaseOptionsResult> asyncHandler) {
+        final DescribeCreateCaseOptionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeCreateCaseOptionsResult>() {
+            @Override
+            public DescribeCreateCaseOptionsResult call() throws Exception {
+                DescribeCreateCaseOptionsResult result = null;
+
+                try {
+                    result = executeDescribeCreateCaseOptions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeServicesResult> describeServicesAsync(DescribeServicesRequest request) {
 
         return describeServicesAsync(request, null);
@@ -648,6 +681,39 @@ public class AWSSupportAsyncClient extends AWSSupportClient implements AWSSuppor
             com.amazonaws.handlers.AsyncHandler<DescribeSeverityLevelsRequest, DescribeSeverityLevelsResult> asyncHandler) {
 
         return describeSeverityLevelsAsync(new DescribeSeverityLevelsRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeSupportedLanguagesResult> describeSupportedLanguagesAsync(DescribeSupportedLanguagesRequest request) {
+
+        return describeSupportedLanguagesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeSupportedLanguagesResult> describeSupportedLanguagesAsync(final DescribeSupportedLanguagesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeSupportedLanguagesRequest, DescribeSupportedLanguagesResult> asyncHandler) {
+        final DescribeSupportedLanguagesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeSupportedLanguagesResult>() {
+            @Override
+            public DescribeSupportedLanguagesResult call() throws Exception {
+                DescribeSupportedLanguagesResult result = null;
+
+                try {
+                    result = executeDescribeSupportedLanguages(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override

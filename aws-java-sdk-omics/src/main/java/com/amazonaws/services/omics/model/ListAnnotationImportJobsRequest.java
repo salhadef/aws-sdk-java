@@ -27,10 +27,10 @@ public class ListAnnotationImportJobsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A filter to apply to the list.
+     * The maximum number of jobs to return in one page of results.
      * </p>
      */
-    private ListAnnotationImportJobsFilter filter;
+    private Integer maxResults;
     /**
      * <p>
      * IDs of annotation import jobs to retrieve.
@@ -39,54 +39,54 @@ public class ListAnnotationImportJobsRequest extends com.amazonaws.AmazonWebServ
     private java.util.List<String> ids;
     /**
      * <p>
-     * The maximum number of jobs to return in one page of results.
-     * </p>
-     */
-    private Integer maxResults;
-    /**
-     * <p>
-     * Specify the pagination token from a previous request to retrieve the next page of results.
+     * Specifies the pagination token from a previous request to retrieve the next page of results.
      * </p>
      */
     private String nextToken;
-
     /**
      * <p>
      * A filter to apply to the list.
      * </p>
+     */
+    private ListAnnotationImportJobsFilter filter;
+
+    /**
+     * <p>
+     * The maximum number of jobs to return in one page of results.
+     * </p>
      * 
-     * @param filter
-     *        A filter to apply to the list.
+     * @param maxResults
+     *        The maximum number of jobs to return in one page of results.
      */
 
-    public void setFilter(ListAnnotationImportJobsFilter filter) {
-        this.filter = filter;
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
     }
 
     /**
      * <p>
-     * A filter to apply to the list.
+     * The maximum number of jobs to return in one page of results.
      * </p>
      * 
-     * @return A filter to apply to the list.
+     * @return The maximum number of jobs to return in one page of results.
      */
 
-    public ListAnnotationImportJobsFilter getFilter() {
-        return this.filter;
+    public Integer getMaxResults() {
+        return this.maxResults;
     }
 
     /**
      * <p>
-     * A filter to apply to the list.
+     * The maximum number of jobs to return in one page of results.
      * </p>
      * 
-     * @param filter
-     *        A filter to apply to the list.
+     * @param maxResults
+     *        The maximum number of jobs to return in one page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListAnnotationImportJobsRequest withFilter(ListAnnotationImportJobsFilter filter) {
-        setFilter(filter);
+    public ListAnnotationImportJobsRequest withMaxResults(Integer maxResults) {
+        setMaxResults(maxResults);
         return this;
     }
 
@@ -162,51 +162,11 @@ public class ListAnnotationImportJobsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The maximum number of jobs to return in one page of results.
-     * </p>
-     * 
-     * @param maxResults
-     *        The maximum number of jobs to return in one page of results.
-     */
-
-    public void setMaxResults(Integer maxResults) {
-        this.maxResults = maxResults;
-    }
-
-    /**
-     * <p>
-     * The maximum number of jobs to return in one page of results.
-     * </p>
-     * 
-     * @return The maximum number of jobs to return in one page of results.
-     */
-
-    public Integer getMaxResults() {
-        return this.maxResults;
-    }
-
-    /**
-     * <p>
-     * The maximum number of jobs to return in one page of results.
-     * </p>
-     * 
-     * @param maxResults
-     *        The maximum number of jobs to return in one page of results.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListAnnotationImportJobsRequest withMaxResults(Integer maxResults) {
-        setMaxResults(maxResults);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Specify the pagination token from a previous request to retrieve the next page of results.
+     * Specifies the pagination token from a previous request to retrieve the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        Specify the pagination token from a previous request to retrieve the next page of results.
+     *        Specifies the pagination token from a previous request to retrieve the next page of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -215,10 +175,10 @@ public class ListAnnotationImportJobsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Specify the pagination token from a previous request to retrieve the next page of results.
+     * Specifies the pagination token from a previous request to retrieve the next page of results.
      * </p>
      * 
-     * @return Specify the pagination token from a previous request to retrieve the next page of results.
+     * @return Specifies the pagination token from a previous request to retrieve the next page of results.
      */
 
     public String getNextToken() {
@@ -227,16 +187,56 @@ public class ListAnnotationImportJobsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Specify the pagination token from a previous request to retrieve the next page of results.
+     * Specifies the pagination token from a previous request to retrieve the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        Specify the pagination token from a previous request to retrieve the next page of results.
+     *        Specifies the pagination token from a previous request to retrieve the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListAnnotationImportJobsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A filter to apply to the list.
+     * </p>
+     * 
+     * @param filter
+     *        A filter to apply to the list.
+     */
+
+    public void setFilter(ListAnnotationImportJobsFilter filter) {
+        this.filter = filter;
+    }
+
+    /**
+     * <p>
+     * A filter to apply to the list.
+     * </p>
+     * 
+     * @return A filter to apply to the list.
+     */
+
+    public ListAnnotationImportJobsFilter getFilter() {
+        return this.filter;
+    }
+
+    /**
+     * <p>
+     * A filter to apply to the list.
+     * </p>
+     * 
+     * @param filter
+     *        A filter to apply to the list.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListAnnotationImportJobsRequest withFilter(ListAnnotationImportJobsFilter filter) {
+        setFilter(filter);
         return this;
     }
 
@@ -252,14 +252,14 @@ public class ListAnnotationImportJobsRequest extends com.amazonaws.AmazonWebServ
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getFilter() != null)
-            sb.append("Filter: ").append(getFilter()).append(",");
-        if (getIds() != null)
-            sb.append("Ids: ").append(getIds()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getIds() != null)
+            sb.append("Ids: ").append(getIds()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getFilter() != null)
+            sb.append("Filter: ").append(getFilter());
         sb.append("}");
         return sb.toString();
     }
@@ -274,21 +274,21 @@ public class ListAnnotationImportJobsRequest extends com.amazonaws.AmazonWebServ
         if (obj instanceof ListAnnotationImportJobsRequest == false)
             return false;
         ListAnnotationImportJobsRequest other = (ListAnnotationImportJobsRequest) obj;
-        if (other.getFilter() == null ^ this.getFilter() == null)
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
-        if (other.getFilter() != null && other.getFilter().equals(this.getFilter()) == false)
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
         if (other.getIds() == null ^ this.getIds() == null)
             return false;
         if (other.getIds() != null && other.getIds().equals(this.getIds()) == false)
             return false;
-        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
-            return false;
-        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
-            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getFilter() == null ^ this.getFilter() == null)
+            return false;
+        if (other.getFilter() != null && other.getFilter().equals(this.getFilter()) == false)
             return false;
         return true;
     }
@@ -298,10 +298,10 @@ public class ListAnnotationImportJobsRequest extends com.amazonaws.AmazonWebServ
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getFilter() == null) ? 0 : getFilter().hashCode());
-        hashCode = prime * hashCode + ((getIds() == null) ? 0 : getIds().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getIds() == null) ? 0 : getIds().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getFilter() == null) ? 0 : getFilter().hashCode());
         return hashCode;
     }
 

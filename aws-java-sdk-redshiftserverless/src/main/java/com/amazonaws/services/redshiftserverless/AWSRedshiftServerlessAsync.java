@@ -87,6 +87,43 @@ public interface AWSRedshiftServerlessAsync extends AWSRedshiftServerless {
 
     /**
      * <p>
+     * Creates a custom domain association for Amazon Redshift Serverless.
+     * </p>
+     * 
+     * @param createCustomDomainAssociationRequest
+     * @return A Java Future containing the result of the CreateCustomDomainAssociation operation returned by the
+     *         service.
+     * @sample AWSRedshiftServerlessAsync.CreateCustomDomainAssociation
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateCustomDomainAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateCustomDomainAssociationResult> createCustomDomainAssociationAsync(
+            CreateCustomDomainAssociationRequest createCustomDomainAssociationRequest);
+
+    /**
+     * <p>
+     * Creates a custom domain association for Amazon Redshift Serverless.
+     * </p>
+     * 
+     * @param createCustomDomainAssociationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateCustomDomainAssociation operation returned by the
+     *         service.
+     * @sample AWSRedshiftServerlessAsyncHandler.CreateCustomDomainAssociation
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateCustomDomainAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateCustomDomainAssociationResult> createCustomDomainAssociationAsync(
+            CreateCustomDomainAssociationRequest createCustomDomainAssociationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateCustomDomainAssociationRequest, CreateCustomDomainAssociationResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates an Amazon Redshift Serverless managed VPC endpoint.
      * </p>
      * 
@@ -245,6 +282,43 @@ public interface AWSRedshiftServerlessAsync extends AWSRedshiftServerless {
      */
     java.util.concurrent.Future<CreateWorkgroupResult> createWorkgroupAsync(CreateWorkgroupRequest createWorkgroupRequest,
             com.amazonaws.handlers.AsyncHandler<CreateWorkgroupRequest, CreateWorkgroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a custom domain association for Amazon Redshift Serverless.
+     * </p>
+     * 
+     * @param deleteCustomDomainAssociationRequest
+     * @return A Java Future containing the result of the DeleteCustomDomainAssociation operation returned by the
+     *         service.
+     * @sample AWSRedshiftServerlessAsync.DeleteCustomDomainAssociation
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteCustomDomainAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteCustomDomainAssociationResult> deleteCustomDomainAssociationAsync(
+            DeleteCustomDomainAssociationRequest deleteCustomDomainAssociationRequest);
+
+    /**
+     * <p>
+     * Deletes a custom domain association for Amazon Redshift Serverless.
+     * </p>
+     * 
+     * @param deleteCustomDomainAssociationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteCustomDomainAssociation operation returned by the
+     *         service.
+     * @sample AWSRedshiftServerlessAsyncHandler.DeleteCustomDomainAssociation
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteCustomDomainAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteCustomDomainAssociationResult> deleteCustomDomainAssociationAsync(
+            DeleteCustomDomainAssociationRequest deleteCustomDomainAssociationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteCustomDomainAssociationRequest, DeleteCustomDomainAssociationResult> asyncHandler);
 
     /**
      * <p>
@@ -482,6 +556,39 @@ public interface AWSRedshiftServerlessAsync extends AWSRedshiftServerless {
      */
     java.util.concurrent.Future<GetCredentialsResult> getCredentialsAsync(GetCredentialsRequest getCredentialsRequest,
             com.amazonaws.handlers.AsyncHandler<GetCredentialsRequest, GetCredentialsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets information about a specific custom domain association.
+     * </p>
+     * 
+     * @param getCustomDomainAssociationRequest
+     * @return A Java Future containing the result of the GetCustomDomainAssociation operation returned by the service.
+     * @sample AWSRedshiftServerlessAsync.GetCustomDomainAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetCustomDomainAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCustomDomainAssociationResult> getCustomDomainAssociationAsync(
+            GetCustomDomainAssociationRequest getCustomDomainAssociationRequest);
+
+    /**
+     * <p>
+     * Gets information about a specific custom domain association.
+     * </p>
+     * 
+     * @param getCustomDomainAssociationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCustomDomainAssociation operation returned by the service.
+     * @sample AWSRedshiftServerlessAsyncHandler.GetCustomDomainAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetCustomDomainAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCustomDomainAssociationResult> getCustomDomainAssociationAsync(
+            GetCustomDomainAssociationRequest getCustomDomainAssociationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCustomDomainAssociationRequest, GetCustomDomainAssociationResult> asyncHandler);
 
     /**
      * <p>
@@ -730,6 +837,41 @@ public interface AWSRedshiftServerlessAsync extends AWSRedshiftServerless {
      */
     java.util.concurrent.Future<GetWorkgroupResult> getWorkgroupAsync(GetWorkgroupRequest getWorkgroupRequest,
             com.amazonaws.handlers.AsyncHandler<GetWorkgroupRequest, GetWorkgroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists custom domain associations for Amazon Redshift Serverless.
+     * </p>
+     * 
+     * @param listCustomDomainAssociationsRequest
+     * @return A Java Future containing the result of the ListCustomDomainAssociations operation returned by the
+     *         service.
+     * @sample AWSRedshiftServerlessAsync.ListCustomDomainAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListCustomDomainAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCustomDomainAssociationsResult> listCustomDomainAssociationsAsync(
+            ListCustomDomainAssociationsRequest listCustomDomainAssociationsRequest);
+
+    /**
+     * <p>
+     * Lists custom domain associations for Amazon Redshift Serverless.
+     * </p>
+     * 
+     * @param listCustomDomainAssociationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListCustomDomainAssociations operation returned by the
+     *         service.
+     * @sample AWSRedshiftServerlessAsyncHandler.ListCustomDomainAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListCustomDomainAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCustomDomainAssociationsResult> listCustomDomainAssociationsAsync(
+            ListCustomDomainAssociationsRequest listCustomDomainAssociationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListCustomDomainAssociationsRequest, ListCustomDomainAssociationsResult> asyncHandler);
 
     /**
      * <p>
@@ -1172,6 +1314,43 @@ public interface AWSRedshiftServerlessAsync extends AWSRedshiftServerless {
      */
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates an Amazon Redshift Serverless certificate associated with a custom domain.
+     * </p>
+     * 
+     * @param updateCustomDomainAssociationRequest
+     * @return A Java Future containing the result of the UpdateCustomDomainAssociation operation returned by the
+     *         service.
+     * @sample AWSRedshiftServerlessAsync.UpdateCustomDomainAssociation
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateCustomDomainAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateCustomDomainAssociationResult> updateCustomDomainAssociationAsync(
+            UpdateCustomDomainAssociationRequest updateCustomDomainAssociationRequest);
+
+    /**
+     * <p>
+     * Updates an Amazon Redshift Serverless certificate associated with a custom domain.
+     * </p>
+     * 
+     * @param updateCustomDomainAssociationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateCustomDomainAssociation operation returned by the
+     *         service.
+     * @sample AWSRedshiftServerlessAsyncHandler.UpdateCustomDomainAssociation
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateCustomDomainAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateCustomDomainAssociationResult> updateCustomDomainAssociationAsync(
+            UpdateCustomDomainAssociationRequest updateCustomDomainAssociationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateCustomDomainAssociationRequest, UpdateCustomDomainAssociationResult> asyncHandler);
 
     /**
      * <p>

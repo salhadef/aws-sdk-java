@@ -33,7 +33,7 @@ public class BatchUpdateDevicePositionRequest extends com.amazonaws.AmazonWebSer
     private String trackerName;
     /**
      * <p>
-     * Contains the position update details for each device.
+     * Contains the position update details for each device, up to 10 devices.
      * </p>
      */
     private java.util.List<DevicePositionUpdate> updates;
@@ -80,10 +80,10 @@ public class BatchUpdateDevicePositionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Contains the position update details for each device.
+     * Contains the position update details for each device, up to 10 devices.
      * </p>
      * 
-     * @return Contains the position update details for each device.
+     * @return Contains the position update details for each device, up to 10 devices.
      */
 
     public java.util.List<DevicePositionUpdate> getUpdates() {
@@ -92,11 +92,11 @@ public class BatchUpdateDevicePositionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Contains the position update details for each device.
+     * Contains the position update details for each device, up to 10 devices.
      * </p>
      * 
      * @param updates
-     *        Contains the position update details for each device.
+     *        Contains the position update details for each device, up to 10 devices.
      */
 
     public void setUpdates(java.util.Collection<DevicePositionUpdate> updates) {
@@ -110,7 +110,7 @@ public class BatchUpdateDevicePositionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Contains the position update details for each device.
+     * Contains the position update details for each device, up to 10 devices.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -119,7 +119,7 @@ public class BatchUpdateDevicePositionRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param updates
-     *        Contains the position update details for each device.
+     *        Contains the position update details for each device, up to 10 devices.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +135,11 @@ public class BatchUpdateDevicePositionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Contains the position update details for each device.
+     * Contains the position update details for each device, up to 10 devices.
      * </p>
      * 
      * @param updates
-     *        Contains the position update details for each device.
+     *        Contains the position update details for each device, up to 10 devices.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

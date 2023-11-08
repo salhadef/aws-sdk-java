@@ -49,7 +49,7 @@ public class RestoreEventDataStoreResult extends com.amazonaws.AmazonWebServiceR
     private com.amazonaws.internal.SdkInternalList<AdvancedEventSelector> advancedEventSelectors;
     /**
      * <p>
-     * Indicates whether the event data store is collecting events from all regions, or only from the region in which
+     * Indicates whether the event data store is collecting events from all Regions, or only from the Region in which
      * the event data store was created.
      * </p>
      */
@@ -310,12 +310,12 @@ public class RestoreEventDataStoreResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Indicates whether the event data store is collecting events from all regions, or only from the region in which
+     * Indicates whether the event data store is collecting events from all Regions, or only from the Region in which
      * the event data store was created.
      * </p>
      * 
      * @param multiRegionEnabled
-     *        Indicates whether the event data store is collecting events from all regions, or only from the region in
+     *        Indicates whether the event data store is collecting events from all Regions, or only from the Region in
      *        which the event data store was created.
      */
 
@@ -325,11 +325,11 @@ public class RestoreEventDataStoreResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Indicates whether the event data store is collecting events from all regions, or only from the region in which
+     * Indicates whether the event data store is collecting events from all Regions, or only from the Region in which
      * the event data store was created.
      * </p>
      * 
-     * @return Indicates whether the event data store is collecting events from all regions, or only from the region in
+     * @return Indicates whether the event data store is collecting events from all Regions, or only from the Region in
      *         which the event data store was created.
      */
 
@@ -339,12 +339,12 @@ public class RestoreEventDataStoreResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Indicates whether the event data store is collecting events from all regions, or only from the region in which
+     * Indicates whether the event data store is collecting events from all Regions, or only from the Region in which
      * the event data store was created.
      * </p>
      * 
      * @param multiRegionEnabled
-     *        Indicates whether the event data store is collecting events from all regions, or only from the region in
+     *        Indicates whether the event data store is collecting events from all Regions, or only from the Region in
      *        which the event data store was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -356,11 +356,11 @@ public class RestoreEventDataStoreResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Indicates whether the event data store is collecting events from all regions, or only from the region in which
+     * Indicates whether the event data store is collecting events from all Regions, or only from the Region in which
      * the event data store was created.
      * </p>
      * 
-     * @return Indicates whether the event data store is collecting events from all regions, or only from the region in
+     * @return Indicates whether the event data store is collecting events from all Regions, or only from the Region in
      *         which the event data store was created.
      */
 

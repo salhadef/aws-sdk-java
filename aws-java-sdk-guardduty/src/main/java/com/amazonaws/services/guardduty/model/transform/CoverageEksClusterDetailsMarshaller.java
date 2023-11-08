@@ -35,6 +35,8 @@ public class CoverageEksClusterDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("compatibleNodes").build();
     private static final MarshallingInfo<StructuredPojo> ADDONDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("addonDetails").build();
+    private static final MarshallingInfo<String> MANAGEMENTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("managementType").build();
 
     private static final CoverageEksClusterDetailsMarshaller instance = new CoverageEksClusterDetailsMarshaller();
 
@@ -56,6 +58,7 @@ public class CoverageEksClusterDetailsMarshaller {
             protocolMarshaller.marshall(coverageEksClusterDetails.getCoveredNodes(), COVEREDNODES_BINDING);
             protocolMarshaller.marshall(coverageEksClusterDetails.getCompatibleNodes(), COMPATIBLENODES_BINDING);
             protocolMarshaller.marshall(coverageEksClusterDetails.getAddonDetails(), ADDONDETAILS_BINDING);
+            protocolMarshaller.marshall(coverageEksClusterDetails.getManagementType(), MANAGEMENTTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

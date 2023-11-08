@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.glue.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -42,6 +43,8 @@ public class StartDataQualityRulesetEvaluationRunRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdditionalRunOptions").build();
     private static final MarshallingInfo<List> RULESETNAMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("RulesetNames").build();
+    private static final MarshallingInfo<Map> ADDITIONALDATASOURCES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdditionalDataSources").build();
 
     private static final StartDataQualityRulesetEvaluationRunRequestMarshaller instance = new StartDataQualityRulesetEvaluationRunRequestMarshaller();
 
@@ -66,6 +69,7 @@ public class StartDataQualityRulesetEvaluationRunRequestMarshaller {
             protocolMarshaller.marshall(startDataQualityRulesetEvaluationRunRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(startDataQualityRulesetEvaluationRunRequest.getAdditionalRunOptions(), ADDITIONALRUNOPTIONS_BINDING);
             protocolMarshaller.marshall(startDataQualityRulesetEvaluationRunRequest.getRulesetNames(), RULESETNAMES_BINDING);
+            protocolMarshaller.marshall(startDataQualityRulesetEvaluationRunRequest.getAdditionalDataSources(), ADDITIONALDATASOURCES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

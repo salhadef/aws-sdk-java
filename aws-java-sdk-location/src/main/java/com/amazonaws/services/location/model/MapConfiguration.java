@@ -30,6 +30,23 @@ public class MapConfiguration implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * Specifies the political view for the style. Leave unset to not use a political view, or, for styles that support
+     * specific political views, you can choose a view, such as <code>IND</code> for the Indian view.
+     * </p>
+     * <p>
+     * Default is unset.
+     * </p>
+     * <note>
+     * <p>
+     * Not all map resources or styles support political view styles. See <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#political-views">Political
+     * views</a> for more information.
+     * </p>
+     * </note>
+     */
+    private String politicalView;
+    /**
+     * <p>
      * Specifies the map style selected from an available data provider.
      * </p>
      * <p>
@@ -64,15 +81,15 @@ public class MapConfiguration implements Serializable, Cloneable, StructuredPojo
      * </li>
      * <li>
      * <p>
-     * <code>VectorEsriStreets</code> – The Esri World Streets map style, which provides a detailed vector basemap for
-     * the world symbolized with a classic Esri street map style. The vector tile layer is similar in content and style
-     * to the World Street Map raster map.
+     * <code>VectorEsriStreets</code> – The Esri Street Map style, which provides a detailed vector basemap for the
+     * world symbolized with a classic Esri street map style. The vector tile layer is similar in content and style to
+     * the World Street Map raster map.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>VectorEsriNavigation</code> – The Esri World Navigation map style, which provides a detailed basemap for
-     * the world symbolized with a custom navigation map style that's designed for use during the day in mobile devices.
+     * <code>VectorEsriNavigation</code> – The Esri Navigation map style, which provides a detailed basemap for the
+     * world symbolized with a custom navigation map style that's designed for use during the day in mobile devices.
      * </p>
      * </li>
      * </ul>
@@ -186,6 +203,110 @@ public class MapConfiguration implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * Specifies the political view for the style. Leave unset to not use a political view, or, for styles that support
+     * specific political views, you can choose a view, such as <code>IND</code> for the Indian view.
+     * </p>
+     * <p>
+     * Default is unset.
+     * </p>
+     * <note>
+     * <p>
+     * Not all map resources or styles support political view styles. See <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#political-views">Political
+     * views</a> for more information.
+     * </p>
+     * </note>
+     * 
+     * @param politicalView
+     *        Specifies the political view for the style. Leave unset to not use a political view, or, for styles that
+     *        support specific political views, you can choose a view, such as <code>IND</code> for the Indian view.</p>
+     *        <p>
+     *        Default is unset.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Not all map resources or styles support political view styles. See <a
+     *        href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#political-views"
+     *        >Political views</a> for more information.
+     *        </p>
+     */
+
+    public void setPoliticalView(String politicalView) {
+        this.politicalView = politicalView;
+    }
+
+    /**
+     * <p>
+     * Specifies the political view for the style. Leave unset to not use a political view, or, for styles that support
+     * specific political views, you can choose a view, such as <code>IND</code> for the Indian view.
+     * </p>
+     * <p>
+     * Default is unset.
+     * </p>
+     * <note>
+     * <p>
+     * Not all map resources or styles support political view styles. See <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#political-views">Political
+     * views</a> for more information.
+     * </p>
+     * </note>
+     * 
+     * @return Specifies the political view for the style. Leave unset to not use a political view, or, for styles that
+     *         support specific political views, you can choose a view, such as <code>IND</code> for the Indian
+     *         view.</p>
+     *         <p>
+     *         Default is unset.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         Not all map resources or styles support political view styles. See <a
+     *         href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#political-views"
+     *         >Political views</a> for more information.
+     *         </p>
+     */
+
+    public String getPoliticalView() {
+        return this.politicalView;
+    }
+
+    /**
+     * <p>
+     * Specifies the political view for the style. Leave unset to not use a political view, or, for styles that support
+     * specific political views, you can choose a view, such as <code>IND</code> for the Indian view.
+     * </p>
+     * <p>
+     * Default is unset.
+     * </p>
+     * <note>
+     * <p>
+     * Not all map resources or styles support political view styles. See <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#political-views">Political
+     * views</a> for more information.
+     * </p>
+     * </note>
+     * 
+     * @param politicalView
+     *        Specifies the political view for the style. Leave unset to not use a political view, or, for styles that
+     *        support specific political views, you can choose a view, such as <code>IND</code> for the Indian view.</p>
+     *        <p>
+     *        Default is unset.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Not all map resources or styles support political view styles. See <a
+     *        href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#political-views"
+     *        >Political views</a> for more information.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MapConfiguration withPoliticalView(String politicalView) {
+        setPoliticalView(politicalView);
+        return this;
+    }
+
+    /**
+     * <p>
      * Specifies the map style selected from an available data provider.
      * </p>
      * <p>
@@ -220,15 +341,15 @@ public class MapConfiguration implements Serializable, Cloneable, StructuredPojo
      * </li>
      * <li>
      * <p>
-     * <code>VectorEsriStreets</code> – The Esri World Streets map style, which provides a detailed vector basemap for
-     * the world symbolized with a classic Esri street map style. The vector tile layer is similar in content and style
-     * to the World Street Map raster map.
+     * <code>VectorEsriStreets</code> – The Esri Street Map style, which provides a detailed vector basemap for the
+     * world symbolized with a classic Esri street map style. The vector tile layer is similar in content and style to
+     * the World Street Map raster map.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>VectorEsriNavigation</code> – The Esri World Navigation map style, which provides a detailed basemap for
-     * the world symbolized with a custom navigation map style that's designed for use during the day in mobile devices.
+     * <code>VectorEsriNavigation</code> – The Esri Navigation map style, which provides a detailed basemap for the
+     * world symbolized with a custom navigation map style that's designed for use during the day in mobile devices.
      * </p>
      * </li>
      * </ul>
@@ -373,16 +494,16 @@ public class MapConfiguration implements Serializable, Cloneable, StructuredPojo
      *        </li>
      *        <li>
      *        <p>
-     *        <code>VectorEsriStreets</code> – The Esri World Streets map style, which provides a detailed vector
-     *        basemap for the world symbolized with a classic Esri street map style. The vector tile layer is similar in
-     *        content and style to the World Street Map raster map.
+     *        <code>VectorEsriStreets</code> – The Esri Street Map style, which provides a detailed vector basemap for
+     *        the world symbolized with a classic Esri street map style. The vector tile layer is similar in content and
+     *        style to the World Street Map raster map.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>VectorEsriNavigation</code> – The Esri World Navigation map style, which provides a detailed basemap
-     *        for the world symbolized with a custom navigation map style that's designed for use during the day in
-     *        mobile devices.
+     *        <code>VectorEsriNavigation</code> – The Esri Navigation map style, which provides a detailed basemap for
+     *        the world symbolized with a custom navigation map style that's designed for use during the day in mobile
+     *        devices.
      *        </p>
      *        </li>
      *        </ul>
@@ -536,15 +657,15 @@ public class MapConfiguration implements Serializable, Cloneable, StructuredPojo
      * </li>
      * <li>
      * <p>
-     * <code>VectorEsriStreets</code> – The Esri World Streets map style, which provides a detailed vector basemap for
-     * the world symbolized with a classic Esri street map style. The vector tile layer is similar in content and style
-     * to the World Street Map raster map.
+     * <code>VectorEsriStreets</code> – The Esri Street Map style, which provides a detailed vector basemap for the
+     * world symbolized with a classic Esri street map style. The vector tile layer is similar in content and style to
+     * the World Street Map raster map.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>VectorEsriNavigation</code> – The Esri World Navigation map style, which provides a detailed basemap for
-     * the world symbolized with a custom navigation map style that's designed for use during the day in mobile devices.
+     * <code>VectorEsriNavigation</code> – The Esri Navigation map style, which provides a detailed basemap for the
+     * world symbolized with a custom navigation map style that's designed for use during the day in mobile devices.
      * </p>
      * </li>
      * </ul>
@@ -688,16 +809,16 @@ public class MapConfiguration implements Serializable, Cloneable, StructuredPojo
      *         </li>
      *         <li>
      *         <p>
-     *         <code>VectorEsriStreets</code> – The Esri World Streets map style, which provides a detailed vector
-     *         basemap for the world symbolized with a classic Esri street map style. The vector tile layer is similar
-     *         in content and style to the World Street Map raster map.
+     *         <code>VectorEsriStreets</code> – The Esri Street Map style, which provides a detailed vector basemap for
+     *         the world symbolized with a classic Esri street map style. The vector tile layer is similar in content
+     *         and style to the World Street Map raster map.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>VectorEsriNavigation</code> – The Esri World Navigation map style, which provides a detailed
-     *         basemap for the world symbolized with a custom navigation map style that's designed for use during the
-     *         day in mobile devices.
+     *         <code>VectorEsriNavigation</code> – The Esri Navigation map style, which provides a detailed basemap for
+     *         the world symbolized with a custom navigation map style that's designed for use during the day in mobile
+     *         devices.
      *         </p>
      *         </li>
      *         </ul>
@@ -851,15 +972,15 @@ public class MapConfiguration implements Serializable, Cloneable, StructuredPojo
      * </li>
      * <li>
      * <p>
-     * <code>VectorEsriStreets</code> – The Esri World Streets map style, which provides a detailed vector basemap for
-     * the world symbolized with a classic Esri street map style. The vector tile layer is similar in content and style
-     * to the World Street Map raster map.
+     * <code>VectorEsriStreets</code> – The Esri Street Map style, which provides a detailed vector basemap for the
+     * world symbolized with a classic Esri street map style. The vector tile layer is similar in content and style to
+     * the World Street Map raster map.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>VectorEsriNavigation</code> – The Esri World Navigation map style, which provides a detailed basemap for
-     * the world symbolized with a custom navigation map style that's designed for use during the day in mobile devices.
+     * <code>VectorEsriNavigation</code> – The Esri Navigation map style, which provides a detailed basemap for the
+     * world symbolized with a custom navigation map style that's designed for use during the day in mobile devices.
      * </p>
      * </li>
      * </ul>
@@ -1004,16 +1125,16 @@ public class MapConfiguration implements Serializable, Cloneable, StructuredPojo
      *        </li>
      *        <li>
      *        <p>
-     *        <code>VectorEsriStreets</code> – The Esri World Streets map style, which provides a detailed vector
-     *        basemap for the world symbolized with a classic Esri street map style. The vector tile layer is similar in
-     *        content and style to the World Street Map raster map.
+     *        <code>VectorEsriStreets</code> – The Esri Street Map style, which provides a detailed vector basemap for
+     *        the world symbolized with a classic Esri street map style. The vector tile layer is similar in content and
+     *        style to the World Street Map raster map.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>VectorEsriNavigation</code> – The Esri World Navigation map style, which provides a detailed basemap
-     *        for the world symbolized with a custom navigation map style that's designed for use during the day in
-     *        mobile devices.
+     *        <code>VectorEsriNavigation</code> – The Esri Navigation map style, which provides a detailed basemap for
+     *        the world symbolized with a custom navigation map style that's designed for use during the day in mobile
+     *        devices.
      *        </p>
      *        </li>
      *        </ul>
@@ -1145,6 +1266,8 @@ public class MapConfiguration implements Serializable, Cloneable, StructuredPojo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getPoliticalView() != null)
+            sb.append("PoliticalView: ").append(getPoliticalView()).append(",");
         if (getStyle() != null)
             sb.append("Style: ").append(getStyle());
         sb.append("}");
@@ -1161,6 +1284,10 @@ public class MapConfiguration implements Serializable, Cloneable, StructuredPojo
         if (obj instanceof MapConfiguration == false)
             return false;
         MapConfiguration other = (MapConfiguration) obj;
+        if (other.getPoliticalView() == null ^ this.getPoliticalView() == null)
+            return false;
+        if (other.getPoliticalView() != null && other.getPoliticalView().equals(this.getPoliticalView()) == false)
+            return false;
         if (other.getStyle() == null ^ this.getStyle() == null)
             return false;
         if (other.getStyle() != null && other.getStyle().equals(this.getStyle()) == false)
@@ -1173,6 +1300,7 @@ public class MapConfiguration implements Serializable, Cloneable, StructuredPojo
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getPoliticalView() == null) ? 0 : getPoliticalView().hashCode());
         hashCode = prime * hashCode + ((getStyle() == null) ? 0 : getStyle().hashCode());
         return hashCode;
     }

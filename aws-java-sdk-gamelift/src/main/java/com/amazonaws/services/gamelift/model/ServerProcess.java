@@ -32,8 +32,8 @@ public class ServerProcess implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The location of a game build executable or the Realtime script file that contains the <code>Init()</code>
-     * function. Game builds and Realtime scripts are installed on instances at the root:
+     * The location of a game build executable or Realtime script. Game builds and Realtime scripts are installed on
+     * instances at the root:
      * </p>
      * <ul>
      * <li>
@@ -48,6 +48,13 @@ public class ServerProcess implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * Amazon GameLift doesn't support the use of setup scripts that launch the game executable. For custom game builds,
+     * this parameter must indicate the executable that calls the server SDK operations <code>initSDK()</code> and
+     * <code>ProcessReady()</code>.
+     * </p>
+     * </note>
      */
     private String launchPath;
     /**
@@ -65,8 +72,8 @@ public class ServerProcess implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The location of a game build executable or the Realtime script file that contains the <code>Init()</code>
-     * function. Game builds and Realtime scripts are installed on instances at the root:
+     * The location of a game build executable or Realtime script. Game builds and Realtime scripts are installed on
+     * instances at the root:
      * </p>
      * <ul>
      * <li>
@@ -81,10 +88,17 @@ public class ServerProcess implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * Amazon GameLift doesn't support the use of setup scripts that launch the game executable. For custom game builds,
+     * this parameter must indicate the executable that calls the server SDK operations <code>initSDK()</code> and
+     * <code>ProcessReady()</code>.
+     * </p>
+     * </note>
      * 
      * @param launchPath
-     *        The location of a game build executable or the Realtime script file that contains the <code>Init()</code>
-     *        function. Game builds and Realtime scripts are installed on instances at the root: </p>
+     *        The location of a game build executable or Realtime script. Game builds and Realtime scripts are installed
+     *        on instances at the root: </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -97,6 +111,13 @@ public class ServerProcess implements Serializable, Cloneable, StructuredPojo {
      *        <code>/local/game/MyRealtimeScript.js</code>"
      *        </p>
      *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        Amazon GameLift doesn't support the use of setup scripts that launch the game executable. For custom game
+     *        builds, this parameter must indicate the executable that calls the server SDK operations
+     *        <code>initSDK()</code> and <code>ProcessReady()</code>.
+     *        </p>
      */
 
     public void setLaunchPath(String launchPath) {
@@ -105,8 +126,8 @@ public class ServerProcess implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The location of a game build executable or the Realtime script file that contains the <code>Init()</code>
-     * function. Game builds and Realtime scripts are installed on instances at the root:
+     * The location of a game build executable or Realtime script. Game builds and Realtime scripts are installed on
+     * instances at the root:
      * </p>
      * <ul>
      * <li>
@@ -121,9 +142,16 @@ public class ServerProcess implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * Amazon GameLift doesn't support the use of setup scripts that launch the game executable. For custom game builds,
+     * this parameter must indicate the executable that calls the server SDK operations <code>initSDK()</code> and
+     * <code>ProcessReady()</code>.
+     * </p>
+     * </note>
      * 
-     * @return The location of a game build executable or the Realtime script file that contains the <code>Init()</code>
-     *         function. Game builds and Realtime scripts are installed on instances at the root: </p>
+     * @return The location of a game build executable or Realtime script. Game builds and Realtime scripts are
+     *         installed on instances at the root: </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -137,6 +165,13 @@ public class ServerProcess implements Serializable, Cloneable, StructuredPojo {
      *         <code>/local/game/MyRealtimeScript.js</code>"
      *         </p>
      *         </li>
+     *         </ul>
+     *         <note>
+     *         <p>
+     *         Amazon GameLift doesn't support the use of setup scripts that launch the game executable. For custom game
+     *         builds, this parameter must indicate the executable that calls the server SDK operations
+     *         <code>initSDK()</code> and <code>ProcessReady()</code>.
+     *         </p>
      */
 
     public String getLaunchPath() {
@@ -145,8 +180,8 @@ public class ServerProcess implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The location of a game build executable or the Realtime script file that contains the <code>Init()</code>
-     * function. Game builds and Realtime scripts are installed on instances at the root:
+     * The location of a game build executable or Realtime script. Game builds and Realtime scripts are installed on
+     * instances at the root:
      * </p>
      * <ul>
      * <li>
@@ -161,10 +196,17 @@ public class ServerProcess implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * Amazon GameLift doesn't support the use of setup scripts that launch the game executable. For custom game builds,
+     * this parameter must indicate the executable that calls the server SDK operations <code>initSDK()</code> and
+     * <code>ProcessReady()</code>.
+     * </p>
+     * </note>
      * 
      * @param launchPath
-     *        The location of a game build executable or the Realtime script file that contains the <code>Init()</code>
-     *        function. Game builds and Realtime scripts are installed on instances at the root: </p>
+     *        The location of a game build executable or Realtime script. Game builds and Realtime scripts are installed
+     *        on instances at the root: </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -177,6 +219,13 @@ public class ServerProcess implements Serializable, Cloneable, StructuredPojo {
      *        <code>/local/game/MyRealtimeScript.js</code>"
      *        </p>
      *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        Amazon GameLift doesn't support the use of setup scripts that launch the game executable. For custom game
+     *        builds, this parameter must indicate the executable that calls the server SDK operations
+     *        <code>initSDK()</code> and <code>ProcessReady()</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

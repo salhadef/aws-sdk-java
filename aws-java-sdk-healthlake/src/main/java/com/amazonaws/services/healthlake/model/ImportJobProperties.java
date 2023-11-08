@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Displays the properties of the import job, including the ID, Arn, Name, and the status of the Data Store.
+ * Displays the properties of the import job, including the ID, Arn, Name, and the status of the data store.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ImportJobProperties" target="_top">AWS API
@@ -42,7 +42,8 @@ public class ImportJobProperties implements Serializable, Cloneable, StructuredP
     private String jobName;
     /**
      * <p>
-     * The job status for an Import job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, FAILED.
+     * The job status for an Import job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED_WITH_ERRORS, COMPLETED,
+     * FAILED.
      * </p>
      */
     private String jobStatus;
@@ -74,7 +75,7 @@ public class ImportJobProperties implements Serializable, Cloneable, StructuredP
     private OutputDataConfig jobOutputDataConfig;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that gives Amazon HealthLake access to your input data.
+     * The Amazon Resource Name (ARN) that gives AWS HealthLake access to your input data.
      * </p>
      */
     private String dataAccessRoleArn;
@@ -167,11 +168,13 @@ public class ImportJobProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The job status for an Import job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, FAILED.
+     * The job status for an Import job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED_WITH_ERRORS, COMPLETED,
+     * FAILED.
      * </p>
      * 
      * @param jobStatus
-     *        The job status for an Import job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, FAILED.
+     *        The job status for an Import job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED_WITH_ERRORS,
+     *        COMPLETED, FAILED.
      * @see JobStatus
      */
 
@@ -181,10 +184,12 @@ public class ImportJobProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The job status for an Import job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, FAILED.
+     * The job status for an Import job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED_WITH_ERRORS, COMPLETED,
+     * FAILED.
      * </p>
      * 
-     * @return The job status for an Import job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, FAILED.
+     * @return The job status for an Import job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED_WITH_ERRORS,
+     *         COMPLETED, FAILED.
      * @see JobStatus
      */
 
@@ -194,11 +199,13 @@ public class ImportJobProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The job status for an Import job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, FAILED.
+     * The job status for an Import job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED_WITH_ERRORS, COMPLETED,
+     * FAILED.
      * </p>
      * 
      * @param jobStatus
-     *        The job status for an Import job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, FAILED.
+     *        The job status for an Import job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED_WITH_ERRORS,
+     *        COMPLETED, FAILED.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobStatus
      */
@@ -210,11 +217,13 @@ public class ImportJobProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The job status for an Import job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, FAILED.
+     * The job status for an Import job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED_WITH_ERRORS, COMPLETED,
+     * FAILED.
      * </p>
      * 
      * @param jobStatus
-     *        The job status for an Import job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, FAILED.
+     *        The job status for an Import job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED_WITH_ERRORS,
+     *        COMPLETED, FAILED.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobStatus
      */
@@ -412,11 +421,11 @@ public class ImportJobProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that gives Amazon HealthLake access to your input data.
+     * The Amazon Resource Name (ARN) that gives AWS HealthLake access to your input data.
      * </p>
      * 
      * @param dataAccessRoleArn
-     *        The Amazon Resource Name (ARN) that gives Amazon HealthLake access to your input data.
+     *        The Amazon Resource Name (ARN) that gives AWS HealthLake access to your input data.
      */
 
     public void setDataAccessRoleArn(String dataAccessRoleArn) {
@@ -425,10 +434,10 @@ public class ImportJobProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that gives Amazon HealthLake access to your input data.
+     * The Amazon Resource Name (ARN) that gives AWS HealthLake access to your input data.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) that gives Amazon HealthLake access to your input data.
+     * @return The Amazon Resource Name (ARN) that gives AWS HealthLake access to your input data.
      */
 
     public String getDataAccessRoleArn() {
@@ -437,11 +446,11 @@ public class ImportJobProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that gives Amazon HealthLake access to your input data.
+     * The Amazon Resource Name (ARN) that gives AWS HealthLake access to your input data.
      * </p>
      * 
      * @param dataAccessRoleArn
-     *        The Amazon Resource Name (ARN) that gives Amazon HealthLake access to your input data.
+     *        The Amazon Resource Name (ARN) that gives AWS HealthLake access to your input data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

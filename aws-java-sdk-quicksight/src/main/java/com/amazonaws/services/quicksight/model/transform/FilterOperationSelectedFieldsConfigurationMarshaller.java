@@ -32,6 +32,8 @@ public class FilterOperationSelectedFieldsConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SelectedFields").build();
     private static final MarshallingInfo<String> SELECTEDFIELDOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SelectedFieldOptions").build();
+    private static final MarshallingInfo<List> SELECTEDCOLUMNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SelectedColumns").build();
 
     private static final FilterOperationSelectedFieldsConfigurationMarshaller instance = new FilterOperationSelectedFieldsConfigurationMarshaller();
 
@@ -51,6 +53,7 @@ public class FilterOperationSelectedFieldsConfigurationMarshaller {
         try {
             protocolMarshaller.marshall(filterOperationSelectedFieldsConfiguration.getSelectedFields(), SELECTEDFIELDS_BINDING);
             protocolMarshaller.marshall(filterOperationSelectedFieldsConfiguration.getSelectedFieldOptions(), SELECTEDFIELDOPTIONS_BINDING);
+            protocolMarshaller.marshall(filterOperationSelectedFieldsConfiguration.getSelectedColumns(), SELECTEDCOLUMNS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

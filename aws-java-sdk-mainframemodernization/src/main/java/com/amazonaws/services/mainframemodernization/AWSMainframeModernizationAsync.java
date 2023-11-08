@@ -516,6 +516,37 @@ public interface AWSMainframeModernizationAsync extends AWSMainframeModernizatio
 
     /**
      * <p>
+     * Gets a single sign-on URL that can be used to connect to AWS Blu Insights.
+     * </p>
+     * 
+     * @param getSignedBluinsightsUrlRequest
+     * @return A Java Future containing the result of the GetSignedBluinsightsUrl operation returned by the service.
+     * @sample AWSMainframeModernizationAsync.GetSignedBluinsightsUrl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/GetSignedBluinsightsUrl" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetSignedBluinsightsUrlResult> getSignedBluinsightsUrlAsync(GetSignedBluinsightsUrlRequest getSignedBluinsightsUrlRequest);
+
+    /**
+     * <p>
+     * Gets a single sign-on URL that can be used to connect to AWS Blu Insights.
+     * </p>
+     * 
+     * @param getSignedBluinsightsUrlRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetSignedBluinsightsUrl operation returned by the service.
+     * @sample AWSMainframeModernizationAsyncHandler.GetSignedBluinsightsUrl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/GetSignedBluinsightsUrl" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetSignedBluinsightsUrlResult> getSignedBluinsightsUrlAsync(GetSignedBluinsightsUrlRequest getSignedBluinsightsUrlRequest,
+            com.amazonaws.handlers.AsyncHandler<GetSignedBluinsightsUrlRequest, GetSignedBluinsightsUrlResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a list of the application versions for a specific application.
      * </p>
      * 

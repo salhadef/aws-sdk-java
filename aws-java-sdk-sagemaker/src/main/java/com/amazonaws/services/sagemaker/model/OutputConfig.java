@@ -47,6 +47,12 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TargetPlatform.html">TargetPlatform</a>
      * fields. It can be used instead of <code>TargetPlatform</code>.
      * </p>
+     * <note>
+     * <p>
+     * Currently <code>ml_trn1</code> is available only in US East (N. Virginia) Region, and <code>ml_inf2</code> is
+     * available only in US East (Ohio) Region.
+     * </p>
+     * </note>
      */
     private String targetDevice;
     /**
@@ -237,9 +243,9 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
      * example, <code>"CompilerOptions": "\"--verbose 1 --num-neuroncores 2 -O2\""</code>.
      * </p>
      * <p>
-     * For information about supported compiler options, see <a
-     * href="https://github.com/aws/aws-neuron-sdk/blob/master/docs/neuron-cc/command-line-reference.md"> Neuron
-     * Compiler CLI</a>.
+     * For information about supported compiler options, see <a href=
+     * "https://awsdocs-neuron.readthedocs-hosted.com/en/latest/compiler/neuronx-cc/api-reference-guide/neuron-compiler-cli-reference-guide.html"
+     * > Neuron Compiler CLI Reference Guide</a>.
      * </p>
      * </li>
      * <li>
@@ -379,12 +385,22 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TargetPlatform.html">TargetPlatform</a>
      * fields. It can be used instead of <code>TargetPlatform</code>.
      * </p>
+     * <note>
+     * <p>
+     * Currently <code>ml_trn1</code> is available only in US East (N. Virginia) Region, and <code>ml_inf2</code> is
+     * available only in US East (Ohio) Region.
+     * </p>
+     * </note>
      * 
      * @param targetDevice
      *        Identifies the target device or the machine learning instance that you want to run your model on after the
      *        compilation has completed. Alternatively, you can specify OS, architecture, and accelerator using <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TargetPlatform.html"
-     *        >TargetPlatform</a> fields. It can be used instead of <code>TargetPlatform</code>.
+     *        >TargetPlatform</a> fields. It can be used instead of <code>TargetPlatform</code>.</p> <note>
+     *        <p>
+     *        Currently <code>ml_trn1</code> is available only in US East (N. Virginia) Region, and <code>ml_inf2</code>
+     *        is available only in US East (Ohio) Region.
+     *        </p>
      * @see TargetDevice
      */
 
@@ -399,12 +415,22 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TargetPlatform.html">TargetPlatform</a>
      * fields. It can be used instead of <code>TargetPlatform</code>.
      * </p>
+     * <note>
+     * <p>
+     * Currently <code>ml_trn1</code> is available only in US East (N. Virginia) Region, and <code>ml_inf2</code> is
+     * available only in US East (Ohio) Region.
+     * </p>
+     * </note>
      * 
      * @return Identifies the target device or the machine learning instance that you want to run your model on after
      *         the compilation has completed. Alternatively, you can specify OS, architecture, and accelerator using <a
      *         href
      *         ="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TargetPlatform.html">TargetPlatform</a>
-     *         fields. It can be used instead of <code>TargetPlatform</code>.
+     *         fields. It can be used instead of <code>TargetPlatform</code>.</p> <note>
+     *         <p>
+     *         Currently <code>ml_trn1</code> is available only in US East (N. Virginia) Region, and
+     *         <code>ml_inf2</code> is available only in US East (Ohio) Region.
+     *         </p>
      * @see TargetDevice
      */
 
@@ -419,12 +445,22 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TargetPlatform.html">TargetPlatform</a>
      * fields. It can be used instead of <code>TargetPlatform</code>.
      * </p>
+     * <note>
+     * <p>
+     * Currently <code>ml_trn1</code> is available only in US East (N. Virginia) Region, and <code>ml_inf2</code> is
+     * available only in US East (Ohio) Region.
+     * </p>
+     * </note>
      * 
      * @param targetDevice
      *        Identifies the target device or the machine learning instance that you want to run your model on after the
      *        compilation has completed. Alternatively, you can specify OS, architecture, and accelerator using <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TargetPlatform.html"
-     *        >TargetPlatform</a> fields. It can be used instead of <code>TargetPlatform</code>.
+     *        >TargetPlatform</a> fields. It can be used instead of <code>TargetPlatform</code>.</p> <note>
+     *        <p>
+     *        Currently <code>ml_trn1</code> is available only in US East (N. Virginia) Region, and <code>ml_inf2</code>
+     *        is available only in US East (Ohio) Region.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TargetDevice
      */
@@ -441,12 +477,22 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TargetPlatform.html">TargetPlatform</a>
      * fields. It can be used instead of <code>TargetPlatform</code>.
      * </p>
+     * <note>
+     * <p>
+     * Currently <code>ml_trn1</code> is available only in US East (N. Virginia) Region, and <code>ml_inf2</code> is
+     * available only in US East (Ohio) Region.
+     * </p>
+     * </note>
      * 
      * @param targetDevice
      *        Identifies the target device or the machine learning instance that you want to run your model on after the
      *        compilation has completed. Alternatively, you can specify OS, architecture, and accelerator using <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TargetPlatform.html"
-     *        >TargetPlatform</a> fields. It can be used instead of <code>TargetPlatform</code>.
+     *        >TargetPlatform</a> fields. It can be used instead of <code>TargetPlatform</code>.</p> <note>
+     *        <p>
+     *        Currently <code>ml_trn1</code> is available only in US East (N. Virginia) Region, and <code>ml_inf2</code>
+     *        is available only in US East (Ohio) Region.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TargetDevice
      */
@@ -1025,9 +1071,9 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
      * example, <code>"CompilerOptions": "\"--verbose 1 --num-neuroncores 2 -O2\""</code>.
      * </p>
      * <p>
-     * For information about supported compiler options, see <a
-     * href="https://github.com/aws/aws-neuron-sdk/blob/master/docs/neuron-cc/command-line-reference.md"> Neuron
-     * Compiler CLI</a>.
+     * For information about supported compiler options, see <a href=
+     * "https://awsdocs-neuron.readthedocs-hosted.com/en/latest/compiler/neuronx-cc/api-reference-guide/neuron-compiler-cli-reference-guide.html"
+     * > Neuron Compiler CLI Reference Guide</a>.
      * </p>
      * </li>
      * <li>
@@ -1186,9 +1232,9 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
      *        For example, <code>"CompilerOptions": "\"--verbose 1 --num-neuroncores 2 -O2\""</code>.
      *        </p>
      *        <p>
-     *        For information about supported compiler options, see <a
-     *        href="https://github.com/aws/aws-neuron-sdk/blob/master/docs/neuron-cc/command-line-reference.md"> Neuron
-     *        Compiler CLI</a>.
+     *        For information about supported compiler options, see <a href=
+     *        "https://awsdocs-neuron.readthedocs-hosted.com/en/latest/compiler/neuronx-cc/api-reference-guide/neuron-compiler-cli-reference-guide.html"
+     *        > Neuron Compiler CLI Reference Guide</a>.
      *        </p>
      *        </li>
      *        <li>
@@ -1354,9 +1400,9 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
      * example, <code>"CompilerOptions": "\"--verbose 1 --num-neuroncores 2 -O2\""</code>.
      * </p>
      * <p>
-     * For information about supported compiler options, see <a
-     * href="https://github.com/aws/aws-neuron-sdk/blob/master/docs/neuron-cc/command-line-reference.md"> Neuron
-     * Compiler CLI</a>.
+     * For information about supported compiler options, see <a href=
+     * "https://awsdocs-neuron.readthedocs-hosted.com/en/latest/compiler/neuronx-cc/api-reference-guide/neuron-compiler-cli-reference-guide.html"
+     * > Neuron Compiler CLI Reference Guide</a>.
      * </p>
      * </li>
      * <li>
@@ -1515,9 +1561,9 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
      *         For example, <code>"CompilerOptions": "\"--verbose 1 --num-neuroncores 2 -O2\""</code>.
      *         </p>
      *         <p>
-     *         For information about supported compiler options, see <a
-     *         href="https://github.com/aws/aws-neuron-sdk/blob/master/docs/neuron-cc/command-line-reference.md"> Neuron
-     *         Compiler CLI</a>.
+     *         For information about supported compiler options, see <a href=
+     *         "https://awsdocs-neuron.readthedocs-hosted.com/en/latest/compiler/neuronx-cc/api-reference-guide/neuron-compiler-cli-reference-guide.html"
+     *         > Neuron Compiler CLI Reference Guide</a>.
      *         </p>
      *         </li>
      *         <li>
@@ -1683,9 +1729,9 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
      * example, <code>"CompilerOptions": "\"--verbose 1 --num-neuroncores 2 -O2\""</code>.
      * </p>
      * <p>
-     * For information about supported compiler options, see <a
-     * href="https://github.com/aws/aws-neuron-sdk/blob/master/docs/neuron-cc/command-line-reference.md"> Neuron
-     * Compiler CLI</a>.
+     * For information about supported compiler options, see <a href=
+     * "https://awsdocs-neuron.readthedocs-hosted.com/en/latest/compiler/neuronx-cc/api-reference-guide/neuron-compiler-cli-reference-guide.html"
+     * > Neuron Compiler CLI Reference Guide</a>.
      * </p>
      * </li>
      * <li>
@@ -1844,9 +1890,9 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
      *        For example, <code>"CompilerOptions": "\"--verbose 1 --num-neuroncores 2 -O2\""</code>.
      *        </p>
      *        <p>
-     *        For information about supported compiler options, see <a
-     *        href="https://github.com/aws/aws-neuron-sdk/blob/master/docs/neuron-cc/command-line-reference.md"> Neuron
-     *        Compiler CLI</a>.
+     *        For information about supported compiler options, see <a href=
+     *        "https://awsdocs-neuron.readthedocs-hosted.com/en/latest/compiler/neuronx-cc/api-reference-guide/neuron-compiler-cli-reference-guide.html"
+     *        > Neuron Compiler CLI Reference Guide</a>.
      *        </p>
      *        </li>
      *        <li>

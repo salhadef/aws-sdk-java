@@ -62,16 +62,6 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      * <ul>
      * <li>
      * <p>
-     * network-firewall:CreateFirewall
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * network-firewall:UpdateFirewall
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * network-firewall:AssociateFirewallPolicy
      * </p>
      * </li>
@@ -162,16 +152,6 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      * <ul>
      * <li>
      * <p>
-     * network-firewall:CreateFirewall
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * network-firewall:UpdateFirewall
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * network-firewall:AssociateFirewallPolicy
      * </p>
      * </li>
@@ -215,16 +195,6 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      *        statement:
      *        </p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        network-firewall:CreateFirewall
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        network-firewall:UpdateFirewall
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        network-firewall:AssociateFirewallPolicy
@@ -276,16 +246,6 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      * <ul>
      * <li>
      * <p>
-     * network-firewall:CreateFirewall
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * network-firewall:UpdateFirewall
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * network-firewall:AssociateFirewallPolicy
      * </p>
      * </li>
@@ -328,16 +288,6 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      *         statement:
      *         </p>
      *         <ul>
-     *         <li>
-     *         <p>
-     *         network-firewall:CreateFirewall
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         network-firewall:UpdateFirewall
-     *         </p>
-     *         </li>
      *         <li>
      *         <p>
      *         network-firewall:AssociateFirewallPolicy
@@ -389,16 +339,6 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      * <ul>
      * <li>
      * <p>
-     * network-firewall:CreateFirewall
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * network-firewall:UpdateFirewall
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * network-firewall:AssociateFirewallPolicy
      * </p>
      * </li>
@@ -442,16 +382,6 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      *        statement:
      *        </p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        network-firewall:CreateFirewall
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        network-firewall:UpdateFirewall
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        network-firewall:AssociateFirewallPolicy

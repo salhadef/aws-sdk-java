@@ -38,22 +38,17 @@ public class AbstractAmazonSecurityLake implements AmazonSecurityLake {
     }
 
     @Override
-    public CreateDatalakeResult createDatalake(CreateDatalakeRequest request) {
+    public CreateDataLakeResult createDataLake(CreateDataLakeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public CreateDatalakeAutoEnableResult createDatalakeAutoEnable(CreateDatalakeAutoEnableRequest request) {
+    public CreateDataLakeExceptionSubscriptionResult createDataLakeExceptionSubscription(CreateDataLakeExceptionSubscriptionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public CreateDatalakeDelegatedAdminResult createDatalakeDelegatedAdmin(CreateDatalakeDelegatedAdminRequest request) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
-    public CreateDatalakeExceptionsSubscriptionResult createDatalakeExceptionsSubscription(CreateDatalakeExceptionsSubscriptionRequest request) {
+    public CreateDataLakeOrganizationConfigurationResult createDataLakeOrganizationConfiguration(CreateDataLakeOrganizationConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -63,8 +58,7 @@ public class AbstractAmazonSecurityLake implements AmazonSecurityLake {
     }
 
     @Override
-    public CreateSubscriptionNotificationConfigurationResult createSubscriptionNotificationConfiguration(
-            CreateSubscriptionNotificationConfigurationRequest request) {
+    public CreateSubscriberNotificationResult createSubscriberNotification(CreateSubscriberNotificationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -79,22 +73,17 @@ public class AbstractAmazonSecurityLake implements AmazonSecurityLake {
     }
 
     @Override
-    public DeleteDatalakeResult deleteDatalake(DeleteDatalakeRequest request) {
+    public DeleteDataLakeResult deleteDataLake(DeleteDataLakeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteDatalakeAutoEnableResult deleteDatalakeAutoEnable(DeleteDatalakeAutoEnableRequest request) {
+    public DeleteDataLakeExceptionSubscriptionResult deleteDataLakeExceptionSubscription(DeleteDataLakeExceptionSubscriptionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteDatalakeDelegatedAdminResult deleteDatalakeDelegatedAdmin(DeleteDatalakeDelegatedAdminRequest request) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
-    public DeleteDatalakeExceptionsSubscriptionResult deleteDatalakeExceptionsSubscription(DeleteDatalakeExceptionsSubscriptionRequest request) {
+    public DeleteDataLakeOrganizationConfigurationResult deleteDataLakeOrganizationConfiguration(DeleteDataLakeOrganizationConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -104,33 +93,27 @@ public class AbstractAmazonSecurityLake implements AmazonSecurityLake {
     }
 
     @Override
-    public DeleteSubscriptionNotificationConfigurationResult deleteSubscriptionNotificationConfiguration(
-            DeleteSubscriptionNotificationConfigurationRequest request) {
+    public DeleteSubscriberNotificationResult deleteSubscriberNotification(DeleteSubscriberNotificationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public GetDatalakeResult getDatalake(GetDatalakeRequest request) {
+    public DeregisterDataLakeDelegatedAdministratorResult deregisterDataLakeDelegatedAdministrator(DeregisterDataLakeDelegatedAdministratorRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public GetDatalakeAutoEnableResult getDatalakeAutoEnable(GetDatalakeAutoEnableRequest request) {
+    public GetDataLakeExceptionSubscriptionResult getDataLakeExceptionSubscription(GetDataLakeExceptionSubscriptionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public GetDatalakeExceptionsExpiryResult getDatalakeExceptionsExpiry(GetDatalakeExceptionsExpiryRequest request) {
+    public GetDataLakeOrganizationConfigurationResult getDataLakeOrganizationConfiguration(GetDataLakeOrganizationConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public GetDatalakeExceptionsSubscriptionResult getDatalakeExceptionsSubscription(GetDatalakeExceptionsSubscriptionRequest request) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
-    public GetDatalakeStatusResult getDatalakeStatus(GetDatalakeStatusRequest request) {
+    public GetDataLakeSourcesResult getDataLakeSources(GetDataLakeSourcesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -140,7 +123,12 @@ public class AbstractAmazonSecurityLake implements AmazonSecurityLake {
     }
 
     @Override
-    public ListDatalakeExceptionsResult listDatalakeExceptions(ListDatalakeExceptionsRequest request) {
+    public ListDataLakeExceptionsResult listDataLakeExceptions(ListDataLakeExceptionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListDataLakesResult listDataLakes(ListDataLakesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -155,17 +143,32 @@ public class AbstractAmazonSecurityLake implements AmazonSecurityLake {
     }
 
     @Override
-    public UpdateDatalakeResult updateDatalake(UpdateDatalakeRequest request) {
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public UpdateDatalakeExceptionsExpiryResult updateDatalakeExceptionsExpiry(UpdateDatalakeExceptionsExpiryRequest request) {
+    public RegisterDataLakeDelegatedAdministratorResult registerDataLakeDelegatedAdministrator(RegisterDataLakeDelegatedAdministratorRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public UpdateDatalakeExceptionsSubscriptionResult updateDatalakeExceptionsSubscription(UpdateDatalakeExceptionsSubscriptionRequest request) {
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateDataLakeResult updateDataLake(UpdateDataLakeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateDataLakeExceptionSubscriptionResult updateDataLakeExceptionSubscription(UpdateDataLakeExceptionSubscriptionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -175,8 +178,7 @@ public class AbstractAmazonSecurityLake implements AmazonSecurityLake {
     }
 
     @Override
-    public UpdateSubscriptionNotificationConfigurationResult updateSubscriptionNotificationConfiguration(
-            UpdateSubscriptionNotificationConfigurationRequest request) {
+    public UpdateSubscriberNotificationResult updateSubscriberNotification(UpdateSubscriberNotificationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

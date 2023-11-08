@@ -60,6 +60,10 @@ public class GCMChannelResponseJsonUnmarshaller implements Unmarshaller<GCMChann
                     context.nextToken();
                     gCMChannelResponse.setCredential(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DefaultAuthenticationMethod", targetDepth)) {
+                    context.nextToken();
+                    gCMChannelResponse.setDefaultAuthenticationMethod(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Enabled", targetDepth)) {
                     context.nextToken();
                     gCMChannelResponse.setEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
@@ -67,6 +71,10 @@ public class GCMChannelResponseJsonUnmarshaller implements Unmarshaller<GCMChann
                 if (context.testExpression("HasCredential", targetDepth)) {
                     context.nextToken();
                     gCMChannelResponse.setHasCredential(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("HasFcmServiceCredentials", targetDepth)) {
+                    context.nextToken();
+                    gCMChannelResponse.setHasFcmServiceCredentials(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Id", targetDepth)) {
                     context.nextToken();

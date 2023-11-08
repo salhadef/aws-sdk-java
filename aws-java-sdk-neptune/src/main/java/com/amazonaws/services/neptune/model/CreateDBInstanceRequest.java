@@ -3594,7 +3594,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
         if (getTdeCredentialArn() != null)
             sb.append("TdeCredentialArn: ").append(getTdeCredentialArn()).append(",");
         if (getTdeCredentialPassword() != null)
-            sb.append("TdeCredentialPassword: ").append(getTdeCredentialPassword()).append(",");
+            sb.append("TdeCredentialPassword: ").append("***Sensitive Data Redacted***").append(",");
         if (getStorageEncrypted() != null)
             sb.append("StorageEncrypted: ").append(getStorageEncrypted()).append(",");
         if (getKmsKeyId() != null)

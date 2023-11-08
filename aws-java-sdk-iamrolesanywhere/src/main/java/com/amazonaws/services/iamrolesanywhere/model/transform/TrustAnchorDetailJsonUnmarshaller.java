@@ -60,6 +60,13 @@ public class TrustAnchorDetailJsonUnmarshaller implements Unmarshaller<TrustAnch
                     context.nextToken();
                     trustAnchorDetail.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("notificationSettings", targetDepth)) {
+                    context.nextToken();
+                    trustAnchorDetail.setNotificationSettings(new ListUnmarshaller<NotificationSettingDetail>(NotificationSettingDetailJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("source", targetDepth)) {
                     context.nextToken();
                     trustAnchorDetail.setSource(SourceJsonUnmarshaller.getInstance().unmarshall(context));

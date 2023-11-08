@@ -88,6 +88,14 @@ public class DescribeStateMachineResultJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     describeStateMachineResult.setLabel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("revisionId", targetDepth)) {
+                    context.nextToken();
+                    describeStateMachineResult.setRevisionId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("description", targetDepth)) {
+                    context.nextToken();
+                    describeStateMachineResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

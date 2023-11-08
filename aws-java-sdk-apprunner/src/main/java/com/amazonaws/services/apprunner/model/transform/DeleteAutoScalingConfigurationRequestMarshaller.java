@@ -29,6 +29,8 @@ public class DeleteAutoScalingConfigurationRequestMarshaller {
 
     private static final MarshallingInfo<String> AUTOSCALINGCONFIGURATIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutoScalingConfigurationArn").build();
+    private static final MarshallingInfo<Boolean> DELETEALLREVISIONS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeleteAllRevisions").build();
 
     private static final DeleteAutoScalingConfigurationRequestMarshaller instance = new DeleteAutoScalingConfigurationRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class DeleteAutoScalingConfigurationRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(deleteAutoScalingConfigurationRequest.getAutoScalingConfigurationArn(), AUTOSCALINGCONFIGURATIONARN_BINDING);
+            protocolMarshaller.marshall(deleteAutoScalingConfigurationRequest.getDeleteAllRevisions(), DELETEALLREVISIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

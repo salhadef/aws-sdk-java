@@ -64,6 +64,10 @@ public class MediaPipelineJsonUnmarshaller implements Unmarshaller<MediaPipeline
                     context.nextToken();
                     mediaPipeline.setMediaInsightsPipeline(MediaInsightsPipelineJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("MediaStreamPipeline", targetDepth)) {
+                    context.nextToken();
+                    mediaPipeline.setMediaStreamPipeline(MediaStreamPipelineJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

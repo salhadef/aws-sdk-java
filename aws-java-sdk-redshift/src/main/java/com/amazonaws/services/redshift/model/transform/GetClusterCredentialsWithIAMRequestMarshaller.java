@@ -54,6 +54,10 @@ public class GetClusterCredentialsWithIAMRequestMarshaller implements
             request.addParameter("DurationSeconds", StringUtils.fromInteger(getClusterCredentialsWithIAMRequest.getDurationSeconds()));
         }
 
+        if (getClusterCredentialsWithIAMRequest.getCustomDomainName() != null) {
+            request.addParameter("CustomDomainName", StringUtils.fromString(getClusterCredentialsWithIAMRequest.getCustomDomainName()));
+        }
+
         return request;
     }
 

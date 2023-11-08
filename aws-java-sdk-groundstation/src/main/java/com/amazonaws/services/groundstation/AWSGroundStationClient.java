@@ -45,6 +45,7 @@ import com.amazonaws.services.groundstation.waiters.AWSGroundStationWaiters;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.groundstation.model.*;
+
 import com.amazonaws.services.groundstation.model.transform.*;
 
 /**
@@ -1031,7 +1032,7 @@ public class AWSGroundStationClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Returns the number of minutes used by account.
+     * Returns the number of reserved minutes used by account.
      * </p>
      * 
      * @param getMinuteUsageRequest

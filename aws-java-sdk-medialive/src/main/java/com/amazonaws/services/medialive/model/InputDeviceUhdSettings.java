@@ -44,6 +44,13 @@ public class InputDeviceUhdSettings implements Serializable, Cloneable, Structur
     private Integer width;
     /** The Link device's buffer size (latency) in milliseconds (ms). You can specify this value. */
     private Integer latencyMs;
+    /** The codec for the video that the device produces. */
+    private String codec;
+    /**
+     * Information about the MediaConnect flow attached to the device. Returned only if the outputType is
+     * MEDIACONNECT_FLOW.
+     */
+    private InputDeviceMediaConnectSettings mediaconnectSettings;
 
     /**
      * If you specified Auto as the configured input, specifies which of the sources is currently active (SDI or HDMI).
@@ -424,6 +431,97 @@ public class InputDeviceUhdSettings implements Serializable, Cloneable, Structur
     }
 
     /**
+     * The codec for the video that the device produces.
+     * 
+     * @param codec
+     *        The codec for the video that the device produces.
+     * @see InputDeviceCodec
+     */
+
+    public void setCodec(String codec) {
+        this.codec = codec;
+    }
+
+    /**
+     * The codec for the video that the device produces.
+     * 
+     * @return The codec for the video that the device produces.
+     * @see InputDeviceCodec
+     */
+
+    public String getCodec() {
+        return this.codec;
+    }
+
+    /**
+     * The codec for the video that the device produces.
+     * 
+     * @param codec
+     *        The codec for the video that the device produces.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InputDeviceCodec
+     */
+
+    public InputDeviceUhdSettings withCodec(String codec) {
+        setCodec(codec);
+        return this;
+    }
+
+    /**
+     * The codec for the video that the device produces.
+     * 
+     * @param codec
+     *        The codec for the video that the device produces.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InputDeviceCodec
+     */
+
+    public InputDeviceUhdSettings withCodec(InputDeviceCodec codec) {
+        this.codec = codec.toString();
+        return this;
+    }
+
+    /**
+     * Information about the MediaConnect flow attached to the device. Returned only if the outputType is
+     * MEDIACONNECT_FLOW.
+     * 
+     * @param mediaconnectSettings
+     *        Information about the MediaConnect flow attached to the device. Returned only if the outputType is
+     *        MEDIACONNECT_FLOW.
+     */
+
+    public void setMediaconnectSettings(InputDeviceMediaConnectSettings mediaconnectSettings) {
+        this.mediaconnectSettings = mediaconnectSettings;
+    }
+
+    /**
+     * Information about the MediaConnect flow attached to the device. Returned only if the outputType is
+     * MEDIACONNECT_FLOW.
+     * 
+     * @return Information about the MediaConnect flow attached to the device. Returned only if the outputType is
+     *         MEDIACONNECT_FLOW.
+     */
+
+    public InputDeviceMediaConnectSettings getMediaconnectSettings() {
+        return this.mediaconnectSettings;
+    }
+
+    /**
+     * Information about the MediaConnect flow attached to the device. Returned only if the outputType is
+     * MEDIACONNECT_FLOW.
+     * 
+     * @param mediaconnectSettings
+     *        Information about the MediaConnect flow attached to the device. Returned only if the outputType is
+     *        MEDIACONNECT_FLOW.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InputDeviceUhdSettings withMediaconnectSettings(InputDeviceMediaConnectSettings mediaconnectSettings) {
+        setMediaconnectSettings(mediaconnectSettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -452,7 +550,11 @@ public class InputDeviceUhdSettings implements Serializable, Cloneable, Structur
         if (getWidth() != null)
             sb.append("Width: ").append(getWidth()).append(",");
         if (getLatencyMs() != null)
-            sb.append("LatencyMs: ").append(getLatencyMs());
+            sb.append("LatencyMs: ").append(getLatencyMs()).append(",");
+        if (getCodec() != null)
+            sb.append("Codec: ").append(getCodec()).append(",");
+        if (getMediaconnectSettings() != null)
+            sb.append("MediaconnectSettings: ").append(getMediaconnectSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -503,6 +605,14 @@ public class InputDeviceUhdSettings implements Serializable, Cloneable, Structur
             return false;
         if (other.getLatencyMs() != null && other.getLatencyMs().equals(this.getLatencyMs()) == false)
             return false;
+        if (other.getCodec() == null ^ this.getCodec() == null)
+            return false;
+        if (other.getCodec() != null && other.getCodec().equals(this.getCodec()) == false)
+            return false;
+        if (other.getMediaconnectSettings() == null ^ this.getMediaconnectSettings() == null)
+            return false;
+        if (other.getMediaconnectSettings() != null && other.getMediaconnectSettings().equals(this.getMediaconnectSettings()) == false)
+            return false;
         return true;
     }
 
@@ -520,6 +630,8 @@ public class InputDeviceUhdSettings implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getScanType() == null) ? 0 : getScanType().hashCode());
         hashCode = prime * hashCode + ((getWidth() == null) ? 0 : getWidth().hashCode());
         hashCode = prime * hashCode + ((getLatencyMs() == null) ? 0 : getLatencyMs().hashCode());
+        hashCode = prime * hashCode + ((getCodec() == null) ? 0 : getCodec().hashCode());
+        hashCode = prime * hashCode + ((getMediaconnectSettings() == null) ? 0 : getMediaconnectSettings().hashCode());
         return hashCode;
     }
 

@@ -1221,8 +1221,9 @@ public interface AmazonConfig {
      * </p>
      * <note>
      * <p>
-     * Currently, you can specify only one configuration recorder per region in your account. For a detailed status of
-     * recording events over time, add your Config events to Amazon CloudWatch metrics and use CloudWatch metrics.
+     * &gt;You can specify only one configuration recorder for each Amazon Web Services Region for each account. For a
+     * detailed status of recording events over time, add your Config events to Amazon CloudWatch metrics and use
+     * CloudWatch metrics.
      * </p>
      * </note>
      * 
@@ -1252,7 +1253,7 @@ public interface AmazonConfig {
      * </p>
      * <note>
      * <p>
-     * Currently, you can specify only one configuration recorder per region in your account.
+     * You can specify only one configuration recorder for each Amazon Web Services Region for each account.
      * </p>
      * </note>
      * 
@@ -2426,6 +2427,14 @@ public interface AmazonConfig {
     GetOrganizationCustomRulePolicyResult getOrganizationCustomRulePolicy(GetOrganizationCustomRulePolicyRequest getOrganizationCustomRulePolicyRequest);
 
     /**
+     * <important>
+     * <p>
+     * For accurate reporting on the compliance status, you must record the <code>AWS::Config::ResourceCompliance</code>
+     * resource type. For more information, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html">Selecting Which Resources
+     * Config Records</a>.
+     * </p>
+     * </important>
      * <p>
      * Returns a list of <code>ConfigurationItems</code> for the specified resource. The list contains details about
      * each state of the resource during the specified time interval. If you specified a retention period to retain your
@@ -2943,7 +2952,8 @@ public interface AmazonConfig {
      *         For <code>PutConfigurationAggregator</code> API, this exception is thrown if the number of accounts and
      *         aggregators exceeds the limit.
      * @throws InvalidRoleException
-     *         You have provided a null or empty role ARN.
+     *         You have provided a null or empty Amazon Resource Name (ARN) for the IAM role assumed by Config and used
+     *         by the configuration recorder.
      * @throws OrganizationAccessDeniedException
      *         For <code>PutConfigurationAggregator</code> API, you can see this exception for the following reasons:
      *         </p>
@@ -2991,19 +3001,21 @@ public interface AmazonConfig {
 
     /**
      * <p>
-     * Creates a new configuration recorder to record the selected resource configurations.
+     * Creates a new configuration recorder to record configuration changes for specified resource types.
      * </p>
      * <p>
-     * You can use this action to change the role <code>roleARN</code> or the <code>recordingGroup</code> of an existing
-     * recorder. To change the role, call the action on the existing configuration recorder and specify a role.
+     * You can also use this action to change the <code>roleARN</code> or the <code>recordingGroup</code> of an existing
+     * recorder. For more information, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/stop-start-recorder.html"> <b>Managing the
+     * Configuration Recorder</b> </a> in the <i>Config Developer Guide</i>.
      * </p>
      * <note>
      * <p>
-     * Currently, you can specify only one configuration recorder per region in your account.
+     * You can specify only one configuration recorder for each Amazon Web Services Region for each account.
      * </p>
      * <p>
-     * If <code>ConfigurationRecorder</code> does not have the <b>recordingGroup</b> parameter specified, the default is
-     * to record all supported resource types.
+     * If the configuration recorder does not have the <code>recordingGroup</code> field specified, the default is to
+     * record all supported resource types.
      * </p>
      * </note>
      * 
@@ -3011,14 +3023,54 @@ public interface AmazonConfig {
      *        The input for the <a>PutConfigurationRecorder</a> action.
      * @return Result of the PutConfigurationRecorder operation returned by the service.
      * @throws MaxNumberOfConfigurationRecordersExceededException
-     *         You have reached the limit of the number of recorders you can create.
+     *         You have reached the limit of the number of configuration recorders you can create.
      * @throws InvalidConfigurationRecorderNameException
-     *         You have provided a configuration recorder name that is not valid.
+     *         You have provided a name for the configuration recorder that is not valid.
      * @throws InvalidRoleException
-     *         You have provided a null or empty role ARN.
+     *         You have provided a null or empty Amazon Resource Name (ARN) for the IAM role assumed by Config and used
+     *         by the configuration recorder.
      * @throws InvalidRecordingGroupException
-     *         Config throws an exception if the recording group does not contain a valid list of resource types. Values
-     *         that are not valid might also be incorrectly formatted.
+     *         Indicates one of the following errors:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You have provided a combination of parameter values that is not valid. For example:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Setting the <code>allSupported</code> field of <a
+     *         href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>
+     *         to <code>true</code>, but providing a non-empty list for the <code>resourceTypes</code>field of <a
+     *         href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Setting the <code>allSupported</code> field of <a
+     *         href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>
+     *         to <code>true</code>, but also setting the <code>useOnly</code> field of <a
+     *         href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html"
+     *         >RecordingStrategy</a> to <code>EXCLUSION_BY_RESOURCE_TYPES</code>.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Every parameter is either null, false, or empty.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You have reached the limit of the number of resource types you can provide for the recording group.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You have provided resource types or a recording strategy that are not valid.
+     *         </p>
+     *         </li>
      * @sample AmazonConfig.PutConfigurationRecorder
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationRecorder"
      *      target="_top">AWS API Documentation</a>
@@ -3030,7 +3082,7 @@ public interface AmazonConfig {
      * Creates or updates a conformance pack. A conformance pack is a collection of Config rules that can be easily
      * deployed in an account and a region and across an organization. For information on how many conformance packs you
      * can have per account, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
-     * <b>Service Limits</b> </a> in the Config Developer Guide.
+     * <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.
      * </p>
      * <p>
      * This API creates a service-linked role <code>AWSServiceRoleForConfigConforms</code> in your account. The
@@ -3136,7 +3188,7 @@ public interface AmazonConfig {
      * @throws MaxNumberOfConformancePacksExceededException
      *         You have reached the limit of the number of conformance packs you can create in an account. For more
      *         information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
-     *         <b>Service Limits</b> </a> in the Config Developer Guide.
+     *         <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.
      * @sample AmazonConfig.PutConformancePack
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConformancePack" target="_top">AWS API
      *      Documentation</a>
@@ -3145,8 +3197,10 @@ public interface AmazonConfig {
 
     /**
      * <p>
-     * Creates a delivery channel object to deliver configuration information to an Amazon S3 bucket and Amazon SNS
-     * topic.
+     * Creates a delivery channel object to deliver configuration information and other compliance information to an
+     * Amazon S3 bucket and Amazon SNS topic. For more information, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/notifications-for-AWS-Config.html">Notifications
+     * that Config Sends to an Amazon SNS topic</a>.
      * </p>
      * <p>
      * Before you can create a delivery channel, you must create a configuration recorder.
@@ -3298,7 +3352,7 @@ public interface AmazonConfig {
      *         You have reached the limit of the number of organization Config rules you can create. For more
      *         information, see see <a
      *         href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b>
-     *         </a> in the Config Developer Guide.
+     *         </a> in the <i>Config Developer Guide</i>.
      * @throws ResourceInUseException
      *         You see this exception in the following cases: </p>
      *         <ul>
@@ -3445,7 +3499,7 @@ public interface AmazonConfig {
      * Deploys conformance packs across member accounts in an Amazon Web Services Organization. For information on how
      * many organization conformance packs and how many Config rules you can have per account, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in
-     * the Config Developer Guide.
+     * the <i>Config Developer Guide</i>.
      * </p>
      * <p>
      * Only a management account and a delegated administrator can call this API. When calling this API with a delegated
@@ -3481,7 +3535,7 @@ public interface AmazonConfig {
      *         You have reached the limit of the number of organization conformance packs you can create in an account.
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b>
-     *         </a> in the Config Developer Guide.
+     *         </a> in the <i>Config Developer Guide</i>.
      * @throws ResourceInUseException
      *         You see this exception in the following cases: </p>
      *         <ul>
@@ -3727,7 +3781,7 @@ public interface AmazonConfig {
      * will not be generated. For more information on the conditions that initiate the possible Config evaluation
      * results, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.html#aws-config-rules">Concepts |
-     * Config Rules</a> in the Config Developer Guide.
+     * Config Rules</a> in the <i>Config Developer Guide</i>.
      * </p>
      * </note>
      * 
@@ -3921,7 +3975,7 @@ public interface AmazonConfig {
      * @throws TooManyTagsException
      *         You have reached the limit of the number of tags you can use. For more information, see <a
      *         href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b>
-     *         </a> in the Config Developer Guide.
+     *         </a> in the <i>Config Developer Guide</i>.
      * @throws ResourceConcurrentModificationException
      *         Two users are trying to modify the same query at the same time. Wait for a moment and try again.
      * @sample AmazonConfig.PutStoredQuery
@@ -3939,7 +3993,7 @@ public interface AmazonConfig {
      * <p>
      * For more information about query components, see the <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/query-components.html"> <b>Query Components</b>
-     * </a> section in the Config Developer Guide.
+     * </a> section in the <i>Config Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -4283,7 +4337,7 @@ public interface AmazonConfig {
      * @throws TooManyTagsException
      *         You have reached the limit of the number of tags you can use. For more information, see <a
      *         href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b>
-     *         </a> in the Config Developer Guide.
+     *         </a> in the <i>Config Developer Guide</i>.
      * @sample AmazonConfig.TagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/TagResource" target="_top">AWS API
      *      Documentation</a>

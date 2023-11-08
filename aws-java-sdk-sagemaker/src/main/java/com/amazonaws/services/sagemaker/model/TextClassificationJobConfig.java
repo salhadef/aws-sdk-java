@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Stores the configuration information for the text classification problem of an AutoML job using the V2 API.
+ * The collection of settings used by an AutoML job V2 for the text classification problem type.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TextClassificationJobConfig"

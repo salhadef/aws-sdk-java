@@ -111,7 +111,15 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>FifoTopic</code> – When this is set to <code>true</code>, a FIFO topic is created.
+     * <code>ArchivePolicy</code> – Adds or updates an inline policy document to archive messages stored in the
+     * specified Amazon SNS topic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BeginningArchiveTime</code> – The earliest starting point at which a message in the topic’s archive can be
+     * replayed from. This point in time is based on the configured message retention period set by the topic’s message
+     * archiving policy.
      * </p>
      * </li>
      * <li>
@@ -343,7 +351,15 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>FifoTopic</code> – When this is set to <code>true</code>, a FIFO topic is created.
+     * <code>ArchivePolicy</code> – Adds or updates an inline policy document to archive messages stored in the
+     * specified Amazon SNS topic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BeginningArchiveTime</code> – The earliest starting point at which a message in the topic’s archive can be
+     * replayed from. This point in time is based on the configured message retention period set by the topic’s message
+     * archiving policy.
      * </p>
      * </li>
      * <li>
@@ -442,7 +458,15 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>FifoTopic</code> – When this is set to <code>true</code>, a FIFO topic is created.
+     *         <code>ArchivePolicy</code> – Adds or updates an inline policy document to archive messages stored in the
+     *         specified Amazon SNS topic.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>BeginningArchiveTime</code> – The earliest starting point at which a message in the topic’s archive
+     *         can be replayed from. This point in time is based on the configured message retention period set by the
+     *         topic’s message archiving policy.
      *         </p>
      *         </li>
      *         <li>
@@ -550,7 +574,15 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>FifoTopic</code> – When this is set to <code>true</code>, a FIFO topic is created.
+     * <code>ArchivePolicy</code> – Adds or updates an inline policy document to archive messages stored in the
+     * specified Amazon SNS topic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BeginningArchiveTime</code> – The earliest starting point at which a message in the topic’s archive can be
+     * replayed from. This point in time is based on the configured message retention period set by the topic’s message
+     * archiving policy.
      * </p>
      * </li>
      * <li>
@@ -650,7 +682,15 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>FifoTopic</code> – When this is set to <code>true</code>, a FIFO topic is created.
+     *        <code>ArchivePolicy</code> – Adds or updates an inline policy document to archive messages stored in the
+     *        specified Amazon SNS topic.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BeginningArchiveTime</code> – The earliest starting point at which a message in the topic’s archive
+     *        can be replayed from. This point in time is based on the configured message retention period set by the
+     *        topic’s message archiving policy.
      *        </p>
      *        </li>
      *        <li>
@@ -755,7 +795,15 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>FifoTopic</code> – When this is set to <code>true</code>, a FIFO topic is created.
+     * <code>ArchivePolicy</code> – Adds or updates an inline policy document to archive messages stored in the
+     * specified Amazon SNS topic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BeginningArchiveTime</code> – The earliest starting point at which a message in the topic’s archive can be
+     * replayed from. This point in time is based on the configured message retention period set by the topic’s message
+     * archiving policy.
      * </p>
      * </li>
      * <li>
@@ -855,7 +903,15 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>FifoTopic</code> – When this is set to <code>true</code>, a FIFO topic is created.
+     *        <code>ArchivePolicy</code> – Adds or updates an inline policy document to archive messages stored in the
+     *        specified Amazon SNS topic.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BeginningArchiveTime</code> – The earliest starting point at which a message in the topic’s archive
+     *        can be replayed from. This point in time is based on the configured message retention period set by the
+     *        topic’s message archiving policy.
      *        </p>
      *        </li>
      *        <li>

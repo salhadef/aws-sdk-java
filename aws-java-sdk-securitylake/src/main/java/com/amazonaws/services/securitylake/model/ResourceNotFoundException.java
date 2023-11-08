@@ -25,10 +25,10 @@ public class ResourceNotFoundException extends com.amazonaws.services.securityla
 
     /**
      * <p>
-     * The ID of the resource for which the type of resource could not be found.
+     * The name of the resource that could not be found.
      * </p>
      */
-    private String resourceId;
+    private String resourceName;
     /**
      * <p>
      * The type of the resource that could not be found.
@@ -48,43 +48,43 @@ public class ResourceNotFoundException extends com.amazonaws.services.securityla
 
     /**
      * <p>
-     * The ID of the resource for which the type of resource could not be found.
+     * The name of the resource that could not be found.
      * </p>
      * 
-     * @param resourceId
-     *        The ID of the resource for which the type of resource could not be found.
+     * @param resourceName
+     *        The name of the resource that could not be found.
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
-    public void setResourceId(String resourceId) {
-        this.resourceId = resourceId;
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
+    public void setResourceName(String resourceName) {
+        this.resourceName = resourceName;
     }
 
     /**
      * <p>
-     * The ID of the resource for which the type of resource could not be found.
+     * The name of the resource that could not be found.
      * </p>
      * 
-     * @return The ID of the resource for which the type of resource could not be found.
+     * @return The name of the resource that could not be found.
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
-    public String getResourceId() {
-        return this.resourceId;
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
+    public String getResourceName() {
+        return this.resourceName;
     }
 
     /**
      * <p>
-     * The ID of the resource for which the type of resource could not be found.
+     * The name of the resource that could not be found.
      * </p>
      * 
-     * @param resourceId
-     *        The ID of the resource for which the type of resource could not be found.
+     * @param resourceName
+     *        The name of the resource that could not be found.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ResourceNotFoundException withResourceId(String resourceId) {
-        setResourceId(resourceId);
+    public ResourceNotFoundException withResourceName(String resourceName) {
+        setResourceName(resourceName);
         return this;
     }
 

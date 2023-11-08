@@ -37,6 +37,8 @@ public class EngineConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultExecutorDpuSize").build();
     private static final MarshallingInfo<Map> ADDITIONALCONFIGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdditionalConfigs").build();
+    private static final MarshallingInfo<Map> SPARKPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SparkProperties").build();
 
     private static final EngineConfigurationMarshaller instance = new EngineConfigurationMarshaller();
 
@@ -58,6 +60,7 @@ public class EngineConfigurationMarshaller {
             protocolMarshaller.marshall(engineConfiguration.getMaxConcurrentDpus(), MAXCONCURRENTDPUS_BINDING);
             protocolMarshaller.marshall(engineConfiguration.getDefaultExecutorDpuSize(), DEFAULTEXECUTORDPUSIZE_BINDING);
             protocolMarshaller.marshall(engineConfiguration.getAdditionalConfigs(), ADDITIONALCONFIGS_BINDING);
+            protocolMarshaller.marshall(engineConfiguration.getSparkProperties(), SPARKPROPERTIES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

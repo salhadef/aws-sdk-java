@@ -27,6 +27,12 @@ public class ListWavesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
+     * Request account ID.
+     * </p>
+     */
+    private String accountID;
+    /**
+     * <p>
      * Waves list filters.
      * </p>
      */
@@ -43,6 +49,46 @@ public class ListWavesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      */
     private String nextToken;
+
+    /**
+     * <p>
+     * Request account ID.
+     * </p>
+     * 
+     * @param accountID
+     *        Request account ID.
+     */
+
+    public void setAccountID(String accountID) {
+        this.accountID = accountID;
+    }
+
+    /**
+     * <p>
+     * Request account ID.
+     * </p>
+     * 
+     * @return Request account ID.
+     */
+
+    public String getAccountID() {
+        return this.accountID;
+    }
+
+    /**
+     * <p>
+     * Request account ID.
+     * </p>
+     * 
+     * @param accountID
+     *        Request account ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListWavesRequest withAccountID(String accountID) {
+        setAccountID(accountID);
+        return this;
+    }
 
     /**
      * <p>
@@ -176,6 +222,8 @@ public class ListWavesRequest extends com.amazonaws.AmazonWebServiceRequest impl
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAccountID() != null)
+            sb.append("AccountID: ").append(getAccountID()).append(",");
         if (getFilters() != null)
             sb.append("Filters: ").append(getFilters()).append(",");
         if (getMaxResults() != null)
@@ -196,6 +244,10 @@ public class ListWavesRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (obj instanceof ListWavesRequest == false)
             return false;
         ListWavesRequest other = (ListWavesRequest) obj;
+        if (other.getAccountID() == null ^ this.getAccountID() == null)
+            return false;
+        if (other.getAccountID() != null && other.getAccountID().equals(this.getAccountID()) == false)
+            return false;
         if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
         if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
@@ -216,6 +268,7 @@ public class ListWavesRequest extends com.amazonaws.AmazonWebServiceRequest impl
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAccountID() == null) ? 0 : getAccountID().hashCode());
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());

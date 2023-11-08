@@ -19,9 +19,30 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A description of the data repository task. You use data repository tasks to perform bulk transfer operations between
- * an Amazon FSx for Lustre file system and a linked data repository. An Amazon File Cache resource uses a task to
- * automatically release files from the cache.
+ * A description of the data repository task.
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * You use import and export data repository tasks to perform bulk transfer operations between an Amazon FSx for Lustre
+ * file system and a linked data repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * You use release data repository tasks to release files that have been exported to a linked S3 bucket from your Amazon
+ * FSx for Lustre file system.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * An Amazon File Cache resource uses a task to automatically release files from the cache.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * To learn more about data repository tasks, see <a
+ * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-repository-tasks.html">Data Repository Tasks</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DataRepositoryTask" target="_top">AWS API
@@ -103,12 +124,13 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
-     * <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.
+     * <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks release files in your Amazon FSx for Lustre file system that have
+     * been exported to a linked S3 bucket and that meet your specified release criteria.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks are not supported.
+     * <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.
      * </p>
      * </li>
      * </ul>
@@ -176,6 +198,13 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private String fileCacheId;
+    /**
+     * <p>
+     * The configuration that specifies the last accessed time criteria for files that will be released from an Amazon
+     * FSx for Lustre file system.
+     * </p>
+     */
+    private ReleaseConfiguration releaseConfiguration;
 
     /**
      * <p>
@@ -631,12 +660,13 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
-     * <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.
+     * <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks release files in your Amazon FSx for Lustre file system that have
+     * been exported to a linked S3 bucket and that meet your specified release criteria.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks are not supported.
+     * <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.
      * </p>
      * </li>
      * </ul>
@@ -658,12 +688,13 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
      *        </li>
      *        <li>
      *        <p>
-     *        <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.
+     *        <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks release files in your Amazon FSx for Lustre file system
+     *        that have been exported to a linked S3 bucket and that meet your specified release criteria.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks are not supported.
+     *        <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.
      *        </p>
      *        </li>
      * @see DataRepositoryTaskType
@@ -692,12 +723,13 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
-     * <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.
+     * <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks release files in your Amazon FSx for Lustre file system that have
+     * been exported to a linked S3 bucket and that meet your specified release criteria.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks are not supported.
+     * <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.
      * </p>
      * </li>
      * </ul>
@@ -718,12 +750,13 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
      *         </li>
      *         <li>
      *         <p>
-     *         <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.
+     *         <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks release files in your Amazon FSx for Lustre file system
+     *         that have been exported to a linked S3 bucket and that meet your specified release criteria.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks are not supported.
+     *         <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.
      *         </p>
      *         </li>
      * @see DataRepositoryTaskType
@@ -752,12 +785,13 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
-     * <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.
+     * <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks release files in your Amazon FSx for Lustre file system that have
+     * been exported to a linked S3 bucket and that meet your specified release criteria.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks are not supported.
+     * <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.
      * </p>
      * </li>
      * </ul>
@@ -779,12 +813,13 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
      *        </li>
      *        <li>
      *        <p>
-     *        <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.
+     *        <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks release files in your Amazon FSx for Lustre file system
+     *        that have been exported to a linked S3 bucket and that meet your specified release criteria.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks are not supported.
+     *        <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -815,12 +850,13 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
-     * <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.
+     * <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks release files in your Amazon FSx for Lustre file system that have
+     * been exported to a linked S3 bucket and that meet your specified release criteria.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks are not supported.
+     * <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.
      * </p>
      * </li>
      * </ul>
@@ -842,12 +878,13 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
      *        </li>
      *        <li>
      *        <p>
-     *        <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.
+     *        <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks release files in your Amazon FSx for Lustre file system
+     *        that have been exported to a linked S3 bucket and that meet your specified release criteria.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks are not supported.
+     *        <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1381,6 +1418,52 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The configuration that specifies the last accessed time criteria for files that will be released from an Amazon
+     * FSx for Lustre file system.
+     * </p>
+     * 
+     * @param releaseConfiguration
+     *        The configuration that specifies the last accessed time criteria for files that will be released from an
+     *        Amazon FSx for Lustre file system.
+     */
+
+    public void setReleaseConfiguration(ReleaseConfiguration releaseConfiguration) {
+        this.releaseConfiguration = releaseConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration that specifies the last accessed time criteria for files that will be released from an Amazon
+     * FSx for Lustre file system.
+     * </p>
+     * 
+     * @return The configuration that specifies the last accessed time criteria for files that will be released from an
+     *         Amazon FSx for Lustre file system.
+     */
+
+    public ReleaseConfiguration getReleaseConfiguration() {
+        return this.releaseConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration that specifies the last accessed time criteria for files that will be released from an Amazon
+     * FSx for Lustre file system.
+     * </p>
+     * 
+     * @param releaseConfiguration
+     *        The configuration that specifies the last accessed time criteria for files that will be released from an
+     *        Amazon FSx for Lustre file system.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataRepositoryTask withReleaseConfiguration(ReleaseConfiguration releaseConfiguration) {
+        setReleaseConfiguration(releaseConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1421,7 +1504,9 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
         if (getCapacityToRelease() != null)
             sb.append("CapacityToRelease: ").append(getCapacityToRelease()).append(",");
         if (getFileCacheId() != null)
-            sb.append("FileCacheId: ").append(getFileCacheId());
+            sb.append("FileCacheId: ").append(getFileCacheId()).append(",");
+        if (getReleaseConfiguration() != null)
+            sb.append("ReleaseConfiguration: ").append(getReleaseConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -1496,6 +1581,10 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getFileCacheId() != null && other.getFileCacheId().equals(this.getFileCacheId()) == false)
             return false;
+        if (other.getReleaseConfiguration() == null ^ this.getReleaseConfiguration() == null)
+            return false;
+        if (other.getReleaseConfiguration() != null && other.getReleaseConfiguration().equals(this.getReleaseConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -1519,6 +1608,7 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getReport() == null) ? 0 : getReport().hashCode());
         hashCode = prime * hashCode + ((getCapacityToRelease() == null) ? 0 : getCapacityToRelease().hashCode());
         hashCode = prime * hashCode + ((getFileCacheId() == null) ? 0 : getFileCacheId().hashCode());
+        hashCode = prime * hashCode + ((getReleaseConfiguration() == null) ? 0 : getReleaseConfiguration().hashCode());
         return hashCode;
     }
 

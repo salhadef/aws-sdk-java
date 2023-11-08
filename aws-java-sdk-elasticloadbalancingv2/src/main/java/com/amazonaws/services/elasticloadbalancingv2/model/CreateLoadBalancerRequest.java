@@ -87,7 +87,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
     private java.util.List<SubnetMapping> subnetMappings;
     /**
      * <p>
-     * [Application Load Balancers] The IDs of the security groups for the load balancer.
+     * [Application Load Balancers and Network Load Balancers] The IDs of the security groups for the load balancer.
      * </p>
      */
     private java.util.List<String> securityGroups;
@@ -638,10 +638,11 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * [Application Load Balancers] The IDs of the security groups for the load balancer.
+     * [Application Load Balancers and Network Load Balancers] The IDs of the security groups for the load balancer.
      * </p>
      * 
-     * @return [Application Load Balancers] The IDs of the security groups for the load balancer.
+     * @return [Application Load Balancers and Network Load Balancers] The IDs of the security groups for the load
+     *         balancer.
      */
 
     public java.util.List<String> getSecurityGroups() {
@@ -650,11 +651,12 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * [Application Load Balancers] The IDs of the security groups for the load balancer.
+     * [Application Load Balancers and Network Load Balancers] The IDs of the security groups for the load balancer.
      * </p>
      * 
      * @param securityGroups
-     *        [Application Load Balancers] The IDs of the security groups for the load balancer.
+     *        [Application Load Balancers and Network Load Balancers] The IDs of the security groups for the load
+     *        balancer.
      */
 
     public void setSecurityGroups(java.util.Collection<String> securityGroups) {
@@ -668,7 +670,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * [Application Load Balancers] The IDs of the security groups for the load balancer.
+     * [Application Load Balancers and Network Load Balancers] The IDs of the security groups for the load balancer.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -677,7 +679,8 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param securityGroups
-     *        [Application Load Balancers] The IDs of the security groups for the load balancer.
+     *        [Application Load Balancers and Network Load Balancers] The IDs of the security groups for the load
+     *        balancer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -693,11 +696,12 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * [Application Load Balancers] The IDs of the security groups for the load balancer.
+     * [Application Load Balancers and Network Load Balancers] The IDs of the security groups for the load balancer.
      * </p>
      * 
      * @param securityGroups
-     *        [Application Load Balancers] The IDs of the security groups for the load balancer.
+     *        [Application Load Balancers and Network Load Balancers] The IDs of the security groups for the load
+     *        balancer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -68,6 +68,12 @@ public class OrderJsonUnmarshaller implements Unmarshaller<Order, JsonUnmarshall
                     context.nextToken();
                     order.setOrderArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("orderedResources", targetDepth)) {
+                    context.nextToken();
+                    order.setOrderedResources(new ListUnmarshaller<OrderedResourceDefinition>(OrderedResourceDefinitionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("shippingAddress", targetDepth)) {
                     context.nextToken();
                     order.setShippingAddress(AddressJsonUnmarshaller.getInstance().unmarshall(context));

@@ -32,7 +32,7 @@ public class CreateLabelGroupResult extends com.amazonaws.AmazonWebServiceResult
     private String labelGroupName;
     /**
      * <p>
-     * The ARN of the label group that you have created.
+     * The Amazon Resource Name (ARN) of the label group that you have created.
      * </p>
      */
     private String labelGroupArn;
@@ -85,11 +85,11 @@ public class CreateLabelGroupResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The ARN of the label group that you have created.
+     * The Amazon Resource Name (ARN) of the label group that you have created.
      * </p>
      * 
      * @param labelGroupArn
-     *        The ARN of the label group that you have created.
+     *        The Amazon Resource Name (ARN) of the label group that you have created.
      */
 
     public void setLabelGroupArn(String labelGroupArn) {
@@ -98,10 +98,10 @@ public class CreateLabelGroupResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The ARN of the label group that you have created.
+     * The Amazon Resource Name (ARN) of the label group that you have created.
      * </p>
      * 
-     * @return The ARN of the label group that you have created.
+     * @return The Amazon Resource Name (ARN) of the label group that you have created.
      */
 
     public String getLabelGroupArn() {
@@ -110,11 +110,11 @@ public class CreateLabelGroupResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The ARN of the label group that you have created.
+     * The Amazon Resource Name (ARN) of the label group that you have created.
      * </p>
      * 
      * @param labelGroupArn
-     *        The ARN of the label group that you have created.
+     *        The Amazon Resource Name (ARN) of the label group that you have created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

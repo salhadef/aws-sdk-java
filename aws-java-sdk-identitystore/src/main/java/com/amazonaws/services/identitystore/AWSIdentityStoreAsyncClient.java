@@ -26,14 +26,19 @@ import java.util.concurrent.ExecutorService;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * The Identity Store service used by AWS IAM Identity Center (successor to AWS Single Sign-On) provides a single place
- * to retrieve all of your identities (users and groups). For more information, see the <a
+ * The Identity Store service used by IAM Identity Center provides a single place to retrieve all of your identities
+ * (users and groups). For more information, see the <a
  * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">IAM Identity Center User Guide</a>.
  * </p>
- * 
- * <pre>
- * <code> &lt;note&gt; &lt;p&gt;Although AWS Single Sign-On was renamed, the &lt;code&gt;sso&lt;/code&gt; and &lt;code&gt;identitystore&lt;/code&gt; API namespaces will continue to retain their original name for backward compatibility purposes. For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html#renamed&quot;&gt;IAM Identity Center rename&lt;/a&gt;.&lt;/p&gt; &lt;/note&gt; &lt;p&gt;This reference guide describes the identity store operations that you can call programatically and includes detailed information about data types and errors.&lt;/p&gt; </code>
- * </pre>
+ * <p>
+ * This reference guide describes the identity store operations that you can call programmatically and includes detailed
+ * information about data types and errors.
+ * </p>
+ * <note>
+ * <p>
+ * IAM Identity Center uses the <code>sso</code> and <code>identitystore</code> API namespaces.
+ * </p>
+ * </note>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

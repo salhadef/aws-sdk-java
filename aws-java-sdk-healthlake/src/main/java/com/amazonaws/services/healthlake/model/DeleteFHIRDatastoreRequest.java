@@ -27,18 +27,18 @@ public class DeleteFHIRDatastoreRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS-generated ID for the Data Store to be deleted.
+     * The AWS-generated ID for the data store to be deleted.
      * </p>
      */
     private String datastoreId;
 
     /**
      * <p>
-     * The AWS-generated ID for the Data Store to be deleted.
+     * The AWS-generated ID for the data store to be deleted.
      * </p>
      * 
      * @param datastoreId
-     *        The AWS-generated ID for the Data Store to be deleted.
+     *        The AWS-generated ID for the data store to be deleted.
      */
 
     public void setDatastoreId(String datastoreId) {
@@ -47,10 +47,10 @@ public class DeleteFHIRDatastoreRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS-generated ID for the Data Store to be deleted.
+     * The AWS-generated ID for the data store to be deleted.
      * </p>
      * 
-     * @return The AWS-generated ID for the Data Store to be deleted.
+     * @return The AWS-generated ID for the data store to be deleted.
      */
 
     public String getDatastoreId() {
@@ -59,11 +59,11 @@ public class DeleteFHIRDatastoreRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS-generated ID for the Data Store to be deleted.
+     * The AWS-generated ID for the data store to be deleted.
      * </p>
      * 
      * @param datastoreId
-     *        The AWS-generated ID for the Data Store to be deleted.
+     *        The AWS-generated ID for the data store to be deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

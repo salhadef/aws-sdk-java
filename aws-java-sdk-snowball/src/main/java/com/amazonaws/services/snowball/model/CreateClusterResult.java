@@ -32,7 +32,7 @@ public class CreateClusterResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * List of jobs created for this cluster. For syntax, see <a
-     * href="https://docs.aws.amazon.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax"
+     * href="http://amazonaws.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax"
      * >ListJobsResult$JobListEntries</a> in this guide.
      * </p>
      */
@@ -81,12 +81,12 @@ public class CreateClusterResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * List of jobs created for this cluster. For syntax, see <a
-     * href="https://docs.aws.amazon.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax"
+     * href="http://amazonaws.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax"
      * >ListJobsResult$JobListEntries</a> in this guide.
      * </p>
      * 
      * @return List of jobs created for this cluster. For syntax, see <a
-     *         href="https://docs.aws.amazon.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax"
+     *         href="http://amazonaws.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax"
      *         >ListJobsResult$JobListEntries</a> in this guide.
      */
 
@@ -97,13 +97,13 @@ public class CreateClusterResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * List of jobs created for this cluster. For syntax, see <a
-     * href="https://docs.aws.amazon.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax"
+     * href="http://amazonaws.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax"
      * >ListJobsResult$JobListEntries</a> in this guide.
      * </p>
      * 
      * @param jobListEntries
-     *        List of jobs created for this cluster. For syntax, see <a href=
-     *        "https://docs.aws.amazon.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax"
+     *        List of jobs created for this cluster. For syntax, see <a
+     *        href="http://amazonaws.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax"
      *        >ListJobsResult$JobListEntries</a> in this guide.
      */
 
@@ -119,7 +119,7 @@ public class CreateClusterResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * List of jobs created for this cluster. For syntax, see <a
-     * href="https://docs.aws.amazon.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax"
+     * href="http://amazonaws.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax"
      * >ListJobsResult$JobListEntries</a> in this guide.
      * </p>
      * <p>
@@ -129,8 +129,8 @@ public class CreateClusterResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * 
      * @param jobListEntries
-     *        List of jobs created for this cluster. For syntax, see <a href=
-     *        "https://docs.aws.amazon.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax"
+     *        List of jobs created for this cluster. For syntax, see <a
+     *        href="http://amazonaws.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax"
      *        >ListJobsResult$JobListEntries</a> in this guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -148,13 +148,13 @@ public class CreateClusterResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * List of jobs created for this cluster. For syntax, see <a
-     * href="https://docs.aws.amazon.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax"
+     * href="http://amazonaws.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax"
      * >ListJobsResult$JobListEntries</a> in this guide.
      * </p>
      * 
      * @param jobListEntries
-     *        List of jobs created for this cluster. For syntax, see <a href=
-     *        "https://docs.aws.amazon.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax"
+     *        List of jobs created for this cluster. For syntax, see <a
+     *        href="http://amazonaws.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax"
      *        >ListJobsResult$JobListEntries</a> in this guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

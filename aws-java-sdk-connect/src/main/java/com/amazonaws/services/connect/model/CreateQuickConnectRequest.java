@@ -35,7 +35,7 @@ public class CreateQuickConnectRequest extends com.amazonaws.AmazonWebServiceReq
     private String instanceId;
     /**
      * <p>
-     * The name of the quick connect.
+     * A unique name of the quick connect.
      * </p>
      */
     private String name;
@@ -113,11 +113,11 @@ public class CreateQuickConnectRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the quick connect.
+     * A unique name of the quick connect.
      * </p>
      * 
      * @param name
-     *        The name of the quick connect.
+     *        A unique name of the quick connect.
      */
 
     public void setName(String name) {
@@ -126,10 +126,10 @@ public class CreateQuickConnectRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the quick connect.
+     * A unique name of the quick connect.
      * </p>
      * 
-     * @return The name of the quick connect.
+     * @return A unique name of the quick connect.
      */
 
     public String getName() {
@@ -138,11 +138,11 @@ public class CreateQuickConnectRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the quick connect.
+     * A unique name of the quick connect.
      * </p>
      * 
      * @param name
-     *        The name of the quick connect.
+     *        A unique name of the quick connect.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

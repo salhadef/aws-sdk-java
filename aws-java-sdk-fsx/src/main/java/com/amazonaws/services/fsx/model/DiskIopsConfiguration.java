@@ -19,10 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP or Amazon FSx for
- * OpenZFS file system. The default is 3 IOPS per GB of storage capacity, but you can provision additional IOPS per GB
- * of storage. The configuration consists of the total number of provisioned SSD IOPS and how the amount was provisioned
- * (by the customer or by the system).
+ * The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP, Amazon FSx for
+ * Windows File Server, or FSx for OpenZFS file system. By default, Amazon FSx automatically provisions 3 IOPS per GB of
+ * storage capacity. You can provision additional IOPS per GB of storage. The configuration consists of the total number
+ * of provisioned SSD IOPS and how it is was provisioned, or the mode (by the customer or by Amazon FSx).
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DiskIopsConfiguration" target="_top">AWS API
@@ -33,8 +33,8 @@ public class DiskIopsConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Specifies whether the number of IOPS for the file system is using the system default (<code>AUTOMATIC</code>) or
-     * was provisioned by the customer (<code>USER_PROVISIONED</code>).
+     * Specifies whether the file system is using the <code>AUTOMATIC</code> setting of SSD IOPS of 3 IOPS per GB of
+     * storage capacity, , or if it using a <code>USER_PROVISIONED</code> value.
      * </p>
      */
     private String mode;
@@ -47,13 +47,13 @@ public class DiskIopsConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Specifies whether the number of IOPS for the file system is using the system default (<code>AUTOMATIC</code>) or
-     * was provisioned by the customer (<code>USER_PROVISIONED</code>).
+     * Specifies whether the file system is using the <code>AUTOMATIC</code> setting of SSD IOPS of 3 IOPS per GB of
+     * storage capacity, , or if it using a <code>USER_PROVISIONED</code> value.
      * </p>
      * 
      * @param mode
-     *        Specifies whether the number of IOPS for the file system is using the system default (
-     *        <code>AUTOMATIC</code>) or was provisioned by the customer (<code>USER_PROVISIONED</code>).
+     *        Specifies whether the file system is using the <code>AUTOMATIC</code> setting of SSD IOPS of 3 IOPS per GB
+     *        of storage capacity, , or if it using a <code>USER_PROVISIONED</code> value.
      * @see DiskIopsConfigurationMode
      */
 
@@ -63,12 +63,12 @@ public class DiskIopsConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Specifies whether the number of IOPS for the file system is using the system default (<code>AUTOMATIC</code>) or
-     * was provisioned by the customer (<code>USER_PROVISIONED</code>).
+     * Specifies whether the file system is using the <code>AUTOMATIC</code> setting of SSD IOPS of 3 IOPS per GB of
+     * storage capacity, , or if it using a <code>USER_PROVISIONED</code> value.
      * </p>
      * 
-     * @return Specifies whether the number of IOPS for the file system is using the system default (
-     *         <code>AUTOMATIC</code>) or was provisioned by the customer (<code>USER_PROVISIONED</code>).
+     * @return Specifies whether the file system is using the <code>AUTOMATIC</code> setting of SSD IOPS of 3 IOPS per
+     *         GB of storage capacity, , or if it using a <code>USER_PROVISIONED</code> value.
      * @see DiskIopsConfigurationMode
      */
 
@@ -78,13 +78,13 @@ public class DiskIopsConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Specifies whether the number of IOPS for the file system is using the system default (<code>AUTOMATIC</code>) or
-     * was provisioned by the customer (<code>USER_PROVISIONED</code>).
+     * Specifies whether the file system is using the <code>AUTOMATIC</code> setting of SSD IOPS of 3 IOPS per GB of
+     * storage capacity, , or if it using a <code>USER_PROVISIONED</code> value.
      * </p>
      * 
      * @param mode
-     *        Specifies whether the number of IOPS for the file system is using the system default (
-     *        <code>AUTOMATIC</code>) or was provisioned by the customer (<code>USER_PROVISIONED</code>).
+     *        Specifies whether the file system is using the <code>AUTOMATIC</code> setting of SSD IOPS of 3 IOPS per GB
+     *        of storage capacity, , or if it using a <code>USER_PROVISIONED</code> value.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DiskIopsConfigurationMode
      */
@@ -96,13 +96,13 @@ public class DiskIopsConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Specifies whether the number of IOPS for the file system is using the system default (<code>AUTOMATIC</code>) or
-     * was provisioned by the customer (<code>USER_PROVISIONED</code>).
+     * Specifies whether the file system is using the <code>AUTOMATIC</code> setting of SSD IOPS of 3 IOPS per GB of
+     * storage capacity, , or if it using a <code>USER_PROVISIONED</code> value.
      * </p>
      * 
      * @param mode
-     *        Specifies whether the number of IOPS for the file system is using the system default (
-     *        <code>AUTOMATIC</code>) or was provisioned by the customer (<code>USER_PROVISIONED</code>).
+     *        Specifies whether the file system is using the <code>AUTOMATIC</code> setting of SSD IOPS of 3 IOPS per GB
+     *        of storage capacity, , or if it using a <code>USER_PROVISIONED</code> value.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DiskIopsConfigurationMode
      */

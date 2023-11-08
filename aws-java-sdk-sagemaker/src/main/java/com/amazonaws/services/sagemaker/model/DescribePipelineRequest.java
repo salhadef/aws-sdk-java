@@ -27,18 +27,18 @@ public class DescribePipelineRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the pipeline to describe.
+     * The name or Amazon Resource Name (ARN) of the pipeline to describe.
      * </p>
      */
     private String pipelineName;
 
     /**
      * <p>
-     * The name of the pipeline to describe.
+     * The name or Amazon Resource Name (ARN) of the pipeline to describe.
      * </p>
      * 
      * @param pipelineName
-     *        The name of the pipeline to describe.
+     *        The name or Amazon Resource Name (ARN) of the pipeline to describe.
      */
 
     public void setPipelineName(String pipelineName) {
@@ -47,10 +47,10 @@ public class DescribePipelineRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the pipeline to describe.
+     * The name or Amazon Resource Name (ARN) of the pipeline to describe.
      * </p>
      * 
-     * @return The name of the pipeline to describe.
+     * @return The name or Amazon Resource Name (ARN) of the pipeline to describe.
      */
 
     public String getPipelineName() {
@@ -59,11 +59,11 @@ public class DescribePipelineRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the pipeline to describe.
+     * The name or Amazon Resource Name (ARN) of the pipeline to describe.
      * </p>
      * 
      * @param pipelineName
-     *        The name of the pipeline to describe.
+     *        The name or Amazon Resource Name (ARN) of the pipeline to describe.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

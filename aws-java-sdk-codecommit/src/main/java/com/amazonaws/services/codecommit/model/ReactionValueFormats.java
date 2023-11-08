@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about the values for reactions to a comment. AWS CodeCommit supports a limited set of reactions.
+ * Information about the values for reactions to a comment. CodeCommit supports a limited set of reactions.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ReactionValueFormats" target="_top">AWS

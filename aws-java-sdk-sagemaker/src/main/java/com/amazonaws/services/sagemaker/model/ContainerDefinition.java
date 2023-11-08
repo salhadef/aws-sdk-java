@@ -139,6 +139,18 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private MultiModelConfig multiModelConfig;
+    /**
+     * <p>
+     * Specifies the location of ML model data to deploy.
+     * </p>
+     * <note>
+     * <p>
+     * Currently you cannot use <code>ModelDataSource</code> in conjunction with SageMaker batch transform, SageMaker
+     * serverless endpoints, SageMaker multi-model endpoints, and SageMaker Marketplace.
+     * </p>
+     * </note>
+     */
+    private ModelDataSource modelDataSource;
 
     /**
      * <p>
@@ -879,6 +891,76 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * Specifies the location of ML model data to deploy.
+     * </p>
+     * <note>
+     * <p>
+     * Currently you cannot use <code>ModelDataSource</code> in conjunction with SageMaker batch transform, SageMaker
+     * serverless endpoints, SageMaker multi-model endpoints, and SageMaker Marketplace.
+     * </p>
+     * </note>
+     * 
+     * @param modelDataSource
+     *        Specifies the location of ML model data to deploy.</p> <note>
+     *        <p>
+     *        Currently you cannot use <code>ModelDataSource</code> in conjunction with SageMaker batch transform,
+     *        SageMaker serverless endpoints, SageMaker multi-model endpoints, and SageMaker Marketplace.
+     *        </p>
+     */
+
+    public void setModelDataSource(ModelDataSource modelDataSource) {
+        this.modelDataSource = modelDataSource;
+    }
+
+    /**
+     * <p>
+     * Specifies the location of ML model data to deploy.
+     * </p>
+     * <note>
+     * <p>
+     * Currently you cannot use <code>ModelDataSource</code> in conjunction with SageMaker batch transform, SageMaker
+     * serverless endpoints, SageMaker multi-model endpoints, and SageMaker Marketplace.
+     * </p>
+     * </note>
+     * 
+     * @return Specifies the location of ML model data to deploy.</p> <note>
+     *         <p>
+     *         Currently you cannot use <code>ModelDataSource</code> in conjunction with SageMaker batch transform,
+     *         SageMaker serverless endpoints, SageMaker multi-model endpoints, and SageMaker Marketplace.
+     *         </p>
+     */
+
+    public ModelDataSource getModelDataSource() {
+        return this.modelDataSource;
+    }
+
+    /**
+     * <p>
+     * Specifies the location of ML model data to deploy.
+     * </p>
+     * <note>
+     * <p>
+     * Currently you cannot use <code>ModelDataSource</code> in conjunction with SageMaker batch transform, SageMaker
+     * serverless endpoints, SageMaker multi-model endpoints, and SageMaker Marketplace.
+     * </p>
+     * </note>
+     * 
+     * @param modelDataSource
+     *        Specifies the location of ML model data to deploy.</p> <note>
+     *        <p>
+     *        Currently you cannot use <code>ModelDataSource</code> in conjunction with SageMaker batch transform,
+     *        SageMaker serverless endpoints, SageMaker multi-model endpoints, and SageMaker Marketplace.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerDefinition withModelDataSource(ModelDataSource modelDataSource) {
+        setModelDataSource(modelDataSource);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -907,7 +989,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
         if (getInferenceSpecificationName() != null)
             sb.append("InferenceSpecificationName: ").append(getInferenceSpecificationName()).append(",");
         if (getMultiModelConfig() != null)
-            sb.append("MultiModelConfig: ").append(getMultiModelConfig());
+            sb.append("MultiModelConfig: ").append(getMultiModelConfig()).append(",");
+        if (getModelDataSource() != null)
+            sb.append("ModelDataSource: ").append(getModelDataSource());
         sb.append("}");
         return sb.toString();
     }
@@ -958,6 +1042,10 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getMultiModelConfig() != null && other.getMultiModelConfig().equals(this.getMultiModelConfig()) == false)
             return false;
+        if (other.getModelDataSource() == null ^ this.getModelDataSource() == null)
+            return false;
+        if (other.getModelDataSource() != null && other.getModelDataSource().equals(this.getModelDataSource()) == false)
+            return false;
         return true;
     }
 
@@ -975,6 +1063,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getModelPackageName() == null) ? 0 : getModelPackageName().hashCode());
         hashCode = prime * hashCode + ((getInferenceSpecificationName() == null) ? 0 : getInferenceSpecificationName().hashCode());
         hashCode = prime * hashCode + ((getMultiModelConfig() == null) ? 0 : getMultiModelConfig().hashCode());
+        hashCode = prime * hashCode + ((getModelDataSource() == null) ? 0 : getModelDataSource().hashCode());
         return hashCode;
     }
 

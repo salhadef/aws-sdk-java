@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum DecisionTaskTimeoutType {
 
-    START_TO_CLOSE("START_TO_CLOSE");
+    START_TO_CLOSE("START_TO_CLOSE"),
+    SCHEDULE_TO_START("SCHEDULE_TO_START");
 
     private String value;
 

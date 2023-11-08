@@ -2140,7 +2140,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * </p>
      * <p>
      * You call the <code>ConfirmSubscription</code> action with the token from the subscription response. Confirmation
-     * tokens are valid for three days.
+     * tokens are valid for two days.
      * </p>
      * <p>
      * This action is throttled at 100 transactions per second (TPS).
@@ -2163,7 +2163,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * </p>
      * <p>
      * You call the <code>ConfirmSubscription</code> action with the token from the subscription response. Confirmation
-     * tokens are valid for three days.
+     * tokens are valid for two days.
      * </p>
      * <p>
      * This action is throttled at 100 transactions per second (TPS).

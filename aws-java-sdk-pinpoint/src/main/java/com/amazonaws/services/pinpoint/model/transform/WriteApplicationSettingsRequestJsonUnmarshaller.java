@@ -68,6 +68,10 @@ public class WriteApplicationSettingsRequestJsonUnmarshaller implements Unmarsha
                     context.nextToken();
                     writeApplicationSettingsRequest.setQuietTime(QuietTimeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("JourneyLimits", targetDepth)) {
+                    context.nextToken();
+                    writeApplicationSettingsRequest.setJourneyLimits(ApplicationSettingsJourneyLimitsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

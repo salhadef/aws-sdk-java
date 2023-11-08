@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * Specify whether this output's video uses the D10 syntax. Keep the default value to not use the syntax. Related
- * settings: When you choose D10 (D_10) for your MXF profile (profile), you must also set this value to D10 (D_10).
+ * settings: When you choose D10 for your MXF profile, you must also set this value to D10.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Mpeg2Syntax {

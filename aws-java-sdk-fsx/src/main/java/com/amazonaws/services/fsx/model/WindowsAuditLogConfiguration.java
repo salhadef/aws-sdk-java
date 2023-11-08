@@ -94,7 +94,7 @@ public class WindowsAuditLogConfiguration implements Serializable, Cloneable, St
      * </p>
      * <p>
      * The name of the Amazon CloudWatch Logs log group must begin with the <code>/aws/fsx</code> prefix. The name of
-     * the Amazon Kinesis Data Firehouse delivery stream must begin with the <code>aws-fsx</code> prefix.
+     * the Amazon Kinesis Data Firehose delivery stream must begin with the <code>aws-fsx</code> prefix.
      * </p>
      * <p>
      * The destination ARN (either CloudWatch Logs log group or Kinesis Data Firehose delivery stream) must be in the
@@ -585,7 +585,7 @@ public class WindowsAuditLogConfiguration implements Serializable, Cloneable, St
      * </p>
      * <p>
      * The name of the Amazon CloudWatch Logs log group must begin with the <code>/aws/fsx</code> prefix. The name of
-     * the Amazon Kinesis Data Firehouse delivery stream must begin with the <code>aws-fsx</code> prefix.
+     * the Amazon Kinesis Data Firehose delivery stream must begin with the <code>aws-fsx</code> prefix.
      * </p>
      * <p>
      * The destination ARN (either CloudWatch Logs log group or Kinesis Data Firehose delivery stream) must be in the
@@ -598,7 +598,7 @@ public class WindowsAuditLogConfiguration implements Serializable, Cloneable, St
      *        CloudWatch Logs log group ARN or Amazon Kinesis Data Firehose delivery stream ARN.</p>
      *        <p>
      *        The name of the Amazon CloudWatch Logs log group must begin with the <code>/aws/fsx</code> prefix. The
-     *        name of the Amazon Kinesis Data Firehouse delivery stream must begin with the <code>aws-fsx</code> prefix.
+     *        name of the Amazon Kinesis Data Firehose delivery stream must begin with the <code>aws-fsx</code> prefix.
      *        </p>
      *        <p>
      *        The destination ARN (either CloudWatch Logs log group or Kinesis Data Firehose delivery stream) must be in
@@ -617,7 +617,7 @@ public class WindowsAuditLogConfiguration implements Serializable, Cloneable, St
      * </p>
      * <p>
      * The name of the Amazon CloudWatch Logs log group must begin with the <code>/aws/fsx</code> prefix. The name of
-     * the Amazon Kinesis Data Firehouse delivery stream must begin with the <code>aws-fsx</code> prefix.
+     * the Amazon Kinesis Data Firehose delivery stream must begin with the <code>aws-fsx</code> prefix.
      * </p>
      * <p>
      * The destination ARN (either CloudWatch Logs log group or Kinesis Data Firehose delivery stream) must be in the
@@ -629,8 +629,7 @@ public class WindowsAuditLogConfiguration implements Serializable, Cloneable, St
      *         CloudWatch Logs log group ARN or Amazon Kinesis Data Firehose delivery stream ARN.</p>
      *         <p>
      *         The name of the Amazon CloudWatch Logs log group must begin with the <code>/aws/fsx</code> prefix. The
-     *         name of the Amazon Kinesis Data Firehouse delivery stream must begin with the <code>aws-fsx</code>
-     *         prefix.
+     *         name of the Amazon Kinesis Data Firehose delivery stream must begin with the <code>aws-fsx</code> prefix.
      *         </p>
      *         <p>
      *         The destination ARN (either CloudWatch Logs log group or Kinesis Data Firehose delivery stream) must be
@@ -649,7 +648,7 @@ public class WindowsAuditLogConfiguration implements Serializable, Cloneable, St
      * </p>
      * <p>
      * The name of the Amazon CloudWatch Logs log group must begin with the <code>/aws/fsx</code> prefix. The name of
-     * the Amazon Kinesis Data Firehouse delivery stream must begin with the <code>aws-fsx</code> prefix.
+     * the Amazon Kinesis Data Firehose delivery stream must begin with the <code>aws-fsx</code> prefix.
      * </p>
      * <p>
      * The destination ARN (either CloudWatch Logs log group or Kinesis Data Firehose delivery stream) must be in the
@@ -662,7 +661,7 @@ public class WindowsAuditLogConfiguration implements Serializable, Cloneable, St
      *        CloudWatch Logs log group ARN or Amazon Kinesis Data Firehose delivery stream ARN.</p>
      *        <p>
      *        The name of the Amazon CloudWatch Logs log group must begin with the <code>/aws/fsx</code> prefix. The
-     *        name of the Amazon Kinesis Data Firehouse delivery stream must begin with the <code>aws-fsx</code> prefix.
+     *        name of the Amazon Kinesis Data Firehose delivery stream must begin with the <code>aws-fsx</code> prefix.
      *        </p>
      *        <p>
      *        The destination ARN (either CloudWatch Logs log group or Kinesis Data Firehose delivery stream) must be in

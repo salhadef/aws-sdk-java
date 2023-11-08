@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DescribeJobLogItemsRequestMarshaller {
 
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("accountID").build();
     private static final MarshallingInfo<String> JOBID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("jobID").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -50,6 +52,7 @@ public class DescribeJobLogItemsRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(describeJobLogItemsRequest.getAccountID(), ACCOUNTID_BINDING);
             protocolMarshaller.marshall(describeJobLogItemsRequest.getJobID(), JOBID_BINDING);
             protocolMarshaller.marshall(describeJobLogItemsRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(describeJobLogItemsRequest.getNextToken(), NEXTTOKEN_BINDING);

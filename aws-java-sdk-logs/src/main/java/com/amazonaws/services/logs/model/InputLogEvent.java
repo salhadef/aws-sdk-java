@@ -37,7 +37,7 @@ public class InputLogEvent implements Serializable, Cloneable, StructuredPojo {
     private Long timestamp;
     /**
      * <p>
-     * The raw event message.
+     * The raw event message. Each log event can be no larger than 256 KB.
      * </p>
      */
     private String message;
@@ -87,11 +87,11 @@ public class InputLogEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The raw event message.
+     * The raw event message. Each log event can be no larger than 256 KB.
      * </p>
      * 
      * @param message
-     *        The raw event message.
+     *        The raw event message. Each log event can be no larger than 256 KB.
      */
 
     public void setMessage(String message) {
@@ -100,10 +100,10 @@ public class InputLogEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The raw event message.
+     * The raw event message. Each log event can be no larger than 256 KB.
      * </p>
      * 
-     * @return The raw event message.
+     * @return The raw event message. Each log event can be no larger than 256 KB.
      */
 
     public String getMessage() {
@@ -112,11 +112,11 @@ public class InputLogEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The raw event message.
+     * The raw event message. Each log event can be no larger than 256 KB.
      * </p>
      * 
      * @param message
-     *        The raw event message.
+     *        The raw event message. Each log event can be no larger than 256 KB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

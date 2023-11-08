@@ -27,56 +27,16 @@ public class GetReadSetExportJobRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The job's ID.
-     * </p>
-     */
-    private String id;
-    /**
-     * <p>
      * The job's sequence store ID.
      * </p>
      */
     private String sequenceStoreId;
-
     /**
      * <p>
      * The job's ID.
      * </p>
-     * 
-     * @param id
-     *        The job's ID.
      */
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    /**
-     * <p>
-     * The job's ID.
-     * </p>
-     * 
-     * @return The job's ID.
-     */
-
-    public String getId() {
-        return this.id;
-    }
-
-    /**
-     * <p>
-     * The job's ID.
-     * </p>
-     * 
-     * @param id
-     *        The job's ID.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetReadSetExportJobRequest withId(String id) {
-        setId(id);
-        return this;
-    }
+    private String id;
 
     /**
      * <p>
@@ -119,6 +79,46 @@ public class GetReadSetExportJobRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The job's ID.
+     * </p>
+     * 
+     * @param id
+     *        The job's ID.
+     */
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    /**
+     * <p>
+     * The job's ID.
+     * </p>
+     * 
+     * @return The job's ID.
+     */
+
+    public String getId() {
+        return this.id;
+    }
+
+    /**
+     * <p>
+     * The job's ID.
+     * </p>
+     * 
+     * @param id
+     *        The job's ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetReadSetExportJobRequest withId(String id) {
+        setId(id);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -130,10 +130,10 @@ public class GetReadSetExportJobRequest extends com.amazonaws.AmazonWebServiceRe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getId() != null)
-            sb.append("Id: ").append(getId()).append(",");
         if (getSequenceStoreId() != null)
-            sb.append("SequenceStoreId: ").append(getSequenceStoreId());
+            sb.append("SequenceStoreId: ").append(getSequenceStoreId()).append(",");
+        if (getId() != null)
+            sb.append("Id: ").append(getId());
         sb.append("}");
         return sb.toString();
     }
@@ -148,13 +148,13 @@ public class GetReadSetExportJobRequest extends com.amazonaws.AmazonWebServiceRe
         if (obj instanceof GetReadSetExportJobRequest == false)
             return false;
         GetReadSetExportJobRequest other = (GetReadSetExportJobRequest) obj;
-        if (other.getId() == null ^ this.getId() == null)
-            return false;
-        if (other.getId() != null && other.getId().equals(this.getId()) == false)
-            return false;
         if (other.getSequenceStoreId() == null ^ this.getSequenceStoreId() == null)
             return false;
         if (other.getSequenceStoreId() != null && other.getSequenceStoreId().equals(this.getSequenceStoreId()) == false)
+            return false;
+        if (other.getId() == null ^ this.getId() == null)
+            return false;
+        if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
         return true;
     }
@@ -164,8 +164,8 @@ public class GetReadSetExportJobRequest extends com.amazonaws.AmazonWebServiceRe
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getSequenceStoreId() == null) ? 0 : getSequenceStoreId().hashCode());
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         return hashCode;
     }
 

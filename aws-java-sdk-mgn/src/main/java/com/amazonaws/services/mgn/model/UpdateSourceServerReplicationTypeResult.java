@@ -38,6 +38,12 @@ public class UpdateSourceServerReplicationTypeResult extends com.amazonaws.Amazo
     private String arn;
     /**
      * <p>
+     * Source Server connector action.
+     * </p>
+     */
+    private SourceServerConnectorAction connectorAction;
+    /**
+     * <p>
      * Source server data replication info.
      * </p>
      */
@@ -180,6 +186,46 @@ public class UpdateSourceServerReplicationTypeResult extends com.amazonaws.Amazo
 
     public UpdateSourceServerReplicationTypeResult withArn(String arn) {
         setArn(arn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Source Server connector action.
+     * </p>
+     * 
+     * @param connectorAction
+     *        Source Server connector action.
+     */
+
+    public void setConnectorAction(SourceServerConnectorAction connectorAction) {
+        this.connectorAction = connectorAction;
+    }
+
+    /**
+     * <p>
+     * Source Server connector action.
+     * </p>
+     * 
+     * @return Source Server connector action.
+     */
+
+    public SourceServerConnectorAction getConnectorAction() {
+        return this.connectorAction;
+    }
+
+    /**
+     * <p>
+     * Source Server connector action.
+     * </p>
+     * 
+     * @param connectorAction
+     *        Source Server connector action.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateSourceServerReplicationTypeResult withConnectorAction(SourceServerConnectorAction connectorAction) {
+        setConnectorAction(connectorAction);
         return this;
     }
 
@@ -698,6 +744,8 @@ public class UpdateSourceServerReplicationTypeResult extends com.amazonaws.Amazo
             sb.append("ApplicationID: ").append(getApplicationID()).append(",");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
+        if (getConnectorAction() != null)
+            sb.append("ConnectorAction: ").append(getConnectorAction()).append(",");
         if (getDataReplicationInfo() != null)
             sb.append("DataReplicationInfo: ").append(getDataReplicationInfo()).append(",");
         if (getFqdnForActionFramework() != null)
@@ -741,6 +789,10 @@ public class UpdateSourceServerReplicationTypeResult extends com.amazonaws.Amazo
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
+        if (other.getConnectorAction() == null ^ this.getConnectorAction() == null)
+            return false;
+        if (other.getConnectorAction() != null && other.getConnectorAction().equals(this.getConnectorAction()) == false)
             return false;
         if (other.getDataReplicationInfo() == null ^ this.getDataReplicationInfo() == null)
             return false;
@@ -796,6 +848,7 @@ public class UpdateSourceServerReplicationTypeResult extends com.amazonaws.Amazo
 
         hashCode = prime * hashCode + ((getApplicationID() == null) ? 0 : getApplicationID().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getConnectorAction() == null) ? 0 : getConnectorAction().hashCode());
         hashCode = prime * hashCode + ((getDataReplicationInfo() == null) ? 0 : getDataReplicationInfo().hashCode());
         hashCode = prime * hashCode + ((getFqdnForActionFramework() == null) ? 0 : getFqdnForActionFramework().hashCode());
         hashCode = prime * hashCode + ((getIsArchived() == null) ? 0 : getIsArchived().hashCode());

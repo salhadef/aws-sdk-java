@@ -76,6 +76,24 @@ public class AppBlockJsonUnmarshaller implements Unmarshaller<AppBlock, JsonUnma
                     context.nextToken();
                     appBlock.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("PostSetupScriptDetails", targetDepth)) {
+                    context.nextToken();
+                    appBlock.setPostSetupScriptDetails(ScriptDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("PackagingType", targetDepth)) {
+                    context.nextToken();
+                    appBlock.setPackagingType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("State", targetDepth)) {
+                    context.nextToken();
+                    appBlock.setState(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("AppBlockErrors", targetDepth)) {
+                    context.nextToken();
+                    appBlock.setAppBlockErrors(new ListUnmarshaller<ErrorDetails>(ErrorDetailsJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

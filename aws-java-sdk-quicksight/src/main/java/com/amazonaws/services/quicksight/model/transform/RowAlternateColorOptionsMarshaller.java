@@ -32,6 +32,8 @@ public class RowAlternateColorOptionsMarshaller {
             .marshallLocationName("Status").build();
     private static final MarshallingInfo<List> ROWALTERNATECOLORS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RowAlternateColors").build();
+    private static final MarshallingInfo<String> USEPRIMARYBACKGROUNDCOLOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UsePrimaryBackgroundColor").build();
 
     private static final RowAlternateColorOptionsMarshaller instance = new RowAlternateColorOptionsMarshaller();
 
@@ -51,6 +53,7 @@ public class RowAlternateColorOptionsMarshaller {
         try {
             protocolMarshaller.marshall(rowAlternateColorOptions.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(rowAlternateColorOptions.getRowAlternateColors(), ROWALTERNATECOLORS_BINDING);
+            protocolMarshaller.marshall(rowAlternateColorOptions.getUsePrimaryBackgroundColor(), USEPRIMARYBACKGROUNDCOLOR_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

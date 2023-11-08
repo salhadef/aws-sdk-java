@@ -158,6 +158,10 @@ public class ModelPackageJsonUnmarshaller implements Unmarshaller<ModelPackage, 
                     context.nextToken();
                     modelPackage.setDriftCheckBaselines(DriftCheckBaselinesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("SkipModelValidation", targetDepth)) {
+                    context.nextToken();
+                    modelPackage.setSkipModelValidation(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

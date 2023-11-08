@@ -120,6 +120,21 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private TracingConfiguration tracingConfiguration;
+    /**
+     * <p>
+     * Set to <code>true</code> to publish the first version of the state machine during creation. The default is
+     * <code>false</code>.
+     * </p>
+     */
+    private Boolean publish;
+    /**
+     * <p>
+     * Sets description about the state machine version. You can only set the description if the <code>publish</code>
+     * parameter is set to <code>true</code>. Otherwise, if you set <code>versionDescription</code>, but
+     * <code>publish</code> to <code>false</code>, this API action throws <code>ValidationException</code>.
+     * </p>
+     */
+    private String versionDescription;
 
     /**
      * <p>
@@ -813,6 +828,121 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * Set to <code>true</code> to publish the first version of the state machine during creation. The default is
+     * <code>false</code>.
+     * </p>
+     * 
+     * @param publish
+     *        Set to <code>true</code> to publish the first version of the state machine during creation. The default is
+     *        <code>false</code>.
+     */
+
+    public void setPublish(Boolean publish) {
+        this.publish = publish;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> to publish the first version of the state machine during creation. The default is
+     * <code>false</code>.
+     * </p>
+     * 
+     * @return Set to <code>true</code> to publish the first version of the state machine during creation. The default
+     *         is <code>false</code>.
+     */
+
+    public Boolean getPublish() {
+        return this.publish;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> to publish the first version of the state machine during creation. The default is
+     * <code>false</code>.
+     * </p>
+     * 
+     * @param publish
+     *        Set to <code>true</code> to publish the first version of the state machine during creation. The default is
+     *        <code>false</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStateMachineRequest withPublish(Boolean publish) {
+        setPublish(publish);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> to publish the first version of the state machine during creation. The default is
+     * <code>false</code>.
+     * </p>
+     * 
+     * @return Set to <code>true</code> to publish the first version of the state machine during creation. The default
+     *         is <code>false</code>.
+     */
+
+    public Boolean isPublish() {
+        return this.publish;
+    }
+
+    /**
+     * <p>
+     * Sets description about the state machine version. You can only set the description if the <code>publish</code>
+     * parameter is set to <code>true</code>. Otherwise, if you set <code>versionDescription</code>, but
+     * <code>publish</code> to <code>false</code>, this API action throws <code>ValidationException</code>.
+     * </p>
+     * 
+     * @param versionDescription
+     *        Sets description about the state machine version. You can only set the description if the
+     *        <code>publish</code> parameter is set to <code>true</code>. Otherwise, if you set
+     *        <code>versionDescription</code>, but <code>publish</code> to <code>false</code>, this API action throws
+     *        <code>ValidationException</code>.
+     */
+
+    public void setVersionDescription(String versionDescription) {
+        this.versionDescription = versionDescription;
+    }
+
+    /**
+     * <p>
+     * Sets description about the state machine version. You can only set the description if the <code>publish</code>
+     * parameter is set to <code>true</code>. Otherwise, if you set <code>versionDescription</code>, but
+     * <code>publish</code> to <code>false</code>, this API action throws <code>ValidationException</code>.
+     * </p>
+     * 
+     * @return Sets description about the state machine version. You can only set the description if the
+     *         <code>publish</code> parameter is set to <code>true</code>. Otherwise, if you set
+     *         <code>versionDescription</code>, but <code>publish</code> to <code>false</code>, this API action throws
+     *         <code>ValidationException</code>.
+     */
+
+    public String getVersionDescription() {
+        return this.versionDescription;
+    }
+
+    /**
+     * <p>
+     * Sets description about the state machine version. You can only set the description if the <code>publish</code>
+     * parameter is set to <code>true</code>. Otherwise, if you set <code>versionDescription</code>, but
+     * <code>publish</code> to <code>false</code>, this API action throws <code>ValidationException</code>.
+     * </p>
+     * 
+     * @param versionDescription
+     *        Sets description about the state machine version. You can only set the description if the
+     *        <code>publish</code> parameter is set to <code>true</code>. Otherwise, if you set
+     *        <code>versionDescription</code>, but <code>publish</code> to <code>false</code>, this API action throws
+     *        <code>ValidationException</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStateMachineRequest withVersionDescription(String versionDescription) {
+        setVersionDescription(versionDescription);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -837,7 +967,11 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getTracingConfiguration() != null)
-            sb.append("TracingConfiguration: ").append(getTracingConfiguration());
+            sb.append("TracingConfiguration: ").append(getTracingConfiguration()).append(",");
+        if (getPublish() != null)
+            sb.append("Publish: ").append(getPublish()).append(",");
+        if (getVersionDescription() != null)
+            sb.append("VersionDescription: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }
@@ -880,6 +1014,14 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getTracingConfiguration() != null && other.getTracingConfiguration().equals(this.getTracingConfiguration()) == false)
             return false;
+        if (other.getPublish() == null ^ this.getPublish() == null)
+            return false;
+        if (other.getPublish() != null && other.getPublish().equals(this.getPublish()) == false)
+            return false;
+        if (other.getVersionDescription() == null ^ this.getVersionDescription() == null)
+            return false;
+        if (other.getVersionDescription() != null && other.getVersionDescription().equals(this.getVersionDescription()) == false)
+            return false;
         return true;
     }
 
@@ -895,6 +1037,8 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getLoggingConfiguration() == null) ? 0 : getLoggingConfiguration().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getTracingConfiguration() == null) ? 0 : getTracingConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getPublish() == null) ? 0 : getPublish().hashCode());
+        hashCode = prime * hashCode + ((getVersionDescription() == null) ? 0 : getVersionDescription().hashCode());
         return hashCode;
     }
 

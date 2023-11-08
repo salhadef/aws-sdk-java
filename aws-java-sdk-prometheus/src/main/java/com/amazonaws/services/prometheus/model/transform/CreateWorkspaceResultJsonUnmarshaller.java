@@ -48,6 +48,10 @@ public class CreateWorkspaceResultJsonUnmarshaller implements Unmarshaller<Creat
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("workspaceId", targetDepth)) {
+                    context.nextToken();
+                    createWorkspaceResult.setWorkspaceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("arn", targetDepth)) {
                     context.nextToken();
                     createWorkspaceResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
@@ -60,10 +64,6 @@ public class CreateWorkspaceResultJsonUnmarshaller implements Unmarshaller<Creat
                     context.nextToken();
                     createWorkspaceResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
-                }
-                if (context.testExpression("workspaceId", targetDepth)) {
-                    context.nextToken();
-                    createWorkspaceResult.setWorkspaceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -35,6 +35,8 @@ public class UpdateMeetingRoomConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstantBooking").build();
     private static final MarshallingInfo<StructuredPojo> REQUIRECHECKIN_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RequireCheckIn").build();
+    private static final MarshallingInfo<StructuredPojo> PROACTIVEJOIN_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProactiveJoin").build();
 
     private static final UpdateMeetingRoomConfigurationMarshaller instance = new UpdateMeetingRoomConfigurationMarshaller();
 
@@ -56,6 +58,7 @@ public class UpdateMeetingRoomConfigurationMarshaller {
             protocolMarshaller.marshall(updateMeetingRoomConfiguration.getEndOfMeetingReminder(), ENDOFMEETINGREMINDER_BINDING);
             protocolMarshaller.marshall(updateMeetingRoomConfiguration.getInstantBooking(), INSTANTBOOKING_BINDING);
             protocolMarshaller.marshall(updateMeetingRoomConfiguration.getRequireCheckIn(), REQUIRECHECKIN_BINDING);
+            protocolMarshaller.marshall(updateMeetingRoomConfiguration.getProactiveJoin(), PROACTIVEJOIN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

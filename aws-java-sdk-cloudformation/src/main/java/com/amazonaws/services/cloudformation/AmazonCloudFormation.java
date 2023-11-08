@@ -47,7 +47,7 @@ import com.amazonaws.services.cloudformation.waiters.AmazonCloudFormationWaiters
  * <p>
  * CloudFormation makes use of other Amazon Web Services products. If you need additional technical information about a
  * specific Amazon Web Services product, you can find the product's technical documentation at <a
- * href="https://docs.aws.amazon.com/"> <code>docs.aws.amazon.com</code> </a>.
+ * href="https://docs.aws.amazon.com/">docs.aws.amazon.com</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -115,14 +115,33 @@ public interface AmazonCloudFormation {
 
     /**
      * <p>
+     * Activate trusted access with Organizations. With trusted access between StackSets and Organizations activated,
+     * the management account has permissions to create and manage StackSets for your organization.
+     * </p>
+     * 
+     * @param activateOrganizationsAccessRequest
+     * @return Result of the ActivateOrganizationsAccess operation returned by the service.
+     * @throws InvalidOperationException
+     *         The specified operation isn't valid.
+     * @throws OperationNotFoundException
+     *         The specified ID refers to an operation that doesn't exist.
+     * @sample AmazonCloudFormation.ActivateOrganizationsAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ActivateOrganizationsAccess"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ActivateOrganizationsAccessResult activateOrganizationsAccess(ActivateOrganizationsAccessRequest activateOrganizationsAccessRequest);
+
+    /**
+     * <p>
      * Activates a public third-party extension, making it available for use in stack templates. For more information,
      * see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html">Using public
      * extensions</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * <p>
-     * Once you have activated a public third-party extension in your account and region, use <a
-     * href="AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a> to specify
-     * configuration properties for the extension. For more information, see <a href=
+     * Once you have activated a public third-party extension in your account and Region, use <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html"
+     * >SetTypeConfiguration</a> to specify configuration properties for the extension. For more information, see <a
+     * href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration"
      * >Configuring extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
      * </p>
@@ -142,7 +161,7 @@ public interface AmazonCloudFormation {
     /**
      * <p>
      * Returns configuration data for the specified CloudFormation extensions, from the CloudFormation registry for the
-     * account and region.
+     * account and Region.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -259,7 +278,7 @@ public interface AmazonCloudFormation {
     /**
      * <p>
      * Creates a stack as specified in the template. After the call completes successfully, the stack creation starts.
-     * You can check the status of the stack through the <a>DescribeStacks</a>operation.
+     * You can check the status of the stack through the <a>DescribeStacks</a> operation.
      * </p>
      * 
      * @param createStackRequest
@@ -341,7 +360,25 @@ public interface AmazonCloudFormation {
 
     /**
      * <p>
-     * Deactivates a public extension that was previously activated in this account and region.
+     * Deactivates trusted access with Organizations. If trusted access is deactivated, the management account does not
+     * have permissions to create and manage service-managed StackSets for your organization.
+     * </p>
+     * 
+     * @param deactivateOrganizationsAccessRequest
+     * @return Result of the DeactivateOrganizationsAccess operation returned by the service.
+     * @throws InvalidOperationException
+     *         The specified operation isn't valid.
+     * @throws OperationNotFoundException
+     *         The specified ID refers to an operation that doesn't exist.
+     * @sample AmazonCloudFormation.DeactivateOrganizationsAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeactivateOrganizationsAccess"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeactivateOrganizationsAccessResult deactivateOrganizationsAccess(DeactivateOrganizationsAccessRequest deactivateOrganizationsAccessRequest);
+
+    /**
+     * <p>
+     * Deactivates a public extension that was previously activated in this account and Region.
      * </p>
      * <p>
      * Once deactivated, an extension can't be used in any CloudFormation operation. This includes stack update
@@ -535,6 +572,25 @@ public interface AmazonCloudFormation {
 
     /**
      * <p>
+     * Retrieves information about the account's <code>OrganizationAccess</code> status. This API can be called either
+     * by the management account or the delegated administrator by using the <code>CallAs</code> parameter. This API can
+     * also be called without the <code>CallAs</code> parameter by the management account.
+     * </p>
+     * 
+     * @param describeOrganizationsAccessRequest
+     * @return Result of the DescribeOrganizationsAccess operation returned by the service.
+     * @throws InvalidOperationException
+     *         The specified operation isn't valid.
+     * @throws OperationNotFoundException
+     *         The specified ID refers to an operation that doesn't exist.
+     * @sample AmazonCloudFormation.DescribeOrganizationsAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeOrganizationsAccess"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeOrganizationsAccessResult describeOrganizationsAccess(DescribeOrganizationsAccessRequest describeOrganizationsAccessRequest);
+
+    /**
+     * <p>
      * Returns information about a CloudFormation extension publisher.
      * </p>
      * <p>
@@ -572,7 +628,7 @@ public interface AmazonCloudFormation {
     /**
      * <p>
      * Returns information about a stack drift detection operation. A stack drift detection operation detects whether a
-     * stack's actual configuration differs, or has <i>drifted</i>, from it's expected configuration, as defined in the
+     * stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the
      * stack template and any values specified as template parameters. A stack is considered to have drifted if one or
      * more of its resources have drifted. For more information about stack and resource drift, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
@@ -618,11 +674,11 @@ public interface AmazonCloudFormation {
 
     /**
      * <p>
-     * Returns the stack instance that's associated with the specified stack set, Amazon Web Services account, and
-     * Region.
+     * Returns the stack instance that's associated with the specified StackSet, Amazon Web Services account, and Amazon
+     * Web Services Region.
      * </p>
      * <p>
-     * For a list of stack instances that are associated with a specific stack set, use <a>ListStackInstances</a>.
+     * For a list of stack instances that are associated with a specific StackSet, use <a>ListStackInstances</a>.
      * </p>
      * 
      * @param describeStackInstanceRequest
@@ -722,7 +778,7 @@ public interface AmazonCloudFormation {
 
     /**
      * <p>
-     * Returns the description of the specified stack set.
+     * Returns the description of the specified StackSet.
      * </p>
      * 
      * @param describeStackSetRequest
@@ -737,7 +793,7 @@ public interface AmazonCloudFormation {
 
     /**
      * <p>
-     * Returns the description of the specified stack set operation.
+     * Returns the description of the specified StackSet operation.
      * </p>
      * 
      * @param describeStackSetOperationRequest
@@ -806,12 +862,12 @@ public interface AmazonCloudFormation {
      * identifiers.
      * </p>
      * <p>
-     * When you initiate a registration request using <code> <a>RegisterType</a> </code>, you can then use
-     * <code> <a>DescribeTypeRegistration</a> </code> to monitor the progress of that registration request.
+     * When you initiate a registration request using <a>RegisterType</a>, you can then use
+     * <a>DescribeTypeRegistration</a> to monitor the progress of that registration request.
      * </p>
      * <p>
-     * Once the registration request has completed, use <code> <a>DescribeType</a> </code> to return detailed
-     * information about an extension.
+     * Once the registration request has completed, use <a>DescribeType</a> to return detailed information about an
+     * extension.
      * </p>
      * 
      * @param describeTypeRegistrationRequest
@@ -826,7 +882,7 @@ public interface AmazonCloudFormation {
 
     /**
      * <p>
-     * Detects whether a stack's actual configuration differs, or has <i>drifted</i>, from it's expected configuration,
+     * Detects whether a stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration,
      * as defined in the stack template and any values specified as template parameters. For each resource in the stack
      * that supports drift detection, CloudFormation compares the actual configuration of the resource with its expected
      * template configuration. Only resource properties explicitly defined in the stack template are checked for drift.
@@ -865,7 +921,7 @@ public interface AmazonCloudFormation {
 
     /**
      * <p>
-     * Returns information about whether a resource's actual configuration differs, or has <i>drifted</i>, from it's
+     * Returns information about whether a resource's actual configuration differs, or has <i>drifted</i>, from its
      * expected configuration, as defined in the stack template and any values specified as template parameters. This
      * information includes actual and expected property values for resources in which CloudFormation detects drift.
      * Only resource properties explicitly defined in the stack template are checked for drift. For more information
@@ -901,9 +957,9 @@ public interface AmazonCloudFormation {
      * </p>
      * <p>
      * <code>DetectStackSetDrift</code> returns the <code>OperationId</code> of the stack set drift detection operation.
-     * Use this operation id with <code> <a>DescribeStackSetOperation</a> </code> to monitor the progress of the drift
-     * detection operation. The drift detection operation may take some time, depending on the number of stack instances
-     * included in the stack set, in addition to the number of resources included in each stack.
+     * Use this operation id with <a>DescribeStackSetOperation</a> to monitor the progress of the drift detection
+     * operation. The drift detection operation may take some time, depending on the number of stack instances included
+     * in the stack set, in addition to the number of resources included in each stack.
      * </p>
      * <p>
      * Once the operation has completed, use the following actions to return drift information:
@@ -911,21 +967,21 @@ public interface AmazonCloudFormation {
      * <ul>
      * <li>
      * <p>
-     * Use <code> <a>DescribeStackSet</a> </code> to return detailed information about the stack set, including detailed
-     * information about the last <i>completed</i> drift operation performed on the stack set. (Information about drift
-     * operations that are in progress isn't included.)
+     * Use <a>DescribeStackSet</a> to return detailed information about the stack set, including detailed information
+     * about the last <i>completed</i> drift operation performed on the stack set. (Information about drift operations
+     * that are in progress isn't included.)
      * </p>
      * </li>
      * <li>
      * <p>
-     * Use <code> <a>ListStackInstances</a> </code> to return a list of stack instances belonging to the stack set,
-     * including the drift status and last drift time checked of each instance.
+     * Use <a>ListStackInstances</a> to return a list of stack instances belonging to the stack set, including the drift
+     * status and last drift time checked of each instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Use <code> <a>DescribeStackInstance</a> </code> to return detailed information about a specific stack instance,
-     * including its drift status and last drift time checked.
+     * Use <a>DescribeStackInstance</a> to return detailed information about a specific stack instance, including its
+     * drift status and last drift time checked.
      * </p>
      * </li>
      * </ul>
@@ -938,7 +994,7 @@ public interface AmazonCloudFormation {
      * You can only run a single drift detection operation on a given stack set at one time.
      * </p>
      * <p>
-     * To stop a drift detection stack set operation, use <code> <a>StopStackSetOperation</a> </code>.
+     * To stop a drift detection stack set operation, use <a>StopStackSetOperation</a>.
      * </p>
      * 
      * @param detectStackSetDriftRequest
@@ -1095,11 +1151,6 @@ public interface AmazonCloudFormation {
      * stack set in the same account as the source stack or in a different administrator account and Region, by
      * specifying the stack ID of the stack you intend to import.
      * </p>
-     * <note>
-     * <p>
-     * <code>ImportStacksToStackSet</code> is only supported by self-managed permissions.
-     * </p>
-     * </note>
      * 
      * @param importStacksToStackSetRequest
      * @return Result of the ImportStacksToStackSet operation returned by the service.
@@ -1148,7 +1199,7 @@ public interface AmazonCloudFormation {
      * Lists all exported output values in the account and Region in which you call this action. Use this action to see
      * the exported output values that you can import into other stacks. To import values, use the <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
-     * <code>Fn::ImportValue</code> </a> function.
+     * Fn::ImportValue</a> function.
      * </p>
      * <p>
      * For more information, see <a
@@ -1172,8 +1223,8 @@ public interface AmazonCloudFormation {
      * </p>
      * <p>
      * For more information about importing an exported output value, see the <a href=
-     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
-     * <code>Fn::ImportValue</code> </a> function.
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html"
+     * >Fn::ImportValue</a> function.
      * </p>
      * 
      * @param listImportsRequest
@@ -1183,6 +1234,31 @@ public interface AmazonCloudFormation {
      *      Documentation</a>
      */
     ListImportsResult listImports(ListImportsRequest listImportsRequest);
+
+    /**
+     * <p>
+     * Returns drift information for resources in a stack instance.
+     * </p>
+     * <note>
+     * <p>
+     * <code>ListStackInstanceResourceDrifts</code> returns drift information for the most recent drift detection
+     * operation. If an operation is in progress, it may only return partial results.
+     * </p>
+     * </note>
+     * 
+     * @param listStackInstanceResourceDriftsRequest
+     * @return Result of the ListStackInstanceResourceDrifts operation returned by the service.
+     * @throws StackSetNotFoundException
+     *         The specified stack set doesn't exist.
+     * @throws StackInstanceNotFoundException
+     *         The specified stack instance doesn't exist.
+     * @throws OperationNotFoundException
+     *         The specified ID refers to an operation that doesn't exist.
+     * @sample AmazonCloudFormation.ListStackInstanceResourceDrifts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackInstanceResourceDrifts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListStackInstanceResourceDriftsResult listStackInstanceResourceDrifts(ListStackInstanceResourceDriftsRequest listStackInstanceResourceDriftsRequest);
 
     /**
      * <p>
@@ -1358,7 +1434,7 @@ public interface AmazonCloudFormation {
 
     /**
      * <p>
-     * Publishes the specified extension to the CloudFormation registry as a public extension in this region. Public
+     * Publishes the specified extension to the CloudFormation registry as a public extension in this Region. Public
      * extensions are available for use by all CloudFormation users. For more information about publishing extensions,
      * see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Publishing
      * extensions to make them available for public use</a> in the <i>CloudFormation CLI User Guide</i>.
@@ -1459,17 +1535,19 @@ public interface AmazonCloudFormation {
      * </p>
      * <p>
      * You can have a maximum of 50 resource extension versions registered at a time. This maximum is per account and
-     * per region. Use <a href="AWSCloudFormation/latest/APIReference/API_DeregisterType.html">DeregisterType</a> to
-     * deregister specific extension versions if necessary.
+     * per Region. Use <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeregisterType.html"
+     * >DeregisterType</a> to deregister specific extension versions if necessary.
      * </p>
      * <p>
-     * Once you have initiated a registration request using <code> <a>RegisterType</a> </code>, you can use
-     * <code> <a>DescribeTypeRegistration</a> </code> to monitor the progress of the registration request.
+     * Once you have initiated a registration request using <a>RegisterType</a>, you can use
+     * <a>DescribeTypeRegistration</a> to monitor the progress of the registration request.
      * </p>
      * <p>
-     * Once you have registered a private extension in your account and region, use <a
-     * href="AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a> to specify
-     * configuration properties for the extension. For more information, see <a href=
+     * Once you have registered a private extension in your account and Region, use <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html"
+     * >SetTypeConfiguration</a> to specify configuration properties for the extension. For more information, see <a
+     * href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration"
      * >Configuring extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
      * </p>
@@ -1551,12 +1629,13 @@ public interface AmazonCloudFormation {
 
     /**
      * <p>
-     * Specifies the configuration data for a registered CloudFormation extension, in the given account and region.
+     * Specifies the configuration data for a registered CloudFormation extension, in the given account and Region.
      * </p>
      * <p>
      * To view the current configuration data for an extension, refer to the <code>ConfigurationSchema</code> element of
-     * <a href="AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>. For more information, see
-     * <a href=
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
+     * For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration"
      * >Configuring extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
      * </p>
@@ -1661,11 +1740,12 @@ public interface AmazonCloudFormation {
      * </p>
      * <p>
      * If you don't specify a version, CloudFormation uses the default version of the extension in your account and
-     * region for testing.
+     * Region for testing.
      * </p>
      * <p>
      * To perform testing, CloudFormation assumes the execution role specified when the type was registered. For more
-     * information, see <a href="AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
      * </p>
      * <p>
      * Once you've initiated testing on an extension using <code>TestType</code>, you can pass the returned

@@ -156,9 +156,8 @@ public class CredentialProfilesTest {
      */
     @Test
     public void testProfileWithMultipleAccessOrSecretKeysUnderSameProfile() {
-        checkExpectedException(ProfileResourceLoader.profilesWithTwoAccessKeyUnderSameProfile(),
-                               IllegalArgumentException.class,
-                               "Should throw an exception as there is a profile with two AWS Access Key ID's.");
+        ProfilesConfigFile profile = new ProfilesConfigFile(ProfileResourceLoader.profilesWithTwoAccessKeyUnderSameProfile().asFile());
+        assertEquals("testProfile3", profile.getCredentials("test2").getAWSAccessKeyId());
     }
 
     /**

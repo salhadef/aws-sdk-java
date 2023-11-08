@@ -27,10 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DescribeAccountAssignmentCreationStatusRequestMarshaller {
 
-    private static final MarshallingInfo<String> INSTANCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceArn").build();
     private static final MarshallingInfo<String> ACCOUNTASSIGNMENTCREATIONREQUESTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AccountAssignmentCreationRequestId").build();
+    private static final MarshallingInfo<String> INSTANCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceArn").build();
 
     private static final DescribeAccountAssignmentCreationStatusRequestMarshaller instance = new DescribeAccountAssignmentCreationStatusRequestMarshaller();
 
@@ -48,9 +48,9 @@ public class DescribeAccountAssignmentCreationStatusRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(describeAccountAssignmentCreationStatusRequest.getInstanceArn(), INSTANCEARN_BINDING);
             protocolMarshaller.marshall(describeAccountAssignmentCreationStatusRequest.getAccountAssignmentCreationRequestId(),
                     ACCOUNTASSIGNMENTCREATIONREQUESTID_BINDING);
+            protocolMarshaller.marshall(describeAccountAssignmentCreationStatusRequest.getInstanceArn(), INSTANCEARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

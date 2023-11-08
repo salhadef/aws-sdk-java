@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum PackageType {
 
-    TXTDICTIONARY("TXT-DICTIONARY");
+    TXTDICTIONARY("TXT-DICTIONARY"),
+    ZIPPLUGIN("ZIP-PLUGIN");
 
     private String value;
 

@@ -83,6 +83,39 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
 
     /**
      * <p>
+     * Cancels an export job.
+     * </p>
+     * 
+     * @param cancelExportJobRequest
+     *        Represents a request to cancel an export job using the export job ID.
+     * @return A Java Future containing the result of the CancelExportJob operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2Async.CancelExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CancelExportJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CancelExportJobResult> cancelExportJobAsync(CancelExportJobRequest cancelExportJobRequest);
+
+    /**
+     * <p>
+     * Cancels an export job.
+     * </p>
+     * 
+     * @param cancelExportJobRequest
+     *        Represents a request to cancel an export job using the export job ID.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CancelExportJob operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.CancelExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CancelExportJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CancelExportJobResult> cancelExportJobAsync(CancelExportJobRequest cancelExportJobRequest,
+            com.amazonaws.handlers.AsyncHandler<CancelExportJobRequest, CancelExportJobResult> asyncHandler);
+
+    /**
+     * <p>
      * Create a configuration set. <i>Configuration sets</i> are groups of rules that you can apply to the emails that
      * you send. You apply a configuration set to an email by specifying the name of the configuration set when you call
      * the Amazon SES API v2. When you apply a configuration set to an email, all of the rules in that configuration set
@@ -592,6 +625,45 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
      */
     java.util.concurrent.Future<CreateEmailTemplateResult> createEmailTemplateAsync(CreateEmailTemplateRequest createEmailTemplateRequest,
             com.amazonaws.handlers.AsyncHandler<CreateEmailTemplateRequest, CreateEmailTemplateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an export job for a data source and destination.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param createExportJobRequest
+     *        Represents a request to create an export job from a data source to a data destination.
+     * @return A Java Future containing the result of the CreateExportJob operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2Async.CreateExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateExportJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateExportJobResult> createExportJobAsync(CreateExportJobRequest createExportJobRequest);
+
+    /**
+     * <p>
+     * Creates an export job for a data source and destination.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param createExportJobRequest
+     *        Represents a request to create an export job from a data source to a data destination.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateExportJob operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.CreateExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateExportJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateExportJobResult> createExportJobAsync(CreateExportJobRequest createExportJobRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateExportJobRequest, CreateExportJobResult> asyncHandler);
 
     /**
      * <p>
@@ -1757,6 +1829,39 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
 
     /**
      * <p>
+     * Provides information about an export job.
+     * </p>
+     * 
+     * @param getExportJobRequest
+     *        Represents a request to retrieve information about an export job using the export job ID.
+     * @return A Java Future containing the result of the GetExportJob operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2Async.GetExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetExportJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetExportJobResult> getExportJobAsync(GetExportJobRequest getExportJobRequest);
+
+    /**
+     * <p>
+     * Provides information about an export job.
+     * </p>
+     * 
+     * @param getExportJobRequest
+     *        Represents a request to retrieve information about an export job using the export job ID.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetExportJob operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.GetExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetExportJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetExportJobResult> getExportJobAsync(GetExportJobRequest getExportJobRequest,
+            com.amazonaws.handlers.AsyncHandler<GetExportJobRequest, GetExportJobResult> asyncHandler);
+
+    /**
+     * <p>
      * Provides information about an import job.
      * </p>
      * 
@@ -1787,6 +1892,47 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
      */
     java.util.concurrent.Future<GetImportJobResult> getImportJobAsync(GetImportJobRequest getImportJobRequest,
             com.amazonaws.handlers.AsyncHandler<GetImportJobRequest, GetImportJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Provides information about a specific message, including the from address, the subject, the recipient address,
+     * email tags, as well as events associated with the message.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param getMessageInsightsRequest
+     *        A request to return information about a message.
+     * @return A Java Future containing the result of the GetMessageInsights operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2Async.GetMessageInsights
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetMessageInsights" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetMessageInsightsResult> getMessageInsightsAsync(GetMessageInsightsRequest getMessageInsightsRequest);
+
+    /**
+     * <p>
+     * Provides information about a specific message, including the from address, the subject, the recipient address,
+     * email tags, as well as events associated with the message.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param getMessageInsightsRequest
+     *        A request to return information about a message.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetMessageInsights operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.GetMessageInsights
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetMessageInsights" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetMessageInsightsResult> getMessageInsightsAsync(GetMessageInsightsRequest getMessageInsightsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetMessageInsightsRequest, GetMessageInsightsResult> asyncHandler);
 
     /**
      * <p>
@@ -2185,6 +2331,39 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
      */
     java.util.concurrent.Future<ListEmailTemplatesResult> listEmailTemplatesAsync(ListEmailTemplatesRequest listEmailTemplatesRequest,
             com.amazonaws.handlers.AsyncHandler<ListEmailTemplatesRequest, ListEmailTemplatesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all of the export jobs.
+     * </p>
+     * 
+     * @param listExportJobsRequest
+     *        Represents a request to list all export jobs with filters.
+     * @return A Java Future containing the result of the ListExportJobs operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2Async.ListExportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListExportJobs" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListExportJobsResult> listExportJobsAsync(ListExportJobsRequest listExportJobsRequest);
+
+    /**
+     * <p>
+     * Lists all of the export jobs.
+     * </p>
+     * 
+     * @param listExportJobsRequest
+     *        Represents a request to list all export jobs with filters.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListExportJobs operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.ListExportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListExportJobs" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListExportJobsResult> listExportJobsAsync(ListExportJobsRequest listExportJobsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListExportJobsRequest, ListExportJobsResult> asyncHandler);
 
     /**
      * <p>
@@ -2801,6 +2980,53 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
      */
     java.util.concurrent.Future<PutDedicatedIpInPoolResult> putDedicatedIpInPoolAsync(PutDedicatedIpInPoolRequest putDedicatedIpInPoolRequest,
             com.amazonaws.handlers.AsyncHandler<PutDedicatedIpInPoolRequest, PutDedicatedIpInPoolResult> asyncHandler);
+
+    /**
+     * <p>
+     * Used to convert a dedicated IP pool to a different scaling mode.
+     * </p>
+     * <note>
+     * <p>
+     * <code>MANAGED</code> pools cannot be converted to <code>STANDARD</code> scaling mode.
+     * </p>
+     * </note>
+     * 
+     * @param putDedicatedIpPoolScalingAttributesRequest
+     *        A request to convert a dedicated IP pool to a different scaling mode.
+     * @return A Java Future containing the result of the PutDedicatedIpPoolScalingAttributes operation returned by the
+     *         service.
+     * @sample AmazonSimpleEmailServiceV2Async.PutDedicatedIpPoolScalingAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutDedicatedIpPoolScalingAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutDedicatedIpPoolScalingAttributesResult> putDedicatedIpPoolScalingAttributesAsync(
+            PutDedicatedIpPoolScalingAttributesRequest putDedicatedIpPoolScalingAttributesRequest);
+
+    /**
+     * <p>
+     * Used to convert a dedicated IP pool to a different scaling mode.
+     * </p>
+     * <note>
+     * <p>
+     * <code>MANAGED</code> pools cannot be converted to <code>STANDARD</code> scaling mode.
+     * </p>
+     * </note>
+     * 
+     * @param putDedicatedIpPoolScalingAttributesRequest
+     *        A request to convert a dedicated IP pool to a different scaling mode.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutDedicatedIpPoolScalingAttributes operation returned by the
+     *         service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.PutDedicatedIpPoolScalingAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutDedicatedIpPoolScalingAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutDedicatedIpPoolScalingAttributesResult> putDedicatedIpPoolScalingAttributesAsync(
+            PutDedicatedIpPoolScalingAttributesRequest putDedicatedIpPoolScalingAttributesRequest,
+            com.amazonaws.handlers.AsyncHandler<PutDedicatedIpPoolScalingAttributesRequest, PutDedicatedIpPoolScalingAttributesResult> asyncHandler);
 
     /**
      * <p/>

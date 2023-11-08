@@ -45,6 +45,12 @@ public class CreateMembershipRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * The default protected query result configuration as specified by the member who can receive results.
+     * </p>
+     */
+    private MembershipProtectedQueryResultConfiguration defaultResultConfiguration;
 
     /**
      * <p>
@@ -226,6 +232,46 @@ public class CreateMembershipRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The default protected query result configuration as specified by the member who can receive results.
+     * </p>
+     * 
+     * @param defaultResultConfiguration
+     *        The default protected query result configuration as specified by the member who can receive results.
+     */
+
+    public void setDefaultResultConfiguration(MembershipProtectedQueryResultConfiguration defaultResultConfiguration) {
+        this.defaultResultConfiguration = defaultResultConfiguration;
+    }
+
+    /**
+     * <p>
+     * The default protected query result configuration as specified by the member who can receive results.
+     * </p>
+     * 
+     * @return The default protected query result configuration as specified by the member who can receive results.
+     */
+
+    public MembershipProtectedQueryResultConfiguration getDefaultResultConfiguration() {
+        return this.defaultResultConfiguration;
+    }
+
+    /**
+     * <p>
+     * The default protected query result configuration as specified by the member who can receive results.
+     * </p>
+     * 
+     * @param defaultResultConfiguration
+     *        The default protected query result configuration as specified by the member who can receive results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateMembershipRequest withDefaultResultConfiguration(MembershipProtectedQueryResultConfiguration defaultResultConfiguration) {
+        setDefaultResultConfiguration(defaultResultConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -242,7 +288,9 @@ public class CreateMembershipRequest extends com.amazonaws.AmazonWebServiceReque
         if (getQueryLogStatus() != null)
             sb.append("QueryLogStatus: ").append(getQueryLogStatus()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getDefaultResultConfiguration() != null)
+            sb.append("DefaultResultConfiguration: ").append(getDefaultResultConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -269,6 +317,10 @@ public class CreateMembershipRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getDefaultResultConfiguration() == null ^ this.getDefaultResultConfiguration() == null)
+            return false;
+        if (other.getDefaultResultConfiguration() != null && other.getDefaultResultConfiguration().equals(this.getDefaultResultConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -280,6 +332,7 @@ public class CreateMembershipRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getCollaborationIdentifier() == null) ? 0 : getCollaborationIdentifier().hashCode());
         hashCode = prime * hashCode + ((getQueryLogStatus() == null) ? 0 : getQueryLogStatus().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getDefaultResultConfiguration() == null) ? 0 : getDefaultResultConfiguration().hashCode());
         return hashCode;
     }
 

@@ -33,6 +33,8 @@ public class UpdatePhoneNumberRequestItemMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProductType").build();
     private static final MarshallingInfo<String> CALLINGNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CallingName").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
 
     private static final UpdatePhoneNumberRequestItemMarshaller instance = new UpdatePhoneNumberRequestItemMarshaller();
 
@@ -53,6 +55,7 @@ public class UpdatePhoneNumberRequestItemMarshaller {
             protocolMarshaller.marshall(updatePhoneNumberRequestItem.getPhoneNumberId(), PHONENUMBERID_BINDING);
             protocolMarshaller.marshall(updatePhoneNumberRequestItem.getProductType(), PRODUCTTYPE_BINDING);
             protocolMarshaller.marshall(updatePhoneNumberRequestItem.getCallingName(), CALLINGNAME_BINDING);
+            protocolMarshaller.marshall(updatePhoneNumberRequestItem.getName(), NAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

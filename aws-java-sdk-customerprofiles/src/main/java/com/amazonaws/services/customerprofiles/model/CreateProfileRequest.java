@@ -1211,51 +1211,51 @@ public class CreateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getDomainName() != null)
             sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getAccountNumber() != null)
-            sb.append("AccountNumber: ").append(getAccountNumber()).append(",");
+            sb.append("AccountNumber: ").append("***Sensitive Data Redacted***").append(",");
         if (getAdditionalInformation() != null)
-            sb.append("AdditionalInformation: ").append(getAdditionalInformation()).append(",");
+            sb.append("AdditionalInformation: ").append("***Sensitive Data Redacted***").append(",");
         if (getPartyType() != null)
-            sb.append("PartyType: ").append(getPartyType()).append(",");
+            sb.append("PartyType: ").append("***Sensitive Data Redacted***").append(",");
         if (getBusinessName() != null)
-            sb.append("BusinessName: ").append(getBusinessName()).append(",");
+            sb.append("BusinessName: ").append("***Sensitive Data Redacted***").append(",");
         if (getFirstName() != null)
-            sb.append("FirstName: ").append(getFirstName()).append(",");
+            sb.append("FirstName: ").append("***Sensitive Data Redacted***").append(",");
         if (getMiddleName() != null)
-            sb.append("MiddleName: ").append(getMiddleName()).append(",");
+            sb.append("MiddleName: ").append("***Sensitive Data Redacted***").append(",");
         if (getLastName() != null)
-            sb.append("LastName: ").append(getLastName()).append(",");
+            sb.append("LastName: ").append("***Sensitive Data Redacted***").append(",");
         if (getBirthDate() != null)
-            sb.append("BirthDate: ").append(getBirthDate()).append(",");
+            sb.append("BirthDate: ").append("***Sensitive Data Redacted***").append(",");
         if (getGender() != null)
-            sb.append("Gender: ").append(getGender()).append(",");
+            sb.append("Gender: ").append("***Sensitive Data Redacted***").append(",");
         if (getPhoneNumber() != null)
-            sb.append("PhoneNumber: ").append(getPhoneNumber()).append(",");
+            sb.append("PhoneNumber: ").append("***Sensitive Data Redacted***").append(",");
         if (getMobilePhoneNumber() != null)
-            sb.append("MobilePhoneNumber: ").append(getMobilePhoneNumber()).append(",");
+            sb.append("MobilePhoneNumber: ").append("***Sensitive Data Redacted***").append(",");
         if (getHomePhoneNumber() != null)
-            sb.append("HomePhoneNumber: ").append(getHomePhoneNumber()).append(",");
+            sb.append("HomePhoneNumber: ").append("***Sensitive Data Redacted***").append(",");
         if (getBusinessPhoneNumber() != null)
-            sb.append("BusinessPhoneNumber: ").append(getBusinessPhoneNumber()).append(",");
+            sb.append("BusinessPhoneNumber: ").append("***Sensitive Data Redacted***").append(",");
         if (getEmailAddress() != null)
-            sb.append("EmailAddress: ").append(getEmailAddress()).append(",");
+            sb.append("EmailAddress: ").append("***Sensitive Data Redacted***").append(",");
         if (getPersonalEmailAddress() != null)
-            sb.append("PersonalEmailAddress: ").append(getPersonalEmailAddress()).append(",");
+            sb.append("PersonalEmailAddress: ").append("***Sensitive Data Redacted***").append(",");
         if (getBusinessEmailAddress() != null)
-            sb.append("BusinessEmailAddress: ").append(getBusinessEmailAddress()).append(",");
+            sb.append("BusinessEmailAddress: ").append("***Sensitive Data Redacted***").append(",");
         if (getAddress() != null)
-            sb.append("Address: ").append(getAddress()).append(",");
+            sb.append("Address: ").append("***Sensitive Data Redacted***").append(",");
         if (getShippingAddress() != null)
-            sb.append("ShippingAddress: ").append(getShippingAddress()).append(",");
+            sb.append("ShippingAddress: ").append("***Sensitive Data Redacted***").append(",");
         if (getMailingAddress() != null)
-            sb.append("MailingAddress: ").append(getMailingAddress()).append(",");
+            sb.append("MailingAddress: ").append("***Sensitive Data Redacted***").append(",");
         if (getBillingAddress() != null)
-            sb.append("BillingAddress: ").append(getBillingAddress()).append(",");
+            sb.append("BillingAddress: ").append("***Sensitive Data Redacted***").append(",");
         if (getAttributes() != null)
-            sb.append("Attributes: ").append(getAttributes()).append(",");
+            sb.append("Attributes: ").append("***Sensitive Data Redacted***").append(",");
         if (getPartyTypeString() != null)
-            sb.append("PartyTypeString: ").append(getPartyTypeString()).append(",");
+            sb.append("PartyTypeString: ").append("***Sensitive Data Redacted***").append(",");
         if (getGenderString() != null)
-            sb.append("GenderString: ").append(getGenderString());
+            sb.append("GenderString: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

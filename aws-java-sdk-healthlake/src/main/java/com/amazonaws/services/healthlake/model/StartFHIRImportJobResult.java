@@ -37,7 +37,7 @@ public class StartFHIRImportJobResult extends com.amazonaws.AmazonWebServiceResu
     private String jobStatus;
     /**
      * <p>
-     * The AWS-generated Data Store ID.
+     * The AWS-generated data store ID.
      * </p>
      */
     private String datastoreId;
@@ -143,11 +143,11 @@ public class StartFHIRImportJobResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The AWS-generated Data Store ID.
+     * The AWS-generated data store ID.
      * </p>
      * 
      * @param datastoreId
-     *        The AWS-generated Data Store ID.
+     *        The AWS-generated data store ID.
      */
 
     public void setDatastoreId(String datastoreId) {
@@ -156,10 +156,10 @@ public class StartFHIRImportJobResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The AWS-generated Data Store ID.
+     * The AWS-generated data store ID.
      * </p>
      * 
-     * @return The AWS-generated Data Store ID.
+     * @return The AWS-generated data store ID.
      */
 
     public String getDatastoreId() {
@@ -168,11 +168,11 @@ public class StartFHIRImportJobResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The AWS-generated Data Store ID.
+     * The AWS-generated data store ID.
      * </p>
      * 
      * @param datastoreId
-     *        The AWS-generated Data Store ID.
+     *        The AWS-generated data store ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

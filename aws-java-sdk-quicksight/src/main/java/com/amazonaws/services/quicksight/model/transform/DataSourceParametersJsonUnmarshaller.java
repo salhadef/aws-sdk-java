@@ -140,6 +140,14 @@ public class DataSourceParametersJsonUnmarshaller implements Unmarshaller<DataSo
                     context.nextToken();
                     dataSourceParameters.setDatabricksParameters(DatabricksParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("StarburstParameters", targetDepth)) {
+                    context.nextToken();
+                    dataSourceParameters.setStarburstParameters(StarburstParametersJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("TrinoParameters", targetDepth)) {
+                    context.nextToken();
+                    dataSourceParameters.setTrinoParameters(TrinoParametersJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

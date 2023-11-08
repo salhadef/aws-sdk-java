@@ -33,6 +33,16 @@ public class AbstractAWSAppSync implements AWSAppSync {
     }
 
     @Override
+    public AssociateMergedGraphqlApiResult associateMergedGraphqlApi(AssociateMergedGraphqlApiRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AssociateSourceGraphqlApiResult associateSourceGraphqlApi(AssociateSourceGraphqlApiRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateApiCacheResult createApiCache(CreateApiCacheRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -118,6 +128,16 @@ public class AbstractAWSAppSync implements AWSAppSync {
     }
 
     @Override
+    public DisassociateMergedGraphqlApiResult disassociateMergedGraphqlApi(DisassociateMergedGraphqlApiRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DisassociateSourceGraphqlApiResult disassociateSourceGraphqlApi(DisassociateSourceGraphqlApiRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public EvaluateCodeResult evaluateCode(EvaluateCodeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -178,6 +198,11 @@ public class AbstractAWSAppSync implements AWSAppSync {
     }
 
     @Override
+    public GetSourceApiAssociationResult getSourceApiAssociation(GetSourceApiAssociationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetTypeResult getType(GetTypeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -218,6 +243,11 @@ public class AbstractAWSAppSync implements AWSAppSync {
     }
 
     @Override
+    public ListSourceApiAssociationsResult listSourceApiAssociations(ListSourceApiAssociationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -228,7 +258,17 @@ public class AbstractAWSAppSync implements AWSAppSync {
     }
 
     @Override
+    public ListTypesByAssociationResult listTypesByAssociation(ListTypesByAssociationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartSchemaCreationResult startSchemaCreation(StartSchemaCreationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartSchemaMergeResult startSchemaMerge(StartSchemaMergeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -274,6 +314,11 @@ public class AbstractAWSAppSync implements AWSAppSync {
 
     @Override
     public UpdateResolverResult updateResolver(UpdateResolverRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateSourceApiAssociationResult updateSourceApiAssociation(UpdateSourceApiAssociationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

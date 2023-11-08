@@ -116,7 +116,8 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * A fleet's remote location to place the new game session in. If this parameter is not set, the new game session is
      * placed in the fleet's home Region. Specify a remote location with an Amazon Web Services Region code such as
-     * <code>us-west-2</code>.
+     * <code>us-west-2</code>. When using an Anywhere fleet, this parameter is required and must be set to the Anywhere
+     * fleet's custom location.
      * </p>
      */
     private String location;
@@ -714,13 +715,15 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * A fleet's remote location to place the new game session in. If this parameter is not set, the new game session is
      * placed in the fleet's home Region. Specify a remote location with an Amazon Web Services Region code such as
-     * <code>us-west-2</code>.
+     * <code>us-west-2</code>. When using an Anywhere fleet, this parameter is required and must be set to the Anywhere
+     * fleet's custom location.
      * </p>
      * 
      * @param location
      *        A fleet's remote location to place the new game session in. If this parameter is not set, the new game
      *        session is placed in the fleet's home Region. Specify a remote location with an Amazon Web Services Region
-     *        code such as <code>us-west-2</code>.
+     *        code such as <code>us-west-2</code>. When using an Anywhere fleet, this parameter is required and must be
+     *        set to the Anywhere fleet's custom location.
      */
 
     public void setLocation(String location) {
@@ -731,12 +734,14 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * A fleet's remote location to place the new game session in. If this parameter is not set, the new game session is
      * placed in the fleet's home Region. Specify a remote location with an Amazon Web Services Region code such as
-     * <code>us-west-2</code>.
+     * <code>us-west-2</code>. When using an Anywhere fleet, this parameter is required and must be set to the Anywhere
+     * fleet's custom location.
      * </p>
      * 
      * @return A fleet's remote location to place the new game session in. If this parameter is not set, the new game
      *         session is placed in the fleet's home Region. Specify a remote location with an Amazon Web Services
-     *         Region code such as <code>us-west-2</code>.
+     *         Region code such as <code>us-west-2</code>. When using an Anywhere fleet, this parameter is required and
+     *         must be set to the Anywhere fleet's custom location.
      */
 
     public String getLocation() {
@@ -747,13 +752,15 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * A fleet's remote location to place the new game session in. If this parameter is not set, the new game session is
      * placed in the fleet's home Region. Specify a remote location with an Amazon Web Services Region code such as
-     * <code>us-west-2</code>.
+     * <code>us-west-2</code>. When using an Anywhere fleet, this parameter is required and must be set to the Anywhere
+     * fleet's custom location.
      * </p>
      * 
      * @param location
      *        A fleet's remote location to place the new game session in. If this parameter is not set, the new game
      *        session is placed in the fleet's home Region. Specify a remote location with an Amazon Web Services Region
-     *        code such as <code>us-west-2</code>.
+     *        code such as <code>us-west-2</code>. When using an Anywhere fleet, this parameter is required and must be
+     *        set to the Anywhere fleet's custom location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

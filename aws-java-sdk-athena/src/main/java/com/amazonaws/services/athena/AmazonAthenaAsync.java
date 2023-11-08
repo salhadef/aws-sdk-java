@@ -172,7 +172,9 @@ public interface AmazonAthenaAsync extends AmazonAthena {
 
     /**
      * <p>
-     * Cancels the capacity reservation with the specified name.
+     * Cancels the capacity reservation with the specified name. Cancelled reservations remain in your account and will
+     * be deleted 45 days after cancellation. During the 45 days, you cannot re-purpose or reuse a reservation that has
+     * been cancelled, but you can refer to its tags and view it for historical reference.
      * </p>
      * 
      * @param cancelCapacityReservationRequest
@@ -186,7 +188,9 @@ public interface AmazonAthenaAsync extends AmazonAthena {
 
     /**
      * <p>
-     * Cancels the capacity reservation with the specified name.
+     * Cancels the capacity reservation with the specified name. Cancelled reservations remain in your account and will
+     * be deleted 45 days after cancellation. During the 45 days, you cannot re-purpose or reuse a reservation that has
+     * been cancelled, but you can refer to its tags and view it for historical reference.
      * </p>
      * 
      * @param cancelCapacityReservationRequest
@@ -447,6 +451,45 @@ public interface AmazonAthenaAsync extends AmazonAthena {
      */
     java.util.concurrent.Future<CreateWorkGroupResult> createWorkGroupAsync(CreateWorkGroupRequest createWorkGroupRequest,
             com.amazonaws.handlers.AsyncHandler<CreateWorkGroupRequest, CreateWorkGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a cancelled capacity reservation. A reservation must be cancelled before it can be deleted. A deleted
+     * reservation is immediately removed from your account and can no longer be referenced, including by its ARN. A
+     * deleted reservation cannot be called by <code>GetCapacityReservation</code>, and deleted reservations do not
+     * appear in the output of <code>ListCapacityReservations</code>.
+     * </p>
+     * 
+     * @param deleteCapacityReservationRequest
+     * @return A Java Future containing the result of the DeleteCapacityReservation operation returned by the service.
+     * @sample AmazonAthenaAsync.DeleteCapacityReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteCapacityReservation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteCapacityReservationResult> deleteCapacityReservationAsync(
+            DeleteCapacityReservationRequest deleteCapacityReservationRequest);
+
+    /**
+     * <p>
+     * Deletes a cancelled capacity reservation. A reservation must be cancelled before it can be deleted. A deleted
+     * reservation is immediately removed from your account and can no longer be referenced, including by its ARN. A
+     * deleted reservation cannot be called by <code>GetCapacityReservation</code>, and deleted reservations do not
+     * appear in the output of <code>ListCapacityReservations</code>.
+     * </p>
+     * 
+     * @param deleteCapacityReservationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteCapacityReservation operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.DeleteCapacityReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteCapacityReservation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteCapacityReservationResult> deleteCapacityReservationAsync(
+            DeleteCapacityReservationRequest deleteCapacityReservationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteCapacityReservationRequest, DeleteCapacityReservationResult> asyncHandler);
 
     /**
      * <p>

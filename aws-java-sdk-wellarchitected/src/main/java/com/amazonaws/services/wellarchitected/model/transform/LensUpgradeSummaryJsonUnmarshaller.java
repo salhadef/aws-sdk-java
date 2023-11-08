@@ -72,6 +72,14 @@ public class LensUpgradeSummaryJsonUnmarshaller implements Unmarshaller<LensUpgr
                     context.nextToken();
                     lensUpgradeSummary.setLatestLensVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ResourceArn", targetDepth)) {
+                    context.nextToken();
+                    lensUpgradeSummary.setResourceArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ResourceName", targetDepth)) {
+                    context.nextToken();
+                    lensUpgradeSummary.setResourceName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -21,7 +21,6 @@ import javax.annotation.Generated;
 public enum ResourceType {
 
     ManagedInstance("ManagedInstance"),
-    Document("Document"),
     EC2Instance("EC2Instance");
 
     private String value;

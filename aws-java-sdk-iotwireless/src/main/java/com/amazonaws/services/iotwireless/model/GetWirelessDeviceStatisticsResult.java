@@ -33,6 +33,11 @@ public class GetWirelessDeviceStatisticsResult extends com.amazonaws.AmazonWebSe
      * <p>
      * The date and time when the most recent uplink was received.
      * </p>
+     * <note>
+     * <p>
+     * This value is only valid for 3 months.
+     * </p>
+     * </note>
      */
     private String lastUplinkReceivedAt;
     /**
@@ -92,9 +97,17 @@ public class GetWirelessDeviceStatisticsResult extends com.amazonaws.AmazonWebSe
      * <p>
      * The date and time when the most recent uplink was received.
      * </p>
+     * <note>
+     * <p>
+     * This value is only valid for 3 months.
+     * </p>
+     * </note>
      * 
      * @param lastUplinkReceivedAt
-     *        The date and time when the most recent uplink was received.
+     *        The date and time when the most recent uplink was received.</p> <note>
+     *        <p>
+     *        This value is only valid for 3 months.
+     *        </p>
      */
 
     public void setLastUplinkReceivedAt(String lastUplinkReceivedAt) {
@@ -105,8 +118,16 @@ public class GetWirelessDeviceStatisticsResult extends com.amazonaws.AmazonWebSe
      * <p>
      * The date and time when the most recent uplink was received.
      * </p>
+     * <note>
+     * <p>
+     * This value is only valid for 3 months.
+     * </p>
+     * </note>
      * 
-     * @return The date and time when the most recent uplink was received.
+     * @return The date and time when the most recent uplink was received.</p> <note>
+     *         <p>
+     *         This value is only valid for 3 months.
+     *         </p>
      */
 
     public String getLastUplinkReceivedAt() {
@@ -117,9 +138,17 @@ public class GetWirelessDeviceStatisticsResult extends com.amazonaws.AmazonWebSe
      * <p>
      * The date and time when the most recent uplink was received.
      * </p>
+     * <note>
+     * <p>
+     * This value is only valid for 3 months.
+     * </p>
+     * </note>
      * 
      * @param lastUplinkReceivedAt
-     *        The date and time when the most recent uplink was received.
+     *        The date and time when the most recent uplink was received.</p> <note>
+     *        <p>
+     *        This value is only valid for 3 months.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

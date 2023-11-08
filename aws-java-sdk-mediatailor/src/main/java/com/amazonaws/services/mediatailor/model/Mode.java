@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum Mode {
 
     OFF("OFF"),
-    BEHIND_LIVE_EDGE("BEHIND_LIVE_EDGE");
+    BEHIND_LIVE_EDGE("BEHIND_LIVE_EDGE"),
+    AFTER_LIVE_EDGE("AFTER_LIVE_EDGE");
 
     private String value;
 

@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.quicksight.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -35,6 +36,8 @@ public class DecimalParameterDeclarationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultValues").build();
     private static final MarshallingInfo<StructuredPojo> VALUEWHENUNSET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ValueWhenUnset").build();
+    private static final MarshallingInfo<List> MAPPEDDATASETPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MappedDataSetParameters").build();
 
     private static final DecimalParameterDeclarationMarshaller instance = new DecimalParameterDeclarationMarshaller();
 
@@ -56,6 +59,7 @@ public class DecimalParameterDeclarationMarshaller {
             protocolMarshaller.marshall(decimalParameterDeclaration.getName(), NAME_BINDING);
             protocolMarshaller.marshall(decimalParameterDeclaration.getDefaultValues(), DEFAULTVALUES_BINDING);
             protocolMarshaller.marshall(decimalParameterDeclaration.getValueWhenUnset(), VALUEWHENUNSET_BINDING);
+            protocolMarshaller.marshall(decimalParameterDeclaration.getMappedDataSetParameters(), MAPPEDDATASETPARAMETERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

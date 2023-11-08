@@ -25,7 +25,8 @@ public enum TriggerType {
     PollForSourceChanges("PollForSourceChanges"),
     Webhook("Webhook"),
     CloudWatchEvent("CloudWatchEvent"),
-    PutActionRevision("PutActionRevision");
+    PutActionRevision("PutActionRevision"),
+    WebhookV2("WebhookV2");
 
     private String value;
 

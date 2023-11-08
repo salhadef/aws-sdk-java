@@ -83,6 +83,17 @@ public class WorkloadSummaryJsonUnmarshaller implements Unmarshaller<WorkloadSum
                     context.nextToken();
                     workloadSummary.setImprovementStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Profiles", targetDepth)) {
+                    context.nextToken();
+                    workloadSummary.setProfiles(new ListUnmarshaller<WorkloadProfile>(WorkloadProfileJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("PrioritizedRiskCounts", targetDepth)) {
+                    context.nextToken();
+                    workloadSummary.setPrioritizedRiskCounts(new MapUnmarshaller<String, Integer>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(Integer.class)).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

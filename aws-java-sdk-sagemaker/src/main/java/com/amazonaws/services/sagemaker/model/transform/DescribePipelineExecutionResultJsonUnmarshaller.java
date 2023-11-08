@@ -96,6 +96,10 @@ public class DescribePipelineExecutionResultJsonUnmarshaller implements Unmarsha
                     context.nextToken();
                     describePipelineExecutionResult.setParallelismConfiguration(ParallelismConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("SelectiveExecutionConfig", targetDepth)) {
+                    context.nextToken();
+                    describePipelineExecutionResult.setSelectiveExecutionConfig(SelectiveExecutionConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

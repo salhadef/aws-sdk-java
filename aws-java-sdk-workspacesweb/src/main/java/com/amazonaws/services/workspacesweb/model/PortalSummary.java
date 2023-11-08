@@ -72,6 +72,12 @@ public class PortalSummary implements Serializable, Cloneable, StructuredPojo {
     private String displayName;
     /**
      * <p>
+     * The ARN of the IP access settings.
+     * </p>
+     */
+    private String ipAccessSettingsArn;
+    /**
+     * <p>
      * The ARN of the network settings that is associated with the web portal.
      * </p>
      */
@@ -446,6 +452,46 @@ public class PortalSummary implements Serializable, Cloneable, StructuredPojo {
 
     public PortalSummary withDisplayName(String displayName) {
         setDisplayName(displayName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the IP access settings.
+     * </p>
+     * 
+     * @param ipAccessSettingsArn
+     *        The ARN of the IP access settings.
+     */
+
+    public void setIpAccessSettingsArn(String ipAccessSettingsArn) {
+        this.ipAccessSettingsArn = ipAccessSettingsArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the IP access settings.
+     * </p>
+     * 
+     * @return The ARN of the IP access settings.
+     */
+
+    public String getIpAccessSettingsArn() {
+        return this.ipAccessSettingsArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the IP access settings.
+     * </p>
+     * 
+     * @param ipAccessSettingsArn
+     *        The ARN of the IP access settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PortalSummary withIpAccessSettingsArn(String ipAccessSettingsArn) {
+        setIpAccessSettingsArn(ipAccessSettingsArn);
         return this;
     }
 
@@ -829,6 +875,8 @@ public class PortalSummary implements Serializable, Cloneable, StructuredPojo {
             sb.append("CreationDate: ").append(getCreationDate()).append(",");
         if (getDisplayName() != null)
             sb.append("DisplayName: ").append("***Sensitive Data Redacted***").append(",");
+        if (getIpAccessSettingsArn() != null)
+            sb.append("IpAccessSettingsArn: ").append(getIpAccessSettingsArn()).append(",");
         if (getNetworkSettingsArn() != null)
             sb.append("NetworkSettingsArn: ").append(getNetworkSettingsArn()).append(",");
         if (getPortalArn() != null)
@@ -879,6 +927,10 @@ public class PortalSummary implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDisplayName() != null && other.getDisplayName().equals(this.getDisplayName()) == false)
             return false;
+        if (other.getIpAccessSettingsArn() == null ^ this.getIpAccessSettingsArn() == null)
+            return false;
+        if (other.getIpAccessSettingsArn() != null && other.getIpAccessSettingsArn().equals(this.getIpAccessSettingsArn()) == false)
+            return false;
         if (other.getNetworkSettingsArn() == null ^ this.getNetworkSettingsArn() == null)
             return false;
         if (other.getNetworkSettingsArn() != null && other.getNetworkSettingsArn().equals(this.getNetworkSettingsArn()) == false)
@@ -924,6 +976,7 @@ public class PortalSummary implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getBrowserType() == null) ? 0 : getBrowserType().hashCode());
         hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
         hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
+        hashCode = prime * hashCode + ((getIpAccessSettingsArn() == null) ? 0 : getIpAccessSettingsArn().hashCode());
         hashCode = prime * hashCode + ((getNetworkSettingsArn() == null) ? 0 : getNetworkSettingsArn().hashCode());
         hashCode = prime * hashCode + ((getPortalArn() == null) ? 0 : getPortalArn().hashCode());
         hashCode = prime * hashCode + ((getPortalEndpoint() == null) ? 0 : getPortalEndpoint().hashCode());

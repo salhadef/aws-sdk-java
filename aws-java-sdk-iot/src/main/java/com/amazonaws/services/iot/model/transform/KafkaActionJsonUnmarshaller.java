@@ -69,6 +69,12 @@ public class KafkaActionJsonUnmarshaller implements Unmarshaller<KafkaAction, Js
                     kafkaAction.setClientProperties(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
+                if (context.testExpression("headers", targetDepth)) {
+                    context.nextToken();
+                    kafkaAction.setHeaders(new ListUnmarshaller<KafkaActionHeader>(KafkaActionHeaderJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

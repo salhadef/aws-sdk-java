@@ -427,6 +427,39 @@ public interface AmazonManagedGrafanaAsync extends AmazonManagedGrafana {
 
     /**
      * <p>
+     * Lists available versions of Grafana. These are available when calling <code>CreateWorkspace</code>. Optionally,
+     * include a workspace to list the versions to which it can be upgraded.
+     * </p>
+     * 
+     * @param listVersionsRequest
+     * @return A Java Future containing the result of the ListVersions operation returned by the service.
+     * @sample AmazonManagedGrafanaAsync.ListVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/ListVersions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListVersionsResult> listVersionsAsync(ListVersionsRequest listVersionsRequest);
+
+    /**
+     * <p>
+     * Lists available versions of Grafana. These are available when calling <code>CreateWorkspace</code>. Optionally,
+     * include a workspace to list the versions to which it can be upgraded.
+     * </p>
+     * 
+     * @param listVersionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListVersions operation returned by the service.
+     * @sample AmazonManagedGrafanaAsyncHandler.ListVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/ListVersions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListVersionsResult> listVersionsAsync(ListVersionsRequest listVersionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListVersionsRequest, ListVersionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a list of Amazon Managed Grafana workspaces in the account, with some information about each workspace.
      * For more complete information about one workspace, use <a
      * href="https://docs.aws.amazon.com/AAMG/latest/APIReference/API_DescribeWorkspace.html">DescribeWorkspace</a>.

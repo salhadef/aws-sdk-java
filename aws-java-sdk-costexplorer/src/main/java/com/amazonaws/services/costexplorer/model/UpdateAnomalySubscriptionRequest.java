@@ -42,6 +42,9 @@ public class UpdateAnomalySubscriptionRequest extends com.amazonaws.AmazonWebSer
      * This field has been deprecated. To update a threshold, use ThresholdExpression. Continued use of Threshold will
      * be treated as shorthand syntax for a ThresholdExpression.
      * </p>
+     * <p>
+     * You can specify either Threshold or ThresholdExpression, but not both.
+     * </p>
      */
     @Deprecated
     private Double threshold;
@@ -75,9 +78,15 @@ public class UpdateAnomalySubscriptionRequest extends com.amazonaws.AmazonWebSer
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object used to specify the anomalies that you want to generate alerts for. This supports dimensions and nested
      * expressions. The supported dimensions are <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and
-     * <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>. The supported nested expression types are <code>AND</code> and
-     * <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between
-     * 0 and 10,000,000,000.
+     * <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>, corresponding to an anomaly’s TotalImpact and
+     * TotalImpactPercentage, respectively (see <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Impact.html">Impact</a> for more
+     * details). The supported nested expression types are <code>AND</code> and <code>OR</code>. The match option
+     * <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0 and 10,000,000,000 in string
+     * format.
+     * </p>
+     * <p>
+     * You can specify either Threshold or ThresholdExpression, but not both.
      * </p>
      * <p>
      * The following are examples of valid ThresholdExpressions:
@@ -162,6 +171,9 @@ public class UpdateAnomalySubscriptionRequest extends com.amazonaws.AmazonWebSer
      * This field has been deprecated. To update a threshold, use ThresholdExpression. Continued use of Threshold will
      * be treated as shorthand syntax for a ThresholdExpression.
      * </p>
+     * <p>
+     * You can specify either Threshold or ThresholdExpression, but not both.
+     * </p>
      * 
      * @param threshold
      *        (deprecated)</p>
@@ -171,6 +183,9 @@ public class UpdateAnomalySubscriptionRequest extends com.amazonaws.AmazonWebSer
      *        <p>
      *        This field has been deprecated. To update a threshold, use ThresholdExpression. Continued use of Threshold
      *        will be treated as shorthand syntax for a ThresholdExpression.
+     *        </p>
+     *        <p>
+     *        You can specify either Threshold or ThresholdExpression, but not both.
      */
     @Deprecated
     public void setThreshold(Double threshold) {
@@ -188,6 +203,9 @@ public class UpdateAnomalySubscriptionRequest extends com.amazonaws.AmazonWebSer
      * This field has been deprecated. To update a threshold, use ThresholdExpression. Continued use of Threshold will
      * be treated as shorthand syntax for a ThresholdExpression.
      * </p>
+     * <p>
+     * You can specify either Threshold or ThresholdExpression, but not both.
+     * </p>
      * 
      * @return (deprecated)</p>
      *         <p>
@@ -196,6 +214,9 @@ public class UpdateAnomalySubscriptionRequest extends com.amazonaws.AmazonWebSer
      *         <p>
      *         This field has been deprecated. To update a threshold, use ThresholdExpression. Continued use of
      *         Threshold will be treated as shorthand syntax for a ThresholdExpression.
+     *         </p>
+     *         <p>
+     *         You can specify either Threshold or ThresholdExpression, but not both.
      */
     @Deprecated
     public Double getThreshold() {
@@ -213,6 +234,9 @@ public class UpdateAnomalySubscriptionRequest extends com.amazonaws.AmazonWebSer
      * This field has been deprecated. To update a threshold, use ThresholdExpression. Continued use of Threshold will
      * be treated as shorthand syntax for a ThresholdExpression.
      * </p>
+     * <p>
+     * You can specify either Threshold or ThresholdExpression, but not both.
+     * </p>
      * 
      * @param threshold
      *        (deprecated)</p>
@@ -222,6 +246,9 @@ public class UpdateAnomalySubscriptionRequest extends com.amazonaws.AmazonWebSer
      *        <p>
      *        This field has been deprecated. To update a threshold, use ThresholdExpression. Continued use of Threshold
      *        will be treated as shorthand syntax for a ThresholdExpression.
+     *        </p>
+     *        <p>
+     *        You can specify either Threshold or ThresholdExpression, but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -475,9 +502,15 @@ public class UpdateAnomalySubscriptionRequest extends com.amazonaws.AmazonWebSer
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object used to specify the anomalies that you want to generate alerts for. This supports dimensions and nested
      * expressions. The supported dimensions are <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and
-     * <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>. The supported nested expression types are <code>AND</code> and
-     * <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between
-     * 0 and 10,000,000,000.
+     * <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>, corresponding to an anomaly’s TotalImpact and
+     * TotalImpactPercentage, respectively (see <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Impact.html">Impact</a> for more
+     * details). The supported nested expression types are <code>AND</code> and <code>OR</code>. The match option
+     * <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0 and 10,000,000,000 in string
+     * format.
+     * </p>
+     * <p>
+     * You can specify either Threshold or ThresholdExpression, but not both.
      * </p>
      * <p>
      * The following are examples of valid ThresholdExpressions:
@@ -514,9 +547,15 @@ public class UpdateAnomalySubscriptionRequest extends com.amazonaws.AmazonWebSer
      *        href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html"
      *        >Expression</a> object used to specify the anomalies that you want to generate alerts for. This supports
      *        dimensions and nested expressions. The supported dimensions are <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code>
-     *        and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>. The supported nested expression types are
-     *        <code>AND</code> and <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is required.
-     *        Values must be numbers between 0 and 10,000,000,000.</p>
+     *        and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>, corresponding to an anomaly’s TotalImpact and
+     *        TotalImpactPercentage, respectively (see <a
+     *        href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Impact.html">Impact</a> for
+     *        more details). The supported nested expression types are <code>AND</code> and <code>OR</code>. The match
+     *        option <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0 and 10,000,000,000
+     *        in string format.</p>
+     *        <p>
+     *        You can specify either Threshold or ThresholdExpression, but not both.
+     *        </p>
      *        <p>
      *        The following are examples of valid ThresholdExpressions:
      *        </p>
@@ -557,9 +596,15 @@ public class UpdateAnomalySubscriptionRequest extends com.amazonaws.AmazonWebSer
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object used to specify the anomalies that you want to generate alerts for. This supports dimensions and nested
      * expressions. The supported dimensions are <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and
-     * <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>. The supported nested expression types are <code>AND</code> and
-     * <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between
-     * 0 and 10,000,000,000.
+     * <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>, corresponding to an anomaly’s TotalImpact and
+     * TotalImpactPercentage, respectively (see <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Impact.html">Impact</a> for more
+     * details). The supported nested expression types are <code>AND</code> and <code>OR</code>. The match option
+     * <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0 and 10,000,000,000 in string
+     * format.
+     * </p>
+     * <p>
+     * You can specify either Threshold or ThresholdExpression, but not both.
      * </p>
      * <p>
      * The following are examples of valid ThresholdExpressions:
@@ -595,9 +640,15 @@ public class UpdateAnomalySubscriptionRequest extends com.amazonaws.AmazonWebSer
      *         href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html"
      *         >Expression</a> object used to specify the anomalies that you want to generate alerts for. This supports
      *         dimensions and nested expressions. The supported dimensions are
-     *         <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>. The
-     *         supported nested expression types are <code>AND</code> and <code>OR</code>. The match option
-     *         <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0 and 10,000,000,000.</p>
+     *         <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>,
+     *         corresponding to an anomaly’s TotalImpact and TotalImpactPercentage, respectively (see <a
+     *         href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Impact.html">Impact</a> for
+     *         more details). The supported nested expression types are <code>AND</code> and <code>OR</code>. The match
+     *         option <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0 and
+     *         10,000,000,000 in string format.</p>
+     *         <p>
+     *         You can specify either Threshold or ThresholdExpression, but not both.
+     *         </p>
      *         <p>
      *         The following are examples of valid ThresholdExpressions:
      *         </p>
@@ -638,9 +689,15 @@ public class UpdateAnomalySubscriptionRequest extends com.amazonaws.AmazonWebSer
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object used to specify the anomalies that you want to generate alerts for. This supports dimensions and nested
      * expressions. The supported dimensions are <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and
-     * <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>. The supported nested expression types are <code>AND</code> and
-     * <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between
-     * 0 and 10,000,000,000.
+     * <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>, corresponding to an anomaly’s TotalImpact and
+     * TotalImpactPercentage, respectively (see <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Impact.html">Impact</a> for more
+     * details). The supported nested expression types are <code>AND</code> and <code>OR</code>. The match option
+     * <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0 and 10,000,000,000 in string
+     * format.
+     * </p>
+     * <p>
+     * You can specify either Threshold or ThresholdExpression, but not both.
      * </p>
      * <p>
      * The following are examples of valid ThresholdExpressions:
@@ -677,9 +734,15 @@ public class UpdateAnomalySubscriptionRequest extends com.amazonaws.AmazonWebSer
      *        href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html"
      *        >Expression</a> object used to specify the anomalies that you want to generate alerts for. This supports
      *        dimensions and nested expressions. The supported dimensions are <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code>
-     *        and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>. The supported nested expression types are
-     *        <code>AND</code> and <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is required.
-     *        Values must be numbers between 0 and 10,000,000,000.</p>
+     *        and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>, corresponding to an anomaly’s TotalImpact and
+     *        TotalImpactPercentage, respectively (see <a
+     *        href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Impact.html">Impact</a> for
+     *        more details). The supported nested expression types are <code>AND</code> and <code>OR</code>. The match
+     *        option <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0 and 10,000,000,000
+     *        in string format.</p>
+     *        <p>
+     *        You can specify either Threshold or ThresholdExpression, but not both.
+     *        </p>
      *        <p>
      *        The following are examples of valid ThresholdExpressions:
      *        </p>

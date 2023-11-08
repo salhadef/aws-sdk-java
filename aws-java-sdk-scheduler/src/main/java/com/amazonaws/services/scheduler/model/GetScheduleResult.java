@@ -25,6 +25,13 @@ public class GetScheduleResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
+     * Indicates the action that EventBridge Scheduler applies to the schedule after the schedule completes invoking the
+     * target.
+     * </p>
+     */
+    private String actionAfterCompletion;
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) of the schedule.
      * </p>
      */
@@ -91,7 +98,7 @@ public class GetScheduleResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </li>
      * <li>
      * <p>
-     * <code>rate</code> expression - <code>rate(unit value)</code>
+     * <code>rate</code> expression - <code>rate(value unit)</code>
      * </p>
      * </li>
      * <li>
@@ -149,6 +156,73 @@ public class GetScheduleResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      */
     private Target target;
+
+    /**
+     * <p>
+     * Indicates the action that EventBridge Scheduler applies to the schedule after the schedule completes invoking the
+     * target.
+     * </p>
+     * 
+     * @param actionAfterCompletion
+     *        Indicates the action that EventBridge Scheduler applies to the schedule after the schedule completes
+     *        invoking the target.
+     * @see ActionAfterCompletion
+     */
+
+    public void setActionAfterCompletion(String actionAfterCompletion) {
+        this.actionAfterCompletion = actionAfterCompletion;
+    }
+
+    /**
+     * <p>
+     * Indicates the action that EventBridge Scheduler applies to the schedule after the schedule completes invoking the
+     * target.
+     * </p>
+     * 
+     * @return Indicates the action that EventBridge Scheduler applies to the schedule after the schedule completes
+     *         invoking the target.
+     * @see ActionAfterCompletion
+     */
+
+    public String getActionAfterCompletion() {
+        return this.actionAfterCompletion;
+    }
+
+    /**
+     * <p>
+     * Indicates the action that EventBridge Scheduler applies to the schedule after the schedule completes invoking the
+     * target.
+     * </p>
+     * 
+     * @param actionAfterCompletion
+     *        Indicates the action that EventBridge Scheduler applies to the schedule after the schedule completes
+     *        invoking the target.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ActionAfterCompletion
+     */
+
+    public GetScheduleResult withActionAfterCompletion(String actionAfterCompletion) {
+        setActionAfterCompletion(actionAfterCompletion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates the action that EventBridge Scheduler applies to the schedule after the schedule completes invoking the
+     * target.
+     * </p>
+     * 
+     * @param actionAfterCompletion
+     *        Indicates the action that EventBridge Scheduler applies to the schedule after the schedule completes
+     *        invoking the target.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ActionAfterCompletion
+     */
+
+    public GetScheduleResult withActionAfterCompletion(ActionAfterCompletion actionAfterCompletion) {
+        this.actionAfterCompletion = actionAfterCompletion.toString();
+        return this;
+    }
 
     /**
      * <p>
@@ -534,7 +608,7 @@ public class GetScheduleResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </li>
      * <li>
      * <p>
-     * <code>rate</code> expression - <code>rate(unit value)</code>
+     * <code>rate</code> expression - <code>rate(value unit)</code>
      * </p>
      * </li>
      * <li>
@@ -575,7 +649,7 @@ public class GetScheduleResult extends com.amazonaws.AmazonWebServiceResult<com.
      *        </li>
      *        <li>
      *        <p>
-     *        <code>rate</code> expression - <code>rate(unit value)</code>
+     *        <code>rate</code> expression - <code>rate(value unit)</code>
      *        </p>
      *        </li>
      *        <li>
@@ -623,7 +697,7 @@ public class GetScheduleResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </li>
      * <li>
      * <p>
-     * <code>rate</code> expression - <code>rate(unit value)</code>
+     * <code>rate</code> expression - <code>rate(value unit)</code>
      * </p>
      * </li>
      * <li>
@@ -663,7 +737,7 @@ public class GetScheduleResult extends com.amazonaws.AmazonWebServiceResult<com.
      *         </li>
      *         <li>
      *         <p>
-     *         <code>rate</code> expression - <code>rate(unit value)</code>
+     *         <code>rate</code> expression - <code>rate(value unit)</code>
      *         </p>
      *         </li>
      *         <li>
@@ -711,7 +785,7 @@ public class GetScheduleResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </li>
      * <li>
      * <p>
-     * <code>rate</code> expression - <code>rate(unit value)</code>
+     * <code>rate</code> expression - <code>rate(value unit)</code>
      * </p>
      * </li>
      * <li>
@@ -752,7 +826,7 @@ public class GetScheduleResult extends com.amazonaws.AmazonWebServiceResult<com.
      *        </li>
      *        <li>
      *        <p>
-     *        <code>rate</code> expression - <code>rate(unit value)</code>
+     *        <code>rate</code> expression - <code>rate(value unit)</code>
      *        </p>
      *        </li>
      *        <li>
@@ -993,6 +1067,8 @@ public class GetScheduleResult extends com.amazonaws.AmazonWebServiceResult<com.
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getActionAfterCompletion() != null)
+            sb.append("ActionAfterCompletion: ").append(getActionAfterCompletion()).append(",");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
         if (getCreationDate() != null)
@@ -1035,6 +1111,10 @@ public class GetScheduleResult extends com.amazonaws.AmazonWebServiceResult<com.
         if (obj instanceof GetScheduleResult == false)
             return false;
         GetScheduleResult other = (GetScheduleResult) obj;
+        if (other.getActionAfterCompletion() == null ^ this.getActionAfterCompletion() == null)
+            return false;
+        if (other.getActionAfterCompletion() != null && other.getActionAfterCompletion().equals(this.getActionAfterCompletion()) == false)
+            return false;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
@@ -1099,6 +1179,7 @@ public class GetScheduleResult extends com.amazonaws.AmazonWebServiceResult<com.
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getActionAfterCompletion() == null) ? 0 : getActionAfterCompletion().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());

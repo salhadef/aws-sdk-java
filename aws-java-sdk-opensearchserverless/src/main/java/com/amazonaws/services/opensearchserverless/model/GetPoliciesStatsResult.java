@@ -31,6 +31,12 @@ public class GetPoliciesStatsResult extends com.amazonaws.AmazonWebServiceResult
     private AccessPolicyStats accessPolicyStats;
     /**
      * <p>
+     * Information about the lifecycle policies in your account.
+     * </p>
+     */
+    private LifecyclePolicyStats lifecyclePolicyStats;
+    /**
+     * <p>
      * Information about the security configurations in your account.
      * </p>
      */
@@ -85,6 +91,46 @@ public class GetPoliciesStatsResult extends com.amazonaws.AmazonWebServiceResult
 
     public GetPoliciesStatsResult withAccessPolicyStats(AccessPolicyStats accessPolicyStats) {
         setAccessPolicyStats(accessPolicyStats);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the lifecycle policies in your account.
+     * </p>
+     * 
+     * @param lifecyclePolicyStats
+     *        Information about the lifecycle policies in your account.
+     */
+
+    public void setLifecyclePolicyStats(LifecyclePolicyStats lifecyclePolicyStats) {
+        this.lifecyclePolicyStats = lifecyclePolicyStats;
+    }
+
+    /**
+     * <p>
+     * Information about the lifecycle policies in your account.
+     * </p>
+     * 
+     * @return Information about the lifecycle policies in your account.
+     */
+
+    public LifecyclePolicyStats getLifecyclePolicyStats() {
+        return this.lifecyclePolicyStats;
+    }
+
+    /**
+     * <p>
+     * Information about the lifecycle policies in your account.
+     * </p>
+     * 
+     * @param lifecyclePolicyStats
+     *        Information about the lifecycle policies in your account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetPoliciesStatsResult withLifecyclePolicyStats(LifecyclePolicyStats lifecyclePolicyStats) {
+        setLifecyclePolicyStats(lifecyclePolicyStats);
         return this;
     }
 
@@ -222,6 +268,8 @@ public class GetPoliciesStatsResult extends com.amazonaws.AmazonWebServiceResult
         sb.append("{");
         if (getAccessPolicyStats() != null)
             sb.append("AccessPolicyStats: ").append(getAccessPolicyStats()).append(",");
+        if (getLifecyclePolicyStats() != null)
+            sb.append("LifecyclePolicyStats: ").append(getLifecyclePolicyStats()).append(",");
         if (getSecurityConfigStats() != null)
             sb.append("SecurityConfigStats: ").append(getSecurityConfigStats()).append(",");
         if (getSecurityPolicyStats() != null)
@@ -246,6 +294,10 @@ public class GetPoliciesStatsResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getAccessPolicyStats() != null && other.getAccessPolicyStats().equals(this.getAccessPolicyStats()) == false)
             return false;
+        if (other.getLifecyclePolicyStats() == null ^ this.getLifecyclePolicyStats() == null)
+            return false;
+        if (other.getLifecyclePolicyStats() != null && other.getLifecyclePolicyStats().equals(this.getLifecyclePolicyStats()) == false)
+            return false;
         if (other.getSecurityConfigStats() == null ^ this.getSecurityConfigStats() == null)
             return false;
         if (other.getSecurityConfigStats() != null && other.getSecurityConfigStats().equals(this.getSecurityConfigStats()) == false)
@@ -267,6 +319,7 @@ public class GetPoliciesStatsResult extends com.amazonaws.AmazonWebServiceResult
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAccessPolicyStats() == null) ? 0 : getAccessPolicyStats().hashCode());
+        hashCode = prime * hashCode + ((getLifecyclePolicyStats() == null) ? 0 : getLifecyclePolicyStats().hashCode());
         hashCode = prime * hashCode + ((getSecurityConfigStats() == null) ? 0 : getSecurityConfigStats().hashCode());
         hashCode = prime * hashCode + ((getSecurityPolicyStats() == null) ? 0 : getSecurityPolicyStats().hashCode());
         hashCode = prime * hashCode + ((getTotalPolicyCount() == null) ? 0 : getTotalPolicyCount().hashCode());

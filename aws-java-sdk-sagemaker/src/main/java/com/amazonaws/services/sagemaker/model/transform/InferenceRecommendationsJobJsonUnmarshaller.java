@@ -88,6 +88,18 @@ public class InferenceRecommendationsJobJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     inferenceRecommendationsJob.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ModelName", targetDepth)) {
+                    context.nextToken();
+                    inferenceRecommendationsJob.setModelName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("SamplePayloadUrl", targetDepth)) {
+                    context.nextToken();
+                    inferenceRecommendationsJob.setSamplePayloadUrl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ModelPackageVersionArn", targetDepth)) {
+                    context.nextToken();
+                    inferenceRecommendationsJob.setModelPackageVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

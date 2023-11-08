@@ -37,8 +37,7 @@ public class DeleteClusterSnapshotMessage implements Serializable, Cloneable {
     /**
      * <p>
      * The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user
-     * or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster
-     * name.
+     * has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.
      * </p>
      * <p>
      * Constraints: Must be the name of valid cluster.
@@ -110,8 +109,7 @@ public class DeleteClusterSnapshotMessage implements Serializable, Cloneable {
     /**
      * <p>
      * The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user
-     * or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster
-     * name.
+     * has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.
      * </p>
      * <p>
      * Constraints: Must be the name of valid cluster.
@@ -119,8 +117,8 @@ public class DeleteClusterSnapshotMessage implements Serializable, Cloneable {
      * 
      * @param snapshotClusterIdentifier
      *        The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM
-     *        user or role has a policy containing a snapshot resource element that specifies anything other than * for
-     *        the cluster name.</p>
+     *        user has a policy containing a snapshot resource element that specifies anything other than * for the
+     *        cluster name.</p>
      *        <p>
      *        Constraints: Must be the name of valid cluster.
      */
@@ -132,16 +130,15 @@ public class DeleteClusterSnapshotMessage implements Serializable, Cloneable {
     /**
      * <p>
      * The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user
-     * or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster
-     * name.
+     * has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.
      * </p>
      * <p>
      * Constraints: Must be the name of valid cluster.
      * </p>
      * 
      * @return The unique identifier of the cluster the snapshot was created from. This parameter is required if your
-     *         IAM user or role has a policy containing a snapshot resource element that specifies anything other than *
-     *         for the cluster name.</p>
+     *         IAM user has a policy containing a snapshot resource element that specifies anything other than * for the
+     *         cluster name.</p>
      *         <p>
      *         Constraints: Must be the name of valid cluster.
      */
@@ -153,8 +150,7 @@ public class DeleteClusterSnapshotMessage implements Serializable, Cloneable {
     /**
      * <p>
      * The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user
-     * or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster
-     * name.
+     * has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.
      * </p>
      * <p>
      * Constraints: Must be the name of valid cluster.
@@ -162,8 +158,8 @@ public class DeleteClusterSnapshotMessage implements Serializable, Cloneable {
      * 
      * @param snapshotClusterIdentifier
      *        The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM
-     *        user or role has a policy containing a snapshot resource element that specifies anything other than * for
-     *        the cluster name.</p>
+     *        user has a policy containing a snapshot resource element that specifies anything other than * for the
+     *        cluster name.</p>
      *        <p>
      *        Constraints: Must be the name of valid cluster.
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -30,28 +30,10 @@ public class AnnotationStoreItem implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The store's creation time.
-     * </p>
-     */
-    private java.util.Date creationTime;
-    /**
-     * <p>
-     * The store's description.
-     * </p>
-     */
-    private String description;
-    /**
-     * <p>
      * The store's ID.
      * </p>
      */
     private String id;
-    /**
-     * <p>
-     * The store's name.
-     * </p>
-     */
-    private String name;
     /**
      * <p>
      * The store's genome reference.
@@ -60,22 +42,10 @@ public class AnnotationStoreItem implements Serializable, Cloneable, StructuredP
     private ReferenceItem reference;
     /**
      * <p>
-     * The store's server-side encryption (SSE) settings.
-     * </p>
-     */
-    private SseConfig sseConfig;
-    /**
-     * <p>
      * The store's status.
      * </p>
      */
     private String status;
-    /**
-     * <p>
-     * The store's status message.
-     * </p>
-     */
-    private String statusMessage;
     /**
      * <p>
      * The store's ARN.
@@ -84,102 +54,52 @@ public class AnnotationStoreItem implements Serializable, Cloneable, StructuredP
     private String storeArn;
     /**
      * <p>
+     * The store's name.
+     * </p>
+     */
+    private String name;
+    /**
+     * <p>
      * The store's file format.
      * </p>
      */
     private String storeFormat;
     /**
      * <p>
-     * The store's size in bytes.
+     * The store's description.
      * </p>
      */
-    private Long storeSizeBytes;
+    private String description;
+    /**
+     * <p>
+     * The store's server-side encryption (SSE) settings.
+     * </p>
+     */
+    private SseConfig sseConfig;
+    /**
+     * <p>
+     * The store's creation time.
+     * </p>
+     */
+    private java.util.Date creationTime;
     /**
      * <p>
      * When the store was updated.
      * </p>
      */
     private java.util.Date updateTime;
-
     /**
      * <p>
-     * The store's creation time.
+     * The store's status message.
      * </p>
-     * 
-     * @param creationTime
-     *        The store's creation time.
      */
-
-    public void setCreationTime(java.util.Date creationTime) {
-        this.creationTime = creationTime;
-    }
-
+    private String statusMessage;
     /**
      * <p>
-     * The store's creation time.
+     * The store's size in bytes.
      * </p>
-     * 
-     * @return The store's creation time.
      */
-
-    public java.util.Date getCreationTime() {
-        return this.creationTime;
-    }
-
-    /**
-     * <p>
-     * The store's creation time.
-     * </p>
-     * 
-     * @param creationTime
-     *        The store's creation time.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AnnotationStoreItem withCreationTime(java.util.Date creationTime) {
-        setCreationTime(creationTime);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The store's description.
-     * </p>
-     * 
-     * @param description
-     *        The store's description.
-     */
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    /**
-     * <p>
-     * The store's description.
-     * </p>
-     * 
-     * @return The store's description.
-     */
-
-    public String getDescription() {
-        return this.description;
-    }
-
-    /**
-     * <p>
-     * The store's description.
-     * </p>
-     * 
-     * @param description
-     *        The store's description.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AnnotationStoreItem withDescription(String description) {
-        setDescription(description);
-        return this;
-    }
+    private Long storeSizeBytes;
 
     /**
      * <p>
@@ -223,46 +143,6 @@ public class AnnotationStoreItem implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The store's name.
-     * </p>
-     * 
-     * @param name
-     *        The store's name.
-     */
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     * <p>
-     * The store's name.
-     * </p>
-     * 
-     * @return The store's name.
-     */
-
-    public String getName() {
-        return this.name;
-    }
-
-    /**
-     * <p>
-     * The store's name.
-     * </p>
-     * 
-     * @param name
-     *        The store's name.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AnnotationStoreItem withName(String name) {
-        setName(name);
-        return this;
-    }
-
-    /**
-     * <p>
      * The store's genome reference.
      * </p>
      * 
@@ -298,46 +178,6 @@ public class AnnotationStoreItem implements Serializable, Cloneable, StructuredP
 
     public AnnotationStoreItem withReference(ReferenceItem reference) {
         setReference(reference);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The store's server-side encryption (SSE) settings.
-     * </p>
-     * 
-     * @param sseConfig
-     *        The store's server-side encryption (SSE) settings.
-     */
-
-    public void setSseConfig(SseConfig sseConfig) {
-        this.sseConfig = sseConfig;
-    }
-
-    /**
-     * <p>
-     * The store's server-side encryption (SSE) settings.
-     * </p>
-     * 
-     * @return The store's server-side encryption (SSE) settings.
-     */
-
-    public SseConfig getSseConfig() {
-        return this.sseConfig;
-    }
-
-    /**
-     * <p>
-     * The store's server-side encryption (SSE) settings.
-     * </p>
-     * 
-     * @param sseConfig
-     *        The store's server-side encryption (SSE) settings.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AnnotationStoreItem withSseConfig(SseConfig sseConfig) {
-        setSseConfig(sseConfig);
         return this;
     }
 
@@ -402,46 +242,6 @@ public class AnnotationStoreItem implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The store's status message.
-     * </p>
-     * 
-     * @param statusMessage
-     *        The store's status message.
-     */
-
-    public void setStatusMessage(String statusMessage) {
-        this.statusMessage = statusMessage;
-    }
-
-    /**
-     * <p>
-     * The store's status message.
-     * </p>
-     * 
-     * @return The store's status message.
-     */
-
-    public String getStatusMessage() {
-        return this.statusMessage;
-    }
-
-    /**
-     * <p>
-     * The store's status message.
-     * </p>
-     * 
-     * @param statusMessage
-     *        The store's status message.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AnnotationStoreItem withStatusMessage(String statusMessage) {
-        setStatusMessage(statusMessage);
-        return this;
-    }
-
-    /**
-     * <p>
      * The store's ARN.
      * </p>
      * 
@@ -477,6 +277,46 @@ public class AnnotationStoreItem implements Serializable, Cloneable, StructuredP
 
     public AnnotationStoreItem withStoreArn(String storeArn) {
         setStoreArn(storeArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The store's name.
+     * </p>
+     * 
+     * @param name
+     *        The store's name.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The store's name.
+     * </p>
+     * 
+     * @return The store's name.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The store's name.
+     * </p>
+     * 
+     * @param name
+     *        The store's name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AnnotationStoreItem withName(String name) {
+        setName(name);
         return this;
     }
 
@@ -541,41 +381,121 @@ public class AnnotationStoreItem implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The store's size in bytes.
+     * The store's description.
      * </p>
      * 
-     * @param storeSizeBytes
-     *        The store's size in bytes.
+     * @param description
+     *        The store's description.
      */
 
-    public void setStoreSizeBytes(Long storeSizeBytes) {
-        this.storeSizeBytes = storeSizeBytes;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     /**
      * <p>
-     * The store's size in bytes.
+     * The store's description.
      * </p>
      * 
-     * @return The store's size in bytes.
+     * @return The store's description.
      */
 
-    public Long getStoreSizeBytes() {
-        return this.storeSizeBytes;
+    public String getDescription() {
+        return this.description;
     }
 
     /**
      * <p>
-     * The store's size in bytes.
+     * The store's description.
      * </p>
      * 
-     * @param storeSizeBytes
-     *        The store's size in bytes.
+     * @param description
+     *        The store's description.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AnnotationStoreItem withStoreSizeBytes(Long storeSizeBytes) {
-        setStoreSizeBytes(storeSizeBytes);
+    public AnnotationStoreItem withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The store's server-side encryption (SSE) settings.
+     * </p>
+     * 
+     * @param sseConfig
+     *        The store's server-side encryption (SSE) settings.
+     */
+
+    public void setSseConfig(SseConfig sseConfig) {
+        this.sseConfig = sseConfig;
+    }
+
+    /**
+     * <p>
+     * The store's server-side encryption (SSE) settings.
+     * </p>
+     * 
+     * @return The store's server-side encryption (SSE) settings.
+     */
+
+    public SseConfig getSseConfig() {
+        return this.sseConfig;
+    }
+
+    /**
+     * <p>
+     * The store's server-side encryption (SSE) settings.
+     * </p>
+     * 
+     * @param sseConfig
+     *        The store's server-side encryption (SSE) settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AnnotationStoreItem withSseConfig(SseConfig sseConfig) {
+        setSseConfig(sseConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The store's creation time.
+     * </p>
+     * 
+     * @param creationTime
+     *        The store's creation time.
+     */
+
+    public void setCreationTime(java.util.Date creationTime) {
+        this.creationTime = creationTime;
+    }
+
+    /**
+     * <p>
+     * The store's creation time.
+     * </p>
+     * 
+     * @return The store's creation time.
+     */
+
+    public java.util.Date getCreationTime() {
+        return this.creationTime;
+    }
+
+    /**
+     * <p>
+     * The store's creation time.
+     * </p>
+     * 
+     * @param creationTime
+     *        The store's creation time.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AnnotationStoreItem withCreationTime(java.util.Date creationTime) {
+        setCreationTime(creationTime);
         return this;
     }
 
@@ -620,6 +540,86 @@ public class AnnotationStoreItem implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The store's status message.
+     * </p>
+     * 
+     * @param statusMessage
+     *        The store's status message.
+     */
+
+    public void setStatusMessage(String statusMessage) {
+        this.statusMessage = statusMessage;
+    }
+
+    /**
+     * <p>
+     * The store's status message.
+     * </p>
+     * 
+     * @return The store's status message.
+     */
+
+    public String getStatusMessage() {
+        return this.statusMessage;
+    }
+
+    /**
+     * <p>
+     * The store's status message.
+     * </p>
+     * 
+     * @param statusMessage
+     *        The store's status message.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AnnotationStoreItem withStatusMessage(String statusMessage) {
+        setStatusMessage(statusMessage);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The store's size in bytes.
+     * </p>
+     * 
+     * @param storeSizeBytes
+     *        The store's size in bytes.
+     */
+
+    public void setStoreSizeBytes(Long storeSizeBytes) {
+        this.storeSizeBytes = storeSizeBytes;
+    }
+
+    /**
+     * <p>
+     * The store's size in bytes.
+     * </p>
+     * 
+     * @return The store's size in bytes.
+     */
+
+    public Long getStoreSizeBytes() {
+        return this.storeSizeBytes;
+    }
+
+    /**
+     * <p>
+     * The store's size in bytes.
+     * </p>
+     * 
+     * @param storeSizeBytes
+     *        The store's size in bytes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AnnotationStoreItem withStoreSizeBytes(Long storeSizeBytes) {
+        setStoreSizeBytes(storeSizeBytes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -631,30 +631,30 @@ public class AnnotationStoreItem implements Serializable, Cloneable, StructuredP
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getCreationTime() != null)
-            sb.append("CreationTime: ").append(getCreationTime()).append(",");
-        if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
-        if (getName() != null)
-            sb.append("Name: ").append(getName()).append(",");
         if (getReference() != null)
             sb.append("Reference: ").append(getReference()).append(",");
-        if (getSseConfig() != null)
-            sb.append("SseConfig: ").append(getSseConfig()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
-        if (getStatusMessage() != null)
-            sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
         if (getStoreArn() != null)
             sb.append("StoreArn: ").append(getStoreArn()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
         if (getStoreFormat() != null)
             sb.append("StoreFormat: ").append(getStoreFormat()).append(",");
-        if (getStoreSizeBytes() != null)
-            sb.append("StoreSizeBytes: ").append(getStoreSizeBytes()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getSseConfig() != null)
+            sb.append("SseConfig: ").append(getSseConfig()).append(",");
+        if (getCreationTime() != null)
+            sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getUpdateTime() != null)
-            sb.append("UpdateTime: ").append(getUpdateTime());
+            sb.append("UpdateTime: ").append(getUpdateTime()).append(",");
+        if (getStatusMessage() != null)
+            sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
+        if (getStoreSizeBytes() != null)
+            sb.append("StoreSizeBytes: ").append(getStoreSizeBytes());
         sb.append("}");
         return sb.toString();
     }
@@ -669,53 +669,53 @@ public class AnnotationStoreItem implements Serializable, Cloneable, StructuredP
         if (obj instanceof AnnotationStoreItem == false)
             return false;
         AnnotationStoreItem other = (AnnotationStoreItem) obj;
-        if (other.getCreationTime() == null ^ this.getCreationTime() == null)
-            return false;
-        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
-            return false;
-        if (other.getDescription() == null ^ this.getDescription() == null)
-            return false;
-        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
-            return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
-            return false;
-        if (other.getName() == null ^ this.getName() == null)
-            return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getReference() == null ^ this.getReference() == null)
             return false;
         if (other.getReference() != null && other.getReference().equals(this.getReference()) == false)
             return false;
-        if (other.getSseConfig() == null ^ this.getSseConfig() == null)
-            return false;
-        if (other.getSseConfig() != null && other.getSseConfig().equals(this.getSseConfig()) == false)
-            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
-            return false;
-        if (other.getStatusMessage() == null ^ this.getStatusMessage() == null)
-            return false;
-        if (other.getStatusMessage() != null && other.getStatusMessage().equals(this.getStatusMessage()) == false)
             return false;
         if (other.getStoreArn() == null ^ this.getStoreArn() == null)
             return false;
         if (other.getStoreArn() != null && other.getStoreArn().equals(this.getStoreArn()) == false)
             return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
         if (other.getStoreFormat() == null ^ this.getStoreFormat() == null)
             return false;
         if (other.getStoreFormat() != null && other.getStoreFormat().equals(this.getStoreFormat()) == false)
             return false;
-        if (other.getStoreSizeBytes() == null ^ this.getStoreSizeBytes() == null)
+        if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getStoreSizeBytes() != null && other.getStoreSizeBytes().equals(this.getStoreSizeBytes()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getSseConfig() == null ^ this.getSseConfig() == null)
+            return false;
+        if (other.getSseConfig() != null && other.getSseConfig().equals(this.getSseConfig()) == false)
+            return false;
+        if (other.getCreationTime() == null ^ this.getCreationTime() == null)
+            return false;
+        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
             return false;
         if (other.getUpdateTime() == null ^ this.getUpdateTime() == null)
             return false;
         if (other.getUpdateTime() != null && other.getUpdateTime().equals(this.getUpdateTime()) == false)
+            return false;
+        if (other.getStatusMessage() == null ^ this.getStatusMessage() == null)
+            return false;
+        if (other.getStatusMessage() != null && other.getStatusMessage().equals(this.getStatusMessage()) == false)
+            return false;
+        if (other.getStoreSizeBytes() == null ^ this.getStoreSizeBytes() == null)
+            return false;
+        if (other.getStoreSizeBytes() != null && other.getStoreSizeBytes().equals(this.getStoreSizeBytes()) == false)
             return false;
         return true;
     }
@@ -725,18 +725,18 @@ public class AnnotationStoreItem implements Serializable, Cloneable, StructuredP
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getReference() == null) ? 0 : getReference().hashCode());
-        hashCode = prime * hashCode + ((getSseConfig() == null) ? 0 : getSseConfig().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
         hashCode = prime * hashCode + ((getStoreArn() == null) ? 0 : getStoreArn().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getStoreFormat() == null) ? 0 : getStoreFormat().hashCode());
-        hashCode = prime * hashCode + ((getStoreSizeBytes() == null) ? 0 : getStoreSizeBytes().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getSseConfig() == null) ? 0 : getSseConfig().hashCode());
+        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getUpdateTime() == null) ? 0 : getUpdateTime().hashCode());
+        hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
+        hashCode = prime * hashCode + ((getStoreSizeBytes() == null) ? 0 : getStoreSizeBytes().hashCode());
         return hashCode;
     }
 

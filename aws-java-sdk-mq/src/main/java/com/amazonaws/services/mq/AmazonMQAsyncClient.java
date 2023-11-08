@@ -672,6 +672,39 @@ public class AmazonMQAsyncClient extends AmazonMQClient implements AmazonMQAsync
     }
 
     @Override
+    public java.util.concurrent.Future<PromoteResult> promoteAsync(PromoteRequest request) {
+
+        return promoteAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PromoteResult> promoteAsync(final PromoteRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PromoteRequest, PromoteResult> asyncHandler) {
+        final PromoteRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PromoteResult>() {
+            @Override
+            public PromoteResult call() throws Exception {
+                PromoteResult result = null;
+
+                try {
+                    result = executePromote(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<RebootBrokerResult> rebootBrokerAsync(RebootBrokerRequest request) {
 
         return rebootBrokerAsync(request, null);

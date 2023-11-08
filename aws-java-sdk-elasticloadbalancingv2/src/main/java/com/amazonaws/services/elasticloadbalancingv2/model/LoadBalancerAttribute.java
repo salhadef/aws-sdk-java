@@ -171,6 +171,19 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The following attributes are supported by only Network Load Balancers:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>dns_record.client_routing_policy</code> - Indicates how traffic is distributed among the load balancer
+     * Availability Zones. The possible values are <code>availability_zone_affinity</code> with 100 percent zonal
+     * affinity, <code>partial_availability_zone_affinity</code> with 85 percent zonal affinity, and
+     * <code>any_availability_zone</code> with 0 percent zonal affinity.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String key;
     /**
@@ -325,6 +338,19 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The following attributes are supported by only Network Load Balancers:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>dns_record.client_routing_policy</code> - Indicates how traffic is distributed among the load balancer
+     * Availability Zones. The possible values are <code>availability_zone_affinity</code> with 100 percent zonal
+     * affinity, <code>partial_availability_zone_affinity</code> with 85 percent zonal affinity, and
+     * <code>any_availability_zone</code> with 0 percent zonal affinity.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param key
      *        The name of the attribute.</p>
@@ -467,6 +493,19 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *        <code>waf.fail_open.enabled</code> - Indicates whether to allow a WAF-enabled load balancer to route
      *        requests to targets if it is unable to forward the request to Amazon Web Services WAF. The possible values
      *        are <code>true</code> and <code>false</code>. The default is <code>false</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The following attributes are supported by only Network Load Balancers:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>dns_record.client_routing_policy</code> - Indicates how traffic is distributed among the load
+     *        balancer Availability Zones. The possible values are <code>availability_zone_affinity</code> with 100
+     *        percent zonal affinity, <code>partial_availability_zone_affinity</code> with 85 percent zonal affinity,
+     *        and <code>any_availability_zone</code> with 0 percent zonal affinity.
      *        </p>
      *        </li>
      */
@@ -620,6 +659,19 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The following attributes are supported by only Network Load Balancers:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>dns_record.client_routing_policy</code> - Indicates how traffic is distributed among the load balancer
+     * Availability Zones. The possible values are <code>availability_zone_affinity</code> with 100 percent zonal
+     * affinity, <code>partial_availability_zone_affinity</code> with 85 percent zonal affinity, and
+     * <code>any_availability_zone</code> with 0 percent zonal affinity.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The name of the attribute.</p>
      *         <p>
@@ -761,6 +813,19 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *         <code>waf.fail_open.enabled</code> - Indicates whether to allow a WAF-enabled load balancer to route
      *         requests to targets if it is unable to forward the request to Amazon Web Services WAF. The possible
      *         values are <code>true</code> and <code>false</code>. The default is <code>false</code>.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         The following attributes are supported by only Network Load Balancers:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>dns_record.client_routing_policy</code> - Indicates how traffic is distributed among the load
+     *         balancer Availability Zones. The possible values are <code>availability_zone_affinity</code> with 100
+     *         percent zonal affinity, <code>partial_availability_zone_affinity</code> with 85 percent zonal affinity,
+     *         and <code>any_availability_zone</code> with 0 percent zonal affinity.
      *         </p>
      *         </li>
      */
@@ -914,6 +979,19 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The following attributes are supported by only Network Load Balancers:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>dns_record.client_routing_policy</code> - Indicates how traffic is distributed among the load balancer
+     * Availability Zones. The possible values are <code>availability_zone_affinity</code> with 100 percent zonal
+     * affinity, <code>partial_availability_zone_affinity</code> with 85 percent zonal affinity, and
+     * <code>any_availability_zone</code> with 0 percent zonal affinity.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param key
      *        The name of the attribute.</p>
@@ -1056,6 +1134,19 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *        <code>waf.fail_open.enabled</code> - Indicates whether to allow a WAF-enabled load balancer to route
      *        requests to targets if it is unable to forward the request to Amazon Web Services WAF. The possible values
      *        are <code>true</code> and <code>false</code>. The default is <code>false</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The following attributes are supported by only Network Load Balancers:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>dns_record.client_routing_policy</code> - Indicates how traffic is distributed among the load
+     *        balancer Availability Zones. The possible values are <code>availability_zone_affinity</code> with 100
+     *        percent zonal affinity, <code>partial_availability_zone_affinity</code> with 85 percent zonal affinity,
+     *        and <code>any_availability_zone</code> with 0 percent zonal affinity.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

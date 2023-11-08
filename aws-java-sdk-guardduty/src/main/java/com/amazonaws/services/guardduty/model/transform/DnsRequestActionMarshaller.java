@@ -33,6 +33,8 @@ public class DnsRequestActionMarshaller {
             .marshallLocationName("protocol").build();
     private static final MarshallingInfo<Boolean> BLOCKED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("blocked").build();
+    private static final MarshallingInfo<String> DOMAINWITHSUFFIX_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("domainWithSuffix").build();
 
     private static final DnsRequestActionMarshaller instance = new DnsRequestActionMarshaller();
 
@@ -53,6 +55,7 @@ public class DnsRequestActionMarshaller {
             protocolMarshaller.marshall(dnsRequestAction.getDomain(), DOMAIN_BINDING);
             protocolMarshaller.marshall(dnsRequestAction.getProtocol(), PROTOCOL_BINDING);
             protocolMarshaller.marshall(dnsRequestAction.getBlocked(), BLOCKED_BINDING);
+            protocolMarshaller.marshall(dnsRequestAction.getDomainWithSuffix(), DOMAINWITHSUFFIX_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

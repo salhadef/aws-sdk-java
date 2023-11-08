@@ -345,6 +345,39 @@ public class AWSServiceDiscoveryAsyncClient extends AWSServiceDiscoveryClient im
     }
 
     @Override
+    public java.util.concurrent.Future<DiscoverInstancesRevisionResult> discoverInstancesRevisionAsync(DiscoverInstancesRevisionRequest request) {
+
+        return discoverInstancesRevisionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DiscoverInstancesRevisionResult> discoverInstancesRevisionAsync(final DiscoverInstancesRevisionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DiscoverInstancesRevisionRequest, DiscoverInstancesRevisionResult> asyncHandler) {
+        final DiscoverInstancesRevisionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DiscoverInstancesRevisionResult>() {
+            @Override
+            public DiscoverInstancesRevisionResult call() throws Exception {
+                DiscoverInstancesRevisionResult result = null;
+
+                try {
+                    result = executeDiscoverInstancesRevision(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetInstanceResult> getInstanceAsync(GetInstanceRequest request) {
 
         return getInstanceAsync(request, null);

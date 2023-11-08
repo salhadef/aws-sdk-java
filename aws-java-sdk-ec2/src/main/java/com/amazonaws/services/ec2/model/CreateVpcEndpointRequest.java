@@ -36,13 +36,13 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
     private String vpcEndpointType;
     /**
      * <p>
-     * The ID of the VPC for the endpoint.
+     * The ID of the VPC.
      * </p>
      */
     private String vpcId;
     /**
      * <p>
-     * The service name.
+     * The name of the endpoint service.
      * </p>
      */
     private String serviceName;
@@ -62,14 +62,14 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
     private com.amazonaws.internal.SdkInternalList<String> routeTableIds;
     /**
      * <p>
-     * (Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to create an endpoint network
-     * interface. For a Gateway Load Balancer endpoint, you can specify only one subnet.
+     * (Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to create endpoint network
+     * interfaces. For a Gateway Load Balancer endpoint, you can specify only one subnet.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> subnetIds;
     /**
      * <p>
-     * (Interface endpoint) The IDs of the security groups to associate with the endpoint network interface. If this
+     * (Interface endpoint) The IDs of the security groups to associate with the endpoint network interfaces. If this
      * parameter is not specified, we use the default security group for the VPC.
      * </p>
      */
@@ -119,6 +119,12 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TagSpecification> tagSpecifications;
+    /**
+     * <p>
+     * The subnet configurations for the endpoint.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<SubnetConfiguration> subnetConfigurations;
 
     /**
      * <p>
@@ -201,11 +207,11 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ID of the VPC for the endpoint.
+     * The ID of the VPC.
      * </p>
      * 
      * @param vpcId
-     *        The ID of the VPC for the endpoint.
+     *        The ID of the VPC.
      */
 
     public void setVpcId(String vpcId) {
@@ -214,10 +220,10 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ID of the VPC for the endpoint.
+     * The ID of the VPC.
      * </p>
      * 
-     * @return The ID of the VPC for the endpoint.
+     * @return The ID of the VPC.
      */
 
     public String getVpcId() {
@@ -226,11 +232,11 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ID of the VPC for the endpoint.
+     * The ID of the VPC.
      * </p>
      * 
      * @param vpcId
-     *        The ID of the VPC for the endpoint.
+     *        The ID of the VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -241,11 +247,11 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The service name.
+     * The name of the endpoint service.
      * </p>
      * 
      * @param serviceName
-     *        The service name.
+     *        The name of the endpoint service.
      */
 
     public void setServiceName(String serviceName) {
@@ -254,10 +260,10 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The service name.
+     * The name of the endpoint service.
      * </p>
      * 
-     * @return The service name.
+     * @return The name of the endpoint service.
      */
 
     public String getServiceName() {
@@ -266,11 +272,11 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The service name.
+     * The name of the endpoint service.
      * </p>
      * 
      * @param serviceName
-     *        The service name.
+     *        The name of the endpoint service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -406,12 +412,12 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * (Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to create an endpoint network
-     * interface. For a Gateway Load Balancer endpoint, you can specify only one subnet.
+     * (Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to create endpoint network
+     * interfaces. For a Gateway Load Balancer endpoint, you can specify only one subnet.
      * </p>
      * 
-     * @return (Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to create an endpoint
-     *         network interface. For a Gateway Load Balancer endpoint, you can specify only one subnet.
+     * @return (Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to create endpoint
+     *         network interfaces. For a Gateway Load Balancer endpoint, you can specify only one subnet.
      */
 
     public java.util.List<String> getSubnetIds() {
@@ -423,13 +429,13 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * (Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to create an endpoint network
-     * interface. For a Gateway Load Balancer endpoint, you can specify only one subnet.
+     * (Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to create endpoint network
+     * interfaces. For a Gateway Load Balancer endpoint, you can specify only one subnet.
      * </p>
      * 
      * @param subnetIds
-     *        (Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to create an endpoint
-     *        network interface. For a Gateway Load Balancer endpoint, you can specify only one subnet.
+     *        (Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to create endpoint network
+     *        interfaces. For a Gateway Load Balancer endpoint, you can specify only one subnet.
      */
 
     public void setSubnetIds(java.util.Collection<String> subnetIds) {
@@ -443,8 +449,8 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * (Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to create an endpoint network
-     * interface. For a Gateway Load Balancer endpoint, you can specify only one subnet.
+     * (Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to create endpoint network
+     * interfaces. For a Gateway Load Balancer endpoint, you can specify only one subnet.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -453,8 +459,8 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param subnetIds
-     *        (Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to create an endpoint
-     *        network interface. For a Gateway Load Balancer endpoint, you can specify only one subnet.
+     *        (Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to create endpoint network
+     *        interfaces. For a Gateway Load Balancer endpoint, you can specify only one subnet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -470,13 +476,13 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * (Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to create an endpoint network
-     * interface. For a Gateway Load Balancer endpoint, you can specify only one subnet.
+     * (Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to create endpoint network
+     * interfaces. For a Gateway Load Balancer endpoint, you can specify only one subnet.
      * </p>
      * 
      * @param subnetIds
-     *        (Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to create an endpoint
-     *        network interface. For a Gateway Load Balancer endpoint, you can specify only one subnet.
+     *        (Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to create endpoint network
+     *        interfaces. For a Gateway Load Balancer endpoint, you can specify only one subnet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -487,11 +493,11 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * (Interface endpoint) The IDs of the security groups to associate with the endpoint network interface. If this
+     * (Interface endpoint) The IDs of the security groups to associate with the endpoint network interfaces. If this
      * parameter is not specified, we use the default security group for the VPC.
      * </p>
      * 
-     * @return (Interface endpoint) The IDs of the security groups to associate with the endpoint network interface. If
+     * @return (Interface endpoint) The IDs of the security groups to associate with the endpoint network interfaces. If
      *         this parameter is not specified, we use the default security group for the VPC.
      */
 
@@ -504,12 +510,12 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * (Interface endpoint) The IDs of the security groups to associate with the endpoint network interface. If this
+     * (Interface endpoint) The IDs of the security groups to associate with the endpoint network interfaces. If this
      * parameter is not specified, we use the default security group for the VPC.
      * </p>
      * 
      * @param securityGroupIds
-     *        (Interface endpoint) The IDs of the security groups to associate with the endpoint network interface. If
+     *        (Interface endpoint) The IDs of the security groups to associate with the endpoint network interfaces. If
      *        this parameter is not specified, we use the default security group for the VPC.
      */
 
@@ -524,7 +530,7 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * (Interface endpoint) The IDs of the security groups to associate with the endpoint network interface. If this
+     * (Interface endpoint) The IDs of the security groups to associate with the endpoint network interfaces. If this
      * parameter is not specified, we use the default security group for the VPC.
      * </p>
      * <p>
@@ -534,7 +540,7 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param securityGroupIds
-     *        (Interface endpoint) The IDs of the security groups to associate with the endpoint network interface. If
+     *        (Interface endpoint) The IDs of the security groups to associate with the endpoint network interfaces. If
      *        this parameter is not specified, we use the default security group for the VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -551,12 +557,12 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * (Interface endpoint) The IDs of the security groups to associate with the endpoint network interface. If this
+     * (Interface endpoint) The IDs of the security groups to associate with the endpoint network interfaces. If this
      * parameter is not specified, we use the default security group for the VPC.
      * </p>
      * 
      * @param securityGroupIds
-     *        (Interface endpoint) The IDs of the security groups to associate with the endpoint network interface. If
+     *        (Interface endpoint) The IDs of the security groups to associate with the endpoint network interfaces. If
      *        this parameter is not specified, we use the default security group for the VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -945,6 +951,79 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * The subnet configurations for the endpoint.
+     * </p>
+     * 
+     * @return The subnet configurations for the endpoint.
+     */
+
+    public java.util.List<SubnetConfiguration> getSubnetConfigurations() {
+        if (subnetConfigurations == null) {
+            subnetConfigurations = new com.amazonaws.internal.SdkInternalList<SubnetConfiguration>();
+        }
+        return subnetConfigurations;
+    }
+
+    /**
+     * <p>
+     * The subnet configurations for the endpoint.
+     * </p>
+     * 
+     * @param subnetConfigurations
+     *        The subnet configurations for the endpoint.
+     */
+
+    public void setSubnetConfigurations(java.util.Collection<SubnetConfiguration> subnetConfigurations) {
+        if (subnetConfigurations == null) {
+            this.subnetConfigurations = null;
+            return;
+        }
+
+        this.subnetConfigurations = new com.amazonaws.internal.SdkInternalList<SubnetConfiguration>(subnetConfigurations);
+    }
+
+    /**
+     * <p>
+     * The subnet configurations for the endpoint.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSubnetConfigurations(java.util.Collection)} or {@link #withSubnetConfigurations(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param subnetConfigurations
+     *        The subnet configurations for the endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateVpcEndpointRequest withSubnetConfigurations(SubnetConfiguration... subnetConfigurations) {
+        if (this.subnetConfigurations == null) {
+            setSubnetConfigurations(new com.amazonaws.internal.SdkInternalList<SubnetConfiguration>(subnetConfigurations.length));
+        }
+        for (SubnetConfiguration ele : subnetConfigurations) {
+            this.subnetConfigurations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The subnet configurations for the endpoint.
+     * </p>
+     * 
+     * @param subnetConfigurations
+     *        The subnet configurations for the endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateVpcEndpointRequest withSubnetConfigurations(java.util.Collection<SubnetConfiguration> subnetConfigurations) {
+        setSubnetConfigurations(subnetConfigurations);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -990,7 +1069,9 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
         if (getPrivateDnsEnabled() != null)
             sb.append("PrivateDnsEnabled: ").append(getPrivateDnsEnabled()).append(",");
         if (getTagSpecifications() != null)
-            sb.append("TagSpecifications: ").append(getTagSpecifications());
+            sb.append("TagSpecifications: ").append(getTagSpecifications()).append(",");
+        if (getSubnetConfigurations() != null)
+            sb.append("SubnetConfigurations: ").append(getSubnetConfigurations());
         sb.append("}");
         return sb.toString();
     }
@@ -1053,6 +1134,10 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
             return false;
         if (other.getTagSpecifications() != null && other.getTagSpecifications().equals(this.getTagSpecifications()) == false)
             return false;
+        if (other.getSubnetConfigurations() == null ^ this.getSubnetConfigurations() == null)
+            return false;
+        if (other.getSubnetConfigurations() != null && other.getSubnetConfigurations().equals(this.getSubnetConfigurations()) == false)
+            return false;
         return true;
     }
 
@@ -1073,6 +1158,7 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getPrivateDnsEnabled() == null) ? 0 : getPrivateDnsEnabled().hashCode());
         hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
+        hashCode = prime * hashCode + ((getSubnetConfigurations() == null) ? 0 : getSubnetConfigurations().hashCode());
         return hashCode;
     }
 

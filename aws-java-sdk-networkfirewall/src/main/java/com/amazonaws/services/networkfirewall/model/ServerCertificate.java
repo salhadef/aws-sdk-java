@@ -19,14 +19,14 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Any Certificate Manager Secure Sockets Layer/Transport Layer Security (SSL/TLS) server certificate that's associated
- * with a <a>ServerCertificateConfiguration</a> used in a <a>TLSInspectionConfiguration</a>. You must request or import
- * a SSL/TLS certificate into ACM for each domain Network Firewall needs to decrypt and inspect. Network Firewall uses
- * the SSL/TLS certificates to decrypt specified inbound SSL/TLS traffic going to your firewall. For information about
- * working with certificates in Certificate Manager, see <a
- * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public certificate </a>
- * or <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates</a> in
- * the <i>Certificate Manager User Guide</i>.
+ * Any Certificate Manager (ACM) Secure Sockets Layer/Transport Layer Security (SSL/TLS) server certificate that's
+ * associated with a <a>ServerCertificateConfiguration</a>. Used in a <a>TLSInspectionConfiguration</a> for inspection
+ * of inbound traffic to your firewall. You must request or import a SSL/TLS certificate into ACM for each domain
+ * Network Firewall needs to decrypt and inspect. Network Firewall uses the SSL/TLS certificates to decrypt specified
+ * inbound SSL/TLS traffic going to your firewall. For information about working with certificates in Certificate
+ * Manager, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public
+ * certificate </a> or <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
+ * certificates</a> in the <i>Certificate Manager User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ServerCertificate" target="_top">AWS
@@ -37,18 +37,21 @@ public class ServerCertificate implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Certificate Manager SSL/TLS server certificate.
+     * The Amazon Resource Name (ARN) of the Certificate Manager SSL/TLS server certificate that's used for inbound
+     * SSL/TLS inspection.
      * </p>
      */
     private String resourceArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Certificate Manager SSL/TLS server certificate.
+     * The Amazon Resource Name (ARN) of the Certificate Manager SSL/TLS server certificate that's used for inbound
+     * SSL/TLS inspection.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the Certificate Manager SSL/TLS server certificate.
+     *        The Amazon Resource Name (ARN) of the Certificate Manager SSL/TLS server certificate that's used for
+     *        inbound SSL/TLS inspection.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -57,10 +60,12 @@ public class ServerCertificate implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Certificate Manager SSL/TLS server certificate.
+     * The Amazon Resource Name (ARN) of the Certificate Manager SSL/TLS server certificate that's used for inbound
+     * SSL/TLS inspection.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Certificate Manager SSL/TLS server certificate.
+     * @return The Amazon Resource Name (ARN) of the Certificate Manager SSL/TLS server certificate that's used for
+     *         inbound SSL/TLS inspection.
      */
 
     public String getResourceArn() {
@@ -69,11 +74,13 @@ public class ServerCertificate implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Certificate Manager SSL/TLS server certificate.
+     * The Amazon Resource Name (ARN) of the Certificate Manager SSL/TLS server certificate that's used for inbound
+     * SSL/TLS inspection.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the Certificate Manager SSL/TLS server certificate.
+     *        The Amazon Resource Name (ARN) of the Certificate Manager SSL/TLS server certificate that's used for
+     *        inbound SSL/TLS inspection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

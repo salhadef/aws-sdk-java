@@ -44,6 +44,7 @@ import com.amazonaws.services.auditmanager.AWSAuditManagerClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.auditmanager.model.*;
+
 import com.amazonaws.services.auditmanager.model.transform.*;
 
 /**
@@ -528,19 +529,22 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Uploads one or more pieces of evidence to a control in an Audit Manager assessment. You can upload manual
-     * evidence from any Amazon Simple Storage Service (Amazon S3) bucket by specifying the S3 URI of the evidence.
+     * Adds one or more pieces of evidence to a control in an Audit Manager assessment.
      * </p>
      * <p>
-     * You must upload manual evidence to your S3 bucket before you can upload it to your assessment. For instructions,
-     * see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a> and <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a> in the <i>Amazon Simple
-     * Storage Service API Reference.</i>
+     * You can import manual evidence from any S3 bucket by specifying the S3 URI of the object. You can also upload a
+     * file from your browser, or enter plain text in response to a risk assessment question.
      * </p>
      * <p>
      * The following restrictions apply to this action:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>manualEvidence</code> can be only one of the following: <code>evidenceFileName</code>,
+     * <code>s3ResourcePath</code>, or <code>textResponse</code>
+     * </p>
+     * </li>
      * <li>
      * <p>
      * Maximum size of an individual evidence file: 100 MB
@@ -576,6 +580,8 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      *         The request has invalid or missing parameters.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
      * @sample AWSAuditManager.BatchImportEvidenceToAssessmentControl
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/BatchImportEvidenceToAssessmentControl"
@@ -1205,6 +1211,13 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      * <p>
      * Deletes a custom control in Audit Manager.
      * </p>
+     * <important>
+     * <p>
+     * When you invoke this operation, the custom control is deleted from any frameworks or assessments that it’s
+     * currently part of. As a result, Audit Manager will stop collecting evidence for that custom control in all of
+     * your assessments. This includes assessments that you previously created before you deleted the custom control.
+     * </p>
+     * </important>
      * 
      * @param deleteControlRequest
      * @return Result of the DeleteControl operation returned by the service.
@@ -1561,7 +1574,7 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Returns the registration status of an account in Audit Manager.
+     * Gets the registration status of an account in Audit Manager.
      * </p>
      * 
      * @param getAccountStatusRequest
@@ -1618,7 +1631,7 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Returns an assessment from Audit Manager.
+     * Gets information about a specified assessment.
      * </p>
      * 
      * @param getAssessmentRequest
@@ -1682,7 +1695,7 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Returns a framework from Audit Manager.
+     * Gets information about a specified framework.
      * </p>
      * 
      * @param getAssessmentFrameworkRequest
@@ -1747,7 +1760,7 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Returns the URL of an assessment report in Audit Manager.
+     * Gets the URL of an assessment report in Audit Manager.
      * </p>
      * 
      * @param getAssessmentReportUrlRequest
@@ -1812,7 +1825,7 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Returns a list of changelogs from Audit Manager.
+     * Gets a list of changelogs from Audit Manager.
      * </p>
      * 
      * @param getChangeLogsRequest
@@ -1876,7 +1889,7 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Returns a control from Audit Manager.
+     * Gets information about a specified control.
      * </p>
      * 
      * @param getControlRequest
@@ -1940,7 +1953,7 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Returns a list of delegations from an audit owner to a delegate.
+     * Gets a list of delegations from an audit owner to a delegate.
      * </p>
      * 
      * @param getDelegationsRequest
@@ -2002,7 +2015,7 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Returns evidence from Audit Manager.
+     * Gets information about a specified evidence item.
      * </p>
      * 
      * @param getEvidenceRequest
@@ -2066,7 +2079,7 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Returns all evidence from a specified evidence folder in Audit Manager.
+     * Gets all evidence from a specified evidence folder in Audit Manager.
      * </p>
      * 
      * @param getEvidenceByEvidenceFolderRequest
@@ -2132,7 +2145,103 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Returns an evidence folder from the specified assessment in Audit Manager.
+     * Creates a presigned Amazon S3 URL that can be used to upload a file as manual evidence. For instructions on how
+     * to use this operation, see <a href=
+     * "https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#how-to-upload-manual-evidence-files"
+     * >Upload a file from your browser </a> in the <i>Audit Manager User Guide</i>.
+     * </p>
+     * <p>
+     * The following restrictions apply to this operation:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum size of an individual evidence file: 100 MB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Number of daily manual evidence uploads per control: 100
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Supported file formats: See <a href=
+     * "https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files"
+     * >Supported file types for manual evidence</a> in the <i>Audit Manager User Guide</i>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about Audit Manager service restrictions, see <a
+     * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html">Quotas and restrictions for
+     * Audit Manager</a>.
+     * </p>
+     * 
+     * @param getEvidenceFileUploadUrlRequest
+     * @return Result of the GetEvidenceFileUploadUrl operation returned by the service.
+     * @throws ValidationException
+     *         The request has invalid or missing parameters.
+     * @throws AccessDeniedException
+     *         Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit
+     *         Manager settings page, and try again.
+     * @throws InternalServerException
+     *         An internal service error occurred during the processing of your request. Try again later.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AWSAuditManager.GetEvidenceFileUploadUrl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetEvidenceFileUploadUrl"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetEvidenceFileUploadUrlResult getEvidenceFileUploadUrl(GetEvidenceFileUploadUrlRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetEvidenceFileUploadUrl(request);
+    }
+
+    @SdkInternalApi
+    final GetEvidenceFileUploadUrlResult executeGetEvidenceFileUploadUrl(GetEvidenceFileUploadUrlRequest getEvidenceFileUploadUrlRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getEvidenceFileUploadUrlRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetEvidenceFileUploadUrlRequest> request = null;
+        Response<GetEvidenceFileUploadUrlResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetEvidenceFileUploadUrlRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getEvidenceFileUploadUrlRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AuditManager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetEvidenceFileUploadUrl");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetEvidenceFileUploadUrlResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetEvidenceFileUploadUrlResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets an evidence folder from a specified assessment in Audit Manager.
      * </p>
      * 
      * @param getEvidenceFolderRequest
@@ -2196,7 +2305,7 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Returns the evidence folders from a specified assessment in Audit Manager.
+     * Gets the evidence folders from a specified assessment in Audit Manager.
      * </p>
      * 
      * @param getEvidenceFoldersByAssessmentRequest
@@ -2262,7 +2371,7 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Returns a list of evidence folders that are associated with a specified control in an Audit Manager assessment.
+     * Gets a list of evidence folders that are associated with a specified control in an Audit Manager assessment.
      * </p>
      * 
      * @param getEvidenceFoldersByAssessmentControlRequest
@@ -2456,7 +2565,7 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Returns the name of the delegated Amazon Web Services administrator account for the organization.
+     * Gets the name of the delegated Amazon Web Services administrator account for a specified organization.
      * </p>
      * 
      * @param getOrganizationAdminAccountRequest
@@ -2522,7 +2631,7 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Returns a list of all of the Amazon Web Services that you can choose to include in your assessment. When you <a
+     * Gets a list of all of the Amazon Web Services that you can choose to include in your assessment. When you <a
      * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_CreateAssessment.html">create an
      * assessment</a>, specify which of these services you want to include to narrow the assessment's <a
      * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_Scope.html">scope</a>.
@@ -2587,7 +2696,7 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Returns the settings for the specified Amazon Web Services account.
+     * Gets the settings for a specified Amazon Web Services account.
      * </p>
      * 
      * @param getSettingsRequest

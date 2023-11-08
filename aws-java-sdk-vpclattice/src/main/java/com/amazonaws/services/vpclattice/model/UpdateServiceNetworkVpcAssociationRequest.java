@@ -27,7 +27,7 @@ public class UpdateServiceNetworkVpcAssociationRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The IDs of the security groups.
+     * The IDs of the security groups. Once you add a security group, it cannot be removed.
      * </p>
      */
     private java.util.List<String> securityGroupIds;
@@ -40,10 +40,10 @@ public class UpdateServiceNetworkVpcAssociationRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The IDs of the security groups.
+     * The IDs of the security groups. Once you add a security group, it cannot be removed.
      * </p>
      * 
-     * @return The IDs of the security groups.
+     * @return The IDs of the security groups. Once you add a security group, it cannot be removed.
      */
 
     public java.util.List<String> getSecurityGroupIds() {
@@ -52,11 +52,11 @@ public class UpdateServiceNetworkVpcAssociationRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The IDs of the security groups.
+     * The IDs of the security groups. Once you add a security group, it cannot be removed.
      * </p>
      * 
      * @param securityGroupIds
-     *        The IDs of the security groups.
+     *        The IDs of the security groups. Once you add a security group, it cannot be removed.
      */
 
     public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
@@ -70,7 +70,7 @@ public class UpdateServiceNetworkVpcAssociationRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The IDs of the security groups.
+     * The IDs of the security groups. Once you add a security group, it cannot be removed.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -79,7 +79,7 @@ public class UpdateServiceNetworkVpcAssociationRequest extends com.amazonaws.Ama
      * </p>
      * 
      * @param securityGroupIds
-     *        The IDs of the security groups.
+     *        The IDs of the security groups. Once you add a security group, it cannot be removed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +95,11 @@ public class UpdateServiceNetworkVpcAssociationRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The IDs of the security groups.
+     * The IDs of the security groups. Once you add a security group, it cannot be removed.
      * </p>
      * 
      * @param securityGroupIds
-     *        The IDs of the security groups.
+     *        The IDs of the security groups. Once you add a security group, it cannot be removed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

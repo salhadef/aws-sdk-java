@@ -31,6 +31,8 @@ public class Av1SettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("adaptiveQuantization").build();
     private static final MarshallingInfo<String> BITDEPTH_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("bitDepth").build();
+    private static final MarshallingInfo<String> FILMGRAINSYNTHESIS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("filmGrainSynthesis").build();
     private static final MarshallingInfo<String> FRAMERATECONTROL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("framerateControl").build();
     private static final MarshallingInfo<String> FRAMERATECONVERSIONALGORITHM_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -72,6 +74,7 @@ public class Av1SettingsMarshaller {
         try {
             protocolMarshaller.marshall(av1Settings.getAdaptiveQuantization(), ADAPTIVEQUANTIZATION_BINDING);
             protocolMarshaller.marshall(av1Settings.getBitDepth(), BITDEPTH_BINDING);
+            protocolMarshaller.marshall(av1Settings.getFilmGrainSynthesis(), FILMGRAINSYNTHESIS_BINDING);
             protocolMarshaller.marshall(av1Settings.getFramerateControl(), FRAMERATECONTROL_BINDING);
             protocolMarshaller.marshall(av1Settings.getFramerateConversionAlgorithm(), FRAMERATECONVERSIONALGORITHM_BINDING);
             protocolMarshaller.marshall(av1Settings.getFramerateDenominator(), FRAMERATEDENOMINATOR_BINDING);

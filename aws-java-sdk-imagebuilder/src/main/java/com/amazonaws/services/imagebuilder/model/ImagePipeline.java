@@ -122,7 +122,7 @@ public class ImagePipeline implements Serializable, Cloneable, StructuredPojo {
     private String dateLastRun;
     /**
      * <p>
-     * This is no longer supported, and does not return a value.
+     * The next date when the pipeline is scheduled to run.
      * </p>
      */
     private String dateNextRun;
@@ -807,11 +807,11 @@ public class ImagePipeline implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This is no longer supported, and does not return a value.
+     * The next date when the pipeline is scheduled to run.
      * </p>
      * 
      * @param dateNextRun
-     *        This is no longer supported, and does not return a value.
+     *        The next date when the pipeline is scheduled to run.
      */
 
     public void setDateNextRun(String dateNextRun) {
@@ -820,10 +820,10 @@ public class ImagePipeline implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This is no longer supported, and does not return a value.
+     * The next date when the pipeline is scheduled to run.
      * </p>
      * 
-     * @return This is no longer supported, and does not return a value.
+     * @return The next date when the pipeline is scheduled to run.
      */
 
     public String getDateNextRun() {
@@ -832,11 +832,11 @@ public class ImagePipeline implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This is no longer supported, and does not return a value.
+     * The next date when the pipeline is scheduled to run.
      * </p>
      * 
      * @param dateNextRun
-     *        This is no longer supported, and does not return a value.
+     *        The next date when the pipeline is scheduled to run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

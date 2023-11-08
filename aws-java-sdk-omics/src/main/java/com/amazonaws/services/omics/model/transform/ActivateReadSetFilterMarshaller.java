@@ -27,12 +27,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ActivateReadSetFilterMarshaller {
 
+    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("status").build();
     private static final MarshallingInfo<java.util.Date> CREATEDAFTER_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAfter").timestampFormat("iso8601").build();
     private static final MarshallingInfo<java.util.Date> CREATEDBEFORE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdBefore").timestampFormat("iso8601").build();
-    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("status").build();
 
     private static final ActivateReadSetFilterMarshaller instance = new ActivateReadSetFilterMarshaller();
 
@@ -50,9 +50,9 @@ public class ActivateReadSetFilterMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(activateReadSetFilter.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(activateReadSetFilter.getCreatedAfter(), CREATEDAFTER_BINDING);
             protocolMarshaller.marshall(activateReadSetFilter.getCreatedBefore(), CREATEDBEFORE_BINDING);
-            protocolMarshaller.marshall(activateReadSetFilter.getStatus(), STATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

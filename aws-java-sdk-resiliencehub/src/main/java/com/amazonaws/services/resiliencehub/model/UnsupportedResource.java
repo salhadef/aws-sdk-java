@@ -30,13 +30,13 @@ public class UnsupportedResource implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The logical resource identifier for the unsupported resource.
+     * Logical resource identifier for the unsupported resource.
      * </p>
      */
     private LogicalResourceId logicalResourceId;
     /**
      * <p>
-     * The physical resource identifier for the unsupported resource.
+     * Physical resource identifier for the unsupported resource.
      * </p>
      */
     private PhysicalResourceId physicalResourceId;
@@ -55,11 +55,11 @@ public class UnsupportedResource implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The logical resource identifier for the unsupported resource.
+     * Logical resource identifier for the unsupported resource.
      * </p>
      * 
      * @param logicalResourceId
-     *        The logical resource identifier for the unsupported resource.
+     *        Logical resource identifier for the unsupported resource.
      */
 
     public void setLogicalResourceId(LogicalResourceId logicalResourceId) {
@@ -68,10 +68,10 @@ public class UnsupportedResource implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The logical resource identifier for the unsupported resource.
+     * Logical resource identifier for the unsupported resource.
      * </p>
      * 
-     * @return The logical resource identifier for the unsupported resource.
+     * @return Logical resource identifier for the unsupported resource.
      */
 
     public LogicalResourceId getLogicalResourceId() {
@@ -80,11 +80,11 @@ public class UnsupportedResource implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The logical resource identifier for the unsupported resource.
+     * Logical resource identifier for the unsupported resource.
      * </p>
      * 
      * @param logicalResourceId
-     *        The logical resource identifier for the unsupported resource.
+     *        Logical resource identifier for the unsupported resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +95,11 @@ public class UnsupportedResource implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The physical resource identifier for the unsupported resource.
+     * Physical resource identifier for the unsupported resource.
      * </p>
      * 
      * @param physicalResourceId
-     *        The physical resource identifier for the unsupported resource.
+     *        Physical resource identifier for the unsupported resource.
      */
 
     public void setPhysicalResourceId(PhysicalResourceId physicalResourceId) {
@@ -108,10 +108,10 @@ public class UnsupportedResource implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The physical resource identifier for the unsupported resource.
+     * Physical resource identifier for the unsupported resource.
      * </p>
      * 
-     * @return The physical resource identifier for the unsupported resource.
+     * @return Physical resource identifier for the unsupported resource.
      */
 
     public PhysicalResourceId getPhysicalResourceId() {
@@ -120,11 +120,11 @@ public class UnsupportedResource implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The physical resource identifier for the unsupported resource.
+     * Physical resource identifier for the unsupported resource.
      * </p>
      * 
      * @param physicalResourceId
-     *        The physical resource identifier for the unsupported resource.
+     *        Physical resource identifier for the unsupported resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -138,6 +138,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * Example: <code>cluster:mycluster</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the
+     * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     * </p>
+     * </li>
      * </ul>
      */
     private String resourceId;
@@ -257,6 +263,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     * Serverless endpoint.
+     * </p>
+     * </li>
      * </ul>
      */
     private String scalableDimension;
@@ -298,6 +310,11 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * <li>
      * <p>
      * SageMaker endpoint variants
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SageMaker Serverless endpoint provisioned concurrency
      * </p>
      * </li>
      * <li>
@@ -595,6 +612,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * Example: <code>cluster:mycluster</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the
+     * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param resourceId
@@ -701,6 +724,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name.
      *        Example: <code>cluster:mycluster</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the
+     *        resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
      *        </p>
      *        </li>
      */
@@ -815,6 +844,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * Example: <code>cluster:mycluster</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the
+     * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The identifier of the resource that is associated with the scalable target. This string consists of the
@@ -921,6 +956,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *         <p>
      *         Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster
      *         name. Example: <code>cluster:mycluster</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is
+     *         the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
      *         </p>
      *         </li>
      */
@@ -1035,6 +1076,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * Example: <code>cluster:mycluster</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the
+     * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param resourceId
@@ -1141,6 +1188,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name.
      *        Example: <code>cluster:mycluster</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the
+     *        resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1267,6 +1320,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     * Serverless endpoint.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -1384,6 +1443,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB
      *        cluster.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     *        Serverless endpoint.
      *        </p>
      *        </li>
      * @see ScalableDimension
@@ -1509,6 +1574,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     * Serverless endpoint.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The scalable dimension associated with the scalable target. This string consists of the service
@@ -1625,6 +1696,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *         <p>
      *         <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB
      *         cluster.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a
+     *         SageMaker Serverless endpoint.
      *         </p>
      *         </li>
      * @see ScalableDimension
@@ -1750,6 +1827,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     * Serverless endpoint.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -1867,6 +1950,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB
      *        cluster.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     *        Serverless endpoint.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1994,6 +2083,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     * Serverless endpoint.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -2111,6 +2206,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB
      *        cluster.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     *        Serverless endpoint.
      *        </p>
      *        </li>
      * @see ScalableDimension
@@ -2236,6 +2337,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     * Serverless endpoint.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -2355,6 +2462,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *        cluster.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     *        Serverless endpoint.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScalableDimension
      */
@@ -2402,6 +2515,11 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * <li>
      * <p>
      * SageMaker endpoint variants
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SageMaker Serverless endpoint provisioned concurrency
      * </p>
      * </li>
      * <li>
@@ -2462,6 +2580,11 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *        <li>
      *        <p>
      *        SageMaker endpoint variants
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SageMaker Serverless endpoint provisioned concurrency
      *        </p>
      *        </li>
      *        <li>
@@ -2532,6 +2655,11 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
+     * SageMaker Serverless endpoint provisioned concurrency
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Spot Fleets
      * </p>
      * </li>
@@ -2587,6 +2715,11 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *         <li>
      *         <p>
      *         SageMaker endpoint variants
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         SageMaker Serverless endpoint provisioned concurrency
      *         </p>
      *         </li>
      *         <li>
@@ -2657,6 +2790,11 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
+     * SageMaker Serverless endpoint provisioned concurrency
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Spot Fleets
      * </p>
      * </li>
@@ -2713,6 +2851,11 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *        <li>
      *        <p>
      *        SageMaker endpoint variants
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SageMaker Serverless endpoint provisioned concurrency
      *        </p>
      *        </li>
      *        <li>

@@ -29,6 +29,8 @@ public class DescribeBackupVaultRequestMarshaller {
 
     private static final MarshallingInfo<String> BACKUPVAULTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("backupVaultName").build();
+    private static final MarshallingInfo<String> BACKUPVAULTACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("backupVaultAccountId").build();
 
     private static final DescribeBackupVaultRequestMarshaller instance = new DescribeBackupVaultRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class DescribeBackupVaultRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(describeBackupVaultRequest.getBackupVaultName(), BACKUPVAULTNAME_BINDING);
+            protocolMarshaller.marshall(describeBackupVaultRequest.getBackupVaultAccountId(), BACKUPVAULTACCOUNTID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -42,6 +42,8 @@ public class RtmpGroupSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inputLossAction").build();
     private static final MarshallingInfo<Integer> RESTARTDELAY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("restartDelay").build();
+    private static final MarshallingInfo<String> INCLUDEFILLERNALUNITS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("includeFillerNalUnits").build();
 
     private static final RtmpGroupSettingsMarshaller instance = new RtmpGroupSettingsMarshaller();
 
@@ -66,6 +68,7 @@ public class RtmpGroupSettingsMarshaller {
             protocolMarshaller.marshall(rtmpGroupSettings.getCaptionData(), CAPTIONDATA_BINDING);
             protocolMarshaller.marshall(rtmpGroupSettings.getInputLossAction(), INPUTLOSSACTION_BINDING);
             protocolMarshaller.marshall(rtmpGroupSettings.getRestartDelay(), RESTARTDELAY_BINDING);
+            protocolMarshaller.marshall(rtmpGroupSettings.getIncludeFillerNalUnits(), INCLUDEFILLERNALUNITS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

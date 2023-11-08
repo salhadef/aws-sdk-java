@@ -30,6 +30,8 @@ public class BatchGetRecordRequestMarshaller {
 
     private static final MarshallingInfo<List> IDENTIFIERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Identifiers").build();
+    private static final MarshallingInfo<String> EXPIRATIONTIMERESPONSE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExpirationTimeResponse").build();
 
     private static final BatchGetRecordRequestMarshaller instance = new BatchGetRecordRequestMarshaller();
 
@@ -48,6 +50,7 @@ public class BatchGetRecordRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(batchGetRecordRequest.getIdentifiers(), IDENTIFIERS_BINDING);
+            protocolMarshaller.marshall(batchGetRecordRequest.getExpirationTimeResponse(), EXPIRATIONTIMERESPONSE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

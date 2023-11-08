@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.braket.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -27,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class GetJobRequestMarshaller {
 
+    private static final MarshallingInfo<List> ADDITIONALATTRIBUTENAMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("additionalAttributeNames").build();
     private static final MarshallingInfo<String> JOBARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("jobArn").build();
 
@@ -46,6 +49,7 @@ public class GetJobRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(getJobRequest.getAdditionalAttributeNames(), ADDITIONALATTRIBUTENAMES_BINDING);
             protocolMarshaller.marshall(getJobRequest.getJobArn(), JOBARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

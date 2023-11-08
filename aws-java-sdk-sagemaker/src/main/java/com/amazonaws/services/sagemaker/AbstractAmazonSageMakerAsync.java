@@ -2261,6 +2261,21 @@ public class AbstractAmazonSageMakerAsync extends AbstractAmazonSageMaker implem
     }
 
     @Override
+    public java.util.concurrent.Future<GetScalingConfigurationRecommendationResult> getScalingConfigurationRecommendationAsync(
+            GetScalingConfigurationRecommendationRequest request) {
+
+        return getScalingConfigurationRecommendationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetScalingConfigurationRecommendationResult> getScalingConfigurationRecommendationAsync(
+            GetScalingConfigurationRecommendationRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetScalingConfigurationRecommendationRequest, GetScalingConfigurationRecommendationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetSearchSuggestionsResult> getSearchSuggestionsAsync(GetSearchSuggestionsRequest request) {
 
         return getSearchSuggestionsAsync(request, null);
@@ -3046,6 +3061,19 @@ public class AbstractAmazonSageMakerAsync extends AbstractAmazonSageMaker implem
     @Override
     public java.util.concurrent.Future<ListProjectsResult> listProjectsAsync(ListProjectsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListProjectsRequest, ListProjectsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResourceCatalogsResult> listResourceCatalogsAsync(ListResourceCatalogsRequest request) {
+
+        return listResourceCatalogsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResourceCatalogsResult> listResourceCatalogsAsync(ListResourceCatalogsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListResourceCatalogsRequest, ListResourceCatalogsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

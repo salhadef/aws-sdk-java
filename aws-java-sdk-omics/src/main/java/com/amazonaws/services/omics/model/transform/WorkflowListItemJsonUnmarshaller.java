@@ -52,14 +52,6 @@ public class WorkflowListItemJsonUnmarshaller implements Unmarshaller<WorkflowLi
                     context.nextToken();
                     workflowListItem.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("creationTime", targetDepth)) {
-                    context.nextToken();
-                    workflowListItem.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
-                }
-                if (context.testExpression("digest", targetDepth)) {
-                    context.nextToken();
-                    workflowListItem.setDigest(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
                     workflowListItem.setId(context.getUnmarshaller(String.class).unmarshall(context));
@@ -75,6 +67,19 @@ public class WorkflowListItemJsonUnmarshaller implements Unmarshaller<WorkflowLi
                 if (context.testExpression("type", targetDepth)) {
                     context.nextToken();
                     workflowListItem.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("digest", targetDepth)) {
+                    context.nextToken();
+                    workflowListItem.setDigest(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("creationTime", targetDepth)) {
+                    context.nextToken();
+                    workflowListItem.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (context.testExpression("metadata", targetDepth)) {
+                    context.nextToken();
+                    workflowListItem.setMetadata(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

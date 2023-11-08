@@ -29,6 +29,8 @@ public class ProgressiveDialerConfigMarshaller {
 
     private static final MarshallingInfo<Double> BANDWIDTHALLOCATION_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("bandwidthAllocation").build();
+    private static final MarshallingInfo<Double> DIALINGCAPACITY_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dialingCapacity").build();
 
     private static final ProgressiveDialerConfigMarshaller instance = new ProgressiveDialerConfigMarshaller();
 
@@ -47,6 +49,7 @@ public class ProgressiveDialerConfigMarshaller {
 
         try {
             protocolMarshaller.marshall(progressiveDialerConfig.getBandwidthAllocation(), BANDWIDTHALLOCATION_BINDING);
+            protocolMarshaller.marshall(progressiveDialerConfig.getDialingCapacity(), DIALINGCAPACITY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

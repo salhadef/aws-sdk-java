@@ -28,20 +28,23 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Specify the strength of any adaptive quantization filters that you enable. The value that you choose here applies
-     * to Spatial adaptive quantization (spatialAdaptiveQuantization).
+     * to Spatial adaptive quantization.
      */
     private String adaptiveQuantization;
-    /** Specify the Bit depth (Av1BitDepth). You can choose 8-bit (BIT_8) or 10-bit (BIT_10). */
+    /** Specify the Bit depth. You can choose 8-bit or 10-bit. */
     private String bitDepth;
     /**
-     * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to
-     * keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion,
-     * choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal
-     * approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your
-     * transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the
-     * service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the
-     * frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the
-     * settings FramerateNumerator and FramerateDenominator.
+     * Film grain synthesis replaces film grain present in your content with similar quality synthesized AV1 film grain.
+     * We recommend that you choose Enabled to reduce the bandwidth of your QVBR quality level 5, 6, 7, or 8 outputs.
+     * For QVBR quality level 9 or 10 outputs we recommend that you keep the default value, Disabled. When you include
+     * Film grain synthesis, you cannot include the Noise reducer preprocessor.
+     */
+    private String filmGrainSynthesis;
+    /**
+     * Use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as
+     * the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the
+     * dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions.
+     * If you choose Custom, specify your frame rate as a fraction.
      */
     private String framerateControl;
     /**
@@ -87,7 +90,7 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
     private Integer numberBFramesBetweenReferenceFrames;
     /**
      * Settings for quality-defined variable bitrate encoding with the H.265 codec. Use these settings only when you set
-     * QVBR for Rate control mode (RateControlMode).
+     * QVBR for Rate control mode.
      */
     private Av1QvbrSettings qvbrSettings;
     /**
@@ -102,26 +105,26 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
      */
     private Integer slices;
     /**
-     * Keep the default value, Enabled (ENABLED), to adjust quantization within each frame based on spatial variation of
-     * content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more
-     * distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be
-     * noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are
-     * encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that
-     * this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be
-     * focusing their attention on a part of the screen with a lot of complex texture, you might choose to disable this
-     * feature. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization
-     * (adaptiveQuantization) depending on your content. For homogeneous content, such as cartoons and video games, set
-     * it to Low. For content with a wider variety of textures, set it to High or Higher.
+     * Keep the default value, Enabled, to adjust quantization within each frame based on spatial variation of content
+     * complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion
+     * with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable.
+     * For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more
+     * bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't
+     * take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their
+     * attention on a part of the screen with a lot of complex texture, you might choose to disable this feature. Related
+     * setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization depending on your
+     * content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a wider
+     * variety of textures, set it to High or Higher.
      */
     private String spatialAdaptiveQuantization;
 
     /**
      * Specify the strength of any adaptive quantization filters that you enable. The value that you choose here applies
-     * to Spatial adaptive quantization (spatialAdaptiveQuantization).
+     * to Spatial adaptive quantization.
      * 
      * @param adaptiveQuantization
      *        Specify the strength of any adaptive quantization filters that you enable. The value that you choose here
-     *        applies to Spatial adaptive quantization (spatialAdaptiveQuantization).
+     *        applies to Spatial adaptive quantization.
      * @see Av1AdaptiveQuantization
      */
 
@@ -131,10 +134,10 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Specify the strength of any adaptive quantization filters that you enable. The value that you choose here applies
-     * to Spatial adaptive quantization (spatialAdaptiveQuantization).
+     * to Spatial adaptive quantization.
      * 
      * @return Specify the strength of any adaptive quantization filters that you enable. The value that you choose here
-     *         applies to Spatial adaptive quantization (spatialAdaptiveQuantization).
+     *         applies to Spatial adaptive quantization.
      * @see Av1AdaptiveQuantization
      */
 
@@ -144,11 +147,11 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Specify the strength of any adaptive quantization filters that you enable. The value that you choose here applies
-     * to Spatial adaptive quantization (spatialAdaptiveQuantization).
+     * to Spatial adaptive quantization.
      * 
      * @param adaptiveQuantization
      *        Specify the strength of any adaptive quantization filters that you enable. The value that you choose here
-     *        applies to Spatial adaptive quantization (spatialAdaptiveQuantization).
+     *        applies to Spatial adaptive quantization.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Av1AdaptiveQuantization
      */
@@ -160,11 +163,11 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Specify the strength of any adaptive quantization filters that you enable. The value that you choose here applies
-     * to Spatial adaptive quantization (spatialAdaptiveQuantization).
+     * to Spatial adaptive quantization.
      * 
      * @param adaptiveQuantization
      *        Specify the strength of any adaptive quantization filters that you enable. The value that you choose here
-     *        applies to Spatial adaptive quantization (spatialAdaptiveQuantization).
+     *        applies to Spatial adaptive quantization.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Av1AdaptiveQuantization
      */
@@ -175,10 +178,10 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify the Bit depth (Av1BitDepth). You can choose 8-bit (BIT_8) or 10-bit (BIT_10).
+     * Specify the Bit depth. You can choose 8-bit or 10-bit.
      * 
      * @param bitDepth
-     *        Specify the Bit depth (Av1BitDepth). You can choose 8-bit (BIT_8) or 10-bit (BIT_10).
+     *        Specify the Bit depth. You can choose 8-bit or 10-bit.
      * @see Av1BitDepth
      */
 
@@ -187,9 +190,9 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify the Bit depth (Av1BitDepth). You can choose 8-bit (BIT_8) or 10-bit (BIT_10).
+     * Specify the Bit depth. You can choose 8-bit or 10-bit.
      * 
-     * @return Specify the Bit depth (Av1BitDepth). You can choose 8-bit (BIT_8) or 10-bit (BIT_10).
+     * @return Specify the Bit depth. You can choose 8-bit or 10-bit.
      * @see Av1BitDepth
      */
 
@@ -198,10 +201,10 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify the Bit depth (Av1BitDepth). You can choose 8-bit (BIT_8) or 10-bit (BIT_10).
+     * Specify the Bit depth. You can choose 8-bit or 10-bit.
      * 
      * @param bitDepth
-     *        Specify the Bit depth (Av1BitDepth). You can choose 8-bit (BIT_8) or 10-bit (BIT_10).
+     *        Specify the Bit depth. You can choose 8-bit or 10-bit.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Av1BitDepth
      */
@@ -212,10 +215,10 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify the Bit depth (Av1BitDepth). You can choose 8-bit (BIT_8) or 10-bit (BIT_10).
+     * Specify the Bit depth. You can choose 8-bit or 10-bit.
      * 
      * @param bitDepth
-     *        Specify the Bit depth (Av1BitDepth). You can choose 8-bit (BIT_8) or 10-bit (BIT_10).
+     *        Specify the Bit depth. You can choose 8-bit or 10-bit.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Av1BitDepth
      */
@@ -226,25 +229,91 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to
-     * keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion,
-     * choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal
-     * approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your
-     * transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the
-     * service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the
-     * frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the
-     * settings FramerateNumerator and FramerateDenominator.
+     * Film grain synthesis replaces film grain present in your content with similar quality synthesized AV1 film grain.
+     * We recommend that you choose Enabled to reduce the bandwidth of your QVBR quality level 5, 6, 7, or 8 outputs.
+     * For QVBR quality level 9 or 10 outputs we recommend that you keep the default value, Disabled. When you include
+     * Film grain synthesis, you cannot include the Noise reducer preprocessor.
+     * 
+     * @param filmGrainSynthesis
+     *        Film grain synthesis replaces film grain present in your content with similar quality synthesized AV1 film
+     *        grain. We recommend that you choose Enabled to reduce the bandwidth of your QVBR quality level 5, 6, 7, or
+     *        8 outputs. For QVBR quality level 9 or 10 outputs we recommend that you keep the default value, Disabled.
+     *        When you include Film grain synthesis, you cannot include the Noise reducer preprocessor.
+     * @see Av1FilmGrainSynthesis
+     */
+
+    public void setFilmGrainSynthesis(String filmGrainSynthesis) {
+        this.filmGrainSynthesis = filmGrainSynthesis;
+    }
+
+    /**
+     * Film grain synthesis replaces film grain present in your content with similar quality synthesized AV1 film grain.
+     * We recommend that you choose Enabled to reduce the bandwidth of your QVBR quality level 5, 6, 7, or 8 outputs.
+     * For QVBR quality level 9 or 10 outputs we recommend that you keep the default value, Disabled. When you include
+     * Film grain synthesis, you cannot include the Noise reducer preprocessor.
+     * 
+     * @return Film grain synthesis replaces film grain present in your content with similar quality synthesized AV1
+     *         film grain. We recommend that you choose Enabled to reduce the bandwidth of your QVBR quality level 5, 6,
+     *         7, or 8 outputs. For QVBR quality level 9 or 10 outputs we recommend that you keep the default value,
+     *         Disabled. When you include Film grain synthesis, you cannot include the Noise reducer preprocessor.
+     * @see Av1FilmGrainSynthesis
+     */
+
+    public String getFilmGrainSynthesis() {
+        return this.filmGrainSynthesis;
+    }
+
+    /**
+     * Film grain synthesis replaces film grain present in your content with similar quality synthesized AV1 film grain.
+     * We recommend that you choose Enabled to reduce the bandwidth of your QVBR quality level 5, 6, 7, or 8 outputs.
+     * For QVBR quality level 9 or 10 outputs we recommend that you keep the default value, Disabled. When you include
+     * Film grain synthesis, you cannot include the Noise reducer preprocessor.
+     * 
+     * @param filmGrainSynthesis
+     *        Film grain synthesis replaces film grain present in your content with similar quality synthesized AV1 film
+     *        grain. We recommend that you choose Enabled to reduce the bandwidth of your QVBR quality level 5, 6, 7, or
+     *        8 outputs. For QVBR quality level 9 or 10 outputs we recommend that you keep the default value, Disabled.
+     *        When you include Film grain synthesis, you cannot include the Noise reducer preprocessor.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Av1FilmGrainSynthesis
+     */
+
+    public Av1Settings withFilmGrainSynthesis(String filmGrainSynthesis) {
+        setFilmGrainSynthesis(filmGrainSynthesis);
+        return this;
+    }
+
+    /**
+     * Film grain synthesis replaces film grain present in your content with similar quality synthesized AV1 film grain.
+     * We recommend that you choose Enabled to reduce the bandwidth of your QVBR quality level 5, 6, 7, or 8 outputs.
+     * For QVBR quality level 9 or 10 outputs we recommend that you keep the default value, Disabled. When you include
+     * Film grain synthesis, you cannot include the Noise reducer preprocessor.
+     * 
+     * @param filmGrainSynthesis
+     *        Film grain synthesis replaces film grain present in your content with similar quality synthesized AV1 film
+     *        grain. We recommend that you choose Enabled to reduce the bandwidth of your QVBR quality level 5, 6, 7, or
+     *        8 outputs. For QVBR quality level 9 or 10 outputs we recommend that you keep the default value, Disabled.
+     *        When you include Film grain synthesis, you cannot include the Noise reducer preprocessor.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Av1FilmGrainSynthesis
+     */
+
+    public Av1Settings withFilmGrainSynthesis(Av1FilmGrainSynthesis filmGrainSynthesis) {
+        this.filmGrainSynthesis = filmGrainSynthesis.toString();
+        return this;
+    }
+
+    /**
+     * Use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as
+     * the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the
+     * dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions.
+     * If you choose Custom, specify your frame rate as a fraction.
      * 
      * @param framerateControl
-     *        If you are using the console, use the Framerate setting to specify the frame rate for this output. If you
-     *        want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate
-     *        conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the
-     *        dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a
-     *        fraction. If you are creating your transcoding job specification as a JSON file without the console, use
-     *        FramerateControl to specify which value the service uses for the frame rate for this output. Choose
-     *        INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if
-     *        you want the service to use the frame rate you specify in the settings FramerateNumerator and
-     *        FramerateDenominator.
+     *        Use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame
+     *        rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame
+     *        rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal
+     *        approximations of fractions. If you choose Custom, specify your frame rate as a fraction.
      * @see Av1FramerateControl
      */
 
@@ -253,24 +322,15 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to
-     * keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion,
-     * choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal
-     * approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your
-     * transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the
-     * service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the
-     * frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the
-     * settings FramerateNumerator and FramerateDenominator.
+     * Use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as
+     * the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the
+     * dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions.
+     * If you choose Custom, specify your frame rate as a fraction.
      * 
-     * @return If you are using the console, use the Framerate setting to specify the frame rate for this output. If you
-     *         want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate
-     *         conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the
-     *         dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a
-     *         fraction. If you are creating your transcoding job specification as a JSON file without the console, use
-     *         FramerateControl to specify which value the service uses for the frame rate for this output. Choose
-     *         INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if
-     *         you want the service to use the frame rate you specify in the settings FramerateNumerator and
-     *         FramerateDenominator.
+     * @return Use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame
+     *         rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame
+     *         rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal
+     *         approximations of fractions. If you choose Custom, specify your frame rate as a fraction.
      * @see Av1FramerateControl
      */
 
@@ -279,25 +339,16 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to
-     * keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion,
-     * choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal
-     * approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your
-     * transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the
-     * service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the
-     * frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the
-     * settings FramerateNumerator and FramerateDenominator.
+     * Use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as
+     * the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the
+     * dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions.
+     * If you choose Custom, specify your frame rate as a fraction.
      * 
      * @param framerateControl
-     *        If you are using the console, use the Framerate setting to specify the frame rate for this output. If you
-     *        want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate
-     *        conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the
-     *        dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a
-     *        fraction. If you are creating your transcoding job specification as a JSON file without the console, use
-     *        FramerateControl to specify which value the service uses for the frame rate for this output. Choose
-     *        INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if
-     *        you want the service to use the frame rate you specify in the settings FramerateNumerator and
-     *        FramerateDenominator.
+     *        Use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame
+     *        rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame
+     *        rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal
+     *        approximations of fractions. If you choose Custom, specify your frame rate as a fraction.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Av1FramerateControl
      */
@@ -308,25 +359,16 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to
-     * keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion,
-     * choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal
-     * approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your
-     * transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the
-     * service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the
-     * frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the
-     * settings FramerateNumerator and FramerateDenominator.
+     * Use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as
+     * the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the
+     * dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions.
+     * If you choose Custom, specify your frame rate as a fraction.
      * 
      * @param framerateControl
-     *        If you are using the console, use the Framerate setting to specify the frame rate for this output. If you
-     *        want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate
-     *        conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the
-     *        dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a
-     *        fraction. If you are creating your transcoding job specification as a JSON file without the console, use
-     *        FramerateControl to specify which value the service uses for the frame rate for this output. Choose
-     *        INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if
-     *        you want the service to use the frame rate you specify in the settings FramerateNumerator and
-     *        FramerateDenominator.
+     *        Use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame
+     *        rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame
+     *        rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal
+     *        approximations of fractions. If you choose Custom, specify your frame rate as a fraction.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Av1FramerateControl
      */
@@ -684,11 +726,11 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Settings for quality-defined variable bitrate encoding with the H.265 codec. Use these settings only when you set
-     * QVBR for Rate control mode (RateControlMode).
+     * QVBR for Rate control mode.
      * 
      * @param qvbrSettings
      *        Settings for quality-defined variable bitrate encoding with the H.265 codec. Use these settings only when
-     *        you set QVBR for Rate control mode (RateControlMode).
+     *        you set QVBR for Rate control mode.
      */
 
     public void setQvbrSettings(Av1QvbrSettings qvbrSettings) {
@@ -697,10 +739,10 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Settings for quality-defined variable bitrate encoding with the H.265 codec. Use these settings only when you set
-     * QVBR for Rate control mode (RateControlMode).
+     * QVBR for Rate control mode.
      * 
      * @return Settings for quality-defined variable bitrate encoding with the H.265 codec. Use these settings only when
-     *         you set QVBR for Rate control mode (RateControlMode).
+     *         you set QVBR for Rate control mode.
      */
 
     public Av1QvbrSettings getQvbrSettings() {
@@ -709,11 +751,11 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Settings for quality-defined variable bitrate encoding with the H.265 codec. Use these settings only when you set
-     * QVBR for Rate control mode (RateControlMode).
+     * QVBR for Rate control mode.
      * 
      * @param qvbrSettings
      *        Settings for quality-defined variable bitrate encoding with the H.265 codec. Use these settings only when
-     *        you set QVBR for Rate control mode (RateControlMode).
+     *        you set QVBR for Rate control mode.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -828,29 +870,29 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Keep the default value, Enabled (ENABLED), to adjust quantization within each frame based on spatial variation of
-     * content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more
-     * distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be
-     * noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are
-     * encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that
-     * this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be
-     * focusing their attention on a part of the screen with a lot of complex texture, you might choose to disable this
-     * feature. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization
-     * (adaptiveQuantization) depending on your content. For homogeneous content, such as cartoons and video games, set
-     * it to Low. For content with a wider variety of textures, set it to High or Higher.
+     * Keep the default value, Enabled, to adjust quantization within each frame based on spatial variation of content
+     * complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion
+     * with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable.
+     * For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more
+     * bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't
+     * take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their
+     * attention on a part of the screen with a lot of complex texture, you might choose to disable this feature. Related
+     * setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization depending on your
+     * content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a wider
+     * variety of textures, set it to High or Higher.
      * 
      * @param spatialAdaptiveQuantization
-     *        Keep the default value, Enabled (ENABLED), to adjust quantization within each frame based on spatial
-     *        variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that
-     *        can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any
-     *        small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and
-     *        smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your
-     *        video quality. Note, though, that this feature doesn't take into account where the viewer's attention is
-     *        likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of
-     *        complex texture, you might choose to disable this feature. Related setting: When you enable spatial
-     *        adaptive quantization, set the value for Adaptive quantization (adaptiveQuantization) depending on your
-     *        content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a
-     *        wider variety of textures, set it to High or Higher.
+     *        Keep the default value, Enabled, to adjust quantization within each frame based on spatial variation of
+     *        content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain
+     *        more distortion with no noticeable visual degradation and uses more bits on areas where any small
+     *        distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth
+     *        textured blocks are encoded with more bits. Enabling this feature will almost always improve your video
+     *        quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely
+     *        to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex
+     *        texture, you might choose to disable this feature. Related setting: When you enable spatial adaptive
+     *        quantization, set the value for Adaptive quantization depending on your content. For homogeneous content,
+     *        such as cartoons and video games, set it to Low. For content with a wider variety of textures, set it to
+     *        High or Higher.
      * @see Av1SpatialAdaptiveQuantization
      */
 
@@ -859,28 +901,28 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Keep the default value, Enabled (ENABLED), to adjust quantization within each frame based on spatial variation of
-     * content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more
-     * distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be
-     * noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are
-     * encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that
-     * this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be
-     * focusing their attention on a part of the screen with a lot of complex texture, you might choose to disable this
-     * feature. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization
-     * (adaptiveQuantization) depending on your content. For homogeneous content, such as cartoons and video games, set
-     * it to Low. For content with a wider variety of textures, set it to High or Higher.
+     * Keep the default value, Enabled, to adjust quantization within each frame based on spatial variation of content
+     * complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion
+     * with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable.
+     * For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more
+     * bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't
+     * take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their
+     * attention on a part of the screen with a lot of complex texture, you might choose to disable this feature. Related
+     * setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization depending on your
+     * content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a wider
+     * variety of textures, set it to High or Higher.
      * 
-     * @return Keep the default value, Enabled (ENABLED), to adjust quantization within each frame based on spatial
-     *         variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that
-     *         can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any
-     *         small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and
+     * @return Keep the default value, Enabled, to adjust quantization within each frame based on spatial variation of
+     *         content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain
+     *         more distortion with no noticeable visual degradation and uses more bits on areas where any small
+     *         distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and
      *         smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your
      *         video quality. Note, though, that this feature doesn't take into account where the viewer's attention is
      *         likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of
      *         complex texture, you might choose to disable this feature. Related setting: When you enable spatial
-     *         adaptive quantization, set the value for Adaptive quantization (adaptiveQuantization) depending on your
-     *         content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a
-     *         wider variety of textures, set it to High or Higher.
+     *         adaptive quantization, set the value for Adaptive quantization depending on your content. For homogeneous
+     *         content, such as cartoons and video games, set it to Low. For content with a wider variety of textures,
+     *         set it to High or Higher.
      * @see Av1SpatialAdaptiveQuantization
      */
 
@@ -889,29 +931,29 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Keep the default value, Enabled (ENABLED), to adjust quantization within each frame based on spatial variation of
-     * content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more
-     * distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be
-     * noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are
-     * encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that
-     * this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be
-     * focusing their attention on a part of the screen with a lot of complex texture, you might choose to disable this
-     * feature. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization
-     * (adaptiveQuantization) depending on your content. For homogeneous content, such as cartoons and video games, set
-     * it to Low. For content with a wider variety of textures, set it to High or Higher.
+     * Keep the default value, Enabled, to adjust quantization within each frame based on spatial variation of content
+     * complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion
+     * with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable.
+     * For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more
+     * bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't
+     * take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their
+     * attention on a part of the screen with a lot of complex texture, you might choose to disable this feature. Related
+     * setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization depending on your
+     * content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a wider
+     * variety of textures, set it to High or Higher.
      * 
      * @param spatialAdaptiveQuantization
-     *        Keep the default value, Enabled (ENABLED), to adjust quantization within each frame based on spatial
-     *        variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that
-     *        can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any
-     *        small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and
-     *        smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your
-     *        video quality. Note, though, that this feature doesn't take into account where the viewer's attention is
-     *        likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of
-     *        complex texture, you might choose to disable this feature. Related setting: When you enable spatial
-     *        adaptive quantization, set the value for Adaptive quantization (adaptiveQuantization) depending on your
-     *        content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a
-     *        wider variety of textures, set it to High or Higher.
+     *        Keep the default value, Enabled, to adjust quantization within each frame based on spatial variation of
+     *        content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain
+     *        more distortion with no noticeable visual degradation and uses more bits on areas where any small
+     *        distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth
+     *        textured blocks are encoded with more bits. Enabling this feature will almost always improve your video
+     *        quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely
+     *        to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex
+     *        texture, you might choose to disable this feature. Related setting: When you enable spatial adaptive
+     *        quantization, set the value for Adaptive quantization depending on your content. For homogeneous content,
+     *        such as cartoons and video games, set it to Low. For content with a wider variety of textures, set it to
+     *        High or Higher.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Av1SpatialAdaptiveQuantization
      */
@@ -922,29 +964,29 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Keep the default value, Enabled (ENABLED), to adjust quantization within each frame based on spatial variation of
-     * content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more
-     * distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be
-     * noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are
-     * encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that
-     * this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be
-     * focusing their attention on a part of the screen with a lot of complex texture, you might choose to disable this
-     * feature. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization
-     * (adaptiveQuantization) depending on your content. For homogeneous content, such as cartoons and video games, set
-     * it to Low. For content with a wider variety of textures, set it to High or Higher.
+     * Keep the default value, Enabled, to adjust quantization within each frame based on spatial variation of content
+     * complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion
+     * with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable.
+     * For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more
+     * bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't
+     * take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their
+     * attention on a part of the screen with a lot of complex texture, you might choose to disable this feature. Related
+     * setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization depending on your
+     * content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a wider
+     * variety of textures, set it to High or Higher.
      * 
      * @param spatialAdaptiveQuantization
-     *        Keep the default value, Enabled (ENABLED), to adjust quantization within each frame based on spatial
-     *        variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that
-     *        can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any
-     *        small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and
-     *        smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your
-     *        video quality. Note, though, that this feature doesn't take into account where the viewer's attention is
-     *        likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of
-     *        complex texture, you might choose to disable this feature. Related setting: When you enable spatial
-     *        adaptive quantization, set the value for Adaptive quantization (adaptiveQuantization) depending on your
-     *        content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a
-     *        wider variety of textures, set it to High or Higher.
+     *        Keep the default value, Enabled, to adjust quantization within each frame based on spatial variation of
+     *        content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain
+     *        more distortion with no noticeable visual degradation and uses more bits on areas where any small
+     *        distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth
+     *        textured blocks are encoded with more bits. Enabling this feature will almost always improve your video
+     *        quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely
+     *        to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex
+     *        texture, you might choose to disable this feature. Related setting: When you enable spatial adaptive
+     *        quantization, set the value for Adaptive quantization depending on your content. For homogeneous content,
+     *        such as cartoons and video games, set it to Low. For content with a wider variety of textures, set it to
+     *        High or Higher.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Av1SpatialAdaptiveQuantization
      */
@@ -970,6 +1012,8 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
             sb.append("AdaptiveQuantization: ").append(getAdaptiveQuantization()).append(",");
         if (getBitDepth() != null)
             sb.append("BitDepth: ").append(getBitDepth()).append(",");
+        if (getFilmGrainSynthesis() != null)
+            sb.append("FilmGrainSynthesis: ").append(getFilmGrainSynthesis()).append(",");
         if (getFramerateControl() != null)
             sb.append("FramerateControl: ").append(getFramerateControl()).append(",");
         if (getFramerateConversionAlgorithm() != null)
@@ -1013,6 +1057,10 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
         if (other.getBitDepth() == null ^ this.getBitDepth() == null)
             return false;
         if (other.getBitDepth() != null && other.getBitDepth().equals(this.getBitDepth()) == false)
+            return false;
+        if (other.getFilmGrainSynthesis() == null ^ this.getFilmGrainSynthesis() == null)
+            return false;
+        if (other.getFilmGrainSynthesis() != null && other.getFilmGrainSynthesis().equals(this.getFilmGrainSynthesis()) == false)
             return false;
         if (other.getFramerateControl() == null ^ this.getFramerateControl() == null)
             return false;
@@ -1069,6 +1117,7 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getAdaptiveQuantization() == null) ? 0 : getAdaptiveQuantization().hashCode());
         hashCode = prime * hashCode + ((getBitDepth() == null) ? 0 : getBitDepth().hashCode());
+        hashCode = prime * hashCode + ((getFilmGrainSynthesis() == null) ? 0 : getFilmGrainSynthesis().hashCode());
         hashCode = prime * hashCode + ((getFramerateControl() == null) ? 0 : getFramerateControl().hashCode());
         hashCode = prime * hashCode + ((getFramerateConversionAlgorithm() == null) ? 0 : getFramerateConversionAlgorithm().hashCode());
         hashCode = prime * hashCode + ((getFramerateDenominator() == null) ? 0 : getFramerateDenominator().hashCode());

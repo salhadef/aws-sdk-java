@@ -39,6 +39,11 @@ public class AbstractAmazonRekognition implements AmazonRekognition {
     }
 
     @Override
+    public AssociateFacesResult associateFaces(AssociateFacesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CompareFacesResult compareFaces(CompareFacesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -79,6 +84,11 @@ public class AbstractAmazonRekognition implements AmazonRekognition {
     }
 
     @Override
+    public CreateUserResult createUser(CreateUserRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteCollectionResult deleteCollection(DeleteCollectionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -110,6 +120,11 @@ public class AbstractAmazonRekognition implements AmazonRekognition {
 
     @Override
     public DeleteStreamProcessorResult deleteStreamProcessor(DeleteStreamProcessorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteUserResult deleteUser(DeleteUserRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -169,6 +184,11 @@ public class AbstractAmazonRekognition implements AmazonRekognition {
     }
 
     @Override
+    public DisassociateFacesResult disassociateFaces(DisassociateFacesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DistributeDatasetEntriesResult distributeDatasetEntries(DistributeDatasetEntriesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -205,6 +225,11 @@ public class AbstractAmazonRekognition implements AmazonRekognition {
 
     @Override
     public GetLabelDetectionResult getLabelDetection(GetLabelDetectionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetMediaAnalysisJobResult getMediaAnalysisJob(GetMediaAnalysisJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -249,6 +274,11 @@ public class AbstractAmazonRekognition implements AmazonRekognition {
     }
 
     @Override
+    public ListMediaAnalysisJobsResult listMediaAnalysisJobs(ListMediaAnalysisJobsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListProjectPoliciesResult listProjectPolicies(ListProjectPoliciesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -260,6 +290,11 @@ public class AbstractAmazonRekognition implements AmazonRekognition {
 
     @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListUsersResult listUsers(ListUsersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -280,6 +315,16 @@ public class AbstractAmazonRekognition implements AmazonRekognition {
 
     @Override
     public SearchFacesByImageResult searchFacesByImage(SearchFacesByImageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public SearchUsersResult searchUsers(SearchUsersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public SearchUsersByImageResult searchUsersByImage(SearchUsersByImageRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -305,6 +350,11 @@ public class AbstractAmazonRekognition implements AmazonRekognition {
 
     @Override
     public StartLabelDetectionResult startLabelDetection(StartLabelDetectionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartMediaAnalysisJobResult startMediaAnalysisJob(StartMediaAnalysisJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

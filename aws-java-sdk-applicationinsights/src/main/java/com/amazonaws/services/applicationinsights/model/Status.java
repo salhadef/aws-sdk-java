@@ -23,7 +23,8 @@ public enum Status {
     IGNORE("IGNORE"),
     RESOLVED("RESOLVED"),
     PENDING("PENDING"),
-    RECURRING("RECURRING");
+    RECURRING("RECURRING"),
+    RECOVERING("RECOVERING");
 
     private String value;
 

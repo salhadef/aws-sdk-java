@@ -27,6 +27,12 @@ public class StartAssessmentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
+     * The data source type of an assessment to be started.
+     * </p>
+     */
+    private String assessmentDataSourceType;
+    /**
+     * <p>
      * List of criteria for assessment.
      * </p>
      */
@@ -45,6 +51,65 @@ public class StartAssessmentRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private String s3bucketForReportData;
+
+    /**
+     * <p>
+     * The data source type of an assessment to be started.
+     * </p>
+     * 
+     * @param assessmentDataSourceType
+     *        The data source type of an assessment to be started.
+     * @see AssessmentDataSourceType
+     */
+
+    public void setAssessmentDataSourceType(String assessmentDataSourceType) {
+        this.assessmentDataSourceType = assessmentDataSourceType;
+    }
+
+    /**
+     * <p>
+     * The data source type of an assessment to be started.
+     * </p>
+     * 
+     * @return The data source type of an assessment to be started.
+     * @see AssessmentDataSourceType
+     */
+
+    public String getAssessmentDataSourceType() {
+        return this.assessmentDataSourceType;
+    }
+
+    /**
+     * <p>
+     * The data source type of an assessment to be started.
+     * </p>
+     * 
+     * @param assessmentDataSourceType
+     *        The data source type of an assessment to be started.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AssessmentDataSourceType
+     */
+
+    public StartAssessmentRequest withAssessmentDataSourceType(String assessmentDataSourceType) {
+        setAssessmentDataSourceType(assessmentDataSourceType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The data source type of an assessment to be started.
+     * </p>
+     * 
+     * @param assessmentDataSourceType
+     *        The data source type of an assessment to be started.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AssessmentDataSourceType
+     */
+
+    public StartAssessmentRequest withAssessmentDataSourceType(AssessmentDataSourceType assessmentDataSourceType) {
+        this.assessmentDataSourceType = assessmentDataSourceType.toString();
+        return this;
+    }
 
     /**
      * <p>
@@ -220,6 +285,8 @@ public class StartAssessmentRequest extends com.amazonaws.AmazonWebServiceReques
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAssessmentDataSourceType() != null)
+            sb.append("AssessmentDataSourceType: ").append(getAssessmentDataSourceType()).append(",");
         if (getAssessmentTargets() != null)
             sb.append("AssessmentTargets: ").append(getAssessmentTargets()).append(",");
         if (getS3bucketForAnalysisData() != null)
@@ -240,6 +307,10 @@ public class StartAssessmentRequest extends com.amazonaws.AmazonWebServiceReques
         if (obj instanceof StartAssessmentRequest == false)
             return false;
         StartAssessmentRequest other = (StartAssessmentRequest) obj;
+        if (other.getAssessmentDataSourceType() == null ^ this.getAssessmentDataSourceType() == null)
+            return false;
+        if (other.getAssessmentDataSourceType() != null && other.getAssessmentDataSourceType().equals(this.getAssessmentDataSourceType()) == false)
+            return false;
         if (other.getAssessmentTargets() == null ^ this.getAssessmentTargets() == null)
             return false;
         if (other.getAssessmentTargets() != null && other.getAssessmentTargets().equals(this.getAssessmentTargets()) == false)
@@ -260,6 +331,7 @@ public class StartAssessmentRequest extends com.amazonaws.AmazonWebServiceReques
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAssessmentDataSourceType() == null) ? 0 : getAssessmentDataSourceType().hashCode());
         hashCode = prime * hashCode + ((getAssessmentTargets() == null) ? 0 : getAssessmentTargets().hashCode());
         hashCode = prime * hashCode + ((getS3bucketForAnalysisData() == null) ? 0 : getS3bucketForAnalysisData().hashCode());
         hashCode = prime * hashCode + ((getS3bucketForReportData() == null) ? 0 : getS3bucketForReportData().hashCode());

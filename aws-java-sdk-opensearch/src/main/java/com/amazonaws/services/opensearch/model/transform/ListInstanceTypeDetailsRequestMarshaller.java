@@ -35,6 +35,10 @@ public class ListInstanceTypeDetailsRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nextToken").build();
+    private static final MarshallingInfo<Boolean> RETRIEVEAZS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("retrieveAZs").build();
+    private static final MarshallingInfo<String> INSTANCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("instanceType").build();
 
     private static final ListInstanceTypeDetailsRequestMarshaller instance = new ListInstanceTypeDetailsRequestMarshaller();
 
@@ -56,6 +60,8 @@ public class ListInstanceTypeDetailsRequestMarshaller {
             protocolMarshaller.marshall(listInstanceTypeDetailsRequest.getDomainName(), DOMAINNAME_BINDING);
             protocolMarshaller.marshall(listInstanceTypeDetailsRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listInstanceTypeDetailsRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listInstanceTypeDetailsRequest.getRetrieveAZs(), RETRIEVEAZS_BINDING);
+            protocolMarshaller.marshall(listInstanceTypeDetailsRequest.getInstanceType(), INSTANCETYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -214,6 +214,37 @@ public interface AmazonConnectParticipantAsync extends AmazonConnectParticipant 
 
     /**
      * <p>
+     * Retrieves the view for the specified view token.
+     * </p>
+     * 
+     * @param describeViewRequest
+     * @return A Java Future containing the result of the DescribeView operation returned by the service.
+     * @sample AmazonConnectParticipantAsync.DescribeView
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/DescribeView"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeViewResult> describeViewAsync(DescribeViewRequest describeViewRequest);
+
+    /**
+     * <p>
+     * Retrieves the view for the specified view token.
+     * </p>
+     * 
+     * @param describeViewRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeView operation returned by the service.
+     * @sample AmazonConnectParticipantAsyncHandler.DescribeView
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/DescribeView"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeViewResult> describeViewAsync(DescribeViewRequest describeViewRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeViewRequest, DescribeViewResult> asyncHandler);
+
+    /**
+     * <p>
      * Disconnects a participant.
      * </p>
      * <note>

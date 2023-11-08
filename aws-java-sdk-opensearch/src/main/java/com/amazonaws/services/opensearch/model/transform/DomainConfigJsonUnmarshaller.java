@@ -64,6 +64,10 @@ public class DomainConfigJsonUnmarshaller implements Unmarshaller<DomainConfig, 
                     context.nextToken();
                     domainConfig.setAccessPolicies(AccessPoliciesStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("IPAddressType", targetDepth)) {
+                    context.nextToken();
+                    domainConfig.setIPAddressType(IPAddressTypeStatusJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("SnapshotOptions", targetDepth)) {
                     context.nextToken();
                     domainConfig.setSnapshotOptions(SnapshotOptionsStatusJsonUnmarshaller.getInstance().unmarshall(context));

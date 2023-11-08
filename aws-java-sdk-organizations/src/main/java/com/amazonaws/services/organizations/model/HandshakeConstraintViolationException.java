@@ -32,7 +32,7 @@ import javax.annotation.Generated;
  * <important>
  * <p>
  * If you get this exception immediately after creating the organization, wait one hour and try again. If after an hour
- * it continues to fail with this error, contact <a href="https://docs.aws.amazon.com/support/home#/">Amazon Web
+ * it continues to fail with this error, contact <a href="https://console.aws.amazon.com/support/home#/">Amazon Web
  * Services Support</a>.
  * </p>
  * </important></li>

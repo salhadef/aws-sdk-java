@@ -100,7 +100,7 @@ public class StepAdjustment implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The amount by which to scale, based on the specified adjustment type. A positive value adds to the current
      * capacity while a negative number removes from the current capacity. For exact capacity, you must specify a
-     * positive value.
+     * non-negative value.
      * </p>
      */
     private Integer scalingAdjustment;
@@ -240,13 +240,13 @@ public class StepAdjustment implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The amount by which to scale, based on the specified adjustment type. A positive value adds to the current
      * capacity while a negative number removes from the current capacity. For exact capacity, you must specify a
-     * positive value.
+     * non-negative value.
      * </p>
      * 
      * @param scalingAdjustment
      *        The amount by which to scale, based on the specified adjustment type. A positive value adds to the current
      *        capacity while a negative number removes from the current capacity. For exact capacity, you must specify a
-     *        positive value.
+     *        non-negative value.
      */
 
     public void setScalingAdjustment(Integer scalingAdjustment) {
@@ -257,12 +257,12 @@ public class StepAdjustment implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The amount by which to scale, based on the specified adjustment type. A positive value adds to the current
      * capacity while a negative number removes from the current capacity. For exact capacity, you must specify a
-     * positive value.
+     * non-negative value.
      * </p>
      * 
      * @return The amount by which to scale, based on the specified adjustment type. A positive value adds to the
      *         current capacity while a negative number removes from the current capacity. For exact capacity, you must
-     *         specify a positive value.
+     *         specify a non-negative value.
      */
 
     public Integer getScalingAdjustment() {
@@ -273,13 +273,13 @@ public class StepAdjustment implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The amount by which to scale, based on the specified adjustment type. A positive value adds to the current
      * capacity while a negative number removes from the current capacity. For exact capacity, you must specify a
-     * positive value.
+     * non-negative value.
      * </p>
      * 
      * @param scalingAdjustment
      *        The amount by which to scale, based on the specified adjustment type. A positive value adds to the current
      *        capacity while a negative number removes from the current capacity. For exact capacity, you must specify a
-     *        positive value.
+     *        non-negative value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

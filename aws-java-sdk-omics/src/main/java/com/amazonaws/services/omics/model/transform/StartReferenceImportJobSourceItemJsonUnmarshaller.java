@@ -48,17 +48,17 @@ public class StartReferenceImportJobSourceItemJsonUnmarshaller implements Unmars
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("description", targetDepth)) {
+                if (context.testExpression("sourceFile", targetDepth)) {
                     context.nextToken();
-                    startReferenceImportJobSourceItem.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                    startReferenceImportJobSourceItem.setSourceFile(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
                     startReferenceImportJobSourceItem.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("sourceFile", targetDepth)) {
+                if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
-                    startReferenceImportJobSourceItem.setSourceFile(context.getUnmarshaller(String.class).unmarshall(context));
+                    startReferenceImportJobSourceItem.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();

@@ -89,10 +89,34 @@ public class CreateLocationObjectStorageRequest extends com.amazonaws.AmazonWebS
     private java.util.List<TagListEntry> tags;
     /**
      * <p>
-     * Specifies a certificate to authenticate with an object storage system that uses a private or self-signed
-     * certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example,
-     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes
-     * (before Base64 encoding).
+     * Specifies a file with the certificates that are used to sign the object storage server's certificate (for
+     * example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The file you specify must include the
+     * following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The certificate of the signing certificate authority (CA)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Any intermediate certificates
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * base64 encoding
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A <code>.pem</code> extension
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The file can be up to 32768 bytes (before base64 encoding).
      * </p>
      * <p>
      * To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.
@@ -583,10 +607,34 @@ public class CreateLocationObjectStorageRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Specifies a certificate to authenticate with an object storage system that uses a private or self-signed
-     * certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example,
-     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes
-     * (before Base64 encoding).
+     * Specifies a file with the certificates that are used to sign the object storage server's certificate (for
+     * example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The file you specify must include the
+     * following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The certificate of the signing certificate authority (CA)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Any intermediate certificates
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * base64 encoding
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A <code>.pem</code> extension
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The file can be up to 32768 bytes (before base64 encoding).
      * </p>
      * <p>
      * To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.
@@ -603,10 +651,34 @@ public class CreateLocationObjectStorageRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param serverCertificate
-     *        Specifies a certificate to authenticate with an object storage system that uses a private or self-signed
-     *        certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example,
-     *        <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes
-     *        (before Base64 encoding).</p>
+     *        Specifies a file with the certificates that are used to sign the object storage server's certificate (for
+     *        example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The file you specify must
+     *        include the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The certificate of the signing certificate authority (CA)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Any intermediate certificates
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        base64 encoding
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A <code>.pem</code> extension
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The file can be up to 32768 bytes (before base64 encoding).
+     *        </p>
      *        <p>
      *        To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.
      */
@@ -617,10 +689,34 @@ public class CreateLocationObjectStorageRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Specifies a certificate to authenticate with an object storage system that uses a private or self-signed
-     * certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example,
-     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes
-     * (before Base64 encoding).
+     * Specifies a file with the certificates that are used to sign the object storage server's certificate (for
+     * example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The file you specify must include the
+     * following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The certificate of the signing certificate authority (CA)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Any intermediate certificates
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * base64 encoding
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A <code>.pem</code> extension
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The file can be up to 32768 bytes (before base64 encoding).
      * </p>
      * <p>
      * To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.
@@ -633,10 +729,34 @@ public class CreateLocationObjectStorageRequest extends com.amazonaws.AmazonWebS
      * {@code position}.
      * </p>
      * 
-     * @return Specifies a certificate to authenticate with an object storage system that uses a private or self-signed
-     *         certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example,
-     *         <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768
-     *         bytes (before Base64 encoding).</p>
+     * @return Specifies a file with the certificates that are used to sign the object storage server's certificate (for
+     *         example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The file you specify must
+     *         include the following:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The certificate of the signing certificate authority (CA)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Any intermediate certificates
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         base64 encoding
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A <code>.pem</code> extension
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         The file can be up to 32768 bytes (before base64 encoding).
+     *         </p>
      *         <p>
      *         To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.
      */
@@ -647,10 +767,34 @@ public class CreateLocationObjectStorageRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Specifies a certificate to authenticate with an object storage system that uses a private or self-signed
-     * certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example,
-     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes
-     * (before Base64 encoding).
+     * Specifies a file with the certificates that are used to sign the object storage server's certificate (for
+     * example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The file you specify must include the
+     * following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The certificate of the signing certificate authority (CA)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Any intermediate certificates
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * base64 encoding
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A <code>.pem</code> extension
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The file can be up to 32768 bytes (before base64 encoding).
      * </p>
      * <p>
      * To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.
@@ -667,10 +811,34 @@ public class CreateLocationObjectStorageRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param serverCertificate
-     *        Specifies a certificate to authenticate with an object storage system that uses a private or self-signed
-     *        certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example,
-     *        <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes
-     *        (before Base64 encoding).</p>
+     *        Specifies a file with the certificates that are used to sign the object storage server's certificate (for
+     *        example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The file you specify must
+     *        include the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The certificate of the signing certificate authority (CA)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Any intermediate certificates
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        base64 encoding
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A <code>.pem</code> extension
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The file can be up to 32768 bytes (before base64 encoding).
+     *        </p>
      *        <p>
      *        To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.
      * @return Returns a reference to this object so that method calls can be chained together.

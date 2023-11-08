@@ -55,6 +55,12 @@ public class FilterOperationSelectedFieldsConfiguration implements Serializable,
      * </ul>
      */
     private String selectedFieldOptions;
+    /**
+     * <p>
+     * The selected columns of a dataset.
+     * </p>
+     */
+    private java.util.List<ColumnIdentifier> selectedColumns;
 
     /**
      * <p>
@@ -270,6 +276,76 @@ public class FilterOperationSelectedFieldsConfiguration implements Serializable,
     }
 
     /**
+     * <p>
+     * The selected columns of a dataset.
+     * </p>
+     * 
+     * @return The selected columns of a dataset.
+     */
+
+    public java.util.List<ColumnIdentifier> getSelectedColumns() {
+        return selectedColumns;
+    }
+
+    /**
+     * <p>
+     * The selected columns of a dataset.
+     * </p>
+     * 
+     * @param selectedColumns
+     *        The selected columns of a dataset.
+     */
+
+    public void setSelectedColumns(java.util.Collection<ColumnIdentifier> selectedColumns) {
+        if (selectedColumns == null) {
+            this.selectedColumns = null;
+            return;
+        }
+
+        this.selectedColumns = new java.util.ArrayList<ColumnIdentifier>(selectedColumns);
+    }
+
+    /**
+     * <p>
+     * The selected columns of a dataset.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSelectedColumns(java.util.Collection)} or {@link #withSelectedColumns(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param selectedColumns
+     *        The selected columns of a dataset.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FilterOperationSelectedFieldsConfiguration withSelectedColumns(ColumnIdentifier... selectedColumns) {
+        if (this.selectedColumns == null) {
+            setSelectedColumns(new java.util.ArrayList<ColumnIdentifier>(selectedColumns.length));
+        }
+        for (ColumnIdentifier ele : selectedColumns) {
+            this.selectedColumns.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The selected columns of a dataset.
+     * </p>
+     * 
+     * @param selectedColumns
+     *        The selected columns of a dataset.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FilterOperationSelectedFieldsConfiguration withSelectedColumns(java.util.Collection<ColumnIdentifier> selectedColumns) {
+        setSelectedColumns(selectedColumns);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -284,7 +360,9 @@ public class FilterOperationSelectedFieldsConfiguration implements Serializable,
         if (getSelectedFields() != null)
             sb.append("SelectedFields: ").append(getSelectedFields()).append(",");
         if (getSelectedFieldOptions() != null)
-            sb.append("SelectedFieldOptions: ").append(getSelectedFieldOptions());
+            sb.append("SelectedFieldOptions: ").append(getSelectedFieldOptions()).append(",");
+        if (getSelectedColumns() != null)
+            sb.append("SelectedColumns: ").append(getSelectedColumns());
         sb.append("}");
         return sb.toString();
     }
@@ -307,6 +385,10 @@ public class FilterOperationSelectedFieldsConfiguration implements Serializable,
             return false;
         if (other.getSelectedFieldOptions() != null && other.getSelectedFieldOptions().equals(this.getSelectedFieldOptions()) == false)
             return false;
+        if (other.getSelectedColumns() == null ^ this.getSelectedColumns() == null)
+            return false;
+        if (other.getSelectedColumns() != null && other.getSelectedColumns().equals(this.getSelectedColumns()) == false)
+            return false;
         return true;
     }
 
@@ -317,6 +399,7 @@ public class FilterOperationSelectedFieldsConfiguration implements Serializable,
 
         hashCode = prime * hashCode + ((getSelectedFields() == null) ? 0 : getSelectedFields().hashCode());
         hashCode = prime * hashCode + ((getSelectedFieldOptions() == null) ? 0 : getSelectedFieldOptions().hashCode());
+        hashCode = prime * hashCode + ((getSelectedColumns() == null) ? 0 : getSelectedColumns().hashCode());
         return hashCode;
     }
 

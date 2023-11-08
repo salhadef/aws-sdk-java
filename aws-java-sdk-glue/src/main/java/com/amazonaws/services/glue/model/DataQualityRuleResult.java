@@ -52,6 +52,12 @@ public class DataQualityRuleResult implements Serializable, Cloneable, Structure
      * </p>
      */
     private String result;
+    /**
+     * <p>
+     * A map of metrics associated with the evaluation of the rule.
+     * </p>
+     */
+    private java.util.Map<String, Double> evaluatedMetrics;
 
     /**
      * <p>
@@ -233,6 +239,74 @@ public class DataQualityRuleResult implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * A map of metrics associated with the evaluation of the rule.
+     * </p>
+     * 
+     * @return A map of metrics associated with the evaluation of the rule.
+     */
+
+    public java.util.Map<String, Double> getEvaluatedMetrics() {
+        return evaluatedMetrics;
+    }
+
+    /**
+     * <p>
+     * A map of metrics associated with the evaluation of the rule.
+     * </p>
+     * 
+     * @param evaluatedMetrics
+     *        A map of metrics associated with the evaluation of the rule.
+     */
+
+    public void setEvaluatedMetrics(java.util.Map<String, Double> evaluatedMetrics) {
+        this.evaluatedMetrics = evaluatedMetrics;
+    }
+
+    /**
+     * <p>
+     * A map of metrics associated with the evaluation of the rule.
+     * </p>
+     * 
+     * @param evaluatedMetrics
+     *        A map of metrics associated with the evaluation of the rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataQualityRuleResult withEvaluatedMetrics(java.util.Map<String, Double> evaluatedMetrics) {
+        setEvaluatedMetrics(evaluatedMetrics);
+        return this;
+    }
+
+    /**
+     * Add a single EvaluatedMetrics entry
+     *
+     * @see DataQualityRuleResult#withEvaluatedMetrics
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataQualityRuleResult addEvaluatedMetricsEntry(String key, Double value) {
+        if (null == this.evaluatedMetrics) {
+            this.evaluatedMetrics = new java.util.HashMap<String, Double>();
+        }
+        if (this.evaluatedMetrics.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.evaluatedMetrics.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into EvaluatedMetrics.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataQualityRuleResult clearEvaluatedMetricsEntries() {
+        this.evaluatedMetrics = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -251,7 +325,9 @@ public class DataQualityRuleResult implements Serializable, Cloneable, Structure
         if (getEvaluationMessage() != null)
             sb.append("EvaluationMessage: ").append(getEvaluationMessage()).append(",");
         if (getResult() != null)
-            sb.append("Result: ").append(getResult());
+            sb.append("Result: ").append(getResult()).append(",");
+        if (getEvaluatedMetrics() != null)
+            sb.append("EvaluatedMetrics: ").append(getEvaluatedMetrics());
         sb.append("}");
         return sb.toString();
     }
@@ -282,6 +358,10 @@ public class DataQualityRuleResult implements Serializable, Cloneable, Structure
             return false;
         if (other.getResult() != null && other.getResult().equals(this.getResult()) == false)
             return false;
+        if (other.getEvaluatedMetrics() == null ^ this.getEvaluatedMetrics() == null)
+            return false;
+        if (other.getEvaluatedMetrics() != null && other.getEvaluatedMetrics().equals(this.getEvaluatedMetrics()) == false)
+            return false;
         return true;
     }
 
@@ -294,6 +374,7 @@ public class DataQualityRuleResult implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getEvaluationMessage() == null) ? 0 : getEvaluationMessage().hashCode());
         hashCode = prime * hashCode + ((getResult() == null) ? 0 : getResult().hashCode());
+        hashCode = prime * hashCode + ((getEvaluatedMetrics() == null) ? 0 : getEvaluatedMetrics().hashCode());
         return hashCode;
     }
 

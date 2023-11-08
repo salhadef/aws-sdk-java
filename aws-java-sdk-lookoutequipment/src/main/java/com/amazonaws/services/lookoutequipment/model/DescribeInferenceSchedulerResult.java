@@ -25,13 +25,13 @@ public class DescribeInferenceSchedulerResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the ML model of the inference scheduler being described.
+     * The Amazon Resource Name (ARN) of the machine learning model of the inference scheduler being described.
      * </p>
      */
     private String modelArn;
     /**
      * <p>
-     * The name of the ML model of the inference scheduler being described.
+     * The name of the machine learning model of the inference scheduler being described.
      * </p>
      */
     private String modelName;
@@ -121,11 +121,11 @@ public class DescribeInferenceSchedulerResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the ML model of the inference scheduler being described.
+     * The Amazon Resource Name (ARN) of the machine learning model of the inference scheduler being described.
      * </p>
      * 
      * @param modelArn
-     *        The Amazon Resource Name (ARN) of the ML model of the inference scheduler being described.
+     *        The Amazon Resource Name (ARN) of the machine learning model of the inference scheduler being described.
      */
 
     public void setModelArn(String modelArn) {
@@ -134,10 +134,10 @@ public class DescribeInferenceSchedulerResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the ML model of the inference scheduler being described.
+     * The Amazon Resource Name (ARN) of the machine learning model of the inference scheduler being described.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the ML model of the inference scheduler being described.
+     * @return The Amazon Resource Name (ARN) of the machine learning model of the inference scheduler being described.
      */
 
     public String getModelArn() {
@@ -146,11 +146,11 @@ public class DescribeInferenceSchedulerResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the ML model of the inference scheduler being described.
+     * The Amazon Resource Name (ARN) of the machine learning model of the inference scheduler being described.
      * </p>
      * 
      * @param modelArn
-     *        The Amazon Resource Name (ARN) of the ML model of the inference scheduler being described.
+     *        The Amazon Resource Name (ARN) of the machine learning model of the inference scheduler being described.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -161,11 +161,11 @@ public class DescribeInferenceSchedulerResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the ML model of the inference scheduler being described.
+     * The name of the machine learning model of the inference scheduler being described.
      * </p>
      * 
      * @param modelName
-     *        The name of the ML model of the inference scheduler being described.
+     *        The name of the machine learning model of the inference scheduler being described.
      */
 
     public void setModelName(String modelName) {
@@ -174,10 +174,10 @@ public class DescribeInferenceSchedulerResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the ML model of the inference scheduler being described.
+     * The name of the machine learning model of the inference scheduler being described.
      * </p>
      * 
-     * @return The name of the ML model of the inference scheduler being described.
+     * @return The name of the machine learning model of the inference scheduler being described.
      */
 
     public String getModelName() {
@@ -186,11 +186,11 @@ public class DescribeInferenceSchedulerResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the ML model of the inference scheduler being described.
+     * The name of the machine learning model of the inference scheduler being described.
      * </p>
      * 
      * @param modelName
-     *        The name of the ML model of the inference scheduler being described.
+     *        The name of the machine learning model of the inference scheduler being described.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

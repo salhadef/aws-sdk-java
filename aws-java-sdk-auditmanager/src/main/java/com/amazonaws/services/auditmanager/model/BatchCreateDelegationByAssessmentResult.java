@@ -190,9 +190,9 @@ public class BatchCreateDelegationByAssessmentResult extends com.amazonaws.Amazo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDelegations() != null)
-            sb.append("Delegations: ").append(getDelegations()).append(",");
+            sb.append("Delegations: ").append("***Sensitive Data Redacted***").append(",");
         if (getErrors() != null)
-            sb.append("Errors: ").append(getErrors());
+            sb.append("Errors: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

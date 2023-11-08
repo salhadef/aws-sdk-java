@@ -101,8 +101,8 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
     private String computerName;
     /**
      * <p>
-     * The symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support
-     * asymmetric KMS keys.
+     * The ARN of the symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not
+     * support asymmetric KMS keys.
      * </p>
      */
     private String volumeEncryptionKey;
@@ -672,13 +672,13 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support
-     * asymmetric KMS keys.
+     * The ARN of the symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not
+     * support asymmetric KMS keys.
      * </p>
      * 
      * @param volumeEncryptionKey
-     *        The symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support
-     *        asymmetric KMS keys.
+     *        The ARN of the symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not
+     *        support asymmetric KMS keys.
      */
 
     public void setVolumeEncryptionKey(String volumeEncryptionKey) {
@@ -687,12 +687,12 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support
-     * asymmetric KMS keys.
+     * The ARN of the symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not
+     * support asymmetric KMS keys.
      * </p>
      * 
-     * @return The symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support
-     *         asymmetric KMS keys.
+     * @return The ARN of the symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does
+     *         not support asymmetric KMS keys.
      */
 
     public String getVolumeEncryptionKey() {
@@ -701,13 +701,13 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support
-     * asymmetric KMS keys.
+     * The ARN of the symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not
+     * support asymmetric KMS keys.
      * </p>
      * 
      * @param volumeEncryptionKey
-     *        The symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support
-     *        asymmetric KMS keys.
+     *        The ARN of the symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not
+     *        support asymmetric KMS keys.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

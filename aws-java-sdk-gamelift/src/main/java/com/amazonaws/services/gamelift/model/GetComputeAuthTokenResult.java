@@ -40,29 +40,28 @@ public class GetComputeAuthTokenResult extends com.amazonaws.AmazonWebServiceRes
     private String fleetArn;
     /**
      * <p>
-     * The name of the compute resource you are requesting the authentication token for.
+     * The name of the compute resource that the authentication token is issued to.
      * </p>
      */
     private String computeName;
     /**
      * <p>
      * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a Amazon GameLift compute resource and uniquely identifies it. ARNs are unique across all
+     * that is assigned to an Amazon GameLift compute resource and uniquely identifies it. ARNs are unique across all
      * Regions. Format is
-     * <code>arn:aws:gamelift:&lt;region&gt;::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>
+     * <code>arn:aws:gamelift:&lt;region&gt;::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      * </p>
      */
     private String computeArn;
     /**
      * <p>
-     * The authentication token that your game server uses to authenticate with Amazon GameLift.
+     * A valid temporary authentication token.
      * </p>
      */
     private String authToken;
     /**
      * <p>
-     * The amount of time until the authentication token is no longer valid. To continue using the compute resource for
-     * game server hosting, renew the authentication token by using this operation again.
+     * The amount of time until the authentication token is no longer valid.
      * </p>
      */
     private java.util.Date expirationTimestamp;
@@ -167,11 +166,11 @@ public class GetComputeAuthTokenResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The name of the compute resource you are requesting the authentication token for.
+     * The name of the compute resource that the authentication token is issued to.
      * </p>
      * 
      * @param computeName
-     *        The name of the compute resource you are requesting the authentication token for.
+     *        The name of the compute resource that the authentication token is issued to.
      */
 
     public void setComputeName(String computeName) {
@@ -180,10 +179,10 @@ public class GetComputeAuthTokenResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The name of the compute resource you are requesting the authentication token for.
+     * The name of the compute resource that the authentication token is issued to.
      * </p>
      * 
-     * @return The name of the compute resource you are requesting the authentication token for.
+     * @return The name of the compute resource that the authentication token is issued to.
      */
 
     public String getComputeName() {
@@ -192,11 +191,11 @@ public class GetComputeAuthTokenResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The name of the compute resource you are requesting the authentication token for.
+     * The name of the compute resource that the authentication token is issued to.
      * </p>
      * 
      * @param computeName
-     *        The name of the compute resource you are requesting the authentication token for.
+     *        The name of the compute resource that the authentication token is issued to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -208,16 +207,16 @@ public class GetComputeAuthTokenResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a Amazon GameLift compute resource and uniquely identifies it. ARNs are unique across all
+     * that is assigned to an Amazon GameLift compute resource and uniquely identifies it. ARNs are unique across all
      * Regions. Format is
-     * <code>arn:aws:gamelift:&lt;region&gt;::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>
+     * <code>arn:aws:gamelift:&lt;region&gt;::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      * </p>
      * 
      * @param computeArn
      *        The Amazon Resource Name (<a
-     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to an
      *        Amazon GameLift compute resource and uniquely identifies it. ARNs are unique across all Regions. Format is
-     *        <code>arn:aws:gamelift:&lt;region&gt;::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>
+     *        <code>arn:aws:gamelift:&lt;region&gt;::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      */
 
     public void setComputeArn(String computeArn) {
@@ -227,15 +226,15 @@ public class GetComputeAuthTokenResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a Amazon GameLift compute resource and uniquely identifies it. ARNs are unique across all
+     * that is assigned to an Amazon GameLift compute resource and uniquely identifies it. ARNs are unique across all
      * Regions. Format is
-     * <code>arn:aws:gamelift:&lt;region&gt;::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>
+     * <code>arn:aws:gamelift:&lt;region&gt;::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      * </p>
      * 
      * @return The Amazon Resource Name (<a
-     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to an
      *         Amazon GameLift compute resource and uniquely identifies it. ARNs are unique across all Regions. Format
-     *         is <code>arn:aws:gamelift:&lt;region&gt;::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>
+     *         is <code>arn:aws:gamelift:&lt;region&gt;::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      */
 
     public String getComputeArn() {
@@ -245,16 +244,16 @@ public class GetComputeAuthTokenResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a Amazon GameLift compute resource and uniquely identifies it. ARNs are unique across all
+     * that is assigned to an Amazon GameLift compute resource and uniquely identifies it. ARNs are unique across all
      * Regions. Format is
-     * <code>arn:aws:gamelift:&lt;region&gt;::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>
+     * <code>arn:aws:gamelift:&lt;region&gt;::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      * </p>
      * 
      * @param computeArn
      *        The Amazon Resource Name (<a
-     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to an
      *        Amazon GameLift compute resource and uniquely identifies it. ARNs are unique across all Regions. Format is
-     *        <code>arn:aws:gamelift:&lt;region&gt;::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>
+     *        <code>arn:aws:gamelift:&lt;region&gt;::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -265,11 +264,11 @@ public class GetComputeAuthTokenResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The authentication token that your game server uses to authenticate with Amazon GameLift.
+     * A valid temporary authentication token.
      * </p>
      * 
      * @param authToken
-     *        The authentication token that your game server uses to authenticate with Amazon GameLift.
+     *        A valid temporary authentication token.
      */
 
     public void setAuthToken(String authToken) {
@@ -278,10 +277,10 @@ public class GetComputeAuthTokenResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The authentication token that your game server uses to authenticate with Amazon GameLift.
+     * A valid temporary authentication token.
      * </p>
      * 
-     * @return The authentication token that your game server uses to authenticate with Amazon GameLift.
+     * @return A valid temporary authentication token.
      */
 
     public String getAuthToken() {
@@ -290,11 +289,11 @@ public class GetComputeAuthTokenResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The authentication token that your game server uses to authenticate with Amazon GameLift.
+     * A valid temporary authentication token.
      * </p>
      * 
      * @param authToken
-     *        The authentication token that your game server uses to authenticate with Amazon GameLift.
+     *        A valid temporary authentication token.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -305,13 +304,11 @@ public class GetComputeAuthTokenResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The amount of time until the authentication token is no longer valid. To continue using the compute resource for
-     * game server hosting, renew the authentication token by using this operation again.
+     * The amount of time until the authentication token is no longer valid.
      * </p>
      * 
      * @param expirationTimestamp
-     *        The amount of time until the authentication token is no longer valid. To continue using the compute
-     *        resource for game server hosting, renew the authentication token by using this operation again.
+     *        The amount of time until the authentication token is no longer valid.
      */
 
     public void setExpirationTimestamp(java.util.Date expirationTimestamp) {
@@ -320,12 +317,10 @@ public class GetComputeAuthTokenResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The amount of time until the authentication token is no longer valid. To continue using the compute resource for
-     * game server hosting, renew the authentication token by using this operation again.
+     * The amount of time until the authentication token is no longer valid.
      * </p>
      * 
-     * @return The amount of time until the authentication token is no longer valid. To continue using the compute
-     *         resource for game server hosting, renew the authentication token by using this operation again.
+     * @return The amount of time until the authentication token is no longer valid.
      */
 
     public java.util.Date getExpirationTimestamp() {
@@ -334,13 +329,11 @@ public class GetComputeAuthTokenResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The amount of time until the authentication token is no longer valid. To continue using the compute resource for
-     * game server hosting, renew the authentication token by using this operation again.
+     * The amount of time until the authentication token is no longer valid.
      * </p>
      * 
      * @param expirationTimestamp
-     *        The amount of time until the authentication token is no longer valid. To continue using the compute
-     *        resource for game server hosting, renew the authentication token by using this operation again.
+     *        The amount of time until the authentication token is no longer valid.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

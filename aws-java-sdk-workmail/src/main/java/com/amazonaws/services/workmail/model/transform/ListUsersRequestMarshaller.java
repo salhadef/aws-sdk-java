@@ -33,6 +33,8 @@ public class ListUsersRequestMarshaller {
             .marshallLocationName("NextToken").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
+    private static final MarshallingInfo<StructuredPojo> FILTERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Filters").build();
 
     private static final ListUsersRequestMarshaller instance = new ListUsersRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class ListUsersRequestMarshaller {
             protocolMarshaller.marshall(listUsersRequest.getOrganizationId(), ORGANIZATIONID_BINDING);
             protocolMarshaller.marshall(listUsersRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listUsersRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(listUsersRequest.getFilters(), FILTERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -29,6 +29,8 @@ public class DescribeProblemRequestMarshaller {
 
     private static final MarshallingInfo<String> PROBLEMID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ProblemId").build();
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("AccountId").build();
 
     private static final DescribeProblemRequestMarshaller instance = new DescribeProblemRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class DescribeProblemRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(describeProblemRequest.getProblemId(), PROBLEMID_BINDING);
+            protocolMarshaller.marshall(describeProblemRequest.getAccountId(), ACCOUNTID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

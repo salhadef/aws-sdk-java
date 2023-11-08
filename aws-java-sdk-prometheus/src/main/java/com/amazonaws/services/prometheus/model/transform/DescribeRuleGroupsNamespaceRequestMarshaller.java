@@ -27,10 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DescribeRuleGroupsNamespaceRequestMarshaller {
 
-    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
-            .marshallLocationName("name").build();
     private static final MarshallingInfo<String> WORKSPACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("workspaceId").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("name").build();
 
     private static final DescribeRuleGroupsNamespaceRequestMarshaller instance = new DescribeRuleGroupsNamespaceRequestMarshaller();
 
@@ -48,8 +48,8 @@ public class DescribeRuleGroupsNamespaceRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(describeRuleGroupsNamespaceRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(describeRuleGroupsNamespaceRequest.getWorkspaceId(), WORKSPACEID_BINDING);
+            protocolMarshaller.marshall(describeRuleGroupsNamespaceRequest.getName(), NAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

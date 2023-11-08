@@ -177,6 +177,22 @@ public class DescribeBrokerResultJsonUnmarshaller implements Unmarshaller<Descri
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("dataReplicationMetadata", targetDepth)) {
+                    context.nextToken();
+                    describeBrokerResult.setDataReplicationMetadata(DataReplicationMetadataOutputJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("dataReplicationMode", targetDepth)) {
+                    context.nextToken();
+                    describeBrokerResult.setDataReplicationMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("pendingDataReplicationMetadata", targetDepth)) {
+                    context.nextToken();
+                    describeBrokerResult.setPendingDataReplicationMetadata(DataReplicationMetadataOutputJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("pendingDataReplicationMode", targetDepth)) {
+                    context.nextToken();
+                    describeBrokerResult.setPendingDataReplicationMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

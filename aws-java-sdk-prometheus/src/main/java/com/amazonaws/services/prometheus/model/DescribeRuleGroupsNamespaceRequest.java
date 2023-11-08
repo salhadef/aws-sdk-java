@@ -30,56 +30,16 @@ public class DescribeRuleGroupsNamespaceRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The rule groups namespace.
-     * </p>
-     */
-    private String name;
-    /**
-     * <p>
      * The ID of the workspace to describe.
      * </p>
      */
     private String workspaceId;
-
     /**
      * <p>
      * The rule groups namespace.
      * </p>
-     * 
-     * @param name
-     *        The rule groups namespace.
      */
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     * <p>
-     * The rule groups namespace.
-     * </p>
-     * 
-     * @return The rule groups namespace.
-     */
-
-    public String getName() {
-        return this.name;
-    }
-
-    /**
-     * <p>
-     * The rule groups namespace.
-     * </p>
-     * 
-     * @param name
-     *        The rule groups namespace.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeRuleGroupsNamespaceRequest withName(String name) {
-        setName(name);
-        return this;
-    }
+    private String name;
 
     /**
      * <p>
@@ -122,6 +82,46 @@ public class DescribeRuleGroupsNamespaceRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * The rule groups namespace.
+     * </p>
+     * 
+     * @param name
+     *        The rule groups namespace.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The rule groups namespace.
+     * </p>
+     * 
+     * @return The rule groups namespace.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The rule groups namespace.
+     * </p>
+     * 
+     * @param name
+     *        The rule groups namespace.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeRuleGroupsNamespaceRequest withName(String name) {
+        setName(name);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -133,10 +133,10 @@ public class DescribeRuleGroupsNamespaceRequest extends com.amazonaws.AmazonWebS
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getName() != null)
-            sb.append("Name: ").append(getName()).append(",");
         if (getWorkspaceId() != null)
-            sb.append("WorkspaceId: ").append(getWorkspaceId());
+            sb.append("WorkspaceId: ").append(getWorkspaceId()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName());
         sb.append("}");
         return sb.toString();
     }
@@ -151,13 +151,13 @@ public class DescribeRuleGroupsNamespaceRequest extends com.amazonaws.AmazonWebS
         if (obj instanceof DescribeRuleGroupsNamespaceRequest == false)
             return false;
         DescribeRuleGroupsNamespaceRequest other = (DescribeRuleGroupsNamespaceRequest) obj;
-        if (other.getName() == null ^ this.getName() == null)
-            return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false)
-            return false;
         if (other.getWorkspaceId() == null ^ this.getWorkspaceId() == null)
             return false;
         if (other.getWorkspaceId() != null && other.getWorkspaceId().equals(this.getWorkspaceId()) == false)
+            return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         return true;
     }
@@ -167,8 +167,8 @@ public class DescribeRuleGroupsNamespaceRequest extends com.amazonaws.AmazonWebS
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getWorkspaceId() == null) ? 0 : getWorkspaceId().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         return hashCode;
     }
 

@@ -34,6 +34,8 @@ public class GetRecordRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("RecordIdentifierValueAsString").build();
     private static final MarshallingInfo<List> FEATURENAMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("FeatureName").build();
+    private static final MarshallingInfo<String> EXPIRATIONTIMERESPONSE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("ExpirationTimeResponse").build();
 
     private static final GetRecordRequestMarshaller instance = new GetRecordRequestMarshaller();
 
@@ -54,6 +56,7 @@ public class GetRecordRequestMarshaller {
             protocolMarshaller.marshall(getRecordRequest.getFeatureGroupName(), FEATUREGROUPNAME_BINDING);
             protocolMarshaller.marshall(getRecordRequest.getRecordIdentifierValueAsString(), RECORDIDENTIFIERVALUEASSTRING_BINDING);
             protocolMarshaller.marshall(getRecordRequest.getFeatureNames(), FEATURENAMES_BINDING);
+            protocolMarshaller.marshall(getRecordRequest.getExpirationTimeResponse(), EXPIRATIONTIMERESPONSE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

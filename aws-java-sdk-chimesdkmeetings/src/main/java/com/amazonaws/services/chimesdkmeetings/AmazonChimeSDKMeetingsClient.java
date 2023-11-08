@@ -44,6 +44,7 @@ import com.amazonaws.services.chimesdkmeetings.AmazonChimeSDKMeetingsClientBuild
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.chimesdkmeetings.model.*;
+
 import com.amazonaws.services.chimesdkmeetings.model.transform.*;
 
 /**
@@ -295,6 +296,10 @@ public class AmazonChimeSDKMeetingsClient extends AmazonWebServiceClient impleme
      *         The client is permanently forbidden from making the request.
      * @throws ServiceUnavailableException
      *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @throws ThrottlingException
+     *         The number of customer requests exceeds the request rate limit.
      * @sample AmazonChimeSDKMeetings.BatchUpdateAttendeeCapabilitiesExcept
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/BatchUpdateAttendeeCapabilitiesExcept"
@@ -436,6 +441,8 @@ public class AmazonChimeSDKMeetingsClient extends AmazonWebServiceClient impleme
      * @return Result of the CreateMeeting operation returned by the service.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
+     * @throws ConflictException
+     *         Multiple instances of the same request have been made simultaneously.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request.
      * @throws UnauthorizedException
@@ -510,6 +517,8 @@ public class AmazonChimeSDKMeetingsClient extends AmazonWebServiceClient impleme
      * @return Result of the CreateMeetingWithAttendees operation returned by the service.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
+     * @throws ConflictException
+     *         Multiple instances of the same request have been made simultaneously.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request.
      * @throws UnauthorizedException
@@ -936,6 +945,20 @@ public class AmazonChimeSDKMeetingsClient extends AmazonWebServiceClient impleme
      * 
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedException
+     *         The user isn't authorized to request a resource.
+     * @throws LimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @throws ThrottlingException
+     *         The number of customer requests exceeds the request rate limit.
      * @throws ResourceNotFoundException
      *         The resource that you want to tag couldn't be found.
      * @sample AmazonChimeSDKMeetings.ListTagsForResource
@@ -1168,6 +1191,18 @@ public class AmazonChimeSDKMeetingsClient extends AmazonWebServiceClient impleme
      * @return Result of the TagResource operation returned by the service.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedException
+     *         The user isn't authorized to request a resource.
+     * @throws LimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @throws ThrottlingException
+     *         The number of customer requests exceeds the request rate limit.
      * @throws ResourceNotFoundException
      *         The resource that you want to tag couldn't be found.
      * @throws TooManyTagsException
@@ -1260,6 +1295,18 @@ public class AmazonChimeSDKMeetingsClient extends AmazonWebServiceClient impleme
      * @return Result of the UntagResource operation returned by the service.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedException
+     *         The user isn't authorized to request a resource.
+     * @throws LimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @throws ThrottlingException
+     *         The number of customer requests exceeds the request rate limit.
      * @throws ResourceNotFoundException
      *         The resource that you want to tag couldn't be found.
      * @sample AmazonChimeSDKMeetings.UntagResource
@@ -1364,6 +1411,10 @@ public class AmazonChimeSDKMeetingsClient extends AmazonWebServiceClient impleme
      *         The client is permanently forbidden from making the request.
      * @throws ServiceUnavailableException
      *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @throws ThrottlingException
+     *         The number of customer requests exceeds the request rate limit.
      * @sample AmazonChimeSDKMeetings.UpdateAttendeeCapabilities
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/UpdateAttendeeCapabilities"
      *      target="_top">AWS API Documentation</a>

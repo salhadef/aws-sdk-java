@@ -23,13 +23,20 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetStageResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** <p/> */
+    /**
+     * <p>
+     * The stage that is returned.
+     * </p>
+     */
     private Stage stage;
 
     /**
-     * <p/>
+     * <p>
+     * The stage that is returned.
+     * </p>
      * 
      * @param stage
+     *        The stage that is returned.
      */
 
     public void setStage(Stage stage) {
@@ -37,9 +44,11 @@ public class GetStageResult extends com.amazonaws.AmazonWebServiceResult<com.ama
     }
 
     /**
-     * <p/>
+     * <p>
+     * The stage that is returned.
+     * </p>
      * 
-     * @return
+     * @return The stage that is returned.
      */
 
     public Stage getStage() {
@@ -47,9 +56,12 @@ public class GetStageResult extends com.amazonaws.AmazonWebServiceResult<com.ama
     }
 
     /**
-     * <p/>
+     * <p>
+     * The stage that is returned.
+     * </p>
      * 
      * @param stage
+     *        The stage that is returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

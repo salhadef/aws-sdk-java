@@ -27,7 +27,7 @@ public class UpdateModelCardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the model card to update.
+     * The name or Amazon Resource Name (ARN) of the model card to update.
      * </p>
      */
     private String modelCardName;
@@ -75,11 +75,11 @@ public class UpdateModelCardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the model card to update.
+     * The name or Amazon Resource Name (ARN) of the model card to update.
      * </p>
      * 
      * @param modelCardName
-     *        The name of the model card to update.
+     *        The name or Amazon Resource Name (ARN) of the model card to update.
      */
 
     public void setModelCardName(String modelCardName) {
@@ -88,10 +88,10 @@ public class UpdateModelCardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the model card to update.
+     * The name or Amazon Resource Name (ARN) of the model card to update.
      * </p>
      * 
-     * @return The name of the model card to update.
+     * @return The name or Amazon Resource Name (ARN) of the model card to update.
      */
 
     public String getModelCardName() {
@@ -100,11 +100,11 @@ public class UpdateModelCardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the model card to update.
+     * The name or Amazon Resource Name (ARN) of the model card to update.
      * </p>
      * 
      * @param modelCardName
-     *        The name of the model card to update.
+     *        The name or Amazon Resource Name (ARN) of the model card to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

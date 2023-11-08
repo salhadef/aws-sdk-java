@@ -48,7 +48,32 @@ public class AbstractAmazonIVSRealTime implements AmazonIVSRealTime {
     }
 
     @Override
+    public GetParticipantResult getParticipant(GetParticipantRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetStageResult getStage(GetStageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetStageSessionResult getStageSession(GetStageSessionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListParticipantEventsResult listParticipantEvents(ListParticipantEventsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListParticipantsResult listParticipants(ListParticipantsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListStageSessionsResult listStageSessions(ListStageSessionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

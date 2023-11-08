@@ -98,18 +98,18 @@ public class ContinuousExportDescription implements Serializable, Cloneable, Str
      * </li>
      * <li>
      * <p>
-     * FIREHOSE_ROLE_MISSING - The Data Exploration feature is in an error state because your IAM User is missing the
-     * AWSApplicationDiscoveryServiceFirehose role. Turn on Data Exploration in Amazon Athena and try again. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html#setting-up-user-policy"
-     * >Step 3: Provide Application Discovery Service Access to Non-Administrator Users by Attaching Policies</a> in the
-     * Application Discovery Service User Guide.
+     * FIREHOSE_ROLE_MISSING - The Data Exploration feature is in an error state because your user is missing the Amazon
+     * Web ServicesApplicationDiscoveryServiceFirehose role. Turn on Data Exploration in Amazon Athena and try again.
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/application-discovery/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-create-firehose-role"
+     * >Creating the Amazon Web ServicesApplicationDiscoveryServiceFirehose Role</a> in the Application Discovery
+     * Service User Guide.
      * </p>
      * </li>
      * <li>
      * <p>
-     * FIREHOSE_STREAM_DOES_NOT_EXIST - The Data Exploration feature is in an error state because your IAM User is
-     * missing one or more of the Kinesis data delivery streams.
+     * FIREHOSE_STREAM_DOES_NOT_EXIST - The Data Exploration feature is in an error state because your user is missing
+     * one or more of the Kinesis data delivery streams.
      * </p>
      * </li>
      * <li>
@@ -650,18 +650,18 @@ public class ContinuousExportDescription implements Serializable, Cloneable, Str
      * </li>
      * <li>
      * <p>
-     * FIREHOSE_ROLE_MISSING - The Data Exploration feature is in an error state because your IAM User is missing the
-     * AWSApplicationDiscoveryServiceFirehose role. Turn on Data Exploration in Amazon Athena and try again. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html#setting-up-user-policy"
-     * >Step 3: Provide Application Discovery Service Access to Non-Administrator Users by Attaching Policies</a> in the
-     * Application Discovery Service User Guide.
+     * FIREHOSE_ROLE_MISSING - The Data Exploration feature is in an error state because your user is missing the Amazon
+     * Web ServicesApplicationDiscoveryServiceFirehose role. Turn on Data Exploration in Amazon Athena and try again.
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/application-discovery/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-create-firehose-role"
+     * >Creating the Amazon Web ServicesApplicationDiscoveryServiceFirehose Role</a> in the Application Discovery
+     * Service User Guide.
      * </p>
      * </li>
      * <li>
      * <p>
-     * FIREHOSE_STREAM_DOES_NOT_EXIST - The Data Exploration feature is in an error state because your IAM User is
-     * missing one or more of the Kinesis data delivery streams.
+     * FIREHOSE_STREAM_DOES_NOT_EXIST - The Data Exploration feature is in an error state because your user is missing
+     * one or more of the Kinesis data delivery streams.
      * </p>
      * </li>
      * <li>
@@ -755,18 +755,18 @@ public class ContinuousExportDescription implements Serializable, Cloneable, Str
      *        </li>
      *        <li>
      *        <p>
-     *        FIREHOSE_ROLE_MISSING - The Data Exploration feature is in an error state because your IAM User is missing
-     *        the AWSApplicationDiscoveryServiceFirehose role. Turn on Data Exploration in Amazon Athena and try again.
-     *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html#setting-up-user-policy"
-     *        >Step 3: Provide Application Discovery Service Access to Non-Administrator Users by Attaching Policies</a>
-     *        in the Application Discovery Service User Guide.
+     *        FIREHOSE_ROLE_MISSING - The Data Exploration feature is in an error state because your user is missing the
+     *        Amazon Web ServicesApplicationDiscoveryServiceFirehose role. Turn on Data Exploration in Amazon Athena and
+     *        try again. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/application-discovery/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-create-firehose-role"
+     *        >Creating the Amazon Web ServicesApplicationDiscoveryServiceFirehose Role</a> in the Application Discovery
+     *        Service User Guide.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        FIREHOSE_STREAM_DOES_NOT_EXIST - The Data Exploration feature is in an error state because your IAM User
-     *        is missing one or more of the Kinesis data delivery streams.
+     *        FIREHOSE_STREAM_DOES_NOT_EXIST - The Data Exploration feature is in an error state because your user is
+     *        missing one or more of the Kinesis data delivery streams.
      *        </p>
      *        </li>
      *        <li>
@@ -865,18 +865,18 @@ public class ContinuousExportDescription implements Serializable, Cloneable, Str
      * </li>
      * <li>
      * <p>
-     * FIREHOSE_ROLE_MISSING - The Data Exploration feature is in an error state because your IAM User is missing the
-     * AWSApplicationDiscoveryServiceFirehose role. Turn on Data Exploration in Amazon Athena and try again. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html#setting-up-user-policy"
-     * >Step 3: Provide Application Discovery Service Access to Non-Administrator Users by Attaching Policies</a> in the
-     * Application Discovery Service User Guide.
+     * FIREHOSE_ROLE_MISSING - The Data Exploration feature is in an error state because your user is missing the Amazon
+     * Web ServicesApplicationDiscoveryServiceFirehose role. Turn on Data Exploration in Amazon Athena and try again.
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/application-discovery/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-create-firehose-role"
+     * >Creating the Amazon Web ServicesApplicationDiscoveryServiceFirehose Role</a> in the Application Discovery
+     * Service User Guide.
      * </p>
      * </li>
      * <li>
      * <p>
-     * FIREHOSE_STREAM_DOES_NOT_EXIST - The Data Exploration feature is in an error state because your IAM User is
-     * missing one or more of the Kinesis data delivery streams.
+     * FIREHOSE_STREAM_DOES_NOT_EXIST - The Data Exploration feature is in an error state because your user is missing
+     * one or more of the Kinesis data delivery streams.
      * </p>
      * </li>
      * <li>
@@ -969,18 +969,18 @@ public class ContinuousExportDescription implements Serializable, Cloneable, Str
      *         </li>
      *         <li>
      *         <p>
-     *         FIREHOSE_ROLE_MISSING - The Data Exploration feature is in an error state because your IAM User is
-     *         missing the AWSApplicationDiscoveryServiceFirehose role. Turn on Data Exploration in Amazon Athena and
-     *         try again. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html#setting-up-user-policy"
-     *         >Step 3: Provide Application Discovery Service Access to Non-Administrator Users by Attaching
-     *         Policies</a> in the Application Discovery Service User Guide.
+     *         FIREHOSE_ROLE_MISSING - The Data Exploration feature is in an error state because your user is missing
+     *         the Amazon Web ServicesApplicationDiscoveryServiceFirehose role. Turn on Data Exploration in Amazon
+     *         Athena and try again. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/application-discovery/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-create-firehose-role"
+     *         >Creating the Amazon Web ServicesApplicationDiscoveryServiceFirehose Role</a> in the Application
+     *         Discovery Service User Guide.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         FIREHOSE_STREAM_DOES_NOT_EXIST - The Data Exploration feature is in an error state because your IAM User
-     *         is missing one or more of the Kinesis data delivery streams.
+     *         FIREHOSE_STREAM_DOES_NOT_EXIST - The Data Exploration feature is in an error state because your user is
+     *         missing one or more of the Kinesis data delivery streams.
      *         </p>
      *         </li>
      *         <li>
@@ -1080,18 +1080,18 @@ public class ContinuousExportDescription implements Serializable, Cloneable, Str
      * </li>
      * <li>
      * <p>
-     * FIREHOSE_ROLE_MISSING - The Data Exploration feature is in an error state because your IAM User is missing the
-     * AWSApplicationDiscoveryServiceFirehose role. Turn on Data Exploration in Amazon Athena and try again. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html#setting-up-user-policy"
-     * >Step 3: Provide Application Discovery Service Access to Non-Administrator Users by Attaching Policies</a> in the
-     * Application Discovery Service User Guide.
+     * FIREHOSE_ROLE_MISSING - The Data Exploration feature is in an error state because your user is missing the Amazon
+     * Web ServicesApplicationDiscoveryServiceFirehose role. Turn on Data Exploration in Amazon Athena and try again.
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/application-discovery/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-create-firehose-role"
+     * >Creating the Amazon Web ServicesApplicationDiscoveryServiceFirehose Role</a> in the Application Discovery
+     * Service User Guide.
      * </p>
      * </li>
      * <li>
      * <p>
-     * FIREHOSE_STREAM_DOES_NOT_EXIST - The Data Exploration feature is in an error state because your IAM User is
-     * missing one or more of the Kinesis data delivery streams.
+     * FIREHOSE_STREAM_DOES_NOT_EXIST - The Data Exploration feature is in an error state because your user is missing
+     * one or more of the Kinesis data delivery streams.
      * </p>
      * </li>
      * <li>
@@ -1185,18 +1185,18 @@ public class ContinuousExportDescription implements Serializable, Cloneable, Str
      *        </li>
      *        <li>
      *        <p>
-     *        FIREHOSE_ROLE_MISSING - The Data Exploration feature is in an error state because your IAM User is missing
-     *        the AWSApplicationDiscoveryServiceFirehose role. Turn on Data Exploration in Amazon Athena and try again.
-     *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html#setting-up-user-policy"
-     *        >Step 3: Provide Application Discovery Service Access to Non-Administrator Users by Attaching Policies</a>
-     *        in the Application Discovery Service User Guide.
+     *        FIREHOSE_ROLE_MISSING - The Data Exploration feature is in an error state because your user is missing the
+     *        Amazon Web ServicesApplicationDiscoveryServiceFirehose role. Turn on Data Exploration in Amazon Athena and
+     *        try again. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/application-discovery/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-create-firehose-role"
+     *        >Creating the Amazon Web ServicesApplicationDiscoveryServiceFirehose Role</a> in the Application Discovery
+     *        Service User Guide.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        FIREHOSE_STREAM_DOES_NOT_EXIST - The Data Exploration feature is in an error state because your IAM User
-     *        is missing one or more of the Kinesis data delivery streams.
+     *        FIREHOSE_STREAM_DOES_NOT_EXIST - The Data Exploration feature is in an error state because your user is
+     *        missing one or more of the Kinesis data delivery streams.
      *        </p>
      *        </li>
      *        <li>

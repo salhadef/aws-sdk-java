@@ -72,6 +72,8 @@ public class CreateFleetRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ComputeType").build();
     private static final MarshallingInfo<StructuredPojo> ANYWHERECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AnywhereConfiguration").build();
+    private static final MarshallingInfo<String> INSTANCEROLECREDENTIALSPROVIDER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceRoleCredentialsProvider").build();
 
     private static final CreateFleetRequestMarshaller instance = new CreateFleetRequestMarshaller();
 
@@ -111,6 +113,7 @@ public class CreateFleetRequestMarshaller {
             protocolMarshaller.marshall(createFleetRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createFleetRequest.getComputeType(), COMPUTETYPE_BINDING);
             protocolMarshaller.marshall(createFleetRequest.getAnywhereConfiguration(), ANYWHERECONFIGURATION_BINDING);
+            protocolMarshaller.marshall(createFleetRequest.getInstanceRoleCredentialsProvider(), INSTANCEROLECREDENTIALSPROVIDER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

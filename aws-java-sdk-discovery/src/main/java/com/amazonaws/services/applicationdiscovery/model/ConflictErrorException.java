@@ -15,7 +15,9 @@ package com.amazonaws.services.applicationdiscovery.model;
 import javax.annotation.Generated;
 
 /**
- * <p/>
+ * <p>
+ * Conflict error.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ConflictErrorException extends com.amazonaws.services.applicationdiscovery.model.AWSApplicationDiscoveryException {

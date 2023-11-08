@@ -27,56 +27,129 @@ public class CreateGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The cluster identifier of the new global database cluster. This parameter is stored as a lowercase string.
+     * The cluster identifier for this global database cluster. This parameter is stored as a lowercase string.
      * </p>
      */
     private String globalClusterIdentifier;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) to use as the primary cluster of the global database. This parameter is optional.
+     * The Amazon Resource Name (ARN) to use as the primary cluster of the global database.
      * </p>
+     * <p>
+     * If you provide a value for this parameter, don't specify values for the following settings because Amazon Aurora
+     * uses the values from the specified source DB cluster:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DatabaseName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Engine</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EngineVersion</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>StorageEncrypted</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String sourceDBClusterIdentifier;
     /**
      * <p>
-     * The name of the database engine to be used for this DB cluster.
+     * The database engine to use for this global database cluster.
      * </p>
+     * <p>
+     * Valid Values: <code>aurora-mysql | aurora-postgresql</code>
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the
+     * engine of the source DB cluster.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String engine;
     /**
      * <p>
-     * The engine version of the Aurora global database.
+     * The engine version to use for this global database cluster.
      * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the
+     * engine version of the source DB cluster.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String engineVersion;
     /**
      * <p>
-     * The deletion protection setting for the new global database. The global database can't be deleted when deletion
-     * protection is enabled.
+     * Specifies whether to enable deletion protection for the new global database cluster. The global database can't be
+     * deleted when deletion protection is enabled.
      * </p>
      */
     private Boolean deletionProtection;
     /**
      * <p>
-     * The name for your database of up to 64 alphanumeric characters. If you do not provide a name, Amazon Aurora will
-     * not create a database in the global database cluster you are creating.
+     * The name for your database of up to 64 alphanumeric characters. If you don't specify a name, Amazon Aurora
+     * doesn't create a database in the global database cluster.
      * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the
+     * database name from the source DB cluster.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String databaseName;
     /**
      * <p>
-     * The storage encryption setting for the new global database cluster.
+     * Specifies whether to enable storage encryption for the new global database cluster.
      * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the
+     * setting from the source DB cluster.
+     * </p>
+     * </li>
+     * </ul>
      */
     private Boolean storageEncrypted;
 
     /**
      * <p>
-     * The cluster identifier of the new global database cluster. This parameter is stored as a lowercase string.
+     * The cluster identifier for this global database cluster. This parameter is stored as a lowercase string.
      * </p>
      * 
      * @param globalClusterIdentifier
-     *        The cluster identifier of the new global database cluster. This parameter is stored as a lowercase string.
+     *        The cluster identifier for this global database cluster. This parameter is stored as a lowercase string.
      */
 
     public void setGlobalClusterIdentifier(String globalClusterIdentifier) {
@@ -85,11 +158,10 @@ public class CreateGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The cluster identifier of the new global database cluster. This parameter is stored as a lowercase string.
+     * The cluster identifier for this global database cluster. This parameter is stored as a lowercase string.
      * </p>
      * 
-     * @return The cluster identifier of the new global database cluster. This parameter is stored as a lowercase
-     *         string.
+     * @return The cluster identifier for this global database cluster. This parameter is stored as a lowercase string.
      */
 
     public String getGlobalClusterIdentifier() {
@@ -98,11 +170,11 @@ public class CreateGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The cluster identifier of the new global database cluster. This parameter is stored as a lowercase string.
+     * The cluster identifier for this global database cluster. This parameter is stored as a lowercase string.
      * </p>
      * 
      * @param globalClusterIdentifier
-     *        The cluster identifier of the new global database cluster. This parameter is stored as a lowercase string.
+     *        The cluster identifier for this global database cluster. This parameter is stored as a lowercase string.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,12 +185,62 @@ public class CreateGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) to use as the primary cluster of the global database. This parameter is optional.
+     * The Amazon Resource Name (ARN) to use as the primary cluster of the global database.
      * </p>
+     * <p>
+     * If you provide a value for this parameter, don't specify values for the following settings because Amazon Aurora
+     * uses the values from the specified source DB cluster:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DatabaseName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Engine</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EngineVersion</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>StorageEncrypted</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param sourceDBClusterIdentifier
-     *        The Amazon Resource Name (ARN) to use as the primary cluster of the global database. This parameter is
-     *        optional.
+     *        The Amazon Resource Name (ARN) to use as the primary cluster of the global database.</p>
+     *        <p>
+     *        If you provide a value for this parameter, don't specify values for the following settings because Amazon
+     *        Aurora uses the values from the specified source DB cluster:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DatabaseName</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Engine</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EngineVersion</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>StorageEncrypted</code>
+     *        </p>
+     *        </li>
      */
 
     public void setSourceDBClusterIdentifier(String sourceDBClusterIdentifier) {
@@ -127,11 +249,61 @@ public class CreateGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) to use as the primary cluster of the global database. This parameter is optional.
+     * The Amazon Resource Name (ARN) to use as the primary cluster of the global database.
      * </p>
+     * <p>
+     * If you provide a value for this parameter, don't specify values for the following settings because Amazon Aurora
+     * uses the values from the specified source DB cluster:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DatabaseName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Engine</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EngineVersion</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>StorageEncrypted</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The Amazon Resource Name (ARN) to use as the primary cluster of the global database. This parameter is
-     *         optional.
+     * @return The Amazon Resource Name (ARN) to use as the primary cluster of the global database.</p>
+     *         <p>
+     *         If you provide a value for this parameter, don't specify values for the following settings because Amazon
+     *         Aurora uses the values from the specified source DB cluster:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>DatabaseName</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Engine</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>EngineVersion</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>StorageEncrypted</code>
+     *         </p>
+     *         </li>
      */
 
     public String getSourceDBClusterIdentifier() {
@@ -140,12 +312,62 @@ public class CreateGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) to use as the primary cluster of the global database. This parameter is optional.
+     * The Amazon Resource Name (ARN) to use as the primary cluster of the global database.
      * </p>
+     * <p>
+     * If you provide a value for this parameter, don't specify values for the following settings because Amazon Aurora
+     * uses the values from the specified source DB cluster:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DatabaseName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Engine</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EngineVersion</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>StorageEncrypted</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param sourceDBClusterIdentifier
-     *        The Amazon Resource Name (ARN) to use as the primary cluster of the global database. This parameter is
-     *        optional.
+     *        The Amazon Resource Name (ARN) to use as the primary cluster of the global database.</p>
+     *        <p>
+     *        If you provide a value for this parameter, don't specify values for the following settings because Amazon
+     *        Aurora uses the values from the specified source DB cluster:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DatabaseName</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Engine</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EngineVersion</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>StorageEncrypted</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -156,11 +378,38 @@ public class CreateGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the database engine to be used for this DB cluster.
+     * The database engine to use for this global database cluster.
      * </p>
+     * <p>
+     * Valid Values: <code>aurora-mysql | aurora-postgresql</code>
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the
+     * engine of the source DB cluster.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param engine
-     *        The name of the database engine to be used for this DB cluster.
+     *        The database engine to use for this global database cluster.</p>
+     *        <p>
+     *        Valid Values: <code>aurora-mysql | aurora-postgresql</code>
+     *        </p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora
+     *        uses the engine of the source DB cluster.
+     *        </p>
+     *        </li>
      */
 
     public void setEngine(String engine) {
@@ -169,10 +418,37 @@ public class CreateGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the database engine to be used for this DB cluster.
+     * The database engine to use for this global database cluster.
      * </p>
+     * <p>
+     * Valid Values: <code>aurora-mysql | aurora-postgresql</code>
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the
+     * engine of the source DB cluster.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The name of the database engine to be used for this DB cluster.
+     * @return The database engine to use for this global database cluster.</p>
+     *         <p>
+     *         Valid Values: <code>aurora-mysql | aurora-postgresql</code>
+     *         </p>
+     *         <p>
+     *         Constraints:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora
+     *         uses the engine of the source DB cluster.
+     *         </p>
+     *         </li>
      */
 
     public String getEngine() {
@@ -181,11 +457,38 @@ public class CreateGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the database engine to be used for this DB cluster.
+     * The database engine to use for this global database cluster.
      * </p>
+     * <p>
+     * Valid Values: <code>aurora-mysql | aurora-postgresql</code>
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the
+     * engine of the source DB cluster.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param engine
-     *        The name of the database engine to be used for this DB cluster.
+     *        The database engine to use for this global database cluster.</p>
+     *        <p>
+     *        Valid Values: <code>aurora-mysql | aurora-postgresql</code>
+     *        </p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora
+     *        uses the engine of the source DB cluster.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -196,11 +499,32 @@ public class CreateGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The engine version of the Aurora global database.
+     * The engine version to use for this global database cluster.
      * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the
+     * engine version of the source DB cluster.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param engineVersion
-     *        The engine version of the Aurora global database.
+     *        The engine version to use for this global database cluster.</p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora
+     *        uses the engine version of the source DB cluster.
+     *        </p>
+     *        </li>
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -209,10 +533,31 @@ public class CreateGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The engine version of the Aurora global database.
+     * The engine version to use for this global database cluster.
      * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the
+     * engine version of the source DB cluster.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The engine version of the Aurora global database.
+     * @return The engine version to use for this global database cluster.</p>
+     *         <p>
+     *         Constraints:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora
+     *         uses the engine version of the source DB cluster.
+     *         </p>
+     *         </li>
      */
 
     public String getEngineVersion() {
@@ -221,11 +566,32 @@ public class CreateGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The engine version of the Aurora global database.
+     * The engine version to use for this global database cluster.
      * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the
+     * engine version of the source DB cluster.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param engineVersion
-     *        The engine version of the Aurora global database.
+     *        The engine version to use for this global database cluster.</p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora
+     *        uses the engine version of the source DB cluster.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -236,13 +602,13 @@ public class CreateGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The deletion protection setting for the new global database. The global database can't be deleted when deletion
-     * protection is enabled.
+     * Specifies whether to enable deletion protection for the new global database cluster. The global database can't be
+     * deleted when deletion protection is enabled.
      * </p>
      * 
      * @param deletionProtection
-     *        The deletion protection setting for the new global database. The global database can't be deleted when
-     *        deletion protection is enabled.
+     *        Specifies whether to enable deletion protection for the new global database cluster. The global database
+     *        can't be deleted when deletion protection is enabled.
      */
 
     public void setDeletionProtection(Boolean deletionProtection) {
@@ -251,12 +617,12 @@ public class CreateGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The deletion protection setting for the new global database. The global database can't be deleted when deletion
-     * protection is enabled.
+     * Specifies whether to enable deletion protection for the new global database cluster. The global database can't be
+     * deleted when deletion protection is enabled.
      * </p>
      * 
-     * @return The deletion protection setting for the new global database. The global database can't be deleted when
-     *         deletion protection is enabled.
+     * @return Specifies whether to enable deletion protection for the new global database cluster. The global database
+     *         can't be deleted when deletion protection is enabled.
      */
 
     public Boolean getDeletionProtection() {
@@ -265,13 +631,13 @@ public class CreateGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The deletion protection setting for the new global database. The global database can't be deleted when deletion
-     * protection is enabled.
+     * Specifies whether to enable deletion protection for the new global database cluster. The global database can't be
+     * deleted when deletion protection is enabled.
      * </p>
      * 
      * @param deletionProtection
-     *        The deletion protection setting for the new global database. The global database can't be deleted when
-     *        deletion protection is enabled.
+     *        Specifies whether to enable deletion protection for the new global database cluster. The global database
+     *        can't be deleted when deletion protection is enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -282,12 +648,12 @@ public class CreateGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The deletion protection setting for the new global database. The global database can't be deleted when deletion
-     * protection is enabled.
+     * Specifies whether to enable deletion protection for the new global database cluster. The global database can't be
+     * deleted when deletion protection is enabled.
      * </p>
      * 
-     * @return The deletion protection setting for the new global database. The global database can't be deleted when
-     *         deletion protection is enabled.
+     * @return Specifies whether to enable deletion protection for the new global database cluster. The global database
+     *         can't be deleted when deletion protection is enabled.
      */
 
     public Boolean isDeletionProtection() {
@@ -296,13 +662,34 @@ public class CreateGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name for your database of up to 64 alphanumeric characters. If you do not provide a name, Amazon Aurora will
-     * not create a database in the global database cluster you are creating.
+     * The name for your database of up to 64 alphanumeric characters. If you don't specify a name, Amazon Aurora
+     * doesn't create a database in the global database cluster.
      * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the
+     * database name from the source DB cluster.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param databaseName
-     *        The name for your database of up to 64 alphanumeric characters. If you do not provide a name, Amazon
-     *        Aurora will not create a database in the global database cluster you are creating.
+     *        The name for your database of up to 64 alphanumeric characters. If you don't specify a name, Amazon Aurora
+     *        doesn't create a database in the global database cluster.</p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora
+     *        uses the database name from the source DB cluster.
+     *        </p>
+     *        </li>
      */
 
     public void setDatabaseName(String databaseName) {
@@ -311,12 +698,33 @@ public class CreateGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name for your database of up to 64 alphanumeric characters. If you do not provide a name, Amazon Aurora will
-     * not create a database in the global database cluster you are creating.
+     * The name for your database of up to 64 alphanumeric characters. If you don't specify a name, Amazon Aurora
+     * doesn't create a database in the global database cluster.
      * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the
+     * database name from the source DB cluster.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The name for your database of up to 64 alphanumeric characters. If you do not provide a name, Amazon
-     *         Aurora will not create a database in the global database cluster you are creating.
+     * @return The name for your database of up to 64 alphanumeric characters. If you don't specify a name, Amazon
+     *         Aurora doesn't create a database in the global database cluster.</p>
+     *         <p>
+     *         Constraints:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora
+     *         uses the database name from the source DB cluster.
+     *         </p>
+     *         </li>
      */
 
     public String getDatabaseName() {
@@ -325,13 +733,34 @@ public class CreateGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name for your database of up to 64 alphanumeric characters. If you do not provide a name, Amazon Aurora will
-     * not create a database in the global database cluster you are creating.
+     * The name for your database of up to 64 alphanumeric characters. If you don't specify a name, Amazon Aurora
+     * doesn't create a database in the global database cluster.
      * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the
+     * database name from the source DB cluster.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param databaseName
-     *        The name for your database of up to 64 alphanumeric characters. If you do not provide a name, Amazon
-     *        Aurora will not create a database in the global database cluster you are creating.
+     *        The name for your database of up to 64 alphanumeric characters. If you don't specify a name, Amazon Aurora
+     *        doesn't create a database in the global database cluster.</p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora
+     *        uses the database name from the source DB cluster.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -342,11 +771,32 @@ public class CreateGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The storage encryption setting for the new global database cluster.
+     * Specifies whether to enable storage encryption for the new global database cluster.
      * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the
+     * setting from the source DB cluster.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param storageEncrypted
-     *        The storage encryption setting for the new global database cluster.
+     *        Specifies whether to enable storage encryption for the new global database cluster.</p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora
+     *        uses the setting from the source DB cluster.
+     *        </p>
+     *        </li>
      */
 
     public void setStorageEncrypted(Boolean storageEncrypted) {
@@ -355,10 +805,31 @@ public class CreateGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The storage encryption setting for the new global database cluster.
+     * Specifies whether to enable storage encryption for the new global database cluster.
      * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the
+     * setting from the source DB cluster.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The storage encryption setting for the new global database cluster.
+     * @return Specifies whether to enable storage encryption for the new global database cluster.</p>
+     *         <p>
+     *         Constraints:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora
+     *         uses the setting from the source DB cluster.
+     *         </p>
+     *         </li>
      */
 
     public Boolean getStorageEncrypted() {
@@ -367,11 +838,32 @@ public class CreateGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The storage encryption setting for the new global database cluster.
+     * Specifies whether to enable storage encryption for the new global database cluster.
      * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the
+     * setting from the source DB cluster.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param storageEncrypted
-     *        The storage encryption setting for the new global database cluster.
+     *        Specifies whether to enable storage encryption for the new global database cluster.</p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora
+     *        uses the setting from the source DB cluster.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -382,10 +874,31 @@ public class CreateGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The storage encryption setting for the new global database cluster.
+     * Specifies whether to enable storage encryption for the new global database cluster.
      * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the
+     * setting from the source DB cluster.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The storage encryption setting for the new global database cluster.
+     * @return Specifies whether to enable storage encryption for the new global database cluster.</p>
+     *         <p>
+     *         Constraints:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora
+     *         uses the setting from the source DB cluster.
+     *         </p>
+     *         </li>
      */
 
     public Boolean isStorageEncrypted() {

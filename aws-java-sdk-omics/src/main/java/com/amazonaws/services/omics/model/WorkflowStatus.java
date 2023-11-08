@@ -24,7 +24,8 @@ public enum WorkflowStatus {
     ACTIVE("ACTIVE"),
     UPDATING("UPDATING"),
     DELETED("DELETED"),
-    FAILED("FAILED");
+    FAILED("FAILED"),
+    INACTIVE("INACTIVE");
 
     private String value;
 

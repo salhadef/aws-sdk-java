@@ -29,12 +29,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class StartReferenceImportJobSourceItemMarshaller {
 
-    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
-    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("name").build();
     private static final MarshallingInfo<String> SOURCEFILE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceFile").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
 
@@ -54,9 +54,9 @@ public class StartReferenceImportJobSourceItemMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(startReferenceImportJobSourceItem.getDescription(), DESCRIPTION_BINDING);
-            protocolMarshaller.marshall(startReferenceImportJobSourceItem.getName(), NAME_BINDING);
             protocolMarshaller.marshall(startReferenceImportJobSourceItem.getSourceFile(), SOURCEFILE_BINDING);
+            protocolMarshaller.marshall(startReferenceImportJobSourceItem.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(startReferenceImportJobSourceItem.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(startReferenceImportJobSourceItem.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

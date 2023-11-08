@@ -75,6 +75,12 @@ public class LogGroup implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String dataProtectionStatus;
+    /**
+     * <p>
+     * Displays all the properties that this log group has inherited from account-level settings.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> inheritedProperties;
 
     /**
      * <p>
@@ -429,6 +435,107 @@ public class LogGroup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Displays all the properties that this log group has inherited from account-level settings.
+     * </p>
+     * 
+     * @return Displays all the properties that this log group has inherited from account-level settings.
+     * @see InheritedProperty
+     */
+
+    public java.util.List<String> getInheritedProperties() {
+        if (inheritedProperties == null) {
+            inheritedProperties = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return inheritedProperties;
+    }
+
+    /**
+     * <p>
+     * Displays all the properties that this log group has inherited from account-level settings.
+     * </p>
+     * 
+     * @param inheritedProperties
+     *        Displays all the properties that this log group has inherited from account-level settings.
+     * @see InheritedProperty
+     */
+
+    public void setInheritedProperties(java.util.Collection<String> inheritedProperties) {
+        if (inheritedProperties == null) {
+            this.inheritedProperties = null;
+            return;
+        }
+
+        this.inheritedProperties = new com.amazonaws.internal.SdkInternalList<String>(inheritedProperties);
+    }
+
+    /**
+     * <p>
+     * Displays all the properties that this log group has inherited from account-level settings.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInheritedProperties(java.util.Collection)} or {@link #withInheritedProperties(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param inheritedProperties
+     *        Displays all the properties that this log group has inherited from account-level settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InheritedProperty
+     */
+
+    public LogGroup withInheritedProperties(String... inheritedProperties) {
+        if (this.inheritedProperties == null) {
+            setInheritedProperties(new com.amazonaws.internal.SdkInternalList<String>(inheritedProperties.length));
+        }
+        for (String ele : inheritedProperties) {
+            this.inheritedProperties.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Displays all the properties that this log group has inherited from account-level settings.
+     * </p>
+     * 
+     * @param inheritedProperties
+     *        Displays all the properties that this log group has inherited from account-level settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InheritedProperty
+     */
+
+    public LogGroup withInheritedProperties(java.util.Collection<String> inheritedProperties) {
+        setInheritedProperties(inheritedProperties);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Displays all the properties that this log group has inherited from account-level settings.
+     * </p>
+     * 
+     * @param inheritedProperties
+     *        Displays all the properties that this log group has inherited from account-level settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InheritedProperty
+     */
+
+    public LogGroup withInheritedProperties(InheritedProperty... inheritedProperties) {
+        com.amazonaws.internal.SdkInternalList<String> inheritedPropertiesCopy = new com.amazonaws.internal.SdkInternalList<String>(inheritedProperties.length);
+        for (InheritedProperty value : inheritedProperties) {
+            inheritedPropertiesCopy.add(value.toString());
+        }
+        if (getInheritedProperties() == null) {
+            setInheritedProperties(inheritedPropertiesCopy);
+        } else {
+            getInheritedProperties().addAll(inheritedPropertiesCopy);
+        }
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -455,7 +562,9 @@ public class LogGroup implements Serializable, Cloneable, StructuredPojo {
         if (getKmsKeyId() != null)
             sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getDataProtectionStatus() != null)
-            sb.append("DataProtectionStatus: ").append(getDataProtectionStatus());
+            sb.append("DataProtectionStatus: ").append(getDataProtectionStatus()).append(",");
+        if (getInheritedProperties() != null)
+            sb.append("InheritedProperties: ").append(getInheritedProperties());
         sb.append("}");
         return sb.toString();
     }
@@ -502,6 +611,10 @@ public class LogGroup implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDataProtectionStatus() != null && other.getDataProtectionStatus().equals(this.getDataProtectionStatus()) == false)
             return false;
+        if (other.getInheritedProperties() == null ^ this.getInheritedProperties() == null)
+            return false;
+        if (other.getInheritedProperties() != null && other.getInheritedProperties().equals(this.getInheritedProperties()) == false)
+            return false;
         return true;
     }
 
@@ -518,6 +631,7 @@ public class LogGroup implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getStoredBytes() == null) ? 0 : getStoredBytes().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getDataProtectionStatus() == null) ? 0 : getDataProtectionStatus().hashCode());
+        hashCode = prime * hashCode + ((getInheritedProperties() == null) ? 0 : getInheritedProperties().hashCode());
         return hashCode;
     }
 

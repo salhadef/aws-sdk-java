@@ -109,8 +109,8 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
     private java.util.Date deletedDate;
     /**
      * <p>
-     * The next date and time that Secrets Manager will attempt to rotate the secret, rounded to the nearest hour. This
-     * value is null if the secret is not set up for rotation.
+     * The next rotation is scheduled to occur on or before this date. If the secret isn't configured for rotation,
+     * Secrets Manager returns null.
      * </p>
      */
     private java.util.Date nextRotationDate;
@@ -680,13 +680,13 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The next date and time that Secrets Manager will attempt to rotate the secret, rounded to the nearest hour. This
-     * value is null if the secret is not set up for rotation.
+     * The next rotation is scheduled to occur on or before this date. If the secret isn't configured for rotation,
+     * Secrets Manager returns null.
      * </p>
      * 
      * @param nextRotationDate
-     *        The next date and time that Secrets Manager will attempt to rotate the secret, rounded to the nearest
-     *        hour. This value is null if the secret is not set up for rotation.
+     *        The next rotation is scheduled to occur on or before this date. If the secret isn't configured for
+     *        rotation, Secrets Manager returns null.
      */
 
     public void setNextRotationDate(java.util.Date nextRotationDate) {
@@ -695,12 +695,12 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The next date and time that Secrets Manager will attempt to rotate the secret, rounded to the nearest hour. This
-     * value is null if the secret is not set up for rotation.
+     * The next rotation is scheduled to occur on or before this date. If the secret isn't configured for rotation,
+     * Secrets Manager returns null.
      * </p>
      * 
-     * @return The next date and time that Secrets Manager will attempt to rotate the secret, rounded to the nearest
-     *         hour. This value is null if the secret is not set up for rotation.
+     * @return The next rotation is scheduled to occur on or before this date. If the secret isn't configured for
+     *         rotation, Secrets Manager returns null.
      */
 
     public java.util.Date getNextRotationDate() {
@@ -709,13 +709,13 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The next date and time that Secrets Manager will attempt to rotate the secret, rounded to the nearest hour. This
-     * value is null if the secret is not set up for rotation.
+     * The next rotation is scheduled to occur on or before this date. If the secret isn't configured for rotation,
+     * Secrets Manager returns null.
      * </p>
      * 
      * @param nextRotationDate
-     *        The next date and time that Secrets Manager will attempt to rotate the secret, rounded to the nearest
-     *        hour. This value is null if the secret is not set up for rotation.
+     *        The next rotation is scheduled to occur on or before this date. If the secret isn't configured for
+     *        rotation, Secrets Manager returns null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

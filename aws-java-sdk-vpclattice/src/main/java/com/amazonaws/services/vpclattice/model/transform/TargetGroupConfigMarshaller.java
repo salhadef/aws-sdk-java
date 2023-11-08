@@ -31,6 +31,8 @@ public class TargetGroupConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("healthCheck").build();
     private static final MarshallingInfo<String> IPADDRESSTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ipAddressType").build();
+    private static final MarshallingInfo<String> LAMBDAEVENTSTRUCTUREVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lambdaEventStructureVersion").build();
     private static final MarshallingInfo<Integer> PORT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("port").build();
     private static final MarshallingInfo<String> PROTOCOL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -58,6 +60,7 @@ public class TargetGroupConfigMarshaller {
         try {
             protocolMarshaller.marshall(targetGroupConfig.getHealthCheck(), HEALTHCHECK_BINDING);
             protocolMarshaller.marshall(targetGroupConfig.getIpAddressType(), IPADDRESSTYPE_BINDING);
+            protocolMarshaller.marshall(targetGroupConfig.getLambdaEventStructureVersion(), LAMBDAEVENTSTRUCTUREVERSION_BINDING);
             protocolMarshaller.marshall(targetGroupConfig.getPort(), PORT_BINDING);
             protocolMarshaller.marshall(targetGroupConfig.getProtocol(), PROTOCOL_BINDING);
             protocolMarshaller.marshall(targetGroupConfig.getProtocolVersion(), PROTOCOLVERSION_BINDING);

@@ -107,6 +107,8 @@ public class ContainerDefinitionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceRequirements").build();
     private static final MarshallingInfo<StructuredPojo> FIRELENSCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("firelensConfiguration").build();
+    private static final MarshallingInfo<List> CREDENTIALSPECS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("credentialSpecs").build();
 
     private static final ContainerDefinitionMarshaller instance = new ContainerDefinitionMarshaller();
 
@@ -163,6 +165,7 @@ public class ContainerDefinitionMarshaller {
             protocolMarshaller.marshall(containerDefinition.getSystemControls(), SYSTEMCONTROLS_BINDING);
             protocolMarshaller.marshall(containerDefinition.getResourceRequirements(), RESOURCEREQUIREMENTS_BINDING);
             protocolMarshaller.marshall(containerDefinition.getFirelensConfiguration(), FIRELENSCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(containerDefinition.getCredentialSpecs(), CREDENTIALSPECS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

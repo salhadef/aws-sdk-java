@@ -102,6 +102,14 @@ public class M3u8SettingsJsonUnmarshaller implements Unmarshaller<M3u8Settings, 
                     context.nextToken();
                     m3u8Settings.setProgramNumber(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("ptsOffset", targetDepth)) {
+                    context.nextToken();
+                    m3u8Settings.setPtsOffset(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("ptsOffsetMode", targetDepth)) {
+                    context.nextToken();
+                    m3u8Settings.setPtsOffsetMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("scte35Pid", targetDepth)) {
                     context.nextToken();
                     m3u8Settings.setScte35Pid(context.getUnmarshaller(Integer.class).unmarshall(context));

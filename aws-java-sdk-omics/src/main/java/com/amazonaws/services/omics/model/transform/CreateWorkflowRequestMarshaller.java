@@ -31,26 +31,28 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CreateWorkflowRequestMarshaller {
 
-    private static final MarshallingInfo<String> DEFINITIONURI_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("definitionUri").build();
-    private static final MarshallingInfo<java.nio.ByteBuffer> DEFINITIONZIP_BINDING = MarshallingInfo.builder(MarshallingType.BYTE_BUFFER)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("definitionZip").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("name").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<String> ENGINE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("engine").build();
+    private static final MarshallingInfo<java.nio.ByteBuffer> DEFINITIONZIP_BINDING = MarshallingInfo.builder(MarshallingType.BYTE_BUFFER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("definitionZip").build();
+    private static final MarshallingInfo<String> DEFINITIONURI_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("definitionUri").build();
     private static final MarshallingInfo<String> MAIN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("main").build();
-    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("name").build();
     private static final MarshallingInfo<Map> PARAMETERTEMPLATE_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("parameterTemplate").build();
-    private static final MarshallingInfo<String> REQUESTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("requestId").defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
     private static final MarshallingInfo<Integer> STORAGECAPACITY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("storageCapacity").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<String> REQUESTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("requestId").defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
+    private static final MarshallingInfo<String> ACCELERATORS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("accelerators").build();
 
     private static final CreateWorkflowRequestMarshaller instance = new CreateWorkflowRequestMarshaller();
 
@@ -68,16 +70,17 @@ public class CreateWorkflowRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(createWorkflowRequest.getDefinitionUri(), DEFINITIONURI_BINDING);
-            protocolMarshaller.marshall(createWorkflowRequest.getDefinitionZip(), DEFINITIONZIP_BINDING);
+            protocolMarshaller.marshall(createWorkflowRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(createWorkflowRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createWorkflowRequest.getEngine(), ENGINE_BINDING);
+            protocolMarshaller.marshall(createWorkflowRequest.getDefinitionZip(), DEFINITIONZIP_BINDING);
+            protocolMarshaller.marshall(createWorkflowRequest.getDefinitionUri(), DEFINITIONURI_BINDING);
             protocolMarshaller.marshall(createWorkflowRequest.getMain(), MAIN_BINDING);
-            protocolMarshaller.marshall(createWorkflowRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(createWorkflowRequest.getParameterTemplate(), PARAMETERTEMPLATE_BINDING);
-            protocolMarshaller.marshall(createWorkflowRequest.getRequestId(), REQUESTID_BINDING);
             protocolMarshaller.marshall(createWorkflowRequest.getStorageCapacity(), STORAGECAPACITY_BINDING);
             protocolMarshaller.marshall(createWorkflowRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createWorkflowRequest.getRequestId(), REQUESTID_BINDING);
+            protocolMarshaller.marshall(createWorkflowRequest.getAccelerators(), ACCELERATORS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

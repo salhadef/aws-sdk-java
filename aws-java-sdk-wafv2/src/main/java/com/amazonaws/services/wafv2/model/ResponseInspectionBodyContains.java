@@ -20,7 +20,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Configures inspection of the response body. WAF can inspect the first 65,536 bytes (64 KB) of the response body. This
- * is part of the <code>ResponseInspection</code> configuration for <code>AWSManagedRulesATPRuleSet</code>.
+ * is part of the <code>ResponseInspection</code> configuration for <code>AWSManagedRulesATPRuleSet</code> and
+ * <code>AWSManagedRulesACFPRuleSet</code>.
  * </p>
  * <note>
  * <p>
@@ -36,42 +37,45 @@ public class ResponseInspectionBodyContains implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Strings in the body of the response that indicate a successful login attempt. To be counted as a successful
-     * login, the string can be anywhere in the body and must be an exact match, including case. Each string must be
-     * unique among the success and failure strings.
+     * Strings in the body of the response that indicate a successful login or account creation attempt. To be counted
+     * as a success, the string can be anywhere in the body and must be an exact match, including case. Each string must
+     * be unique among the success and failure strings.
      * </p>
      * <p>
-     * JSON example: <code>"SuccessStrings": [ "Login successful", "Welcome to our site!" ]</code>
+     * JSON examples: <code>"SuccessStrings": [ "Login successful" ]</code> and
+     * <code>"SuccessStrings": [ "Account creation successful", "Welcome to our site!" ]</code>
      * </p>
      */
     private java.util.List<String> successStrings;
     /**
      * <p>
-     * Strings in the body of the response that indicate a failed login attempt. To be counted as a failed login, the
-     * string can be anywhere in the body and must be an exact match, including case. Each string must be unique among
-     * the success and failure strings.
+     * Strings in the body of the response that indicate a failed login or account creation attempt. To be counted as a
+     * failure, the string can be anywhere in the body and must be an exact match, including case. Each string must be
+     * unique among the success and failure strings.
      * </p>
      * <p>
-     * JSON example: <code>"FailureStrings": [ "Login failed" ]</code>
+     * JSON example: <code>"FailureStrings": [ "Request failed" ]</code>
      * </p>
      */
     private java.util.List<String> failureStrings;
 
     /**
      * <p>
-     * Strings in the body of the response that indicate a successful login attempt. To be counted as a successful
-     * login, the string can be anywhere in the body and must be an exact match, including case. Each string must be
-     * unique among the success and failure strings.
+     * Strings in the body of the response that indicate a successful login or account creation attempt. To be counted
+     * as a success, the string can be anywhere in the body and must be an exact match, including case. Each string must
+     * be unique among the success and failure strings.
      * </p>
      * <p>
-     * JSON example: <code>"SuccessStrings": [ "Login successful", "Welcome to our site!" ]</code>
+     * JSON examples: <code>"SuccessStrings": [ "Login successful" ]</code> and
+     * <code>"SuccessStrings": [ "Account creation successful", "Welcome to our site!" ]</code>
      * </p>
      * 
-     * @return Strings in the body of the response that indicate a successful login attempt. To be counted as a
-     *         successful login, the string can be anywhere in the body and must be an exact match, including case. Each
-     *         string must be unique among the success and failure strings. </p>
+     * @return Strings in the body of the response that indicate a successful login or account creation attempt. To be
+     *         counted as a success, the string can be anywhere in the body and must be an exact match, including case.
+     *         Each string must be unique among the success and failure strings. </p>
      *         <p>
-     *         JSON example: <code>"SuccessStrings": [ "Login successful", "Welcome to our site!" ]</code>
+     *         JSON examples: <code>"SuccessStrings": [ "Login successful" ]</code> and
+     *         <code>"SuccessStrings": [ "Account creation successful", "Welcome to our site!" ]</code>
      */
 
     public java.util.List<String> getSuccessStrings() {
@@ -80,20 +84,22 @@ public class ResponseInspectionBodyContains implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Strings in the body of the response that indicate a successful login attempt. To be counted as a successful
-     * login, the string can be anywhere in the body and must be an exact match, including case. Each string must be
-     * unique among the success and failure strings.
+     * Strings in the body of the response that indicate a successful login or account creation attempt. To be counted
+     * as a success, the string can be anywhere in the body and must be an exact match, including case. Each string must
+     * be unique among the success and failure strings.
      * </p>
      * <p>
-     * JSON example: <code>"SuccessStrings": [ "Login successful", "Welcome to our site!" ]</code>
+     * JSON examples: <code>"SuccessStrings": [ "Login successful" ]</code> and
+     * <code>"SuccessStrings": [ "Account creation successful", "Welcome to our site!" ]</code>
      * </p>
      * 
      * @param successStrings
-     *        Strings in the body of the response that indicate a successful login attempt. To be counted as a
-     *        successful login, the string can be anywhere in the body and must be an exact match, including case. Each
-     *        string must be unique among the success and failure strings. </p>
+     *        Strings in the body of the response that indicate a successful login or account creation attempt. To be
+     *        counted as a success, the string can be anywhere in the body and must be an exact match, including case.
+     *        Each string must be unique among the success and failure strings. </p>
      *        <p>
-     *        JSON example: <code>"SuccessStrings": [ "Login successful", "Welcome to our site!" ]</code>
+     *        JSON examples: <code>"SuccessStrings": [ "Login successful" ]</code> and
+     *        <code>"SuccessStrings": [ "Account creation successful", "Welcome to our site!" ]</code>
      */
 
     public void setSuccessStrings(java.util.Collection<String> successStrings) {
@@ -107,12 +113,13 @@ public class ResponseInspectionBodyContains implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Strings in the body of the response that indicate a successful login attempt. To be counted as a successful
-     * login, the string can be anywhere in the body and must be an exact match, including case. Each string must be
-     * unique among the success and failure strings.
+     * Strings in the body of the response that indicate a successful login or account creation attempt. To be counted
+     * as a success, the string can be anywhere in the body and must be an exact match, including case. Each string must
+     * be unique among the success and failure strings.
      * </p>
      * <p>
-     * JSON example: <code>"SuccessStrings": [ "Login successful", "Welcome to our site!" ]</code>
+     * JSON examples: <code>"SuccessStrings": [ "Login successful" ]</code> and
+     * <code>"SuccessStrings": [ "Account creation successful", "Welcome to our site!" ]</code>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -121,11 +128,12 @@ public class ResponseInspectionBodyContains implements Serializable, Cloneable, 
      * </p>
      * 
      * @param successStrings
-     *        Strings in the body of the response that indicate a successful login attempt. To be counted as a
-     *        successful login, the string can be anywhere in the body and must be an exact match, including case. Each
-     *        string must be unique among the success and failure strings. </p>
+     *        Strings in the body of the response that indicate a successful login or account creation attempt. To be
+     *        counted as a success, the string can be anywhere in the body and must be an exact match, including case.
+     *        Each string must be unique among the success and failure strings. </p>
      *        <p>
-     *        JSON example: <code>"SuccessStrings": [ "Login successful", "Welcome to our site!" ]</code>
+     *        JSON examples: <code>"SuccessStrings": [ "Login successful" ]</code> and
+     *        <code>"SuccessStrings": [ "Account creation successful", "Welcome to our site!" ]</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,20 +149,22 @@ public class ResponseInspectionBodyContains implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Strings in the body of the response that indicate a successful login attempt. To be counted as a successful
-     * login, the string can be anywhere in the body and must be an exact match, including case. Each string must be
-     * unique among the success and failure strings.
+     * Strings in the body of the response that indicate a successful login or account creation attempt. To be counted
+     * as a success, the string can be anywhere in the body and must be an exact match, including case. Each string must
+     * be unique among the success and failure strings.
      * </p>
      * <p>
-     * JSON example: <code>"SuccessStrings": [ "Login successful", "Welcome to our site!" ]</code>
+     * JSON examples: <code>"SuccessStrings": [ "Login successful" ]</code> and
+     * <code>"SuccessStrings": [ "Account creation successful", "Welcome to our site!" ]</code>
      * </p>
      * 
      * @param successStrings
-     *        Strings in the body of the response that indicate a successful login attempt. To be counted as a
-     *        successful login, the string can be anywhere in the body and must be an exact match, including case. Each
-     *        string must be unique among the success and failure strings. </p>
+     *        Strings in the body of the response that indicate a successful login or account creation attempt. To be
+     *        counted as a success, the string can be anywhere in the body and must be an exact match, including case.
+     *        Each string must be unique among the success and failure strings. </p>
      *        <p>
-     *        JSON example: <code>"SuccessStrings": [ "Login successful", "Welcome to our site!" ]</code>
+     *        JSON examples: <code>"SuccessStrings": [ "Login successful" ]</code> and
+     *        <code>"SuccessStrings": [ "Account creation successful", "Welcome to our site!" ]</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -165,19 +175,19 @@ public class ResponseInspectionBodyContains implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Strings in the body of the response that indicate a failed login attempt. To be counted as a failed login, the
-     * string can be anywhere in the body and must be an exact match, including case. Each string must be unique among
-     * the success and failure strings.
+     * Strings in the body of the response that indicate a failed login or account creation attempt. To be counted as a
+     * failure, the string can be anywhere in the body and must be an exact match, including case. Each string must be
+     * unique among the success and failure strings.
      * </p>
      * <p>
-     * JSON example: <code>"FailureStrings": [ "Login failed" ]</code>
+     * JSON example: <code>"FailureStrings": [ "Request failed" ]</code>
      * </p>
      * 
-     * @return Strings in the body of the response that indicate a failed login attempt. To be counted as a failed
-     *         login, the string can be anywhere in the body and must be an exact match, including case. Each string
-     *         must be unique among the success and failure strings. </p>
+     * @return Strings in the body of the response that indicate a failed login or account creation attempt. To be
+     *         counted as a failure, the string can be anywhere in the body and must be an exact match, including case.
+     *         Each string must be unique among the success and failure strings. </p>
      *         <p>
-     *         JSON example: <code>"FailureStrings": [ "Login failed" ]</code>
+     *         JSON example: <code>"FailureStrings": [ "Request failed" ]</code>
      */
 
     public java.util.List<String> getFailureStrings() {
@@ -186,20 +196,20 @@ public class ResponseInspectionBodyContains implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Strings in the body of the response that indicate a failed login attempt. To be counted as a failed login, the
-     * string can be anywhere in the body and must be an exact match, including case. Each string must be unique among
-     * the success and failure strings.
+     * Strings in the body of the response that indicate a failed login or account creation attempt. To be counted as a
+     * failure, the string can be anywhere in the body and must be an exact match, including case. Each string must be
+     * unique among the success and failure strings.
      * </p>
      * <p>
-     * JSON example: <code>"FailureStrings": [ "Login failed" ]</code>
+     * JSON example: <code>"FailureStrings": [ "Request failed" ]</code>
      * </p>
      * 
      * @param failureStrings
-     *        Strings in the body of the response that indicate a failed login attempt. To be counted as a failed login,
-     *        the string can be anywhere in the body and must be an exact match, including case. Each string must be
-     *        unique among the success and failure strings. </p>
+     *        Strings in the body of the response that indicate a failed login or account creation attempt. To be
+     *        counted as a failure, the string can be anywhere in the body and must be an exact match, including case.
+     *        Each string must be unique among the success and failure strings. </p>
      *        <p>
-     *        JSON example: <code>"FailureStrings": [ "Login failed" ]</code>
+     *        JSON example: <code>"FailureStrings": [ "Request failed" ]</code>
      */
 
     public void setFailureStrings(java.util.Collection<String> failureStrings) {
@@ -213,12 +223,12 @@ public class ResponseInspectionBodyContains implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Strings in the body of the response that indicate a failed login attempt. To be counted as a failed login, the
-     * string can be anywhere in the body and must be an exact match, including case. Each string must be unique among
-     * the success and failure strings.
+     * Strings in the body of the response that indicate a failed login or account creation attempt. To be counted as a
+     * failure, the string can be anywhere in the body and must be an exact match, including case. Each string must be
+     * unique among the success and failure strings.
      * </p>
      * <p>
-     * JSON example: <code>"FailureStrings": [ "Login failed" ]</code>
+     * JSON example: <code>"FailureStrings": [ "Request failed" ]</code>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -227,11 +237,11 @@ public class ResponseInspectionBodyContains implements Serializable, Cloneable, 
      * </p>
      * 
      * @param failureStrings
-     *        Strings in the body of the response that indicate a failed login attempt. To be counted as a failed login,
-     *        the string can be anywhere in the body and must be an exact match, including case. Each string must be
-     *        unique among the success and failure strings. </p>
+     *        Strings in the body of the response that indicate a failed login or account creation attempt. To be
+     *        counted as a failure, the string can be anywhere in the body and must be an exact match, including case.
+     *        Each string must be unique among the success and failure strings. </p>
      *        <p>
-     *        JSON example: <code>"FailureStrings": [ "Login failed" ]</code>
+     *        JSON example: <code>"FailureStrings": [ "Request failed" ]</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -247,20 +257,20 @@ public class ResponseInspectionBodyContains implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Strings in the body of the response that indicate a failed login attempt. To be counted as a failed login, the
-     * string can be anywhere in the body and must be an exact match, including case. Each string must be unique among
-     * the success and failure strings.
+     * Strings in the body of the response that indicate a failed login or account creation attempt. To be counted as a
+     * failure, the string can be anywhere in the body and must be an exact match, including case. Each string must be
+     * unique among the success and failure strings.
      * </p>
      * <p>
-     * JSON example: <code>"FailureStrings": [ "Login failed" ]</code>
+     * JSON example: <code>"FailureStrings": [ "Request failed" ]</code>
      * </p>
      * 
      * @param failureStrings
-     *        Strings in the body of the response that indicate a failed login attempt. To be counted as a failed login,
-     *        the string can be anywhere in the body and must be an exact match, including case. Each string must be
-     *        unique among the success and failure strings. </p>
+     *        Strings in the body of the response that indicate a failed login or account creation attempt. To be
+     *        counted as a failure, the string can be anywhere in the body and must be an exact match, including case.
+     *        Each string must be unique among the success and failure strings. </p>
      *        <p>
-     *        JSON example: <code>"FailureStrings": [ "Login failed" ]</code>
+     *        JSON example: <code>"FailureStrings": [ "Request failed" ]</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

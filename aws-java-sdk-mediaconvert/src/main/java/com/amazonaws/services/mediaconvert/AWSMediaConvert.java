@@ -355,7 +355,7 @@ public interface AWSMediaConvert {
     DisassociateCertificateResult disassociateCertificate(DisassociateCertificateRequest disassociateCertificateRequest);
 
     /**
-     * Retrieve the JSON for a specific completed transcoding job.
+     * Retrieve the JSON for a specific transcoding job.
      * 
      * @param getJobRequest
      * @return Result of the GetJob operation returned by the service.

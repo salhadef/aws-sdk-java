@@ -31,6 +31,8 @@ public class DataQualityTargetTableMarshaller {
             .marshallLocationName("TableName").build();
     private static final MarshallingInfo<String> DATABASENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DatabaseName").build();
+    private static final MarshallingInfo<String> CATALOGID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("CatalogId").build();
 
     private static final DataQualityTargetTableMarshaller instance = new DataQualityTargetTableMarshaller();
 
@@ -50,6 +52,7 @@ public class DataQualityTargetTableMarshaller {
         try {
             protocolMarshaller.marshall(dataQualityTargetTable.getTableName(), TABLENAME_BINDING);
             protocolMarshaller.marshall(dataQualityTargetTable.getDatabaseName(), DATABASENAME_BINDING);
+            protocolMarshaller.marshall(dataQualityTargetTable.getCatalogId(), CATALOGID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

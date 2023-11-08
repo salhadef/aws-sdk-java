@@ -42,10 +42,13 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     private java.util.Map<String, String> airflowConfigurationOptions;
     /**
      * <p>
-     * The Apache Airflow version for your environment. If no value is specified, it defaults to the latest version.
-     * Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, and <code>2.4.3</code>. For more
-     * information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache Airflow
-     * versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.
+     * The Apache Airflow version for your environment. If no value is specified, it defaults to the latest version. For
+     * more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache
+     * Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.
+     * </p>
+     * <p>
+     * Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>,
+     * <code>2.5.1</code>, <code>2.6.3</code>, <code>2.7.2</code>.
      * </p>
      */
     private String airflowVersion;
@@ -333,18 +336,23 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Apache Airflow version for your environment. If no value is specified, it defaults to the latest version.
-     * Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, and <code>2.4.3</code>. For more
-     * information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache Airflow
-     * versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.
+     * The Apache Airflow version for your environment. If no value is specified, it defaults to the latest version. For
+     * more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache
+     * Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.
+     * </p>
+     * <p>
+     * Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>,
+     * <code>2.5.1</code>, <code>2.6.3</code>, <code>2.7.2</code>.
      * </p>
      * 
      * @param airflowVersion
      *        The Apache Airflow version for your environment. If no value is specified, it defaults to the latest
-     *        version. Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, and
-     *        <code>2.4.3</code>. For more information, see <a
+     *        version. For more information, see <a
      *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache Airflow versions on
-     *        Amazon Managed Workflows for Apache Airflow (MWAA)</a>.
+     *        Amazon Managed Workflows for Apache Airflow (MWAA)</a>.</p>
+     *        <p>
+     *        Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>,
+     *        <code>2.5.1</code>, <code>2.6.3</code>, <code>2.7.2</code>.
      */
 
     public void setAirflowVersion(String airflowVersion) {
@@ -353,17 +361,22 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Apache Airflow version for your environment. If no value is specified, it defaults to the latest version.
-     * Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, and <code>2.4.3</code>. For more
-     * information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache Airflow
-     * versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.
+     * The Apache Airflow version for your environment. If no value is specified, it defaults to the latest version. For
+     * more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache
+     * Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.
+     * </p>
+     * <p>
+     * Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>,
+     * <code>2.5.1</code>, <code>2.6.3</code>, <code>2.7.2</code>.
      * </p>
      * 
      * @return The Apache Airflow version for your environment. If no value is specified, it defaults to the latest
-     *         version. Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, and
-     *         <code>2.4.3</code>. For more information, see <a
+     *         version. For more information, see <a
      *         href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache Airflow versions on
-     *         Amazon Managed Workflows for Apache Airflow (MWAA)</a>.
+     *         Amazon Managed Workflows for Apache Airflow (MWAA)</a>.</p>
+     *         <p>
+     *         Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>,
+     *         <code>2.5.1</code>, <code>2.6.3</code>, <code>2.7.2</code>.
      */
 
     public String getAirflowVersion() {
@@ -372,18 +385,23 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Apache Airflow version for your environment. If no value is specified, it defaults to the latest version.
-     * Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, and <code>2.4.3</code>. For more
-     * information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache Airflow
-     * versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.
+     * The Apache Airflow version for your environment. If no value is specified, it defaults to the latest version. For
+     * more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache
+     * Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.
+     * </p>
+     * <p>
+     * Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>,
+     * <code>2.5.1</code>, <code>2.6.3</code>, <code>2.7.2</code>.
      * </p>
      * 
      * @param airflowVersion
      *        The Apache Airflow version for your environment. If no value is specified, it defaults to the latest
-     *        version. Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, and
-     *        <code>2.4.3</code>. For more information, see <a
+     *        version. For more information, see <a
      *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache Airflow versions on
-     *        Amazon Managed Workflows for Apache Airflow (MWAA)</a>.
+     *        Amazon Managed Workflows for Apache Airflow (MWAA)</a>.</p>
+     *        <p>
+     *        Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>,
+     *        <code>2.5.1</code>, <code>2.6.3</code>, <code>2.7.2</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

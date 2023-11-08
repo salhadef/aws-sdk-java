@@ -27,7 +27,7 @@ public class TestRenderTemplateRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the template that you want to render.
+     * The name of the template to render.
      * </p>
      */
     private String templateName;
@@ -41,11 +41,11 @@ public class TestRenderTemplateRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the template that you want to render.
+     * The name of the template to render.
      * </p>
      * 
      * @param templateName
-     *        The name of the template that you want to render.
+     *        The name of the template to render.
      */
 
     public void setTemplateName(String templateName) {
@@ -54,10 +54,10 @@ public class TestRenderTemplateRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the template that you want to render.
+     * The name of the template to render.
      * </p>
      * 
-     * @return The name of the template that you want to render.
+     * @return The name of the template to render.
      */
 
     public String getTemplateName() {
@@ -66,11 +66,11 @@ public class TestRenderTemplateRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the template that you want to render.
+     * The name of the template to render.
      * </p>
      * 
      * @param templateName
-     *        The name of the template that you want to render.
+     *        The name of the template to render.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -36,7 +36,7 @@ public class DeleteBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String appId;
     /**
      * <p>
-     * The name for the branch.
+     * The name of the branch.
      * </p>
      */
     private String branchName;
@@ -83,11 +83,11 @@ public class DeleteBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name for the branch.
+     * The name of the branch.
      * </p>
      * 
      * @param branchName
-     *        The name for the branch.
+     *        The name of the branch.
      */
 
     public void setBranchName(String branchName) {
@@ -96,10 +96,10 @@ public class DeleteBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name for the branch.
+     * The name of the branch.
      * </p>
      * 
-     * @return The name for the branch.
+     * @return The name of the branch.
      */
 
     public String getBranchName() {
@@ -108,11 +108,11 @@ public class DeleteBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name for the branch.
+     * The name of the branch.
      * </p>
      * 
      * @param branchName
-     *        The name for the branch.
+     *        The name of the branch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

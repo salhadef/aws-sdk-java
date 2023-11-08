@@ -38,7 +38,7 @@ public class DescribeConfigurationRevisionResult extends com.amazonaws.AmazonWeb
     private java.util.Date created;
     /**
      * <p>
-     * Required. The base64-encoded XML configuration.
+     * Amazon MQ for ActiveMQ: the base64-encoded XML configuration. Amazon MQ for RabbitMQ: base64-encoded Cuttlefish.
      * </p>
      */
     private String data;
@@ -131,11 +131,12 @@ public class DescribeConfigurationRevisionResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Required. The base64-encoded XML configuration.
+     * Amazon MQ for ActiveMQ: the base64-encoded XML configuration. Amazon MQ for RabbitMQ: base64-encoded Cuttlefish.
      * </p>
      * 
      * @param data
-     *        Required. The base64-encoded XML configuration.
+     *        Amazon MQ for ActiveMQ: the base64-encoded XML configuration. Amazon MQ for RabbitMQ: base64-encoded
+     *        Cuttlefish.
      */
 
     public void setData(String data) {
@@ -144,10 +145,11 @@ public class DescribeConfigurationRevisionResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Required. The base64-encoded XML configuration.
+     * Amazon MQ for ActiveMQ: the base64-encoded XML configuration. Amazon MQ for RabbitMQ: base64-encoded Cuttlefish.
      * </p>
      * 
-     * @return Required. The base64-encoded XML configuration.
+     * @return Amazon MQ for ActiveMQ: the base64-encoded XML configuration. Amazon MQ for RabbitMQ: base64-encoded
+     *         Cuttlefish.
      */
 
     public String getData() {
@@ -156,11 +158,12 @@ public class DescribeConfigurationRevisionResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Required. The base64-encoded XML configuration.
+     * Amazon MQ for ActiveMQ: the base64-encoded XML configuration. Amazon MQ for RabbitMQ: base64-encoded Cuttlefish.
      * </p>
      * 
      * @param data
-     *        Required. The base64-encoded XML configuration.
+     *        Amazon MQ for ActiveMQ: the base64-encoded XML configuration. Amazon MQ for RabbitMQ: base64-encoded
+     *        Cuttlefish.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

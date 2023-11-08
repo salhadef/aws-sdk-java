@@ -114,9 +114,9 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String userContextPolicy;
     /**
      * <p>
-     * Gets users and groups from IAM Identity Center (successor to Single Sign-On) identity source. To configure this,
-     * see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">
-     * UserGroupResolutionConfiguration</a>.
+     * Gets users and groups from IAM Identity Center identity source. To configure this, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html"
+     * >UserGroupResolutionConfiguration</a>.
      * </p>
      */
     private UserGroupResolutionConfiguration userGroupResolutionConfiguration;
@@ -830,16 +830,15 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Gets users and groups from IAM Identity Center (successor to Single Sign-On) identity source. To configure this,
-     * see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">
-     * UserGroupResolutionConfiguration</a>.
+     * Gets users and groups from IAM Identity Center identity source. To configure this, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html"
+     * >UserGroupResolutionConfiguration</a>.
      * </p>
      * 
      * @param userGroupResolutionConfiguration
-     *        Gets users and groups from IAM Identity Center (successor to Single Sign-On) identity source. To configure
-     *        this, see <a
-     *        href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">
-     *        UserGroupResolutionConfiguration</a>.
+     *        Gets users and groups from IAM Identity Center identity source. To configure this, see <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html"
+     *        >UserGroupResolutionConfiguration</a>.
      */
 
     public void setUserGroupResolutionConfiguration(UserGroupResolutionConfiguration userGroupResolutionConfiguration) {
@@ -848,13 +847,12 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Gets users and groups from IAM Identity Center (successor to Single Sign-On) identity source. To configure this,
-     * see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">
-     * UserGroupResolutionConfiguration</a>.
+     * Gets users and groups from IAM Identity Center identity source. To configure this, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html"
+     * >UserGroupResolutionConfiguration</a>.
      * </p>
      * 
-     * @return Gets users and groups from IAM Identity Center (successor to Single Sign-On) identity source. To
-     *         configure this, see <a
+     * @return Gets users and groups from IAM Identity Center identity source. To configure this, see <a
      *         href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html"
      *         >UserGroupResolutionConfiguration</a>.
      */
@@ -865,16 +863,15 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Gets users and groups from IAM Identity Center (successor to Single Sign-On) identity source. To configure this,
-     * see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">
-     * UserGroupResolutionConfiguration</a>.
+     * Gets users and groups from IAM Identity Center identity source. To configure this, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html"
+     * >UserGroupResolutionConfiguration</a>.
      * </p>
      * 
      * @param userGroupResolutionConfiguration
-     *        Gets users and groups from IAM Identity Center (successor to Single Sign-On) identity source. To configure
-     *        this, see <a
-     *        href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">
-     *        UserGroupResolutionConfiguration</a>.
+     *        Gets users and groups from IAM Identity Center identity source. To configure this, see <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html"
+     *        >UserGroupResolutionConfiguration</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

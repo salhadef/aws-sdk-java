@@ -40,6 +40,12 @@ public class RelativeDateTimeControlDisplayOptions implements Serializable, Clon
      * </p>
      */
     private String dateTimeFormat;
+    /**
+     * <p>
+     * The configuration of info icon label options.
+     * </p>
+     */
+    private SheetControlInfoIconLabelOptions infoIconLabelOptions;
 
     /**
      * <p>
@@ -122,6 +128,46 @@ public class RelativeDateTimeControlDisplayOptions implements Serializable, Clon
     }
 
     /**
+     * <p>
+     * The configuration of info icon label options.
+     * </p>
+     * 
+     * @param infoIconLabelOptions
+     *        The configuration of info icon label options.
+     */
+
+    public void setInfoIconLabelOptions(SheetControlInfoIconLabelOptions infoIconLabelOptions) {
+        this.infoIconLabelOptions = infoIconLabelOptions;
+    }
+
+    /**
+     * <p>
+     * The configuration of info icon label options.
+     * </p>
+     * 
+     * @return The configuration of info icon label options.
+     */
+
+    public SheetControlInfoIconLabelOptions getInfoIconLabelOptions() {
+        return this.infoIconLabelOptions;
+    }
+
+    /**
+     * <p>
+     * The configuration of info icon label options.
+     * </p>
+     * 
+     * @param infoIconLabelOptions
+     *        The configuration of info icon label options.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RelativeDateTimeControlDisplayOptions withInfoIconLabelOptions(SheetControlInfoIconLabelOptions infoIconLabelOptions) {
+        setInfoIconLabelOptions(infoIconLabelOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -136,7 +182,9 @@ public class RelativeDateTimeControlDisplayOptions implements Serializable, Clon
         if (getTitleOptions() != null)
             sb.append("TitleOptions: ").append(getTitleOptions()).append(",");
         if (getDateTimeFormat() != null)
-            sb.append("DateTimeFormat: ").append(getDateTimeFormat());
+            sb.append("DateTimeFormat: ").append(getDateTimeFormat()).append(",");
+        if (getInfoIconLabelOptions() != null)
+            sb.append("InfoIconLabelOptions: ").append(getInfoIconLabelOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +207,10 @@ public class RelativeDateTimeControlDisplayOptions implements Serializable, Clon
             return false;
         if (other.getDateTimeFormat() != null && other.getDateTimeFormat().equals(this.getDateTimeFormat()) == false)
             return false;
+        if (other.getInfoIconLabelOptions() == null ^ this.getInfoIconLabelOptions() == null)
+            return false;
+        if (other.getInfoIconLabelOptions() != null && other.getInfoIconLabelOptions().equals(this.getInfoIconLabelOptions()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +221,7 @@ public class RelativeDateTimeControlDisplayOptions implements Serializable, Clon
 
         hashCode = prime * hashCode + ((getTitleOptions() == null) ? 0 : getTitleOptions().hashCode());
         hashCode = prime * hashCode + ((getDateTimeFormat() == null) ? 0 : getDateTimeFormat().hashCode());
+        hashCode = prime * hashCode + ((getInfoIconLabelOptions() == null) ? 0 : getInfoIconLabelOptions().hashCode());
         return hashCode;
     }
 

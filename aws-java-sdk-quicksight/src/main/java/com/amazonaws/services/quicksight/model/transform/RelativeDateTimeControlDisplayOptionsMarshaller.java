@@ -31,6 +31,8 @@ public class RelativeDateTimeControlDisplayOptionsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TitleOptions").build();
     private static final MarshallingInfo<String> DATETIMEFORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DateTimeFormat").build();
+    private static final MarshallingInfo<StructuredPojo> INFOICONLABELOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InfoIconLabelOptions").build();
 
     private static final RelativeDateTimeControlDisplayOptionsMarshaller instance = new RelativeDateTimeControlDisplayOptionsMarshaller();
 
@@ -50,6 +52,7 @@ public class RelativeDateTimeControlDisplayOptionsMarshaller {
         try {
             protocolMarshaller.marshall(relativeDateTimeControlDisplayOptions.getTitleOptions(), TITLEOPTIONS_BINDING);
             protocolMarshaller.marshall(relativeDateTimeControlDisplayOptions.getDateTimeFormat(), DATETIMEFORMAT_BINDING);
+            protocolMarshaller.marshall(relativeDateTimeControlDisplayOptions.getInfoIconLabelOptions(), INFOICONLABELOPTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -80,6 +80,10 @@ public class SourceServerJsonUnmarshaller implements Unmarshaller<SourceServer, 
                     context.nextToken();
                     sourceServer.setSourceCloudProperties(SourceCloudPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("sourceNetworkID", targetDepth)) {
+                    context.nextToken();
+                    sourceServer.setSourceNetworkID(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("sourceProperties", targetDepth)) {
                     context.nextToken();
                     sourceServer.setSourceProperties(SourcePropertiesJsonUnmarshaller.getInstance().unmarshall(context));

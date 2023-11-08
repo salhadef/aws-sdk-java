@@ -41,9 +41,8 @@ public class CreateExperienceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The Amazon Resource Name (ARN) of an IAM role with permission to access <code>Query</code> API,
      * <code>GetQuerySuggestions</code> API, and other required APIs. The role also must include permission to access
-     * IAM Identity Center (successor to Single Sign-On) that stores your user and group information. For more
-     * information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for
-     * Amazon Kendra</a>.
+     * IAM Identity Center that stores your user and group information. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.
      * </p>
      */
     private String roleArn;
@@ -154,17 +153,15 @@ public class CreateExperienceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The Amazon Resource Name (ARN) of an IAM role with permission to access <code>Query</code> API,
      * <code>GetQuerySuggestions</code> API, and other required APIs. The role also must include permission to access
-     * IAM Identity Center (successor to Single Sign-On) that stores your user and group information. For more
-     * information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for
-     * Amazon Kendra</a>.
+     * IAM Identity Center that stores your user and group information. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.
      * </p>
      * 
      * @param roleArn
      *        The Amazon Resource Name (ARN) of an IAM role with permission to access <code>Query</code> API,
      *        <code>GetQuerySuggestions</code> API, and other required APIs. The role also must include permission to
-     *        access IAM Identity Center (successor to Single Sign-On) that stores your user and group information. For
-     *        more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access
-     *        roles for Amazon Kendra</a>.
+     *        access IAM Identity Center that stores your user and group information. For more information, see <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.
      */
 
     public void setRoleArn(String roleArn) {
@@ -175,16 +172,15 @@ public class CreateExperienceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The Amazon Resource Name (ARN) of an IAM role with permission to access <code>Query</code> API,
      * <code>GetQuerySuggestions</code> API, and other required APIs. The role also must include permission to access
-     * IAM Identity Center (successor to Single Sign-On) that stores your user and group information. For more
-     * information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for
-     * Amazon Kendra</a>.
+     * IAM Identity Center that stores your user and group information. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of an IAM role with permission to access <code>Query</code> API,
      *         <code>GetQuerySuggestions</code> API, and other required APIs. The role also must include permission to
-     *         access IAM Identity Center (successor to Single Sign-On) that stores your user and group information. For
-     *         more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access
-     *         roles for Amazon Kendra</a>.
+     *         access IAM Identity Center that stores your user and group information. For more information, see <a
+     *         href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon
+     *         Kendra</a>.
      */
 
     public String getRoleArn() {
@@ -195,17 +191,15 @@ public class CreateExperienceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The Amazon Resource Name (ARN) of an IAM role with permission to access <code>Query</code> API,
      * <code>GetQuerySuggestions</code> API, and other required APIs. The role also must include permission to access
-     * IAM Identity Center (successor to Single Sign-On) that stores your user and group information. For more
-     * information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for
-     * Amazon Kendra</a>.
+     * IAM Identity Center that stores your user and group information. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.
      * </p>
      * 
      * @param roleArn
      *        The Amazon Resource Name (ARN) of an IAM role with permission to access <code>Query</code> API,
      *        <code>GetQuerySuggestions</code> API, and other required APIs. The role also must include permission to
-     *        access IAM Identity Center (successor to Single Sign-On) that stores your user and group information. For
-     *        more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access
-     *        roles for Amazon Kendra</a>.
+     *        access IAM Identity Center that stores your user and group information. For more information, see <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

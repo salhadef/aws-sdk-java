@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UserSettingsSummaryMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> COOKIESYNCHRONIZATIONCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("cookieSynchronizationConfiguration").build();
     private static final MarshallingInfo<String> COPYALLOWED_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("copyAllowed").build();
     private static final MarshallingInfo<Integer> DISCONNECTTIMEOUTINMINUTES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -60,6 +62,7 @@ public class UserSettingsSummaryMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(userSettingsSummary.getCookieSynchronizationConfiguration(), COOKIESYNCHRONIZATIONCONFIGURATION_BINDING);
             protocolMarshaller.marshall(userSettingsSummary.getCopyAllowed(), COPYALLOWED_BINDING);
             protocolMarshaller.marshall(userSettingsSummary.getDisconnectTimeoutInMinutes(), DISCONNECTTIMEOUTINMINUTES_BINDING);
             protocolMarshaller.marshall(userSettingsSummary.getDownloadAllowed(), DOWNLOADALLOWED_BINDING);

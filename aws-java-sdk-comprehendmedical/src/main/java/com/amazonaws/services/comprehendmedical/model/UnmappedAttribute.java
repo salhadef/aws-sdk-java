@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An attribute that was extracted, but Comprehend Medical; was unable to relate to an entity.
+ * An attribute that was extracted, but Amazon Comprehend Medical was unable to relate to an entity.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/UnmappedAttribute"

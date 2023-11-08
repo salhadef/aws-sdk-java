@@ -56,6 +56,10 @@ public class ChangeServerLifeCycleStateResultJsonUnmarshaller implements Unmarsh
                     context.nextToken();
                     changeServerLifeCycleStateResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("connectorAction", targetDepth)) {
+                    context.nextToken();
+                    changeServerLifeCycleStateResult.setConnectorAction(SourceServerConnectorActionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("dataReplicationInfo", targetDepth)) {
                     context.nextToken();
                     changeServerLifeCycleStateResult.setDataReplicationInfo(DataReplicationInfoJsonUnmarshaller.getInstance().unmarshall(context));

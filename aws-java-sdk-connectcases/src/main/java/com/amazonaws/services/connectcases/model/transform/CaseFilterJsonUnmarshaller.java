@@ -62,6 +62,12 @@ public class CaseFilterJsonUnmarshaller implements Unmarshaller<CaseFilter, Json
                     context.nextToken();
                     caseFilter.setNot(CaseFilterJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("orAll", targetDepth)) {
+                    context.nextToken();
+                    caseFilter.setOrAll(new ListUnmarshaller<CaseFilter>(CaseFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

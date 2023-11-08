@@ -92,6 +92,12 @@ public class WorkspaceImageJsonUnmarshaller implements Unmarshaller<WorkspaceIma
                     context.nextToken();
                     workspaceImage.setUpdates(UpdateResultJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ErrorDetails", targetDepth)) {
+                    context.nextToken();
+                    workspaceImage.setErrorDetails(new ListUnmarshaller<ErrorDetails>(ErrorDetailsJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -48,18 +48,6 @@ public class ExportReadSetJobDetailJsonUnmarshaller implements Unmarshaller<Expo
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("completionTime", targetDepth)) {
-                    context.nextToken();
-                    exportReadSetJobDetail.setCompletionTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
-                }
-                if (context.testExpression("creationTime", targetDepth)) {
-                    context.nextToken();
-                    exportReadSetJobDetail.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
-                }
-                if (context.testExpression("destination", targetDepth)) {
-                    context.nextToken();
-                    exportReadSetJobDetail.setDestination(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
                     exportReadSetJobDetail.setId(context.getUnmarshaller(String.class).unmarshall(context));
@@ -68,9 +56,21 @@ public class ExportReadSetJobDetailJsonUnmarshaller implements Unmarshaller<Expo
                     context.nextToken();
                     exportReadSetJobDetail.setSequenceStoreId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("destination", targetDepth)) {
+                    context.nextToken();
+                    exportReadSetJobDetail.setDestination(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     exportReadSetJobDetail.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("creationTime", targetDepth)) {
+                    context.nextToken();
+                    exportReadSetJobDetail.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (context.testExpression("completionTime", targetDepth)) {
+                    context.nextToken();
+                    exportReadSetJobDetail.setCompletionTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

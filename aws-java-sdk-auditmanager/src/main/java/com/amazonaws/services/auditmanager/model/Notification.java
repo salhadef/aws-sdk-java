@@ -415,7 +415,7 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
         if (getAssessmentId() != null)
             sb.append("AssessmentId: ").append(getAssessmentId()).append(",");
         if (getAssessmentName() != null)
-            sb.append("AssessmentName: ").append(getAssessmentName()).append(",");
+            sb.append("AssessmentName: ").append("***Sensitive Data Redacted***").append(",");
         if (getControlSetId() != null)
             sb.append("ControlSetId: ").append(getControlSetId()).append(",");
         if (getControlSetName() != null)

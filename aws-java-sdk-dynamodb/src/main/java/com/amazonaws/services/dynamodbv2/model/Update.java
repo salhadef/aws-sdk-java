@@ -69,8 +69,7 @@ public class Update implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item attributes if the <code>Update</code>
-     * condition fails. For <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE, ALL_OLD,
-     * UPDATED_OLD, ALL_NEW, UPDATED_NEW.
+     * condition fails. For <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE and ALL_OLD.
      * </p>
      */
     private String returnValuesOnConditionCheckFailure;
@@ -414,14 +413,13 @@ public class Update implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item attributes if the <code>Update</code>
-     * condition fails. For <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE, ALL_OLD,
-     * UPDATED_OLD, ALL_NEW, UPDATED_NEW.
+     * condition fails. For <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE and ALL_OLD.
      * </p>
      * 
      * @param returnValuesOnConditionCheckFailure
      *        Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item attributes if the <code>Update</code>
-     *        condition fails. For <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE,
-     *        ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW.
+     *        condition fails. For <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE and
+     *        ALL_OLD.
      * @see ReturnValuesOnConditionCheckFailure
      */
 
@@ -432,13 +430,12 @@ public class Update implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item attributes if the <code>Update</code>
-     * condition fails. For <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE, ALL_OLD,
-     * UPDATED_OLD, ALL_NEW, UPDATED_NEW.
+     * condition fails. For <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE and ALL_OLD.
      * </p>
      * 
      * @return Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item attributes if the
      *         <code>Update</code> condition fails. For <code>ReturnValuesOnConditionCheckFailure</code>, the valid
-     *         values are: NONE, ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW.
+     *         values are: NONE and ALL_OLD.
      * @see ReturnValuesOnConditionCheckFailure
      */
 
@@ -449,14 +446,13 @@ public class Update implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item attributes if the <code>Update</code>
-     * condition fails. For <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE, ALL_OLD,
-     * UPDATED_OLD, ALL_NEW, UPDATED_NEW.
+     * condition fails. For <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE and ALL_OLD.
      * </p>
      * 
      * @param returnValuesOnConditionCheckFailure
      *        Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item attributes if the <code>Update</code>
-     *        condition fails. For <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE,
-     *        ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW.
+     *        condition fails. For <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE and
+     *        ALL_OLD.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReturnValuesOnConditionCheckFailure
      */
@@ -469,14 +465,13 @@ public class Update implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item attributes if the <code>Update</code>
-     * condition fails. For <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE, ALL_OLD,
-     * UPDATED_OLD, ALL_NEW, UPDATED_NEW.
+     * condition fails. For <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE and ALL_OLD.
      * </p>
      * 
      * @param returnValuesOnConditionCheckFailure
      *        Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item attributes if the <code>Update</code>
-     *        condition fails. For <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE,
-     *        ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW.
+     *        condition fails. For <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE and
+     *        ALL_OLD.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReturnValuesOnConditionCheckFailure
      */

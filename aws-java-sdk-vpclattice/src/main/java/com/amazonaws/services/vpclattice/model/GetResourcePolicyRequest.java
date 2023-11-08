@@ -27,18 +27,18 @@ public class GetResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the service network or service.
+     * An IAM policy.
      * </p>
      */
     private String resourceArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the service network or service.
+     * An IAM policy.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the service network or service.
+     *        An IAM policy.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -47,10 +47,10 @@ public class GetResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the service network or service.
+     * An IAM policy.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the service network or service.
+     * @return An IAM policy.
      */
 
     public String getResourceArn() {
@@ -59,11 +59,11 @@ public class GetResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the service network or service.
+     * An IAM policy.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the service network or service.
+     *        An IAM policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

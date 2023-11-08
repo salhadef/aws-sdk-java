@@ -81,6 +81,8 @@ public class ModelPackageMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomerMetadataProperties").build();
     private static final MarshallingInfo<StructuredPojo> DRIFTCHECKBASELINES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DriftCheckBaselines").build();
+    private static final MarshallingInfo<String> SKIPMODELVALIDATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SkipModelValidation").build();
 
     private static final ModelPackageMarshaller instance = new ModelPackageMarshaller();
 
@@ -124,6 +126,7 @@ public class ModelPackageMarshaller {
             protocolMarshaller.marshall(modelPackage.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(modelPackage.getCustomerMetadataProperties(), CUSTOMERMETADATAPROPERTIES_BINDING);
             protocolMarshaller.marshall(modelPackage.getDriftCheckBaselines(), DRIFTCHECKBASELINES_BINDING);
+            protocolMarshaller.marshall(modelPackage.getSkipModelValidation(), SKIPMODELVALIDATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -31,6 +31,12 @@ public class DescribeFolderPermissionsRequestMarshaller {
             .marshallLocationName("AwsAccountId").build();
     private static final MarshallingInfo<String> FOLDERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("FolderId").build();
+    private static final MarshallingInfo<String> NAMESPACE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("namespace").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("max-results").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("next-token").build();
 
     private static final DescribeFolderPermissionsRequestMarshaller instance = new DescribeFolderPermissionsRequestMarshaller();
 
@@ -50,6 +56,9 @@ public class DescribeFolderPermissionsRequestMarshaller {
         try {
             protocolMarshaller.marshall(describeFolderPermissionsRequest.getAwsAccountId(), AWSACCOUNTID_BINDING);
             protocolMarshaller.marshall(describeFolderPermissionsRequest.getFolderId(), FOLDERID_BINDING);
+            protocolMarshaller.marshall(describeFolderPermissionsRequest.getNamespace(), NAMESPACE_BINDING);
+            protocolMarshaller.marshall(describeFolderPermissionsRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(describeFolderPermissionsRequest.getNextToken(), NEXTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

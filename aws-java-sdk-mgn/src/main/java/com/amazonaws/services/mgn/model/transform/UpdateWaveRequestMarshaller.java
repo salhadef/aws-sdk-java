@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UpdateWaveRequestMarshaller {
 
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("accountID").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -50,6 +52,7 @@ public class UpdateWaveRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(updateWaveRequest.getAccountID(), ACCOUNTID_BINDING);
             protocolMarshaller.marshall(updateWaveRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(updateWaveRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(updateWaveRequest.getWaveID(), WAVEID_BINDING);

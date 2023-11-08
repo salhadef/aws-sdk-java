@@ -44,6 +44,7 @@ import com.amazonaws.services.opensearchserverless.AWSOpenSearchServerlessClient
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.opensearchserverless.model.*;
+
 import com.amazonaws.services.opensearchserverless.model.transform.*;
 
 /**
@@ -220,6 +221,135 @@ public class AWSOpenSearchServerlessClient extends AmazonWebServiceClient implem
 
     /**
      * <p>
+     * Returns a list of successful and failed retrievals for the OpenSearch Serverless indexes. For more information,
+     * see <a href=
+     * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-list"
+     * >Viewing data lifecycle policies</a>.
+     * </p>
+     * 
+     * @param batchGetEffectiveLifecyclePolicyRequest
+     * @return Result of the BatchGetEffectiveLifecyclePolicy operation returned by the service.
+     * @throws InternalServerException
+     *         Thrown when an error internal to the service occurs while processing a request.
+     * @throws ValidationException
+     *         Thrown when the HTTP request contains invalid input or is missing required input.
+     * @sample AWSOpenSearchServerless.BatchGetEffectiveLifecyclePolicy
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/BatchGetEffectiveLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public BatchGetEffectiveLifecyclePolicyResult batchGetEffectiveLifecyclePolicy(BatchGetEffectiveLifecyclePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchGetEffectiveLifecyclePolicy(request);
+    }
+
+    @SdkInternalApi
+    final BatchGetEffectiveLifecyclePolicyResult executeBatchGetEffectiveLifecyclePolicy(
+            BatchGetEffectiveLifecyclePolicyRequest batchGetEffectiveLifecyclePolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchGetEffectiveLifecyclePolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchGetEffectiveLifecyclePolicyRequest> request = null;
+        Response<BatchGetEffectiveLifecyclePolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchGetEffectiveLifecyclePolicyRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(batchGetEffectiveLifecyclePolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpenSearchServerless");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetEffectiveLifecyclePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchGetEffectiveLifecyclePolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new BatchGetEffectiveLifecyclePolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns one or more configured OpenSearch Serverless lifecycle policies. For more information, see <a href=
+     * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-list"
+     * >Viewing data lifecycle policies</a>.
+     * </p>
+     * 
+     * @param batchGetLifecyclePolicyRequest
+     * @return Result of the BatchGetLifecyclePolicy operation returned by the service.
+     * @throws InternalServerException
+     *         Thrown when an error internal to the service occurs while processing a request.
+     * @throws ValidationException
+     *         Thrown when the HTTP request contains invalid input or is missing required input.
+     * @sample AWSOpenSearchServerless.BatchGetLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/BatchGetLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public BatchGetLifecyclePolicyResult batchGetLifecyclePolicy(BatchGetLifecyclePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchGetLifecyclePolicy(request);
+    }
+
+    @SdkInternalApi
+    final BatchGetLifecyclePolicyResult executeBatchGetLifecyclePolicy(BatchGetLifecyclePolicyRequest batchGetLifecyclePolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchGetLifecyclePolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchGetLifecyclePolicyRequest> request = null;
+        Response<BatchGetLifecyclePolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchGetLifecyclePolicyRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(batchGetLifecyclePolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpenSearchServerless");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetLifecyclePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchGetLifecyclePolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new BatchGetLifecyclePolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns attributes for one or more VPC endpoints associated with the current account. For more information, see
      * <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-vpc.html">Access Amazon
      * OpenSearch Serverless using an interface endpoint</a>.
@@ -357,7 +487,8 @@ public class AWSOpenSearchServerlessClient extends AmazonWebServiceClient implem
      * @param createCollectionRequest
      * @return Result of the CreateCollection operation returned by the service.
      * @throws OcuLimitExceededException
-     *         OCU Limit Exceeded for service limits
+     *         Thrown when the collection you're attempting to create results in a number of search or indexing OCUs
+     *         that exceeds the account limit.
      * @throws InternalServerException
      *         Thrown when an error internal to the service occurs while processing a request.
      * @throws ConflictException
@@ -405,6 +536,74 @@ public class AWSOpenSearchServerlessClient extends AmazonWebServiceClient implem
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateCollectionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateCollectionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a lifecyle policy to be applied to OpenSearch Serverless indexes. Lifecycle policies define the number of
+     * days or hours to retain the data on an OpenSearch Serverless index. For more information, see <a href=
+     * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-create"
+     * >Creating data lifecycle policies</a>.
+     * </p>
+     * 
+     * @param createLifecyclePolicyRequest
+     * @return Result of the CreateLifecyclePolicy operation returned by the service.
+     * @throws InternalServerException
+     *         Thrown when an error internal to the service occurs while processing a request.
+     * @throws ConflictException
+     *         When creating a resource, thrown when a resource with the same name already exists or is being created.
+     *         When deleting a resource, thrown when the resource is not in the ACTIVE or FAILED state.
+     * @throws ValidationException
+     *         Thrown when the HTTP request contains invalid input or is missing required input.
+     * @throws ServiceQuotaExceededException
+     *         Thrown when you attempt to create more resources than the service allows based on service quotas.
+     * @sample AWSOpenSearchServerless.CreateLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CreateLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateLifecyclePolicyResult createLifecyclePolicy(CreateLifecyclePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateLifecyclePolicy(request);
+    }
+
+    @SdkInternalApi
+    final CreateLifecyclePolicyResult executeCreateLifecyclePolicy(CreateLifecyclePolicyRequest createLifecyclePolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createLifecyclePolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateLifecyclePolicyRequest> request = null;
+        Response<CreateLifecyclePolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateLifecyclePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createLifecyclePolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpenSearchServerless");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLifecyclePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateLifecyclePolicyResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new CreateLifecyclePolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -739,6 +938,73 @@ public class AWSOpenSearchServerlessClient extends AmazonWebServiceClient implem
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteCollectionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteCollectionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes an OpenSearch Serverless lifecycle policy. For more information, see <a href=
+     * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-delete"
+     * >Deleting data lifecycle policies</a>.
+     * </p>
+     * 
+     * @param deleteLifecyclePolicyRequest
+     * @return Result of the DeleteLifecyclePolicy operation returned by the service.
+     * @throws InternalServerException
+     *         Thrown when an error internal to the service occurs while processing a request.
+     * @throws ResourceNotFoundException
+     *         Thrown when accessing or deleting a resource that does not exist.
+     * @throws ConflictException
+     *         When creating a resource, thrown when a resource with the same name already exists or is being created.
+     *         When deleting a resource, thrown when the resource is not in the ACTIVE or FAILED state.
+     * @throws ValidationException
+     *         Thrown when the HTTP request contains invalid input or is missing required input.
+     * @sample AWSOpenSearchServerless.DeleteLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/DeleteLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteLifecyclePolicyResult deleteLifecyclePolicy(DeleteLifecyclePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteLifecyclePolicy(request);
+    }
+
+    @SdkInternalApi
+    final DeleteLifecyclePolicyResult executeDeleteLifecyclePolicy(DeleteLifecyclePolicyRequest deleteLifecyclePolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteLifecyclePolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteLifecyclePolicyRequest> request = null;
+        Response<DeleteLifecyclePolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteLifecyclePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteLifecyclePolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpenSearchServerless");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLifecyclePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteLifecyclePolicyResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DeleteLifecyclePolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1380,6 +1646,68 @@ public class AWSOpenSearchServerlessClient extends AmazonWebServiceClient implem
 
     /**
      * <p>
+     * Returns a list of OpenSearch Serverless lifecycle policies. For more information, see <a href=
+     * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-list"
+     * >Viewing data lifecycle policies</a>.
+     * </p>
+     * 
+     * @param listLifecyclePoliciesRequest
+     * @return Result of the ListLifecyclePolicies operation returned by the service.
+     * @throws InternalServerException
+     *         Thrown when an error internal to the service occurs while processing a request.
+     * @throws ValidationException
+     *         Thrown when the HTTP request contains invalid input or is missing required input.
+     * @sample AWSOpenSearchServerless.ListLifecyclePolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/ListLifecyclePolicies"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListLifecyclePoliciesResult listLifecyclePolicies(ListLifecyclePoliciesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListLifecyclePolicies(request);
+    }
+
+    @SdkInternalApi
+    final ListLifecyclePoliciesResult executeListLifecyclePolicies(ListLifecyclePoliciesRequest listLifecyclePoliciesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listLifecyclePoliciesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListLifecyclePoliciesRequest> request = null;
+        Response<ListLifecyclePoliciesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListLifecyclePoliciesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listLifecyclePoliciesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpenSearchServerless");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLifecyclePolicies");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListLifecyclePoliciesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ListLifecyclePoliciesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns information about configured OpenSearch Serverless security configurations. For more information, see <a
      * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-saml.html">SAML
      * authentication for Amazon OpenSearch Serverless</a>.
@@ -1937,6 +2265,75 @@ public class AWSOpenSearchServerlessClient extends AmazonWebServiceClient implem
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateCollectionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateCollectionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates an OpenSearch Serverless access policy. For more information, see <a href=
+     * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-update"
+     * >Updating data lifecycle policies</a>.
+     * </p>
+     * 
+     * @param updateLifecyclePolicyRequest
+     * @return Result of the UpdateLifecyclePolicy operation returned by the service.
+     * @throws InternalServerException
+     *         Thrown when an error internal to the service occurs while processing a request.
+     * @throws ResourceNotFoundException
+     *         Thrown when accessing or deleting a resource that does not exist.
+     * @throws ConflictException
+     *         When creating a resource, thrown when a resource with the same name already exists or is being created.
+     *         When deleting a resource, thrown when the resource is not in the ACTIVE or FAILED state.
+     * @throws ValidationException
+     *         Thrown when the HTTP request contains invalid input or is missing required input.
+     * @throws ServiceQuotaExceededException
+     *         Thrown when you attempt to create more resources than the service allows based on service quotas.
+     * @sample AWSOpenSearchServerless.UpdateLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/UpdateLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateLifecyclePolicyResult updateLifecyclePolicy(UpdateLifecyclePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateLifecyclePolicy(request);
+    }
+
+    @SdkInternalApi
+    final UpdateLifecyclePolicyResult executeUpdateLifecyclePolicy(UpdateLifecyclePolicyRequest updateLifecyclePolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateLifecyclePolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateLifecyclePolicyRequest> request = null;
+        Response<UpdateLifecyclePolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateLifecyclePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateLifecyclePolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpenSearchServerless");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateLifecyclePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateLifecyclePolicyResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new UpdateLifecyclePolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

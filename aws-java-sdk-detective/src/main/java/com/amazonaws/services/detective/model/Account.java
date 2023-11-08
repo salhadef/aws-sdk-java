@@ -136,7 +136,7 @@ public class Account implements Serializable, Cloneable, StructuredPojo {
         if (getAccountId() != null)
             sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getEmailAddress() != null)
-            sb.append("EmailAddress: ").append(getEmailAddress());
+            sb.append("EmailAddress: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

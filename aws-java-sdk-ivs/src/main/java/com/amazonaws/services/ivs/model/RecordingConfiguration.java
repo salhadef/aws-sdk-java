@@ -55,6 +55,12 @@ public class RecordingConfiguration implements Serializable, Cloneable, Structur
     private Integer recordingReconnectWindowSeconds;
     /**
      * <p>
+     * Object that describes which renditions should be recorded for a stream.
+     * </p>
+     */
+    private RenditionConfiguration renditionConfiguration;
+    /**
+     * <p>
      * Indicates the current state of the recording configuration. When the state is <code>ACTIVE</code>, the
      * configuration is ready for recording a channel stream.
      * </p>
@@ -241,6 +247,46 @@ public class RecordingConfiguration implements Serializable, Cloneable, Structur
 
     public RecordingConfiguration withRecordingReconnectWindowSeconds(Integer recordingReconnectWindowSeconds) {
         setRecordingReconnectWindowSeconds(recordingReconnectWindowSeconds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Object that describes which renditions should be recorded for a stream.
+     * </p>
+     * 
+     * @param renditionConfiguration
+     *        Object that describes which renditions should be recorded for a stream.
+     */
+
+    public void setRenditionConfiguration(RenditionConfiguration renditionConfiguration) {
+        this.renditionConfiguration = renditionConfiguration;
+    }
+
+    /**
+     * <p>
+     * Object that describes which renditions should be recorded for a stream.
+     * </p>
+     * 
+     * @return Object that describes which renditions should be recorded for a stream.
+     */
+
+    public RenditionConfiguration getRenditionConfiguration() {
+        return this.renditionConfiguration;
+    }
+
+    /**
+     * <p>
+     * Object that describes which renditions should be recorded for a stream.
+     * </p>
+     * 
+     * @param renditionConfiguration
+     *        Object that describes which renditions should be recorded for a stream.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RecordingConfiguration withRenditionConfiguration(RenditionConfiguration renditionConfiguration) {
+        setRenditionConfiguration(renditionConfiguration);
         return this;
     }
 
@@ -470,6 +516,8 @@ public class RecordingConfiguration implements Serializable, Cloneable, Structur
             sb.append("Name: ").append(getName()).append(",");
         if (getRecordingReconnectWindowSeconds() != null)
             sb.append("RecordingReconnectWindowSeconds: ").append(getRecordingReconnectWindowSeconds()).append(",");
+        if (getRenditionConfiguration() != null)
+            sb.append("RenditionConfiguration: ").append(getRenditionConfiguration()).append(",");
         if (getState() != null)
             sb.append("State: ").append(getState()).append(",");
         if (getTags() != null)
@@ -507,6 +555,10 @@ public class RecordingConfiguration implements Serializable, Cloneable, Structur
         if (other.getRecordingReconnectWindowSeconds() != null
                 && other.getRecordingReconnectWindowSeconds().equals(this.getRecordingReconnectWindowSeconds()) == false)
             return false;
+        if (other.getRenditionConfiguration() == null ^ this.getRenditionConfiguration() == null)
+            return false;
+        if (other.getRenditionConfiguration() != null && other.getRenditionConfiguration().equals(this.getRenditionConfiguration()) == false)
+            return false;
         if (other.getState() == null ^ this.getState() == null)
             return false;
         if (other.getState() != null && other.getState().equals(this.getState()) == false)
@@ -531,6 +583,7 @@ public class RecordingConfiguration implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getDestinationConfiguration() == null) ? 0 : getDestinationConfiguration().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getRecordingReconnectWindowSeconds() == null) ? 0 : getRecordingReconnectWindowSeconds().hashCode());
+        hashCode = prime * hashCode + ((getRenditionConfiguration() == null) ? 0 : getRenditionConfiguration().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getThumbnailConfiguration() == null) ? 0 : getThumbnailConfiguration().hashCode());

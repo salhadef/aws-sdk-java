@@ -27,309 +27,1551 @@ public class CreateCustomLogSourceRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name for a third-party custom source. This must be a Regionally unique value.
+     * The configuration for the third-party custom source.
      * </p>
      */
-    private String customSourceName;
+    private CustomLogSourceConfiguration configuration;
     /**
      * <p>
-     * The Open Cybersecurity Schema Framework (OCSF) event class which describes the type of data that the custom
-     * source will send to Security Lake.
-     * </p>
-     */
-    private String eventClass;
-    /**
-     * <p>
-     * The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be used by the Glue crawler.
-     * The recommended IAM policies are:
+     * The Open Cybersecurity Schema Framework (OCSF) event classes which describes the type of data that the custom
+     * source will send to Security Lake. The supported event classes are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * The managed policy <code>AWSGlueServiceRole</code>
+     * <code>ACCESS_ACTIVITY</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * A custom policy granting access to your Amazon S3 Data Lake
+     * <code>FILE_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KERNEL_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KERNEL_EXTENSION</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MEMORY_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MODULE_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PROCESS_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>REGISTRY_KEY_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>REGISTRY_VALUE_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RESOURCE_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SCHEDULED_JOB_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SECURITY_FINDING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ACCOUNT_CHANGE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AUTHENTICATION</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AUTHORIZATION</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ENTITY_MANAGEMENT_AUDIT</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DHCP_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NETWORK_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DNS_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FTP_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HTTP_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RDP_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SMB_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SSH_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONFIG_STATE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INVENTORY_INFO</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EMAIL_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>API_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CLOUD_API</code>
      * </p>
      * </li>
      * </ul>
      */
-    private String glueInvocationRoleArn;
+    private java.util.List<String> eventClasses;
     /**
      * <p>
-     * The Amazon Web Services account ID of the custom source that will write logs and events into the Amazon S3 Data
-     * Lake.
+     * Specify the name for a third-party custom source. This must be a Regionally unique value.
      * </p>
      */
-    private String logProviderAccountId;
+    private String sourceName;
+    /**
+     * <p>
+     * Specify the source version for the third-party custom source, to limit log collection to a specific version of
+     * custom data source.
+     * </p>
+     */
+    private String sourceVersion;
 
     /**
      * <p>
-     * The name for a third-party custom source. This must be a Regionally unique value.
+     * The configuration for the third-party custom source.
      * </p>
      * 
-     * @param customSourceName
-     *        The name for a third-party custom source. This must be a Regionally unique value.
+     * @param configuration
+     *        The configuration for the third-party custom source.
      */
 
-    public void setCustomSourceName(String customSourceName) {
-        this.customSourceName = customSourceName;
+    public void setConfiguration(CustomLogSourceConfiguration configuration) {
+        this.configuration = configuration;
     }
 
     /**
      * <p>
-     * The name for a third-party custom source. This must be a Regionally unique value.
+     * The configuration for the third-party custom source.
      * </p>
      * 
-     * @return The name for a third-party custom source. This must be a Regionally unique value.
+     * @return The configuration for the third-party custom source.
      */
 
-    public String getCustomSourceName() {
-        return this.customSourceName;
+    public CustomLogSourceConfiguration getConfiguration() {
+        return this.configuration;
     }
 
     /**
      * <p>
-     * The name for a third-party custom source. This must be a Regionally unique value.
+     * The configuration for the third-party custom source.
      * </p>
      * 
-     * @param customSourceName
-     *        The name for a third-party custom source. This must be a Regionally unique value.
+     * @param configuration
+     *        The configuration for the third-party custom source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateCustomLogSourceRequest withCustomSourceName(String customSourceName) {
-        setCustomSourceName(customSourceName);
+    public CreateCustomLogSourceRequest withConfiguration(CustomLogSourceConfiguration configuration) {
+        setConfiguration(configuration);
         return this;
     }
 
     /**
      * <p>
-     * The Open Cybersecurity Schema Framework (OCSF) event class which describes the type of data that the custom
-     * source will send to Security Lake.
-     * </p>
-     * 
-     * @param eventClass
-     *        The Open Cybersecurity Schema Framework (OCSF) event class which describes the type of data that the
-     *        custom source will send to Security Lake.
-     * @see OcsfEventClass
-     */
-
-    public void setEventClass(String eventClass) {
-        this.eventClass = eventClass;
-    }
-
-    /**
-     * <p>
-     * The Open Cybersecurity Schema Framework (OCSF) event class which describes the type of data that the custom
-     * source will send to Security Lake.
-     * </p>
-     * 
-     * @return The Open Cybersecurity Schema Framework (OCSF) event class which describes the type of data that the
-     *         custom source will send to Security Lake.
-     * @see OcsfEventClass
-     */
-
-    public String getEventClass() {
-        return this.eventClass;
-    }
-
-    /**
-     * <p>
-     * The Open Cybersecurity Schema Framework (OCSF) event class which describes the type of data that the custom
-     * source will send to Security Lake.
-     * </p>
-     * 
-     * @param eventClass
-     *        The Open Cybersecurity Schema Framework (OCSF) event class which describes the type of data that the
-     *        custom source will send to Security Lake.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see OcsfEventClass
-     */
-
-    public CreateCustomLogSourceRequest withEventClass(String eventClass) {
-        setEventClass(eventClass);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The Open Cybersecurity Schema Framework (OCSF) event class which describes the type of data that the custom
-     * source will send to Security Lake.
-     * </p>
-     * 
-     * @param eventClass
-     *        The Open Cybersecurity Schema Framework (OCSF) event class which describes the type of data that the
-     *        custom source will send to Security Lake.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see OcsfEventClass
-     */
-
-    public CreateCustomLogSourceRequest withEventClass(OcsfEventClass eventClass) {
-        this.eventClass = eventClass.toString();
-        return this;
-    }
-
-    /**
-     * <p>
-     * The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be used by the Glue crawler.
-     * The recommended IAM policies are:
+     * The Open Cybersecurity Schema Framework (OCSF) event classes which describes the type of data that the custom
+     * source will send to Security Lake. The supported event classes are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * The managed policy <code>AWSGlueServiceRole</code>
+     * <code>ACCESS_ACTIVITY</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * A custom policy granting access to your Amazon S3 Data Lake
+     * <code>FILE_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KERNEL_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KERNEL_EXTENSION</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MEMORY_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MODULE_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PROCESS_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>REGISTRY_KEY_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>REGISTRY_VALUE_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RESOURCE_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SCHEDULED_JOB_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SECURITY_FINDING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ACCOUNT_CHANGE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AUTHENTICATION</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AUTHORIZATION</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ENTITY_MANAGEMENT_AUDIT</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DHCP_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NETWORK_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DNS_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FTP_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HTTP_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RDP_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SMB_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SSH_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONFIG_STATE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INVENTORY_INFO</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EMAIL_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>API_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CLOUD_API</code>
      * </p>
      * </li>
      * </ul>
      * 
-     * @param glueInvocationRoleArn
-     *        The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be used by the Glue
-     *        crawler. The recommended IAM policies are:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        The managed policy <code>AWSGlueServiceRole</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        A custom policy granting access to your Amazon S3 Data Lake
-     *        </p>
-     *        </li>
-     */
-
-    public void setGlueInvocationRoleArn(String glueInvocationRoleArn) {
-        this.glueInvocationRoleArn = glueInvocationRoleArn;
-    }
-
-    /**
-     * <p>
-     * The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be used by the Glue crawler.
-     * The recommended IAM policies are:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * The managed policy <code>AWSGlueServiceRole</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * A custom policy granting access to your Amazon S3 Data Lake
-     * </p>
-     * </li>
-     * </ul>
-     * 
-     * @return The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be used by the Glue
-     *         crawler. The recommended IAM policies are:</p>
+     * @return The Open Cybersecurity Schema Framework (OCSF) event classes which describes the type of data that the
+     *         custom source will send to Security Lake. The supported event classes are:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         The managed policy <code>AWSGlueServiceRole</code>
+     *         <code>ACCESS_ACTIVITY</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         A custom policy granting access to your Amazon S3 Data Lake
+     *         <code>FILE_ACTIVITY</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>KERNEL_ACTIVITY</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>KERNEL_EXTENSION</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>MEMORY_ACTIVITY</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>MODULE_ACTIVITY</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>PROCESS_ACTIVITY</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>REGISTRY_KEY_ACTIVITY</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>REGISTRY_VALUE_ACTIVITY</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>RESOURCE_ACTIVITY</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>SCHEDULED_JOB_ACTIVITY</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>SECURITY_FINDING</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ACCOUNT_CHANGE</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AUTHENTICATION</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AUTHORIZATION</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ENTITY_MANAGEMENT_AUDIT</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DHCP_ACTIVITY</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>NETWORK_ACTIVITY</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DNS_ACTIVITY</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>FTP_ACTIVITY</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>HTTP_ACTIVITY</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>RDP_ACTIVITY</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>SMB_ACTIVITY</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>SSH_ACTIVITY</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CONFIG_STATE</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>INVENTORY_INFO</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>EMAIL_ACTIVITY</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>API_ACTIVITY</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CLOUD_API</code>
      *         </p>
      *         </li>
      */
 
-    public String getGlueInvocationRoleArn() {
-        return this.glueInvocationRoleArn;
+    public java.util.List<String> getEventClasses() {
+        return eventClasses;
     }
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be used by the Glue crawler.
-     * The recommended IAM policies are:
+     * The Open Cybersecurity Schema Framework (OCSF) event classes which describes the type of data that the custom
+     * source will send to Security Lake. The supported event classes are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * The managed policy <code>AWSGlueServiceRole</code>
+     * <code>ACCESS_ACTIVITY</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * A custom policy granting access to your Amazon S3 Data Lake
+     * <code>FILE_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KERNEL_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KERNEL_EXTENSION</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MEMORY_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MODULE_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PROCESS_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>REGISTRY_KEY_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>REGISTRY_VALUE_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RESOURCE_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SCHEDULED_JOB_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SECURITY_FINDING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ACCOUNT_CHANGE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AUTHENTICATION</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AUTHORIZATION</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ENTITY_MANAGEMENT_AUDIT</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DHCP_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NETWORK_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DNS_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FTP_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HTTP_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RDP_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SMB_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SSH_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONFIG_STATE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INVENTORY_INFO</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EMAIL_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>API_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CLOUD_API</code>
      * </p>
      * </li>
      * </ul>
      * 
-     * @param glueInvocationRoleArn
-     *        The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be used by the Glue
-     *        crawler. The recommended IAM policies are:</p>
+     * @param eventClasses
+     *        The Open Cybersecurity Schema Framework (OCSF) event classes which describes the type of data that the
+     *        custom source will send to Security Lake. The supported event classes are:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        The managed policy <code>AWSGlueServiceRole</code>
+     *        <code>ACCESS_ACTIVITY</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        A custom policy granting access to your Amazon S3 Data Lake
+     *        <code>FILE_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KERNEL_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KERNEL_EXTENSION</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MEMORY_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MODULE_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PROCESS_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>REGISTRY_KEY_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>REGISTRY_VALUE_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RESOURCE_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SCHEDULED_JOB_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SECURITY_FINDING</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ACCOUNT_CHANGE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AUTHENTICATION</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AUTHORIZATION</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ENTITY_MANAGEMENT_AUDIT</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DHCP_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NETWORK_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DNS_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FTP_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>HTTP_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RDP_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SMB_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SSH_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CONFIG_STATE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INVENTORY_INFO</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EMAIL_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>API_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CLOUD_API</code>
+     *        </p>
+     *        </li>
+     */
+
+    public void setEventClasses(java.util.Collection<String> eventClasses) {
+        if (eventClasses == null) {
+            this.eventClasses = null;
+            return;
+        }
+
+        this.eventClasses = new java.util.ArrayList<String>(eventClasses);
+    }
+
+    /**
+     * <p>
+     * The Open Cybersecurity Schema Framework (OCSF) event classes which describes the type of data that the custom
+     * source will send to Security Lake. The supported event classes are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ACCESS_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FILE_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KERNEL_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KERNEL_EXTENSION</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MEMORY_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MODULE_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PROCESS_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>REGISTRY_KEY_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>REGISTRY_VALUE_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RESOURCE_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SCHEDULED_JOB_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SECURITY_FINDING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ACCOUNT_CHANGE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AUTHENTICATION</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AUTHORIZATION</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ENTITY_MANAGEMENT_AUDIT</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DHCP_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NETWORK_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DNS_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FTP_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HTTP_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RDP_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SMB_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SSH_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONFIG_STATE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INVENTORY_INFO</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EMAIL_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>API_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CLOUD_API</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEventClasses(java.util.Collection)} or {@link #withEventClasses(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param eventClasses
+     *        The Open Cybersecurity Schema Framework (OCSF) event classes which describes the type of data that the
+     *        custom source will send to Security Lake. The supported event classes are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ACCESS_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FILE_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KERNEL_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KERNEL_EXTENSION</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MEMORY_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MODULE_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PROCESS_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>REGISTRY_KEY_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>REGISTRY_VALUE_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RESOURCE_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SCHEDULED_JOB_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SECURITY_FINDING</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ACCOUNT_CHANGE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AUTHENTICATION</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AUTHORIZATION</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ENTITY_MANAGEMENT_AUDIT</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DHCP_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NETWORK_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DNS_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FTP_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>HTTP_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RDP_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SMB_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SSH_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CONFIG_STATE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INVENTORY_INFO</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EMAIL_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>API_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CLOUD_API</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateCustomLogSourceRequest withGlueInvocationRoleArn(String glueInvocationRoleArn) {
-        setGlueInvocationRoleArn(glueInvocationRoleArn);
+    public CreateCustomLogSourceRequest withEventClasses(String... eventClasses) {
+        if (this.eventClasses == null) {
+            setEventClasses(new java.util.ArrayList<String>(eventClasses.length));
+        }
+        for (String ele : eventClasses) {
+            this.eventClasses.add(ele);
+        }
         return this;
     }
 
     /**
      * <p>
-     * The Amazon Web Services account ID of the custom source that will write logs and events into the Amazon S3 Data
-     * Lake.
+     * The Open Cybersecurity Schema Framework (OCSF) event classes which describes the type of data that the custom
+     * source will send to Security Lake. The supported event classes are:
      * </p>
-     * 
-     * @param logProviderAccountId
-     *        The Amazon Web Services account ID of the custom source that will write logs and events into the Amazon S3
-     *        Data Lake.
-     */
-
-    public void setLogProviderAccountId(String logProviderAccountId) {
-        this.logProviderAccountId = logProviderAccountId;
-    }
-
-    /**
+     * <ul>
+     * <li>
      * <p>
-     * The Amazon Web Services account ID of the custom source that will write logs and events into the Amazon S3 Data
-     * Lake.
+     * <code>ACCESS_ACTIVITY</code>
      * </p>
-     * 
-     * @return The Amazon Web Services account ID of the custom source that will write logs and events into the Amazon
-     *         S3 Data Lake.
-     */
-
-    public String getLogProviderAccountId() {
-        return this.logProviderAccountId;
-    }
-
-    /**
+     * </li>
+     * <li>
      * <p>
-     * The Amazon Web Services account ID of the custom source that will write logs and events into the Amazon S3 Data
-     * Lake.
+     * <code>FILE_ACTIVITY</code>
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KERNEL_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KERNEL_EXTENSION</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MEMORY_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MODULE_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PROCESS_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>REGISTRY_KEY_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>REGISTRY_VALUE_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RESOURCE_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SCHEDULED_JOB_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SECURITY_FINDING</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ACCOUNT_CHANGE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AUTHENTICATION</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AUTHORIZATION</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ENTITY_MANAGEMENT_AUDIT</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DHCP_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NETWORK_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DNS_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FTP_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HTTP_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RDP_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SMB_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SSH_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONFIG_STATE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INVENTORY_INFO</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EMAIL_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>API_ACTIVITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CLOUD_API</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @param logProviderAccountId
-     *        The Amazon Web Services account ID of the custom source that will write logs and events into the Amazon S3
-     *        Data Lake.
+     * @param eventClasses
+     *        The Open Cybersecurity Schema Framework (OCSF) event classes which describes the type of data that the
+     *        custom source will send to Security Lake. The supported event classes are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ACCESS_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FILE_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KERNEL_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KERNEL_EXTENSION</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MEMORY_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MODULE_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PROCESS_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>REGISTRY_KEY_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>REGISTRY_VALUE_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RESOURCE_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SCHEDULED_JOB_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SECURITY_FINDING</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ACCOUNT_CHANGE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AUTHENTICATION</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AUTHORIZATION</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ENTITY_MANAGEMENT_AUDIT</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DHCP_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NETWORK_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DNS_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FTP_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>HTTP_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RDP_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SMB_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SSH_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CONFIG_STATE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INVENTORY_INFO</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EMAIL_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>API_ACTIVITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CLOUD_API</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateCustomLogSourceRequest withLogProviderAccountId(String logProviderAccountId) {
-        setLogProviderAccountId(logProviderAccountId);
+    public CreateCustomLogSourceRequest withEventClasses(java.util.Collection<String> eventClasses) {
+        setEventClasses(eventClasses);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specify the name for a third-party custom source. This must be a Regionally unique value.
+     * </p>
+     * 
+     * @param sourceName
+     *        Specify the name for a third-party custom source. This must be a Regionally unique value.
+     */
+
+    public void setSourceName(String sourceName) {
+        this.sourceName = sourceName;
+    }
+
+    /**
+     * <p>
+     * Specify the name for a third-party custom source. This must be a Regionally unique value.
+     * </p>
+     * 
+     * @return Specify the name for a third-party custom source. This must be a Regionally unique value.
+     */
+
+    public String getSourceName() {
+        return this.sourceName;
+    }
+
+    /**
+     * <p>
+     * Specify the name for a third-party custom source. This must be a Regionally unique value.
+     * </p>
+     * 
+     * @param sourceName
+     *        Specify the name for a third-party custom source. This must be a Regionally unique value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCustomLogSourceRequest withSourceName(String sourceName) {
+        setSourceName(sourceName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specify the source version for the third-party custom source, to limit log collection to a specific version of
+     * custom data source.
+     * </p>
+     * 
+     * @param sourceVersion
+     *        Specify the source version for the third-party custom source, to limit log collection to a specific
+     *        version of custom data source.
+     */
+
+    public void setSourceVersion(String sourceVersion) {
+        this.sourceVersion = sourceVersion;
+    }
+
+    /**
+     * <p>
+     * Specify the source version for the third-party custom source, to limit log collection to a specific version of
+     * custom data source.
+     * </p>
+     * 
+     * @return Specify the source version for the third-party custom source, to limit log collection to a specific
+     *         version of custom data source.
+     */
+
+    public String getSourceVersion() {
+        return this.sourceVersion;
+    }
+
+    /**
+     * <p>
+     * Specify the source version for the third-party custom source, to limit log collection to a specific version of
+     * custom data source.
+     * </p>
+     * 
+     * @param sourceVersion
+     *        Specify the source version for the third-party custom source, to limit log collection to a specific
+     *        version of custom data source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCustomLogSourceRequest withSourceVersion(String sourceVersion) {
+        setSourceVersion(sourceVersion);
         return this;
     }
 
@@ -345,14 +1587,14 @@ public class CreateCustomLogSourceRequest extends com.amazonaws.AmazonWebService
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getCustomSourceName() != null)
-            sb.append("CustomSourceName: ").append(getCustomSourceName()).append(",");
-        if (getEventClass() != null)
-            sb.append("EventClass: ").append(getEventClass()).append(",");
-        if (getGlueInvocationRoleArn() != null)
-            sb.append("GlueInvocationRoleArn: ").append(getGlueInvocationRoleArn()).append(",");
-        if (getLogProviderAccountId() != null)
-            sb.append("LogProviderAccountId: ").append(getLogProviderAccountId());
+        if (getConfiguration() != null)
+            sb.append("Configuration: ").append(getConfiguration()).append(",");
+        if (getEventClasses() != null)
+            sb.append("EventClasses: ").append(getEventClasses()).append(",");
+        if (getSourceName() != null)
+            sb.append("SourceName: ").append(getSourceName()).append(",");
+        if (getSourceVersion() != null)
+            sb.append("SourceVersion: ").append(getSourceVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -367,21 +1609,21 @@ public class CreateCustomLogSourceRequest extends com.amazonaws.AmazonWebService
         if (obj instanceof CreateCustomLogSourceRequest == false)
             return false;
         CreateCustomLogSourceRequest other = (CreateCustomLogSourceRequest) obj;
-        if (other.getCustomSourceName() == null ^ this.getCustomSourceName() == null)
+        if (other.getConfiguration() == null ^ this.getConfiguration() == null)
             return false;
-        if (other.getCustomSourceName() != null && other.getCustomSourceName().equals(this.getCustomSourceName()) == false)
+        if (other.getConfiguration() != null && other.getConfiguration().equals(this.getConfiguration()) == false)
             return false;
-        if (other.getEventClass() == null ^ this.getEventClass() == null)
+        if (other.getEventClasses() == null ^ this.getEventClasses() == null)
             return false;
-        if (other.getEventClass() != null && other.getEventClass().equals(this.getEventClass()) == false)
+        if (other.getEventClasses() != null && other.getEventClasses().equals(this.getEventClasses()) == false)
             return false;
-        if (other.getGlueInvocationRoleArn() == null ^ this.getGlueInvocationRoleArn() == null)
+        if (other.getSourceName() == null ^ this.getSourceName() == null)
             return false;
-        if (other.getGlueInvocationRoleArn() != null && other.getGlueInvocationRoleArn().equals(this.getGlueInvocationRoleArn()) == false)
+        if (other.getSourceName() != null && other.getSourceName().equals(this.getSourceName()) == false)
             return false;
-        if (other.getLogProviderAccountId() == null ^ this.getLogProviderAccountId() == null)
+        if (other.getSourceVersion() == null ^ this.getSourceVersion() == null)
             return false;
-        if (other.getLogProviderAccountId() != null && other.getLogProviderAccountId().equals(this.getLogProviderAccountId()) == false)
+        if (other.getSourceVersion() != null && other.getSourceVersion().equals(this.getSourceVersion()) == false)
             return false;
         return true;
     }
@@ -391,10 +1633,10 @@ public class CreateCustomLogSourceRequest extends com.amazonaws.AmazonWebService
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getCustomSourceName() == null) ? 0 : getCustomSourceName().hashCode());
-        hashCode = prime * hashCode + ((getEventClass() == null) ? 0 : getEventClass().hashCode());
-        hashCode = prime * hashCode + ((getGlueInvocationRoleArn() == null) ? 0 : getGlueInvocationRoleArn().hashCode());
-        hashCode = prime * hashCode + ((getLogProviderAccountId() == null) ? 0 : getLogProviderAccountId().hashCode());
+        hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getEventClasses() == null) ? 0 : getEventClasses().hashCode());
+        hashCode = prime * hashCode + ((getSourceName() == null) ? 0 : getSourceName().hashCode());
+        hashCode = prime * hashCode + ((getSourceVersion() == null) ? 0 : getSourceVersion().hashCode());
         return hashCode;
     }
 

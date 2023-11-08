@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Configures inspection of the response header. This is part of the <code>ResponseInspection</code> configuration for
- * <code>AWSManagedRulesATPRuleSet</code>.
+ * <code>AWSManagedRulesATPRuleSet</code> and <code>AWSManagedRulesACFPRuleSet</code>.
  * </p>
  * <note>
  * <p>
@@ -39,29 +39,31 @@ public class ResponseInspectionHeader implements Serializable, Cloneable, Struct
      * The name of the header to match against. The name must be an exact match, including case.
      * </p>
      * <p>
-     * JSON example: <code>"Name": [ "LoginResult" ]</code>
+     * JSON example: <code>"Name": [ "RequestResult" ]</code>
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Values in the response header with the specified name that indicate a successful login attempt. To be counted as
-     * a successful login, the value must be an exact match, including case. Each value must be unique among the success
-     * and failure values.
+     * Values in the response header with the specified name that indicate a successful login or account creation
+     * attempt. To be counted as a success, the value must be an exact match, including case. Each value must be unique
+     * among the success and failure values.
      * </p>
      * <p>
-     * JSON example: <code>"SuccessValues": [ "LoginPassed", "Successful login" ]</code>
+     * JSON examples: <code>"SuccessValues": [ "LoginPassed", "Successful login" ]</code> and
+     * <code>"SuccessValues": [ "AccountCreated", "Successful account creation" ]</code>
      * </p>
      */
     private java.util.List<String> successValues;
     /**
      * <p>
-     * Values in the response header with the specified name that indicate a failed login attempt. To be counted as a
-     * failed login, the value must be an exact match, including case. Each value must be unique among the success and
-     * failure values.
+     * Values in the response header with the specified name that indicate a failed login or account creation attempt.
+     * To be counted as a failure, the value must be an exact match, including case. Each value must be unique among the
+     * success and failure values.
      * </p>
      * <p>
-     * JSON example: <code>"FailureValues": [ "LoginFailed", "Failed login" ]</code>
+     * JSON examples: <code>"FailureValues": [ "LoginFailed", "Failed login" ]</code> and
+     * <code>"FailureValues": [ "AccountCreationFailed" ]</code>
      * </p>
      */
     private java.util.List<String> failureValues;
@@ -71,13 +73,13 @@ public class ResponseInspectionHeader implements Serializable, Cloneable, Struct
      * The name of the header to match against. The name must be an exact match, including case.
      * </p>
      * <p>
-     * JSON example: <code>"Name": [ "LoginResult" ]</code>
+     * JSON example: <code>"Name": [ "RequestResult" ]</code>
      * </p>
      * 
      * @param name
      *        The name of the header to match against. The name must be an exact match, including case.</p>
      *        <p>
-     *        JSON example: <code>"Name": [ "LoginResult" ]</code>
+     *        JSON example: <code>"Name": [ "RequestResult" ]</code>
      */
 
     public void setName(String name) {
@@ -89,12 +91,12 @@ public class ResponseInspectionHeader implements Serializable, Cloneable, Struct
      * The name of the header to match against. The name must be an exact match, including case.
      * </p>
      * <p>
-     * JSON example: <code>"Name": [ "LoginResult" ]</code>
+     * JSON example: <code>"Name": [ "RequestResult" ]</code>
      * </p>
      * 
      * @return The name of the header to match against. The name must be an exact match, including case.</p>
      *         <p>
-     *         JSON example: <code>"Name": [ "LoginResult" ]</code>
+     *         JSON example: <code>"Name": [ "RequestResult" ]</code>
      */
 
     public String getName() {
@@ -106,13 +108,13 @@ public class ResponseInspectionHeader implements Serializable, Cloneable, Struct
      * The name of the header to match against. The name must be an exact match, including case.
      * </p>
      * <p>
-     * JSON example: <code>"Name": [ "LoginResult" ]</code>
+     * JSON example: <code>"Name": [ "RequestResult" ]</code>
      * </p>
      * 
      * @param name
      *        The name of the header to match against. The name must be an exact match, including case.</p>
      *        <p>
-     *        JSON example: <code>"Name": [ "LoginResult" ]</code>
+     *        JSON example: <code>"Name": [ "RequestResult" ]</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -123,19 +125,21 @@ public class ResponseInspectionHeader implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Values in the response header with the specified name that indicate a successful login attempt. To be counted as
-     * a successful login, the value must be an exact match, including case. Each value must be unique among the success
-     * and failure values.
+     * Values in the response header with the specified name that indicate a successful login or account creation
+     * attempt. To be counted as a success, the value must be an exact match, including case. Each value must be unique
+     * among the success and failure values.
      * </p>
      * <p>
-     * JSON example: <code>"SuccessValues": [ "LoginPassed", "Successful login" ]</code>
+     * JSON examples: <code>"SuccessValues": [ "LoginPassed", "Successful login" ]</code> and
+     * <code>"SuccessValues": [ "AccountCreated", "Successful account creation" ]</code>
      * </p>
      * 
-     * @return Values in the response header with the specified name that indicate a successful login attempt. To be
-     *         counted as a successful login, the value must be an exact match, including case. Each value must be
-     *         unique among the success and failure values. </p>
+     * @return Values in the response header with the specified name that indicate a successful login or account
+     *         creation attempt. To be counted as a success, the value must be an exact match, including case. Each
+     *         value must be unique among the success and failure values. </p>
      *         <p>
-     *         JSON example: <code>"SuccessValues": [ "LoginPassed", "Successful login" ]</code>
+     *         JSON examples: <code>"SuccessValues": [ "LoginPassed", "Successful login" ]</code> and
+     *         <code>"SuccessValues": [ "AccountCreated", "Successful account creation" ]</code>
      */
 
     public java.util.List<String> getSuccessValues() {
@@ -144,20 +148,22 @@ public class ResponseInspectionHeader implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Values in the response header with the specified name that indicate a successful login attempt. To be counted as
-     * a successful login, the value must be an exact match, including case. Each value must be unique among the success
-     * and failure values.
+     * Values in the response header with the specified name that indicate a successful login or account creation
+     * attempt. To be counted as a success, the value must be an exact match, including case. Each value must be unique
+     * among the success and failure values.
      * </p>
      * <p>
-     * JSON example: <code>"SuccessValues": [ "LoginPassed", "Successful login" ]</code>
+     * JSON examples: <code>"SuccessValues": [ "LoginPassed", "Successful login" ]</code> and
+     * <code>"SuccessValues": [ "AccountCreated", "Successful account creation" ]</code>
      * </p>
      * 
      * @param successValues
-     *        Values in the response header with the specified name that indicate a successful login attempt. To be
-     *        counted as a successful login, the value must be an exact match, including case. Each value must be unique
-     *        among the success and failure values. </p>
+     *        Values in the response header with the specified name that indicate a successful login or account creation
+     *        attempt. To be counted as a success, the value must be an exact match, including case. Each value must be
+     *        unique among the success and failure values. </p>
      *        <p>
-     *        JSON example: <code>"SuccessValues": [ "LoginPassed", "Successful login" ]</code>
+     *        JSON examples: <code>"SuccessValues": [ "LoginPassed", "Successful login" ]</code> and
+     *        <code>"SuccessValues": [ "AccountCreated", "Successful account creation" ]</code>
      */
 
     public void setSuccessValues(java.util.Collection<String> successValues) {
@@ -171,12 +177,13 @@ public class ResponseInspectionHeader implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Values in the response header with the specified name that indicate a successful login attempt. To be counted as
-     * a successful login, the value must be an exact match, including case. Each value must be unique among the success
-     * and failure values.
+     * Values in the response header with the specified name that indicate a successful login or account creation
+     * attempt. To be counted as a success, the value must be an exact match, including case. Each value must be unique
+     * among the success and failure values.
      * </p>
      * <p>
-     * JSON example: <code>"SuccessValues": [ "LoginPassed", "Successful login" ]</code>
+     * JSON examples: <code>"SuccessValues": [ "LoginPassed", "Successful login" ]</code> and
+     * <code>"SuccessValues": [ "AccountCreated", "Successful account creation" ]</code>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -185,11 +192,12 @@ public class ResponseInspectionHeader implements Serializable, Cloneable, Struct
      * </p>
      * 
      * @param successValues
-     *        Values in the response header with the specified name that indicate a successful login attempt. To be
-     *        counted as a successful login, the value must be an exact match, including case. Each value must be unique
-     *        among the success and failure values. </p>
+     *        Values in the response header with the specified name that indicate a successful login or account creation
+     *        attempt. To be counted as a success, the value must be an exact match, including case. Each value must be
+     *        unique among the success and failure values. </p>
      *        <p>
-     *        JSON example: <code>"SuccessValues": [ "LoginPassed", "Successful login" ]</code>
+     *        JSON examples: <code>"SuccessValues": [ "LoginPassed", "Successful login" ]</code> and
+     *        <code>"SuccessValues": [ "AccountCreated", "Successful account creation" ]</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -205,20 +213,22 @@ public class ResponseInspectionHeader implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Values in the response header with the specified name that indicate a successful login attempt. To be counted as
-     * a successful login, the value must be an exact match, including case. Each value must be unique among the success
-     * and failure values.
+     * Values in the response header with the specified name that indicate a successful login or account creation
+     * attempt. To be counted as a success, the value must be an exact match, including case. Each value must be unique
+     * among the success and failure values.
      * </p>
      * <p>
-     * JSON example: <code>"SuccessValues": [ "LoginPassed", "Successful login" ]</code>
+     * JSON examples: <code>"SuccessValues": [ "LoginPassed", "Successful login" ]</code> and
+     * <code>"SuccessValues": [ "AccountCreated", "Successful account creation" ]</code>
      * </p>
      * 
      * @param successValues
-     *        Values in the response header with the specified name that indicate a successful login attempt. To be
-     *        counted as a successful login, the value must be an exact match, including case. Each value must be unique
-     *        among the success and failure values. </p>
+     *        Values in the response header with the specified name that indicate a successful login or account creation
+     *        attempt. To be counted as a success, the value must be an exact match, including case. Each value must be
+     *        unique among the success and failure values. </p>
      *        <p>
-     *        JSON example: <code>"SuccessValues": [ "LoginPassed", "Successful login" ]</code>
+     *        JSON examples: <code>"SuccessValues": [ "LoginPassed", "Successful login" ]</code> and
+     *        <code>"SuccessValues": [ "AccountCreated", "Successful account creation" ]</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -229,19 +239,21 @@ public class ResponseInspectionHeader implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Values in the response header with the specified name that indicate a failed login attempt. To be counted as a
-     * failed login, the value must be an exact match, including case. Each value must be unique among the success and
-     * failure values.
+     * Values in the response header with the specified name that indicate a failed login or account creation attempt.
+     * To be counted as a failure, the value must be an exact match, including case. Each value must be unique among the
+     * success and failure values.
      * </p>
      * <p>
-     * JSON example: <code>"FailureValues": [ "LoginFailed", "Failed login" ]</code>
+     * JSON examples: <code>"FailureValues": [ "LoginFailed", "Failed login" ]</code> and
+     * <code>"FailureValues": [ "AccountCreationFailed" ]</code>
      * </p>
      * 
-     * @return Values in the response header with the specified name that indicate a failed login attempt. To be counted
-     *         as a failed login, the value must be an exact match, including case. Each value must be unique among the
-     *         success and failure values. </p>
+     * @return Values in the response header with the specified name that indicate a failed login or account creation
+     *         attempt. To be counted as a failure, the value must be an exact match, including case. Each value must be
+     *         unique among the success and failure values. </p>
      *         <p>
-     *         JSON example: <code>"FailureValues": [ "LoginFailed", "Failed login" ]</code>
+     *         JSON examples: <code>"FailureValues": [ "LoginFailed", "Failed login" ]</code> and
+     *         <code>"FailureValues": [ "AccountCreationFailed" ]</code>
      */
 
     public java.util.List<String> getFailureValues() {
@@ -250,20 +262,22 @@ public class ResponseInspectionHeader implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Values in the response header with the specified name that indicate a failed login attempt. To be counted as a
-     * failed login, the value must be an exact match, including case. Each value must be unique among the success and
-     * failure values.
+     * Values in the response header with the specified name that indicate a failed login or account creation attempt.
+     * To be counted as a failure, the value must be an exact match, including case. Each value must be unique among the
+     * success and failure values.
      * </p>
      * <p>
-     * JSON example: <code>"FailureValues": [ "LoginFailed", "Failed login" ]</code>
+     * JSON examples: <code>"FailureValues": [ "LoginFailed", "Failed login" ]</code> and
+     * <code>"FailureValues": [ "AccountCreationFailed" ]</code>
      * </p>
      * 
      * @param failureValues
-     *        Values in the response header with the specified name that indicate a failed login attempt. To be counted
-     *        as a failed login, the value must be an exact match, including case. Each value must be unique among the
-     *        success and failure values. </p>
+     *        Values in the response header with the specified name that indicate a failed login or account creation
+     *        attempt. To be counted as a failure, the value must be an exact match, including case. Each value must be
+     *        unique among the success and failure values. </p>
      *        <p>
-     *        JSON example: <code>"FailureValues": [ "LoginFailed", "Failed login" ]</code>
+     *        JSON examples: <code>"FailureValues": [ "LoginFailed", "Failed login" ]</code> and
+     *        <code>"FailureValues": [ "AccountCreationFailed" ]</code>
      */
 
     public void setFailureValues(java.util.Collection<String> failureValues) {
@@ -277,12 +291,13 @@ public class ResponseInspectionHeader implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Values in the response header with the specified name that indicate a failed login attempt. To be counted as a
-     * failed login, the value must be an exact match, including case. Each value must be unique among the success and
-     * failure values.
+     * Values in the response header with the specified name that indicate a failed login or account creation attempt.
+     * To be counted as a failure, the value must be an exact match, including case. Each value must be unique among the
+     * success and failure values.
      * </p>
      * <p>
-     * JSON example: <code>"FailureValues": [ "LoginFailed", "Failed login" ]</code>
+     * JSON examples: <code>"FailureValues": [ "LoginFailed", "Failed login" ]</code> and
+     * <code>"FailureValues": [ "AccountCreationFailed" ]</code>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -291,11 +306,12 @@ public class ResponseInspectionHeader implements Serializable, Cloneable, Struct
      * </p>
      * 
      * @param failureValues
-     *        Values in the response header with the specified name that indicate a failed login attempt. To be counted
-     *        as a failed login, the value must be an exact match, including case. Each value must be unique among the
-     *        success and failure values. </p>
+     *        Values in the response header with the specified name that indicate a failed login or account creation
+     *        attempt. To be counted as a failure, the value must be an exact match, including case. Each value must be
+     *        unique among the success and failure values. </p>
      *        <p>
-     *        JSON example: <code>"FailureValues": [ "LoginFailed", "Failed login" ]</code>
+     *        JSON examples: <code>"FailureValues": [ "LoginFailed", "Failed login" ]</code> and
+     *        <code>"FailureValues": [ "AccountCreationFailed" ]</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -311,20 +327,22 @@ public class ResponseInspectionHeader implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Values in the response header with the specified name that indicate a failed login attempt. To be counted as a
-     * failed login, the value must be an exact match, including case. Each value must be unique among the success and
-     * failure values.
+     * Values in the response header with the specified name that indicate a failed login or account creation attempt.
+     * To be counted as a failure, the value must be an exact match, including case. Each value must be unique among the
+     * success and failure values.
      * </p>
      * <p>
-     * JSON example: <code>"FailureValues": [ "LoginFailed", "Failed login" ]</code>
+     * JSON examples: <code>"FailureValues": [ "LoginFailed", "Failed login" ]</code> and
+     * <code>"FailureValues": [ "AccountCreationFailed" ]</code>
      * </p>
      * 
      * @param failureValues
-     *        Values in the response header with the specified name that indicate a failed login attempt. To be counted
-     *        as a failed login, the value must be an exact match, including case. Each value must be unique among the
-     *        success and failure values. </p>
+     *        Values in the response header with the specified name that indicate a failed login or account creation
+     *        attempt. To be counted as a failure, the value must be an exact match, including case. Each value must be
+     *        unique among the success and failure values. </p>
      *        <p>
-     *        JSON example: <code>"FailureValues": [ "LoginFailed", "Failed login" ]</code>
+     *        JSON examples: <code>"FailureValues": [ "LoginFailed", "Failed login" ]</code> and
+     *        <code>"FailureValues": [ "AccountCreationFailed" ]</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

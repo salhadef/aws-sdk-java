@@ -307,6 +307,37 @@ public interface AWSLakeFormationAsync extends AWSLakeFormation {
 
     /**
      * <p>
+     * Enforce Lake Formation permissions for the given databases, tables, and principals.
+     * </p>
+     * 
+     * @param createLakeFormationOptInRequest
+     * @return A Java Future containing the result of the CreateLakeFormationOptIn operation returned by the service.
+     * @sample AWSLakeFormationAsync.CreateLakeFormationOptIn
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/CreateLakeFormationOptIn"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLakeFormationOptInResult> createLakeFormationOptInAsync(CreateLakeFormationOptInRequest createLakeFormationOptInRequest);
+
+    /**
+     * <p>
+     * Enforce Lake Formation permissions for the given databases, tables, and principals.
+     * </p>
+     * 
+     * @param createLakeFormationOptInRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateLakeFormationOptIn operation returned by the service.
+     * @sample AWSLakeFormationAsyncHandler.CreateLakeFormationOptIn
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/CreateLakeFormationOptIn"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLakeFormationOptInResult> createLakeFormationOptInAsync(CreateLakeFormationOptInRequest createLakeFormationOptInRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateLakeFormationOptInRequest, CreateLakeFormationOptInResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a data cell filter.
      * </p>
      * 
@@ -372,6 +403,37 @@ public interface AWSLakeFormationAsync extends AWSLakeFormation {
      */
     java.util.concurrent.Future<DeleteLFTagResult> deleteLFTagAsync(DeleteLFTagRequest deleteLFTagRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteLFTagRequest, DeleteLFTagResult> asyncHandler);
+
+    /**
+     * <p>
+     * Remove the Lake Formation permissions enforcement of the given databases, tables, and principals.
+     * </p>
+     * 
+     * @param deleteLakeFormationOptInRequest
+     * @return A Java Future containing the result of the DeleteLakeFormationOptIn operation returned by the service.
+     * @sample AWSLakeFormationAsync.DeleteLakeFormationOptIn
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteLakeFormationOptIn"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLakeFormationOptInResult> deleteLakeFormationOptInAsync(DeleteLakeFormationOptInRequest deleteLakeFormationOptInRequest);
+
+    /**
+     * <p>
+     * Remove the Lake Formation permissions enforcement of the given databases, tables, and principals.
+     * </p>
+     * 
+     * @param deleteLakeFormationOptInRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteLakeFormationOptIn operation returned by the service.
+     * @sample AWSLakeFormationAsyncHandler.DeleteLakeFormationOptIn
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteLakeFormationOptIn"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLakeFormationOptInResult> deleteLakeFormationOptInAsync(DeleteLakeFormationOptInRequest deleteLakeFormationOptInRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteLakeFormationOptInRequest, DeleteLakeFormationOptInResult> asyncHandler);
 
     /**
      * <p>
@@ -1069,6 +1131,37 @@ public interface AWSLakeFormationAsync extends AWSLakeFormation {
 
     /**
      * <p>
+     * Retrieve the current list of resources and principals that are opt in to enforce Lake Formation permissions.
+     * </p>
+     * 
+     * @param listLakeFormationOptInsRequest
+     * @return A Java Future containing the result of the ListLakeFormationOptIns operation returned by the service.
+     * @sample AWSLakeFormationAsync.ListLakeFormationOptIns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListLakeFormationOptIns"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListLakeFormationOptInsResult> listLakeFormationOptInsAsync(ListLakeFormationOptInsRequest listLakeFormationOptInsRequest);
+
+    /**
+     * <p>
+     * Retrieve the current list of resources and principals that are opt in to enforce Lake Formation permissions.
+     * </p>
+     * 
+     * @param listLakeFormationOptInsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListLakeFormationOptIns operation returned by the service.
+     * @sample AWSLakeFormationAsyncHandler.ListLakeFormationOptIns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListLakeFormationOptIns"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListLakeFormationOptInsResult> listLakeFormationOptInsAsync(ListLakeFormationOptInsRequest listLakeFormationOptInsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListLakeFormationOptInsRequest, ListLakeFormationOptInsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a list of the principal permissions on the resource, filtered by the permissions of the caller. For
      * example, if you are granted an ALTER permission, you are able to see only the principal permissions for ALTER.
      * </p>
@@ -1077,7 +1170,7 @@ public interface AWSLakeFormationAsync extends AWSLakeFormation {
      * </p>
      * <p>
      * For information about permissions, see <a
-     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control
      * to Metadata and Data</a>.
      * </p>
      * 
@@ -1099,7 +1192,7 @@ public interface AWSLakeFormationAsync extends AWSLakeFormation {
      * </p>
      * <p>
      * For information about permissions, see <a
-     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control
      * to Metadata and Data</a>.
      * </p>
      * 

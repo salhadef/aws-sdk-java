@@ -39,6 +39,8 @@ public class HostedConfigurationVersionSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ContentType").build();
     private static final MarshallingInfo<String> VERSIONLABEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VersionLabel").build();
+    private static final MarshallingInfo<String> KMSKEYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("KmsKeyArn").build();
 
     private static final HostedConfigurationVersionSummaryMarshaller instance = new HostedConfigurationVersionSummaryMarshaller();
 
@@ -62,6 +64,7 @@ public class HostedConfigurationVersionSummaryMarshaller {
             protocolMarshaller.marshall(hostedConfigurationVersionSummary.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(hostedConfigurationVersionSummary.getContentType(), CONTENTTYPE_BINDING);
             protocolMarshaller.marshall(hostedConfigurationVersionSummary.getVersionLabel(), VERSIONLABEL_BINDING);
+            protocolMarshaller.marshall(hostedConfigurationVersionSummary.getKmsKeyArn(), KMSKEYARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

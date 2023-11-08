@@ -25,18 +25,18 @@ public class DisableUserResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The unique identifier for the disabled user account.
+     * The unique identifier for the deactivated user.
      * </p>
      */
     private String userId;
 
     /**
      * <p>
-     * The unique identifier for the disabled user account.
+     * The unique identifier for the deactivated user.
      * </p>
      * 
      * @param userId
-     *        The unique identifier for the disabled user account.
+     *        The unique identifier for the deactivated user.
      */
 
     public void setUserId(String userId) {
@@ -45,10 +45,10 @@ public class DisableUserResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The unique identifier for the disabled user account.
+     * The unique identifier for the deactivated user.
      * </p>
      * 
-     * @return The unique identifier for the disabled user account.
+     * @return The unique identifier for the deactivated user.
      */
 
     public String getUserId() {
@@ -57,11 +57,11 @@ public class DisableUserResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The unique identifier for the disabled user account.
+     * The unique identifier for the deactivated user.
      * </p>
      * 
      * @param userId
-     *        The unique identifier for the disabled user account.
+     *        The unique identifier for the deactivated user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

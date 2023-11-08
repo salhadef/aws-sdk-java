@@ -152,7 +152,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * <b>Aurora MySQL</b>
      * </p>
      * <p>
-     * Examples: <code>5.7.mysql_aurora.2.07.1</code>, <code>8.0.mysql_aurora.3.02.0</code>
+     * Examples: <code>5.7.mysql_aurora.2.12.0</code>, <code>8.0.mysql_aurora.3.04.0</code>
      * </p>
      */
     private String engineVersion;
@@ -286,7 +286,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
     /**
      * <p>
-     * A value that indicates whether the restored DB cluster is encrypted.
+     * Specifies whether the restored DB cluster is encrypted.
      * </p>
      */
     private Boolean storageEncrypted;
@@ -307,8 +307,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
     private String kmsKeyId;
     /**
      * <p>
-     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts. By default, mapping isn't enabled.
+     * Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to
+     * database accounts. By default, mapping isn't enabled.
      * </p>
      * <p>
      * For more information, see <a
@@ -322,7 +322,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The identifier for the database engine that was backed up to create the files stored in the Amazon S3 bucket.
      * </p>
      * <p>
-     * Valid values: <code>mysql</code>
+     * Valid Values: <code>mysql</code>
      * </p>
      */
     private String sourceEngine;
@@ -331,10 +331,10 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The version of the database that the backup files were created from.
      * </p>
      * <p>
-     * MySQL versions 5.5, 5.6, and 5.7 are supported.
+     * MySQL versions 5.7 and 8.0 are supported.
      * </p>
      * <p>
-     * Example: <code>5.6.40</code>, <code>5.7.28</code>
+     * Example: <code>5.7.40</code>, <code>8.0.28</code>
      * </p>
      */
     private String sourceEngineVersion;
@@ -403,15 +403,15 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
     private com.amazonaws.internal.SdkInternalList<String> enableCloudwatchLogsExports;
     /**
      * <p>
-     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
-     * deletion protection is enabled. By default, deletion protection isn't enabled.
+     * Specifies whether to enable deletion protection for the DB cluster. The database can't be deleted when deletion
+     * protection is enabled. By default, deletion protection isn't enabled.
      * </p>
      */
     private Boolean deletionProtection;
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB
-     * cluster. The default is not to copy them.
+     * Specifies whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The
+     * default is not to copy them.
      * </p>
      */
     private Boolean copyTagsToSnapshot;
@@ -441,7 +441,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The network type of the DB cluster.
      * </p>
      * <p>
-     * Valid values:
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
@@ -469,7 +469,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
     private String networkType;
     /**
      * <p>
-     * A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.
+     * Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.
      * </p>
      * <p>
      * For more information, see <a
@@ -515,6 +515,21 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private String masterUserSecretKmsKeyId;
+    /**
+     * <p>
+     * Specifies the storage type to be associated with the DB cluster.
+     * </p>
+     * <p>
+     * Valid Values: <code>aurora</code>, <code>aurora-iopt1</code>
+     * </p>
+     * <p>
+     * Default: <code>aurora</code>
+     * </p>
+     * <p>
+     * Valid for: Aurora DB clusters only
+     * </p>
+     */
+    private String storageType;
 
     /**
      * <p>
@@ -1290,7 +1305,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * <b>Aurora MySQL</b>
      * </p>
      * <p>
-     * Examples: <code>5.7.mysql_aurora.2.07.1</code>, <code>8.0.mysql_aurora.3.02.0</code>
+     * Examples: <code>5.7.mysql_aurora.2.12.0</code>, <code>8.0.mysql_aurora.3.04.0</code>
      * </p>
      * 
      * @param engineVersion
@@ -1306,7 +1321,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      *        <b>Aurora MySQL</b>
      *        </p>
      *        <p>
-     *        Examples: <code>5.7.mysql_aurora.2.07.1</code>, <code>8.0.mysql_aurora.3.02.0</code>
+     *        Examples: <code>5.7.mysql_aurora.2.12.0</code>, <code>8.0.mysql_aurora.3.04.0</code>
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -1328,7 +1343,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * <b>Aurora MySQL</b>
      * </p>
      * <p>
-     * Examples: <code>5.7.mysql_aurora.2.07.1</code>, <code>8.0.mysql_aurora.3.02.0</code>
+     * Examples: <code>5.7.mysql_aurora.2.12.0</code>, <code>8.0.mysql_aurora.3.04.0</code>
      * </p>
      * 
      * @return The version number of the database engine to use.</p>
@@ -1343,7 +1358,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      *         <b>Aurora MySQL</b>
      *         </p>
      *         <p>
-     *         Examples: <code>5.7.mysql_aurora.2.07.1</code>, <code>8.0.mysql_aurora.3.02.0</code>
+     *         Examples: <code>5.7.mysql_aurora.2.12.0</code>, <code>8.0.mysql_aurora.3.04.0</code>
      */
 
     public String getEngineVersion() {
@@ -1365,7 +1380,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * <b>Aurora MySQL</b>
      * </p>
      * <p>
-     * Examples: <code>5.7.mysql_aurora.2.07.1</code>, <code>8.0.mysql_aurora.3.02.0</code>
+     * Examples: <code>5.7.mysql_aurora.2.12.0</code>, <code>8.0.mysql_aurora.3.04.0</code>
      * </p>
      * 
      * @param engineVersion
@@ -1381,7 +1396,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      *        <b>Aurora MySQL</b>
      *        </p>
      *        <p>
-     *        Examples: <code>5.7.mysql_aurora.2.07.1</code>, <code>8.0.mysql_aurora.3.02.0</code>
+     *        Examples: <code>5.7.mysql_aurora.2.12.0</code>, <code>8.0.mysql_aurora.3.04.0</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2212,11 +2227,11 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether the restored DB cluster is encrypted.
+     * Specifies whether the restored DB cluster is encrypted.
      * </p>
      * 
      * @param storageEncrypted
-     *        A value that indicates whether the restored DB cluster is encrypted.
+     *        Specifies whether the restored DB cluster is encrypted.
      */
 
     public void setStorageEncrypted(Boolean storageEncrypted) {
@@ -2225,10 +2240,10 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether the restored DB cluster is encrypted.
+     * Specifies whether the restored DB cluster is encrypted.
      * </p>
      * 
-     * @return A value that indicates whether the restored DB cluster is encrypted.
+     * @return Specifies whether the restored DB cluster is encrypted.
      */
 
     public Boolean getStorageEncrypted() {
@@ -2237,11 +2252,11 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether the restored DB cluster is encrypted.
+     * Specifies whether the restored DB cluster is encrypted.
      * </p>
      * 
      * @param storageEncrypted
-     *        A value that indicates whether the restored DB cluster is encrypted.
+     *        Specifies whether the restored DB cluster is encrypted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2252,10 +2267,10 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether the restored DB cluster is encrypted.
+     * Specifies whether the restored DB cluster is encrypted.
      * </p>
      * 
-     * @return A value that indicates whether the restored DB cluster is encrypted.
+     * @return Specifies whether the restored DB cluster is encrypted.
      */
 
     public Boolean isStorageEncrypted() {
@@ -2358,8 +2373,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts. By default, mapping isn't enabled.
+     * Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to
+     * database accounts. By default, mapping isn't enabled.
      * </p>
      * <p>
      * For more information, see <a
@@ -2368,8 +2383,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
-     *        (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
+     *        Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts
+     *        to database accounts. By default, mapping isn't enabled.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM
@@ -2382,8 +2397,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts. By default, mapping isn't enabled.
+     * Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to
+     * database accounts. By default, mapping isn't enabled.
      * </p>
      * <p>
      * For more information, see <a
@@ -2391,8 +2406,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * Authentication</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * 
-     * @return A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
-     *         (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
+     * @return Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts
+     *         to database accounts. By default, mapping isn't enabled.</p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM
@@ -2405,8 +2420,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts. By default, mapping isn't enabled.
+     * Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to
+     * database accounts. By default, mapping isn't enabled.
      * </p>
      * <p>
      * For more information, see <a
@@ -2415,8 +2430,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
-     *        (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
+     *        Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts
+     *        to database accounts. By default, mapping isn't enabled.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM
@@ -2431,8 +2446,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts. By default, mapping isn't enabled.
+     * Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to
+     * database accounts. By default, mapping isn't enabled.
      * </p>
      * <p>
      * For more information, see <a
@@ -2440,8 +2455,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * Authentication</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * 
-     * @return A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
-     *         (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
+     * @return Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts
+     *         to database accounts. By default, mapping isn't enabled.</p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM
@@ -2457,14 +2472,14 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The identifier for the database engine that was backed up to create the files stored in the Amazon S3 bucket.
      * </p>
      * <p>
-     * Valid values: <code>mysql</code>
+     * Valid Values: <code>mysql</code>
      * </p>
      * 
      * @param sourceEngine
      *        The identifier for the database engine that was backed up to create the files stored in the Amazon S3
      *        bucket.</p>
      *        <p>
-     *        Valid values: <code>mysql</code>
+     *        Valid Values: <code>mysql</code>
      */
 
     public void setSourceEngine(String sourceEngine) {
@@ -2476,13 +2491,13 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The identifier for the database engine that was backed up to create the files stored in the Amazon S3 bucket.
      * </p>
      * <p>
-     * Valid values: <code>mysql</code>
+     * Valid Values: <code>mysql</code>
      * </p>
      * 
      * @return The identifier for the database engine that was backed up to create the files stored in the Amazon S3
      *         bucket.</p>
      *         <p>
-     *         Valid values: <code>mysql</code>
+     *         Valid Values: <code>mysql</code>
      */
 
     public String getSourceEngine() {
@@ -2494,14 +2509,14 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The identifier for the database engine that was backed up to create the files stored in the Amazon S3 bucket.
      * </p>
      * <p>
-     * Valid values: <code>mysql</code>
+     * Valid Values: <code>mysql</code>
      * </p>
      * 
      * @param sourceEngine
      *        The identifier for the database engine that was backed up to create the files stored in the Amazon S3
      *        bucket.</p>
      *        <p>
-     *        Valid values: <code>mysql</code>
+     *        Valid Values: <code>mysql</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2515,19 +2530,19 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The version of the database that the backup files were created from.
      * </p>
      * <p>
-     * MySQL versions 5.5, 5.6, and 5.7 are supported.
+     * MySQL versions 5.7 and 8.0 are supported.
      * </p>
      * <p>
-     * Example: <code>5.6.40</code>, <code>5.7.28</code>
+     * Example: <code>5.7.40</code>, <code>8.0.28</code>
      * </p>
      * 
      * @param sourceEngineVersion
      *        The version of the database that the backup files were created from.</p>
      *        <p>
-     *        MySQL versions 5.5, 5.6, and 5.7 are supported.
+     *        MySQL versions 5.7 and 8.0 are supported.
      *        </p>
      *        <p>
-     *        Example: <code>5.6.40</code>, <code>5.7.28</code>
+     *        Example: <code>5.7.40</code>, <code>8.0.28</code>
      */
 
     public void setSourceEngineVersion(String sourceEngineVersion) {
@@ -2539,18 +2554,18 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The version of the database that the backup files were created from.
      * </p>
      * <p>
-     * MySQL versions 5.5, 5.6, and 5.7 are supported.
+     * MySQL versions 5.7 and 8.0 are supported.
      * </p>
      * <p>
-     * Example: <code>5.6.40</code>, <code>5.7.28</code>
+     * Example: <code>5.7.40</code>, <code>8.0.28</code>
      * </p>
      * 
      * @return The version of the database that the backup files were created from.</p>
      *         <p>
-     *         MySQL versions 5.5, 5.6, and 5.7 are supported.
+     *         MySQL versions 5.7 and 8.0 are supported.
      *         </p>
      *         <p>
-     *         Example: <code>5.6.40</code>, <code>5.7.28</code>
+     *         Example: <code>5.7.40</code>, <code>8.0.28</code>
      */
 
     public String getSourceEngineVersion() {
@@ -2562,19 +2577,19 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The version of the database that the backup files were created from.
      * </p>
      * <p>
-     * MySQL versions 5.5, 5.6, and 5.7 are supported.
+     * MySQL versions 5.7 and 8.0 are supported.
      * </p>
      * <p>
-     * Example: <code>5.6.40</code>, <code>5.7.28</code>
+     * Example: <code>5.7.40</code>, <code>8.0.28</code>
      * </p>
      * 
      * @param sourceEngineVersion
      *        The version of the database that the backup files were created from.</p>
      *        <p>
-     *        MySQL versions 5.5, 5.6, and 5.7 are supported.
+     *        MySQL versions 5.7 and 8.0 are supported.
      *        </p>
      *        <p>
-     *        Example: <code>5.6.40</code>, <code>5.7.28</code>
+     *        Example: <code>5.7.40</code>, <code>8.0.28</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3034,13 +3049,13 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
-     * deletion protection is enabled. By default, deletion protection isn't enabled.
+     * Specifies whether to enable deletion protection for the DB cluster. The database can't be deleted when deletion
+     * protection is enabled. By default, deletion protection isn't enabled.
      * </p>
      * 
      * @param deletionProtection
-     *        A value that indicates whether the DB cluster has deletion protection enabled. The database can't be
-     *        deleted when deletion protection is enabled. By default, deletion protection isn't enabled.
+     *        Specifies whether to enable deletion protection for the DB cluster. The database can't be deleted when
+     *        deletion protection is enabled. By default, deletion protection isn't enabled.
      */
 
     public void setDeletionProtection(Boolean deletionProtection) {
@@ -3049,12 +3064,12 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
-     * deletion protection is enabled. By default, deletion protection isn't enabled.
+     * Specifies whether to enable deletion protection for the DB cluster. The database can't be deleted when deletion
+     * protection is enabled. By default, deletion protection isn't enabled.
      * </p>
      * 
-     * @return A value that indicates whether the DB cluster has deletion protection enabled. The database can't be
-     *         deleted when deletion protection is enabled. By default, deletion protection isn't enabled.
+     * @return Specifies whether to enable deletion protection for the DB cluster. The database can't be deleted when
+     *         deletion protection is enabled. By default, deletion protection isn't enabled.
      */
 
     public Boolean getDeletionProtection() {
@@ -3063,13 +3078,13 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
-     * deletion protection is enabled. By default, deletion protection isn't enabled.
+     * Specifies whether to enable deletion protection for the DB cluster. The database can't be deleted when deletion
+     * protection is enabled. By default, deletion protection isn't enabled.
      * </p>
      * 
      * @param deletionProtection
-     *        A value that indicates whether the DB cluster has deletion protection enabled. The database can't be
-     *        deleted when deletion protection is enabled. By default, deletion protection isn't enabled.
+     *        Specifies whether to enable deletion protection for the DB cluster. The database can't be deleted when
+     *        deletion protection is enabled. By default, deletion protection isn't enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3080,12 +3095,12 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
-     * deletion protection is enabled. By default, deletion protection isn't enabled.
+     * Specifies whether to enable deletion protection for the DB cluster. The database can't be deleted when deletion
+     * protection is enabled. By default, deletion protection isn't enabled.
      * </p>
      * 
-     * @return A value that indicates whether the DB cluster has deletion protection enabled. The database can't be
-     *         deleted when deletion protection is enabled. By default, deletion protection isn't enabled.
+     * @return Specifies whether to enable deletion protection for the DB cluster. The database can't be deleted when
+     *         deletion protection is enabled. By default, deletion protection isn't enabled.
      */
 
     public Boolean isDeletionProtection() {
@@ -3094,13 +3109,13 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB
-     * cluster. The default is not to copy them.
+     * Specifies whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The
+     * default is not to copy them.
      * </p>
      * 
      * @param copyTagsToSnapshot
-     *        A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored
-     *        DB cluster. The default is not to copy them.
+     *        Specifies whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster.
+     *        The default is not to copy them.
      */
 
     public void setCopyTagsToSnapshot(Boolean copyTagsToSnapshot) {
@@ -3109,12 +3124,12 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB
-     * cluster. The default is not to copy them.
+     * Specifies whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The
+     * default is not to copy them.
      * </p>
      * 
-     * @return A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored
-     *         DB cluster. The default is not to copy them.
+     * @return Specifies whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster.
+     *         The default is not to copy them.
      */
 
     public Boolean getCopyTagsToSnapshot() {
@@ -3123,13 +3138,13 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB
-     * cluster. The default is not to copy them.
+     * Specifies whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The
+     * default is not to copy them.
      * </p>
      * 
      * @param copyTagsToSnapshot
-     *        A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored
-     *        DB cluster. The default is not to copy them.
+     *        Specifies whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster.
+     *        The default is not to copy them.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3140,12 +3155,12 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB
-     * cluster. The default is not to copy them.
+     * Specifies whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The
+     * default is not to copy them.
      * </p>
      * 
-     * @return A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored
-     *         DB cluster. The default is not to copy them.
+     * @return Specifies whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster.
+     *         The default is not to copy them.
      */
 
     public Boolean isCopyTagsToSnapshot() {
@@ -3302,7 +3317,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The network type of the DB cluster.
      * </p>
      * <p>
-     * Valid values:
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
@@ -3330,7 +3345,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * @param networkType
      *        The network type of the DB cluster.</p>
      *        <p>
-     *        Valid values:
+     *        Valid Values:
      *        </p>
      *        <ul>
      *        <li>
@@ -3364,7 +3379,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The network type of the DB cluster.
      * </p>
      * <p>
-     * Valid values:
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
@@ -3391,7 +3406,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * 
      * @return The network type of the DB cluster.</p>
      *         <p>
-     *         Valid values:
+     *         Valid Values:
      *         </p>
      *         <ul>
      *         <li>
@@ -3425,7 +3440,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The network type of the DB cluster.
      * </p>
      * <p>
-     * Valid values:
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
@@ -3453,7 +3468,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * @param networkType
      *        The network type of the DB cluster.</p>
      *        <p>
-     *        Valid values:
+     *        Valid Values:
      *        </p>
      *        <ul>
      *        <li>
@@ -3486,7 +3501,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.
+     * Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.
      * </p>
      * <p>
      * For more information, see <a
@@ -3508,8 +3523,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * </ul>
      * 
      * @param manageMasterUserPassword
-     *        A value that indicates whether to manage the master user password with Amazon Web Services Secrets
-     *        Manager.</p>
+     *        Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management
@@ -3535,7 +3549,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.
+     * Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.
      * </p>
      * <p>
      * For more information, see <a
@@ -3556,8 +3570,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * </li>
      * </ul>
      * 
-     * @return A value that indicates whether to manage the master user password with Amazon Web Services Secrets
-     *         Manager.</p>
+     * @return Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password
@@ -3583,7 +3596,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.
+     * Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.
      * </p>
      * <p>
      * For more information, see <a
@@ -3605,8 +3618,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * </ul>
      * 
      * @param manageMasterUserPassword
-     *        A value that indicates whether to manage the master user password with Amazon Web Services Secrets
-     *        Manager.</p>
+     *        Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management
@@ -3634,7 +3646,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.
+     * Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.
      * </p>
      * <p>
      * For more information, see <a
@@ -3655,8 +3667,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * </li>
      * </ul>
      * 
-     * @return A value that indicates whether to manage the master user password with Amazon Web Services Secrets
-     *         Manager.</p>
+     * @return Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password
@@ -3829,6 +3840,97 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * Specifies the storage type to be associated with the DB cluster.
+     * </p>
+     * <p>
+     * Valid Values: <code>aurora</code>, <code>aurora-iopt1</code>
+     * </p>
+     * <p>
+     * Default: <code>aurora</code>
+     * </p>
+     * <p>
+     * Valid for: Aurora DB clusters only
+     * </p>
+     * 
+     * @param storageType
+     *        Specifies the storage type to be associated with the DB cluster.</p>
+     *        <p>
+     *        Valid Values: <code>aurora</code>, <code>aurora-iopt1</code>
+     *        </p>
+     *        <p>
+     *        Default: <code>aurora</code>
+     *        </p>
+     *        <p>
+     *        Valid for: Aurora DB clusters only
+     */
+
+    public void setStorageType(String storageType) {
+        this.storageType = storageType;
+    }
+
+    /**
+     * <p>
+     * Specifies the storage type to be associated with the DB cluster.
+     * </p>
+     * <p>
+     * Valid Values: <code>aurora</code>, <code>aurora-iopt1</code>
+     * </p>
+     * <p>
+     * Default: <code>aurora</code>
+     * </p>
+     * <p>
+     * Valid for: Aurora DB clusters only
+     * </p>
+     * 
+     * @return Specifies the storage type to be associated with the DB cluster.</p>
+     *         <p>
+     *         Valid Values: <code>aurora</code>, <code>aurora-iopt1</code>
+     *         </p>
+     *         <p>
+     *         Default: <code>aurora</code>
+     *         </p>
+     *         <p>
+     *         Valid for: Aurora DB clusters only
+     */
+
+    public String getStorageType() {
+        return this.storageType;
+    }
+
+    /**
+     * <p>
+     * Specifies the storage type to be associated with the DB cluster.
+     * </p>
+     * <p>
+     * Valid Values: <code>aurora</code>, <code>aurora-iopt1</code>
+     * </p>
+     * <p>
+     * Default: <code>aurora</code>
+     * </p>
+     * <p>
+     * Valid for: Aurora DB clusters only
+     * </p>
+     * 
+     * @param storageType
+     *        Specifies the storage type to be associated with the DB cluster.</p>
+     *        <p>
+     *        Valid Values: <code>aurora</code>, <code>aurora-iopt1</code>
+     *        </p>
+     *        <p>
+     *        Default: <code>aurora</code>
+     *        </p>
+     *        <p>
+     *        Valid for: Aurora DB clusters only
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreDBClusterFromS3Request withStorageType(String storageType) {
+        setStorageType(storageType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -3909,7 +4011,9 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
         if (getManageMasterUserPassword() != null)
             sb.append("ManageMasterUserPassword: ").append(getManageMasterUserPassword()).append(",");
         if (getMasterUserSecretKmsKeyId() != null)
-            sb.append("MasterUserSecretKmsKeyId: ").append(getMasterUserSecretKmsKeyId());
+            sb.append("MasterUserSecretKmsKeyId: ").append(getMasterUserSecretKmsKeyId()).append(",");
+        if (getStorageType() != null)
+            sb.append("StorageType: ").append(getStorageType());
         sb.append("}");
         return sb.toString();
     }
@@ -4066,6 +4170,10 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getMasterUserSecretKmsKeyId() != null && other.getMasterUserSecretKmsKeyId().equals(this.getMasterUserSecretKmsKeyId()) == false)
             return false;
+        if (other.getStorageType() == null ^ this.getStorageType() == null)
+            return false;
+        if (other.getStorageType() != null && other.getStorageType().equals(this.getStorageType()) == false)
+            return false;
         return true;
     }
 
@@ -4109,6 +4217,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getNetworkType() == null) ? 0 : getNetworkType().hashCode());
         hashCode = prime * hashCode + ((getManageMasterUserPassword() == null) ? 0 : getManageMasterUserPassword().hashCode());
         hashCode = prime * hashCode + ((getMasterUserSecretKmsKeyId() == null) ? 0 : getMasterUserSecretKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getStorageType() == null) ? 0 : getStorageType().hashCode());
         return hashCode;
     }
 

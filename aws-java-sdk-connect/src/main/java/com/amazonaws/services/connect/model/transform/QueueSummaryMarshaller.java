@@ -35,6 +35,10 @@ public class QueueSummaryMarshaller {
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<String> QUEUETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("QueueType").build();
+    private static final MarshallingInfo<java.util.Date> LASTMODIFIEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> LASTMODIFIEDREGION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedRegion").build();
 
     private static final QueueSummaryMarshaller instance = new QueueSummaryMarshaller();
 
@@ -56,6 +60,8 @@ public class QueueSummaryMarshaller {
             protocolMarshaller.marshall(queueSummary.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(queueSummary.getName(), NAME_BINDING);
             protocolMarshaller.marshall(queueSummary.getQueueType(), QUEUETYPE_BINDING);
+            protocolMarshaller.marshall(queueSummary.getLastModifiedTime(), LASTMODIFIEDTIME_BINDING);
+            protocolMarshaller.marshall(queueSummary.getLastModifiedRegion(), LASTMODIFIEDREGION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

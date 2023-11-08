@@ -88,6 +88,14 @@ public class FieldToMatchJsonUnmarshaller implements Unmarshaller<FieldToMatch, 
                     context.nextToken();
                     fieldToMatch.setCookies(CookiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("HeaderOrder", targetDepth)) {
+                    context.nextToken();
+                    fieldToMatch.setHeaderOrder(HeaderOrderJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("JA3Fingerprint", targetDepth)) {
+                    context.nextToken();
+                    fieldToMatch.setJA3Fingerprint(JA3FingerprintJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

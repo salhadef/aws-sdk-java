@@ -22,7 +22,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * A tag is a key-value pair that is used to manage the resource.
  * </p>
  * <p>
- * This tag is available for use by AWS services that support tags.
+ * This tag is available for use by Amazon Web Services services that support tags.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/Tag" target="_top">AWS API

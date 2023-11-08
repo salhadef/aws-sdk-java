@@ -44,22 +44,17 @@ import com.amazonaws.services.securitylake.AmazonSecurityLakeClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.securitylake.model.*;
+
 import com.amazonaws.services.securitylake.model.transform.*;
 
 /**
  * Client for accessing Amazon Security Lake. All service calls made using this client are blocking, and will not return
  * until the service call completes.
  * <p>
- * <note>
- * <p>
- * Amazon Security Lake is in preview release. Your use of the Security Lake preview is subject to Section 2 of the <a
- * href="http://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>("Betas and Previews").
- * </p>
- * </note>
  * <p>
  * Amazon Security Lake is a fully managed security data lake service. You can use Security Lake to automatically
  * centralize security data from cloud, on-premises, and custom sources into a data lake that's stored in your Amazon
- * Web Servicesaccount. Amazon Web Services Organizations is an account management service that lets you consolidate
+ * Web Services account. Amazon Web Services Organizations is an account management service that lets you consolidate
  * multiple Amazon Web Services accounts into an organization that you create and centrally manage. With Organizations,
  * you can create member accounts and invite existing accounts to join your organization. Security Lake helps you
  * analyze security data for a more complete understanding of your security posture across the entire organization. It
@@ -71,7 +66,7 @@ import com.amazonaws.services.securitylake.model.transform.*;
  * </p>
  * <p>
  * Amazon Security Lake integrates with CloudTrail, a service that provides a record of actions taken by a user, role,
- * or an Amazon Web Services service in Security Lake CloudTrail captures API calls for Security Lake as events. The
+ * or an Amazon Web Services service. In Security Lake, CloudTrail captures API calls for Security Lake as events. The
  * calls captured include calls from the Security Lake console and code calls to the Security Lake API operations. If
  * you create a trail, you can enable continuous delivery of CloudTrail events to an Amazon S3 bucket, including events
  * for Security Lake. If you don't configure a trail, you can still view the most recent events in the CloudTrail
@@ -116,26 +111,11 @@ public class AmazonSecurityLakeClient extends AmazonWebServiceClient implements 
                     .withSupportsIon(false)
                     .withContentTypeOverride("application/json")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ConcurrentModificationException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.securitylake.model.transform.ConcurrentModificationExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ConflictSourceNamesException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.securitylake.model.transform.ConflictSourceNamesExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
                                     com.amazonaws.services.securitylake.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.securitylake.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
                                     com.amazonaws.services.securitylake.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("S3Exception").withExceptionUnmarshaller(
-                                    com.amazonaws.services.securitylake.model.transform.S3ExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("BucketNotFoundException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.securitylake.model.transform.BucketNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.securitylake.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
@@ -143,23 +123,11 @@ public class AmazonSecurityLakeClient extends AmazonWebServiceClient implements 
                             new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
                                     com.amazonaws.services.securitylake.model.transform.ConflictExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ConflictSubscriptionException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.securitylake.model.transform.ConflictSubscriptionExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.securitylake.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidInputException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.securitylake.model.transform.InvalidInputExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccountNotFoundException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.securitylake.model.transform.AccountNotFoundExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.securitylake.model.transform.ValidationExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("EventBridgeException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.securitylake.model.transform.EventBridgeExceptionUnmarshaller.getInstance()))
+                            new JsonErrorShapeMetadata().withErrorCode("BadRequestException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.securitylake.model.transform.BadRequestExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.securitylake.model.AmazonSecurityLakeException.class));
 
     public static AmazonSecurityLakeClientBuilder builder() {
@@ -212,16 +180,8 @@ public class AmazonSecurityLakeClient extends AmazonWebServiceClient implements 
      * <p>
      * Adds a natively supported Amazon Web Service as an Amazon Security Lake source. Enables source types for member
      * accounts in required Amazon Web Services Regions, based on the parameters you specify. You can choose any source
-     * type in any Region for either accounts that are part of a trusted organization or standalone accounts. At least
-     * one of the three dimensions is a mandatory input to this API. However, you can supply any combination of the
-     * three dimensions to this API.
-     * </p>
-     * <p>
-     * By default, a dimension refers to the entire set. When you don't provide a dimension, Security Lake assumes that
-     * the missing dimension refers to the entire set. This is overridden when you supply any one of the inputs. For
-     * instance, when you do not specify members, the API enables all Security Lake member accounts for all sources.
-     * Similarly, when you do not specify Regions, Security Lake is enabled for all the Regions where Security Lake is
-     * available as a service.
+     * type in any Region for either accounts that are part of a trusted organization or standalone accounts. Once you
+     * add an Amazon Web Service as a source, Security Lake starts collecting logs and events from it.
      * </p>
      * <p>
      * You can use this API only to enable natively supported Amazon Web Services as a source. Use
@@ -230,26 +190,25 @@ public class AmazonSecurityLakeClient extends AmazonWebServiceClient implements 
      * 
      * @param createAwsLogSourceRequest
      * @return Result of the CreateAwsLogSource operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InternalServerException
      *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
      *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
-     * @throws S3Exception
-     *         Provides an extension of the AmazonServiceException for errors reported by Amazon S3 while processing a
-     *         request. In particular, this class provides access to the Amazon S3 extended request ID. If Amazon S3 is
-     *         incorrectly handling a request and you need to contact Amazon, this extended request ID may provide
-     *         useful debugging information.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
      *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
      *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
      *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws ResourceNotFoundException
-     *         The resource could not be found.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
      * @sample AmazonSecurityLake.CreateAwsLogSource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateAwsLogSource"
      *      target="_top">AWS API Documentation</a>
@@ -304,30 +263,30 @@ public class AmazonSecurityLakeClient extends AmazonWebServiceClient implements 
      * create a custom source. Security Lake can collect logs and events from third-party custom sources. After creating
      * the appropriate IAM role to invoke Glue crawler, use this API to add a custom source name in Security Lake. This
      * operation creates a partition in the Amazon S3 bucket for Security Lake as the target location for log files from
-     * the custom source in addition to an associated Glue table and an Glue crawler.
+     * the custom source. In addition, this operation also creates an associated Glue table and an Glue crawler.
      * </p>
      * 
      * @param createCustomLogSourceRequest
      * @return Result of the CreateCustomLogSource operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InternalServerException
      *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
      *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
-     * @throws ConflictSourceNamesException
-     *         There was a conflict when you attempted to modify a Security Lake source name.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
      *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
      *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
      *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws BucketNotFoundException
-     *         Amazon Security Lake generally returns 404 errors if the requested object is missing from the bucket.
-     * @throws ResourceNotFoundException
-     *         The resource could not be found.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
      * @sample AmazonSecurityLake.CreateCustomLogSource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateCustomLogSource"
      *      target="_top">AWS API Documentation</a>
@@ -381,12 +340,10 @@ public class AmazonSecurityLakeClient extends AmazonWebServiceClient implements 
      * <p>
      * Initializes an Amazon Security Lake instance with the provided (or default) configuration. You can enable
      * Security Lake in Amazon Web Services Regions with customized settings before enabling log collection in Regions.
-     * You can either use the <code>enableAll</code> parameter to specify all Regions or specify the Regions where you
-     * want to enable Security Lake. To specify particular Regions, use the <code>Regions</code> parameter and then
-     * configure these Regions using the <code>configurations</code> parameter. If you have already enabled Security
-     * Lake in a Region when you call this command, the command will update the Region if you provide new configuration
-     * parameters. If you have not already enabled Security Lake in the Region when you call this API, it will set up
-     * the data lake in the Region with the specified configurations.
+     * To specify particular Regions, configure these Regions using the <code>configurations</code> parameter. If you
+     * have already enabled Security Lake in a Region when you call this command, the command will update the Region if
+     * you provide new configuration parameters. If you have not already enabled Security Lake in the Region when you
+     * call this API, it will set up the data lake in the Region with the specified configurations.
      * </p>
      * <p>
      * When you enable Security Lake, it starts ingesting security data after the <code>CreateAwsLogSource</code> call.
@@ -397,67 +354,142 @@ public class AmazonSecurityLakeClient extends AmazonWebServiceClient implements 
      * Lake User Guide</a>.
      * </p>
      * 
-     * @param createDatalakeRequest
-     * @return Result of the CreateDatalake operation returned by the service.
-     * @throws ServiceQuotaExceededException
-     *         You have exceeded your service quota. To perform the requested action, remove some of the relevant
-     *         resources, or use Service Quotas to request a service quota increase.
-     * @throws ConflictException
-     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
-     *         previous write did not have time to propagate to the host serving the current request. A retry (with
-     *         appropriate backoff logic) is the recommended response to this exception.
+     * @param createDataLakeRequest
+     * @return Result of the CreateDataLake operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InternalServerException
      *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
      *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
-     * @throws ThrottlingException
-     *         The limit on the number of requests per second was exceeded.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
      *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
      *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
      *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws ResourceNotFoundException
-     *         The resource could not be found.
-     * @sample AmazonSecurityLake.CreateDatalake
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDatalake" target="_top">AWS
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @sample AmazonSecurityLake.CreateDataLake
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDataLake" target="_top">AWS
      *      API Documentation</a>
      */
     @Override
-    public CreateDatalakeResult createDatalake(CreateDatalakeRequest request) {
+    public CreateDataLakeResult createDataLake(CreateDataLakeRequest request) {
         request = beforeClientExecution(request);
-        return executeCreateDatalake(request);
+        return executeCreateDataLake(request);
     }
 
     @SdkInternalApi
-    final CreateDatalakeResult executeCreateDatalake(CreateDatalakeRequest createDatalakeRequest) {
+    final CreateDataLakeResult executeCreateDataLake(CreateDataLakeRequest createDataLakeRequest) {
 
-        ExecutionContext executionContext = createExecutionContext(createDatalakeRequest);
+        ExecutionContext executionContext = createExecutionContext(createDataLakeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<CreateDatalakeRequest> request = null;
-        Response<CreateDatalakeResult> response = null;
+        Request<CreateDataLakeRequest> request = null;
+        Response<CreateDataLakeResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateDatalakeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDatalakeRequest));
+                request = new CreateDataLakeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDataLakeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityLake");
-                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDatalake");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDataLake");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
 
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            HttpResponseHandler<AmazonWebServiceResponse<CreateDatalakeResult>> responseHandler = protocolFactory.createResponseHandler(
-                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateDatalakeResultJsonUnmarshaller());
+            HttpResponseHandler<AmazonWebServiceResponse<CreateDataLakeResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateDataLakeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates the specified notification subscription in Amazon Security Lake for the organization you specify.
+     * </p>
+     * 
+     * @param createDataLakeExceptionSubscriptionRequest
+     * @return Result of the CreateDataLakeExceptionSubscription operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InternalServerException
+     *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
+     *         perform the operation again.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
+     *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
+     *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
+     *         when there is no applicable Deny statement and also no applicable Allow statement.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @sample AmazonSecurityLake.CreateDataLakeExceptionSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDataLakeExceptionSubscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateDataLakeExceptionSubscriptionResult createDataLakeExceptionSubscription(CreateDataLakeExceptionSubscriptionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateDataLakeExceptionSubscription(request);
+    }
+
+    @SdkInternalApi
+    final CreateDataLakeExceptionSubscriptionResult executeCreateDataLakeExceptionSubscription(
+            CreateDataLakeExceptionSubscriptionRequest createDataLakeExceptionSubscriptionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createDataLakeExceptionSubscriptionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateDataLakeExceptionSubscriptionRequest> request = null;
+        Response<CreateDataLakeExceptionSubscriptionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateDataLakeExceptionSubscriptionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createDataLakeExceptionSubscriptionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityLake");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDataLakeExceptionSubscription");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateDataLakeExceptionSubscriptionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateDataLakeExceptionSubscriptionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -474,204 +506,69 @@ public class AmazonSecurityLakeClient extends AmazonWebServiceClient implements 
      * automatically enabled for any existing member accounts in your organization.
      * </p>
      * 
-     * @param createDatalakeAutoEnableRequest
-     * @return Result of the CreateDatalakeAutoEnable operation returned by the service.
+     * @param createDataLakeOrganizationConfigurationRequest
+     * @return Result of the CreateDataLakeOrganizationConfiguration operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InternalServerException
      *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
      *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
      *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
      *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
      *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
-     * @sample AmazonSecurityLake.CreateDatalakeAutoEnable
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDatalakeAutoEnable"
-     *      target="_top">AWS API Documentation</a>
-     */
-    @Override
-    public CreateDatalakeAutoEnableResult createDatalakeAutoEnable(CreateDatalakeAutoEnableRequest request) {
-        request = beforeClientExecution(request);
-        return executeCreateDatalakeAutoEnable(request);
-    }
-
-    @SdkInternalApi
-    final CreateDatalakeAutoEnableResult executeCreateDatalakeAutoEnable(CreateDatalakeAutoEnableRequest createDatalakeAutoEnableRequest) {
-
-        ExecutionContext executionContext = createExecutionContext(createDatalakeAutoEnableRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<CreateDatalakeAutoEnableRequest> request = null;
-        Response<CreateDatalakeAutoEnableResult> response = null;
-
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new CreateDatalakeAutoEnableRequestProtocolMarshaller(protocolFactory).marshall(super
-                        .beforeMarshalling(createDatalakeAutoEnableRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
-                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
-                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
-                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityLake");
-                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDatalakeAutoEnable");
-                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
-
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            HttpResponseHandler<AmazonWebServiceResponse<CreateDatalakeAutoEnableResult>> responseHandler = protocolFactory.createResponseHandler(
-                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
-                    new CreateDatalakeAutoEnableResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-
-        } finally {
-
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-
-    /**
-     * <p>
-     * Designates the Amazon Security Lake delegated administrator account for the organization. This API can only be
-     * called by the organization management account. The organization management account cannot be the delegated
-     * administrator account.
-     * </p>
-     * 
-     * @param createDatalakeDelegatedAdminRequest
-     * @return Result of the CreateDatalakeDelegatedAdmin operation returned by the service.
-     * @throws InternalServerException
-     *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
-     *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
      * @throws ThrottlingException
      *         The limit on the number of requests per second was exceeded.
-     * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
-     *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
-     *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
-     *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @sample AmazonSecurityLake.CreateDatalakeDelegatedAdmin
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDatalakeDelegatedAdmin"
-     *      target="_top">AWS API Documentation</a>
-     */
-    @Override
-    public CreateDatalakeDelegatedAdminResult createDatalakeDelegatedAdmin(CreateDatalakeDelegatedAdminRequest request) {
-        request = beforeClientExecution(request);
-        return executeCreateDatalakeDelegatedAdmin(request);
-    }
-
-    @SdkInternalApi
-    final CreateDatalakeDelegatedAdminResult executeCreateDatalakeDelegatedAdmin(CreateDatalakeDelegatedAdminRequest createDatalakeDelegatedAdminRequest) {
-
-        ExecutionContext executionContext = createExecutionContext(createDatalakeDelegatedAdminRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<CreateDatalakeDelegatedAdminRequest> request = null;
-        Response<CreateDatalakeDelegatedAdminResult> response = null;
-
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new CreateDatalakeDelegatedAdminRequestProtocolMarshaller(protocolFactory).marshall(super
-                        .beforeMarshalling(createDatalakeDelegatedAdminRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
-                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
-                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
-                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityLake");
-                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDatalakeDelegatedAdmin");
-                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
-
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            HttpResponseHandler<AmazonWebServiceResponse<CreateDatalakeDelegatedAdminResult>> responseHandler = protocolFactory.createResponseHandler(
-                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
-                    new CreateDatalakeDelegatedAdminResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-
-        } finally {
-
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-
-    /**
-     * <p>
-     * Creates the specified notification subscription in Amazon Security Lake for the organization you specify.
-     * </p>
-     * 
-     * @param createDatalakeExceptionsSubscriptionRequest
-     * @return Result of the CreateDatalakeExceptionsSubscription operation returned by the service.
-     * @throws InternalServerException
-     *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
-     *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
-     * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
-     *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
-     *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
-     *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
-     * @sample AmazonSecurityLake.CreateDatalakeExceptionsSubscription
+     * @sample AmazonSecurityLake.CreateDataLakeOrganizationConfiguration
      * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDatalakeExceptionsSubscription"
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDataLakeOrganizationConfiguration"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateDatalakeExceptionsSubscriptionResult createDatalakeExceptionsSubscription(CreateDatalakeExceptionsSubscriptionRequest request) {
+    public CreateDataLakeOrganizationConfigurationResult createDataLakeOrganizationConfiguration(CreateDataLakeOrganizationConfigurationRequest request) {
         request = beforeClientExecution(request);
-        return executeCreateDatalakeExceptionsSubscription(request);
+        return executeCreateDataLakeOrganizationConfiguration(request);
     }
 
     @SdkInternalApi
-    final CreateDatalakeExceptionsSubscriptionResult executeCreateDatalakeExceptionsSubscription(
-            CreateDatalakeExceptionsSubscriptionRequest createDatalakeExceptionsSubscriptionRequest) {
+    final CreateDataLakeOrganizationConfigurationResult executeCreateDataLakeOrganizationConfiguration(
+            CreateDataLakeOrganizationConfigurationRequest createDataLakeOrganizationConfigurationRequest) {
 
-        ExecutionContext executionContext = createExecutionContext(createDatalakeExceptionsSubscriptionRequest);
+        ExecutionContext executionContext = createExecutionContext(createDataLakeOrganizationConfigurationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<CreateDatalakeExceptionsSubscriptionRequest> request = null;
-        Response<CreateDatalakeExceptionsSubscriptionResult> response = null;
+        Request<CreateDataLakeOrganizationConfigurationRequest> request = null;
+        Response<CreateDataLakeOrganizationConfigurationResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateDatalakeExceptionsSubscriptionRequestProtocolMarshaller(protocolFactory).marshall(super
-                        .beforeMarshalling(createDatalakeExceptionsSubscriptionRequest));
+                request = new CreateDataLakeOrganizationConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createDataLakeOrganizationConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityLake");
-                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDatalakeExceptionsSubscription");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDataLakeOrganizationConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
 
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            HttpResponseHandler<AmazonWebServiceResponse<CreateDatalakeExceptionsSubscriptionResult>> responseHandler = protocolFactory.createResponseHandler(
-                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
-                    new CreateDatalakeExceptionsSubscriptionResultJsonUnmarshaller());
+            HttpResponseHandler<AmazonWebServiceResponse<CreateDataLakeOrganizationConfigurationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new CreateDataLakeOrganizationConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -690,28 +587,25 @@ public class AmazonSecurityLakeClient extends AmazonWebServiceClient implements 
      * 
      * @param createSubscriberRequest
      * @return Result of the CreateSubscriber operation returned by the service.
-     * @throws ConflictSubscriptionException
-     *         A conflicting subscription exception operation is in progress.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InternalServerException
      *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
      *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
      *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
      *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
      *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws BucketNotFoundException
-     *         Amazon Security Lake generally returns 404 errors if the requested object is missing from the bucket.
-     * @throws ResourceNotFoundException
-     *         The resource could not be found.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
-     * @throws InvalidInputException
-     *         The request was rejected because a value that's not valid or is out of range was supplied for an input
-     *         parameter.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
      * @sample AmazonSecurityLake.CreateSubscriber
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateSubscriber" target="_top">AWS
      *      API Documentation</a>
@@ -766,71 +660,67 @@ public class AmazonSecurityLakeClient extends AmazonWebServiceClient implements 
      * Security Lake. You can create only one subscriber notification per subscriber.
      * </p>
      * 
-     * @param createSubscriptionNotificationConfigurationRequest
-     * @return Result of the CreateSubscriptionNotificationConfiguration operation returned by the service.
-     * @throws ConcurrentModificationException
-     *         More than one process tried to modify a resource at the same time.
+     * @param createSubscriberNotificationRequest
+     * @return Result of the CreateSubscriberNotification operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InternalServerException
      *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
      *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
      *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
      *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
      *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws ResourceNotFoundException
-     *         The resource could not be found.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
-     * @throws InvalidInputException
-     *         The request was rejected because a value that's not valid or is out of range was supplied for an input
-     *         parameter.
-     * @sample AmazonSecurityLake.CreateSubscriptionNotificationConfiguration
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateSubscriptionNotificationConfiguration"
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @sample AmazonSecurityLake.CreateSubscriberNotification
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateSubscriberNotification"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateSubscriptionNotificationConfigurationResult createSubscriptionNotificationConfiguration(
-            CreateSubscriptionNotificationConfigurationRequest request) {
+    public CreateSubscriberNotificationResult createSubscriberNotification(CreateSubscriberNotificationRequest request) {
         request = beforeClientExecution(request);
-        return executeCreateSubscriptionNotificationConfiguration(request);
+        return executeCreateSubscriberNotification(request);
     }
 
     @SdkInternalApi
-    final CreateSubscriptionNotificationConfigurationResult executeCreateSubscriptionNotificationConfiguration(
-            CreateSubscriptionNotificationConfigurationRequest createSubscriptionNotificationConfigurationRequest) {
+    final CreateSubscriberNotificationResult executeCreateSubscriberNotification(CreateSubscriberNotificationRequest createSubscriberNotificationRequest) {
 
-        ExecutionContext executionContext = createExecutionContext(createSubscriptionNotificationConfigurationRequest);
+        ExecutionContext executionContext = createExecutionContext(createSubscriberNotificationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<CreateSubscriptionNotificationConfigurationRequest> request = null;
-        Response<CreateSubscriptionNotificationConfigurationResult> response = null;
+        Request<CreateSubscriberNotificationRequest> request = null;
+        Response<CreateSubscriberNotificationResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateSubscriptionNotificationConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
-                        .beforeMarshalling(createSubscriptionNotificationConfigurationRequest));
+                request = new CreateSubscriberNotificationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createSubscriberNotificationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityLake");
-                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSubscriptionNotificationConfiguration");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSubscriberNotification");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
 
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            HttpResponseHandler<AmazonWebServiceResponse<CreateSubscriptionNotificationConfigurationResult>> responseHandler = protocolFactory
-                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
-                            new CreateSubscriptionNotificationConfigurationResultJsonUnmarshaller());
+            HttpResponseHandler<AmazonWebServiceResponse<CreateSubscriberNotificationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateSubscriberNotificationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -843,42 +733,37 @@ public class AmazonSecurityLakeClient extends AmazonWebServiceClient implements 
 
     /**
      * <p>
-     * Removes a natively supported Amazon Web Service as an Amazon Security Lake source. When you remove the source,
-     * Security Lake stops collecting data from that source, and subscribers can no longer consume new data from the
-     * source. Subscribers can still consume data that Security Lake collected from the source before disablement.
+     * Removes a natively supported Amazon Web Service as an Amazon Security Lake source. You can remove a source for
+     * one or more Regions. When you remove the source, Security Lake stops collecting data from that source in the
+     * specified Regions and accounts, and subscribers can no longer consume new data from the source. However,
+     * subscribers can still consume data that Security Lake collected from the source before removal.
      * </p>
      * <p>
      * You can choose any source type in any Amazon Web Services Region for either accounts that are part of a trusted
-     * organization or standalone accounts. At least one of the three dimensions is a mandatory input to this API.
-     * However, you can supply any combination of the three dimensions to this API.
-     * </p>
-     * <p>
-     * By default, a dimension refers to the entire set. This is overridden when you supply any one of the inputs. For
-     * instance, when you do not specify members, the API disables all Security Lake member accounts for sources.
-     * Similarly, when you do not specify Regions, Security Lake is disabled for all the Regions where Security Lake is
-     * available as a service.
-     * </p>
-     * <p>
-     * When you don't provide a dimension, Security Lake assumes that the missing dimension refers to the entire set.
-     * For example, if you don't provide specific accounts, the API applies to the entire set of accounts in your
-     * organization.
+     * organization or standalone accounts.
      * </p>
      * 
      * @param deleteAwsLogSourceRequest
      * @return Result of the DeleteAwsLogSource operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InternalServerException
      *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
      *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
      *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
      *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
      *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
      * @sample AmazonSecurityLake.DeleteAwsLogSource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteAwsLogSource"
      *      target="_top">AWS API Documentation</a>
@@ -929,30 +814,31 @@ public class AmazonSecurityLakeClient extends AmazonWebServiceClient implements 
 
     /**
      * <p>
-     * Removes a custom log source from Amazon Security Lake.
+     * Removes a custom log source from Amazon Security Lake, to stop sending data from the custom source to Security
+     * Lake.
      * </p>
      * 
      * @param deleteCustomLogSourceRequest
      * @return Result of the DeleteCustomLogSource operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InternalServerException
      *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
      *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
-     * @throws ConflictSourceNamesException
-     *         There was a conflict when you attempted to modify a Security Lake source name.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
      *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
      *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
      *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws BucketNotFoundException
-     *         Amazon Security Lake generally returns 404 errors if the requested object is missing from the bucket.
-     * @throws ResourceNotFoundException
-     *         The resource could not be found.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
      * @sample AmazonSecurityLake.DeleteCustomLogSource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteCustomLogSource"
      *      target="_top">AWS API Documentation</a>
@@ -1004,224 +890,77 @@ public class AmazonSecurityLakeClient extends AmazonWebServiceClient implements 
 
     /**
      * <p>
-     * When you delete Amazon Security Lake from your account, Security Lake is disabled in all Amazon Web Services
-     * Regions. Also, this API automatically takes steps to remove the account from Security Lake .
+     * When you disable Amazon Security Lake from your account, Security Lake is disabled in all Amazon Web Services
+     * Regions and it stops collecting data from your sources. Also, this API automatically takes steps to remove the
+     * account from Security Lake. However, Security Lake retains all of your existing settings and the resources that
+     * it created in your Amazon Web Services account in the current Amazon Web Services Region.
      * </p>
      * <p>
-     * This operation disables security data collection from sources, deletes data stored, and stops making data
-     * accessible to subscribers. Security Lake also deletes all the existing settings and resources that it stores or
-     * maintains for your Amazon Web Services account in the current Region, including security log and event data. The
-     * <code>DeleteDatalake</code> operation does not delete the Amazon S3 bucket, which is owned by your Amazon Web
-     * Services account. For more information, see the <a
+     * The <code>DeleteDataLake</code> operation does not delete the data that is stored in your Amazon S3 bucket, which
+     * is owned by your Amazon Web Services account. For more information, see the <a
      * href="https://docs.aws.amazon.com/security-lake/latest/userguide/disable-security-lake.html">Amazon Security Lake
      * User Guide</a>.
      * </p>
      * 
-     * @param deleteDatalakeRequest
-     * @return Result of the DeleteDatalake operation returned by the service.
-     * @throws ServiceQuotaExceededException
-     *         You have exceeded your service quota. To perform the requested action, remove some of the relevant
-     *         resources, or use Service Quotas to request a service quota increase.
+     * @param deleteDataLakeRequest
+     * @return Result of the DeleteDataLake operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InternalServerException
+     *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
+     *         perform the operation again.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
+     *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
+     *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
+     *         when there is no applicable Deny statement and also no applicable Allow statement.
      * @throws ConflictException
      *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
      *         previous write did not have time to propagate to the host serving the current request. A retry (with
      *         appropriate backoff logic) is the recommended response to this exception.
-     * @throws InternalServerException
-     *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
-     *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
      * @throws ThrottlingException
      *         The limit on the number of requests per second was exceeded.
-     * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
-     *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
-     *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
-     *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws ResourceNotFoundException
-     *         The resource could not be found.
-     * @sample AmazonSecurityLake.DeleteDatalake
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDatalake" target="_top">AWS
+     * @sample AmazonSecurityLake.DeleteDataLake
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDataLake" target="_top">AWS
      *      API Documentation</a>
      */
     @Override
-    public DeleteDatalakeResult deleteDatalake(DeleteDatalakeRequest request) {
+    public DeleteDataLakeResult deleteDataLake(DeleteDataLakeRequest request) {
         request = beforeClientExecution(request);
-        return executeDeleteDatalake(request);
+        return executeDeleteDataLake(request);
     }
 
     @SdkInternalApi
-    final DeleteDatalakeResult executeDeleteDatalake(DeleteDatalakeRequest deleteDatalakeRequest) {
+    final DeleteDataLakeResult executeDeleteDataLake(DeleteDataLakeRequest deleteDataLakeRequest) {
 
-        ExecutionContext executionContext = createExecutionContext(deleteDatalakeRequest);
+        ExecutionContext executionContext = createExecutionContext(deleteDataLakeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DeleteDatalakeRequest> request = null;
-        Response<DeleteDatalakeResult> response = null;
+        Request<DeleteDataLakeRequest> request = null;
+        Response<DeleteDataLakeResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteDatalakeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDatalakeRequest));
+                request = new DeleteDataLakeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDataLakeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityLake");
-                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDatalake");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDataLake");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
 
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            HttpResponseHandler<AmazonWebServiceResponse<DeleteDatalakeResult>> responseHandler = protocolFactory.createResponseHandler(
-                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteDatalakeResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-
-        } finally {
-
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-
-    /**
-     * <p>
-     * <code>DeleteDatalakeAutoEnable</code> removes automatic enablement of configuration settings for new member
-     * accounts (but keeps settings for the delegated administrator) from Amazon Security Lake. You must run this API
-     * using credentials of the delegated administrator. When you run this API, new member accounts that are added after
-     * the organization enables Security Lake won't contribute to the data lake.
-     * </p>
-     * 
-     * @param deleteDatalakeAutoEnableRequest
-     * @return Result of the DeleteDatalakeAutoEnable operation returned by the service.
-     * @throws InternalServerException
-     *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
-     *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
-     * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
-     *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
-     *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
-     *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
-     * @sample AmazonSecurityLake.DeleteDatalakeAutoEnable
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDatalakeAutoEnable"
-     *      target="_top">AWS API Documentation</a>
-     */
-    @Override
-    public DeleteDatalakeAutoEnableResult deleteDatalakeAutoEnable(DeleteDatalakeAutoEnableRequest request) {
-        request = beforeClientExecution(request);
-        return executeDeleteDatalakeAutoEnable(request);
-    }
-
-    @SdkInternalApi
-    final DeleteDatalakeAutoEnableResult executeDeleteDatalakeAutoEnable(DeleteDatalakeAutoEnableRequest deleteDatalakeAutoEnableRequest) {
-
-        ExecutionContext executionContext = createExecutionContext(deleteDatalakeAutoEnableRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DeleteDatalakeAutoEnableRequest> request = null;
-        Response<DeleteDatalakeAutoEnableResult> response = null;
-
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DeleteDatalakeAutoEnableRequestProtocolMarshaller(protocolFactory).marshall(super
-                        .beforeMarshalling(deleteDatalakeAutoEnableRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
-                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
-                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
-                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityLake");
-                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDatalakeAutoEnable");
-                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
-
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            HttpResponseHandler<AmazonWebServiceResponse<DeleteDatalakeAutoEnableResult>> responseHandler = protocolFactory.createResponseHandler(
-                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
-                    new DeleteDatalakeAutoEnableResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-
-        } finally {
-
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-
-    /**
-     * <p>
-     * Deletes the Amazon Security Lake delegated administrator account for the organization. This API can only be
-     * called by the organization management account. The organization management account cannot be the delegated
-     * administrator account.
-     * </p>
-     * 
-     * @param deleteDatalakeDelegatedAdminRequest
-     * @return Result of the DeleteDatalakeDelegatedAdmin operation returned by the service.
-     * @throws InternalServerException
-     *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
-     *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
-     * @throws ThrottlingException
-     *         The limit on the number of requests per second was exceeded.
-     * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
-     *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
-     *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
-     *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @sample AmazonSecurityLake.DeleteDatalakeDelegatedAdmin
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDatalakeDelegatedAdmin"
-     *      target="_top">AWS API Documentation</a>
-     */
-    @Override
-    public DeleteDatalakeDelegatedAdminResult deleteDatalakeDelegatedAdmin(DeleteDatalakeDelegatedAdminRequest request) {
-        request = beforeClientExecution(request);
-        return executeDeleteDatalakeDelegatedAdmin(request);
-    }
-
-    @SdkInternalApi
-    final DeleteDatalakeDelegatedAdminResult executeDeleteDatalakeDelegatedAdmin(DeleteDatalakeDelegatedAdminRequest deleteDatalakeDelegatedAdminRequest) {
-
-        ExecutionContext executionContext = createExecutionContext(deleteDatalakeDelegatedAdminRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DeleteDatalakeDelegatedAdminRequest> request = null;
-        Response<DeleteDatalakeDelegatedAdminResult> response = null;
-
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DeleteDatalakeDelegatedAdminRequestProtocolMarshaller(protocolFactory).marshall(super
-                        .beforeMarshalling(deleteDatalakeDelegatedAdminRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
-                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
-                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
-                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityLake");
-                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDatalakeDelegatedAdmin");
-                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
-
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            HttpResponseHandler<AmazonWebServiceResponse<DeleteDatalakeDelegatedAdminResult>> responseHandler = protocolFactory.createResponseHandler(
-                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
-                    new DeleteDatalakeDelegatedAdminResultJsonUnmarshaller());
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteDataLakeResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteDataLakeResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1237,63 +976,68 @@ public class AmazonSecurityLakeClient extends AmazonWebServiceClient implements 
      * Deletes the specified notification subscription in Amazon Security Lake for the organization you specify.
      * </p>
      * 
-     * @param deleteDatalakeExceptionsSubscriptionRequest
-     * @return Result of the DeleteDatalakeExceptionsSubscription operation returned by the service.
+     * @param deleteDataLakeExceptionSubscriptionRequest
+     * @return Result of the DeleteDataLakeExceptionSubscription operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InternalServerException
      *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
      *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
      *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
      *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
      *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
-     * @sample AmazonSecurityLake.DeleteDatalakeExceptionsSubscription
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDatalakeExceptionsSubscription"
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @sample AmazonSecurityLake.DeleteDataLakeExceptionSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDataLakeExceptionSubscription"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteDatalakeExceptionsSubscriptionResult deleteDatalakeExceptionsSubscription(DeleteDatalakeExceptionsSubscriptionRequest request) {
+    public DeleteDataLakeExceptionSubscriptionResult deleteDataLakeExceptionSubscription(DeleteDataLakeExceptionSubscriptionRequest request) {
         request = beforeClientExecution(request);
-        return executeDeleteDatalakeExceptionsSubscription(request);
+        return executeDeleteDataLakeExceptionSubscription(request);
     }
 
     @SdkInternalApi
-    final DeleteDatalakeExceptionsSubscriptionResult executeDeleteDatalakeExceptionsSubscription(
-            DeleteDatalakeExceptionsSubscriptionRequest deleteDatalakeExceptionsSubscriptionRequest) {
+    final DeleteDataLakeExceptionSubscriptionResult executeDeleteDataLakeExceptionSubscription(
+            DeleteDataLakeExceptionSubscriptionRequest deleteDataLakeExceptionSubscriptionRequest) {
 
-        ExecutionContext executionContext = createExecutionContext(deleteDatalakeExceptionsSubscriptionRequest);
+        ExecutionContext executionContext = createExecutionContext(deleteDataLakeExceptionSubscriptionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DeleteDatalakeExceptionsSubscriptionRequest> request = null;
-        Response<DeleteDatalakeExceptionsSubscriptionResult> response = null;
+        Request<DeleteDataLakeExceptionSubscriptionRequest> request = null;
+        Response<DeleteDataLakeExceptionSubscriptionResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteDatalakeExceptionsSubscriptionRequestProtocolMarshaller(protocolFactory).marshall(super
-                        .beforeMarshalling(deleteDatalakeExceptionsSubscriptionRequest));
+                request = new DeleteDataLakeExceptionSubscriptionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteDataLakeExceptionSubscriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityLake");
-                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDatalakeExceptionsSubscription");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDataLakeExceptionSubscription");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
 
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            HttpResponseHandler<AmazonWebServiceResponse<DeleteDatalakeExceptionsSubscriptionResult>> responseHandler = protocolFactory.createResponseHandler(
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteDataLakeExceptionSubscriptionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
-                    new DeleteDatalakeExceptionsSubscriptionResultJsonUnmarshaller());
+                    new DeleteDataLakeExceptionSubscriptionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1306,34 +1050,114 @@ public class AmazonSecurityLakeClient extends AmazonWebServiceClient implements 
 
     /**
      * <p>
-     * Deletes the subscription permission for accounts that are already enabled in Amazon Security Lake. You can delete
-     * a subscriber and remove access to data in the current Amazon Web Services Region.
+     * Turns off automatic enablement of Amazon Security Lake for member accounts that are added to an organization in
+     * Organizations. Only the delegated Security Lake administrator for an organization can perform this operation. If
+     * the delegated Security Lake administrator performs this operation, new member accounts won't automatically
+     * contribute data to the data lake.
      * </p>
      * 
-     * @param deleteSubscriberRequest
-     * @return Result of the DeleteSubscriber operation returned by the service.
-     * @throws ConcurrentModificationException
-     *         More than one process tried to modify a resource at the same time.
+     * @param deleteDataLakeOrganizationConfigurationRequest
+     * @return Result of the DeleteDataLakeOrganizationConfiguration operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InternalServerException
      *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
      *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
      *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
      *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
      *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws BucketNotFoundException
-     *         Amazon Security Lake generally returns 404 errors if the requested object is missing from the bucket.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @sample AmazonSecurityLake.DeleteDataLakeOrganizationConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDataLakeOrganizationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteDataLakeOrganizationConfigurationResult deleteDataLakeOrganizationConfiguration(DeleteDataLakeOrganizationConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDataLakeOrganizationConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DeleteDataLakeOrganizationConfigurationResult executeDeleteDataLakeOrganizationConfiguration(
+            DeleteDataLakeOrganizationConfigurationRequest deleteDataLakeOrganizationConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteDataLakeOrganizationConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteDataLakeOrganizationConfigurationRequest> request = null;
+        Response<DeleteDataLakeOrganizationConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteDataLakeOrganizationConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteDataLakeOrganizationConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityLake");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDataLakeOrganizationConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteDataLakeOrganizationConfigurationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DeleteDataLakeOrganizationConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the subscription permission and all notification settings for accounts that are already enabled in Amazon
+     * Security Lake. When you run <code>DeleteSubscriber</code>, the subscriber will no longer consume data from
+     * Security Lake and the subscriber is removed. This operation deletes the subscriber and removes access to data in
+     * the current Amazon Web Services Region.
+     * </p>
+     * 
+     * @param deleteSubscriberRequest
+     * @return Result of the DeleteSubscriber operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
      * @throws ResourceNotFoundException
      *         The resource could not be found.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
-     * @throws InvalidInputException
-     *         The request was rejected because a value that's not valid or is out of range was supplied for an input
-     *         parameter.
+     * @throws InternalServerException
+     *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
+     *         perform the operation again.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
+     *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
+     *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
+     *         when there is no applicable Deny statement and also no applicable Allow statement.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
      * @sample AmazonSecurityLake.DeleteSubscriber
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteSubscriber" target="_top">AWS
      *      API Documentation</a>
@@ -1387,71 +1211,67 @@ public class AmazonSecurityLakeClient extends AmazonWebServiceClient implements 
      * Deletes the specified notification subscription in Amazon Security Lake for the organization you specify.
      * </p>
      * 
-     * @param deleteSubscriptionNotificationConfigurationRequest
-     * @return Result of the DeleteSubscriptionNotificationConfiguration operation returned by the service.
-     * @throws ConcurrentModificationException
-     *         More than one process tried to modify a resource at the same time.
+     * @param deleteSubscriberNotificationRequest
+     * @return Result of the DeleteSubscriberNotification operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InternalServerException
      *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
      *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
      *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
      *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
      *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws ResourceNotFoundException
-     *         The resource could not be found.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
-     * @throws InvalidInputException
-     *         The request was rejected because a value that's not valid or is out of range was supplied for an input
-     *         parameter.
-     * @sample AmazonSecurityLake.DeleteSubscriptionNotificationConfiguration
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteSubscriptionNotificationConfiguration"
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @sample AmazonSecurityLake.DeleteSubscriberNotification
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteSubscriberNotification"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteSubscriptionNotificationConfigurationResult deleteSubscriptionNotificationConfiguration(
-            DeleteSubscriptionNotificationConfigurationRequest request) {
+    public DeleteSubscriberNotificationResult deleteSubscriberNotification(DeleteSubscriberNotificationRequest request) {
         request = beforeClientExecution(request);
-        return executeDeleteSubscriptionNotificationConfiguration(request);
+        return executeDeleteSubscriberNotification(request);
     }
 
     @SdkInternalApi
-    final DeleteSubscriptionNotificationConfigurationResult executeDeleteSubscriptionNotificationConfiguration(
-            DeleteSubscriptionNotificationConfigurationRequest deleteSubscriptionNotificationConfigurationRequest) {
+    final DeleteSubscriberNotificationResult executeDeleteSubscriberNotification(DeleteSubscriberNotificationRequest deleteSubscriberNotificationRequest) {
 
-        ExecutionContext executionContext = createExecutionContext(deleteSubscriptionNotificationConfigurationRequest);
+        ExecutionContext executionContext = createExecutionContext(deleteSubscriberNotificationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DeleteSubscriptionNotificationConfigurationRequest> request = null;
-        Response<DeleteSubscriptionNotificationConfigurationResult> response = null;
+        Request<DeleteSubscriberNotificationRequest> request = null;
+        Response<DeleteSubscriberNotificationResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteSubscriptionNotificationConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
-                        .beforeMarshalling(deleteSubscriptionNotificationConfigurationRequest));
+                request = new DeleteSubscriberNotificationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteSubscriberNotificationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityLake");
-                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSubscriptionNotificationConfiguration");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSubscriberNotification");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
 
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            HttpResponseHandler<AmazonWebServiceResponse<DeleteSubscriptionNotificationConfigurationResult>> responseHandler = protocolFactory
-                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
-                            new DeleteSubscriptionNotificationConfigurationResultJsonUnmarshaller());
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteSubscriberNotificationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteSubscriberNotificationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1464,66 +1284,151 @@ public class AmazonSecurityLakeClient extends AmazonWebServiceClient implements 
 
     /**
      * <p>
-     * Retrieves the Amazon Security Lake configuration object for the specified Amazon Web Services account ID. You can
-     * use the <code>GetDatalake</code> API to know whether Security Lake is enabled for the current Region. This API
-     * does not take input parameters.
+     * Deletes the Amazon Security Lake delegated administrator account for the organization. This API can only be
+     * called by the organization management account. The organization management account cannot be the delegated
+     * administrator account.
      * </p>
      * 
-     * @param getDatalakeRequest
-     * @return Result of the GetDatalake operation returned by the service.
+     * @param deregisterDataLakeDelegatedAdministratorRequest
+     * @return Result of the DeregisterDataLakeDelegatedAdministrator operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InternalServerException
      *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
      *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
      *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
      *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
      *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws ResourceNotFoundException
-     *         The resource could not be found.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
-     * @sample AmazonSecurityLake.GetDatalake
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDatalake" target="_top">AWS API
-     *      Documentation</a>
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @sample AmazonSecurityLake.DeregisterDataLakeDelegatedAdministrator
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeregisterDataLakeDelegatedAdministrator"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetDatalakeResult getDatalake(GetDatalakeRequest request) {
+    public DeregisterDataLakeDelegatedAdministratorResult deregisterDataLakeDelegatedAdministrator(DeregisterDataLakeDelegatedAdministratorRequest request) {
         request = beforeClientExecution(request);
-        return executeGetDatalake(request);
+        return executeDeregisterDataLakeDelegatedAdministrator(request);
     }
 
     @SdkInternalApi
-    final GetDatalakeResult executeGetDatalake(GetDatalakeRequest getDatalakeRequest) {
+    final DeregisterDataLakeDelegatedAdministratorResult executeDeregisterDataLakeDelegatedAdministrator(
+            DeregisterDataLakeDelegatedAdministratorRequest deregisterDataLakeDelegatedAdministratorRequest) {
 
-        ExecutionContext executionContext = createExecutionContext(getDatalakeRequest);
+        ExecutionContext executionContext = createExecutionContext(deregisterDataLakeDelegatedAdministratorRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<GetDatalakeRequest> request = null;
-        Response<GetDatalakeResult> response = null;
+        Request<DeregisterDataLakeDelegatedAdministratorRequest> request = null;
+        Response<DeregisterDataLakeDelegatedAdministratorResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetDatalakeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDatalakeRequest));
+                request = new DeregisterDataLakeDelegatedAdministratorRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deregisterDataLakeDelegatedAdministratorRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityLake");
-                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDatalake");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterDataLakeDelegatedAdministrator");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
 
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            HttpResponseHandler<AmazonWebServiceResponse<GetDatalakeResult>> responseHandler = protocolFactory.createResponseHandler(
-                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetDatalakeResultJsonUnmarshaller());
+            HttpResponseHandler<AmazonWebServiceResponse<DeregisterDataLakeDelegatedAdministratorResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DeregisterDataLakeDelegatedAdministratorResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the details of exception notifications for the account in Amazon Security Lake.
+     * </p>
+     * 
+     * @param getDataLakeExceptionSubscriptionRequest
+     * @return Result of the GetDataLakeExceptionSubscription operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InternalServerException
+     *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
+     *         perform the operation again.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
+     *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
+     *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
+     *         when there is no applicable Deny statement and also no applicable Allow statement.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @sample AmazonSecurityLake.GetDataLakeExceptionSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDataLakeExceptionSubscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetDataLakeExceptionSubscriptionResult getDataLakeExceptionSubscription(GetDataLakeExceptionSubscriptionRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDataLakeExceptionSubscription(request);
+    }
+
+    @SdkInternalApi
+    final GetDataLakeExceptionSubscriptionResult executeGetDataLakeExceptionSubscription(
+            GetDataLakeExceptionSubscriptionRequest getDataLakeExceptionSubscriptionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getDataLakeExceptionSubscriptionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetDataLakeExceptionSubscriptionRequest> request = null;
+        Response<GetDataLakeExceptionSubscriptionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetDataLakeExceptionSubscriptionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getDataLakeExceptionSubscriptionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityLake");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDataLakeExceptionSubscription");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetDataLakeExceptionSubscriptionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetDataLakeExceptionSubscriptionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1540,203 +1445,69 @@ public class AmazonSecurityLakeClient extends AmazonWebServiceClient implements 
      * organization has onboarded to Amazon Security Lake. This API does not take input parameters.
      * </p>
      * 
-     * @param getDatalakeAutoEnableRequest
-     * @return Result of the GetDatalakeAutoEnable operation returned by the service.
+     * @param getDataLakeOrganizationConfigurationRequest
+     * @return Result of the GetDataLakeOrganizationConfiguration operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InternalServerException
      *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
      *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
      *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
      *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
      *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
-     * @sample AmazonSecurityLake.GetDatalakeAutoEnable
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDatalakeAutoEnable"
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @sample AmazonSecurityLake.GetDataLakeOrganizationConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDataLakeOrganizationConfiguration"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetDatalakeAutoEnableResult getDatalakeAutoEnable(GetDatalakeAutoEnableRequest request) {
+    public GetDataLakeOrganizationConfigurationResult getDataLakeOrganizationConfiguration(GetDataLakeOrganizationConfigurationRequest request) {
         request = beforeClientExecution(request);
-        return executeGetDatalakeAutoEnable(request);
+        return executeGetDataLakeOrganizationConfiguration(request);
     }
 
     @SdkInternalApi
-    final GetDatalakeAutoEnableResult executeGetDatalakeAutoEnable(GetDatalakeAutoEnableRequest getDatalakeAutoEnableRequest) {
+    final GetDataLakeOrganizationConfigurationResult executeGetDataLakeOrganizationConfiguration(
+            GetDataLakeOrganizationConfigurationRequest getDataLakeOrganizationConfigurationRequest) {
 
-        ExecutionContext executionContext = createExecutionContext(getDatalakeAutoEnableRequest);
+        ExecutionContext executionContext = createExecutionContext(getDataLakeOrganizationConfigurationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<GetDatalakeAutoEnableRequest> request = null;
-        Response<GetDatalakeAutoEnableResult> response = null;
+        Request<GetDataLakeOrganizationConfigurationRequest> request = null;
+        Response<GetDataLakeOrganizationConfigurationResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetDatalakeAutoEnableRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDatalakeAutoEnableRequest));
+                request = new GetDataLakeOrganizationConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getDataLakeOrganizationConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityLake");
-                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDatalakeAutoEnable");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDataLakeOrganizationConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
 
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            HttpResponseHandler<AmazonWebServiceResponse<GetDatalakeAutoEnableResult>> responseHandler = protocolFactory
-                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
-                            new GetDatalakeAutoEnableResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-
-        } finally {
-
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-
-    /**
-     * <p>
-     * Retrieves the expiration period and time-to-live (TTL) for which the exception message will remain. Exceptions
-     * are stored by default, for 2 weeks from when a record was created in Amazon Security Lake. This API does not take
-     * input parameters.
-     * </p>
-     * 
-     * @param getDatalakeExceptionsExpiryRequest
-     * @return Result of the GetDatalakeExceptionsExpiry operation returned by the service.
-     * @throws InternalServerException
-     *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
-     *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
-     * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
-     *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
-     *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
-     *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
-     * @sample AmazonSecurityLake.GetDatalakeExceptionsExpiry
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDatalakeExceptionsExpiry"
-     *      target="_top">AWS API Documentation</a>
-     */
-    @Override
-    public GetDatalakeExceptionsExpiryResult getDatalakeExceptionsExpiry(GetDatalakeExceptionsExpiryRequest request) {
-        request = beforeClientExecution(request);
-        return executeGetDatalakeExceptionsExpiry(request);
-    }
-
-    @SdkInternalApi
-    final GetDatalakeExceptionsExpiryResult executeGetDatalakeExceptionsExpiry(GetDatalakeExceptionsExpiryRequest getDatalakeExceptionsExpiryRequest) {
-
-        ExecutionContext executionContext = createExecutionContext(getDatalakeExceptionsExpiryRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<GetDatalakeExceptionsExpiryRequest> request = null;
-        Response<GetDatalakeExceptionsExpiryResult> response = null;
-
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new GetDatalakeExceptionsExpiryRequestProtocolMarshaller(protocolFactory).marshall(super
-                        .beforeMarshalling(getDatalakeExceptionsExpiryRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
-                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
-                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
-                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityLake");
-                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDatalakeExceptionsExpiry");
-                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
-
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            HttpResponseHandler<AmazonWebServiceResponse<GetDatalakeExceptionsExpiryResult>> responseHandler = protocolFactory.createResponseHandler(
+            HttpResponseHandler<AmazonWebServiceResponse<GetDataLakeOrganizationConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
-                    new GetDatalakeExceptionsExpiryResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-
-        } finally {
-
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-
-    /**
-     * <p>
-     * Retrieves the details of exception notifications for the account in Amazon Security Lake.
-     * </p>
-     * 
-     * @param getDatalakeExceptionsSubscriptionRequest
-     * @return Result of the GetDatalakeExceptionsSubscription operation returned by the service.
-     * @throws InternalServerException
-     *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
-     *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
-     * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
-     *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
-     *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
-     *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
-     * @sample AmazonSecurityLake.GetDatalakeExceptionsSubscription
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDatalakeExceptionsSubscription"
-     *      target="_top">AWS API Documentation</a>
-     */
-    @Override
-    public GetDatalakeExceptionsSubscriptionResult getDatalakeExceptionsSubscription(GetDatalakeExceptionsSubscriptionRequest request) {
-        request = beforeClientExecution(request);
-        return executeGetDatalakeExceptionsSubscription(request);
-    }
-
-    @SdkInternalApi
-    final GetDatalakeExceptionsSubscriptionResult executeGetDatalakeExceptionsSubscription(
-            GetDatalakeExceptionsSubscriptionRequest getDatalakeExceptionsSubscriptionRequest) {
-
-        ExecutionContext executionContext = createExecutionContext(getDatalakeExceptionsSubscriptionRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<GetDatalakeExceptionsSubscriptionRequest> request = null;
-        Response<GetDatalakeExceptionsSubscriptionResult> response = null;
-
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new GetDatalakeExceptionsSubscriptionRequestProtocolMarshaller(protocolFactory).marshall(super
-                        .beforeMarshalling(getDatalakeExceptionsSubscriptionRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
-                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
-                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
-                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityLake");
-                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDatalakeExceptionsSubscription");
-                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
-
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            HttpResponseHandler<AmazonWebServiceResponse<GetDatalakeExceptionsSubscriptionResult>> responseHandler = protocolFactory.createResponseHandler(
-                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
-                    new GetDatalakeExceptionsSubscriptionResultJsonUnmarshaller());
+                    new GetDataLakeOrganizationConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1753,59 +1524,65 @@ public class AmazonSecurityLakeClient extends AmazonWebServiceClient implements 
      * and which sources Security Lake is collecting data from.
      * </p>
      * 
-     * @param getDatalakeStatusRequest
-     * @return Result of the GetDatalakeStatus operation returned by the service.
+     * @param getDataLakeSourcesRequest
+     * @return Result of the GetDataLakeSources operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InternalServerException
      *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
      *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
      *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
      *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
      *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
-     * @sample AmazonSecurityLake.GetDatalakeStatus
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDatalakeStatus" target="_top">AWS
-     *      API Documentation</a>
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @sample AmazonSecurityLake.GetDataLakeSources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDataLakeSources"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetDatalakeStatusResult getDatalakeStatus(GetDatalakeStatusRequest request) {
+    public GetDataLakeSourcesResult getDataLakeSources(GetDataLakeSourcesRequest request) {
         request = beforeClientExecution(request);
-        return executeGetDatalakeStatus(request);
+        return executeGetDataLakeSources(request);
     }
 
     @SdkInternalApi
-    final GetDatalakeStatusResult executeGetDatalakeStatus(GetDatalakeStatusRequest getDatalakeStatusRequest) {
+    final GetDataLakeSourcesResult executeGetDataLakeSources(GetDataLakeSourcesRequest getDataLakeSourcesRequest) {
 
-        ExecutionContext executionContext = createExecutionContext(getDatalakeStatusRequest);
+        ExecutionContext executionContext = createExecutionContext(getDataLakeSourcesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<GetDatalakeStatusRequest> request = null;
-        Response<GetDatalakeStatusResult> response = null;
+        Request<GetDataLakeSourcesRequest> request = null;
+        Response<GetDataLakeSourcesResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetDatalakeStatusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDatalakeStatusRequest));
+                request = new GetDataLakeSourcesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDataLakeSourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityLake");
-                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDatalakeStatus");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDataLakeSources");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
 
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            HttpResponseHandler<AmazonWebServiceResponse<GetDatalakeStatusResult>> responseHandler = protocolFactory.createResponseHandler(
-                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetDatalakeStatusResultJsonUnmarshaller());
+            HttpResponseHandler<AmazonWebServiceResponse<GetDataLakeSourcesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetDataLakeSourcesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1824,6 +1601,11 @@ public class AmazonSecurityLakeClient extends AmazonWebServiceClient implements 
      * 
      * @param getSubscriberRequest
      * @return Result of the GetSubscriber operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InternalServerException
      *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
      *         perform the operation again.
@@ -1832,14 +1614,12 @@ public class AmazonSecurityLakeClient extends AmazonWebServiceClient implements 
      *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
      *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
      *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws ResourceNotFoundException
-     *         The resource could not be found.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
-     * @throws InvalidInputException
-     *         The request was rejected because a value that's not valid or is out of range was supplied for an input
-     *         parameter.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
      * @sample AmazonSecurityLake.GetSubscriber
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetSubscriber" target="_top">AWS API
      *      Documentation</a>
@@ -1893,60 +1673,141 @@ public class AmazonSecurityLakeClient extends AmazonWebServiceClient implements 
      * Lists the Amazon Security Lake exceptions that you can use to find the source of problems and fix them.
      * </p>
      * 
-     * @param listDatalakeExceptionsRequest
-     * @return Result of the ListDatalakeExceptions operation returned by the service.
+     * @param listDataLakeExceptionsRequest
+     * @return Result of the ListDataLakeExceptions operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InternalServerException
      *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
      *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
      *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
      *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
      *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
-     * @sample AmazonSecurityLake.ListDatalakeExceptions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ListDatalakeExceptions"
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @sample AmazonSecurityLake.ListDataLakeExceptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ListDataLakeExceptions"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListDatalakeExceptionsResult listDatalakeExceptions(ListDatalakeExceptionsRequest request) {
+    public ListDataLakeExceptionsResult listDataLakeExceptions(ListDataLakeExceptionsRequest request) {
         request = beforeClientExecution(request);
-        return executeListDatalakeExceptions(request);
+        return executeListDataLakeExceptions(request);
     }
 
     @SdkInternalApi
-    final ListDatalakeExceptionsResult executeListDatalakeExceptions(ListDatalakeExceptionsRequest listDatalakeExceptionsRequest) {
+    final ListDataLakeExceptionsResult executeListDataLakeExceptions(ListDataLakeExceptionsRequest listDataLakeExceptionsRequest) {
 
-        ExecutionContext executionContext = createExecutionContext(listDatalakeExceptionsRequest);
+        ExecutionContext executionContext = createExecutionContext(listDataLakeExceptionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ListDatalakeExceptionsRequest> request = null;
-        Response<ListDatalakeExceptionsResult> response = null;
+        Request<ListDataLakeExceptionsRequest> request = null;
+        Response<ListDataLakeExceptionsResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListDatalakeExceptionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDatalakeExceptionsRequest));
+                request = new ListDataLakeExceptionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDataLakeExceptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityLake");
-                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDatalakeExceptions");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDataLakeExceptions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
 
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            HttpResponseHandler<AmazonWebServiceResponse<ListDatalakeExceptionsResult>> responseHandler = protocolFactory.createResponseHandler(
+            HttpResponseHandler<AmazonWebServiceResponse<ListDataLakeExceptionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
-                    new ListDatalakeExceptionsResultJsonUnmarshaller());
+                    new ListDataLakeExceptionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the Amazon Security Lake configuration object for the specified Amazon Web Services Regions. You can
+     * use this operation to determine whether Security Lake is enabled for a Region.
+     * </p>
+     * 
+     * @param listDataLakesRequest
+     * @return Result of the ListDataLakes operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InternalServerException
+     *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
+     *         perform the operation again.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
+     *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
+     *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
+     *         when there is no applicable Deny statement and also no applicable Allow statement.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @sample AmazonSecurityLake.ListDataLakes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ListDataLakes" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListDataLakesResult listDataLakes(ListDataLakesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDataLakes(request);
+    }
+
+    @SdkInternalApi
+    final ListDataLakesResult executeListDataLakes(ListDataLakesRequest listDataLakesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listDataLakesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListDataLakesRequest> request = null;
+        Response<ListDataLakesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListDataLakesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDataLakesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityLake");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDataLakes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListDataLakesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListDataLakesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1964,21 +1825,25 @@ public class AmazonSecurityLakeClient extends AmazonWebServiceClient implements 
      * 
      * @param listLogSourcesRequest
      * @return Result of the ListLogSources operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InternalServerException
      *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
      *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
      *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
      *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
      *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws ResourceNotFoundException
-     *         The resource could not be found.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
      * @sample AmazonSecurityLake.ListLogSources
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ListLogSources" target="_top">AWS
      *      API Documentation</a>
@@ -2035,24 +1900,25 @@ public class AmazonSecurityLakeClient extends AmazonWebServiceClient implements 
      * 
      * @param listSubscribersRequest
      * @return Result of the ListSubscribers operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InternalServerException
      *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
      *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
      *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
      *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
      *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws ResourceNotFoundException
-     *         The resource could not be found.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
-     * @throws InvalidInputException
-     *         The request was rejected because a value that's not valid or is out of range was supplied for an input
-     *         parameter.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
      * @sample AmazonSecurityLake.ListSubscribers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ListSubscribers" target="_top">AWS
      *      API Documentation</a>
@@ -2103,64 +1969,69 @@ public class AmazonSecurityLakeClient extends AmazonWebServiceClient implements 
 
     /**
      * <p>
-     * Specifies where to store your security data and for how long. You can add a rollup Region to consolidate data
-     * from multiple Amazon Web Services Regions.
+     * Retrieves the tags (keys and values) that are associated with an Amazon Security Lake resource: a subscriber, or
+     * the data lake configuration for your Amazon Web Services account in a particular Amazon Web Services Region.
      * </p>
      * 
-     * @param updateDatalakeRequest
-     * @return Result of the UpdateDatalake operation returned by the service.
-     * @throws EventBridgeException
-     *         Represents an error interacting with the Amazon EventBridge service.
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InternalServerException
      *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
      *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
      *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
      *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
      *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws ResourceNotFoundException
-     *         The resource could not be found.
-     * @sample AmazonSecurityLake.UpdateDatalake
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateDatalake" target="_top">AWS
-     *      API Documentation</a>
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @sample AmazonSecurityLake.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateDatalakeResult updateDatalake(UpdateDatalakeRequest request) {
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
         request = beforeClientExecution(request);
-        return executeUpdateDatalake(request);
+        return executeListTagsForResource(request);
     }
 
     @SdkInternalApi
-    final UpdateDatalakeResult executeUpdateDatalake(UpdateDatalakeRequest updateDatalakeRequest) {
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
 
-        ExecutionContext executionContext = createExecutionContext(updateDatalakeRequest);
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<UpdateDatalakeRequest> request = null;
-        Response<UpdateDatalakeResult> response = null;
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateDatalakeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDatalakeRequest));
+                request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityLake");
-                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDatalake");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
 
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            HttpResponseHandler<AmazonWebServiceResponse<UpdateDatalakeResult>> responseHandler = protocolFactory.createResponseHandler(
-                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateDatalakeResultJsonUnmarshaller());
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2173,66 +2044,306 @@ public class AmazonSecurityLakeClient extends AmazonWebServiceClient implements 
 
     /**
      * <p>
-     * Update the expiration period for the exception message to your preferred time, and control the time-to-live (TTL)
-     * for the exception message to remain. Exceptions are stored by default for 2 weeks from when a record was created
-     * in Amazon Security Lake.
+     * Designates the Amazon Security Lake delegated administrator account for the organization. This API can only be
+     * called by the organization management account. The organization management account cannot be the delegated
+     * administrator account.
      * </p>
      * 
-     * @param updateDatalakeExceptionsExpiryRequest
-     * @return Result of the UpdateDatalakeExceptionsExpiry operation returned by the service.
+     * @param registerDataLakeDelegatedAdministratorRequest
+     * @return Result of the RegisterDataLakeDelegatedAdministrator operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InternalServerException
      *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
      *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
      *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
      *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
      *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
-     * @sample AmazonSecurityLake.UpdateDatalakeExceptionsExpiry
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateDatalakeExceptionsExpiry"
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @sample AmazonSecurityLake.RegisterDataLakeDelegatedAdministrator
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/RegisterDataLakeDelegatedAdministrator"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateDatalakeExceptionsExpiryResult updateDatalakeExceptionsExpiry(UpdateDatalakeExceptionsExpiryRequest request) {
+    public RegisterDataLakeDelegatedAdministratorResult registerDataLakeDelegatedAdministrator(RegisterDataLakeDelegatedAdministratorRequest request) {
         request = beforeClientExecution(request);
-        return executeUpdateDatalakeExceptionsExpiry(request);
+        return executeRegisterDataLakeDelegatedAdministrator(request);
     }
 
     @SdkInternalApi
-    final UpdateDatalakeExceptionsExpiryResult executeUpdateDatalakeExceptionsExpiry(UpdateDatalakeExceptionsExpiryRequest updateDatalakeExceptionsExpiryRequest) {
+    final RegisterDataLakeDelegatedAdministratorResult executeRegisterDataLakeDelegatedAdministrator(
+            RegisterDataLakeDelegatedAdministratorRequest registerDataLakeDelegatedAdministratorRequest) {
 
-        ExecutionContext executionContext = createExecutionContext(updateDatalakeExceptionsExpiryRequest);
+        ExecutionContext executionContext = createExecutionContext(registerDataLakeDelegatedAdministratorRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<UpdateDatalakeExceptionsExpiryRequest> request = null;
-        Response<UpdateDatalakeExceptionsExpiryResult> response = null;
+        Request<RegisterDataLakeDelegatedAdministratorRequest> request = null;
+        Response<RegisterDataLakeDelegatedAdministratorResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateDatalakeExceptionsExpiryRequestProtocolMarshaller(protocolFactory).marshall(super
-                        .beforeMarshalling(updateDatalakeExceptionsExpiryRequest));
+                request = new RegisterDataLakeDelegatedAdministratorRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(registerDataLakeDelegatedAdministratorRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityLake");
-                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDatalakeExceptionsExpiry");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterDataLakeDelegatedAdministrator");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
 
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            HttpResponseHandler<AmazonWebServiceResponse<UpdateDatalakeExceptionsExpiryResult>> responseHandler = protocolFactory.createResponseHandler(
-                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
-                    new UpdateDatalakeExceptionsExpiryResultJsonUnmarshaller());
+            HttpResponseHandler<AmazonWebServiceResponse<RegisterDataLakeDelegatedAdministratorResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new RegisterDataLakeDelegatedAdministratorResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Adds or updates one or more tags that are associated with an Amazon Security Lake resource: a subscriber, or the
+     * data lake configuration for your Amazon Web Services account in a particular Amazon Web Services Region. A
+     * <i>tag</i> is a label that you can define and associate with Amazon Web Services resources. Each tag consists of
+     * a required <i>tag key</i> and an associated <i>tag value</i>. A <i>tag key</i> is a general label that acts as a
+     * category for a more specific tag value. A <i>tag value</i> acts as a descriptor for a tag key. Tags can help you
+     * identify, categorize, and manage resources in different ways, such as by owner, environment, or other criteria.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/tagging-resources.html">Tagging Amazon Security
+     * Lake resources</a> in the <i>Amazon Security Lake User Guide</i>.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InternalServerException
+     *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
+     *         perform the operation again.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
+     *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
+     *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
+     *         when there is no applicable Deny statement and also no applicable Allow statement.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @sample AmazonSecurityLake.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagResourceRequest> request = null;
+        Response<TagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityLake");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes one or more tags (keys and values) from an Amazon Security Lake resource: a subscriber, or the data lake
+     * configuration for your Amazon Web Services account in a particular Amazon Web Services Region.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InternalServerException
+     *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
+     *         perform the operation again.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
+     *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
+     *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
+     *         when there is no applicable Deny statement and also no applicable Allow statement.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @sample AmazonSecurityLake.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagResourceRequest> request = null;
+        Response<UntagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityLake");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Specifies where to store your security data and for how long. You can add a rollup Region to consolidate data
+     * from multiple Amazon Web Services Regions.
+     * </p>
+     * 
+     * @param updateDataLakeRequest
+     * @return Result of the UpdateDataLake operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InternalServerException
+     *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
+     *         perform the operation again.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
+     *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
+     *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
+     *         when there is no applicable Deny statement and also no applicable Allow statement.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @sample AmazonSecurityLake.UpdateDataLake
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateDataLake" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdateDataLakeResult updateDataLake(UpdateDataLakeRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateDataLake(request);
+    }
+
+    @SdkInternalApi
+    final UpdateDataLakeResult executeUpdateDataLake(UpdateDataLakeRequest updateDataLakeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateDataLakeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateDataLakeRequest> request = null;
+        Response<UpdateDataLakeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateDataLakeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDataLakeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityLake");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDataLake");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateDataLakeResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateDataLakeResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2248,63 +2359,68 @@ public class AmazonSecurityLakeClient extends AmazonWebServiceClient implements 
      * Updates the specified notification subscription in Amazon Security Lake for the organization you specify.
      * </p>
      * 
-     * @param updateDatalakeExceptionsSubscriptionRequest
-     * @return Result of the UpdateDatalakeExceptionsSubscription operation returned by the service.
+     * @param updateDataLakeExceptionSubscriptionRequest
+     * @return Result of the UpdateDataLakeExceptionSubscription operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InternalServerException
      *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
      *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
      *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
      *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
      *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
-     * @sample AmazonSecurityLake.UpdateDatalakeExceptionsSubscription
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateDatalakeExceptionsSubscription"
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @sample AmazonSecurityLake.UpdateDataLakeExceptionSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateDataLakeExceptionSubscription"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateDatalakeExceptionsSubscriptionResult updateDatalakeExceptionsSubscription(UpdateDatalakeExceptionsSubscriptionRequest request) {
+    public UpdateDataLakeExceptionSubscriptionResult updateDataLakeExceptionSubscription(UpdateDataLakeExceptionSubscriptionRequest request) {
         request = beforeClientExecution(request);
-        return executeUpdateDatalakeExceptionsSubscription(request);
+        return executeUpdateDataLakeExceptionSubscription(request);
     }
 
     @SdkInternalApi
-    final UpdateDatalakeExceptionsSubscriptionResult executeUpdateDatalakeExceptionsSubscription(
-            UpdateDatalakeExceptionsSubscriptionRequest updateDatalakeExceptionsSubscriptionRequest) {
+    final UpdateDataLakeExceptionSubscriptionResult executeUpdateDataLakeExceptionSubscription(
+            UpdateDataLakeExceptionSubscriptionRequest updateDataLakeExceptionSubscriptionRequest) {
 
-        ExecutionContext executionContext = createExecutionContext(updateDatalakeExceptionsSubscriptionRequest);
+        ExecutionContext executionContext = createExecutionContext(updateDataLakeExceptionSubscriptionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<UpdateDatalakeExceptionsSubscriptionRequest> request = null;
-        Response<UpdateDatalakeExceptionsSubscriptionResult> response = null;
+        Request<UpdateDataLakeExceptionSubscriptionRequest> request = null;
+        Response<UpdateDataLakeExceptionSubscriptionResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateDatalakeExceptionsSubscriptionRequestProtocolMarshaller(protocolFactory).marshall(super
-                        .beforeMarshalling(updateDatalakeExceptionsSubscriptionRequest));
+                request = new UpdateDataLakeExceptionSubscriptionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateDataLakeExceptionSubscriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityLake");
-                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDatalakeExceptionsSubscription");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDataLakeExceptionSubscription");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
 
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            HttpResponseHandler<AmazonWebServiceResponse<UpdateDatalakeExceptionsSubscriptionResult>> responseHandler = protocolFactory.createResponseHandler(
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateDataLakeExceptionSubscriptionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
-                    new UpdateDatalakeExceptionsSubscriptionResultJsonUnmarshaller());
+                    new UpdateDataLakeExceptionSubscriptionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2323,26 +2439,25 @@ public class AmazonSecurityLakeClient extends AmazonWebServiceClient implements 
      * 
      * @param updateSubscriberRequest
      * @return Result of the UpdateSubscriber operation returned by the service.
-     * @throws ConflictSubscriptionException
-     *         A conflicting subscription exception operation is in progress.
-     * @throws ConcurrentModificationException
-     *         More than one process tried to modify a resource at the same time.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InternalServerException
      *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
      *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
      *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
      *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
      *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
-     * @throws InvalidInputException
-     *         The request was rejected because a value that's not valid or is out of range was supplied for an input
-     *         parameter.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
      * @sample AmazonSecurityLake.UpdateSubscriber
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateSubscriber" target="_top">AWS
      *      API Documentation</a>
@@ -2397,71 +2512,67 @@ public class AmazonSecurityLakeClient extends AmazonWebServiceClient implements 
      * subscription endpoint for a subscriber.
      * </p>
      * 
-     * @param updateSubscriptionNotificationConfigurationRequest
-     * @return Result of the UpdateSubscriptionNotificationConfiguration operation returned by the service.
-     * @throws ConcurrentModificationException
-     *         More than one process tried to modify a resource at the same time.
+     * @param updateSubscriberNotificationRequest
+     * @return Result of the UpdateSubscriberNotification operation returned by the service.
+     * @throws BadRequestException
+     *         The request is malformed or contains an error such as an invalid parameter value or a missing required
+     *         parameter.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InternalServerException
      *         Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting,
      *         perform the operation again.
-     * @throws ValidationException
-     *         Your signing certificate could not be validated.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action. Access denied errors appear when Amazon
      *         Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a
      *         policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs
      *         when there is no applicable Deny statement and also no applicable Allow statement.
-     * @throws ResourceNotFoundException
-     *         The resource could not be found.
-     * @throws AccountNotFoundException
-     *         Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or
-     *         the account whose credentials you used to make this request isn't a member of an organization.
-     * @throws InvalidInputException
-     *         The request was rejected because a value that's not valid or is out of range was supplied for an input
-     *         parameter.
-     * @sample AmazonSecurityLake.UpdateSubscriptionNotificationConfiguration
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateSubscriptionNotificationConfiguration"
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @sample AmazonSecurityLake.UpdateSubscriberNotification
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateSubscriberNotification"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateSubscriptionNotificationConfigurationResult updateSubscriptionNotificationConfiguration(
-            UpdateSubscriptionNotificationConfigurationRequest request) {
+    public UpdateSubscriberNotificationResult updateSubscriberNotification(UpdateSubscriberNotificationRequest request) {
         request = beforeClientExecution(request);
-        return executeUpdateSubscriptionNotificationConfiguration(request);
+        return executeUpdateSubscriberNotification(request);
     }
 
     @SdkInternalApi
-    final UpdateSubscriptionNotificationConfigurationResult executeUpdateSubscriptionNotificationConfiguration(
-            UpdateSubscriptionNotificationConfigurationRequest updateSubscriptionNotificationConfigurationRequest) {
+    final UpdateSubscriberNotificationResult executeUpdateSubscriberNotification(UpdateSubscriberNotificationRequest updateSubscriberNotificationRequest) {
 
-        ExecutionContext executionContext = createExecutionContext(updateSubscriptionNotificationConfigurationRequest);
+        ExecutionContext executionContext = createExecutionContext(updateSubscriberNotificationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<UpdateSubscriptionNotificationConfigurationRequest> request = null;
-        Response<UpdateSubscriptionNotificationConfigurationResult> response = null;
+        Request<UpdateSubscriberNotificationRequest> request = null;
+        Response<UpdateSubscriberNotificationResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateSubscriptionNotificationConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
-                        .beforeMarshalling(updateSubscriptionNotificationConfigurationRequest));
+                request = new UpdateSubscriberNotificationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateSubscriberNotificationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
                 request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityLake");
-                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSubscriptionNotificationConfiguration");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSubscriberNotification");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
 
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            HttpResponseHandler<AmazonWebServiceResponse<UpdateSubscriptionNotificationConfigurationResult>> responseHandler = protocolFactory
-                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
-                            new UpdateSubscriptionNotificationConfigurationResultJsonUnmarshaller());
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateSubscriberNotificationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateSubscriberNotificationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

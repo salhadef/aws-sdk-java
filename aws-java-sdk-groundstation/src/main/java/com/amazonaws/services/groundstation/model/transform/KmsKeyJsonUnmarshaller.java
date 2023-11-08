@@ -52,6 +52,10 @@ public class KmsKeyJsonUnmarshaller implements Unmarshaller<KmsKey, JsonUnmarsha
                     context.nextToken();
                     kmsKey.setKmsAliasArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("kmsAliasName", targetDepth)) {
+                    context.nextToken();
+                    kmsKey.setKmsAliasName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("kmsKeyArn", targetDepth)) {
                     context.nextToken();
                     kmsKey.setKmsKeyArn(context.getUnmarshaller(String.class).unmarshall(context));

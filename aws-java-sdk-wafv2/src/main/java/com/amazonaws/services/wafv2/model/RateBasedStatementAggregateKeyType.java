@@ -21,7 +21,9 @@ import javax.annotation.Generated;
 public enum RateBasedStatementAggregateKeyType {
 
     IP("IP"),
-    FORWARDED_IP("FORWARDED_IP");
+    FORWARDED_IP("FORWARDED_IP"),
+    CUSTOM_KEYS("CUSTOM_KEYS"),
+    CONSTANT("CONSTANT");
 
     private String value;
 

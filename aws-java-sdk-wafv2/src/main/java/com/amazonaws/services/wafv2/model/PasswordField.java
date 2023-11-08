@@ -19,8 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Details about your login page password field for request inspection, used in the
- * <code>AWSManagedRulesATPRuleSet</code> <code>RequestInspection</code> configuration.
+ * The name of the field in the request payload that contains your customer's password.
+ * </p>
+ * <p>
+ * This data type is used in the <code>RequestInspection</code> and <code>RequestInspectionACFP</code> data types.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/PasswordField" target="_top">AWS API
@@ -31,18 +33,92 @@ public class PasswordField implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the password field. For example <code>/form/password</code>.
+     * The name of the password field.
      * </p>
+     * <p>
+     * How you specify this depends on the request inspection payload type.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer syntax,
+     * see the Internet Engineering Task Force (IETF) documentation <a
+     * href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.
+     * </p>
+     * <p>
+     * For example, for the JSON payload <code>{ "form": { "password": "THE_PASSWORD" } }</code>, the password field
+     * specification is <code>/form/password</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For form encoded payload types, use the HTML form names.
+     * </p>
+     * <p>
+     * For example, for an HTML form with the input element named <code>password1</code>, the password field
+     * specification is <code>password1</code>.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String identifier;
 
     /**
      * <p>
-     * The name of the password field. For example <code>/form/password</code>.
+     * The name of the password field.
      * </p>
+     * <p>
+     * How you specify this depends on the request inspection payload type.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer syntax,
+     * see the Internet Engineering Task Force (IETF) documentation <a
+     * href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.
+     * </p>
+     * <p>
+     * For example, for the JSON payload <code>{ "form": { "password": "THE_PASSWORD" } }</code>, the password field
+     * specification is <code>/form/password</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For form encoded payload types, use the HTML form names.
+     * </p>
+     * <p>
+     * For example, for an HTML form with the input element named <code>password1</code>, the password field
+     * specification is <code>password1</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param identifier
-     *        The name of the password field. For example <code>/form/password</code>.
+     *        The name of the password field. </p>
+     *        <p>
+     *        How you specify this depends on the request inspection payload type.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer
+     *        syntax, see the Internet Engineering Task Force (IETF) documentation <a
+     *        href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.
+     *        </p>
+     *        <p>
+     *        For example, for the JSON payload <code>{ "form": { "password": "THE_PASSWORD" } }</code>, the password
+     *        field specification is <code>/form/password</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For form encoded payload types, use the HTML form names.
+     *        </p>
+     *        <p>
+     *        For example, for an HTML form with the input element named <code>password1</code>, the password field
+     *        specification is <code>password1</code>.
+     *        </p>
+     *        </li>
      */
 
     public void setIdentifier(String identifier) {
@@ -51,10 +127,59 @@ public class PasswordField implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the password field. For example <code>/form/password</code>.
+     * The name of the password field.
      * </p>
+     * <p>
+     * How you specify this depends on the request inspection payload type.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer syntax,
+     * see the Internet Engineering Task Force (IETF) documentation <a
+     * href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.
+     * </p>
+     * <p>
+     * For example, for the JSON payload <code>{ "form": { "password": "THE_PASSWORD" } }</code>, the password field
+     * specification is <code>/form/password</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For form encoded payload types, use the HTML form names.
+     * </p>
+     * <p>
+     * For example, for an HTML form with the input element named <code>password1</code>, the password field
+     * specification is <code>password1</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The name of the password field. For example <code>/form/password</code>.
+     * @return The name of the password field. </p>
+     *         <p>
+     *         How you specify this depends on the request inspection payload type.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer
+     *         syntax, see the Internet Engineering Task Force (IETF) documentation <a
+     *         href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.
+     *         </p>
+     *         <p>
+     *         For example, for the JSON payload <code>{ "form": { "password": "THE_PASSWORD" } }</code>, the password
+     *         field specification is <code>/form/password</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For form encoded payload types, use the HTML form names.
+     *         </p>
+     *         <p>
+     *         For example, for an HTML form with the input element named <code>password1</code>, the password field
+     *         specification is <code>password1</code>.
+     *         </p>
+     *         </li>
      */
 
     public String getIdentifier() {
@@ -63,11 +188,60 @@ public class PasswordField implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the password field. For example <code>/form/password</code>.
+     * The name of the password field.
      * </p>
+     * <p>
+     * How you specify this depends on the request inspection payload type.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer syntax,
+     * see the Internet Engineering Task Force (IETF) documentation <a
+     * href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.
+     * </p>
+     * <p>
+     * For example, for the JSON payload <code>{ "form": { "password": "THE_PASSWORD" } }</code>, the password field
+     * specification is <code>/form/password</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For form encoded payload types, use the HTML form names.
+     * </p>
+     * <p>
+     * For example, for an HTML form with the input element named <code>password1</code>, the password field
+     * specification is <code>password1</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param identifier
-     *        The name of the password field. For example <code>/form/password</code>.
+     *        The name of the password field. </p>
+     *        <p>
+     *        How you specify this depends on the request inspection payload type.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer
+     *        syntax, see the Internet Engineering Task Force (IETF) documentation <a
+     *        href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.
+     *        </p>
+     *        <p>
+     *        For example, for the JSON payload <code>{ "form": { "password": "THE_PASSWORD" } }</code>, the password
+     *        field specification is <code>/form/password</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For form encoded payload types, use the HTML form names.
+     *        </p>
+     *        <p>
+     *        For example, for an HTML form with the input element named <code>password1</code>, the password field
+     *        specification is <code>password1</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

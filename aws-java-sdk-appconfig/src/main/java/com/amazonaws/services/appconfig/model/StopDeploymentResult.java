@@ -150,11 +150,17 @@ public class StopDeploymentResult extends com.amazonaws.AmazonWebServiceResult<c
     private String kmsKeyArn;
     /**
      * <p>
-     * The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this ID to encrypt the configuration data
-     * using a customer managed key.
+     * The Key Management Service key identifier (key ID, key alias, or key ARN) provided when the resource was created
+     * or updated.
      * </p>
      */
     private String kmsKeyIdentifier;
+    /**
+     * <p>
+     * A user-defined label for an AppConfig hosted configuration version.
+     * </p>
+     */
+    private String versionLabel;
 
     /**
      * <p>
@@ -1090,13 +1096,13 @@ public class StopDeploymentResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this ID to encrypt the configuration data
-     * using a customer managed key.
+     * The Key Management Service key identifier (key ID, key alias, or key ARN) provided when the resource was created
+     * or updated.
      * </p>
      * 
      * @param kmsKeyIdentifier
-     *        The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this ID to encrypt the
-     *        configuration data using a customer managed key.
+     *        The Key Management Service key identifier (key ID, key alias, or key ARN) provided when the resource was
+     *        created or updated.
      */
 
     public void setKmsKeyIdentifier(String kmsKeyIdentifier) {
@@ -1105,12 +1111,12 @@ public class StopDeploymentResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this ID to encrypt the configuration data
-     * using a customer managed key.
+     * The Key Management Service key identifier (key ID, key alias, or key ARN) provided when the resource was created
+     * or updated.
      * </p>
      * 
-     * @return The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this ID to encrypt the
-     *         configuration data using a customer managed key.
+     * @return The Key Management Service key identifier (key ID, key alias, or key ARN) provided when the resource was
+     *         created or updated.
      */
 
     public String getKmsKeyIdentifier() {
@@ -1119,18 +1125,58 @@ public class StopDeploymentResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this ID to encrypt the configuration data
-     * using a customer managed key.
+     * The Key Management Service key identifier (key ID, key alias, or key ARN) provided when the resource was created
+     * or updated.
      * </p>
      * 
      * @param kmsKeyIdentifier
-     *        The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this ID to encrypt the
-     *        configuration data using a customer managed key.
+     *        The Key Management Service key identifier (key ID, key alias, or key ARN) provided when the resource was
+     *        created or updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public StopDeploymentResult withKmsKeyIdentifier(String kmsKeyIdentifier) {
         setKmsKeyIdentifier(kmsKeyIdentifier);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A user-defined label for an AppConfig hosted configuration version.
+     * </p>
+     * 
+     * @param versionLabel
+     *        A user-defined label for an AppConfig hosted configuration version.
+     */
+
+    public void setVersionLabel(String versionLabel) {
+        this.versionLabel = versionLabel;
+    }
+
+    /**
+     * <p>
+     * A user-defined label for an AppConfig hosted configuration version.
+     * </p>
+     * 
+     * @return A user-defined label for an AppConfig hosted configuration version.
+     */
+
+    public String getVersionLabel() {
+        return this.versionLabel;
+    }
+
+    /**
+     * <p>
+     * A user-defined label for an AppConfig hosted configuration version.
+     * </p>
+     * 
+     * @param versionLabel
+     *        A user-defined label for an AppConfig hosted configuration version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StopDeploymentResult withVersionLabel(String versionLabel) {
+        setVersionLabel(versionLabel);
         return this;
     }
 
@@ -1187,7 +1233,9 @@ public class StopDeploymentResult extends com.amazonaws.AmazonWebServiceResult<c
         if (getKmsKeyArn() != null)
             sb.append("KmsKeyArn: ").append(getKmsKeyArn()).append(",");
         if (getKmsKeyIdentifier() != null)
-            sb.append("KmsKeyIdentifier: ").append(getKmsKeyIdentifier());
+            sb.append("KmsKeyIdentifier: ").append(getKmsKeyIdentifier()).append(",");
+        if (getVersionLabel() != null)
+            sb.append("VersionLabel: ").append(getVersionLabel());
         sb.append("}");
         return sb.toString();
     }
@@ -1286,6 +1334,10 @@ public class StopDeploymentResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getKmsKeyIdentifier() != null && other.getKmsKeyIdentifier().equals(this.getKmsKeyIdentifier()) == false)
             return false;
+        if (other.getVersionLabel() == null ^ this.getVersionLabel() == null)
+            return false;
+        if (other.getVersionLabel() != null && other.getVersionLabel().equals(this.getVersionLabel()) == false)
+            return false;
         return true;
     }
 
@@ -1315,6 +1367,7 @@ public class StopDeploymentResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getAppliedExtensions() == null) ? 0 : getAppliedExtensions().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyArn() == null) ? 0 : getKmsKeyArn().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyIdentifier() == null) ? 0 : getKmsKeyIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getVersionLabel() == null) ? 0 : getVersionLabel().hashCode());
         return hashCode;
     }
 

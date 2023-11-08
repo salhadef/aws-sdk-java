@@ -45,6 +45,12 @@ public class DeploymentConfig implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private AutoRollbackConfig autoRollbackConfiguration;
+    /**
+     * <p>
+     * Specifies a rolling deployment strategy for updating a SageMaker endpoint.
+     * </p>
+     */
+    private RollingUpdatePolicy rollingUpdatePolicy;
 
     /**
      * <p>
@@ -151,6 +157,46 @@ public class DeploymentConfig implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * Specifies a rolling deployment strategy for updating a SageMaker endpoint.
+     * </p>
+     * 
+     * @param rollingUpdatePolicy
+     *        Specifies a rolling deployment strategy for updating a SageMaker endpoint.
+     */
+
+    public void setRollingUpdatePolicy(RollingUpdatePolicy rollingUpdatePolicy) {
+        this.rollingUpdatePolicy = rollingUpdatePolicy;
+    }
+
+    /**
+     * <p>
+     * Specifies a rolling deployment strategy for updating a SageMaker endpoint.
+     * </p>
+     * 
+     * @return Specifies a rolling deployment strategy for updating a SageMaker endpoint.
+     */
+
+    public RollingUpdatePolicy getRollingUpdatePolicy() {
+        return this.rollingUpdatePolicy;
+    }
+
+    /**
+     * <p>
+     * Specifies a rolling deployment strategy for updating a SageMaker endpoint.
+     * </p>
+     * 
+     * @param rollingUpdatePolicy
+     *        Specifies a rolling deployment strategy for updating a SageMaker endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeploymentConfig withRollingUpdatePolicy(RollingUpdatePolicy rollingUpdatePolicy) {
+        setRollingUpdatePolicy(rollingUpdatePolicy);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -165,7 +211,9 @@ public class DeploymentConfig implements Serializable, Cloneable, StructuredPojo
         if (getBlueGreenUpdatePolicy() != null)
             sb.append("BlueGreenUpdatePolicy: ").append(getBlueGreenUpdatePolicy()).append(",");
         if (getAutoRollbackConfiguration() != null)
-            sb.append("AutoRollbackConfiguration: ").append(getAutoRollbackConfiguration());
+            sb.append("AutoRollbackConfiguration: ").append(getAutoRollbackConfiguration()).append(",");
+        if (getRollingUpdatePolicy() != null)
+            sb.append("RollingUpdatePolicy: ").append(getRollingUpdatePolicy());
         sb.append("}");
         return sb.toString();
     }
@@ -188,6 +236,10 @@ public class DeploymentConfig implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getAutoRollbackConfiguration() != null && other.getAutoRollbackConfiguration().equals(this.getAutoRollbackConfiguration()) == false)
             return false;
+        if (other.getRollingUpdatePolicy() == null ^ this.getRollingUpdatePolicy() == null)
+            return false;
+        if (other.getRollingUpdatePolicy() != null && other.getRollingUpdatePolicy().equals(this.getRollingUpdatePolicy()) == false)
+            return false;
         return true;
     }
 
@@ -198,6 +250,7 @@ public class DeploymentConfig implements Serializable, Cloneable, StructuredPojo
 
         hashCode = prime * hashCode + ((getBlueGreenUpdatePolicy() == null) ? 0 : getBlueGreenUpdatePolicy().hashCode());
         hashCode = prime * hashCode + ((getAutoRollbackConfiguration() == null) ? 0 : getAutoRollbackConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getRollingUpdatePolicy() == null) ? 0 : getRollingUpdatePolicy().hashCode());
         return hashCode;
     }
 

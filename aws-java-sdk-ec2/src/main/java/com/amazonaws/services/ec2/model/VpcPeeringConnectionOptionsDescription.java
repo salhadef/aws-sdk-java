@@ -16,13 +16,6 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
- * <note>
- * <p>
- * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see <a
- * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a VPC</a> in
- * the <i>Amazon Elastic Compute Cloud User Guide</i>.
- * </p>
- * </note>
  * <p>
  * Describes the VPC peering connection options.
  * </p>
@@ -42,15 +35,13 @@ public class VpcPeeringConnectionOptionsDescription implements Serializable, Clo
     private Boolean allowDnsResolutionFromRemoteVpc;
     /**
      * <p>
-     * Indicates whether a local ClassicLink connection can communicate with the peer VPC over the VPC peering
-     * connection.
+     * Deprecated.
      * </p>
      */
     private Boolean allowEgressFromLocalClassicLinkToRemoteVpc;
     /**
      * <p>
-     * Indicates whether a local VPC can communicate with a ClassicLink connection in the peer VPC over the VPC peering
-     * connection.
+     * Deprecated.
      * </p>
      */
     private Boolean allowEgressFromLocalVpcToRemoteClassicLink;
@@ -117,13 +108,11 @@ public class VpcPeeringConnectionOptionsDescription implements Serializable, Clo
 
     /**
      * <p>
-     * Indicates whether a local ClassicLink connection can communicate with the peer VPC over the VPC peering
-     * connection.
+     * Deprecated.
      * </p>
      * 
      * @param allowEgressFromLocalClassicLinkToRemoteVpc
-     *        Indicates whether a local ClassicLink connection can communicate with the peer VPC over the VPC peering
-     *        connection.
+     *        Deprecated.
      */
 
     public void setAllowEgressFromLocalClassicLinkToRemoteVpc(Boolean allowEgressFromLocalClassicLinkToRemoteVpc) {
@@ -132,12 +121,10 @@ public class VpcPeeringConnectionOptionsDescription implements Serializable, Clo
 
     /**
      * <p>
-     * Indicates whether a local ClassicLink connection can communicate with the peer VPC over the VPC peering
-     * connection.
+     * Deprecated.
      * </p>
      * 
-     * @return Indicates whether a local ClassicLink connection can communicate with the peer VPC over the VPC peering
-     *         connection.
+     * @return Deprecated.
      */
 
     public Boolean getAllowEgressFromLocalClassicLinkToRemoteVpc() {
@@ -146,13 +133,11 @@ public class VpcPeeringConnectionOptionsDescription implements Serializable, Clo
 
     /**
      * <p>
-     * Indicates whether a local ClassicLink connection can communicate with the peer VPC over the VPC peering
-     * connection.
+     * Deprecated.
      * </p>
      * 
      * @param allowEgressFromLocalClassicLinkToRemoteVpc
-     *        Indicates whether a local ClassicLink connection can communicate with the peer VPC over the VPC peering
-     *        connection.
+     *        Deprecated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -163,12 +148,10 @@ public class VpcPeeringConnectionOptionsDescription implements Serializable, Clo
 
     /**
      * <p>
-     * Indicates whether a local ClassicLink connection can communicate with the peer VPC over the VPC peering
-     * connection.
+     * Deprecated.
      * </p>
      * 
-     * @return Indicates whether a local ClassicLink connection can communicate with the peer VPC over the VPC peering
-     *         connection.
+     * @return Deprecated.
      */
 
     public Boolean isAllowEgressFromLocalClassicLinkToRemoteVpc() {
@@ -177,13 +160,11 @@ public class VpcPeeringConnectionOptionsDescription implements Serializable, Clo
 
     /**
      * <p>
-     * Indicates whether a local VPC can communicate with a ClassicLink connection in the peer VPC over the VPC peering
-     * connection.
+     * Deprecated.
      * </p>
      * 
      * @param allowEgressFromLocalVpcToRemoteClassicLink
-     *        Indicates whether a local VPC can communicate with a ClassicLink connection in the peer VPC over the VPC
-     *        peering connection.
+     *        Deprecated.
      */
 
     public void setAllowEgressFromLocalVpcToRemoteClassicLink(Boolean allowEgressFromLocalVpcToRemoteClassicLink) {
@@ -192,12 +173,10 @@ public class VpcPeeringConnectionOptionsDescription implements Serializable, Clo
 
     /**
      * <p>
-     * Indicates whether a local VPC can communicate with a ClassicLink connection in the peer VPC over the VPC peering
-     * connection.
+     * Deprecated.
      * </p>
      * 
-     * @return Indicates whether a local VPC can communicate with a ClassicLink connection in the peer VPC over the VPC
-     *         peering connection.
+     * @return Deprecated.
      */
 
     public Boolean getAllowEgressFromLocalVpcToRemoteClassicLink() {
@@ -206,13 +185,11 @@ public class VpcPeeringConnectionOptionsDescription implements Serializable, Clo
 
     /**
      * <p>
-     * Indicates whether a local VPC can communicate with a ClassicLink connection in the peer VPC over the VPC peering
-     * connection.
+     * Deprecated.
      * </p>
      * 
      * @param allowEgressFromLocalVpcToRemoteClassicLink
-     *        Indicates whether a local VPC can communicate with a ClassicLink connection in the peer VPC over the VPC
-     *        peering connection.
+     *        Deprecated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -223,12 +200,10 @@ public class VpcPeeringConnectionOptionsDescription implements Serializable, Clo
 
     /**
      * <p>
-     * Indicates whether a local VPC can communicate with a ClassicLink connection in the peer VPC over the VPC peering
-     * connection.
+     * Deprecated.
      * </p>
      * 
-     * @return Indicates whether a local VPC can communicate with a ClassicLink connection in the peer VPC over the VPC
-     *         peering connection.
+     * @return Deprecated.
      */
 
     public Boolean isAllowEgressFromLocalVpcToRemoteClassicLink() {

@@ -67,8 +67,7 @@ public class CreateOntapVolumeConfiguration implements Serializable, Cloneable, 
     private String securityStyle;
     /**
      * <p>
-     * Specifies the size of the volume, in megabytes (MB), that you are creating. Provide any whole number in the range
-     * of 20–104857600 to specify the size of the volume.
+     * Specifies the size of the volume, in megabytes (MB), that you are creating.
      * </p>
      */
     private Integer sizeInMegabytes;
@@ -155,6 +154,12 @@ public class CreateOntapVolumeConfiguration implements Serializable, Cloneable, 
      * </p>
      */
     private Boolean copyTagsToBackups;
+    /**
+     * <p>
+     * Specifies the SnapLock configuration for an FSx for ONTAP volume.
+     * </p>
+     */
+    private CreateSnaplockConfiguration snaplockConfiguration;
 
     /**
      * <p>
@@ -455,13 +460,11 @@ public class CreateOntapVolumeConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies the size of the volume, in megabytes (MB), that you are creating. Provide any whole number in the range
-     * of 20–104857600 to specify the size of the volume.
+     * Specifies the size of the volume, in megabytes (MB), that you are creating.
      * </p>
      * 
      * @param sizeInMegabytes
-     *        Specifies the size of the volume, in megabytes (MB), that you are creating. Provide any whole number in
-     *        the range of 20–104857600 to specify the size of the volume.
+     *        Specifies the size of the volume, in megabytes (MB), that you are creating.
      */
 
     public void setSizeInMegabytes(Integer sizeInMegabytes) {
@@ -470,12 +473,10 @@ public class CreateOntapVolumeConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies the size of the volume, in megabytes (MB), that you are creating. Provide any whole number in the range
-     * of 20–104857600 to specify the size of the volume.
+     * Specifies the size of the volume, in megabytes (MB), that you are creating.
      * </p>
      * 
-     * @return Specifies the size of the volume, in megabytes (MB), that you are creating. Provide any whole number in
-     *         the range of 20–104857600 to specify the size of the volume.
+     * @return Specifies the size of the volume, in megabytes (MB), that you are creating.
      */
 
     public Integer getSizeInMegabytes() {
@@ -484,13 +485,11 @@ public class CreateOntapVolumeConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies the size of the volume, in megabytes (MB), that you are creating. Provide any whole number in the range
-     * of 20–104857600 to specify the size of the volume.
+     * Specifies the size of the volume, in megabytes (MB), that you are creating.
      * </p>
      * 
      * @param sizeInMegabytes
-     *        Specifies the size of the volume, in megabytes (MB), that you are creating. Provide any whole number in
-     *        the range of 20–104857600 to specify the size of the volume.
+     *        Specifies the size of the volume, in megabytes (MB), that you are creating.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1112,6 +1111,46 @@ public class CreateOntapVolumeConfiguration implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * Specifies the SnapLock configuration for an FSx for ONTAP volume.
+     * </p>
+     * 
+     * @param snaplockConfiguration
+     *        Specifies the SnapLock configuration for an FSx for ONTAP volume.
+     */
+
+    public void setSnaplockConfiguration(CreateSnaplockConfiguration snaplockConfiguration) {
+        this.snaplockConfiguration = snaplockConfiguration;
+    }
+
+    /**
+     * <p>
+     * Specifies the SnapLock configuration for an FSx for ONTAP volume.
+     * </p>
+     * 
+     * @return Specifies the SnapLock configuration for an FSx for ONTAP volume.
+     */
+
+    public CreateSnaplockConfiguration getSnaplockConfiguration() {
+        return this.snaplockConfiguration;
+    }
+
+    /**
+     * <p>
+     * Specifies the SnapLock configuration for an FSx for ONTAP volume.
+     * </p>
+     * 
+     * @param snaplockConfiguration
+     *        Specifies the SnapLock configuration for an FSx for ONTAP volume.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateOntapVolumeConfiguration withSnaplockConfiguration(CreateSnaplockConfiguration snaplockConfiguration) {
+        setSnaplockConfiguration(snaplockConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1140,7 +1179,9 @@ public class CreateOntapVolumeConfiguration implements Serializable, Cloneable, 
         if (getSnapshotPolicy() != null)
             sb.append("SnapshotPolicy: ").append(getSnapshotPolicy()).append(",");
         if (getCopyTagsToBackups() != null)
-            sb.append("CopyTagsToBackups: ").append(getCopyTagsToBackups());
+            sb.append("CopyTagsToBackups: ").append(getCopyTagsToBackups()).append(",");
+        if (getSnaplockConfiguration() != null)
+            sb.append("SnaplockConfiguration: ").append(getSnaplockConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -1191,6 +1232,10 @@ public class CreateOntapVolumeConfiguration implements Serializable, Cloneable, 
             return false;
         if (other.getCopyTagsToBackups() != null && other.getCopyTagsToBackups().equals(this.getCopyTagsToBackups()) == false)
             return false;
+        if (other.getSnaplockConfiguration() == null ^ this.getSnaplockConfiguration() == null)
+            return false;
+        if (other.getSnaplockConfiguration() != null && other.getSnaplockConfiguration().equals(this.getSnaplockConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -1208,6 +1253,7 @@ public class CreateOntapVolumeConfiguration implements Serializable, Cloneable, 
         hashCode = prime * hashCode + ((getOntapVolumeType() == null) ? 0 : getOntapVolumeType().hashCode());
         hashCode = prime * hashCode + ((getSnapshotPolicy() == null) ? 0 : getSnapshotPolicy().hashCode());
         hashCode = prime * hashCode + ((getCopyTagsToBackups() == null) ? 0 : getCopyTagsToBackups().hashCode());
+        hashCode = prime * hashCode + ((getSnaplockConfiguration() == null) ? 0 : getSnaplockConfiguration().hashCode());
         return hashCode;
     }
 

@@ -62,6 +62,8 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Contains the data type of the measure value for the time-series data point. Default type is <code>DOUBLE</code>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/writes.html#writes.data-types">Data types</a>.
      * </p>
      */
     private String measureValueType;
@@ -264,11 +266,15 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Contains the data type of the measure value for the time-series data point. Default type is <code>DOUBLE</code>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/writes.html#writes.data-types">Data types</a>.
      * </p>
      * 
      * @param measureValueType
      *        Contains the data type of the measure value for the time-series data point. Default type is
-     *        <code>DOUBLE</code>.
+     *        <code>DOUBLE</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/timestream/latest/developerguide/writes.html#writes.data-types">Data
+     *        types</a>.
      * @see MeasureValueType
      */
 
@@ -279,10 +285,14 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Contains the data type of the measure value for the time-series data point. Default type is <code>DOUBLE</code>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/writes.html#writes.data-types">Data types</a>.
      * </p>
      * 
      * @return Contains the data type of the measure value for the time-series data point. Default type is
-     *         <code>DOUBLE</code>.
+     *         <code>DOUBLE</code>. For more information, see <a
+     *         href="https://docs.aws.amazon.com/timestream/latest/developerguide/writes.html#writes.data-types">Data
+     *         types</a>.
      * @see MeasureValueType
      */
 
@@ -293,11 +303,15 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Contains the data type of the measure value for the time-series data point. Default type is <code>DOUBLE</code>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/writes.html#writes.data-types">Data types</a>.
      * </p>
      * 
      * @param measureValueType
      *        Contains the data type of the measure value for the time-series data point. Default type is
-     *        <code>DOUBLE</code>.
+     *        <code>DOUBLE</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/timestream/latest/developerguide/writes.html#writes.data-types">Data
+     *        types</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MeasureValueType
      */
@@ -310,11 +324,15 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Contains the data type of the measure value for the time-series data point. Default type is <code>DOUBLE</code>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/writes.html#writes.data-types">Data types</a>.
      * </p>
      * 
      * @param measureValueType
      *        Contains the data type of the measure value for the time-series data point. Default type is
-     *        <code>DOUBLE</code>.
+     *        <code>DOUBLE</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/timestream/latest/developerguide/writes.html#writes.data-types">Data
+     *        types</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MeasureValueType
      */

@@ -27,6 +27,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/MetricDatum" target="_top">AWS API
  *      Documentation</a>
  */
+@Deprecated
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class MetricDatum implements Serializable, Cloneable, StructuredPojo {
 
@@ -185,7 +186,7 @@ public class MetricDatum implements Serializable, Cloneable, StructuredPojo {
      * @param statisticValues
      *        <b>Internal only</b>. The statistical values for the metric.
      */
-
+    @Deprecated
     public void setStatisticValues(StatisticSet statisticValues) {
         this.statisticValues = statisticValues;
     }
@@ -197,7 +198,7 @@ public class MetricDatum implements Serializable, Cloneable, StructuredPojo {
      * 
      * @return <b>Internal only</b>. The statistical values for the metric.
      */
-
+    @Deprecated
     public StatisticSet getStatisticValues() {
         return this.statisticValues;
     }
@@ -211,7 +212,7 @@ public class MetricDatum implements Serializable, Cloneable, StructuredPojo {
      *        <b>Internal only</b>. The statistical values for the metric.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public MetricDatum withStatisticValues(StatisticSet statisticValues) {
         setStatisticValues(statisticValues);
         return this;

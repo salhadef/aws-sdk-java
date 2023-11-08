@@ -15,9 +15,9 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough (PASSTHROUGH) if you
- * want SCTE-35 markers that appear in your input to also appear in this output. Choose None (NONE) if you don't want
- * those SCTE-35 markers in this output.
+ * Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough if you want SCTE-35
+ * markers that appear in your input to also appear in this output. Choose None if you don't want those SCTE-35 markers
+ * in this output.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum CmfcScte35Source {

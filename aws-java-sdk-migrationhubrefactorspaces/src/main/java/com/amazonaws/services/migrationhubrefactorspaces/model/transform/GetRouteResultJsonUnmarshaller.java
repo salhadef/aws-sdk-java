@@ -48,6 +48,10 @@ public class GetRouteResultJsonUnmarshaller implements Unmarshaller<GetRouteResu
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("AppendSourcePath", targetDepth)) {
+                    context.nextToken();
+                    getRouteResult.setAppendSourcePath(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("ApplicationId", targetDepth)) {
                     context.nextToken();
                     getRouteResult.setApplicationId(context.getUnmarshaller(String.class).unmarshall(context));

@@ -27,24 +27,28 @@ public class DescribeComputeRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A unique identifier for the fleet the compute is registered to.
+     * A unique identifier for the fleet that the compute is registered to. You can use either the fleet ID or ARN
+     * value.
      * </p>
      */
     private String fleetId;
     /**
      * <p>
-     * A descriptive label that is associated with the compute resource registered to your fleet.
+     * The unique identifier of the compute resource to retrieve properties for. For an Anywhere fleet compute, use the
+     * registered compute name. For a managed EC2 fleet instance, use the instance ID.
      * </p>
      */
     private String computeName;
 
     /**
      * <p>
-     * A unique identifier for the fleet the compute is registered to.
+     * A unique identifier for the fleet that the compute is registered to. You can use either the fleet ID or ARN
+     * value.
      * </p>
      * 
      * @param fleetId
-     *        A unique identifier for the fleet the compute is registered to.
+     *        A unique identifier for the fleet that the compute is registered to. You can use either the fleet ID or
+     *        ARN value.
      */
 
     public void setFleetId(String fleetId) {
@@ -53,10 +57,12 @@ public class DescribeComputeRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A unique identifier for the fleet the compute is registered to.
+     * A unique identifier for the fleet that the compute is registered to. You can use either the fleet ID or ARN
+     * value.
      * </p>
      * 
-     * @return A unique identifier for the fleet the compute is registered to.
+     * @return A unique identifier for the fleet that the compute is registered to. You can use either the fleet ID or
+     *         ARN value.
      */
 
     public String getFleetId() {
@@ -65,11 +71,13 @@ public class DescribeComputeRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A unique identifier for the fleet the compute is registered to.
+     * A unique identifier for the fleet that the compute is registered to. You can use either the fleet ID or ARN
+     * value.
      * </p>
      * 
      * @param fleetId
-     *        A unique identifier for the fleet the compute is registered to.
+     *        A unique identifier for the fleet that the compute is registered to. You can use either the fleet ID or
+     *        ARN value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +88,13 @@ public class DescribeComputeRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A descriptive label that is associated with the compute resource registered to your fleet.
+     * The unique identifier of the compute resource to retrieve properties for. For an Anywhere fleet compute, use the
+     * registered compute name. For a managed EC2 fleet instance, use the instance ID.
      * </p>
      * 
      * @param computeName
-     *        A descriptive label that is associated with the compute resource registered to your fleet.
+     *        The unique identifier of the compute resource to retrieve properties for. For an Anywhere fleet compute,
+     *        use the registered compute name. For a managed EC2 fleet instance, use the instance ID.
      */
 
     public void setComputeName(String computeName) {
@@ -93,10 +103,12 @@ public class DescribeComputeRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A descriptive label that is associated with the compute resource registered to your fleet.
+     * The unique identifier of the compute resource to retrieve properties for. For an Anywhere fleet compute, use the
+     * registered compute name. For a managed EC2 fleet instance, use the instance ID.
      * </p>
      * 
-     * @return A descriptive label that is associated with the compute resource registered to your fleet.
+     * @return The unique identifier of the compute resource to retrieve properties for. For an Anywhere fleet compute,
+     *         use the registered compute name. For a managed EC2 fleet instance, use the instance ID.
      */
 
     public String getComputeName() {
@@ -105,11 +117,13 @@ public class DescribeComputeRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A descriptive label that is associated with the compute resource registered to your fleet.
+     * The unique identifier of the compute resource to retrieve properties for. For an Anywhere fleet compute, use the
+     * registered compute name. For a managed EC2 fleet instance, use the instance ID.
      * </p>
      * 
      * @param computeName
-     *        A descriptive label that is associated with the compute resource registered to your fleet.
+     *        The unique identifier of the compute resource to retrieve properties for. For an Anywhere fleet compute,
+     *        use the registered compute name. For a managed EC2 fleet instance, use the instance ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

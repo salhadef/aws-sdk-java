@@ -12,7 +12,6 @@
  */
 package com.amazonaws.services.securitylake.model.transform;
 
-import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -29,18 +28,16 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ListLogSourcesRequestMarshaller {
 
-    private static final MarshallingInfo<List> INPUTORDER_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("inputOrder").build();
-    private static final MarshallingInfo<Map> LISTALLDIMENSIONS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("listAllDimensions").build();
-    private static final MarshallingInfo<List> LISTSINGLEDIMENSION_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("listSingleDimension").build();
-    private static final MarshallingInfo<Map> LISTTWODIMENSIONS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("listTwoDimensions").build();
+    private static final MarshallingInfo<List> ACCOUNTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("accounts").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("nextToken").build();
+    private static final MarshallingInfo<List> REGIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("regions").build();
+    private static final MarshallingInfo<List> SOURCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("sources").build();
 
     private static final ListLogSourcesRequestMarshaller instance = new ListLogSourcesRequestMarshaller();
 
@@ -58,12 +55,11 @@ public class ListLogSourcesRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(listLogSourcesRequest.getInputOrder(), INPUTORDER_BINDING);
-            protocolMarshaller.marshall(listLogSourcesRequest.getListAllDimensions(), LISTALLDIMENSIONS_BINDING);
-            protocolMarshaller.marshall(listLogSourcesRequest.getListSingleDimension(), LISTSINGLEDIMENSION_BINDING);
-            protocolMarshaller.marshall(listLogSourcesRequest.getListTwoDimensions(), LISTTWODIMENSIONS_BINDING);
+            protocolMarshaller.marshall(listLogSourcesRequest.getAccounts(), ACCOUNTS_BINDING);
             protocolMarshaller.marshall(listLogSourcesRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listLogSourcesRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listLogSourcesRequest.getRegions(), REGIONS_BINDING);
+            protocolMarshaller.marshall(listLogSourcesRequest.getSources(), SOURCES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

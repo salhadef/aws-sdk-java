@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ParticipatingServerMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> LAUNCHACTIONSSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("launchActionsStatus").build();
     private static final MarshallingInfo<String> LAUNCHSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("launchStatus").build();
     private static final MarshallingInfo<String> RECOVERYINSTANCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -50,6 +52,7 @@ public class ParticipatingServerMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(participatingServer.getLaunchActionsStatus(), LAUNCHACTIONSSTATUS_BINDING);
             protocolMarshaller.marshall(participatingServer.getLaunchStatus(), LAUNCHSTATUS_BINDING);
             protocolMarshaller.marshall(participatingServer.getRecoveryInstanceID(), RECOVERYINSTANCEID_BINDING);
             protocolMarshaller.marshall(participatingServer.getSourceServerID(), SOURCESERVERID_BINDING);

@@ -81,6 +81,10 @@ public class AppAssessmentJsonUnmarshaller implements Unmarshaller<AppAssessment
                     context.nextToken();
                     appAssessment.setCost(CostJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("driftStatus", targetDepth)) {
+                    context.nextToken();
+                    appAssessment.setDriftStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("endTime", targetDepth)) {
                     context.nextToken();
                     appAssessment.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
@@ -113,6 +117,10 @@ public class AppAssessmentJsonUnmarshaller implements Unmarshaller<AppAssessment
                     context.nextToken();
                     appAssessment.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
+                }
+                if (context.testExpression("versionName", targetDepth)) {
+                    context.nextToken();
+                    appAssessment.setVersionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

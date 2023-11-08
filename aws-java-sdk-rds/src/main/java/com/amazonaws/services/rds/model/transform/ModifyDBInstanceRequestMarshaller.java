@@ -161,6 +161,32 @@ public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<Mod
             request.addParameter("Domain", StringUtils.fromString(modifyDBInstanceRequest.getDomain()));
         }
 
+        if (modifyDBInstanceRequest.getDomainFqdn() != null) {
+            request.addParameter("DomainFqdn", StringUtils.fromString(modifyDBInstanceRequest.getDomainFqdn()));
+        }
+
+        if (modifyDBInstanceRequest.getDomainOu() != null) {
+            request.addParameter("DomainOu", StringUtils.fromString(modifyDBInstanceRequest.getDomainOu()));
+        }
+
+        if (modifyDBInstanceRequest.getDomainAuthSecretArn() != null) {
+            request.addParameter("DomainAuthSecretArn", StringUtils.fromString(modifyDBInstanceRequest.getDomainAuthSecretArn()));
+        }
+
+        if (!modifyDBInstanceRequest.getDomainDnsIps().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) modifyDBInstanceRequest.getDomainDnsIps()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> domainDnsIpsList = (com.amazonaws.internal.SdkInternalList<String>) modifyDBInstanceRequest
+                    .getDomainDnsIps();
+            int domainDnsIpsListIndex = 1;
+
+            for (String domainDnsIpsListValue : domainDnsIpsList) {
+                if (domainDnsIpsListValue != null) {
+                    request.addParameter("DomainDnsIps.member." + domainDnsIpsListIndex, StringUtils.fromString(domainDnsIpsListValue));
+                }
+                domainDnsIpsListIndex++;
+            }
+        }
+
         if (modifyDBInstanceRequest.getCopyTagsToSnapshot() != null) {
             request.addParameter("CopyTagsToSnapshot", StringUtils.fromBoolean(modifyDBInstanceRequest.getCopyTagsToSnapshot()));
         }
@@ -183,6 +209,10 @@ public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<Mod
 
         if (modifyDBInstanceRequest.getDomainIAMRoleName() != null) {
             request.addParameter("DomainIAMRoleName", StringUtils.fromString(modifyDBInstanceRequest.getDomainIAMRoleName()));
+        }
+
+        if (modifyDBInstanceRequest.getDisableDomain() != null) {
+            request.addParameter("DisableDomain", StringUtils.fromBoolean(modifyDBInstanceRequest.getDisableDomain()));
         }
 
         if (modifyDBInstanceRequest.getPromotionTier() != null) {
@@ -318,6 +348,18 @@ public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<Mod
 
         if (modifyDBInstanceRequest.getMasterUserSecretKmsKeyId() != null) {
             request.addParameter("MasterUserSecretKmsKeyId", StringUtils.fromString(modifyDBInstanceRequest.getMasterUserSecretKmsKeyId()));
+        }
+
+        if (modifyDBInstanceRequest.getEngine() != null) {
+            request.addParameter("Engine", StringUtils.fromString(modifyDBInstanceRequest.getEngine()));
+        }
+
+        if (modifyDBInstanceRequest.getDedicatedLogVolume() != null) {
+            request.addParameter("DedicatedLogVolume", StringUtils.fromBoolean(modifyDBInstanceRequest.getDedicatedLogVolume()));
+        }
+
+        if (modifyDBInstanceRequest.getMultiTenant() != null) {
+            request.addParameter("MultiTenant", StringUtils.fromBoolean(modifyDBInstanceRequest.getMultiTenant()));
         }
 
         return request;

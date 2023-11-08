@@ -63,6 +63,11 @@ public class AbstractAmazonRoute53Resolver implements AmazonRoute53Resolver {
     }
 
     @Override
+    public CreateOutpostResolverResult createOutpostResolver(CreateOutpostResolverRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateResolverEndpointResult createResolverEndpoint(CreateResolverEndpointRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -89,6 +94,11 @@ public class AbstractAmazonRoute53Resolver implements AmazonRoute53Resolver {
 
     @Override
     public DeleteFirewallRuleGroupResult deleteFirewallRuleGroup(DeleteFirewallRuleGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteOutpostResolverResult deleteOutpostResolver(DeleteOutpostResolverRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -149,6 +159,11 @@ public class AbstractAmazonRoute53Resolver implements AmazonRoute53Resolver {
 
     @Override
     public GetFirewallRuleGroupPolicyResult getFirewallRuleGroupPolicy(GetFirewallRuleGroupPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetOutpostResolverResult getOutpostResolver(GetOutpostResolverRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -229,6 +244,11 @@ public class AbstractAmazonRoute53Resolver implements AmazonRoute53Resolver {
 
     @Override
     public ListFirewallRulesResult listFirewallRules(ListFirewallRulesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListOutpostResolversResult listOutpostResolvers(ListOutpostResolversRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -319,6 +339,11 @@ public class AbstractAmazonRoute53Resolver implements AmazonRoute53Resolver {
 
     @Override
     public UpdateFirewallRuleGroupAssociationResult updateFirewallRuleGroupAssociation(UpdateFirewallRuleGroupAssociationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateOutpostResolverResult updateOutpostResolver(UpdateOutpostResolverRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

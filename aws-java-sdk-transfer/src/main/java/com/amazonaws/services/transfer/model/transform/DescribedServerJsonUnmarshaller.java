@@ -128,6 +128,12 @@ public class DescribedServerJsonUnmarshaller implements Unmarshaller<DescribedSe
                     context.nextToken();
                     describedServer.setWorkflowDetails(WorkflowDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("StructuredLogDestinations", targetDepth)) {
+                    context.nextToken();
+                    describedServer.setStructuredLogDestinations(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

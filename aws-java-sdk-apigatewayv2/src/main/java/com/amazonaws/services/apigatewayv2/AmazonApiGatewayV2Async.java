@@ -683,7 +683,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
 
     /**
      * <p>
-     * Deletes a route request parameter.
+     * Deletes a route request parameter. Supported only for WebSocket APIs.
      * </p>
      * 
      * @param deleteRouteRequestParameterRequest
@@ -695,7 +695,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
 
     /**
      * <p>
-     * Deletes a route request parameter.
+     * Deletes a route request parameter. Supported only for WebSocket APIs.
      * </p>
      * 
      * @param deleteRouteRequestParameterRequest

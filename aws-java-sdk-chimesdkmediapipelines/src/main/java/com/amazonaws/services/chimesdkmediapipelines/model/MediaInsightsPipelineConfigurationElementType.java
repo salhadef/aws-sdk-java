@@ -27,7 +27,8 @@ public enum MediaInsightsPipelineConfigurationElementType {
     LambdaFunctionSink("LambdaFunctionSink"),
     SqsQueueSink("SqsQueueSink"),
     SnsTopicSink("SnsTopicSink"),
-    S3RecordingSink("S3RecordingSink");
+    S3RecordingSink("S3RecordingSink"),
+    VoiceEnhancementSink("VoiceEnhancementSink");
 
     private String value;
 

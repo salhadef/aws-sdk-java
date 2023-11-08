@@ -22,7 +22,9 @@ public enum DescribePackagesFilterName {
 
     PackageID("PackageID"),
     PackageName("PackageName"),
-    PackageStatus("PackageStatus");
+    PackageStatus("PackageStatus"),
+    PackageType("PackageType"),
+    EngineVersion("EngineVersion");
 
     private String value;
 

@@ -27,10 +27,10 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     * Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
      * <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more
      * information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * </p>
      */
     private String appArn;
@@ -67,7 +67,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      * <i> <code>logicalResourceId</code> </i>
      * </p>
      * <p>
-     * The logical identifier of the resource.
+     * Logical identifier of the resource.
      * </p>
      * <p>
      * Type: Object
@@ -81,7 +81,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      * <code>identifier</code>
      * </p>
      * <p>
-     * The identifier of the resource.
+     * Identifier of the resource.
      * </p>
      * <p>
      * Type: String
@@ -125,7 +125,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      * <code>eksSourceName</code>
      * </p>
      * <p>
-     * The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
+     * Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
      * </p>
      * <note>
      * <p>
@@ -189,7 +189,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      * <b> <code>appComponents</code> </b>
      * </p>
      * <p>
-     * The list of Application Components that this resource belongs to. If an Application Component is not part of the
+     * List of Application Components that this resource belongs to. If an Application Component is not part of the
      * Resilience Hub application, it will be added.
      * </p>
      * <p>
@@ -204,7 +204,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      * <code>name</code>
      * </p>
      * <p>
-     * The name of the Application Component.
+     * Name of the Application Component.
      * </p>
      * <p>
      * Type: String
@@ -215,7 +215,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      * <code>type</code>
      * </p>
      * <p>
-     * The type of Application Component. For more information about the types of Application Component, see <a
+     * Type of Application Component. For more information about the types of Application Component, see <a
      * href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/AppComponent.grouping.html">Grouping resources
      * in an AppComponent</a>.
      * </p>
@@ -282,7 +282,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      * <i> <code>logicalResourceIds</code> </i>
      * </p>
      * <p>
-     * The logical identifier of the resource.
+     * Logical identifier of the resource.
      * </p>
      * <p>
      * Type: Object
@@ -323,7 +323,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      * <code>identifier</code>
      * </p>
      * <p>
-     * The identifier of the resource.
+     * Identifier of the resource.
      * </p>
      * <p>
      * Type: String
@@ -367,7 +367,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      * <code>eksSourceName</code>
      * </p>
      * <p>
-     * The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
+     * Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
      * </p>
      * <note>
      * <p>
@@ -387,7 +387,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      * <b> <code>version</code> </b>
      * </p>
      * <p>
-     * The Resilience Hub application version.
+     * Resilience Hub application version.
      * </p>
      * </li>
      * <li>
@@ -418,18 +418,18 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     * Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
      * <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more
      * information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * </p>
      * 
      * @param appArn
-     *        The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     *        Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
      *        <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For
      *        more information about ARNs, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     *        (ARNs)</a> in the <i>AWS General Reference</i> guide.
+     *        (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      */
 
     public void setAppArn(String appArn) {
@@ -438,17 +438,17 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     * Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
      * <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more
      * information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     * @return Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
      *         <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      *         For more information about ARNs, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     *         (ARNs)</a> in the <i>AWS General Reference</i> guide.
+     *         (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      */
 
     public String getAppArn() {
@@ -457,18 +457,18 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     * Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
      * <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more
      * information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * </p>
      * 
      * @param appArn
-     *        The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     *        Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
      *        <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For
      *        more information about ARNs, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     *        (ARNs)</a> in the <i>AWS General Reference</i> guide.
+     *        (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -510,7 +510,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      * <i> <code>logicalResourceId</code> </i>
      * </p>
      * <p>
-     * The logical identifier of the resource.
+     * Logical identifier of the resource.
      * </p>
      * <p>
      * Type: Object
@@ -524,7 +524,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      * <code>identifier</code>
      * </p>
      * <p>
-     * The identifier of the resource.
+     * Identifier of the resource.
      * </p>
      * <p>
      * Type: String
@@ -568,7 +568,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      * <code>eksSourceName</code>
      * </p>
      * <p>
-     * The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
+     * Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
      * </p>
      * <note>
      * <p>
@@ -632,7 +632,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      * <b> <code>appComponents</code> </b>
      * </p>
      * <p>
-     * The list of Application Components that this resource belongs to. If an Application Component is not part of the
+     * List of Application Components that this resource belongs to. If an Application Component is not part of the
      * Resilience Hub application, it will be added.
      * </p>
      * <p>
@@ -647,7 +647,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      * <code>name</code>
      * </p>
      * <p>
-     * The name of the Application Component.
+     * Name of the Application Component.
      * </p>
      * <p>
      * Type: String
@@ -658,7 +658,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      * <code>type</code>
      * </p>
      * <p>
-     * The type of Application Component. For more information about the types of Application Component, see <a
+     * Type of Application Component. For more information about the types of Application Component, see <a
      * href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/AppComponent.grouping.html">Grouping resources
      * in an AppComponent</a>.
      * </p>
@@ -725,7 +725,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      * <i> <code>logicalResourceIds</code> </i>
      * </p>
      * <p>
-     * The logical identifier of the resource.
+     * Logical identifier of the resource.
      * </p>
      * <p>
      * Type: Object
@@ -766,7 +766,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      * <code>identifier</code>
      * </p>
      * <p>
-     * The identifier of the resource.
+     * Identifier of the resource.
      * </p>
      * <p>
      * Type: String
@@ -810,7 +810,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      * <code>eksSourceName</code>
      * </p>
      * <p>
-     * The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
+     * Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
      * </p>
      * <note>
      * <p>
@@ -830,7 +830,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      * <b> <code>version</code> </b>
      * </p>
      * <p>
-     * The Resilience Hub application version.
+     * Resilience Hub application version.
      * </p>
      * </li>
      * <li>
@@ -889,7 +889,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      *        <i> <code>logicalResourceId</code> </i>
      *        </p>
      *        <p>
-     *        The logical identifier of the resource.
+     *        Logical identifier of the resource.
      *        </p>
      *        <p>
      *        Type: Object
@@ -903,7 +903,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      *        <code>identifier</code>
      *        </p>
      *        <p>
-     *        The identifier of the resource.
+     *        Identifier of the resource.
      *        </p>
      *        <p>
      *        Type: String
@@ -947,7 +947,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      *        <code>eksSourceName</code>
      *        </p>
      *        <p>
-     *        The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
+     *        Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
      *        </p>
      *        <note>
      *        <p>
@@ -1011,8 +1011,8 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      *        <b> <code>appComponents</code> </b>
      *        </p>
      *        <p>
-     *        The list of Application Components that this resource belongs to. If an Application Component is not part
-     *        of the Resilience Hub application, it will be added.
+     *        List of Application Components that this resource belongs to. If an Application Component is not part of
+     *        the Resilience Hub application, it will be added.
      *        </p>
      *        <p>
      *        Type: Array
@@ -1026,7 +1026,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      *        <code>name</code>
      *        </p>
      *        <p>
-     *        The name of the Application Component.
+     *        Name of the Application Component.
      *        </p>
      *        <p>
      *        Type: String
@@ -1037,7 +1037,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      *        <code>type</code>
      *        </p>
      *        <p>
-     *        The type of Application Component. For more information about the types of Application Component, see <a
+     *        Type of Application Component. For more information about the types of Application Component, see <a
      *        href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/AppComponent.grouping.html">Grouping
      *        resources in an AppComponent</a>.
      *        </p>
@@ -1104,7 +1104,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      *        <i> <code>logicalResourceIds</code> </i>
      *        </p>
      *        <p>
-     *        The logical identifier of the resource.
+     *        Logical identifier of the resource.
      *        </p>
      *        <p>
      *        Type: Object
@@ -1145,7 +1145,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      *        <code>identifier</code>
      *        </p>
      *        <p>
-     *        The identifier of the resource.
+     *        Identifier of the resource.
      *        </p>
      *        <p>
      *        Type: String
@@ -1189,7 +1189,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      *        <code>eksSourceName</code>
      *        </p>
      *        <p>
-     *        The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
+     *        Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
      *        </p>
      *        <note>
      *        <p>
@@ -1209,7 +1209,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      *        <b> <code>version</code> </b>
      *        </p>
      *        <p>
-     *        The Resilience Hub application version.
+     *        Resilience Hub application version.
      *        </p>
      *        </li>
      *        <li>
@@ -1273,7 +1273,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      * <i> <code>logicalResourceId</code> </i>
      * </p>
      * <p>
-     * The logical identifier of the resource.
+     * Logical identifier of the resource.
      * </p>
      * <p>
      * Type: Object
@@ -1287,7 +1287,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      * <code>identifier</code>
      * </p>
      * <p>
-     * The identifier of the resource.
+     * Identifier of the resource.
      * </p>
      * <p>
      * Type: String
@@ -1331,7 +1331,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      * <code>eksSourceName</code>
      * </p>
      * <p>
-     * The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
+     * Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
      * </p>
      * <note>
      * <p>
@@ -1395,7 +1395,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      * <b> <code>appComponents</code> </b>
      * </p>
      * <p>
-     * The list of Application Components that this resource belongs to. If an Application Component is not part of the
+     * List of Application Components that this resource belongs to. If an Application Component is not part of the
      * Resilience Hub application, it will be added.
      * </p>
      * <p>
@@ -1410,7 +1410,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      * <code>name</code>
      * </p>
      * <p>
-     * The name of the Application Component.
+     * Name of the Application Component.
      * </p>
      * <p>
      * Type: String
@@ -1421,7 +1421,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      * <code>type</code>
      * </p>
      * <p>
-     * The type of Application Component. For more information about the types of Application Component, see <a
+     * Type of Application Component. For more information about the types of Application Component, see <a
      * href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/AppComponent.grouping.html">Grouping resources
      * in an AppComponent</a>.
      * </p>
@@ -1488,7 +1488,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      * <i> <code>logicalResourceIds</code> </i>
      * </p>
      * <p>
-     * The logical identifier of the resource.
+     * Logical identifier of the resource.
      * </p>
      * <p>
      * Type: Object
@@ -1529,7 +1529,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      * <code>identifier</code>
      * </p>
      * <p>
-     * The identifier of the resource.
+     * Identifier of the resource.
      * </p>
      * <p>
      * Type: String
@@ -1573,7 +1573,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      * <code>eksSourceName</code>
      * </p>
      * <p>
-     * The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
+     * Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
      * </p>
      * <note>
      * <p>
@@ -1593,7 +1593,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      * <b> <code>version</code> </b>
      * </p>
      * <p>
-     * The Resilience Hub application version.
+     * Resilience Hub application version.
      * </p>
      * </li>
      * <li>
@@ -1651,7 +1651,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      *         <i> <code>logicalResourceId</code> </i>
      *         </p>
      *         <p>
-     *         The logical identifier of the resource.
+     *         Logical identifier of the resource.
      *         </p>
      *         <p>
      *         Type: Object
@@ -1665,7 +1665,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      *         <code>identifier</code>
      *         </p>
      *         <p>
-     *         The identifier of the resource.
+     *         Identifier of the resource.
      *         </p>
      *         <p>
      *         Type: String
@@ -1709,7 +1709,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      *         <code>eksSourceName</code>
      *         </p>
      *         <p>
-     *         The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
+     *         Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
      *         </p>
      *         <note>
      *         <p>
@@ -1773,8 +1773,8 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      *         <b> <code>appComponents</code> </b>
      *         </p>
      *         <p>
-     *         The list of Application Components that this resource belongs to. If an Application Component is not part
-     *         of the Resilience Hub application, it will be added.
+     *         List of Application Components that this resource belongs to. If an Application Component is not part of
+     *         the Resilience Hub application, it will be added.
      *         </p>
      *         <p>
      *         Type: Array
@@ -1788,7 +1788,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      *         <code>name</code>
      *         </p>
      *         <p>
-     *         The name of the Application Component.
+     *         Name of the Application Component.
      *         </p>
      *         <p>
      *         Type: String
@@ -1799,7 +1799,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      *         <code>type</code>
      *         </p>
      *         <p>
-     *         The type of Application Component. For more information about the types of Application Component, see <a
+     *         Type of Application Component. For more information about the types of Application Component, see <a
      *         href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/AppComponent.grouping.html">Grouping
      *         resources in an AppComponent</a>.
      *         </p>
@@ -1866,7 +1866,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      *         <i> <code>logicalResourceIds</code> </i>
      *         </p>
      *         <p>
-     *         The logical identifier of the resource.
+     *         Logical identifier of the resource.
      *         </p>
      *         <p>
      *         Type: Object
@@ -1907,7 +1907,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      *         <code>identifier</code>
      *         </p>
      *         <p>
-     *         The identifier of the resource.
+     *         Identifier of the resource.
      *         </p>
      *         <p>
      *         Type: String
@@ -1951,7 +1951,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      *         <code>eksSourceName</code>
      *         </p>
      *         <p>
-     *         The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
+     *         Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
      *         </p>
      *         <note>
      *         <p>
@@ -1971,7 +1971,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      *         <b> <code>version</code> </b>
      *         </p>
      *         <p>
-     *         The Resilience Hub application version.
+     *         Resilience Hub application version.
      *         </p>
      *         </li>
      *         <li>
@@ -2035,7 +2035,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      * <i> <code>logicalResourceId</code> </i>
      * </p>
      * <p>
-     * The logical identifier of the resource.
+     * Logical identifier of the resource.
      * </p>
      * <p>
      * Type: Object
@@ -2049,7 +2049,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      * <code>identifier</code>
      * </p>
      * <p>
-     * The identifier of the resource.
+     * Identifier of the resource.
      * </p>
      * <p>
      * Type: String
@@ -2093,7 +2093,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      * <code>eksSourceName</code>
      * </p>
      * <p>
-     * The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
+     * Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
      * </p>
      * <note>
      * <p>
@@ -2157,7 +2157,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      * <b> <code>appComponents</code> </b>
      * </p>
      * <p>
-     * The list of Application Components that this resource belongs to. If an Application Component is not part of the
+     * List of Application Components that this resource belongs to. If an Application Component is not part of the
      * Resilience Hub application, it will be added.
      * </p>
      * <p>
@@ -2172,7 +2172,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      * <code>name</code>
      * </p>
      * <p>
-     * The name of the Application Component.
+     * Name of the Application Component.
      * </p>
      * <p>
      * Type: String
@@ -2183,7 +2183,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      * <code>type</code>
      * </p>
      * <p>
-     * The type of Application Component. For more information about the types of Application Component, see <a
+     * Type of Application Component. For more information about the types of Application Component, see <a
      * href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/AppComponent.grouping.html">Grouping resources
      * in an AppComponent</a>.
      * </p>
@@ -2250,7 +2250,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      * <i> <code>logicalResourceIds</code> </i>
      * </p>
      * <p>
-     * The logical identifier of the resource.
+     * Logical identifier of the resource.
      * </p>
      * <p>
      * Type: Object
@@ -2291,7 +2291,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      * <code>identifier</code>
      * </p>
      * <p>
-     * The identifier of the resource.
+     * Identifier of the resource.
      * </p>
      * <p>
      * Type: String
@@ -2335,7 +2335,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      * <code>eksSourceName</code>
      * </p>
      * <p>
-     * The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
+     * Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
      * </p>
      * <note>
      * <p>
@@ -2355,7 +2355,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      * <b> <code>version</code> </b>
      * </p>
      * <p>
-     * The Resilience Hub application version.
+     * Resilience Hub application version.
      * </p>
      * </li>
      * <li>
@@ -2414,7 +2414,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      *        <i> <code>logicalResourceId</code> </i>
      *        </p>
      *        <p>
-     *        The logical identifier of the resource.
+     *        Logical identifier of the resource.
      *        </p>
      *        <p>
      *        Type: Object
@@ -2428,7 +2428,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      *        <code>identifier</code>
      *        </p>
      *        <p>
-     *        The identifier of the resource.
+     *        Identifier of the resource.
      *        </p>
      *        <p>
      *        Type: String
@@ -2472,7 +2472,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      *        <code>eksSourceName</code>
      *        </p>
      *        <p>
-     *        The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
+     *        Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
      *        </p>
      *        <note>
      *        <p>
@@ -2536,8 +2536,8 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      *        <b> <code>appComponents</code> </b>
      *        </p>
      *        <p>
-     *        The list of Application Components that this resource belongs to. If an Application Component is not part
-     *        of the Resilience Hub application, it will be added.
+     *        List of Application Components that this resource belongs to. If an Application Component is not part of
+     *        the Resilience Hub application, it will be added.
      *        </p>
      *        <p>
      *        Type: Array
@@ -2551,7 +2551,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      *        <code>name</code>
      *        </p>
      *        <p>
-     *        The name of the Application Component.
+     *        Name of the Application Component.
      *        </p>
      *        <p>
      *        Type: String
@@ -2562,7 +2562,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      *        <code>type</code>
      *        </p>
      *        <p>
-     *        The type of Application Component. For more information about the types of Application Component, see <a
+     *        Type of Application Component. For more information about the types of Application Component, see <a
      *        href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/AppComponent.grouping.html">Grouping
      *        resources in an AppComponent</a>.
      *        </p>
@@ -2629,7 +2629,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      *        <i> <code>logicalResourceIds</code> </i>
      *        </p>
      *        <p>
-     *        The logical identifier of the resource.
+     *        Logical identifier of the resource.
      *        </p>
      *        <p>
      *        Type: Object
@@ -2670,7 +2670,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      *        <code>identifier</code>
      *        </p>
      *        <p>
-     *        The identifier of the resource.
+     *        Identifier of the resource.
      *        </p>
      *        <p>
      *        Type: String
@@ -2714,7 +2714,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      *        <code>eksSourceName</code>
      *        </p>
      *        <p>
-     *        The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
+     *        Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
      *        </p>
      *        <note>
      *        <p>
@@ -2734,7 +2734,7 @@ public class PutDraftAppVersionTemplateRequest extends com.amazonaws.AmazonWebSe
      *        <b> <code>version</code> </b>
      *        </p>
      *        <p>
-     *        The Resilience Hub application version.
+     *        Resilience Hub application version.
      *        </p>
      *        </li>
      *        <li>

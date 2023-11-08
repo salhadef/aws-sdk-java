@@ -60,6 +60,12 @@ public class CustomLineItemChargeDetailsJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     customLineItemChargeDetails.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("LineItemFilters", targetDepth)) {
+                    context.nextToken();
+                    customLineItemChargeDetails.setLineItemFilters(new ListUnmarshaller<LineItemFilter>(LineItemFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

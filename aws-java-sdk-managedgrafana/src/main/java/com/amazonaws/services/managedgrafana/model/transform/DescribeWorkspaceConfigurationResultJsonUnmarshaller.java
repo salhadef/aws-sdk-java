@@ -53,6 +53,10 @@ public class DescribeWorkspaceConfigurationResultJsonUnmarshaller implements Unm
                     describeWorkspaceConfigurationResult.setConfiguration(context.getUnmarshaller(String.class,
                             JsonUnmarshallerContext.UnmarshallerType.JSON_VALUE).unmarshall(context));
                 }
+                if (context.testExpression("grafanaVersion", targetDepth)) {
+                    context.nextToken();
+                    describeWorkspaceConfigurationResult.setGrafanaVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -46,15 +46,14 @@ public class UpgradeTarget implements Serializable, Cloneable {
     private String description;
     /**
      * <p>
-     * A value that indicates whether the target version is applied to any source DB instances that have
+     * Indicates whether the target version is applied to any source DB instances that have
      * <code>AutoMinorVersionUpgrade</code> set to true.
      * </p>
      */
     private Boolean autoUpgrade;
     /**
      * <p>
-     * A value that indicates whether upgrading to the target version requires upgrading the major version of the
-     * database engine.
+     * Indicates whether upgrading to the target version requires upgrading the major version of the database engine.
      * </p>
      */
     private Boolean isMajorVersionUpgrade;
@@ -66,22 +65,38 @@ public class UpgradeTarget implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> supportedEngineModes;
     /**
      * <p>
-     * A value that indicates whether you can use Aurora parallel query with the target engine version.
+     * Indicates whether you can use Aurora parallel query with the target engine version.
      * </p>
      */
     private Boolean supportsParallelQuery;
     /**
      * <p>
-     * A value that indicates whether you can use Aurora global databases with the target engine version.
+     * Indicates whether you can use Aurora global databases with the target engine version.
      * </p>
      */
     private Boolean supportsGlobalDatabases;
     /**
      * <p>
-     * A value that indicates whether you can use Babelfish for Aurora PostgreSQL with the target engine version.
+     * Indicates whether you can use Babelfish for Aurora PostgreSQL with the target engine version.
      * </p>
      */
     private Boolean supportsBabelfish;
+    /**
+     * <p>
+     * Indicates whether the target engine version supports forwarding write operations from reader DB instances to the
+     * writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.
+     * </p>
+     * <p>
+     * Valid for: Aurora DB clusters only
+     * </p>
+     */
+    private Boolean supportsLocalWriteForwarding;
+    /**
+     * <p>
+     * Indicates whether the DB engine version supports Aurora zero-ETL integrations with Amazon Redshift.
+     * </p>
+     */
+    private Boolean supportsIntegrations;
 
     /**
      * <p>
@@ -205,12 +220,12 @@ public class UpgradeTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether the target version is applied to any source DB instances that have
+     * Indicates whether the target version is applied to any source DB instances that have
      * <code>AutoMinorVersionUpgrade</code> set to true.
      * </p>
      * 
      * @param autoUpgrade
-     *        A value that indicates whether the target version is applied to any source DB instances that have
+     *        Indicates whether the target version is applied to any source DB instances that have
      *        <code>AutoMinorVersionUpgrade</code> set to true.
      */
 
@@ -220,11 +235,11 @@ public class UpgradeTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether the target version is applied to any source DB instances that have
+     * Indicates whether the target version is applied to any source DB instances that have
      * <code>AutoMinorVersionUpgrade</code> set to true.
      * </p>
      * 
-     * @return A value that indicates whether the target version is applied to any source DB instances that have
+     * @return Indicates whether the target version is applied to any source DB instances that have
      *         <code>AutoMinorVersionUpgrade</code> set to true.
      */
 
@@ -234,12 +249,12 @@ public class UpgradeTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether the target version is applied to any source DB instances that have
+     * Indicates whether the target version is applied to any source DB instances that have
      * <code>AutoMinorVersionUpgrade</code> set to true.
      * </p>
      * 
      * @param autoUpgrade
-     *        A value that indicates whether the target version is applied to any source DB instances that have
+     *        Indicates whether the target version is applied to any source DB instances that have
      *        <code>AutoMinorVersionUpgrade</code> set to true.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -251,11 +266,11 @@ public class UpgradeTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether the target version is applied to any source DB instances that have
+     * Indicates whether the target version is applied to any source DB instances that have
      * <code>AutoMinorVersionUpgrade</code> set to true.
      * </p>
      * 
-     * @return A value that indicates whether the target version is applied to any source DB instances that have
+     * @return Indicates whether the target version is applied to any source DB instances that have
      *         <code>AutoMinorVersionUpgrade</code> set to true.
      */
 
@@ -265,13 +280,12 @@ public class UpgradeTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether upgrading to the target version requires upgrading the major version of the
-     * database engine.
+     * Indicates whether upgrading to the target version requires upgrading the major version of the database engine.
      * </p>
      * 
      * @param isMajorVersionUpgrade
-     *        A value that indicates whether upgrading to the target version requires upgrading the major version of the
-     *        database engine.
+     *        Indicates whether upgrading to the target version requires upgrading the major version of the database
+     *        engine.
      */
 
     public void setIsMajorVersionUpgrade(Boolean isMajorVersionUpgrade) {
@@ -280,12 +294,11 @@ public class UpgradeTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether upgrading to the target version requires upgrading the major version of the
-     * database engine.
+     * Indicates whether upgrading to the target version requires upgrading the major version of the database engine.
      * </p>
      * 
-     * @return A value that indicates whether upgrading to the target version requires upgrading the major version of
-     *         the database engine.
+     * @return Indicates whether upgrading to the target version requires upgrading the major version of the database
+     *         engine.
      */
 
     public Boolean getIsMajorVersionUpgrade() {
@@ -294,13 +307,12 @@ public class UpgradeTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether upgrading to the target version requires upgrading the major version of the
-     * database engine.
+     * Indicates whether upgrading to the target version requires upgrading the major version of the database engine.
      * </p>
      * 
      * @param isMajorVersionUpgrade
-     *        A value that indicates whether upgrading to the target version requires upgrading the major version of the
-     *        database engine.
+     *        Indicates whether upgrading to the target version requires upgrading the major version of the database
+     *        engine.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -311,12 +323,11 @@ public class UpgradeTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether upgrading to the target version requires upgrading the major version of the
-     * database engine.
+     * Indicates whether upgrading to the target version requires upgrading the major version of the database engine.
      * </p>
      * 
-     * @return A value that indicates whether upgrading to the target version requires upgrading the major version of
-     *         the database engine.
+     * @return Indicates whether upgrading to the target version requires upgrading the major version of the database
+     *         engine.
      */
 
     public Boolean isMajorVersionUpgrade() {
@@ -398,11 +409,11 @@ public class UpgradeTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether you can use Aurora parallel query with the target engine version.
+     * Indicates whether you can use Aurora parallel query with the target engine version.
      * </p>
      * 
      * @param supportsParallelQuery
-     *        A value that indicates whether you can use Aurora parallel query with the target engine version.
+     *        Indicates whether you can use Aurora parallel query with the target engine version.
      */
 
     public void setSupportsParallelQuery(Boolean supportsParallelQuery) {
@@ -411,10 +422,10 @@ public class UpgradeTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether you can use Aurora parallel query with the target engine version.
+     * Indicates whether you can use Aurora parallel query with the target engine version.
      * </p>
      * 
-     * @return A value that indicates whether you can use Aurora parallel query with the target engine version.
+     * @return Indicates whether you can use Aurora parallel query with the target engine version.
      */
 
     public Boolean getSupportsParallelQuery() {
@@ -423,11 +434,11 @@ public class UpgradeTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether you can use Aurora parallel query with the target engine version.
+     * Indicates whether you can use Aurora parallel query with the target engine version.
      * </p>
      * 
      * @param supportsParallelQuery
-     *        A value that indicates whether you can use Aurora parallel query with the target engine version.
+     *        Indicates whether you can use Aurora parallel query with the target engine version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -438,10 +449,10 @@ public class UpgradeTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether you can use Aurora parallel query with the target engine version.
+     * Indicates whether you can use Aurora parallel query with the target engine version.
      * </p>
      * 
-     * @return A value that indicates whether you can use Aurora parallel query with the target engine version.
+     * @return Indicates whether you can use Aurora parallel query with the target engine version.
      */
 
     public Boolean isSupportsParallelQuery() {
@@ -450,11 +461,11 @@ public class UpgradeTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether you can use Aurora global databases with the target engine version.
+     * Indicates whether you can use Aurora global databases with the target engine version.
      * </p>
      * 
      * @param supportsGlobalDatabases
-     *        A value that indicates whether you can use Aurora global databases with the target engine version.
+     *        Indicates whether you can use Aurora global databases with the target engine version.
      */
 
     public void setSupportsGlobalDatabases(Boolean supportsGlobalDatabases) {
@@ -463,10 +474,10 @@ public class UpgradeTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether you can use Aurora global databases with the target engine version.
+     * Indicates whether you can use Aurora global databases with the target engine version.
      * </p>
      * 
-     * @return A value that indicates whether you can use Aurora global databases with the target engine version.
+     * @return Indicates whether you can use Aurora global databases with the target engine version.
      */
 
     public Boolean getSupportsGlobalDatabases() {
@@ -475,11 +486,11 @@ public class UpgradeTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether you can use Aurora global databases with the target engine version.
+     * Indicates whether you can use Aurora global databases with the target engine version.
      * </p>
      * 
      * @param supportsGlobalDatabases
-     *        A value that indicates whether you can use Aurora global databases with the target engine version.
+     *        Indicates whether you can use Aurora global databases with the target engine version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -490,10 +501,10 @@ public class UpgradeTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether you can use Aurora global databases with the target engine version.
+     * Indicates whether you can use Aurora global databases with the target engine version.
      * </p>
      * 
-     * @return A value that indicates whether you can use Aurora global databases with the target engine version.
+     * @return Indicates whether you can use Aurora global databases with the target engine version.
      */
 
     public Boolean isSupportsGlobalDatabases() {
@@ -502,11 +513,11 @@ public class UpgradeTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether you can use Babelfish for Aurora PostgreSQL with the target engine version.
+     * Indicates whether you can use Babelfish for Aurora PostgreSQL with the target engine version.
      * </p>
      * 
      * @param supportsBabelfish
-     *        A value that indicates whether you can use Babelfish for Aurora PostgreSQL with the target engine version.
+     *        Indicates whether you can use Babelfish for Aurora PostgreSQL with the target engine version.
      */
 
     public void setSupportsBabelfish(Boolean supportsBabelfish) {
@@ -515,11 +526,10 @@ public class UpgradeTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether you can use Babelfish for Aurora PostgreSQL with the target engine version.
+     * Indicates whether you can use Babelfish for Aurora PostgreSQL with the target engine version.
      * </p>
      * 
-     * @return A value that indicates whether you can use Babelfish for Aurora PostgreSQL with the target engine
-     *         version.
+     * @return Indicates whether you can use Babelfish for Aurora PostgreSQL with the target engine version.
      */
 
     public Boolean getSupportsBabelfish() {
@@ -528,11 +538,11 @@ public class UpgradeTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether you can use Babelfish for Aurora PostgreSQL with the target engine version.
+     * Indicates whether you can use Babelfish for Aurora PostgreSQL with the target engine version.
      * </p>
      * 
      * @param supportsBabelfish
-     *        A value that indicates whether you can use Babelfish for Aurora PostgreSQL with the target engine version.
+     *        Indicates whether you can use Babelfish for Aurora PostgreSQL with the target engine version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -543,15 +553,150 @@ public class UpgradeTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether you can use Babelfish for Aurora PostgreSQL with the target engine version.
+     * Indicates whether you can use Babelfish for Aurora PostgreSQL with the target engine version.
      * </p>
      * 
-     * @return A value that indicates whether you can use Babelfish for Aurora PostgreSQL with the target engine
-     *         version.
+     * @return Indicates whether you can use Babelfish for Aurora PostgreSQL with the target engine version.
      */
 
     public Boolean isSupportsBabelfish() {
         return this.supportsBabelfish;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the target engine version supports forwarding write operations from reader DB instances to the
+     * writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.
+     * </p>
+     * <p>
+     * Valid for: Aurora DB clusters only
+     * </p>
+     * 
+     * @param supportsLocalWriteForwarding
+     *        Indicates whether the target engine version supports forwarding write operations from reader DB instances
+     *        to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB
+     *        instances.</p>
+     *        <p>
+     *        Valid for: Aurora DB clusters only
+     */
+
+    public void setSupportsLocalWriteForwarding(Boolean supportsLocalWriteForwarding) {
+        this.supportsLocalWriteForwarding = supportsLocalWriteForwarding;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the target engine version supports forwarding write operations from reader DB instances to the
+     * writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.
+     * </p>
+     * <p>
+     * Valid for: Aurora DB clusters only
+     * </p>
+     * 
+     * @return Indicates whether the target engine version supports forwarding write operations from reader DB instances
+     *         to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB
+     *         instances.</p>
+     *         <p>
+     *         Valid for: Aurora DB clusters only
+     */
+
+    public Boolean getSupportsLocalWriteForwarding() {
+        return this.supportsLocalWriteForwarding;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the target engine version supports forwarding write operations from reader DB instances to the
+     * writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.
+     * </p>
+     * <p>
+     * Valid for: Aurora DB clusters only
+     * </p>
+     * 
+     * @param supportsLocalWriteForwarding
+     *        Indicates whether the target engine version supports forwarding write operations from reader DB instances
+     *        to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB
+     *        instances.</p>
+     *        <p>
+     *        Valid for: Aurora DB clusters only
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpgradeTarget withSupportsLocalWriteForwarding(Boolean supportsLocalWriteForwarding) {
+        setSupportsLocalWriteForwarding(supportsLocalWriteForwarding);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the target engine version supports forwarding write operations from reader DB instances to the
+     * writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.
+     * </p>
+     * <p>
+     * Valid for: Aurora DB clusters only
+     * </p>
+     * 
+     * @return Indicates whether the target engine version supports forwarding write operations from reader DB instances
+     *         to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB
+     *         instances.</p>
+     *         <p>
+     *         Valid for: Aurora DB clusters only
+     */
+
+    public Boolean isSupportsLocalWriteForwarding() {
+        return this.supportsLocalWriteForwarding;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the DB engine version supports Aurora zero-ETL integrations with Amazon Redshift.
+     * </p>
+     * 
+     * @param supportsIntegrations
+     *        Indicates whether the DB engine version supports Aurora zero-ETL integrations with Amazon Redshift.
+     */
+
+    public void setSupportsIntegrations(Boolean supportsIntegrations) {
+        this.supportsIntegrations = supportsIntegrations;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the DB engine version supports Aurora zero-ETL integrations with Amazon Redshift.
+     * </p>
+     * 
+     * @return Indicates whether the DB engine version supports Aurora zero-ETL integrations with Amazon Redshift.
+     */
+
+    public Boolean getSupportsIntegrations() {
+        return this.supportsIntegrations;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the DB engine version supports Aurora zero-ETL integrations with Amazon Redshift.
+     * </p>
+     * 
+     * @param supportsIntegrations
+     *        Indicates whether the DB engine version supports Aurora zero-ETL integrations with Amazon Redshift.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpgradeTarget withSupportsIntegrations(Boolean supportsIntegrations) {
+        setSupportsIntegrations(supportsIntegrations);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the DB engine version supports Aurora zero-ETL integrations with Amazon Redshift.
+     * </p>
+     * 
+     * @return Indicates whether the DB engine version supports Aurora zero-ETL integrations with Amazon Redshift.
+     */
+
+    public Boolean isSupportsIntegrations() {
+        return this.supportsIntegrations;
     }
 
     /**
@@ -583,7 +728,11 @@ public class UpgradeTarget implements Serializable, Cloneable {
         if (getSupportsGlobalDatabases() != null)
             sb.append("SupportsGlobalDatabases: ").append(getSupportsGlobalDatabases()).append(",");
         if (getSupportsBabelfish() != null)
-            sb.append("SupportsBabelfish: ").append(getSupportsBabelfish());
+            sb.append("SupportsBabelfish: ").append(getSupportsBabelfish()).append(",");
+        if (getSupportsLocalWriteForwarding() != null)
+            sb.append("SupportsLocalWriteForwarding: ").append(getSupportsLocalWriteForwarding()).append(",");
+        if (getSupportsIntegrations() != null)
+            sb.append("SupportsIntegrations: ").append(getSupportsIntegrations());
         sb.append("}");
         return sb.toString();
     }
@@ -634,6 +783,14 @@ public class UpgradeTarget implements Serializable, Cloneable {
             return false;
         if (other.getSupportsBabelfish() != null && other.getSupportsBabelfish().equals(this.getSupportsBabelfish()) == false)
             return false;
+        if (other.getSupportsLocalWriteForwarding() == null ^ this.getSupportsLocalWriteForwarding() == null)
+            return false;
+        if (other.getSupportsLocalWriteForwarding() != null && other.getSupportsLocalWriteForwarding().equals(this.getSupportsLocalWriteForwarding()) == false)
+            return false;
+        if (other.getSupportsIntegrations() == null ^ this.getSupportsIntegrations() == null)
+            return false;
+        if (other.getSupportsIntegrations() != null && other.getSupportsIntegrations().equals(this.getSupportsIntegrations()) == false)
+            return false;
         return true;
     }
 
@@ -651,6 +808,8 @@ public class UpgradeTarget implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getSupportsParallelQuery() == null) ? 0 : getSupportsParallelQuery().hashCode());
         hashCode = prime * hashCode + ((getSupportsGlobalDatabases() == null) ? 0 : getSupportsGlobalDatabases().hashCode());
         hashCode = prime * hashCode + ((getSupportsBabelfish() == null) ? 0 : getSupportsBabelfish().hashCode());
+        hashCode = prime * hashCode + ((getSupportsLocalWriteForwarding() == null) ? 0 : getSupportsLocalWriteForwarding().hashCode());
+        hashCode = prime * hashCode + ((getSupportsIntegrations() == null) ? 0 : getSupportsIntegrations().hashCode());
         return hashCode;
     }
 

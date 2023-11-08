@@ -42,6 +42,8 @@ public class DynamicTransformMarshaller {
             .marshallLocationName("Path").build();
     private static final MarshallingInfo<String> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Version").build();
+    private static final MarshallingInfo<List> OUTPUTSCHEMAS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("OutputSchemas").build();
 
     private static final DynamicTransformMarshaller instance = new DynamicTransformMarshaller();
 
@@ -66,6 +68,7 @@ public class DynamicTransformMarshaller {
             protocolMarshaller.marshall(dynamicTransform.getFunctionName(), FUNCTIONNAME_BINDING);
             protocolMarshaller.marshall(dynamicTransform.getPath(), PATH_BINDING);
             protocolMarshaller.marshall(dynamicTransform.getVersion(), VERSION_BINDING);
+            protocolMarshaller.marshall(dynamicTransform.getOutputSchemas(), OUTPUTSCHEMAS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

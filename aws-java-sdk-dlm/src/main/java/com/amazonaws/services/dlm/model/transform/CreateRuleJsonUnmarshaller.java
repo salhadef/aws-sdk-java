@@ -70,6 +70,12 @@ public class CreateRuleJsonUnmarshaller implements Unmarshaller<CreateRule, Json
                     context.nextToken();
                     createRule.setCronExpression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Scripts", targetDepth)) {
+                    context.nextToken();
+                    createRule.setScripts(new ListUnmarshaller<Script>(ScriptJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

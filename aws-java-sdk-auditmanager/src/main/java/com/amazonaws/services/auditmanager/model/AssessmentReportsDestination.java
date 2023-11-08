@@ -36,7 +36,7 @@ public class AssessmentReportsDestination implements Serializable, Cloneable, St
     private String destinationType;
     /**
      * <p>
-     * The destination of the assessment report.
+     * The destination bucket where Audit Manager stores assessment reports.
      * </p>
      */
     private String destination;
@@ -102,11 +102,11 @@ public class AssessmentReportsDestination implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The destination of the assessment report.
+     * The destination bucket where Audit Manager stores assessment reports.
      * </p>
      * 
      * @param destination
-     *        The destination of the assessment report.
+     *        The destination bucket where Audit Manager stores assessment reports.
      */
 
     public void setDestination(String destination) {
@@ -115,10 +115,10 @@ public class AssessmentReportsDestination implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The destination of the assessment report.
+     * The destination bucket where Audit Manager stores assessment reports.
      * </p>
      * 
-     * @return The destination of the assessment report.
+     * @return The destination bucket where Audit Manager stores assessment reports.
      */
 
     public String getDestination() {
@@ -127,11 +127,11 @@ public class AssessmentReportsDestination implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The destination of the assessment report.
+     * The destination bucket where Audit Manager stores assessment reports.
      * </p>
      * 
      * @param destination
-     *        The destination of the assessment report.
+     *        The destination bucket where Audit Manager stores assessment reports.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

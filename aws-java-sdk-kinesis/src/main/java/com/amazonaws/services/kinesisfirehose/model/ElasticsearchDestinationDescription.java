@@ -112,10 +112,17 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
     private CloudWatchLoggingOptions cloudWatchLoggingOptions;
     /**
      * <p>
-     * The details of the VPC of the Amazon ES destination.
+     * The details of the VPC of the Amazon OpenSearch or the Amazon OpenSearch Serverless destination.
      * </p>
      */
     private VpcConfigurationDescription vpcConfigurationDescription;
+    /**
+     * <p>
+     * Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated
+     * document ID and OpenSearch Service generated document ID.
+     * </p>
+     */
+    private DocumentIdOptions documentIdOptions;
 
     /**
      * <p>
@@ -722,11 +729,11 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The details of the VPC of the Amazon ES destination.
+     * The details of the VPC of the Amazon OpenSearch or the Amazon OpenSearch Serverless destination.
      * </p>
      * 
      * @param vpcConfigurationDescription
-     *        The details of the VPC of the Amazon ES destination.
+     *        The details of the VPC of the Amazon OpenSearch or the Amazon OpenSearch Serverless destination.
      */
 
     public void setVpcConfigurationDescription(VpcConfigurationDescription vpcConfigurationDescription) {
@@ -735,10 +742,10 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The details of the VPC of the Amazon ES destination.
+     * The details of the VPC of the Amazon OpenSearch or the Amazon OpenSearch Serverless destination.
      * </p>
      * 
-     * @return The details of the VPC of the Amazon ES destination.
+     * @return The details of the VPC of the Amazon OpenSearch or the Amazon OpenSearch Serverless destination.
      */
 
     public VpcConfigurationDescription getVpcConfigurationDescription() {
@@ -747,16 +754,62 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The details of the VPC of the Amazon ES destination.
+     * The details of the VPC of the Amazon OpenSearch or the Amazon OpenSearch Serverless destination.
      * </p>
      * 
      * @param vpcConfigurationDescription
-     *        The details of the VPC of the Amazon ES destination.
+     *        The details of the VPC of the Amazon OpenSearch or the Amazon OpenSearch Serverless destination.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ElasticsearchDestinationDescription withVpcConfigurationDescription(VpcConfigurationDescription vpcConfigurationDescription) {
         setVpcConfigurationDescription(vpcConfigurationDescription);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated
+     * document ID and OpenSearch Service generated document ID.
+     * </p>
+     * 
+     * @param documentIdOptions
+     *        Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated
+     *        document ID and OpenSearch Service generated document ID.
+     */
+
+    public void setDocumentIdOptions(DocumentIdOptions documentIdOptions) {
+        this.documentIdOptions = documentIdOptions;
+    }
+
+    /**
+     * <p>
+     * Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated
+     * document ID and OpenSearch Service generated document ID.
+     * </p>
+     * 
+     * @return Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose
+     *         generated document ID and OpenSearch Service generated document ID.
+     */
+
+    public DocumentIdOptions getDocumentIdOptions() {
+        return this.documentIdOptions;
+    }
+
+    /**
+     * <p>
+     * Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated
+     * document ID and OpenSearch Service generated document ID.
+     * </p>
+     * 
+     * @param documentIdOptions
+     *        Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated
+     *        document ID and OpenSearch Service generated document ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ElasticsearchDestinationDescription withDocumentIdOptions(DocumentIdOptions documentIdOptions) {
+        setDocumentIdOptions(documentIdOptions);
         return this;
     }
 
@@ -797,7 +850,9 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
         if (getCloudWatchLoggingOptions() != null)
             sb.append("CloudWatchLoggingOptions: ").append(getCloudWatchLoggingOptions()).append(",");
         if (getVpcConfigurationDescription() != null)
-            sb.append("VpcConfigurationDescription: ").append(getVpcConfigurationDescription());
+            sb.append("VpcConfigurationDescription: ").append(getVpcConfigurationDescription()).append(",");
+        if (getDocumentIdOptions() != null)
+            sb.append("DocumentIdOptions: ").append(getDocumentIdOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -864,6 +919,10 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
             return false;
         if (other.getVpcConfigurationDescription() != null && other.getVpcConfigurationDescription().equals(this.getVpcConfigurationDescription()) == false)
             return false;
+        if (other.getDocumentIdOptions() == null ^ this.getDocumentIdOptions() == null)
+            return false;
+        if (other.getDocumentIdOptions() != null && other.getDocumentIdOptions().equals(this.getDocumentIdOptions()) == false)
+            return false;
         return true;
     }
 
@@ -885,6 +944,7 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
         hashCode = prime * hashCode + ((getProcessingConfiguration() == null) ? 0 : getProcessingConfiguration().hashCode());
         hashCode = prime * hashCode + ((getCloudWatchLoggingOptions() == null) ? 0 : getCloudWatchLoggingOptions().hashCode());
         hashCode = prime * hashCode + ((getVpcConfigurationDescription() == null) ? 0 : getVpcConfigurationDescription().hashCode());
+        hashCode = prime * hashCode + ((getDocumentIdOptions() == null) ? 0 : getDocumentIdOptions().hashCode());
         return hashCode;
     }
 

@@ -163,6 +163,11 @@ public class AbstractAWSAuditManager implements AWSAuditManager {
     }
 
     @Override
+    public GetEvidenceFileUploadUrlResult getEvidenceFileUploadUrl(GetEvidenceFileUploadUrlRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetEvidenceFolderResult getEvidenceFolder(GetEvidenceFolderRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -46,6 +46,8 @@ public class MediaInsightsPipelineConfigurationElementMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SqsQueueSinkConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> SNSTOPICSINKCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SnsTopicSinkConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> VOICEENHANCEMENTSINKCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VoiceEnhancementSinkConfiguration").build();
 
     private static final MediaInsightsPipelineConfigurationElementMarshaller instance = new MediaInsightsPipelineConfigurationElementMarshaller();
 
@@ -77,6 +79,8 @@ public class MediaInsightsPipelineConfigurationElementMarshaller {
                     .marshall(mediaInsightsPipelineConfigurationElement.getLambdaFunctionSinkConfiguration(), LAMBDAFUNCTIONSINKCONFIGURATION_BINDING);
             protocolMarshaller.marshall(mediaInsightsPipelineConfigurationElement.getSqsQueueSinkConfiguration(), SQSQUEUESINKCONFIGURATION_BINDING);
             protocolMarshaller.marshall(mediaInsightsPipelineConfigurationElement.getSnsTopicSinkConfiguration(), SNSTOPICSINKCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(mediaInsightsPipelineConfigurationElement.getVoiceEnhancementSinkConfiguration(),
+                    VOICEENHANCEMENTSINKCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

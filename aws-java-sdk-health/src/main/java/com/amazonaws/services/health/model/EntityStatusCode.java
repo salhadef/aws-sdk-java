@@ -22,7 +22,9 @@ public enum EntityStatusCode {
 
     IMPAIRED("IMPAIRED"),
     UNIMPAIRED("UNIMPAIRED"),
-    UNKNOWN("UNKNOWN");
+    UNKNOWN("UNKNOWN"),
+    PENDING("PENDING"),
+    RESOLVED("RESOLVED");
 
     private String value;
 

@@ -33,6 +33,8 @@ public class PackageVersionHistoryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CommitMessage").build();
     private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedAt").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<StructuredPojo> PLUGINPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PluginProperties").build();
 
     private static final PackageVersionHistoryMarshaller instance = new PackageVersionHistoryMarshaller();
 
@@ -53,6 +55,7 @@ public class PackageVersionHistoryMarshaller {
             protocolMarshaller.marshall(packageVersionHistory.getPackageVersion(), PACKAGEVERSION_BINDING);
             protocolMarshaller.marshall(packageVersionHistory.getCommitMessage(), COMMITMESSAGE_BINDING);
             protocolMarshaller.marshall(packageVersionHistory.getCreatedAt(), CREATEDAT_BINDING);
+            protocolMarshaller.marshall(packageVersionHistory.getPluginProperties(), PLUGINPROPERTIES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

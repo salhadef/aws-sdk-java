@@ -23,7 +23,8 @@ public enum DataType {
     STRING("STRING"),
     INTEGER("INTEGER"),
     FLOAT("FLOAT"),
-    BOOLEAN("BOOLEAN");
+    BOOLEAN("BOOLEAN"),
+    DATETIME("DATETIME");
 
     private String value;
 

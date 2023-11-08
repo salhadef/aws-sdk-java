@@ -41,7 +41,7 @@ public class CreateBillingGroupRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts in a
-     * consolidated family.
+     * consolidated billing family.
      * </p>
      */
     private AccountGrouping accountGrouping;
@@ -160,12 +160,12 @@ public class CreateBillingGroupRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts in a
-     * consolidated family.
+     * consolidated billing family.
      * </p>
      * 
      * @param accountGrouping
      *        The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts
-     *        in a consolidated family.
+     *        in a consolidated billing family.
      */
 
     public void setAccountGrouping(AccountGrouping accountGrouping) {
@@ -175,11 +175,11 @@ public class CreateBillingGroupRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts in a
-     * consolidated family.
+     * consolidated billing family.
      * </p>
      * 
      * @return The set of accounts that will be under the billing group. The set of accounts resemble the linked
-     *         accounts in a consolidated family.
+     *         accounts in a consolidated billing family.
      */
 
     public AccountGrouping getAccountGrouping() {
@@ -189,12 +189,12 @@ public class CreateBillingGroupRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts in a
-     * consolidated family.
+     * consolidated billing family.
      * </p>
      * 
      * @param accountGrouping
      *        The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts
-     *        in a consolidated family.
+     *        in a consolidated billing family.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

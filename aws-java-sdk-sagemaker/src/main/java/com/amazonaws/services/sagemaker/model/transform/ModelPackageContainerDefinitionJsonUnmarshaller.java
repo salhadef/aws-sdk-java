@@ -89,6 +89,10 @@ public class ModelPackageContainerDefinitionJsonUnmarshaller implements Unmarsha
                     context.nextToken();
                     modelPackageContainerDefinition.setNearestModelName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("AdditionalS3DataSource", targetDepth)) {
+                    context.nextToken();
+                    modelPackageContainerDefinition.setAdditionalS3DataSource(AdditionalS3DataSourceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

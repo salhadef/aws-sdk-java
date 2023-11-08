@@ -30,18 +30,18 @@ public class ClusterMarkerConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The cluster marker that is a part of the cluster marker configuration
+     * The cluster marker that is a part of the cluster marker configuration.
      * </p>
      */
     private ClusterMarker clusterMarker;
 
     /**
      * <p>
-     * The cluster marker that is a part of the cluster marker configuration
+     * The cluster marker that is a part of the cluster marker configuration.
      * </p>
      * 
      * @param clusterMarker
-     *        The cluster marker that is a part of the cluster marker configuration
+     *        The cluster marker that is a part of the cluster marker configuration.
      */
 
     public void setClusterMarker(ClusterMarker clusterMarker) {
@@ -50,10 +50,10 @@ public class ClusterMarkerConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The cluster marker that is a part of the cluster marker configuration
+     * The cluster marker that is a part of the cluster marker configuration.
      * </p>
      * 
-     * @return The cluster marker that is a part of the cluster marker configuration
+     * @return The cluster marker that is a part of the cluster marker configuration.
      */
 
     public ClusterMarker getClusterMarker() {
@@ -62,11 +62,11 @@ public class ClusterMarkerConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The cluster marker that is a part of the cluster marker configuration
+     * The cluster marker that is a part of the cluster marker configuration.
      * </p>
      * 
      * @param clusterMarker
-     *        The cluster marker that is a part of the cluster marker configuration
+     *        The cluster marker that is a part of the cluster marker configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

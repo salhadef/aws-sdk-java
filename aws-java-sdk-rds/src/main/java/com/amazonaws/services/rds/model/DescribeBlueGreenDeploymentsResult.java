@@ -25,23 +25,23 @@ public class DescribeBlueGreenDeploymentsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Contains a list of blue/green deployments for the user.
+     * A list of blue/green deployments in the current account and Amazon Web Services Region.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<BlueGreenDeployment> blueGreenDeployments;
     /**
      * <p>
-     * A pagination token that can be used in a later DescribeBlueGreenDeployments request.
+     * A pagination token that can be used in a later <code>DescribeBlueGreenDeployments</code> request.
      * </p>
      */
     private String marker;
 
     /**
      * <p>
-     * Contains a list of blue/green deployments for the user.
+     * A list of blue/green deployments in the current account and Amazon Web Services Region.
      * </p>
      * 
-     * @return Contains a list of blue/green deployments for the user.
+     * @return A list of blue/green deployments in the current account and Amazon Web Services Region.
      */
 
     public java.util.List<BlueGreenDeployment> getBlueGreenDeployments() {
@@ -53,11 +53,11 @@ public class DescribeBlueGreenDeploymentsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Contains a list of blue/green deployments for the user.
+     * A list of blue/green deployments in the current account and Amazon Web Services Region.
      * </p>
      * 
      * @param blueGreenDeployments
-     *        Contains a list of blue/green deployments for the user.
+     *        A list of blue/green deployments in the current account and Amazon Web Services Region.
      */
 
     public void setBlueGreenDeployments(java.util.Collection<BlueGreenDeployment> blueGreenDeployments) {
@@ -71,7 +71,7 @@ public class DescribeBlueGreenDeploymentsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Contains a list of blue/green deployments for the user.
+     * A list of blue/green deployments in the current account and Amazon Web Services Region.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -80,7 +80,7 @@ public class DescribeBlueGreenDeploymentsResult extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param blueGreenDeployments
-     *        Contains a list of blue/green deployments for the user.
+     *        A list of blue/green deployments in the current account and Amazon Web Services Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,11 +96,11 @@ public class DescribeBlueGreenDeploymentsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Contains a list of blue/green deployments for the user.
+     * A list of blue/green deployments in the current account and Amazon Web Services Region.
      * </p>
      * 
      * @param blueGreenDeployments
-     *        Contains a list of blue/green deployments for the user.
+     *        A list of blue/green deployments in the current account and Amazon Web Services Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -111,11 +111,11 @@ public class DescribeBlueGreenDeploymentsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A pagination token that can be used in a later DescribeBlueGreenDeployments request.
+     * A pagination token that can be used in a later <code>DescribeBlueGreenDeployments</code> request.
      * </p>
      * 
      * @param marker
-     *        A pagination token that can be used in a later DescribeBlueGreenDeployments request.
+     *        A pagination token that can be used in a later <code>DescribeBlueGreenDeployments</code> request.
      */
 
     public void setMarker(String marker) {
@@ -124,10 +124,10 @@ public class DescribeBlueGreenDeploymentsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A pagination token that can be used in a later DescribeBlueGreenDeployments request.
+     * A pagination token that can be used in a later <code>DescribeBlueGreenDeployments</code> request.
      * </p>
      * 
-     * @return A pagination token that can be used in a later DescribeBlueGreenDeployments request.
+     * @return A pagination token that can be used in a later <code>DescribeBlueGreenDeployments</code> request.
      */
 
     public String getMarker() {
@@ -136,11 +136,11 @@ public class DescribeBlueGreenDeploymentsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A pagination token that can be used in a later DescribeBlueGreenDeployments request.
+     * A pagination token that can be used in a later <code>DescribeBlueGreenDeployments</code> request.
      * </p>
      * 
      * @param marker
-     *        A pagination token that can be used in a later DescribeBlueGreenDeployments request.
+     *        A pagination token that can be used in a later <code>DescribeBlueGreenDeployments</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

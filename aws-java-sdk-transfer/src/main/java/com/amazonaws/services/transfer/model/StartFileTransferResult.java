@@ -25,18 +25,18 @@ public class StartFileTransferResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Returns the unique identifier for this file transfer.
+     * Returns the unique identifier for the file transfer.
      * </p>
      */
     private String transferId;
 
     /**
      * <p>
-     * Returns the unique identifier for this file transfer.
+     * Returns the unique identifier for the file transfer.
      * </p>
      * 
      * @param transferId
-     *        Returns the unique identifier for this file transfer.
+     *        Returns the unique identifier for the file transfer.
      */
 
     public void setTransferId(String transferId) {
@@ -45,10 +45,10 @@ public class StartFileTransferResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Returns the unique identifier for this file transfer.
+     * Returns the unique identifier for the file transfer.
      * </p>
      * 
-     * @return Returns the unique identifier for this file transfer.
+     * @return Returns the unique identifier for the file transfer.
      */
 
     public String getTransferId() {
@@ -57,11 +57,11 @@ public class StartFileTransferResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Returns the unique identifier for this file transfer.
+     * Returns the unique identifier for the file transfer.
      * </p>
      * 
      * @param transferId
-     *        Returns the unique identifier for this file transfer.
+     *        Returns the unique identifier for the file transfer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

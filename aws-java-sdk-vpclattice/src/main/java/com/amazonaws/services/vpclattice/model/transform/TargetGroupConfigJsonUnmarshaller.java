@@ -56,6 +56,10 @@ public class TargetGroupConfigJsonUnmarshaller implements Unmarshaller<TargetGro
                     context.nextToken();
                     targetGroupConfig.setIpAddressType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("lambdaEventStructureVersion", targetDepth)) {
+                    context.nextToken();
+                    targetGroupConfig.setLambdaEventStructureVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("port", targetDepth)) {
                     context.nextToken();
                     targetGroupConfig.setPort(context.getUnmarshaller(Integer.class).unmarshall(context));

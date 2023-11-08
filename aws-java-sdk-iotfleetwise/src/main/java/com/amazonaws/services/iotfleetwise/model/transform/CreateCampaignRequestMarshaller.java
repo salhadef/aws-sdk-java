@@ -58,6 +58,8 @@ public class CreateCampaignRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataExtraDimensions").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<List> DATADESTINATIONCONFIGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataDestinationConfigs").build();
 
     private static final CreateCampaignRequestMarshaller instance = new CreateCampaignRequestMarshaller();
 
@@ -90,6 +92,7 @@ public class CreateCampaignRequestMarshaller {
             protocolMarshaller.marshall(createCampaignRequest.getCollectionScheme(), COLLECTIONSCHEME_BINDING);
             protocolMarshaller.marshall(createCampaignRequest.getDataExtraDimensions(), DATAEXTRADIMENSIONS_BINDING);
             protocolMarshaller.marshall(createCampaignRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createCampaignRequest.getDataDestinationConfigs(), DATADESTINATIONCONFIGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

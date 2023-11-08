@@ -43,6 +43,12 @@ public class PackageVersionHistory implements Serializable, Cloneable, Structure
      * </p>
      */
     private java.util.Date createdAt;
+    /**
+     * <p>
+     * Additional information about plugin properties if the package is a <code>ZIP-PLUGIN</code> package.
+     * </p>
+     */
+    private PluginProperties pluginProperties;
 
     /**
      * <p>
@@ -165,6 +171,46 @@ public class PackageVersionHistory implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * Additional information about plugin properties if the package is a <code>ZIP-PLUGIN</code> package.
+     * </p>
+     * 
+     * @param pluginProperties
+     *        Additional information about plugin properties if the package is a <code>ZIP-PLUGIN</code> package.
+     */
+
+    public void setPluginProperties(PluginProperties pluginProperties) {
+        this.pluginProperties = pluginProperties;
+    }
+
+    /**
+     * <p>
+     * Additional information about plugin properties if the package is a <code>ZIP-PLUGIN</code> package.
+     * </p>
+     * 
+     * @return Additional information about plugin properties if the package is a <code>ZIP-PLUGIN</code> package.
+     */
+
+    public PluginProperties getPluginProperties() {
+        return this.pluginProperties;
+    }
+
+    /**
+     * <p>
+     * Additional information about plugin properties if the package is a <code>ZIP-PLUGIN</code> package.
+     * </p>
+     * 
+     * @param pluginProperties
+     *        Additional information about plugin properties if the package is a <code>ZIP-PLUGIN</code> package.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PackageVersionHistory withPluginProperties(PluginProperties pluginProperties) {
+        setPluginProperties(pluginProperties);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -181,7 +227,9 @@ public class PackageVersionHistory implements Serializable, Cloneable, Structure
         if (getCommitMessage() != null)
             sb.append("CommitMessage: ").append(getCommitMessage()).append(",");
         if (getCreatedAt() != null)
-            sb.append("CreatedAt: ").append(getCreatedAt());
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
+        if (getPluginProperties() != null)
+            sb.append("PluginProperties: ").append(getPluginProperties());
         sb.append("}");
         return sb.toString();
     }
@@ -208,6 +256,10 @@ public class PackageVersionHistory implements Serializable, Cloneable, Structure
             return false;
         if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
             return false;
+        if (other.getPluginProperties() == null ^ this.getPluginProperties() == null)
+            return false;
+        if (other.getPluginProperties() != null && other.getPluginProperties().equals(this.getPluginProperties()) == false)
+            return false;
         return true;
     }
 
@@ -219,6 +271,7 @@ public class PackageVersionHistory implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getPackageVersion() == null) ? 0 : getPackageVersion().hashCode());
         hashCode = prime * hashCode + ((getCommitMessage() == null) ? 0 : getCommitMessage().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
+        hashCode = prime * hashCode + ((getPluginProperties() == null) ? 0 : getPluginProperties().hashCode());
         return hashCode;
     }
 

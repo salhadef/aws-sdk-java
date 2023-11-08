@@ -36,18 +36,6 @@ public class RuleGroupsNamespaceSummary implements Serializable, Cloneable, Stru
     private String arn;
     /**
      * <p>
-     * The time when the rule groups namespace was created.
-     * </p>
-     */
-    private java.util.Date createdAt;
-    /**
-     * <p>
-     * The time when the rule groups namespace was modified.
-     * </p>
-     */
-    private java.util.Date modifiedAt;
-    /**
-     * <p>
      * The rule groups namespace name.
      * </p>
      */
@@ -58,6 +46,18 @@ public class RuleGroupsNamespaceSummary implements Serializable, Cloneable, Stru
      * </p>
      */
     private RuleGroupsNamespaceStatus status;
+    /**
+     * <p>
+     * The time when the rule groups namespace was created.
+     * </p>
+     */
+    private java.util.Date createdAt;
+    /**
+     * <p>
+     * The time when the rule groups namespace was modified.
+     * </p>
+     */
+    private java.util.Date modifiedAt;
     /**
      * <p>
      * The tags of this rule groups namespace.
@@ -102,86 +102,6 @@ public class RuleGroupsNamespaceSummary implements Serializable, Cloneable, Stru
 
     public RuleGroupsNamespaceSummary withArn(String arn) {
         setArn(arn);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The time when the rule groups namespace was created.
-     * </p>
-     * 
-     * @param createdAt
-     *        The time when the rule groups namespace was created.
-     */
-
-    public void setCreatedAt(java.util.Date createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    /**
-     * <p>
-     * The time when the rule groups namespace was created.
-     * </p>
-     * 
-     * @return The time when the rule groups namespace was created.
-     */
-
-    public java.util.Date getCreatedAt() {
-        return this.createdAt;
-    }
-
-    /**
-     * <p>
-     * The time when the rule groups namespace was created.
-     * </p>
-     * 
-     * @param createdAt
-     *        The time when the rule groups namespace was created.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public RuleGroupsNamespaceSummary withCreatedAt(java.util.Date createdAt) {
-        setCreatedAt(createdAt);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The time when the rule groups namespace was modified.
-     * </p>
-     * 
-     * @param modifiedAt
-     *        The time when the rule groups namespace was modified.
-     */
-
-    public void setModifiedAt(java.util.Date modifiedAt) {
-        this.modifiedAt = modifiedAt;
-    }
-
-    /**
-     * <p>
-     * The time when the rule groups namespace was modified.
-     * </p>
-     * 
-     * @return The time when the rule groups namespace was modified.
-     */
-
-    public java.util.Date getModifiedAt() {
-        return this.modifiedAt;
-    }
-
-    /**
-     * <p>
-     * The time when the rule groups namespace was modified.
-     * </p>
-     * 
-     * @param modifiedAt
-     *        The time when the rule groups namespace was modified.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public RuleGroupsNamespaceSummary withModifiedAt(java.util.Date modifiedAt) {
-        setModifiedAt(modifiedAt);
         return this;
     }
 
@@ -267,6 +187,86 @@ public class RuleGroupsNamespaceSummary implements Serializable, Cloneable, Stru
 
     /**
      * <p>
+     * The time when the rule groups namespace was created.
+     * </p>
+     * 
+     * @param createdAt
+     *        The time when the rule groups namespace was created.
+     */
+
+    public void setCreatedAt(java.util.Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    /**
+     * <p>
+     * The time when the rule groups namespace was created.
+     * </p>
+     * 
+     * @return The time when the rule groups namespace was created.
+     */
+
+    public java.util.Date getCreatedAt() {
+        return this.createdAt;
+    }
+
+    /**
+     * <p>
+     * The time when the rule groups namespace was created.
+     * </p>
+     * 
+     * @param createdAt
+     *        The time when the rule groups namespace was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RuleGroupsNamespaceSummary withCreatedAt(java.util.Date createdAt) {
+        setCreatedAt(createdAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time when the rule groups namespace was modified.
+     * </p>
+     * 
+     * @param modifiedAt
+     *        The time when the rule groups namespace was modified.
+     */
+
+    public void setModifiedAt(java.util.Date modifiedAt) {
+        this.modifiedAt = modifiedAt;
+    }
+
+    /**
+     * <p>
+     * The time when the rule groups namespace was modified.
+     * </p>
+     * 
+     * @return The time when the rule groups namespace was modified.
+     */
+
+    public java.util.Date getModifiedAt() {
+        return this.modifiedAt;
+    }
+
+    /**
+     * <p>
+     * The time when the rule groups namespace was modified.
+     * </p>
+     * 
+     * @param modifiedAt
+     *        The time when the rule groups namespace was modified.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RuleGroupsNamespaceSummary withModifiedAt(java.util.Date modifiedAt) {
+        setModifiedAt(modifiedAt);
+        return this;
+    }
+
+    /**
+     * <p>
      * The tags of this rule groups namespace.
      * </p>
      * 
@@ -347,14 +347,14 @@ public class RuleGroupsNamespaceSummary implements Serializable, Cloneable, Stru
         sb.append("{");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
-        if (getCreatedAt() != null)
-            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
-        if (getModifiedAt() != null)
-            sb.append("ModifiedAt: ").append(getModifiedAt()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
+        if (getCreatedAt() != null)
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
+        if (getModifiedAt() != null)
+            sb.append("ModifiedAt: ").append(getModifiedAt()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -375,14 +375,6 @@ public class RuleGroupsNamespaceSummary implements Serializable, Cloneable, Stru
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
-        if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
-            return false;
-        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
-            return false;
-        if (other.getModifiedAt() == null ^ this.getModifiedAt() == null)
-            return false;
-        if (other.getModifiedAt() != null && other.getModifiedAt().equals(this.getModifiedAt()) == false)
-            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
@@ -390,6 +382,14 @@ public class RuleGroupsNamespaceSummary implements Serializable, Cloneable, Stru
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
+            return false;
+        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
+            return false;
+        if (other.getModifiedAt() == null ^ this.getModifiedAt() == null)
+            return false;
+        if (other.getModifiedAt() != null && other.getModifiedAt().equals(this.getModifiedAt()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
@@ -404,10 +404,10 @@ public class RuleGroupsNamespaceSummary implements Serializable, Cloneable, Stru
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
-        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
-        hashCode = prime * hashCode + ((getModifiedAt() == null) ? 0 : getModifiedAt().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
+        hashCode = prime * hashCode + ((getModifiedAt() == null) ? 0 : getModifiedAt().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

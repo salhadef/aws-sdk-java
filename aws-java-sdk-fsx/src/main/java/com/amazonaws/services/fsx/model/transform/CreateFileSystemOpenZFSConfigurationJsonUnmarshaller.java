@@ -85,6 +85,20 @@ public class CreateFileSystemOpenZFSConfigurationJsonUnmarshaller implements Unm
                     createFileSystemOpenZFSConfiguration.setRootVolumeConfiguration(OpenZFSCreateRootVolumeConfigurationJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
+                if (context.testExpression("PreferredSubnetId", targetDepth)) {
+                    context.nextToken();
+                    createFileSystemOpenZFSConfiguration.setPreferredSubnetId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("EndpointIpAddressRange", targetDepth)) {
+                    context.nextToken();
+                    createFileSystemOpenZFSConfiguration.setEndpointIpAddressRange(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("RouteTableIds", targetDepth)) {
+                    context.nextToken();
+                    createFileSystemOpenZFSConfiguration.setRouteTableIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

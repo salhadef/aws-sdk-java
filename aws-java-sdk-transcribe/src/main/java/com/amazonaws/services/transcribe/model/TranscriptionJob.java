@@ -272,6 +272,12 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private java.util.Map<String, LanguageIdSettings> languageIdSettings;
+    /**
+     * <p>
+     * Provides information about the toxicity detection settings applied to your transcription.
+     * </p>
+     */
+    private java.util.List<ToxicityDetectionSettings> toxicityDetection;
 
     /**
      * <p>
@@ -2009,6 +2015,76 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * Provides information about the toxicity detection settings applied to your transcription.
+     * </p>
+     * 
+     * @return Provides information about the toxicity detection settings applied to your transcription.
+     */
+
+    public java.util.List<ToxicityDetectionSettings> getToxicityDetection() {
+        return toxicityDetection;
+    }
+
+    /**
+     * <p>
+     * Provides information about the toxicity detection settings applied to your transcription.
+     * </p>
+     * 
+     * @param toxicityDetection
+     *        Provides information about the toxicity detection settings applied to your transcription.
+     */
+
+    public void setToxicityDetection(java.util.Collection<ToxicityDetectionSettings> toxicityDetection) {
+        if (toxicityDetection == null) {
+            this.toxicityDetection = null;
+            return;
+        }
+
+        this.toxicityDetection = new java.util.ArrayList<ToxicityDetectionSettings>(toxicityDetection);
+    }
+
+    /**
+     * <p>
+     * Provides information about the toxicity detection settings applied to your transcription.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setToxicityDetection(java.util.Collection)} or {@link #withToxicityDetection(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param toxicityDetection
+     *        Provides information about the toxicity detection settings applied to your transcription.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TranscriptionJob withToxicityDetection(ToxicityDetectionSettings... toxicityDetection) {
+        if (this.toxicityDetection == null) {
+            setToxicityDetection(new java.util.ArrayList<ToxicityDetectionSettings>(toxicityDetection.length));
+        }
+        for (ToxicityDetectionSettings ele : toxicityDetection) {
+            this.toxicityDetection.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides information about the toxicity detection settings applied to your transcription.
+     * </p>
+     * 
+     * @param toxicityDetection
+     *        Provides information about the toxicity detection settings applied to your transcription.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TranscriptionJob withToxicityDetection(java.util.Collection<ToxicityDetectionSettings> toxicityDetection) {
+        setToxicityDetection(toxicityDetection);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2065,7 +2141,9 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
         if (getSubtitles() != null)
             sb.append("Subtitles: ").append(getSubtitles()).append(",");
         if (getLanguageIdSettings() != null)
-            sb.append("LanguageIdSettings: ").append(getLanguageIdSettings());
+            sb.append("LanguageIdSettings: ").append(getLanguageIdSettings()).append(",");
+        if (getToxicityDetection() != null)
+            sb.append("ToxicityDetection: ").append(getToxicityDetection());
         sb.append("}");
         return sb.toString();
     }
@@ -2172,6 +2250,10 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getLanguageIdSettings() != null && other.getLanguageIdSettings().equals(this.getLanguageIdSettings()) == false)
             return false;
+        if (other.getToxicityDetection() == null ^ this.getToxicityDetection() == null)
+            return false;
+        if (other.getToxicityDetection() != null && other.getToxicityDetection().equals(this.getToxicityDetection()) == false)
+            return false;
         return true;
     }
 
@@ -2203,6 +2285,7 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getSubtitles() == null) ? 0 : getSubtitles().hashCode());
         hashCode = prime * hashCode + ((getLanguageIdSettings() == null) ? 0 : getLanguageIdSettings().hashCode());
+        hashCode = prime * hashCode + ((getToxicityDetection() == null) ? 0 : getToxicityDetection().hashCode());
         return hashCode;
     }
 

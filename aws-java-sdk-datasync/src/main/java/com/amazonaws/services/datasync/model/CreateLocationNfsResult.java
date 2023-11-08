@@ -28,18 +28,18 @@ public class CreateLocationNfsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source NFS file system location that is created.
+     * The ARN of the transfer location that you created for your NFS file server.
      * </p>
      */
     private String locationArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source NFS file system location that is created.
+     * The ARN of the transfer location that you created for your NFS file server.
      * </p>
      * 
      * @param locationArn
-     *        The Amazon Resource Name (ARN) of the source NFS file system location that is created.
+     *        The ARN of the transfer location that you created for your NFS file server.
      */
 
     public void setLocationArn(String locationArn) {
@@ -48,10 +48,10 @@ public class CreateLocationNfsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source NFS file system location that is created.
+     * The ARN of the transfer location that you created for your NFS file server.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the source NFS file system location that is created.
+     * @return The ARN of the transfer location that you created for your NFS file server.
      */
 
     public String getLocationArn() {
@@ -60,11 +60,11 @@ public class CreateLocationNfsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source NFS file system location that is created.
+     * The ARN of the transfer location that you created for your NFS file server.
      * </p>
      * 
      * @param locationArn
-     *        The Amazon Resource Name (ARN) of the source NFS file system location that is created.
+     *        The ARN of the transfer location that you created for your NFS file server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

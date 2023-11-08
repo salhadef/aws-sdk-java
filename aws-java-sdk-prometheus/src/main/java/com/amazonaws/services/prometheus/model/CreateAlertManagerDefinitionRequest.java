@@ -30,10 +30,10 @@ public class CreateAlertManagerDefinitionRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     * The ID of the workspace in which to create the alert manager definition.
      * </p>
      */
-    private String clientToken;
+    private String workspaceId;
     /**
      * <p>
      * The alert manager definition data.
@@ -42,48 +42,48 @@ public class CreateAlertManagerDefinitionRequest extends com.amazonaws.AmazonWeb
     private java.nio.ByteBuffer data;
     /**
      * <p>
+     * Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     * </p>
+     */
+    private String clientToken;
+
+    /**
+     * <p>
      * The ID of the workspace in which to create the alert manager definition.
      * </p>
-     */
-    private String workspaceId;
-
-    /**
-     * <p>
-     * Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-     * </p>
      * 
-     * @param clientToken
-     *        Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     * @param workspaceId
+     *        The ID of the workspace in which to create the alert manager definition.
      */
 
-    public void setClientToken(String clientToken) {
-        this.clientToken = clientToken;
+    public void setWorkspaceId(String workspaceId) {
+        this.workspaceId = workspaceId;
     }
 
     /**
      * <p>
-     * Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     * The ID of the workspace in which to create the alert manager definition.
      * </p>
      * 
-     * @return Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     * @return The ID of the workspace in which to create the alert manager definition.
      */
 
-    public String getClientToken() {
-        return this.clientToken;
+    public String getWorkspaceId() {
+        return this.workspaceId;
     }
 
     /**
      * <p>
-     * Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     * The ID of the workspace in which to create the alert manager definition.
      * </p>
      * 
-     * @param clientToken
-     *        Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     * @param workspaceId
+     *        The ID of the workspace in which to create the alert manager definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateAlertManagerDefinitionRequest withClientToken(String clientToken) {
-        setClientToken(clientToken);
+    public CreateAlertManagerDefinitionRequest withWorkspaceId(String workspaceId) {
+        setWorkspaceId(workspaceId);
         return this;
     }
 
@@ -156,41 +156,41 @@ public class CreateAlertManagerDefinitionRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ID of the workspace in which to create the alert manager definition.
+     * Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
      * </p>
      * 
-     * @param workspaceId
-     *        The ID of the workspace in which to create the alert manager definition.
+     * @param clientToken
+     *        Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
      */
 
-    public void setWorkspaceId(String workspaceId) {
-        this.workspaceId = workspaceId;
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
     }
 
     /**
      * <p>
-     * The ID of the workspace in which to create the alert manager definition.
+     * Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
      * </p>
      * 
-     * @return The ID of the workspace in which to create the alert manager definition.
+     * @return Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
      */
 
-    public String getWorkspaceId() {
-        return this.workspaceId;
+    public String getClientToken() {
+        return this.clientToken;
     }
 
     /**
      * <p>
-     * The ID of the workspace in which to create the alert manager definition.
+     * Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
      * </p>
      * 
-     * @param workspaceId
-     *        The ID of the workspace in which to create the alert manager definition.
+     * @param clientToken
+     *        Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateAlertManagerDefinitionRequest withWorkspaceId(String workspaceId) {
-        setWorkspaceId(workspaceId);
+    public CreateAlertManagerDefinitionRequest withClientToken(String clientToken) {
+        setClientToken(clientToken);
         return this;
     }
 
@@ -206,12 +206,12 @@ public class CreateAlertManagerDefinitionRequest extends com.amazonaws.AmazonWeb
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getWorkspaceId() != null)
+            sb.append("WorkspaceId: ").append(getWorkspaceId()).append(",");
         if (getData() != null)
             sb.append("Data: ").append(getData()).append(",");
-        if (getWorkspaceId() != null)
-            sb.append("WorkspaceId: ").append(getWorkspaceId());
+        if (getClientToken() != null)
+            sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");
         return sb.toString();
     }
@@ -226,17 +226,17 @@ public class CreateAlertManagerDefinitionRequest extends com.amazonaws.AmazonWeb
         if (obj instanceof CreateAlertManagerDefinitionRequest == false)
             return false;
         CreateAlertManagerDefinitionRequest other = (CreateAlertManagerDefinitionRequest) obj;
-        if (other.getClientToken() == null ^ this.getClientToken() == null)
+        if (other.getWorkspaceId() == null ^ this.getWorkspaceId() == null)
             return false;
-        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
+        if (other.getWorkspaceId() != null && other.getWorkspaceId().equals(this.getWorkspaceId()) == false)
             return false;
         if (other.getData() == null ^ this.getData() == null)
             return false;
         if (other.getData() != null && other.getData().equals(this.getData()) == false)
             return false;
-        if (other.getWorkspaceId() == null ^ this.getWorkspaceId() == null)
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
-        if (other.getWorkspaceId() != null && other.getWorkspaceId().equals(this.getWorkspaceId()) == false)
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
         return true;
     }
@@ -246,9 +246,9 @@ public class CreateAlertManagerDefinitionRequest extends com.amazonaws.AmazonWeb
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
-        hashCode = prime * hashCode + ((getData() == null) ? 0 : getData().hashCode());
         hashCode = prime * hashCode + ((getWorkspaceId() == null) ? 0 : getWorkspaceId().hashCode());
+        hashCode = prime * hashCode + ((getData() == null) ? 0 : getData().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         return hashCode;
     }
 

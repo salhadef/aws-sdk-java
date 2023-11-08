@@ -56,6 +56,10 @@ public class DescribeBackupVaultResultJsonUnmarshaller implements Unmarshaller<D
                     context.nextToken();
                     describeBackupVaultResult.setBackupVaultArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("VaultType", targetDepth)) {
+                    context.nextToken();
+                    describeBackupVaultResult.setVaultType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("EncryptionKeyArn", targetDepth)) {
                     context.nextToken();
                     describeBackupVaultResult.setEncryptionKeyArn(context.getUnmarshaller(String.class).unmarshall(context));

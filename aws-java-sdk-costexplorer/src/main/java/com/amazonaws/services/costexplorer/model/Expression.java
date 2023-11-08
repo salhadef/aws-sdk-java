@@ -74,7 +74,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <li>
  * <p>
  * The corresponding <code>Expression</code> for this example is as follows:
- * <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code>
+ * <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] } }</code>
  * </p>
  * </li>
  * <li>
@@ -93,7 +93,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <ul>
  * <li>
  * <p>
- * For example, you can filter for linked account names that start with “a”.
+ * For example, you can filter for linked account names that start with "a".
  * </p>
  * </li>
  * <li>

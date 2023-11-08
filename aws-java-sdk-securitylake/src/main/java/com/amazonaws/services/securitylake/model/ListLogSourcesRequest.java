@@ -27,31 +27,10 @@ public class ListLogSourcesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Lists the log sources in input order, namely Region, source type, and member account.
+     * The list of Amazon Web Services accounts for which log sources are displayed.
      * </p>
      */
-    private java.util.List<String> inputOrder;
-    /**
-     * <p>
-     * List the view of log sources for enabled Amazon Security Lake accounts for specific Amazon Web Services sources
-     * from specific accounts and specific Regions.
-     * </p>
-     */
-    private java.util.Map<String, java.util.Map<String, java.util.List<String>>> listAllDimensions;
-    /**
-     * <p>
-     * List the view of log sources for enabled Security Lake accounts for all Amazon Web Services sources from specific
-     * accounts or specific Regions.
-     * </p>
-     */
-    private java.util.List<String> listSingleDimension;
-    /**
-     * <p>
-     * Lists the view of log sources for enabled Security Lake accounts for specific Amazon Web Services sources from
-     * specific accounts or specific Regions.
-     * </p>
-     */
-    private java.util.Map<String, java.util.List<String>> listTwoDimensions;
+    private java.util.List<String> accounts;
     /**
      * <p>
      * The maximum number of accounts for which the log sources are displayed.
@@ -65,328 +44,86 @@ public class ListLogSourcesRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * The list of regions for which log sources are displayed.
+     * </p>
+     */
+    private java.util.List<String> regions;
+    /**
+     * <p>
+     * The list of sources for which log sources are displayed.
+     * </p>
+     */
+    private java.util.List<LogSourceResource> sources;
 
     /**
      * <p>
-     * Lists the log sources in input order, namely Region, source type, and member account.
+     * The list of Amazon Web Services accounts for which log sources are displayed.
      * </p>
      * 
-     * @return Lists the log sources in input order, namely Region, source type, and member account.
-     * @see Dimension
+     * @return The list of Amazon Web Services accounts for which log sources are displayed.
      */
 
-    public java.util.List<String> getInputOrder() {
-        return inputOrder;
+    public java.util.List<String> getAccounts() {
+        return accounts;
     }
 
     /**
      * <p>
-     * Lists the log sources in input order, namely Region, source type, and member account.
+     * The list of Amazon Web Services accounts for which log sources are displayed.
      * </p>
      * 
-     * @param inputOrder
-     *        Lists the log sources in input order, namely Region, source type, and member account.
-     * @see Dimension
+     * @param accounts
+     *        The list of Amazon Web Services accounts for which log sources are displayed.
      */
 
-    public void setInputOrder(java.util.Collection<String> inputOrder) {
-        if (inputOrder == null) {
-            this.inputOrder = null;
+    public void setAccounts(java.util.Collection<String> accounts) {
+        if (accounts == null) {
+            this.accounts = null;
             return;
         }
 
-        this.inputOrder = new java.util.ArrayList<String>(inputOrder);
+        this.accounts = new java.util.ArrayList<String>(accounts);
     }
 
     /**
      * <p>
-     * Lists the log sources in input order, namely Region, source type, and member account.
+     * The list of Amazon Web Services accounts for which log sources are displayed.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setInputOrder(java.util.Collection)} or {@link #withInputOrder(java.util.Collection)} if you want to
-     * override the existing values.
+     * {@link #setAccounts(java.util.Collection)} or {@link #withAccounts(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
-     * @param inputOrder
-     *        Lists the log sources in input order, namely Region, source type, and member account.
+     * @param accounts
+     *        The list of Amazon Web Services accounts for which log sources are displayed.
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see Dimension
      */
 
-    public ListLogSourcesRequest withInputOrder(String... inputOrder) {
-        if (this.inputOrder == null) {
-            setInputOrder(new java.util.ArrayList<String>(inputOrder.length));
+    public ListLogSourcesRequest withAccounts(String... accounts) {
+        if (this.accounts == null) {
+            setAccounts(new java.util.ArrayList<String>(accounts.length));
         }
-        for (String ele : inputOrder) {
-            this.inputOrder.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * Lists the log sources in input order, namely Region, source type, and member account.
-     * </p>
-     * 
-     * @param inputOrder
-     *        Lists the log sources in input order, namely Region, source type, and member account.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see Dimension
-     */
-
-    public ListLogSourcesRequest withInputOrder(java.util.Collection<String> inputOrder) {
-        setInputOrder(inputOrder);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Lists the log sources in input order, namely Region, source type, and member account.
-     * </p>
-     * 
-     * @param inputOrder
-     *        Lists the log sources in input order, namely Region, source type, and member account.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see Dimension
-     */
-
-    public ListLogSourcesRequest withInputOrder(Dimension... inputOrder) {
-        java.util.ArrayList<String> inputOrderCopy = new java.util.ArrayList<String>(inputOrder.length);
-        for (Dimension value : inputOrder) {
-            inputOrderCopy.add(value.toString());
-        }
-        if (getInputOrder() == null) {
-            setInputOrder(inputOrderCopy);
-        } else {
-            getInputOrder().addAll(inputOrderCopy);
+        for (String ele : accounts) {
+            this.accounts.add(ele);
         }
         return this;
     }
 
     /**
      * <p>
-     * List the view of log sources for enabled Amazon Security Lake accounts for specific Amazon Web Services sources
-     * from specific accounts and specific Regions.
+     * The list of Amazon Web Services accounts for which log sources are displayed.
      * </p>
      * 
-     * @return List the view of log sources for enabled Amazon Security Lake accounts for specific Amazon Web Services
-     *         sources from specific accounts and specific Regions.
-     */
-
-    public java.util.Map<String, java.util.Map<String, java.util.List<String>>> getListAllDimensions() {
-        return listAllDimensions;
-    }
-
-    /**
-     * <p>
-     * List the view of log sources for enabled Amazon Security Lake accounts for specific Amazon Web Services sources
-     * from specific accounts and specific Regions.
-     * </p>
-     * 
-     * @param listAllDimensions
-     *        List the view of log sources for enabled Amazon Security Lake accounts for specific Amazon Web Services
-     *        sources from specific accounts and specific Regions.
-     */
-
-    public void setListAllDimensions(java.util.Map<String, java.util.Map<String, java.util.List<String>>> listAllDimensions) {
-        this.listAllDimensions = listAllDimensions;
-    }
-
-    /**
-     * <p>
-     * List the view of log sources for enabled Amazon Security Lake accounts for specific Amazon Web Services sources
-     * from specific accounts and specific Regions.
-     * </p>
-     * 
-     * @param listAllDimensions
-     *        List the view of log sources for enabled Amazon Security Lake accounts for specific Amazon Web Services
-     *        sources from specific accounts and specific Regions.
+     * @param accounts
+     *        The list of Amazon Web Services accounts for which log sources are displayed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListLogSourcesRequest withListAllDimensions(java.util.Map<String, java.util.Map<String, java.util.List<String>>> listAllDimensions) {
-        setListAllDimensions(listAllDimensions);
-        return this;
-    }
-
-    /**
-     * Add a single ListAllDimensions entry
-     *
-     * @see ListLogSourcesRequest#withListAllDimensions
-     * @returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListLogSourcesRequest addListAllDimensionsEntry(String key, java.util.Map<String, java.util.List<String>> value) {
-        if (null == this.listAllDimensions) {
-            this.listAllDimensions = new java.util.HashMap<String, java.util.Map<String, java.util.List<String>>>();
-        }
-        if (this.listAllDimensions.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.listAllDimensions.put(key, value);
-        return this;
-    }
-
-    /**
-     * Removes all the entries added into ListAllDimensions.
-     *
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListLogSourcesRequest clearListAllDimensionsEntries() {
-        this.listAllDimensions = null;
-        return this;
-    }
-
-    /**
-     * <p>
-     * List the view of log sources for enabled Security Lake accounts for all Amazon Web Services sources from specific
-     * accounts or specific Regions.
-     * </p>
-     * 
-     * @return List the view of log sources for enabled Security Lake accounts for all Amazon Web Services sources from
-     *         specific accounts or specific Regions.
-     */
-
-    public java.util.List<String> getListSingleDimension() {
-        return listSingleDimension;
-    }
-
-    /**
-     * <p>
-     * List the view of log sources for enabled Security Lake accounts for all Amazon Web Services sources from specific
-     * accounts or specific Regions.
-     * </p>
-     * 
-     * @param listSingleDimension
-     *        List the view of log sources for enabled Security Lake accounts for all Amazon Web Services sources from
-     *        specific accounts or specific Regions.
-     */
-
-    public void setListSingleDimension(java.util.Collection<String> listSingleDimension) {
-        if (listSingleDimension == null) {
-            this.listSingleDimension = null;
-            return;
-        }
-
-        this.listSingleDimension = new java.util.ArrayList<String>(listSingleDimension);
-    }
-
-    /**
-     * <p>
-     * List the view of log sources for enabled Security Lake accounts for all Amazon Web Services sources from specific
-     * accounts or specific Regions.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setListSingleDimension(java.util.Collection)} or {@link #withListSingleDimension(java.util.Collection)}
-     * if you want to override the existing values.
-     * </p>
-     * 
-     * @param listSingleDimension
-     *        List the view of log sources for enabled Security Lake accounts for all Amazon Web Services sources from
-     *        specific accounts or specific Regions.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListLogSourcesRequest withListSingleDimension(String... listSingleDimension) {
-        if (this.listSingleDimension == null) {
-            setListSingleDimension(new java.util.ArrayList<String>(listSingleDimension.length));
-        }
-        for (String ele : listSingleDimension) {
-            this.listSingleDimension.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * List the view of log sources for enabled Security Lake accounts for all Amazon Web Services sources from specific
-     * accounts or specific Regions.
-     * </p>
-     * 
-     * @param listSingleDimension
-     *        List the view of log sources for enabled Security Lake accounts for all Amazon Web Services sources from
-     *        specific accounts or specific Regions.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListLogSourcesRequest withListSingleDimension(java.util.Collection<String> listSingleDimension) {
-        setListSingleDimension(listSingleDimension);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Lists the view of log sources for enabled Security Lake accounts for specific Amazon Web Services sources from
-     * specific accounts or specific Regions.
-     * </p>
-     * 
-     * @return Lists the view of log sources for enabled Security Lake accounts for specific Amazon Web Services sources
-     *         from specific accounts or specific Regions.
-     */
-
-    public java.util.Map<String, java.util.List<String>> getListTwoDimensions() {
-        return listTwoDimensions;
-    }
-
-    /**
-     * <p>
-     * Lists the view of log sources for enabled Security Lake accounts for specific Amazon Web Services sources from
-     * specific accounts or specific Regions.
-     * </p>
-     * 
-     * @param listTwoDimensions
-     *        Lists the view of log sources for enabled Security Lake accounts for specific Amazon Web Services sources
-     *        from specific accounts or specific Regions.
-     */
-
-    public void setListTwoDimensions(java.util.Map<String, java.util.List<String>> listTwoDimensions) {
-        this.listTwoDimensions = listTwoDimensions;
-    }
-
-    /**
-     * <p>
-     * Lists the view of log sources for enabled Security Lake accounts for specific Amazon Web Services sources from
-     * specific accounts or specific Regions.
-     * </p>
-     * 
-     * @param listTwoDimensions
-     *        Lists the view of log sources for enabled Security Lake accounts for specific Amazon Web Services sources
-     *        from specific accounts or specific Regions.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListLogSourcesRequest withListTwoDimensions(java.util.Map<String, java.util.List<String>> listTwoDimensions) {
-        setListTwoDimensions(listTwoDimensions);
-        return this;
-    }
-
-    /**
-     * Add a single ListTwoDimensions entry
-     *
-     * @see ListLogSourcesRequest#withListTwoDimensions
-     * @returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListLogSourcesRequest addListTwoDimensionsEntry(String key, java.util.List<String> value) {
-        if (null == this.listTwoDimensions) {
-            this.listTwoDimensions = new java.util.HashMap<String, java.util.List<String>>();
-        }
-        if (this.listTwoDimensions.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.listTwoDimensions.put(key, value);
-        return this;
-    }
-
-    /**
-     * Removes all the entries added into ListTwoDimensions.
-     *
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListLogSourcesRequest clearListTwoDimensionsEntries() {
-        this.listTwoDimensions = null;
+    public ListLogSourcesRequest withAccounts(java.util.Collection<String> accounts) {
+        setAccounts(accounts);
         return this;
     }
 
@@ -477,6 +214,146 @@ public class ListLogSourcesRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The list of regions for which log sources are displayed.
+     * </p>
+     * 
+     * @return The list of regions for which log sources are displayed.
+     */
+
+    public java.util.List<String> getRegions() {
+        return regions;
+    }
+
+    /**
+     * <p>
+     * The list of regions for which log sources are displayed.
+     * </p>
+     * 
+     * @param regions
+     *        The list of regions for which log sources are displayed.
+     */
+
+    public void setRegions(java.util.Collection<String> regions) {
+        if (regions == null) {
+            this.regions = null;
+            return;
+        }
+
+        this.regions = new java.util.ArrayList<String>(regions);
+    }
+
+    /**
+     * <p>
+     * The list of regions for which log sources are displayed.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRegions(java.util.Collection)} or {@link #withRegions(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param regions
+     *        The list of regions for which log sources are displayed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListLogSourcesRequest withRegions(String... regions) {
+        if (this.regions == null) {
+            setRegions(new java.util.ArrayList<String>(regions.length));
+        }
+        for (String ele : regions) {
+            this.regions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of regions for which log sources are displayed.
+     * </p>
+     * 
+     * @param regions
+     *        The list of regions for which log sources are displayed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListLogSourcesRequest withRegions(java.util.Collection<String> regions) {
+        setRegions(regions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of sources for which log sources are displayed.
+     * </p>
+     * 
+     * @return The list of sources for which log sources are displayed.
+     */
+
+    public java.util.List<LogSourceResource> getSources() {
+        return sources;
+    }
+
+    /**
+     * <p>
+     * The list of sources for which log sources are displayed.
+     * </p>
+     * 
+     * @param sources
+     *        The list of sources for which log sources are displayed.
+     */
+
+    public void setSources(java.util.Collection<LogSourceResource> sources) {
+        if (sources == null) {
+            this.sources = null;
+            return;
+        }
+
+        this.sources = new java.util.ArrayList<LogSourceResource>(sources);
+    }
+
+    /**
+     * <p>
+     * The list of sources for which log sources are displayed.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSources(java.util.Collection)} or {@link #withSources(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param sources
+     *        The list of sources for which log sources are displayed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListLogSourcesRequest withSources(LogSourceResource... sources) {
+        if (this.sources == null) {
+            setSources(new java.util.ArrayList<LogSourceResource>(sources.length));
+        }
+        for (LogSourceResource ele : sources) {
+            this.sources.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of sources for which log sources are displayed.
+     * </p>
+     * 
+     * @param sources
+     *        The list of sources for which log sources are displayed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListLogSourcesRequest withSources(java.util.Collection<LogSourceResource> sources) {
+        setSources(sources);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -488,18 +365,16 @@ public class ListLogSourcesRequest extends com.amazonaws.AmazonWebServiceRequest
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getInputOrder() != null)
-            sb.append("InputOrder: ").append(getInputOrder()).append(",");
-        if (getListAllDimensions() != null)
-            sb.append("ListAllDimensions: ").append(getListAllDimensions()).append(",");
-        if (getListSingleDimension() != null)
-            sb.append("ListSingleDimension: ").append(getListSingleDimension()).append(",");
-        if (getListTwoDimensions() != null)
-            sb.append("ListTwoDimensions: ").append(getListTwoDimensions()).append(",");
+        if (getAccounts() != null)
+            sb.append("Accounts: ").append(getAccounts()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getRegions() != null)
+            sb.append("Regions: ").append(getRegions()).append(",");
+        if (getSources() != null)
+            sb.append("Sources: ").append(getSources());
         sb.append("}");
         return sb.toString();
     }
@@ -514,21 +389,9 @@ public class ListLogSourcesRequest extends com.amazonaws.AmazonWebServiceRequest
         if (obj instanceof ListLogSourcesRequest == false)
             return false;
         ListLogSourcesRequest other = (ListLogSourcesRequest) obj;
-        if (other.getInputOrder() == null ^ this.getInputOrder() == null)
+        if (other.getAccounts() == null ^ this.getAccounts() == null)
             return false;
-        if (other.getInputOrder() != null && other.getInputOrder().equals(this.getInputOrder()) == false)
-            return false;
-        if (other.getListAllDimensions() == null ^ this.getListAllDimensions() == null)
-            return false;
-        if (other.getListAllDimensions() != null && other.getListAllDimensions().equals(this.getListAllDimensions()) == false)
-            return false;
-        if (other.getListSingleDimension() == null ^ this.getListSingleDimension() == null)
-            return false;
-        if (other.getListSingleDimension() != null && other.getListSingleDimension().equals(this.getListSingleDimension()) == false)
-            return false;
-        if (other.getListTwoDimensions() == null ^ this.getListTwoDimensions() == null)
-            return false;
-        if (other.getListTwoDimensions() != null && other.getListTwoDimensions().equals(this.getListTwoDimensions()) == false)
+        if (other.getAccounts() != null && other.getAccounts().equals(this.getAccounts()) == false)
             return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
@@ -538,6 +401,14 @@ public class ListLogSourcesRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getRegions() == null ^ this.getRegions() == null)
+            return false;
+        if (other.getRegions() != null && other.getRegions().equals(this.getRegions()) == false)
+            return false;
+        if (other.getSources() == null ^ this.getSources() == null)
+            return false;
+        if (other.getSources() != null && other.getSources().equals(this.getSources()) == false)
+            return false;
         return true;
     }
 
@@ -546,12 +417,11 @@ public class ListLogSourcesRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getInputOrder() == null) ? 0 : getInputOrder().hashCode());
-        hashCode = prime * hashCode + ((getListAllDimensions() == null) ? 0 : getListAllDimensions().hashCode());
-        hashCode = prime * hashCode + ((getListSingleDimension() == null) ? 0 : getListSingleDimension().hashCode());
-        hashCode = prime * hashCode + ((getListTwoDimensions() == null) ? 0 : getListTwoDimensions().hashCode());
+        hashCode = prime * hashCode + ((getAccounts() == null) ? 0 : getAccounts().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getRegions() == null) ? 0 : getRegions().hashCode());
+        hashCode = prime * hashCode + ((getSources() == null) ? 0 : getSources().hashCode());
         return hashCode;
     }
 

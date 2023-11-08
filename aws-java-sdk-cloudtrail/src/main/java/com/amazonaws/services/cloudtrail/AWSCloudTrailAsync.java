@@ -61,7 +61,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * keys with the same name but different values. If you specify a key without a value, the tag will be created with
      * the specified key and a value of null. You can tag a trail or event data store that applies to all Amazon Web
      * Services Regions only from the Region in which the trail or event data store was created (also known as its home
-     * region).
+     * Region).
      * </p>
      * 
      * @param addTagsRequest
@@ -80,7 +80,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * keys with the same name but different values. If you specify a key without a value, the tag will be created with
      * the specified key and a value of null. You can tag a trail or event data store that applies to all Amazon Web
      * Services Regions only from the Region in which the trail or event data store was created (also known as its home
-     * region).
+     * Region).
      * </p>
      * 
      * @param addTagsRequest
@@ -346,9 +346,9 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
-     * Deletes a trail. This operation must be called from the region in which the trail was created.
-     * <code>DeleteTrail</code> cannot be called on the shadow trails (replicated trails in other regions) of a trail
-     * that is enabled in all regions.
+     * Deletes a trail. This operation must be called from the Region in which the trail was created.
+     * <code>DeleteTrail</code> cannot be called on the shadow trails (replicated trails in other Regions) of a trail
+     * that is enabled in all Regions.
      * </p>
      * 
      * @param deleteTrailRequest
@@ -362,9 +362,9 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
-     * Deletes a trail. This operation must be called from the region in which the trail was created.
-     * <code>DeleteTrail</code> cannot be called on the shadow trails (replicated trails in other regions) of a trail
-     * that is enabled in all regions.
+     * Deletes a trail. This operation must be called from the Region in which the trail was created.
+     * <code>DeleteTrail</code> cannot be called on the shadow trails (replicated trails in other Regions) of a trail
+     * that is enabled in all Regions.
      * </p>
      * 
      * @param deleteTrailRequest
@@ -423,7 +423,12 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
     /**
      * <p>
      * Returns metadata about a query, including query run time in milliseconds, number of events scanned and matched,
-     * and query status. You must specify an ARN for <code>EventDataStore</code>, and a value for <code>QueryID</code>.
+     * and query status. If the query results were delivered to an S3 bucket, the response also provides the S3 URI and
+     * the delivery status.
+     * </p>
+     * <p>
+     * You must specify either a <code>QueryID</code> or a <code>QueryAlias</code>. Specifying the
+     * <code>QueryAlias</code> parameter returns information about the last query run for the alias.
      * </p>
      * 
      * @param describeQueryRequest
@@ -437,7 +442,12 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
     /**
      * <p>
      * Returns metadata about a query, including query run time in milliseconds, number of events scanned and matched,
-     * and query status. You must specify an ARN for <code>EventDataStore</code>, and a value for <code>QueryID</code>.
+     * and query status. If the query results were delivered to an S3 bucket, the response also provides the S3 URI and
+     * the delivery status.
+     * </p>
+     * <p>
+     * You must specify either a <code>QueryID</code> or a <code>QueryAlias</code>. Specifying the
+     * <code>QueryAlias</code> parameter returns information about the last query run for the alias.
      * </p>
      * 
      * @param describeQueryRequest
@@ -455,7 +465,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
-     * Retrieves settings for one or more trails associated with the current region for your account.
+     * Retrieves settings for one or more trails associated with the current Region for your account.
      * </p>
      * 
      * @param describeTrailsRequest
@@ -469,7 +479,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
-     * Retrieves settings for one or more trails associated with the current region for your account.
+     * Retrieves settings for one or more trails associated with the current Region for your account.
      * </p>
      * 
      * @param describeTrailsRequest
@@ -595,13 +605,13 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * <p>
      * <a href=
      * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html"
-     * >Logging management events for trails </a>
+     * >Logging management events</a>
      * </p>
      * </li>
      * <li>
      * <p>
      * <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">
-     * Logging data events for trails </a>
+     * Logging data events</a>
      * </p>
      * </li>
      * </ul>
@@ -646,13 +656,13 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * <p>
      * <a href=
      * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html"
-     * >Logging management events for trails </a>
+     * >Logging management events</a>
      * </p>
      * </li>
      * <li>
      * <p>
      * <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">
-     * Logging data events for trails </a>
+     * Logging data events</a>
      * </p>
      * </li>
      * </ul>
@@ -751,7 +761,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
     /**
      * <p>
      * Gets event data results of a query. You must specify the <code>QueryID</code> value returned by the
-     * <code>StartQuery</code> operation, and an ARN for <code>EventDataStore</code>.
+     * <code>StartQuery</code> operation.
      * </p>
      * 
      * @param getQueryResultsRequest
@@ -765,7 +775,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
     /**
      * <p>
      * Gets event data results of a query. You must specify the <code>QueryID</code> value returned by the
-     * <code>StartQuery</code> operation, and an ARN for <code>EventDataStore</code>.
+     * <code>StartQuery</code> operation.
      * </p>
      * 
      * @param getQueryResultsRequest
@@ -847,8 +857,8 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * <p>
      * Returns a JSON-formatted list of information about the specified trail. Fields include information on delivery
      * errors, Amazon SNS and Amazon S3 errors, and start and stop logging times for each trail. This operation returns
-     * trail status from a single region. To return trail status from all regions, you must call the operation on each
-     * region.
+     * trail status from a single Region. To return trail status from all Regions, you must call the operation on each
+     * Region.
      * </p>
      * 
      * @param getTrailStatusRequest
@@ -864,8 +874,8 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * <p>
      * Returns a JSON-formatted list of information about the specified trail. Fields include information on delivery
      * errors, Amazon SNS and Amazon S3 errors, and start and stop logging times for each trail. This operation returns
-     * trail status from a single region. To return trail status from all regions, you must call the operation on each
-     * region.
+     * trail status from a single Region. To return trail status from all Regions, you must call the operation on each
+     * Region.
      * </p>
      * 
      * @param getTrailStatusRequest
@@ -915,7 +925,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
-     * Returns information about all event data stores in the account, in the current region.
+     * Returns information about all event data stores in the account, in the current Region.
      * </p>
      * 
      * @param listEventDataStoresRequest
@@ -928,7 +938,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
-     * Returns information about all event data stores in the account, in the current region.
+     * Returns information about all event data stores in the account, in the current Region.
      * </p>
      * 
      * @param listEventDataStoresRequest
@@ -1015,8 +1025,8 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * </p>
      * <note>
      * <p>
-     * CloudTrail uses different private and public key pairs per region. Each digest file is signed with a private key
-     * unique to its region. When you validate a digest file from a specific region, you must look in the same region
+     * CloudTrail uses different private and public key pairs per Region. Each digest file is signed with a private key
+     * unique to its Region. When you validate a digest file from a specific Region, you must look in the same Region
      * for its corresponding public key.
      * </p>
      * </note>
@@ -1037,8 +1047,8 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * </p>
      * <note>
      * <p>
-     * CloudTrail uses different private and public key pairs per region. Each digest file is signed with a private key
-     * unique to its region. When you validate a digest file from a specific region, you must look in the same region
+     * CloudTrail uses different private and public key pairs per Region. Each digest file is signed with a private key
+     * unique to its Region. When you validate a digest file from a specific Region, you must look in the same Region
      * for its corresponding public key.
      * </p>
      * </note>
@@ -1115,7 +1125,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
-     * Lists the tags for the trail, event data store, or channel in the current region.
+     * Lists the tags for the specified trails, event data stores, or channels in the current Region.
      * </p>
      * 
      * @param listTagsRequest
@@ -1129,7 +1139,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
-     * Lists the tags for the trail, event data store, or channel in the current region.
+     * Lists the tags for the specified trails, event data stores, or channels in the current Region.
      * </p>
      * 
      * @param listTagsRequest
@@ -1183,7 +1193,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-management-events"
      * >management events</a> or <a href=
      * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-insights-events"
-     * >CloudTrail Insights events</a> that are captured by CloudTrail. You can look up events that occurred in a region
+     * >CloudTrail Insights events</a> that are captured by CloudTrail. You can look up events that occurred in a Region
      * within the last 90 days. Lookup supports the following attributes for management events:
      * </p>
      * <ul>
@@ -1254,7 +1264,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * </p>
      * <important>
      * <p>
-     * The rate of lookup requests is limited to two per second, per account, per region. If this limit is exceeded, a
+     * The rate of lookup requests is limited to two per second, per account, per Region. If this limit is exceeded, a
      * throttling error occurs.
      * </p>
      * </important>
@@ -1274,7 +1284,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-management-events"
      * >management events</a> or <a href=
      * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-insights-events"
-     * >CloudTrail Insights events</a> that are captured by CloudTrail. You can look up events that occurred in a region
+     * >CloudTrail Insights events</a> that are captured by CloudTrail. You can look up events that occurred in a Region
      * within the last 90 days. Lookup supports the following attributes for management events:
      * </p>
      * <ul>
@@ -1345,7 +1355,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * </p>
      * <important>
      * <p>
-     * The rate of lookup requests is limited to two per second, per account, per region. If this limit is exceeded, a
+     * The rate of lookup requests is limited to two per second, per account, per Region. If this limit is exceeded, a
      * throttling error occurs.
      * </p>
      * </important>
@@ -1381,7 +1391,11 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
     /**
      * <p>
      * Configures an event selector or advanced event selectors for your trail. Use event selectors or advanced event
-     * selectors to specify management and data event settings for your trail. By default, trails created without
+     * selectors to specify management and data event settings for your trail. If you want your trail to log Insights
+     * events, be sure the event selector enables logging of the Insights event types you want configured for your
+     * trail. For more information about logging Insights events, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html"
+     * >Logging Insights events for trails</a> in the <i>CloudTrail User Guide</i>. By default, trails created without
      * specific event selectors are configured to log all read and write management events, and no data events.
      * </p>
      * <p>
@@ -1421,15 +1435,15 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * </li>
      * </ol>
      * <p>
-     * The <code>PutEventSelectors</code> operation must be called from the region in which the trail was created;
+     * The <code>PutEventSelectors</code> operation must be called from the Region in which the trail was created;
      * otherwise, an <code>InvalidHomeRegionException</code> exception is thrown.
      * </p>
      * <p>
      * You can configure up to five event selectors for each trail. For more information, see <a href=
      * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html"
-     * >Logging management events for trails </a>, <a
+     * >Logging management events</a>, <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html"
-     * >Logging data events for trails </a>, and <a
+     * >Logging data events</a>, and <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Quotas in
      * CloudTrail</a> in the <i>CloudTrail User Guide</i>.
      * </p>
@@ -1440,7 +1454,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * existing <code>EventSelectors</code> are overwritten. For more information about advanced event selectors, see <a
      * href
      * ="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-     * data events for trails</a> in the <i>CloudTrail User Guide</i>.
+     * data events</a> in the <i>CloudTrail User Guide</i>.
      * </p>
      * 
      * @param putEventSelectorsRequest
@@ -1454,7 +1468,11 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
     /**
      * <p>
      * Configures an event selector or advanced event selectors for your trail. Use event selectors or advanced event
-     * selectors to specify management and data event settings for your trail. By default, trails created without
+     * selectors to specify management and data event settings for your trail. If you want your trail to log Insights
+     * events, be sure the event selector enables logging of the Insights event types you want configured for your
+     * trail. For more information about logging Insights events, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html"
+     * >Logging Insights events for trails</a> in the <i>CloudTrail User Guide</i>. By default, trails created without
      * specific event selectors are configured to log all read and write management events, and no data events.
      * </p>
      * <p>
@@ -1494,15 +1512,15 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * </li>
      * </ol>
      * <p>
-     * The <code>PutEventSelectors</code> operation must be called from the region in which the trail was created;
+     * The <code>PutEventSelectors</code> operation must be called from the Region in which the trail was created;
      * otherwise, an <code>InvalidHomeRegionException</code> exception is thrown.
      * </p>
      * <p>
      * You can configure up to five event selectors for each trail. For more information, see <a href=
      * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html"
-     * >Logging management events for trails </a>, <a
+     * >Logging management events</a>, <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html"
-     * >Logging data events for trails </a>, and <a
+     * >Logging data events</a>, and <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Quotas in
      * CloudTrail</a> in the <i>CloudTrail User Guide</i>.
      * </p>
@@ -1513,7 +1531,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * existing <code>EventSelectors</code> are overwritten. For more information about advanced event selectors, see <a
      * href
      * ="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-     * data events for trails</a> in the <i>CloudTrail User Guide</i>.
+     * data events</a> in the <i>CloudTrail User Guide</i>.
      * </p>
      * 
      * @param putEventSelectorsRequest
@@ -1536,6 +1554,12 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * empty list of insight types. The valid Insights event types in this release are <code>ApiErrorRateInsight</code>
      * and <code>ApiCallRateInsight</code>.
      * </p>
+     * <p>
+     * To log CloudTrail Insights events on API call volume, the trail must log <code>write</code> management events. To
+     * log CloudTrail Insights events on API error rate, the trail must log <code>read</code> or <code>write</code>
+     * management events. You can call <code>GetEventSelectors</code> on a trail to check whether the trail logs
+     * management events.
+     * </p>
      * 
      * @param putInsightSelectorsRequest
      * @return A Java Future containing the result of the PutInsightSelectors operation returned by the service.
@@ -1551,6 +1575,12 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * existing trail. You also use <code>PutInsightSelectors</code> to turn off Insights event logging, by passing an
      * empty list of insight types. The valid Insights event types in this release are <code>ApiErrorRateInsight</code>
      * and <code>ApiCallRateInsight</code>.
+     * </p>
+     * <p>
+     * To log CloudTrail Insights events on API call volume, the trail must log <code>write</code> management events. To
+     * log CloudTrail Insights events on API error rate, the trail must log <code>read</code> or <code>write</code>
+     * management events. You can call <code>GetEventSelectors</code> on a trail to check whether the trail logs
+     * management events.
      * </p>
      * 
      * @param putInsightSelectorsRequest
@@ -1710,6 +1740,45 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
+     * Starts the ingestion of live events on an event data store specified as either an ARN or the ID portion of the
+     * ARN. To start ingestion, the event data store <code>Status</code> must be <code>STOPPED_INGESTION</code> and the
+     * <code>eventCategory</code> must be <code>Management</code>, <code>Data</code>, or <code>ConfigurationItem</code>.
+     * </p>
+     * 
+     * @param startEventDataStoreIngestionRequest
+     * @return A Java Future containing the result of the StartEventDataStoreIngestion operation returned by the
+     *         service.
+     * @sample AWSCloudTrailAsync.StartEventDataStoreIngestion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartEventDataStoreIngestion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartEventDataStoreIngestionResult> startEventDataStoreIngestionAsync(
+            StartEventDataStoreIngestionRequest startEventDataStoreIngestionRequest);
+
+    /**
+     * <p>
+     * Starts the ingestion of live events on an event data store specified as either an ARN or the ID portion of the
+     * ARN. To start ingestion, the event data store <code>Status</code> must be <code>STOPPED_INGESTION</code> and the
+     * <code>eventCategory</code> must be <code>Management</code>, <code>Data</code>, or <code>ConfigurationItem</code>.
+     * </p>
+     * 
+     * @param startEventDataStoreIngestionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartEventDataStoreIngestion operation returned by the
+     *         service.
+     * @sample AWSCloudTrailAsyncHandler.StartEventDataStoreIngestion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartEventDataStoreIngestion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartEventDataStoreIngestionResult> startEventDataStoreIngestionAsync(
+            StartEventDataStoreIngestionRequest startEventDataStoreIngestionRequest,
+            com.amazonaws.handlers.AsyncHandler<StartEventDataStoreIngestionRequest, StartEventDataStoreIngestionResult> asyncHandler);
+
+    /**
+     * <p>
      * Starts an import of logged trail events from a source S3 bucket to a destination event data store. By default,
      * CloudTrail only imports events contained in the S3 bucket's <code>CloudTrail</code> prefix and the prefixes
      * inside the <code>CloudTrail</code> prefix, and does not check prefixes for other Amazon Web Services services. If
@@ -1786,9 +1855,9 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
     /**
      * <p>
      * Starts the recording of Amazon Web Services API calls and log file delivery for a trail. For a trail that is
-     * enabled in all regions, this operation must be called from the region in which the trail was created. This
-     * operation cannot be called on the shadow trails (replicated trails in other regions) of a trail that is enabled
-     * in all regions.
+     * enabled in all Regions, this operation must be called from the Region in which the trail was created. This
+     * operation cannot be called on the shadow trails (replicated trails in other Regions) of a trail that is enabled
+     * in all Regions.
      * </p>
      * 
      * @param startLoggingRequest
@@ -1803,9 +1872,9 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
     /**
      * <p>
      * Starts the recording of Amazon Web Services API calls and log file delivery for a trail. For a trail that is
-     * enabled in all regions, this operation must be called from the region in which the trail was created. This
-     * operation cannot be called on the shadow trails (replicated trails in other regions) of a trail that is enabled
-     * in all regions.
+     * enabled in all Regions, this operation must be called from the Region in which the trail was created. This
+     * operation cannot be called on the shadow trails (replicated trails in other Regions) of a trail that is enabled
+     * in all Regions.
      * </p>
      * 
      * @param startLoggingRequest
@@ -1824,9 +1893,15 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
-     * Starts a CloudTrail Lake query. The required <code>QueryStatement</code> parameter provides your SQL query,
-     * enclosed in single quotation marks. Use the optional <code>DeliveryS3Uri</code> parameter to deliver the query
-     * results to an S3 bucket.
+     * Starts a CloudTrail Lake query. Use the <code>QueryStatement</code> parameter to provide your SQL query, enclosed
+     * in single quotation marks. Use the optional <code>DeliveryS3Uri</code> parameter to deliver the query results to
+     * an S3 bucket.
+     * </p>
+     * <p>
+     * <code>StartQuery</code> requires you specify either the <code>QueryStatement</code> parameter, or a
+     * <code>QueryAlias</code> and any <code>QueryParameters</code>. In the current release, the <code>QueryAlias</code>
+     * and <code>QueryParameters</code> parameters are used only for the queries that populate the CloudTrail Lake
+     * dashboards.
      * </p>
      * 
      * @param startQueryRequest
@@ -1839,9 +1914,15 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
-     * Starts a CloudTrail Lake query. The required <code>QueryStatement</code> parameter provides your SQL query,
-     * enclosed in single quotation marks. Use the optional <code>DeliveryS3Uri</code> parameter to deliver the query
-     * results to an S3 bucket.
+     * Starts a CloudTrail Lake query. Use the <code>QueryStatement</code> parameter to provide your SQL query, enclosed
+     * in single quotation marks. Use the optional <code>DeliveryS3Uri</code> parameter to deliver the query results to
+     * an S3 bucket.
+     * </p>
+     * <p>
+     * <code>StartQuery</code> requires you specify either the <code>QueryStatement</code> parameter, or a
+     * <code>QueryAlias</code> and any <code>QueryParameters</code>. In the current release, the <code>QueryAlias</code>
+     * and <code>QueryParameters</code> parameters are used only for the queries that populate the CloudTrail Lake
+     * dashboards.
      * </p>
      * 
      * @param startQueryRequest
@@ -1856,6 +1937,43 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      */
     java.util.concurrent.Future<StartQueryResult> startQueryAsync(StartQueryRequest startQueryRequest,
             com.amazonaws.handlers.AsyncHandler<StartQueryRequest, StartQueryResult> asyncHandler);
+
+    /**
+     * <p>
+     * Stops the ingestion of live events on an event data store specified as either an ARN or the ID portion of the
+     * ARN. To stop ingestion, the event data store <code>Status</code> must be <code>ENABLED</code> and the
+     * <code>eventCategory</code> must be <code>Management</code>, <code>Data</code>, or <code>ConfigurationItem</code>.
+     * </p>
+     * 
+     * @param stopEventDataStoreIngestionRequest
+     * @return A Java Future containing the result of the StopEventDataStoreIngestion operation returned by the service.
+     * @sample AWSCloudTrailAsync.StopEventDataStoreIngestion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StopEventDataStoreIngestion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StopEventDataStoreIngestionResult> stopEventDataStoreIngestionAsync(
+            StopEventDataStoreIngestionRequest stopEventDataStoreIngestionRequest);
+
+    /**
+     * <p>
+     * Stops the ingestion of live events on an event data store specified as either an ARN or the ID portion of the
+     * ARN. To stop ingestion, the event data store <code>Status</code> must be <code>ENABLED</code> and the
+     * <code>eventCategory</code> must be <code>Management</code>, <code>Data</code>, or <code>ConfigurationItem</code>.
+     * </p>
+     * 
+     * @param stopEventDataStoreIngestionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopEventDataStoreIngestion operation returned by the service.
+     * @sample AWSCloudTrailAsyncHandler.StopEventDataStoreIngestion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StopEventDataStoreIngestion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StopEventDataStoreIngestionResult> stopEventDataStoreIngestionAsync(
+            StopEventDataStoreIngestionRequest stopEventDataStoreIngestionRequest,
+            com.amazonaws.handlers.AsyncHandler<StopEventDataStoreIngestionRequest, StopEventDataStoreIngestionResult> asyncHandler);
 
     /**
      * <p>
@@ -1892,9 +2010,9 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * <p>
      * Suspends the recording of Amazon Web Services API calls and log file delivery for the specified trail. Under most
      * circumstances, there is no need to use this action. You can update a trail without stopping it first. This action
-     * is the only way to stop recording. For a trail enabled in all regions, this operation must be called from the
-     * region in which the trail was created, or an <code>InvalidHomeRegionException</code> will occur. This operation
-     * cannot be called on the shadow trails (replicated trails in other regions) of a trail enabled in all regions.
+     * is the only way to stop recording. For a trail enabled in all Regions, this operation must be called from the
+     * Region in which the trail was created, or an <code>InvalidHomeRegionException</code> will occur. This operation
+     * cannot be called on the shadow trails (replicated trails in other Regions) of a trail enabled in all Regions.
      * </p>
      * 
      * @param stopLoggingRequest
@@ -1910,9 +2028,9 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * <p>
      * Suspends the recording of Amazon Web Services API calls and log file delivery for the specified trail. Under most
      * circumstances, there is no need to use this action. You can update a trail without stopping it first. This action
-     * is the only way to stop recording. For a trail enabled in all regions, this operation must be called from the
-     * region in which the trail was created, or an <code>InvalidHomeRegionException</code> will occur. This operation
-     * cannot be called on the shadow trails (replicated trails in other regions) of a trail enabled in all regions.
+     * is the only way to stop recording. For a trail enabled in all Regions, this operation must be called from the
+     * Region in which the trail was created, or an <code>InvalidHomeRegionException</code> will occur. This operation
+     * cannot be called on the shadow trails (replicated trails in other Regions) of a trail enabled in all Regions.
      * </p>
      * 
      * @param stopLoggingRequest
@@ -1969,8 +2087,9 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * </p>
      * <p>
      * For event data stores for CloudTrail events, <code>AdvancedEventSelectors</code> includes or excludes management
-     * and data events in your event data store. For more information about <code>AdvancedEventSelectors</code>, see
-     * <a>PutEventSelectorsRequest$AdvancedEventSelectors</a>.
+     * and data events in your event data store. For more information about <code>AdvancedEventSelectors</code>, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedEventSelector.html">
+     * AdvancedEventSelectors</a>.
      * </p>
      * <p>
      * For event data stores for Config configuration items, Audit Manager evidence, or non-Amazon Web Services events,
@@ -1994,8 +2113,9 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * </p>
      * <p>
      * For event data stores for CloudTrail events, <code>AdvancedEventSelectors</code> includes or excludes management
-     * and data events in your event data store. For more information about <code>AdvancedEventSelectors</code>, see
-     * <a>PutEventSelectorsRequest$AdvancedEventSelectors</a>.
+     * and data events in your event data store. For more information about <code>AdvancedEventSelectors</code>, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedEventSelector.html">
+     * AdvancedEventSelectors</a>.
      * </p>
      * <p>
      * For event data stores for Config configuration items, Audit Manager evidence, or non-Amazon Web Services events,
@@ -2020,7 +2140,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * Updates trail settings that control what events you are logging, and how to handle log files. Changes to a trail
      * do not require stopping the CloudTrail service. Use this action to designate an existing bucket for log delivery.
      * If the existing bucket has previously been a target for CloudTrail log files, an IAM policy exists for the
-     * bucket. <code>UpdateTrail</code> must be called from the region in which the trail was created; otherwise, an
+     * bucket. <code>UpdateTrail</code> must be called from the Region in which the trail was created; otherwise, an
      * <code>InvalidHomeRegionException</code> is thrown.
      * </p>
      * 
@@ -2038,7 +2158,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * Updates trail settings that control what events you are logging, and how to handle log files. Changes to a trail
      * do not require stopping the CloudTrail service. Use this action to designate an existing bucket for log delivery.
      * If the existing bucket has previously been a target for CloudTrail log files, an IAM policy exists for the
-     * bucket. <code>UpdateTrail</code> must be called from the region in which the trail was created; otherwise, an
+     * bucket. <code>UpdateTrail</code> must be called from the Region in which the trail was created; otherwise, an
      * <code>InvalidHomeRegionException</code> is thrown.
      * </p>
      * 

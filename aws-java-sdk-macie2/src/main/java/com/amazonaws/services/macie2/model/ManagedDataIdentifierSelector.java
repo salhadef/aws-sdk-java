@@ -26,7 +26,8 @@ public enum ManagedDataIdentifierSelector {
     ALL("ALL"),
     EXCLUDE("EXCLUDE"),
     INCLUDE("INCLUDE"),
-    NONE("NONE");
+    NONE("NONE"),
+    RECOMMENDED("RECOMMENDED");
 
     private String value;
 

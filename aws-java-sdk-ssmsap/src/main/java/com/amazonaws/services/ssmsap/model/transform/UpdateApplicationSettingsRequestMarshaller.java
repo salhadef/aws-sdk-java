@@ -34,6 +34,10 @@ public class UpdateApplicationSettingsRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CredentialsToAddOrUpdate").build();
     private static final MarshallingInfo<List> CREDENTIALSTOREMOVE_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CredentialsToRemove").build();
+    private static final MarshallingInfo<StructuredPojo> BACKINT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Backint").build();
+    private static final MarshallingInfo<String> DATABASEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DatabaseArn").build();
 
     private static final UpdateApplicationSettingsRequestMarshaller instance = new UpdateApplicationSettingsRequestMarshaller();
 
@@ -54,6 +58,8 @@ public class UpdateApplicationSettingsRequestMarshaller {
             protocolMarshaller.marshall(updateApplicationSettingsRequest.getApplicationId(), APPLICATIONID_BINDING);
             protocolMarshaller.marshall(updateApplicationSettingsRequest.getCredentialsToAddOrUpdate(), CREDENTIALSTOADDORUPDATE_BINDING);
             protocolMarshaller.marshall(updateApplicationSettingsRequest.getCredentialsToRemove(), CREDENTIALSTOREMOVE_BINDING);
+            protocolMarshaller.marshall(updateApplicationSettingsRequest.getBackint(), BACKINT_BINDING);
+            protocolMarshaller.marshall(updateApplicationSettingsRequest.getDatabaseArn(), DATABASEARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -54,6 +54,10 @@ public class GetCertificatesResultJsonUnmarshaller implements Unmarshaller<GetCe
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("nextPageToken", targetDepth)) {
+                    context.nextToken();
+                    getCertificatesResult.setNextPageToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

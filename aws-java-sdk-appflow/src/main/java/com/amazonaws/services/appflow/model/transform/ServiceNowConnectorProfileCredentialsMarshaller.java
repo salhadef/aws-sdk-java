@@ -31,6 +31,8 @@ public class ServiceNowConnectorProfileCredentialsMarshaller {
             .marshallLocationName("username").build();
     private static final MarshallingInfo<String> PASSWORD_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("password").build();
+    private static final MarshallingInfo<StructuredPojo> OAUTH2CREDENTIALS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("oAuth2Credentials").build();
 
     private static final ServiceNowConnectorProfileCredentialsMarshaller instance = new ServiceNowConnectorProfileCredentialsMarshaller();
 
@@ -50,6 +52,7 @@ public class ServiceNowConnectorProfileCredentialsMarshaller {
         try {
             protocolMarshaller.marshall(serviceNowConnectorProfileCredentials.getUsername(), USERNAME_BINDING);
             protocolMarshaller.marshall(serviceNowConnectorProfileCredentials.getPassword(), PASSWORD_BINDING);
+            protocolMarshaller.marshall(serviceNowConnectorProfileCredentials.getOAuth2Credentials(), OAUTH2CREDENTIALS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

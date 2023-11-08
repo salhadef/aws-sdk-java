@@ -131,6 +131,19 @@ public class AbstractAWSComputeOptimizerAsync extends AbstractAWSComputeOptimize
     }
 
     @Override
+    public java.util.concurrent.Future<ExportLicenseRecommendationsResult> exportLicenseRecommendationsAsync(ExportLicenseRecommendationsRequest request) {
+
+        return exportLicenseRecommendationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportLicenseRecommendationsResult> exportLicenseRecommendationsAsync(ExportLicenseRecommendationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ExportLicenseRecommendationsRequest, ExportLicenseRecommendationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAutoScalingGroupRecommendationsResult> getAutoScalingGroupRecommendationsAsync(
             GetAutoScalingGroupRecommendationsRequest request) {
 
@@ -268,6 +281,19 @@ public class AbstractAWSComputeOptimizerAsync extends AbstractAWSComputeOptimize
     public java.util.concurrent.Future<GetLambdaFunctionRecommendationsResult> getLambdaFunctionRecommendationsAsync(
             GetLambdaFunctionRecommendationsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetLambdaFunctionRecommendationsRequest, GetLambdaFunctionRecommendationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLicenseRecommendationsResult> getLicenseRecommendationsAsync(GetLicenseRecommendationsRequest request) {
+
+        return getLicenseRecommendationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLicenseRecommendationsResult> getLicenseRecommendationsAsync(GetLicenseRecommendationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetLicenseRecommendationsRequest, GetLicenseRecommendationsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

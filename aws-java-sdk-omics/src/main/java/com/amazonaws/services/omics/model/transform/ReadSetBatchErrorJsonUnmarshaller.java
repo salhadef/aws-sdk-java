@@ -48,13 +48,13 @@ public class ReadSetBatchErrorJsonUnmarshaller implements Unmarshaller<ReadSetBa
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("code", targetDepth)) {
-                    context.nextToken();
-                    readSetBatchError.setCode(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
                     readSetBatchError.setId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("code", targetDepth)) {
+                    context.nextToken();
+                    readSetBatchError.setCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("message", targetDepth)) {
                     context.nextToken();

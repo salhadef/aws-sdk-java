@@ -33,7 +33,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     private String name;
     /**
      * <p>
-     * The EMR release associated with the application.
+     * The Amazon EMR release associated with the application.
      * </p>
      */
     private String releaseLabel;
@@ -110,6 +110,21 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private java.util.Map<String, WorkerTypeSpecificationInput> workerTypeSpecifications;
+    /**
+     * <p>
+     * The <a
+     * href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a>
+     * specifications to use when creating an application. Each configuration consists of a classification and
+     * properties. This configuration is applied to all the job runs submitted under the application.
+     * </p>
+     */
+    private java.util.List<Configuration> runtimeConfiguration;
+    /**
+     * <p>
+     * The configuration setting for monitoring.
+     * </p>
+     */
+    private MonitoringConfiguration monitoringConfiguration;
 
     /**
      * <p>
@@ -153,11 +168,11 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The EMR release associated with the application.
+     * The Amazon EMR release associated with the application.
      * </p>
      * 
      * @param releaseLabel
-     *        The EMR release associated with the application.
+     *        The Amazon EMR release associated with the application.
      */
 
     public void setReleaseLabel(String releaseLabel) {
@@ -166,10 +181,10 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The EMR release associated with the application.
+     * The Amazon EMR release associated with the application.
      * </p>
      * 
-     * @return The EMR release associated with the application.
+     * @return The Amazon EMR release associated with the application.
      */
 
     public String getReleaseLabel() {
@@ -178,11 +193,11 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The EMR release associated with the application.
+     * The Amazon EMR release associated with the application.
      * </p>
      * 
      * @param releaseLabel
-     *        The EMR release associated with the application.
+     *        The Amazon EMR release associated with the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -777,6 +792,140 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The <a
+     * href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a>
+     * specifications to use when creating an application. Each configuration consists of a classification and
+     * properties. This configuration is applied to all the job runs submitted under the application.
+     * </p>
+     * 
+     * @return The <a
+     *         href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration
+     *         </a> specifications to use when creating an application. Each configuration consists of a classification
+     *         and properties. This configuration is applied to all the job runs submitted under the application.
+     */
+
+    public java.util.List<Configuration> getRuntimeConfiguration() {
+        return runtimeConfiguration;
+    }
+
+    /**
+     * <p>
+     * The <a
+     * href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a>
+     * specifications to use when creating an application. Each configuration consists of a classification and
+     * properties. This configuration is applied to all the job runs submitted under the application.
+     * </p>
+     * 
+     * @param runtimeConfiguration
+     *        The <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">
+     *        Configuration</a> specifications to use when creating an application. Each configuration consists of a
+     *        classification and properties. This configuration is applied to all the job runs submitted under the
+     *        application.
+     */
+
+    public void setRuntimeConfiguration(java.util.Collection<Configuration> runtimeConfiguration) {
+        if (runtimeConfiguration == null) {
+            this.runtimeConfiguration = null;
+            return;
+        }
+
+        this.runtimeConfiguration = new java.util.ArrayList<Configuration>(runtimeConfiguration);
+    }
+
+    /**
+     * <p>
+     * The <a
+     * href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a>
+     * specifications to use when creating an application. Each configuration consists of a classification and
+     * properties. This configuration is applied to all the job runs submitted under the application.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRuntimeConfiguration(java.util.Collection)} or {@link #withRuntimeConfiguration(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param runtimeConfiguration
+     *        The <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">
+     *        Configuration</a> specifications to use when creating an application. Each configuration consists of a
+     *        classification and properties. This configuration is applied to all the job runs submitted under the
+     *        application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateApplicationRequest withRuntimeConfiguration(Configuration... runtimeConfiguration) {
+        if (this.runtimeConfiguration == null) {
+            setRuntimeConfiguration(new java.util.ArrayList<Configuration>(runtimeConfiguration.length));
+        }
+        for (Configuration ele : runtimeConfiguration) {
+            this.runtimeConfiguration.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The <a
+     * href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a>
+     * specifications to use when creating an application. Each configuration consists of a classification and
+     * properties. This configuration is applied to all the job runs submitted under the application.
+     * </p>
+     * 
+     * @param runtimeConfiguration
+     *        The <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">
+     *        Configuration</a> specifications to use when creating an application. Each configuration consists of a
+     *        classification and properties. This configuration is applied to all the job runs submitted under the
+     *        application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateApplicationRequest withRuntimeConfiguration(java.util.Collection<Configuration> runtimeConfiguration) {
+        setRuntimeConfiguration(runtimeConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration setting for monitoring.
+     * </p>
+     * 
+     * @param monitoringConfiguration
+     *        The configuration setting for monitoring.
+     */
+
+    public void setMonitoringConfiguration(MonitoringConfiguration monitoringConfiguration) {
+        this.monitoringConfiguration = monitoringConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration setting for monitoring.
+     * </p>
+     * 
+     * @return The configuration setting for monitoring.
+     */
+
+    public MonitoringConfiguration getMonitoringConfiguration() {
+        return this.monitoringConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration setting for monitoring.
+     * </p>
+     * 
+     * @param monitoringConfiguration
+     *        The configuration setting for monitoring.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateApplicationRequest withMonitoringConfiguration(MonitoringConfiguration monitoringConfiguration) {
+        setMonitoringConfiguration(monitoringConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -813,7 +962,11 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getImageConfiguration() != null)
             sb.append("ImageConfiguration: ").append(getImageConfiguration()).append(",");
         if (getWorkerTypeSpecifications() != null)
-            sb.append("WorkerTypeSpecifications: ").append(getWorkerTypeSpecifications());
+            sb.append("WorkerTypeSpecifications: ").append(getWorkerTypeSpecifications()).append(",");
+        if (getRuntimeConfiguration() != null)
+            sb.append("RuntimeConfiguration: ").append(getRuntimeConfiguration()).append(",");
+        if (getMonitoringConfiguration() != null)
+            sb.append("MonitoringConfiguration: ").append(getMonitoringConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -880,6 +1033,14 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getWorkerTypeSpecifications() != null && other.getWorkerTypeSpecifications().equals(this.getWorkerTypeSpecifications()) == false)
             return false;
+        if (other.getRuntimeConfiguration() == null ^ this.getRuntimeConfiguration() == null)
+            return false;
+        if (other.getRuntimeConfiguration() != null && other.getRuntimeConfiguration().equals(this.getRuntimeConfiguration()) == false)
+            return false;
+        if (other.getMonitoringConfiguration() == null ^ this.getMonitoringConfiguration() == null)
+            return false;
+        if (other.getMonitoringConfiguration() != null && other.getMonitoringConfiguration().equals(this.getMonitoringConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -901,6 +1062,8 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getArchitecture() == null) ? 0 : getArchitecture().hashCode());
         hashCode = prime * hashCode + ((getImageConfiguration() == null) ? 0 : getImageConfiguration().hashCode());
         hashCode = prime * hashCode + ((getWorkerTypeSpecifications() == null) ? 0 : getWorkerTypeSpecifications().hashCode());
+        hashCode = prime * hashCode + ((getRuntimeConfiguration() == null) ? 0 : getRuntimeConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getMonitoringConfiguration() == null) ? 0 : getMonitoringConfiguration().hashCode());
         return hashCode;
     }
 

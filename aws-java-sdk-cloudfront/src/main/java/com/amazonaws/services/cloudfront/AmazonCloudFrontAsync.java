@@ -101,6 +101,28 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * distribution's configuration. Then you can use <code>CreateContinuousDeploymentPolicy</code> to incrementally
      * move traffic to the staging distribution.
      * </p>
+     * <p>
+     * This API operation requires the following IAM permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistribution.html">GetDistribution</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateDistribution.html">
+     * CreateDistribution</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a
+     * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CopyDistribution.html">CopyDistribution</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param copyDistributionRequest
      * @return A Java Future containing the result of the CopyDistribution operation returned by the service.
@@ -121,6 +143,28 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * distribution's configuration. Then you can use <code>CreateContinuousDeploymentPolicy</code> to incrementally
      * move traffic to the staging distribution.
      * </p>
+     * <p>
+     * This API operation requires the following IAM permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistribution.html">GetDistribution</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateDistribution.html">
+     * CreateDistribution</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a
+     * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CopyDistribution.html">CopyDistribution</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param copyDistributionRequest
      * @param asyncHandler
@@ -369,8 +413,21 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
-     * Create a new distribution with tags.
+     * Create a new distribution with tags. This API operation requires the following IAM permissions:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateDistribution.html">
+     * CreateDistribution</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_TagResource.html">TagResource</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param createDistributionWithTagsRequest
      *        The request to create a new distribution with tags.
@@ -384,8 +441,21 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
-     * Create a new distribution with tags.
+     * Create a new distribution with tags. This API operation requires the following IAM permissions:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateDistribution.html">
+     * CreateDistribution</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_TagResource.html">TagResource</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param createDistributionWithTagsRequest
      *        The request to create a new distribution with tags.
@@ -4586,6 +4656,22 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * staging distribution's configuration to the primary distribution. This action will disable the continuous
      * deployment policy and move your domain's traffic back to the primary distribution.
      * </p>
+     * <p>
+     * This API operation requires the following IAM permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistribution.html">GetDistribution</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">
+     * UpdateDistribution</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param updateDistributionWithStagingConfigRequest
      * @return A Java Future containing the result of the UpdateDistributionWithStagingConfig operation returned by the
@@ -4611,6 +4697,22 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * staging distribution's configuration to the primary distribution. This action will disable the continuous
      * deployment policy and move your domain's traffic back to the primary distribution.
      * </p>
+     * <p>
+     * This API operation requires the following IAM permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistribution.html">GetDistribution</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">
+     * UpdateDistribution</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param updateDistributionWithStagingConfigRequest
      * @param asyncHandler

@@ -28,6 +28,12 @@ public class CreateWorkspaceResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
+     * The generated ID of the workspace that was just created.
+     * </p>
+     */
+    private String workspaceId;
+    /**
+     * <p>
      * The ARN of the workspace that was just created.
      * </p>
      */
@@ -44,12 +50,46 @@ public class CreateWorkspaceResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      */
     private java.util.Map<String, String> tags;
+
     /**
      * <p>
      * The generated ID of the workspace that was just created.
      * </p>
+     * 
+     * @param workspaceId
+     *        The generated ID of the workspace that was just created.
      */
-    private String workspaceId;
+
+    public void setWorkspaceId(String workspaceId) {
+        this.workspaceId = workspaceId;
+    }
+
+    /**
+     * <p>
+     * The generated ID of the workspace that was just created.
+     * </p>
+     * 
+     * @return The generated ID of the workspace that was just created.
+     */
+
+    public String getWorkspaceId() {
+        return this.workspaceId;
+    }
+
+    /**
+     * <p>
+     * The generated ID of the workspace that was just created.
+     * </p>
+     * 
+     * @param workspaceId
+     *        The generated ID of the workspace that was just created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWorkspaceResult withWorkspaceId(String workspaceId) {
+        setWorkspaceId(workspaceId);
+        return this;
+    }
 
     /**
      * <p>
@@ -200,46 +240,6 @@ public class CreateWorkspaceResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
-     * <p>
-     * The generated ID of the workspace that was just created.
-     * </p>
-     * 
-     * @param workspaceId
-     *        The generated ID of the workspace that was just created.
-     */
-
-    public void setWorkspaceId(String workspaceId) {
-        this.workspaceId = workspaceId;
-    }
-
-    /**
-     * <p>
-     * The generated ID of the workspace that was just created.
-     * </p>
-     * 
-     * @return The generated ID of the workspace that was just created.
-     */
-
-    public String getWorkspaceId() {
-        return this.workspaceId;
-    }
-
-    /**
-     * <p>
-     * The generated ID of the workspace that was just created.
-     * </p>
-     * 
-     * @param workspaceId
-     *        The generated ID of the workspace that was just created.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateWorkspaceResult withWorkspaceId(String workspaceId) {
-        setWorkspaceId(workspaceId);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -251,14 +251,14 @@ public class CreateWorkspaceResult extends com.amazonaws.AmazonWebServiceResult<
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getWorkspaceId() != null)
+            sb.append("WorkspaceId: ").append(getWorkspaceId()).append(",");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags()).append(",");
-        if (getWorkspaceId() != null)
-            sb.append("WorkspaceId: ").append(getWorkspaceId());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -273,6 +273,10 @@ public class CreateWorkspaceResult extends com.amazonaws.AmazonWebServiceResult<
         if (obj instanceof CreateWorkspaceResult == false)
             return false;
         CreateWorkspaceResult other = (CreateWorkspaceResult) obj;
+        if (other.getWorkspaceId() == null ^ this.getWorkspaceId() == null)
+            return false;
+        if (other.getWorkspaceId() != null && other.getWorkspaceId().equals(this.getWorkspaceId()) == false)
+            return false;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
@@ -285,10 +289,6 @@ public class CreateWorkspaceResult extends com.amazonaws.AmazonWebServiceResult<
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
-        if (other.getWorkspaceId() == null ^ this.getWorkspaceId() == null)
-            return false;
-        if (other.getWorkspaceId() != null && other.getWorkspaceId().equals(this.getWorkspaceId()) == false)
-            return false;
         return true;
     }
 
@@ -297,10 +297,10 @@ public class CreateWorkspaceResult extends com.amazonaws.AmazonWebServiceResult<
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getWorkspaceId() == null) ? 0 : getWorkspaceId().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
-        hashCode = prime * hashCode + ((getWorkspaceId() == null) ? 0 : getWorkspaceId().hashCode());
         return hashCode;
     }
 

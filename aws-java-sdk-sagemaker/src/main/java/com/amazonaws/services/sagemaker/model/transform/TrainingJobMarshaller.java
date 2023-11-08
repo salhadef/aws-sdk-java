@@ -97,6 +97,8 @@ public class TrainingJobMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TensorBoardOutputConfig").build();
     private static final MarshallingInfo<List> DEBUGRULEEVALUATIONSTATUSES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DebugRuleEvaluationStatuses").build();
+    private static final MarshallingInfo<StructuredPojo> PROFILERCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProfilerConfig").build();
     private static final MarshallingInfo<Map> ENVIRONMENT_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Environment").build();
     private static final MarshallingInfo<StructuredPojo> RETRYSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -154,6 +156,7 @@ public class TrainingJobMarshaller {
             protocolMarshaller.marshall(trainingJob.getDebugRuleConfigurations(), DEBUGRULECONFIGURATIONS_BINDING);
             protocolMarshaller.marshall(trainingJob.getTensorBoardOutputConfig(), TENSORBOARDOUTPUTCONFIG_BINDING);
             protocolMarshaller.marshall(trainingJob.getDebugRuleEvaluationStatuses(), DEBUGRULEEVALUATIONSTATUSES_BINDING);
+            protocolMarshaller.marshall(trainingJob.getProfilerConfig(), PROFILERCONFIG_BINDING);
             protocolMarshaller.marshall(trainingJob.getEnvironment(), ENVIRONMENT_BINDING);
             protocolMarshaller.marshall(trainingJob.getRetryStrategy(), RETRYSTRATEGY_BINDING);
             protocolMarshaller.marshall(trainingJob.getTags(), TAGS_BINDING);

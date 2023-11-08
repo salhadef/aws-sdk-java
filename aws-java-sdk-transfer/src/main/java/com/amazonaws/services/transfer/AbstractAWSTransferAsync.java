@@ -652,6 +652,19 @@ public class AbstractAWSTransferAsync extends AbstractAWSTransfer implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<TestConnectionResult> testConnectionAsync(TestConnectionRequest request) {
+
+        return testConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TestConnectionResult> testConnectionAsync(TestConnectionRequest request,
+            com.amazonaws.handlers.AsyncHandler<TestConnectionRequest, TestConnectionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<TestIdentityProviderResult> testIdentityProviderAsync(TestIdentityProviderRequest request) {
 
         return testIdentityProviderAsync(request, null);

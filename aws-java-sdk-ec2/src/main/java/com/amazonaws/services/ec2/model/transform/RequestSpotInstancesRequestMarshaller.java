@@ -236,6 +236,12 @@ public class RequestSpotInstancesRequestMarshaller implements Marshaller<Request
                                         + ipv6AddressesListIndex + ".Ipv6Address",
                                         StringUtils.fromString(instanceNetworkInterfaceSpecificationIpv6AddressesListValue.getIpv6Address()));
                             }
+
+                            if (instanceNetworkInterfaceSpecificationIpv6AddressesListValue.getIsPrimaryIpv6() != null) {
+                                request.addParameter("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".Ipv6Addresses."
+                                        + ipv6AddressesListIndex + ".IsPrimaryIpv6",
+                                        StringUtils.fromBoolean(instanceNetworkInterfaceSpecificationIpv6AddressesListValue.getIsPrimaryIpv6()));
+                            }
                             ipv6AddressesListIndex++;
                         }
                     }
@@ -340,6 +346,11 @@ public class RequestSpotInstancesRequestMarshaller implements Marshaller<Request
                     if (launchSpecificationNetworkInterfacesListValue.getIpv6PrefixCount() != null) {
                         request.addParameter("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".Ipv6PrefixCount",
                                 StringUtils.fromInteger(launchSpecificationNetworkInterfacesListValue.getIpv6PrefixCount()));
+                    }
+
+                    if (launchSpecificationNetworkInterfacesListValue.getPrimaryIpv6() != null) {
+                        request.addParameter("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".PrimaryIpv6",
+                                StringUtils.fromBoolean(launchSpecificationNetworkInterfacesListValue.getPrimaryIpv6()));
                     }
                     networkInterfacesListIndex++;
                 }

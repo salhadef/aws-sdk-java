@@ -32,7 +32,7 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <note>
      * <p>
      * A <code>StartQuery</code> operation must include exactly one of the following parameters:
-     * <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>.
+     * <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.
      * </p>
      * </note>
      */
@@ -44,7 +44,7 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <note>
      * <p>
      * A <code>StartQuery</code> operation must include exactly one of the following parameters:
-     * <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>.
+     * <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.
      * </p>
      * </note>
      */
@@ -63,7 +63,7 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * A <code>StartQuery</code> operation must include exactly one of the following parameters:
-     * <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>.
+     * <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> logGroupIdentifiers;
@@ -104,7 +104,7 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <note>
      * <p>
      * A <code>StartQuery</code> operation must include exactly one of the following parameters:
-     * <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>.
+     * <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.
      * </p>
      * </note>
      * 
@@ -112,7 +112,7 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        The log group on which to perform the query.</p> <note>
      *        <p>
      *        A <code>StartQuery</code> operation must include exactly one of the following parameters:
-     *        <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>.
+     *        <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.
      *        </p>
      */
 
@@ -127,14 +127,14 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <note>
      * <p>
      * A <code>StartQuery</code> operation must include exactly one of the following parameters:
-     * <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>.
+     * <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.
      * </p>
      * </note>
      * 
      * @return The log group on which to perform the query.</p> <note>
      *         <p>
      *         A <code>StartQuery</code> operation must include exactly one of the following parameters:
-     *         <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>.
+     *         <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.
      *         </p>
      */
 
@@ -149,7 +149,7 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <note>
      * <p>
      * A <code>StartQuery</code> operation must include exactly one of the following parameters:
-     * <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>.
+     * <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.
      * </p>
      * </note>
      * 
@@ -157,7 +157,7 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        The log group on which to perform the query.</p> <note>
      *        <p>
      *        A <code>StartQuery</code> operation must include exactly one of the following parameters:
-     *        <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>.
+     *        <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -174,14 +174,14 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <note>
      * <p>
      * A <code>StartQuery</code> operation must include exactly one of the following parameters:
-     * <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>.
+     * <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.
      * </p>
      * </note>
      * 
      * @return The list of log groups to be queried. You can include up to 50 log groups.</p> <note>
      *         <p>
      *         A <code>StartQuery</code> operation must include exactly one of the following parameters:
-     *         <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>.
+     *         <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.
      *         </p>
      */
 
@@ -199,7 +199,7 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <note>
      * <p>
      * A <code>StartQuery</code> operation must include exactly one of the following parameters:
-     * <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>.
+     * <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.
      * </p>
      * </note>
      * 
@@ -207,7 +207,7 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        The list of log groups to be queried. You can include up to 50 log groups.</p> <note>
      *        <p>
      *        A <code>StartQuery</code> operation must include exactly one of the following parameters:
-     *        <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>.
+     *        <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.
      *        </p>
      */
 
@@ -227,7 +227,7 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <note>
      * <p>
      * A <code>StartQuery</code> operation must include exactly one of the following parameters:
-     * <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>.
+     * <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.
      * </p>
      * </note>
      * <p>
@@ -240,7 +240,7 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        The list of log groups to be queried. You can include up to 50 log groups.</p> <note>
      *        <p>
      *        A <code>StartQuery</code> operation must include exactly one of the following parameters:
-     *        <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>.
+     *        <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -262,7 +262,7 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <note>
      * <p>
      * A <code>StartQuery</code> operation must include exactly one of the following parameters:
-     * <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>.
+     * <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.
      * </p>
      * </note>
      * 
@@ -270,7 +270,7 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        The list of log groups to be queried. You can include up to 50 log groups.</p> <note>
      *        <p>
      *        A <code>StartQuery</code> operation must include exactly one of the following parameters:
-     *        <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>.
+     *        <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -294,7 +294,7 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * A <code>StartQuery</code> operation must include exactly one of the following parameters:
-     * <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>.
+     * <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.
      * </p>
      * 
      * @return The list of log groups to query. You can include up to 50 log groups.</p>
@@ -308,7 +308,7 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         </p>
      *         <p>
      *         A <code>StartQuery</code> operation must include exactly one of the following parameters:
-     *         <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>.
+     *         <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.
      */
 
     public java.util.List<String> getLogGroupIdentifiers() {
@@ -332,7 +332,7 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * A <code>StartQuery</code> operation must include exactly one of the following parameters:
-     * <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>.
+     * <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.
      * </p>
      * 
      * @param logGroupIdentifiers
@@ -347,7 +347,7 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </p>
      *        <p>
      *        A <code>StartQuery</code> operation must include exactly one of the following parameters:
-     *        <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>.
+     *        <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.
      */
 
     public void setLogGroupIdentifiers(java.util.Collection<String> logGroupIdentifiers) {
@@ -373,7 +373,7 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * A <code>StartQuery</code> operation must include exactly one of the following parameters:
-     * <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>.
+     * <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -393,7 +393,7 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </p>
      *        <p>
      *        A <code>StartQuery</code> operation must include exactly one of the following parameters:
-     *        <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>.
+     *        <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -421,7 +421,7 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * A <code>StartQuery</code> operation must include exactly one of the following parameters:
-     * <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>.
+     * <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.
      * </p>
      * 
      * @param logGroupIdentifiers
@@ -436,7 +436,7 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </p>
      *        <p>
      *        A <code>StartQuery</code> operation must include exactly one of the following parameters:
-     *        <code>logGroupName</code>, <code>logGroupNames</code> or <code>logGroupIdentifiers</code>.
+     *        <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.location.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -27,8 +28,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class SearchForSuggestionsResultMarshaller {
 
+    private static final MarshallingInfo<List> CATEGORIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Categories").build();
     private static final MarshallingInfo<String> PLACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("PlaceId").build();
+    private static final MarshallingInfo<List> SUPPLEMENTALCATEGORIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SupplementalCategories").build();
     private static final MarshallingInfo<String> TEXT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Text").build();
 
@@ -48,7 +53,9 @@ public class SearchForSuggestionsResultMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(searchForSuggestionsResult.getCategories(), CATEGORIES_BINDING);
             protocolMarshaller.marshall(searchForSuggestionsResult.getPlaceId(), PLACEID_BINDING);
+            protocolMarshaller.marshall(searchForSuggestionsResult.getSupplementalCategories(), SUPPLEMENTALCATEGORIES_BINDING);
             protocolMarshaller.marshall(searchForSuggestionsResult.getText(), TEXT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

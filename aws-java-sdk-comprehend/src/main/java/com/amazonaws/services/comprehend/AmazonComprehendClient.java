@@ -44,6 +44,7 @@ import com.amazonaws.services.comprehend.AmazonComprehendClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.comprehend.model.*;
+
 import com.amazonaws.services.comprehend.model.transform.*;
 
 /**

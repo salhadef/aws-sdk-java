@@ -48,13 +48,33 @@ public class GetReadSetMetadataResultJsonUnmarshaller implements Unmarshaller<Ge
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("id", targetDepth)) {
+                    context.nextToken();
+                    getReadSetMetadataResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("arn", targetDepth)) {
                     context.nextToken();
                     getReadSetMetadataResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("creationTime", targetDepth)) {
+                if (context.testExpression("sequenceStoreId", targetDepth)) {
                     context.nextToken();
-                    getReadSetMetadataResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                    getReadSetMetadataResult.setSequenceStoreId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("subjectId", targetDepth)) {
+                    context.nextToken();
+                    getReadSetMetadataResult.setSubjectId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("sampleId", targetDepth)) {
+                    context.nextToken();
+                    getReadSetMetadataResult.setSampleId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("status", targetDepth)) {
+                    context.nextToken();
+                    getReadSetMetadataResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("name", targetDepth)) {
+                    context.nextToken();
+                    getReadSetMetadataResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
@@ -64,41 +84,33 @@ public class GetReadSetMetadataResultJsonUnmarshaller implements Unmarshaller<Ge
                     context.nextToken();
                     getReadSetMetadataResult.setFileType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("files", targetDepth)) {
+                if (context.testExpression("creationTime", targetDepth)) {
                     context.nextToken();
-                    getReadSetMetadataResult.setFiles(ReadSetFilesJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("id", targetDepth)) {
-                    context.nextToken();
-                    getReadSetMetadataResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("name", targetDepth)) {
-                    context.nextToken();
-                    getReadSetMetadataResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("referenceArn", targetDepth)) {
-                    context.nextToken();
-                    getReadSetMetadataResult.setReferenceArn(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("sampleId", targetDepth)) {
-                    context.nextToken();
-                    getReadSetMetadataResult.setSampleId(context.getUnmarshaller(String.class).unmarshall(context));
+                    getReadSetMetadataResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("sequenceInformation", targetDepth)) {
                     context.nextToken();
                     getReadSetMetadataResult.setSequenceInformation(SequenceInformationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context.testExpression("sequenceStoreId", targetDepth)) {
+                if (context.testExpression("referenceArn", targetDepth)) {
                     context.nextToken();
-                    getReadSetMetadataResult.setSequenceStoreId(context.getUnmarshaller(String.class).unmarshall(context));
+                    getReadSetMetadataResult.setReferenceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("status", targetDepth)) {
+                if (context.testExpression("files", targetDepth)) {
                     context.nextToken();
-                    getReadSetMetadataResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                    getReadSetMetadataResult.setFiles(ReadSetFilesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context.testExpression("subjectId", targetDepth)) {
+                if (context.testExpression("statusMessage", targetDepth)) {
                     context.nextToken();
-                    getReadSetMetadataResult.setSubjectId(context.getUnmarshaller(String.class).unmarshall(context));
+                    getReadSetMetadataResult.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("creationType", targetDepth)) {
+                    context.nextToken();
+                    getReadSetMetadataResult.setCreationType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("etag", targetDepth)) {
+                    context.nextToken();
+                    getReadSetMetadataResult.setEtag(ETagJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

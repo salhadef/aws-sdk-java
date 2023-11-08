@@ -26,20 +26,59 @@ import com.amazonaws.services.cleanrooms.model.*;
  * </p>
  * <p>
  * <p>
- * Welcome to the <i>AWS Clean Rooms API Reference</i>.
+ * Welcome to the <i>Clean Rooms API Reference</i>.
  * </p>
  * <p>
- * AWS Clean Rooms is an AWS service that helps multiple parties to join their data together in a secure collaboration
- * workspace. In the collaboration, members who can query and receive results can get insights into the collective
- * datasets without either party getting access to the other party's raw data.
+ * Clean Rooms is an Amazon Web Services service that helps multiple parties to join their data together in a secure
+ * collaboration workspace. In the collaboration, members who can query and receive results can get insights into the
+ * collective datasets without either party getting access to the other party's raw data.
  * </p>
  * <p>
- * To learn more about AWS Clean Rooms concepts, procedures, and best practices, see the <a
- * href="https://docs.aws.amazon.com/clean-rooms/latest/userguide/what-is.html">AWS Clean Rooms User Guide</a>.
+ * To learn more about Clean Rooms concepts, procedures, and best practices, see the <a
+ * href="https://docs.aws.amazon.com/clean-rooms/latest/userguide/what-is.html">Clean Rooms User Guide</a>.
+ * </p>
+ * <p>
+ * To learn more about SQL commands, functions, and conditions supported in Clean Rooms, see the <a
+ * href="https://docs.aws.amazon.com/clean-rooms/latest/sql-reference/sql-reference.html">Clean Rooms SQL Reference</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSCleanRoomsAsync extends AWSCleanRooms {
+
+    /**
+     * <p>
+     * Retrieves multiple analysis templates within a collaboration by their Amazon Resource Names (ARNs).
+     * </p>
+     * 
+     * @param batchGetCollaborationAnalysisTemplateRequest
+     * @return A Java Future containing the result of the BatchGetCollaborationAnalysisTemplate operation returned by
+     *         the service.
+     * @sample AWSCleanRoomsAsync.BatchGetCollaborationAnalysisTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/BatchGetCollaborationAnalysisTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchGetCollaborationAnalysisTemplateResult> batchGetCollaborationAnalysisTemplateAsync(
+            BatchGetCollaborationAnalysisTemplateRequest batchGetCollaborationAnalysisTemplateRequest);
+
+    /**
+     * <p>
+     * Retrieves multiple analysis templates within a collaboration by their Amazon Resource Names (ARNs).
+     * </p>
+     * 
+     * @param batchGetCollaborationAnalysisTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchGetCollaborationAnalysisTemplate operation returned by
+     *         the service.
+     * @sample AWSCleanRoomsAsyncHandler.BatchGetCollaborationAnalysisTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/BatchGetCollaborationAnalysisTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchGetCollaborationAnalysisTemplateResult> batchGetCollaborationAnalysisTemplateAsync(
+            BatchGetCollaborationAnalysisTemplateRequest batchGetCollaborationAnalysisTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchGetCollaborationAnalysisTemplateRequest, BatchGetCollaborationAnalysisTemplateResult> asyncHandler);
 
     /**
      * <p>
@@ -71,6 +110,37 @@ public interface AWSCleanRoomsAsync extends AWSCleanRooms {
      */
     java.util.concurrent.Future<BatchGetSchemaResult> batchGetSchemaAsync(BatchGetSchemaRequest batchGetSchemaRequest,
             com.amazonaws.handlers.AsyncHandler<BatchGetSchemaRequest, BatchGetSchemaResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a new analysis template.
+     * </p>
+     * 
+     * @param createAnalysisTemplateRequest
+     * @return A Java Future containing the result of the CreateAnalysisTemplate operation returned by the service.
+     * @sample AWSCleanRoomsAsync.CreateAnalysisTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateAnalysisTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAnalysisTemplateResult> createAnalysisTemplateAsync(CreateAnalysisTemplateRequest createAnalysisTemplateRequest);
+
+    /**
+     * <p>
+     * Creates a new analysis template.
+     * </p>
+     * 
+     * @param createAnalysisTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateAnalysisTemplate operation returned by the service.
+     * @sample AWSCleanRoomsAsyncHandler.CreateAnalysisTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateAnalysisTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAnalysisTemplateResult> createAnalysisTemplateAsync(CreateAnalysisTemplateRequest createAnalysisTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateAnalysisTemplateRequest, CreateAnalysisTemplateResult> asyncHandler);
 
     /**
      * <p>
@@ -238,6 +308,37 @@ public interface AWSCleanRoomsAsync extends AWSCleanRooms {
      */
     java.util.concurrent.Future<CreateMembershipResult> createMembershipAsync(CreateMembershipRequest createMembershipRequest,
             com.amazonaws.handlers.AsyncHandler<CreateMembershipRequest, CreateMembershipResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an analysis template.
+     * </p>
+     * 
+     * @param deleteAnalysisTemplateRequest
+     * @return A Java Future containing the result of the DeleteAnalysisTemplate operation returned by the service.
+     * @sample AWSCleanRoomsAsync.DeleteAnalysisTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteAnalysisTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAnalysisTemplateResult> deleteAnalysisTemplateAsync(DeleteAnalysisTemplateRequest deleteAnalysisTemplateRequest);
+
+    /**
+     * <p>
+     * Deletes an analysis template.
+     * </p>
+     * 
+     * @param deleteAnalysisTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAnalysisTemplate operation returned by the service.
+     * @sample AWSCleanRoomsAsyncHandler.DeleteAnalysisTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteAnalysisTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAnalysisTemplateResult> deleteAnalysisTemplateAsync(DeleteAnalysisTemplateRequest deleteAnalysisTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAnalysisTemplateRequest, DeleteAnalysisTemplateResult> asyncHandler);
 
     /**
      * <p>
@@ -439,6 +540,37 @@ public interface AWSCleanRoomsAsync extends AWSCleanRooms {
 
     /**
      * <p>
+     * Retrieves an analysis template.
+     * </p>
+     * 
+     * @param getAnalysisTemplateRequest
+     * @return A Java Future containing the result of the GetAnalysisTemplate operation returned by the service.
+     * @sample AWSCleanRoomsAsync.GetAnalysisTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetAnalysisTemplate" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAnalysisTemplateResult> getAnalysisTemplateAsync(GetAnalysisTemplateRequest getAnalysisTemplateRequest);
+
+    /**
+     * <p>
+     * Retrieves an analysis template.
+     * </p>
+     * 
+     * @param getAnalysisTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAnalysisTemplate operation returned by the service.
+     * @sample AWSCleanRoomsAsyncHandler.GetAnalysisTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetAnalysisTemplate" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAnalysisTemplateResult> getAnalysisTemplateAsync(GetAnalysisTemplateRequest getAnalysisTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAnalysisTemplateRequest, GetAnalysisTemplateResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns metadata about a collaboration.
      * </p>
      * 
@@ -467,6 +599,41 @@ public interface AWSCleanRoomsAsync extends AWSCleanRooms {
      */
     java.util.concurrent.Future<GetCollaborationResult> getCollaborationAsync(GetCollaborationRequest getCollaborationRequest,
             com.amazonaws.handlers.AsyncHandler<GetCollaborationRequest, GetCollaborationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves an analysis template within a collaboration.
+     * </p>
+     * 
+     * @param getCollaborationAnalysisTemplateRequest
+     * @return A Java Future containing the result of the GetCollaborationAnalysisTemplate operation returned by the
+     *         service.
+     * @sample AWSCleanRoomsAsync.GetCollaborationAnalysisTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetCollaborationAnalysisTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCollaborationAnalysisTemplateResult> getCollaborationAnalysisTemplateAsync(
+            GetCollaborationAnalysisTemplateRequest getCollaborationAnalysisTemplateRequest);
+
+    /**
+     * <p>
+     * Retrieves an analysis template within a collaboration.
+     * </p>
+     * 
+     * @param getCollaborationAnalysisTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCollaborationAnalysisTemplate operation returned by the
+     *         service.
+     * @sample AWSCleanRoomsAsyncHandler.GetCollaborationAnalysisTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetCollaborationAnalysisTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCollaborationAnalysisTemplateResult> getCollaborationAnalysisTemplateAsync(
+            GetCollaborationAnalysisTemplateRequest getCollaborationAnalysisTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCollaborationAnalysisTemplateRequest, GetCollaborationAnalysisTemplateResult> asyncHandler);
 
     /**
      * <p>
@@ -692,6 +859,72 @@ public interface AWSCleanRoomsAsync extends AWSCleanRooms {
      */
     java.util.concurrent.Future<GetSchemaAnalysisRuleResult> getSchemaAnalysisRuleAsync(GetSchemaAnalysisRuleRequest getSchemaAnalysisRuleRequest,
             com.amazonaws.handlers.AsyncHandler<GetSchemaAnalysisRuleRequest, GetSchemaAnalysisRuleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists analysis templates that the caller owns.
+     * </p>
+     * 
+     * @param listAnalysisTemplatesRequest
+     * @return A Java Future containing the result of the ListAnalysisTemplates operation returned by the service.
+     * @sample AWSCleanRoomsAsync.ListAnalysisTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListAnalysisTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAnalysisTemplatesResult> listAnalysisTemplatesAsync(ListAnalysisTemplatesRequest listAnalysisTemplatesRequest);
+
+    /**
+     * <p>
+     * Lists analysis templates that the caller owns.
+     * </p>
+     * 
+     * @param listAnalysisTemplatesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAnalysisTemplates operation returned by the service.
+     * @sample AWSCleanRoomsAsyncHandler.ListAnalysisTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListAnalysisTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAnalysisTemplatesResult> listAnalysisTemplatesAsync(ListAnalysisTemplatesRequest listAnalysisTemplatesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAnalysisTemplatesRequest, ListAnalysisTemplatesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists analysis templates within a collaboration.
+     * </p>
+     * 
+     * @param listCollaborationAnalysisTemplatesRequest
+     * @return A Java Future containing the result of the ListCollaborationAnalysisTemplates operation returned by the
+     *         service.
+     * @sample AWSCleanRoomsAsync.ListCollaborationAnalysisTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListCollaborationAnalysisTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCollaborationAnalysisTemplatesResult> listCollaborationAnalysisTemplatesAsync(
+            ListCollaborationAnalysisTemplatesRequest listCollaborationAnalysisTemplatesRequest);
+
+    /**
+     * <p>
+     * Lists analysis templates within a collaboration.
+     * </p>
+     * 
+     * @param listCollaborationAnalysisTemplatesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListCollaborationAnalysisTemplates operation returned by the
+     *         service.
+     * @sample AWSCleanRoomsAsyncHandler.ListCollaborationAnalysisTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListCollaborationAnalysisTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCollaborationAnalysisTemplatesResult> listCollaborationAnalysisTemplatesAsync(
+            ListCollaborationAnalysisTemplatesRequest listCollaborationAnalysisTemplatesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListCollaborationAnalysisTemplatesRequest, ListCollaborationAnalysisTemplatesResult> asyncHandler);
 
     /**
      * <p>
@@ -947,7 +1180,7 @@ public interface AWSCleanRoomsAsync extends AWSCleanRooms {
 
     /**
      * <p>
-     * Creates a protected query that is started by AWS Clean Rooms.
+     * Creates a protected query that is started by Clean Rooms.
      * </p>
      * 
      * @param startProtectedQueryRequest
@@ -960,7 +1193,7 @@ public interface AWSCleanRoomsAsync extends AWSCleanRooms {
 
     /**
      * <p>
-     * Creates a protected query that is started by AWS Clean Rooms.
+     * Creates a protected query that is started by Clean Rooms.
      * </p>
      * 
      * @param startProtectedQueryRequest
@@ -1037,6 +1270,37 @@ public interface AWSCleanRoomsAsync extends AWSCleanRooms {
      */
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the analysis template metadata.
+     * </p>
+     * 
+     * @param updateAnalysisTemplateRequest
+     * @return A Java Future containing the result of the UpdateAnalysisTemplate operation returned by the service.
+     * @sample AWSCleanRoomsAsync.UpdateAnalysisTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateAnalysisTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAnalysisTemplateResult> updateAnalysisTemplateAsync(UpdateAnalysisTemplateRequest updateAnalysisTemplateRequest);
+
+    /**
+     * <p>
+     * Updates the analysis template metadata.
+     * </p>
+     * 
+     * @param updateAnalysisTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateAnalysisTemplate operation returned by the service.
+     * @sample AWSCleanRoomsAsyncHandler.UpdateAnalysisTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateAnalysisTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAnalysisTemplateResult> updateAnalysisTemplateAsync(UpdateAnalysisTemplateRequest updateAnalysisTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateAnalysisTemplateRequest, UpdateAnalysisTemplateResult> asyncHandler);
 
     /**
      * <p>

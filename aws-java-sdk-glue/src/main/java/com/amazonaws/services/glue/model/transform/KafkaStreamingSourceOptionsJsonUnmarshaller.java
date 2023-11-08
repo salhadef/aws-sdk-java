@@ -120,6 +120,10 @@ public class KafkaStreamingSourceOptionsJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     kafkaStreamingSourceOptions.setEmitConsumerLagMetrics(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("StartingTimestamp", targetDepth)) {
+                    context.nextToken();
+                    kafkaStreamingSourceOptions.setStartingTimestamp(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

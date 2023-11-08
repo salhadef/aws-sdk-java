@@ -34,7 +34,7 @@ public interface AWSFinSpaceDataAsync extends AWSFinSpaceData {
 
     /**
      * <p>
-     * Adds a user account to a permission group to grant permissions for actions a user can perform in FinSpace.
+     * Adds a user to a permission group to grant permissions for actions a user can perform in FinSpace.
      * </p>
      * 
      * @param associateUserToPermissionGroupRequest
@@ -49,7 +49,7 @@ public interface AWSFinSpaceDataAsync extends AWSFinSpaceData {
 
     /**
      * <p>
-     * Adds a user account to a permission group to grant permissions for actions a user can perform in FinSpace.
+     * Adds a user to a permission group to grant permissions for actions a user can perform in FinSpace.
      * </p>
      * 
      * @param associateUserToPermissionGroupRequest
@@ -325,7 +325,7 @@ public interface AWSFinSpaceDataAsync extends AWSFinSpaceData {
 
     /**
      * <p>
-     * Removes a user account from a permission group.
+     * Removes a user from a permission group.
      * </p>
      * 
      * @param disassociateUserFromPermissionGroupRequest
@@ -340,7 +340,7 @@ public interface AWSFinSpaceDataAsync extends AWSFinSpaceData {
 
     /**
      * <p>
-     * Removes a user account from a permission group.
+     * Removes a user from a permission group.
      * </p>
      * 
      * @param disassociateUserFromPermissionGroupRequest
@@ -582,7 +582,9 @@ public interface AWSFinSpaceDataAsync extends AWSFinSpaceData {
 
     /**
      * <p>
-     * Request programmatic credentials to use with FinSpace SDK.
+     * Request programmatic credentials to use with FinSpace SDK. For more information, see <a href=
+     * "https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#accessing-credentials">Step
+     * 2. Access credentials programmatically using IAM access key id and secret access key</a>.
      * </p>
      * 
      * @param getProgrammaticAccessCredentialsRequest
@@ -598,7 +600,9 @@ public interface AWSFinSpaceDataAsync extends AWSFinSpaceData {
 
     /**
      * <p>
-     * Request programmatic credentials to use with FinSpace SDK.
+     * Request programmatic credentials to use with FinSpace SDK. For more information, see <a href=
+     * "https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#accessing-credentials">Step
+     * 2. Access credentials programmatically using IAM access key id and secret access key</a>.
      * </p>
      * 
      * @param getProgrammaticAccessCredentialsRequest
@@ -813,7 +817,7 @@ public interface AWSFinSpaceDataAsync extends AWSFinSpaceData {
 
     /**
      * <p>
-     * Lists all the permission groups that are associated with a specific user account.
+     * Lists all the permission groups that are associated with a specific user.
      * </p>
      * 
      * @param listPermissionGroupsByUserRequest
@@ -827,7 +831,7 @@ public interface AWSFinSpaceDataAsync extends AWSFinSpaceData {
 
     /**
      * <p>
-     * Lists all the permission groups that are associated with a specific user account.
+     * Lists all the permission groups that are associated with a specific user.
      * </p>
      * 
      * @param listPermissionGroupsByUserRequest
@@ -846,7 +850,7 @@ public interface AWSFinSpaceDataAsync extends AWSFinSpaceData {
 
     /**
      * <p>
-     * Lists all available user accounts in FinSpace.
+     * Lists all available users in FinSpace.
      * </p>
      * 
      * @param listUsersRequest
@@ -859,7 +863,7 @@ public interface AWSFinSpaceDataAsync extends AWSFinSpaceData {
 
     /**
      * <p>
-     * Lists all available user accounts in FinSpace.
+     * Lists all available users in FinSpace.
      * </p>
      * 
      * @param listUsersRequest
@@ -1040,7 +1044,7 @@ public interface AWSFinSpaceDataAsync extends AWSFinSpaceData {
 
     /**
      * <p>
-     * Modifies the details of the specified user account. You cannot update the <code>userId</code> for a user.
+     * Modifies the details of the specified user. You cannot update the <code>userId</code> for a user.
      * </p>
      * 
      * @param updateUserRequest
@@ -1053,7 +1057,7 @@ public interface AWSFinSpaceDataAsync extends AWSFinSpaceData {
 
     /**
      * <p>
-     * Modifies the details of the specified user account. You cannot update the <code>userId</code> for a user.
+     * Modifies the details of the specified user. You cannot update the <code>userId</code> for a user.
      * </p>
      * 
      * @param updateUserRequest

@@ -33,6 +33,16 @@ public class AbstractAWSOpenSearchServerless implements AWSOpenSearchServerless 
     }
 
     @Override
+    public BatchGetEffectiveLifecyclePolicyResult batchGetEffectiveLifecyclePolicy(BatchGetEffectiveLifecyclePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public BatchGetLifecyclePolicyResult batchGetLifecyclePolicy(BatchGetLifecyclePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public BatchGetVpcEndpointResult batchGetVpcEndpoint(BatchGetVpcEndpointRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -44,6 +54,11 @@ public class AbstractAWSOpenSearchServerless implements AWSOpenSearchServerless 
 
     @Override
     public CreateCollectionResult createCollection(CreateCollectionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateLifecyclePolicyResult createLifecyclePolicy(CreateLifecyclePolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -69,6 +84,11 @@ public class AbstractAWSOpenSearchServerless implements AWSOpenSearchServerless 
 
     @Override
     public DeleteCollectionResult deleteCollection(DeleteCollectionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteLifecyclePolicyResult deleteLifecyclePolicy(DeleteLifecyclePolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -123,6 +143,11 @@ public class AbstractAWSOpenSearchServerless implements AWSOpenSearchServerless 
     }
 
     @Override
+    public ListLifecyclePoliciesResult listLifecyclePolicies(ListLifecyclePoliciesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListSecurityConfigsResult listSecurityConfigs(ListSecurityConfigsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -164,6 +189,11 @@ public class AbstractAWSOpenSearchServerless implements AWSOpenSearchServerless 
 
     @Override
     public UpdateCollectionResult updateCollection(UpdateCollectionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateLifecyclePolicyResult updateLifecyclePolicy(UpdateLifecyclePolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

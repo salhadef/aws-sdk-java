@@ -45,6 +45,7 @@ import com.amazonaws.services.elasticloadbalancingv2.waiters.AmazonElasticLoadBa
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.elasticloadbalancingv2.model.*;
+
 import com.amazonaws.services.elasticloadbalancingv2.model.transform.*;
 
 /**
@@ -1301,6 +1302,40 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * <p>
      * Deregisters the specified targets from the specified target group. After the targets are deregistered, they no
      * longer receive traffic from the load balancer.
+     * </p>
+     * <p>
+     * The load balancer stops sending requests to targets that are deregistering, but uses connection draining to
+     * ensure that in-flight traffic completes on the existing connections. This deregistration delay is configured by
+     * default but can be updated for each target group.
+     * </p>
+     * <p>
+     * For more information, see the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href=
+     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#deregistration-delay"
+     * > Deregistration delay</a> in the <i>Application Load Balancers User Guide</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html#deregistration-delay"
+     * > Deregistration delay</a> in the <i>Network Load Balancers User Guide</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/target-groups.html#deregistration-delay">
+     * Deregistration delay</a> in the <i>Gateway Load Balancers User Guide</i>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Note: If the specified target does not exist, the action returns successfully.
      * </p>
      * 
      * @param deregisterTargetsRequest
@@ -2822,11 +2857,15 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Associates the specified security groups with the specified Application Load Balancer. The specified security
-     * groups override the previously associated security groups.
+     * Associates the specified security groups with the specified Application Load Balancer or Network Load Balancer.
+     * The specified security groups override the previously associated security groups.
      * </p>
      * <p>
-     * You can't specify a security group for a Network Load Balancer or Gateway Load Balancer.
+     * You can't perform this operation on a Network Load Balancer unless you specified a security group for the load
+     * balancer when you created it.
+     * </p>
+     * <p>
+     * You can't associate a security group with a Gateway Load Balancer.
      * </p>
      * 
      * @param setSecurityGroupsRequest
@@ -2888,12 +2927,12 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Enables the Availability Zones for the specified public subnets for the specified Application Load Balancer or
-     * Network Load Balancer. The specified subnets replace the previously enabled subnets.
+     * Enables the Availability Zones for the specified public subnets for the specified Application Load Balancer,
+     * Network Load Balancer or Gateway Load Balancer. The specified subnets replace the previously enabled subnets.
      * </p>
      * <p>
-     * When you specify subnets for a Network Load Balancer, you must include all subnets that were enabled previously,
-     * with their existing configurations, plus any additional subnets.
+     * When you specify subnets for a Network Load Balancer, or Gateway Load Balancer you must include all subnets that
+     * were enabled previously, with their existing configurations, plus any additional subnets.
      * </p>
      * 
      * @param setSubnetsRequest

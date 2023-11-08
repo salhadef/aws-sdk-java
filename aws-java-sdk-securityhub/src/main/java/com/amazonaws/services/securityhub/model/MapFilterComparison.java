@@ -21,7 +21,9 @@ import javax.annotation.Generated;
 public enum MapFilterComparison {
 
     EQUALS("EQUALS"),
-    NOT_EQUALS("NOT_EQUALS");
+    NOT_EQUALS("NOT_EQUALS"),
+    CONTAINS("CONTAINS"),
+    NOT_CONTAINS("NOT_CONTAINS");
 
     private String value;
 

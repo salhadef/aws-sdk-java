@@ -27,10 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class VcfOptionsMarshaller {
 
-    private static final MarshallingInfo<Boolean> IGNOREFILTERFIELD_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ignoreFilterField").build();
     private static final MarshallingInfo<Boolean> IGNOREQUALFIELD_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ignoreQualField").build();
+    private static final MarshallingInfo<Boolean> IGNOREFILTERFIELD_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ignoreFilterField").build();
 
     private static final VcfOptionsMarshaller instance = new VcfOptionsMarshaller();
 
@@ -48,8 +48,8 @@ public class VcfOptionsMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(vcfOptions.getIgnoreFilterField(), IGNOREFILTERFIELD_BINDING);
             protocolMarshaller.marshall(vcfOptions.getIgnoreQualField(), IGNOREQUALFIELD_BINDING);
+            protocolMarshaller.marshall(vcfOptions.getIgnoreFilterField(), IGNOREFILTERFIELD_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

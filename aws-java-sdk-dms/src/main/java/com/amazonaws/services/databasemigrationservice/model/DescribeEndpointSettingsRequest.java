@@ -27,7 +27,7 @@ public class DescribeEndpointSettingsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The databse engine used for your source or target endpoint.
+     * The database engine used for your source or target endpoint.
      * </p>
      */
     private String engineName;
@@ -49,11 +49,11 @@ public class DescribeEndpointSettingsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The databse engine used for your source or target endpoint.
+     * The database engine used for your source or target endpoint.
      * </p>
      * 
      * @param engineName
-     *        The databse engine used for your source or target endpoint.
+     *        The database engine used for your source or target endpoint.
      */
 
     public void setEngineName(String engineName) {
@@ -62,10 +62,10 @@ public class DescribeEndpointSettingsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The databse engine used for your source or target endpoint.
+     * The database engine used for your source or target endpoint.
      * </p>
      * 
-     * @return The databse engine used for your source or target endpoint.
+     * @return The database engine used for your source or target endpoint.
      */
 
     public String getEngineName() {
@@ -74,11 +74,11 @@ public class DescribeEndpointSettingsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The databse engine used for your source or target endpoint.
+     * The database engine used for your source or target endpoint.
      * </p>
      * 
      * @param engineName
-     *        The databse engine used for your source or target endpoint.
+     *        The database engine used for your source or target endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

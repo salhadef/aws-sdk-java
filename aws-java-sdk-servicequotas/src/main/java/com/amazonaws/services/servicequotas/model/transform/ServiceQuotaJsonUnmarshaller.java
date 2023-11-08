@@ -96,6 +96,14 @@ public class ServiceQuotaJsonUnmarshaller implements Unmarshaller<ServiceQuota, 
                     context.nextToken();
                     serviceQuota.setErrorReason(ErrorReasonJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("QuotaAppliedAtLevel", targetDepth)) {
+                    context.nextToken();
+                    serviceQuota.setQuotaAppliedAtLevel(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("QuotaContext", targetDepth)) {
+                    context.nextToken();
+                    serviceQuota.setQuotaContext(QuotaContextInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

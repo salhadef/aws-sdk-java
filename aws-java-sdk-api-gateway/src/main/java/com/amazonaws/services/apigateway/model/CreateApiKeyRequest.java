@@ -64,7 +64,8 @@ public class CreateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
     private java.util.List<StageKey> stageKeys;
     /**
      * <p>
-     * An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.
+     * An Amazon Web Services Marketplace customer identifier, when integrating with the Amazon Web Services SaaS
+     * Marketplace.
      * </p>
      */
     private String customerId;
@@ -380,11 +381,13 @@ public class CreateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.
+     * An Amazon Web Services Marketplace customer identifier, when integrating with the Amazon Web Services SaaS
+     * Marketplace.
      * </p>
      * 
      * @param customerId
-     *        An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.
+     *        An Amazon Web Services Marketplace customer identifier, when integrating with the Amazon Web Services SaaS
+     *        Marketplace.
      */
 
     public void setCustomerId(String customerId) {
@@ -393,10 +396,12 @@ public class CreateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.
+     * An Amazon Web Services Marketplace customer identifier, when integrating with the Amazon Web Services SaaS
+     * Marketplace.
      * </p>
      * 
-     * @return An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.
+     * @return An Amazon Web Services Marketplace customer identifier, when integrating with the Amazon Web Services
+     *         SaaS Marketplace.
      */
 
     public String getCustomerId() {
@@ -405,11 +410,13 @@ public class CreateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.
+     * An Amazon Web Services Marketplace customer identifier, when integrating with the Amazon Web Services SaaS
+     * Marketplace.
      * </p>
      * 
      * @param customerId
-     *        An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.
+     *        An Amazon Web Services Marketplace customer identifier, when integrating with the Amazon Web Services SaaS
+     *        Marketplace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

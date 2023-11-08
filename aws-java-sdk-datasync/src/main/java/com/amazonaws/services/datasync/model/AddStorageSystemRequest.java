@@ -47,7 +47,7 @@ public class AddStorageSystemRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * Specifies the Amazon Resource Name (ARN) of the DataSync agent that connects to and reads from your on-premises
-     * storage system's management interface.
+     * storage system's management interface. You can only specify one ARN.
      * </p>
      */
     private java.util.List<String> agentArns;
@@ -236,11 +236,11 @@ public class AddStorageSystemRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * Specifies the Amazon Resource Name (ARN) of the DataSync agent that connects to and reads from your on-premises
-     * storage system's management interface.
+     * storage system's management interface. You can only specify one ARN.
      * </p>
      * 
      * @return Specifies the Amazon Resource Name (ARN) of the DataSync agent that connects to and reads from your
-     *         on-premises storage system's management interface.
+     *         on-premises storage system's management interface. You can only specify one ARN.
      */
 
     public java.util.List<String> getAgentArns() {
@@ -250,12 +250,12 @@ public class AddStorageSystemRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * Specifies the Amazon Resource Name (ARN) of the DataSync agent that connects to and reads from your on-premises
-     * storage system's management interface.
+     * storage system's management interface. You can only specify one ARN.
      * </p>
      * 
      * @param agentArns
      *        Specifies the Amazon Resource Name (ARN) of the DataSync agent that connects to and reads from your
-     *        on-premises storage system's management interface.
+     *        on-premises storage system's management interface. You can only specify one ARN.
      */
 
     public void setAgentArns(java.util.Collection<String> agentArns) {
@@ -270,7 +270,7 @@ public class AddStorageSystemRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * Specifies the Amazon Resource Name (ARN) of the DataSync agent that connects to and reads from your on-premises
-     * storage system's management interface.
+     * storage system's management interface. You can only specify one ARN.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -280,7 +280,7 @@ public class AddStorageSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @param agentArns
      *        Specifies the Amazon Resource Name (ARN) of the DataSync agent that connects to and reads from your
-     *        on-premises storage system's management interface.
+     *        on-premises storage system's management interface. You can only specify one ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -297,12 +297,12 @@ public class AddStorageSystemRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * Specifies the Amazon Resource Name (ARN) of the DataSync agent that connects to and reads from your on-premises
-     * storage system's management interface.
+     * storage system's management interface. You can only specify one ARN.
      * </p>
      * 
      * @param agentArns
      *        Specifies the Amazon Resource Name (ARN) of the DataSync agent that connects to and reads from your
-     *        on-premises storage system's management interface.
+     *        on-premises storage system's management interface. You can only specify one ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

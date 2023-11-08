@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum RemoteManagement {
 
     INSTALLED_ONLY("INSTALLED_ONLY"),
-    INSTALLED_AUTOSTART("INSTALLED_AUTOSTART");
+    INSTALLED_AUTOSTART("INSTALLED_AUTOSTART"),
+    NOT_INSTALLED("NOT_INSTALLED");
 
     private String value;
 

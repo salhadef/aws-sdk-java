@@ -30,10 +30,10 @@ public class AlertManagerDefinitionDescription implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The time when the alert manager definition was created.
+     * The status of alert manager definition.
      * </p>
      */
-    private java.util.Date createdAt;
+    private AlertManagerDefinitionStatus status;
     /**
      * <p>
      * The alert manager definition.
@@ -42,54 +42,54 @@ public class AlertManagerDefinitionDescription implements Serializable, Cloneabl
     private java.nio.ByteBuffer data;
     /**
      * <p>
+     * The time when the alert manager definition was created.
+     * </p>
+     */
+    private java.util.Date createdAt;
+    /**
+     * <p>
      * The time when the alert manager definition was modified.
      * </p>
      */
     private java.util.Date modifiedAt;
+
     /**
      * <p>
      * The status of alert manager definition.
      * </p>
-     */
-    private AlertManagerDefinitionStatus status;
-
-    /**
-     * <p>
-     * The time when the alert manager definition was created.
-     * </p>
      * 
-     * @param createdAt
-     *        The time when the alert manager definition was created.
+     * @param status
+     *        The status of alert manager definition.
      */
 
-    public void setCreatedAt(java.util.Date createdAt) {
-        this.createdAt = createdAt;
+    public void setStatus(AlertManagerDefinitionStatus status) {
+        this.status = status;
     }
 
     /**
      * <p>
-     * The time when the alert manager definition was created.
+     * The status of alert manager definition.
      * </p>
      * 
-     * @return The time when the alert manager definition was created.
+     * @return The status of alert manager definition.
      */
 
-    public java.util.Date getCreatedAt() {
-        return this.createdAt;
+    public AlertManagerDefinitionStatus getStatus() {
+        return this.status;
     }
 
     /**
      * <p>
-     * The time when the alert manager definition was created.
+     * The status of alert manager definition.
      * </p>
      * 
-     * @param createdAt
-     *        The time when the alert manager definition was created.
+     * @param status
+     *        The status of alert manager definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AlertManagerDefinitionDescription withCreatedAt(java.util.Date createdAt) {
-        setCreatedAt(createdAt);
+    public AlertManagerDefinitionDescription withStatus(AlertManagerDefinitionStatus status) {
+        setStatus(status);
         return this;
     }
 
@@ -162,6 +162,46 @@ public class AlertManagerDefinitionDescription implements Serializable, Cloneabl
 
     /**
      * <p>
+     * The time when the alert manager definition was created.
+     * </p>
+     * 
+     * @param createdAt
+     *        The time when the alert manager definition was created.
+     */
+
+    public void setCreatedAt(java.util.Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    /**
+     * <p>
+     * The time when the alert manager definition was created.
+     * </p>
+     * 
+     * @return The time when the alert manager definition was created.
+     */
+
+    public java.util.Date getCreatedAt() {
+        return this.createdAt;
+    }
+
+    /**
+     * <p>
+     * The time when the alert manager definition was created.
+     * </p>
+     * 
+     * @param createdAt
+     *        The time when the alert manager definition was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AlertManagerDefinitionDescription withCreatedAt(java.util.Date createdAt) {
+        setCreatedAt(createdAt);
+        return this;
+    }
+
+    /**
+     * <p>
      * The time when the alert manager definition was modified.
      * </p>
      * 
@@ -201,46 +241,6 @@ public class AlertManagerDefinitionDescription implements Serializable, Cloneabl
     }
 
     /**
-     * <p>
-     * The status of alert manager definition.
-     * </p>
-     * 
-     * @param status
-     *        The status of alert manager definition.
-     */
-
-    public void setStatus(AlertManagerDefinitionStatus status) {
-        this.status = status;
-    }
-
-    /**
-     * <p>
-     * The status of alert manager definition.
-     * </p>
-     * 
-     * @return The status of alert manager definition.
-     */
-
-    public AlertManagerDefinitionStatus getStatus() {
-        return this.status;
-    }
-
-    /**
-     * <p>
-     * The status of alert manager definition.
-     * </p>
-     * 
-     * @param status
-     *        The status of alert manager definition.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AlertManagerDefinitionDescription withStatus(AlertManagerDefinitionStatus status) {
-        setStatus(status);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -252,14 +252,14 @@ public class AlertManagerDefinitionDescription implements Serializable, Cloneabl
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getCreatedAt() != null)
-            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getData() != null)
             sb.append("Data: ").append(getData()).append(",");
+        if (getCreatedAt() != null)
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getModifiedAt() != null)
-            sb.append("ModifiedAt: ").append(getModifiedAt()).append(",");
-        if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("ModifiedAt: ").append(getModifiedAt());
         sb.append("}");
         return sb.toString();
     }
@@ -274,21 +274,21 @@ public class AlertManagerDefinitionDescription implements Serializable, Cloneabl
         if (obj instanceof AlertManagerDefinitionDescription == false)
             return false;
         AlertManagerDefinitionDescription other = (AlertManagerDefinitionDescription) obj;
-        if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
+        if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
-        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         if (other.getData() == null ^ this.getData() == null)
             return false;
         if (other.getData() != null && other.getData().equals(this.getData()) == false)
             return false;
+        if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
+            return false;
+        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
+            return false;
         if (other.getModifiedAt() == null ^ this.getModifiedAt() == null)
             return false;
         if (other.getModifiedAt() != null && other.getModifiedAt().equals(this.getModifiedAt()) == false)
-            return false;
-        if (other.getStatus() == null ^ this.getStatus() == null)
-            return false;
-        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         return true;
     }
@@ -298,10 +298,10 @@ public class AlertManagerDefinitionDescription implements Serializable, Cloneabl
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
-        hashCode = prime * hashCode + ((getData() == null) ? 0 : getData().hashCode());
-        hashCode = prime * hashCode + ((getModifiedAt() == null) ? 0 : getModifiedAt().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getData() == null) ? 0 : getData().hashCode());
+        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
+        hashCode = prime * hashCode + ((getModifiedAt() == null) ? 0 : getModifiedAt().hashCode());
         return hashCode;
     }
 

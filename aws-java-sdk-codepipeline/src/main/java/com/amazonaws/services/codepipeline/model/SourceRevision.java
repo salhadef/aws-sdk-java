@@ -42,16 +42,16 @@ public class SourceRevision implements Serializable, Cloneable, StructuredPojo {
     private String revisionId;
     /**
      * <p>
-     * Summary information about the most recent revision of the artifact. For GitHub and AWS CodeCommit repositories,
-     * the commit message. For Amazon S3 buckets or actions, the user-provided content of a
+     * Summary information about the most recent revision of the artifact. For GitHub and CodeCommit repositories, the
+     * commit message. For Amazon S3 buckets or actions, the user-provided content of a
      * <code>codepipeline-artifact-revision-summary</code> key specified in the object metadata.
      * </p>
      */
     private String revisionSummary;
     /**
      * <p>
-     * The commit ID for the artifact revision. For artifacts stored in GitHub or AWS CodeCommit repositories, the
-     * commit ID is linked to a commit details page.
+     * The commit ID for the artifact revision. For artifacts stored in GitHub or CodeCommit repositories, the commit ID
+     * is linked to a commit details page.
      * </p>
      */
     private String revisionUrl;
@@ -138,13 +138,13 @@ public class SourceRevision implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Summary information about the most recent revision of the artifact. For GitHub and AWS CodeCommit repositories,
-     * the commit message. For Amazon S3 buckets or actions, the user-provided content of a
+     * Summary information about the most recent revision of the artifact. For GitHub and CodeCommit repositories, the
+     * commit message. For Amazon S3 buckets or actions, the user-provided content of a
      * <code>codepipeline-artifact-revision-summary</code> key specified in the object metadata.
      * </p>
      * 
      * @param revisionSummary
-     *        Summary information about the most recent revision of the artifact. For GitHub and AWS CodeCommit
+     *        Summary information about the most recent revision of the artifact. For GitHub and CodeCommit
      *        repositories, the commit message. For Amazon S3 buckets or actions, the user-provided content of a
      *        <code>codepipeline-artifact-revision-summary</code> key specified in the object metadata.
      */
@@ -155,12 +155,12 @@ public class SourceRevision implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Summary information about the most recent revision of the artifact. For GitHub and AWS CodeCommit repositories,
-     * the commit message. For Amazon S3 buckets or actions, the user-provided content of a
+     * Summary information about the most recent revision of the artifact. For GitHub and CodeCommit repositories, the
+     * commit message. For Amazon S3 buckets or actions, the user-provided content of a
      * <code>codepipeline-artifact-revision-summary</code> key specified in the object metadata.
      * </p>
      * 
-     * @return Summary information about the most recent revision of the artifact. For GitHub and AWS CodeCommit
+     * @return Summary information about the most recent revision of the artifact. For GitHub and CodeCommit
      *         repositories, the commit message. For Amazon S3 buckets or actions, the user-provided content of a
      *         <code>codepipeline-artifact-revision-summary</code> key specified in the object metadata.
      */
@@ -171,13 +171,13 @@ public class SourceRevision implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Summary information about the most recent revision of the artifact. For GitHub and AWS CodeCommit repositories,
-     * the commit message. For Amazon S3 buckets or actions, the user-provided content of a
+     * Summary information about the most recent revision of the artifact. For GitHub and CodeCommit repositories, the
+     * commit message. For Amazon S3 buckets or actions, the user-provided content of a
      * <code>codepipeline-artifact-revision-summary</code> key specified in the object metadata.
      * </p>
      * 
      * @param revisionSummary
-     *        Summary information about the most recent revision of the artifact. For GitHub and AWS CodeCommit
+     *        Summary information about the most recent revision of the artifact. For GitHub and CodeCommit
      *        repositories, the commit message. For Amazon S3 buckets or actions, the user-provided content of a
      *        <code>codepipeline-artifact-revision-summary</code> key specified in the object metadata.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -190,13 +190,13 @@ public class SourceRevision implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The commit ID for the artifact revision. For artifacts stored in GitHub or AWS CodeCommit repositories, the
-     * commit ID is linked to a commit details page.
+     * The commit ID for the artifact revision. For artifacts stored in GitHub or CodeCommit repositories, the commit ID
+     * is linked to a commit details page.
      * </p>
      * 
      * @param revisionUrl
-     *        The commit ID for the artifact revision. For artifacts stored in GitHub or AWS CodeCommit repositories,
-     *        the commit ID is linked to a commit details page.
+     *        The commit ID for the artifact revision. For artifacts stored in GitHub or CodeCommit repositories, the
+     *        commit ID is linked to a commit details page.
      */
 
     public void setRevisionUrl(String revisionUrl) {
@@ -205,12 +205,12 @@ public class SourceRevision implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The commit ID for the artifact revision. For artifacts stored in GitHub or AWS CodeCommit repositories, the
-     * commit ID is linked to a commit details page.
+     * The commit ID for the artifact revision. For artifacts stored in GitHub or CodeCommit repositories, the commit ID
+     * is linked to a commit details page.
      * </p>
      * 
-     * @return The commit ID for the artifact revision. For artifacts stored in GitHub or AWS CodeCommit repositories,
-     *         the commit ID is linked to a commit details page.
+     * @return The commit ID for the artifact revision. For artifacts stored in GitHub or CodeCommit repositories, the
+     *         commit ID is linked to a commit details page.
      */
 
     public String getRevisionUrl() {
@@ -219,13 +219,13 @@ public class SourceRevision implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The commit ID for the artifact revision. For artifacts stored in GitHub or AWS CodeCommit repositories, the
-     * commit ID is linked to a commit details page.
+     * The commit ID for the artifact revision. For artifacts stored in GitHub or CodeCommit repositories, the commit ID
+     * is linked to a commit details page.
      * </p>
      * 
      * @param revisionUrl
-     *        The commit ID for the artifact revision. For artifacts stored in GitHub or AWS CodeCommit repositories,
-     *        the commit ID is linked to a commit details page.
+     *        The commit ID for the artifact revision. For artifacts stored in GitHub or CodeCommit repositories, the
+     *        commit ID is linked to a commit details page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

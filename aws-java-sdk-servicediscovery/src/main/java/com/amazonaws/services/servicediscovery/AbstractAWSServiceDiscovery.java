@@ -68,6 +68,11 @@ public class AbstractAWSServiceDiscovery implements AWSServiceDiscovery {
     }
 
     @Override
+    public DiscoverInstancesRevisionResult discoverInstancesRevision(DiscoverInstancesRevisionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetInstanceResult getInstance(GetInstanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

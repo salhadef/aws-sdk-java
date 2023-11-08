@@ -43,6 +43,10 @@ public class ExecutionListItemMarshaller {
             .marshallLocationName("mapRunArn").build();
     private static final MarshallingInfo<Integer> ITEMCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("itemCount").build();
+    private static final MarshallingInfo<String> STATEMACHINEVERSIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stateMachineVersionArn").build();
+    private static final MarshallingInfo<String> STATEMACHINEALIASARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stateMachineAliasArn").build();
 
     private static final ExecutionListItemMarshaller instance = new ExecutionListItemMarshaller();
 
@@ -68,6 +72,8 @@ public class ExecutionListItemMarshaller {
             protocolMarshaller.marshall(executionListItem.getStopDate(), STOPDATE_BINDING);
             protocolMarshaller.marshall(executionListItem.getMapRunArn(), MAPRUNARN_BINDING);
             protocolMarshaller.marshall(executionListItem.getItemCount(), ITEMCOUNT_BINDING);
+            protocolMarshaller.marshall(executionListItem.getStateMachineVersionArn(), STATEMACHINEVERSIONARN_BINDING);
+            protocolMarshaller.marshall(executionListItem.getStateMachineAliasArn(), STATEMACHINEALIASARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

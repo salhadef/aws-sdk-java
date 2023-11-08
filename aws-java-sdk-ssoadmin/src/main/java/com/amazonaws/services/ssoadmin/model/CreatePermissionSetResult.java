@@ -25,18 +25,18 @@ public class CreatePermissionSetResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Defines the level of access on an AWS account.
+     * Defines the level of access on an Amazon Web Services account.
      * </p>
      */
     private PermissionSet permissionSet;
 
     /**
      * <p>
-     * Defines the level of access on an AWS account.
+     * Defines the level of access on an Amazon Web Services account.
      * </p>
      * 
      * @param permissionSet
-     *        Defines the level of access on an AWS account.
+     *        Defines the level of access on an Amazon Web Services account.
      */
 
     public void setPermissionSet(PermissionSet permissionSet) {
@@ -45,10 +45,10 @@ public class CreatePermissionSetResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Defines the level of access on an AWS account.
+     * Defines the level of access on an Amazon Web Services account.
      * </p>
      * 
-     * @return Defines the level of access on an AWS account.
+     * @return Defines the level of access on an Amazon Web Services account.
      */
 
     public PermissionSet getPermissionSet() {
@@ -57,11 +57,11 @@ public class CreatePermissionSetResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Defines the level of access on an AWS account.
+     * Defines the level of access on an Amazon Web Services account.
      * </p>
      * 
      * @param permissionSet
-     *        Defines the level of access on an AWS account.
+     *        Defines the level of access on an Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

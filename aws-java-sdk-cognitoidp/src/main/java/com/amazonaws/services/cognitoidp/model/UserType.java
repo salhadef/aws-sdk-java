@@ -48,7 +48,8 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date userCreateDate;
     /**
      * <p>
-     * The last modified date of the user.
+     * The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when
+     * the item was modified.
      * </p>
      */
     private java.util.Date userLastModifiedDate;
@@ -76,11 +77,6 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * EXTERNAL_PROVIDER - User signed in with a third-party IdP.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * ARCHIVED - User is no longer active.
      * </p>
      * </li>
      * <li>
@@ -262,11 +258,13 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The last modified date of the user.
+     * The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when
+     * the item was modified.
      * </p>
      * 
      * @param userLastModifiedDate
-     *        The last modified date of the user.
+     *        The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     *        format, when the item was modified.
      */
 
     public void setUserLastModifiedDate(java.util.Date userLastModifiedDate) {
@@ -275,10 +273,12 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The last modified date of the user.
+     * The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when
+     * the item was modified.
      * </p>
      * 
-     * @return The last modified date of the user.
+     * @return The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     *         format, when the item was modified.
      */
 
     public java.util.Date getUserLastModifiedDate() {
@@ -287,11 +287,13 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The last modified date of the user.
+     * The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when
+     * the item was modified.
      * </p>
      * 
      * @param userLastModifiedDate
-     *        The last modified date of the user.
+     *        The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     *        format, when the item was modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -374,11 +376,6 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * ARCHIVED - User is no longer active.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * UNKNOWN - User status isn't known.
      * </p>
      * </li>
@@ -412,11 +409,6 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        EXTERNAL_PROVIDER - User signed in with a third-party IdP.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        ARCHIVED - User is no longer active.
      *        </p>
      *        </li>
      *        <li>
@@ -465,11 +457,6 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * ARCHIVED - User is no longer active.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * UNKNOWN - User status isn't known.
      * </p>
      * </li>
@@ -502,11 +489,6 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         EXTERNAL_PROVIDER - User signed in with a third-party IdP.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         ARCHIVED - User is no longer active.
      *         </p>
      *         </li>
      *         <li>
@@ -555,11 +537,6 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * ARCHIVED - User is no longer active.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * UNKNOWN - User status isn't known.
      * </p>
      * </li>
@@ -593,11 +570,6 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        EXTERNAL_PROVIDER - User signed in with a third-party IdP.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        ARCHIVED - User is no longer active.
      *        </p>
      *        </li>
      *        <li>
@@ -648,11 +620,6 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * ARCHIVED - User is no longer active.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * UNKNOWN - User status isn't known.
      * </p>
      * </li>
@@ -686,11 +653,6 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        EXTERNAL_PROVIDER - User signed in with a third-party IdP.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        ARCHIVED - User is no longer active.
      *        </p>
      *        </li>
      *        <li>
@@ -739,11 +701,6 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * ARCHIVED - User is no longer active.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * UNKNOWN - User status isn't known.
      * </p>
      * </li>
@@ -777,11 +734,6 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        EXTERNAL_PROVIDER - User signed in with a third-party IdP.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        ARCHIVED - User is no longer active.
      *        </p>
      *        </li>
      *        <li>

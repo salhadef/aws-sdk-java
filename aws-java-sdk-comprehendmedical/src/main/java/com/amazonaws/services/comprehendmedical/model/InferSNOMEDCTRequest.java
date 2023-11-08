@@ -27,18 +27,18 @@ public class InferSNOMEDCTRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The input text to be analyzed using InferSNOMEDCT. The text should be a string with 1 to 10000 characters.
+     * The input text to be analyzed using InferSNOMEDCT.
      * </p>
      */
     private String text;
 
     /**
      * <p>
-     * The input text to be analyzed using InferSNOMEDCT. The text should be a string with 1 to 10000 characters.
+     * The input text to be analyzed using InferSNOMEDCT.
      * </p>
      * 
      * @param text
-     *        The input text to be analyzed using InferSNOMEDCT. The text should be a string with 1 to 10000 characters.
+     *        The input text to be analyzed using InferSNOMEDCT.
      */
 
     public void setText(String text) {
@@ -47,11 +47,10 @@ public class InferSNOMEDCTRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The input text to be analyzed using InferSNOMEDCT. The text should be a string with 1 to 10000 characters.
+     * The input text to be analyzed using InferSNOMEDCT.
      * </p>
      * 
-     * @return The input text to be analyzed using InferSNOMEDCT. The text should be a string with 1 to 10000
-     *         characters.
+     * @return The input text to be analyzed using InferSNOMEDCT.
      */
 
     public String getText() {
@@ -60,11 +59,11 @@ public class InferSNOMEDCTRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The input text to be analyzed using InferSNOMEDCT. The text should be a string with 1 to 10000 characters.
+     * The input text to be analyzed using InferSNOMEDCT.
      * </p>
      * 
      * @param text
-     *        The input text to be analyzed using InferSNOMEDCT. The text should be a string with 1 to 10000 characters.
+     *        The input text to be analyzed using InferSNOMEDCT.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -395,6 +395,19 @@ public class AbstractAWSAuditManagerAsync extends AbstractAWSAuditManager implem
     }
 
     @Override
+    public java.util.concurrent.Future<GetEvidenceFileUploadUrlResult> getEvidenceFileUploadUrlAsync(GetEvidenceFileUploadUrlRequest request) {
+
+        return getEvidenceFileUploadUrlAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEvidenceFileUploadUrlResult> getEvidenceFileUploadUrlAsync(GetEvidenceFileUploadUrlRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetEvidenceFileUploadUrlRequest, GetEvidenceFileUploadUrlResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetEvidenceFolderResult> getEvidenceFolderAsync(GetEvidenceFolderRequest request) {
 
         return getEvidenceFolderAsync(request, null);

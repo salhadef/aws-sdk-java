@@ -27,7 +27,7 @@ public class CreateModelCardExportJobRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the model card to export.
+     * The name or Amazon Resource Name (ARN) of the model card to export.
      * </p>
      */
     private String modelCardName;
@@ -53,11 +53,11 @@ public class CreateModelCardExportJobRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the model card to export.
+     * The name or Amazon Resource Name (ARN) of the model card to export.
      * </p>
      * 
      * @param modelCardName
-     *        The name of the model card to export.
+     *        The name or Amazon Resource Name (ARN) of the model card to export.
      */
 
     public void setModelCardName(String modelCardName) {
@@ -66,10 +66,10 @@ public class CreateModelCardExportJobRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the model card to export.
+     * The name or Amazon Resource Name (ARN) of the model card to export.
      * </p>
      * 
-     * @return The name of the model card to export.
+     * @return The name or Amazon Resource Name (ARN) of the model card to export.
      */
 
     public String getModelCardName() {
@@ -78,11 +78,11 @@ public class CreateModelCardExportJobRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the model card to export.
+     * The name or Amazon Resource Name (ARN) of the model card to export.
      * </p>
      * 
      * @param modelCardName
-     *        The name of the model card to export.
+     *        The name or Amazon Resource Name (ARN) of the model card to export.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

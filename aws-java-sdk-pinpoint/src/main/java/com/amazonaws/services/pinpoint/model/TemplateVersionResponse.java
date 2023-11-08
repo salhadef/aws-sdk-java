@@ -62,7 +62,8 @@ public class TemplateVersionResponse implements Serializable, Cloneable, Structu
     private String templateName;
     /**
      * <p>
-     * The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, and VOICE.
+     * The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, INAPP, and
+     * VOICE.
      * </p>
      */
     private String templateType;
@@ -288,12 +289,13 @@ public class TemplateVersionResponse implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, and VOICE.
+     * The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, INAPP, and
+     * VOICE.
      * </p>
      * 
      * @param templateType
-     *        The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, and
-     *        VOICE.
+     *        The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS,
+     *        INAPP, and VOICE.
      */
 
     public void setTemplateType(String templateType) {
@@ -302,11 +304,12 @@ public class TemplateVersionResponse implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, and VOICE.
+     * The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, INAPP, and
+     * VOICE.
      * </p>
      * 
-     * @return The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, and
-     *         VOICE.
+     * @return The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS,
+     *         INAPP, and VOICE.
      */
 
     public String getTemplateType() {
@@ -315,12 +318,13 @@ public class TemplateVersionResponse implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, and VOICE.
+     * The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, INAPP, and
+     * VOICE.
      * </p>
      * 
      * @param templateType
-     *        The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, and
-     *        VOICE.
+     *        The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS,
+     *        INAPP, and VOICE.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

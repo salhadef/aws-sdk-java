@@ -151,6 +151,29 @@ public interface AmazonConnectParticipant {
 
     /**
      * <p>
+     * Retrieves the view for the specified view token.
+     * </p>
+     * 
+     * @param describeViewRequest
+     * @return Result of the DescribeView operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the Amazon Connect service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ResourceNotFoundException
+     *         The resource was not found.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by Amazon Connect.
+     * @sample AmazonConnectParticipant.DescribeView
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/DescribeView"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeViewResult describeView(DescribeViewRequest describeViewRequest);
+
+    /**
+     * <p>
      * Disconnects a participant.
      * </p>
      * <note>

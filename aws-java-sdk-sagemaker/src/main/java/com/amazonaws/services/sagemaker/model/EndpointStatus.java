@@ -27,7 +27,8 @@ public enum EndpointStatus {
     RollingBack("RollingBack"),
     InService("InService"),
     Deleting("Deleting"),
-    Failed("Failed");
+    Failed("Failed"),
+    UpdateRollbackFailed("UpdateRollbackFailed");
 
     private String value;
 

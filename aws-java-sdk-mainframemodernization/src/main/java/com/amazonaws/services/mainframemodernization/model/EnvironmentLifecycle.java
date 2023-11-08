@@ -22,9 +22,9 @@ public enum EnvironmentLifecycle {
 
     Creating("Creating"),
     Available("Available"),
+    Updating("Updating"),
     Deleting("Deleting"),
-    Failed("Failed"),
-    Updating("Updating");
+    Failed("Failed");
 
     private String value;
 

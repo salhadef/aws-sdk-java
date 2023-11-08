@@ -28,6 +28,11 @@ public class AbstractAmazonAppIntegrations implements AmazonAppIntegrations {
     }
 
     @Override
+    public CreateApplicationResult createApplication(CreateApplicationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateDataIntegrationResult createDataIntegration(CreateDataIntegrationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -48,12 +53,22 @@ public class AbstractAmazonAppIntegrations implements AmazonAppIntegrations {
     }
 
     @Override
+    public GetApplicationResult getApplication(GetApplicationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetDataIntegrationResult getDataIntegration(GetDataIntegrationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public GetEventIntegrationResult getEventIntegration(GetEventIntegrationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListApplicationsResult listApplications(ListApplicationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -89,6 +104,11 @@ public class AbstractAmazonAppIntegrations implements AmazonAppIntegrations {
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateApplicationResult updateApplication(UpdateApplicationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

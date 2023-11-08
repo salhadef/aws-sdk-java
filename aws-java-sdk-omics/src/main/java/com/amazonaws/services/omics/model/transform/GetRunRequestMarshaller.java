@@ -28,10 +28,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class GetRunRequestMarshaller {
 
-    private static final MarshallingInfo<List> EXPORT_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.QUERY_PARAM)
-            .marshallLocationName("export").build();
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("id").build();
+    private static final MarshallingInfo<List> EXPORT_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.QUERY_PARAM)
+            .marshallLocationName("export").build();
 
     private static final GetRunRequestMarshaller instance = new GetRunRequestMarshaller();
 
@@ -49,8 +49,8 @@ public class GetRunRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(getRunRequest.getExport(), EXPORT_BINDING);
             protocolMarshaller.marshall(getRunRequest.getId(), ID_BINDING);
+            protocolMarshaller.marshall(getRunRequest.getExport(), EXPORT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

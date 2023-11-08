@@ -84,6 +84,10 @@ public class DatastorePropertiesJsonUnmarshaller implements Unmarshaller<Datasto
                     context.nextToken();
                     datastoreProperties.setPreloadDataConfig(PreloadDataConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("IdentityProviderConfiguration", targetDepth)) {
+                    context.nextToken();
+                    datastoreProperties.setIdentityProviderConfiguration(IdentityProviderConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -31,7 +31,7 @@ public class ListAppsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
     private java.util.List<AppSummary> appSummaries;
     /**
      * <p>
-     * The token for the next set of results, or null if there are no more results.
+     * Token for the next set of results, or null if there are no more results.
      * </p>
      */
     private String nextToken;
@@ -108,11 +108,11 @@ public class ListAppsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * The token for the next set of results, or null if there are no more results.
+     * Token for the next set of results, or null if there are no more results.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of results, or null if there are no more results.
+     *        Token for the next set of results, or null if there are no more results.
      */
 
     public void setNextToken(String nextToken) {
@@ -121,10 +121,10 @@ public class ListAppsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * The token for the next set of results, or null if there are no more results.
+     * Token for the next set of results, or null if there are no more results.
      * </p>
      * 
-     * @return The token for the next set of results, or null if there are no more results.
+     * @return Token for the next set of results, or null if there are no more results.
      */
 
     public String getNextToken() {
@@ -133,11 +133,11 @@ public class ListAppsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * The token for the next set of results, or null if there are no more results.
+     * Token for the next set of results, or null if there are no more results.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of results, or null if there are no more results.
+     *        Token for the next set of results, or null if there are no more results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

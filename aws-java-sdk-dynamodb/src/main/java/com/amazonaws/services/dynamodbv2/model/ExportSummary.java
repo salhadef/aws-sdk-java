@@ -40,6 +40,13 @@ public class ExportSummary implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String exportStatus;
+    /**
+     * <p>
+     * The type of export that was performed. Valid values are <code>FULL_EXPORT</code> or
+     * <code>INCREMENTAL_EXPORT</code>.
+     * </p>
+     */
+    private String exportType;
 
     /**
      * <p>
@@ -141,6 +148,73 @@ public class ExportSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The type of export that was performed. Valid values are <code>FULL_EXPORT</code> or
+     * <code>INCREMENTAL_EXPORT</code>.
+     * </p>
+     * 
+     * @param exportType
+     *        The type of export that was performed. Valid values are <code>FULL_EXPORT</code> or
+     *        <code>INCREMENTAL_EXPORT</code>.
+     * @see ExportType
+     */
+
+    public void setExportType(String exportType) {
+        this.exportType = exportType;
+    }
+
+    /**
+     * <p>
+     * The type of export that was performed. Valid values are <code>FULL_EXPORT</code> or
+     * <code>INCREMENTAL_EXPORT</code>.
+     * </p>
+     * 
+     * @return The type of export that was performed. Valid values are <code>FULL_EXPORT</code> or
+     *         <code>INCREMENTAL_EXPORT</code>.
+     * @see ExportType
+     */
+
+    public String getExportType() {
+        return this.exportType;
+    }
+
+    /**
+     * <p>
+     * The type of export that was performed. Valid values are <code>FULL_EXPORT</code> or
+     * <code>INCREMENTAL_EXPORT</code>.
+     * </p>
+     * 
+     * @param exportType
+     *        The type of export that was performed. Valid values are <code>FULL_EXPORT</code> or
+     *        <code>INCREMENTAL_EXPORT</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ExportType
+     */
+
+    public ExportSummary withExportType(String exportType) {
+        setExportType(exportType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of export that was performed. Valid values are <code>FULL_EXPORT</code> or
+     * <code>INCREMENTAL_EXPORT</code>.
+     * </p>
+     * 
+     * @param exportType
+     *        The type of export that was performed. Valid values are <code>FULL_EXPORT</code> or
+     *        <code>INCREMENTAL_EXPORT</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ExportType
+     */
+
+    public ExportSummary withExportType(ExportType exportType) {
+        this.exportType = exportType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -155,7 +229,9 @@ public class ExportSummary implements Serializable, Cloneable, StructuredPojo {
         if (getExportArn() != null)
             sb.append("ExportArn: ").append(getExportArn()).append(",");
         if (getExportStatus() != null)
-            sb.append("ExportStatus: ").append(getExportStatus());
+            sb.append("ExportStatus: ").append(getExportStatus()).append(",");
+        if (getExportType() != null)
+            sb.append("ExportType: ").append(getExportType());
         sb.append("}");
         return sb.toString();
     }
@@ -178,6 +254,10 @@ public class ExportSummary implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getExportStatus() != null && other.getExportStatus().equals(this.getExportStatus()) == false)
             return false;
+        if (other.getExportType() == null ^ this.getExportType() == null)
+            return false;
+        if (other.getExportType() != null && other.getExportType().equals(this.getExportType()) == false)
+            return false;
         return true;
     }
 
@@ -188,6 +268,7 @@ public class ExportSummary implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getExportArn() == null) ? 0 : getExportArn().hashCode());
         hashCode = prime * hashCode + ((getExportStatus() == null) ? 0 : getExportStatus().hashCode());
+        hashCode = prime * hashCode + ((getExportType() == null) ? 0 : getExportType().hashCode());
         return hashCode;
     }
 

@@ -40,6 +40,12 @@ public class DataQualityTargetTable implements Serializable, Cloneable, Structur
      * </p>
      */
     private String databaseName;
+    /**
+     * <p>
+     * The catalog id where the Glue table exists.
+     * </p>
+     */
+    private String catalogId;
 
     /**
      * <p>
@@ -122,6 +128,46 @@ public class DataQualityTargetTable implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * The catalog id where the Glue table exists.
+     * </p>
+     * 
+     * @param catalogId
+     *        The catalog id where the Glue table exists.
+     */
+
+    public void setCatalogId(String catalogId) {
+        this.catalogId = catalogId;
+    }
+
+    /**
+     * <p>
+     * The catalog id where the Glue table exists.
+     * </p>
+     * 
+     * @return The catalog id where the Glue table exists.
+     */
+
+    public String getCatalogId() {
+        return this.catalogId;
+    }
+
+    /**
+     * <p>
+     * The catalog id where the Glue table exists.
+     * </p>
+     * 
+     * @param catalogId
+     *        The catalog id where the Glue table exists.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataQualityTargetTable withCatalogId(String catalogId) {
+        setCatalogId(catalogId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -136,7 +182,9 @@ public class DataQualityTargetTable implements Serializable, Cloneable, Structur
         if (getTableName() != null)
             sb.append("TableName: ").append(getTableName()).append(",");
         if (getDatabaseName() != null)
-            sb.append("DatabaseName: ").append(getDatabaseName());
+            sb.append("DatabaseName: ").append(getDatabaseName()).append(",");
+        if (getCatalogId() != null)
+            sb.append("CatalogId: ").append(getCatalogId());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +207,10 @@ public class DataQualityTargetTable implements Serializable, Cloneable, Structur
             return false;
         if (other.getDatabaseName() != null && other.getDatabaseName().equals(this.getDatabaseName()) == false)
             return false;
+        if (other.getCatalogId() == null ^ this.getCatalogId() == null)
+            return false;
+        if (other.getCatalogId() != null && other.getCatalogId().equals(this.getCatalogId()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +221,7 @@ public class DataQualityTargetTable implements Serializable, Cloneable, Structur
 
         hashCode = prime * hashCode + ((getTableName() == null) ? 0 : getTableName().hashCode());
         hashCode = prime * hashCode + ((getDatabaseName() == null) ? 0 : getDatabaseName().hashCode());
+        hashCode = prime * hashCode + ((getCatalogId() == null) ? 0 : getCatalogId().hashCode());
         return hashCode;
     }
 

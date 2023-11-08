@@ -27,7 +27,7 @@ public class GetRunTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The task's ID.
+     * The workflow run ID.
      * </p>
      */
     private String id;
@@ -40,11 +40,11 @@ public class GetRunTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The task's ID.
+     * The workflow run ID.
      * </p>
      * 
      * @param id
-     *        The task's ID.
+     *        The workflow run ID.
      */
 
     public void setId(String id) {
@@ -53,10 +53,10 @@ public class GetRunTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The task's ID.
+     * The workflow run ID.
      * </p>
      * 
-     * @return The task's ID.
+     * @return The workflow run ID.
      */
 
     public String getId() {
@@ -65,11 +65,11 @@ public class GetRunTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The task's ID.
+     * The workflow run ID.
      * </p>
      * 
      * @param id
-     *        The task's ID.
+     *        The workflow run ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

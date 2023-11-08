@@ -69,6 +69,8 @@ public interface AWSSsmSap {
      * 
      * @param deregisterApplicationRequest
      * @return Result of the DeregisterApplication operation returned by the service.
+     * @throws UnauthorizedException
+     *         The request is not authorized.
      * @throws ValidationException
      *         The input fails to satisfy the constraints specified by an AWS service.
      * @throws InternalServerException
@@ -104,6 +106,8 @@ public interface AWSSsmSap {
      * 
      * @param getComponentRequest
      * @return Result of the GetComponent operation returned by the service.
+     * @throws UnauthorizedException
+     *         The request is not authorized.
      * @throws ValidationException
      *         The input fails to satisfy the constraints specified by an AWS service.
      * @throws InternalServerException
@@ -193,6 +197,8 @@ public interface AWSSsmSap {
      * 
      * @param listComponentsRequest
      * @return Result of the ListComponents operation returned by the service.
+     * @throws UnauthorizedException
+     *         The request is not authorized.
      * @throws ResourceNotFoundException
      *         The resource is not available.
      * @throws ValidationException
@@ -297,6 +303,8 @@ public interface AWSSsmSap {
      * 
      * @param registerApplicationRequest
      * @return Result of the RegisterApplication operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource is not available.
      * @throws ValidationException
      *         The input fails to satisfy the constraints specified by an AWS service.
      * @throws ConflictException
@@ -308,6 +316,29 @@ public interface AWSSsmSap {
      *      API Documentation</a>
      */
     RegisterApplicationResult registerApplication(RegisterApplicationRequest registerApplicationRequest);
+
+    /**
+     * <p>
+     * Refreshes a registered application.
+     * </p>
+     * 
+     * @param startApplicationRefreshRequest
+     * @return Result of the StartApplicationRefresh operation returned by the service.
+     * @throws UnauthorizedException
+     *         The request is not authorized.
+     * @throws ResourceNotFoundException
+     *         The resource is not available.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ConflictException
+     *         A conflict has occurred.
+     * @throws InternalServerException
+     *         An internal error has occurred.
+     * @sample AWSSsmSap.StartApplicationRefresh
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/StartApplicationRefresh"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartApplicationRefreshResult startApplicationRefresh(StartApplicationRefreshRequest startApplicationRefreshRequest);
 
     /**
      * <p>
@@ -354,10 +385,14 @@ public interface AWSSsmSap {
      * 
      * @param updateApplicationSettingsRequest
      * @return Result of the UpdateApplicationSettings operation returned by the service.
+     * @throws UnauthorizedException
+     *         The request is not authorized.
      * @throws ResourceNotFoundException
      *         The resource is not available.
      * @throws ValidationException
      *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ConflictException
+     *         A conflict has occurred.
      * @throws InternalServerException
      *         An internal error has occurred.
      * @sample AWSSsmSap.UpdateApplicationSettings

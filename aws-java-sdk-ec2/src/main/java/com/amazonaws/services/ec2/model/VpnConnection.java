@@ -956,7 +956,7 @@ public class VpnConnection implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCustomerGatewayConfiguration() != null)
-            sb.append("CustomerGatewayConfiguration: ").append(getCustomerGatewayConfiguration()).append(",");
+            sb.append("CustomerGatewayConfiguration: ").append("***Sensitive Data Redacted***").append(",");
         if (getCustomerGatewayId() != null)
             sb.append("CustomerGatewayId: ").append(getCustomerGatewayId()).append(",");
         if (getCategory() != null)

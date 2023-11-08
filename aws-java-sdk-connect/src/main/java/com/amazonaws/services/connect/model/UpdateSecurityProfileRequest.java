@@ -65,6 +65,15 @@ public class UpdateSecurityProfileRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private java.util.List<String> tagRestrictedResources;
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * A list of the third-party application's metadata.
+     * </p>
+     */
+    private java.util.List<Application> applications;
 
     /**
      * <p>
@@ -423,6 +432,96 @@ public class UpdateSecurityProfileRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * A list of the third-party application's metadata.
+     * </p>
+     * 
+     * @return This API is in preview release for Amazon Connect and is subject to change.</p>
+     *         <p>
+     *         A list of the third-party application's metadata.
+     */
+
+    public java.util.List<Application> getApplications() {
+        return applications;
+    }
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * A list of the third-party application's metadata.
+     * </p>
+     * 
+     * @param applications
+     *        This API is in preview release for Amazon Connect and is subject to change.</p>
+     *        <p>
+     *        A list of the third-party application's metadata.
+     */
+
+    public void setApplications(java.util.Collection<Application> applications) {
+        if (applications == null) {
+            this.applications = null;
+            return;
+        }
+
+        this.applications = new java.util.ArrayList<Application>(applications);
+    }
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * A list of the third-party application's metadata.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setApplications(java.util.Collection)} or {@link #withApplications(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param applications
+     *        This API is in preview release for Amazon Connect and is subject to change.</p>
+     *        <p>
+     *        A list of the third-party application's metadata.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateSecurityProfileRequest withApplications(Application... applications) {
+        if (this.applications == null) {
+            setApplications(new java.util.ArrayList<Application>(applications.length));
+        }
+        for (Application ele : applications) {
+            this.applications.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * A list of the third-party application's metadata.
+     * </p>
+     * 
+     * @param applications
+     *        This API is in preview release for Amazon Connect and is subject to change.</p>
+     *        <p>
+     *        A list of the third-party application's metadata.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateSecurityProfileRequest withApplications(java.util.Collection<Application> applications) {
+        setApplications(applications);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -445,7 +544,9 @@ public class UpdateSecurityProfileRequest extends com.amazonaws.AmazonWebService
         if (getAllowedAccessControlTags() != null)
             sb.append("AllowedAccessControlTags: ").append(getAllowedAccessControlTags()).append(",");
         if (getTagRestrictedResources() != null)
-            sb.append("TagRestrictedResources: ").append(getTagRestrictedResources());
+            sb.append("TagRestrictedResources: ").append(getTagRestrictedResources()).append(",");
+        if (getApplications() != null)
+            sb.append("Applications: ").append(getApplications());
         sb.append("}");
         return sb.toString();
     }
@@ -484,6 +585,10 @@ public class UpdateSecurityProfileRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getTagRestrictedResources() != null && other.getTagRestrictedResources().equals(this.getTagRestrictedResources()) == false)
             return false;
+        if (other.getApplications() == null ^ this.getApplications() == null)
+            return false;
+        if (other.getApplications() != null && other.getApplications().equals(this.getApplications()) == false)
+            return false;
         return true;
     }
 
@@ -498,6 +603,7 @@ public class UpdateSecurityProfileRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         hashCode = prime * hashCode + ((getAllowedAccessControlTags() == null) ? 0 : getAllowedAccessControlTags().hashCode());
         hashCode = prime * hashCode + ((getTagRestrictedResources() == null) ? 0 : getTagRestrictedResources().hashCode());
+        hashCode = prime * hashCode + ((getApplications() == null) ? 0 : getApplications().hashCode());
         return hashCode;
     }
 

@@ -22,7 +22,8 @@ public enum ContentShareLayoutOption {
 
     PresenterOnly("PresenterOnly"),
     Horizontal("Horizontal"),
-    Vertical("Vertical");
+    Vertical("Vertical"),
+    ActiveSpeakerOnly("ActiveSpeakerOnly");
 
     private String value;
 

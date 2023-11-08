@@ -352,7 +352,7 @@ public class ImageDiskContainer implements Serializable, Cloneable {
         if (getSnapshotId() != null)
             sb.append("SnapshotId: ").append(getSnapshotId()).append(",");
         if (getUrl() != null)
-            sb.append("Url: ").append(getUrl()).append(",");
+            sb.append("Url: ").append("***Sensitive Data Redacted***").append(",");
         if (getUserBucket() != null)
             sb.append("UserBucket: ").append(getUserBucket());
         sb.append("}");

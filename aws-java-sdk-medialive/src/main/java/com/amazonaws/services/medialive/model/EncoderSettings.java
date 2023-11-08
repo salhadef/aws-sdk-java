@@ -49,6 +49,8 @@ public class EncoderSettings implements Serializable, Cloneable, StructuredPojo 
     private TimecodeConfig timecodeConfig;
 
     private java.util.List<VideoDescription> videoDescriptions;
+    /** Thumbnail configuration settings. */
+    private ThumbnailConfiguration thumbnailConfiguration;
 
     /**
      * @return
@@ -541,6 +543,40 @@ public class EncoderSettings implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * Thumbnail configuration settings.
+     * 
+     * @param thumbnailConfiguration
+     *        Thumbnail configuration settings.
+     */
+
+    public void setThumbnailConfiguration(ThumbnailConfiguration thumbnailConfiguration) {
+        this.thumbnailConfiguration = thumbnailConfiguration;
+    }
+
+    /**
+     * Thumbnail configuration settings.
+     * 
+     * @return Thumbnail configuration settings.
+     */
+
+    public ThumbnailConfiguration getThumbnailConfiguration() {
+        return this.thumbnailConfiguration;
+    }
+
+    /**
+     * Thumbnail configuration settings.
+     * 
+     * @param thumbnailConfiguration
+     *        Thumbnail configuration settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EncoderSettings withThumbnailConfiguration(ThumbnailConfiguration thumbnailConfiguration) {
+        setThumbnailConfiguration(thumbnailConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -575,7 +611,9 @@ public class EncoderSettings implements Serializable, Cloneable, StructuredPojo 
         if (getTimecodeConfig() != null)
             sb.append("TimecodeConfig: ").append(getTimecodeConfig()).append(",");
         if (getVideoDescriptions() != null)
-            sb.append("VideoDescriptions: ").append(getVideoDescriptions());
+            sb.append("VideoDescriptions: ").append(getVideoDescriptions()).append(",");
+        if (getThumbnailConfiguration() != null)
+            sb.append("ThumbnailConfiguration: ").append(getThumbnailConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -638,6 +676,10 @@ public class EncoderSettings implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getVideoDescriptions() != null && other.getVideoDescriptions().equals(this.getVideoDescriptions()) == false)
             return false;
+        if (other.getThumbnailConfiguration() == null ^ this.getThumbnailConfiguration() == null)
+            return false;
+        if (other.getThumbnailConfiguration() != null && other.getThumbnailConfiguration().equals(this.getThumbnailConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -658,6 +700,7 @@ public class EncoderSettings implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getOutputGroups() == null) ? 0 : getOutputGroups().hashCode());
         hashCode = prime * hashCode + ((getTimecodeConfig() == null) ? 0 : getTimecodeConfig().hashCode());
         hashCode = prime * hashCode + ((getVideoDescriptions() == null) ? 0 : getVideoDescriptions().hashCode());
+        hashCode = prime * hashCode + ((getThumbnailConfiguration() == null) ? 0 : getThumbnailConfiguration().hashCode());
         return hashCode;
     }
 

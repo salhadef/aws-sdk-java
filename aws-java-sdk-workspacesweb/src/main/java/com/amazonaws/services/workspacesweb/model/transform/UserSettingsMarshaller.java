@@ -30,6 +30,8 @@ public class UserSettingsMarshaller {
 
     private static final MarshallingInfo<List> ASSOCIATEDPORTALARNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("associatedPortalArns").build();
+    private static final MarshallingInfo<StructuredPojo> COOKIESYNCHRONIZATIONCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("cookieSynchronizationConfiguration").build();
     private static final MarshallingInfo<String> COPYALLOWED_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("copyAllowed").build();
     private static final MarshallingInfo<Integer> DISCONNECTTIMEOUTINMINUTES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -64,6 +66,7 @@ public class UserSettingsMarshaller {
 
         try {
             protocolMarshaller.marshall(userSettings.getAssociatedPortalArns(), ASSOCIATEDPORTALARNS_BINDING);
+            protocolMarshaller.marshall(userSettings.getCookieSynchronizationConfiguration(), COOKIESYNCHRONIZATIONCONFIGURATION_BINDING);
             protocolMarshaller.marshall(userSettings.getCopyAllowed(), COPYALLOWED_BINDING);
             protocolMarshaller.marshall(userSettings.getDisconnectTimeoutInMinutes(), DISCONNECTTIMEOUTINMINUTES_BINDING);
             protocolMarshaller.marshall(userSettings.getDownloadAllowed(), DOWNLOADALLOWED_BINDING);

@@ -134,8 +134,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
     /**
      * <p>
      * The key-value pair for tagging the EC2 Fleet request on creation. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging your
-     * resources</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag your resources</a>.
      * </p>
      * <p>
      * If the fleet type is <code>instant</code>, specify a resource type of <code>fleet</code> to tag the fleet or
@@ -996,8 +995,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
     /**
      * <p>
      * The key-value pair for tagging the EC2 Fleet request on creation. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging your
-     * resources</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag your resources</a>.
      * </p>
      * <p>
      * If the fleet type is <code>instant</code>, specify a resource type of <code>fleet</code> to tag the fleet or
@@ -1012,7 +1010,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      * </p>
      * 
      * @return The key-value pair for tagging the EC2 Fleet request on creation. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging your
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag your
      *         resources</a>.</p>
      *         <p>
      *         If the fleet type is <code>instant</code>, specify a resource type of <code>fleet</code> to tag the fleet
@@ -1036,8 +1034,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
     /**
      * <p>
      * The key-value pair for tagging the EC2 Fleet request on creation. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging your
-     * resources</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag your resources</a>.
      * </p>
      * <p>
      * If the fleet type is <code>instant</code>, specify a resource type of <code>fleet</code> to tag the fleet or
@@ -1053,7 +1050,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      * 
      * @param tagSpecifications
      *        The key-value pair for tagging the EC2 Fleet request on creation. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging your
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag your
      *        resources</a>.</p>
      *        <p>
      *        If the fleet type is <code>instant</code>, specify a resource type of <code>fleet</code> to tag the fleet
@@ -1079,8 +1076,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
     /**
      * <p>
      * The key-value pair for tagging the EC2 Fleet request on creation. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging your
-     * resources</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag your resources</a>.
      * </p>
      * <p>
      * If the fleet type is <code>instant</code>, specify a resource type of <code>fleet</code> to tag the fleet or
@@ -1101,7 +1097,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      * 
      * @param tagSpecifications
      *        The key-value pair for tagging the EC2 Fleet request on creation. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging your
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag your
      *        resources</a>.</p>
      *        <p>
      *        If the fleet type is <code>instant</code>, specify a resource type of <code>fleet</code> to tag the fleet
@@ -1129,8 +1125,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
     /**
      * <p>
      * The key-value pair for tagging the EC2 Fleet request on creation. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging your
-     * resources</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag your resources</a>.
      * </p>
      * <p>
      * If the fleet type is <code>instant</code>, specify a resource type of <code>fleet</code> to tag the fleet or
@@ -1146,7 +1141,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      * 
      * @param tagSpecifications
      *        The key-value pair for tagging the EC2 Fleet request on creation. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging your
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag your
      *        resources</a>.</p>
      *        <p>
      *        If the fleet type is <code>instant</code>, specify a resource type of <code>fleet</code> to tag the fleet

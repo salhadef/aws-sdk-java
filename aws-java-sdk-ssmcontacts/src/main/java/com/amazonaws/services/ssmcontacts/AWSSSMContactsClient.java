@@ -44,6 +44,7 @@ import com.amazonaws.services.ssmcontacts.AWSSSMContactsClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.ssmcontacts.model.*;
+
 import com.amazonaws.services.ssmcontacts.model.transform.*;
 
 /**

@@ -122,6 +122,10 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States
      * Language</a> in the Step Functions User Guide.
      * </p>
+     * <p>
+     * If you set the <code>publish</code> parameter of this API action to <code>true</code>, it publishes version
+     * <code>1</code> as the first revision of the state machine.
+     * </p>
      * <note>
      * <p>
      * This operation is eventually consistent. The results are best effort and may not reflect very recent updates and
@@ -131,8 +135,9 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * <p>
      * <code>CreateStateMachine</code> is an idempotent API. Subsequent requests won’t create a duplicate resource if it
      * was already created. <code>CreateStateMachine</code>'s idempotency check is based on the state machine
-     * <code>name</code>, <code>definition</code>, <code>type</code>, <code>LoggingConfiguration</code> and
-     * <code>TracingConfiguration</code>. If a following request has a different <code>roleArn</code> or
+     * <code>name</code>, <code>definition</code>, <code>type</code>, <code>LoggingConfiguration</code>, and
+     * <code>TracingConfiguration</code>. The check is also based on the <code>publish</code> and
+     * <code>versionDescription</code> parameters. If a following request has a different <code>roleArn</code> or
      * <code>tags</code>, Step Functions will ignore these differences and treat it as an idempotent request of the
      * previous. In this case, <code>roleArn</code> and <code>tags</code> will not be updated, even if they are
      * different.
@@ -156,6 +161,10 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States
      * Language</a> in the Step Functions User Guide.
      * </p>
+     * <p>
+     * If you set the <code>publish</code> parameter of this API action to <code>true</code>, it publishes version
+     * <code>1</code> as the first revision of the state machine.
+     * </p>
      * <note>
      * <p>
      * This operation is eventually consistent. The results are best effort and may not reflect very recent updates and
@@ -165,8 +174,9 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * <p>
      * <code>CreateStateMachine</code> is an idempotent API. Subsequent requests won’t create a duplicate resource if it
      * was already created. <code>CreateStateMachine</code>'s idempotency check is based on the state machine
-     * <code>name</code>, <code>definition</code>, <code>type</code>, <code>LoggingConfiguration</code> and
-     * <code>TracingConfiguration</code>. If a following request has a different <code>roleArn</code> or
+     * <code>name</code>, <code>definition</code>, <code>type</code>, <code>LoggingConfiguration</code>, and
+     * <code>TracingConfiguration</code>. The check is also based on the <code>publish</code> and
+     * <code>versionDescription</code> parameters. If a following request has a different <code>roleArn</code> or
      * <code>tags</code>, Step Functions will ignore these differences and treat it as an idempotent request of the
      * previous. In this case, <code>roleArn</code> and <code>tags</code> will not be updated, even if they are
      * different.
@@ -185,6 +195,139 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      */
     java.util.concurrent.Future<CreateStateMachineResult> createStateMachineAsync(CreateStateMachineRequest createStateMachineRequest,
             com.amazonaws.handlers.AsyncHandler<CreateStateMachineRequest, CreateStateMachineResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a> for a
+     * state machine that points to one or two <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">versions</a> of
+     * the same state machine. You can set your application to call <a>StartExecution</a> with an alias and update the
+     * version the alias uses without changing the client's code.
+     * </p>
+     * <p>
+     * You can also map an alias to split <a>StartExecution</a> requests between two versions of a state machine. To do
+     * this, add a second <code>RoutingConfig</code> object in the <code>routingConfiguration</code> parameter. You must
+     * also specify the percentage of execution run requests each version should receive in both
+     * <code>RoutingConfig</code> objects. Step Functions randomly chooses which version runs a given execution based on
+     * the percentage you specify.
+     * </p>
+     * <p>
+     * To create an alias that points to a single version, specify a single <code>RoutingConfig</code> object with a
+     * <code>weight</code> set to 100.
+     * </p>
+     * <p>
+     * You can create up to 100 aliases for each state machine. You must delete unused aliases using the
+     * <a>DeleteStateMachineAlias</a> API action.
+     * </p>
+     * <p>
+     * <code>CreateStateMachineAlias</code> is an idempotent API. Step Functions bases the idempotency check on the
+     * <code>stateMachineArn</code>, <code>description</code>, <code>name</code>, and <code>routingConfiguration</code>
+     * parameters. Requests that contain the same values for these parameters return a successful idempotent response
+     * without creating a duplicate resource.
+     * </p>
+     * <p>
+     * <b>Related operations:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>DescribeStateMachineAlias</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ListStateMachineAliases</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>UpdateStateMachineAlias</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DeleteStateMachineAlias</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param createStateMachineAliasRequest
+     * @return A Java Future containing the result of the CreateStateMachineAlias operation returned by the service.
+     * @sample AWSStepFunctionsAsync.CreateStateMachineAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateStateMachineAlias" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateStateMachineAliasResult> createStateMachineAliasAsync(CreateStateMachineAliasRequest createStateMachineAliasRequest);
+
+    /**
+     * <p>
+     * Creates an <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a> for a
+     * state machine that points to one or two <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">versions</a> of
+     * the same state machine. You can set your application to call <a>StartExecution</a> with an alias and update the
+     * version the alias uses without changing the client's code.
+     * </p>
+     * <p>
+     * You can also map an alias to split <a>StartExecution</a> requests between two versions of a state machine. To do
+     * this, add a second <code>RoutingConfig</code> object in the <code>routingConfiguration</code> parameter. You must
+     * also specify the percentage of execution run requests each version should receive in both
+     * <code>RoutingConfig</code> objects. Step Functions randomly chooses which version runs a given execution based on
+     * the percentage you specify.
+     * </p>
+     * <p>
+     * To create an alias that points to a single version, specify a single <code>RoutingConfig</code> object with a
+     * <code>weight</code> set to 100.
+     * </p>
+     * <p>
+     * You can create up to 100 aliases for each state machine. You must delete unused aliases using the
+     * <a>DeleteStateMachineAlias</a> API action.
+     * </p>
+     * <p>
+     * <code>CreateStateMachineAlias</code> is an idempotent API. Step Functions bases the idempotency check on the
+     * <code>stateMachineArn</code>, <code>description</code>, <code>name</code>, and <code>routingConfiguration</code>
+     * parameters. Requests that contain the same values for these parameters return a successful idempotent response
+     * without creating a duplicate resource.
+     * </p>
+     * <p>
+     * <b>Related operations:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>DescribeStateMachineAlias</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ListStateMachineAliases</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>UpdateStateMachineAlias</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DeleteStateMachineAlias</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param createStateMachineAliasRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateStateMachineAlias operation returned by the service.
+     * @sample AWSStepFunctionsAsyncHandler.CreateStateMachineAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateStateMachineAlias" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateStateMachineAliasResult> createStateMachineAliasAsync(CreateStateMachineAliasRequest createStateMachineAliasRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateStateMachineAliasRequest, CreateStateMachineAliasResult> asyncHandler);
 
     /**
      * <p>
@@ -223,20 +366,46 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * <code>DELETING</code> and begins the deletion process.
      * </p>
      * <p>
-     * If the given state machine Amazon Resource Name (ARN) is a qualified state machine ARN, it will fail with
-     * ValidationException.
+     * A qualified state machine ARN can either refer to a <i>Distributed Map state</i> defined within a state machine,
+     * a version ARN, or an alias ARN.
      * </p>
      * <p>
-     * A qualified state machine ARN refers to a <i>Distributed Map state</i> defined within a state machine. For
-     * example, the qualified state machine ARN
-     * <code>arn:partition:states:region:account-id:stateMachine:stateMachineName/mapStateLabel</code> refers to a
-     * <i>Distributed Map state</i> with a label <code>mapStateLabel</code> in the state machine named
-     * <code>stateMachineName</code>.
+     * The following are some examples of qualified and unqualified state machine ARNs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The following qualified state machine ARN refers to a <i>Distributed Map state</i> with a label
+     * <code>mapStateLabel</code> in a state machine named <code>myStateMachine</code>.
+     * </p>
+     * <p>
+     * <code>arn:partition:states:region:account-id:stateMachine:myStateMachine/mapStateLabel</code>
      * </p>
      * <note>
      * <p>
-     * For <code>EXPRESS</code> state machines, the deletion will happen eventually (usually less than a minute).
-     * Running executions may emit logs after <code>DeleteStateMachine</code> API is called.
+     * If you provide a qualified state machine ARN that refers to a <i>Distributed Map state</i>, the request fails
+     * with <code>ValidationException</code>.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * The following unqualified state machine ARN refers to a state machine named <code>myStateMachine</code>.
+     * </p>
+     * <p>
+     * <code>arn:partition:states:region:account-id:stateMachine:myStateMachine</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * This API action also deletes all <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">versions</a> and
+     * <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">aliases</a>
+     * associated with a state machine.
+     * </p>
+     * <note>
+     * <p>
+     * For <code>EXPRESS</code> state machines, the deletion happens eventually (usually in less than a minute). Running
+     * executions may emit logs after <code>DeleteStateMachine</code> API is called.
      * </p>
      * </note>
      * 
@@ -254,20 +423,46 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * <code>DELETING</code> and begins the deletion process.
      * </p>
      * <p>
-     * If the given state machine Amazon Resource Name (ARN) is a qualified state machine ARN, it will fail with
-     * ValidationException.
+     * A qualified state machine ARN can either refer to a <i>Distributed Map state</i> defined within a state machine,
+     * a version ARN, or an alias ARN.
      * </p>
      * <p>
-     * A qualified state machine ARN refers to a <i>Distributed Map state</i> defined within a state machine. For
-     * example, the qualified state machine ARN
-     * <code>arn:partition:states:region:account-id:stateMachine:stateMachineName/mapStateLabel</code> refers to a
-     * <i>Distributed Map state</i> with a label <code>mapStateLabel</code> in the state machine named
-     * <code>stateMachineName</code>.
+     * The following are some examples of qualified and unqualified state machine ARNs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The following qualified state machine ARN refers to a <i>Distributed Map state</i> with a label
+     * <code>mapStateLabel</code> in a state machine named <code>myStateMachine</code>.
+     * </p>
+     * <p>
+     * <code>arn:partition:states:region:account-id:stateMachine:myStateMachine/mapStateLabel</code>
      * </p>
      * <note>
      * <p>
-     * For <code>EXPRESS</code> state machines, the deletion will happen eventually (usually less than a minute).
-     * Running executions may emit logs after <code>DeleteStateMachine</code> API is called.
+     * If you provide a qualified state machine ARN that refers to a <i>Distributed Map state</i>, the request fails
+     * with <code>ValidationException</code>.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * The following unqualified state machine ARN refers to a state machine named <code>myStateMachine</code>.
+     * </p>
+     * <p>
+     * <code>arn:partition:states:region:account-id:stateMachine:myStateMachine</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * This API action also deletes all <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">versions</a> and
+     * <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">aliases</a>
+     * associated with a state machine.
+     * </p>
+     * <note>
+     * <p>
+     * For <code>EXPRESS</code> state machines, the deletion happens eventually (usually in less than a minute). Running
+     * executions may emit logs after <code>DeleteStateMachine</code> API is called.
      * </p>
      * </note>
      * 
@@ -283,6 +478,188 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      */
     java.util.concurrent.Future<DeleteStateMachineResult> deleteStateMachineAsync(DeleteStateMachineRequest deleteStateMachineRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteStateMachineRequest, DeleteStateMachineResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a state machine <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a>.
+     * </p>
+     * <p>
+     * After you delete a state machine alias, you can't use it to start executions. When you delete a state machine
+     * alias, Step Functions doesn't delete the state machine versions that alias references.
+     * </p>
+     * <p>
+     * <b>Related operations:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>CreateStateMachineAlias</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DescribeStateMachineAlias</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ListStateMachineAliases</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>UpdateStateMachineAlias</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param deleteStateMachineAliasRequest
+     * @return A Java Future containing the result of the DeleteStateMachineAlias operation returned by the service.
+     * @sample AWSStepFunctionsAsync.DeleteStateMachineAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteStateMachineAlias" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteStateMachineAliasResult> deleteStateMachineAliasAsync(DeleteStateMachineAliasRequest deleteStateMachineAliasRequest);
+
+    /**
+     * <p>
+     * Deletes a state machine <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a>.
+     * </p>
+     * <p>
+     * After you delete a state machine alias, you can't use it to start executions. When you delete a state machine
+     * alias, Step Functions doesn't delete the state machine versions that alias references.
+     * </p>
+     * <p>
+     * <b>Related operations:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>CreateStateMachineAlias</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DescribeStateMachineAlias</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ListStateMachineAliases</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>UpdateStateMachineAlias</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param deleteStateMachineAliasRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteStateMachineAlias operation returned by the service.
+     * @sample AWSStepFunctionsAsyncHandler.DeleteStateMachineAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteStateMachineAlias" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteStateMachineAliasResult> deleteStateMachineAliasAsync(DeleteStateMachineAliasRequest deleteStateMachineAliasRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteStateMachineAliasRequest, DeleteStateMachineAliasResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a state machine <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>.
+     * After you delete a version, you can't call <a>StartExecution</a> using that version's ARN or use the version with
+     * a state machine <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a>.
+     * </p>
+     * <note>
+     * <p>
+     * Deleting a state machine version won't terminate its in-progress executions.
+     * </p>
+     * </note> <note>
+     * <p>
+     * You can't delete a state machine version currently referenced by one or more aliases. Before you delete a
+     * version, you must either delete the aliases or update them to point to another state machine version.
+     * </p>
+     * </note>
+     * <p>
+     * <b>Related operations:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>PublishStateMachineVersion</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ListStateMachineVersions</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param deleteStateMachineVersionRequest
+     * @return A Java Future containing the result of the DeleteStateMachineVersion operation returned by the service.
+     * @sample AWSStepFunctionsAsync.DeleteStateMachineVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteStateMachineVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteStateMachineVersionResult> deleteStateMachineVersionAsync(
+            DeleteStateMachineVersionRequest deleteStateMachineVersionRequest);
+
+    /**
+     * <p>
+     * Deletes a state machine <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>.
+     * After you delete a version, you can't call <a>StartExecution</a> using that version's ARN or use the version with
+     * a state machine <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a>.
+     * </p>
+     * <note>
+     * <p>
+     * Deleting a state machine version won't terminate its in-progress executions.
+     * </p>
+     * </note> <note>
+     * <p>
+     * You can't delete a state machine version currently referenced by one or more aliases. Before you delete a
+     * version, you must either delete the aliases or update them to point to another state machine version.
+     * </p>
+     * </note>
+     * <p>
+     * <b>Related operations:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>PublishStateMachineVersion</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ListStateMachineVersions</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param deleteStateMachineVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteStateMachineVersion operation returned by the service.
+     * @sample AWSStepFunctionsAsyncHandler.DeleteStateMachineVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteStateMachineVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteStateMachineVersionResult> deleteStateMachineVersionAsync(
+            DeleteStateMachineVersionRequest deleteStateMachineVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteStateMachineVersionRequest, DeleteStateMachineVersionResult> asyncHandler);
 
     /**
      * <p>
@@ -329,9 +706,13 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
 
     /**
      * <p>
-     * Provides all information about a state machine execution, such as the state machine associated with the
-     * execution, the execution input and output, and relevant execution metadata. Use this API action to return the Map
-     * Run ARN if the execution was dispatched by a Map Run.
+     * Provides information about a state machine execution, such as the state machine associated with the execution,
+     * the execution input and output, and relevant execution metadata. Use this API action to return the Map Run Amazon
+     * Resource Name (ARN) if the execution was dispatched by a Map Run.
+     * </p>
+     * <p>
+     * If you specify a version or alias ARN when you call the <a>StartExecution</a> API action,
+     * <code>DescribeExecution</code> returns that ARN.
      * </p>
      * <note>
      * <p>
@@ -340,8 +721,8 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * </p>
      * </note>
      * <p>
-     * This API action is not supported by <code>EXPRESS</code> state machine executions unless they were dispatched by
-     * a Map Run.
+     * Executions of an <code>EXPRESS</code> state machinearen't supported by <code>DescribeExecution</code> unless a
+     * Map Run dispatched them.
      * </p>
      * 
      * @param describeExecutionRequest
@@ -354,9 +735,13 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
 
     /**
      * <p>
-     * Provides all information about a state machine execution, such as the state machine associated with the
-     * execution, the execution input and output, and relevant execution metadata. Use this API action to return the Map
-     * Run ARN if the execution was dispatched by a Map Run.
+     * Provides information about a state machine execution, such as the state machine associated with the execution,
+     * the execution input and output, and relevant execution metadata. Use this API action to return the Map Run Amazon
+     * Resource Name (ARN) if the execution was dispatched by a Map Run.
+     * </p>
+     * <p>
+     * If you specify a version or alias ARN when you call the <a>StartExecution</a> API action,
+     * <code>DescribeExecution</code> returns that ARN.
      * </p>
      * <note>
      * <p>
@@ -365,8 +750,8 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * </p>
      * </note>
      * <p>
-     * This API action is not supported by <code>EXPRESS</code> state machine executions unless they were dispatched by
-     * a Map Run.
+     * Executions of an <code>EXPRESS</code> state machinearen't supported by <code>DescribeExecution</code> unless a
+     * Map Run dispatched them.
      * </p>
      * 
      * @param describeExecutionRequest
@@ -420,15 +805,55 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
     /**
      * <p>
      * Provides information about a state machine's definition, its IAM role Amazon Resource Name (ARN), and
-     * configuration. If the state machine ARN is a qualified state machine ARN, the response returned includes the
-     * <code>Map</code> state's label.
+     * configuration.
      * </p>
      * <p>
-     * A qualified state machine ARN refers to a <i>Distributed Map state</i> defined within a state machine. For
-     * example, the qualified state machine ARN
-     * <code>arn:partition:states:region:account-id:stateMachine:stateMachineName/mapStateLabel</code> refers to a
-     * <i>Distributed Map state</i> with a label <code>mapStateLabel</code> in the state machine named
-     * <code>stateMachineName</code>.
+     * A qualified state machine ARN can either refer to a <i>Distributed Map state</i> defined within a state machine,
+     * a version ARN, or an alias ARN.
+     * </p>
+     * <p>
+     * The following are some examples of qualified and unqualified state machine ARNs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The following qualified state machine ARN refers to a <i>Distributed Map state</i> with a label
+     * <code>mapStateLabel</code> in a state machine named <code>myStateMachine</code>.
+     * </p>
+     * <p>
+     * <code>arn:partition:states:region:account-id:stateMachine:myStateMachine/mapStateLabel</code>
+     * </p>
+     * <note>
+     * <p>
+     * If you provide a qualified state machine ARN that refers to a <i>Distributed Map state</i>, the request fails
+     * with <code>ValidationException</code>.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * The following qualified state machine ARN refers to an alias named <code>PROD</code>.
+     * </p>
+     * <p>
+     * <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine:PROD&gt;</code>
+     * </p>
+     * <note>
+     * <p>
+     * If you provide a qualified state machine ARN that refers to a version ARN or an alias ARN, the request starts
+     * execution for that version or alias.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * The following unqualified state machine ARN refers to a state machine named <code>myStateMachine</code>.
+     * </p>
+     * <p>
+     * <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * This API action returns the details for a state machine version if the <code>stateMachineArn</code> you specify
+     * is a state machine version ARN.
      * </p>
      * <note>
      * <p>
@@ -448,15 +873,55 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
     /**
      * <p>
      * Provides information about a state machine's definition, its IAM role Amazon Resource Name (ARN), and
-     * configuration. If the state machine ARN is a qualified state machine ARN, the response returned includes the
-     * <code>Map</code> state's label.
+     * configuration.
      * </p>
      * <p>
-     * A qualified state machine ARN refers to a <i>Distributed Map state</i> defined within a state machine. For
-     * example, the qualified state machine ARN
-     * <code>arn:partition:states:region:account-id:stateMachine:stateMachineName/mapStateLabel</code> refers to a
-     * <i>Distributed Map state</i> with a label <code>mapStateLabel</code> in the state machine named
-     * <code>stateMachineName</code>.
+     * A qualified state machine ARN can either refer to a <i>Distributed Map state</i> defined within a state machine,
+     * a version ARN, or an alias ARN.
+     * </p>
+     * <p>
+     * The following are some examples of qualified and unqualified state machine ARNs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The following qualified state machine ARN refers to a <i>Distributed Map state</i> with a label
+     * <code>mapStateLabel</code> in a state machine named <code>myStateMachine</code>.
+     * </p>
+     * <p>
+     * <code>arn:partition:states:region:account-id:stateMachine:myStateMachine/mapStateLabel</code>
+     * </p>
+     * <note>
+     * <p>
+     * If you provide a qualified state machine ARN that refers to a <i>Distributed Map state</i>, the request fails
+     * with <code>ValidationException</code>.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * The following qualified state machine ARN refers to an alias named <code>PROD</code>.
+     * </p>
+     * <p>
+     * <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine:PROD&gt;</code>
+     * </p>
+     * <note>
+     * <p>
+     * If you provide a qualified state machine ARN that refers to a version ARN or an alias ARN, the request starts
+     * execution for that version or alias.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * The following unqualified state machine ARN refers to a state machine named <code>myStateMachine</code>.
+     * </p>
+     * <p>
+     * <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * This API action returns the details for a state machine version if the <code>stateMachineArn</code> you specify
+     * is a state machine version ARN.
      * </p>
      * <note>
      * <p>
@@ -480,9 +945,94 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
 
     /**
      * <p>
-     * Provides information about a state machine's definition, its execution role ARN, and configuration. If an
-     * execution was dispatched by a Map Run, the Map Run is returned in the response. Additionally, the state machine
-     * returned will be the state machine associated with the Map Run.
+     * Returns details about a state machine <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a>.
+     * </p>
+     * <p>
+     * <b>Related operations:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>CreateStateMachineAlias</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ListStateMachineAliases</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>UpdateStateMachineAlias</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DeleteStateMachineAlias</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param describeStateMachineAliasRequest
+     * @return A Java Future containing the result of the DescribeStateMachineAlias operation returned by the service.
+     * @sample AWSStepFunctionsAsync.DescribeStateMachineAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeStateMachineAlias"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeStateMachineAliasResult> describeStateMachineAliasAsync(
+            DescribeStateMachineAliasRequest describeStateMachineAliasRequest);
+
+    /**
+     * <p>
+     * Returns details about a state machine <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a>.
+     * </p>
+     * <p>
+     * <b>Related operations:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>CreateStateMachineAlias</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ListStateMachineAliases</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>UpdateStateMachineAlias</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DeleteStateMachineAlias</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param describeStateMachineAliasRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeStateMachineAlias operation returned by the service.
+     * @sample AWSStepFunctionsAsyncHandler.DescribeStateMachineAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeStateMachineAlias"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeStateMachineAliasResult> describeStateMachineAliasAsync(
+            DescribeStateMachineAliasRequest describeStateMachineAliasRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeStateMachineAliasRequest, DescribeStateMachineAliasResult> asyncHandler);
+
+    /**
+     * <p>
+     * Provides information about a state machine's definition, its execution role ARN, and configuration. If a Map Run
+     * dispatched the execution, this action returns the Map Run Amazon Resource Name (ARN) in the response. The state
+     * machine returned is the state machine associated with the Map Run.
      * </p>
      * <note>
      * <p>
@@ -506,9 +1056,9 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
 
     /**
      * <p>
-     * Provides information about a state machine's definition, its execution role ARN, and configuration. If an
-     * execution was dispatched by a Map Run, the Map Run is returned in the response. Additionally, the state machine
-     * returned will be the state machine associated with the Map Run.
+     * Provides information about a state machine's definition, its execution role ARN, and configuration. If a Map Run
+     * dispatched the execution, this action returns the Map Run Amazon Resource Name (ARN) in the response. The state
+     * machine returned is the state machine associated with the Map Run.
      * </p>
      * <note>
      * <p>
@@ -718,6 +1268,12 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * specifying a state machine Amazon Resource Name (ARN), or those related to a Map Run by specifying a Map Run ARN.
      * </p>
      * <p>
+     * You can also provide a state machine <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a> ARN or <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a> ARN
+     * to list the executions associated with a specific alias or version.
+     * </p>
+     * <p>
      * Results are sorted by time, with the most recent execution first.
      * </p>
      * <p>
@@ -748,6 +1304,12 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * <p>
      * Lists all executions of a state machine or a Map Run. You can list all executions related to a state machine by
      * specifying a state machine Amazon Resource Name (ARN), or those related to a Map Run by specifying a Map Run ARN.
+     * </p>
+     * <p>
+     * You can also provide a state machine <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a> ARN or <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a> ARN
+     * to list the executions associated with a specific alias or version.
      * </p>
      * <p>
      * Results are sorted by time, with the most recent execution first.
@@ -813,6 +1375,196 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      */
     java.util.concurrent.Future<ListMapRunsResult> listMapRunsAsync(ListMapRunsRequest listMapRunsRequest,
             com.amazonaws.handlers.AsyncHandler<ListMapRunsRequest, ListMapRunsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">aliases</a> for a
+     * specified state machine ARN. Results are sorted by time, with the most recently created aliases listed first.
+     * </p>
+     * <p>
+     * To list aliases that reference a state machine <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>, you
+     * can specify the version ARN in the <code>stateMachineArn</code> parameter.
+     * </p>
+     * <p>
+     * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
+     * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
+     * Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination
+     * token will return an <i>HTTP 400 InvalidToken</i> error.
+     * </p>
+     * <p>
+     * <b>Related operations:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>CreateStateMachineAlias</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DescribeStateMachineAlias</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>UpdateStateMachineAlias</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DeleteStateMachineAlias</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param listStateMachineAliasesRequest
+     * @return A Java Future containing the result of the ListStateMachineAliases operation returned by the service.
+     * @sample AWSStepFunctionsAsync.ListStateMachineAliases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListStateMachineAliases" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListStateMachineAliasesResult> listStateMachineAliasesAsync(ListStateMachineAliasesRequest listStateMachineAliasesRequest);
+
+    /**
+     * <p>
+     * Lists <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">aliases</a> for a
+     * specified state machine ARN. Results are sorted by time, with the most recently created aliases listed first.
+     * </p>
+     * <p>
+     * To list aliases that reference a state machine <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>, you
+     * can specify the version ARN in the <code>stateMachineArn</code> parameter.
+     * </p>
+     * <p>
+     * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
+     * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
+     * Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination
+     * token will return an <i>HTTP 400 InvalidToken</i> error.
+     * </p>
+     * <p>
+     * <b>Related operations:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>CreateStateMachineAlias</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DescribeStateMachineAlias</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>UpdateStateMachineAlias</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DeleteStateMachineAlias</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param listStateMachineAliasesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListStateMachineAliases operation returned by the service.
+     * @sample AWSStepFunctionsAsyncHandler.ListStateMachineAliases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListStateMachineAliases" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListStateMachineAliasesResult> listStateMachineAliasesAsync(ListStateMachineAliasesRequest listStateMachineAliasesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListStateMachineAliasesRequest, ListStateMachineAliasesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">versions</a> for
+     * the specified state machine Amazon Resource Name (ARN).
+     * </p>
+     * <p>
+     * The results are sorted in descending order of the version creation time.
+     * </p>
+     * <p>
+     * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
+     * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
+     * Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination
+     * token will return an <i>HTTP 400 InvalidToken</i> error.
+     * </p>
+     * <p>
+     * <b>Related operations:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>PublishStateMachineVersion</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DeleteStateMachineVersion</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param listStateMachineVersionsRequest
+     * @return A Java Future containing the result of the ListStateMachineVersions operation returned by the service.
+     * @sample AWSStepFunctionsAsync.ListStateMachineVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListStateMachineVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListStateMachineVersionsResult> listStateMachineVersionsAsync(ListStateMachineVersionsRequest listStateMachineVersionsRequest);
+
+    /**
+     * <p>
+     * Lists <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">versions</a> for
+     * the specified state machine Amazon Resource Name (ARN).
+     * </p>
+     * <p>
+     * The results are sorted in descending order of the version creation time.
+     * </p>
+     * <p>
+     * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
+     * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
+     * Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination
+     * token will return an <i>HTTP 400 InvalidToken</i> error.
+     * </p>
+     * <p>
+     * <b>Related operations:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>PublishStateMachineVersion</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DeleteStateMachineVersion</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param listStateMachineVersionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListStateMachineVersions operation returned by the service.
+     * @sample AWSStepFunctionsAsyncHandler.ListStateMachineVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListStateMachineVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListStateMachineVersionsResult> listStateMachineVersionsAsync(ListStateMachineVersionsRequest listStateMachineVersionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListStateMachineVersionsRequest, ListStateMachineVersionsResult> asyncHandler);
 
     /**
      * <p>
@@ -905,6 +1657,101 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      */
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a> from
+     * the current revision of a state machine. Use versions to create immutable snapshots of your state machine. You
+     * can start executions from versions either directly or with an alias. To create an alias, use
+     * <a>CreateStateMachineAlias</a>.
+     * </p>
+     * <p>
+     * You can publish up to 1000 versions for each state machine. You must manually delete unused versions using the
+     * <a>DeleteStateMachineVersion</a> API action.
+     * </p>
+     * <p>
+     * <code>PublishStateMachineVersion</code> is an idempotent API. It doesn't create a duplicate state machine version
+     * if it already exists for the current revision. Step Functions bases <code>PublishStateMachineVersion</code>'s
+     * idempotency check on the <code>stateMachineArn</code>, <code>name</code>, and <code>revisionId</code> parameters.
+     * Requests with the same parameters return a successful idempotent response. If you don't specify a
+     * <code>revisionId</code>, Step Functions checks for a previously published version of the state machine's current
+     * revision.
+     * </p>
+     * <p>
+     * <b>Related operations:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>DeleteStateMachineVersion</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ListStateMachineVersions</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param publishStateMachineVersionRequest
+     * @return A Java Future containing the result of the PublishStateMachineVersion operation returned by the service.
+     * @sample AWSStepFunctionsAsync.PublishStateMachineVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/PublishStateMachineVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PublishStateMachineVersionResult> publishStateMachineVersionAsync(
+            PublishStateMachineVersionRequest publishStateMachineVersionRequest);
+
+    /**
+     * <p>
+     * Creates a <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a> from
+     * the current revision of a state machine. Use versions to create immutable snapshots of your state machine. You
+     * can start executions from versions either directly or with an alias. To create an alias, use
+     * <a>CreateStateMachineAlias</a>.
+     * </p>
+     * <p>
+     * You can publish up to 1000 versions for each state machine. You must manually delete unused versions using the
+     * <a>DeleteStateMachineVersion</a> API action.
+     * </p>
+     * <p>
+     * <code>PublishStateMachineVersion</code> is an idempotent API. It doesn't create a duplicate state machine version
+     * if it already exists for the current revision. Step Functions bases <code>PublishStateMachineVersion</code>'s
+     * idempotency check on the <code>stateMachineArn</code>, <code>name</code>, and <code>revisionId</code> parameters.
+     * Requests with the same parameters return a successful idempotent response. If you don't specify a
+     * <code>revisionId</code>, Step Functions checks for a previously published version of the state machine's current
+     * revision.
+     * </p>
+     * <p>
+     * <b>Related operations:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>DeleteStateMachineVersion</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ListStateMachineVersions</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param publishStateMachineVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PublishStateMachineVersion operation returned by the service.
+     * @sample AWSStepFunctionsAsyncHandler.PublishStateMachineVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/PublishStateMachineVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PublishStateMachineVersionResult> publishStateMachineVersionAsync(
+            PublishStateMachineVersionRequest publishStateMachineVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<PublishStateMachineVersionRequest, PublishStateMachineVersionResult> asyncHandler);
 
     /**
      * <p>
@@ -1043,25 +1890,72 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
 
     /**
      * <p>
-     * Starts a state machine execution. If the given state machine Amazon Resource Name (ARN) is a qualified state
-     * machine ARN, it will fail with ValidationException.
+     * Starts a state machine execution.
      * </p>
      * <p>
-     * A qualified state machine ARN refers to a <i>Distributed Map state</i> defined within a state machine. For
-     * example, the qualified state machine ARN
-     * <code>arn:partition:states:region:account-id:stateMachine:stateMachineName/mapStateLabel</code> refers to a
-     * <i>Distributed Map state</i> with a label <code>mapStateLabel</code> in the state machine named
-     * <code>stateMachineName</code>.
+     * A qualified state machine ARN can either refer to a <i>Distributed Map state</i> defined within a state machine,
+     * a version ARN, or an alias ARN.
+     * </p>
+     * <p>
+     * The following are some examples of qualified and unqualified state machine ARNs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The following qualified state machine ARN refers to a <i>Distributed Map state</i> with a label
+     * <code>mapStateLabel</code> in a state machine named <code>myStateMachine</code>.
+     * </p>
+     * <p>
+     * <code>arn:partition:states:region:account-id:stateMachine:myStateMachine/mapStateLabel</code>
+     * </p>
+     * <note>
+     * <p>
+     * If you provide a qualified state machine ARN that refers to a <i>Distributed Map state</i>, the request fails
+     * with <code>ValidationException</code>.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * The following qualified state machine ARN refers to an alias named <code>PROD</code>.
+     * </p>
+     * <p>
+     * <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine:PROD&gt;</code>
+     * </p>
+     * <note>
+     * <p>
+     * If you provide a qualified state machine ARN that refers to a version ARN or an alias ARN, the request starts
+     * execution for that version or alias.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * The following unqualified state machine ARN refers to a state machine named <code>myStateMachine</code>.
+     * </p>
+     * <p>
+     * <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you start an execution with an unqualified state machine ARN, Step Functions uses the latest revision of the
+     * state machine for the execution.
+     * </p>
+     * <p>
+     * To start executions of a state machine <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>, call
+     * <code>StartExecution</code> and provide the version ARN or the ARN of an <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a> that
+     * points to the version.
      * </p>
      * <note>
      * <p>
      * <code>StartExecution</code> is idempotent for <code>STANDARD</code> workflows. For a <code>STANDARD</code>
-     * workflow, if <code>StartExecution</code> is called with the same name and input as a running execution, the call
-     * will succeed and return the same response as the original request. If the execution is closed or if the input is
-     * different, it will return a <code>400 ExecutionAlreadyExists</code> error. Names can be reused after 90 days.
+     * workflow, if you call <code>StartExecution</code> with the same name and input as a running execution, the call
+     * succeeds and return the same response as the original request. If the execution is closed or if the input is
+     * different, it returns a <code>400 ExecutionAlreadyExists</code> error. You can reuse names after 90 days.
      * </p>
      * <p>
-     * <code>StartExecution</code> is not idempotent for <code>EXPRESS</code> workflows.
+     * <code>StartExecution</code> isn't idempotent for <code>EXPRESS</code> workflows.
      * </p>
      * </note>
      * 
@@ -1075,25 +1969,72 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
 
     /**
      * <p>
-     * Starts a state machine execution. If the given state machine Amazon Resource Name (ARN) is a qualified state
-     * machine ARN, it will fail with ValidationException.
+     * Starts a state machine execution.
      * </p>
      * <p>
-     * A qualified state machine ARN refers to a <i>Distributed Map state</i> defined within a state machine. For
-     * example, the qualified state machine ARN
-     * <code>arn:partition:states:region:account-id:stateMachine:stateMachineName/mapStateLabel</code> refers to a
-     * <i>Distributed Map state</i> with a label <code>mapStateLabel</code> in the state machine named
-     * <code>stateMachineName</code>.
+     * A qualified state machine ARN can either refer to a <i>Distributed Map state</i> defined within a state machine,
+     * a version ARN, or an alias ARN.
+     * </p>
+     * <p>
+     * The following are some examples of qualified and unqualified state machine ARNs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The following qualified state machine ARN refers to a <i>Distributed Map state</i> with a label
+     * <code>mapStateLabel</code> in a state machine named <code>myStateMachine</code>.
+     * </p>
+     * <p>
+     * <code>arn:partition:states:region:account-id:stateMachine:myStateMachine/mapStateLabel</code>
+     * </p>
+     * <note>
+     * <p>
+     * If you provide a qualified state machine ARN that refers to a <i>Distributed Map state</i>, the request fails
+     * with <code>ValidationException</code>.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * The following qualified state machine ARN refers to an alias named <code>PROD</code>.
+     * </p>
+     * <p>
+     * <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine:PROD&gt;</code>
+     * </p>
+     * <note>
+     * <p>
+     * If you provide a qualified state machine ARN that refers to a version ARN or an alias ARN, the request starts
+     * execution for that version or alias.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * The following unqualified state machine ARN refers to a state machine named <code>myStateMachine</code>.
+     * </p>
+     * <p>
+     * <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you start an execution with an unqualified state machine ARN, Step Functions uses the latest revision of the
+     * state machine for the execution.
+     * </p>
+     * <p>
+     * To start executions of a state machine <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>, call
+     * <code>StartExecution</code> and provide the version ARN or the ARN of an <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a> that
+     * points to the version.
      * </p>
      * <note>
      * <p>
      * <code>StartExecution</code> is idempotent for <code>STANDARD</code> workflows. For a <code>STANDARD</code>
-     * workflow, if <code>StartExecution</code> is called with the same name and input as a running execution, the call
-     * will succeed and return the same response as the original request. If the execution is closed or if the input is
-     * different, it will return a <code>400 ExecutionAlreadyExists</code> error. Names can be reused after 90 days.
+     * workflow, if you call <code>StartExecution</code> with the same name and input as a running execution, the call
+     * succeeds and return the same response as the original request. If the execution is closed or if the input is
+     * different, it returns a <code>400 ExecutionAlreadyExists</code> error. You can reuse names after 90 days.
      * </p>
      * <p>
-     * <code>StartExecution</code> is not idempotent for <code>EXPRESS</code> workflows.
+     * <code>StartExecution</code> isn't idempotent for <code>EXPRESS</code> workflows.
      * </p>
      * </note>
      * 
@@ -1327,20 +2268,71 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * will receive a <code>MissingRequiredParameter</code> error.
      * </p>
      * <p>
-     * If the given state machine Amazon Resource Name (ARN) is a qualified state machine ARN, it will fail with
-     * ValidationException.
-     * </p>
-     * <p>
      * A qualified state machine ARN refers to a <i>Distributed Map state</i> defined within a state machine. For
      * example, the qualified state machine ARN
      * <code>arn:partition:states:region:account-id:stateMachine:stateMachineName/mapStateLabel</code> refers to a
      * <i>Distributed Map state</i> with a label <code>mapStateLabel</code> in the state machine named
      * <code>stateMachineName</code>.
      * </p>
+     * <p>
+     * A qualified state machine ARN can either refer to a <i>Distributed Map state</i> defined within a state machine,
+     * a version ARN, or an alias ARN.
+     * </p>
+     * <p>
+     * The following are some examples of qualified and unqualified state machine ARNs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The following qualified state machine ARN refers to a <i>Distributed Map state</i> with a label
+     * <code>mapStateLabel</code> in a state machine named <code>myStateMachine</code>.
+     * </p>
+     * <p>
+     * <code>arn:partition:states:region:account-id:stateMachine:myStateMachine/mapStateLabel</code>
+     * </p>
      * <note>
      * <p>
-     * All <code>StartExecution</code> calls within a few seconds will use the updated <code>definition</code> and
-     * <code>roleArn</code>. Executions started immediately after calling <code>UpdateStateMachine</code> may use the
+     * If you provide a qualified state machine ARN that refers to a <i>Distributed Map state</i>, the request fails
+     * with <code>ValidationException</code>.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * The following qualified state machine ARN refers to an alias named <code>PROD</code>.
+     * </p>
+     * <p>
+     * <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine:PROD&gt;</code>
+     * </p>
+     * <note>
+     * <p>
+     * If you provide a qualified state machine ARN that refers to a version ARN or an alias ARN, the request starts
+     * execution for that version or alias.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * The following unqualified state machine ARN refers to a state machine named <code>myStateMachine</code>.
+     * </p>
+     * <p>
+     * <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * After you update your state machine, you can set the <code>publish</code> parameter to <code>true</code> in the
+     * same action to publish a new <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>. This
+     * way, you can opt-in to strict versioning of your state machine.
+     * </p>
+     * <note>
+     * <p>
+     * Step Functions assigns monotonically increasing integers for state machine versions, starting at version number
+     * 1.
+     * </p>
+     * </note> <note>
+     * <p>
+     * All <code>StartExecution</code> calls within a few seconds use the updated <code>definition</code> and
+     * <code>roleArn</code>. Executions started immediately after you call <code>UpdateStateMachine</code> may use the
      * previous state machine <code>definition</code> and <code>roleArn</code>.
      * </p>
      * </note>
@@ -1361,20 +2353,71 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * will receive a <code>MissingRequiredParameter</code> error.
      * </p>
      * <p>
-     * If the given state machine Amazon Resource Name (ARN) is a qualified state machine ARN, it will fail with
-     * ValidationException.
-     * </p>
-     * <p>
      * A qualified state machine ARN refers to a <i>Distributed Map state</i> defined within a state machine. For
      * example, the qualified state machine ARN
      * <code>arn:partition:states:region:account-id:stateMachine:stateMachineName/mapStateLabel</code> refers to a
      * <i>Distributed Map state</i> with a label <code>mapStateLabel</code> in the state machine named
      * <code>stateMachineName</code>.
      * </p>
+     * <p>
+     * A qualified state machine ARN can either refer to a <i>Distributed Map state</i> defined within a state machine,
+     * a version ARN, or an alias ARN.
+     * </p>
+     * <p>
+     * The following are some examples of qualified and unqualified state machine ARNs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The following qualified state machine ARN refers to a <i>Distributed Map state</i> with a label
+     * <code>mapStateLabel</code> in a state machine named <code>myStateMachine</code>.
+     * </p>
+     * <p>
+     * <code>arn:partition:states:region:account-id:stateMachine:myStateMachine/mapStateLabel</code>
+     * </p>
      * <note>
      * <p>
-     * All <code>StartExecution</code> calls within a few seconds will use the updated <code>definition</code> and
-     * <code>roleArn</code>. Executions started immediately after calling <code>UpdateStateMachine</code> may use the
+     * If you provide a qualified state machine ARN that refers to a <i>Distributed Map state</i>, the request fails
+     * with <code>ValidationException</code>.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * The following qualified state machine ARN refers to an alias named <code>PROD</code>.
+     * </p>
+     * <p>
+     * <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine:PROD&gt;</code>
+     * </p>
+     * <note>
+     * <p>
+     * If you provide a qualified state machine ARN that refers to a version ARN or an alias ARN, the request starts
+     * execution for that version or alias.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * The following unqualified state machine ARN refers to a state machine named <code>myStateMachine</code>.
+     * </p>
+     * <p>
+     * <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * After you update your state machine, you can set the <code>publish</code> parameter to <code>true</code> in the
+     * same action to publish a new <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>. This
+     * way, you can opt-in to strict versioning of your state machine.
+     * </p>
+     * <note>
+     * <p>
+     * Step Functions assigns monotonically increasing integers for state machine versions, starting at version number
+     * 1.
+     * </p>
+     * </note> <note>
+     * <p>
+     * All <code>StartExecution</code> calls within a few seconds use the updated <code>definition</code> and
+     * <code>roleArn</code>. Executions started immediately after you call <code>UpdateStateMachine</code> may use the
      * previous state machine <code>definition</code> and <code>roleArn</code>.
      * </p>
      * </note>
@@ -1391,5 +2434,124 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      */
     java.util.concurrent.Future<UpdateStateMachineResult> updateStateMachineAsync(UpdateStateMachineRequest updateStateMachineRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateStateMachineRequest, UpdateStateMachineResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the configuration of an existing state machine <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a> by
+     * modifying its <code>description</code> or <code>routingConfiguration</code>.
+     * </p>
+     * <p>
+     * You must specify at least one of the <code>description</code> or <code>routingConfiguration</code> parameters to
+     * update a state machine alias.
+     * </p>
+     * <note>
+     * <p>
+     * <code>UpdateStateMachineAlias</code> is an idempotent API. Step Functions bases the idempotency check on the
+     * <code>stateMachineAliasArn</code>, <code>description</code>, and <code>routingConfiguration</code> parameters.
+     * Requests with the same parameters return an idempotent response.
+     * </p>
+     * </note> <note>
+     * <p>
+     * This operation is eventually consistent. All <a>StartExecution</a> requests made within a few seconds use the
+     * latest alias configuration. Executions started immediately after calling <code>UpdateStateMachineAlias</code> may
+     * use the previous routing configuration.
+     * </p>
+     * </note>
+     * <p>
+     * <b>Related operations:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>CreateStateMachineAlias</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DescribeStateMachineAlias</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ListStateMachineAliases</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DeleteStateMachineAlias</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param updateStateMachineAliasRequest
+     * @return A Java Future containing the result of the UpdateStateMachineAlias operation returned by the service.
+     * @sample AWSStepFunctionsAsync.UpdateStateMachineAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/UpdateStateMachineAlias" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateStateMachineAliasResult> updateStateMachineAliasAsync(UpdateStateMachineAliasRequest updateStateMachineAliasRequest);
+
+    /**
+     * <p>
+     * Updates the configuration of an existing state machine <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a> by
+     * modifying its <code>description</code> or <code>routingConfiguration</code>.
+     * </p>
+     * <p>
+     * You must specify at least one of the <code>description</code> or <code>routingConfiguration</code> parameters to
+     * update a state machine alias.
+     * </p>
+     * <note>
+     * <p>
+     * <code>UpdateStateMachineAlias</code> is an idempotent API. Step Functions bases the idempotency check on the
+     * <code>stateMachineAliasArn</code>, <code>description</code>, and <code>routingConfiguration</code> parameters.
+     * Requests with the same parameters return an idempotent response.
+     * </p>
+     * </note> <note>
+     * <p>
+     * This operation is eventually consistent. All <a>StartExecution</a> requests made within a few seconds use the
+     * latest alias configuration. Executions started immediately after calling <code>UpdateStateMachineAlias</code> may
+     * use the previous routing configuration.
+     * </p>
+     * </note>
+     * <p>
+     * <b>Related operations:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>CreateStateMachineAlias</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DescribeStateMachineAlias</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ListStateMachineAliases</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DeleteStateMachineAlias</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param updateStateMachineAliasRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateStateMachineAlias operation returned by the service.
+     * @sample AWSStepFunctionsAsyncHandler.UpdateStateMachineAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/UpdateStateMachineAlias" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateStateMachineAliasResult> updateStateMachineAliasAsync(UpdateStateMachineAliasRequest updateStateMachineAliasRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateStateMachineAliasRequest, UpdateStateMachineAliasResult> asyncHandler);
 
 }

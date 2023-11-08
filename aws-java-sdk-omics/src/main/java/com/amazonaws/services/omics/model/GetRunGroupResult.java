@@ -31,34 +31,10 @@ public class GetRunGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String arn;
     /**
      * <p>
-     * When the group was created.
-     * </p>
-     */
-    private java.util.Date creationTime;
-    /**
-     * <p>
      * The group's ID.
      * </p>
      */
     private String id;
-    /**
-     * <p>
-     * The group's maximum number of CPUs to use.
-     * </p>
-     */
-    private Integer maxCpus;
-    /**
-     * <p>
-     * The group's maximum run time in minutes.
-     * </p>
-     */
-    private Integer maxDuration;
-    /**
-     * <p>
-     * The maximum number of concurrent runs for the group.
-     * </p>
-     */
-    private Integer maxRuns;
     /**
      * <p>
      * The group's name.
@@ -67,10 +43,40 @@ public class GetRunGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String name;
     /**
      * <p>
+     * The group's maximum number of CPUs to use.
+     * </p>
+     */
+    private Integer maxCpus;
+    /**
+     * <p>
+     * The maximum number of concurrent runs for the group.
+     * </p>
+     */
+    private Integer maxRuns;
+    /**
+     * <p>
+     * The group's maximum run time in minutes.
+     * </p>
+     */
+    private Integer maxDuration;
+    /**
+     * <p>
+     * When the group was created.
+     * </p>
+     */
+    private java.util.Date creationTime;
+    /**
+     * <p>
      * The group's tags.
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * The maximum GPUs that can be used by a run group.
+     * </p>
+     */
+    private Integer maxGpus;
 
     /**
      * <p>
@@ -109,46 +115,6 @@ public class GetRunGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     public GetRunGroupResult withArn(String arn) {
         setArn(arn);
-        return this;
-    }
-
-    /**
-     * <p>
-     * When the group was created.
-     * </p>
-     * 
-     * @param creationTime
-     *        When the group was created.
-     */
-
-    public void setCreationTime(java.util.Date creationTime) {
-        this.creationTime = creationTime;
-    }
-
-    /**
-     * <p>
-     * When the group was created.
-     * </p>
-     * 
-     * @return When the group was created.
-     */
-
-    public java.util.Date getCreationTime() {
-        return this.creationTime;
-    }
-
-    /**
-     * <p>
-     * When the group was created.
-     * </p>
-     * 
-     * @param creationTime
-     *        When the group was created.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetRunGroupResult withCreationTime(java.util.Date creationTime) {
-        setCreationTime(creationTime);
         return this;
     }
 
@@ -194,6 +160,46 @@ public class GetRunGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
+     * The group's name.
+     * </p>
+     * 
+     * @param name
+     *        The group's name.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The group's name.
+     * </p>
+     * 
+     * @return The group's name.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The group's name.
+     * </p>
+     * 
+     * @param name
+     *        The group's name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetRunGroupResult withName(String name) {
+        setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
      * The group's maximum number of CPUs to use.
      * </p>
      * 
@@ -229,46 +235,6 @@ public class GetRunGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     public GetRunGroupResult withMaxCpus(Integer maxCpus) {
         setMaxCpus(maxCpus);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The group's maximum run time in minutes.
-     * </p>
-     * 
-     * @param maxDuration
-     *        The group's maximum run time in minutes.
-     */
-
-    public void setMaxDuration(Integer maxDuration) {
-        this.maxDuration = maxDuration;
-    }
-
-    /**
-     * <p>
-     * The group's maximum run time in minutes.
-     * </p>
-     * 
-     * @return The group's maximum run time in minutes.
-     */
-
-    public Integer getMaxDuration() {
-        return this.maxDuration;
-    }
-
-    /**
-     * <p>
-     * The group's maximum run time in minutes.
-     * </p>
-     * 
-     * @param maxDuration
-     *        The group's maximum run time in minutes.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetRunGroupResult withMaxDuration(Integer maxDuration) {
-        setMaxDuration(maxDuration);
         return this;
     }
 
@@ -314,41 +280,81 @@ public class GetRunGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The group's name.
+     * The group's maximum run time in minutes.
      * </p>
      * 
-     * @param name
-     *        The group's name.
+     * @param maxDuration
+     *        The group's maximum run time in minutes.
      */
 
-    public void setName(String name) {
-        this.name = name;
+    public void setMaxDuration(Integer maxDuration) {
+        this.maxDuration = maxDuration;
     }
 
     /**
      * <p>
-     * The group's name.
+     * The group's maximum run time in minutes.
      * </p>
      * 
-     * @return The group's name.
+     * @return The group's maximum run time in minutes.
      */
 
-    public String getName() {
-        return this.name;
+    public Integer getMaxDuration() {
+        return this.maxDuration;
     }
 
     /**
      * <p>
-     * The group's name.
+     * The group's maximum run time in minutes.
      * </p>
      * 
-     * @param name
-     *        The group's name.
+     * @param maxDuration
+     *        The group's maximum run time in minutes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetRunGroupResult withName(String name) {
-        setName(name);
+    public GetRunGroupResult withMaxDuration(Integer maxDuration) {
+        setMaxDuration(maxDuration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When the group was created.
+     * </p>
+     * 
+     * @param creationTime
+     *        When the group was created.
+     */
+
+    public void setCreationTime(java.util.Date creationTime) {
+        this.creationTime = creationTime;
+    }
+
+    /**
+     * <p>
+     * When the group was created.
+     * </p>
+     * 
+     * @return When the group was created.
+     */
+
+    public java.util.Date getCreationTime() {
+        return this.creationTime;
+    }
+
+    /**
+     * <p>
+     * When the group was created.
+     * </p>
+     * 
+     * @param creationTime
+     *        When the group was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetRunGroupResult withCreationTime(java.util.Date creationTime) {
+        setCreationTime(creationTime);
         return this;
     }
 
@@ -421,6 +427,46 @@ public class GetRunGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * The maximum GPUs that can be used by a run group.
+     * </p>
+     * 
+     * @param maxGpus
+     *        The maximum GPUs that can be used by a run group.
+     */
+
+    public void setMaxGpus(Integer maxGpus) {
+        this.maxGpus = maxGpus;
+    }
+
+    /**
+     * <p>
+     * The maximum GPUs that can be used by a run group.
+     * </p>
+     * 
+     * @return The maximum GPUs that can be used by a run group.
+     */
+
+    public Integer getMaxGpus() {
+        return this.maxGpus;
+    }
+
+    /**
+     * <p>
+     * The maximum GPUs that can be used by a run group.
+     * </p>
+     * 
+     * @param maxGpus
+     *        The maximum GPUs that can be used by a run group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetRunGroupResult withMaxGpus(Integer maxGpus) {
+        setMaxGpus(maxGpus);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -434,20 +480,22 @@ public class GetRunGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
         sb.append("{");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
-        if (getCreationTime() != null)
-            sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
-        if (getMaxCpus() != null)
-            sb.append("MaxCpus: ").append(getMaxCpus()).append(",");
-        if (getMaxDuration() != null)
-            sb.append("MaxDuration: ").append(getMaxDuration()).append(",");
-        if (getMaxRuns() != null)
-            sb.append("MaxRuns: ").append(getMaxRuns()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getMaxCpus() != null)
+            sb.append("MaxCpus: ").append(getMaxCpus()).append(",");
+        if (getMaxRuns() != null)
+            sb.append("MaxRuns: ").append(getMaxRuns()).append(",");
+        if (getMaxDuration() != null)
+            sb.append("MaxDuration: ").append(getMaxDuration()).append(",");
+        if (getCreationTime() != null)
+            sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getMaxGpus() != null)
+            sb.append("MaxGpus: ").append(getMaxGpus());
         sb.append("}");
         return sb.toString();
     }
@@ -466,33 +514,37 @@ public class GetRunGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
-        if (other.getCreationTime() == null ^ this.getCreationTime() == null)
-            return false;
-        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
-            return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
-            return false;
-        if (other.getMaxCpus() == null ^ this.getMaxCpus() == null)
-            return false;
-        if (other.getMaxCpus() != null && other.getMaxCpus().equals(this.getMaxCpus()) == false)
-            return false;
-        if (other.getMaxDuration() == null ^ this.getMaxDuration() == null)
-            return false;
-        if (other.getMaxDuration() != null && other.getMaxDuration().equals(this.getMaxDuration()) == false)
-            return false;
-        if (other.getMaxRuns() == null ^ this.getMaxRuns() == null)
-            return false;
-        if (other.getMaxRuns() != null && other.getMaxRuns().equals(this.getMaxRuns()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getMaxCpus() == null ^ this.getMaxCpus() == null)
+            return false;
+        if (other.getMaxCpus() != null && other.getMaxCpus().equals(this.getMaxCpus()) == false)
+            return false;
+        if (other.getMaxRuns() == null ^ this.getMaxRuns() == null)
+            return false;
+        if (other.getMaxRuns() != null && other.getMaxRuns().equals(this.getMaxRuns()) == false)
+            return false;
+        if (other.getMaxDuration() == null ^ this.getMaxDuration() == null)
+            return false;
+        if (other.getMaxDuration() != null && other.getMaxDuration().equals(this.getMaxDuration()) == false)
+            return false;
+        if (other.getCreationTime() == null ^ this.getCreationTime() == null)
+            return false;
+        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
+        if (other.getMaxGpus() == null ^ this.getMaxGpus() == null)
+            return false;
+        if (other.getMaxGpus() != null && other.getMaxGpus().equals(this.getMaxGpus()) == false)
             return false;
         return true;
     }
@@ -503,13 +555,14 @@ public class GetRunGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
-        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
-        hashCode = prime * hashCode + ((getMaxCpus() == null) ? 0 : getMaxCpus().hashCode());
-        hashCode = prime * hashCode + ((getMaxDuration() == null) ? 0 : getMaxDuration().hashCode());
-        hashCode = prime * hashCode + ((getMaxRuns() == null) ? 0 : getMaxRuns().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getMaxCpus() == null) ? 0 : getMaxCpus().hashCode());
+        hashCode = prime * hashCode + ((getMaxRuns() == null) ? 0 : getMaxRuns().hashCode());
+        hashCode = prime * hashCode + ((getMaxDuration() == null) ? 0 : getMaxDuration().hashCode());
+        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getMaxGpus() == null) ? 0 : getMaxGpus().hashCode());
         return hashCode;
     }
 

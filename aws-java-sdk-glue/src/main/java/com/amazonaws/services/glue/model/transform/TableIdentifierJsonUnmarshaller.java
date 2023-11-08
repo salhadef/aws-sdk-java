@@ -60,6 +60,10 @@ public class TableIdentifierJsonUnmarshaller implements Unmarshaller<TableIdenti
                     context.nextToken();
                     tableIdentifier.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Region", targetDepth)) {
+                    context.nextToken();
+                    tableIdentifier.setRegion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

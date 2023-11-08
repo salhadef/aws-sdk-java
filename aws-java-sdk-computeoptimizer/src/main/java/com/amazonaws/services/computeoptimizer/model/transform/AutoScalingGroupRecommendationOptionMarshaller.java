@@ -40,6 +40,8 @@ public class AutoScalingGroupRecommendationOptionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("savingsOpportunity").build();
     private static final MarshallingInfo<String> MIGRATIONEFFORT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("migrationEffort").build();
+    private static final MarshallingInfo<StructuredPojo> INSTANCEGPUINFO_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("instanceGpuInfo").build();
 
     private static final AutoScalingGroupRecommendationOptionMarshaller instance = new AutoScalingGroupRecommendationOptionMarshaller();
 
@@ -63,6 +65,7 @@ public class AutoScalingGroupRecommendationOptionMarshaller {
             protocolMarshaller.marshall(autoScalingGroupRecommendationOption.getRank(), RANK_BINDING);
             protocolMarshaller.marshall(autoScalingGroupRecommendationOption.getSavingsOpportunity(), SAVINGSOPPORTUNITY_BINDING);
             protocolMarshaller.marshall(autoScalingGroupRecommendationOption.getMigrationEffort(), MIGRATIONEFFORT_BINDING);
+            protocolMarshaller.marshall(autoScalingGroupRecommendationOption.getInstanceGpuInfo(), INSTANCEGPUINFO_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

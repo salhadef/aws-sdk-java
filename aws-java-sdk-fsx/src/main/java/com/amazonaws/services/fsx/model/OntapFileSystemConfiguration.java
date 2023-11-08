@@ -91,6 +91,13 @@ public class OntapFileSystemConfiguration implements Serializable, Cloneable, St
     private Integer throughputCapacity;
 
     private String weeklyMaintenanceStartTime;
+    /**
+     * <p>
+     * You can use the <code>fsxadmin</code> user account to access the NetApp ONTAP CLI and REST API. The password
+     * value is always redacted in the response.
+     * </p>
+     */
+    private String fsxAdminPassword;
 
     /**
      * @param automaticBackupRetentionDays
@@ -648,6 +655,52 @@ public class OntapFileSystemConfiguration implements Serializable, Cloneable, St
     }
 
     /**
+     * <p>
+     * You can use the <code>fsxadmin</code> user account to access the NetApp ONTAP CLI and REST API. The password
+     * value is always redacted in the response.
+     * </p>
+     * 
+     * @param fsxAdminPassword
+     *        You can use the <code>fsxadmin</code> user account to access the NetApp ONTAP CLI and REST API. The
+     *        password value is always redacted in the response.
+     */
+
+    public void setFsxAdminPassword(String fsxAdminPassword) {
+        this.fsxAdminPassword = fsxAdminPassword;
+    }
+
+    /**
+     * <p>
+     * You can use the <code>fsxadmin</code> user account to access the NetApp ONTAP CLI and REST API. The password
+     * value is always redacted in the response.
+     * </p>
+     * 
+     * @return You can use the <code>fsxadmin</code> user account to access the NetApp ONTAP CLI and REST API. The
+     *         password value is always redacted in the response.
+     */
+
+    public String getFsxAdminPassword() {
+        return this.fsxAdminPassword;
+    }
+
+    /**
+     * <p>
+     * You can use the <code>fsxadmin</code> user account to access the NetApp ONTAP CLI and REST API. The password
+     * value is always redacted in the response.
+     * </p>
+     * 
+     * @param fsxAdminPassword
+     *        You can use the <code>fsxadmin</code> user account to access the NetApp ONTAP CLI and REST API. The
+     *        password value is always redacted in the response.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OntapFileSystemConfiguration withFsxAdminPassword(String fsxAdminPassword) {
+        setFsxAdminPassword(fsxAdminPassword);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -678,7 +731,9 @@ public class OntapFileSystemConfiguration implements Serializable, Cloneable, St
         if (getThroughputCapacity() != null)
             sb.append("ThroughputCapacity: ").append(getThroughputCapacity()).append(",");
         if (getWeeklyMaintenanceStartTime() != null)
-            sb.append("WeeklyMaintenanceStartTime: ").append(getWeeklyMaintenanceStartTime());
+            sb.append("WeeklyMaintenanceStartTime: ").append(getWeeklyMaintenanceStartTime()).append(",");
+        if (getFsxAdminPassword() != null)
+            sb.append("FsxAdminPassword: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }
@@ -734,6 +789,10 @@ public class OntapFileSystemConfiguration implements Serializable, Cloneable, St
             return false;
         if (other.getWeeklyMaintenanceStartTime() != null && other.getWeeklyMaintenanceStartTime().equals(this.getWeeklyMaintenanceStartTime()) == false)
             return false;
+        if (other.getFsxAdminPassword() == null ^ this.getFsxAdminPassword() == null)
+            return false;
+        if (other.getFsxAdminPassword() != null && other.getFsxAdminPassword().equals(this.getFsxAdminPassword()) == false)
+            return false;
         return true;
     }
 
@@ -752,6 +811,7 @@ public class OntapFileSystemConfiguration implements Serializable, Cloneable, St
         hashCode = prime * hashCode + ((getRouteTableIds() == null) ? 0 : getRouteTableIds().hashCode());
         hashCode = prime * hashCode + ((getThroughputCapacity() == null) ? 0 : getThroughputCapacity().hashCode());
         hashCode = prime * hashCode + ((getWeeklyMaintenanceStartTime() == null) ? 0 : getWeeklyMaintenanceStartTime().hashCode());
+        hashCode = prime * hashCode + ((getFsxAdminPassword() == null) ? 0 : getFsxAdminPassword().hashCode());
         return hashCode;
     }
 

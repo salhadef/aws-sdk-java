@@ -687,7 +687,7 @@ public interface AWSIot {
      * <note>
      * <p>
      * The CSR must include a public key that is either an RSA key with a length of at least 2048 bits or an ECC key
-     * from NIST P-25 or NIST P-384 curves. For supported certificates, consult <a
+     * from NIST P-256, NIST P-384, or NIST P-521 curves. For supported certificates, consult <a
      * href="https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#x509-cert-algorithms">
      * Certificate signing algorithms supported by IoT</a>.
      * </p>
@@ -1058,6 +1058,62 @@ public interface AWSIot {
      * @sample AWSIot.CreateOTAUpdate
      */
     CreateOTAUpdateResult createOTAUpdate(CreateOTAUpdateRequest createOTAUpdateRequest);
+
+    /**
+     * <p>
+     * Creates an IoT software package that can be deployed to your fleet.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >CreatePackage</a> and <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >GetIndexingConfiguration</a> actions.
+     * </p>
+     * 
+     * @param createPackageRequest
+     * @return Result of the CreatePackage operation returned by the service.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws ConflictException
+     *         A resource with the same name already exists.
+     * @throws InternalServerException
+     *         Internal error from the service that indicates an unexpected error or that the service is unavailable.
+     * @throws ValidationException
+     *         The request is not valid.
+     * @throws ServiceQuotaExceededException
+     *         A limit has been exceeded.
+     * @sample AWSIot.CreatePackage
+     */
+    CreatePackageResult createPackage(CreatePackageRequest createPackageRequest);
+
+    /**
+     * <p>
+     * Creates a new version for an existing IoT software package.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >CreatePackageVersion</a> and <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >GetIndexingConfiguration</a> actions.
+     * </p>
+     * 
+     * @param createPackageVersionRequest
+     * @return Result of the CreatePackageVersion operation returned by the service.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws ConflictException
+     *         A resource with the same name already exists.
+     * @throws InternalServerException
+     *         Internal error from the service that indicates an unexpected error or that the service is unavailable.
+     * @throws ValidationException
+     *         The request is not valid.
+     * @throws ServiceQuotaExceededException
+     *         A limit has been exceeded.
+     * @sample AWSIot.CreatePackageVersion
+     */
+    CreatePackageVersionResult createPackageVersion(CreatePackageVersionRequest createPackageVersionRequest);
 
     /**
      * <p>
@@ -1933,6 +1989,52 @@ public interface AWSIot {
      * @sample AWSIot.DeleteOTAUpdate
      */
     DeleteOTAUpdateResult deleteOTAUpdate(DeleteOTAUpdateRequest deleteOTAUpdateRequest);
+
+    /**
+     * <p>
+     * Deletes a specific version from a software package.
+     * </p>
+     * <p>
+     * <b>Note:</b> All package versions must be deleted before deleting the software package.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >DeletePackageVersion</a> action.
+     * </p>
+     * 
+     * @param deletePackageRequest
+     * @return Result of the DeletePackage operation returned by the service.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalServerException
+     *         Internal error from the service that indicates an unexpected error or that the service is unavailable.
+     * @throws ValidationException
+     *         The request is not valid.
+     * @sample AWSIot.DeletePackage
+     */
+    DeletePackageResult deletePackage(DeletePackageRequest deletePackageRequest);
+
+    /**
+     * <p>
+     * Deletes a specific version from a software package.
+     * </p>
+     * <p>
+     * <b>Note:</b> If a package version is designated as default, you must remove the designation from the software
+     * package using the <a>UpdatePackage</a> action.
+     * </p>
+     * 
+     * @param deletePackageVersionRequest
+     * @return Result of the DeletePackageVersion operation returned by the service.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalServerException
+     *         Internal error from the service that indicates an unexpected error or that the service is unavailable.
+     * @throws ValidationException
+     *         The request is not valid.
+     * @sample AWSIot.DeletePackageVersion
+     */
+    DeletePackageVersionResult deletePackageVersion(DeletePackageVersionRequest deletePackageVersionRequest);
 
     /**
      * <p>
@@ -3647,6 +3749,74 @@ public interface AWSIot {
 
     /**
      * <p>
+     * Gets information about the specified software package.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >GetPackage</a> action.
+     * </p>
+     * 
+     * @param getPackageRequest
+     * @return Result of the GetPackage operation returned by the service.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalServerException
+     *         Internal error from the service that indicates an unexpected error or that the service is unavailable.
+     * @throws ValidationException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @sample AWSIot.GetPackage
+     */
+    GetPackageResult getPackage(GetPackageRequest getPackageRequest);
+
+    /**
+     * <p>
+     * Gets information about the specified software package's configuration.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >GetPackageConfiguration</a> action.
+     * </p>
+     * 
+     * @param getPackageConfigurationRequest
+     * @return Result of the GetPackageConfiguration operation returned by the service.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalServerException
+     *         Internal error from the service that indicates an unexpected error or that the service is unavailable.
+     * @sample AWSIot.GetPackageConfiguration
+     */
+    GetPackageConfigurationResult getPackageConfiguration(GetPackageConfigurationRequest getPackageConfigurationRequest);
+
+    /**
+     * <p>
+     * Gets information about the specified package version.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >GetPackageVersion</a> action.
+     * </p>
+     * 
+     * @param getPackageVersionRequest
+     * @return Result of the GetPackageVersion operation returned by the service.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalServerException
+     *         Internal error from the service that indicates an unexpected error or that the service is unavailable.
+     * @throws ValidationException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @sample AWSIot.GetPackageVersion
+     */
+    GetPackageVersionResult getPackageVersion(GetPackageVersionRequest getPackageVersionRequest);
+
+    /**
+     * <p>
      * Groups the aggregated values that match the query into percentile groupings. The default percentile groupings
      * are: 1,5,25,50,75,95,99, although you can specify your own when you call <code>GetPercentiles</code>. This
      * function returns a value for each percentile group specified (or the default percentile groupings). The
@@ -4557,6 +4727,50 @@ public interface AWSIot {
      * @sample AWSIot.ListOutgoingCertificates
      */
     ListOutgoingCertificatesResult listOutgoingCertificates(ListOutgoingCertificatesRequest listOutgoingCertificatesRequest);
+
+    /**
+     * <p>
+     * Lists the software package versions associated to the account.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >ListPackageVersions</a> action.
+     * </p>
+     * 
+     * @param listPackageVersionsRequest
+     * @return Result of the ListPackageVersions operation returned by the service.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalServerException
+     *         Internal error from the service that indicates an unexpected error or that the service is unavailable.
+     * @throws ValidationException
+     *         The request is not valid.
+     * @sample AWSIot.ListPackageVersions
+     */
+    ListPackageVersionsResult listPackageVersions(ListPackageVersionsRequest listPackageVersionsRequest);
+
+    /**
+     * <p>
+     * Lists the software packages associated to the account.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >ListPackages</a> action.
+     * </p>
+     * 
+     * @param listPackagesRequest
+     * @return Result of the ListPackages operation returned by the service.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalServerException
+     *         Internal error from the service that indicates an unexpected error or that the service is unavailable.
+     * @throws ValidationException
+     *         The request is not valid.
+     * @sample AWSIot.ListPackages
+     */
+    ListPackagesResult listPackages(ListPackagesRequest listPackagesRequest);
 
     /**
      * <p>
@@ -6528,6 +6742,81 @@ public interface AWSIot {
      * @sample AWSIot.UpdateMitigationAction
      */
     UpdateMitigationActionResult updateMitigationAction(UpdateMitigationActionRequest updateMitigationActionRequest);
+
+    /**
+     * <p>
+     * Updates the supported fields for a specific software package.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >UpdatePackage</a> and <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >GetIndexingConfiguration</a> actions.
+     * </p>
+     * 
+     * @param updatePackageRequest
+     * @return Result of the UpdatePackage operation returned by the service.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalServerException
+     *         Internal error from the service that indicates an unexpected error or that the service is unavailable.
+     * @throws ValidationException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @sample AWSIot.UpdatePackage
+     */
+    UpdatePackageResult updatePackage(UpdatePackageRequest updatePackageRequest);
+
+    /**
+     * <p>
+     * Updates the software package configuration.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >UpdatePackageConfiguration</a> and <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">iam:PassRole</a> actions.
+     * </p>
+     * 
+     * @param updatePackageConfigurationRequest
+     * @return Result of the UpdatePackageConfiguration operation returned by the service.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalServerException
+     *         Internal error from the service that indicates an unexpected error or that the service is unavailable.
+     * @throws ValidationException
+     *         The request is not valid.
+     * @sample AWSIot.UpdatePackageConfiguration
+     */
+    UpdatePackageConfigurationResult updatePackageConfiguration(UpdatePackageConfigurationRequest updatePackageConfigurationRequest);
+
+    /**
+     * <p>
+     * Updates the supported fields for a specific package version.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >UpdatePackageVersion</a> and <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >GetIndexingConfiguration</a> actions.
+     * </p>
+     * 
+     * @param updatePackageVersionRequest
+     * @return Result of the UpdatePackageVersion operation returned by the service.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalServerException
+     *         Internal error from the service that indicates an unexpected error or that the service is unavailable.
+     * @throws ValidationException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @sample AWSIot.UpdatePackageVersion
+     */
+    UpdatePackageVersionResult updatePackageVersion(UpdatePackageVersionRequest updatePackageVersionRequest);
 
     /**
      * <p>

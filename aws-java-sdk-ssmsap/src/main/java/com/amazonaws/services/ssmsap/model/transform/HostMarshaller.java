@@ -29,12 +29,16 @@ public class HostMarshaller {
 
     private static final MarshallingInfo<String> HOSTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("HostName").build();
-    private static final MarshallingInfo<String> HOSTROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("HostRole").build();
     private static final MarshallingInfo<String> HOSTIP_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("HostIp").build();
+    private static final MarshallingInfo<String> EC2INSTANCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EC2InstanceId").build();
     private static final MarshallingInfo<String> INSTANCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceId").build();
+    private static final MarshallingInfo<String> HOSTROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("HostRole").build();
+    private static final MarshallingInfo<String> OSVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("OsVersion").build();
 
     private static final HostMarshaller instance = new HostMarshaller();
 
@@ -53,9 +57,11 @@ public class HostMarshaller {
 
         try {
             protocolMarshaller.marshall(host.getHostName(), HOSTNAME_BINDING);
-            protocolMarshaller.marshall(host.getHostRole(), HOSTROLE_BINDING);
             protocolMarshaller.marshall(host.getHostIp(), HOSTIP_BINDING);
+            protocolMarshaller.marshall(host.getEC2InstanceId(), EC2INSTANCEID_BINDING);
             protocolMarshaller.marshall(host.getInstanceId(), INSTANCEID_BINDING);
+            protocolMarshaller.marshall(host.getHostRole(), HOSTROLE_BINDING);
+            protocolMarshaller.marshall(host.getOsVersion(), OSVERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

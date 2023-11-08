@@ -47,7 +47,9 @@ public class CreateContactFlowModuleRequest extends com.amazonaws.AmazonWebServi
     private String description;
     /**
      * <p>
-     * The content of the flow module.
+     * The JSON string that represents the content of the flow. For an example, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example flow in Amazon
+     * Connect Flow language</a>.
      * </p>
      */
     private String content;
@@ -202,11 +204,15 @@ public class CreateContactFlowModuleRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The content of the flow module.
+     * The JSON string that represents the content of the flow. For an example, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example flow in Amazon
+     * Connect Flow language</a>.
      * </p>
      * 
      * @param content
-     *        The content of the flow module.
+     *        The JSON string that represents the content of the flow. For an example, see <a
+     *        href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example flow in
+     *        Amazon Connect Flow language</a>.
      */
 
     public void setContent(String content) {
@@ -215,10 +221,14 @@ public class CreateContactFlowModuleRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The content of the flow module.
+     * The JSON string that represents the content of the flow. For an example, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example flow in Amazon
+     * Connect Flow language</a>.
      * </p>
      * 
-     * @return The content of the flow module.
+     * @return The JSON string that represents the content of the flow. For an example, see <a
+     *         href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example flow in
+     *         Amazon Connect Flow language</a>.
      */
 
     public String getContent() {
@@ -227,11 +237,15 @@ public class CreateContactFlowModuleRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The content of the flow module.
+     * The JSON string that represents the content of the flow. For an example, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example flow in Amazon
+     * Connect Flow language</a>.
      * </p>
      * 
      * @param content
-     *        The content of the flow module.
+     *        The JSON string that represents the content of the flow. For an example, see <a
+     *        href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example flow in
+     *        Amazon Connect Flow language</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

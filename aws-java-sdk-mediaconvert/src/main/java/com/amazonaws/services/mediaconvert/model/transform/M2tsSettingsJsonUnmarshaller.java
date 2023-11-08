@@ -168,6 +168,14 @@ public class M2tsSettingsJsonUnmarshaller implements Unmarshaller<M2tsSettings, 
                     context.nextToken();
                     m2tsSettings.setProgramNumber(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("ptsOffset", targetDepth)) {
+                    context.nextToken();
+                    m2tsSettings.setPtsOffset(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("ptsOffsetMode", targetDepth)) {
+                    context.nextToken();
+                    m2tsSettings.setPtsOffsetMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("rateMode", targetDepth)) {
                     context.nextToken();
                     m2tsSettings.setRateMode(context.getUnmarshaller(String.class).unmarshall(context));

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Defines a configuration recommendation.
+ * Defines a recommendation configuration.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ConfigRecommendation" target="_top">AWS
@@ -30,7 +30,7 @@ public class ConfigRecommendation implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The name of the Application Component.
+     * Name of the Application Component.
      * </p>
      */
     private String appComponentName;
@@ -78,7 +78,7 @@ public class ConfigRecommendation implements Serializable, Cloneable, Structured
     private java.util.Map<String, RecommendationDisruptionCompliance> recommendationCompliance;
     /**
      * <p>
-     * The reference identifier for the recommendation configuration.
+     * Reference identifier for the recommendation configuration.
      * </p>
      */
     private String referenceId;
@@ -91,11 +91,11 @@ public class ConfigRecommendation implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The name of the Application Component.
+     * Name of the Application Component.
      * </p>
      * 
      * @param appComponentName
-     *        The name of the Application Component.
+     *        Name of the Application Component.
      */
 
     public void setAppComponentName(String appComponentName) {
@@ -104,10 +104,10 @@ public class ConfigRecommendation implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The name of the Application Component.
+     * Name of the Application Component.
      * </p>
      * 
-     * @return The name of the Application Component.
+     * @return Name of the Application Component.
      */
 
     public String getAppComponentName() {
@@ -116,11 +116,11 @@ public class ConfigRecommendation implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The name of the Application Component.
+     * Name of the Application Component.
      * </p>
      * 
      * @param appComponentName
-     *        The name of the Application Component.
+     *        Name of the Application Component.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -505,11 +505,11 @@ public class ConfigRecommendation implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The reference identifier for the recommendation configuration.
+     * Reference identifier for the recommendation configuration.
      * </p>
      * 
      * @param referenceId
-     *        The reference identifier for the recommendation configuration.
+     *        Reference identifier for the recommendation configuration.
      */
 
     public void setReferenceId(String referenceId) {
@@ -518,10 +518,10 @@ public class ConfigRecommendation implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The reference identifier for the recommendation configuration.
+     * Reference identifier for the recommendation configuration.
      * </p>
      * 
-     * @return The reference identifier for the recommendation configuration.
+     * @return Reference identifier for the recommendation configuration.
      */
 
     public String getReferenceId() {
@@ -530,11 +530,11 @@ public class ConfigRecommendation implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The reference identifier for the recommendation configuration.
+     * Reference identifier for the recommendation configuration.
      * </p>
      * 
      * @param referenceId
-     *        The reference identifier for the recommendation configuration.
+     *        Reference identifier for the recommendation configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

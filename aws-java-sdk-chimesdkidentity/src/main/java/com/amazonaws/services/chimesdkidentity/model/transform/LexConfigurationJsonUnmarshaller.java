@@ -52,6 +52,10 @@ public class LexConfigurationJsonUnmarshaller implements Unmarshaller<LexConfigu
                     context.nextToken();
                     lexConfiguration.setRespondsTo(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("InvokedBy", targetDepth)) {
+                    context.nextToken();
+                    lexConfiguration.setInvokedBy(InvokedByJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("LexBotAliasArn", targetDepth)) {
                     context.nextToken();
                     lexConfiguration.setLexBotAliasArn(context.getUnmarshaller(String.class).unmarshall(context));

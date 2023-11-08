@@ -49,6 +49,12 @@ public class DescribeInstanceAccessControlAttributeConfigurationResultJsonUnmars
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("InstanceAccessControlAttributeConfiguration", targetDepth)) {
+                    context.nextToken();
+                    describeInstanceAccessControlAttributeConfigurationResult
+                            .setInstanceAccessControlAttributeConfiguration(InstanceAccessControlAttributeConfigurationJsonUnmarshaller.getInstance()
+                                    .unmarshall(context));
+                }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
                     describeInstanceAccessControlAttributeConfigurationResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
@@ -56,12 +62,6 @@ public class DescribeInstanceAccessControlAttributeConfigurationResultJsonUnmars
                 if (context.testExpression("StatusReason", targetDepth)) {
                     context.nextToken();
                     describeInstanceAccessControlAttributeConfigurationResult.setStatusReason(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("InstanceAccessControlAttributeConfiguration", targetDepth)) {
-                    context.nextToken();
-                    describeInstanceAccessControlAttributeConfigurationResult
-                            .setInstanceAccessControlAttributeConfiguration(InstanceAccessControlAttributeConfigurationJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -53,6 +53,11 @@ public class AbstractAWSGlobalAccelerator implements AWSGlobalAccelerator {
     }
 
     @Override
+    public CreateCrossAccountAttachmentResult createCrossAccountAttachment(CreateCrossAccountAttachmentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateCustomRoutingAcceleratorResult createCustomRoutingAccelerator(CreateCustomRoutingAcceleratorRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -79,6 +84,11 @@ public class AbstractAWSGlobalAccelerator implements AWSGlobalAccelerator {
 
     @Override
     public DeleteAcceleratorResult deleteAccelerator(DeleteAcceleratorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteCrossAccountAttachmentResult deleteCrossAccountAttachment(DeleteCrossAccountAttachmentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -128,6 +138,11 @@ public class AbstractAWSGlobalAccelerator implements AWSGlobalAccelerator {
     }
 
     @Override
+    public DescribeCrossAccountAttachmentResult describeCrossAccountAttachment(DescribeCrossAccountAttachmentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeCustomRoutingAcceleratorResult describeCustomRoutingAccelerator(DescribeCustomRoutingAcceleratorRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -164,6 +179,21 @@ public class AbstractAWSGlobalAccelerator implements AWSGlobalAccelerator {
 
     @Override
     public ListByoipCidrsResult listByoipCidrs(ListByoipCidrsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListCrossAccountAttachmentsResult listCrossAccountAttachments(ListCrossAccountAttachmentsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListCrossAccountResourceAccountsResult listCrossAccountResourceAccounts(ListCrossAccountResourceAccountsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListCrossAccountResourcesResult listCrossAccountResources(ListCrossAccountResourcesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -239,6 +269,11 @@ public class AbstractAWSGlobalAccelerator implements AWSGlobalAccelerator {
 
     @Override
     public UpdateAcceleratorAttributesResult updateAcceleratorAttributes(UpdateAcceleratorAttributesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateCrossAccountAttachmentResult updateCrossAccountAttachment(UpdateCrossAccountAttachmentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

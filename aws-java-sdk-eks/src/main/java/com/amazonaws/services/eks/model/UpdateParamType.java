@@ -42,7 +42,10 @@ public enum UpdateParamType {
     ServiceAccountRoleArn("ServiceAccountRoleArn"),
     ResolveConflicts("ResolveConflicts"),
     MaxUnavailable("MaxUnavailable"),
-    MaxUnavailablePercentage("MaxUnavailablePercentage");
+    MaxUnavailablePercentage("MaxUnavailablePercentage"),
+    ConfigurationValues("ConfigurationValues"),
+    SecurityGroups("SecurityGroups"),
+    Subnets("Subnets");
 
     private String value;
 

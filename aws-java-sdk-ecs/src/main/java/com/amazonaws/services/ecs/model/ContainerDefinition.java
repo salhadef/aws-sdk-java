@@ -483,6 +483,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized
      * Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
+     * <p>
+     * The valid values are 2-120 seconds.
+     * </p>
      */
     private Integer startTimeout;
     /**
@@ -524,6 +527,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * versions of the container agent and <code>ecs-init</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized
      * Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * The valid values are 2-120 seconds.
      * </p>
      */
     private Integer stopTimeout;
@@ -849,7 +855,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * A list of namespaced kernel parameters to set in the container. This parameter maps to <code>Sysctls</code> in
      * the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
      * of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--sysctl</code>
-     * option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.
+     * option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. For
+     * example, you can configure <code>net.ipv4.tcp_keepalive_time</code> setting to maintain longer lived connections.
      * </p>
      * <note>
      * <p>
@@ -858,6 +865,15 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * tasks that use the <code>awsvpc</code> network mode, the container that's started last determines which
      * <code>systemControls</code> parameters take effect. For tasks that use the <code>host</code> network mode, it
      * changes the container instance's namespaced kernel parameters as well as the containers.
+     * </p>
+     * </note> <note>
+     * <p>
+     * This parameter is not supported for Windows containers.
+     * </p>
+     * </note> <note>
+     * <p>
+     * This parameter is only supported for tasks that are hosted on Fargate if the tasks are using platform version
+     * <code>1.4.0</code> or later (Linux). This isn't supported for Windows containers on Fargate.
      * </p>
      * </note>
      */
@@ -877,6 +893,54 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private FirelensConfiguration firelensConfiguration;
+    /**
+     * <p>
+     * A list of ARNs in SSM or Amazon S3 to a credential spec (<code>CredSpec</code>) file that configures the
+     * container for Active Directory authentication. We recommend that you use this parameter instead of the
+     * <code>dockerSecurityOptions</code>. The maximum number of ARNs is 1.
+     * </p>
+     * <p>
+     * There are two formats for each ARN.
+     * </p>
+     * <dl>
+     * <dt>credentialspecdomainless:MyARN</dt>
+     * <dd>
+     * <p>
+     * You use <code>credentialspecdomainless:MyARN</code> to provide a <code>CredSpec</code> with an additional section
+     * for a secret in Secrets Manager. You provide the login credentials to the domain in the secret.
+     * </p>
+     * <p>
+     * Each task that runs on any container instance can join different domains.
+     * </p>
+     * <p>
+     * You can use this format without joining the container instance to a domain.
+     * </p>
+     * </dd>
+     * <dt>credentialspec:MyARN</dt>
+     * <dd>
+     * <p>
+     * You use <code>credentialspec:MyARN</code> to provide a <code>CredSpec</code> for a single domain.
+     * </p>
+     * <p>
+     * You must join the container instance to the domain before you start any tasks that use this task definition.
+     * </p>
+     * </dd>
+     * </dl>
+     * <p>
+     * In both formats, replace <code>MyARN</code> with the ARN in SSM or Amazon S3.
+     * </p>
+     * <p>
+     * If you provide a <code>credentialspecdomainless:MyARN</code>, the <code>credspec</code> must provide a ARN in
+     * Secrets Manager for a secret containing the username, password, and the domain to connect to. For better
+     * security, the instance isn't joined to the domain for domainless authentication. Other applications on the
+     * instance can't use the domainless credentials. You can use this parameter to run tasks on the same instance, even
+     * it the tasks need to join different domains. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using gMSAs for Windows
+     * Containers</a> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/linux-gmsa.html">Using
+     * gMSAs for Linux Containers</a>.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> credentialSpecs;
 
     /**
      * <p>
@@ -4121,6 +4185,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized
      * Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
+     * <p>
+     * The valid values are 2-120 seconds.
+     * </p>
      * 
      * @param startTimeout
      *        Time duration (in seconds) to wait before giving up on resolving dependencies for a container. For
@@ -4162,6 +4229,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      *        ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        The valid values are 2-120 seconds.
      */
 
     public void setStartTimeout(Integer startTimeout) {
@@ -4209,6 +4279,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized
      * Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
+     * <p>
+     * The valid values are 2-120 seconds.
+     * </p>
      * 
      * @return Time duration (in seconds) to wait before giving up on resolving dependencies for a container. For
      *         example, you specify two containers in a task definition with containerA having a dependency on
@@ -4249,6 +4322,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         <code>ecs-init</code>. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      *         ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *         </p>
+     *         <p>
+     *         The valid values are 2-120 seconds.
      */
 
     public Integer getStartTimeout() {
@@ -4296,6 +4372,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized
      * Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
+     * <p>
+     * The valid values are 2-120 seconds.
+     * </p>
      * 
      * @param startTimeout
      *        Time duration (in seconds) to wait before giving up on resolving dependencies for a container. For
@@ -4337,6 +4416,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      *        ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        The valid values are 2-120 seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -4385,6 +4467,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized
      * Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
+     * <p>
+     * The valid values are 2-120 seconds.
+     * </p>
      * 
      * @param stopTimeout
      *        Time duration (in seconds) to wait before the container is forcefully killed if it doesn't exit normally
@@ -4425,6 +4510,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      *        ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        The valid values are 2-120 seconds.
      */
 
     public void setStopTimeout(Integer stopTimeout) {
@@ -4471,6 +4559,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized
      * Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
+     * <p>
+     * The valid values are 2-120 seconds.
+     * </p>
      * 
      * @return Time duration (in seconds) to wait before the container is forcefully killed if it doesn't exit normally
      *         on its own.</p>
@@ -4510,6 +4601,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         <code>ecs-init</code>. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      *         ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *         </p>
+     *         <p>
+     *         The valid values are 2-120 seconds.
      */
 
     public Integer getStopTimeout() {
@@ -4556,6 +4650,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized
      * Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
+     * <p>
+     * The valid values are 2-120 seconds.
+     * </p>
      * 
      * @param stopTimeout
      *        Time duration (in seconds) to wait before the container is forcefully killed if it doesn't exit normally
@@ -4596,6 +4693,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      *        ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        The valid values are 2-120 seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -7074,7 +7174,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * A list of namespaced kernel parameters to set in the container. This parameter maps to <code>Sysctls</code> in
      * the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
      * of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--sysctl</code>
-     * option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.
+     * option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. For
+     * example, you can configure <code>net.ipv4.tcp_keepalive_time</code> setting to maintain longer lived connections.
      * </p>
      * <note>
      * <p>
@@ -7084,6 +7185,15 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <code>systemControls</code> parameters take effect. For tasks that use the <code>host</code> network mode, it
      * changes the container instance's namespaced kernel parameters as well as the containers.
      * </p>
+     * </note> <note>
+     * <p>
+     * This parameter is not supported for Windows containers.
+     * </p>
+     * </note> <note>
+     * <p>
+     * This parameter is only supported for tasks that are hosted on Fargate if the tasks are using platform version
+     * <code>1.4.0</code> or later (Linux). This isn't supported for Windows containers on Fargate.
+     * </p>
      * </note>
      * 
      * @return A list of namespaced kernel parameters to set in the container. This parameter maps to
@@ -7091,7 +7201,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
      *         of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      *         <code>--sysctl</code> option to <a
-     *         href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
+     *         href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. For example,
+     *         you can configure <code>net.ipv4.tcp_keepalive_time</code> setting to maintain longer lived
+     *         connections.</p> <note>
      *         <p>
      *         We don't recommended that you specify network-related <code>systemControls</code> parameters for multiple
      *         containers in a single task that also uses either the <code>awsvpc</code> or <code>host</code> network
@@ -7099,6 +7211,15 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         determines which <code>systemControls</code> parameters take effect. For tasks that use the
      *         <code>host</code> network mode, it changes the container instance's namespaced kernel parameters as well
      *         as the containers.
+     *         </p>
+     *         </note> <note>
+     *         <p>
+     *         This parameter is not supported for Windows containers.
+     *         </p>
+     *         </note> <note>
+     *         <p>
+     *         This parameter is only supported for tasks that are hosted on Fargate if the tasks are using platform
+     *         version <code>1.4.0</code> or later (Linux). This isn't supported for Windows containers on Fargate.
      *         </p>
      */
 
@@ -7114,7 +7235,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * A list of namespaced kernel parameters to set in the container. This parameter maps to <code>Sysctls</code> in
      * the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
      * of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--sysctl</code>
-     * option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.
+     * option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. For
+     * example, you can configure <code>net.ipv4.tcp_keepalive_time</code> setting to maintain longer lived connections.
      * </p>
      * <note>
      * <p>
@@ -7124,6 +7246,15 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <code>systemControls</code> parameters take effect. For tasks that use the <code>host</code> network mode, it
      * changes the container instance's namespaced kernel parameters as well as the containers.
      * </p>
+     * </note> <note>
+     * <p>
+     * This parameter is not supported for Windows containers.
+     * </p>
+     * </note> <note>
+     * <p>
+     * This parameter is only supported for tasks that are hosted on Fargate if the tasks are using platform version
+     * <code>1.4.0</code> or later (Linux). This isn't supported for Windows containers on Fargate.
+     * </p>
      * </note>
      * 
      * @param systemControls
@@ -7132,7 +7263,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
      *        of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      *        <code>--sysctl</code> option to <a
-     *        href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
+     *        href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. For example,
+     *        you can configure <code>net.ipv4.tcp_keepalive_time</code> setting to maintain longer lived
+     *        connections.</p> <note>
      *        <p>
      *        We don't recommended that you specify network-related <code>systemControls</code> parameters for multiple
      *        containers in a single task that also uses either the <code>awsvpc</code> or <code>host</code> network
@@ -7140,6 +7273,15 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        determines which <code>systemControls</code> parameters take effect. For tasks that use the
      *        <code>host</code> network mode, it changes the container instance's namespaced kernel parameters as well
      *        as the containers.
+     *        </p>
+     *        </note> <note>
+     *        <p>
+     *        This parameter is not supported for Windows containers.
+     *        </p>
+     *        </note> <note>
+     *        <p>
+     *        This parameter is only supported for tasks that are hosted on Fargate if the tasks are using platform
+     *        version <code>1.4.0</code> or later (Linux). This isn't supported for Windows containers on Fargate.
      *        </p>
      */
 
@@ -7157,7 +7299,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * A list of namespaced kernel parameters to set in the container. This parameter maps to <code>Sysctls</code> in
      * the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
      * of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--sysctl</code>
-     * option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.
+     * option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. For
+     * example, you can configure <code>net.ipv4.tcp_keepalive_time</code> setting to maintain longer lived connections.
      * </p>
      * <note>
      * <p>
@@ -7166,6 +7309,15 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * tasks that use the <code>awsvpc</code> network mode, the container that's started last determines which
      * <code>systemControls</code> parameters take effect. For tasks that use the <code>host</code> network mode, it
      * changes the container instance's namespaced kernel parameters as well as the containers.
+     * </p>
+     * </note> <note>
+     * <p>
+     * This parameter is not supported for Windows containers.
+     * </p>
+     * </note> <note>
+     * <p>
+     * This parameter is only supported for tasks that are hosted on Fargate if the tasks are using platform version
+     * <code>1.4.0</code> or later (Linux). This isn't supported for Windows containers on Fargate.
      * </p>
      * </note>
      * <p>
@@ -7180,7 +7332,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
      *        of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      *        <code>--sysctl</code> option to <a
-     *        href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
+     *        href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. For example,
+     *        you can configure <code>net.ipv4.tcp_keepalive_time</code> setting to maintain longer lived
+     *        connections.</p> <note>
      *        <p>
      *        We don't recommended that you specify network-related <code>systemControls</code> parameters for multiple
      *        containers in a single task that also uses either the <code>awsvpc</code> or <code>host</code> network
@@ -7188,6 +7342,15 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        determines which <code>systemControls</code> parameters take effect. For tasks that use the
      *        <code>host</code> network mode, it changes the container instance's namespaced kernel parameters as well
      *        as the containers.
+     *        </p>
+     *        </note> <note>
+     *        <p>
+     *        This parameter is not supported for Windows containers.
+     *        </p>
+     *        </note> <note>
+     *        <p>
+     *        This parameter is only supported for tasks that are hosted on Fargate if the tasks are using platform
+     *        version <code>1.4.0</code> or later (Linux). This isn't supported for Windows containers on Fargate.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -7207,7 +7370,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * A list of namespaced kernel parameters to set in the container. This parameter maps to <code>Sysctls</code> in
      * the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
      * of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--sysctl</code>
-     * option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.
+     * option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. For
+     * example, you can configure <code>net.ipv4.tcp_keepalive_time</code> setting to maintain longer lived connections.
      * </p>
      * <note>
      * <p>
@@ -7217,6 +7381,15 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <code>systemControls</code> parameters take effect. For tasks that use the <code>host</code> network mode, it
      * changes the container instance's namespaced kernel parameters as well as the containers.
      * </p>
+     * </note> <note>
+     * <p>
+     * This parameter is not supported for Windows containers.
+     * </p>
+     * </note> <note>
+     * <p>
+     * This parameter is only supported for tasks that are hosted on Fargate if the tasks are using platform version
+     * <code>1.4.0</code> or later (Linux). This isn't supported for Windows containers on Fargate.
+     * </p>
      * </note>
      * 
      * @param systemControls
@@ -7225,7 +7398,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
      *        of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      *        <code>--sysctl</code> option to <a
-     *        href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
+     *        href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. For example,
+     *        you can configure <code>net.ipv4.tcp_keepalive_time</code> setting to maintain longer lived
+     *        connections.</p> <note>
      *        <p>
      *        We don't recommended that you specify network-related <code>systemControls</code> parameters for multiple
      *        containers in a single task that also uses either the <code>awsvpc</code> or <code>host</code> network
@@ -7233,6 +7408,15 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        determines which <code>systemControls</code> parameters take effect. For tasks that use the
      *        <code>host</code> network mode, it changes the container instance's namespaced kernel parameters as well
      *        as the containers.
+     *        </p>
+     *        </note> <note>
+     *        <p>
+     *        This parameter is not supported for Windows containers.
+     *        </p>
+     *        </note> <note>
+     *        <p>
+     *        This parameter is only supported for tasks that are hosted on Fargate if the tasks are using platform
+     *        version <code>1.4.0</code> or later (Linux). This isn't supported for Windows containers on Fargate.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -7374,6 +7558,419 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * A list of ARNs in SSM or Amazon S3 to a credential spec (<code>CredSpec</code>) file that configures the
+     * container for Active Directory authentication. We recommend that you use this parameter instead of the
+     * <code>dockerSecurityOptions</code>. The maximum number of ARNs is 1.
+     * </p>
+     * <p>
+     * There are two formats for each ARN.
+     * </p>
+     * <dl>
+     * <dt>credentialspecdomainless:MyARN</dt>
+     * <dd>
+     * <p>
+     * You use <code>credentialspecdomainless:MyARN</code> to provide a <code>CredSpec</code> with an additional section
+     * for a secret in Secrets Manager. You provide the login credentials to the domain in the secret.
+     * </p>
+     * <p>
+     * Each task that runs on any container instance can join different domains.
+     * </p>
+     * <p>
+     * You can use this format without joining the container instance to a domain.
+     * </p>
+     * </dd>
+     * <dt>credentialspec:MyARN</dt>
+     * <dd>
+     * <p>
+     * You use <code>credentialspec:MyARN</code> to provide a <code>CredSpec</code> for a single domain.
+     * </p>
+     * <p>
+     * You must join the container instance to the domain before you start any tasks that use this task definition.
+     * </p>
+     * </dd>
+     * </dl>
+     * <p>
+     * In both formats, replace <code>MyARN</code> with the ARN in SSM or Amazon S3.
+     * </p>
+     * <p>
+     * If you provide a <code>credentialspecdomainless:MyARN</code>, the <code>credspec</code> must provide a ARN in
+     * Secrets Manager for a secret containing the username, password, and the domain to connect to. For better
+     * security, the instance isn't joined to the domain for domainless authentication. Other applications on the
+     * instance can't use the domainless credentials. You can use this parameter to run tasks on the same instance, even
+     * it the tasks need to join different domains. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using gMSAs for Windows
+     * Containers</a> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/linux-gmsa.html">Using
+     * gMSAs for Linux Containers</a>.
+     * </p>
+     * 
+     * @return A list of ARNs in SSM or Amazon S3 to a credential spec (<code>CredSpec</code>) file that configures the
+     *         container for Active Directory authentication. We recommend that you use this parameter instead of the
+     *         <code>dockerSecurityOptions</code>. The maximum number of ARNs is 1.</p>
+     *         <p>
+     *         There are two formats for each ARN.
+     *         </p>
+     *         <dl>
+     *         <dt>credentialspecdomainless:MyARN</dt>
+     *         <dd>
+     *         <p>
+     *         You use <code>credentialspecdomainless:MyARN</code> to provide a <code>CredSpec</code> with an additional
+     *         section for a secret in Secrets Manager. You provide the login credentials to the domain in the secret.
+     *         </p>
+     *         <p>
+     *         Each task that runs on any container instance can join different domains.
+     *         </p>
+     *         <p>
+     *         You can use this format without joining the container instance to a domain.
+     *         </p>
+     *         </dd>
+     *         <dt>credentialspec:MyARN</dt>
+     *         <dd>
+     *         <p>
+     *         You use <code>credentialspec:MyARN</code> to provide a <code>CredSpec</code> for a single domain.
+     *         </p>
+     *         <p>
+     *         You must join the container instance to the domain before you start any tasks that use this task
+     *         definition.
+     *         </p>
+     *         </dd>
+     *         </dl>
+     *         <p>
+     *         In both formats, replace <code>MyARN</code> with the ARN in SSM or Amazon S3.
+     *         </p>
+     *         <p>
+     *         If you provide a <code>credentialspecdomainless:MyARN</code>, the <code>credspec</code> must provide a
+     *         ARN in Secrets Manager for a secret containing the username, password, and the domain to connect to. For
+     *         better security, the instance isn't joined to the domain for domainless authentication. Other
+     *         applications on the instance can't use the domainless credentials. You can use this parameter to run
+     *         tasks on the same instance, even it the tasks need to join different domains. For more information, see
+     *         <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using gMSAs for
+     *         Windows Containers</a> and <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/linux-gmsa.html">Using gMSAs for Linux
+     *         Containers</a>.
+     */
+
+    public java.util.List<String> getCredentialSpecs() {
+        if (credentialSpecs == null) {
+            credentialSpecs = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return credentialSpecs;
+    }
+
+    /**
+     * <p>
+     * A list of ARNs in SSM or Amazon S3 to a credential spec (<code>CredSpec</code>) file that configures the
+     * container for Active Directory authentication. We recommend that you use this parameter instead of the
+     * <code>dockerSecurityOptions</code>. The maximum number of ARNs is 1.
+     * </p>
+     * <p>
+     * There are two formats for each ARN.
+     * </p>
+     * <dl>
+     * <dt>credentialspecdomainless:MyARN</dt>
+     * <dd>
+     * <p>
+     * You use <code>credentialspecdomainless:MyARN</code> to provide a <code>CredSpec</code> with an additional section
+     * for a secret in Secrets Manager. You provide the login credentials to the domain in the secret.
+     * </p>
+     * <p>
+     * Each task that runs on any container instance can join different domains.
+     * </p>
+     * <p>
+     * You can use this format without joining the container instance to a domain.
+     * </p>
+     * </dd>
+     * <dt>credentialspec:MyARN</dt>
+     * <dd>
+     * <p>
+     * You use <code>credentialspec:MyARN</code> to provide a <code>CredSpec</code> for a single domain.
+     * </p>
+     * <p>
+     * You must join the container instance to the domain before you start any tasks that use this task definition.
+     * </p>
+     * </dd>
+     * </dl>
+     * <p>
+     * In both formats, replace <code>MyARN</code> with the ARN in SSM or Amazon S3.
+     * </p>
+     * <p>
+     * If you provide a <code>credentialspecdomainless:MyARN</code>, the <code>credspec</code> must provide a ARN in
+     * Secrets Manager for a secret containing the username, password, and the domain to connect to. For better
+     * security, the instance isn't joined to the domain for domainless authentication. Other applications on the
+     * instance can't use the domainless credentials. You can use this parameter to run tasks on the same instance, even
+     * it the tasks need to join different domains. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using gMSAs for Windows
+     * Containers</a> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/linux-gmsa.html">Using
+     * gMSAs for Linux Containers</a>.
+     * </p>
+     * 
+     * @param credentialSpecs
+     *        A list of ARNs in SSM or Amazon S3 to a credential spec (<code>CredSpec</code>) file that configures the
+     *        container for Active Directory authentication. We recommend that you use this parameter instead of the
+     *        <code>dockerSecurityOptions</code>. The maximum number of ARNs is 1.</p>
+     *        <p>
+     *        There are two formats for each ARN.
+     *        </p>
+     *        <dl>
+     *        <dt>credentialspecdomainless:MyARN</dt>
+     *        <dd>
+     *        <p>
+     *        You use <code>credentialspecdomainless:MyARN</code> to provide a <code>CredSpec</code> with an additional
+     *        section for a secret in Secrets Manager. You provide the login credentials to the domain in the secret.
+     *        </p>
+     *        <p>
+     *        Each task that runs on any container instance can join different domains.
+     *        </p>
+     *        <p>
+     *        You can use this format without joining the container instance to a domain.
+     *        </p>
+     *        </dd>
+     *        <dt>credentialspec:MyARN</dt>
+     *        <dd>
+     *        <p>
+     *        You use <code>credentialspec:MyARN</code> to provide a <code>CredSpec</code> for a single domain.
+     *        </p>
+     *        <p>
+     *        You must join the container instance to the domain before you start any tasks that use this task
+     *        definition.
+     *        </p>
+     *        </dd>
+     *        </dl>
+     *        <p>
+     *        In both formats, replace <code>MyARN</code> with the ARN in SSM or Amazon S3.
+     *        </p>
+     *        <p>
+     *        If you provide a <code>credentialspecdomainless:MyARN</code>, the <code>credspec</code> must provide a ARN
+     *        in Secrets Manager for a secret containing the username, password, and the domain to connect to. For
+     *        better security, the instance isn't joined to the domain for domainless authentication. Other applications
+     *        on the instance can't use the domainless credentials. You can use this parameter to run tasks on the same
+     *        instance, even it the tasks need to join different domains. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using gMSAs for
+     *        Windows Containers</a> and <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/linux-gmsa.html">Using gMSAs for Linux
+     *        Containers</a>.
+     */
+
+    public void setCredentialSpecs(java.util.Collection<String> credentialSpecs) {
+        if (credentialSpecs == null) {
+            this.credentialSpecs = null;
+            return;
+        }
+
+        this.credentialSpecs = new com.amazonaws.internal.SdkInternalList<String>(credentialSpecs);
+    }
+
+    /**
+     * <p>
+     * A list of ARNs in SSM or Amazon S3 to a credential spec (<code>CredSpec</code>) file that configures the
+     * container for Active Directory authentication. We recommend that you use this parameter instead of the
+     * <code>dockerSecurityOptions</code>. The maximum number of ARNs is 1.
+     * </p>
+     * <p>
+     * There are two formats for each ARN.
+     * </p>
+     * <dl>
+     * <dt>credentialspecdomainless:MyARN</dt>
+     * <dd>
+     * <p>
+     * You use <code>credentialspecdomainless:MyARN</code> to provide a <code>CredSpec</code> with an additional section
+     * for a secret in Secrets Manager. You provide the login credentials to the domain in the secret.
+     * </p>
+     * <p>
+     * Each task that runs on any container instance can join different domains.
+     * </p>
+     * <p>
+     * You can use this format without joining the container instance to a domain.
+     * </p>
+     * </dd>
+     * <dt>credentialspec:MyARN</dt>
+     * <dd>
+     * <p>
+     * You use <code>credentialspec:MyARN</code> to provide a <code>CredSpec</code> for a single domain.
+     * </p>
+     * <p>
+     * You must join the container instance to the domain before you start any tasks that use this task definition.
+     * </p>
+     * </dd>
+     * </dl>
+     * <p>
+     * In both formats, replace <code>MyARN</code> with the ARN in SSM or Amazon S3.
+     * </p>
+     * <p>
+     * If you provide a <code>credentialspecdomainless:MyARN</code>, the <code>credspec</code> must provide a ARN in
+     * Secrets Manager for a secret containing the username, password, and the domain to connect to. For better
+     * security, the instance isn't joined to the domain for domainless authentication. Other applications on the
+     * instance can't use the domainless credentials. You can use this parameter to run tasks on the same instance, even
+     * it the tasks need to join different domains. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using gMSAs for Windows
+     * Containers</a> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/linux-gmsa.html">Using
+     * gMSAs for Linux Containers</a>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCredentialSpecs(java.util.Collection)} or {@link #withCredentialSpecs(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param credentialSpecs
+     *        A list of ARNs in SSM or Amazon S3 to a credential spec (<code>CredSpec</code>) file that configures the
+     *        container for Active Directory authentication. We recommend that you use this parameter instead of the
+     *        <code>dockerSecurityOptions</code>. The maximum number of ARNs is 1.</p>
+     *        <p>
+     *        There are two formats for each ARN.
+     *        </p>
+     *        <dl>
+     *        <dt>credentialspecdomainless:MyARN</dt>
+     *        <dd>
+     *        <p>
+     *        You use <code>credentialspecdomainless:MyARN</code> to provide a <code>CredSpec</code> with an additional
+     *        section for a secret in Secrets Manager. You provide the login credentials to the domain in the secret.
+     *        </p>
+     *        <p>
+     *        Each task that runs on any container instance can join different domains.
+     *        </p>
+     *        <p>
+     *        You can use this format without joining the container instance to a domain.
+     *        </p>
+     *        </dd>
+     *        <dt>credentialspec:MyARN</dt>
+     *        <dd>
+     *        <p>
+     *        You use <code>credentialspec:MyARN</code> to provide a <code>CredSpec</code> for a single domain.
+     *        </p>
+     *        <p>
+     *        You must join the container instance to the domain before you start any tasks that use this task
+     *        definition.
+     *        </p>
+     *        </dd>
+     *        </dl>
+     *        <p>
+     *        In both formats, replace <code>MyARN</code> with the ARN in SSM or Amazon S3.
+     *        </p>
+     *        <p>
+     *        If you provide a <code>credentialspecdomainless:MyARN</code>, the <code>credspec</code> must provide a ARN
+     *        in Secrets Manager for a secret containing the username, password, and the domain to connect to. For
+     *        better security, the instance isn't joined to the domain for domainless authentication. Other applications
+     *        on the instance can't use the domainless credentials. You can use this parameter to run tasks on the same
+     *        instance, even it the tasks need to join different domains. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using gMSAs for
+     *        Windows Containers</a> and <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/linux-gmsa.html">Using gMSAs for Linux
+     *        Containers</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerDefinition withCredentialSpecs(String... credentialSpecs) {
+        if (this.credentialSpecs == null) {
+            setCredentialSpecs(new com.amazonaws.internal.SdkInternalList<String>(credentialSpecs.length));
+        }
+        for (String ele : credentialSpecs) {
+            this.credentialSpecs.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of ARNs in SSM or Amazon S3 to a credential spec (<code>CredSpec</code>) file that configures the
+     * container for Active Directory authentication. We recommend that you use this parameter instead of the
+     * <code>dockerSecurityOptions</code>. The maximum number of ARNs is 1.
+     * </p>
+     * <p>
+     * There are two formats for each ARN.
+     * </p>
+     * <dl>
+     * <dt>credentialspecdomainless:MyARN</dt>
+     * <dd>
+     * <p>
+     * You use <code>credentialspecdomainless:MyARN</code> to provide a <code>CredSpec</code> with an additional section
+     * for a secret in Secrets Manager. You provide the login credentials to the domain in the secret.
+     * </p>
+     * <p>
+     * Each task that runs on any container instance can join different domains.
+     * </p>
+     * <p>
+     * You can use this format without joining the container instance to a domain.
+     * </p>
+     * </dd>
+     * <dt>credentialspec:MyARN</dt>
+     * <dd>
+     * <p>
+     * You use <code>credentialspec:MyARN</code> to provide a <code>CredSpec</code> for a single domain.
+     * </p>
+     * <p>
+     * You must join the container instance to the domain before you start any tasks that use this task definition.
+     * </p>
+     * </dd>
+     * </dl>
+     * <p>
+     * In both formats, replace <code>MyARN</code> with the ARN in SSM or Amazon S3.
+     * </p>
+     * <p>
+     * If you provide a <code>credentialspecdomainless:MyARN</code>, the <code>credspec</code> must provide a ARN in
+     * Secrets Manager for a secret containing the username, password, and the domain to connect to. For better
+     * security, the instance isn't joined to the domain for domainless authentication. Other applications on the
+     * instance can't use the domainless credentials. You can use this parameter to run tasks on the same instance, even
+     * it the tasks need to join different domains. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using gMSAs for Windows
+     * Containers</a> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/linux-gmsa.html">Using
+     * gMSAs for Linux Containers</a>.
+     * </p>
+     * 
+     * @param credentialSpecs
+     *        A list of ARNs in SSM or Amazon S3 to a credential spec (<code>CredSpec</code>) file that configures the
+     *        container for Active Directory authentication. We recommend that you use this parameter instead of the
+     *        <code>dockerSecurityOptions</code>. The maximum number of ARNs is 1.</p>
+     *        <p>
+     *        There are two formats for each ARN.
+     *        </p>
+     *        <dl>
+     *        <dt>credentialspecdomainless:MyARN</dt>
+     *        <dd>
+     *        <p>
+     *        You use <code>credentialspecdomainless:MyARN</code> to provide a <code>CredSpec</code> with an additional
+     *        section for a secret in Secrets Manager. You provide the login credentials to the domain in the secret.
+     *        </p>
+     *        <p>
+     *        Each task that runs on any container instance can join different domains.
+     *        </p>
+     *        <p>
+     *        You can use this format without joining the container instance to a domain.
+     *        </p>
+     *        </dd>
+     *        <dt>credentialspec:MyARN</dt>
+     *        <dd>
+     *        <p>
+     *        You use <code>credentialspec:MyARN</code> to provide a <code>CredSpec</code> for a single domain.
+     *        </p>
+     *        <p>
+     *        You must join the container instance to the domain before you start any tasks that use this task
+     *        definition.
+     *        </p>
+     *        </dd>
+     *        </dl>
+     *        <p>
+     *        In both formats, replace <code>MyARN</code> with the ARN in SSM or Amazon S3.
+     *        </p>
+     *        <p>
+     *        If you provide a <code>credentialspecdomainless:MyARN</code>, the <code>credspec</code> must provide a ARN
+     *        in Secrets Manager for a secret containing the username, password, and the domain to connect to. For
+     *        better security, the instance isn't joined to the domain for domainless authentication. Other applications
+     *        on the instance can't use the domainless credentials. You can use this parameter to run tasks on the same
+     *        instance, even it the tasks need to join different domains. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using gMSAs for
+     *        Windows Containers</a> and <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/linux-gmsa.html">Using gMSAs for Linux
+     *        Containers</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerDefinition withCredentialSpecs(java.util.Collection<String> credentialSpecs) {
+        setCredentialSpecs(credentialSpecs);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -7462,7 +8059,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
         if (getResourceRequirements() != null)
             sb.append("ResourceRequirements: ").append(getResourceRequirements()).append(",");
         if (getFirelensConfiguration() != null)
-            sb.append("FirelensConfiguration: ").append(getFirelensConfiguration());
+            sb.append("FirelensConfiguration: ").append(getFirelensConfiguration()).append(",");
+        if (getCredentialSpecs() != null)
+            sb.append("CredentialSpecs: ").append(getCredentialSpecs());
         sb.append("}");
         return sb.toString();
     }
@@ -7633,6 +8232,10 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getFirelensConfiguration() != null && other.getFirelensConfiguration().equals(this.getFirelensConfiguration()) == false)
             return false;
+        if (other.getCredentialSpecs() == null ^ this.getCredentialSpecs() == null)
+            return false;
+        if (other.getCredentialSpecs() != null && other.getCredentialSpecs().equals(this.getCredentialSpecs()) == false)
+            return false;
         return true;
     }
 
@@ -7680,6 +8283,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getSystemControls() == null) ? 0 : getSystemControls().hashCode());
         hashCode = prime * hashCode + ((getResourceRequirements() == null) ? 0 : getResourceRequirements().hashCode());
         hashCode = prime * hashCode + ((getFirelensConfiguration() == null) ? 0 : getFirelensConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getCredentialSpecs() == null) ? 0 : getCredentialSpecs().hashCode());
         return hashCode;
     }
 

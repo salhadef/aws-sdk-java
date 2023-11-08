@@ -27,24 +27,24 @@ public class DeregisterComputeRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * &gt;A unique identifier for the fleet the compute resource is registered to.
+     * A unique identifier for the fleet the compute resource is currently registered to.
      * </p>
      */
     private String fleetId;
     /**
      * <p>
-     * The name of the compute resource you want to delete.
+     * The name of the compute resource to remove from the specified Anywhere fleet.
      * </p>
      */
     private String computeName;
 
     /**
      * <p>
-     * &gt;A unique identifier for the fleet the compute resource is registered to.
+     * A unique identifier for the fleet the compute resource is currently registered to.
      * </p>
      * 
      * @param fleetId
-     *        &gt;A unique identifier for the fleet the compute resource is registered to.
+     *        A unique identifier for the fleet the compute resource is currently registered to.
      */
 
     public void setFleetId(String fleetId) {
@@ -53,10 +53,10 @@ public class DeregisterComputeRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * &gt;A unique identifier for the fleet the compute resource is registered to.
+     * A unique identifier for the fleet the compute resource is currently registered to.
      * </p>
      * 
-     * @return &gt;A unique identifier for the fleet the compute resource is registered to.
+     * @return A unique identifier for the fleet the compute resource is currently registered to.
      */
 
     public String getFleetId() {
@@ -65,11 +65,11 @@ public class DeregisterComputeRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * &gt;A unique identifier for the fleet the compute resource is registered to.
+     * A unique identifier for the fleet the compute resource is currently registered to.
      * </p>
      * 
      * @param fleetId
-     *        &gt;A unique identifier for the fleet the compute resource is registered to.
+     *        A unique identifier for the fleet the compute resource is currently registered to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class DeregisterComputeRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the compute resource you want to delete.
+     * The name of the compute resource to remove from the specified Anywhere fleet.
      * </p>
      * 
      * @param computeName
-     *        The name of the compute resource you want to delete.
+     *        The name of the compute resource to remove from the specified Anywhere fleet.
      */
 
     public void setComputeName(String computeName) {
@@ -93,10 +93,10 @@ public class DeregisterComputeRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the compute resource you want to delete.
+     * The name of the compute resource to remove from the specified Anywhere fleet.
      * </p>
      * 
-     * @return The name of the compute resource you want to delete.
+     * @return The name of the compute resource to remove from the specified Anywhere fleet.
      */
 
     public String getComputeName() {
@@ -105,11 +105,11 @@ public class DeregisterComputeRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the compute resource you want to delete.
+     * The name of the compute resource to remove from the specified Anywhere fleet.
      * </p>
      * 
      * @param computeName
-     *        The name of the compute resource you want to delete.
+     *        The name of the compute resource to remove from the specified Anywhere fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

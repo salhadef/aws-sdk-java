@@ -25,34 +25,16 @@ public class CreateAnnotationStoreResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * When the store was created.
-     * </p>
-     */
-    private java.util.Date creationTime;
-    /**
-     * <p>
      * The store's ID.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The store's name.
-     * </p>
-     */
-    private String name;
-    /**
-     * <p>
      * The store's genome reference. Required for all stores except TSV format with generic annotations.
      * </p>
      */
     private ReferenceItem reference;
-    /**
-     * <p>
-     * The store's status.
-     * </p>
-     */
-    private String status;
     /**
      * <p>
      * The annotation file format of the store.
@@ -65,46 +47,30 @@ public class CreateAnnotationStoreResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private StoreOptions storeOptions;
-
+    /**
+     * <p>
+     * The store's status.
+     * </p>
+     */
+    private String status;
+    /**
+     * <p>
+     * The store's name.
+     * </p>
+     */
+    private String name;
+    /**
+     * <p>
+     * The name given to an annotation store version to distinguish it from other versions.
+     * </p>
+     */
+    private String versionName;
     /**
      * <p>
      * When the store was created.
      * </p>
-     * 
-     * @param creationTime
-     *        When the store was created.
      */
-
-    public void setCreationTime(java.util.Date creationTime) {
-        this.creationTime = creationTime;
-    }
-
-    /**
-     * <p>
-     * When the store was created.
-     * </p>
-     * 
-     * @return When the store was created.
-     */
-
-    public java.util.Date getCreationTime() {
-        return this.creationTime;
-    }
-
-    /**
-     * <p>
-     * When the store was created.
-     * </p>
-     * 
-     * @param creationTime
-     *        When the store was created.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateAnnotationStoreResult withCreationTime(java.util.Date creationTime) {
-        setCreationTime(creationTime);
-        return this;
-    }
+    private java.util.Date creationTime;
 
     /**
      * <p>
@@ -148,46 +114,6 @@ public class CreateAnnotationStoreResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The store's name.
-     * </p>
-     * 
-     * @param name
-     *        The store's name.
-     */
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     * <p>
-     * The store's name.
-     * </p>
-     * 
-     * @return The store's name.
-     */
-
-    public String getName() {
-        return this.name;
-    }
-
-    /**
-     * <p>
-     * The store's name.
-     * </p>
-     * 
-     * @param name
-     *        The store's name.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateAnnotationStoreResult withName(String name) {
-        setName(name);
-        return this;
-    }
-
-    /**
-     * <p>
      * The store's genome reference. Required for all stores except TSV format with generic annotations.
      * </p>
      * 
@@ -223,65 +149,6 @@ public class CreateAnnotationStoreResult extends com.amazonaws.AmazonWebServiceR
 
     public CreateAnnotationStoreResult withReference(ReferenceItem reference) {
         setReference(reference);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The store's status.
-     * </p>
-     * 
-     * @param status
-     *        The store's status.
-     * @see StoreStatus
-     */
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    /**
-     * <p>
-     * The store's status.
-     * </p>
-     * 
-     * @return The store's status.
-     * @see StoreStatus
-     */
-
-    public String getStatus() {
-        return this.status;
-    }
-
-    /**
-     * <p>
-     * The store's status.
-     * </p>
-     * 
-     * @param status
-     *        The store's status.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see StoreStatus
-     */
-
-    public CreateAnnotationStoreResult withStatus(String status) {
-        setStatus(status);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The store's status.
-     * </p>
-     * 
-     * @param status
-     *        The store's status.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see StoreStatus
-     */
-
-    public CreateAnnotationStoreResult withStatus(StoreStatus status) {
-        this.status = status.toString();
         return this;
     }
 
@@ -385,6 +252,185 @@ public class CreateAnnotationStoreResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The store's status.
+     * </p>
+     * 
+     * @param status
+     *        The store's status.
+     * @see StoreStatus
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * The store's status.
+     * </p>
+     * 
+     * @return The store's status.
+     * @see StoreStatus
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * The store's status.
+     * </p>
+     * 
+     * @param status
+     *        The store's status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StoreStatus
+     */
+
+    public CreateAnnotationStoreResult withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The store's status.
+     * </p>
+     * 
+     * @param status
+     *        The store's status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StoreStatus
+     */
+
+    public CreateAnnotationStoreResult withStatus(StoreStatus status) {
+        this.status = status.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The store's name.
+     * </p>
+     * 
+     * @param name
+     *        The store's name.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The store's name.
+     * </p>
+     * 
+     * @return The store's name.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The store's name.
+     * </p>
+     * 
+     * @param name
+     *        The store's name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAnnotationStoreResult withName(String name) {
+        setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name given to an annotation store version to distinguish it from other versions.
+     * </p>
+     * 
+     * @param versionName
+     *        The name given to an annotation store version to distinguish it from other versions.
+     */
+
+    public void setVersionName(String versionName) {
+        this.versionName = versionName;
+    }
+
+    /**
+     * <p>
+     * The name given to an annotation store version to distinguish it from other versions.
+     * </p>
+     * 
+     * @return The name given to an annotation store version to distinguish it from other versions.
+     */
+
+    public String getVersionName() {
+        return this.versionName;
+    }
+
+    /**
+     * <p>
+     * The name given to an annotation store version to distinguish it from other versions.
+     * </p>
+     * 
+     * @param versionName
+     *        The name given to an annotation store version to distinguish it from other versions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAnnotationStoreResult withVersionName(String versionName) {
+        setVersionName(versionName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When the store was created.
+     * </p>
+     * 
+     * @param creationTime
+     *        When the store was created.
+     */
+
+    public void setCreationTime(java.util.Date creationTime) {
+        this.creationTime = creationTime;
+    }
+
+    /**
+     * <p>
+     * When the store was created.
+     * </p>
+     * 
+     * @return When the store was created.
+     */
+
+    public java.util.Date getCreationTime() {
+        return this.creationTime;
+    }
+
+    /**
+     * <p>
+     * When the store was created.
+     * </p>
+     * 
+     * @param creationTime
+     *        When the store was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAnnotationStoreResult withCreationTime(java.util.Date creationTime) {
+        setCreationTime(creationTime);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -396,20 +442,22 @@ public class CreateAnnotationStoreResult extends com.amazonaws.AmazonWebServiceR
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getCreationTime() != null)
-            sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
-        if (getName() != null)
-            sb.append("Name: ").append(getName()).append(",");
         if (getReference() != null)
             sb.append("Reference: ").append(getReference()).append(",");
-        if (getStatus() != null)
-            sb.append("Status: ").append(getStatus()).append(",");
         if (getStoreFormat() != null)
             sb.append("StoreFormat: ").append(getStoreFormat()).append(",");
         if (getStoreOptions() != null)
-            sb.append("StoreOptions: ").append(getStoreOptions());
+            sb.append("StoreOptions: ").append(getStoreOptions()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
+        if (getVersionName() != null)
+            sb.append("VersionName: ").append(getVersionName()).append(",");
+        if (getCreationTime() != null)
+            sb.append("CreationTime: ").append(getCreationTime());
         sb.append("}");
         return sb.toString();
     }
@@ -424,25 +472,13 @@ public class CreateAnnotationStoreResult extends com.amazonaws.AmazonWebServiceR
         if (obj instanceof CreateAnnotationStoreResult == false)
             return false;
         CreateAnnotationStoreResult other = (CreateAnnotationStoreResult) obj;
-        if (other.getCreationTime() == null ^ this.getCreationTime() == null)
-            return false;
-        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
-            return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
-        if (other.getName() == null ^ this.getName() == null)
-            return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false)
-            return false;
         if (other.getReference() == null ^ this.getReference() == null)
             return false;
         if (other.getReference() != null && other.getReference().equals(this.getReference()) == false)
-            return false;
-        if (other.getStatus() == null ^ this.getStatus() == null)
-            return false;
-        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         if (other.getStoreFormat() == null ^ this.getStoreFormat() == null)
             return false;
@@ -452,6 +488,22 @@ public class CreateAnnotationStoreResult extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getStoreOptions() != null && other.getStoreOptions().equals(this.getStoreOptions()) == false)
             return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getVersionName() == null ^ this.getVersionName() == null)
+            return false;
+        if (other.getVersionName() != null && other.getVersionName().equals(this.getVersionName()) == false)
+            return false;
+        if (other.getCreationTime() == null ^ this.getCreationTime() == null)
+            return false;
+        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
+            return false;
         return true;
     }
 
@@ -460,13 +512,14 @@ public class CreateAnnotationStoreResult extends com.amazonaws.AmazonWebServiceR
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getReference() == null) ? 0 : getReference().hashCode());
-        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getStoreFormat() == null) ? 0 : getStoreFormat().hashCode());
         hashCode = prime * hashCode + ((getStoreOptions() == null) ? 0 : getStoreOptions().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getVersionName() == null) ? 0 : getVersionName().hashCode());
+        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         return hashCode;
     }
 

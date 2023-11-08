@@ -25,7 +25,8 @@ public enum SNOMEDCTRelationshipType {
     TEST_VALUE("TEST_VALUE"),
     TEST_UNITS("TEST_UNITS"),
     DIRECTION("DIRECTION"),
-    SYSTEM_ORGAN_SITE("SYSTEM_ORGAN_SITE");
+    SYSTEM_ORGAN_SITE("SYSTEM_ORGAN_SITE"),
+    TEST_UNIT("TEST_UNIT");
 
     private String value;
 

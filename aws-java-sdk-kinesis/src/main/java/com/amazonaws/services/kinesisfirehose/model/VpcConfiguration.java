@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The details of the VPC of the Amazon ES destination.
+ * The details of the VPC of the Amazon OpenSearch or Amazon OpenSearch Serverless destination.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/VpcConfiguration" target="_top">AWS API

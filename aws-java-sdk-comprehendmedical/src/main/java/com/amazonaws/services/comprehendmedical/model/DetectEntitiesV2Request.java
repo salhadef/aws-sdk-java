@@ -27,21 +27,18 @@ public class DetectEntitiesV2Request extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A UTF-8 string containing the clinical content being examined for entities. Each string must contain fewer than
-     * 20,000 bytes of characters.
+     * A UTF-8 string containing the clinical content being examined for entities.
      * </p>
      */
     private String text;
 
     /**
      * <p>
-     * A UTF-8 string containing the clinical content being examined for entities. Each string must contain fewer than
-     * 20,000 bytes of characters.
+     * A UTF-8 string containing the clinical content being examined for entities.
      * </p>
      * 
      * @param text
-     *        A UTF-8 string containing the clinical content being examined for entities. Each string must contain fewer
-     *        than 20,000 bytes of characters.
+     *        A UTF-8 string containing the clinical content being examined for entities.
      */
 
     public void setText(String text) {
@@ -50,12 +47,10 @@ public class DetectEntitiesV2Request extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A UTF-8 string containing the clinical content being examined for entities. Each string must contain fewer than
-     * 20,000 bytes of characters.
+     * A UTF-8 string containing the clinical content being examined for entities.
      * </p>
      * 
-     * @return A UTF-8 string containing the clinical content being examined for entities. Each string must contain
-     *         fewer than 20,000 bytes of characters.
+     * @return A UTF-8 string containing the clinical content being examined for entities.
      */
 
     public String getText() {
@@ -64,13 +59,11 @@ public class DetectEntitiesV2Request extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A UTF-8 string containing the clinical content being examined for entities. Each string must contain fewer than
-     * 20,000 bytes of characters.
+     * A UTF-8 string containing the clinical content being examined for entities.
      * </p>
      * 
      * @param text
-     *        A UTF-8 string containing the clinical content being examined for entities. Each string must contain fewer
-     *        than 20,000 bytes of characters.
+     *        A UTF-8 string containing the clinical content being examined for entities.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

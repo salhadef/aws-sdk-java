@@ -48,13 +48,13 @@ public class InstanceMetadataJsonUnmarshaller implements Unmarshaller<InstanceMe
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("InstanceArn", targetDepth)) {
-                    context.nextToken();
-                    instanceMetadata.setInstanceArn(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("IdentityStoreId", targetDepth)) {
                     context.nextToken();
                     instanceMetadata.setIdentityStoreId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("InstanceArn", targetDepth)) {
+                    context.nextToken();
+                    instanceMetadata.setInstanceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

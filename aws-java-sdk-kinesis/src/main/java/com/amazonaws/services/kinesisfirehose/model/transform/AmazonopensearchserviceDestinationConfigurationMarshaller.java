@@ -53,6 +53,8 @@ public class AmazonopensearchserviceDestinationConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CloudWatchLoggingOptions").build();
     private static final MarshallingInfo<StructuredPojo> VPCCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VpcConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> DOCUMENTIDOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentIdOptions").build();
 
     private static final AmazonopensearchserviceDestinationConfigurationMarshaller instance = new AmazonopensearchserviceDestinationConfigurationMarshaller();
 
@@ -83,6 +85,7 @@ public class AmazonopensearchserviceDestinationConfigurationMarshaller {
             protocolMarshaller.marshall(amazonopensearchserviceDestinationConfiguration.getProcessingConfiguration(), PROCESSINGCONFIGURATION_BINDING);
             protocolMarshaller.marshall(amazonopensearchserviceDestinationConfiguration.getCloudWatchLoggingOptions(), CLOUDWATCHLOGGINGOPTIONS_BINDING);
             protocolMarshaller.marshall(amazonopensearchserviceDestinationConfiguration.getVpcConfiguration(), VPCCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(amazonopensearchserviceDestinationConfiguration.getDocumentIdOptions(), DOCUMENTIDOPTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

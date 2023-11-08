@@ -83,6 +83,11 @@ public class AbstractAmazonManagedGrafana implements AmazonManagedGrafana {
     }
 
     @Override
+    public ListVersionsResult listVersions(ListVersionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListWorkspacesResult listWorkspaces(ListWorkspacesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.mediatailor.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -27,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class HlsPlaylistSettingsMarshaller {
 
+    private static final MarshallingInfo<List> ADMARKUPTYPE_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("AdMarkupType").build();
     private static final MarshallingInfo<Integer> MANIFESTWINDOWSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ManifestWindowSeconds").build();
 
@@ -46,6 +49,7 @@ public class HlsPlaylistSettingsMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(hlsPlaylistSettings.getAdMarkupType(), ADMARKUPTYPE_BINDING);
             protocolMarshaller.marshall(hlsPlaylistSettings.getManifestWindowSeconds(), MANIFESTWINDOWSECONDS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

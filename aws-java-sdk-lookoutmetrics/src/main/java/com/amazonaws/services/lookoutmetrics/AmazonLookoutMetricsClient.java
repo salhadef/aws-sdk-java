@@ -44,6 +44,7 @@ import com.amazonaws.services.lookoutmetrics.AmazonLookoutMetricsClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.lookoutmetrics.model.*;
+
 import com.amazonaws.services.lookoutmetrics.model.transform.*;
 
 /**

@@ -48,14 +48,6 @@ public class StartReadSetExportJobResultJsonUnmarshaller implements Unmarshaller
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("creationTime", targetDepth)) {
-                    context.nextToken();
-                    startReadSetExportJobResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
-                }
-                if (context.testExpression("destination", targetDepth)) {
-                    context.nextToken();
-                    startReadSetExportJobResult.setDestination(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
                     startReadSetExportJobResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
@@ -64,9 +56,17 @@ public class StartReadSetExportJobResultJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     startReadSetExportJobResult.setSequenceStoreId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("destination", targetDepth)) {
+                    context.nextToken();
+                    startReadSetExportJobResult.setDestination(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     startReadSetExportJobResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("creationTime", targetDepth)) {
+                    context.nextToken();
+                    startReadSetExportJobResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

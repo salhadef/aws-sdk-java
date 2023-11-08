@@ -79,6 +79,12 @@ public class DashboardVersionDefinition implements Serializable, Cloneable, Stru
     private java.util.List<ColumnConfiguration> columnConfigurations;
 
     private AnalysisDefaults analysisDefaults;
+    /**
+     * <p>
+     * An array of option definitions for a dashboard.
+     * </p>
+     */
+    private AssetOptions options;
 
     /**
      * <p>
@@ -623,6 +629,46 @@ public class DashboardVersionDefinition implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * An array of option definitions for a dashboard.
+     * </p>
+     * 
+     * @param options
+     *        An array of option definitions for a dashboard.
+     */
+
+    public void setOptions(AssetOptions options) {
+        this.options = options;
+    }
+
+    /**
+     * <p>
+     * An array of option definitions for a dashboard.
+     * </p>
+     * 
+     * @return An array of option definitions for a dashboard.
+     */
+
+    public AssetOptions getOptions() {
+        return this.options;
+    }
+
+    /**
+     * <p>
+     * An array of option definitions for a dashboard.
+     * </p>
+     * 
+     * @param options
+     *        An array of option definitions for a dashboard.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DashboardVersionDefinition withOptions(AssetOptions options) {
+        setOptions(options);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -647,7 +693,9 @@ public class DashboardVersionDefinition implements Serializable, Cloneable, Stru
         if (getColumnConfigurations() != null)
             sb.append("ColumnConfigurations: ").append(getColumnConfigurations()).append(",");
         if (getAnalysisDefaults() != null)
-            sb.append("AnalysisDefaults: ").append(getAnalysisDefaults());
+            sb.append("AnalysisDefaults: ").append(getAnalysisDefaults()).append(",");
+        if (getOptions() != null)
+            sb.append("Options: ").append(getOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -691,6 +739,10 @@ public class DashboardVersionDefinition implements Serializable, Cloneable, Stru
             return false;
         if (other.getAnalysisDefaults() != null && other.getAnalysisDefaults().equals(this.getAnalysisDefaults()) == false)
             return false;
+        if (other.getOptions() == null ^ this.getOptions() == null)
+            return false;
+        if (other.getOptions() != null && other.getOptions().equals(this.getOptions()) == false)
+            return false;
         return true;
     }
 
@@ -706,6 +758,7 @@ public class DashboardVersionDefinition implements Serializable, Cloneable, Stru
         hashCode = prime * hashCode + ((getFilterGroups() == null) ? 0 : getFilterGroups().hashCode());
         hashCode = prime * hashCode + ((getColumnConfigurations() == null) ? 0 : getColumnConfigurations().hashCode());
         hashCode = prime * hashCode + ((getAnalysisDefaults() == null) ? 0 : getAnalysisDefaults().hashCode());
+        hashCode = prime * hashCode + ((getOptions() == null) ? 0 : getOptions().hashCode());
         return hashCode;
     }
 

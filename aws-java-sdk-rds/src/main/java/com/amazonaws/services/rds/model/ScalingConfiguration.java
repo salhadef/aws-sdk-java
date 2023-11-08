@@ -67,8 +67,8 @@ public class ScalingConfiguration implements Serializable, Cloneable {
     private Integer maxCapacity;
     /**
      * <p>
-     * A value that indicates whether to allow or disallow automatic pause for an Aurora DB cluster in
-     * <code>serverless</code> DB engine mode. A DB cluster can be paused only when it's idle (it has no connections).
+     * Indicates whether to allow or disallow automatic pause for an Aurora DB cluster in <code>serverless</code> DB
+     * engine mode. A DB cluster can be paused only when it's idle (it has no connections).
      * </p>
      * <note>
      * <p>
@@ -329,8 +329,8 @@ public class ScalingConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether to allow or disallow automatic pause for an Aurora DB cluster in
-     * <code>serverless</code> DB engine mode. A DB cluster can be paused only when it's idle (it has no connections).
+     * Indicates whether to allow or disallow automatic pause for an Aurora DB cluster in <code>serverless</code> DB
+     * engine mode. A DB cluster can be paused only when it's idle (it has no connections).
      * </p>
      * <note>
      * <p>
@@ -340,9 +340,8 @@ public class ScalingConfiguration implements Serializable, Cloneable {
      * </note>
      * 
      * @param autoPause
-     *        A value that indicates whether to allow or disallow automatic pause for an Aurora DB cluster in
-     *        <code>serverless</code> DB engine mode. A DB cluster can be paused only when it's idle (it has no
-     *        connections).</p> <note>
+     *        Indicates whether to allow or disallow automatic pause for an Aurora DB cluster in <code>serverless</code>
+     *        DB engine mode. A DB cluster can be paused only when it's idle (it has no connections).</p> <note>
      *        <p>
      *        If a DB cluster is paused for more than seven days, the DB cluster might be backed up with a snapshot. In
      *        this case, the DB cluster is restored when there is a request to connect to it.
@@ -355,8 +354,8 @@ public class ScalingConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether to allow or disallow automatic pause for an Aurora DB cluster in
-     * <code>serverless</code> DB engine mode. A DB cluster can be paused only when it's idle (it has no connections).
+     * Indicates whether to allow or disallow automatic pause for an Aurora DB cluster in <code>serverless</code> DB
+     * engine mode. A DB cluster can be paused only when it's idle (it has no connections).
      * </p>
      * <note>
      * <p>
@@ -365,7 +364,7 @@ public class ScalingConfiguration implements Serializable, Cloneable {
      * </p>
      * </note>
      * 
-     * @return A value that indicates whether to allow or disallow automatic pause for an Aurora DB cluster in
+     * @return Indicates whether to allow or disallow automatic pause for an Aurora DB cluster in
      *         <code>serverless</code> DB engine mode. A DB cluster can be paused only when it's idle (it has no
      *         connections).</p> <note>
      *         <p>
@@ -380,8 +379,8 @@ public class ScalingConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether to allow or disallow automatic pause for an Aurora DB cluster in
-     * <code>serverless</code> DB engine mode. A DB cluster can be paused only when it's idle (it has no connections).
+     * Indicates whether to allow or disallow automatic pause for an Aurora DB cluster in <code>serverless</code> DB
+     * engine mode. A DB cluster can be paused only when it's idle (it has no connections).
      * </p>
      * <note>
      * <p>
@@ -391,9 +390,8 @@ public class ScalingConfiguration implements Serializable, Cloneable {
      * </note>
      * 
      * @param autoPause
-     *        A value that indicates whether to allow or disallow automatic pause for an Aurora DB cluster in
-     *        <code>serverless</code> DB engine mode. A DB cluster can be paused only when it's idle (it has no
-     *        connections).</p> <note>
+     *        Indicates whether to allow or disallow automatic pause for an Aurora DB cluster in <code>serverless</code>
+     *        DB engine mode. A DB cluster can be paused only when it's idle (it has no connections).</p> <note>
      *        <p>
      *        If a DB cluster is paused for more than seven days, the DB cluster might be backed up with a snapshot. In
      *        this case, the DB cluster is restored when there is a request to connect to it.
@@ -408,8 +406,8 @@ public class ScalingConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether to allow or disallow automatic pause for an Aurora DB cluster in
-     * <code>serverless</code> DB engine mode. A DB cluster can be paused only when it's idle (it has no connections).
+     * Indicates whether to allow or disallow automatic pause for an Aurora DB cluster in <code>serverless</code> DB
+     * engine mode. A DB cluster can be paused only when it's idle (it has no connections).
      * </p>
      * <note>
      * <p>
@@ -418,7 +416,7 @@ public class ScalingConfiguration implements Serializable, Cloneable {
      * </p>
      * </note>
      * 
-     * @return A value that indicates whether to allow or disallow automatic pause for an Aurora DB cluster in
+     * @return Indicates whether to allow or disallow automatic pause for an Aurora DB cluster in
      *         <code>serverless</code> DB engine mode. A DB cluster can be paused only when it's idle (it has no
      *         connections).</p> <note>
      *         <p>

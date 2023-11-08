@@ -143,6 +143,19 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private DashboardVersionDefinition definition;
+    /**
+     * <p>
+     * The option to relax the validation needed to create a dashboard with definition objects. This option skips the
+     * validation step for specific errors.
+     * </p>
+     */
+    private ValidationStrategy validationStrategy;
+    /**
+     * <p>
+     * When you create the dashboard, Amazon QuickSight adds the dashboard to these folders.
+     * </p>
+     */
+    private java.util.List<String> folderArns;
 
     /**
      * <p>
@@ -955,6 +968,122 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * The option to relax the validation needed to create a dashboard with definition objects. This option skips the
+     * validation step for specific errors.
+     * </p>
+     * 
+     * @param validationStrategy
+     *        The option to relax the validation needed to create a dashboard with definition objects. This option skips
+     *        the validation step for specific errors.
+     */
+
+    public void setValidationStrategy(ValidationStrategy validationStrategy) {
+        this.validationStrategy = validationStrategy;
+    }
+
+    /**
+     * <p>
+     * The option to relax the validation needed to create a dashboard with definition objects. This option skips the
+     * validation step for specific errors.
+     * </p>
+     * 
+     * @return The option to relax the validation needed to create a dashboard with definition objects. This option
+     *         skips the validation step for specific errors.
+     */
+
+    public ValidationStrategy getValidationStrategy() {
+        return this.validationStrategy;
+    }
+
+    /**
+     * <p>
+     * The option to relax the validation needed to create a dashboard with definition objects. This option skips the
+     * validation step for specific errors.
+     * </p>
+     * 
+     * @param validationStrategy
+     *        The option to relax the validation needed to create a dashboard with definition objects. This option skips
+     *        the validation step for specific errors.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDashboardRequest withValidationStrategy(ValidationStrategy validationStrategy) {
+        setValidationStrategy(validationStrategy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When you create the dashboard, Amazon QuickSight adds the dashboard to these folders.
+     * </p>
+     * 
+     * @return When you create the dashboard, Amazon QuickSight adds the dashboard to these folders.
+     */
+
+    public java.util.List<String> getFolderArns() {
+        return folderArns;
+    }
+
+    /**
+     * <p>
+     * When you create the dashboard, Amazon QuickSight adds the dashboard to these folders.
+     * </p>
+     * 
+     * @param folderArns
+     *        When you create the dashboard, Amazon QuickSight adds the dashboard to these folders.
+     */
+
+    public void setFolderArns(java.util.Collection<String> folderArns) {
+        if (folderArns == null) {
+            this.folderArns = null;
+            return;
+        }
+
+        this.folderArns = new java.util.ArrayList<String>(folderArns);
+    }
+
+    /**
+     * <p>
+     * When you create the dashboard, Amazon QuickSight adds the dashboard to these folders.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFolderArns(java.util.Collection)} or {@link #withFolderArns(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param folderArns
+     *        When you create the dashboard, Amazon QuickSight adds the dashboard to these folders.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDashboardRequest withFolderArns(String... folderArns) {
+        if (this.folderArns == null) {
+            setFolderArns(new java.util.ArrayList<String>(folderArns.length));
+        }
+        for (String ele : folderArns) {
+            this.folderArns.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * When you create the dashboard, Amazon QuickSight adds the dashboard to these folders.
+     * </p>
+     * 
+     * @param folderArns
+     *        When you create the dashboard, Amazon QuickSight adds the dashboard to these folders.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDashboardRequest withFolderArns(java.util.Collection<String> folderArns) {
+        setFolderArns(folderArns);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -987,7 +1116,11 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
         if (getThemeArn() != null)
             sb.append("ThemeArn: ").append(getThemeArn()).append(",");
         if (getDefinition() != null)
-            sb.append("Definition: ").append(getDefinition());
+            sb.append("Definition: ").append(getDefinition()).append(",");
+        if (getValidationStrategy() != null)
+            sb.append("ValidationStrategy: ").append(getValidationStrategy()).append(",");
+        if (getFolderArns() != null)
+            sb.append("FolderArns: ").append(getFolderArns());
         sb.append("}");
         return sb.toString();
     }
@@ -1046,6 +1179,14 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getDefinition() != null && other.getDefinition().equals(this.getDefinition()) == false)
             return false;
+        if (other.getValidationStrategy() == null ^ this.getValidationStrategy() == null)
+            return false;
+        if (other.getValidationStrategy() != null && other.getValidationStrategy().equals(this.getValidationStrategy()) == false)
+            return false;
+        if (other.getFolderArns() == null ^ this.getFolderArns() == null)
+            return false;
+        if (other.getFolderArns() != null && other.getFolderArns().equals(this.getFolderArns()) == false)
+            return false;
         return true;
     }
 
@@ -1065,6 +1206,8 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getDashboardPublishOptions() == null) ? 0 : getDashboardPublishOptions().hashCode());
         hashCode = prime * hashCode + ((getThemeArn() == null) ? 0 : getThemeArn().hashCode());
         hashCode = prime * hashCode + ((getDefinition() == null) ? 0 : getDefinition().hashCode());
+        hashCode = prime * hashCode + ((getValidationStrategy() == null) ? 0 : getValidationStrategy().hashCode());
+        hashCode = prime * hashCode + ((getFolderArns() == null) ? 0 : getFolderArns().hashCode());
         return hashCode;
     }
 

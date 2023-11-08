@@ -37,7 +37,7 @@ public class CreateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
     private String environmentArn;
     /**
      * <p>
-     * The sign-in url for the web application of the FinSpace environment you created.
+     * The sign-in URL for the web application of the FinSpace environment you created.
      * </p>
      */
     private String environmentUrl;
@@ -124,11 +124,11 @@ public class CreateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The sign-in url for the web application of the FinSpace environment you created.
+     * The sign-in URL for the web application of the FinSpace environment you created.
      * </p>
      * 
      * @param environmentUrl
-     *        The sign-in url for the web application of the FinSpace environment you created.
+     *        The sign-in URL for the web application of the FinSpace environment you created.
      */
 
     public void setEnvironmentUrl(String environmentUrl) {
@@ -137,10 +137,10 @@ public class CreateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The sign-in url for the web application of the FinSpace environment you created.
+     * The sign-in URL for the web application of the FinSpace environment you created.
      * </p>
      * 
-     * @return The sign-in url for the web application of the FinSpace environment you created.
+     * @return The sign-in URL for the web application of the FinSpace environment you created.
      */
 
     public String getEnvironmentUrl() {
@@ -149,11 +149,11 @@ public class CreateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The sign-in url for the web application of the FinSpace environment you created.
+     * The sign-in URL for the web application of the FinSpace environment you created.
      * </p>
      * 
      * @param environmentUrl
-     *        The sign-in url for the web application of the FinSpace environment you created.
+     *        The sign-in URL for the web application of the FinSpace environment you created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

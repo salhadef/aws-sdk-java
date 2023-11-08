@@ -78,6 +78,10 @@ public class RtmpGroupSettingsJsonUnmarshaller implements Unmarshaller<RtmpGroup
                     context.nextToken();
                     rtmpGroupSettings.setRestartDelay(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("includeFillerNalUnits", targetDepth)) {
+                    context.nextToken();
+                    rtmpGroupSettings.setIncludeFillerNalUnits(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

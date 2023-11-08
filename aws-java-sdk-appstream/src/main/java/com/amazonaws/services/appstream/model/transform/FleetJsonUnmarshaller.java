@@ -148,6 +148,10 @@ public class FleetJsonUnmarshaller implements Unmarshaller<Fleet, JsonUnmarshall
                     context.nextToken();
                     fleet.setSessionScriptS3Location(S3LocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("MaxSessionsPerInstance", targetDepth)) {
+                    context.nextToken();
+                    fleet.setMaxSessionsPerInstance(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

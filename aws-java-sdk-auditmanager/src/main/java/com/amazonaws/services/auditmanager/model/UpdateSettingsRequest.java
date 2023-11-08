@@ -33,7 +33,7 @@ public class UpdateSettingsRequest extends com.amazonaws.AmazonWebServiceRequest
     private String snsTopic;
     /**
      * <p>
-     * The default storage destination for assessment reports.
+     * The default S3 destination bucket for storing assessment reports.
      * </p>
      */
     private AssessmentReportsDestination defaultAssessmentReportsDestination;
@@ -74,6 +74,12 @@ public class UpdateSettingsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private DeregistrationPolicy deregistrationPolicy;
+    /**
+     * <p>
+     * The default S3 destination bucket for storing evidence finder exports.
+     * </p>
+     */
+    private DefaultExportDestination defaultExportDestination;
 
     /**
      * <p>
@@ -117,11 +123,11 @@ public class UpdateSettingsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The default storage destination for assessment reports.
+     * The default S3 destination bucket for storing assessment reports.
      * </p>
      * 
      * @param defaultAssessmentReportsDestination
-     *        The default storage destination for assessment reports.
+     *        The default S3 destination bucket for storing assessment reports.
      */
 
     public void setDefaultAssessmentReportsDestination(AssessmentReportsDestination defaultAssessmentReportsDestination) {
@@ -130,10 +136,10 @@ public class UpdateSettingsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The default storage destination for assessment reports.
+     * The default S3 destination bucket for storing assessment reports.
      * </p>
      * 
-     * @return The default storage destination for assessment reports.
+     * @return The default S3 destination bucket for storing assessment reports.
      */
 
     public AssessmentReportsDestination getDefaultAssessmentReportsDestination() {
@@ -142,11 +148,11 @@ public class UpdateSettingsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The default storage destination for assessment reports.
+     * The default S3 destination bucket for storing assessment reports.
      * </p>
      * 
      * @param defaultAssessmentReportsDestination
-     *        The default storage destination for assessment reports.
+     *        The default S3 destination bucket for storing assessment reports.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -452,6 +458,46 @@ public class UpdateSettingsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The default S3 destination bucket for storing evidence finder exports.
+     * </p>
+     * 
+     * @param defaultExportDestination
+     *        The default S3 destination bucket for storing evidence finder exports.
+     */
+
+    public void setDefaultExportDestination(DefaultExportDestination defaultExportDestination) {
+        this.defaultExportDestination = defaultExportDestination;
+    }
+
+    /**
+     * <p>
+     * The default S3 destination bucket for storing evidence finder exports.
+     * </p>
+     * 
+     * @return The default S3 destination bucket for storing evidence finder exports.
+     */
+
+    public DefaultExportDestination getDefaultExportDestination() {
+        return this.defaultExportDestination;
+    }
+
+    /**
+     * <p>
+     * The default S3 destination bucket for storing evidence finder exports.
+     * </p>
+     * 
+     * @param defaultExportDestination
+     *        The default S3 destination bucket for storing evidence finder exports.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateSettingsRequest withDefaultExportDestination(DefaultExportDestination defaultExportDestination) {
+        setDefaultExportDestination(defaultExportDestination);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -466,15 +512,17 @@ public class UpdateSettingsRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getSnsTopic() != null)
             sb.append("SnsTopic: ").append(getSnsTopic()).append(",");
         if (getDefaultAssessmentReportsDestination() != null)
-            sb.append("DefaultAssessmentReportsDestination: ").append(getDefaultAssessmentReportsDestination()).append(",");
+            sb.append("DefaultAssessmentReportsDestination: ").append("***Sensitive Data Redacted***").append(",");
         if (getDefaultProcessOwners() != null)
-            sb.append("DefaultProcessOwners: ").append(getDefaultProcessOwners()).append(",");
+            sb.append("DefaultProcessOwners: ").append("***Sensitive Data Redacted***").append(",");
         if (getKmsKey() != null)
             sb.append("KmsKey: ").append(getKmsKey()).append(",");
         if (getEvidenceFinderEnabled() != null)
             sb.append("EvidenceFinderEnabled: ").append(getEvidenceFinderEnabled()).append(",");
         if (getDeregistrationPolicy() != null)
-            sb.append("DeregistrationPolicy: ").append(getDeregistrationPolicy());
+            sb.append("DeregistrationPolicy: ").append(getDeregistrationPolicy()).append(",");
+        if (getDefaultExportDestination() != null)
+            sb.append("DefaultExportDestination: ").append(getDefaultExportDestination());
         sb.append("}");
         return sb.toString();
     }
@@ -514,6 +562,10 @@ public class UpdateSettingsRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getDeregistrationPolicy() != null && other.getDeregistrationPolicy().equals(this.getDeregistrationPolicy()) == false)
             return false;
+        if (other.getDefaultExportDestination() == null ^ this.getDefaultExportDestination() == null)
+            return false;
+        if (other.getDefaultExportDestination() != null && other.getDefaultExportDestination().equals(this.getDefaultExportDestination()) == false)
+            return false;
         return true;
     }
 
@@ -528,6 +580,7 @@ public class UpdateSettingsRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getKmsKey() == null) ? 0 : getKmsKey().hashCode());
         hashCode = prime * hashCode + ((getEvidenceFinderEnabled() == null) ? 0 : getEvidenceFinderEnabled().hashCode());
         hashCode = prime * hashCode + ((getDeregistrationPolicy() == null) ? 0 : getDeregistrationPolicy().hashCode());
+        hashCode = prime * hashCode + ((getDefaultExportDestination() == null) ? 0 : getDefaultExportDestination().hashCode());
         return hashCode;
     }
 

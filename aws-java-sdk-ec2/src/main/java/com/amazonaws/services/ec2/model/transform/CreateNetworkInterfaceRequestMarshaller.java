@@ -73,6 +73,11 @@ public class CreateNetworkInterfaceRequestMarshaller implements Marshaller<Reque
                     request.addParameter("Ipv6Addresses." + ipv6AddressesListIndex + ".Ipv6Address",
                             StringUtils.fromString(createNetworkInterfaceRequestIpv6AddressesListValue.getIpv6Address()));
                 }
+
+                if (createNetworkInterfaceRequestIpv6AddressesListValue.getIsPrimaryIpv6() != null) {
+                    request.addParameter("Ipv6Addresses." + ipv6AddressesListIndex + ".IsPrimaryIpv6",
+                            StringUtils.fromBoolean(createNetworkInterfaceRequestIpv6AddressesListValue.getIsPrimaryIpv6()));
+                }
                 ipv6AddressesListIndex++;
             }
         }
@@ -187,6 +192,10 @@ public class CreateNetworkInterfaceRequestMarshaller implements Marshaller<Reque
         }
 
         request.addParameter("ClientToken", IdempotentUtils.resolveString(createNetworkInterfaceRequest.getClientToken()));
+
+        if (createNetworkInterfaceRequest.getEnablePrimaryIpv6() != null) {
+            request.addParameter("EnablePrimaryIpv6", StringUtils.fromBoolean(createNetworkInterfaceRequest.getEnablePrimaryIpv6()));
+        }
 
         return request;
     }

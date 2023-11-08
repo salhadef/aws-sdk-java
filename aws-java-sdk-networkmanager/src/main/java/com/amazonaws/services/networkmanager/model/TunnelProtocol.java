@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum TunnelProtocol {
 
-    GRE("GRE");
+    GRE("GRE"),
+    NO_ENCAP("NO_ENCAP");
 
     private String value;
 

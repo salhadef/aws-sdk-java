@@ -56,6 +56,25 @@ public class CanvasAppSettingsJsonUnmarshaller implements Unmarshaller<CanvasApp
                     context.nextToken();
                     canvasAppSettings.setModelRegisterSettings(ModelRegisterSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("WorkspaceSettings", targetDepth)) {
+                    context.nextToken();
+                    canvasAppSettings.setWorkspaceSettings(WorkspaceSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("IdentityProviderOAuthSettings", targetDepth)) {
+                    context.nextToken();
+                    canvasAppSettings.setIdentityProviderOAuthSettings(new ListUnmarshaller<IdentityProviderOAuthSetting>(
+                            IdentityProviderOAuthSettingJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("KendraSettings", targetDepth)) {
+                    context.nextToken();
+                    canvasAppSettings.setKendraSettings(KendraSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("DirectDeploySettings", targetDepth)) {
+                    context.nextToken();
+                    canvasAppSettings.setDirectDeploySettings(DirectDeploySettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

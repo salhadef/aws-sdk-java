@@ -67,6 +67,12 @@ public class RegisterApplicationRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private java.util.List<ApplicationCredential> credentials;
+    /**
+     * <p>
+     * The Amazon Resource Name of the SAP HANA database.
+     * </p>
+     */
+    private String databaseArn;
 
     /**
      * <p>
@@ -456,6 +462,46 @@ public class RegisterApplicationRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name of the SAP HANA database.
+     * </p>
+     * 
+     * @param databaseArn
+     *        The Amazon Resource Name of the SAP HANA database.
+     */
+
+    public void setDatabaseArn(String databaseArn) {
+        this.databaseArn = databaseArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name of the SAP HANA database.
+     * </p>
+     * 
+     * @return The Amazon Resource Name of the SAP HANA database.
+     */
+
+    public String getDatabaseArn() {
+        return this.databaseArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name of the SAP HANA database.
+     * </p>
+     * 
+     * @param databaseArn
+     *        The Amazon Resource Name of the SAP HANA database.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterApplicationRequest withDatabaseArn(String databaseArn) {
+        setDatabaseArn(databaseArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -480,7 +526,9 @@ public class RegisterApplicationRequest extends com.amazonaws.AmazonWebServiceRe
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getCredentials() != null)
-            sb.append("Credentials: ").append(getCredentials());
+            sb.append("Credentials: ").append(getCredentials()).append(",");
+        if (getDatabaseArn() != null)
+            sb.append("DatabaseArn: ").append(getDatabaseArn());
         sb.append("}");
         return sb.toString();
     }
@@ -523,6 +571,10 @@ public class RegisterApplicationRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getCredentials() != null && other.getCredentials().equals(this.getCredentials()) == false)
             return false;
+        if (other.getDatabaseArn() == null ^ this.getDatabaseArn() == null)
+            return false;
+        if (other.getDatabaseArn() != null && other.getDatabaseArn().equals(this.getDatabaseArn()) == false)
+            return false;
         return true;
     }
 
@@ -538,6 +590,7 @@ public class RegisterApplicationRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getSid() == null) ? 0 : getSid().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getCredentials() == null) ? 0 : getCredentials().hashCode());
+        hashCode = prime * hashCode + ((getDatabaseArn() == null) ? 0 : getDatabaseArn().hashCode());
         return hashCode;
     }
 

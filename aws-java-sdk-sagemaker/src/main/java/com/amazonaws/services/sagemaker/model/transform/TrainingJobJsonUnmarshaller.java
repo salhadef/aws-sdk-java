@@ -197,6 +197,10 @@ public class TrainingJobJsonUnmarshaller implements Unmarshaller<TrainingJob, Js
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("ProfilerConfig", targetDepth)) {
+                    context.nextToken();
+                    trainingJob.setProfilerConfig(ProfilerConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Environment", targetDepth)) {
                     context.nextToken();
                     trainingJob

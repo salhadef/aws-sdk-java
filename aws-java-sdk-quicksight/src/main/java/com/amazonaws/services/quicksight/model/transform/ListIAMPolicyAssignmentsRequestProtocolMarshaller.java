@@ -33,8 +33,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class ListIAMPolicyAssignmentsRequestProtocolMarshaller implements Marshaller<Request<ListIAMPolicyAssignmentsRequest>, ListIAMPolicyAssignmentsRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
-            .requestUri("/accounts/{AwsAccountId}/namespaces/{Namespace}/iam-policy-assignments").httpMethodName(HttpMethodName.GET)
-            .hasExplicitPayloadMember(false).hasPayloadMembers(true).serviceName("AmazonQuickSight").build();
+            .requestUri("/accounts/{AwsAccountId}/namespaces/{Namespace}/v2/iam-policy-assignments").httpMethodName(HttpMethodName.GET)
+            .hasExplicitPayloadMember(false).hasPayloadMembers(false).serviceName("AmazonQuickSight").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

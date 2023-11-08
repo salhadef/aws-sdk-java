@@ -46,7 +46,7 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
      * <ul>
      * <li>
      * <p>
-     * the AWS customer ID.
+     * the Amazon Web Services customer ID.
      * </p>
      * </li>
      * <li>
@@ -211,7 +211,7 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
      * <ul>
      * <li>
      * <p>
-     * the AWS customer ID.
+     * the Amazon Web Services customer ID.
      * </p>
      * </li>
      * <li>
@@ -236,7 +236,7 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
      *        <ul>
      *        <li>
      *        <p>
-     *        the AWS customer ID.
+     *        the Amazon Web Services customer ID.
      *        </p>
      *        </li>
      *        <li>
@@ -267,7 +267,7 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
      * <ul>
      * <li>
      * <p>
-     * the AWS customer ID.
+     * the Amazon Web Services customer ID.
      * </p>
      * </li>
      * <li>
@@ -291,7 +291,7 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
      *         <ul>
      *         <li>
      *         <p>
-     *         the AWS customer ID.
+     *         the Amazon Web Services customer ID.
      *         </p>
      *         </li>
      *         <li>
@@ -322,7 +322,7 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
      * <ul>
      * <li>
      * <p>
-     * the AWS customer ID.
+     * the Amazon Web Services customer ID.
      * </p>
      * </li>
      * <li>
@@ -347,7 +347,7 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
      *        <ul>
      *        <li>
      *        <p>
-     *        the AWS customer ID.
+     *        the Amazon Web Services customer ID.
      *        </p>
      *        </li>
      *        <li>

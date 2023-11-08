@@ -123,6 +123,19 @@ public class AbstractAmazonRoute53ResolverAsync extends AbstractAmazonRoute53Res
     }
 
     @Override
+    public java.util.concurrent.Future<CreateOutpostResolverResult> createOutpostResolverAsync(CreateOutpostResolverRequest request) {
+
+        return createOutpostResolverAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateOutpostResolverResult> createOutpostResolverAsync(CreateOutpostResolverRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateOutpostResolverRequest, CreateOutpostResolverResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateResolverEndpointResult> createResolverEndpointAsync(CreateResolverEndpointRequest request) {
 
         return createResolverEndpointAsync(request, null);
@@ -196,6 +209,19 @@ public class AbstractAmazonRoute53ResolverAsync extends AbstractAmazonRoute53Res
     @Override
     public java.util.concurrent.Future<DeleteFirewallRuleGroupResult> deleteFirewallRuleGroupAsync(DeleteFirewallRuleGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteFirewallRuleGroupRequest, DeleteFirewallRuleGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteOutpostResolverResult> deleteOutpostResolverAsync(DeleteOutpostResolverRequest request) {
+
+        return deleteOutpostResolverAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteOutpostResolverResult> deleteOutpostResolverAsync(DeleteOutpostResolverRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteOutpostResolverRequest, DeleteOutpostResolverResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -358,6 +384,19 @@ public class AbstractAmazonRoute53ResolverAsync extends AbstractAmazonRoute53Res
     @Override
     public java.util.concurrent.Future<GetFirewallRuleGroupPolicyResult> getFirewallRuleGroupPolicyAsync(GetFirewallRuleGroupPolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<GetFirewallRuleGroupPolicyRequest, GetFirewallRuleGroupPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetOutpostResolverResult> getOutpostResolverAsync(GetOutpostResolverRequest request) {
+
+        return getOutpostResolverAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetOutpostResolverResult> getOutpostResolverAsync(GetOutpostResolverRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetOutpostResolverRequest, GetOutpostResolverResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -572,6 +611,19 @@ public class AbstractAmazonRoute53ResolverAsync extends AbstractAmazonRoute53Res
     @Override
     public java.util.concurrent.Future<ListFirewallRulesResult> listFirewallRulesAsync(ListFirewallRulesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListFirewallRulesRequest, ListFirewallRulesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOutpostResolversResult> listOutpostResolversAsync(ListOutpostResolversRequest request) {
+
+        return listOutpostResolversAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOutpostResolversResult> listOutpostResolversAsync(ListOutpostResolversRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListOutpostResolversRequest, ListOutpostResolversResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -814,6 +866,19 @@ public class AbstractAmazonRoute53ResolverAsync extends AbstractAmazonRoute53Res
     public java.util.concurrent.Future<UpdateFirewallRuleGroupAssociationResult> updateFirewallRuleGroupAssociationAsync(
             UpdateFirewallRuleGroupAssociationRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateFirewallRuleGroupAssociationRequest, UpdateFirewallRuleGroupAssociationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateOutpostResolverResult> updateOutpostResolverAsync(UpdateOutpostResolverRequest request) {
+
+        return updateOutpostResolverAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateOutpostResolverResult> updateOutpostResolverAsync(UpdateOutpostResolverRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateOutpostResolverRequest, UpdateOutpostResolverResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

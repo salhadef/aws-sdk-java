@@ -54,7 +54,8 @@ public class UpdateDomainContactRequest extends com.amazonaws.AmazonWebServiceRe
     private ContactDetail techContact;
     /**
      * <p>
-     * Customer's consent for the owner change request.
+     * Customer's consent for the owner change request. Required if the domain is not free (consent price is more than
+     * $0.00).
      * </p>
      */
     private Consent consent;
@@ -221,11 +222,13 @@ public class UpdateDomainContactRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Customer's consent for the owner change request.
+     * Customer's consent for the owner change request. Required if the domain is not free (consent price is more than
+     * $0.00).
      * </p>
      * 
      * @param consent
-     *        Customer's consent for the owner change request.
+     *        Customer's consent for the owner change request. Required if the domain is not free (consent price is more
+     *        than $0.00).
      */
 
     public void setConsent(Consent consent) {
@@ -234,10 +237,12 @@ public class UpdateDomainContactRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Customer's consent for the owner change request.
+     * Customer's consent for the owner change request. Required if the domain is not free (consent price is more than
+     * $0.00).
      * </p>
      * 
-     * @return Customer's consent for the owner change request.
+     * @return Customer's consent for the owner change request. Required if the domain is not free (consent price is
+     *         more than $0.00).
      */
 
     public Consent getConsent() {
@@ -246,11 +251,13 @@ public class UpdateDomainContactRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Customer's consent for the owner change request.
+     * Customer's consent for the owner change request. Required if the domain is not free (consent price is more than
+     * $0.00).
      * </p>
      * 
      * @param consent
-     *        Customer's consent for the owner change request.
+     *        Customer's consent for the owner change request. Required if the domain is not free (consent price is more
+     *        than $0.00).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -33,6 +33,8 @@ public class ClaimGameServerRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GameServerId").build();
     private static final MarshallingInfo<String> GAMESERVERDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GameServerData").build();
+    private static final MarshallingInfo<StructuredPojo> FILTEROPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FilterOption").build();
 
     private static final ClaimGameServerRequestMarshaller instance = new ClaimGameServerRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class ClaimGameServerRequestMarshaller {
             protocolMarshaller.marshall(claimGameServerRequest.getGameServerGroupName(), GAMESERVERGROUPNAME_BINDING);
             protocolMarshaller.marshall(claimGameServerRequest.getGameServerId(), GAMESERVERID_BINDING);
             protocolMarshaller.marshall(claimGameServerRequest.getGameServerData(), GAMESERVERDATA_BINDING);
+            protocolMarshaller.marshall(claimGameServerRequest.getFilterOption(), FILTEROPTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -78,6 +78,14 @@ public class SensorJsonUnmarshaller implements Unmarshaller<Sensor, JsonUnmarsha
                     context.nextToken();
                     sensor.setMax(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
+                if (context.testExpression("deprecationMessage", targetDepth)) {
+                    context.nextToken();
+                    sensor.setDeprecationMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("comment", targetDepth)) {
+                    context.nextToken();
+                    sensor.setComment(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

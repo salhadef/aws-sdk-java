@@ -47,7 +47,7 @@ public class EventFilter implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<String> eventTypeCodes;
     /**
      * <p>
-     * The Amazon Web Services services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.
+     * The Amazon Web Services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.
      * </p>
      */
     private java.util.List<String> services;
@@ -277,11 +277,10 @@ public class EventFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Web Services services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.
+     * The Amazon Web Services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.
      * </p>
      * 
-     * @return The Amazon Web Services services associated with the event. For example, <code>EC2</code>,
-     *         <code>RDS</code>.
+     * @return The Amazon Web Services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.
      */
 
     public java.util.List<String> getServices() {
@@ -290,12 +289,11 @@ public class EventFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Web Services services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.
+     * The Amazon Web Services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.
      * </p>
      * 
      * @param services
-     *        The Amazon Web Services services associated with the event. For example, <code>EC2</code>,
-     *        <code>RDS</code>.
+     *        The Amazon Web Services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.
      */
 
     public void setServices(java.util.Collection<String> services) {
@@ -309,7 +307,7 @@ public class EventFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Web Services services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.
+     * The Amazon Web Services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -318,8 +316,7 @@ public class EventFilter implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param services
-     *        The Amazon Web Services services associated with the event. For example, <code>EC2</code>,
-     *        <code>RDS</code>.
+     *        The Amazon Web Services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -335,12 +332,11 @@ public class EventFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Web Services services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.
+     * The Amazon Web Services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.
      * </p>
      * 
      * @param services
-     *        The Amazon Web Services services associated with the event. For example, <code>EC2</code>,
-     *        <code>RDS</code>.
+     *        The Amazon Web Services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

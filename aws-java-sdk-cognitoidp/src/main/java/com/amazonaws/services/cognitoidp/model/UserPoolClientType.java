@@ -54,13 +54,15 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
     private String clientSecret;
     /**
      * <p>
-     * The date the user pool client was last modified.
+     * The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when
+     * the item was modified.
      * </p>
      */
     private java.util.Date lastModifiedDate;
     /**
      * <p>
-     * The date the user pool client was created.
+     * The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when
+     * the item was created.
      * </p>
      */
     private java.util.Date creationDate;
@@ -117,7 +119,7 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
      * <code>hours</code>, your user can authenticate their session with their ID token for 10 hours.
      * </p>
      * <p>
-     * The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is
+     * The default time unit for <code>IdTokenValidity</code> in an API request is hours. <i>Valid range</i> is
      * displayed below in seconds.
      * </p>
      * <p>
@@ -321,8 +323,41 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
     private java.util.List<String> allowedOAuthScopes;
     /**
      * <p>
-     * Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito user
-     * pools.
+     * Set to <code>true</code> to use OAuth 2.0 features in your user pool app client.
+     * </p>
+     * <p>
+     * <code>AllowedOAuthFlowsUserPoolClient</code> must be <code>true</code> before you can configure the following
+     * features in your app client.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CallBackURLs</code>: Callback URLs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LogoutURLs</code>: Sign-out redirect URLs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and client credentials OAuth 2.0
+     * grants.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To use OAuth 2.0 features, configure one of these features in the Amazon Cognito console or set
+     * <code>AllowedOAuthFlowsUserPoolClient</code> to <code>true</code> in a <code>CreateUserPoolClient</code> or
+     * <code>UpdateUserPoolClient</code> API request. If you don't set a value for
+     * <code>AllowedOAuthFlowsUserPoolClient</code> in a request with the CLI or SDKs, it defaults to <code>false</code>
+     * .
      * </p>
      */
     private Boolean allowedOAuthFlowsUserPoolClient;
@@ -568,11 +603,13 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The date the user pool client was last modified.
+     * The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when
+     * the item was modified.
      * </p>
      * 
      * @param lastModifiedDate
-     *        The date the user pool client was last modified.
+     *        The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     *        format, when the item was modified.
      */
 
     public void setLastModifiedDate(java.util.Date lastModifiedDate) {
@@ -581,10 +618,12 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The date the user pool client was last modified.
+     * The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when
+     * the item was modified.
      * </p>
      * 
-     * @return The date the user pool client was last modified.
+     * @return The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     *         format, when the item was modified.
      */
 
     public java.util.Date getLastModifiedDate() {
@@ -593,11 +632,13 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The date the user pool client was last modified.
+     * The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when
+     * the item was modified.
      * </p>
      * 
      * @param lastModifiedDate
-     *        The date the user pool client was last modified.
+     *        The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     *        format, when the item was modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -608,11 +649,13 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The date the user pool client was created.
+     * The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when
+     * the item was created.
      * </p>
      * 
      * @param creationDate
-     *        The date the user pool client was created.
+     *        The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     *        format, when the item was created.
      */
 
     public void setCreationDate(java.util.Date creationDate) {
@@ -621,10 +664,12 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The date the user pool client was created.
+     * The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when
+     * the item was created.
      * </p>
      * 
-     * @return The date the user pool client was created.
+     * @return The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     *         format, when the item was created.
      */
 
     public java.util.Date getCreationDate() {
@@ -633,11 +678,13 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The date the user pool client was created.
+     * The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when
+     * the item was created.
      * </p>
      * 
      * @param creationDate
-     *        The date the user pool client was created.
+     *        The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     *        format, when the item was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -920,7 +967,7 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
      * <code>hours</code>, your user can authenticate their session with their ID token for 10 hours.
      * </p>
      * <p>
-     * The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is
+     * The default time unit for <code>IdTokenValidity</code> in an API request is hours. <i>Valid range</i> is
      * displayed below in seconds.
      * </p>
      * <p>
@@ -937,8 +984,8 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
      *        ID token for 10 hours.
      *        </p>
      *        <p>
-     *        The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i>
-     *        is displayed below in seconds.
+     *        The default time unit for <code>IdTokenValidity</code> in an API request is hours. <i>Valid range</i> is
+     *        displayed below in seconds.
      *        </p>
      *        <p>
      *        If you don't specify otherwise in the configuration of your app client, your ID tokens are valid for one
@@ -960,7 +1007,7 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
      * <code>hours</code>, your user can authenticate their session with their ID token for 10 hours.
      * </p>
      * <p>
-     * The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is
+     * The default time unit for <code>IdTokenValidity</code> in an API request is hours. <i>Valid range</i> is
      * displayed below in seconds.
      * </p>
      * <p>
@@ -977,8 +1024,8 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
      *         their ID token for 10 hours.
      *         </p>
      *         <p>
-     *         The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i>
-     *         is displayed below in seconds.
+     *         The default time unit for <code>IdTokenValidity</code> in an API request is hours. <i>Valid range</i> is
+     *         displayed below in seconds.
      *         </p>
      *         <p>
      *         If you don't specify otherwise in the configuration of your app client, your ID tokens are valid for one
@@ -1000,7 +1047,7 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
      * <code>hours</code>, your user can authenticate their session with their ID token for 10 hours.
      * </p>
      * <p>
-     * The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is
+     * The default time unit for <code>IdTokenValidity</code> in an API request is hours. <i>Valid range</i> is
      * displayed below in seconds.
      * </p>
      * <p>
@@ -1017,8 +1064,8 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
      *        ID token for 10 hours.
      *        </p>
      *        <p>
-     *        The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i>
-     *        is displayed below in seconds.
+     *        The default time unit for <code>IdTokenValidity</code> in an API request is hours. <i>Valid range</i> is
+     *        displayed below in seconds.
      *        </p>
      *        <p>
      *        If you don't specify otherwise in the configuration of your app client, your ID tokens are valid for one
@@ -2868,13 +2915,78 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito user
-     * pools.
+     * Set to <code>true</code> to use OAuth 2.0 features in your user pool app client.
+     * </p>
+     * <p>
+     * <code>AllowedOAuthFlowsUserPoolClient</code> must be <code>true</code> before you can configure the following
+     * features in your app client.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CallBackURLs</code>: Callback URLs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LogoutURLs</code>: Sign-out redirect URLs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and client credentials OAuth 2.0
+     * grants.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To use OAuth 2.0 features, configure one of these features in the Amazon Cognito console or set
+     * <code>AllowedOAuthFlowsUserPoolClient</code> to <code>true</code> in a <code>CreateUserPoolClient</code> or
+     * <code>UpdateUserPoolClient</code> API request. If you don't set a value for
+     * <code>AllowedOAuthFlowsUserPoolClient</code> in a request with the CLI or SDKs, it defaults to <code>false</code>
+     * .
      * </p>
      * 
      * @param allowedOAuthFlowsUserPoolClient
-     *        Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito
-     *        user pools.
+     *        Set to <code>true</code> to use OAuth 2.0 features in your user pool app client.</p>
+     *        <p>
+     *        <code>AllowedOAuthFlowsUserPoolClient</code> must be <code>true</code> before you can configure the
+     *        following features in your app client.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CallBackURLs</code>: Callback URLs.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LogoutURLs</code>: Sign-out redirect URLs.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and client credentials OAuth 2.0
+     *        grants.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        To use OAuth 2.0 features, configure one of these features in the Amazon Cognito console or set
+     *        <code>AllowedOAuthFlowsUserPoolClient</code> to <code>true</code> in a <code>CreateUserPoolClient</code>
+     *        or <code>UpdateUserPoolClient</code> API request. If you don't set a value for
+     *        <code>AllowedOAuthFlowsUserPoolClient</code> in a request with the CLI or SDKs, it defaults to
+     *        <code>false</code>.
      */
 
     public void setAllowedOAuthFlowsUserPoolClient(Boolean allowedOAuthFlowsUserPoolClient) {
@@ -2883,12 +2995,77 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito user
-     * pools.
+     * Set to <code>true</code> to use OAuth 2.0 features in your user pool app client.
+     * </p>
+     * <p>
+     * <code>AllowedOAuthFlowsUserPoolClient</code> must be <code>true</code> before you can configure the following
+     * features in your app client.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CallBackURLs</code>: Callback URLs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LogoutURLs</code>: Sign-out redirect URLs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and client credentials OAuth 2.0
+     * grants.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To use OAuth 2.0 features, configure one of these features in the Amazon Cognito console or set
+     * <code>AllowedOAuthFlowsUserPoolClient</code> to <code>true</code> in a <code>CreateUserPoolClient</code> or
+     * <code>UpdateUserPoolClient</code> API request. If you don't set a value for
+     * <code>AllowedOAuthFlowsUserPoolClient</code> in a request with the CLI or SDKs, it defaults to <code>false</code>
+     * .
      * </p>
      * 
-     * @return Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito
-     *         user pools.
+     * @return Set to <code>true</code> to use OAuth 2.0 features in your user pool app client.</p>
+     *         <p>
+     *         <code>AllowedOAuthFlowsUserPoolClient</code> must be <code>true</code> before you can configure the
+     *         following features in your app client.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>CallBackURLs</code>: Callback URLs.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>LogoutURLs</code>: Sign-out redirect URLs.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and client credentials OAuth
+     *         2.0 grants.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         To use OAuth 2.0 features, configure one of these features in the Amazon Cognito console or set
+     *         <code>AllowedOAuthFlowsUserPoolClient</code> to <code>true</code> in a <code>CreateUserPoolClient</code>
+     *         or <code>UpdateUserPoolClient</code> API request. If you don't set a value for
+     *         <code>AllowedOAuthFlowsUserPoolClient</code> in a request with the CLI or SDKs, it defaults to
+     *         <code>false</code>.
      */
 
     public Boolean getAllowedOAuthFlowsUserPoolClient() {
@@ -2897,13 +3074,78 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito user
-     * pools.
+     * Set to <code>true</code> to use OAuth 2.0 features in your user pool app client.
+     * </p>
+     * <p>
+     * <code>AllowedOAuthFlowsUserPoolClient</code> must be <code>true</code> before you can configure the following
+     * features in your app client.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CallBackURLs</code>: Callback URLs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LogoutURLs</code>: Sign-out redirect URLs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and client credentials OAuth 2.0
+     * grants.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To use OAuth 2.0 features, configure one of these features in the Amazon Cognito console or set
+     * <code>AllowedOAuthFlowsUserPoolClient</code> to <code>true</code> in a <code>CreateUserPoolClient</code> or
+     * <code>UpdateUserPoolClient</code> API request. If you don't set a value for
+     * <code>AllowedOAuthFlowsUserPoolClient</code> in a request with the CLI or SDKs, it defaults to <code>false</code>
+     * .
      * </p>
      * 
      * @param allowedOAuthFlowsUserPoolClient
-     *        Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito
-     *        user pools.
+     *        Set to <code>true</code> to use OAuth 2.0 features in your user pool app client.</p>
+     *        <p>
+     *        <code>AllowedOAuthFlowsUserPoolClient</code> must be <code>true</code> before you can configure the
+     *        following features in your app client.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CallBackURLs</code>: Callback URLs.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LogoutURLs</code>: Sign-out redirect URLs.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and client credentials OAuth 2.0
+     *        grants.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        To use OAuth 2.0 features, configure one of these features in the Amazon Cognito console or set
+     *        <code>AllowedOAuthFlowsUserPoolClient</code> to <code>true</code> in a <code>CreateUserPoolClient</code>
+     *        or <code>UpdateUserPoolClient</code> API request. If you don't set a value for
+     *        <code>AllowedOAuthFlowsUserPoolClient</code> in a request with the CLI or SDKs, it defaults to
+     *        <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2914,12 +3156,77 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito user
-     * pools.
+     * Set to <code>true</code> to use OAuth 2.0 features in your user pool app client.
+     * </p>
+     * <p>
+     * <code>AllowedOAuthFlowsUserPoolClient</code> must be <code>true</code> before you can configure the following
+     * features in your app client.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CallBackURLs</code>: Callback URLs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LogoutURLs</code>: Sign-out redirect URLs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and client credentials OAuth 2.0
+     * grants.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To use OAuth 2.0 features, configure one of these features in the Amazon Cognito console or set
+     * <code>AllowedOAuthFlowsUserPoolClient</code> to <code>true</code> in a <code>CreateUserPoolClient</code> or
+     * <code>UpdateUserPoolClient</code> API request. If you don't set a value for
+     * <code>AllowedOAuthFlowsUserPoolClient</code> in a request with the CLI or SDKs, it defaults to <code>false</code>
+     * .
      * </p>
      * 
-     * @return Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito
-     *         user pools.
+     * @return Set to <code>true</code> to use OAuth 2.0 features in your user pool app client.</p>
+     *         <p>
+     *         <code>AllowedOAuthFlowsUserPoolClient</code> must be <code>true</code> before you can configure the
+     *         following features in your app client.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>CallBackURLs</code>: Callback URLs.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>LogoutURLs</code>: Sign-out redirect URLs.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and client credentials OAuth
+     *         2.0 grants.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         To use OAuth 2.0 features, configure one of these features in the Amazon Cognito console or set
+     *         <code>AllowedOAuthFlowsUserPoolClient</code> to <code>true</code> in a <code>CreateUserPoolClient</code>
+     *         or <code>UpdateUserPoolClient</code> API request. If you don't set a value for
+     *         <code>AllowedOAuthFlowsUserPoolClient</code> in a request with the CLI or SDKs, it defaults to
+     *         <code>false</code>.
      */
 
     public Boolean isAllowedOAuthFlowsUserPoolClient() {

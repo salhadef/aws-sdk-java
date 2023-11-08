@@ -22,7 +22,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Returns a filtered list of Detective or Proactive Config rules. By default, if the filter is not defined, this API
  * returns an unfiltered list. For more information on Detective or Proactive Config rules, see <a
  * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config-rules.html"> <b>Evaluation Mode</b>
- * </a> in the Config Developer Guide.
+ * </a> in the <i>Config Developer Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRulesFilters" target="_top">AWS

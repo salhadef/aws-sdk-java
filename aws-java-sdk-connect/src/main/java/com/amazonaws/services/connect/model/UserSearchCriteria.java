@@ -50,6 +50,12 @@ public class UserSearchCriteria implements Serializable, Cloneable, StructuredPo
      * <p>
      * A leaf node condition which can be used to specify a string condition.
      * </p>
+     * <note>
+     * <p>
+     * The currently supported values for <code>FieldName</code> are <code>name</code>, <code>description</code>, and
+     * <code>resourceID</code>.
+     * </p>
+     * </note>
      */
     private StringCondition stringCondition;
     /**
@@ -203,9 +209,19 @@ public class UserSearchCriteria implements Serializable, Cloneable, StructuredPo
      * <p>
      * A leaf node condition which can be used to specify a string condition.
      * </p>
+     * <note>
+     * <p>
+     * The currently supported values for <code>FieldName</code> are <code>name</code>, <code>description</code>, and
+     * <code>resourceID</code>.
+     * </p>
+     * </note>
      * 
      * @param stringCondition
-     *        A leaf node condition which can be used to specify a string condition.
+     *        A leaf node condition which can be used to specify a string condition.</p> <note>
+     *        <p>
+     *        The currently supported values for <code>FieldName</code> are <code>name</code>, <code>description</code>,
+     *        and <code>resourceID</code>.
+     *        </p>
      */
 
     public void setStringCondition(StringCondition stringCondition) {
@@ -216,8 +232,18 @@ public class UserSearchCriteria implements Serializable, Cloneable, StructuredPo
      * <p>
      * A leaf node condition which can be used to specify a string condition.
      * </p>
+     * <note>
+     * <p>
+     * The currently supported values for <code>FieldName</code> are <code>name</code>, <code>description</code>, and
+     * <code>resourceID</code>.
+     * </p>
+     * </note>
      * 
-     * @return A leaf node condition which can be used to specify a string condition.
+     * @return A leaf node condition which can be used to specify a string condition.</p> <note>
+     *         <p>
+     *         The currently supported values for <code>FieldName</code> are <code>name</code>, <code>description</code>
+     *         , and <code>resourceID</code>.
+     *         </p>
      */
 
     public StringCondition getStringCondition() {
@@ -228,9 +254,19 @@ public class UserSearchCriteria implements Serializable, Cloneable, StructuredPo
      * <p>
      * A leaf node condition which can be used to specify a string condition.
      * </p>
+     * <note>
+     * <p>
+     * The currently supported values for <code>FieldName</code> are <code>name</code>, <code>description</code>, and
+     * <code>resourceID</code>.
+     * </p>
+     * </note>
      * 
      * @param stringCondition
-     *        A leaf node condition which can be used to specify a string condition.
+     *        A leaf node condition which can be used to specify a string condition.</p> <note>
+     *        <p>
+     *        The currently supported values for <code>FieldName</code> are <code>name</code>, <code>description</code>,
+     *        and <code>resourceID</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -22,6 +22,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * An object that describes the endpoint of the signaling channel returned by the
  * <code>GetSignalingChannelEndpoint</code> API.
  * </p>
+ * <p>
+ * The media server endpoint will correspond to the <code>WEBRTC</code> Protocol.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/ResourceEndpointListItem"
  *      target="_top">AWS API Documentation</a>

@@ -57,7 +57,7 @@ public class ClusterServiceConnectDefaultsRequest implements Serializable, Clone
      * Command Line Interface. Other types of instance discovery aren't used by Service Connect.
      * </p>
      * <p>
-     * If you update the service with an empty string <code>""</code> for the namespace name, the cluster configuration
+     * If you update the cluster with an empty string <code>""</code> for the namespace name, the cluster configuration
      * for Service Connect is removed. Note that the namespace will remain in Cloud Map and must be deleted separately.
      * </p>
      * <p>
@@ -85,7 +85,7 @@ public class ClusterServiceConnectDefaultsRequest implements Serializable, Clone
      * Command Line Interface. Other types of instance discovery aren't used by Service Connect.
      * </p>
      * <p>
-     * If you update the service with an empty string <code>""</code> for the namespace name, the cluster configuration
+     * If you update the cluster with an empty string <code>""</code> for the namespace name, the cluster configuration
      * for Service Connect is removed. Note that the namespace will remain in Cloud Map and must be deleted separately.
      * </p>
      * <p>
@@ -110,7 +110,7 @@ public class ClusterServiceConnectDefaultsRequest implements Serializable, Clone
      *        Connect.
      *        </p>
      *        <p>
-     *        If you update the service with an empty string <code>""</code> for the namespace name, the cluster
+     *        If you update the cluster with an empty string <code>""</code> for the namespace name, the cluster
      *        configuration for Service Connect is removed. Note that the namespace will remain in Cloud Map and must be
      *        deleted separately.
      *        </p>
@@ -141,7 +141,7 @@ public class ClusterServiceConnectDefaultsRequest implements Serializable, Clone
      * Command Line Interface. Other types of instance discovery aren't used by Service Connect.
      * </p>
      * <p>
-     * If you update the service with an empty string <code>""</code> for the namespace name, the cluster configuration
+     * If you update the cluster with an empty string <code>""</code> for the namespace name, the cluster configuration
      * for Service Connect is removed. Note that the namespace will remain in Cloud Map and must be deleted separately.
      * </p>
      * <p>
@@ -165,7 +165,7 @@ public class ClusterServiceConnectDefaultsRequest implements Serializable, Clone
      *         Connect.
      *         </p>
      *         <p>
-     *         If you update the service with an empty string <code>""</code> for the namespace name, the cluster
+     *         If you update the cluster with an empty string <code>""</code> for the namespace name, the cluster
      *         configuration for Service Connect is removed. Note that the namespace will remain in Cloud Map and must
      *         be deleted separately.
      *         </p>
@@ -196,7 +196,7 @@ public class ClusterServiceConnectDefaultsRequest implements Serializable, Clone
      * Command Line Interface. Other types of instance discovery aren't used by Service Connect.
      * </p>
      * <p>
-     * If you update the service with an empty string <code>""</code> for the namespace name, the cluster configuration
+     * If you update the cluster with an empty string <code>""</code> for the namespace name, the cluster configuration
      * for Service Connect is removed. Note that the namespace will remain in Cloud Map and must be deleted separately.
      * </p>
      * <p>
@@ -221,7 +221,7 @@ public class ClusterServiceConnectDefaultsRequest implements Serializable, Clone
      *        Connect.
      *        </p>
      *        <p>
-     *        If you update the service with an empty string <code>""</code> for the namespace name, the cluster
+     *        If you update the cluster with an empty string <code>""</code> for the namespace name, the cluster
      *        configuration for Service Connect is removed. Note that the namespace will remain in Cloud Map and must be
      *        deleted separately.
      *        </p>

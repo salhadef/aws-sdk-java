@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientMutationMethods", "ClientConstructors" ],
+    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientConstructors", "ClientMutationMethods" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -6234,7 +6234,7 @@
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "AppInstanceUserArn",
-        "c2jShape" : "SensitiveChimeArn",
+        "c2jShape" : "ChimeArn",
         "deprecated" : false,
         "documentation" : "<p>The ARN of the <code>AppInstanceUser</code>.</p>",
         "endpointDiscoveryId" : false,
@@ -6274,7 +6274,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AppInstanceUserArn",
-        "sensitive" : true,
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ARN of the <code>AppInstanceUser</code>.</p>\n@param appInstanceUserArn The ARN of the <code>AppInstanceUser</code>.*/",
         "setterMethodName" : "setAppInstanceUserArn",
         "setterModel" : {
@@ -6303,7 +6303,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "EndpointId",
-        "c2jShape" : "SensitiveString64",
+        "c2jShape" : "String64",
         "deprecated" : false,
         "documentation" : "<p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>",
         "endpointDiscoveryId" : false,
@@ -6343,7 +6343,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EndpointId",
-        "sensitive" : true,
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>\n@param endpointId The unique identifier of the <code>AppInstanceUserEndpoint</code>.*/",
         "setterMethodName" : "setEndpointId",
         "setterModel" : {
@@ -6996,7 +6996,7 @@
         },
         "AppInstanceUserArn" : {
           "c2jName" : "AppInstanceUserArn",
-          "c2jShape" : "SensitiveChimeArn",
+          "c2jShape" : "ChimeArn",
           "deprecated" : false,
           "documentation" : "<p>The ARN of the <code>AppInstanceUser</code>.</p>",
           "endpointDiscoveryId" : false,
@@ -7036,7 +7036,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AppInstanceUserArn",
-          "sensitive" : true,
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ARN of the <code>AppInstanceUser</code>.</p>\n@param appInstanceUserArn The ARN of the <code>AppInstanceUser</code>.*/",
           "setterMethodName" : "setAppInstanceUserArn",
           "setterModel" : {
@@ -7206,7 +7206,7 @@
         },
         "EndpointId" : {
           "c2jName" : "EndpointId",
-          "c2jShape" : "SensitiveString64",
+          "c2jShape" : "String64",
           "deprecated" : false,
           "documentation" : "<p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>",
           "endpointDiscoveryId" : false,
@@ -7246,7 +7246,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EndpointId",
-          "sensitive" : true,
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>\n@param endpointId The unique identifier of the <code>AppInstanceUserEndpoint</code>.*/",
           "setterMethodName" : "setEndpointId",
           "setterModel" : {
@@ -7669,7 +7669,7 @@
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "AppInstanceUserArn",
-        "c2jShape" : "SensitiveChimeArn",
+        "c2jShape" : "ChimeArn",
         "deprecated" : false,
         "documentation" : "<p>The ARN of the <code>AppInstanceUser</code>.</p>",
         "endpointDiscoveryId" : false,
@@ -7709,7 +7709,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AppInstanceUserArn",
-        "sensitive" : true,
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ARN of the <code>AppInstanceUser</code>.</p>\n@param appInstanceUserArn The ARN of the <code>AppInstanceUser</code>.*/",
         "setterMethodName" : "setAppInstanceUserArn",
         "setterModel" : {
@@ -7738,7 +7738,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "EndpointId",
-        "c2jShape" : "SensitiveString64",
+        "c2jShape" : "String64",
         "deprecated" : false,
         "documentation" : "<p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>",
         "endpointDiscoveryId" : false,
@@ -7778,7 +7778,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EndpointId",
-        "sensitive" : true,
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>\n@param endpointId The unique identifier of the <code>AppInstanceUserEndpoint</code>.*/",
         "setterMethodName" : "setEndpointId",
         "setterModel" : {
@@ -8155,7 +8155,7 @@
         },
         "AppInstanceUserArn" : {
           "c2jName" : "AppInstanceUserArn",
-          "c2jShape" : "SensitiveChimeArn",
+          "c2jShape" : "ChimeArn",
           "deprecated" : false,
           "documentation" : "<p>The ARN of the <code>AppInstanceUser</code>.</p>",
           "endpointDiscoveryId" : false,
@@ -8195,7 +8195,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AppInstanceUserArn",
-          "sensitive" : true,
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ARN of the <code>AppInstanceUser</code>.</p>\n@param appInstanceUserArn The ARN of the <code>AppInstanceUser</code>.*/",
           "setterMethodName" : "setAppInstanceUserArn",
           "setterModel" : {
@@ -8225,7 +8225,7 @@
         },
         "EndpointId" : {
           "c2jName" : "EndpointId",
-          "c2jShape" : "SensitiveString64",
+          "c2jShape" : "String64",
           "deprecated" : false,
           "documentation" : "<p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>",
           "endpointDiscoveryId" : false,
@@ -8265,7 +8265,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EndpointId",
-          "sensitive" : true,
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>\n@param endpointId The unique identifier of the <code>AppInstanceUserEndpoint</code>.*/",
           "setterMethodName" : "setEndpointId",
           "setterModel" : {
@@ -15083,7 +15083,7 @@
       },
       "members" : [ {
         "c2jName" : "AppInstanceUserArn",
-        "c2jShape" : "SensitiveChimeArn",
+        "c2jShape" : "ChimeArn",
         "deprecated" : false,
         "documentation" : "<p>The ARN of the <code>AppInstanceUser</code>.</p>",
         "endpointDiscoveryId" : false,
@@ -15123,7 +15123,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AppInstanceUserArn",
-        "sensitive" : true,
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ARN of the <code>AppInstanceUser</code>.</p>\n@param appInstanceUserArn The ARN of the <code>AppInstanceUser</code>.*/",
         "setterMethodName" : "setAppInstanceUserArn",
         "setterModel" : {
@@ -15152,7 +15152,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "EndpointId",
-        "c2jShape" : "SensitiveString64",
+        "c2jShape" : "String64",
         "deprecated" : false,
         "documentation" : "<p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>",
         "endpointDiscoveryId" : false,
@@ -15192,7 +15192,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EndpointId",
-        "sensitive" : true,
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>\n@param endpointId The unique identifier of the <code>AppInstanceUserEndpoint</code>.*/",
         "setterMethodName" : "setEndpointId",
         "setterModel" : {
@@ -15223,7 +15223,7 @@
       "membersAsMap" : {
         "AppInstanceUserArn" : {
           "c2jName" : "AppInstanceUserArn",
-          "c2jShape" : "SensitiveChimeArn",
+          "c2jShape" : "ChimeArn",
           "deprecated" : false,
           "documentation" : "<p>The ARN of the <code>AppInstanceUser</code>.</p>",
           "endpointDiscoveryId" : false,
@@ -15263,7 +15263,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AppInstanceUserArn",
-          "sensitive" : true,
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ARN of the <code>AppInstanceUser</code>.</p>\n@param appInstanceUserArn The ARN of the <code>AppInstanceUser</code>.*/",
           "setterMethodName" : "setAppInstanceUserArn",
           "setterModel" : {
@@ -15293,7 +15293,7 @@
         },
         "EndpointId" : {
           "c2jName" : "EndpointId",
-          "c2jShape" : "SensitiveString64",
+          "c2jShape" : "String64",
           "deprecated" : false,
           "documentation" : "<p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>",
           "endpointDiscoveryId" : false,
@@ -15333,7 +15333,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EndpointId",
-          "sensitive" : true,
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>\n@param endpointId The unique identifier of the <code>AppInstanceUserEndpoint</code>.*/",
           "setterMethodName" : "setEndpointId",
           "setterModel" : {
@@ -16709,7 +16709,7 @@
       },
       "members" : [ {
         "c2jName" : "AppInstanceUserArn",
-        "c2jShape" : "SensitiveString1600",
+        "c2jShape" : "String1600",
         "deprecated" : false,
         "documentation" : "<p>The ARN of the <code>AppInstanceUser</code>.</p>",
         "endpointDiscoveryId" : false,
@@ -16749,7 +16749,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AppInstanceUserArn",
-        "sensitive" : true,
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ARN of the <code>AppInstanceUser</code>.</p>\n@param appInstanceUserArn The ARN of the <code>AppInstanceUser</code>.*/",
         "setterMethodName" : "setAppInstanceUserArn",
         "setterModel" : {
@@ -16778,7 +16778,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "EndpointId",
-        "c2jShape" : "SensitiveString64",
+        "c2jShape" : "String64",
         "deprecated" : false,
         "documentation" : "<p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>",
         "endpointDiscoveryId" : false,
@@ -16818,7 +16818,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EndpointId",
-        "sensitive" : true,
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>\n@param endpointId The unique identifier of the <code>AppInstanceUserEndpoint</code>.*/",
         "setterMethodName" : "setEndpointId",
         "setterModel" : {
@@ -16849,7 +16849,7 @@
       "membersAsMap" : {
         "AppInstanceUserArn" : {
           "c2jName" : "AppInstanceUserArn",
-          "c2jShape" : "SensitiveString1600",
+          "c2jShape" : "String1600",
           "deprecated" : false,
           "documentation" : "<p>The ARN of the <code>AppInstanceUser</code>.</p>",
           "endpointDiscoveryId" : false,
@@ -16889,7 +16889,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AppInstanceUserArn",
-          "sensitive" : true,
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ARN of the <code>AppInstanceUser</code>.</p>\n@param appInstanceUserArn The ARN of the <code>AppInstanceUser</code>.*/",
           "setterMethodName" : "setAppInstanceUserArn",
           "setterModel" : {
@@ -16919,7 +16919,7 @@
         },
         "EndpointId" : {
           "c2jName" : "EndpointId",
-          "c2jShape" : "SensitiveString64",
+          "c2jShape" : "String64",
           "deprecated" : false,
           "documentation" : "<p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>",
           "endpointDiscoveryId" : false,
@@ -16959,7 +16959,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EndpointId",
-          "sensitive" : true,
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>\n@param endpointId The unique identifier of the <code>AppInstanceUserEndpoint</code>.*/",
           "setterMethodName" : "setEndpointId",
           "setterModel" : {
@@ -19783,6 +19783,329 @@
       },
       "wrapper" : false
     },
+    "InvokedBy" : {
+      "c2jName" : "InvokedBy",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>Specifies the type of message that triggers a bot.</p>",
+      "endpointDiscoveryMembers" : null,
+      "enums" : null,
+      "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.chimesdkidentity.model.InvokedBy",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "StandardMessages",
+        "c2jShape" : "StandardMessages",
+        "deprecated" : false,
+        "documentation" : "<p>Sets standard messages as the bot trigger. For standard messages:</p> <ul> <li> <p> <code>ALL</code>: The bot processes all standard messages.</p> </li> <li> <p> <code>AUTO</code>: The bot responds to ALL messages when the channel has one other non-hidden member, and responds to MENTIONS when the channel has more than one other non-hidden member.</p> </li> <li> <p> <code>MENTIONS</code>: The bot processes all standard messages that have a message attribute with <code>CHIME.mentions</code> and a value of the bot ARN.</p> </li> <li> <p> <code>NONE</code>: The bot processes no standard messages.</p> </li> </ul>",
+        "endpointDiscoveryId" : false,
+        "enumType" : "StandardMessages",
+        "fluentSetterDocumentation" : "/**<p>Sets standard messages as the bot trigger. For standard messages:</p> <ul> <li> <p> <code>ALL</code>: The bot processes all standard messages.</p> </li> <li> <p> <code>AUTO</code>: The bot responds to ALL messages when the channel has one other non-hidden member, and responds to MENTIONS when the channel has more than one other non-hidden member.</p> </li> <li> <p> <code>MENTIONS</code>: The bot processes all standard messages that have a message attribute with <code>CHIME.mentions</code> and a value of the bot ARN.</p> </li> <li> <p> <code>NONE</code>: The bot processes no standard messages.</p> </li> </ul>\n@param standardMessages Sets standard messages as the bot trigger. For standard messages:</p> <ul> <li> <p> <code>ALL</code>: The bot processes all standard messages.</p> </li> <li> <p> <code>AUTO</code>: The bot responds to ALL messages when the channel has one other non-hidden member, and responds to MENTIONS when the channel has more than one other non-hidden member.</p> </li> <li> <p> <code>MENTIONS</code>: The bot processes all standard messages that have a message attribute with <code>CHIME.mentions</code> and a value of the bot ARN.</p> </li> <li> <p> <code>NONE</code>: The bot processes no standard messages.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see StandardMessages*/",
+        "fluentSetterMethodName" : "withStandardMessages",
+        "getterDocumentation" : "/**<p>Sets standard messages as the bot trigger. For standard messages:</p> <ul> <li> <p> <code>ALL</code>: The bot processes all standard messages.</p> </li> <li> <p> <code>AUTO</code>: The bot responds to ALL messages when the channel has one other non-hidden member, and responds to MENTIONS when the channel has more than one other non-hidden member.</p> </li> <li> <p> <code>MENTIONS</code>: The bot processes all standard messages that have a message attribute with <code>CHIME.mentions</code> and a value of the bot ARN.</p> </li> <li> <p> <code>NONE</code>: The bot processes no standard messages.</p> </li> </ul>\n@return Sets standard messages as the bot trigger. For standard messages:</p> <ul> <li> <p> <code>ALL</code>: The bot processes all standard messages.</p> </li> <li> <p> <code>AUTO</code>: The bot responds to ALL messages when the channel has one other non-hidden member, and responds to MENTIONS when the channel has more than one other non-hidden member.</p> </li> <li> <p> <code>MENTIONS</code>: The bot processes all standard messages that have a message attribute with <code>CHIME.mentions</code> and a value of the bot ARN.</p> </li> <li> <p> <code>NONE</code>: The bot processes no standard messages.</p> </li>\n@see StandardMessages*/",
+        "getterMethodName" : "getStandardMessages",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "StandardMessages",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "StandardMessages",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "StandardMessages",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>Sets standard messages as the bot trigger. For standard messages:</p> <ul> <li> <p> <code>ALL</code>: The bot processes all standard messages.</p> </li> <li> <p> <code>AUTO</code>: The bot responds to ALL messages when the channel has one other non-hidden member, and responds to MENTIONS when the channel has more than one other non-hidden member.</p> </li> <li> <p> <code>MENTIONS</code>: The bot processes all standard messages that have a message attribute with <code>CHIME.mentions</code> and a value of the bot ARN.</p> </li> <li> <p> <code>NONE</code>: The bot processes no standard messages.</p> </li> </ul>\n@param standardMessages Sets standard messages as the bot trigger. For standard messages:</p> <ul> <li> <p> <code>ALL</code>: The bot processes all standard messages.</p> </li> <li> <p> <code>AUTO</code>: The bot responds to ALL messages when the channel has one other non-hidden member, and responds to MENTIONS when the channel has more than one other non-hidden member.</p> </li> <li> <p> <code>MENTIONS</code>: The bot processes all standard messages that have a message attribute with <code>CHIME.mentions</code> and a value of the bot ARN.</p> </li> <li> <p> <code>NONE</code>: The bot processes no standard messages.</p> </li>\n@see StandardMessages*/",
+        "setterMethodName" : "setStandardMessages",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "standardMessages",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Sets standard messages as the bot trigger. For standard messages:</p> <ul> <li> <p> <code>ALL</code>: The bot processes all standard messages.</p> </li> <li> <p> <code>AUTO</code>: The bot responds to ALL messages when the channel has one other non-hidden member, and responds to MENTIONS when the channel has more than one other non-hidden member.</p> </li> <li> <p> <code>MENTIONS</code>: The bot processes all standard messages that have a message attribute with <code>CHIME.mentions</code> and a value of the bot ARN.</p> </li> <li> <p> <code>NONE</code>: The bot processes no standard messages.</p> </li> </ul>\n@param standardMessages Sets standard messages as the bot trigger. For standard messages:</p> <ul> <li> <p> <code>ALL</code>: The bot processes all standard messages.</p> </li> <li> <p> <code>AUTO</code>: The bot responds to ALL messages when the channel has one other non-hidden member, and responds to MENTIONS when the channel has more than one other non-hidden member.</p> </li> <li> <p> <code>MENTIONS</code>: The bot processes all standard messages that have a message attribute with <code>CHIME.mentions</code> and a value of the bot ARN.</p> </li> <li> <p> <code>NONE</code>: The bot processes no standard messages.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see StandardMessages*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "standardMessages",
+          "variableType" : "String",
+          "documentation" : "<p>Sets standard messages as the bot trigger. For standard messages:</p> <ul> <li> <p> <code>ALL</code>: The bot processes all standard messages.</p> </li> <li> <p> <code>AUTO</code>: The bot responds to ALL messages when the channel has one other non-hidden member, and responds to MENTIONS when the channel has more than one other non-hidden member.</p> </li> <li> <p> <code>MENTIONS</code>: The bot processes all standard messages that have a message attribute with <code>CHIME.mentions</code> and a value of the bot ARN.</p> </li> <li> <p> <code>NONE</code>: The bot processes no standard messages.</p> </li> </ul>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "TargetedMessages",
+        "c2jShape" : "TargetedMessages",
+        "deprecated" : false,
+        "documentation" : "<p>Sets targeted messages as the bot trigger. For targeted messages:</p> <ul> <li> <p> <code>ALL</code>: The bot processes all <code>TargetedMessages</code> sent to it. The bot then responds with a targeted message back to the sender. </p> </li> <li> <p> <code>NONE</code>: The bot processes no targeted messages.</p> </li> </ul>",
+        "endpointDiscoveryId" : false,
+        "enumType" : "TargetedMessages",
+        "fluentSetterDocumentation" : "/**<p>Sets targeted messages as the bot trigger. For targeted messages:</p> <ul> <li> <p> <code>ALL</code>: The bot processes all <code>TargetedMessages</code> sent to it. The bot then responds with a targeted message back to the sender. </p> </li> <li> <p> <code>NONE</code>: The bot processes no targeted messages.</p> </li> </ul>\n@param targetedMessages Sets targeted messages as the bot trigger. For targeted messages:</p> <ul> <li> <p> <code>ALL</code>: The bot processes all <code>TargetedMessages</code> sent to it. The bot then responds with a targeted message back to the sender. </p> </li> <li> <p> <code>NONE</code>: The bot processes no targeted messages.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see TargetedMessages*/",
+        "fluentSetterMethodName" : "withTargetedMessages",
+        "getterDocumentation" : "/**<p>Sets targeted messages as the bot trigger. For targeted messages:</p> <ul> <li> <p> <code>ALL</code>: The bot processes all <code>TargetedMessages</code> sent to it. The bot then responds with a targeted message back to the sender. </p> </li> <li> <p> <code>NONE</code>: The bot processes no targeted messages.</p> </li> </ul>\n@return Sets targeted messages as the bot trigger. For targeted messages:</p> <ul> <li> <p> <code>ALL</code>: The bot processes all <code>TargetedMessages</code> sent to it. The bot then responds with a targeted message back to the sender. </p> </li> <li> <p> <code>NONE</code>: The bot processes no targeted messages.</p> </li>\n@see TargetedMessages*/",
+        "getterMethodName" : "getTargetedMessages",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "TargetedMessages",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "TargetedMessages",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "TargetedMessages",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>Sets targeted messages as the bot trigger. For targeted messages:</p> <ul> <li> <p> <code>ALL</code>: The bot processes all <code>TargetedMessages</code> sent to it. The bot then responds with a targeted message back to the sender. </p> </li> <li> <p> <code>NONE</code>: The bot processes no targeted messages.</p> </li> </ul>\n@param targetedMessages Sets targeted messages as the bot trigger. For targeted messages:</p> <ul> <li> <p> <code>ALL</code>: The bot processes all <code>TargetedMessages</code> sent to it. The bot then responds with a targeted message back to the sender. </p> </li> <li> <p> <code>NONE</code>: The bot processes no targeted messages.</p> </li>\n@see TargetedMessages*/",
+        "setterMethodName" : "setTargetedMessages",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "targetedMessages",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Sets targeted messages as the bot trigger. For targeted messages:</p> <ul> <li> <p> <code>ALL</code>: The bot processes all <code>TargetedMessages</code> sent to it. The bot then responds with a targeted message back to the sender. </p> </li> <li> <p> <code>NONE</code>: The bot processes no targeted messages.</p> </li> </ul>\n@param targetedMessages Sets targeted messages as the bot trigger. For targeted messages:</p> <ul> <li> <p> <code>ALL</code>: The bot processes all <code>TargetedMessages</code> sent to it. The bot then responds with a targeted message back to the sender. </p> </li> <li> <p> <code>NONE</code>: The bot processes no targeted messages.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see TargetedMessages*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "targetedMessages",
+          "variableType" : "String",
+          "documentation" : "<p>Sets targeted messages as the bot trigger. For targeted messages:</p> <ul> <li> <p> <code>ALL</code>: The bot processes all <code>TargetedMessages</code> sent to it. The bot then responds with a targeted message back to the sender. </p> </li> <li> <p> <code>NONE</code>: The bot processes no targeted messages.</p> </li> </ul>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "StandardMessages" : {
+          "c2jName" : "StandardMessages",
+          "c2jShape" : "StandardMessages",
+          "deprecated" : false,
+          "documentation" : "<p>Sets standard messages as the bot trigger. For standard messages:</p> <ul> <li> <p> <code>ALL</code>: The bot processes all standard messages.</p> </li> <li> <p> <code>AUTO</code>: The bot responds to ALL messages when the channel has one other non-hidden member, and responds to MENTIONS when the channel has more than one other non-hidden member.</p> </li> <li> <p> <code>MENTIONS</code>: The bot processes all standard messages that have a message attribute with <code>CHIME.mentions</code> and a value of the bot ARN.</p> </li> <li> <p> <code>NONE</code>: The bot processes no standard messages.</p> </li> </ul>",
+          "endpointDiscoveryId" : false,
+          "enumType" : "StandardMessages",
+          "fluentSetterDocumentation" : "/**<p>Sets standard messages as the bot trigger. For standard messages:</p> <ul> <li> <p> <code>ALL</code>: The bot processes all standard messages.</p> </li> <li> <p> <code>AUTO</code>: The bot responds to ALL messages when the channel has one other non-hidden member, and responds to MENTIONS when the channel has more than one other non-hidden member.</p> </li> <li> <p> <code>MENTIONS</code>: The bot processes all standard messages that have a message attribute with <code>CHIME.mentions</code> and a value of the bot ARN.</p> </li> <li> <p> <code>NONE</code>: The bot processes no standard messages.</p> </li> </ul>\n@param standardMessages Sets standard messages as the bot trigger. For standard messages:</p> <ul> <li> <p> <code>ALL</code>: The bot processes all standard messages.</p> </li> <li> <p> <code>AUTO</code>: The bot responds to ALL messages when the channel has one other non-hidden member, and responds to MENTIONS when the channel has more than one other non-hidden member.</p> </li> <li> <p> <code>MENTIONS</code>: The bot processes all standard messages that have a message attribute with <code>CHIME.mentions</code> and a value of the bot ARN.</p> </li> <li> <p> <code>NONE</code>: The bot processes no standard messages.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see StandardMessages*/",
+          "fluentSetterMethodName" : "withStandardMessages",
+          "getterDocumentation" : "/**<p>Sets standard messages as the bot trigger. For standard messages:</p> <ul> <li> <p> <code>ALL</code>: The bot processes all standard messages.</p> </li> <li> <p> <code>AUTO</code>: The bot responds to ALL messages when the channel has one other non-hidden member, and responds to MENTIONS when the channel has more than one other non-hidden member.</p> </li> <li> <p> <code>MENTIONS</code>: The bot processes all standard messages that have a message attribute with <code>CHIME.mentions</code> and a value of the bot ARN.</p> </li> <li> <p> <code>NONE</code>: The bot processes no standard messages.</p> </li> </ul>\n@return Sets standard messages as the bot trigger. For standard messages:</p> <ul> <li> <p> <code>ALL</code>: The bot processes all standard messages.</p> </li> <li> <p> <code>AUTO</code>: The bot responds to ALL messages when the channel has one other non-hidden member, and responds to MENTIONS when the channel has more than one other non-hidden member.</p> </li> <li> <p> <code>MENTIONS</code>: The bot processes all standard messages that have a message attribute with <code>CHIME.mentions</code> and a value of the bot ARN.</p> </li> <li> <p> <code>NONE</code>: The bot processes no standard messages.</p> </li>\n@see StandardMessages*/",
+          "getterMethodName" : "getStandardMessages",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "StandardMessages",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "StandardMessages",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "StandardMessages",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>Sets standard messages as the bot trigger. For standard messages:</p> <ul> <li> <p> <code>ALL</code>: The bot processes all standard messages.</p> </li> <li> <p> <code>AUTO</code>: The bot responds to ALL messages when the channel has one other non-hidden member, and responds to MENTIONS when the channel has more than one other non-hidden member.</p> </li> <li> <p> <code>MENTIONS</code>: The bot processes all standard messages that have a message attribute with <code>CHIME.mentions</code> and a value of the bot ARN.</p> </li> <li> <p> <code>NONE</code>: The bot processes no standard messages.</p> </li> </ul>\n@param standardMessages Sets standard messages as the bot trigger. For standard messages:</p> <ul> <li> <p> <code>ALL</code>: The bot processes all standard messages.</p> </li> <li> <p> <code>AUTO</code>: The bot responds to ALL messages when the channel has one other non-hidden member, and responds to MENTIONS when the channel has more than one other non-hidden member.</p> </li> <li> <p> <code>MENTIONS</code>: The bot processes all standard messages that have a message attribute with <code>CHIME.mentions</code> and a value of the bot ARN.</p> </li> <li> <p> <code>NONE</code>: The bot processes no standard messages.</p> </li>\n@see StandardMessages*/",
+          "setterMethodName" : "setStandardMessages",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "standardMessages",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Sets standard messages as the bot trigger. For standard messages:</p> <ul> <li> <p> <code>ALL</code>: The bot processes all standard messages.</p> </li> <li> <p> <code>AUTO</code>: The bot responds to ALL messages when the channel has one other non-hidden member, and responds to MENTIONS when the channel has more than one other non-hidden member.</p> </li> <li> <p> <code>MENTIONS</code>: The bot processes all standard messages that have a message attribute with <code>CHIME.mentions</code> and a value of the bot ARN.</p> </li> <li> <p> <code>NONE</code>: The bot processes no standard messages.</p> </li> </ul>\n@param standardMessages Sets standard messages as the bot trigger. For standard messages:</p> <ul> <li> <p> <code>ALL</code>: The bot processes all standard messages.</p> </li> <li> <p> <code>AUTO</code>: The bot responds to ALL messages when the channel has one other non-hidden member, and responds to MENTIONS when the channel has more than one other non-hidden member.</p> </li> <li> <p> <code>MENTIONS</code>: The bot processes all standard messages that have a message attribute with <code>CHIME.mentions</code> and a value of the bot ARN.</p> </li> <li> <p> <code>NONE</code>: The bot processes no standard messages.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see StandardMessages*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "standardMessages",
+            "variableType" : "String",
+            "documentation" : "<p>Sets standard messages as the bot trigger. For standard messages:</p> <ul> <li> <p> <code>ALL</code>: The bot processes all standard messages.</p> </li> <li> <p> <code>AUTO</code>: The bot responds to ALL messages when the channel has one other non-hidden member, and responds to MENTIONS when the channel has more than one other non-hidden member.</p> </li> <li> <p> <code>MENTIONS</code>: The bot processes all standard messages that have a message attribute with <code>CHIME.mentions</code> and a value of the bot ARN.</p> </li> <li> <p> <code>NONE</code>: The bot processes no standard messages.</p> </li> </ul>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "TargetedMessages" : {
+          "c2jName" : "TargetedMessages",
+          "c2jShape" : "TargetedMessages",
+          "deprecated" : false,
+          "documentation" : "<p>Sets targeted messages as the bot trigger. For targeted messages:</p> <ul> <li> <p> <code>ALL</code>: The bot processes all <code>TargetedMessages</code> sent to it. The bot then responds with a targeted message back to the sender. </p> </li> <li> <p> <code>NONE</code>: The bot processes no targeted messages.</p> </li> </ul>",
+          "endpointDiscoveryId" : false,
+          "enumType" : "TargetedMessages",
+          "fluentSetterDocumentation" : "/**<p>Sets targeted messages as the bot trigger. For targeted messages:</p> <ul> <li> <p> <code>ALL</code>: The bot processes all <code>TargetedMessages</code> sent to it. The bot then responds with a targeted message back to the sender. </p> </li> <li> <p> <code>NONE</code>: The bot processes no targeted messages.</p> </li> </ul>\n@param targetedMessages Sets targeted messages as the bot trigger. For targeted messages:</p> <ul> <li> <p> <code>ALL</code>: The bot processes all <code>TargetedMessages</code> sent to it. The bot then responds with a targeted message back to the sender. </p> </li> <li> <p> <code>NONE</code>: The bot processes no targeted messages.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see TargetedMessages*/",
+          "fluentSetterMethodName" : "withTargetedMessages",
+          "getterDocumentation" : "/**<p>Sets targeted messages as the bot trigger. For targeted messages:</p> <ul> <li> <p> <code>ALL</code>: The bot processes all <code>TargetedMessages</code> sent to it. The bot then responds with a targeted message back to the sender. </p> </li> <li> <p> <code>NONE</code>: The bot processes no targeted messages.</p> </li> </ul>\n@return Sets targeted messages as the bot trigger. For targeted messages:</p> <ul> <li> <p> <code>ALL</code>: The bot processes all <code>TargetedMessages</code> sent to it. The bot then responds with a targeted message back to the sender. </p> </li> <li> <p> <code>NONE</code>: The bot processes no targeted messages.</p> </li>\n@see TargetedMessages*/",
+          "getterMethodName" : "getTargetedMessages",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "TargetedMessages",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "TargetedMessages",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "TargetedMessages",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>Sets targeted messages as the bot trigger. For targeted messages:</p> <ul> <li> <p> <code>ALL</code>: The bot processes all <code>TargetedMessages</code> sent to it. The bot then responds with a targeted message back to the sender. </p> </li> <li> <p> <code>NONE</code>: The bot processes no targeted messages.</p> </li> </ul>\n@param targetedMessages Sets targeted messages as the bot trigger. For targeted messages:</p> <ul> <li> <p> <code>ALL</code>: The bot processes all <code>TargetedMessages</code> sent to it. The bot then responds with a targeted message back to the sender. </p> </li> <li> <p> <code>NONE</code>: The bot processes no targeted messages.</p> </li>\n@see TargetedMessages*/",
+          "setterMethodName" : "setTargetedMessages",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "targetedMessages",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Sets targeted messages as the bot trigger. For targeted messages:</p> <ul> <li> <p> <code>ALL</code>: The bot processes all <code>TargetedMessages</code> sent to it. The bot then responds with a targeted message back to the sender. </p> </li> <li> <p> <code>NONE</code>: The bot processes no targeted messages.</p> </li> </ul>\n@param targetedMessages Sets targeted messages as the bot trigger. For targeted messages:</p> <ul> <li> <p> <code>ALL</code>: The bot processes all <code>TargetedMessages</code> sent to it. The bot then responds with a targeted message back to the sender. </p> </li> <li> <p> <code>NONE</code>: The bot processes no targeted messages.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see TargetedMessages*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "targetedMessages",
+            "variableType" : "String",
+            "documentation" : "<p>Sets targeted messages as the bot trigger. For targeted messages:</p> <ul> <li> <p> <code>ALL</code>: The bot processes all <code>TargetedMessages</code> sent to it. The bot then responds with a targeted message back to the sender. </p> </li> <li> <p> <code>NONE</code>: The bot processes no targeted messages.</p> </li> </ul>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "packageName" : "com.amazonaws.services.chimesdkidentity.model",
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : [ "StandardMessages", "TargetedMessages" ],
+      "shapeName" : "InvokedBy",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "InvokedBy",
+        "variableName" : "invokedBy",
+        "variableType" : "InvokedBy",
+        "documentation" : null,
+        "simpleType" : "InvokedBy",
+        "variableSetterType" : "InvokedBy"
+      },
+      "wrapper" : false
+    },
     "LexConfiguration" : {
       "c2jName" : "LexConfiguration",
       "customization" : {
@@ -19807,12 +20130,12 @@
         "c2jName" : "RespondsTo",
         "c2jShape" : "RespondsTo",
         "deprecated" : false,
-        "documentation" : "<p>Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.</p>",
+        "documentation" : "<important> <p> <b>Deprecated</b>. Use <code>InvokedBy</code> instead.</p> </important> <p>Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : "RespondsTo",
-        "fluentSetterDocumentation" : "/**<p>Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.</p>\n@param respondsTo Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.\n@return Returns a reference to this object so that method calls can be chained together.\n@see RespondsTo*/",
+        "fluentSetterDocumentation" : "/**<important> <p> <b>Deprecated</b>. Use <code>InvokedBy</code> instead.</p> </important> <p>Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.</p>\n@param respondsTo <p> <b>Deprecated</b>. Use <code>InvokedBy</code> instead.</p> </important> <p>Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.\n@return Returns a reference to this object so that method calls can be chained together.\n@see RespondsTo*/",
         "fluentSetterMethodName" : "withRespondsTo",
-        "getterDocumentation" : "/**<p>Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.</p>\n@return Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.\n@see RespondsTo*/",
+        "getterDocumentation" : "/**<important> <p> <b>Deprecated</b>. Use <code>InvokedBy</code> instead.</p> </important> <p>Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.</p>\n@return <p> <b>Deprecated</b>. Use <code>InvokedBy</code> instead.</p> </important> <p>Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.\n@see RespondsTo*/",
         "getterMethodName" : "getRespondsTo",
         "getterModel" : {
           "returnType" : "String",
@@ -19846,7 +20169,7 @@
         "marshallingType" : "STRING",
         "name" : "RespondsTo",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.</p>\n@param respondsTo Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.\n@see RespondsTo*/",
+        "setterDocumentation" : "/**<important> <p> <b>Deprecated</b>. Use <code>InvokedBy</code> instead.</p> </important> <p>Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.</p>\n@param respondsTo <p> <b>Deprecated</b>. Use <code>InvokedBy</code> instead.</p> </important> <p>Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.\n@see RespondsTo*/",
         "setterMethodName" : "setRespondsTo",
         "setterModel" : {
           "timestampFormat" : null,
@@ -19861,15 +20184,84 @@
         "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.</p>\n@param respondsTo Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.\n@return Returns a reference to this object so that method calls can be chained together.\n@see RespondsTo*/",
+        "varargSetterDocumentation" : "/**<important> <p> <b>Deprecated</b>. Use <code>InvokedBy</code> instead.</p> </important> <p>Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.</p>\n@param respondsTo <p> <b>Deprecated</b>. Use <code>InvokedBy</code> instead.</p> </important> <p>Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.\n@return Returns a reference to this object so that method calls can be chained together.\n@see RespondsTo*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "respondsTo",
           "variableType" : "String",
-          "documentation" : "<p>Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.</p>",
+          "documentation" : "<important> <p> <b>Deprecated</b>. Use <code>InvokedBy</code> instead.</p> </important> <p>Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "InvokedBy",
+        "c2jShape" : "InvokedBy",
+        "deprecated" : false,
+        "documentation" : "<p>Specifies the type of message that triggers a bot.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Specifies the type of message that triggers a bot.</p>\n@param invokedBy Specifies the type of message that triggers a bot.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withInvokedBy",
+        "getterDocumentation" : "/**<p>Specifies the type of message that triggers a bot.</p>\n@return Specifies the type of message that triggers a bot.*/",
+        "getterMethodName" : "getInvokedBy",
+        "getterModel" : {
+          "returnType" : "InvokedBy",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "InvokedBy",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "InvokedBy",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "StructuredPojo",
+        "marshallingType" : "STRUCTURED",
+        "name" : "InvokedBy",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>Specifies the type of message that triggers a bot.</p>\n@param invokedBy Specifies the type of message that triggers a bot.*/",
+        "setterMethodName" : "setInvokedBy",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "InvokedBy",
+          "variableName" : "invokedBy",
+          "variableType" : "InvokedBy",
+          "documentation" : "",
+          "simpleType" : "InvokedBy",
+          "variableSetterType" : "InvokedBy"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : false,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Specifies the type of message that triggers a bot.</p>\n@param invokedBy Specifies the type of message that triggers a bot.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "InvokedBy",
+          "variableName" : "invokedBy",
+          "variableType" : "InvokedBy",
+          "documentation" : "<p>Specifies the type of message that triggers a bot.</p>",
+          "simpleType" : "InvokedBy",
+          "variableSetterType" : "InvokedBy"
         },
         "xmlNameSpaceUri" : null
       }, {
@@ -20081,6 +20473,76 @@
         "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
+        "InvokedBy" : {
+          "c2jName" : "InvokedBy",
+          "c2jShape" : "InvokedBy",
+          "deprecated" : false,
+          "documentation" : "<p>Specifies the type of message that triggers a bot.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Specifies the type of message that triggers a bot.</p>\n@param invokedBy Specifies the type of message that triggers a bot.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withInvokedBy",
+          "getterDocumentation" : "/**<p>Specifies the type of message that triggers a bot.</p>\n@return Specifies the type of message that triggers a bot.*/",
+          "getterMethodName" : "getInvokedBy",
+          "getterModel" : {
+            "returnType" : "InvokedBy",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "InvokedBy",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "InvokedBy",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "StructuredPojo",
+          "marshallingType" : "STRUCTURED",
+          "name" : "InvokedBy",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>Specifies the type of message that triggers a bot.</p>\n@param invokedBy Specifies the type of message that triggers a bot.*/",
+          "setterMethodName" : "setInvokedBy",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "InvokedBy",
+            "variableName" : "invokedBy",
+            "variableType" : "InvokedBy",
+            "documentation" : "",
+            "simpleType" : "InvokedBy",
+            "variableSetterType" : "InvokedBy"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : false,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Specifies the type of message that triggers a bot.</p>\n@param invokedBy Specifies the type of message that triggers a bot.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "InvokedBy",
+            "variableName" : "invokedBy",
+            "variableType" : "InvokedBy",
+            "documentation" : "<p>Specifies the type of message that triggers a bot.</p>",
+            "simpleType" : "InvokedBy",
+            "variableSetterType" : "InvokedBy"
+          },
+          "xmlNameSpaceUri" : null
+        },
         "LexBotAliasArn" : {
           "c2jName" : "LexBotAliasArn",
           "c2jShape" : "LexBotAliasArn",
@@ -20225,12 +20687,12 @@
           "c2jName" : "RespondsTo",
           "c2jShape" : "RespondsTo",
           "deprecated" : false,
-          "documentation" : "<p>Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.</p>",
+          "documentation" : "<important> <p> <b>Deprecated</b>. Use <code>InvokedBy</code> instead.</p> </important> <p>Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : "RespondsTo",
-          "fluentSetterDocumentation" : "/**<p>Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.</p>\n@param respondsTo Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.\n@return Returns a reference to this object so that method calls can be chained together.\n@see RespondsTo*/",
+          "fluentSetterDocumentation" : "/**<important> <p> <b>Deprecated</b>. Use <code>InvokedBy</code> instead.</p> </important> <p>Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.</p>\n@param respondsTo <p> <b>Deprecated</b>. Use <code>InvokedBy</code> instead.</p> </important> <p>Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.\n@return Returns a reference to this object so that method calls can be chained together.\n@see RespondsTo*/",
           "fluentSetterMethodName" : "withRespondsTo",
-          "getterDocumentation" : "/**<p>Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.</p>\n@return Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.\n@see RespondsTo*/",
+          "getterDocumentation" : "/**<important> <p> <b>Deprecated</b>. Use <code>InvokedBy</code> instead.</p> </important> <p>Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.</p>\n@return <p> <b>Deprecated</b>. Use <code>InvokedBy</code> instead.</p> </important> <p>Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.\n@see RespondsTo*/",
           "getterMethodName" : "getRespondsTo",
           "getterModel" : {
             "returnType" : "String",
@@ -20264,7 +20726,7 @@
           "marshallingType" : "STRING",
           "name" : "RespondsTo",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.</p>\n@param respondsTo Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.\n@see RespondsTo*/",
+          "setterDocumentation" : "/**<important> <p> <b>Deprecated</b>. Use <code>InvokedBy</code> instead.</p> </important> <p>Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.</p>\n@param respondsTo <p> <b>Deprecated</b>. Use <code>InvokedBy</code> instead.</p> </important> <p>Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.\n@see RespondsTo*/",
           "setterMethodName" : "setRespondsTo",
           "setterModel" : {
             "timestampFormat" : null,
@@ -20279,13 +20741,13 @@
           "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.</p>\n@param respondsTo Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.\n@return Returns a reference to this object so that method calls can be chained together.\n@see RespondsTo*/",
+          "varargSetterDocumentation" : "/**<important> <p> <b>Deprecated</b>. Use <code>InvokedBy</code> instead.</p> </important> <p>Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.</p>\n@param respondsTo <p> <b>Deprecated</b>. Use <code>InvokedBy</code> instead.</p> </important> <p>Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.\n@return Returns a reference to this object so that method calls can be chained together.\n@see RespondsTo*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "respondsTo",
             "variableType" : "String",
-            "documentation" : "<p>Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.</p>",
+            "documentation" : "<important> <p> <b>Deprecated</b>. Use <code>InvokedBy</code> instead.</p> </important> <p>Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -20365,7 +20827,7 @@
       "packageName" : "com.amazonaws.services.chimesdkidentity.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
-      "required" : [ "RespondsTo", "LexBotAliasArn", "LocaleId" ],
+      "required" : [ "LexBotAliasArn", "LocaleId" ],
       "shapeName" : "LexConfiguration",
       "signerAware" : false,
       "signerType" : null,
@@ -28512,7 +28974,7 @@
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "AppInstanceUserArn",
-        "c2jShape" : "SensitiveChimeArn",
+        "c2jShape" : "ChimeArn",
         "deprecated" : false,
         "documentation" : "<p>The ARN of the <code>AppInstanceUser</code>.</p>",
         "endpointDiscoveryId" : false,
@@ -28552,7 +29014,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AppInstanceUserArn",
-        "sensitive" : true,
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ARN of the <code>AppInstanceUser</code>.</p>\n@param appInstanceUserArn The ARN of the <code>AppInstanceUser</code>.*/",
         "setterMethodName" : "setAppInstanceUserArn",
         "setterModel" : {
@@ -28581,7 +29043,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "EndpointId",
-        "c2jShape" : "SensitiveString64",
+        "c2jShape" : "String64",
         "deprecated" : false,
         "documentation" : "<p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>",
         "endpointDiscoveryId" : false,
@@ -28621,7 +29083,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EndpointId",
-        "sensitive" : true,
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>\n@param endpointId The unique identifier of the <code>AppInstanceUserEndpoint</code>.*/",
         "setterMethodName" : "setEndpointId",
         "setterModel" : {
@@ -28652,7 +29114,7 @@
       "membersAsMap" : {
         "AppInstanceUserArn" : {
           "c2jName" : "AppInstanceUserArn",
-          "c2jShape" : "SensitiveChimeArn",
+          "c2jShape" : "ChimeArn",
           "deprecated" : false,
           "documentation" : "<p>The ARN of the <code>AppInstanceUser</code>.</p>",
           "endpointDiscoveryId" : false,
@@ -28692,7 +29154,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AppInstanceUserArn",
-          "sensitive" : true,
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ARN of the <code>AppInstanceUser</code>.</p>\n@param appInstanceUserArn The ARN of the <code>AppInstanceUser</code>.*/",
           "setterMethodName" : "setAppInstanceUserArn",
           "setterModel" : {
@@ -28722,7 +29184,7 @@
         },
         "EndpointId" : {
           "c2jName" : "EndpointId",
-          "c2jShape" : "SensitiveString64",
+          "c2jShape" : "String64",
           "deprecated" : false,
           "documentation" : "<p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>",
           "endpointDiscoveryId" : false,
@@ -28762,7 +29224,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EndpointId",
-          "sensitive" : true,
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>\n@param endpointId The unique identifier of the <code>AppInstanceUserEndpoint</code>.*/",
           "setterMethodName" : "setEndpointId",
           "setterModel" : {
@@ -29400,6 +29862,62 @@
         "documentation" : null,
         "simpleType" : "ServiceUnavailableException",
         "variableSetterType" : "ServiceUnavailableException"
+      },
+      "wrapper" : false
+    },
+    "StandardMessages" : {
+      "c2jName" : "StandardMessages",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "endpointDiscoveryMembers" : null,
+      "enums" : [ {
+        "name" : "AUTO",
+        "value" : "AUTO"
+      }, {
+        "name" : "ALL",
+        "value" : "ALL"
+      }, {
+        "name" : "MENTIONS",
+        "value" : "MENTIONS"
+      }, {
+        "name" : "NONE",
+        "value" : "NONE"
+      } ],
+      "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.chimesdkidentity.enum.StandardMessages",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.chimesdkidentity.enum",
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : [ ],
+      "shapeName" : "StandardMessages",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "StandardMessages",
+        "variableName" : "standardMessages",
+        "variableType" : "StandardMessages",
+        "documentation" : null,
+        "simpleType" : "StandardMessages",
+        "variableSetterType" : "StandardMessages"
       },
       "wrapper" : false
     },
@@ -30262,6 +30780,56 @@
         "documentation" : null,
         "simpleType" : "TagResourceResult",
         "variableSetterType" : "TagResourceResult"
+      },
+      "wrapper" : false
+    },
+    "TargetedMessages" : {
+      "c2jName" : "TargetedMessages",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "endpointDiscoveryMembers" : null,
+      "enums" : [ {
+        "name" : "ALL",
+        "value" : "ALL"
+      }, {
+        "name" : "NONE",
+        "value" : "NONE"
+      } ],
+      "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.chimesdkidentity.enum.TargetedMessages",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.chimesdkidentity.enum",
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : [ ],
+      "shapeName" : "TargetedMessages",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "TargetedMessages",
+        "variableName" : "targetedMessages",
+        "variableType" : "TargetedMessages",
+        "documentation" : null,
+        "simpleType" : "TargetedMessages",
+        "variableSetterType" : "TargetedMessages"
       },
       "wrapper" : false
     },
@@ -31400,6 +31968,75 @@
           "variableSetterType" : "String"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "Configuration",
+        "c2jShape" : "Configuration",
+        "deprecated" : false,
+        "documentation" : "<p>The configuration for the bot update.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The configuration for the bot update.</p>\n@param configuration The configuration for the bot update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withConfiguration",
+        "getterDocumentation" : "/**<p>The configuration for the bot update.</p>\n@return The configuration for the bot update.*/",
+        "getterMethodName" : "getConfiguration",
+        "getterModel" : {
+          "returnType" : "Configuration",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "Configuration",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "Configuration",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "StructuredPojo",
+        "marshallingType" : "STRUCTURED",
+        "name" : "Configuration",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The configuration for the bot update.</p>\n@param configuration The configuration for the bot update.*/",
+        "setterMethodName" : "setConfiguration",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Configuration",
+          "variableName" : "configuration",
+          "variableType" : "Configuration",
+          "documentation" : "",
+          "simpleType" : "Configuration",
+          "variableSetterType" : "Configuration"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : false,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The configuration for the bot update.</p>\n@param configuration The configuration for the bot update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Configuration",
+          "variableName" : "configuration",
+          "variableType" : "Configuration",
+          "documentation" : "<p>The configuration for the bot update.</p>",
+          "simpleType" : "Configuration",
+          "variableSetterType" : "Configuration"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "AppInstanceBotArn" : {
@@ -31469,6 +32106,76 @@
             "documentation" : "<p>The ARN of the <code>AppInstanceBot</code>.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "Configuration" : {
+          "c2jName" : "Configuration",
+          "c2jShape" : "Configuration",
+          "deprecated" : false,
+          "documentation" : "<p>The configuration for the bot update.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The configuration for the bot update.</p>\n@param configuration The configuration for the bot update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withConfiguration",
+          "getterDocumentation" : "/**<p>The configuration for the bot update.</p>\n@return The configuration for the bot update.*/",
+          "getterMethodName" : "getConfiguration",
+          "getterModel" : {
+            "returnType" : "Configuration",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "Configuration",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "Configuration",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "StructuredPojo",
+          "marshallingType" : "STRUCTURED",
+          "name" : "Configuration",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The configuration for the bot update.</p>\n@param configuration The configuration for the bot update.*/",
+          "setterMethodName" : "setConfiguration",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Configuration",
+            "variableName" : "configuration",
+            "variableType" : "Configuration",
+            "documentation" : "",
+            "simpleType" : "Configuration",
+            "variableSetterType" : "Configuration"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : false,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The configuration for the bot update.</p>\n@param configuration The configuration for the bot update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Configuration",
+            "variableName" : "configuration",
+            "variableType" : "Configuration",
+            "documentation" : "<p>The configuration for the bot update.</p>",
+            "simpleType" : "Configuration",
+            "variableSetterType" : "Configuration"
           },
           "xmlNameSpaceUri" : null
         },
@@ -32495,7 +33202,7 @@
       },
       "members" : [ {
         "c2jName" : "AppInstanceUserArn",
-        "c2jShape" : "SensitiveChimeArn",
+        "c2jShape" : "ChimeArn",
         "deprecated" : false,
         "documentation" : "<p>The ARN of the <code>AppInstanceUser</code>.</p>",
         "endpointDiscoveryId" : false,
@@ -32535,7 +33242,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AppInstanceUserArn",
-        "sensitive" : true,
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ARN of the <code>AppInstanceUser</code>.</p>\n@param appInstanceUserArn The ARN of the <code>AppInstanceUser</code>.*/",
         "setterMethodName" : "setAppInstanceUserArn",
         "setterModel" : {
@@ -32564,7 +33271,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "EndpointId",
-        "c2jShape" : "SensitiveString64",
+        "c2jShape" : "String64",
         "deprecated" : false,
         "documentation" : "<p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>",
         "endpointDiscoveryId" : false,
@@ -32604,7 +33311,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EndpointId",
-        "sensitive" : true,
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>\n@param endpointId The unique identifier of the <code>AppInstanceUserEndpoint</code>.*/",
         "setterMethodName" : "setEndpointId",
         "setterModel" : {
@@ -32843,7 +33550,7 @@
         },
         "AppInstanceUserArn" : {
           "c2jName" : "AppInstanceUserArn",
-          "c2jShape" : "SensitiveChimeArn",
+          "c2jShape" : "ChimeArn",
           "deprecated" : false,
           "documentation" : "<p>The ARN of the <code>AppInstanceUser</code>.</p>",
           "endpointDiscoveryId" : false,
@@ -32883,7 +33590,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AppInstanceUserArn",
-          "sensitive" : true,
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ARN of the <code>AppInstanceUser</code>.</p>\n@param appInstanceUserArn The ARN of the <code>AppInstanceUser</code>.*/",
           "setterMethodName" : "setAppInstanceUserArn",
           "setterModel" : {
@@ -32913,7 +33620,7 @@
         },
         "EndpointId" : {
           "c2jName" : "EndpointId",
-          "c2jShape" : "SensitiveString64",
+          "c2jShape" : "String64",
           "deprecated" : false,
           "documentation" : "<p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>",
           "endpointDiscoveryId" : false,
@@ -32953,7 +33660,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EndpointId",
-          "sensitive" : true,
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>\n@param endpointId The unique identifier of the <code>AppInstanceUserEndpoint</code>.*/",
           "setterMethodName" : "setEndpointId",
           "setterModel" : {
@@ -33093,7 +33800,7 @@
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "AppInstanceUserArn",
-        "c2jShape" : "SensitiveChimeArn",
+        "c2jShape" : "ChimeArn",
         "deprecated" : false,
         "documentation" : "<p>The ARN of the <code>AppInstanceUser</code>.</p>",
         "endpointDiscoveryId" : false,
@@ -33133,7 +33840,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AppInstanceUserArn",
-        "sensitive" : true,
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ARN of the <code>AppInstanceUser</code>.</p>\n@param appInstanceUserArn The ARN of the <code>AppInstanceUser</code>.*/",
         "setterMethodName" : "setAppInstanceUserArn",
         "setterModel" : {
@@ -33162,7 +33869,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "EndpointId",
-        "c2jShape" : "SensitiveString64",
+        "c2jShape" : "String64",
         "deprecated" : false,
         "documentation" : "<p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>",
         "endpointDiscoveryId" : false,
@@ -33202,7 +33909,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EndpointId",
-        "sensitive" : true,
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>\n@param endpointId The unique identifier of the <code>AppInstanceUserEndpoint</code>.*/",
         "setterMethodName" : "setEndpointId",
         "setterModel" : {
@@ -33233,7 +33940,7 @@
       "membersAsMap" : {
         "AppInstanceUserArn" : {
           "c2jName" : "AppInstanceUserArn",
-          "c2jShape" : "SensitiveChimeArn",
+          "c2jShape" : "ChimeArn",
           "deprecated" : false,
           "documentation" : "<p>The ARN of the <code>AppInstanceUser</code>.</p>",
           "endpointDiscoveryId" : false,
@@ -33273,7 +33980,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AppInstanceUserArn",
-          "sensitive" : true,
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ARN of the <code>AppInstanceUser</code>.</p>\n@param appInstanceUserArn The ARN of the <code>AppInstanceUser</code>.*/",
           "setterMethodName" : "setAppInstanceUserArn",
           "setterModel" : {
@@ -33303,7 +34010,7 @@
         },
         "EndpointId" : {
           "c2jName" : "EndpointId",
-          "c2jShape" : "SensitiveString64",
+          "c2jShape" : "String64",
           "deprecated" : false,
           "documentation" : "<p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>",
           "endpointDiscoveryId" : false,
@@ -33343,7 +34050,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EndpointId",
-          "sensitive" : true,
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>\n@param endpointId The unique identifier of the <code>AppInstanceUserEndpoint</code>.*/",
           "setterMethodName" : "setEndpointId",
           "setterModel" : {
@@ -34052,6 +34759,7 @@
   },
   "exceptionUnmarshallerImpl" : null,
   "fileHeader" : "/*\n * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
+  "hasShapes" : true,
   "hasWaiters" : false,
   "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AmazonChimeSDKIdentityException",

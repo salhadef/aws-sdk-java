@@ -27,6 +27,11 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The Amazon Resource Name (ARN) that identifies the state machine.
      * </p>
+     * <p>
+     * If you specified a state machine version ARN in your request, the API returns the version ARN. The version ARN is
+     * a combination of state machine ARN and the version number separated by a colon (:). For example,
+     * <code>stateMachineARN:1</code>.
+     * </p>
      */
     private String stateMachineArn;
     /**
@@ -99,6 +104,9 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The date the state machine is created.
      * </p>
+     * <p>
+     * For a state machine version, <code>creationDate</code> is the date the version was created.
+     * </p>
      */
     private java.util.Date creationDate;
 
@@ -116,14 +124,39 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String label;
+    /**
+     * <p>
+     * The revision identifier for the state machine.
+     * </p>
+     * <p>
+     * Use the <code>revisionId</code> parameter to compare between versions of a state machine configuration used for
+     * executions without performing a diff of the properties, such as <code>definition</code> and <code>roleArn</code>.
+     * </p>
+     */
+    private String revisionId;
+    /**
+     * <p>
+     * The description of the state machine version.
+     * </p>
+     */
+    private String description;
 
     /**
      * <p>
      * The Amazon Resource Name (ARN) that identifies the state machine.
      * </p>
+     * <p>
+     * If you specified a state machine version ARN in your request, the API returns the version ARN. The version ARN is
+     * a combination of state machine ARN and the version number separated by a colon (:). For example,
+     * <code>stateMachineARN:1</code>.
+     * </p>
      * 
      * @param stateMachineArn
-     *        The Amazon Resource Name (ARN) that identifies the state machine.
+     *        The Amazon Resource Name (ARN) that identifies the state machine.</p>
+     *        <p>
+     *        If you specified a state machine version ARN in your request, the API returns the version ARN. The version
+     *        ARN is a combination of state machine ARN and the version number separated by a colon (:). For example,
+     *        <code>stateMachineARN:1</code>.
      */
 
     public void setStateMachineArn(String stateMachineArn) {
@@ -134,8 +167,17 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The Amazon Resource Name (ARN) that identifies the state machine.
      * </p>
+     * <p>
+     * If you specified a state machine version ARN in your request, the API returns the version ARN. The version ARN is
+     * a combination of state machine ARN and the version number separated by a colon (:). For example,
+     * <code>stateMachineARN:1</code>.
+     * </p>
      * 
-     * @return The Amazon Resource Name (ARN) that identifies the state machine.
+     * @return The Amazon Resource Name (ARN) that identifies the state machine.</p>
+     *         <p>
+     *         If you specified a state machine version ARN in your request, the API returns the version ARN. The
+     *         version ARN is a combination of state machine ARN and the version number separated by a colon (:). For
+     *         example, <code>stateMachineARN:1</code>.
      */
 
     public String getStateMachineArn() {
@@ -146,9 +188,18 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The Amazon Resource Name (ARN) that identifies the state machine.
      * </p>
+     * <p>
+     * If you specified a state machine version ARN in your request, the API returns the version ARN. The version ARN is
+     * a combination of state machine ARN and the version number separated by a colon (:). For example,
+     * <code>stateMachineARN:1</code>.
+     * </p>
      * 
      * @param stateMachineArn
-     *        The Amazon Resource Name (ARN) that identifies the state machine.
+     *        The Amazon Resource Name (ARN) that identifies the state machine.</p>
+     *        <p>
+     *        If you specified a state machine version ARN in your request, the API returns the version ARN. The version
+     *        ARN is a combination of state machine ARN and the version number separated by a colon (:). For example,
+     *        <code>stateMachineARN:1</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -640,9 +691,14 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The date the state machine is created.
      * </p>
+     * <p>
+     * For a state machine version, <code>creationDate</code> is the date the version was created.
+     * </p>
      * 
      * @param creationDate
-     *        The date the state machine is created.
+     *        The date the state machine is created.</p>
+     *        <p>
+     *        For a state machine version, <code>creationDate</code> is the date the version was created.
      */
 
     public void setCreationDate(java.util.Date creationDate) {
@@ -653,8 +709,13 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The date the state machine is created.
      * </p>
+     * <p>
+     * For a state machine version, <code>creationDate</code> is the date the version was created.
+     * </p>
      * 
-     * @return The date the state machine is created.
+     * @return The date the state machine is created.</p>
+     *         <p>
+     *         For a state machine version, <code>creationDate</code> is the date the version was created.
      */
 
     public java.util.Date getCreationDate() {
@@ -665,9 +726,14 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The date the state machine is created.
      * </p>
+     * <p>
+     * For a state machine version, <code>creationDate</code> is the date the version was created.
+     * </p>
      * 
      * @param creationDate
-     *        The date the state machine is created.
+     *        The date the state machine is created.</p>
+     *        <p>
+     *        For a state machine version, <code>creationDate</code> is the date the version was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -789,6 +855,110 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The revision identifier for the state machine.
+     * </p>
+     * <p>
+     * Use the <code>revisionId</code> parameter to compare between versions of a state machine configuration used for
+     * executions without performing a diff of the properties, such as <code>definition</code> and <code>roleArn</code>.
+     * </p>
+     * 
+     * @param revisionId
+     *        The revision identifier for the state machine.</p>
+     *        <p>
+     *        Use the <code>revisionId</code> parameter to compare between versions of a state machine configuration
+     *        used for executions without performing a diff of the properties, such as <code>definition</code> and
+     *        <code>roleArn</code>.
+     */
+
+    public void setRevisionId(String revisionId) {
+        this.revisionId = revisionId;
+    }
+
+    /**
+     * <p>
+     * The revision identifier for the state machine.
+     * </p>
+     * <p>
+     * Use the <code>revisionId</code> parameter to compare between versions of a state machine configuration used for
+     * executions without performing a diff of the properties, such as <code>definition</code> and <code>roleArn</code>.
+     * </p>
+     * 
+     * @return The revision identifier for the state machine.</p>
+     *         <p>
+     *         Use the <code>revisionId</code> parameter to compare between versions of a state machine configuration
+     *         used for executions without performing a diff of the properties, such as <code>definition</code> and
+     *         <code>roleArn</code>.
+     */
+
+    public String getRevisionId() {
+        return this.revisionId;
+    }
+
+    /**
+     * <p>
+     * The revision identifier for the state machine.
+     * </p>
+     * <p>
+     * Use the <code>revisionId</code> parameter to compare between versions of a state machine configuration used for
+     * executions without performing a diff of the properties, such as <code>definition</code> and <code>roleArn</code>.
+     * </p>
+     * 
+     * @param revisionId
+     *        The revision identifier for the state machine.</p>
+     *        <p>
+     *        Use the <code>revisionId</code> parameter to compare between versions of a state machine configuration
+     *        used for executions without performing a diff of the properties, such as <code>definition</code> and
+     *        <code>roleArn</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeStateMachineResult withRevisionId(String revisionId) {
+        setRevisionId(revisionId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The description of the state machine version.
+     * </p>
+     * 
+     * @param description
+     *        The description of the state machine version.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * The description of the state machine version.
+     * </p>
+     * 
+     * @return The description of the state machine version.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * The description of the state machine version.
+     * </p>
+     * 
+     * @param description
+     *        The description of the state machine version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeStateMachineResult withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -819,7 +989,11 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
         if (getTracingConfiguration() != null)
             sb.append("TracingConfiguration: ").append(getTracingConfiguration()).append(",");
         if (getLabel() != null)
-            sb.append("Label: ").append(getLabel());
+            sb.append("Label: ").append(getLabel()).append(",");
+        if (getRevisionId() != null)
+            sb.append("RevisionId: ").append(getRevisionId()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }
@@ -874,6 +1048,14 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getLabel() != null && other.getLabel().equals(this.getLabel()) == false)
             return false;
+        if (other.getRevisionId() == null ^ this.getRevisionId() == null)
+            return false;
+        if (other.getRevisionId() != null && other.getRevisionId().equals(this.getRevisionId()) == false)
+            return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
         return true;
     }
 
@@ -892,6 +1074,8 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getLoggingConfiguration() == null) ? 0 : getLoggingConfiguration().hashCode());
         hashCode = prime * hashCode + ((getTracingConfiguration() == null) ? 0 : getTracingConfiguration().hashCode());
         hashCode = prime * hashCode + ((getLabel() == null) ? 0 : getLabel().hashCode());
+        hashCode = prime * hashCode + ((getRevisionId() == null) ? 0 : getRevisionId().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         return hashCode;
     }
 

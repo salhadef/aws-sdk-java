@@ -35,7 +35,11 @@ public enum InstanceRecommendationFindingReasonCode {
     DiskIOPSOverprovisioned("DiskIOPSOverprovisioned"),
     DiskIOPSUnderprovisioned("DiskIOPSUnderprovisioned"),
     DiskThroughputOverprovisioned("DiskThroughputOverprovisioned"),
-    DiskThroughputUnderprovisioned("DiskThroughputUnderprovisioned");
+    DiskThroughputUnderprovisioned("DiskThroughputUnderprovisioned"),
+    GPUUnderprovisioned("GPUUnderprovisioned"),
+    GPUOverprovisioned("GPUOverprovisioned"),
+    GPUMemoryUnderprovisioned("GPUMemoryUnderprovisioned"),
+    GPUMemoryOverprovisioned("GPUMemoryOverprovisioned");
 
     private String value;
 

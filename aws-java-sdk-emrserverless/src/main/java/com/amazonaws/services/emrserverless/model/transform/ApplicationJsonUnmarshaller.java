@@ -123,6 +123,16 @@ public class ApplicationJsonUnmarshaller implements Unmarshaller<Application, Js
                     application.setWorkerTypeSpecifications(new MapUnmarshaller<String, WorkerTypeSpecification>(context.getUnmarshaller(String.class),
                             WorkerTypeSpecificationJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("runtimeConfiguration", targetDepth)) {
+                    context.nextToken();
+                    application.setRuntimeConfiguration(new ListUnmarshaller<Configuration>(ConfigurationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("monitoringConfiguration", targetDepth)) {
+                    context.nextToken();
+                    application.setMonitoringConfiguration(MonitoringConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

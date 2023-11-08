@@ -56,6 +56,10 @@ public class TranslationSettingsJsonUnmarshaller implements Unmarshaller<Transla
                     context.nextToken();
                     translationSettings.setProfanity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Brevity", targetDepth)) {
+                    context.nextToken();
+                    translationSettings.setBrevity(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

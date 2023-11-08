@@ -54,6 +54,8 @@ public class PipelineExecutionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ParallelismConfiguration").build();
     private static final MarshallingInfo<List> PIPELINEPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PipelineParameters").build();
+    private static final MarshallingInfo<StructuredPojo> SELECTIVEEXECUTIONCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SelectiveExecutionConfig").build();
 
     private static final PipelineExecutionMarshaller instance = new PipelineExecutionMarshaller();
 
@@ -84,6 +86,7 @@ public class PipelineExecutionMarshaller {
             protocolMarshaller.marshall(pipelineExecution.getLastModifiedBy(), LASTMODIFIEDBY_BINDING);
             protocolMarshaller.marshall(pipelineExecution.getParallelismConfiguration(), PARALLELISMCONFIGURATION_BINDING);
             protocolMarshaller.marshall(pipelineExecution.getPipelineParameters(), PIPELINEPARAMETERS_BINDING);
+            protocolMarshaller.marshall(pipelineExecution.getSelectiveExecutionConfig(), SELECTIVEEXECUTIONCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

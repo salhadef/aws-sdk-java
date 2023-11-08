@@ -48,7 +48,18 @@ public class CreateAssistantRequest extends com.amazonaws.AmazonWebServiceReques
     private String name;
     /**
      * <p>
-     * The KMS key used for encryption.
+     * The configuration information for the customer managed key used for encryption.
+     * </p>
+     * <p>
+     * The customer managed key must have a policy that allows <code>kms:CreateGrant</code> and
+     * <code> kms:DescribeKey</code> permissions to the IAM identity using the key to invoke Wisdom. To use Wisdom with
+     * chat, the key policy must also allow <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>, and
+     * <code>kms:DescribeKey</code> permissions to the <code>connect.amazonaws.com</code> service principal.
+     * </p>
+     * <p>
+     * For more information about setting up a customer managed key for Wisdom, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon Connect Wisdom for
+     * your instance</a>.
      * </p>
      */
     private ServerSideEncryptionConfiguration serverSideEncryptionConfiguration;
@@ -205,11 +216,33 @@ public class CreateAssistantRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The KMS key used for encryption.
+     * The configuration information for the customer managed key used for encryption.
+     * </p>
+     * <p>
+     * The customer managed key must have a policy that allows <code>kms:CreateGrant</code> and
+     * <code> kms:DescribeKey</code> permissions to the IAM identity using the key to invoke Wisdom. To use Wisdom with
+     * chat, the key policy must also allow <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>, and
+     * <code>kms:DescribeKey</code> permissions to the <code>connect.amazonaws.com</code> service principal.
+     * </p>
+     * <p>
+     * For more information about setting up a customer managed key for Wisdom, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon Connect Wisdom for
+     * your instance</a>.
      * </p>
      * 
      * @param serverSideEncryptionConfiguration
-     *        The KMS key used for encryption.
+     *        The configuration information for the customer managed key used for encryption. </p>
+     *        <p>
+     *        The customer managed key must have a policy that allows <code>kms:CreateGrant</code> and
+     *        <code> kms:DescribeKey</code> permissions to the IAM identity using the key to invoke Wisdom. To use
+     *        Wisdom with chat, the key policy must also allow <code>kms:Decrypt</code>,
+     *        <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions to the
+     *        <code>connect.amazonaws.com</code> service principal.
+     *        </p>
+     *        <p>
+     *        For more information about setting up a customer managed key for Wisdom, see <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon Connect
+     *        Wisdom for your instance</a>.
      */
 
     public void setServerSideEncryptionConfiguration(ServerSideEncryptionConfiguration serverSideEncryptionConfiguration) {
@@ -218,10 +251,32 @@ public class CreateAssistantRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The KMS key used for encryption.
+     * The configuration information for the customer managed key used for encryption.
+     * </p>
+     * <p>
+     * The customer managed key must have a policy that allows <code>kms:CreateGrant</code> and
+     * <code> kms:DescribeKey</code> permissions to the IAM identity using the key to invoke Wisdom. To use Wisdom with
+     * chat, the key policy must also allow <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>, and
+     * <code>kms:DescribeKey</code> permissions to the <code>connect.amazonaws.com</code> service principal.
+     * </p>
+     * <p>
+     * For more information about setting up a customer managed key for Wisdom, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon Connect Wisdom for
+     * your instance</a>.
      * </p>
      * 
-     * @return The KMS key used for encryption.
+     * @return The configuration information for the customer managed key used for encryption. </p>
+     *         <p>
+     *         The customer managed key must have a policy that allows <code>kms:CreateGrant</code> and
+     *         <code> kms:DescribeKey</code> permissions to the IAM identity using the key to invoke Wisdom. To use
+     *         Wisdom with chat, the key policy must also allow <code>kms:Decrypt</code>,
+     *         <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions to the
+     *         <code>connect.amazonaws.com</code> service principal.
+     *         </p>
+     *         <p>
+     *         For more information about setting up a customer managed key for Wisdom, see <a
+     *         href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon Connect
+     *         Wisdom for your instance</a>.
      */
 
     public ServerSideEncryptionConfiguration getServerSideEncryptionConfiguration() {
@@ -230,11 +285,33 @@ public class CreateAssistantRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The KMS key used for encryption.
+     * The configuration information for the customer managed key used for encryption.
+     * </p>
+     * <p>
+     * The customer managed key must have a policy that allows <code>kms:CreateGrant</code> and
+     * <code> kms:DescribeKey</code> permissions to the IAM identity using the key to invoke Wisdom. To use Wisdom with
+     * chat, the key policy must also allow <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>, and
+     * <code>kms:DescribeKey</code> permissions to the <code>connect.amazonaws.com</code> service principal.
+     * </p>
+     * <p>
+     * For more information about setting up a customer managed key for Wisdom, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon Connect Wisdom for
+     * your instance</a>.
      * </p>
      * 
      * @param serverSideEncryptionConfiguration
-     *        The KMS key used for encryption.
+     *        The configuration information for the customer managed key used for encryption. </p>
+     *        <p>
+     *        The customer managed key must have a policy that allows <code>kms:CreateGrant</code> and
+     *        <code> kms:DescribeKey</code> permissions to the IAM identity using the key to invoke Wisdom. To use
+     *        Wisdom with chat, the key policy must also allow <code>kms:Decrypt</code>,
+     *        <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions to the
+     *        <code>connect.amazonaws.com</code> service principal.
+     *        </p>
+     *        <p>
+     *        For more information about setting up a customer managed key for Wisdom, see <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon Connect
+     *        Wisdom for your instance</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -116,6 +116,10 @@ public class DescribeCompilationJobResultJsonUnmarshaller implements Unmarshalle
                     context.nextToken();
                     describeCompilationJobResult.setVpcConfig(NeoVpcConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("DerivedInformation", targetDepth)) {
+                    context.nextToken();
+                    describeCompilationJobResult.setDerivedInformation(DerivedInformationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

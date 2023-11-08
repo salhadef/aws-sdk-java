@@ -45,6 +45,7 @@ import com.amazonaws.services.autoscaling.waiters.AmazonAutoScalingWaiters;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.autoscaling.model.*;
+
 import com.amazonaws.services.autoscaling.model.transform.*;
 
 /**
@@ -956,8 +957,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </ol>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon EC2 Auto Scaling
-     * lifecycle hooks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/completing-lifecycle-hooks.html">Complete a lifecycle
+     * action</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param completeLifecycleActionRequest
@@ -3588,8 +3589,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * Detaches one or more traffic sources from the specified Auto Scaling group.
      * </p>
      * <p>
-     * When you detach a taffic, it enters the <code>Removing</code> state while deregistering the instances in the
-     * group. When all instances are deregistered, then you can no longer describe the traffic source using the
+     * When you detach a traffic source, it enters the <code>Removing</code> state while deregistering the instances in
+     * the group. When all instances are deregistered, then you can no longer describe the traffic source using the
      * <a>DescribeTrafficSources</a> API call. The instances continue to run.
      * </p>
      * 

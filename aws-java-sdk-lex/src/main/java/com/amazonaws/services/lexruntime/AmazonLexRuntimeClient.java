@@ -44,6 +44,7 @@ import com.amazonaws.services.lexruntime.AmazonLexRuntimeClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.lexruntime.model.*;
+
 import com.amazonaws.services.lexruntime.model.transform.*;
 
 /**

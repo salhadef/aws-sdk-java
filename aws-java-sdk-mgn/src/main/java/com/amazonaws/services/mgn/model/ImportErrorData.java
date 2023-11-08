@@ -30,6 +30,12 @@ public class ImportErrorData implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
+     * Import error data source account ID.
+     * </p>
+     */
+    private String accountID;
+    /**
+     * <p>
      * Import error data application ID.
      * </p>
      */
@@ -64,6 +70,46 @@ public class ImportErrorData implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private String waveID;
+
+    /**
+     * <p>
+     * Import error data source account ID.
+     * </p>
+     * 
+     * @param accountID
+     *        Import error data source account ID.
+     */
+
+    public void setAccountID(String accountID) {
+        this.accountID = accountID;
+    }
+
+    /**
+     * <p>
+     * Import error data source account ID.
+     * </p>
+     * 
+     * @return Import error data source account ID.
+     */
+
+    public String getAccountID() {
+        return this.accountID;
+    }
+
+    /**
+     * <p>
+     * Import error data source account ID.
+     * </p>
+     * 
+     * @param accountID
+     *        Import error data source account ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportErrorData withAccountID(String accountID) {
+        setAccountID(accountID);
+        return this;
+    }
 
     /**
      * <p>
@@ -317,6 +363,8 @@ public class ImportErrorData implements Serializable, Cloneable, StructuredPojo 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAccountID() != null)
+            sb.append("AccountID: ").append(getAccountID()).append(",");
         if (getApplicationID() != null)
             sb.append("ApplicationID: ").append(getApplicationID()).append(",");
         if (getEc2LaunchTemplateID() != null)
@@ -343,6 +391,10 @@ public class ImportErrorData implements Serializable, Cloneable, StructuredPojo 
         if (obj instanceof ImportErrorData == false)
             return false;
         ImportErrorData other = (ImportErrorData) obj;
+        if (other.getAccountID() == null ^ this.getAccountID() == null)
+            return false;
+        if (other.getAccountID() != null && other.getAccountID().equals(this.getAccountID()) == false)
+            return false;
         if (other.getApplicationID() == null ^ this.getApplicationID() == null)
             return false;
         if (other.getApplicationID() != null && other.getApplicationID().equals(this.getApplicationID()) == false)
@@ -375,6 +427,7 @@ public class ImportErrorData implements Serializable, Cloneable, StructuredPojo 
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAccountID() == null) ? 0 : getAccountID().hashCode());
         hashCode = prime * hashCode + ((getApplicationID() == null) ? 0 : getApplicationID().hashCode());
         hashCode = prime * hashCode + ((getEc2LaunchTemplateID() == null) ? 0 : getEc2LaunchTemplateID().hashCode());
         hashCode = prime * hashCode + ((getRawError() == null) ? 0 : getRawError().hashCode());

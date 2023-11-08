@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum ReplicationConfigurationEbsEncryption {
 
     DEFAULT("DEFAULT"),
-    CUSTOM("CUSTOM");
+    CUSTOM("CUSTOM"),
+    NONE("NONE");
 
     private String value;
 

@@ -44,6 +44,7 @@ import com.amazonaws.services.ec2instanceconnect.AWSEC2InstanceConnectClientBuil
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.ec2instanceconnect.model.*;
+
 import com.amazonaws.services.ec2instanceconnect.model.transform.*;
 
 /**

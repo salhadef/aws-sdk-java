@@ -122,6 +122,13 @@ public class AwsRdsDbClusterSnapshotDetailsJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     awsRdsDbClusterSnapshotDetails.setIamDatabaseAuthenticationEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("DbClusterSnapshotAttributes", targetDepth)) {
+                    context.nextToken();
+                    awsRdsDbClusterSnapshotDetails.setDbClusterSnapshotAttributes(new ListUnmarshaller<AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute>(
+                            AwsRdsDbClusterSnapshotDbClusterSnapshotAttributeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

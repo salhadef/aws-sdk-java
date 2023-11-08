@@ -58,7 +58,7 @@ public class OTAUpdateFile implements Serializable, Cloneable, StructuredPojo {
     private CodeSigning codeSigning;
     /**
      * <p>
-     * A list of name/attribute pairs.
+     * A list of name-attribute pairs. They won't be sent to devices as a part of the Job document.
      * </p>
      */
     private java.util.Map<String, String> attributes;
@@ -271,10 +271,10 @@ public class OTAUpdateFile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of name/attribute pairs.
+     * A list of name-attribute pairs. They won't be sent to devices as a part of the Job document.
      * </p>
      * 
-     * @return A list of name/attribute pairs.
+     * @return A list of name-attribute pairs. They won't be sent to devices as a part of the Job document.
      */
 
     public java.util.Map<String, String> getAttributes() {
@@ -283,11 +283,11 @@ public class OTAUpdateFile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of name/attribute pairs.
+     * A list of name-attribute pairs. They won't be sent to devices as a part of the Job document.
      * </p>
      * 
      * @param attributes
-     *        A list of name/attribute pairs.
+     *        A list of name-attribute pairs. They won't be sent to devices as a part of the Job document.
      */
 
     public void setAttributes(java.util.Map<String, String> attributes) {
@@ -296,11 +296,11 @@ public class OTAUpdateFile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of name/attribute pairs.
+     * A list of name-attribute pairs. They won't be sent to devices as a part of the Job document.
      * </p>
      * 
      * @param attributes
-     *        A list of name/attribute pairs.
+     *        A list of name-attribute pairs. They won't be sent to devices as a part of the Job document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -25,7 +25,7 @@ public class ListModelsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * An opaque pagination token indicating where to continue the listing of ML models.
+     * An opaque pagination token indicating where to continue the listing of machine learning models.
      * </p>
      */
     private String nextToken;
@@ -38,11 +38,11 @@ public class ListModelsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * An opaque pagination token indicating where to continue the listing of ML models.
+     * An opaque pagination token indicating where to continue the listing of machine learning models.
      * </p>
      * 
      * @param nextToken
-     *        An opaque pagination token indicating where to continue the listing of ML models.
+     *        An opaque pagination token indicating where to continue the listing of machine learning models.
      */
 
     public void setNextToken(String nextToken) {
@@ -51,10 +51,10 @@ public class ListModelsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * An opaque pagination token indicating where to continue the listing of ML models.
+     * An opaque pagination token indicating where to continue the listing of machine learning models.
      * </p>
      * 
-     * @return An opaque pagination token indicating where to continue the listing of ML models.
+     * @return An opaque pagination token indicating where to continue the listing of machine learning models.
      */
 
     public String getNextToken() {
@@ -63,11 +63,11 @@ public class ListModelsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * An opaque pagination token indicating where to continue the listing of ML models.
+     * An opaque pagination token indicating where to continue the listing of machine learning models.
      * </p>
      * 
      * @param nextToken
-     *        An opaque pagination token indicating where to continue the listing of ML models.
+     *        An opaque pagination token indicating where to continue the listing of machine learning models.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

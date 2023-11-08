@@ -25,18 +25,18 @@ public class UpdateSubscriberResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The account of the subscriber.
+     * The updated subscriber information.
      * </p>
      */
     private SubscriberResource subscriber;
 
     /**
      * <p>
-     * The account of the subscriber.
+     * The updated subscriber information.
      * </p>
      * 
      * @param subscriber
-     *        The account of the subscriber.
+     *        The updated subscriber information.
      */
 
     public void setSubscriber(SubscriberResource subscriber) {
@@ -45,10 +45,10 @@ public class UpdateSubscriberResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The account of the subscriber.
+     * The updated subscriber information.
      * </p>
      * 
-     * @return The account of the subscriber.
+     * @return The updated subscriber information.
      */
 
     public SubscriberResource getSubscriber() {
@@ -57,11 +57,11 @@ public class UpdateSubscriberResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The account of the subscriber.
+     * The updated subscriber information.
      * </p>
      * 
      * @param subscriber
-     *        The account of the subscriber.
+     *        The updated subscriber information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -30,16 +30,10 @@ public class CreateRuleGroupsNamespaceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     * The ID of the workspace in which to create the rule group namespace.
      * </p>
      */
-    private String clientToken;
-    /**
-     * <p>
-     * The namespace data that define the rule groups.
-     * </p>
-     */
-    private java.nio.ByteBuffer data;
+    private String workspaceId;
     /**
      * <p>
      * The rule groups namespace name.
@@ -48,54 +42,100 @@ public class CreateRuleGroupsNamespaceRequest extends com.amazonaws.AmazonWebSer
     private String name;
     /**
      * <p>
+     * The namespace data that define the rule groups.
+     * </p>
+     */
+    private java.nio.ByteBuffer data;
+    /**
+     * <p>
+     * Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     * </p>
+     */
+    private String clientToken;
+    /**
+     * <p>
      * Optional, user-provided tags for this rule groups namespace.
      * </p>
      */
     private java.util.Map<String, String> tags;
+
     /**
      * <p>
      * The ID of the workspace in which to create the rule group namespace.
      * </p>
-     */
-    private String workspaceId;
-
-    /**
-     * <p>
-     * Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-     * </p>
      * 
-     * @param clientToken
-     *        Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     * @param workspaceId
+     *        The ID of the workspace in which to create the rule group namespace.
      */
 
-    public void setClientToken(String clientToken) {
-        this.clientToken = clientToken;
+    public void setWorkspaceId(String workspaceId) {
+        this.workspaceId = workspaceId;
     }
 
     /**
      * <p>
-     * Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     * The ID of the workspace in which to create the rule group namespace.
      * </p>
      * 
-     * @return Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     * @return The ID of the workspace in which to create the rule group namespace.
      */
 
-    public String getClientToken() {
-        return this.clientToken;
+    public String getWorkspaceId() {
+        return this.workspaceId;
     }
 
     /**
      * <p>
-     * Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     * The ID of the workspace in which to create the rule group namespace.
      * </p>
      * 
-     * @param clientToken
-     *        Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     * @param workspaceId
+     *        The ID of the workspace in which to create the rule group namespace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateRuleGroupsNamespaceRequest withClientToken(String clientToken) {
-        setClientToken(clientToken);
+    public CreateRuleGroupsNamespaceRequest withWorkspaceId(String workspaceId) {
+        setWorkspaceId(workspaceId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The rule groups namespace name.
+     * </p>
+     * 
+     * @param name
+     *        The rule groups namespace name.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The rule groups namespace name.
+     * </p>
+     * 
+     * @return The rule groups namespace name.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The rule groups namespace name.
+     * </p>
+     * 
+     * @param name
+     *        The rule groups namespace name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRuleGroupsNamespaceRequest withName(String name) {
+        setName(name);
         return this;
     }
 
@@ -168,41 +208,41 @@ public class CreateRuleGroupsNamespaceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The rule groups namespace name.
+     * Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
      * </p>
      * 
-     * @param name
-     *        The rule groups namespace name.
+     * @param clientToken
+     *        Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
      */
 
-    public void setName(String name) {
-        this.name = name;
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
     }
 
     /**
      * <p>
-     * The rule groups namespace name.
+     * Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
      * </p>
      * 
-     * @return The rule groups namespace name.
+     * @return Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
      */
 
-    public String getName() {
-        return this.name;
+    public String getClientToken() {
+        return this.clientToken;
     }
 
     /**
      * <p>
-     * The rule groups namespace name.
+     * Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
      * </p>
      * 
-     * @param name
-     *        The rule groups namespace name.
+     * @param clientToken
+     *        Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateRuleGroupsNamespaceRequest withName(String name) {
-        setName(name);
+    public CreateRuleGroupsNamespaceRequest withClientToken(String clientToken) {
+        setClientToken(clientToken);
         return this;
     }
 
@@ -275,46 +315,6 @@ public class CreateRuleGroupsNamespaceRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * <p>
-     * The ID of the workspace in which to create the rule group namespace.
-     * </p>
-     * 
-     * @param workspaceId
-     *        The ID of the workspace in which to create the rule group namespace.
-     */
-
-    public void setWorkspaceId(String workspaceId) {
-        this.workspaceId = workspaceId;
-    }
-
-    /**
-     * <p>
-     * The ID of the workspace in which to create the rule group namespace.
-     * </p>
-     * 
-     * @return The ID of the workspace in which to create the rule group namespace.
-     */
-
-    public String getWorkspaceId() {
-        return this.workspaceId;
-    }
-
-    /**
-     * <p>
-     * The ID of the workspace in which to create the rule group namespace.
-     * </p>
-     * 
-     * @param workspaceId
-     *        The ID of the workspace in which to create the rule group namespace.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateRuleGroupsNamespaceRequest withWorkspaceId(String workspaceId) {
-        setWorkspaceId(workspaceId);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -326,16 +326,16 @@ public class CreateRuleGroupsNamespaceRequest extends com.amazonaws.AmazonWebSer
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken()).append(",");
-        if (getData() != null)
-            sb.append("Data: ").append(getData()).append(",");
+        if (getWorkspaceId() != null)
+            sb.append("WorkspaceId: ").append(getWorkspaceId()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getData() != null)
+            sb.append("Data: ").append(getData()).append(",");
+        if (getClientToken() != null)
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags()).append(",");
-        if (getWorkspaceId() != null)
-            sb.append("WorkspaceId: ").append(getWorkspaceId());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -350,25 +350,25 @@ public class CreateRuleGroupsNamespaceRequest extends com.amazonaws.AmazonWebSer
         if (obj instanceof CreateRuleGroupsNamespaceRequest == false)
             return false;
         CreateRuleGroupsNamespaceRequest other = (CreateRuleGroupsNamespaceRequest) obj;
-        if (other.getClientToken() == null ^ this.getClientToken() == null)
+        if (other.getWorkspaceId() == null ^ this.getWorkspaceId() == null)
             return false;
-        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
-            return false;
-        if (other.getData() == null ^ this.getData() == null)
-            return false;
-        if (other.getData() != null && other.getData().equals(this.getData()) == false)
+        if (other.getWorkspaceId() != null && other.getWorkspaceId().equals(this.getWorkspaceId()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getData() == null ^ this.getData() == null)
+            return false;
+        if (other.getData() != null && other.getData().equals(this.getData()) == false)
+            return false;
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
+            return false;
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
-            return false;
-        if (other.getWorkspaceId() == null ^ this.getWorkspaceId() == null)
-            return false;
-        if (other.getWorkspaceId() != null && other.getWorkspaceId().equals(this.getWorkspaceId()) == false)
             return false;
         return true;
     }
@@ -378,11 +378,11 @@ public class CreateRuleGroupsNamespaceRequest extends com.amazonaws.AmazonWebSer
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
-        hashCode = prime * hashCode + ((getData() == null) ? 0 : getData().hashCode());
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getWorkspaceId() == null) ? 0 : getWorkspaceId().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getData() == null) ? 0 : getData().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

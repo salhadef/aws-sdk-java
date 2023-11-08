@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The number of pipelines associated with the AWS account has exceeded the limit allowed for the account.
+ * The number of pipelines associated with the Amazon Web Services account has exceeded the limit allowed for the
+ * account.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

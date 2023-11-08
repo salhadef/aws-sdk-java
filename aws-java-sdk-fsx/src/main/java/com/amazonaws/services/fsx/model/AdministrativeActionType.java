@@ -27,6 +27,19 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
+ * <code>THROUGHPUT_OPTIMIZATION</code> - After the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's
+ * throughput capacity has been completed successfully, a <code>THROUGHPUT_OPTIMIZATION</code> task starts.
+ * </p>
+ * <p>
+ * You can track the storage-optimization progress using the <code>ProgressPercent</code> property. When
+ * <code>THROUGHPUT_OPTIMIZATION</code> has been completed successfully, the parent <code>FILE_SYSTEM_UPDATE</code>
+ * action status changes to <code>COMPLETED</code>. For more information, see <a
+ * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-throughput-capacity.html">Managing throughput
+ * capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>STORAGE_OPTIMIZATION</code> - After the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's
  * storage capacity has been completed successfully, a <code>STORAGE_OPTIMIZATION</code> task starts.
  * </p>
@@ -72,6 +85,30 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
+ * <code>IOPS_OPTIMIZATION</code> - After the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's
+ * throughput capacity has been completed successfully, a <code>IOPS_OPTIMIZATION</code> task starts.
+ * </p>
+ * <p>
+ * You can track the storage-optimization progress using the <code>ProgressPercent</code> property. When
+ * <code>IOPS_OPTIMIZATION</code> has been completed successfully, the parent <code>FILE_SYSTEM_UPDATE</code> action
+ * status changes to <code>COMPLETED</code>. For more information, see <a
+ * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-provisioned-ssd-iops.html">Managing provisioned
+ * SSD IOPS</a> in the <i>Amazon FSx for Windows File Server User Guide</i>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>STORAGE_TYPE_OPTIMIZATION</code> - After the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's
+ * throughput capacity has been completed successfully, a <code>STORAGE_TYPE_OPTIMIZATION</code> task starts.
+ * </p>
+ * <p>
+ * You can track the storage-optimization progress using the <code>ProgressPercent</code> property. When
+ * <code>STORAGE_TYPE_OPTIMIZATION</code> has been completed successfully, the parent <code>FILE_SYSTEM_UPDATE</code>
+ * action status changes to <code>COMPLETED</code>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>VOLUME_UPDATE</code> - A volume update to an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume
  * initiated from the Amazon FSx console, API (<code>UpdateVolume</code>), or CLI (<code>update-volume</code>).
  * </p>
@@ -107,7 +144,11 @@ public enum AdministrativeActionType {
     VOLUME_UPDATE("VOLUME_UPDATE"),
     SNAPSHOT_UPDATE("SNAPSHOT_UPDATE"),
     RELEASE_NFS_V3_LOCKS("RELEASE_NFS_V3_LOCKS"),
-    VOLUME_RESTORE("VOLUME_RESTORE");
+    VOLUME_RESTORE("VOLUME_RESTORE"),
+    THROUGHPUT_OPTIMIZATION("THROUGHPUT_OPTIMIZATION"),
+    IOPS_OPTIMIZATION("IOPS_OPTIMIZATION"),
+    STORAGE_TYPE_OPTIMIZATION("STORAGE_TYPE_OPTIMIZATION"),
+    MISCONFIGURED_STATE_RECOVERY("MISCONFIGURED_STATE_RECOVERY");
 
     private String value;
 

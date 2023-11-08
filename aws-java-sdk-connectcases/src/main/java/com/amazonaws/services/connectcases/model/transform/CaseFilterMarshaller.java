@@ -34,6 +34,8 @@ public class CaseFilterMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("field").build();
     private static final MarshallingInfo<StructuredPojo> NOT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("not").build();
+    private static final MarshallingInfo<List> ORALL_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("orAll").build();
 
     private static final CaseFilterMarshaller instance = new CaseFilterMarshaller();
 
@@ -54,6 +56,7 @@ public class CaseFilterMarshaller {
             protocolMarshaller.marshall(caseFilter.getAndAll(), ANDALL_BINDING);
             protocolMarshaller.marshall(caseFilter.getField(), FIELD_BINDING);
             protocolMarshaller.marshall(caseFilter.getNot(), NOT_BINDING);
+            protocolMarshaller.marshall(caseFilter.getOrAll(), ORALL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

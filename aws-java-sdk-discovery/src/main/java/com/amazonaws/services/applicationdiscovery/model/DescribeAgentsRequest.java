@@ -22,8 +22,8 @@ public class DescribeAgentsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns
-     * information about all agents/Connectors associated with your Amazon Web Services user account.
+     * The agent or the collector IDs for which you want information. If you specify no IDs, the system returns
+     * information about all agents/collectors associated with your user.
      * </p>
      */
     private java.util.List<String> agentIds;
@@ -38,7 +38,7 @@ public class DescribeAgentsRequest extends com.amazonaws.AmazonWebServiceRequest
     private java.util.List<Filter> filters;
     /**
      * <p>
-     * The total number of agents/Connectors to return in a single page of output. The maximum value is 100.
+     * The total number of agents/collectors to return in a single page of output. The maximum value is 100.
      * </p>
      */
     private Integer maxResults;
@@ -53,12 +53,12 @@ public class DescribeAgentsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns
-     * information about all agents/Connectors associated with your Amazon Web Services user account.
+     * The agent or the collector IDs for which you want information. If you specify no IDs, the system returns
+     * information about all agents/collectors associated with your user.
      * </p>
      * 
-     * @return The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns
-     *         information about all agents/Connectors associated with your Amazon Web Services user account.
+     * @return The agent or the collector IDs for which you want information. If you specify no IDs, the system returns
+     *         information about all agents/collectors associated with your user.
      */
 
     public java.util.List<String> getAgentIds() {
@@ -67,13 +67,13 @@ public class DescribeAgentsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns
-     * information about all agents/Connectors associated with your Amazon Web Services user account.
+     * The agent or the collector IDs for which you want information. If you specify no IDs, the system returns
+     * information about all agents/collectors associated with your user.
      * </p>
      * 
      * @param agentIds
-     *        The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns
-     *        information about all agents/Connectors associated with your Amazon Web Services user account.
+     *        The agent or the collector IDs for which you want information. If you specify no IDs, the system returns
+     *        information about all agents/collectors associated with your user.
      */
 
     public void setAgentIds(java.util.Collection<String> agentIds) {
@@ -87,8 +87,8 @@ public class DescribeAgentsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns
-     * information about all agents/Connectors associated with your Amazon Web Services user account.
+     * The agent or the collector IDs for which you want information. If you specify no IDs, the system returns
+     * information about all agents/collectors associated with your user.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -97,8 +97,8 @@ public class DescribeAgentsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param agentIds
-     *        The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns
-     *        information about all agents/Connectors associated with your Amazon Web Services user account.
+     *        The agent or the collector IDs for which you want information. If you specify no IDs, the system returns
+     *        information about all agents/collectors associated with your user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -114,13 +114,13 @@ public class DescribeAgentsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns
-     * information about all agents/Connectors associated with your Amazon Web Services user account.
+     * The agent or the collector IDs for which you want information. If you specify no IDs, the system returns
+     * information about all agents/collectors associated with your user.
      * </p>
      * 
      * @param agentIds
-     *        The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns
-     *        information about all agents/Connectors associated with your Amazon Web Services user account.
+     *        The agent or the collector IDs for which you want information. If you specify no IDs, the system returns
+     *        information about all agents/collectors associated with your user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -225,11 +225,11 @@ public class DescribeAgentsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The total number of agents/Connectors to return in a single page of output. The maximum value is 100.
+     * The total number of agents/collectors to return in a single page of output. The maximum value is 100.
      * </p>
      * 
      * @param maxResults
-     *        The total number of agents/Connectors to return in a single page of output. The maximum value is 100.
+     *        The total number of agents/collectors to return in a single page of output. The maximum value is 100.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -238,10 +238,10 @@ public class DescribeAgentsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The total number of agents/Connectors to return in a single page of output. The maximum value is 100.
+     * The total number of agents/collectors to return in a single page of output. The maximum value is 100.
      * </p>
      * 
-     * @return The total number of agents/Connectors to return in a single page of output. The maximum value is 100.
+     * @return The total number of agents/collectors to return in a single page of output. The maximum value is 100.
      */
 
     public Integer getMaxResults() {
@@ -250,11 +250,11 @@ public class DescribeAgentsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The total number of agents/Connectors to return in a single page of output. The maximum value is 100.
+     * The total number of agents/collectors to return in a single page of output. The maximum value is 100.
      * </p>
      * 
      * @param maxResults
-     *        The total number of agents/Connectors to return in a single page of output. The maximum value is 100.
+     *        The total number of agents/collectors to return in a single page of output. The maximum value is 100.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

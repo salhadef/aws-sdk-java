@@ -202,6 +202,12 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private String externalLoginId;
+    /**
+     * <p>
+     * The tags to associate with the user.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -1429,6 +1435,76 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The tags to associate with the user.
+     * </p>
+     * 
+     * @return The tags to associate with the user.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags to associate with the user.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to associate with the user.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tags to associate with the user.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to associate with the user.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterUserRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to associate with the user.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to associate with the user.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterUserRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1463,7 +1539,9 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getCustomFederationProviderUrl() != null)
             sb.append("CustomFederationProviderUrl: ").append(getCustomFederationProviderUrl()).append(",");
         if (getExternalLoginId() != null)
-            sb.append("ExternalLoginId: ").append(getExternalLoginId());
+            sb.append("ExternalLoginId: ").append(getExternalLoginId()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -1527,6 +1605,10 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getExternalLoginId() != null && other.getExternalLoginId().equals(this.getExternalLoginId()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -1547,6 +1629,7 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getExternalLoginFederationProviderType() == null) ? 0 : getExternalLoginFederationProviderType().hashCode());
         hashCode = prime * hashCode + ((getCustomFederationProviderUrl() == null) ? 0 : getCustomFederationProviderUrl().hashCode());
         hashCode = prime * hashCode + ((getExternalLoginId() == null) ? 0 : getExternalLoginId().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

@@ -46,8 +46,11 @@ public interface AWSResilienceHub {
 
     /**
      * <p>
-     * Adds the resource mapping for the draft application version. You can also update an existing resource mapping to
-     * a new physical resource.
+     * Adds the source of resource-maps to the draft version of an application. During assessment, Resilience Hub will
+     * use these resource-maps to resolve the latest physical ID for each resource in the application template. For more
+     * information about different types of resources suported by Resilience Hub and how to add them in your
+     * application, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/how-app-manage.html">Step
+     * 2: How is your application managed?</a> in the Resilience Hub User Guide.
      * </p>
      * 
      * @param addDraftAppVersionResourceMappingsRequest
@@ -76,12 +79,37 @@ public interface AWSResilienceHub {
 
     /**
      * <p>
+     * Enables you to include or exclude one or more operational recommendations.
+     * </p>
+     * 
+     * @param batchUpdateRecommendationStatusRequest
+     * @return Result of the BatchUpdateRecommendationStatus operation returned by the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
+     * @throws ResourceNotFoundException
+     *         This exception occurs when the specified resource could not be found.
+     * @throws ThrottlingException
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
+     * @throws ValidationException
+     *         This exception occurs when a request is not valid.
+     * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation. The user or role that is making the
+     *         request must have at least one IAM permissions policy attached that grants the required permissions.
+     * @sample AWSResilienceHub.BatchUpdateRecommendationStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/BatchUpdateRecommendationStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    BatchUpdateRecommendationStatusResult batchUpdateRecommendationStatus(BatchUpdateRecommendationStatusRequest batchUpdateRecommendationStatusRequest);
+
+    /**
+     * <p>
      * Creates an Resilience Hub application. An Resilience Hub application is a collection of Amazon Web Services
-     * resources structured to prevent and recover Amazon Web Services application disruptions. To describe an
-     * Resilience Hub application, you provide an application name, resources from one or more CloudFormation stacks,
-     * Resource Groups, Terraform state files, AppRegistry applications, and an appropriate resiliency policy. For more
-     * information about the number of resources supported per application, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/resiliencehub.html#limits_resiliencehub">Service Quotas</a>.
+     * resources structured to prevent and recover Amazon Web Services application disruptions. To describe a Resilience
+     * Hub application, you provide an application name, resources from one or more CloudFormation stacks, Resource
+     * Groups, Terraform state files, AppRegistry applications, and an appropriate resiliency policy. In addition, you
+     * can also add resources that are located on Amazon Elastic Kubernetes Service (Amazon EKS) clusters as optional
+     * resources. For more information about the number of resources supported per application, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/resiliencehub.html#limits_resiliencehub">Service quotas</a>.
      * </p>
      * <p>
      * After you create an Resilience Hub application, you publish it so that you can run a resiliency assessment on it.
@@ -241,6 +269,15 @@ public interface AWSResilienceHub {
      * <p>
      * Creates a resiliency policy for an application.
      * </p>
+     * <note>
+     * <p>
+     * Resilience Hub allows you to provide a value of zero for <code>rtoInSecs</code> and <code>rpoInSecs</code> of
+     * your resiliency policy. But, while assessing your application, the lowest possible assessment result is near
+     * zero. Hence, if you provide value zero for <code>rtoInSecs</code> and <code>rpoInSecs</code>, the estimated
+     * workload RTO and estimated workload RPO result will be near zero and the <b>Compliance status</b> for your
+     * application will be set to <b>Policy breached</b>.
+     * </p>
+     * </note>
      * 
      * @param createResiliencyPolicyRequest
      * @return Result of the CreateResiliencyPolicy operation returned by the service.
@@ -769,6 +806,9 @@ public interface AWSResilienceHub {
      *         This exception occurs when a conflict with a previous successful write is detected. This generally occurs
      *         when the previous write did not have time to propagate to the host serving the current request. A retry
      *         (with appropriate backoff logic) is the recommended response to this exception.
+     * @throws ServiceQuotaExceededException
+     *         This exception occurs when you have exceeded your service quota. To perform the requested action, remove
+     *         some of the relevant resources, or use Service Quotas to request a service quota increase.
      * @throws ThrottlingException
      *         This exception occurs when you have exceeded the limit on the number of requests per second.
      * @throws ValidationException
@@ -805,6 +845,28 @@ public interface AWSResilienceHub {
      *      target="_top">AWS API Documentation</a>
      */
     ListAlarmRecommendationsResult listAlarmRecommendations(ListAlarmRecommendationsRequest listAlarmRecommendationsRequest);
+
+    /**
+     * <p>
+     * List of compliance drifts that were detected while running an assessment.
+     * </p>
+     * 
+     * @param listAppAssessmentComplianceDriftsRequest
+     * @return Result of the ListAppAssessmentComplianceDrifts operation returned by the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
+     * @throws ThrottlingException
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
+     * @throws ValidationException
+     *         This exception occurs when a request is not valid.
+     * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation. The user or role that is making the
+     *         request must have at least one IAM permissions policy attached that grants the required permissions.
+     * @sample AWSResilienceHub.ListAppAssessmentComplianceDrifts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppAssessmentComplianceDrifts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListAppAssessmentComplianceDriftsResult listAppAssessmentComplianceDrifts(ListAppAssessmentComplianceDriftsRequest listAppAssessmentComplianceDriftsRequest);
 
     /**
      * <p>
@@ -1565,6 +1627,15 @@ public interface AWSResilienceHub {
      * <p>
      * Updates a resiliency policy.
      * </p>
+     * <note>
+     * <p>
+     * Resilience Hub allows you to provide a value of zero for <code>rtoInSecs</code> and <code>rpoInSecs</code> of
+     * your resiliency policy. But, while assessing your application, the lowest possible assessment result is near
+     * zero. Hence, if you provide value zero for <code>rtoInSecs</code> and <code>rpoInSecs</code>, the estimated
+     * workload RTO and estimated workload RPO result will be near zero and the <b>Compliance status</b> for your
+     * application will be set to <b>Policy breached</b>.
+     * </p>
+     * </note>
      * 
      * @param updateResiliencyPolicyRequest
      * @return Result of the UpdateResiliencyPolicy operation returned by the service.

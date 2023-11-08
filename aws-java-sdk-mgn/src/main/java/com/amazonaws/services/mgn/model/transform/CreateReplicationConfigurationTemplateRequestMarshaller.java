@@ -55,6 +55,8 @@ public class CreateReplicationConfigurationTemplateRequestMarshaller {
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<Boolean> USEDEDICATEDREPLICATIONSERVER_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("useDedicatedReplicationServer").build();
+    private static final MarshallingInfo<Boolean> USEFIPSENDPOINT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("useFipsEndpoint").build();
 
     private static final CreateReplicationConfigurationTemplateRequestMarshaller instance = new CreateReplicationConfigurationTemplateRequestMarshaller();
 
@@ -89,6 +91,7 @@ public class CreateReplicationConfigurationTemplateRequestMarshaller {
             protocolMarshaller.marshall(createReplicationConfigurationTemplateRequest.getTags(), TAGS_BINDING);
             protocolMarshaller
                     .marshall(createReplicationConfigurationTemplateRequest.getUseDedicatedReplicationServer(), USEDEDICATEDREPLICATIONSERVER_BINDING);
+            protocolMarshaller.marshall(createReplicationConfigurationTemplateRequest.getUseFipsEndpoint(), USEFIPSENDPOINT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
